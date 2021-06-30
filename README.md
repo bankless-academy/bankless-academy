@@ -1,4 +1,4 @@
-# Bankless Community Website
+# Onboard
 
 Bootstrapped with [NextJS](https://nextjs.org/), [Web3React](https://github.com/NoahZinsmeister/web3-react), [Web3 Modal](https://www.npmjs.com/package/web3modal), and [Ethers](https://www.npmjs.com/package/ethers) and configured with:
 
