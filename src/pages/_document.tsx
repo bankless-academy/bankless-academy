@@ -23,10 +23,10 @@ class BanklessDocument extends Document {
       return {
         ...initialProps,
         styles: (
-          <React.Fragment>
+          <>
             {initialProps.styles}
             {stylesheet.getStyleElement()}
-          </React.Fragment>
+          </>
         ),
       }
     } finally {

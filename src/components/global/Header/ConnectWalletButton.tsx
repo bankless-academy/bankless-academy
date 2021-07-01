@@ -94,7 +94,7 @@ const WalletButton = () => {
   const commaSupply = Number(rawSupply).toLocaleString('en')
 
   return (
-    <React.Fragment>
+    <>
       {isConnected && (
         <Button
           theme="gradient"
@@ -118,13 +118,15 @@ const WalletButton = () => {
           !isConnected ? setConnectClick(true) : null
         }}
       >
-        {isConnected
-          ? <ENSName
-              provider={web3Provider}
-              address={walletAddress}
-              fallback={shortenAddress(walletAddress)}
-            />
-          : 'Connect a Wallet'}
+        {isConnected ? (
+          <ENSName
+            provider={web3Provider}
+            address={walletAddress}
+            fallback={shortenAddress(walletAddress)}
+          />
+        ) : (
+          'Connect a Wallet'
+        )}
       </Button>
       <TokenModal ref={modalRef} active={modalOpen}>
         <TokenModal.TitleRow>
@@ -160,7 +162,7 @@ const WalletButton = () => {
           </TokenModal.StatLine>
         </TokenModal.SupplyRow>
       </TokenModal>
-    </React.Fragment>
+    </>
   )
 }
 

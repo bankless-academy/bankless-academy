@@ -1,4 +1,4 @@
-import NextLink from 'next/link'
+import Link from 'next/link'
 
 import {
   FooterWrapper,
@@ -24,7 +24,7 @@ const Footer = () => {
         </BrandRow>
         <CopyrightRow>
           <IconsCol>
-            <NextLink href="https://medium.com/bankless-dao">
+            <Link href="https://medium.com/bankless-dao">
               <a>
                 <img
                   src="/images/icon-social-medium.svg"
@@ -33,8 +33,8 @@ const Footer = () => {
                   height={27}
                 />
               </a>
-            </NextLink>
-            <NextLink href="https://banklessdao.substack.com/">
+            </Link>
+            <Link href="https://banklessdao.substack.com/">
               <a>
                 <img
                   src="/images/icon-social-substack.svg"
@@ -43,8 +43,8 @@ const Footer = () => {
                   height={28}
                 />
               </a>
-            </NextLink>
-            <NextLink href="https://discord.gg/bjPz2w9Zts ">
+            </Link>
+            <Link href="https://discord.gg/bjPz2w9Zts ">
               <a>
                 <img
                   src="/images/icon-social-discord.svg"
@@ -53,8 +53,8 @@ const Footer = () => {
                   height={35}
                 />
               </a>
-            </NextLink>
-            <NextLink href="https://twitter.com/banklessDAO">
+            </Link>
+            <Link href="https://twitter.com/banklessDAO">
               <a>
                 <img
                   src="/images/icon-social-twitter.svg"
@@ -63,8 +63,8 @@ const Footer = () => {
                   height={28}
                 />
               </a>
-            </NextLink>
-            <NextLink href="https://github.com/BanklessDAO">
+            </Link>
+            <Link href="https://github.com/BanklessDAO">
               <a>
                 <img
                   src="/images/icon-social-github.svg"
@@ -73,7 +73,7 @@ const Footer = () => {
                   height={31}
                 />
               </a>
-            </NextLink>
+            </Link>
           </IconsCol>
           <CopyrightCol>
             &copy; {new Date().getFullYear()} Bankless DAO

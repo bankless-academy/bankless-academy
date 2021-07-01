@@ -46,13 +46,13 @@ const SiteLayout = ({ pageMeta, children }) => {
   }, [])
 
   return (
-    <React.Fragment>
+    <>
       <GlobalStyle />
       <Head {...pageMeta} />
       <Header currentPage={pageMeta.url} />
       <main>{children}</main>
       <Footer />
-    </React.Fragment>
+    </>
   )
 }
 

@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import NextLink from 'next/link'
+import Link from 'next/link'
 
 import { useDetectOutsideClick } from 'src/hooks/useDetectOutsideClick'
 
@@ -76,7 +76,7 @@ const Header = ({ currentPage = '' }) => {
             />
           </MobileNavButton>
           <LogoContainer>
-            <NextLink href="/">
+            <Link href="/">
               <a onClick={() => setMobileNavIsActive(false)}>
                 <img
                   src="/logo.svg"
@@ -85,12 +85,12 @@ const Header = ({ currentPage = '' }) => {
                   height={60}
                 />
               </a>
-            </NextLink>
+            </Link>
           </LogoContainer>
         </HeaderBrandContainer>
         <HeaderNavContainer>
           <HeaderNav active={isMobileNavActive}>
-            <NextLink href="/claim">
+            <Link href="/claim">
               <HeaderNavItem
                 tabIndex="0"
                 active={currentPage.includes('/claim')}
@@ -98,7 +98,7 @@ const Header = ({ currentPage = '' }) => {
               >
                 Claim
               </HeaderNavItem>
-            </NextLink>
+            </Link>
             <DropdownNavItem>
               <HeaderNavItem
                 tabIndex="0"
@@ -115,18 +115,18 @@ const Header = ({ currentPage = '' }) => {
                 active={isGovernanceDropdownActive}
               >
                 <li>
-                  <NextLink href="https://forum.bankless.community/">
+                  <Link href="https://forum.bankless.community/">
                     <a onClick={handleDropdownItemClick}>Forum</a>
-                  </NextLink>
+                  </Link>
                 </li>
                 <li>
-                  <NextLink href="https://snapshot.org/#/banklessvault.eth">
+                  <Link href="https://snapshot.org/#/banklessvault.eth">
                     <a onClick={handleDropdownItemClick}>Vote</a>
-                  </NextLink>
+                  </Link>
                 </li>
               </DropdownContainer>
             </DropdownNavItem>
-            <NextLink href="/mission">
+            <Link href="/mission">
               <HeaderNavItem
                 tabIndex="0"
                 active={currentPage.includes('mission')}
@@ -134,7 +134,7 @@ const Header = ({ currentPage = '' }) => {
               >
                 Mission
               </HeaderNavItem>
-            </NextLink>
+            </Link>
             <DropdownNavItem>
               <HeaderNavItem
                 tabIndex="0"
@@ -151,26 +151,26 @@ const Header = ({ currentPage = '' }) => {
                 active={isResourcesDropdownActive}
               >
                 <li>
-                  <NextLink href="https://medium.com/bankless-dao/announcing-bankless-dao-133220f5efd8">
+                  <Link href="https://medium.com/bankless-dao/announcing-bankless-dao-133220f5efd8">
                     <a onClick={handleDropdownItemClick}>Announcement Post</a>
-                  </NextLink>
+                  </Link>
                 </li>
                 <li>
-                  <NextLink href="https://medium.com/bankless-dao/bankless-dao-genesis-proposal-18c24caf4485">
+                  <Link href="https://medium.com/bankless-dao/bankless-dao-genesis-proposal-18c24caf4485">
                     <a onClick={handleDropdownItemClick}>Genesis Proposal</a>
-                  </NextLink>
+                  </Link>
                 </li>
                 <li>
-                  <NextLink href="https://medium.com/bankless-dao/getting-started-with-bankless-dao-94b0b60e052e">
+                  <Link href="https://medium.com/bankless-dao/getting-started-with-bankless-dao-94b0b60e052e">
                     <a onClick={handleDropdownItemClick}>
                       Getting Started Guide
                     </a>
-                  </NextLink>
+                  </Link>
                 </li>
                 <li>
-                  <NextLink href="https://www.notion.so/BanklessDAO-Wiki-82ba81e7da1c42adb7c4ab67a4f22e8f">
+                  <Link href="https://www.notion.so/BanklessDAO-Wiki-82ba81e7da1c42adb7c4ab67a4f22e8f">
                     <a onClick={handleDropdownItemClick}>Wiki</a>
-                  </NextLink>
+                  </Link>
                 </li>
               </DropdownContainer>
             </DropdownNavItem>

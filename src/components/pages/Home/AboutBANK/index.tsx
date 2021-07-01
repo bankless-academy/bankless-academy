@@ -1,4 +1,4 @@
-import NextLink from 'next/link'
+import Link from 'next/link'
 import Button from 'src/components/parts/Button'
 import {
   SectionWrapper,
@@ -26,11 +26,11 @@ const Section = () => {
               to coordinate activity and is awarded to community members for
               participation in the bankless movement.
             </Paragraph>
-            <NextLink href="https://medium.com/bankless-dao/announcing-bankless-dao-133220f5efd8">
+            <Link href="https://medium.com/bankless-dao/announcing-bankless-dao-133220f5efd8">
               <a>
                 <Button theme="gray">Read Announcement Post</Button>
               </a>
-            </NextLink>
+            </Link>
           </Col1>
           <Col2>
             <img
@@ -65,11 +65,11 @@ const Section = () => {
               bestow Bankless, LLC with an allocation as described in the
               Genesis Proposal.
             </Paragraph>
-            <NextLink href="https://medium.com/bankless-dao/bankless-dao-genesis-proposal-18c24caf4485">
+            <Link href="https://medium.com/bankless-dao/bankless-dao-genesis-proposal-18c24caf4485">
               <a>
                 <Button theme="gray">Genesis Proposal</Button>
               </a>
-            </NextLink>
+            </Link>
           </Col1>
           <Col2>
             <img

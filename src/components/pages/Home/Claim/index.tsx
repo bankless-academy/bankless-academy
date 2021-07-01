@@ -1,4 +1,4 @@
-import NextLink from 'next/link'
+import Link from 'next/link'
 import Button from 'src/components/parts/Button'
 import {
   SectionWrapper,
@@ -37,11 +37,11 @@ const Section = () => {
                 height="120"
               />
             </ImageContainer>
-            <NextLink href="/claim">
+            <Link href="/claim">
               <a>
                 <Button theme="white">Check Eligibility</Button>
               </a>
-            </NextLink>
+            </Link>
           </Col1>
           <Col1>
             <div>
@@ -55,11 +55,11 @@ const Section = () => {
                 height="110"
               />
             </ImageContainer>
-            <NextLink href="https://discord.gg/bjPz2w9Zts ">
+            <Link href="https://discord.gg/bjPz2w9Zts ">
               <a>
                 <Button theme="white">Join Discord</Button>
               </a>
-            </NextLink>
+            </Link>
           </Col1>
         </Col2Row>
       </SectionContainer>

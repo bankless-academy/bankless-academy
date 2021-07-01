@@ -1,4 +1,4 @@
-import NextLink from 'next/link'
+import Link from 'next/link'
 import Button from 'src/components/parts/Button'
 import {
   SectionWrapper,
@@ -83,20 +83,20 @@ const Section = () => {
         </Paragraph>
         <Paragraph>Join the Bankless DAO!</Paragraph>
         <ButtonContainer>
-          <NextLink href="/claim">
+          <Link href="/claim">
             <a>
               <Button theme="red" shadow>
                 Claim your bank
               </Button>
             </a>
-          </NextLink>
-          <NextLink href="https://discord.gg/bjPz2w9Zts ">
+          </Link>
+          <Link href="https://discord.gg/bjPz2w9Zts ">
             <a>
               <Button theme="discord" shadow>
                 Join the Discord
               </Button>
             </a>
-          </NextLink>
+          </Link>
         </ButtonContainer>
       </SectionContainer>
     </SectionWrapper>

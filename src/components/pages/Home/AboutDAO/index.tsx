@@ -1,4 +1,4 @@
-import NextLink from 'next/link'
+import Link from 'next/link'
 import Button from 'src/components/parts/Button'
 import {
   SectionWrapper,
@@ -45,11 +45,11 @@ const Section = () => {
           >
             We need this now, more than ever...{' '}
           </Subheading>
-          <NextLink href="/mission">
+          <Link href="/mission">
             <a>
               <Button theme="white">Read More</Button>
             </a>
-          </NextLink>
+          </Link>
         </Col2>
       </SectionContainer>
     </SectionWrapper>

@@ -1,3 +1,24 @@
+export const PROJECT_NAME = 'Onboard'
+
+export const QUESTS = [
+  {
+    name: 'Wallet Basics',
+    slug: 'wallet-basics',
+    description: 'Wallet Basics description',
+    duration: 10,
+    difficulty: '🙂 easy',
+    poap_image: '/images/poap1.png',
+  },
+  {
+    name: 'Borrow with Aave',
+    slug: 'borrow-with-ave',
+    description: 'Borrow with Aave description',
+    duration: 30,
+    difficulty: '🛠 expert',
+    poap_image: '/images/poap2.png',
+  },
+]
+
 export const TOKEN_ADDRESS = {
   1: '0x2d94aa3e47d9d5024503ca8491fce9a2fb4da198',
   5: '0xab8b6fFA66E1f2CD8938f1df14104600367de257',

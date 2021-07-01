@@ -1,13 +1,9 @@
 import { GetStaticProps } from 'next'
 import { PageMetaProps } from '../../components/global/Head'
 
-import CardFormSection from 'src/components/pages/Claim/CardForm'
-
 const pageMeta: PageMetaProps = {
-  title: 'Claim BANK Tokens | Bankless DAO',
-  description:
-    'Connect your Ethereum wallet to redeem and claim your BANK community tokens.',
-  url: 'https://www.bankless.community/claim',
+  title: 'About',
+  description: '...',
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -17,6 +13,11 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Page = (): JSX.Element => {
-  return <CardFormSection />
+  return (
+    <>
+      <h1>About page</h1>
+    </>
+  )
 }
+
 export default Page
