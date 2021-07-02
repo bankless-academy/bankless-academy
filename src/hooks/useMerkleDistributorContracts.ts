@@ -1,10 +1,8 @@
 import { Contract } from '@ethersproject/contracts'
 
 import { useActiveWeb3React } from './index'
-import {
-  MERKLE_DISTRIBUTOR_ADDRESS,
-  MERKLE_DISTRIBUTOR_ABI,
-} from '../constants'
+import { MERKLE_DISTRIBUTOR_ADDRESS } from '../constants'
+import MERKLE_DISTRIBUTOR_ABI from '../abis/MerkleDistributor.json'
 import { useContracts } from './useContract'
 
 export function useMerkleDistributorContracts(): Array<Contract | null> {

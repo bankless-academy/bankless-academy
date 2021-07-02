@@ -1,7 +1,8 @@
 import { Contract } from '@ethersproject/contracts'
 
 import { useActiveWeb3React } from '../'
-import { TOKEN_ADDRESS, TOKEN_ABI } from '../../constants'
+import { TOKEN_ADDRESS } from '../../constants'
+import TOKEN_ABI from '../../abis/token.json'
 import { useContract } from '../useContract'
 
 export function useTokenContract(): Contract | null {
