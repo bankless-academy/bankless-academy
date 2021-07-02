@@ -33,7 +33,6 @@ const ConnectWalletButton = ({ isMobile }: { isMobile: boolean }) => {
   const [connectClick, setConnectClick] = useState(false)
   const [walletIsLoading, setWalletIsLoading] = useState(false)
   const { isOpen, onOpen, onClose } = useDisclosure()
-
   const modalRef = useRef(null)
 
   useEffect(() => {
