@@ -5,7 +5,7 @@ import {
   HStack,
   Spacer,
   Flex,
-  Text,
+  // Text,
   useMediaQuery,
 } from '@chakra-ui/react'
 import Link from 'next/link'
@@ -14,6 +14,7 @@ import styled from '@emotion/styled'
 
 import ColorModeSwitcher from '../components/ColorModeSwitcher'
 import LanguageModeSwitcher from '../components/LanguageModeSwitcher'
+import ConnectWalletButton from '../components/ConnectWalletButton'
 
 const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`
   ${(props) =>
@@ -28,8 +29,8 @@ const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`
 `
 
 // TEMP: hardcode
-const address = 'didierkrux.eth'
-const bank = '35000'
+// const address = 'didierkrux.eth'
+// const bank = '35000'
 
 const Nav: React.FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 800px)')
@@ -75,30 +76,7 @@ const Nav: React.FC = () => {
             // TODO: auto change
             bgColor={isMobile ? 'gray.200' : 'auto'}
           >
-            {address ? (
-              <Button
-                variant="outline"
-                paddingRight="1"
-                paddingLeft="4"
-                size={isMobile ? 'sm' : 'md'}
-              >
-                {bank} BANK
-                <Button size={isMobile ? 'xs' : 'sm'} marginLeft="2">
-                  <Text maxW="135px" isTruncated>
-                    {address}
-                  </Text>
-                </Button>
-              </Button>
-            ) : (
-              <Button
-                // onClick={onConnect}
-                size={isMobile ? 'sm' : 'md'}
-                // isLoading={walletIsLoading}
-                loadingText="Connecting wallet"
-              >
-                Connect wallet
-              </Button>
-            )}
+            <ConnectWalletButton isMobile={isMobile} />
             {isMobile && <Spacer />}
             <Box>
               <LanguageModeSwitcher size={isMobile ? 'sm' : 'md'} />

@@ -1,12 +1,12 @@
 import type { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
-import Layout from 'src/layout'
+import Layout from '../layout'
 import ThemeProvider from '../theme/index'
 import { Web3ReactProvider } from '@web3-react/core'
 import { ethers } from 'ethers'
-import { PageMetaProps } from '../components/global/Head'
+import { PageMetaProps } from '../components/Head'
 
-import { PROJECT_NAME } from 'src/constants'
+import { PROJECT_NAME } from '../constants'
 
 const defaultPageMeta: PageMetaProps = {
   title: PROJECT_NAME,

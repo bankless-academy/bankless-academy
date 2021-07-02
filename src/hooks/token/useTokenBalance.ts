@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { isAddress } from 'src/utils'
+import { isAddress } from '../../utils'
 
 import { useTokenContract } from './useToken'
 
