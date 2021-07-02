@@ -2,7 +2,7 @@ import React from 'react'
 import { useMediaQuery } from '@chakra-ui/react'
 
 import Head from '../components/Head'
-import Nav from './Nav'
+import Nav from './Navi'
 import PageBackground from '../components/PageBackground'
 
 const Layout = ({ pageMeta, children }) => {
