@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import Head, { PageMetaProps } from '../../components/Head'
 import { Container } from '@chakra-ui/react'
 import { QUESTS } from '../../constants'
@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: QUESTS.map((quest) => ({ params: { slug: quest.slug } })),
     fallback: true,

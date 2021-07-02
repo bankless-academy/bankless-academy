@@ -25,7 +25,7 @@ export default function ENSName({
 }: {
   address: string
   provider?: any
-}) {
+}): React.ReactElement {
   const name = useENSName(address, provider)
   return <>{name || shortenAddress(address)}</>
 }

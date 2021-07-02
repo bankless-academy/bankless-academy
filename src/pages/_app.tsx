@@ -14,7 +14,7 @@ const Web3ReactProviderDefault = dynamic(
   { ssr: false }
 )
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <ThemeProvider>
       <Web3ReactProvider getLibrary={getLibrary}>

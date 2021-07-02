@@ -6,7 +6,10 @@ export interface PageMetaProps {
   description: string
 }
 
-const Head = ({ title = '', description = '' }: PageMetaProps) => {
+const Head = ({
+  title = '',
+  description = '',
+}: PageMetaProps): React.ReactElement => {
   // TODO social images
   return (
     <NextHead>

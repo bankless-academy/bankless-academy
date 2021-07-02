@@ -2,10 +2,17 @@ import React from 'react'
 import { useMediaQuery } from '@chakra-ui/react'
 
 import Head from '../components/Head'
+import { PageMetaProps } from '../components/Head'
 import Nav from './Nav'
 import PageBackground from './PageBackground'
 
-const Layout = ({ pageMeta, children }) => {
+const Layout = ({
+  pageMeta,
+  children,
+}: {
+  pageMeta: PageMetaProps
+  children: JSX.Element
+}): React.ReactElement => {
   const [isMobile] = useMediaQuery('(max-width: 800px)')
 
   return (

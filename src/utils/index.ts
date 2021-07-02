@@ -7,6 +7,7 @@ import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { NetworkConnector } from '@web3-react/network-connector'
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function isAddress(value: any): string | false {
   try {
     return getAddress(value)
@@ -21,6 +22,7 @@ export function shortenAddress(address: string): string {
 
 export function getContract(
   address: string,
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   ABI: any,
   library: Web3Provider,
   account?: string
@@ -63,6 +65,7 @@ export const network = new NetworkConnector({
   defaultChainId: 1,
 })
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const toFixed = function (x) {
   if (Math.abs(x) < 1.0) {
     const e = parseInt(x.toString().split('e-')[1])
@@ -81,7 +84,7 @@ export const toFixed = function (x) {
   return x
 }
 
-export const trimCurrencyForWhales = (labelValue) => {
+export const trimCurrencyForWhales = (labelValue: number): string | number => {
   // Nine Zeroes for Billions
   return Math.abs(Number(labelValue)) >= 1.0e9
     ? (Math.abs(Number(labelValue)) / 1.0e9).toFixed(2) + 'B'

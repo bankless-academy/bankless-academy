@@ -12,7 +12,11 @@ import { INFURA_ID } from '../constants'
 
 let web3Modal: Web3Modal
 
-const ConnectWalletButton = ({ isMobile }: { isMobile: boolean }) => {
+const ConnectWalletButton = ({
+  isMobile,
+}: {
+  isMobile: boolean
+}): React.ReactElement => {
   const [web3Provider, setWeb3Provider] = useState()
   const walletWeb3ReactContext = useWalletWeb3React()
   const isConnected = walletWeb3ReactContext.active
