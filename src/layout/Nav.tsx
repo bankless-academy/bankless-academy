@@ -5,15 +5,14 @@ import {
   HStack,
   Spacer,
   Flex,
-  // Text,
   useMediaQuery,
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
-import ColorModeSwitcher from '../components/ColorModeSwitcher'
-import LanguageModeSwitcher from '../components/LanguageModeSwitcher'
+import ColorModeSwitcher from './ColorModeSwitcher'
+import LanguageModeSwitcher from './LanguageModeSwitcher'
 import ConnectWalletButton from '../components/ConnectWalletButton'
 
 const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`
@@ -27,10 +26,6 @@ const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`
     width: 100%;
   `}
 `
-
-// TEMP: hardcode
-// const address = 'didierkrux.eth'
-// const bank = '35000'
 
 const Nav: React.FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 800px)')
