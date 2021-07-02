@@ -10,9 +10,7 @@ const Head = ({ title = '', description = '' }: PageMetaProps) => {
   // TODO social images
   return (
     <NextHead>
-      <title>
-        {title} | {PROJECT_NAME}
-      </title>
+      <title>{title ? `${title} | ${PROJECT_NAME}` : PROJECT_NAME}</title>
       <meta name="description" content={description} />
       <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     </NextHead>
