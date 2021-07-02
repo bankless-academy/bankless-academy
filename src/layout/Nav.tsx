@@ -70,10 +70,10 @@ const Nav: React.FC = () => {
             isMobile={isMobile}
             // TODO: auto change
             bgColor={isMobile ? 'gray.200' : 'auto'}
+            justifyContent="space-between"
           >
             <ConnectWalletButton isMobile={isMobile} />
-            {isMobile && <Spacer />}
-            <Box>
+            <Box display="flex">
               <LanguageModeSwitcher size={isMobile ? 'sm' : 'md'} />
               <ColorModeSwitcher size={isMobile ? 'sm' : 'md'} />
             </Box>
