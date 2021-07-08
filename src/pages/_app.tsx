@@ -1,31 +1,35 @@
 import type { AppProps } from 'next/app'
-import dynamic from 'next/dynamic'
-import SiteLayout from '../components/global/SiteLayout'
 import { Web3ReactProvider } from '@web3-react/core'
 import { ethers } from 'ethers'
-const defaultPageMeta = {
-  title: 'Bankless Community',
-}
+
+import dynamic from 'next/dynamic'
+import Layout from 'layout'
+import ThemeProvider from 'theme'
 
 function getLibrary(provider) {
   return new ethers.providers.Web3Provider(provider) // this will vary according to whether you use e.g. ethers or web3.js
 }
 
 const Web3ReactProviderDefault = dynamic(
-  () => import('../providers/Web3ReactProviderDefaultSSR'),
+  () => import('providers/Web3ReactProviderDefaultSSR'),
   { ssr: false }
 )
 
-const BanklessApp = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <Web3ReactProviderDefault getLibrary={getLibrary}>
-        <SiteLayout pageMeta={pageProps.pageMeta || { defaultPageMeta }}>
-          <Component {...pageProps} />
-        </SiteLayout>
-      </Web3ReactProviderDefault>
-    </Web3ReactProvider>
+    <>
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <ThemeProvider>
+        <Web3ReactProvider getLibrary={getLibrary}>
+          <Web3ReactProviderDefault getLibrary={getLibrary}>
+            <Layout pageMeta={pageProps.pageMeta}>
+              <Component {...pageProps} />
+            </Layout>
+          </Web3ReactProviderDefault>
+        </Web3ReactProvider>
+      </ThemeProvider>
+    </>
   )
 }
 
-export default BanklessApp
+export default App

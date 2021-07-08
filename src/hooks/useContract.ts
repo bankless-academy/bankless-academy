@@ -1,12 +1,13 @@
 import { Contract } from '@ethersproject/contracts'
 import { useMemo } from 'react'
 
-import { getContract } from '../utils'
-import { useActiveWeb3React } from './index'
+import { getContract } from 'utils'
+import { useActiveWeb3React } from 'hooks/'
 
 // returns null on errors
 export function useContract(
   address: string | undefined,
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   ABI: any,
   withSignerIfPossible = true
 ): Contract | null {
@@ -30,9 +31,12 @@ export function useContract(
 // returns null on errors
 export function useContracts(
   addresses: Array<string | undefined>,
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   ABI: any,
   withSignerIfPossible = true,
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   library,
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   account
 ): Array<Contract | null> {
   return addresses.map((address) => {

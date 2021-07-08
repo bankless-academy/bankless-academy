@@ -1,10 +1,9 @@
-import React from 'react'
 import { GetStaticProps } from 'next'
 
 import { PageMetaProps } from 'components/Head'
 
 const pageMeta: PageMetaProps = {
-  title: 'Home',
+  title: 'About',
   description: '...',
 }
 
@@ -17,7 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
 const Page = (): JSX.Element => {
   return (
     <>
-      <h1>Home page</h1>
+      <h1>About page</h1>
     </>
   )
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { isAddress } from 'src/utils'
 
-import { useTokenContract } from './useToken'
+import { isAddress } from 'utils'
+import { useTokenContract } from 'hooks/token/useToken'
 
 export function useTokenBalance(address: string): number | undefined {
   const tokenContract = useTokenContract()
