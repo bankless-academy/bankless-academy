@@ -17,15 +17,18 @@ const Web3ReactProviderDefault = dynamic(
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
-    <ThemeProvider>
-      <Web3ReactProvider getLibrary={getLibrary}>
-        <Web3ReactProviderDefault getLibrary={getLibrary}>
-          <Layout pageMeta={pageProps.pageMeta}>
-            <Component {...pageProps} />
-          </Layout>
-        </Web3ReactProviderDefault>
-      </Web3ReactProvider>
-    </ThemeProvider>
+    <>
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <ThemeProvider>
+        <Web3ReactProvider getLibrary={getLibrary}>
+          <Web3ReactProviderDefault getLibrary={getLibrary}>
+            <Layout pageMeta={pageProps.pageMeta}>
+              <Component {...pageProps} />
+            </Layout>
+          </Web3ReactProviderDefault>
+        </Web3ReactProvider>
+      </ThemeProvider>
+    </>
   )
 }
 
