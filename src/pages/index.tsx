@@ -1,7 +1,7 @@
-import { GetStaticProps } from 'next'
-import { PageMetaProps } from '../components/Head'
-
 import React from 'react'
+import { GetStaticProps } from 'next'
+
+import { PageMetaProps } from 'components/Head'
 
 const pageMeta: PageMetaProps = {
   title: 'Home',

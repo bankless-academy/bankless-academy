@@ -1,8 +1,8 @@
 import { Contract } from '@ethersproject/contracts'
 import { useMemo } from 'react'
 
-import { getContract } from '../utils'
-import { useActiveWeb3React } from './index'
+import { getContract } from 'utils'
+import { useActiveWeb3React } from 'hooks/'
 
 // returns null on errors
 export function useContract(

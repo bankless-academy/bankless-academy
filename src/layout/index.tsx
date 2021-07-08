@@ -1,10 +1,10 @@
 import React from 'react'
 import { useMediaQuery } from '@chakra-ui/react'
 
-import Head from '../components/Head'
-import { PageMetaProps } from '../components/Head'
-import Nav from './Nav'
-import PageBackground from './PageBackground'
+import Head from 'components/Head'
+import { PageMetaProps } from 'components/Head'
+import Nav from 'layout/Nav'
+import PageBackground from 'layout/PageBackground'
 
 const Layout = ({
   pageMeta,

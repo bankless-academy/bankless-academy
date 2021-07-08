@@ -1,5 +1,6 @@
 import NextHead from 'next/head'
-import { PROJECT_NAME } from '../constants'
+
+import { PROJECT_NAME } from 'constants/'
 
 export interface PageMetaProps {
   title: string

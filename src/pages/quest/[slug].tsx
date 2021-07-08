@@ -1,8 +1,9 @@
-import { useRouter } from 'next/router'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import Head, { PageMetaProps } from '../../components/Head'
+import { useRouter } from 'next/router'
 import { Container } from '@chakra-ui/react'
-import { QUESTS } from '../../constants'
+
+import Head, { PageMetaProps } from 'components/Head'
+import { QUESTS } from 'constants/'
 
 const pageMeta = {
   title: 'Quest',

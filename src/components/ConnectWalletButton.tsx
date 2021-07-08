@@ -1,14 +1,13 @@
 import Web3Modal from 'web3modal'
 import React, { useState, useEffect } from 'react'
 import WalletConnectProvider from '@walletconnect/web3-provider'
-
-import ENSName from '../components/ENSName'
-import { useWalletWeb3React } from '../hooks'
-import { walletConnect, injected, trimCurrencyForWhales } from '../utils'
 import { Button, Text } from '@chakra-ui/react'
-import { useTokenBalance } from '../hooks/token/useTokenBalance'
 
-import { INFURA_ID } from '../constants'
+import ENSName from 'components/ENSName'
+import { useWalletWeb3React } from 'hooks'
+import { walletConnect, injected, trimCurrencyForWhales } from 'utils'
+import { useTokenBalance } from 'hooks/token/useTokenBalance'
+import { INFURA_ID } from 'constants/'
 
 let web3Modal: Web3Modal
 

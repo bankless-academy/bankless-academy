@@ -1,16 +1,17 @@
 import type { AppProps } from 'next/app'
-import dynamic from 'next/dynamic'
-import Layout from '../layout'
-import ThemeProvider from '../theme/index'
 import { Web3ReactProvider } from '@web3-react/core'
 import { ethers } from 'ethers'
+
+import dynamic from 'next/dynamic'
+import Layout from 'layout'
+import ThemeProvider from 'theme'
 
 function getLibrary(provider) {
   return new ethers.providers.Web3Provider(provider) // this will vary according to whether you use e.g. ethers or web3.js
 }
 
 const Web3ReactProviderDefault = dynamic(
-  () => import('../providers/Web3ReactProviderDefaultSSR'),
+  () => import('providers/Web3ReactProviderDefaultSSR'),
   { ssr: false }
 )
 

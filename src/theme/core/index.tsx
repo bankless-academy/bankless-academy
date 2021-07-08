@@ -1,4 +1,4 @@
-import colors from './colors'
+import colors from 'theme/core/colors'
 
 export default {
   ...colors,

@@ -7,8 +7,8 @@ import {
   localStorageManager,
 } from '@chakra-ui/react'
 
-import core from './core'
-import components from './components'
+import core from 'theme/core'
+import components from 'theme/components'
 
 export const theme = extendTheme(
   {

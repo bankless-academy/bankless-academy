@@ -1,11 +1,11 @@
 import { Contract } from '@ethersproject/contracts'
 import { getAddress } from '@ethersproject/address'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
-import { RPC_URLS } from '../constants'
-
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { NetworkConnector } from '@web3-react/network-connector'
+
+import { RPC_URLS } from 'constants/'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function isAddress(value: any): string | false {

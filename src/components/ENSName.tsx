@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ENS, { getEnsAddress } from '@ensdomains/ensjs'
-import { shortenAddress } from '../utils'
+
+import { shortenAddress } from 'utils'
 
 async function getNameForAddress(address, provider) {
   if (!provider || !address) {

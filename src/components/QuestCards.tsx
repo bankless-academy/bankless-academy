@@ -19,7 +19,8 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import { QUESTS } from '../constants'
+
+import { QUESTS } from 'constants/'
 
 const QuestCard = styled(Box)`
   border-radius: 0.5rem;

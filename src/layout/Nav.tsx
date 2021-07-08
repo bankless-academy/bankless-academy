@@ -11,9 +11,9 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
-import ColorModeSwitcher from './ColorModeSwitcher'
-import LanguageModeSwitcher from './LanguageModeSwitcher'
-import ConnectWalletButton from '../components/ConnectWalletButton'
+import ColorModeSwitcher from 'layout/ColorModeSwitcher'
+import LanguageModeSwitcher from 'layout/LanguageModeSwitcher'
+import ConnectWalletButton from 'components/ConnectWalletButton'
 
 const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`
   ${(props) =>

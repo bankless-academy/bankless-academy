@@ -1,9 +1,9 @@
 import { Contract } from '@ethersproject/contracts'
 
-import { useActiveWeb3React } from '../'
-import { TOKEN_ADDRESS } from '../../constants'
-import TOKEN_ABI from '../../abis/token.json'
-import { useContract } from '../useContract'
+import { useActiveWeb3React } from 'hooks'
+import { TOKEN_ADDRESS } from 'constants/'
+import TOKEN_ABI from 'abis/token.json'
+import { useContract } from 'hooks/useContract'
 
 export function useTokenContract(): Contract | null {
   const { chainId } = useActiveWeb3React()
