@@ -20,7 +20,7 @@ import {
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
-import { QUESTS } from 'constants/'
+import QUESTS from 'constants/quests'
 
 const QuestCard = styled(Box)`
   border-radius: 0.5rem;
@@ -53,7 +53,7 @@ const QuestCards: React.FC = () => {
   const { colorMode } = useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const modalRef = useRef(null)
-  const [selectedQuest, setselectedQuest] = useState(null)
+  const [selectedQuest, setSelectedQuest] = useState(null)
 
   return (
     <>
@@ -63,7 +63,7 @@ const QuestCards: React.FC = () => {
           cursor="pointer"
           key={`quest-${index}`}
           onClick={() => {
-            setselectedQuest(index)
+            setSelectedQuest(index)
             onOpen()
           }}
         >
