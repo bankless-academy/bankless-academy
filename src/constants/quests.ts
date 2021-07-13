@@ -30,6 +30,7 @@ const QUIZ_TEST = {
   answer_2: 'Answer 2',
   answer_3: 'Answer 3',
   answer_4: 'Answer 4',
+  right_answer: 2,
 }
 
 const QUESTS: QuestType[] = [
@@ -54,7 +55,7 @@ const QUESTS: QuestType[] = [
       {
         type: 'QUIZ',
         title: 'First quiz',
-        quiz: QUIZ_TEST,
+        quiz: { ...QUIZ_TEST, id: 'wallet-basics-1' },
       },
       {
         type: 'LEARN',
@@ -64,7 +65,7 @@ const QUESTS: QuestType[] = [
       {
         type: 'QUIZ',
         title: 'Second quiz',
-        quiz: QUIZ_TEST,
+        quiz: { ...QUIZ_TEST, id: 'wallet-basics-2' },
       },
       {
         type: 'QUEST',
@@ -75,7 +76,7 @@ const QUESTS: QuestType[] = [
   },
   {
     name: 'Borrow with Aave',
-    slug: 'borrow-with-ave',
+    slug: 'borrow-with-aave',
     description: 'Borrow with Aave description',
     duration: 30,
     difficulty: '🛠 expert',
@@ -94,7 +95,7 @@ const QUESTS: QuestType[] = [
       {
         type: 'QUIZ',
         title: 'First quiz',
-        quiz: QUIZ_TEST,
+        quiz: { ...QUIZ_TEST, id: 'borrow-with-aave-1' },
       },
       {
         type: 'QUEST',
