@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Box, Button, Progress, HStack } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown'
+import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 
 import QuestType from 'entities/quest'
@@ -10,12 +11,31 @@ const Slide = styled(Box)`
 `
 
 const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
+  const buttonLeftRef = useRef(null)
+  const buttonRightRef = useRef(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const numberOfSlides = quest.slides.length
   const slide = quest.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
+
+  const goToPrevSlide = () => {
+    if (!isFirstSlide) setCurrentSlide(currentSlide - 1)
+  }
+
+  const goToNextSlide = () => {
+    if (!isLastSlide) setCurrentSlide(currentSlide + 1)
+  }
+
+  // TODO: add modal with all the shortcuts
+  useHotkeys('?,shift+/', () => alert('TODO: add modal with all the shortcuts'))
+  useHotkeys('left', () => {
+    if (buttonLeftRef && buttonLeftRef.current) buttonLeftRef.current.click()
+  })
+  useHotkeys('right', () => {
+    if (buttonRightRef && buttonRightRef.current) buttonRightRef.current.click()
+  })
 
   return (
     <>
@@ -44,19 +64,15 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           <Button>🏴</Button>
         </HStack>
         <HStack>
+          {!isFirstSlide && (
+            <Button ref={buttonLeftRef} onClick={goToPrevSlide}>
+              ⬅️
+            </Button>
+          )}
           <Button
-            disabled={isFirstSlide}
-            onClick={() => {
-              !isFirstSlide && setCurrentSlide(currentSlide - 1)
-            }}
-          >
-            ⬅️
-          </Button>
-          <Button
+            ref={buttonRightRef}
             disabled={isLastSlide}
-            onClick={() => {
-              !isLastSlide && setCurrentSlide(currentSlide + 1)
-            }}
+            onClick={goToNextSlide}
           >
             ➡️
           </Button>
