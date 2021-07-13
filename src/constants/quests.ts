@@ -17,12 +17,7 @@ const MARKDOWN_CONTENT = `# header 1
 ## header 2.1
 
 - learning 5
-- learning 6
-
-## header 2.2
-
-- learning 7
-- learning 8`
+- learning 6`
 
 const QUIZ_TEST = {
   question: 'Quiz question',

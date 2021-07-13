@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react'
 import {
   Box,
+  Text,
   ButtonGroup,
   Button,
   Progress,
   HStack,
+  SimpleGrid,
   Kbd,
 } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown'
@@ -15,6 +17,28 @@ import QuestType from 'entities/quest'
 
 const Slide = styled(Box)`
   border-radius: 0.5rem;
+  h1 {
+    margin-top: 1em;
+    font-size: var(--chakra-fontSizes-2xl);
+  }
+  h2 {
+    font-size: var(--chakra-fontSizes-xl);
+    margin: 1em;
+  }
+  ul {
+    margin-left: 2em;
+  }
+`
+
+const Answers = styled(Box)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  button {
+    margin: 3em;
+    padding: 2em;
+  }
   span {
     color: black;
     margin-right: 0.5em;
@@ -63,22 +87,27 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   // TODO: add modal with all the shortcuts
   useHotkeys('?,shift+/', () => alert('TODO: add modal with all the shortcuts'))
   useHotkeys('left', () => {
-    if (buttonLeftRef && buttonLeftRef.current) buttonLeftRef.current.click()
+    buttonLeftRef?.current?.click()
   })
   useHotkeys('right', () => {
-    if (buttonRightRef && buttonRightRef.current) buttonRightRef.current.click()
+    buttonRightRef?.current?.click()
   })
   useHotkeys('1', () => {
-    if (answer1Ref && answer1Ref.current) answer1Ref.current.click()
+    answer1Ref?.current?.click()
   })
   useHotkeys('2', () => {
-    if (answer2Ref && answer2Ref.current) answer2Ref.current.click()
+    answer2Ref?.current?.click()
   })
   useHotkeys('3', () => {
-    if (answer3Ref && answer3Ref.current) answer3Ref.current.click()
+    answer3Ref?.current?.click()
   })
   useHotkeys('4', () => {
-    if (answer4Ref && answer4Ref.current) answer4Ref.current.click()
+    answer4Ref?.current?.click()
+  })
+  // TEMP
+  useHotkeys('r', () => {
+    localStorage.clear()
+    setCurrentSlide(0)
   })
 
   const localStorageAnswer = slide.quiz
@@ -92,62 +121,75 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
 
   return (
     <>
-      <Progress value={((currentSlide + 1) / numberOfSlides) * 100} />
-      <h1>{slide.title}</h1>
-      <Slide minH="600px" bgColor="white" p={8}>
+      <Progress value={((currentSlide + 1) / numberOfSlides) * 100} mb="4" />
+      <Slide minH="620px" bgColor="white" p={8}>
         {slide.type === 'LEARN' && (
-          <ReactMarkdown>{slide.content}</ReactMarkdown>
+          <>
+            <Text fontSize="3xl">📚 {slide.title}</Text>
+            <ReactMarkdown>{slide.content}</ReactMarkdown>
+          </>
         )}
         {slide.type === 'QUIZ' && (
           <>
-            <h2>{slide.quiz.question}</h2>
-            <HStack flex="auto">
-              <ButtonGroup colorScheme={answerIsCorrect ? 'green' : 'red'}>
-                <Button
-                  ref={answer1Ref}
-                  onClick={() => selectAnswer(1)}
-                  isActive={(selectedAnswer || localStorageAnswer) === '1'}
-                >
-                  <span>
-                    <Kbd>1</Kbd>
-                  </span>
-                  {slide.quiz.answer_1}
-                </Button>
-                <Button
-                  ref={answer2Ref}
-                  onClick={() => selectAnswer(2)}
-                  isActive={(selectedAnswer || localStorageAnswer) === '2'}
-                >
-                  <span>
-                    <Kbd>2</Kbd>
-                  </span>
-                  {slide.quiz.answer_2}
-                </Button>
-                <Button
-                  ref={answer3Ref}
-                  onClick={() => selectAnswer(3)}
-                  isActive={(selectedAnswer || localStorageAnswer) === '3'}
-                >
-                  <span>
-                    <Kbd>3</Kbd>
-                  </span>
-                  {slide.quiz.answer_3}
-                </Button>
-                <Button
-                  ref={answer4Ref}
-                  onClick={() => selectAnswer(4)}
-                  isActive={(selectedAnswer || localStorageAnswer) === '4'}
-                >
-                  <span>
-                    <Kbd>4</Kbd>
-                  </span>
-                  {slide.quiz.answer_4}
-                </Button>
+            <Text fontSize="3xl">❓ {slide.quiz.question}</Text>
+            <Answers>
+              <ButtonGroup
+                colorScheme={answerIsCorrect ? 'green' : 'red'}
+                size="lg"
+              >
+                <SimpleGrid columns={[null, null, 2]} spacing="40px">
+                  <Button
+                    ref={answer1Ref}
+                    onClick={() => selectAnswer(1)}
+                    isActive={(selectedAnswer || localStorageAnswer) === '1'}
+                  >
+                    <span>
+                      <Kbd>1</Kbd>
+                    </span>
+                    {slide.quiz.answer_1}
+                  </Button>
+                  <Button
+                    ref={answer2Ref}
+                    onClick={() => selectAnswer(2)}
+                    isActive={(selectedAnswer || localStorageAnswer) === '2'}
+                  >
+                    <span>
+                      <Kbd>2</Kbd>
+                    </span>
+                    {slide.quiz.answer_2}
+                  </Button>
+                  <Button
+                    ref={answer3Ref}
+                    onClick={() => selectAnswer(3)}
+                    isActive={(selectedAnswer || localStorageAnswer) === '3'}
+                  >
+                    <span>
+                      <Kbd>3</Kbd>
+                    </span>
+                    {slide.quiz.answer_3}
+                  </Button>
+                  <Button
+                    ref={answer4Ref}
+                    onClick={() => selectAnswer(4)}
+                    isActive={(selectedAnswer || localStorageAnswer) === '4'}
+                  >
+                    <span>
+                      <Kbd>4</Kbd>
+                    </span>
+                    {slide.quiz.answer_4}
+                  </Button>
+                </SimpleGrid>
               </ButtonGroup>
-            </HStack>
+            </Answers>
           </>
         )}
-        {slide.type === 'LEARN' && slide.component}
+        {slide.type === 'QUEST' && (
+          <>
+            <Text fontSize="3xl">⚡️ {slide.title}</Text>
+            <ReactMarkdown>{slide.content}</ReactMarkdown>
+            {slide.component}
+          </>
+        )}
       </Slide>
       <Box display="flex" p={4}>
         <HStack flex="auto">
@@ -161,7 +203,12 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
               setCurrentSlide(0)
             }}
           >
-            ⚠️ TEMP: reset state
+            <span>
+              <Kbd color="black" mr="0.5em">
+                r
+              </Kbd>
+            </span>
+            ⚠️ reset
           </Button>
           {!isFirstSlide && (
             <Button ref={buttonLeftRef} onClick={goToPrevSlide}>
