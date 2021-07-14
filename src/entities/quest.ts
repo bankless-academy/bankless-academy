@@ -16,7 +16,7 @@ export default interface QuestType {
       answer_2: string
       answer_3: string
       answer_4: string
-      right_answer: number
+      right_answer_number: number
     }
     component?: string
   }[]

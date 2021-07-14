@@ -57,44 +57,50 @@ const QuestCards: React.FC = () => {
 
   return (
     <>
-      {QUESTS.map((quest, index) => (
-        <QuestCard
-          bg={colorMode === 'dark' ? 'whiteAlpha.400' : 'blackAlpha.400'}
-          cursor="pointer"
-          key={`quest-${index}`}
-          onClick={() => {
-            setSelectedQuest(index)
-            onOpen()
-          }}
-        >
-          <Center minH="320px" position="relative">
-            <CircularProgress
-              value={30}
-              size="300px"
-              thickness="2px"
-              trackColor="#edebe961"
-              color="red"
-            />
-            <PoapImage src={quest.poap_image} />
-            <Duration colorScheme="gray" borderRadius="full" size="xs">
-              🕒 {quest.duration} min
-            </Duration>
-            <Difficulty colorScheme="gray" borderRadius="full" size="xs">
-              {quest.difficulty}
-            </Difficulty>
-            <Claimed colorScheme="gray" borderRadius="full" size="xs">
-              🎖 12 Claimed
-            </Claimed>
-          </Center>
-          <Divider />
-          <Stack minH="100px" p="4">
-            <Text fontSize="2xl" fontWeight="bold">
-              {quest.name}
-            </Text>
-            <Text fontSize="xl">{quest.description}</Text>
-          </Stack>
-        </QuestCard>
-      ))}
+      {QUESTS.map((quest, index) => {
+        const questPourcentage =
+          (parseInt(localStorage.getItem(quest.slug) || '0') /
+            quest.slides.length) *
+          100
+        return (
+          <QuestCard
+            bg={colorMode === 'dark' ? 'whiteAlpha.400' : 'blackAlpha.400'}
+            cursor="pointer"
+            key={`quest-${index}`}
+            onClick={() => {
+              setSelectedQuest(index)
+              onOpen()
+            }}
+          >
+            <Center minH="320px" position="relative">
+              <CircularProgress
+                value={questPourcentage}
+                size="300px"
+                thickness="2px"
+                trackColor="#edebe961"
+                color="red"
+              />
+              <PoapImage src={quest.poap_image} />
+              <Duration colorScheme="gray" borderRadius="full" size="xs">
+                🕒 {quest.duration} min
+              </Duration>
+              <Difficulty colorScheme="gray" borderRadius="full" size="xs">
+                {quest.difficulty}
+              </Difficulty>
+              <Claimed colorScheme="gray" borderRadius="full" size="xs">
+                🎖 12 Claimed
+              </Claimed>
+            </Center>
+            <Divider />
+            <Stack minH="100px" p="4">
+              <Text fontSize="2xl" fontWeight="bold">
+                {quest.name}
+              </Text>
+              <Text fontSize="xl">{quest.description}</Text>
+            </Stack>
+          </QuestCard>
+        )
+      })}
       <Modal
         finalFocusRef={modalRef}
         isOpen={isOpen}

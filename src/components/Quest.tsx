@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import {
   Box,
   Text,
@@ -52,31 +52,37 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const answer2Ref = useRef(null)
   const answer3Ref = useRef(null)
   const answer4Ref = useRef(null)
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [selectedAnswer, setSelectedAnswer] = useState(null)
+  const [currentSlide, setCurrentSlide] = useState(
+    parseInt(localStorage.getItem(quest.slug) || '0')
+  )
+  const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
 
   const numberOfSlides = quest.slides.length
   const slide = quest.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
 
+  useEffect((): void => {
+    localStorage.setItem(quest.slug, currentSlide.toString())
+  }, [currentSlide])
+
   const goToPrevSlide = () => {
-    setSelectedAnswer(null)
+    setSelectedAnswerNumber(null)
     if (!isFirstSlide) setCurrentSlide(currentSlide - 1)
   }
 
   const goToNextSlide = () => {
-    setSelectedAnswer(null)
+    setSelectedAnswerNumber(null)
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) setCurrentSlide(currentSlide + 1)
   }
 
-  const selectAnswer = (answerNumber) => {
-    if (!answerIsCorrect) setSelectedAnswer('' + answerNumber)
-    if (slide.quiz.right_answer === answerNumber) {
+  const selectAnswer = (answerNumber: number) => {
+    if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
+    if (slide.quiz.right_answer_number === answerNumber) {
       // correct answer
-      localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber)
+      localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
     } else {
       // wrong answer
       // TODO: add error UI
@@ -110,18 +116,18 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     setCurrentSlide(0)
   })
 
-  const localStorageAnswer = slide.quiz
-    ? localStorage.getItem(`quiz-${slide.quiz.id}`)
+  const localStorageAnswer: number = slide.quiz
+    ? parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`))
     : null
 
   const answerIsCorrect =
     slide.quiz &&
     localStorage.getItem(`quiz-${slide.quiz.id}`) ===
-      '' + slide.quiz.right_answer
+      '' + slide.quiz.right_answer_number
 
   return (
     <>
-      <Progress value={((currentSlide + 1) / numberOfSlides) * 100} mb="4" />
+      <Progress value={(currentSlide / numberOfSlides) * 100} mb="4" />
       <Slide minH="620px" bgColor="white" p={8}>
         {slide.type === 'LEARN' && (
           <>
@@ -141,7 +147,9 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                   <Button
                     ref={answer1Ref}
                     onClick={() => selectAnswer(1)}
-                    isActive={(selectedAnswer || localStorageAnswer) === '1'}
+                    isActive={
+                      (selectedAnswerNumber || localStorageAnswer) === 1
+                    }
                   >
                     <span>
                       <Kbd>1</Kbd>
@@ -151,7 +159,9 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                   <Button
                     ref={answer2Ref}
                     onClick={() => selectAnswer(2)}
-                    isActive={(selectedAnswer || localStorageAnswer) === '2'}
+                    isActive={
+                      (selectedAnswerNumber || localStorageAnswer) === 2
+                    }
                   >
                     <span>
                       <Kbd>2</Kbd>
@@ -161,7 +171,9 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                   <Button
                     ref={answer3Ref}
                     onClick={() => selectAnswer(3)}
-                    isActive={(selectedAnswer || localStorageAnswer) === '3'}
+                    isActive={
+                      (selectedAnswerNumber || localStorageAnswer) === 3
+                    }
                   >
                     <span>
                       <Kbd>3</Kbd>
@@ -171,7 +183,9 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                   <Button
                     ref={answer4Ref}
                     onClick={() => selectAnswer(4)}
-                    isActive={(selectedAnswer || localStorageAnswer) === '4'}
+                    isActive={
+                      (selectedAnswerNumber || localStorageAnswer) === 4
+                    }
                   >
                     <span>
                       <Kbd>4</Kbd>

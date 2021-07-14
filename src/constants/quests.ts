@@ -25,7 +25,7 @@ const QUIZ_TEST = {
   answer_2: 'Answer 2',
   answer_3: 'Answer 3',
   answer_4: 'Answer 4',
-  right_answer: 2,
+  right_answer_number: 2,
 }
 
 const QUESTS: QuestType[] = [
