@@ -4,7 +4,6 @@ import {
   Text,
   ButtonGroup,
   Button,
-  Progress,
   HStack,
   SimpleGrid,
   Kbd,
@@ -14,6 +13,7 @@ import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 
 import QuestType from 'entities/quest'
+import ProgressSteps from 'components/ProgressSteps'
 
 const Slide = styled(Box)`
   border-radius: 0.5rem;
@@ -127,8 +127,8 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
 
   return (
     <>
-      <Progress value={(currentSlide / numberOfSlides) * 100} mb="4" />
-      <Slide minH="620px" bgColor="white" p={8}>
+      <ProgressSteps step={currentSlide} total={numberOfSlides} />
+      <Slide minH="620px" bgColor="white" p={8} mt={4}>
         {slide.type === 'LEARN' && (
           <>
             <Text fontSize="3xl">📚 {slide.title}</Text>

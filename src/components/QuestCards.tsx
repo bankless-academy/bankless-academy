@@ -3,7 +3,6 @@ import Link from 'next/link'
 import {
   useColorMode,
   Box,
-  CircularProgress,
   Center,
   Divider,
   Text,
@@ -21,6 +20,7 @@ import {
 import styled from '@emotion/styled'
 
 import QUESTS from 'constants/quests'
+import CircularProgressSteps from 'components/CircularProgressSteps'
 
 const QuestCard = styled(Box)`
   border-radius: 0.5rem;
@@ -58,10 +58,9 @@ const QuestCards: React.FC = () => {
   return (
     <>
       {QUESTS.map((quest, index) => {
-        const questPourcentage =
-          (parseInt(localStorage.getItem(quest.slug) || '0') /
-            quest.slides.length) *
-          100
+        // quest not started yet: -1
+        const currentSlide = parseInt(localStorage.getItem(quest.slug) || '-1')
+        const numberOfSlides = quest.slides.length
         return (
           <QuestCard
             bg={colorMode === 'dark' ? 'whiteAlpha.400' : 'blackAlpha.400'}
@@ -73,12 +72,9 @@ const QuestCards: React.FC = () => {
             }}
           >
             <Center minH="320px" position="relative">
-              <CircularProgress
-                value={questPourcentage}
-                size="300px"
-                thickness="2px"
-                trackColor="#edebe961"
-                color="red"
+              <CircularProgressSteps
+                step={currentSlide}
+                total={numberOfSlides}
               />
               <PoapImage src={quest.poap_image} />
               <Duration colorScheme="gray" borderRadius="full" size="xs">
