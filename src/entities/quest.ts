@@ -1,4 +1,6 @@
-export default interface QuestType {
+export type QuestComponentType = 'WalletBasics' | 'BorrowWithAave'
+
+export interface QuestType {
   name: string
   slug: string
   description: string
@@ -6,7 +8,7 @@ export default interface QuestType {
   difficulty: string
   poap_image: string
   slides: {
-    type: 'LEARN' | 'QUIZ' | 'QUEST'
+    type: 'LEARN' | 'QUIZ' | 'QUEST' | 'POAP'
     title: string
     content?: string
     quiz?: {
@@ -18,6 +20,6 @@ export default interface QuestType {
       answer_4: string
       right_answer_number: number
     }
-    component?: string
+    component?: QuestComponentType
   }[]
 }

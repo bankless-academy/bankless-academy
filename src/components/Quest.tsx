@@ -2,9 +2,11 @@ import React, { useRef, useState, useEffect } from 'react'
 import {
   Box,
   Text,
+  Image,
   ButtonGroup,
   Button,
   HStack,
+  VStack,
   SimpleGrid,
   Kbd,
 } from '@chakra-ui/react'
@@ -12,8 +14,9 @@ import ReactMarkdown from 'react-markdown'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 
-import QuestType from 'entities/quest'
+import { QuestType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
+import QuestComponent from 'components/Quest/QuestComponent'
 
 const Slide = styled(Box)`
   border-radius: 0.5rem;
@@ -201,7 +204,18 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           <>
             <Text fontSize="3xl">⚡️ {slide.title}</Text>
             <ReactMarkdown>{slide.content}</ReactMarkdown>
-            {slide.component}
+            {slide.component && <QuestComponent component={slide.component} />}
+          </>
+        )}
+        {slide.type === 'POAP' && (
+          <>
+            <Text fontSize="3xl">🎖 {slide.title}</Text>
+            <VStack flex="auto">
+              <Image src={quest.poap_image} width="250px" mt="100px" />
+              <Button variant="outline" onClick={() => alert('TODO')}>
+                Claim POAP
+              </Button>
+            </VStack>
           </>
         )}
       </Slide>

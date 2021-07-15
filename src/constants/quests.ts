@@ -1,4 +1,4 @@
-import QuestType from 'entities/quest'
+import { QuestType } from 'entities/quest'
 
 // TEMP
 const MARKDOWN_CONTENT = `# header 1
@@ -50,6 +50,7 @@ const QUESTS: QuestType[] = [
       {
         type: 'QUIZ',
         title: 'First quiz',
+        // TODO: create this ID dynamically
         quiz: { ...QUIZ_TEST, id: 'wallet-basics-1' },
       },
       {
@@ -64,8 +65,12 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUEST',
-        title: 'Quest title',
-        component: 'quest1',
+        title: 'Wallet Basics Quest title',
+        component: 'WalletBasics',
+      },
+      {
+        type: 'POAP',
+        title: 'Collect your POAP',
       },
     ],
   },
@@ -94,8 +99,12 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUEST',
-        title: 'Quest title',
-        component: 'quest1',
+        title: 'Borrow with Aave Quest title',
+        component: 'BorrowWithAave',
+      },
+      {
+        type: 'POAP',
+        title: 'Collect your POAP',
       },
     ],
   },

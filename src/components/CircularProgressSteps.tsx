@@ -1,9 +1,5 @@
 import { CircularProgress, Box } from '@chakra-ui/react'
 
-// const Contaimer = styled.div`
-//   position: absolute;
-// `
-
 const CircularProgressSteps = ({
   step,
   total,
