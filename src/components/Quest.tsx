@@ -50,7 +50,7 @@ const Answers = styled(Box)`
 `
 
 // TODO: move to utils
-const yt2Iframe = (html) =>
+const youtubeLink2Iframe = (html) =>
   html.replace(
     /(?:https:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?.*v=)?(\w+)/g,
     '<iframe width="640" height="360" src="https://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>'
@@ -143,9 +143,11 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         {slide.type === 'LEARN' && (
           <>
             <Text fontSize="3xl">📚 {slide.title}</Text>
-            <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-              {yt2Iframe(slide.content)}
-            </ReactMarkdown>
+            {slide.content && (
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {youtubeLink2Iframe(slide.content)}
+              </ReactMarkdown>
+            )}
           </>
         )}
         {slide.type === 'QUIZ' && (
@@ -213,9 +215,11 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         {slide.type === 'QUEST' && (
           <>
             <Text fontSize="3xl">⚡️ {slide.title}</Text>
-            <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-              {yt2Iframe(slide.content)}
-            </ReactMarkdown>
+            {slide.content && (
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {youtubeLink2Iframe(slide.content)}
+              </ReactMarkdown>
+            )}
             {slide.component && <QuestComponent component={slide.component} />}
           </>
         )}
@@ -248,7 +252,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 r
               </Kbd>
             </span>
-            ⚠️ reset
+            reset
           </Button>
           {!isFirstSlide && (
             <Button ref={buttonLeftRef} onClick={goToPrevSlide}>
