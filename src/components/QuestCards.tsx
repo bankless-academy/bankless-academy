@@ -52,7 +52,7 @@ const Claimed = styled(Button)`
 const QuestCards: React.FC = () => {
   const { colorMode } = useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const modalRef = useRef(null)
+  const startNowRef = useRef(null)
   const [selectedQuest, setSelectedQuest] = useState(null)
 
   return (
@@ -98,7 +98,7 @@ const QuestCards: React.FC = () => {
         )
       })}
       <Modal
-        finalFocusRef={modalRef}
+        initialFocusRef={startNowRef}
         isOpen={isOpen}
         onClose={onClose}
         isCentered
@@ -116,7 +116,7 @@ const QuestCards: React.FC = () => {
                 wallet connect your wallet to Onboard
               </Text>
               <Link href={`/quest/${QUESTS[selectedQuest].slug}`}>
-                <Button>Start now</Button>
+                <Button ref={startNowRef}>Start now</Button>
               </Link>
             </ModalBody>
           </ModalContent>

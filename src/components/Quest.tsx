@@ -13,6 +13,7 @@ import {
 import ReactMarkdown from 'react-markdown'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
+import rehypeRaw from 'rehype-raw'
 
 import { QuestType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
@@ -47,6 +48,13 @@ const Answers = styled(Box)`
     margin-right: 0.5em;
   }
 `
+
+// TODO: move to utils
+const yt2Iframe = (html) =>
+  html.replace(
+    /(?:https:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?.*v=)?(\w+)/g,
+    '<iframe width="640" height="360" src="https://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>'
+  )
 
 const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const buttonLeftRef = useRef(null)
@@ -135,7 +143,9 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         {slide.type === 'LEARN' && (
           <>
             <Text fontSize="3xl">📚 {slide.title}</Text>
-            <ReactMarkdown>{slide.content}</ReactMarkdown>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+              {yt2Iframe(slide.content)}
+            </ReactMarkdown>
           </>
         )}
         {slide.type === 'QUIZ' && (
@@ -203,7 +213,9 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         {slide.type === 'QUEST' && (
           <>
             <Text fontSize="3xl">⚡️ {slide.title}</Text>
-            <ReactMarkdown>{slide.content}</ReactMarkdown>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+              {yt2Iframe(slide.content)}
+            </ReactMarkdown>
             {slide.component && <QuestComponent component={slide.component} />}
           </>
         )}

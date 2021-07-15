@@ -19,6 +19,14 @@ const MARKDOWN_CONTENT = `# header 1
 - learning 5
 - learning 6`
 
+const MARKDOWN_VIDEO = `# EIP-1559 | Everything You Need to Know
+
+https://www.youtube.com/watch?v=YZeXrChJ5n8
+
+- learning 1
+- learning 2
+`
+
 const QUIZ_TEST = {
   question: 'Quiz question',
   answer_1: 'Answer 1',
@@ -45,7 +53,7 @@ const QUESTS: QuestType[] = [
       {
         type: 'LEARN',
         title: 'Second slide',
-        content: MARKDOWN_CONTENT,
+        content: MARKDOWN_VIDEO,
       },
       {
         type: 'QUIZ',
@@ -90,7 +98,7 @@ const QUESTS: QuestType[] = [
       {
         type: 'LEARN',
         title: 'Second slide',
-        content: MARKDOWN_CONTENT,
+        content: MARKDOWN_VIDEO,
       },
       {
         type: 'QUIZ',
