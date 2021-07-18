@@ -3,7 +3,8 @@ import { useRouter } from 'next/router'
 import { Container } from '@chakra-ui/react'
 
 import Head, { PageMetaProps } from 'components/Head'
-import { QUESTS } from 'constants/'
+import Quest from 'components/Quest'
+import QUESTS from 'constants/quests'
 
 const pageMeta = {
   title: 'Quest',
@@ -35,7 +36,7 @@ const Page = (): JSX.Element => {
   return (
     <Container maxW="container.lg">
       <Head {...pageMeta} />
-      <h1>Quest page: {asPath}</h1>
+      <Quest quest={currentQuest} />
     </Container>
   )
 }
