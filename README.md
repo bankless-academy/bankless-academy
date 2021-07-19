@@ -1,6 +1,23 @@
 # Onboard
 
-Bootstrapped with [NextJS](https://nextjs.org/), [Web3React](https://github.com/NoahZinsmeister/web3-react), [Web3 Modal](https://www.npmjs.com/package/web3modal), and [Ethers](https://www.npmjs.com/package/ethers) and configured with:
+## Project Specifications
+
+- [Notion](https://www.notion.so/bankless/ONBOARD-c431218052c84cf598a6408aa464287b)
+- [Planning / Tasks](https://www.notion.so/bankless/Onboard-planning-open-tasks-availability-405f670d58ee4aef8f10f8c8b46a329d)
+- [Initial Figma wireframe](https://www.figma.com/file/ryapBbsKrI0Q77bKrMsNrQ/Onboard-MVP1?node-id=8%3A461) / [[WIP] New Figma wireframe](https://www.figma.com/file/FebGvlqhBqT5QO2iQ9mTUJ/Bankless-Onboarding?node-id=3%3A2)
+
+## How to get started
+
+- Get familiar with the project
+- Check [open issues](https://github.com/BanklessDAO/onboard/issues) and assign yourself
+- Create & submit a PR
+- Assign @wpmonty + @didierkrux as reviewers
+
+## Tech Stack
+
+
+Bootstrapped with <a href="https://nextjs.org/docs"><img alt="Next.js" src="https://img.shields.io/badge/-Next.js-000000?logo=nextdotjs&logoColor=white"></a>, 
+<a href="https://chakra-ui.com/docs/getting-started"><img alt="Chakra UI" src="https://img.shields.io/badge/-Chakra UI-319795?logo=chakraui&logoColor=white"></a>, [Web3React](https://github.com/NoahZinsmeister/web3-react), [Web3 Modal](https://www.npmjs.com/package/web3modal), and [Ethers](https://www.npmjs.com/package/ethers) and configured with:
 
 - [Typescript](https://www.typescriptlang.org/)
 - Linting with [ESLint](https://eslint.org/)
@@ -8,11 +25,11 @@ Bootstrapped with [NextJS](https://nextjs.org/), [Web3React](https://github.com/
 - Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
 - Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
 
-# Local Development
+## Local Development
 
 `yarn dev`
 
-# Notes
+## Notes
 
 Before committing yarn.lock, verify that the entry for `ethereumjs-abi` reads
 
