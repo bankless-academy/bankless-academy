@@ -10,12 +10,20 @@
 
 - Get familiar with the project
 - Check [open issues](https://github.com/BanklessDAO/onboard/issues) and assign yourself
-- Create & submit a PR
+- Create and submit a PR
 - Assign @wpmonty + @didierkrux as reviewers
 
 ## Tech Stack
 
-Bootstrapped with [Next.js](https://nextjs.org/docs), [Chakra UI](https://chakra-ui.com/docs/getting-started), [Web3React](https://github.com/NoahZinsmeister/web3-react), [Web3 Modal](https://www.npmjs.com/package/web3modal), and [Ethers](https://www.npmjs.com/package/ethers) and configured with:
+### Bootstrapped with
+
+- [Next.js](https://nextjs.org/docs)
+- [Chakra UI](https://chakra-ui.com/docs/getting-started) (includes [@emotion/styled](https://emotion.sh/docs/styled), which works like [Styled Components](https://styled-components.com/docs/basics))
+- [Web3React](https://github.com/NoahZinsmeister/web3-react)
+- [Web3 Modal](https://www.npmjs.com/package/web3modal)
+- [Ethers](https://www.npmjs.com/package/ethers)
+
+### Configured with
 
 - [Typescript](https://www.typescriptlang.org/)
 - Linting with [ESLint](https://eslint.org/)
