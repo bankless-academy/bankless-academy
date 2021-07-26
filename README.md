@@ -15,9 +15,7 @@
 
 ## Tech Stack
 
-
-Bootstrapped with <a href="https://nextjs.org/docs"><img alt="Next.js" src="https://img.shields.io/badge/-Next.js-000000?logo=nextdotjs&logoColor=white"></a>, 
-<a href="https://chakra-ui.com/docs/getting-started"><img alt="Chakra UI" src="https://img.shields.io/badge/-Chakra UI-319795?logo=chakraui&logoColor=white"></a>, [Web3React](https://github.com/NoahZinsmeister/web3-react), [Web3 Modal](https://www.npmjs.com/package/web3modal), and [Ethers](https://www.npmjs.com/package/ethers) and configured with:
+Bootstrapped with [Next.js](https://nextjs.org/docs), [Chakra UI](https://chakra-ui.com/docs/getting-started), [Web3React](https://github.com/NoahZinsmeister/web3-react), [Web3 Modal](https://www.npmjs.com/package/web3modal), and [Ethers](https://www.npmjs.com/package/ethers) and configured with:
 
 - [Typescript](https://www.typescriptlang.org/)
 - Linting with [ESLint](https://eslint.org/)
