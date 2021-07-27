@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import {
   useColorMode,
@@ -18,6 +18,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import axios from 'axios'
 
 import QUESTS from 'constants/quests'
 import CircularProgressSteps from 'components/CircularProgressSteps'
@@ -54,6 +55,29 @@ const QuestCards: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const startNowRef = useRef(null)
   const [selectedQuest, setSelectedQuest] = useState(null)
+  const [numberOfPoapClaimed, setNumberOfPoapClaimed] = useState([])
+
+  useEffect((): void => {
+    const promiseArray = QUESTS.map((q) => {
+      return axios.post(
+        'https://api.thegraph.com/subgraphs/name/poap-xyz/poap-xdai',
+        {
+          query: `{event(id: ${q.poapId}){ transferCount }}`,
+        }
+      )
+    })
+    axios
+      .all(promiseArray)
+      .then((results) => {
+        setNumberOfPoapClaimed(
+          results.map((r) => r.data.data.event?.transferCount || 0)
+        )
+      })
+      .catch(function (error) {
+        // eslint-disable-next-line no-console
+        console.log(error)
+      })
+  }, [])
 
   return (
     <>
@@ -84,7 +108,7 @@ const QuestCards: React.FC = () => {
                 {quest.difficulty}
               </Difficulty>
               <Claimed colorScheme="gray" borderRadius="full" size="xs">
-                🎖 12 Claimed
+                🎖 {numberOfPoapClaimed[index]} Claimed
               </Claimed>
             </Center>
             <Divider />
