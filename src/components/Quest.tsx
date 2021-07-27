@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useRef, useState, useEffect } from 'react'
 import {
   Box,
@@ -10,6 +11,7 @@ import {
   SimpleGrid,
   Kbd,
 } from '@chakra-ui/react'
+import axios from 'axios'
 import ReactMarkdown from 'react-markdown'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
@@ -67,6 +69,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     parseInt(localStorage.getItem(quest.slug) || '0')
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
+  const [isPOAPClaimed, setIsPOAPClaimed] = useState(true)
 
   const numberOfSlides = quest.slides.length
   const slide = quest.slides[currentSlide]
@@ -75,6 +78,18 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
 
   useEffect((): void => {
     localStorage.setItem(quest.slug, currentSlide.toString())
+    if (slide.type === 'POAP') {
+      // TODO: use real address
+      fetch(
+        'https://api.poap.xyz/actions/scan/0xBD19a3F0A9CaCE18513A1e2863d648D13975CB30'
+      )
+        .then((response) => response.json())
+        .then((poaps: { event: { id: number } }[]) =>
+          setIsPOAPClaimed(
+            poaps.filter((p) => p.event.id === quest.poapId).length === 1
+          )
+        )
+    }
   }, [currentSlide])
 
   const goToPrevSlide = () => {
@@ -98,6 +113,18 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       // wrong answer
       // TODO: add error UI
     }
+  }
+
+  const claimPoap = () => {
+    axios
+      // TODO: use real address
+      .get('/api/claim-poap?address=0xbd19a3f0a9cace18513a1e2863d648d13975cb32')
+      .then(function (res) {
+        console.log(res.data)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
   }
 
   // shortcuts
@@ -228,9 +255,11 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
             <Text fontSize="3xl">🎖 {slide.title}</Text>
             <VStack flex="auto">
               <Image src={quest.poap_image} width="250px" mt="100px" />
-              <Button variant="outline" onClick={() => alert('TODO')}>
-                Claim POAP
-              </Button>
+              {!isPOAPClaimed && (
+                <Button variant="outline" onClick={claimPoap}>
+                  Claim POAP
+                </Button>
+              )}
             </VStack>
           </>
         )}

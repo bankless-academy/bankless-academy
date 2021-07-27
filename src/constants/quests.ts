@@ -40,6 +40,7 @@ const QUESTS: QuestType[] = [
   {
     name: 'Wallet Basics',
     slug: 'wallet-basics',
+    poapId: 4652,
     description: 'Wallet Basics description',
     duration: 10,
     difficulty: '🙂 easy',
@@ -85,6 +86,7 @@ const QUESTS: QuestType[] = [
   {
     name: 'Borrow with Aave',
     slug: 'borrow-with-aave',
+    poapId: 4653,
     description: 'Borrow with Aave description',
     duration: 30,
     difficulty: '🛠 expert',
