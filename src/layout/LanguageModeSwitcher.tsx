@@ -5,7 +5,13 @@ type LanguageModeSwitcherProps = Omit<IconButtonProps, 'aria-label'>
 
 const LanguageModeSwitcher: React.FC<LanguageModeSwitcherProps> = (props) => {
   return (
-    <Button p="0" variant="outline" aria-label={`Switch language`} {...props}>
+    <Button
+      p="0"
+      variant="outline"
+      aria-label={`Switch language`}
+      onClick={() => alert('TODO')}
+      {...props}
+    >
       🇺🇸
     </Button>
   )

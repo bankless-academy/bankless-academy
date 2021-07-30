@@ -31,6 +31,11 @@
 - Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
 - Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
 
+### Tools
+
+- [POAP Subgraph](https://thegraph.com/legacy-explorer/subgraph/poap-xyz/poap-xdai) to get the number of POAP claimed
+- [Moralis](https://docs.moralis.io/transactions-and-balances/realtime-transactions) to track onchain transactions
+
 ## Local Development
 
 `yarn dev`

@@ -3,6 +3,7 @@ export type QuestComponentType = 'WalletBasics' | 'BorrowWithAave'
 export interface QuestType {
   name: string
   slug: string
+  poapEventId: number
   description: string
   duration: number
   difficulty: string

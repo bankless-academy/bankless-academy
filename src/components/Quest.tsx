@@ -10,15 +10,19 @@ import {
   SimpleGrid,
   Kbd,
 } from '@chakra-ui/react'
+import axios from 'axios'
 import ReactMarkdown from 'react-markdown'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import rehypeRaw from 'rehype-raw'
+import { useRouter } from 'next/router'
 
 import { QuestType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
 import QuestComponent from 'components/Quest/QuestComponent'
+import { useWalletWeb3React } from 'hooks'
 
+// TODO: improve styling
 const Slide = styled(Box)`
   border-radius: 0.5rem;
   h1 {
@@ -67,11 +71,23 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     parseInt(localStorage.getItem(quest.slug) || '0')
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
+  const [isClaimingPoap, setIsClaimingPoap] = useState(false)
+  const [isPoapClaimed, setIsPoapClaimed] = useState(
+    !!localStorage.getItem(`poap-${quest.slug}`)
+  )
 
+  const router = useRouter()
   const numberOfSlides = quest.slides.length
   const slide = quest.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
+
+  const walletWeb3ReactContext = useWalletWeb3React()
+  const walletAddress =
+    walletWeb3ReactContext.account ||
+    // TODO: remove later
+    // you can force a specific wallet address here if you want to test
+    '0xbd19a3f0a9cace18513a1e2863d648d13975cb42'
 
   useEffect((): void => {
     localStorage.setItem(quest.slug, currentSlide.toString())
@@ -87,6 +103,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) setCurrentSlide(currentSlide + 1)
+    else if (isLastSlide && isPoapClaimed) router.push('/quests')
   }
 
   const selectAnswer = (answerNumber: number) => {
@@ -98,6 +115,26 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       // wrong answer
       // TODO: add error UI
     }
+  }
+
+  const claimPoap = () => {
+    setIsClaimingPoap(true)
+    axios
+      .get(
+        `/api/claim-poap?address=${walletAddress}&poapEventId=${quest.poapEventId}`
+      )
+      .then(function (res) {
+        // eslint-disable-next-line no-console
+        console.log(res.data)
+        setIsPoapClaimed(true)
+        setIsClaimingPoap(false)
+        localStorage.setItem(`poap-${quest.slug}`, 'true')
+      })
+      .catch(function (error) {
+        // eslint-disable-next-line no-console
+        console.log(error)
+        // TODO: handle error cases
+      })
   }
 
   // shortcuts
@@ -227,10 +264,21 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           <>
             <Text fontSize="3xl">🎖 {slide.title}</Text>
             <VStack flex="auto">
-              <Image src={quest.poap_image} width="250px" mt="100px" />
-              <Button variant="outline" onClick={() => alert('TODO')}>
-                Claim POAP
-              </Button>
+              <Image
+                src={quest.poap_image}
+                width="250px"
+                mt="100px"
+                opacity={isPoapClaimed ? 1 : 0.7}
+              />
+              {!isPoapClaimed && (
+                <Button
+                  variant="outline"
+                  onClick={claimPoap}
+                  isLoading={isClaimingPoap}
+                >
+                  Claim POAP
+                </Button>
+              )}
             </VStack>
           </>
         )}
@@ -261,7 +309,10 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           )}
           <Button
             ref={buttonRightRef}
-            disabled={isLastSlide || (slide.quiz && !answerIsCorrect)}
+            disabled={
+              (isLastSlide && !isPoapClaimed) ||
+              (slide.quiz && !answerIsCorrect)
+            }
             onClick={goToNextSlide}
           >
             ➡️

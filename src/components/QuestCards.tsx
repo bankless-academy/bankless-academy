@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import {
   useColorMode,
@@ -18,6 +18,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import axios from 'axios'
 
 import QUESTS from 'constants/quests'
 import CircularProgressSteps from 'components/CircularProgressSteps'
@@ -54,6 +55,30 @@ const QuestCards: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const startNowRef = useRef(null)
   const [selectedQuest, setSelectedQuest] = useState(null)
+  const [numberOfPoapClaimed, setNumberOfPoapClaimed] = useState([])
+
+  useEffect((): void => {
+    // TODO: replace with tokensQuantityByEventId https://github.com/poap-xyz/poap-webapp/blob/2def482ffec93e6cbc4e3c5e5a18000805cc6c2b/src/api.ts#L1235
+    const promiseArray = QUESTS.map((q) => {
+      return axios.post(
+        'https://api.thegraph.com/subgraphs/name/poap-xyz/poap-xdai',
+        {
+          query: `{event(id: ${q.poapEventId}){ tokenCount }}`,
+        }
+      )
+    })
+    axios
+      .all(promiseArray)
+      .then((results) => {
+        setNumberOfPoapClaimed(
+          results.map((r) => r.data.data.event?.tokenCount || 0)
+        )
+      })
+      .catch(function (error) {
+        // eslint-disable-next-line no-console
+        console.log(error)
+      })
+  }, [])
 
   return (
     <>
@@ -61,6 +86,7 @@ const QuestCards: React.FC = () => {
         // quest not started yet: -1
         const currentSlide = parseInt(localStorage.getItem(quest.slug) || '-1')
         const numberOfSlides = quest.slides.length
+        const isPoapClaimed = localStorage.getItem(`poap-${quest.slug}`)
         return (
           <QuestCard
             bg={colorMode === 'dark' ? 'whiteAlpha.400' : 'blackAlpha.400'}
@@ -76,7 +102,10 @@ const QuestCards: React.FC = () => {
                 step={currentSlide}
                 total={numberOfSlides}
               />
-              <PoapImage src={quest.poap_image} />
+              <PoapImage
+                src={quest.poap_image}
+                opacity={isPoapClaimed ? 1 : 0.7}
+              />
               <Duration colorScheme="gray" borderRadius="full" size="xs">
                 🕒 {quest.duration} min
               </Duration>
@@ -84,7 +113,7 @@ const QuestCards: React.FC = () => {
                 {quest.difficulty}
               </Difficulty>
               <Claimed colorScheme="gray" borderRadius="full" size="xs">
-                🎖 12 Claimed
+                🎖 {numberOfPoapClaimed[index]} Claimed
               </Claimed>
             </Center>
             <Divider />
