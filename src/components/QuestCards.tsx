@@ -86,6 +86,7 @@ const QuestCards: React.FC = () => {
         // quest not started yet: -1
         const currentSlide = parseInt(localStorage.getItem(quest.slug) || '-1')
         const numberOfSlides = quest.slides.length
+        const isPoapClaimed = localStorage.getItem(`poap-${quest.slug}`)
         return (
           <QuestCard
             bg={colorMode === 'dark' ? 'whiteAlpha.400' : 'blackAlpha.400'}
@@ -101,7 +102,10 @@ const QuestCards: React.FC = () => {
                 step={currentSlide}
                 total={numberOfSlides}
               />
-              <PoapImage src={quest.poap_image} />
+              <PoapImage
+                src={quest.poap_image}
+                opacity={isPoapClaimed ? 1 : 0.7}
+              />
               <Duration colorScheme="gray" borderRadius="full" size="xs">
                 🕒 {quest.duration} min
               </Duration>

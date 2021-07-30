@@ -15,6 +15,7 @@ import ReactMarkdown from 'react-markdown'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import rehypeRaw from 'rehype-raw'
+import { useRouter } from 'next/router'
 
 import { QuestType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
@@ -69,9 +70,12 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     parseInt(localStorage.getItem(quest.slug) || '0')
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
-  const [isPoapClaimed, setIsPoapClaimed] = useState(true)
   const [isClaimingPoap, setIsClaimingPoap] = useState(false)
+  const [isPoapClaimed, setIsPoapClaimed] = useState(
+    !!localStorage.getItem(`poap-${quest.slug}`)
+  )
 
+  const router = useRouter()
   const numberOfSlides = quest.slides.length
   const slide = quest.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
@@ -81,25 +85,10 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const walletAddress =
     walletWeb3ReactContext.account ||
     // you can force a specific wallet address here if you want to test
-    '0xbd19a3f0a9cace18513a1e2863d648d13975cb39'
+    '0xbd19a3f0a9cace18513a1e2863d648d13975cb42'
 
   useEffect((): void => {
     localStorage.setItem(quest.slug, currentSlide.toString())
-    if (slide.type === 'POAP') {
-      // check if POAP is already claimed
-      axios
-        .get(`https://api.poap.xyz/actions/scan/${walletAddress}`)
-        .then((response) => response.data)
-        .then((poaps: { event: { id: number } }[]) =>
-          setIsPoapClaimed(
-            poaps.filter((p) => p.event.id === quest.poapEventId).length === 1
-          )
-        )
-        .catch(function (error) {
-          // eslint-disable-next-line no-console
-          console.log(error)
-        })
-    }
   }, [currentSlide])
 
   const goToPrevSlide = () => {
@@ -112,6 +101,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) setCurrentSlide(currentSlide + 1)
+    else if (isLastSlide && isPoapClaimed) router.push('/quests')
   }
 
   const selectAnswer = (answerNumber: number) => {
@@ -136,6 +126,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         console.log(res.data)
         setIsPoapClaimed(true)
         setIsClaimingPoap(false)
+        localStorage.setItem(`poap-${quest.slug}`, 'true')
       })
       .catch(function (error) {
         // eslint-disable-next-line no-console
@@ -270,7 +261,12 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           <>
             <Text fontSize="3xl">🎖 {slide.title}</Text>
             <VStack flex="auto">
-              <Image src={quest.poap_image} width="250px" mt="100px" />
+              <Image
+                src={quest.poap_image}
+                width="250px"
+                mt="100px"
+                opacity={isPoapClaimed ? 1 : 0.7}
+              />
               {!isPoapClaimed && (
                 <Button
                   variant="outline"
@@ -310,7 +306,10 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           )}
           <Button
             ref={buttonRightRef}
-            disabled={isLastSlide || (slide.quiz && !answerIsCorrect)}
+            disabled={
+              (isLastSlide && !isPoapClaimed) ||
+              (slide.quiz && !answerIsCorrect)
+            }
             onClick={goToNextSlide}
           >
             ➡️
