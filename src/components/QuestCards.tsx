@@ -58,11 +58,12 @@ const QuestCards: React.FC = () => {
   const [numberOfPoapClaimed, setNumberOfPoapClaimed] = useState([])
 
   useEffect((): void => {
+    // TODO: replace with tokensQuantityByEventId https://github.com/poap-xyz/poap-webapp/blob/2def482ffec93e6cbc4e3c5e5a18000805cc6c2b/src/api.ts#L1235
     const promiseArray = QUESTS.map((q) => {
       return axios.post(
         'https://api.thegraph.com/subgraphs/name/poap-xyz/poap-xdai',
         {
-          query: `{event(id: ${q.poapId}){ transferCount }}`,
+          query: `{event(id: ${q.poapEventId}){ tokenCount }}`,
         }
       )
     })
@@ -70,7 +71,7 @@ const QuestCards: React.FC = () => {
       .all(promiseArray)
       .then((results) => {
         setNumberOfPoapClaimed(
-          results.map((r) => r.data.data.event?.transferCount || 0)
+          results.map((r) => r.data.data.event?.tokenCount || 0)
         )
       })
       .catch(function (error) {

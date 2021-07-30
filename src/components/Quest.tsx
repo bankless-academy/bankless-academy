@@ -19,6 +19,7 @@ import rehypeRaw from 'rehype-raw'
 import { QuestType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
 import QuestComponent from 'components/Quest/QuestComponent'
+import { useWalletWeb3React } from 'hooks'
 
 const Slide = styled(Box)`
   border-radius: 0.5rem;
@@ -68,25 +69,30 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     parseInt(localStorage.getItem(quest.slug) || '0')
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
-  const [isPOAPClaimed, setIsPOAPClaimed] = useState(true)
+  const [isPoapClaimed, setIsPoapClaimed] = useState(true)
+  const [isClaimingPoap, setIsClaimingPoap] = useState(false)
 
   const numberOfSlides = quest.slides.length
   const slide = quest.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
 
+  const walletWeb3ReactContext = useWalletWeb3React()
+  const walletAddress =
+    walletWeb3ReactContext.account ||
+    // you can force a specific wallet address here if you want to test
+    '0xbd19a3f0a9cace18513a1e2863d648d13975cb39'
+
   useEffect((): void => {
     localStorage.setItem(quest.slug, currentSlide.toString())
     if (slide.type === 'POAP') {
+      // check if POAP is already claimed
       axios
-        // TODO: use real address
-        .get(
-          'https://api.poap.xyz/actions/scan/0xBD19a3F0A9CaCE18513A1e2863d648D13975CB30'
-        )
+        .get(`https://api.poap.xyz/actions/scan/${walletAddress}`)
         .then((response) => response.data)
         .then((poaps: { event: { id: number } }[]) =>
-          setIsPOAPClaimed(
-            poaps.filter((p) => p.event.id === quest.poapId).length === 1
+          setIsPoapClaimed(
+            poaps.filter((p) => p.event.id === quest.poapEventId).length === 1
           )
         )
         .catch(function (error) {
@@ -120,13 +126,16 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   }
 
   const claimPoap = () => {
+    setIsClaimingPoap(true)
     axios
-      // TODO: use real address
-      .get('/api/claim-poap?address=0xbd19a3f0a9cace18513a1e2863d648d13975cb32')
+      .get(
+        `/api/claim-poap?address=${walletAddress}&poapEventId=${quest.poapEventId}`
+      )
       .then(function (res) {
         // eslint-disable-next-line no-console
         console.log(res.data)
-        // TODO: change POAP status to claimed
+        setIsPoapClaimed(true)
+        setIsClaimingPoap(false)
       })
       .catch(function (error) {
         // eslint-disable-next-line no-console
@@ -262,8 +271,12 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
             <Text fontSize="3xl">🎖 {slide.title}</Text>
             <VStack flex="auto">
               <Image src={quest.poap_image} width="250px" mt="100px" />
-              {!isPOAPClaimed && (
-                <Button variant="outline" onClick={claimPoap}>
+              {!isPoapClaimed && (
+                <Button
+                  variant="outline"
+                  onClick={claimPoap}
+                  isLoading={isClaimingPoap}
+                >
                   Claim POAP
                 </Button>
               )}
