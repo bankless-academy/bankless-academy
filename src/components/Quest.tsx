@@ -83,11 +83,9 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const isLastSlide = currentSlide + 1 === numberOfSlides
 
   const walletWeb3ReactContext = useWalletWeb3React()
-  const walletAddress =
-    walletWeb3ReactContext.account ||
-    // TODO: remove later
-    // you can force a specific wallet address here if you want to test
-    '0xbd19a3f0a9cace18513a1e2863d648d13975cb42'
+  const walletAddress = walletWeb3ReactContext.account
+  // DEV ENV: you can force a specific wallet address here if you want to test the claiming function
+  // const walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb42'
 
   useEffect((): void => {
     localStorage.setItem(quest.slug, currentSlide.toString())
@@ -264,20 +262,30 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           <>
             <Text fontSize="3xl">🎖 {slide.title}</Text>
             <VStack flex="auto">
-              <Image
-                src={quest.poap_image}
-                width="250px"
-                mt="100px"
-                opacity={isPoapClaimed ? 1 : 0.7}
-              />
-              {!isPoapClaimed && (
-                <Button
-                  variant="outline"
-                  onClick={claimPoap}
-                  isLoading={isClaimingPoap}
-                >
-                  Claim POAP
-                </Button>
+              {walletAddress ? (
+                <>
+                  <Image
+                    src={quest.poap_image}
+                    width="250px"
+                    mt="100px"
+                    opacity={isPoapClaimed ? 1 : 0.7}
+                  />
+                  {!isPoapClaimed ? (
+                    <Button
+                      variant="outline"
+                      onClick={claimPoap}
+                      isLoading={isClaimingPoap}
+                    >
+                      Claim POAP
+                    </Button>
+                  ) : (
+                    <h2>
+                      {`Congrats for finishing the "${quest.name}" quest! 🥳`}
+                    </h2>
+                  )}
+                </>
+              ) : (
+                <h2>⚠️ Connect your wallet first!</h2>
               )}
             </VStack>
           </>
