@@ -22,6 +22,7 @@ import ProgressSteps from 'components/ProgressSteps'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useWalletWeb3React } from 'hooks'
 
+// TODO: improve styling
 const Slide = styled(Box)`
   border-radius: 0.5rem;
   h1 {
@@ -84,6 +85,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const walletWeb3ReactContext = useWalletWeb3React()
   const walletAddress =
     walletWeb3ReactContext.account ||
+    // TODO: remove later
     // you can force a specific wallet address here if you want to test
     '0xbd19a3f0a9cace18513a1e2863d648d13975cb42'
 
@@ -131,6 +133,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       .catch(function (error) {
         // eslint-disable-next-line no-console
         console.log(error)
+        // TODO: handle error cases
       })
   }
 
