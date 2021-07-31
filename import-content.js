@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const axios = require('axios')
-const FileSystem = require("fs")
+const FileSystem = require('fs')
 
 const DEFAULT_NOTION_ID = '1813af42f771491b8d9af966d9d433fe'
 
@@ -84,29 +84,42 @@ const FIELD_MATCHING = {
   'What will you learn from this?': 'learnings',
   Difficulty: 'difficulty',
   Description: 'description',
-  Name: 'name'
+  Name: 'name',
 }
 console.log(FIELD_MATCHING)
 
 const args = process.argv
-const NOTION_ID = (args[2] && args[3] && args[2] === '-id' && args[3].length === 32) ? args[3] : DEFAULT_NOTION_ID
+const NOTION_ID =
+  args[2] && args[3] && args[2] === '-id' && args[3].length === 32
+    ? args[3]
+    : DEFAULT_NOTION_ID
 console.log('NOTION_ID', NOTION_ID)
 
-axios.get(`https://potion-api.vercel.app/table?id=${NOTION_ID}`)
+axios
+  .get(`https://potion-api.vercel.app/table?id=${NOTION_ID}`)
   .then(function (response) {
     let quests = []
     response.data.map(function (course) {
       const notionContentId = course.id.replace(/-/g, '')
       console.log(notionContentId)
-      let contentInfos = Object.keys(FIELD_MATCHING).reduce((obj, k) => Object.assign(obj, { [FIELD_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k])) ? course.fields[k] : parseInt(course.fields[k]) }), {})
-      contentInfos['slug'] = contentInfos['name'].toLowerCase()
+      let contentInfos = Object.keys(FIELD_MATCHING).reduce(
+        (obj, k) =>
+          Object.assign(obj, {
+            [FIELD_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
+              ? course.fields[k]
+              : parseInt(course.fields[k]),
+          }),
+        {}
+      )
+      contentInfos['slug'] = contentInfos['name']
+        .toLowerCase()
         .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
         .replace(/\s+/g, '-') // collapse whitespace and replace by -
         .replace(/-+/g, '-') // collapse dashes
-      let quizNb = 0;
+      let quizNb = 0
       const slides = SLIDES_DEMO.map((slide) => {
         if (slide.type === 'QUIZ') {
-          quizNb++;
+          quizNb++
           slide.quiz.id = `${contentInfos.slug}-${quizNb}`
         }
         return slide
