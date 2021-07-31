@@ -1,76 +1,64 @@
 import { QuestType } from 'entities/quest'
 
-// TEMP
-const MARKDOWN_CONTENT = `# header 1
-## header 1.1
-
-- learning 1
-- learning 2
-
-## header 1.2
-
-- learning 3
-- learning 4
-
-# header 2
-
-## header 2.1
-
-- learning 5
-- learning 6`
-
-const MARKDOWN_VIDEO = `# EIP-1559 | Everything You Need to Know
-
-https://www.youtube.com/watch?v=YZeXrChJ5n8
-
-- learning 1
-- learning 2
-`
-
-const QUIZ_TEST = {
-  question: 'Quiz question',
-  answer_1: 'Answer 1',
-  answer_2: 'Answer 2',
-  answer_3: 'Answer 3',
-  answer_4: 'Answer 4',
-  right_answer_number: 2,
-}
-
 const QUESTS: QuestType[] = [
   {
+    poapImageLink:
+      'https://storage.googleapis.com/poapmedia/onboard-wallet-basic-2021-logo-1627395940468.png',
+    learningActions:
+      '- Create and manage your own wallet<br>- Connect your wallet to a web3 website',
+    knowledgeRequirements: 'No prior knowledge needed.',
+    poapEventId: 4652,
+    duration: 10,
+    learnings:
+      '- What is a wallet?<br>- What are keys?<br>- Custodial vs non-custodial wallets<br>- Wallet Security',
+    difficulty: 'Easy',
+    description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
     slug: 'wallet-basics',
-    poapEventId: 4652,
-    description: 'Wallet Basics description',
-    duration: 10,
-    difficulty: '🙂 easy',
-    poap_image: '/images/poap1.png',
     slides: [
       {
         type: 'LEARN',
         title: 'First slide',
-        content: MARKDOWN_CONTENT,
+        content:
+          '# header 1\n## header 1.1\n\n- learning 1\n- learning 2\n\n## header 1.2\n\n- learning 3\n- learning 4\n\n# header 2\n\n## header 2.1\n\n- learning 5\n- learning 6',
       },
       {
         type: 'LEARN',
         title: 'Second slide',
-        content: MARKDOWN_VIDEO,
+        content:
+          '# EIP-1559 | Everything You Need to Know\n\nhttps://www.youtube.com/watch?v=YZeXrChJ5n8\n\n- learning 1\n- learning 2\n',
       },
       {
         type: 'QUIZ',
         title: 'First quiz',
-        // TODO: create this ID dynamically
-        quiz: { ...QUIZ_TEST, id: 'wallet-basics-1' },
+        quiz: {
+          question: 'Quiz question',
+          answer_1: 'Answer 1',
+          answer_2: 'Answer 2',
+          answer_3: 'Answer 3',
+          answer_4: 'Answer 4',
+          right_answer_number: 2,
+          id: 'borrow-with-aave-1',
+        },
       },
       {
         type: 'LEARN',
         title: 'Learn more',
-        content: MARKDOWN_CONTENT,
+        content:
+          '# header 1\n## header 1.1\n\n- learning 1\n- learning 2\n\n## header 1.2\n\n- learning 3\n- learning 4\n\n# header 2\n\n## header 2.1\n\n- learning 5\n- learning 6',
       },
       {
         type: 'QUIZ',
         title: 'Second quiz',
-        quiz: { ...QUIZ_TEST, id: 'wallet-basics-2' },
+        quiz: {
+          question: 'Quiz question',
+          answer_1: 'Answer 1',
+          answer_2: 'Answer 2',
+          answer_3: 'Answer 3',
+          answer_4: 'Answer 4',
+          right_answer_number: 2,
+          id: 'borrow-with-aave-2',
+        },
       },
       {
         type: 'QUEST',
@@ -84,33 +72,68 @@ const QUESTS: QuestType[] = [
     ],
   },
   {
+    poapImageLink:
+      'https://storage.googleapis.com/poapmedia/onboard-borrow-with-aave-2021-logo-1627580693589.png',
+    learningActions:
+      '- Connect your wallet to Aave<br>- Deposit collateral on Aave<br>- Take a loan against your collateral',
+    knowledgeRequirements: 'Manage your wallet.',
+    poapEventId: 4783,
+    duration: 20,
+    learnings:
+      '- How to use Aave<br>- How to take a loan without any intermediary',
+    difficulty: 'Advanced',
+    description: 'Learn how to borrow with Aave.',
     name: 'Borrow with Aave',
     slug: 'borrow-with-aave',
-    poapEventId: 4783,
-    description: 'Borrow with Aave description',
-    duration: 30,
-    difficulty: '🛠 expert',
-    poap_image: '/images/poap2.png',
     slides: [
       {
         type: 'LEARN',
         title: 'First slide',
-        content: MARKDOWN_CONTENT,
+        content:
+          '# header 1\n## header 1.1\n\n- learning 1\n- learning 2\n\n## header 1.2\n\n- learning 3\n- learning 4\n\n# header 2\n\n## header 2.1\n\n- learning 5\n- learning 6',
       },
       {
         type: 'LEARN',
         title: 'Second slide',
-        content: MARKDOWN_VIDEO,
+        content:
+          '# EIP-1559 | Everything You Need to Know\n\nhttps://www.youtube.com/watch?v=YZeXrChJ5n8\n\n- learning 1\n- learning 2\n',
       },
       {
         type: 'QUIZ',
         title: 'First quiz',
-        quiz: { ...QUIZ_TEST, id: 'borrow-with-aave-1' },
+        quiz: {
+          question: 'Quiz question',
+          answer_1: 'Answer 1',
+          answer_2: 'Answer 2',
+          answer_3: 'Answer 3',
+          answer_4: 'Answer 4',
+          right_answer_number: 2,
+          id: 'borrow-with-aave-1',
+        },
+      },
+      {
+        type: 'LEARN',
+        title: 'Learn more',
+        content:
+          '# header 1\n## header 1.1\n\n- learning 1\n- learning 2\n\n## header 1.2\n\n- learning 3\n- learning 4\n\n# header 2\n\n## header 2.1\n\n- learning 5\n- learning 6',
+      },
+      {
+        type: 'QUIZ',
+        title: 'Second quiz',
+        quiz: {
+          question: 'Quiz question',
+          answer_1: 'Answer 1',
+          answer_2: 'Answer 2',
+          answer_3: 'Answer 3',
+          answer_4: 'Answer 4',
+          right_answer_number: 2,
+          id: 'borrow-with-aave-2',
+        },
       },
       {
         type: 'QUEST',
-        title: 'Borrow with Aave Quest title',
-        component: 'BorrowWithAave',
+        title: 'Wallet Basics Quest title',
+        component: 'WalletBasics',
       },
       {
         type: 'POAP',

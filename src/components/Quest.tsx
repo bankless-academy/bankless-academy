@@ -265,7 +265,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
               {walletAddress ? (
                 <>
                   <Image
-                    src={quest.poap_image}
+                    src={quest.poapImageLink}
                     width="250px"
                     mt="100px"
                     opacity={isPoapClaimed ? 1 : 0.7}

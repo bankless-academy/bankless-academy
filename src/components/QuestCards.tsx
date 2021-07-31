@@ -103,7 +103,7 @@ const QuestCards: React.FC = () => {
                 total={numberOfSlides}
               />
               <PoapImage
-                src={quest.poap_image}
+                src={quest.poapImageLink}
                 opacity={isPoapClaimed ? 1 : 0.7}
               />
               <Duration colorScheme="gray" borderRadius="full" size="xs">

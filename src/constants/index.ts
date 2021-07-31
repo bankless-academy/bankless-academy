@@ -7,7 +7,7 @@ export const QUESTS = [
     description: 'Wallet Basics description',
     duration: 10,
     difficulty: '🙂 easy',
-    poap_image: '/images/poap1.png',
+    poapImageLink: '/images/poap1.png',
   },
   {
     name: 'Borrow with Aave',
@@ -15,7 +15,7 @@ export const QUESTS = [
     description: 'Borrow with Aave description',
     duration: 30,
     difficulty: '🛠 expert',
-    poap_image: '/images/poap2.png',
+    poapImageLink: '/images/poap2.png',
   },
 ]
 

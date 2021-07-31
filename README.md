@@ -15,13 +15,13 @@
 ### Defaut import command
 
 ```bash
-./scripts/import-content.sh
+./import-content.sh
 ```
 
 ### Import a specific Notion ID
 
 ```bash
-./scripts/import-content.sh -id 1813af42f771491b8d9af966d9d433fe
+./import-content.sh -id 1813af42f771491b8d9af966d9d433fe
 ```
 
 ## Tech Stack

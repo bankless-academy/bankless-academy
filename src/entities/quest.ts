@@ -7,7 +7,10 @@ export interface QuestType {
   description: string
   duration: number
   difficulty: string
-  poap_image: string
+  poapImageLink: string
+  learnings: string
+  learningActions: string
+  knowledgeRequirements: string
   slides: {
     type: 'LEARN' | 'QUIZ' | 'QUEST' | 'POAP'
     title: string
