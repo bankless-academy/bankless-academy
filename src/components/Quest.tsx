@@ -187,7 +187,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         )}
         {slide.type === 'QUIZ' && (
           <>
-            <Text fontSize="3xl">❓ {slide.quiz.question}</Text>
+            <Text fontSize="3xl">❓ {slide.title}</Text>
             <Answers>
               <ButtonGroup
                 colorScheme={answerIsCorrect ? 'green' : 'red'}
@@ -218,30 +218,34 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                     </span>
                     {slide.quiz.answer_2}
                   </Button>
-                  <Button
-                    ref={answer3Ref}
-                    onClick={() => selectAnswer(3)}
-                    isActive={
-                      (selectedAnswerNumber || localStorageAnswer) === 3
-                    }
-                  >
-                    <span>
-                      <Kbd>3</Kbd>
-                    </span>
-                    {slide.quiz.answer_3}
-                  </Button>
-                  <Button
-                    ref={answer4Ref}
-                    onClick={() => selectAnswer(4)}
-                    isActive={
-                      (selectedAnswerNumber || localStorageAnswer) === 4
-                    }
-                  >
-                    <span>
-                      <Kbd>4</Kbd>
-                    </span>
-                    {slide.quiz.answer_4}
-                  </Button>
+                  {slide.quiz.answer_3 && (
+                    <Button
+                      ref={answer3Ref}
+                      onClick={() => selectAnswer(3)}
+                      isActive={
+                        (selectedAnswerNumber || localStorageAnswer) === 3
+                      }
+                    >
+                      <span>
+                        <Kbd>3</Kbd>
+                      </span>
+                      {slide.quiz.answer_3}
+                    </Button>
+                  )}
+                  {slide.quiz.answer_4 && (
+                    <Button
+                      ref={answer3Ref}
+                      onClick={() => selectAnswer(4)}
+                      isActive={
+                        (selectedAnswerNumber || localStorageAnswer) === 4
+                      }
+                    >
+                      <span>
+                        <Kbd>3</Kbd>
+                      </span>
+                      {slide.quiz.answer_4}
+                    </Button>
+                  )}
                 </SimpleGrid>
               </ButtonGroup>
             </Answers>
