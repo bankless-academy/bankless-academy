@@ -28,12 +28,15 @@ console.log('NOTION_ID', NOTION_ID)
 axios
   .get(`https://potion-api.vercel.app/table?id=${NOTION_ID}`)
   .then(async function (response) {
-    const courses = response.data.sort((a, b) => parseInt(a.fields.order) > parseInt(b.fields.order))
+    const courses = response.data.sort(
+      (a, b) => parseInt(a.fields.order) > parseInt(b.fields.order)
+    )
     let quests = []
     await courses.map(async function (course) {
       const notionContentId = course.id.replace(/-/g, '')
       console.log(notionContentId)
-      await axios.get(`https://potion-api.vercel.app/html?id=${notionContentId}`)
+      await axios
+        .get(`https://potion-api.vercel.app/html?id=${notionContentId}`)
         .then(async function (response) {
           // replace keys
           let contentInfos = Object.keys(KEY_MATCHING).reduce(
@@ -41,8 +44,8 @@ axios
               Object.assign(obj, {
                 [KEY_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
                   ? course.fields[k]
-                  // transform to number if the string contains a number
-                  : parseInt(course.fields[k]),
+                  : // transform to number if the string contains a number
+                    parseInt(course.fields[k]),
               }),
             {}
           )
@@ -51,23 +54,34 @@ axios
             .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
             .replace(/\s+/g, '-') // collapse whitespace and replace by -
             .replace(/-+/g, '-') // collapse dashes
-          const content = JSON.parse(`[` + response.data
-            .replace(/"/g, "'")
-            .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
-            .replace(/<\/h1>/g, `","content": "`)
-            .substr(3) + `"}]`)
+          const content = JSON.parse(
+            `[` +
+              response.data
+                .replace(/"/g, "'")
+                .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
+                .replace(/<\/h1>/g, `","content": "`)
+                .substr(3) +
+              `"}]`
+          )
           let quizNb = 0
           const slides = content.map((slide) => {
             // QUIZ
-            if (slide.content.substr(0, "<div class='checklist'>".length) === "<div class='checklist'>") {
+            if (
+              slide.content.substr(0, "<div class='checklist'>".length) ===
+              "<div class='checklist'>"
+            ) {
               quizNb++
               slide.type = 'QUIZ'
               let questions = slide.content.split('</label><label>')
               slide.quiz = {}
               questions.map((question, i) => {
                 const nb = i + 1
-                if (question.includes('disabled checked>')) slide.quiz['right_answer_number'] = nb
-                slide.quiz[`answer_${nb}`] = question.replace(/<\/?[^>]+(>|$)/g, "")
+                if (question.includes('disabled checked>'))
+                  slide.quiz['right_answer_number'] = nb
+                slide.quiz[`answer_${nb}`] = question.replace(
+                  /<\/?[^>]+(>|$)/g,
+                  ''
+                )
               })
               slide.quiz.id = `${contentInfos.slug}-${quizNb}`
             }
