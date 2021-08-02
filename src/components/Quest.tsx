@@ -234,14 +234,14 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                   )}
                   {slide.quiz.answer_4 && (
                     <Button
-                      ref={answer3Ref}
+                      ref={answer4Ref}
                       onClick={() => selectAnswer(4)}
                       isActive={
                         (selectedAnswerNumber || localStorageAnswer) === 4
                       }
                     >
                       <span>
-                        <Kbd>3</Kbd>
+                        <Kbd>4</Kbd>
                       </span>
                       {slide.quiz.answer_4}
                     </Button>
