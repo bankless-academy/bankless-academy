@@ -1,4 +1,4 @@
-import { Flex, Box } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 
 const ProgressSteps = ({
   step,
@@ -8,7 +8,7 @@ const ProgressSteps = ({
   total: number
 }): React.ReactElement => {
   return (
-    <Flex>
+    <Box display="flex">
       {[...Array(total)].map((e, index) => (
         // TODO: make steps clickable?
         <Box
@@ -20,7 +20,7 @@ const ProgressSteps = ({
           bg={index <= step ? 'red.500' : 'red.200'}
         ></Box>
       ))}
-    </Flex>
+    </Box>
   )
 }
 

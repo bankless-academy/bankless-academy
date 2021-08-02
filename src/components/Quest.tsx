@@ -11,11 +11,10 @@ import {
   Kbd,
 } from '@chakra-ui/react'
 import axios from 'axios'
-import ReactMarkdown from 'react-markdown'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
-import rehypeRaw from 'rehype-raw'
 import { useRouter } from 'next/router'
+import ReactHtmlParser from 'react-html-parser'
 
 import { QuestType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
@@ -34,6 +33,7 @@ const Slide = styled(Box)`
     margin: 1em;
   }
   ul {
+    font-size: var(--chakra-fontSizes-xl);
     margin-left: 2em;
   }
 `
@@ -42,14 +42,11 @@ const Answers = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 500px;
-  button {
-    margin: 3em;
-    padding: 2em;
-  }
+  min-height: 420px;
   span {
     color: black;
     margin-right: 0.5em;
+    margin-bottom: 4px;
   }
 `
 
@@ -178,17 +175,19 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       <Slide minH="620px" bgColor="white" p={8} mt={4}>
         {slide.type === 'LEARN' && (
           <>
-            <Text fontSize="3xl">📚 {slide.title}</Text>
+            <Text fontSize="3xl" mb="8">
+              📚 {slide.title}
+            </Text>
             {slide.content && (
-              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                {youtubeLink2Iframe(slide.content)}
-              </ReactMarkdown>
+              <Box>{ReactHtmlParser(youtubeLink2Iframe(slide.content))}</Box>
             )}
           </>
         )}
         {slide.type === 'QUIZ' && (
           <>
-            <Text fontSize="3xl">❓ {slide.title}</Text>
+            <Text fontSize="3xl" mb="8">
+              ❓ {slide.title}
+            </Text>
             <Answers>
               <ButtonGroup
                 colorScheme={answerIsCorrect ? 'green' : 'red'}
@@ -254,18 +253,20 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         )}
         {slide.type === 'QUEST' && (
           <>
-            <Text fontSize="3xl">⚡️ {slide.title}</Text>
+            <Text fontSize="3xl" mb="8">
+              ⚡️ {slide.title}
+            </Text>
             {slide.content && (
-              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                {youtubeLink2Iframe(slide.content)}
-              </ReactMarkdown>
+              <Box>{ReactHtmlParser(youtubeLink2Iframe(slide.content))}</Box>
             )}
             {slide.component && <QuestComponent component={slide.component} />}
           </>
         )}
         {slide.type === 'POAP' && (
           <>
-            <Text fontSize="3xl">🎖 {slide.title}</Text>
+            <Text fontSize="3xl" mb="8">
+              🎖 {slide.title}
+            </Text>
             <VStack flex="auto">
               {walletAddress ? (
                 <>

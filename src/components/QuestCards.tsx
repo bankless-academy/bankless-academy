@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import axios from 'axios'
+import ReactHtmlParser from 'react-html-parser'
 
 import QUESTS from 'constants/quests'
 import CircularProgressSteps from 'components/CircularProgressSteps'
@@ -135,18 +136,34 @@ const QuestCards: React.FC = () => {
         <ModalOverlay />
         {selectedQuest !== null && (
           <ModalContent>
-            <ModalHeader>{QUESTS[selectedQuest].name}</ModalHeader>
+            <ModalHeader>
+              <Text fontSize="3xl">{QUESTS[selectedQuest].name}</Text>
+            </ModalHeader>
             <ModalCloseButton />
-            <ModalBody>
-              <Text>
-                📚 Knowledge requirement? No prior knowledge needed. 📖 What
-                will you learn from this? Understand ... 🤓 What will you be
-                able to do by the end of this course? create and manage your own
-                wallet connect your wallet to Onboard
+            <ModalBody fontWeight="bold">
+              <Text fontSize="2xl" mb="4">
+                📚 Knowledge requirement?
               </Text>
-              <Link href={`/quest/${QUESTS[selectedQuest].slug}`}>
-                <Button ref={startNowRef}>Start now</Button>
-              </Link>
+              <Text fontSize="xl" mb="4" color="gray.500">
+                {ReactHtmlParser(QUESTS[selectedQuest].knowledgeRequirements)}
+              </Text>
+              <Text fontSize="2xl" mb="4">
+                📖 What will you learn from this?
+              </Text>
+              <Text fontSize="xl" mb="4" color="gray.500">
+                {ReactHtmlParser(QUESTS[selectedQuest].learnings)}
+              </Text>
+              <Text fontSize="2xl" mb="4">
+                🤓 What will you be able to do by the end of this course?
+              </Text>
+              <Text fontSize="xl" mb="4" color="gray.500">
+                {ReactHtmlParser(QUESTS[selectedQuest].learningActions)}
+              </Text>
+              <Box textAlign="center" m="8">
+                <Link href={`/quest/${QUESTS[selectedQuest].slug}`}>
+                  <Button ref={startNowRef}>Start now</Button>
+                </Link>
+              </Box>
             </ModalBody>
           </ModalContent>
         )}
