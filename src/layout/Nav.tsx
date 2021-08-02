@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Box,
+  // Box,
   Button,
   HStack,
   Spacer,
@@ -11,8 +11,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
-import ColorModeSwitcher from 'layout/ColorModeSwitcher'
-import LanguageModeSwitcher from 'layout/LanguageModeSwitcher'
+// import ColorModeSwitcher from 'layout/ColorModeSwitcher'
+// import LanguageModeSwitcher from 'layout/LanguageModeSwitcher'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 
 const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`
@@ -82,10 +82,10 @@ const Nav: React.FC = () => {
             justifyContent="space-between"
           >
             <ConnectWalletButton isMobile={isMobile} />
-            <Box display="flex">
+            {/* <Box display="flex">
               <LanguageModeSwitcher size={isMobile ? 'sm' : 'md'} />
               <ColorModeSwitcher size={isMobile ? 'sm' : 'md'} />
-            </Box>
+            </Box> */}
           </MenuConnect>
         </Flex>
       </nav>

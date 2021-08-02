@@ -1,5 +1,4 @@
-/* eslint-disable */
-import React, { useState } from 'react'
+import React from 'react'
 import {
   ChakraProvider,
   extendTheme,
@@ -9,6 +8,9 @@ import {
 
 import core from 'theme/core'
 import components from 'theme/components'
+
+// TODO LATER: uncomment force light mode
+localStorageManager.set('light')
 
 export const theme = extendTheme(
   {
@@ -27,7 +29,8 @@ export const theme = extendTheme(
       // },
     },
     config: {
-      useSystemColorMode: localStorageManager.get() ? false : true,
+      // TODO LATER: uncomment
+      // useSystemColorMode: localStorageManager.get() ? false : true,
     },
   },
   withDefaultColorScheme({ colorScheme: 'red' })
