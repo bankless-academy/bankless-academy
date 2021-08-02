@@ -29,36 +29,35 @@ axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((response) => {
     const quests = []
-    const courses = response.data
-    const promiseArray = courses.map((course) => {
-      console.log('course Notion link: ', `${POTION_API}/html?id=${course.id}`);
+    const promiseArray = response.data.map((course) => {
+      console.log('course Notion link: ', `${POTION_API}/html?id=${course.id}`)
       return axios
         .get(`${POTION_API}/html?id=${course.id}`)
         .then((response) => {
           // replace keys
-          let contentInfos = Object.keys(KEY_MATCHING).reduce(
+          const quest = Object.keys(KEY_MATCHING).reduce(
             (obj, k) =>
               Object.assign(obj, {
                 [KEY_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
                   ? course.fields[k]
                   : // transform to number if the string contains a number
-                  parseInt(course.fields[k]),
+                    parseInt(course.fields[k]),
               }),
             {}
           )
-          contentInfos.slug = contentInfos.name
+          quest.slug = quest.name
             .toLowerCase()
             .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
             .replace(/\s+/g, '-') // collapse whitespace and replace by -
             .replace(/-+/g, '-') // collapse dashes
           const content = JSON.parse(
             `[` +
-            response.data
-              .replace(/"/g, "'")
-              .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
-              .replace(/<\/h1>/g, `","content": "`)
-              .substr(3) + // remove extra "}, at the beginning
-            `"}]`
+              response.data
+                .replace(/"/g, "'")
+                .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
+                .replace(/<\/h1>/g, `","content": "`)
+                .substr(3) + // remove extra "}, at the beginning
+              `"}]`
           )
           let quizNb = 0
           const slides = content.map((slide) => {
@@ -75,9 +74,14 @@ axios
               slide.quiz.rightAnswerNumber = null
               questions.map((question, i) => {
                 const nb = i + 1
-                if (slide.quiz.rightAnswerNumber !== null && question.includes('disabled checked>'))
+                if (
+                  slide.quiz.rightAnswerNumber !== null &&
+                  question.includes('disabled checked>')
+                )
                   // NOTION BUG: in case of bug with checked checkbox, recreate a new one
-                  throw new Error(`more than 1 right answer, please check ${POTION_API}/html?id=${course.id}`)
+                  throw new Error(
+                    `more than 1 right answer, please check ${POTION_API}/html?id=${course.id}`
+                  )
                 if (question.includes('disabled checked>'))
                   slide.quiz.rightAnswerNumber = nb
                 slide.quiz[`answer_${nb}`] = question.replace(
@@ -86,39 +90,46 @@ axios
                   ''
                 )
               })
-              slide.quiz.id = `${contentInfos.slug}-${quizNb}`
+              slide.quiz.id = `${quest.slug}-${quizNb}`
             }
             return slide
           })
-          const componentName = contentInfos.name.split(" ").map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ").replace(/\s+/g, '')
+          const componentName = quest.name
+            .split(' ')
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ')
+            .replace(/\s+/g, '')
           slides.push({
             type: 'QUEST',
-            title: `${contentInfos.name} Quest`,
+            title: `${quest.name} Quest`,
             component: componentName,
           })
           slides.push({
             type: 'POAP',
             title: 'Collect your POAP',
           })
-          contentInfos.slides = slides
-          console.log('contentInfos', contentInfos)
-          quests[parseInt(course.fields.order) - 1] = contentInfos
+          quest.slides = slides
+          console.log('quest', quest)
+          quests[parseInt(course.fields.order) - 1] = quest
         })
     })
-    axios
-      .all(promiseArray)
-      .then(() => {
-        const FILE_CONTENT = `import { QuestType } from 'entities/quest'
+    axios.all(promiseArray).then(() => {
+      const FILE_CONTENT = `import { QuestType } from 'entities/quest'
 
-const QUESTS: QuestType[] = ${stringifyObject(quests, { indent: '  ', singleQuotes: true })}
+const QUESTS: QuestType[] = ${stringifyObject(quests, {
+        indent: '  ',
+        singleQuotes: true,
+      })}
 
 export default QUESTS
 `
-        FileSystem.writeFile('src/constants/quests.ts', FILE_CONTENT, (error) => {
-          if (error) throw error
-        })
-        console.log('export done -> check syntax & typing errors in src/constants/quests.ts')
+      FileSystem.writeFile('src/constants/quests.ts', FILE_CONTENT, (error) => {
+        if (error) throw error
       })
+      console.log(
+        'export done -> check syntax & typing errors in src/constants/quests.ts'
+      )
+    })
   })
   .catch((error) => {
     console.log(error)
