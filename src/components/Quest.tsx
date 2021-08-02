@@ -162,11 +162,6 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   useHotkeys('4', () => {
     answer4Ref?.current?.click()
   })
-  // TEMP
-  useHotkeys('r', () => {
-    localStorage.clear()
-    setCurrentSlide(0)
-  })
 
   const localStorageAnswer: number = slide.quiz
     ? parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`))

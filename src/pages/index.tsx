@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import { PageMetaProps } from 'components/Head'
-import { SimpleGrid, Container, Button, Kbd, Box } from '@chakra-ui/react'
+import { SimpleGrid, Container, Button, Box } from '@chakra-ui/react'
 
 import QuestCards from 'components/QuestCards'
 
@@ -23,19 +23,14 @@ const Page = (): JSX.Element => {
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={12}>
         <QuestCards />
       </SimpleGrid>
-      <Box m={8}>
+      <Box mt={8}>
         <Button
           onClick={() => {
             localStorage.clear()
             window.location.reload()
           }}
         >
-          <span>
-            <Kbd color="black" mr="0.5em">
-              r
-            </Kbd>
-          </span>
-          reset app state
+          [DEBUG] reset app state
         </Button>
       </Box>
     </Container>

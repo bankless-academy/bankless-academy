@@ -58,6 +58,10 @@ const QuestCards: React.FC = () => {
   const [selectedQuest, setSelectedQuest] = useState(null)
   const [numberOfPoapClaimed, setNumberOfPoapClaimed] = useState([])
 
+  const isSelectedQuestStarted = parseInt(
+    localStorage.getItem(QUESTS[selectedQuest]?.slug) || '-1'
+  )
+
   useEffect((): void => {
     // TODO: replace with tokensQuantityByEventId https://github.com/poap-xyz/poap-webapp/blob/2def482ffec93e6cbc4e3c5e5a18000805cc6c2b/src/api.ts#L1235
     const promiseArray = QUESTS.map((q) => {
@@ -99,7 +103,7 @@ const QuestCards: React.FC = () => {
               onOpen()
             }}
           >
-            <Center minH="320px" position="relative">
+            <Center minH="325px" position="relative">
               <CircularProgressSteps
                 step={currentSlide}
                 total={numberOfSlides}
@@ -162,7 +166,11 @@ const QuestCards: React.FC = () => {
               </Text>
               <Box textAlign="center" m="6">
                 <Link href={`/quest/${QUESTS[selectedQuest].slug}`}>
-                  <Button ref={startNowRef}>Start now</Button>
+                  <Button ref={startNowRef}>
+                    {isSelectedQuestStarted !== -1
+                      ? 'Continue quest'
+                      : 'Start quest'}
+                  </Button>
                 </Link>
               </Box>
             </ModalBody>
