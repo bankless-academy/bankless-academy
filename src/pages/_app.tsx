@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import { Web3ReactProvider } from '@web3-react/core'
 import { ethers } from 'ethers'
+import 'swiper/swiper-bundle.min.css'
 
 import dynamic from 'next/dynamic'
 import Layout from 'layout'

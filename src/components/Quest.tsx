@@ -15,6 +15,7 @@ import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser from 'react-html-parser'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { QuestType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
@@ -72,6 +73,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const [isPoapClaimed, setIsPoapClaimed] = useState(
     !!localStorage.getItem(`poap-${quest.slug}`)
   )
+  const swiperRef = useRef(null)
 
   const router = useRouter()
   const numberOfSlides = quest.slides.length
@@ -90,14 +92,24 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
 
   const goToPrevSlide = () => {
     setSelectedAnswerNumber(null)
-    if (!isFirstSlide) setCurrentSlide(currentSlide - 1)
+    if (!isFirstSlide) {
+      setCurrentSlide(currentSlide - 1)
+      if (swiperRef?.current.swiper) {
+        swiperRef.current.swiper.slidePrev()
+      }
+    }
   }
 
   const goToNextSlide = () => {
     setSelectedAnswerNumber(null)
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
-    } else if (!isLastSlide) setCurrentSlide(currentSlide + 1)
+    } else if (!isLastSlide) {
+      setCurrentSlide(currentSlide + 1)
+      if (swiperRef?.current.swiper) {
+        swiperRef.current.swiper.slideNext()
+      }
+    }
     // TODO LATER: use router.push('/quests')
     else if (isLastSlide && isPoapClaimed) router.push('/')
   }
@@ -172,131 +184,152 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   return (
     <>
       <ProgressSteps step={currentSlide} total={numberOfSlides} />
-      <Slide minH="620px" bgColor="white" p={8} mt={4}>
-        {slide.type === 'LEARN' && (
-          <>
-            <Text fontSize="3xl" mb="8">
-              📚 {slide.title}
-            </Text>
-            {slide.content && (
-              <Box>{ReactHtmlParser(youtubeLink2Iframe(slide.content))}</Box>
-            )}
-          </>
-        )}
-        {slide.type === 'QUIZ' && (
-          <>
-            <Text fontSize="3xl" mb="8">
-              ❓ {slide.title}
-            </Text>
-            <Answers>
-              <ButtonGroup
-                colorScheme={answerIsCorrect ? 'green' : 'red'}
-                size="lg"
-              >
-                <SimpleGrid columns={[null, null, 2]} spacing="40px">
-                  <Button
-                    ref={answer1Ref}
-                    onClick={() => selectAnswer(1)}
-                    isActive={
-                      (selectedAnswerNumber || localStorageAnswer) === 1
-                    }
-                  >
-                    <span>
-                      <Kbd>1</Kbd>
-                    </span>
-                    {slide.quiz.answer_1}
-                  </Button>
-                  <Button
-                    ref={answer2Ref}
-                    onClick={() => selectAnswer(2)}
-                    isActive={
-                      (selectedAnswerNumber || localStorageAnswer) === 2
-                    }
-                  >
-                    <span>
-                      <Kbd>2</Kbd>
-                    </span>
-                    {slide.quiz.answer_2}
-                  </Button>
-                  {slide.quiz.answer_3 && (
-                    <Button
-                      ref={answer3Ref}
-                      onClick={() => selectAnswer(3)}
-                      isActive={
-                        (selectedAnswerNumber || localStorageAnswer) === 3
-                      }
-                    >
-                      <span>
-                        <Kbd>3</Kbd>
-                      </span>
-                      {slide.quiz.answer_3}
-                    </Button>
-                  )}
-                  {slide.quiz.answer_4 && (
-                    <Button
-                      ref={answer4Ref}
-                      onClick={() => selectAnswer(4)}
-                      isActive={
-                        (selectedAnswerNumber || localStorageAnswer) === 4
-                      }
-                    >
-                      <span>
-                        <Kbd>4</Kbd>
-                      </span>
-                      {slide.quiz.answer_4}
-                    </Button>
-                  )}
-                </SimpleGrid>
-              </ButtonGroup>
-            </Answers>
-          </>
-        )}
-        {slide.type === 'QUEST' && (
-          <>
-            <Text fontSize="3xl" mb="8">
-              ⚡️ {slide.title}
-            </Text>
-            {slide.content && (
-              <Box>{ReactHtmlParser(youtubeLink2Iframe(slide.content))}</Box>
-            )}
-            {slide.component && <QuestComponent component={slide.component} />}
-          </>
-        )}
-        {slide.type === 'POAP' && (
-          <>
-            <Text fontSize="3xl" mb="8">
-              🎖 {slide.title}
-            </Text>
-            <VStack flex="auto">
-              {walletAddress ? (
+      <Swiper
+        initialSlide={currentSlide}
+        onSlideChange={(s) => {
+          setCurrentSlide(s.activeIndex)
+        }}
+        allowSlideNext={
+          !((isLastSlide && !isPoapClaimed) || (slide.quiz && !answerIsCorrect))
+        }
+        ref={swiperRef}
+      >
+        {quest.slides.map((slide, index) => (
+          <SwiperSlide key={`slide-${index}`}>
+            <Slide minH="620px" bgColor="white" p={8} mt={4}>
+              {slide.type === 'LEARN' && (
                 <>
-                  <Image
-                    src={quest.poapImageLink}
-                    width="250px"
-                    mt="100px"
-                    opacity={isPoapClaimed ? 1 : 0.7}
-                  />
-                  {!isPoapClaimed ? (
-                    <Button
-                      variant="outline"
-                      onClick={claimPoap}
-                      isLoading={isClaimingPoap}
-                    >
-                      Claim POAP
-                    </Button>
-                  ) : (
-                    <h2>
-                      {`Congrats for finishing the "${quest.name}" quest! 🥳`}
-                    </h2>
+                  <Text fontSize="3xl" mb="8">
+                    📚 {slide.title}
+                  </Text>
+                  {slide.content && (
+                    <Box>
+                      {ReactHtmlParser(youtubeLink2Iframe(slide.content))}
+                    </Box>
                   )}
                 </>
-              ) : (
-                <h2>⚠️ Connect your wallet first!</h2>
               )}
-            </VStack>
-          </>
-        )}
-      </Slide>
+              {slide.type === 'QUIZ' && (
+                <>
+                  <Text fontSize="3xl" mb="8">
+                    ❓ {slide.title}
+                  </Text>
+                  <Answers>
+                    <ButtonGroup
+                      colorScheme={answerIsCorrect ? 'green' : 'red'}
+                      size="lg"
+                    >
+                      <SimpleGrid columns={[null, null, 2]} spacing="40px">
+                        <Button
+                          ref={answer1Ref}
+                          onClick={() => selectAnswer(1)}
+                          isActive={
+                            (selectedAnswerNumber || localStorageAnswer) === 1
+                          }
+                        >
+                          <span>
+                            <Kbd>1</Kbd>
+                          </span>
+                          {slide.quiz.answer_1}
+                        </Button>
+                        <Button
+                          ref={answer2Ref}
+                          onClick={() => selectAnswer(2)}
+                          isActive={
+                            (selectedAnswerNumber || localStorageAnswer) === 2
+                          }
+                        >
+                          <span>
+                            <Kbd>2</Kbd>
+                          </span>
+                          {slide.quiz.answer_2}
+                        </Button>
+                        {slide.quiz.answer_3 && (
+                          <Button
+                            ref={answer3Ref}
+                            onClick={() => selectAnswer(3)}
+                            isActive={
+                              (selectedAnswerNumber || localStorageAnswer) === 3
+                            }
+                          >
+                            <span>
+                              <Kbd>3</Kbd>
+                            </span>
+                            {slide.quiz.answer_3}
+                          </Button>
+                        )}
+                        {slide.quiz.answer_4 && (
+                          <Button
+                            ref={answer4Ref}
+                            onClick={() => selectAnswer(4)}
+                            isActive={
+                              (selectedAnswerNumber || localStorageAnswer) === 4
+                            }
+                          >
+                            <span>
+                              <Kbd>4</Kbd>
+                            </span>
+                            {slide.quiz.answer_4}
+                          </Button>
+                        )}
+                      </SimpleGrid>
+                    </ButtonGroup>
+                  </Answers>
+                </>
+              )}
+              {slide.type === 'QUEST' && (
+                <>
+                  <Text fontSize="3xl" mb="8">
+                    ⚡️ {slide.title}
+                  </Text>
+                  {slide.content && (
+                    <Box>
+                      {ReactHtmlParser(youtubeLink2Iframe(slide.content))}
+                    </Box>
+                  )}
+                  {slide.component && (
+                    <QuestComponent component={slide.component} />
+                  )}
+                </>
+              )}
+              {slide.type === 'POAP' && (
+                <>
+                  <Text fontSize="3xl" mb="8">
+                    🎖 {slide.title}
+                  </Text>
+                  <VStack flex="auto">
+                    {walletAddress ? (
+                      <>
+                        <Image
+                          src={quest.poapImageLink}
+                          width="250px"
+                          mt="100px"
+                          opacity={isPoapClaimed ? 1 : 0.7}
+                        />
+                        {!isPoapClaimed ? (
+                          <Button
+                            variant="outline"
+                            onClick={claimPoap}
+                            isLoading={isClaimingPoap}
+                          >
+                            Claim POAP
+                          </Button>
+                        ) : (
+                          <h2>
+                            {`Congrats for finishing the "${quest.name}" quest! 🥳`}
+                          </h2>
+                        )}
+                      </>
+                    ) : (
+                      <h2>⚠️ Connect your wallet first!</h2>
+                    )}
+                  </VStack>
+                </>
+              )}
+            </Slide>
+          </SwiperSlide>
+        ))}
+      </Swiper>
       <Box display="flex" p={4}>
         <HStack flex="auto">
           <Button>🗣</Button>
