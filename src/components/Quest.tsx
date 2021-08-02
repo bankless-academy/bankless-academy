@@ -73,7 +73,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const [isPoapClaimed, setIsPoapClaimed] = useState(
     !!localStorage.getItem(`poap-${quest.slug}`)
   )
-  const swiperRef = useRef(null)
+  const [swiper, setSwiper] = useState(null)
 
   const router = useRouter()
   const numberOfSlides = quest.slides.length
@@ -94,9 +94,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     setSelectedAnswerNumber(null)
     if (!isFirstSlide) {
       setCurrentSlide(currentSlide - 1)
-      if (swiperRef?.current.swiper) {
-        swiperRef.current.swiper.slidePrev()
-      }
+      swiper?.slidePrev()
     }
   }
 
@@ -106,9 +104,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
-      if (swiperRef?.current.swiper) {
-        swiperRef.current.swiper.slideNext()
-      }
+      swiper?.slideNext()
     }
     // TODO LATER: use router.push('/quests')
     else if (isLastSlide && isPoapClaimed) router.push('/')
@@ -192,7 +188,10 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         allowSlideNext={
           !((isLastSlide && !isPoapClaimed) || (slide.quiz && !answerIsCorrect))
         }
-        ref={swiperRef}
+        onInit={() => {
+          const s: any = document.querySelector('.swiper-container')
+          setSwiper(s.swiper)
+        }}
       >
         {quest.slides.map((slide, index) => (
           <SwiperSlide key={`slide-${index}`}>
