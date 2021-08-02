@@ -93,6 +93,7 @@ const QuestCards: React.FC = () => {
             bg={colorMode === 'dark' ? 'whiteAlpha.400' : 'blackAlpha.400'}
             cursor="pointer"
             key={`quest-${index}`}
+            overflow="hidden"
             onClick={() => {
               setSelectedQuest(index)
               onOpen()
@@ -137,29 +138,29 @@ const QuestCards: React.FC = () => {
         {selectedQuest !== null && (
           <ModalContent>
             <ModalHeader>
-              <Text fontSize="3xl">{QUESTS[selectedQuest].name}</Text>
+              <Text fontSize="2xl">{QUESTS[selectedQuest].name}</Text>
             </ModalHeader>
             <ModalCloseButton />
             <ModalBody fontWeight="bold">
-              <Text fontSize="2xl" mb="4">
+              <Text fontSize="xl" mb="4">
                 📚 Knowledge requirement?
               </Text>
-              <Text fontSize="xl" mb="4" color="gray.500">
+              <Text fontSize="l" mb="4" color="gray.500">
                 {ReactHtmlParser(QUESTS[selectedQuest].knowledgeRequirements)}
               </Text>
-              <Text fontSize="2xl" mb="4">
+              <Text fontSize="xl" mb="4">
                 📖 What will you learn from this?
               </Text>
-              <Text fontSize="xl" mb="4" color="gray.500">
+              <Text fontSize="l" mb="4" color="gray.500">
                 {ReactHtmlParser(QUESTS[selectedQuest].learnings)}
               </Text>
-              <Text fontSize="2xl" mb="4">
+              <Text fontSize="xl" mb="4">
                 🤓 What will you be able to do by the end of this course?
               </Text>
-              <Text fontSize="xl" mb="4" color="gray.500">
+              <Text fontSize="l" mb="4" color="gray.500">
                 {ReactHtmlParser(QUESTS[selectedQuest].learningActions)}
               </Text>
-              <Box textAlign="center" m="8">
+              <Box textAlign="center" m="6">
                 <Link href={`/quest/${QUESTS[selectedQuest].slug}`}>
                   <Button ref={startNowRef}>Start now</Button>
                 </Link>

@@ -182,6 +182,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       <ProgressSteps step={currentSlide} total={numberOfSlides} />
       <Swiper
         initialSlide={currentSlide}
+        autoHeight={true}
         onSlideChange={(s) => {
           setCurrentSlide(s.activeIndex)
         }}
