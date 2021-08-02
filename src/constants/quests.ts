@@ -32,11 +32,9 @@ const QUESTS: QuestType[] = [
         type: 'QUIZ',
         title:
           'In simple terms, you can think of the public key as your _____, and the private key as you _____',
-        content:
-          "<div class='checklist'><label><input type='checkbox' disabled>Routing Number / Account Number</label><label><input type='checkbox' disabled checked>Username / Password</label><label><input type='checkbox' disabled>Address / Zip code</label><label><input type='checkbox' disabled>Phone Number / Social Security Number</label></div>",
         quiz: {
+          rightAnswerNumber: 2,
           answer_1: 'Routing Number / Account Number',
-          right_answer_number: 2,
           answer_2: 'Username / Password',
           answer_3: 'Address / Zip code',
           answer_4: 'Phone Number / Social Security Number',
@@ -63,19 +61,17 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'LEARN',
-        title: 'Recovery phrase? What is <em>that</em>?',
+        title: 'What is a recovery phrase?',
         content:
           "<ul><li>When you create a wallet, you also create a recovery phrase that is specific to that wallet.</li><li>A recovery phrase is a list of 12 to 24 words, and represents a single secret piece of data that is used to generate your wallet's public key and private key.</li><li>It stores the information that can be used to recover your wallet and crypto if/ when your wallet fails unexpectedly or gets damaged. Or if you are unable to access it due to misplacing or theft.</li><li>In simple terms, you can think of it just like the security question of your email account or bank login; the recovery phrase allows you to prove your identity and access your account on different devices.</li><li>This same recovery phrase can actually be used in different types of wallet.</li></ul>",
       },
       {
         type: 'QUIZ',
         title: 'I can use a recovery phrase to _____',
-        content:
-          "<div class='checklist'><label><input type='checkbox' disabled>[A] Recover my wallet if lost, stolen, or damaged</label><label><input type='checkbox' disabled>[B] Access my wallet on multiple devices</label><label><input type='checkbox' disabled checked>[C] Both [A] & [B]</label><label><input type='checkbox' disabled>[D] None of the above</label></div>",
         quiz: {
+          rightAnswerNumber: 3,
           answer_1: '[A] Recover my wallet if lost, stolen, or damaged',
           answer_2: '[B] Access my wallet on multiple devices',
-          right_answer_number: 3,
           answer_3: '[C] Both [A] & [B]',
           answer_4: '[D] None of the above',
           id: 'wallet-basics-2',
@@ -90,25 +86,11 @@ const QUESTS: QuestType[] = [
       {
         type: 'QUIZ',
         title: 'I control my private keys with a custodial wallet?',
-        content:
-          "<div class='checklist'><label><input type='checkbox' disabled>True</label><label><input type='checkbox' disabled checked>False</label></div>",
         quiz: {
+          rightAnswerNumber: 2,
           answer_1: 'True',
-          right_answer_number: 2,
           answer_2: 'False',
           id: 'wallet-basics-3',
-        },
-      },
-      {
-        type: 'QUIZ',
-        title: 'If I control my private keys, do I control my crypto?',
-        content:
-          "<div class='checklist'><label><input type='checkbox' disabled checked>True</label><label><input type='checkbox' disabled>False</label></div>",
-        quiz: {
-          right_answer_number: 1,
-          answer_1: 'True',
-          answer_2: 'False',
-          id: 'wallet-basics-4',
         },
       },
       {
@@ -155,8 +137,8 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUEST',
-        title: 'Wallet Basics Quest',
-        component: 'WalletBasics',
+        title: 'Borrow with Aave Quest',
+        component: 'BorrowWithAave',
       },
       {
         type: 'POAP',

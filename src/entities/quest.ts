@@ -21,7 +21,7 @@ export interface QuestType {
       answer_2: string
       answer_3?: string
       answer_4?: string
-      right_answer_number: number
+      rightAnswerNumber: number
     }
     component?: QuestComponentType
   }[]

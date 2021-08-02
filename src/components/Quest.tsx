@@ -106,7 +106,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
 
   const selectAnswer = (answerNumber: number) => {
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
-    if (slide.quiz.right_answer_number === answerNumber) {
+    if (slide.quiz.rightAnswerNumber === answerNumber) {
       // correct answer
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
     } else {
@@ -169,7 +169,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const answerIsCorrect =
     slide.quiz &&
     localStorage.getItem(`quiz-${slide.quiz.id}`) ===
-      '' + slide.quiz.right_answer_number
+      '' + slide.quiz.rightAnswerNumber
 
   return (
     <>

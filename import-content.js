@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
 const axios = require('axios')
 const FileSystem = require('fs')
+const stringifyObject = require('stringify-object')
 
 const DEFAULT_NOTION_ID = '1813af42f771491b8d9af966d9d433fe'
+const POTION_API = 'https://potion-api.vercel.app'
 
-// TODO: add typing?
 const KEY_MATCHING = {
   'POAP image link': 'poapImageLink',
   'What will you be able to do after this course?': 'learningActions',
@@ -16,7 +17,6 @@ const KEY_MATCHING = {
   Description: 'description',
   Name: 'name',
 }
-console.log(KEY_MATCHING)
 
 const args = process.argv
 const NOTION_ID =
@@ -26,18 +26,15 @@ const NOTION_ID =
 console.log('NOTION_ID', NOTION_ID)
 
 axios
-  .get(`https://potion-api.vercel.app/table?id=${NOTION_ID}`)
-  .then(async function (response) {
-    const courses = response.data.sort(
-      (a, b) => parseInt(a.fields.order) > parseInt(b.fields.order)
-    )
-    let quests = []
-    await courses.map(async function (course) {
-      const notionContentId = course.id.replace(/-/g, '')
-      console.log(notionContentId)
-      await axios
-        .get(`https://potion-api.vercel.app/html?id=${notionContentId}`)
-        .then(async function (response) {
+  .get(`${POTION_API}/table?id=${NOTION_ID}`)
+  .then((response) => {
+    const quests = []
+    const courses = response.data
+    const promiseArray = courses.map((course) => {
+      console.log('course Notion link: ', `${POTION_API}/html?id=${course.id}`);
+      return axios
+        .get(`${POTION_API}/html?id=${course.id}`)
+        .then((response) => {
           // replace keys
           let contentInfos = Object.keys(KEY_MATCHING).reduce(
             (obj, k) =>
@@ -45,40 +42,46 @@ axios
                 [KEY_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
                   ? course.fields[k]
                   : // transform to number if the string contains a number
-                    parseInt(course.fields[k]),
+                  parseInt(course.fields[k]),
               }),
             {}
           )
-          contentInfos['slug'] = contentInfos['name']
+          contentInfos.slug = contentInfos.name
             .toLowerCase()
             .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
             .replace(/\s+/g, '-') // collapse whitespace and replace by -
             .replace(/-+/g, '-') // collapse dashes
           const content = JSON.parse(
             `[` +
-              response.data
-                .replace(/"/g, "'")
-                .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
-                .replace(/<\/h1>/g, `","content": "`)
-                .substr(3) +
-              `"}]`
+            response.data
+              .replace(/"/g, "'")
+              .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
+              .replace(/<\/h1>/g, `","content": "`)
+              .substr(3) + // remove extra "}, at the beginning
+            `"}]`
           )
           let quizNb = 0
           const slides = content.map((slide) => {
-            // QUIZ
+            // replace with type QUIZ
             if (
               slide.content.substr(0, "<div class='checklist'>".length) ===
               "<div class='checklist'>"
             ) {
               quizNb++
               slide.type = 'QUIZ'
-              let questions = slide.content.split('</label><label>')
+              const questions = slide.content.split('</label><label>')
+              delete slide.content
               slide.quiz = {}
+              slide.quiz.rightAnswerNumber = null
               questions.map((question, i) => {
                 const nb = i + 1
+                if (slide.quiz.rightAnswerNumber !== null && question.includes('disabled checked>'))
+                  // NOTION BUG: in case of bug with checked checkbox, recreate a new one
+                  throw new Error(`more than 1 right answer, please check ${POTION_API}/html?id=${course.id}`)
                 if (question.includes('disabled checked>'))
-                  slide.quiz['right_answer_number'] = nb
+                  slide.quiz.rightAnswerNumber = nb
                 slide.quiz[`answer_${nb}`] = question.replace(
+                  // remove tags
                   /<\/?[^>]+(>|$)/g,
                   ''
                 )
@@ -87,32 +90,36 @@ axios
             }
             return slide
           })
-          // TODO: dyn
+          const componentName = contentInfos.name.split(" ").map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ").replace(/\s+/g, '')
           slides.push({
             type: 'QUEST',
-            title: 'Wallet Basics Quest',
-            component: 'WalletBasics',
+            title: `${contentInfos.name} Quest`,
+            component: componentName,
           })
           slides.push({
             type: 'POAP',
             title: 'Collect your POAP',
           })
-          console.log(slides)
-          contentInfos['slides'] = slides
-          console.log(contentInfos)
-          quests.push(contentInfos)
+          contentInfos.slides = slides
+          console.log('contentInfos', contentInfos)
+          quests[parseInt(course.fields.order) - 1] = contentInfos
         })
-      const FILE_CONTENT = `import { QuestType } from 'entities/quest'
+    })
+    axios
+      .all(promiseArray)
+      .then(() => {
+        const FILE_CONTENT = `import { QuestType } from 'entities/quest'
 
-const QUESTS: QuestType[] = ${JSON.stringify(quests, null, 2)}
+const QUESTS: QuestType[] = ${stringifyObject(quests, { indent: '  ', singleQuotes: true })}
 
 export default QUESTS
-      `
-      FileSystem.writeFile('src/constants/quests.ts', FILE_CONTENT, (error) => {
-        if (error) throw error
+`
+        FileSystem.writeFile('src/constants/quests.ts', FILE_CONTENT, (error) => {
+          if (error) throw error
+        })
+        console.log('export done -> check syntax & typing errors in src/constants/quests.ts')
       })
-    })
   })
-  .catch(function (error) {
+  .catch((error) => {
     console.log(error)
   })

@@ -9726,7 +9726,7 @@ string_decoder@~1.1.1:
 
 stringify-object@^3.3.0:
   version "3.3.0"
-  resolved "https://registry.npmjs.org/stringify-object/-/stringify-object-3.3.0.tgz"
+  resolved "https://registry.yarnpkg.com/stringify-object/-/stringify-object-3.3.0.tgz#703065aefca19300d3ce88af4f5b3956d7556629"
   integrity sha512-rHqiFh1elqCQ9WPLIC8I0Q/g/wj5J1eMkyoiD6eoQApWHP0FtlK7rqnhmabL5VUY9JQCcqwwvlOaSuutekgyrw==
   dependencies:
     get-own-enumerable-property-symbols "^3.0.0"
