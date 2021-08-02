@@ -29,7 +29,7 @@ axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((response) => {
     const quests = []
-    const promiseArray = response.data.map((course) => {
+    const promiseArray = response.data.map((course, index) => {
       console.log('course Notion link: ', `${POTION_API}/html?id=${course.id}`)
       return axios
         .get(`${POTION_API}/html?id=${course.id}`)
@@ -110,7 +110,7 @@ axios
           })
           quest.slides = slides
           console.log('quest', quest)
-          quests[parseInt(course.fields.order) - 1] = quest
+          quests[index] = quest
         })
     })
     axios.all(promiseArray).then(() => {
