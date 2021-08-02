@@ -14,6 +14,7 @@ const QUESTS: QuestType[] = [
     difficulty: 'Easy',
     description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
+    notionId: 'b302a5b32e0d443f87835a26b6a5af20',
     slug: 'wallet-basics',
     slides: [
       {
@@ -128,6 +129,7 @@ const QUESTS: QuestType[] = [
     difficulty: 'Advanced',
     description: 'Learn how to borrow with Aave.',
     name: 'Borrow with Aave',
+    notionId: '7953218bdc484f8bb066449fc58c3388',
     slug: 'borrow-with-aave',
     slides: [
       {

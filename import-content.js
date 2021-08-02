@@ -41,10 +41,11 @@ axios
                 [KEY_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
                   ? course.fields[k]
                   : // transform to number if the string contains a number
-                    parseInt(course.fields[k]),
+                  parseInt(course.fields[k]),
               }),
             {}
           )
+          quest.notionId = course.id.replace(/-/g, '')
           quest.slug = quest.name
             .toLowerCase()
             .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
@@ -52,12 +53,12 @@ axios
             .replace(/-+/g, '-') // collapse dashes
           const content = JSON.parse(
             `[` +
-              response.data
-                .replace(/"/g, "'")
-                .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
-                .replace(/<\/h1>/g, `","content": "`)
-                .substr(3) + // remove extra "}, at the beginning
-              `"}]`
+            response.data
+              .replace(/"/g, "'")
+              .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
+              .replace(/<\/h1>/g, `","content": "`)
+              .substr(3) + // remove extra "}, at the beginning
+            `"}]`
           )
           let quizNb = 0
           const slides = content.map((slide) => {

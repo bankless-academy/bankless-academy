@@ -195,7 +195,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       >
         {quest.slides.map((slide, index) => (
           <SwiperSlide key={`slide-${index}`}>
-            <Slide minH="620px" bgColor="white" p={8} mt={4}>
+            <Slide minH="620px" bgColor="white" p={8} mt={4} overflow="hidden">
               {slide.type === 'LEARN' && (
                 <>
                   <Text fontSize="3xl" mb="8">
@@ -215,12 +215,18 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                   </Text>
                   <Answers>
                     <ButtonGroup
-                      colorScheme={answerIsCorrect ? 'green' : 'red'}
+                      colorScheme={
+                        localStorage.getItem(`quiz-${slide.quiz.id}`) ===
+                        '' + slide.quiz.rightAnswerNumber
+                          ? 'green'
+                          : 'red'
+                      }
                       size="lg"
                     >
                       <SimpleGrid columns={[null, null, 2]} spacing="40px">
                         <Button
                           ref={answer1Ref}
+                          whiteSpace="break-spaces"
                           onClick={() => selectAnswer(1)}
                           isActive={
                             (selectedAnswerNumber || localStorageAnswer) === 1
@@ -233,6 +239,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                         </Button>
                         <Button
                           ref={answer2Ref}
+                          whiteSpace="break-spaces"
                           onClick={() => selectAnswer(2)}
                           isActive={
                             (selectedAnswerNumber || localStorageAnswer) === 2
@@ -246,6 +253,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                         {slide.quiz.answer_3 && (
                           <Button
                             ref={answer3Ref}
+                            whiteSpace="break-spaces"
                             onClick={() => selectAnswer(3)}
                             isActive={
                               (selectedAnswerNumber || localStorageAnswer) === 3
@@ -260,6 +268,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                         {slide.quiz.answer_4 && (
                           <Button
                             ref={answer4Ref}
+                            whiteSpace="break-spaces"
                             onClick={() => selectAnswer(4)}
                             isActive={
                               (selectedAnswerNumber || localStorageAnswer) === 4
@@ -331,23 +340,15 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       </Swiper>
       <Box display="flex" p={4}>
         <HStack flex="auto">
-          <Button>🗣</Button>
-          <Button>🏴</Button>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={`https://www.notion.so/${quest.notionId}`}
+          >
+            <Button variant="outline">🐞 comment this slide</Button>
+          </a>
         </HStack>
         <HStack>
-          <Button
-            onClick={() => {
-              localStorage.clear()
-              setCurrentSlide(0)
-            }}
-          >
-            <span>
-              <Kbd color="black" mr="0.5em">
-                r
-              </Kbd>
-            </span>
-            reset
-          </Button>
           {!isFirstSlide && (
             <Button ref={buttonLeftRef} onClick={goToPrevSlide}>
               ⬅️
