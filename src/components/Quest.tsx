@@ -101,7 +101,8 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) setCurrentSlide(currentSlide + 1)
-    else if (isLastSlide && isPoapClaimed) router.push('/quests')
+    // TODO LATER: use router.push('/quests')
+    else if (isLastSlide && isPoapClaimed) router.push('/')
   }
 
   const selectAnswer = (answerNumber: number) => {

@@ -37,7 +37,7 @@ const Nav: React.FC = () => {
       <nav>
         <Flex p={4}>
           <HStack spacing={4}>
-            <Link href="/">
+            {/* <Link href="/">
               <Button
                 isActive={currentLink === '/'}
                 variant="unstyled"
@@ -60,6 +60,15 @@ const Nav: React.FC = () => {
                 size={isMobile ? 'sm' : 'md'}
               >
                 About
+              </Button>
+            </Link> */}
+            <Link href="/">
+              <Button
+                isActive={currentLink === '/'}
+                variant="unstyled"
+                size={isMobile ? 'sm' : 'md'}
+              >
+                ⚡️ Onboard
               </Button>
             </Link>
           </HStack>
