@@ -20,8 +20,8 @@ const KEY_MATCHING = {
 
 const args = process.argv
 const NOTION_ID =
-  args[2] && args[3] && args[2] === '-id' && args[3].length === 32
-    ? args[3]
+  args[2] && args[2].length === 32
+    ? args[2]
     : DEFAULT_NOTION_ID
 console.log('NOTION_ID', NOTION_ID)
 

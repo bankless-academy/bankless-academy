@@ -15,13 +15,13 @@
 ### Defaut import command
 
 ```bash
-./import-content.sh
+yarn import-content
 ```
 
 ### Import a specific Notion ID
 
 ```bash
-./import-content.sh -id 1813af42f771491b8d9af966d9d433fe
+yarn import-content 1813af42f771491b8d9af966d9d433fe
 ```
 
 ## Tech Stack
@@ -52,7 +52,7 @@
 - Get familiar with the project
 - Check [open issues](https://github.com/BanklessDAO/onboard/issues) and assign yourself
 - Create and submit a PR
-- Assign @wpmonty + @didierkrux as reviewers
+- Assign @didierkrux + @wpmonty as reviewers
 
 ## Local Development
 
