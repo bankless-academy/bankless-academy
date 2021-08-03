@@ -33,9 +33,10 @@ const Slide = styled(Box)`
     font-size: var(--chakra-fontSizes-xl);
     margin: 1em;
   }
-  ul {
+  ul,
+  ol {
     font-size: var(--chakra-fontSizes-xl);
-    margin-left: 2em;
+    margin-left: 3em;
   }
 `
 

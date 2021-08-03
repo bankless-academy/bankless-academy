@@ -51,6 +51,16 @@ const Claimed = styled(Button)`
   right: 12px;
 `
 
+const DIFFICULTY_COLORS: {
+  Easy: string
+  Advanced: string
+  Expert: string
+} = {
+  Easy: 'green',
+  Advanced: 'orange',
+  Expert: 'red',
+}
+
 const QuestCards: React.FC = () => {
   const { colorMode } = useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -115,8 +125,14 @@ const QuestCards: React.FC = () => {
               <Duration colorScheme="gray" borderRadius="full" size="xs">
                 🕒 {quest.duration} min
               </Duration>
-              <Difficulty colorScheme="gray" borderRadius="full" size="xs">
-                {quest.difficulty}
+              <Difficulty
+                colorScheme={DIFFICULTY_COLORS[quest.difficulty]}
+                borderRadius="full"
+                size="xs"
+              >
+                {quest.difficulty === 'Easy' && '🙂 Easy'}
+                {quest.difficulty === 'Advanced' && '🤓 Advanced'}
+                {quest.difficulty === 'Expert' && '🛠 Expert'}
               </Difficulty>
               <Claimed colorScheme="gray" borderRadius="full" size="xs">
                 🎖 {numberOfPoapClaimed[index]} Claimed

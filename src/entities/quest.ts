@@ -7,7 +7,7 @@ export interface QuestType {
   poapEventId: number
   description: string
   duration: number
-  difficulty: string
+  difficulty: 'Easy' | 'Advanced' | 'Expert'
   poapImageLink: string
   learnings: string
   learningActions: string
