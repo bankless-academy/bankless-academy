@@ -94,7 +94,7 @@ const Page = (): JSX.Element => {
         </Stack>
         <Stack spacing={3} mb={4}>
           <Text fontSize="2xl" fontWeight="bold">
-            Temporary disabled
+            Temporarily disabled
           </Text>
           <List spacing={3} fontSize="lg">
             {DEV_PROGRESS.disabled.map((f, k) => (
