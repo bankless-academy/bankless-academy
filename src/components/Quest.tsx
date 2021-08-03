@@ -36,7 +36,7 @@ const Slide = styled(Box)`
   ul,
   ol {
     font-size: var(--chakra-fontSizes-xl);
-    margin-left: 3em;
+    margin-left: 2em;
   }
 `
 
@@ -116,6 +116,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     if (slide.quiz.rightAnswerNumber === answerNumber) {
       // correct answer
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
+      toast.closeAll()
     } else if (!answerIsCorrect) {
       // wrong answer
       toast({
