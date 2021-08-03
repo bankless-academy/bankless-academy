@@ -77,7 +77,7 @@ const Nav: React.FC = () => {
             zIndex="toast"
             spacing={4}
             isMobile={isMobile}
-            // TODO: auto change
+            // TODO: auto change via theme
             bgColor={isMobile ? 'gray.200' : 'auto'}
             justifyContent="space-between"
           >

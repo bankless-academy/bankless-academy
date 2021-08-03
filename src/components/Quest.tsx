@@ -9,6 +9,7 @@ import {
   VStack,
   SimpleGrid,
   Kbd,
+  useToast,
 } from '@chakra-ui/react'
 import axios from 'axios'
 import { useHotkeys } from 'react-hotkeys-hook'
@@ -22,7 +23,6 @@ import ProgressSteps from 'components/ProgressSteps'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useWalletWeb3React } from 'hooks'
 
-// TODO: improve styling
 const Slide = styled(Box)`
   border-radius: 0.5rem;
   h1 {
@@ -52,7 +52,7 @@ const Answers = styled(Box)`
   }
 `
 
-// TODO: move to utils
+// TODO: move to utils?
 const youtubeLink2Iframe = (html) =>
   html.replace(
     /(?:https:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?.*v=)?(\w+)/g,
@@ -75,8 +75,10 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     !!localStorage.getItem(`poap-${quest.slug}`)
   )
   const [swiper, setSwiper] = useState(null)
+  const supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints
 
   const router = useRouter()
+  const toast = useToast()
   const numberOfSlides = quest.slides.length
   const slide = quest.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
@@ -92,7 +94,6 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   }, [currentSlide])
 
   const goToPrevSlide = () => {
-    setSelectedAnswerNumber(null)
     if (!isFirstSlide) {
       setCurrentSlide(currentSlide - 1)
       swiper?.slidePrev()
@@ -100,7 +101,6 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   }
 
   const goToNextSlide = () => {
-    setSelectedAnswerNumber(null)
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
@@ -116,9 +116,14 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     if (slide.quiz.rightAnswerNumber === answerNumber) {
       // correct answer
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
-    } else {
+    } else if (!answerIsCorrect) {
       // wrong answer
-      // TODO: add error UI
+      toast({
+        title: 'Wrong answer ... try again!',
+        position: 'top',
+        status: 'warning',
+        duration: 5000,
+      })
     }
   }
 
@@ -138,7 +143,12 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       .catch(function (error) {
         // eslint-disable-next-line no-console
         console.log(error)
-        // TODO: handle error cases
+        toast({
+          title: 'Something went wrong',
+          description: 'Refresh and try again ...',
+          status: 'error',
+          duration: 5000,
+        })
       })
   }
 
@@ -164,10 +174,6 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     answer4Ref?.current?.click()
   })
 
-  const localStorageAnswer: number = slide.quiz
-    ? parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`))
-    : null
-
   const answerIsCorrect =
     slide.quiz &&
     localStorage.getItem(`quiz-${slide.quiz.id}`) ===
@@ -181,6 +187,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         autoHeight={true}
         onSlideChange={(s) => {
           setCurrentSlide(s.activeIndex)
+          setSelectedAnswerNumber(null)
         }}
         allowSlideNext={
           !((isLastSlide && !isPoapClaimed) || (slide.quiz && !answerIsCorrect))
@@ -189,6 +196,8 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           const s: any = document.querySelector('.swiper-container')
           setSwiper(s.swiper)
         }}
+        // no touch simulation for desktop
+        simulateTouch={false}
       >
         {quest.slides.map((slide, index) => (
           <SwiperSlide key={`slide-${index}`}>
@@ -226,7 +235,10 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                           whiteSpace="break-spaces"
                           onClick={() => selectAnswer(1)}
                           isActive={
-                            (selectedAnswerNumber || localStorageAnswer) === 1
+                            (selectedAnswerNumber ||
+                              parseInt(
+                                localStorage.getItem(`quiz-${slide.quiz.id}`)
+                              )) === 1
                           }
                         >
                           <span>
@@ -239,7 +251,10 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                           whiteSpace="break-spaces"
                           onClick={() => selectAnswer(2)}
                           isActive={
-                            (selectedAnswerNumber || localStorageAnswer) === 2
+                            (selectedAnswerNumber ||
+                              parseInt(
+                                localStorage.getItem(`quiz-${slide.quiz.id}`)
+                              )) === 2
                           }
                         >
                           <span>
@@ -253,7 +268,10 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                             whiteSpace="break-spaces"
                             onClick={() => selectAnswer(3)}
                             isActive={
-                              (selectedAnswerNumber || localStorageAnswer) === 3
+                              (selectedAnswerNumber ||
+                                parseInt(
+                                  localStorage.getItem(`quiz-${slide.quiz.id}`)
+                                )) === 3
                             }
                           >
                             <span>
@@ -268,7 +286,10 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                             whiteSpace="break-spaces"
                             onClick={() => selectAnswer(4)}
                             isActive={
-                              (selectedAnswerNumber || localStorageAnswer) === 4
+                              (selectedAnswerNumber ||
+                                parseInt(
+                                  localStorage.getItem(`quiz-${slide.quiz.id}`)
+                                )) === 4
                             }
                           >
                             <span>
@@ -345,23 +366,26 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
             <Button variant="outline">🐞 comment this slide</Button>
           </a>
         </HStack>
-        <HStack>
-          {!isFirstSlide && (
-            <Button ref={buttonLeftRef} onClick={goToPrevSlide}>
-              ⬅️
+        {/* hide buttons on touch screens */}
+        {!supportsTouch && (
+          <HStack>
+            {!isFirstSlide && (
+              <Button ref={buttonLeftRef} onClick={goToPrevSlide}>
+                ⬅️
+              </Button>
+            )}
+            <Button
+              ref={buttonRightRef}
+              disabled={
+                (isLastSlide && !isPoapClaimed) ||
+                (slide.quiz && !answerIsCorrect)
+              }
+              onClick={goToNextSlide}
+            >
+              ➡️
             </Button>
-          )}
-          <Button
-            ref={buttonRightRef}
-            disabled={
-              (isLastSlide && !isPoapClaimed) ||
-              (slide.quiz && !answerIsCorrect)
-            }
-            onClick={goToNextSlide}
-          >
-            ➡️
-          </Button>
-        </HStack>
+          </HStack>
+        )}
       </Box>
     </>
   )
