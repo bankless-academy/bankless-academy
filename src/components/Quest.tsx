@@ -106,7 +106,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
 
   const selectAnswer = (answerNumber: number) => {
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
-    if (slide.quiz.right_answer_number === answerNumber) {
+    if (slide.quiz.rightAnswerNumber === answerNumber) {
       // correct answer
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
     } else {
@@ -169,7 +169,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const answerIsCorrect =
     slide.quiz &&
     localStorage.getItem(`quiz-${slide.quiz.id}`) ===
-      '' + slide.quiz.right_answer_number
+      '' + slide.quiz.rightAnswerNumber
 
   return (
     <>
@@ -187,7 +187,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         )}
         {slide.type === 'QUIZ' && (
           <>
-            <Text fontSize="3xl">❓ {slide.quiz.question}</Text>
+            <Text fontSize="3xl">❓ {slide.title}</Text>
             <Answers>
               <ButtonGroup
                 colorScheme={answerIsCorrect ? 'green' : 'red'}
@@ -218,30 +218,34 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                     </span>
                     {slide.quiz.answer_2}
                   </Button>
-                  <Button
-                    ref={answer3Ref}
-                    onClick={() => selectAnswer(3)}
-                    isActive={
-                      (selectedAnswerNumber || localStorageAnswer) === 3
-                    }
-                  >
-                    <span>
-                      <Kbd>3</Kbd>
-                    </span>
-                    {slide.quiz.answer_3}
-                  </Button>
-                  <Button
-                    ref={answer4Ref}
-                    onClick={() => selectAnswer(4)}
-                    isActive={
-                      (selectedAnswerNumber || localStorageAnswer) === 4
-                    }
-                  >
-                    <span>
-                      <Kbd>4</Kbd>
-                    </span>
-                    {slide.quiz.answer_4}
-                  </Button>
+                  {slide.quiz.answer_3 && (
+                    <Button
+                      ref={answer3Ref}
+                      onClick={() => selectAnswer(3)}
+                      isActive={
+                        (selectedAnswerNumber || localStorageAnswer) === 3
+                      }
+                    >
+                      <span>
+                        <Kbd>3</Kbd>
+                      </span>
+                      {slide.quiz.answer_3}
+                    </Button>
+                  )}
+                  {slide.quiz.answer_4 && (
+                    <Button
+                      ref={answer4Ref}
+                      onClick={() => selectAnswer(4)}
+                      isActive={
+                        (selectedAnswerNumber || localStorageAnswer) === 4
+                      }
+                    >
+                      <span>
+                        <Kbd>4</Kbd>
+                      </span>
+                      {slide.quiz.answer_4}
+                    </Button>
+                  )}
                 </SimpleGrid>
               </ButtonGroup>
             </Answers>
@@ -265,7 +269,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
               {walletAddress ? (
                 <>
                   <Image
-                    src={quest.poap_image}
+                    src={quest.poapImageLink}
                     width="250px"
                     mt="100px"
                     opacity={isPoapClaimed ? 1 : 0.7}

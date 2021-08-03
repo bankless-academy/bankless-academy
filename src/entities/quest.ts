@@ -7,19 +7,21 @@ export interface QuestType {
   description: string
   duration: number
   difficulty: string
-  poap_image: string
+  poapImageLink: string
+  learnings: string
+  learningActions: string
+  knowledgeRequirements: string
   slides: {
     type: 'LEARN' | 'QUIZ' | 'QUEST' | 'POAP'
     title: string
     content?: string
     quiz?: {
       id: string
-      question: string
       answer_1: string
       answer_2: string
-      answer_3: string
-      answer_4: string
-      right_answer_number: number
+      answer_3?: string
+      answer_4?: string
+      rightAnswerNumber: number
     }
     component?: QuestComponentType
   }[]
