@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button } from '@chakra-ui/react'
 import { useWalletWeb3React } from 'hooks'
-import Web3 from 'web3'
+const Web3 = require('web3')
 import * as ethUtil from 'ethereumjs-util'
 import { convertUtf8ToHex } from '@walletconnect/utils'
 
