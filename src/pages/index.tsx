@@ -46,7 +46,7 @@ const DEV_PROGRESS = {
     'Display all Bankless DAO POAPs',
     'Wallet basics quest improvement: share signature via twitter post to reduce Sybil attack + verify signature in backend',
     'Support for image + video content',
-    'Improve font sizing on mobile',
+    'Improve font sizing + spacing on mobile',
     'Improve POAP claiming: store claiming codes in database',
     'Logo + name',
     'Improve design + colors',
