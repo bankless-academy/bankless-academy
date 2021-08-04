@@ -14,6 +14,7 @@ const QUESTS: QuestType[] = [
     difficulty: 'Easy',
     description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
+    notionId: 'b302a5b32e0d443f87835a26b6a5af20',
     slug: 'wallet-basics',
     slides: [
       {
@@ -57,7 +58,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'How do I protect my keys?',
         content:
-          '<ul><li>The 4 most effective ways to protect your keys:</li></ul>',
+          "<h2>The 4 most effective ways to protect your keys:</h2><ol><li><strong>Never</strong> share or reveal your private keys to anyone.</li><li><strong>Never</strong> save it online (such as OneDrive or Google Docs)</li><li>Write down your recovery phrase and <strong>store it in a secure location</strong> (such as inside your safe or a bank's safety deposit box).</li><li>We should find a way to write recovery phrases on indestructible material such as tungsten. Paper could get destroyed easily in case of floods or fire.</li></ol>",
       },
       {
         type: 'LEARN',
@@ -96,7 +97,8 @@ const QUESTS: QuestType[] = [
       {
         type: 'LEARN',
         title: 'MetaMask Wallet',
-        content: '<ul><li>Why use MetaMask?</li></ul>',
+        content:
+          '<h2>Why use MetaMask:</h2><ul><li>A Web3 non-custodial wallet, enabling the usage of dApps</li><li>It is a widely used wallet with over 5 million monthly active users</li></ul><h2>Very convenient to use,</h2><ul><li>A browser extension is available on Chrome, Brave, Edge, and Firefox internet browsers.  </li><li>Mobile app available for Android and IOS users</li></ul>',
       },
       {
         type: 'LEARN',
@@ -122,12 +124,13 @@ const QUESTS: QuestType[] = [
       '- Connect your wallet to Aave<br>- Deposit collateral on Aave<br>- Take a loan against your collateral',
     knowledgeRequirements: 'Manage a web3 wallet.',
     poapEventId: 4783,
-    duration: 20,
+    duration: 15,
     learnings:
       '- How to use Aave<br>- How to take a loan without any intermediary',
     difficulty: 'Advanced',
     description: 'Learn how to borrow with Aave.',
     name: 'Borrow with Aave',
+    notionId: '7953218bdc484f8bb066449fc58c3388',
     slug: 'borrow-with-aave',
     slides: [
       {

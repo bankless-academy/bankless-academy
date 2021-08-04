@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Box,
+  // Box,
   Button,
   HStack,
   Spacer,
@@ -11,8 +11,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
-import ColorModeSwitcher from 'layout/ColorModeSwitcher'
-import LanguageModeSwitcher from 'layout/LanguageModeSwitcher'
+// import ColorModeSwitcher from 'layout/ColorModeSwitcher'
+// import LanguageModeSwitcher from 'layout/LanguageModeSwitcher'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 
 const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`
@@ -37,7 +37,7 @@ const Nav: React.FC = () => {
       <nav>
         <Flex p={4}>
           <HStack spacing={4}>
-            <Link href="/">
+            {/* <Link href="/">
               <Button
                 isActive={currentLink === '/'}
                 variant="unstyled"
@@ -61,6 +61,15 @@ const Nav: React.FC = () => {
               >
                 About
               </Button>
+            </Link> */}
+            <Link href="/">
+              <Button
+                isActive={currentLink === '/'}
+                variant="unstyled"
+                size={isMobile ? 'sm' : 'md'}
+              >
+                ⚡️ Onboard
+              </Button>
             </Link>
           </HStack>
           <Spacer />
@@ -68,15 +77,15 @@ const Nav: React.FC = () => {
             zIndex="toast"
             spacing={4}
             isMobile={isMobile}
-            // TODO: auto change
+            // TODO: auto change via theme
             bgColor={isMobile ? 'gray.200' : 'auto'}
             justifyContent="space-between"
           >
             <ConnectWalletButton isMobile={isMobile} />
-            <Box display="flex">
+            {/* <Box display="flex">
               <LanguageModeSwitcher size={isMobile ? 'sm' : 'md'} />
               <ColorModeSwitcher size={isMobile ? 'sm' : 'md'} />
-            </Box>
+            </Box> */}
           </MenuConnect>
         </Flex>
       </nav>

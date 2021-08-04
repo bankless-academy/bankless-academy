@@ -2,7 +2,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 
-// TODO: move NOTION ID to .env
+// TODO: use infos from src/constants/quests.ts
 const NOTION_POAP_ID = {
   4652: '588737bf3969480eaade26ec1a7d9dcd',
   4783: 'ddba080ee81442ab998b5187c42b7d81',

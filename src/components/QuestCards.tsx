@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import axios from 'axios'
+import ReactHtmlParser from 'react-html-parser'
 
 import QUESTS from 'constants/quests'
 import CircularProgressSteps from 'components/CircularProgressSteps'
@@ -50,12 +51,26 @@ const Claimed = styled(Button)`
   right: 12px;
 `
 
+const DIFFICULTY_COLORS: {
+  Easy: string
+  Advanced: string
+  Expert: string
+} = {
+  Easy: 'green',
+  Advanced: 'orange',
+  Expert: 'red',
+}
+
 const QuestCards: React.FC = () => {
   const { colorMode } = useColorMode()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const startNowRef = useRef(null)
   const [selectedQuest, setSelectedQuest] = useState(null)
   const [numberOfPoapClaimed, setNumberOfPoapClaimed] = useState([])
+
+  const isSelectedQuestStarted = parseInt(
+    localStorage.getItem(QUESTS[selectedQuest]?.slug) || '-1'
+  )
 
   useEffect((): void => {
     // TODO: replace with tokensQuantityByEventId https://github.com/poap-xyz/poap-webapp/blob/2def482ffec93e6cbc4e3c5e5a18000805cc6c2b/src/api.ts#L1235
@@ -92,12 +107,13 @@ const QuestCards: React.FC = () => {
             bg={colorMode === 'dark' ? 'whiteAlpha.400' : 'blackAlpha.400'}
             cursor="pointer"
             key={`quest-${index}`}
+            overflow="hidden"
             onClick={() => {
               setSelectedQuest(index)
               onOpen()
             }}
           >
-            <Center minH="320px" position="relative">
+            <Center minH="325px" position="relative">
               <CircularProgressSteps
                 step={currentSlide}
                 total={numberOfSlides}
@@ -109,8 +125,14 @@ const QuestCards: React.FC = () => {
               <Duration colorScheme="gray" borderRadius="full" size="xs">
                 🕒 {quest.duration} min
               </Duration>
-              <Difficulty colorScheme="gray" borderRadius="full" size="xs">
-                {quest.difficulty}
+              <Difficulty
+                colorScheme={DIFFICULTY_COLORS[quest.difficulty]}
+                borderRadius="full"
+                size="xs"
+              >
+                {quest.difficulty === 'Easy' && '🙂 Easy'}
+                {quest.difficulty === 'Advanced' && '🤓 Advanced'}
+                {quest.difficulty === 'Expert' && '🛠 Expert'}
               </Difficulty>
               <Claimed colorScheme="gray" borderRadius="full" size="xs">
                 🎖 {numberOfPoapClaimed[index]} Claimed
@@ -135,18 +157,38 @@ const QuestCards: React.FC = () => {
         <ModalOverlay />
         {selectedQuest !== null && (
           <ModalContent>
-            <ModalHeader>{QUESTS[selectedQuest].name}</ModalHeader>
+            <ModalHeader>
+              <Text fontSize="2xl">{QUESTS[selectedQuest].name}</Text>
+            </ModalHeader>
             <ModalCloseButton />
-            <ModalBody>
-              <Text>
-                📚 Knowledge requirement? No prior knowledge needed. 📖 What
-                will you learn from this? Understand ... 🤓 What will you be
-                able to do by the end of this course? create and manage your own
-                wallet connect your wallet to Onboard
+            <ModalBody fontWeight="bold">
+              <Text fontSize="xl" mb="4">
+                📚 Knowledge requirement?
               </Text>
-              <Link href={`/quest/${QUESTS[selectedQuest].slug}`}>
-                <Button ref={startNowRef}>Start now</Button>
-              </Link>
+              <Text fontSize="l" mb="4" color="gray.500">
+                {ReactHtmlParser(QUESTS[selectedQuest].knowledgeRequirements)}
+              </Text>
+              <Text fontSize="xl" mb="4">
+                📖 What will you learn from this?
+              </Text>
+              <Text fontSize="l" mb="4" color="gray.500">
+                {ReactHtmlParser(QUESTS[selectedQuest].learnings)}
+              </Text>
+              <Text fontSize="xl" mb="4">
+                🤓 What will you be able to do by the end of this course?
+              </Text>
+              <Text fontSize="l" mb="4" color="gray.500">
+                {ReactHtmlParser(QUESTS[selectedQuest].learningActions)}
+              </Text>
+              <Box textAlign="center" m="6">
+                <Link href={`/quest/${QUESTS[selectedQuest].slug}`}>
+                  <Button ref={startNowRef}>
+                    {isSelectedQuestStarted !== -1
+                      ? 'Continue quest'
+                      : 'Start quest'}
+                  </Button>
+                </Link>
+              </Box>
             </ModalBody>
           </ModalContent>
         )}
