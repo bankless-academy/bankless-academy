@@ -47,6 +47,7 @@
     "react-icons": "^4.2.0",
     "stringify-object": "^3.3.0",
     "swiper": "^6.8.0",
+    "web3": "^1.5.0",
     "web3modal": "^1.9.3"
   },
   "devDependencies": {
