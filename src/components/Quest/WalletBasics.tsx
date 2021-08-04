@@ -40,7 +40,6 @@ const WalletBasics = (): {
 
   const testSignPersonalMessage = async () => {
     // TODO: move verification to the backend and store signature in DB
-
     const provider = window.web3 ? window.web3.currentProvider : window.ethereum
     const web3: any = new Web3(provider)
 
@@ -51,7 +50,6 @@ const WalletBasics = (): {
 
     const address = walletAddress
 
-    // test message
     const message = 'Hello BANKLESS!'
 
     // encode message (hex)
@@ -86,19 +84,14 @@ const WalletBasics = (): {
       <>
         {walletAddress ? (
           <>
-            <p>
-              {'STEP 1: '}
-              <Button
-                colorScheme={isSignatureVerified ? 'green' : 'red'}
-                onClick={testSignPersonalMessage}
-              >
-                {isSignatureVerified
-                  ? 'Message verified'
-                  : 'sign a message with your wallet'}
-              </Button>
-            </p>
-            <p>STEP 2: Post the signature on twitter</p>
-            <p>STEP 3: Copy the twitter link here to verify your account</p>
+            <Button
+              colorScheme={isSignatureVerified ? 'green' : 'red'}
+              onClick={testSignPersonalMessage}
+            >
+              {isSignatureVerified
+                ? 'Signature verified'
+                : 'Sign a message with your wallet'}
+            </Button>
           </>
         ) : (
           <h2>⚠️ Connect your wallet first!</h2>
