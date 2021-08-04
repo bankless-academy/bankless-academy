@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { VStack, Button } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import { useWalletWeb3React } from 'hooks'
 import Web3 from 'web3'
 import * as ethUtil from 'ethereumjs-util'
@@ -30,7 +30,10 @@ function recoverPersonalSignature(sig: string, msg: string): string {
   return signer
 }
 
-const WalletBasics = (): React.ReactElement => {
+const WalletBasics = (): {
+  isQuestCompleted: boolean
+  questComponent: React.ReactElement
+} => {
   const [isSignatureVerified, setIsSignatureVerified] = useState(false)
   const walletWeb3ReactContext = useWalletWeb3React()
   const walletAddress = walletWeb3ReactContext.account
@@ -49,7 +52,7 @@ const WalletBasics = (): React.ReactElement => {
     const address = walletAddress
 
     // test message
-    const message = 'Hello word!'
+    const message = 'Hello BANKLESS!'
 
     // encode message (hex)
     const hexMsg = convertUtf8ToHex(message)
@@ -77,29 +80,32 @@ const WalletBasics = (): React.ReactElement => {
       console.error(error)
     }
   }
-  return (
-    <VStack flex="auto">
-      {walletAddress ? (
-        <>
-          <p>
-            STEP 1:{' '}
-            <Button
-              colorScheme={isSignatureVerified ? 'green' : 'red'}
-              onClick={testSignPersonalMessage}
-            >
-              {isSignatureVerified
-                ? 'Message verified'
-                : 'sign a message with your wallet'}
-            </Button>
-          </p>
-          <p>STEP 2: Post the signature on twitter</p>
-          <p>STEP 3: Copy the twitter link here to verify your account</p>
-        </>
-      ) : (
-        <h2>⚠️ Connect your wallet first!</h2>
-      )}
-    </VStack>
-  )
+  return {
+    isQuestCompleted: isSignatureVerified,
+    questComponent: (
+      <>
+        {walletAddress ? (
+          <>
+            <p>
+              {'STEP 1: '}
+              <Button
+                colorScheme={isSignatureVerified ? 'green' : 'red'}
+                onClick={testSignPersonalMessage}
+              >
+                {isSignatureVerified
+                  ? 'Message verified'
+                  : 'sign a message with your wallet'}
+              </Button>
+            </p>
+            <p>STEP 2: Post the signature on twitter</p>
+            <p>STEP 3: Copy the twitter link here to verify your account</p>
+          </>
+        ) : (
+          <h2>⚠️ Connect your wallet first!</h2>
+        )}
+      </>
+    ),
+  }
 }
 
 export default WalletBasics
