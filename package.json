@@ -46,6 +46,7 @@
     "react-html-parser": "^2.0.2",
     "react-icons": "^4.2.0",
     "stringify-object": "^3.3.0",
+    "swarm-js": "^0.1.40",
     "swiper": "^6.8.0",
     "web3": "^1.5.0",
     "web3modal": "^1.9.3"
