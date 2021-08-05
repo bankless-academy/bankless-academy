@@ -1,9 +1,8 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react'
 import { Button } from '@chakra-ui/react'
-import { useWalletWeb3React } from 'hooks'
-const Web3 = require('web3')
+import { useActiveWeb3React } from 'hooks'
 import * as ethUtil from 'ethereumjs-util'
-import { convertUtf8ToHex } from '@walletconnect/utils'
 
 // TODO: move to utils
 function hashPersonalMessage(msg: string): string {
@@ -35,54 +34,32 @@ const WalletBasics = (): {
   questComponent: React.ReactElement
 } => {
   const [isSignatureVerified, setIsSignatureVerified] = useState(false)
-  const walletWeb3ReactContext = useWalletWeb3React()
-  const walletAddress = walletWeb3ReactContext.account
 
+  const { library, account } = useActiveWeb3React()
   const testSignPersonalMessage = async () => {
-    // TODO: move verification to the backend and store signature in DB
-    const provider = window.web3 ? window.web3.currentProvider : window.ethereum
-    const web3: any = new Web3(provider)
-
-    if (!web3 || !walletAddress) {
-      console.error('login problem')
-      return
-    }
-
-    const address = walletAddress
-
+    console.log('account', account)
     const message = 'Hello BANKLESS!'
-
-    // encode message (hex)
-    const hexMsg = convertUtf8ToHex(message)
-
-    try {
-      // send message
-      const result = await web3.eth.personal.sign(hexMsg, address)
-
-      // verify signature
-      const signer = recoverPersonalSignature(result, message)
-      const verified = signer.toLowerCase() === address.toLowerCase()
-      setIsSignatureVerified(verified)
-
-      // format displayed result
-      const formattedResult = {
-        action: 'PERSONAL_SIGN',
-        address,
-        signer,
-        verified,
-        result,
-      }
-      // eslint-disable-next-line no-console
-      console.log(formattedResult)
-    } catch (error) {
-      console.error(error)
-    }
+    library
+      .getSigner(account)
+      .signMessage(message)
+      .then((signature: any) => {
+        // window.alert(`Success!\n\n${signature}`)
+        console.log('signature', signature)
+        // verify signature
+        const signer = recoverPersonalSignature(signature, message)
+        const verified = signer.toLowerCase() === account.toLowerCase()
+        console.log('verified', verified)
+        setIsSignatureVerified(verified)
+      })
+      .catch((error: any) => {
+        console.error(error)
+      })
   }
   return {
     isQuestCompleted: isSignatureVerified,
     questComponent: (
       <>
-        {walletAddress ? (
+        {account ? (
           <>
             <Button
               colorScheme={isSignatureVerified ? 'green' : 'red'}
