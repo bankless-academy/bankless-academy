@@ -37,6 +37,7 @@ const WalletBasics = (): {
   const { library, account } = useActiveWeb3React()
 
   const testSignPersonalMessage = async () => {
+    if (isSignatureVerified) return
     const message = 'Hello BANKLESS!'
     library
       .getSigner(account)
