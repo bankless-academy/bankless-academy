@@ -95,7 +95,6 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
 
   const goToPrevSlide = () => {
     if (!isFirstSlide) {
-      setCurrentSlide(currentSlide - 1)
       swiper?.slidePrev()
     }
   }
@@ -104,7 +103,6 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
-      setCurrentSlide(currentSlide + 1)
       swiper?.slideNext()
     }
     // TODO LATER: use router.push('/quests')
@@ -142,8 +140,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         localStorage.setItem(`poap-${quest.slug}`, 'true')
       })
       .catch(function (error) {
-        // eslint-disable-next-line no-console
-        console.log(error)
+        console.error(error)
         toast({
           title: 'Something went wrong',
           description: 'Refresh and try again ...',
@@ -179,6 +176,11 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     slide.quiz &&
     localStorage.getItem(`quiz-${slide.quiz.id}`) ===
       '' + slide.quiz.rightAnswerNumber
+
+  const questComponentName = quest.slides.filter((s) => s.component)[0]
+    ?.component
+  const Quest = QuestComponent(questComponentName)
+  // TODO: store quest verification state in local storage
 
   return (
     <>
@@ -309,14 +311,9 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                   <Text fontSize="3xl" mb="8">
                     ⚡️ {slide.title}
                   </Text>
-                  {slide.content && (
-                    <Box>
-                      {ReactHtmlParser(youtubeLink2Iframe(slide.content))}
-                    </Box>
-                  )}
-                  {slide.component && (
-                    <QuestComponent component={slide.component} />
-                  )}
+                  <VStack flex="auto" minH="420px" justifyContent="center">
+                    {Quest?.questComponent}
+                  </VStack>
                 </>
               )}
               {slide.type === 'POAP' && (
@@ -324,13 +321,12 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                   <Text fontSize="3xl" mb="8">
                     🎖 {slide.title}
                   </Text>
-                  <VStack flex="auto">
+                  <VStack flex="auto" minH="420px" justifyContent="center">
                     {walletAddress ? (
                       <>
                         <Image
                           src={quest.poapImageLink}
                           width="250px"
-                          mt="100px"
                           opacity={isPoapClaimed ? 1 : 0.7}
                         />
                         {!isPoapClaimed ? (
@@ -379,7 +375,8 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
               ref={buttonRightRef}
               disabled={
                 (isLastSlide && !isPoapClaimed) ||
-                (slide.quiz && !answerIsCorrect)
+                (slide.quiz && !answerIsCorrect) ||
+                (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
               }
               onClick={goToNextSlide}
             >
