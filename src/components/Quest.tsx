@@ -140,8 +140,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         localStorage.setItem(`poap-${quest.slug}`, 'true')
       })
       .catch(function (error) {
-        // eslint-disable-next-line no-console
-        console.log(error)
+        console.error(error)
         toast({
           title: 'Something went wrong',
           description: 'Refresh and try again ...',

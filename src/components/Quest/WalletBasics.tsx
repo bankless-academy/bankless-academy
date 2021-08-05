@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useState } from 'react'
 import { Button } from '@chakra-ui/react'
 import { useActiveWeb3React } from 'hooks'
@@ -36,19 +35,16 @@ const WalletBasics = (): {
   const [isSignatureVerified, setIsSignatureVerified] = useState(false)
 
   const { library, account } = useActiveWeb3React()
+
   const testSignPersonalMessage = async () => {
-    console.log('account', account)
     const message = 'Hello BANKLESS!'
     library
       .getSigner(account)
       .signMessage(message)
       .then((signature: any) => {
-        // window.alert(`Success!\n\n${signature}`)
-        console.log('signature', signature)
         // verify signature
         const signer = recoverPersonalSignature(signature, message)
         const verified = signer.toLowerCase() === account.toLowerCase()
-        console.log('verified', verified)
         setIsSignatureVerified(verified)
       })
       .catch((error: any) => {
