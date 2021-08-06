@@ -10,7 +10,6 @@ import {
   SimpleGrid,
   Kbd,
   useToast,
-  Link,
 } from '@chakra-ui/react'
 import axios from 'axios'
 import { useHotkeys } from 'react-hotkeys-hook'
@@ -107,7 +106,10 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       swiper?.slideNext()
     }
     // TODO LATER: use router.push('/quests')
-    else if (isLastSlide && isPoapClaimed) router.push('/feedback')
+    else if (isLastSlide && isPoapClaimed) {
+      if (quest.slug === 'wallet-basics') router.push('/feedback')
+      else router.push('/')
+    }
   }
 
   const selectAnswer = (answerNumber: number) => {
@@ -343,9 +345,14 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                             <h2>
                               {`Congrats for finishing the "${quest.name}" quest! 🥳`}
                             </h2>
-                            <Link href={`/feedback`}>
-                              <Button mt="4">Feedback form</Button>
-                            </Link>
+                            {quest.slug === 'wallet-basics' && (
+                              <Button
+                                mt="4"
+                                onClick={() => router.push('/feedback')}
+                              >
+                                Feedback form
+                              </Button>
+                            )}
                           </>
                         )}
                       </>
