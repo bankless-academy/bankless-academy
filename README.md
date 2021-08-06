@@ -56,7 +56,9 @@ yarn import-content 1813af42f771491b8d9af966d9d433fe
 
 ## Local Development
 
-`yarn dev`
+```bash
+yarn dev
+```
 
 ## Notes
 

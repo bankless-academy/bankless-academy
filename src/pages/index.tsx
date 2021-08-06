@@ -36,10 +36,11 @@ const DEV_PROGRESS = {
     'Wallet basics content demo (to be improved)',
     'Quiz',
     'Comment slides via Notion link to gather feedback about content & quiz',
-    'Wallet basics quest: sign a transaction with your wallet',
+    'Wallet basics quest: sign a transaction with your wallet (on mobile, you need to open the website directly inside the Metamask App)',
     'Automatic content import from Notion via manual command line',
     'POAP claiming (beta version, claiming codes are stored in Notion table)',
     'Keyboard shortcuts: prev/next slide & select quiz answer [1], [2], [3], [4]',
+    "Collect user's feedback via a form after the quest is done",
     '[DEBUG] reset app state (delete data from local storage)',
   ],
   comingSoon: [
@@ -67,6 +68,15 @@ const Page = (): JSX.Element => {
         <QuestCards />
       </SimpleGrid>
       <Box mt={8}>
+        <Button
+          onClick={() => {
+            localStorage.clear()
+            window.location.reload()
+          }}
+          mb={4}
+        >
+          [DEBUG] reset app state
+        </Button>
         <Stack spacing={3} mb={4}>
           <Text fontSize="2xl" fontWeight="bold">
             Implemented features
@@ -106,15 +116,6 @@ const Page = (): JSX.Element => {
             ))}
           </List>
         </Stack>
-        <Button
-          onClick={() => {
-            localStorage.clear()
-            window.location.reload()
-          }}
-          mt={8}
-        >
-          [DEBUG] reset app state
-        </Button>
       </Box>
     </Container>
   )
