@@ -14,6 +14,7 @@ import styled from '@emotion/styled'
 // import ColorModeSwitcher from 'layout/ColorModeSwitcher'
 // import LanguageModeSwitcher from 'layout/LanguageModeSwitcher'
 import ConnectWalletButton from 'components/ConnectWalletButton'
+import SwitchNetworkButton from '../components/SwitchNetworkButton'
 
 const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`
   ${(props) =>
@@ -86,6 +87,7 @@ const Nav: React.FC = () => {
               <LanguageModeSwitcher size={isMobile ? 'sm' : 'md'} />
               <ColorModeSwitcher size={isMobile ? 'sm' : 'md'} />
             </Box> */}
+            <SwitchNetworkButton isMobile={isMobile} />
           </MenuConnect>
         </Flex>
       </nav>

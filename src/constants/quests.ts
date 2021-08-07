@@ -64,7 +64,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'What is a recovery phrase?',
         content:
-          "<ul><li>When you create a wallet, you also create a recovery phrase that is specific to that wallet.</li><li>A recovery phrase is a list of 12 to 24 words, and represents a single secret piece of data that is used to generate your wallet's public key and private key.</li><li>It stores the information that can be used to recover your wallet and crypto if/ when your wallet fails unexpectedly or gets damaged. Or if you are unable to access it due to misplacing or theft.</li><li>In simple terms, you can think of it just like the security question of your email account or bank login; the recovery phrase allows you to prove your identity and access your account on different devices.</li><li>This same recovery phrase can actually be used in different types of wallet.</li></ul>",
+          "<ul><li>When you create a wallet, you also create a recovery phrase that is specific to that wallet.</li><li>A recovery phrase is a list of 12 to 24 words and represents a single secret piece of data that is used to generate your wallet's public key and private key.</li><li>It stores the information that can be used to recover your wallet and crypto if/ when your wallet fails unexpectedly or gets damaged. Or if you are unable to access it due to misplacing or theft.</li><li>In simple terms, you can think of it just like the security question of your email account or bank login; the recovery phrase allows you to prove your identity and access your account on different devices.</li><li>This same recovery phrase can actually be used in different types of wallet.</li></ul>",
       },
       {
         type: 'QUIZ',
