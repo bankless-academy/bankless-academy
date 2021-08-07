@@ -38,6 +38,9 @@ const Slide = styled(Box)`
     font-size: var(--chakra-fontSizes-xl);
     margin-left: 2em;
   }
+  iframe {
+    margin: 20px auto 0;
+  }
 `
 
 const Answers = styled(Box)`

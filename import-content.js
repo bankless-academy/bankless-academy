@@ -110,6 +110,8 @@ axios
           console.log('quest', quest)
           quests[index] = quest
         })
+        // TODO: remove youtube links
+        // TODO: move youtubeLink2Iframe here
     })
     axios.all(promiseArray).then(() => {
       const FILE_CONTENT = `import { QuestType } from 'entities/quest'
