@@ -29,20 +29,26 @@ const Slide = styled(Box)`
     margin-top: 1em;
     font-size: var(--chakra-fontSizes-2xl);
   }
-  h2 {
-    font-size: var(--chakra-fontSizes-xl);
-    margin: 1em;
-  }
-  ul,
-  ol {
-    font-size: var(--chakra-fontSizes-xl);
-    margin-left: 2em;
-  }
-  iframe {
-    margin: 20px auto 0;
-    width: 640px;
-    max-width: 100%;
-    height: 360px;
+  div {
+    h2,
+    p {
+      font-size: var(--chakra-fontSizes-xl);
+      margin: 1em;
+    }
+    h2 {
+      font-weight: bold;
+    }
+    ul,
+    ol {
+      font-size: var(--chakra-fontSizes-xl);
+      margin-left: 2em;
+    }
+    iframe {
+      margin: 20px auto 0;
+      width: 640px;
+      max-width: 100%;
+      height: 360px;
+    }
   }
 `
 

@@ -82,7 +82,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'Types of non-custodial wallets',
         content:
-          "<p>The 2 major types of noncustodial wallets you can use are called hot wallets and cold wallets</p><p>A hot wallet is a storage device perpetually connected to the internet</p><ul><li>PROS: They are usually free, simple to set up, and easy to use</li><li>CONS: They are less secure due to internet connection</li></ul><p>A cold wallet lives offline. There is no perpetual internet connection.</p><ul><li>PROS: They are more secure</li><li>CONS: They aren't free, and sometimes cumbersome to use, not ideal for quick transactions</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fab788f0c-0b84-4101-ac1d-3728d5d82385%2FWhat-is-a-hardware-wallet-1.jpg?table=block&id=30524a2d-7646-417b-9b18-b01ecea42f20'>",
+          "<p>The 2 major types of noncustodial wallets you can use are called hot wallets and cold wallets</p><p>A <strong>hot wallet</strong> is a storage device perpetually connected to the internet</p><ul><li>PROS: They are usually free, simple to set up, and easy to use</li><li>CONS: They are less secure due to internet connection</li></ul><p>A <strong>cold wallet</strong> lives offline. There is no perpetual internet connection.</p><ul><li>PROS: They are more secure</li><li>CONS: They aren't free, and sometimes cumbersome to use, not ideal for quick transactions</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fab788f0c-0b84-4101-ac1d-3728d5d82385%2FWhat-is-a-hardware-wallet-1.jpg?table=block&id=30524a2d-7646-417b-9b18-b01ecea42f20'>",
       },
       {
         type: 'QUIZ',
