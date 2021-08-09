@@ -1,0 +1,17 @@
+{
+  "wallet": {
+    "definition": "",
+    "before": "",
+    "after": "🧧"
+  },
+  "non-custodial wallet": {
+    "definition": "Non-custodial crypto wallets give you complete control of your keys and therefore your funds.",
+    "before": "🤑",
+    "after": ""
+  },
+  "private key": {
+    "definition": "",
+    "before": "🔐",
+    "after": ""
+  }
+}

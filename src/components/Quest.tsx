@@ -49,6 +49,39 @@ const Slide = styled(Box)`
       max-width: 100%;
       height: 360px;
     }
+
+    [data-title] {
+      border-bottom: 1px dashed red;
+      position: relative;
+      cursor: help;
+    }
+    [data-title]:hover::before {
+      content: attr(data-title);
+      position: absolute;
+      bottom: -38px;
+      display: inline-block;
+      padding: 3px 6px;
+      border-radius: 2px;
+      background: #000;
+      color: #fff;
+      font-size: 12px;
+      font-family: sans-serif;
+      white-space: nowrap;
+      background-color: #555;
+      text-align: center;
+      padding: 5px;
+      border-radius: 6px;
+    }
+    [data-title]:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 8px;
+      display: inline-block;
+      color: #fff;
+      border: 8px solid transparent;
+      border-bottom: 8px solid #555;
+    }
   }
 `
 

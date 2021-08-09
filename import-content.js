@@ -2,6 +2,7 @@
 const axios = require('axios')
 const FileSystem = require('fs')
 const stringifyObject = require('stringify-object')
+const definitions = require('./definitions.json')
 
 const DEFAULT_NOTION_ID = '1813af42f771491b8d9af966d9d433fe'
 const POTION_API = 'https://potion-api.vercel.app'
@@ -38,7 +39,7 @@ axios
                 [KEY_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
                   ? course.fields[k]
                   : // transform to number if the string contains a number
-                    parseInt(course.fields[k]),
+                  parseInt(course.fields[k]),
               }),
             {}
           )
@@ -50,12 +51,12 @@ axios
             .replace(/-+/g, '-') // collapse dashes
           const content = JSON.parse(
             `[` +
-              response.data
-                .replace(/"/g, "'")
-                .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
-                .replace(/<\/h1>/g, `","content": "`)
-                .substr(3) + // remove extra "}, at the beginning
-              `"}]`
+            response.data
+              .replace(/"/g, "'")
+              .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
+              .replace(/<\/h1>/g, `","content": "`)
+              .substr(3) + // remove extra "}, at the beginning
+            `"}]`
           )
           let quizNb = 0
           const slides = content.map((slide) => {
@@ -89,6 +90,15 @@ axios
                 )
               })
               slide.quiz.id = `${quest.slug}-${quizNb}`
+            }
+            if (slide.content) {
+              for (const def in definitions) {
+                if (slide.content.includes(def)) {
+                  const word = `${definitions[def].before}${def}${definitions[def].after}`
+                  console.log('definition found: ', def)
+                  slide.content = slide.content.replace(def, definitions[def].definition ? `<span data-title="${definitions[def].definition}">${word}</span>` : word)
+                }
+              }
             }
             return slide
           })
