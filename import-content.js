@@ -38,7 +38,7 @@ axios
                 [KEY_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
                   ? course.fields[k]
                   : // transform to number if the string contains a number
-                    parseInt(course.fields[k]),
+                  parseInt(course.fields[k]),
               }),
             {}
           )
@@ -50,12 +50,12 @@ axios
             .replace(/-+/g, '-') // collapse dashes
           const content = JSON.parse(
             `[` +
-              response.data
-                .replace(/"/g, "'")
-                .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
-                .replace(/<\/h1>/g, `","content": "`)
-                .substr(3) + // remove extra "}, at the beginning
-              `"}]`
+            response.data
+              .replace(/"/g, "'")
+              .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
+              .replace(/<\/h1>/g, `","content": "`)
+              .substr(3) + // remove extra "}, at the beginning
+            `"}]`
           )
           let quizNb = 0
           const slides = content.map((slide) => {
@@ -110,8 +110,6 @@ axios
           console.log('quest', quest)
           quests[index] = quest
         })
-        // TODO: remove youtube links
-        // TODO: move youtubeLink2Iframe here
     })
     axios.all(promiseArray).then(() => {
       const FILE_CONTENT = `import { QuestType } from 'entities/quest'

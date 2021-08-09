@@ -40,6 +40,9 @@ const Slide = styled(Box)`
   }
   iframe {
     margin: 20px auto 0;
+    width: 640px;
+    max-width: 100%;
+    height: 360px;
   }
 `
 
@@ -54,13 +57,6 @@ const Answers = styled(Box)`
     margin-bottom: 4px;
   }
 `
-
-// TODO: move to utils?
-const youtubeLink2Iframe = (html) =>
-  html.replace(
-    /(?:https:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?.*v=)?(\w+)/g,
-    '<iframe width="640" height="360" src="https://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>'
-  )
 
 const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const buttonLeftRef = useRef(null)
@@ -216,11 +212,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                   <Text fontSize="3xl" mb="8">
                     📚 {slide.title}
                   </Text>
-                  {slide.content && (
-                    <Box>
-                      {ReactHtmlParser(youtubeLink2Iframe(slide.content))}
-                    </Box>
-                  )}
+                  <Box>{ReactHtmlParser(slide.content)}</Box>
                 </>
               )}
               {slide.type === 'QUIZ' && (

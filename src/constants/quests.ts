@@ -21,7 +21,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'What is a wallet?',
         content:
-          "<ul><li>A wallet is an app or device used for sending, receiving, and storing cryptocurrency.</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe6b0aa5e-fd3b-41b5-9a67-db55e90b7a30%2Fcover.png?table=block&id=0cdee449-78c7-402a-b21b-12c7e4118606'><ul><li>Users have the option of using a custodial or noncustodial wallet when sending, receiving, or storing cryptocurrency.</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fabda02b7-850e-4f4b-9fcc-637330046e92%2F0_q_FQ4P0pA0PopIqx.png?table=block&id=5c5fbf2a-a5ae-4284-9290-71c9ad817c12'>",
+          "<p>A wallet is an app or device used for sending, receiving, and storing cryptocurrency.</p><iframe src='https://embed.lottiefiles.com/animation/70066'></iframe><p>Users have the option of using a custodial or noncustodial wallet when sending, receiving, or storing cryptocurrency.</p><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fabda02b7-850e-4f4b-9fcc-637330046e92%2F0_q_FQ4P0pA0PopIqx.png?table=block&id=5c5fbf2a-a5ae-4284-9290-71c9ad817c12'>",
       },
       {
         type: 'LEARN',
@@ -104,7 +104,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'MetaMask Setup',
         content:
-          '<p>Step by step tutorial on how to setup MetaMask (just an example)</p><p>https://www.youtube.com/watch?v=WAStJtjYI_c</p>',
+          "<p>Step by step tutorial on how to setup MetaMask (just an example)</p><iframe src='https://www.youtube.com/embed/WAStJtjYI_c?feature=oembed'></iframe>",
       },
       {
         type: 'QUEST',
