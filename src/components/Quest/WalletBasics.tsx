@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button } from '@chakra-ui/react'
 import { useActiveWeb3React } from 'hooks'
 import * as ethUtil from 'ethereumjs-util'
+import { useMediaQuery } from '@chakra-ui/react'
 
 // TODO: move to utils
 function hashPersonalMessage(msg: string): string {
@@ -33,6 +34,7 @@ const WalletBasics = (): {
   questComponent: React.ReactElement
 } => {
   const [isSignatureVerified, setIsSignatureVerified] = useState(false)
+  const [isMobile] = useMediaQuery('(max-width: 800px)')
 
   const { library, account } = useActiveWeb3React()
 
@@ -66,6 +68,13 @@ const WalletBasics = (): {
                 ? 'Signature verified'
                 : 'Sign a message with your wallet'}
             </Button>
+            {isMobile && (
+              <p>
+                * signing with your mobile wallet only works if you open this
+                website directly inside&nbsp;
+                <strong>MetaMask&apos;s browser</strong>
+              </p>
+            )}
           </>
         ) : (
           <h2>⚠️ Connect your wallet first!</h2>
