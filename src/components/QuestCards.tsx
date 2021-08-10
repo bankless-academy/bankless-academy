@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, createRef } from 'react'
 import Link from 'next/link'
 import {
   useColorMode,
@@ -6,7 +6,6 @@ import {
   Center,
   Divider,
   Text,
-  Image,
   Button,
   Stack,
   Modal,
@@ -20,17 +19,13 @@ import {
 import styled from '@emotion/styled'
 import axios from 'axios'
 import ReactHtmlParser from 'react-html-parser'
+import { Player } from '@lottiefiles/react-lottie-player'
 
 import QUESTS from 'constants/quests'
 import CircularProgressSteps from 'components/CircularProgressSteps'
 
 const QuestCard = styled(Box)`
   border-radius: 0.5rem;
-`
-
-const PoapImage = styled(Image)`
-  position: absolute;
-  width: 250px;
 `
 
 const Duration = styled(Button)`
@@ -66,11 +61,20 @@ const QuestCards: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const startNowRef = useRef(null)
   const [selectedQuest, setSelectedQuest] = useState(null)
+  const [playerRefs, setPlayerRefs] = useState([])
   const [numberOfPoapClaimed, setNumberOfPoapClaimed] = useState([])
 
   const isSelectedQuestStarted = parseInt(
     localStorage.getItem(QUESTS[selectedQuest]?.slug) || '-1'
   )
+  const arrLength = QUESTS.length
+  useEffect(() => {
+    setPlayerRefs((playerRefs) =>
+      Array(arrLength)
+        .fill('')
+        .map((_, i) => playerRefs[i] || createRef())
+    )
+  }, [arrLength])
 
   useEffect((): void => {
     // TODO: replace with tokensQuantityByEventId https://github.com/poap-xyz/poap-webapp/blob/2def482ffec93e6cbc4e3c5e5a18000805cc6c2b/src/api.ts#L1235
@@ -111,16 +115,30 @@ const QuestCards: React.FC = () => {
               setSelectedQuest(index)
               onOpen()
             }}
+            onMouseOver={() => {
+              playerRefs[index].current.play()
+            }}
+            onMouseLeave={() => {
+              playerRefs[index].current.stop()
+              playerRefs[index].current.setSeeker(0)
+            }}
           >
             <Center minH="325px" position="relative">
               <CircularProgressSteps
                 step={currentSlide}
                 total={numberOfSlides}
               />
-              <PoapImage
-                src={quest.poapImageLink}
-                opacity={isPoapClaimed ? 1 : 0.7}
-              />
+              <Box opacity={isPoapClaimed ? 1 : 0.7}>
+                <Player
+                  autoplay={false}
+                  ref={playerRefs[index]}
+                  loop={false}
+                  keepLastFrame={true}
+                  controls={false}
+                  src={`/lotties/${quest.poapEventId}.json`}
+                  style={{ height: '250px', width: '250px' }}
+                />
+              </Box>
               <Duration colorScheme="gray" borderRadius="full" size="xs">
                 🕒 {quest.duration} min
               </Duration>
