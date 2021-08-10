@@ -1,7 +1,19 @@
 import Web3Modal from 'web3modal'
 import React, { useState, useEffect } from 'react'
 import WalletConnectProvider from '@walletconnect/web3-provider'
-import { Button, Text } from '@chakra-ui/react'
+import {
+  Button,
+  Text,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverArrow,
+  PopoverBody,
+  SimpleGrid,
+  Box,
+  Image,
+} from '@chakra-ui/react'
+import axios from 'axios'
 
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
@@ -22,6 +34,7 @@ const ConnectWalletButton = ({
   const walletAddress = walletWeb3ReactContext.account
   const [connectClick, setConnectClick] = useState(false)
   const [walletIsLoading, setWalletIsLoading] = useState(false)
+  const [poaps, setPoaps] = useState(null)
 
   useEffect(() => {
     if (connectClick) {
@@ -62,12 +75,31 @@ const ConnectWalletButton = ({
         .then(() => {
           setConnectClick(false)
         })
-        .catch(() => {
+        .catch((e) => {
           setWalletIsLoading(false)
           setConnectClick(false)
+          console.error(e)
         })
     }
   }, [connectClick])
+
+  useEffect(() => {
+    if (walletAddress) {
+      axios
+        .get(`https://api.poap.xyz/actions/scan/${walletAddress}`)
+        .then((res) => {
+          setPoaps(
+            res.data.filter(
+              (poap) =>
+                poap.event.name.toLowerCase().includes('bankless') ||
+                poap.event.description.toLowerCase().includes('bankless') ||
+                poap.event.name.toLowerCase().includes('onboard') ||
+                poap.event.description.toLowerCase().includes('onboard')
+            )
+          )
+        })
+    }
+  }, [walletAddress])
 
   const rawBalance = useTokenBalance(walletWeb3ReactContext.account) ?? 0
   const balance = trimCurrencyForWhales(rawBalance)
@@ -75,19 +107,80 @@ const ConnectWalletButton = ({
   return (
     <>
       {isConnected ? (
-        <Button
-          variant="outline"
-          paddingRight="1"
-          paddingLeft="4"
-          size={isMobile ? 'sm' : 'md'}
-        >
-          {balance} BANK
-          <Button size={isMobile ? 'xs' : 'sm'} marginLeft="2">
-            <Text maxW="200px" isTruncated>
-              <ENSName provider={web3Provider} address={walletAddress} />
-            </Text>
-          </Button>
-        </Button>
+        <Popover trigger={isMobile ? 'click' : 'hover'}>
+          <PopoverTrigger>
+            <Button
+              variant="outline"
+              paddingRight="1"
+              paddingLeft="4"
+              size={isMobile ? 'sm' : 'md'}
+            >
+              {balance} BANK
+              <Button size={isMobile ? 'xs' : 'sm'} marginLeft="2">
+                <Text maxW="200px" isTruncated>
+                  <ENSName provider={web3Provider} address={walletAddress} />
+                </Text>
+              </Button>
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverBody>
+              <Box textAlign="center" m="2">
+                <Button
+                  isFullWidth
+                  size={isMobile ? 'sm' : 'md'}
+                  onClick={() => {
+                    walletWeb3ReactContext.deactivate()
+                    setWalletIsLoading(false)
+                    setPoaps(null)
+                  }}
+                >
+                  Disconnect wallet
+                </Button>
+              </Box>
+              {/* TODO: move to dedicated component? */}
+              {poaps?.length > 0 && (
+                <>
+                  <Text
+                    fontSize="xl"
+                    fontWeight="bold"
+                    color="red"
+                    textAlign="center"
+                  >
+                    My Bankless POAPs
+                  </Text>
+                  <Box
+                    maxHeight="320px"
+                    overflow="scroll"
+                    backgroundColor="blackAlpha.200"
+                    borderRadius="10px"
+                  >
+                    <SimpleGrid columns={3} spacing={3} p={3}>
+                      {/* TODO: Add typing */}
+                      {poaps?.map((poap, index) => (
+                        <Box
+                          key={`poap-${index}`}
+                          justifySelf="center"
+                          boxShadow="0px 0px 4px 2px #00000060"
+                          borderRadius="3px"
+                          backgroundColor="white"
+                          p={1}
+                        >
+                          <Image
+                            src={poap.event.image_url}
+                            width="70px"
+                            borderRadius="50%"
+                          />
+                        </Box>
+                      ))}
+                    </SimpleGrid>
+                  </Box>
+                </>
+              )}
+            </PopoverBody>
+          </PopoverContent>
+        </Popover>
       ) : (
         <Button
           onClick={() => {
