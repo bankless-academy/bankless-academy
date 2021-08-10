@@ -116,11 +116,11 @@ const QuestCards: React.FC = () => {
               onOpen()
             }}
             onMouseOver={() => {
-              playerRefs[index].current.play()
+              playerRefs[index]?.current.play()
             }}
             onMouseLeave={() => {
-              playerRefs[index].current.stop()
-              playerRefs[index].current.setSeeker(0)
+              playerRefs[index]?.current.stop()
+              playerRefs[index]?.current.setSeeker(0)
             }}
           >
             <Center minH="325px" position="relative">

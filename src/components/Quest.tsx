@@ -17,6 +17,7 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser from 'react-html-parser'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useMediaQuery } from '@chakra-ui/react'
 import { Player } from '@lottiefiles/react-lottie-player'
 
 import { QuestType } from 'entities/quest'
@@ -57,7 +58,6 @@ const Answers = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 380px;
   span {
     color: black;
     margin-right: 0.5em;
@@ -82,6 +82,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   )
   const [swiper, setSwiper] = useState(null)
   const supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints
+  const [isMobile] = useMediaQuery('(max-width: 800px)')
 
   const router = useRouter()
   const toast = useToast()
@@ -238,7 +239,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                     <Text fontSize="3xl" mb="8">
                       ❓ {slide.title}
                     </Text>
-                    <Answers>
+                    <Answers minHeight={isMobile ? '400px' : '320px'}>
                       <ButtonGroup size="lg">
                         <SimpleGrid columns={[null, null, 2]} spacing="40px">
                           <Button
