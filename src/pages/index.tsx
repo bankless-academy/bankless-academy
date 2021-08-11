@@ -10,6 +10,8 @@ import {
   List,
   ListItem,
   ListIcon,
+  Link,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import { MdCheckCircle, MdHourglassEmpty, MdError } from 'react-icons/md'
 
@@ -34,6 +36,8 @@ const DEV_PROGRESS = {
     'Full mobile compatibility including swiping between slides',
     'Quest selection | dynamic progress based on slide number | number of POAPs claimed | modal showing quest details',
     'Wallet basics content demo (to be improved)',
+    'Support for image + video + animations content',
+    'Animations: POAP hover & correct answer',
     'Quiz',
     'Comment slides via Notion link to gather feedback about content & quiz',
     'Wallet basics quest: sign a transaction with your wallet (on mobile, you need to open the website directly inside the Metamask App)',
@@ -46,7 +50,6 @@ const DEV_PROGRESS = {
   comingSoon: [
     'Display all Bankless DAO POAPs',
     'Wallet basics quest improvement: share signature via twitter post to reduce Sybil attack + verify signature in backend',
-    'Support for image + video content',
     'Improve font sizing + spacing on mobile',
     'Improve POAP claiming: store claiming codes in database',
     'Logo + name',
@@ -62,12 +65,25 @@ const DEV_PROGRESS = {
 }
 
 const Page = (): JSX.Element => {
+  const [isMobile] = useMediaQuery('(max-width: 800px)')
+  const hostname = window.location.hostname
   return (
     <Container maxW="container.lg">
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={12}>
         <QuestCards />
       </SimpleGrid>
       <Box mt={8}>
+        {isMobile && (
+          <Box pb={4}>
+            ⛔️ on mobile, make sure to open this website directly inside&nbsp;
+            <Link
+              href={`https://metamask.app.link/dapp/${hostname}`}
+              color="red"
+            >
+              MetaMask&apos;s browser
+            </Link>
+          </Box>
+        )}
         <Button
           onClick={() => {
             localStorage.clear()
