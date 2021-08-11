@@ -12,6 +12,7 @@ import {
   SimpleGrid,
   Box,
   Image,
+  Link,
 } from '@chakra-ui/react'
 import axios from 'axios'
 
@@ -20,6 +21,7 @@ import { useWalletWeb3React } from 'hooks'
 import { walletConnect, injected, trimCurrencyForWhales } from 'utils'
 import { useTokenBalance } from 'hooks/token/useTokenBalance'
 import { INFURA_ID } from 'constants/'
+import { PoapType } from 'entities/poap'
 
 let web3Modal: Web3Modal
 
@@ -34,7 +36,7 @@ const ConnectWalletButton = ({
   const walletAddress = walletWeb3ReactContext.account
   const [connectClick, setConnectClick] = useState(false)
   const [walletIsLoading, setWalletIsLoading] = useState(false)
-  const [poaps, setPoaps] = useState(null)
+  const [poaps, setPoaps] = useState<PoapType[]>([])
 
   useEffect(() => {
     if (connectClick) {
@@ -88,15 +90,17 @@ const ConnectWalletButton = ({
       axios
         .get(`https://api.poap.xyz/actions/scan/${walletAddress}`)
         .then((res) => {
-          setPoaps(
-            res.data.filter(
-              (poap) =>
-                poap.event.name.toLowerCase().includes('bankless') ||
-                poap.event.description.toLowerCase().includes('bankless') ||
-                poap.event.name.toLowerCase().includes('onboard') ||
-                poap.event.description.toLowerCase().includes('onboard')
+          if (Array.isArray(res.data)) {
+            setPoaps(
+              res.data.filter(
+                (poap: PoapType) =>
+                  poap.event.name.toLowerCase().includes('bankless') ||
+                  poap.event.description.toLowerCase().includes('bankless') ||
+                  poap.event.name.toLowerCase().includes('onboard') ||
+                  poap.event.description.toLowerCase().includes('onboard')
+              )
             )
-          )
+          }
         })
     }
   }, [walletAddress])
@@ -133,7 +137,7 @@ const ConnectWalletButton = ({
                   onClick={() => {
                     walletWeb3ReactContext.deactivate()
                     setWalletIsLoading(false)
-                    setPoaps(null)
+                    setPoaps([])
                   }}
                 >
                   Disconnect wallet
@@ -157,22 +161,26 @@ const ConnectWalletButton = ({
                     borderRadius="10px"
                   >
                     <SimpleGrid columns={3} spacing={3} p={3}>
-                      {/* TODO: Add typing */}
                       {poaps?.map((poap, index) => (
-                        <Box
+                        <Link
                           key={`poap-${index}`}
-                          justifySelf="center"
-                          boxShadow="0px 0px 4px 2px #00000060"
-                          borderRadius="3px"
-                          backgroundColor="white"
-                          p={1}
+                          href={`https://app.poap.xyz/token/${poap.tokenId}`}
+                          target="_blank"
                         >
-                          <Image
-                            src={poap.event.image_url}
-                            width="70px"
-                            borderRadius="50%"
-                          />
-                        </Box>
+                          <Box
+                            justifySelf="center"
+                            boxShadow="0px 0px 4px 2px #00000060"
+                            borderRadius="3px"
+                            backgroundColor="white"
+                            p={1}
+                          >
+                            <Image
+                              src={poap.event.image_url}
+                              width="70px"
+                              borderRadius="50%"
+                            />
+                          </Box>
+                        </Link>
                       ))}
                     </SimpleGrid>
                   </Box>
