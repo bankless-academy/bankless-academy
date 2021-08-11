@@ -69,21 +69,18 @@ const Page = (): JSX.Element => {
   const hostname = window.location.hostname
   return (
     <Container maxW="container.lg">
+      {isMobile && (
+        <Box pb={4}>
+          ⛔️ on mobile, make sure to open this website directly inside&nbsp;
+          <Link href={`https://metamask.app.link/dapp/${hostname}`} color="red">
+            MetaMask&apos;s browser
+          </Link>
+        </Box>
+      )}
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={12}>
         <QuestCards />
       </SimpleGrid>
       <Box mt={8}>
-        {isMobile && (
-          <Box pb={4}>
-            ⛔️ on mobile, make sure to open this website directly inside&nbsp;
-            <Link
-              href={`https://metamask.app.link/dapp/${hostname}`}
-              color="red"
-            >
-              MetaMask&apos;s browser
-            </Link>
-          </Box>
-        )}
         <Button
           onClick={() => {
             localStorage.clear()
