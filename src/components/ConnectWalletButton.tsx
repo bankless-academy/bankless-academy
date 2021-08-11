@@ -162,25 +162,26 @@ const ConnectWalletButton = ({
                   >
                     <SimpleGrid columns={3} spacing={3} p={3}>
                       {poaps?.map((poap, index) => (
-                        <Link
+                        <Box
                           key={`poap-${index}`}
-                          href={`https://app.poap.xyz/token/${poap.tokenId}`}
-                          target="_blank"
+                          justifySelf="center"
+                          boxShadow="0px 0px 4px 2px #00000060"
+                          borderRadius="3px"
+                          backgroundColor="white"
+                          p={1}
                         >
-                          <Box
-                            justifySelf="center"
-                            boxShadow="0px 0px 4px 2px #00000060"
-                            borderRadius="3px"
-                            backgroundColor="white"
-                            p={1}
+                          <Link
+                            href={`https://app.poap.xyz/token/${poap.tokenId}`}
+                            target="_blank"
                           >
                             <Image
                               src={poap.event.image_url}
                               width="70px"
+                              height="70px"
                               borderRadius="50%"
                             />
-                          </Box>
-                        </Link>
+                          </Link>
+                        </Box>
                       ))}
                     </SimpleGrid>
                   </Box>
