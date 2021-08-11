@@ -122,6 +122,13 @@ const QuestCards: React.FC = () => {
               playerRefs[index]?.current.stop()
               playerRefs[index]?.current.setSeeker(0)
             }}
+            onTouchStart={() => {
+              playerRefs[index]?.current.play()
+            }}
+            onTouchEnd={() => {
+              playerRefs[index]?.current.stop()
+              playerRefs[index]?.current.setSeeker(0)
+            }}
           >
             <Center minH="325px" position="relative">
               <CircularProgressSteps

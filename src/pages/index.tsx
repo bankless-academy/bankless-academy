@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const DEV_PROGRESS = {
   implemented: [
-    'Web3 wallet connection via Metamask & Wallet Connect | display BANK token balance',
+    'Web3 wallet connection via Metamask & Wallet Connect | display BANK token balance | disconnect',
     'Full mobile compatibility including swiping between slides',
     'Quest selection | dynamic progress based on slide number | number of POAPs claimed | modal showing quest details',
     'Wallet basics content demo (to be improved)',
@@ -45,10 +45,10 @@ const DEV_PROGRESS = {
     'POAP claiming (beta version, claiming codes are stored in Notion table)',
     'Keyboard shortcuts: prev/next slide & select quiz answer [1], [2], [3], [4]',
     "Collect user's feedback via a form after the quest is done",
+    'Display all Bankless DAO POAPs',
     '[DEBUG] reset app state (delete data from local storage)',
   ],
   comingSoon: [
-    'Display all Bankless DAO POAPs',
     'Wallet basics quest improvement: share signature via twitter post to reduce Sybil attack + verify signature in backend',
     'Improve font sizing + spacing on mobile',
     'Improve POAP claiming: store claiming codes in database',
