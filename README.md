@@ -10,7 +10,7 @@
 
 ### Where to update the content
 
-[https://www.notion.so/bankless/1813af42f771491b8d9af966d9d433fe](https://www.notion.so/bankless/1813af42f771491b8d9af966d9d433fe)
+[https://www.notion.so/bankless/OnBoard-Content-f0d55570c18c48a5959b0a41ad3e99b9](https://www.notion.so/bankless/OnBoard-Content-f0d55570c18c48a5959b0a41ad3e99b9)
 
 ### Defaut import command
 
