@@ -12,6 +12,7 @@ import {
   ListIcon,
   Link,
   useMediaQuery,
+  Tooltip,
 } from '@chakra-ui/react'
 import { MdCheckCircle, MdHourglassEmpty, MdError } from 'react-icons/md'
 
@@ -81,15 +82,21 @@ const Page = (): JSX.Element => {
         <QuestCards />
       </SimpleGrid>
       <Box mt={8}>
-        <Button
-          onClick={() => {
-            localStorage.clear()
-            window.location.reload()
-          }}
-          mb={4}
+        <Tooltip
+          hasArrow
+          placement="right"
+          label="If you want to try the quest from scratch or experience any problem, click this button to reset the app state"
         >
-          [DEBUG] reset app state
-        </Button>
+          <Button
+            onClick={() => {
+              localStorage.clear()
+              window.location.reload()
+            }}
+            mb={4}
+          >
+            [DEBUG] reset app state
+          </Button>
+        </Tooltip>
         <Stack spacing={3} mb={4}>
           <Text fontSize="2xl" fontWeight="bold">
             Implemented features

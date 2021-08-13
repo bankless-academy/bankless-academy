@@ -10,6 +10,7 @@ import {
   SimpleGrid,
   Kbd,
   useToast,
+  Tooltip,
 } from '@chakra-ui/react'
 import axios from 'axios'
 import { useHotkeys } from 'react-hotkeys-hook'
@@ -410,33 +411,48 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       </Swiper>
       <Box display="flex" p={4}>
         <HStack flex="auto">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={`https://www.notion.so/${quest.notionId}`}
+          <Tooltip
+            hasArrow
+            label="Help us improve the content by commenting this slide on Notion"
           >
-            <Button variant="outline">🐞 comment this slide</Button>
-          </a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={`https://www.notion.so/${quest.notionId}`}
+            >
+              <Button variant="outline">🐞 comment this slide</Button>
+            </a>
+          </Tooltip>
         </HStack>
         {/* hide buttons on touch screens */}
         {!supportsTouch && (
           <HStack>
             {!isFirstSlide && (
-              <Button ref={buttonLeftRef} onClick={goToPrevSlide}>
-                ⬅️
-              </Button>
+              <Tooltip
+                hasArrow
+                label="Use the 'left' arrow key on your keyboard to navigate back"
+              >
+                <Button ref={buttonLeftRef} onClick={goToPrevSlide}>
+                  ⬅️
+                </Button>
+              </Tooltip>
             )}
-            <Button
-              ref={buttonRightRef}
-              disabled={
-                (isLastSlide && !isPoapClaimed) ||
-                (slide.quiz && !answerIsCorrect) ||
-                (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
-              }
-              onClick={goToNextSlide}
+            <Tooltip
+              hasArrow
+              label="Use the 'right' arrow key on your keyboard to continue"
             >
-              ➡️
-            </Button>
+              <Button
+                ref={buttonRightRef}
+                disabled={
+                  (isLastSlide && !isPoapClaimed) ||
+                  (slide.quiz && !answerIsCorrect) ||
+                  (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+                }
+                onClick={goToNextSlide}
+              >
+                ➡️
+              </Button>
+            </Tooltip>
           </HStack>
         )}
       </Box>
