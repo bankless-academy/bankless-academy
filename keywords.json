@@ -1,0 +1,42 @@
+{
+  "wallet": {
+    "definition": "A wallet is an application or device used to send and receive cryptocurrency",
+    "color": "green"
+  },
+  "public key": {
+    "definition": "A public key is your address. It gives others a point of reference to send cryptocurrency to you.",
+    "color": "blue"
+  },
+  "private key": {
+    "definition": "A private key allows access to your wallet in order for you to send cryptocurrency to other address.",
+    "color": "red"
+  },
+  "custodial wallet": {
+    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your cryptocurrency.",
+    "color": "red"
+  },
+  "noncustodial wallet": {
+    "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your cryptocurrency and prove the funds are yours.",
+    "color": "green"
+  },
+  "recovery phrase": {
+    "definition": "A recovery phrase is a list of 12 to 24 words and represents a single secret piece of data that is used to generate your wallet's public key and private key.",
+    "color": "blue"
+  },
+  "hot wallet": {
+    "definition": "A type of noncustodial wallet that is perpetually connected to the internet.",
+    "color": "red"
+  },
+  "cold wallet": {
+    "definition": "A type of noncustodial wallet that is stored offline and does not require a perpetual internet connection.",
+    "color": "blue"
+  },
+  "web3": {
+    "definition": "Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data.",
+    "color": "blue"
+  },
+  "dApps": {
+    "definition": "Digital applications or programs that exist and run on a blockchain, or P2P network of computers instead of a single computer, and are outside the purview and control of a single authority.",
+    "color": "blue"
+  }
+}
