@@ -92,11 +92,21 @@ axios
               })
               slide.quiz.id = `${quest.slug}-${quizNb}`
             }
+            // replace keywords in content
             if (slide.content) {
               for (const word in keywords) {
                 if (slide.content.includes(word)) {
                   console.log('word found: ', word)
-                  slide.content = slide.content.replace(new RegExp(word, "g"), `<span data-title="${keywords[word].definition}" style="color:${keywords[word].color}">${word}</span>`)
+                  slide.content = slide.content.replace(new RegExp(word, "gi"), `<span class="tooltip" definition="${keywords[word].definition}" style="color:${keywords[word].color}">${word}</span>`)
+                }
+              }
+            }
+            // replace keywords in title
+            if (slide.title && slide.type !== "QUIZ") {
+              for (const word in keywords) {
+                if (slide.title.includes(word)) {
+                  console.log('word found in title: ', word)
+                  slide.title = slide.title.replace(new RegExp(word, "gi"), `<span class="tooltip" definition="${keywords[word].definition}" style="color:${keywords[word].color}">${word}</span>`)
                 }
               }
             }

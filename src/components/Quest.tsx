@@ -16,7 +16,7 @@ import axios from 'axios'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useMediaQuery } from '@chakra-ui/react'
 import { Player } from '@lottiefiles/react-lottie-player'
@@ -26,11 +26,26 @@ import ProgressSteps from 'components/ProgressSteps'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useWalletWeb3React } from 'hooks'
 
+// transform keywords into Tooltip
+function transform(node, index) {
+  if (node.type === 'tag' && node.name === 'span') {
+    return (
+      <Tooltip hasArrow label={node.attribs.definition}>
+        {convertNodeToElement(node, index, transform)}
+      </Tooltip>
+    )
+  }
+}
+
 const Slide = styled(Box)`
   border-radius: 0.5rem;
   h1 {
     margin-top: 1em;
     font-size: var(--chakra-fontSizes-2xl);
+  }
+  span.tooltip {
+    cursor: help;
+    border-bottom: 1px dashed red;
   }
   div {
     h2,
@@ -40,6 +55,9 @@ const Slide = styled(Box)`
     }
     h2 {
       font-weight: bold;
+    }
+    a {
+      color: var(--chakra-colors-red-500);
     }
     ul,
     ol {
@@ -51,38 +69,6 @@ const Slide = styled(Box)`
       width: 640px;
       max-width: 100%;
       height: 360px;
-    }
-    [data-title] {
-      border-bottom: 1px dashed red;
-      position: relative;
-      cursor: help;
-    }
-    [data-title]:hover::before {
-      content: attr(data-title);
-      position: absolute;
-      bottom: -38px;
-      display: inline-block;
-      padding: 3px 6px;
-      border-radius: 2px;
-      background: #000;
-      color: #fff;
-      font-size: 12px;
-      font-family: sans-serif;
-      white-space: nowrap;
-      background-color: #555;
-      text-align: center;
-      padding: 5px;
-      border-radius: 6px;
-    }
-    [data-title]:hover::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 8px;
-      display: inline-block;
-      color: #fff;
-      border: 8px solid transparent;
-      border-bottom: 8px solid #555;
     }
   }
 `
@@ -262,15 +248,15 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 {slide.type === 'LEARN' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      📚 {slide.title}
+                      📚 {ReactHtmlParser(slide.title, { transform })}
                     </Text>
-                    <Box>{ReactHtmlParser(slide.content)}</Box>
+                    <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
                   </>
                 )}
                 {slide.type === 'QUIZ' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      ❓ {slide.title}
+                      ❓ {ReactHtmlParser(slide.title)}
                     </Text>
                     <Answers minHeight={isMobile ? '400px' : '320px'}>
                       <ButtonGroup size="lg">
@@ -386,7 +372,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 {slide.type === 'QUEST' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      ⚡️ {slide.title}
+                      ⚡️ {ReactHtmlParser(slide.title, { transform })}
                     </Text>
                     <VStack flex="auto" minH="420px" justifyContent="center">
                       {Quest?.questComponent}
@@ -396,7 +382,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 {slide.type === 'POAP' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      🎖 {slide.title}
+                      🎖 {ReactHtmlParser(slide.title, { transform })}
                     </Text>
                     <VStack flex="auto" minH="420px" justifyContent="center">
                       {walletAddress ? (
