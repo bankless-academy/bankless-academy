@@ -45,7 +45,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'What is a wallet?',
         content:
-          '<p>A <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span> is an application or device used to store, send, and receive cryptocurrency.</p><iframe src=\'https://embed.lottiefiles.com/animation/70066\'></iframe><p>Wallets can be used to send, receive, and store funds. When a <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span> interacts with a Blockchain, one can make purchases, transfer money, interact with applications, and more!</p>',
+          '<p>A <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span> is an application or device used to store, send, and receive crypto assets.</p><iframe src=\'https://embed.lottiefiles.com/animation/70066\'></iframe><p>Wallets can be used to send, receive, and store assets. When a <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span> interacts with a blockchain, one can make purchases, transfer assets, interact with applications, and more!</p>',
       },
       {
         type: 'QUIZ',
@@ -56,25 +56,15 @@ const QUESTS: QuestType[] = [
           answer_2: 'A bi-fold device',
           answer_3: 'An account that protects my assets',
           answer_4:
-            'An app or device used to send, receive, or spend crypto currency',
+            'An app or device used to send, receive, or spend crypto assets',
           id: 'wallet-basics-1',
         },
       },
       {
-        type: 'QUIZ',
-        title: 'I can only receive crypto with a wallet',
-        quiz: {
-          rightAnswerNumber: 2,
-          answer_1: 'True',
-          answer_2: 'False',
-          id: 'wallet-basics-2',
-        },
-      },
-      {
         type: 'LEARN',
-        title: 'What are keys? (Public & Private)',
+        title: 'What are keys? (Public Key & Private Key)',
         content:
-          '<p>A <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span> has a unique ( 2 ) pair of keys. There is one ( 1 ) <span data-title="A public key is your address. It gives others a point of reference to send cryptocurrency to you." style="color:blue">public key</span> and there is one ( 1 ) <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>.</p><ul><li>The <span data-title="A public key is your address. It gives others a point of reference to send cryptocurrency to you." style="color:blue">public key</span> is like your home address</li><li>The <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span> is like your house key.</li></ul><p>Public keys allow others to identify you in order to send crypto to your address.</p><p>Private keys allow you access to your <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span> in order for you to send crypto out to others.</p><p>When creating a <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>, <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>s are automatically generated.</p><p>The <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span> number is then put through a complex mathematical algorithm used to generate your <span data-title="A public key is your address. It gives others a point of reference to send cryptocurrency to you." style="color:blue">public key</span>.</p><p>Your <span data-title="A public key is your address. It gives others a point of reference to send cryptocurrency to you." style="color:blue">public key</span> can be derived from your <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>, but your <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span> can never be derived from your <span data-title="A public key is your address. It gives others a point of reference to send cryptocurrency to you." style="color:blue">public key</span>.</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F020c645b-001c-42d6-bc94-f47fe4e91074%2F16_0.png?table=block&id=cc950ac3-b833-4bf0-bf5e-a64fe1201874\'>',
+          '<p>A <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span> has a unique ( 2 ) pair of keys. There is one ( 1 ) <span data-title="A public key is your address. It gives others a point of reference to send cryptocurrency to you." style="color:blue">public key</span> and there is one ( 1 ) <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>.</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F020c645b-001c-42d6-bc94-f47fe4e91074%2F16_0.png?table=block&id=cc950ac3-b833-4bf0-bf5e-a64fe1201874\'><ul><li>The <span data-title="A public key is your address. It gives others a point of reference to send cryptocurrency to you." style="color:blue">public key</span> is like your home address</li><li>The <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span> is like your house key.</li></ul><p>Public keys allow others to identify you in order to send crypto assets to your address.</p><p>Private keys allow you access to your <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span> in order for you to send crypto assets out to others.</p><p>When creating a <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>, <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>s are automatically generated.</p><p>The <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span> number is then put through a complex mathematical algorithm used to generate your <span data-title="A public key is your address. It gives others a point of reference to send cryptocurrency to you." style="color:blue">public key</span>.</p><p>Your <span data-title="A public key is your address. It gives others a point of reference to send cryptocurrency to you." style="color:blue">public key</span> can be derived from your <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>, but your <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span> can never be derived from your <span data-title="A public key is your address. It gives others a point of reference to send cryptocurrency to you." style="color:blue">public key</span>.</p>',
       },
       {
         type: 'QUIZ',
@@ -86,18 +76,18 @@ const QUESTS: QuestType[] = [
           answer_2: 'Home address / House key',
           answer_3: 'Address / Zip code',
           answer_4: 'Phone Number / Social Security Number',
-          id: 'wallet-basics-3',
+          id: 'wallet-basics-2',
         },
       },
       {
         type: 'QUIZ',
         title:
-          'A private key is your public address since it gives other users a point of access to send crypto to your wallet',
+          'A private key is your public address since it gives other users a point of access to send crypto assets to your wallet',
         quiz: {
           rightAnswerNumber: 2,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-4',
+          id: 'wallet-basics-3',
         },
       },
       {
@@ -109,14 +99,14 @@ const QUESTS: QuestType[] = [
           answer_2: 'Account Trustee',
           answer_3: 'Account Key',
           answer_4: 'Public Key',
-          id: 'wallet-basics-5',
+          id: 'wallet-basics-4',
         },
       },
       {
         type: 'LEARN',
         title: 'Not your keys, not your crypto!',
         content:
-          '<p>Recall that <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>s let you access your <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span> to send crypto. In almost all cases, you want to own your <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>’s <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>.</p><p>But not all <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>s will let you do that. With a custodial <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>, another party controls your <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>s.</p><p>You’re trusting a third party to secure your funds and return them to you if you want to trade or send them somewhere else.</p><p>(Think of your account on Coinbase or Kraken <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>. )</p><p>With a non-custodial <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>, you have sole control of your <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>s, which in turn control your crypto and prove the funds are yours.</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fabda02b7-850e-4f4b-9fcc-637330046e92%2F0_q_FQ4P0pA0PopIqx.png?table=block&id=ff0def71-b130-4854-a008-3b22ec448bc5\'><p>Remember, not your keys, not your crypto! That means that if you don’t control the keys of the <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>, you don’t control the crypto.</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2ba92a8d-c83e-46ad-9807-f7f19c4bac4e%2Fproof-of-keys-bitcoin.png?table=block&id=c5c20539-c091-4f5e-84b6-e8335f6f846a\'>',
+          '<p>Recall that <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>s let you access your <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span> to send crypto. In almost all cases, you want to own your <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>’s <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>.</p><p>But not all <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>s will let you do that. With a custodial <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>, another party controls your <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>s.</p><p>You’re trusting a third party to secure your funds and return them to you if you want to trade or send them somewhere else.</p><p>(Think of your account on Coinbase or Kraken <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>. )</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fabda02b7-850e-4f4b-9fcc-637330046e92%2F0_q_FQ4P0pA0PopIqx.png?table=block&id=ff0def71-b130-4854-a008-3b22ec448bc5\'><p>With a non-custodial <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>, you have sole control of your <span data-title="A private key allows access to your wallet in order for you to send cryptocurrency to other address." style="color:red">private key</span>s, which in turn control your crypto.</p><p>Remember, not your keys, not your crypto! That means that if you don’t control the keys of the <span data-title="A wallet is an application or device used to send and receive cryptocurrency" style="color:green">wallet</span>, you don’t control the crypto.</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2ba92a8d-c83e-46ad-9807-f7f19c4bac4e%2Fproof-of-keys-bitcoin.png?table=block&id=c5c20539-c091-4f5e-84b6-e8335f6f846a\'>',
       },
       {
         type: 'QUIZ',
@@ -127,7 +117,7 @@ const QUESTS: QuestType[] = [
           answer_2: 'House Keys',
           answer_3: 'Private Keys',
           answer_4: 'Account Keys',
-          id: 'wallet-basics-6',
+          id: 'wallet-basics-5',
         },
       },
       {
@@ -139,7 +129,7 @@ const QUESTS: QuestType[] = [
           answer_2: 'House',
           answer_3: 'Car',
           answer_4: 'Account',
-          id: 'wallet-basics-7',
+          id: 'wallet-basics-6',
         },
       },
       {
@@ -149,7 +139,7 @@ const QUESTS: QuestType[] = [
           rightAnswerNumber: 2,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-8',
+          id: 'wallet-basics-7',
         },
       },
       {
@@ -166,7 +156,7 @@ const QUESTS: QuestType[] = [
           rightAnswerNumber: 1,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-9',
+          id: 'wallet-basics-8',
         },
       },
       {
@@ -177,7 +167,7 @@ const QUESTS: QuestType[] = [
           rightAnswerNumber: 2,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-10',
+          id: 'wallet-basics-9',
         },
       },
       {
@@ -190,7 +180,7 @@ const QUESTS: QuestType[] = [
           answer_2: 'Recovery phrase',
           answer_3: 'Custodial wallet',
           answer_4: 'None of the above',
-          id: 'wallet-basics-11',
+          id: 'wallet-basics-10',
         },
       },
       {
@@ -206,7 +196,7 @@ const QUESTS: QuestType[] = [
           rightAnswerNumber: 1,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-12',
+          id: 'wallet-basics-11',
         },
       },
       {
@@ -219,7 +209,7 @@ const QUESTS: QuestType[] = [
           answer_2: 'Keep it in your personal safe',
           answer_3: 'Store it in a safety deposit box at a bank',
           answer_4: 'All of the above',
-          id: 'wallet-basics-13',
+          id: 'wallet-basics-12',
         },
       },
       {
@@ -232,7 +222,7 @@ const QUESTS: QuestType[] = [
           answer_2: 'Save it online or on your computer',
           answer_3: 'Give it to your mom',
           answer_4: 'Store it in your personal safe ',
-          id: 'wallet-basics-14',
+          id: 'wallet-basics-13',
         },
       },
       {
@@ -243,7 +233,7 @@ const QUESTS: QuestType[] = [
           rightAnswerNumber: 2,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-15',
+          id: 'wallet-basics-14',
         },
       },
       {
@@ -261,7 +251,7 @@ const QUESTS: QuestType[] = [
           answer_2: 'Access my wallet on multiple devices',
           answer_3: 'Both [1] & [2]',
           answer_4: 'None of the above',
-          id: 'wallet-basics-16',
+          id: 'wallet-basics-15',
         },
       },
       {
@@ -272,7 +262,7 @@ const QUESTS: QuestType[] = [
           rightAnswerNumber: 1,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-17',
+          id: 'wallet-basics-16',
         },
       },
       {
@@ -286,7 +276,7 @@ const QUESTS: QuestType[] = [
             'A list of 12 to 24 words, and represents a single secret piece of data that is used to generate your wallet’s public key and private key',
           answer_3: 'An account that protects my assets',
           answer_4: 'A device used to store, send, or receive crypto currency',
-          id: 'wallet-basics-18',
+          id: 'wallet-basics-17',
         },
       },
       {
@@ -296,7 +286,7 @@ const QUESTS: QuestType[] = [
           rightAnswerNumber: 2,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-19',
+          id: 'wallet-basics-18',
         },
       },
       {
@@ -307,14 +297,14 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUIZ',
-        title: 'The 2 major types of noncustodial wallets are',
+        title: 'The 2 major types of non-custodial wallets are',
         quiz: {
           rightAnswerNumber: 3,
           answer_1: 'Public Keys and private keys',
-          answer_2: 'Custodial and noncustodial wallets',
+          answer_2: 'Custodial and non-custodial wallets',
           answer_3: 'Hot and cold wallets',
           answer_4: 'None of the above',
-          id: 'wallet-basics-20',
+          id: 'wallet-basics-19',
         },
       },
       {
@@ -324,7 +314,7 @@ const QUESTS: QuestType[] = [
           rightAnswerNumber: 2,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-21',
+          id: 'wallet-basics-20',
         },
       },
       {
@@ -334,7 +324,7 @@ const QUESTS: QuestType[] = [
           rightAnswerNumber: 1,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-22',
+          id: 'wallet-basics-21',
         },
       },
       {
@@ -350,14 +340,14 @@ const QUESTS: QuestType[] = [
           rightAnswerNumber: 2,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-23',
+          id: 'wallet-basics-22',
         },
       },
       {
         type: 'LEARN',
         title: 'MetaMask Setup',
         content:
-          "<p>Step-by-step tutorial on how to setup MetaMask (just an example)</p><iframe src='https://www.youtube.com/embed/WAStJtjYI_c?feature=oembed'></iframe>",
+          "<p>Step-by-step tutorial on how to setup <a href='https://metamask.io/download'>MetaMask</a></p><iframe src='https://www.youtube.com/embed/7avBesBXH6A?feature=oembed'></iframe>",
       },
       {
         type: 'QUEST',
