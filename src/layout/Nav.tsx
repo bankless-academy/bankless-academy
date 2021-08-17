@@ -14,6 +14,7 @@ import styled from '@emotion/styled'
 // import ColorModeSwitcher from 'layout/ColorModeSwitcher'
 // import LanguageModeSwitcher from 'layout/LanguageModeSwitcher'
 import ConnectWalletButton from 'components/ConnectWalletButton'
+import { PROJECT_NAME } from 'constants/index'
 
 const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`
   ${(props) =>
@@ -43,7 +44,7 @@ const Nav: React.FC = () => {
                 variant="unstyled"
                 size={isMobile ? 'sm' : 'md'}
               >
-                ⚡️ Onboard
+                ⚡️ {PROJECT_NAME}
               </Button>
             </Link>
             <Link href="/quests">
@@ -68,7 +69,7 @@ const Nav: React.FC = () => {
                 variant="unstyled"
                 size={isMobile ? 'sm' : 'md'}
               >
-                ⚡️ Onboard
+                ⚡️ {PROJECT_NAME}
               </Button>
             </Link>
           </HStack>
