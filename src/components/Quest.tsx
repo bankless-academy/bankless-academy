@@ -45,7 +45,7 @@ const Slide = styled(Box)`
   }
   span.tooltip {
     cursor: help;
-    border-bottom: 1px dashed red;
+    border-bottom: 1px dashed grey;
   }
   div {
     h2,

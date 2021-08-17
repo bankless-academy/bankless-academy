@@ -31,12 +31,12 @@
     "definition": "A type of noncustodial wallet that is stored offline and does not require a perpetual internet connection.",
     "color": "blue"
   },
-  "web3": {
-    "definition": "Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data.",
-    "color": "blue"
-  },
   "dApps": {
     "definition": "Digital applications or programs that exist and run on a blockchain, or P2P network of computers instead of a single computer, and are outside the purview and control of a single authority.",
+    "color": "blue"
+  },
+  "web3": {
+    "definition": "Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data.",
     "color": "blue"
   }
 }
