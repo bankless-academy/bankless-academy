@@ -1,0 +1,39 @@
+/* eslint-disable no-console */
+const axios = require('axios')
+const FileSystem = require('fs')
+
+const DEFAULT_NOTION_ID = '623e965e4f10456094d17aa94ec37105'
+const POTION_API = 'https://potion-api.vercel.app'
+
+const args = process.argv
+const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : DEFAULT_NOTION_ID
+console.log('NOTION_ID', NOTION_ID)
+
+// TODO: make sure these color are OK
+// TODO: how to handle dark mode?
+const COLOR_MATCHING = {
+  'green': 'rgb(0, 135, 107, 1)',
+  'blue': 'rgb(0, 120, 223, 1)',
+  'red': 'rgb(255, 0, 26, 1)',
+}
+
+const keywords = {}
+
+axios
+  .get(`${POTION_API}/table?id=${NOTION_ID}`)
+  .then((response) => {
+    response.data.map((k) => {
+      const { definition, color, keyword } = k.fields
+      keywords[keyword] = { definition, color: COLOR_MATCHING[color] }
+    })
+    console.log(keywords)
+    const FILE_CONTENT = `${JSON.stringify(keywords, null, 2)}
+`
+    FileSystem.writeFile('keywords.json', FILE_CONTENT, (error) => {
+      if (error) throw error
+    })
+    console.log('export done -> check keywords.json')
+  })
+  .catch((error) => {
+    console.log(error)
+  })

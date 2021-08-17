@@ -12,16 +12,34 @@
 
 [https://www.notion.so/bankless/Bankless-Academy-Content-f0d55570c18c48a5959b0a41ad3e99b9](https://www.notion.so/bankless/Bankless-Academy-Content-f0d55570c18c48a5959b0a41ad3e99b9)
 
-### Defaut import command
+### Defaut content import command
 
 ```bash
 yarn import-content
 ```
 
-### Import a specific Notion ID
+### Import content with a specific Notion ID
 
 ```bash
 yarn import-content 1813af42f771491b8d9af966d9d433fe
+```
+
+## How to import keywords dynamically from Notion
+
+### Where to update the keywords
+
+[https://www.notion.so/bankless/623e965e4f10456094d17aa94ec37105](https://www.notion.so/bankless/623e965e4f10456094d17aa94ec37105)
+
+### Defaut keywords import command
+
+```bash
+yarn import-keywords
+```
+
+### Import keywords with a specific Notion ID
+
+```bash
+yarn import-keywords 623e965e4f10456094d17aa94ec37105
 ```
 
 ## Tech Stack
