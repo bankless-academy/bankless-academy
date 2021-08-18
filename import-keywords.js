@@ -12,9 +12,9 @@ console.log('NOTION_ID', NOTION_ID)
 // TODO: make sure these color are OK
 // TODO: how to handle dark mode?
 const COLOR_MATCHING = {
-  'green': 'rgb(0, 135, 107, 1)',
-  'blue': 'rgb(0, 120, 223, 1)',
-  'red': 'rgb(255, 0, 26, 1)',
+  green: 'rgb(0, 135, 107, 1)',
+  blue: 'rgb(0, 120, 223, 1)',
+  red: 'rgb(255, 0, 26, 1)',
 }
 
 const keywords = {}

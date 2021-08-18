@@ -28,6 +28,7 @@ import { useWalletWeb3React } from 'hooks'
 
 // transform keywords into Tooltip
 function transform(node, index) {
+  // TODO: force links to target _blank
   if (node.type === 'tag' && node.name === 'span') {
     return (
       <Tooltip hasArrow label={node.attribs.definition}>
