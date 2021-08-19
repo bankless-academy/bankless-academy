@@ -11,6 +11,14 @@
     "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address.",
     "color": "rgb(255, 0, 26, 1)"
   },
+  "public keys": {
+    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you.",
+    "color": "rgb(0, 120, 223, 1)"
+  },
+  "private keys": {
+    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address.",
+    "color": "rgb(255, 0, 26, 1)"
+  },
   "custodial wallet": {
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets.",
     "color": "rgb(255, 0, 26, 1)"
@@ -19,7 +27,15 @@
     "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets.",
     "color": "rgb(0, 135, 107, 1)"
   },
+  "non-custodial wallets": {
+    "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets.",
+    "color": "rgb(0, 135, 107, 1)"
+  },
   "recovery phrase": {
+    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key.",
+    "color": "rgb(0, 120, 223, 1)"
+  },
+  "recovery phrases": {
     "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key.",
     "color": "rgb(0, 120, 223, 1)"
   },
@@ -28,6 +44,14 @@
     "color": "rgb(255, 0, 26, 1)"
   },
   "cold wallet": {
+    "definition": "A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection.",
+    "color": "rgb(0, 120, 223, 1)"
+  },
+  "hot wallets": {
+    "definition": "A type of non-custodial wallet that is perpetually connected to the internet.",
+    "color": "rgb(255, 0, 26, 1)"
+  },
+  "cold wallets": {
     "definition": "A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection.",
     "color": "rgb(0, 120, 223, 1)"
   },

@@ -39,7 +39,7 @@ axios
                 [KEY_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
                   ? course.fields[k]
                   : // transform to number if the string contains a number
-                    parseInt(course.fields[k]),
+                  parseInt(course.fields[k]),
               }),
             {}
           )
@@ -51,13 +51,13 @@ axios
             .replace(/-+/g, '-') // collapse dashes
           const content = JSON.parse(
             `[` +
-              response.data
-                .replace(/"/g, "'")
-                .replace(/\s+/g, ' ') // collapse whitespace
-                .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
-                .replace(/<\/h1>/g, `","content": "`)
-                .substr(3) + // remove extra "}, at the beginning
-              `"}]`
+            response.data
+              .replace(/"/g, "'")
+              .replace(/\s+/g, ' ') // collapse whitespace
+              .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
+              .replace(/<\/h1>/g, `","content": "`)
+              .substr(3) + // remove extra "}, at the beginning
+            `"}]`
           )
           let quizNb = 0
           const slides = content.map((slide) => {
@@ -94,27 +94,33 @@ axios
             }
             // replace keywords in content
             if (slide.content) {
+              const content = slide.content.toLowerCase()
               for (const word in keywords) {
-                if (slide.content.toLowerCase().includes(word.toLowerCase())) {
+                const search = '<code>' + word.toLowerCase() + '</code>'
+                if (content.includes(search)) {
                   console.log('word found: ', word)
                   slide.content = slide.content.replace(
-                    new RegExp(word, 'gi'),
-                    `<span class="tooltip" definition="${keywords[word].definition}" style="color:${keywords[word].color}">${word}</span>`
+                    new RegExp(search, 'gi'),
+                    `<span class="tooltip" definition="${keywords[word].definition}" style="color:${keywords[word].color}">$&</span>`
                   )
                 }
               }
+              slide.content = slide.content.replace(/<code>/g, '').replace(/<\/code>/g, '')
             }
             // replace keywords in title
             if (slide.title && slide.type !== 'QUIZ') {
+              const title = slide.title.toLowerCase()
               for (const word in keywords) {
-                if (slide.title.toLowerCase().includes(word.toLowerCase())) {
+                const search = '<code>' + word.toLowerCase() + '</code>'
+                if (title.includes(search)) {
                   console.log('word found in title: ', word)
                   slide.title = slide.title.replace(
-                    new RegExp(word, 'gi'),
-                    `<span class="tooltip" definition="${keywords[word].definition}" style="color:${keywords[word].color}">${word}</span>`
+                    new RegExp(search, 'gi'),
+                    `<span class="tooltip" definition="${keywords[word].definition}" style="color:${keywords[word].color}">$&</span>`
                   )
                 }
               }
+              slide.title = slide.title.replace(/<code>/g, '').replace(/<\/code>/g, '')
             }
             return slide
           })

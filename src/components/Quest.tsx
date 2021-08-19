@@ -140,6 +140,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   }
 
   const selectAnswer = (answerNumber: number) => {
+    if (slide.type !== 'QUIZ') return
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
     if (slide.quiz.rightAnswerNumber === answerNumber) {
       // correct answer
