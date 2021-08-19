@@ -92,6 +92,7 @@ axios
               })
               slide.quiz.id = `${quest.slug}-${quizNb}`
             }
+            // TODO: move this logic to the frontend?
             // replace keywords in content
             if (slide.content) {
               const content = slide.content.toLowerCase()

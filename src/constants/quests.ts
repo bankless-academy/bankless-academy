@@ -10,7 +10,7 @@ const QUESTS: QuestType[] = [
     poapEventId: 4652,
     duration: 10,
     learnings:
-      'What is a wallet?<br>What are keys?<br>Custodial vs non-custodial wallets<br>Wallet Security',
+      'Why do you need a wallet?<br>What is a wallet?<br>What are keys?<br>How do I protect your keys?<br>Wallet Security<br>Custodial vs non-custodial wallets',
     difficulty: 'Easy',
     description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
@@ -21,25 +21,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'Why do you need a wallet?',
         content:
-          '<ul><li>A wallet acts as a <strong>gateway</strong> into the world of crypto assets.</li><li>A wallet acts as <strong>your account</strong> on the blockchain.</li><li>A wallet can <strong>break through data / application silos, </strong>leading to a more free internet.</li></ul>',
-      },
-      {
-        type: 'LEARN',
-        title: 'A wallet as the gateway',
-        content:
-          "<ul><li>A wallet <strong>acts as a gateway</strong> to interact with spaces within the world of crypto assets.</li><li>You could see all blockchains together as the complete world of crypto assets, <strong>each needing its own gateway (wallet) to interact with that part of the world</strong>.</li><li>With a wallet on the Ethereum blockchain you can interact with everything happening inside the Ethereum world, while a Bitcoin wallet would give you access to the Bitcoin part of the cryptocurrency world.</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F68cb491e-b36b-4e9d-92c8-42296feb1984%2FScreenshot_2021-08-15_at_23.12.44.png?table=block&id=a7c22a34-faca-48e7-ad38-37a5391af645'>",
-      },
-      {
-        type: 'LEARN',
-        title: 'A wallet as your account',
-        content:
-          "<ul><li>A wallet can basically be seen as an <strong>account on the blockchain</strong>. You don’t need to setup a new account for each blockchain application that you use. Rather, you use your wallet as a general account for all apps on the same blockchain. Compare this to a social login like Google or Facebook on all kinds of apps, except now <strong>you are in full control of your data</strong>.</li><li>You are always allowed to make as many different wallets as you want in case you like to keep certain things separate.</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F01787468-03b5-43e2-a70d-d8e0b0ab1e1c%2FScreenshot_2021-08-15_at_23.15.47.png?table=block&id=032edf9f-b140-4715-aa03-2126e6cf71f0'>",
-      },
-      {
-        type: 'LEARN',
-        title: 'A wallet to break through the silos',
-        content:
-          "<ul><li>In the current web you’re interacting in silos; centralized entities store your data on their servers and <strong>you can only interact with that data through their interface</strong>. Since anyone can read the complete history of a blockchain and all blockchain apps are connected to this data, <strong>you are able to port over this data from app to app</strong>. If app B has a connection with app A and you’re using both <strong><em>with the same wallet</em></strong> that means that your data is already pre-loaded for you. <strong>No further action required!</strong></li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb57fde70-2042-4c8d-b17a-de630e4c7e77%2FScreenshot_2021-08-15_at_23.18.01.png?table=block&id=b1c1511e-76f8-4d8e-a952-a4dc080cc698'><ul><li>Throughout the different courses of the Bankless Academy we’ll guide you through various apps and show you the <em><strong>magic</strong></em> <strong>of using your wallet as this gateway account where you are in control of your data and no silos exist</strong>. But before that, let’s dive into what a wallet actually can do for you and how to set 1 up.</li></ul><p>TODO: Questions about first section here.</p>",
+          "<iframe src='https://www.youtube.com/embed/YVgfHZMFFFQ?feature=oembed'></iframe><p>(demo video) TODO: create a similar video ourself</p>",
       },
       {
         type: 'LEARN',
