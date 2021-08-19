@@ -378,7 +378,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 {slide.type === 'QUEST' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      ⚡️ {ReactHtmlParser(slide.title, { transform })}
+                      ⚡️ {ReactHtmlParser(slide.title)}
                     </Text>
                     <VStack flex="auto" minH="420px" justifyContent="center">
                       {Quest?.questComponent}
@@ -388,7 +388,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 {slide.type === 'POAP' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      🎖 {ReactHtmlParser(slide.title, { transform })}
+                      🎖 {ReactHtmlParser(slide.title)}
                     </Text>
                     <VStack flex="auto" minH="420px" justifyContent="center">
                       {walletAddress ? (
