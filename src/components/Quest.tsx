@@ -11,12 +11,13 @@ import {
   Kbd,
   useToast,
   Tooltip,
+  Link,
 } from '@chakra-ui/react'
 import axios from 'axios'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useMediaQuery } from '@chakra-ui/react'
 import { Player } from '@lottiefiles/react-lottie-player'
@@ -26,11 +27,31 @@ import ProgressSteps from 'components/ProgressSteps'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useWalletWeb3React } from 'hooks'
 
+// transform keywords into Tooltip
+function transform(node, index) {
+  if (node.type === 'tag' && node.name === 'a') {
+    // force links to target _blank
+    node.attribs.target = '_blank'
+  }
+  if (node.type === 'tag' && node.name === 'span') {
+    // add Tooltip with definition
+    return (
+      <Tooltip hasArrow label={node.attribs.definition}>
+        {convertNodeToElement(node, index, transform)}
+      </Tooltip>
+    )
+  }
+}
+
 const Slide = styled(Box)`
   border-radius: 0.5rem;
   h1 {
     margin-top: 1em;
     font-size: var(--chakra-fontSizes-2xl);
+  }
+  span.tooltip {
+    cursor: help;
+    border-bottom: 1px dashed grey;
   }
   div {
     h2,
@@ -40,6 +61,9 @@ const Slide = styled(Box)`
     }
     h2 {
       font-weight: bold;
+    }
+    a {
+      color: var(--chakra-colors-red-500);
     }
     ul,
     ol {
@@ -121,6 +145,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   }
 
   const selectAnswer = (answerNumber: number) => {
+    if (slide.type !== 'QUIZ') return
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
     if (slide.quiz.rightAnswerNumber === answerNumber) {
       // correct answer
@@ -230,15 +255,15 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 {slide.type === 'LEARN' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      📚 {slide.title}
+                      📚 {ReactHtmlParser(slide.title, { transform })}
                     </Text>
-                    <Box>{ReactHtmlParser(slide.content)}</Box>
+                    <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
                   </>
                 )}
                 {slide.type === 'QUIZ' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      ❓ {slide.title}
+                      ❓ {ReactHtmlParser(slide.title)}
                     </Text>
                     <Answers minHeight={isMobile ? '400px' : '320px'}>
                       <ButtonGroup size="lg">
@@ -354,7 +379,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 {slide.type === 'QUEST' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      ⚡️ {slide.title}
+                      ⚡️ {ReactHtmlParser(slide.title)}
                     </Text>
                     <VStack flex="auto" minH="420px" justifyContent="center">
                       {Quest?.questComponent}
@@ -364,7 +389,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 {slide.type === 'POAP' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      🎖 {slide.title}
+                      🎖 {ReactHtmlParser(slide.title)}
                     </Text>
                     <VStack flex="auto" minH="420px" justifyContent="center">
                       {walletAddress ? (
@@ -415,13 +440,13 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
             hasArrow
             label="Help us improve the content by commenting this slide on Notion"
           >
-            <a
+            <Link
               target="_blank"
               rel="noreferrer"
               href={`https://www.notion.so/${quest.notionId}`}
             >
               <Button variant="outline">🐞 comment this slide</Button>
-            </a>
+            </Link>
           </Tooltip>
         </HStack>
         {/* hide buttons on touch screens */}
