@@ -17,6 +17,7 @@ import {
 import { MdCheckCircle, MdHourglassEmpty, MdError } from 'react-icons/md'
 
 import QuestCards from 'components/QuestCards'
+import QUESTS from 'constants/quests'
 
 // TODO LATER: rename back to quests.tsx
 
@@ -31,10 +32,23 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
+const CONTENT = (
+  <Link
+    target="_blank"
+    rel="noreferrer"
+    href={`https://www.notion.so/${QUESTS[0].notionId}`}
+    textDecorationStyle="unset"
+  >
+    <Button variant="outline" colorScheme="blue">
+      🆕 [version 0.3] Wallet basics content + demo images & videos (to be
+      improved)
+    </Button>
+  </Link>
+)
+
 const DEV_PROGRESS = {
   implemented: [
     '🆕 keyword color + definition tooltip',
-    '🆕 [version 0.3] Wallet basics content + demo images & videos (to be improved)',
     'Web3 wallet connection via Metamask & Wallet Connect | display BANK token balance | disconnect',
     'Full mobile compatibility including swiping between slides',
     'Quest selection | dynamic progress based on slide number | number of POAPs claimed | modal showing quest details',
@@ -98,6 +112,8 @@ const Page = (): JSX.Element => {
             [DEBUG] reset app state
           </Button>
         </Tooltip>
+        <br />
+        {CONTENT}
         <Stack spacing={3} mb={4}>
           <Text fontSize="2xl" fontWeight="bold">
             Implemented features

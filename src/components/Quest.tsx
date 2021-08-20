@@ -11,6 +11,7 @@ import {
   Kbd,
   useToast,
   Tooltip,
+  Link,
 } from '@chakra-ui/react'
 import axios from 'axios'
 import { useHotkeys } from 'react-hotkeys-hook'
@@ -439,13 +440,13 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
             hasArrow
             label="Help us improve the content by commenting this slide on Notion"
           >
-            <a
+            <Link
               target="_blank"
               rel="noreferrer"
               href={`https://www.notion.so/${quest.notionId}`}
             >
               <Button variant="outline">🐞 comment this slide</Button>
-            </a>
+            </Link>
           </Tooltip>
         </HStack>
         {/* hide buttons on touch screens */}
