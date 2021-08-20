@@ -33,10 +33,11 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const DEV_PROGRESS = {
   implemented: [
+    '🆕 keyword color + definition tooltip',
+    '🆕 [version 0.3] Wallet basics content + demo images & videos (to be improved)',
     'Web3 wallet connection via Metamask & Wallet Connect | display BANK token balance | disconnect',
     'Full mobile compatibility including swiping between slides',
     'Quest selection | dynamic progress based on slide number | number of POAPs claimed | modal showing quest details',
-    'Wallet basics content demo (to be improved)',
     'Support for image + video + animations content',
     'Animations: POAP hover & correct answer',
     'Quiz',
