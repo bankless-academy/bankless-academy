@@ -40,8 +40,7 @@ const CONTENT = (
     textDecorationStyle="unset"
   >
     <Button variant="outline" colorScheme="blue">
-      🆕 [version 0.3] Wallet basics content + demo images & videos (to be
-      improved)
+      🆕 [version 0.4] 👷 current work in progress version
     </Button>
   </Link>
 )
