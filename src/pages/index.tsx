@@ -39,7 +39,13 @@ const CONTENT = (
     href={`https://www.notion.so/${QUESTS[0].notionId}`}
     textDecorationStyle="unset"
   >
-    <Button variant="outline" colorScheme="blue">
+    <Button
+      variant="outline"
+      colorScheme="blue"
+      whiteSpace="normal"
+      height="auto"
+      p="4"
+    >
       🆕 [version 0.3] Wallet basics content + demo images & videos (to be
       improved)
     </Button>
