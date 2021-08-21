@@ -79,6 +79,7 @@ const DEV_PROGRESS = {
     'Aave quest: get Kovan test ETH + try borrowing on Aave',
   ],
   disabled: [
+    'Second quest (Aave), since the content is still empty',
     'Multi language',
     'Dark Mode',
     'Simplified navigation, without homepage + about page',
