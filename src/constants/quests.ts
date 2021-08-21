@@ -184,37 +184,6 @@ const QUESTS: QuestType[] = [
       },
     ],
   },
-  {
-    poapImageLink:
-      'https://storage.googleapis.com/poapmedia/onboard-borrow-with-aave-2021-logo-1627580693589.png',
-    learningActions:
-      'Connect your wallet to Aave<br>Deposit collateral on Aave<br>Take a loan against your collateral',
-    knowledgeRequirements: 'Manage a web3 wallet.',
-    poapEventId: 4783,
-    duration: 15,
-    learnings: 'How to use Aave<br>How to take a loan without any intermediary',
-    difficulty: 'Advanced',
-    description: 'Learn how to borrow with Aave.',
-    name: 'Borrow with Aave',
-    notionId: 'fcf82a6b09fb456cb0e908d3403a1a8a',
-    slug: 'borrow-with-aave',
-    slides: [
-      {
-        type: 'LEARN',
-        title: 'TODO',
-        content: '<p>Add Aave content here ...</p>',
-      },
-      {
-        type: 'QUEST',
-        title: 'Borrow with Aave Quest',
-        component: 'BorrowWithAave',
-      },
-      {
-        type: 'POAP',
-        title: 'Collect your POAP',
-      },
-    ],
-  },
 ]
 
 export default QUESTS
