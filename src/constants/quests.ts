@@ -121,7 +121,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'What is a recovery phrase?',
         content:
-          '<p>When you create a wallet, a recovery phrase is also created that is specific to that wallet.</p><p>It stores the information that can be used to recover your wallet and crypto if:</p><ul><li>your wallet fails unexpectedly or gets damaged;</li><li>you are unable to access it due to misplacement or theft;</li></ul><p>A recovery phrase is a list of 12 to 24 words and represents a single secret piece of data that is used to generate your wallet’s <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you." style="color:rgb(0, 120, 223, 1)">public key</span> and <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address." style="color:rgb(255, 0, 26, 1)">private key</span>.</p><p>This same recovery phrase can actually be used to access your wallet on different devices.</p>',
+          '<p>When you create a wallet, a recovery phrase is also created that is specific to that wallet.</p><p>It stores the information that can be used to recover your wallet and crypto if:</p><ul><li>your wallet fails unexpectedly or gets damaged;</li><li>you are unable to access it due to misplacement or theft;</li></ul><p>A recovery phrase is a list of 12 to 24 words and represents a single secret piece of data that is used to generate your wallet’s <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you." style="color:rgb(0, 120, 223, 1)">public key</span> and <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address." style="color:rgb(255, 0, 26, 1)">private key</span>.</p><p>This same recovery phrase can actually be used to access your wallet on different devices.</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe57e2d52-a97e-42de-aeaf-e0b26a66e8ae%2F0_u4mBi5vxWeCTLwMP.png?table=block&id=c1ce45e2-d20d-4cd9-bde3-150e923e5d21\'>',
       },
       {
         type: 'QUIZ',
@@ -155,7 +155,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'MetaMask Wallet',
         content:
-          '<h2>Why use MetaMask?</h2><ol><li>A <span class="tooltip" definition="Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data." style="color:rgb(0, 120, 223, 1)">Web3</span> <span class="tooltip" definition="With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets." style="color:rgb(0, 135, 107, 1)">non-custodial wallet</span>, enabling the usage of <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, or P2P network of computers instead of a single computer, and are outside the purview and control of a single authority." style="color:rgb(0, 120, 223, 1)">dApps</span>. (Well cover Web3 and dApps more in a later course)</li><li>It is a widely used wallet with over 5 million monthly active users.</li><li>A browser extension is available on Chrome, Brave, Edge, and Firefox internet browsers.</li><li>Available for Mobile applications Android and IOS users.</li></ol>',
+          '<h2>Why use MetaMask?</h2><ol><li>A <span class="tooltip" definition="Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data." style="color:rgb(0, 120, 223, 1)">Web3</span> <span class="tooltip" definition="With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets." style="color:rgb(0, 135, 107, 1)">non-custodial wallet</span>, enabling the usage of <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, or P2P network of computers instead of a single computer, and are outside the purview and control of a single authority." style="color:rgb(0, 120, 223, 1)">dApps</span>. (Well cover Web3 and dApps more in a later course)</li><li>It is a widely used wallet with over 5 million monthly active users.</li><li>A browser extension is available on Chrome, Brave, Edge, and Firefox internet browsers.</li><li>Available for Mobile applications Android and IOS users.</li></ol><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F46078cc2-f25a-458a-aaca-a59e5cb6ebc6%2FScreen_Shot_2021-08-21_at_15.28.09.jpg?table=block&id=205259fd-e6f7-4e6e-8fce-ade870c718b3\'>',
       },
       {
         type: 'QUIZ',
@@ -177,37 +177,6 @@ const QUESTS: QuestType[] = [
         type: 'QUEST',
         title: 'Wallet Basics Quest',
         component: 'WalletBasics',
-      },
-      {
-        type: 'POAP',
-        title: 'Collect your POAP',
-      },
-    ],
-  },
-  {
-    poapImageLink:
-      'https://storage.googleapis.com/poapmedia/onboard-borrow-with-aave-2021-logo-1627580693589.png',
-    learningActions:
-      'Connect your wallet to Aave<br>Deposit collateral on Aave<br>Take a loan against your collateral',
-    knowledgeRequirements: 'Manage a web3 wallet.',
-    poapEventId: 4783,
-    duration: 15,
-    learnings: 'How to use Aave<br>How to take a loan without any intermediary',
-    difficulty: 'Advanced',
-    description: 'Learn how to borrow with Aave.',
-    name: 'Borrow with Aave',
-    notionId: 'cbbc874193874f9e8ced11034b2aecad',
-    slug: 'borrow-with-aave',
-    slides: [
-      {
-        type: 'LEARN',
-        title: 'TODO',
-        content: '<p>Add Aave content here ...</p>',
-      },
-      {
-        type: 'QUEST',
-        title: 'Borrow with Aave Quest',
-        component: 'BorrowWithAave',
       },
       {
         type: 'POAP',
