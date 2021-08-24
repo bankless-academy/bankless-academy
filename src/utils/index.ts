@@ -5,6 +5,12 @@ import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { NetworkConnector } from '@web3-react/network-connector'
 
+declare global {
+  interface Window {
+    umami: any
+  }
+}
+
 import { RPC_URLS } from 'constants/'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -95,4 +101,16 @@ export const trimCurrencyForWhales = (labelValue: number): string | number => {
     Math.abs(Number(labelValue)) >= 1.0e3
     ? (Math.abs(Number(labelValue)) / 1.0e3).toFixed(2) + 'K'
     : Math.abs(Number(labelValue))
+}
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export const track = (event: string, value?: any): void => {
+  if (typeof window !== 'undefined') {
+    // TODO: change type of event value to JSON instead of varchar(50)
+    // window.umami.trackEvent(typeof value === 'object' ? JSON.stringify(value) : value, event)
+    window.umami.trackEvent(
+      typeof value === 'object' ? Object.values(value).join('|') : value,
+      event
+    )
+  }
 }

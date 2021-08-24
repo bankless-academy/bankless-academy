@@ -26,6 +26,7 @@ import { QuestType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useWalletWeb3React } from 'hooks'
+import { track } from 'utils'
 
 // transform keywords into Tooltip
 function transform(node, index) {
@@ -125,13 +126,15 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     localStorage.setItem(quest.slug, currentSlide.toString())
   }, [currentSlide])
 
-  const goToPrevSlide = () => {
+  const goToPrevSlide = (e) => {
+    track('prev-slide', e?.nativeEvent?.isTrusted ? 'click' : 'shortcut')
     if (!isFirstSlide) {
       swiper?.slidePrev()
     }
   }
 
-  const goToNextSlide = () => {
+  const goToNextSlide = (e) => {
+    track('next-slide', e?.nativeEvent?.isTrusted ? 'click' : 'shortcut')
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
@@ -148,10 +151,20 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     if (slide.type !== 'QUIZ') return
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
     if (slide.quiz.rightAnswerNumber === answerNumber) {
+      track('quiz_answer', {
+        id: slide.quiz.id,
+        isRightAnswer: true,
+        selectedAnswerNumber: answerNumber,
+      })
       // correct answer
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
       toast.closeAll()
     } else if (!answerIsCorrect) {
+      track('quiz_answer', {
+        id: slide.quiz.id,
+        isRightAnswer: false,
+        selectedAnswerNumber: answerNumber,
+      })
       // wrong answer
       toast({
         title: 'Wrong answer ... try again!',
