@@ -21,11 +21,12 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <>
       <Head>
-        {/* TODO: separate tracking for dev and prod + add data-website-id to .env */}
         <script
           async
           defer
-          data-website-id="62d1cf48-425d-4658-9b86-3eea78ac9714"
+          data-website-id={
+            process.env.UMAMI || 'e84c3a1e-0ab0-4502-b0fe-67d660765535'
+          }
           src="https://bankless-umami.vercel.app/umami.js"
         />
       </Head>
