@@ -18,6 +18,12 @@ const Web3ReactProviderDefault = dynamic(
   { ssr: false }
 )
 
+const umamiWebsiteId =
+  process.env.ENV === 'PROD' && process.env.UMAMI
+    ? process.env.UMAMI
+    : 'e84c3a1e-0ab0-4502-b0fe-67d660765535'
+const umamiDomain = 'https://bankless-umami.vercel.app/umami.js'
+
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <>
@@ -25,12 +31,10 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
         <script
           async
           defer
-          data-website-id={
-            process.env.UMAMI || 'e84c3a1e-0ab0-4502-b0fe-67d660765535'
-          }
-          src="https://bankless-umami.vercel.app/umami.js"
+          data-website-id={umamiWebsiteId}
+          src={umamiDomain}
         />
-        {typeof window !== 'undefined' && process.env.UMAMI
+        {process.env.ENV === 'PROD' && typeof window !== 'undefined'
           ? hotjar.initialize(2568813, 6)
           : null}
       </Head>
