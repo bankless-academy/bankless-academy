@@ -3,6 +3,7 @@ import { Web3ReactProvider } from '@web3-react/core'
 import { ethers } from 'ethers'
 import 'swiper/swiper-bundle.min.css'
 import Head from 'next/head'
+import { hotjar } from 'react-hotjar'
 
 import dynamic from 'next/dynamic'
 import Layout from 'layout'
@@ -29,6 +30,9 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
           }
           src="https://bankless-umami.vercel.app/umami.js"
         />
+        {typeof window !== 'undefined' && process.env.UMAMI
+          ? hotjar.initialize(2568813, 6)
+          : null}
       </Head>
       <noscript>You need to enable JavaScript to run this app.</noscript>
       <ThemeProvider>
