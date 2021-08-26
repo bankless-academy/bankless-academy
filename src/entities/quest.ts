@@ -1,4 +1,7 @@
-export type QuestComponentType = 'WalletBasics' | 'BorrowWithAave'
+export type QuestComponentType =
+  | 'WalletBasics'
+  | 'BorrowWithAave'
+  | 'IntroToDeFi'
 
 export interface QuestType {
   name: string
