@@ -418,7 +418,8 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                               onClick={claimPoap}
                               isLoading={isClaimingPoap}
                             >
-                              Claim POAP
+                              Claim POAP (fake button = has been temporarily
+                              disabled, will be fixed again next week)
                             </Button>
                           ) : (
                             <>
