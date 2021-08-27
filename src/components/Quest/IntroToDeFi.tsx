@@ -4,7 +4,14 @@ const IntroToDeFi = (): {
   questComponent: React.ReactElement
 } => ({
   isQuestCompleted: true,
-  questComponent: <>TODO: Custom quest component for IntroToDeFi</>,
+  questComponent: (
+    <>
+      TODO: DeFi quest action to be confirmed...
+      <br />
+      Most probable case: get Matic from a faucet in order to be ready for the
+      first DeFi protocol quest (Lend on Aave layer 2 Polygon?)
+    </>
+  ),
 })
 
 export default IntroToDeFi
