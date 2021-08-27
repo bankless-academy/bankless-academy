@@ -53,7 +53,9 @@ const CONTENT = (
 
 const DEV_PROGRESS = {
   implemented: [
-    '🆕 keyword color + definition tooltip',
+    '🆕 new course about "Intro to DeFi" (content is still work in progress)',
+    '🆕 user tracking with Umami + Hotjar to gather stats',
+    'keyword color + definition tooltip',
     'Web3 wallet connection via Metamask & Wallet Connect | display BANK token balance | disconnect',
     'Full mobile compatibility including swiping between slides',
     'Quest selection | dynamic progress based on slide number | number of POAPs claimed | modal showing quest details',
@@ -70,16 +72,13 @@ const DEV_PROGRESS = {
     '[DEBUG] reset app state (delete data from local storage)',
   ],
   comingSoon: [
-    'Wallet basics quest improvement: share signature via twitter post to reduce Sybil attack + verify signature in backend',
-    'Improve font sizing + spacing on mobile',
     'Improve POAP claiming: store claiming codes in database',
+    'Improve font sizing + spacing on mobile',
     'Logo + name',
     'Improve design + colors',
-    'Aave content',
-    'Aave quest: get Kovan test ETH + try borrowing on Aave',
   ],
   disabled: [
-    'Second quest (Aave), since the content is still empty',
+    '🆕 POAP claiming (has been temporarily disabled, will be fixed again next week)',
     'Multi language',
     'Dark Mode',
     'Simplified navigation, without homepage + about page',
