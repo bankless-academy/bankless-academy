@@ -46,8 +46,7 @@ const CONTENT = (
       height="auto"
       p="4"
     >
-      🆕 [version 0.4] Wallet Basics (improved) + Intro to DeFi (work in
-      progress)
+      🆕 [version 0.5] 👷 current work in progress version
     </Button>
   </Link>
 )
