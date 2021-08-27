@@ -11,6 +11,7 @@ console.log('NOTION_ID', NOTION_ID)
 
 // TODO: make sure these color are OK
 // TODO: how to handle dark mode?
+// TODO: move color logic to frontend
 const COLOR_MATCHING = {
   green: 'rgba(0, 135, 107, 1)',
   blue: 'rgba(0, 120, 223, 1)',
