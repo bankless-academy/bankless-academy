@@ -11,10 +11,12 @@ console.log('NOTION_ID', NOTION_ID)
 
 // TODO: make sure these color are OK
 // TODO: how to handle dark mode?
+// TODO: move color logic to frontend
 const COLOR_MATCHING = {
-  green: 'rgb(0, 135, 107, 1)',
-  blue: 'rgb(0, 120, 223, 1)',
-  red: 'rgb(255, 0, 26, 1)',
+  green: 'rgba(0, 135, 107, 1)',
+  blue: 'rgba(0, 120, 223, 1)',
+  red: 'rgba(255, 0, 26, 1)',
+  black: 'rgba(128, 128, 128, 1)',
 }
 
 const keywords = {}
@@ -24,7 +26,8 @@ axios
   .then((response) => {
     response.data.map((k) => {
       const { definition, color, keyword } = k.fields
-      keywords[keyword] = { definition, color: COLOR_MATCHING[color] }
+      if (definition !== undefined)
+        keywords[keyword] = { definition, color: COLOR_MATCHING[color] }
     })
     console.log(keywords)
     const FILE_CONTENT = `${JSON.stringify(keywords, null, 2)}

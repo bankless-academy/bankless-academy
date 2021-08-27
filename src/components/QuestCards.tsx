@@ -143,7 +143,7 @@ const QuestCards: React.FC = () => {
                   keepLastFrame={true}
                   controls={false}
                   src={`/lotties/${quest.poapEventId}.json`}
-                  style={{ height: '250px', width: '250px' }}
+                  style={{ height: '235px', width: '235px' }}
                 />
               </Box>
               <Duration colorScheme="gray" borderRadius="full" size="xs">

@@ -53,6 +53,7 @@ axios
             `[` +
               response.data
                 .replace(/"/g, "'")
+                .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
                 .replace(/\s+/g, ' ') // collapse whitespace
                 .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
                 .replace(/<\/h1>/g, `","content": "`)
