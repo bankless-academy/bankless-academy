@@ -1,0 +1,94 @@
+{
+  "wallet": {
+    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain,",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "blockchain": {
+    "definition": "A peer to peer (P2P) network of computers instead of a single computer, ",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "public key": {
+    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you.",
+    "color": "rgba(0, 120, 223, 1)"
+  },
+  "public keys": {
+    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you.",
+    "color": "rgba(0, 120, 223, 1)"
+  },
+  "private key": {
+    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address.",
+    "color": "rgba(255, 0, 26, 1)"
+  },
+  "private keys": {
+    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address.",
+    "color": "rgba(255, 0, 26, 1)"
+  },
+  "custodial wallet": {
+    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets.",
+    "color": "rgba(255, 0, 26, 1)"
+  },
+  "custodial wallets": {
+    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets.",
+    "color": "rgba(255, 0, 26, 1)"
+  },
+  "non-custodial wallet": {
+    "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets.",
+    "color": "rgba(0, 135, 107, 1)"
+  },
+  "non-custodial wallets": {
+    "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets.",
+    "color": "rgba(0, 135, 107, 1)"
+  },
+  "recovery phrase": {
+    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "recovery phrases": {
+    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "hot wallet": {
+    "definition": "A type of non-custodial wallet that is perpetually connected to the internet.",
+    "color": "rgba(255, 0, 26, 1)"
+  },
+  "hot wallets": {
+    "definition": "A type of non-custodial wallet that is perpetually connected to the internet.",
+    "color": "rgba(255, 0, 26, 1)"
+  },
+  "cold wallet": {
+    "definition": "A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection.",
+    "color": "rgba(0, 120, 223, 1)"
+  },
+  "cold wallets": {
+    "definition": "A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection.",
+    "color": "rgba(0, 120, 223, 1)"
+  },
+  "DApp": {
+    "definition": "Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "DApps": {
+    "definition": "Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "web3": {
+    "definition": "Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "DeFi": {
+    "definition": "An abbreviation for decentralized finance, defi is a system by which financial products become available on a public decentralized blockchain network",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "lender": {
+    "definition": "Deposits assets to earn interest",
+    "color": "rgba(0, 135, 107, 1)"
+  },
+  "borrower": {
+    "definition": "Willing to pay interest to lenders in order to borrow assets",
+    "color": "rgba(255, 0, 26, 1)"
+  },
+  "collateral": {
+    "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan",
+    "color": "rgba(128, 128, 128, 1)"
+  }
+}

@@ -12,10 +12,12 @@ import {
   ListIcon,
   Link,
   useMediaQuery,
+  Tooltip,
 } from '@chakra-ui/react'
 import { MdCheckCircle, MdHourglassEmpty, MdError } from 'react-icons/md'
 
 import QuestCards from 'components/QuestCards'
+import QUESTS from 'constants/quests'
 
 // TODO LATER: rename back to quests.tsx
 
@@ -30,12 +32,34 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
+const CONTENT = (
+  <Link
+    target="_blank"
+    rel="noreferrer"
+    href={`https://www.notion.so/${QUESTS[0].notionId}`}
+    textDecorationStyle="unset"
+  >
+    <Button
+      variant="outline"
+      colorScheme="blue"
+      whiteSpace="normal"
+      height="auto"
+      p="4"
+    >
+      🆕 [version 0.4] Wallet Basics (improved) + Intro to DeFi (work in
+      progress)
+    </Button>
+  </Link>
+)
+
 const DEV_PROGRESS = {
   implemented: [
+    '🆕 new course about "Intro to DeFi" (content is still work in progress)',
+    '🆕 user tracking with Umami + Hotjar to gather stats',
+    'keyword color + definition tooltip',
     'Web3 wallet connection via Metamask & Wallet Connect | display BANK token balance | disconnect',
     'Full mobile compatibility including swiping between slides',
     'Quest selection | dynamic progress based on slide number | number of POAPs claimed | modal showing quest details',
-    'Wallet basics content demo (to be improved)',
     'Support for image + video + animations content',
     'Animations: POAP hover & correct answer',
     'Quiz',
@@ -49,15 +73,13 @@ const DEV_PROGRESS = {
     '[DEBUG] reset app state (delete data from local storage)',
   ],
   comingSoon: [
-    'Wallet basics quest improvement: share signature via twitter post to reduce Sybil attack + verify signature in backend',
-    'Improve font sizing + spacing on mobile',
     'Improve POAP claiming: store claiming codes in database',
+    'Improve font sizing + spacing on mobile',
     'Logo + name',
     'Improve design + colors',
-    'Aave content',
-    'Aave quest: get Kovan test ETH + try borrowing on Aave',
   ],
   disabled: [
+    '🆕 POAP claiming (has been temporarily disabled, will be fixed again next week)',
     'Multi language',
     'Dark Mode',
     'Simplified navigation, without homepage + about page',
@@ -81,15 +103,23 @@ const Page = (): JSX.Element => {
         <QuestCards />
       </SimpleGrid>
       <Box mt={8}>
-        <Button
-          onClick={() => {
-            localStorage.clear()
-            window.location.reload()
-          }}
-          mb={4}
+        <Tooltip
+          hasArrow
+          placement="right"
+          label="If you want to try the quest from scratch or experience any problem, click this button to reset the app state"
         >
-          [DEBUG] reset app state
-        </Button>
+          <Button
+            onClick={() => {
+              localStorage.clear()
+              window.location.reload()
+            }}
+            mb={4}
+          >
+            [DEBUG] reset app state
+          </Button>
+        </Tooltip>
+        <br />
+        {CONTENT}
         <Stack spacing={3} mb={4}>
           <Text fontSize="2xl" fontWeight="bold">
             Implemented features

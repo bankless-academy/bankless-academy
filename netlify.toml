@@ -1,0 +1,4 @@
+[build.environment]
+  ENV = "PROD"
+[context.deploy-preview.environment]
+  ENV = "PREV"

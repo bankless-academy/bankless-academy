@@ -2,6 +2,7 @@
 const axios = require('axios')
 const FileSystem = require('fs')
 const stringifyObject = require('stringify-object')
+const keywords = require('./keywords.json')
 
 const DEFAULT_NOTION_ID = '1813af42f771491b8d9af966d9d433fe'
 const POTION_API = 'https://potion-api.vercel.app'
@@ -52,6 +53,8 @@ axios
             `[` +
               response.data
                 .replace(/"/g, "'")
+                .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
+                .replace(/\s+/g, ' ') // collapse whitespace
                 .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
                 .replace(/<\/h1>/g, `","content": "`)
                 .substr(3) + // remove extra "}, at the beginning
@@ -89,6 +92,41 @@ axios
                 )
               })
               slide.quiz.id = `${quest.slug}-${quizNb}`
+            }
+            // TODO: move this logic to the frontend?
+            // replace keywords in content
+            if (slide.content) {
+              const content = slide.content.toLowerCase()
+              for (const word in keywords) {
+                const search = '<code>' + word.toLowerCase() + '</code>'
+                if (content.includes(search)) {
+                  console.log('word found: ', word)
+                  slide.content = slide.content.replace(
+                    new RegExp(search, 'gi'),
+                    `<span class="tooltip" definition="${keywords[word].definition}" style="color:${keywords[word].color}">$&</span>`
+                  )
+                }
+              }
+              slide.content = slide.content
+                .replace(/<code>/g, '')
+                .replace(/<\/code>/g, '')
+            }
+            // replace keywords in title
+            if (slide.title && slide.type !== 'QUIZ') {
+              const title = slide.title.toLowerCase()
+              for (const word in keywords) {
+                const search = '<code>' + word.toLowerCase() + '</code>'
+                if (title.includes(search)) {
+                  console.log('word found in title: ', word)
+                  slide.title = slide.title.replace(
+                    new RegExp(search, 'gi'),
+                    `<span class="tooltip" definition="${keywords[word].definition}" style="color:${keywords[word].color}">$&</span>`
+                  )
+                }
+              }
+              slide.title = slide.title
+                .replace(/<code>/g, '')
+                .replace(/<\/code>/g, '')
             }
             return slide
           })

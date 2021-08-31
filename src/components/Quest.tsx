@@ -10,12 +10,14 @@ import {
   SimpleGrid,
   Kbd,
   useToast,
+  Tooltip,
+  Link,
 } from '@chakra-ui/react'
 import axios from 'axios'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useMediaQuery } from '@chakra-ui/react'
 import { Player } from '@lottiefiles/react-lottie-player'
@@ -24,12 +26,33 @@ import { QuestType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useWalletWeb3React } from 'hooks'
+import { track } from 'utils'
+
+// transform keywords into Tooltip
+function transform(node, index) {
+  if (node.type === 'tag' && node.name === 'a') {
+    // force links to target _blank
+    node.attribs.target = '_blank'
+  }
+  if (node.type === 'tag' && node.name === 'span') {
+    // add Tooltip with definition
+    return (
+      <Tooltip hasArrow label={node.attribs.definition}>
+        {convertNodeToElement(node, index, transform)}
+      </Tooltip>
+    )
+  }
+}
 
 const Slide = styled(Box)`
   border-radius: 0.5rem;
   h1 {
     margin-top: 1em;
     font-size: var(--chakra-fontSizes-2xl);
+  }
+  span.tooltip {
+    cursor: help;
+    border-bottom: 1px dashed grey;
   }
   div {
     h2,
@@ -39,6 +62,9 @@ const Slide = styled(Box)`
     }
     h2 {
       font-weight: bold;
+    }
+    a {
+      color: var(--chakra-colors-red-500);
     }
     ul,
     ol {
@@ -100,13 +126,15 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     localStorage.setItem(quest.slug, currentSlide.toString())
   }, [currentSlide])
 
-  const goToPrevSlide = () => {
+  const goToPrevSlide = (e) => {
+    track('prev-slide', e?.nativeEvent?.isTrusted ? 'click' : 'shortcut')
     if (!isFirstSlide) {
       swiper?.slidePrev()
     }
   }
 
-  const goToNextSlide = () => {
+  const goToNextSlide = (e) => {
+    track('next-slide', e?.nativeEvent?.isTrusted ? 'click' : 'shortcut')
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
@@ -120,12 +148,23 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   }
 
   const selectAnswer = (answerNumber: number) => {
+    if (slide.type !== 'QUIZ') return
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
     if (slide.quiz.rightAnswerNumber === answerNumber) {
+      track('quiz_answer', {
+        id: slide.quiz.id,
+        isRightAnswer: true,
+        selectedAnswerNumber: answerNumber,
+      })
       // correct answer
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
       toast.closeAll()
     } else if (!answerIsCorrect) {
+      track('quiz_answer', {
+        id: slide.quiz.id,
+        isRightAnswer: false,
+        selectedAnswerNumber: answerNumber,
+      })
       // wrong answer
       toast({
         title: 'Wrong answer ... try again!',
@@ -229,15 +268,15 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 {slide.type === 'LEARN' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      📚 {slide.title}
+                      📚 {ReactHtmlParser(slide.title, { transform })}
                     </Text>
-                    <Box>{ReactHtmlParser(slide.content)}</Box>
+                    <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
                   </>
                 )}
                 {slide.type === 'QUIZ' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      ❓ {slide.title}
+                      ❓ {ReactHtmlParser(slide.title)}
                     </Text>
                     <Answers minHeight={isMobile ? '400px' : '320px'}>
                       <ButtonGroup size="lg">
@@ -353,7 +392,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 {slide.type === 'QUEST' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      ⚡️ {slide.title}
+                      ⚡️ {ReactHtmlParser(slide.title)}
                     </Text>
                     <VStack flex="auto" minH="420px" justifyContent="center">
                       {Quest?.questComponent}
@@ -363,7 +402,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 {slide.type === 'POAP' && (
                   <>
                     <Text fontSize="3xl" mb="8">
-                      🎖 {slide.title}
+                      🎖 {ReactHtmlParser(slide.title)}
                     </Text>
                     <VStack flex="auto" minH="420px" justifyContent="center">
                       {walletAddress ? (
@@ -379,7 +418,8 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                               onClick={claimPoap}
                               isLoading={isClaimingPoap}
                             >
-                              Claim POAP
+                              Claim POAP (fake button = has been temporarily
+                              disabled, will be fixed again next week)
                             </Button>
                           ) : (
                             <>
@@ -410,33 +450,48 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       </Swiper>
       <Box display="flex" p={4}>
         <HStack flex="auto">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href={`https://www.notion.so/${quest.notionId}`}
+          <Tooltip
+            hasArrow
+            label="Help us improve the content by commenting this slide on Notion"
           >
-            <Button variant="outline">🐞 comment this slide</Button>
-          </a>
+            <Link
+              target="_blank"
+              rel="noreferrer"
+              href={`https://www.notion.so/${quest.notionId}`}
+            >
+              <Button variant="outline">🐞 comment this slide</Button>
+            </Link>
+          </Tooltip>
         </HStack>
         {/* hide buttons on touch screens */}
         {!supportsTouch && (
           <HStack>
             {!isFirstSlide && (
-              <Button ref={buttonLeftRef} onClick={goToPrevSlide}>
-                ⬅️
-              </Button>
+              <Tooltip
+                hasArrow
+                label="Use the 'left' arrow key on your keyboard to navigate back"
+              >
+                <Button ref={buttonLeftRef} onClick={goToPrevSlide}>
+                  ⬅️
+                </Button>
+              </Tooltip>
             )}
-            <Button
-              ref={buttonRightRef}
-              disabled={
-                (isLastSlide && !isPoapClaimed) ||
-                (slide.quiz && !answerIsCorrect) ||
-                (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
-              }
-              onClick={goToNextSlide}
+            <Tooltip
+              hasArrow
+              label="Use the 'right' arrow key on your keyboard to continue"
             >
-              ➡️
-            </Button>
+              <Button
+                ref={buttonRightRef}
+                disabled={
+                  (isLastSlide && !isPoapClaimed) ||
+                  (slide.quiz && !answerIsCorrect) ||
+                  (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+                }
+                onClick={goToNextSlide}
+              >
+                ➡️
+              </Button>
+            </Tooltip>
           </HStack>
         )}
       </Box>

@@ -1,4 +1,4 @@
-export const PROJECT_NAME = 'Onboard'
+export const PROJECT_NAME = 'Bankless Academy'
 
 export const TOKEN_ADDRESS = {
   1: '0x2d94aa3e47d9d5024503ca8491fce9a2fb4da198',

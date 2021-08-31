@@ -1,27 +1,45 @@
-# Onboard
+# Bankless Academy
 
 ## Project Specifications
 
-- [Notion](https://www.notion.so/bankless/ONBOARD-c431218052c84cf598a6408aa464287b)
-- [Planning / Tasks](https://www.notion.so/bankless/Onboard-planning-open-tasks-availability-405f670d58ee4aef8f10f8c8b46a329d)
+- [Notion](https://www.notion.so/bankless/Bankless-Academy-FKA-Onboard-c431218052c84cf598a6408aa464287b)
+- [Planning / Tasks](https://www.notion.so/bankless/Bankless-Academy-planning-open-tasks-availability-405f670d58ee4aef8f10f8c8b46a329d)
 - [Initial Figma wireframe](https://www.figma.com/file/ryapBbsKrI0Q77bKrMsNrQ/Onboard-MVP1?node-id=8%3A461) / [[WIP] New Figma wireframe](https://www.figma.com/file/FebGvlqhBqT5QO2iQ9mTUJ/Bankless-Onboarding?node-id=3%3A2)
 
 ## How to import content dynamically from Notion
 
 ### Where to update the content
 
-[https://www.notion.so/bankless/OnBoard-Content-f0d55570c18c48a5959b0a41ad3e99b9](https://www.notion.so/bankless/OnBoard-Content-f0d55570c18c48a5959b0a41ad3e99b9)
+[https://www.notion.so/bankless/Bankless-Academy-Content-f0d55570c18c48a5959b0a41ad3e99b9](https://www.notion.so/bankless/Bankless-Academy-Content-f0d55570c18c48a5959b0a41ad3e99b9)
 
-### Defaut import command
+### Defaut content import command
 
 ```bash
 yarn import-content
 ```
 
-### Import a specific Notion ID
+### Import content with a specific Notion ID
 
 ```bash
 yarn import-content 1813af42f771491b8d9af966d9d433fe
+```
+
+## How to import keywords dynamically from Notion
+
+### Where to update the keywords
+
+[https://www.notion.so/bankless/623e965e4f10456094d17aa94ec37105](https://www.notion.so/bankless/623e965e4f10456094d17aa94ec37105)
+
+### Defaut keywords import command
+
+```bash
+yarn import-keywords
+```
+
+### Import keywords with a specific Notion ID
+
+```bash
+yarn import-keywords 623e965e4f10456094d17aa94ec37105
 ```
 
 ## Tech Stack
