@@ -14,7 +14,7 @@ import styled from '@emotion/styled'
 // import ColorModeSwitcher from 'layout/ColorModeSwitcher'
 // import LanguageModeSwitcher from 'layout/LanguageModeSwitcher'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import SwitchNetworkButton from '../components/SwitchNetworkButton'
+import SwitchNetworkButton from 'components/SwitchNetworkButton/'
 import { PROJECT_NAME } from 'constants/index'
 
 const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`

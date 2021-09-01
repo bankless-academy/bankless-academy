@@ -1,6 +1,6 @@
 import React from 'react'
 import { Select } from '@chakra-ui/react'
-import networks from '../constants/networks'
+import networks from 'constants/networks'
 import { useState } from 'react'
 
 const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
