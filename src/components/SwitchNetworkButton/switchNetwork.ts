@@ -1,8 +1,18 @@
 import networks from 'constants/networks'
+import { Dispatch, SetStateAction } from 'react'
 
 const switchNetwork = async (
   networkName: string,
-  setNetwork: (a: string) => void
+  setNetwork: Dispatch<
+    SetStateAction<{
+      name: string
+      color: string
+      textColor: string
+      chainId: number
+      rpcUrl: string
+      blockExplorer: string
+    }>
+  >
 ): Promise<any> => {
   const { ethereum } = window
 
