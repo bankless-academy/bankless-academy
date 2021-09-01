@@ -3,13 +3,23 @@ import { Select } from '@chakra-ui/react'
 import networks from 'constants/networks'
 import { useState } from 'react'
 import switchNetwork from './switchNetwork'
+import { useEffect } from 'react'
+import handleNetworkChange from './handleNetworkChange'
 
 const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
   const [network, setNetwork] = useState(networks.mainnet)
+
   const handleChange = async (event: React.ChangeEvent<HTMLSelectElement>) => {
     const networkName = event.target.value
     await switchNetwork(networkName.toLowerCase(), setNetwork)
   }
+
+  useEffect(() => {
+    const metamask = window.ethereum
+    if (metamask) {
+      handleNetworkChange(metamask, setNetwork)
+    }
+  }, [])
 
   return (
     <>
