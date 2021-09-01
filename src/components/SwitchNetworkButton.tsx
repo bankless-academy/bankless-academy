@@ -61,6 +61,7 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
         borderColor={network.color}
         onChange={handleChange}
         value={network.name}
+        color={network.textColor}
       >
         <option value={networks.mainnet.name}>{networks.mainnet.name}</option>
         <option value={networks.kovan.name}>{networks.kovan.name}</option>

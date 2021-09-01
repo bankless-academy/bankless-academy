@@ -4,6 +4,7 @@ export default Object.freeze({
   mainnet: {
     name: 'mainnet',
     color: '#ff8b9e',
+    textColor: 'black',
     chainId: 1,
     rpcUrl: `https://mainnet.infura.io/v3/${INFURA_ID}`,
     blockExplorer: 'https://etherscan.io/',
@@ -11,6 +12,7 @@ export default Object.freeze({
   kovan: {
     name: 'kovan',
     color: '#7003DD',
+    textColor: 'white',
     chainId: 42,
     rpcUrl: `https://kovan.infura.io/v3/${INFURA_ID}`,
     blockExplorer: 'https://kovan.etherscan.io/',
@@ -21,6 +23,7 @@ export default Object.freeze({
     networkName: 'Matic(Polygon) Mainnet',
     currencySymbol: 'MATIC',
     color: '#2bbdf7',
+    textColor: 'black',
     chainId: 137,
     price: 1,
     gasPrice: 1000000000,
@@ -33,6 +36,7 @@ export default Object.freeze({
     networkName: 'Matic(Polygon) Testnet Mumbai',
     currencySymbol: 'tMATIC',
     color: '#92D9FA',
+    textColor: 'black',
     chainId: 80001,
     price: 1,
     gasPrice: 1000000000,
