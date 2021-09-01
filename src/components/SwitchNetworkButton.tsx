@@ -24,15 +24,15 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
         try {
           const data = [
             {
-              chainId: `0x2A`,
-              chainName: 'kovan',
+              chainId: `0x${networks[networkName].chainId.toString(16)}`,
+              chainName: networkName,
               nativeCurrency: {
-                name: 'kovan',
-                symbol: 'eth',
+                name: networkName,
+                symbol: networkName,
                 decimals: 18,
               },
-              rpcUrls: [networks.kovan.rpcUrl],
-              blockExplorerUrls: [networks.kovan.blockExplorer],
+              rpcUrls: [networks[networkName].rpcUrl],
+              blockExplorerUrls: [networks[networkName].blockExplorer],
             },
           ]
           await ethereum.request({
@@ -60,6 +60,8 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
       >
         <option value={networks.mainnet.name}>{networks.mainnet.name}</option>
         <option value={networks.kovan.name}>{networks.kovan.name}</option>
+        <option value={networks.matic.name}>{networks.matic.name}</option>
+        <option value={networks.mumbai.name}>{networks.mumbai.name}</option>
       </Select>
     </>
   )
