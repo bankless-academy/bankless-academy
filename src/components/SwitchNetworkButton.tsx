@@ -1,8 +1,10 @@
 import React from 'react'
 import { Select } from '@chakra-ui/react'
 import networks from '../constants/networks'
+import { useState } from 'react'
 
 const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
+  const [network, setNetwork] = useState(networks.mainnet)
   const handleChange = async (event: React.ChangeEvent<HTMLSelectElement>) => {
     const networkName = event.target.value
     await switchNetwork(networkName.toLowerCase())
@@ -18,6 +20,7 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
           { chainId: `0x${networks[networkName].chainId.toString(16)}` },
         ],
       })
+      setNetwork(networks[networkName])
     } catch (error) {
       // This error code indicates that the chain has not been added to MetaMask.
       if (error.code === 4902) {
@@ -25,10 +28,10 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
           const data = [
             {
               chainId: `0x${networks[networkName].chainId.toString(16)}`,
-              chainName: networkName,
+              chainName: networks[networkName].networkName,
               nativeCurrency: {
-                name: networkName,
-                symbol: networkName,
+                name: networks[networkName].currencySymbol,
+                symbol: networks[networkName].currencySymbol,
                 decimals: 18,
               },
               rpcUrls: [networks[networkName].rpcUrl],
@@ -39,6 +42,7 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
             method: 'wallet_addEthereumChain',
             params: data,
           })
+          setNetwork(networks[networkName])
         } catch (addError) {
           // handle "add" error
           console.error(addError)
@@ -53,10 +57,10 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
     <>
       <Select
         size={isMobile ? 'sm' : 'md'}
-        bg={'#58aedf'}
-        borderColor={'#58aedf'}
+        bg={network.color}
+        borderColor={network.color}
         onChange={handleChange}
-        defaultValue={networks.mainnet.name}
+        value={network.name}
       >
         <option value={networks.mainnet.name}>{networks.mainnet.name}</option>
         <option value={networks.kovan.name}>{networks.kovan.name}</option>
