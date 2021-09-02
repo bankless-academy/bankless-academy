@@ -107,7 +107,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     !!localStorage.getItem(`poap-${quest.slug}`)
   )
   const [swiper, setSwiper] = useState(null)
-  const supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints
+  const supportsTouch = 'ontouchstart' in window || navigator.maxTouchPoints
   const [isMobile] = useMediaQuery('(max-width: 800px)')
 
   const router = useRouter()
