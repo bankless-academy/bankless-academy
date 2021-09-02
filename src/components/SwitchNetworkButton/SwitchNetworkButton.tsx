@@ -20,7 +20,7 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
   }, [])
 
   return (
-    <>
+    <div>
       <Select
         size={isMobile ? 'sm' : 'md'}
         bg={network.color}
@@ -34,7 +34,7 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
         <option value={networks.matic.name}>{networks.matic.name}</option>
         <option value={networks.mumbai.name}>{networks.mumbai.name}</option>
       </Select>
-    </>
+    </div>
   )
 }
 
