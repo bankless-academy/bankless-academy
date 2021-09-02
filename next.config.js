@@ -6,6 +6,7 @@ const nextConfig = {
   webpack: (config) => {
     config.externals = config.externals.concat([
       // Possible drivers (and related modules) for knex - we'll ignore them
+      'tedious',
       'mssql',
       'sqlite3',
       'mysql2',
