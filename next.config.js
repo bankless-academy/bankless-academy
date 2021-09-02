@@ -16,7 +16,7 @@ const nextConfig = {
       'strong-oracle',
       'oracledb',
       // 'pg',
-      // 'pg-query-stream'
+      'pg-query-stream'
     ]);
     return config
   },
