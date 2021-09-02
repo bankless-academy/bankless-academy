@@ -6,9 +6,16 @@ const nextConfig = {
   webpack: (config) => {
     config.externals = config.externals.concat([
       // Possible drivers (and related modules) for knex - we'll ignore them
-      'tedious',
       'mssql',
-      // etc. with more modules
+      'sqlite3',
+      'mysql2',
+      'mariasql',
+      'mysql',
+      'oracle',
+      'strong-oracle',
+      'oracledb',
+      'pg',
+      'pg-query-stream'
     ]);
     return config
   },
