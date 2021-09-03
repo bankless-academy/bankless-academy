@@ -6,8 +6,7 @@ const switchNetwork = async (
   setNetwork: Dispatch<
     SetStateAction<{
       name: string
-      color: string
-      textColor: string
+      image: string
       chainId: number
       rpcUrl: string
       blockExplorer: string
