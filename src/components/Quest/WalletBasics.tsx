@@ -86,8 +86,8 @@ const WalletBasics = (): {
       </Button>
       {isMobile && (
         <p>
-          * signing with your mobile wallet only works if you open this website
-          directly inside&nbsp;
+          * network switching with your mobile wallet only works if you open
+          this website directly inside&nbsp;
           <strong>MetaMask&apos;s browser</strong>
         </p>
       )}
