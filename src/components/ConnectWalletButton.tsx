@@ -15,7 +15,6 @@ import {
   Link,
 } from '@chakra-ui/react'
 import axios from 'axios'
-
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
 import { walletConnect, injected, trimCurrencyForWhales } from 'utils'
@@ -43,7 +42,6 @@ const ConnectWalletButton = ({
       setWalletIsLoading(true)
       if (!web3Modal) {
         web3Modal = new Web3Modal({
-          network: 'mainnet',
           cacheProvider: false,
           providerOptions: {
             walletconnect: {
