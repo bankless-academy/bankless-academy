@@ -23,11 +23,8 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
     <div>
       <Select
         size={isMobile ? 'sm' : 'md'}
-        bg={network.color}
-        borderColor={network.color}
         onChange={handleChange}
         value={network.name}
-        color={network.textColor}
         icon={<Image src={network.image} />}
       >
         <option value={networks.mainnet.name}>{networks.mainnet.name}</option>
