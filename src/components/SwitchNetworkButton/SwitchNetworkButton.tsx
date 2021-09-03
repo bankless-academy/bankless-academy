@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Select } from '@chakra-ui/react'
+import { Image, Select } from '@chakra-ui/react'
 import networks from 'constants/networks'
 import switchNetwork from './switchNetwork'
 import handleNetworkChange from './handleNetworkChange'
@@ -28,6 +28,7 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
         onChange={handleChange}
         value={network.name}
         color={network.textColor}
+        icon={<Image src={network.image} />}
       >
         <option value={networks.mainnet.name}>{networks.mainnet.name}</option>
         <option value={networks.kovan.name}>{networks.kovan.name}</option>
