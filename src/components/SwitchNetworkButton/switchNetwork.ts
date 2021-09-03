@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from 'react'
 
 const switchNetwork = async (
   networkName: string,
-  setNetwork: Dispatch<
+  setNetwork?: Dispatch<
     SetStateAction<{
       name: string
       image: string
@@ -20,7 +20,7 @@ const switchNetwork = async (
       method: 'wallet_switchEthereumChain',
       params: [{ chainId: `0x${networks[networkName].chainId.toString(16)}` }],
     })
-    return setNetwork(networks[networkName])
+    return setNetwork && setNetwork(networks[networkName])
   } catch (error) {
     // This error code indicates that the chain has not been added to MetaMask.
     if (error.code === 4902) {
