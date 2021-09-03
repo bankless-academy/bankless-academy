@@ -82,7 +82,7 @@ const WalletBasics = (): {
         colorScheme={isSignatureVerified ? 'green' : 'red'}
         onClick={() => switchNetwork('mumbai')}
       >
-        SWITCH NETWORK
+        Switch Network
       </Button>
       {isMobile && (
         <p>
