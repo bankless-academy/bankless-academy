@@ -4,6 +4,7 @@ export default Object.freeze({
   mainnet: {
     name: 'mainnet',
     color: '#ff8b9e',
+    image: '/images/ethereum-logo-blue.png',
     textColor: 'black',
     chainId: 1,
     rpcUrl: `https://mainnet.infura.io/v3/${INFURA_ID}`,
@@ -12,6 +13,7 @@ export default Object.freeze({
   kovan: {
     name: 'kovan',
     color: '#7003DD',
+    image: '/images/ethereum-logo-black.png',
     textColor: 'white',
     chainId: 42,
     rpcUrl: `https://kovan.infura.io/v3/${INFURA_ID}`,
