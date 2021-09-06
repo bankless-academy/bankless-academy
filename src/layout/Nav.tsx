@@ -88,7 +88,7 @@ const Nav: React.FC = () => {
               <LanguageModeSwitcher size={isMobile ? 'sm' : 'md'} />
               <ColorModeSwitcher size={isMobile ? 'sm' : 'md'} />
             </Box> */}
-            <SwitchNetworkButton isMobile={isMobile} />
+            <SwitchNetworkButton />
           </MenuConnect>
         </Flex>
       </nav>
