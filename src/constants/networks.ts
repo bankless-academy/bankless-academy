@@ -3,14 +3,14 @@ import { INFURA_ID } from './index'
 export default Object.freeze({
   mainnet: {
     name: 'mainnet',
-    image: '/images/ethereum-logo-blue.png',
+    image: '/images/eth.svg',
     chainId: 1,
     rpcUrl: `https://mainnet.infura.io/v3/${INFURA_ID}`,
     blockExplorer: 'https://etherscan.io/',
   },
   kovan: {
     name: 'kovan',
-    image: '/images/ethereum-logo-black.png',
+    image: '/images/eth-black.svg',
     chainId: 42,
     rpcUrl: `https://kovan.infura.io/v3/${INFURA_ID}`,
     faucet: 'https://gitter.im/kovan-testnet/faucet',
@@ -18,7 +18,7 @@ export default Object.freeze({
   },
   matic: {
     name: 'matic',
-    image: '/images/polygon-matic-logo.png',
+    image: '/images/matic.svg',
     networkName: 'Matic(Polygon) Mainnet',
     currencySymbol: 'MATIC',
     chainId: 137,
@@ -28,7 +28,7 @@ export default Object.freeze({
   },
   mumbai: {
     name: 'mumbai',
-    image: '/images/polygon-matic-logo.png',
+    image: '/images/matic-black.svg',
     networkName: 'Matic(Polygon) Testnet Mumbai',
     currencySymbol: 'tMATIC',
     chainId: 80001,
