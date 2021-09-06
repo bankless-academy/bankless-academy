@@ -2,14 +2,14 @@ import { INFURA_ID } from './index'
 
 export default Object.freeze({
   mainnet: {
-    name: 'mainnet',
+    name: 'Ethereum',
     image: '/images/eth.svg',
     chainId: 1,
     rpcUrl: `https://mainnet.infura.io/v3/${INFURA_ID}`,
     blockExplorer: 'https://etherscan.io/',
   },
   kovan: {
-    name: 'kovan',
+    name: 'Kovan Testnet',
     image: '/images/eth-black.svg',
     chainId: 42,
     rpcUrl: `https://kovan.infura.io/v3/${INFURA_ID}`,
@@ -17,7 +17,7 @@ export default Object.freeze({
     blockExplorer: 'https://kovan.etherscan.io/',
   },
   matic: {
-    name: 'matic',
+    name: 'Polygon',
     image: '/images/matic.svg',
     networkName: 'Matic(Polygon) Mainnet',
     currencySymbol: 'MATIC',
@@ -27,7 +27,7 @@ export default Object.freeze({
     blockExplorer: 'https://polygonscan.com',
   },
   mumbai: {
-    name: 'mumbai',
+    name: 'Mumbai Testnet',
     image: '/images/matic-black.svg',
     networkName: 'Matic(Polygon) Testnet Mumbai',
     currencySymbol: 'tMATIC',

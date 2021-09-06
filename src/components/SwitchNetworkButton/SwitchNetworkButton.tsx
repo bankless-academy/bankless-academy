@@ -47,11 +47,10 @@ const SwitchNetworkButton = (): any => {
             <MenuItem
               key={index}
               minH="40px"
-              onClick={() => handleChange(networks[network].name)}
+              onClick={() => handleChange(network)}
             >
               <Image
                 height={25}
-                width={25}
                 rounded="full"
                 src={networks[network].image}
                 alt={networks[network].name}
