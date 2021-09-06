@@ -12,6 +12,7 @@ declare global {
 }
 
 import { RPC_URLS } from 'constants/'
+import networks from 'constants/networks'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function isAddress(value: any): string | false {
@@ -58,8 +59,14 @@ export function getSigner(
   return library.getSigner(account).connectUnchecked()
 }
 
+const supportedChainIds = []
+const keys = Object.keys(networks)
+for (let i = 0; i < keys.length; i++) {
+  supportedChainIds.push(networks[keys[i]].chainId)
+}
+
 export const injected = new InjectedConnector({
-  supportedChainIds: [1, 42, 137, 80001],
+  supportedChainIds,
 })
 
 export const walletConnect = new WalletConnectConnector({
