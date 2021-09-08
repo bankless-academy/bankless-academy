@@ -80,9 +80,9 @@ const WalletBasics = (): {
     <>
       <Button
         colorScheme={isSignatureVerified ? 'green' : 'red'}
-        onClick={() => switchNetwork('mumbai')}
+        onClick={() => switchNetwork('mainnet')}
       >
-        Switch Network
+        Switch Network to {'"Ethereum"'}
       </Button>
       {isMobile && (
         <p>
@@ -100,7 +100,7 @@ const WalletBasics = (): {
       <>
         <iframe src="/images/WALLET_BASICS.mp4"></iframe>
         {account ? (
-          chainId === 80001 ? (
+          chainId === 1 ? (
             signatureButton()
           ) : (
             networkSwitchButton()
