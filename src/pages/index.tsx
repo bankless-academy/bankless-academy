@@ -15,8 +15,6 @@ import {
   Tooltip,
 } from '@chakra-ui/react'
 import { MdCheckCircle, MdHourglassEmpty, MdError } from 'react-icons/md'
-import { useWeb3React } from '@web3-react/core'
-import { injected } from 'utils'
 import QuestCards from 'components/QuestCards'
 import QUESTS from 'constants/quests'
 
@@ -90,9 +88,14 @@ const DEV_PROGRESS = {
 const Page = (): JSX.Element => {
   const [isMobile] = useMediaQuery('(max-width: 800px)')
   const hostname = window.location.hostname
-  const { activate } = useWeb3React()
   const connectMetamask = async () => {
-    await activate(injected)
+    const { ethereum } = window
+    if (ethereum) {
+      const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
+      alert(accounts)
+    } else {
+      alert('missing ethereum')
+    }
   }
   return (
     <Container maxW="container.lg">
