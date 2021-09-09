@@ -10,7 +10,10 @@ import {
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
+import { useWeb3React } from '@web3-react/core'
+import { InjectedConnector } from '@web3-react/injected-connector'
 
+export const injected = new InjectedConnector()
 // import ColorModeSwitcher from 'layout/ColorModeSwitcher'
 // import LanguageModeSwitcher from 'layout/LanguageModeSwitcher'
 import ConnectWalletButton from 'components/ConnectWalletButton'
@@ -33,6 +36,11 @@ const Nav: React.FC = () => {
   const [isMobile] = useMediaQuery('(max-width: 800px)')
   const router = useRouter()
   const currentLink = router.asPath
+  const { activate } = useWeb3React()
+
+  const connectMetamask = async () => {
+    await activate(injected)
+  }
 
   return (
     <header>
@@ -89,6 +97,8 @@ const Nav: React.FC = () => {
               <ColorModeSwitcher size={isMobile ? 'sm' : 'md'} />
             </Box> */}
             <SwitchNetworkButton />
+
+            <Button onClick={() => connectMetamask()}>Simple Metamask</Button>
           </MenuConnect>
         </Flex>
       </nav>
