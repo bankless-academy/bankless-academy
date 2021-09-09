@@ -11,14 +11,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 import { useWeb3React } from '@web3-react/core'
-import { InjectedConnector } from '@web3-react/injected-connector'
 
-export const injected = new InjectedConnector()
 // import ColorModeSwitcher from 'layout/ColorModeSwitcher'
 // import LanguageModeSwitcher from 'layout/LanguageModeSwitcher'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/'
 import { PROJECT_NAME } from 'constants/index'
+import { injected } from 'utils'
 
 const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`
   ${(props) =>
