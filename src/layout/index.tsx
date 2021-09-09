@@ -1,13 +1,13 @@
 import React from 'react'
 import { useMediaQuery } from '@chakra-ui/react'
 
-import Head from 'components/Head'
+// import Head from 'components/Head'
 import { PageMetaProps } from 'components/Head'
 import Nav from 'layout/Nav'
 import PageBackground from 'layout/PageBackground'
 
 const Layout = ({
-  pageMeta,
+  // pageMeta,
   children,
 }: {
   pageMeta: PageMetaProps
@@ -17,7 +17,7 @@ const Layout = ({
 
   return (
     <PageBackground minH="100vh" paddingBottom={isMobile ? '64px' : ''}>
-      <Head {...pageMeta} />
+      {/* <Head {...pageMeta} /> */}
       <Nav />
       <main>{children}</main>
       {/* <Footer /> */}
