@@ -15,7 +15,8 @@ import {
   Tooltip,
 } from '@chakra-ui/react'
 import { MdCheckCircle, MdHourglassEmpty, MdError } from 'react-icons/md'
-
+import { useWeb3React } from '@web3-react/core'
+import { injected } from 'utils'
 import QuestCards from 'components/QuestCards'
 import QUESTS from 'constants/quests'
 
@@ -89,6 +90,10 @@ const DEV_PROGRESS = {
 const Page = (): JSX.Element => {
   const [isMobile] = useMediaQuery('(max-width: 800px)')
   const hostname = window.location.hostname
+  const { activate } = useWeb3React()
+  const connectMetamask = async () => {
+    await activate(injected)
+  }
   return (
     <Container maxW="container.lg">
       {isMobile && (
@@ -99,6 +104,7 @@ const Page = (): JSX.Element => {
           </Link>
         </Box>
       )}
+      <Button onClick={() => connectMetamask()}>Simple Metamask</Button>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={12}>
         <QuestCards />
       </SimpleGrid>
