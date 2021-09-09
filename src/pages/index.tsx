@@ -93,6 +93,8 @@ const Page = (): JSX.Element => {
     if (ethereum) {
       const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
       alert(accounts)
+    } else if (window.web3) {
+      alert(`WEB3 FOUND`)
     } else {
       alert('missing ethereum')
     }
