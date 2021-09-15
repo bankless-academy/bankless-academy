@@ -121,7 +121,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'How do I protect my keys?',
         content:
-          '<h2>The 5 most effective ways to protect your keys:</h2><ol><li>Never share or reveal your private key to anyone.</li><li>Never save it online</li><li>Write down your <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key." style="color:rgba(128, 128, 128, 1)">recovery phrase</span> and store it in a secure location.</li><li>Find a way to write <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key." style="color:rgba(128, 128, 128, 1)">recovery phrases</span> on durable material such as tungsten, aluminum engraving kit, mylar, or...</li></ol>',
+          '<h2>The 5 most effective ways to protect your keys:</h2><ol><li>Never share or reveal your private key to anyone.</li><li>Never save it online</li></ol>',
       },
       {
         type: 'QUIZ',
@@ -143,7 +143,13 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'What is a recovery phrase?',
         content:
-          '<p>When you create a wallet, a recovery phrase is also created that is specific to that wallet.</p><p>It stores the information that can be used to recover your wallet and crypto if:</p><ul><li>your wallet fails unexpectedly or gets damaged;</li><li>you are unable to access it due to misplacement or theft;</li></ul><p>A recovery phrase is a list of 12 to 24 words and represents a single secret piece of data that is used to generate your wallet’s <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you." style="color:rgba(0, 120, 223, 1)">public key</span> and <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address." style="color:rgba(255, 0, 26, 1)">private key</span>.</p><p>This same <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key." style="color:rgba(128, 128, 128, 1)">recovery phrase</span> can actually be used to access your wallet on different devices.</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe57e2d52-a97e-42de-aeaf-e0b26a66e8ae%2F0_u4mBi5vxWeCTLwMP.png?table=block&id=c1ce45e2-d20d-4cd9-bde3-150e923e5d21\'>',
+          '<p>When you create a wallet, a recovery phrase is also created that is specific to that wallet.</p><p>It stores the information that can be used to recover your wallet and crypto if:</p><ul><li>your wallet fails unexpectedly or gets damaged;</li><li>you are unable to access it due to misplacement or theft;</li></ul><p>A recovery phrase is a list of 12 to 24 words and represents a single secret piece of data that is used to generate your wallet’s <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you." style="color:rgba(0, 120, 223, 1)">public key</span> and <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address." style="color:rgba(255, 0, 26, 1)">private key</span>.</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe57e2d52-a97e-42de-aeaf-e0b26a66e8ae%2F0_u4mBi5vxWeCTLwMP.png?table=block&id=c1ce45e2-d20d-4cd9-bde3-150e923e5d21\'>',
+      },
+      {
+        type: 'LEARN',
+        title: 'What is a recovery phrase?',
+        content:
+          '<p>This same <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key." style="color:rgba(128, 128, 128, 1)">recovery phrase</span> can actually be used to access your wallet on different devices.</p><ul><li>Find a way to write <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key." style="color:rgba(128, 128, 128, 1)">recovery phrases</span> on durable material such as tungsten, aluminum engraving kit, mylar, or...</li></ul><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3388312b-548e-49b4-be1c-ca48431aab9b%2Fwww.notion.so_bankless_Wallet-Basics-98405bd0f2b94bb2a3079eed504a011e.png?table=block&id=9010df5a-966e-45e2-9b41-3c6cd6729a38\'><ul><li>Write down your <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key." style="color:rgba(128, 128, 128, 1)">recovery phrase</span> and store it in a secure location.</li></ul>',
       },
       {
         type: 'QUIZ',
@@ -262,7 +268,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'What can you do with DeFi - Lend/Borrow',
         content:
-          "<h2><strong>Lend—</strong>generate returns by lending your money to protocols or banks</h2><h2><strong>Borrow—</strong>pay funds to borrow money from protocols and banks</h2><p>example of protocols: Aave, Alchemix, Compound, ...</p><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe76d6096-70a3-47b9-a0f8-a3dc644829b5%2FLending02.png?table=block&id=0f16e2c6-c910-4d5f-8233-b205d56a7631'>",
+          "<h2><strong>Lend—</strong>generate returns by lending your money to protocols or banks</h2><h2><strong>Borrow—</strong>pay funds to borrow money from protocols and banks</h2><p>example of protocols: Aave, Alchemix, Compound, ...</p><p>Apy</p><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe76d6096-70a3-47b9-a0f8-a3dc644829b5%2FLending02.png?table=block&id=0f16e2c6-c910-4d5f-8233-b205d56a7631'>",
       },
       {
         type: 'LEARN',
@@ -274,25 +280,31 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'What can you do with DeFi: Spend',
         content:
-          '<h2><strong>Spend—</strong>use your money to pay for something</h2><p>TODO: add explanation + visuals</p>',
+          "<h2><strong>Spend—</strong>use your crypto to pay for something</h2><p>Examples include purchasing NFTs with ETH. You can also purchase merchandise from sites like <a href='http://shop.metafactory.ai/'>shop.metafactory.ai/</a> and <a href='http://nbatopshot.com'>nbatopshot.com</a> and select Coinbase Commerce at checkout.</p><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fea7caa33-6066-4332-9083-bc6ee4451bac%2Fwww.notion.so_bankless_Intro-to-DeFi-fdbf6e4c2ad648c6b815137d0e05eb90.png?table=block&id=f3dfd437-34bf-4028-b1ef-dc5e3a1e6060'>",
+      },
+      {
+        type: 'LEARN',
+        title: 'What can you do with DeFi: Invest',
+        content:
+          '<ul><li>Fiat onboarding is becoming easier for anyone to invest</li></ul>',
+      },
+      {
+        type: 'LEARN',
+        title: 'What can you do with DeFi: Spend',
+        content:
+          "<h2><strong>Spend—</strong>use your crypto to pay for something</h2><ul><li>You're starting to see crypto ATMs more frequently at the mall, gas stations, and airports</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8d255a73-d29b-4643-abf2-7c60c4282c1c%2Fwww.notion.so_bankless_Intro-to-DeFi-fdbf6e4c2ad648c6b815137d0e05eb90_.png?table=block&id=750b2b11-886b-4f5e-a1ad-56836d020323'><ul><li>More merchants are accepting crypto as methods of payment</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F59518717-c741-4fca-be09-02cd02d186e6%2Fwww.notion.so_bankless_Intro-to-DeFi-fdbf6e4c2ad648c6b815137d0e05eb90_.png?table=block&id=d4fece0a-6569-4be4-8f4a-177c1aafe251'>",
       },
       {
         type: 'LEARN',
         title: 'What can you do with DeFi: Earn',
         content:
-          '<h2><strong>Earn—</strong>do something of value to get additional money</h2><p>TODO: add explanation + visuals</p>',
+          "<h2><strong>Earn—</strong>do something of value to get additional money</h2><ul><li>You can claim a bounty and complete open tasks from DAOs and other projects </li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F00124889-d747-4614-8990-80400be1e03a%2Fwww.notion.so_bankless_Intro-to-DeFi-fdbf6e4c2ad648c6b815137d0e05eb90_.png?table=block&id=ae1e3ef4-3535-4033-9743-bdb5df86673e'><ul><li>You can also participate in a hackathon and earn prizes!</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb7070e55-fda8-4450-a40e-25be9cb6dc81%2Fwww.notion.so_bankless_Intro-to-DeFi-fdbf6e4c2ad648c6b815137d0e05eb90_.png?table=block&id=ced64e15-6950-417f-aa31-06e3b282451b'><ul><li>games</li><li>earning for walking</li><li>Brave ad revenue - Uphold</li><li>Lolli - % back in BTC</li><li>Airdrops, raffles, and POAPs</li></ul>",
       },
       {
         type: 'LEARN',
         title: 'What can you do with DeFi: Trade',
         content:
-          '<h2><strong>Trade—</strong>exchange your money for something of value</h2><p>example of protocols: Uniswap, 1inch, Matcha, ...</p><p>TODO: explain base of AMM + add visuals</p>',
-      },
-      {
-        type: 'LEARN',
-        title: 'What can you do with DeFi: Bet',
-        content:
-          '<h2><strong>Bet—</strong>risk and earn money by making a bet</h2><p>TODO: add explanation + visuals</p>',
+          '<h2><strong>Trade—</strong>exchange your money for something of value</h2><p>example of protocols: Uniswap, 1inch, Matcha, ...</p><p>TODO: explain base of AMM + add visuals</p><h2><strong>Bet—</strong>risk and earn money by making a bet</h2><p>TODO: add explanation + visuals</p><p>Examples:</p><p>Casinos in decentraland</p><p>Call options and put options</p><p>Long/Short bets with margin trading</p><p>Sports betting</p>',
       },
       {
         type: 'QUEST',
