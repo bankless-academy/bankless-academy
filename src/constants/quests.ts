@@ -268,7 +268,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'What can you do with DeFi - Lend/Borrow',
         content:
-          "<h2><strong>Lend—</strong>generate returns by lending your money to protocols or banks</h2><h2><strong>Borrow—</strong>pay funds to borrow money from protocols and banks</h2><p>example of protocols: Aave, Alchemix, Compound, ...</p><p>Apy</p><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe76d6096-70a3-47b9-a0f8-a3dc644829b5%2FLending02.png?table=block&id=0f16e2c6-c910-4d5f-8233-b205d56a7631'>",
+          "<ul><li>In DeFi, anyone can borrow and anyone can become a lender.</li><li>DeFi lending and borrowing offers loans without the need for a bank or intermediary institution. Instead, lending is done on a peer-to-peer level.</li><li>Similar to traditional loans, a lender will earn interest on the loan and the borrower will need to pay the principal of the loan plus interest within a set amount of time.</li><li>Peer-to-peer loans means that long-term investors can earn interest from the loan and it enables users to access loans at lower rates with DeFi than if they went through exchanges or through traditional loans.</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe76d6096-70a3-47b9-a0f8-a3dc644829b5%2FLending02.png?table=block&id=10a7dbff-1dbd-4b88-ae00-680b7ee69809'>",
       },
       {
         type: 'LEARN',
@@ -279,8 +279,7 @@ const QUESTS: QuestType[] = [
       {
         type: 'LEARN',
         title: 'What can you do with DeFi: Spend',
-        content:
-          "<h2><strong>Spend—</strong>use your crypto to pay for something</h2><p>Examples include purchasing NFTs with ETH. You can also purchase merchandise from sites like <a href='http://shop.metafactory.ai/'>shop.metafactory.ai/</a> and <a href='http://nbatopshot.com'>nbatopshot.com</a> and select Coinbase Commerce at checkout.</p><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fea7caa33-6066-4332-9083-bc6ee4451bac%2Fwww.notion.so_bankless_Intro-to-DeFi-fdbf6e4c2ad648c6b815137d0e05eb90.png?table=block&id=f3dfd437-34bf-4028-b1ef-dc5e3a1e6060'>",
+        content: '',
       },
       {
         type: 'LEARN',
@@ -290,15 +289,8 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'LEARN',
-        title: 'What can you do with DeFi: Spend',
-        content:
-          "<h2><strong>Spend—</strong>use your crypto to pay for something</h2><ul><li>You're starting to see crypto ATMs more frequently at the mall, gas stations, and airports</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8d255a73-d29b-4643-abf2-7c60c4282c1c%2Fwww.notion.so_bankless_Intro-to-DeFi-fdbf6e4c2ad648c6b815137d0e05eb90_.png?table=block&id=750b2b11-886b-4f5e-a1ad-56836d020323'><ul><li>More merchants are accepting crypto as methods of payment</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F59518717-c741-4fca-be09-02cd02d186e6%2Fwww.notion.so_bankless_Intro-to-DeFi-fdbf6e4c2ad648c6b815137d0e05eb90_.png?table=block&id=d4fece0a-6569-4be4-8f4a-177c1aafe251'>",
-      },
-      {
-        type: 'LEARN',
         title: 'What can you do with DeFi: Earn',
-        content:
-          "<h2><strong>Earn—</strong>do something of value to get additional money</h2><ul><li>You can claim a bounty and complete open tasks from DAOs and other projects </li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F00124889-d747-4614-8990-80400be1e03a%2Fwww.notion.so_bankless_Intro-to-DeFi-fdbf6e4c2ad648c6b815137d0e05eb90_.png?table=block&id=ae1e3ef4-3535-4033-9743-bdb5df86673e'><ul><li>You can also participate in a hackathon and earn prizes!</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb7070e55-fda8-4450-a40e-25be9cb6dc81%2Fwww.notion.so_bankless_Intro-to-DeFi-fdbf6e4c2ad648c6b815137d0e05eb90_.png?table=block&id=ced64e15-6950-417f-aa31-06e3b282451b'><ul><li>games</li><li>earning for walking</li><li>Brave ad revenue - Uphold</li><li>Lolli - % back in BTC</li><li>Airdrops, raffles, and POAPs</li></ul>",
+        content: '',
       },
       {
         type: 'LEARN',
