@@ -64,6 +64,7 @@ export default async function handler(
               .post('https://api.poap.xyz/actions/claim-qr', data)
               .then(async function (response) {
                 await db('poaps').where('code', code).update('address', address)
+                console.log('data', data)
                 res.json(response.data)
               })
           })
