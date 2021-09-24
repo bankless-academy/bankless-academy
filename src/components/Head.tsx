@@ -16,7 +16,12 @@ const Head = ({
     <NextHead>
       <title>{title ? `${title} | ${PROJECT_NAME}` : PROJECT_NAME}</title>
       <meta name="description" content={description} />
-      <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+      <link
+        rel="shortcut icon"
+        sizes="180x180"
+        type="image/png"
+        href="/favicon.png"
+      />
     </NextHead>
   )
 }

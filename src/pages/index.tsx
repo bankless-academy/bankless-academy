@@ -46,16 +46,19 @@ const CONTENT = (
       height="auto"
       p="4"
     >
-      🆕 [version 0.5] 👷 current work in progress version
+      🆕 [version 0.5] Wallet Basics (improved) + Intro to DeFi (improved)
+      {/* 🆕 [version 0.6] 👷 current work in progress version */}
     </Button>
   </Link>
 )
 
 const DEV_PROGRESS = {
   implemented: [
-    '🆕 new course about "Intro to DeFi" (content is still work in progress)',
-    '🆕 user tracking with Umami + Hotjar to gather stats',
-    'keyword color + definition tooltip',
+    '🆕 Update logos',
+    '🆕 Improve POAP claiming: store claiming codes in database',
+    '🆕 New course about "Intro to DeFi"',
+    'User tracking with Umami + Hotjar to gather stats',
+    'Keyword color + definition tooltip',
     'Web3 wallet connection via Metamask & Wallet Connect | display BANK token balance | disconnect',
     'Full mobile compatibility including swiping between slides',
     'Quest selection | dynamic progress based on slide number | number of POAPs claimed | modal showing quest details',
@@ -69,16 +72,15 @@ const DEV_PROGRESS = {
     'Keyboard shortcuts: prev/next slide & select quiz answer [1], [2], [3], [4]',
     "Collect user's feedback via a form after the quest is done",
     'Display all Bankless DAO POAPs',
-    '[DEBUG] reset app state (delete data from local storage)',
+    '[DEBUG] Reset app state (delete data from local storage)',
   ],
   comingSoon: [
-    'Improve POAP claiming: store claiming codes in database',
-    'Improve font sizing + spacing on mobile',
-    'Logo + name',
-    'Improve design + colors',
+    'Intro to DeFi quizzes',
+    'Illustrations + videos',
+    'Improved design: UI/UX + colors',
+    'Improved font sizing + spacing on mobile',
   ],
   disabled: [
-    '🆕 POAP claiming (has been temporarily disabled, will be fixed again next week)',
     'Multi language',
     'Dark Mode',
     'Simplified navigation, without homepage + about page',

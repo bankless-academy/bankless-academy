@@ -68,8 +68,13 @@ const Nav: React.FC = () => {
                 isActive={currentLink === '/'}
                 variant="unstyled"
                 size={isMobile ? 'sm' : 'md'}
+                leftIcon={
+                  <img width="32px" src="/favicon.png" alt="Bankless Academy" />
+                }
+                display="flex"
+                fontSize="xl"
               >
-                ⚡️ {PROJECT_NAME}
+                {PROJECT_NAME}
               </Button>
             </Link>
           </HStack>
