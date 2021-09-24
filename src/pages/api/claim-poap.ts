@@ -48,6 +48,7 @@ export default async function handler(
       console.log('code', code)
       if (code) {
         // [step 4] get the secret
+        // handle timeout (currently 10 sec only)
         await axios
           .get(`https://api.poap.xyz/actions/claim-qr?qr_hash=${code}`)
           .then(async function (response) {
