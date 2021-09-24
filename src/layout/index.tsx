@@ -26,7 +26,7 @@ const Layout = ({
 
   return (
     <PageBackground minH="100vh" paddingBottom={isMobile ? '64px' : ''}>
-      {password.toLowerCase() === 'dao' ? (
+      {typeof password === 'string' && password.toLowerCase() === 'dao' ? (
         <>
           <Head {...pageMeta} />
           <Nav />
