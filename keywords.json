@@ -1,10 +1,10 @@
 {
   "wallet": {
-    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain,",
+    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain.",
     "color": "rgba(128, 128, 128, 1)"
   },
   "blockchain": {
-    "definition": "A peer to peer (P2P) network of computers instead of a single computer, ",
+    "definition": "A peer to peer (P2P) network of computers instead of a single computer.",
     "color": "rgba(128, 128, 128, 1)"
   },
   "public key": {
