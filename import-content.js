@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const axios = require('axios')
-const FileSystem = require('fs')
+const fs = require('fs')
 const stringifyObject = require('stringify-object')
 const keywords = require('./keywords.json')
 
@@ -159,7 +159,7 @@ const QUESTS: QuestType[] = ${stringifyObject(quests, {
 
 export default QUESTS
 `
-      FileSystem.writeFile('src/constants/quests.ts', FILE_CONTENT, (error) => {
+      fs.writeFile('src/constants/quests.ts', FILE_CONTENT, (error) => {
         if (error) throw error
       })
       console.log(
@@ -168,5 +168,5 @@ export default QUESTS
     })
   })
   .catch((error) => {
-    console.log(error)
+    console.error(error)
   })
