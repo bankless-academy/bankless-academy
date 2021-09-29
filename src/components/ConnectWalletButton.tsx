@@ -26,9 +26,9 @@ import { PoapType } from 'entities/poap'
 let web3Modal: Web3Modal
 
 const ConnectWalletButton = ({
-  isMobile,
+  isSmallScreen,
 }: {
-  isMobile: boolean
+  isSmallScreen: boolean
 }): React.ReactElement => {
   const [web3Provider, setWeb3Provider] = useState()
   const walletWeb3ReactContext = useWalletWeb3React()
@@ -111,16 +111,16 @@ const ConnectWalletButton = ({
   return (
     <>
       {isConnected ? (
-        <Popover trigger={isMobile ? 'click' : 'hover'}>
+        <Popover trigger={isSmallScreen ? 'click' : 'hover'}>
           <PopoverTrigger>
             <Button
               variant="outline"
               paddingRight="1"
               paddingLeft="4"
-              size={isMobile ? 'sm' : 'md'}
+              size={isSmallScreen ? 'sm' : 'md'}
             >
               {balance} BANK
-              <Button size={isMobile ? 'xs' : 'sm'} marginLeft="2">
+              <Button size={isSmallScreen ? 'xs' : 'sm'} marginLeft="2">
                 <Text maxW="200px" isTruncated>
                   <ENSName provider={web3Provider} address={walletAddress} />
                 </Text>
@@ -133,7 +133,7 @@ const ConnectWalletButton = ({
               <Box textAlign="center" m="2">
                 <Button
                   isFullWidth
-                  size={isMobile ? 'sm' : 'md'}
+                  size={isSmallScreen ? 'sm' : 'md'}
                   onClick={() => {
                     walletWeb3ReactContext.deactivate()
                     setWalletIsLoading(false)
@@ -195,7 +195,7 @@ const ConnectWalletButton = ({
           onClick={() => {
             setConnectClick(true)
           }}
-          size={isMobile ? 'sm' : 'md'}
+          size={isSmallScreen ? 'sm' : 'md'}
           isLoading={walletIsLoading}
           loadingText="Connecting wallet"
         >

@@ -34,7 +34,7 @@ const WalletBasics = (): {
   questComponent: React.ReactElement
 } => {
   const [isSignatureVerified, setIsSignatureVerified] = useState(false)
-  const [isMobile] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   const { library, account } = useActiveWeb3React()
 
@@ -69,7 +69,7 @@ const WalletBasics = (): {
                 ? 'Signature verified'
                 : 'Sign a message with your wallet'}
             </Button>
-            {isMobile && (
+            {isSmallScreen && (
               <p>
                 * signing with your mobile wallet only works if you open this
                 website directly inside&nbsp;

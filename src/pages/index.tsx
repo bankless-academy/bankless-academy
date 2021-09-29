@@ -88,11 +88,11 @@ const DEV_PROGRESS = {
 }
 
 const Page = (): JSX.Element => {
-  const [isMobile] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
   const hostname = window.location.hostname
   return (
     <Container maxW="container.lg">
-      {isMobile && (
+      {isSmallScreen && (
         <Box pb={4}>
           ⛔️ on mobile, make sure to open this website directly inside&nbsp;
           <Link href={`https://metamask.app.link/dapp/${hostname}`} color="red">
