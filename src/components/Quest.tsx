@@ -193,6 +193,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         toast({
           title: 'Something went wrong',
           description: 'Refresh and try again ...',
+          // TODO: claim code manually + improve error handling
           status: 'error',
           duration: 5000,
         })
@@ -418,8 +419,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                               onClick={claimPoap}
                               isLoading={isClaimingPoap}
                             >
-                              Claim POAP (fake button = has been temporarily
-                              disabled, will be fixed again next week)
+                              Claim POAP
                             </Button>
                           ) : (
                             <>

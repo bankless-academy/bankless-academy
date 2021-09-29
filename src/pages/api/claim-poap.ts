@@ -2,11 +2,10 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 
-// TODO: use infos from src/constants/quests.ts
-const NOTION_POAP_ID = {
-  4652: '588737bf3969480eaade26ec1a7d9dcd',
-  4783: 'ddba080ee81442ab998b5187c42b7d81',
-}
+import db from 'utils/db'
+import QUESTS from 'constants/quests'
+
+const POAP_IDS = QUESTS.map((quest) => quest.poapEventId.toString())
 
 export default async function handler(
   req: NextApiRequest,
@@ -19,54 +18,62 @@ export default async function handler(
     !poapEventId ||
     typeof address === 'object' ||
     typeof poapEventId === 'object' ||
-    !(poapEventId in NOTION_POAP_ID)
+    !POAP_IDS.includes(poapEventId)
   )
     return res.json(false)
-  console.log(address)
-  console.log(poapEventId)
+  console.log('address', address)
+  console.log('poapEventId', poapEventId)
 
-  // [step 2] get the list of claiming codes stored in Notion
-  await axios
-    .get(
-      `https://potion-api.vercel.app/table?id=${NOTION_POAP_ID[poapEventId]}`
-    )
-    .then(async function (response) {
-      const poapLinks: { fields: { claim: string; address?: string } }[] =
-        response.data
-      // [step 3] check how many POAPs have already been claimed for this quest
-      // TODO: replace with tokensQuantityByEventId https://github.com/poap-xyz/poap-webapp/blob/2def482ffec93e6cbc4e3c5e5a18000805cc6c2b/src/api.ts#L1235
-      await axios
-        .post('https://api.thegraph.com/subgraphs/name/poap-xyz/poap-xdai', {
-          query: `{event(id: ${poapEventId}){ tokenCount }}`,
-        })
-        .then(async function (response) {
-          console.log(response.data.data.event?.tokenCount | 0)
-          console.log(poapLinks)
-          const qr_hash =
-            poapLinks[response.data.data.event?.tokenCount | 0].fields.claim
-          console.log(qr_hash)
-          // [step 4] get the secret code from POAP api
-          await axios
-            .get(`https://api.poap.xyz/actions/claim-qr?qr_hash=${qr_hash}`)
-            .then(async function (response) {
-              const secret = response.data.secret
-              console.log(secret)
-              const data = {
-                qr_hash,
-                address: address.toLowerCase(),
-                secret,
-              }
-              console.log(data)
-              // [step 5] claim the POAP
-              await axios
-                .post('https://api.poap.xyz/actions/claim-qr', data)
-                .then(async function (response) {
-                  res.json(response.data)
-                })
-            })
-        })
-    })
-    .catch(function (error) {
-      res.json({ error })
-    })
+  try {
+    // [step 2] check if the POAP was already claimed
+    const poapAlreadyClaimed = await db('poaps')
+      .select('code')
+      .where('event_id', poapEventId)
+      .where('address', address)
+    if (poapAlreadyClaimed.length) {
+      res.json({ poapAlreadyClaimed })
+    } else {
+      // [step 3] get the code + update is_code_used to true
+      const [{ code }] = await db('poaps')
+        .where(
+          'id',
+          db('poaps')
+            .select('id')
+            .where('event_id', poapEventId)
+            .where('is_code_used', false)
+            .orderBy('id', 'asc')
+            .limit(1)
+        )
+        .update({ is_code_used: true }, ['code'])
+      console.log('code', code)
+      if (code) {
+        // [step 4] get the secret
+        // handle timeout (currently 10 sec only)
+        await axios
+          .get(`https://api.poap.xyz/actions/claim-qr?qr_hash=${code}`)
+          .then(async function (response) {
+            const secret = response.data.secret
+            console.log(secret)
+            const data = {
+              qr_hash: code,
+              address: address.toLowerCase(),
+              secret,
+            }
+            console.log('data', data)
+            // [step 5] claim the POAP for the user
+            await axios
+              .post('https://api.poap.xyz/actions/claim-qr', data)
+              .then(async function (response) {
+                await db('poaps').where('code', code).update('address', address)
+                console.log('data', data)
+                res.json(response.data)
+              })
+          })
+      } else {
+        res.json('no more codes available')
+      }
+    }
+  } catch (error) {
+    res.json({ error })
+  }
 }
