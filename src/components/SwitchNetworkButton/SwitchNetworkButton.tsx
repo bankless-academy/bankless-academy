@@ -25,7 +25,7 @@ const CircleIcon = (props) => (
   </Icon>
 )
 
-const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
+const SwitchNetworkButton = ({ isSmallScreen }: { isSmallScreen: boolean }): any => {
   const [currentNetwork, setCurrentNetwork] = useState(networks.mainnet)
 
   const handleChange = async (networkName) => {
@@ -45,14 +45,14 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
         <MenuButton
           as={Button}
           colorScheme="blackAlpha"
-          size={isMobile ? 'sm' : 'md'}
+          size={isSmallScreen ? 'sm' : 'md'}
         >
           <Box display="flex" alignItems="center">
             <Image src={currentNetwork.image} height={22} mr="12px" />
             <Box flex="1" isTruncated>
               {currentNetwork.name}
             </Box>
-            {isMobile ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
+            {isSmallScreen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
           </Box>
         </MenuButton>
         <MenuList>

@@ -21,6 +21,7 @@ import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useMediaQuery } from '@chakra-ui/react'
 import { Player } from '@lottiefiles/react-lottie-player'
+import { isMobile } from 'react-device-detect'
 
 import { QuestType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
@@ -107,8 +108,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     !!localStorage.getItem(`poap-${quest.slug}`)
   )
   const [swiper, setSwiper] = useState(null)
-  const supportsTouch = 'ontouchstart' in window || navigator.maxTouchPoints
-  const [isMobile] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   const router = useRouter()
   const toast = useToast()
@@ -279,7 +279,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                     <Text fontSize="3xl" mb="8">
                       ❓ {ReactHtmlParser(slide.title)}
                     </Text>
-                    <Answers minHeight={isMobile ? '400px' : '320px'}>
+                    <Answers minHeight={isSmallScreen ? '400px' : '320px'}>
                       <ButtonGroup size="lg">
                         <SimpleGrid columns={[null, null, 2]} spacing="40px">
                           <Button
@@ -463,8 +463,8 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
             </Link>
           </Tooltip>
         </HStack>
-        {/* hide buttons on touch screens */}
-        {!supportsTouch && (
+        {/* hide buttons on mobile */}
+        {!isMobile && (
           <HStack>
             {!isFirstSlide && (
               <Tooltip
