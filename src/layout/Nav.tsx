@@ -88,12 +88,12 @@ const Nav: React.FC = () => {
             bgColor={isMobile ? 'gray.200' : 'auto'}
             justifyContent="space-between"
           >
+            <SwitchNetworkButton isMobile={isMobile} />
             <ConnectWalletButton isMobile={isMobile} />
             {/* <Box display="flex">
               <LanguageModeSwitcher size={isMobile ? 'sm' : 'md'} />
               <ColorModeSwitcher size={isMobile ? 'sm' : 'md'} />
             </Box> */}
-            <SwitchNetworkButton />
           </MenuConnect>
         </Flex>
       </nav>

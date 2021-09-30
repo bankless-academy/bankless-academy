@@ -14,7 +14,7 @@ import networks from 'constants/networks'
 import switchNetwork from './switchNetwork'
 import handleNetworkChange from './handleNetworkChange'
 
-const SwitchNetworkButton = (): any => {
+const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
   const [network, setNetwork] = useState(networks.mainnet)
 
   const handleChange = async (networkName) => {
@@ -31,7 +31,11 @@ const SwitchNetworkButton = (): any => {
   return (
     <div>
       <Menu>
-        <MenuButton as={Button}>
+        <MenuButton
+          as={Button}
+          colorScheme="blackAlpha"
+          size={isMobile ? 'sm' : 'md'}
+        >
           <Grid templateColumns="repeat(4, 1fr)">
             <GridItem colSpan={1}>
               <Image src={network.image} height={22} mr="12px" />
