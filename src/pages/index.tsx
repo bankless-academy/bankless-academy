@@ -89,17 +89,6 @@ const DEV_PROGRESS = {
 const Page = (): JSX.Element => {
   const [isMobile] = useMediaQuery('(max-width: 800px)')
   const hostname = window.location.hostname
-  const connectMetamask = async () => {
-    const { ethereum } = window
-    if (ethereum) {
-      const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
-      alert(accounts)
-    } else if (window.web3) {
-      alert(`WEB3 FOUND`)
-    } else {
-      alert('missing ethereum')
-    }
-  }
   return (
     <Container maxW="container.lg">
       {isMobile && (
@@ -110,7 +99,6 @@ const Page = (): JSX.Element => {
           </Link>
         </Box>
       )}
-      <Button onClick={() => connectMetamask()}>Simple Metamask</Button>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={12}>
         <QuestCards />
       </SimpleGrid>
