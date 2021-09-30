@@ -42,6 +42,14 @@ yarn import-keywords
 yarn import-keywords 623e965e4f10456094d17aa94ec37105
 ```
 
+## How to import POAP codes into the database
+
+If your POAP event id is `6454`, rename `links.txt` to `6454.txt`, move it into the `/poaps/` folder, then run the following command to automatically import all the `*.txt` files:
+
+```bash
+yarn import-poaps
+```
+
 ## Tech Stack
 
 ### Bootstrapped with

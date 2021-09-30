@@ -11,12 +11,17 @@ const Head = ({
   title = '',
   description = '',
 }: PageMetaProps): React.ReactElement => {
-  // TODO social images
+  // TODO social images + SSR
   return (
     <NextHead>
       <title>{title ? `${title} | ${PROJECT_NAME}` : PROJECT_NAME}</title>
       <meta name="description" content={description} />
-      <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+      <link
+        rel="shortcut icon"
+        sizes="180x180"
+        type="image/png"
+        href="/favicon.png"
+      />
     </NextHead>
   )
 }
