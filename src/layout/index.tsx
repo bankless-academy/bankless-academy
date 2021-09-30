@@ -15,7 +15,7 @@ import Nav from 'layout/Nav'
 import PageBackground from 'layout/PageBackground'
 
 const Layout = ({
-  // pageMeta,
+  pageMeta,
   children,
 }: {
   pageMeta: PageMetaProps
