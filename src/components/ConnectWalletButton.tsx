@@ -41,7 +41,6 @@ const ConnectWalletButton = ({
     if (connectClick) {
       setWalletIsLoading(true)
       if (!web3Modal) {
-        alert(`WEB 3 MODAL FOUND`)
         web3Modal = new Web3Modal({
           cacheProvider: false,
           providerOptions: {
@@ -63,12 +62,10 @@ const ConnectWalletButton = ({
           },
         })
       }
-      alert('CONNECTING WEB 3 MODAL')
       web3Modal
         .connect()
         .then((provider) => {
           setWeb3Provider(provider)
-          alert(`WEB 3 MODAL CONNECTED`)
           if (provider.isMetaMask) {
             return walletWeb3ReactContext.activate(injected)
           } else {
