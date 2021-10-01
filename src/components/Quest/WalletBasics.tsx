@@ -98,7 +98,6 @@ const WalletBasics = (): {
     isQuestCompleted: isSignatureVerified,
     questComponent: (
       <>
-        <iframe src="/images/WALLET_BASICS.mp4"></iframe>
         {account ? (
           chainId === 1 ? (
             signatureButton()
