@@ -3,6 +3,7 @@ import { Button, Image } from '@chakra-ui/react'
 import { useActiveWeb3React } from 'hooks'
 import * as ethUtil from 'ethereumjs-util'
 import { useMediaQuery } from '@chakra-ui/react'
+import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 
 // TODO: move to utils
 function hashPersonalMessage(msg: string): string {
@@ -36,7 +37,7 @@ const WalletBasics = (): {
   const [isSignatureVerified, setIsSignatureVerified] = useState(false)
   const [isMobile] = useMediaQuery('(max-width: 800px)')
 
-  const { library, account } = useActiveWeb3React()
+  const { library, account, chainId } = useActiveWeb3React()
 
   const testSignPersonalMessage = async () => {
     if (isSignatureVerified) return
@@ -54,29 +55,56 @@ const WalletBasics = (): {
         console.error(error)
       })
   }
+
+  const signatureButton = () => (
+    <>
+      <Button
+        colorScheme={isSignatureVerified ? 'green' : 'red'}
+        onClick={testSignPersonalMessage}
+      >
+        {isSignatureVerified
+          ? 'Signature verified'
+          : 'Sign a message with your wallet'}
+      </Button>
+      {isMobile && (
+        <p>
+          * signing with your mobile wallet only works if you open this website
+          directly inside&nbsp;
+          <strong>MetaMask&apos;s browser</strong>
+        </p>
+      )}
+    </>
+  )
+
+  const networkSwitchButton = () => (
+    <>
+      <Button
+        colorScheme={isSignatureVerified ? 'green' : 'red'}
+        onClick={() => switchNetwork('mainnet')}
+      >
+        Switch Network to {'"Ethereum"'}
+      </Button>
+      {isMobile && (
+        <p>
+          * network switching with your mobile wallet only works if you open
+          this website directly inside&nbsp;
+          <strong>MetaMask&apos;s browser</strong>
+        </p>
+      )}
+    </>
+  )
+
   return {
     isQuestCompleted: isSignatureVerified,
     questComponent: (
       <>
         <Image src="/images/TODO-tx-sign.jpg" />
         {account ? (
-          <>
-            <Button
-              colorScheme={isSignatureVerified ? 'green' : 'red'}
-              onClick={testSignPersonalMessage}
-            >
-              {isSignatureVerified
-                ? 'Signature verified'
-                : 'Sign a message with your wallet'}
-            </Button>
-            {isMobile && (
-              <p>
-                * signing with your mobile wallet only works if you open this
-                website directly inside&nbsp;
-                <strong>MetaMask&apos;s browser</strong>
-              </p>
-            )}
-          </>
+          chainId === 1 ? (
+            signatureButton()
+          ) : (
+            networkSwitchButton()
+          )
         ) : (
           <h2>⚠️ Connect your wallet first!</h2>
         )}

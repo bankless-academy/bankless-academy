@@ -43,7 +43,6 @@ const ConnectWalletButton = ({
       setWalletIsLoading(true)
       if (!web3Modal) {
         web3Modal = new Web3Modal({
-          network: 'mainnet',
           cacheProvider: false,
           providerOptions: {
             walletconnect: {

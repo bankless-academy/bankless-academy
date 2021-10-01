@@ -27,6 +27,7 @@ export default function ENSName({
   address: string
   provider?: any
 }): React.ReactElement {
-  const name = useENSName(address, provider)
+  const isMainnet = provider.networkVersion === '1'
+  const name = isMainnet && useENSName(address, provider)
   return <>{name || shortenAddress(address)}</>
 }
