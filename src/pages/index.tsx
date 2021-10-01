@@ -15,6 +15,7 @@ import {
   Tooltip,
 } from '@chakra-ui/react'
 import { MdCheckCircle, MdHourglassEmpty, MdError } from 'react-icons/md'
+
 import QuestCards from 'components/QuestCards'
 import QUESTS from 'constants/quests'
 

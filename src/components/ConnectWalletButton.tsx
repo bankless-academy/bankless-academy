@@ -15,6 +15,7 @@ import {
   Link,
 } from '@chakra-ui/react'
 import axios from 'axios'
+
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
 import { walletConnect, injected, trimCurrencyForWhales } from 'utils'

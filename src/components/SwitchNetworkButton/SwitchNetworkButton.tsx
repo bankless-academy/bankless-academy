@@ -11,6 +11,7 @@ import {
   Icon,
 } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
+
 import networks from 'constants/networks'
 import switchNetwork from './switchNetwork'
 import handleNetworkChange from './handleNetworkChange'
