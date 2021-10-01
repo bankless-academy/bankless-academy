@@ -54,6 +54,7 @@ const CONTENT = (
 
 const DEV_PROGRESS = {
   implemented: [
+    '🆕 Network switcher',
     '🆕 Update logos',
     '🆕 Improve POAP claiming: store claiming codes in database',
     '🆕 New course about "Intro to DeFi"',
