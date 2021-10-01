@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from '@chakra-ui/react'
+import { Button, Image } from '@chakra-ui/react'
 import { useActiveWeb3React } from 'hooks'
 import * as ethUtil from 'ethereumjs-util'
 import { useMediaQuery } from '@chakra-ui/react'
@@ -98,6 +98,7 @@ const WalletBasics = (): {
     isQuestCompleted: isSignatureVerified,
     questComponent: (
       <>
+        <Image src="/images/TODO-tx-sign.jpg" />
         {account ? (
           chainId === 1 ? (
             signatureButton()
