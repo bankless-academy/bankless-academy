@@ -11,7 +11,7 @@ const setActiveNetwork = (chainId, setNetwork) => {
 }
 
 const handleNetworkChange = (
-  metamask: { on: any; networkVersion?: string; 'net-workVersion'?: string },
+  metamask: { on: any; networkVersion: string },
   setNetwork: Dispatch<
     SetStateAction<{
       name: string
@@ -22,12 +22,7 @@ const handleNetworkChange = (
     }>
   >
 ): void => {
-  setActiveNetwork(
-    metamask.networkVersion
-      ? metamask.networkVersion
-      : metamask['net-workVersion'],
-    setNetwork
-  )
+  setActiveNetwork(metamask.networkVersion, setNetwork)
   metamask.on('chainChanged', (chainId) => {
     setActiveNetwork(chainId, setNetwork)
   })

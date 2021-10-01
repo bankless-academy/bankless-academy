@@ -25,7 +25,11 @@ const CircleIcon = (props) => (
   </Icon>
 )
 
-const SwitchNetworkButton = ({ isSmallScreen }: { isSmallScreen: boolean }): any => {
+const SwitchNetworkButton = ({
+  isSmallScreen,
+}: {
+  isSmallScreen: boolean
+}): any => {
   const [currentNetwork, setCurrentNetwork] = useState(networks.mainnet)
 
   const handleChange = async (networkName) => {
@@ -36,8 +40,12 @@ const SwitchNetworkButton = ({ isSmallScreen }: { isSmallScreen: boolean }): any
     const metamask = window.ethereum
     if (metamask) {
       handleNetworkChange(metamask, setCurrentNetwork)
+      // MetaMask mobile hack
+      setTimeout(() => handleNetworkChange(metamask, setCurrentNetwork), 1000)
+    } else {
+      alert('ee')
     }
-  }, [])
+  }, [window.ethereum])
 
   return (
     <div>
@@ -52,7 +60,11 @@ const SwitchNetworkButton = ({ isSmallScreen }: { isSmallScreen: boolean }): any
             <Box flex="1" isTruncated>
               {currentNetwork.name}
             </Box>
-            {isSmallScreen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
+            {isSmallScreen ? (
+              <ChevronUpIcon ml="1" />
+            ) : (
+              <ChevronDownIcon ml="1" />
+            )}
           </Box>
         </MenuButton>
         <MenuList>
