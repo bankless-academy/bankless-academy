@@ -11,9 +11,9 @@ import {
   ListItem,
   ListIcon,
   Link,
-  useMediaQuery,
   Tooltip,
 } from '@chakra-ui/react'
+import { isMobile } from 'react-device-detect'
 import { MdCheckCircle, MdHourglassEmpty, MdError } from 'react-icons/md'
 
 import QuestCards from 'components/QuestCards'
@@ -89,7 +89,6 @@ const DEV_PROGRESS = {
 }
 
 const Page = (): JSX.Element => {
-  const [isMobile] = useMediaQuery('(max-width: 800px)')
   const hostname = window.location.hostname
   return (
     <Container maxW="container.lg">

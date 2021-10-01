@@ -21,11 +21,11 @@ const Layout = ({
   pageMeta: PageMetaProps
   children: JSX.Element
 }): React.ReactElement => {
-  const [isMobile] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
   const [password, setPassword] = useState(localStorage.getItem(`password`))
 
   return (
-    <PageBackground minH="100vh" paddingBottom={isMobile ? '64px' : ''}>
+    <PageBackground minH="100vh" paddingBottom={isSmallScreen ? '64px' : ''}>
       {typeof password === 'string' && password.toLowerCase() === 'dao' ? (
         <>
           <Head {...pageMeta} />

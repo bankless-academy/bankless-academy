@@ -17,9 +17,9 @@ import ConnectWalletButton from 'components/ConnectWalletButton'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/'
 import { PROJECT_NAME } from 'constants/index'
 
-const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`
+const MenuConnect = styled(HStack)<{ isSmallScreen?: boolean }>`
   ${(props) =>
-    props.isMobile &&
+    props.isSmallScreen &&
     `
     position: fixed;
     bottom: 0;
@@ -30,7 +30,7 @@ const MenuConnect = styled(HStack)<{ isMobile?: boolean }>`
 `
 
 const Nav: React.FC = () => {
-  const [isMobile] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
   const router = useRouter()
   const currentLink = router.asPath
 
@@ -43,7 +43,7 @@ const Nav: React.FC = () => {
               <Button
                 isActive={currentLink === '/'}
                 variant="unstyled"
-                size={isMobile ? 'sm' : 'md'}
+                size={isSmallScreen ? 'sm' : 'md'}
               >
                 ⚡️ {PROJECT_NAME}
               </Button>
@@ -51,7 +51,7 @@ const Nav: React.FC = () => {
             <Link href="/quests">
               <Button
                 isActive={currentLink.includes('/quest')}
-                size={isMobile ? 'sm' : 'md'}
+                size={isSmallScreen ? 'sm' : 'md'}
               >
                 Quests
               </Button>
@@ -59,7 +59,7 @@ const Nav: React.FC = () => {
             <Link href="/about">
               <Button
                 isActive={currentLink === '/about'}
-                size={isMobile ? 'sm' : 'md'}
+                size={isSmallScreen ? 'sm' : 'md'}
               >
                 About
               </Button>
@@ -68,7 +68,7 @@ const Nav: React.FC = () => {
               <Button
                 isActive={currentLink === '/'}
                 variant="unstyled"
-                size={isMobile ? 'sm' : 'md'}
+                size={isSmallScreen ? 'sm' : 'md'}
                 leftIcon={
                   <img width="32px" src="/favicon.png" alt="Bankless Academy" />
                 }
@@ -83,16 +83,16 @@ const Nav: React.FC = () => {
           <MenuConnect
             zIndex="toast"
             spacing={4}
-            isMobile={isMobile}
+            isSmallScreen={isSmallScreen}
             // TODO: auto change via theme
-            bgColor={isMobile ? 'gray.200' : 'auto'}
+            bgColor={isSmallScreen ? 'gray.200' : 'auto'}
             justifyContent="space-between"
           >
-            <SwitchNetworkButton isMobile={isMobile} />
-            <ConnectWalletButton isMobile={isMobile} />
+            <SwitchNetworkButton isSmallScreen={isSmallScreen} />
+            <ConnectWalletButton isSmallScreen={isSmallScreen} />
             {/* <Box display="flex">
-              <LanguageModeSwitcher size={isMobile ? 'sm' : 'md'} />
-              <ColorModeSwitcher size={isMobile ? 'sm' : 'md'} />
+              <LanguageModeSwitcher size={isSmallScreen ? 'sm' : 'md'} />
+              <ColorModeSwitcher size={isSmallScreen ? 'sm' : 'md'} />
             </Box> */}
           </MenuConnect>
         </Flex>

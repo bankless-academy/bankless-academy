@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Button, Image } from '@chakra-ui/react'
 import { useActiveWeb3React } from 'hooks'
 import * as ethUtil from 'ethereumjs-util'
-import { useMediaQuery } from '@chakra-ui/react'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
+import { isMobile } from 'react-device-detect'
 
 // TODO: move to utils
 function hashPersonalMessage(msg: string): string {
@@ -35,7 +35,6 @@ const WalletBasics = (): {
   questComponent: React.ReactElement
 } => {
   const [isSignatureVerified, setIsSignatureVerified] = useState(false)
-  const [isMobile] = useMediaQuery('(max-width: 800px)')
 
   const { library, account, chainId } = useActiveWeb3React()
 
