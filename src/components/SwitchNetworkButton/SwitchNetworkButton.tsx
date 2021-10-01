@@ -6,25 +6,35 @@ import {
   MenuList,
   MenuItem,
   Image,
-  Grid,
-  GridItem,
+  Text,
+  Box,
+  Icon,
 } from '@chakra-ui/react'
-import { ChevronDownIcon } from '@chakra-ui/icons'
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import networks from 'constants/networks'
 import switchNetwork from './switchNetwork'
 import handleNetworkChange from './handleNetworkChange'
 
+const CircleIcon = (props) => (
+  <Icon viewBox="0 0 200 200" {...props}>
+    <path
+      fill="green"
+      d="M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0"
+    />
+  </Icon>
+)
+
 const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
-  const [network, setNetwork] = useState(networks.mainnet)
+  const [currentNetwork, setCurrentNetwork] = useState(networks.mainnet)
 
   const handleChange = async (networkName) => {
-    await switchNetwork(networkName.toLowerCase(), setNetwork)
+    await switchNetwork(networkName.toLowerCase(), setCurrentNetwork)
   }
 
   useEffect(() => {
     const metamask = window.ethereum
     if (metamask) {
-      handleNetworkChange(metamask, setNetwork)
+      handleNetworkChange(metamask, setCurrentNetwork)
     }
   }, [])
 
@@ -36,22 +46,28 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
           colorScheme="blackAlpha"
           size={isMobile ? 'sm' : 'md'}
         >
-          <Grid templateColumns="repeat(4, 1fr)">
-            <GridItem colSpan={1}>
-              <Image src={network.image} height={22} mr="12px" />
-            </GridItem>
-            <GridItem colSpan={2}>{network.name}</GridItem>
-            <GridItem colSpan={1}>
-              <ChevronDownIcon />
-            </GridItem>
-          </Grid>
+          <Box display="flex" alignItems="center">
+            <Image src={currentNetwork.image} height={22} mr="12px" />
+            <Box flex="1" isTruncated>
+              {currentNetwork.name}
+            </Box>
+            {isMobile ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
+          </Box>
         </MenuButton>
         <MenuList>
+          <Text ml="4" mb="2" color="gray.500">
+            Select a network
+          </Text>
           {Object.keys(networks).map((network, index) => (
             <MenuItem
               key={index}
               minH="40px"
               onClick={() => handleChange(network)}
+              backgroundColor={
+                currentNetwork.chainId === networks[network].chainId
+                  ? 'blackAlpha.300'
+                  : 'default'
+              }
             >
               <Image
                 height={25}
@@ -60,7 +76,12 @@ const SwitchNetworkButton = ({ isMobile }: { isMobile: boolean }): any => {
                 alt={networks[network].name}
                 mr="12px"
               />
-              <span>{networks[network].name}</span>
+              <Box flex="1" isTruncated>
+                {networks[network].name}
+              </Box>
+              {currentNetwork.chainId === networks[network].chainId && (
+                <CircleIcon />
+              )}
             </MenuItem>
           ))}
         </MenuList>
