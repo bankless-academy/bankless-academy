@@ -14,7 +14,7 @@ const QUESTS: QuestType[] = [
     difficulty: 'Easy',
     description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
-    notionId: '98405bd0f2b94bb2a3079eed504a011e',
+    notionId: 'a4c2283b54eb4ab4934520886eaff744',
     slug: 'wallet-basics',
     slides: [
       {
@@ -225,14 +225,26 @@ const QUESTS: QuestType[] = [
     difficulty: 'Easy',
     description: 'Understand the basics of Decentralized Finance',
     name: 'Intro to DeFi',
-    notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
+    notionId: '1ba937a629a343c6b82df2a682f311f6',
     slug: 'intro-to-defi',
     slides: [
       {
         type: 'LEARN',
         title: 'What is DeFi?',
         content:
-          "<ul><li>DeFi is an abbreviation for decentralized finance. It is a system by which financial products become available on a public decentralized blockchain network.</li><li>The nature of decentralization utilizes peer to peer transaction, enabling anyone to use DeFi permissionlessly. </li><li>Peer to peer transaction are conducted directly between 2 parties, rather than using middlemen like exchanges, banks, or brokerages.</li><li>The skill cube is our map of the DeFi ecosystem. The objective: to maximize crypto wealth and become a bankless <span class='color-red'>jedi</span>.</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F719d145c-f19f-4a0c-b643-a8ee9215a17e%2Fskill_cube.png?table=block&id=876afc7c-44ae-40c4-ac71-b76dacfa6334'>",
+          "<ul><li>DeFi is an abbreviation for decentralized finance. It is a system by which financial products become available on a public decentralized blockchain network.</li><li>The nature of decentralization utilizes peer-to-peer transactions, enabling anyone to use DeFi permissionlessly. No one is excluded from participating due to age, gender, location, nationality, income level, religion, race, etc.</li><li>Peer-to-peer transaction are conducted directly between 2 parties, rather than using middlemen like exchanges, banks, or brokerages.</li><li>The skill cube is our map of the DeFi ecosystem. The objective: to maximize crypto wealth and go bankless.</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F719d145c-f19f-4a0c-b643-a8ee9215a17e%2Fskill_cube.png?table=block&id=876afc7c-44ae-40c4-ac71-b76dacfa6334'>",
+      },
+      {
+        type: 'QUIZ',
+        title: '<strong>What is decentralized finance?</strong>',
+        quiz: {
+          rightAnswerNumber: 2,
+          answer_1: '[A] A decentralized blockchain of financial products',
+          answer_2: 'Both A and B',
+          answer_3: '[B] Acronym for decentralized finance',
+          answer_4: 'None of the above',
+          id: 'intro-to-defi-1',
+        },
       },
       {
         type: 'LEARN',
@@ -241,16 +253,64 @@ const QUESTS: QuestType[] = [
           '<ul><li><span class="tooltip" definition="An abbreviation for decentralized finance, defi is a system by which financial products become available on a public decentralized blockchain network" style="color:rgba(128, 128, 128, 1)">DeFi</span> revolves around decentralized applications, also known as <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority." style="color:rgba(128, 128, 128, 1)">DApps</span></li><li>DApps are digital applications or programs that exist and run on a blockchain.<span class=\'color-yellow\'> </span>They are outside the purview and control of a single authority.</li><li><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority." style="color:rgba(128, 128, 128, 1)">DApps</span> are typically accessed through a <span class="tooltip" definition="Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data." style="color:rgba(128, 128, 128, 1)">Web3</span> enabled browser extension or application, such as MetaMask</li><li>Web3 refers to <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority." style="color:rgba(128, 128, 128, 1)">DApps</span> that run on the blockchain and allow anyone to participate without monetizing their personal data.</li></ul>',
       },
       {
+        type: 'QUIZ',
+        title: '<strong>What is a common way to engage with DApps?</strong> ',
+        quiz: {
+          rightAnswerNumber: 1,
+          answer_1: 'MetaMask',
+          answer_2: 'Apple Pay',
+          answer_3: 'Cash App',
+          answer_4: 'PayPal',
+          id: 'intro-to-defi-2',
+        },
+      },
+      {
         type: 'LEARN',
         title: 'What can you do with DeFi',
         content:
           "<ul><li>The skill cube contains all the money verbs. </li><li>Money Verbs are the things you can do in legacy finance, but more efficiently in DeFi because there is no middleman. </li><li>Instead of paying the middleman, you can pay yourself! </li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0670f557-ad79-4d1c-ad80-8bd70ff5af6e%2Fhttps___bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com_public_images_84b02006-3141-4b62-b1e9-009739064efb_896x690.png?table=block&id=c38a341a-3f8d-41a8-9332-7fe46427e4b0'>",
       },
       {
+        type: 'QUIZ',
+        title: '<strong>Why is DeFi more efficient?</strong>',
+        quiz: {
+          rightAnswerNumber: 1,
+          answer_1: 'because there is no middleman',
+          answer_2: 'because there is a middleman',
+          answer_3: 'lower brokerage fees',
+          answer_4: 'all of the above',
+          id: 'intro-to-defi-3',
+        },
+      },
+      {
+        type: 'QUIZ',
+        title: '<strong>Q : Which of these are not money verbs?</strong> ',
+        quiz: {
+          rightAnswerNumber: 2,
+          answer_1: 'stake',
+          answer_2: 'profit',
+          answer_3: 'spend',
+          answer_4: 'bet',
+          id: 'intro-to-defi-4',
+        },
+      },
+      {
         type: 'LEARN',
         title: 'What can you do with DeFi - Hold',
         content:
-          "<ul><li>Crypto prices are highly volatile, they go up and down. </li><li>The HODL mentality is the idea of retaining assets even through short to medium term price fluctuations. By holding long term, the HODLer experiences more price appreciation. </li><li><strong>HODL</strong> is an acronym for <strong>H</strong>old <strong>O</strong>n for <strong>D</strong>ear <strong>L</strong>ife</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc025c790-c443-4f1e-8822-7b84d4056e7c%2FScreen_Shot_2021-08-27_at_13.33.32.jpg?table=block&id=f55a7a41-7fd2-4424-bbee-ee28cac9e17c'>",
+          "<ul><li>Crypto prices are highly volatile, they go up and down. </li><li><strong>HODL</strong> is an acronym for <strong>H</strong>old <strong>O</strong>n for <strong>D</strong>ear <strong>L</strong>ife</li><li>The HODL mentality is the idea of retaining assets even through short to medium term price fluctuations. By holding long term, the HODLer experiences more price appreciation. </li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc025c790-c443-4f1e-8822-7b84d4056e7c%2FScreen_Shot_2021-08-27_at_13.33.32.jpg?table=block&id=f55a7a41-7fd2-4424-bbee-ee28cac9e17c'>",
+      },
+      {
+        type: 'QUIZ',
+        title: '<strong>What does hodl stand for?</strong>',
+        quiz: {
+          rightAnswerNumber: 3,
+          answer_1: 'have your oppressive dreams linger',
+          answer_2: "hold on and don't lose",
+          answer_3: 'hold on for dear life',
+          answer_4: 'have outstanding debt liable',
+          id: 'intro-to-defi-5',
+        },
       },
       {
         type: 'LEARN',
@@ -259,40 +319,130 @@ const QUESTS: QuestType[] = [
           "<ul><li>In DeFi, anyone can borrow and anyone can become a lender.</li><li>DeFi lending and borrowing offers loans without the need for a bank or intermediary institution. Instead, lending is done on a peer-to-peer level.</li><li>Similar to traditional loans, a lender will earn interest on the loan and the borrower will need to pay the principal of the loan plus interest within a set amount of time.</li><li>Peer-to-peer loans means that long-term investors can earn interest from the loan and it enables users to access loans at lower rates with DeFi than if they went through exchanges or through traditional loans.</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe76d6096-70a3-47b9-a0f8-a3dc644829b5%2FLending02.png?table=block&id=10a7dbff-1dbd-4b88-ae00-680b7ee69809'>",
       },
       {
+        type: 'QUIZ',
+        title:
+          '<strong>Which of these are </strong><strong><em>not</em></strong><strong> an example of DeFi lending?</strong>',
+        quiz: {
+          rightAnswerNumber: 3,
+          answer_1: 'protocols to people',
+          answer_2: 'peer-to-peer ',
+          answer_3: 'banks to customers ',
+          answer_4: 'people to protocols',
+          id: 'intro-to-defi-6',
+        },
+      },
+      {
         type: 'LEARN',
         title: 'What can you do with DeFi: Stake',
         content:
           "<ul><li>Staking in Defi is similar to lending, however it's a special type of lending.</li><li>Instead of lending your crypto to another user on a peer-to-peer basis, you can lend your crypto to a network or protocol to help bolster its ability to process transactions.</li><li>In exchange for helping secure the network or protocol, you can earn rewards by staking.</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2c8cb40e-82dd-4629-943a-5e2d790fd580%2Fstaking.png?table=block&id=e56f800c-bce5-49e3-b6aa-9ad554675f8b'>",
       },
       {
+        type: 'QUIZ',
+        title:
+          '<strong>Q. </strong><strong>Lending your crypto to a protocol to help bolster its ability to process transactions is an example of?</strong>',
+        quiz: {
+          rightAnswerNumber: 2,
+          answer_1: 'Trading',
+          answer_2: 'Staking',
+          answer_3: 'Borrowing',
+          answer_4: 'Lending',
+          id: 'intro-to-defi-7',
+        },
+      },
+      {
         type: 'LEARN',
         title: 'What can you do with DeFi: Spend',
         content:
-          "<ul><li><strong>Spend—</strong>use your crypto in exchange for goods or services. </li><li>Be aware that when you spend your crypto, you're transferring ownership and you are no longer exposed to price movement. </li><li>For example, in 2010 a man paid 10,000 BTC, valued at $41, for 2 pizzas. Right now, 10,000 BTC is valued at $430M. Make sure that you really want whatever you are buying with your crypto since after you spend it.</li></ul>",
+          "<ul><li>You can use your crypto in exchange for goods or services. Be aware that when you spend your crypto, you're transferring ownership and you are no longer exposed to price movement. </li><li>For example, in May 2010 a man paid 10,000 BTC, valued at $41, for 2 pizzas. In September 2021, that same 10,000 BTC was valued at $430M. </li><li>If the man would have HODL his BTC, he could have bought pizzas with $430M </li></ul>",
+      },
+      {
+        type: 'QUIZ',
+        title:
+          'Can you<strong> use crypto in exchange for goods and services?</strong>',
+        quiz: {
+          rightAnswerNumber: 1,
+          answer_1: 'True',
+          answer_2: 'False',
+          id: 'intro-to-defi-8',
+        },
       },
       {
         type: 'LEARN',
         title: 'What can you do with DeFi: Invest',
         content:
-          "<ul><li>Equal opportunity does not exist in traditional finance. Investors may be limited due to time constraints, income levels, voting power, etc.</li><li>In DeFi, there are no preferred or common shareholders. Everyone has the same right to vote in governance.</li><li>Anyone can purchase any asset, you don't need a specified income level to purchase assets.</li><li>You can also invest anytime, anywhere in DeFi. You are not limited to trading during restricted hours or location</li></ul>",
+          "<ul><li>Equal opportunity does not exist in traditional finance. Investors may be limited due to time constraints, income levels, voting power, etc.</li><li>In DeFi, there are no preferred or common shareholders. Everyone has the same right to vote in governance.</li><li>Anyone can purchase any asset, you don't need a specified income level to purchase assets.</li><li>You can also invest anytime, anywhere in DeFi. You are not limited to trading during restricted hours or location</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F05db2fa5-888a-40e1-94e9-51bbcf2c3e38%2FUntitled.png?table=block&id=369a71a0-1e96-4420-91c2-d8eeaf0f8b4a'>",
+      },
+      {
+        type: 'QUIZ',
+        title:
+          '<strong>Which of these is true for investing with DeFi</strong><strong>?</strong>',
+        quiz: {
+          rightAnswerNumber: 1,
+          answer_1: 'DeFi is open around the clock year round ',
+          answer_2: 'You need to be an accredited investor to invest in DeFi',
+          answer_3:
+            'You can use your crypto in exchange for goods and services',
+          answer_4: 'None of the above ',
+          id: 'intro-to-defi-9',
+        },
       },
       {
         type: 'LEARN',
         title: 'What can you do with DeFi: Earn',
         content:
-          '<ul><li>Earning in defi is when you<strong> </strong>do something of value in exchange for crypto rewards</li><li>The best thing is <strong>no upfront capital required</strong> for some earning actions</li><li>Examples include completing tasks for projects or participating in contests </li><li>You can claim a bounty and complete open tasks from DAOs and other projects </li></ul>',
+          "<ul><li>Earning in defi is when you<strong> </strong>do something of value in exchange for crypto rewards</li><li>The best thing is <strong>no upfront capital required</strong> for some earning actions</li><li>Examples include completing tasks for projects or participating in contests </li><li>You can claim a bounty and complete open tasks from DAOs and other projects </li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F00124889-d747-4614-8990-80400be1e03a%2Fwww.notion.so_bankless_Intro-to-DeFi-fdbf6e4c2ad648c6b815137d0e05eb90_.png?table=block&id=b3009828-55c1-499e-afdc-80225089e8f8'>",
+      },
+      {
+        type: 'QUIZ',
+        title:
+          'Which of these action<strong> can you do to earn in DeFi</strong><strong>?</strong>',
+        quiz: {
+          rightAnswerNumber: 2,
+          answer_1: 'Buying coins that use DeFi technology',
+          answer_2: 'Completing tasks for projects',
+          answer_3: 'Using your crypto in exchange for goods and services',
+          answer_4: 'Trading bonds',
+          id: 'intro-to-defi-10',
+        },
       },
       {
         type: 'LEARN',
         title: 'What can you do with DeFi: Trade',
         content:
-          "<ul><li>DeFi lets you trade any asset in a peer to peer environment. There is no middleman and you don't need permission.</li><li>Trading cryptocurrency is also available on centralized exchanges. However, because they own your private keys, there's a greater risk of stolen funds, frozen accounts, and/or censored transactions. </li><li>Trading in DeFi is permissionless and available 24/7 globally with no restrictions for any reason including name, age, gender, location, race, religion, or anything. DeFi is completely open and free for anybody to use. </li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5af70635-303d-4322-9c4d-4d310631885b%2FScreenshot_from_2021-09-22_11-52-39.png?table=block&id=353ab56d-6820-4b10-a830-58c73a88d905'>",
+          "<ul><li>DeFi lets you trade any asset in a peer-to-peer environment. There is no middleman and you don't need permission.</li><li>Trading cryptocurrency is also available on centralized exchanges. However, because they own your private keys, there's a greater risk of stolen funds, frozen accounts, and/or censored transactions. </li><li>Trading in DeFi is permissionless and available 24/7 globally with no restrictions for any reason including name, age, gender, location, race, religion, or anything. DeFi is completely open and free for anybody to use. </li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5af70635-303d-4322-9c4d-4d310631885b%2FScreenshot_from_2021-09-22_11-52-39.png?table=block&id=353ab56d-6820-4b10-a830-58c73a88d905'>",
+      },
+      {
+        type: 'QUIZ',
+        title:
+          '<strong>Crypto can only be traded during market hours? </strong>',
+        quiz: {
+          rightAnswerNumber: 2,
+          answer_1: 'False',
+          answer_2: 'True ',
+          id: 'intro-to-defi-11',
+        },
       },
       {
         type: 'LEARN',
         title: '<strong>Bet—</strong>risk and earn money by making a bet',
         content:
-          '<ul><li>A Bet is a Trade in a Cornered Market/ Traditionally in the dominant culture, betting is monopolized in a Cornered Market</li><li>In a Cornered Market like a casino, there is a predetermined risk of loss in favor of the middle man</li><li>In DeFi, when the middle man influence is reduced or removed risk of loss can be more fairly distributed or mitigated completely</li><li>Game Theory is used in DeFi to test and experiment with Community Owned and Governed Sports betting, Prediction Markets, and Lotteries.</li></ul>',
+          "<ul><li>A Bet is a Trade in a Cornered Market/ Traditionally in the dominant culture, betting is monopolized in a Cornered Market</li><li>In a Cornered Market like a casino, there is a predetermined risk of loss in favor of the middle man</li><li>In DeFi, when the middle man influence is reduced or removed risk of loss can be more fairly distributed or mitigated completely</li><li>Game Theory is used in DeFi to test and experiment with Community Owned and Governed Sports betting, Prediction Markets, and Lotteries.</li></ul><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F71445ccc-c6d8-4ab7-966c-6dedc554e50c%2FScreenshot_from_2021-09-27_11-15-44.png?table=block&id=9efb6e85-f7de-40e7-aa00-5321150e9d74'>",
+      },
+      {
+        type: 'QUIZ',
+        title:
+          '<strong>What happens when the middle man influence is reduced or removed?</strong>',
+        quiz: {
+          rightAnswerNumber: 1,
+          answer_1: 'None of the above',
+          answer_2:
+            'Risk of loss can be more fairly distributed or mitigated completely',
+          answer_3:
+            'There is a predetermined risk of loss in favor of the middle man',
+          answer_4: "You'll lose money",
+          id: 'intro-to-defi-12',
+        },
       },
       {
         type: 'QUEST',
