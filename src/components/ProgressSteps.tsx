@@ -7,7 +7,7 @@ const ProgressSteps = ({
   step: number
   total: number
 }): React.ReactElement => {
-  const [isMobile] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
   return (
     <Box display="flex">
       {[...Array(total)].map((e, index) => (
@@ -15,8 +15,8 @@ const ProgressSteps = ({
         <Box
           key={index}
           w="100%"
-          h={isMobile ? 1 : 2}
-          m={isMobile ? 0.5 : 2}
+          h={isSmallScreen ? 1 : 2}
+          m={isSmallScreen ? 0.5 : 2}
           borderRadius={4}
           bg={index <= step ? 'red.500' : 'red.200'}
         ></Box>

@@ -29,6 +29,7 @@
     ]
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^1.6.4",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
@@ -45,9 +46,10 @@
     "flatted": "^3.1.1",
     "framer-motion": "^4",
     "knex": "^0.95.11",
-    "next": "^11.1.0",
+    "next": "^11.1.2",
     "pg": "^8.7.1",
     "react": "^17.0.1",
+    "react-device-detect": "^2.0.0",
     "react-dom": "^17.0.2",
     "react-hotjar": "^3.0.1",
     "react-hotkeys-hook": "^3.3.2",
