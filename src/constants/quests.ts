@@ -417,7 +417,7 @@ const QUESTS: QuestType[] = [
         title:
           '<strong>Crypto can only be traded during market hours? </strong>',
         quiz: {
-          rightAnswerNumber: 2,
+          rightAnswerNumber: 1,
           answer_1: 'False',
           answer_2: 'True ',
           id: 'intro-to-defi-11',
