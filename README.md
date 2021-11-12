@@ -21,7 +21,7 @@ yarn import-content
 ### Import content with a specific Notion ID
 
 ```bash
-yarn import-content 1813af42f771491b8d9af966d9d433fe
+yarn import-content 1dd77eb6ed4147f6bdfd6f23a30baa46
 ```
 
 ## How to import keywords dynamically from Notion

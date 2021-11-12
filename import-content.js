@@ -4,8 +4,8 @@ const fs = require('fs')
 const stringifyObject = require('stringify-object')
 const keywords = require('./keywords.json')
 
-const DEFAULT_NOTION_ID = '1813af42f771491b8d9af966d9d433fe'
-const POTION_API = 'https://potion-api.vercel.app'
+const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
+const POTION_API = 'https://potion.banklessacademy.com/'
 
 const KEY_MATCHING = {
   'POAP image link': 'poapImageLink',
