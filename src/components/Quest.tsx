@@ -22,6 +22,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { useMediaQuery } from '@chakra-ui/react'
 import { Player } from '@lottiefiles/react-lottie-player'
 import { isMobile } from 'react-device-detect'
+import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 
 import { QuestType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
@@ -261,10 +262,12 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
             <SwiperSlide key={`slide-${index}`}>
               <Slide
                 minH="620px"
-                bgColor="white"
                 p={8}
                 mt={4}
                 overflow="hidden"
+                backdropFilter="blur(42px)"
+                background="linear-gradient(152.97deg, rgba(30, 18, 43, 0.45) 0%, rgba(85, 55, 115, 0.25) 100%)"
+                borderRadius="8px"
               >
                 {slide.type === 'LEARN' && (
                   <>
@@ -471,8 +474,12 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 hasArrow
                 label="Use the 'left' arrow key on your keyboard to navigate back"
               >
-                <Button ref={buttonLeftRef} onClick={goToPrevSlide}>
-                  ⬅️
+                <Button
+                  ref={buttonLeftRef}
+                  onClick={goToPrevSlide}
+                  leftIcon={<ArrowBackIcon />}
+                >
+                  Prev
                 </Button>
               </Tooltip>
             )}
@@ -488,8 +495,9 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                   (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
                 }
                 onClick={goToNextSlide}
+                rightIcon={<ArrowForwardIcon />}
               >
-                ➡️
+                Next
               </Button>
             </Tooltip>
           </HStack>

@@ -6,7 +6,16 @@ import { useColorMode, Box, BoxProps } from '@chakra-ui/react'
 const PageBackground: React.FC<BoxProps> = (props) => {
   const { colorMode } = useColorMode()
 
-  return <Box bg={colorMode === 'dark' ? 'black' : 'aliceblue'} {...props} />
+  return (
+    <Box
+      bg={
+        colorMode === 'dark'
+          ? 'radial-gradient(233.98% 233.98% at -6.23% -45.01%, #FA8583 0%, #473E5B 58.32%, #332B43 91.94%)'
+          : 'aliceblue'
+      }
+      {...props}
+    />
+  )
 }
 
 export default PageBackground
