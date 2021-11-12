@@ -14,7 +14,7 @@ const QUESTS: QuestType[] = [
     difficulty: 'Easy',
     description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
-    notionId: 'a4c2283b54eb4ab4934520886eaff744',
+    notionId: '98405bd0f2b94bb2a3079eed504a011e',
     slug: 'wallet-basics',
     slides: [
       {
@@ -43,9 +43,27 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'LEARN',
+        title: 'What is a recovery phrase?',
+        content:
+          '<p>When you create a <span class="tooltip" definition="A wallet is an application or device used to send and receive crypto assets on the blockchain." style="color:rgba(128, 128, 128, 1)">wallet</span>, a <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key." style="color:rgba(128, 128, 128, 1)">recovery phrase</span> is also created that is specific to that wallet.</p><p>It stores the information that can be used to recover your wallet and crypto if:</p><ul><li>your wallet fails unexpectedly or gets damaged;</li><li>you are unable to access it due to misplacement or theft;</li></ul><p>Most recovery phrases are a list of 12 to 24 words. They represent a single secret piece of data that is used to generate pairs of <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you." style="color:rgba(0, 120, 223, 1)">public keys</span> and <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address." style="color:rgba(255, 0, 26, 1)">private keys</span> for your wallet.</p><p>This same <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key." style="color:rgba(128, 128, 128, 1)">recovery phrase</span> can actually be used to access your wallet on different devices.</p><ul><li>Your recovery phrase can also be called a seed phrase or a secret recovery phrase</li></ul><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe57e2d52-a97e-42de-aeaf-e0b26a66e8ae%2F0_u4mBi5vxWeCTLwMP.png?table=block&id=c1ce45e2-d20d-4cd9-bde3-150e923e5d21\'>',
+      },
+      {
+        type: 'QUIZ',
+        title: 'I can use a recovery phrase to _____',
+        quiz: {
+          rightAnswerNumber: 3,
+          answer_1: 'Recover my wallet if lost, stolen, or damaged',
+          answer_2: 'Access my wallet on multiple devices',
+          answer_3: 'Both [1] & [2]',
+          answer_4: 'None of the above',
+          id: 'wallet-basics-2',
+        },
+      },
+      {
+        type: 'LEARN',
         title: 'What are keys?',
         content:
-          '<p>Every wallet has a unique pair of keys. There is one <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you." style="color:rgba(0, 120, 223, 1)">public key</span> and there is one <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address." style="color:rgba(255, 0, 26, 1)">private key</span>. </p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F020c645b-001c-42d6-bc94-f47fe4e91074%2F16_0.png?table=block&id=cc950ac3-b833-4bf0-bf5e-a64fe1201874\'>',
+          '<p>A wallet can have multiple accounts and each account has a unique pair of keys. There is a <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you." style="color:rgba(0, 120, 223, 1)">public key</span> and a <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address." style="color:rgba(255, 0, 26, 1)">private key</span> for each account.</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F020c645b-001c-42d6-bc94-f47fe4e91074%2F16_0.png?table=block&id=cc950ac3-b833-4bf0-bf5e-a64fe1201874\'>',
       },
       {
         type: 'LEARN',
@@ -63,7 +81,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'What are keys?',
         content:
-          '<p>When creating a wallet, <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you." style="color:rgba(0, 120, 223, 1)">public keys</span> and <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address." style="color:rgba(255, 0, 26, 1)">private keys</span> are automatically generated.</p><p>Remember <em><strong>each wallet</strong></em> has it own pair of keys and you can think of the public key like your home address and your private key is like your house key.</p>',
+          '<p>When creating a wallet, <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you." style="color:rgba(0, 120, 223, 1)">public keys</span> and <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address." style="color:rgba(255, 0, 26, 1)">private keys</span> are automatically generated.</p><p>Remember <em><strong>each account</strong></em> has its own pair of keys and you can think of the public key like your home address and your private key is like your house key.</p>',
       },
       {
         type: 'QUIZ',
@@ -75,14 +93,14 @@ const QUESTS: QuestType[] = [
           answer_2: 'Home address / House key',
           answer_3: 'Address / Zip code',
           answer_4: 'Phone Number / Social Security Number',
-          id: 'wallet-basics-2',
+          id: 'wallet-basics-3',
         },
       },
       {
         type: 'LEARN',
         title: 'Not your keys, not your crypto!',
         content:
-          '<p>Recall that private keys let you access your <span class="tooltip" definition="A wallet is an application or device used to send and receive crypto assets on the blockchain." style="color:rgba(128, 128, 128, 1)">wallet</span> to send crypto. In almost all cases, you want to own and secure your wallet’s private key.</p><p>But not all wallets will let you do that. With a <span class="tooltip" definition="With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets." style="color:rgba(255, 0, 26, 1)">custodial wallet</span>, another party controls your private keys.</p><p>You’re trusting a third party to secure your funds and return them to you if you want to trade or send them somewhere else.</p><p></p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fabda02b7-850e-4f4b-9fcc-637330046e92%2F0_q_FQ4P0pA0PopIqx.png?table=block&id=ff0def71-b130-4854-a008-3b22ec448bc5\'>',
+          '<p>Recall that private keys let you access your <span class="tooltip" definition="A wallet is an application or device used to send and receive crypto assets on the blockchain." style="color:rgba(128, 128, 128, 1)">wallet</span> to send crypto. In almost all cases, you want to own and secure your wallet’s private key.</p><p>But not all wallets will let you do that. With a <span class="tooltip" definition="With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets." style="color:rgba(255, 0, 26, 1)">custodial wallet</span>, another party controls your private keys.</p><p>You’re trusting a third party to secure your funds and return them to you if you want to trade or send them somewhere else.</p><p>Think of your account on Coinbase Exchange or Kraken Exchange are examples of custodial wallets.</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fabda02b7-850e-4f4b-9fcc-637330046e92%2F0_q_FQ4P0pA0PopIqx.png?table=block&id=ff0def71-b130-4854-a008-3b22ec448bc5\'>',
       },
       {
         type: 'LEARN',
@@ -97,14 +115,14 @@ const QUESTS: QuestType[] = [
           rightAnswerNumber: 2,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-3',
+          id: 'wallet-basics-4',
         },
       },
       {
         type: 'LEARN',
         title: 'Protect your keys, protect your crypto!',
         content:
-          '<p>Since there is no third party involved in a <span class="tooltip" definition="With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets." style="color:rgba(0, 135, 107, 1)">non-custodial wallet</span>, you are solely responsible for your keys.</p><p>You must take your own precautions to protect your funds.</p><p>If you lose your <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address." style="color:rgba(255, 0, 26, 1)">private key</span>, you can no longer access your wallet to spend, withdraw, or transfer your crypto. Your wallet is GONE FOREVER!!!</p><p>Therefore, it is imperative to save the private key in a secure location and on a durable material </p><p>.</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F559e242d-4fa2-4fe6-8bb5-06996c6326c2%2FCopy-of-9-security-Tips-Infographic-1_1-1-min.png?table=block&id=4e2fa103-b50a-41e6-b1fc-964e4d6a7bd4\'>',
+          '<p>Since there is no third party involved in a <span class="tooltip" definition="With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets." style="color:rgba(0, 135, 107, 1)">non-custodial wallet</span>, you are solely responsible for your keys.</p><p>You must take your own precautions to protect your funds.</p><p>If you lose your <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address." style="color:rgba(255, 0, 26, 1)">private key</span>, you can no longer access your wallet to spend, withdraw, or transfer your crypto. Your wallet is GONE FOREVER!!!</p><p>Therefore, it is imperative to save the private key in a secure location and on a durable material </p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F559e242d-4fa2-4fe6-8bb5-06996c6326c2%2FCopy-of-9-security-Tips-Infographic-1_1-1-min.png?table=block&id=4e2fa103-b50a-41e6-b1fc-964e4d6a7bd4\'>',
       },
       {
         type: 'QUIZ',
@@ -114,14 +132,14 @@ const QUESTS: QuestType[] = [
           rightAnswerNumber: 1,
           answer_1: 'True',
           answer_2: 'False',
-          id: 'wallet-basics-4',
+          id: 'wallet-basics-5',
         },
       },
       {
         type: 'LEARN',
-        title: 'How do I protect my keys?',
+        title: 'How do I protect my crypto?',
         content:
-          '<h2>The 5 most effective ways to protect your keys:</h2><ol><li>Never share or reveal your private key to anyone.</li><li>Never save it online</li></ol>',
+          "<h2>The 5 most effective ways to protect your keys and recovery phrase:</h2><img src='https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3388312b-548e-49b4-be1c-ca48431aab9b%2Fwww.notion.so_bankless_Wallet-Basics-98405bd0f2b94bb2a3079eed504a011e.png?table=block&id=9010df5a-966e-45e2-9b41-3c6cd6729a38'>",
       },
       {
         type: 'QUIZ',
@@ -136,30 +154,6 @@ const QUESTS: QuestType[] = [
             'Save it in my Dropbox account or any similar cloud service.',
           answer_4:
             'Write it on a piece of paper or durable material and store it in a safe place.',
-          id: 'wallet-basics-5',
-        },
-      },
-      {
-        type: 'LEARN',
-        title: 'What is a recovery phrase?',
-        content:
-          '<p>When you create a <span class="tooltip" definition="A wallet is an application or device used to send and receive crypto assets on the blockchain." style="color:rgba(128, 128, 128, 1)">wallet</span>, a <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key." style="color:rgba(128, 128, 128, 1)">recovery phrase</span> is also created that is specific to that wallet.</p><p>It stores the information that can be used to recover your wallet and crypto if:</p><ul><li>your wallet fails unexpectedly or gets damaged;</li><li>you are unable to access it due to misplacement or theft;</li></ul><p>A recovery phrase is a list of 12 to 24 words and represents a single secret piece of data that is used to generate your wallet’s <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you." style="color:rgba(0, 120, 223, 1)">public key</span> and <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address." style="color:rgba(255, 0, 26, 1)">private key</span>.</p><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe57e2d52-a97e-42de-aeaf-e0b26a66e8ae%2F0_u4mBi5vxWeCTLwMP.png?table=block&id=c1ce45e2-d20d-4cd9-bde3-150e923e5d21\'>',
-      },
-      {
-        type: 'LEARN',
-        title: 'What is a recovery phrase?',
-        content:
-          '<p>This same <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key." style="color:rgba(128, 128, 128, 1)">recovery phrase</span> can actually be used to access your wallet on different devices.</p><ul><li>Find a way to write recovery phrases on durable material such as tungsten, aluminum engraving kit, mylar, or...</li></ul><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3388312b-548e-49b4-be1c-ca48431aab9b%2Fwww.notion.so_bankless_Wallet-Basics-98405bd0f2b94bb2a3079eed504a011e.png?table=block&id=9010df5a-966e-45e2-9b41-3c6cd6729a38\'><ul><li>Write down your recovery phrase and store it in a secure location.</li></ul>',
-      },
-      {
-        type: 'QUIZ',
-        title: 'I can use a recovery phrase to _____',
-        quiz: {
-          rightAnswerNumber: 3,
-          answer_1: 'Recover my wallet if lost, stolen, or damaged',
-          answer_2: 'Access my wallet on multiple devices',
-          answer_3: 'Both [1] & [2]',
-          answer_4: 'None of the above',
           id: 'wallet-basics-6',
         },
       },
@@ -197,9 +191,9 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'LEARN',
-        title: 'How to setup MetaMask',
+        title: 'How to setup a MetaMask wallet',
         content:
-          "<p>For convenience and ease of access throughout this course, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.</p><p>Download the browser extension from the official website: <a href='https://metamask.io/download'>https://metamask.io/download</a></p><iframe src='https://www.youtube.com/embed/pGO8WhDZlMo'></iframe>",
+          "<p>For convenience and ease of access throughout this course, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.</p><p>Download the browser extension from the official website: <a href='https://metamask.io/download'>https://metamask.io/download</a></p><iframe src='https://www.youtube.com/embed/pGO8WhDZlMo'></iframe><p>TODO: move this as the quest</p>",
       },
       {
         type: 'QUEST',
@@ -225,7 +219,7 @@ const QUESTS: QuestType[] = [
     difficulty: 'Easy',
     description: 'Understand the basics of Decentralized Finance',
     name: 'Intro to DeFi',
-    notionId: '1ba937a629a343c6b82df2a682f311f6',
+    notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
     slug: 'intro-to-defi',
     slides: [
       {
@@ -236,7 +230,7 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUIZ',
-        title: '<strong>What is decentralized finance?</strong>',
+        title: '<strong>What is DeFi?</strong>',
         quiz: {
           rightAnswerNumber: 2,
           answer_1: '[A] A decentralized blockchain of financial products',
@@ -250,7 +244,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'How Defi works',
         content:
-          '<ul><li><span class="tooltip" definition="An abbreviation for decentralized finance, defi is a system by which financial products become available on a public decentralized blockchain network" style="color:rgba(128, 128, 128, 1)">DeFi</span> revolves around decentralized applications, also known as <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority." style="color:rgba(128, 128, 128, 1)">DApps</span></li><li>DApps are digital applications or programs that exist and run on a blockchain.<span class=\'color-yellow\'> </span>They are outside the purview and control of a single authority.</li><li><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority." style="color:rgba(128, 128, 128, 1)">DApps</span> are typically accessed through a <span class="tooltip" definition="Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data." style="color:rgba(128, 128, 128, 1)">Web3</span> enabled browser extension or application, such as MetaMask</li><li>Web3 refers to <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority." style="color:rgba(128, 128, 128, 1)">DApps</span> that run on the blockchain and allow anyone to participate without monetizing their personal data.</li></ul>',
+          '<ul><li><span class="tooltip" definition="An abbreviation for decentralized finance, defi is a system by which financial products become available on a public decentralized blockchain network" style="color:rgba(128, 128, 128, 1)">DeFi</span> revolves around decentralized applications, also known as <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority." style="color:rgba(128, 128, 128, 1)">DApps</span></li><li>DApps are digital applications or programs that exist and run on a blockchain.<span class=\'color-yellow\'> </span>They are outside the purview and control of a single authority.</li><li><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority." style="color:rgba(128, 128, 128, 1)">DApps</span> are typically accessed through a <span class="tooltip" definition="Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data." style="color:rgba(128, 128, 128, 1)">Web3</span> enabled browser extension or application, such as MetaMask</li><li>Web3 refers to <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority." style="color:rgba(128, 128, 128, 1)">DApps</span> that run on the blockchain and allow anyone to participate without monetizing their personal data.</li></ul><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F62e0a78b-f5fa-44a3-aaf0-ea8dfe7108a5%2FUntitled.png?table=block&id=50814057-6c60-4cdc-94fb-276f2c648e87\'>',
       },
       {
         type: 'QUIZ',
@@ -284,7 +278,7 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUIZ',
-        title: '<strong>Q : Which of these are not money verbs?</strong> ',
+        title: '<strong>Which of these are not money verbs?</strong> ',
         quiz: {
           rightAnswerNumber: 2,
           answer_1: 'stake',
@@ -340,7 +334,7 @@ const QUESTS: QuestType[] = [
       {
         type: 'QUIZ',
         title:
-          '<strong>Q. </strong><strong>Lending your crypto to a protocol to help bolster its ability to process transactions is an example of?</strong>',
+          '<strong>Lending your crypto to a protocol to help bolster its ability to process transactions is an example of?</strong>',
         quiz: {
           rightAnswerNumber: 2,
           answer_1: 'Trading',
@@ -354,7 +348,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'What can you do with DeFi: Spend',
         content:
-          "<ul><li>You can use your crypto in exchange for goods or services. Be aware that when you spend your crypto, you're transferring ownership and you are no longer exposed to price movement. </li><li>For example, in May 2010 a man paid 10,000 BTC, valued at $41, for 2 pizzas. In September 2021, that same 10,000 BTC was valued at $430M. </li><li>If the man would have HODL his BTC, he could have bought pizzas with $430M </li></ul>",
+          "<ul><li>You can use your crypto in exchange for goods or services. Be aware that when you spend your crypto, you're transferring ownership and you are no longer exposed to price movement. </li><li>For example, in May 2010 a man paid 10,000 BTC, valued at $41, for 2 pizzas. In September 2021, that same 10,000 BTC was valued at $430M. </li><li>If the man would have HODL his BTC, he could have bought many more pizzas with $430M </li></ul>",
       },
       {
         type: 'QUIZ',
@@ -418,8 +412,8 @@ const QUESTS: QuestType[] = [
           '<strong>Crypto can only be traded during market hours? </strong>',
         quiz: {
           rightAnswerNumber: 1,
-          answer_1: 'False',
-          answer_2: 'True ',
+          answer_1: 'False ',
+          answer_2: 'True',
           id: 'intro-to-defi-11',
         },
       },
