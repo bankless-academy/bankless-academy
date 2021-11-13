@@ -24,7 +24,7 @@ import { Player } from '@lottiefiles/react-lottie-player'
 import { isMobile } from 'react-device-detect'
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 
-import { QuestType } from 'entities/quest'
+import { QuestType, SlideType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useWalletWeb3React } from 'hooks'
@@ -46,7 +46,7 @@ function transform(node, index) {
   }
 }
 
-const Slide = styled(Box)`
+const Slide = styled(Box)<{ isSmallScreen?: boolean; slideType: SlideType }>`
   border-radius: 0.5rem;
   h1 {
     margin-top: 1em;
@@ -55,6 +55,18 @@ const Slide = styled(Box)`
   span.tooltip {
     cursor: help;
     border-bottom: 1px dashed grey;
+  }
+  > div {
+    ${(props) =>
+      props.slideType === 'LEARN' &&
+      (props.isSmallScreen ? 'display: block;' : 'display: flex;')};
+  }
+  .bloc1,
+  .bloc2 {
+    flex: 1;
+    img {
+      width: 100%;
+    }
   }
   div {
     h2,
@@ -268,6 +280,8 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 backdropFilter="blur(42px)"
                 background="linear-gradient(152.97deg, rgba(30, 18, 43, 0.45) 0%, rgba(85, 55, 115, 0.25) 100%)"
                 borderRadius="8px"
+                isSmallScreen={isSmallScreen}
+                slideType={slide.type}
               >
                 {slide.type === 'LEARN' && (
                   <>

@@ -5,7 +5,7 @@ const stringifyObject = require('stringify-object')
 const keywords = require('./keywords.json')
 
 const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
-const POTION_API = 'https://potion.banklessacademy.com/'
+const POTION_API = 'https://potion.banklessacademy.com'
 
 const KEY_MATCHING = {
   'POAP image link': 'poapImageLink',
@@ -39,7 +39,7 @@ axios
                 [KEY_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
                   ? course.fields[k]
                   : // transform to number if the string contains a number
-                    parseInt(course.fields[k]),
+                  parseInt(course.fields[k]),
               }),
             {}
           )
@@ -51,14 +51,14 @@ axios
             .replace(/-+/g, '-') // collapse dashes
           const content = JSON.parse(
             `[` +
-              response.data
-                .replace(/"/g, "'")
-                .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
-                .replace(/\s+/g, ' ') // collapse whitespace
-                .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
-                .replace(/<\/h1>/g, `","content": "`)
-                .substr(3) + // remove extra "}, at the beginning
-              `"}]`
+            response.data
+              .replace(/"/g, "'")
+              .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
+              .replace(/\s+/g, ' ') // collapse whitespace
+              .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
+              .replace(/<\/h1>/g, `","content": "`)
+              .substr(3) + // remove extra "}, at the beginning
+            `"}]`
           )
           let quizNb = 0
           const slides = content.map((slide) => {
@@ -96,6 +96,18 @@ axios
             // TODO: move this logic to the frontend?
             // replace keywords in content
             if (slide.content) {
+              if (slide.content.includes('<img ')) { // content contains an image
+                const [bloc1, bloc2] = slide.content.split('<img ')
+                if (bloc1 !== '' && bloc2 !== '')
+                  slide.content = `<div class="bloc1">${bloc1}</div><div class="bloc2"><img ${bloc2}</div>`
+              }
+              else if (slide.content.includes('<iframe ')) { // content contains an iframe
+                const [bloc1, bloc2] = slide.content.split('<iframe ')
+                if (bloc2 !== '')
+                  slide.content = `${bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''}<div class="bloc2"><iframe ${bloc2}</div>`
+              } else { // text only
+                slide.content = `<div class="bloc1">${slide.content}</div>`
+              }
               const content = slide.content.toLowerCase()
               for (const word in keywords) {
                 const search = '<code>' + word.toLowerCase() + '</code>'
