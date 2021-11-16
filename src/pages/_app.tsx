@@ -22,7 +22,7 @@ const umamiWebsiteId =
   process.env.ENV === 'PROD' && process.env.UMAMI
     ? process.env.UMAMI
     : 'e84c3a1e-0ab0-4502-b0fe-67d660765535'
-const umamiDomain = 'https://bankless-umami.vercel.app/umami.js'
+const umamiDomain = 'https://umami.bankless.community/umami.js'
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
