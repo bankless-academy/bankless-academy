@@ -42,8 +42,6 @@ const SwitchNetworkButton = ({
       handleNetworkChange(metamask, setCurrentNetwork)
       // MetaMask mobile hack
       setTimeout(() => handleNetworkChange(metamask, setCurrentNetwork), 1000)
-    } else {
-      alert('ee')
     }
   }, [window.ethereum])
 
