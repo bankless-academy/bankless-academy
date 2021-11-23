@@ -56,7 +56,7 @@ const Slide = styled(Box)<{ isSmallScreen?: boolean; slideType: SlideType }>`
     cursor: help;
     border-bottom: 1px dashed grey;
   }
-  > div {
+  div.content > div {
     ${(props) =>
       props.slideType === 'LEARN' &&
       (props.isSmallScreen ? 'display: block;' : 'display: flex;')};
@@ -68,7 +68,7 @@ const Slide = styled(Box)<{ isSmallScreen?: boolean; slideType: SlideType }>`
       width: 100%;
     }
   }
-  div {
+  div.content div {
     h2,
     p {
       font-size: var(--chakra-fontSizes-xl);
@@ -245,6 +245,21 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const Quest = QuestComponent(questComponentName)
   // TODO: store quest verification state in local storage
 
+  const commentSlide = (
+    <Tooltip
+      hasArrow
+      label="Help us improve the content by commenting this slide on Notion"
+    >
+      <Link
+        target="_blank"
+        rel="noreferrer"
+        href={`https://www.notion.so/${quest.notionId}`}
+      >
+        <Button variant="outline">🐞 comment this slide</Button>
+      </Link>
+    </Tooltip>
+  )
+
   return (
     <>
       <Swiper
@@ -283,183 +298,186 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 slideType={slide.type}
               >
                 <ProgressSteps step={currentSlide} total={numberOfSlides} />
-                {slide.type === 'LEARN' && (
-                  <>
-                    <Text fontSize="3xl" mb="8">
-                      📚 {ReactHtmlParser(slide.title, { transform })}
-                    </Text>
-                    <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
-                  </>
-                )}
-                {slide.type === 'QUIZ' && (
-                  <>
-                    <Text fontSize="3xl" mb="8">
-                      ❓ {ReactHtmlParser(slide.title)}
-                    </Text>
-                    <Answers minHeight={isSmallScreen ? '400px' : '320px'}>
-                      <ButtonGroup size="lg">
-                        <SimpleGrid columns={[null, null, 2]} spacing="40px">
-                          <Button
-                            ref={answer1Ref}
-                            whiteSpace="break-spaces"
-                            onClick={() => selectAnswer(1)}
-                            colorScheme={
-                              quizAnswer === slide.quiz.rightAnswerNumber
-                                ? slide.quiz.rightAnswerNumber === 1
-                                  ? 'green'
-                                  : 'blackAlpha'
-                                : 'red'
-                            }
-                            isActive={
-                              (selectedAnswerNumber || quizAnswer) === 1
-                            }
-                          >
-                            <span>
-                              <Kbd>1</Kbd>
-                            </span>
-                            {slide.quiz.answer_1}
-                          </Button>
-                          <Button
-                            ref={answer2Ref}
-                            whiteSpace="break-spaces"
-                            onClick={() => selectAnswer(2)}
-                            colorScheme={
-                              quizAnswer === slide.quiz.rightAnswerNumber
-                                ? slide.quiz.rightAnswerNumber === 2
-                                  ? 'green'
-                                  : 'blackAlpha'
-                                : 'red'
-                            }
-                            isActive={
-                              (selectedAnswerNumber || quizAnswer) === 2
-                            }
-                          >
-                            <span>
-                              <Kbd>2</Kbd>
-                            </span>
-                            {slide.quiz.answer_2}
-                          </Button>
-                          {slide.quiz.answer_3 && (
+                <div className="content">
+                  {slide.type === 'LEARN' && (
+                    <>
+                      <Text fontSize="3xl" mb="8">
+                        📚 {ReactHtmlParser(slide.title, { transform })}{' '}
+                        {commentSlide}
+                      </Text>
+                      <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
+                    </>
+                  )}
+                  {slide.type === 'QUIZ' && (
+                    <>
+                      <Text fontSize="3xl" mb="8">
+                        ❓ {ReactHtmlParser(slide.title)} {commentSlide}
+                      </Text>
+                      <Answers minHeight={isSmallScreen ? '400px' : '320px'}>
+                        <ButtonGroup size="lg">
+                          <SimpleGrid columns={[null, null, 2]} spacing="40px">
                             <Button
-                              ref={answer3Ref}
+                              ref={answer1Ref}
                               whiteSpace="break-spaces"
-                              onClick={() => selectAnswer(3)}
+                              onClick={() => selectAnswer(1)}
                               colorScheme={
                                 quizAnswer === slide.quiz.rightAnswerNumber
-                                  ? slide.quiz.rightAnswerNumber === 3
+                                  ? slide.quiz.rightAnswerNumber === 1
                                     ? 'green'
                                     : 'blackAlpha'
                                   : 'red'
                               }
                               isActive={
-                                (selectedAnswerNumber || quizAnswer) === 3
+                                (selectedAnswerNumber || quizAnswer) === 1
                               }
                             >
                               <span>
-                                <Kbd>3</Kbd>
+                                <Kbd>1</Kbd>
                               </span>
-                              {slide.quiz.answer_3}
+                              {slide.quiz.answer_1}
                             </Button>
-                          )}
-                          {slide.quiz.answer_4 && (
                             <Button
-                              ref={answer4Ref}
+                              ref={answer2Ref}
                               whiteSpace="break-spaces"
-                              onClick={() => selectAnswer(4)}
+                              onClick={() => selectAnswer(2)}
                               colorScheme={
                                 quizAnswer === slide.quiz.rightAnswerNumber
-                                  ? slide.quiz.rightAnswerNumber === 4
+                                  ? slide.quiz.rightAnswerNumber === 2
                                     ? 'green'
                                     : 'blackAlpha'
                                   : 'red'
                               }
                               isActive={
-                                (selectedAnswerNumber ||
-                                  parseInt(
-                                    localStorage.getItem(
-                                      `quiz-${slide.quiz.id}`
-                                    )
-                                  )) === 4
+                                (selectedAnswerNumber || quizAnswer) === 2
                               }
                             >
                               <span>
-                                <Kbd>4</Kbd>
+                                <Kbd>2</Kbd>
                               </span>
-                              {slide.quiz.answer_4}
+                              {slide.quiz.answer_2}
                             </Button>
-                          )}
-                        </SimpleGrid>
-                      </ButtonGroup>
-                    </Answers>
-                    {answerIsCorrect && (
-                      <Player
-                        autoplay={true}
-                        loop={false}
-                        keepLastFrame={true}
-                        controls={false}
-                        src="https://assets7.lottiefiles.com/temp/lf20_PRvG5R.json"
-                        style={{
-                          height: '180px',
-                          width: '180px',
-                          marginTop: '-50px',
-                        }}
-                      />
-                    )}
-                  </>
-                )}
-                {slide.type === 'QUEST' && (
-                  <>
-                    <Text fontSize="3xl" mb="8">
-                      ⚡️ {ReactHtmlParser(slide.title)}
-                    </Text>
-                    <VStack flex="auto" minH="420px" justifyContent="center">
-                      {Quest?.questComponent}
-                    </VStack>
-                  </>
-                )}
-                {slide.type === 'POAP' && (
-                  <>
-                    <Text fontSize="3xl" mb="8">
-                      🎖 {ReactHtmlParser(slide.title)}
-                    </Text>
-                    <VStack flex="auto" minH="420px" justifyContent="center">
-                      {walletAddress ? (
-                        <>
-                          <Image
-                            src={quest.poapImageLink}
-                            width="250px"
-                            opacity={isPoapClaimed ? 1 : 0.7}
-                          />
-                          {!isPoapClaimed ? (
-                            <Button
-                              variant="outline"
-                              onClick={claimPoap}
-                              isLoading={isClaimingPoap}
-                            >
-                              Claim POAP
-                            </Button>
-                          ) : (
-                            <>
-                              <h2>
-                                {`Congrats for finishing the "${quest.name}" quest! 🥳`}
-                              </h2>
-                              {quest.slug === 'wallet-basics' && (
-                                <Button
-                                  mt="4"
-                                  onClick={() => router.push('/feedback')}
-                                >
-                                  Feedback form
-                                </Button>
-                              )}
-                            </>
-                          )}
-                        </>
-                      ) : (
-                        <h2>⚠️ Connect your wallet first!</h2>
+                            {slide.quiz.answer_3 && (
+                              <Button
+                                ref={answer3Ref}
+                                whiteSpace="break-spaces"
+                                onClick={() => selectAnswer(3)}
+                                colorScheme={
+                                  quizAnswer === slide.quiz.rightAnswerNumber
+                                    ? slide.quiz.rightAnswerNumber === 3
+                                      ? 'green'
+                                      : 'blackAlpha'
+                                    : 'red'
+                                }
+                                isActive={
+                                  (selectedAnswerNumber || quizAnswer) === 3
+                                }
+                              >
+                                <span>
+                                  <Kbd>3</Kbd>
+                                </span>
+                                {slide.quiz.answer_3}
+                              </Button>
+                            )}
+                            {slide.quiz.answer_4 && (
+                              <Button
+                                ref={answer4Ref}
+                                whiteSpace="break-spaces"
+                                onClick={() => selectAnswer(4)}
+                                colorScheme={
+                                  quizAnswer === slide.quiz.rightAnswerNumber
+                                    ? slide.quiz.rightAnswerNumber === 4
+                                      ? 'green'
+                                      : 'blackAlpha'
+                                    : 'red'
+                                }
+                                isActive={
+                                  (selectedAnswerNumber ||
+                                    parseInt(
+                                      localStorage.getItem(
+                                        `quiz-${slide.quiz.id}`
+                                      )
+                                    )) === 4
+                                }
+                              >
+                                <span>
+                                  <Kbd>4</Kbd>
+                                </span>
+                                {slide.quiz.answer_4}
+                              </Button>
+                            )}
+                          </SimpleGrid>
+                        </ButtonGroup>
+                      </Answers>
+                      {answerIsCorrect && (
+                        <Player
+                          autoplay={true}
+                          loop={false}
+                          keepLastFrame={true}
+                          controls={false}
+                          src="https://assets7.lottiefiles.com/temp/lf20_PRvG5R.json"
+                          style={{
+                            height: '180px',
+                            width: '180px',
+                            marginTop: '-50px',
+                          }}
+                        />
                       )}
-                    </VStack>
-                  </>
-                )}
+                    </>
+                  )}
+                  {slide.type === 'QUEST' && (
+                    <>
+                      <Text fontSize="3xl" mb="8">
+                        ⚡️ {ReactHtmlParser(slide.title)} {commentSlide}
+                      </Text>
+                      <VStack flex="auto" minH="420px" justifyContent="center">
+                        {Quest?.questComponent}
+                      </VStack>
+                    </>
+                  )}
+                  {slide.type === 'POAP' && (
+                    <>
+                      <Text fontSize="3xl" mb="8">
+                        🎖 {ReactHtmlParser(slide.title)} {commentSlide}
+                      </Text>
+                      <VStack flex="auto" minH="420px" justifyContent="center">
+                        {walletAddress ? (
+                          <>
+                            <Image
+                              src={quest.poapImageLink}
+                              width="250px"
+                              opacity={isPoapClaimed ? 1 : 0.7}
+                            />
+                            {!isPoapClaimed ? (
+                              <Button
+                                variant="outline"
+                                onClick={claimPoap}
+                                isLoading={isClaimingPoap}
+                              >
+                                Claim POAP
+                              </Button>
+                            ) : (
+                              <>
+                                <h2>
+                                  {`Congrats for finishing the "${quest.name}" quest! 🥳`}
+                                </h2>
+                                {quest.slug === 'wallet-basics' && (
+                                  <Button
+                                    mt="4"
+                                    onClick={() => router.push('/feedback')}
+                                  >
+                                    Feedback form
+                                  </Button>
+                                )}
+                              </>
+                            )}
+                          </>
+                        ) : (
+                          <h2>⚠️ Connect your wallet first!</h2>
+                        )}
+                      </VStack>
+                    </>
+                  )}
+                </div>
               </Slide>
             </SwiperSlide>
           )
@@ -483,18 +501,6 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
               </Button>
             </Tooltip>
           )}
-          <Tooltip
-            hasArrow
-            label="Help us improve the content by commenting this slide on Notion"
-          >
-            <Link
-              target="_blank"
-              rel="noreferrer"
-              href={`https://www.notion.so/${quest.notionId}`}
-            >
-              <Button variant="outline">🐞 comment this slide</Button>
-            </Link>
-          </Tooltip>
         </HStack>
         {/* hide buttons on mobile */}
         {!isMobile && (
