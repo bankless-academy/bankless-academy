@@ -247,7 +247,6 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
 
   return (
     <>
-      <ProgressSteps step={currentSlide} total={numberOfSlides} />
       <Swiper
         initialSlide={currentSlide}
         autoHeight={true}
@@ -283,6 +282,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 isSmallScreen={isSmallScreen}
                 slideType={slide.type}
               >
+                <ProgressSteps step={currentSlide} total={numberOfSlides} />
                 {slide.type === 'LEARN' && (
                   <>
                     <Text fontSize="3xl" mb="8">
@@ -467,6 +467,22 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       </Swiper>
       <Box display="flex" p={4}>
         <HStack flex="auto">
+          {!isFirstSlide && (
+            <Tooltip
+              hasArrow
+              label="Use the 'left' arrow key on your keyboard to navigate back"
+            >
+              <Button
+                ref={buttonLeftRef}
+                variant="primaryBig"
+                size="lg"
+                onClick={goToPrevSlide}
+                leftIcon={<ArrowBackIcon />}
+              >
+                Prev
+              </Button>
+            </Tooltip>
+          )}
           <Tooltip
             hasArrow
             label="Help us improve the content by commenting this slide on Notion"
@@ -483,26 +499,14 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         {/* hide buttons on mobile */}
         {!isMobile && (
           <HStack>
-            {!isFirstSlide && (
-              <Tooltip
-                hasArrow
-                label="Use the 'left' arrow key on your keyboard to navigate back"
-              >
-                <Button
-                  ref={buttonLeftRef}
-                  onClick={goToPrevSlide}
-                  leftIcon={<ArrowBackIcon />}
-                >
-                  Prev
-                </Button>
-              </Tooltip>
-            )}
             <Tooltip
               hasArrow
               label="Use the 'right' arrow key on your keyboard to continue"
             >
               <Button
                 ref={buttonRightRef}
+                variant="primaryBig"
+                size="lg"
                 disabled={
                   (isLastSlide && !isPoapClaimed) ||
                   (slide.quiz && !answerIsCorrect) ||
