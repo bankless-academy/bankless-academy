@@ -18,8 +18,7 @@ import axios from 'axios'
 
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
-import { walletConnect, injected, trimCurrencyForWhales } from 'utils'
-import { useTokenBalance } from 'hooks/token/useTokenBalance'
+import { walletConnect, injected } from 'utils'
 import { INFURA_ID } from 'constants/'
 import { PoapType } from 'entities/poap'
 
@@ -104,26 +103,15 @@ const ConnectWalletButton = ({
     }
   }, [walletAddress])
 
-  const rawBalance = useTokenBalance(walletWeb3ReactContext.account) ?? 0
-  const balance = trimCurrencyForWhales(rawBalance)
-
   return (
     <>
       {isConnected ? (
         <Popover trigger={isSmallScreen ? 'click' : 'hover'}>
           <PopoverTrigger>
-            <Button
-              variant="outline"
-              paddingRight="1"
-              paddingLeft="4"
-              size={isSmallScreen ? 'sm' : 'md'}
-            >
-              {balance} BANK
-              <Button size={isSmallScreen ? 'xs' : 'sm'} marginLeft="2">
-                <Text maxW="200px" isTruncated>
-                  <ENSName provider={web3Provider} address={walletAddress} />
-                </Text>
-              </Button>
+            <Button variant="secondary" size={isSmallScreen ? 'sm' : 'md'}>
+              <Text maxW="200px" isTruncated>
+                <ENSName provider={web3Provider} address={walletAddress} />
+              </Text>
             </Button>
           </PopoverTrigger>
           <PopoverContent>
