@@ -12,7 +12,6 @@ import {
 import Head from 'components/Head'
 import { PageMetaProps } from 'components/Head'
 import Nav from 'layout/Nav'
-import PageBackground from 'layout/PageBackground'
 
 const Layout = ({
   pageMeta,
@@ -25,7 +24,11 @@ const Layout = ({
   const [password, setPassword] = useState(localStorage.getItem(`password`))
 
   return (
-    <PageBackground minH="100vh" paddingBottom={isSmallScreen ? '64px' : ''}>
+    <Box
+      minH="100vh"
+      paddingBottom={isSmallScreen ? '64px' : ''}
+      bgColor="#010101"
+    >
       {typeof password === 'string' && password.toLowerCase() === 'dao' ? (
         <>
           <Head {...pageMeta} />
@@ -60,7 +63,7 @@ const Layout = ({
           </Center>
         </>
       )}
-    </PageBackground>
+    </Box>
   )
 }
 
