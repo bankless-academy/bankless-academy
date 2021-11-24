@@ -44,6 +44,7 @@ function transform(node, index) {
 
 const Slide = styled(Box)<{ isSmallScreen?: boolean; slideType: SlideType }>`
   border-radius: 0.5rem;
+  ${(props) => props.isSmallScreen && 'display: contents;'};
   h1 {
     margin-top: 1em;
     font-size: var(--chakra-fontSizes-2xl);
@@ -255,21 +256,21 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   return (
     <>
       <Slide
-        minH="620px"
         p={8}
-        mt={4}
-        overflow="hidden"
+        pb={2}
+        mt={6}
         backdropFilter="blur(42px)"
         background="linear-gradient(152.97deg, rgba(30, 18, 43, 0.45) 0%, rgba(85, 55, 115, 0.25) 100%)"
         borderRadius="8px"
+        border="1px solid #76789550"
         isSmallScreen={isSmallScreen}
         slideType={slide.type}
       >
-        <div className="content">
-          <Text fontSize="3xl" mb="8" textAlign="center">
-            {ReactHtmlParser(slide.title)}
-          </Text>
-          <ProgressSteps step={currentSlide} total={numberOfSlides} />
+        <Text fontSize="3xl" mb="8" textAlign="center" fontWeight="bold">
+          {ReactHtmlParser(slide.title)}
+        </Text>
+        <ProgressSteps step={currentSlide} total={numberOfSlides} />
+        <Box className="content" minH="500px" pb={isSmallScreen ? '6' : 0}>
           {slide.type === 'LEARN' && (
             <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
           )}
@@ -399,63 +400,63 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
               </VStack>
             </>
           )}
-        </div>
-      </Slide>
-      <SlideNav display="flex" p={4} isSmallScreen={isSmallScreen}>
-        <HStack flex="auto">
-          {!isFirstSlide && (
+        </Box>
+        <SlideNav display="flex" p={4} isSmallScreen={isSmallScreen}>
+          <HStack flex="auto">
+            {!isFirstSlide && (
+              <Tooltip
+                hasArrow
+                label="Use the 'left' arrow key on your keyboard to navigate back"
+              >
+                <Button
+                  ref={buttonLeftRef}
+                  variant="secondaryBig"
+                  size="lg"
+                  onClick={goToPrevSlide}
+                  leftIcon={<ArrowBackIcon />}
+                >
+                  Prev
+                </Button>
+              </Tooltip>
+            )}
+            {!isSmallScreen && (
+              <Tooltip
+                hasArrow
+                label="Help us improve the content by commenting this slide on Notion"
+              >
+                <Link
+                  target="_blank"
+                  rel="noreferrer"
+                  href={`https://www.notion.so/${quest.notionId}`}
+                >
+                  <Button variant="outline">🐞 comment this slide</Button>
+                </Link>
+              </Tooltip>
+            )}
+          </HStack>
+          <HStack>
             <Tooltip
               hasArrow
-              label="Use the 'left' arrow key on your keyboard to navigate back"
+              label="Use the 'right' arrow key on your keyboard to continue"
             >
               <Button
-                ref={buttonLeftRef}
+                ref={buttonRightRef}
                 variant="primaryBig"
                 size="lg"
-                onClick={goToPrevSlide}
-                leftIcon={<ArrowBackIcon />}
+                disabled={
+                  (isLastSlide && !isPoapClaimed) ||
+                  (slide.quiz && !answerIsCorrect) ||
+                  (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+                }
+                onClick={goToNextSlide}
+                rightIcon={<ArrowForwardIcon />}
               >
-                Prev
+                Next
               </Button>
             </Tooltip>
-          )}
-          {!isSmallScreen && (
-            <Tooltip
-              hasArrow
-              label="Help us improve the content by commenting this slide on Notion"
-            >
-              <Link
-                target="_blank"
-                rel="noreferrer"
-                href={`https://www.notion.so/${quest.notionId}`}
-              >
-                <Button variant="outline">🐞 comment this slide</Button>
-              </Link>
-            </Tooltip>
-          )}
-        </HStack>
-        <HStack>
-          <Tooltip
-            hasArrow
-            label="Use the 'right' arrow key on your keyboard to continue"
-          >
-            <Button
-              ref={buttonRightRef}
-              variant="primaryBig"
-              size="lg"
-              disabled={
-                (isLastSlide && !isPoapClaimed) ||
-                (slide.quiz && !answerIsCorrect) ||
-                (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
-              }
-              onClick={goToNextSlide}
-              rightIcon={<ArrowForwardIcon />}
-            >
-              Next
-            </Button>
-          </Tooltip>
-        </HStack>
-      </SlideNav>
+          </HStack>
+        </SlideNav>
+      </Slide>
     </>
   )
 }

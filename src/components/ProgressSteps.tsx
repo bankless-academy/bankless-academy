@@ -9,7 +9,7 @@ const ProgressSteps = ({
 }): React.ReactElement => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
   return (
-    <Box display="flex">
+    <Box display="flex" m="3">
       {[...Array(total)].map((e, index) => (
         // TODO: make steps clickable?
         <Box
