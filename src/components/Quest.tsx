@@ -21,7 +21,6 @@ import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useMediaQuery } from '@chakra-ui/react'
 import { Player } from '@lottiefiles/react-lottie-player'
-import { isMobile } from 'react-device-detect'
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 
 import { QuestType, SlideType } from 'entities/quest'
@@ -103,6 +102,19 @@ const Answers = styled(Box)`
     margin-right: 0.5em;
     margin-bottom: 4px;
   }
+`
+
+const SlideNav = styled(Box)<{ isSmallScreen?: boolean }>`
+  ${(props) =>
+    props.isSmallScreen &&
+    `
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      background-color: black;
+      z-index: 10;
+      `};
 `
 
 const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
@@ -483,7 +495,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           )
         })}
       </Swiper>
-      <Box display="flex" p={4}>
+      <SlideNav display="flex" p={4} isSmallScreen={isSmallScreen}>
         <HStack flex="auto">
           {!isFirstSlide && (
             <Tooltip
@@ -502,31 +514,28 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
             </Tooltip>
           )}
         </HStack>
-        {/* hide buttons on mobile */}
-        {!isMobile && (
-          <HStack>
-            <Tooltip
-              hasArrow
-              label="Use the 'right' arrow key on your keyboard to continue"
+        <HStack>
+          <Tooltip
+            hasArrow
+            label="Use the 'right' arrow key on your keyboard to continue"
+          >
+            <Button
+              ref={buttonRightRef}
+              variant="primaryBig"
+              size="lg"
+              disabled={
+                (isLastSlide && !isPoapClaimed) ||
+                (slide.quiz && !answerIsCorrect) ||
+                (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+              }
+              onClick={goToNextSlide}
+              rightIcon={<ArrowForwardIcon />}
             >
-              <Button
-                ref={buttonRightRef}
-                variant="primaryBig"
-                size="lg"
-                disabled={
-                  (isLastSlide && !isPoapClaimed) ||
-                  (slide.quiz && !answerIsCorrect) ||
-                  (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
-                }
-                onClick={goToNextSlide}
-                rightIcon={<ArrowForwardIcon />}
-              >
-                Next
-              </Button>
-            </Tooltip>
-          </HStack>
-        )}
-      </Box>
+              Next
+            </Button>
+          </Tooltip>
+        </HStack>
+      </SlideNav>
     </>
   )
 }
