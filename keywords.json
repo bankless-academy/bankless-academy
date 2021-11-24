@@ -4,7 +4,7 @@
     "color": "rgba(128, 128, 128, 1)"
   },
   "blockchain": {
-    "definition": "A peer to peer (P2P) network of computers instead of a single computer.",
+    "definition": "An immutable, unchangeable database or record of transactions that can be verified by users.",
     "color": "rgba(128, 128, 128, 1)"
   },
   "public key": {
@@ -76,7 +76,7 @@
     "color": "rgba(128, 128, 128, 1)"
   },
   "DeFi": {
-    "definition": "An abbreviation for decentralized finance, defi is a system by which financial products become available on a public decentralized blockchain network",
+    "definition": "An abbreviation for decentralized finance.",
     "color": "rgba(128, 128, 128, 1)"
   },
   "lender": {
@@ -89,6 +89,46 @@
   },
   "collateral": {
     "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "decentalized": {
+    "definition": "The transfer of control and decision making from a centralized entity to a distributed network.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "peer-to-peer": {
+    "definition": "A transaction between two parties that does not require an middleman or controlling entity",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "permissionless": {
+    "definition": "<a href=\"https://medium.com/@akadiyala/nuances-between-permissionless-and-permissioned-blockchains-f5b566f5d483\">V2.</a> Any person, thing, or entity can interact with other members or parties by creating an address on the network",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "hold": {
+    "definition": "Your wallet is the registered owner of a Defi token",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "time preference": {
+    "definition": "(or \"time discounting\") pertains to how large a premium a consumer will place on enjoyment nearer in time over more remote enjoyment.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "spend": {
+    "definition": "using your crypto to pay for a good or service ; money verb on the skill cube"
+  },
+  "earn": {
+    "definition": "contributing value in exchange for rewards ; money verb on the skill cube"
+  },
+  "trade": {
+    "definition": "exchanging assets or money for something valuable ; money verb on the skill cube"
+  },
+  "bet": {
+    "definition": "risking money in exchange for greater rewards (shorting/longing) ; money verb on the skill cube"
+  },
+  "invest": {
+    "definition": "The act of buying a coin/token that uses DeFi technology",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "staking": {
+    "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")",
     "color": "rgba(128, 128, 128, 1)"
   }
 }
