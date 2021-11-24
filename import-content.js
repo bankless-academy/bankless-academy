@@ -119,7 +119,7 @@ axios
                   console.log('word found: ', word)
                   slide.content = slide.content.replace(
                     new RegExp(search, 'gi'),
-                    `<span class="tooltip" definition="${keywords[word].definition}" style="color:${keywords[word].color}">$&</span>`
+                    `<span class="tooltip" definition="${keywords[word].definition}">$&</span>`
                   )
                 }
               }
@@ -136,7 +136,7 @@ axios
                   console.log('word found in title: ', word)
                   slide.title = slide.title.replace(
                     new RegExp(search, 'gi'),
-                    `<span class="tooltip" definition="${keywords[word].definition}" style="color:${keywords[word].color}">$&</span>`
+                    `<span class="tooltip" definition="${keywords[word].definition}">$&</span>`
                   )
                 }
               }
