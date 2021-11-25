@@ -19,9 +19,11 @@ import { useRouter } from 'next/router'
 import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
 import { useMediaQuery } from '@chakra-ui/react'
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
+import { Warning, Checks } from 'phosphor-react'
 
 import { QuestType, SlideType } from 'entities/quest'
 import ProgressSteps from 'components/ProgressSteps'
+import Card from 'components/Card'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useWalletWeb3React } from 'hooks'
 import { track } from 'utils'
@@ -42,7 +44,7 @@ function transform(node, index) {
   }
 }
 
-const Slide = styled(Box)<{ isSmallScreen?: boolean; slideType: SlideType }>`
+const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
   border-radius: 0.5rem;
   ${(props) => props.isSmallScreen && 'display: contents;'};
   h1 {
@@ -102,6 +104,21 @@ const Answers = styled(Box)`
   }
 `
 
+export type AnswerStateType = 'UNSELECTED' | 'CORRECT' | 'WRONG'
+
+const QuizAnswer = styled(Button)<{
+  answerState: AnswerStateType
+  isActive: boolean
+}>`
+  ${(props) => !props.isActive && 'cursor: default;'};
+  ${(props) =>
+    props.answerState === 'CORRECT' &&
+    'background: linear-gradient(95.83deg, #44A991 -9.2%, rgba(68, 169, 145, 0.7) 97.91%)!important;'}
+  ${(props) =>
+    props.answerState === 'WRONG' &&
+    'background: linear-gradient(91.91deg, #A94462 49%, rgba(169, 68, 98, 0.7) 124.09%)!important;'}
+`
+
 const SlideNav = styled(Box)<{ isSmallScreen?: boolean }>`
   ${(props) =>
     props.isSmallScreen &&
@@ -118,10 +135,7 @@ const SlideNav = styled(Box)<{ isSmallScreen?: boolean }>`
 const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const buttonLeftRef = useRef(null)
   const buttonRightRef = useRef(null)
-  const answer1Ref = useRef(null)
-  const answer2Ref = useRef(null)
-  const answer3Ref = useRef(null)
-  const answer4Ref = useRef(null)
+  const answerRef = useRef([])
   const [currentSlide, setCurrentSlide] = useState(
     parseInt(localStorage.getItem(quest.slug) || '0')
   )
@@ -153,6 +167,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     if (!isFirstSlide) {
       setCurrentSlide(currentSlide - 1)
     }
+    setSelectedAnswerNumber(null)
   }
 
   const goToNextSlide = (e) => {
@@ -167,6 +182,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       if (quest.slug === 'wallet-basics') router.push('/feedback')
       else router.push('/')
     }
+    setSelectedAnswerNumber(null)
   }
 
   const selectAnswer = (answerNumber: number) => {
@@ -180,7 +196,6 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       })
       // correct answer
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
-      toast.closeAll()
     } else if (!answerIsCorrect) {
       track('quiz_answer', {
         id: slide.quiz.id,
@@ -226,16 +241,16 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     buttonRightRef?.current?.click()
   })
   useHotkeys('1', () => {
-    answer1Ref?.current?.click()
+    answerRef?.current[1]?.click()
   })
   useHotkeys('2', () => {
-    answer2Ref?.current?.click()
+    answerRef?.current[2]?.click()
   })
   useHotkeys('3', () => {
-    answer3Ref?.current?.click()
+    answerRef?.current[3]?.click()
   })
   useHotkeys('4', () => {
-    answer4Ref?.current?.click()
+    answerRef?.current[4]?.click()
   })
 
   const answerIsCorrect =
@@ -248,25 +263,23 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const Quest = QuestComponent(questComponentName)
   // TODO: store quest verification state in local storage
 
-  const quizAnswer =
-    slide.type === 'QUIZ'
-      ? parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`))
-      : null
-
   return (
     <>
       <Slide
         p={8}
+        pt={4}
         pb={2}
         mt={6}
-        backdropFilter="blur(42px)"
-        background="linear-gradient(152.97deg, rgba(30, 18, 43, 0.45) 0%, rgba(85, 55, 115, 0.25) 100%)"
-        borderRadius="8px"
-        border="1px solid #76789550"
         isSmallScreen={isSmallScreen}
         slideType={slide.type}
       >
-        <Text fontSize="3xl" mb="8" textAlign="center" fontWeight="bold">
+        <Text
+          fontSize={isSmallScreen ? 'xl' : '3xl'}
+          mt="4"
+          mb="8"
+          textAlign="center"
+          fontWeight="bold"
+        >
           {ReactHtmlParser(slide.title)}
         </Text>
         <ProgressSteps step={currentSlide} total={numberOfSlides} />
@@ -277,77 +290,45 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           {slide.type === 'QUIZ' && (
             <>
               <Answers minHeight={isSmallScreen ? '400px' : '320px'}>
-                <ButtonGroup size="lg">
-                  <SimpleGrid columns={[null, null, 1]} spacing="40px">
-                    <Button
-                      ref={answer1Ref}
-                      whiteSpace="break-spaces"
-                      onClick={() => selectAnswer(1)}
-                      colorScheme={
-                        quizAnswer === slide.quiz.rightAnswerNumber
-                          ? slide.quiz.rightAnswerNumber === 1
-                            ? 'green'
-                            : 'blackAlpha'
-                          : 'red'
-                      }
-                      isActive={(selectedAnswerNumber || quizAnswer) === 1}
-                    >
-                      {slide.quiz.answer_1}
-                    </Button>
-                    <Button
-                      ref={answer2Ref}
-                      whiteSpace="break-spaces"
-                      onClick={() => selectAnswer(2)}
-                      colorScheme={
-                        quizAnswer === slide.quiz.rightAnswerNumber
-                          ? slide.quiz.rightAnswerNumber === 2
-                            ? 'green'
-                            : 'blackAlpha'
-                          : 'red'
-                      }
-                      isActive={(selectedAnswerNumber || quizAnswer) === 2}
-                    >
-                      {slide.quiz.answer_2}
-                    </Button>
-                    {slide.quiz.answer_3 && (
-                      <Button
-                        ref={answer3Ref}
-                        whiteSpace="break-spaces"
-                        onClick={() => selectAnswer(3)}
-                        colorScheme={
-                          quizAnswer === slide.quiz.rightAnswerNumber
-                            ? slide.quiz.rightAnswerNumber === 3
-                              ? 'green'
-                              : 'blackAlpha'
-                            : 'red'
-                        }
-                        isActive={(selectedAnswerNumber || quizAnswer) === 3}
-                      >
-                        {slide.quiz.answer_3}
-                      </Button>
-                    )}
-                    {slide.quiz.answer_4 && (
-                      <Button
-                        ref={answer4Ref}
-                        whiteSpace="break-spaces"
-                        onClick={() => selectAnswer(4)}
-                        colorScheme={
-                          quizAnswer === slide.quiz.rightAnswerNumber
-                            ? slide.quiz.rightAnswerNumber === 4
-                              ? 'green'
-                              : 'blackAlpha'
-                            : 'red'
-                        }
-                        isActive={
-                          (selectedAnswerNumber ||
-                            parseInt(
-                              localStorage.getItem(`quiz-${slide.quiz.id}`)
-                            )) === 4
-                        }
-                      >
-                        {slide.quiz.answer_4}
-                      </Button>
-                    )}
+                <ButtonGroup size="lg" w="100%">
+                  <SimpleGrid
+                    columns={[null, null, 1]}
+                    spacing="40px"
+                    w="100%"
+                    justifyItems="center"
+                  >
+                    {[1, 2, 3, 4].map((n) => {
+                      const answerState = answerIsCorrect
+                        ? slide.quiz.rightAnswerNumber === n
+                          ? 'CORRECT'
+                          : 'UNSELECTED'
+                        : selectedAnswerNumber === n
+                        ? 'WRONG'
+                        : 'UNSELECTED'
+                      if (slide.quiz.answers.length >= n)
+                        return (
+                          <QuizAnswer
+                            ref={(el) => (answerRef.current[n] = el)}
+                            key={`answer-${n}`}
+                            w="100%"
+                            maxW="600px"
+                            whiteSpace="break-spaces"
+                            onClick={() => selectAnswer(n)}
+                            answerState={answerState}
+                            justifyContent="space-between"
+                            rightIcon={
+                              answerState === 'CORRECT' ? (
+                                <Checks />
+                              ) : (
+                                answerState === 'WRONG' && <Warning />
+                              )
+                            }
+                            isActive={!answerIsCorrect}
+                          >
+                            {slide.quiz.answers[n - 1]}
+                          </QuizAnswer>
+                        )
+                    })}
                   </SimpleGrid>
                 </ButtonGroup>
               </Answers>
