@@ -38,11 +38,10 @@ const Layout = ({
         </>
       ) : (
         <>
-          <Center bg="tomato" h="100vh">
+          <Center bgGradient="linear(to-l, #2f1e3a, #1c2444)" h="100vh">
             <Box
               borderWidth="1px"
               borderRadius="12px"
-              bg="white"
               maxWidth="600px"
               width="100%"
               p="20px"
