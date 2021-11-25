@@ -14,6 +14,7 @@ import {
   Image,
   Link,
 } from '@chakra-ui/react'
+import { Wallet } from 'phosphor-react'
 import axios from 'axios'
 
 import ENSName from 'components/ENSName'
@@ -108,7 +109,11 @@ const ConnectWalletButton = ({
       {isConnected ? (
         <Popover trigger={isSmallScreen ? 'click' : 'hover'}>
           <PopoverTrigger>
-            <Button variant="secondary" size={isSmallScreen ? 'sm' : 'md'}>
+            <Button
+              variant="secondary"
+              size={isSmallScreen ? 'sm' : 'md'}
+              leftIcon={<Wallet weight="bold" />}
+            >
               <Text maxW="200px" isTruncated>
                 <ENSName provider={web3Provider} address={walletAddress} />
               </Text>
@@ -183,6 +188,7 @@ const ConnectWalletButton = ({
             setConnectClick(true)
           }}
           size={isSmallScreen ? 'sm' : 'md'}
+          leftIcon={<Wallet weight="bold" />}
           isLoading={walletIsLoading}
           loadingText="Connecting wallet"
         >
