@@ -163,6 +163,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   }, [currentSlide])
 
   const goToPrevSlide = (e) => {
+    e.target.blur()
     track('prev-slide', e?.nativeEvent?.isTrusted ? 'click' : 'shortcut')
     if (!isFirstSlide) {
       setCurrentSlide(currentSlide - 1)
@@ -171,6 +172,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   }
 
   const goToNextSlide = (e) => {
+    e.target.blur()
     track('next-slide', e?.nativeEvent?.isTrusted ? 'click' : 'shortcut')
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
@@ -185,7 +187,8 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     setSelectedAnswerNumber(null)
   }
 
-  const selectAnswer = (answerNumber: number) => {
+  const selectAnswer = (e, answerNumber: number) => {
+    e.target.blur()
     if (slide.type !== 'QUIZ') return
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
     if (slide.quiz.rightAnswerNumber === answerNumber) {
@@ -289,7 +292,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           )}
           {slide.type === 'QUIZ' && (
             <>
-              <Answers minHeight={isSmallScreen ? '400px' : '320px'}>
+              <Answers mt="40px">
                 <ButtonGroup size="lg" w="100%">
                   <SimpleGrid
                     columns={[null, null, 1]}
@@ -311,16 +314,20 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                             ref={(el) => (answerRef.current[n] = el)}
                             key={`answer-${n}`}
                             w="100%"
-                            maxW="600px"
+                            maxW="500px"
+                            p="4"
+                            h="auto"
                             whiteSpace="break-spaces"
-                            onClick={() => selectAnswer(n)}
+                            onClick={(e) => selectAnswer(e, n)}
                             answerState={answerState}
                             justifyContent="space-between"
                             rightIcon={
                               answerState === 'CORRECT' ? (
-                                <Checks />
+                                <Checks weight="bold" color="white" />
                               ) : (
-                                answerState === 'WRONG' && <Warning />
+                                answerState === 'WRONG' && (
+                                  <Warning weight="bold" color="white" />
+                                )
                               )
                             }
                             isActive={!answerIsCorrect}
