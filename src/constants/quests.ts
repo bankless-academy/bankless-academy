@@ -34,10 +34,12 @@ const QUESTS: QuestType[] = [
         title: 'What is a wallet?',
         quiz: {
           rightAnswerNumber: 4,
-          answer_1: 'A device equipped with RFID technology',
-          answer_2: 'A bi-fold device',
-          answer_3: 'An account that protects my assets',
-          answer_4: 'An app or device used to interact with a blockchain.',
+          answers: [
+            'A device equipped with RFID technology',
+            'A bi-fold device',
+            'An account that protects my assets',
+            'An app or device used to interact with a blockchain.',
+          ],
           id: 'wallet-basics-1',
         },
       },
@@ -52,10 +54,12 @@ const QUESTS: QuestType[] = [
         title: 'I can use a recovery phrase to _____',
         quiz: {
           rightAnswerNumber: 3,
-          answer_1: 'Recover my wallet if lost, stolen, or damaged',
-          answer_2: 'Access my wallet on multiple devices',
-          answer_3: 'Both [1] & [2]',
-          answer_4: 'None of the above',
+          answers: [
+            'Recover my wallet if lost, stolen, or damaged',
+            'Access my wallet on multiple devices',
+            'Both [1] & [2]',
+            'None of the above',
+          ],
           id: 'wallet-basics-2',
         },
       },
@@ -89,10 +93,12 @@ const QUESTS: QuestType[] = [
           'In simple terms, you can think of the public key as your _____, and the private key as your _____',
         quiz: {
           rightAnswerNumber: 2,
-          answer_1: 'Routing Number / Account Number',
-          answer_2: 'Home address / House key',
-          answer_3: 'Address / Zip code',
-          answer_4: 'Phone Number / Social Security Number',
+          answers: [
+            'Routing Number / Account Number',
+            'Home address / House key',
+            'Address / Zip code',
+            'Phone Number / Social Security Number',
+          ],
           id: 'wallet-basics-3',
         },
       },
@@ -113,8 +119,7 @@ const QUESTS: QuestType[] = [
         title: 'I control my private keys with a custodial wallet',
         quiz: {
           rightAnswerNumber: 2,
-          answer_1: 'True',
-          answer_2: 'False',
+          answers: ['True', 'False'],
           id: 'wallet-basics-4',
         },
       },
@@ -130,8 +135,7 @@ const QUESTS: QuestType[] = [
           'I am solely responsible for my private keys with a non-custodial wallet',
         quiz: {
           rightAnswerNumber: 1,
-          answer_1: 'True',
-          answer_2: 'False',
+          answers: ['True', 'False'],
           id: 'wallet-basics-5',
         },
       },
@@ -147,13 +151,12 @@ const QUESTS: QuestType[] = [
           'Which of this method is <strong>the safest way</strong> to store your private keys?',
         quiz: {
           rightAnswerNumber: 4,
-          answer_1: 'Save it on my computer and print it on piece of paper.',
-          answer_2:
+          answers: [
+            'Save it on my computer and print it on piece of paper.',
             'Take a screenshot or a picture of the private key on my phone.',
-          answer_3:
             'Save it in my Dropbox account or any similar cloud service.',
-          answer_4:
             'Write it on a piece of paper or durable material and store it in a safe place.',
+          ],
           id: 'wallet-basics-6',
         },
       },
@@ -176,8 +179,7 @@ const QUESTS: QuestType[] = [
         title: 'A cold wallet is more secure than a hot wallet',
         quiz: {
           rightAnswerNumber: 1,
-          answer_1: 'True',
-          answer_2: 'False',
+          answers: ['True', 'False'],
           id: 'wallet-basics-7',
         },
       },
@@ -192,8 +194,7 @@ const QUESTS: QuestType[] = [
         title: 'MetaMask is a custodial wallet',
         quiz: {
           rightAnswerNumber: 2,
-          answer_1: 'True',
-          answer_2: 'False',
+          answers: ['True', 'False'],
           id: 'wallet-basics-8',
         },
       },
@@ -235,10 +236,12 @@ const QUESTS: QuestType[] = [
         title: '<strong>What is DeFi?</strong>',
         quiz: {
           rightAnswerNumber: 2,
-          answer_1: '[A] A decentralized blockchain of financial products',
-          answer_2: 'Both A and B',
-          answer_3: '[B] Acronym for decentralized finance',
-          answer_4: 'None of the above',
+          answers: [
+            '[A] A decentralized blockchain of financial products',
+            'Both A and B',
+            '[B] Acronym for decentralized finance',
+            'None of the above',
+          ],
           id: 'intro-to-defi-1',
         },
       },
@@ -253,10 +256,7 @@ const QUESTS: QuestType[] = [
         title: '<strong>What is a common way to engage with DApps?</strong> ',
         quiz: {
           rightAnswerNumber: 1,
-          answer_1: 'MetaMask',
-          answer_2: 'Apple Pay',
-          answer_3: 'Cash App',
-          answer_4: 'PayPal',
+          answers: ['MetaMask', 'Apple Pay', 'Cash App', 'PayPal'],
           id: 'intro-to-defi-2',
         },
       },
@@ -271,10 +271,12 @@ const QUESTS: QuestType[] = [
         title: '<strong>Why is DeFi more efficient?</strong>',
         quiz: {
           rightAnswerNumber: 1,
-          answer_1: 'because there is no middleman',
-          answer_2: 'because there is a middleman',
-          answer_3: 'lower brokerage fees',
-          answer_4: 'all of the above',
+          answers: [
+            'because there is no middleman',
+            'because there is a middleman',
+            'lower brokerage fees',
+            'all of the above',
+          ],
           id: 'intro-to-defi-3',
         },
       },
@@ -283,10 +285,7 @@ const QUESTS: QuestType[] = [
         title: '<strong>Which of these are not money verbs?</strong> ',
         quiz: {
           rightAnswerNumber: 2,
-          answer_1: 'stake',
-          answer_2: 'profit',
-          answer_3: 'spend',
-          answer_4: 'bet',
+          answers: ['stake', 'profit', 'spend', 'bet'],
           id: 'intro-to-defi-4',
         },
       },
@@ -301,10 +300,12 @@ const QUESTS: QuestType[] = [
         title: '<strong>What does hodl stand for?</strong>',
         quiz: {
           rightAnswerNumber: 3,
-          answer_1: 'have your oppressive dreams linger',
-          answer_2: "hold on and don't lose",
-          answer_3: 'hold on for dear life',
-          answer_4: 'have outstanding debt liable',
+          answers: [
+            'have your oppressive dreams linger',
+            "hold on and don't lose",
+            'hold on for dear life',
+            'have outstanding debt liable',
+          ],
           id: 'intro-to-defi-5',
         },
       },
@@ -320,10 +321,12 @@ const QUESTS: QuestType[] = [
           '<strong>Which of these are </strong><strong><em>not</em></strong><strong> an example of DeFi lending?</strong>',
         quiz: {
           rightAnswerNumber: 3,
-          answer_1: 'protocols to people',
-          answer_2: 'peer-to-peer ',
-          answer_3: 'banks to customers ',
-          answer_4: 'people to protocols',
+          answers: [
+            'protocols to people',
+            'peer-to-peer ',
+            'banks to customers ',
+            'people to protocols',
+          ],
           id: 'intro-to-defi-6',
         },
       },
@@ -339,10 +342,7 @@ const QUESTS: QuestType[] = [
           '<strong>Lending your crypto to a protocol to help bolster its ability to process transactions is an example of?</strong>',
         quiz: {
           rightAnswerNumber: 2,
-          answer_1: 'Trading',
-          answer_2: 'Staking',
-          answer_3: 'Borrowing',
-          answer_4: 'Lending',
+          answers: ['Trading', 'Staking', 'Borrowing', 'Lending'],
           id: 'intro-to-defi-7',
         },
       },
@@ -358,8 +358,7 @@ const QUESTS: QuestType[] = [
           'Can you<strong> use crypto in exchange for goods and services?</strong>',
         quiz: {
           rightAnswerNumber: 1,
-          answer_1: 'True',
-          answer_2: 'False',
+          answers: ['True', 'False'],
           id: 'intro-to-defi-8',
         },
       },
@@ -375,11 +374,12 @@ const QUESTS: QuestType[] = [
           '<strong>Which of these is true for investing with DeFi</strong><strong>?</strong>',
         quiz: {
           rightAnswerNumber: 1,
-          answer_1: 'DeFi is open around the clock year round ',
-          answer_2: 'You need to be an accredited investor to invest in DeFi',
-          answer_3:
+          answers: [
+            'DeFi is open around the clock year round ',
+            'You need to be an accredited investor to invest in DeFi',
             'You can use your crypto in exchange for goods and services',
-          answer_4: 'None of the above ',
+            'None of the above ',
+          ],
           id: 'intro-to-defi-9',
         },
       },
@@ -395,10 +395,12 @@ const QUESTS: QuestType[] = [
           'Which of these action<strong> can you do to earn in DeFi</strong><strong>?</strong>',
         quiz: {
           rightAnswerNumber: 2,
-          answer_1: 'Buying coins that use DeFi technology',
-          answer_2: 'Completing tasks for projects',
-          answer_3: 'Using your crypto in exchange for goods and services',
-          answer_4: 'Trading bonds',
+          answers: [
+            'Buying coins that use DeFi technology',
+            'Completing tasks for projects',
+            'Using your crypto in exchange for goods and services',
+            'Trading bonds',
+          ],
           id: 'intro-to-defi-10',
         },
       },
@@ -414,8 +416,7 @@ const QUESTS: QuestType[] = [
           '<strong>Crypto can only be traded during market hours? </strong>',
         quiz: {
           rightAnswerNumber: 1,
-          answer_1: 'False ',
-          answer_2: 'True',
+          answers: ['False ', 'True'],
           id: 'intro-to-defi-11',
         },
       },
@@ -431,12 +432,12 @@ const QUESTS: QuestType[] = [
           '<strong>What happens when the middle man influence is reduced or removed?</strong>',
         quiz: {
           rightAnswerNumber: 1,
-          answer_1: 'None of the above',
-          answer_2:
+          answers: [
+            'None of the above',
             'Risk of loss can be more fairly distributed or mitigated completely',
-          answer_3:
             'There is a predetermined risk of loss in favor of the middle man',
-          answer_4: "You'll lose money",
+            "You'll lose money",
+          ],
           id: 'intro-to-defi-12',
         },
       },

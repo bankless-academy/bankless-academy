@@ -73,6 +73,7 @@ axios
               delete slide.content
               slide.quiz = {}
               slide.quiz.rightAnswerNumber = null
+              slide.quiz.answers = []
               questions.map((question, i) => {
                 const nb = i + 1
                 if (
@@ -85,10 +86,12 @@ axios
                   )
                 if (question.includes('disabled checked>'))
                   slide.quiz.rightAnswerNumber = nb
-                slide.quiz[`answer_${nb}`] = question.replace(
-                  // remove tags
-                  /<\/?[^>]+(>|$)/g,
-                  ''
+                slide.quiz.answers.push(
+                  question.replace(
+                    // remove tags
+                    /<\/?[^>]+(>|$)/g,
+                    ''
+                  )
                 )
               })
               slide.quiz.id = `${quest.slug}-${quizNb}`
