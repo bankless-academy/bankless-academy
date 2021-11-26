@@ -115,51 +115,54 @@ const Page = (): JSX.Element => {
               window.location.reload()
             }}
             mb={4}
+            colorScheme="red"
           >
             [DEBUG] reset app state
           </Button>
         </Tooltip>
         <br />
         {CONTENT}
-        <Stack spacing={3} mb={4}>
-          <Text fontSize="2xl" fontWeight="bold">
-            Implemented features
-          </Text>
-          <List spacing={3} fontSize="lg">
-            {DEV_PROGRESS.implemented.map((f, k) => (
-              <ListItem key={k}>
-                <ListIcon as={MdCheckCircle} color="green" />
-                {f}
-              </ListItem>
-            ))}
-          </List>
-        </Stack>
-        <Stack spacing={3} mb={4}>
-          <Text fontSize="2xl" fontWeight="bold">
-            Coming soon™
-          </Text>
-          <List spacing={3} fontSize="lg">
-            {DEV_PROGRESS.comingSoon.map((f, k) => (
-              <ListItem key={k}>
-                <ListIcon as={MdHourglassEmpty} color="orange" />
-                {f}
-              </ListItem>
-            ))}
-          </List>
-        </Stack>
-        <Stack spacing={3} mb={4}>
-          <Text fontSize="2xl" fontWeight="bold">
-            Temporarily disabled
-          </Text>
-          <List spacing={3} fontSize="lg">
-            {DEV_PROGRESS.disabled.map((f, k) => (
-              <ListItem key={k}>
-                <ListIcon as={MdError} color="red" />
-                {f}
-              </ListItem>
-            ))}
-          </List>
-        </Stack>
+        <Box display="none">
+          <Stack spacing={3} mb={4}>
+            <Text fontSize="2xl" fontWeight="bold">
+              Implemented features
+            </Text>
+            <List spacing={3} fontSize="lg">
+              {DEV_PROGRESS.implemented.map((f, k) => (
+                <ListItem key={k}>
+                  <ListIcon as={MdCheckCircle} color="green" />
+                  {f}
+                </ListItem>
+              ))}
+            </List>
+          </Stack>
+          <Stack spacing={3} mb={4}>
+            <Text fontSize="2xl" fontWeight="bold">
+              Coming soon™
+            </Text>
+            <List spacing={3} fontSize="lg">
+              {DEV_PROGRESS.comingSoon.map((f, k) => (
+                <ListItem key={k}>
+                  <ListIcon as={MdHourglassEmpty} color="orange" />
+                  {f}
+                </ListItem>
+              ))}
+            </List>
+          </Stack>
+          <Stack spacing={3} mb={4}>
+            <Text fontSize="2xl" fontWeight="bold">
+              Temporarily disabled
+            </Text>
+            <List spacing={3} fontSize="lg">
+              {DEV_PROGRESS.disabled.map((f, k) => (
+                <ListItem key={k}>
+                  <ListIcon as={MdError} color="red" />
+                  {f}
+                </ListItem>
+              ))}
+            </List>
+          </Stack>
+        </Box>
       </Box>
     </Container>
   )
