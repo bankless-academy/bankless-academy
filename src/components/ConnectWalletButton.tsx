@@ -93,8 +93,10 @@ const ConnectWalletButton = ({
             setPoaps(
               res.data.filter(
                 (poap: PoapType) =>
-                  poap.event.name.toLowerCase().includes('bankless') ||
-                  poap.event.description.toLowerCase().includes('bankless') ||
+                  poap.event.name.toLowerCase().includes('bankless academy') ||
+                  poap.event.description
+                    .toLowerCase()
+                    .includes('bankless academy') ||
                   poap.event.name.toLowerCase().includes('onboard') ||
                   poap.event.description.toLowerCase().includes('onboard')
               )
@@ -126,6 +128,7 @@ const ConnectWalletButton = ({
                 <Button
                   isFullWidth
                   size={isSmallScreen ? 'sm' : 'md'}
+                  leftIcon={<Wallet weight="bold" />}
                   onClick={() => {
                     walletWeb3ReactContext.deactivate()
                     setWalletIsLoading(false)
@@ -138,13 +141,8 @@ const ConnectWalletButton = ({
               {/* TODO: move to dedicated component? */}
               {poaps?.length > 0 && (
                 <>
-                  <Text
-                    fontSize="xl"
-                    fontWeight="bold"
-                    color="red"
-                    textAlign="center"
-                  >
-                    My Bankless POAPs
+                  <Text fontSize="xl" fontWeight="bold" textAlign="center">
+                    My Academy POAPs
                   </Text>
                   <Box
                     maxHeight="320px"
@@ -159,7 +157,7 @@ const ConnectWalletButton = ({
                           justifySelf="center"
                           boxShadow="0px 0px 4px 2px #00000060"
                           borderRadius="3px"
-                          backgroundColor="white"
+                          backgroundColor="blackAlpha.300"
                           p={1}
                         >
                           <Link
