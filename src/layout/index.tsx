@@ -28,6 +28,7 @@ const Layout = ({
       minH="100vh"
       paddingBottom={isSmallScreen ? '64px' : ''}
       bgColor="#010101"
+      bgImage="url(/images/background.svg)"
     >
       {typeof password === 'string' && password.toLowerCase() === 'dao' ? (
         <>
@@ -50,7 +51,7 @@ const Layout = ({
                 <InputLeftAddon>Password: </InputLeftAddon>
                 <Input
                   type="text"
-                  placeholder="🏅 Bankless Academy &gt; 👉academy-start-here"
+                  placeholder="in 👉academy-start-here"
                   value={password}
                   onChange={(e): void => {
                     setPassword(e.target.value)
