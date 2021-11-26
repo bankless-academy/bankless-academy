@@ -10,7 +10,7 @@ const QUESTS: QuestType[] = [
     poapEventId: 6454,
     duration: 15,
     learnings:
-      'Why do you need a wallet?<br>What is a wallet?<br>What are keys?<br>How do I protect your keys?<br>Wallet Security<br>Custodial vs non-custodial wallets',
+      'In this course you will learn the proper definition of a wallet, why you need a wallet, what "keys" are and how to protect them, and the important differences between "custodial" and "non-custodial".',
     difficulty: 'Easy',
     description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
