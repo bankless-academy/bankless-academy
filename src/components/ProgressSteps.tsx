@@ -16,7 +16,7 @@ const ProgressSteps = ({
           key={index}
           w="100%"
           h={isSmallScreen ? 1 : '4px'}
-          m={isSmallScreen ? 0.5 : 2}
+          m={isSmallScreen ? 0.5 : 1}
           borderRadius={2}
           bg={index <= step ? '#916AB8' : '#ffffff22'}
         ></Box>
