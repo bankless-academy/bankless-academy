@@ -58,7 +58,7 @@ const QuestCards: React.FC = () => {
             </Box>
             <Link href={`/quest/${quest.slug}`}>
               <Card cursor="pointer" overflow="hidden">
-                <Image src="/images/course-preview.png" />
+                <Image src={quest.questImageLink} />
               </Card>
             </Link>
             <Text fontSize="md">{ReactHtmlParser(quest.learnings)}</Text>

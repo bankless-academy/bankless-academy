@@ -9,6 +9,7 @@ const POTION_API = 'https://potion.banklessacademy.com'
 
 const KEY_MATCHING = {
   'POAP image link': 'poapImageLink',
+  'Quest image link': 'questImageLink',
   'What will you be able to do after this course?': 'learningActions',
   'Knowledge Requirements': 'knowledgeRequirements',
   'POAP event ID': 'poapEventId',

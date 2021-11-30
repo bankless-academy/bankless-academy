@@ -3,7 +3,9 @@ import { QuestType } from 'entities/quest'
 const QUESTS: QuestType[] = [
   {
     poapImageLink:
-      'https://storage.googleapis.com/poapmedia/bankless-academy-wallet-basic-2021-logo-1630062990990.png',
+      'https://bankless-academy-git-dktheme-banklessdao.vercel.app/images/poap1.png',
+    questImageLink:
+      'https://bankless-academy-git-dktheme-banklessdao.vercel.app/images/banner1.png',
     learningActions:
       'Create and manage your own wallet<br>Connect your wallet to a web3 website',
     knowledgeRequirements: 'No prior knowledge needed.',
@@ -162,15 +164,13 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'LEARN',
-        title:
-          'Types of non-custodial wallets: <span class="tooltip" definition="A type of non-custodial wallet that is perpetually connected to the internet.">hot wallets</span>',
+        title: 'Types of non-custodial wallets: hot wallets',
         content:
-          '<div class="bloc1"><p>There are 2 major types of <span class="tooltip" definition="With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets.">non-custodial wallets</span> : <span class="tooltip" definition="A type of non-custodial wallet that is perpetually connected to the internet.">hot wallets</span> and <span class="tooltip" definition="A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection.">cold wallets</span></p><p>A <span class="tooltip" definition="A type of non-custodial wallet that is perpetually connected to the internet.">hot wallet</span>Perpetually connected to the internet.</p><ul><li>PROS 👍: They are usually free, simple to set up, and easy to use.</li><li>CONS 👎: They are less secure due to internet connection.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6d21b889-010f-4c00-982c-b76eff6f5669%2FHot_Wallet_-_Medium.png?table=block&id=5d6cf632-8807-4023-894a-405baacc3000\'></div>',
+          '<div class="bloc1"><p>There are 2 major types of non-custodial wallets : <span class="tooltip" definition="A type of non-custodial wallet that is perpetually connected to the internet.">hot wallets</span> and <span class="tooltip" definition="A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection.">cold wallets</span></p><p>A <span class="tooltip" definition="A type of non-custodial wallet that is perpetually connected to the internet.">hot wallet</span>Perpetually connected to the internet.</p><ul><li>PROS 👍: They are usually free, simple to set up, and easy to use.</li><li>CONS 👎: They are less secure due to internet connection.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6d21b889-010f-4c00-982c-b76eff6f5669%2FHot_Wallet_-_Medium.png?table=block&id=5d6cf632-8807-4023-894a-405baacc3000\'></div>',
       },
       {
         type: 'LEARN',
-        title:
-          'Types of non-custodial wallets: <span class="tooltip" definition="A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection.">cold wallets</span>',
+        title: 'Types of non-custodial wallets: cold wallets',
         content:
           '<div class="bloc1"><p>A <span class="tooltip" definition="A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection.">cold wallet</span>is <strong>never</strong> connected to the internet.</p><ul><li>PROS 👍: They are more secure.</li><li>CONS 👎: They aren\'t free, sometimes cumbersome to use, and are not ideal for quick transactions.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdb7cdb4f-1eee-4bbf-a78f-66fb32c7bbfa%2FCold_Wallet_-_Medium.png?table=block&id=7b3c4e32-583e-45f2-9af1-7406f8a7b5d9\'></div>',
       },
@@ -211,7 +211,9 @@ const QUESTS: QuestType[] = [
   },
   {
     poapImageLink:
-      'https://storage.googleapis.com/poapmedia/bankless-academy-intro-to-defi-2021-logo-1630063060767.png',
+      'https://bankless-academy-git-dktheme-banklessdao.vercel.app/images/poap2.png',
+    questImageLink:
+      'https://bankless-academy-git-dktheme-banklessdao.vercel.app/images/banner1.png',
     learningActions:
       'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     knowledgeRequirements: 'Wallet Basics: how to manage a web3 wallet',

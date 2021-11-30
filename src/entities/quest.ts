@@ -14,6 +14,7 @@ export interface QuestType {
   duration: number
   difficulty: 'Easy' | 'Advanced' | 'Expert'
   poapImageLink: string
+  questImageLink: string
   learnings: string
   learningActions: string
   knowledgeRequirements: string
