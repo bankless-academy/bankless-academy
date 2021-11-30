@@ -43,7 +43,7 @@ const SwitchNetworkButton = ({
       // MetaMask mobile hack
       setTimeout(() => handleNetworkChange(metamask, setCurrentNetwork), 1000)
     } else {
-      alert('ee')
+      console.error('no ethereum detected')
     }
   }, [window.ethereum])
 
