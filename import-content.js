@@ -40,7 +40,7 @@ axios
                 [KEY_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
                   ? course.fields[k]
                   : // transform to number if the string contains a number
-                    parseInt(course.fields[k]),
+                  parseInt(course.fields[k]),
               }),
             {}
           )
@@ -52,14 +52,14 @@ axios
             .replace(/-+/g, '-') // collapse dashes
           const content = JSON.parse(
             `[` +
-              response.data
-                .replace(/"/g, "'")
-                .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
-                .replace(/\s+/g, ' ') // collapse whitespace
-                .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
-                .replace(/<\/h1>/g, `","content": "`)
-                .substr(3) + // remove extra "}, at the beginning
-              `"}]`
+            response.data
+              .replace(/"/g, "'")
+              .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
+              .replace(/\s+/g, ' ') // collapse whitespace
+              .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
+              .replace(/<\/h1>/g, `","content": "`)
+              .substr(3) + // remove extra "}, at the beginning
+            `"}]`
           )
           let quizNb = 0
           const slides = content.map((slide) => {
@@ -109,9 +109,8 @@ axios
                 // content contains an iframe
                 const [bloc1, bloc2] = slide.content.split('<iframe ')
                 if (bloc2 !== '')
-                  slide.content = `${
-                    bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''
-                  }<div class="bloc2"><iframe allowfullscreen ${bloc2}</div>`
+                  slide.content = `${bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''
+                    }<div class="bloc2"><iframe allowfullscreen ${bloc2.replace(/feature=oembed/g, 'feature=oembed&rel=0')}</div>`
               } else {
                 // text only
                 slide.content = `<div class="bloc1">${slide.content}</div>`

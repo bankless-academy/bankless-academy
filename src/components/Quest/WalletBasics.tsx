@@ -28,7 +28,7 @@ const WalletBasics = (): {
           </p>
         </div>
         <iframe
-          src="https://www.youtube.com/embed/yr-SmVQAiTM"
+          src="https://www.youtube.com/embed/yr-SmVQAiTM?rel=0"
           allowFullScreen
         ></iframe>
         <Button

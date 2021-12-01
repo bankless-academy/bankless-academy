@@ -23,7 +23,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'Crypto Wallet Basics',
         content:
-          '<div class="bloc2"><iframe allowfullscreen src=\'https://www.youtube.com/embed/AexoxTZEtOY?feature=oembed\'></iframe></div>',
+          '<div class="bloc2"><iframe allowfullscreen src=\'https://www.youtube.com/embed/AexoxTZEtOY?feature=oembed&rel=0\'></iframe></div>',
       },
       {
         type: 'LEARN',
