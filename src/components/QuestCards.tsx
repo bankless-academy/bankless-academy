@@ -9,7 +9,14 @@ import ReactHtmlParser from 'react-html-parser'
 import QUESTS from 'constants/quests'
 import Card from 'components/Card'
 
-const QuestCard = styled(Box)``
+const QuestCard = styled(Box)`
+  background: linear-gradient(
+    152.97deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(38, 38, 38, 0.25) 100%
+  );
+  backdrop-filter: blur(42px);
+`
 
 const QuestCards: React.FC = () => {
   const [numberOfPoapClaimed, setNumberOfPoapClaimed] = useState([])
@@ -44,7 +51,7 @@ const QuestCards: React.FC = () => {
         // const numberOfSlides = quest.slides.length
         const isPoapClaimed = localStorage.getItem(`poap-${quest.slug}`)
         return (
-          <QuestCard key={`quest-${index}`}>
+          <QuestCard key={`quest-${index}`} p={4}>
             <Text fontSize="xl">{quest.name}</Text>
             <Text fontSize="lg">{quest.description}</Text>
             <Box display="flex" justifyContent="space-between" my="4">
@@ -63,7 +70,9 @@ const QuestCards: React.FC = () => {
                 <Image src={quest.questImageLink} />
               </Card>
             </Link>
-            <Text fontSize="md">{ReactHtmlParser(quest.learnings)}</Text>
+            <Text fontSize="md" mt="4">
+              {ReactHtmlParser(quest.learnings)}
+            </Text>
           </QuestCard>
         )
       })}
