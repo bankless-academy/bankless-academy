@@ -26,9 +26,10 @@ export default {
             padding: '1px',
             '-webkit-mask':
               'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-            '-webkit-mask-composite': 'destination-out',
+            '-webkit-mask-composite': 'source-out',
             'mask-composite': 'exclude',
           },
+          position: 'relative',
           color: '#B06FD8',
           backdropFilter: 'blur(42px)',
           boxShadow: 'none',
