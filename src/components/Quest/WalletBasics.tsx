@@ -23,7 +23,7 @@ const WalletBasics = (): {
             https://metamask.io/download
           </a>
         </p>
-        <iframe src="https://www.youtube.com/embed/pGO8WhDZlMo"></iframe>
+        <iframe src="https://www.youtube.com/embed/yr-SmVQAiTM"></iframe>
         {account ? (
           <h2>Congrats for connecting your wallet! 👏🙂</h2>
         ) : (
