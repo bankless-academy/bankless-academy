@@ -50,54 +50,55 @@ const SwitchNetworkButton = ({
   return (
     <div>
       <Menu>
-        <MenuButton
-          as={Button}
-          colorScheme="blackAlpha"
-          size={isSmallScreen ? 'sm' : 'md'}
-        >
-          <Box display="flex" alignItems="center">
-            <Image src={currentNetwork.image} height={22} mr="12px" />
-            <Box flex="1" isTruncated>
-              {currentNetwork.name}
-            </Box>
-            {isSmallScreen ? (
-              <ChevronUpIcon ml="1" />
-            ) : (
-              <ChevronDownIcon ml="1" />
-            )}
-          </Box>
-        </MenuButton>
-        <MenuList>
-          <Text ml="4" mb="2" color="gray.500">
-            Select a network
-          </Text>
-          {Object.keys(networks).map((network, index) => (
-            <MenuItem
-              key={index}
-              minH="40px"
-              onClick={() => handleChange(network)}
-              backgroundColor={
-                currentNetwork.chainId === networks[network].chainId
-                  ? 'blackAlpha.300'
-                  : 'default'
-              }
+        {({ isOpen }) => (
+          <>
+            <MenuButton
+              isActive={isOpen}
+              as={Button}
+              variant="primary"
+              size={isSmallScreen ? 'sm' : 'md'}
             >
-              <Image
-                height={25}
-                rounded="full"
-                src={networks[network].image}
-                alt={networks[network].name}
-                mr="12px"
-              />
-              <Box flex="1" isTruncated>
-                {networks[network].name}
+              <Box display="flex" alignItems="center">
+                <Image src={currentNetwork.image} height={22} mr="12px" />
+                <Box flex="1" isTruncated>
+                  {currentNetwork.name}
+                </Box>
+                {isOpen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
               </Box>
-              {currentNetwork.chainId === networks[network].chainId && (
-                <CircleIcon />
-              )}
-            </MenuItem>
-          ))}
-        </MenuList>
+            </MenuButton>
+            <MenuList>
+              <Text ml="4" mb="2" color="gray.500">
+                Select a network
+              </Text>
+              {Object.keys(networks).map((network, index) => (
+                <MenuItem
+                  key={index}
+                  minH="40px"
+                  onClick={() => handleChange(network)}
+                  backgroundColor={
+                    currentNetwork.chainId === networks[network].chainId
+                      ? 'blackAlpha.300'
+                      : 'default'
+                  }
+                >
+                  <Image
+                    height={25}
+                    rounded="full"
+                    src={networks[network].image}
+                    alt={networks[network].name}
+                    mr="12px"
+                  />
+                  <Box flex="1" isTruncated>
+                    {networks[network].name}
+                  </Box>
+                  {currentNetwork.chainId === networks[network].chainId && (
+                    <CircleIcon />
+                  )}
+                </MenuItem>
+              ))}
+            </MenuList>
+          </>
+        )}
       </Menu>
     </div>
   )

@@ -14,12 +14,12 @@ import {
   Image,
   Link,
 } from '@chakra-ui/react'
+import { Wallet } from 'phosphor-react'
 import axios from 'axios'
 
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
-import { walletConnect, injected, trimCurrencyForWhales } from 'utils'
-import { useTokenBalance } from 'hooks/token/useTokenBalance'
+import { walletConnect, injected } from 'utils'
 import { INFURA_ID } from 'constants/'
 import { PoapType } from 'entities/poap'
 
@@ -44,6 +44,13 @@ const ConnectWalletButton = ({
       if (!web3Modal) {
         web3Modal = new Web3Modal({
           cacheProvider: false,
+          theme: {
+            background: '#010101',
+            main: 'white',
+            secondary: 'white',
+            border: '#252525',
+            hover: '#363636',
+          },
           providerOptions: {
             walletconnect: {
               package: WalletConnectProvider,
@@ -93,8 +100,10 @@ const ConnectWalletButton = ({
             setPoaps(
               res.data.filter(
                 (poap: PoapType) =>
-                  poap.event.name.toLowerCase().includes('bankless') ||
-                  poap.event.description.toLowerCase().includes('bankless') ||
+                  poap.event.name.toLowerCase().includes('bankless academy') ||
+                  poap.event.description
+                    .toLowerCase()
+                    .includes('bankless academy') ||
                   poap.event.name.toLowerCase().includes('onboard') ||
                   poap.event.description.toLowerCase().includes('onboard')
               )
@@ -104,26 +113,19 @@ const ConnectWalletButton = ({
     }
   }, [walletAddress])
 
-  const rawBalance = useTokenBalance(walletWeb3ReactContext.account) ?? 0
-  const balance = trimCurrencyForWhales(rawBalance)
-
   return (
     <>
       {isConnected ? (
         <Popover trigger={isSmallScreen ? 'click' : 'hover'}>
           <PopoverTrigger>
             <Button
-              variant="outline"
-              paddingRight="1"
-              paddingLeft="4"
+              variant="secondary"
               size={isSmallScreen ? 'sm' : 'md'}
+              leftIcon={<Wallet weight="bold" />}
             >
-              {balance} BANK
-              <Button size={isSmallScreen ? 'xs' : 'sm'} marginLeft="2">
-                <Text maxW="200px" isTruncated>
-                  <ENSName provider={web3Provider} address={walletAddress} />
-                </Text>
-              </Button>
+              <Text maxW="200px" isTruncated>
+                <ENSName provider={web3Provider} address={walletAddress} />
+              </Text>
             </Button>
           </PopoverTrigger>
           <PopoverContent>
@@ -133,6 +135,7 @@ const ConnectWalletButton = ({
                 <Button
                   isFullWidth
                   size={isSmallScreen ? 'sm' : 'md'}
+                  leftIcon={<Wallet weight="bold" />}
                   onClick={() => {
                     walletWeb3ReactContext.deactivate()
                     setWalletIsLoading(false)
@@ -145,13 +148,8 @@ const ConnectWalletButton = ({
               {/* TODO: move to dedicated component? */}
               {poaps?.length > 0 && (
                 <>
-                  <Text
-                    fontSize="xl"
-                    fontWeight="bold"
-                    color="red"
-                    textAlign="center"
-                  >
-                    My Bankless POAPs
+                  <Text fontSize="xl" fontWeight="bold" textAlign="center">
+                    My Academy POAPs
                   </Text>
                   <Box
                     maxHeight="320px"
@@ -166,7 +164,7 @@ const ConnectWalletButton = ({
                           justifySelf="center"
                           boxShadow="0px 0px 4px 2px #00000060"
                           borderRadius="3px"
-                          backgroundColor="white"
+                          backgroundColor="blackAlpha.300"
                           p={1}
                         >
                           <Link
@@ -195,6 +193,7 @@ const ConnectWalletButton = ({
             setConnectClick(true)
           }}
           size={isSmallScreen ? 'sm' : 'md'}
+          leftIcon={<Wallet weight="bold" />}
           isLoading={walletIsLoading}
           loadingText="Connecting wallet"
         >

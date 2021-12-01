@@ -3,6 +3,8 @@ export type QuestComponentType =
   | 'BorrowWithAave'
   | 'IntroToDeFi'
 
+export type SlideType = 'LEARN' | 'QUIZ' | 'QUEST' | 'POAP'
+
 export interface QuestType {
   name: string
   slug: string
@@ -12,19 +14,17 @@ export interface QuestType {
   duration: number
   difficulty: 'Easy' | 'Advanced' | 'Expert'
   poapImageLink: string
+  questImageLink: string
   learnings: string
   learningActions: string
   knowledgeRequirements: string
   slides: {
-    type: 'LEARN' | 'QUIZ' | 'QUEST' | 'POAP'
+    type: SlideType
     title: string
     content?: string
     quiz?: {
       id: string
-      answer_1: string
-      answer_2: string
-      answer_3?: string
-      answer_4?: string
+      answers: string[]
       rightAnswerNumber: number
     }
     component?: QuestComponentType

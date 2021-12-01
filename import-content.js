@@ -4,11 +4,12 @@ const fs = require('fs')
 const stringifyObject = require('stringify-object')
 const keywords = require('./keywords.json')
 
-const DEFAULT_NOTION_ID = '1813af42f771491b8d9af966d9d433fe'
-const POTION_API = 'https://potion-api.vercel.app'
+const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
+const POTION_API = 'https://potion.banklessacademy.com'
 
 const KEY_MATCHING = {
   'POAP image link': 'poapImageLink',
+  'Quest image link': 'questImageLink',
   'What will you be able to do after this course?': 'learningActions',
   'Knowledge Requirements': 'knowledgeRequirements',
   'POAP event ID': 'poapEventId',
@@ -73,6 +74,7 @@ axios
               delete slide.content
               slide.quiz = {}
               slide.quiz.rightAnswerNumber = null
+              slide.quiz.answers = []
               questions.map((question, i) => {
                 const nb = i + 1
                 if (
@@ -85,10 +87,12 @@ axios
                   )
                 if (question.includes('disabled checked>'))
                   slide.quiz.rightAnswerNumber = nb
-                slide.quiz[`answer_${nb}`] = question.replace(
-                  // remove tags
-                  /<\/?[^>]+(>|$)/g,
-                  ''
+                slide.quiz.answers.push(
+                  question.replace(
+                    // remove tags
+                    /<\/?[^>]+(>|$)/g,
+                    ''
+                  )
                 )
               })
               slide.quiz.id = `${quest.slug}-${quizNb}`
@@ -96,6 +100,22 @@ axios
             // TODO: move this logic to the frontend?
             // replace keywords in content
             if (slide.content) {
+              if (slide.content.includes('<img ')) {
+                // content contains an image
+                const [bloc1, bloc2] = slide.content.split('<img ')
+                if (bloc1 !== '' && bloc2 !== '')
+                  slide.content = `<div class="bloc1">${bloc1}</div><div class="bloc2"><img ${bloc2}</div>`
+              } else if (slide.content.includes('<iframe ')) {
+                // content contains an iframe
+                const [bloc1, bloc2] = slide.content.split('<iframe ')
+                if (bloc2 !== '')
+                  slide.content = `${
+                    bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''
+                  }<div class="bloc2"><iframe allowfullscreen ${bloc2}</div>`
+              } else {
+                // text only
+                slide.content = `<div class="bloc1">${slide.content}</div>`
+              }
               const content = slide.content.toLowerCase()
               for (const word in keywords) {
                 const search = '<code>' + word.toLowerCase() + '</code>'
@@ -103,7 +123,7 @@ axios
                   console.log('word found: ', word)
                   slide.content = slide.content.replace(
                     new RegExp(search, 'gi'),
-                    `<span class="tooltip" definition="${keywords[word].definition}" style="color:${keywords[word].color}">$&</span>`
+                    `<span class="tooltip" definition="${keywords[word].definition}">$&</span>`
                   )
                 }
               }
@@ -120,7 +140,7 @@ axios
                   console.log('word found in title: ', word)
                   slide.title = slide.title.replace(
                     new RegExp(search, 'gi'),
-                    `<span class="tooltip" definition="${keywords[word].definition}" style="color:${keywords[word].color}">$&</span>`
+                    `<span class="tooltip" definition="${keywords[word].definition}">$&</span>`
                   )
                 }
               }

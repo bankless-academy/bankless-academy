@@ -3,7 +3,7 @@ const axios = require('axios')
 const FileSystem = require('fs')
 
 const DEFAULT_NOTION_ID = '623e965e4f10456094d17aa94ec37105'
-const POTION_API = 'https://potion-api.vercel.app'
+const POTION_API = 'https://potion.banklessacademy.com'
 
 const args = process.argv
 const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : DEFAULT_NOTION_ID

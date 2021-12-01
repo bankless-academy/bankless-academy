@@ -1,80 +1,25 @@
-import React, { useEffect, useState, useRef, createRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import {
-  useColorMode,
-  Box,
-  Center,
-  Divider,
-  Text,
-  Button,
-  Stack,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-} from '@chakra-ui/react'
+import { Box, Text, Tag, Image, TagRightIcon } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import axios from 'axios'
+import { CircleWavyCheck } from 'phosphor-react'
 import ReactHtmlParser from 'react-html-parser'
-import { Player } from '@lottiefiles/react-lottie-player'
 
 import QUESTS from 'constants/quests'
-import CircularProgressSteps from 'components/CircularProgressSteps'
+import Card from 'components/Card'
 
 const QuestCard = styled(Box)`
-  border-radius: 0.5rem;
+  background: linear-gradient(
+    152.97deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(38, 38, 38, 0.25) 100%
+  );
+  backdrop-filter: blur(42px);
 `
-
-const Duration = styled(Button)`
-  position: absolute;
-  top: 12px;
-  left: 12px;
-`
-
-const Difficulty = styled(Button)`
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-`
-
-const Claimed = styled(Button)`
-  position: absolute;
-  top: 12px;
-  right: 12px;
-`
-
-const DIFFICULTY_COLORS: {
-  Easy: string
-  Advanced: string
-  Expert: string
-} = {
-  Easy: 'green',
-  Advanced: 'orange',
-  Expert: 'red',
-}
 
 const QuestCards: React.FC = () => {
-  const { colorMode } = useColorMode()
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const startNowRef = useRef(null)
-  const [selectedQuest, setSelectedQuest] = useState(null)
-  const [playerRefs, setPlayerRefs] = useState([])
   const [numberOfPoapClaimed, setNumberOfPoapClaimed] = useState([])
-
-  const isSelectedQuestStarted = parseInt(
-    localStorage.getItem(QUESTS[selectedQuest]?.slug) || '-1'
-  )
-  const arrLength = QUESTS.length
-  useEffect(() => {
-    setPlayerRefs((playerRefs) =>
-      Array(arrLength)
-        .fill('')
-        .map((_, i) => playerRefs[i] || createRef())
-    )
-  }, [arrLength])
 
   useEffect((): void => {
     // TODO: replace with tokensQuantityByEventId https://github.com/poap-xyz/poap-webapp/blob/2def482ffec93e6cbc4e3c5e5a18000805cc6c2b/src/api.ts#L1235
@@ -102,121 +47,35 @@ const QuestCards: React.FC = () => {
     <>
       {QUESTS.map((quest, index) => {
         // quest not started yet: -1
-        const currentSlide = parseInt(localStorage.getItem(quest.slug) || '-1')
-        const numberOfSlides = quest.slides.length
+        // const currentSlide = parseInt(localStorage.getItem(quest.slug) || '-1')
+        // const numberOfSlides = quest.slides.length
         const isPoapClaimed = localStorage.getItem(`poap-${quest.slug}`)
         return (
-          <QuestCard
-            bg={colorMode === 'dark' ? 'whiteAlpha.400' : 'blackAlpha.400'}
-            cursor="pointer"
-            key={`quest-${index}`}
-            overflow="hidden"
-            onClick={() => {
-              setSelectedQuest(index)
-              onOpen()
-            }}
-            onMouseOver={() => {
-              playerRefs[index]?.current.play()
-            }}
-            onMouseLeave={() => {
-              playerRefs[index]?.current.stop()
-              playerRefs[index]?.current.setSeeker(0)
-            }}
-            onTouchStart={() => {
-              playerRefs[index]?.current.play()
-            }}
-            onTouchEnd={() => {
-              playerRefs[index]?.current.stop()
-              playerRefs[index]?.current.setSeeker(0)
-            }}
-          >
-            <Center minH="325px" position="relative">
-              <CircularProgressSteps
-                step={currentSlide}
-                total={numberOfSlides}
-              />
-              <Box opacity={isPoapClaimed ? 1 : 0.7}>
-                <Player
-                  autoplay={false}
-                  ref={playerRefs[index]}
-                  loop={false}
-                  keepLastFrame={true}
-                  controls={false}
-                  src={`/lotties/${quest.poapEventId}.json`}
-                  style={{ height: '235px', width: '235px' }}
-                />
-              </Box>
-              <Duration colorScheme="gray" borderRadius="full" size="xs">
-                🕒 {quest.duration} min
-              </Duration>
-              <Difficulty
-                colorScheme={DIFFICULTY_COLORS[quest.difficulty]}
-                borderRadius="full"
-                size="xs"
-              >
-                {quest.difficulty === 'Easy' && '🙂 Easy'}
-                {quest.difficulty === 'Advanced' && '🤓 Advanced'}
-                {quest.difficulty === 'Expert' && '🛠 Expert'}
-              </Difficulty>
-              <Claimed colorScheme="gray" borderRadius="full" size="xs">
-                🎖 {numberOfPoapClaimed[index]} Claimed
-              </Claimed>
-            </Center>
-            <Divider />
-            <Stack minH="100px" p="4">
-              <Text fontSize="2xl" fontWeight="bold">
-                {quest.name}
+          <QuestCard key={`quest-${index}`} p={4}>
+            <Text fontSize="xl">{quest.name}</Text>
+            <Text fontSize="lg">{quest.description}</Text>
+            <Box display="flex" justifyContent="space-between" my="4">
+              <Tag size="sm" variant={isPoapClaimed ? 'solid' : 'outline'}>
+                {isPoapClaimed ? 'Done' : `${quest.duration} minutes`}
+                {isPoapClaimed ? (
+                  <TagRightIcon as={CircleWavyCheck} weight="bold" />
+                ) : null}
+              </Tag>
+              <Text fontSize="sm">
+                {numberOfPoapClaimed[index]} Completions
               </Text>
-              <Text fontSize="xl">{quest.description}</Text>
-            </Stack>
+            </Box>
+            <Link href={`/quest/${quest.slug}`}>
+              <Card cursor="pointer" overflow="hidden">
+                <Image src={quest.questImageLink} />
+              </Card>
+            </Link>
+            <Text fontSize="md" mt="4">
+              {ReactHtmlParser(quest.learnings)}
+            </Text>
           </QuestCard>
         )
       })}
-      <Modal
-        initialFocusRef={startNowRef}
-        isOpen={isOpen}
-        onClose={onClose}
-        isCentered
-      >
-        <ModalOverlay />
-        {selectedQuest !== null && (
-          <ModalContent>
-            <ModalHeader>
-              <Text fontSize="2xl">{QUESTS[selectedQuest].name}</Text>
-            </ModalHeader>
-            <ModalCloseButton />
-            <ModalBody fontWeight="bold">
-              <Text fontSize="xl" mb="4">
-                📚 Knowledge requirement?
-              </Text>
-              <Text fontSize="l" mb="4" color="gray.500">
-                {ReactHtmlParser(QUESTS[selectedQuest].knowledgeRequirements)}
-              </Text>
-              <Text fontSize="xl" mb="4">
-                📖 What will you learn from this?
-              </Text>
-              <Text fontSize="l" mb="4" color="gray.500">
-                {ReactHtmlParser(QUESTS[selectedQuest].learnings)}
-              </Text>
-              <Text fontSize="xl" mb="4">
-                🤓 What will you be able to do by the end of this course?
-              </Text>
-              <Text fontSize="l" mb="4" color="gray.500">
-                {ReactHtmlParser(QUESTS[selectedQuest].learningActions)}
-              </Text>
-              <Box textAlign="center" m="6">
-                <Link href={`/quest/${QUESTS[selectedQuest].slug}`}>
-                  <Button ref={startNowRef}>
-                    {isSelectedQuestStarted !== -1
-                      ? 'Continue quest'
-                      : 'Start quest'}
-                  </Button>
-                </Link>
-              </Box>
-            </ModalBody>
-          </ModalContent>
-        )}
-      </Modal>
     </>
   )
 }

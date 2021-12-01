@@ -46,8 +46,8 @@ const CONTENT = (
       height="auto"
       p="4"
     >
-      🆕 [version 0.5] Wallet Basics (improved) + Intro to DeFi (improved)
-      {/* 🆕 [version 0.6] 👷 current work in progress version */}
+      {/* 🆕 [version 0.5] Wallet Basics (improved) + Intro to DeFi (improved) */}
+      🆕 [version 0.6] 👷 current work in progress version
     </Button>
   </Link>
 )
@@ -91,7 +91,7 @@ const DEV_PROGRESS = {
 const Page = (): JSX.Element => {
   const hostname = window.location.hostname
   return (
-    <Container maxW="container.lg">
+    <Container maxW="container.xl">
       {isMobile && (
         <Box pb={4}>
           ⛔️ on mobile, make sure to open this website directly inside&nbsp;
@@ -100,7 +100,7 @@ const Page = (): JSX.Element => {
           </Link>
         </Box>
       )}
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={12}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={12} mt={8}>
         <QuestCards />
       </SimpleGrid>
       <Box mt={8}>
@@ -115,51 +115,54 @@ const Page = (): JSX.Element => {
               window.location.reload()
             }}
             mb={4}
+            colorScheme="red"
           >
             [DEBUG] reset app state
           </Button>
         </Tooltip>
         <br />
         {CONTENT}
-        <Stack spacing={3} mb={4}>
-          <Text fontSize="2xl" fontWeight="bold">
-            Implemented features
-          </Text>
-          <List spacing={3} fontSize="lg">
-            {DEV_PROGRESS.implemented.map((f, k) => (
-              <ListItem key={k}>
-                <ListIcon as={MdCheckCircle} color="green" />
-                {f}
-              </ListItem>
-            ))}
-          </List>
-        </Stack>
-        <Stack spacing={3} mb={4}>
-          <Text fontSize="2xl" fontWeight="bold">
-            Coming soon™
-          </Text>
-          <List spacing={3} fontSize="lg">
-            {DEV_PROGRESS.comingSoon.map((f, k) => (
-              <ListItem key={k}>
-                <ListIcon as={MdHourglassEmpty} color="orange" />
-                {f}
-              </ListItem>
-            ))}
-          </List>
-        </Stack>
-        <Stack spacing={3} mb={4}>
-          <Text fontSize="2xl" fontWeight="bold">
-            Temporarily disabled
-          </Text>
-          <List spacing={3} fontSize="lg">
-            {DEV_PROGRESS.disabled.map((f, k) => (
-              <ListItem key={k}>
-                <ListIcon as={MdError} color="red" />
-                {f}
-              </ListItem>
-            ))}
-          </List>
-        </Stack>
+        <Box display="none">
+          <Stack spacing={3} mb={4}>
+            <Text fontSize="2xl" fontWeight="bold">
+              Implemented features
+            </Text>
+            <List spacing={3} fontSize="lg">
+              {DEV_PROGRESS.implemented.map((f, k) => (
+                <ListItem key={k}>
+                  <ListIcon as={MdCheckCircle} color="green" />
+                  {f}
+                </ListItem>
+              ))}
+            </List>
+          </Stack>
+          <Stack spacing={3} mb={4}>
+            <Text fontSize="2xl" fontWeight="bold">
+              Coming soon™
+            </Text>
+            <List spacing={3} fontSize="lg">
+              {DEV_PROGRESS.comingSoon.map((f, k) => (
+                <ListItem key={k}>
+                  <ListIcon as={MdHourglassEmpty} color="orange" />
+                  {f}
+                </ListItem>
+              ))}
+            </List>
+          </Stack>
+          <Stack spacing={3} mb={4}>
+            <Text fontSize="2xl" fontWeight="bold">
+              Temporarily disabled
+            </Text>
+            <List spacing={3} fontSize="lg">
+              {DEV_PROGRESS.disabled.map((f, k) => (
+                <ListItem key={k}>
+                  <ListIcon as={MdError} color="red" />
+                  {f}
+                </ListItem>
+              ))}
+            </List>
+          </Stack>
+        </Box>
       </Box>
     </Container>
   )

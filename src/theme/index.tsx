@@ -2,15 +2,15 @@ import React from 'react'
 import {
   ChakraProvider,
   extendTheme,
-  withDefaultColorScheme,
+  // withDefaultColorScheme,
   localStorageManager,
 } from '@chakra-ui/react'
 
 import core from 'theme/core'
 import components from 'theme/components'
 
-// TODO LATER: uncomment force light mode
-localStorageManager.set('light')
+// TODO LATER: uncomment force dark mode
+localStorageManager.set('dark')
 
 export const theme = extendTheme(
   {
@@ -32,8 +32,8 @@ export const theme = extendTheme(
       // TODO LATER: uncomment
       // useSystemColorMode: localStorageManager.get() ? false : true,
     },
-  },
-  withDefaultColorScheme({ colorScheme: 'red' })
+  }
+  // withDefaultColorScheme({ colorScheme: 'red' })
 )
 
 interface ThemeProviderProps {

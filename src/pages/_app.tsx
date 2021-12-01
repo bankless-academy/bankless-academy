@@ -3,6 +3,7 @@ import { Web3ReactProvider } from '@web3-react/core'
 import { ethers } from 'ethers'
 import 'swiper/swiper-bundle.min.css'
 import Head from 'next/head'
+import { Global, css } from '@emotion/react'
 import { hotjar } from 'react-hotjar'
 
 import dynamic from 'next/dynamic'
@@ -43,6 +44,23 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
       <ThemeProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
           <Web3ReactProviderDefault getLibrary={getLibrary}>
+            <Global
+              styles={css`
+                .web3modal-modal-lightbox {
+                  background: linear-gradient(
+                    152.97deg,
+                    rgba(0, 0, 0, 0.45) 0%,
+                    rgba(38, 38, 38, 0.25) 100%
+                  );
+                  backdrop-filter: blur(42px);
+                }
+                .web3modal-modal-card {
+                  border: 1px solid #646587 !important;
+                  box-shadow: 0px 0px 50px 0px rgba(123, 0, 255, 0.25) !important;
+                  backdrop-filter: blur(42px) !important;
+                }
+              `}
+            />
             <Layout pageMeta={pageProps.pageMeta}>
               <Component {...pageProps} />
             </Layout>

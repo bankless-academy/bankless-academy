@@ -12,7 +12,6 @@ import {
 import Head from 'components/Head'
 import { PageMetaProps } from 'components/Head'
 import Nav from 'layout/Nav'
-import PageBackground from 'layout/PageBackground'
 
 const Layout = ({
   pageMeta,
@@ -25,7 +24,13 @@ const Layout = ({
   const [password, setPassword] = useState(localStorage.getItem(`password`))
 
   return (
-    <PageBackground minH="100vh" paddingBottom={isSmallScreen ? '64px' : ''}>
+    <Box
+      minH="100vh"
+      paddingBottom={isSmallScreen ? '64px' : ''}
+      bgColor="#010101"
+      bgImage="url(/images/background.svg)"
+      backgroundSize="cover"
+    >
       {typeof password === 'string' && password.toLowerCase() === 'dao' ? (
         <>
           <Head {...pageMeta} />
@@ -35,11 +40,10 @@ const Layout = ({
         </>
       ) : (
         <>
-          <Center bg="tomato" h="100vh">
+          <Center bgGradient="linear(to-l, #2f1e3a, #1c2444)" h="100vh">
             <Box
               borderWidth="1px"
               borderRadius="12px"
-              bg="white"
               maxWidth="600px"
               width="100%"
               p="20px"
@@ -48,7 +52,7 @@ const Layout = ({
                 <InputLeftAddon>Password: </InputLeftAddon>
                 <Input
                   type="text"
-                  placeholder="🏅 Bankless Academy &gt; 👉academy-start-here"
+                  placeholder="in 👉academy-start-here"
                   value={password}
                   onChange={(e): void => {
                     setPassword(e.target.value)
@@ -60,7 +64,7 @@ const Layout = ({
           </Center>
         </>
       )}
-    </PageBackground>
+    </Box>
   )
 }
 
