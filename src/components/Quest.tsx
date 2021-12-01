@@ -110,13 +110,17 @@ const QuizAnswer = styled(Button)<{
   answerState: AnswerStateType
   isActive: boolean
 }>`
-  ${(props) => !props.isActive && 'cursor: default;'};
+  ${(props) => props.isActive && 'cursor: default;'};
+  ${(props) =>
+    props.answerState === 'UNSELECTED' &&
+    props.isActive &&
+    'background: #010101 !important;'}
   ${(props) =>
     props.answerState === 'CORRECT' &&
-    'background: linear-gradient(95.83deg, #44A991 -9.2%, rgba(68, 169, 145, 0.7) 97.91%)!important;'}
+    'background: linear-gradient(95.83deg, #44A991 -9.2%, rgba(68, 169, 145, 0.7) 97.91%) !important;'}
   ${(props) =>
     props.answerState === 'WRONG' &&
-    'background: linear-gradient(91.91deg, #A94462 49%, rgba(169, 68, 98, 0.7) 124.09%)!important;'}
+    'background: linear-gradient(91.91deg, #A94462 49%, rgba(169, 68, 98, 0.7) 124.09%) !important;'}
 `
 
 const SlideNav = styled(Box)<{ isSmallScreen?: boolean }>`
@@ -286,13 +290,18 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           {ReactHtmlParser(slide.title)}
         </Text>
         <ProgressSteps step={currentSlide} total={numberOfSlides} />
-        <Box className="content" minH="500px" pb={isSmallScreen ? '6' : 0}>
+        <Box
+          className="content"
+          minH="500px"
+          pb={isSmallScreen ? '6' : 0}
+          pt={4}
+        >
           {slide.type === 'LEARN' && (
             <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
           )}
           {slide.type === 'QUIZ' && (
             <>
-              <Answers mt="40px">
+              <Answers mt={4}>
                 <ButtonGroup size="lg" w="100%">
                   <SimpleGrid
                     columns={[null, null, 1]}
@@ -317,6 +326,10 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                             maxW="500px"
                             p="4"
                             h="auto"
+                            border={
+                              answerState === 'UNSELECTED' &&
+                              '1px solid #646587'
+                            }
                             whiteSpace="break-spaces"
                             onClick={(e) => selectAnswer(e, n)}
                             answerState={answerState}
@@ -330,7 +343,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                                 )
                               )
                             }
-                            isActive={!answerIsCorrect}
+                            isActive={answerIsCorrect}
                           >
                             {slide.quiz.answers[n - 1]}
                           </QuizAnswer>
