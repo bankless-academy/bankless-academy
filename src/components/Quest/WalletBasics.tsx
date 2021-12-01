@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button, Spinner } from '@chakra-ui/react'
+import { Checks } from 'phosphor-react'
 import { useActiveWeb3React } from 'hooks'
 
 const WalletBasics = (): {
@@ -11,27 +13,33 @@ const WalletBasics = (): {
     isQuestCompleted: !!account,
     questComponent: (
       <>
-        <h2>How to setup a MetaMask wallet</h2>
-        <p>
-          For convenience and ease of access throughout this course, you will
-          need a MetaMask wallet. Next we will demonstrate how to set up a
-          MetaMask wallet.
-        </p>
-        <p>
-          Download the browser extension from the official website:
-          <a href="https://metamask.io/download">
-            https://metamask.io/download
-          </a>
-        </p>
+        <div>
+          <h2>How to setup a MetaMask wallet</h2>
+          <p>
+            For convenience and ease of access throughout this course, you will
+            need a MetaMask wallet. Next we will demonstrate how to set up a
+            MetaMask wallet.
+          </p>
+          <p>
+            Download the browser extension from the official website:&nbsp;
+            <a href="https://metamask.io/download">
+              https://metamask.io/download
+            </a>
+          </p>
+        </div>
         <iframe
           src="https://www.youtube.com/embed/yr-SmVQAiTM"
           allowFullScreen
         ></iframe>
-        {account ? (
-          <h2>Congrats for connecting your wallet! 👏🙂</h2>
-        ) : (
-          <h2>Waiting for you to connect your wallet ...</h2>
-        )}
+        <Button
+          variant="outlined"
+          leftIcon={account ? <Checks /> : <Spinner speed="1s" />}
+          color={account ? 'rgb(68, 169, 145)' : 'orange'}
+        >
+          {account
+            ? 'Congrats for connecting your wallet! 👏🙂'
+            : 'Waiting for you to connect your wallet'}
+        </Button>
       </>
     ),
   }
