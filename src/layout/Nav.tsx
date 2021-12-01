@@ -30,7 +30,11 @@ const Nav: React.FC = () => {
                 variant="unstyled"
                 size={isSmallScreen ? 'sm' : 'md'}
                 leftIcon={
-                  <img width="32px" src="/favicon.png" alt="Bankless Academy" />
+                  <img
+                    width="32px"
+                    src="/Bankless-Academy-logo.png"
+                    alt="Bankless Academy"
+                  />
                 }
                 display="flex"
                 fontSize="xl"
@@ -41,7 +45,6 @@ const Nav: React.FC = () => {
           </HStack>
           <Spacer />
           <HStack
-            zIndex="toast"
             spacing={4}
             isSmallScreen={isSmallScreen}
             justifyContent="space-between"
