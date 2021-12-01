@@ -34,7 +34,7 @@ const Page = (): JSX.Element => {
   }
 
   return (
-    <Container maxW="container.lg">
+    <Container maxW="container.xl">
       <Head {...pageMeta} />
       <Quest quest={currentQuest} />
     </Container>

@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Feedback = (): JSX.Element => {
   return (
-    <Container maxW="container.lg">
+    <Container maxW="container.xl">
       <Box
         w="100%"
         height="2300px"

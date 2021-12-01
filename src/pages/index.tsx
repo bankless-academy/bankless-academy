@@ -91,7 +91,7 @@ const DEV_PROGRESS = {
 const Page = (): JSX.Element => {
   const hostname = window.location.hostname
   return (
-    <Container maxW="container.lg">
+    <Container maxW="container.xl">
       {isMobile && (
         <Box pb={4}>
           ⛔️ on mobile, make sure to open this website directly inside&nbsp;
@@ -100,7 +100,7 @@ const Page = (): JSX.Element => {
           </Link>
         </Box>
       )}
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={12}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={12} mt={8}>
         <QuestCards />
       </SimpleGrid>
       <Box mt={8}>
