@@ -1,3 +1,33 @@
+const primaryStyle = {
+  border: '1px solid #B85FF1',
+  boxSizing: 'border-box',
+  backdropFilter: 'blur(42px)',
+  background: 'linear-gradient(84.62deg, #B06FD8 7.42%, #597AEE 218.41%)',
+  bgClip: 'text',
+  color: '#F2E5FF',
+  span: {
+    path: {
+      fill: '#5c79ed',
+    },
+  },
+}
+
+const secondaryStyle = {
+  background: 'transparent',
+  border: '1px solid #F2E5FF',
+  boxSizing: 'border-box',
+  backdropFilter: 'blur(42px)',
+  color: '#F2E5FF',
+  span: {
+    path: {
+      fill: '#F2E5FF',
+    },
+  },
+}
+
+const padding = { paddingLeft: '15px', paddingRight: '15px' }
+const paddingBig = { paddingLeft: '23px', paddingRight: '23px' }
+
 export default {
   Button: {
     baseStyle: {},
@@ -8,20 +38,8 @@ export default {
         backdropFilter: 'blur(50px)',
         borderRadius: '8px',
         _hover: {
-          paddingLeft: '15px',
-          paddingRight: '15px',
-          border: '1px solid #B85FF1',
-          'box-sizing': 'border-box',
-          'backdrop-filter': 'blur(42px)',
-          background:
-            'linear-gradient(84.62deg, #B06FD8 7.42%, #597AEE 218.41%)',
-          bgClip: 'text',
-          color: 'transparent',
-          span: {
-            path: {
-              fill: '#5c79ed',
-            },
-          },
+          ...padding,
+          ...primaryStyle,
         },
       },
       primaryBig: {
@@ -30,20 +48,8 @@ export default {
         backdropFilter: 'blur(50px)',
         borderRadius: '60px',
         _hover: {
-          paddingLeft: '23px',
-          paddingRight: '23px',
-          border: '1px solid #B85FF1',
-          'box-sizing': 'border-box',
-          'backdrop-filter': 'blur(42px)',
-          background:
-            'linear-gradient(84.62deg, #B06FD8 7.42%, #597AEE 218.41%)',
-          bgClip: 'text',
-          color: 'transparent',
-          span: {
-            path: {
-              fill: '#5c79ed',
-            },
-          },
+          ...paddingBig,
+          ...primaryStyle,
         },
       },
       secondary: {
@@ -51,18 +57,8 @@ export default {
         backdropFilter: 'blur(50px)',
         borderRadius: '8px',
         _hover: {
-          paddingLeft: '15px',
-          paddingRight: '15px',
-          background: 'transparent',
-          border: '1px solid #F2E5FF',
-          'box-sizing': 'border-box',
-          'backdrop-filter': 'blur(42px)',
-          color: '#F2E5FF',
-          span: {
-            path: {
-              fill: '#F2E5FF',
-            },
-          },
+          ...padding,
+          ...secondaryStyle,
         },
       },
       secondaryBig: {
@@ -70,18 +66,8 @@ export default {
         backdropFilter: 'blur(50px)',
         borderRadius: '60px',
         _hover: {
-          paddingLeft: '23px',
-          paddingRight: '23px',
-          background: 'transparent',
-          border: '1px solid #F2E5FF',
-          'box-sizing': 'border-box',
-          'backdrop-filter': 'blur(42px)',
-          color: '#F2E5FF',
-          span: {
-            path: {
-              fill: '#F2E5FF',
-            },
-          },
+          ...paddingBig,
+          ...secondaryStyle,
         },
       },
     },
