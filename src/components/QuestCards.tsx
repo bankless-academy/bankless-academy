@@ -50,7 +50,9 @@ const QuestCards: React.FC = () => {
             <Box display="flex" justifyContent="space-between" my="4">
               <Tag size="sm" variant={isPoapClaimed ? 'solid' : 'outline'}>
                 {isPoapClaimed ? 'Done' : `${quest.duration} minutes`}
-                {isPoapClaimed ? <TagRightIcon as={CircleWavyCheck} /> : null}
+                {isPoapClaimed ? (
+                  <TagRightIcon as={CircleWavyCheck} weight="bold" />
+                ) : null}
               </Tag>
               <Text fontSize="sm">
                 {numberOfPoapClaimed[index]} Completions
