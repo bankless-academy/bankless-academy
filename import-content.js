@@ -111,7 +111,7 @@ axios
                 if (bloc2 !== '')
                   slide.content = `${
                     bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''
-                  }<div class="bloc2"><iframe ${bloc2}</div>`
+                  }<div class="bloc2"><iframe allowfullscreen ${bloc2}</div>`
               } else {
                 // text only
                 slide.content = `<div class="bloc1">${slide.content}</div>`
