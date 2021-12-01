@@ -29,6 +29,7 @@ const Layout = ({
       paddingBottom={isSmallScreen ? '64px' : ''}
       bgColor="#010101"
       bgImage="url(/images/background.svg)"
+      backgroundSize="cover"
     >
       {typeof password === 'string' && password.toLowerCase() === 'dao' ? (
         <>
