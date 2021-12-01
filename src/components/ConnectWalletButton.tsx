@@ -44,6 +44,13 @@ const ConnectWalletButton = ({
       if (!web3Modal) {
         web3Modal = new Web3Modal({
           cacheProvider: false,
+          theme: {
+            background: '#010101',
+            main: 'white',
+            secondary: 'white',
+            border: '#252525',
+            hover: '#363636',
+          },
           providerOptions: {
             walletconnect: {
               package: WalletConnectProvider,
