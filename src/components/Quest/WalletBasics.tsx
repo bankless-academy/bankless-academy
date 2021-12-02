@@ -22,7 +22,11 @@ const WalletBasics = (): {
           </p>
           <p>
             Download the browser extension from the official website:&nbsp;
-            <a href="https://metamask.io/download">
+            <a
+              href="https://metamask.io/download"
+              target="_blank"
+              rel="noreferrer"
+            >
               https://metamask.io/download
             </a>
           </p>
