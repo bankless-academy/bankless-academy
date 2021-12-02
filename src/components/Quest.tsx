@@ -302,6 +302,13 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
           )}
           {slide.type === 'QUIZ' && (
             <>
+              {slide.quiz?.question && (
+                <Box>
+                  <h2>
+                    {ReactHtmlParser(slide?.quiz?.question, { transform })}
+                  </h2>
+                </Box>
+              )}
               <Answers mt={4}>
                 <ButtonGroup size="lg" w="100%">
                   <SimpleGrid

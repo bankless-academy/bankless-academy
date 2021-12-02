@@ -24,6 +24,7 @@ export interface QuestType {
     content?: string
     quiz?: {
       id: string
+      question: string
       answers: string[]
       rightAnswerNumber: number
     }

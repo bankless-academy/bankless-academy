@@ -67,30 +67,30 @@ axios
           const slides = content.map((slide) => {
             // replace with type QUIZ
             if (
-              slide.content.substr(0, "<div class='checklist'>".length) ===
-              "<div class='checklist'>"
-            ) {
+              slide.content.includes("<div class='checklist'>")) {
               quizNb++
               slide.type = 'QUIZ'
-              const questions = slide.content.split('</label><label>')
+              const [question, answers] = slide.content.split("<div class='checklist'>")
+              const quiz_answers = answers.split('</label><label>')
               delete slide.content
               slide.quiz = {}
+              slide.quiz.question = question.replace('<p>', '').replace('</p>', '')
               slide.quiz.rightAnswerNumber = null
               slide.quiz.answers = []
-              questions.map((question, i) => {
+              quiz_answers.map((quiz_answer, i) => {
                 const nb = i + 1
                 if (
                   slide.quiz.rightAnswerNumber !== null &&
-                  question.includes('disabled checked>')
+                  quiz_answer.includes('disabled checked>')
                 )
                   // NOTION BUG: in case of bug with checked checkbox, recreate a new one
                   throw new Error(
                     `more than 1 right answer, please check ${POTION_API}/html?id=${course.id}`
                   )
-                if (question.includes('disabled checked>'))
+                if (quiz_answer.includes('disabled checked>'))
                   slide.quiz.rightAnswerNumber = nb
                 slide.quiz.answers.push(
-                  question.replace(
+                  quiz_answer.replace(
                     // remove tags
                     /<\/?[^>]+(>|$)/g,
                     ''
@@ -112,7 +112,10 @@ axios
                 const [bloc1, bloc2] = slide.content.split('<iframe ')
                 if (bloc2 !== '')
                   slide.content = `${bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''
-                    }<div class="bloc2"><iframe allowfullscreen ${bloc2.replace(/feature=oembed/g, 'feature=oembed&rel=0')}</div>`
+                    }<div class="bloc2"><iframe allowfullscreen ${bloc2.replace(
+                      /feature=oembed/g,
+                      'feature=oembed&rel=0'
+                    )}</div>`
               } else {
                 // text only
                 slide.content = `<div class="bloc1">${slide.content}</div>`
