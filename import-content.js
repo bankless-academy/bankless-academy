@@ -29,6 +29,8 @@ axios
   .then((response) => {
     const quests = []
     const promiseArray = response.data.map((course, index) => {
+      // TEMP: only import first quest
+      if (index > 0) return
       console.log('course Notion link: ', `${POTION_API}/html?id=${course.id}`)
       return axios
         .get(`${POTION_API}/html?id=${course.id}`)
@@ -54,7 +56,7 @@ axios
             `[` +
             response.data
               .replace(/"/g, "'")
-              .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
+              // .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
               .replace(/\s+/g, ' ') // collapse whitespace
               .replace(/<h1>/g, `"},{"type": "LEARN","title": "`)
               .replace(/<\/h1>/g, `","content": "`)
