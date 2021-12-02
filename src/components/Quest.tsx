@@ -63,6 +63,7 @@ const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
   .bloc1,
   .bloc2 {
     flex: 1;
+    ${(props) => props.isSmallScreen && 'margin-top: 24px;'};
     img {
       width: 100%;
     }
