@@ -21,7 +21,7 @@ const QUESTS: QuestType[] = [
     slides: [
       {
         type: 'LEARN',
-        title: 'Crypto Wallet Basics',
+        title: 'Wallet Intro',
         content:
           '<div class="bloc2"><iframe allowfullscreen src=\'https://www.youtube.com/embed/AexoxTZEtOY?feature=oembed&rel=0\'></iframe></div>',
       },
@@ -33,7 +33,7 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUIZ',
-        title: 'Quiz title',
+        title: 'Knowledge Check',
         quiz: {
           question: 'What is a wallet?',
           rightAnswerNumber: 4,
@@ -54,9 +54,9 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUIZ',
-        title: 'You can use a recovery phrase to _____',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'What can you do with your recovery phrase?',
           rightAnswerNumber: 3,
           answers: [
             'Recover your wallet if lost, stolen, or damaged',
@@ -81,10 +81,10 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUIZ',
-        title:
-          'In simple terms, your public key is like your _____, and your private key is like your _____.',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question:
+            'Your public key is like your _____ and your private key is like your _____',
           rightAnswerNumber: 2,
           answers: [
             'Routing Number / Account Number',
@@ -103,11 +103,11 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUIZ',
-        title: 'You control your private key with a custodial wallet',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'Do you control your private key with a custodial wallet?',
           rightAnswerNumber: 2,
-          answers: ['True', 'False'],
+          answers: ['Yes', 'No'],
           id: 'wallet-basics-4',
         },
       },
@@ -119,12 +119,12 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUIZ',
-        title:
-          'You are solely responsible for your private key with a non-custodial wallet',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question:
+            'Are you responsible for your private key with a non-custodial wallet?',
           rightAnswerNumber: 1,
-          answers: ['True', 'False'],
+          answers: ['Yes', 'No'],
           id: 'wallet-basics-5',
         },
       },
@@ -142,9 +142,9 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUIZ',
-        title: 'The safest way to protect your recovery phrase is to:',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'What is the safest way to protect your recovery phrase?',
           rightAnswerNumber: 4,
           answers: [
             'Save it on your computer and print it out.',
@@ -159,7 +159,7 @@ const QUESTS: QuestType[] = [
         type: 'LEARN',
         title: 'Hot Wallet',
         content:
-          '<div class="bloc1"><p>There are two major types of non-custodial wallets: <span class="tooltip" definition="A type of non-custodial wallet that is perpetually connected to the internet.">hot wallet</span> and <span class="tooltip" definition="A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection.">cold wallet</span></p><p>A hot wallet remains connected to the internet.</p><ul><li>PROS 👍: It is usually free, simple to set up, and easy to use.</li><li>CONS 👎: It is potentially less secure because of its internet connection.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F825d5f16-2435-4b65-b925-64b174af3f57%2Fhot_wallet.svg?table=block&id=3ddcf559-bdcd-4979-8cf2-4d2b5f4f138e\'></div>',
+          '<div class="bloc1"><p>There are two major types of <span class="tooltip" definition="With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets.">non-custodial wallets</span>: <span class="tooltip" definition="A type of non-custodial wallet that is perpetually connected to the internet.">hot wallet</span> and <span class="tooltip" definition="A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection.">cold wallet</span></p><p>A hot wallet remains connected to the internet.</p><ul><li>PROS 👍: It is usually free, simple to set up, and easy to use.</li><li>CONS 👎: It is potentially less secure because of its internet connection.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F825d5f16-2435-4b65-b925-64b174af3f57%2Fhot_wallet.svg?table=block&id=3ddcf559-bdcd-4979-8cf2-4d2b5f4f138e\'></div>',
       },
       {
         type: 'LEARN',
@@ -169,11 +169,11 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUIZ',
-        title: 'A cold wallet is more secure than a hot wallet',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'Is a cold wallet more secure than a hot wallet?',
           rightAnswerNumber: 1,
-          answers: ['True', 'False'],
+          answers: ['Yes', 'No'],
           id: 'wallet-basics-7',
         },
       },
@@ -185,11 +185,11 @@ const QUESTS: QuestType[] = [
       },
       {
         type: 'QUIZ',
-        title: 'MetaMask is a custodial wallet',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
-          rightAnswerNumber: 2,
-          answers: ['True', 'False'],
+          question: 'Is MetaMask a custodial wallet?',
+          rightAnswerNumber: 1,
+          answers: ['No', 'Yes'],
           id: 'wallet-basics-8',
         },
       },
