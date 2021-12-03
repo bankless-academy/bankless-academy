@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
-import axios from 'axios'
 
 import db from 'utils/db'
 import QUESTS from 'constants/quests'
@@ -20,7 +19,7 @@ export default async function handler(
     typeof poapEventId === 'object' ||
     !POAP_IDS.includes(poapEventId)
   )
-    return res.json(false)
+    return res.json({ error: "You haven't completed the quest yet" })
   console.log('address', address)
   console.log('poapEventId', poapEventId)
 
@@ -30,8 +29,9 @@ export default async function handler(
       .select('code')
       .where('event_id', poapEventId)
       .where('address', address)
+    console.log(poapAlreadyClaimed)
     if (poapAlreadyClaimed.length) {
-      res.json({ poapAlreadyClaimed })
+      res.json({ error: 'You have already claimed this POAP' })
     } else {
       // [step 3] get the code + update is_code_used to true
       const [{ code }] = await db('poaps')
@@ -44,33 +44,38 @@ export default async function handler(
             .orderBy('id', 'asc')
             .limit(1)
         )
-        .update({ is_code_used: true }, ['code'])
+        .update({ is_code_used: true, address: address }, ['code'])
       console.log('code', code)
       if (code) {
+        res.json({ code: code })
+        // TODO: find alternative (auto-claim now requires a token authorization)
         // [step 4] get the secret
         // handle timeout (currently 10 sec only)
-        await axios
-          .get(`https://api.poap.xyz/actions/claim-qr?qr_hash=${code}`)
-          .then(async function (response) {
-            const secret = response.data.secret
-            console.log(secret)
-            const data = {
-              qr_hash: code,
-              address: address.toLowerCase(),
-              secret,
-            }
-            console.log('data', data)
-            // [step 5] claim the POAP for the user
-            await axios
-              .post('https://api.poap.xyz/actions/claim-qr', data)
-              .then(async function (response) {
-                await db('poaps').where('code', code).update('address', address)
-                console.log('data', data)
-                res.json(response.data)
-              })
-          })
+        // await axios
+        //   .get(`https://frontend.poap.tech/actions/claim-qr=${code}`)
+        //   .then(async function (response) {
+        //     const secret = response.data.secret
+        //     console.log(secret)
+        //     const data = {
+        //       qr_hash: code,
+        //       address: address.toLowerCase(),
+        //       secret,
+        //     }
+        //     console.log('data', data)
+        //     // [step 5] claim the POAP for the user
+        //     await axios
+        //       .post('https://frontend.poap.tech/actions/claim-qr', data)
+        //       .then(async function (response) {
+        //         await db('poaps').where('code', code).update('address', address)
+        //         console.log('data', data)
+        //         res.json(response.data)
+        //       })
+        //   })
       } else {
-        res.json('no more codes available')
+        res.json({
+          error:
+            'Sorry, no more POAP codes available ... please contact poap@banklessacademy.com',
+        })
       }
     }
   } catch (error) {

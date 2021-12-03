@@ -93,6 +93,9 @@ const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
       max-width: 100%;
       height: 360px;
     }
+    a {
+      text-decoration: none;
+    }
   }
 `
 
@@ -148,6 +151,10 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
   const [isClaimingPoap, setIsClaimingPoap] = useState(false)
+  const [isPoapMinted, setIsPoapMinted] = useState(false)
+  const [poapData, setPoapData] = useState<{ code?: string; error?: string }>(
+    {}
+  )
   const [isPoapClaimed, setIsPoapClaimed] = useState(
     !!localStorage.getItem(`poap-${quest.slug}`)
   )
@@ -163,7 +170,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   const walletWeb3ReactContext = useWalletWeb3React()
   const walletAddress = walletWeb3ReactContext.account
   // DEV ENV: you can force a specific wallet address here if you want to test the claiming function
-  // const walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb42'
+  // walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb44'
 
   useEffect((): void => {
     localStorage.setItem(quest.slug, currentSlide.toString())
@@ -225,9 +232,12 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
       .then(function (res) {
         // eslint-disable-next-line no-console
         console.log(res.data)
-        setIsPoapClaimed(true)
+        setPoapData(res.data)
         setIsClaimingPoap(false)
-        localStorage.setItem(`poap-${quest.slug}`, 'true')
+        if (res.data.code) {
+          setIsPoapClaimed(true)
+          localStorage.setItem(`poap-${quest.slug}`, res.data.code)
+        }
       })
       .catch(function (error) {
         console.error(error)
@@ -272,6 +282,8 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     ?.component
   const Quest = QuestComponent(questComponentName)
   // TODO: store quest verification state in local storage
+
+  const poapCode = localStorage.getItem(`poap-${quest.slug}`) || poapData.code
 
   return (
     <>
@@ -379,9 +391,11 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                     <Image
                       src={quest.poapImageLink}
                       width="250px"
+                      height="250px"
                       opacity={isPoapClaimed ? 1 : 0.7}
+                      mb="2"
                     />
-                    {!isPoapClaimed ? (
+                    {!isPoapClaimed && !poapData.error ? (
                       <Button
                         variant="outline"
                         onClick={claimPoap}
@@ -394,15 +408,36 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                         <h2>
                           {`Congrats for finishing the "${quest.name}" quest! 🥳`}
                         </h2>
-                        {quest.slug === 'wallet-basics' && (
-                          <Button
-                            mt="4"
-                            onClick={() => router.push('/feedback')}
-                          >
-                            Feedback form
-                          </Button>
+                        {poapCode && (
+                          <>
+                            {isPoapMinted ? (
+                              <>
+                                <Button
+                                  mt="4"
+                                  // onClick={() => router.push('/feedback')}
+                                >
+                                  Feedback form
+                                </Button>
+                              </>
+                            ) : (
+                              <Link
+                                href={`https://app.poap.xyz/claim/${poapCode}?address=${walletAddress}`}
+                                target="_blank"
+                                onClick={() => setIsPoapMinted(true)}
+                              >
+                                <Button variant="outline" mt="4">
+                                  Mint POAP
+                                </Button>
+                              </Link>
+                            )}
+                          </>
                         )}
                       </>
+                    )}
+                    {poapData.error && (
+                      <Button variant="outline" mt="4">
+                        {poapData.error}
+                      </Button>
                     )}
                   </>
                 ) : (
