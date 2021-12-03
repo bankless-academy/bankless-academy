@@ -20,13 +20,13 @@ const Feedback = (): JSX.Element => {
     <Container maxW="container.xl">
       <Box
         w="100%"
-        height="2300px"
+        height="1000px"
         borderRadius="12px"
         padding="4"
         backgroundColor="white"
       >
         <iframe
-          src="https://tally.so/embed/wvy7A3?hideTitle=0&alignLeft=1"
+          src="https://tally.so/embed/mRvNpm?hideTitle=0&alignLeft=1"
           frameBorder="0"
           width="100%"
           height="100%"
