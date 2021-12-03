@@ -2,10 +2,8 @@ import { QuestType } from 'entities/quest'
 
 const QUESTS: QuestType[] = [
   {
-    poapImageLink:
-      'https://assets.poap.xyz/bankless-academy-wallet-basics-2021-logo-1638525206335.png',
-    questImageLink:
-      'https://bankless-academy-git-dktheme-banklessdao.vercel.app/images/banner1.jpg',
+    poapImageLink: 'https://app.banklessacademy.com/images/poap1.png',
+    questImageLink: 'https://app.banklessacademy.com/images/banner1.jpg',
     learningActions:
       'Create and manage your own wallet<br>Connect your wallet to a web3 website',
     knowledgeRequirements: 'No prior knowledge needed.',
