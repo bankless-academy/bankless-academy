@@ -66,7 +66,13 @@ const QuestCards: React.FC = () => {
               </Text>
             </Box>
             <Link href={`/quest/${quest.slug}`}>
-              <Card cursor="pointer" overflow="hidden">
+              <Card
+                cursor="pointer"
+                overflow="hidden"
+                style={{
+                  aspectRatio: '1.91/1',
+                }}
+              >
                 <Image src={quest.questImageLink} />
               </Card>
             </Link>
