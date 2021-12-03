@@ -112,16 +112,20 @@
     "color": "rgba(128, 128, 128, 1)"
   },
   "spend": {
-    "definition": "using your crypto to pay for a good or service ; money verb on the skill cube"
+    "definition": "using your crypto to pay for a good or service ; money verb on the skill cube",
+    "color": "rgba(128, 128, 128, 1)"
   },
   "earn": {
-    "definition": "contributing value in exchange for rewards ; money verb on the skill cube"
+    "definition": "contributing value in exchange for rewards ; money verb on the skill cube",
+    "color": "rgba(128, 128, 128, 1)"
   },
   "trade": {
-    "definition": "exchanging assets or money for something valuable ; money verb on the skill cube"
+    "definition": "exchanging assets or money for something valuable ; money verb on the skill cube",
+    "color": "rgba(128, 128, 128, 1)"
   },
   "bet": {
-    "definition": "risking money in exchange for greater rewards (shorting/longing) ; money verb on the skill cube"
+    "definition": "risking money in exchange for greater rewards (shorting/longing) ; money verb on the skill cube",
+    "color": "rgba(128, 128, 128, 1)"
   },
   "invest": {
     "definition": "The act of buying a coin/token that uses DeFi technology",
