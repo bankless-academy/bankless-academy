@@ -70,6 +70,7 @@ const SwitchNetworkButton = ({
               <Text ml="4" mb="2" color="gray.500">
                 Select a network
               </Text>
+              {/* TODO: handle unknown network + suggest to switch */}
               {Object.keys(networks).map((network, index) => (
                 <MenuItem
                   key={index}
