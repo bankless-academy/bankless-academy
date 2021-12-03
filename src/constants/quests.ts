@@ -7,7 +7,7 @@ const QUESTS: QuestType[] = [
     learningActions:
       'Create and manage your own wallet<br>Connect your wallet to a web3 website',
     knowledgeRequirements: 'No prior knowledge needed.',
-    poapEventId: 6454,
+    poapEventId: 16394,
     duration: 15,
     learnings:
       'In this course you will learn the proper definition of a wallet, why you need a wallet, what "keys" are and how to protect them, and the important differences between "custodial" and "non-custodial".',
