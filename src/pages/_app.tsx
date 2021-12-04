@@ -19,6 +19,8 @@ const Web3ReactProviderDefault = dynamic(
   { ssr: false }
 )
 
+// eslint-disable-next-line no-console
+console.log(process.env)
 const VERCEL_ENV = process.env.VERCEL_ENV
 const UMAMI = process.env.UMAMI
 
@@ -38,7 +40,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
           data-website-id={umamiWebsiteId}
           src={umamiDomain}
         />
-        {VERCEL_ENV !== 'production' && typeof window !== 'undefined'
+        {VERCEL_ENV === 'production' && typeof window !== 'undefined'
           ? hotjar.initialize(2568813, 6)
           : null}
       </Head>
