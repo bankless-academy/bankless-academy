@@ -143,6 +143,10 @@ const SlideNav = styled(Box)<{ isSmallScreen?: boolean }>`
 `
 
 const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
+  // HACK: fix bug when someone has already claimed the POAP
+  if (localStorage.getItem(`poap-${quest.slug}`) === 'true')
+    localStorage.removeItem(`poap-${quest.slug}`)
+
   const buttonLeftRef = useRef(null)
   const buttonRightRef = useRef(null)
   const answerRef = useRef([])
@@ -435,7 +439,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                       </>
                     )}
                     {poapData.error && (
-                      <Button variant="outline" mt="4">
+                      <Button variant="outline" mt="4" leftIcon={<Warning />}>
                         {poapData.error}
                       </Button>
                     )}
