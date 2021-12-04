@@ -25,13 +25,13 @@ export default async function handler(
 
   try {
     // [step 2] check if the POAP was already claimed
-    const poapAlreadyClaimed = await db('poaps3')
+    const [{ codeAlreadyClaimed }] = await db('poaps3')
       .select('code')
       .where('event_id', poapEventId)
       .where('address', address)
-    console.log(poapAlreadyClaimed)
-    if (poapAlreadyClaimed.length) {
-      res.json({ error: 'You have already claimed this POAP' })
+    console.log(codeAlreadyClaimed)
+    if (codeAlreadyClaimed) {
+      res.json({ code: codeAlreadyClaimed })
     } else {
       // [step 3] get the code + update is_code_used to true
       const [{ code }] = await db('poaps3')
