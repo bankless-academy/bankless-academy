@@ -418,7 +418,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                               <>
                                 <Button
                                   mt="4"
-                                  // onClick={() => router.push('/feedback')}
+                                  onClick={() => router.push('/feedback')}
                                 >
                                   Feedback form
                                 </Button>
