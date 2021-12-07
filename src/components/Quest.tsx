@@ -469,7 +469,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 </Button>
               </Tooltip>
             )}
-            {!isSmallScreen && (
+            {!isSmallScreen && slide.notionId && (
               <Tooltip
                 hasArrow
                 label="Help us improve the content by commenting this slide on Notion"
@@ -477,7 +477,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 <Link
                   target="_blank"
                   rel="noreferrer"
-                  href={`https://www.notion.so/${quest.notionId}`}
+                  href={`https://www.notion.so/${quest.notionId}#${slide.notionId}`}
                 >
                   <Button variant="outline">🐞 comment this slide</Button>
                 </Link>

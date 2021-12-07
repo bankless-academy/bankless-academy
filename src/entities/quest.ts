@@ -21,6 +21,7 @@ export interface QuestType {
   slides: {
     type: SlideType
     title: string
+    notionId?: string
     content?: string
     quiz?: {
       id: string
