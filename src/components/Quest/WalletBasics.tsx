@@ -39,6 +39,8 @@ const WalletBasics = (): {
           variant="outlined"
           leftIcon={account ? <Checks /> : <Spinner speed="1s" />}
           color={account ? 'rgb(68, 169, 145)' : 'orange'}
+          cursor="default"
+          boxShadow="none !important"
         >
           {account
             ? 'Congrats for connecting your wallet! 👏🙂'
