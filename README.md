@@ -62,6 +62,16 @@ knex migrate:latest
 knex migrate:rollback
 ```
 
+## Tracking
+
+### Umami
+
+Documentation + data tracked: [https://www.notion.so/bankless/Analytics-with-Umami-4f867b3c808e483790db7db617cc51b6](https://www.notion.so/bankless/Analytics-with-Umami-4f867b3c808e483790db7db617cc51b6#33ff53efb0394ed8849e24087054fae0)
+
+### Hotjar
+
+Heatmap recording via [hotjar.com](hotjar.com)
+
 ## How to import content from Notion
 
 ### Where to update the content
