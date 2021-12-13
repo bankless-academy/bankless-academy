@@ -2,53 +2,9 @@
 
 ## Project Specifications
 
-- [Notion](https://www.notion.so/bankless/Bankless-Academy-FKA-Onboard-c431218052c84cf598a6408aa464287b)
+- [Notion](https://www.notion.so/bankless/Bankless-Academy-c431218052c84cf598a6408aa464287b)
 - [Planning / Tasks](https://www.notion.so/bankless/Bankless-Academy-planning-open-tasks-availability-405f670d58ee4aef8f10f8c8b46a329d)
-- [Initial Figma wireframe](https://www.figma.com/file/ryapBbsKrI0Q77bKrMsNrQ/Onboard-MVP1?node-id=8%3A461) / [[WIP] New Figma wireframe](https://www.figma.com/file/FebGvlqhBqT5QO2iQ9mTUJ/Bankless-Onboarding?node-id=3%3A2)
-
-## How to import content dynamically from Notion
-
-### Where to update the content
-
-[https://www.notion.so/bankless/Bankless-Academy-Content-f0d55570c18c48a5959b0a41ad3e99b9](https://www.notion.so/bankless/Bankless-Academy-Content-f0d55570c18c48a5959b0a41ad3e99b9)
-
-### Defaut content import command
-
-```bash
-yarn import-content
-```
-
-### Import content with a specific Notion ID
-
-```bash
-yarn import-content 1dd77eb6ed4147f6bdfd6f23a30baa46
-```
-
-## How to import keywords dynamically from Notion
-
-### Where to update the keywords
-
-[https://www.notion.so/bankless/623e965e4f10456094d17aa94ec37105](https://www.notion.so/bankless/623e965e4f10456094d17aa94ec37105)
-
-### Defaut keywords import command
-
-```bash
-yarn import-keywords
-```
-
-### Import keywords with a specific Notion ID
-
-```bash
-yarn import-keywords 623e965e4f10456094d17aa94ec37105
-```
-
-## How to import POAP codes into the database
-
-If your POAP event id is `6454`, rename `links.txt` to `6454.txt`, move it into the `/poaps/` folder, then run the following command to automatically import all the `*.txt` files:
-
-```bash
-yarn import-poaps
-```
+- [Figma wireframe](https://www.figma.com/file/RAaaNdsEWC9tuPuoX35Fsz/Academy?node-id=215%3A1179)
 
 ## Tech Stack
 
@@ -78,7 +34,7 @@ yarn import-poaps
 - Get familiar with the project
 - Check [open issues](https://github.com/BanklessDAO/onboard/issues) and assign yourself
 - Create and submit a PR
-- Assign @didierkrux + @wpmonty as reviewers
+- Assign [@didierkrux](https://github.com/didierkrux) as reviewers
 
 ## Local Development
 
@@ -86,17 +42,74 @@ yarn import-poaps
 yarn dev
 ```
 
-## Notes
+## Database
 
-Before committing yarn.lock, verify that the entry for `ethereumjs-abi` reads
+Currently only POAP codes are stored in a PostgreSQL database. Database setup is not required in order to run the app.
 
-```javascript
-"ethereumjs-abi@git+https://github.com/ethereumjs/ethereumjs-abi.git":
-  version "0.6.8"
-  resolved "https://github.com/ethereumjs/ethereumjs-abi#1a27c59c15ab1e95ee8e5c4ed6ad814c49cc439e"
-  dependencies:
-    bn.js "^4.11.8"
-    ethereumjs-util "^6.0.0"
+### Setup
+
+Setup and connection to the database is done via [Knex.js](https://knexjs.org/#Migrations-CLI).
+
+### Config
+
+Ask [@didierkrux](https://github.com/didierkrux) for the configs to add to your [.env.local](https://github.com/BanklessDAO/bankless-academy/blob/main/.env.example) file.
+
+### Migrations
+
+[https://github.com/BanklessDAO/bankless-academy/tree/main/migrations](https://github.com/BanklessDAO/bankless-academy/tree/main/migrations)
+
+```bash
+# Install Migration CLI
+yarn global add knex
+# Migrate to latest
+knex migrate:latest
+# Rollback the last batch of migrations
+knex migrate:rollback
+```
+## How to import content manually from Notion
+
+### Where to update the content
+
+[https://www.notion.so/bankless/1dd77eb6ed4147f6bdfd6f23a30baa46](https://www.notion.so/bankless/1dd77eb6ed4147f6bdfd6f23a30baa46)
+
+### Defaut content import command
+
+```bash
+yarn import-content
 ```
 
-This is a temporary fix to allow Netlify to build with walletconnect
+### Import content with a specific Notion ID
+
+```bash
+yarn import-content 1dd77eb6ed4147f6bdfd6f23a30baa46
+```
+
+### How does it work
+
+The [import script](https://github.com/BanklessDAO/bankless-academy/blob/main/import-content.js) connects to a custom unofficial Notion API called Potion [https://github.com/didierkrux/potion](https://github.com/didierkrux/potion) and who transforms the content into [this Object](https://github.com/BanklessDAO/bankless-academy/blob/main/src/constants/quests.ts).
+
+## How to import keywords dynamically from Notion
+
+### Where to update the keywords
+
+[https://www.notion.so/bankless/623e965e4f10456094d17aa94ec37105](https://www.notion.so/bankless/623e965e4f10456094d17aa94ec37105)
+
+### Defaut keywords import command
+
+```bash
+yarn import-keywords
+```
+
+### Import keywords with a specific Notion ID
+
+```bash
+yarn import-keywords 623e965e4f10456094d17aa94ec37105
+```
+
+## How to import POAP codes into the database
+
+If your POAP event id is `6454`, rename `links.txt` to `6454.txt`, move it into the `/poaps/` folder, then run the following command to automatically import all the `*.txt` files:
+
+```bash
+yarn import-poaps
+```
