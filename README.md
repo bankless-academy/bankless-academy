@@ -29,13 +29,6 @@
 - [POAP Subgraph](https://thegraph.com/legacy-explorer/subgraph/poap-xyz/poap-xdai) to get the number of POAP claimed
 - [Moralis](https://docs.moralis.io/transactions-and-balances/realtime-transactions) to track onchain transactions
 
-## How to get started for devs
-
-- Get familiar with the project
-- Check [open issues](https://github.com/BanklessDAO/onboard/issues) and assign yourself
-- Create and submit a PR
-- Assign [@didierkrux](https://github.com/didierkrux) as reviewers
-
 ## Local Development
 
 ```bash
@@ -44,19 +37,21 @@ yarn dev
 
 ## Database
 
-Currently only POAP codes are stored in a PostgreSQL database. Database setup is not required in order to run the app.
+Currently only POAP codes are stored in a PostgreSQL database.
+
+Database setup is not required in order to run the app.
 
 ### Setup
 
-Setup and connection to the database is done via [Knex.js](https://knexjs.org/#Migrations-CLI).
+Setup and connection to database are done via [Knex.js](https://knexjs.org/#Migrations-CLI).
 
 ### Config
 
-Ask [@didierkrux](https://github.com/didierkrux) for the configs to add to your [.env.local](https://github.com/BanklessDAO/bankless-academy/blob/main/.env.example) file.
+Ask [@didierkrux](https://github.com/didierkrux) for the configs to add to your .env.local file (see [.env.example](https://github.com/BanklessDAO/bankless-academy/blob/main/.env.example)).
 
 ### Migrations
 
-[https://github.com/BanklessDAO/bankless-academy/tree/main/migrations](https://github.com/BanklessDAO/bankless-academy/tree/main/migrations)
+Migration files: [https://github.com/BanklessDAO/bankless-academy/tree/main/migrations](https://github.com/BanklessDAO/bankless-academy/tree/main/migrations)
 
 ```bash
 # Install Migration CLI
@@ -66,7 +61,8 @@ knex migrate:latest
 # Rollback the last batch of migrations
 knex migrate:rollback
 ```
-## How to import content manually from Notion
+
+## How to import content from Notion
 
 ### Where to update the content
 
@@ -86,9 +82,11 @@ yarn import-content 1dd77eb6ed4147f6bdfd6f23a30baa46
 
 ### How does it work
 
-The [import script](https://github.com/BanklessDAO/bankless-academy/blob/main/import-content.js) connects to a custom unofficial Notion API called Potion [https://github.com/didierkrux/potion](https://github.com/didierkrux/potion) and who transforms the content into [this Object](https://github.com/BanklessDAO/bankless-academy/blob/main/src/constants/quests.ts).
+The [import script](https://github.com/BanklessDAO/bankless-academy/blob/main/import-content.js) connects to a custom unofficial Notion API called Potion [https://github.com/didierkrux/potion](https://github.com/didierkrux/potion) and transforms the content into [this Object](https://github.com/BanklessDAO/bankless-academy/blob/main/src/constants/quests.ts).
 
-## How to import keywords dynamically from Notion
+## How to import keywords definitions from Notion
+
+Note: import keywords before importing content.
 
 ### Where to update the keywords
 
@@ -113,3 +111,10 @@ If your POAP event id is `6454`, rename `links.txt` to `6454.txt`, move it into 
 ```bash
 yarn import-poaps
 ```
+
+## How to get started for devs
+
+- Get familiar with the project
+- Check [open issues](https://github.com/BanklessDAO/onboard/issues) and assign yourself
+- Create and submit a PR
+- Assign [@didierkrux](https://github.com/didierkrux) as reviewers
