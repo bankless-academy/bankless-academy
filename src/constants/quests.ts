@@ -518,64 +518,64 @@ const QUESTS: QuestType[] = [
     slides: [
       {
         type: 'LEARN',
-        notionId: 'bc1a55367d034e3d9c1b7bd8f4562837',
-        title: 'BLOCKCHAIN FUNDAMENTALS: INTRODUCTION',
+        notionId: '75a90b0c62ff4f638074809b097c08f6',
+        title: 'Introduction',
         content:
           '<div class="bloc1"><p><span class="tooltip" definition="A shared, unchangeable database or record of transactions.">Blockchain</span> technology is a revolutionary way of storing and tracking data, but also making it accessible to anyone.</p><p>Although the word is singular, there are many different blockchains and all of them function differently. </p><p>Although popular blockchains such as Bitcoin (BTC) or Ethereum (ETH) function differently, they share a fundamental method for storing and tracking data.</p></div>',
       },
       {
         type: 'LEARN',
         notionId: '50dbddf305a844f19e09a0bcca2dd188',
-        title: 'BLOCKCHAIN FUNDAMENTALS: BLOCK',
+        title: 'Block',
         content:
           '<div class="bloc1"><p>Data is organized and grouped together form a block. A <span class="tooltip" definition="A container that holds data on the blockchain.">block</span> is a container that holds data. </p><p>The structure in which data is stored varies depending on the blockchain. Remember, there are many different blockchains. </p><p>Each <span class="tooltip" definition="A container that holds data on the blockchain.">block</span> has a specific storage limit and holds a set amount of transaction data. Once the limit is reached, new data is grouped into a new block. </p><p>These blocks are arranged in chronological order, each linked to the previous one. You can imagine a straight line of blocks one after the other.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffc30577c-590c-4e6c-a0f2-1ab15199d060%2FUntitled.png?table=block&id=9738df19-bb41-4446-851f-d3181a68693a\'></div>',
       },
       {
         type: 'LEARN',
         notionId: '73f3c7d58e4341c6ab0df70d7555aebe',
-        title: 'BLOCKCHAIN FUNDAMENTALS: CHAIN',
+        title: 'Chain',
         content:
           '<div class="bloc1"><p>The link between blocks is referred to as a chain. The <span class="tooltip" definition="Binds blocks of data together to form a database which cannot be altered or changed.">chain</span> binds blocks of data together to form a database which cannot be altered or changed.</p><p>If data needs to be modified, it is simply added to a new block with a chain to the old block containing the original data.</p><p>The methodology of chaining one block to the next in chronological order is a non destructive way to track data changes over time - hence the term <span class="tooltip" definition="A shared, unchangeable database or record of transactions.">blockchain</span>.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7acc71df-e03e-4192-8609-f61fc8631a4c%2FUntitled.png?table=block&id=88708290-f4e3-4417-98e2-6421c277f3ef\'></div>',
       },
       {
         type: 'LEARN',
         notionId: '00557f2db7c3473b8b218e73e875799d',
-        title: 'BLOCKCHAIN FUNDAMENTALS: DECENTRALIZED ',
+        title: 'Decentralized',
         content:
           '<div class="bloc1"><p>Not only is data included on a <span class="tooltip" definition="A shared, unchangeable database or record of transactions.">blockchain</span> unchangeable, it is shared and distributed amongst a large network of computers. Each device on the network has the same data and no one device can change it.</p><p>This makes the blockchain decentralized. As no single authority or entity controls the data and it can be readily accessed by anyone. </p><p>You can also trust the data included in each block. The decentralized nature of blockchains reduces the opportunity to tamper with data. </p></div>',
       },
       {
         type: 'LEARN',
         notionId: '829dd3b2351e4eb188256573db8be2cb',
-        title: 'BLOCKCHAIN FUNDAMENTALS: HASH ',
+        title: 'Hash',
         content:
           '<div class="bloc1"><p>Data included on the <span class="tooltip" definition="A shared, unchangeable database or record of transactions.">blockchain</span> is difficult to tamper with because each piece of data has its own hash, or digital fingerprint of information.</p><p>Using encrypted information, a complex mathematical algorithm produces a unique alphanumeric <span class="tooltip" definition="A digital fingerprint for information.">hash</span>. This is important because the encrypted formula only has one unique solution, or hash, and is almost impossible to reverse engineer.</p><p>When viewing information on a blockchain, you can be sure that it is genuine and proven to be true and valid.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F65920402-004b-41e4-b902-6df2c8c13dcf%2FUntitled.png?table=block&id=55e508b0-38e5-41c0-9fea-f67dc68da243\'></div>',
       },
       {
         type: 'LEARN',
         notionId: '98b195e7ba4343a79e146abeae09439d',
-        title: 'BLOCKCHAIN FUNDAMENTALS: TRANSACTION',
+        title: 'Transaction',
         content:
           '<div class="bloc1"><p>The data on any <span class="tooltip" definition="A shared, unchangeable database or record of transactions.">blockchain</span> is simply a list of transactions. A transaction is a record of an event. A <span class="tooltip" definition="A record of an event.">transaction</span> can vary from simple contract signatures or exchange events such as sending and receiving crypto assets.</p><p>Transactions are the most crucial aspect of the blockchain system. Recall that every piece of data, or transaction, has its own unique <span class="tooltip" definition="A digital fingerprint for information.">hash</span> produced by using a complex mathematical algorithm to solve an encrypted formula.</p><p>Blockchain technology is designed to guarantee that transactions can be created, transmitted through the network, verified, and eventually added to the global database known as the the blockchain.</p></div>',
       },
       {
         type: 'LEARN',
         notionId: 'e5ba019d8ac54af0907ec04f689c945a',
-        title: 'BLOCKCHAIN FUNDAMENTALS: CONSENSUS',
+        title: 'Consensus',
         content:
           '<div class="bloc1"><p>Be mindful of the fact that blockchains function differently. They share the same fundamental principles, but possess key differences. One of those differences is in the way valid data is included on the blockchain.</p><p>Since the blockchain is decentralized, valid data is only included after it has achieved consensus by the shared, distributed network. You will have the opportunity to learn more about the different consensus mechanisms in a later course.</p><p>Regardless of method, blocks of data are verified through a consensus of several devices, each independently synchronizing data processed on each block, without the need of a central authority. </p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4f856aaa-8658-42c0-a3b3-07b8d9a94217%2FUntitled.png?table=block&id=781ab658-66d1-447b-9c3a-135b37f1735e\'></div>',
       },
       {
         type: 'LEARN',
         notionId: 'dd964f2a655445c595c8095e494d5214',
-        title: 'BLOCKCHAIN FUNDAMENTALS: EPOCH',
+        title: 'Epoch',
         content:
           '<div class="bloc1"><p>Another difference is that each <span class="tooltip" definition="A shared, unchangeable database or record of transactions.">blockchain</span> has its own <span class="tooltip" definition="The time taken for a specific number of blocks to be included on any particular blockchain.">epoch</span>. An epoch is the length of time for a specific number of blocks to be included on any particular blockchain.</p><p>Some epochs are used to specify when certain events will occur on a blockchain such as reward disbursements.</p><p>Every blockchain network has a different way of ascertaining its epoch.</p></div>',
       },
       {
         type: 'LEARN',
         notionId: '1b8292e044584b7fa72a285bb6e0643c',
-        title: 'BLOCKCHAIN FUNDAMENTALS: CRYPTO ASSETS',
+        title: 'Crypto assets',
         content:
           '<div class="bloc1"><p>Crypto assets differ with each <span class="tooltip" definition="A shared, unchangeable database or record of transactions.">blockchain</span> as well. The two most popular forms of crypto assets on each blockchain are coins and tokens. The key difference is that coins have their own blockchain network and infrastructure, whereas tokens rely on the blockchain to host them.</p><p>Coins are essentially digital versions of money. Most blockchains have a native asset used as a form of currency to facilitate transactions on the network. For example, Bitcoin uses BTC to facilitate transactions and Ethereum uses ETH.</p><p><span class="tooltip" definition="Units that can stand for assets or deeds that are built on an existing blockchain.">Tokens</span> are digital assets that are built inside an existing blockchain. They can be programmed to represent different assets and act in different ways, but fundamentally are designed to be tradable and transferable.</p></div>',
       },
