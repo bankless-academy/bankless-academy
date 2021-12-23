@@ -32,6 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CONTENT = (
   <Link
     target="_blank"
@@ -107,7 +108,7 @@ const Page = (): JSX.Element => {
         <Tooltip
           hasArrow
           placement="right"
-          label="If you want to try the quest from scratch or experience any problem, click this button to reset the app state"
+          label="If you want to try the quest from scratch or experience any problem, click this button to reset the local app state"
         >
           <Button
             onClick={() => {
@@ -121,7 +122,7 @@ const Page = (): JSX.Element => {
           </Button>
         </Tooltip>
         <br />
-        {CONTENT}
+        {/* {CONTENT} */}
         <Box display="none">
           <Stack spacing={3} mb={4}>
             <Text fontSize="2xl" fontWeight="bold">

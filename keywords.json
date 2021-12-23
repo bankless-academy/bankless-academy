@@ -4,7 +4,7 @@
     "color": "rgba(128, 128, 128, 1)"
   },
   "blockchain": {
-    "definition": "An immutable, unchangeable database or record of transactions that can be verified by users.",
+    "definition": "A shared, unchangeable database or record of transactions.",
     "color": "rgba(128, 128, 128, 1)"
   },
   "public key": {
@@ -75,10 +75,6 @@
     "definition": "Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data.",
     "color": "rgba(128, 128, 128, 1)"
   },
-  "DeFi": {
-    "definition": "An abbreviation for decentralized finance.",
-    "color": "rgba(128, 128, 128, 1)"
-  },
   "lender": {
     "definition": "Deposits assets to earn interest",
     "color": "rgba(0, 135, 107, 1)"
@@ -91,28 +87,24 @@
     "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan",
     "color": "rgba(128, 128, 128, 1)"
   },
+  "DeFi": {
+    "definition": "An abbreviation for decentralized finance.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
   "decentalized": {
     "definition": "The transfer of control and decision making from a centralized entity to a distributed network.",
     "color": "rgba(128, 128, 128, 1)"
   },
   "peer-to-peer": {
-    "definition": "A transaction between two parties that does not require an middleman or controlling entity",
+    "definition": "A transaction between two parties that does not require a middleman or controlling entity.",
     "color": "rgba(128, 128, 128, 1)"
   },
   "permissionless": {
     "definition": "<a href=\"https://medium.com/@akadiyala/nuances-between-permissionless-and-permissioned-blockchains-f5b566f5d483\">V2.</a> Any person, thing, or entity can interact with other members or parties by creating an address on the network",
     "color": "rgba(128, 128, 128, 1)"
   },
-  "hold": {
-    "definition": "Your wallet is the registered owner of a Defi token",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "time preference": {
-    "definition": "(or \"time discounting\") pertains to how large a premium a consumer will place on enjoyment nearer in time over more remote enjoyment.",
-    "color": "rgba(128, 128, 128, 1)"
-  },
   "spend": {
-    "definition": "using your crypto to pay for a good or service ; money verb on the skill cube",
+    "definition": "Using your crypto assets to pay for goods or services.",
     "color": "rgba(128, 128, 128, 1)"
   },
   "earn": {
@@ -133,6 +125,34 @@
   },
   "staking": {
     "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "Block": {
+    "definition": "A container that holds data on the blockchain.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "chain": {
+    "definition": "Binds blocks of data together to form a database which cannot be altered or changed.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "Epoch": {
+    "definition": "The time taken for a specific number of blocks to be included on any particular blockchain.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "hash": {
+    "definition": "A digital fingerprint for information.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "tokens": {
+    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "coin": {
+    "definition": "The native asset of a blockchain mostly used as a form of currency to facilitate transactions on the network.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "transaction": {
+    "definition": "A record of an event.",
     "color": "rgba(128, 128, 128, 1)"
   }
 }
