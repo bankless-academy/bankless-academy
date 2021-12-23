@@ -1,4 +1,3 @@
-// for example: this component could call APIs to validate the quest
 const IntroToDeFi = (): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
@@ -6,10 +5,9 @@ const IntroToDeFi = (): {
   isQuestCompleted: true,
   questComponent: (
     <>
-      TODO: DeFi quest action to be confirmed...
-      <br />
-      Most probable case: get Matic from a faucet in order to be ready for the
-      first DeFi protocol quest (Lend on Aave layer 2 Polygon?)
+      TODO: &quot;What do you most interested to learn to do with DeFi?&quot;
+      lend, borrow, earn yield, ... + sign the answer with your wallet + quick
+      video to guide the user
     </>
   ),
 })

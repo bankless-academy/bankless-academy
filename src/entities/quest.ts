@@ -1,7 +1,7 @@
 export type QuestComponentType =
   | 'WalletBasics'
-  | 'BorrowWithAave'
   | 'IntroToDeFi'
+  | 'BlockchainFundamentals'
 
 export type SlideType = 'LEARN' | 'QUIZ' | 'QUEST' | 'POAP'
 
