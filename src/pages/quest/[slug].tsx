@@ -31,8 +31,9 @@ const Page = (): JSX.Element => {
   const pageMeta: PageMetaProps = {
     title: `Quest: ${currentQuest.name}`,
     description: currentQuest.description,
+    image: currentQuest.questImageLink
   }
-
+  
   return (
     <Container maxW="container.xl">
       <Head {...pageMeta} />

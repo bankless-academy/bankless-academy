@@ -5,17 +5,19 @@ import { PROJECT_NAME } from 'constants/'
 export interface PageMetaProps {
   title: string
   description: string
+  image: string
 }
 
 const Head = ({
   title = '',
   description = '',
+  image = ''
 }: PageMetaProps): React.ReactElement => {
-  // TODO social images + SSR
   return (
     <NextHead>
       <title>{title ? `${title} | ${PROJECT_NAME}` : PROJECT_NAME}</title>
       <meta name="description" content={description} />
+      <meta name="image" content={image} />
       <link
         rel="shortcut icon"
         sizes="180x180"

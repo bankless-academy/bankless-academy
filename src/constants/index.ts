@@ -24,3 +24,27 @@ export const RPC_URLS = {
 }
 
 export const INFURA_ID = process.env.INFURA_ID
+
+// Function that process all the Quest Content
+// Returning only the filtered metadata
+import { MetadataType } from 'entities/quest'
+import { QuestType } from 'entities/quest'
+function extractMetaData(quests:QuestType[]):MetadataType[] {
+  let allData: MetadataType[] = new Array()
+  for (var index in quests) {
+    
+    let data = {} as MetadataType
+    data.title = quests[index].name,
+    data.description = quests[index].description,
+    data.image = quests[index].questImageLink
+    
+    allData.push(data)
+  }
+  return allData
+}
+// Import the Quests Content
+import QUESTS from './quests'
+// Pass content through the filter to return only the metadata
+export const QUEST_METADATA: MetadataType[] = extractMetaData(QUESTS)
+console.log(QUEST_METADATA);
+
