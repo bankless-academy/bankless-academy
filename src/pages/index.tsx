@@ -1,29 +1,26 @@
+import React from 'react'
 import { GetStaticProps } from 'next'
-import { PageMetaProps } from 'components/Head'
 import {
-  SimpleGrid,
-  Container,
-  Button,
   Box,
-  Stack,
   Text,
-  List,
-  ListItem,
-  ListIcon,
+  Stack,
+  Heading,
   Link,
-  Tooltip,
+  Button,
+  Container,
+  SimpleGrid,
+  Image,
+  Center,
+  useMediaQuery,
 } from '@chakra-ui/react'
-import { isMobile } from 'react-device-detect'
-import { MdCheckCircle, MdHourglassEmpty, MdError } from 'react-icons/md'
 
-import QuestCards from 'components/QuestCards'
+import { PageMetaProps } from 'components/Head'
 import QUESTS from 'constants/quests'
-
-// TODO LATER: rename back to quests.tsx
+import Card from 'components/Card'
 
 const pageMeta: PageMetaProps = {
-  title: 'Quests',
-  description: 'Quests description',
+  title: 'Home',
+  description: '...',
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -32,140 +29,161 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const CONTENT = (
-  <Link
-    target="_blank"
-    rel="noreferrer"
-    href={`https://www.notion.so/${QUESTS[0].notionId}`}
-    textDecorationStyle="unset"
-  >
-    <Button
-      variant="outline"
-      colorScheme="blue"
-      whiteSpace="normal"
-      height="auto"
-      p="4"
-    >
-      {/* 🆕 [version 0.5] Wallet Basics (improved) + Intro to DeFi (improved) */}
-      🆕 [version 0.6] 👷 current work in progress version
-    </Button>
-  </Link>
-)
-
-const DEV_PROGRESS = {
-  implemented: [
-    '🆕 Network switcher',
-    '🆕 Update logos',
-    '🆕 Improve POAP claiming: store claiming codes in database',
-    '🆕 New course about "Intro to DeFi"',
-    'User tracking with Umami + Hotjar to gather stats',
-    'Keyword color + definition tooltip',
-    'Web3 wallet connection via Metamask & Wallet Connect | display BANK token balance | disconnect',
-    'Full mobile compatibility including swiping between slides',
-    'Quest selection | dynamic progress based on slide number | number of POAPs claimed | modal showing quest details',
-    'Support for image + video + animations content',
-    'Animations: POAP hover & correct answer',
-    'Quiz',
-    'Comment slides via Notion link to gather feedback about content & quiz',
-    'Wallet basics quest: sign a transaction with your wallet (on mobile, you need to open the website directly inside the Metamask App)',
-    'Automatic content import from Notion via manual command line',
-    'POAP claiming (beta version, claiming codes are stored in Notion table)',
-    'Keyboard shortcuts: prev/next slide & select quiz answer [1], [2], [3], [4]',
-    "Collect user's feedback via a form after the quest is done",
-    'Display all Bankless DAO POAPs',
-    '[DEBUG] Reset app state (delete data from local storage)',
-  ],
-  comingSoon: [
-    'Intro to DeFi quizzes',
-    'Illustrations + videos',
-    'Improved design: UI/UX + colors',
-    'Improved font sizing + spacing on mobile',
-  ],
-  disabled: [
-    'Multi language',
-    'Dark Mode',
-    'Simplified navigation, without homepage + about page',
-  ],
-}
+const MORE_COURSES = [
+  'Next Level: Intermediate Wallet',
+  'Sidechains and Layer 2 Blockchains',
+  'Next Level: Advanced Wallet',
+  'DeFi Skills: Aave Basics',
+  'DeFi Skills: Uniswap Basic',
+  'Foundational Money Concepts',
+  'DeFi Skills: Alchemix Basics',
+  'DeFi Skllls: Working with Layer 2s',
+]
 
 const Page = (): JSX.Element => {
-  const hostname = window.location.hostname
+  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
   return (
-    <Container maxW="container.xl">
-      {isMobile && (
-        <Box pb={4}>
-          ⛔️ on mobile, make sure to open this website directly inside&nbsp;
-          <Link href={`https://metamask.app.link/dapp/${hostname}`} color="red">
-            MetaMask&apos;s browser
+    <>
+      <Center height="80vh" bg="purple.200">
+        <Stack spacing={6} textAlign="center">
+          <Heading as="h1" size="2xl">
+            Welcome to the Bankless Academy
+          </Heading>
+          <Heading as="h2" size="xl">
+            Level up your knowledge of Web3 and DeFi
+          </Heading>
+          <Link href={`/quests`}>
+            <Button variant="primary">Explore Courses</Button>
           </Link>
-        </Box>
-      )}
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={12} mt={8}>
-        <QuestCards />
-      </SimpleGrid>
-      <Box mt={8}>
-        <Tooltip
-          hasArrow
-          placement="right"
-          label="If you want to try the quest from scratch or experience any problem, click this button to reset the local app state"
-        >
-          <Button
-            onClick={() => {
-              localStorage.clear()
-              window.location.reload()
-            }}
-            mb={4}
-            colorScheme="red"
-          >
-            [DEBUG] reset app state
-          </Button>
-        </Tooltip>
-        <br />
-        {/* {CONTENT} */}
-        <Box display="none">
-          <Stack spacing={3} mb={4}>
-            <Text fontSize="2xl" fontWeight="bold">
-              Implemented features
+        </Stack>
+      </Center>
+      <Box bg="gray.700" p="5">
+        <Container maxW="container.xl">
+          <Box>
+            <Heading as="h2" size="xl">
+              Start Your Bankless Journey
+            </Heading>
+            <Text fontSize="lg">
+              The Bankless Academy is on a mission to introduce 1 billion people
+              to the exciting possibilities of cryptocurrency, DeFi, and beyond.
+              Whether you’re curious about crypto, intrigued by NFTs, or want to
+              get started the latest DeFi protocols, we’re here to help guide
+              and accelerate your journey to Web3 proficiency.
             </Text>
-            <List spacing={3} fontSize="lg">
-              {DEV_PROGRESS.implemented.map((f, k) => (
-                <ListItem key={k}>
-                  <ListIcon as={MdCheckCircle} color="green" />
-                  {f}
-                </ListItem>
+            <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="10">
+              <Box>
+                <Heading as="h3" size="xl">
+                  Advance Your Knowledge
+                </Heading>
+                <Text fontSize="lg">
+                  From basics to deep dives, discover the world of Web3
+                </Text>
+              </Box>
+              <Box>
+                <Heading as="h3" size="xl">
+                  Test Your Learning
+                </Heading>
+                <Text fontSize="lg">
+                  Complete activities to reinforce what you’ve learned
+                </Text>
+              </Box>
+              <Box>
+                <Heading as="h3" size="xl">
+                  Collect Rewards
+                </Heading>
+                <Text fontSize="lg">
+                  Complete courses to claim badges and rewards
+                </Text>
+              </Box>
+            </SimpleGrid>
+          </Box>
+          <Box>
+            <Heading as="h2" size="xl">
+              Available Courses
+            </Heading>
+            <Box p="5">
+              {QUESTS.map((quest, key) => {
+                const CourseImage = (
+                  <Card
+                    cursor="pointer"
+                    overflow="hidden"
+                    style={{
+                      aspectRatio: '1.91/1',
+                    }}
+                    maxW="500px"
+                  >
+                    <Image src={quest.questImageLink} />
+                  </Card>
+                )
+                const CourseDescription = (
+                  <Box>
+                    <Heading fontSize="xl">{quest.name}</Heading>
+                    <Text fontSize="lg">{quest.description}</Text>
+                    <Link href={`/quest/${quest.slug}`}>
+                      <Button variant="primary" mt="4">
+                        Start Course
+                      </Button>
+                    </Link>
+                  </Box>
+                )
+                return (
+                  <SimpleGrid
+                    columns={{ sm: 1, md: 2, lg: 2 }}
+                    key={key}
+                    gap={6}
+                    m="10"
+                  >
+                    {key % 2 === 0 && !isSmallScreen ? (
+                      <>
+                        {CourseImage}
+                        {CourseDescription}
+                      </>
+                    ) : (
+                      <>
+                        {CourseDescription}
+                        {CourseImage}
+                      </>
+                    )}
+                  </SimpleGrid>
+                )
+              })}
+            </Box>
+          </Box>
+          <Box>
+            <Heading as="h2" size="xl">
+              More Courses On the Way
+            </Heading>
+            <h2>
+              We are working on more informative courses to help expand your
+              Web3 knowledge.
+            </h2>
+            <SimpleGrid columns={{ sm: 2, md: 3, lg: 4 }} gap={6} m="10">
+              {MORE_COURSES.map((course, key) => (
+                <Center h="20" bg="gray.500" key={key} textAlign="center">
+                  {course}
+                </Center>
               ))}
-            </List>
-          </Stack>
-          <Stack spacing={3} mb={4}>
-            <Text fontSize="2xl" fontWeight="bold">
-              Coming soon™
-            </Text>
-            <List spacing={3} fontSize="lg">
-              {DEV_PROGRESS.comingSoon.map((f, k) => (
-                <ListItem key={k}>
-                  <ListIcon as={MdHourglassEmpty} color="orange" />
-                  {f}
-                </ListItem>
-              ))}
-            </List>
-          </Stack>
-          <Stack spacing={3} mb={4}>
-            <Text fontSize="2xl" fontWeight="bold">
-              Temporarily disabled
-            </Text>
-            <List spacing={3} fontSize="lg">
-              {DEV_PROGRESS.disabled.map((f, k) => (
-                <ListItem key={k}>
-                  <ListIcon as={MdError} color="red" />
-                  {f}
-                </ListItem>
-              ))}
-            </List>
-          </Stack>
-        </Box>
+            </SimpleGrid>
+          </Box>
+          <Box>
+            <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6}>
+              <Box>
+                <h2>
+                  How can we help with your bankless journey? Let us know what
+                  crypto, Web3, and DeFi topics and skills you would like to
+                  learn.
+                </h2>
+              </Box>
+              <Box>
+                <Link href={`/feedback`}>
+                  <Button variant="primary">Suggest Topic</Button>
+                </Link>
+              </Box>
+            </SimpleGrid>
+          </Box>
+        </Container>
       </Box>
-    </Container>
+    </>
   )
 }
 
