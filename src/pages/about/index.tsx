@@ -5,6 +5,7 @@ import { PageMetaProps } from 'components/Head'
 const pageMeta: PageMetaProps = {
   title: 'About',
   description: '...',
+  image: '...',
 }
 
 export const getStaticProps: GetStaticProps = async () => {

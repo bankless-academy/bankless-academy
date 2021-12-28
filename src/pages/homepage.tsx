@@ -6,8 +6,9 @@ import { PageMetaProps } from 'components/Head'
 // TODO LATER: rename back to index.tsx
 
 const pageMeta: PageMetaProps = {
-  title: 'Home',
+  title: 'Feedback',
   description: '...',
+  image: '...',
 }
 
 export const getStaticProps: GetStaticProps = async () => {
