@@ -112,7 +112,9 @@ const Page = (): JSX.Element => {
                     }}
                     maxW="500px"
                   >
-                    <Image src={quest.questImageLink} />
+                    <Link href={`/quest/${quest.slug}`}>
+                      <Image src={quest.questImageLink} />
+                    </Link>
                   </Card>
                 )
                 const CourseDescription = (
