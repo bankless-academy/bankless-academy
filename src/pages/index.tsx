@@ -116,7 +116,7 @@ const Page = (): JSX.Element => {
                   </Card>
                 )
                 const CourseDescription = (
-                  <Box>
+                  <Box alignSelf="center">
                     <Heading fontSize="xl">{quest.name}</Heading>
                     <Text fontSize="lg">{quest.description}</Text>
                     <Link href={`/quest/${quest.slug}`}>
@@ -131,9 +131,10 @@ const Page = (): JSX.Element => {
                     columns={{ sm: 1, md: 2, lg: 2 }}
                     key={key}
                     gap={6}
-                    m="10"
+                    m="5"
+                    mb="10"
                   >
-                    {key % 2 === 0 && !isSmallScreen ? (
+                    {key % 2 === 0 || isSmallScreen ? (
                       <>
                         {CourseImage}
                         {CourseDescription}
@@ -153,13 +154,19 @@ const Page = (): JSX.Element => {
             <Heading as="h2" size="xl">
               More Courses On the Way
             </Heading>
-            <h2>
+            <Text as="h3" size="lg">
               We are working on more informative courses to help expand your
               Web3 knowledge.
-            </h2>
+            </Text>
             <SimpleGrid columns={{ sm: 2, md: 3, lg: 4 }} gap={6} m="10">
               {MORE_COURSES.map((course, key) => (
-                <Center h="20" bg="gray.500" key={key} textAlign="center">
+                <Center
+                  h="20"
+                  bg="gray.500"
+                  key={key}
+                  textAlign="center"
+                  borderRadius="10"
+                >
                   {course}
                 </Center>
               ))}
@@ -168,11 +175,12 @@ const Page = (): JSX.Element => {
           <Box>
             <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6}>
               <Box>
-                <h2>
-                  How can we help with your bankless journey? Let us know what
-                  crypto, Web3, and DeFi topics and skills you would like to
-                  learn.
-                </h2>
+                <Heading as="h3" size="md">
+                  How can we help with your bankless journey?
+                  <br />
+                  Let us know what crypto, Web3, and DeFi topics and skills you
+                  would like to learn.
+                </Heading>
               </Box>
               <Box>
                 <Link href={`/feedback`}>
