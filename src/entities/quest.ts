@@ -32,9 +32,3 @@ export interface QuestType {
     component?: QuestComponentType
   }[]
 }
-
-export type MetadataType = {
-  title: string
-  description: string
-  image: string
-}

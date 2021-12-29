@@ -25,23 +25,19 @@ export const RPC_URLS = {
 
 export const INFURA_ID = process.env.INFURA_ID
 
-// Function that process all the Quest Content
-// Returning only the filtered metadata
-import { MetadataType } from 'entities/quest'
-import { QuestType } from 'entities/quest'
-function extractMetaData(quests: QuestType[]): MetadataType[] {
-  const allData: MetadataType[] = []
-  for (const index in quests) {
-    const data = {} as MetadataType
-    ;(data.title = quests[index].name),
-      (data.description = quests[index].description),
-      (data.image = quests[index].questImageLink)
-
-    allData.push(data)
-  }
-  return allData
+import { PageMetaProps } from 'components/Head'
+export const HOMEPAGE_METADATA: PageMetaProps = {
+  title: 'Bankless Academy',
+  description: 'Your educational platform to become a Bankless Jedi',
+  image: 'https://banklessacademy.com/bankless_academy_image_meta_v3.png',
 }
-// Import the Quests Content
-import QUESTS from './quests'
-// Pass content through the filter to return only the metadata
-export const QUEST_METADATA: MetadataType[] = extractMetaData(QUESTS)
+export const ABOUT_METADATA: PageMetaProps = {
+  title: 'About',
+  description: '',
+  image: '',
+}
+export const FEEDBACK_METADATA: PageMetaProps = {
+  title: 'Feedback',
+  description: '',
+  image: '',
+}

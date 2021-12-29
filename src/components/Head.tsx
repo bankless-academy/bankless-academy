@@ -3,7 +3,7 @@ import NextHead from 'next/head'
 import { PROJECT_NAME } from 'constants/'
 
 export interface PageMetaProps {
-  title: string
+  title: string | string
   description: string
   image: string
 }
@@ -11,7 +11,7 @@ export interface PageMetaProps {
 const Head = ({
   title = '',
   description = '',
-  image = ''
+  image = '',
 }: PageMetaProps): React.ReactElement => {
   return (
     <NextHead>

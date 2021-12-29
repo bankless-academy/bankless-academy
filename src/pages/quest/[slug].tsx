@@ -6,11 +6,13 @@ import Head, { PageMetaProps } from 'components/Head'
 import Quest from 'components/Quest'
 import QUESTS from 'constants/quests'
 
-const pageMeta = {
-  title: 'Quest',
-}
-
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const currentQuest = QUESTS.find(() => `/quest/${params.slug}`)
+  const pageMeta: PageMetaProps = {
+    title: currentQuest.name,
+    description: currentQuest.description,
+    image: currentQuest.questImageLink,
+  }
   return {
     props: { pageMeta },
   }
@@ -23,17 +25,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-const Page = (): JSX.Element => {
+const Page = ({ pageMeta }): JSX.Element => {
   const { asPath } = useRouter()
 
   const currentQuest = QUESTS.find((quest) => `/quest/${quest.slug}` === asPath)
 
-  const pageMeta: PageMetaProps = {
-    title: `Quest: ${currentQuest.name}`,
-    description: currentQuest.description,
-    image: currentQuest.questImageLink
-  }
-  
   return (
     <Container maxW="container.xl">
       <Head {...pageMeta} />
