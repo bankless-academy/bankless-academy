@@ -56,7 +56,7 @@ const DEV_PROGRESS = {
     '🆕 Network switcher',
     '🆕 Update logos',
     '🆕 Improve POAP claiming: store claiming codes in database',
-    '🆕 New course about "Intro to DeFi"',
+    '🆕 New lesson about "Intro to DeFi"',
     'User tracking with Umami + Hotjar to gather stats',
     'Keyword color + definition tooltip',
     'Web3 wallet connection via Metamask & Wallet Connect | display BANK token balance | disconnect',
@@ -87,7 +87,7 @@ const DEV_PROGRESS = {
   ],
 }
 
-const Page = (): JSX.Element => {
+const Lessons = (): JSX.Element => {
   const hostname = window.location.hostname
   return (
     <Container maxW="container.xl">
@@ -167,4 +167,4 @@ const Page = (): JSX.Element => {
   )
 }
 
-export default Page
+export default Lessons

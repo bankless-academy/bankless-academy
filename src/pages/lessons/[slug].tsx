@@ -26,7 +26,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const Page = (): JSX.Element => {
   const { asPath } = useRouter()
 
-  const currentQuest = QUESTS.find((quest) => `/quest/${quest.slug}` === asPath)
+  const currentQuest = QUESTS.find(
+    (quest) => `/lessons/${quest.slug}` === asPath
+  )
 
   const pageMeta: PageMetaProps = {
     title: `Quest: ${currentQuest.name}`,

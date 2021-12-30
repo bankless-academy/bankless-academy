@@ -29,7 +29,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const MORE_COURSES = [
+const MORE_LESSONS = [
   'Next Level: Intermediate Wallet',
   'Sidechains and Layer 2 Blockchains',
   'Next Level: Advanced Wallet',
@@ -40,11 +40,16 @@ const MORE_COURSES = [
   'DeFi Skllls: Working with Layer 2s',
 ]
 
-const Page = (): JSX.Element => {
+const HomePage = (): JSX.Element => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
   return (
     <>
-      <Center height="80vh" bg="purple.200">
+      <Center
+        height="80vh"
+        bgImage="/images/homepage_background.jpg"
+        bgSize="cover"
+        bgPosition="center"
+      >
         <Stack spacing={6} textAlign="center">
           <Heading as="h1" size="2xl">
             Welcome to the Bankless Academy
@@ -52,12 +57,12 @@ const Page = (): JSX.Element => {
           <Heading as="h2" size="xl">
             Level up your knowledge of Web3 and DeFi
           </Heading>
-          <Link href={`/quests`}>
-            <Button variant="primary">Explore Courses</Button>
+          <Link href={`/lessons`}>
+            <Button variant="primary">Explore Lessons</Button>
           </Link>
         </Stack>
       </Center>
-      <Box bg="gray.700" p="5">
+      <Box bgColor="#1F2023" p="5">
         <Container maxW="container.xl">
           <Box>
             <Heading as="h2" size="xl">
@@ -92,38 +97,38 @@ const Page = (): JSX.Element => {
                   Collect Rewards
                 </Heading>
                 <Text fontSize="lg">
-                  Complete courses to claim badges and rewards
+                  Complete lessons to claim badges and rewards
                 </Text>
               </Box>
             </SimpleGrid>
           </Box>
           <Box>
             <Heading as="h2" size="xl">
-              Available Courses
+              Available Lessons
             </Heading>
-            <Box p="5">
-              {QUESTS.map((quest, key) => {
-                const CourseImage = (
+            <Box>
+              {QUESTS.map((lesson, key) => {
+                const LessonImage = (
                   <Card
                     cursor="pointer"
                     overflow="hidden"
                     style={{
                       aspectRatio: '1.91/1',
                     }}
-                    maxW="500px"
+                    maxW="600px"
                   >
-                    <Link href={`/quest/${quest.slug}`}>
-                      <Image src={quest.questImageLink} />
+                    <Link href={`/lessons/${lesson.slug}`}>
+                      <Image src={lesson.questImageLink} />
                     </Link>
                   </Card>
                 )
-                const CourseDescription = (
+                const LessonDescription = (
                   <Box alignSelf="center">
-                    <Heading fontSize="xl">{quest.name}</Heading>
-                    <Text fontSize="lg">{quest.description}</Text>
-                    <Link href={`/quest/${quest.slug}`}>
+                    <Heading fontSize="xl">{lesson.name}</Heading>
+                    <Text fontSize="lg">{lesson.description}</Text>
+                    <Link href={`/lessons/${lesson.slug}`}>
                       <Button variant="primary" mt="4">
-                        Start Course
+                        Start Lesson
                       </Button>
                     </Link>
                   </Box>
@@ -133,18 +138,17 @@ const Page = (): JSX.Element => {
                     columns={{ sm: 1, md: 2, lg: 2 }}
                     key={key}
                     gap={6}
-                    m="5"
-                    mb="10"
+                    my="10"
                   >
                     {key % 2 === 0 || isSmallScreen ? (
                       <>
-                        {CourseImage}
-                        {CourseDescription}
+                        {LessonImage}
+                        {LessonDescription}
                       </>
                     ) : (
                       <>
-                        {CourseDescription}
-                        {CourseImage}
+                        {LessonDescription}
+                        {LessonImage}
                       </>
                     )}
                   </SimpleGrid>
@@ -154,22 +158,22 @@ const Page = (): JSX.Element => {
           </Box>
           <Box>
             <Heading as="h2" size="xl">
-              More Courses On the Way
+              More Lessons On the Way
             </Heading>
             <Text as="h3" size="lg">
-              We are working on more informative courses to help expand your
+              We are working on more informative lessons to help expand your
               Web3 knowledge.
             </Text>
             <SimpleGrid columns={{ sm: 2, md: 3, lg: 4 }} gap={6} m="10">
-              {MORE_COURSES.map((course, key) => (
+              {MORE_LESSONS.map((lesson, key) => (
                 <Center
                   h="20"
-                  bg="gray.500"
+                  bg="#2D2F34"
                   key={key}
                   textAlign="center"
                   borderRadius="10"
                 >
-                  {course}
+                  {lesson}
                 </Center>
               ))}
             </SimpleGrid>
@@ -197,4 +201,4 @@ const Page = (): JSX.Element => {
   )
 }
 
-export default Page
+export default HomePage

@@ -65,7 +65,7 @@ const QuestCards: React.FC = () => {
                 {numberOfPoapClaimed[index]} Completions
               </Text>
             </Box>
-            <Link href={`/quest/${quest.slug}`}>
+            <Link href={`/lessons/${quest.slug}`}>
               <Card
                 cursor="pointer"
                 overflow="hidden"

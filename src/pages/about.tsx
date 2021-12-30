@@ -13,7 +13,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const Page = (): JSX.Element => {
+const About = (): JSX.Element => {
   return (
     <>
       <h1>About page</h1>
@@ -21,4 +21,4 @@ const Page = (): JSX.Element => {
   )
 }
 
-export default Page
+export default About
