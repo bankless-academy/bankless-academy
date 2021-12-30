@@ -58,10 +58,7 @@ axios
                 .replace(/"/g, "'")
                 // .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
                 .replace(/\s+/g, ' ') // collapse whitespace
-                .replace(
-                  /<h1 notion-id='(.*?)'>/g,
-                  `"},{"type": "LEARN", "notionId":"$1", "title": "`
-                )
+                .replace(/<h1 notion-id='(.*?)'>/g, `"},{"type": "LEARN", "notionId":"$1", "title": "`)
                 .replace(/<\/h1>/g, `","content": "`)
                 .substr(3) + // remove extra "}, at the beginning
               `"}]`
