@@ -6,7 +6,7 @@ import { PageMetaProps } from 'components/Head'
 // TODO LATER: rename back to index.tsx
 
 const pageMeta: PageMetaProps = {
-  title: 'Feedback',
+  title: 'Home',
   description: '...',
   image: '...',
 }
