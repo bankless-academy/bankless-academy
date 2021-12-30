@@ -3,7 +3,7 @@ import NextHead from 'next/head'
 import { PROJECT_NAME } from 'constants/'
 
 export interface PageMetaProps {
-  title: string | string
+  title: string
   description: string
   image: string
 }
