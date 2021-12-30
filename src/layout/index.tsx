@@ -9,15 +9,11 @@ import {
   Input,
 } from '@chakra-ui/react'
 
-import Head from 'components/Head'
-import { PageMetaProps } from 'components/Head'
 import Nav from 'layout/Nav'
 
 const Layout = ({
-  pageMeta,
   children,
 }: {
-  pageMeta: PageMetaProps
   children: JSX.Element
 }): React.ReactElement => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
@@ -33,7 +29,6 @@ const Layout = ({
     >
       {typeof password === 'string' && password.toLowerCase() === 'dao' ? (
         <>
-          <Head {...pageMeta} />
           <Nav />
           <main>{children}</main>
           {/* <Footer /> */}

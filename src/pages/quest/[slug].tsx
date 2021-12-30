@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { Container } from '@chakra-ui/react'
 
-import Head, { PageMetaProps } from 'components/Head'
+import { PageMetaProps } from 'components/HeadMetadata'
 import Quest from 'components/Quest'
 import QUESTS from 'constants/quests'
 
@@ -25,14 +25,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-const Page = ({ pageMeta }): JSX.Element => {
+const Page = (): JSX.Element => {
   const { asPath } = useRouter()
 
   const currentQuest = QUESTS.find((quest) => `/quest/${quest.slug}` === asPath)
 
   return (
     <Container maxW="container.xl">
-      <Head {...pageMeta} />
       <Quest quest={currentQuest} />
     </Container>
   )

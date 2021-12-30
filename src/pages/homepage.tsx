@@ -1,14 +1,10 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
 
-import { PageMetaProps } from 'components/Head'
-
-// TODO LATER: rename back to index.tsx
+import { PageMetaProps } from 'components/HeadMetadata'
 
 const pageMeta: PageMetaProps = {
   title: 'Home',
-  description: '...',
-  image: '...',
 }
 
 export const getStaticProps: GetStaticProps = async () => {

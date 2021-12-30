@@ -1,5 +1,3 @@
-import { GetStaticProps } from 'next'
-import { PageMetaProps } from 'components/Head'
 import {
   SimpleGrid,
   Container,
@@ -18,20 +16,6 @@ import { MdCheckCircle, MdHourglassEmpty, MdError } from 'react-icons/md'
 
 import QuestCards from 'components/QuestCards'
 import QUESTS from 'constants/quests'
-
-// TODO LATER: rename back to quests.tsx
-
-const pageMeta: PageMetaProps = {
-  title: 'Quests',
-  description: 'Quests description',
-  image: '...',
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: { pageMeta },
-  }
-}
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CONTENT = (
