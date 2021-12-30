@@ -5,6 +5,7 @@ import { isMobile } from 'react-device-detect'
 import * as ethUtil from 'ethereumjs-util'
 
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
+import { track } from 'utils'
 
 // TODO: move to utils
 function hashPersonalMessage(msg: string): string {
@@ -62,6 +63,9 @@ const IntroToDeFi = (): {
         // verify signature
         const signer = recoverPersonalSignature(signature, message)
         const verified = signer.toLowerCase() === account.toLowerCase()
+        if (verified) {
+          track('intro_to_defi_quest_answer', answer)
+        }
         setIsSignatureVerified(verified)
       })
       .catch((error: any) => {
@@ -114,7 +118,7 @@ const IntroToDeFi = (): {
     isQuestCompleted: isSignatureVerified,
     questComponent: (
       <>
-        <h2>What do you most interested to learn to do with DeFi?</h2>
+        <h2>What are you most interested to learn to do with DeFi?</h2>
         <Box textAlign="center" pb="5">
           {VERBS.map((verb, key) => (
             <Button
