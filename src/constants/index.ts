@@ -26,7 +26,7 @@ export const RPC_URLS = {
 export const INFURA_ID = process.env.INFURA_ID
 
 import { PageMetaProps } from 'components/Head'
-export const HOMEPAGE_METADATA: PageMetaProps = {
+export const DEFAULT_METADATA: PageMetaProps = {
   title: 'Bankless Academy',
   description: 'Your educational platform to become a Bankless Jedi',
   image: 'https://banklessacademy.com/bankless_academy_image_meta_v3.png',
