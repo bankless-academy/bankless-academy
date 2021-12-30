@@ -22,8 +22,8 @@ import QUESTS from 'constants/quests'
 // TODO LATER: rename back to quests.tsx
 
 const pageMeta: PageMetaProps = {
-  title: 'Feedback',
-  description: '...',
+  title: 'Quests',
+  description: 'Quests description',
   image: '...',
 }
 
