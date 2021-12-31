@@ -3,18 +3,18 @@ import { useRouter } from 'next/router'
 import { Container } from '@chakra-ui/react'
 
 import { MetaData } from 'components/Head'
-import Quest from 'components/Quest'
-import QUESTS from 'constants/quests'
-import { QuestType } from 'entities/quest'
+import Lesson from 'components/Lesson'
+import LESSONS from 'constants/lessons'
+import { LessonType } from 'entities/lesson'
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const currentQuest = QUESTS.find(
-    (quest: QuestType) => quest.slug === params.slug
+  const currentLesson = LESSONS.find(
+    (lesson: LessonType) => lesson.slug === params.slug
   )
   const pageMeta: MetaData = {
-    title: `Lesson: ${currentQuest.name}`,
-    description: currentQuest.description,
-    image: currentQuest.questImageLink,
+    title: `Lesson: ${currentLesson.name}`,
+    description: currentLesson.description,
+    image: currentLesson.lessonImageLink,
   }
   return {
     props: { pageMeta },
@@ -22,23 +22,23 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: QUESTS.map((quest) => ({ params: { slug: quest.slug } })),
+    paths: LESSONS.map((lesson) => ({ params: { slug: lesson.slug } })),
     fallback: true,
   }
 }
 
-const Lesson = (): JSX.Element => {
+const LessonPage = (): JSX.Element => {
   const { asPath } = useRouter()
 
-  const currentQuest = QUESTS.find(
-    (quest: QuestType) => `/lessons/${quest.slug}` === asPath
+  const currentLesson = LESSONS.find(
+    (lesson: LessonType) => `/lessons/${lesson.slug}` === asPath
   )
 
   return (
     <Container maxW="container.xl">
-      <Quest quest={currentQuest} />
+      <Lesson lesson={currentLesson} />
     </Container>
   )
 }
 
-export default Lesson
+export default LessonPage

@@ -19,7 +19,7 @@ const CircularProgressSteps = ({
           size="300px"
           thickness="2px"
           trackColor="transparent"
-          // quest not started yet: -1
+          // lesson not started yet: -1
           color={index <= step && step !== -1 ? 'red.500' : 'red.200'}
           transform={`rotate(${(index / total) * 360}deg);`}
         />

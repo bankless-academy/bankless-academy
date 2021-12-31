@@ -21,7 +21,7 @@ import { useMediaQuery } from '@chakra-ui/react'
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import { Warning, Checks } from 'phosphor-react'
 
-import { QuestType, SlideType } from 'entities/quest'
+import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
 import QuestComponent from 'components/Quest/QuestComponent'
@@ -142,16 +142,16 @@ const SlideNav = styled(Box)<{ isSmallScreen?: boolean }>`
       `};
 `
 
-const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
+const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   // HACK: fix bug when someone has already claimed the POAP
-  if (localStorage.getItem(`poap-${quest.slug}`) === 'true')
-    localStorage.removeItem(`poap-${quest.slug}`)
+  if (localStorage.getItem(`poap-${lesson.slug}`) === 'true')
+    localStorage.removeItem(`poap-${lesson.slug}`)
 
   const buttonLeftRef = useRef(null)
   const buttonRightRef = useRef(null)
   const answerRef = useRef([])
   const [currentSlide, setCurrentSlide] = useState(
-    parseInt(localStorage.getItem(quest.slug) || '0')
+    parseInt(localStorage.getItem(lesson.slug) || '0')
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
   const [isClaimingPoap, setIsClaimingPoap] = useState(false)
@@ -160,14 +160,14 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     {}
   )
   const [isPoapClaimed, setIsPoapClaimed] = useState(
-    !!localStorage.getItem(`poap-${quest.slug}`)
+    !!localStorage.getItem(`poap-${lesson.slug}`)
   )
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   const router = useRouter()
   const toast = useToast()
-  const numberOfSlides = quest.slides.length
-  const slide = quest.slides[currentSlide]
+  const numberOfSlides = lesson.slides.length
+  const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
 
@@ -177,7 +177,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   // walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb44'
 
   useEffect((): void => {
-    localStorage.setItem(quest.slug, currentSlide.toString())
+    localStorage.setItem(lesson.slug, currentSlide.toString())
   }, [currentSlide])
 
   const goToPrevSlide = (e) => {
@@ -197,9 +197,9 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
     }
-    // TODO LATER: use router.push('/quests')
+    // TODO LATER: use router.push('/lessons')
     else if (isLastSlide && isPoapClaimed) {
-      if (quest.slug === 'wallet-basics') router.push('/feedback')
+      if (lesson.slug === 'wallet-basics') router.push('/feedback')
       else router.push('/')
     }
     setSelectedAnswerNumber(null)
@@ -231,7 +231,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     setIsClaimingPoap(true)
     axios
       .get(
-        `/api/claim-poap?address=${walletAddress}&poapEventId=${quest.poapEventId}`
+        `/api/claim-poap?address=${walletAddress}&poapEventId=${lesson.poapEventId}`
       )
       .then(function (res) {
         // eslint-disable-next-line no-console
@@ -240,7 +240,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
         setIsClaimingPoap(false)
         if (res.data.code) {
           setIsPoapClaimed(true)
-          localStorage.setItem(`poap-${quest.slug}`, res.data.code)
+          localStorage.setItem(`poap-${lesson.slug}`, res.data.code)
         }
       })
       .catch(function (error) {
@@ -282,12 +282,12 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
     parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
       slide.quiz.rightAnswerNumber
 
-  const questComponentName = quest.slides.filter((s) => s.component)[0]
+  const lessonComponentName = lesson.slides.filter((s) => s.component)[0]
     ?.component
-  const Quest = QuestComponent(questComponentName)
-  // TODO: store quest verification state in local storage
+  const Quest = QuestComponent(lessonComponentName)
+  // TODO: store lesson verification state in local storage
 
-  const poapCode = localStorage.getItem(`poap-${quest.slug}`) || poapData.code
+  const poapCode = localStorage.getItem(`poap-${lesson.slug}`) || poapData.code
 
   return (
     <>
@@ -393,7 +393,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 {walletAddress ? (
                   <>
                     <Image
-                      src={quest.poapImageLink}
+                      src={lesson.poapImageLink}
                       width="250px"
                       height="250px"
                       opacity={isPoapClaimed ? 1 : 0.7}
@@ -410,7 +410,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                     ) : (
                       <>
                         <h2>
-                          {`Congrats for finishing the "${quest.name}" quest! 🥳`}
+                          {`Congrats for finishing the "${lesson.name}" lesson! 🥳`}
                         </h2>
                         {poapCode && (
                           <>
@@ -477,7 +477,7 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
                 <Link
                   target="_blank"
                   rel="noreferrer"
-                  href={`https://www.notion.so/${quest.notionId}#${slide.notionId}`}
+                  href={`https://www.notion.so/${lesson.notionId}#${slide.notionId}`}
                 >
                   <Button variant="outline">🐞 comment this slide</Button>
                 </Link>
@@ -511,4 +511,4 @@ const Quest = ({ quest }: { quest: QuestType }): React.ReactElement => {
   )
 }
 
-export default Quest
+export default Lesson

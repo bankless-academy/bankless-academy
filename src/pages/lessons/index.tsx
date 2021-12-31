@@ -41,7 +41,7 @@ const Lessons = (): JSX.Element => {
         <Tooltip
           hasArrow
           placement="right"
-          label="If you want to try the quest from scratch or experience any problem, click this button to reset the local app state"
+          label="If you want to try the lesson from scratch or experience any problem, click this button to reset the local app state"
         >
           <Button
             onClick={() => {

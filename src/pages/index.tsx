@@ -12,7 +12,7 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react'
 
-import QUESTS from 'constants/quests'
+import LESSONS from 'constants/lessons'
 import Card from 'components/Card'
 
 const MORE_LESSONS = [
@@ -93,7 +93,7 @@ const HomePage = (): JSX.Element => {
               Available Lessons
             </Heading>
             <Box>
-              {QUESTS.map((lesson, key) => {
+              {LESSONS.map((lesson, key) => {
                 const LessonImage = (
                   <Card
                     cursor="pointer"
@@ -104,7 +104,7 @@ const HomePage = (): JSX.Element => {
                     maxW="600px"
                   >
                     <Link href={`/lessons/${lesson.slug}`}>
-                      <Image src={lesson.questImageLink} />
+                      <Image src={lesson.lessonImageLink} />
                     </Link>
                   </Card>
                 )

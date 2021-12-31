@@ -2,7 +2,10 @@ import WalletBasics from './WalletBasics'
 import BlockchainFundamentals from './BlockchainFundamentals'
 import IntroToDeFi from './IntroToDeFi'
 
-import { QuestComponentType } from 'entities/quest'
+export type QuestComponentType =
+  | 'WalletBasics'
+  | 'IntroToDeFi'
+  | 'BlockchainFundamentals'
 
 const QuestComponent = (
   component: QuestComponentType | null

@@ -9,7 +9,7 @@ const POTION_API = 'https://potion.banklessacademy.com'
 
 const KEY_MATCHING = {
   'POAP image link': 'poapImageLink',
-  'Quest image link': 'questImageLink',
+  'Lesson image link': 'lessonImageLink',
   'What will you be able to do after this course?': 'learningActions',
   'Knowledge Requirements': 'knowledgeRequirements',
   'POAP event ID': 'poapEventId',
@@ -27,14 +27,14 @@ console.log('NOTION_ID', NOTION_ID)
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((response) => {
-    const quests = []
+    const lessons = []
     const promiseArray = response.data.map((course, index) => {
       console.log('course Notion link: ', `${POTION_API}/html?id=${course.id}`)
       return axios
         .get(`${POTION_API}/html?id=${course.id}`)
         .then((response) => {
           // replace keys
-          const quest = Object.keys(KEY_MATCHING).reduce(
+          const lesson = Object.keys(KEY_MATCHING).reduce(
             (obj, k) =>
               Object.assign(obj, {
                 [KEY_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
@@ -44,8 +44,8 @@ axios
               }),
             {}
           )
-          quest.notionId = course.id.replace(/-/g, '')
-          quest.slug = quest.name
+          lesson.notionId = course.id.replace(/-/g, '')
+          lesson.slug = lesson.name
             .toLowerCase()
             .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
             .replace(/\s+/g, '-') // collapse whitespace and replace by -
@@ -101,7 +101,7 @@ axios
                   )
                 )
               })
-              slide.quiz.id = `${quest.slug}-${quizNb}`
+              slide.quiz.id = `${lesson.slug}-${quizNb}`
             }
             // TODO: move this logic to the frontend?
             // replace keywords in content
@@ -159,40 +159,40 @@ axios
             }
             return slide
           })
-          const componentName = quest.name
+          const componentName = lesson.name
             .split(' ')
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ')
             .replace(/\s+/g, '')
           slides.push({
             type: 'QUEST',
-            title: `${quest.name} Quest`,
+            title: `${lesson.name} Quest`,
             component: componentName,
           })
           slides.push({
             type: 'POAP',
             title: 'Collect your POAP',
           })
-          quest.slides = slides
-          console.log('quest', quest)
-          quests[index] = quest
+          lesson.slides = slides
+          console.log('lesson', lesson)
+          lessons[index] = lesson
         })
     })
     axios.all(promiseArray).then(() => {
-      const FILE_CONTENT = `import { QuestType } from 'entities/quest'
+      const FILE_CONTENT = `import { LessonType } from 'entities/lesson'
 
-const QUESTS: QuestType[] = ${stringifyObject(quests, {
+const LESSONS: LessonType[] = ${stringifyObject(lessons, {
         indent: '  ',
         singleQuotes: true,
       })}
 
-export default QUESTS
+export default LESSONS
 `
-      fs.writeFile('src/constants/quests.ts', FILE_CONTENT, (error) => {
+      fs.writeFile('src/constants/lessons.ts', FILE_CONTENT, (error) => {
         if (error) throw error
       })
       console.log(
-        'export done -> check syntax & typing errors in src/constants/quests.ts'
+        'export done -> check syntax & typing errors in src/constants/lessons.ts'
       )
     })
   })

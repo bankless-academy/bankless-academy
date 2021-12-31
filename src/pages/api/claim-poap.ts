@@ -2,9 +2,9 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import db from 'utils/db'
-import QUESTS from 'constants/quests'
+import LESSONS from 'constants/lessons'
 
-const POAP_IDS = QUESTS.map((quest) => quest.poapEventId.toString())
+const POAP_IDS = LESSONS.map((lesson) => lesson.poapEventId.toString())
 
 export default async function handler(
   req: NextApiRequest,

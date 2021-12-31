@@ -1,11 +1,8 @@
-export type QuestComponentType =
-  | 'WalletBasics'
-  | 'IntroToDeFi'
-  | 'BlockchainFundamentals'
+import { QuestComponentType } from 'components/Quest/QuestComponent'
 
 export type SlideType = 'LEARN' | 'QUIZ' | 'QUEST' | 'POAP'
 
-export interface QuestType {
+export interface LessonType {
   name: string
   slug: string
   notionId: string
@@ -14,7 +11,7 @@ export interface QuestType {
   duration: number
   difficulty: 'Easy' | 'Advanced' | 'Expert'
   poapImageLink: string
-  questImageLink: string
+  lessonImageLink: string
   learnings: string
   learningActions: string
   knowledgeRequirements: string

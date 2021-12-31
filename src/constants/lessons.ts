@@ -1,9 +1,9 @@
-import { QuestType } from 'entities/quest'
+import { LessonType } from 'entities/lesson'
 
-const QUESTS: QuestType[] = [
+const LESSONS: LessonType[] = [
   {
     poapImageLink: 'https://app.banklessacademy.com/images/poap1.png',
-    questImageLink: 'https://app.banklessacademy.com/images/banner1.jpg',
+    lessonImageLink: 'https://app.banklessacademy.com/images/banner1.jpg',
     learningActions:
       'Create and manage your own wallet<br>Connect your wallet to a web3 website',
     knowledgeRequirements: 'No prior knowledge needed.',
@@ -224,7 +224,7 @@ const QUESTS: QuestType[] = [
   },
   {
     poapImageLink: 'https://app.banklessacademy.com/images/poap1.png',
-    questImageLink: 'https://app.banklessacademy.com/images/banner1.jpg',
+    lessonImageLink: 'https://app.banklessacademy.com/images/banner1.jpg',
     learningActions:
       'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     knowledgeRequirements: 'Wallet Basics: how to manage a web3 wallet',
@@ -503,7 +503,7 @@ const QUESTS: QuestType[] = [
   },
   {
     poapImageLink: 'https://app.banklessacademy.com/images/poap1.png',
-    questImageLink: 'https://app.banklessacademy.com/images/banner1.jpg',
+    lessonImageLink: 'https://app.banklessacademy.com/images/banner1.jpg',
     learningActions: undefined,
     knowledgeRequirements: 'No prior knowledge needed',
     poapEventId: 16394,
@@ -592,4 +592,4 @@ const QUESTS: QuestType[] = [
   },
 ]
 
-export default QUESTS
+export default LESSONS
