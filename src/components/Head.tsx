@@ -23,11 +23,11 @@ const umamiDomain = 'https://umami.bankless.community/umami.js'
 
 const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
   const router = useRouter()
-  const title = metadata.title
+  const title = metadata?.title
     ? `${metadata.title} | ${PROJECT_NAME}`
     : PROJECT_NAME
-  const description = metadata.description || DEFAULT_METADATA.description
-  const image = metadata.image || DEFAULT_METADATA.image
+  const description = metadata?.description || DEFAULT_METADATA.description
+  const image = metadata?.image || DEFAULT_METADATA.image
   const url = `${domain}${router.asPath}`
   return (
     <NextHead>
@@ -47,11 +47,14 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+      {/* Umami */}
       <script async defer data-website-id={umamiWebsiteId} src={umamiDomain} />
+      {/* Hotjar */}
       {typeof window !== 'undefined' &&
       window.location.hostname === 'app.banklessacademy.com'
         ? hotjar.initialize(2568813, 6)
         : null}
+      {/* shortcut icon */}
       <link
         rel="shortcut icon"
         sizes="180x180"
