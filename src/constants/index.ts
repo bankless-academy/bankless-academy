@@ -1,4 +1,12 @@
+import { PageMetaProps } from 'components/HeadMetadata'
+
 export const PROJECT_NAME = 'Bankless Academy'
+
+export const DEFAULT_METADATA: PageMetaProps = {
+  title: PROJECT_NAME,
+  description: 'Your educational platform to become a Bankless Jedi',
+  image: 'https://banklessacademy.com/bankless_academy_image_meta_v3.png',
+}
 
 export const TOKEN_ADDRESS = {
   1: '0x2d94aa3e47d9d5024503ca8491fce9a2fb4da198',
