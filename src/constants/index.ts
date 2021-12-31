@@ -1,4 +1,4 @@
-import { PageMetaProps } from 'components/HeadMetadata'
+import { PageMetaProps } from 'components/Head'
 
 export const PROJECT_NAME = 'Bankless Academy'
 

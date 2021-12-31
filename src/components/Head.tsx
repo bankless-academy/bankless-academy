@@ -1,5 +1,6 @@
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
+import { hotjar } from 'react-hotjar'
 
 import { PROJECT_NAME, DEFAULT_METADATA } from 'constants/'
 
@@ -11,7 +12,16 @@ export interface PageMetaProps {
   image?: string
 }
 
-const HeadMetadata = ({
+const VERCEL_ENV = process.env.VERCEL_ENV
+const UMAMI = process.env.UMAMI
+
+const umamiWebsiteId =
+  VERCEL_ENV === 'production' && UMAMI
+    ? UMAMI
+    : 'e84c3a1e-0ab0-4502-b0fe-67d660765535'
+const umamiDomain = 'https://umami.bankless.community/umami.js'
+
+const Head = ({
   title = '',
   description = DEFAULT_METADATA.description,
   image = DEFAULT_METADATA.image,
@@ -37,14 +47,20 @@ const HeadMetadata = ({
       <meta name="twitter:title" content={metaTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+      <script async defer data-website-id={umamiWebsiteId} src={umamiDomain} />
+      {typeof window !== 'undefined' &&
+      window.location.hostname === 'app.banklessacademy.com'
+        ? hotjar.initialize(2568813, 6)
+        : null}
       <link
         rel="shortcut icon"
         sizes="180x180"
         type="image/png"
         href="/favicon.png"
       />
+      <noscript>You need to enable JavaScript to run this app.</noscript>
     </NextHead>
   )
 }
 
-export default HeadMetadata
+export default Head
