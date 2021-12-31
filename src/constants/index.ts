@@ -1,8 +1,8 @@
-import { PageMetaProps } from 'components/Head'
+import { MetaData } from 'components/Head'
 
 export const PROJECT_NAME = 'Bankless Academy'
 
-export const DEFAULT_METADATA: PageMetaProps = {
+export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
   description: 'Your educational platform to become a Bankless Jedi',
   image: 'https://banklessacademy.com/bankless_academy_image_meta_v3.png',

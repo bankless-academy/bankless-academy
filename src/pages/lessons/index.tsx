@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import { PageMetaProps } from 'components/Head'
+import { MetaData } from 'components/Head'
 import {
   SimpleGrid,
   Container,
@@ -12,7 +12,7 @@ import { isMobile } from 'react-device-detect'
 
 import LessonCards from 'components/LessonCards'
 
-const pageMeta: PageMetaProps = {
+const pageMeta: MetaData = {
   title: 'Lessons',
 }
 

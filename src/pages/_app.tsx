@@ -21,7 +21,7 @@ const Web3ReactProviderDefault = dynamic(
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <>
-      <Head {...pageProps.pageMeta} />
+      <Head metadata={pageProps.pageMeta} />
       <ThemeProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
           <Web3ReactProviderDefault getLibrary={getLibrary}>
