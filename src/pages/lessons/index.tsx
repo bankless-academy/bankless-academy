@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import { PageMetaProps } from 'components/Head'
+import { PageMetaProps } from 'components/HeadMetadata'
 import {
   SimpleGrid,
   Container,

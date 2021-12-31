@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { Container } from '@chakra-ui/react'
 
-import Head, { PageMetaProps } from 'components/Head'
+import Head, { PageMetaProps } from 'components/HeadMetadata'
 import Quest from 'components/Quest'
 import QUESTS from 'constants/quests'
 
