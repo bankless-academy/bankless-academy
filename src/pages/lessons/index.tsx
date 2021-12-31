@@ -20,8 +20,7 @@ import QuestCards from 'components/QuestCards'
 import QUESTS from 'constants/quests'
 
 const pageMeta: PageMetaProps = {
-  title: 'Quests',
-  description: 'Quests description',
+  title: 'Lessons',
 }
 
 export const getStaticProps: GetStaticProps = async () => {
