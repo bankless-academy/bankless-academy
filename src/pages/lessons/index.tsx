@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import { PageMetaProps } from 'components/Head'
+import { PageMetaProps } from 'components/HeadMetadata'
 import {
   SimpleGrid,
   Container,
@@ -20,8 +20,7 @@ import QuestCards from 'components/QuestCards'
 import QUESTS from 'constants/quests'
 
 const pageMeta: PageMetaProps = {
-  title: 'Quests',
-  description: 'Quests description',
+  title: 'Lessons',
 }
 
 export const getStaticProps: GetStaticProps = async () => {

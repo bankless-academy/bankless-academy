@@ -1,5 +1,3 @@
-import React from 'react'
-import { GetStaticProps } from 'next'
 import {
   Box,
   Text,
@@ -14,20 +12,8 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react'
 
-import { PageMetaProps } from 'components/Head'
 import QUESTS from 'constants/quests'
 import Card from 'components/Card'
-
-const pageMeta: PageMetaProps = {
-  title: 'Home',
-  description: '...',
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: { pageMeta },
-  }
-}
 
 const MORE_LESSONS = [
   'Next Level: Intermediate Wallet',

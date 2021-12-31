@@ -7,6 +7,7 @@ import { Global, css } from '@emotion/react'
 import { hotjar } from 'react-hotjar'
 
 import dynamic from 'next/dynamic'
+import HeadMetadata from 'components/HeadMetadata'
 import Layout from 'layout'
 import ThemeProvider from 'theme'
 
@@ -43,6 +44,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
           ? hotjar.initialize(2568813, 6)
           : null}
       </Head>
+      <HeadMetadata {...pageProps.pageMeta} />
       <noscript>You need to enable JavaScript to run this app.</noscript>
       <ThemeProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
@@ -64,7 +66,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
                 }
               `}
             />
-            <Layout pageMeta={pageProps.pageMeta}>
+            <Layout>
               <Component {...pageProps} />
             </Layout>
           </Web3ReactProviderDefault>
