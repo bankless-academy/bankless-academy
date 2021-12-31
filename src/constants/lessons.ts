@@ -10,7 +10,7 @@ const LESSONS: LessonType[] = [
     poapEventId: 16394,
     duration: 15,
     learnings:
-      'In this course you will learn the proper definition of a wallet, why you need a wallet, what "keys" are and how to protect them, and the important differences between "custodial" and "non-custodial".',
+      'In this lesson you will learn the proper definition of a wallet, why you need a wallet, what "keys" are and how to protect them, and the important differences between "custodial" and "non-custodial".',
     difficulty: 'Easy',
     description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
@@ -198,7 +198,7 @@ const LESSONS: LessonType[] = [
         notionId: '66d21ca797f44f02861545e2042582c8',
         title: 'MetaMask Wallet',
         content:
-          '<div class="bloc1"><p>There are several non-custodial <span class="tooltip" definition="A type of non-custodial wallet that is perpetually connected to the internet.">hot wallets</span> available today. We will explore the popular MetaMask Wallet for the remainder of this course since:</p><ul><li>It is likely to be compatible with most <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> apps.</li><li>It has a browser extension for Chrome, Brave, Edge, and Firefox internet browsers.</li><li>It is also available as a mobile app for Android and iOS users.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff6b7c4b2-6598-4a09-99d9-bd714ce26034%2Fnon_custodial_wallet.svg?table=block&id=4bd53e76-1f7e-4694-bb83-8810441d2531\'></div>',
+          '<div class="bloc1"><p>There are several non-custodial <span class="tooltip" definition="A type of non-custodial wallet that is perpetually connected to the internet.">hot wallets</span> available today. We will explore the popular MetaMask Wallet for the remainder of this lesson since:</p><ul><li>It is likely to be compatible with most <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> apps.</li><li>It has a browser extension for Chrome, Brave, Edge, and Firefox internet browsers.</li><li>It is also available as a mobile app for Android and iOS users.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff6b7c4b2-6598-4a09-99d9-bd714ce26034%2Fnon_custodial_wallet.svg?table=block&id=4bd53e76-1f7e-4694-bb83-8810441d2531\'></div>',
       },
       {
         type: 'QUIZ',
@@ -563,7 +563,7 @@ const LESSONS: LessonType[] = [
         notionId: 'e5ba019d8ac54af0907ec04f689c945a',
         title: 'Consensus',
         content:
-          '<div class="bloc1"><p>Be mindful of the fact that blockchains function differently. They share the same fundamental principles, but possess key differences. One of those differences is in the way valid data is included on the blockchain.</p><p>Since the blockchain is decentralized, valid data is only included after it has achieved consensus by the shared, distributed network. You will have the opportunity to learn more about the different consensus mechanisms in a later course.</p><p>Regardless of method, blocks of data are verified through a consensus of several devices, each independently synchronizing data processed on each block, without the need of a central authority. </p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4f856aaa-8658-42c0-a3b3-07b8d9a94217%2FUntitled.png?table=block&id=781ab658-66d1-447b-9c3a-135b37f1735e\'></div>',
+          '<div class="bloc1"><p>Be mindful of the fact that blockchains function differently. They share the same fundamental principles, but possess key differences. One of those differences is in the way valid data is included on the blockchain.</p><p>Since the blockchain is decentralized, valid data is only included after it has achieved consensus by the shared, distributed network. You will have the opportunity to learn more about the different consensus mechanisms in a later lesson.</p><p>Regardless of method, blocks of data are verified through a consensus of several devices, each independently synchronizing data processed on each block, without the need of a central authority. </p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4f856aaa-8658-42c0-a3b3-07b8d9a94217%2FUntitled.png?table=block&id=781ab658-66d1-447b-9c3a-135b37f1735e\'></div>',
       },
       {
         type: 'LEARN',
