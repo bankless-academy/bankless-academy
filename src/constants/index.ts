@@ -2,10 +2,12 @@ import { MetaData } from 'components/Head'
 
 export const PROJECT_NAME = 'Bankless Academy'
 
+export const DOMAIN = process.env.VERCEL_URL || 'https://banklessacademy.com'
+
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
   description: 'Your educational platform to become a Bankless Jedi',
-  image: 'https://banklessacademy.com/bankless_academy_image_meta_v3.png',
+  image: `${DOMAIN}/bankless_academy_v1.png'`,
 }
 
 export const TOKEN_ADDRESS = {

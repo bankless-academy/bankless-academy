@@ -2,9 +2,7 @@ import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { hotjar } from 'react-hotjar'
 
-import { PROJECT_NAME, DEFAULT_METADATA } from 'constants/'
-
-const domain = process.env.VERCEL_URL || ''
+import { PROJECT_NAME, DOMAIN, DEFAULT_METADATA } from 'constants/'
 
 export interface MetaData {
   title?: string
@@ -28,7 +26,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
     : PROJECT_NAME
   const description = metadata?.description || DEFAULT_METADATA.description
   const image = metadata?.image || DEFAULT_METADATA.image
-  const url = `${domain}${router.asPath}`
+  const url = `${DOMAIN}${router.asPath}`
   return (
     <NextHead>
       <title>{title}</title>
