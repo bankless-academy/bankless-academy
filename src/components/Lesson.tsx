@@ -282,10 +282,10 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
       slide.quiz.rightAnswerNumber
 
-  const lessonComponentName = lesson.slides.filter((s) => s.component)[0]
+  const questComponentName = lesson.slides.filter((s) => s.component)[0]
     ?.component
-  const Quest = QuestComponent(lessonComponentName)
-  // TODO: store lesson verification state in local storage
+  const Quest = QuestComponent(questComponentName)
+  // TODO: store quest verification state in local storage
 
   const poapCode = localStorage.getItem(`poap-${lesson.slug}`) || poapData.code
 

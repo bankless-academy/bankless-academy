@@ -10,7 +10,7 @@ const POTION_API = 'https://potion.banklessacademy.com'
 const KEY_MATCHING = {
   'POAP image link': 'poapImageLink',
   'Lesson image link': 'lessonImageLink',
-  'What will you be able to do after this course?': 'learningActions',
+  'What will you be able to do after this lesson?': 'learningActions',
   'Knowledge Requirements': 'knowledgeRequirements',
   'POAP event ID': 'poapEventId',
   'Duration in minutes': 'duration',
@@ -28,23 +28,23 @@ axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((response) => {
     const lessons = []
-    const promiseArray = response.data.map((course, index) => {
-      console.log('course Notion link: ', `${POTION_API}/html?id=${course.id}`)
+    const promiseArray = response.data.map((notion, index) => {
+      console.log('Notion lesson link: ', `${POTION_API}/html?id=${notion.id}`)
       return axios
-        .get(`${POTION_API}/html?id=${course.id}`)
+        .get(`${POTION_API}/html?id=${notion.id}`)
         .then((response) => {
           // replace keys
           const lesson = Object.keys(KEY_MATCHING).reduce(
             (obj, k) =>
               Object.assign(obj, {
-                [KEY_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
-                  ? course.fields[k]
+                [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k]))
+                  ? notion.fields[k]
                   : // transform to number if the string contains a number
-                    parseInt(course.fields[k]),
+                    parseInt(notion.fields[k]),
               }),
             {}
           )
-          lesson.notionId = course.id.replace(/-/g, '')
+          lesson.notionId = notion.id.replace(/-/g, '')
           lesson.slug = lesson.name
             .toLowerCase()
             .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
@@ -89,7 +89,7 @@ axios
                 )
                   // NOTION BUG: in case of bug with checked checkbox, recreate a new one
                   throw new Error(
-                    `more than 1 right answer, please check ${POTION_API}/html?id=${course.id}`
+                    `more than 1 right answer, please check ${POTION_API}/html?id=${notion.id}`
                   )
                 if (quiz_answer.includes('disabled checked>'))
                   slide.quiz.rightAnswerNumber = nb
