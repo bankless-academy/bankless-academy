@@ -248,9 +248,9 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'c50bb8b2fa5849599eaf08d3856609b6',
-        title: '<strong>What is DeFi?</strong>',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'What is DeFi?',
           rightAnswerNumber: 2,
           answers: [
             '[A] A decentralized blockchain of financial products',
@@ -271,9 +271,9 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '880816dada204d6d97bc73b2a60fcbe8',
-        title: '<strong>What is a common way to engage with DApps?</strong> ',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'What is a common way to engage with DApps?',
           rightAnswerNumber: 1,
           answers: ['MetaMask', 'Apple Pay', 'Cash App', 'PayPal'],
           id: 'intro-to-defi-2',
@@ -289,9 +289,9 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '07088c4e57114e41a7057c026d3b4fb7',
-        title: '<strong>Why is DeFi more efficient?</strong>',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'Why is DeFi more efficient?',
           rightAnswerNumber: 1,
           answers: [
             'because there is no middleman',
@@ -305,9 +305,9 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '49deed96613f467480e57c448c5afb32',
-        title: '<strong>Which of these are not money verbs?</strong> ',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'Which of these are not money verbs?',
           rightAnswerNumber: 2,
           answers: ['stake', 'profit', 'spend', 'bet'],
           id: 'intro-to-defi-4',
@@ -323,9 +323,9 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'ae2dee8eb23148dbb5bcc8d35f9ae75c',
-        title: '<strong>What does HODL stand for?</strong>',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'What does HODL stand for?',
           rightAnswerNumber: 3,
           answers: [
             'have your oppressive dreams linger',
@@ -346,10 +346,10 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '5ebfe2415e514ba3b39082dbd9ca7ddc',
-        title:
-          '<strong>Which of these are </strong><strong><em>not</em></strong><strong> an example of DeFi lending?</strong>',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question:
+            'Which of these are <em><strong>not</strong></em> an example of DeFi lending?',
           rightAnswerNumber: 3,
           answers: [
             'protocols to people',
@@ -370,10 +370,10 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '1873edad1c294e3ea1de37bdee5c9f73',
-        title:
-          '<strong>Lending your crypto to a protocol to help bolster its ability to process transactions is an example of?</strong>',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question:
+            'Lending your crypto to a protocol to help bolster its ability to process transactions is an example of?',
           rightAnswerNumber: 2,
           answers: ['Trading', 'Staking', 'Borrowing', 'Lending'],
           id: 'intro-to-defi-7',
@@ -389,10 +389,9 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '65ab45a683a041e59f128aabeff9a2df',
-        title:
-          'Can you<strong> use crypto in exchange for goods and services?</strong>',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'Can you use crypto in exchange for goods and services?',
           rightAnswerNumber: 1,
           answers: ['True', 'False'],
           id: 'intro-to-defi-8',
@@ -408,10 +407,9 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'f9363d0146984e41ba5e7dd2ee5a1051',
-        title:
-          '<strong>Which of these is true for investing with DeFi</strong><strong>?</strong>',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'Which of these is true for investing with DeFi?',
           rightAnswerNumber: 1,
           answers: [
             'DeFi is open around the clock year round ',
@@ -432,10 +430,9 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'b3884385404c4e119184bcfc0b3128bb',
-        title:
-          'Which of these action<strong> can you do to earn in DeFi</strong><strong>?</strong>',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'Which of these action can you do to earn in DeFi?',
           rightAnswerNumber: 2,
           answers: [
             'Buying coins that use DeFi technology',
@@ -456,10 +453,9 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: 'e8c5c6af32534277a3e333e8a554af99',
-        title:
-          'Can c<strong>rypto only be traded during market hours? </strong>',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question: 'Can crypto only be traded during market hours?',
           rightAnswerNumber: 1,
           answers: ['No ', 'Yes'],
           id: 'intro-to-defi-11',
@@ -476,10 +472,10 @@ const LESSONS: LessonType[] = [
       {
         type: 'QUIZ',
         notionId: '3d674e10bd084400ac9d6baacf12929c',
-        title:
-          '<strong>What happens when the middle man influence is reduced or removed?</strong>',
+        title: 'Knowledge Check',
         quiz: {
-          question: '',
+          question:
+            'What happens when the middle man influence is reduced or removed?',
           rightAnswerNumber: 2,
           answers: [
             'None of the above',
