@@ -10,7 +10,9 @@ import {
   Image,
   Center,
   useMediaQuery,
+  Icon,
 } from '@chakra-ui/react'
+import { BookOpen, LightbulbFilament, Medal } from 'phosphor-react'
 
 import LESSONS from 'constants/lessons'
 import Card from 'components/Card'
@@ -54,16 +56,25 @@ const HomePage = (): JSX.Element => {
             <Heading as="h2" size="xl">
               Start Your Bankless Journey
             </Heading>
-            <Text fontSize="lg">
+            <Text fontSize="lg" mt="2">
               The Bankless Academy is on a mission to introduce 1 billion people
               to the exciting possibilities of cryptocurrency, DeFi, and beyond.
               Whether you’re curious about crypto, intrigued by NFTs, or want to
               get started the latest DeFi protocols, we’re here to help guide
               and accelerate your journey to Web3 proficiency.
             </Text>
-            <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="10">
+            <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} my="8">
               <Box>
-                <Heading as="h3" size="xl">
+                <Icon
+                  as={BookOpen}
+                  w={10}
+                  h={10}
+                  bg="linear-gradient(148.06deg, #B8FFB0 7.86%, #84FFE1 90.48%)"
+                  color="black"
+                  borderRadius="50%"
+                  p="2"
+                />
+                <Heading as="h3" size="lg">
                   Advance Your Knowledge
                 </Heading>
                 <Text fontSize="lg">
@@ -71,7 +82,16 @@ const HomePage = (): JSX.Element => {
                 </Text>
               </Box>
               <Box>
-                <Heading as="h3" size="xl">
+                <Icon
+                  as={LightbulbFilament}
+                  w={10}
+                  h={10}
+                  bg="linear-gradient(148.06deg, #B0FFFA 7.86%, #FFBF84 90.48%)"
+                  color="black"
+                  borderRadius="50%"
+                  p="2"
+                />
+                <Heading as="h3" size="lg">
                   Test Your Learning
                 </Heading>
                 <Text fontSize="lg">
@@ -79,7 +99,16 @@ const HomePage = (): JSX.Element => {
                 </Text>
               </Box>
               <Box>
-                <Heading as="h3" size="xl">
+                <Icon
+                  as={Medal}
+                  w={10}
+                  h={10}
+                  bg="linear-gradient(148.06deg, #FFDFB0 7.86%, #FF84DC 90.48%)"
+                  color="black"
+                  borderRadius="50%"
+                  p="2"
+                />
+                <Heading as="h3" size="lg">
                   Collect Rewards
                 </Heading>
                 <Text fontSize="lg">
