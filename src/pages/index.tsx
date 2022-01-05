@@ -12,7 +12,7 @@ import {
   useMediaQuery,
   Icon,
 } from '@chakra-ui/react'
-import { BookOpen, LightbulbFilament, Medal } from 'phosphor-react'
+import { BookOpen, LightbulbFilament, Lightning, Medal } from 'phosphor-react'
 
 import LESSONS from 'constants/lessons'
 import Card from 'components/Card'
@@ -92,10 +92,28 @@ const HomePage = (): JSX.Element => {
                   p="2"
                 />
                 <Heading as="h3" size="lg">
-                  Test Your Learning
+                  Check Your Learning
                 </Heading>
                 <Text fontSize="lg">
-                  Complete activities to reinforce what you’ve learned
+                  Complete activities to test your command of topics and
+                  concepts
+                </Text>
+              </Box>
+              <Box>
+                <Icon
+                  as={Lightning}
+                  w={10}
+                  h={10}
+                  bg="linear-gradient(148.06deg, #B0FFFA 7.86%, #FFBF84 90.48%)"
+                  color="black"
+                  borderRadius="50%"
+                  p="2"
+                />
+                <Heading as="h3" size="lg">
+                  Complete Quests
+                </Heading>
+                <Text fontSize="lg">
+                  Put knowledge into action with step-by-step tutorials
                 </Text>
               </Box>
               <Box>
