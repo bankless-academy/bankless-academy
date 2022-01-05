@@ -218,7 +218,8 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'POAP',
-        title: 'Collect your POAP',
+        title:
+          'Collect your <span class="tooltip" definition="A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson.">POAP</span>',
       },
     ],
   },
@@ -493,7 +494,8 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'POAP',
-        title: 'Collect your POAP',
+        title:
+          'Collect your <span class="tooltip" definition="A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson.">POAP</span>',
       },
     ],
   },
@@ -582,7 +584,8 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'POAP',
-        title: 'Collect your POAP',
+        title:
+          'Collect your <span class="tooltip" definition="A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson.">POAP</span>',
       },
     ],
   },

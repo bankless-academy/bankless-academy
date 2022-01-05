@@ -306,7 +306,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           textAlign="center"
           fontWeight="bold"
         >
-          {ReactHtmlParser(slide.title)}
+          {ReactHtmlParser(slide.title, { transform })}
         </Text>
         <ProgressSteps step={currentSlide} total={numberOfSlides} />
         <Box

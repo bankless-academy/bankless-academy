@@ -171,7 +171,7 @@ axios
           })
           slides.push({
             type: 'POAP',
-            title: 'Collect your POAP',
+            title: `Collect your <span class="tooltip" definition="${keywords['POAP'].definition}">POAP</span>`,
           })
           lesson.slides = slides
           console.log('lesson', lesson)
