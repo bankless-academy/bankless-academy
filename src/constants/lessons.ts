@@ -224,8 +224,8 @@ const LESSONS: LessonType[] = [
     ],
   },
   {
-    poapImageLink: 'https://app.banklessacademy.com/images/poap1.png',
-    lessonImageLink: 'https://app.banklessacademy.com/images/banner1.jpg',
+    poapImageLink: 'https://app.banklessacademy.com/images/poap2.png',
+    lessonImageLink: 'https://app.banklessacademy.com/images/banner2.jpg',
     learningActions:
       'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     knowledgeRequirements: 'Wallet Basics: how to manage a web3 wallet',
@@ -319,7 +319,7 @@ const LESSONS: LessonType[] = [
         notionId: 'a75c5be3cfe14c2cbeb7efc66d580675',
         title: 'What can you do with DeFi - HODL',
         content:
-          '<div class="bloc1"><ul><li><strong>HODL</strong> is an acronym for <strong>H</strong>old <strong>O</strong>n for <strong>D</strong>ear <strong>L</strong>ife</li><li>Crypto prices are highly volatile, they go up and down. </li><li>The HODL mentality is the idea of retaining assets even through short to medium term price fluctuations. By holding long term, the HODLer experiences more price appreciation. </li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc025c790-c443-4f1e-8822-7b84d4056e7c%2FScreen_Shot_2021-08-27_at_13.33.32.jpg?table=block&id=f55a7a41-7fd2-4424-bbee-ee28cac9e17c\'></div>',
+          '<div class="bloc1"><ul><li><strong>HODL</strong> is an acronym for <strong>H</strong>old <strong>O</strong>n for <strong>D</strong>ear <strong>L</strong>ife</li><li>Crypto prices are highly volatile, they go up and down. </li><li>The HODL mentality is the idea of retaining assets even through short to medium term price fluctuations. By holding long term, the HODLer experiences more price appreciation.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc02f4cd0-63d4-4d85-aa9a-47cd92549056%2FHODL.svg?table=block&id=9e53dba2-822c-4bba-b129-6b548f26962c\'></div>',
       },
       {
         type: 'QUIZ',
@@ -342,7 +342,7 @@ const LESSONS: LessonType[] = [
         notionId: '7bec76e281aa4d17809843017fd61a32',
         title: 'What can you do with DeFi - Lend/Borrow',
         content:
-          '<div class="bloc1"><ul><li>In DeFi, anyone can borrow and anyone can become a <span class="tooltip" definition="Deposits assets to earn interest">lender</span>.</li><li>DeFi lending and borrowing offers loans without the need for a bank or intermediary institution. Instead, lending is done on a <span class="tooltip" definition="A transaction between two parties that does not require a middleman or controlling entity.">peer-to-peer</span> level.</li><li>Similar to traditional loans, a lender will earn interest on the loan and the <span class="tooltip" definition="Willing to pay interest to lenders in order to borrow assets">borrower</span> will need to pay the principal of the loan plus interest within a set amount of time.</li><li>Peer-to-peer loans means that long-term investors can earn interest from the loan and it enables users to access loans at lower rates with DeFi than if they went through exchanges or through traditional loans.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe76d6096-70a3-47b9-a0f8-a3dc644829b5%2FLending02.png?table=block&id=10a7dbff-1dbd-4b88-ae00-680b7ee69809\'></div>',
+          '<div class="bloc1"><ul><li>In DeFi, anyone can borrow and anyone can become a <span class="tooltip" definition="Deposits assets to earn interest">lender</span>.</li><li>DeFi lending and borrowing offers loans without the need for a bank or intermediary institution. Instead, lending is done on a <span class="tooltip" definition="A transaction between two parties that does not require a middleman or controlling entity.">peer-to-peer</span> level.</li><li>Similar to traditional loans, a lender will earn interest on the loan and the <span class="tooltip" definition="Willing to pay interest to lenders in order to borrow assets">borrower</span> will need to pay the principal of the loan plus interest within a set amount of time.</li><li>Peer-to-peer loans means that long-term investors can earn interest from the loan and it enables users to access loans at lower rates with DeFi than if they went through exchanges or through traditional loans.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3f65365a-4bdb-4d6e-8974-5475563a9cbc%2FLend_Borrow.svg?table=block&id=4a1f4d18-88fb-4ed9-887b-b36f8f606a8b\'></div>',
       },
       {
         type: 'QUIZ',
@@ -449,7 +449,7 @@ const LESSONS: LessonType[] = [
         notionId: '907f4bdbe3b9499091afdaca6177d9bd',
         title: 'What can you do with DeFi: Trade',
         content:
-          '<div class="bloc1"><ul><li>DeFi lets you trade any asset in a peer-to-peer environment. There is no middleman and you don\'t need permission.</li><li>Trading cryptocurrency is also available on centralized exchanges. However, because they own your private keys, there\'s a greater risk of stolen funds, frozen accounts, and/or censored transactions. </li><li>Trading in DeFi is permissionless and available 24/7 globally with no restrictions for any reason including name, age, gender, location, race, religion, or anything. DeFi is completely open and free for anybody to use. </li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5af70635-303d-4322-9c4d-4d310631885b%2FScreenshot_from_2021-09-22_11-52-39.png?table=block&id=353ab56d-6820-4b10-a830-58c73a88d905\'></div>',
+          '<div class="bloc1"><ul><li>DeFi lets you trade any asset in a peer-to-peer environment. There is no middleman and you don\'t need permission.</li><li>Trading cryptocurrency is also available on centralized exchanges. However, because they own your private keys, there\'s a greater risk of stolen funds, frozen accounts, and/or censored transactions. </li><li>Trading in DeFi is permissionless and available 24/7 globally with no restrictions for any reason including name, age, gender, location, race, religion, or anything. DeFi is completely open and free for anybody to use. </li></ul></div>',
       },
       {
         type: 'QUIZ',
