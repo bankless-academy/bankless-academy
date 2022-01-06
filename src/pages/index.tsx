@@ -12,7 +12,7 @@ import {
   useMediaQuery,
   Icon,
 } from '@chakra-ui/react'
-import { BookOpen, LightbulbFilament, Lightning, Medal } from 'phosphor-react'
+import { BookOpen, LightbulbFilament, Sword, Medal } from 'phosphor-react'
 
 import LESSONS from 'constants/lessons'
 import Card from 'components/Card'
@@ -63,7 +63,7 @@ const HomePage = (): JSX.Element => {
               get started the latest DeFi protocols, we’re here to help guide
               and accelerate your journey to Web3 proficiency.
             </Text>
-            <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} my="8">
+            <SimpleGrid columns={{ sm: 1, md: 2, lg: 4 }} gap={6} my="8">
               <Box>
                 <Icon
                   as={BookOpen}
@@ -74,9 +74,7 @@ const HomePage = (): JSX.Element => {
                   borderRadius="50%"
                   p="2"
                 />
-                <Heading as="h3" size="lg">
-                  Advance Your Knowledge
-                </Heading>
+                <Heading size="lg">Advance Your Knowledge</Heading>
                 <Text fontSize="lg">
                   From basics to deep dives, discover the world of Web3
                 </Text>
@@ -91,9 +89,7 @@ const HomePage = (): JSX.Element => {
                   borderRadius="50%"
                   p="2"
                 />
-                <Heading as="h3" size="lg">
-                  Check Your Learning
-                </Heading>
+                <Heading size="lg">Check Your Learning</Heading>
                 <Text fontSize="lg">
                   Complete activities to test your command of topics and
                   concepts
@@ -101,17 +97,15 @@ const HomePage = (): JSX.Element => {
               </Box>
               <Box>
                 <Icon
-                  as={Lightning}
+                  as={Sword}
                   w={10}
                   h={10}
-                  bg="linear-gradient(148.06deg, #B0FFFA 7.86%, #FFBF84 90.48%)"
+                  bg="linear-gradient(148.06deg, #FFDFB0 7.86%, #FF84DC 90.48%)"
                   color="black"
                   borderRadius="50%"
                   p="2"
                 />
-                <Heading as="h3" size="lg">
-                  Complete Quests
-                </Heading>
+                <Heading size="lg">Complete Quests</Heading>
                 <Text fontSize="lg">
                   Put knowledge into action with step-by-step tutorials
                 </Text>
@@ -121,14 +115,12 @@ const HomePage = (): JSX.Element => {
                   as={Medal}
                   w={10}
                   h={10}
-                  bg="linear-gradient(148.06deg, #FFDFB0 7.86%, #FF84DC 90.48%)"
+                  bg="linear-gradient(148.06deg, #FDFF84 7.86%, #B0E3FF 79.72%)"
                   color="black"
                   borderRadius="50%"
                   p="2"
                 />
-                <Heading as="h3" size="lg">
-                  Collect Rewards
-                </Heading>
+                <Heading size="lg">Collect Rewards</Heading>
                 <Text fontSize="lg">
                   Complete lessons to claim badges and rewards
                 </Text>
