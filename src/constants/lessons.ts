@@ -24,7 +24,7 @@ const LESSONS: LessonType[] = [
         notionId: '0bf15ec24615455b9349774527410d81',
         title: 'Wallet Intro',
         content:
-          '<div class="bloc2"><iframe allowfullscreen src=\'https://www.youtube.com/embed/AexoxTZEtOY?feature=oembed&rel=0\'></iframe></div>',
+          '<div class="bloc2"><iframe allowfullscreensrc=\'https://www.youtube.com/embed/AexoxTZEtOY?feature=oembed&rel=0\'></iframe></div>',
       },
       {
         type: 'LEARN',
@@ -233,7 +233,7 @@ const LESSONS: LessonType[] = [
     marketingDescription:
       'Move beyond centralized exchanges and discover the quickly expanding possibilities of decentralized finance.',
     knowledgeRequirements: 'Wallet Basics: how to manage a web3 wallet',
-    poapEventId: 16394,
+    poapEventId: 21670,
     duration: 10,
     learnings:
       'What is Defi?<br>How DeFi works<br>The DeFi stack<br>The security layer<br>What are the possibilities with DeFi',
@@ -393,12 +393,12 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'How can you earn yield with crypto?',
-          rightAnswerNumber: 3,
+          rightAnswerNumber: 4,
           answers: [
-            'Earning interest by depositing into a DeFi protocol',
-            'Earning rewards by depositing into a DeFi protocol',
+            '[A] Earning interest by depositing into a DeFi protocol',
+            '[B] Earning rewards by depositing into a DeFi protocol',
+            '[C] You can’t earn yield on crypto',
             'Both A and B',
-            'You can’t earn yield on crypto',
           ],
           id: 'intro-to-defi-6',
         },
