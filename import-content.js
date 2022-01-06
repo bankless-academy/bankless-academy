@@ -54,23 +54,21 @@ axios
             .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
             .replace(/\s+/g, '-') // collapse whitespace and replace by -
             .replace(/-+/g, '-') // collapse dashes
-          const content = JSON.parse(
-            `[` +
-            htmlPage.data
-              .replace(/"/g, "'")
-              // strip parentheses content (slide numbers)
-              // .replace(/ *\([^)]*\) */g, '')
-              // collapse whitespace
-              .replace(/\s+/g, ' ')
-              .replace(
-                /<h1 notion-id='(.*?)'>/g,
-                `"},{"type": "LEARN", "notionId":"$1", "title": "`
-              )
-              .replace(/<\/h1>/g, `","content": "`)
-              // remove extra "}, at the beginning
-              .substr(3) +
-            `"}]`
-          )
+          // data cleaning
+          htmlPage.data = htmlPage.data
+            .replace(/"/g, "'")
+            // strip parentheses content (slide numbers)
+            // .replace(/ *\([^)]*\) */g, '')
+            // collapse whitespace
+            .replace(/\s+/g, ' ')
+            .replace(
+              /<h1 notion-id='(.*?)'>/g,
+              `"},{"type": "LEARN", "notionId":"$1", "title": "`
+            )
+            .replace(/<\/h1>/g, `","content": "`)
+            // remove extra "}, at the beginning
+            .substr(3)
+          const content = JSON.parse(`[${htmlPage.data}"}]`)
           let quizNb = 0
           const slides = content.map((slide) => {
             // replace with type QUIZ
