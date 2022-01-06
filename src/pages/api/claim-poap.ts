@@ -35,6 +35,7 @@ export default async function handler(
     } else {
       // [step 3] get the code + update is_code_used to true
       const [newCode] = await db('poaps3')
+        .where('event_id', poapEventId)
         .where(
           'id',
           db('poaps3')
