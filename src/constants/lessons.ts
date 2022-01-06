@@ -12,7 +12,7 @@ const LESSONS: LessonType[] = [
     poapEventId: 16394,
     duration: 15,
     learnings:
-      'In this lesson you will learn the proper definition of a wallet, why you need a wallet, what "keys" are and how to protect them, and the important differences between "custodial" and "non-custodial".',
+      'In this lesson, you will learn what digital wallets are, what they allow you to do, and how to set up and protect your wallet to confidently get started on your bankless journey.',
     difficulty: 'Easy',
     description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
@@ -236,7 +236,7 @@ const LESSONS: LessonType[] = [
     poapEventId: 21670,
     duration: 10,
     learnings:
-      'What is Defi?<br>How DeFi works<br>The DeFi stack<br>The security layer<br>What are the possibilities with DeFi',
+      'Learn what decentralized finance means and the game-changing possibilities that these new blockchain-powered applications are introducing to the world.',
     difficulty: 'Easy',
     description: 'Understand the basics of Decentralized Finance',
     name: 'Intro to DeFi',
@@ -271,7 +271,7 @@ const LESSONS: LessonType[] = [
         notionId: '153a075b1a004f38a9c177486aa95395',
         title: 'What You Can Do With DeFi',
         content:
-          '<div class="bloc1"><p>DeFi transactions are permissionless, and no third party controls or oversees them. These transactions are carried out by decentralized applications, known as <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span>, which operate on public blockchains.</p><p>DApps offer financial products that you would typically need a bank or financial services firm to get—but without the paperwork, approval processes, or service fees of the traditional finance world.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe03cdd7d-cbf0-42ac-bb60-1237bcc12dea%2FWhat_You_Can_Do_with_DeFi.svg?table=block&id=d22db0ee-5f50-44d1-b24a-7fd39d89c824\'></div>',
+          '<div class="bloc1"><p><span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transactions are permissionless, and no third party controls or oversees them. These transactions are carried out by decentralized applications, known as <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span>, which operate on public blockchains.</p><p>DApps offer financial products that you would typically need a bank or financial services firm to get—but without the paperwork, approval processes, or service fees of the traditional finance world.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe03cdd7d-cbf0-42ac-bb60-1237bcc12dea%2FWhat_You_Can_Do_with_DeFi.svg?table=block&id=d22db0ee-5f50-44d1-b24a-7fd39d89c824\'></div>',
       },
       {
         type: 'LEARN',
@@ -324,21 +324,14 @@ const LESSONS: LessonType[] = [
         notionId: 'b1da9af463c24fd3a1fb8ce6a5b8dfaf',
         title: 'Trading',
         content:
-          '<div class="bloc1"><p>A decentralized exchange (DEX) is a digital marketplace that simplifies trading one currency for another by bringing together buyers and sellers of crypto assets.</p><p>The platform shows the current exchange rate between different crypto tokens and coins.</p><p>The parties involved in a trade don’t need to know or trust each other. In fact, it may appear that you are trading with the DEX—however, in most cases it simply facilitates the trade between two <span class="tooltip" definition="A wallet is an application or device used to send and receive crypto assets on the blockchain.">wallet</span> addresses.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd2808694-6a1c-43a5-bf63-4552f308e0c3%2FTrading.svg?table=block&id=ebf4ec26-06fc-4dd0-b0e4-c4ea7cb75a58\'></div>',
-      },
-      {
-        type: 'LEARN',
-        notionId: 'e45c2106904c48eb908746cb95494a17',
-        title: 'Trading',
-        content:
-          '<div class="bloc1"><p>Once everyone confirms the terms of the trade with their wallets, smart contracts built into the protocol then execute the trade.</p><p>The record of the transaction is permanently recorded on the blockchain.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd2808694-6a1c-43a5-bf63-4552f308e0c3%2FTrading.svg?table=block&id=dda6afc5-c94a-4ed7-8bed-534b0220d0c3\'></div>',
+          '<div class="bloc1"><p>A decentralized exchange (DEX) is a digital marketplace that simplifies trading one currency for another by bringing together buyers and sellers of crypto assets.</p><p>The platform shows the current exchange rate between different crypto tokens and coins.</p><p>The parties involved in a trade don’t need to know or trust each other. In fact, it may appear that you are trading with the DEX. However, in most cases, it simply facilitates the trade between two traders’ wallets.</p><p>Once everyone confirms the terms of the trade with their wallets, smart contracts built into the DEX protocol execute the trade. Then, the record of this transaction is permanently recorded on the <span class="tooltip" definition="A shared, unchangeable database or record of transactions.">blockchain</span>.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd2808694-6a1c-43a5-bf63-4552f308e0c3%2FTrading.svg?table=block&id=ebf4ec26-06fc-4dd0-b0e4-c4ea7cb75a58\'></div>',
       },
       {
         type: 'LEARN',
         notionId: '0fe73546a6d646d4b4bd3610b9f0b575',
         title: 'Advanced Trading',
         content:
-          '<div class="bloc1"><p>Some DEXes also offer advanced trading tools. These enable the kinds of trades and strategies used by day traders and other sophisticated investors in traditional financial markets.</p><p>They are topics for another course.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd97962b2-3f8c-4af2-b4e2-251a23b1246c%2FAdvanced_Trading.svg?table=block&id=d540ee43-2965-4887-a9b7-fc0f0bcbc26d\'></div>',
+          '<div class="bloc1"><p>Some DEXes also offer advanced trading tools. These enable the kinds of trades and strategies used by day traders and other sophisticated investors in traditional financial markets.</p><p>These are topics for another course.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd97962b2-3f8c-4af2-b4e2-251a23b1246c%2FAdvanced_Trading.svg?table=block&id=d540ee43-2965-4887-a9b7-fc0f0bcbc26d\'></div>',
       },
       {
         type: 'QUIZ',
@@ -398,7 +391,7 @@ const LESSONS: LessonType[] = [
             '[A] Earning interest by depositing into a DeFi protocol',
             '[B] Earning rewards by depositing into a DeFi protocol',
             '[C] You can’t earn yield on crypto',
-            'Both A and B',
+            '[D] Both A and B',
           ],
           id: 'intro-to-defi-6',
         },
