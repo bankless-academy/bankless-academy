@@ -11,6 +11,7 @@ const KEY_MATCHING = {
   'POAP image link': 'poapImageLink',
   'Lesson image link': 'lessonImageLink',
   'What will you be able to do after this lesson?': 'learningActions',
+  'Landing page copy': 'marketingDescription',
   'Knowledge Requirements': 'knowledgeRequirements',
   'POAP event ID': 'poapEventId',
   'Duration in minutes': 'duration',
@@ -24,15 +25,18 @@ const args = process.argv
 const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : DEFAULT_NOTION_ID
 console.log('NOTION_ID', NOTION_ID)
 
+const LIMIT_NUMBER_OF_LESSONS = 2
+
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
-  .then((response) => {
+  .then((notionRows) => {
     const lessons = []
-    const promiseArray = response.data.map((notion, index) => {
+    const promiseArray = notionRows.data.map((notion, index) => {
+      if (index + 1 > LIMIT_NUMBER_OF_LESSONS) return
       console.log('Notion lesson link: ', `${POTION_API}/html?id=${notion.id}`)
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)
-        .then((response) => {
+        .then((htmlPage) => {
           // replace keys
           const lesson = Object.keys(KEY_MATCHING).reduce(
             (obj, k) =>
@@ -40,7 +44,7 @@ axios
                 [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k]))
                   ? notion.fields[k]
                   : // transform to number if the string contains a number
-                    parseInt(notion.fields[k]),
+                  parseInt(notion.fields[k]),
               }),
             {}
           )
@@ -52,17 +56,17 @@ axios
             .replace(/-+/g, '-') // collapse dashes
           const content = JSON.parse(
             `[` +
-              response.data
-                .replace(/"/g, "'")
-                // .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
-                .replace(/\s+/g, ' ') // collapse whitespace
-                .replace(
-                  /<h1 notion-id='(.*?)'>/g,
-                  `"},{"type": "LEARN", "notionId":"$1", "title": "`
-                )
-                .replace(/<\/h1>/g, `","content": "`)
-                .substr(3) + // remove extra "}, at the beginning
-              `"}]`
+            htmlPage.data
+              .replace(/"/g, "'")
+              // .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
+              .replace(/\s+/g, ' ') // collapse whitespace
+              .replace(
+                /<h1 notion-id='(.*?)'>/g,
+                `"},{"type": "LEARN", "notionId":"$1", "title": "`
+              )
+              .replace(/<\/h1>/g, `","content": "`)
+              .substr(3) + // remove extra "}, at the beginning
+            `"}]`
           )
           let quizNb = 0
           const slides = content.map((slide) => {
@@ -115,12 +119,11 @@ axios
                 // content contains an iframe
                 const [bloc1, bloc2] = slide.content.split('<iframe ')
                 if (bloc2 !== '')
-                  slide.content = `${
-                    bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''
-                  }<div class="bloc2"><iframe allowfullscreen ${bloc2.replace(
-                    /feature=oembed/g,
-                    'feature=oembed&rel=0'
-                  )}</div>`
+                  slide.content = `${bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''
+                    }<div class="bloc2"><iframe allowfullscreen ${bloc2.replace(
+                      /feature=oembed/g,
+                      'feature=oembed&rel=0'
+                    )}</div>`
               } else {
                 // text only
                 slide.content = `<div class="bloc1">${slide.content}</div>`

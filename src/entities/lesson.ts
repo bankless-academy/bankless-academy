@@ -8,6 +8,7 @@ export interface LessonType {
   notionId: string
   poapEventId: number
   description: string
+  marketingDescription: string
   duration: number
   difficulty: 'Easy' | 'Advanced' | 'Expert'
   poapImageLink: string

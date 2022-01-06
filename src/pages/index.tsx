@@ -157,8 +157,8 @@ const HomePage = (): JSX.Element => {
                 )
                 const LessonDescription = (
                   <Box alignSelf="center">
-                    <Heading fontSize="xl">{lesson.name}</Heading>
-                    <Text fontSize="lg">{lesson.description}</Text>
+                    <Heading fontSize="2xl">{lesson.name}</Heading>
+                    <Text fontSize="lg">{lesson.marketingDescription}</Text>
                     <Link href={`/lessons/${lesson.slug}`}>
                       <Button variant="primary" mt="4">
                         Start Lesson
