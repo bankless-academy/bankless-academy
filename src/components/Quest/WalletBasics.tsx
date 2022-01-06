@@ -32,7 +32,7 @@ const WalletBasics = (): {
           </p>
         </div>
         <iframe
-          src="https://www.youtube.com/embed/yr-SmVQAiTM?rel=0"
+          src="https://www.youtube.com/embed/UaL4IBtPozw?rel=0"
           allowFullScreen
         ></iframe>
         <Button
