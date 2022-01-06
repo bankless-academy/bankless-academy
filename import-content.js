@@ -41,10 +41,10 @@ axios
           const lesson = Object.keys(KEY_MATCHING).reduce(
             (obj, k) =>
               Object.assign(obj, {
+                // transform to number if the string contains a number
                 [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k]))
                   ? notion.fields[k]
-                  : // transform to number if the string contains a number
-                  parseInt(notion.fields[k]),
+                  : parseInt(notion.fields[k]),
               }),
             {}
           )
@@ -58,14 +58,17 @@ axios
             `[` +
             htmlPage.data
               .replace(/"/g, "'")
-              // .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
-              .replace(/\s+/g, ' ') // collapse whitespace
+              // strip parentheses content (slide numbers)
+              // .replace(/ *\([^)]*\) */g, '')
+              // collapse whitespace
+              .replace(/\s+/g, ' ')
               .replace(
                 /<h1 notion-id='(.*?)'>/g,
                 `"},{"type": "LEARN", "notionId":"$1", "title": "`
               )
               .replace(/<\/h1>/g, `","content": "`)
-              .substr(3) + // remove extra "}, at the beginning
+              // remove extra "}, at the beginning
+              .substr(3) +
             `"}]`
           )
           let quizNb = 0
