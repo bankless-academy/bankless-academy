@@ -42,7 +42,7 @@ const LESSONS: LessonType[] = [
             'A device equipped with RFID technology',
             'A velcro bi-fold device',
             'An account that protects my assets',
-            'An app or device used to interact with a blockchain',
+            'An app or device used to2interact with a blockchain',
           ],
           id: 'wallet-basics-1',
         },
@@ -72,7 +72,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'LEARN',
-        notionId: '5d548984b1534378bb716fdc14989f43',
+        notionId: 'bf1bf37ca61845c5a4257cbaeff0e13c',
         title: 'Public Key',
         content:
           '<div class="bloc1"><p>You just learned how your <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key.">recovery phrase</span> relates to a <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you.">public key</span> and <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address.">private key</span>.</p><p>Note that a wallet can contain multiple accounts, and <em>each account</em> has a unique pair of public and private keys.</p><p>Think of a public key like your home address. It is public, anyone can see it, and it identifies the location to use to send crypto assets to you.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0bcb5620-6fcc-4dbc-9c4c-69bcf494d13b%2FPublic_Key_force_file.svg?table=block&id=d4d34808-b088-4e5b-844c-dbbb8013d285\'></div>',
@@ -241,250 +241,209 @@ const LESSONS: LessonType[] = [
     slides: [
       {
         type: 'LEARN',
-        notionId: '7a682ac28e4c4046a0292cf22640e45b',
-        title: 'What is DeFi?',
+        notionId: '9c079b4441354613910b8d5a106a3c65',
+        title: 'DeFi Defined',
         content:
-          '<div class="bloc1"><ul><li>DeFi is an abbreviation for decentralized finance. It is a system by which financial products become available on a public decentralized <span class="tooltip" definition="A shared, unchangeable database or record of transactions.">blockchain</span> network.</li><li>The nature of decentralization utilizes peer-to-peer transactions, enabling anyone to use DeFi permissionlessly. No one is excluded from participating due to age, gender, location, nationality, income level, religion, race, etc.</li><li>Peer-to-peer transaction are conducted directly between 2 parties, rather than using middlemen like exchanges, banks, or brokerages.</li><li>The skill cube is our map of the DeFi ecosystem. The objective: to maximize crypto wealth and go bankless.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F719d145c-f19f-4a0c-b643-a8ee9215a17e%2Fskill_cube.png?table=block&id=876afc7c-44ae-40c4-ac71-b76dacfa6334\'></div>',
+          '<div class="bloc1"><p>DeFi—short for decentralized finance—refers to the fast-growing ecosystem of financial products, protocols, and applications that operate on public blockchain networks.</p><p>DeFi is rapidly transforming the world of finance with a range of new tools for using and benefiting from cryptocurrency assets. It offers opportunities to move beyond simply buying crypto on a centralized exchange to building a decentralized, bankless lifestyle.</p></div>',
       },
       {
         type: 'QUIZ',
-        notionId: 'c50bb8b2fa5849599eaf08d3856609b6',
+        notionId: '5d93d188e0274acbb22cc32e433c3b67',
         title: 'Knowledge Check',
         quiz: {
-          question: 'What is DeFi?',
+          question: 'What does DeFi stand for? ',
           rightAnswerNumber: 2,
           answers: [
-            '[A] A decentralized blockchain of financial products',
-            'Both A and B',
-            '[B] Acronym for decentralized finance',
-            'None of the above',
+            'Derivative fiction',
+            'Decentralized finance',
+            'Deregulation field',
+            'Degenerate fishermen',
           ],
           id: 'intro-to-defi-1',
         },
       },
       {
         type: 'LEARN',
-        notionId: '63e86e851a9e4e2ea2384973e0f88413',
-        title: 'How Defi works',
+        notionId: '153a075b1a004f38a9c177486aa95395',
+        title: 'What You Can Do With DeFi',
         content:
-          '<div class="bloc1"><ul><li><span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> revolves around decentralized applications, also known as <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span></li><li>DApps are digital applications or programs that exist and run on a <span class="tooltip" definition="A shared, unchangeable database or record of transactions.">blockchain</span>.<span class=\'color-yellow\'> </span>They are outside the purview and control of a single authority.</li><li>DApps are typically accessed through a <span class="tooltip" definition="Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data.">Web3</span> enabled browser extension or application, such as MetaMask</li><li>Web3 refers to DApps that run on the blockchain and allow anyone to participate without monetizing their personal data.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F62e0a78b-f5fa-44a3-aaf0-ea8dfe7108a5%2FUntitled.png?table=block&id=50814057-6c60-4cdc-94fb-276f2c648e87\'></div>',
+          '<div class="bloc1"><p>DeFi transactions are permissionless, and no third party controls or oversees them. These transactions are carried out by decentralized applications, known as <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span>, which operate on public blockchains.</p><p>DApps offer financial products that you would typically need a bank or financial services firm to get—but without the paperwork, approval processes, or service fees of the traditional finance world.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe03cdd7d-cbf0-42ac-bb60-1237bcc12dea%2FWhat_You_Can_Do_with_DeFi.svg?table=block&id=d22db0ee-5f50-44d1-b24a-7fd39d89c824\'></div>',
+      },
+      {
+        type: 'LEARN',
+        notionId: '04719d0c432f43c4bfdd93e64a685a32',
+        title: 'What You Can Do With DeFi',
+        content:
+          '<div class="bloc1"><p><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span> and <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> platforms enable users to make an ever increasing number of financial transactions, 24/7, all over the world. We will explore five of these possibilities.</p><ul><li>Investing</li><li>Trading</li><li>Lending and borrowing</li><li>Earning yield</li><li>Staking</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1bbead30-d7d5-4181-aceb-b74074210713%2FWhat_You_Can_Do_with_DeFi.svg?table=block&id=c881fce9-1aec-450b-b2b3-d9d12d6e0eac\'></div>',
       },
       {
         type: 'QUIZ',
-        notionId: '880816dada204d6d97bc73b2a60fcbe8',
+        notionId: '3b77e3afde594c788122db7fe4afab6e',
         title: 'Knowledge Check',
         quiz: {
-          question: 'What is a common way to engage with DApps?',
-          rightAnswerNumber: 1,
-          answers: ['MetaMask', 'Apple Pay', 'Cash App', 'PayPal'],
+          question: 'What is a transaction you cannot do with DeFi?',
+          rightAnswerNumber: 3,
+          answers: [
+            'Borrow money without paperwork',
+            'Invest in cryptocurrency',
+            'Use one wish to wish for more wishes',
+            'Make financial transactions any time of day',
+          ],
           id: 'intro-to-defi-2',
         },
       },
       {
         type: 'LEARN',
-        notionId: '529871783584424987b809dca3c7375b',
-        title: 'What can you do with DeFi',
+        notionId: '555dff92a9b34743b498f8a01de6ffa4',
+        title: '<strong>Investing</strong>',
         content:
-          '<div class="bloc1"><ul><li>The skill cube contains all the money verbs. </li><li>Money Verbs are the things you can do in legacy finance, but more efficiently in <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> because there is no middleman. </li><li>Instead of paying the middleman, you can pay yourself! </li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0670f557-ad79-4d1c-ad80-8bd70ff5af6e%2Fhttps___bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com_public_images_84b02006-3141-4b62-b1e9-009739064efb_896x690.png?table=block&id=c38a341a-3f8d-41a8-9332-7fe46427e4b0\'></div>',
+          '<div class="bloc1"><p>The most basic <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transaction is to purchase some cryptocurrency with the expectation that it will be worth more in the future.</p><p>HODL is a term used for keeping crypto assets for a long time. Depending on who you ask, the HODL meme either comes from a typo of HOLD or it stands for <strong>H</strong>old <strong>O</strong>n for <strong>D</strong>ear <strong>L</strong>ife.</p><p>DeFi simplifies buying and selling crypto whichever investing approach fits your needs.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F94ab8a68-a675-4243-960a-b8772072b783%2FInvesting.png?table=block&id=d9b82a1c-475c-43f7-a51d-f297c08eebed\'></div>',
       },
       {
         type: 'QUIZ',
-        notionId: '07088c4e57114e41a7057c026d3b4fb7',
+        notionId: '6eebe3d8e3494c59ae2bd46cd5925869',
         title: 'Knowledge Check',
         quiz: {
-          question: 'Why is DeFi more efficient?',
-          rightAnswerNumber: 1,
+          question: 'What does HODL mean?',
+          rightAnswerNumber: 4,
           answers: [
-            'because there is no middleman',
-            'because there is a middleman',
-            'lower brokerage fees',
-            'all of the above',
+            'It’s a misspelling of HOLD',
+            'Hold On for Dear Life',
+            'Keeping crypto for a long time',
+            'All of the above',
           ],
           id: 'intro-to-defi-3',
         },
       },
       {
+        type: 'LEARN',
+        notionId: 'b1da9af463c24fd3a1fb8ce6a5b8dfaf',
+        title: 'Trading',
+        content:
+          '<div class="bloc1"><p>A decentralized exchange (DEX) is a digital marketplace that simplifies trading one currency for another by bringing together buyers and sellers of crypto assets.</p><p>The platform shows the current exchange rate between different crypto tokens and coins.</p><p>The parties involved in a trade don’t need to know or trust each other. In fact, it may appear that you are trading with the DEX—however, in most cases it simply facilitates the trade between two <span class="tooltip" definition="A wallet is an application or device used to send and receive crypto assets on the blockchain.">wallet</span> addresses.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd2808694-6a1c-43a5-bf63-4552f308e0c3%2FTrading.svg?table=block&id=ebf4ec26-06fc-4dd0-b0e4-c4ea7cb75a58\'></div>',
+      },
+      {
+        type: 'LEARN',
+        notionId: 'e45c2106904c48eb908746cb95494a17',
+        title: 'Trading',
+        content:
+          '<div class="bloc1"><p>Once everyone confirms the terms of the trade with their wallets, smart contracts built into the protocol then execute the trade.</p><p>The record of the transaction is permanently recorded on the blockchain.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd2808694-6a1c-43a5-bf63-4552f308e0c3%2FTrading.svg?table=block&id=dda6afc5-c94a-4ed7-8bed-534b0220d0c3\'></div>',
+      },
+      {
+        type: 'LEARN',
+        notionId: '0fe73546a6d646d4b4bd3610b9f0b575',
+        title: 'Advanced Trading',
+        content:
+          '<div class="bloc1"><p>Some DEXes also offer advanced trading tools. These enable the kinds of trades and strategies used by day traders and other sophisticated investors in traditional financial markets.</p><p>They are topics for another course.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd97962b2-3f8c-4af2-b4e2-251a23b1246c%2FAdvanced_Trading.svg?table=block&id=d540ee43-2965-4887-a9b7-fc0f0bcbc26d\'></div>',
+      },
+      {
         type: 'QUIZ',
-        notionId: '49deed96613f467480e57c448c5afb32',
+        notionId: '4e1e78e61bc240f0836346fcabb49f54',
         title: 'Knowledge Check',
         quiz: {
-          question: 'Which of these are not money verbs?',
-          rightAnswerNumber: 2,
-          answers: ['stake', 'profit', 'spend', 'bet'],
+          question: 'What is a DEX?',
+          rightAnswerNumber: 1,
+          answers: [
+            'A decentralized exchange',
+            'A digital electric xylophone',
+            'A crypto index fund',
+            'None of the above',
+          ],
           id: 'intro-to-defi-4',
         },
       },
       {
         type: 'LEARN',
-        notionId: 'a75c5be3cfe14c2cbeb7efc66d580675',
-        title: 'What can you do with DeFi - HODL',
+        notionId: '929543eaa9b64ab9b14a6593e95fb9ef',
+        title: '<strong>Lending & Borrowing</strong>',
         content:
-          '<div class="bloc1"><ul><li><strong>HODL</strong> is an acronym for <strong>H</strong>old <strong>O</strong>n for <strong>D</strong>ear <strong>L</strong>ife</li><li>Crypto prices are highly volatile, they go up and down. </li><li>The HODL mentality is the idea of retaining assets even through short to medium term price fluctuations. By holding long term, the HODLer experiences more price appreciation.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc02f4cd0-63d4-4d85-aa9a-47cd92549056%2FHODL.svg?table=block&id=9e53dba2-822c-4bba-b129-6b548f26962c\'></div>',
+          '<div class="bloc1"><p>There are DApps that enable people to lend and borrow crypto assets in a trustless environment.</p><p>Holders of cryptocurrency can use their coins or tokens as collateral to borrow other crypto.</p><p>Smart contracts that run on the blockchain ensure that if the borrower fails to repay their loan, their collateral will automatically be sold to pay for the debt.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3f65365a-4bdb-4d6e-8974-5475563a9cbc%2FLend_Borrow.svg?table=block&id=4a1f4d18-88fb-4ed9-887b-b36f8f606a8b\'></div>',
       },
       {
         type: 'QUIZ',
-        notionId: 'ae2dee8eb23148dbb5bcc8d35f9ae75c',
+        notionId: '062707cc00eb4fe9830d8f6535e50387',
         title: 'Knowledge Check',
         quiz: {
-          question: 'What does HODL stand for?',
+          question:
+            'What happens to the borrower’s crypto-based collateral if they fail to repay the loan?',
           rightAnswerNumber: 3,
           answers: [
-            'have your oppressive dreams linger',
-            "hold on and don't lose",
-            'hold on for dear life',
-            'have outstanding debt liable',
+            'It gets seized by the government',
+            'It gets put into an escrow account until the debt is paid',
+            'It gets sold to pay for the debt',
+            'Nothing—the loan is decentralized',
           ],
           id: 'intro-to-defi-5',
         },
       },
       {
         type: 'LEARN',
-        notionId: '7bec76e281aa4d17809843017fd61a32',
-        title: 'What can you do with DeFi - Lend/Borrow',
+        notionId: '772e17d6104145f7969b47fd2e132e68',
+        title: '<strong>Earning Yield</strong>',
         content:
-          '<div class="bloc1"><ul><li>In DeFi, anyone can borrow and anyone can become a <span class="tooltip" definition="Deposits assets to earn interest">lender</span>.</li><li>DeFi lending and borrowing offers loans without the need for a bank or intermediary institution. Instead, lending is done on a <span class="tooltip" definition="A transaction between two parties that does not require a middleman or controlling entity.">peer-to-peer</span> level.</li><li>Similar to traditional loans, a lender will earn interest on the loan and the <span class="tooltip" definition="Willing to pay interest to lenders in order to borrow assets">borrower</span> will need to pay the principal of the loan plus interest within a set amount of time.</li><li>Peer-to-peer loans means that long-term investors can earn interest from the loan and it enables users to access loans at lower rates with DeFi than if they went through exchanges or through traditional loans.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F3f65365a-4bdb-4d6e-8974-5475563a9cbc%2FLend_Borrow.svg?table=block&id=4a1f4d18-88fb-4ed9-887b-b36f8f606a8b\'></div>',
+          '<div class="bloc1"><p>There are a growing number of <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> protocols and DApps that enable you to earn interest and other rewards for depositing your crypto into them.</p><p>You can deposit cryptocurrency into a pool of assets in exchange for a fixed or variable amount of interest.</p><p>Some DApps also reward depositors with additional tokens that have value. Together, interest and reward tokens deliver yield on what you deposited.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1a781518-9bc5-4aa2-bc4d-c38c3751e449%2FEarning-Yield.png?table=block&id=c932b19d-b662-4d3c-961a-e1d4227d99fc\'></div>',
       },
       {
         type: 'QUIZ',
-        notionId: '5ebfe2415e514ba3b39082dbd9ca7ddc',
+        notionId: '465a40fdbe24487695394ee1b4a4e97a',
         title: 'Knowledge Check',
         quiz: {
-          question:
-            'Which of these are <em><strong>not</strong></em> an example of DeFi lending?',
+          question: 'How can you earn yield with crypto?',
           rightAnswerNumber: 3,
           answers: [
-            'protocols to people',
-            'peer-to-peer ',
-            'banks to customers ',
-            'people to protocols',
+            'Earning interest by depositing into a DeFi protocol',
+            'Earning rewards by depositing into a DeFi protocol',
+            'Both A and B',
+            'You can’t earn yield on crypto',
           ],
           id: 'intro-to-defi-6',
         },
       },
       {
         type: 'LEARN',
-        notionId: 'b8e95bfd37634c7b9ba9538eda71a5cf',
-        title: 'What can you do with DeFi: Stake',
+        notionId: '88ac3e93d3c849db8420b1700884030c',
+        title: '<strong>Staking</strong>',
         content:
-          '<div class="bloc1"><ul><li><span class="tooltip" definition="The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest ("rewards")">Staking</span> in Defi is similar to lending, however it\'s a special type of lending.</li><li>Instead of lending your crypto to another user on a <span class="tooltip" definition="A transaction between two parties that does not require a middleman or controlling entity.">peer-to-peer</span> basis, you can lend your crypto to a network or protocol to help bolster its ability to process transactions.</li><li>In exchange for helping secure the network or protocol, you can earn rewards by <span class="tooltip" definition="The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest ("rewards")">staking</span>.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2c8cb40e-82dd-4629-943a-5e2d790fd580%2Fstaking.png?table=block&id=e56f800c-bce5-49e3-b6aa-9ad554675f8b\'></div>',
+          '<div class="bloc1"><p>Some blockchains—including Ethereum in the near future—use a proof-of-stake (PoS) protocol for validating block transactions on the network.</p><p>With PoS, a node operator (miner) needs to stake (deposit) a significant amount of the network\'s native tokens in order to participate in earning rewards for validating. If they do a poor job or try to cheat, their stake will get slashed, costing them money.</p><p>Staking pools offer opportunities to lend node operators the crypto required for their stake. In exchange, the node operators share the rewards they earn by validating.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7c67445c-65a6-4b66-a15c-f07abcc90c80%2FStacking.png?table=block&id=4e49ec8b-1770-4edf-958f-fa56e99777f4\'></div>',
       },
       {
         type: 'QUIZ',
-        notionId: '1873edad1c294e3ea1de37bdee5c9f73',
+        notionId: 'ae7f5581ae404a1a83e1542eeee9d945',
         title: 'Knowledge Check',
         quiz: {
           question:
-            'Lending your crypto to a protocol to help bolster its ability to process transactions is an example of?',
-          rightAnswerNumber: 2,
-          answers: ['Trading', 'Staking', 'Borrowing', 'Lending'],
+            'What happens if a node validator makes mistakes or cheats?',
+          rightAnswerNumber: 1,
+          answers: [
+            'Their stake is slashed',
+            'Nothing—validating is decentralized',
+            'A committee opens an investigation',
+            'They must give a formal apology',
+          ],
           id: 'intro-to-defi-7',
         },
       },
       {
         type: 'LEARN',
-        notionId: '3e33a65318d8473e900f6836e6b56440',
-        title: 'What can you do with DeFi: Spend',
+        notionId: '9b122d2d398a47428a41838e3bc9a521',
+        title: '<strong>DeFi Downsides</strong>',
         content:
-          '<div class="bloc1"><ul><li>You can use your crypto in exchange for goods and services. </li><li>Some protocols are marketplaces which allow you to purchase clothing items, while other protocols allow users to buy NFTs with crypto.</li><li>There is no limit to what you can purchase with crypto. You can purchase groceries, clothes, games, collectibles, precious metals, real estate, and more!</li></ul></div>',
+          '<div class="bloc1"><p>The opportunities of DeFi are not without risks and downsides, including:</p><p><strong>Hackers</strong></p><p>Where there is money and technology, there are people looking for ways to hack the system</p><p><strong>Smart contract risk</strong></p><p>DeFi runs on smart contracts. If there’s an error or loophole in the smart contract, someone can exploit it.</p><p><strong>No recourse</strong></p><p>Being decentralized also means there are no companies or government agencies that you can appeal to for help if something goes wrong.</p><h2>Knowledge and caution are important for your success in reaping the benefits of DeFi.</h2></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Feaa60c7c-ec30-4e51-939d-803d86f70cba%2FDeFi_Downsides.jpeg?table=block&id=36a3cfd6-f11f-4215-8cdf-cd3e8923cfd7\'></div>',
       },
       {
         type: 'QUIZ',
-        notionId: '65ab45a683a041e59f128aabeff9a2df',
+        notionId: '4b5bd41ee29942ea8cfc577f2e495baa',
         title: 'Knowledge Check',
         quiz: {
-          question: 'Can you use crypto in exchange for goods and services?',
-          rightAnswerNumber: 1,
-          answers: ['True', 'False'],
+          question: 'What is a risk in DeFi?',
+          rightAnswerNumber: 4,
+          answers: [
+            'There are no risks',
+            'The bank might turn down your loan',
+            'Bad weather could shut down the exchange',
+            'There may be an error in the smart contract',
+          ],
           id: 'intro-to-defi-8',
-        },
-      },
-      {
-        type: 'LEARN',
-        notionId: '2df563fca1314fb987add05ef19267dc',
-        title: 'What can you do with DeFi: Invest',
-        content:
-          '<div class="bloc1"><ul><li>Equal opportunity does not exist in traditional finance. Investors may be limited due to time constraints, income levels, voting power, etc.</li><li>In DeFi, there are no preferred or common shareholders. Everyone has the same right to vote in governance.</li><li>Anyone can purchase any asset, you don\'t need a specified income level to purchase assets.</li><li>You can also invest anytime, anywhere in DeFi. You are not limited to trading during restricted hours or location</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F05db2fa5-888a-40e1-94e9-51bbcf2c3e38%2FUntitled.png?table=block&id=369a71a0-1e96-4420-91c2-d8eeaf0f8b4a\'></div>',
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'f9363d0146984e41ba5e7dd2ee5a1051',
-        title: 'Knowledge Check',
-        quiz: {
-          question: 'Which of these is true for investing with DeFi?',
-          rightAnswerNumber: 1,
-          answers: [
-            'DeFi is open around the clock year round ',
-            'You need to be an accredited investor to invest in DeFi',
-            'You can use your crypto in exchange for goods and services',
-            'None of the above ',
-          ],
-          id: 'intro-to-defi-9',
-        },
-      },
-      {
-        type: 'LEARN',
-        notionId: '3a8349a7a9824ce69260acedb6e53416',
-        title: 'What can you do with DeFi: Earn',
-        content:
-          '<div class="bloc1"><ul><li>Earning in defi is when you<strong> </strong>do something of value in exchange for crypto rewards</li><li>The best thing is <strong>no upfront capital required</strong> for some earning actions</li><li>Examples include completing tasks for projects or participating in contests </li><li>You can claim a bounty and complete open tasks from DAOs and other projects</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffe922264-39e1-4d8a-851c-4831f179bdb5%2FDefi_Earn.png?table=block&id=da3fa7c1-cd72-4c13-9e80-240e8afb6bb0\'></div>',
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'b3884385404c4e119184bcfc0b3128bb',
-        title: 'Knowledge Check',
-        quiz: {
-          question: 'Which of these action can you do to earn in DeFi?',
-          rightAnswerNumber: 2,
-          answers: [
-            'Buying coins that use DeFi technology',
-            'Completing tasks for projects',
-            'Using your crypto in exchange for goods and services',
-            'Trading bonds',
-          ],
-          id: 'intro-to-defi-10',
-        },
-      },
-      {
-        type: 'LEARN',
-        notionId: '907f4bdbe3b9499091afdaca6177d9bd',
-        title: 'What can you do with DeFi: Trade',
-        content:
-          '<div class="bloc1"><ul><li>DeFi lets you trade any asset in a peer-to-peer environment. There is no middleman and you don\'t need permission.</li><li>Trading cryptocurrency is also available on centralized exchanges. However, because they own your private keys, there\'s a greater risk of stolen funds, frozen accounts, and/or censored transactions. </li><li>Trading in DeFi is permissionless and available 24/7 globally with no restrictions for any reason including name, age, gender, location, race, religion, or anything. DeFi is completely open and free for anybody to use. </li></ul></div>',
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'e8c5c6af32534277a3e333e8a554af99',
-        title: 'Knowledge Check',
-        quiz: {
-          question: 'Can crypto only be traded during market hours?',
-          rightAnswerNumber: 1,
-          answers: ['No ', 'Yes'],
-          id: 'intro-to-defi-11',
-        },
-      },
-      {
-        type: 'LEARN',
-        notionId: 'bbebe50af69d497cb135b79f07bed281',
-        title:
-          '<strong>Bet—</strong>risk and earn money by making a bet (shorting/longing included)',
-        content:
-          '<div class="bloc1"><ul><li>A Bet is a Trade in a Cornered Market/ Traditionally in the dominant culture, betting is monopolized in a Cornered Market</li><li>In a Cornered Market like a casino, there is a predetermined risk of loss in favor of the middle man</li><li>In DeFi, when the middle man influence is reduced or removed risk of loss can be more fairly distributed or mitigated completely</li><li>Game Theory is used in DeFi to test and experiment with Community Owned and Governed Sports betting, Prediction Markets, and Lotteries.</li></ul></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F71445ccc-c6d8-4ab7-966c-6dedc554e50c%2FScreenshot_from_2021-09-27_11-15-44.png?table=block&id=9efb6e85-f7de-40e7-aa00-5321150e9d74\'></div>',
-      },
-      {
-        type: 'QUIZ',
-        notionId: '3d674e10bd084400ac9d6baacf12929c',
-        title: 'Knowledge Check',
-        quiz: {
-          question:
-            'What happens when the middle man influence is reduced or removed?',
-          rightAnswerNumber: 2,
-          answers: [
-            'None of the above',
-            'Risk of loss can be more fairly distributed or mitigated completely',
-            'There is a predetermined risk of loss in favor of the middle man',
-            "You'll lose money",
-          ],
-          id: 'intro-to-defi-12',
         },
       },
       {
