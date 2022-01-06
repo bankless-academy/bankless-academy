@@ -45,9 +45,11 @@ const HomePage = (): JSX.Element => {
           <Heading as="h2" size="xl">
             Level up your knowledge of Web3 and DeFi
           </Heading>
-          <Link href={`/lessons`}>
-            <Button variant="primary">Explore Lessons</Button>
-          </Link>
+          <Box>
+            <Link href={`/lessons`}>
+              <Button variant="primary">Explore Lessons</Button>
+            </Link>
+          </Box>
         </Stack>
       </Center>
       <Box bgColor="#1F2023" p="5">
