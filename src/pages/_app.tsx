@@ -2,11 +2,10 @@ import type { AppProps } from 'next/app'
 import { Web3ReactProvider } from '@web3-react/core'
 import { ethers } from 'ethers'
 import 'swiper/swiper-bundle.min.css'
-import Head from 'next/head'
 import { Global, css } from '@emotion/react'
-import { hotjar } from 'react-hotjar'
 
 import dynamic from 'next/dynamic'
+import Head from 'components/Head'
 import Layout from 'layout'
 import ThemeProvider from 'theme'
 
@@ -19,31 +18,10 @@ const Web3ReactProviderDefault = dynamic(
   { ssr: false }
 )
 
-const VERCEL_ENV = process.env.VERCEL_ENV
-const UMAMI = process.env.UMAMI
-
-const umamiWebsiteId =
-  VERCEL_ENV === 'production' && UMAMI
-    ? UMAMI
-    : 'e84c3a1e-0ab0-4502-b0fe-67d660765535'
-const umamiDomain = 'https://umami.bankless.community/umami.js'
-
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <>
-      <Head>
-        <script
-          async
-          defer
-          data-website-id={umamiWebsiteId}
-          src={umamiDomain}
-        />
-        {typeof window !== 'undefined' &&
-        window.location.hostname === 'app.banklessacademy.com'
-          ? hotjar.initialize(2568813, 6)
-          : null}
-      </Head>
-      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <Head metadata={pageProps.pageMeta} />
       <ThemeProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
           <Web3ReactProviderDefault getLibrary={getLibrary}>
@@ -64,7 +42,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
                 }
               `}
             />
-            <Layout pageMeta={pageProps.pageMeta}>
+            <Layout>
               <Component {...pageProps} />
             </Layout>
           </Web3ReactProviderDefault>

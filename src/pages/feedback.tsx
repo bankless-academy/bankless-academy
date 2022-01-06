@@ -2,11 +2,10 @@ import React from 'react'
 import { Box, Container } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 
-import { PageMetaProps } from 'components/Head'
+import { MetaData } from 'components/Head'
 
-const pageMeta: PageMetaProps = {
+const pageMeta: MetaData = {
   title: 'Feedback',
-  description: '...',
 }
 
 export const getStaticProps: GetStaticProps = async () => {

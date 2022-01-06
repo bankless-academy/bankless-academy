@@ -16,7 +16,7 @@ const WalletBasics = (): {
         <div>
           <h2>How to setup a MetaMask wallet</h2>
           <p>
-            For convenience and ease of access throughout this course, you will
+            For convenience and ease of access throughout this lesson, you will
             need a MetaMask wallet. Next we will demonstrate how to set up a
             MetaMask wallet.
           </p>

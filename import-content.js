@@ -9,8 +9,9 @@ const POTION_API = 'https://potion.banklessacademy.com'
 
 const KEY_MATCHING = {
   'POAP image link': 'poapImageLink',
-  'Quest image link': 'questImageLink',
-  'What will you be able to do after this course?': 'learningActions',
+  'Lesson image link': 'lessonImageLink',
+  'What will you be able to do after this lesson?': 'learningActions',
+  'Landing page copy': 'marketingDescription',
   'Knowledge Requirements': 'knowledgeRequirements',
   'POAP event ID': 'poapEventId',
   'Duration in minutes': 'duration',
@@ -24,45 +25,50 @@ const args = process.argv
 const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : DEFAULT_NOTION_ID
 console.log('NOTION_ID', NOTION_ID)
 
+const LIMIT_NUMBER_OF_LESSONS = 2
+
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
-  .then((response) => {
-    const quests = []
-    const promiseArray = response.data.map((course, index) => {
-      // TEMP: only import first quest
-      if (index > 0) return
-      console.log('course Notion link: ', `${POTION_API}/html?id=${course.id}`)
+  .then((notionRows) => {
+    const lessons = []
+    const promiseArray = notionRows.data.map((notion, index) => {
+      if (index + 1 > LIMIT_NUMBER_OF_LESSONS) return
+      console.log('Notion lesson link: ', `${POTION_API}/html?id=${notion.id}`)
       return axios
-        .get(`${POTION_API}/html?id=${course.id}`)
-        .then((response) => {
+        .get(`${POTION_API}/html?id=${notion.id}`)
+        .then((htmlPage) => {
           // replace keys
-          const quest = Object.keys(KEY_MATCHING).reduce(
+          const lesson = Object.keys(KEY_MATCHING).reduce(
             (obj, k) =>
               Object.assign(obj, {
-                [KEY_MATCHING[k]]: Number.isNaN(parseInt(course.fields[k]))
-                  ? course.fields[k]
-                  : // transform to number if the string contains a number
-                    parseInt(course.fields[k]),
+                // transform to number if the string contains a number
+                [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k]))
+                  ? notion.fields[k]
+                  : parseInt(notion.fields[k]),
               }),
             {}
           )
-          quest.notionId = course.id.replace(/-/g, '')
-          quest.slug = quest.name
+          lesson.notionId = notion.id.replace(/-/g, '')
+          lesson.slug = lesson.name
             .toLowerCase()
             .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
             .replace(/\s+/g, '-') // collapse whitespace and replace by -
             .replace(/-+/g, '-') // collapse dashes
-          const content = JSON.parse(
-            `[` +
-              response.data
-                .replace(/"/g, "'")
-                // .replace(/ *\([^)]*\) */g, '') // strip parentheses content (slide numbers)
-                .replace(/\s+/g, ' ') // collapse whitespace
-                .replace(/<h1 notion-id='(.*?)'>/g, `"},{"type": "LEARN", "notionId":"$1", "title": "`)
-                .replace(/<\/h1>/g, `","content": "`)
-                .substr(3) + // remove extra "}, at the beginning
-              `"}]`
-          )
+          // data cleaning
+          htmlPage.data = htmlPage.data
+            .replace(/"/g, "'")
+            // strip parentheses content (slide numbers)
+            // .replace(/ *\([^)]*\) */g, '')
+            // collapse whitespace
+            .replace(/\s+/g, ' ')
+            .replace(
+              /<h1 notion-id='(.*?)'>/g,
+              `"},{"type": "LEARN", "notionId":"$1", "title": "`
+            )
+            .replace(/<\/h1>/g, `","content": "`)
+            // remove extra "}, at the beginning
+            .substr(3)
+          const content = JSON.parse(`[${htmlPage.data}"}]`)
           let quizNb = 0
           const slides = content.map((slide) => {
             // replace with type QUIZ
@@ -88,7 +94,7 @@ axios
                 )
                   // NOTION BUG: in case of bug with checked checkbox, recreate a new one
                   throw new Error(
-                    `more than 1 right answer, please check ${POTION_API}/html?id=${course.id}`
+                    `more than 1 right answer, please check ${POTION_API}/html?id=${notion.id}`
                   )
                 if (quiz_answer.includes('disabled checked>'))
                   slide.quiz.rightAnswerNumber = nb
@@ -100,7 +106,7 @@ axios
                   )
                 )
               })
-              slide.quiz.id = `${quest.slug}-${quizNb}`
+              slide.quiz.id = `${lesson.slug}-${quizNb}`
             }
             // TODO: move this logic to the frontend?
             // replace keywords in content
@@ -114,12 +120,10 @@ axios
                 // content contains an iframe
                 const [bloc1, bloc2] = slide.content.split('<iframe ')
                 if (bloc2 !== '')
-                  slide.content = `${
-                    bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''
-                  }<div class="bloc2"><iframe allowfullscreen ${bloc2.replace(
-                    /feature=oembed/g,
-                    'feature=oembed&rel=0'
-                  )}</div>`
+                  slide.content = `${bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''}
+                  <div class="bloc2"><iframe allowfullscreen
+                  ${bloc2.replace(/feature=oembed/g, 'feature=oembed&rel=0')}
+                  </div>`
               } else {
                 // text only
                 slide.content = `<div class="bloc1">${slide.content}</div>`
@@ -158,40 +162,40 @@ axios
             }
             return slide
           })
-          const componentName = quest.name
+          const componentName = lesson.name
             .split(' ')
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ')
             .replace(/\s+/g, '')
           slides.push({
             type: 'QUEST',
-            title: `${quest.name} Quest`,
+            title: `${lesson.name} Quest`,
             component: componentName,
           })
           slides.push({
             type: 'POAP',
-            title: 'Collect your POAP',
+            title: `Collect your <span class="tooltip" definition="${keywords['POAP'].definition}">POAP</span>`,
           })
-          quest.slides = slides
-          console.log('quest', quest)
-          quests[index] = quest
+          lesson.slides = slides
+          console.log('lesson', lesson)
+          lessons[index] = lesson
         })
     })
     axios.all(promiseArray).then(() => {
-      const FILE_CONTENT = `import { QuestType } from 'entities/quest'
+      const FILE_CONTENT = `import { LessonType } from 'entities/lesson'
 
-const QUESTS: QuestType[] = ${stringifyObject(quests, {
+const LESSONS: LessonType[] = ${stringifyObject(lessons, {
         indent: '  ',
         singleQuotes: true,
       })}
 
-export default QUESTS
+export default LESSONS
 `
-      fs.writeFile('src/constants/quests.ts', FILE_CONTENT, (error) => {
+      fs.writeFile('src/constants/lessons.ts', FILE_CONTENT, (error) => {
         if (error) throw error
       })
       console.log(
-        'export done -> check syntax & typing errors in src/constants/quests.ts'
+        'export done -> check syntax & typing errors in src/constants/lessons.ts'
       )
     })
   })

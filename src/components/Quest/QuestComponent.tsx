@@ -1,8 +1,11 @@
 import WalletBasics from './WalletBasics'
-import BorrowWithAave from './BorrowWithAave'
+import BlockchainFundamentals from './BlockchainFundamentals'
 import IntroToDeFi from './IntroToDeFi'
 
-import { QuestComponentType } from 'entities/quest'
+export type QuestComponentType =
+  | 'WalletBasics'
+  | 'IntroToDeFi'
+  | 'BlockchainFundamentals'
 
 const QuestComponent = (
   component: QuestComponentType | null
@@ -12,8 +15,8 @@ const QuestComponent = (
 } => {
   const QUEST_COMPONENTS = {
     WalletBasics: WalletBasics,
-    BorrowWithAave: BorrowWithAave,
     IntroToDeFi: IntroToDeFi,
+    BlockchainFundamentals: BlockchainFundamentals,
   }
   if (!component || !(component in QUEST_COMPONENTS)) return null
   const Component = QUEST_COMPONENTS[component]()
