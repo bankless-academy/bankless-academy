@@ -203,11 +203,11 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
-    }
-    // TODO LATER: use router.push('/lessons')
-    else if (isLastSlide && isPoapClaimed) {
-      if (lesson.slug === 'wallet-basics') router.push('/feedback')
-      else router.push('/')
+    } else if (isLastSlide && isPoapClaimed) {
+      // get feedback on the last lesson
+      // TODO: add a column on Notion with feedback form yes/no, same for slide comment
+      if (lesson.slug === 'intro-to-defi') router.push('/feedback')
+      else router.push('/lessons')
     }
     setSelectedAnswerNumber(null)
   }
@@ -428,7 +428,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                         </h2>
                         {poapCode && (
                           <>
-                            {isPoapMinted ? (
+                            {isPoapMinted && lesson.slug === 'intro-to-defi' ? (
                               <>
                                 <Button
                                   mt="4"
@@ -437,7 +437,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                                   Feedback form
                                 </Button>
                               </>
-                            ) : (
+                            ) : isPoapMinted ? null : (
                               <Link
                                 href={`https://app.poap.xyz/claim/${poapCode}?address=${walletAddress}`}
                                 target="_blank"
