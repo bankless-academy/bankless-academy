@@ -29,12 +29,12 @@ export default async function handler(
       .select('code')
       .where('event_id', poapEventId)
       .where('address', address)
-    console.log(codeAlreadyClaimed)
-    if (codeAlreadyClaimed) {
+    console.log('codeAlreadyClaimed', codeAlreadyClaimed)
+    if (codeAlreadyClaimed?.code) {
       res.json({ code: codeAlreadyClaimed.code })
     } else {
       // [step 3] get the code + update is_code_used to true
-      const [{ code }] = await db('poaps3')
+      const [newCode] = await db('poaps3')
         .where(
           'id',
           db('poaps3')
@@ -45,9 +45,9 @@ export default async function handler(
             .limit(1)
         )
         .update({ is_code_used: true, address: address }, ['code'])
-      console.log('code', code)
-      if (code) {
-        res.json({ code: code })
+      console.log('newCode', newCode)
+      if (newCode?.code) {
+        res.json({ code: newCode?.code })
         // TODO: find alternative (auto-claim now requires a token authorization)
         // [step 4] get the secret
         // handle timeout (currently 10 sec only)
@@ -79,6 +79,9 @@ export default async function handler(
       }
     }
   } catch (error) {
-    res.json({ error })
+    console.error(error)
+    res.json({
+      error: 'Something went wrong ... please contact poap@banklessacademy.com',
+    })
   }
 }

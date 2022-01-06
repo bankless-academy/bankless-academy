@@ -243,7 +243,14 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
       .then(function (res) {
         // eslint-disable-next-line no-console
         console.log(res.data)
-        setPoapData(res.data)
+        setPoapData(
+          res.data?.code || res.data?.error !== ''
+            ? res.data
+            : {
+                error:
+                  'Something went wrong ... please contact poap@banklessacademy.com',
+              }
+        )
         setIsClaimingPoap(false)
         if (res.data.code) {
           setIsPoapClaimed(true)
