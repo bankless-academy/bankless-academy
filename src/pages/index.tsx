@@ -3,7 +3,6 @@ import {
   Text,
   Stack,
   Heading,
-  Link,
   Button,
   Container,
   SimpleGrid,
@@ -12,6 +11,7 @@ import {
   useMediaQuery,
   Icon,
 } from '@chakra-ui/react'
+import Link from 'next/link'
 import { BookOpen, LightbulbFilament, Sword, Medal } from 'phosphor-react'
 
 import LESSONS from 'constants/lessons'
