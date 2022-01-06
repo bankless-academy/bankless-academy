@@ -146,6 +146,14 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   // HACK: fix bug when someone has already claimed the POAP
   if (localStorage.getItem(`poap-${lesson.slug}`) === 'true')
     localStorage.removeItem(`poap-${lesson.slug}`)
+  const numberOfSlides = lesson.slides.length
+  // HACK: when reducing the number of slides in a lesson
+  if (
+    parseInt(localStorage.getItem(lesson.slug) || '0') + 1 >=
+    numberOfSlides
+  ) {
+    localStorage.setItem(lesson.slug, (numberOfSlides - 1).toString())
+  }
 
   const buttonLeftRef = useRef(null)
   const buttonRightRef = useRef(null)
@@ -166,7 +174,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
 
   const router = useRouter()
   const toast = useToast()
-  const numberOfSlides = lesson.slides.length
   const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
@@ -278,7 +285,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   })
 
   const answerIsCorrect =
-    slide.quiz &&
+    slide?.quiz &&
     parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
       slide.quiz.rightAnswerNumber
 
