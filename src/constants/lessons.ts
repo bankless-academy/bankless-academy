@@ -44,7 +44,7 @@ const LESSONS: LessonType[] = [
             'A device equipped with RFID technology',
             'A velcro bi-fold device',
             'An account that protects my assets',
-            'An app or device used to2interact with a blockchain',
+            'An app or device used to interact with a blockchain',
           ],
           id: 'wallet-basics-1',
         },
