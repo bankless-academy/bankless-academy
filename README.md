@@ -27,7 +27,7 @@
 ### Tools
 
 - [POAP Subgraph](https://thegraph.com/legacy-explorer/subgraph/poap-xyz/poap-xdai) to get the number of POAP claimed
-- [Moralis](https://docs.moralis.io/transactions-and-balances/realtime-transactions) to track onchain transactions
+- [Moralis](https://docs.moralis.io/transactions-and-balances/realtime-transactions) to track onchain transactions (not used yet)
 
 ## Local Development
 
