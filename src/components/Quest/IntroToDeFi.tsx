@@ -127,6 +127,7 @@ const IntroToDeFi = (): {
               key={key}
               onClick={() => setAnswer(verb)}
               backgroundColor={answer === verb ? '#44A991' : ''}
+              _hover={{ bg: answer === verb ? '#54cfb3' : '#4d4d4d' }}
             >
               {verb}
             </Button>
