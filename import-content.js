@@ -120,11 +120,10 @@ axios
                 // content contains an iframe
                 const [bloc1, bloc2] = slide.content.split('<iframe ')
                 if (bloc2 !== '')
-                  slide.content = `${bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''
-                    }<div class="bloc2"><iframe allowfullscreen ${bloc2.replace(
-                      /feature=oembed/g,
-                      'feature=oembed&rel=0'
-                    )}</div>`
+                  slide.content = `${bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''}
+                  <div class="bloc2"><iframe allowfullscreen
+                  ${bloc2.replace(/feature=oembed/g, 'feature=oembed&rel=0')}
+                  </div>`
               } else {
                 // text only
                 slide.content = `<div class="bloc1">${slide.content}</div>`
