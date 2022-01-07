@@ -223,7 +223,7 @@ const LESSONS: LessonType[] = [
     poapImageLink: 'https://app.banklessacademy.com/images/poap2.png',
     lessonImageLink: 'https://app.banklessacademy.com/images/banner2.jpg',
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
-    marketingDescription: 'Move beyond centralized exchanges and discover the quickly expanding possibilities of decentralized finance.',
+    marketingDescription: 'Move beyond centralized exchanges and discover the quickly expanding possibilities of Decentralized Finance.',
     knowledgeRequirements: 'Wallet Basics: how to manage a web3 wallet',
     poapEventId: 21670,
     duration: 10,
