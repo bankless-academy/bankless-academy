@@ -140,7 +140,10 @@ const IntroToDeFi = (): {
             networkSwitchButton()
           )
         ) : (
-          <h2>⚠️ Connect your wallet first!</h2>
+          <h2>
+            ⚠️ Connect your wallet first (&quot;Connect wallet&quot; button in
+            the top-right corner)
+          </h2>
         )}
       </>
     ),

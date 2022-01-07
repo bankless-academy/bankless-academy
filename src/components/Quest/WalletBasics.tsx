@@ -44,7 +44,7 @@ const WalletBasics = (): {
         >
           {account
             ? 'Congrats for connecting your wallet! 👏🙂'
-            : 'Waiting for you to connect your wallet'}
+            : 'Waiting for you to connect your wallet ("Connect wallet" button in the top-right corner)'}
         </Button>
       </>
     ),
