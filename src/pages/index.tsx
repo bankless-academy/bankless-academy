@@ -54,11 +54,11 @@ const HomePage = (): JSX.Element => {
       </Center>
       <Box bgColor="#1F2023" p="5">
         <Container maxW="container.xl">
-          <Box>
-            <Heading as="h2" size="xl">
+          <Box mt="6">
+            <Heading as="h2" size="xl" textAlign="center" m="auto">
               Start Your Bankless Journey
             </Heading>
-            <Text fontSize="lg" mt="2">
+            <Text fontSize="lg" maxW="800px" textAlign="center" m="auto" my="6">
               The Bankless Academy is on a mission to introduce 1 billion people
               to the exciting possibilities of cryptocurrency, DeFi, and beyond.
               Whether you’re curious about crypto, intrigued by NFTs, or want to
@@ -152,7 +152,9 @@ const HomePage = (): JSX.Element => {
                 const LessonDescription = (
                   <Box alignSelf="center">
                     <Heading fontSize="2xl">{lesson.name}</Heading>
-                    <Text fontSize="lg">{lesson.marketingDescription}</Text>
+                    <Text fontSize="lg" my="2">
+                      {lesson.marketingDescription}
+                    </Text>
                     <Link href={`/lessons/${lesson.slug}`}>
                       <Button variant="primary" mt="4">
                         Start Lesson
