@@ -374,6 +374,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                             onClick={(e) => selectAnswer(e, n)}
                             answerState={answerState}
                             justifyContent="space-between"
+                            textAlign="left"
                             rightIcon={
                               answerState === 'CORRECT' ? (
                                 <Checks weight="bold" color="white" />
