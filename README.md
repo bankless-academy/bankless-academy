@@ -2,8 +2,7 @@
 
 ## Project Specifications
 
-- [Notion](https://www.notion.so/bankless/Bankless-Academy-c431218052c84cf598a6408aa464287b)
-- [Planning / Tasks](https://www.notion.so/bankless/Bankless-Academy-planning-open-tasks-availability-405f670d58ee4aef8f10f8c8b46a329d)
+- [Dev Tasks](https://www.notion.so/bankless/Dev-Tasks-d761bb04e7054e1d8e4a75d99288e61c)
 - [Figma wireframe](https://www.figma.com/file/RAaaNdsEWC9tuPuoX35Fsz/Academy?node-id=215%3A1179)
 
 ## Tech Stack
