@@ -32,17 +32,7 @@ function recoverPersonalSignature(sig: string, msg: string): string {
   return signer
 }
 
-const VERBS = [
-  'Hodl',
-  'Lend',
-  'Borrow',
-  'Stake',
-  'Invest',
-  'Spend',
-  'Earn',
-  'Trade',
-  'Bet',
-]
+const VERBS = ['Lend', 'Borrow', 'Stake', 'Invest', 'Earn', 'Trade']
 
 const IntroToDeFi = (): {
   isQuestCompleted: boolean
