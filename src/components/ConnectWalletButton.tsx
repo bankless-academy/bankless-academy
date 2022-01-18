@@ -87,8 +87,8 @@ const ConnectWalletButton = ({
   }
 
   useEffect(() => {
-    web3Modal = new Web3Modal(web3ModalFrame)
     if (window.localStorage.getItem('WEB3_CONNECT_CACHED_PROVIDER')) {
+      web3Modal = new Web3Modal(web3ModalFrame)
       web3ModalConnect(web3Modal)
     }
   }, [])
@@ -96,9 +96,7 @@ const ConnectWalletButton = ({
   useEffect(() => {
     if (connectClick) {
       setWalletIsLoading(true)
-      if (!web3Modal) {
-        web3Modal = new Web3Modal(web3ModalFrame)
-      }
+      web3Modal = new Web3Modal(web3ModalFrame)
       web3ModalConnect(web3Modal)
     }
   }, [connectClick])
