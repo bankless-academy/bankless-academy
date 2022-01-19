@@ -138,13 +138,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '266abc84862f425bab294dc99dfddb04',
         title: 'Wallet Security',
-        content: '<div class="bloc1"><h2>ALWAYS do this to protect your recovery phrase:</h2></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc658aedf-0ace-497e-a857-b379b88efd52%2FSecurity_Tips__ALWAYS.svg?table=block&id=1f8cea3a-7bb0-4dbe-b4ff-e32373c1266f\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '2799e1af8e4b4d8f8648249b2fd37eb1',
-        title: 'Wallet Security',
-        content: '<div class="bloc1"><h2>NEVER do this to protect your recovery phrase:</h2></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6dc771a7-ece1-4877-a3d3-1c234c545931%2FSecurity_Tips___NEVER.svg?table=block&id=0f3a8900-f7bd-43dc-8160-f2f093f447a7\'></div>'
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fc658aedf-0ace-497e-a857-b379b88efd52%2FSecurity_Tips__ALWAYS.svg?table=block&id=1f8cea3a-7bb0-4dbe-b4ff-e32373c1266f"></div><div class="bloc-b"><h2>ALWAYS do this to protect your recovery phrase</h2></div></div><div class="bloc-ab"><div class="bloc-a"><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F6dc771a7-ece1-4877-a3d3-1c234c545931%2FSecurity_Tips___NEVER.svg?table=block&id=0f3a8900-f7bd-43dc-8160-f2f093f447a7"></div><div class="bloc-b"><h2>NEVER do this to protect your recovery phrase</h2></div></div>'
       },
       {
         type: 'QUIZ',
@@ -398,7 +392,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '9b122d2d398a47428a41838e3bc9a521',
         title: '<strong>DeFi Downsides</strong>',
-        content: '<div class="bloc1"><p>The opportunities of DeFi are not without risks and downsides, including:</p><p><strong>Hackers</strong></p><p>Where there is money and technology, there are people looking for ways to hack the system and take advantage of poor security measures.</p><p><strong>Risk</strong></p><p>DeFi, like blockchain technology, runs on code. If there’s an error or loophole in the code, it can be exploited.</p><p><strong>No recourse</strong></p><p>Being decentralized also means there are no companies or government agencies that you can appeal to for help if something goes wrong.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Feaa60c7c-ec30-4e51-939d-803d86f70cba%2FDeFi_Downsides.jpeg?table=block&id=36a3cfd6-f11f-4215-8cdf-cd3e8923cfd7\'></div>'
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8fdafb79-2ed8-4e4a-a4eb-3bd47ce0ab47%2Fdd1.png?table=block&id=38d10cb5-7d02-433d-88c7-710c2221f5c8"></div><div class="bloc-b"><p><strong>Hackers</strong></p><p>Where there is money and technology, there are people looking for ways to hack the system and take advantage of poor security measures.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F25651e5d-6b2b-4a58-8e90-0eab1fbd39e9%2Fdd2.png?table=block&id=6b088f38-d513-4885-a56c-7d9f0a2ac93e"></div><div class="bloc-b"><p><strong>Risk</strong></p><p>DeFi, like blockchain technology, runs on code. If there’s an error or loophole in the code, it can be exploited.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7006afa0-d521-4cfe-ab73-effb98b96404%2Fdd3.png?table=block&id=d53b22a2-0c8d-4fc8-a6a7-17776273318d"></div><div class="bloc-b"><p><strong>No recourse</strong></p><p>Being decentralized also means there are no companies or government agencies that you can appeal to for help if something goes wrong.</p></div></div>'
       },
       {
         type: 'QUIZ',

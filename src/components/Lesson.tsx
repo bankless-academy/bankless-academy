@@ -60,6 +60,13 @@ const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
       props.slideType === 'LEARN' &&
       (props.isSmallScreen ? 'display: block;' : 'display: flex;')};
   }
+  .bloc-ab {
+    flex: 1 1 0;
+    margin: 10px;
+  }
+  .bloc-ab img {
+    width: 100%;
+  }
   .bloc1,
   .bloc2 {
     flex: 1;
