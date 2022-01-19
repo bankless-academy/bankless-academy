@@ -100,7 +100,7 @@
     "color": "rgba(128, 128, 128, 1)"
   },
   "permissionless": {
-    "definition": "<a href=\"https://medium.com/@akadiyala/nuances-between-permissionless-and-permissioned-blockchains-f5b566f5d483\">V2.</a> Any person, thing, or entity can interact with other members or parties by creating an address on the network",
+    "definition": "Refers to a public blockchain that anyone can use to buy, sell, or trade assets.",
     "color": "rgba(128, 128, 128, 1)"
   },
   "spend": {
