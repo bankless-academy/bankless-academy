@@ -11,7 +11,6 @@ declare global {
   }
 }
 
-import { RPC_URLS } from 'constants/'
 import networks from 'constants/networks'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -70,13 +69,13 @@ export const injected = new InjectedConnector({
 })
 
 export const walletConnect = new WalletConnectConnector({
-  rpc: { 1: RPC_URLS[1] },
+  rpc: { 1: networks.mainnet.rpcUrl },
   bridge: 'https://bridge.walletconnect.org',
   qrcode: true,
 })
 
 export const network = new NetworkConnector({
-  urls: { 1: RPC_URLS[1] },
+  urls: { 1: networks.mainnet.rpcUrl },
   defaultChainId: 1,
 })
 
