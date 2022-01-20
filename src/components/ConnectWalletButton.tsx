@@ -37,57 +37,67 @@ const ConnectWalletButton = ({
   const [connectClick, setConnectClick] = useState(false)
   const [walletIsLoading, setWalletIsLoading] = useState(false)
   const [poaps, setPoaps] = useState<PoapType[]>([])
+  const web3ModalFrame = {
+    cacheProvider: true,
+    theme: {
+      background: '#010101',
+      main: 'white',
+      secondary: 'white',
+      border: '#252525',
+      hover: '#363636',
+    },
+    providerOptions: {
+      walletconnect: {
+        package: WalletConnectProvider,
+        options: {
+          infuraId: INFURA_ID,
+        },
+        connector: async () => {
+          return 'walletconnect'
+        },
+      },
+      injected: {
+        package: null,
+        connector: async () => {
+          return 'injected'
+        },
+      },
+    },
+  }
+
+  function web3ModalConnect(web3Modal) {
+    web3Modal
+      .connect()
+      .then((provider) => {
+        setWeb3Provider(provider)
+        if (provider.isMetaMask) {
+          return walletWeb3ReactContext.activate(injected)
+        } else {
+          return walletWeb3ReactContext.activate(walletConnect)
+        }
+      })
+      .then(() => {
+        setConnectClick(false)
+      })
+      .catch((e) => {
+        setWalletIsLoading(false)
+        setConnectClick(false)
+        console.error(e)
+      })
+  }
+
+  useEffect(() => {
+    if (localStorage.getItem('WEB3_CONNECT_CACHED_PROVIDER')) {
+      web3Modal = new Web3Modal(web3ModalFrame)
+      web3ModalConnect(web3Modal)
+    }
+  }, [])
 
   useEffect(() => {
     if (connectClick) {
       setWalletIsLoading(true)
-      if (!web3Modal) {
-        web3Modal = new Web3Modal({
-          cacheProvider: false,
-          theme: {
-            background: '#010101',
-            main: 'white',
-            secondary: 'white',
-            border: '#252525',
-            hover: '#363636',
-          },
-          providerOptions: {
-            walletconnect: {
-              package: WalletConnectProvider,
-              options: {
-                infuraId: INFURA_ID,
-              },
-              connector: async () => {
-                return 'walletconnect'
-              },
-            },
-            injected: {
-              package: null,
-              connector: async () => {
-                return 'injected'
-              },
-            },
-          },
-        })
-      }
-      web3Modal
-        .connect()
-        .then((provider) => {
-          setWeb3Provider(provider)
-          if (provider.isMetaMask) {
-            return walletWeb3ReactContext.activate(injected)
-          } else {
-            return walletWeb3ReactContext.activate(walletConnect)
-          }
-        })
-        .then(() => {
-          setConnectClick(false)
-        })
-        .catch((e) => {
-          setWalletIsLoading(false)
-          setConnectClick(false)
-          console.error(e)
-        })
+      web3Modal = new Web3Modal(web3ModalFrame)
+      web3ModalConnect(web3Modal)
     }
   }, [connectClick])
 
@@ -138,6 +148,8 @@ const ConnectWalletButton = ({
                   leftIcon={<Wallet weight="bold" />}
                   onClick={() => {
                     walletWeb3ReactContext.deactivate()
+                    web3Modal.clearCachedProvider()
+                    localStorage.removeItem('walletconnect')
                     setWalletIsLoading(false)
                     setPoaps([])
                   }}

@@ -13,7 +13,7 @@ export default Object.freeze({
     image: '/images/eth-black.svg',
     chainId: 42,
     rpcUrl: `https://kovan.infura.io/v3/${INFURA_ID}`,
-    faucet: 'https://gitter.im/kovan-testnet/faucet',
+    faucet: 'https://ethdrop.dev/',
     blockExplorer: 'https://kovan.etherscan.io/',
   },
   matic: {
