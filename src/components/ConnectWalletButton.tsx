@@ -149,7 +149,7 @@ const ConnectWalletButton = ({
                   onClick={() => {
                     walletWeb3ReactContext.deactivate()
                     web3Modal.clearCachedProvider()
-                    window.localStorage.removeItem('walletconnect')
+                    localStorage.removeItem('walletconnect')
                     setWalletIsLoading(false)
                     setPoaps([])
                   }}
