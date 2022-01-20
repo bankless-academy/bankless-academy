@@ -34,18 +34,18 @@ const HomePage = (): JSX.Element => {
     <>
       <Center
         height="80vh"
-        bgImage="/images/homepage_background.jpg"
+        bgImage="/images/homepage_background_v2.jpg"
         bgSize="cover"
         bgPosition="center"
       >
         <Stack spacing={6} textAlign="center">
-          <Heading as="h1" size="2xl">
+          {/* <Heading as="h1" size="2xl">
             Welcome to the Bankless Academy
           </Heading>
           <Heading as="h2" size="xl">
             Level up your knowledge of Web3 and DeFi
-          </Heading>
-          <Box>
+          </Heading> */}
+          <Box mt="45vh">
             <Link href={`/lessons`}>
               <Button variant="primary">Explore Lessons</Button>
             </Link>

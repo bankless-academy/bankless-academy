@@ -9,7 +9,7 @@ export const DOMAIN = process.env.VERCEL_URL
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
   description: 'Level up your knowledge of Web3 and DeFi',
-  image: `${DOMAIN}/images/bankless_academy_v1.jpg`,
+  image: `${DOMAIN}/images/bankless_academy_v2.jpg`,
 }
 
 export const TOKEN_ADDRESS = {
