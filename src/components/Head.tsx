@@ -11,11 +11,10 @@ export interface MetaData {
 }
 
 const VERCEL_ENV = process.env.VERCEL_ENV
-const UMAMI = process.env.UMAMI
 
 const umamiWebsiteId =
-  VERCEL_ENV === 'production' && UMAMI
-    ? UMAMI
+  VERCEL_ENV === 'production'
+    ? '62d1cf48-425d-4658-9b86-3eea78ac9714'
     : 'e84c3a1e-0ab0-4502-b0fe-67d660765535'
 const umamiDomain = 'https://umami.bankless.community/umami.js'
 
