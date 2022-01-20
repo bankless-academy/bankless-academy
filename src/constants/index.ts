@@ -5,7 +5,7 @@ export const PROJECT_NAME = 'Bankless Academy'
 export const DOMAIN =
   process.env.VERCEL_URL && process.env.VERCEL_ENV !== 'production'
     ? `https://${process.env.VERCEL_URL}`
-    : 'https://banklessacademy.com'
+    : 'https://app.banklessacademy.com'
 
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
