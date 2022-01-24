@@ -3,7 +3,9 @@ exports.up = function (knex) {
     table.increments('id')
     table.integer('event_id').notNullable()
     table.string('code', 6).notNullable().unique()
-    table.boolean('is_code_used').default(false)
+    table.boolean('is_code_claimed').default(false)
+    table.boolean('is_quest_completed').default(false)
+    table.boolean('is_signature_verified').default(false)
     table.string('address', 255)
   })
 }

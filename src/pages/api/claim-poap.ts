@@ -5,6 +5,7 @@ import db from 'utils/db'
 import LESSONS from 'constants/lessons'
 
 const POAP_IDS = LESSONS.map((lesson) => lesson.poapEventId.toString())
+const POAPS_TABLE = 'poaps'
 
 export default async function handler(
   req: NextApiRequest,
@@ -25,7 +26,7 @@ export default async function handler(
 
   try {
     // [step 2] check if the POAP was already claimed
-    const [codeAlreadyClaimed] = await db('poaps3')
+    const [codeAlreadyClaimed] = await db(POAPS_TABLE)
       .select('code')
       .where('event_id', poapEventId)
       .where('address', address)
@@ -33,19 +34,19 @@ export default async function handler(
     if (codeAlreadyClaimed?.code) {
       res.json({ code: codeAlreadyClaimed.code })
     } else {
-      // [step 3] get the code + update is_code_used to true
-      const [newCode] = await db('poaps3')
+      // [step 3] get the code + update is_code_claimed to true
+      const [newCode] = await db(POAPS_TABLE)
         .where('event_id', poapEventId)
         .where(
           'id',
-          db('poaps3')
+          db(POAPS_TABLE)
             .select('id')
             .where('event_id', poapEventId)
-            .where('is_code_used', false)
+            .where('is_code_claimed', false)
             .orderBy('id', 'asc')
             .limit(1)
         )
-        .update({ is_code_used: true, address: address }, ['code'])
+        .update({ is_code_claimed: true, address: address }, ['code'])
       console.log('newCode', newCode)
       if (newCode?.code) {
         res.json({ code: newCode?.code })
