@@ -67,6 +67,12 @@ const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
   .bloc-ab img {
     width: 100%;
   }
+  .bloc-b {
+    ${(props) => props.isSmallScreen && 'border-bottom: 1px solid #72757B;'};
+  }
+  div.content > div > div:last-child .bloc-b {
+    border-bottom: none;
+  }
   .bloc1,
   .bloc2 {
     flex: 1;
