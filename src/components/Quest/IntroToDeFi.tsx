@@ -32,7 +32,7 @@ function recoverPersonalSignature(sig: string, msg: string): string {
   return signer
 }
 
-const VERBS = ['Lend', 'Borrow', 'Stake', 'Invest', 'Earn', 'Trade']
+const VERBS = ['Investing', 'Trading', 'Lending & Borrowing', 'Staking']
 
 const IntroToDeFi = (): {
   isQuestCompleted: boolean
@@ -45,7 +45,7 @@ const IntroToDeFi = (): {
 
   const testSignPersonalMessage = async () => {
     if (isSignatureVerified) return
-    const message = `I want to learn how to ${answer}`
+    const message = `I want to learn more about ${answer}`
     library
       .getSigner(account)
       .signMessage(message)
