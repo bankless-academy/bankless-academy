@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react'
 import axios from 'axios'
 
 import WalletBasics from './WalletBasics'
@@ -29,13 +30,15 @@ const QuestComponent = (
   const Component = QUEST_COMPONENTS[component]()
   const { account } = useActiveWeb3React()
 
-  if (Component.isQuestCompleted) {
-    axios
-      .get(`/api/validate-quest?address=${account}&quest=${component}`)
-      .catch(function (error) {
-        console.error(error)
-      })
-  }
+  useEffect(() => {
+    if (Component.isQuestCompleted) {
+      axios
+        .get(`/api/validate-quest?address=${account}&quest=${component}`)
+        .catch(function (error) {
+          console.error(error)
+        })
+    }
+  }, [Component.isQuestCompleted])
 
   return {
     isQuestCompleted: Component.isQuestCompleted,
