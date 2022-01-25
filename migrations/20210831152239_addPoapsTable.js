@@ -1,5 +1,5 @@
-exports.up = function (knex) {
-  return knex.schema.createTable('poaps', function (table) {
+exports.up = async function (knex) {
+  await knex.schema.createTable('poaps', function (table) {
     table.increments('id')
     table.integer('event_id').notNullable()
     table.string('code', 6).notNullable().unique()
@@ -10,6 +10,6 @@ exports.up = function (knex) {
   })
 }
 
-exports.down = function (knex) {
-  return knex.schema.dropTable('poaps')
+exports.down = async function (knex) {
+  await knex.schema.dropTable('poaps')
 }

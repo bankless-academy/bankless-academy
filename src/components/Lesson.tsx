@@ -25,8 +25,9 @@ import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
 import QuestComponent from 'components/Quest/QuestComponent'
-import { useWalletWeb3React } from 'hooks'
-import { track } from 'utils'
+import { useActiveWeb3React } from 'hooks'
+import { track, verifySignature } from 'utils'
+import { GENERIC_ERROR_MESSAGE } from 'constants/index'
 
 // transform keywords into Tooltip
 function transform(node, index) {
@@ -191,8 +192,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
 
-  const walletWeb3ReactContext = useWalletWeb3React()
-  const walletAddress = walletWeb3ReactContext.account
+  const { library, account } = useActiveWeb3React()
+  const walletAddress = account
   // DEV ENV: you can force a specific wallet address here if you want to test the claiming function
   // walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb44'
 
@@ -204,6 +205,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     e.target.blur()
     track('prev-slide', e?.nativeEvent?.isTrusted ? 'click' : 'shortcut')
     if (!isFirstSlide) {
+      setPoapData({})
       setCurrentSlide(currentSlide - 1)
     }
     setSelectedAnswerNumber(null)
@@ -247,11 +249,29 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     }
   }
 
-  const claimPoap = () => {
+  const signMessage = async () => {
+    const message = Date.now().toString()
+    library
+      .getSigner(account)
+      .signMessage(message)
+      .then((signature: any) => {
+        const verified = verifySignature(account, signature, message)
+        if (verified) {
+          claimPoap(message, signature)
+        } else {
+          alert('wrong signature')
+        }
+      })
+      .catch((error: any) => {
+        console.error(error)
+      })
+  }
+
+  const claimPoap = (message: string, signature: string) => {
     setIsClaimingPoap(true)
     axios
       .get(
-        `/api/claim-poap?address=${walletAddress}&poapEventId=${lesson.poapEventId}`
+        `/api/claim-poap?address=${walletAddress}&poapEventId=${lesson.poapEventId}&signature=${signature}&message=${message}`
       )
       .then(function (res) {
         // eslint-disable-next-line no-console
@@ -260,8 +280,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           res.data?.code || res.data?.error !== ''
             ? res.data
             : {
-                error:
-                  'Something went wrong ... please contact poap@banklessacademy.com',
+                error: GENERIC_ERROR_MESSAGE,
               }
         )
         setIsClaimingPoap(false)
@@ -309,9 +328,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
       slide.quiz.rightAnswerNumber
 
-  const questComponentName = lesson.slides.filter((s) => s.component)[0]
-    ?.component
-  const Quest = QuestComponent(questComponentName)
+  const Quest = QuestComponent(lesson.quest)
   // TODO: store quest verification state in local storage
 
   const poapCode = localStorage.getItem(`poap-${lesson.slug}`) || poapData.code
@@ -430,7 +447,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                     {!isPoapClaimed && !poapData.error ? (
                       <Button
                         variant="outline"
-                        onClick={claimPoap}
+                        onClick={signMessage}
                         isLoading={isClaimingPoap}
                       >
                         Claim POAP

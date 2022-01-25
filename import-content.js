@@ -175,6 +175,7 @@ axios
             title: `${lesson.name} Quest`,
             component: componentName,
           })
+          lesson.quest = componentName
           slides.push({
             type: 'POAP',
             title: `Collect your <span class="tooltip" definition="${keywords['POAP'].definition}">POAP</span>`,
