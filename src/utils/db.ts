@@ -14,7 +14,10 @@ export const TABLES = {
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export async function getUserId(address: string) {
   try {
-    const [user] = await db(TABLES.users).select('id').where('address', address)
+    // ilike = case insensitive search
+    const [user] = await db(TABLES.users)
+      .select('id')
+      .where('address', 'ilike', `%${address}%`)
     console.log('user', user)
     let createUser = null
     if (!user) {
