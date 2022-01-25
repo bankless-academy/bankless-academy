@@ -27,6 +27,7 @@ import Card from 'components/Card'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useActiveWeb3React } from 'hooks'
 import { track, verifySignature } from 'utils'
+import { GENERIC_ERROR_MESSAGE } from 'constants/index'
 
 // transform keywords into Tooltip
 function transform(node, index) {
@@ -279,8 +280,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           res.data?.code || res.data?.error !== ''
             ? res.data
             : {
-                error:
-                  'Something went wrong ... please contact poap@banklessacademy.com',
+                error: GENERIC_ERROR_MESSAGE,
               }
         )
         setIsClaimingPoap(false)

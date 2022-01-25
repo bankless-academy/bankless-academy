@@ -2,7 +2,12 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { db, TABLES, getUserId } from 'utils/db'
-import { POAP_EVENT_IDS, POAP_QUESTS } from 'constants/index'
+import {
+  POAP_EVENT_IDS,
+  POAP_QUESTS,
+  POAP_EMAIL_CONTACT,
+  GENERIC_ERROR_MESSAGE,
+} from 'constants/index'
 import { verifySignature } from 'utils'
 
 export default async function handler(
@@ -86,21 +91,19 @@ export default async function handler(
           res.json({ code: newCode?.code })
         } else {
           res.json({
-            error:
-              'Sorry, no more POAP codes available ... please contact poap@banklessacademy.com',
+            error: `Sorry, no more POAP codes available ... please contact ${POAP_EMAIL_CONTACT}`,
           })
         }
       }
     } else {
       res.json({
-        error:
-          'Something went wrong ... please contact poap@banklessacademy.com',
+        error: GENERIC_ERROR_MESSAGE,
       })
     }
   } catch (error) {
     console.error(error)
     res.json({
-      error: 'Something went wrong ... please contact poap@banklessacademy.com',
+      error: GENERIC_ERROR_MESSAGE,
     })
   }
 }

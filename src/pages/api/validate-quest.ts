@@ -2,7 +2,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { db, TABLES, getUserId } from 'utils/db'
-import { QUESTS } from 'constants/index'
+import { QUESTS, GENERIC_ERROR_MESSAGE } from 'constants/index'
 
 export default async function handler(
   req: NextApiRequest,
@@ -44,12 +44,12 @@ export default async function handler(
       }
     }
     res.json({
-      error: 'Something went wrong ... please contact poap@banklessacademy.com',
+      error: GENERIC_ERROR_MESSAGE,
     })
   } catch (error) {
     console.error(error)
     res.json({
-      error: 'Something went wrong ... please contact poap@banklessacademy.com',
+      error: GENERIC_ERROR_MESSAGE,
     })
   }
 }

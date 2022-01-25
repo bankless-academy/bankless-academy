@@ -44,3 +44,7 @@ LESSONS.map((lesson) => {
 })
 
 export const QUESTS: string[] = LESSONS.map((lesson) => lesson.quest)
+
+export const POAP_EMAIL_CONTACT = 'poap@banklessacademy.com'
+
+export const GENERIC_ERROR_MESSAGE = `Something went wrong ... please contact ${POAP_EMAIL_CONTACT}`
