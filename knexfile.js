@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const DB_HOST = process.env.DB_HOST || 'localhost'
 
-const ssl = DB_HOST !== 'localhost' ? { rejectUnauthorized: false } : {}
+const ssl = DB_HOST !== 'localhost' ? { rejectUnauthorized: false } : null
 
 module.exports = {
   client: 'pg',
