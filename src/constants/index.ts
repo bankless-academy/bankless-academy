@@ -1,4 +1,5 @@
 import { MetaData } from 'components/Head'
+import LESSONS from './lessons'
 
 export const PROJECT_NAME = 'Bankless Academy'
 
@@ -32,3 +33,9 @@ export const MERKLE_DISTRIBUTOR_ADDRESS = {
 export const DefaultProviderName = 'DEFAULT'
 
 export const INFURA_ID = '18533a1dfcd146b8994f38b8e6af372c'
+
+export const POAP_EVENT_IDS: string[] = LESSONS.map((lesson) =>
+  lesson.poapEventId.toString()
+)
+
+export const LESSON_SLUGS: string[] = LESSONS.map((lesson) => lesson.slug)

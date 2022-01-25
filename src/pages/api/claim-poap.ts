@@ -1,45 +1,63 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import db from 'utils/db'
-import LESSONS from 'constants/lessons'
-
-const POAP_IDS = LESSONS.map((lesson) => lesson.poapEventId.toString())
-const POAPS_TABLE = 'poaps'
+import { db, TABLES } from 'utils/db'
+import { POAP_EVENT_IDS } from 'constants/index'
+import { verifySignature } from 'utils'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  // [step 1] TODO: check if the quest action has actually been completed via wallet signature or onchain data (Moralis?)
-  const { address, poapEventId } = req.query
+  // [step 1]: check params + signature
+  const { address, poapEventId, signature, message } = req.query
   if (
     !address ||
     !poapEventId ||
+    !signature ||
+    !message ||
+    typeof signature === 'object' ||
+    typeof message === 'object' ||
     typeof address === 'object' ||
     typeof poapEventId === 'object' ||
-    !POAP_IDS.includes(poapEventId)
+    !POAP_EVENT_IDS.includes(poapEventId)
   )
-    return res.json({ error: "You haven't completed the quest yet" })
+    return res.json({ error: 'Wrong params' })
+
   console.log('address', address)
   console.log('poapEventId', poapEventId)
+  console.log('signature', signature)
+  console.log('message', message)
+  console.log('diff', -message + Date.now())
+
+  if (!verifySignature(address, signature, message))
+    return res.json({ error: 'Wrong signature' })
+  // require to sign in less than 1 minute
+  const SIGNATURE_TIMEOUT = 60 * 1000
+  if (-message + Date.now() > SIGNATURE_TIMEOUT)
+    return res.json({
+      error:
+        'You took more than 1 minute to sign the transaction, try again faster!',
+    })
 
   try {
-    // [step 2] check if the POAP was already claimed
-    const [codeAlreadyClaimed] = await db(POAPS_TABLE)
-      .select('code')
+    // [step 2] check if the POAP was already claimed + quest action has actually been completed
+    const [codeAlreadyClaimed] = await db(TABLES.poaps)
+      .select('code', 'is_quest_completed')
       .where('event_id', poapEventId)
       .where('address', address)
     console.log('codeAlreadyClaimed', codeAlreadyClaimed)
-    if (codeAlreadyClaimed?.code) {
+    if (!codeAlreadyClaimed?.is_quest_completed) {
+      res.json({ error: "You haven't completed the quest yet" })
+    } else if (codeAlreadyClaimed?.code) {
       res.json({ code: codeAlreadyClaimed.code })
     } else {
       // [step 3] get the code + update is_code_claimed to true
-      const [newCode] = await db(POAPS_TABLE)
+      const [newCode] = await db(TABLES.poaps)
         .where('event_id', poapEventId)
         .where(
           'id',
-          db(POAPS_TABLE)
+          db(TABLES.poaps)
             .select('id')
             .where('event_id', poapEventId)
             .where('is_code_claimed', false)
@@ -50,29 +68,6 @@ export default async function handler(
       console.log('newCode', newCode)
       if (newCode?.code) {
         res.json({ code: newCode?.code })
-        // TODO: find alternative (auto-claim now requires a token authorization)
-        // [step 4] get the secret
-        // handle timeout (currently 10 sec only)
-        // await axios
-        //   .get(`https://frontend.poap.tech/actions/claim-qr=${code}`)
-        //   .then(async function (response) {
-        //     const secret = response.data.secret
-        //     console.log(secret)
-        //     const data = {
-        //       qr_hash: code,
-        //       address: address.toLowerCase(),
-        //       secret,
-        //     }
-        //     console.log('data', data)
-        //     // [step 5] claim the POAP for the user
-        //     await axios
-        //       .post('https://frontend.poap.tech/actions/claim-qr', data)
-        //       .then(async function (response) {
-        //         await db('poaps').where('code', code).update('address', address)
-        //         console.log('data', data)
-        //         res.json(response.data)
-        //       })
-        //   })
       } else {
         res.json({
           error:
