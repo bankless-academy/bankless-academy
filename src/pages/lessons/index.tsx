@@ -3,10 +3,10 @@ import { MetaData } from 'components/Head'
 import {
   SimpleGrid,
   Container,
-  Button,
+  // Button,
   Box,
   Link,
-  Tooltip,
+  // Tooltip,
 } from '@chakra-ui/react'
 import { isMobile } from 'react-device-detect'
 
@@ -37,7 +37,7 @@ const Lessons = (): JSX.Element => {
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={12} mt={8}>
         <LessonCards />
       </SimpleGrid>
-      <Box mt={8}>
+      {/* <Box mt={8}>
         <Tooltip
           hasArrow
           placement="right"
@@ -54,7 +54,7 @@ const Lessons = (): JSX.Element => {
             [DEBUG] reset app state
           </Button>
         </Tooltip>
-      </Box>
+      </Box> */}
     </Container>
   )
 }

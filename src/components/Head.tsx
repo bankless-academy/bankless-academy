@@ -54,7 +54,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
       {/* shortcut icon */}
       <link
         rel="shortcut icon"
-        sizes="180x180"
+        sizes="200x200"
         type="image/png"
         href="/favicon.png"
       />

@@ -16,6 +16,7 @@ import { BookOpen, LightbulbFilament, Sword, Medal } from 'phosphor-react'
 
 import LESSONS from 'constants/lessons'
 import Card from 'components/Card'
+import { DEFAULT_METADATA } from 'constants/'
 
 const MORE_LESSONS = [
   'Next Level: Intermediate Wallet',
@@ -34,18 +35,35 @@ const HomePage = (): JSX.Element => {
     <>
       <Center
         height="80vh"
-        bgImage="/images/homepage_background_v2.jpg"
+        bgImage="/images/homepage_background_v3.jpg"
         bgSize="cover"
         bgPosition="center"
       >
-        <Stack spacing={6} textAlign="center">
-          {/* <Heading as="h1" size="2xl">
-            Welcome to the Bankless Academy
+        <Stack
+          width="100%"
+          maxW="800px"
+          spacing={6}
+          textAlign="center"
+          alignItems="center"
+          pt="20vh"
+        >
+          <Image
+            style={{
+              filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
+            }}
+            maxW="90%"
+            src="/images/BanklessAcademy.svg"
+            alt="Bankless Academy"
+          />
+          <Heading
+            as="h2"
+            size="xl"
+            maxW="90%"
+            filter="drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))"
+          >
+            {DEFAULT_METADATA.description}
           </Heading>
-          <Heading as="h2" size="xl">
-            Level up your knowledge of Web3 and DeFi
-          </Heading> */}
-          <Box mt="45vh">
+          <Box>
             <Link href={`/lessons`}>
               <Button variant="primary">Explore Lessons</Button>
             </Link>
