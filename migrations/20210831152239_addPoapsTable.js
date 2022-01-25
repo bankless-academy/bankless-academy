@@ -1,66 +1,15 @@
-const { TABLES, addIdAndTimestamps, onUpdateTrigger } = require('../db')
-
-// add trigger to update updated_at column automatically
-const ON_UPDATE_TIMESTAMP_FUNCTION = `
-  CREATE OR REPLACE FUNCTION on_update_timestamp()
-  RETURNS trigger AS $$
-  BEGIN
-    NEW.updated_at = now();
-    RETURN NEW;
-  END;
-$$ language 'plpgsql';
-`
-
-const DROP_ON_UPDATE_TIMESTAMP_FUNCTION = 'DROP FUNCTION on_update_timestamp'
-
 exports.up = async function (knex) {
-  await knex.raw(ON_UPDATE_TIMESTAMP_FUNCTION)
-
-  // users
-  await knex.schema.createTable(TABLES.users, addIdAndTimestamps)
-  await knex.raw(onUpdateTrigger(TABLES.users))
-  await knex.schema.table(TABLES.users, (table) => {
-    table.string('address', 255).unique().index()
-  })
-
-  // poaps
-  await knex.schema.createTable(TABLES.poaps, addIdAndTimestamps)
-  await knex.raw(onUpdateTrigger(TABLES.poaps))
-  await knex.schema.table(TABLES.poaps, (table) => {
-    table.integer('event_id').notNullable().index()
-    table.string('code', 6).notNullable().unique().index()
-    table.boolean('is_claimed').default(false).index()
-    table
-      .integer('user_id')
-      .nullable()
-      .unsigned()
-      .references('id')
-      .inTable('users')
-      .onUpdate('CASCADE')
-      .onDelete('CASCADE')
-      .index()
-  })
-
-  // quests
-  await knex.schema.createTable(TABLES.quests, addIdAndTimestamps)
-  await knex.raw(onUpdateTrigger(TABLES.quests))
-  await knex.schema.table(TABLES.quests, (table) => {
-    table.string('quest', 255).notNullable().index()
-    table
-      .integer('user_id')
-      .notNullable()
-      .unsigned()
-      .references('id')
-      .inTable('users')
-      .onUpdate('CASCADE')
-      .onDelete('CASCADE')
-      .index()
+  await knex.schema.createTable('poaps', function (table) {
+    table.increments('id')
+    table.integer('event_id').notNullable()
+    table.string('code', 6).notNullable().unique()
+    table.boolean('is_code_claimed').default(false)
+    table.boolean('is_quest_completed').default(false)
+    table.boolean('is_signature_verified').default(false)
+    table.string('address', 255)
   })
 }
 
 exports.down = async function (knex) {
-  await knex.schema.dropTable(TABLES.quests)
-  await knex.schema.dropTable(TABLES.poaps)
-  await knex.schema.dropTable(TABLES.users)
-  await knex.raw(DROP_ON_UPDATE_TIMESTAMP_FUNCTION)
+  await knex.schema.dropTable('poaps')
 }
