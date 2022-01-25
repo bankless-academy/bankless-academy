@@ -1,43 +1,51 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { db, TABLES } from 'utils/db'
-import { LESSON_SLUGS } from 'constants/index'
+import { db, TABLES, getUserId } from 'utils/db'
+import { QUESTS } from 'constants/index'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { address, lessonSlug } = req.query
+  const { address, quest } = req.query
   if (
     !address ||
-    !lessonSlug ||
+    !quest ||
     typeof address === 'object' ||
-    typeof lessonSlug === 'object' ||
-    !LESSON_SLUGS.includes(lessonSlug)
+    typeof quest === 'object' ||
+    !QUESTS.includes(quest)
   )
     return res.json({ error: 'Wrong params' })
 
   console.log('address', address)
-  console.log('lessonSlug', lessonSlug)
+  console.log('quest', quest)
 
   try {
-    const [quest] = await db(TABLES.quests)
-      .select('id', 'is_quest_completed')
-      .where('lesson_slug', lessonSlug)
-      .where('address', address)
-    console.log('quest', quest)
-    if (quest?.is_quest_completed) {
-      return res.json({ status: 'Quest already completed' })
-    } else {
-      // TODO: add backend quest verif if possible
-      await db(TABLES.quests).insert({
-        lesson_slug: lessonSlug,
-        is_quest_completed: true,
-        address: address,
-      })
-      res.json({ status: 'Quest completed' })
+    const userId = await getUserId(address)
+    if (userId) {
+      console.log(userId)
+      const [questCompleted] = await db(TABLES.quests)
+        .select('id')
+        .where('quest', quest)
+        .where('user_id', userId)
+      console.log('quest', quest)
+      if (questCompleted?.id) {
+        return res.json({ status: 'Quest already completed' })
+      } else {
+        // TODO: add backend quest verification
+        const [createQuestCompleted] = await db(TABLES.quests).insert(
+          { quest: quest, user_id: userId },
+          ['id']
+        )
+        if (createQuestCompleted?.id) {
+          return res.json({ status: 'Quest completed' })
+        }
+      }
     }
+    res.json({
+      error: 'Something went wrong ... please contact poap@banklessacademy.com',
+    })
   } catch (error) {
     console.error(error)
     res.json({

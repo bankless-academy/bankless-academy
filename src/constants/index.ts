@@ -38,4 +38,9 @@ export const POAP_EVENT_IDS: string[] = LESSONS.map((lesson) =>
   lesson.poapEventId.toString()
 )
 
-export const LESSON_SLUGS: string[] = LESSONS.map((lesson) => lesson.slug)
+export const POAP_QUESTS = {}
+LESSONS.map((lesson) => {
+  POAP_QUESTS[lesson.poapEventId.toString()] = lesson.quest
+})
+
+export const QUESTS: string[] = LESSONS.map((lesson) => lesson.quest)

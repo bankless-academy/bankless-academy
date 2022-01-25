@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { db, TABLES } from 'utils/db'
-import { POAP_EVENT_IDS } from 'constants/index'
+import { db, TABLES, getUserId } from 'utils/db'
+import { POAP_EVENT_IDS, POAP_QUESTS } from 'constants/index'
 import { verifySignature } from 'utils'
 
 export default async function handler(
@@ -41,39 +41,61 @@ export default async function handler(
     })
 
   try {
-    // [step 2] check if the POAP was already claimed + quest action has actually been completed
-    const [codeAlreadyClaimed] = await db(TABLES.poaps)
-      .select('code', 'is_quest_completed')
-      .where('event_id', poapEventId)
-      .where('address', address)
-    console.log('codeAlreadyClaimed', codeAlreadyClaimed)
-    if (!codeAlreadyClaimed?.is_quest_completed) {
-      res.json({ error: "You haven't completed the quest yet" })
-    } else if (codeAlreadyClaimed?.code) {
-      res.json({ code: codeAlreadyClaimed.code })
-    } else {
-      // [step 3] get the code + update is_code_claimed to true
-      const [newCode] = await db(TABLES.poaps)
+    const userId = await getUserId(address)
+    if (userId) {
+      // [step 2] check if the POAP was already claimed
+      const [codeAlreadyClaimed] = await db(TABLES.poaps)
+        .select('code')
         .where('event_id', poapEventId)
-        .where(
-          'id',
-          db(TABLES.poaps)
-            .select('id')
-            .where('event_id', poapEventId)
-            .where('is_code_claimed', false)
-            .orderBy('id', 'asc')
-            .limit(1)
-        )
-        .update({ is_code_claimed: true, address: address }, ['code'])
-      console.log('newCode', newCode)
-      if (newCode?.code) {
-        res.json({ code: newCode?.code })
+        .where('user_id', userId)
+      console.log('codeAlreadyClaimed', codeAlreadyClaimed)
+      if (codeAlreadyClaimed?.code) {
+        res.json({ code: codeAlreadyClaimed.code })
       } else {
-        res.json({
-          error:
-            'Sorry, no more POAP codes available ... please contact poap@banklessacademy.com',
-        })
+        // [step 3] verify that quest has been completed
+        if (!(poapEventId in POAP_QUESTS)) {
+          res.json({ error: 'poapEventId not found' })
+        }
+        const quest = POAP_QUESTS[poapEventId]
+        const [questCompleted] = await db(TABLES.quests)
+          .select('id')
+          .where('quest', quest)
+          .where('user_id', userId)
+        console.log('quest', quest)
+        if (!questCompleted?.id) {
+          res.json({
+            error:
+              "You haven't completed the quest yet. Go back to the previous slide.",
+          })
+        }
+        // [step 4] get the code + update is_claimed to true
+        const [newCode] = await db(TABLES.poaps)
+          .where('event_id', poapEventId)
+          .where(
+            'id',
+            db(TABLES.poaps)
+              .select('id')
+              .where('event_id', poapEventId)
+              .where('is_claimed', false)
+              .orderBy('id', 'asc')
+              .limit(1)
+          )
+          .update({ is_claimed: true, user_id: userId }, ['code'])
+        console.log('newCode', newCode)
+        if (newCode?.code) {
+          res.json({ code: newCode?.code })
+        } else {
+          res.json({
+            error:
+              'Sorry, no more POAP codes available ... please contact poap@banklessacademy.com',
+          })
+        }
       }
+    } else {
+      res.json({
+        error:
+          'Something went wrong ... please contact poap@banklessacademy.com',
+      })
     }
   } catch (error) {
     console.error(error)

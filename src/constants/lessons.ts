@@ -15,6 +15,7 @@ const LESSONS: LessonType[] = [
     name: 'Wallet Basics',
     notionId: '98405bd0f2b94bb2a3079eed504a011e',
     slug: 'wallet-basics',
+    quest: 'WalletBasics',
     slides: [
       {
         type: 'LEARN',
@@ -227,6 +228,7 @@ const LESSONS: LessonType[] = [
     name: 'Intro to DeFi',
     notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
     slug: 'intro-to-defi',
+    quest: 'IntroToDeFi',
     slides: [
       {
         type: 'LEARN',

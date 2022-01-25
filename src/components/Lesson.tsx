@@ -204,6 +204,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     e.target.blur()
     track('prev-slide', e?.nativeEvent?.isTrusted ? 'click' : 'shortcut')
     if (!isFirstSlide) {
+      setPoapData({})
       setCurrentSlide(currentSlide - 1)
     }
     setSelectedAnswerNumber(null)
@@ -327,9 +328,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
       slide.quiz.rightAnswerNumber
 
-  const questComponentName = lesson.slides.filter((s) => s.component)[0]
-    ?.component
-  const Quest = QuestComponent(questComponentName)
+  const Quest = QuestComponent(lesson.quest)
   // TODO: store quest verification state in local storage
 
   const poapCode = localStorage.getItem(`poap-${lesson.slug}`) || poapData.code
