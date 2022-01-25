@@ -5,17 +5,11 @@ const TABLES = {
   poaps: 'poaps',
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 function addIdAndTimestamps(table) {
-  table.increments('id')
-    .primary()
-  table.timestamps(true, true);
-  table.boolean('archived')
-    .notNullable()
-    .defaultTo(false)
-    .index()
-  table.timestamp('archived_at')
-    .nullable()
+  table.increments('id').primary()
+  table.timestamps(true, true)
+  table.boolean('archived').notNullable().defaultTo(false).index()
+  table.timestamp('archived_at').nullable()
 }
 
 function onUpdateTrigger(table) {
@@ -31,4 +25,4 @@ module.exports = {
   TABLES,
   addIdAndTimestamps,
   onUpdateTrigger,
-};
+}
