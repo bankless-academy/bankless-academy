@@ -60,7 +60,7 @@ exports.up = async function (knex) {
       .onDelete('CASCADE')
       .index()
   })
-  
+
   console.log('poaps', poaps)
   const addresses = new Set()
   poaps.map((poap) => {
