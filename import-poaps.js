@@ -4,7 +4,8 @@ const fs = require('fs')
 const path = require('path')
 const config = require('./knexfile.js')
 const db = knex(config)
-import { TABLES } from 'src/utils/db'
+const { TABLES } = require('./db.js')
+
 
 const POAPS_DIR = 'poaps'
 const CLAIM_LINK = 'http://POAP.xyz/claim/'
@@ -52,6 +53,11 @@ fs.promises
               console.error('code already added')
             }
           })
+        const [remaining_poaps] = await db(TABLES.poaps)
+          .count('is_claimed')
+          .where('is_claimed', false)
+          .where('event_id', poapEventId)
+        console.log(`${remaining_poaps.count} remaining codes for ${poapEventId}`)
       }
     })
     await Promise.all(promises_files)
