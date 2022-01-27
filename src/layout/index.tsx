@@ -18,6 +18,12 @@ const Layout = ({
 }): React.ReactElement => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
   const [password, setPassword] = useState(localStorage.getItem(`password`))
+  const passwordClean = ('' + password)
+    .toLowerCase()
+    .replaceAll(' ', '')
+    .replaceAll('!', '')
+  const PASSWORDS = ['dao', 'gobankless', 'gobankless🤫']
+  const isPasswordCorrect = PASSWORDS.includes(passwordClean)
 
   return (
     <Box
@@ -25,7 +31,7 @@ const Layout = ({
       paddingBottom={isSmallScreen ? '64px' : ''}
       bgColor="#010101"
     >
-      {typeof password === 'string' && password.toLowerCase() === 'dao' ? (
+      {isPasswordCorrect ? (
         <>
           <Nav />
           <main>{children}</main>
