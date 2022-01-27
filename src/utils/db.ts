@@ -21,7 +21,7 @@ export async function getUserId(address: string) {
     console.log('user', user)
     let createUser = null
     if (!user) {
-      ;[createUser] = await db(TABLES.users).insert({ address: address }, [
+      [createUser] = await db(TABLES.users).insert({ address: address }, [
         'id',
       ])
       console.log('createUser', createUser)

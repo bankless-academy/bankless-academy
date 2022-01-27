@@ -6,7 +6,6 @@ const config = require('./knexfile.js')
 const db = knex(config)
 const { TABLES } = require('./db.js')
 
-
 const POAPS_DIR = 'poaps'
 const CLAIM_LINK = 'http://POAP.xyz/claim/'
 
@@ -57,7 +56,9 @@ fs.promises
           .count('is_claimed')
           .where('is_claimed', false)
           .where('event_id', poapEventId)
-        console.log(`${remaining_poaps.count} remaining codes for ${poapEventId}`)
+        console.log(
+          `${remaining_poaps.count} remaining codes for ${poapEventId}`
+        )
       }
     })
     await Promise.all(promises_files)
