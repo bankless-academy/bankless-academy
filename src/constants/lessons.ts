@@ -21,11 +21,11 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '0bf15ec24615455b9349774527410d81',
         title: 'Wallet Intro',
-        content: '<div class="bloc2"><iframe allowfullscreen src=\'https://www.youtube.com/embed/uQSerN6mEc4?feature=oembed&rel=0\'></iframe></div>'
+        content: '<div class="bloc2"><iframe allowfullscreen src=\'https://www.youtube.com/embed/_YQdDlcp4jw?feature=oembed&rel=0\'></iframe></div>'
       },
       {
         type: 'LEARN',
-        notionId: 'ffe1c97eabe14834ae37ca851640d5aa',
+        notionId: 'baf157b016ba48a890eb4cacb4b903e5',
         title: 'Wallet Definition',
         content: '<div class="bloc1"><p>In the world of cryptocurrency, a wallet refers to an application or device you can use to interact with a <span class="tooltip" definition="A shared, unchangeable database or record of transactions.">blockchain</span>.</p><p>Your <span class="tooltip" definition="A wallet is an application or device used to send and receive crypto assets on the blockchain.">wallet</span> functions as a lock-box that secures your access to the blockchain.</p><p>When your wallet is connected to a blockchain, you can make purchases, transfer digital assets, interact with applications, and more!</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F707ffa85-b517-4c35-8bae-be8125421b23%2Fcustodial_wallet_2.svg?table=block&id=acc5f0de-1b86-4f69-b3ae-6682f580ce95\'></div>'
       },
