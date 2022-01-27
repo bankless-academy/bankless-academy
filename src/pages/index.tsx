@@ -10,8 +10,9 @@ import {
   Center,
   useMediaQuery,
   Icon,
+  Link,
 } from '@chakra-ui/react'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import { BookOpen, LightbulbFilament, Sword, Medal } from 'phosphor-react'
 
 import LESSONS from 'constants/lessons'
@@ -64,27 +65,32 @@ const HomePage = (): JSX.Element => {
             {DEFAULT_METADATA.description}
           </Heading>
           <Box>
-            <Link href={`/lessons`}>
+            <NextLink href={`/lessons`}>
               <Button variant="primary">Explore Lessons</Button>
-            </Link>
+            </NextLink>
           </Box>
         </Stack>
       </Center>
       <Box bgColor="#1F2023" p="5">
-        <Container maxW="container.xl">
+        <Container maxW="container.lg">
           <Box mt="6">
-            <Heading as="h2" size="xl" textAlign="center" m="auto">
+            <Heading as="h2" size="xl" m="auto">
               Start Your Bankless Journey
             </Heading>
-            <Text fontSize="lg" maxW="800px" textAlign="center" m="auto" my="6">
+            <Text fontSize="lg" mt="6">
               The Bankless Academy is on a mission to introduce 1 billion people
               to the exciting possibilities of cryptocurrency, DeFi, and beyond.
               Whether you’re curious about crypto, intrigued by NFTs, or want to
               get started the latest DeFi protocols, we’re here to help guide
               and accelerate your journey to Web3 proficiency.
             </Text>
-            <SimpleGrid columns={{ sm: 1, md: 2, lg: 4 }} gap={6} my="8">
-              <Box>
+            <SimpleGrid
+              columns={{ sm: 1, md: 2, lg: 2 }}
+              gap={6}
+              my="10"
+              mx={isSmallScreen ? '0' : '12'}
+            >
+              <Box border="1px solid #72757B" p="8" borderRadius="lg">
                 <Icon
                   as={BookOpen}
                   w={10}
@@ -94,12 +100,14 @@ const HomePage = (): JSX.Element => {
                   borderRadius="50%"
                   p="2"
                 />
-                <Heading size="lg">Advance Your Knowledge</Heading>
-                <Text fontSize="lg">
+                <Heading size="lg" mt="2">
+                  Advance Your Knowledge
+                </Heading>
+                <Text fontSize="lg" mt="2">
                   From basics to deep dives, discover the world of Web3
                 </Text>
               </Box>
-              <Box>
+              <Box border="1px solid #72757B" p="8" borderRadius="lg">
                 <Icon
                   as={LightbulbFilament}
                   w={10}
@@ -109,13 +117,15 @@ const HomePage = (): JSX.Element => {
                   borderRadius="50%"
                   p="2"
                 />
-                <Heading size="lg">Check Your Learning</Heading>
-                <Text fontSize="lg">
+                <Heading size="lg" mt="2">
+                  Check Your Learning
+                </Heading>
+                <Text fontSize="lg" mt="2">
                   Complete activities to test your command of topics and
                   concepts
                 </Text>
               </Box>
-              <Box>
+              <Box border="1px solid #72757B" p="8" borderRadius="lg">
                 <Icon
                   as={Sword}
                   w={10}
@@ -125,12 +135,14 @@ const HomePage = (): JSX.Element => {
                   borderRadius="50%"
                   p="2"
                 />
-                <Heading size="lg">Complete Quests</Heading>
-                <Text fontSize="lg">
+                <Heading size="lg" mt="2">
+                  Complete Quests
+                </Heading>
+                <Text fontSize="lg" mt="2">
                   Put knowledge into action with step-by-step tutorials
                 </Text>
               </Box>
-              <Box>
+              <Box border="1px solid #72757B" p="8" borderRadius="lg">
                 <Icon
                   as={Medal}
                   w={10}
@@ -140,8 +152,10 @@ const HomePage = (): JSX.Element => {
                   borderRadius="50%"
                   p="2"
                 />
-                <Heading size="lg">Collect Rewards</Heading>
-                <Text fontSize="lg">
+                <Heading size="lg" mt="2">
+                  Collect Rewards
+                </Heading>
+                <Text fontSize="lg" mt="2">
                   Complete lessons to claim badges and rewards
                 </Text>
               </Box>
@@ -162,22 +176,22 @@ const HomePage = (): JSX.Element => {
                     }}
                     maxW="600px"
                   >
-                    <Link href={`/lessons/${lesson.slug}`}>
+                    <NextLink href={`/lessons/${lesson.slug}`}>
                       <Image src={lesson.lessonImageLink} />
-                    </Link>
+                    </NextLink>
                   </Card>
                 )
                 const LessonDescription = (
                   <Box alignSelf="center">
                     <Heading fontSize="2xl">{lesson.name}</Heading>
-                    <Text fontSize="lg" my="2">
+                    <Text fontSize="lg" my="4">
                       {lesson.marketingDescription}
                     </Text>
-                    <Link href={`/lessons/${lesson.slug}`}>
+                    <NextLink href={`/lessons/${lesson.slug}`}>
                       <Button variant="primary" mt="4">
                         Start Lesson
                       </Button>
-                    </Link>
+                    </NextLink>
                   </Box>
                 )
                 return (
@@ -186,6 +200,7 @@ const HomePage = (): JSX.Element => {
                     key={key}
                     gap={6}
                     my="10"
+                    mx={isSmallScreen ? '0' : '12'}
                   >
                     {key % 2 === 0 || isSmallScreen ? (
                       <>
@@ -207,11 +222,16 @@ const HomePage = (): JSX.Element => {
             <Heading as="h2" size="xl">
               More Lessons On the Way
             </Heading>
-            <Text as="h3" size="lg">
+            <Text as="h3" size="lg" mt="2">
               We are working on more informative lessons to help expand your
               Web3 knowledge.
             </Text>
-            <SimpleGrid columns={{ sm: 2, md: 3, lg: 4 }} gap={6} m="10">
+            <SimpleGrid
+              columns={{ sm: 2, md: 3, lg: 4 }}
+              gap={6}
+              my="10"
+              mx={isSmallScreen ? '0' : '12'}
+            >
               {MORE_LESSONS.map((lesson, key) => (
                 <Center
                   h="20"
@@ -225,7 +245,7 @@ const HomePage = (): JSX.Element => {
               ))}
             </SimpleGrid>
           </Box>
-          <Box>
+          <Box my="12">
             <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6}>
               <Box>
                 <Heading as="h3" size="md">
@@ -236,8 +256,16 @@ const HomePage = (): JSX.Element => {
                 </Heading>
               </Box>
               <Box>
-                <Link href={`/feedback`}>
-                  <Button variant="primary">Suggest Topic</Button>
+                <NextLink href={`/feedback`}>
+                  <Button variant="secondary">Suggest topics</Button>
+                </NextLink>
+                <Link
+                  target="_blank"
+                  rel="noreferrer"
+                  href={`https://tally.so/r/w4kXA3`}
+                  ml="4"
+                >
+                  <Button variant="primary">Partner with us</Button>
                 </Link>
               </Box>
             </SimpleGrid>
