@@ -241,6 +241,7 @@ const HomePage = (): JSX.Element => {
                   key={key}
                   textAlign="center"
                   borderRadius="10"
+                  p="4"
                 >
                   {lesson}
                 </Center>
