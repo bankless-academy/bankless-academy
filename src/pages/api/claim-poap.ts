@@ -47,6 +47,7 @@ export default async function handler(
 
   try {
     const userId = await getUserId(address)
+    console.log(userId)
     if (userId) {
       // [step 2] check if the POAP was already claimed
       const [codeAlreadyClaimed] = await db(TABLES.poaps)
@@ -55,11 +56,11 @@ export default async function handler(
         .where('user_id', userId)
       console.log('codeAlreadyClaimed', codeAlreadyClaimed)
       if (codeAlreadyClaimed?.code) {
-        res.json({ code: codeAlreadyClaimed.code })
+        return res.json({ code: codeAlreadyClaimed.code })
       } else {
         // [step 3] verify that quest has been completed
         if (!(poapEventId in POAP_QUESTS)) {
-          res.json({ error: 'poapEventId not found' })
+          return res.json({ error: 'poapEventId not found' })
         }
         const quest = POAP_QUESTS[poapEventId]
         const [questCompleted] = await db(TABLES.quests)
@@ -68,7 +69,7 @@ export default async function handler(
           .where('user_id', userId)
         console.log('quest', quest)
         if (!questCompleted?.id) {
-          res.json({
+          return res.json({
             error:
               "You haven't completed the quest yet. Go back to the previous slide.",
           })
@@ -88,22 +89,22 @@ export default async function handler(
           .update({ is_claimed: true, user_id: userId }, ['code'])
         console.log('newCode', newCode)
         if (newCode?.code) {
-          res.json({ code: newCode?.code })
+          return res.json({ code: newCode?.code })
         } else {
-          res.json({
+          return res.json({
             error: `Sorry, no more POAP codes available ... please contact ${POAP_EMAIL_CONTACT}`,
           })
         }
       }
     } else {
-      res.json({
-        error: GENERIC_ERROR_MESSAGE,
+      return res.json({
+        error: `error 2: ${GENERIC_ERROR_MESSAGE}`,
       })
     }
   } catch (error) {
     console.error(error)
     res.json({
-      error: GENERIC_ERROR_MESSAGE,
+      error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
     })
   }
 }

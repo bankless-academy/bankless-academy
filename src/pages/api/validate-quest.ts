@@ -43,13 +43,13 @@ export default async function handler(
         }
       }
     }
-    res.json({
-      error: GENERIC_ERROR_MESSAGE,
+    return res.json({
+      error: `error 1: ${GENERIC_ERROR_MESSAGE}`,
     })
   } catch (error) {
     console.error(error)
     res.json({
-      error: GENERIC_ERROR_MESSAGE,
+      error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
     })
   }
 }

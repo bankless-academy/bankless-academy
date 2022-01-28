@@ -28,6 +28,7 @@ export async function getUserId(address: string) {
     }
     return user?.id || createUser?.id
   } catch (error) {
-    console.error(error)
+    // known issue: error 53300, remaining connection slots are reserved for non-replication superuser connections
+    console.error(`can't get user id | ${error?.code}: ${error}`)
   }
 }
