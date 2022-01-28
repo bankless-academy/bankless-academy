@@ -66,7 +66,9 @@ const HomePage = (): JSX.Element => {
           </Heading> */}
           <Box>
             <NextLink href={`/lessons`}>
-              <Button variant="primary">Explore Lessons</Button>
+              <Button variant="primary" size="lg" style={{ padding: '0 23px' }}>
+                Explore Lessons
+              </Button>
             </NextLink>
           </Box>
         </Stack>
