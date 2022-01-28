@@ -24,10 +24,10 @@ const MORE_LESSONS = [
   'Sidechains and Layer 2 Blockchains',
   'Next Level: Advanced Wallet',
   'DeFi Skills: Aave Basics',
-  'DeFi Skills: Uniswap Basic',
+  'DeFi Skills: Uniswap Basics',
   'Foundational Money Concepts',
   'DeFi Skills: Alchemix Basics',
-  'DeFi Skllls: Working with Layer 2s',
+  'DeFi Skills: Working with Layer 2s',
 ]
 
 const HomePage = (): JSX.Element => {
@@ -253,7 +253,7 @@ const HomePage = (): JSX.Element => {
                 <Heading as="h3" size="md">
                   How can we help with your bankless journey?
                   <br />
-                  Let us know what crypto, Web3, and DeFi topics and skills you
+                  Let us know what crypto, Web3, DeFi topics and skills you
                   would like to learn.
                 </Heading>
               </Box>
