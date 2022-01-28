@@ -119,7 +119,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'a78db356b36c4bb19a85af61170b2471',
         title: 'Non-custodial Wallet',
-        content: '<div class="bloc1"><p>Your passport to the exciting worlds of DeFi  and <span class="tooltip" definition="Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data.">Web3</span>—and the best way to safeguard your <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address.">private key</span> is a <span class="tooltip" definition="With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets.">non-custodial wallet</span>. </p><p>Remember: if you lose your private key, you will not be able to access your wallet to spend, withdraw, or transfer your crypto assets.</p><p>Fortunately, you <em>can</em> still recover your wallet with your <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key.">recovery phrase</span>. But if you lose that too, you will lose access to your wallet FOREVER!!!</p></div>'
+        content: '<div class="bloc1"><p>Your passport to the exciting worlds of <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> and <span class="tooltip" definition="Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data.">Web3</span>—and the best way to safeguard your <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address.">private key</span> is a <span class="tooltip" definition="With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets.">non-custodial wallet</span>. </p><p>Remember: if you lose your private key, you will not be able to access your wallet to spend, withdraw, or transfer your crypto assets.</p><p>Fortunately, you <em>can</em> still recover your wallet with your <span class="tooltip" definition="A recovery phrase is a list of 12 to 24 words which is used to generate your wallet\'s public key and private key.">recovery phrase</span>. But if you lose that too, you will lose access to your wallet FOREVER!!!</p></div>'
       },
       {
         type: 'QUIZ',
@@ -195,10 +195,10 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'Is MetaMask a custodial wallet?',
-          rightAnswerNumber: 1,
+          rightAnswerNumber: 2,
           answers: [
-            'No',
-            'Yes'
+            'Yes',
+            'No'
           ],
           id: 'wallet-basics-8'
         }
@@ -224,7 +224,7 @@ const LESSONS: LessonType[] = [
     duration: 10,
     learnings: 'Learn what decentralized finance means and the game-changing possibilities that new blockchain-powered applications are introducing to the world.',
     difficulty: 'Easy',
-    description: 'Understand the basics of Decentralized Finance',
+    description: 'Understand the basics of Decentralized Finance.',
     name: 'Intro to DeFi',
     notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
     slug: 'intro-to-defi',
@@ -264,12 +264,12 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'How can you earn yield with crypto?',
-          rightAnswerNumber: 4,
+          rightAnswerNumber: 3,
           answers: [
             '[A] Earning interest by depositing into a DeFi protocol',
             '[B] Earning rewards by depositing into a DeFi protocol',
-            '[C] You can’t earn yield on crypto',
-            '[D] Both A and B'
+            '[C] Both A and B',
+            '[D] You can’t earn yield on crypto'
           ],
           id: 'intro-to-defi-2'
         }
@@ -278,7 +278,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '153a075b1a004f38a9c177486aa95395',
         title: 'What You Can Do With DeFi',
-        content: '<div class="bloc1"><p><span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transactions are permissionless. This refers to a public blockchain that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps. </p><p>DApps and DeFi platforms enable users to make an ever increasing number of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe4f70323-d72a-46c5-b67d-bcc1de55bd8e%2FWhat_you_can_do_with_DeFi.svg?table=block&id=fcedf040-108b-4f7a-9c7b-44bcdf7e4b67\'></div>'
+        content: '<div class="bloc1"><p><span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transactions are permissionless. This refers to a public blockchain that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span>. </p><p>DApps and DeFi platforms enable users to make an ever increasing number of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe4f70323-d72a-46c5-b67d-bcc1de55bd8e%2FWhat_you_can_do_with_DeFi.svg?table=block&id=fcedf040-108b-4f7a-9c7b-44bcdf7e4b67\'></div>'
       },
       {
         type: 'QUIZ',
@@ -300,7 +300,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '555dff92a9b34743b498f8a01de6ffa4',
         title: '<strong>Investing</strong>',
-        content: '<div class="bloc1"><p>The most common <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transaction is to purchase some cryptocurrency with the expectation that it will be worth more in the future. This is known as investing.</p><p>HODL is a term used for keeping crypto assets for a long time. Depending on who you ask, the HODL meme either comes from a typo of HOLD or it stands for <strong>H</strong>old <strong>O</strong>n for <strong>D</strong>ear <strong>L</strong>ife.</p><p>DeFi allows early access to coins and tokens to find and invest in, before they are listed on centralized exchanges. (CEX)</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe52d42d6-c758-4f33-9f56-62e3d1c58297%2FInvesting.svg?table=block&id=c9b9b519-5598-4888-b53f-bb36fa01ed25\'></div>'
+        content: '<div class="bloc1"><p>The most common <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transaction is to purchase some cryptocurrency with the expectation that it will be worth more in the future. This is known as investing.</p><p>HODL is a term used for keeping crypto assets for a long time. Depending on who you ask, the HODL meme either comes from a typo of HOLD or it stands for <strong>H</strong>old <strong>O</strong>n for <strong>D</strong>ear <strong>L</strong>ife.</p><p>DeFi allows early access to coins and tokens to find and invest in, before they are listed on centralized exchanges (CEX).</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe52d42d6-c758-4f33-9f56-62e3d1c58297%2FInvesting.svg?table=block&id=c9b9b519-5598-4888-b53f-bb36fa01ed25\'></div>'
       },
       {
         type: 'QUIZ',
