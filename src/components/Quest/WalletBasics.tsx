@@ -44,8 +44,11 @@ const WalletBasics = (): {
         >
           {account
             ? 'Congrats for connecting your wallet! 👏🙂'
-            : 'Waiting for you to connect your wallet ("Connect wallet" button in the top-right corner)'}
+            : 'Waiting to detect your wallet ...'}
         </Button>
+        {account
+          ? null
+          : 'To validate this quest and finish this lesson, connect your wallet to this website. To do this, click the "Connect wallet" button in the top-right corner.'}
       </>
     ),
   }
