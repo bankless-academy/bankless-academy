@@ -17,7 +17,7 @@ import { BookOpen, LightbulbFilament, Sword, Medal } from 'phosphor-react'
 
 import LESSONS from 'constants/lessons'
 import Card from 'components/Card'
-import { DEFAULT_METADATA } from 'constants/'
+// import { DEFAULT_METADATA } from 'constants/'
 
 const MORE_LESSONS = [
   'Next Level: Intermediate Wallet',
@@ -56,14 +56,14 @@ const HomePage = (): JSX.Element => {
             src="/images/BanklessAcademy.svg"
             alt="Bankless Academy"
           />
-          <Heading
+          {/* <Heading
             as="h2"
             size="xl"
             maxW="90%"
             filter="drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))"
           >
             {DEFAULT_METADATA.description}
-          </Heading>
+          </Heading> */}
           <Box>
             <NextLink href={`/lessons`}>
               <Button variant="primary">Explore Lessons</Button>
