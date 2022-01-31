@@ -35,7 +35,10 @@ export default async function handler(
   console.log('message: ', message)
   console.log('diff: ', -message + Date.now())
 
-  console.log('req.headers: ', req.headers)
+  const ip = req.headers['x-real-ip']
+  const country = req.headers['x-vercel-ip-country']
+  console.log('ip: ', ip)
+  console.log('country: ', country)
 
   if (!verifySignature(address, signature, message))
     return res.json({ error: 'Wrong signature' })
