@@ -29,11 +29,13 @@ export default async function handler(
   )
     return res.json({ error: 'Wrong params' })
 
-  console.log('address', address)
-  console.log('poapEventId', poapEventId)
-  console.log('signature', signature)
-  console.log('message', message)
-  console.log('diff', -message + Date.now())
+  console.log('address: ', address)
+  console.log('poapEventId: ', poapEventId)
+  console.log('signature: ', signature)
+  console.log('message: ', message)
+  console.log('diff: ', -message + Date.now())
+
+  console.log('req.headers: ', req.headers)
 
   if (!verifySignature(address, signature, message))
     return res.json({ error: 'Wrong signature' })
