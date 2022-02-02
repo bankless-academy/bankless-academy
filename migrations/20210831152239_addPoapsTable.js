@@ -1,5 +1,7 @@
+const { TABLES } = require('../db')
+
 exports.up = async function (knex) {
-  await knex.schema.createTable('poaps', function (table) {
+  await knex.schema.createTable(TABLES.poaps, function (table) {
     table.increments('id')
     table.integer('event_id').notNullable()
     table.string('code', 6).notNullable().unique()
@@ -11,5 +13,5 @@ exports.up = async function (knex) {
 }
 
 exports.down = async function (knex) {
-  await knex.schema.dropTable('poaps')
+  await knex.schema.dropTable(TABLES.poaps)
 }
