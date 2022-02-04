@@ -78,9 +78,9 @@ const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
   .bloc2 {
     flex: 1;
     ${(props) => props.isSmallScreen && 'margin-top: 24px;'};
+    max-height: 60vh;
     img {
       width: 100%;
-      max-height: 60vh;
       min-height: 350px;
     }
   }
