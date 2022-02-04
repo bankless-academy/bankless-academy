@@ -77,12 +77,21 @@ const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
   .bloc1,
   .bloc2 {
     flex: 1;
-    ${(props) => props.isSmallScreen && 'margin-top: 24px;'};
-    max-height: 60vh;
     img {
-      width: 100%;
+      width: auto;
+      margin: auto;
       min-height: 350px;
+      max-height: 100%;
     }
+    ${(props) =>
+      props.isSmallScreen
+        ? `
+        margin-top: 24px;
+        img {
+          width: 100%;
+        }
+      `
+        : ' max-height: 60vh;'};
   }
   div.content div {
     h2,
