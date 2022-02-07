@@ -495,10 +495,13 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                     button in the top-right corner)
                   </h2>
                 )}
+                {/* TEMP: POAP event expired */}
+                {lesson.slug === 'intro-to-defi' && (
+                  <h2>
+                    {`⚠️ POAP event expired ... please contact ${POAP_EMAIL_CONTACT} if you didn't manage to claim your POAP`}
+                  </h2>
+                )}
               </VStack>
-              {/* TEMP */}
-              {lesson.slug === 'intro-to-defi' &&
-                `⚠️ POAP event expired ... please contact ${POAP_EMAIL_CONTACT} if you didn't manage to claim your POAP`}
             </>
           )}
         </Box>
