@@ -27,7 +27,7 @@ import Card from 'components/Card'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useActiveWeb3React } from 'hooks'
 import { track, verifySignature } from 'utils'
-import { GENERIC_ERROR_MESSAGE } from 'constants/index'
+import { GENERIC_ERROR_MESSAGE, POAP_EMAIL_CONTACT } from 'constants/index'
 
 // transform keywords into Tooltip
 function transform(node, index) {
@@ -496,6 +496,9 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                   </h2>
                 )}
               </VStack>
+              {/* TEMP */}
+              {lesson.slug === 'intro-to-defi' &&
+                `⚠️ POAP event expired ... please contact ${POAP_EMAIL_CONTACT} if you didn't manage to claim your POAP`}
             </>
           )}
         </Box>
