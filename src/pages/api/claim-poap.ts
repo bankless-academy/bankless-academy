@@ -14,7 +14,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  // [step 1]: check params + signature
+  // check params + signature
   const { address, poapEventId, signature, message } = req.query
   if (
     !address ||
@@ -29,11 +29,16 @@ export default async function handler(
   )
     return res.json({ error: 'Wrong params' })
 
-  console.log('address', address)
-  console.log('poapEventId', poapEventId)
-  console.log('signature', signature)
-  console.log('message', message)
-  console.log('diff', -message + Date.now())
+  console.log('address: ', address)
+  console.log('poapEventId: ', poapEventId)
+  console.log('signature: ', signature)
+  console.log('message: ', message)
+  console.log('diff: ', -message + Date.now())
+
+  const ipAddress = req.headers['x-real-ip'] || 'local'
+  const countryCode = req.headers['x-vercel-ip-country'] || 'localhost'
+  console.log('ipAddress: ', ipAddress)
+  console.log('countryCode: ', countryCode)
 
   if (!verifySignature(address, signature, message))
     return res.json({ error: 'Wrong signature' })
@@ -48,8 +53,8 @@ export default async function handler(
   try {
     const userId = await getUserId(address)
     console.log(userId)
-    if (userId) {
-      // [step 2] check if the POAP was already claimed
+    if (userId && Number.isInteger(userId)) {
+      // check if the POAP was already claimed
       const [codeAlreadyClaimed] = await db(TABLES.poaps)
         .select('code')
         .where('event_id', poapEventId)
@@ -58,10 +63,10 @@ export default async function handler(
       if (codeAlreadyClaimed?.code) {
         return res.json({ code: codeAlreadyClaimed.code })
       } else {
-        // [step 3] verify that quest has been completed
         if (!(poapEventId in POAP_QUESTS)) {
           return res.json({ error: 'poapEventId not found' })
         }
+        // verify that quest has been completed
         const quest = POAP_QUESTS[poapEventId]
         const [questCompleted] = await db(TABLES.quests)
           .select('id')
@@ -74,7 +79,28 @@ export default async function handler(
               "You haven't completed the quest yet. Go back to the previous slide.",
           })
         }
-        // [step 4] get the code + update is_claimed to true
+        // max 2 POAP claiming / lesson / IP to prevent manual farming
+        const [ipClaimed] = await db(TABLES.poaps)
+          .count('ip_address')
+          .where('ip_address', ipAddress)
+          .where('event_id', poapEventId)
+        console.log('ipClaimed', ipClaimed?.count)
+        if (ipClaimed?.count >= 2) {
+          return res.json({
+            error: `POAP limit exceeded ... please contact ${POAP_EMAIL_CONTACT}`,
+          })
+        }
+        // get the code + update poap details
+        const updatePoap: {
+          is_claimed: boolean
+          user_id: number
+          ip_address?: string
+          country_code?: string
+        } = { is_claimed: true, user_id: userId }
+        if (ipAddress && typeof ipAddress === 'string')
+          updatePoap.ip_address = ipAddress
+        if (countryCode && typeof countryCode === 'string')
+          updatePoap.country_code = countryCode
         const [newCode] = await db(TABLES.poaps)
           .where('event_id', poapEventId)
           .where(
@@ -86,7 +112,7 @@ export default async function handler(
               .orderBy('id', 'asc')
               .limit(1)
           )
-          .update({ is_claimed: true, user_id: userId }, ['code'])
+          .update(updatePoap, ['code'])
         console.log('newCode', newCode)
         if (newCode?.code) {
           return res.json({ code: newCode?.code })
