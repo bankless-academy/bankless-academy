@@ -87,7 +87,11 @@ const ConnectWalletButton = ({
   }
 
   useEffect(() => {
-    if (localStorage.getItem('WEB3_CONNECT_CACHED_PROVIDER')) {
+    if (
+      localStorage.getItem('WEB3_CONNECT_CACHED_PROVIDER') &&
+      // don't prompt MetaMask popup if wallet isn't unlocked
+      !(window?.ethereum?.isMetaMask && !window?.ethereum?.selectedAddress)
+    ) {
       web3Modal = new Web3Modal(web3ModalFrame)
       web3ModalConnect(web3Modal)
     }
