@@ -22,7 +22,7 @@ const ProgressSteps = ({
             index + 1 === total
               ? `linear-gradient(270deg, #FFFCF9 -44.74%, #F77B54 -11.81%, ${
                   index <= step ? '#916AB8' : '#ffffff22'
-                } 44.44%)`
+                } 94.44%)`
               : index <= step
               ? '#916AB8'
               : '#ffffff22'
