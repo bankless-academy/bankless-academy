@@ -9,14 +9,13 @@ import {
   Image,
   Center,
   useMediaQuery,
-  Icon,
   Link,
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
-import { BookOpen, LightbulbFilament, Sword, Medal } from 'phosphor-react'
 
 import LESSONS from 'constants/lessons'
 import Card from 'components/Card'
+import { LearnIcon, QuizIcon, QuestIcon, PoapIcon } from 'components/Icons'
 // import { DEFAULT_METADATA } from 'constants/'
 
 const MORE_LESSONS = [
@@ -93,15 +92,7 @@ const HomePage = (): JSX.Element => {
               mx={isSmallScreen ? '0' : '12'}
             >
               <Box border="1px solid #72757B" p="8" borderRadius="lg">
-                <Icon
-                  as={BookOpen}
-                  w={10}
-                  h={10}
-                  bg="linear-gradient(148.06deg, #B8FFB0 7.86%, #84FFE1 90.48%)"
-                  color="black"
-                  borderRadius="50%"
-                  p="2"
-                />
+                <LearnIcon />
                 <Heading size="lg" mt="2">
                   Advance Your Knowledge
                 </Heading>
@@ -110,15 +101,7 @@ const HomePage = (): JSX.Element => {
                 </Text>
               </Box>
               <Box border="1px solid #72757B" p="8" borderRadius="lg">
-                <Icon
-                  as={LightbulbFilament}
-                  w={10}
-                  h={10}
-                  bg="linear-gradient(148.06deg, #B0FFFA 7.86%, #FFBF84 90.48%)"
-                  color="black"
-                  borderRadius="50%"
-                  p="2"
-                />
+                <QuizIcon />
                 <Heading size="lg" mt="2">
                   Check Your Learning
                 </Heading>
@@ -128,15 +111,7 @@ const HomePage = (): JSX.Element => {
                 </Text>
               </Box>
               <Box border="1px solid #72757B" p="8" borderRadius="lg">
-                <Icon
-                  as={Sword}
-                  w={10}
-                  h={10}
-                  bg="linear-gradient(148.06deg, #FFDFB0 7.86%, #FF84DC 90.48%)"
-                  color="black"
-                  borderRadius="50%"
-                  p="2"
-                />
+                <QuestIcon />
                 <Heading size="lg" mt="2">
                   Complete Quests
                 </Heading>
@@ -145,15 +120,7 @@ const HomePage = (): JSX.Element => {
                 </Text>
               </Box>
               <Box border="1px solid #72757B" p="8" borderRadius="lg">
-                <Icon
-                  as={Medal}
-                  w={10}
-                  h={10}
-                  bg="linear-gradient(148.06deg, #FDFF84 7.86%, #B0E3FF 79.72%)"
-                  color="black"
-                  borderRadius="50%"
-                  p="2"
-                />
+                <PoapIcon />
                 <Heading size="lg" mt="2">
                   Collect Rewards
                 </Heading>

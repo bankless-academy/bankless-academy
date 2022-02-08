@@ -28,6 +28,7 @@ import QuestComponent from 'components/Quest/QuestComponent'
 import { useActiveWeb3React } from 'hooks'
 import { track, verifySignature } from 'utils'
 import { GENERIC_ERROR_MESSAGE, POAP_EMAIL_CONTACT } from 'constants/index'
+import { LearnIcon, QuizIcon, QuestIcon, PoapIcon } from 'components/Icons'
 
 // transform keywords into Tooltip
 function transform(node, index) {
@@ -356,10 +357,25 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           fontSize={isSmallScreen ? 'xl' : '3xl'}
           mt="4"
           mb="8"
-          textAlign="center"
+          display="inline-flex"
+          justifyContent="center"
+          alignItems="center"
+          width="100%"
           fontWeight="bold"
         >
-          {ReactHtmlParser(slide.title, { transform })}
+          <Box display="inline-flex" alignItems="center" mr="4">
+            {slide.type === 'LEARN' && <LearnIcon />}
+            {slide.type === 'QUIZ' && <QuizIcon />}
+            {slide.type === 'QUEST' && <QuestIcon />}
+            {slide.type === 'POAP' && <PoapIcon />}
+          </Box>
+          <Box>
+            {slide.type === 'QUIZ' ? (
+              <>Knowledge Check</>
+            ) : (
+              <>{ReactHtmlParser(slide.title, { transform })}</>
+            )}
+          </Box>
         </Text>
         <ProgressSteps step={currentSlide} total={numberOfSlides} />
         <Box
