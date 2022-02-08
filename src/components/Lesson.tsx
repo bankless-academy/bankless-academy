@@ -548,7 +548,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                 </Button>
               </Tooltip>
             )}
-            {!isSmallScreen && slide.notionId && (
+            {/* {!isSmallScreen && slide.notionId && (
               <Tooltip
                 hasArrow
                 label="Help us improve the content by commenting this slide on Notion"
@@ -561,7 +561,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                   <Button variant="outline">🐞 comment this slide</Button>
                 </Link>
               </Tooltip>
-            )}
+            )} */}
           </HStack>
           <HStack>
             <Tooltip
