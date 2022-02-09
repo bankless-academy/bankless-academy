@@ -377,157 +377,162 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           </Box>
         </Text>
         <ProgressSteps step={currentSlide} total={numberOfSlides} />
-        <Box
-          className="content"
-          minH="500px"
-          pb={isSmallScreen ? '6' : 0}
-          pt={4}
-        >
-          {slide.type === 'LEARN' && (
-            <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
-          )}
-          {slide.type === 'QUIZ' && (
-            <>
-              {slide.quiz?.question && (
-                <Box>
-                  <h2>
-                    {ReactHtmlParser(slide?.quiz?.question, { transform })}
-                  </h2>
-                </Box>
-              )}
-              <Answers mt={4}>
-                <ButtonGroup size="lg" w="100%">
-                  <SimpleGrid
-                    columns={[null, null, 1]}
-                    spacing="40px"
-                    w="100%"
-                    justifyItems="center"
-                  >
-                    {[1, 2, 3, 4].map((n) => {
-                      const answerState = answerIsCorrect
-                        ? slide.quiz.rightAnswerNumber === n
-                          ? 'CORRECT'
-                          : 'UNSELECTED'
-                        : selectedAnswerNumber === n
-                        ? 'WRONG'
-                        : 'UNSELECTED'
-                      if (slide.quiz.answers.length >= n)
-                        return (
-                          <QuizAnswer
-                            ref={(el) => (answerRef.current[n] = el)}
-                            key={`answer-${n}`}
-                            w="100%"
-                            maxW="500px"
-                            p="4"
-                            h="auto"
-                            border={
-                              answerState === 'UNSELECTED' &&
-                              '1px solid #646587'
-                            }
-                            whiteSpace="break-spaces"
-                            onClick={(e) => selectAnswer(e, n)}
-                            answerState={answerState}
-                            justifyContent="space-between"
-                            textAlign="left"
-                            rightIcon={
-                              answerState === 'CORRECT' ? (
-                                <Checks weight="bold" color="white" />
-                              ) : (
-                                answerState === 'WRONG' && (
-                                  <Warning weight="bold" color="white" />
-                                )
-                              )
-                            }
-                            isActive={answerIsCorrect}
-                          >
-                            {slide.quiz.answers[n - 1]}
-                          </QuizAnswer>
-                        )
-                    })}
-                  </SimpleGrid>
-                </ButtonGroup>
-              </Answers>
-            </>
-          )}
-          {slide.type === 'QUEST' && (
-            <>
-              <VStack flex="auto" minH="420px" justifyContent="center">
-                {Quest?.questComponent}
-              </VStack>
-            </>
-          )}
-          {slide.type === 'POAP' && (
-            <>
-              <VStack flex="auto" minH="420px" justifyContent="center">
-                {walletAddress ? (
-                  <>
-                    <Image
-                      src={lesson.poapImageLink}
-                      width="250px"
-                      height="250px"
-                      opacity={isPoapClaimed ? 1 : 0.7}
-                      mb="2"
-                    />
-                    {!isPoapClaimed && !poapData.error ? (
-                      <Button
-                        variant="outline"
-                        onClick={signMessage}
-                        isLoading={isClaimingPoap}
-                      >
-                        Claim POAP
-                      </Button>
-                    ) : (
-                      <>
-                        <h2>
-                          {`Congrats for finishing the "${lesson.name}" lesson! 🥳`}
-                        </h2>
-                        {poapCode && (
-                          <>
-                            {isPoapMinted && lesson.slug === 'intro-to-defi' ? (
-                              <>
-                                <Button
-                                  mt="4"
-                                  onClick={() => router.push('/feedback')}
-                                >
-                                  Feedback form
-                                </Button>
-                              </>
-                            ) : isPoapMinted ? null : (
-                              <Box display="flex" mt="4" alignItems="center">
-                                <Link
-                                  href={`https://app.poap.xyz/claim/${poapCode}?address=${walletAddress}`}
-                                  target="_blank"
-                                  onClick={() => setIsPoapMinted(true)}
-                                  mr="4"
-                                >
-                                  <Button variant="outline">Mint POAP</Button>
-                                </Link>
-                                <span>👈 don't forget to mint your POAP!</span>
-                              </Box>
-                            )}
-                          </>
-                        )}
-                      </>
-                    )}
-                    {poapData.error && (
-                      <Button variant="outline" mt="4" leftIcon={<Warning />}>
-                        {poapData.error}
-                      </Button>
-                    )}
-                  </>
-                ) : (
-                  <h2>
-                    ⚠️ Connect your wallet first (&quot;Connect wallet&quot;
-                    button in the top-right corner)
-                  </h2>
+        <Box maxH="600px">
+          <Box
+            className="content"
+            minH="calc(100vh - 360px)"
+            pb={isSmallScreen ? '6' : 0}
+            pt={4}
+          >
+            {slide.type === 'LEARN' && (
+              <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
+            )}
+            {slide.type === 'QUIZ' && (
+              <>
+                {slide.quiz?.question && (
+                  <Box>
+                    <h2>
+                      {ReactHtmlParser(slide?.quiz?.question, { transform })}
+                    </h2>
+                  </Box>
                 )}
-                {/* TEMP: help */}
-                <h2>
-                  {`🙋‍♂️ If you can't claim or mint your POAP, contact ${POAP_EMAIL_CONTACT} for help`}
-                </h2>
-              </VStack>
-            </>
-          )}
+                <Answers mt={4}>
+                  <ButtonGroup size="lg" w="100%">
+                    <SimpleGrid
+                      columns={[null, null, 1]}
+                      spacing="40px"
+                      w="100%"
+                      justifyItems="center"
+                    >
+                      {[1, 2, 3, 4].map((n) => {
+                        const answerState = answerIsCorrect
+                          ? slide.quiz.rightAnswerNumber === n
+                            ? 'CORRECT'
+                            : 'UNSELECTED'
+                          : selectedAnswerNumber === n
+                          ? 'WRONG'
+                          : 'UNSELECTED'
+                        if (slide.quiz.answers.length >= n)
+                          return (
+                            <QuizAnswer
+                              ref={(el) => (answerRef.current[n] = el)}
+                              key={`answer-${n}`}
+                              w="100%"
+                              maxW="500px"
+                              p="4"
+                              h="auto"
+                              border={
+                                answerState === 'UNSELECTED' &&
+                                '1px solid #646587'
+                              }
+                              whiteSpace="break-spaces"
+                              onClick={(e) => selectAnswer(e, n)}
+                              answerState={answerState}
+                              justifyContent="space-between"
+                              textAlign="left"
+                              rightIcon={
+                                answerState === 'CORRECT' ? (
+                                  <Checks weight="bold" color="white" />
+                                ) : (
+                                  answerState === 'WRONG' && (
+                                    <Warning weight="bold" color="white" />
+                                  )
+                                )
+                              }
+                              isActive={answerIsCorrect}
+                            >
+                              {slide.quiz.answers[n - 1]}
+                            </QuizAnswer>
+                          )
+                      })}
+                    </SimpleGrid>
+                  </ButtonGroup>
+                </Answers>
+              </>
+            )}
+            {slide.type === 'QUEST' && (
+              <>
+                <VStack flex="auto" minH="420px" justifyContent="center">
+                  {Quest?.questComponent}
+                </VStack>
+              </>
+            )}
+            {slide.type === 'POAP' && (
+              <>
+                <VStack flex="auto" minH="420px" justifyContent="center">
+                  {walletAddress ? (
+                    <>
+                      <Image
+                        src={lesson.poapImageLink}
+                        width="250px"
+                        height="250px"
+                        opacity={isPoapClaimed ? 1 : 0.7}
+                        mb="2"
+                      />
+                      {!isPoapClaimed && !poapData.error ? (
+                        <Button
+                          variant="outline"
+                          onClick={signMessage}
+                          isLoading={isClaimingPoap}
+                        >
+                          Claim POAP
+                        </Button>
+                      ) : (
+                        <>
+                          <h2>
+                            {`Congrats for finishing the "${lesson.name}" lesson! 🥳`}
+                          </h2>
+                          {poapCode && (
+                            <>
+                              {isPoapMinted &&
+                              lesson.slug === 'intro-to-defi' ? (
+                                <>
+                                  <Button
+                                    mt="4"
+                                    onClick={() => router.push('/feedback')}
+                                  >
+                                    Feedback form
+                                  </Button>
+                                </>
+                              ) : isPoapMinted ? null : (
+                                <Box display="flex" mt="4" alignItems="center">
+                                  <Link
+                                    href={`https://app.poap.xyz/claim/${poapCode}?address=${walletAddress}`}
+                                    target="_blank"
+                                    onClick={() => setIsPoapMinted(true)}
+                                    mr="4"
+                                  >
+                                    <Button variant="outline">Mint POAP</Button>
+                                  </Link>
+                                  <span>
+                                    👈 don't forget to mint your POAP!
+                                  </span>
+                                </Box>
+                              )}
+                            </>
+                          )}
+                        </>
+                      )}
+                      {poapData.error && (
+                        <Button variant="outline" mt="4" leftIcon={<Warning />}>
+                          {poapData.error}
+                        </Button>
+                      )}
+                    </>
+                  ) : (
+                    <h2>
+                      ⚠️ Connect your wallet first (&quot;Connect wallet&quot;
+                      button in the top-right corner)
+                    </h2>
+                  )}
+                  {/* TEMP: help */}
+                  <h2>
+                    {`🙋‍♂️ If you can't claim or mint your POAP, contact ${POAP_EMAIL_CONTACT} for help`}
+                  </h2>
+                </VStack>
+              </>
+            )}
+          </Box>
         </Box>
         <SlideNav display="flex" p={4} isSmallScreen={isSmallScreen}>
           <HStack flex="auto">
