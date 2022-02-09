@@ -23,6 +23,7 @@ const Nav: React.FC = () => {
             <Link href="/">
               <Image
                 width={isSmallScreen ? '27px' : '117px'}
+                ml={isSmallScreen ? '' : '2'}
                 src={
                   isSmallScreen
                     ? '/images/BanklessAcademy_Logo.svg'
