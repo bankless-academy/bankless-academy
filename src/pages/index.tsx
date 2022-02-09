@@ -136,6 +136,11 @@ const HomePage = (): JSX.Element => {
             </Heading>
             <Box>
               {LESSONS.map((lesson, key) => {
+                const isPoapClaimed = localStorage.getItem(
+                  `poap-${lesson.slug}`
+                )
+                const isLessonStarted =
+                  (localStorage.getItem(lesson.slug) || 0) > 0
                 const LessonImage = (
                   <LessonBanner
                     cursor="pointer"
@@ -158,7 +163,11 @@ const HomePage = (): JSX.Element => {
                     </Text>
                     <NextLink href={`/lessons/${lesson.slug}`}>
                       <Button variant="primary" mt="4">
-                        Start Lesson
+                        {isPoapClaimed
+                          ? 'Review Lesson'
+                          : isLessonStarted
+                          ? 'Resume Lesson'
+                          : 'Start Lesson'}
                       </Button>
                     </NextLink>
                   </Box>
