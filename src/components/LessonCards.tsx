@@ -7,7 +7,7 @@ import { CircleWavyCheck } from 'phosphor-react'
 import ReactHtmlParser from 'react-html-parser'
 
 import LESSONS from 'constants/lessons'
-import Card from 'components/Card'
+import LessonBanner from 'components/LessonBanner'
 
 const LessonCard = styled(Box)`
   background: linear-gradient(
@@ -66,15 +66,16 @@ const LessonCards: React.FC = () => {
               </Text>
             </Box>
             <Link href={`/lessons/${lesson.slug}`}>
-              <Card
+              <LessonBanner
                 cursor="pointer"
-                overflow="hidden"
+                // overflow="hidden"
                 style={{
                   aspectRatio: '1.91/1',
                 }}
+                py="4"
               >
                 <Image src={lesson.lessonImageLink} />
-              </Card>
+              </LessonBanner>
             </Link>
             <Text fontSize="md" mt="4">
               {ReactHtmlParser(lesson.learnings)}

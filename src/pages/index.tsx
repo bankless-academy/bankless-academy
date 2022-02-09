@@ -14,7 +14,7 @@ import {
 import NextLink from 'next/link'
 
 import LESSONS from 'constants/lessons'
-import Card from 'components/Card'
+import LessonBanner from 'components/LessonBanner'
 import { LearnIcon, QuizIcon, QuestIcon, PoapIcon } from 'components/Icons'
 // import { DEFAULT_METADATA } from 'constants/'
 
@@ -137,9 +137,9 @@ const HomePage = (): JSX.Element => {
             <Box>
               {LESSONS.map((lesson, key) => {
                 const LessonImage = (
-                  <Card
+                  <LessonBanner
                     cursor="pointer"
-                    overflow="hidden"
+                    // overflow="hidden"
                     style={{
                       aspectRatio: '1.91/1',
                     }}
@@ -148,7 +148,7 @@ const HomePage = (): JSX.Element => {
                     <NextLink href={`/lessons/${lesson.slug}`}>
                       <Image src={lesson.lessonImageLink} />
                     </NextLink>
-                  </Card>
+                  </LessonBanner>
                 )
                 const LessonDescription = (
                   <Box alignSelf="center">
