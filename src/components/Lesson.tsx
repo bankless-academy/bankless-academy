@@ -78,6 +78,8 @@ const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
   .bloc1,
   .bloc2 {
     flex: 1;
+  }
+  .bloc2 {
     img {
       width: auto;
       margin: auto;
