@@ -13,6 +13,7 @@ export interface LessonType {
   difficulty: 'Easy' | 'Advanced' | 'Expert'
   poapImageLink: string
   lessonImageLink: string
+  socialImageLink: string
   learnings: string
   learningActions: string
   knowledgeRequirements: string

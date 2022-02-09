@@ -2,14 +2,15 @@ import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = [
   {
-    poapImageLink: 'https://app.banklessacademy.com/images/poap1.png',
-    lessonImageLink: 'https://app.banklessacademy.com/images/banner1.jpg',
+    poapImageLink: 'https://app.banklessacademy.com/images/wallet-basics-poap.png',
+    lessonImageLink: 'https://app.banklessacademy.com/images/wallet-basics-lesson.png',
+    socialImageLink: 'https://app.banklessacademy.com/images/wallet-basics-social.jpg',
     learningActions: 'Create and manage your own wallet<br>Connect your wallet to a web3 website',
-    marketingDescription: 'A crypto wallet is your passport to the world of DeFi. Learn the basics of how a wallet works and how to get started.',
+    marketingDescription: 'A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.',
     knowledgeRequirements: 'No prior knowledge needed.',
     poapEventId: 16394,
     duration: 15,
-    learnings: 'In this lesson, you will learn what digital wallets are, what they allow you to do, and how to set up and protect your wallet to confidently get started on your bankless journey.',
+    learnings: 'Find out what digital wallets are, what they allow you to do, and how to set up and protect your wallet as you get out and explore Web3.',
     difficulty: 'Easy',
     description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
@@ -215,16 +216,17 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: 'https://app.banklessacademy.com/images/poap2.png',
-    lessonImageLink: 'https://app.banklessacademy.com/images/banner2.jpg',
+    poapImageLink: 'https://app.banklessacademy.com/images/intro-to-defi-poap.png',
+    lessonImageLink: 'https://app.banklessacademy.com/images/intro-to-defi-lesson.png',
+    socialImageLink: 'https://app.banklessacademy.com/images/intro-to-defi-social.jpg',
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
-    marketingDescription: 'Move beyond centralized exchanges and discover the quickly expanding possibilities of Decentralized Finance.',
+    marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
     knowledgeRequirements: 'Wallet Basics: how to manage a web3 wallet',
     poapEventId: 21670,
     duration: 10,
-    learnings: 'Learn what decentralized finance means and the game-changing possibilities that new blockchain-powered applications are introducing to the world.',
+    learnings: 'Learn what decentralized finance means and discover the game-changing possibilities that new blockchain-powered applications introduce to the world.',
     difficulty: 'Easy',
-    description: 'Understand the basics of Decentralized Finance.',
+    description: 'Understand the basics of decentralized finance.',
     name: 'Intro to DeFi',
     notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
     slug: 'intro-to-defi',
@@ -285,7 +287,7 @@ const LESSONS: LessonType[] = [
         notionId: '3b77e3afde594c788122db7fe4afab6e',
         title: 'Knowledge Check',
         quiz: {
-          question: 'DeFi transactions are ____?',
+          question: 'Fill in the blank: DeFi transactions are ____.',
           rightAnswerNumber: 3,
           answers: [
             'Free',
@@ -351,7 +353,7 @@ const LESSONS: LessonType[] = [
         notionId: '062707cc00eb4fe9830d8f6535e50387',
         title: 'Knowledge Check',
         quiz: {
-          question: 'DeFi lending is done on a _____ level.',
+          question: 'Fill in the blank: DeFi lending is done on a _____ level.',
           rightAnswerNumber: 2,
           answers: [
             'income to debt',

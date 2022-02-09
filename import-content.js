@@ -10,6 +10,7 @@ const POTION_API = 'https://potion.banklessacademy.com'
 const KEY_MATCHING = {
   'POAP image link': 'poapImageLink',
   'Lesson image link': 'lessonImageLink',
+  'Social image link': 'socialImageLink',
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
   'Knowledge Requirements': 'knowledgeRequirements',
