@@ -81,7 +81,6 @@ const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
     img {
       width: auto;
       margin: auto;
-      min-height: 350px;
       max-height: 100%;
     }
     ${(props) =>
