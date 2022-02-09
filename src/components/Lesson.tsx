@@ -493,15 +493,17 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                                 </Button>
                               </>
                             ) : isPoapMinted ? null : (
-                              <Link
-                                href={`https://app.poap.xyz/claim/${poapCode}?address=${walletAddress}`}
-                                target="_blank"
-                                onClick={() => setIsPoapMinted(true)}
-                              >
-                                <Button variant="outline" mt="4">
-                                  Mint POAP
-                                </Button>
-                              </Link>
+                              <Box display="flex" mt="4" alignItems="center">
+                                <Link
+                                  href={`https://app.poap.xyz/claim/${poapCode}?address=${walletAddress}`}
+                                  target="_blank"
+                                  onClick={() => setIsPoapMinted(true)}
+                                  mr="4"
+                                >
+                                  <Button variant="outline">Mint POAP</Button>
+                                </Link>
+                                <span>👈 don't forget to mint your POAP!</span>
+                              </Box>
                             )}
                           </>
                         )}
@@ -519,12 +521,10 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                     button in the top-right corner)
                   </h2>
                 )}
-                {/* TEMP: POAP event expired */}
-                {lesson.slug === 'intro-to-defi' && (
-                  <h2>
-                    {`⚠️ POAP event expired ... please contact ${POAP_EMAIL_CONTACT} if you didn't manage to claim your POAP`}
-                  </h2>
-                )}
+                {/* TEMP: help */}
+                <h2>
+                  {`🙋‍♂️ If you can't claim or mint your POAP, contact ${POAP_EMAIL_CONTACT} for help`}
+                </h2>
               </VStack>
             </>
           )}
