@@ -34,7 +34,7 @@ const Lessons = (): JSX.Element => {
           </Link>
         </Box>
       )}
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={12} mt={8}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={4} mt={8}>
         <LessonCards />
       </SimpleGrid>
       {/* <Box mt={8}>

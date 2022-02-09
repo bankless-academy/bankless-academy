@@ -12,6 +12,7 @@ import {
   Link,
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
+import styled from '@emotion/styled'
 
 import LESSONS from 'constants/lessons'
 import LessonBanner from 'components/LessonBanner'
@@ -28,6 +29,13 @@ const MORE_LESSONS = [
   'DeFi Skills: Alchemix Basics',
   'DeFi Skills: Working with Layer 2s',
 ]
+
+const LessonGrid = styled(SimpleGrid)`
+  border-bottom: 1px solid #72757b;
+  :last-child {
+    border-bottom: none;
+  }
+`
 
 const HomePage = (): JSX.Element => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
@@ -156,7 +164,7 @@ const HomePage = (): JSX.Element => {
                   </LessonBanner>
                 )
                 const LessonDescription = (
-                  <Box alignSelf="center">
+                  <Box alignSelf="center" mt="4">
                     <Heading fontSize="2xl">{lesson.name}</Heading>
                     <Text fontSize="lg" my="4">
                       {lesson.marketingDescription}
@@ -173,11 +181,11 @@ const HomePage = (): JSX.Element => {
                   </Box>
                 )
                 return (
-                  <SimpleGrid
+                  <LessonGrid
                     columns={{ sm: 1, md: 2, lg: 2 }}
                     key={key}
                     gap={6}
-                    my="10"
+                    py="10"
                     mx={isSmallScreen ? '0' : '12'}
                   >
                     {key % 2 === 0 || isSmallScreen ? (
@@ -191,7 +199,7 @@ const HomePage = (): JSX.Element => {
                         {LessonImage}
                       </>
                     )}
-                  </SimpleGrid>
+                  </LessonGrid>
                 )
               })}
             </Box>

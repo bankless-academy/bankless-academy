@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import axios from 'axios'
 import { CircleWavyCheck } from 'phosphor-react'
 import ReactHtmlParser from 'react-html-parser'
+import { useMediaQuery } from '@chakra-ui/react'
 
 import LESSONS from 'constants/lessons'
 import LessonBanner from 'components/LessonBanner'
@@ -57,12 +58,22 @@ const LessonCards: React.FC = () => {
   return (
     <>
       {LESSONS.map((lesson, index) => {
+        const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
         // lesson not started yet: -1
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
         // const numberOfSlides = lesson.slides.length
         const isPoapClaimed = localStorage.getItem(`poap-${lesson.slug}`)
         return (
-          <LessonCard key={`lesson-${index}`} p={4}>
+          <LessonCard
+            key={`lesson-${index}`}
+            p={4}
+            pb={8}
+            borderBottom={
+              isSmallScreen && index + 1 < LESSONS.length
+                ? '1px solid #72757b'
+                : ''
+            }
+          >
             <Text fontSize="xl">{lesson.name}</Text>
             <Text fontSize="lg">{lesson.description}</Text>
             <Box display="flex" justifyContent="space-between" my="4">
