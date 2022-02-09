@@ -44,7 +44,8 @@ const LessonCards: React.FC = () => {
         setNumberOfPoapClaimed(
           results.map(
             (r, i) =>
-              (r.data.data.event?.tokenCount || 0) + numberOfPoapClaimed[i]
+              (parseInt(r.data.data.event?.tokenCount) || 0) +
+              numberOfPoapClaimed[i]
           )
         )
       })
