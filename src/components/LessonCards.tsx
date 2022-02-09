@@ -25,9 +25,7 @@ const LessonCard = styled(Box)`
 const PREVIOUS_EVENTS_CLAIMED = [385, 298]
 
 const LessonCards: React.FC = () => {
-  const [numberOfPoapClaimed, setNumberOfPoapClaimed] = useState(
-    PREVIOUS_EVENTS_CLAIMED
-  )
+  const [numberOfPoapClaimed, setNumberOfPoapClaimed] = useState([])
 
   useEffect((): void => {
     // TODO: replace with tokensQuantityByEventId https://github.com/poap-xyz/poap-webapp/blob/2def482ffec93e6cbc4e3c5e5a18000805cc6c2b/src/api.ts#L1235
@@ -46,7 +44,7 @@ const LessonCards: React.FC = () => {
           results.map(
             (r, i) =>
               (parseInt(r.data.data.event?.tokenCount) || 0) +
-              numberOfPoapClaimed[i]
+              PREVIOUS_EVENTS_CLAIMED[i]
           )
         )
       })
