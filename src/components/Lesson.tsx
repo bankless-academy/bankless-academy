@@ -377,7 +377,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           </Box>
         </Text>
         <ProgressSteps step={currentSlide} total={numberOfSlides} />
-        <Box maxH="600px">
+        <Box maxH={isSmallScreen ? '' : '600px'}>
           <Box
             className="content"
             minH="calc(100vh - 360px)"
