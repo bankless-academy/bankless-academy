@@ -213,7 +213,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   }, [currentSlide])
 
   useEffect(() => {
-    // preloading all lessons images for smoother transitions
+    // preloading all lesson images for smoother transitions
     lesson.imageLinks.forEach((imageLink) => {
       const img = new Image()
       img.src = imageLink
