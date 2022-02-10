@@ -22,7 +22,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '0bf15ec24615455b9349774527410d81',
         title: 'Wallet Intro',
-        content: '<div class="bloc2"><iframe allowfullscreen src=\'https://www.youtube.com/embed/_YQdDlcp4jw?feature=oembed&rel=0\'></iframe></div>'
+        content: '<div class="bloc1"><p>Greetings Cadet!</p><p>Welcome to Bankless Academy. I\'m pleased to be here as your guide.<br></p><p>Before we can embark on our digital journey, every explorer in this space needs a Web3 Wallet - a small piece of software that acts as your digital passport and bank account.</p><p><br>This introductory lesson is going to introduce you to the basics, and we\'ll even help you get our wallet issued at the end of the session.<br></p><p>Finally we\'ll give you a digital badge - called a POP around these parts - to show everyone that you completed the course.</p><p><br>Let\'s get started</p></div><div class="bloc2"><img src=\'https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2797c91c-b6ed-42c0-b6d1-e5291ba81dfd%2FInstructor.png?table=block&id=469937bb-e7ed-4eec-b603-0b569c2d6860\'></div>'
       },
       {
         type: 'LEARN',
