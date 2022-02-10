@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 const axios = require('axios')
 const fs = require('fs')
+const crc32 = require('js-crc').crc32
 const stringifyObject = require('stringify-object')
 const keywords = require('./keywords.json')
 
@@ -28,6 +29,20 @@ console.log('NOTION_ID', NOTION_ID)
 
 const LIMIT_NUMBER_OF_LESSONS = 2
 
+const slugify = (text) => text.toLowerCase()
+  .replace(/<[^>]*>?/gm, '') // remove tags
+  .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+  .replace(/\s+/g, '-') // collapse whitespace and replace by -
+  .replace(/-+/g, '-') // collapse dashes
+
+const download_image = (url, image_path) =>
+  axios({
+    url,
+    responseType: 'stream',
+  }).then(function (response) {
+    response.data.pipe(fs.createWriteStream(image_path))
+  })
+
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((notionRows) => {
@@ -50,11 +65,7 @@ axios
             {}
           )
           lesson.notionId = notion.id.replace(/-/g, '')
-          lesson.slug = lesson.name
-            .toLowerCase()
-            .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
-            .replace(/\s+/g, '-') // collapse whitespace and replace by -
-            .replace(/-+/g, '-') // collapse dashes
+          lesson.slug = slugify(lesson.name)
           // data cleaning
           htmlPage.data = htmlPage.data
             .replace(/"/g, "'")
@@ -109,9 +120,22 @@ axios
               })
               slide.quiz.id = `${lesson.slug}-${quizNb}`
             }
-            // TODO: move this logic to the frontend?
-            // replace keywords in content
             if (slide.content) {
+              // download images locally
+              const imageLinks = [...slide.content.matchAll(/<img src='(.*?)'/gm)].map(a => a[1])
+              for (const imageLink of imageLinks) {
+                const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg)\?table=/)[1]
+                // create "unique" hash based on Notion imageLink (different when re-uploaded)
+                const hash = crc32(imageLink)
+                const image_path = `/lesson/${lesson.slug}/${slugify(slide.title)}-${hash}.${file_extension}`
+                const local_image_path = `public${image_path}`
+                slide.content = slide.content.replace(imageLink, image_path)
+                if (!fs.existsSync(local_image_path)) {
+                  download_image(imageLink, local_image_path)
+                  console.log('downloading image: ', local_image_path)
+                }
+              }
+
               if ((slide.content.match(/<img /g) || []).length > 1) {
                 // multiple images
                 const blocs = slide.content.replace(/<img src='/g, '|SPLIT|').replace(/'>/g, '|SPLIT|').replace('|SPLIT|', '').split('|SPLIT|')
@@ -132,6 +156,8 @@ axios
                 // text only
                 slide.content = `<div class="bloc1">${slide.content}</div>`
               }
+              // replace keywords in content
+              // TODO: move this logic to the frontend?
               const content = slide.content.toLowerCase()
               for (const word in keywords) {
                 const search = '<code>' + word.toLowerCase() + '</code>'
