@@ -16,6 +16,18 @@ const LESSONS: LessonType[] = [
     name: 'Wallet Basics',
     notionId: '98405bd0f2b94bb2a3079eed504a011e',
     slug: 'wallet-basics',
+    imageLinks: [
+      '/lesson/wallet-basics/wallet-intro-75bb496b.png',
+      '/lesson/wallet-basics/wallet-definition-f4a509ac.png',
+      '/lesson/wallet-basics/recovery-phrase-4537cd70.png',
+      '/lesson/wallet-basics/public-key-e7844386.png',
+      '/lesson/wallet-basics/private-key-f63f59db.png',
+      '/lesson/wallet-basics/custodial-wallet-2bf8d7a7.png',
+      '/lesson/wallet-basics/non-custodial-wallet-ec881f69.png',
+      '/lesson/wallet-basics/hot-wallet-1b6baac9.png',
+      '/lesson/wallet-basics/cold-wallet-8af0acae.png',
+      '/lesson/wallet-basics/metamask-wallet-455c7922.png'
+    ],
     quest: 'WalletBasics',
     slides: [
       {
@@ -230,6 +242,18 @@ const LESSONS: LessonType[] = [
     name: 'Intro to DeFi',
     notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
     slug: 'intro-to-defi',
+    imageLinks: [
+      '/lesson/intro-to-defi/defi-defined-d8cf24a6.svg',
+      '/lesson/intro-to-defi/earning-yield-0de4013f.svg',
+      '/lesson/intro-to-defi/what-you-can-do-with-defi-7e05b31b.svg',
+      '/lesson/intro-to-defi/investing-5c9c4eea.svg',
+      '/lesson/intro-to-defi/trading-123dd3db.svg',
+      '/lesson/intro-to-defi/lending-borrowing-0bffab64.svg',
+      '/lesson/intro-to-defi/staking-4445d984.svg',
+      '/lesson/intro-to-defi/defi-downsides-8c8279e2.png',
+      '/lesson/intro-to-defi/defi-downsides-d6d21877.png',
+      '/lesson/intro-to-defi/defi-downsides-55cfc220.png'
+    ],
     quest: 'IntroToDeFi',
     slides: [
       {

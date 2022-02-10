@@ -40,6 +40,7 @@ const download_image = (url, image_path) =>
     url,
     responseType: 'stream',
   }).then(function (response) {
+    // TODO: create directory dynamically in case it doesn't exist yet
     response.data.pipe(fs.createWriteStream(image_path))
   })
 
@@ -66,6 +67,7 @@ axios
           )
           lesson.notionId = notion.id.replace(/-/g, '')
           lesson.slug = slugify(lesson.name)
+          lesson.imageLinks = []
           // data cleaning
           htmlPage.data = htmlPage.data
             .replace(/"/g, "'")
@@ -130,6 +132,7 @@ axios
                 const image_path = `/lesson/${lesson.slug}/${slugify(slide.title)}-${hash}.${file_extension}`
                 const local_image_path = `public${image_path}`
                 slide.content = slide.content.replace(imageLink, image_path)
+                lesson.imageLinks.push(image_path)
                 if (!fs.existsSync(local_image_path)) {
                   download_image(imageLink, local_image_path)
                   console.log('downloading image: ', local_image_path)
