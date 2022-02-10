@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Spinner, Box } from '@chakra-ui/react'
 import { Checks } from 'phosphor-react'
+import { useMediaQuery } from '@chakra-ui/react'
 import { useActiveWeb3React } from 'hooks'
 
 const WalletBasics = (): {
@@ -8,12 +9,13 @@ const WalletBasics = (): {
   questComponent: React.ReactElement
 } => {
   const { account } = useActiveWeb3React()
+  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   return {
     isQuestCompleted: !!account,
     questComponent: (
       <>
-        <Box display="flex">
+        <Box display={isSmallScreen ? 'block' : 'flex'}>
           <div className="bloc1">
             <h2>How to setup a MetaMask wallet</h2>
             <p>
