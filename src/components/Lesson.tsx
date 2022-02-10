@@ -213,11 +213,13 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   }, [currentSlide])
 
   useEffect(() => {
-    // preloading all lesson images for smoother transitions
-    lesson.imageLinks.forEach((imageLink) => {
-      const img = new Image()
-      img.src = imageLink
-    })
+    // preloading all lesson images after 3 seconds for smoother transitions
+    setTimeout(() => {
+      lesson.imageLinks.forEach((imageLink) => {
+        const img = new Image()
+        img.src = imageLink
+      })
+    }, 3000)
   }, [])
 
   const goToPrevSlide = (e) => {
