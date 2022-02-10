@@ -324,7 +324,11 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
 
   // shortcuts
   // TODO: add modal with all the shortcuts
-  useHotkeys('?,shift+/', () => alert('TODO: add modal with all the shortcuts'))
+  useHotkeys('?,shift+/', () =>
+    alert(
+      'TODO: add a modal with all the shortcuts 👉 previous slide ⬅️ | next slide ➡️ | select quiz answer 1️⃣ / 2️⃣ / 3️⃣ / 4️⃣'
+    )
+  )
   useHotkeys('left', () => {
     buttonLeftRef?.current?.click()
   })
