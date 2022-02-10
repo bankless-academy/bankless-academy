@@ -6631,6 +6631,11 @@ jest@^26.6.3:
     import-local "^3.0.2"
     jest-cli "^26.6.3"
 
+js-crc@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/js-crc/-/js-crc-0.2.0.tgz#f72c5c7618176bff75cc812a1cedbde3d8eb6839"
+  integrity sha1-9yxcdhgXa/91zIEqHO2949jraDk=
+
 js-sha3@0.5.7, js-sha3@^0.5.7:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/js-sha3/-/js-sha3-0.5.7.tgz#0d4ffd8002d5333aabaf4a23eed2f6374c9f28e7"

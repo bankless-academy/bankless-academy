@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import {
   Box,
   Text,
-  Image,
+  Image as ChakraImage,
   ButtonGroup,
   Button,
   HStack,
@@ -211,6 +211,14 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
   }, [currentSlide])
+
+  useEffect(() => {
+    // preloading all lesson images for smoother transitions
+    lesson.imageLinks.forEach((imageLink) => {
+      const img = new Image()
+      img.src = imageLink
+    })
+  }, [])
 
   const goToPrevSlide = (e) => {
     e.target.blur()
@@ -464,7 +472,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                 <VStack flex="auto" minH="420px" justifyContent="center">
                   {walletAddress ? (
                     <>
-                      <Image
+                      <ChakraImage
                         src={lesson.poapImageLink}
                         width="250px"
                         height="250px"

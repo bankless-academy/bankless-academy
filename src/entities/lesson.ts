@@ -18,6 +18,7 @@ export interface LessonType {
   learningActions: string
   knowledgeRequirements: string
   quest: QuestComponentType
+  imageLinks: string[]
   slides: {
     type: SlideType
     title: string
