@@ -72,7 +72,7 @@
     "color": "rgba(128, 128, 128, 1)"
   },
   "web3": {
-    "definition": "Refers to dApps that run on the blockchain and allow anyone to participate without monetizing their personal data.",
+    "definition": "Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data.",
     "color": "rgba(128, 128, 128, 1)"
   },
   "lender": {
