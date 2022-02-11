@@ -213,6 +213,7 @@ axios
           lesson.slides = slides
           console.log('lesson', lesson)
           lessons[index] = lesson
+          // TODO: remove old images (diff between old/new lesson.imageLinks)
         })
     })
     axios.all(promiseArray).then(() => {
