@@ -23,7 +23,8 @@ const Layout = ({
     .replaceAll(' ', '')
     .replaceAll('!', '')
   const PASSWORDS = ['dao', 'gobankless', 'gobankless🤫']
-  const isPasswordCorrect = PASSWORDS.includes(passwordClean)
+  // TODO: clean password protection 🙈
+  const isPasswordCorrect = true || PASSWORDS.includes(passwordClean)
 
   return (
     <Box
