@@ -118,7 +118,7 @@ export default async function handler(
           return res.json({ code: newCode?.code })
         } else {
           return res.json({
-            error: `Sorry, no more POAP codes available ... please contact ${POAP_EMAIL_CONTACT}`,
+            error: `Sorry, we run out of POAP codes ... come back again later!`,
           })
         }
       }
