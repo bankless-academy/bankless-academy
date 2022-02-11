@@ -34,7 +34,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '0bf15ec24615455b9349774527410d81',
         title: 'Wallet Intro',
-        content: '<div class="bloc1"><p>Greetings Cadet!</p><p>Welcome to Bankless Academy. I\'m pleased to be here as your guide.<br></p><p>Before we can embark on our digital journey, every explorer in this space needs a Web3 Wallet - a small piece of software that acts as your digital passport and bank account.</p><p><br>This introductory lesson is going to introduce you to the basics, and we\'ll even help you get our wallet issued at the end of the session.<br></p><p>Finally we\'ll give you a digital badge - called a POP around these parts - to show everyone that you completed the course.</p><p><br>Let\'s get started</p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/wallet-intro-75bb496b.png\'></div>'
+        content: '<div class="bloc1"><p><strong>Greetings!</strong></p><p>Welcome to Bankless Academy. We’re excited to guide you on your journey into Web3. To get started, you will need some essential equipment: a Web3 digital wallet.</p><p>A digital wallet is your passport to exploring the worlds of Web3. It gives you access to incredible new possibilities while safeguarding your assets and identity.</p><p>In this lesson, we’ll introduce you to digital wallets, how they work, and how to set yours up to safely embark on your Web3 adventure.</p><p>Once you’ve completed the lesson and get your wallet issued, you’ll also earn your first digital badge—known as a POAP—as proof of your achievement in the Bankless Academy.</p><p>Let’s get started!</p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/wallet-intro-75bb496b.png\'></div>'
       },
       {
         type: 'LEARN',
