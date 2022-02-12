@@ -14,7 +14,8 @@ fs.promises
   .then(async (files) => {
     const promises_files = files.map(async (file) => {
       if (path.extname(file) == '.txt') {
-        const poapEventId = path.parse(file).name
+        const fileName = path.parse(file).name
+        const poapEventId = fileName.includes('#') ? fileName.split('_')[0].split('#')[1] : fileName
         const insert = []
         const data = await fs.promises.readFile(POAPS_DIR + '/' + file, 'utf8')
         let nb_already_in = 0
