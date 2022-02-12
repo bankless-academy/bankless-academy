@@ -5,7 +5,7 @@ import { db, TABLES, getUserId } from 'utils/db'
 import {
   POAP_EVENT_IDS,
   POAP_QUESTS,
-  POAP_EMAIL_CONTACT,
+  // POAP_EMAIL_CONTACT,
   GENERIC_ERROR_MESSAGE,
 } from 'constants/index'
 import { verifySignature } from 'utils'
@@ -87,7 +87,7 @@ export default async function handler(
         console.log('ipClaimed', ipClaimed?.count)
         if (ipClaimed?.count >= 2) {
           return res.json({
-            error: `POAP limit exceeded ... please contact ${POAP_EMAIL_CONTACT}`,
+            error: `POAP limit exceeded ...`,
           })
         }
         // get the code + update poap details
@@ -118,7 +118,7 @@ export default async function handler(
           return res.json({ code: newCode?.code })
         } else {
           return res.json({
-            error: `Sorry, we run out of POAP codes https://bit.ly/3gHVd3W ... come back again later!`,
+            error: `Sorry, we run out of POAP codes https://bit.ly/3gHVd3W ... please try again later`,
           })
         }
       }
