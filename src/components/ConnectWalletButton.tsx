@@ -174,28 +174,28 @@ const ConnectWalletButton = ({
                     borderRadius="10px"
                   >
                     <SimpleGrid columns={3} spacing={3} p={3}>
-                      {poaps?.map((poap, index) => (
-                        <Box
-                          key={`poap-${index}`}
-                          justifySelf="center"
-                          boxShadow="0px 0px 4px 2px #00000060"
-                          borderRadius="3px"
-                          backgroundColor="blackAlpha.300"
-                          p={1}
-                        >
-                          <Link
-                            href={`https://app.poap.xyz/token/${poap.tokenId}`}
-                            target="_blank"
+                      {poaps?.map((poap, index) => {
+                        const twitterLink = `https://twitter.com/intent/tweet?url=https%3A%2F%2Fapp.poap.xyz%2Ftoken%2F${poap.tokenId}&text=Look%20at%20my%20@BanklessAcademy%20POAP%20NFT!%20👀%0AGo%20to%20https%3A%2F%2Fapp.banklessacademy.com%2F%20to%20learn%20about%20Web3%20and%20%23DeFi%20and%20claim%20your%20free%20POAP!%20🔥`
+                        return (
+                          <Box
+                            key={`poap-${index}`}
+                            justifySelf="center"
+                            boxShadow="0px 0px 4px 2px #00000060"
+                            borderRadius="3px"
+                            backgroundColor="blackAlpha.300"
+                            p={1}
                           >
-                            <Image
-                              src={poap.event.image_url}
-                              width="70px"
-                              height="70px"
-                              borderRadius="50%"
-                            />
-                          </Link>
-                        </Box>
-                      ))}
+                            <Link href={twitterLink} target="_blank">
+                              <Image
+                                src={poap.event.image_url}
+                                width="70px"
+                                height="70px"
+                                borderRadius="50%"
+                              />
+                            </Link>
+                          </Box>
+                        )
+                      })}
                     </SimpleGrid>
                   </Box>
                 </>
