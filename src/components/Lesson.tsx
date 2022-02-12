@@ -27,7 +27,7 @@ import Card from 'components/Card'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useActiveWeb3React } from 'hooks'
 import { track, verifySignature } from 'utils'
-import { GENERIC_ERROR_MESSAGE, POAP_EMAIL_CONTACT } from 'constants/index'
+import { GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, PoapIcon } from 'components/Icons'
 
 // transform keywords into Tooltip
@@ -487,7 +487,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                       />
                       {!isPoapClaimed && !poapData.error ? (
                         <Button
-                          variant="outline"
+                          variant="primary"
+                          color="white"
                           onClick={signMessage}
                           isLoading={isClaimingPoap}
                         >
@@ -518,7 +519,9 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                                     onClick={() => setIsPoapMinted(true)}
                                     mr="4"
                                   >
-                                    <Button variant="outline">Mint POAP</Button>
+                                    <Button variant="primary" color="white">
+                                      Mint POAP
+                                    </Button>
                                   </Link>
                                   <span>
                                     👈 don't forget to mint your POAP!
@@ -541,9 +544,15 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                       button in the top-right corner)
                     </h2>
                   )}
-                  {/* TEMP: help */}
                   <h2>
-                    {`🙋‍♂️ If you can't claim or mint your POAP, contact ${POAP_EMAIL_CONTACT} for help`}
+                    {'🙋‍♂️ Having trouble claiming/minting your POAP? Check out '}
+                    <Link
+                      target="_blank"
+                      rel="noreferrer"
+                      href="https://bankless.notion.site/Bankless-Academy-POAP-support-9a9e60c883ac427da14dad324731028c"
+                    >
+                      this guide
+                    </Link>
                   </h2>
                 </VStack>
               </>
