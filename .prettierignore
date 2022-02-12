@@ -4,5 +4,6 @@ yarn.lock
 package-lock.json
 public
 import-content.js
+import-poaps.js
 src/constants/lessons.ts
 src/utils/db.ts
