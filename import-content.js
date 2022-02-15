@@ -142,7 +142,7 @@ axios
               if ((slide.content.match(/<img /g) || []).length > 1) {
                 // multiple images
                 const blocs = slide.content.replace(/<img src='/g, '|SPLIT|').replace(/'>/g, '|SPLIT|').replace('|SPLIT|', '').split('|SPLIT|')
-                slide.content = blocs.reduce((p, c, i) => (i % 2 === 0) ? `${p}<div class="bloc-ab"><div class="bloc-a"><img src="${c}"></div>` : `${p}<div class="bloc-b">${c}</div></div>`, '')
+                slide.content = blocs.reduce((p, c, i) => (i % 2 === 0) ? `${p}<div class="bloc-ab"><div class="bloc-a"><img src='${c}'></div>` : `${p}<div class="bloc-b">${c}</div></div>`, '')
               } else if (slide.content.includes('<img ')) {
                 // content contains an image -> 1st bloc = text | second bloc = square image
                 const [bloc1, bloc2] = slide.content.split('<img ')
