@@ -2,7 +2,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { db, TABLES } from 'utils/db'
-import { POAP_EVENT_IDS, POAP_QUESTS } from 'constants/index'
+import { POAP_EVENT_IDS } from 'constants/index'
 
 export default async function handler(
   req: NextApiRequest,
@@ -20,8 +20,7 @@ export default async function handler(
       .groupBy('event_id')
       .orderBy('event_id')
     for (const event of remainingPoaps) {
-      const slug = POAP_QUESTS[event.event_id]
-      if (slug) stats.remainingPoaps[slug] = event.remainingPoaps
+      stats.remainingPoaps[event.event_id] = event.remainingPoaps
     }
     const poapDistributed = await db(TABLES.poaps)
       .count('id', { as: 'poapDistributed' })
@@ -31,8 +30,7 @@ export default async function handler(
       .groupBy('event_id')
       .orderBy('event_id')
     for (const event of poapDistributed) {
-      const slug = POAP_QUESTS[event.event_id]
-      if (slug) stats.poapDistributed[slug] = event.poapDistributed
+      stats.poapDistributed[event.event_id] = event.poapDistributed
     }
     return res.json(stats)
   } catch (error) {
