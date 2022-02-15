@@ -38,6 +38,8 @@ export const POAP_EVENT_IDS: string[] = LESSONS.map((lesson) =>
   lesson.poapEventId.toString()
 )
 
+export const OLD_POAP_EVENT_IDS: string[] = ['6454', '6455', '16394', '21670']
+
 export const POAP_QUESTS = {}
 LESSONS.map((lesson) => {
   POAP_QUESTS[lesson.poapEventId.toString()] = lesson.quest

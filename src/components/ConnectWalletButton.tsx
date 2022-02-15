@@ -20,7 +20,7 @@ import axios from 'axios'
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
 import { walletConnect, injected } from 'utils'
-import { INFURA_ID } from 'constants/'
+import { INFURA_ID, POAP_EVENT_IDS, OLD_POAP_EVENT_IDS } from 'constants/index'
 import { PoapType } from 'entities/poap'
 
 let web3Modal: Web3Modal
@@ -114,12 +114,8 @@ const ConnectWalletButton = ({
             setPoaps(
               res.data.filter(
                 (poap: PoapType) =>
-                  poap.event.name.toLowerCase().includes('bankless academy') ||
-                  poap.event.description
-                    .toLowerCase()
-                    .includes('bankless academy') ||
-                  poap.event.name.toLowerCase().includes('onboard') ||
-                  poap.event.description.toLowerCase().includes('onboard')
+                  POAP_EVENT_IDS.includes(poap.event.id.toString()) ||
+                  OLD_POAP_EVENT_IDS.includes(poap.event.id.toString())
               )
             )
           }
