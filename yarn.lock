@@ -1840,6 +1840,29 @@
     prop-types "^15.7.2"
     tslib "^2.1.0"
 
+"@sendgrid/client@^7.6.1":
+  version "7.6.1"
+  resolved "https://registry.yarnpkg.com/@sendgrid/client/-/client-7.6.1.tgz#de17fe9f04af3bdb69aca44fc407316de87cea3b"
+  integrity sha512-q4U5OhcbJjs+lLVv/LhZSc28feiVCFMgvG9aYcRI5X4tKArnrrGDWb5HMITR9vaAtX42TXhyPFjHr1fk/Q1loQ==
+  dependencies:
+    "@sendgrid/helpers" "^7.6.0"
+    axios "^0.21.4"
+
+"@sendgrid/helpers@^7.6.0":
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/@sendgrid/helpers/-/helpers-7.6.0.tgz#b381bfab391bcd66c771811b22bb6bb2d5c1dfc6"
+  integrity sha512-0uWD+HSXLl4Z/X3cN+UMQC20RE7xwAACgppnfjDyvKG0KvJcUgDGz7HDdQkiMUdcVWfmyk6zKSg7XKfKzBjTwA==
+  dependencies:
+    deepmerge "^4.2.2"
+
+"@sendgrid/mail@^7.6.1":
+  version "7.6.1"
+  resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-7.6.1.tgz#f7bbfc93781b0b6126549bf4b3649805295b02aa"
+  integrity sha512-F+HXpDLIU4PGZyZznOiFLDGJDwLn2qh7/wD5MvwurrldDx5DaGQHrYBKHopceOl15FVuq9ElU9VIxQJF8SMvTg==
+  dependencies:
+    "@sendgrid/client" "^7.6.1"
+    "@sendgrid/helpers" "^7.6.0"
+
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.8.3.tgz#3802ddd21a50a949b6721ddd72da36e67e7f1b2d"
@@ -2741,7 +2764,7 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
-axios@^0.21.1:
+axios@^0.21.1, axios@^0.21.4:
   version "0.21.4"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
   integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
