@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
+import sgMail from '@sendgrid/mail'
 
 import { db, TABLES, getUserId } from 'utils/db'
 import {
@@ -8,6 +9,8 @@ import {
   GENERIC_ERROR_MESSAGE,
 } from 'constants/index'
 import { verifySignature } from 'utils'
+
+const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY
 
 export default async function handler(
   req: NextApiRequest,
@@ -114,6 +117,39 @@ export default async function handler(
           .update(updatePoap, ['code'])
         console.log('newCode', newCode)
         if (newCode?.code) {
+          // check how many POAP codes are remaining -> send alert when remaining nb = 100 / 25 / 0
+          const EMAIL_ALERT = ['100', '25', '0']
+          // TODO: move to utils
+          const [nbRemaining] = await db(TABLES.poaps)
+            .count('code')
+            .where('is_claimed', false)
+            .where('event_id', poapEventId)
+          if (
+            SENDGRID_API_KEY &&
+            nbRemaining &&
+            typeof nbRemaining.count === 'string' &&
+            typeof poapEventId === 'string' &&
+            EMAIL_ALERT.includes(nbRemaining.count)
+          ) {
+            const alert = `POAP alert ${POAP_QUESTS[poapEventId]}: ${nbRemaining.count}`
+            console.log(alert)
+            sgMail.setApiKey(SENDGRID_API_KEY)
+            const msg = {
+              to: 'alert@banklessacademy.com',
+              from: 'gm@banklessacademy.com',
+              subject: alert,
+              text: '-',
+            }
+            sgMail
+              .send(msg)
+              .then(() => {
+                console.log('Email sent')
+              })
+              .catch((error) => {
+                console.error(error)
+                console.error(error?.response?.body?.errors)
+              })
+          }
           return res.json({ code: newCode?.code })
         } else {
           return res.json({
