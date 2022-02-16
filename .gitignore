@@ -19,6 +19,7 @@
 .DS_Store
 *.pem
 /ideas
+/poaps/*
 tsconfig.tsbuildinfo
 
 # debug
