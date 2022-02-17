@@ -4,9 +4,9 @@ import styled from '@emotion/styled'
 const Card = styled(Box)`
   border: 1px solid #646587;
   box-shadow: 0px 0px 50px rgba(123, 0, 255, 0.25);
-  backdrop-filter: blur(42px);
   border-radius: 8px;
   /* position: relative;
+  backdrop-filter: blur(42px);
   ::before {
     background: radial-gradient(
         263.79% 2784.77% at 53.46% 50%,
