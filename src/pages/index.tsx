@@ -257,6 +257,73 @@ const HomePage = (): JSX.Element => {
               </Box>
             </SimpleGrid>
           </Box>
+          <Box>
+            <Heading as="h2" size="xl">
+              Contribute to the project
+            </Heading>
+            <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6}>
+              <Box mt="10">
+                <Text as="h3" fontSize="lg" mt="2">
+                  Bankless Academy is a digital public good.
+                  <br />
+                  Participate via Gitcoin Grant quadratic funding.
+                </Text>
+                <Box mt="12" textAlign="center">
+                  <Link
+                    target="_blank"
+                    href="https://gitcoin.co/grants/3535/bankless-academy"
+                  >
+                    <Button variant="primary">Fund now</Button>
+                  </Link>
+                </Box>
+                <Link
+                  target="_blank"
+                  href="https://gitcoin.co/grants/3535/bankless-academy"
+                >
+                  <Box mt="10" display="flex" width="100%">
+                    <Image
+                      width="50%"
+                      src="/images/gitcoin-grant/gitcoin.svg"
+                    />
+                    <Image width="50%" src="/images/gitcoin-grant/grants.svg" />
+                  </Box>
+                </Link>
+              </Box>
+              <Box>
+                <Link
+                  target="_blank"
+                  href="https://gitcoin.co/grants/3535/bankless-academy"
+                >
+                  <Image width="90%" src="/images/gitcoin-grant/rocket.svg" />
+                </Link>
+              </Box>
+            </SimpleGrid>
+          </Box>
+          <footer>
+            <Box display="flex" justifyContent="space-around" w="100%" mt="16">
+              <Link
+                display="flex"
+                target="_blank"
+                href="https://twitter.com/BanklessAcademy"
+              >
+                <Image mr="2" src="/images/twitter.svg" /> Twitter
+              </Link>
+              <span> | </span>
+              <Link
+                target="_blank"
+                href="https://bankless.notion.site/Bankless-Academy-POAP-Support-9a9e60c883ac427da14dad324731028c"
+              >
+                Support
+              </Link>
+              <span> | </span>
+              <Link
+                target="_blank"
+                href="https://bankless.notion.site/Bankless-Academy-Jobs-56d3b0a011fe443aa2a9682f0ca443bb"
+              >
+                Become a DAO Punk
+              </Link>
+            </Box>
+          </footer>
         </Container>
       </Box>
     </>
