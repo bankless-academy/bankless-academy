@@ -13,8 +13,10 @@ import Nav from 'layout/Nav'
 
 const Layout = ({
   children,
+  isLesson,
 }: {
   children: JSX.Element
+  isLesson: boolean
 }): React.ReactElement => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
   const [password, setPassword] = useState(localStorage.getItem(`password`))
@@ -29,7 +31,7 @@ const Layout = ({
   return (
     <Box
       minH="100vh"
-      paddingBottom={isSmallScreen ? '64px' : ''}
+      paddingBottom={isSmallScreen && isLesson ? '64px' : ''}
       bgColor="#010101"
     >
       {isPasswordCorrect ? (

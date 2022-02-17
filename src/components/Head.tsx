@@ -8,6 +8,7 @@ export interface MetaData {
   title?: string
   description?: string
   image?: string
+  isLesson?: boolean
 }
 
 const VERCEL_ENV = process.env.VERCEL_ENV
