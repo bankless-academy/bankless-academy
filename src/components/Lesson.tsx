@@ -46,9 +46,9 @@ function transform(node, index) {
   }
 }
 
-const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
+const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   border-radius: 0.5rem;
-  ${(props) => props.isSmallScreen && 'display: contents;'};
+  ${(props) => props.issmallscreen === 'true' && 'display: contents;'};
   h1 {
     margin-top: 1em;
     font-size: var(--chakra-fontSizes-2xl);
@@ -59,8 +59,8 @@ const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
   }
   div.content > div {
     ${(props) =>
-      props.slideType === 'LEARN' &&
-      (props.isSmallScreen ? 'display: block;' : 'display: flex;')};
+      props.slidetype === 'LEARN' &&
+      (props.issmallscreen === 'true' ? 'display: block;' : 'display: flex;')};
   }
   .bloc-ab {
     flex: 1 1 0;
@@ -70,7 +70,8 @@ const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
     width: 100%;
   }
   .bloc-b {
-    ${(props) => props.isSmallScreen && 'border-bottom: 1px solid #72757B;'};
+    ${(props) =>
+      props.issmallscreen === 'true' && 'border-bottom: 1px solid #72757B;'};
   }
   div.content > div > div:last-child .bloc-b {
     border-bottom: none;
@@ -86,7 +87,7 @@ const Slide = styled(Card)<{ isSmallScreen?: boolean; slideType: SlideType }>`
       max-height: 100%;
     }
     ${(props) =>
-      props.isSmallScreen
+      props.issmallscreen === 'true'
         ? `
         margin-top: 24px;
         img {
@@ -154,9 +155,9 @@ const QuizAnswer = styled(Button)<{
     'background: linear-gradient(91.91deg, #A94462 49%, rgba(169, 68, 98, 0.7) 124.09%) !important;'}
 `
 
-const SlideNav = styled(Box)<{ isSmallScreen?: boolean }>`
+const SlideNav = styled(Box)<{ issmallscreen?: string }>`
   ${(props) =>
-    props.isSmallScreen &&
+    props.issmallscreen === 'true' &&
     `
       position: fixed;
       bottom: 0;
@@ -297,15 +298,16 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
       .then(function (res) {
         // eslint-disable-next-line no-console
         console.log(res.data)
+        setIsClaimingPoap(false)
         setPoapData(
-          res.data?.code || res.data?.error !== ''
+          (res.data?.code && typeof res.data?.code === 'string') ||
+            (res.data?.error && typeof res.data?.error === 'string')
             ? res.data
             : {
                 error: GENERIC_ERROR_MESSAGE,
               }
         )
-        setIsClaimingPoap(false)
-        if (res.data.code) {
+        if (res.data?.code) {
           setIsPoapClaimed(true)
           localStorage.setItem(`poap-${lesson.slug}`, res.data.code)
         }
@@ -359,133 +361,143 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   const poapCode = localStorage.getItem(`poap-${lesson.slug}`) || poapData.code
 
   return (
-    <>
-      <Slide
-        p={8}
-        pt={4}
-        pb={2}
-        mt={6}
-        isSmallScreen={isSmallScreen}
-        slideType={slide.type}
+    <Slide
+      p={8}
+      pt={4}
+      pb={2}
+      mt={6}
+      issmallscreen={isSmallScreen.toString()}
+      key={`slide-${currentSlide}`}
+      slidetype={slide.type}
+    >
+      <Text
+        fontSize={isSmallScreen ? 'xl' : '3xl'}
+        mt="4"
+        mb="8"
+        display="inline-flex"
+        justifyContent="center"
+        alignItems="center"
+        width="100%"
+        fontWeight="bold"
       >
-        <Text
-          fontSize={isSmallScreen ? 'xl' : '3xl'}
-          mt="4"
-          mb="8"
-          display="inline-flex"
-          justifyContent="center"
-          alignItems="center"
-          width="100%"
-          fontWeight="bold"
+        <Box display="inline-flex" alignItems="center" mr="4">
+          {slide.type === 'LEARN' && <LearnIcon />}
+          {slide.type === 'QUIZ' && <QuizIcon />}
+          {slide.type === 'QUEST' && <QuestIcon />}
+          {slide.type === 'POAP' && <PoapIcon />}
+        </Box>
+        <Box>
+          {slide.type === 'QUIZ' ? (
+            <>Knowledge Check</>
+          ) : (
+            <>{ReactHtmlParser(slide.title, { transform })}</>
+          )}
+        </Box>
+      </Text>
+      <ProgressSteps step={currentSlide} total={numberOfSlides} />
+      <Box maxH={isSmallScreen ? '' : '600px'}>
+        <Box
+          className="content"
+          minH="calc(100vh - 360px)"
+          pb={isSmallScreen ? '6' : 0}
+          pt={4}
         >
-          <Box display="inline-flex" alignItems="center" mr="4">
-            {slide.type === 'LEARN' && <LearnIcon />}
-            {slide.type === 'QUIZ' && <QuizIcon />}
-            {slide.type === 'QUEST' && <QuestIcon />}
-            {slide.type === 'POAP' && <PoapIcon />}
-          </Box>
-          <Box>
-            {slide.type === 'QUIZ' ? (
-              <>Knowledge Check</>
-            ) : (
-              <>{ReactHtmlParser(slide.title, { transform })}</>
-            )}
-          </Box>
-        </Text>
-        <ProgressSteps step={currentSlide} total={numberOfSlides} />
-        <Box maxH={isSmallScreen ? '' : '600px'}>
-          <Box
-            className="content"
-            minH="calc(100vh - 360px)"
-            pb={isSmallScreen ? '6' : 0}
-            pt={4}
-          >
-            {slide.type === 'LEARN' && (
-              <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
-            )}
-            {slide.type === 'QUIZ' && (
-              <>
-                {slide.quiz?.question && (
-                  <Box>
-                    <h2>
-                      {ReactHtmlParser(slide?.quiz?.question, { transform })}
-                    </h2>
-                  </Box>
-                )}
-                <Answers mt={4}>
-                  <ButtonGroup size="lg" w="100%">
-                    <SimpleGrid
-                      columns={[null, null, 1]}
-                      spacing="40px"
-                      w="100%"
-                      justifyItems="center"
-                    >
-                      {[1, 2, 3, 4].map((n) => {
-                        const answerState = answerIsCorrect
-                          ? slide.quiz.rightAnswerNumber === n
-                            ? 'CORRECT'
-                            : 'UNSELECTED'
-                          : selectedAnswerNumber === n
-                          ? 'WRONG'
+          {slide.type === 'LEARN' && (
+            <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
+          )}
+          {slide.type === 'QUIZ' && (
+            <>
+              {slide.quiz?.question && (
+                <Box>
+                  <h2>
+                    {ReactHtmlParser(slide?.quiz?.question, { transform })}
+                  </h2>
+                </Box>
+              )}
+              <Answers mt={4}>
+                <ButtonGroup size="lg" w="100%">
+                  <SimpleGrid
+                    columns={[null, null, 1]}
+                    spacing="40px"
+                    w="100%"
+                    justifyItems="center"
+                  >
+                    {[1, 2, 3, 4].map((n) => {
+                      const answerState = answerIsCorrect
+                        ? slide.quiz.rightAnswerNumber === n
+                          ? 'CORRECT'
                           : 'UNSELECTED'
-                        if (slide.quiz.answers.length >= n)
-                          return (
-                            <QuizAnswer
-                              ref={(el) => (answerRef.current[n] = el)}
-                              key={`answer-${n}`}
-                              w="100%"
-                              maxW="500px"
-                              p="4"
-                              h="auto"
-                              border={
-                                answerState === 'UNSELECTED' &&
-                                '1px solid #646587'
-                              }
-                              whiteSpace="break-spaces"
-                              onClick={(e) => selectAnswer(e, n)}
-                              answerState={answerState}
-                              justifyContent="space-between"
-                              textAlign="left"
-                              rightIcon={
-                                answerState === 'CORRECT' ? (
-                                  <Checks weight="bold" color="white" />
-                                ) : (
-                                  answerState === 'WRONG' && (
-                                    <Warning weight="bold" color="white" />
-                                  )
+                        : selectedAnswerNumber === n
+                        ? 'WRONG'
+                        : 'UNSELECTED'
+                      if (slide.quiz.answers.length >= n)
+                        return (
+                          <QuizAnswer
+                            ref={(el) => (answerRef.current[n] = el)}
+                            key={`answer-${n}`}
+                            w="100%"
+                            maxW="500px"
+                            p="4"
+                            h="auto"
+                            border={
+                              answerState === 'UNSELECTED' &&
+                              '1px solid #646587'
+                            }
+                            whiteSpace="break-spaces"
+                            onClick={(e) => selectAnswer(e, n)}
+                            answerState={answerState}
+                            justifyContent="space-between"
+                            textAlign="left"
+                            rightIcon={
+                              answerState === 'CORRECT' ? (
+                                <Checks weight="bold" color="white" />
+                              ) : (
+                                answerState === 'WRONG' && (
+                                  <Warning weight="bold" color="white" />
                                 )
-                              }
-                              isActive={answerIsCorrect}
-                            >
-                              {slide.quiz.answers[n - 1]}
-                            </QuizAnswer>
-                          )
-                      })}
-                    </SimpleGrid>
-                  </ButtonGroup>
-                </Answers>
-              </>
-            )}
-            {slide.type === 'QUEST' && (
-              <>
-                <VStack flex="auto" minH="420px" justifyContent="center">
-                  {Quest?.questComponent}
-                </VStack>
-              </>
-            )}
-            {slide.type === 'POAP' && (
-              <>
-                <VStack flex="auto" minH="420px" justifyContent="center">
-                  {walletAddress ? (
+                              )
+                            }
+                            isActive={answerIsCorrect}
+                          >
+                            {slide.quiz.answers[n - 1]}
+                          </QuizAnswer>
+                        )
+                    })}
+                  </SimpleGrid>
+                </ButtonGroup>
+              </Answers>
+            </>
+          )}
+          {slide.type === 'QUEST' && (
+            <VStack flex="auto" minH="420px" justifyContent="center">
+              {Quest?.questComponent}
+            </VStack>
+          )}
+          {slide.type === 'POAP' && (
+            <VStack flex="auto" minH="420px" justifyContent="center">
+              {walletAddress ? (
+                <>
+                  <ChakraImage
+                    src={lesson.poapImageLink}
+                    width="250px"
+                    height="250px"
+                    opacity={isPoapClaimed ? 1 : 0.7}
+                    mb="2"
+                  />
+                  {poapData.error ? (
+                    <Button
+                      variant="outline"
+                      whiteSpace="break-spaces"
+                      tex
+                      color="red.200"
+                      mt="4"
+                      leftIcon={<Warning />}
+                    >
+                      {poapData.error}
+                    </Button>
+                  ) : (
                     <>
-                      <ChakraImage
-                        src={lesson.poapImageLink}
-                        width="250px"
-                        height="250px"
-                        opacity={isPoapClaimed ? 1 : 0.7}
-                        mb="2"
-                      />
-                      {!isPoapClaimed && !poapData.error ? (
+                      {!isPoapClaimed ? (
                         <Button
                           variant="primary"
                           color="white"
@@ -532,52 +544,48 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                           )}
                         </>
                       )}
-                      {poapData.error && (
-                        <Button variant="outline" mt="4" leftIcon={<Warning />}>
-                          {poapData.error}
-                        </Button>
-                      )}
                     </>
-                  ) : (
-                    <h2>
-                      ⚠️ Connect your wallet first (&quot;Connect wallet&quot;
-                      button in the top-right corner)
-                    </h2>
                   )}
-                  <h2>
-                    {'🙋‍♂️ Having trouble claiming/minting your POAP? Check out '}
-                    <Link
-                      target="_blank"
-                      rel="noreferrer"
-                      href="https://bankless.notion.site/Bankless-Academy-POAP-support-9a9e60c883ac427da14dad324731028c"
-                    >
-                      this guide
-                    </Link>
-                  </h2>
-                </VStack>
-              </>
-            )}
-          </Box>
-        </Box>
-        <SlideNav display="flex" p={4} isSmallScreen={isSmallScreen}>
-          <HStack flex="auto">
-            {!isFirstSlide && (
-              <Tooltip
-                hasArrow
-                label="Use the 'left' arrow key on your keyboard to navigate back"
-              >
-                <Button
-                  ref={buttonLeftRef}
-                  variant="secondaryBig"
-                  size="lg"
-                  onClick={goToPrevSlide}
-                  leftIcon={<ArrowBackIcon />}
+                </>
+              ) : (
+                <h2>
+                  ⚠️ Connect your wallet first (&quot;Connect wallet&quot;
+                  button in the top-right corner)
+                </h2>
+              )}
+              <h2>
+                {'🙋‍♂️ Having trouble claiming/minting your POAP? Check out '}
+                <Link
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://bankless.notion.site/Bankless-Academy-POAP-support-9a9e60c883ac427da14dad324731028c"
                 >
-                  Prev
-                </Button>
-              </Tooltip>
-            )}
-            {/* {!isSmallScreen && slide.notionId && (
+                  this guide
+                </Link>
+              </h2>
+            </VStack>
+          )}
+        </Box>
+      </Box>
+      <SlideNav display="flex" p={4} issmallscreen={isSmallScreen.toString()}>
+        <HStack flex="auto">
+          {!isFirstSlide && (
+            <Tooltip
+              hasArrow
+              label="Use the 'left' arrow key on your keyboard to navigate back"
+            >
+              <Button
+                ref={buttonLeftRef}
+                variant="secondaryBig"
+                size="lg"
+                onClick={goToPrevSlide}
+                leftIcon={<ArrowBackIcon />}
+              >
+                Prev
+              </Button>
+            </Tooltip>
+          )}
+          {/* {!isSmallScreen && slide.notionId && (
               <Tooltip
                 hasArrow
                 label="Help us improve the content by commenting this slide on Notion"
@@ -591,31 +599,30 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                 </Link>
               </Tooltip>
             )} */}
-          </HStack>
-          <HStack>
-            <Tooltip
-              hasArrow
-              label="Use the 'right' arrow key on your keyboard to continue"
+        </HStack>
+        <HStack>
+          <Tooltip
+            hasArrow
+            label="Use the 'right' arrow key on your keyboard to continue"
+          >
+            <Button
+              ref={buttonRightRef}
+              variant="primaryBig"
+              size="lg"
+              disabled={
+                (isLastSlide && !isPoapClaimed) ||
+                (slide.quiz && !answerIsCorrect) ||
+                (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+              }
+              onClick={goToNextSlide}
+              rightIcon={<ArrowForwardIcon />}
             >
-              <Button
-                ref={buttonRightRef}
-                variant="primaryBig"
-                size="lg"
-                disabled={
-                  (isLastSlide && !isPoapClaimed) ||
-                  (slide.quiz && !answerIsCorrect) ||
-                  (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
-                }
-                onClick={goToNextSlide}
-                rightIcon={<ArrowForwardIcon />}
-              >
-                Next
-              </Button>
-            </Tooltip>
-          </HStack>
-        </SlideNav>
-      </Slide>
-    </>
+              Next
+            </Button>
+          </Tooltip>
+        </HStack>
+      </SlideNav>
+    </Slide>
   )
 }
 

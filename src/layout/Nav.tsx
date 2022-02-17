@@ -34,11 +34,7 @@ const Nav: React.FC = () => {
             </Link>
           </Box>
           <Spacer />
-          <HStack
-            spacing={4}
-            isSmallScreen={isSmallScreen}
-            justifyContent="space-between"
-          >
+          <HStack spacing={4} justifyContent="space-between">
             <SwitchNetworkButton isSmallScreen={isSmallScreen} />
             <ConnectWalletButton isSmallScreen={isSmallScreen} />
           </HStack>
