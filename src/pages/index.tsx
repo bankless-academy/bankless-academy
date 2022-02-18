@@ -80,7 +80,7 @@ const HomePage = (): JSX.Element => {
           </Box>
         </Stack>
       </Center>
-      <Box bgColor="#1F2023" p="4">
+      <Box bgColor="#1F2023" p="4" overflow="hidden">
         <Container maxW="container.lg">
           <Box mt="6">
             <Heading as="h2" size="xl" m="auto">
@@ -232,7 +232,10 @@ const HomePage = (): JSX.Element => {
               ))}
             </SimpleGrid>
             <Box>
-              <Box display={isSmallScreen ? 'block' : 'flex'} gap={6}>
+              <Box
+                display={isSmallScreen ? 'block' : 'flex'}
+                style={{ gap: '24px' }}
+              >
                 <Box
                   display="flex"
                   flexShrink="initial"
@@ -250,7 +253,7 @@ const HomePage = (): JSX.Element => {
                   ></iframe>
                 </Box>
                 <Box flexGrow="initial" display="flex" alignItems="center">
-                  <Heading as="h2" size="md" m="8">
+                  <Heading as="h2" size="md" mt="8">
                     Sign up to receive emails when we release new lessons,
                     project updates and exclusive alpha!
                   </Heading>
@@ -272,6 +275,7 @@ const HomePage = (): JSX.Element => {
                 display="flex"
                 justifyContent="space-evenly"
                 alignItems="center"
+                mt="4"
               >
                 <Box>
                   <NextLink href={`/feedback`}>
@@ -306,7 +310,9 @@ const HomePage = (): JSX.Element => {
                     target="_blank"
                     href="https://gitcoin.co/grants/3535/bankless-academy"
                   >
-                    <Button variant="primary">Fund now</Button>
+                    <Button size="lg" variant="primary">
+                      Fund now
+                    </Button>
                   </Link>
                 </Box>
                 <Link
@@ -327,13 +333,24 @@ const HomePage = (): JSX.Element => {
                   target="_blank"
                   href="https://gitcoin.co/grants/3535/bankless-academy"
                 >
-                  <Image width="90%" src="/images/gitcoin-grant/rocket.svg" />
+                  <Image
+                    margin="auto"
+                    width="90%"
+                    src="/images/gitcoin-grant/rocket.svg"
+                  />
                 </Link>
               </Box>
             </SimpleGrid>
           </Box>
           <footer>
-            <Box display="flex" justifyContent="space-around" w="100%" mt="16">
+            <Box
+              display="flex"
+              justifyContent="space-around"
+              w="100%"
+              maxW="800px"
+              mx="auto"
+              mt="16"
+            >
               <Link
                 display="flex"
                 target="_blank"

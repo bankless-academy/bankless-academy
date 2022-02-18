@@ -542,7 +542,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                                     </Button>
                                   </Link>
                                   <span>
-                                    👈 don't forget to mint your POAP!
+                                    👈 don&apos;t forget to mint your POAP!
                                   </span>
                                 </Box>
                               )}
