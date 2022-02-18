@@ -95,7 +95,7 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
           width: 100%;
         }
       `
-        : ' max-height: 60vh;'};
+        : 'max-height: 60vh;'};
   }
   div.content div {
     h2,
@@ -166,6 +166,7 @@ const SlideNav = styled(Box)<{ issmallscreen?: string }>`
       left: 0;
       background-color: black;
       z-index: 10;
+      border-top:1px solid #222222;
       `};
 `
 
@@ -378,8 +379,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
       )}
       <Text
         fontSize={isSmallScreen ? 'xl' : '3xl'}
-        mt="4"
-        mb="8"
+        my={isSmallScreen ? '2' : '4'}
         display="inline-flex"
         justifyContent="center"
         alignItems="center"
@@ -401,7 +401,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
         </Box>
       </Text>
       <ProgressSteps step={currentSlide} total={numberOfSlides} />
-      <Box maxH={isSmallScreen ? '' : '600px'}>
+      <Box maxH={isSmallScreen ? 'unset' : '600px'}>
         <Box
           className="content"
           minH="calc(100vh - 360px)"

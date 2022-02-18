@@ -31,7 +31,7 @@ const Layout = ({
   return (
     <Box
       minH="100vh"
-      paddingBottom={isSmallScreen && isLesson ? '64px' : ''}
+      paddingBottom={isSmallScreen && isLesson ? '81px' : ''}
       bgColor="#010101"
     >
       {isPasswordCorrect ? (
