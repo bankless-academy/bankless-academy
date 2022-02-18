@@ -20,6 +20,7 @@ import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
 import { useMediaQuery } from '@chakra-ui/react'
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import { Warning, Checks } from 'phosphor-react'
+import { isMobile } from 'react-device-detect'
 
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
@@ -360,6 +361,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
 
   const poapCode = localStorage.getItem(`poap-${lesson.slug}`) || poapData.code
 
+  const hostname = window?.location.hostname
+
   return (
     <Slide
       p={8}
@@ -370,6 +373,14 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
     >
+      {isMobile && currentSlide === 0 && (
+        <Box py={4}>
+          ⛔️ on mobile, make sure to open this website directly inside&nbsp;
+          <Link href={`https://metamask.app.link/dapp/${hostname}`} color="red">
+            MetaMask&apos;s browser
+          </Link>
+        </Box>
+      )}
       <Text
         fontSize={isSmallScreen ? 'xl' : '3xl'}
         mt="4"

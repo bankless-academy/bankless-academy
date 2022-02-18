@@ -4,11 +4,8 @@ import {
   SimpleGrid,
   Container,
   // Button,
-  Box,
-  Link,
   // Tooltip,
 } from '@chakra-ui/react'
-import { isMobile } from 'react-device-detect'
 
 import LessonCards from 'components/LessonCards'
 
@@ -23,17 +20,8 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Lessons = (): JSX.Element => {
-  const hostname = window?.location.hostname
   return (
     <Container maxW="container.xl">
-      {isMobile && (
-        <Box pb={4}>
-          ⛔️ on mobile, make sure to open this website directly inside&nbsp;
-          <Link href={`https://metamask.app.link/dapp/${hostname}`} color="red">
-            MetaMask&apos;s browser
-          </Link>
-        </Box>
-      )}
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={4} mt={8}>
         <LessonCards />
       </SimpleGrid>
