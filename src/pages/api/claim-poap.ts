@@ -44,12 +44,12 @@ export default async function handler(
 
   if (!verifySignature(address, signature, message))
     return res.json({ error: 'Wrong signature' })
-  // require to sign in less than 1 minute
-  const SIGNATURE_TIMEOUT = 60 * 1000
+  // require to sign in less than 2 minutes
+  const SIGNATURE_TIMEOUT = 2 * 60 * 1000
   if (-message + Date.now() > SIGNATURE_TIMEOUT)
     return res.json({
       error:
-        'You took more than 1 minute to sign the transaction, try again faster!',
+        'You took more than 2 minutes to sign the transaction, try again faster!',
     })
 
   try {
