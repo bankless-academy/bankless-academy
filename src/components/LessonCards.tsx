@@ -16,7 +16,7 @@ const LessonCard = styled(Box)`
     rgba(0, 0, 0, 0.45) 0%,
     rgba(38, 38, 38, 0.25) 100%
   ); */
-  backdrop-filter: blur(42px);
+  /* backdrop-filter: blur(42px); */
 `
 
 // HACK: manually add previous POAP events claims
