@@ -80,7 +80,7 @@ const HomePage = (): JSX.Element => {
           </Box>
         </Stack>
       </Center>
-      <Box bgColor="#1F2023" p="5">
+      <Box bgColor="#1F2023" p="4">
         <Container maxW="container.lg">
           <Box mt="6">
             <Heading as="h2" size="xl" m="auto">
@@ -242,18 +242,25 @@ const HomePage = (): JSX.Element => {
                   would like to learn.
                 </Heading>
               </Box>
-              <Box>
-                <NextLink href={`/feedback`}>
-                  <Button variant="secondary">Suggest topics</Button>
-                </NextLink>
-                <Link
-                  target="_blank"
-                  rel="noreferrer"
-                  href={`https://tally.so/r/w4kXA3`}
-                  ml="4"
-                >
-                  <Button variant="primary">Partner with us</Button>
-                </Link>
+              <Box
+                display="flex"
+                justifyContent="space-evenly"
+                alignItems="center"
+              >
+                <Box>
+                  <NextLink href={`/feedback`}>
+                    <Button variant="secondary">Suggest topics</Button>
+                  </NextLink>
+                </Box>
+                <Box>
+                  <Link
+                    target="_blank"
+                    rel="noreferrer"
+                    href={`https://tally.so/r/w4kXA3`}
+                  >
+                    <Button variant="primary">Partner with us</Button>
+                  </Link>
+                </Box>
               </Box>
             </SimpleGrid>
           </Box>
@@ -306,7 +313,7 @@ const HomePage = (): JSX.Element => {
                 target="_blank"
                 href="https://twitter.com/BanklessAcademy"
               >
-                <Image mr="2" src="/images/twitter.svg" /> Twitter
+                <Image mr="1" width="18px" src="/images/twitter.svg" /> Twitter
               </Link>
               <span> | </span>
               <Link
@@ -320,7 +327,7 @@ const HomePage = (): JSX.Element => {
                 target="_blank"
                 href="https://bankless.notion.site/Bankless-Academy-Jobs-56d3b0a011fe443aa2a9682f0ca443bb"
               >
-                Become a DAO Punk
+                Join the team
               </Link>
             </Box>
           </footer>
