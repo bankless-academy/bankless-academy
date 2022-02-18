@@ -1,3 +1,5 @@
+import { isMobile } from 'react-device-detect'
+
 const primaryStyle = {
   border: '1px solid #B85FF1',
   boxSizing: 'border-box',
@@ -41,38 +43,46 @@ export default {
           'linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)',
         backdropFilter: 'blur(50px)',
         borderRadius: '8px',
-        _hover: {
-          ...padding,
-          ...primaryStyle,
-        },
+        _hover: isMobile
+          ? {}
+          : {
+              ...padding,
+              ...primaryStyle,
+            },
       },
       primaryBig: {
         background:
           'linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)',
         backdropFilter: 'blur(50px)',
         borderRadius: '60px',
-        _hover: {
-          ...paddingBig,
-          ...primaryStyle,
-        },
+        _hover: isMobile
+          ? {}
+          : {
+              ...paddingBig,
+              ...primaryStyle,
+            },
       },
       secondary: {
         background: '#3F3253',
         backdropFilter: 'blur(50px)',
         borderRadius: '8px',
-        _hover: {
-          ...padding,
-          ...secondaryStyle,
-        },
+        _hover: isMobile
+          ? {}
+          : {
+              ...padding,
+              ...secondaryStyle,
+            },
       },
       secondaryBig: {
         background: '#3F3253',
         backdropFilter: 'blur(50px)',
         borderRadius: '60px',
-        _hover: {
-          ...paddingBig,
-          ...secondaryStyle,
-        },
+        _hover: isMobile
+          ? {}
+          : {
+              ...paddingBig,
+              ...secondaryStyle,
+            },
       },
     },
   },
