@@ -310,7 +310,11 @@ const HomePage = (): JSX.Element => {
                     target="_blank"
                     href="https://gitcoin.co/grants/3535/bankless-academy"
                   >
-                    <Button size="lg" variant="primary">
+                    <Button
+                      size="lg"
+                      style={{ padding: '0 23px' }}
+                      variant="primary"
+                    >
                       Fund now
                     </Button>
                   </Link>
