@@ -72,7 +72,9 @@ const LessonCards: React.FC = () => {
                 : ''
             }
           >
-            <Text fontSize="xl">{lesson.name}</Text>
+            <Text fontSize="xl" fontWeight="bold">
+              {lesson.name}
+            </Text>
             <Text fontSize="lg">{lesson.description}</Text>
             <Box display="flex" justifyContent="space-between" my="4">
               <Tag size="sm" variant={isPoapClaimed ? 'solid' : 'outline'}>
