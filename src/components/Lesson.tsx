@@ -224,9 +224,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     }, 3000)
   }, [])
 
-  const goToPrevSlide = (e) => {
-    e.target.blur()
-    e.target?.parentNode.blur()
+  const goToPrevSlide = () => {
+    buttonLeftRef?.current?.blur()
     if (!isFirstSlide) {
       setPoapData({})
       setCurrentSlide(currentSlide - 1)
@@ -234,9 +233,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     setSelectedAnswerNumber(null)
   }
 
-  const goToNextSlide = (e) => {
-    e.target.blur()
-    e.target?.parentNode.blur()
+  const goToNextSlide = () => {
+    buttonRightRef?.current?.blur()
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
