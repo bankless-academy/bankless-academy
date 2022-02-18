@@ -184,6 +184,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
 
   const buttonLeftRef = useRef(null)
   const buttonRightRef = useRef(null)
+  const mobileHackRef = useRef(null)
   const answerRef = useRef([])
   const [currentSlide, setCurrentSlide] = useState(
     parseInt(localStorage.getItem(lesson.slug) || '0')
@@ -225,7 +226,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   }, [])
 
   const goToPrevSlide = () => {
-    buttonLeftRef?.current?.blur()
+    // HACK: force removing the button focus on mobile
+    if (isMobile) mobileHackRef?.current.click()
     if (!isFirstSlide) {
       setPoapData({})
       setCurrentSlide(currentSlide - 1)
@@ -234,7 +236,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   }
 
   const goToNextSlide = () => {
-    buttonRightRef?.current?.blur()
+    // HACK: force removing the button focus on mobile
+    if (isMobile) mobileHackRef?.current.click()
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
@@ -249,6 +252,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   }
 
   const selectAnswer = (e, answerNumber: number) => {
+    // HACK: force removing the button focus on mobile
+    if (isMobile) mobileHackRef?.current.click()
     e.target.blur()
     if (slide.type !== 'QUIZ') return
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
@@ -610,6 +615,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
             )} */}
         </HStack>
         <HStack>
+          <Box ref={mobileHackRef}> </Box>
           <Tooltip
             hasArrow
             label="Use the 'right' arrow key on your keyboard to continue"
