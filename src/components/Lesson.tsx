@@ -226,7 +226,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
 
   const goToPrevSlide = (e) => {
     e.target.blur()
-    track('prev-slide', e?.nativeEvent?.isTrusted ? 'click' : 'shortcut')
+    e.target?.parentNode.blur()
     if (!isFirstSlide) {
       setPoapData({})
       setCurrentSlide(currentSlide - 1)
@@ -236,7 +236,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
 
   const goToNextSlide = (e) => {
     e.target.blur()
-    track('next-slide', e?.nativeEvent?.isTrusted ? 'click' : 'shortcut')
+    e.target?.parentNode.blur()
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
