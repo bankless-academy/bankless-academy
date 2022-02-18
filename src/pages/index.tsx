@@ -138,7 +138,7 @@ const HomePage = (): JSX.Element => {
               </Box>
             </SimpleGrid>
           </Box>
-          <Box>
+          <Box mt="16">
             <Heading as="h2" size="xl">
               Available Lessons
             </Heading>
@@ -204,7 +204,7 @@ const HomePage = (): JSX.Element => {
               })}
             </Box>
           </Box>
-          <Box>
+          <Box mt="16">
             <Heading as="h2" size="xl">
               More Lessons On the Way
             </Heading>
@@ -231,6 +231,32 @@ const HomePage = (): JSX.Element => {
                 </Center>
               ))}
             </SimpleGrid>
+            <Box>
+              <Box display={isSmallScreen ? 'block' : 'flex'} gap={6}>
+                <Box
+                  display="flex"
+                  flexShrink="initial"
+                  justifyContent="center"
+                  bgColor="white"
+                  p="8"
+                  borderRadius="10"
+                  bg="linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)"
+                >
+                  <iframe
+                    height="105px"
+                    style={{ maxWidth: '350px' }}
+                    scrolling="no"
+                    src="https://tally.so/embed/mVVz6m?hideTitle=1&alignLeft=1&transparentBackground=1"
+                  ></iframe>
+                </Box>
+                <Box flexGrow="initial" display="flex" alignItems="center">
+                  <Heading as="h2" size="md" m="8">
+                    Sign up to receive emails when we release new lessons,
+                    project updates and exclusive alpha!
+                  </Heading>
+                </Box>
+              </Box>
+            </Box>
           </Box>
           <Box my="12">
             <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6}>
@@ -264,7 +290,7 @@ const HomePage = (): JSX.Element => {
               </Box>
             </SimpleGrid>
           </Box>
-          <Box>
+          <Box mt="16">
             <Heading as="h2" size="xl">
               Contribute to the project
             </Heading>
