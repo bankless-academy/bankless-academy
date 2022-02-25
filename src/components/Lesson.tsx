@@ -190,6 +190,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     parseInt(localStorage.getItem(lesson.slug) || '0')
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isClaimingPoap, setIsClaimingPoap] = useState(false)
   const [isPoapMinted, setIsPoapMinted] = useState(false)
   const [poapData, setPoapData] = useState<{ code?: string; error?: string }>(
@@ -268,6 +269,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const signMessage = async () => {
     const message = Date.now().toString()
     library
@@ -494,7 +496,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                     <Button
                       variant="outline"
                       whiteSpace="break-spaces"
-                      tex
                       color="red.200"
                       mt="4"
                       leftIcon={<Warning />}
@@ -504,14 +505,29 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                   ) : (
                     <>
                       {!isPoapClaimed ? (
-                        <Button
-                          variant="primary"
-                          color="white"
-                          onClick={signMessage}
-                          isLoading={isClaimingPoap}
-                        >
-                          Claim POAP
-                        </Button>
+                        // <Button
+                        //   variant="primary"
+                        //   color="white"
+                        //   onClick={signMessage}
+                        //   isLoading={isClaimingPoap}
+                        // >
+                        //   Claim POAP
+                        // </Button>
+                        // TEMP: no POAP message
+                        <Box textAlign="center">
+                          {
+                            'We are currently running out of POAP codes and are very sorry for the inconvenience. 🙏'
+                          }
+                          <br />
+                          {'Follow this tweet to stay up to date: '}
+                          <Link
+                            href={`https://twitter.com/BanklessAcademy/status/1497225246167941124`}
+                            target="_blank"
+                          >
+                            https://twitter.com/BanklessAcademy/status/1497225246167941124
+                          </Link>
+                          {' 👀'}
+                        </Box>
                       ) : (
                         <>
                           <h2>
