@@ -575,16 +575,19 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                   button in the top-right corner)
                 </h2>
               )}
-              <h2>
-                {'🙋‍♂️ Having trouble claiming/minting your POAP? Check out '}
-                <Link
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://bankless.notion.site/Bankless-Academy-POAP-support-9a9e60c883ac427da14dad324731028c"
-                >
-                  this guide
-                </Link>
-              </h2>
+              {/* TEMP: hide POAP help */}
+              {isPoapClaimed && (
+                <h2>
+                  {'🙋‍♂️ Having trouble claiming/minting your POAP? Check out '}
+                  <Link
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://bankless.notion.site/Bankless-Academy-POAP-support-9a9e60c883ac427da14dad324731028c"
+                  >
+                    this guide
+                  </Link>
+                </h2>
+              )}
             </VStack>
           )}
         </Box>
