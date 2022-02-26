@@ -519,14 +519,14 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                             'We are currently running out of POAP codes and are very sorry for the inconvenience. 🙏'
                           }
                           <br />
-                          {'Follow this tweet to stay up to date: '}
+                          {'Follow this '}
                           <Link
                             href={`https://twitter.com/BanklessAcademy/status/1497225246167941124`}
                             target="_blank"
                           >
-                            https://twitter.com/BanklessAcademy/status/1497225246167941124
+                            tweet
                           </Link>
-                          {' 👀'}
+                          {' 👀 to stay up to date'}
                         </Box>
                       ) : (
                         <>
