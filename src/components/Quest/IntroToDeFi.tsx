@@ -5,6 +5,7 @@ import { isMobile } from 'react-device-detect'
 
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 import { track, verifySignature } from 'utils'
+import { ethers } from 'ethers'
 
 const VERBS = ['Investing', 'Trading', 'Lending & Borrowing', 'Staking']
 
@@ -21,19 +22,20 @@ const IntroToDeFi = (): {
   const signMessage = async () => {
     if (isSignatureVerified) return
     const message = `I want to learn more about ${answer}`
-    library
-      .getSigner(walletAddress)
-      .signMessage(message)
-      .then((signature: any) => {
-        const verified = verifySignature(walletAddress, signature, message)
-        if (verified) {
-          track('intro_to_defi_quest_answer', answer)
-        }
-        setIsSignatureVerified(verified)
-      })
-      .catch((error: any) => {
-        console.error(error)
-      })
+
+    try {
+      const signature = await library.send('personal_sign', [
+        ethers.utils.hexlify(ethers.utils.toUtf8Bytes(message)),
+        account?.toLowerCase(),
+      ])
+      const verified = verifySignature(walletAddress, signature, message)
+      if (verified) {
+        track('intro_to_defi_quest_answer', answer)
+      }
+      setIsSignatureVerified(verified)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   const signatureButton = () => (

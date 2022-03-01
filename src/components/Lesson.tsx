@@ -30,6 +30,7 @@ import { useActiveWeb3React } from 'hooks'
 import { track, verifySignature } from 'utils'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, PoapIcon } from 'components/Icons'
+import { ethers } from 'ethers'
 
 // transform keywords into Tooltip
 function transform(node, index) {
@@ -272,20 +273,21 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const signMessage = async () => {
     const message = Date.now().toString()
-    library
-      .getSigner(account)
-      .signMessage(message)
-      .then((signature: any) => {
-        const verified = verifySignature(account, signature, message)
-        if (verified) {
-          claimPoap(message, signature)
-        } else {
-          alert('wrong signature')
-        }
-      })
-      .catch((error: any) => {
-        console.error(error)
-      })
+
+    try {
+      const signature = await library.send('personal_sign', [
+        ethers.utils.hexlify(ethers.utils.toUtf8Bytes(message)),
+        account?.toLowerCase(),
+      ])
+      const verified = verifySignature(account, signature, message)
+      if (verified) {
+        claimPoap(message, signature)
+      } else {
+        alert('wrong signature')
+      }
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   const claimPoap = (message: string, signature: string) => {
