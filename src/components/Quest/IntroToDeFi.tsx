@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Button, Box } from '@chakra-ui/react'
+import { Button, Box, Link } from '@chakra-ui/react'
 import { useActiveWeb3React } from 'hooks'
 import { isMobile } from 'react-device-detect'
 
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
-import { track, verifySignature } from 'utils'
+import { track, verifySignature, getSignature } from 'utils'
 
 const VERBS = ['Investing', 'Trading', 'Lending & Borrowing', 'Staking']
 
@@ -18,22 +18,22 @@ const IntroToDeFi = (): {
   const { library, account, chainId } = useActiveWeb3React()
   const walletAddress = account
 
+  const hostname = window?.location.hostname
+
   const signMessage = async () => {
     if (isSignatureVerified) return
     const message = `I want to learn more about ${answer}`
-    library
-      .getSigner(walletAddress)
-      .signMessage(message)
-      .then((signature: any) => {
-        const verified = verifySignature(walletAddress, signature, message)
-        if (verified) {
-          track('intro_to_defi_quest_answer', answer)
-        }
-        setIsSignatureVerified(verified)
-      })
-      .catch((error: any) => {
-        console.error(error)
-      })
+
+    try {
+      const signature = await getSignature(library, account, message)
+      const verified = verifySignature(walletAddress, signature, message)
+      if (verified) {
+        track('intro_to_defi_quest_answer', answer)
+      }
+      setIsSignatureVerified(verified)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   const signatureButton = () => (
@@ -52,9 +52,11 @@ const IntroToDeFi = (): {
       </Button>
       {isMobile && (
         <p>
-          * signing with your mobile wallet only works if you open this website
-          directly inside&nbsp;
-          <strong>MetaMask&apos;s browser</strong>
+          * if you have trouble signing on mobile, we recommend to open this
+          website directly inside&nbsp;
+          <Link href={`https://metamask.app.link/dapp/${hostname}`} color="red">
+            MetaMask&apos;s browser
+          </Link>
         </p>
       )}
     </>

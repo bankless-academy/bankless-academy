@@ -27,7 +27,7 @@ import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useActiveWeb3React } from 'hooks'
-import { track, verifySignature } from 'utils'
+import { track, verifySignature, getSignature } from 'utils'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, PoapIcon } from 'components/Icons'
 
@@ -272,20 +272,18 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const signMessage = async () => {
     const message = Date.now().toString()
-    library
-      .getSigner(account)
-      .signMessage(message)
-      .then((signature: any) => {
-        const verified = verifySignature(account, signature, message)
-        if (verified) {
-          claimPoap(message, signature)
-        } else {
-          alert('wrong signature')
-        }
-      })
-      .catch((error: any) => {
-        console.error(error)
-      })
+
+    try {
+      const signature = await getSignature(library, account, message)
+      const verified = verifySignature(account, signature, message)
+      if (verified) {
+        claimPoap(message, signature)
+      } else {
+        alert('wrong signature')
+      }
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   const claimPoap = (message: string, signature: string) => {
