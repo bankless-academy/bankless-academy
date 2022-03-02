@@ -27,10 +27,9 @@ import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useActiveWeb3React } from 'hooks'
-import { track, verifySignature } from 'utils'
+import { track, verifySignature, getSignature } from 'utils'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, PoapIcon } from 'components/Icons'
-import { ethers } from 'ethers'
 
 // transform keywords into Tooltip
 function transform(node, index) {
@@ -275,10 +274,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     const message = Date.now().toString()
 
     try {
-      const signature = await library.send('personal_sign', [
-        ethers.utils.hexlify(ethers.utils.toUtf8Bytes(message)),
-        account?.toLowerCase(),
-      ])
+      const signature = await getSignature(library, account, message)
       const verified = verifySignature(account, signature, message)
       if (verified) {
         claimPoap(message, signature)

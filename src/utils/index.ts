@@ -5,6 +5,7 @@ import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { NetworkConnector } from '@web3-react/network-connector'
 import * as ethUtil from 'ethereumjs-util'
+import { ethers } from 'ethers'
 
 declare global {
   interface Window {
@@ -157,4 +158,16 @@ export function verifySignature(
 ): boolean {
   const signer = recoverPersonalSignature(signature, message)
   return signer.toLowerCase() === address.toLowerCase()
+}
+
+export async function getSignature(
+  library: Web3Provider,
+  address: string,
+  message: string
+): Promise<string> {
+  const signature = await library.send('personal_sign', [
+    ethers.utils.hexlify(ethers.utils.toUtf8Bytes(message)),
+    address.toLowerCase(),
+  ])
+  return signature
 }

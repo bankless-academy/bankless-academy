@@ -4,8 +4,7 @@ import { useActiveWeb3React } from 'hooks'
 import { isMobile } from 'react-device-detect'
 
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
-import { track, verifySignature } from 'utils'
-import { ethers } from 'ethers'
+import { track, verifySignature, getSignature } from 'utils'
 
 const VERBS = ['Investing', 'Trading', 'Lending & Borrowing', 'Staking']
 
@@ -24,10 +23,7 @@ const IntroToDeFi = (): {
     const message = `I want to learn more about ${answer}`
 
     try {
-      const signature = await library.send('personal_sign', [
-        ethers.utils.hexlify(ethers.utils.toUtf8Bytes(message)),
-        account?.toLowerCase(),
-      ])
+      const signature = await getSignature(library, account, message)
       const verified = verifySignature(walletAddress, signature, message)
       if (verified) {
         track('intro_to_defi_quest_answer', answer)
