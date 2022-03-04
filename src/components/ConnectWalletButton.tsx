@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react'
 import { Wallet } from 'phosphor-react'
 import axios from 'axios'
+import Davatar from '@davatar/react'
 
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
@@ -133,7 +134,10 @@ const ConnectWalletButton = ({
               size={isSmallScreen ? 'sm' : 'md'}
               leftIcon={<Wallet weight="bold" />}
             >
-              <Text maxW="200px" isTruncated>
+              <Text maxW="200px" display="flex" alignItems="center" isTruncated>
+                <Box marginRight={2}>
+                  <Davatar address={walletAddress} size={25} />
+                </Box>
                 <ENSName provider={web3Provider} address={walletAddress} />
               </Text>
             </Button>
