@@ -132,6 +132,7 @@ const ConnectWalletButton = ({
             <Button
               variant="secondary"
               size={isSmallScreen ? 'sm' : 'md'}
+              // TODO: fix bug when switching wallets
               leftIcon={<Davatar address={walletAddress} size={25} />}
             >
               <Text maxW="200px" display="flex" alignItems="center" isTruncated>
