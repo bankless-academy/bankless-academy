@@ -132,12 +132,9 @@ const ConnectWalletButton = ({
             <Button
               variant="secondary"
               size={isSmallScreen ? 'sm' : 'md'}
-              leftIcon={<Wallet weight="bold" />}
+              leftIcon={<Davatar address={walletAddress} size={25} />}
             >
               <Text maxW="200px" display="flex" alignItems="center" isTruncated>
-                <Box marginRight={2}>
-                  <Davatar address={walletAddress} size={25} />
-                </Box>
                 <ENSName provider={web3Provider} address={walletAddress} />
               </Text>
             </Button>
