@@ -31,6 +31,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^1.0.15",
     "@chakra-ui/react": "^1.6.4",
+    "@davatar/react": "^1.9.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@ensdomains/ensjs": "^2.0.1",
