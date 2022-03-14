@@ -206,6 +206,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
+  const is2ndToLastSlide = currentSlide + 1 === numberOfSlides - 1
 
   const { library, account } = useActiveWeb3React()
   const walletAddress = account
@@ -358,7 +359,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   const poapCode = localStorage.getItem(`poap-${lesson.slug}`) || poapData.code
 
   const hostname = window?.location.hostname
-
+  
   return (
     <Slide
       p={8}
@@ -621,7 +622,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
         <HStack>
           <Button
             ref={buttonRightRef}
-            variant="primaryBig"
+            variant={is2ndToLastSlide ? 'primaryBig2ndLast' : isLastSlide ? 'primaryBigLast' : 'primaryBig'}
             size="lg"
             disabled={
               (isLastSlide && !isPoapClaimed) ||
