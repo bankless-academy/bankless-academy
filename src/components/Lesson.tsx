@@ -621,7 +621,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
         <HStack>
           <Button
             ref={buttonRightRef}
-            variant="primaryBig"
+            variant={isLastSlide ? 'primaryBigLast' : 'primaryBig'}
             size="lg"
             disabled={
               (isLastSlide && !isPoapClaimed) ||

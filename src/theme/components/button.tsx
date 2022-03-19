@@ -62,6 +62,18 @@ export default {
               ...primaryStyle,
             },
       },
+      primaryBigLast: {
+        background:
+          'linear-gradient(270deg, #FFFCF9 -44.74%, #F77B54 -11.81%, #916AB8 94.44%)',
+        backdropFilter: 'blur(50px)',
+        borderRadius: '60px',
+        _hover: isMobile
+          ? {}
+          : {
+              ...paddingBig,
+              ...primaryStyle,
+            },
+      },
       secondary: {
         background: '#3F3253',
         backdropFilter: 'blur(50px)',
