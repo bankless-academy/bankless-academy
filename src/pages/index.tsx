@@ -364,6 +364,14 @@ const HomePage = (): JSX.Element => {
               </Link>
               <span> | </span>
               <Link
+                display="flex"
+                target="_blank"
+                href="https://gm.xyz/c/BanklessAcademy"
+              >
+                Community
+              </Link>
+              <span> | </span>
+              <Link
                 target="_blank"
                 href="https://bankless.notion.site/Bankless-Academy-POAP-Support-9a9e60c883ac427da14dad324731028c"
               >
