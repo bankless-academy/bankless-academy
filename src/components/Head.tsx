@@ -1,5 +1,6 @@
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 import { hotjar } from 'react-hotjar'
 
 import { PROJECT_NAME, DOMAIN, DEFAULT_METADATA } from 'constants/'
@@ -46,7 +47,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       {/* Umami */}
-      <script async defer data-website-id={umamiWebsiteId} src={umamiDomain} />
+      <Script async defer data-website-id={umamiWebsiteId} src={umamiDomain} />
       {/* Hotjar */}
       {typeof window !== 'undefined' &&
       window.location.hostname === 'app.banklessacademy.com'
