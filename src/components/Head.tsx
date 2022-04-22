@@ -18,7 +18,7 @@ const umamiWebsiteId =
   VERCEL_ENV === 'production'
     ? '62d1cf48-425d-4658-9b86-3eea78ac9714'
     : 'e84c3a1e-0ab0-4502-b0fe-67d660765535'
-const umamiDomain = 'https://umami.bankless.community/umami.js'
+const umamiDomain = 'https://stats.banklessacademy.com/umami.js'
 
 const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
   const router = useRouter()
