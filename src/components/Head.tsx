@@ -12,12 +12,13 @@ export interface MetaData {
   isLesson?: boolean
 }
 
-const VERCEL_ENV = process.env.VERCEL_ENV
-
 const umamiWebsiteId =
-  VERCEL_ENV === 'production'
-    ? '62d1cf48-425d-4658-9b86-3eea78ac9714'
-    : 'e84c3a1e-0ab0-4502-b0fe-67d660765535'
+  typeof window !== 'undefined' &&
+  window.location.hostname === 'app.banklessacademy.com'
+    ? // prod
+      '62d1cf48-425d-4658-9b86-3eea78ac9714'
+    : // dev
+      'e84c3a1e-0ab0-4502-b0fe-67d660765535'
 const umamiDomain = 'https://stats.banklessacademy.com/stats.js'
 
 const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
