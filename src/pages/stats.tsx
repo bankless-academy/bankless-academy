@@ -72,6 +72,22 @@ const Stats = (): JSX.Element => {
               )
             })}
           </Box>
+          <Box mt={8}>
+            <Text fontSize="lg">
+              Number of lesson completion (= did the quest, including 👨‍🌾)
+            </Text>
+            {LESSONS.map((lesson, index) => {
+              const lessonCompleted = stats?.lessonCompleted[lesson.quest] || 0
+              return (
+                <>
+                  <p>
+                    {`${index + 1}. ${lesson.name}: `}
+                    {lessonCompleted}
+                  </p>
+                </>
+              )
+            })}
+          </Box>
         </Box>
       )}
     </Container>
