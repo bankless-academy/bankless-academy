@@ -239,7 +239,9 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
-    } else if (isLastSlide && isPoapClaimed) {
+      // TEMP: don't block last slide
+      // } else if (isLastSlide && isPoapClaimed) {
+    } else if (isLastSlide) {
       // get feedback on the last lesson
       // TODO: add a column on Notion with feedback form yes/no, same for slide comment
       if (lesson.slug === 'intro-to-defi') router.push('/feedback')
@@ -514,7 +516,11 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                         // TEMP: no POAP message
                         <Box textAlign="center">
                           {
-                            'We are currently running out of POAP codes and are very sorry for the inconvenience. 🙏'
+                            'POAP distribution has been disabled due to farmers 👨‍🌾. We are currently working on an alternative.'
+                          }
+                          <br />
+                          {
+                            'Feel free to explore other lessons in the meantime. Thank you for your patience. 🙏'
                           }
                           <br />
                           {'Follow this '}
@@ -524,7 +530,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                           >
                             tweet
                           </Link>
-                          {' 👀 to stay up to date'}
+                          {' 👀 to stay up to date.'}
                         </Box>
                       ) : (
                         <>
@@ -624,7 +630,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
             variant={isLastSlide ? 'primaryBigLast' : 'primaryBig'}
             size="lg"
             disabled={
-              (isLastSlide && !isPoapClaimed) ||
+              // TEMP: don't block last slide
+              // (isLastSlide && !isPoapClaimed) ||
               (slide.quiz && !answerIsCorrect) ||
               (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
             }
