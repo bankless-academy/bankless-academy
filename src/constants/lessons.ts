@@ -244,7 +244,7 @@ const LESSONS: LessonType[] = [
     slug: 'intro-to-defi',
     imageLinks: [
       '/lesson/intro-to-defi/defi-defined-46782447.svg',
-      '/lesson/intro-to-defi/earning-yield-64a81413.svg',
+      '/lesson/intro-to-defi/earning-yield-a4934a1c.png',
       '/lesson/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg',
       '/lesson/intro-to-defi/investing-b3033379.svg',
       '/lesson/intro-to-defi/trading-e7663854.svg',
@@ -282,7 +282,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '772e17d6104145f7969b47fd2e132e68',
         title: '<strong>Earning Yield</strong>',
-        content: '<div class="bloc1"><p>There are a growing number of <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> protocols that enable you to earn interest and other rewards by using your crypto assets. You can have access to financial products that you would typically need a bank or financial services firm to get—but without the paperwork, middleman, approval process, and other hassles of the traditional finance world.</p><p>By removing the middleman, you also remove any service fees, dues, and commissions you would typically pay in the traditional finance world. With DeFi, you get to keep all the rewards, or yield earned from your assets. This is why DeFi is popular. </p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/earning-yield-64a81413.svg\'></div>'
+        content: '<div class="bloc1"><p>There are a growing number of <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> protocols that enable you to earn interest and other rewards by using your crypto assets. You can have access to financial products that you would typically need a bank or financial services firm to get—but without the paperwork, middleman, approval process, and other hassles of the traditional finance world.</p><p>By removing the middleman, you also remove any service fees, dues, and commissions you would typically pay in the traditional finance world. With DeFi, you get to keep all the rewards, or yield earned from your assets. This is why DeFi is popular. </p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/earning-yield-a4934a1c.png\'></div>'
       },
       {
         type: 'QUIZ',
