@@ -32,7 +32,7 @@ const Layout = ({
     <Box
       minH="100vh"
       paddingBottom={isSmallScreen && isLesson ? '81px' : ''}
-      bgColor="#010101"
+      bgColor="#1C1C1C"
     >
       {isPasswordCorrect ? (
         <>

@@ -147,7 +147,7 @@ const QuizAnswer = styled(Button)<{
   ${(props) =>
     props.answerState === 'UNSELECTED' &&
     props.isActive &&
-    'background: #010101 !important;'}
+    'background: #1C1C1C !important;'}
   ${(props) =>
     props.answerState === 'CORRECT' &&
     'background: linear-gradient(95.83deg, #44A991 -9.2%, rgba(68, 169, 145, 0.7) 97.91%) !important;'}
