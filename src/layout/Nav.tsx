@@ -11,6 +11,7 @@ import Link from 'next/link'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/'
+import { PROJECT_NAME } from 'constants/'
 
 const Nav: React.FC = () => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
@@ -29,7 +30,7 @@ const Nav: React.FC = () => {
                     ? '/images/BanklessAcademy_Logo.svg'
                     : '/images/BanklessAcademy.svg'
                 }
-                alt="Bankless Academy"
+                alt={PROJECT_NAME}
               />
             </Link>
           </Box>
