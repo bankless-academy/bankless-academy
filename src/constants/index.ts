@@ -10,8 +10,8 @@ export const DOMAIN =
 
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
-  description: 'Level up your knowledge of Web3 and DeFi',
-  image: `${DOMAIN}/images/bankless_academy_v3.jpg`,
+  description: 'Improve lives through crypto',
+  image: `${DOMAIN}/humanDAO/humanDAO.png`,
 }
 
 export const TOKEN_ADDRESS = {
