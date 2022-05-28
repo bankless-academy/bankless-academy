@@ -96,7 +96,13 @@ const LessonCards: React.FC = () => {
                 }}
                 py="4"
               >
-                <Image src={lesson.lessonImageLink} />
+                <Image
+                  // TEMP
+                  style={{
+                    borderRadius: 10,
+                  }}
+                  src={lesson.lessonImageLink}
+                />
               </LessonBanner>
             </Link>
             <Text fontSize="md" mt="4">

@@ -59,7 +59,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           rel="shortcut icon"
           sizes="200x200"
           type="image/png"
-          href="/favicon.png"
+          href="humanDAO/favicon.png"
         />
         <noscript>You need to enable JavaScript to run this app.</noscript>
       </NextHead>

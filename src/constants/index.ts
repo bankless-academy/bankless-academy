@@ -1,7 +1,7 @@
 import { MetaData } from 'components/Head'
 import LESSONS from './lessons'
 
-export const PROJECT_NAME = 'Bankless Academy'
+export const PROJECT_NAME = 'humanDAO'
 
 export const DOMAIN =
   process.env.VERCEL_URL && process.env.VERCEL_ENV !== 'production'

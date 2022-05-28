@@ -3,7 +3,9 @@ import styled from '@emotion/styled'
 
 // TODO: clean dirty HACK
 const LessonBanner = styled(Box)`
-  transform: scale(1.2);
+  // whitelabel TEMP
+  /* transform: scale(1.2); */
+  border-radius: 20px;
 `
 
 export default LessonBanner

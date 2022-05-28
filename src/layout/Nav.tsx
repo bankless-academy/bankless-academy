@@ -23,12 +23,12 @@ const Nav: React.FC = () => {
           <Box cursor="pointer">
             <Link href="/">
               <Image
-                width={isSmallScreen ? '27px' : '117px'}
+                width={isSmallScreen ? '27px' : '40px'}
                 ml={isSmallScreen ? '' : '2'}
                 src={
                   isSmallScreen
-                    ? '/images/BanklessAcademy_Logo.svg'
-                    : '/images/BanklessAcademy.svg'
+                    ? '/humanDAO/HDAO-white.svg'
+                    : '/humanDAO/HDAO-white.svg'
                 }
                 alt={PROJECT_NAME}
               />
