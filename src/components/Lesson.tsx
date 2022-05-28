@@ -594,6 +594,19 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               )}
             </VStack>
           )}
+          {slide.type === 'END' && (
+            <VStack flex="auto" minH="420px" justifyContent="center">
+              <ChakraImage
+                src={lesson.poapImageLink}
+                width="250px"
+                height="250px"
+                mb="2"
+              />
+              <h2>
+                {`Congrats for finishing the "${lesson.name}" lesson! 🥳`}
+              </h2>
+            </VStack>
+          )}
         </Box>
       </Box>
       <SlideNav display="flex" p={4} issmallscreen={isSmallScreen.toString()}>
