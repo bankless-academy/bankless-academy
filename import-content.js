@@ -14,13 +14,14 @@ const KEY_MATCHING = {
   'Social image link': 'socialImageLink',
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
-  'Knowledge Requirements': 'knowledgeRequirements',
+  // 'Knowledge Requirements': 'knowledgeRequirements',
   'POAP event ID': 'poapEventId',
   'Duration in minutes': 'duration',
   'What will you learn from this?': 'learnings',
   Difficulty: 'difficulty',
   Description: 'description',
   Name: 'name',
+  Quest: 'quest',
 }
 
 const args = process.argv
@@ -205,15 +206,24 @@ axios
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ')
             .replace(/\s+/g, '')
+          if (lesson.quest === true) {
+            lesson.quest = componentName
+            slides.push({
+              type: 'QUEST',
+              title: `${lesson.name} Quest`,
+              component: componentName,
+            })
+          } else {
+            delete lesson.quest
+          }
+          // TEMP: replace POAP with END flow
+          // slides.push({
+          //   type: 'POAP',
+          //   title: `Collect your <span class="tooltip" definition="${keywords['POAP'].definition}">POAP</span>`,
+          // })
           slides.push({
-            type: 'QUEST',
-            title: `${lesson.name} Quest`,
-            component: componentName,
-          })
-          lesson.quest = componentName
-          slides.push({
-            type: 'POAP',
-            title: `Collect your <span class="tooltip" definition="${keywords['POAP'].definition}">POAP</span>`,
+            type: 'END',
+            title: 'End of lesson',
           })
           lesson.slides = slides
           console.log('lesson', lesson)
