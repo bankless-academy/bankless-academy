@@ -393,6 +393,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           {slide.type === 'QUIZ' && <QuizIcon />}
           {slide.type === 'QUEST' && <QuestIcon />}
           {slide.type === 'POAP' && <PoapIcon />}
+          {slide.type === 'END' && <PoapIcon />}
         </Box>
         <Box>
           {slide.type === 'QUIZ' ? (

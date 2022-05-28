@@ -7,13 +7,13 @@ const LESSONS: LessonType[] = [
     socialImageLink: 'https://app.banklessacademy.com/images/wallet-basics-social.jpg',
     learningActions: 'Create and manage your own wallet<br>Connect your wallet to a web3 website',
     marketingDescription: 'A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.',
-    knowledgeRequirements: 'No prior knowledge needed.',
     poapEventId: 26971,
     duration: 15,
     learnings: 'Find out what digital wallets are, what they allow you to do, and how to set up and protect your wallet as you get out and explore Web3.',
     difficulty: 'Easy',
     description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
+    quest: 'WalletBasics',
     notionId: '98405bd0f2b94bb2a3079eed504a011e',
     slug: 'wallet-basics',
     imageLinks: [
@@ -28,7 +28,6 @@ const LESSONS: LessonType[] = [
       '/lesson/wallet-basics/cold-wallet-3bd67115.png',
       '/lesson/wallet-basics/metamask-wallet-a057e5b9.png'
     ],
-    quest: 'WalletBasics',
     slides: [
       {
         type: 'LEARN',
@@ -222,8 +221,8 @@ const LESSONS: LessonType[] = [
         component: 'WalletBasics'
       },
       {
-        type: 'POAP',
-        title: 'Collect your <span class="tooltip" definition="A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson.">POAP</span>'
+        type: 'END',
+        title: 'End of lesson'
       }
     ]
   },
@@ -233,13 +232,13 @@ const LESSONS: LessonType[] = [
     socialImageLink: 'https://app.banklessacademy.com/images/intro-to-defi-social.jpg',
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
-    knowledgeRequirements: 'Wallet Basics: how to manage a web3 wallet',
     poapEventId: 26972,
     duration: 10,
     learnings: 'Learn what decentralized finance means and discover the game-changing possibilities that new blockchain-powered applications introduce to the world.',
     difficulty: 'Easy',
     description: 'Understand the basics of decentralized finance.',
     name: 'Intro to DeFi',
+    quest: 'IntroToDeFi',
     notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
     slug: 'intro-to-defi',
     imageLinks: [
@@ -254,7 +253,6 @@ const LESSONS: LessonType[] = [
       '/lesson/intro-to-defi/defi-downsides-3a6ce496.svg',
       '/lesson/intro-to-defi/defi-downsides-83a9391f.svg'
     ],
-    quest: 'IntroToDeFi',
     slides: [
       {
         type: 'LEARN',
@@ -438,8 +436,8 @@ const LESSONS: LessonType[] = [
         component: 'IntroToDeFi'
       },
       {
-        type: 'POAP',
-        title: 'Collect your <span class="tooltip" definition="A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson.">POAP</span>'
+        type: 'END',
+        title: 'End of lesson'
       }
     ]
   }
