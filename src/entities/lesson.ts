@@ -16,7 +16,7 @@ export interface LessonType {
   socialImageLink: string
   learnings: string
   learningActions: string
-  knowledgeRequirements: string
+  knowledgeRequirements?: string
   quest?: QuestComponentType
   imageLinks: string[]
   slides: {
