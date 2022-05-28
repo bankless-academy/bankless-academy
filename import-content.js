@@ -40,7 +40,6 @@ const download_image = (url, image_path) =>
     url,
     responseType: 'stream',
   }).then(function (response) {
-    // TODO: create directory dynamically in case it doesn't exist yet
     response.data.pipe(fs.createWriteStream(image_path))
   })
 
@@ -129,7 +128,13 @@ axios
                 const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg)\?table=/)[1]
                 // create "unique" hash based on Notion imageLink (different when re-uploaded)
                 const hash = crc32(imageLink)
-                const image_path = `/lesson/${lesson.slug}/${slugify(slide.title)}-${hash}.${file_extension}`
+                const image_dir = `/lesson/${lesson.slug}`
+                const local_image_dir = `public${image_dir}`
+                // create image directory dynamically in case it doesn't exist yet
+                if (!fs.existsSync(local_image_dir)) {
+                  fs.mkdirSync(local_image_dir);
+                }
+                const image_path = `${image_dir}/${slugify(slide.title)}-${hash}.${file_extension}`
                 const local_image_path = `public${image_path}`
                 slide.content = slide.content.replace(imageLink, image_path)
                 lesson.imageLinks.push(image_path)
