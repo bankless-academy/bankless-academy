@@ -1,6 +1,6 @@
 import { QuestComponentType } from 'components/Quest/QuestComponent'
 
-export type SlideType = 'LEARN' | 'QUIZ' | 'QUEST' | 'POAP'
+export type SlideType = 'LEARN' | 'QUIZ' | 'QUEST' | 'POAP' | 'END'
 
 export interface LessonType {
   name: string
@@ -17,7 +17,7 @@ export interface LessonType {
   learnings: string
   learningActions: string
   knowledgeRequirements: string
-  quest: QuestComponentType
+  quest?: QuestComponentType
   imageLinks: string[]
   slides: {
     type: SlideType
