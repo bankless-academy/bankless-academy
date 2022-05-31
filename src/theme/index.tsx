@@ -17,16 +17,16 @@ export const theme = extendTheme(
     ...core,
     ...components,
     styles: {
-      // global: {
-      //   'html, body': {
-      //     fontFamily: 'calling-code',
-      //     fontSize: 'md',
-      //     color: 'whiteAlpha.900',
-      //   },
-      //   a: {
-      //     _hover: { textDecoration: 'none' },
-      //   },
-      // },
+      global: {
+        // 'html, body': {
+        //   fontFamily: 'calling-code',
+        //   fontSize: 'md',
+        //   color: 'whiteAlpha.900',
+        // },
+        a: {
+          color: '#B85FF1',
+        },
+      },
     },
     config: {
       // TODO LATER: uncomment

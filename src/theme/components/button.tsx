@@ -33,6 +33,7 @@ const paddingBig = { paddingLeft: '23px', paddingRight: '23px' }
 export default {
   Button: {
     baseStyle: {
+      color: 'white',
       _hover: {
         textDecoration: 'none !important',
       },

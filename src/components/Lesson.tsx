@@ -245,6 +245,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
       // get feedback on the last lesson
       // TODO: add a column on Notion with feedback form yes/no, same for slide comment
       if (lesson.slug === 'intro-to-defi') router.push('/feedback')
+      if (lesson.slug === 'wallet-basics') router.push('/community')
       else router.push('/lessons')
     }
     setSelectedAnswerNumber(null)
