@@ -19,34 +19,14 @@ const LessonCard = styled(Box)`
   /* backdrop-filter: blur(42px); */
 `
 
-// HACK: manually add previous POAP events claims
-// https://poap.gallery/event/6454 + https://poap.gallery/event/16394 = 55 + 330 = 385
-// https://poap.gallery/event/6455 + https://poap.gallery/event/21670 = 48 + 250 = 298
-const PREVIOUS_EVENTS_CLAIMED = [385, 298]
-
 const LessonCards: React.FC = () => {
-  const [numberOfPoapClaimed, setNumberOfPoapClaimed] = useState([])
+  const [stats, setStats]: any = useState(null)
 
-  useEffect((): void => {
-    // TODO: replace with tokensQuantityByEventId https://github.com/poap-xyz/poap-webapp/blob/2def482ffec93e6cbc4e3c5e5a18000805cc6c2b/src/api.ts#L1235
-    const promiseArray = LESSONS.map((q) => {
-      return axios.post(
-        'https://api.thegraph.com/subgraphs/name/poap-xyz/poap-xdai',
-        {
-          query: `{event(id: ${q.poapEventId}){ tokenCount }}`,
-        }
-      )
-    })
+  useEffect(() => {
     axios
-      .all(promiseArray)
-      .then((results) => {
-        setNumberOfPoapClaimed(
-          results.map(
-            (r, i) =>
-              (parseInt(r.data.data.event?.tokenCount) || 0) +
-              PREVIOUS_EVENTS_CLAIMED[i]
-          )
-        )
+      .get(`/api/stats`)
+      .then(function (res) {
+        setStats(res.data)
       })
       .catch(function (error) {
         console.error(error)
@@ -61,6 +41,8 @@ const LessonCards: React.FC = () => {
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
         // const numberOfSlides = lesson.slides.length
         const isPoapClaimed = localStorage.getItem(`poap-${lesson.slug}`)
+        const lessonCompleted =
+          (lesson.quest && stats?.lessonCompleted[lesson.quest]) || 0
         return (
           <LessonCard
             key={`lesson-${index}`}
@@ -84,7 +66,7 @@ const LessonCards: React.FC = () => {
                 ) : null}
               </Tag>
               <Text fontSize="sm">
-                {numberOfPoapClaimed[index]} Completions
+                {lessonCompleted > 0 && `${lessonCompleted} Completions`}
               </Text>
             </Box>
             <Link href={`/lessons/${lesson.slug}`}>
