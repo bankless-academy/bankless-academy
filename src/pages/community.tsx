@@ -25,14 +25,16 @@ const Community = (): JSX.Element => {
             gm.xyz
           </Link>
         </Heading>
-        <Box display="flex">
+        <Link target="_blank" href="https://gm.xyz/c/BanklessAcademy">
+          <Image m="auto" mb="8" src="/images/gm/1_Bankless_Academy.jpg" />
+        </Link>
+        <Box m="auto" maxW="500px">
           <Link target="_blank" href="https://gm.xyz/c/BanklessAcademy">
-            <Image m="auto" mb="8" src="/images/gm/1_Bankless_Academy.jpg" />
-            <Image m="auto" mb="8" maxW="600px" src="/images/gm/2_login.jpg" />
-            <Image m="auto" mb="8" maxW="600px" src="/images/gm/3_sign.jpg" />
-            <Image m="auto" mb="8" maxW="600px" src="/images/gm/4_eth.jpg" />
-            <Image m="auto" mb="8" maxW="600px" src="/images/gm/5_join.jpg" />
-            <Image m="auto" mb="8" maxW="600px" src="/images/gm/6_topics.jpg" />
+            <Image mb="8" src="/images/gm/2_login.jpg" />
+            <Image mb="8" src="/images/gm/3_sign.jpg" />
+            <Image mb="8" src="/images/gm/4_eth.jpg" />
+            <Image mb="8" src="/images/gm/5_join.jpg" />
+            <Image mb="8" src="/images/gm/6_topics.jpg" />
           </Link>
         </Box>
       </Box>
