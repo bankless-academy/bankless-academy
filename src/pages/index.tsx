@@ -360,16 +360,10 @@ const HomePage = (): JSX.Element => {
                 target="_blank"
                 href="https://twitter.com/BanklessAcademy"
               >
-                <Image mr="1" width="18px" src="/images/twitter.svg" /> Twitter
+                Twitter
               </Link>
               <span> | </span>
-              <Link
-                display="flex"
-                target="_blank"
-                href="https://gm.xyz/c/BanklessAcademy"
-              >
-                Community
-              </Link>
+              <NextLink href="community">Community</NextLink>
               <span> | </span>
               <Link
                 target="_blank"
