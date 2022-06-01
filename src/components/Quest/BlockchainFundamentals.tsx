@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   InputGroup,
   InputLeftAddon,
@@ -14,11 +14,21 @@ const BlockchainFundamentals = (): {
   questComponent: React.ReactElement
 } => {
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null)
-  const [from, setFrom] = useState('')
-  const [to, setTo] = useState('')
+  const [from, setFrom] = useState(
+    localStorage.getItem('quest-blockchain-fundamentals-from')
+  )
+  const [to, setTo] = useState(
+    localStorage.getItem('quest-blockchain-fundamentals-to')
+  )
   const [isFromCorrect, setIsFromCorrect] = useState(false)
   const [isToCorrect, setIsToCorrect] = useState(false)
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+
+  useEffect(() => {
+    setIsFromCorrect(from === '0x0ef696b2da7e7c6a3113681ce57344b66bbcf559')
+    setIsToCorrect(to === '0x38f9282576c9ef837423ddbfaf58650f8de28dd1')
+    validateQuest(from, to)
+  }, [])
 
   const validateQuest = (from, to) => {
     setIsAnswerCorrect(
@@ -26,6 +36,8 @@ const BlockchainFundamentals = (): {
         to === '0x38f9282576c9ef837423ddbfaf58650f8de28dd1'
     )
   }
+
+  // TODO: save quest answers in localStorage
 
   return {
     isQuestCompleted: isAnswerCorrect,
@@ -37,7 +49,7 @@ const BlockchainFundamentals = (): {
             <p>
               <>
                 {
-                  'To validate this quest, past the "from" and "to" addresses of the first transaction of block #14850714 '
+                  'To validate this quest, paste the "from" and "to" addresses of the first transaction of block #14850714 '
                 }
                 <a
                   href="https://etherscan.io/txs?block=14850714"
@@ -56,6 +68,10 @@ const BlockchainFundamentals = (): {
                 mb="8"
                 onChange={(e): void => {
                   setFrom(e.target.value)
+                  localStorage.setItem(
+                    'quest-blockchain-fundamentals-from',
+                    e.target.value
+                  )
                   setIsFromCorrect(
                     e.target.value ===
                       '0x0ef696b2da7e7c6a3113681ce57344b66bbcf559'
@@ -76,6 +92,10 @@ const BlockchainFundamentals = (): {
                 value={to}
                 onChange={(e): void => {
                   setTo(e.target.value)
+                  localStorage.setItem(
+                    'quest-blockchain-fundamentals-to',
+                    e.target.value
+                  )
                   setIsToCorrect(
                     e.target.value ===
                       '0x38f9282576c9ef837423ddbfaf58650f8de28dd1'
