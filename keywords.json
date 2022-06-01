@@ -4,7 +4,7 @@
     "color": "rgba(128, 128, 128, 1)"
   },
   "blockchain": {
-    "definition": "A shared, unchangeable database or record of transactions.",
+    "definition": "A shared, unchangeable database, or leger, of recorded transactions.",
     "color": "rgba(128, 128, 128, 1)"
   },
   "public key": {
@@ -128,7 +128,7 @@
     "color": "rgba(128, 128, 128, 1)"
   },
   "Block": {
-    "definition": "A container that holds data on the blockchain.",
+    "definition": "A file that holds data on the blockchain.",
     "color": "rgba(128, 128, 128, 1)"
   },
   "chain": {
@@ -158,5 +158,23 @@
   "POAP": {
     "definition": "A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson.",
     "color": "rgba(128, 128, 128, 1)"
+  },
+  "hashing function": {
+    "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
+  },
+  "block hash": {
+    "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
+  },
+  "transaction hash": {
+    "definition": "The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions."
+  },
+  "digital signature": {
+    "definition": "The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space."
+  },
+  "ledger": {
+    "definition": "A record of all transactions that have ever occurred."
+  },
+  "blockchain architecture": {
+    "definition": "The structures for how data is stored in blockchain technology."
   }
 }

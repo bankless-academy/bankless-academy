@@ -28,7 +28,7 @@ const args = process.argv
 const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : DEFAULT_NOTION_ID
 console.log('NOTION_ID', NOTION_ID)
 
-const LIMIT_NUMBER_OF_LESSONS = 2
+const LIMIT_NUMBER_OF_LESSONS = 3
 
 const slugify = (text) => text.toLowerCase()
   .replace(/<[^>]*>?/gm, '') // remove tags
