@@ -143,65 +143,67 @@ const HomePage = (): JSX.Element => {
               Available Lessons
             </Heading>
             <Box>
-              {LESSONS.map((lesson, key) => {
-                const isPoapClaimed = localStorage.getItem(
-                  `poap-${lesson.slug}`
-                )
-                const isLessonStarted =
-                  (localStorage.getItem(lesson.slug) || 0) > 0
-                const LessonImage = (
-                  <LessonBanner
-                    cursor="pointer"
-                    // overflow="hidden"
-                    style={{
-                      aspectRatio: '1.91/1',
-                    }}
-                    maxW="600px"
-                  >
-                    <NextLink href={`/lessons/${lesson.slug}`}>
-                      <Image src={lesson.lessonImageLink} />
-                    </NextLink>
-                  </LessonBanner>
-                )
-                const LessonDescription = (
-                  <Box alignSelf="center" mt="4">
-                    <Heading fontSize="2xl">{lesson.name}</Heading>
-                    <Text fontSize="lg" my="4">
-                      {lesson.marketingDescription}
-                    </Text>
-                    <NextLink href={`/lessons/${lesson.slug}`}>
-                      <Button variant="primary" mt="4">
-                        {isPoapClaimed
-                          ? 'Review Lesson'
-                          : isLessonStarted
-                          ? 'Resume Lesson'
-                          : 'Start Lesson'}
-                      </Button>
-                    </NextLink>
-                  </Box>
-                )
-                return (
-                  <LessonGrid
-                    columns={{ sm: 1, md: 2, lg: 2 }}
-                    key={key}
-                    gap={6}
-                    py="10"
-                    mx={isSmallScreen ? '0' : '12'}
-                  >
-                    {key % 2 === 0 || isSmallScreen ? (
-                      <>
-                        {LessonImage}
-                        {LessonDescription}
-                      </>
-                    ) : (
-                      <>
-                        {LessonDescription}
-                        {LessonImage}
-                      </>
-                    )}
-                  </LessonGrid>
-                )
-              })}
+              {LESSONS.filter((lesson) => lesson.isFeaturedOnHomepage).map(
+                (lesson, key) => {
+                  const isPoapClaimed = localStorage.getItem(
+                    `poap-${lesson.slug}`
+                  )
+                  const isLessonStarted =
+                    (localStorage.getItem(lesson.slug) || 0) > 0
+                  const LessonImage = (
+                    <LessonBanner
+                      cursor="pointer"
+                      // overflow="hidden"
+                      style={{
+                        aspectRatio: '1.91/1',
+                      }}
+                      maxW="600px"
+                    >
+                      <NextLink href={`/lessons/${lesson.slug}`}>
+                        <Image src={lesson.lessonImageLink} />
+                      </NextLink>
+                    </LessonBanner>
+                  )
+                  const LessonDescription = (
+                    <Box alignSelf="center" mt="4">
+                      <Heading fontSize="2xl">{lesson.name}</Heading>
+                      <Text fontSize="lg" my="4">
+                        {lesson.marketingDescription}
+                      </Text>
+                      <NextLink href={`/lessons/${lesson.slug}`}>
+                        <Button variant="primary" mt="4">
+                          {isPoapClaimed
+                            ? 'Review Lesson'
+                            : isLessonStarted
+                            ? 'Resume Lesson'
+                            : 'Start Lesson'}
+                        </Button>
+                      </NextLink>
+                    </Box>
+                  )
+                  return (
+                    <LessonGrid
+                      columns={{ sm: 1, md: 2, lg: 2 }}
+                      key={key}
+                      gap={6}
+                      py="10"
+                      mx={isSmallScreen ? '0' : '12'}
+                    >
+                      {key % 2 === 0 || isSmallScreen ? (
+                        <>
+                          {LessonImage}
+                          {LessonDescription}
+                        </>
+                      ) : (
+                        <>
+                          {LessonDescription}
+                          {LessonImage}
+                        </>
+                      )}
+                    </LessonGrid>
+                  )
+                }
+              )}
             </Box>
           </Box>
           <Box mt="16">
@@ -363,7 +365,9 @@ const HomePage = (): JSX.Element => {
                 Twitter
               </Link>
               <span> | </span>
-              <NextLink href="community">Community</NextLink>
+              <NextLink href="/lessons/bankless-academy-community">
+                Community
+              </NextLink>
               <span> | </span>
               <Link
                 target="_blank"
