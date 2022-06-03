@@ -628,20 +628,20 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               Prev
             </Button>
           )}
-          {/* {!isSmallScreen && slide.notionId && (
-              <Tooltip
-                hasArrow
-                label="Help us improve the content by commenting this slide on Notion"
+          {lesson.isCommentsEnabled && !isSmallScreen && slide.notionId && (
+            <Tooltip
+              hasArrow
+              label="Help us improve the content by commenting this slide on Notion"
+            >
+              <Link
+                target="_blank"
+                rel="noreferrer"
+                href={`https://www.notion.so/${lesson.notionId}#${slide.notionId}`}
               >
-                <Link
-                  target="_blank"
-                  rel="noreferrer"
-                  href={`https://www.notion.so/${lesson.notionId}#${slide.notionId}`}
-                >
-                  <Button variant="outline">🐞 comment this slide</Button>
-                </Link>
-              </Tooltip>
-            )} */}
+                <Button variant="outline">🐞 comment this slide</Button>
+              </Link>
+            </Tooltip>
+          )}
         </HStack>
         <HStack>
           <Button

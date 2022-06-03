@@ -24,6 +24,7 @@ const KEY_MATCHING = {
   Quest: 'quest',
   'Publication status': 'publicationStatus',
   'Featured on homepage': 'isFeaturedOnHomepage',
+  'Enable Comments': 'isCommentsEnabled',
 }
 
 const args = process.argv
@@ -71,6 +72,8 @@ axios
       if (lesson.learningActions === undefined) lesson.learningActions = ''
       if (lesson.learnings === undefined) lesson.learnings = ''
       if (lesson.isFeaturedOnHomepage === undefined) lesson.isFeaturedOnHomepage = false
+      if (lesson.isCommentsEnabled === undefined) lesson.isCommentsEnabled = false
+      
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)
         .then((htmlPage) => {

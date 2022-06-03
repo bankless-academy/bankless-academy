@@ -21,6 +21,7 @@ export interface LessonType {
   imageLinks: string[]
   publicationStatus: 'publish' | 'hidden' | 'preview'
   isFeaturedOnHomepage: boolean
+  isCommentsEnabled: boolean
   slides: {
     type: SlideType
     title: string

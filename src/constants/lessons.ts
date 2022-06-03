@@ -16,6 +16,7 @@ const LESSONS: LessonType[] = [
     quest: 'WalletBasics',
     publicationStatus: 'publish',
     isFeaturedOnHomepage: true,
+    isCommentsEnabled: false,
     notionId: '98405bd0f2b94bb2a3079eed504a011e',
     slug: 'wallet-basics',
     imageLinks: [
@@ -243,6 +244,7 @@ const LESSONS: LessonType[] = [
     quest: 'IntroToDeFi',
     publicationStatus: 'publish',
     isFeaturedOnHomepage: true,
+    isCommentsEnabled: false,
     notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
     slug: 'intro-to-defi',
     imageLinks: [
@@ -459,6 +461,7 @@ const LESSONS: LessonType[] = [
     name: 'Bankless Academy Community',
     publicationStatus: 'hidden',
     isFeaturedOnHomepage: false,
+    isCommentsEnabled: false,
     notionId: '44b8a4937fcd43fa8e12400cb75885a1',
     slug: 'bankless-academy-community',
     imageLinks: [
@@ -507,6 +510,7 @@ const LESSONS: LessonType[] = [
     quest: 'BlockchainFundamentals',
     publicationStatus: 'preview',
     isFeaturedOnHomepage: false,
+    isCommentsEnabled: true,
     notionId: '562dba7dbd3949b480be367a64821cdf',
     slug: 'blockchain-fundamentals',
     imageLinks: [
