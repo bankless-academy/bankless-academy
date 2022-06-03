@@ -22,7 +22,7 @@ const Stats = (): JSX.Element => {
     axios
       .get(`/api/stats`)
       .then(function (res) {
-        setStats(res.data)
+        if (!res.data.error) setStats(res.data)
       })
       .catch(function (error) {
         console.error(error)

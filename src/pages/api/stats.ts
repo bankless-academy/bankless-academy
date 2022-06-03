@@ -37,17 +37,15 @@ export default async function handler(
     for (const event of poapDistributed) {
       stats.poapDistributed[event.event_id] = event.poapDistributed
     }
-    if (!QUESTS.includes(undefined)) {
-      const lessonCompleted = await db(TABLES.quests)
-        .count('id', { as: 'lessonCompleted' })
-        .distinct('quest')
-        .whereIn('quest', QUESTS)
-        .groupBy('quest')
-        .orderBy('quest')
-      for (const event of lessonCompleted) {
-        if (event.quest)
-          stats.lessonCompleted[event.quest] = event.lessonCompleted
-      }
+    const lessonCompleted = await db(TABLES.quests)
+      .count('id', { as: 'lessonCompleted' })
+      .distinct('quest')
+      .whereIn('quest', QUESTS)
+      .groupBy('quest')
+      .orderBy('quest')
+    for (const event of lessonCompleted) {
+      if (event.quest)
+        stats.lessonCompleted[event.quest] = event.lessonCompleted
     }
     return res.json(stats)
   } catch (error) {
