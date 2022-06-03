@@ -6,19 +6,22 @@ export interface LessonType {
   name: string
   slug: string
   notionId: string
-  poapEventId: number
+  poapEventId?: number
   description: string
   marketingDescription: string
   duration: number
   difficulty: 'Easy' | 'Advanced' | 'Expert'
-  poapImageLink: string
-  lessonImageLink: string
-  socialImageLink: string
+  poapImageLink?: string
+  lessonImageLink?: string
+  socialImageLink?: string
   learnings: string
   learningActions: string
   knowledgeRequirements?: string
   quest?: QuestComponentType
   imageLinks: string[]
+  publicationStatus: 'publish' | 'hidden' | 'preview'
+  isFeaturedOnHomepage: boolean
+  isCommentsEnabled: boolean
   slides: {
     type: SlideType
     title: string

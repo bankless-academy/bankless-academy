@@ -34,18 +34,20 @@ export const DefaultProviderName = 'DEFAULT'
 
 export const INFURA_ID = '18533a1dfcd146b8994f38b8e6af372c'
 
-export const POAP_EVENT_IDS: string[] = LESSONS.map((lesson) =>
-  lesson.poapEventId.toString()
-)
+export const POAP_EVENT_IDS: string[] = LESSONS.filter(
+  (lesson) => lesson.poapEventId
+).map((lesson) => lesson.poapEventId?.toString())
 
 export const OLD_POAP_EVENT_IDS: string[] = ['6454', '6455', '16394', '21670']
 
 export const POAP_QUESTS = {}
-LESSONS.map((lesson) => {
+LESSONS.filter((lesson) => lesson.poapEventId && lesson.quest).map((lesson) => {
   POAP_QUESTS[lesson.poapEventId.toString()] = lesson.quest
 })
 
-export const QUESTS: string[] = LESSONS.map((lesson) => lesson.quest)
+export const QUESTS: string[] = LESSONS.filter((lesson) => lesson.quest).map(
+  (lesson) => lesson.quest
+)
 
 export const POAP_EMAIL_CONTACT = 'poap@banklessacademy.com'
 

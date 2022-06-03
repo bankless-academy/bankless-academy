@@ -22,13 +22,14 @@ const KEY_MATCHING = {
   Description: 'description',
   Name: 'name',
   Quest: 'quest',
+  'Publication status': 'publicationStatus',
+  'Featured on homepage': 'isFeaturedOnHomepage',
+  'Enable Comments': 'isCommentsEnabled',
 }
 
 const args = process.argv
 const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : DEFAULT_NOTION_ID
 console.log('NOTION_ID', NOTION_ID)
-
-const LIMIT_NUMBER_OF_LESSONS = 3
 
 const slugify = (text) => text.toLowerCase()
   .replace(/<[^>]*>?/gm, '') // remove tags
@@ -49,22 +50,34 @@ axios
   .then((notionRows) => {
     const lessons = []
     const promiseArray = notionRows.data.map((notion, index) => {
-      if (index + 1 > LIMIT_NUMBER_OF_LESSONS) return
       console.log('Notion lesson link: ', `${POTION_API}/html?id=${notion.id}`)
+      const lesson = Object.keys(KEY_MATCHING).reduce(
+        (obj, k) =>
+          Object.assign(obj, {
+            // transform to number if the string contains a number
+            [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k]))
+              ? notion.fields[k]
+              : parseInt(notion.fields[k]),
+          }),
+        {}
+      )
+      if (lesson.publicationStatus === undefined) return
+
+      if (lesson.description === undefined) lesson.description = ''
+      if (lesson.socialImageLink === undefined) lesson.socialImageLink = null
+      if (lesson.poapEventId === undefined) lesson.poapEventId = null
+      if (lesson.poapImageLink === undefined) lesson.poapImageLink = null
+      if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
+      if (lesson.marketingDescription === undefined) lesson.marketingDescription = ''
+      if (lesson.learningActions === undefined) lesson.learningActions = ''
+      if (lesson.learnings === undefined) lesson.learnings = ''
+      if (lesson.isFeaturedOnHomepage === undefined) lesson.isFeaturedOnHomepage = false
+      if (lesson.isCommentsEnabled === undefined) lesson.isCommentsEnabled = false
+      
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)
         .then((htmlPage) => {
           // replace keys
-          const lesson = Object.keys(KEY_MATCHING).reduce(
-            (obj, k) =>
-              Object.assign(obj, {
-                // transform to number if the string contains a number
-                [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k]))
-                  ? notion.fields[k]
-                  : parseInt(notion.fields[k]),
-              }),
-            {}
-          )
           lesson.notionId = notion.id.replace(/-/g, '')
           lesson.slug = slugify(lesson.name)
           lesson.imageLinks = []
@@ -171,7 +184,7 @@ axios
               for (const word in keywords) {
                 const search = '<code>' + word.toLowerCase() + '</code>'
                 if (content.includes(search)) {
-                  console.log('word found: ', word)
+                  // console.log('word found: ', word)
                   slide.content = slide.content.replace(
                     new RegExp(search, 'gi'),
                     `<span class="tooltip" definition="${keywords[word].definition}">$&</span>`
@@ -221,12 +234,13 @@ axios
           //   type: 'POAP',
           //   title: `Collect your <span class="tooltip" definition="${keywords['POAP'].definition}">POAP</span>`,
           // })
-          slides.push({
-            type: 'END',
-            title: 'End of lesson',
-          })
+          if (lesson.slug !== 'bankless-academy-community')
+            slides.push({
+              type: 'END',
+              title: 'End of lesson',
+            })
           lesson.slides = slides
-          console.log('lesson', lesson)
+          // console.log('lesson', lesson)
           lessons[index] = lesson
           // TODO: remove old images (diff between old/new lesson.imageLinks)
         })

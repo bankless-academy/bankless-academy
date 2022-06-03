@@ -245,8 +245,10 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
       // get feedback on the last lesson
       // TODO: add a column on Notion with feedback form yes/no, same for slide comment
       if (lesson.slug === 'intro-to-defi') router.push('/feedback')
-      if (lesson.slug === 'wallet-basics') router.push('/community')
-      else router.push('/lessons')
+      else if (lesson.slug === 'wallet-basics') {
+        // HACK: manual redirect
+        document.location.href = '/lessons/bankless-academy-community'
+      } else router.push('/lessons')
     }
     setSelectedAnswerNumber(null)
   }
@@ -598,12 +600,14 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           )}
           {slide.type === 'END' && (
             <VStack flex="auto" minH="420px" justifyContent="center">
-              <ChakraImage
-                src={lesson.poapImageLink}
-                width="250px"
-                height="250px"
-                mb="2"
-              />
+              {lesson.poapImageLink && (
+                <ChakraImage
+                  src={lesson.poapImageLink}
+                  width="250px"
+                  height="250px"
+                  mb="2"
+                />
+              )}
               <h2>
                 {`Congrats for finishing the "${lesson.name}" lesson! 🥳`}
               </h2>
@@ -624,20 +628,20 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               Prev
             </Button>
           )}
-          {/* {!isSmallScreen && slide.notionId && (
-              <Tooltip
-                hasArrow
-                label="Help us improve the content by commenting this slide on Notion"
+          {lesson.isCommentsEnabled && !isSmallScreen && slide.notionId && (
+            <Tooltip
+              hasArrow
+              label="Help us improve the content by commenting this slide on Notion"
+            >
+              <Link
+                target="_blank"
+                rel="noreferrer"
+                href={`https://www.notion.so/${lesson.notionId}#${slide.notionId}`}
               >
-                <Link
-                  target="_blank"
-                  rel="noreferrer"
-                  href={`https://www.notion.so/${lesson.notionId}#${slide.notionId}`}
-                >
-                  <Button variant="outline">🐞 comment this slide</Button>
-                </Link>
-              </Tooltip>
-            )} */}
+                <Button variant="outline">🐞 comment this slide</Button>
+              </Link>
+            </Tooltip>
+          )}
         </HStack>
         <HStack>
           <Button
