@@ -477,7 +477,7 @@ const LESSONS: LessonType[] = [
     slides: [
       {
         type: 'LEARN',
-        notionId: '29a3979b76f3484fad91478a9c0d925f',
+        notionId: 'd3c2491734454804b2cbb30bca78d566',
         title: 'Join our community',
         content: '<div class="bloc1"><p>Go to <a href=\'http://gm.xyz/c/BanklessAcademy\'>gm.xyz/c/BanklessAcademy</a> and sign in by using the \'Sign In With Ethereum\' button on the top-right corner.</p></div><div class="bloc2"><img src=\'/lesson/bankless-academy-community/join-our-community-30cdcb51.jpg\'></div>'
       },
@@ -485,7 +485,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '8baa3a6e2ed840ff841397dd8db35727',
         title: 'How to log in',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-cc33b158.jpg\'></div><div class="bloc-b"><p>Login with MetaMask or another wallet</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-d89ca565.jpg\'></div><div class="bloc-b"><p>Sign with your wallet (doesn\'t cost anything).</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-0cbd3e6b.jpg\'></div><div class="bloc-b"><p>Make sure your wallet contains at least 0.001 ETH.</p></div></div>'
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-cc33b158.jpg\'></div><div class="bloc-b"><p>Login with MetaMask or another wallet</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-d89ca565.jpg\'></div><div class="bloc-b"><p>Sign with your wallet (no cost).</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-0cbd3e6b.jpg\'></div><div class="bloc-b"><p>Make sure your wallet contains at least 0.001 ETH (will not cost anything).</p></div></div>'
       },
       {
         type: 'LEARN',
@@ -516,18 +516,19 @@ const LESSONS: LessonType[] = [
     imageLinks: [
       '/lesson/blockchain-fundamentals/introduction-cb17ace8.png',
       '/lesson/blockchain-fundamentals/blockchain-structure-f551e6ff.png',
-      '/lesson/blockchain-fundamentals/examining-the-ledger-90f3a099.png',
+      '/lesson/blockchain-fundamentals/examining-the-ledger-ebe897cd.png',
+      '/lesson/blockchain-fundamentals/transactions-on-the-ledger-6320e097.png',
       '/lesson/blockchain-fundamentals/block-anatomy-f78e48b3.png',
-      '/lesson/blockchain-fundamentals/inside-a-block-a25188c4.png',
+      '/lesson/blockchain-fundamentals/inside-a-block-36eb53a8.png',
       '/lesson/blockchain-fundamentals/individual-transactions-f01a8752.png',
-      '/lesson/blockchain-fundamentals/looking-at-addresses-040566ac.png'
+      '/lesson/blockchain-fundamentals/user-addresses-040566ac.png'
     ],
     slides: [
       {
         type: 'LEARN',
         notionId: '2541f10fa3264827ac57b1cf863254fb',
         title: '<strong>I</strong><strong>ntroduction</strong>',
-        content: '<div class="bloc1"><p><span class="tooltip" definition="A shared, unchangeable database, or leger, of recorded transactions.">Blockchain</span> technology is a revolutionary way of storing and tracking data, while also making that data accessible to anyone. It is a way of organizing data in a single public list of all transactions that anyone can view but cannot edit the past history of. This public list of transactions is collectively known as the blockchain <span class="tooltip" definition="A record of all transactions that have ever occurred.">ledger</span>.</p><p>This lesson will not go into the cryptographic details of blockchain technology, instead we will focus on blockchain from the end-user’s perspective. There will be a subsequent Blockchain Theory lesson that goes into that topic in much more detail.</p><p>For this lesson, we will be using a blockchain tool called a block explorer to look into the specifics of the Ethereum blockchain structure in this lesson; we will zoom in on the Ethereum blockchain to view the list of blocks, the transactions within those blocks, and the details of each individual transaction.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/introduction-cb17ace8.png\'></div>'
+        content: '<div class="bloc1"><p><span class="tooltip" definition="A shared, unchangeable database, or leger, of recorded transactions.">Blockchain</span> technology is a revolutionary way of storing and tracking data, while also making that data accessible to anyone. It is a way of organizing data in a single public list of all historical transactions that anyone can view but cannot edit. This public list of transactions is collectively known as the blockchain <span class="tooltip" definition="A record of all transactions that have ever occurred.">ledger</span>.</p><p>This lesson will not go into the cryptographic details of blockchain technology, instead, we will focus on blockchain from the end-user’s perspective. A subsequent Blockchain Theory lesson will go into that topic in more detail.</p><p>For this lesson, we will be using a blockchain tool called a block explorer to look into the specifics of the Ethereum blockchain structure in this lesson; we will zoom in on the Ethereum blockchain to view the <strong>list</strong> of blocks, the <strong>transactions</strong> within those blocks, and the <strong>details</strong> of each individual transaction.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/introduction-cb17ace8.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -555,18 +556,24 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'edad96fceca6484eb72f5b301f33dea2',
         title: 'Examining the Ledger',
-        content: '<div class="bloc1"><p>The <span class="tooltip" definition="A record of all transactions that have ever occurred.">ledger</span> is the list of ALL transactions ever made on a blockchain, and anyone can see it. New transactions are added onto the ledger and update the balances stored at each address, and past transactions cannot be altered. It’s like allowing anyone to look at your all-time bank account transaction history, but for everyone, all the time. </p><p>Let’s look at some example transactions:</p><ul><li>Alice sends 5 ETH to Bob</li><li>Bob sends 2 ETH to Charlie</li></ul><p>Transactions show the <em>change </em>in the amount of cryptocurrency for each user* so the total result of all transactions IS the amount of cryptocurrency each user* has.</p><p>*Note: Technically, it’s the amount of cryptocurrency for each <em>address</em>, but we’ll get into that later.</p><hr><p>⇒ Alice has lost 5 ETH</p><p>⇒ Bob has gained 3 ETH total (received 5, sent 2)</p><p>⇒ Charlie has gained 2 ETH</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/examining-the-ledger-90f3a099.png\'></div>'
+        content: '<div class="bloc1"><p>The <span class="tooltip" definition="A record of all transactions that have ever occurred.">ledger</span> is the list of ALL transactions ever made on a blockchain, and anyone can see it. When new transactions are added on to the ledger, balances stored at each address get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever. </p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/examining-the-ledger-ebe897cd.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '1af211fce04445b18b017c8ede82fe09',
+        title: 'Transactions on the Ledger',
+        content: '<div class="bloc1"><p>Let’s look at some example transactions:</p><ul><li>Alice sends 5 ETH to Bob</li><li>Bob sends 2 ETH to Charlie</li></ul><p>Individual transactions show the <em>change </em>in the amount of cryptocurrency for each address so the total result of all transactions IS the amount of cryptocurrency each address has.</p><hr><p>⇒ Alice has lost 5 ETH</p><p>⇒ Bob has gained 3 ETH total (received 5, sent 2)</p><p>⇒ Charlie has gained 2 ETH</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/transactions-on-the-ledger-6320e097.png\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: 'eb540e3fb4b040e8a8908fec44d158f5',
+        notionId: '07e7cd73bf0b44af9cc46350430df624',
         title: '✅ quiz',
         quiz: {
-          question: 'Which of the following statements are true for blockchain ledgers?',
+          question: 'Which of the following statement(s) are is/true for blockchain ledgers?',
           rightAnswerNumber: 4,
           answers: [
             'All transactions are public and past transactions are unchangeable',
-            'The ledger tracks how much cryptocurrency each user currently has',
+            'The ledger tracks how much cryptocurrency each address currently has',
             'The ledger grows as new transactions are added to it',
             'All of the above'
           ],
@@ -577,7 +584,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'c344b7d4cf204ce1a627e1c3ea21d299',
         title: 'Decentralization',
-        content: '<div class="bloc1"><p>Not only are transactions included on a <span class="tooltip" definition="A shared, unchangeable database, or leger, of recorded transactions.">blockchain</span> ledger unchangeable, they are also shared and distributed amongst a large network of computers. To make sure that no single entity controls the ledger, each device on the network has a copy of the same data.</p><p>This shared data is what makes the blockchain ledgerdecentralized. No single authority or entity controls the data and it can be viewed by anyone. </p><p>We will see specifics of how this data gets updated and how we ensure everyone has a copy of the same data all the time in our upcoming Blockchain Theory lesson. For this lesson, just know that the ledger data is shared by every computer running on the Ethereum network.</p></div>'
+        content: '<div class="bloc1"><p>Not only are transactions included on a <span class="tooltip" definition="A shared, unchangeable database, or leger, of recorded transactions.">blockchain</span> ledger unchangeable, they are also shared and distributed amongst a large network of computers. To make sure that no single entity controls the ledger, each device on the network has a copy of the same data.</p><p>This shared data is what makes the blockchain ledgerdecentralized. No single authority or entity controls the data and it can be viewed by anyone. </p><p>We will see specifics of how this data gets updated and how we ensure everyone has a copy of the same data all the time in our upcoming Blockchain Theory lesson. For this lesson, just remember that the ledger data is shared by every computer running on the Ethereum network.</p></div>'
       },
       {
         type: 'QUIZ',
@@ -599,7 +606,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '6d45c90a4b094caa8d1c8d2c71523284',
         title: 'Block Anatomy',
-        content: '<div class="bloc1"><p>An important feature of blockchains is that past transaction data cannot be changed after it has been included in a block. This is because each block has a unique <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span>, like a fingerprint, that is used to link the blocks together one after another. No one can change past transactions without changing that fingerprint and EVERY block that follows it.</p><p>So each <span class="tooltip" definition="A file that holds data on the blockchain.">block</span> is simply a group of transactions put together in one file along with that block’s <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span>. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected blockchain.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/block-anatomy-f78e48b3.png\'></div>'
+        content: '<div class="bloc1"><p>An important feature of blockchains is that past transaction data cannot be changed after it has been included in a block. This is because each block has a unique <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span>, like a fingerprint, that is used to link the blocks together one after another. No one can change past transactions without changing that fingerprint and the fingerprint of EVERY block that follows it.</p><p>So each <span class="tooltip" definition="A file that holds data on the blockchain.">block</span> is simply a group of transactions put together in one file along with that block’s <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span>. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected block<strong><em>chain</em></strong>.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/block-anatomy-f78e48b3.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -621,7 +628,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '6f1cc1133e8e4b86b3579fb4d4eb4a1c',
         title: 'Inside a Block',
-        content: '<div class="bloc1"><p>Looking within blocks, we see a list of transactions and some data about who created the block, for this lesson just know that a <span class="tooltip" definition="A file that holds data on the blockchain.">block</span> is a digital file that holds a list of transactions.</p><p>From our example earlier when discussing the blockchain ledger, both of those transactions might be grouped within one block, or spread out into multiple blocks over time. But no matter what block they are included in, they are all added to the overall blockchain ledger eventually.</p><ul><li>iSpeakNerd sends 5 ETH to Ornella</li><li>Ornella sends 2 ETH to Tetranome</li></ul><p>What’s the chain part of blockchain? Every block must be linked to the previous one by referencing the previous block’s unique identifier, its <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span>. This prevents fraud by ensuring past blocks (and the transactions within them) can’t be changed. They are chained together to form one connected blockchain.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/inside-a-block-a25188c4.png\'></div>'
+        content: '<div class="bloc1"><p>Looking within blocks, we see a list of transactions and some data about who created the block. A <span class="tooltip" definition="A file that holds data on the blockchain.">block</span> is a digital file that holds a list of transactions.</p><p>From our example earlier when discussing the blockchain ledger, both of those transactions might be grouped within one block, or spread out into multiple blocks over time. But no matter what block they are included in, they are all added to the overall blockchain ledger eventually.</p><ul><li>Alice sends 5 ETH to Bob</li><li>Bob sends 2 ETH to Charlie</li></ul><p>Remember that each block must also reference the past block’s <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span> to form the chain of blocks, the blockchain.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/inside-a-block-36eb53a8.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -643,7 +650,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'a9a1ce74d04c439f97249b2000964e5e',
         title: 'Individual Transactions',
-        content: '<div class="bloc1"><p>The data on any blockchain is simply a list of transactions, records of currency moved between users. Each transaction must be signed by the sender’s <span class="tooltip" definition="The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space.">digital signature</span> to be valid. </p><p>This is what you do when you confirm a transaction with a wallet, you are signing with your digital signature to authorize a transaction. You can think of it as the digital equivalent of physically signing a check, receipt, or credit card transaction.</p><p>Transactions can be simple, like sending crypto assets, or more complex, such as swapping crypto assets or deploying smart contracts. </p><p>Finally, each transaction has a unique digital identifier, called its <span class="tooltip" definition="The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions.">transaction hash</span>, that no other transaction has. This makes it easy to refer to any single transaction later on and ensures that the details of that transaction can’t be changed afterwards.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/individual-transactions-f01a8752.png\'></div>'
+        content: '<div class="bloc1"><p>The data on any blockchain is simply a list of transactions, records of currency moved between users. Each transaction must be signed by the sender’s <span class="tooltip" definition="The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space.">digital signature</span> to be valid. </p><p>This is what you do when you confirm a transaction with a wallet, you are signing with your digital signature to authorize a transaction. You can think of it as the digital equivalent of physically signing a check, receipt, or credit card transaction.</p><p>Transactions can be simple, like sending crypto assets, or more complex, such as swapping crypto assets or deploying smart contracts. </p><p>Finally, each transaction has a unique digital identifier, called its <span class="tooltip" definition="The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions.">transaction hash</span>, that no other transaction has. This makes it easy to refer to any single transaction later on and ensures that the details of that transaction can’t be changed afterward.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/individual-transactions-f01a8752.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -664,8 +671,8 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: 'b4f0ce31ff20480aa97dd69b2c7b091c',
-        title: 'Looking at Addresses',
-        content: '<div class="bloc1"><p>An address is a public identifier that anyone can look up on the blockchain. Like an email address, anyone can sends funds to it but only someone who controls the <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address.">private key</span> can unlock and use the funds at that address.</p><p>On Ethereum, an address always starts with <em>0x_________</em> and is 42 characters of numbers and letters derived from the <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you.">public key</span> of that address.</p><p>When looking at transactions in a block explorer, we can see the From: and To: addresses of each transaction. This doesn’t tell us who the <em>people </em>are who control those addresses, but allows any user to track the movement of cryptocurrency throughout the blockchain ledger.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/looking-at-addresses-040566ac.png\'></div>'
+        title: 'User Addresses',
+        content: '<div class="bloc1"><p>An address is a public identifier that anyone can look up on the blockchain. Like an email address, anyone can send funds to it but only someone who controls the <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address.">private key</span> can unlock and use the funds at that address.</p><p>On Ethereum, an address always starts with <em>0x_________</em> and is 42 characters of numbers and letters derived from the <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you.">public key</span> of that address.</p><p>When looking at a single transaction in a block explorer, we can see the From: and To: addresses. This doesn’t tell us who the <em>people </em>are who control those addresses but allows any user to track the movement of cryptocurrency throughout the blockchain ledger.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/user-addresses-040566ac.png\'></div>'
       },
       {
         type: 'QUIZ',
