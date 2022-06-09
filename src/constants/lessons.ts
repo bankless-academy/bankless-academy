@@ -459,6 +459,7 @@ const LESSONS: LessonType[] = [
     difficulty: 'Easy',
     description: '',
     name: 'Bankless Academy Community',
+    quest: 'BanklessAcademyCommunity',
     publicationStatus: 'hidden',
     isFeaturedOnHomepage: false,
     isCommentsEnabled: false,
@@ -492,6 +493,15 @@ const LESSONS: LessonType[] = [
         notionId: 'd88acd5ee49c4fa88e9dc1c4fc136e80',
         title: 'Join Bankless Academy',
         content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/join-bankless-academy-e73001b3.jpg\'></div><div class="bloc-b"><p>Join the Bankless Academy community</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/join-bankless-academy-aac3976a.jpg\'></div><div class="bloc-b"><p>Follow our AMAs in 🎙️ask-me-anything</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/join-bankless-academy-5b96af08.jpg\'></div><div class="bloc-b"><p>Level up your knowledge about web3 in 💾 library</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/join-bankless-academy-35a6f354.jpg\'></div><div class="bloc-b"><p>Ask any questions in ❓no-stupid-questions</p></div></div>'
+      },
+      {
+        type: 'QUEST',
+        title: 'Bankless Academy Community Quest',
+        component: 'BanklessAcademyCommunity'
+      },
+      {
+        type: 'END',
+        title: 'End of lesson'
       }
     ]
   },
