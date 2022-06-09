@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Spinner, Box } from '@chakra-ui/react'
 import { Checks } from 'phosphor-react'
 import { useMediaQuery } from '@chakra-ui/react'
+
 import { useActiveWeb3React } from 'hooks'
 
 const WalletBasics = (): {
