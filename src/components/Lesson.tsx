@@ -390,6 +390,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
         alignItems="center"
         width="100%"
         fontWeight="bold"
+        as="h2"
       >
         <Box display="inline-flex" alignItems="center" mr="4">
           {slide.type === 'LEARN' && <LearnIcon />}
