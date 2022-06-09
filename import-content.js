@@ -73,7 +73,7 @@ axios
       if (lesson.learnings === undefined) lesson.learnings = ''
       if (lesson.isFeaturedOnHomepage === undefined) lesson.isFeaturedOnHomepage = false
       if (lesson.isCommentsEnabled === undefined) lesson.isCommentsEnabled = false
-      
+
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)
         .then((htmlPage) => {
@@ -234,11 +234,10 @@ axios
           //   type: 'POAP',
           //   title: `Collect your <span class="tooltip" definition="${keywords['POAP'].definition}">POAP</span>`,
           // })
-          if (lesson.slug !== 'bankless-academy-community')
-            slides.push({
-              type: 'END',
-              title: 'End of lesson',
-            })
+          slides.push({
+            type: 'END',
+            title: 'End of lesson',
+          })
           lesson.slides = slides
           // console.log('lesson', lesson)
           lessons[index] = lesson
