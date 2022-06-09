@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
 
+import WalletConnect from './WalletConnect'
 import WalletBasics from './WalletBasics'
 import IntroToDeFi from './IntroToDeFi'
 import BlockchainFundamentals from './BlockchainFundamentals'
+import BanklessAcademyCommunity from './BanklessAcademyCommunity'
 
 import { useActiveWeb3React } from 'hooks'
 import { QUESTS } from 'constants/index'
@@ -17,17 +19,17 @@ const QuestComponent = (
   questComponent: React.ReactElement
 } => {
   const QUEST_COMPONENTS = {
+    WalletConnect: WalletConnect,
     WalletBasics: WalletBasics,
     IntroToDeFi: IntroToDeFi,
     BlockchainFundamentals: BlockchainFundamentals,
+    BanklessAcademyCommunity: BanklessAcademyCommunity,
   }
-  if (
-    !component ||
-    !QUESTS.includes(component) ||
-    !(component in QUEST_COMPONENTS)
-  )
-    return null
-  const Component = QUEST_COMPONENTS[component]()
+  if (!component || !QUESTS.includes(component)) return null
+  const Component =
+    component in QUEST_COMPONENTS
+      ? QUEST_COMPONENTS[component]()
+      : WalletConnect()
   const { account } = useActiveWeb3React()
 
   useEffect(() => {
