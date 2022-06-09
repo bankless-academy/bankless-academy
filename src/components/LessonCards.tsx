@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import { Box, Text, Tag, Image, TagRightIcon } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import axios from 'axios'
@@ -70,7 +70,7 @@ const LessonCards: React.FC = () => {
                   {lessonCompleted > 0 && `${lessonCompleted} Completions`}
                 </Text>
               </Box>
-              <Link href={`/lessons/${lesson.slug}`}>
+              <NextLink href={`/lessons/${lesson.slug}`}>
                 <LessonBanner
                   cursor="pointer"
                   // overflow="hidden"
@@ -81,7 +81,7 @@ const LessonCards: React.FC = () => {
                 >
                   <Image src={lesson.lessonImageLink} />
                 </LessonBanner>
-              </Link>
+              </NextLink>
               <Text fontSize="md" mt="4">
                 {ReactHtmlParser(lesson.learnings)}
               </Text>
