@@ -24,17 +24,25 @@ const BlockchainFundamentals = (): {
   const [isToCorrect, setIsToCorrect] = useState(false)
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
+  const verifyFrom = (from) => {
+    return (
+      from.toLowerCase() === '0x0ef696b2da7e7c6a3113681ce57344b66bbcf559' ||
+      from.toLowerCase() === 'broccoin.eth'
+    )
+  }
+
+  const verifyTo = (to) => {
+    return to.toLowerCase() === '0x38f9282576c9ef837423ddbfaf58650f8de28dd1'
+  }
+
   useEffect(() => {
-    setIsFromCorrect(from === '0x0ef696b2da7e7c6a3113681ce57344b66bbcf559')
-    setIsToCorrect(to === '0x38f9282576c9ef837423ddbfaf58650f8de28dd1')
+    setIsFromCorrect(verifyFrom(from))
+    setIsToCorrect(verifyTo(to))
     validateQuest(from, to)
   }, [])
 
   const validateQuest = (from, to) => {
-    setIsAnswerCorrect(
-      from === '0x0ef696b2da7e7c6a3113681ce57344b66bbcf559' &&
-        to === '0x38f9282576c9ef837423ddbfaf58650f8de28dd1'
-    )
+    setIsAnswerCorrect(verifyFrom(from) && verifyTo(to))
   }
 
   return {
@@ -70,10 +78,7 @@ const BlockchainFundamentals = (): {
                     'quest-blockchain-fundamentals-from',
                     e.target.value
                   )
-                  setIsFromCorrect(
-                    e.target.value ===
-                      '0x0ef696b2da7e7c6a3113681ce57344b66bbcf559'
-                  )
+                  setIsFromCorrect(verifyFrom(e.target.value))
                   validateQuest(e.target.value, to)
                 }}
               />
@@ -94,10 +99,7 @@ const BlockchainFundamentals = (): {
                     'quest-blockchain-fundamentals-to',
                     e.target.value
                   )
-                  setIsToCorrect(
-                    e.target.value ===
-                      '0x38f9282576c9ef837423ddbfaf58650f8de28dd1'
-                  )
+                  setIsToCorrect(verifyTo(e.target.value))
                   validateQuest(from, e.target.value)
                 }}
               />
