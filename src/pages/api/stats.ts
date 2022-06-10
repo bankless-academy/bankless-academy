@@ -13,6 +13,7 @@ export default async function handler(
     remainingPoaps: {},
     poapDistributed: {},
     lessonCompleted: {},
+    monthyCompletion: {},
   }
   try {
     const [uniqueAddresses] = await db(TABLES.users).count('id')
@@ -47,6 +48,14 @@ export default async function handler(
       if (event.quest)
         stats.lessonCompleted[event.quest] = event.lessonCompleted
     }
+    const monthyCompletion = await db.raw(`SELECT
+    DATE_TRUNC('month',created_at) AS  month,
+    COUNT(id) AS count
+    FROM quests
+    GROUP BY DATE_TRUNC('month',created_at)
+    ORDER BY month;`)
+    console.log(monthyCompletion)
+    stats.monthyCompletion = monthyCompletion?.rows
     return res.json(stats)
   } catch (error) {
     console.error(error)

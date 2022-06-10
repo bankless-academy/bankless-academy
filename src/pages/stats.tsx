@@ -33,12 +33,15 @@ const Stats = (): JSX.Element => {
       {stats && (
         <Box maxW="500px">
           <Box mt={8}>
-            <Text fontSize="lg">
-              {`Number of unique addresses: ${stats?.uniqueAddresses}`}
+            <Text fontSize="lg" color="orange.300">
+              Number of unique addresses connected to the app
             </Text>
+            {stats?.uniqueAddresses}
           </Box>
           <Box mt={8}>
-            <Text fontSize="lg">Remaining POAPs</Text>
+            <Text fontSize="lg" color="orange.300">
+              Remaining POAPs
+            </Text>
             {LESSONS.map((lesson, index) => {
               const remainingPoaps =
                 stats?.remainingPoaps[lesson.poapEventId] || 0
@@ -58,7 +61,9 @@ const Stats = (): JSX.Element => {
             })}
           </Box>
           <Box mt={8}>
-            <Text fontSize="lg">POAP codes distributed</Text>
+            <Text fontSize="lg" color="orange.300">
+              POAP codes distributed
+            </Text>
             {LESSONS.map((lesson, index) => {
               const poapDistributed =
                 stats?.poapDistributed[lesson.poapEventId] || 0
@@ -73,8 +78,8 @@ const Stats = (): JSX.Element => {
             })}
           </Box>
           <Box mt={8}>
-            <Text fontSize="lg">
-              Number of lesson completion (= did the quest, including 👨‍🌾)
+            <Text fontSize="lg" color="orange.300">
+              Number of lesson completion
             </Text>
             {LESSONS.map((lesson, index) => {
               const lessonCompleted = stats?.lessonCompleted[lesson.quest] || 0
@@ -87,6 +92,18 @@ const Stats = (): JSX.Element => {
                 </>
               )
             })}
+          </Box>
+          <Box mt={8}>
+            <Text fontSize="lg" color="orange.300">
+              Monthly lesson completion
+            </Text>
+            {stats?.monthyCompletion.map((monthlyStats) => (
+              <>
+                <p>{`${monthlyStats.month.slice(0, 7)}: ${
+                  monthlyStats.count
+                }`}</p>
+              </>
+            ))}
           </Box>
         </Box>
       )}
