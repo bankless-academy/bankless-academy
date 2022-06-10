@@ -17,6 +17,7 @@ const LESSONS: LessonType[] = [
     publicationStatus: 'publish',
     isFeaturedOnHomepage: true,
     isCommentsEnabled: false,
+    endOfLessonRedirect: '/lessons/bankless-academy-community',
     notionId: '98405bd0f2b94bb2a3079eed504a011e',
     slug: 'wallet-basics',
     imageLinks: [
@@ -245,6 +246,7 @@ const LESSONS: LessonType[] = [
     publicationStatus: 'publish',
     isFeaturedOnHomepage: true,
     isCommentsEnabled: false,
+    endOfLessonRedirect: 'https://tally.so/r/mRvNpm',
     notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
     slug: 'intro-to-defi',
     imageLinks: [
@@ -463,6 +465,7 @@ const LESSONS: LessonType[] = [
     publicationStatus: 'hidden',
     isFeaturedOnHomepage: false,
     isCommentsEnabled: false,
+    endOfLessonRedirect: null,
     notionId: '44b8a4937fcd43fa8e12400cb75885a1',
     slug: 'bankless-academy-community',
     imageLinks: [
@@ -521,6 +524,7 @@ const LESSONS: LessonType[] = [
     publicationStatus: 'preview',
     isFeaturedOnHomepage: false,
     isCommentsEnabled: true,
+    endOfLessonRedirect: 'https://tally.so/r/3EkWo2',
     notionId: '562dba7dbd3949b480be367a64821cdf',
     slug: 'blockchain-fundamentals',
     imageLinks: [

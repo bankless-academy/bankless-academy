@@ -242,13 +242,22 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
       // TEMP: don't block last slide
       // } else if (isLastSlide && isPoapClaimed) {
     } else if (isLastSlide) {
-      // get feedback on the last lesson
-      // TODO: add a column on Notion with feedback form yes/no, same for slide comment
-      if (lesson.slug === 'intro-to-defi') router.push('/feedback')
-      else if (lesson.slug === 'wallet-basics') {
-        // HACK: manual redirect
-        document.location.href = '/lessons/bankless-academy-community'
-      } else router.push('/lessons')
+      if (lesson.endOfLessonRedirect) {
+        if (lesson.endOfLessonRedirect.includes('https://tally.so/r/')) {
+          // redirect to embeded Tally form
+          const tallyId = lesson.endOfLessonRedirect.replace(
+            'https://tally.so/r/',
+            ''
+          )
+          router.push(`/feedback?tally=${tallyId}`)
+        } else {
+          // generic redirect
+          document.location.href = lesson.endOfLessonRedirect
+        }
+      } else {
+        // defaut: go back to lessons
+        router.push('/lessons')
+      }
     }
     setSelectedAnswerNumber(null)
   }

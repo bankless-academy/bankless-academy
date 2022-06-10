@@ -22,6 +22,7 @@ export interface LessonType {
   publicationStatus: 'publish' | 'hidden' | 'preview'
   isFeaturedOnHomepage: boolean
   isCommentsEnabled: boolean
+  endOfLessonRedirect?: string
   slides: {
     type: SlideType
     title: string

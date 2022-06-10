@@ -25,6 +25,7 @@ const KEY_MATCHING = {
   'Publication status': 'publicationStatus',
   'Featured on homepage': 'isFeaturedOnHomepage',
   'Enable Comments': 'isCommentsEnabled',
+  'End of Lesson redirect': 'endOfLessonRedirect',
 }
 
 const args = process.argv
@@ -73,6 +74,7 @@ axios
       if (lesson.learnings === undefined) lesson.learnings = ''
       if (lesson.isFeaturedOnHomepage === undefined) lesson.isFeaturedOnHomepage = false
       if (lesson.isCommentsEnabled === undefined) lesson.isCommentsEnabled = false
+      if (lesson.endOfLessonRedirect === undefined) lesson.endOfLessonRedirect = null
 
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)

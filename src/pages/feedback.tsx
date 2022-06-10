@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Container } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
 
 import { MetaData } from 'components/Head'
 
@@ -15,6 +16,11 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Feedback = (): JSX.Element => {
+  const router = useRouter()
+  const { tally } = router.query
+
+  const tallyId = tally || 'mRvNpm'
+
   return (
     <Container maxW="container.xl">
       <Box
@@ -25,7 +31,7 @@ const Feedback = (): JSX.Element => {
         backgroundColor="white"
       >
         <iframe
-          src="https://tally.so/embed/mRvNpm?hideTitle=0&alignLeft=1"
+          src={`https://tally.so/embed/${tallyId}?hideTitle=0&alignLeft=1`}
           frameBorder="0"
           width="100%"
           height="100%"
