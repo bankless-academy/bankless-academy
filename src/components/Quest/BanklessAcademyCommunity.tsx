@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Box, VStack, Button, Spinner, Link } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import { CheckIcon } from '@chakra-ui/icons'
@@ -15,6 +15,10 @@ const BanklessAcademyCommunity = (): {
 
   const [hasUserJoinedGM, setHasUserJoinedGM] = useState(false)
   const [hasUserJoinedBA, setHasUserJoinedBA] = useState(false)
+
+  useEffect(() => {
+    verifyQuest()
+  }, [account])
 
   const verifyQuest = async () => {
     if (account) {
@@ -47,7 +51,7 @@ const BanklessAcademyCommunity = (): {
   }
 
   return {
-    isQuestCompleted: hasUserJoinedGM && hasUserJoinedBA,
+    isQuestCompleted: account && hasUserJoinedGM && hasUserJoinedBA,
     questComponent: (
       <>
         <Box>
