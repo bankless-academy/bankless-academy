@@ -48,14 +48,13 @@ export default async function handler(
       if (event.quest)
         stats.lessonCompleted[event.quest] = event.lessonCompleted
     }
-    const monthyCompletion = await db.raw(`SELECT
-    DATE_TRUNC('month',created_at) AS  month,
-    COUNT(id) AS count
-    FROM quests
-    GROUP BY DATE_TRUNC('month',created_at)
-    ORDER BY month;`)
-    console.log(monthyCompletion)
-    stats.monthyCompletion = monthyCompletion?.rows
+    const monthyCompletion = await db(TABLES.quests)
+      .select(db.raw(`date_trunc('month', created_at) AS month`))
+      .count('id')
+      .whereIn('quest', QUESTS)
+      .groupByRaw(`date_trunc('month', created_at)`)
+      .orderBy('month')
+    stats.monthyCompletion = monthyCompletion
     return res.json(stats)
   } catch (error) {
     console.error(error)
