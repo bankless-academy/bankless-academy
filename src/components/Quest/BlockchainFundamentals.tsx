@@ -26,13 +26,13 @@ const BlockchainFundamentals = (): {
 
   const verifyFrom = (from) => {
     return (
-      from.toLowerCase() === '0x0ef696b2da7e7c6a3113681ce57344b66bbcf559' ||
-      from.toLowerCase() === 'broccoin.eth'
+      from?.toLowerCase() === '0x0ef696b2da7e7c6a3113681ce57344b66bbcf559' ||
+      from?.toLowerCase() === 'broccoin.eth'
     )
   }
 
   const verifyTo = (to) => {
-    return to.toLowerCase() === '0x38f9282576c9ef837423ddbfaf58650f8de28dd1'
+    return to?.toLowerCase() === '0x38f9282576c9ef837423ddbfaf58650f8de28dd1'
   }
 
   useEffect(() => {
