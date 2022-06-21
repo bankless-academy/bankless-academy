@@ -12,6 +12,7 @@ import {
   Tooltip,
   Link,
 } from '@chakra-ui/react'
+import NextLink from 'next/link'
 import axios from 'axios'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
@@ -107,7 +108,8 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
       font-weight: bold;
     }
     a {
-      color: var(--chakra-colors-red-500);
+      color: #b85ff1;
+      text-decoration: none;
     }
     ul,
     ol {
@@ -119,9 +121,6 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
       width: 640px;
       max-width: 100%;
       height: 360px;
-    }
-    a {
-      text-decoration: none;
     }
   }
 `
@@ -549,7 +548,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                       ) : (
                         <>
                           <h2>
-                            {`Congrats for finishing the "${lesson.name}" lesson! 🥳`}
+                            {`Congrats on finishing our "${lesson.name}" lesson! 🥳`}
                           </h2>
                           {poapCode && (
                             <>
@@ -618,9 +617,17 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                   mb="2"
                 />
               )}
-              <h2>
-                {`Congrats for finishing the "${lesson.name}" lesson! 🥳`}
-              </h2>
+              <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
+              <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
+              <NextLink href={`/lessons`}>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  style={{ padding: '0 23px' }}
+                >
+                  Explore more Lessons
+                </Button>
+              </NextLink>
             </VStack>
           )}
         </Box>
@@ -654,21 +661,23 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           )}
         </HStack>
         <HStack>
-          <Button
-            ref={buttonRightRef}
-            variant={isLastSlide ? 'primaryBigLast' : 'primaryBig'}
-            size="lg"
-            disabled={
-              // TEMP: don't block last slide
-              // (isLastSlide && !isPoapClaimed) ||
-              (slide.quiz && !answerIsCorrect) ||
-              (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
-            }
-            onClick={goToNextSlide}
-            rightIcon={<ArrowForwardIcon />}
-          >
-            Next
-          </Button>
+          {(!isLastSlide || lesson.endOfLessonText) && (
+            <Button
+              ref={buttonRightRef}
+              variant={isLastSlide ? 'primaryBigLast' : 'primaryBig'}
+              size="lg"
+              disabled={
+                // TEMP: don't block last slide
+                // (isLastSlide && !isPoapClaimed) ||
+                (slide.quiz && !answerIsCorrect) ||
+                (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+              }
+              onClick={goToNextSlide}
+              rightIcon={<ArrowForwardIcon />}
+            >
+              Next
+            </Button>
+          )}
         </HStack>
       </SlideNav>
     </Slide>
