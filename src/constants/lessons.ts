@@ -474,9 +474,9 @@ const LESSONS: LessonType[] = [
     imageLinks: [
       '/lesson/bankless-academy-community/how-to-join-e1fa3bc8.png',
       '/lesson/bankless-academy-community/how-to-log-in-cc33b158.jpg',
-      '/lesson/bankless-academy-community/how-to-log-in-d89ca565.jpg',
+      '/lesson/bankless-academy-community/how-to-log-in-71bf9061.png',
       '/lesson/bankless-academy-community/how-to-log-in-0cbd3e6b.jpg',
-      '/lesson/bankless-academy-community/join-bankless-academy-5aa20044.png'
+      '/lesson/bankless-academy-community/join-bankless-academy-d6d1516e.png'
     ],
     slides: [
       {
@@ -495,13 +495,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '8baa3a6e2ed840ff841397dd8db35727',
         title: 'How to log in',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-cc33b158.jpg\'></div><div class="bloc-b"><p>Login with MetaMask or your preferred wallet provider.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-d89ca565.jpg\'></div><div class="bloc-b"><p>Sign with your wallet. Signatures are gas-free transactions with no cost. </p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-0cbd3e6b.jpg\'></div><div class="bloc-b"><p>Make sure your wallet contains at least <strong>0.001 ETH</strong>. This helps understand you are a real Explorer and not a bot, preventing spam.</p></div></div>'
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-cc33b158.jpg\'></div><div class="bloc-b"><p>Login with MetaMask or your preferred wallet provider.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-71bf9061.png\'></div><div class="bloc-b"><p>Sign with your wallet. Signatures are gas-free transactions with no cost. </p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-0cbd3e6b.jpg\'></div><div class="bloc-b"><p>Make sure your wallet contains at least <strong>0.001 ETH</strong>. This helps understand you are a real Explorer and not a bot, preventing spam.</p></div></div>'
       },
       {
         type: 'LEARN',
         notionId: 'd88acd5ee49c4fa88e9dc1c4fc136e80',
         title: 'Join Bankless Academy',
-        content: '<div class="bloc1"><p>Check out <strong>all-topics</strong> and join the conversation 🗣️</p><p>Share <strong>insights</strong> with other Explorers after completing each <strong>lesson</strong> 📖</p><p>Follow our <strong>AMAs </strong>in the 🎙️<strong>ask-me-anything</strong> section</p><p>Level up your <strong>knowledge </strong>about web3 in 💾 <strong>library</strong></p><p>Stay up to date with important community <strong>announcements</strong> 🌟</p></div><div class="bloc2"><img src=\'/lesson/bankless-academy-community/join-bankless-academy-5aa20044.png\'></div>'
+        content: '<div class="bloc1"><p>Check out <strong>all-topics</strong> and join the conversation 🗣️</p><p>Share <strong>insights</strong> with other Explorers after completing each <strong>lesson</strong> 📖</p><p>Follow our <strong>AMAs </strong>in the 🎙️<strong>ask-me-anything</strong> section</p><p>Level up your <strong>knowledge </strong>about web3 in 💾 <strong>library</strong></p><p>Stay up to date with important community <strong>announcements</strong> 🌟</p></div><div class="bloc2"><img src=\'/lesson/bankless-academy-community/join-bankless-academy-d6d1516e.png\'></div>'
       },
       {
         type: 'QUEST',
