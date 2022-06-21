@@ -25,6 +25,7 @@ const LessonCards: React.FC = () => {
   const { all } = router.query
 
   const [stats, setStats]: any = useState(null)
+  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   const Lessons =
     all !== undefined
@@ -45,7 +46,6 @@ const LessonCards: React.FC = () => {
   return (
     <>
       {Lessons.map((lesson, index) => {
-        const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
         // lesson not started yet: -1
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
         // const numberOfSlides = lesson.slides.length
