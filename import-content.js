@@ -26,6 +26,7 @@ const KEY_MATCHING = {
   'Featured on homepage': 'isFeaturedOnHomepage',
   'Enable Comments': 'isCommentsEnabled',
   'End of Lesson redirect': 'endOfLessonRedirect',
+  'End of Lesson text': 'endOfLessonText',
 }
 
 const args = process.argv

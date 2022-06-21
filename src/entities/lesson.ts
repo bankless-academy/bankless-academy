@@ -23,6 +23,7 @@ export interface LessonType {
   isFeaturedOnHomepage: boolean
   isCommentsEnabled: boolean
   endOfLessonRedirect?: string
+  endOfLessonText?: string
   slides: {
     type: SlideType
     title: string
