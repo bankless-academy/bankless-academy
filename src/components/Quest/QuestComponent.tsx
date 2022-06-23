@@ -6,6 +6,7 @@ import WalletBasics from './WalletBasics'
 import IntroToDeFi from './IntroToDeFi'
 import BlockchainFundamentals from './BlockchainFundamentals'
 import BanklessAcademyCommunity from './BanklessAcademyCommunity'
+import Web3Security101 from './Web3Security101'
 
 import { useActiveWeb3React } from 'hooks'
 import { QUESTS } from 'constants/index'
@@ -24,6 +25,7 @@ const QuestComponent = (
     IntroToDeFi: IntroToDeFi,
     BlockchainFundamentals: BlockchainFundamentals,
     BanklessAcademyCommunity: BanklessAcademyCommunity,
+    Web3Security101: Web3Security101,
   }
   if (!component || !QUESTS.includes(component)) return null
   const Component =
