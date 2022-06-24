@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Button, Box, Link } from '@chakra-ui/react'
-import { useActiveWeb3React } from 'hooks'
 import { isMobile } from 'react-device-detect'
 
+import { useActiveWeb3React } from 'hooks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 import { track, verifySignature, getSignature } from 'utils'
 

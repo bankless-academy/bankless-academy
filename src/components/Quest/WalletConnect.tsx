@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Spinner } from '@chakra-ui/react'
 import { Checks } from 'phosphor-react'
+
 import { useActiveWeb3React } from 'hooks'
 
 const WalletConnect = (): {
