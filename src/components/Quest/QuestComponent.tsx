@@ -28,6 +28,7 @@ const QuestComponent = (
     Web3Security101: Web3Security101,
   }
   if (!component || !QUESTS.includes(component)) return null
+  // TODO: move force to connect wallet logic here
   const Component =
     component in QUEST_COMPONENTS
       ? QUEST_COMPONENTS[component]()

@@ -724,8 +724,8 @@ const LESSONS: LessonType[] = [
   },
   {
     poapImageLink: 'https://app.banklessacademy.com/images/web3-security-101-poap.png',
-    lessonImageLink: 'https://app.banklessacademy.com/images/blockchain-fundamentals-lesson.png',
-    socialImageLink: 'https://app.banklessacademy.com/images/blockchain-fundamentals-social.jpg',
+    lessonImageLink: 'https://app.banklessacademy.com/images/web3-security-101-lesson.png',
+    socialImageLink: 'https://app.banklessacademy.com/images/web3-security-101-social.jpg',
     learningActions: '',
     marketingDescription: '',
     poapEventId: null,
