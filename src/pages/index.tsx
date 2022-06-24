@@ -207,7 +207,7 @@ const HomePage = (): JSX.Element => {
             </Box>
           </Box>
           <Box mt="16">
-            <Heading as="h2" size="xl">
+            <Heading as="h2" size="xl" mt="16" mb="8">
               More Lessons On the Way
             </Heading>
             <Text as="h3" size="lg" mt="2">
@@ -234,6 +234,9 @@ const HomePage = (): JSX.Element => {
               ))}
             </SimpleGrid>
             <Box>
+              <Heading as="h2" size="xl" mt="16" mb="8">
+                Newsletter
+              </Heading>
               <Box
                 display={isSmallScreen ? 'block' : 'flex'}
                 style={{ gap: '24px' }}
@@ -264,6 +267,9 @@ const HomePage = (): JSX.Element => {
             </Box>
           </Box>
           <Box my="12">
+            <Heading as="h2" size="xl" mt="16" mb="8">
+              Get involved
+            </Heading>
             <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6}>
               <Box>
                 <Heading as="h3" size="md">
@@ -297,7 +303,7 @@ const HomePage = (): JSX.Element => {
             </SimpleGrid>
           </Box>
           <Box mt="16">
-            <Heading as="h2" size="xl">
+            <Heading as="h2" size="xl" mt="16">
               Contribute to the project
             </Heading>
             <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6}>
