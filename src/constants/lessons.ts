@@ -583,7 +583,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '1af211fce04445b18b017c8ede82fe09',
         title: 'Transactions on the Ledger',
-        content: '<div class="bloc1"><p>Let’s look at some example transactions:</p><ul><li>Alice sends 5 BTC to Bob</li><li>Bob sends 2 BTC to Charlie</li></ul><p>Individual transactions show the <em>change </em>in the amount of cryptocurrency for each address so the total result of all transactions IS the amount of cryptocurrency each address has.</p><hr><p>⇒ Alice has lost 5 BTC</p><p>⇒ Bob has gained 3 BTC total (received 5, sent 2)</p><p>⇒ Charlie has gained 2 BTC</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/transactions-on-the-ledger-225f512a.svg\'></div>'
+        content: '<div class="bloc1"><p>Let’s look at some example transactions:</p><ul><li>Alice sends 5 ETH to Bob</li><li>Bob sends 2 ETH to Charlie</li></ul><p>Individual transactions show the <em>change </em>in the amount of cryptocurrency for each address so the total result of all transactions IS the amount of cryptocurrency each address has.</p><hr><p>⇒ Alice has lost 5 ETH</p><p>⇒ Bob has gained 3 ETH total (received 5, sent 2)</p><p>⇒ Charlie has gained 2 ETH</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/transactions-on-the-ledger-225f512a.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -649,7 +649,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '6f1cc1133e8e4b86b3579fb4d4eb4a1c',
         title: 'Inside a Block',
-        content: '<div class="bloc1"><p>Remember, blocks are made up of groups of transactions put together. Looking within a single block, we see a list of transactions and some data about who created the block. </p><p>From our example earlier when discussing the blockchain ledger, both of those transactions might be grouped within one block, or spread out into multiple blocks over time. But no matter what block they are included in, they are all added to the overall blockchain ledger eventually.</p><ul><li>Alice sends 5 BTC to Bob</li><li>Bob sends 2 BTC to Charlie</li></ul><p>Remember that each block must also reference the past block’s <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span> to the blockchain.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/inside-a-block-dd00c1f2.svg\'></div>'
+        content: '<div class="bloc1"><p>Remember, blocks are made up of groups of transactions put together. Looking within a single block, we see a list of transactions and some data about who created the block. </p><p>From our example earlier when discussing the blockchain ledger, both of those transactions might be grouped within one block, or spread out into multiple blocks over time. But no matter what block they are included in, they are all added to the overall blockchain ledger eventually.</p><ul><li>Alice sends 5 ETH to Bob</li><li>Bob sends 2 ETH to Charlie</li></ul><p>Remember that each block must also reference the past block’s <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span> to the blockchain.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/inside-a-block-dd00c1f2.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -723,9 +723,9 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: null,
-    lessonImageLink: null,
-    socialImageLink: null,
+    poapImageLink: 'https://app.banklessacademy.com/images/web3-security-101-poap.png',
+    lessonImageLink: 'https://app.banklessacademy.com/images/blockchain-fundamentals-lesson.png',
+    socialImageLink: 'https://app.banklessacademy.com/images/blockchain-fundamentals-social.jpg',
     learningActions: '',
     marketingDescription: '',
     poapEventId: null,
