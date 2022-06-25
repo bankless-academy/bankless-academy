@@ -30,11 +30,11 @@ const BlockchainFundamentals = (): {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   const verifyFrom = (from) => {
-    return from?.toLowerCase() === '0x1ad97f73a9881904bad41e829b663fcee2809c90'
+    return from?.toLowerCase() === '0xa1e4380a3b1f749673e270229993ee55f35663b4'
   }
 
   const verifyTo = (to) => {
-    return to?.toLowerCase() === '0xc3ada0acfc05abbead016f101912735cbd0ad7c5'
+    return to?.toLowerCase() === '0x5df9b87991262f6ba471f09758cde1c0fc1de734'
   }
 
   useEffect(() => {
@@ -72,11 +72,11 @@ const BlockchainFundamentals = (): {
                     'To validate this quest, paste the "from" and "to" addresses of this transaction '
                   }
                   <a
-                    href="https://etherscan.io/tx/0xb6a8f39b0f095fb6188f99d7ba23f9b0910eab8fb7b8ab57a2b96ddac2c90055"
+                    href="https://etherscan.io/tx/0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    https://etherscan.io/tx/0xb6...0055
+                    https://etherscan.io/tx/0x5c...2060
                   </a>
                 </>
               </p>
