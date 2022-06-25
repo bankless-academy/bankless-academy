@@ -517,7 +517,7 @@ const LESSONS: LessonType[] = [
   {
     poapImageLink: 'https://app.banklessacademy.com/images/blockchain-fundamentals-poap.png',
     lessonImageLink: 'https://app.banklessacademy.com/images/blockchain-fundamentals-lesson.png',
-    socialImageLink: 'https://app.banklessacademy.com/images/blockchain-fundamentals-social.jpg',
+    socialImageLink: 'https://app.banklessacademy.com/images/blockchain-fundamentals-social.jpg?1',
     learningActions: '',
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
     poapEventId: null,
