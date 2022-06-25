@@ -537,7 +537,7 @@ const LESSONS: LessonType[] = [
     imageLinks: [
       '/lesson/blockchain-fundamentals/introduction-6d0b6137.svg',
       '/lesson/blockchain-fundamentals/blockchain-structure-346dae14.svg',
-      '/lesson/blockchain-fundamentals/examining-the-ledger-49d32b81.svg',
+      '/lesson/blockchain-fundamentals/examining-the-ledger-82fd9762.svg',
       '/lesson/blockchain-fundamentals/transactions-on-the-ledger-f951ac0a.svg',
       '/lesson/blockchain-fundamentals/block-anatomy-8ba3bea2.svg',
       '/lesson/blockchain-fundamentals/inside-a-block-b11c74ce.svg',
@@ -577,7 +577,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'edad96fceca6484eb72f5b301f33dea2',
         title: 'Examining the Ledger',
-        content: '<div class="bloc1"><p>In typical money systems, we trust third parties like banks to keep track of how much money each person has. But we want a system that doesn’t require us to trust one entity to manage the ledger.</p><p>The <span class="tooltip" definition="The record of all transactions that have ever occurred.">ledger</span> is the list of ALL transactions ever made on a blockchain, and anyone can see it for <span class="tooltip" definition="Public blockchains allow anyone to view the blockchain ledger">public</span> blockchains. Discrete groups of transactions from the ledger form the blocks that together make the blockchain.</p><p>When new transactions are added to the ledger, balances stored at each <span class="tooltip" definition="Unique public identifier for an entity on a blockchain">address</span> get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever. </p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/examining-the-ledger-49d32b81.svg\'></div>'
+        content: '<div class="bloc1"><p>In typical money systems, we trust third parties like banks to keep track of how much money each person has. But we want a system that doesn’t require us to trust one entity to manage the ledger.</p><p>The <span class="tooltip" definition="The record of all transactions that have ever occurred.">ledger</span> is the list of ALL transactions ever made on a blockchain, and anyone can see it for <span class="tooltip" definition="Public blockchains allow anyone to view the blockchain ledger">public</span> blockchains. Discrete groups of transactions from the ledger form the blocks that together make the blockchain.</p><p>When new transactions are added to the ledger, balances stored at each <span class="tooltip" definition="Unique public identifier for an entity on a blockchain">address</span> get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever. </p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/examining-the-ledger-82fd9762.svg\'></div>'
       },
       {
         type: 'LEARN',
