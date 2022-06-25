@@ -30,9 +30,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const LessonPage = (): JSX.Element => {
   const { asPath } = useRouter()
+  const [path] = asPath.split('?')
 
   const currentLesson = LESSONS.find(
-    (lesson: LessonType) => `/lessons/${lesson.slug}` === asPath
+    (lesson: LessonType) => `/lessons/${lesson.slug}` === path
   )
 
   return (
