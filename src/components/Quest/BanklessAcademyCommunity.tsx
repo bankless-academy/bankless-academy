@@ -79,7 +79,11 @@ const BanklessAcademyCommunity = (): {
               }
             >
               {'2. Join '}
-              <Link href="https://gm.xyz/" target="_blank" ml="1">
+              <Link
+                href="https://gm.xyz/?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson"
+                target="_blank"
+                ml="1"
+              >
                 gm.xyz
               </Link>
             </Button>
@@ -95,7 +99,7 @@ const BanklessAcademyCommunity = (): {
             >
               {'3. Join '}
               <Link
-                href="https://gm.xyz/c/BanklessAcademy"
+                href="https://gm.xyz/c/BanklessAcademy?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson"
                 target="_blank"
                 ml="1"
               >

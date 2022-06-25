@@ -483,13 +483,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'e398fcd0d14b45f1be30f709019faa50',
         title: 'Join the Academy Explorer Community',
-        content: '<div class="bloc1"><p>Now that you have your digital wallet, let’s use it to join the Academy Community.</p><p>Wallets don’t only serve the purpose of keeping your digital assets, but also as a means of decentralized verification.</p><p>Thanks to its web3 native nature, we’ve chosen <a href=\'http://gm.xyz/\'>gm.xyz</a> as our home. <br>To participate in the conversation, you must sign in with your wallet.</p><p>Ready to start your community journey? Let’s go Explorer!</p></div>'
+        content: '<div class="bloc1"><p>Now that you have your digital wallet, let’s use it to join the Academy Community.</p><p>Wallets don’t only serve the purpose of keeping your digital assets, but also as a means of decentralized verification.</p><p>Thanks to its web3 native nature, we’ve chosen <a href=\'https://gm.xyz/?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson\'>gm.xyz</a> as our home. <br>To participate in the conversation, you must sign in with your wallet.</p><p>Ready to start your community journey? Let’s go Explorer!</p></div>'
       },
       {
         type: 'LEARN',
         notionId: 'af1f575caf2a470e90919d357a3db743',
         title: 'How to join',
-        content: '<div class="bloc1"><p>Go to <a href=\'http://gm.xyz/c/BanklessAcademy\'>gm.xyz/c/BanklessAcademy</a> and sign in by using the \'Sign In With Ethereum\' button on the top-right corner.<br></p></div><div class="bloc2"><img src=\'/lesson/bankless-academy-community/how-to-join-e1fa3bc8.png\'></div>'
+        content: '<div class="bloc1"><p>Go to <a href=\'https://gm.xyz/c/BanklessAcademy?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson\'>gm.xyz/c/BanklessAcademy</a> and sign in by using the \'Sign In With Ethereum\' button on the top-right corner.<br></p></div><div class="bloc2"><img src=\'/lesson/bankless-academy-community/how-to-join-e1fa3bc8.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -538,7 +538,7 @@ const LESSONS: LessonType[] = [
       '/lesson/blockchain-fundamentals/introduction-6d0b6137.svg',
       '/lesson/blockchain-fundamentals/blockchain-structure-346dae14.svg',
       '/lesson/blockchain-fundamentals/examining-the-ledger-82fd9762.svg',
-      '/lesson/blockchain-fundamentals/transactions-on-the-ledger-f951ac0a.svg',
+      '/lesson/blockchain-fundamentals/transactions-on-the-ledger-f4f9d470.svg',
       '/lesson/blockchain-fundamentals/block-anatomy-8ba3bea2.svg',
       '/lesson/blockchain-fundamentals/inside-a-block-b11c74ce.svg',
       '/lesson/blockchain-fundamentals/individual-transactions-2f6bf118.svg',
@@ -583,7 +583,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '1af211fce04445b18b017c8ede82fe09',
         title: 'Transactions on the Ledger',
-        content: '<div class="bloc1"><p>Let’s look at some example transactions:</p><ul><li>Alice sends 5 ETH to Bob</li><li>Bob sends 2 ETH to Charlie</li></ul><p>Individual transactions show the <em>change </em>in the amount of cryptocurrency for each address so the total result of all transactions IS the amount of cryptocurrency each address has.</p><hr><p>⇒ Alice has lost 5 ETH</p><p>⇒ Bob has gained 3 ETH total (received 5, sent 2)</p><p>⇒ Charlie has gained 2 ETH</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/transactions-on-the-ledger-f951ac0a.svg\'></div>'
+        content: '<div class="bloc1"><p>Let’s look at some example transactions:</p><ul><li>Alice sends 5 ETH to Bob</li><li>Bob sends 2 ETH to Charlie</li></ul><p>Individual transactions show the <em>change </em>in the amount of cryptocurrency for each address so the total result of all transactions IS the amount of cryptocurrency each address has.</p><hr><p>⇒ Alice has lost 5 ETH</p><p>⇒ Bob has gained 3 ETH total (received 5, sent 2)</p><p>⇒ Charlie has gained 2 ETH</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/transactions-on-the-ledger-f4f9d470.svg\'></div>'
       },
       {
         type: 'QUIZ',
