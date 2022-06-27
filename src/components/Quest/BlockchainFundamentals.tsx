@@ -132,7 +132,7 @@ const BlockchainFundamentals = (): {
             </div>
             <div className="bloc2">
               <iframe
-                src="https://www.youtube.com/embed/-6k6zg8ExNs?rel=0"
+                src="https://www.youtube.com/embed/8z2rL99sLGA?rel=0"
                 allowFullScreen
               ></iframe>
             </div>
