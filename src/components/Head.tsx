@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Script from 'next/script'
 import { hotjar } from 'react-hotjar'
 
-import { PROJECT_NAME, DOMAIN, DEFAULT_METADATA } from 'constants/'
+import { PROJECT_NAME, DOMAIN, DEFAULT_METADATA, FAVICON } from 'constants/'
 
 export interface MetaData {
   title?: string
@@ -59,7 +59,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           rel="shortcut icon"
           sizes="200x200"
           type="image/png"
-          href="/favicon.png"
+          href={FAVICON}
         />
         <noscript>You need to enable JavaScript to run this app.</noscript>
       </NextHead>

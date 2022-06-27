@@ -11,7 +11,7 @@ import Link from 'next/link'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/'
-import { PROJECT_NAME } from 'constants/'
+import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/'
 
 const Nav: React.FC = () => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
@@ -23,13 +23,9 @@ const Nav: React.FC = () => {
           <Box cursor="pointer">
             <Link href="/">
               <Image
-                width={isSmallScreen ? '27px' : '117px'}
+                height={isSmallScreen ? '31px' : '40px'}
                 ml={isSmallScreen ? '' : '2'}
-                src={
-                  isSmallScreen
-                    ? '/images/BanklessAcademy_Logo.svg'
-                    : '/images/BanklessAcademy.svg'
-                }
+                src={isSmallScreen ? LOGO_SMALL : LOGO}
                 alt={PROJECT_NAME}
               />
             </Link>
