@@ -70,7 +70,7 @@ axios
       if (lesson.poapEventId === undefined) lesson.poapEventId = null
       if (lesson.poapImageLink === undefined) lesson.poapImageLink = null
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
-      if (lesson.marketingDescription === undefined) lesson.marketingDescription = ''
+      if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''
       if (lesson.learnings === undefined) lesson.learnings = ''
       if (lesson.isFeaturedOnHomepage === undefined) lesson.isFeaturedOnHomepage = false
