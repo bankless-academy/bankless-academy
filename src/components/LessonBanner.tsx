@@ -6,7 +6,9 @@ const LessonBanner = styled(Box)<{ iswhitelabel: boolean }>`
   ${(props) =>
     props.iswhitelabel
       ? `
-      border-radius: 20px;
+      img {
+        border-radius: 10px;
+      }
   `
       : `
   transform: scale(1.2);
