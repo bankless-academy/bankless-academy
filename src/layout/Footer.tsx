@@ -2,19 +2,19 @@ import React from 'react'
 import { Box, Link } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
-import { PROJECT_NAME, IS_WHITE_LABEL } from 'constants/'
+import { PROJECT_NAME, IS_WHITELABEL } from 'constants/index'
 
 const Footer: React.FC = () => (
   <footer>
     <Box
       display="flex"
-      justifyContent={IS_WHITE_LABEL ? 'center' : 'space-around'}
+      justifyContent={IS_WHITELABEL ? 'center' : 'space-around'}
       w="100%"
       maxW="800px"
       mx="auto"
       mt="16"
     >
-      {IS_WHITE_LABEL ? (
+      {IS_WHITELABEL ? (
         <>
           {`${PROJECT_NAME} | powered by`}&nbsp;
           <Link

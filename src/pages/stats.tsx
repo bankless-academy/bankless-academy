@@ -4,8 +4,7 @@ import { GetStaticProps } from 'next'
 import axios from 'axios'
 
 import { MetaData } from 'components/Head'
-import { IS_WHITE_LABEL } from 'constants/'
-import LESSONS from 'constants/lessons'
+import { LESSONS, IS_WHITELABEL } from 'constants/index'
 
 const pageMeta: MetaData = {
   title: 'Stats',
@@ -33,7 +32,7 @@ const Stats = (): JSX.Element => {
     <Container maxW="container.xl">
       {stats && (
         <Box maxW="500px">
-          {!IS_WHITE_LABEL && (
+          {!IS_WHITELABEL && (
             <>
               <Box mt={8}>
                 <Text fontSize="lg" color="orange.300">

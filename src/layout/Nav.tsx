@@ -11,7 +11,7 @@ import Link from 'next/link'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/'
-import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/'
+import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
 
 const Nav: React.FC = () => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')

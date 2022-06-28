@@ -4,7 +4,7 @@ import { Container } from '@chakra-ui/react'
 
 import { MetaData } from 'components/Head'
 import Lesson from 'components/Lesson'
-import LESSONS from 'constants/lessons'
+import { LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {

@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import LESSONS from 'constants/lessons'
-import { DOMAIN_URL } from 'constants/index'
+import { LESSONS, DOMAIN_URL } from 'constants/index'
 
 export default async function handler(
   req: NextApiRequest,

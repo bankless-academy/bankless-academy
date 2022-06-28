@@ -14,11 +14,10 @@ import {
 import NextLink from 'next/link'
 import styled from '@emotion/styled'
 
-import LESSONS from 'constants/lessons'
 import Footer from 'layout/Footer'
 import LessonBanner from 'components/LessonBanner'
 import { LearnIcon, QuizIcon, QuestIcon, PoapIcon } from 'components/Icons'
-import { HOMEPAGE_BACKGROUND, IS_WHITE_LABEL } from 'constants/'
+import { LESSONS, HOMEPAGE_BACKGROUND, IS_WHITELABEL } from 'constants/index'
 
 const MORE_LESSONS = [
   'Next Level: Intermediate Wallet',
@@ -56,7 +55,7 @@ const HomePage = (): JSX.Element => {
           alignItems="center"
           pt="20vh"
         >
-          {!IS_WHITE_LABEL && (
+          {!IS_WHITELABEL && (
             <Image
               style={{
                 filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
@@ -85,7 +84,7 @@ const HomePage = (): JSX.Element => {
       </Center>
       <Box bgColor="#1F2023" p="4" overflow="hidden">
         <Container maxW="container.lg">
-          {!IS_WHITE_LABEL && (
+          {!IS_WHITELABEL && (
             <Box mt="6">
               <Heading as="h2" size="xl" m="auto">
                 Start Your Bankless Journey
@@ -158,7 +157,7 @@ const HomePage = (): JSX.Element => {
                     (localStorage.getItem(lesson.slug) || 0) > 0
                   const LessonImage = (
                     <LessonBanner
-                      iswhitelabel={IS_WHITE_LABEL}
+                      iswhitelabel={IS_WHITELABEL}
                       cursor="pointer"
                       // overflow="hidden"
                       style={{
@@ -213,7 +212,7 @@ const HomePage = (): JSX.Element => {
               )}
             </Box>
           </Box>
-          {!IS_WHITE_LABEL && (
+          {!IS_WHITELABEL && (
             <>
               <Box mt="16">
                 <Heading as="h2" size="xl" mt="16" mb="8">

@@ -10,7 +10,7 @@ import {
   DEFAULT_METADATA,
   FAVICON,
   UMAMI_PROD,
-} from 'constants/'
+} from 'constants/index'
 
 export interface MetaData {
   title?: string

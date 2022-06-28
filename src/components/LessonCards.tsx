@@ -8,8 +8,7 @@ import ReactHtmlParser from 'react-html-parser'
 import { useMediaQuery } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
-import { IS_WHITE_LABEL } from 'constants/'
-import LESSONS from 'constants/lessons'
+import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import LessonBanner from 'components/LessonBanner'
 
 const LessonCard = styled(Box)`
@@ -81,7 +80,7 @@ const LessonCards: React.FC = () => {
             </Box>
             <NextLink href={`/lessons/${lesson.slug}`}>
               <LessonBanner
-                iswhitelabel={IS_WHITE_LABEL}
+                iswhitelabel={IS_WHITELABEL}
                 cursor="pointer"
                 // overflow="hidden"
                 style={{

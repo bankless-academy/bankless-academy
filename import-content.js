@@ -8,6 +8,8 @@ const stringifyObject = require('stringify-object')
 const keywords = require('./keywords.json')
 
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
+const IS_WHITELABEL = PROJECT_DIR !== ''
+const LESSON_FILENAME = IS_WHITELABEL ? 'whitelabel_lessons' : 'lessons'
 const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
 const POTION_API = 'https://potion.banklessacademy.com'
 
@@ -260,11 +262,11 @@ const LESSONS: LessonType[] = ${stringifyObject(lessons, {
 
 export default LESSONS
 `
-      fs.writeFile('src/constants/lessons.ts', FILE_CONTENT, (error) => {
+      fs.writeFile(`src/constants/${LESSON_FILENAME}.ts`, FILE_CONTENT, (error) => {
         if (error) throw error
       })
       console.log(
-        'export done -> check syntax & typing errors in src/constants/lessons.ts'
+        `export done -> check syntax & typing errors in src/constants/${LESSON_FILENAME}.ts`
       )
     })
   })

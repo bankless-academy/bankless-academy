@@ -1,10 +1,13 @@
 import { MetaData } from 'components/Head'
-import LESSONS from './lessons'
 import { WHITELABEL } from './whitelabel'
+import DEFAULT_LESSONS from './lessons'
+import WHITELABEL_LESSONS from './whitelabel_lessons'
+
+export const IS_WHITELABEL = !!WHITELABEL?.project_name
+
+export const LESSONS = IS_WHITELABEL ? WHITELABEL_LESSONS : DEFAULT_LESSONS
 
 export const PROJECT_NAME = WHITELABEL?.project_name || 'Bankless Academy'
-
-export const IS_WHITE_LABEL = !!WHITELABEL?.project_name
 
 export const DOMAIN_PROD = WHITELABEL?.domain_prod || 'app.banklessacademy.com'
 
