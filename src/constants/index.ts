@@ -1,11 +1,11 @@
 import { MetaData } from 'components/Head'
 import LESSONS from './lessons'
 
-export const PROJECT_NAME = 'humanDAO Academy'
+export const PROJECT_NAME = 'Bankless Academy'
 
-export const IS_WHITE_LABEL = true
+export const IS_WHITE_LABEL = false
 
-export const DOMAIN_PROD = 'humandao.banklessacademy.com'
+export const DOMAIN_PROD = 'app.banklessacademy.com'
 
 export const DOMAIN_URL =
   process.env.VERCEL_URL && process.env.VERCEL_ENV !== 'production'
@@ -14,18 +14,18 @@ export const DOMAIN_URL =
 
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
-  description: 'Improve lives through crypto',
-  image: `${DOMAIN_URL}/humanDAO/humanDAO.png`,
+  description: 'Level up your knowledge of Web3 and DeFi',
+  image: `${DOMAIN_URL}/images/bankless_academy_v3.jpg`,
 }
 
-export const FAVICON = '/humanDAO/favicon.png'
+export const FAVICON = '/favicon.png'
 
-export const LOGO = '/humanDAO/HDAO-white.svg'
-export const LOGO_SMALL = '/humanDAO/HDAO-white.svg'
+export const LOGO = '/images/BanklessAcademy.svg'
+export const LOGO_SMALL = '/images/BanklessAcademy_Logo.svg'
 
-export const HOMEPAGE_BACKGROUND = '/humanDAO/homepage_background.jpg'
+export const HOMEPAGE_BACKGROUND = '/images/homepage_background_v3.jpg'
 
-export const UMAMI_PROD = 'a50ccb31-0534-407f-aebe-312bd64b2689'
+export const UMAMI_PROD = '62d1cf48-425d-4658-9b86-3eea78ac9714'
 
 export const TOKEN_ADDRESS = {
   1: '0x2d94aa3e47d9d5024503ca8491fce9a2fb4da198',
