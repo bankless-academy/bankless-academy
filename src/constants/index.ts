@@ -1,11 +1,12 @@
 import { MetaData } from 'components/Head'
 import LESSONS from './lessons'
+import { WHITELABEL } from './whitelabel'
 
-export const PROJECT_NAME = 'Bankless Academy'
+export const PROJECT_NAME = WHITELABEL?.project_name || 'Bankless Academy'
 
-export const IS_WHITE_LABEL = false
+export const IS_WHITE_LABEL = !!WHITELABEL?.project_name
 
-export const DOMAIN_PROD = 'app.banklessacademy.com'
+export const DOMAIN_PROD = WHITELABEL?.domain_prod || 'app.banklessacademy.com'
 
 export const DOMAIN_URL =
   process.env.VERCEL_URL && process.env.VERCEL_ENV !== 'production'
@@ -14,18 +15,25 @@ export const DOMAIN_URL =
 
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
-  description: 'Level up your knowledge of Web3 and DeFi',
-  image: `${DOMAIN_URL}/images/bankless_academy_v3.jpg`,
+  description:
+    WHITELABEL?.default_metadata_description ||
+    'Level up your knowledge of Web3 and DeFi',
+  image: `${DOMAIN_URL}${
+    WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
+  }`,
 }
 
-export const FAVICON = '/favicon.png'
+export const FAVICON = WHITELABEL?.favicon || '/favicon.png'
 
-export const LOGO = '/images/BanklessAcademy.svg'
-export const LOGO_SMALL = '/images/BanklessAcademy_Logo.svg'
+export const LOGO = WHITELABEL?.logo || '/images/BanklessAcademy.svg'
+export const LOGO_SMALL =
+  WHITELABEL?.logo_small || '/images/BanklessAcademy_Logo.svg'
 
-export const HOMEPAGE_BACKGROUND = '/images/homepage_background_v3.jpg'
+export const HOMEPAGE_BACKGROUND =
+  WHITELABEL?.homepage_background || '/images/homepage_background_v3.jpg'
 
-export const UMAMI_PROD = '62d1cf48-425d-4658-9b86-3eea78ac9714'
+export const UMAMI_PROD =
+  WHITELABEL?.umami_prod || '62d1cf48-425d-4658-9b86-3eea78ac9714'
 
 export const TOKEN_ADDRESS = {
   1: '0x2d94aa3e47d9d5024503ca8491fce9a2fb4da198',
