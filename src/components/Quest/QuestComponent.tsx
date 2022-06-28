@@ -4,7 +4,7 @@ import axios from 'axios'
 import WalletConnect from './WalletConnect'
 import WalletBasics from './WalletBasics'
 import IntroToDeFi from './IntroToDeFi'
-import BlockchainFundamentals from './BlockchainFundamentals'
+import BlockchainBasics from './BlockchainBasics'
 import BanklessAcademyCommunity from './BanklessAcademyCommunity'
 import Web3Security101 from './Web3Security101'
 
@@ -23,7 +23,7 @@ const QuestComponent = (
     WalletConnect: WalletConnect,
     WalletBasics: WalletBasics,
     IntroToDeFi: IntroToDeFi,
-    BlockchainFundamentals: BlockchainFundamentals,
+    BlockchainBasics: BlockchainBasics,
     BanklessAcademyCommunity: BanklessAcademyCommunity,
     Web3Security101: Web3Security101,
   }

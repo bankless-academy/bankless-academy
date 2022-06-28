@@ -13,7 +13,7 @@ import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 
 import { useActiveWeb3React } from 'hooks'
 
-const BlockchainFundamentals = (): {
+const BlockchainBasics = (): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
@@ -145,4 +145,4 @@ const BlockchainFundamentals = (): {
   }
 }
 
-export default BlockchainFundamentals
+export default BlockchainBasics
