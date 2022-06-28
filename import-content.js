@@ -1,10 +1,13 @@
 /* eslint-disable no-console */
+require('dotenv').config()
 const axios = require('axios')
 const fs = require('fs')
 const crc32 = require('js-crc').crc32
 const stringifyObject = require('stringify-object')
+
 const keywords = require('./keywords.json')
 
+const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
 const POTION_API = 'https://potion.banklessacademy.com'
 
@@ -145,7 +148,7 @@ axios
                 const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg)\?table=/)[1]
                 // create "unique" hash based on Notion imageLink (different when re-uploaded)
                 const hash = crc32(imageLink)
-                const image_dir = `/lesson/${lesson.slug}`
+                const image_dir = `/${PROJECT_DIR}lesson/${lesson.slug}`
                 const local_image_dir = `public${image_dir}`
                 // create image directory dynamically in case it doesn't exist yet
                 if (!fs.existsSync(local_image_dir)) {
