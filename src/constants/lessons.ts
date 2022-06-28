@@ -456,7 +456,7 @@ const LESSONS: LessonType[] = [
     lessonImageLink: 'https://app.banklessacademy.com/images/bankless-academy-community-lesson.png',
     socialImageLink: 'https://app.banklessacademy.com/images/bankless-academy-community-social.jpg',
     learningActions: '',
-    marketingDescription: '',
+    marketingDescription: 'Join the Academy Explorer Community on gm.xyz',
     poapEventId: null,
     duration: 10,
     learnings: '',
@@ -525,37 +525,37 @@ const LESSONS: LessonType[] = [
     learnings: 'Take a closer look at the concepts and technology that make blockchains work and gain a clearer understanding of what makes them revolutionary. ',
     difficulty: 'Easy',
     description: 'Learn about the fundamental architecture of blockchain technology',
-    name: 'Blockchain Fundamentals',
-    quest: 'BlockchainFundamentals',
+    name: 'Blockchain Basics',
+    quest: 'BlockchainBasics',
     publicationStatus: 'preview',
     isFeaturedOnHomepage: false,
     isCommentsEnabled: true,
     endOfLessonRedirect: 'https://tally.so/r/3EkWo2',
     endOfLessonText: 'To give feedback about this lesson, click Next.',
     notionId: '562dba7dbd3949b480be367a64821cdf',
-    slug: 'blockchain-fundamentals',
+    slug: 'blockchain-basics',
     imageLinks: [
-      '/lesson/blockchain-fundamentals/introduction-6d0b6137.svg',
-      '/lesson/blockchain-fundamentals/blockchain-structure-346dae14.svg',
-      '/lesson/blockchain-fundamentals/examining-the-ledger-82fd9762.svg',
-      '/lesson/blockchain-fundamentals/transactions-on-the-ledger-f4f9d470.svg',
-      '/lesson/blockchain-fundamentals/block-anatomy-8ba3bea2.svg',
-      '/lesson/blockchain-fundamentals/inside-a-block-b11c74ce.svg',
-      '/lesson/blockchain-fundamentals/individual-transactions-2f6bf118.svg',
-      '/lesson/blockchain-fundamentals/user-addresses-201b323b.svg'
+      '/lesson/blockchain-basics/introduction-6d0b6137.svg',
+      '/lesson/blockchain-basics/blockchain-structure-346dae14.svg',
+      '/lesson/blockchain-basics/examining-the-ledger-82fd9762.svg',
+      '/lesson/blockchain-basics/transactions-on-the-ledger-f4f9d470.svg',
+      '/lesson/blockchain-basics/block-anatomy-8ba3bea2.svg',
+      '/lesson/blockchain-basics/inside-a-block-b11c74ce.svg',
+      '/lesson/blockchain-basics/individual-transactions-2f6bf118.svg',
+      '/lesson/blockchain-basics/user-addresses-e9456d37.svg'
     ],
     slides: [
       {
         type: 'LEARN',
         notionId: '2541f10fa3264827ac57b1cf863254fb',
         title: '<strong>I</strong><strong>ntroduction</strong>',
-        content: '<div class="bloc1"><p><span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">Blockchain</span> technology is a revolutionary way of storing and tracking data, while also making that data accessible to anyone. It is a way of organizing data in a single public list of all historical transactions that anyone can view but cannot edit. This public list of transactions is collectively known as the blockchain <span class="tooltip" definition="The record of all transactions that have ever occurred.">ledger</span>.</p><p>This lesson will not go into the cryptographic details of blockchain technology, instead, we will focus on blockchain from the end-user’s perspective. A subsequent Blockchain Theory lesson will go into that topic in more detail.</p><p>For this lesson, we will be using a blockchain tool called a <span class="tooltip" definition="Search and exploration tool for blockchain data">block explorer</span> to look into the specifics of the Ethereum blockchain structure; we will zoom in on the Ethereum blockchain to view the <strong>list</strong> of blocks, the <strong>transactions</strong> within those blocks, and the <strong>details</strong> of each individual transaction.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/introduction-6d0b6137.svg\'></div>'
+        content: '<div class="bloc1"><p><span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">Blockchain</span> technology is a revolutionary way of storing and tracking data, while also making that data accessible to anyone. It is a way of organizing data in a single public list of all historical transactions that anyone can view but cannot edit. This public list of transactions is collectively known as the blockchain <span class="tooltip" definition="The record of all transactions that have ever occurred.">ledger</span>.</p><p>After examining the layers of a blockchain, we will be using a blockchain tool called a <span class="tooltip" definition="Search and exploration tool for blockchain data">block explorer</span> to look into the specifics of the Ethereum blockchain structure; we will zoom in on the Ethereum blockchain to view the <strong>list</strong> of blocks, the <strong>transactions</strong> within those blocks, and the <strong>details</strong> of each individual transaction.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/introduction-6d0b6137.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '76f2f8016f44493eb57a3139cb515017',
         title: 'Blockchain Structure',
-        content: '<div class="bloc1"><p>The term blockchain can be used as a noun — the Bitcoin blockchain — or as an adjective — blockchain technology. Either way, <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> refers to the entire structure cryptocurrencies are built on.</p><p>Zooming in from the outside, there are 3 levels of structure in a blockchain:</p><ol><li>The overall <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> is made up of blocks that are linked together in order</li><li>Blocks are made up of groups of transactions put together </li><li>Transactions are amounts of money sent between two addresses on the ledger</li></ol></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/blockchain-structure-346dae14.svg\'></div>'
+        content: '<div class="bloc1"><p>The term blockchain can be used as a noun — the Bitcoin blockchain — or as an adjective — blockchain technology. Either way, <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> refers to the entire structure cryptocurrencies are built on.</p><p>Zooming in from the outside, there are 3 levels of structure in a blockchain:</p><ol><li>The overall <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> is made up of blocks that are linked together in order</li><li>Blocks are made up of groups of transactions put together </li><li>Transactions are amounts of money sent between two addresses on the network</li></ol><p>This three-tiered structure comes together to create a cryptographic ledger - an unalterable history of all transactions performed on the network.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/blockchain-structure-346dae14.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -570,20 +570,20 @@ const LESSONS: LessonType[] = [
             'Blocks linked together in sequence',
             'All of the above'
           ],
-          id: 'blockchain-fundamentals-1'
+          id: 'blockchain-basics-1'
         }
       },
       {
         type: 'LEARN',
         notionId: 'edad96fceca6484eb72f5b301f33dea2',
         title: 'Examining the Ledger',
-        content: '<div class="bloc1"><p>In typical money systems, we trust third parties like banks to keep track of how much money each person has. But we want a system that doesn’t require us to trust one entity to manage the ledger.</p><p>The <span class="tooltip" definition="The record of all transactions that have ever occurred.">ledger</span> is the list of ALL transactions ever made on a blockchain, and anyone can see it for <span class="tooltip" definition="Public blockchains allow anyone to view the blockchain ledger">public</span> blockchains. Discrete groups of transactions from the ledger form the blocks that together make the blockchain.</p><p>When new transactions are added to the ledger, balances stored at each <span class="tooltip" definition="Unique public identifier for an entity on a blockchain">address</span> get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever. </p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/examining-the-ledger-82fd9762.svg\'></div>'
+        content: '<div class="bloc1"><p>In typical money systems, we trust third parties like banks to keep track of how much money each person has. But, to be truly Bankless, we want a system that doesn’t require us to trust one entity to manage the ledger.</p><p>The <span class="tooltip" definition="The record of all transactions that have ever occurred.">ledger</span> is the list of ALL transactions ever made on a blockchain, and anyone can see it for <span class="tooltip" definition="Public blockchains allow anyone to view the blockchain ledger">public</span> blockchains. Discrete groups of transactions from the ledger form the blocks that together make the blockchain.</p><p>When new transactions are added to the ledger, balances stored at each <span class="tooltip" definition="Unique public identifier for an entity on a blockchain">address</span> get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever. </p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/examining-the-ledger-82fd9762.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '1af211fce04445b18b017c8ede82fe09',
         title: 'Transactions on the Ledger',
-        content: '<div class="bloc1"><p>Let’s look at some example transactions:</p><ul><li>Alice sends 5 ETH to Bob</li><li>Bob sends 2 ETH to Charlie</li></ul><p>Individual transactions show the <em>change </em>in the amount of cryptocurrency for each address so the total result of all transactions IS the amount of cryptocurrency each address has.</p><hr><p>⇒ Alice has lost 5 ETH</p><p>⇒ Bob has gained 3 ETH total (received 5, sent 2)</p><p>⇒ Charlie has gained 2 ETH</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/transactions-on-the-ledger-f4f9d470.svg\'></div>'
+        content: '<div class="bloc1"><p>Let’s look at some example transactions:</p><ul><li>Alice sends 5 ETH to Bob</li><li>Bob sends 2 ETH to Charlie</li></ul><p>Individual transactions show the <em>change </em>in the amount of cryptocurrency for each address so the total result of all transactions IS the amount of cryptocurrency each address has.</p><hr><p>⇒ Alice has lost 5 ETH</p><p>⇒ Bob has gained 3 ETH total (received 5, sent 2)</p><p>⇒ Charlie has gained 2 ETH</p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/transactions-on-the-ledger-f4f9d470.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -598,7 +598,7 @@ const LESSONS: LessonType[] = [
             'The ledger grows as new transactions are added to it',
             'All of the above'
           ],
-          id: 'blockchain-fundamentals-2'
+          id: 'blockchain-basics-2'
         }
       },
       {
@@ -620,14 +620,14 @@ const LESSONS: LessonType[] = [
             'No single authority or entity controls the ledger or access to the ledger data because it is distributed on a large network of computers',
             'The ledger is stored on a single secure server'
           ],
-          id: 'blockchain-fundamentals-3'
+          id: 'blockchain-basics-3'
         }
       },
       {
         type: 'LEARN',
         notionId: '6d45c90a4b094caa8d1c8d2c71523284',
         title: 'Block Anatomy',
-        content: '<div class="bloc1"><p>An important feature of blockchains is that past transaction data cannot be changed after it has been included in a block. This is because each block has a unique <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span>, like a fingerprint, that is used to link the blocks together one after another. No one can change past transactions without changing that fingerprint and the fingerprint of EVERY block that follows it because each fingerprint depends on the previous one.</p><p>So each <span class="tooltip" definition="A group of transactions on the blockchain.">block</span> is simply a group of transactions put together in one file along with that block’s <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span>. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected block<strong><em>chain</em></strong>. </p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/block-anatomy-8ba3bea2.svg\'></div>'
+        content: '<div class="bloc1"><p>An important feature of blockchains is that past transaction data cannot be changed after it has been included in a block. This is because each block has a unique <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span>, like a fingerprint, that is used to link the blocks together one after another. No one can change past transactions without changing that fingerprint and the fingerprint of EVERY block that follows it because each fingerprint depends on the previous one.</p><p>So each <span class="tooltip" definition="A group of transactions on the blockchain.">block</span> is simply a group of transactions put together in one file along with that block’s <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span>. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected block<strong><em>chain</em></strong>. </p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/block-anatomy-8ba3bea2.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -642,14 +642,14 @@ const LESSONS: LessonType[] = [
             'To ensure transactions are sent to the correct address',
             'To ensure the blockchain stays decentralized'
           ],
-          id: 'blockchain-fundamentals-4'
+          id: 'blockchain-basics-4'
         }
       },
       {
         type: 'LEARN',
         notionId: '6f1cc1133e8e4b86b3579fb4d4eb4a1c',
         title: 'Inside a Block',
-        content: '<div class="bloc1"><p>Remember, blocks are made up of groups of transactions put together. Looking within a single block, we see a list of transactions and some data about who created the block. </p><p>From our example earlier when discussing the blockchain ledger, both of those transactions might be grouped within one block, or spread out into multiple blocks over time. But no matter what block they are included in, they are all added to the overall blockchain ledger eventually.</p><ul><li>Alice sends 5 ETH to Bob</li><li>Bob sends 2 ETH to Charlie</li></ul><p>Remember that each block must also reference the past block’s <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span> to link the blockchain together.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/inside-a-block-b11c74ce.svg\'></div>'
+        content: '<div class="bloc1"><p>Remember, <span class="tooltip" definition="A group of transactions on the blockchain.">block</span> data is just a group of transactions put together. Looking within a single block, we see a list of transactions and some data about who created the block. </p><p>From our example earlier when discussing the blockchain ledger, both of those transactions might be grouped within one block, or spread out into multiple blocks over time. But no matter what block they are included in, they are all added to the overall blockchain ledger eventually.</p><ul><li>Alice sends 5 ETH to Bob</li><li>Bob sends 2 ETH to Charlie</li></ul><p>Recall that each block must also reference the past block’s <span class="tooltip" definition="The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain.">block hash</span> to link the blockchain together.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/inside-a-block-b11c74ce.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -664,14 +664,14 @@ const LESSONS: LessonType[] = [
             'Transaction data and a reference to the previous block',
             'All transaction data generated within a fixed timeframe'
           ],
-          id: 'blockchain-fundamentals-5'
+          id: 'blockchain-basics-5'
         }
       },
       {
         type: 'LEARN',
         notionId: 'a9a1ce74d04c439f97249b2000964e5e',
         title: 'Individual Transactions',
-        content: '<div class="bloc1"><p>The data on any blockchain is simply a list of transactions, records of currency moved between users. Each transaction must be signed by the sender’s <span class="tooltip" definition="The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space.">digital signature</span> to be valid. </p><p>This is what you do when you confirm a transaction with a wallet, you are signing with your digital signature to authorize a transaction. You can think of it as the digital equivalent of physically signing a check, receipt, or credit card transaction.</p><p>Transactions can be simple, like sending crypto assets, or more complex, such as swapping crypto assets or even deploying special code that executes when triggered, called smart contracts.</p><p>Finally, each transaction has a unique digital identifier, called its <span class="tooltip" definition="The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions.">transaction hash</span>, that no other transaction has. This makes it easy to refer to any single transaction later on and ensures that the details of that transaction can’t be changed afterward.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/individual-transactions-2f6bf118.svg\'></div>'
+        content: '<div class="bloc1"><p>The data on any blockchain is simply a list of transactions, records of currency moved between users. Each transaction must be signed by the sender’s <span class="tooltip" definition="The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space.">digital signature</span> to be valid. </p><p>This is what you do when you confirm a transaction with a wallet, you are signing with your digital signature to authorize a transaction. You can think of it as the digital equivalent of physically signing a check, receipt, or credit card transaction.</p><p>Transactions can be simple, like sending crypto assets, or more complex, such as swapping crypto assets or even deploying special code that executes when triggered, called smart contracts.</p><p>Finally, each transaction has a unique digital identifier, called its <span class="tooltip" definition="The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions.">transaction hash</span>, that no other transaction has. This makes it easy to refer to any single transaction later on and ensures that the details of that transaction can’t be changed afterward.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/individual-transactions-2f6bf118.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -686,14 +686,14 @@ const LESSONS: LessonType[] = [
             'Editing past blockchain data',
             'All of the above'
           ],
-          id: 'blockchain-fundamentals-6'
+          id: 'blockchain-basics-6'
         }
       },
       {
         type: 'LEARN',
         notionId: 'b4f0ce31ff20480aa97dd69b2c7b091c',
         title: 'User Addresses',
-        content: '<div class="bloc1"><p>An <span class="tooltip" definition="Unique public identifier for an entity on a blockchain">address</span> is a public identifier that anyone can look up on the blockchain. Like an email address, anyone can send funds to it but only someone who controls the <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address.">private key</span> can unlock and use the funds at that address.</p><p>On Ethereum, an address always starts with <em>0x_________</em> and is 42 characters of numbers and letters derived from the <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you.">public key</span> of that address.</p><p>When looking at a single transaction in a block explorer, we can see the From: and To: addresses. This doesn’t tell us who the <em>people </em>are who control those addresses but allows any user to track the movement of cryptocurrency throughout the blockchain ledger.</p><p>…</p></div><div class="bloc2"><img src=\'/lesson/blockchain-fundamentals/user-addresses-201b323b.svg\'></div>'
+        content: '<div class="bloc1"><p>An <span class="tooltip" definition="Unique public identifier for an entity on a blockchain">address</span> is a public identifier that anyone can look up on the blockchain. Like an email address, anyone can send funds to it but only someone who controls the <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address.">private key</span> can unlock and use the funds at that address.</p><p>On Ethereum, an address always starts with <em>0x_________</em> and is 42 characters of numbers and letters derived from the <span class="tooltip" definition="A public key is your address. It gives others a point of reference to send crypto assets to you.">public key</span> of that address.</p><p>When looking at a single transaction in a block explorer, we can see the From: and To: addresses. This doesn’t tell us who the <em>people </em>are who control those addresses but allows any user to track the movement of cryptocurrency throughout the blockchain ledger.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/user-addresses-e9456d37.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -708,13 +708,13 @@ const LESSONS: LessonType[] = [
             'Whoever controls the private key for an address can use the funds at that address',
             'All of the above'
           ],
-          id: 'blockchain-fundamentals-7'
+          id: 'blockchain-basics-7'
         }
       },
       {
         type: 'QUEST',
-        title: 'Blockchain Fundamentals Quest',
-        component: 'BlockchainFundamentals'
+        title: 'Blockchain Basics Quest',
+        component: 'BlockchainBasics'
       },
       {
         type: 'END',
@@ -751,13 +751,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '50b5d9c9a7a34a2c82f6423f97e3e77d',
         title: '<strong>Introduction</strong>',
-        content: '<div class="bloc1"><p><a href=\'https://ethereum.org/en/web3/\'>Ethereum.org</a> states: “Web3 has become a catch-all term for the vision of a new, better internet. At its core, Web3 uses blockchains, cryptocurrencies, and NFTs to give power back to the users in the form of ownership. <a href=\'https://twitter.com/himgajria/status/1266415636789334016\'>A 2020 post on Twitter</a> said it best: Web1 was read-only, Web2 is read-write, Web3 will be read-write-own.”</p><p>This online ownership is new for many, which gives predatory people opportunities to take advantage of ignorance to scam and steal the assets of others. These scams work so well because most people aren’t aware of how they work. So congratulations, Academy Explorer, on taking the time to arm yourself with the knowledge that will protect you as you venture out into <span class="tooltip" definition="Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data.">web3</span>. </p><p>This lesson will cover: </p><ul><li>the basics of web2 & web3 security</li><li>the most common ways people lose their funds and how to protect yourself from them</li><li>how to interpret the MetaMask wallet interface</li><li>a general strategy for wallet security</li><li>the basics of how you can recover if you are the victim of a scam</li></ul></div>'
+        content: '<div class="bloc1"><p><a href=\'https://ethereum.org/en/web3/\'>Ethereum.org</a> states: “Web3 has become a catch-all term for the vision of a new, better internet. At its core, Web3 uses blockchains, cryptocurrencies, and NFTs to give power back to the users in the form of ownership. … ‘Web1 was read-only, Web2 is read-write, Web3 will be read-write-own.’”</p><p>This online ownership is new for many, which gives predatory people opportunities to take advantage of ignorance to scam and steal the assets of others. These scams work so well because most people aren’t aware of how they work. So congratulations, Academy Explorer, on taking the time to arm yourself with the knowledge that will protect you as you venture out into <span class="tooltip" definition="Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data.">web3</span>.</p><p>This lesson will cover:</p><ul><li>the basics of web2 & web3 security,</li><li>the most common ways people lose their funds and how to protect yourself from them,</li><li>a general strategy for wallet security,</li><li>the basics of how you can recover if you are the victim of a scam.</li></ul></div>'
       },
       {
         type: 'LEARN',
         notionId: '44450164401340659f6553fadd0230e4',
         title: 'How does money work online?',
-        content: '<div class="bloc1"><p>In web2, you have to prove who you are to the group or organization guarding your money. Money always works like a bank account, you need a login ID and a password. Finally, because someone else is guarding the money, you have reversible transactions for fraud, like disputing a credit card transaction. Scammers need access to that ID + password combination to steal funds.</p><p>In web3, money works differently, more like a locked cash wallet; once money is spent, it’s gone. Your private keys control access to the wallet so a scammer only needs your <span class="tooltip" definition="Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON.">seed phrase</span>, that special set of secret words, to access your <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address.">private keys</span> and steal from you. That’s why you should NEVER give your seed phrase to anyone for any reason.</p></div>'
+        content: '<div class="bloc1"><p>In web2, you have to prove who you are to the group or organization guarding your money. Money always works like a bank account, you need a login ID and a password. Finally, because someone else is guarding the money, you have reversible transactions for fraud, like disputing a credit card transaction. Scammers need access to that ID + password combination to steal funds.</p><p>In web3, money works differently, more like a locked cash wallet; once money is spent, it’s gone. Your private keys control access to the wallet so a scammer only needs your <span class="tooltip" definition="Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON.">seed phrase</span>, that special set of secret words, to access your <span class="tooltip" definition="A private key allows access to your wallet in order for you to send crypto assets to other address.">private keys</span> and steal from you. That’s why you should NEVER give your seed phrase to anyone for any reason. Also, you should never type your seed phrase somewhere it could become compromised such as a spreadsheet, a notes application, or even a password manager.</p></div>'
       },
       {
         type: 'QUIZ',
@@ -777,7 +777,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '55c51a6c7e2946a1a098ced62d4f7180',
         title: 'Protect your Passwords',
-        content: '<div class="bloc1"><p>Passwords should be different for each and every web2 service you use online, like email, centralized exchanges, and other service accounts. If someone manages to get your ID + password for one of your accounts, you don’t want them to have the password for ALL of your accounts! Having different passwords is hard to keep track of, so make it easy for yourself and use a password manager application.</p><p>Tools like 1password, LastPass, and BitWarden encrypt and store all your passwords securely. They can even generate new high-security passwords for you! You just have to remember your one master password!</p><p>Remember, a password is one part of your security in web2. In web3, your seed phrase is <strong>everything. </strong>Do NOT store your web3 <span class="tooltip" definition="Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON.">seed phrase</span> in a password manager!</p></div>'
+        content: '<div class="bloc1"><p>Passwords should be different for each and every web2 service you use online, things like email, centralized exchanges, and other service accounts. It’s bad if someone manages to get your ID + password for one of your accounts, but it’s much worse if that combination unlocks all your accounts! Having different passwords is hard to keep track of, so make it easy for yourself and use a password manager application.</p><p>Tools like 1password, LastPass, and BitWarden encrypt and store all your passwords securely; they can even generate new high-security passwords for you. You just have to remember a single master password!</p><p>Remember, a password is one part of your security in web2. In web3, your seed phrase is <strong>everything. </strong>Do NOT store your web3 <span class="tooltip" definition="Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON.">seed phrase</span> in a password manager!</p></div>'
       },
       {
         type: 'QUIZ',
@@ -799,7 +799,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '704696e837db424088ae66bcb842e98b',
         title: 'Two Factor Authentication',
-        content: '<div class="bloc1"><p>Many people have gotten hacked or scammed despite having good passwords, so now, websites often use two-factor authentication as well. Two Factor Authentication, or 2FA, uses single-use codes generated by another device in addition to the normal password for security. </p><p>Phone (SMS) 2FA is better than no 2FA, but phone companies are vulnerable to scammers as well, and your account can be hacked without you doing anything. It’s much better to use authentication applications like <a href=\'https://authy.com/\'>Authy</a> or <a href=\'https://support.google.com/accounts/answer/1066447?hl=en&ref_topic=2954345\'>Google Authenticator</a> for 2FA. </p></div>'
+        content: '<div class="bloc1"><p>Many people have gotten hacked or scammed despite having good passwords, so now, websites often use two-factor authentication as well. Two Factor Authentication, or 2FA, uses single-use codes generated by another device in addition to the normal password for security.</p><p>Phone (SMS) 2FA is better than no 2FA, but phone companies are vulnerable to scammers as well, and your account can be hacked without you doing anything. It’s much better to use authentication applications like <a href=\'https://authy.com/\'>Authy</a> or <a href=\'https://support.google.com/accounts/answer/1066447?hl=en&ref_topic=2954345\'>Google Authenticator</a> for 2FA.</p></div>'
       },
       {
         type: 'QUIZ',
@@ -843,7 +843,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'c189bdd9b32e45b6bf5562cf6958357d',
         title: 'Social Media Safety 1',
-        content: '<div class="bloc1"><p>Social media like crypto Twitter and community Discord servers of crypto projects are full of scammers. They will always try to move to or start conversations in DMs to avoid being spotted by experienced community members. Real community members know it’s safer and more useful to talk in public areas! </p><p>No matter where you are talking to people, you should NEVER give your <span class="tooltip" definition="Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON.">seed phrase</span> to anyone for any reason. If anyone asks for your seed phrase or private key, they are scamming you!</p></div><div class="bloc2"><img src=\'/lesson/web3-security-101/social-media-safety-1-b0335438.png\'></div>'
+        content: '<div class="bloc1"><p>Social media like crypto Twitter and community Discord servers of crypto projects are full of scammers. They will always try to move to or start conversations in DMs to avoid being spotted by experienced community members. Real community members know it’s safer and more useful to talk in public areas!</p><p>No matter where you are talking to people, you should NEVER give your <span class="tooltip" definition="Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON.">seed phrase</span> to anyone for any reason. If anyone asks for your seed phrase or private key, they are scamming you!</p></div><div class="bloc2"><img src=\'/lesson/web3-security-101/social-media-safety-1-b0335438.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -855,7 +855,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '61574044744645b6a4f7fe140539a7ab',
         title: 'Scamtokens and Scamdrops',
-        content: '<div class="bloc1"><p>Besides social engineering, the second most common attack is getting sent a bunch of scam tokens. These are tokens that scammers send to many people at once in the hopes that someone will try to move or sell the tokens and trigger the code hiding in the malicious smart contract of that token.</p><p>Malicious contracts can ask you to spend far more ETH than is necessary in order to sell these scam tokens, and others can completely drain your wallet! <a href=\'https://twitter.com/singularityhack/status/1515002012345188353\'>These scam tokens could even be NFTs</a>.</p><p>If the problem isn’t with the smart contract itself, these tokens will often lure victims back to phishing websites where scammers again try to trick victims to approve spending a different token or entering their <span class="tooltip" definition="Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON.">seed phrase</span>. </p><p>The best thing to do when you receive random tokens is to not interact with them at all; leave them alone and never touch them.</p></div>'
+        content: '<div class="bloc1"><p>Besides social engineering, the second most common attack is getting sent a bunch of scam tokens. These are tokens that scammers send to many people at once in the hopes that someone will try to move or sell the tokens and trigger the code hiding in the malicious smart contract of that token.</p><p>Malicious contracts can ask you to spend far more ETH than is necessary in order to sell these scam tokens, and others can completely drain your wallet! <a href=\'https://twitter.com/singularityhack/status/1515002012345188353\'>These scam tokens could even be NFTs</a>.</p><p>If the problem isn’t with the smart contract itself, these tokens will often lure victims back to phishing websites where scammers again try to trick victims to approve spending a different token or entering their <span class="tooltip" definition="Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON.">seed phrase</span>.</p><p>The best thing to do when you receive random tokens is to not interact with them at all; leave them alone and never touch them.</p></div>'
       },
       {
         type: 'QUIZ',
@@ -897,7 +897,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '54e24ec782194af1bf5319f92143ecb8',
         title: 'Wallet Security Strategies',
-        content: '<div class="bloc1"><p>After getting a hardware wallet, one of the best things you can do to keep your funds secure is to keep them spread out in multiple wallets. If one of your wallets does become compromised and you lose your funds, it’s much better if those aren’t ALL of your funds. In general, we recommend you use at least 3 wallets to keep your funds separate. </p><ol><li>A wallet that serves as your web3 identity for logins — like for the <a href=\'https://gm.xyz/c/BanklessAcademy\'>Bankless Academy community</a></li><li>A hot wallet that you use for trading and other activities involving funds that you might need to move on short notice</li><li>A <span class="tooltip" definition="A type of non-custodial wallet that stores private keys offline in a physical hardware device.">hardware wallet</span> for the long-term <span class="tooltip" definition="Hold On for Dear Life. Crypto slang for not selling crypto no matter what the market conditions are">HODL</span> — these are funds you don’t intend to sell for a long time</li></ol><p>PRO 👍: This separation ensures that if you get scammed out of your seed phrase, you only lose the funds in <em>that particular wallet</em> rather than <em>everything you own</em>. </p><p>CON 👎: It’s more complicated to keep track of, but you can reduce the issue by keeping your own list of what each wallet address’ purpose is.</p></div>'
+        content: '<div class="bloc1"><p>After getting a hardware wallet, one of the best things you can do to keep your funds secure is to keep them spread out in multiple wallets. If one of your wallets does become compromised and you lose your funds, it’s much better if those aren’t ALL of your funds. In general, we recommend you use at least 3 wallets to keep your funds separate.</p><ol><li>A wallet that serves as your web3 identity for logins — like for the <a href=\'https://gm.xyz/c/BanklessAcademy\'>Bankless Academy community</a></li><li>A hot wallet that you use for trading and other activities involving funds that you might need to move on short notice</li><li>A <span class="tooltip" definition="A type of non-custodial wallet that stores private keys offline in a physical hardware device.">hardware wallet</span> for the long-term <span class="tooltip" definition="Hold On for Dear Life. Crypto slang for not selling crypto no matter what the market conditions are">HODL</span> — these are funds you don’t intend to sell for a long time</li></ol><p>PRO 👍: This separation ensures that if you get scammed out of your seed phrase, you only lose the funds in <em>that particular wallet</em> rather than <em>everything you own</em>. </p><p>CON 👎: It’s more complicated to keep track of, but you can reduce the issue by keeping your own list of what each wallet address’ purpose is.</p></div>'
       },
       {
         type: 'QUIZ',
