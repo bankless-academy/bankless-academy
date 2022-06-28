@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import LESSONS from 'constants/lessons'
-import { DOMAIN } from 'constants/index'
+import { DOMAIN_URL } from 'constants/index'
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,7 +12,10 @@ export default async function handler(
         delete lesson.imageLinks
         lesson.slides.map((slide) => {
           if (slide.content) {
-            slide.content = slide.content.replace(/src='\//g, `src='${DOMAIN}/`)
+            slide.content = slide.content.replace(
+              /src='\//g,
+              `src='${DOMAIN_URL}/`
+            )
           }
           return slide
         })

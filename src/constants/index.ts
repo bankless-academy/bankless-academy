@@ -5,15 +5,17 @@ export const PROJECT_NAME = 'Bankless Academy'
 
 export const IS_WHITE_LABEL = false
 
-export const DOMAIN =
+export const DOMAIN_PROD = 'app.banklessacademy.com'
+
+export const DOMAIN_URL =
   process.env.VERCEL_URL && process.env.VERCEL_ENV !== 'production'
     ? `https://${process.env.VERCEL_URL}`
-    : 'https://app.banklessacademy.com'
+    : `https://${DOMAIN_PROD}`
 
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
   description: 'Level up your knowledge of Web3 and DeFi',
-  image: `${DOMAIN}/images/bankless_academy_v3.jpg`,
+  image: `${DOMAIN_URL}/images/bankless_academy_v3.jpg`,
 }
 
 export const FAVICON = '/favicon.png'

@@ -3,7 +3,13 @@ import { useRouter } from 'next/router'
 import Script from 'next/script'
 import { hotjar } from 'react-hotjar'
 
-import { PROJECT_NAME, DOMAIN, DEFAULT_METADATA, FAVICON } from 'constants/'
+import {
+  PROJECT_NAME,
+  DOMAIN_PROD,
+  DOMAIN_URL,
+  DEFAULT_METADATA,
+  FAVICON,
+} from 'constants/'
 
 export interface MetaData {
   title?: string
@@ -14,9 +20,10 @@ export interface MetaData {
 
 const umamiWebsiteId =
   typeof window !== 'undefined' &&
-  window.location.hostname === 'app.banklessacademy.com'
+  process.env.UMAMI &&
+  window.location.hostname === DOMAIN_PROD
     ? // prod
-      '62d1cf48-425d-4658-9b86-3eea78ac9714'
+      process.env.UMAMI
     : // dev
       'e84c3a1e-0ab0-4502-b0fe-67d660765535'
 const umamiDomain = 'https://stats.banklessacademy.com/stats.js'
@@ -28,7 +35,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
     : PROJECT_NAME
   const description = metadata?.description || DEFAULT_METADATA.description
   const image = metadata?.image || DEFAULT_METADATA.image
-  const url = `${DOMAIN}${router.asPath}`
+  const url = `${DOMAIN_URL}${router.asPath}`
   return (
     <>
       <NextHead>
