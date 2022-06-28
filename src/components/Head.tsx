@@ -9,6 +9,7 @@ import {
   DOMAIN_URL,
   DEFAULT_METADATA,
   FAVICON,
+  UMAMI_PROD,
 } from 'constants/'
 
 export interface MetaData {
@@ -17,8 +18,6 @@ export interface MetaData {
   image?: string
   isLesson?: boolean
 }
-
-const UMAMI_PROD = process.env.UMAMI
 
 // eslint-disable-next-line no-console
 console.log('UMAMI_PROD', UMAMI_PROD)
