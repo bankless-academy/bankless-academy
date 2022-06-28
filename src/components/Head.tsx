@@ -18,12 +18,17 @@ export interface MetaData {
   isLesson?: boolean
 }
 
+const UMAMI_PROD = process.env.UMAMI
+
+// eslint-disable-next-line no-console
+console.log('UMAMI_PROD', UMAMI_PROD)
+
 const umamiWebsiteId =
   typeof window !== 'undefined' &&
-  process.env.UMAMI &&
-  window.location.hostname === DOMAIN_PROD
+  window.location.hostname === DOMAIN_PROD &&
+  UMAMI_PROD
     ? // prod
-      process.env.UMAMI
+      UMAMI_PROD
     : // dev
       'e84c3a1e-0ab0-4502-b0fe-67d660765535'
 const umamiDomain = 'https://stats.banklessacademy.com/stats.js'
