@@ -25,10 +25,7 @@ export const LOGO_SMALL = '/images/BanklessAcademy_Logo.svg'
 
 export const HOMEPAGE_BACKGROUND = '/images/homepage_background_v3.jpg'
 
-export const UMAMI_PROD = process.env.UMAMI
-
-// eslint-disable-next-line no-console
-console.log('UMAMI_PROD const', UMAMI_PROD)
+export const UMAMI_PROD = '62d1cf48-425d-4658-9b86-3eea78ac9714'
 
 export const TOKEN_ADDRESS = {
   1: '0x2d94aa3e47d9d5024503ca8491fce9a2fb4da198',

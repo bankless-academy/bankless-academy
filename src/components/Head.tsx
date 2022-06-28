@@ -19,9 +19,6 @@ export interface MetaData {
   isLesson?: boolean
 }
 
-// eslint-disable-next-line no-console
-console.log('UMAMI_PROD', UMAMI_PROD)
-
 const umamiWebsiteId =
   typeof window !== 'undefined' &&
   window.location.hostname === DOMAIN_PROD &&
