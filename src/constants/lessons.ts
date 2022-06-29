@@ -2,10 +2,10 @@ import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = [
   {
-    poapImageLink: 'https://app.banklessacademy.com/images/wallet-basics-poap.png',
-    lessonImageLink: 'https://app.banklessacademy.com/images/wallet-basics-lesson.png',
-    socialImageLink: 'https://app.banklessacademy.com/images/wallet-basics-social.jpg',
-    learningActions: 'Create and manage your own wallet<br>Connect your wallet to a web3 website',
+    poapImageLink: '/lesson/wallet-basics/poap-75d8aa76.png',
+    lessonImageLink: '/lesson/wallet-basics/lesson-5aa84b59.png',
+    socialImageLink: '/lesson/wallet-basics/social-230cc260.jpg',
+    learningActions: 'Create and manage your own wallet\nConnect your wallet to a web3 website',
     marketingDescription: 'A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.',
     poapEventId: 26971,
     duration: 15,
@@ -232,9 +232,9 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: 'https://app.banklessacademy.com/images/intro-to-defi-poap.png',
-    lessonImageLink: 'https://app.banklessacademy.com/images/intro-to-defi-lesson.png',
-    socialImageLink: 'https://app.banklessacademy.com/images/intro-to-defi-social.jpg',
+    poapImageLink: '/lesson/intro-to-defi/poap-b4dab2d4.png',
+    lessonImageLink: '/lesson/intro-to-defi/lesson-97291c9d.png',
+    socialImageLink: '/lesson/intro-to-defi/social-ee8d95a4.jpg',
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
     poapEventId: 26972,
@@ -452,9 +452,9 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: 'https://app.banklessacademy.com/images/bankless-academy-community-poap.png',
-    lessonImageLink: 'https://app.banklessacademy.com/images/bankless-academy-community-lesson.png',
-    socialImageLink: 'https://app.banklessacademy.com/images/bankless-academy-community-social.jpg',
+    poapImageLink: '/lesson/bankless-academy-community/poap-40b32445.png',
+    lessonImageLink: '/lesson/bankless-academy-community/lesson-e61f65de.png',
+    socialImageLink: '/lesson/bankless-academy-community/social-9fbbece7.jpg',
     learningActions: '',
     marketingDescription: 'Join the Academy Explorer Community on gm.xyz',
     poapEventId: null,
@@ -515,9 +515,9 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: 'https://app.banklessacademy.com/images/blockchain-fundamentals-poap.png',
-    lessonImageLink: 'https://app.banklessacademy.com/images/blockchain-fundamentals-lesson.png',
-    socialImageLink: 'https://app.banklessacademy.com/images/blockchain-fundamentals-social.jpg?1',
+    poapImageLink: '/lesson/blockchain-basics/poap-b0048cdb.png',
+    lessonImageLink: '/lesson/blockchain-basics/lesson-c84db284.png',
+    socialImageLink: '/lesson/blockchain-basics/social-07ea2639.jpeg',
     learningActions: '',
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
     poapEventId: null,
@@ -723,35 +723,35 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: 'https://app.banklessacademy.com/images/web3-security-101-poap.png',
-    lessonImageLink: 'https://app.banklessacademy.com/images/web3-security-101-lesson.png',
-    socialImageLink: 'https://app.banklessacademy.com/images/web3-security-101-social.jpg',
+    poapImageLink: '/lesson/web3-security/poap-369c812e.png',
+    lessonImageLink: '/lesson/web3-security/lesson-c6aaf6fa.png',
+    socialImageLink: '/lesson/web3-security/social-bf0e7fc3.jpg',
     learningActions: '',
     marketingDescription: '',
     poapEventId: null,
     duration: 15,
-    learnings: '',
+    learnings: 'How the most common scams in web3 work and how to stay safe from them. ',
     difficulty: 'Easy',
     description: '',
-    name: 'Web3 Security 101',
-    quest: 'Web3Security101',
+    name: 'Web3 Security',
+    quest: 'Web3Security',
     publicationStatus: 'preview',
     isFeaturedOnHomepage: false,
     isCommentsEnabled: true,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
     notionId: '7a5b9b7afe804e6984bf279301dfa1db',
-    slug: 'web3-security-101',
+    slug: 'web3-security',
     imageLinks: [
-      '/lesson/web3-security-101/social-media-safety-1-b0335438.png',
-      '/lesson/web3-security-101/social-media-safety-2-1b088573.png'
+      '/lesson/web3-security/social-media-safety-1-b0335438.png',
+      '/lesson/web3-security/social-media-safety-2-1b088573.png'
     ],
     slides: [
       {
         type: 'LEARN',
         notionId: '50b5d9c9a7a34a2c82f6423f97e3e77d',
         title: '<strong>Introduction</strong>',
-        content: '<div class="bloc1"><p><a href=\'https://ethereum.org/en/web3/\'>Ethereum.org</a> states: “Web3 has become a catch-all term for the vision of a new, better internet. At its core, Web3 uses blockchains, cryptocurrencies, and NFTs to give power back to the users in the form of ownership. … ‘Web1 was read-only, Web2 is read-write, Web3 will be read-write-own.’”</p><p>This online ownership is new for many, which gives predatory people opportunities to take advantage of ignorance to scam and steal the assets of others. These scams work so well because most people aren’t aware of how they work. So congratulations, Academy Explorer, on taking the time to arm yourself with the knowledge that will protect you as you venture out into <span class="tooltip" definition="Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data.">web3</span>.</p><p>This lesson will cover:</p><ul><li>the basics of web2 & web3 security,</li><li>the most common ways people lose their funds and how to protect yourself from them,</li><li>a general strategy for wallet security,</li><li>the basics of how you can recover if you are the victim of a scam.</li></ul></div>'
+        content: '<div class="bloc1"><p><a href=\'https://ethereum.org/en/web3/\'>Ethereum.org</a> states: “Web3 has become a catch-all term for the vision of a new, better internet. At its core, Web3 uses blockchains, cryptocurrencies, and NFTs to give power back to the users in the form of ownership. … ‘Web1 was read-only, Web2 is read-write, Web3 will be read-write-own.’”</p><p>This online ownership of digital financial products is new for many, and that unfamiliarity gives opportunties for predatory people. which gives predatory people opportunities to take advantage of ignorance to scam and steal the assets of others. These scams work so well because most people aren’t aware of how they work. So congratulations, Academy Explorer, on taking the time to arm yourself with the knowledge that will protect you as you venture out into <span class="tooltip" definition="Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data.">web3</span>.</p><p>This lesson will cover:</p><ul><li>the basics of web2 & web3 security</li><li>the most common ways people lose their funds and how to protect yourself from them</li><li>a general strategy for wallet security</li><li>the basics of how you can recover if you are the victim of a scam</li></ul></div>'
       },
       {
         type: 'LEARN',
@@ -770,7 +770,7 @@ const LESSONS: LessonType[] = [
             'True',
             'False'
           ],
-          id: 'web3-security-101-1'
+          id: 'web3-security-1'
         }
       },
       {
@@ -792,7 +792,7 @@ const LESSONS: LessonType[] = [
             'They encrypt your passwords to keep them secure',
             'All of the above'
           ],
-          id: 'web3-security-101-2'
+          id: 'web3-security-2'
         }
       },
       {
@@ -814,7 +814,7 @@ const LESSONS: LessonType[] = [
             'It makes your passwords stronger',
             'All of the above'
           ],
-          id: 'web3-security-101-3'
+          id: 'web3-security-3'
         }
       },
       {
@@ -836,20 +836,20 @@ const LESSONS: LessonType[] = [
             'Offering giveaways or free NFTs to generate FOMO',
             'All of the above'
           ],
-          id: 'web3-security-101-4'
+          id: 'web3-security-4'
         }
       },
       {
         type: 'LEARN',
         notionId: 'c189bdd9b32e45b6bf5562cf6958357d',
         title: 'Social Media Safety 1',
-        content: '<div class="bloc1"><p>Social media like crypto Twitter and community Discord servers of crypto projects are full of scammers. They will always try to move to or start conversations in DMs to avoid being spotted by experienced community members. Real community members know it’s safer and more useful to talk in public areas!</p><p>No matter where you are talking to people, you should NEVER give your <span class="tooltip" definition="Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON.">seed phrase</span> to anyone for any reason. If anyone asks for your seed phrase or private key, they are scamming you!</p></div><div class="bloc2"><img src=\'/lesson/web3-security-101/social-media-safety-1-b0335438.png\'></div>'
+        content: '<div class="bloc1"><p>Social media like crypto Twitter and community Discord servers of crypto projects are full of scammers. They will always try to move to or start conversations in DMs to avoid being spotted by experienced community members. Real community members know it’s safer and more useful to talk in public areas!</p><p>No matter where you are talking to people, you should NEVER give your <span class="tooltip" definition="Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON.">seed phrase</span> to anyone for any reason. If anyone asks for your seed phrase or private key, they are scamming you!</p></div><div class="bloc2"><img src=\'/lesson/web3-security/social-media-safety-1-b0335438.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '276e9374da2e49428b3b4193dc692c86',
         title: 'Social Media Safety 2',
-        content: '<div class="bloc1"><p><strong>Here are some red flags to watch for with social media:</strong></p><p>🚩 Language and grammar errors (typos, they’re/their, etc.)</p><p>🚩 FOMO generation (don’t miss out!)</p><p>🚩 Impersonation of authority or celebrity (admin, support, Vitalik, Elon Musk, etc.)</p><p>🚩 “Guaranteed profits/mints/return”</p><p>🚩 Unasked-for links and offers (especially in DMs)</p><p><strong>Best Practices to keep in mind:</strong></p><ul><li>Teams & admin will never DM mint/sale details</li><li>Typos = scam alert ⚠</li><li>Creating urgency = scam alert ⚠</li><li>VERIFY EVERYTHING with an outside source, like the official project Twitter account</li></ul></div><div class="bloc2"><img src=\'/lesson/web3-security-101/social-media-safety-2-1b088573.png\'></div>'
+        content: '<div class="bloc1"><p><strong>Here are some red flags to watch for with social media:</strong></p><p>🚩 Language and grammar errors (typos, they’re/their, etc.)</p><p>🚩 FOMO generation (don’t miss out!)</p><p>🚩 Impersonation of authority or celebrity (admin, support, Vitalik, Elon Musk, etc.)</p><p>🚩 “Guaranteed profits/mints/return”</p><p>🚩 Unasked-for links and offers (especially in DMs)</p><p><strong>Best Practices to keep in mind:</strong></p><ul><li>Teams & admin will never DM mint/sale details</li><li>Typos = scam alert ⚠</li><li>Creating urgency = scam alert ⚠</li><li>VERIFY EVERYTHING with an outside source, like the official project Twitter account</li></ul></div><div class="bloc2"><img src=\'/lesson/web3-security/social-media-safety-2-1b088573.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -870,7 +870,7 @@ const LESSONS: LessonType[] = [
             'They could lead to a phishing website where a scammer will try to get your seed phrase',
             'All of the above'
           ],
-          id: 'web3-security-101-5'
+          id: 'web3-security-5'
         }
       },
       {
@@ -890,7 +890,7 @@ const LESSONS: LessonType[] = [
             'Yes',
             'No'
           ],
-          id: 'web3-security-101-6'
+          id: 'web3-security-6'
         }
       },
       {
@@ -912,7 +912,7 @@ const LESSONS: LessonType[] = [
             'separated in multiple wallets',
             'liquid in multiple addresses'
           ],
-          id: 'web3-security-101-7'
+          id: 'web3-security-7'
         }
       },
       {
@@ -929,8 +929,8 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'QUEST',
-        title: 'Web3 Security 101 Quest',
-        component: 'Web3Security101'
+        title: 'Web3 Security Quest',
+        component: 'Web3Security'
       },
       {
         type: 'END',
