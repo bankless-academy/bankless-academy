@@ -35,7 +35,7 @@ const KEY_MATCHING = {
 }
 
 const args = process.argv
-const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : DEFAULT_NOTION_ID
+const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : process.env.DEFAULT_CONTENT_DB_ID || DEFAULT_NOTION_ID
 console.log('NOTION_ID', NOTION_ID)
 
 const slugify = (text) => text.toLowerCase()
