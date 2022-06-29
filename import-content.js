@@ -5,13 +5,16 @@ const fs = require('fs')
 const crc32 = require('js-crc').crc32
 const stringifyObject = require('stringify-object')
 
-const keywords = require('./keywords.json')
+const defaultKeywords = require('./keywords.json')
+const whitelabelKeywords = require('./whitelabel-keywords.json')
 
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
 const LESSON_FILENAME = IS_WHITELABEL ? 'whitelabel_lessons' : 'lessons'
 const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
 const POTION_API = 'https://potion.banklessacademy.com'
+
+const keywords = IS_WHITELABEL ? whitelabelKeywords : defaultKeywords
 
 const KEY_MATCHING = {
   'POAP image': 'poapImageLink',

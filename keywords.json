@@ -1,59 +1,45 @@
 {
-  "wallet": {
-    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain.",
+  "2 Factor Authentication": {
+    "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+  },
+  "address": {
+    "definition": "Unique public identifier for an entity on a blockchain"
+  },
+  "allowance": {
+    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction"
+  },
+  "bet": {
+    "definition": "risking money in exchange for greater rewards (shorting/longing) ; money verb on the skill cube",
     "color": "rgba(128, 128, 128, 1)"
+  },
+  "Block": {
+    "definition": "A group of transactions on the blockchain.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "block explorer": {
+    "definition": "Search and exploration tool for blockchain data"
+  },
+  "block hash": {
+    "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
   },
   "blockchain": {
     "definition": "A shared, unchangeable database, or ledger, of recorded transactions.",
     "color": "rgba(128, 128, 128, 1)"
   },
-  "public key": {
-    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you.",
-    "color": "rgba(0, 120, 223, 1)"
+  "blockchain architecture": {
+    "definition": "The structures for how data is stored in blockchain technology."
   },
-  "public keys": {
-    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you.",
-    "color": "rgba(0, 120, 223, 1)"
-  },
-  "private key": {
-    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address.",
+  "borrower": {
+    "definition": "Willing to pay interest to lenders in order to borrow assets",
     "color": "rgba(255, 0, 26, 1)"
   },
-  "private keys": {
-    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address.",
-    "color": "rgba(255, 0, 26, 1)"
-  },
-  "custodial wallet": {
-    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets.",
-    "color": "rgba(255, 0, 26, 1)"
-  },
-  "custodial wallets": {
-    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets.",
-    "color": "rgba(255, 0, 26, 1)"
-  },
-  "non-custodial wallet": {
-    "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets.",
-    "color": "rgba(0, 135, 107, 1)"
-  },
-  "non-custodial wallets": {
-    "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets.",
-    "color": "rgba(0, 135, 107, 1)"
-  },
-  "recovery phrase": {
-    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key.",
+  "chain": {
+    "definition": "Binds blocks of data together to form a database which cannot be altered or changed.",
     "color": "rgba(128, 128, 128, 1)"
   },
-  "recovery phrases": {
-    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key.",
+  "coin": {
+    "definition": "The native asset of a blockchain mostly used as a form of currency to facilitate transactions on the network.",
     "color": "rgba(128, 128, 128, 1)"
-  },
-  "hot wallet": {
-    "definition": "A type of non-custodial wallet that is perpetually connected to the internet.",
-    "color": "rgba(255, 0, 26, 1)"
-  },
-  "hot wallets": {
-    "definition": "A type of non-custodial wallet that is perpetually connected to the internet.",
-    "color": "rgba(255, 0, 26, 1)"
   },
   "cold wallet": {
     "definition": "A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection.",
@@ -63,6 +49,18 @@
     "definition": "A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection.",
     "color": "rgba(0, 120, 223, 1)"
   },
+  "collateral": {
+    "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "custodial wallet": {
+    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets.",
+    "color": "rgba(255, 0, 26, 1)"
+  },
+  "custodial wallets": {
+    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets.",
+    "color": "rgba(255, 0, 26, 1)"
+  },
   "DApp": {
     "definition": "Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.",
     "color": "rgba(128, 128, 128, 1)"
@@ -71,33 +69,67 @@
     "definition": "Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.",
     "color": "rgba(128, 128, 128, 1)"
   },
-  "web3": {
-    "definition": "Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data.",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "lender": {
-    "definition": "Deposits assets to earn interest",
-    "color": "rgba(0, 135, 107, 1)"
-  },
-  "borrower": {
-    "definition": "Willing to pay interest to lenders in order to borrow assets",
-    "color": "rgba(255, 0, 26, 1)"
-  },
-  "collateral": {
-    "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "smart contract": {
-    "definition": "Computerized code that execute terms of a contract automatically",
+  "decentralized": {
+    "definition": "No single authority or entity controls the data",
     "color": "rgba(128, 128, 128, 1)"
   },
   "DeFi": {
     "definition": "An abbreviation for decentralized finance.",
     "color": "rgba(128, 128, 128, 1)"
   },
-  "decentralized": {
-    "definition": "The transfer of control and decision making from a centralized entity to a distributed network.",
+  "digital signature": {
+    "definition": "The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space."
+  },
+  "earn": {
+    "definition": "contributing value in exchange for rewards ; money verb on the skill cube",
     "color": "rgba(128, 128, 128, 1)"
+  },
+  "Epoch": {
+    "definition": "The time taken for a specific number of blocks to be included on any particular blockchain.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "FOMO": {
+    "definition": "Fear Of Missing Out. Anxiety or apprehension about missing out on or not getting things"
+  },
+  "hardware wallet": {
+    "definition": "A type of non-custodial wallet that stores private keys offline in a physical hardware device."
+  },
+  "hash": {
+    "definition": "A digital fingerprint for information.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "hashing function": {
+    "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
+  },
+  "HODL": {
+    "definition": "Hold On for Dear Life. Crypto slang for not selling crypto no matter what the market conditions are"
+  },
+  "hot wallet": {
+    "definition": "A type of non-custodial wallet that is perpetually connected to the internet.",
+    "color": "rgba(255, 0, 26, 1)"
+  },
+  "hot wallets": {
+    "definition": "A type of non-custodial wallet that is perpetually connected to the internet.",
+    "color": "rgba(255, 0, 26, 1)"
+  },
+  "invest": {
+    "definition": "The act of buying a coin/token that uses DeFi technology",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "ledger": {
+    "definition": "The record of all transactions that have ever occurred."
+  },
+  "lender": {
+    "definition": "Deposits assets to earn interest",
+    "color": "rgba(0, 135, 107, 1)"
+  },
+  "non-custodial wallet": {
+    "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets.",
+    "color": "rgba(0, 135, 107, 1)"
+  },
+  "non-custodial wallets": {
+    "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets.",
+    "color": "rgba(0, 135, 107, 1)"
   },
   "peer-to-peer": {
     "definition": "A transaction between two parties that does not require a middleman or controlling entity.",
@@ -107,67 +139,39 @@
     "definition": "Refers to a public blockchain that anyone can use to buy, sell, or trade assets.",
     "color": "rgba(128, 128, 128, 1)"
   },
-  "spend": {
-    "definition": "Using your crypto assets to pay for goods or services.",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "earn": {
-    "definition": "contributing value in exchange for rewards ; money verb on the skill cube",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "trade": {
-    "definition": "exchanging assets or money for something valuable ; money verb on the skill cube",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "bet": {
-    "definition": "risking money in exchange for greater rewards (shorting/longing) ; money verb on the skill cube",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "invest": {
-    "definition": "The act of buying a coin/token that uses DeFi technology",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "staking": {
-    "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "Block": {
-    "definition": "A group of transactions on the blockchain.",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "chain": {
-    "definition": "Binds blocks of data together to form a database which cannot be altered or changed.",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "Epoch": {
-    "definition": "The time taken for a specific number of blocks to be included on any particular blockchain.",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "hash": {
-    "definition": "A digital fingerprint for information.",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "tokens": {
-    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain.",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "coin": {
-    "definition": "The native asset of a blockchain mostly used as a form of currency to facilitate transactions on the network.",
-    "color": "rgba(128, 128, 128, 1)"
-  },
-  "transaction": {
-    "definition": "A record of an event.",
-    "color": "rgba(128, 128, 128, 1)"
+  "phishing": {
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money"
   },
   "POAP": {
     "definition": "A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson.",
     "color": "rgba(128, 128, 128, 1)"
   },
+  "private key": {
+    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address.",
+    "color": "rgba(255, 0, 26, 1)"
+  },
+  "private keys": {
+    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address.",
+    "color": "rgba(255, 0, 26, 1)"
+  },
   "public": {
     "definition": "Public blockchains allow anyone to view the blockchain ledger"
   },
-  "HODL": {
-    "definition": "Hold On for Dear Life. Crypto slang for not selling crypto no matter what the market conditions are"
+  "public key": {
+    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you.",
+    "color": "rgba(0, 120, 223, 1)"
+  },
+  "public keys": {
+    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you.",
+    "color": "rgba(0, 120, 223, 1)"
+  },
+  "recovery phrase": {
+    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key.",
+    "color": "rgba(128, 128, 128, 1)"
+  },
+  "recovery phrases": {
+    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key.",
+    "color": "rgba(128, 128, 128, 1)"
   },
   "scamtoken": {
     "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds"
@@ -175,46 +179,42 @@
   "seed phrase": {
     "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
   },
+  "smart contract": {
+    "definition": "Computerized code that execute terms of a contract automatically",
+    "color": "rgba(128, 128, 128, 1)"
+  },
   "social engineering": {
     "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases"
   },
-  "FOMO": {
-    "definition": "Fear Of Missing Out. Anxiety or apprehension about missing out on or not getting things"
+  "spend": {
+    "definition": "Using your crypto assets to pay for goods or services.",
+    "color": "rgba(128, 128, 128, 1)"
   },
-  "phishing": {
-    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money"
+  "staking": {
+    "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")",
+    "color": "rgba(128, 128, 128, 1)"
   },
-  "allowance": {
-    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction"
+  "tokens": {
+    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain.",
+    "color": "rgba(128, 128, 128, 1)"
   },
-  "2 Factor Authentication": {
-    "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+  "trade": {
+    "definition": "exchanging assets or money for something valuable ; money verb on the skill cube",
+    "color": "rgba(128, 128, 128, 1)"
   },
-  "hardware wallet": {
-    "definition": "A type of non-custodial wallet that stores private keys offline in a physical hardware device."
-  },
-  "address": {
-    "definition": "Unique public identifier for an entity on a blockchain"
-  },
-  "block explorer": {
-    "definition": "Search and exploration tool for blockchain data"
-  },
-  "hashing function": {
-    "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
-  },
-  "block hash": {
-    "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
+  "transaction": {
+    "definition": "A record of an event.",
+    "color": "rgba(128, 128, 128, 1)"
   },
   "transaction hash": {
     "definition": "The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions."
   },
-  "digital signature": {
-    "definition": "The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space."
+  "wallet": {
+    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain.",
+    "color": "rgba(128, 128, 128, 1)"
   },
-  "ledger": {
-    "definition": "The record of all transactions that have ever occurred."
-  },
-  "blockchain architecture": {
-    "definition": "The structures for how data is stored in blockchain technology."
+  "web3": {
+    "definition": "Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data.",
+    "color": "rgba(128, 128, 128, 1)"
   }
 }
