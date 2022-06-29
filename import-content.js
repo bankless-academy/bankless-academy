@@ -263,6 +263,7 @@ axios
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ')
             .replace(/\s+/g, '')
+            .replace(/[^A-Za-z0-9]/g, '') // remove invalid chars
           if (lesson.quest === true) {
             lesson.quest = componentName
             slides.push({
