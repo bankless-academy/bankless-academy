@@ -6,7 +6,7 @@ import WalletBasics from './WalletBasics'
 import IntroToDeFi from './IntroToDeFi'
 import BlockchainBasics from './BlockchainBasics'
 import BanklessAcademyCommunity from './BanklessAcademyCommunity'
-import Web3Security101 from './Web3Security101'
+import Web3Security from './Web3Security'
 
 import { useActiveWeb3React } from 'hooks'
 import { QUESTS } from 'constants/index'
@@ -25,7 +25,7 @@ const QuestComponent = (
     IntroToDeFi: IntroToDeFi,
     BlockchainBasics: BlockchainBasics,
     BanklessAcademyCommunity: BanklessAcademyCommunity,
-    Web3Security101: Web3Security101,
+    Web3Security: Web3Security,
   }
   if (!component || !QUESTS.includes(component)) return null
   // TODO: move force to connect wallet logic here

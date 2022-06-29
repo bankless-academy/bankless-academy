@@ -6,7 +6,7 @@ import { useActiveWeb3React } from 'hooks'
 
 const CORRECT_ANSWERS = [true, true, false, true]
 
-const Web3Security101 = (): {
+const Web3Security = (): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
@@ -118,4 +118,4 @@ const Web3Security101 = (): {
   }
 }
 
-export default Web3Security101
+export default Web3Security
