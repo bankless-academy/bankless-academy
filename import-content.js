@@ -261,7 +261,7 @@ axios
             }
             return slide
           })
-          const componentName = PROJECT_DIR + lesson.name
+          const componentName = PROJECT_DIR.replace(/[^A-Za-z0-9]/g, '') + lesson.name
             .split(' ')
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ')
