@@ -4,6 +4,7 @@ yarn.lock
 package-lock.json
 public
 import-content.js
+import-keywords.js
 import-poaps.js
 src/constants/lessons.ts
 src/constants/whitelabel_lessons.ts
