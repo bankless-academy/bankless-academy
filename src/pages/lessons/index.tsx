@@ -1,5 +1,4 @@
 import { GetStaticProps } from 'next'
-import { MetaData } from 'components/Head'
 import {
   SimpleGrid,
   Container,
@@ -7,6 +6,7 @@ import {
   // Tooltip,
 } from '@chakra-ui/react'
 
+import { MetaData } from 'components/Head'
 import LessonCards from 'components/LessonCards'
 
 const pageMeta: MetaData = {
