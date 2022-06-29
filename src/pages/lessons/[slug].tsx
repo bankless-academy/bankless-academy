@@ -36,11 +36,16 @@ const LessonPage = (): JSX.Element => {
     (lesson: LessonType) => `/lessons/${lesson.slug}` === path
   )
 
-  return (
-    <Container maxW="container.xl">
-      <Lesson lesson={currentLesson} />
-    </Container>
-  )
+  if (!currentLesson) {
+    // force redirect to lesson select if lesson is not found
+    document.location.href = '/lessons'
+    return null
+  } else
+    return (
+      <Container maxW="container.xl">
+        <Lesson lesson={currentLesson} />
+      </Container>
+    )
 }
 
 export default LessonPage
