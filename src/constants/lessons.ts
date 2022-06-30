@@ -530,7 +530,7 @@ const LESSONS: LessonType[] = [
     publicationStatus: 'publish',
     isFeaturedOnHomepage: true,
     isCommentsEnabled: false,
-    endOfLessonRedirect: 'https://tally.so/r/3EkWo2',
+    endOfLessonRedirect: 'https://tally.so/r/3jaxrR',
     endOfLessonText: 'To give feedback about this lesson, click Next.',
     notionId: '562dba7dbd3949b480be367a64821cdf',
     slug: 'blockchain-basics',
@@ -927,12 +927,6 @@ const LESSONS: LessonType[] = [
         notionId: '5ae46db5024b4193a9c2be75f9f6e5b4',
         title: 'Recovering from a scam in Web3',
         content: '<div class="bloc1"><p>To spend tokens on Ethereum a contract must be given explicit permission. The token <span class="tooltip" definition="Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction">allowance</span> is how much of that token you’ve given permission to be spent; keep allowances low to stay secure. </p><p>Scams in web3 don’t have anyone in charge of protocols to report the scammers to, but you can still take action:</p><ul><li>Move any funds still in the compromised wallet to a different wallet address,<strong> making sure the new address has a different seed phrase</strong></li><li>Review and revoke the token allowances you have given on your wallet with tools like <a href=\'https://etherscan.io/tokenapprovalchecker\'>etherscan.io</a> (note: revoking allowances will cost gas)</li><li>Use a <span class="tooltip" definition="A type of non-custodial wallet that stores private keys offline in a physical hardware device.">hardware wallet</span> in the future</li><li>Warn others by reporting the scam to the affected community</li><li>Talk to a trusted friend or loved one about how you were affected</li></ul></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '671bac3510d04be2a761fe7ab004e523',
-        title: 'References',
-        content: '<div class="bloc1"><p>Password Managers:</p><ul><li>1password</li><li>LastPass</li><li>BitWarden</li></ul><p>Authentication apps:</p><ul><li>Authy</li><li>Google Authenticator</li></ul></div>'
       },
       {
         type: 'QUEST',

@@ -85,7 +85,6 @@ axios
       // DEV_MODE: only test first lesson
       // if (index > 0) return
 
-      console.log('Notion lesson link: ', `${POTION_API}/html?id=${notion.id}`)
       const lesson = Object.keys(KEY_MATCHING).reduce(
         (obj, k) =>
           Object.assign(obj, {
@@ -97,6 +96,7 @@ axios
         {}
       )
       if (lesson.publicationStatus === undefined) return
+      console.log('Notion lesson link: ', `${POTION_API}/html?id=${notion.id}`)
 
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) lesson.socialImageLink = null
