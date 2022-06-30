@@ -173,7 +173,7 @@
     "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key.",
     "color": "rgba(128, 128, 128, 1)"
   },
-  "scamtoken": {
+  "scam-token": {
     "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds"
   },
   "seed phrase": {
