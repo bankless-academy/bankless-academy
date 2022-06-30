@@ -517,7 +517,7 @@ const LESSONS: LessonType[] = [
   {
     poapImageLink: '/lesson/blockchain-basics/poap-b0048cdb.png',
     lessonImageLink: '/lesson/blockchain-basics/lesson-c84db284.png',
-    socialImageLink: '/lesson/blockchain-basics/social-07ea2639.jpeg',
+    socialImageLink: '/lesson/blockchain-basics/social-07ea2639.jpg',
     learningActions: '',
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
     poapEventId: null,
@@ -726,7 +726,7 @@ const LESSONS: LessonType[] = [
     poapImageLink: '/lesson/web3-security/poap-369c812e.png',
     lessonImageLink: '/lesson/web3-security/lesson-c6aaf6fa.png',
     socialImageLink: '/lesson/web3-security/social-bf0e7fc3.jpg',
-    learningActions: '',
+    learningActions: 'Avoid the scams in web3 and keep your assets safe.',
     marketingDescription: '',
     poapEventId: null,
     duration: 15,
@@ -926,7 +926,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '5ae46db5024b4193a9c2be75f9f6e5b4',
         title: 'Recovering from a scam in Web3',
-        content: '<div class="bloc1"><p>Tokens on Ethereum must have explicit permission to be spent. The token <span class="tooltip" definition="Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction">allowance</span> is how much of that token you’ve given permission to be spent. Scams in web3 don’t have anyone in charge of protocols to report the scammers to, but you can still take action:</p><ul><li>Move any funds still in the compromised wallet to a different wallet address, making sure the new address has a different seed phrase</li><li>Review and revoke the token allowances you have given on your wallet with tools like <a href=\'https://etherscan.io/tokenapprovalchecker\'>etherscan.io</a> and <a href=\'http://revoke.cash\'>revoke.cash</a> (note: revoking allowances will cost gas)</li><li>Use a <span class="tooltip" definition="A type of non-custodial wallet that stores private keys offline in a physical hardware device.">hardware wallet</span> in the future</li><li>Warn others by reporting the scam to the affected community</li><li>Talk to a trusted friend or loved one about how you were affected</li></ul></div>'
+        content: '<div class="bloc1"><p>To spend tokens on Ethereum a contract must be given explicit permission. The token <span class="tooltip" definition="Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction">allowance</span> is how much of that token you’ve given permission to be spent; keep allowances low to stay secure. </p><p>Scams in web3 don’t have anyone in charge of protocols to report the scammers to, but you can still take action:</p><ul><li>Move any funds still in the compromised wallet to a different wallet address,<strong> making sure the new address has a different seed phrase</strong></li><li>Review and revoke the token allowances you have given on your wallet with tools like <a href=\'https://etherscan.io/tokenapprovalchecker\'>etherscan.io</a> (note: revoking allowances will cost gas)</li><li>Use a <span class="tooltip" definition="A type of non-custodial wallet that stores private keys offline in a physical hardware device.">hardware wallet</span> in the future</li><li>Warn others by reporting the scam to the affected community</li><li>Talk to a trusted friend or loved one about how you were affected</li></ul></div>'
       },
       {
         type: 'LEARN',
