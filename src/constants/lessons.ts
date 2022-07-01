@@ -471,37 +471,19 @@ const LESSONS: LessonType[] = [
     endOfLessonText: undefined,
     notionId: '44b8a4937fcd43fa8e12400cb75885a1',
     slug: 'bankless-academy-community',
-    imageLinks: [
-      '/lesson/bankless-academy-community/how-to-join-e1fa3bc8.png',
-      '/lesson/bankless-academy-community/how-to-log-in-cc33b158.jpg',
-      '/lesson/bankless-academy-community/how-to-log-in-71bf9061.png',
-      '/lesson/bankless-academy-community/how-to-log-in-0cbd3e6b.jpg',
-      '/lesson/bankless-academy-community/join-bankless-academy-d6d1516e.png'
-    ],
+    imageLinks: [],
     slides: [
       {
         type: 'LEARN',
         notionId: 'e398fcd0d14b45f1be30f709019faa50',
-        title: 'Join the Academy Explorer Community',
+        title: 'You’re one step away, Explorer.',
         content: '<div class="bloc1"><p>Now that you have your digital wallet, let’s use it to join the Academy Community.</p><p>Wallets don’t only serve the purpose of keeping your digital assets, but also as a means of decentralized verification.</p><p>Thanks to its web3 native nature, we’ve chosen <a href=\'https://gm.xyz/?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson\'>gm.xyz</a> as our home. <br>To participate in the conversation, you must sign in with your wallet.</p><p>Ready to start your community journey? Let’s go Explorer!</p></div>'
       },
       {
         type: 'LEARN',
-        notionId: 'af1f575caf2a470e90919d357a3db743',
-        title: 'How to join',
-        content: '<div class="bloc1"><p>Go to <a href=\'https://gm.xyz/c/BanklessAcademy?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson\'>gm.xyz/c/BanklessAcademy</a> and sign in by using the \'Sign In With Ethereum\' button on the top-right corner.<br></p></div><div class="bloc2"><img src=\'/lesson/bankless-academy-community/how-to-join-e1fa3bc8.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '8baa3a6e2ed840ff841397dd8db35727',
-        title: 'How to log in',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-cc33b158.jpg\'></div><div class="bloc-b"><p>Login with MetaMask or your preferred wallet provider.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-71bf9061.png\'></div><div class="bloc-b"><p>Sign with your wallet. Signatures are gas-free transactions with no cost. </p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/bankless-academy-community/how-to-log-in-0cbd3e6b.jpg\'></div><div class="bloc-b"><p>Make sure your wallet contains at least <strong>0.001 ETH</strong>. This helps understand you are a real Explorer and not a bot, preventing spam.</p></div></div>'
-      },
-      {
-        type: 'LEARN',
         notionId: 'd88acd5ee49c4fa88e9dc1c4fc136e80',
-        title: 'Join Bankless Academy',
-        content: '<div class="bloc1"><p>Check out <strong>all-topics</strong> and join the conversation 🗣️</p><p>Share <strong>insights</strong> with other Explorers after completing each <strong>lesson</strong> 📖</p><p>Follow our <strong>AMAs </strong>in the 🎙️<strong>ask-me-anything</strong> section</p><p>Level up your <strong>knowledge </strong>about web3 in 💾 <strong>library</strong></p><p>Stay up to date with important community <strong>announcements</strong> 🌟</p></div><div class="bloc2"><img src=\'/lesson/bankless-academy-community/join-bankless-academy-d6d1516e.png\'></div>'
+        title: 'Why join Bankless Academy?',
+        content: '<div class="bloc1"><p>Meet with other fellow <strong>Explorers </strong>and share knowledge 🗣️</p><p>Participate in our <strong>AMAs </strong>in the 🎙️<strong>ask-me-anything</strong> section</p><p>New to the space? Let’s <strong>learn together</strong>.</p><p>Been here for a while? <strong>Become a mentor </strong>and gain recognition by teaching others 📖</p><p>Level up your <strong>knowledge </strong>about all-things web3 in the 💾 <strong>library</strong></p><p><strong>Stay up to date</strong> with important community <strong>announcements</strong> 🌟</p></div>'
       },
       {
         type: 'QUEST',
@@ -752,7 +734,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '50b5d9c9a7a34a2c82f6423f97e3e77d',
         title: '<strong>Introduction</strong>',
-        content: '<div class="bloc1"><blockquote>Web3 … [is] the vision of a new, better internet. At its core, Web3 uses blockchains, cryptocurrencies, and NFTs to give power back to the users in the form of ownership. … ‘<strong>Web1 was read-only, Web2 is read-write, Web3 will be read-write-own.</strong>’<br>- Ethereum.org</blockquote><p>This online ownership of digital financial products is new for many, and that lack of experience gives opportunities for predatory people to scam and steal the assets of others. These scams work so well because most people aren’t aware of how they work. So congratulations, Academy Explorer, on taking the time to arm yourself with the knowledge that will protect you as you venture out into <span class="tooltip" definition="Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data.">web3</span>!</p><p>This lesson will cover:</p><ul><li>web2 & web3 security</li><li>the most common ways people lose their funds and how to protect oneself from them</li><li>a general strategy for wallet security</li><li>how one can recover if they are the victim of a scam</li></ul></div>'
+        content: '<div class="bloc1"><p>Web3 … [is] the vision of a new, better internet. At its core, Web3 uses blockchains, cryptocurrencies, and NFTs to give power back to the users in the form of ownership. … ‘<strong>Web1 was read-only, Web2 is read-write, Web3 will be read-write-own.</strong>’<br>- Ethereum.org</p><p>This online ownership of digital financial products is new for many, and that lack of experience gives opportunities for predatory people to scam and steal the assets of others. These scams work so well because most people aren’t aware of how they work. So congratulations, Academy Explorer, on taking the time to arm yourself with the knowledge that will protect you as you venture out into <span class="tooltip" definition="Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data.">web3</span>!</p><p>This lesson will cover:</p><ul><li>web2 & web3 security</li><li>the most common ways people lose their funds and how to protect oneself from them</li><li>a general strategy for wallet security</li><li>how one can recover if they are the victim of a scam</li></ul></div>'
       },
       {
         type: 'LEARN',

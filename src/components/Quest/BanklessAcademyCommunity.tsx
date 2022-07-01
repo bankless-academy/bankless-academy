@@ -145,7 +145,7 @@ const BanklessAcademyCommunity = (): {
             </div>
             <div className="bloc2">
               <iframe
-                src="https://www.youtube.com/embed/ZPost3rrISQ?rel=0"
+                src="https://www.youtube.com/embed/cImViarm4Qk?rel=0"
                 allowFullScreen
               ></iframe>
             </div>
