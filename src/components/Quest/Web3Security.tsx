@@ -1,8 +1,23 @@
 import React, { useState } from 'react'
-import { Box, Button, Spinner } from '@chakra-ui/react'
+import { Box, Button, Spinner, Image } from '@chakra-ui/react'
 import { useMediaQuery } from '@chakra-ui/react'
+import styled from '@emotion/styled'
 
 import { useActiveWeb3React } from 'hooks'
+
+const StyledDiv = styled(Box)`
+  img {
+    display: flex;
+    border-radius: 5px;
+    width: 420px;
+    max-width: 100%;
+    cursor: pointer;
+    margin-bottom: 8px;
+  }
+  h2 {
+    text-align: center;
+  }
+`
 
 const CORRECT_ANSWERS = [true, true, false, true]
 
@@ -25,7 +40,7 @@ const Web3Security = (): {
   return {
     isQuestCompleted: !!account && areAnswersCorrect,
     questComponent: (
-      <>
+      <StyledDiv>
         {!account && (
           <Button
             variant="outlined"
@@ -40,80 +55,45 @@ const Web3Security = (): {
         {account ? (
           <>
             <Box display={isSmallScreen ? 'block' : 'flex'}>
-              <Box
-                display="flex"
-                w="500px"
-                h="250px"
-                bgColor="red"
-                border={selected[0] ? '1px solid white' : ''}
-                alignItems="center"
-                justifyContent="center"
+              <Image
+                border={selected[0] ? '2px solid red' : ''}
                 mr="2"
-                mb="2"
-                cursor="pointer"
                 onClick={() =>
                   setSelected(selected.map((v, i) => (i === 0 ? !v : v)))
                 }
-              >
-                SCAM
-              </Box>
-              <Box
-                display="flex"
-                w="500px"
-                h="250px"
-                bgColor="red"
-                border={selected[1] ? '1px solid white' : ''}
-                alignItems="center"
-                justifyContent="center"
-                mb="2"
-                cursor="pointer"
+                src="/lesson/web3-security/elon-musk-scam.jpg"
+              />
+              <Image
+                border={selected[1] ? '2px solid red' : ''}
                 onClick={() =>
                   setSelected(selected.map((v, i) => (i === 1 ? !v : v)))
                 }
-              >
-                SCAM
-              </Box>
+                src="/lesson/web3-security/nitro-discord-scam.png"
+              />
             </Box>
             <Box display={isSmallScreen ? 'block' : 'flex'} mt="0 !important">
-              <Box
-                display="flex"
-                w="500px"
-                h="250px"
-                bgColor="green"
-                border={selected[2] ? '1px solid white' : ''}
-                alignItems="center"
-                justifyContent="center"
+              <Image
+                border={selected[2] ? '2px solid red' : ''}
                 mr="2"
-                mb="2"
-                cursor="pointer"
                 onClick={() =>
                   setSelected(selected.map((v, i) => (i === 2 ? !v : v)))
                 }
-              >
-                NOT SCAM
-              </Box>
-              <Box
-                display="flex"
-                w="500px"
-                h="250px"
-                bgColor="red"
-                border={selected[3] ? '1px solid white' : ''}
-                alignItems="center"
-                justifyContent="center"
-                cursor="pointer"
+                src="/lesson/web3-security/collabland-join.jpg"
+              />
+              <Image
+                border={selected[3] ? '2px solid red' : ''}
                 onClick={() =>
                   setSelected(selected.map((v, i) => (i === 3 ? !v : v)))
                 }
-              >
-                SCAM
-              </Box>
+                src="/lesson/web3-security/metamask-wallets-scam.jpg"
+              />
             </Box>
             <h2>Select all screenshots containing scams 👆</h2>
           </>
         ) : (
           'To validate this quest and finish this lesson, connect your wallet to this website. To do this, click the "Connect wallet" button in the top-right corner.'
         )}
-      </>
+      </StyledDiv>
     ),
   }
 }

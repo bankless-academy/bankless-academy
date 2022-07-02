@@ -726,8 +726,8 @@ const LESSONS: LessonType[] = [
     slug: 'web3-security',
     imageLinks: [
       '/lesson/web3-security/social-media-safety-1-b0335438.png',
-      '/lesson/web3-security/social-media-safety-2-1168f72b.png',
-      '/lesson/web3-security/social-media-safety-2-1b088573.png'
+      '/lesson/web3-security/social-media-safety-2-88a744a4.png',
+      '/lesson/web3-security/social-media-safety-2-67041f41.png'
     ],
     slides: [
       {
@@ -832,7 +832,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '276e9374da2e49428b3b4193dc692c86',
         title: 'Social Media Safety 2',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/web3-security/social-media-safety-2-1168f72b.png\'></div><div class="bloc-b"><p><strong>Here are some red flags to watch for with social media:</strong></p><p>🚩 Language and grammar errors (typos, they’re/their/there, etc.)</p><p>🚩 FOMO generation (don’t miss out!)</p><p>🚩 Impersonation of authority or celebrity (admin, support, Vitalik, Elon Musk, etc.)</p><p>🚩 “Guaranteed profits/mints/return”</p><p>🚩 Unasked-for links and offers (especially in DMs)</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/web3-security/social-media-safety-2-1b088573.png\'></div><div class="bloc-b"><p><strong>Best Practices to keep in mind:</strong></p><ul><li>Teams & admin will <em><strong>never </strong></em>DM NFT mint/sale details</li><li>Typos = scam alert ⚠</li><li>FOMO = scam alert ⚠</li><li>VERIFY EVERYTHING with an outside source, like the official project Twitter account</li><li>Check with other known community members</li></ul></div></div>'
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/web3-security/social-media-safety-2-88a744a4.png\'></div><div class="bloc-b"><p><strong>Here are some red flags to watch for with social media:</strong></p><p>🚩 Language and grammar errors (typos, they’re/their/there, etc.)</p><p>🚩 FOMO generation (don’t miss out!)</p><p>🚩 Impersonation of authority or celebrity (admin, support, Vitalik, Elon Musk, etc.)</p><p>🚩 “Guaranteed profits/mints/return”</p><p>🚩 Unasked-for links and offers (especially in DMs)</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/web3-security/social-media-safety-2-67041f41.png\'></div><div class="bloc-b"><p><strong>Best Practices to keep in mind:</strong></p><ul><li>Teams & admin will <em><strong>never </strong></em>DM NFT mint/sale details</li><li>Typos = scam alert ⚠</li><li>FOMO = scam alert ⚠</li><li>VERIFY EVERYTHING with an outside source, like the official project Twitter account</li><li>Check with other known community members</li></ul></div></div>'
       },
       {
         type: 'LEARN',
