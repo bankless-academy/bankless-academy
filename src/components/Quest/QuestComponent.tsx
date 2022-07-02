@@ -52,7 +52,7 @@ const QuestComponent = (
   if (!account && component !== 'WalletBasics') {
     return {
       isQuestCompleted: false,
-      questComponent: <>{ConnectFirst(isSmallScreen, account)}</>,
+      questComponent: ConnectFirst(isSmallScreen, account),
     }
   }
 

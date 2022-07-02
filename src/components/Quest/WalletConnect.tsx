@@ -17,15 +17,13 @@ export const ConnectFirst = (
           cursor="default"
           boxShadow="none !important"
         >
-          {account
-            ? 'Thank you for connecting your wallet!'
-            : 'Waiting to detect your wallet ...'}
+          {account ? 'Wallet connected!' : 'Waiting to detect your wallet ...'}
         </Button>
       </Box>
       <p>
         {account ? null : (
           <>
-            {`To validate this quest and finish this lesson, connect your
+            {`To finish this lesson, connect your
           wallet to this website.`}
             <br />
             {`To do this, click the "Connect wallet" button in the top-right
@@ -36,12 +34,14 @@ export const ConnectFirst = (
         )}
       </p>
     </div>
-    <div className="bloc2">
-      <iframe
-        src="https://www.youtube.com/embed/PjBY0pVFnQ8?rel=0"
-        allowFullScreen
-      ></iframe>
-    </div>
+    {!account && (
+      <div className="bloc2">
+        <iframe
+          src="https://www.youtube.com/embed/PjBY0pVFnQ8?rel=0"
+          allowFullScreen
+        ></iframe>
+      </div>
+    )}
   </Box>
 )
 
@@ -55,7 +55,7 @@ const WalletConnect = (
 
   return {
     isQuestCompleted: !!account,
-    questComponent: <>{ConnectFirst(isSmallScreen, account)}</>,
+    questComponent: ConnectFirst(isSmallScreen, account),
   }
 }
 

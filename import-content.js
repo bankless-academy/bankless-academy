@@ -269,11 +269,13 @@ axios
             .replace(/[^A-Za-z0-9]/g, '') // remove invalid chars
           if (lesson.quest === true) {
             lesson.quest = componentName
-            slides.push({
-              type: 'QUEST',
-              title: `${lesson.name} Quest`,
-              component: componentName,
-            })
+            if (!IS_WHITELABEL) {
+              slides.push({
+                type: 'QUEST',
+                title: `${lesson.name} Quest`,
+                component: componentName,
+              })
+            }
           } else {
             delete lesson.quest
           }

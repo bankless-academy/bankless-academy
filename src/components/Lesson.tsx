@@ -29,7 +29,7 @@ import Card from 'components/Card'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useActiveWeb3React } from 'hooks'
 import { track, verifySignature, getSignature } from 'utils'
-import { GENERIC_ERROR_MESSAGE } from 'constants/index'
+import { GENERIC_ERROR_MESSAGE, IS_WHITELABEL } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, PoapIcon } from 'components/Icons'
 
 // transform keywords into Tooltip
@@ -609,25 +609,31 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           )}
           {slide.type === 'END' && (
             <VStack flex="auto" minH="420px" justifyContent="center">
-              {lesson.poapImageLink && (
-                <ChakraImage
-                  src={lesson.poapImageLink}
-                  width="250px"
-                  height="250px"
-                  mb="2"
-                />
+              {IS_WHITELABEL && !walletAddress ? (
+                <>{Quest?.questComponent}</>
+              ) : (
+                <>
+                  {lesson.poapImageLink && (
+                    <ChakraImage
+                      src={lesson.poapImageLink}
+                      width="250px"
+                      height="250px"
+                      mb="2"
+                    />
+                  )}
+                  <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
+                  <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
+                  <NextLink href={`/lessons`}>
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      style={{ padding: '0 23px' }}
+                    >
+                      Explore more Lessons
+                    </Button>
+                  </NextLink>
+                </>
               )}
-              <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
-              <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
-              <NextLink href={`/lessons`}>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  style={{ padding: '0 23px' }}
-                >
-                  Explore more Lessons
-                </Button>
-              </NextLink>
             </VStack>
           )}
         </Box>
