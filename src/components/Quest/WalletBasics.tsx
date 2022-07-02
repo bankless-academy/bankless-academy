@@ -3,13 +3,12 @@ import { Button, Spinner, Box } from '@chakra-ui/react'
 import { Checks } from 'phosphor-react'
 import { useMediaQuery } from '@chakra-ui/react'
 
-import { useActiveWeb3React } from 'hooks'
-
-const WalletBasics = (): {
+const WalletBasics = (
+  account: string
+): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  const { account } = useActiveWeb3React()
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   return {
@@ -53,11 +52,6 @@ const WalletBasics = (): {
             ></iframe>
           </div>
         </Box>
-        <p>
-          {account
-            ? null
-            : 'To validate this quest and finish this lesson, connect your wallet to this website. To do this, click the "Connect wallet" button in the top-right corner.'}
-        </p>
       </>
     ),
   }

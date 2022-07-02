@@ -8,15 +8,16 @@ import { track, verifySignature, getSignature } from 'utils'
 
 const VERBS = ['Investing', 'Trading', 'Lending & Borrowing', 'Staking']
 
-const IntroToDeFi = (): {
+const IntroToDeFi = (
+  account: string
+): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
   const [answer, setAnswer] = useState(null)
   const [isSignatureVerified, setIsSignatureVerified] = useState(false)
 
-  const { library, account, chainId } = useActiveWeb3React()
-  const walletAddress = account
+  const { library, chainId } = useActiveWeb3React()
 
   const hostname = window?.location.hostname
 
@@ -26,7 +27,7 @@ const IntroToDeFi = (): {
 
     try {
       const signature = await getSignature(library, account, message)
-      const verified = verifySignature(walletAddress, signature, message)
+      const verified = verifySignature(account, signature, message)
       if (verified) {
         track('intro_to_defi_quest_answer', answer)
       }
@@ -99,18 +100,7 @@ const IntroToDeFi = (): {
             </Button>
           ))}
         </Box>
-        {walletAddress ? (
-          chainId === 1 ? (
-            signatureButton()
-          ) : (
-            networkSwitchButton()
-          )
-        ) : (
-          <h2>
-            ⚠️ Connect your wallet first (&quot;Connect wallet&quot; button in
-            the top-right corner)
-          </h2>
-        )}
+        {chainId === 1 ? signatureButton() : networkSwitchButton()}
       </>
     ),
   }

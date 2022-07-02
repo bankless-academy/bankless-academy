@@ -5,19 +5,14 @@ import {
   InputRightElement,
   Input,
   Box,
-  Button,
-  Spinner,
 } from '@chakra-ui/react'
 import { useMediaQuery } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
-
-import { useActiveWeb3React } from 'hooks'
 
 const BlockchainBasics = (): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  const { account } = useActiveWeb3React()
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null)
   const [from, setFrom] = useState(
     localStorage.getItem('quest-blockchain-fundamentals-from')
@@ -48,98 +43,83 @@ const BlockchainBasics = (): {
   }
 
   return {
-    isQuestCompleted: !!account && isAnswerCorrect,
+    isQuestCompleted: isAnswerCorrect,
     questComponent: (
       <>
-        {!account && (
-          <Button
-            variant="outlined"
-            leftIcon={<Spinner speed="1s" />}
-            color={'orange'}
-            cursor="default"
-            boxShadow="none !important"
-          >
-            Waiting to detect your wallet ...
-          </Button>
-        )}
-        {account ? (
-          <Box display={isSmallScreen ? 'block' : 'flex'}>
-            <div className="bloc1">
-              <h2>Understand a transaction</h2>
-              <p>
-                <>
-                  {
-                    'To validate this quest, paste the "from" and "to" addresses of this transaction '
-                  }
-                  <a
-                    href="https://etherscan.io/tx/0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    https://etherscan.io/tx/0x5c...2060
-                  </a>
-                </>
-              </p>
-              <Box pr="2">
-                <InputGroup maxW="530px">
-                  <InputLeftAddon width="71px">From</InputLeftAddon>
-                  <Input
-                    placeholder="0x..."
-                    value={from}
-                    mb="8"
-                    onChange={(e): void => {
-                      setFrom(e.target.value)
-                      localStorage.setItem(
-                        'quest-blockchain-fundamentals-from',
-                        e.target.value
-                      )
-                      setIsFromCorrect(verifyFrom(e.target.value))
-                      validateQuest(e.target.value, to)
-                    }}
-                  />
-                  <InputRightElement>
-                    {isFromCorrect ? (
-                      <CheckIcon color="green.500" />
-                    ) : (
-                      from !== '' && <CloseIcon color="red.500" />
-                    )}
-                  </InputRightElement>
-                </InputGroup>
-                <InputGroup maxW="530px">
-                  <InputLeftAddon width="71px">To</InputLeftAddon>
-                  <Input
-                    placeholder="0x..."
-                    value={to}
-                    onChange={(e): void => {
-                      setTo(e.target.value)
-                      localStorage.setItem(
-                        'quest-blockchain-fundamentals-to',
-                        e.target.value
-                      )
-                      setIsToCorrect(verifyTo(e.target.value))
-                      validateQuest(from, e.target.value)
-                    }}
-                  />
-                  <InputRightElement>
-                    {isToCorrect ? (
-                      <CheckIcon color="green.500" />
-                    ) : (
-                      to !== '' && <CloseIcon color="red.500" />
-                    )}
-                  </InputRightElement>
-                </InputGroup>
-              </Box>
-            </div>
-            <div className="bloc2">
-              <iframe
-                src="https://www.youtube.com/embed/8z2rL99sLGA?rel=0"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </Box>
-        ) : (
-          'To validate this quest and finish this lesson, connect your wallet to this website. To do this, click the "Connect wallet" button in the top-right corner.'
-        )}
+        <Box display={isSmallScreen ? 'block' : 'flex'}>
+          <div className="bloc1">
+            <h2>Understand a transaction</h2>
+            <p>
+              <>
+                {
+                  'To validate this quest, paste the "from" and "to" addresses of this transaction '
+                }
+                <a
+                  href="https://etherscan.io/tx/0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  https://etherscan.io/tx/0x5c...2060
+                </a>
+              </>
+            </p>
+            <Box pr="2">
+              <InputGroup maxW="530px">
+                <InputLeftAddon width="71px">From</InputLeftAddon>
+                <Input
+                  placeholder="0x..."
+                  value={from}
+                  mb="8"
+                  onChange={(e): void => {
+                    setFrom(e.target.value)
+                    localStorage.setItem(
+                      'quest-blockchain-fundamentals-from',
+                      e.target.value
+                    )
+                    setIsFromCorrect(verifyFrom(e.target.value))
+                    validateQuest(e.target.value, to)
+                  }}
+                />
+                <InputRightElement>
+                  {isFromCorrect ? (
+                    <CheckIcon color="green.500" />
+                  ) : (
+                    from !== '' && <CloseIcon color="red.500" />
+                  )}
+                </InputRightElement>
+              </InputGroup>
+              <InputGroup maxW="530px">
+                <InputLeftAddon width="71px">To</InputLeftAddon>
+                <Input
+                  placeholder="0x..."
+                  value={to}
+                  onChange={(e): void => {
+                    setTo(e.target.value)
+                    localStorage.setItem(
+                      'quest-blockchain-fundamentals-to',
+                      e.target.value
+                    )
+                    setIsToCorrect(verifyTo(e.target.value))
+                    validateQuest(from, e.target.value)
+                  }}
+                />
+                <InputRightElement>
+                  {isToCorrect ? (
+                    <CheckIcon color="green.500" />
+                  ) : (
+                    to !== '' && <CloseIcon color="red.500" />
+                  )}
+                </InputRightElement>
+              </InputGroup>
+            </Box>
+          </div>
+          <div className="bloc2">
+            <iframe
+              src="https://www.youtube.com/embed/8z2rL99sLGA?rel=0"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </Box>
       </>
     ),
   }

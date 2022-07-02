@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
+import { useMediaQuery } from '@chakra-ui/react'
 
 import WalletConnect from './WalletConnect'
 import WalletBasics from './WalletBasics'
@@ -7,6 +8,7 @@ import IntroToDeFi from './IntroToDeFi'
 import BlockchainBasics from './BlockchainBasics'
 import BanklessAcademyCommunity from './BanklessAcademyCommunity'
 import Web3Security from './Web3Security'
+import { ConnectFirst } from './WalletConnect'
 
 import { useActiveWeb3React } from 'hooks'
 import { QUESTS } from 'constants/index'
@@ -28,22 +30,31 @@ const QuestComponent = (
     Web3Security: Web3Security,
   }
   if (!component || !QUESTS.includes(component)) return null
-  // TODO: move force to connect wallet logic here
+
+  const { account } = useActiveWeb3React()
+  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+
   const Component =
     component in QUEST_COMPONENTS
-      ? QUEST_COMPONENTS[component]()
-      : WalletConnect()
-  const { account } = useActiveWeb3React()
+      ? QUEST_COMPONENTS[component](account)
+      : WalletConnect(account)
 
   useEffect(() => {
-    if (Component.isQuestCompleted) {
+    if (account && Component.isQuestCompleted) {
       axios
         .get(`/api/validate-quest?address=${account}&quest=${component}`)
         .catch(function (error) {
           console.error(error)
         })
     }
-  }, [Component.isQuestCompleted])
+  }, [account, Component.isQuestCompleted])
+
+  if (!account && component !== 'WalletBasics') {
+    return {
+      isQuestCompleted: false,
+      questComponent: <>{ConnectFirst(isSmallScreen, account)}</>,
+    }
+  }
 
   return {
     isQuestCompleted: Component.isQuestCompleted,
