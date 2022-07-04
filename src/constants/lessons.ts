@@ -17,7 +17,7 @@ const LESSONS: LessonType[] = [
     publicationStatus: 'publish',
     isFeaturedOnHomepage: true,
     isCommentsEnabled: false,
-    endOfLessonRedirect: '/lessons/bankless-academy-community',
+    endOfLessonRedirect: '/lessons/academy-community',
     endOfLessonText: 'To continue to our Bonus Lesson about the Bankless Academy Community, click Next.',
     notionId: '98405bd0f2b94bb2a3079eed504a011e',
     slug: 'wallet-basics',
@@ -452,9 +452,9 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: '/lesson/bankless-academy-community/poap-40b32445.png',
-    lessonImageLink: '/lesson/bankless-academy-community/lesson-e61f65de.png',
-    socialImageLink: '/lesson/bankless-academy-community/social-9fbbece7.jpg',
+    poapImageLink: '/lesson/academy-community/poap-4fce19ff.png',
+    lessonImageLink: '/lesson/academy-community/lesson-755fe7a3.png',
+    socialImageLink: '/lesson/academy-community/social-1f64464b.jpg',
     learningActions: '',
     marketingDescription: 'Join the Academy Explorer Community on gm.xyz',
     poapEventId: null,
@@ -462,15 +462,15 @@ const LESSONS: LessonType[] = [
     learnings: '',
     difficulty: 'Easy',
     description: 'Join the Academy Explorer Community on gm.xyz',
-    name: 'Bankless Academy Community',
-    quest: 'BanklessAcademyCommunity',
+    name: 'Academy Community',
+    quest: 'AcademyCommunity',
     publicationStatus: 'hidden',
     isFeaturedOnHomepage: false,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
     notionId: '44b8a4937fcd43fa8e12400cb75885a1',
-    slug: 'bankless-academy-community',
+    slug: 'academy-community',
     imageLinks: [],
     slides: [
       {
@@ -487,8 +487,8 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'QUEST',
-        title: 'Bankless Academy Community Quest',
-        component: 'BanklessAcademyCommunity'
+        title: 'Academy Community Quest',
+        component: 'AcademyCommunity'
       },
       {
         type: 'END',
