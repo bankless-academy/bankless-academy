@@ -51,8 +51,10 @@ const AcademyCommunity = (
     }
   }
 
+  const isQuestCompleted = account && hasUserJoinedGM && hasUserJoinedBA
+
   return {
-    isQuestCompleted: account && hasUserJoinedGM && hasUserJoinedBA,
+    isQuestCompleted: isQuestCompleted,
     questComponent: (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
@@ -110,24 +112,26 @@ const AcademyCommunity = (
                   </Link>
                 </Button>
               </VStack>
-              <Box mt="16" textAlign="center">
-                <Button
-                  onClick={() => router.push('/lessons')}
-                  variant="outline"
-                >
-                  Skip quest
-                </Button>
-                <Button
-                  colorScheme={
-                    hasUserJoinedGM && hasUserJoinedBA ? 'green' : 'red'
-                  }
-                  onClick={verifyQuest}
-                  variant="primary"
-                  ml="8"
-                >
-                  Validate quest
-                </Button>
-              </Box>
+              {!isQuestCompleted && (
+                <Box mt="16" textAlign="center">
+                  <Button
+                    onClick={() => router.push('/lessons')}
+                    variant="outline"
+                  >
+                    Skip quest
+                  </Button>
+                  <Button
+                    colorScheme={
+                      hasUserJoinedGM && hasUserJoinedBA ? 'green' : 'red'
+                    }
+                    onClick={verifyQuest}
+                    variant="primary"
+                    ml="8"
+                  >
+                    Validate quest
+                  </Button>
+                </Box>
+              )}
             </Box>
           </div>
           <div className="bloc2">
