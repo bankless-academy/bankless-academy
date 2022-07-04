@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { CheckIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 
-const BanklessAcademyCommunity = (
+const AcademyCommunity = (
   account: string
 ): {
   isQuestCompleted: boolean
@@ -142,4 +142,4 @@ const BanklessAcademyCommunity = (
   }
 }
 
-export default BanklessAcademyCommunity
+export default AcademyCommunity

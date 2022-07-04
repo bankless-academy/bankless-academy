@@ -6,7 +6,7 @@ import WalletConnect from './WalletConnect'
 import WalletBasics from './WalletBasics'
 import IntroToDeFi from './IntroToDeFi'
 import BlockchainBasics from './BlockchainBasics'
-import BanklessAcademyCommunity from './BanklessAcademyCommunity'
+import AcademyCommunity from './AcademyCommunity'
 import Web3Security from './Web3Security'
 import { ConnectFirst } from './WalletConnect'
 
@@ -26,7 +26,7 @@ const QuestComponent = (
     WalletBasics: WalletBasics,
     IntroToDeFi: IntroToDeFi,
     BlockchainBasics: BlockchainBasics,
-    BanklessAcademyCommunity: BanklessAcademyCommunity,
+    AcademyCommunity: AcademyCommunity,
     Web3Security: Web3Security,
   }
   if (!component || !QUESTS.includes(component)) return null
