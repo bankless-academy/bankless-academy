@@ -500,7 +500,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                 <>
                   <ChakraImage
                     src={lesson.poapImageLink}
-                    width="250px"
                     height="250px"
                     opacity={isPoapClaimed ? 1 : 0.7}
                     mb="2"
@@ -616,7 +615,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                   {lesson.poapImageLink && (
                     <ChakraImage
                       src={lesson.poapImageLink}
-                      width="250px"
                       height="250px"
                       mb="2"
                     />
