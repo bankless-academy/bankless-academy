@@ -42,7 +42,7 @@ const Web3Security = (): {
         <>
           <Box display={isSmallScreen ? 'block' : 'flex'}>
             <Image
-              border={selected[0] ? '2px solid red' : ''}
+              border={selected[0] ? '3px solid red' : ''}
               mr="2"
               onClick={() =>
                 setSelected(selected.map((v, i) => (i === 0 ? !v : v)))
@@ -50,7 +50,7 @@ const Web3Security = (): {
               src="/lesson/web3-security/elon-musk-scam.jpg"
             />
             <Image
-              border={selected[1] ? '2px solid red' : ''}
+              border={selected[1] ? '3px solid red' : ''}
               onClick={() =>
                 setSelected(selected.map((v, i) => (i === 1 ? !v : v)))
               }
@@ -59,7 +59,7 @@ const Web3Security = (): {
           </Box>
           <Box display={isSmallScreen ? 'block' : 'flex'} mt="0 !important">
             <Image
-              border={selected[2] ? '2px solid red' : ''}
+              border={selected[2] ? '3px solid red' : ''}
               mr="2"
               onClick={() =>
                 setSelected(selected.map((v, i) => (i === 2 ? !v : v)))
@@ -67,7 +67,7 @@ const Web3Security = (): {
               src="/lesson/web3-security/collabland-join.jpg"
             />
             <Image
-              border={selected[3] ? '2px solid red' : ''}
+              border={selected[3] ? '3px solid red' : ''}
               onClick={() =>
                 setSelected(selected.map((v, i) => (i === 3 ? !v : v)))
               }
