@@ -28,7 +28,7 @@ const Feedback = (): JSX.Element => {
         height="1000px"
         borderRadius="12px"
         padding="4"
-        backgroundColor="white"
+        backgroundColor="transparent"
       >
         <iframe
           src={`https://tally.so/embed/${tallyId}?hideTitle=0&alignLeft=1`}
