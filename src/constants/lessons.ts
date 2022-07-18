@@ -705,9 +705,9 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: '/lesson/web3-security/poap-1110e502.png',
-    lessonImageLink: '/lesson/web3-security/lesson-5df8d874.png',
-    socialImageLink: '/lesson/web3-security/social-5d78c57f.jpg',
+    poapImageLink: '/lesson/web3-security/poap-d2f0df26.png',
+    lessonImageLink: '/lesson/web3-security/lesson-09017125.png',
+    socialImageLink: '/lesson/web3-security/social-795f9c67.jpg',
     learningActions: 'Avoid the scams in web3 and keep your assets safe.',
     marketingDescription: 'Learn how to stay safe from the most common scams in web3.',
     poapEventId: null,
@@ -931,12 +931,105 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '5ae46db5024b4193a9c2be75f9f6e5b4',
         title: 'Recovering from Web3 Scams',
-        content: '<div class="bloc1"><p>Contracts must be given explicit permission to spend tokens on Ethereum. The token <span class="tooltip" definition="Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction">allowance</span> is how much of that token you’ve given permission to be spent by a specific contract. Keeping allowances low reduces the risk to your assets by a potentially malicious application or hacker.</p><p>Web3 don’t have anyone in charge of protocols to report scammers to, but you can still take action:</p><ul><li>Immediately move any funds still in the compromised wallet to a different wallet address, <strong>make sure the new address has a different seed phrase.</strong></li><li>Review and revoke the token allowances you have given on your wallet with tools like <a href=\'https://etherscan.io/tokenapprovalchecker\'>etherscan.io</a>. Note that revoking allowances will cost gas. OpenSea has a <a href=\'https://support.opensea.io/hc/en-us/articles/4416083190291-How-can-I-revoke-token-allowance-permissions-\'>support article</a> walkthrough.</li><li>Use a <span class="tooltip" definition="A type of non-custodial wallet that stores private keys offline in a physical hardware device.">hardware wallet</span> in the future.</li><li>Warn others by reporting the scam to the affected community.</li><li>Discuss the scam process with friends or trusted community members to see how you can protect yourself and others in the future.</li></ul></div>'
+        content: '<div class="bloc1"><p>Contracts must be given explicit permission to spend tokens on Ethereum. The token <span class="tooltip" definition="Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction">allowance</span> is how much of that token you’ve given permission to be spent by a specific contract. Keeping allowances low reduces the risk to your assets by a potentially malicious application or hacker.</p><p>Web3 doesn’t have anyone in charge of protocols to report scammers to, but you can still take action:</p><ul><li>Immediately move any funds still in the compromised wallet to a different wallet address, <strong>make sure the new address has a different seed phrase.</strong></li><li>Review and revoke the token allowances you have given on your wallet with tools like <a href=\'https://etherscan.io/tokenapprovalchecker\'>etherscan.io</a>. Note that revoking allowances will cost gas. OpenSea has a <a href=\'https://support.opensea.io/hc/en-us/articles/4416083190291-How-can-I-revoke-token-allowance-permissions-\'>support article</a> walkthrough.</li><li>Use a <span class="tooltip" definition="A type of non-custodial wallet that stores private keys offline in a physical hardware device.">hardware wallet</span> in the future.</li><li>Warn others by reporting the scam to the affected community.</li><li>Discuss the scam process with friends or trusted community members to see how you can protect yourself and others in the future.</li></ul></div>'
       },
       {
         type: 'QUEST',
         title: 'Web3 Security Quest',
         component: 'Web3Security'
+      },
+      {
+        type: 'END',
+        title: 'End of lesson'
+      }
+    ]
+  },
+  {
+    poapImageLink: null,
+    lessonImageLink: null,
+    socialImageLink: null,
+    learningActions: '',
+    marketingDescription: '',
+    poapEventId: null,
+    duration: null,
+    learnings: '',
+    difficulty: undefined,
+    description: '',
+    name: 'BanklessDAO Constitution',
+    publicationStatus: 'hidden',
+    isFeaturedOnHomepage: false,
+    isCommentsEnabled: true,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    notionId: '4a1a397dd4144022932f889d6a16786c',
+    slug: 'banklessdao-constitution',
+    imageLinks: [
+      '/lesson/banklessdao-constitution/preamble-a183af73.png',
+      '/lesson/banklessdao-constitution/introduction-fb563012.png',
+      '/lesson/banklessdao-constitution/the-bankless-movement-1cf09f15.png',
+      '/lesson/banklessdao-constitution/values-5f6d4d83.png',
+      '/lesson/banklessdao-constitution/values-cca16d71.jpg',
+      '/lesson/banklessdao-constitution/values-8c2779e5.jpg',
+      '/lesson/banklessdao-constitution/values-040efbbb.webp'
+    ],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: 'd435e0e7ab8046a9ad9ba54c287e5e45',
+        title: '<strong><strong>Preamble</strong></strong>',
+        content: '<div class="bloc1"><p>This document represents BanklessDAO’s values, mission, structure, processes, and governance according to the best of our community’s ability to capture it. It is the codification of our community operating system and is meant to serve, rather than constrain its members.</p><p>Not every item listed herein has a readily available citation, as some of these processes were decided within Discord but it\'s our intention to use this document as the canonical basis or “bible” for discussions regarding governance going forward. Like our community itself, it will always be a work in progress. As the community changes, so should the manifestation of those changes in daily DAO life be captured and reflected in this document. It is our hope that this textually centered approach to governance materially improves our collective ability to precisely communicate, make decisions, and onboard new members.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/preamble-a183af73.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '728070e097204c58a89002ba1c765ba6',
+        title: 'Introduction',
+        content: '<div class="bloc1"><p>BanklessDAO was founded by David Hoffman and Ryan Sean Adams on May 4th, 2021, when they airdropped BANK tokens to each Bankless premium subscriber. Following the true ethos of decentralization, they stepped back and let the DAO take shape. While their media company, Bankless LLC, continues to operate as its own media node, the Bankless brand is propagated through the DAO and its sub-DAOs. Now, the Bankless ecosystem as a whole creates user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/introduction-fb563012.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '9669e4350d404026b190a327308c62bf',
+        title: 'The Bankless Movement',
+        content: '<div class="bloc1"><p>Bankless is a movement for pioneers seeking liberation from the tyranny of the traditional financial system. Going Bankless means adopting decentralized, permissionless, and censorship-resistant technology. Through these means, we will achieve financial self-sovereignty, security, and prosperity.</p><p>We seek new ways to build wealth, solve human coordination problems, create culture, and develop cutting-edge thought-leadership in the crypto space. Going Bankless means taking control of your financial health by adopting decentralized and permissionless money systems.</p><p>Bankless is the movement educating the world on how to do it.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/the-bankless-movement-1cf09f15.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'b2f35cc32826436fb8b39ec6ac801494',
+        title: 'BanklessDAO',
+        content: '<div class="bloc1"><p>The BanklessDAO is a decentralized autonomous organization that acts as a steward of the Bankless Movement, progressing the world towards a future of greater freedom. BanklessDAO is a community of passionate Web3 thought-leaders who aim to educate new users, produce written and audio media, build DAO tooling, provide consulting services, develop Web3 scholarship, and create a social and creative home base for anyone in Web3. We’re so much more than a social DAO—we’re a shipping, building, and innovating DAO. See: <a href=\'https://snapshot.org/#/banklessvault.eth/proposal/QmdoixPMMT76vSt6ewkE87JZJywS1piYsGC3nJJpcrPXKS\'>The Genesis Proposal</a>.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'f984af75507c4dfa8f2812ab4c090cae',
+        title: 'Mission',
+        content: '<div class="bloc1"><p>We will help the world go Bankless by creating user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture. The nodes in our growing ecosystem collaborate to create inroads for people to discover, use, learn and enjoy the benefits of Web3. Everyone falls down the rabbit hole in a different way—we provide those diverse paths.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'f449419880b0443caa059c8ceb7ce955',
+        title: 'Vision',
+        content: '<div class="bloc1"><p>Our Vision is to make financial independence, decentralized work, and creative freedom accessible to all. We work to build a world where anyone with an internet connection has access to the tools needed to achieve financial independence. We want everyone to be able to open a computer, find a DAO, start working, and get paid. We want to enable visionaries to unlock their true creative freedom with the power of Web3.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '3d45ea8b6eb2413eb41a556edc4174dc',
+        title: 'Values',
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/values-5f6d4d83.png\'></div><div class="bloc-b"><h2>Education</h2><p>We learn from each other. We seek to become a trusted guide that empowers people all over the globe to adopt decentralized finance by sharing accurate, truthful, and objective information.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/values-cca16d71.jpg\'></div><div class="bloc-b"><h2>Integrity</h2><p>We operate transparently and build trust through radically public discourse and financial auditability.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/values-8c2779e5.jpg\'></div><div class="bloc-b"><h2>Decentralized Governance</h2><p>We put decision-making into the hands of the collective. We create legitimacy through an environment where the best ideas win.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/values-040efbbb.webp\'></div><div class="bloc-b"><h2>Culture</h2><p>We reward action and embrace risk. We empower our community to continually drive new initiatives by providing a space to self-organize and quickly move from idea to action.</p></div></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'c9eb3e04d0b94a168f4b071cedc4a117',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'What are the Bankless values?',
+          rightAnswerNumber: 2,
+          answers: [
+            'Centralization',
+            'Education, Integrity, Decentralized Governance, Culture',
+            'Transaction speed',
+            'Degen'
+          ],
+          id: 'banklessdao-constitution-1'
+        }
       },
       {
         type: 'END',
