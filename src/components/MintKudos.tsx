@@ -16,6 +16,8 @@ const IS_MINTKUDOS_SANDBOX =
 const MINTKUDOS_COMMUNITY_ID = process.env.NEXT_PUBLIC_MINTKUDOS_COMMUNITY_ID
 const MINTKUDOS_KEY = process.env.NEXT_PUBLIC_MINTKUDOS_KEY
 const encodedString = btoa(MINTKUDOS_COMMUNITY_ID + ':' + MINTKUDOS_KEY)
+
+// TODO: make this dynamic -> lesson.mintKudosTokenId
 const tokenId = 582
 
 const MintKudos = (): React.ReactElement => {
@@ -40,7 +42,6 @@ const MintKudos = (): React.ReactElement => {
 
   const signMessage = async () => {
     if (isKudosClaimed) return
-    // TODO: make this dynamic -> lesson.mintKudosTokenId
 
     const types = {
       Claim: [{ name: 'tokenId', type: 'uint256' }],
@@ -81,7 +82,7 @@ const MintKudos = (): React.ReactElement => {
       )
       console.log(result)
       console.log(result.data)
-      // TODO: check header/Location to check when the token has been claimed
+      // TODO: check header/Location to know when the token has been claimed
       if (result) setIsKudosClaimed(true)
     } catch (error) {
       // TODO: add error feedback
