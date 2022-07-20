@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Box, Container, Progress, Text } from '@chakra-ui/react'
+import { Box, Container, Text } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 import axios from 'axios'
 
@@ -40,7 +40,7 @@ const Stats = (): JSX.Element => {
                 </Text>
                 {stats?.uniqueAddresses}
               </Box>
-              <Box mt={8}>
+              {/* <Box mt={8}>
                 <Text fontSize="lg" color="orange.300">
                   Remaining POAPs
                 </Text>
@@ -78,7 +78,7 @@ const Stats = (): JSX.Element => {
                     </>
                   )
                 })}
-              </Box>
+              </Box> */}
             </>
           )}
           <Box mt={8}>
