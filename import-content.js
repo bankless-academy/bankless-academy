@@ -29,6 +29,7 @@ const KEY_MATCHING = {
   Difficulty: 'difficulty',
   Description: 'description',
   Name: 'name',
+  Module: 'module',
   Quest: 'quest',
   'Publication status': 'publicationStatus',
   'Featured on homepage': 'isFeaturedOnHomepage',
@@ -109,6 +110,7 @@ axios
       if (lesson.isFeaturedOnHomepage === undefined) lesson.isFeaturedOnHomepage = false
       if (lesson.isCommentsEnabled === undefined) lesson.isCommentsEnabled = false
       if (lesson.endOfLessonRedirect === undefined) lesson.endOfLessonRedirect = null
+      if (lesson.module === undefined) delete lesson.module
 
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)

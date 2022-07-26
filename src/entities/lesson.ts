@@ -14,6 +14,7 @@ export interface LessonType {
   poapImageLink?: string
   lessonImageLink?: string
   socialImageLink?: string
+  module?: string
   learnings: string
   learningActions: string
   knowledgeRequirements?: string

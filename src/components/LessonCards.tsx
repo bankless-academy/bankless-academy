@@ -22,13 +22,18 @@ const LessonCard = styled(Box)`
 
 const LessonCards: React.FC = () => {
   const router = useRouter()
-  const { all } = router.query
+  const { all, module } = router.query
 
   const [stats, setStats]: any = useState(null)
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   const Lessons =
-    all !== undefined
+    module !== undefined
+      ? LESSONS.filter(
+          (lesson) =>
+            lesson.publicationStatus === 'publish' && lesson.module === module
+        )
+      : all !== undefined
       ? LESSONS
       : LESSONS.filter((lesson) => lesson.publicationStatus === 'publish')
 
