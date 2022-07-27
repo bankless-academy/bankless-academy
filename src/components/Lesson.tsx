@@ -64,6 +64,10 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
       props.slidetype === 'LEARN' &&
       (props.issmallscreen === 'true' ? 'display: block;' : 'display: flex;')};
   }
+  div.content > div > img {
+    margin: auto;
+    ${(props) => props.issmallscreen !== 'true' && 'max-height: 60vh;'};
+  }
   .bloc-ab {
     flex: 1 1 0;
     margin: 10px;
