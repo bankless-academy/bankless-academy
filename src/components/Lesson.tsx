@@ -83,6 +83,7 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
     flex: 1;
   }
   .bloc2 {
+    align-self: center;
     img {
       width: auto;
       margin: auto;
@@ -96,7 +97,7 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
           width: 100%;
         }
       `
-        : 'max-height: 60vh;'};
+        : 'img {  max-height: 60vh; }'};
   }
   div.content div {
     h2,
