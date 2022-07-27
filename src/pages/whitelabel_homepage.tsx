@@ -105,8 +105,8 @@ const HomePage = (): JSX.Element => {
               )}
             </Box>
           </Box>
-          <Footer />
         </Container>
+        <Footer />
       </Box>
     </>
   )

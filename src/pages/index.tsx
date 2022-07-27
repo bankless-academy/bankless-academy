@@ -360,8 +360,8 @@ const HomePage = (): JSX.Element => {
                 </SimpleGrid>
               </Box>
             </>
-            <Footer />
           </Container>
+          <Footer />
         </Box>
       </>
     )
