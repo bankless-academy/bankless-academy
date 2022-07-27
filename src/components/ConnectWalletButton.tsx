@@ -21,7 +21,12 @@ import Davatar from '@davatar/react'
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
 import { walletConnect, injected } from 'utils'
-import { INFURA_ID, POAP_EVENT_IDS, OLD_POAP_EVENT_IDS } from 'constants/index'
+import {
+  INFURA_ID,
+  POAP_EVENT_IDS,
+  OLD_POAP_EVENT_IDS,
+  IS_WHITELABEL,
+} from 'constants/index'
 import { PoapType } from 'entities/poap'
 
 let web3Modal: Web3Modal
@@ -160,7 +165,7 @@ const ConnectWalletButton = ({
                 </Button>
               </Box>
               {/* TODO: move to dedicated component? */}
-              {poaps?.length > 0 && (
+              {!IS_WHITELABEL && poaps?.length > 0 && (
                 <>
                   <Text fontSize="xl" fontWeight="bold" textAlign="center">
                     My Academy POAPs
