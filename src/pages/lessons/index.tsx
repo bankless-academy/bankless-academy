@@ -5,8 +5,10 @@ import { useRouter } from 'next/router'
 import { MetaData } from 'components/Head'
 import LessonCards from 'components/LessonCards'
 import MODULES from 'constants/whitelabel_modules'
+import { ModuleType } from 'entities/module'
 
 const pageMeta: MetaData = {
+  // TODO: add module name
   title: 'Lessons',
 }
 
@@ -16,13 +18,25 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
+const findModuleName = (modules: ModuleType[], moduleSlug) => {
+  for (const m of modules) {
+    if (m.slug === moduleSlug) return m.name
+    else if (
+      m.submodules?.length > 0 &&
+      findModuleName(m.submodules, moduleSlug) !== ''
+    )
+      return findModuleName(m.submodules, moduleSlug)
+  }
+  return ''
+}
+
 const Lessons = (): JSX.Element => {
   const router = useRouter()
   const { module } = router.query
-  const moduleName = MODULES.find((m) => m.slug === module)?.name
+  const moduleName = findModuleName(MODULES, module)
   return (
     <Container maxW="container.xl">
-      {module !== undefined && (
+      {module !== '' && (
         <Heading as="h1" size="2xl" textAlign="center" m={4}>
           {moduleName}
         </Heading>
