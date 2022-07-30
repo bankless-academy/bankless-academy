@@ -36,6 +36,9 @@
     "definition": "Willing to pay interest to lenders in order to borrow assets",
     "color": "rgba(255, 0, 26, 1)"
   },
+  "centralized exchange": {
+    "definition": "(CEX) Platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange"
+  },
   "chain": {
     "definition": "Binds blocks of data together to form a database which cannot be altered or changed.",
     "color": "rgba(128, 128, 128, 1)"
