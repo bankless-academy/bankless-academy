@@ -1,11 +1,8 @@
 import { GetStaticProps } from 'next'
 import { SimpleGrid, Container, Heading } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
 
 import { MetaData } from 'components/Head'
 import LessonCards from 'components/LessonCards'
-import MODULES from 'constants/whitelabel_modules'
-import { ModuleType } from 'entities/module'
 
 const pageMeta: MetaData = {
   // TODO: add module name
@@ -18,29 +15,12 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const findModuleName = (modules: ModuleType[], moduleSlug) => {
-  for (const m of modules) {
-    if (m.slug === moduleSlug) return m.name
-    else if (
-      m.submodules?.length > 0 &&
-      findModuleName(m.submodules, moduleSlug) !== ''
-    )
-      return findModuleName(m.submodules, moduleSlug)
-  }
-  return ''
-}
-
-const Lessons = (): JSX.Element => {
-  const router = useRouter()
-  const { module } = router.query
-  const moduleName = findModuleName(MODULES, module)
+function Lessons(): JSX.Element {
   return (
     <Container maxW="container.xl">
-      {module !== '' && (
-        <Heading as="h1" size="2xl" textAlign="center" m={4}>
-          {moduleName}
-        </Heading>
-      )}
+      <Heading as="h1" size="2xl" textAlign="center" m={4}>
+        Explore Lessons
+      </Heading>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={4} mt={8}>
         <LessonCards />
       </SimpleGrid>

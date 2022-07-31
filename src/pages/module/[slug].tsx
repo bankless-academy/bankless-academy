@@ -1,9 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { Container } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
 import { MetaData } from 'components/Head'
 import Modules from 'components/Modules'
+import LessonCards from 'components/LessonCards'
 import MODULES from 'constants/whitelabel_modules'
 import { ModuleType } from 'entities/module'
 
@@ -32,16 +33,35 @@ const ModulesPage = (): JSX.Element => {
   const router = useRouter()
   const { slug } = router.query
 
-  const submodules = MODULES.find((m) => m.slug === slug)?.submodules
-  const moduleName = MODULES.find((m) => m.slug === slug)?.name
+  const module = MODULES.find((m) => m.slug === slug)
 
-  if (submodules && moduleName)
-    return (
-      <Container maxW="container.xl">
-        <Modules modules={submodules} title={moduleName} />
-      </Container>
-    )
-  else return null
+  if (!module) return null
+
+  const hasSubmodules = module.subModules?.length > 0
+
+  return (
+    <Container maxW="container.xl">
+      {hasSubmodules ? (
+        <Modules
+          modules={MODULES.filter((m) => m.parentModule === module.moduleId)}
+          parentModule={module}
+        />
+      ) : (
+        <>
+          <Heading as="h1" size="2xl" textAlign="center" m={4}>
+            {module.parentModule &&
+              `${
+                MODULES.find((m) => m.moduleId === module.parentModule)?.name
+              } - `}
+            {module.name}
+          </Heading>
+          <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={4} mt={8}>
+            <LessonCards />
+          </SimpleGrid>
+        </>
+      )}
+    </Container>
+  )
 }
 
 export default ModulesPage

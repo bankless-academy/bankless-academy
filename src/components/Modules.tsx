@@ -17,24 +17,25 @@ const LessonGrid = styled(SimpleGrid)`
 
 const Modules = ({
   modules,
-  title,
+  parentModule,
 }: {
   modules: ModuleType[]
-  title?: string
+  parentModule?: ModuleType
 }): React.ReactElement => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   return (
     <Box mt="16">
-      <Heading as="h2" size="xl">
-        {title || `Available Modules`}
+      <Heading
+        as="h1"
+        size={parentModule ? '2xl' : 'xl'}
+        textAlign={parentModule ? 'center' : 'unset'}
+      >
+        {parentModule?.name || `Available Modules`}
       </Heading>
       <Box>
         {modules.map((module, key) => {
-          const hasSubmodules = module.submodules?.length > 0
-          const moduleLink = hasSubmodules
-            ? `/modules/${module.slug}`
-            : `/lessons?module=${module.slug}`
+          const moduleLink = `/module/${module.slug}`
           const ModuleImage = (
             <LessonBanner
               iswhitelabel={IS_WHITELABEL}

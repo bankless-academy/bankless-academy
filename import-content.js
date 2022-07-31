@@ -29,7 +29,7 @@ const KEY_MATCHING = {
   Difficulty: 'difficulty',
   Description: 'description',
   Name: 'name',
-  Module: 'module',
+  Module: 'moduleId',
   Quest: 'quest',
   'Publication status': 'publicationStatus',
   'Featured on homepage': 'isFeaturedOnHomepage',
@@ -90,7 +90,9 @@ axios
         (obj, k) =>
           Object.assign(obj, {
             // transform to number if the string contains a number
-            [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k]))
+            [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k])) ||
+              // ignore type transform for ModuleId
+              k === 'Module'
               ? notion.fields[k]
               : parseInt(notion.fields[k]),
           }),
@@ -110,7 +112,10 @@ axios
       if (lesson.isFeaturedOnHomepage === undefined) lesson.isFeaturedOnHomepage = false
       if (lesson.isCommentsEnabled === undefined) lesson.isCommentsEnabled = false
       if (lesson.endOfLessonRedirect === undefined) lesson.endOfLessonRedirect = null
-      if (lesson.module === undefined) delete lesson.module
+      if (lesson.moduleId === undefined) delete lesson.moduleId
+      else {
+        lesson.moduleId = lesson.moduleId[0]
+      }
 
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)

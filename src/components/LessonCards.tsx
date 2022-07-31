@@ -10,6 +10,7 @@ import { useRouter } from 'next/router'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import LessonBanner from 'components/LessonBanner'
+import MODULES from 'constants/whitelabel_modules'
 
 const LessonCard = styled(Box)`
   /* background: linear-gradient(
@@ -22,16 +23,19 @@ const LessonCard = styled(Box)`
 
 const LessonCards: React.FC = () => {
   const router = useRouter()
-  const { all, module } = router.query
+  const { all, slug } = router.query
 
   const [stats, setStats]: any = useState(null)
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
+  const moduleId = MODULES.find((m) => m.slug === slug)?.moduleId
+
   const Lessons =
-    module !== undefined
+    module !== undefined && moduleId
       ? LESSONS.filter(
           (lesson) =>
-            lesson.publicationStatus === 'publish' && lesson.module === module
+            lesson.publicationStatus === 'publish' &&
+            lesson.moduleId === moduleId
         )
       : all !== undefined
       ? LESSONS

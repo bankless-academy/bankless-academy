@@ -9,6 +9,7 @@
     "start": "next start",
     "import-content": "node import-content.js",
     "import-keywords": "node import-keywords.js",
+    "import-modules": "node import-modules.js",
     "import-poaps": "node import-poaps.js",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",

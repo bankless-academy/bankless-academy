@@ -28,6 +28,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
+// TODO: move to /lesson/lesson-name + add redirect
+
 const LessonPage = (): JSX.Element => {
   const { asPath } = useRouter()
   const [path] = asPath.split('?')
