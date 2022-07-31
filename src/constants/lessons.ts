@@ -972,14 +972,15 @@ const LESSONS: LessonType[] = [
     slug: 'banklessdao-constitution',
     imageLinks: [
       '/lesson/banklessdao-constitution/introduction-a183af73.png',
-      '/lesson/banklessdao-constitution/genesis-fb563012.png',
+      '/lesson/banklessdao-constitution/the-genesis-fb563012.png',
       '/lesson/banklessdao-constitution/the-bankless-movement-1cf09f15.png',
+      '/lesson/banklessdao-constitution/banklessdao-5b519091.png',
+      '/lesson/banklessdao-constitution/mission-vision-38958ca1.png',
       '/lesson/banklessdao-constitution/values-5f6d4d83.png',
       '/lesson/banklessdao-constitution/values-cca16d71.jpg',
       '/lesson/banklessdao-constitution/values-8c2779e5.jpg',
       '/lesson/banklessdao-constitution/values-040efbbb.webp',
       '/lesson/banklessdao-constitution/dao-membership-f5666227.png',
-      '/lesson/banklessdao-constitution/membership-levels-b1c40abc.png',
       '/lesson/banklessdao-constitution/membership-levels-c2b41e21.png',
       '/lesson/banklessdao-constitution/membership-levels-8b2dea38.png',
       '/lesson/banklessdao-constitution/membership-levels-d8b40940.png',
@@ -988,17 +989,14 @@ const LESSONS: LessonType[] = [
       '/lesson/banklessdao-constitution/projects-42552391.png',
       '/lesson/banklessdao-constitution/grants-committee-e02f2092.png',
       '/lesson/banklessdao-constitution/dao-cycles-73797824.png',
-      '/lesson/banklessdao-constitution/3-dao-cycles-df8ddbf1.png',
-      '/lesson/banklessdao-constitution/3-dao-cycles-972d60fc.png',
-      '/lesson/banklessdao-constitution/3-dao-cycles-fb07ffd5.png',
+      '/lesson/banklessdao-constitution/3-cycles-df8ddbf1.png',
+      '/lesson/banklessdao-constitution/3-cycles-972d60fc.png',
+      '/lesson/banklessdao-constitution/3-cycles-fb07ffd5.png',
       '/lesson/banklessdao-constitution/dao-governance-bfb0e875.png',
       '/lesson/banklessdao-constitution/step-1-gauge-support-193b1bcb.png',
       '/lesson/banklessdao-constitution/step-2-draft-proposal-1a127556.png',
       '/lesson/banklessdao-constitution/step-3-vote-a107f7c8.png',
       '/lesson/banklessdao-constitution/funding-61f60a40.png',
-      '/lesson/banklessdao-constitution/seasonal-budgets-b65ef784.png',
-      '/lesson/banklessdao-constitution/mid-season-grants-b5e72aa7.png',
-      '/lesson/banklessdao-constitution/coordinape-c32863e1.png',
       '/lesson/banklessdao-constitution/intrateam-compensation-4e7b8680.png',
       '/lesson/banklessdao-constitution/code-of-conduct-93a167e4.png'
     ],
@@ -1012,8 +1010,8 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '110f75fb1df24b96b6f91758515ec899',
-        title: 'Genesis',
-        content: '<div class="bloc1"><p>BanklessDAO was founded by David Hoffman and Ryan Sean Adams on May 4th, 2021, when they airdropped BANK tokens to each Bankless premium subscriber. Following the true ethos of decentralization, they stepped back and let the DAO take shape. While their media company, Bankless LLC, continues to operate as its own media node, the Bankless brand is propagated through the DAO and its sub-DAOs. Now, the Bankless ecosystem as a whole creates user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/genesis-fb563012.png\'></div>'
+        title: 'The Genesis',
+        content: '<div class="bloc1"><p>BanklessDAO was founded by David Hoffman and Ryan Sean Adams on May 4th, 2021, when they airdropped BANK tokens to each Bankless premium subscriber. Following the true ethos of decentralization, they stepped back and let the DAO take shape. While their media company, Bankless LLC, continues to operate as its own media node, the Bankless brand is propagated through the DAO and its sub-DAOs. Now, the Bankless ecosystem as a whole creates user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/the-genesis-fb563012.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -1025,19 +1023,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'b2f35cc32826436fb8b39ec6ac801494',
         title: 'BanklessDAO',
-        content: '<div class="bloc1"><p>The BanklessDAO is a decentralized autonomous organization that acts as a steward of the Bankless Movement, progressing the world towards a future of greater freedom. BanklessDAO is a community of passionate Web3 thought-leaders who aim to educate new users, produce written and audio media, build DAO tooling, provide consulting services, develop Web3 scholarship, and create a social and creative home base for anyone in Web3. We’re so much more than a social DAO—we’re a shipping, building, and innovating DAO. See: <a href=\'https://snapshot.org/#/banklessvault.eth/proposal/QmdoixPMMT76vSt6ewkE87JZJywS1piYsGC3nJJpcrPXKS\'>The Genesis Proposal</a>.</p></div>'
+        content: '<div class="bloc1"><p>The BanklessDAO is a decentralized autonomous organization that acts as a steward of the Bankless Movement, progressing the world towards a future of greater freedom. BanklessDAO is a community of passionate Web3 thought-leaders who aim to educate new users, produce written and audio media, build DAO tooling, provide consulting services, develop Web3 scholarship, and create a social and creative home base for anyone in Web3. We’re so much more than a social DAO—we’re a shipping, building, and innovating DAO. See: <a href=\'https://snapshot.org/#/banklessvault.eth/proposal/QmdoixPMMT76vSt6ewkE87JZJywS1piYsGC3nJJpcrPXKS\'>The Genesis Proposal</a>.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/banklessdao-5b519091.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'f984af75507c4dfa8f2812ab4c090cae',
-        title: 'Mission',
-        content: '<div class="bloc1"><p>We will help the world go Bankless by creating user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture. The nodes in our growing ecosystem collaborate to create inroads for people to discover, use, learn and enjoy the benefits of Web3. Everyone falls down the rabbit hole in a different way—we provide those diverse paths.</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'f449419880b0443caa059c8ceb7ce955',
-        title: 'Vision',
-        content: '<div class="bloc1"><p>Our Vision is to make financial independence, decentralized work, and creative freedom accessible to all. We work to build a world where anyone with an internet connection has access to the tools needed to achieve financial independence. We want everyone to be able to open a computer, find a DAO, start working, and get paid. We want to enable visionaries to unlock their true creative freedom with the power of Web3.</p></div>'
+        title: 'Mission & Vision',
+        content: '<div class="bloc1"><p>Our mission is to help the world go Bankless by creating user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture. The nodes in our growing ecosystem collaborate to create inroads for people to discover, use, learn and enjoy the benefits of Web3. Everyone falls down the rabbit hole in a different way—we provide those diverse paths.</p><p>Our Vision is to make financial independence, decentralized work, and creative freedom accessible to all. We work to build a world where anyone with an internet connection has access to the tools needed to achieve financial independence. We want everyone to be able to open a computer, find a DAO, start working, and get paid. We want to enable visionaries to unlock their true creative freedom with the power of Web3.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/mission-vision-38958ca1.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -1065,13 +1057,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '004bcf07e3f94a22a4f2cd0b9eebb382',
         title: 'DAO Membership',
-        content: '<div class="bloc1"><p>[what is membership, 35bank aka l1, then guest pass]</p><p>The collective body of BanklessDAO Discord users is referred to as the BanklessDAO community and is further subdivided into various levels. Membership levels are determined using community-wide roles in Discord. While these roles may grant owners certain access and admin privileges, they do not constitute a hierarchical system granting authority over others. They are social signals designed to aid in communication and coordination. All non-members have two ways to join the DAO. They can either hold 35,000 BANK tokens in their ETH wallet or get a free temporary guest pass by completing our onboarding process.</p><p>Guest pass holders are granted 14 days to investigate, participate, and test the community waters and are designated by their “Guest Pass” role tag. Individuals who desire to move beyond the guest status do so by confirming that they possess at least 35,000 BANK tokens at a single address.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/dao-membership-f5666227.png\'></div>'
+        content: '<div class="bloc1"><p>The collective body of BanklessDAO Discord users is referred to as the BanklessDAO community and is further subdivided into various levels. Membership levels are determined using community-wide roles in Discord. While these roles may grant owners specific access and admin privileges, they do not constitute a hierarchical system granting authority over others. They are social signals designed to aid in communication and coordination. All non-members have two ways to join the DAO. They can hold 35,000 BANK tokens in their ETH wallet or get a free temporary guest pass by completing our onboarding process.</p><p>Guest pass holders are granted 14 days to investigate, participate, and test the community waters and are designated by their “Guest Pass” role tag. Individuals who desire to move beyond the guest status confirm that they possess at least 35,000 BANK tokens at a single address and thereby progress to Level 1 status (full membership).</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/dao-membership-f5666227.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'e7a7a8105f6f43beaa619545533dd3ff',
         title: 'Membership Levels',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/membership-levels-b1c40abc.png\'></div><div class="bloc-b"><h2><strong>L1 - Members</strong></h2><p>L1 status is reached by owning 35,000 BANK and authenticating in the Discord server. Benefits include access to additional channels and no longer needing to renew a guest pass.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/membership-levels-c2b41e21.png\'></div><div class="bloc-b"><h2><strong>L2 - Contributors</strong></h2><p>L2 status is achieved via nomination from one\'s peers as valuable members of the DAO. L2 members are expected to be actively interested and engaged in governance and the overall health of the DAO.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/membership-levels-8b2dea38.png\'></div><div class="bloc-b"><h2><strong>L3 - Whales</strong></h2><p>Level 3 community members are members holding more than 150k BANK. The membership level grants members access to additional Discord channels.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/membership-levels-d8b40940.png\'></div><div class="bloc-b"><h2><strong>L4 - Liquidity Providers</strong></h2><p>Level 4 is reached by providing Liquidity for the Eth/Bank pair, representing at least 150k Bank and its equivalent pairing of ETH. This membership level grants access to additional Discord channels.</p></div></div>'
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/membership-levels-c2b41e21.png\'></div><div class="bloc-b"><h2><strong>Contributors (L2)</strong></h2><p>Contributor status is achieved via nomination from one\'s peers as valuable members of the DAO and are expected to contribute to the overall health of the DAO.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/membership-levels-8b2dea38.png\'></div><div class="bloc-b"><h2><strong>Whales (L3)</strong></h2><p>Bankless whales hold more than 150k BANK. The membership level grants members access to additional Discord channels.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/membership-levels-d8b40940.png\'></div><div class="bloc-b"><h2><strong>Liquidity Providers (L4)</strong></h2><p>Liquidity providers provide Liquidity for the Eth/Bank pair, representing at least 150k Bank and its equivalent in ETH. Grants access to additional Discord channels.</p></div></div>'
       },
       {
         type: 'QUIZ',
@@ -1093,7 +1085,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'd7c9dc69be2b4b92a46c031142469577',
         title: 'DAO Organizational Units',
-        content: '<div class="bloc1"><p>The DAO is a multicellular network of organizational units united by our shared mission, vision, and values. These units are self-managed, possess their own internal multi-signature wallets, and often develop their own internal governance processes. Three of these organizational units deserve special attention given their prominence in the current org structure. These are Guilds, Projects, and the Grants Committee.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/dao-organizational-units-6209370d.png\'></div>'
+        content: '<div class="bloc1"><p>The DAO is a multicellular network of organizational units united by our shared mission, vision, and values. These units are self-managed, possess their own internal multi-signature wallets, and often develop their own internal governance processes. Three of these organizational units deserve special attention, given their prominence in the current org structure. These are:</p><ol><li>Guilds</li><li>Projects</li><li>Grants Committee</li></ol></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/dao-organizational-units-6209370d.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -1122,8 +1114,8 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '2377296d2c234f8684d0620bb13e791f',
-        title: '3 <strong>DAO Cycles</strong>',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/3-dao-cycles-df8ddbf1.png\'></div><div class="bloc-b"><h2>Seasons</h2><p>Seasons are funding cycles (typically 3 months) intended to align the DAO’s collective energy to key objectives. These objectives are in the form of funded initiatives that BANK token holders vote on before each season. Seasonal funding is largely dispersed through the Grants Committee.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/3-dao-cycles-972d60fc.png\'></div><div class="bloc-b"><h2><strong>Biweekly KPI Reports</strong></h2><p>Funded projects are encouraged to provide progress updates every other week. Updates can be listed on project wiki pages, via Forum posts, or through weekly Community Calls. The update should include funding used; updates on KPIs and progress towards goals; and potential blockers.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/3-dao-cycles-fb07ffd5.png\'></div><div class="bloc-b"><h2><strong>Weekly Community Calls</strong></h2><p>Weekly DAO-wide Community Calls are designed to align initiatives and surface needs. All guest passes and contributors can join on Discord and the stream is broadcast to Twitch and posted to YouTube for public viewing.</p></div></div>'
+        title: '3 <strong>Cycles</strong>',
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/3-cycles-df8ddbf1.png\'></div><div class="bloc-b"><h2>Seasons</h2><p>Seasons are funding cycles (typically 3 months) intended to align the DAO’s collective energy to key objectives. These objectives are in the form of funded initiatives that BANK token holders vote on before each season. Seasonal funding is largely dispersed through the Grants Committee.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/3-cycles-972d60fc.png\'></div><div class="bloc-b"><h2><strong>Biweekly Reports</strong></h2><p>Funded projects are encouraged to provide progress updates every other week. Updates can be listed on project wiki pages, forum posts, or weekly Community Calls. The update should include funding used, progress towards goals, and potential blockers.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/3-cycles-fb07ffd5.png\'></div><div class="bloc-b"><h2><strong>Weekly Community Calls</strong></h2><p>Weekly DAO-wide Community Calls are designed to align initiatives and surface needs. All guest passes and contributors can join on Discord. The stream is also broadcast to Twitch and posted to YouTube for public viewing.</p></div></div>'
       },
       {
         type: 'LEARN',
@@ -1153,25 +1145,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'efcb2048ae4f40379918e877b204a72e',
         title: '<strong>Funding</strong>',
-        content: '<div class="bloc1"><p>Funds are released from this treasury in one of three ways: </p><ol><li>Seasonal budgets</li><li>Mid-season grants</li><li>Monthly Coordinape rounds</li></ol></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/funding-61f60a40.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'd1f8db49aa4446979c02cd89fde31a86',
-        title: '<strong>Seasonal Budgets</strong>',
-        content: '<div class="bloc1"><p>New seasons are initiated by all guilds and projects submitting proposals for funding. If these proposals pass Forum approval, they are packaged together in a single seasonal budget approval Snapshot vote. If this budget is approved, then the DAO multi-signers are responsible for issuing disbursements in line with the approved budget.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/seasonal-budgets-b65ef784.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'd1dcae559d3743cbaefc0c3eabb83e51',
-        title: '<strong>Mid-Season Grants</strong>',
-        content: '<div class="bloc1"><p>Groups seeking funding over the course of a season will be directed to the Grants Committee upon successfully passing their Forum proposal. The Grants Committee is responsible to evaluate these requests and has the liberty to accept or reject these requests for funds.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/mid-season-grants-b5e72aa7.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '13a1ad3f4b3a4ee48c4a8e94c786aa83',
-        title: '<strong>Coordinape</strong>',
-        content: '<div class="bloc1"><p>BanklessDAO runs a monthly Coordinape round for Guest Pass holders, L1s, and L2s to reward the community for continued growth and engagement. Community members are required to fill out a coordinape-request-form prior to the start of each round using the bot-commands channel on discord. Those who have successfully filled out the form are eligible to allocate GIVE tokens to their peers using the <a href=\'https://app.coordinape.com/\'>Coordinape app</a> after the signup period ends and the allocation period starts. Members may decide to opt-out of rounds if they choose to do so.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/coordinape-c32863e1.png\'></div>'
+        content: '<div class="bloc1"><p>Funds are released from this treasury in one of three ways: </p><ol><li>Seasonal Budgets: New seasons are initiated by guilds and projects submitting funding proposals. If these proposals pass Forum approval, they go to Snapshot. If this budget is approved, the DAO multi-signers will issuing disbursements in line with the approved budget.</li><li>Mid-season grants: Groups seeking funding over the course of a season will be directed to the Grants Committee upon successfully passing their Forum proposal. The Grants Committee is responsible to evaluate these requests.</li><li>Coordinape: BanklessDAO runs a monthly Coordinape for Guest Pass holders, L1s, and L2s to reward the community for continued growth and engagement. Just fill out a coordinape-request-form prior to the start of each round using the bot-commands channel on discord then you are eligible to allocate GIVE tokens to their peers using the <a href=\'https://app.coordinape.com/\'>Coordinape app</a> after the signup period ends and the allocation period starts.</li></ol></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/funding-61f60a40.png\'></div>'
       },
       {
         type: 'LEARN',
