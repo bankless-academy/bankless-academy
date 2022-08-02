@@ -97,6 +97,7 @@ axios
       }
       if (config.logo) {
         config.logo = get_img(config.logo, 'logo', '')
+        config.logo_small = config.logo
       }
       if (config.homepage_background) {
         config.homepage_background = get_img(
