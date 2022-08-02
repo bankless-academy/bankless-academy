@@ -1,1 +1,11 @@
-{}
+{
+  "blockchain": {
+    "definition": "A shared, unchangeable database, or ledger, of recorded transactions."
+  },
+  "DeFi": {
+    "definition": "An abbreviation for decentralized finance."
+  },
+  "wallet": {
+    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+  }
+}
