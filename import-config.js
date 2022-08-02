@@ -17,15 +17,15 @@ const NOTION_ID =
   args[2] && args[2].length === 32
     ? args[2]
     : process.env.DEFAULT_CONFIG_DB_ID || DEFAULT_NOTION_ID
-const UMAMI_ID = process.env.UMAMI_ID || "62d1cf48-425d-4658-9b86-3eea78ac9714"
+const UMAMI_ID = process.env.UMAMI_ID || '62d1cf48-425d-4658-9b86-3eea78ac9714'
 console.log('NOTION_ID', NOTION_ID)
 
 const KEY_MATCHING = {
   'Project name': 'project_name',
-  'Domain': 'domain_prod',
+  Domain: 'domain_prod',
   'Default metadata description': 'default_metadata_description',
   'Default metadata image': 'default_metadata_image',
-  'Favicon': 'favicon',
+  Favicon: 'favicon',
   'Homepage logo': 'logo',
   // 'Homepage logo': 'logo_small',
   'Homepage background image': 'homepage_background',
@@ -93,18 +93,10 @@ axios
         )
       }
       if (config.favicon) {
-        config.favicon = get_img(
-          config.favicon,
-          'favicon',
-          ''
-        )
+        config.favicon = get_img(config.favicon, 'favicon', '')
       }
       if (config.logo) {
-        config.logo = get_img(
-          config.logo,
-          'logo',
-          ''
-        )
+        config.logo = get_img(config.logo, 'logo', '')
       }
       if (config.homepage_background) {
         config.homepage_background = get_img(
