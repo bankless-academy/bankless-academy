@@ -10,6 +10,7 @@
     "import-content": "node import-content.js",
     "import-keywords": "node import-keywords.js",
     "import-modules": "node import-modules.js",
+    "import-config": "node import-config.js",
     "import-poaps": "node import-poaps.js",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",

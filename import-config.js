@@ -7,25 +7,28 @@ const fs = require('fs')
 const stringifyObject = require('stringify-object')
 
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
-const IS_WHITELABEL = PROJECT_DIR !== ''
 // TODO: update
 const DEFAULT_NOTION_ID = '623e965e4f10456094d17aa94ec37105'
 const POTION_API = 'https://potion.banklessacademy.com'
-const MODULES_FILE = IS_WHITELABEL ? 'whitelabel_modules.ts' : 'modules.ts'
+const CONFIG_FILE = 'whitelabel.ts'
 
 const args = process.argv
 const NOTION_ID =
   args[2] && args[2].length === 32
     ? args[2]
-    : process.env.DEFAULT_MODULE_DB_ID || DEFAULT_NOTION_ID
+    : process.env.DEFAULT_CONFIG_DB_ID || DEFAULT_NOTION_ID
+const UMAMI_ID = process.env.UMAMI_ID || "62d1cf48-425d-4658-9b86-3eea78ac9714"
 console.log('NOTION_ID', NOTION_ID)
 
 const KEY_MATCHING = {
-  'Module name': 'name',
-  'Module image': 'moduleImageLink',
-  Description: 'description',
-  // 'Parent Module': 'parentModule',
-  // Submodules: 'subModules',
+  'Project name': 'project_name',
+  'Domain': 'domain_prod',
+  'Default metadata description': 'default_metadata_description',
+  'Default metadata image': 'default_metadata_image',
+  'Favicon': 'favicon',
+  'Homepage logo': 'logo',
+  // 'Homepage logo': 'logo_small',
+  'Homepage background image': 'homepage_background',
 }
 
 // TODO: move to lib file
@@ -53,7 +56,7 @@ const get_img = (imageLink, slug, image_name) => {
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
   const hash = crc32(file_name)
-  const image_dir = `/${PROJECT_DIR}module/${slug}`
+  const image_dir = `/${PROJECT_DIR}${slug}`
   const image_path = `${image_dir}${slugify(
     image_name
   )}-${hash}.${file_extension}`
@@ -66,14 +69,15 @@ const get_img = (imageLink, slug, image_name) => {
   return image_path
 }
 
-const modules = []
+let config = {}
 
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((response) => {
     response.data.map((notion) => {
+      config = {}
       // console.log(notion)
-      const module = Object.keys(KEY_MATCHING).reduce(
+      config = Object.keys(KEY_MATCHING).reduce(
         (obj, k) =>
           Object.assign(obj, {
             [KEY_MATCHING[k]]: notion.fields[k],
@@ -81,38 +85,52 @@ axios
         {}
       )
       // console.log(notion.fields)
-      module.slug = slugify(module.name)
-      module.moduleId = notion.id.replace(/-/g, '')
-      if (module.moduleImageLink) {
-        module.moduleImageLink = get_img(
-          module.moduleImageLink,
-          module.slug,
+      if (config.default_metadata_image) {
+        config.default_metadata_image = get_img(
+          config.default_metadata_image,
+          'image',
           ''
         )
       }
-      module.parentModule = notion.fields['Parent module'][0] || null
-      module.subModules = notion.fields['Submodules']
-      // console.log(module)
-      modules.push(module)
+      if (config.favicon) {
+        config.favicon = get_img(
+          config.favicon,
+          'favicon',
+          ''
+        )
+      }
+      if (config.logo) {
+        config.logo = get_img(
+          config.logo,
+          'logo',
+          ''
+        )
+      }
+      if (config.homepage_background) {
+        config.homepage_background = get_img(
+          config.homepage_background,
+          'homepage_background',
+          ''
+        )
+      }
+      config.umami_prod = UMAMI_ID
     })
-    console.log(modules)
-    const FILE_CONTENT = `import { ModuleType } from 'entities/module'
+    console.log(config)
+    const FILE_CONTENT = `import { WhitelabelType } from 'entities/whitelabel'
 
-const MODULES: ModuleType[] = ${stringifyObject(modules, {
+export const WHITELABEL: WhitelabelType = ${stringifyObject(config, {
       indent: '  ',
       singleQuotes: true,
     })}
-
-export default MODULES
 `
     FileSystem.writeFile(
-      `src/constants/${MODULES_FILE}`,
+      `src/constants/${CONFIG_FILE}`,
       FILE_CONTENT,
       (error) => {
         if (error) throw error
       }
     )
-    console.log(`export done -> check src/constants/${MODULES_FILE}`)
+    console.log(`export done -> check src/constants/${CONFIG_FILE}`)
   })
   .catch((error) => {
     console.log(error)
