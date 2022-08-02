@@ -3,6 +3,7 @@ node_modules
 yarn.lock
 package-lock.json
 public
+import-config.js
 import-content.js
 import-keywords.js
 import-poaps.js
