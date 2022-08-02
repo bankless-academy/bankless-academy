@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
               powered by&nbsp;
               <Link
                 target="_blank"
-                href="http://app.banklessacademy.com/?utm_source=BanklessAcademyWhiteLabel&utm_medium=website&utm_campaign=WhiteLabel"
+                href="https://whitelabel.banklessacademy.com/?utm_source=BanklessAcademyWhiteLabel&utm_medium=website&utm_campaign=WhiteLabel"
               >
                 Bankless Academy
               </Link>
