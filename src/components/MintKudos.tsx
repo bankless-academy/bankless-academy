@@ -3,9 +3,6 @@ import { useState, useEffect } from 'react'
 import { Button, Link } from '@chakra-ui/react'
 import { isMobile } from 'react-device-detect'
 import axios from 'axios'
-const btoa = function (str) {
-  return Buffer.from(str).toString('base64')
-}
 
 import { useActiveWeb3React } from 'hooks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
@@ -13,12 +10,9 @@ import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 const MINTKUDOS_API = process.env.NEXT_PUBLIC_MINTKUDOS_API
 const IS_MINTKUDOS_SANDBOX =
   MINTKUDOS_API === 'https://sandbox-api.mintkudos.xyz'
-const MINTKUDOS_COMMUNITY_ID = process.env.NEXT_PUBLIC_MINTKUDOS_COMMUNITY_ID
-const MINTKUDOS_KEY = process.env.NEXT_PUBLIC_MINTKUDOS_KEY
-const encodedString = btoa(MINTKUDOS_COMMUNITY_ID + ':' + MINTKUDOS_KEY)
 
 // TODO: make this dynamic -> lesson.mintKudosTokenId
-const tokenId = 582
+const tokenId = 628
 
 const MintKudos = (): React.ReactElement => {
   const [isKudosClaimed, setIsKudosClaimed] = useState(false)
@@ -32,7 +26,8 @@ const MintKudos = (): React.ReactElement => {
       .get(`${MINTKUDOS_API}/v1/wallets/${account}/tokens`)
       .then(function (res) {
         if (res.data?.data?.some((k) => k?.kudosTokenId === tokenId))
-          setIsKudosClaimed(true)
+          // setIsKudosClaimed(true)
+          setIsKudosClaimed(false)
         // TODO: store in localStorage also
       })
       .catch(function (error) {
@@ -66,24 +61,17 @@ const MintKudos = (): React.ReactElement => {
       const signature = await signer._signTypedData(domainInfo, types, value)
       console.log('signature', signature)
       const bodyParameters = {
-        claimingAddress: account,
-        signature: signature,
+        address: account,
+        kudosTokenId: tokenId,
+        signature,
+        message: value,
       }
-      const config = {
-        headers: {
-          Authorization: `Basic ${encodedString}`,
-        },
-      }
-      // TODO: move this to the backend to keep the API KEY secure + check that the quest has been validated before
-      const result = await axios.post(
-        `${MINTKUDOS_API}/v1/tokens/${tokenId}/claim`,
-        bodyParameters,
-        config
-      )
+      // TODO: replace to post?
+      const result = await axios.post(`/api/mint-kudos`, bodyParameters)
       console.log(result)
       console.log(result.data)
       // TODO: check header/Location to know when the token has been claimed
-      if (result) setIsKudosClaimed(true)
+      // if (result) setIsKudosClaimed(true)
     } catch (error) {
       // TODO: add error feedback
       console.error(error)
