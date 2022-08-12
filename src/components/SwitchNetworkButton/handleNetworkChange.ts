@@ -1,11 +1,11 @@
-import networks from 'constants/networks'
+import { NETWORKS } from 'constants/networks'
 import { Dispatch, SetStateAction } from 'react'
 
 const setActiveNetwork = (chainId, setNetwork) => {
-  const children = Object.keys(networks)
+  const children = Object.keys(NETWORKS)
   for (let i = 0; i < children.length; i++) {
-    if (networks[children[i]].chainId === Number(chainId)) {
-      return setNetwork(networks[children[i]])
+    if (NETWORKS[children[i]].chainId === Number(chainId)) {
+      return setNetwork(NETWORKS[children[i]])
     }
   }
 }
