@@ -9,10 +9,11 @@ import {
   Text,
   Box,
   Icon,
+  useToast,
 } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
-import networks from 'constants/networks'
+import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 import switchNetwork from './switchNetwork'
 import handleNetworkChange from './handleNetworkChange'
 
@@ -30,7 +31,8 @@ const SwitchNetworkButton = ({
 }: {
   isSmallScreen: boolean
 }): any => {
-  const [currentNetwork, setCurrentNetwork] = useState(networks.mainnet)
+  const toast = useToast()
+  const [currentNetwork, setCurrentNetwork] = useState(NETWORKS.mainnet)
 
   const handleChange = async (networkName) => {
     await switchNetwork(networkName.toLowerCase(), setCurrentNetwork)
@@ -38,6 +40,21 @@ const SwitchNetworkButton = ({
 
   useEffect(() => {
     const metamask = window.ethereum
+    metamask?.on('networkChanged', function (networkId) {
+      if (!SUPPORTED_NETWORKS_IDS.includes(parseInt(networkId))) {
+        // wrong network
+        toast.closeAll()
+        toast({
+          title: 'Wrong network detected',
+          description: 'Please switch back to Ethereum Mainnet',
+          status: 'warning',
+          duration: null,
+        })
+      } else {
+        // correct network
+        toast.closeAll()
+      }
+    })
     if (metamask) {
       handleNetworkChange(metamask, setCurrentNetwork)
       // MetaMask mobile hack
@@ -70,14 +87,13 @@ const SwitchNetworkButton = ({
               <Text ml="4" mb="2" color="gray.500">
                 Select a network
               </Text>
-              {/* TODO: handle unknown network + suggest to switch */}
-              {Object.keys(networks).map((network, index) => (
+              {Object.keys(NETWORKS).map((network, index) => (
                 <MenuItem
                   key={index}
                   minH="40px"
                   onClick={() => handleChange(network)}
                   backgroundColor={
-                    currentNetwork.chainId === networks[network].chainId
+                    currentNetwork.chainId === NETWORKS[network].chainId
                       ? 'blackAlpha.300'
                       : 'default'
                   }
@@ -85,14 +101,14 @@ const SwitchNetworkButton = ({
                   <Image
                     height={25}
                     rounded="full"
-                    src={networks[network].image}
-                    alt={networks[network].name}
+                    src={NETWORKS[network].image}
+                    alt={NETWORKS[network].name}
                     mr="12px"
                   />
                   <Box flex="1" isTruncated>
-                    {networks[network].name}
+                    {NETWORKS[network].name}
                   </Box>
-                  {currentNetwork.chainId === networks[network].chainId && (
+                  {currentNetwork.chainId === NETWORKS[network].chainId && (
                     <CircleIcon />
                   )}
                 </MenuItem>

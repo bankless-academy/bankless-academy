@@ -1,6 +1,6 @@
 import { INFURA_ID } from './index'
 
-export default Object.freeze({
+export const NETWORKS = Object.freeze({
   mainnet: {
     name: 'Ethereum',
     image: '/images/eth.svg',
@@ -37,3 +37,7 @@ export default Object.freeze({
     blockExplorer: 'https://mumbai.polygonscan.com/',
   },
 })
+
+export const SUPPORTED_NETWORKS_IDS = Object.values(NETWORKS).map(
+  (network) => network.chainId
+)
