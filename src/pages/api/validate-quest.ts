@@ -36,6 +36,7 @@ export default async function handler(
     const userId = await getUserId(address)
     if (userId) {
       // TODO: move lower later
+      // TODO: check gitcoin passport requirement before adding to whitelist
       try {
         const bodyParameters = {
           contributors: [address],
