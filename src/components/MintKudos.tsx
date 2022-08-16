@@ -10,11 +10,9 @@ import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 const MINTKUDOS_API = process.env.NEXT_PUBLIC_MINTKUDOS_API
 const IS_MINTKUDOS_SANDBOX =
   MINTKUDOS_API === 'https://sandbox-api.mintkudos.xyz'
+const CHAIN_ID = IS_MINTKUDOS_SANDBOX ? 80001 : 137
 
-// TODO: make this dynamic -> lesson.mintKudosTokenId
-const tokenId = 628
-
-const MintKudos = (): React.ReactElement => {
+const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   const [isKudosClaimed, setIsKudosClaimed] = useState(false)
 
   const { account, library, chainId } = useActiveWeb3React()
@@ -25,7 +23,7 @@ const MintKudos = (): React.ReactElement => {
     axios
       .get(`${MINTKUDOS_API}/v1/wallets/${account}/tokens`)
       .then(function (res) {
-        if (res.data?.data?.some((k) => k?.kudosTokenId === tokenId))
+        if (res.data?.data?.some((k) => k?.kudosId === kudosId))
           // setIsKudosClaimed(true)
           setIsKudosClaimed(false)
         // TODO: store in localStorage also
@@ -44,13 +42,13 @@ const MintKudos = (): React.ReactElement => {
 
     // The data to sign
     const value = {
-      tokenId: tokenId,
+      tokenId: kudosId,
     }
     const domainInfo = {
       name: 'Kudos',
       version: '7',
       // Mumbai | Polygon
-      chainId: IS_MINTKUDOS_SANDBOX ? 80001 : 137,
+      chainId: CHAIN_ID,
       verifyingContract: IS_MINTKUDOS_SANDBOX
         ? '0xB876baF8F69cD35fb96A17a599b070FBdD18A6a1'
         : '0x60576A64851C5B42e8c57E3E4A5cF3CF4eEb2ED6',
@@ -62,7 +60,7 @@ const MintKudos = (): React.ReactElement => {
       console.log('signature', signature)
       const bodyParameters = {
         address: account,
-        kudosTokenId: tokenId,
+        kudosId,
         signature,
         message: value,
       }

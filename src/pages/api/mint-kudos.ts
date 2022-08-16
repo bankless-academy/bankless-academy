@@ -18,11 +18,11 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   // check params + signature
-  const { address, kudosTokenId, signature, message } = req.body
+  const { address, kudosId, signature, message } = req.body
   console.log(req.body)
   if (
     !address ||
-    !kudosTokenId ||
+    !kudosId ||
     !signature ||
     !message ||
     typeof address === 'object' ||
@@ -31,7 +31,7 @@ export default async function handler(
     return res.json({ error: 'Wrong params' })
 
   console.log('address: ', address)
-  console.log('kudosTokenId: ', kudosTokenId)
+  console.log('kudosId: ', kudosId)
   console.log('signature: ', signature)
   console.log('message: ', message)
 
@@ -58,7 +58,7 @@ export default async function handler(
         }
         // claim SBT
         const result = await axios.post(
-          `${MINTKUDOS_API}/v1/tokens/${kudosTokenId}/claim`,
+          `${MINTKUDOS_API}/v1/tokens/${kudosId}/claim`,
           bodyParameters,
           config
         )

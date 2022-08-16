@@ -24,6 +24,7 @@ const KEY_MATCHING = {
   'Landing page copy': 'marketingDescription',
   // 'Knowledge Requirements': 'knowledgeRequirements',
   'POAP event ID': 'poapEventId',
+  'Kudos ID': 'kudosId',
   'Duration in minutes': 'duration',
   'What will you learn from this?': 'learnings',
   Difficulty: 'difficulty',
@@ -101,6 +102,7 @@ axios
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) lesson.socialImageLink = null
       if (lesson.poapEventId === undefined) lesson.poapEventId = null
+      if (lesson.kudosId === undefined) lesson.kudosId = null
       if (lesson.poapImageLink === undefined) lesson.poapImageLink = null
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
       if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description

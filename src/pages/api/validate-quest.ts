@@ -19,10 +19,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { address, quest } = req.query
+  const { address, quest, kudosId } = req.query
   if (
     !address ||
     !quest ||
+    !kudosId ||
     typeof address === 'object' ||
     typeof quest === 'object' ||
     !QUESTS.includes(quest)
@@ -47,11 +48,9 @@ export default async function handler(
             Authorization: `Basic ${encodedString}`,
           },
         }
-        // TODO: make this dynamic
-        const kudosTokenId = 628
         // add address to allowlist
         const result = await axios.post(
-          `${MINTKUDOS_API}/v1/tokens/${kudosTokenId}/addContributors`,
+          `${MINTKUDOS_API}/v1/tokens/${kudosId}/addContributors`,
           bodyParameters,
           config
         )
