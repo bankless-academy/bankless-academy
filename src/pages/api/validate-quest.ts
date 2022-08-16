@@ -23,7 +23,8 @@ export default async function handler(
   if (
     !address ||
     !quest ||
-    !kudosId ||
+    // TODO: make kudosId mandatory in the future
+    // !kudosId ||
     typeof address === 'object' ||
     typeof quest === 'object' ||
     !QUESTS.includes(quest)
@@ -38,31 +39,33 @@ export default async function handler(
     if (userId) {
       // TODO: move lower later
       // TODO: check gitcoin passport requirement before adding to whitelist
-      try {
-        const bodyParameters = {
-          contributors: [address],
-          signature: MINTKUDOS_SIGNATURE,
+      if (kudosId) {
+        try {
+          const bodyParameters = {
+            contributors: [address],
+            signature: MINTKUDOS_SIGNATURE,
+          }
+          const config = {
+            headers: {
+              Authorization: `Basic ${encodedString}`,
+            },
+          }
+          // add address to allowlist
+          const result = await axios.post(
+            `${MINTKUDOS_API}/v1/tokens/${kudosId}/addContributors`,
+            bodyParameters,
+            config
+          )
+          // console.log(result)
+          if (result.headers.status === 202) {
+            console.log(result.headers.location)
+            // TODO: check header/Location to know when the token has been claimed
+            return res.json({ location: result.headers.location })
+          }
+        } catch (error) {
+          // TODO: add error feedback
+          console.error(error?.response?.data)
         }
-        const config = {
-          headers: {
-            Authorization: `Basic ${encodedString}`,
-          },
-        }
-        // add address to allowlist
-        const result = await axios.post(
-          `${MINTKUDOS_API}/v1/tokens/${kudosId}/addContributors`,
-          bodyParameters,
-          config
-        )
-        // console.log(result)
-        if (result.headers.status === 202) {
-          console.log(result.headers.location)
-          // TODO: check header/Location to know when the token has been claimed
-          return res.json({ location: result.headers.location })
-        }
-      } catch (error) {
-        // TODO: add error feedback
-        console.error(error?.response?.data)
       }
       console.log(userId)
       const [questCompleted] = await db(TABLES.quests)

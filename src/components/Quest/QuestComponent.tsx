@@ -16,7 +16,8 @@ import { QUESTS } from 'constants/index'
 export type QuestComponentType = typeof QUESTS[number]
 
 const QuestComponent = (
-  component: QuestComponentType | null
+  component: QuestComponentType | null,
+  kudosId?: number
 ): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
@@ -42,7 +43,11 @@ const QuestComponent = (
   useEffect(() => {
     if (account && Component.isQuestCompleted) {
       axios
-        .get(`/api/validate-quest?address=${account}&quest=${component}`)
+        .get(
+          `/api/validate-quest?address=${account}&quest=${component}${
+            kudosId ? `&kudosId=${kudosId}` : ''
+          }`
+        )
         .catch(function (error) {
           console.error(error)
         })
