@@ -1,4 +1,4 @@
-import networks from 'constants/networks'
+import { NETWORKS } from 'constants/networks'
 import { Dispatch, SetStateAction } from 'react'
 
 const switchNetwork = async (
@@ -18,31 +18,31 @@ const switchNetwork = async (
   try {
     await ethereum.request({
       method: 'wallet_switchEthereumChain',
-      params: [{ chainId: `0x${networks[networkName].chainId.toString(16)}` }],
+      params: [{ chainId: `0x${NETWORKS[networkName].chainId.toString(16)}` }],
     })
-    return setNetwork && setNetwork(networks[networkName])
+    return setNetwork && setNetwork(NETWORKS[networkName])
   } catch (error) {
     // This error code indicates that the chain has not been added to MetaMask.
     if (error.code === 4902) {
       try {
         const data = [
           {
-            chainId: `0x${networks[networkName].chainId.toString(16)}`,
-            chainName: networks[networkName].networkName,
+            chainId: `0x${NETWORKS[networkName].chainId.toString(16)}`,
+            chainName: NETWORKS[networkName].networkName,
             nativeCurrency: {
-              name: networks[networkName].currencySymbol,
-              symbol: networks[networkName].currencySymbol,
+              name: NETWORKS[networkName].currencySymbol,
+              symbol: NETWORKS[networkName].currencySymbol,
               decimals: 18,
             },
-            rpcUrls: [networks[networkName].rpcUrl],
-            blockExplorerUrls: [networks[networkName].blockExplorer],
+            rpcUrls: [NETWORKS[networkName].rpcUrl],
+            blockExplorerUrls: [NETWORKS[networkName].blockExplorer],
           },
         ]
         await ethereum.request({
           method: 'wallet_addEthereumChain',
           params: data,
         })
-        return setNetwork(networks[networkName])
+        return setNetwork(NETWORKS[networkName])
       } catch (addError) {
         // handle "add" error
         return console.error(addError)

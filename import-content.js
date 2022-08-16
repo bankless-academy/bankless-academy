@@ -30,6 +30,7 @@ const KEY_MATCHING = {
   Difficulty: 'difficulty',
   Description: 'description',
   Name: 'name',
+  Module: 'moduleId',
   Quest: 'quest',
   'Publication status': 'publicationStatus',
   'Featured on homepage': 'isFeaturedOnHomepage',
@@ -48,13 +49,13 @@ const slugify = (text) => text.toLowerCase()
   .replace(/\s+/g, '-') // collapse whitespace and replace by -
   .replace(/-+/g, '-') // collapse dashes
 
-const get_img = (imageLink, lesson_slug, image_name) => {
+const get_img = (imageLink, slug, image_name) => {
   const [file_name] = imageLink.split('?')
   const file_extension = file_name.match(/\.(png|svg|jpg|jpeg|webp)/)[1].replace('jpeg', 'jpg')
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
   const hash = crc32(file_name)
-  const image_dir = `/${PROJECT_DIR}lesson/${lesson_slug}`
+  const image_dir = `/${PROJECT_DIR}lesson/${slug}`
   const local_image_dir = `public${image_dir}`
   // create image directory dynamically in case it doesn't exist yet
   if (!fs.existsSync(local_image_dir)) {
@@ -90,7 +91,9 @@ axios
         (obj, k) =>
           Object.assign(obj, {
             // transform to number if the string contains a number
-            [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k]))
+            [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k])) ||
+              // ignore type transform for ModuleId
+              k === 'Module'
               ? notion.fields[k]
               : parseInt(notion.fields[k]),
           }),
@@ -111,6 +114,10 @@ axios
       if (lesson.isFeaturedOnHomepage === undefined) lesson.isFeaturedOnHomepage = false
       if (lesson.isCommentsEnabled === undefined) lesson.isCommentsEnabled = false
       if (lesson.endOfLessonRedirect === undefined) lesson.endOfLessonRedirect = null
+      if (lesson.moduleId === undefined) delete lesson.moduleId
+      else {
+        lesson.moduleId = lesson.moduleId[0]
+      }
 
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)

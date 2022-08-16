@@ -13,6 +13,7 @@ import {
   Box,
   Image,
   Link,
+  useToast,
 } from '@chakra-ui/react'
 import { Wallet } from 'phosphor-react'
 import axios from 'axios'
@@ -21,8 +22,14 @@ import Davatar from '@davatar/react'
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
 import { walletConnect, injected } from 'utils'
-import { INFURA_ID, POAP_EVENT_IDS, OLD_POAP_EVENT_IDS } from 'constants/index'
+import {
+  INFURA_ID,
+  POAP_EVENT_IDS,
+  OLD_POAP_EVENT_IDS,
+  IS_WHITELABEL,
+} from 'constants/index'
 import { PoapType } from 'entities/poap'
+import { SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 
 let web3Modal: Web3Modal
 
@@ -38,6 +45,7 @@ const ConnectWalletButton = ({
   const [connectClick, setConnectClick] = useState(false)
   const [walletIsLoading, setWalletIsLoading] = useState(false)
   const [poaps, setPoaps] = useState<PoapType[]>([])
+  const toast = useToast()
   const web3ModalFrame = {
     cacheProvider: true,
     theme: {
@@ -70,6 +78,23 @@ const ConnectWalletButton = ({
     web3Modal
       .connect()
       .then((provider) => {
+        if (
+          !SUPPORTED_NETWORKS_IDS.includes(
+            parseInt(provider?.networkVersion || provider?.chainId)
+          )
+        ) {
+          // wrong network
+          toast.closeAll()
+          toast({
+            title: 'Wrong network detected',
+            description: 'Please switch back to Ethereum Mainnet',
+            status: 'warning',
+            duration: null,
+          })
+        } else {
+          // correct network
+          toast.closeAll()
+        }
         setWeb3Provider(provider)
         if (provider.isMetaMask) {
           return walletWeb3ReactContext.activate(injected)
@@ -160,7 +185,7 @@ const ConnectWalletButton = ({
                 </Button>
               </Box>
               {/* TODO: move to dedicated component? */}
-              {poaps?.length > 0 && (
+              {!IS_WHITELABEL && poaps?.length > 0 && (
                 <>
                   <Text fontSize="xl" fontWeight="bold" textAlign="center">
                     My Academy POAPs

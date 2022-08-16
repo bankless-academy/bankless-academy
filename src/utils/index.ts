@@ -7,13 +7,13 @@ import { NetworkConnector } from '@web3-react/network-connector'
 import * as ethUtil from 'ethereumjs-util'
 import { ethers } from 'ethers'
 
+import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
+
 declare global {
   interface Window {
     umami: any
   }
 }
-
-import networks from 'constants/networks'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function isAddress(value: any): string | false {
@@ -60,24 +60,18 @@ export function getSigner(
   return library.getSigner(account).connectUnchecked()
 }
 
-const supportedChainIds = []
-const keys = Object.keys(networks)
-for (let i = 0; i < keys.length; i++) {
-  supportedChainIds.push(networks[keys[i]].chainId)
-}
-
 export const injected = new InjectedConnector({
-  supportedChainIds,
+  supportedChainIds: SUPPORTED_NETWORKS_IDS,
 })
 
 export const walletConnect = new WalletConnectConnector({
-  rpc: { 1: networks.mainnet.rpcUrl },
+  rpc: { 1: NETWORKS.mainnet.rpcUrl },
   bridge: 'https://bridge.walletconnect.org',
   qrcode: true,
 })
 
 export const network = new NetworkConnector({
-  urls: { 1: networks.mainnet.rpcUrl },
+  urls: { 1: NETWORKS.mainnet.rpcUrl },
   defaultChainId: 1,
 })
 
