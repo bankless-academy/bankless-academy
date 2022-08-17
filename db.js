@@ -2,6 +2,8 @@ const TABLES = {
   users: 'users',
   quests: 'quests',
   poaps: 'poaps',
+  credentials: 'credentials',
+  completions: 'completions',
 }
 
 function addIdAndTimestamps(table) {
