@@ -7,10 +7,14 @@ const { TABLES } = require('./db.js')
 const lessons = require('./src/constants/lessons.js')
 
 async function main() {
-  const quests = await db.select('created_at', 'updated_at', 'quest', 'user_id').from(TABLES.quests)
+  const quests = await db
+    .select('created_at', 'updated_at', 'quest', 'user_id')
+    .from(TABLES.quests)
   // console.log(quests)
   // console.log(lessons.default)
-  const credentials = await db.select('id', 'notion_id').from(TABLES.credentials)
+  const credentials = await db
+    .select('id', 'notion_id')
+    .from(TABLES.credentials)
   console.log(credentials)
   const NOTION_IDS = {}
   for (const credential of credentials) {
@@ -24,14 +28,14 @@ async function main() {
     QUESTS[lesson.quest] = NOTION_IDS[lesson.notionId]
   }
   console.log(QUESTS)
-  const insert = quests.map((quest) => {
-    quest.credential_id = QUESTS[quest.quest]
-    delete quest.quest
-    if (quest.credential_id)
-      return quest
-    else
-      return null
-  }).filter((row) => row !== null)
+  const insert = quests
+    .map((quest) => {
+      quest.credential_id = QUESTS[quest.quest]
+      delete quest.quest
+      if (quest.credential_id) return quest
+      else return null
+    })
+    .filter((row) => row !== null)
   console.log(insert)
   await db(TABLES.completions).insert(insert)
   console.log('done!')
