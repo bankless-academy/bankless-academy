@@ -6,7 +6,7 @@ import { GetStaticProps } from 'next'
 import { MetaData } from 'components/Head'
 import { useActiveWeb3React } from 'hooks'
 import { LESSONS } from 'constants/index'
-import networks from 'constants/networks'
+import { NETWORKS } from 'constants/networks'
 
 const pageMeta: MetaData = {
   title: 'Kudos',
@@ -47,7 +47,7 @@ const Kudos = (): JSX.Element => {
     }
 
     if (chainId !== CHAIN_ID) {
-      const network = Object.values(networks).find(
+      const network = Object.values(NETWORKS).find(
         (network) => network.chainId === CHAIN_ID
       )
       toast.closeAll()
