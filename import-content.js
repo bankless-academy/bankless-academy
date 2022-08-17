@@ -1,9 +1,13 @@
 /* eslint-disable no-console */
 require('dotenv').config()
 const axios = require('axios')
+const knex = require('knex')
 const fs = require('fs')
 const crc32 = require('js-crc').crc32
 const stringifyObject = require('stringify-object')
+const config = require('./knexfile.js')
+const db = knex(config)
+const { TABLES } = require('./db.js')
 
 const defaultKeywords = require('./keywords.json')
 const whitelabelKeywords = require('./whitelabel-keywords.json')
@@ -87,6 +91,7 @@ axios
       // DEV_MODE: only test first lesson
       // if (index > 0) return
 
+      // replace keys
       const lesson = Object.keys(KEY_MATCHING).reduce(
         (obj, k) =>
           Object.assign(obj, {
@@ -121,10 +126,12 @@ axios
 
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)
-        .then((htmlPage) => {
-          // replace keys
+        .then(async (htmlPage) => {
           lesson.notionId = notion.id.replace(/-/g, '')
           lesson.slug = slugify(lesson.name)
+          // add notionId to DB
+          // TODO: handle duplicate key
+          await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }])
 
           if (lesson.poapImageLink) {
             lesson.poapImageLink = get_img(lesson.poapImageLink, lesson.slug, 'poap')
