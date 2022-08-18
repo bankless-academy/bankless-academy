@@ -9,6 +9,8 @@ export const TABLES = {
   users: 'users',
   quests: 'quests',
   poaps: 'poaps',
+  credentials: 'credentials',
+  completions: 'completions',
 }
 
 export async function getUserId(address: string): Promise<number> {
