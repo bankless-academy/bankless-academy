@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Contract } from '@ethersproject/contracts'
 import { getAddress } from '@ethersproject/address'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
@@ -6,6 +7,7 @@ import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { NetworkConnector } from '@web3-react/network-connector'
 import * as ethUtil from 'ethereumjs-util'
 import { ethers } from 'ethers'
+import { verifyTypedData } from 'ethers/lib/utils'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 
@@ -15,7 +17,6 @@ declare global {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function isAddress(value: any): string | false {
   try {
     return getAddress(value)
@@ -30,7 +31,6 @@ export function shortenAddress(address: string): string {
 
 export function getContract(
   address: string,
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   ABI: any,
   library: Web3Provider,
   account?: string
@@ -75,7 +75,6 @@ export const network = new NetworkConnector({
   defaultChainId: 1,
 })
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const toFixed = function (x) {
   if (Math.abs(x) < 1.0) {
     const e = parseInt(x.toString().split('e-')[1])
@@ -107,7 +106,6 @@ export const trimCurrencyForWhales = (labelValue: number): string | number => {
     : Math.abs(Number(labelValue))
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const track = (event: string, value?: any): void => {
   if (typeof window !== 'undefined') {
     // TODO: change type of event value to JSON instead of varchar(50)
@@ -164,4 +162,17 @@ export async function getSignature(
     address.toLowerCase(),
   ])
   return signature
+}
+
+export const verifyTypedSignature = (
+  signature,
+  message,
+  address,
+  types,
+  domain
+): boolean => {
+  return (
+    verifyTypedData(domain, types, message, signature).toLowerCase() ===
+    address.toLowerCase()
+  )
 }
