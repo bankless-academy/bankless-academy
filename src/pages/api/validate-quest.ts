@@ -3,11 +3,8 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 
 import { db, TABLES, getUserId } from 'utils/db'
-import { QUESTS, GENERIC_ERROR_MESSAGE } from 'constants/index'
+import { LESSONS, QUESTS, GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { MINTKUDOS_API, MINTKUDOS_ENCODED_STRING } from 'constants/index'
-
-// TODO: save this in DB
-const MINTKUDOS_SIGNATURE = process.env.MINTKUDOS_SIGNATURE
 
 export default async function handler(
   req: NextApiRequest,
@@ -34,10 +31,22 @@ export default async function handler(
       // TODO: move lower later
       // TODO: check gitcoin passport requirement before adding to whitelist
       if (kudosId) {
+        const notionId = LESSONS.find(
+          (lesson) => lesson.kudosId?.toString() === kudosId
+        )?.notionId
+        if (!notionId) return res.json({ error: 'notionId not found' })
+
+        const [{ signature }] = await db(TABLES.credentials)
+          .select('signature')
+          .where('notion_id', notionId)
+        console.log(signature)
+
+        // TODO: ignore if user already owns the Kudos
+
         try {
           const bodyParameters = {
             contributors: [address],
-            signature: MINTKUDOS_SIGNATURE,
+            signature: signature,
           }
           const config = {
             headers: {
@@ -45,12 +54,12 @@ export default async function handler(
             },
           }
           // add address to allowlist
+          console.log('add address to allowlist:', bodyParameters)
           const result = await axios.post(
             `${MINTKUDOS_API}/v1/tokens/${kudosId}/addContributors`,
             bodyParameters,
             config
           )
-          // console.log(result)
           if (result.headers.status === 202) {
             console.log(result.headers.location)
             // TODO: check header/Location to know when the token has been claimed

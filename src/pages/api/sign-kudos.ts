@@ -56,7 +56,9 @@ export default async function handler(
     )
       return res.json({ error: 'Wrong signature' })
 
-    const notionId = LESSONS.find((lesson) => lesson.kudosId).notionId
+    const notionId = LESSONS.find(
+      (lesson) => lesson.kudosId === kudosId
+    )?.notionId
     if (!notionId) return res.json({ error: 'notionId not found' })
 
     const updated = await db(TABLES.credentials)

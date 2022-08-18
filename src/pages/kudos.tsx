@@ -91,6 +91,7 @@ const Kudos = (): JSX.Element => {
     <Container maxW="container.xl">
       {LESSONS.map((lesson, index) => (
         <Box key={index}>
+          {/* TODO: show if already signed in UI */}
           {lesson.kudosId && (
             <Button
               onClick={() => signMessage(lesson.kudosId)}
