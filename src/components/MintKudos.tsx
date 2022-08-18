@@ -6,11 +6,7 @@ import axios from 'axios'
 
 import { useActiveWeb3React } from 'hooks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
-
-const MINTKUDOS_API = process.env.NEXT_PUBLIC_MINTKUDOS_API
-const IS_MINTKUDOS_SANDBOX =
-  MINTKUDOS_API === 'https://sandbox-api.mintkudos.xyz'
-const CHAIN_ID = IS_MINTKUDOS_SANDBOX ? 80001 : 137
+import { MINTKUDOS_API, MINTKUDOS_DOMAIN_INFO } from 'constants/index'
 
 const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   const [isKudosClaimed, setIsKudosClaimed] = useState(false)
@@ -44,19 +40,14 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     const value = {
       tokenId: kudosId,
     }
-    const domainInfo = {
-      name: 'Kudos',
-      version: '7',
-      // Mumbai | Polygon
-      chainId: CHAIN_ID,
-      verifyingContract: IS_MINTKUDOS_SANDBOX
-        ? '0xB876baF8F69cD35fb96A17a599b070FBdD18A6a1'
-        : '0x60576A64851C5B42e8c57E3E4A5cF3CF4eEb2ED6',
-    }
 
     try {
       const signer = library.getSigner(account)
-      const signature = await signer._signTypedData(domainInfo, types, value)
+      const signature = await signer._signTypedData(
+        MINTKUDOS_DOMAIN_INFO,
+        types,
+        value
+      )
       console.log('signature', signature)
       const bodyParameters = {
         address: account,
@@ -64,7 +55,6 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         signature,
         message: value,
       }
-      // TODO: replace to post?
       const result = await axios.post(`/api/mint-kudos`, bodyParameters)
       console.log(result)
       console.log(result.data)

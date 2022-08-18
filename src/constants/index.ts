@@ -76,3 +76,33 @@ export const QUESTS: string[] = LESSONS.filter((lesson) => lesson.quest).map(
 export const POAP_EMAIL_CONTACT = 'poap@banklessacademy.com'
 
 export const GENERIC_ERROR_MESSAGE = `Something went wrong ... please contact ${POAP_EMAIL_CONTACT}`
+
+export const MINTKUDOS_API = process.env.NEXT_PUBLIC_MINTKUDOS_API
+
+export const IS_MINTKUDOS_SANDBOX =
+  MINTKUDOS_API === 'https://sandbox-api.mintkudos.xyz'
+
+export const MINTKUDOS_CHAIN_ID = IS_MINTKUDOS_SANDBOX ? 80001 : 137
+
+export const MINTKUDOS_DOMAIN_INFO = {
+  name: 'Kudos',
+  version: '7',
+  // Mumbai | Polygon
+  chainId: MINTKUDOS_CHAIN_ID,
+  verifyingContract: IS_MINTKUDOS_SANDBOX
+    ? '0xB876baF8F69cD35fb96A17a599b070FBdD18A6a1'
+    : '0x60576A64851C5B42e8c57E3E4A5cF3CF4eEb2ED6',
+}
+
+export const MINTKUDOS_COMMUNITY_ID =
+  process.env.NEXT_PUBLIC_MINTKUDOS_COMMUNITY_ID
+
+export const MINTKUDOS_KEY = process.env.MINTKUDOS_KEY
+
+const btoa = function (str) {
+  return Buffer.from(str).toString('base64')
+}
+
+export const MINTKUDOS_ENCODED_STRING = btoa(
+  MINTKUDOS_COMMUNITY_ID + ':' + MINTKUDOS_KEY
+)

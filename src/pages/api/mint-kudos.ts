@@ -1,17 +1,10 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
-const btoa = function (str) {
-  return Buffer.from(str).toString('base64')
-}
 
 import { getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
-
-const MINTKUDOS_API = process.env.NEXT_PUBLIC_MINTKUDOS_API
-const MINTKUDOS_COMMUNITY_ID = process.env.NEXT_PUBLIC_MINTKUDOS_COMMUNITY_ID
-const MINTKUDOS_KEY = process.env.MINTKUDOS_KEY
-const encodedString = btoa(MINTKUDOS_COMMUNITY_ID + ':' + MINTKUDOS_KEY)
+import { MINTKUDOS_API, MINTKUDOS_ENCODED_STRING } from 'constants/index'
 
 export default async function handler(
   req: NextApiRequest,
@@ -53,7 +46,7 @@ export default async function handler(
         }
         const config = {
           headers: {
-            Authorization: `Basic ${encodedString}`,
+            Authorization: `Basic ${MINTKUDOS_ENCODED_STRING}`,
           },
         }
         // claim SBT
