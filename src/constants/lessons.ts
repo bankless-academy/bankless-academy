@@ -2,7 +2,7 @@ import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = [
   {
-    poapImageLink: '/lesson/wallet-basics/poap-75d8aa76.png',
+    poapImageLink: 'https://s3.amazonaws.com/sandbox.images.mintkudos.xyz/token/639.png',
     lessonImageLink: '/lesson/wallet-basics/lesson-5aa84b59.png',
     socialImageLink: '/lesson/wallet-basics/social-230cc260.jpg',
     learningActions: 'Create and manage your own wallet\nConnect your wallet to a web3 website',
@@ -233,12 +233,13 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: '/lesson/intro-to-defi/poap-b4dab2d4.png',
+    poapImageLink: 'https://s3.amazonaws.com/sandbox.images.mintkudos.xyz/token/650.gif',
     lessonImageLink: '/lesson/intro-to-defi/lesson-97291c9d.png',
     socialImageLink: '/lesson/intro-to-defi/social-ee8d95a4.jpg',
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
     poapEventId: 26972,
+    kudosId: 650,
     duration: 10,
     learnings: 'Learn what decentralized finance means and discover the game-changing possibilities that new blockchain-powered applications introduce to the world.',
     difficulty: 'Easy',
