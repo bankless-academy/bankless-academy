@@ -2,13 +2,13 @@ import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = [
   {
-    poapImageLink: 'https://s3.amazonaws.com/sandbox.images.mintkudos.xyz/token/639.png',
+    poapImageLink: 'https://s3.amazonaws.com/sandbox.images.mintkudos.xyz/token/580.png',
     lessonImageLink: '/lesson/wallet-basics/lesson-5aa84b59.png',
     socialImageLink: '/lesson/wallet-basics/social-230cc260.jpg',
     learningActions: 'Create and manage your own wallet\nConnect your wallet to a web3 website',
     marketingDescription: 'A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.',
     poapEventId: 26971,
-    kudosId: 639,
+    kudosId: 580,
     duration: 15,
     learnings: 'Find out what digital wallets are, what they allow you to do, and how to set up and protect your wallet as you get out and explore Web3.',
     difficulty: 'Easy',
@@ -460,6 +460,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
     poapEventId: null,
+    kudosId: 651,
     duration: 15,
     learnings: 'Take a closer look at the concepts and technology that make blockchains work and gain a clearer understanding of what makes them revolutionary. ',
     difficulty: 'Easy',
