@@ -18,7 +18,6 @@ export default async function handler(
 ): Promise<void> {
   // check params + signature
   const { address, kudosId, signature } = req.body
-  console.log(req.body)
   if (
     !address ||
     !kudosId ||
@@ -30,7 +29,7 @@ export default async function handler(
 
   console.log('address: ', address)
   console.log('kudosId: ', kudosId)
-  console.log('signature: ', signature)
+  // console.log('signature: ', signature)
 
   // TODO: require to sign in less than 2 minutes?
 

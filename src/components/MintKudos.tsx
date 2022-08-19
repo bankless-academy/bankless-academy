@@ -48,7 +48,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         types,
         value
       )
-      console.log('signature', signature)
+      // console.log('signature', signature)
       const bodyParameters = {
         address: account,
         kudosId,
