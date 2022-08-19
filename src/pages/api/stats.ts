@@ -1,8 +1,12 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { db, TABLES } from 'utils/db'
-import { POAP_EVENT_IDS, QUESTS } from 'constants/index'
+import { db, TABLES, TABLE } from 'utils/db'
+import { POAP_EVENT_IDS, LESSONS } from 'constants/index'
+
+const NOTION_IDS: string[] = LESSONS.filter((lesson) => lesson.quest).map(
+  (lesson) => lesson.notionId
+)
 
 export default async function handler(
   req: NextApiRequest,
@@ -38,20 +42,43 @@ export default async function handler(
     for (const event of poapDistributed) {
       stats.poapDistributed[event.event_id] = event.poapDistributed
     }
-    const lessonCompleted = await db(TABLES.quests)
-      .count('id', { as: 'lessonCompleted' })
-      .distinct('quest')
-      .whereIn('quest', QUESTS)
-      .groupBy('quest')
-      .orderBy('quest')
-    for (const event of lessonCompleted) {
-      if (event.quest)
-        stats.lessonCompleted[event.quest] = event.lessonCompleted
+
+    const credentials = await db
+      .select('id', 'notion_id')
+      .from(TABLES.credentials)
+      .whereIn(TABLE.credentials.notion_id, NOTION_IDS)
+    // console.log(credentials)
+    const idToNotionId = {}
+    for (const credential of credentials) {
+      idToNotionId[credential.id] = credential.notion_id
     }
-    const monthyCompletion = await db(TABLES.quests)
+    // console.log(idToNotionId)
+
+    const lessonCompleted = await db(TABLES.completions)
+      .count('id', { as: 'lessonCompleted' })
+      .distinct(TABLE.completions.credential_id)
+      .whereIn(
+        [TABLE.completions.credential_id],
+        credentials.map((c) => c.id)
+      )
+      .groupBy(TABLE.completions.credential_id)
+      .orderBy(TABLE.completions.credential_id)
+    // console.log(lessonCompleted)
+    for (const lesson of lessonCompleted) {
+      if (lesson.credential_id)
+        stats.lessonCompleted[idToNotionId[lesson.credential_id]] =
+          lesson.lessonCompleted
+    }
+    const monthyCompletion = await db(TABLES.completions)
       .select(db.raw(`date_trunc('month', created_at) AS month`))
       .count('id')
-      .whereIn('quest', QUESTS)
+      .whereIn(
+        [TABLE.completions.credential_id],
+        db
+          .select('id')
+          .from(TABLES.credentials)
+          .whereIn(TABLE.credentials.notion_id, NOTION_IDS)
+      )
       .groupByRaw(`date_trunc('month', created_at)`)
       .orderBy('month')
     stats.monthyCompletion = monthyCompletion
