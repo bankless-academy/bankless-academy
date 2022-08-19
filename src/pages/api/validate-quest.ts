@@ -67,20 +67,31 @@ export default async function handler(
         )
         // console.log('userKudos', userKudos?.data?.data)
 
-        const kudosAlreadyMinted = userKudos?.data?.data.find(
+        const findKudos = userKudos?.data?.data.find(
           (kudos) => kudos.kudosTokenId.toString() === kudosId
         )
-        console.log('kudosAlreadyMinted', kudosAlreadyMinted)
 
-        if (kudosAlreadyMinted) {
-          const updated = await db(TABLES.completions)
-            .where(TABLE.completions.id, questCompleted.id)
-            .update({ credential_claimed_at: kudosAlreadyMinted.createdAt })
-          console.log('updated', updated)
-          if (updated) {
-            questStatus = 'updated credential_claimed_at'
-            return res.json({ status: questStatus })
+        if (findKudos) {
+          const userKudosClaimed = await axios.get(
+            `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=1000&status=claimed`
+          )
+          const kudosAlreadyMinted = userKudosClaimed?.data?.data.find(
+            (kudos) => kudos.kudosTokenId.toString() === kudosId
+          )
+          if (kudosAlreadyMinted) {
+            const updated = await db(TABLES.completions)
+              .where(TABLE.completions.id, questCompleted.id)
+              .update({ credential_claimed_at: kudosAlreadyMinted.createdAt })
+            console.log('updated', updated)
+            if (updated) {
+              questStatus = 'updated credential_claimed_at'
+              console.log(questStatus)
+              return res.json({ status: questStatus })
+            }
           }
+          questStatus = 'address already on allowlist'
+          console.log(questStatus)
+          return res.json({ status: questStatus })
         } else {
           const [{ signature }] = await db(TABLES.credentials)
             .select('signature')
