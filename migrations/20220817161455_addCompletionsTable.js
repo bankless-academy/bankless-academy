@@ -22,6 +22,7 @@ exports.up = async function (knex) {
       .onUpdate('CASCADE')
       .onDelete('CASCADE')
       .index()
+    table.timestamp('credential_claimed_at').nullable().defaultTo(null)
   })
 }
 
