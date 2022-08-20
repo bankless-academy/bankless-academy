@@ -62,6 +62,10 @@ export const POAP_EVENT_IDS: string[] = LESSONS.filter(
   (lesson) => lesson.poapEventId
 ).map((lesson) => lesson.poapEventId?.toString())
 
+export const KUDOS_IDS: number[] = LESSONS.filter(
+  (lesson) => lesson.kudosId
+).map((lesson) => lesson.kudosId)
+
 export const OLD_POAP_EVENT_IDS: string[] = ['6454', '6455', '16394', '21670']
 
 export const POAP_QUESTS = {}
@@ -81,6 +85,10 @@ export const MINTKUDOS_API = process.env.NEXT_PUBLIC_MINTKUDOS_API
 
 export const IS_MINTKUDOS_SANDBOX =
   MINTKUDOS_API === 'https://sandbox-api.mintkudos.xyz'
+
+export const MINTKUDOS_URL = IS_MINTKUDOS_SANDBOX
+  ? 'https://sandbox.mintkudos.xyz/'
+  : 'https://mintkudos.xyz/'
 
 export const MINTKUDOS_CHAIN_ID = IS_MINTKUDOS_SANDBOX ? 80001 : 137
 

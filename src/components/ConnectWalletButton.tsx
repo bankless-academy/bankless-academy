@@ -23,12 +23,14 @@ import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
 import { walletConnect, injected } from 'utils'
 import {
+  LESSONS,
   INFURA_ID,
-  POAP_EVENT_IDS,
-  OLD_POAP_EVENT_IDS,
+  DOMAIN_URL,
+  MINTKUDOS_API,
+  KUDOS_IDS,
   IS_WHITELABEL,
 } from 'constants/index'
-import { PoapType } from 'entities/poap'
+import { KudosType } from 'entities/kudos'
 import { SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 
 let web3Modal: Web3Modal
@@ -44,7 +46,7 @@ const ConnectWalletButton = ({
   const walletAddress = walletWeb3ReactContext.account
   const [connectClick, setConnectClick] = useState(false)
   const [walletIsLoading, setWalletIsLoading] = useState(false)
-  const [poaps, setPoaps] = useState<PoapType[]>([])
+  const [kudos, setKudos] = useState<KudosType[]>([])
   const toast = useToast()
   const web3ModalFrame = {
     cacheProvider: true,
@@ -134,14 +136,15 @@ const ConnectWalletButton = ({
   useEffect(() => {
     if (walletAddress) {
       axios
-        .get(`https://api.poap.xyz/actions/scan/${walletAddress}`)
+        .get(
+          `${MINTKUDOS_API}/v1/wallets/${walletAddress}/tokens?limit=1000&status=claimed`
+        )
         .then((res) => {
-          if (Array.isArray(res.data)) {
-            setPoaps(
-              res.data.filter(
-                (poap: PoapType) =>
-                  POAP_EVENT_IDS.includes(poap.event.id.toString()) ||
-                  OLD_POAP_EVENT_IDS.includes(poap.event.id.toString())
+          const data = res.data.data
+          if (Array.isArray(data)) {
+            setKudos(
+              data.filter((kudos: KudosType) =>
+                KUDOS_IDS.includes(kudos.kudosTokenId)
               )
             )
           }
@@ -178,17 +181,17 @@ const ConnectWalletButton = ({
                     web3Modal.clearCachedProvider()
                     localStorage.removeItem('walletconnect')
                     setWalletIsLoading(false)
-                    setPoaps([])
+                    setKudos([])
                   }}
                 >
                   Disconnect wallet
                 </Button>
               </Box>
               {/* TODO: move to dedicated component? */}
-              {!IS_WHITELABEL && poaps?.length > 0 && (
+              {!IS_WHITELABEL && kudos?.length > 0 && (
                 <>
                   <Text fontSize="xl" fontWeight="bold" textAlign="center">
-                    My Academy POAPs
+                    My Academy Credentials
                   </Text>
                   <Box
                     maxHeight="320px"
@@ -197,27 +200,40 @@ const ConnectWalletButton = ({
                     borderRadius="10px"
                   >
                     <SimpleGrid columns={3} spacing={3} p={3}>
-                      {poaps?.map((poap, index) => {
-                        const twitterLink = `https://twitter.com/intent/tweet?url=https%3A%2F%2Fapp.poap.xyz%2Ftoken%2F${poap.tokenId}&text=Look%20at%20my%20@BanklessAcademy%20POAP%20NFT!%20👀%0AGo%20to%20https%3A%2F%2Fapp.banklessacademy.com%2F%20to%20learn%20about%20%23Web3%20and%20%23DeFi%20and%20claim%20your%20free%20POAP!%20🔥`
-                        return (
-                          <Box
-                            key={`poap-${index}`}
-                            justifySelf="center"
-                            boxShadow="0px 0px 4px 2px #00000060"
-                            borderRadius="3px"
-                            backgroundColor="blackAlpha.300"
-                            p={1}
-                          >
-                            <Link href={twitterLink} target="_blank">
-                              <Image
-                                src={poap.event.image_url}
-                                width="70px"
-                                height="70px"
-                                borderRadius="50%"
-                              />
-                            </Link>
-                          </Box>
+                      {kudos?.map((k, index) => {
+                        const lesson = LESSONS.find(
+                          (lesson) => lesson.kudosId === k.kudosTokenId
                         )
+                        if (lesson) {
+                          const share = `${lesson.description}
+${
+  IS_WHITELABEL
+    ? ''
+    : 'Level up your #web3 knowledge thanks to @BanklessAcademy 👨‍🚀🚀'
+}
+${DOMAIN_URL}/lessons/${lesson.slug}`
+                          const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+                            share
+                          )}`
+                          return (
+                            <Box
+                              key={`poap-${index}`}
+                              justifySelf="center"
+                              boxShadow="0px 0px 4px 2px #00000060"
+                              borderRadius="3px"
+                              backgroundColor="blackAlpha.300"
+                              p={1}
+                            >
+                              <Link href={twitterLink} target="_blank">
+                                <Image
+                                  src={k.assetUrl}
+                                  width="70px"
+                                  height="70px"
+                                />
+                              </Link>
+                            </Box>
+                          )
+                        }
                       })}
                     </SimpleGrid>
                   </Box>
