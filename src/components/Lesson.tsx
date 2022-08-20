@@ -206,6 +206,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   const router = useRouter()
+  // TODO: track embed origin
+  const { embed } = router.query
   const toast = useToast()
   const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
@@ -626,15 +628,17 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                   )}
                   <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
-                  <NextLink href={`/lessons`}>
-                    <Button
-                      variant="primary"
-                      size="lg"
-                      style={{ padding: '0 23px' }}
-                    >
-                      Explore more Lessons
-                    </Button>
-                  </NextLink>
+                  {embed ? null : (
+                    <NextLink href={`/lessons`}>
+                      <Button
+                        variant="primary"
+                        size="lg"
+                        style={{ padding: '0 23px' }}
+                      >
+                        Explore more Lessons
+                      </Button>
+                    </NextLink>
+                  )}
                 </>
               )}
             </VStack>
