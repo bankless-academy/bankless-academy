@@ -1,19 +1,28 @@
 /* eslint-disable no-console */
 import { useState, useEffect } from 'react'
-import { Button, Link } from '@chakra-ui/react'
+import { Button, Link, useToast } from '@chakra-ui/react'
 import { isMobile } from 'react-device-detect'
 import axios from 'axios'
 
 import { useActiveWeb3React } from 'hooks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
-import { MINTKUDOS_API, MINTKUDOS_DOMAIN_INFO } from 'constants/index'
+import {
+  MINTKUDOS_API,
+  MINTKUDOS_DOMAIN_INFO,
+  MINTKUDOS_EXPLORER,
+} from 'constants/index'
 
 const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
+  const [isKudosMinted, setIsKudosMinted] = useState(false)
   const [isKudosClaimed, setIsKudosClaimed] = useState(false)
+  const [status, setStatus] = useState('')
 
   const { account, library, chainId } = useActiveWeb3React()
+  const toast = useToast()
 
   const hostname = window?.location.hostname
+
+  // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
 
   useEffect(() => {
     axios
@@ -29,9 +38,81 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
       })
   }, [account])
 
-  const signMessage = async () => {
+  const followOperation = async (location: string, iteration = 0) => {
+    try {
+      const result = await axios.get(location)
+      if (result.data?.status !== 'success') {
+        if (iteration === 0) {
+          toast.closeAll()
+          const txLink = `${MINTKUDOS_EXPLORER}tx/${result.data.txHash}`
+          toast({
+            title: `Transaction in progress`,
+            description: (
+              <Link href={txLink} target="_blank">
+                {txLink}
+              </Link>
+            ),
+            status: 'warning',
+            duration: null,
+          })
+        }
+        // wait 1 sec
+        await new Promise((resolve) => setTimeout(resolve, 1000))
+        await followOperation(location, iteration + 1)
+      } else {
+        console.log('done!')
+      }
+      console.log(result.data?.status)
+    } catch (error) {
+      // TODO: add error feedback
+      console.error(error)
+    }
+  }
+
+  const mintKudos = async () => {
+    try {
+      setStatus('⚒️ minting in progress ...')
+      const bodyParameters = {
+        address: account,
+        kudosId,
+      }
+      const result = await axios.post(`/api/mint-kudos`, bodyParameters)
+      console.log(result.data)
+      if (result.data.location) {
+        await followOperation(result.data.location)
+        setIsKudosMinted(true)
+        toast.closeAll()
+        toast({
+          title: 'Minting done! ✅',
+          // TODO: add OpenSea link
+          status: 'success',
+          duration: 5000,
+        })
+        setStatus('')
+      } else {
+        setStatus('')
+        if (result.data.status === 'address already on allowlist') {
+          setIsKudosMinted(true)
+        }
+        toast.closeAll()
+        toast({
+          title: '⚠️ problem while minting',
+          description: result.data.status || result.data.error,
+          status: 'error',
+          duration: 5000,
+        })
+      }
+      // TODO: check header/Location to know when the token has been claimed
+    } catch (error) {
+      // TODO: add error feedback
+      console.error(error)
+    }
+  }
+
+  const claimKudos = async () => {
     if (isKudosClaimed) return
 
+    setStatus('🙌 claiming in progress ...')
     const types = {
       Claim: [{ name: 'tokenId', type: 'uint256' }],
     }
@@ -55,11 +136,30 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         signature,
         message: value,
       }
-      const result = await axios.post(`/api/mint-kudos`, bodyParameters)
-      console.log(result)
+      const result = await axios.post(`/api/claim-kudos`, bodyParameters)
       console.log(result.data)
+      if (result.data.location) {
+        await followOperation(result.data.location)
+        setIsKudosClaimed(true)
+        toast.closeAll()
+        toast({
+          title: 'Claiming done! ✅',
+          // TODO: add OpenSea link
+          status: 'success',
+          duration: 5000,
+        })
+        setStatus('')
+      } else {
+        setStatus('')
+        toast.closeAll()
+        toast({
+          title: '⚠️ problem while claiming',
+          description: result.data.status || result.data.error,
+          status: 'error',
+          duration: 5000,
+        })
+      }
       // TODO: check header/Location to know when the token has been claimed
-      // if (result) setIsKudosClaimed(true)
     } catch (error) {
       // TODO: add error feedback
       console.error(error)
@@ -70,10 +170,16 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     <>
       <Button
         colorScheme={isKudosClaimed ? 'green' : 'red'}
-        onClick={signMessage}
+        onClick={!isKudosMinted ? mintKudos : claimKudos}
         variant="primary"
       >
-        {isKudosClaimed ? 'Kudos claimed 🎉' : 'Claim your Kudos 🎉'}
+        {status !== ''
+          ? status
+          : !isKudosMinted
+          ? 'Mint Credential ⚒️'
+          : isKudosClaimed
+          ? 'Credential claimed 🎉'
+          : 'Claim your Credential 🙌'}
       </Button>
       {isMobile && (
         <p>
