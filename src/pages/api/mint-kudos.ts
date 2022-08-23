@@ -55,7 +55,7 @@ export default async function handler(
       // console.log('userKudos', userKudos?.data?.data)
 
       const findKudos = userKudos?.data?.data.find(
-        (kudos) => kudos.kudosTokenId.toString() === kudosId
+        (kudos) => kudos.kudosTokenId === kudosId
       )
 
       if (findKudos) {
@@ -63,7 +63,7 @@ export default async function handler(
           `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=1000&status=claimed`
         )
         const kudosAlreadyMinted = userKudosClaimed?.data?.data.find(
-          (kudos) => kudos.kudosTokenId.toString() === kudosId
+          (kudos) => kudos.kudosTokenId === kudosId
         )
         if (kudosAlreadyMinted) {
           const updated = await db(TABLES.completions)
@@ -119,9 +119,12 @@ export default async function handler(
           console.error(error?.response?.data)
         }
       }
+    } else if (kudosId && questCompleted?.credential_claimed_at) {
+      questStatus = 'already minted'
     } else {
-      return res.json({ status: questStatus })
+      questStatus = 'kudosID not found'
     }
+    return res.json({ status: questStatus })
   } catch (error) {
     console.error(error)
     res.json({
