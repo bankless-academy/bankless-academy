@@ -89,7 +89,7 @@ export default async function handler(
           const userKudosClaimed = await axios.get(
             `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=1000&status=claimed`
           )
-          console.log('userKudosClaimed', userKudosClaimed?.data?.data)
+          // console.log('userKudosClaimed', userKudosClaimed?.data?.data)
           const kudosAlreadyMinted = userKudosClaimed?.data?.data.find(
             (kudos) => kudos.kudosTokenId === kudosId
           )
