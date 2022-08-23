@@ -714,6 +714,7 @@ const LESSONS: LessonType[] = [
     learningActions: 'Avoid the scams in web3 and keep your assets safe.',
     marketingDescription: 'Learn how to stay safe from the most common scams in web3.',
     poapEventId: null,
+    kudosId: 653,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
