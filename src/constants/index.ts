@@ -81,6 +81,8 @@ export const POAP_EMAIL_CONTACT = 'poap@banklessacademy.com'
 
 export const GENERIC_ERROR_MESSAGE = `Something went wrong ... please contact ${POAP_EMAIL_CONTACT}`
 
+// TODO: move KUDOS to dedicated file
+
 export const MINTKUDOS_API = process.env.NEXT_PUBLIC_MINTKUDOS_API
 
 export const IS_MINTKUDOS_SANDBOX =
@@ -89,6 +91,10 @@ export const IS_MINTKUDOS_SANDBOX =
 export const MINTKUDOS_URL = IS_MINTKUDOS_SANDBOX
   ? 'https://sandbox.mintkudos.xyz/'
   : 'https://mintkudos.xyz/'
+
+export const MINTKUDOS_EXPLORER = IS_MINTKUDOS_SANDBOX
+  ? 'https://mumbai.polygonscan.com/'
+  : 'https://polygonscan.com/'
 
 export const MINTKUDOS_CHAIN_ID = IS_MINTKUDOS_SANDBOX ? 80001 : 137
 
