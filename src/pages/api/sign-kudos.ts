@@ -9,7 +9,8 @@ import { GENERIC_ERROR_MESSAGE, LESSONS } from 'constants/index'
 
 const ALLOWED_SIGNERS = [
   '0xbd19a3f0a9cace18513a1e2863d648d13975cb30'.toLowerCase(),
-  '0x181D10bd80c0F0f4f9959510Ce3F1c3A68BD783d'.toLowerCase(),
+  // credentials.banklessacademy.eth
+  '0xe1887fF140BfA9D3b45D0B2077b7471124acD242'.toLowerCase(),
 ]
 
 export default async function handler(
