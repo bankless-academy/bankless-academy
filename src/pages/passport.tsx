@@ -35,22 +35,22 @@ export interface Stamps {
   [key: string]: Stamp
 }
 
-export const getNumberOfValidStamps = (stamps: Stamps): number | null => {
+export const filterValidStamps = (stamps: Stamp[]): Stamp[] => {
   // const currentTimestamp = 1665401965000
   const currentTimestamp = Date.now()
-  let i = 1
+  return stamps.filter(
+    (stamp) =>
+      stamp.credential.issuer === ALLOWED_ISSUER &&
+      Date.parse(stamp.credential.expirationDate) > currentTimestamp
+  )
+}
+
+export const getNumberOfValidStamps = (stamps: Stamps): number | null => {
   const array = Object.values(stamps)
   if (!array.length) {
     return null
   }
-  Object.values(stamps).map((stamp) => {
-    if (
-      stamp.credential.issuer === ALLOWED_ISSUER &&
-      Date.parse(stamp.credential.expirationDate) > currentTimestamp
-    )
-      i++
-  })
-  return i
+  return filterValidStamps(Object.values(stamps)).length
 }
 
 export const OkIcon = (

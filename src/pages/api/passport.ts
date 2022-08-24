@@ -7,7 +7,7 @@ import { GENERIC_ERROR_MESSAGE } from 'constants/index'
 import {
   CERAMIC_PASSPORT,
   NUMBER_OF_STAMP_REQUIRED,
-  getValidStamps,
+  filterValidStamps,
 } from 'pages/passport'
 
 const reader = new PassportReader(CERAMIC_PASSPORT, '1')
@@ -24,10 +24,10 @@ export default async function handler(
 
   try {
     const passport: Passport = await reader.getPassport(address)
-    console.log('** passport **', passport)
-    const validStamps = getValidStamps(passport)
+    // console.log('** passport **', passport)
+    const validStamps = filterValidStamps(passport.stamps)
     if (validStamps.length >= NUMBER_OF_STAMP_REQUIRED) {
-      console.log('verified')
+      console.log('verified:', validStamps.length)
     } else {
       console.log('not verified')
     }
