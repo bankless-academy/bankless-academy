@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import { useState, useEffect } from 'react'
-import { Button, Link, useToast } from '@chakra-ui/react'
-import { isMobile } from 'react-device-detect'
+import { Button, Link, useToast, Spinner } from '@chakra-ui/react'
 import axios from 'axios'
 
 import { useActiveWeb3React } from 'hooks'
@@ -10,7 +9,9 @@ import {
   MINTKUDOS_API,
   MINTKUDOS_DOMAIN_INFO,
   MINTKUDOS_EXPLORER,
+  MINTKUDOS_CHAIN_ID,
 } from 'constants/index'
+import { NETWORKS } from 'constants/networks'
 
 const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   const [isKudosMinted, setIsKudosMinted] = useState(false)
@@ -19,8 +20,6 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
 
   const { account, library, chainId } = useActiveWeb3React()
   const toast = useToast()
-
-  const hostname = window?.location.hostname
 
   // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
 
@@ -181,37 +180,52 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
           ? 'Credential claimed 🎉'
           : 'Claim your Credential 🙌'}
       </Button>
-      {isMobile && (
-        <p>
-          * if you have trouble signing on mobile, we recommend to open this
-          website directly inside&nbsp;
-          <Link href={`https://metamask.app.link/dapp/${hostname}`} color="red">
-            MetaMask&apos;s browser
-          </Link>
-        </p>
-      )}
     </>
+  )
+
+  const networkKey = Object.keys(NETWORKS).find(
+    (network) => NETWORKS[network].chainId === MINTKUDOS_CHAIN_ID
   )
 
   const networkSwitchButton = () => (
     <>
       <Button
         colorScheme={isKudosClaimed ? 'green' : 'red'}
-        onClick={() => switchNetwork('mumbai')}
+        onClick={() => switchNetwork(networkKey)}
       >
-        Switch Network to {'"Matic(Polygon) Testnet Mumbai"'}
+        Switch Network to {NETWORKS[networkKey]?.name}
       </Button>
-      {isMobile && (
-        <p>
-          * network switching with your mobile wallet only works if you open
-          this website directly inside&nbsp;
-          <strong>MetaMask&apos;s browser</strong>
-        </p>
-      )}
     </>
   )
 
-  return <>{chainId === 80001 ? signatureButton() : networkSwitchButton()}</>
+  const ConnectFirstButton = (
+    <>
+      <Button
+        variant="outlined"
+        leftIcon={<Spinner speed="1s" />}
+        color={'orange'}
+        cursor="default"
+        boxShadow="none !important"
+      >
+        {'Waiting to detect your wallet ...'}
+      </Button>
+      <p>
+        {`To collect your lesson credential, click the "Connect wallet" button in the top-right corner`}
+      </p>
+    </>
+  )
+
+  return (
+    <>
+      {!account ? (
+        <>{ConnectFirstButton}</>
+      ) : chainId === MINTKUDOS_CHAIN_ID ? (
+        signatureButton()
+      ) : (
+        networkSwitchButton()
+      )}
+    </>
+  )
 }
 
 export default MintKudos
