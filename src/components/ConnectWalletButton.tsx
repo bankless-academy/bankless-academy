@@ -229,6 +229,8 @@ ${DOMAIN_URL}/lessons/${lesson.slug}`
                                   src={k.assetUrl}
                                   width="70px"
                                   height="70px"
+                                  alt={lesson.name}
+                                  title={lesson.name}
                                 />
                               </Link>
                             </Box>
