@@ -335,7 +335,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           description: 'Refresh and try again ...',
           // TODO: claim code manually + improve error handling
           status: 'error',
-          duration: 5000,
+          duration: 10000,
         })
       })
   }
