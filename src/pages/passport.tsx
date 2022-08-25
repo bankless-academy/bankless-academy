@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Box, Text, Icon } from '@chakra-ui/react'
+import { Container, Box, Text, Icon, Link } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 import { PassportReader } from '@gitcoinco/passport-sdk-reader'
 import { Passport, Stamp } from '@gitcoinco/passport-sdk-types'
@@ -96,14 +96,23 @@ const PassportPage = (): JSX.Element => {
             : explorerStatus === false && (
                 <>
                   {KoIcon}
-                  {numberOfValidStamps < NUMBER_OF_STAMP_REQUIRED &&
-                    ` (missing ${
-                      NUMBER_OF_STAMP_REQUIRED - numberOfValidStamps
-                    } stamps)`}
+                  <br />
+                  {numberOfValidStamps < NUMBER_OF_STAMP_REQUIRED && (
+                    <>
+                      {`Go to `}
+                      <Link href="https://passport.gitcoin.co/" target="_blank">
+                        Gitcoin Passport
+                      </Link>
+                      {` and collect ${
+                        NUMBER_OF_STAMP_REQUIRED - numberOfValidStamps
+                      } more stamps`}
+                    </>
+                  )}
                 </>
               )}
         </Text>
       </Box>
+      {/* TODO: add refresh button */}
       {!IS_WHITELABEL && <GitcoinPassport stamps={stamps} />}
     </Container>
   )

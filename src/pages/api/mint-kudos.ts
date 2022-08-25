@@ -3,11 +3,11 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
-import { GENERIC_ERROR_MESSAGE } from 'constants/index'
 import {
   LESSONS,
   MINTKUDOS_API,
   MINTKUDOS_ENCODED_STRING,
+  GENERIC_ERROR_MESSAGE,
 } from 'constants/index'
 
 export default async function handler(
@@ -16,6 +16,7 @@ export default async function handler(
 ): Promise<void> {
   // check params + signature
   const { address, kudosId, message } = req.body
+  console.log(req)
   if (!address || !kudosId || typeof address === 'object')
     return res.json({ error: 'Wrong params' })
 
@@ -47,7 +48,15 @@ export default async function handler(
 
     let questStatus = ''
     if (kudosId && !questCompleted?.credential_claimed_at) {
-      // TODO: sybil check before adding to whitelist
+      // Sybil check with Academy Passport
+      const passport = await axios.get(
+        `${req.headers.origin}/api/passport?address=${address}`
+      )
+      if (!passport.data.verified) {
+        return res.json({
+          status: `Passport requirement: ${passport.data.requirement}`,
+        })
+      }
 
       const userKudos = await axios.get(
         `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=1000`

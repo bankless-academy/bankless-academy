@@ -1,11 +1,13 @@
 /* eslint-disable no-console */
 import { useState, useEffect } from 'react'
 import { Button, Link, useToast, Spinner, Image, Box } from '@chakra-ui/react'
+import NextLink from 'next/link'
 import axios from 'axios'
 
 import { useActiveWeb3React } from 'hooks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 import {
+  PROJECT_NAME,
   MINTKUDOS_API,
   MINTKUDOS_DOMAIN_INFO,
   MINTKUDOS_EXPLORER,
@@ -21,6 +23,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     !!localStorage.getItem(`kudos-${kudosId}`)
   )
   const [status, setStatus] = useState('')
+  const [isPassportVerified, setIsPassportVerified] = useState(true)
 
   const { account, library, chainId } = useActiveWeb3React()
   const toast = useToast()
@@ -43,6 +46,10 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
           } else {
             setIsKudosMinted(false)
             setIsKudosClaimed(false)
+            axios.get(`/api/passport?address=${account}`).then(function (res) {
+              console.log(res.data)
+              setIsPassportVerified(res.data?.verified)
+            })
           }
         })
         .catch(function (error) {
@@ -98,7 +105,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         toast({
           title: 'Credential minted! ✅',
           status: 'success',
-          duration: 5000,
+          duration: 10000,
         })
         setStatus('')
       } else {
@@ -111,7 +118,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
           title: '⚠️ problem while minting',
           description: result.data.status || result.data.error,
           status: 'error',
-          duration: 5000,
+          duration: 10000,
         })
       }
     } catch (error) {
@@ -157,7 +164,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         toast({
           title: 'Credential claimed 🎉',
           status: 'success',
-          duration: 5000,
+          duration: 10000,
         })
         setStatus('')
       } else {
@@ -167,7 +174,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
           title: '⚠️ problem while claiming',
           description: result.data.status || result.data.error,
           status: 'error',
-          duration: 5000,
+          duration: 10000,
         })
       }
     } catch (error) {
@@ -195,7 +202,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
             </Button>
           </Link>
         </Box>
-      ) : (
+      ) : isPassportVerified ? (
         <Button
           colorScheme={isKudosClaimed ? 'green' : 'red'}
           onClick={!isKudosMinted ? mintKudos : claimKudos}
@@ -207,6 +214,12 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
             ? 'Mint Credential ⚒️'
             : 'Claim your Credential 🙌'}
         </Button>
+      ) : (
+        <p>
+          {`Get a `}
+          <NextLink href={`/passport`}>{`${PROJECT_NAME} Passport`}</NextLink>
+          {` in order to claim this credential`}
+        </p>
       )}
     </>
   )
@@ -244,7 +257,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   )
 
   return (
-    <>
+    <Box py="4">
       {!account ? (
         <>{ConnectFirstButton}</>
       ) : chainId === MINTKUDOS_CHAIN_ID ? (
@@ -252,7 +265,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
       ) : (
         networkSwitchButton()
       )}
-    </>
+    </Box>
   )
 }
 

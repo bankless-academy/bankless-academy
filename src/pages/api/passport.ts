@@ -32,7 +32,7 @@ export default async function handler(
       const passport: Passport = await reader.getPassport(address)
       // console.log('** passport **', passport)
       const validStamps = filterValidStamps(passport.stamps)
-      const condition = `${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps required`
+      const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
       if (validStamps.length >= NUMBER_OF_STAMP_REQUIRED) {
         console.log('verified:', validStamps.length)
       } else {
@@ -40,7 +40,7 @@ export default async function handler(
       }
       return res.json({
         verified: validStamps.length >= NUMBER_OF_STAMP_REQUIRED,
-        condition,
+        requirement,
       })
     } catch (error) {
       console.error(error)
@@ -50,7 +50,7 @@ export default async function handler(
     }
   } else if (SYBIL_CHECK === '35kBANK') {
     const NUMBER_OF_BANK_REQUIRED = 35000
-    const condition = `${NUMBER_OF_BANK_REQUIRED} BANK tokens required for at least 1 month˝`
-    return res.json({ verified: 'TODO', condition })
+    const requirement = `Hold a minimum of ${NUMBER_OF_BANK_REQUIRED} BANK tokens for at least 1 month˝`
+    return res.json({ verified: 'TODO', requirement })
   }
 }
