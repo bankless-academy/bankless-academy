@@ -28,36 +28,28 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
 
   useEffect(() => {
-    axios
-      .get(`${MINTKUDOS_API}/v1/wallets/${account}/tokens`)
-      .then(function (res) {
-        if (res.data?.data?.some((k) => k?.kudosTokenId === kudosId)) {
-          const createdAt = res.data?.data?.find(
-            (k) => k?.kudosTokenId === kudosId
-          ).createdAt
-          localStorage.setItem(`kudos-${kudosId}`, createdAt)
-          setIsKudosClaimed(true)
-        } else setIsKudosClaimed(false)
-      })
-      .catch(function (error) {
-        console.error(error)
-      })
+    if (account) {
+      axios
+        .get(
+          `${MINTKUDOS_API}/v1/wallets/${account}/tokens?limit=1000&status=claimed`
+        )
+        .then(function (res) {
+          if (res.data?.data?.some((k) => k?.kudosTokenId === kudosId)) {
+            const createdAt = res.data?.data?.find(
+              (k) => k?.kudosTokenId === kudosId
+            ).createdAt
+            localStorage.setItem(`kudos-${kudosId}`, createdAt)
+            setIsKudosClaimed(true)
+          } else {
+            setIsKudosMinted(false)
+            setIsKudosClaimed(false)
+          }
+        })
+        .catch(function (error) {
+          console.error(error)
+        })
+    }
   }, [account])
-
-  const NFTLinks = (
-    <Box>
-      <Link href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`} target="_blank" mr="2">
-        <Button leftIcon={<Image width="24px" src="/images/OpenSea.svg" />}>
-          OpenSea
-        </Button>
-      </Link>
-      <Link href={`${MINTKUDOS_RARIBLE_URL}${kudosId}`} target="_blank">
-        <Button leftIcon={<Image width="24px" src="/images/Rarible.svg" />}>
-          Rarible
-        </Button>
-      </Link>
-    </Box>
-  )
 
   const followOperation = async (location: string, iteration = 0) => {
     try {
@@ -164,7 +156,6 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         toast.closeAll()
         toast({
           title: 'Credential claimed 🎉',
-          description: NFTLinks,
           status: 'success',
           duration: 5000,
         })
@@ -185,14 +176,29 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     }
   }
 
-  const signatureButton = () => (
+  const KudosButton = () => (
     <>
       {isKudosClaimed ? (
-        NFTLinks
+        <Box>
+          <Link
+            href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`}
+            target="_blank"
+            mr="2"
+          >
+            <Button leftIcon={<Image width="24px" src="/images/OpenSea.svg" />}>
+              OpenSea
+            </Button>
+          </Link>
+          <Link href={`${MINTKUDOS_RARIBLE_URL}${kudosId}`} target="_blank">
+            <Button leftIcon={<Image width="24px" src="/images/Rarible.svg" />}>
+              Rarible
+            </Button>
+          </Link>
+        </Box>
       ) : (
         <Button
           colorScheme={isKudosClaimed ? 'green' : 'red'}
-          onClick={isKudosClaimed ? claimKudos : mintKudos}
+          onClick={!isKudosMinted ? mintKudos : claimKudos}
           variant="primary"
         >
           {status !== ''
@@ -242,7 +248,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
       {!account ? (
         <>{ConnectFirstButton}</>
       ) : chainId === MINTKUDOS_CHAIN_ID ? (
-        signatureButton()
+        KudosButton()
       ) : (
         networkSwitchButton()
       )}
