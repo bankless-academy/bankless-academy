@@ -625,8 +625,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                       mb="2"
                     />
                   )}
-                  <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   {lesson.kudosId && <MintKudos kudosId={lesson.kudosId} />}
+                  <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
                   <NextLink href={`/lessons`}>
                     <Button

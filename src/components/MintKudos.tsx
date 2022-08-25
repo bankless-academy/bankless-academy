@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { useState, useEffect } from 'react'
-import { Button, Link, useToast, Spinner } from '@chakra-ui/react'
+import { Button, Link, useToast, Spinner, Image, Box } from '@chakra-ui/react'
 import axios from 'axios'
 
 import { useActiveWeb3React } from 'hooks'
@@ -10,12 +10,16 @@ import {
   MINTKUDOS_DOMAIN_INFO,
   MINTKUDOS_EXPLORER,
   MINTKUDOS_CHAIN_ID,
+  MINTKUDOS_OPENSEA_URL,
+  MINTKUDOS_RARIBLE_URL,
 } from 'constants/index'
 import { NETWORKS } from 'constants/networks'
 
 const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   const [isKudosMinted, setIsKudosMinted] = useState(false)
-  const [isKudosClaimed, setIsKudosClaimed] = useState(false)
+  const [isKudosClaimed, setIsKudosClaimed] = useState(
+    !!localStorage.getItem(`kudos-${kudosId}`)
+  )
   const [status, setStatus] = useState('')
 
   const { account, library, chainId } = useActiveWeb3React()
@@ -27,15 +31,33 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     axios
       .get(`${MINTKUDOS_API}/v1/wallets/${account}/tokens`)
       .then(function (res) {
-        if (res.data?.data?.some((k) => k?.kudosId === kudosId))
-          // setIsKudosClaimed(true)
-          setIsKudosClaimed(false)
-        // TODO: store in localStorage also
+        if (res.data?.data?.some((k) => k?.kudosTokenId === kudosId)) {
+          const createdAt = res.data?.data?.find(
+            (k) => k?.kudosTokenId === kudosId
+          ).createdAt
+          localStorage.setItem(`kudos-${kudosId}`, createdAt)
+          setIsKudosClaimed(true)
+        } else setIsKudosClaimed(false)
       })
       .catch(function (error) {
         console.error(error)
       })
   }, [account])
+
+  const NFTLinks = (
+    <Box>
+      <Link href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`} target="_blank" mr="2">
+        <Button leftIcon={<Image width="24px" src="/images/OpenSea.svg" />}>
+          OpenSea
+        </Button>
+      </Link>
+      <Link href={`${MINTKUDOS_RARIBLE_URL}${kudosId}`} target="_blank">
+        <Button leftIcon={<Image width="24px" src="/images/Rarible.svg" />}>
+          Rarible
+        </Button>
+      </Link>
+    </Box>
+  )
 
   const followOperation = async (location: string, iteration = 0) => {
     try {
@@ -82,8 +104,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         setIsKudosMinted(true)
         toast.closeAll()
         toast({
-          title: 'Minting done! ✅',
-          // TODO: add OpenSea link
+          title: 'Credential minted! ✅',
           status: 'success',
           duration: 5000,
         })
@@ -101,7 +122,6 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
           duration: 5000,
         })
       }
-      // TODO: check header/Location to know when the token has been claimed
     } catch (error) {
       // TODO: add error feedback
       console.error(error)
@@ -140,10 +160,11 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
       if (result.data.location) {
         await followOperation(result.data.location)
         setIsKudosClaimed(true)
+        localStorage.setItem(`kudos-${kudosId}`, result.data.location)
         toast.closeAll()
         toast({
-          title: 'Claiming done! ✅',
-          // TODO: add OpenSea link
+          title: 'Credential claimed 🎉',
+          description: NFTLinks,
           status: 'success',
           duration: 5000,
         })
@@ -158,7 +179,6 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
           duration: 5000,
         })
       }
-      // TODO: check header/Location to know when the token has been claimed
     } catch (error) {
       // TODO: add error feedback
       console.error(error)
@@ -167,19 +187,21 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
 
   const signatureButton = () => (
     <>
-      <Button
-        colorScheme={isKudosClaimed ? 'green' : 'red'}
-        onClick={!isKudosMinted ? mintKudos : claimKudos}
-        variant="primary"
-      >
-        {status !== ''
-          ? status
-          : !isKudosMinted
-          ? 'Mint Credential ⚒️'
-          : isKudosClaimed
-          ? 'Credential claimed 🎉'
-          : 'Claim your Credential 🙌'}
-      </Button>
+      {isKudosClaimed ? (
+        NFTLinks
+      ) : (
+        <Button
+          colorScheme={isKudosClaimed ? 'green' : 'red'}
+          onClick={isKudosClaimed ? claimKudos : mintKudos}
+          variant="primary"
+        >
+          {status !== ''
+            ? status
+            : !isKudosMinted
+            ? 'Mint Credential ⚒️'
+            : 'Claim your Credential 🙌'}
+        </Button>
+      )}
     </>
   )
 

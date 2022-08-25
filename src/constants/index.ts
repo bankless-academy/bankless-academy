@@ -96,6 +96,14 @@ export const MINTKUDOS_EXPLORER = IS_MINTKUDOS_SANDBOX
   ? 'https://mumbai.polygonscan.com/'
   : 'https://polygonscan.com/'
 
+export const MINTKUDOS_OPENSEA_URL = IS_MINTKUDOS_SANDBOX
+  ? 'https://testnets.opensea.io/assets/mumbai/0xb876baf8f69cd35fb96a17a599b070fbdd18a6a1/'
+  : 'https://opensea.io/assets/matic/0x60576a64851c5b42e8c57e3e4a5cf3cf4eeb2ed6/'
+
+export const MINTKUDOS_RARIBLE_URL = IS_MINTKUDOS_SANDBOX
+  ? 'https://testnet.rarible.com/token/polygon/0xb876baf8f69cd35fb96a17a599b070fbdd18a6a1:'
+  : 'https://rarible.com/token/polygon/0x60576a64851c5b42e8c57e3e4a5cf3cf4eeb2ed6:'
+
 export const MINTKUDOS_CHAIN_ID = IS_MINTKUDOS_SANDBOX ? 80001 : 137
 
 export const MINTKUDOS_DOMAIN_INFO = {
