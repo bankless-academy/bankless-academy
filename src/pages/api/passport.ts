@@ -17,25 +17,40 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   const { address } = req.query
+
   if (!address || typeof address === 'object')
     return res.json({ error: 'Wrong params' })
 
   console.log('address', address)
 
-  try {
-    const passport: Passport = await reader.getPassport(address)
-    // console.log('** passport **', passport)
-    const validStamps = filterValidStamps(passport.stamps)
-    if (validStamps.length >= NUMBER_OF_STAMP_REQUIRED) {
-      console.log('verified:', validStamps.length)
-    } else {
-      console.log('not verified')
+  // TODO: make this dynamic
+  type SybilCheckTypes = 'GITCOIN_PASSPORT' | '35kBANK'
+  const SYBIL_CHECK: SybilCheckTypes = 'GITCOIN_PASSPORT'
+
+  if (SYBIL_CHECK === 'GITCOIN_PASSPORT') {
+    try {
+      const passport: Passport = await reader.getPassport(address)
+      // console.log('** passport **', passport)
+      const validStamps = filterValidStamps(passport.stamps)
+      const condition = `${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps required`
+      if (validStamps.length >= NUMBER_OF_STAMP_REQUIRED) {
+        console.log('verified:', validStamps.length)
+      } else {
+        console.log('not verified')
+      }
+      return res.json({
+        verified: validStamps.length >= NUMBER_OF_STAMP_REQUIRED,
+        condition,
+      })
+    } catch (error) {
+      console.error(error)
+      res.json({
+        error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
+      })
     }
-    return res.json(passport)
-  } catch (error) {
-    console.error(error)
-    res.json({
-      error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
-    })
+  } else if (SYBIL_CHECK === '35kBANK') {
+    const NUMBER_OF_BANK_REQUIRED = 35000
+    const condition = `${NUMBER_OF_BANK_REQUIRED} BANK tokens required for at least 1 month˝`
+    return res.json({ verified: 'TODO', condition })
   }
 }
