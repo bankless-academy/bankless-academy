@@ -58,6 +58,10 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     }
   }, [account])
 
+  const networkKey = Object.keys(NETWORKS).find(
+    (network) => NETWORKS[network].chainId === MINTKUDOS_CHAIN_ID
+  )
+
   const followOperation = async (location: string, iteration = 0) => {
     try {
       const result = await axios.get(location)
@@ -129,6 +133,9 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
 
   const claimKudos = async () => {
     if (isKudosClaimed) return
+    if (chainId !== MINTKUDOS_CHAIN_ID) {
+      await switchNetwork(networkKey)
+    }
 
     setStatus('🙌 claiming in progress ...')
     const types = {
@@ -183,62 +190,6 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     }
   }
 
-  const KudosButton = () => (
-    <>
-      {isKudosClaimed ? (
-        <Box>
-          <Link
-            href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`}
-            target="_blank"
-            mr="2"
-          >
-            <Button leftIcon={<Image width="24px" src="/images/OpenSea.svg" />}>
-              OpenSea
-            </Button>
-          </Link>
-          <Link href={`${MINTKUDOS_RARIBLE_URL}${kudosId}`} target="_blank">
-            <Button leftIcon={<Image width="24px" src="/images/Rarible.svg" />}>
-              Rarible
-            </Button>
-          </Link>
-        </Box>
-      ) : isPassportVerified ? (
-        <Button
-          colorScheme={isKudosClaimed ? 'green' : 'red'}
-          onClick={!isKudosMinted ? mintKudos : claimKudos}
-          variant="primary"
-        >
-          {status !== ''
-            ? status
-            : !isKudosMinted
-            ? 'Mint Credential ⚒️'
-            : 'Claim your Credential 🙌'}
-        </Button>
-      ) : (
-        <p>
-          {`Get a `}
-          <NextLink href={`/passport`}>{`${PROJECT_NAME} Passport`}</NextLink>
-          {` in order to claim this credential`}
-        </p>
-      )}
-    </>
-  )
-
-  const networkKey = Object.keys(NETWORKS).find(
-    (network) => NETWORKS[network].chainId === MINTKUDOS_CHAIN_ID
-  )
-
-  const networkSwitchButton = () => (
-    <>
-      <Button
-        colorScheme={isKudosClaimed ? 'green' : 'red'}
-        onClick={() => switchNetwork(networkKey)}
-      >
-        Switch Network to {NETWORKS[networkKey]?.name}
-      </Button>
-    </>
-  )
-
   const ConnectFirstButton = (
     <>
       <Button
@@ -260,10 +211,51 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     <Box py="4">
       {!account ? (
         <>{ConnectFirstButton}</>
-      ) : chainId === MINTKUDOS_CHAIN_ID ? (
-        KudosButton()
       ) : (
-        networkSwitchButton()
+        <>
+          {isKudosClaimed ? (
+            <Box>
+              <Link
+                href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`}
+                target="_blank"
+                mr="2"
+              >
+                <Button
+                  leftIcon={<Image width="24px" src="/images/OpenSea.svg" />}
+                >
+                  OpenSea
+                </Button>
+              </Link>
+              <Link href={`${MINTKUDOS_RARIBLE_URL}${kudosId}`} target="_blank">
+                <Button
+                  leftIcon={<Image width="24px" src="/images/Rarible.svg" />}
+                >
+                  Rarible
+                </Button>
+              </Link>
+            </Box>
+          ) : isPassportVerified ? (
+            <Button
+              colorScheme={isKudosClaimed ? 'green' : 'red'}
+              onClick={!isKudosMinted ? mintKudos : claimKudos}
+              variant="primary"
+            >
+              {status !== ''
+                ? status
+                : !isKudosMinted
+                ? 'Mint Credential ⚒️'
+                : 'Claim your Credential 🙌'}
+            </Button>
+          ) : (
+            <p>
+              {`Get a `}
+              <NextLink
+                href={`/passport`}
+              >{`${PROJECT_NAME} Passport`}</NextLink>
+              {` in order to claim this credential`}
+            </p>
+          )}
+        </>
       )}
     </Box>
   )
