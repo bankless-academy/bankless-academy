@@ -48,6 +48,28 @@
       ],
       "destination": "https://bankless.notion.site/Bankless-Academy-Whitelabel-Platform-8198f1db3f1c490cb2aedf361fc3e416",
       "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "documentation.banklessacademy.com"
+        }
+      ],
+      "destination": "https://bankless.notion.site/Bankless-Academy-Documentation-73cae3c0d9124d38babe1f1f9ec5c65f",
+      "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "talent.banklessacademy.com"
+        }
+      ],
+      "destination": "https://bankless.notion.site/Bankless-Academy-Jobs-56d3b0a011fe443aa2a9682f0ca443bb",
+      "permanent": false
     }
   ]
 }

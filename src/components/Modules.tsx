@@ -5,7 +5,7 @@ import { useMediaQuery } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 import LessonBanner from 'components/LessonBanner'
-import { IS_WHITELABEL } from 'constants/index'
+import { IS_WHITELABEL, LESSONS } from 'constants/index'
 import { ModuleType } from 'entities/module'
 
 const LessonGrid = styled(SimpleGrid)`
@@ -35,7 +35,13 @@ const Modules = ({
       </Heading>
       <Box>
         {modules.map((module, key) => {
-          const moduleLink = `/module/${module.slug}`
+          const lessonsInModule = LESSONS.filter(
+            (lesson) => lesson.moduleId === module.moduleId
+          )
+          const moduleLink =
+            lessonsInModule.length === 1
+              ? `/lessons/${lessonsInModule[0].slug}`
+              : `/module/${module.slug}`
           const ModuleImage = (
             <LessonBanner
               iswhitelabel={IS_WHITELABEL}
