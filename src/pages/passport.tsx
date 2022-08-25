@@ -38,7 +38,7 @@ export interface Stamps {
 export const filterValidStamps = (stamps: Stamp[]): Stamp[] => {
   // const currentTimestamp = 1665401965000
   const currentTimestamp = Date.now()
-  return stamps.filter(
+  return stamps?.filter(
     (stamp) =>
       stamp.credential.issuer === ALLOWED_ISSUER &&
       Date.parse(stamp.credential.expirationDate) > currentTimestamp
@@ -46,9 +46,10 @@ export const filterValidStamps = (stamps: Stamp[]): Stamp[] => {
 }
 
 export const getNumberOfValidStamps = (stamps: Stamps): number | null => {
+  if (stamps === null) return null
   const array = Object.values(stamps)
   if (!array.length) {
-    return null
+    return 0
   }
   return filterValidStamps(Object.values(stamps)).length
 }
@@ -59,7 +60,7 @@ export const OkIcon = (
 export const KoIcon = <Icon as={X} color="red" display="inline" />
 
 const PassportPage = (): JSX.Element => {
-  const [stamps, setStamps] = useState({})
+  const [stamps, setStamps] = useState(null)
   const { account } = useActiveWeb3React()
 
   useEffect(() => {
@@ -67,23 +68,26 @@ const PassportPage = (): JSX.Element => {
       const passport: Passport = await reader.getPassport(account)
       // console.log('passport', passport)
       const stamps = {}
-      for (const stamp of passport.stamps) {
-        stamps[stamp.provider] = stamp
+      if (passport) {
+        for (const stamp of passport?.stamps) {
+          stamps[stamp.provider] = stamp
+        }
       }
       // console.log('stamps', stamps)
       setStamps(stamps)
     }
     if (account) getData()
     else {
-      setStamps({})
+      setStamps(null)
     }
   }, [account])
 
   const numberOfValidStamps = getNumberOfValidStamps(stamps)
 
-  const explorerStatus = numberOfValidStamps
-    ? numberOfValidStamps >= NUMBER_OF_STAMP_REQUIRED
-    : null
+  const explorerStatus =
+    numberOfValidStamps !== null
+      ? numberOfValidStamps >= NUMBER_OF_STAMP_REQUIRED
+      : null
 
   return (
     <Container maxW="container.xl">

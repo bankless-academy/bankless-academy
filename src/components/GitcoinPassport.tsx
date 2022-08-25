@@ -64,7 +64,7 @@ export const STAMP_PROVIDERS = {
 const GitcoinPassport = ({
   stamps,
 }: {
-  stamps: Stamps
+  stamps?: Stamps
 }): React.ReactElement => {
   const numberOfValidStamps = getNumberOfValidStamps(stamps)
   return (
@@ -72,13 +72,13 @@ const GitcoinPassport = ({
       <Box>
         <Text fontSize="2xl" mb={8}>
           {` Stamps: ${
-            numberOfValidStamps || '-'
+            numberOfValidStamps === null ? '-' : numberOfValidStamps
           } (${NUMBER_OF_STAMP_REQUIRED} required)`}
         </Text>
       </Box>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} gap={6}>
         {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
-          const stamp = stamps[key] || null
+          const stamp = stamps ? stamps[key] : null
           const currentTimestamp = Date.now()
           const isStampExpired = !(
             Date.parse(stamp?.credential?.expirationDate) > currentTimestamp
