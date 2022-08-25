@@ -60,7 +60,10 @@ const LessonCards: React.FC = () => {
         // const numberOfSlides = lesson.slides.length
         const isPoapClaimed = localStorage.getItem(`poap-${lesson.slug}`)
         const lessonCompleted =
-          (lesson.quest && stats?.lessonCompleted[lesson.quest]) || 0
+          (lesson.quest &&
+            stats?.lessonCompleted &&
+            stats?.lessonCompleted[lesson.notionId]) ||
+          0
         return (
           <LessonCard
             key={`lesson-${index}`}
