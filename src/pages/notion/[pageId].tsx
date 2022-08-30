@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react'
 import { GetServerSideProps } from 'next'
+// TODO: replace with https://github.com/NotionX/react-notion-x
 import { NotionRenderer, BlockMapType } from 'react-notion'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -13,9 +14,10 @@ const ALLOWED_IDS = [
   '2504d274430b4b4aa28d6171c9b06335',
   // documentation
   '73cae3c0d9124d38babe1f1f9ec5c65f',
+  'ea6c9d2b537b46d2aa57b7d4df3d93ca',
   // sponsors
   '208c77594ddc47ef9ea628c029d29ab0',
-  // jobs
+  // jobs/talent
   '56d3b0a011fe443aa2a9682f0ca443bb',
   '65dfe884acb749ef90dd5250f585314d',
   'fa0aa8ba0a034c4cbcc7407b650207e1',
