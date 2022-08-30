@@ -13,13 +13,20 @@ export const DOMAIN_IDS = {
 export const ALLOWED_DOMAINS = Object.keys(DOMAIN_IDS)
 
 export function middleware(request: NextRequest): NextResponse {
-  const host = request?.nextUrl?.host
-  const isNotionDomain =
-    host && (host.includes('vercel.app') || ALLOWED_DOMAINS.includes(host))
+  // const host = request?.nextUrl?.host
+  const host = 'vercel.app'
 
   // eslint-disable-next-line no-console
   console.log('nextUrl', request?.nextUrl)
-  if (isNotionDomain && request?.nextUrl?.pathname === '/') {
+  // eslint-disable-next-line no-console
+  console.log('url', request?.url)
+  // eslint-disable-next-line no-console
+  console.log('headers', request?.headers)
+  if (
+    host &&
+    ALLOWED_DOMAINS.includes(host) &&
+    request?.nextUrl?.pathname === '/'
+  ) {
     // eslint-disable-next-line no-console
     console.log('nextUrl', request?.nextUrl)
     return NextResponse.rewrite(
