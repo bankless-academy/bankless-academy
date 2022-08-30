@@ -13,8 +13,8 @@ export const DOMAIN_IDS = {
 export const ALLOWED_DOMAINS = Object.keys(DOMAIN_IDS)
 
 export function middleware(request: NextRequest): NextResponse {
-  // const host = request?.nextUrl?.host
-  const host = 'vercel.app'
+  let host = request?.nextUrl?.host
+  host = host.includes('vercel.app') ? 'vercel.app' : host
 
   // eslint-disable-next-line no-console
   // console.log('request', request)
