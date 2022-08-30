@@ -16,13 +16,13 @@ export function middleware(request: NextRequest): NextResponse {
   // TODO: replace with hostname
   const host = request?.nextUrl?.host
   // eslint-disable-next-line no-console
-  console.log('nextUrl', request?.nextUrl)
-  const fake = 'fake'
+  // console.log('nextUrl', request?.nextUrl)
+  // const fake = 'fake'
   if (
-    !fake
+    // !fake
     // host &&
     // ALLOWED_DOMAINS.includes(host) &&
-    // request?.nextUrl?.pathname === '/'
+    request?.nextUrl?.pathname === '/'
   ) {
     // eslint-disable-next-line no-console
     console.log('nextUrl', request?.nextUrl)
@@ -30,8 +30,4 @@ export function middleware(request: NextRequest): NextResponse {
       new URL(`/notion/${DOMAIN_IDS[host]}`, request.url)
     )
   }
-}
-
-export const config = {
-  matcher: ['/'],
 }
