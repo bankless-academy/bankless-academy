@@ -23,7 +23,9 @@ const ALLOWED_IDS = [
 ]
 
 export async function getServerSideProps(context) {
-  const pageId = context.params?.pageId
+  // eslint-disable-next-line no-console
+  console.log('context', context)
+  const pageId = context.params?.pageId || '8198f1db3f1c490cb2aedf361fc3e416'
 
   if (!pageId || !ALLOWED_IDS.includes(pageId)) {
     return {
