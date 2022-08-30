@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react'
+import { GetServerSideProps } from 'next'
 import { NotionRenderer, BlockMapType } from 'react-notion'
 import Head from 'next/head'
 import Link from 'next/link'
@@ -23,8 +24,11 @@ const ALLOWED_IDS = [
   'f6c390f5b0754c85acec7b9bcafa00cb',
 ]
 
-export async function getServerSideProps(context) {
-  const pageId = context.params?.pageId?.replace(/-/g, '')
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const pageId =
+    typeof context.params?.pageId === 'string'
+      ? context.params?.pageId.replace(/-/g, '')
+      : null
   console.log('pageId', pageId)
 
   if (!pageId || !ALLOWED_IDS.includes(pageId)) {
@@ -57,7 +61,7 @@ export async function getServerSideProps(context) {
   }
 }
 
-const NotionPage = ({ blockMap }) => {
+const NotionPage = ({ blockMap }): JSX.Element => {
   if (!blockMap || Object.keys(blockMap).length === 0) {
     return (
       <div>
