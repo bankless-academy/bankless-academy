@@ -77,6 +77,16 @@
         }
       ],
       "destination": "/notion/:path"
+    },
+    {
+      "source": "/:path",
+      "has": [
+        {
+          "type": "host",
+          "value": "bankless-academy-git-notion-pages-bankless-academy.vercel.app"
+        }
+      ],
+      "destination": "/notion/:path"
     }
   ]
 }
