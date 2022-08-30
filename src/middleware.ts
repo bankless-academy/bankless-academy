@@ -11,9 +11,9 @@ export const DOMAIN_IDS = {
 
 export const ALLOWED_DOMAINS = Object.keys(DOMAIN_IDS)
 
-export function middleware(request: NextRequest) {
+export function middleware(request: NextRequest): NextResponse {
   if (
-    request?.nextUrl?.pathname === '/' &&
+    request?.nextUrl?.pathname === '/ooo' &&
     ALLOWED_DOMAINS.includes(request?.nextUrl?.hostname)
   ) {
     // eslint-disable-next-line no-console
