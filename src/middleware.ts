@@ -17,24 +17,33 @@ export function middleware(request: NextRequest): NextResponse {
   const host = 'vercel.app'
 
   // eslint-disable-next-line no-console
-  console.log('nextUrl', request?.nextUrl)
+  // console.log('request', request)
   // eslint-disable-next-line no-console
-  console.log('url', request?.url)
+  // console.log('nextUrl', request?.nextUrl)
   // eslint-disable-next-line no-console
-  console.log('headers', request?.headers)
-  if (
-    host &&
-    ALLOWED_DOMAINS.includes(host) &&
-    request?.nextUrl?.pathname === '/'
-  ) {
-    // eslint-disable-next-line no-console
-    console.log('nextUrl', request?.nextUrl)
-    return NextResponse.rewrite(
-      new URL(`/notion/${DOMAIN_IDS[host]}`, request.url)
-    )
+  // console.log('url', request?.url)
+  if (host && ALLOWED_DOMAINS.includes(host)) {
+    const pathname = request?.nextUrl?.pathname
+    if (pathname === '/') {
+      // eslint-disable-next-line no-console
+      console.log('nextUrl', request?.nextUrl)
+      return NextResponse.rewrite(
+        new URL(`/notion/${DOMAIN_IDS[host]}`, request.url)
+      )
+    }
+    // else if (pathname.length === 36) {
+    //   // eslint-disable-next-line no-console
+    //   console.log('nextUrl', request?.nextUrl)
+    //   // eslint-disable-next-line no-console
+    //   console.log('pathname', pathname)
+    //   console.log('pathname', request.url)
+    //   return NextResponse.rewrite(
+    //     new URL(`/notion/${pathname}`, request.url)
+    //   )
+    // }
   }
 }
 
 export const config = {
-  matcher: ['/', '/:pageId'],
+  matcher: ['/'],
 }
