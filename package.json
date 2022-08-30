@@ -61,6 +61,7 @@
     "react-hotkeys-hook": "^3.3.2",
     "react-html-parser": "^2.0.2",
     "react-icons": "^4.2.0",
+    "react-notion": "^0.10.0",
     "stringify-object": "^3.3.0",
     "swiper": "^6.8.0",
     "web3modal": "^1.9.3"

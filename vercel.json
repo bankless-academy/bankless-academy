@@ -37,7 +37,17 @@
       ]
     }
   ],
-  "redirects": [
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "whitelabel.banklessacademy.com"
+        }
+      ],
+      "destination": "/notion/8198f1db3f1c490cb2aedf361fc3e416"
+    },
     {
       "source": "/(.*)",
       "has": [
@@ -46,8 +56,17 @@
           "value": "whitelabel.banklessacademy.com"
         }
       ],
-      "destination": "https://bankless.notion.site/Bankless-Academy-Whitelabel-Platform-8198f1db3f1c490cb2aedf361fc3e416",
-      "permanent": false
+      "destination": "/notion/$1"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "documentation.banklessacademy.com"
+        }
+      ],
+      "destination": "/notion/73cae3c0d9124d38babe1f1f9ec5c65f"
     },
     {
       "source": "/(.*)",
@@ -57,8 +76,17 @@
           "value": "documentation.banklessacademy.com"
         }
       ],
-      "destination": "https://bankless.notion.site/Bankless-Academy-Documentation-73cae3c0d9124d38babe1f1f9ec5c65f",
-      "permanent": false
+      "destination": "/notion/$1"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "talent.banklessacademy.com"
+        }
+      ],
+      "destination": "/notion/56d3b0a011fe443aa2a9682f0ca443bb"
     },
     {
       "source": "/(.*)",
@@ -68,8 +96,17 @@
           "value": "talent.banklessacademy.com"
         }
       ],
-      "destination": "https://bankless.notion.site/Bankless-Academy-Jobs-56d3b0a011fe443aa2a9682f0ca443bb",
-      "permanent": false
+      "destination": "/notion/$1"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "sponsors.banklessacademy.com"
+        }
+      ],
+      "destination": "/notion/208c77594ddc47ef9ea628c029d29ab0"
     },
     {
       "source": "/(.*)",
@@ -79,8 +116,7 @@
           "value": "sponsors.banklessacademy.com"
         }
       ],
-      "destination": "https://bankless.notion.site/Bankless-Academy-Sponsored-Lesson-208c77594ddc47ef9ea628c029d29ab0",
-      "permanent": false
+      "destination": "/notion/$1"
     }
   ]
 }

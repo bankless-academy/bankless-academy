@@ -3,6 +3,8 @@ import { Web3ReactProvider } from '@web3-react/core'
 import { ethers } from 'ethers'
 import 'swiper/swiper-bundle.min.css'
 import { Global, css } from '@emotion/react'
+import 'react-notion/src/styles.css'
+import 'prismjs/themes/prism-tomorrow.css'
 
 import dynamic from 'next/dynamic'
 import Head from 'components/Head'
@@ -19,6 +21,7 @@ const Web3ReactProviderDefault = dynamic(
 )
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
+  if (pageProps.isNotion) return <Component {...pageProps} />
   return (
     <>
       <Head metadata={pageProps.pageMeta} />
