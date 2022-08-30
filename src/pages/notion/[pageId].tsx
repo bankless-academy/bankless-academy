@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react'
 import { NotionRenderer, BlockMapType } from 'react-notion'
 import Head from 'next/head'
@@ -30,11 +31,12 @@ const DOMAIN_IDS = {
 }
 
 export async function getServerSideProps(context) {
-  // eslint-disable-next-line no-console
   console.log('host', context.query.host)
-  const pageId = context.params?.pageId || DOMAIN_IDS[context.query.host]
+  const pageId =
+    context.params?.pageId?.replace(/-/g, '') || DOMAIN_IDS[context.query.host]
+  console.log('pageId', pageId)
 
-  if (!pageId || !ALLOWED_IDS.includes(pageId.replace(/-+/g, '-'))) {
+  if (!pageId || !ALLOWED_IDS.includes(pageId)) {
     return {
       props: {
         blockMap: false,
