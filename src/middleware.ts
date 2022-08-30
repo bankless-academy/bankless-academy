@@ -6,20 +6,24 @@ export const DOMAIN_IDS = {
   'documentation.banklessacademy.com': '73cae3c0d9124d38babe1f1f9ec5c65f',
   'talent.banklessacademy.com': '208c77594ddc47ef9ea628c029d29ab0',
   'sponsors.banklessacademy.com': '56d3b0a011fe443aa2a9682f0ca443bb',
+  'vercel.app': '56d3b0a011fe443aa2a9682f0ca443bb',
   // localhost: '8198f1db3f1c490cb2aedf361fc3e416',
 }
 
 export const ALLOWED_DOMAINS = Object.keys(DOMAIN_IDS)
 
 export function middleware(request: NextRequest): NextResponse {
+  // TODO: replace with hostname
+  const host = request?.nextUrl?.host
   if (
-    request?.nextUrl?.pathname === '/ooo' &&
-    ALLOWED_DOMAINS.includes(request?.nextUrl?.hostname)
+    host &&
+    ALLOWED_DOMAINS.includes(host) &&
+    request?.nextUrl?.pathname === '/'
   ) {
     // eslint-disable-next-line no-console
     console.log('nextUrl', request?.nextUrl)
     return NextResponse.rewrite(
-      new URL(`/notion/${DOMAIN_IDS[request?.nextUrl?.hostname]}`, request.url)
+      new URL(`/notion/${DOMAIN_IDS[host]}`, request.url)
     )
   }
 }
