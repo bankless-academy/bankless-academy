@@ -22,12 +22,19 @@ const ALLOWED_IDS = [
   'f6c390f5b0754c85acec7b9bcafa00cb',
 ]
 
+const DOMAIN_IDS = {
+  'whitelabel.banklessacademy.com': '8198f1db3f1c490cb2aedf361fc3e416',
+  'documentation.banklessacademy.com': '73cae3c0d9124d38babe1f1f9ec5c65f',
+  'talent.banklessacademy.com': '208c77594ddc47ef9ea628c029d29ab0',
+  'sponsors.banklessacademy.com': '56d3b0a011fe443aa2a9682f0ca443bb',
+}
+
 export async function getServerSideProps(context) {
   // eslint-disable-next-line no-console
-  console.log('context', context)
-  const pageId = context.params?.pageId || '8198f1db3f1c490cb2aedf361fc3e416'
+  console.log('host', context.query.host)
+  const pageId = context.params?.pageId || DOMAIN_IDS[context.query.host]
 
-  if (!pageId || !ALLOWED_IDS.includes(pageId)) {
+  if (!pageId || !ALLOWED_IDS.includes(pageId.replace(/-+/g, '-'))) {
     return {
       props: {
         blockMap: false,
