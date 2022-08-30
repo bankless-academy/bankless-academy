@@ -15,10 +15,14 @@ export const ALLOWED_DOMAINS = Object.keys(DOMAIN_IDS)
 export function middleware(request: NextRequest): NextResponse {
   // TODO: replace with hostname
   const host = request?.nextUrl?.host
+  // eslint-disable-next-line no-console
+  console.log('nextUrl', request?.nextUrl)
+  const fake = 'fake'
   if (
-    host &&
-    ALLOWED_DOMAINS.includes(host) &&
-    request?.nextUrl?.pathname === '/'
+    !fake
+    // host &&
+    // ALLOWED_DOMAINS.includes(host) &&
+    // request?.nextUrl?.pathname === '/'
   ) {
     // eslint-disable-next-line no-console
     console.log('nextUrl', request?.nextUrl)
