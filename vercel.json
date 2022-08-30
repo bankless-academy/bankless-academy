@@ -70,6 +70,17 @@
       ],
       "destination": "https://bankless.notion.site/Bankless-Academy-Jobs-56d3b0a011fe443aa2a9682f0ca443bb",
       "permanent": false
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "sponsors.banklessacademy.com"
+        }
+      ],
+      "destination": "https://bankless.notion.site/Bankless-Academy-Sponsored-Lesson-208c77594ddc47ef9ea628c029d29ab0",
+      "permanent": false
     }
   ]
 }
