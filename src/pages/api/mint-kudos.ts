@@ -8,7 +8,9 @@ import {
   MINTKUDOS_API,
   MINTKUDOS_ENCODED_STRING,
   GENERIC_ERROR_MESSAGE,
+  MINTKUDOS_COMMUNITY_ID,
 } from 'constants/index'
+import { KudosType } from 'entities/kudos'
 
 export default async function handler(
   req: NextApiRequest,
@@ -59,25 +61,20 @@ export default async function handler(
       }
 
       const userKudos = await axios.get(
-        `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=1000`
+        `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}`
       )
       // console.log('userKudos', userKudos?.data?.data)
 
-      const findKudos = userKudos?.data?.data.find(
-        (kudos) => kudos.kudosTokenId === kudosId
+      const findKudos: KudosType = userKudos?.data?.data.find(
+        (kudos: KudosType) => kudos.kudosTokenId === kudosId
       )
 
       if (findKudos) {
-        const userKudosClaimed = await axios.get(
-          `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=1000&status=claimed`
-        )
-        const kudosAlreadyMinted = userKudosClaimed?.data?.data.find(
-          (kudos) => kudos.kudosTokenId === kudosId
-        )
-        if (kudosAlreadyMinted) {
+        const isKudosAlreadyClaimed = findKudos.claimStatus === 'claimed'
+        if (isKudosAlreadyClaimed) {
           const updated = await db(TABLES.completions)
             .where(TABLE.completions.id, questCompleted.id)
-            .update({ credential_claimed_at: kudosAlreadyMinted.createdAt })
+            .update({ credential_claimed_at: findKudos.createdAt })
           console.log('updated', updated)
           if (updated) {
             questStatus = 'updated credential_claimed_at'

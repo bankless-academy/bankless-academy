@@ -27,6 +27,7 @@ import {
   INFURA_ID,
   DOMAIN_URL,
   MINTKUDOS_API,
+  MINTKUDOS_COMMUNITY_ID,
   KUDOS_IDS,
   IS_WHITELABEL,
 } from 'constants/index'
@@ -137,14 +138,17 @@ const ConnectWalletButton = ({
     if (walletAddress) {
       axios
         .get(
-          `${MINTKUDOS_API}/v1/wallets/${walletAddress}/tokens?limit=1000&status=claimed`
+          `${MINTKUDOS_API}/v1/wallets/${walletAddress}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
         )
         .then((res) => {
           const data = res.data.data
           if (Array.isArray(data)) {
             setKudos(
-              data.filter((kudos: KudosType) =>
-                KUDOS_IDS.includes(kudos.kudosTokenId)
+              data.filter(
+                (kudos: KudosType) =>
+                  KUDOS_IDS.includes(kudos.kudosTokenId) &&
+                  // TODO: remove after API is fixed
+                  kudos.claimStatus === 'claimed'
               )
             )
           }
