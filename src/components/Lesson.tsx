@@ -41,7 +41,7 @@ function transform(node, index) {
   if (node.type === 'tag' && node.name === 'span') {
     // add Tooltip with definition
     return (
-      <Tooltip hasArrow label={node.attribs.definition}>
+      <Tooltip hasArrow label={node.attribs.definition} closeOnClick={false}>
         {convertNodeToElement(node, index, transform)}
       </Tooltip>
     )
