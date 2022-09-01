@@ -77,7 +77,7 @@ Heatmap recording via [hotjar.com](hotjar.com)
 
 [https://www.notion.so/bankless/1dd77eb6ed4147f6bdfd6f23a30baa46](https://www.notion.so/bankless/1dd77eb6ed4147f6bdfd6f23a30baa46)
 
-### Defaut content import command
+### Default content import command
 
 ```bash
 yarn import-content
@@ -101,7 +101,7 @@ Note: import keywords before importing content.
 
 [https://www.notion.so/bankless/623e965e4f10456094d17aa94ec37105](https://www.notion.so/bankless/623e965e4f10456094d17aa94ec37105)
 
-### Defaut keywords import command
+### Default keywords import command
 
 ```bash
 yarn import-keywords
