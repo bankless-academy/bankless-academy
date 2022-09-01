@@ -2,7 +2,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { verifyTypedSignature } from 'utils'
-import { MINTKUDOS_DOMAIN_INFO } from 'constants/index'
+import { MINTKUDOS_DOMAIN_INFO } from 'constants/kudos'
 
 import { db, TABLES } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE, LESSONS } from 'constants/index'

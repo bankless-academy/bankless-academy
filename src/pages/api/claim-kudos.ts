@@ -4,12 +4,12 @@ import axios from 'axios'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
+import { LESSONS } from 'constants/index'
 import {
-  LESSONS,
   MINTKUDOS_API,
   MINTKUDOS_ENCODED_STRING,
   MINTKUDOS_COMMUNITY_ID,
-} from 'constants/index'
+} from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
 
 export default async function handler(

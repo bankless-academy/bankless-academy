@@ -22,15 +22,12 @@ import Davatar from '@davatar/react'
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
 import { walletConnect, injected } from 'utils'
+import { LESSONS, INFURA_ID, DOMAIN_URL, IS_WHITELABEL } from 'constants/index'
 import {
-  LESSONS,
-  INFURA_ID,
-  DOMAIN_URL,
   MINTKUDOS_API,
   MINTKUDOS_COMMUNITY_ID,
   KUDOS_IDS,
-  IS_WHITELABEL,
-} from 'constants/index'
+} from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
 import { SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 

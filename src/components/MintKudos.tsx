@@ -6,8 +6,8 @@ import axios from 'axios'
 
 import { useActiveWeb3React } from 'hooks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
+import { PROJECT_NAME } from 'constants/index'
 import {
-  PROJECT_NAME,
   MINTKUDOS_API,
   MINTKUDOS_DOMAIN_INFO,
   MINTKUDOS_EXPLORER,
@@ -15,7 +15,7 @@ import {
   MINTKUDOS_OPENSEA_URL,
   MINTKUDOS_RARIBLE_URL,
   MINTKUDOS_COMMUNITY_ID,
-} from 'constants/index'
+} from 'constants/kudos'
 import { NETWORKS } from 'constants/networks'
 import { KudosType } from 'entities/kudos'
 

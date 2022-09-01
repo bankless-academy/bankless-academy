@@ -3,13 +3,12 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
+import { LESSONS, GENERIC_ERROR_MESSAGE } from 'constants/index'
 import {
-  LESSONS,
   MINTKUDOS_API,
   MINTKUDOS_ENCODED_STRING,
-  GENERIC_ERROR_MESSAGE,
   MINTKUDOS_COMMUNITY_ID,
-} from 'constants/index'
+} from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
 
 export default async function handler(
