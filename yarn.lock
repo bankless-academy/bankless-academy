@@ -1697,18 +1697,18 @@
     "@ethersproject/properties" "^5.4.0"
     "@ethersproject/strings" "^5.4.0"
 
-"@gitcoinco/passport-sdk-reader@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@gitcoinco/passport-sdk-reader/-/passport-sdk-reader-0.1.2.tgz#90cfd8fb94d7fe403c53df8c8c9eb4ff3bacb8db"
-  integrity sha512-gGmT/8PEPfQMl6GROAD/eFbq+cnvu2LxYGKoXmNn4v00fNewzdblWMxTR3RgnewTukIfmBozffev5d+ThXRidw==
+"@gitcoinco/passport-sdk-reader@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@gitcoinco/passport-sdk-reader/-/passport-sdk-reader-0.1.3.tgz#ba067d07ecb67c6e2da27dde6e8a6047e3b12e04"
+  integrity sha512-aqveS57apSCN2kEAZMgH3bNMossx2AN2psl6aEexK6HI/Th75v8cjRjql2J1NdXoXujPcdqXONqxtQNmgCj5JA==
   dependencies:
-    "@gitcoinco/passport-sdk-types" "^0.1.2"
+    "@gitcoinco/passport-sdk-types" "^0.2.0"
     tulons "^0.0.6"
 
-"@gitcoinco/passport-sdk-types@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@gitcoinco/passport-sdk-types/-/passport-sdk-types-0.1.2.tgz#19fe84deaa4774f9616580e95410eb80583bb161"
-  integrity sha512-iAyvw1r+ZwSU/+wkvU0hI+NlaDPne+wot31V4Ya4Nx3Ru47grqEQa8jcj+WalV1RFZLhIJ84CppqI+PRoch7+g==
+"@gitcoinco/passport-sdk-types@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@gitcoinco/passport-sdk-types/-/passport-sdk-types-0.2.0.tgz#51be289db9621c84c247fc5f05bcd46196bfe94d"
+  integrity sha512-qS7P4atgeAEfI6VlGcoXr10E6SsKAlHiPNfSyr25HJpnNomi7J0Yy6krscUPiPsn1eCKOFQeC8uDqTdiXXMGLw==
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
