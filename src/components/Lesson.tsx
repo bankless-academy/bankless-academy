@@ -144,19 +144,19 @@ const Answers = styled(Box)`
 export type AnswerStateType = 'UNSELECTED' | 'CORRECT' | 'WRONG'
 
 const QuizAnswer = styled(Button)<{
-  answerState: AnswerStateType
+  answerstate: AnswerStateType
   isActive: boolean
 }>`
   ${(props) => props.isActive && 'cursor: default;'};
   ${(props) =>
-    props.answerState === 'UNSELECTED' &&
+    props.answerstate === 'UNSELECTED' &&
     props.isActive &&
     'background: #1C1C1C !important;'}
   ${(props) =>
-    props.answerState === 'CORRECT' &&
+    props.answerstate === 'CORRECT' &&
     'background: linear-gradient(95.83deg, #44A991 -9.2%, rgba(68, 169, 145, 0.7) 97.91%) !important;'}
   ${(props) =>
-    props.answerState === 'WRONG' &&
+    props.answerstate === 'WRONG' &&
     'background: linear-gradient(91.91deg, #A94462 49%, rgba(169, 68, 98, 0.7) 124.09%) !important;'}
 `
 
@@ -473,7 +473,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                             }
                             whiteSpace="break-spaces"
                             onClick={(e) => selectAnswer(e, n)}
-                            answerState={answerState}
+                            answerstate={answerState}
                             justifyContent="space-between"
                             textAlign="left"
                             rightIcon={

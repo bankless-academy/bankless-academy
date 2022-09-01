@@ -2,9 +2,9 @@ import { Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 // TODO: clean dirty HACK
-const LessonBanner = styled(Box)<{ iswhitelabel: boolean }>`
+const LessonBanner = styled(Box)<{ iswhitelabel: string }>`
   ${(props) =>
-    props.iswhitelabel
+    props.iswhitelabel === 'true'
       ? `
       img {
         border-radius: 10px;

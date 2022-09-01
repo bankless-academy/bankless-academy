@@ -44,7 +44,7 @@ const Modules = ({
               : `/module/${module.slug}`
           const ModuleImage = (
             <LessonBanner
-              iswhitelabel={IS_WHITELABEL}
+              iswhitelabel={IS_WHITELABEL.toString()}
               cursor="pointer"
               style={{
                 aspectRatio: '1.91/1',

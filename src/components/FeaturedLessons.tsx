@@ -29,7 +29,7 @@ const FeaturedLessons: React.FC = () => {
             const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
             const LessonImage = (
               <LessonBanner
-                iswhitelabel={IS_WHITELABEL}
+                iswhitelabel={IS_WHITELABEL.toString()}
                 cursor="pointer"
                 style={{
                   aspectRatio: '1.91/1',
