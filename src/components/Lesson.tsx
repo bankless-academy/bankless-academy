@@ -127,6 +127,12 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
       max-width: 100%;
       height: 360px;
     }
+    blockquote {
+      font-size: var(--chakra-fontSizes-lg);
+      margin: 1em;
+      padding-left: 1em;
+      border-left: 2px solid white;
+    }
   }
 `
 
