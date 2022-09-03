@@ -16,7 +16,9 @@ export const TABLES = {
 export const TABLE = {
   users: {
     id: 'users.id',
-    address: 'users.address'
+    address: 'users.address',
+    gitcoin_stamps: 'users.gitcoin_stamps',
+    sybil_user_id: 'users.sybil_user_id'
   },
   quests: {
     id: 'quests.id',
