@@ -59,6 +59,8 @@ yarn global add knex
 knex migrate:latest
 # Rollback the last batch of migrations
 knex migrate:rollback
+# add a new migration
+knex migrate:make nameYourMigration
 ```
 
 ## Tracking
