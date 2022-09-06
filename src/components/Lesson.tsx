@@ -101,7 +101,7 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
           width: 100%;
         }
       `
-        : 'img {  max-height: 60vh; }'};
+        : 'img {  max-height: 60vh; max-height: 600px; }'};
   }
   div.content div {
     h2,
