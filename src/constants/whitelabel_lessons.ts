@@ -23,11 +23,11 @@ const LESSONS: LessonType[] = [
     notionId: '4a1a397dd4144022932f889d6a16786c',
     slug: 'banklessdao-constitution',
     imageLinks: [
-      '/BanklessDAO/lesson/banklessdao-constitution/introduction-a183af73.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/the-genesis-fb563012.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/the-bankless-movement-1cf09f15.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/banklessdao-5b519091.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/mission-vision-38958ca1.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/introduction-c1e5ffea.svg',
+      '/BanklessDAO/lesson/banklessdao-constitution/the-genesis-e6123df4.svg',
+      '/BanklessDAO/lesson/banklessdao-constitution/the-bankless-movement-1ead8a94.svg',
+      '/BanklessDAO/lesson/banklessdao-constitution/banklessdao-ecee4c05.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/mission-vision-abda2619.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/values-5f6d4d83.png',
       '/BanklessDAO/lesson/banklessdao-constitution/values-cca16d71.jpg',
       '/BanklessDAO/lesson/banklessdao-constitution/values-8c2779e5.jpg',
@@ -57,19 +57,19 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'f105296784134279a3d90697b6c0ace2',
         title: 'Introduction',
-        content: '<div class="bloc1"><p>The BanklessDAO Constitution and Community Handbook represent our community\'s values, mission, structure, processes, and governance. It is the codification of our community operating system and is meant to serve, rather than constrain its members. Like our community itself, it will always be a work in progress. This lesson is a summary expression of that handbook. Please reference it directly as the canonical source for questions of process and procedure.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/introduction-a183af73.png\'></div>'
+        content: '<div class="bloc1"><p>The BanklessDAO Constitution and Community Handbook represent our community\'s values, mission, structure, processes, and governance. It is the codification of our community operating system and is meant to serve rather than constrain its members. Like our community itself, it will always be a work in progress. This lesson is a summary expression of that handbook. Please reference it directly as the canonical source for questions of process and procedure…</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/introduction-c1e5ffea.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '110f75fb1df24b96b6f91758515ec899',
         title: 'The Genesis',
-        content: '<div class="bloc1"><p>BanklessDAO was founded by David Hoffman and Ryan Sean Adams on May 4th, 2021, when they airdropped BANK tokens to each Bankless premium subscriber. Following the true ethos of decentralization, they stepped back and let the DAO take shape. While their media company, Bankless LLC, continues to operate as its own media node, the Bankless brand is propagated through the DAO and its sub-DAOs. Now, the Bankless ecosystem as a whole creates user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/the-genesis-fb563012.png\'></div>'
+        content: '<div class="bloc1"><p>BanklessDAO was founded by David Hoffman and Ryan Sean Adams on May 4th, 2021, when they airdropped BANK tokens to each Bankless premium subscriber. Following the true ethos of decentralization, they stepped back and let the DAO take shape. While their media company, Bankless LLC, continues to operate as its own media node, the Bankless brand is propagated through the DAO and its sub-DAOs. Now, the Bankless ecosystem as a whole creates user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/the-genesis-e6123df4.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '9669e4350d404026b190a327308c62bf',
         title: 'The Bankless Movement',
-        content: '<div class="bloc1"><p>Bankless is a movement for pioneers seeking liberation from the tyranny of the traditional financial system. Going Bankless means adopting decentralized, permissionless, and censorship-resistant technology. We will achieve financial self-sovereignty, security, and prosperity through these means.</p><p>We seek new ways to build wealth, solve human coordination problems, create culture, and develop cutting-edge thought-leadership in the crypto space. Going Bankless means taking control of your financial health by adopting decentralized and permissionless money systems.</p><p>Bankless is the movement educating the world on how to do it.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/the-bankless-movement-1cf09f15.png\'></div>'
+        content: '<div class="bloc1"><p>Bankless is a movement for pioneers seeking liberation from the tyranny of the traditional financial system. Going Bankless means adopting decentralized, permissionless, and censorship-resistant technology. We will achieve financial self-sovereignty, security, and prosperity through these means.</p><p>We seek new ways to build wealth, solve human coordination problems, create culture, and develop cutting-edge thought-leadership in the crypto space. Going Bankless means taking control of your financial health by adopting decentralized and permissionless money systems.</p><p>Bankless is the movement educating the world on how to do it.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/the-bankless-movement-1ead8a94.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -91,13 +91,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '45ad4dde19464097bebc4ad355293d52',
         title: 'BanklessDAO',
-        content: '<div class="bloc1"><p>The BanklessDAO is a decentralized autonomous organization that acts as a steward of the Bankless Movement, progressing the world towards a future of greater freedom. BanklessDAO is a community of passionate Web3 thought-leaders who aim to educate new users, produce written and audio media, build DAO tooling, provide consulting services, develop Web3 scholarship, and create a social and creative home base for anyone in Web3. We’re so much more than a social DAO—we’re a shipping, building, and innovating DAO. See <a href=\'https://snapshot.org/#/banklessvault.eth/proposal/QmdoixPMMT76vSt6ewkE87JZJywS1piYsGC3nJJpcrPXKS\'>The Genesis Proposal</a></p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/banklessdao-5b519091.png\'></div>'
+        content: '<div class="bloc1"><p>The BanklessDAO is a decentralized autonomous organization that acts as a steward of the Bankless Movement, progressing the world towards a future of greater freedom. BanklessDAO is a community of passionate Web3 thought-leaders who aim to educate new users, produce written and audio media, build DAO tooling, provide consulting services, develop Web3 scholarship, and create a social and creative home base for anyone in Web3. We’re so much more than a social DAO—we’re a shipping, building, and innovating DAO. See <a href=\'https://snapshot.org/#/banklessvault.eth/proposal/QmdoixPMMT76vSt6ewkE87JZJywS1piYsGC3nJJpcrPXKS\'>The Genesis Proposal</a></p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/banklessdao-ecee4c05.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'd6e6c64700634fef8bbb9c9dc832778f',
         title: 'Mission & Vision',
-        content: '<div class="bloc1"><p>Our mission is to help the world go Bankless by creating user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture. The nodes in our growing ecosystem collaborate to create inroads for people to discover, use, learn and enjoy the benefits of Web3. Everyone falls down the rabbit hole in a different way—we provide those diverse paths.</p><p>Our Vision is to make financial independence, decentralized work, and creative freedom accessible to all. We work to build a world where anyone with an internet connection has access to the tools needed to achieve financial independence. We want everyone to be able to open a computer, find a DAO, start working, and get paid. We want to enable visionaries to unlock their true creative freedom with the power of Web3.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/mission-vision-38958ca1.png\'></div>'
+        content: '<div class="bloc1"><p>Our mission is to help the world go Bankless by creating user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture. The nodes in our growing ecosystem collaborate to create inroads for people to discover, use, learn and enjoy the benefits of Web3. Everyone falls down the rabbit hole in a different way—we provide those diverse paths.</p><p>Our Vision is to make financial independence, decentralized work, and creative freedom accessible to all. We work to build a world where anyone with an internet connection has access to the tools needed to achieve financial independence. We want everyone to be able to open a computer, find a DAO, start working, and get paid. We want to enable visionaries to unlock their true creative freedom with the power of Web3.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/mission-vision-abda2619.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -349,6 +349,22 @@ const LESSONS: LessonType[] = [
         notionId: 'db2ed318bfb54bf799ce206b4c449850',
         title: 'Slide 2',
         content: '<div class="bloc1"><p>demo with image</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/tokenomics-basics/slide-2-0d3d40bd.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '2e57760ec2c44b23a50842a600167a30',
+        title: 'Quiz',
+        quiz: {
+          question: 'question',
+          rightAnswerNumber: 3,
+          answers: [
+            'answer 1',
+            'answer 2',
+            'answer 3',
+            'answer 4'
+          ],
+          id: 'tokenomics-basics-1'
+        }
       },
       {
         type: 'END',
