@@ -8,6 +8,7 @@ import IntroToDeFi from './IntroToDeFi'
 import BlockchainBasics from './BlockchainBasics'
 import AcademyCommunity from './AcademyCommunity'
 import Web3Security from './Web3Security'
+import BlockchainsLayer1 from './BlockchainsLayer1'
 import { ConnectFirst } from './WalletConnect'
 
 import { useActiveWeb3React } from 'hooks'
@@ -28,6 +29,7 @@ const QuestComponent = (
     BlockchainBasics: BlockchainBasics,
     AcademyCommunity: AcademyCommunity,
     Web3Security: Web3Security,
+    BlockchainsLayer1: BlockchainsLayer1,
   }
   if (!component || !QUESTS.includes(component)) return null
 
