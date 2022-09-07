@@ -34,7 +34,6 @@ export default async function handler(
       if (questCompleted?.id) {
         return res.json({ status: 'Quest already completed' })
       } else {
-        // Backend onchain quest verification
         if (quest === 'DEXAggregators') {
           if (!tx || typeof tx !== 'string') {
             return res.json({ error: 'Missing transaction' })
@@ -44,15 +43,7 @@ export default async function handler(
             address,
             tx
           )
-          if (!isOnchainQuestCompleted)
-            return res.json({ error: 'Onchain quest not completed' })
-        }
-        const [createQuestCompleted] = await db(TABLES.quests).insert(
-          { quest: quest, user_id: userId },
-          ['id']
-        )
-        if (createQuestCompleted?.id) {
-          return res.json({ status: 'Quest completed' })
+          return res.json({ quest: isOnchainQuestCompleted })
         }
       }
     }
