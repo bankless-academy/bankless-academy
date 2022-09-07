@@ -56,7 +56,8 @@ export const MERKLE_DISTRIBUTOR_ADDRESS = {
 
 export const DefaultProviderName = 'DEFAULT'
 
-export const INFURA_ID = '18533a1dfcd146b8994f38b8e6af372c'
+export const INFURA_ID =
+  process.env.INFURA_ID || 'cb578d660f614bbcb41b3c03553ff6f2'
 
 export const POAP_EVENT_IDS: string[] = LESSONS.filter(
   (lesson) => lesson.poapEventId
