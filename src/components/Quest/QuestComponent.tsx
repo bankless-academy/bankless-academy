@@ -9,6 +9,7 @@ import BlockchainBasics from './BlockchainBasics'
 import AcademyCommunity from './AcademyCommunity'
 import Web3Security from './Web3Security'
 import BlockchainsLayer1 from './BlockchainsLayer1'
+import DEXAggregators from './DEXAggregators'
 import { ConnectFirst } from './WalletConnect'
 
 import { useActiveWeb3React } from 'hooks'
@@ -30,6 +31,7 @@ const QuestComponent = (
     AcademyCommunity: AcademyCommunity,
     Web3Security: Web3Security,
     BlockchainsLayer1: BlockchainsLayer1,
+    DEXAggregators: DEXAggregators,
   }
   if (!component || !QUESTS.includes(component)) return null
 
