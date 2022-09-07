@@ -1198,6 +1198,93 @@ const LESSONS: LessonType[] = [
         title: 'End of lesson'
       }
     ]
+  },
+  {
+    poapImageLink: '/lesson/dex-aggregators/poap-a82f8a55.mp4',
+    lessonImageLink: '/lesson/dex-aggregators/lesson-68757615.png',
+    socialImageLink: '/lesson/dex-aggregators/social-00850afd.png',
+    learningActions: '',
+    marketingDescription: 'Learn and level up on DEX Aggregators, Liquidity, and Trade-Offs.',
+    poapEventId: null,
+    duration: 15,
+    learnings: '',
+    difficulty: undefined,
+    description: 'Learn and level up on DEX Aggregators, Liquidity, and Trade-Offs.',
+    name: 'DEX Aggregators',
+    quest: 'DEXAggregators',
+    publicationStatus: 'hidden',
+    isFeaturedOnHomepage: false,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    notionId: '42578b8813114832b8930cf59f6125af',
+    slug: 'dex-aggregators',
+    imageLinks: [],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: 'c204f619c50a4328affb9bda007b22ef',
+        title: '<strong>INTRODUCTION</strong>',
+        content: '<div class="bloc1"><ul><li>DEX &gt; CEX for user value gain</li><li>code-based AMMs</li><li>DEX aggregator &gt; single DEX (google flights)</li><li>All to save explorers money</li></ul></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'fc85b552a0c34e36869a4109d109e1d7',
+        title: 'Drying up Liquidity',
+        content: '<div class="bloc1"><ul><li>tokens get spread out more and more as new DEXs launch</li> <ul><li>thinning liquidity</li></ul> <li>trades in low liquidity can affect prices more easily</li> <ul><li>supplyand demand explain?</li></ul> <li>DEX aggregators bring the liquidity back together for users</li></ul></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'e666b7c87f4341759e90706b32329871',
+        title: 'Aggre-what?',
+        content: '<div class="bloc1"><ul><li>aggregators bring things together to get best prices for users</li> <ul><li>google flights</li></ul> </ul></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '2cf155ee9e3a4d4fb0a9c78f888d2373',
+        title: 'Getting Meta',
+        content: '<div class="bloc1"><ul><li>Meta-aggregators go one layer more abstract, aggregate the aggregators</li> <ul><li>metamask swap, cowswap</li></ul> <li>can add fees on top of prices</li></ul></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'd315b7234f8046b4be2e0de1ab64f839',
+        title: 'But how do aggregators save me money?',
+        content: '<div class="bloc1"><ul><li>split trades up across different liquidity sources to reduce price impact</li><li>multiple small trades in multiple DEXs add up to a big trade from Explorer’s wallet</li></ul></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '063815f2667146a2921df5c4c3ca1663',
+        title: 'Reduce Gas costs',
+        content: '<div class="bloc1"><ul><li>simulate trades off-chain to find trade route that leaves Explorer with most value at the end</li> <ul><li>includes gas costs in calculation</li></ul> <li>1inch refunds a portion of gas costs on eth mainnet - paid in $1inch</li></ul></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '87861ffc6e7a42b3a2fb0a24f97176c8',
+        title: 'Gas explained',
+        content: '<div class="bloc1"><ul><li>how does blockchain gas work?</li><li>gas = fuel for running code</li> <ul><li>car analogy</li></ul> <li>gas cost = gas used * gas price</li> <ul><li>example with ETH and gasoline</li></ul> </ul></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'ab4cfb382ca64e64b836ac9a416ea483',
+        title: '🥪 attacks are a problem on big trades',
+        content: '<div class="bloc1"><ul><li>Users swapping lose value up to their slippage tolerance through MEV</li> <ul><li>Miners change prices in AMMs to steal up to users’ slippage tolerance</li></ul> <li>Fun fact: Sandwich attacks stole $235,000,000 in slippage in 2021</li><li>1inch has OTC trades that are protected from MEV attacks</li> <ul><li>P2P trades facilitated by 1inch</li></ul> </ul></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '18f1f2c0e7b84cfbafe1b26e139f0c25',
+        title: '1inch interface demo',
+        content: ''
+      },
+      {
+        type: 'QUEST',
+        title: 'DEX Aggregators Quest',
+        component: 'DEXAggregators'
+      },
+      {
+        type: 'END',
+        title: 'End of lesson'
+      }
+    ]
   }
 ]
 
