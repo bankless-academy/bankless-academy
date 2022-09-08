@@ -44,8 +44,9 @@ const DEXAggregators = (
                 BANK
               </a>
               {' token on '}
+              {/* TODO: add referrerAddress? */}
               <a
-                href="https://app.1inch.io/#/137/classic/swap/MATIC/BANK"
+                href="https://app.1inch.io/#/137/classic/swap/MATIC/0xdb7cb471dd0b49b29cab4a1c14d070f27216a0ab"
                 target="_blank"
                 rel="noreferrer"
               >
