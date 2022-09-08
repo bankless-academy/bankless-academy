@@ -16,7 +16,10 @@ const DEXAggregators = (
   const validateQuest = async (tx) => {
     try {
       const questResult = await axios.get(
-        `/api/validate-quest?address=${account}&quest=DEXAggregators&tx=${tx}`
+        `/api/validate-quest?address=${account}&quest=DEXAggregators&tx=${tx.replaceAll(
+          'https://polygonscan.com/tx/',
+          ''
+        )}`
       )
       setIsTransactionVerified(questResult?.data?.isQuestValidated)
     } catch (error) {
