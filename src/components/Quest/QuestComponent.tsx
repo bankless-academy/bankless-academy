@@ -17,6 +17,8 @@ import { QUESTS } from 'constants/index'
 
 export type QuestComponentType = typeof QUESTS[number]
 
+export const ONCHAIN_QUESTS = ['DEXAggregators']
+
 const QuestComponent = (
   component: QuestComponentType | null
 ): {
@@ -44,7 +46,12 @@ const QuestComponent = (
       : WalletConnect(account)
 
   useEffect(() => {
-    if (account && Component.isQuestCompleted) {
+    if (
+      account &&
+      Component.isQuestCompleted &&
+      // don't do the validation here for onchain quests but inside the quest component instead
+      !ONCHAIN_QUESTS.includes(component)
+    ) {
       axios
         .get(`/api/validate-quest?address=${account}&quest=${component}`)
         .catch(function (error) {
