@@ -1223,8 +1223,8 @@ const LESSONS: LessonType[] = [
     slides: [
       {
         type: 'LEARN',
-        notionId: 'c204f619c50a4328affb9bda007b22ef',
-        title: '<strong>INTRODUCTION</strong>',
+        notionId: 'fdab9a0b1c7b457a9110f88dbac53d71',
+        title: '<strong>Introduction</strong>',
         content: '<div class="bloc1"><ul><li>DEX &gt; CEX for user value gain</li><li>code-based AMMs</li><li>DEX aggregator &gt; single DEX (google flights)</li><li>All to save explorers money</li></ul></div>'
       },
       {
@@ -1268,12 +1268,6 @@ const LESSONS: LessonType[] = [
         notionId: 'ab4cfb382ca64e64b836ac9a416ea483',
         title: '🥪 attacks are a problem on big trades',
         content: '<div class="bloc1"><ul><li>Users swapping lose value up to their slippage tolerance through MEV</li> <ul><li>Miners change prices in AMMs to steal up to users’ slippage tolerance</li></ul> <li>Fun fact: Sandwich attacks stole $235,000,000 in slippage in 2021</li><li>1inch has OTC trades that are protected from MEV attacks</li> <ul><li>P2P trades facilitated by 1inch</li></ul> </ul></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '18f1f2c0e7b84cfbafe1b26e139f0c25',
-        title: '1inch interface demo',
-        content: ''
       },
       {
         type: 'QUEST',
