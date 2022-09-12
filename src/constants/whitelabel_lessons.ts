@@ -28,10 +28,10 @@ const LESSONS: LessonType[] = [
       '/BanklessDAO/lesson/banklessdao-constitution/the-bankless-movement-50f818c9.png',
       '/BanklessDAO/lesson/banklessdao-constitution/banklessdao-de8e4e7d.png',
       '/BanklessDAO/lesson/banklessdao-constitution/mission-vision-9e211877.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/values-0e3d2aa3.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/values-b82a939e.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/values-a85a2a84.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/values-3ea6ec1f.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/values-1668d0af.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/values-520ec8cc.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/values-851d8d30.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/values-2be7d002.png',
       '/BanklessDAO/lesson/banklessdao-constitution/dao-membership-7caabebd.png',
       '/BanklessDAO/lesson/banklessdao-constitution/membership-levels-b13f5565.png',
       '/BanklessDAO/lesson/banklessdao-constitution/membership-levels-fe38ae52.png',
@@ -102,7 +102,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '3d45ea8b6eb2413eb41a556edc4174dc',
         title: 'Values',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/values-0e3d2aa3.png\'></div><div class="bloc-b"><h2>Education</h2><p>We seek to become a trusted guide that empowers people all over the globe to adopt decentralized finance by sharing accurate, truthful, and objective information.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/values-b82a939e.png\'></div><div class="bloc-b"><h2>Integrity</h2><p>We operate transparently and build trust through radically public discourse and financial auditability.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/values-a85a2a84.png\'></div><div class="bloc-b"><h2>Decentralized Governance</h2><p>We put decision-making into the hands of the collective. We create legitimacy through an environment where the best ideas win.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/values-3ea6ec1f.png\'></div><div class="bloc-b"><h2>Culture</h2><p>We reward action and embrace risk. We empower our community to continually drive new initiatives by providing a space to self-organize and quickly move from idea to action.</p></div></div>'
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/values-1668d0af.png\'></div><div class="bloc-b"><h2>Education</h2><p>We seek to become a trusted guide that empowers people all over the globe to adopt decentralized finance by sharing accurate, truthful, and objective information.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/values-520ec8cc.png\'></div><div class="bloc-b"><h2>Integrity</h2><p>We operate transparently and build trust through radically public discourse and financial auditability.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/values-851d8d30.png\'></div><div class="bloc-b"><h2>Decentralized Governance</h2><p>We put decision-making into the hands of the collective. We create legitimacy through an environment where the best ideas win.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/values-2be7d002.png\'></div><div class="bloc-b"><h2>Culture</h2><p>We reward action and embrace risk. We empower our community to continually drive new initiatives by providing a space to self-organize and quickly move from idea to action.</p></div></div>'
       },
       {
         type: 'QUIZ',
