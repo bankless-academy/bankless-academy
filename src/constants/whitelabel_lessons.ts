@@ -23,11 +23,11 @@ const LESSONS: LessonType[] = [
     notionId: '4a1a397dd4144022932f889d6a16786c',
     slug: 'banklessdao-constitution',
     imageLinks: [
-      '/BanklessDAO/lesson/banklessdao-constitution/introduction-72080079.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/introduction-5d6722de.png',
       '/BanklessDAO/lesson/banklessdao-constitution/the-genesis-def3d2c2.png',
       '/BanklessDAO/lesson/banklessdao-constitution/the-bankless-movement-50f818c9.png',
       '/BanklessDAO/lesson/banklessdao-constitution/banklessdao-de8e4e7d.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/mission-vision-9e211877.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/mission-vision-05bf5e75.png',
       '/BanklessDAO/lesson/banklessdao-constitution/values-1668d0af.png',
       '/BanklessDAO/lesson/banklessdao-constitution/values-520ec8cc.png',
       '/BanklessDAO/lesson/banklessdao-constitution/values-851d8d30.png',
@@ -39,7 +39,7 @@ const LESSONS: LessonType[] = [
       '/BanklessDAO/lesson/banklessdao-constitution/guilds-f9611a05.png',
       '/BanklessDAO/lesson/banklessdao-constitution/projects-9b285c8a.png',
       '/BanklessDAO/lesson/banklessdao-constitution/grants-committee-ecfd569f.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/dao-cycles-1147cb8b.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/dao-cycles-79eed215.png',
       '/BanklessDAO/lesson/banklessdao-constitution/3-cycles-0f3079de.png',
       '/BanklessDAO/lesson/banklessdao-constitution/3-cycles-42a485ba.png',
       '/BanklessDAO/lesson/banklessdao-constitution/3-cycles-c49bbfea.png',
@@ -56,7 +56,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'f105296784134279a3d90697b6c0ace2',
         title: 'Introduction',
-        content: '<div class="bloc1"><p>The BanklessDAO Constitution and Community Handbook represent our community\'s values, mission, structure, processes, and governance. It is the codification of our community operating system and is meant to serve rather than constrain its members. Like our community itself, it will always be a work in progress. This lesson is a summary expression of that handbook. Please reference it directly as the canonical source for questions of process and procedure…</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/introduction-72080079.png\'></div>'
+        content: '<div class="bloc1"><p>The BanklessDAO Constitution and Community Handbook represent our community\'s values, mission, structure, processes, and governance. It is the codification of our community operating system and is meant to serve rather than constrain its members. Like our community itself, it will always be a work in progress. This lesson is a summary expression of that handbook. Please reference it directly as the canonical source for questions of process and procedure…</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/introduction-5d6722de.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -96,7 +96,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'd6e6c64700634fef8bbb9c9dc832778f',
         title: 'Mission & Vision',
-        content: '<div class="bloc1"><p>Our mission is to help the world go Bankless by creating user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture. The nodes in our growing ecosystem collaborate to create inroads for people to discover, use, learn and enjoy the benefits of Web3. Everyone falls down the rabbit hole in a different way—we provide those diverse paths.</p><p>Our Vision is to make financial independence, decentralized work, and creative freedom accessible to all. We work to build a world where anyone with an internet connection has access to the tools needed to achieve financial independence. We want everyone to be able to open a computer, find a DAO, start working, and get paid. We want to enable visionaries to unlock their true creative freedom with the power of Web3.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/mission-vision-9e211877.png\'></div>'
+        content: '<div class="bloc1"><p>Our mission is to help the world go Bankless by creating user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture. The nodes in our growing ecosystem collaborate to create inroads for people to discover, use, learn and enjoy the benefits of Web3. Everyone falls down the rabbit hole in a different way—we provide those diverse paths.</p><p>Our Vision is to make financial independence, decentralized work, and creative freedom accessible to all. We work to build a world where anyone with an internet connection has access to the tools needed to achieve financial independence. We want everyone to be able to open a computer, find a DAO, start working, and get paid. We want to enable visionaries to unlock their true creative freedom with the power of Web3.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/mission-vision-05bf5e75.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -192,7 +192,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '1270f2e759764712b1a6566fcf6c1eff',
         title: '<strong>DAO Cycles</strong>',
-        content: '<div class="bloc1"><p>In order to create opportunities for alignment and transparency, the DAO operates in nested inspect-and-adapt loops. Starting with the largest and moving to the smallest, these are the following DAO-wide alignment and accountability loops.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/dao-cycles-1147cb8b.png\'></div>'
+        content: '<div class="bloc1"><p>In order to create opportunities for alignment and transparency, the DAO operates in nested inspect-and-adapt loops. Starting with the largest and moving to the smallest, these are the following DAO-wide alignment and accountability loops.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/dao-cycles-79eed215.png\'></div>'
       },
       {
         type: 'LEARN',
