@@ -23,6 +23,7 @@ console.log('NOTION_ID', NOTION_ID)
 const KEY_MATCHING = {
   'Module name': 'name',
   'Module image': 'moduleImageLink',
+  'Social image': 'socialImageLink',
   Description: 'description',
   // 'Parent Module': 'parentModule',
   // Submodules: 'subModules',
@@ -48,7 +49,7 @@ const download_image = (url, image_path) =>
 const get_img = (imageLink, slug, image_name) => {
   const [file_name] = imageLink.split('?')
   const file_extension = file_name
-    .match(/\.(png|svg|jpg|jpeg|webp)/)[1]
+    .match(/\.(png|svg|jpg|jpeg|webp|mp4)/)[1]
     .replace('jpeg', 'jpg')
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
@@ -88,6 +89,13 @@ axios
           module.moduleImageLink,
           module.slug,
           ''
+        )
+      }
+      if (module.socialImageLink) {
+        module.socialImageLink = get_img(
+          module.socialImageLink,
+          module.slug,
+          '-social'
         )
       }
       module.parentModule = notion.fields['Parent module'][0] || null

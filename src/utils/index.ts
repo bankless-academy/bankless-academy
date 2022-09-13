@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Contract } from '@ethersproject/contracts'
 import { getAddress } from '@ethersproject/address'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
@@ -6,8 +7,10 @@ import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { NetworkConnector } from '@web3-react/network-connector'
 import * as ethUtil from 'ethereumjs-util'
 import { ethers } from 'ethers'
+import { Network } from '@ethersproject/networks'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
+import ONEINCH_SWAP_ABI from 'abis/1inch.json'
 
 declare global {
   interface Window {
@@ -164,4 +167,69 @@ export async function getSignature(
     address.toLowerCase(),
   ])
   return signature
+}
+
+export async function validateOnchainQuest(
+  quest: string,
+  address: string,
+  tx: string
+): Promise<boolean> {
+  try {
+    if (quest === 'DEXAggregators') {
+      const check = []
+      const matic: Network = {
+        name: 'matic',
+        chainId: NETWORKS['matic'].chainId,
+        _defaultProvider: (providers) =>
+          new providers.JsonRpcProvider(NETWORKS['matic'].rpcUrl),
+      }
+      const provider = ethers.getDefaultProvider(matic)
+      const receipt = await provider.waitForTransaction(tx, 2)
+      // console.log('receipt', receipt.status)
+      if (receipt?.status) {
+        check.push(true)
+        console.log('OK tx status confirmed')
+        const txDetails = await provider.getTransaction(tx)
+        // console.log('txDetails', txDetails)
+        if (txDetails) {
+          if (txDetails.from.toLowerCase() === address.toLowerCase()) {
+            check.push(true)
+            console.log('OK from')
+          }
+          if (
+            txDetails.to.toLowerCase() ===
+            // 1inch v4 Router contract
+            '0x1111111254fb6c44bac0bed2854e76f90643097d'.toLowerCase()
+          ) {
+            check.push(true)
+            console.log('OK contract')
+            const iface = new ethers.utils.Interface(ONEINCH_SWAP_ABI)
+            const decodedData = iface.parseTransaction({
+              data: txDetails.data,
+              value: txDetails.value,
+            })
+            // console.log('decodedData', decodedData)
+            if (decodedData.name === 'swap') {
+              check.push(true)
+              console.log('OK swap')
+            }
+            if (
+              decodedData.args[1].includes(
+                '0xDB7Cb471dd0b49b29CAB4a1C14d070f27216a0Ab'
+              )
+            ) {
+              check.push(true)
+              console.log('OK BANK swap')
+            }
+          }
+        }
+      }
+      console.log('checks validated (5)', check.length)
+      return check.length === 5
+    }
+    return false
+  } catch (error) {
+    console.error(error)
+    return false
+  }
 }

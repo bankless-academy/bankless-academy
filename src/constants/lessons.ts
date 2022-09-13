@@ -9,7 +9,7 @@ const LESSONS: LessonType[] = [
     marketingDescription: 'A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.',
     poapEventId: 26971,
     duration: 15,
-    learnings: 'Find out what digital wallets are, what they allow you to do, and how to set up and protect your wallet as you get out and explore Web3.',
+    learnings: '',
     difficulty: 'Easy',
     description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
@@ -239,7 +239,7 @@ const LESSONS: LessonType[] = [
     marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
     poapEventId: 26972,
     duration: 10,
-    learnings: 'Learn what decentralized finance means and discover the game-changing possibilities that new blockchain-powered applications introduce to the world.',
+    learnings: '',
     difficulty: 'Easy',
     description: 'Understand the basics of decentralized finance.',
     name: 'Intro to DeFi',
@@ -271,8 +271,14 @@ const LESSONS: LessonType[] = [
         content: '<div class="bloc1"><p>DeFi—short for <span class="tooltip" definition="No single authority or entity controls the data.">decentralized</span> finance—refers to the fast-growing ecosystem of financial products, protocols, and applications that operate on public <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> networks.</p><p>DeFi is rapidly transforming the world of finance with a range of new tools for putting crypto assets to work. It offers opportunities beyond simply buying crypto on a centralized exchange. It allows anyone and everyone to build a decentralized, bankless lifestyle.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/defi-defined-46782447.svg\'></div>'
       },
       {
-        type: 'QUIZ',
+        type: 'LEARN',
         notionId: '5d93d188e0274acbb22cc32e433c3b67',
+        title: 'Why DeFi?',
+        content: '<div class="bloc1"><p>DeFi gives anyone with an internet connection access to sophisticated financial tools: Trading, Options, Lending and Borrowing.</p><p>DeFi offers these tools to users transparently and openly. Anyone can look at the code and verify that the contract does what it says it does, unlike what banks do with your money behind closed doors.</p><p>There are no middlemen to intermediate or take a cut of your transactions.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '920b875598a34fa59affe46e58ed4e58',
         title: 'Knowledge Check',
         quiz: {
           question: 'What does DeFi stand for? ',
@@ -312,7 +318,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '153a075b1a004f38a9c177486aa95395',
         title: 'What You Can Do With DeFi',
-        content: '<div class="bloc1"><p><span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transactions are <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span>. This refers to a public <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps. </p><p><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span> and DeFi platforms enable users to make an ever increasing number of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg\'></div>'
+        content: '<div class="bloc1"><p><span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transactions are <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span>. This refers to a public <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps. </p><p><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span> and DeFi platforms enable users to make more and more types of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -338,7 +344,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'QUIZ',
-        notionId: '6eebe3d8e3494c59ae2bd46cd5925869',
+        notionId: '6dc82def6bab41e2b54efa5a62f941b7',
         title: 'Knowledge Check',
         quiz: {
           question: 'What does HODL mean?',
@@ -359,8 +365,14 @@ const LESSONS: LessonType[] = [
         content: '<div class="bloc1"><p>A decentralized exchange (DEX) shows current exchange rates between different crypto tokens and coins and serves as a digital marketplace that facilitates trading one currency for another by bringing together buyers and sellers. </p><p>The parties involved in a DEX trade don’t need to know or trust each other. In fact, it may appear that you are trading with the DEX. However, in most cases, the DEX simply facilitates the trade between two traders’ <span class="tooltip" definition="A wallet is an application or device used to send and receive crypto assets on the blockchain.">wallets</span> in a <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> fashion.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/trading-8cd72977.svg\'></div>'
       },
       {
-        type: 'QUIZ',
+        type: 'LEARN',
         notionId: '4e1e78e61bc240f0836346fcabb49f54',
+        title: 'So What?',
+        content: '<div class="bloc1"><p>Anyone can trade and participate in markets regardless of your net asset worth. Anyone can enter or exit a position via on-chain protocols.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '1d627556f09143b18edefdf87e059db6',
         title: 'Knowledge Check',
         quiz: {
           question: 'What is a DEX?',
@@ -459,9 +471,9 @@ const LESSONS: LessonType[] = [
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
     poapEventId: null,
     duration: 15,
-    learnings: 'Take a closer look at the concepts and technology that make blockchains work and gain a clearer understanding of what makes them revolutionary. ',
+    learnings: '',
     difficulty: 'Easy',
-    description: 'Learn about the fundamental architecture of blockchain technology',
+    description: 'Learn about the fundamental architecture of blockchain technology.',
     name: 'Blockchain Basics',
     quest: 'BlockchainBasics',
     publicationStatus: 'publish',
@@ -664,12 +676,12 @@ const LESSONS: LessonType[] = [
     lessonImageLink: '/lesson/academy-community/lesson-755fe7a3.png',
     socialImageLink: '/lesson/academy-community/social-1f64464b.jpg',
     learningActions: '',
-    marketingDescription: 'Join the Academy Explorer Community on gm.xyz',
+    marketingDescription: 'Join the Academy Explorer Community on gm.xyz.',
     poapEventId: null,
     duration: 10,
     learnings: '',
     difficulty: 'Easy',
-    description: 'Join the Academy Explorer Community on gm.xyz',
+    description: 'Join the Academy Explorer Community on gm.xyz.',
     name: 'Academy Community',
     quest: 'AcademyCommunity',
     publicationStatus: 'publish',
@@ -952,212 +964,315 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: null,
-    lessonImageLink: null,
-    socialImageLink: null,
+    poapImageLink: '/lesson/blockchains-layer-1/poap-28a03b13.png',
+    lessonImageLink: '/lesson/blockchains-layer-1/lesson-670d86ca.png',
+    socialImageLink: '/lesson/blockchains-layer-1/social-9e12aa4e.png',
     learningActions: '',
-    marketingDescription: 'Description',
+    marketingDescription: 'Understand the Layer 1 blockchains basics and their limitations.',
     poapEventId: null,
-    duration: 20,
+    duration: 15,
     learnings: '',
     difficulty: undefined,
-    description: 'Description',
-    name: 'BanklessDAO Constitution',
+    description: 'Understand the Layer 1 blockchains basics and their limitations.',
+    name: 'Blockchains Layer 1',
+    quest: 'BlockchainsLayer1',
     publicationStatus: 'hidden',
     isFeaturedOnHomepage: false,
-    isCommentsEnabled: true,
+    isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    notionId: '4a1a397dd4144022932f889d6a16786c',
-    slug: 'banklessdao-constitution',
+    notionId: '6e14e3cfc6a44087b3b3d15dd07d2fee',
+    slug: 'blockchains-layer-1',
     imageLinks: [
-      '/lesson/banklessdao-constitution/introduction-a183af73.png',
-      '/lesson/banklessdao-constitution/the-genesis-fb563012.png',
-      '/lesson/banklessdao-constitution/the-bankless-movement-1cf09f15.png',
-      '/lesson/banklessdao-constitution/banklessdao-5b519091.png',
-      '/lesson/banklessdao-constitution/mission-vision-38958ca1.png',
-      '/lesson/banklessdao-constitution/values-5f6d4d83.png',
-      '/lesson/banklessdao-constitution/values-cca16d71.jpg',
-      '/lesson/banklessdao-constitution/values-8c2779e5.jpg',
-      '/lesson/banklessdao-constitution/values-040efbbb.webp',
-      '/lesson/banklessdao-constitution/dao-membership-f5666227.png',
-      '/lesson/banklessdao-constitution/membership-levels-c2b41e21.png',
-      '/lesson/banklessdao-constitution/membership-levels-8b2dea38.png',
-      '/lesson/banklessdao-constitution/membership-levels-d8b40940.png',
-      '/lesson/banklessdao-constitution/dao-organizational-units-6209370d.png',
-      '/lesson/banklessdao-constitution/guilds-c93f5169.png',
-      '/lesson/banklessdao-constitution/projects-42552391.png',
-      '/lesson/banklessdao-constitution/grants-committee-e02f2092.png',
-      '/lesson/banklessdao-constitution/dao-cycles-73797824.png',
-      '/lesson/banklessdao-constitution/3-cycles-df8ddbf1.png',
-      '/lesson/banklessdao-constitution/3-cycles-972d60fc.png',
-      '/lesson/banklessdao-constitution/3-cycles-fb07ffd5.png',
-      '/lesson/banklessdao-constitution/dao-governance-bfb0e875.png',
-      '/lesson/banklessdao-constitution/step-1-gauge-support-193b1bcb.png',
-      '/lesson/banklessdao-constitution/step-2-draft-proposal-1a127556.png',
-      '/lesson/banklessdao-constitution/step-3-vote-a107f7c8.png',
-      '/lesson/banklessdao-constitution/funding-61f60a40.png',
-      '/lesson/banklessdao-constitution/intrateam-compensation-4e7b8680.png',
-      '/lesson/banklessdao-constitution/code-of-conduct-93a167e4.png'
+      '/lesson/blockchains-layer-1/blockchain-trilemma-112547fd.png',
+      '/lesson/blockchains-layer-1/security-and-attacks-614e91b8.jpg',
+      '/lesson/blockchains-layer-1/scalability-throughput-ef6f434d.png',
+      '/lesson/blockchains-layer-1/is-it-decentralized-9c900798.png',
+      '/lesson/blockchains-layer-1/some-examples-e0e8eb7c.png',
+      '/lesson/blockchains-layer-1/so-what-can-be-done-5aed7436.png',
+      '/lesson/blockchains-layer-1/the-future-of-ethereum-ca844a29.png'
     ],
     slides: [
       {
         type: 'LEARN',
-        notionId: 'f105296784134279a3d90697b6c0ace2',
-        title: 'Introduction',
-        content: '<div class="bloc1"><p>The BanklessDAO Constitution and Community Handbook represent our community\'s values, mission, structure, processes, and governance. It is the codification of our community operating system and is meant to serve, rather than constrain its members. Like our community itself, it will always be a work in progress. This lesson is a summary expression of that handbook. Please reference it directly as the canonical source for questions of process and procedure…</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/introduction-a183af73.png\'></div>'
+        notionId: 'c39a3e32b41c474394eed2485e5f6096',
+        title: '<strong>Introduction</strong>',
+        content: '<div class="bloc1"><p>Problems emerge when more users want to use a blockchain network than it can handle. Large demand for <span class="tooltip" definition="Blockspace is amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s).">blockspace</span> can be temporary or can last as long as users continue to have a strong desire to use the blockchain. In order to still have their transactions processed quickly, Ethereum users can pay skyrocketing fees in times of high demand — pricing out users with less capital and opening opportunities for other blockchains.</p><p>This lesson explores why Ethereum and other blockchains are subject to the Blockchain Trilemma, how the Trilemma is the root cause of the problems described above, and how the Trilemma affects Ethereum’s plans for serving the needs of all their users. We will look at the tradeoffs several blockchains have made with respect to the Blockchain Trilemma, and what those tradeoffs mean for Academy Explorers.</p></div>'
       },
       {
         type: 'LEARN',
-        notionId: '110f75fb1df24b96b6f91758515ec899',
-        title: 'The Genesis',
-        content: '<div class="bloc1"><p>BanklessDAO was founded by David Hoffman and Ryan Sean Adams on May 4th, 2021, when they airdropped BANK tokens to each Bankless premium subscriber. Following the true ethos of decentralization, they stepped back and let the DAO take shape. While their media company, Bankless LLC, continues to operate as its own media node, the Bankless brand is propagated through the DAO and its sub-DAOs. Now, the Bankless ecosystem as a whole creates user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/the-genesis-fb563012.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '9669e4350d404026b190a327308c62bf',
-        title: 'The Bankless Movement',
-        content: '<div class="bloc1"><p>Bankless is a movement for pioneers seeking liberation from the tyranny of the traditional financial system. Going Bankless means adopting decentralized, permissionless, and censorship-resistant technology. Through these means, we will achieve financial self-sovereignty, security, and prosperity.</p><p>We seek new ways to build wealth, solve human coordination problems, create culture, and develop cutting-edge thought-leadership in the crypto space. Going Bankless means taking control of your financial health by adopting decentralized and permissionless money systems.</p><p>Bankless is the movement educating the world on how to do it.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/the-bankless-movement-1cf09f15.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'b2f35cc32826436fb8b39ec6ac801494',
-        title: 'BanklessDAO',
-        content: '<div class="bloc1"><p>The BanklessDAO is a decentralized autonomous organization that acts as a steward of the Bankless Movement, progressing the world towards a future of greater freedom. BanklessDAO is a community of passionate Web3 thought-leaders who aim to educate new users, produce written and audio media, build DAO tooling, provide consulting services, develop Web3 scholarship, and create a social and creative home base for anyone in Web3. We’re so much more than a social DAO—we’re a shipping, building, and innovating DAO. See: <a href=\'https://snapshot.org/#/banklessvault.eth/proposal/QmdoixPMMT76vSt6ewkE87JZJywS1piYsGC3nJJpcrPXKS\'>The Genesis Proposal</a>.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/banklessdao-5b519091.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'f984af75507c4dfa8f2812ab4c090cae',
-        title: 'Mission & Vision',
-        content: '<div class="bloc1"><p>Our mission is to help the world go Bankless by creating user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture. The nodes in our growing ecosystem collaborate to create inroads for people to discover, use, learn and enjoy the benefits of Web3. Everyone falls down the rabbit hole in a different way—we provide those diverse paths.</p><p>Our Vision is to make financial independence, decentralized work, and creative freedom accessible to all. We work to build a world where anyone with an internet connection has access to the tools needed to achieve financial independence. We want everyone to be able to open a computer, find a DAO, start working, and get paid. We want to enable visionaries to unlock their true creative freedom with the power of Web3.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/mission-vision-38958ca1.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '3d45ea8b6eb2413eb41a556edc4174dc',
-        title: 'Values',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/values-5f6d4d83.png\'></div><div class="bloc-b"><h2>Education</h2><p>We learn from each other. We seek to become a trusted guide that empowers people all over the globe to adopt decentralized finance by sharing accurate, truthful, and objective information.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/values-cca16d71.jpg\'></div><div class="bloc-b"><h2>Integrity</h2><p>We operate transparently and build trust through radically public discourse and financial auditability.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/values-8c2779e5.jpg\'></div><div class="bloc-b"><h2>Decentralized Governance</h2><p>We put decision-making into the hands of the collective. We create legitimacy through an environment where the best ideas win.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/values-040efbbb.webp\'></div><div class="bloc-b"><h2>Culture</h2><p>We reward action and embrace risk. We empower our community to continually drive new initiatives by providing a space to self-organize and quickly move from idea to action.</p></div></div>'
+        notionId: '4dfda718520e4f5ea01dce2e8ee15529',
+        title: 'Blockchain Trilemma',
+        content: '<div class="bloc1"><p>As implied by the word <em><strong>tri</strong></em>lemma, there are three qualities of blockchains that compete with each other and prevent optimizing for all three at once.</p><p>These are: <span class="tooltip" definition="Ability of a blockchain to withstand hacking attempts, code exploits, and economic exploits among other attacks, and continue to function as normal. ">Security</span>, <span class="tooltip" definition="A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users.">Scalability</span>, and <span class="tooltip" definition="Principle that no single authority or entity should control the blockchain data.">Decentralization</span>.</p><p>In order for a blockchain to serve as an unbiased foundation for a monetary system at a global scale, it must have a high amount of all three aspects. A monetary system needs to be secure from fraud, safe from attacks by censors through decentralization, and scalable to meet the needs of over 7 billion humans in a global society.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/blockchain-trilemma-112547fd.png\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: 'c9eb3e04d0b94a168f4b071cedc4a117',
-        title: '✅ Knowledge Check',
+        notionId: '8a9d852b8f374a9d815917752850955e',
+        title: '✅ TODO',
         quiz: {
-          question: 'What are the Bankless values?',
-          rightAnswerNumber: 2,
+          question: 'Question?',
+          rightAnswerNumber: 1,
           answers: [
-            'Centralization',
-            'Education, Integrity, Decentralized Governance, Culture',
-            'Transaction speed',
-            'Degen'
+            'answer 1',
+            'answer 2'
           ],
-          id: 'banklessdao-constitution-1'
+          id: 'blockchains-layer-1-1'
         }
       },
       {
         type: 'LEARN',
-        notionId: '004bcf07e3f94a22a4f2cd0b9eebb382',
-        title: 'DAO Membership',
-        content: '<div class="bloc1"><p>The collective body of BanklessDAO Discord users is referred to as the BanklessDAO community and is further subdivided into various levels. Membership levels are determined using community-wide roles in Discord. While these roles may grant owners specific access and admin privileges, they do not constitute a hierarchical system granting authority over others. They are social signals designed to aid in communication and coordination. All non-members have two ways to join the DAO. They can hold 35,000 BANK tokens in their ETH wallet or get a free temporary guest pass by completing our onboarding process.</p><p>Guest pass holders are granted 14 days to investigate, participate, and test the community waters and are designated by their “Guest Pass” role tag. Individuals who desire to move beyond the guest status confirm that they possess at least 35,000 BANK tokens at a single address and thereby progress to Level 1 status (full membership).</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/dao-membership-f5666227.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'e7a7a8105f6f43beaa619545533dd3ff',
-        title: 'Membership Levels',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/membership-levels-c2b41e21.png\'></div><div class="bloc-b"><h2><strong>Contributors (L2)</strong></h2><p>Contributor status is achieved via nomination from one\'s peers as valuable members of the DAO and are expected to contribute to the overall health of the DAO.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/membership-levels-8b2dea38.png\'></div><div class="bloc-b"><h2><strong>Whales (L3)</strong></h2><p>Bankless whales hold more than 150k BANK. The membership level grants members access to additional Discord channels.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/membership-levels-d8b40940.png\'></div><div class="bloc-b"><h2><strong>Liquidity Providers (L4)</strong></h2><p>Liquidity providers provide Liquidity for the Eth/Bank pair, representing at least 150k Bank and its equivalent in ETH. Grants access to additional Discord channels.</p></div></div>'
+        notionId: '1fc5863c44bb4437a21bc7cc7cb0cfdf',
+        title: 'Security and Consensus',
+        content: '<div class="bloc1"><p>Security is the most foundational requirement for a public blockchain. Computers within a network (such as a blockchain network) all must agree on what transactions have truly happened in order to work together, this agreement is called <span class="tooltip" definition="Methods used to achieve agreement, trust, and security across a decentralized computer network like blockchains.">consensus</span>. A blockchain is secure if attackers cannot disrupt the network from agreeing on that truth in practice. Consensus algorithms are designed to prevent attacks through different methods.</p><p>Chains like Bitcoin that use Proof of Work consensus prevent fraud by making their consensus algorithm highly competitive; each block producer is racing to solve a math problem and the first to do so wins the right to create the next block and the monetary block reward that comes with it. Fraud would require massive investments in computing power and energy, an attacker would likely spend more than they’d gain. </p></div>'
       },
       {
         type: 'QUIZ',
-        notionId: '596c1836a71f4a6d8becb5378cb92c42',
-        title: '✅ Knowledge Check',
+        notionId: '9455d76687c34494949eb471628f7b56',
+        title: '✅ Consensus',
         quiz: {
-          question: 'Which membership designation can only be achieved through nomination? ',
-          rightAnswerNumber: 2,
+          question: 'Blockchain consensus for cryptocurrencies is:',
+          rightAnswerNumber: 4,
           answers: [
-            'L1 - Member',
-            'L2 - Contributor',
-            'L3 - Whale',
-            'L4 - Liquidy Provider'
+            'The process where all blockchain nodes agree on what has happened on-chain',
+            'Important for everyone in that chain’s ecosystem to prevent fraud',
+            'Secured through economic incentives ',
+            'All of the above'
           ],
-          id: 'banklessdao-constitution-2'
+          id: 'blockchains-layer-1-2'
         }
       },
       {
         type: 'LEARN',
-        notionId: 'd7c9dc69be2b4b92a46c031142469577',
-        title: 'DAO Organizational Units',
-        content: '<div class="bloc1"><p>The DAO is a multicellular network of organizational units united by our shared mission, vision, and values. These units are self-managed, possess their own internal multi-signature wallets, and often develop their own internal governance processes. Three of these organizational units deserve special attention, given their prominence in the current org structure. These are:</p><ol><li>Guilds</li><li>Projects</li><li>Grants Committee</li></ol></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/dao-organizational-units-6209370d.png\'></div>'
+        notionId: 'd22518cb06b944acad0745a1121d39b5',
+        title: 'Security and Attacks',
+        content: '<div class="bloc1"><p>Attacks on blockchain consensus is called a 51% attack, because an attacker needs to have 51% or more of the consensus power on a network to commit fraud by creating false blocks. This means 51% of the computing power solving math problems in Proof of Work consensus, and 51% of the stake in Proof of Stake consensus. Again, fraud would require a massive investment in capital to acquire stake in the network, which will be destroyed if found to be creating false blocks; an attacker would likely spend more than they’d gain.</p><p>In Proof of Stake consensus the block producer isn’t chosen through competition, but is randomly assigned instead. Just like with Proof of Work, the consensus algorithm ensures any single entity cannot regularly “win” the right to create a new <span class="tooltip" definition="A group of transactions on the blockchain.">block</span>. </p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/security-and-attacks-614e91b8.jpg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '6d17200e997843b6a90895ff4ebf11f2',
+        title: '✅ 51% attacks',
+        quiz: {
+          question: 'The end-goal of a 51% attack is to:',
+          rightAnswerNumber: 2,
+          answers: [
+            'Disrupt mining operations',
+            'Commit fraud in blockchain systems',
+            'Create a new cryptocurrency',
+            'Eliminate the other 49%'
+          ],
+          id: 'blockchains-layer-1-3'
+        }
       },
       {
         type: 'LEARN',
-        notionId: '55ea0eaa9efa411c86081f47db7e1b78',
-        title: '<strong>Guilds</strong>',
-        content: '<div class="bloc1"><p>Guilds are professional associations of subject matter experts focused on onboarding, education, and community building. This may be through shared learning events or through providing specialized services within and without the DAO. Individuals responsible for guilds\' smooth operation are called guild coordinators. Guilds elect their coordinators and any other internal roles as needed on a seasonal basis. New guilds may be created (via proposal) based on current interest and perceived value to the DAO.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/guilds-c93f5169.png\'></div>'
+        notionId: '0bfdc60dd92149ee94b626e5c5b9c44d',
+        title: 'Scalability - Throughput',
+        content: '<div class="bloc1"><p><span class="tooltip" definition="A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users.">Scalability</span> refers to a blockchain’s ability to process many transactions quickly. There are two parts that determine a blockchain’s scalability.</p><p>1) Transaction throughput: How many transactions a blockchain can process at once, usually measured in transactions per second (<span class="tooltip" definition="Transactions Per Second. The number of transactions per second processed by a blockchain.">TPS</span>)</p><p>Imagine many people waiting at a bus stop and they all want to travel, they want to ride the bus all at the same time. Every minute, there are only so many people that can travel via bus. To clear the bus stop of people faster, you’d have to use bigger busses (more people) or make the busses run more often (less time). It works the same way with trying to fit many transactions into the small amount of block space that’s available for each block. You can see this visualization with live data at <a href=\'https://txstreet.com/v/eth-btc\'>https://txstreet.com/v/eth-btc</a>.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/scalability-throughput-ef6f434d.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '796f016b847e4383bbeeba78736e620b',
+        title: '✅ TPS',
+        quiz: {
+          question: 'How is the bus stop analogy NOT accurate for blockchain transactions?',
+          rightAnswerNumber: 1,
+          answers: [
+            'Buses can be different sizes, blocks are the same (max) size',
+            'People (transactions) are grouped together into buses (blocks)',
+            'There is a maximum limit of how many people (transactions) can fit into each bus (block)'
+          ],
+          id: 'blockchains-layer-1-4'
+        }
       },
       {
         type: 'LEARN',
-        notionId: 'ef6e9463e8a0414b926ce9c9c55af5b2',
-        title: '<strong>Projects</strong>',
-        content: '<div class="bloc1"><p>While Guilds serve as talent pools, projects act as objective-based initiatives. They are product or service-oriented value streams designed to make an impact and accomplish some defined end. Anyone can start a project. Projects may seek funding by submitting proposals through the DAOs governance process. Each project has a project champion who is uniquely responsible to report and account for that project\'s status and expenditures.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/projects-42552391.png\'></div>'
+        notionId: 'cf8aeea9908e4dc7960f63ae71edcad4',
+        title: 'Scalability - Finality',
+        content: '<div class="bloc1"><p>The second aspect to blockchain scalability is:</p><p>2) Finality: When can we be reasonably sure a transaction won’t get changed or reversed?</p><p>Finality is typically measured in blocks — how many blocks have passed since the transaction was included in a block? The more blocks that get added to the chain afterwards, the more sure we can be that the transaction is finalized. Remember, a secure blockchain consensus algorithm makes it very expensive to change past blocks, and the expense increases the farther back someone changes. We can convert this block number (around 8 for Ethereum) to a finality time by multiplying the number of block confirmations by the blockchains TPS. 8 block confirmations times 15 <span class="tooltip" definition="Transactions Per Second. The number of transactions per second processed by a blockchain.">TPS</span> gives 2 minutes finality time after confirmation.</p></div>'
       },
       {
         type: 'LEARN',
-        notionId: '6475ee2d7d30439a88606bb032e7cd53',
-        title: '<strong>Grants Committee</strong>',
-        content: '<div class="bloc1"><p>This committee is responsible for vetting groups seeking midseason funding and consequently ensuring funded entities provide ongoing transparency into the state of their development. The grants treasury will be used to fund projects that are ready to start mid-season and can’t or shouldn’t wait for the next season for funding. The treasury can also fund projects that don’t align with the current DAO priorities but align with its mission and values and warrant funding.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/grants-committee-e02f2092.png\'></div>'
+        notionId: '484d38249db74050a6a14cf584f44c15',
+        title: 'Decentralization distributes power',
+        content: '<div class="bloc1"><p><span class="tooltip" definition="Principle that no single authority or entity should control the blockchain data.">Decentralization</span> is the final basis of the blockchain trilemma — the process of transferring control and decision-making from a single entity to a distributed network of many. Decentralization is the fundamental principle that enables blockchains to be <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> and censorship-resistant; anyone can use decentralized blockchains, and anyone can build software using them.</p><p>Platforms like Facebook and Twitter can deactivate anyone’s account at any time. Many large streamers on Twitch or Tiktok have found themselves removed from their platforms without cause. Even if social media users can get their accounts reinstated, it can be a long and painful process. If authority in a network is sufficiently decentralized, then there is no way for a person to get removed, these networks are <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span>.</p><p>Without decentralization, a blockchain ledger is just a financial spreadsheet on a bank computer; the bankers decide who gets to create an account with them and if the bank has its assets seized by a malicious government, customers have no recourse. Citizens around the world have had their assets in banks seized; Venezuela, Mexico, and Russia have all had banks nationalized by government throughout history.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '53dd5c9a8dfe468d8a1f3163bfce7230',
+        title: '✅ Why decentralization?',
+        quiz: {
+          question: 'Which of these statements is NOT true for decentralization?',
+          rightAnswerNumber: 3,
+          answers: [
+            'Decentralization makes blockchains censorship-resistant ',
+            'Decentralization makes blockchains permissionless',
+            'Decentralization helps authoritarian powers to maintain control',
+            'Anyone, anywhere can use permissionless systems '
+          ],
+          id: 'blockchains-layer-1-5'
+        }
       },
       {
         type: 'LEARN',
-        notionId: 'b40c36f03eea4917a683d60cdd8f751d',
-        title: '<strong>DAO Cycles</strong>',
-        content: '<div class="bloc1"><p>In order to create opportunities for alignment and transparency, the DAO operates in nested inspect-and-adapt loops. Starting with the largest and moving to the smallest, these are the following DAO-wide alignment and accountability loops.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/dao-cycles-73797824.png\'></div>'
+        notionId: '08840d13c2fe4acca833d5bd31ce7969',
+        title: 'Is it decentralized?',
+        content: '<div class="bloc1"><p>But whether something is decentralized or not isn’t just a yes or no answer. Is 10 controlling entities decentralized? How about 1000? One million? There isn’t a standard cutoff for something being sufficiently decentralized, so it makes sense to think of decentralization as a spectrum. Rather than the only choices being black and white, there is also a multitude of greys in between them.</p><p>So we can say something is more or less decentralized than something else, but not when something “is decentralized”. For a neutral monetary system to be resistant to state-level censorship, a high degree of decentralization is required. Newer blockchains often trade decentralization for scalability, but they leave themselves vulnerable to the same pressures from societies and governments fully centralized platforms feel and will likely begin to engage in the same censorship seen on Facebook and similar networks.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/is-it-decentralized-9c900798.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'd5e125d69d6f4cfe963af2ee0515594a',
+        title: '✅ But is it Decentralized?',
+        quiz: {
+          question: 'Different amounts of decentralization are used by different blockchains. ',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          id: 'blockchains-layer-1-6'
+        }
       },
       {
         type: 'LEARN',
-        notionId: '2377296d2c234f8684d0620bb13e791f',
-        title: '3 <strong>Cycles</strong>',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/3-cycles-df8ddbf1.png\'></div><div class="bloc-b"><h2>Seasons</h2><p>Seasons are funding cycles (typically 3 months) intended to align the DAO’s collective energy to key objectives. These objectives are in the form of funded initiatives that BANK token holders vote on before each season. Seasonal funding is largely dispersed through the Grants Committee.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/3-cycles-972d60fc.png\'></div><div class="bloc-b"><h2><strong>Biweekly Reports</strong></h2><p>Funded projects are encouraged to provide progress updates every other week. Updates can be listed on project wiki pages, forum posts, or weekly Community Calls. The update should include funding used, progress towards goals, and potential blockers.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/banklessdao-constitution/3-cycles-fb07ffd5.png\'></div><div class="bloc-b"><h2><strong>Weekly Community Calls</strong></h2><p>Weekly DAO-wide Community Calls are designed to align initiatives and surface needs. All guest passes and contributors can join on Discord. The stream is also broadcast to Twitch and posted to YouTube for public viewing.</p></div></div>'
+        notionId: 'fdfbd964272445d5981d88c7f4c78410',
+        title: 'Some Examples',
+        content: '<div class="bloc1"><p>Each blockchain has its own approach to the trilemma, and each has made tradeoffs to focus on its goals. Bitcoin and Ethereum prioritize security and decentralization over scalability, leading to long transaction <span class="tooltip" definition="How long it takes until it is safe to trust that a transaction is final and accepted.">finality time</span> for Bitcoin and sky-high transaction fees for Ethereum. The demand to use smart contracts as a “decentralized world finance computer”, especially for DeFi, has meant many users making small transactions cannot afford to use Ethereum.</p><p>This high cost to use has provided an opening for alternative Layer 1’s like Binance chain. Binance prioritized scalability over decentralization for higher transaction throughput and cheaper fees, bringing many users away from Ethereum. Third generation chains like Solana, Hedera, Cosmos, and others use novel methods to try to solve the trilemma, but all blockchains are still subject to these basic constraints. In fact, each chain’s choice defines its ecosystem through the substantial effects that come from that choice.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/some-examples-e0e8eb7c.png\'></div>'
       },
       {
         type: 'LEARN',
-        notionId: 'f640867648fc49469bd99e67d49a8edb',
-        title: '<strong>DAO Governance</strong>',
-        content: '<div class="bloc1"><p>At BanklessDAO, decisions regarding governance, treasury, projects, and proposals are made through a democratic process. BANK holders ratify decisions through off-chain votes held on the voting software, <a href=\'https://snapshot.org/\'>Snapshot</a>. Any BANK holder can vote in a Snapshot. The more tokens a user has, the more voting power they possess.</p><p>While some funding decisions are formally ratified through Snapshot, most other routine decision-making happens informally in our Discord channels, our Forum posts, and our voice rooms through the following increasing levels of consensus.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/dao-governance-bfb0e875.png\'></div>'
+        notionId: '997686d2404c4556a6841a0232705c8b',
+        title: 'So what can be done?',
+        content: '<div class="bloc1"><p>So if Ethereum has prioritized high security and decentralization, how can it scale to serve the needs of all users as the global financial network it aims to become? This is where the Ethereum roadmap can provide some answers: Layer 2s and blockchain sharding.</p><p>Layer 2s are an early solution to increasing Ethereum scalability without compromising on the other two parts of the blockchain trilemma. They are an additional layer sitting on top of the main blockchain, relying on the main chain for security but allowing users to benefit from reduced fees and faster transactions. We will explore them more in detail in our Layer 2 lesson.</p><p>Sharding basically splits the single blockchain into multiple chains that all run together in parallel, like adding more lanes to a road. It enables more transactions to be processed at once without sacrificing security or decentralization. Sharding is not a new technology, many non-blockchain applications use sharding to increase scalability, but it is new for blockchains. It’s very complicated to add sharding to a blockchain like Ethereum <em>while it is running</em>; it’s an area of active research and it will take some time until that transition is ready. </p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/so-what-can-be-done-5aed7436.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'e1a2b41a64f9422c8082603459a28c0e',
+        title: '✅ Layer 2s',
+        quiz: {
+          question: 'Blockchain Layer 2s are:',
+          rightAnswerNumber: 4,
+          answers: [
+            'Reliant on the main chain to provide security and decentralization',
+            'An abstraction on top of the main chain to increase scalability',
+            '100% decentralized',
+            'A and B only'
+          ],
+          id: 'blockchains-layer-1-7'
+        }
       },
       {
         type: 'LEARN',
-        notionId: 'eb2e423e7c164fb9af2d836e6586e1d5',
-        title: 'Step 1: <strong>Gauge Support</strong>',
-        content: '<div class="bloc1"><p>Governance starts with soft consensus and progresses towards formal consensus through three stages. The first stage is to gauge support from the community via the Discord server. This can happen through polls in the dedicated “poll” channel. Polls should include detailed descriptions of the issue at hand and allow for varied options beyond a basic yes or no. E.g. “Like the idea but needs improvement” or \'Keep things the way they are.”</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/step-1-gauge-support-193b1bcb.png\'></div>'
+        notionId: '18c497caf1df4810afb1497884a26962',
+        title: 'The future of Ethereum',
+        content: '<div class="bloc1"><p>Previously known as the Ethereum 2.0 upgrade, the Ethereum network is evolving scalability without sacrificing the other aspects of the trilemma. These changes include the merge to Proof of Stake consensus, Layer 2s going live, sharding of the main chain, and an overall reduction of energy usage. <strong>All of these changes together will mean a faster, more environmentally-friendly, and cheaper Ethereum while still maintaining security and decentralization as core tenets.</strong> The Ethereum Foundation has an excellent webpage on coming <a href=\'https://ethereum.org/en/upgrades/\'>upgrades to Ethereum</a>.</p><p>These things take time, meanwhile, many Layer 2 protocols are building on top of Ethereum to help meet user demand in the short term without requiring updates to the Ethereum protocol itself. These Layer 2 protocols rely on baselayer Ethereum to provide decentralized security while they provide the scalability, and the diversity of Layer 2s is inherently decentralized! Ethereum scaling projects include protocols like Optimistic Ethereum, Polygon, Arbitrum, zkSync, and others.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/the-future-of-ethereum-ca844a29.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '79e758e2b8da45468f9f3f11281e2c6c',
+        title: '✅ Ethereum Future',
+        quiz: {
+          question: 'The future of Ethereum involves:',
+          rightAnswerNumber: 4,
+          answers: [
+            'Using Layer 2s and sharding to increase scalability',
+            'Maintaining decentralization and security as core principles',
+            'Reducing energy consumption of the blockchain using Proof of Stake consensus',
+            'All of the above'
+          ],
+          id: 'blockchains-layer-1-8'
+        }
       },
       {
         type: 'LEARN',
-        notionId: 'b3c8c448772f49599ac48cfd28dfd71b',
-        title: 'Step 2: Draft <strong>Proposal</strong>',
-        content: '<div class="bloc1"><p>If the community has expressed support and interest in the previous step, the next step is to draft a formal proposal. Proposals fall into one of two categories and correspond to the following templates:</p><ol><li><a href=\'https://www.notion.so/bankless/Bankless-DAO-Formal-Proposal-Template-c60d797ceb5b4d0daceb80f72bb1ed2e\'>Grants Request</a></li><li><a href=\'https://docs.google.com/document/d/1UDmH0mJtTNTBzLxJSbIJu7WsCvRhaq1t-_tSjYGHH70/edit#heading=h.tb8tmd3knk0r\'>Improvement Proposals (bDIP)</a></li></ol><p>As the names suggest, the Grants Request proposal template should be used to request funds and the bDIP template should be used to propose changes to the contents of this document.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/step-2-draft-proposal-1a127556.png\'></div>'
+        notionId: 'a229a575b61b4f0f84018a0346de4658',
+        title: 'What does it mean for Explorers?',
+        content: '<div class="bloc1"><p>Even more so at the beginning of your journey, users need low fees to learn and explore the technology with low barriers to entry and low costs from mistakes. The Ethereum blockchain is not that in its current state, but it is one of the best candidates for fulfilling the dream of a global financial computing system. Explorers should learn to interact and use Ethereum without paying massive fees; using Layer 2s allows Explorers to have the security and decentralization benefits of Ethereum combined with the higher scalability.</p><p>The next lesson will explain Layer 2 solutions and how to get started with them. Onward explorers!</p></div>'
+      },
+      {
+        type: 'QUEST',
+        title: 'Blockchains Layer 1 Quest',
+        component: 'BlockchainsLayer1'
+      },
+      {
+        type: 'END',
+        title: 'End of lesson'
+      }
+    ]
+  },
+  {
+    poapImageLink: '/lesson/dex-aggregators/poap-a82f8a55.mp4',
+    lessonImageLink: '/lesson/dex-aggregators/lesson-68757615.png',
+    socialImageLink: '/lesson/dex-aggregators/social-00850afd.png',
+    learningActions: '',
+    marketingDescription: 'Learn and level up on DEX Aggregators, Liquidity, and Trade-Offs.',
+    poapEventId: null,
+    duration: 15,
+    learnings: '',
+    difficulty: undefined,
+    description: 'Learn and level up on DEX Aggregators, Liquidity, and Trade-Offs.',
+    name: 'DEX Aggregators',
+    quest: 'DEXAggregators',
+    publicationStatus: 'hidden',
+    isFeaturedOnHomepage: false,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    notionId: '42578b8813114832b8930cf59f6125af',
+    slug: 'dex-aggregators',
+    imageLinks: [],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: 'fdab9a0b1c7b457a9110f88dbac53d71',
+        title: '<strong>Introduction</strong>',
+        content: '<div class="bloc1"><ul><li>DEX &gt; CEX for user value gain</li><li>code-based AMMs</li><li>DEX aggregator &gt; single DEX (google flights)</li><li>All to save explorers money</li></ul></div>'
       },
       {
         type: 'LEARN',
-        notionId: 'dc3f25053ea343a8969d3ca9f0d66cac',
-        title: 'Step 3: <strong>Vote</strong>',
-        content: '<div class="bloc1"><p>The final step in the governance process is a Snapshot vote. Snapshot is an off-chain token voting tool. If a proposal has met the required quorum and approval threshold on the Forum, it will progress to a DAO-wide Snapshot vote. Snapshot proposals run for 7 days and require &gt;66% approval. If the passing proposal is a Grants Request, DAO treasury multi-signers will be prompted to initiate the transaction in accordance with the passed proposal request. If the passing proposal is a bDIP, OpsGuild will be prompted to update the Constitution and Community Handbook source in version control and a new version of the Handbook will be made available to the community.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/step-3-vote-a107f7c8.png\'></div>'
+        notionId: 'fc85b552a0c34e36869a4109d109e1d7',
+        title: 'Drying up Liquidity',
+        content: '<div class="bloc1"><ul><li>tokens get spread out more and more as new DEXs launch</li> <ul><li>thinning liquidity</li></ul> <li>trades in low liquidity can affect prices more easily</li> <ul><li>supplyand demand explain?</li></ul> <li>DEX aggregators bring the liquidity back together for users</li></ul></div>'
       },
       {
         type: 'LEARN',
-        notionId: 'efcb2048ae4f40379918e877b204a72e',
-        title: '<strong>Funding</strong>',
-        content: '<div class="bloc1"><p>Funds are released from this treasury in one of three ways: </p><ol><li>Seasonal Budgets: New seasons are initiated by guilds and projects submitting funding proposals. If these proposals pass Forum approval, they go to Snapshot. If this budget is approved, the DAO multi-signers will issuing disbursements in line with the approved budget.</li><li>Mid-season grants: Groups seeking funding over the course of a season will be directed to the Grants Committee upon successfully passing their Forum proposal. The Grants Committee is responsible to evaluate these requests.</li><li>Coordinape: BanklessDAO runs a monthly Coordinape for Guest Pass holders, L1s, and L2s to reward the community for continued growth and engagement. Just fill out a coordinape-request-form prior to the start of each round using the bot-commands channel on discord then you are eligible to allocate GIVE tokens to their peers using the <a href=\'https://app.coordinape.com/\'>Coordinape app</a> after the signup period ends and the allocation period starts.</li></ol></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/funding-61f60a40.png\'></div>'
+        notionId: 'e666b7c87f4341759e90706b32329871',
+        title: 'Aggre-what?',
+        content: '<div class="bloc1"><ul><li>aggregators bring things together to get best prices for users</li> <ul><li>google flights</li></ul> </ul></div>'
       },
       {
         type: 'LEARN',
-        notionId: 'bd6699ad75db405885d5b113de13793b',
-        title: '<strong>Intrateam Compensation</strong>',
-        content: '<div class="bloc1"><p>BanklessDAO does not dictate how projects or guilds internally allocate their funds as long as the promised value or expected utility is being realized by the community. The free market mechanics of supply and demand and individuals\' proficiency and experience determine how goods and services are priced within the community just as they are without.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/intrateam-compensation-4e7b8680.png\'></div>'
+        notionId: '2cf155ee9e3a4d4fb0a9c78f888d2373',
+        title: 'Getting Meta',
+        content: '<div class="bloc1"><ul><li>Meta-aggregators go one layer more abstract, aggregate the aggregators</li> <ul><li>metamask swap, cowswap</li></ul> <li>can add fees on top of prices</li></ul></div>'
       },
       {
         type: 'LEARN',
-        notionId: '974a52ba581e4a74a1396a937969b016',
-        title: '<strong>Code of Conduct</strong>',
-        content: '<div class="bloc1"><p>Every member of the BanklessDAO community is expected and is responsible to treat others with respect and dignity. We are a globally distributed community representing numerous cultures, languages, and time zones. It\'s our highest priority to be the most welcoming and inviting onboarding experience for Web3. To this end, we encourage any conflict to first be broached between involved persons. If this does not resolve the matter we encourage team champions or guild coordinators to help resolve the conflict. If this still doesn\'t resolve the matter, parties are encouraged to approach the Ombuds office to help resolve the dispute. Our unity and internal cohesion are essential to accomplishing our mission.</p></div><div class="bloc2"><img src=\'/lesson/banklessdao-constitution/code-of-conduct-93a167e4.png\'></div>'
+        notionId: 'd315b7234f8046b4be2e0de1ab64f839',
+        title: 'But how do aggregators save me money?',
+        content: '<div class="bloc1"><ul><li>split trades up across different liquidity sources to reduce price impact</li><li>multiple small trades in multiple DEXs add up to a big trade from Explorer’s wallet</li></ul></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '063815f2667146a2921df5c4c3ca1663',
+        title: 'Reduce Gas costs',
+        content: '<div class="bloc1"><ul><li>simulate trades off-chain to find trade route that leaves Explorer with most value at the end</li> <ul><li>includes gas costs in calculation</li></ul> <li>1inch refunds a portion of gas costs on eth mainnet - paid in $1inch</li></ul></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '87861ffc6e7a42b3a2fb0a24f97176c8',
+        title: 'Gas explained',
+        content: '<div class="bloc1"><ul><li>how does blockchain gas work?</li><li>gas = fuel for running code</li> <ul><li>car analogy</li></ul> <li>gas cost = gas used * gas price</li> <ul><li>example with ETH and gasoline</li></ul> </ul></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'ab4cfb382ca64e64b836ac9a416ea483',
+        title: '🥪 attacks are a problem on big trades',
+        content: '<div class="bloc1"><ul><li>Users swapping lose value up to their slippage tolerance through MEV</li> <ul><li>Miners change prices in AMMs to steal up to users’ slippage tolerance</li></ul> <li>Fun fact: Sandwich attacks stole $235,000,000 in slippage in 2021</li><li>1inch has OTC trades that are protected from MEV attacks</li> <ul><li>P2P trades facilitated by 1inch</li></ul> </ul></div>'
+      },
+      {
+        type: 'QUEST',
+        title: 'DEX Aggregators Quest',
+        component: 'DEXAggregators'
       },
       {
         type: 'END',
