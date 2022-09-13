@@ -48,6 +48,18 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
 
   // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
 
+  async function checkPassport() {
+    axios
+      .get(`/api/passport?address=${account}`)
+      .then(function (res) {
+        console.log('passport', res.data)
+        setIsPassportVerified(res.data?.verified)
+      })
+      .catch(function (error) {
+        console.error(error)
+      })
+  }
+
   useEffect(() => {
     if (account) {
       axios
@@ -70,10 +82,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
             )
             if (mintedKudos) setIsKudosMinted(true)
             setIsKudosClaimed(false)
-            axios.get(`/api/passport?address=${account}`).then(function (res) {
-              console.log(res.data)
-              setIsPassportVerified(res.data?.verified)
-            })
+            checkPassport()
           }
         })
         .catch(function (error) {
@@ -235,7 +244,14 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   )
 
   const GitcoinModal = (
-    <Modal onClose={onClose} size={'lg'} isOpen={isOpen}>
+    <Modal
+      onClose={() => {
+        checkPassport()
+        onClose()
+      }}
+      size={'lg'}
+      isOpen={isOpen}
+    >
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Passport</ModalHeader>

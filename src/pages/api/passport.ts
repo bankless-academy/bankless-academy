@@ -5,11 +5,8 @@ import { PassportReader } from '@gitcoinco/passport-sdk-reader'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
-import {
-  CERAMIC_PASSPORT,
-  NUMBER_OF_STAMP_REQUIRED,
-  filterValidStamps,
-} from 'components/Passport'
+import { CERAMIC_PASSPORT, NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
+import { filterValidStamps } from 'utils/passport'
 
 const reader = new PassportReader(CERAMIC_PASSPORT, '1')
 
@@ -42,9 +39,13 @@ export default async function handler(
       const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
       // console.log('validStamps', validStamps)
       const stampHashes = {}
+      const stampProviders = {}
       if (passport?.stamps) {
         for (const stamp of passport?.stamps) {
           stampHashes[stamp.provider] = stamp.credential.credentialSubject.hash
+        }
+        for (const stamp of passport?.stamps) {
+          stampProviders[stamp.provider] = stamp
         }
         console.log('stampHashes', stampHashes)
         // merge previous data without deleting other keys
@@ -63,8 +64,9 @@ export default async function handler(
         })
         // console.log('stampHashesSearch', stampHashesSearch)
         const sybil = await db(TABLES.users)
-          .select('id')
+          .select('id', 'address')
           .whereNot(TABLE.users.id, userId)
+          .whereNull(TABLE.users.sybil_user_id)
           // query for json instead of jsonb: .where(db.raw('gitcoin_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
           .where(db.raw(`(${whereCondition})`, stampHashesSearch))
         console.log('sybil', sybil)
@@ -75,7 +77,9 @@ export default async function handler(
             .update({ sybil_user_id: sybil[0]?.id })
           return res.json({
             verified: false,
-            requirement: 'fraud detected',
+            requirement: `🏴‍☠️ fraud detected: switch back to ${sybil[0]?.address}`,
+            validStampsCount: validStamps.length,
+            stamps: stampProviders,
           })
         }
       }
@@ -87,6 +91,8 @@ export default async function handler(
       return res.json({
         verified: validStamps?.length >= NUMBER_OF_STAMP_REQUIRED,
         requirement,
+        validStampsCount: validStamps.length,
+        stamps: stampProviders,
       })
     } catch (error) {
       console.error(error)
