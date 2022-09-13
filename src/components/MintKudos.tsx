@@ -1,11 +1,25 @@
 /* eslint-disable no-console */
 import { useState, useEffect } from 'react'
-import { Button, Link, useToast, Spinner, Image, Box } from '@chakra-ui/react'
-import NextLink from 'next/link'
+import {
+  Button,
+  Link,
+  useToast,
+  Spinner,
+  Image,
+  Box,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  useDisclosure,
+} from '@chakra-ui/react'
 import axios from 'axios'
 
 import { useActiveWeb3React } from 'hooks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
+import Passport from 'components/Passport'
 import { PROJECT_NAME } from 'constants/index'
 import {
   MINTKUDOS_API,
@@ -29,6 +43,8 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
 
   const { account, library, chainId } = useActiveWeb3React()
   const toast = useToast()
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
 
@@ -218,6 +234,19 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     </>
   )
 
+  const GitcoinModal = (
+    <Modal onClose={onClose} size={'lg'} isOpen={isOpen}>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>Passport</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          <Passport />
+        </ModalBody>
+      </ModalContent>
+    </Modal>
+  )
+
   return (
     <Box py="4">
       {!account ? (
@@ -260,10 +289,11 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
           ) : (
             <p>
               {`Get a `}
-              <NextLink
-                href={`/passport`}
-              >{`${PROJECT_NAME} Passport`}</NextLink>
+              <Button variant="primary" onClick={onOpen}>
+                {`${PROJECT_NAME} Passport`}
+              </Button>
               {` in order to claim this credential`}
+              {GitcoinModal}
             </p>
           )}
         </>
