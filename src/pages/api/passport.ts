@@ -9,7 +9,7 @@ import {
   CERAMIC_PASSPORT,
   NUMBER_OF_STAMP_REQUIRED,
   filterValidStamps,
-} from 'pages/passport'
+} from 'components/Passport'
 
 const reader = new PassportReader(CERAMIC_PASSPORT, '1')
 

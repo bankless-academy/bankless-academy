@@ -5,7 +5,7 @@ import {
   OkIcon,
   getNumberOfValidStamps,
   Stamps,
-} from 'pages/passport'
+} from 'components/Passport'
 
 // https://github.com/gitcoinco/passport/blob/main/app/config/providers.ts
 export const STAMP_PROVIDERS = {
@@ -63,8 +63,10 @@ export const STAMP_PROVIDERS = {
 
 const GitcoinPassport = ({
   stamps,
+  displayStamps,
 }: {
   stamps?: Stamps
+  displayStamps?: boolean
 }): React.ReactElement => {
   const numberOfValidStamps = getNumberOfValidStamps(stamps)
   return (
@@ -76,38 +78,40 @@ const GitcoinPassport = ({
           } (${NUMBER_OF_STAMP_REQUIRED} required)`}
         </Text>
       </Box>
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} gap={6}>
-        {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
-          const stamp = stamps ? stamps[key] : null
-          const currentTimestamp = Date.now()
-          const isStampExpired = !(
-            Date.parse(stamp?.credential?.expirationDate) > currentTimestamp
-          )
-          const isTrustedIssuer = stamp?.credential?.issuer === ALLOWED_ISSUER
-          return (
-            <Box
-              key={`stamp-${key}`}
-              pb={8}
-              border="1px solid #72757B"
-              p="8"
-              borderRadius="lg"
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <Image src={provider.icon} width="40px" />
-              <Box m={8}>{`${provider.name} - ${provider.description}`}</Box>
-              {stamp
-                ? isStampExpired
-                  ? 'stamp expired'
-                  : isTrustedIssuer
-                  ? OkIcon
-                  : 'Untrusted DID issuer'
-                : '--'}
-            </Box>
-          )
-        })}
-      </SimpleGrid>
+      {displayStamps && (
+        <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} gap={6}>
+          {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
+            const stamp = stamps ? stamps[key] : null
+            const currentTimestamp = Date.now()
+            const isStampExpired = !(
+              Date.parse(stamp?.credential?.expirationDate) > currentTimestamp
+            )
+            const isTrustedIssuer = stamp?.credential?.issuer === ALLOWED_ISSUER
+            return (
+              <Box
+                key={`stamp-${key}`}
+                pb={8}
+                border="1px solid #72757B"
+                p="8"
+                borderRadius="lg"
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <Image src={provider.icon} width="40px" />
+                <Box m={8}>{`${provider.name} - ${provider.description}`}</Box>
+                {stamp
+                  ? isStampExpired
+                    ? 'stamp expired'
+                    : isTrustedIssuer
+                    ? OkIcon
+                    : 'Untrusted DID issuer'
+                  : '--'}
+              </Box>
+            )
+          })}
+        </SimpleGrid>
+      )}
     </>
   )
 }
