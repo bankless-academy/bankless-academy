@@ -23,6 +23,7 @@ console.log('NOTION_ID', NOTION_ID)
 const KEY_MATCHING = {
   'Module name': 'name',
   'Module image': 'moduleImageLink',
+  'Social image': 'socialImageLink',
   Description: 'description',
   // 'Parent Module': 'parentModule',
   // Submodules: 'subModules',
@@ -88,6 +89,13 @@ axios
           module.moduleImageLink,
           module.slug,
           ''
+        )
+      }
+      if (module.socialImageLink) {
+        module.socialImageLink = get_img(
+          module.socialImageLink,
+          module.slug,
+          '-social'
         )
       }
       module.parentModule = notion.fields['Parent module'][0] || null

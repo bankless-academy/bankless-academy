@@ -4,6 +4,7 @@ export interface ModuleType {
   slug: string
   description: string
   moduleImageLink?: string
+  socialImageLink?: string
   parentModule?: string
   subModules?: string[]
 }
