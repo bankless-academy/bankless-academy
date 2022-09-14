@@ -25,6 +25,7 @@ export interface LessonType {
   isCommentsEnabled: boolean
   endOfLessonRedirect?: string
   endOfLessonText?: string
+  communityDiscussionLink?: string
   slides: {
     type: SlideType
     title: string

@@ -691,7 +691,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           )}
         </HStack>
         <HStack>
-          {(!isLastSlide || lesson.endOfLessonText) && (
+          {!isLastSlide || lesson.endOfLessonText ? (
             <Button
               ref={buttonRightRef}
               variant={isLastSlide ? 'primaryBigLast' : 'primaryBig'}
@@ -707,6 +707,23 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
             >
               Next
             </Button>
+          ) : (
+            <>
+              {lesson.communityDiscussionLink && (
+                <Tooltip
+                  hasArrow
+                  label="Join other explorers to discuss this lesson."
+                >
+                  <Link
+                    target="_blank"
+                    rel="noreferrer"
+                    href={lesson.communityDiscussionLink}
+                  >
+                    <Button variant="outline">👨‍🚀 Community discussion</Button>
+                  </Link>
+                </Tooltip>
+              )}
+            </>
           )}
         </HStack>
       </SlideNav>

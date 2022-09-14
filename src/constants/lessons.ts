@@ -19,6 +19,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?sortBy=new&topicUuid=977d14c9-f368-4047-b058-5f97884125d5',
     notionId: '98405bd0f2b94bb2a3079eed504a011e',
     slug: 'wallet-basics',
     imageLinks: [
@@ -249,6 +250,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?sortBy=new&topicUuid=1ee6aa7e-8174-464c-b13c-69faef819b3e',
     notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
     slug: 'intro-to-defi',
     imageLinks: [
@@ -481,6 +483,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?sortBy=new&topicUuid=b46a6fa7-1bf8-4f1e-8db3-a725fe98cac9',
     notionId: '562dba7dbd3949b480be367a64821cdf',
     slug: 'blockchain-basics',
     imageLinks: [
@@ -689,6 +692,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?sortBy=new&topicUuid=6cda4b4c-5300-4e1e-9a12-a14eecd59ebf',
     notionId: '44b8a4937fcd43fa8e12400cb75885a1',
     slug: 'academy-community',
     imageLinks: [],
@@ -732,8 +736,9 @@ const LESSONS: LessonType[] = [
     publicationStatus: 'publish',
     isFeaturedOnHomepage: true,
     isCommentsEnabled: false,
-    endOfLessonRedirect: 'https://tally.so/r/3EkvNN',
-    endOfLessonText: 'To give feedback about this lesson, click Next.',
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?sortBy=new&topicUuid=c5866aeb-f37d-41a0-995f-46223a9cc729',
     notionId: '7a5b9b7afe804e6984bf279301dfa1db',
     slug: 'web3-security',
     imageLinks: [
@@ -981,6 +986,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
+    communityDiscussionLink: null,
     notionId: '6e14e3cfc6a44087b3b3d15dd07d2fee',
     slug: 'blockchains-layer-1',
     imageLinks: [
@@ -1077,7 +1083,7 @@ const LESSONS: LessonType[] = [
           question: 'How is the bus stop analogy NOT accurate for blockchain transactions?',
           rightAnswerNumber: 1,
           answers: [
-            'Buses can be different sizes, blocks are the same (max) size',
+            'Buses (blocks) are always the same size',
             'People (transactions) are grouped together into buses (blocks)',
             'There is a maximum limit of how many people (transactions) can fit into each bus (block)'
           ],
@@ -1217,6 +1223,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
+    communityDiscussionLink: null,
     notionId: '42578b8813114832b8930cf59f6125af',
     slug: 'dex-aggregators',
     imageLinks: [],

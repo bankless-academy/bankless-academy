@@ -36,6 +36,7 @@ const KEY_MATCHING = {
   'Enable Comments': 'isCommentsEnabled',
   'End of Lesson redirect': 'endOfLessonRedirect',
   'End of Lesson text': 'endOfLessonText',
+  'Community discussion link': 'communityDiscussionLink',
 }
 
 const args = process.argv
@@ -116,6 +117,7 @@ axios
       else {
         lesson.moduleId = lesson.moduleId[0]
       }
+      if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
 
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)
