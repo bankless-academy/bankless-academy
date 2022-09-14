@@ -19,7 +19,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?sortBy=new&topicUuid=977d14c9-f368-4047-b058-5f97884125d5',
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=977d14c9-f368-4047-b058-5f97884125d5',
     notionId: '98405bd0f2b94bb2a3079eed504a011e',
     slug: 'wallet-basics',
     imageLinks: [
@@ -250,7 +250,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?sortBy=new&topicUuid=1ee6aa7e-8174-464c-b13c-69faef819b3e',
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=1ee6aa7e-8174-464c-b13c-69faef819b3e',
     notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
     slug: 'intro-to-defi',
     imageLinks: [
@@ -483,7 +483,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?sortBy=new&topicUuid=b46a6fa7-1bf8-4f1e-8db3-a725fe98cac9',
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=b46a6fa7-1bf8-4f1e-8db3-a725fe98cac9',
     notionId: '562dba7dbd3949b480be367a64821cdf',
     slug: 'blockchain-basics',
     imageLinks: [
@@ -692,7 +692,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?sortBy=new&topicUuid=6cda4b4c-5300-4e1e-9a12-a14eecd59ebf',
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=6cda4b4c-5300-4e1e-9a12-a14eecd59ebf',
     notionId: '44b8a4937fcd43fa8e12400cb75885a1',
     slug: 'academy-community',
     imageLinks: [],
@@ -738,7 +738,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?sortBy=new&topicUuid=c5866aeb-f37d-41a0-995f-46223a9cc729',
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=c5866aeb-f37d-41a0-995f-46223a9cc729',
     notionId: '7a5b9b7afe804e6984bf279301dfa1db',
     slug: 'web3-security',
     imageLinks: [
