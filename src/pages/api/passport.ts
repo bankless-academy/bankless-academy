@@ -78,20 +78,20 @@ export default async function handler(
           return res.json({
             verified: false,
             requirement: `🏴‍☠️ fraud detected: switch back to ${sybil[0]?.address}`,
-            validStampsCount: validStamps.length,
+            validStampsCount: validStamps?.length,
             stamps: stampProviders,
           })
         }
       }
       if (validStamps?.length >= NUMBER_OF_STAMP_REQUIRED) {
-        console.log('verified:', validStamps.length)
+        console.log('verified:', validStamps?.length)
       } else {
         console.log('not verified')
       }
       return res.json({
         verified: validStamps?.length >= NUMBER_OF_STAMP_REQUIRED,
         requirement,
-        validStampsCount: validStamps.length,
+        validStampsCount: validStamps?.length,
         stamps: stampProviders,
       })
     } catch (error) {

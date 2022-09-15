@@ -7,11 +7,13 @@ const ALLOWED_PROVIDERS = Object.keys(STAMP_PROVIDERS)
 export const filterValidStamps = (stamps: Stamp[]): Stamp[] => {
   // const currentTimestamp = 1665401965000
   const currentTimestamp = Date.now()
-  return stamps?.filter(
-    (stamp) =>
-      stamp.credential.issuer === ALLOWED_ISSUER &&
-      ALLOWED_PROVIDERS.includes(stamp.provider) &&
-      Date.parse(stamp.credential.expirationDate) > currentTimestamp
+  return (
+    stamps?.filter(
+      (stamp) =>
+        stamp.credential.issuer === ALLOWED_ISSUER &&
+        ALLOWED_PROVIDERS.includes(stamp.provider) &&
+        Date.parse(stamp.credential.expirationDate) > currentTimestamp
+    ) || []
   )
 }
 
