@@ -49,10 +49,12 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
 
   async function checkPassport() {
+    setStatus('loading passport ...')
     axios
       .get(`/api/passport?address=${account}`)
       .then(function (res) {
         console.log('passport', res.data)
+        setStatus('')
         setIsPassportVerified(res.data?.verified)
       })
       .catch(function (error) {
@@ -75,6 +77,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
             localStorage.setItem(`kudos-${kudosId}`, claimedKudos.createdAt)
             setIsKudosClaimed(true)
           } else {
+            localStorage.removeItem(`kudos-${kudosId}`)
             const mintedKudos: KudosType = res.data?.data?.find(
               (kudos: KudosType) =>
                 kudos?.kudosTokenId === kudosId &&
