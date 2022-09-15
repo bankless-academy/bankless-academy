@@ -77,7 +77,8 @@ export default async function handler(
             .update({ sybil_user_id: sybil[0]?.id })
           return res.json({
             verified: false,
-            requirement: `🏴‍☠️ fraud detected: switch back to ${sybil[0]?.address}`,
+            requirement,
+            fraud: `🏴‍☠️ fraud detected: switch back to ${sybil[0]?.address}`,
             validStampsCount: validStamps?.length,
             stamps: stampProviders,
           })

@@ -47,7 +47,7 @@ const PassportComponent = ({
         <Text fontSize="2xl">
           {'Explorer 👨‍🚀 status: '}
           {!account && '⚠️ Connect your wallet first'}
-          {passport !== null && (
+          {passport !== null ? (
             <>
               {passport.verified === true
                 ? OkIcon
@@ -55,7 +55,7 @@ const PassportComponent = ({
                     <>
                       {KoIcon}
                       <br />
-                      {passport?.requirement}
+                      {passport?.fraud}
                       {passport.validStampsCount < NUMBER_OF_STAMP_REQUIRED && (
                         <>
                           {`Go to `}
@@ -73,6 +73,8 @@ const PassportComponent = ({
                     </>
                   )}
             </>
+          ) : (
+            'loading passport ...'
           )}
         </Text>
       </Box>

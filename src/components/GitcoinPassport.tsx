@@ -1,10 +1,6 @@
 import { Box, SimpleGrid, Text, Image } from '@chakra-ui/react'
 
-import {
-  ALLOWED_ISSUER,
-  NUMBER_OF_STAMP_REQUIRED,
-  STAMP_PROVIDERS,
-} from 'constants/passport'
+import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
 import { getNumberOfValidStamps } from 'utils/passport'
 import { Stamps } from 'entities/passport'
 import { OkIcon } from 'components/Passport'
@@ -21,9 +17,9 @@ const GitcoinPassport = ({
     <>
       <Box>
         <Text fontSize="2xl" mb={8}>
-          {` Stamps: ${
+          {`Number of valid stamps in your wallet: ${
             numberOfValidStamps === null ? '-' : numberOfValidStamps
-          } (${NUMBER_OF_STAMP_REQUIRED} required)`}
+          }`}
         </Text>
       </Box>
       {displayStamps && (
