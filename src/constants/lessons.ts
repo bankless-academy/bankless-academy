@@ -1253,7 +1253,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '8ea31e80fcfc49d3a88ad09d03341c9c',
         title: 'How Liquidity affects prices',
-        content: '<div class="bloc1"><p>Let’s look at an example. </p><p>On Uniswap, the BanklessDAO token ($BANK) has a liquidity amount of ~1 million $BANK, but only ~0.15 million $BANK on Sushiswap. Uniswap has almost 6x the $BANK liquidity of Sushiswap.</p><p>If an Explorer was to purchase 10,000 $BANK from each pool, they would find that the price impact of their trade would result in a higher trade price in the Sushiswap pool - because their trade has pulled a larger percentage of the pool’s total liquidity.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-liquidity-affects-prices-563cd643.png\'></div>'
+        content: '<div class="bloc1"><p>Let’s look at an example. </p><p>On Uniswap, the BanklessDAO token ($BANK) has a liquidity amount of ~30 million $BANK, but only ~4.5 million $BANK on Sushiswap. Uniswap has over 6x the $BANK liquidity of Sushiswap.</p><p>If an Explorer was to purchase 10,000 $BANK from each pool, they would find that the price impact of their trade would result in a higher trade price in the Sushiswap pool - because their trade has pulled a larger percentage of the pool’s total liquidity.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-liquidity-affects-prices-563cd643.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1319,7 +1319,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '1c2f4199a9254d18897593b371ca4d9e',
         title: 'How gas cost is calculated on Ethereum',
-        content: '<div class="bloc1"><p>Just like gas for a car, gas is the fuel for running blockchain code on Ethereum. The more gas your car uses, the farther you travel; the more gas your code uses, the more computations you do. Gas price is usually measured in very small amounts of ether, like cents to a dollar. For example: <br>1 gwei is 1 billionth of an ether (1 gwei = 0.00000001 ETH).</p><p>Typical gas costs might be 22 gwei per gas unit, as opposed to gasoline for a car which might be $5.99 per gallon. The total gas cost is based on how much gas your transaction uses and the price of gas at the time of use. </p><p>The formula for calculating the price of a transaction is as follows:</p><p>Example:</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-6f3863a0.png\'></div>'
+        content: '<div class="bloc1"><p>Just like gas for a car, gas is the fuel for running blockchain code on Ethereum. The more gas your car uses, the farther you travel; the more gas your code uses, the more computations you do. Gas price is usually measured in very small amounts of ether, like cents to a dollar. For example: <br>1 gwei is 1 billionth of an ether (1 gwei = 0.00000001 ETH).</p><p>Typical gas costs might be 22 gwei per gas unit, as opposed to gasoline for a car which might be $5.99 per gallon. The total gas cost is based on how much gas your transaction uses and the price of gas at the time of use. </p><p>The formula for calculating the price of a transaction is as follows:</p><p>Example:</p><p>120,000 gas * 22 gwei per gas = 2,640,000 gwei <strong>or</strong> 0.00264 ETH</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-6f3863a0.png\'></div>'
       },
       {
         type: 'LEARN',
