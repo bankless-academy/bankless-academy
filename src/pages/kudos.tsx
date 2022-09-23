@@ -25,8 +25,8 @@ const Kudos = (): JSX.Element => {
   const toast = useToast()
 
   const signMessage = async (kudosId: number) => {
-    const types = {
-      AllowlistedAddress: [{ name: 'tokenId', type: 'uint256' }],
+    const adminTypes = {
+      CommunityAdminAirdrop: [{ name: 'tokenId', type: 'uint256' }],
     }
 
     // The data to sign
@@ -50,7 +50,7 @@ const Kudos = (): JSX.Element => {
         const signer = library.getSigner(account)
         const signature = await signer._signTypedData(
           MINTKUDOS_DOMAIN_INFO,
-          types,
+          adminTypes,
           value
         )
         // console.log('signature', signature)

@@ -6,12 +6,7 @@ import { MINTKUDOS_DOMAIN_INFO } from 'constants/kudos'
 
 import { db, TABLES } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE, LESSONS } from 'constants/index'
-
-const ALLOWED_SIGNERS = [
-  '0xbd19a3f0a9cace18513a1e2863d648d13975cb30'.toLowerCase(),
-  // credentials.banklessacademy.eth
-  '0xe1887fF140BfA9D3b45D0B2077b7471124acD242'.toLowerCase(),
-]
+import { ALLOWED_SIGNERS } from 'constants/kudos'
 
 export default async function handler(
   req: NextApiRequest,
@@ -38,8 +33,8 @@ export default async function handler(
     if (!ALLOWED_SIGNERS.includes(address.toLowerCase()))
       return res.json({ error: 'Address not allowed to sign' })
 
-    const types = {
-      AllowlistedAddress: [{ name: 'tokenId', type: 'uint256' }],
+    const adminTypes = {
+      CommunityAdminAirdrop: [{ name: 'tokenId', type: 'uint256' }],
     }
     const message = {
       tokenId: kudosId,
@@ -50,7 +45,7 @@ export default async function handler(
         signature,
         message,
         address,
-        types,
+        adminTypes,
         MINTKUDOS_DOMAIN_INFO
       )
     )

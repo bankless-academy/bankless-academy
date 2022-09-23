@@ -29,7 +29,6 @@ export const MINTKUDOS_CHAIN_ID = IS_MINTKUDOS_SANDBOX ? 80001 : 137
 
 export const MINTKUDOS_DOMAIN_INFO = {
   name: 'Kudos',
-  version: '7',
   // Mumbai | Polygon
   chainId: MINTKUDOS_CHAIN_ID,
   verifyingContract: IS_MINTKUDOS_SANDBOX
@@ -39,6 +38,15 @@ export const MINTKUDOS_DOMAIN_INFO = {
 
 export const MINTKUDOS_COMMUNITY_ID =
   process.env.NEXT_PUBLIC_MINTKUDOS_COMMUNITY_ID
+
+// credentials.banklessacademy.eth
+export const COMMUNITY_ADMIN = '0xe1887ff140bfa9d3b45d0b2077b7471124acd242'
+
+export const ALLOWED_SIGNERS = [
+  // didierkrux.eth
+  '0xbd19a3f0a9cace18513a1e2863d648d13975cb30'.toLowerCase(),
+  COMMUNITY_ADMIN.toLowerCase(),
+]
 
 export const MINTKUDOS_KEY = process.env.MINTKUDOS_KEY
 

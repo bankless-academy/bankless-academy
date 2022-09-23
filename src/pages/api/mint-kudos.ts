@@ -8,25 +8,52 @@ import {
   MINTKUDOS_API,
   MINTKUDOS_ENCODED_STRING,
   MINTKUDOS_COMMUNITY_ID,
+  COMMUNITY_ADMIN,
+  MINTKUDOS_DOMAIN_INFO,
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
+import { verifyTypedSignature } from 'utils'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
   // check params + signature
-  const { address, kudosId, message } = req.body
+  const { address, kudosId, signature } = req.body
   console.log(req)
-  if (!address || !kudosId || typeof address === 'object')
+  if (
+    !address ||
+    !kudosId ||
+    typeof signature === 'object' ||
+    typeof address === 'object'
+  )
     return res.json({ error: 'Wrong params' })
 
   console.log('address: ', address)
   console.log('kudosId: ', kudosId)
   // console.log('signature: ', signature)
+
+  const message = { tokenId: kudosId }
   console.log('message: ', message)
 
   try {
+    const receiverTypes = {
+      CommunityAdminAirdropReceiverConsent: [
+        { name: 'tokenId', type: 'uint256' },
+      ],
+    }
+
+    if (
+      !verifyTypedSignature(
+        signature,
+        message,
+        address,
+        receiverTypes,
+        MINTKUDOS_DOMAIN_INFO
+      )
+    )
+      return res.json({ error: 'Wrong signature' })
+
     const userId = await getUserId(address)
     console.log(userId)
     if (!(userId && Number.isInteger(userId)))
@@ -60,7 +87,7 @@ export default async function handler(
       }
 
       const userKudos = await axios.get(
-        `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}`
+        `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&status=claimed`
       )
       // console.log('userKudos', userKudos?.data?.data)
 
@@ -85,25 +112,28 @@ export default async function handler(
         console.log(questStatus)
         return res.json({ status: questStatus })
       } else {
-        const [{ signature }] = await db(TABLES.credentials)
-          .select('signature')
+        const [{ adminSignature }] = await db(TABLES.credentials)
+          .select('signature as adminSignature')
           .where('notion_id', notionId)
-        if (!signature) return res.json({ error: 'signature not found' })
+        // console.log('adminSignature', adminSignature)
+        if (!adminSignature) return res.json({ error: 'signature not found' })
 
         try {
           const bodyParameters = {
-            contributors: [address],
-            signature: signature,
+            receivingAddress: address,
+            adminAddress: COMMUNITY_ADMIN,
+            adminSignature,
+            receiverSignature: signature,
           }
           const config = {
             headers: {
               Authorization: `Basic ${MINTKUDOS_ENCODED_STRING}`,
             },
           }
-          // add address to allowlist
-          console.log('add address to allowlist:', bodyParameters)
+          // mint Kudos
+          console.log('communityAdminAirdrop:', bodyParameters)
           const result = await axios.post(
-            `${MINTKUDOS_API}/v1/tokens/${kudosId}/addContributors`,
+            `${MINTKUDOS_API}/v1/tokens/${kudosId}/communityAdminAirdrop`,
             bodyParameters,
             config
           )

@@ -34,8 +34,7 @@ import { NETWORKS } from 'constants/networks'
 import { KudosType } from 'entities/kudos'
 
 const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
-  const [isKudosMinted, setIsKudosMinted] = useState(false)
-  const [isKudosClaimed, setIsKudosClaimed] = useState(
+  const [isKudosMinted, setIsKudosMinted] = useState(
     !!localStorage.getItem(`kudos-${kudosId}`)
   )
   const [status, setStatus] = useState('')
@@ -66,25 +65,18 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     if (account) {
       axios
         .get(
-          `${MINTKUDOS_API}/v1/wallets/${account}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}`
+          `${MINTKUDOS_API}/v1/wallets/${account}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&status=claimed`
         )
         .then(function (res) {
           const claimedKudos: KudosType = res.data?.data?.find(
-            (kudos: KudosType) =>
-              kudos?.kudosTokenId === kudosId && kudos.claimStatus === 'claimed'
+            (kudos: KudosType) => kudos?.kudosTokenId === kudosId
           )
           if (claimedKudos) {
             localStorage.setItem(`kudos-${kudosId}`, claimedKudos.createdAt)
-            setIsKudosClaimed(true)
+            setIsKudosMinted(true)
           } else {
             localStorage.removeItem(`kudos-${kudosId}`)
-            const mintedKudos: KudosType = res.data?.data?.find(
-              (kudos: KudosType) =>
-                kudos?.kudosTokenId === kudosId &&
-                kudos.claimStatus === 'unclaimed'
-            )
-            if (mintedKudos) setIsKudosMinted(true)
-            setIsKudosClaimed(false)
+            setIsKudosMinted(false)
             checkPassport()
           }
         })
@@ -131,52 +123,15 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
 
   const mintKudos = async () => {
     if (status) return
-    try {
-      setStatus('⚒️ minting in progress ...')
-      const bodyParameters = {
-        address: account,
-        kudosId,
-      }
-      const result = await axios.post(`/api/mint-kudos`, bodyParameters)
-      console.log(result.data)
-      if (result.data.location) {
-        await followOperation(result.data.location)
-        setIsKudosMinted(true)
-        toast.closeAll()
-        toast({
-          title: 'Credential minted! ✅',
-          status: 'success',
-          duration: 10000,
-        })
-        setStatus('')
-      } else {
-        setStatus('')
-        if (result.data.status === 'address already on allowlist') {
-          setIsKudosMinted(true)
-        }
-        toast.closeAll()
-        toast({
-          title: '⚠️ problem while minting',
-          description: result.data.status || result.data.error,
-          status: 'error',
-          duration: 10000,
-        })
-      }
-    } catch (error) {
-      // TODO: add error feedback
-      console.error(error)
-    }
-  }
-
-  const claimKudos = async () => {
-    if (isKudosClaimed || status) return
     if (chainId !== MINTKUDOS_CHAIN_ID) {
       await switchNetwork(networkKey)
     }
 
     setStatus('🙌 claiming in progress ...')
-    const types = {
-      Claim: [{ name: 'tokenId', type: 'uint256' }],
+    const receiverTypes = {
+      CommunityAdminAirdropReceiverConsent: [
+        { name: 'tokenId', type: 'uint256' },
+      ],
     }
 
     // The data to sign
@@ -188,21 +143,21 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
       const signer = library.getSigner(account)
       const signature = await signer._signTypedData(
         MINTKUDOS_DOMAIN_INFO,
-        types,
+        receiverTypes,
         value
       )
-      // console.log('signature', signature)
+      console.log('signature', signature)
       const bodyParameters = {
         address: account,
         kudosId,
         signature,
         message: value,
       }
-      const result = await axios.post(`/api/claim-kudos`, bodyParameters)
+      const result = await axios.post(`/api/mint-kudos`, bodyParameters)
       console.log(result.data)
       if (result.data.location) {
         await followOperation(result.data.location)
-        setIsKudosClaimed(true)
+        setIsKudosMinted(true)
         localStorage.setItem(`kudos-${kudosId}`, result.data.location)
         toast.closeAll()
         // TODO: add 🎊
@@ -272,7 +227,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         <>{ConnectFirstButton}</>
       ) : (
         <>
-          {isKudosClaimed ? (
+          {isKudosMinted ? (
             <Box>
               <Link
                 href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`}
@@ -294,16 +249,8 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
               </Link>
             </Box>
           ) : isPassportVerified ? (
-            <Button
-              colorScheme={isKudosClaimed ? 'green' : 'red'}
-              onClick={!isKudosMinted ? mintKudos : claimKudos}
-              variant="primary"
-            >
-              {status !== ''
-                ? status
-                : !isKudosMinted
-                ? 'Mint Credential ⚒️'
-                : 'Claim your Credential 🙌'}
+            <Button colorScheme={'green'} onClick={mintKudos} variant="primary">
+              {status !== '' ? status : 'Claim your Credential 🙌'}
             </Button>
           ) : (
             <p>
