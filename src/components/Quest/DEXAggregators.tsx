@@ -80,6 +80,7 @@ const DEXAggregators = (
               src="https://www.youtube.com/embed/PWtVAAGKTXI?start=509&rel=0"
               allowFullScreen
             ></iframe>
+            👆 this is video placeholder (ignore for now)
           </div>
         </Box>
       </>
