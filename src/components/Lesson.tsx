@@ -659,17 +659,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                   )}
                   <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
-                  {embed ? null : (
-                    <NextLink href={`/lessons`}>
-                      <Button
-                        variant="primary"
-                        size="lg"
-                        style={{ padding: '0 23px' }}
-                      >
-                        Explore more Lessons
-                      </Button>
-                    </NextLink>
-                  )}
                 </>
               )}
             </VStack>
@@ -736,6 +725,11 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                     <Button variant="outline">👨‍🚀 Community discussion</Button>
                   </Link>
                 </Tooltip>
+              )}
+              {embed ? null : (
+                <NextLink href={`/lessons`}>
+                  <Button variant="primary">Explore more Lessons</Button>
+                </NextLink>
               )}
             </>
           )}

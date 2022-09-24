@@ -21,14 +21,19 @@ import { useLocalStorage } from 'usehooks-ts'
 import { useActiveWeb3React } from 'hooks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 import Passport from 'components/Passport'
-import { PROJECT_NAME } from 'constants/index'
+import {
+  PROJECT_NAME,
+  IS_WHITELABEL,
+  TWITTER_ACCOUNT,
+  LESSONS,
+} from 'constants/index'
 import {
   MINTKUDOS_API,
+  MINTKUDOS_URL,
   MINTKUDOS_DOMAIN_INFO,
   MINTKUDOS_EXPLORER,
   MINTKUDOS_CHAIN_ID,
   MINTKUDOS_OPENSEA_URL,
-  MINTKUDOS_RARIBLE_URL,
   MINTKUDOS_COMMUNITY_ID,
 } from 'constants/kudos'
 import { NETWORKS } from 'constants/networks'
@@ -129,7 +134,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
       await switchNetwork(networkKey)
     }
 
-    setStatus('🙌 claiming in progress ...')
+    setStatus('🛠 minting in progress ...')
     const receiverTypes = {
       CommunityAdminAirdropReceiverConsent: [
         { name: 'tokenId', type: 'uint256' },
@@ -164,7 +169,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         // TODO: add 🎊
         // TODO: refresh list of Kudos in the wallet
         toast({
-          title: 'Credential claimed 🎉',
+          title: 'Credential minted 🎉',
           status: 'success',
           duration: 10000,
         })
@@ -173,7 +178,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         setStatus('')
         toast.closeAll()
         toast({
-          title: '⚠️ problem while claiming',
+          title: '⚠️ problem while minting',
           description: result.data.status || result.data.error,
           status: 'error',
           duration: 10000,
@@ -217,36 +222,53 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     </Modal>
   )
 
+  const lesson = LESSONS.find((lesson) => lesson.kudosId === kudosId)
+
+  const share = `Checkout my "${lesson.name}" credential! 🎉
+${MINTKUDOS_URL}profile/${account}?tab=Received&tokenId=${kudosId}
+${
+  IS_WHITELABEL
+    ? ''
+    : `Join the explorer community and level up your #web3 knowledge on @${TWITTER_ACCOUNT}! 👨‍🚀🚀`
+}`
+
+  const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+    share
+  )}`
+
   return (
     <Box py="4">
+      <Box display="flex" justifyContent="center" my={4}>
+        <Link href={`${MINTKUDOS_URL}`} target="_blank">
+          <Image width="150px" src="/images/powered-by-MintKudos.svg" />
+        </Link>
+      </Box>
       {!account ? (
         <>{ConnectFirstButton}</>
       ) : (
         <>
           {isKudosMintedLS ? (
             <Box>
-              <Link
-                href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`}
-                target="_blank"
-                mr="2"
-              >
+              <Link href={twitterLink} target="_blank" mr="2">
+                <Button
+                  leftIcon={
+                    <Image width="24px" src="/images/Twitter-blue.svg" />
+                  }
+                >
+                  Share on Twitter
+                </Button>
+              </Link>
+              <Link href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`} target="_blank">
                 <Button
                   leftIcon={<Image width="24px" src="/images/OpenSea.svg" />}
                 >
-                  OpenSea
-                </Button>
-              </Link>
-              <Link href={`${MINTKUDOS_RARIBLE_URL}${kudosId}`} target="_blank">
-                <Button
-                  leftIcon={<Image width="24px" src="/images/Rarible.svg" />}
-                >
-                  Rarible
+                  View on OpenSea
                 </Button>
               </Link>
             </Box>
           ) : passportLS?.verified ? (
             <Button colorScheme={'green'} onClick={mintKudos} variant="primary">
-              {status !== '' ? status : 'Claim your Credential 🙌'}
+              {status !== '' ? status : 'Mint your credential 🛠'}
             </Button>
           ) : (
             <p>
@@ -254,7 +276,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
               <Button variant="primary" onClick={onOpen}>
                 {`${PROJECT_NAME} Passport`}
               </Button>
-              {` in order to claim this credential`}
+              {` in order to mint this credential`}
               {GitcoinModal}
             </p>
           )}
