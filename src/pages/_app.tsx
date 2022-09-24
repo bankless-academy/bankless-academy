@@ -5,7 +5,7 @@ import 'swiper/swiper-bundle.min.css'
 import { Global, css } from '@emotion/react'
 
 import dynamic from 'next/dynamic'
-import Head from 'components/Head'
+import Head, { MetaData } from 'components/Head'
 import Layout from 'layout'
 import ThemeProvider from 'theme'
 
@@ -18,38 +18,41 @@ const Web3ReactProviderDefault = dynamic(
   { ssr: false }
 )
 
-const App = ({ Component, pageProps }: AppProps): JSX.Element => {
-  return (
-    <>
-      <Head metadata={pageProps.pageMeta} />
-      <ThemeProvider>
-        <Web3ReactProvider getLibrary={getLibrary}>
-          <Web3ReactProviderDefault getLibrary={getLibrary}>
-            <Global
-              styles={css`
-                .web3modal-modal-lightbox {
-                  background: linear-gradient(
-                    152.97deg,
-                    rgba(0, 0, 0, 0.45) 0%,
-                    rgba(38, 38, 38, 0.25) 100%
-                  );
-                  backdrop-filter: blur(42px);
-                }
-                .web3modal-modal-card {
-                  border: 1px solid #646587 !important;
-                  box-shadow: 0px 0px 50px 0px rgba(123, 0, 255, 0.25) !important;
-                  backdrop-filter: blur(42px) !important;
-                }
-              `}
-            />
-            <Layout isLesson={pageProps.pageMeta?.isLesson}>
-              <Component {...pageProps} />
-            </Layout>
-          </Web3ReactProviderDefault>
-        </Web3ReactProvider>
-      </ThemeProvider>
-    </>
-  )
-}
+const App = ({
+  Component,
+  pageProps,
+}: AppProps<{
+  pageMeta: MetaData
+}>): JSX.Element => (
+  <>
+    <Head metadata={pageProps.pageMeta} />
+    <ThemeProvider>
+      <Web3ReactProvider getLibrary={getLibrary}>
+        <Web3ReactProviderDefault getLibrary={getLibrary}>
+          <Global
+            styles={css`
+              .web3modal-modal-lightbox {
+                background: linear-gradient(
+                  152.97deg,
+                  rgba(0, 0, 0, 0.45) 0%,
+                  rgba(38, 38, 38, 0.25) 100%
+                );
+                backdrop-filter: blur(42px);
+              }
+              .web3modal-modal-card {
+                border: 1px solid #646587 !important;
+                box-shadow: 0px 0px 50px 0px rgba(123, 0, 255, 0.25) !important;
+                backdrop-filter: blur(42px) !important;
+              }
+            `}
+          />
+          <Layout isLesson={pageProps.pageMeta?.isLesson}>
+            <Component {...pageProps} />
+          </Layout>
+        </Web3ReactProviderDefault>
+      </Web3ReactProvider>
+    </ThemeProvider>
+  </>
+)
 
 export default App
