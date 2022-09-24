@@ -12,7 +12,15 @@ const Card = styled(Box)`
     rgba(23, 21, 21, 0.3) 102.65%
   );
   box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(50px);
+  /* disable backdrop because of react-beautiful-dnd bug */
+  /* backdrop-filter: blur(50px); */
+  /* ::before {
+    content: "";
+    backdrop-filter: blur(50px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  } */
   border-radius: 8px;
   /* position: relative;
   backdrop-filter: blur(42px);

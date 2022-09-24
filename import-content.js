@@ -41,6 +41,7 @@ const KEY_MATCHING = {
   'Enable Comments': 'isCommentsEnabled',
   'End of Lesson redirect': 'endOfLessonRedirect',
   'End of Lesson text': 'endOfLessonText',
+  'Community discussion link': 'communityDiscussionLink',
 }
 
 const args = process.argv
@@ -55,7 +56,7 @@ const slugify = (text) => text.toLowerCase()
 
 const get_img = (imageLink, slug, image_name) => {
   const [file_name] = imageLink.split('?')
-  const file_extension = file_name.match(/\.(png|svg|jpg|jpeg|webp)/)[1].replace('jpeg', 'jpg')
+  const file_extension = file_name.match(/\.(png|svg|jpg|jpeg|webp|mp4)/)[1].replace('jpeg', 'jpg')
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
   const hash = crc32(file_name)
@@ -123,6 +124,7 @@ axios
       else {
         lesson.moduleId = lesson.moduleId[0]
       }
+      if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
 
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)
@@ -202,7 +204,7 @@ axios
               // download images locally
               const imageLinks = [...slide.content.matchAll(/<img src='(.*?)'/gm)].map(a => a[1])
               for (const imageLink of imageLinks) {
-                const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp)\?table=/)[1]
+                const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|mp4)\?table=/)[1]
                 // create "unique" hash based on Notion imageLink (different when re-uploaded)
                 const hash = crc32(imageLink)
                 const image_dir = `/${PROJECT_DIR}lesson/${lesson.slug}`

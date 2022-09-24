@@ -42,7 +42,7 @@ function transform(node, index) {
   if (node.type === 'tag' && node.name === 'span') {
     // add Tooltip with definition
     return (
-      <Tooltip hasArrow label={node.attribs.definition}>
+      <Tooltip hasArrow label={node.attribs.definition} closeOnClick={false}>
         {convertNodeToElement(node, index, transform)}
       </Tooltip>
     )
@@ -102,7 +102,7 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
           width: 100%;
         }
       `
-        : 'img {  max-height: 60vh; }'};
+        : 'img {  max-height: 60vh; max-height: 600px; }'};
   }
   div.content div {
     h2,
@@ -128,6 +128,12 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
       max-width: 100%;
       height: 360px;
     }
+    blockquote {
+      font-size: var(--chakra-fontSizes-lg);
+      margin: 1em;
+      padding-left: 1em;
+      border-left: 2px solid white;
+    }
   }
 `
 
@@ -145,19 +151,19 @@ const Answers = styled(Box)`
 export type AnswerStateType = 'UNSELECTED' | 'CORRECT' | 'WRONG'
 
 const QuizAnswer = styled(Button)<{
-  answerState: AnswerStateType
+  answerstate: AnswerStateType
   isActive: boolean
 }>`
   ${(props) => props.isActive && 'cursor: default;'};
   ${(props) =>
-    props.answerState === 'UNSELECTED' &&
+    props.answerstate === 'UNSELECTED' &&
     props.isActive &&
     'background: #1C1C1C !important;'}
   ${(props) =>
-    props.answerState === 'CORRECT' &&
+    props.answerstate === 'CORRECT' &&
     'background: linear-gradient(95.83deg, #44A991 -9.2%, rgba(68, 169, 145, 0.7) 97.91%) !important;'}
   ${(props) =>
-    props.answerState === 'WRONG' &&
+    props.answerstate === 'WRONG' &&
     'background: linear-gradient(91.91deg, #A94462 49%, rgba(169, 68, 98, 0.7) 124.09%) !important;'}
 `
 
@@ -207,6 +213,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   const router = useRouter()
+  // TODO: track embed origin
+  const { embed } = router.query
   const toast = useToast()
   const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
@@ -472,7 +480,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                             }
                             whiteSpace="break-spaces"
                             onClick={(e) => selectAnswer(e, n)}
-                            answerState={answerState}
+                            answerstate={answerState}
                             justifyContent="space-between"
                             textAlign="left"
                             rightIcon={
@@ -625,18 +633,43 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                       mb="2"
                     />
                   )}
-                  {lesson.kudosId && <MintKudos kudosId={lesson.kudosId} />}
+                  {lesson.kudosId ? (
+                    <MintKudos kudosId={lesson.kudosId} />
+                  ) : (
+                    <>
+                      {lesson.poapImageLink ? (
+                        lesson.poapImageLink.includes('.mp4') ? (
+                          <Box height="250px" width="250px">
+                            <video controls autoPlay loop>
+                              <source
+                                src={lesson.poapImageLink}
+                                type="video/mp4"
+                              ></source>
+                            </video>
+                          </Box>
+                        ) : (
+                          <ChakraImage
+                            src={lesson.poapImageLink}
+                            height="250px"
+                            mb="2"
+                          />
+                        )
+                      ) : null}
+                    </>
+                  )}
                   <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
-                  <NextLink href={`/lessons`}>
-                    <Button
-                      variant="primary"
-                      size="lg"
-                      style={{ padding: '0 23px' }}
-                    >
-                      Explore more Lessons
-                    </Button>
-                  </NextLink>
+                  {embed ? null : (
+                    <NextLink href={`/lessons`}>
+                      <Button
+                        variant="primary"
+                        size="lg"
+                        style={{ padding: '0 23px' }}
+                      >
+                        Explore more Lessons
+                      </Button>
+                    </NextLink>
+                  )}
                 </>
               )}
             </VStack>
@@ -672,7 +705,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           )}
         </HStack>
         <HStack>
-          {(!isLastSlide || lesson.endOfLessonText) && (
+          {!isLastSlide || lesson.endOfLessonText ? (
             <Button
               ref={buttonRightRef}
               variant={isLastSlide ? 'primaryBigLast' : 'primaryBig'}
@@ -688,6 +721,23 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
             >
               Next
             </Button>
+          ) : (
+            <>
+              {lesson.communityDiscussionLink && (
+                <Tooltip
+                  hasArrow
+                  label="Join other explorers to discuss this lesson."
+                >
+                  <Link
+                    target="_blank"
+                    rel="noreferrer"
+                    href={lesson.communityDiscussionLink}
+                  >
+                    <Button variant="outline">👨‍🚀 Community discussion</Button>
+                  </Link>
+                </Tooltip>
+              )}
+            </>
           )}
         </HStack>
       </SlideNav>

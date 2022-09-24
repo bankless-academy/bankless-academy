@@ -10,7 +10,7 @@ const LESSONS: LessonType[] = [
     poapEventId: 26971,
     kudosId: 659,
     duration: 15,
-    learnings: 'Find out what digital wallets are, what they allow you to do, and how to set up and protect your wallet as you get out and explore Web3.',
+    learnings: '',
     difficulty: 'Easy',
     description: 'Learn how to create and manage a wallet securely.',
     name: 'Wallet Basics',
@@ -20,6 +20,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=977d14c9-f368-4047-b058-5f97884125d5',
     notionId: '98405bd0f2b94bb2a3079eed504a011e',
     slug: 'wallet-basics',
     imageLinks: [
@@ -241,7 +242,7 @@ const LESSONS: LessonType[] = [
     poapEventId: 26972,
     kudosId: 660,
     duration: 10,
-    learnings: 'Learn what decentralized finance means and discover the game-changing possibilities that new blockchain-powered applications introduce to the world.',
+    learnings: '',
     difficulty: 'Easy',
     description: 'Understand the basics of decentralized finance.',
     name: 'Intro to DeFi',
@@ -251,6 +252,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=1ee6aa7e-8174-464c-b13c-69faef819b3e',
     notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
     slug: 'intro-to-defi',
     imageLinks: [
@@ -273,8 +275,14 @@ const LESSONS: LessonType[] = [
         content: '<div class="bloc1"><p>DeFi—short for <span class="tooltip" definition="No single authority or entity controls the data.">decentralized</span> finance—refers to the fast-growing ecosystem of financial products, protocols, and applications that operate on public <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> networks.</p><p>DeFi is rapidly transforming the world of finance with a range of new tools for putting crypto assets to work. It offers opportunities beyond simply buying crypto on a centralized exchange. It allows anyone and everyone to build a decentralized, bankless lifestyle.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/defi-defined-46782447.svg\'></div>'
       },
       {
-        type: 'QUIZ',
+        type: 'LEARN',
         notionId: '5d93d188e0274acbb22cc32e433c3b67',
+        title: 'Why DeFi?',
+        content: '<div class="bloc1"><p>DeFi gives anyone with an internet connection access to sophisticated financial tools: Trading, Options, Lending and Borrowing.</p><p>DeFi offers these tools to users transparently and openly. Anyone can look at the code and verify that the contract does what it says it does, unlike what banks do with your money behind closed doors.</p><p>There are no middlemen to intermediate or take a cut of your transactions.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '920b875598a34fa59affe46e58ed4e58',
         title: 'Knowledge Check',
         quiz: {
           question: 'What does DeFi stand for? ',
@@ -314,7 +322,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '153a075b1a004f38a9c177486aa95395',
         title: 'What You Can Do With DeFi',
-        content: '<div class="bloc1"><p><span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transactions are <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span>. This refers to a public <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps. </p><p><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span> and DeFi platforms enable users to make an ever increasing number of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg\'></div>'
+        content: '<div class="bloc1"><p><span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transactions are <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span>. This refers to a public <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps. </p><p><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span> and DeFi platforms enable users to make more and more types of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -340,7 +348,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'QUIZ',
-        notionId: '6eebe3d8e3494c59ae2bd46cd5925869',
+        notionId: '6dc82def6bab41e2b54efa5a62f941b7',
         title: 'Knowledge Check',
         quiz: {
           question: 'What does HODL mean?',
@@ -361,8 +369,14 @@ const LESSONS: LessonType[] = [
         content: '<div class="bloc1"><p>A decentralized exchange (DEX) shows current exchange rates between different crypto tokens and coins and serves as a digital marketplace that facilitates trading one currency for another by bringing together buyers and sellers. </p><p>The parties involved in a DEX trade don’t need to know or trust each other. In fact, it may appear that you are trading with the DEX. However, in most cases, the DEX simply facilitates the trade between two traders’ <span class="tooltip" definition="A wallet is an application or device used to send and receive crypto assets on the blockchain.">wallets</span> in a <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> fashion.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/trading-8cd72977.svg\'></div>'
       },
       {
-        type: 'QUIZ',
+        type: 'LEARN',
         notionId: '4e1e78e61bc240f0836346fcabb49f54',
+        title: 'So What?',
+        content: '<div class="bloc1"><p>Anyone can trade and participate in markets regardless of your net asset worth. Anyone can enter or exit a position via on-chain protocols.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '1d627556f09143b18edefdf87e059db6',
         title: 'Knowledge Check',
         quiz: {
           question: 'What is a DEX?',
@@ -462,9 +476,9 @@ const LESSONS: LessonType[] = [
     poapEventId: null,
     kudosId: 661,
     duration: 15,
-    learnings: 'Take a closer look at the concepts and technology that make blockchains work and gain a clearer understanding of what makes them revolutionary. ',
+    learnings: '',
     difficulty: 'Easy',
-    description: 'Learn about the fundamental architecture of blockchain technology',
+    description: 'Learn about the fundamental architecture of blockchain technology.',
     name: 'Blockchain Basics',
     quest: 'BlockchainBasics',
     publicationStatus: 'publish',
@@ -472,6 +486,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=b46a6fa7-1bf8-4f1e-8db3-a725fe98cac9',
     notionId: '562dba7dbd3949b480be367a64821cdf',
     slug: 'blockchain-basics',
     imageLinks: [
@@ -667,13 +682,13 @@ const LESSONS: LessonType[] = [
     lessonImageLink: '/lesson/academy-community/lesson-755fe7a3.png',
     socialImageLink: '/lesson/academy-community/social-1f64464b.jpg',
     learningActions: '',
-    marketingDescription: 'Join the Academy Explorer Community on gm.xyz',
+    marketingDescription: 'Join the Academy Explorer Community on gm.xyz.',
     poapEventId: null,
     kudosId: 662,
     duration: 10,
     learnings: '',
     difficulty: 'Easy',
-    description: 'Join the Academy Explorer Community on gm.xyz',
+    description: 'Join the Academy Explorer Community on gm.xyz.',
     name: 'Academy Community',
     quest: 'AcademyCommunity',
     publicationStatus: 'publish',
@@ -681,6 +696,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=6cda4b4c-5300-4e1e-9a12-a14eecd59ebf',
     notionId: '44b8a4937fcd43fa8e12400cb75885a1',
     slug: 'academy-community',
     imageLinks: [],
@@ -725,8 +741,9 @@ const LESSONS: LessonType[] = [
     publicationStatus: 'publish',
     isFeaturedOnHomepage: true,
     isCommentsEnabled: false,
-    endOfLessonRedirect: 'https://tally.so/r/3EkvNN',
-    endOfLessonText: 'To give feedback about this lesson, click Next.',
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=c5866aeb-f37d-41a0-995f-46223a9cc729',
     notionId: '7a5b9b7afe804e6984bf279301dfa1db',
     slug: 'web3-security',
     imageLinks: [

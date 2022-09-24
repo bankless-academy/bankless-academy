@@ -92,7 +92,7 @@ const LessonCards: React.FC = () => {
             </Box>
             <NextLink href={`/lessons/${lesson.slug}`}>
               <LessonBanner
-                iswhitelabel={IS_WHITELABEL}
+                iswhitelabel={IS_WHITELABEL.toString()}
                 cursor="pointer"
                 // overflow="hidden"
                 style={{

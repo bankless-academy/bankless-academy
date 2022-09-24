@@ -3,12 +3,14 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { LESSONS, QUESTS, GENERIC_ERROR_MESSAGE } from 'constants/index'
+import { ONCHAIN_QUESTS } from 'components/Quest/QuestComponent'
+import { validateOnchainQuest } from 'utils/index'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { address, quest } = req.query
+  const { address, quest, tx } = req.query
   if (
     !address ||
     // TODO: replace quest with notionId?
@@ -17,10 +19,29 @@ export default async function handler(
     typeof quest === 'object' ||
     !QUESTS.includes(quest)
   )
-    return res.json({ error: 'Wrong params' })
+    return res.json({ isQuestValidated: false, error: 'Wrong params' })
 
   console.log('address', address)
   console.log('quest', quest)
+
+  // Backend onchain quest verification
+  if (ONCHAIN_QUESTS.includes(quest)) {
+    if (!tx || typeof tx !== 'string') {
+      return res.json({ isQuestValidated: false, error: 'Missing transaction' })
+    }
+    if (quest === 'DEXAggregators') {
+      const isOnchainQuestCompleted = await validateOnchainQuest(
+        quest,
+        address,
+        tx
+      )
+      if (!isOnchainQuestCompleted)
+        return res.json({
+          isQuestValidated: false,
+          error: 'Onchain quest not completed',
+        })
+    }
+  }
 
   try {
     const userId = await getUserId(address)
@@ -59,7 +80,8 @@ export default async function handler(
     return res.json({ status: questStatus })
   } catch (error) {
     console.error(error)
-    res.json({
+    return res.json({
+      isQuestValidated: false,
       error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
     })
   }
