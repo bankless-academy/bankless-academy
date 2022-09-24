@@ -59,3 +59,10 @@ export const STAMP_PROVIDERS = {
     description: 'Discord name',
   },
 }
+
+export const EMPTY_PASSPORT = {
+  verified: false,
+  fraud: null,
+  validStampsCount: 0,
+  stamps: null,
+}

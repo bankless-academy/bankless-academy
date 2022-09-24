@@ -1,13 +1,14 @@
 /* eslint-disable no-console */
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Box, Text, Icon, Link, Button } from '@chakra-ui/react'
 import { X, CircleWavyCheck } from 'phosphor-react'
 import axios from 'axios'
+import { useLocalStorage } from 'usehooks-ts'
 
 import { useActiveWeb3React } from 'hooks'
 import { IS_WHITELABEL } from 'constants/index'
 import GitcoinPassport from 'components/GitcoinPassport'
-import { NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
+import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
 
 export const OkIcon = (
   <Icon as={CircleWavyCheck} color="green" display="inline" />
@@ -19,27 +20,26 @@ const PassportComponent = ({
 }: {
   displayStamps?: boolean
 }): JSX.Element => {
-  const [passport, setPassport] = useState(null)
+  const [passportLS, setPassportLS] = useLocalStorage(
+    'passport',
+    EMPTY_PASSPORT
+  )
+  const [status, setStatus] = useState('')
   const { account } = useActiveWeb3React()
 
   async function checkPassport() {
+    setStatus('loading passport ...')
     axios
       .get(`/api/passport?address=${account}`)
       .then(function (res) {
+        setStatus('')
         console.log('passport', res.data)
-        setPassport(res.data)
+        setPassportLS(res.data)
       })
       .catch(function (error) {
         console.error(error)
       })
   }
-
-  useEffect(() => {
-    if (account) checkPassport()
-    else {
-      setPassport(null)
-    }
-  }, [account])
 
   return (
     <>
@@ -47,16 +47,17 @@ const PassportComponent = ({
         <Text fontSize="2xl">
           {'Explorer 👨‍🚀 status: '}
           {!account && '⚠️ Connect your wallet first'}
-          {passport !== null ? (
+          {status === '' ? (
             <>
-              {passport.verified === true
+              {passportLS.verified === true
                 ? OkIcon
-                : passport.verified === false && (
+                : passportLS.verified === false && (
                     <>
                       {KoIcon}
                       <br />
-                      {passport?.fraud}
-                      {passport.validStampsCount < NUMBER_OF_STAMP_REQUIRED && (
+                      {passportLS?.fraud}
+                      {passportLS.validStampsCount <
+                        NUMBER_OF_STAMP_REQUIRED && (
                         <>
                           {`Go to `}
                           <Link
@@ -66,7 +67,8 @@ const PassportComponent = ({
                             Gitcoin Passport
                           </Link>
                           {` and collect ${
-                            NUMBER_OF_STAMP_REQUIRED - passport.validStampsCount
+                            NUMBER_OF_STAMP_REQUIRED -
+                            passportLS.validStampsCount
                           } more stamps`}
                         </>
                       )}
@@ -74,14 +76,14 @@ const PassportComponent = ({
                   )}
             </>
           ) : (
-            'loading passport ...'
+            status
           )}
         </Text>
       </Box>
       {/* TODO: add refresh button */}
       {!IS_WHITELABEL && (
         <GitcoinPassport
-          stamps={passport ? passport.stamps : null}
+          stamps={passportLS ? passportLS.stamps : null}
           displayStamps={displayStamps}
         />
       )}

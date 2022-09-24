@@ -16,6 +16,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import axios from 'axios'
+import { useLocalStorage } from 'usehooks-ts'
 
 import { useActiveWeb3React } from 'hooks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
@@ -31,14 +32,19 @@ import {
   MINTKUDOS_COMMUNITY_ID,
 } from 'constants/kudos'
 import { NETWORKS } from 'constants/networks'
+import { EMPTY_PASSPORT } from 'constants/passport'
 import { KudosType } from 'entities/kudos'
 
 const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
-  const [isKudosMinted, setIsKudosMinted] = useState(
-    !!localStorage.getItem(`kudos-${kudosId}`)
+  const [isKudosMintedLS, setIsKudosMintedLS] = useLocalStorage(
+    `isKudosMinted-${kudosId}`,
+    false
   )
   const [status, setStatus] = useState('')
-  const [isPassportVerified, setIsPassportVerified] = useState(true)
+  const [passportLS, setPassportLS] = useLocalStorage(
+    'passport',
+    EMPTY_PASSPORT
+  )
 
   const { account, library, chainId } = useActiveWeb3React()
   const toast = useToast()
@@ -48,13 +54,12 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
 
   async function checkPassport() {
-    setStatus('loading passport ...')
     axios
       .get(`/api/passport?address=${account}`)
       .then(function (res) {
         console.log('passport', res.data)
         setStatus('')
-        setIsPassportVerified(res.data?.verified)
+        setPassportLS(res.data)
       })
       .catch(function (error) {
         console.error(error)
@@ -72,12 +77,9 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
             (kudos: KudosType) => kudos?.kudosTokenId === kudosId
           )
           if (claimedKudos) {
-            localStorage.setItem(`kudos-${kudosId}`, claimedKudos.createdAt)
-            setIsKudosMinted(true)
+            setIsKudosMintedLS(true)
           } else {
-            localStorage.removeItem(`kudos-${kudosId}`)
-            setIsKudosMinted(false)
-            checkPassport()
+            setIsKudosMintedLS(false)
           }
         })
         .catch(function (error) {
@@ -157,8 +159,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
       console.log(result.data)
       if (result.data.location) {
         await followOperation(result.data.location)
-        setIsKudosMinted(true)
-        localStorage.setItem(`kudos-${kudosId}`, result.data.location)
+        setIsKudosMintedLS(true)
         toast.closeAll()
         // TODO: add 🎊
         // TODO: refresh list of Kudos in the wallet
@@ -177,10 +178,12 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
           status: 'error',
           duration: 10000,
         })
+        checkPassport()
       }
     } catch (error) {
       // TODO: add error feedback
       console.error(error)
+      checkPassport()
     }
   }
 
@@ -202,14 +205,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   )
 
   const GitcoinModal = (
-    <Modal
-      onClose={() => {
-        checkPassport()
-        onClose()
-      }}
-      size={'lg'}
-      isOpen={isOpen}
-    >
+    <Modal onClose={onClose} size={'lg'} isOpen={isOpen}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Passport</ModalHeader>
@@ -227,7 +223,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         <>{ConnectFirstButton}</>
       ) : (
         <>
-          {isKudosMinted ? (
+          {isKudosMintedLS ? (
             <Box>
               <Link
                 href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`}
@@ -248,7 +244,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
                 </Button>
               </Link>
             </Box>
-          ) : isPassportVerified ? (
+          ) : passportLS?.verified ? (
             <Button colorScheme={'green'} onClick={mintKudos} variant="primary">
               {status !== '' ? status : 'Claim your Credential 🙌'}
             </Button>

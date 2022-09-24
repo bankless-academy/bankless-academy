@@ -10073,6 +10073,11 @@ use@^3.1.0:
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==
 
+usehooks-ts@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/usehooks-ts/-/usehooks-ts-2.7.1.tgz#6b009aa1adda128f32fd31266201fc9e715ccf12"
+  integrity sha512-7WgP5ELpmJ/5rZ4P+YnfhLXdiGf1Xpy4iLnjcifBGmwBWXBBa9FZRRHNOiJJw1NKIAU9LOaKaps4G3KXLPhZ6w==
+
 utf-8-validate@5.0.4:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/utf-8-validate/-/utf-8-validate-5.0.4.tgz#72a1735983ddf7a05a43a9c6b67c5ce1c910f9b8"
