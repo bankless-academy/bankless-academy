@@ -11,7 +11,6 @@ import {
   SimpleGrid,
   Box,
   Image,
-  Link,
   useToast,
 } from '@chakra-ui/react'
 import { Wallet } from 'phosphor-react'
@@ -26,7 +25,7 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
 import { walletConnect, injected } from 'utils'
-import { LESSONS, INFURA_ID, DOMAIN_URL, IS_WHITELABEL } from 'constants/index'
+import { LESSONS, INFURA_ID, IS_WHITELABEL } from 'constants/index'
 import {
   MINTKUDOS_API,
   MINTKUDOS_COMMUNITY_ID,
@@ -210,16 +209,6 @@ const ConnectWalletButton = ({
                           (lesson) => lesson.kudosId === k.kudosTokenId
                         )
                         if (lesson) {
-                          const share = `${lesson.description}
-${
-  IS_WHITELABEL
-    ? ''
-    : 'Level up your #web3 knowledge thanks to @BanklessAcademy 👨‍🚀🚀'
-}
-${DOMAIN_URL}/lessons/${lesson.slug}`
-                          const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-                            share
-                          )}`
                           return (
                             <Box
                               key={`poap-${index}`}
@@ -229,15 +218,13 @@ ${DOMAIN_URL}/lessons/${lesson.slug}`
                               backgroundColor="blackAlpha.300"
                               p={1}
                             >
-                              <Link href={twitterLink} target="_blank">
-                                <Image
-                                  src={k.assetUrl}
-                                  width="70px"
-                                  height="70px"
-                                  alt={lesson.name}
-                                  title={lesson.name}
-                                />
-                              </Link>
+                              <Image
+                                src={k.assetUrl}
+                                width="70px"
+                                height="70px"
+                                alt={lesson.name}
+                                title={lesson.name}
+                              />
                             </Box>
                           )
                         }
