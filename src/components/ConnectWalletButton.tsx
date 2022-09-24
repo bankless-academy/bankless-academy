@@ -5,7 +5,6 @@ import {
   Button,
   Text,
   Popover,
-  PopoverTrigger,
   PopoverContent,
   PopoverArrow,
   PopoverBody,
@@ -18,6 +17,11 @@ import {
 import { Wallet } from 'phosphor-react'
 import axios from 'axios'
 import Davatar from '@davatar/react'
+
+// TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
+import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
+export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
+  OrigPopoverTrigger
 
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
