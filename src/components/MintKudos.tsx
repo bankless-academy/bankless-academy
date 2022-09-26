@@ -13,6 +13,7 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
+  ModalFooter,
   useDisclosure,
   Heading,
   useMediaQuery,
@@ -72,6 +73,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
 
   useEffect(() => {
     if (account) {
+      if (!passportLS.verified) checkPassport()
       axios
         .get(
           `${MINTKUDOS_API}/v1/wallets/${account}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&status=claimed`
@@ -220,6 +222,14 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         <ModalBody>
           <Passport displayStamps />
         </ModalBody>
+        <ModalFooter>
+          <Link
+            href="https://faq.banklessacademy.com/#GitcoinPassport"
+            target="_blank"
+          >
+            Help
+          </Link>
+        </ModalFooter>
       </ModalContent>
     </Modal>
   )
@@ -254,7 +264,7 @@ ${
       ) : (
         <>
           {isKudosMintedLS ? (
-            <Box>
+            <Box display="flex">
               <Link href={twitterLink} target="_blank" mr="2">
                 <Button
                   leftIcon={

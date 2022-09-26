@@ -6,7 +6,6 @@ import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { useActiveWeb3React } from 'hooks'
-import { IS_WHITELABEL } from 'constants/index'
 import GitcoinPassport from 'components/GitcoinPassport'
 import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
 
@@ -63,21 +62,19 @@ const PassportComponent = ({
           </>
         </Text>
       </Box>
-      {!IS_WHITELABEL && (
-        <GitcoinPassport
-          stamps={passportLS ? passportLS.stamps : null}
-          displayStamps={displayStamps}
-        />
-      )}
-      <Box textAlign="center" mb={6}>
+      <GitcoinPassport
+        stamps={passportLS ? passportLS.stamps : null}
+        displayStamps={displayStamps}
+      />
+      <Box textAlign="center">
         <Button
           variant="outline"
           onClick={() => checkPassport()}
           isLoading={isLoading}
-          loadingText="Refreshing Stamps"
+          loadingText="Refreshing"
           mt="4"
         >
-          Refresh Stamps
+          Refresh
         </Button>
       </Box>
     </>

@@ -34,13 +34,17 @@ const GitcoinPassport = ({
             >
               <Image src={provider.icon} width="30px" />
               <Box m={2}>{`${provider.name}`}</Box>
-              {stamp
-                ? isStampExpired
-                  ? 'stamp expired'
-                  : isTrustedIssuer
-                  ? OkIcon
-                  : 'Untrusted DID issuer'
-                : '--'}
+              {stamp ? (
+                isStampExpired ? (
+                  <span style={{ color: 'red' }}>stamp expired</span>
+                ) : isTrustedIssuer ? (
+                  OkIcon
+                ) : (
+                  'Untrusted DID issuer'
+                )
+              ) : (
+                '--'
+              )}
             </Box>
           )
         })}

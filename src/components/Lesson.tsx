@@ -675,7 +675,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               onClick={goToPrevSlide}
               leftIcon={<ArrowBackIcon />}
             >
-              {isLastSlide ? '' : 'Prev'}
+              {isLastSlide && isSmallScreen ? '' : 'Prev'}
             </Button>
           )}
           {lesson.isCommentsEnabled && !isSmallScreen && slide.notionId && (
