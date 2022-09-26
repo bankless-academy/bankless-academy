@@ -13,7 +13,7 @@ const GitcoinPassport = ({
 }): React.ReactElement => (
   <>
     {displayStamps && (
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} gap={6}>
+      <SimpleGrid columns={[2, 3]} gap={6}>
         {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
           const stamp = stamps ? stamps[key] : null
           const currentTimestamp = Date.now()
@@ -32,7 +32,7 @@ const GitcoinPassport = ({
               flexDirection="column"
               alignItems="center"
             >
-              <Image src={provider.icon} width="30px" />
+              <Image src={provider.icon} height="30px" />
               <Box m={2}>{`${provider.name}`}</Box>
               {stamp ? (
                 isStampExpired ? (

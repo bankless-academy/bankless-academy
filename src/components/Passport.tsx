@@ -10,9 +10,17 @@ import GitcoinPassport from 'components/GitcoinPassport'
 import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
 
 export const OkIcon = (
-  <Icon as={CircleWavyCheck} color="green" display="inline" />
+  <Icon
+    as={CircleWavyCheck}
+    color="green"
+    display="inline"
+    h="1.5em"
+    w="1.5em"
+  />
 )
-export const KoIcon = <Icon as={X} color="red" display="inline" />
+export const KoIcon = (
+  <Icon as={X} color="red" display="inline" h="1.5em" w="1.5em" />
+)
 
 const PassportComponent = ({
   displayStamps,
@@ -43,16 +51,12 @@ const PassportComponent = ({
   return (
     <>
       <Box mb={6}>
+        {passportLS.verified === false && passportLS?.fraud && (
+          <p style={{ color: 'red' }}>{passportLS?.fraud}</p>
+        )}
         <Text fontSize="2xl">
           <>
             {`Visit `}
-            {passportLS.verified === false && passportLS?.fraud && (
-              <p>
-                {KoIcon}
-                <br />
-                {passportLS?.fraud}
-              </p>
-            )}
             <Link href="https://passport.gitcoin.co/" target="_blank">
               Gitcoin Passport
             </Link>
