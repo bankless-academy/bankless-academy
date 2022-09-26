@@ -53,6 +53,7 @@ export default async function handler(
           `update "users" set "gitcoin_stamps" = gitcoin_stamps || ? where "users"."id" = ?`,
           [stampHashes, userId]
         )
+        // console.log('updated', updated)
         if (updated) console.log('stamps updated:', updated?.rowCount)
         const stampHashesSearch = []
         let whereCondition = 'gitcoin_stamps @> ?'

@@ -73,6 +73,12 @@ export default async function handler(
       .select(TABLE.completions.id, TABLE.completions.credential_claimed_at)
       .where(TABLE.completions.credential_id, credential.id)
       .where(TABLE.completions.user_id, userId)
+    console.log('questCompleted', questCompleted)
+
+    if (questCompleted?.credential_claimed_at) {
+      console.log('kudos already claimed')
+      return res.json({ status: 'kudos already claimed' })
+    }
 
     let questStatus = ''
     if (kudosId && !questCompleted?.credential_claimed_at) {
