@@ -12,10 +12,15 @@ import {
   Box,
   Image,
   useToast,
+  useDisclosure,
+  Heading,
+  Link,
 } from '@chakra-ui/react'
 import { Wallet } from 'phosphor-react'
 import axios from 'axios'
 import Davatar from '@davatar/react'
+import { useLocalStorage } from 'usehooks-ts'
+import styled from '@emotion/styled'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -36,6 +41,18 @@ import { SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 
 let web3Modal: Web3Modal
 
+const Overlay = styled(Box)`
+  opacity: 1;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: var(--chakra-colors-blackAlpha-600);
+  z-index: 1;
+  backdrop-filter: blur(2px);
+`
+
 const ConnectWalletButton = ({
   isSmallScreen,
 }: {
@@ -46,6 +63,7 @@ const ConnectWalletButton = ({
   const isConnected = walletWeb3ReactContext.active
   const walletAddress = walletWeb3ReactContext.account
   const [connectClick, setConnectClick] = useState(false)
+  const [isPopOverOn, setIsPopOverOn] = useState(false)
   const [walletIsLoading, setWalletIsLoading] = useState(false)
   const [kudos, setKudos] = useState<KudosType[]>([])
   const toast = useToast()
@@ -76,6 +94,11 @@ const ConnectWalletButton = ({
       },
     },
   }
+  const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
+    `connectWalletPopup`,
+    false
+  )
+  const { onClose } = useDisclosure()
 
   function web3ModalConnect(web3Modal) {
     web3Modal
@@ -159,13 +182,21 @@ const ConnectWalletButton = ({
   return (
     <>
       {isConnected ? (
-        <Popover trigger={isSmallScreen ? 'click' : 'hover'}>
+        <Popover
+          isOpen={isPopOverOn}
+          returnFocusOnClose={false}
+          onClose={() => {
+            onClose()
+            setIsPopOverOn(false)
+          }}
+        >
           <PopoverTrigger>
             <Button
               variant="secondary"
               size={isSmallScreen ? 'sm' : 'md'}
               // TODO: fix bug when switching wallets
               leftIcon={<Davatar address={walletAddress} size={25} />}
+              onClick={() => setIsPopOverOn(!isPopOverOn)}
             >
               <Text maxW="200px" display="flex" alignItems="center" isTruncated>
                 <ENSName provider={web3Provider} address={walletAddress} />
@@ -181,6 +212,7 @@ const ConnectWalletButton = ({
                   size={isSmallScreen ? 'sm' : 'md'}
                   leftIcon={<Wallet weight="bold" />}
                   onClick={() => {
+                    setIsPopOverOn(false)
                     walletWeb3ReactContext.deactivate()
                     web3Modal.clearCachedProvider()
                     localStorage.removeItem('walletconnect')
@@ -237,17 +269,47 @@ const ConnectWalletButton = ({
           </PopoverContent>
         </Popover>
       ) : (
-        <Button
-          onClick={() => {
-            setConnectClick(true)
+        <Popover
+          returnFocusOnClose={false}
+          isOpen={connectWalletPopupLS}
+          onClose={() => {
+            onClose()
+            setConnectWalletPopupLS(false)
           }}
-          size={isSmallScreen ? 'sm' : 'md'}
-          leftIcon={<Wallet weight="bold" />}
-          isLoading={walletIsLoading}
-          loadingText="Connecting wallet"
         >
-          Connect wallet
-        </Button>
+          <Overlay hidden={!connectWalletPopupLS} />
+          <PopoverTrigger>
+            <Button
+              onClick={() => {
+                setConnectClick(true)
+              }}
+              size={isSmallScreen ? 'sm' : 'md'}
+              leftIcon={<Wallet weight="bold" />}
+              isLoading={walletIsLoading}
+              loadingText="Connecting wallet"
+              zIndex={2}
+            >
+              Connect wallet
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverBody>
+              <Heading as="h2" size="md" textAlign="center" my="2">
+                Connect your wallet to proceed.
+              </Heading>
+              <Text textAlign="center">
+                {`Don’t know how? `}
+                <Link
+                  href="https://faq.banklessacademy.com/#GitcoinPassport"
+                  target="_blank"
+                >
+                  Get help here
+                </Link>
+              </Text>
+            </PopoverBody>
+          </PopoverContent>
+        </Popover>
       )}
     </>
   )

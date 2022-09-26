@@ -22,6 +22,7 @@ import { useMediaQuery } from '@chakra-ui/react'
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import { Warning, Checks } from 'phosphor-react'
 // import { isMobile } from 'react-device-detect'
+import { useLocalStorage } from 'usehooks-ts'
 
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
@@ -212,6 +213,10 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     !!localStorage.getItem(`poap-${lesson.slug}`)
   )
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [, setConnectWalletPopupLS] = useLocalStorage(
+    `connectWalletPopup`,
+    false
+  )
 
   const router = useRouter()
   // TODO: track embed origin
@@ -229,6 +234,12 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
   }, [currentSlide])
+
+  useEffect((): void => {
+    if (account) setConnectWalletPopupLS(false)
+    if ((slide.type === 'QUEST' || slide.type === 'END') && !account)
+      setConnectWalletPopupLS(true)
+  }, [account, slide])
 
   useEffect(() => {
     // preloading all lesson images after 3 seconds for smoother transitions

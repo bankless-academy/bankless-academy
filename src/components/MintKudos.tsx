@@ -204,9 +204,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
       >
         {'Waiting to detect your wallet ...'}
       </Button>
-      <p>
-        {`To collect your lesson credential, click the "Connect wallet" button in the top-right corner`}
-      </p>
+      <p>{`To claim rewards, you must connect your wallet.`}</p>
     </>
   )
 
