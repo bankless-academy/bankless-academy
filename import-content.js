@@ -304,7 +304,7 @@ axios
           // })
           slides.push({
             type: 'END',
-            title: 'End of lesson',
+            title: 'Lesson Reward',
           })
           lesson.slides = slides
           // console.log('lesson', lesson)

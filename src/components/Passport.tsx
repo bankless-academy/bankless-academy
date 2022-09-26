@@ -24,15 +24,15 @@ const PassportComponent = ({
     'passport',
     EMPTY_PASSPORT
   )
-  const [status, setStatus] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   const { account } = useActiveWeb3React()
 
   async function checkPassport() {
-    setStatus('loading passport ...')
+    setIsLoading(true)
     axios
       .get(`/api/passport?address=${account}`)
       .then(function (res) {
-        setStatus('')
+        setIsLoading(false)
         console.log('passport', res.data)
         setPassportLS(res.data)
       })
@@ -45,42 +45,24 @@ const PassportComponent = ({
     <>
       <Box mb={6}>
         <Text fontSize="2xl">
-          {'Explorer 👨‍🚀 status: '}
-          {!account && '⚠️ Connect your wallet first'}
-          {status === '' ? (
-            <>
-              {passportLS.verified === true
-                ? OkIcon
-                : passportLS.verified === false && (
-                    <>
-                      {KoIcon}
-                      <br />
-                      {passportLS?.fraud}
-                      {passportLS.validStampsCount <
-                        NUMBER_OF_STAMP_REQUIRED && (
-                        <>
-                          {`Go to `}
-                          <Link
-                            href="https://passport.gitcoin.co/"
-                            target="_blank"
-                          >
-                            Gitcoin Passport
-                          </Link>
-                          {` and collect ${
-                            NUMBER_OF_STAMP_REQUIRED -
-                            passportLS.validStampsCount
-                          } more stamps`}
-                        </>
-                      )}
-                    </>
-                  )}
-            </>
-          ) : (
-            status
-          )}
+          <>
+            {`Visit `}
+            {passportLS.verified === false && passportLS?.fraud && (
+              <p>
+                {KoIcon}
+                <br />
+                {passportLS?.fraud}
+              </p>
+            )}
+            <Link href="https://passport.gitcoin.co/" target="_blank">
+              Gitcoin Passport
+            </Link>
+            {` and collect ${
+              NUMBER_OF_STAMP_REQUIRED - passportLS.validStampsCount
+            } more stamps:`}
+          </>
         </Text>
       </Box>
-      {/* TODO: add refresh button */}
       {!IS_WHITELABEL && (
         <GitcoinPassport
           stamps={passportLS ? passportLS.stamps : null}
@@ -88,7 +70,13 @@ const PassportComponent = ({
         />
       )}
       <Box textAlign="center" mb={6}>
-        <Button variant="outline" onClick={() => checkPassport()}>
+        <Button
+          variant="outline"
+          onClick={() => checkPassport()}
+          isLoading={isLoading}
+          loadingText="Refreshing Stamps"
+          mt="4"
+        >
           Refresh Stamps
         </Button>
       </Box>

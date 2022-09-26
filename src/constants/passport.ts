@@ -1,6 +1,6 @@
 export const CERAMIC_PASSPORT = 'https://ceramic.passport-iam.gitcoin.co'
 
-export const NUMBER_OF_STAMP_REQUIRED = 1
+export const NUMBER_OF_STAMP_REQUIRED = 6
 
 // issued by Gitcoin
 export const ALLOWED_ISSUER =
@@ -27,11 +27,6 @@ export const STAMP_PROVIDERS = {
     icon: 'https://passport.gitcoin.co/assets/twitterStampIcon.svg',
     name: 'Twitter',
     description: 'Twitter name',
-  },
-  POAP: {
-    icon: 'https://passport.gitcoin.co/assets/poapStampIcon.svg',
-    name: 'POAP',
-    description: 'POAP Verification',
   },
   Facebook: {
     icon: 'https://passport.gitcoin.co/assets/facebookStampIcon.svg',

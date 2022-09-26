@@ -14,6 +14,8 @@ import {
   ModalCloseButton,
   ModalBody,
   useDisclosure,
+  Heading,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
@@ -21,12 +23,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import { useActiveWeb3React } from 'hooks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 import Passport from 'components/Passport'
-import {
-  PROJECT_NAME,
-  IS_WHITELABEL,
-  TWITTER_ACCOUNT,
-  LESSONS,
-} from 'constants/index'
+import { IS_WHITELABEL, TWITTER_ACCOUNT, LESSONS } from 'constants/index'
 import {
   MINTKUDOS_API,
   MINTKUDOS_URL,
@@ -39,6 +36,7 @@ import {
 import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { KudosType } from 'entities/kudos'
+import { theme } from 'theme/index'
 
 const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   const [isKudosMintedLS, setIsKudosMintedLS] = useLocalStorage(
@@ -53,6 +51,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
 
   const { account, library, chainId } = useActiveWeb3React()
   const toast = useToast()
+  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -210,13 +209,16 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   )
 
   const GitcoinModal = (
-    <Modal onClose={onClose} size={'lg'} isOpen={isOpen}>
+    <Modal onClose={onClose} size={'xl'} isOpen={isOpen}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Passport</ModalHeader>
+        <ModalHeader>
+          Explorers must pass unique authentication in order to collect Bankless
+          Academy rewards.
+        </ModalHeader>
         <ModalCloseButton />
         <ModalBody>
-          <Passport />
+          <Passport displayStamps />
         </ModalBody>
       </ModalContent>
     </Modal>
@@ -237,7 +239,11 @@ ${
   )}`
 
   return (
-    <Box py="4">
+    <Box>
+      <Heading as="h2" size="xl" textAlign="center">
+        <span style={{ color: theme.colors.secondary }}>{lesson.name}</span>
+        {` credential ${isKudosMintedLS ? 'claimed' : 'available'}!`}
+      </Heading>
       <Box display="flex" justifyContent="center" my={4}>
         <Link href={`${MINTKUDOS_URL}`} target="_blank">
           <Image width="150px" src="/images/powered-by-MintKudos.svg" />
@@ -267,18 +273,35 @@ ${
               </Link>
             </Box>
           ) : passportLS?.verified ? (
-            <Button colorScheme={'green'} onClick={mintKudos} variant="primary">
-              {status !== '' ? status : 'Mint your credential 🛠'}
-            </Button>
-          ) : (
-            <p>
-              {`Get a `}
-              <Button variant="primary" onClick={onOpen}>
-                {`${PROJECT_NAME} Passport`}
+            <Box textAlign="center">
+              <Button
+                colorScheme={'green'}
+                onClick={mintKudos}
+                variant="primary"
+              >
+                {status !== '' ? status : 'Mint credential 🛠'}
               </Button>
-              {` in order to mint this credential`}
+            </Box>
+          ) : (
+            <>
+              <Box>
+                <Heading as="h2" size="xl" textAlign="center">
+                  {`To claim rewards you need a `}
+                  <Button
+                    variant="primary"
+                    onClick={onOpen}
+                    mt={isSmallScreen ? '2' : ''}
+                  >
+                    {`Gitcoin Passport`}
+                  </Button>
+                </Heading>
+                <p>
+                  Authentication takes ~2 minutes, and protects the legitimacy
+                  of Academy rewards.
+                </p>
+              </Box>
               {GitcoinModal}
-            </p>
+            </>
           )}
         </>
       )}

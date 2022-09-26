@@ -32,6 +32,7 @@ import { useActiveWeb3React } from 'hooks'
 import { track, verifySignature, getSignature } from 'utils'
 import { GENERIC_ERROR_MESSAGE, IS_WHITELABEL } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, PoapIcon } from 'components/Icons'
+import { theme } from 'theme/index'
 
 // transform keywords into Tooltip
 function transform(node, index) {
@@ -421,7 +422,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           {slide.type === 'POAP' && <PoapIcon />}
           {slide.type === 'END' && <PoapIcon />}
         </Box>
-        <Box>
+        <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
           {slide.type === 'QUIZ' ? (
             <>Knowledge Check</>
           ) : (
@@ -657,7 +658,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                       ) : null}
                     </>
                   )}
-                  <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
                 </>
               )}
@@ -675,7 +675,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               onClick={goToPrevSlide}
               leftIcon={<ArrowBackIcon />}
             >
-              Prev
+              {isLastSlide ? '' : 'Prev'}
             </Button>
           )}
           {lesson.isCommentsEnabled && !isSmallScreen && slide.notionId && (
@@ -722,7 +722,9 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                     rel="noreferrer"
                     href={lesson.communityDiscussionLink}
                   >
-                    <Button variant="outline">👨‍🚀 Community discussion</Button>
+                    <Button variant="outline">
+                      👨‍🚀{isSmallScreen ? '' : ' Community discussion'}
+                    </Button>
                   </Link>
                 </Tooltip>
               )}
