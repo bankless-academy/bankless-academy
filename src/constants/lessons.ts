@@ -468,13 +468,13 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: 'https://s3.amazonaws.com/sandbox.images.mintkudos.xyz/token/661.png',
+    poapImageLink: 'https://s3.amazonaws.com/sandbox.images.mintkudos.xyz/token/651.png',
     lessonImageLink: '/lesson/blockchain-basics/lesson-c84db284.png',
     socialImageLink: '/lesson/blockchain-basics/social-07ea2639.jpg',
     learningActions: '',
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
     poapEventId: null,
-    kudosId: 661,
+    kudosId: 651,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
