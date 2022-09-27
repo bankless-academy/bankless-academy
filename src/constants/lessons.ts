@@ -229,7 +229,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -463,7 +463,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -673,7 +673,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -720,7 +720,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -969,7 +969,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   }
