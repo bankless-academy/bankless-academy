@@ -5,6 +5,7 @@ const db = knex(config)
 const { TABLES } = require('./db.js')
 // run `tsc src/constants/lessons.ts`
 const lessons = require('./src/constants/lessons.js')
+// ALERT: add hD + bD lessons when doing the migration
 
 async function main() {
   const quests = await db
