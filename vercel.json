@@ -39,54 +39,8 @@
   ],
   "rewrites": [
     {
-      "source": "/:path",
-      "has": [
-        {
-          "type": "host",
-          "value": "whitelabel.banklessacademy.com"
-        }
-      ],
-      "destination": "/notion/:path"
-    },
-    {
-      "source": "/:path",
-      "has": [
-        {
-          "type": "host",
-          "value": "documentation.banklessacademy.com"
-        }
-      ],
-      "destination": "/notion/:path"
-    },
-    {
-      "source": "/:path",
-      "has": [
-        {
-          "type": "host",
-          "value": "talent.banklessacademy.com"
-        }
-      ],
-      "destination": "/notion/:path"
-    },
-    {
-      "source": "/:path",
-      "has": [
-        {
-          "type": "host",
-          "value": "sponsors.banklessacademy.com"
-        }
-      ],
-      "destination": "/notion/:path"
-    },
-    {
-      "source": "/:path",
-      "has": [
-        {
-          "type": "host",
-          "value": "bankless-academy-git-notion-pages-bankless-academy.vercel.app"
-        }
-      ],
-      "destination": "/notion/:path"
+      "source": "/faq",
+      "destination": "/notion/97b88d72335a41a1911c12d4e2f99db6"
     }
   ]
 }

@@ -21,6 +21,7 @@ import axios from 'axios'
 import Davatar from '@davatar/react'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
+import { useRouter } from 'next/router'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -99,6 +100,9 @@ const ConnectWalletButton = ({
     false
   )
   const { onClose } = useDisclosure()
+  const { asPath } = useRouter()
+
+  const isLessonPage = asPath.includes('/lessons/')
 
   function web3ModalConnect(web3Modal) {
     web3Modal
@@ -271,13 +275,13 @@ const ConnectWalletButton = ({
       ) : (
         <Popover
           returnFocusOnClose={false}
-          isOpen={connectWalletPopupLS}
+          isOpen={connectWalletPopupLS && isLessonPage}
           onClose={() => {
             onClose()
             setConnectWalletPopupLS(false)
           }}
         >
-          <Overlay hidden={!connectWalletPopupLS} />
+          <Overlay hidden={!(connectWalletPopupLS && isLessonPage)} />
           <PopoverTrigger>
             <Button
               onClick={() => {
@@ -301,7 +305,7 @@ const ConnectWalletButton = ({
               <Text textAlign="center">
                 {`Don’t know how? `}
                 <Link
-                  href="https://faq.banklessacademy.com/#GitcoinPassport"
+                  href="/faq#e8dc710580f84305a5b522ceb556fc50"
                   target="_blank"
                 >
                   Get help here

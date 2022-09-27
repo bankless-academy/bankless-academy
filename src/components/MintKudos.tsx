@@ -221,10 +221,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
           <Passport displayStamps />
         </ModalBody>
         <ModalFooter>
-          <Link
-            href="https://faq.banklessacademy.com/#GitcoinPassport"
-            target="_blank"
-          >
+          <Link href="/faq#640071a81daf4aa4b7df00b1eec1c58d" target="_blank">
             Help
           </Link>
         </ModalFooter>
