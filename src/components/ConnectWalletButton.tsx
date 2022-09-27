@@ -171,11 +171,8 @@ const ConnectWalletButton = ({
           const data = res.data.data
           if (Array.isArray(data)) {
             setKudos(
-              data.filter(
-                (kudos: KudosType) =>
-                  KUDOS_IDS.includes(kudos.kudosTokenId) &&
-                  // TODO: remove after API is fixed
-                  kudos.claimStatus === 'claimed'
+              data.filter((kudos: KudosType) =>
+                KUDOS_IDS.includes(kudos.kudosTokenId)
               )
             )
           }

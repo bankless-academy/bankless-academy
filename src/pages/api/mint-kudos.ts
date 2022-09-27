@@ -93,7 +93,7 @@ export default async function handler(
       }
 
       const userKudos = await axios.get(
-        `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&status=claimed`
+        `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
       )
       // console.log('userKudos', userKudos?.data?.data)
 

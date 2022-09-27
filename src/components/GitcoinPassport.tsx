@@ -2,7 +2,7 @@ import { Box, SimpleGrid, Image } from '@chakra-ui/react'
 
 import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
 import { Stamps } from 'entities/passport'
-import { OkIcon } from 'components/Passport'
+import { OkIcon, KoIcon } from 'components/Passport'
 
 const GitcoinPassport = ({
   stamps,
@@ -42,8 +42,10 @@ const GitcoinPassport = ({
                 ) : (
                   'Untrusted DID issuer'
                 )
-              ) : (
+              ) : stamp === null ? (
                 '--'
+              ) : (
+                KoIcon
               )}
             </Box>
           )

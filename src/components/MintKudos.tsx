@@ -4,7 +4,6 @@ import {
   Button,
   Link,
   useToast,
-  Spinner,
   Image,
   Box,
   Modal,
@@ -76,7 +75,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
       if (!passportLS.verified) checkPassport()
       axios
         .get(
-          `${MINTKUDOS_API}/v1/wallets/${account}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&status=claimed`
+          `${MINTKUDOS_API}/v1/wallets/${account}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
         )
         .then(function (res) {
           const claimedKudos: KudosType = res.data?.data?.find(
@@ -193,18 +192,11 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     }
   }
 
-  const ConnectFirstButton = (
+  const ConnectFirst = (
     <>
-      <Button
-        variant="outlined"
-        leftIcon={<Spinner speed="1s" />}
-        color={'orange'}
-        cursor="default"
-        boxShadow="none !important"
-      >
-        {'Waiting to detect your wallet ...'}
-      </Button>
-      <p>{`To claim rewards, you must connect your wallet.`}</p>
+      <Heading as="h2" size="xl" textAlign="center" pt="8">
+        To claim rewards, you must connect your wallet.
+      </Heading>
     </>
   )
 
@@ -255,7 +247,7 @@ ${
         </Link>
       </Box>
       {!account ? (
-        <>{ConnectFirstButton}</>
+        <>{ConnectFirst}</>
       ) : (
         <>
           {isKudosMintedLS ? (
