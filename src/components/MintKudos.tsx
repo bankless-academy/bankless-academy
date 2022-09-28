@@ -179,9 +179,19 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         toast.closeAll()
         toast({
           title: '⚠️ problem while minting',
-          description: result.data.status || result.data.error,
+          description: (
+            <>
+              {`${result.data.status || result.data.error || ''} | `}
+              <Link
+                href="/faq#d1a7f6dda4334a7ba73ee8b3a18a60ad"
+                target="_blank"
+              >
+                get help
+              </Link>
+            </>
+          ),
           status: 'error',
-          duration: 10000,
+          duration: 20000,
         })
         checkPassport()
       }
