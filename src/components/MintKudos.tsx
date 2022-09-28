@@ -223,12 +223,14 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
 
   const lesson = LESSONS.find((lesson) => lesson.kudosId === kudosId)
 
-  const share = `Checkout my "${lesson.name}" credential! 🎉
+  const share = `I've just claimed my "${
+    lesson.name
+  }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
 ${MINTKUDOS_URL}profile/${account}?tab=Received&tokenId=${kudosId}
 ${
   IS_WHITELABEL
     ? ''
-    : `Join the explorer community and level up your #web3 knowledge on @${TWITTER_ACCOUNT}! 👨‍🚀🚀`
+    : `Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 }`
 
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
@@ -251,7 +253,7 @@ ${
       ) : (
         <>
           {isKudosMintedLS ? (
-            <Box display="flex">
+            <Box display="flex" justifyContent="center">
               <Link href={twitterLink} target="_blank" mr="2">
                 <Button
                   leftIcon={

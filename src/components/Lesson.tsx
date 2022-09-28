@@ -204,7 +204,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isClaimingPoap, setIsClaimingPoap] = useState(false)
+  const [, setIsClaimingPoap] = useState(false)
   const [isPoapMinted, setIsPoapMinted] = useState(false)
   const [poapData, setPoapData] = useState<{ code?: string; error?: string }>(
     {}
@@ -215,6 +215,10 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
+    false
+  )
+  const [isKudosMintedLS] = useLocalStorage(
+    `isKudosMinted-${lesson.kudosId}`,
     false
   )
 
@@ -741,7 +745,13 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               )}
               {embed ? null : (
                 <NextLink href={`/lessons`}>
-                  <Button variant="primary">Explore more Lessons</Button>
+                  <Button
+                    variant={
+                      lesson.kudosId && !isKudosMintedLS ? 'outline' : 'primary'
+                    }
+                  >
+                    Explore more Lessons
+                  </Button>
                 </NextLink>
               )}
             </>

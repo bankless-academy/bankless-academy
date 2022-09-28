@@ -30,7 +30,7 @@ export const NETWORKS = Object.freeze({
     name: 'Mumbai Testnet',
     image: '/images/matic-black.svg',
     networkName: 'Matic(Polygon) Testnet Mumbai',
-    currencySymbol: 'tMATIC',
+    currencySymbol: 'MATIC',
     chainId: 80001,
     rpcUrl: `https://polygon-mumbai.infura.io/v3/${INFURA_ID}`,
     faucet: 'https://faucet.matic.network/',
