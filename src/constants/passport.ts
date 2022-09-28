@@ -1,6 +1,6 @@
 export const CERAMIC_PASSPORT = 'https://ceramic.passport-iam.gitcoin.co'
 
-export const NUMBER_OF_STAMP_REQUIRED = 6
+export const NUMBER_OF_STAMP_REQUIRED = 3
 
 // issued by Gitcoin
 export const ALLOWED_ISSUER =
@@ -15,8 +15,8 @@ export const STAMP_PROVIDERS = {
   },
   Ens: {
     icon: 'https://passport.gitcoin.co/assets/ensStampIcon.svg',
-    name: 'Ens',
-    description: 'Ens name',
+    name: 'ENS',
+    description: 'ENS name',
   },
   Poh: {
     icon: 'https://passport.gitcoin.co/assets/pohStampIcon.svg',
