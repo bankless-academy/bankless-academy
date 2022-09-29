@@ -1,12 +1,14 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react'
-import { Box, Text, Link, Button } from '@chakra-ui/react'
+import { Box, Text, Link, Button, Image } from '@chakra-ui/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { useActiveWeb3React } from 'hooks'
 import GitcoinPassport from 'components/GitcoinPassport'
 import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
+import { theme } from 'theme/index'
+import { shortenAddress } from 'utils'
 
 const PassportComponent = ({
   displayStamps,
@@ -41,7 +43,25 @@ const PassportComponent = ({
     <>
       <Box mb={6}>
         {passportLS.verified === false && passportLS?.fraud && (
-          <p style={{ color: 'red' }}>{passportLS?.fraud}</p>
+          <Box display="flex" my={2} justifyContent="center">
+            <Box
+              display="flex"
+              width="80px"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Image src="/images/warning.png" height="40px" />
+            </Box>
+            <Text
+              fontSize="xl"
+              color={theme.colors.incorrect}
+              fontWeight="bold"
+            >
+              Duplicate stamp detected.
+              <br />
+              Switch back to {shortenAddress(passportLS?.fraud)}
+            </Text>
+          </Box>
         )}
         <Text fontSize="2xl">
           <>

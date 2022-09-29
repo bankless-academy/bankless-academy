@@ -79,7 +79,7 @@ export default async function handler(
           return res.json({
             verified: false,
             requirement,
-            fraud: `🏴‍☠️ fraud detected: switch back to ${sybil[0]?.address}`,
+            fraud: sybil[0]?.address,
             validStampsCount: validStamps?.length,
             stamps: stampProviders,
           })
