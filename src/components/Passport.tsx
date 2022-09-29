@@ -1,26 +1,12 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react'
-import { Box, Text, Icon, Link, Button } from '@chakra-ui/react'
-import { X, CircleWavyCheck } from 'phosphor-react'
+import { Box, Text, Link, Button } from '@chakra-ui/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { useActiveWeb3React } from 'hooks'
 import GitcoinPassport from 'components/GitcoinPassport'
 import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
-
-export const OkIcon = (
-  <Icon
-    as={CircleWavyCheck}
-    color="green"
-    display="inline"
-    h="1.5em"
-    w="1.5em"
-  />
-)
-export const KoIcon = (
-  <Icon as={X} color="red" display="inline" h="1.5em" w="1.5em" />
-)
 
 const PassportComponent = ({
   displayStamps,
@@ -48,6 +34,9 @@ const PassportComponent = ({
       })
   }
 
+  const numberOfStampsLeftToCollect =
+    NUMBER_OF_STAMP_REQUIRED - passportLS.validStampsCount
+
   return (
     <>
       <Box mb={6}>
@@ -61,8 +50,8 @@ const PassportComponent = ({
               Gitcoin Passport
             </Link>
             {` and collect ${
-              NUMBER_OF_STAMP_REQUIRED - passportLS.validStampsCount
-            } more stamps:`}
+              numberOfStampsLeftToCollect >= 1 ? numberOfStampsLeftToCollect : 0
+            } more stamp${numberOfStampsLeftToCollect !== 1 ? 's' : ''}:`}
           </>
         </Text>
       </Box>

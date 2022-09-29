@@ -1,6 +1,6 @@
 export const CERAMIC_PASSPORT = 'https://ceramic.passport-iam.gitcoin.co'
 
-export const NUMBER_OF_STAMP_REQUIRED = 2
+export const NUMBER_OF_STAMP_REQUIRED = 6
 
 // issued by Gitcoin
 export const ALLOWED_ISSUER =
@@ -13,16 +13,6 @@ export const STAMP_PROVIDERS = {
     name: 'Google',
     description: 'Google Authentication',
   },
-  Ens: {
-    icon: 'https://passport.gitcoin.co/assets/ensStampIcon.svg',
-    name: 'ENS',
-    description: 'ENS name',
-  },
-  Poh: {
-    icon: 'https://passport.gitcoin.co/assets/pohStampIcon.svg',
-    name: 'POH',
-    description: 'Proof of Humanity',
-  },
   Twitter: {
     icon: 'https://passport.gitcoin.co/assets/twitterStampIcon.svg',
     name: 'Twitter',
@@ -33,25 +23,30 @@ export const STAMP_PROVIDERS = {
     name: 'Facebook',
     description: 'Facebook name',
   },
-  Brightid: {
-    icon: 'https://passport.gitcoin.co/assets/brightidStampIcon.svg',
-    name: 'Bright ID',
-    description: 'Bright ID',
-  },
-  Github: {
-    icon: 'https://passport.gitcoin.co/assets/githubLogoLight.svg',
-    name: 'Github',
-    description: 'Github name',
-  },
   Linkedin: {
     icon: 'https://passport.gitcoin.co/assets/linkedinStampIcon.svg',
-    name: 'Linkedin',
-    description: 'Linkedin name',
+    name: 'LinkedIn',
+    description: 'LinkedIn name',
   },
   Discord: {
     icon: 'https://passport.gitcoin.co/assets/discordStampIcon.svg',
     name: 'Discord',
     description: 'Discord name',
+  },
+  Ens: {
+    icon: 'https://passport.gitcoin.co/assets/ensStampIcon.svg',
+    name: 'ENS',
+    description: 'ENS name',
+  },
+  Brightid: {
+    icon: 'https://passport.gitcoin.co/assets/brightidStampIcon.svg',
+    name: 'Bright ID',
+    description: 'Bright ID',
+  },
+  Poh: {
+    icon: 'https://passport.gitcoin.co/assets/pohStampIcon.svg',
+    name: 'Proof of Humanity',
+    description: 'Proof of Humanity',
   },
 }
 
