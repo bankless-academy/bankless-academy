@@ -1,6 +1,6 @@
 export const CERAMIC_PASSPORT = 'https://ceramic.passport-iam.gitcoin.co'
 
-export const NUMBER_OF_STAMP_REQUIRED = 6
+export const NUMBER_OF_STAMP_REQUIRED = 2
 
 // issued by Gitcoin
 export const ALLOWED_ISSUER =
