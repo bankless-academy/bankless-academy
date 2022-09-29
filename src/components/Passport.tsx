@@ -43,7 +43,7 @@ const PassportComponent = ({
     <>
       <Box mb={6}>
         {passportLS.verified === false && passportLS?.fraud && (
-          <Box display="flex" my={2} justifyContent="center">
+          <Box display="flex" my={2} justifyContent="center" mb={4}>
             <Box
               display="flex"
               width="80px"
@@ -60,6 +60,14 @@ const PassportComponent = ({
               Duplicate stamp detected.
               <br />
               Switch back to {shortenAddress(passportLS?.fraud)}
+              <br />
+              <Link
+                href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
+                target="_blank"
+                fontWeight="normal"
+              >
+                Understand why this happened?
+              </Link>
             </Text>
           </Box>
         )}
@@ -67,11 +75,13 @@ const PassportComponent = ({
           <>
             {`Visit `}
             <Link href="https://passport.gitcoin.co/" target="_blank">
-              Gitcoin Passport
+              <Button variant="primary">Gitcoin Passport</Button>
             </Link>
             {` and collect ${
               numberOfStampsLeftToCollect >= 1 ? numberOfStampsLeftToCollect : 0
-            } more stamp${numberOfStampsLeftToCollect !== 1 ? 's' : ''}:`}
+            } more of the following stamp${
+              numberOfStampsLeftToCollect !== 1 ? 's' : ''
+            }:`}
           </>
         </Text>
       </Box>
