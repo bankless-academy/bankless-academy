@@ -253,9 +253,9 @@ ${
         <span style={{ color: theme.colors.secondary }}>{lesson.name}</span>
         {` credential ${isKudosMintedLS ? 'claimed' : 'available'}!`}
       </Heading>
-      <Box display="flex" justifyContent="center" my={4}>
+      <Box display="flex" justifyContent="center" mb={10} mt={-3}>
         <Link href={`${MINTKUDOS_URL}`} target="_blank">
-          <Image width="150px" src="/images/powered-by-MintKudos.svg" />
+          <Image width="120px" src="/images/powered-by-MintKudos.svg" />
         </Link>
       </Box>
       {!account ? (
