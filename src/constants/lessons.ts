@@ -2,7 +2,7 @@ import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = [
   {
-    poapImageLink: 'https://s3.amazonaws.com/sandbox.images.mintkudos.xyz/token/659.png',
+    poapImageLink: '/lesson/wallet-basics/poap-75d8aa76.png',
     lessonImageLink: '/lesson/wallet-basics/lesson-5aa84b59.png',
     socialImageLink: '/lesson/wallet-basics/social-230cc260.jpg',
     learningActions: 'Create and manage your own wallet\nConnect your wallet to a web3 website',
@@ -234,7 +234,7 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: 'https://s3.amazonaws.com/sandbox.images.mintkudos.xyz/token/660.png',
+    poapImageLink: '/lesson/intro-to-defi/poap-b4dab2d4.png',
     lessonImageLink: '/lesson/intro-to-defi/lesson-97291c9d.png',
     socialImageLink: '/lesson/intro-to-defi/social-ee8d95a4.jpg',
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
@@ -468,7 +468,7 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: 'https://s3.amazonaws.com/sandbox.images.mintkudos.xyz/token/651.png',
+    poapImageLink: '/lesson/blockchain-basics/poap-b0048cdb.png',
     lessonImageLink: '/lesson/blockchain-basics/lesson-c84db284.png',
     socialImageLink: '/lesson/blockchain-basics/social-07ea2639.jpg',
     learningActions: '',
@@ -678,7 +678,7 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: 'https://s3.amazonaws.com/sandbox.images.mintkudos.xyz/token/662.png',
+    poapImageLink: '/lesson/academy-community/poap-4fce19ff.png',
     lessonImageLink: '/lesson/academy-community/lesson-755fe7a3.png',
     socialImageLink: '/lesson/academy-community/social-1f64464b.jpg',
     learningActions: '',
@@ -725,7 +725,7 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: 'https://s3.amazonaws.com/sandbox.images.mintkudos.xyz/token/663.png',
+    poapImageLink: '/lesson/web3-security/poap-d2f0df26.png',
     lessonImageLink: '/lesson/web3-security/lesson-09017125.png',
     socialImageLink: '/lesson/web3-security/social-795f9c67.jpg',
     learningActions: 'Avoid the scams in web3 and keep your assets safe.',
@@ -768,7 +768,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '44450164401340659f6553fadd0230e4',
         title: 'Money in Web2',
-        content: '<div class="bloc1"><p>In web2, the institutions hold money on behalf of people. A user must prove their identity to an institution in order to access and use their money. It’s the same as a bank account or a <span class="tooltip" definition="(CEX) Platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange">centralized exchange</span> (CEX); one needs a login ID and a password.</p><p>For a scammer to gain access to your money, they need this ID + password combination. Because the institutions are charged with protecting your money, fraudulent transactions can be reversed - like a credit card transaction dispute.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/money-in-web2-0faeb54f.svg\'></div>'
+        content: '<div class="bloc1"><p>In web2, the institutions hold money on behalf of people. A user must prove their identity to an institution in order to access and use their money. It’s the same as a bank account or a <span class="tooltip" definition="(CEX) Platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange">centralized exchange</span> (CEX); one needs a login ID and a password.</p><p>For a scammer to gain access to your money, they need this ID + password combination. Because the institutions are charged with protecting your money, fraudulent transactions can be reversed - like a credit card transaction dispute.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/money-in-web2-0faeb54f.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -822,7 +822,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '43fec0fae2ae42db8ed8780bbbd7f46a',
         title: 'Two Factor Authentication',
-        content: '<div class="bloc1"><p>Two Factor Authentication, also known as 2FA, is a secondary layer of web2 security.</p><p>Many people have had their web2 accounts hacked, or have had their money and credentials stolen despite having strong passwords. Web2 websites (and even password managers) often use a second layer of security 2FA as well. 2FA generates single-use codes sent to another device, in addition to the normal password, to enable website log-in. The other device could be a phone, a desktop computer, or even a small device you can attach to your keychain.</p><p>Phone (SMS) 2FA is better than no 2FA, but phone companies are vulnerable to scammers also. They can use <span class="tooltip" definition="Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases">social engineering</span> to impersonate the account owner, bypass the company’s security checks, and gain access to the owner’s account - all without the real owner knowing. Authentication applications like Authy or Google Authenticator are more secure 2FA solutions.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/two-factor-authentication-e91b624a.svg\'></div>'
+        content: '<div class="bloc1"><p>Two Factor Authentication, also known as 2FA, is a secondary layer of web2 security.</p><p>Many people have had their web2 accounts hacked, or have had their money and credentials stolen despite having strong passwords. Web2 websites (and even password managers) often use a second layer of security 2FA as well. 2FA generates single-use codes sent to another device, in addition to the normal password, to enable website log-in. The other device could be a phone, a desktop computer, or even a small device you can attach to your keychain.</p><p>Phone (SMS) 2FA is better than no 2FA, but phone companies are vulnerable to scammers also. They can use <span class="tooltip" definition="Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases">social engineering</span> to impersonate the account owner, bypass the company’s security checks, and gain access to the owner’s account - all without the real owner knowing. Authentication applications like Authy or Google Authenticator are more secure 2FA solutions.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/two-factor-authentication-e91b624a.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -844,7 +844,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'ae2890ad87d94b49b1e85575da36c4ee',
         title: 'Social Engineering Scams',
-        content: '<div class="bloc1"><p>In both web2 and web3, scammers use <span class="tooltip" definition="A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money">phishing</span> tactics to trick people into giving up their passwords and seed phrases. Often they’ll pretend to be product support staff offering help, “Hello this is Metamask support”, or pretend to be an admin of a community, “New NFT mint, exclusive for our community”.</p><p>They use <span class="tooltip" definition="Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases">social engineering</span> to pressure people. Examples include:</p><ul><li>“Time is running out!” - making you feel rushed.</li><li>“Congratulations you won our giveaway!” - making things feel exclusive.</li><li>”Get early access to our pre-mint!” - generating <span class="tooltip" definition="Fear Of Missing Out. Anxiety or apprehension about missing out on or not getting things">FOMO</span> in the person being scammed.</li></ul></div><div class="bloc2"><img src=\'/lesson/web3-security/social-engineering-scams-07dbba27.svg\'></div>'
+        content: '<div class="bloc1"><p>In both web2 and web3, scammers use <span class="tooltip" definition="A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money">phishing</span> tactics to trick people into giving up their passwords and seed phrases. Often they’ll pretend to be product support staff offering help, “Hello this is Metamask support”, or pretend to be an admin of a community, “New NFT mint, exclusive for our community”.</p><p>They use <span class="tooltip" definition="Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases">social engineering</span> to pressure people. Examples include:</p><ul><li>“Time is running out!” - making you feel rushed.</li><li>“Congratulations you won our giveaway!” - making things feel exclusive.</li><li>”Get early access to our pre-mint!” - generating <span class="tooltip" definition="Fear Of Missing Out. Anxiety or apprehension about missing out on or not getting things">FOMO</span> in the person being scammed.</li></ul></div><div class="bloc2"><img src=\'/lesson/web3-security/social-engineering-scams-07dbba27.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -970,6 +970,456 @@ const LESSONS: LessonType[] = [
       {
         type: 'END',
         title: 'Lesson Reward'
+      }
+    ]
+  },
+  {
+    poapImageLink: '/lesson/blockchains-layer-1/poap-28a03b13.png',
+    lessonImageLink: '/lesson/blockchains-layer-1/lesson-670d86ca.png',
+    socialImageLink: '/lesson/blockchains-layer-1/social-9e12aa4e.png',
+    learningActions: '',
+    marketingDescription: 'Understand the Layer 1 blockchains basics and their limitations.',
+    poapEventId: null,
+    kudosId: null,
+    duration: 15,
+    learnings: '',
+    difficulty: undefined,
+    description: 'Understand the Layer 1 blockchains basics and their limitations.',
+    name: 'Blockchains Layer 1',
+    quest: 'BlockchainsLayer1',
+    publicationStatus: 'hidden',
+    isFeaturedOnHomepage: false,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    communityDiscussionLink: null,
+    notionId: '6e14e3cfc6a44087b3b3d15dd07d2fee',
+    slug: 'blockchains-layer-1',
+    imageLinks: [
+      '/lesson/blockchains-layer-1/blockchain-trilemma-112547fd.png',
+      '/lesson/blockchains-layer-1/security-and-attacks-614e91b8.jpg',
+      '/lesson/blockchains-layer-1/scalability-throughput-ef6f434d.png',
+      '/lesson/blockchains-layer-1/is-it-decentralized-9c900798.png',
+      '/lesson/blockchains-layer-1/some-examples-e0e8eb7c.png',
+      '/lesson/blockchains-layer-1/so-what-can-be-done-5aed7436.png',
+      '/lesson/blockchains-layer-1/the-future-of-ethereum-ca844a29.png'
+    ],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: 'c39a3e32b41c474394eed2485e5f6096',
+        title: '<strong>Introduction</strong>',
+        content: '<div class="bloc1"><p>Problems emerge when more users want to use a blockchain network than it can handle. Large demand for <span class="tooltip" definition="Blockspace is amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s).">blockspace</span> can be temporary or can last as long as users continue to have a strong desire to use the blockchain. In order to still have their transactions processed quickly, Ethereum users can pay skyrocketing fees in times of high demand — pricing out users with less capital and opening opportunities for other blockchains.</p><p>This lesson explores why Ethereum and other blockchains are subject to the Blockchain Trilemma, how the Trilemma is the root cause of the problems described above, and how the Trilemma affects Ethereum’s plans for serving the needs of all their users. We will look at the tradeoffs several blockchains have made with respect to the Blockchain Trilemma, and what those tradeoffs mean for Academy Explorers.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '4dfda718520e4f5ea01dce2e8ee15529',
+        title: 'Blockchain Trilemma',
+        content: '<div class="bloc1"><p>As implied by the word <em><strong>tri</strong></em>lemma, there are three qualities of blockchains that compete with each other and prevent optimizing for all three at once.</p><p>These are: <span class="tooltip" definition="Ability of a blockchain to withstand hacking attempts, code exploits, and economic exploits among other attacks, and continue to function as normal. ">Security</span>, <span class="tooltip" definition="A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users.">Scalability</span>, and <span class="tooltip" definition="Principle that no single authority or entity should control the blockchain data.">Decentralization</span>.</p><p>In order for a blockchain to serve as an unbiased foundation for a monetary system at a global scale, it must have a high amount of all three aspects. A monetary system needs to be secure from fraud, safe from attacks by censors through decentralization, and scalable to meet the needs of over 7 billion humans in a global society.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/blockchain-trilemma-112547fd.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '8a9d852b8f374a9d815917752850955e',
+        title: '✅ TODO',
+        quiz: {
+          question: 'Question?',
+          rightAnswerNumber: 1,
+          answers: [
+            'answer 1',
+            'answer 2'
+          ],
+          id: 'blockchains-layer-1-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '1fc5863c44bb4437a21bc7cc7cb0cfdf',
+        title: 'Security and Consensus',
+        content: '<div class="bloc1"><p>Security is the most foundational requirement for a public blockchain. Computers within a network (such as a blockchain network) all must agree on what transactions have truly happened in order to work together, this agreement is called <span class="tooltip" definition="Methods used to achieve agreement, trust, and security across a decentralized computer network like blockchains.">consensus</span>. A blockchain is secure if attackers cannot disrupt the network from agreeing on that truth in practice. Consensus algorithms are designed to prevent attacks through different methods.</p><p>Chains like Bitcoin that use Proof of Work consensus prevent fraud by making their consensus algorithm highly competitive; each block producer is racing to solve a math problem and the first to do so wins the right to create the next block and the monetary block reward that comes with it. Fraud would require massive investments in computing power and energy, an attacker would likely spend more than they’d gain. </p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '9455d76687c34494949eb471628f7b56',
+        title: '✅ Consensus',
+        quiz: {
+          question: 'Blockchain consensus for cryptocurrencies is:',
+          rightAnswerNumber: 4,
+          answers: [
+            'The process where all blockchain nodes agree on what has happened on-chain',
+            'Important for everyone in that chain’s ecosystem to prevent fraud',
+            'Secured through economic incentives ',
+            'All of the above'
+          ],
+          id: 'blockchains-layer-1-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'd22518cb06b944acad0745a1121d39b5',
+        title: 'Security and Attacks',
+        content: '<div class="bloc1"><p>Attacks on blockchain consensus is called a 51% attack, because an attacker needs to have 51% or more of the consensus power on a network to commit fraud by creating false blocks. This means 51% of the computing power solving math problems in Proof of Work consensus, and 51% of the stake in Proof of Stake consensus. Again, fraud would require a massive investment in capital to acquire stake in the network, which will be destroyed if found to be creating false blocks; an attacker would likely spend more than they’d gain.</p><p>In Proof of Stake consensus the block producer isn’t chosen through competition, but is randomly assigned instead. Just like with Proof of Work, the consensus algorithm ensures any single entity cannot regularly “win” the right to create a new <span class="tooltip" definition="A group of transactions on the blockchain.">block</span>. </p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/security-and-attacks-614e91b8.jpg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '6d17200e997843b6a90895ff4ebf11f2',
+        title: '✅ 51% attacks',
+        quiz: {
+          question: 'The end-goal of a 51% attack is to:',
+          rightAnswerNumber: 2,
+          answers: [
+            'Disrupt mining operations',
+            'Commit fraud in blockchain systems',
+            'Create a new cryptocurrency',
+            'Eliminate the other 49%'
+          ],
+          id: 'blockchains-layer-1-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '0bfdc60dd92149ee94b626e5c5b9c44d',
+        title: 'Scalability - Throughput',
+        content: '<div class="bloc1"><p><span class="tooltip" definition="A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users.">Scalability</span> refers to a blockchain’s ability to process many transactions quickly. There are two parts that determine a blockchain’s scalability.</p><p>1) Transaction throughput: How many transactions a blockchain can process at once, usually measured in transactions per second (<span class="tooltip" definition="Transactions Per Second. The number of transactions per second processed by a blockchain.">TPS</span>)</p><p>Imagine many people waiting at a bus stop and they all want to travel, they want to ride the bus all at the same time. Every minute, there are only so many people that can travel via bus. To clear the bus stop of people faster, you’d have to use bigger busses (more people) or make the busses run more often (less time). It works the same way with trying to fit many transactions into the small amount of block space that’s available for each block. You can see this visualization with live data at <a href=\'https://txstreet.com/v/eth-btc\'>https://txstreet.com/v/eth-btc</a>.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/scalability-throughput-ef6f434d.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '796f016b847e4383bbeeba78736e620b',
+        title: '✅ TPS',
+        quiz: {
+          question: 'How is the bus stop analogy NOT accurate for blockchain transactions?',
+          rightAnswerNumber: 1,
+          answers: [
+            'Buses (blocks) are always the same size',
+            'People (transactions) are grouped together into buses (blocks)',
+            'There is a maximum limit of how many people (transactions) can fit into each bus (block)'
+          ],
+          id: 'blockchains-layer-1-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'cf8aeea9908e4dc7960f63ae71edcad4',
+        title: 'Scalability - Finality',
+        content: '<div class="bloc1"><p>The second aspect to blockchain scalability is:</p><p>2) Finality: When can we be reasonably sure a transaction won’t get changed or reversed?</p><p>Finality is typically measured in blocks — how many blocks have passed since the transaction was included in a block? The more blocks that get added to the chain afterwards, the more sure we can be that the transaction is finalized. Remember, a secure blockchain consensus algorithm makes it very expensive to change past blocks, and the expense increases the farther back someone changes. We can convert this block number (around 8 for Ethereum) to a finality time by multiplying the number of block confirmations by the blockchains TPS. 8 block confirmations times 15 <span class="tooltip" definition="Transactions Per Second. The number of transactions per second processed by a blockchain.">TPS</span> gives 2 minutes finality time after confirmation.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '484d38249db74050a6a14cf584f44c15',
+        title: 'Decentralization distributes power',
+        content: '<div class="bloc1"><p><span class="tooltip" definition="Principle that no single authority or entity should control the blockchain data.">Decentralization</span> is the final basis of the blockchain trilemma — the process of transferring control and decision-making from a single entity to a distributed network of many. Decentralization is the fundamental principle that enables blockchains to be <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> and censorship-resistant; anyone can use decentralized blockchains, and anyone can build software using them.</p><p>Platforms like Facebook and Twitter can deactivate anyone’s account at any time. Many large streamers on Twitch or Tiktok have found themselves removed from their platforms without cause. Even if social media users can get their accounts reinstated, it can be a long and painful process. If authority in a network is sufficiently decentralized, then there is no way for a person to get removed, these networks are <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span>.</p><p>Without decentralization, a blockchain ledger is just a financial spreadsheet on a bank computer; the bankers decide who gets to create an account with them and if the bank has its assets seized by a malicious government, customers have no recourse. Citizens around the world have had their assets in banks seized; Venezuela, Mexico, and Russia have all had banks nationalized by government throughout history.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '53dd5c9a8dfe468d8a1f3163bfce7230',
+        title: '✅ Why decentralization?',
+        quiz: {
+          question: 'Which of these statements is NOT true for decentralization?',
+          rightAnswerNumber: 3,
+          answers: [
+            'Decentralization makes blockchains censorship-resistant ',
+            'Decentralization makes blockchains permissionless',
+            'Decentralization helps authoritarian powers to maintain control',
+            'Anyone, anywhere can use permissionless systems '
+          ],
+          id: 'blockchains-layer-1-5'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '08840d13c2fe4acca833d5bd31ce7969',
+        title: 'Is it decentralized?',
+        content: '<div class="bloc1"><p>But whether something is decentralized or not isn’t just a yes or no answer. Is 10 controlling entities decentralized? How about 1000? One million? There isn’t a standard cutoff for something being sufficiently decentralized, so it makes sense to think of decentralization as a spectrum. Rather than the only choices being black and white, there is also a multitude of greys in between them.</p><p>So we can say something is more or less decentralized than something else, but not when something “is decentralized”. For a neutral monetary system to be resistant to state-level censorship, a high degree of decentralization is required. Newer blockchains often trade decentralization for scalability, but they leave themselves vulnerable to the same pressures from societies and governments fully centralized platforms feel and will likely begin to engage in the same censorship seen on Facebook and similar networks.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/is-it-decentralized-9c900798.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'd5e125d69d6f4cfe963af2ee0515594a',
+        title: '✅ But is it Decentralized?',
+        quiz: {
+          question: 'Different amounts of decentralization are used by different blockchains. ',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          id: 'blockchains-layer-1-6'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'fdfbd964272445d5981d88c7f4c78410',
+        title: 'Some Examples',
+        content: '<div class="bloc1"><p>Each blockchain has its own approach to the trilemma, and each has made tradeoffs to focus on its goals. Bitcoin and Ethereum prioritize security and decentralization over scalability, leading to long transaction <span class="tooltip" definition="How long it takes until it is safe to trust that a transaction is final and accepted.">finality time</span> for Bitcoin and sky-high transaction fees for Ethereum. The demand to use smart contracts as a “decentralized world finance computer”, especially for DeFi, has meant many users making small transactions cannot afford to use Ethereum.</p><p>This high cost to use has provided an opening for alternative Layer 1’s like Binance chain. Binance prioritized scalability over decentralization for higher transaction throughput and cheaper fees, bringing many users away from Ethereum. Third generation chains like Solana, Hedera, Cosmos, and others use novel methods to try to solve the trilemma, but all blockchains are still subject to these basic constraints. In fact, each chain’s choice defines its ecosystem through the substantial effects that come from that choice.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/some-examples-e0e8eb7c.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '997686d2404c4556a6841a0232705c8b',
+        title: 'So what can be done?',
+        content: '<div class="bloc1"><p>So if Ethereum has prioritized high security and decentralization, how can it scale to serve the needs of all users as the global financial network it aims to become? This is where the Ethereum roadmap can provide some answers: Layer 2s and blockchain sharding.</p><p>Layer 2s are an early solution to increasing Ethereum scalability without compromising on the other two parts of the blockchain trilemma. They are an additional layer sitting on top of the main blockchain, relying on the main chain for security but allowing users to benefit from reduced fees and faster transactions. We will explore them more in detail in our Layer 2 lesson.</p><p>Sharding basically splits the single blockchain into multiple chains that all run together in parallel, like adding more lanes to a road. It enables more transactions to be processed at once without sacrificing security or decentralization. Sharding is not a new technology, many non-blockchain applications use sharding to increase scalability, but it is new for blockchains. It’s very complicated to add sharding to a blockchain like Ethereum <em>while it is running</em>; it’s an area of active research and it will take some time until that transition is ready. </p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/so-what-can-be-done-5aed7436.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'e1a2b41a64f9422c8082603459a28c0e',
+        title: '✅ Layer 2s',
+        quiz: {
+          question: 'Blockchain Layer 2s are:',
+          rightAnswerNumber: 4,
+          answers: [
+            'Reliant on the main chain to provide security and decentralization',
+            'An abstraction on top of the main chain to increase scalability',
+            '100% decentralized',
+            'A and B only'
+          ],
+          id: 'blockchains-layer-1-7'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '18c497caf1df4810afb1497884a26962',
+        title: 'The future of Ethereum',
+        content: '<div class="bloc1"><p>Previously known as the Ethereum 2.0 upgrade, the Ethereum network is evolving scalability without sacrificing the other aspects of the trilemma. These changes include the merge to Proof of Stake consensus, Layer 2s going live, sharding of the main chain, and an overall reduction of energy usage. <strong>All of these changes together will mean a faster, more environmentally-friendly, and cheaper Ethereum while still maintaining security and decentralization as core tenets.</strong> The Ethereum Foundation has an excellent webpage on coming <a href=\'https://ethereum.org/en/upgrades/\'>upgrades to Ethereum</a>.</p><p>These things take time, meanwhile, many Layer 2 protocols are building on top of Ethereum to help meet user demand in the short term without requiring updates to the Ethereum protocol itself. These Layer 2 protocols rely on baselayer Ethereum to provide decentralized security while they provide the scalability, and the diversity of Layer 2s is inherently decentralized! Ethereum scaling projects include protocols like Optimistic Ethereum, Polygon, Arbitrum, zkSync, and others.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/the-future-of-ethereum-ca844a29.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '79e758e2b8da45468f9f3f11281e2c6c',
+        title: '✅ Ethereum Future',
+        quiz: {
+          question: 'The future of Ethereum involves:',
+          rightAnswerNumber: 4,
+          answers: [
+            'Using Layer 2s and sharding to increase scalability',
+            'Maintaining decentralization and security as core principles',
+            'Reducing energy consumption of the blockchain using Proof of Stake consensus',
+            'All of the above'
+          ],
+          id: 'blockchains-layer-1-8'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'a229a575b61b4f0f84018a0346de4658',
+        title: 'What does it mean for Explorers?',
+        content: '<div class="bloc1"><p>Even more so at the beginning of your journey, users need low fees to learn and explore the technology with low barriers to entry and low costs from mistakes. The Ethereum blockchain is not that in its current state, but it is one of the best candidates for fulfilling the dream of a global financial computing system. Explorers should learn to interact and use Ethereum without paying massive fees; using Layer 2s allows Explorers to have the security and decentralization benefits of Ethereum combined with the higher scalability.</p><p>The next lesson will explain Layer 2 solutions and how to get started with them. Onward explorers!</p></div>'
+      },
+      {
+        type: 'QUEST',
+        title: 'Blockchains Layer 1 Quest',
+        component: 'BlockchainsLayer1'
+      },
+      {
+        type: 'END',
+        title: 'End of lesson'
+      }
+    ]
+  },
+  {
+    poapImageLink: '/lesson/dex-aggregators/poap-a82f8a55.mp4',
+    lessonImageLink: '/lesson/dex-aggregators/lesson-68757615.png',
+    socialImageLink: '/lesson/dex-aggregators/social-00850afd.png',
+    learningActions: '',
+    marketingDescription: 'Learn and level up on DEX Aggregators, Liquidity, and Trade-Offs.',
+    poapEventId: null,
+    kudosId: null,
+    duration: 15,
+    learnings: '',
+    difficulty: undefined,
+    description: 'Learn and level up on DEX Aggregators, Liquidity, and Trade-Offs.',
+    name: 'DEX Aggregators',
+    quest: 'DEXAggregators',
+    publicationStatus: 'hidden',
+    isFeaturedOnHomepage: false,
+    isCommentsEnabled: true,
+    endOfLessonRedirect: 'https://tally.so/r/mODMpA',
+    endOfLessonText: 'To give feedback about this lesson, click Next.',
+    communityDiscussionLink: null,
+    notionId: '42578b8813114832b8930cf59f6125af',
+    slug: 'dex-aggregators',
+    imageLinks: [
+      '/lesson/dex-aggregators/introduction-fb1290e2.png',
+      '/lesson/dex-aggregators/an-example-of-how-liquidity-impacts-prices-563cd643.png',
+      '/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-622113fd.png',
+      '/lesson/dex-aggregators/recombining-liquidity-with-dex-aggregators-02fcc407.png',
+      '/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-6f3863a0.png',
+      '/lesson/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-dcc55923.png',
+      '/lesson/dex-aggregators/avoiding-sandwich-attacks-467c02e4.png',
+      '/lesson/dex-aggregators/more-protection-from-sandwiches-otc-trades-75cc18b6.png'
+    ],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: 'fdab9a0b1c7b457a9110f88dbac53d71',
+        title: '<strong>Introduction</strong>',
+        content: '<div class="bloc1"><p><span class="tooltip" definition="(DEX) protocol that facilitates exchange without requiring trusted intermediaries">Decentralized Exchange</span>s (DEXs) eliminate the costs of intermediaries and save Explorers money when trading assets. </p><p>But did you know, Explorer, that there’s more ways to save with DeFi technology? Using DEX aggregators, you can scan all possible trades on various DEX platforms simultaneously and execute the best trade route — all in one action. They help you get the best deal when doing a token <span class="tooltip" definition="A trade from one token to another">swap</span>. Just like airline flight aggregators help you find the cheapest flight, DEX aggregators help you maximize the value of your trade.</p><p>This lesson will show:</p><ol><li>How DEXs split liquidity and how that can result in reduced trading rates.</li><li>How DEX aggregators enable users to view and use multiple DEXs through one interface.</li><li>Multiple ways a single aggregator interface can save Explorers time and money.</li></ol></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/introduction-fb1290e2.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '0e59fd1b9b7943a3a70a44abc9e921c1',
+        title: 'How Liquidity Affects Prices',
+        content: '<div class="bloc1"><p>The amount of any token that is available to trade on a single market is called a token’s <span class="tooltip" definition="How much of a token is available for trading">liquidity</span>. The amount of liquidity available strongly influences the <span class="tooltip" definition="The amount prices on a DEX change due to trades">price impact</span> when making trades in DeFi; a large price impact means the trade will cost more, and a low price impact will cost less. Most people prefer to trade in markets with higher liquidity to reduce their price impact. </p><p>You can think of it like a swimming pool; the more water (liquidity) there is, the smaller the <em>change </em>in the water level (price impact) when someone jumps in or leaves. The size of that ‘someone’ (the trade) also affects the <em>change</em> in the water level (price impact).</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '8ea31e80fcfc49d3a88ad09d03341c9c',
+        title: 'An Example of How Liquidity Impacts Prices',
+        content: '<div class="bloc1"><p>Let’s look at an example. </p><p>The BanklessDAO token (BANK) has a liquidity amount of ~30 million BANK on Uniswap, but only ~4.5 million BANK on SushiSwap. Uniswap has over 6x the BANK liquidity of SushiSwap.</p><p>If an Explorer was to purchase 10,000 BANK from each pool, they would find that the <span class="tooltip" definition="The amount prices on a DEX change due to trades">price impact</span> of their trade would result in a higher trade price in the SushiSwap pool — because their trade has pulled a larger percentage of the pool’s total liquidity.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/an-example-of-how-liquidity-impacts-prices-563cd643.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'c60d776bd01247b79e037003d737f924',
+        title: '✅ Question',
+        quiz: {
+          question: 'Fill in the blanks: To find the best price, people will want to trade in markets with ________ liquidity to have ________ price impact on their trades.',
+          rightAnswerNumber: 2,
+          answers: [
+            'good, maximum',
+            'high, low',
+            'low, good',
+            'thin, large'
+          ],
+          id: 'dex-aggregators-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'b97afba7b0f44b709f57d6e85ce13cc2',
+        title: 'Shortcomings of Traditional DEXs: Thin Liquidity',
+        content: '<div class="bloc1"><p>DeFi continues to grow, but a problem is emerging for users: As more DEXs launch, the total amount of any individual token gets spread out. This is known as thin liquidity.</p><p>Remember the swimming pool: if the available water (<span class="tooltip" definition="How much of a token is available for trading">liquidity</span>) is split between multiple pools, the amount of water will be “thinner” in each pool compared to the total in the single original pool.</p><p>In 2020, Uniswap held much of the DEX liquidity to trade in DeFi. When SushiSwap launched the following month, it attracted over $1B worth of liquidity into its DEX from Uniswap, reducing total liquidity on Uniswap. This was just the start. Since then, more and more DEXs have entered the DeFi ecosystem, progressively thinning the liquidity of each pool.</p><p>The result is that today, any trade has a larger <span class="tooltip" definition="The amount prices on a DEX change due to trades">price impact</span> than when Uniswap held most of the ecosystem’s total liquidity. As more DEXs launch, it costs Explorers more to trade on any single DEX.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-622113fd.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'd9969ae7f6c247a097f7b7d419b6c119',
+        title: '✅ Question',
+        quiz: {
+          question: 'Which two factors determine the price impact of a DEX trade?',
+          rightAnswerNumber: 3,
+          answers: [
+            'The choice of DEX is used to make the trade and size of the trade',
+            'Which token is chosen to trade and which DEX is used to make the trade',
+            'The size of the trade and amount of liquidity available',
+            'The amount of liquidity available and which token is chosen to trade'
+          ],
+          id: 'dex-aggregators-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'c06177fa9ee3428c80a9295a8a09a9f2',
+        title: 'Recombining Liquidity With DEX Aggregators',
+        content: '<div class="bloc1"><p>Large amounts of <span class="tooltip" definition="How much of a token is available for trading">liquidity</span> are needed to reduce price impact and save you money. DEX aggregators allow users to run trades through multiple DEXs at once and reduce the price impact; a big trade from an Explorer’s wallet gets broken down into multiple small trades across multiple DEXs.</p><p>DEX aggregators can even route trades through an <span class="tooltip" definition="A token that is part of the middle of a trade route, not the starting or ending token">intermediary token</span> , or more than one, if that gets a better result for users — like the way a flight aggregator might suggest an extra stop at another airport if it’s cheaper for the passenger. This discovery of the optimal trade route is done by sophisticated algorithms searching through all possible paths to find the cheapest trade route at that moment.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/recombining-liquidity-with-dex-aggregators-02fcc407.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '063815f2667146a2921df5c4c3ca1663',
+        title: '✅ Question',
+        quiz: {
+          question: 'Trade routing in DEX aggregators means:',
+          rightAnswerNumber: 4,
+          answers: [
+            'Trades are routed according to liquidity arrangements with specific DEXs',
+            'Trades are always routed through multiple DEXs',
+            'Trades are routed through a user’s favorite DEX only',
+            'Trades can be routed through multiple DEXs and intermediary tokens'
+          ],
+          id: 'dex-aggregators-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '1c2f4199a9254d18897593b371ca4d9e',
+        title: 'How Gas Cost Is Calculated on Ethereum',
+        content: '<div class="bloc1"><p>Let’s refresh how gas is calculated before we go on to see how the optimizations DEX aggregators make can reduce network fees for users.</p><p>Just like gas for a car, <span class="tooltip" definition="Transaction fees for blockchain networks">gas</span> is the fuel for running blockchain code on Ethereum. The farther you travel, the more gas your car uses. Likewise, the more computations you do, the more gas your code requires. Gas price is usually measured in very small amounts of ether, like cents to a dollar. For example: <br>1 <span class="tooltip" definition="A unit used on Ethereum blockchain, equivalent to 0.000000001 ETH (one billionth), used commonly to describe gas prices">gwei</span> is 1 billionth of an ether (1 gwei = 0.00000001 ETH).</p><p>The total gas cost is based on how much gas your transaction uses and the unit price of gas at the time of use.</p><p>The formula for calculating the price of a transaction is as follows:</p><p>As an example, let’s say gas costs are at 22 gwei per gas unit and the transaction uses 120 thousand units.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-6f3863a0.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '7196f021bcc541929d68b9bd0c018ac3',
+        title: 'How Aggregators Reduce Gas Costs for Users',
+        content: '<div class="bloc1"><p>Trade splitting would result in more transaction fees from the extra on-chain activity, except that advanced aggregators plan for transaction fees and include them in their calculations of the trade route. They simulate trades off chain, including <span class="tooltip" definition="Transaction fees for blockchain networks">gas</span> costs, to find <span class="tooltip" definition="What is the path taken from starting token to ending token in a trade">trade routes</span> that leave Explorers with the most value at the end of the interaction.</p><p>Some aggregators go even further: they may refund some of the network transaction fees from using their protocol. 1inch currently offers rebates in their token for a portion of gas costs from trading through their <span class="tooltip" definition="A decentralized app that connects to decentralized networks and protocols"><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">dapp</span></span> on Ethereum mainnet.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-dcc55923.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '2cf155ee9e3a4d4fb0a9c78f888d2373',
+        title: '✅ Question',
+        quiz: {
+          question: 'Which of the following is NOT a way DEX aggregators try to reduce transaction costs for users?',
+          rightAnswerNumber: 2,
+          answers: [
+            'Simulate transactions off-chain prior to trade execution',
+            'Ask DEXs to lower network fees for their users',
+            'Account for gas cost in trade routing',
+            'Token rebates on gas costs'
+          ],
+          id: 'dex-aggregators-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '19eb7c5516fd4da383c48661d21e34a1',
+        title: 'Meta-Aggregators',
+        content: '<div class="bloc1"><p>There are even meta-aggregators of DEX aggregators! These platforms search through all competing DEX aggregators and serve price quotes to users. An example of this is the in-app swap function in the MetaMask wallet. This feature is actually a meta-aggregator that relies on DEX aggregators like 1inch to function.</p><p>Note: While convenient, <span class="tooltip" definition="A tool that brings together other aggregators into an extra overview layer">meta-aggregator</span> services can add extra costs on top of network transaction fees, increasing the overall cost for users. Explorers: make sure that your trades don’t end up more expensive than you intended. </p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '7abcec930d924ca997d5f4221fae9ad6',
+        title: '✅ Question',
+        quiz: {
+          question: 'Meta-aggregators cross-reference multiple DEX aggregators to find the best prices for their users.',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          id: 'dex-aggregators-5'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '44acd0c428aa49e8880b26f1ffffd0b0',
+        title: 'Avoiding Sandwich Attacks',
+        content: '<div class="bloc1"><p>Users swapping directly through DEXs can lose value up to the limit of their <span class="tooltip" definition="How much can prices change before your trade executes">slippage tolerance</span> due to price changes coordinated by block producers — these kinds of losses are called sandwich attacks. Did you know that sandwich attacks led users to a total loss of $235,000,000 during 2021? Explorers can protect themselves by keeping a low slippage tolerance when swapping tokens.</p><p>Fortunately, because of the recombined liquidity offered by DEX aggregators, the price impact of a trade is reduced. Explorers can keep their slippage tolerance low while saving more with DEX aggregators, as opposed to trading directly on a DEX.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/avoiding-sandwich-attacks-467c02e4.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '9864a66638a3473ca13f8ee2dc8c4b1f',
+        title: '✅ Question',
+        quiz: {
+          question: 'To protect yourself, you should keep your slippage tolerance:',
+          rightAnswerNumber: 1,
+          answers: [
+            'low',
+            'high'
+          ],
+          id: 'dex-aggregators-6'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'b1756984326242d4ad5e4ab2cbe2eb32',
+        title: 'More Protection From Sandwiches: OTC Trades',
+        content: '<div class="bloc1"><p>Some aggregators like 1inch even offer specialized OTC (<span class="tooltip" definition="Trades made directly with private entities">Over The Counter</span>) services that provide total protection against sandwich attacks. These optional services enable direct trading with other users, rather than facilitating trades through DeFi liquidity pools. Anyone can engage in OTC trades to fully remove the threat of sandwich attacks — providing another great way for Explorers to save.</p><p>CoWSwap is a Meta-Aggregator that also offers sandwich-resistant services, enabled by default, to ensure trades are 100% protected against sandwich attacks.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/more-protection-from-sandwiches-otc-trades-75cc18b6.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '18f1f2c0e7b84cfbafe1b26e139f0c25',
+        title: '✅ Question',
+        quiz: {
+          question: 'Many DEX aggregators offer which tool(s) to save their users money?',
+          rightAnswerNumber: 4,
+          answers: [
+            'Routing trades through aggregated liquidity from multiple DEXs to reduce price impact.',
+            'OTC trades that fully protect against sandwich attacks.',
+            'Account for gas cost when building the best trade routes.',
+            'All of the above'
+          ],
+          id: 'dex-aggregators-7'
+        }
+      },
+      {
+        type: 'QUEST',
+        title: 'DEX Aggregators Quest',
+        component: 'DEXAggregators'
+      },
+      {
+        type: 'END',
+        title: 'End of lesson'
       }
     ]
   }
