@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import NextLink from 'next/link'
-import { Box, Text, Tag, Image, TagRightIcon, Button } from '@chakra-ui/react'
+import {
+  Box,
+  Text,
+  Tag,
+  Image,
+  TagRightIcon,
+  Button,
+  Tooltip,
+  Link,
+} from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import axios from 'axios'
 import { CircleWavyCheck } from 'phosphor-react'
@@ -100,9 +109,9 @@ const LessonCards: React.FC = () => {
                 <Image src={lesson.lessonImageLink} />
               </LessonBanner>
             </NextLink>
-            <Box display="flex" flexDirection="row-reverse">
+            <Box display="flex" flexDirection="row-reverse" mt="4">
               <NextLink href={`/lessons/${lesson.slug}`}>
-                <Button variant="primary" mt="4">
+                <Button variant="primary">
                   {isKudosMinted
                     ? 'Review Lesson'
                     : isLessonStarted
@@ -110,6 +119,21 @@ const LessonCards: React.FC = () => {
                     : 'Start Lesson'}
                 </Button>
               </NextLink>
+              {isKudosMinted ? (
+                <Tooltip
+                  hasArrow
+                  label="Join other explorers to discuss this lesson."
+                >
+                  <Link
+                    target="_blank"
+                    rel="noreferrer"
+                    href={lesson.communityDiscussionLink}
+                    mr="16px"
+                  >
+                    <Button variant="outline">👨‍🚀 Community</Button>
+                  </Link>
+                </Tooltip>
+              ) : null}
             </Box>
           </LessonCard>
         )
