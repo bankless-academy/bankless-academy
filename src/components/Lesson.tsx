@@ -643,11 +643,24 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               ) : (
                 <>
                   {lesson.poapImageLink && (
-                    <ChakraImage
-                      src={lesson.poapImageLink}
-                      height="250px"
-                      mb="2"
-                    />
+                    <>
+                      {lesson.poapImageLink.includes('.mp4') ? (
+                        <Box height="250px" width="250px">
+                          <video controls autoPlay loop>
+                            <source
+                              src={lesson.poapImageLink}
+                              type="video/mp4"
+                            ></source>
+                          </video>
+                        </Box>
+                      ) : (
+                        <ChakraImage
+                          src={lesson.poapImageLink}
+                          height="250px"
+                          mb="2"
+                        />
+                      )}
+                    </>
                   )}
                   {lesson.kudosId ? (
                     <MintKudos
@@ -656,26 +669,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                       goToPrevSlide={goToPrevSlide}
                     />
                   ) : (
-                    <>
-                      {lesson.poapImageLink ? (
-                        lesson.poapImageLink.includes('.mp4') ? (
-                          <Box height="250px" width="250px">
-                            <video controls autoPlay loop>
-                              <source
-                                src={lesson.poapImageLink}
-                                type="video/mp4"
-                              ></source>
-                            </video>
-                          </Box>
-                        ) : (
-                          <ChakraImage
-                            src={lesson.poapImageLink}
-                            height="250px"
-                            mb="2"
-                          />
-                        )
-                      ) : null}
-                    </>
+                    <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   )}
                   <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
                 </>
