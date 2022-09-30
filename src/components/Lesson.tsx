@@ -709,6 +709,21 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           )}
         </HStack>
         <HStack>
+          {slide.type === 'QUEST' && !Quest?.isQuestCompleted ? (
+            <Tooltip
+              hasArrow
+              label="By skipping this quest you won't be able to claim the lesson credential"
+            >
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setCurrentSlide(currentSlide + 1)
+                }}
+              >
+                Skip Quest
+              </Button>
+            </Tooltip>
+          ) : null}
           {!isLastSlide || lesson.endOfLessonText ? (
             <Button
               ref={buttonRightRef}
