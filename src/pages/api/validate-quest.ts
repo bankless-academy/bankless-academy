@@ -64,6 +64,7 @@ export default async function handler(
       .where(TABLE.completions.user_id, userId)
     if (questCompleted?.id) {
       questStatus = 'Quest already completed'
+      return res.json({ isQuestValidated: true, status: questStatus })
     } else {
       const [createQuestCompleted] = await db(TABLES.completions).insert(
         { credential_id: credential.id, user_id: userId },
@@ -75,9 +76,11 @@ export default async function handler(
       } else {
         questStatus = 'Problem while adding quest'
       }
+      return res.json({
+        isQuestValidated: !!createQuestCompleted?.id,
+        status: questStatus,
+      })
     }
-    console.log(questStatus)
-    return res.json({ status: questStatus })
   } catch (error) {
     console.error(error)
     return res.json({
