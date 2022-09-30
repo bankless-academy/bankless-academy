@@ -650,7 +650,11 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                     />
                   )}
                   {lesson.kudosId ? (
-                    <MintKudos kudosId={lesson.kudosId} />
+                    <MintKudos
+                      kudosId={lesson.kudosId}
+                      isQuestCompleted={Quest?.isQuestCompleted}
+                      goToPrevSlide={goToPrevSlide}
+                    />
                   ) : (
                     <>
                       {lesson.poapImageLink ? (
