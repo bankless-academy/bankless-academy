@@ -35,7 +35,6 @@ export default async function handler(
       const passport: Passport = await reader.getPassport(address)
       // console.log('** passport **', passport)
       const validStamps = filterValidStamps(passport.stamps)
-      // TODO: check that credentialSubject hash is not already used by another address
       const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
       // console.log('validStamps', validStamps)
       const stampHashes = {}
