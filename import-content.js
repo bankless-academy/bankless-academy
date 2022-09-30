@@ -132,8 +132,8 @@ axios
           lesson.notionId = notion.id.replace(/-/g, '')
           lesson.slug = slugify(lesson.name)
           // add notionId to DB
-          // TODO: handle duplicate key
-          await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }])
+          await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
+            .ignore()
 
           if (lesson.poapImageLink) {
             lesson.poapImageLink = get_img(lesson.poapImageLink, lesson.slug, 'poap')
