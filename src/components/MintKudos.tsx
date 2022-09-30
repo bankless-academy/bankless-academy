@@ -186,7 +186,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
                 href="/faq#d1a7f6dda4334a7ba73ee8b3a18a60ad"
                 target="_blank"
               >
-                get help
+                Learn more
               </Link>
             </>
           ),

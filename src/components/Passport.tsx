@@ -57,17 +57,14 @@ const PassportComponent = ({
               color={theme.colors.incorrect}
               fontWeight="bold"
             >
-              Duplicate stamp detected.
-              <br />
-              Switch back to {shortenAddress(passportLS?.fraud)}
-              <br />
               <Link
                 href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
                 target="_blank"
-                fontWeight="normal"
               >
-                Understand why this happened?
+                Duplicate stamp detected.
               </Link>
+              <br />
+              Switch back to {shortenAddress(passportLS?.fraud)}
             </Text>
           </Box>
         )}
