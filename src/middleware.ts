@@ -1,13 +1,10 @@
-/* eslint-disable no-console */
 // middleware.ts
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
   const ipAddress = request.ip || 'local'
-  // redirect API calls if maintenance in progress
-  console.log('NEXT_PUBLIC_MAINTENANCE', process.env.NEXT_PUBLIC_MAINTENANCE)
-  console.log('ipAddress', ipAddress)
+  // disable API calls if maintenance in progress
   if (
     process.env.NEXT_PUBLIC_MAINTENANCE &&
     process.env.NEXT_PUBLIC_MAINTENANCE !== ipAddress &&
