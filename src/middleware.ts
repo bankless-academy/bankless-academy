@@ -4,9 +4,7 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  const ipAddress = request.headers['x-forwarded-for']
-    ? request.headers['x-forwarded-for'].split(',')[0]
-    : request.headers['x-real-ip'] || 'local'
+  const ipAddress = request.ip || 'local'
   // redirect API calls if maintenance in progress
   console.log('NEXT_PUBLIC_MAINTENANCE', process.env.NEXT_PUBLIC_MAINTENANCE)
   console.log('ipAddress', ipAddress)
