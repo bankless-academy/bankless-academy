@@ -10,6 +10,7 @@ import * as ethUtil from 'ethereumjs-util'
 import { ethers } from 'ethers'
 import { verifyTypedData } from 'ethers/lib/utils'
 import { Network } from '@ethersproject/networks'
+import queryString from 'query-string'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 import ONEINCH_SWAP_ABI from 'abis/1inch.json'
@@ -19,6 +20,21 @@ declare global {
     umami: any
   }
 }
+
+// HOW-TO: ?debug=password or ?debug=false to activate/deactivate debug mode
+const debugParam =
+  typeof window !== 'undefined'
+    ? queryString.parse(window.location.search).debug?.toString()
+    : undefined
+export const DEBUG: string =
+  debugParam !== undefined
+    ? debugParam
+    : typeof window !== 'undefined'
+    ? localStorage.getItem('debug')
+    : null
+export const IS_DEBUG = debugParam !== undefined && debugParam !== 'false'
+if (debugParam !== undefined) localStorage.setItem('debug', DEBUG)
+if (debugParam === 'false') localStorage.removeItem('debug')
 
 export function isAddress(value: any): string | false {
   try {
