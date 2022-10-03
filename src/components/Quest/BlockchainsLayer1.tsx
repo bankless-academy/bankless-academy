@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Box, Image, useMediaQuery } from '@chakra-ui/react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
+import { theme } from 'theme/index'
+
 const ITEMS = ['Bitcoin', 'Ethereum', 'Solana', 'Binance Smart Chain']
 const ICONS = [
   '/images/btc.svg',
@@ -9,6 +11,8 @@ const ICONS = [
   '/images/sol.svg',
   '/images/bnb.svg',
 ]
+
+const CORRECT_ANSWERS = [1, 1, 2, 2]
 
 const isQuestCompleted = (state) => {
   return (
@@ -27,48 +31,57 @@ const getItems = () =>
     index: index,
   }))
 
-const dropList = (el, ind) => (
-  <Droppable key={ind} droppableId={`${ind}`} style={{ flexGrow: 1 }}>
-    {(provided, snapshot) => (
-      <Box
-        ref={provided.innerRef}
-        style={getListStyle(snapshot.isDraggingOver, ind)}
-        {...provided.droppableProps}
-      >
-        {el.map((item, index) => (
-          <Draggable key={item.id} draggableId={item.id} index={index}>
-            {(provided, snapshot) => (
-              <Box
-                ref={provided.innerRef}
-                {...provided.draggableProps}
-                {...provided.dragHandleProps}
-                style={getItemStyle(
-                  snapshot.isDragging,
-                  provided.draggableProps.style
-                )}
-                display="flex"
-                borderRadius="8px"
-                alignItems="center"
-                justifyContent="center"
-                padding="6px"
-                mb="1"
-              >
-                <Image
-                  src={ICONS[item.index]}
-                  width="30px"
-                  height="30px"
-                  mr="2"
-                />
-                {item.content}
-              </Box>
-            )}
-          </Draggable>
-        ))}
-        {provided.placeholder}
-      </Box>
-    )}
-  </Droppable>
-)
+const dropList = (state, ind) => {
+  const el = state[ind]
+
+  const areAllAnswersSelected = state[0].length === 0
+
+  return (
+    <Droppable key={ind} droppableId={`${ind}`} style={{ flexGrow: 1 }}>
+      {(provided, snapshot) => (
+        <Box
+          ref={provided.innerRef}
+          style={getListStyle(snapshot.isDraggingOver, ind)}
+          {...provided.droppableProps}
+        >
+          {el.map((item, index) => (
+            <Draggable key={item.id} draggableId={item.id} index={index}>
+              {(provided, snapshot) => (
+                <Box
+                  ref={provided.innerRef}
+                  {...provided.draggableProps}
+                  {...provided.dragHandleProps}
+                  style={getItemStyle(
+                    snapshot.isDragging,
+                    provided.draggableProps.style,
+                    !areAllAnswersSelected
+                      ? null
+                      : CORRECT_ANSWERS[item.index] === ind
+                  )}
+                  display="flex"
+                  borderRadius="8px"
+                  alignItems="center"
+                  justifyContent="center"
+                  padding="6px"
+                  mb="1"
+                >
+                  <Image
+                    src={ICONS[item.index]}
+                    width="30px"
+                    height="30px"
+                    mr="2"
+                  />
+                  {item.content}
+                </Box>
+              )}
+            </Draggable>
+          ))}
+          {provided.placeholder}
+        </Box>
+      )}
+    </Droppable>
+  )
+}
 
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list)
@@ -93,9 +106,16 @@ const move = (source, destination, droppableSource, droppableDestination) => {
 }
 const grid = 8
 
-const getItemStyle = (isDragging, draggableStyle) => ({
+const getItemStyle = (isDragging, draggableStyle, correct: boolean | null) => ({
   userSelect: 'none',
-  background: isDragging ? 'lightgreen' : 'grey',
+  background:
+    correct === true
+      ? theme.colors.correctGradient
+      : correct === false
+      ? theme.colors.incorrectGradient
+      : isDragging
+      ? '#916AB8'
+      : 'grey',
   ...draggableStyle,
 })
 const getListStyle = (isDraggingOver, index) => ({
@@ -156,20 +176,20 @@ const BlockchainsLayer1 = (): {
         </h2>
         <Box display="flex" flexWrap="wrap" justifyContent="center">
           <DragDropContext onDragEnd={onDragEnd}>
-            {dropList(state[0], 0)}
+            {dropList(state, 0)}
             <Box flexBasis="100%" height="30px" />
             <Box display={isSmallScreen ? 'block' : 'flex'}>
               <Box mr="4">
                 <Box textAlign="center" m="2">
                   Decentralisation and Security
                 </Box>
-                {dropList(state[1], 1)}
+                {dropList(state, 1)}
               </Box>
               <Box>
                 <Box textAlign="center" m="2">
                   Scalability
                 </Box>
-                {dropList(state[2], 2)}
+                {dropList(state, 2)}
               </Box>
             </Box>
           </DragDropContext>

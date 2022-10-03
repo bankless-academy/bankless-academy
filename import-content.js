@@ -1,9 +1,13 @@
 /* eslint-disable no-console */
 require('dotenv').config()
 const axios = require('axios')
+const knex = require('knex')
 const fs = require('fs')
 const crc32 = require('js-crc').crc32
 const stringifyObject = require('stringify-object')
+const config = require('./knexfile.js')
+const db = knex(config)
+const { TABLES } = require('./db.js')
 
 const defaultKeywords = require('./keywords.json')
 const whitelabelKeywords = require('./whitelabel-keywords.json')
@@ -24,6 +28,7 @@ const KEY_MATCHING = {
   'Landing page copy': 'marketingDescription',
   // 'Knowledge Requirements': 'knowledgeRequirements',
   'POAP event ID': 'poapEventId',
+  'Kudos ID': 'kudosId',
   'Duration in minutes': 'duration',
   'What will you learn from this?': 'learnings',
   Difficulty: 'difficulty',
@@ -36,6 +41,7 @@ const KEY_MATCHING = {
   'Enable Comments': 'isCommentsEnabled',
   'End of Lesson redirect': 'endOfLessonRedirect',
   'End of Lesson text': 'endOfLessonText',
+  'Community discussion link': 'communityDiscussionLink',
 }
 
 const args = process.argv
@@ -86,6 +92,7 @@ axios
       // DEV_MODE: only test first lesson
       // if (index > 0) return
 
+      // replace keys
       const lesson = Object.keys(KEY_MATCHING).reduce(
         (obj, k) =>
           Object.assign(obj, {
@@ -104,6 +111,7 @@ axios
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) lesson.socialImageLink = null
       if (lesson.poapEventId === undefined) lesson.poapEventId = null
+      if (lesson.kudosId === undefined) lesson.kudosId = null
       if (lesson.poapImageLink === undefined) lesson.poapImageLink = null
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
       if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
@@ -116,13 +124,16 @@ axios
       else {
         lesson.moduleId = lesson.moduleId[0]
       }
+      if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
 
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)
-        .then((htmlPage) => {
-          // replace keys
+        .then(async (htmlPage) => {
           lesson.notionId = notion.id.replace(/-/g, '')
           lesson.slug = slugify(lesson.name)
+          // add notionId to DB
+          await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
+            .ignore()
 
           if (lesson.poapImageLink) {
             lesson.poapImageLink = get_img(lesson.poapImageLink, lesson.slug, 'poap')
@@ -293,7 +304,7 @@ axios
           // })
           slides.push({
             type: 'END',
-            title: 'End of lesson',
+            title: lesson.kudosId ? 'Lesson Reward' : 'End of lesson',
           })
           lesson.slides = slides
           // console.log('lesson', lesson)

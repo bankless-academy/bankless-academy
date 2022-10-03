@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import NextLink from 'next/link'
-import { Box, Text, Tag, Image, TagRightIcon } from '@chakra-ui/react'
+import {
+  Box,
+  Text,
+  Tag,
+  Image,
+  TagRightIcon,
+  Button,
+  Tooltip,
+  Link,
+} from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import axios from 'axios'
 import { CircleWavyCheck } from 'phosphor-react'
-import ReactHtmlParser from 'react-html-parser'
-import { useMediaQuery } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
@@ -26,7 +33,6 @@ const LessonCards: React.FC = () => {
   const { all, slug } = router.query
 
   const [stats, setStats]: any = useState(null)
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   const moduleId = MODULES.find((m) => m.slug === slug)?.moduleId
 
@@ -58,28 +64,31 @@ const LessonCards: React.FC = () => {
         // lesson not started yet: -1
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
         // const numberOfSlides = lesson.slides.length
-        const isPoapClaimed = localStorage.getItem(`poap-${lesson.slug}`)
+        const isKudosMinted = localStorage.getItem(
+          `isKudosMinted-${lesson.kudosId}`
+        )
+        const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
         const lessonCompleted =
-          (lesson.quest && stats?.lessonCompleted[lesson.quest]) || 0
+          (lesson.quest &&
+            stats?.lessonCompleted &&
+            stats?.lessonCompleted[lesson.notionId]) ||
+          0
         return (
           <LessonCard
             key={`lesson-${index}`}
             p={4}
             pb={8}
-            borderBottom={
-              isSmallScreen && index + 1 < LESSONS.length
-                ? '1px solid #72757b'
-                : ''
-            }
+            border="1px solid #72757b"
+            borderRadius="3xl"
           >
             <Text fontSize="xl" fontWeight="bold">
               {lesson.name}
             </Text>
             <Text fontSize="lg">{lesson.description}</Text>
             <Box display="flex" justifyContent="space-between" my="4">
-              <Tag size="sm" variant={isPoapClaimed ? 'solid' : 'outline'}>
-                {isPoapClaimed ? 'Done' : `${lesson.duration} minutes`}
-                {isPoapClaimed ? (
+              <Tag size="sm" variant={isKudosMinted ? 'solid' : 'outline'}>
+                {isKudosMinted ? 'Done' : `${lesson.duration} minutes`}
+                {isKudosMinted ? (
                   <TagRightIcon as={CircleWavyCheck} weight="bold" />
                 ) : null}
               </Tag>
@@ -100,9 +109,32 @@ const LessonCards: React.FC = () => {
                 <Image src={lesson.lessonImageLink} />
               </LessonBanner>
             </NextLink>
-            <Text fontSize="md" mt="4">
-              {ReactHtmlParser(lesson.learnings)}
-            </Text>
+            <Box display="flex" flexDirection="row-reverse" mt="4">
+              <NextLink href={`/lessons/${lesson.slug}`}>
+                <Button variant="primary">
+                  {isKudosMinted
+                    ? 'Review Lesson'
+                    : isLessonStarted
+                    ? 'Resume Lesson'
+                    : 'Start Lesson'}
+                </Button>
+              </NextLink>
+              {isKudosMinted ? (
+                <Tooltip
+                  hasArrow
+                  label="Join other explorers to discuss this lesson."
+                >
+                  <Link
+                    target="_blank"
+                    rel="noreferrer"
+                    href={lesson.communityDiscussionLink}
+                    mr="16px"
+                  >
+                    <Button variant="outline">👨‍🚀 Community</Button>
+                  </Link>
+                </Tooltip>
+              ) : null}
+            </Box>
           </LessonCard>
         )
       })}

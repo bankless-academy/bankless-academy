@@ -20,7 +20,8 @@ export type QuestComponentType = typeof QUESTS[number]
 export const ONCHAIN_QUESTS = ['DEXAggregators']
 
 const QuestComponent = (
-  component: QuestComponentType | null
+  component: QuestComponentType | null,
+  kudosId?: number
 ): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
@@ -53,7 +54,11 @@ const QuestComponent = (
       !ONCHAIN_QUESTS.includes(component)
     ) {
       axios
-        .get(`/api/validate-quest?address=${account}&quest=${component}`)
+        .get(
+          `/api/validate-quest?address=${account}&quest=${component}${
+            kudosId ? `&kudosId=${kudosId}` : ''
+          }`
+        )
         .catch(function (error) {
           console.error(error)
         })

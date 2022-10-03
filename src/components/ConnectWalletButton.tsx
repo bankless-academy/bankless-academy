@@ -5,33 +5,54 @@ import {
   Button,
   Text,
   Popover,
-  PopoverTrigger,
   PopoverContent,
   PopoverArrow,
   PopoverBody,
   SimpleGrid,
   Box,
   Image,
-  Link,
   useToast,
+  useDisclosure,
+  Heading,
+  Link,
 } from '@chakra-ui/react'
 import { Wallet } from 'phosphor-react'
 import axios from 'axios'
 import Davatar from '@davatar/react'
+import { useLocalStorage } from 'usehooks-ts'
+import styled from '@emotion/styled'
+import { useRouter } from 'next/router'
+
+// TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
+import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
+export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
+  OrigPopoverTrigger
 
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
 import { walletConnect, injected } from 'utils'
+import { LESSONS, INFURA_ID, IS_WHITELABEL } from 'constants/index'
 import {
-  INFURA_ID,
-  POAP_EVENT_IDS,
-  OLD_POAP_EVENT_IDS,
-  IS_WHITELABEL,
-} from 'constants/index'
-import { PoapType } from 'entities/poap'
+  MINTKUDOS_API,
+  MINTKUDOS_COMMUNITY_ID,
+  KUDOS_IDS,
+} from 'constants/kudos'
+import { KudosType } from 'entities/kudos'
 import { SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 
 let web3Modal: Web3Modal
+
+const Overlay = styled(Box)`
+  opacity: 1;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: var(--chakra-colors-blackAlpha-600);
+  z-index: 1;
+  backdrop-filter: blur(2px);
+`
 
 const ConnectWalletButton = ({
   isSmallScreen,
@@ -43,8 +64,9 @@ const ConnectWalletButton = ({
   const isConnected = walletWeb3ReactContext.active
   const walletAddress = walletWeb3ReactContext.account
   const [connectClick, setConnectClick] = useState(false)
+  const [isPopOverOn, setIsPopOverOn] = useState(false)
   const [walletIsLoading, setWalletIsLoading] = useState(false)
-  const [poaps, setPoaps] = useState<PoapType[]>([])
+  const [kudos, setKudos] = useState<KudosType[]>([])
   const toast = useToast()
   const web3ModalFrame = {
     cacheProvider: true,
@@ -73,6 +95,14 @@ const ConnectWalletButton = ({
       },
     },
   }
+  const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
+    `connectWalletPopup`,
+    false
+  )
+  const { onClose } = useDisclosure()
+  const { asPath } = useRouter()
+
+  const isLessonPage = asPath.includes('/lessons/')
 
   function web3ModalConnect(web3Modal) {
     web3Modal
@@ -134,14 +164,15 @@ const ConnectWalletButton = ({
   useEffect(() => {
     if (walletAddress) {
       axios
-        .get(`https://api.poap.xyz/actions/scan/${walletAddress}`)
+        .get(
+          `${MINTKUDOS_API}/v1/wallets/${walletAddress}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
+        )
         .then((res) => {
-          if (Array.isArray(res.data)) {
-            setPoaps(
-              res.data.filter(
-                (poap: PoapType) =>
-                  POAP_EVENT_IDS.includes(poap.event.id.toString()) ||
-                  OLD_POAP_EVENT_IDS.includes(poap.event.id.toString())
+          const data = res.data.data
+          if (Array.isArray(data)) {
+            setKudos(
+              data.filter((kudos: KudosType) =>
+                KUDOS_IDS.includes(kudos.kudosTokenId)
               )
             )
           }
@@ -152,13 +183,21 @@ const ConnectWalletButton = ({
   return (
     <>
       {isConnected ? (
-        <Popover trigger={isSmallScreen ? 'click' : 'hover'}>
+        <Popover
+          isOpen={isPopOverOn}
+          returnFocusOnClose={false}
+          onClose={() => {
+            onClose()
+            setIsPopOverOn(false)
+          }}
+        >
           <PopoverTrigger>
             <Button
               variant="secondary"
               size={isSmallScreen ? 'sm' : 'md'}
               // TODO: fix bug when switching wallets
               leftIcon={<Davatar address={walletAddress} size={25} />}
+              onClick={() => setIsPopOverOn(!isPopOverOn)}
             >
               <Text maxW="200px" display="flex" alignItems="center" isTruncated>
                 <ENSName provider={web3Provider} address={walletAddress} />
@@ -174,21 +213,22 @@ const ConnectWalletButton = ({
                   size={isSmallScreen ? 'sm' : 'md'}
                   leftIcon={<Wallet weight="bold" />}
                   onClick={() => {
+                    setIsPopOverOn(false)
                     walletWeb3ReactContext.deactivate()
                     web3Modal.clearCachedProvider()
                     localStorage.removeItem('walletconnect')
                     setWalletIsLoading(false)
-                    setPoaps([])
+                    setKudos([])
                   }}
                 >
                   Disconnect wallet
                 </Button>
               </Box>
               {/* TODO: move to dedicated component? */}
-              {!IS_WHITELABEL && poaps?.length > 0 && (
+              {!IS_WHITELABEL && kudos?.length > 0 && (
                 <>
                   <Text fontSize="xl" fontWeight="bold" textAlign="center">
-                    My Academy POAPs
+                    My Academy Credentials
                   </Text>
                   <Box
                     maxHeight="320px"
@@ -197,27 +237,30 @@ const ConnectWalletButton = ({
                     borderRadius="10px"
                   >
                     <SimpleGrid columns={3} spacing={3} p={3}>
-                      {poaps?.map((poap, index) => {
-                        const twitterLink = `https://twitter.com/intent/tweet?url=https%3A%2F%2Fapp.poap.xyz%2Ftoken%2F${poap.tokenId}&text=Look%20at%20my%20@BanklessAcademy%20POAP%20NFT!%20👀%0AGo%20to%20https%3A%2F%2Fapp.banklessacademy.com%2F%20to%20learn%20about%20%23Web3%20and%20%23DeFi%20and%20claim%20your%20free%20POAP!%20🔥`
-                        return (
-                          <Box
-                            key={`poap-${index}`}
-                            justifySelf="center"
-                            boxShadow="0px 0px 4px 2px #00000060"
-                            borderRadius="3px"
-                            backgroundColor="blackAlpha.300"
-                            p={1}
-                          >
-                            <Link href={twitterLink} target="_blank">
+                      {kudos?.map((k, index) => {
+                        const lesson = LESSONS.find(
+                          (lesson) => lesson.kudosId === k.kudosTokenId
+                        )
+                        if (lesson) {
+                          return (
+                            <Box
+                              key={`poap-${index}`}
+                              justifySelf="center"
+                              boxShadow="0px 0px 4px 2px #00000060"
+                              borderRadius="3px"
+                              backgroundColor="blackAlpha.300"
+                              p={1}
+                            >
                               <Image
-                                src={poap.event.image_url}
+                                src={k.assetUrl}
                                 width="70px"
                                 height="70px"
-                                borderRadius="50%"
+                                alt={lesson.name}
+                                title={lesson.name}
                               />
-                            </Link>
-                          </Box>
-                        )
+                            </Box>
+                          )
+                        }
                       })}
                     </SimpleGrid>
                   </Box>
@@ -227,17 +270,47 @@ const ConnectWalletButton = ({
           </PopoverContent>
         </Popover>
       ) : (
-        <Button
-          onClick={() => {
-            setConnectClick(true)
+        <Popover
+          returnFocusOnClose={false}
+          isOpen={connectWalletPopupLS && isLessonPage}
+          onClose={() => {
+            onClose()
+            setConnectWalletPopupLS(false)
           }}
-          size={isSmallScreen ? 'sm' : 'md'}
-          leftIcon={<Wallet weight="bold" />}
-          isLoading={walletIsLoading}
-          loadingText="Connecting wallet"
         >
-          Connect wallet
-        </Button>
+          <Overlay hidden={!(connectWalletPopupLS && isLessonPage)} />
+          <PopoverTrigger>
+            <Button
+              onClick={() => {
+                setConnectClick(true)
+              }}
+              size={isSmallScreen ? 'sm' : 'md'}
+              leftIcon={<Wallet weight="bold" />}
+              isLoading={walletIsLoading}
+              loadingText="Connecting wallet"
+              zIndex={2}
+            >
+              Connect wallet
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverBody>
+              <Heading as="h2" size="md" textAlign="center" my="2">
+                Connect your wallet to proceed.
+              </Heading>
+              <Text textAlign="center">
+                {`Don’t know how? `}
+                <Link
+                  href="/faq#e8dc710580f84305a5b522ceb556fc50"
+                  target="_blank"
+                >
+                  Get help here
+                </Link>
+              </Text>
+            </PopoverBody>
+          </PopoverContent>
+        </Popover>
       )}
     </>
   )

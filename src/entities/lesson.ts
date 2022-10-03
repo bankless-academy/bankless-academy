@@ -7,6 +7,7 @@ export interface LessonType {
   slug: string
   notionId: string
   poapEventId?: number
+  kudosId?: number
   description: string
   marketingDescription: string
   duration: number
@@ -25,6 +26,7 @@ export interface LessonType {
   isCommentsEnabled: boolean
   endOfLessonRedirect?: string
   endOfLessonText?: string
+  communityDiscussionLink?: string
   slides: {
     type: SlideType
     title: string

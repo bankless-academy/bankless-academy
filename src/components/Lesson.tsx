@@ -22,15 +22,18 @@ import { useMediaQuery } from '@chakra-ui/react'
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
 import { Warning, Checks } from 'phosphor-react'
 // import { isMobile } from 'react-device-detect'
+import { useLocalStorage } from 'usehooks-ts'
 
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
+import MintKudos from 'components/MintKudos'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useActiveWeb3React } from 'hooks'
 import { track, verifySignature, getSignature } from 'utils'
 import { GENERIC_ERROR_MESSAGE, IS_WHITELABEL } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, PoapIcon } from 'components/Icons'
+import { theme } from 'theme/index'
 
 // transform keywords into Tooltip
 function transform(node, index) {
@@ -201,7 +204,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isClaimingPoap, setIsClaimingPoap] = useState(false)
+  const [, setIsClaimingPoap] = useState(false)
   const [isPoapMinted, setIsPoapMinted] = useState(false)
   const [poapData, setPoapData] = useState<{ code?: string; error?: string }>(
     {}
@@ -210,6 +213,14 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     !!localStorage.getItem(`poap-${lesson.slug}`)
   )
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [, setConnectWalletPopupLS] = useLocalStorage(
+    `connectWalletPopup`,
+    false
+  )
+  const [isKudosMintedLS] = useLocalStorage(
+    `isKudosMinted-${lesson.kudosId}`,
+    false
+  )
 
   const router = useRouter()
   // TODO: track embed origin
@@ -227,6 +238,12 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
   }, [currentSlide])
+
+  useEffect((): void => {
+    if (account) setConnectWalletPopupLS(false)
+    if ((slide.type === 'QUEST' || slide.type === 'END') && !account)
+      setConnectWalletPopupLS(true)
+  }, [account, slide])
 
   useEffect(() => {
     // preloading all lesson images after 3 seconds for smoother transitions
@@ -342,7 +359,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           description: 'Refresh and try again ...',
           // TODO: claim code manually + improve error handling
           status: 'error',
-          duration: 5000,
+          duration: 10000,
         })
       })
   }
@@ -378,7 +395,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
       slide.quiz.rightAnswerNumber
 
-  const Quest = QuestComponent(lesson.quest)
+  const Quest = QuestComponent(lesson.quest, lesson.kudosId)
   // TODO: store quest verification state in local storage
 
   const poapCode = localStorage.getItem(`poap-${lesson.slug}`) || poapData.code
@@ -420,7 +437,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           {slide.type === 'POAP' && <PoapIcon />}
           {slide.type === 'END' && <PoapIcon />}
         </Box>
-        <Box>
+        <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
           {slide.type === 'QUIZ' ? (
             <>Knowledge Check</>
           ) : (
@@ -625,37 +642,36 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                 <>{Quest?.questComponent}</>
               ) : (
                 <>
-                  {lesson.poapImageLink ? (
-                    lesson.poapImageLink.includes('.mp4') ? (
-                      <Box height="250px" width="250px">
-                        <video controls autoPlay loop>
-                          <source
-                            src={lesson.poapImageLink}
-                            type="video/mp4"
-                          ></source>
-                        </video>
-                      </Box>
-                    ) : (
-                      <ChakraImage
-                        src={lesson.poapImageLink}
-                        height="250px"
-                        mb="2"
-                      />
-                    )
-                  ) : null}
-                  <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
-                  <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
-                  {embed ? null : (
-                    <NextLink href={`/lessons`}>
-                      <Button
-                        variant="primary"
-                        size="lg"
-                        style={{ padding: '0 23px' }}
-                      >
-                        Explore more Lessons
-                      </Button>
-                    </NextLink>
+                  {lesson.poapImageLink && (
+                    <>
+                      {lesson.poapImageLink.includes('.mp4') ? (
+                        <Box height="250px" width="250px">
+                          <video controls autoPlay loop>
+                            <source
+                              src={lesson.poapImageLink}
+                              type="video/mp4"
+                            ></source>
+                          </video>
+                        </Box>
+                      ) : (
+                        <ChakraImage
+                          src={lesson.poapImageLink}
+                          height="250px"
+                          mb="2"
+                        />
+                      )}
+                    </>
                   )}
+                  {lesson.kudosId ? (
+                    <MintKudos
+                      kudosId={lesson.kudosId}
+                      isQuestCompleted={Quest?.isQuestCompleted}
+                      goToPrevSlide={goToPrevSlide}
+                    />
+                  ) : (
+                    <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
+                  )}
+                  <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
                 </>
               )}
             </VStack>
@@ -672,7 +688,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               onClick={goToPrevSlide}
               leftIcon={<ArrowBackIcon />}
             >
-              Prev
+              {isLastSlide && isSmallScreen ? '' : 'Prev'}
             </Button>
           )}
           {lesson.isCommentsEnabled && !isSmallScreen && slide.notionId && (
@@ -691,7 +707,22 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           )}
         </HStack>
         <HStack>
-          {(!isLastSlide || lesson.endOfLessonText) && (
+          {slide.type === 'QUEST' && !Quest?.isQuestCompleted ? (
+            <Tooltip
+              hasArrow
+              label="By skipping this quest you won't be able to claim the lesson credential"
+            >
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setCurrentSlide(currentSlide + 1)
+                }}
+              >
+                Skip Quest
+              </Button>
+            </Tooltip>
+          ) : null}
+          {!isLastSlide || lesson.endOfLessonText ? (
             <Button
               ref={buttonRightRef}
               variant={isLastSlide ? 'primaryBigLast' : 'primaryBig'}
@@ -707,6 +738,36 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
             >
               Next
             </Button>
+          ) : (
+            <>
+              {lesson.communityDiscussionLink && (
+                <Tooltip
+                  hasArrow
+                  label="Join other explorers to discuss this lesson."
+                >
+                  <Link
+                    target="_blank"
+                    rel="noreferrer"
+                    href={lesson.communityDiscussionLink}
+                  >
+                    <Button variant="outline">
+                      👨‍🚀{isSmallScreen ? '' : ' Community discussion'}
+                    </Button>
+                  </Link>
+                </Tooltip>
+              )}
+              {embed ? null : (
+                <NextLink href={`/lessons`}>
+                  <Button
+                    variant={
+                      lesson.kudosId && !isKudosMintedLS ? 'outline' : 'primary'
+                    }
+                  >
+                    Explore more Lessons
+                  </Button>
+                </NextLink>
+              )}
+            </>
           )}
         </HStack>
       </SlideNav>

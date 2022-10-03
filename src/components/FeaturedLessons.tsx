@@ -25,7 +25,9 @@ const FeaturedLessons: React.FC = () => {
       <Box>
         {LESSONS.filter((lesson) => lesson.isFeaturedOnHomepage).map(
           (lesson, key) => {
-            const isPoapClaimed = localStorage.getItem(`poap-${lesson.slug}`)
+            const isKudosMinted = localStorage.getItem(
+              `isKudosMinted-${lesson.kudosId}`
+            )
             const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
             const LessonImage = (
               <LessonBanner
@@ -49,7 +51,7 @@ const FeaturedLessons: React.FC = () => {
                 </Text>
                 <NextLink href={`/lessons/${lesson.slug}`}>
                   <Button variant="primary" mt="4">
-                    {isPoapClaimed
+                    {isKudosMinted
                       ? 'Review Lesson'
                       : isLessonStarted
                       ? 'Resume Lesson'

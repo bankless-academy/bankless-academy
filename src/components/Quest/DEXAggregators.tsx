@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Input, Box } from '@chakra-ui/react'
+import {
+  Input,
+  Box,
+  Image,
+  InputRightElement,
+  InputGroup,
+  Spinner,
+} from '@chakra-ui/react'
 import { useMediaQuery } from '@chakra-ui/react'
+import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 
 const DEXAggregators = (
@@ -10,20 +18,28 @@ const DEXAggregators = (
   questComponent: React.ReactElement
 } => {
   const [isTransactionVerified, setIsTransactionVerified] = useState(null)
+  const [isCheckingTx, setIsCheckingTx] = useState(false)
   const [tx, setTx] = useState(localStorage.getItem('quest-dex-aggregators-tx'))
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
 
   const validateQuest = async (tx) => {
     try {
-      const questResult = await axios.get(
-        `/api/validate-quest?address=${account}&quest=DEXAggregators&tx=${tx.replaceAll(
-          'https://polygonscan.com/tx/',
-          ''
-        )}`
-      )
-      setIsTransactionVerified(questResult?.data?.isQuestValidated)
+      if (tx !== '') {
+        setIsCheckingTx(true)
+        const questResult = await axios.get(
+          `/api/validate-quest?address=${account}&quest=DEXAggregators&tx=${tx.replaceAll(
+            'https://polygonscan.com/tx/',
+            ''
+          )}`
+        )
+        setIsCheckingTx(false)
+        setIsTransactionVerified(questResult?.data?.isQuestValidated)
+      } else {
+        setIsTransactionVerified(null)
+      }
     } catch (error) {
       console.error(error)
+      setIsCheckingTx(false)
     }
   }
 
@@ -37,17 +53,8 @@ const DEXAggregators = (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
           <div className="bloc1">
-            <h2>
-              {'Swap any token to '}
-              <a
-                href="https://polygonscan.com/token/0xdb7cb471dd0b49b29cab4a1c14d070f27216a0ab"
-                target="_blank"
-                rel="noreferrer"
-              >
-                BANK
-              </a>
-              {' token on '}
-              {/* TODO: add referrerAddress? */}
+            <p>
+              {'1. Load '}
               <a
                 href="https://app.1inch.io/#/137/unified/swap/MATIC/0xdb7cb471dd0b49b29cab4a1c14d070f27216a0ab"
                 target="_blank"
@@ -55,11 +62,21 @@ const DEXAggregators = (
               >
                 1inch
               </a>
-              {
-                ' using the Polygon Network, then submit your transaction for validation here:'
-              }
-            </h2>
-            <Box pr="2" maxW="530px">
+              {' on the Polygon network.'}
+            </p>
+            <p>
+              {'2. Swap any token to '}
+              <a
+                href="https://polygonscan.com/token/0xdb7cb471dd0b49b29cab4a1c14d070f27216a0ab"
+                target="_blank"
+                rel="noreferrer"
+              >
+                $BANK
+              </a>
+              .
+            </p>
+            <p>3. Enter the transaction ID below:</p>
+            <InputGroup maxW="530px">
               <Input
                 placeholder="0x..."
                 value={tx}
@@ -73,13 +90,23 @@ const DEXAggregators = (
                   validateQuest(e.target.value)
                 }}
               />
-            </Box>
+              <InputRightElement>
+                {isCheckingTx ? (
+                  <Spinner speed="1s" color="orange" />
+                ) : isTransactionVerified === true ? (
+                  <CheckIcon color="green.500" />
+                ) : (
+                  tx && tx.length !== 0 && <CloseIcon color="red.500" />
+                )}
+              </InputRightElement>
+            </InputGroup>
           </div>
           <div className="bloc2">
-            <iframe
+            <Image src="/images/dex-aggregators-quest.png" />
+            {/* <iframe
               src="https://www.youtube.com/embed/PWtVAAGKTXI?start=509&rel=0"
               allowFullScreen
-            ></iframe>
+            ></iframe> */}
           </div>
         </Box>
       </>

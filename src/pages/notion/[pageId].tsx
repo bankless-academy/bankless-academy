@@ -1,30 +1,23 @@
 /* eslint-disable no-console */
-import React from 'react'
+import React, { useEffect } from 'react'
 import { GetServerSideProps } from 'next'
 // TODO: replace with https://github.com/NotionX/react-notion-x
-import { NotionRenderer, BlockMapType } from 'react-notion'
+import { NotionRenderer } from 'react-notion-x'
+import { NotionAPI } from 'notion-client'
+import { ExtendedRecordMap } from 'notion-types'
+import { getPageTitle } from 'notion-utils'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
-import Link from 'next/link'
-import fetch from 'node-fetch'
 
-const ALLOWED_IDS = [
-  // whitelabel
-  '8198f1db3f1c490cb2aedf361fc3e416',
-  // Content Creation Process
-  '2504d274430b4b4aa28d6171c9b06335',
-  // documentation
-  '73cae3c0d9124d38babe1f1f9ec5c65f',
-  'ea6c9d2b537b46d2aa57b7d4df3d93ca',
-  // sponsors
-  '208c77594ddc47ef9ea628c029d29ab0',
-  // jobs/talent
-  '56d3b0a011fe443aa2a9682f0ca443bb',
-  '65dfe884acb749ef90dd5250f585314d',
-  'fa0aa8ba0a034c4cbcc7407b650207e1',
-  'e6ffab31d7604580b0879ad296bfe6fc',
-  '9738fb45eed245cab1f134481afc36fd',
-  'f6c390f5b0754c85acec7b9bcafa00cb',
-]
+const notion = new NotionAPI()
+
+export const PAGE_IDS = {
+  '/faq': '97b88d72335a41a1911c12d4e2f99db6',
+}
+
+export const ALLOWED_PAGES = Object.keys(PAGE_IDS)
+
+export const ALLOWED_IDS = Object.values(PAGE_IDS)
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const pageId =
@@ -36,19 +29,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (!pageId || !ALLOWED_IDS.includes(pageId)) {
     return {
       props: {
-        blockMap: false,
+        recordMap: false,
         isNotion: true,
       },
     }
   }
 
   try {
-    const data: BlockMapType = await fetch(
-      `https://notion-api.splitbee.io/v1/page/${pageId}`
-    ).then((res) => res.json())
+    const data: ExtendedRecordMap = await notion.getPage(pageId)
     return {
       props: {
-        blockMap: data,
+        recordMap: data,
         isNotion: true,
       },
     }
@@ -56,15 +47,20 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     console.error(error)
     return {
       props: {
-        blockMap: false,
+        recordMap: false,
         isNotion: true,
       },
     }
   }
 }
 
-const NotionPage = ({ blockMap }): JSX.Element => {
-  if (!blockMap || Object.keys(blockMap).length === 0) {
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+const NotionPage = ({
+  recordMap,
+}: {
+  recordMap: ExtendedRecordMap
+}): JSX.Element => {
+  if (!recordMap || Object.keys(recordMap).length === 0) {
     return (
       <div>
         <h3>No data found.</h3>
@@ -73,30 +69,37 @@ const NotionPage = ({ blockMap }): JSX.Element => {
       </div>
     )
   }
+  const { asPath } = useRouter()
 
-  const title = blockMap[Object.keys(blockMap)[0]]?.value.properties.title[0][0]
+  const [, elementID] = asPath.split('#')
+
+  useEffect(() => {
+    if (elementID && typeof window !== 'undefined') {
+      document.getElementById(elementID).scrollIntoView()
+    }
+  }, [elementID])
+
+  const title = getPageTitle(recordMap)
 
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
-      <NotionRenderer
-        blockMap={blockMap}
-        fullPage
-        customBlockComponents={{
-          page: ({ blockValue, renderComponent }) => (
-            <Link href={`/${blockValue.id}`}>{renderComponent()}</Link>
-          ),
-        }}
-      />
-      <style jsx global>{`
+      <NotionRenderer recordMap={recordMap} fullPage={true} darkMode={true} />
+      <style>{`
         div :global(.notion-code) {
           box-sizing: border-box;
         }
         body {
           padding: 0;
           margin: 0;
+        }
+        .notion-header {
+          display: none;
+        }
+        .notion-frame {
+          padding: 0;
         }
       `}</style>
     </>

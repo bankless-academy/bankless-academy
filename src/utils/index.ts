@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable no-console */
 import { Contract } from '@ethersproject/contracts'
 import { getAddress } from '@ethersproject/address'
@@ -7,7 +8,9 @@ import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { NetworkConnector } from '@web3-react/network-connector'
 import * as ethUtil from 'ethereumjs-util'
 import { ethers } from 'ethers'
+import { verifyTypedData } from 'ethers/lib/utils'
 import { Network } from '@ethersproject/networks'
+import queryString from 'query-string'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 import ONEINCH_SWAP_ABI from 'abis/1inch.json'
@@ -18,7 +21,21 @@ declare global {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+// HOW-TO: ?debug=password or ?debug=false to activate/deactivate debug mode
+const debugParam =
+  typeof window !== 'undefined'
+    ? queryString.parse(window.location.search).debug?.toString()
+    : undefined
+export const DEBUG: string =
+  debugParam !== undefined
+    ? debugParam
+    : typeof window !== 'undefined'
+    ? localStorage.getItem('debug')
+    : null
+export const IS_DEBUG = debugParam !== undefined && debugParam !== 'false'
+if (debugParam !== undefined) localStorage.setItem('debug', DEBUG)
+if (debugParam === 'false') localStorage.removeItem('debug')
+
 export function isAddress(value: any): string | false {
   try {
     return getAddress(value)
@@ -33,7 +50,6 @@ export function shortenAddress(address: string): string {
 
 export function getContract(
   address: string,
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   ABI: any,
   library: Web3Provider,
   account?: string
@@ -78,7 +94,6 @@ export const network = new NetworkConnector({
   defaultChainId: 1,
 })
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const toFixed = function (x) {
   if (Math.abs(x) < 1.0) {
     const e = parseInt(x.toString().split('e-')[1])
@@ -110,7 +125,6 @@ export const trimCurrencyForWhales = (labelValue: number): string | number => {
     : Math.abs(Number(labelValue))
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const track = (event: string, value?: any): void => {
   if (typeof window !== 'undefined') {
     // TODO: change type of event value to JSON instead of varchar(50)
@@ -167,6 +181,19 @@ export async function getSignature(
     address.toLowerCase(),
   ])
   return signature
+}
+
+export const verifyTypedSignature = (
+  signature,
+  message,
+  address,
+  types,
+  domain
+): boolean => {
+  return (
+    verifyTypedData(domain, types, message, signature).toLowerCase() ===
+    address.toLowerCase()
+  )
 }
 
 export async function validateOnchainQuest(

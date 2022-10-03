@@ -33,7 +33,7 @@ export default async function handler(
 
   console.log('address: ', address)
   console.log('poapEventId: ', poapEventId)
-  console.log('signature: ', signature)
+  // console.log('signature: ', signature)
   console.log('message: ', message)
   console.log('diff: ', -message + Date.now())
 

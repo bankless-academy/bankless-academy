@@ -86,7 +86,8 @@ const Stats = (): JSX.Element => {
               Number of lesson completion
             </Text>
             {LESSONS.map((lesson, index) => {
-              const lessonCompleted = stats?.lessonCompleted[lesson.quest] || 0
+              const lessonCompleted =
+                stats?.lessonCompleted[lesson.notionId] || 0
               return (
                 <>
                   <p>
