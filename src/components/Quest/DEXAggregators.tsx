@@ -96,7 +96,7 @@ const DEXAggregators = (
                 ) : isTransactionVerified === true ? (
                   <CheckIcon color="green.500" />
                 ) : (
-                  tx.length !== 0 && <CloseIcon color="red.500" />
+                  tx && tx.length !== 0 && <CloseIcon color="red.500" />
                 )}
               </InputRightElement>
             </InputGroup>
