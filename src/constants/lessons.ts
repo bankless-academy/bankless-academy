@@ -8,6 +8,7 @@ const LESSONS: LessonType[] = [
     learningActions: 'Create and manage your own wallet\nConnect your wallet to a web3 website',
     marketingDescription: 'A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.',
     poapEventId: 26971,
+    kudosId: 659,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
@@ -228,7 +229,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -239,6 +240,7 @@ const LESSONS: LessonType[] = [
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
     poapEventId: 26972,
+    kudosId: 660,
     duration: 10,
     learnings: '',
     difficulty: 'Easy',
@@ -461,7 +463,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -472,6 +474,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
     poapEventId: null,
+    kudosId: 651,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
@@ -670,7 +673,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -681,6 +684,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Join the Academy Explorer Community on gm.xyz.',
     poapEventId: null,
+    kudosId: 662,
     duration: 10,
     learnings: '',
     difficulty: 'Easy',
@@ -716,7 +720,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -727,6 +731,7 @@ const LESSONS: LessonType[] = [
     learningActions: 'Avoid the scams in web3 and keep your assets safe.',
     marketingDescription: 'Learn how to stay safe from the most common scams in web3.',
     poapEventId: null,
+    kudosId: 663,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
@@ -964,7 +969,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -975,6 +980,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Understand the Layer 1 blockchains basics and their limitations.',
     poapEventId: null,
+    kudosId: null,
     duration: 15,
     learnings: '',
     difficulty: undefined,
@@ -1212,6 +1218,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Learn and level up on DEX Aggregators, Liquidity, and Trade-Offs.',
     poapEventId: null,
+    kudosId: null,
     duration: 15,
     learnings: '',
     difficulty: undefined,
@@ -1228,11 +1235,11 @@ const LESSONS: LessonType[] = [
     slug: 'dex-aggregators',
     imageLinks: [
       '/lesson/dex-aggregators/introduction-fb1290e2.png',
-      '/lesson/dex-aggregators/how-liquidity-affects-prices-563cd643.png',
+      '/lesson/dex-aggregators/an-example-of-how-liquidity-impacts-prices-563cd643.png',
       '/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-622113fd.png',
       '/lesson/dex-aggregators/recombining-liquidity-with-dex-aggregators-02fcc407.png',
       '/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-6f3863a0.png',
-      '/lesson/dex-aggregators/reducing-gas-costs-dcc55923.png',
+      '/lesson/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-dcc55923.png',
       '/lesson/dex-aggregators/avoiding-sandwich-attacks-467c02e4.png',
       '/lesson/dex-aggregators/more-protection-from-sandwiches-otc-trades-75cc18b6.png'
     ],
@@ -1241,19 +1248,19 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'fdab9a0b1c7b457a9110f88dbac53d71',
         title: '<strong>Introduction</strong>',
-        content: '<div class="bloc1"><p>Decentralized Exchanges (DEXs) eliminate the costs of middlemen and save Explorer’s money when trading assets. </p><p>But did you know, Explorer, that there’s a further step you can take in saving money through this technology? Using DEX Aggregators, you can scan all possible trades on various DEX platforms simultaneously and execute the best trade route - all in one action. They help you get the best deal when doing a <span class="tooltip" definition="A trade from one token to another">swap</span> to exchange one token for another. Just like an airline flight aggregators help you find the cheapest flight, DEX Aggregators help you get the most value out on the other side of your trade.</p><p>This lesson will show:</p><ol><li>How DEXs split liquidity and how that can result in worse trading rates.</li><li>How DEX Aggregators allow users to view and use multiple DEXs through one interface.</li><li>Multiple ways a single aggregator interface can save Explorers time and money.</li></ol></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/introduction-fb1290e2.png\'></div>'
+        content: '<div class="bloc1"><p><span class="tooltip" definition="(DEX) protocol that facilitates exchange without requiring trusted intermediaries">Decentralized Exchange</span>s (DEXs) eliminate the costs of intermediaries and save Explorers money when trading assets. </p><p>But did you know, Explorer, that there’s more ways to save with DeFi technology? Using DEX aggregators, you can scan all possible trades on various DEX platforms simultaneously and execute the best trade route — all in one action. They help you get the best deal when doing a token <span class="tooltip" definition="A trade from one token to another">swap</span>. Just like airline flight aggregators help you find the cheapest flight, DEX aggregators help you maximize the value of your trade.</p><p>This lesson will show:</p><ol><li>How DEXs split liquidity and how that can result in reduced trading rates.</li><li>How DEX aggregators enable users to view and use multiple DEXs through one interface.</li><li>Multiple ways a single aggregator interface can save Explorers time and money.</li></ol></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/introduction-fb1290e2.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '0e59fd1b9b7943a3a70a44abc9e921c1',
-        title: 'How Liquidity affects prices',
-        content: '<div class="bloc1"><p>The amount of any token that is available to trade on a single market is called a token’s <span class="tooltip" definition="How much of a token is available for trading">liquidity</span>. The amount of liquidity available strongly influences how large the <span class="tooltip" definition="The amount prices on a DEX change due to trades">price impact</span> is when making trades in DeFi; a large price impact means the trade will cost more, low price impact will cost less. So, most people prefer to trade in markets with more liquidity to reduce their price impact. </p><p>You can think of it like a swimming pool, the more water (liquidity) there is, the smaller the <em>change </em>in the water level (price impact) from someone jumping in or leaving.</p></div>'
+        title: 'How Liquidity Affects Prices',
+        content: '<div class="bloc1"><p>The amount of any token that is available to trade on a single market is called a token’s <span class="tooltip" definition="How much of a token is available for trading">liquidity</span>. The amount of liquidity available strongly influences the <span class="tooltip" definition="The amount prices on a DEX change due to trades">price impact</span> when making trades in DeFi; a large price impact means the trade will cost more, and a low price impact will cost less. Most people prefer to trade in markets with higher liquidity to reduce their price impact. </p><p>You can think of it like a swimming pool; the more water (liquidity) there is, the smaller the <em>change </em>in the water level (price impact) when someone jumps in or leaves. The size of that ‘someone’ (the trade) also affects the <em>change</em> in the water level (price impact).</p></div>'
       },
       {
         type: 'LEARN',
         notionId: '8ea31e80fcfc49d3a88ad09d03341c9c',
-        title: 'How Liquidity affects prices',
-        content: '<div class="bloc1"><p>Let’s look at an example. </p><p>On Uniswap, the BanklessDAO token ($BANK) has a liquidity amount of ~30 million $BANK, but only ~4.5 million $BANK on Sushiswap. Uniswap has over 6x the $BANK liquidity of Sushiswap.</p><p>If an Explorer was to purchase 10,000 $BANK from each pool, they would find that the <span class="tooltip" definition="The amount prices on a DEX change due to trades">price impact</span> of their trade would result in a higher trade price in the Sushiswap pool - because their trade has pulled a larger percentage of the pool’s total liquidity.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-liquidity-affects-prices-563cd643.png\'></div>'
+        title: 'An Example of How Liquidity Impacts Prices',
+        content: '<div class="bloc1"><p>Let’s look at an example. </p><p>The BanklessDAO token (BANK) has a liquidity amount of ~30 million BANK on Uniswap, but only ~4.5 million BANK on SushiSwap. Uniswap has over 6x the BANK liquidity of SushiSwap.</p><p>If an Explorer was to purchase 10,000 BANK from each pool, they would find that the <span class="tooltip" definition="The amount prices on a DEX change due to trades">price impact</span> of their trade would result in a higher trade price in the SushiSwap pool — because their trade has pulled a larger percentage of the pool’s total liquidity.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/an-example-of-how-liquidity-impacts-prices-563cd643.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1274,8 +1281,8 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: 'b97afba7b0f44b709f57d6e85ce13cc2',
-        title: 'Shortcomings of traditional DEXs: Thin Liquidity',
-        content: '<div class="bloc1"><p>DeFi continues to grow, but a problem is emerging for users: As more DEXs launch, the total amount of any individual token gets spread out. This is known as thin liquidity.</p><p>Remember the swimming pool: if the water (<span class="tooltip" definition="How much of a token is available for trading">liquidity</span>) gets split between multiple pools. The total amount of water will be “thinner” in both pools compared to the original pool.</p><p>In 2020, Uniswap held much of the DEX liquidity to trade in DeFi. When Sushiswap launched the following month, they attracted over $1B worth of liquidity into their DEX from Uniswap, reducing total liquidity on Uniswap. This was just the start. Since then, more and more DEXs have entered the DeFi ecosystem, progressively thinning the liquidity of each pool.</p><p>This means that today, any trade has a larger <span class="tooltip" definition="The amount prices on a DEX change due to trades">price impact</span> than when Uniswap held most of the ecosystem’s total liquidity. It costs Explorers more to trade on any single DEX as more DEXs launch.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-622113fd.png\'></div>'
+        title: 'Shortcomings of Traditional DEXs: Thin Liquidity',
+        content: '<div class="bloc1"><p>DeFi continues to grow, but a problem is emerging for users: As more DEXs launch, the total amount of any individual token gets spread out. This is known as thin liquidity.</p><p>Remember the swimming pool: if the available water (<span class="tooltip" definition="How much of a token is available for trading">liquidity</span>) is split between multiple pools, the amount of water will be “thinner” in each pool compared to the total in the single original pool.</p><p>In 2020, Uniswap held much of the DEX liquidity to trade in DeFi. When SushiSwap launched the following month, it attracted over $1B worth of liquidity into its DEX from Uniswap, reducing total liquidity on Uniswap. This was just the start. Since then, more and more DEXs have entered the DeFi ecosystem, progressively thinning the liquidity of each pool.</p><p>The result is that today, any trade has a larger <span class="tooltip" definition="The amount prices on a DEX change due to trades">price impact</span> than when Uniswap held most of the ecosystem’s total liquidity. As more DEXs launch, it costs Explorers more to trade on any single DEX.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-622113fd.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1285,10 +1292,10 @@ const LESSONS: LessonType[] = [
           question: 'Which two factors determine the price impact of a DEX trade?',
           rightAnswerNumber: 3,
           answers: [
-            'Which DEX is used to make the trade and size of the trade',
+            'The choice of DEX is used to make the trade and size of the trade',
             'Which token is chosen to trade and which DEX is used to make the trade',
-            'Size of the trade and amount of liquidity available',
-            'Amount of liquidity available and which token is chosen to trade'
+            'The size of the trade and amount of liquidity available',
+            'The amount of liquidity available and which token is chosen to trade'
           ],
           id: 'dex-aggregators-2'
         }
@@ -1296,15 +1303,15 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: 'c06177fa9ee3428c80a9295a8a09a9f2',
-        title: 'Recombining Liquidity with DEX Aggregators',
-        content: '<div class="bloc1"><p>Large amounts of <span class="tooltip" definition="How much of a token is available for trading">liquidity</span> are needed to reduce price impact and save you money. DEX Aggregators allow users to run trades through multiple DEXs at once and reduce the price impact; a big trade from an Explorer’s wallet gets broken down into multiple small trades across multiple DEXs. It’s the same idea as a flight aggregator: a big trip gets broken down into multiple smaller flights from multiple airlines.</p><p>DEX Aggregators can even route trades through an <span class="tooltip" definition="A token that is part of the middle of a trade route, not the starting or ending token">intermediary token</span> or more if that gets a better result for users — like how a flight aggregator might add an extra stop at another airport if it’s cheaper for the passenger. This discovery of the optimal trade route is done by sophisticated algorithms searching through all possible paths to find the cheapest trade route at that moment.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/recombining-liquidity-with-dex-aggregators-02fcc407.png\'></div>'
+        title: 'Recombining Liquidity With DEX Aggregators',
+        content: '<div class="bloc1"><p>Large amounts of <span class="tooltip" definition="How much of a token is available for trading">liquidity</span> are needed to reduce price impact and save you money. DEX aggregators allow users to run trades through multiple DEXs at once and reduce the price impact; a big trade from an Explorer’s wallet gets broken down into multiple small trades across multiple DEXs.</p><p>DEX aggregators can even route trades through an <span class="tooltip" definition="A token that is part of the middle of a trade route, not the starting or ending token">intermediary token</span> , or more than one, if that gets a better result for users — like the way a flight aggregator might suggest an extra stop at another airport if it’s cheaper for the passenger. This discovery of the optimal trade route is done by sophisticated algorithms searching through all possible paths to find the cheapest trade route at that moment.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/recombining-liquidity-with-dex-aggregators-02fcc407.png\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '063815f2667146a2921df5c4c3ca1663',
         title: '✅ Question',
         quiz: {
-          question: 'Trade routing in DEX Aggregators means:',
+          question: 'Trade routing in DEX aggregators means:',
           rightAnswerNumber: 4,
           answers: [
             'Trades are routed according to liquidity arrangements with specific DEXs',
@@ -1318,25 +1325,25 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '1c2f4199a9254d18897593b371ca4d9e',
-        title: 'How gas cost is calculated on Ethereum',
-        content: '<div class="bloc1"><p>Just like gas for a car, <span class="tooltip" definition="Transaction fees for blockchain networks">gas</span> is the fuel for running blockchain code on Ethereum. The more gas your car uses, the farther you travel; the more gas your code uses, the more computations you do. Gas price is usually measured in very small amounts of ether, like cents to a dollar. For example: <br>1 <span class="tooltip" definition="A unit used on Ethereum blockchain, equivalent to 0.000000001 ETH (one billionth), used commonly to describe gas prices">gwei</span> is 1 billionth of an ether (1 gwei = 0.00000001 ETH).</p><p>Typical gas costs might be 22 gwei per gas unit, as opposed to gasoline for a car which might be $5.99 per gallon. The total gas cost is based on how much gas your transaction uses and the price of gas at the time of use. </p><p>The formula for calculating the price of a transaction is as follows:</p><p>Example:</p><p>120,000 gas * 22 gwei per gas = 2,640,000 gwei <strong>or</strong> 0.00264 ETH</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-6f3863a0.png\'></div>'
+        title: 'How Gas Cost Is Calculated on Ethereum',
+        content: '<div class="bloc1"><p>Let’s refresh how gas is calculated before we go on to see how the optimizations DEX aggregators make can reduce network fees for users.</p><p>Just like gas for a car, <span class="tooltip" definition="Transaction fees for blockchain networks">gas</span> is the fuel for running blockchain code on Ethereum. The farther you travel, the more gas your car uses. Likewise, the more computations you do, the more gas your code requires. Gas price is usually measured in very small amounts of ether, like cents to a dollar. For example: <br>1 <span class="tooltip" definition="A unit used on Ethereum blockchain, equivalent to 0.000000001 ETH (one billionth), used commonly to describe gas prices">gwei</span> is 1 billionth of an ether (1 gwei = 0.00000001 ETH).</p><p>The total gas cost is based on how much gas your transaction uses and the unit price of gas at the time of use.</p><p>The formula for calculating the price of a transaction is as follows:</p><p>As an example, let’s say gas costs are at 22 gwei per gas unit and the transaction uses 120 thousand units.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-6f3863a0.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '7196f021bcc541929d68b9bd0c018ac3',
-        title: 'Reducing gas costs',
-        content: '<div class="bloc1"><p>Trade splitting would result in more transaction fees from the extra on-chain activity, except that advanced aggregators plan for transaction fees and include them in their calculations of the trade route. They simulate trades off-chain, including <span class="tooltip" definition="Transaction fees for blockchain networks">gas</span> costs, to find <span class="tooltip" definition="What is the path taken from starting token to ending token in a trade">trade routes</span> that leave Explorers with the most value at the end of the interaction.</p><p>Some aggregators go even further: they may pay gas costs using some of the token being traded in <span class="tooltip" definition="A transaction that pays gas using some of the token to be traded rather than the native coin of the blockchain network">gasless transactions</span>, and others refund some of the network transaction fees from using their protocol. 1inch currently offers rebates in their token for a portion of gas costs from trading through their <span class="tooltip" definition="A decentralized app that connects to decentralized networks and protocols"><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">dapp</span></span> on Ethereum mainnet.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/reducing-gas-costs-dcc55923.png\'></div>'
+        title: 'How Aggregators Reduce Gas Costs for Users',
+        content: '<div class="bloc1"><p>Trade splitting would result in more transaction fees from the extra on-chain activity, except that advanced aggregators plan for transaction fees and include them in their calculations of the trade route. They simulate trades off chain, including <span class="tooltip" definition="Transaction fees for blockchain networks">gas</span> costs, to find <span class="tooltip" definition="What is the path taken from starting token to ending token in a trade">trade routes</span> that leave Explorers with the most value at the end of the interaction.</p><p>Some aggregators go even further: they may refund some of the network transaction fees from using their protocol. 1inch currently offers rebates in their token for a portion of gas costs from trading through their <span class="tooltip" definition="A decentralized app that connects to decentralized networks and protocols"><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">dapp</span></span> on Ethereum mainnet.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-dcc55923.png\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '2cf155ee9e3a4d4fb0a9c78f888d2373',
         title: '✅ Question',
         quiz: {
-          question: 'Which of the following are NOT ways DEX Aggregators try to reduce transaction costs for users?',
+          question: 'Which of the following is NOT a way DEX aggregators try to reduce transaction costs for users?',
           rightAnswerNumber: 2,
           answers: [
             'Simulate transactions off-chain prior to trade execution',
-            'Wait until gas costs are low to execute transactions',
+            'Ask DEXs to lower network fees for their users',
             'Account for gas cost in trade routing',
             'Token rebates on gas costs'
           ],
@@ -1347,14 +1354,14 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '19eb7c5516fd4da383c48661d21e34a1',
         title: 'Meta-Aggregators',
-        content: '<div class="bloc1"><p>There are even Meta-Aggregators of DEX Aggregators! These platforms search through all competing DEX Aggregators and serve price quotes to users. An example of this is the in-app swap function in MetaMask. This feature is actually a Meta-Aggregator that relies on DEX Aggregators like 1inch to function.</p><p>Note: <span class="tooltip" definition="A tool that brings together other aggregators into an extra overview layer">Meta-Aggregator</span> services can add extra costs on top of network transaction fees, increasing costs for users. Explorers, make sure that your trades don’t end up more expensive than you meant to pay. </p></div>'
+        content: '<div class="bloc1"><p>There are even meta-aggregators of DEX aggregators! These platforms search through all competing DEX aggregators and serve price quotes to users. An example of this is the in-app swap function in the MetaMask wallet. This feature is actually a meta-aggregator that relies on DEX aggregators like 1inch to function.</p><p>Note: While convenient, <span class="tooltip" definition="A tool that brings together other aggregators into an extra overview layer">meta-aggregator</span> services can add extra costs on top of network transaction fees, increasing the overall cost for users. Explorers: make sure that your trades don’t end up more expensive than you intended. </p></div>'
       },
       {
         type: 'QUIZ',
         notionId: '7abcec930d924ca997d5f4221fae9ad6',
         title: '✅ Question',
         quiz: {
-          question: 'Meta-aggregators cross-reference multiple DEX Aggregators to find the best prices for their users.',
+          question: 'Meta-aggregators cross-reference multiple DEX aggregators to find the best prices for their users.',
           rightAnswerNumber: 1,
           answers: [
             'True',
@@ -1367,20 +1374,18 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '44acd0c428aa49e8880b26f1ffffd0b0',
         title: 'Avoiding Sandwich Attacks',
-        content: '<div class="bloc1"><p>Users swapping directly through DEXs can lose value up to the limit of their <span class="tooltip" definition="How much can prices change before your trade executes">slippage tolerance</span> due to price changes coordinated by block producers — these kinds of losses are called sandwich attacks. Did you know that sandwich attacks led users to a total loss of $235,000,000 during 2021? Explorers can protect themselves by keeping a low slippage tolerance when swapping tokens.</p><p>Users typically raise their slippage tolerance in order to execute trades that have a large price impact - usually because of thin liquidity on a specific DEX. Fortunately, because of the recombined liquidity offered by DEX Aggregators, the price impact of a trade is reduced. Explorers can keep their slippage tolerance low while saving more with DEX Aggregators, as opposed to trading directly on a DEX.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/avoiding-sandwich-attacks-467c02e4.png\'></div>'
+        content: '<div class="bloc1"><p>Users swapping directly through DEXs can lose value up to the limit of their <span class="tooltip" definition="How much can prices change before your trade executes">slippage tolerance</span> due to price changes coordinated by block producers — these kinds of losses are called sandwich attacks. Did you know that sandwich attacks led users to a total loss of $235,000,000 during 2021? Explorers can protect themselves by keeping a low slippage tolerance when swapping tokens.</p><p>Fortunately, because of the recombined liquidity offered by DEX aggregators, the price impact of a trade is reduced. Explorers can keep their slippage tolerance low while saving more with DEX aggregators, as opposed to trading directly on a DEX.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/avoiding-sandwich-attacks-467c02e4.png\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '9864a66638a3473ca13f8ee2dc8c4b1f',
         title: '✅ Question',
         quiz: {
-          question: 'For most situations, you should keep your slippage tolerance around:',
+          question: 'To protect yourself, you should keep your slippage tolerance:',
           rightAnswerNumber: 1,
           answers: [
-            '2%',
-            '20%',
-            '50%',
-            '80%'
+            'low',
+            'high'
           ],
           id: 'dex-aggregators-6'
         }
@@ -1388,15 +1393,15 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: 'b1756984326242d4ad5e4ab2cbe2eb32',
-        title: 'More Protection from Sandwiches: OTC Trades',
-        content: '<div class="bloc1"><p>Some aggregators like 1inch even offer specialized OTC - <span class="tooltip" definition="Trades made directly with private entities">Over The Counter</span> - services that provide total protection against sandwich attacks. These optional services enable direct trading with other users, rather than facilitating trades through DeFi liquidity pools. Anyone can engage in OTC trades to fully remove the threat of sandwich attacks - providing another great way for Explorers to save.</p><p>CoWSwap is a Meta-Aggregator that also offers sandwich-resistant services, enabled by default, to make trades 100% protected against sandwich attacks.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/more-protection-from-sandwiches-otc-trades-75cc18b6.png\'></div>'
+        title: 'More Protection From Sandwiches: OTC Trades',
+        content: '<div class="bloc1"><p>Some aggregators like 1inch even offer specialized OTC (<span class="tooltip" definition="Trades made directly with private entities">Over The Counter</span>) services that provide total protection against sandwich attacks. These optional services enable direct trading with other users, rather than facilitating trades through DeFi liquidity pools. Anyone can engage in OTC trades to fully remove the threat of sandwich attacks — providing another great way for Explorers to save.</p><p>CoWSwap is a Meta-Aggregator that also offers sandwich-resistant services, enabled by default, to ensure trades are 100% protected against sandwich attacks.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/more-protection-from-sandwiches-otc-trades-75cc18b6.png\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '18f1f2c0e7b84cfbafe1b26e139f0c25',
         title: '✅ Question',
         quiz: {
-          question: 'DEX Aggregators offer which tool(s) to save their users money?',
+          question: 'Many DEX aggregators offer which tool(s) to save their users money?',
           rightAnswerNumber: 4,
           answers: [
             'Routing trades through aggregated liquidity from multiple DEXs to reduce price impact.',

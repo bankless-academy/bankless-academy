@@ -58,12 +58,6 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
-        {/* Umami */}
-        {/* Hotjar */}
-        {typeof window !== 'undefined' &&
-        window.location.hostname === 'app.banklessacademy.com'
-          ? hotjar.initialize(2568813, 6)
-          : null}
         {/* shortcut icon */}
         <link
           rel="shortcut icon"
@@ -73,6 +67,12 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         />
         <noscript>You need to enable JavaScript to run this app.</noscript>
       </NextHead>
+      {/* Hotjar */}
+      {typeof window !== 'undefined' &&
+      window.location.hostname === 'app.banklessacademy.com'
+        ? hotjar.initialize(2568813, 6)
+        : null}
+      {/* Umami */}
       <Script
         async
         defer

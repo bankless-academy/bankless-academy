@@ -76,8 +76,16 @@ const SwitchNetworkButton = ({
               size={isSmallScreen ? 'sm' : 'md'}
             >
               <Box display="flex" alignItems="center">
-                <Image src={currentNetwork.image} height={22} mr="12px" />
-                <Box flex="1" isTruncated>
+                <Image
+                  src={currentNetwork.image}
+                  height={22}
+                  mr={isSmallScreen ? '0' : '12px'}
+                />
+                <Box
+                  flex="1"
+                  isTruncated
+                  display={isSmallScreen ? 'none' : 'inherit'}
+                >
                   {currentNetwork.name}
                 </Box>
                 {isOpen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}

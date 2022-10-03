@@ -77,3 +77,5 @@ export const QUESTS: string[] = LESSONS.filter((lesson) => lesson.quest).map(
 export const POAP_EMAIL_CONTACT = 'poap@banklessacademy.com'
 
 export const GENERIC_ERROR_MESSAGE = `Something went wrong ... please contact ${POAP_EMAIL_CONTACT}`
+
+export const TWITTER_ACCOUNT = `BanklessAcademy`

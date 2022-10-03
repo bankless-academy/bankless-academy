@@ -10,7 +10,7 @@ export const NETWORKS = Object.freeze({
   },
   kovan: {
     name: 'Kovan Testnet',
-    image: '/images/eth-black.svg',
+    image: '/images/eth-test.svg',
     chainId: 42,
     rpcUrl: `https://kovan.infura.io/v3/${INFURA_ID}`,
     faucet: 'https://ethdrop.dev/',
@@ -28,9 +28,9 @@ export const NETWORKS = Object.freeze({
   },
   mumbai: {
     name: 'Mumbai Testnet',
-    image: '/images/matic-black.svg',
+    image: '/images/matic-test.svg',
     networkName: 'Matic(Polygon) Testnet Mumbai',
-    currencySymbol: 'tMATIC',
+    currencySymbol: 'MATIC',
     chainId: 80001,
     rpcUrl: `https://polygon-mumbai.infura.io/v3/${INFURA_ID}`,
     faucet: 'https://faucet.matic.network/',

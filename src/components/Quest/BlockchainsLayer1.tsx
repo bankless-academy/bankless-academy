@@ -110,9 +110,9 @@ const getItemStyle = (isDragging, draggableStyle, correct: boolean | null) => ({
   userSelect: 'none',
   background:
     correct === true
-      ? theme.colors.correct
+      ? theme.colors.correctGradient
       : correct === false
-      ? theme.colors.incorrect
+      ? theme.colors.incorrectGradient
       : isDragging
       ? '#916AB8'
       : 'grey',

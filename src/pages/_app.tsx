@@ -3,13 +3,14 @@ import { Web3ReactProvider } from '@web3-react/core'
 import { ethers } from 'ethers'
 import 'swiper/swiper-bundle.min.css'
 import { Global, css } from '@emotion/react'
-import 'react-notion/src/styles.css'
+import 'react-notion-x/src/styles.css'
 import 'prismjs/themes/prism-tomorrow.css'
 
 import dynamic from 'next/dynamic'
-import Head from 'components/Head'
+import Head, { MetaData } from 'components/Head'
 import Layout from 'layout'
 import ThemeProvider from 'theme'
+import { DEBUG } from 'utils/index'
 
 function getLibrary(provider) {
   return new ethers.providers.Web3Provider(provider) // this will vary according to whether you use e.g. ethers or web3.js
@@ -20,8 +21,19 @@ const Web3ReactProviderDefault = dynamic(
   { ssr: false }
 )
 
-const App = ({ Component, pageProps }: AppProps): JSX.Element => {
-  if (pageProps.isNotion) return <Component {...pageProps} />
+const App = ({
+  Component,
+  pageProps,
+}: AppProps<{
+  pageMeta: MetaData
+  isNotion: boolean
+}>): JSX.Element => {
+  if (
+    process.env.NEXT_PUBLIC_MAINTENANCE &&
+    process.env.NEXT_PUBLIC_MAINTENANCE !== DEBUG
+  ) {
+    return <>Maintenance in progress ...</>
+  }
   return (
     <>
       <Head metadata={pageProps.pageMeta} />
