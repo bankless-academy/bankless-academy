@@ -757,7 +757,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                 </Tooltip>
               )}
               {embed ? null : (
-                <NextLink href={`/lessons`}>
+                <NextLink href={IS_WHITELABEL ? `/` : `/lessons`}>
                   <Button
                     variant={
                       lesson.kudosId && !isKudosMintedLS ? 'outline' : 'primary'
