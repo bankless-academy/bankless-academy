@@ -285,7 +285,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
         }
       } else {
         // defaut: go back to lessons
-        router.push('/lessons')
+        if (IS_WHITELABEL) router.push('/')
+        else router.push('/lessons')
       }
     }
     setSelectedAnswerNumber(null)
@@ -757,7 +758,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                 </Tooltip>
               )}
               {embed ? null : (
-                <NextLink href={`/lessons`}>
+                <NextLink href={IS_WHITELABEL ? `/` : `/lessons`}>
                   <Button
                     variant={
                       lesson.kudosId && !isKudosMintedLS ? 'outline' : 'primary'

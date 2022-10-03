@@ -8,7 +8,7 @@ const LESSONS: LessonType[] = [
     learningActions: 'Create and manage your own wallet\nConnect your wallet to a web3 website',
     marketingDescription: 'A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.',
     poapEventId: 26971,
-    kudosId: 659,
+    kudosId: null,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
@@ -229,7 +229,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'Lesson Reward'
+        title: 'End of lesson'
       }
     ]
   },
@@ -240,7 +240,7 @@ const LESSONS: LessonType[] = [
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
     poapEventId: 26972,
-    kudosId: 660,
+    kudosId: null,
     duration: 10,
     learnings: '',
     difficulty: 'Easy',
@@ -463,7 +463,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'Lesson Reward'
+        title: 'End of lesson'
       }
     ]
   },
@@ -474,7 +474,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
     poapEventId: null,
-    kudosId: 651,
+    kudosId: null,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
@@ -673,7 +673,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'Lesson Reward'
+        title: 'End of lesson'
       }
     ]
   },
@@ -684,7 +684,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Join the Academy Explorer Community on gm.xyz.',
     poapEventId: null,
-    kudosId: 662,
+    kudosId: null,
     duration: 10,
     learnings: '',
     difficulty: 'Easy',
@@ -720,7 +720,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'Lesson Reward'
+        title: 'End of lesson'
       }
     ]
   },
@@ -731,7 +731,7 @@ const LESSONS: LessonType[] = [
     learningActions: 'Avoid the scams in web3 and keep your assets safe.',
     marketingDescription: 'Learn how to stay safe from the most common scams in web3.',
     poapEventId: null,
-    kudosId: 663,
+    kudosId: null,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
@@ -969,7 +969,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'Lesson Reward'
+        title: 'End of lesson'
       }
     ]
   },
@@ -1282,7 +1282,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'b97afba7b0f44b709f57d6e85ce13cc2',
         title: 'Shortcomings of Traditional DEXs: Thin Liquidity',
-        content: '<div class="bloc1"><p>DeFi continues to grow, but a problem is emerging for users: As more DEXs launch, the total amount of any individual token gets spread out. This is known as thin liquidity.</p><p>Remember the swimming pool: if the available water (<span class="tooltip" definition="How much of a token is available for trading">liquidity</span>) is split between multiple pools, the amount of water will be “thinner” in each pool compared to the total in the single original pool.</p><p>In 2020, Uniswap held much of the DEX liquidity to trade in DeFi. When SushiSwap launched the following month, it attracted over $1B worth of liquidity into its DEX from Uniswap, reducing total liquidity on Uniswap. This was just the start. Since then, more and more DEXs have entered the DeFi ecosystem, progressively thinning the liquidity of each pool.</p><p>The result is that today, any trade has a larger <span class="tooltip" definition="The amount prices on a DEX change due to trades">price impact</span> than when Uniswap held most of the ecosystem’s total liquidity. As more DEXs launch, it costs Explorers more to trade on any single DEX.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-622113fd.png\'></div>'
+        content: '<div class="bloc1"><p>DeFi continues to grow, but a problem is emerging for users: As more DEXs launch, the total amount of any individual token gets spread out. This is known as thin liquidity.</p><p>Remember the swimming pool: if the available water (<span class="tooltip" definition="How much of a token is available for trading">liquidity</span>) is split between multiple pools, the amount of water will be “thinner” in each pool compared to the total in the single original pool.</p><p>In 2020, Uniswap held much of the DEX liquidity to trade in DeFi. When SushiSwap launched the following month, it attracted over $1B worth of liquidity into its DEX from Uniswap, reducing total liquidity on Uniswap. This was just the start. Since then, more and more DEXs have entered the DeFi ecosystem, progressively thinning the liquidity of each pool.</p><p>Thus, any trade has a larger <span class="tooltip" definition="The amount prices on a DEX change due to trades">price impact</span> than when Uniswap held most of the ecosystem’s total liquidity. As more DEXs launch, it costs Explorers more to trade on any single DEX without new innovations.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-622113fd.png\'></div>'
       },
       {
         type: 'QUIZ',
