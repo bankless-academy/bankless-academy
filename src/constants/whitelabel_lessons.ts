@@ -8,6 +8,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Understand the BanklessDAO constitution.',
     poapEventId: null,
+    kudosId: null,
     duration: 20,
     learnings: '',
     difficulty: undefined,
@@ -16,7 +17,7 @@ const LESSONS: LessonType[] = [
     moduleId: 'fe8c38b6b1244b84ae8d185c9a8587b7',
     quest: 'BanklessDAOBanklessDAOConstitution',
     publicationStatus: 'publish',
-    isFeaturedOnHomepage: false,
+    isFeaturedOnHomepage: true,
     isCommentsEnabled: true,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
@@ -40,13 +41,13 @@ const LESSONS: LessonType[] = [
       '/BanklessDAO/lesson/banklessdao-constitution/projects-62528474.png',
       '/BanklessDAO/lesson/banklessdao-constitution/grants-committee-ecfd569f.png',
       '/BanklessDAO/lesson/banklessdao-constitution/dao-cycles-79eed215.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/3-cycles-0f3079de.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/3-cycles-42a485ba.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/3-cycles-c49bbfea.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/three-cycles-0f3079de.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/three-cycles-42a485ba.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/three-cycles-c49bbfea.png',
       '/BanklessDAO/lesson/banklessdao-constitution/dao-governance-679f0fe2.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/step-1-gauge-support-193b1bcb.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/step-2-draft-proposal-1a127556.png',
-      '/BanklessDAO/lesson/banklessdao-constitution/step-3-vote-a107f7c8.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/stage-1-gauge-support-193b1bcb.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/stage-2-draft-proposal-1a127556.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/stage-3-vote-a107f7c8.png',
       '/BanklessDAO/lesson/banklessdao-constitution/funding-61f60a40.png',
       '/BanklessDAO/lesson/banklessdao-constitution/intrateam-compensation-4e7b8680.png',
       '/BanklessDAO/lesson/banklessdao-constitution/code-of-conduct-93a167e4.png'
@@ -152,32 +153,32 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'd7c9dc69be2b4b92a46c031142469577',
         title: 'DAO Organizational Units',
-        content: '<div class="bloc1"><p>The DAO is a multicellular network of organizational units united by our shared mission, vision, and values. These units are self-managed, possess their own internal multi-signature wallets, and often develop their own internal governance processes. Three of these organizational units deserve special attention, given their prominence in the current org structure. These are:</p><ol><li>Guilds</li><li>Projects</li><li>Grants Committee</li> <ul></ul> </ol></div>'
+        content: '<div class="bloc1"><p>The DAO is a network of organizational units working towards our shared mission, vision, and values. These units are self managed, possess their own internal multi-signature wallets, and often develop their own internal governance processes. Three that deserve special attention are:</p><ol><li>Guilds</li><li>Projects</li><li>Grants Committee</li> <ul></ul> </ol></div>'
       },
       {
         type: 'LEARN',
         notionId: '55ea0eaa9efa411c86081f47db7e1b78',
         title: '<strong>Guilds</strong>',
-        content: '<div class="bloc1"><p>Guilds are professional associations of subject matter experts focused on onboarding, education, and talent sourcing. This may be through shared learning events or through providing specialized services within and without the DAO. Individuals responsible for guilds\' smooth operation are called guild coordinators. Guilds elect their coordinators and any other internal roles as needed on a seasonal basis. New guilds may be created (via proposal) based on current interest and perceived value to the DAO.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/guilds-f9611a05.png\'></div>'
+        content: '<div class="bloc1"><p>Guilds are professional associations of subject-matter experts focused on onboarding, education, and talent sourcing. This may be achieved through shared learning events or delivery of specialized services to the DAO and other entities. Guild Coordinators are responsible for guilds’ smooth operation. Guilds elect coordinators and any other internal roles as needed on a seasonal basis. New guilds may be created (via proposal) based on current interest and perceived value to the DAO.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/guilds-f9611a05.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'ef6e9463e8a0414b926ce9c9c55af5b2',
         title: '<strong>Projects</strong>',
-        content: '<div class="bloc1"><p>While Guilds serve as talent pools, projects act as objective-based initiatives. They are product or service-oriented value streams designed to make an impact and accomplish some defined end. Anyone can start a project. Projects may seek funding by submitting proposals through the DAOs governance process. Each project has a project champion who is uniquely responsible to report and account for that project\'s status and expenditures.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/projects-62528474.png\'></div>'
+        content: '<div class="bloc1"><p>Projects are product- or service-oriented teams who work together to accomplish a defined goal. Anyone can start a project. Project teams may seek funding by submitting proposals through the DAO’s governance process. Each project has a Project Champion who is uniquely responsible to report and account for that project\'s status and expenditures.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/projects-62528474.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '6475ee2d7d30439a88606bb032e7cd53',
         title: '<strong>Grants Committee</strong>',
-        content: '<div class="bloc1"><p>This committee is responsible for vetting groups seeking midseason funding and consequently ensuring funded entities provide ongoing transparency into the state of their development. The grants treasury will be used to fund projects that are ready to start mid-season and can’t or shouldn’t wait for the next season for funding. The treasury can also fund projects that don’t align with the current DAO priorities but align with its mission and values and warrant funding.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/grants-committee-ecfd569f.png\'></div>'
+        content: '<div class="bloc1"><p>This committee is responsible for vetting project funding requests and subsequently ensuring funded entities report on their seasonal progress. In addition, the Grants Committee funds projects that are ready to start mid-season and can’t or shouldn’t wait for the next season for funding.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/grants-committee-ecfd569f.png\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: 'b40c36f03eea4917a683d60cdd8f751d',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'What\'s the primary focus of Guilds?',
+          question: 'What\'s the primary focus of guilds?',
           rightAnswerNumber: 2,
           answers: [
             'Funding projects',
@@ -197,21 +198,21 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '2377296d2c234f8684d0620bb13e791f',
-        title: '3 <strong>Cycles</strong>',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/3-cycles-0f3079de.png\'></div><div class="bloc-b"><h2>Seasons</h2><p>Seasons are 3-month funding cycles (dispersed through the Grants Committee) that align the DAO’s collective energy to key objectives.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/3-cycles-42a485ba.png\'></div><div class="bloc-b"><h2><strong>Biweekly Reports</strong></h2><p>Funded projects should provide progress updates every other week. These can be listed on the wiki or forum posts and should include funding used, progress made, and potential blockers.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/3-cycles-c49bbfea.png\'></div><div class="bloc-b"><h2><strong>Weekly Community Calls</strong></h2><p>The weekly Community Call on Discord is designed to align initiatives and surface needs. Everyone is welcome to attend. The stream is also broadcast to Twitch and posted to YouTube.</p></div></div>'
+        title: 'Three <strong>Cycles</strong>',
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/three-cycles-0f3079de.png\'></div><div class="bloc-b"><h2>Seasons</h2><p>Seasons are three-month funding cycles (disbursed through the Grants Committee) that align the DAO’s collective energy to key objectives.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/three-cycles-42a485ba.png\'></div><div class="bloc-b"><h2><strong>Bi-weekly Reports</strong></h2><p>Funded projects should provide progress updates every other week. These can be listed on the wiki or Forum posts and should include funding used, progress made, and potential blockers.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/three-cycles-c49bbfea.png\'></div><div class="bloc-b"><h2><strong>Weekly Community Calls</strong></h2><p>The weekly Community Call on Discord provides DAO members with guild and project updates, and provides a forum to discuss timely topics, proposals, and initiatives. Everyone is welcome to attend. The stream is also broadcast to Twitch and posted to YouTube.</p></div></div>'
       },
       {
         type: 'QUIZ',
         notionId: '5bb82a3b1edf4d3a91915da3987d05db',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'What are the 3 cycles of the DAO?',
+          question: 'What are the three cycles of the DAO?',
           rightAnswerNumber: 4,
           answers: [
             'Daily, Weekly, Monthly',
             'Weekly, Monthly, Yearly',
             'Winter, Spring, Fall, Summer',
-            'Seasons, Biweekly Reports, Weekly Community Calls '
+            'Seasons, Bi-weekly Reports, Weekly Community Calls '
           ],
           id: 'banklessdao-constitution-5'
         }
@@ -225,27 +226,27 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: 'eb2e423e7c164fb9af2d836e6586e1d5',
-        title: 'Step 1: <strong>Gauge Support</strong>',
-        content: '<div class="bloc1"><p>The first stage is to gauge support from the community via the Discord server. This can happen through polls in the dedicated “poll” channel. Polls should include detailed descriptions of the issue at hand and allow for varied options beyond a basic yes or no. E.g. “Like the idea but needs improvement” or \'Keep things the way they are.”</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/step-1-gauge-support-193b1bcb.png\'></div>'
+        title: 'Stage 1: <strong>Gauge Support</strong>',
+        content: '<div class="bloc1"><p>The first stage is to gauge support from the community via the Discord server. This can happen through polls in the dedicated “polls” channel. Polls should include detailed descriptions of the issue at hand and allow for varied options beyond a basic yes or no, for example: “Like the idea but needs improvement” or \'Keep things the way they are.”</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/stage-1-gauge-support-193b1bcb.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'b3c8c448772f49599ac48cfd28dfd71b',
-        title: 'Step 2: Draft <strong>Proposal</strong>',
-        content: '<div class="bloc1"><p>If the community has expressed support and interest in the previous step, the next step is to draft a formal proposal. Proposals fall into one of two categories and correspond to the following templates:</p><ol><li><a href=\'https://www.notion.so/bankless/Bankless-DAO-Formal-Proposal-Template-c60d797ceb5b4d0daceb80f72bb1ed2e\'>Grants Request</a></li><li><a href=\'https://docs.google.com/document/d/1UDmH0mJtTNTBzLxJSbIJu7WsCvRhaq1t-_tSjYGHH70/edit#heading=h.tb8tmd3knk0r\'>Improvement Proposals (bDIP)</a></li></ol><p>As the names suggest, the Grants Request proposal template should be used to request funds, and the bDIP template should be used to propose changes to the contents of the DAO Constitution.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/step-2-draft-proposal-1a127556.png\'></div>'
+        title: 'Stage 2: Draft <strong>Proposal</strong>',
+        content: '<div class="bloc1"><p>If the community has expressed support and interest, the next stage is to draft a formal proposal. Proposals fall into one of two categories and correspond to the following templates:</p><ol><li><a href=\'https://www.notion.so/bankless/Bankless-DAO-Formal-Proposal-Template-c60d797ceb5b4d0daceb80f72bb1ed2e\'>Grants Request</a></li><li><a href=\'https://docs.google.com/document/d/1UDmH0mJtTNTBzLxJSbIJu7WsCvRhaq1t-_tSjYGHH70/edit#heading=h.tb8tmd3knk0r\'>Improvement Proposals (bDIP)</a></li></ol><p>As the names suggest, the Grants Request proposal template should be used to request funds, and the bDIP template should be used to propose changes to the contents of the DAO Constitution.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/stage-2-draft-proposal-1a127556.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'dc3f25053ea343a8969d3ca9f0d66cac',
-        title: 'Step 3: <strong>Vote</strong>',
-        content: '<div class="bloc1"><p>The final step in the governance process is a Snapshot vote. Snapshot is an off-chain token voting tool. If a proposal has met the required quorum and approval threshold on the Forum, it will progress to a DAO-wide Snapshot vote. Snapshot proposals run for 7 days and require &gt;66% approval. If the passing proposal is a Grants Request, DAO treasury multi-signers will be prompted to initiate the transaction in accordance with the passed proposal request. If the passing proposal is a bDIP, OpsGuild will be prompted to update the Constitution source and issue the new version.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/step-3-vote-a107f7c8.png\'></div>'
+        title: 'Stage 3: <strong>Vote</strong>',
+        content: '<div class="bloc1"><p>The final stage in the governance process is a Snapshot vote. Snapshot is an off-chain token voting tool. If a proposal has met the required quorum and approval threshold on the Forum, it will progress to a DAO-wide Snapshot vote. If the passed proposal is a Grants Request, DAO treasury multi-signers will be prompted to initiate the transaction in accordance with the funding request. If the approved proposal is a bDIP, OpsGuild will be prompted to update the Constitution and issue the new version.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/stage-3-vote-a107f7c8.png\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: 'efcb2048ae4f40379918e877b204a72e',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'What are the 3 successive stages of governance?',
+          question: 'What are the three successive stages of governance?',
           rightAnswerNumber: 3,
           answers: [
             'Notion, Discord, Snapshot',
@@ -260,7 +261,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'c7527607748046fb89596e58a2424cd6',
         title: '<strong>Funding</strong>',
-        content: '<div class="bloc1"><p>Funds are released from this treasury in one of three ways: </p><ol><li>Seasonal Budgets: New seasons are initiated by guilds and projects submitting funding proposals. If these proposals pass Forum approval, they go to Snapshot. If this budget is approved, the DAO multi-signers will issue disbursements in line with the approved budget.</li><li>Mid-season grants: Groups seeking funding over the course of a season will be directed to the Grants Committee upon successfully passing their Forum proposal. The Grants Committee is responsible to evaluate these requests.</li><li>Coordinape: BanklessDAO runs a monthly Coordinape for Guest Pass holders, L1s, and L2s to reward the community for continued growth and engagement. Just fill out a coordinape-request-form prior to the start of each round using the bot-commands channel on discord then you are eligible to allocate GIVE tokens to their peers using the <a href=\'https://app.coordinape.com/\'>Coordinape app</a> after the signup period ends and the allocation period starts.</li></ol></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/funding-61f60a40.png\'></div>'
+        content: '<div class="bloc1"><p>Funds are released from the treasury in one of three ways: </p><ol><li>Seasonal Budgets: Previously funded guilds and projects submit funding proposals each season. Following an opportunity for feedback, they collectively go to Snapshot for DAO-wide approval. If this budget is approved, the DAO multi-signers will issue disbursements in accordance with the specified budget.</li><li>Mid-season grants: Groups seeking funding over the course of a season will be directed to the Grants Committee upon successfully passing their Forum proposal. The Grants Committee is responsible for evaluating these requests.</li><li>Coordinape: BanklessDAO runs a monthly Coordinape for Guest Pass holders, L1s, and L2s to reward the community for continued growth and engagement. Just fill out a coordinape-request-form prior to the start of each round using the bot-commands channel on Discord and you will be eligible to allocate GIVE tokens to your peers using the <a href=\'https://app.coordinape.com/\'>Coordinape app</a> after the signup period ends and the allocation period starts.</li></ol></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/funding-61f60a40.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -282,13 +283,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '01dcbe72983a44aaaee52d47054b876c',
         title: '<strong>Intrateam Compensation</strong>',
-        content: '<div class="bloc1"><p>BanklessDAO does not dictate how projects or guilds internally allocate their funds as long as the promised value or expected utility is being realized by the community. The free market mechanics of supply and demand and individuals\' proficiency and experience determine how goods and services are priced within the community just as they are without.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/intrateam-compensation-4e7b8680.png\'></div>'
+        content: '<div class="bloc1"><p>BanklessDAO does not dictate how projects or guilds internally allocate their funds as long as the promised value or expected utility is being realized by the community. The free market mechanics of supply and demand and individuals\' proficiency and experience determine how goods and services are priced within the community just as they are externally.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/intrateam-compensation-4e7b8680.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '974a52ba581e4a74a1396a937969b016',
         title: '<strong>Code of Conduct</strong>',
-        content: '<div class="bloc1"><p>Every BanklessDAO community member is expected and responsible to treat others with respect and dignity. We are a globally distributed community representing numerous cultures, languages, and time zones. It\'s our highest priority to be the most welcoming and inviting onboarding experience for Web3. To this end, we encourage any conflict to be broached between involved persons. If this does not resolve the matter, we encourage project champions or guild coordinators to help resolve the conflict. If this doesn\'t resolve the matter, parties are encouraged to approach the Ombuds office to help resolve the dispute. Our unity and internal cohesion are essential to accomplishing our massive mission. bDAO Strong!!</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/code-of-conduct-93a167e4.png\'></div>'
+        content: '<div class="bloc1"><p>Every BanklessDAO community member is expected to and responsible for treating others with respect and dignity. We are a globally distributed community representing numerous cultures, languages, and time zones. It\'s our highest priority to be the most welcoming and inviting onboarding experience for Web3. To this end, we encourage any conflict to be addressed between involved persons. If this does not resolve the matter, we encourage Project Champions or Guild Coordinators to help resolve the conflict. If this doesn\'t resolve the matter, parties are encouraged to approach the Ombuds office to help resolve the dispute. Our unity and internal cohesion are essential to accomplishing our massive mission. bDAO Strong!!</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/code-of-conduct-93a167e4.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -319,6 +320,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Understand the basics of tokenomics',
     poapEventId: null,
+    kudosId: null,
     duration: 10,
     learnings: '',
     difficulty: undefined,
@@ -326,7 +328,7 @@ const LESSONS: LessonType[] = [
     name: 'Tokenomics Basics',
     moduleId: '27f282f5127e43729aaf1b34da16e9a6',
     quest: 'BanklessDAOTokenomicsBasics',
-    publicationStatus: 'publish',
+    publicationStatus: 'hidden',
     isFeaturedOnHomepage: false,
     isCommentsEnabled: true,
     endOfLessonRedirect: null,
