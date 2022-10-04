@@ -55,6 +55,10 @@ const App = ({
                   box-shadow: 0px 0px 50px 0px rgba(123, 0, 255, 0.25) !important;
                   backdrop-filter: blur(42px) !important;
                 }
+                /* Disable focus border in Chakra-UI */
+                *:focus {
+                  box-shadow: none !important;
+                }
               `}
             />
             <Layout isLesson={pageProps.pageMeta?.isLesson}>
