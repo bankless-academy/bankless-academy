@@ -72,7 +72,7 @@ const SwitchNetworkButton = ({
             <MenuButton
               isActive={isOpen}
               as={Button}
-              variant="primary"
+              variant="secondary"
               size={isSmallScreen ? 'sm' : 'md'}
             >
               <Box display="flex" alignItems="center">
