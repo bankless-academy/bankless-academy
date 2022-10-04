@@ -272,13 +272,17 @@ const ConnectWalletButton = ({
       ) : (
         <Popover
           returnFocusOnClose={false}
+          placement="bottom-end"
           isOpen={connectWalletPopupLS && isLessonPage}
           onClose={() => {
             onClose()
             setConnectWalletPopupLS(false)
           }}
         >
-          <Overlay hidden={!(connectWalletPopupLS && isLessonPage)} />
+          <Overlay
+            hidden={!(connectWalletPopupLS && isLessonPage)}
+            margin="0 !important"
+          />
           <PopoverTrigger>
             <Button
               onClick={() => {
@@ -289,6 +293,7 @@ const ConnectWalletButton = ({
               isLoading={walletIsLoading}
               loadingText="Connecting wallet"
               zIndex={2}
+              variant="primary"
             >
               Connect wallet
             </Button>
