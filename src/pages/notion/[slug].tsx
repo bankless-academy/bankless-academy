@@ -1,7 +1,5 @@
-/* eslint-disable no-console */
 import React, { useEffect } from 'react'
 import { GetServerSideProps } from 'next'
-// TODO: replace with https://github.com/NotionX/react-notion-x
 import { NotionRenderer } from 'react-notion-x'
 import { NotionAPI } from 'notion-client'
 import { ExtendedRecordMap } from 'notion-types'
@@ -9,24 +7,23 @@ import { getPageTitle } from 'notion-utils'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
+import { NOTION_PAGES } from 'constants/index'
+
 const notion = new NotionAPI()
 
-export const PAGE_IDS = {
-  '/faq': '97b88d72335a41a1911c12d4e2f99db6',
-}
+export const ALLOWED_SLUGS = Object.keys(NOTION_PAGES)
 
-export const ALLOWED_PAGES = Object.keys(PAGE_IDS)
-
-export const ALLOWED_IDS = Object.values(PAGE_IDS)
+export const ALLOWED_IDS = Object.values(NOTION_PAGES)
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const pageId =
-    typeof context.params?.pageId === 'string'
-      ? context.params?.pageId.replace(/-/g, '')
-      : null
-  console.log('pageId', pageId)
+  const slug =
+    typeof context.params?.slug === 'string' ? context.params?.slug : null
 
-  if (!pageId || !ALLOWED_IDS.includes(pageId)) {
+  if (
+    !slug ||
+    (slug.length !== 32 && !ALLOWED_SLUGS.includes(slug)) ||
+    (slug.length === 32 && !ALLOWED_IDS.includes(slug))
+  ) {
     return {
       props: {
         recordMap: false,
@@ -36,7 +33,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   }
 
   try {
-    const data: ExtendedRecordMap = await notion.getPage(pageId)
+    const data: ExtendedRecordMap = await notion.getPage(
+      slug.length === 32 ? slug : NOTION_PAGES[slug]
+    )
     return {
       props: {
         recordMap: data,
@@ -75,7 +74,7 @@ const NotionPage = ({
 
   useEffect(() => {
     if (elementID && typeof window !== 'undefined') {
-      document.getElementById(elementID).scrollIntoView()
+      document.getElementById(elementID)?.scrollIntoView()
     }
   }, [elementID])
 
