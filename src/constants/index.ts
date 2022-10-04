@@ -79,3 +79,7 @@ export const POAP_EMAIL_CONTACT = 'poap@banklessacademy.com'
 export const GENERIC_ERROR_MESSAGE = `Something went wrong ... please contact ${POAP_EMAIL_CONTACT}`
 
 export const TWITTER_ACCOUNT = `BanklessAcademy`
+
+export const NOTION_PAGES = WHITELABEL?.notion_pages || {
+  faq: '97b88d72335a41a1911c12d4e2f99db6',
+}

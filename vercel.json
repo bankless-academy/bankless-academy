@@ -40,7 +40,7 @@
   "rewrites": [
     {
       "source": "/faq",
-      "destination": "/notion/97b88d72335a41a1911c12d4e2f99db6"
+      "destination": "/notion/faq"
     }
   ]
 }

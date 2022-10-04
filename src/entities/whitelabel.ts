@@ -8,4 +8,5 @@ export interface WhitelabelType {
   logo_small?: string
   homepage_background?: string
   umami_prod?: string
+  notion_pages?: { [key: string]: string }
 }
