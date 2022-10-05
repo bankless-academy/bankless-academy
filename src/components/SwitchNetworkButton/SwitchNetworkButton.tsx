@@ -15,7 +15,6 @@ import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 import switchNetwork from './switchNetwork'
-import handleNetworkChange from './handleNetworkChange'
 import { useActiveWeb3React } from 'hooks'
 
 const CircleIcon = (props) => (
@@ -43,18 +42,6 @@ const SwitchNetworkButton = ({
       setCurrentNetwork
     )
   }
-
-  useEffect(() => {
-    // TODO: remove window.ethereum (bug when using both MM + WC)
-    const provider = window.ethereum
-    if (provider) {
-      handleNetworkChange(provider, setCurrentNetwork)
-      // MetaMask mobile hack
-      setTimeout(() => handleNetworkChange(provider, setCurrentNetwork), 1000)
-    } else {
-      console.error('no ethereum detected')
-    }
-  }, [window.ethereum])
 
   useEffect(() => {
     if (chainId) {
