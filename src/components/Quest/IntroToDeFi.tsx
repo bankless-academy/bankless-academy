@@ -67,7 +67,7 @@ const IntroToDeFi = (
     <>
       <Button
         colorScheme={isSignatureVerified ? 'green' : 'red'}
-        onClick={() => switchNetwork('mainnet')}
+        onClick={() => switchNetwork(library.provider, 'mainnet')}
       >
         Switch Network to {'"Ethereum"'}
       </Button>
