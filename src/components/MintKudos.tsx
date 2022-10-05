@@ -140,7 +140,17 @@ const MintKudos = ({
   const mintKudos = async () => {
     if (status) return
     if (chainId !== MINTKUDOS_CHAIN_ID) {
-      await switchNetwork(networkKey)
+      const network = Object.values(NETWORKS).find(
+        (network) => network.chainId === MINTKUDOS_CHAIN_ID
+      )
+      toast.closeAll()
+      toast({
+        title: 'Wrong network',
+        description: `switch network to ${network.name}`,
+        status: 'warning',
+        duration: null,
+      })
+      await switchNetwork(library.provider, networkKey)
     }
 
     setStatus('🛠 minting in progress ...')

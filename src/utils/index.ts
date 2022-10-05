@@ -12,7 +12,8 @@ import { verifyTypedData } from 'ethers/lib/utils'
 import { Network } from '@ethersproject/networks'
 import queryString from 'query-string'
 
-import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
+import { INFURA_ID } from 'constants/index'
+import { NETWORKS, SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
 import ONEINCH_SWAP_ABI from 'abis/1inch.json'
 
 declare global {
@@ -84,7 +85,8 @@ export const injected = new InjectedConnector({
 })
 
 export const walletConnect = new WalletConnectConnector({
-  rpc: { 1: NETWORKS.mainnet.rpcUrl },
+  infuraId: INFURA_ID,
+  rpc: RPCS,
   bridge: 'https://bridge.walletconnect.org',
   qrcode: true,
 })

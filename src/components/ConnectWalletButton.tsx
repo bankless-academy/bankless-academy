@@ -38,7 +38,7 @@ import {
   KUDOS_IDS,
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
-import { SUPPORTED_NETWORKS_IDS } from 'constants/networks'
+import { SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
 
 let web3Modal: Web3Modal
 
@@ -82,6 +82,7 @@ const ConnectWalletButton = ({
         package: WalletConnectProvider,
         options: {
           infuraId: INFURA_ID,
+          rpc: RPCS,
         },
         connector: async () => {
           return 'walletconnect'
