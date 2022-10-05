@@ -117,7 +117,7 @@ const MintKudos = ({
             title: `Transaction in progress`,
             description: (
               <Link href={txLink} target="_blank">
-                {txLink}
+                {isSmallScreen ? `${txLink.substring(0, 40)}...` : txLink}
               </Link>
             ),
             status: 'warning',
@@ -153,7 +153,7 @@ const MintKudos = ({
       await switchNetwork(library.provider, networkKey)
     }
 
-    setStatus('🛠 minting in progress ...')
+    setStatus('🛠 Minting in progress ...')
     const receiverTypes = {
       CommunityAdminAirdropReceiverConsent: [
         { name: 'tokenId', type: 'uint256' },
