@@ -53,6 +53,7 @@ const MintKudos = ({
     false
   )
   const [status, setStatus] = useState('')
+  const [isMintingInProgress, setIsMintingInProgress] = useState(false)
   const [passportLS, setPassportLS] = useLocalStorage(
     'passport',
     EMPTY_PASSPORT
@@ -138,7 +139,9 @@ const MintKudos = ({
   }
 
   const mintKudos = async () => {
-    if (status) return
+    if (status !== '') return
+    setStatus('🛠 Minting in progress ...')
+    // TODO: add 1 min timeout
     if (chainId !== MINTKUDOS_CHAIN_ID) {
       const network = Object.values(NETWORKS).find(
         (network) => network.chainId === MINTKUDOS_CHAIN_ID
@@ -147,7 +150,7 @@ const MintKudos = ({
       if (!library.provider.isMetaMask) {
         toast({
           title: 'Wrong network',
-          description: `switch network to ${network.name}`,
+          description: `Switch network to ${network.name} in order to mint your credential.`,
           status: 'warning',
           duration: null,
         })
@@ -155,7 +158,6 @@ const MintKudos = ({
       await switchNetwork(library.provider, networkKey)
     }
 
-    setStatus('🛠 Minting in progress ...')
     const receiverTypes = {
       CommunityAdminAirdropReceiverConsent: [
         { name: 'tokenId', type: 'uint256' },
@@ -181,6 +183,7 @@ const MintKudos = ({
         signature,
         message: value,
       }
+      setIsMintingInProgress(true)
       const result = await axios.post(`/api/mint-kudos`, bodyParameters)
       console.log(result.data)
       if (result.data.location) {
@@ -195,8 +198,10 @@ const MintKudos = ({
           duration: 10000,
         })
         setStatus('')
+        setIsMintingInProgress(false)
       } else {
         setStatus('')
+        setIsMintingInProgress(false)
         toast.closeAll()
         toast({
           title: '⚠️ problem while minting',
@@ -219,6 +224,7 @@ const MintKudos = ({
     } catch (error) {
       // TODO: add error feedback
       console.error(error)
+      setStatus('')
       checkPassport()
     }
   }
@@ -334,6 +340,8 @@ ${
                     colorScheme={'green'}
                     onClick={mintKudos}
                     variant="primary"
+                    isLoading={isMintingInProgress}
+                    loadingText={status}
                   >
                     {status !== '' ? status : 'Mint credential 🛠'}
                   </Button>
