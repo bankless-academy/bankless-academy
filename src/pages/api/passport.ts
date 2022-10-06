@@ -98,8 +98,10 @@ export default async function handler(
     } catch (error) {
       console.error(error)
       res.json({
-        error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
+        verified: false,
         requirement,
+        validStampsCount: 0,
+        error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
       })
     }
   } else if (SYBIL_CHECK === '35kBANK') {
