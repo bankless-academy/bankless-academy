@@ -186,6 +186,7 @@ const ConnectWalletButton = ({
       {isConnected ? (
         <Popover
           isOpen={isPopOverOn}
+          placement="bottom-end"
           returnFocusOnClose={false}
           onClose={() => {
             onClose()
@@ -232,8 +233,9 @@ const ConnectWalletButton = ({
                     My Academy Badges
                   </Text>
                   <Box
-                    maxHeight="320px"
-                    overflow="scroll"
+                    h="215px"
+                    overflowY="scroll"
+                    overflowX="hidden"
                     backgroundColor="blackAlpha.200"
                     borderRadius="10px"
                   >
