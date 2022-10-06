@@ -254,7 +254,7 @@ const MintKudos = ({
           <Passport displayStamps />
         </ModalBody>
         <ModalFooter>
-          <Link href="/faq#257d4f97419e48cbad7b030b516a444e" target="_blank">
+          <Link href="/faq#640071a81daf4aa4b7df00b1eec1c58d" target="_blank">
             Help
           </Link>
         </ModalFooter>

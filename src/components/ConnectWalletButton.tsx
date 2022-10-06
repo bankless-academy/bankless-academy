@@ -308,7 +308,7 @@ const ConnectWalletButton = ({
               <Text textAlign="center">
                 {`Don’t know how? `}
                 <Link
-                  href="/faq#e8dc710580f84305a5b522ceb556fc50"
+                  href="/faq#edf3a4658d3d4aa78eac62e1dcf68978"
                   target="_blank"
                 >
                   Get help here
