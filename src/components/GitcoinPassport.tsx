@@ -14,9 +14,6 @@ const CircleIcon = (props) => (
   </Icon>
 )
 
-const OkIcon = <CircleIcon color={theme.colors.correct} />
-const KoIcon = <CircleIcon color={theme.colors.incorrect} />
-
 const GitcoinGrid = styled(SimpleGrid)<{ issmallscreen?: string }>`
   > div:nth-last-child(-n
       + ${(props) => (props.issmallscreen === 'true' ? '1' : '2')}) {
@@ -68,14 +65,26 @@ const GitcoinPassport = ({
                         stamp expired
                       </span>
                     ) : isTrustedIssuer ? (
-                      OkIcon
+                      // OK
+                      <CircleIcon color={theme.colors.correct} />
                     ) : (
-                      'Untrusted DID issuer'
+                      <span style={{ color: theme.colors.incorrect }}>
+                        untrusted DID issuer
+                      </span>
                     )
                   ) : stamp === null ? (
-                    '--'
+                    // No info yet
+                    // <CircleIcon color={theme.colors.incorrect} />
+                    <Box
+                      border="1px solid white"
+                      borderRadius="50%"
+                      width="12px"
+                      height="12px"
+                      display="inline-block"
+                    ></Box>
                   ) : (
-                    KoIcon
+                    // Not OK
+                    <CircleIcon color={theme.colors.incorrect} />
                   )}
                 </Box>
               </Box>
