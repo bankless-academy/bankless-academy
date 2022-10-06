@@ -39,7 +39,7 @@ export default async function handler(
       // console.log('validStamps', validStamps)
       const stampHashes = {}
       const stampProviders = {}
-      if (passport?.stamps) {
+      if (passport?.stamps?.length) {
         for (const stamp of passport?.stamps) {
           stampHashes[stamp.provider] = stamp.credential.credentialSubject.hash
         }
