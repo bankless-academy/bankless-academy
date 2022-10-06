@@ -214,7 +214,7 @@ const HomePage = (): JSX.Element => {
                         crypto, and how to get started.
                       </Box>
                     </Box>
-                    <Box display="flex" pb="6" width="100%" mb="6">
+                    <Box display="flex" pb="6" width="100%">
                       <Box minW="64px" alignSelf="center">
                         <Image width="64px" src="/images/books.png" />
                       </Box>
@@ -261,7 +261,7 @@ const HomePage = (): JSX.Element => {
                   </Box>
                 </Box>
               </Box>
-              <Box my="12">
+              <Box my="16">
                 <Heading as="h2" size="xl" mt="16" mb="8">
                   Work With Us!
                 </Heading>
