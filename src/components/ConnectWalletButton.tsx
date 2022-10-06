@@ -229,7 +229,7 @@ const ConnectWalletButton = ({
               {!IS_WHITELABEL && kudos?.length > 0 && (
                 <>
                   <Text fontSize="xl" fontWeight="bold" textAlign="center">
-                    My Academy Credentials
+                    My Academy Badges
                   </Text>
                   <Box
                     maxHeight="320px"
