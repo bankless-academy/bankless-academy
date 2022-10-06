@@ -140,7 +140,7 @@ const MintKudos = ({
 
   const mintKudos = async () => {
     if (status !== '') return
-    setStatus('🛠 Minting in progress ...')
+    setStatus('Minting in progress ...')
     // TODO: add 1 min timeout
     if (chainId !== MINTKUDOS_CHAIN_ID) {
       const network = Object.values(NETWORKS).find(
@@ -150,7 +150,7 @@ const MintKudos = ({
       if (!library.provider.isMetaMask) {
         toast({
           title: 'Wrong network',
-          description: `Switch network to ${network.name} in order to mint your credential.`,
+          description: `Switch network to ${network.name} in order to mint your badge.`,
           status: 'warning',
           duration: null,
         })
@@ -193,7 +193,7 @@ const MintKudos = ({
         // TODO: add 🎊
         // TODO: refresh list of Kudos in the wallet
         toast({
-          title: 'Credential minted 🎉',
+          title: 'Badge minted 🎉',
           status: 'success',
           duration: 10000,
         })
@@ -268,6 +268,7 @@ const MintKudos = ({
     lesson.name
   }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
 ${MINTKUDOS_URL}profile/${account}?tab=Received&tokenId=${kudosId}
+
 ${
   IS_WHITELABEL
     ? ''
@@ -303,7 +304,7 @@ ${
                 <span style={{ color: theme.colors.secondary }}>
                   {lesson.name}
                 </span>
-                {` credential ${isKudosMintedLS ? 'claimed' : 'available'}!`}
+                {` badge ${isKudosMintedLS ? 'claimed' : 'available'}!`}
               </Heading>
               <Box display="flex" justifyContent="center" mb={10} mt={-3}>
                 <Link href={`${MINTKUDOS_URL}`} target="_blank">
@@ -343,7 +344,7 @@ ${
                     isLoading={isMintingInProgress}
                     loadingText={status}
                   >
-                    {status !== '' ? status : 'Mint credential 🛠'}
+                    {status !== '' ? status : 'Mint badge 🛠'}
                   </Button>
                 </Box>
               ) : (
