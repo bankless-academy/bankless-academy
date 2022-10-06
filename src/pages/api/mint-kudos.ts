@@ -20,7 +20,7 @@ export default async function handler(
 ): Promise<void> {
   // check params + signature
   const { address, kudosId, signature } = req.body
-  console.log(req)
+  // console.log(req)
   if (
     !address ||
     !kudosId ||
@@ -152,7 +152,7 @@ export default async function handler(
           } else {
             console.log(result)
             return res.json({
-              error: 'something went wrong during allowlist add',
+              error: 'something went wrong while minting',
               status: questStatus,
             })
           }
