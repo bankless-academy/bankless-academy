@@ -408,7 +408,15 @@ const HomePage = (): JSX.Element => {
                       Or if you just like what we’re doing, you can help by
                       funding us below.
                     </Text>
-                    <Image width="100%" src="/images/Donate-via-Gitcoin.png" />
+                    <Link
+                      href="https://gitcoin.co/grants/3535/bankless-academy"
+                      target="_blank"
+                    >
+                      <Image
+                        width="100%"
+                        src="/images/Donate-via-Gitcoin.png"
+                      />
+                    </Link>
                     <Text fontSize="lg" mt="2">
                       We rely on our public-goods business model to continue
                       providing a free, Bankless education!
