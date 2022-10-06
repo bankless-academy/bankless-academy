@@ -10,11 +10,11 @@ async function getNameForAddress(address, provider) {
   if (!provider || !address) {
     return null
   }
-  if (
-    (provider.networkVersion === '137' || provider.chainId === 137) &&
-    address !== '0x'
-  ) {
-    try {
+  try {
+    if (
+      (provider.networkVersion === '137' || provider.chainId === 137) &&
+      address !== '0x'
+    ) {
       const matic: Network = {
         name: 'matic',
         chainId: NETWORKS['matic'].chainId,
@@ -54,14 +54,14 @@ async function getNameForAddress(address, provider) {
           }
         }
       }
-    } catch (err) {
-      console.error(err)
+    } else if (provider.networkVersion === '1' || provider.chainId === 1) {
+      const ens = new ENS({ provider, ensAddress: getEnsAddress('1') })
+      const response = await ens.getName(address)
+      return response && response.name
     }
+  } catch (err) {
+    console.error(err)
   }
-
-  const ens = new ENS({ provider, ensAddress: getEnsAddress('1') })
-  const response = await ens.getName(address)
-  return response && response.name
 }
 
 function useName(address, provider) {
