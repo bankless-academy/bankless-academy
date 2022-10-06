@@ -70,7 +70,7 @@ export default async function handler(
           // query for json instead of jsonb: .where(db.raw('gitcoin_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
           .where(db.raw(`(${whereCondition})`, stampHashesSearch))
         console.log('sybil', sybil)
-        if (sybil.length) {
+        if (sybil?.length) {
           console.log('fraud detected', sybil)
           await db(TABLES.users)
             .where(TABLE.users.id, userId)
