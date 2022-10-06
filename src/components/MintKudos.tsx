@@ -144,12 +144,14 @@ const MintKudos = ({
         (network) => network.chainId === MINTKUDOS_CHAIN_ID
       )
       toast.closeAll()
-      toast({
-        title: 'Wrong network',
-        description: `switch network to ${network.name}`,
-        status: 'warning',
-        duration: null,
-      })
+      if (!library.provider.isMetaMask) {
+        toast({
+          title: 'Wrong network',
+          description: `switch network to ${network.name}`,
+          status: 'warning',
+          duration: null,
+        })
+      }
       await switchNetwork(library.provider, networkKey)
     }
 
@@ -326,7 +328,7 @@ ${
                     </Button>
                   </Link>
                 </Box>
-              ) : passportLS?.verified ? (
+              ) : passportLS?.verified && !isOpen ? (
                 <Box textAlign="center">
                   <Button
                     colorScheme={'green'}
