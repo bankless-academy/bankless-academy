@@ -1,7 +1,9 @@
 import { NETWORKS } from 'constants/networks'
 import { Dispatch, SetStateAction } from 'react'
+import { ExternalProvider } from '@ethersproject/providers'
 
 const switchNetwork = async (
+  provider: ExternalProvider,
   networkName: string,
   setNetwork?: Dispatch<
     SetStateAction<{
@@ -13,17 +15,15 @@ const switchNetwork = async (
     }>
   >
 ): Promise<any> => {
-  const { ethereum } = window
-
   try {
-    await ethereum.request({
+    await provider.request({
       method: 'wallet_switchEthereumChain',
       params: [{ chainId: `0x${NETWORKS[networkName].chainId.toString(16)}` }],
     })
     return setNetwork && setNetwork(NETWORKS[networkName])
   } catch (error) {
-    // This error code indicates that the chain has not been added to MetaMask.
-    if (error.code === 4902) {
+    // This error code indicates that the chain has not been added to MetaMask| Wallet Connect
+    if (error.code === 4902 || error.code === -32000) {
       try {
         const data = [
           {
@@ -38,7 +38,7 @@ const switchNetwork = async (
             blockExplorerUrls: [NETWORKS[networkName].blockExplorer],
           },
         ]
-        await ethereum.request({
+        await provider.request({
           method: 'wallet_addEthereumChain',
           params: data,
         })

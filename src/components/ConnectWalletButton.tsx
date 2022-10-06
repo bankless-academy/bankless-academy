@@ -38,7 +38,7 @@ import {
   KUDOS_IDS,
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
-import { SUPPORTED_NETWORKS_IDS } from 'constants/networks'
+import { SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
 
 let web3Modal: Web3Modal
 
@@ -82,6 +82,7 @@ const ConnectWalletButton = ({
         package: WalletConnectProvider,
         options: {
           infuraId: INFURA_ID,
+          rpc: RPCS,
         },
         connector: async () => {
           return 'walletconnect'
@@ -228,7 +229,7 @@ const ConnectWalletButton = ({
               {!IS_WHITELABEL && kudos?.length > 0 && (
                 <>
                   <Text fontSize="xl" fontWeight="bold" textAlign="center">
-                    My Academy Credentials
+                    My Academy Badges
                   </Text>
                   <Box
                     maxHeight="320px"
@@ -307,7 +308,7 @@ const ConnectWalletButton = ({
               <Text textAlign="center">
                 {`Don’t know how? `}
                 <Link
-                  href="/faq#e8dc710580f84305a5b522ceb556fc50"
+                  href="/faq#edf3a4658d3d4aa78eac62e1dcf68978"
                   target="_blank"
                 >
                   Get help here

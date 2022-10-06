@@ -1,5 +1,15 @@
 import { Icon } from '@chakra-ui/react'
-import { BookOpen, LightbulbFilament, Sword, Medal } from 'phosphor-react'
+import {
+  BookOpen,
+  LightbulbFilament,
+  Sword,
+  Medal,
+  Pencil,
+  GraduationCap,
+  Handshake,
+  Eye,
+  UsersThree,
+} from 'phosphor-react'
 
 export const LearnIcon = (): React.ReactElement => (
   <Icon
@@ -10,6 +20,7 @@ export const LearnIcon = (): React.ReactElement => (
     color="black"
     borderRadius="50%"
     p="2"
+    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
   />
 )
 
@@ -22,6 +33,7 @@ export const QuizIcon = (): React.ReactElement => (
     color="black"
     borderRadius="50%"
     p="2"
+    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
   />
 )
 
@@ -34,6 +46,7 @@ export const QuestIcon = (): React.ReactElement => (
     color="black"
     borderRadius="50%"
     p="2"
+    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
   />
 )
 
@@ -46,5 +59,71 @@ export const PoapIcon = (): React.ReactElement => (
     color="black"
     borderRadius="50%"
     p="2"
+    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+  />
+)
+
+export const PencilIcon = (): React.ReactElement => (
+  <Icon
+    as={Pencil}
+    w={10}
+    h={10}
+    bg="radial-gradient(48.3% 48.3% at 50.57% 48.3%, #B793F3 0%, #9867EB 100%)"
+    color="black"
+    borderRadius="50%"
+    p="2"
+    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+  />
+)
+
+export const GraduationCapIcon = (): React.ReactElement => (
+  <Icon
+    as={GraduationCap}
+    w={10}
+    h={10}
+    bg="radial-gradient(48.3% 48.3% at 50.57% 48.3%, #B793F3 0%, #9867EB 100%)"
+    color="black"
+    borderRadius="50%"
+    p="2"
+    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+  />
+)
+
+export const HandshakeIcon = (): React.ReactElement => (
+  <Icon
+    as={Handshake}
+    w={10}
+    h={10}
+    bg="radial-gradient(48.3% 48.3% at 50.57% 48.3%, #B793F3 0%, #9867EB 100%)"
+    color="black"
+    borderRadius="50%"
+    p="2"
+    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+  />
+)
+
+export const EyeIcon = (): React.ReactElement => (
+  <Icon
+    as={Eye}
+    w={10}
+    h={10}
+    bg="radial-gradient(48.3% 48.3% at 50.57% 48.3%, #B793F3 0%, #9867EB 100%)"
+    color="black"
+    borderRadius="50%"
+    p="2"
+    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+  />
+)
+
+export const UsersThreeIcon = (): React.ReactElement => (
+  <Icon
+    as={UsersThree}
+    w={10}
+    h={10}
+    bg="radial-gradient(48.3% 48.3% at 50.57% 48.3%, #B793F3 0%, #9867EB 100%)"
+    color="black"
+    borderRadius="50%"
+    p="2"
+    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
   />
 )

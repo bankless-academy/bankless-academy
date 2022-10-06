@@ -9,6 +9,7 @@ import { useActiveWeb3React } from 'hooks'
 import { LESSONS } from 'constants/index'
 import { MINTKUDOS_CHAIN_ID, MINTKUDOS_DOMAIN_INFO } from 'constants/kudos'
 import { NETWORKS } from 'constants/networks'
+import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 
 const pageMeta: MetaData = {
   title: 'Kudos',
@@ -45,6 +46,10 @@ const Kudos = (): JSX.Element => {
         status: 'warning',
         duration: null,
       })
+      const networkKey = Object.keys(NETWORKS).find(
+        (network) => NETWORKS[network].chainId === MINTKUDOS_CHAIN_ID
+      )
+      await switchNetwork(library.provider, networkKey)
     } else {
       try {
         const signer = library.getSigner(account)

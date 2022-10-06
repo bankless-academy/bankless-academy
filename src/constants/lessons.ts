@@ -8,7 +8,7 @@ const LESSONS: LessonType[] = [
     learningActions: 'Create and manage your own wallet\nConnect your wallet to a web3 website',
     marketingDescription: 'A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.',
     poapEventId: 26971,
-    kudosId: null,
+    kudosId: 2561,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
@@ -229,7 +229,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -240,7 +240,7 @@ const LESSONS: LessonType[] = [
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
     poapEventId: 26972,
-    kudosId: null,
+    kudosId: 2562,
     duration: 10,
     learnings: '',
     difficulty: 'Easy',
@@ -463,7 +463,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -474,7 +474,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
     poapEventId: null,
-    kudosId: null,
+    kudosId: 2563,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
@@ -673,7 +673,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -684,7 +684,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Join the Academy Explorer Community on gm.xyz.',
     poapEventId: null,
-    kudosId: null,
+    kudosId: 2564,
     duration: 10,
     learnings: '',
     difficulty: 'Easy',
@@ -720,7 +720,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
@@ -731,7 +731,7 @@ const LESSONS: LessonType[] = [
     learningActions: 'Avoid the scams in web3 and keep your assets safe.',
     marketingDescription: 'Learn how to stay safe from the most common scams in web3.',
     poapEventId: null,
-    kudosId: null,
+    kudosId: 2565,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
@@ -969,7 +969,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },

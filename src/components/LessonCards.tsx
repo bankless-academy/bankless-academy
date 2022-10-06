@@ -111,7 +111,7 @@ const LessonCards: React.FC = () => {
             </NextLink>
             <Box display="flex" flexDirection="row-reverse" mt="4">
               <NextLink href={`/lessons/${lesson.slug}`}>
-                <Button variant="primary">
+                <Button variant={isKudosMinted ? 'secondary' : 'primary'}>
                   {isKudosMinted
                     ? 'Review Lesson'
                     : isLessonStarted

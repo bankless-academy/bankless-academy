@@ -70,15 +70,20 @@ const PassportComponent = ({
         )}
         <Text fontSize="2xl">
           <>
-            {`Visit `}
-            <Link href="https://passport.gitcoin.co/" target="_blank">
-              <Button variant="primary">Gitcoin Passport</Button>
-            </Link>
-            {` and collect ${
-              numberOfStampsLeftToCollect >= 1 ? numberOfStampsLeftToCollect : 0
-            } more of the following stamp${
-              numberOfStampsLeftToCollect !== 1 ? 's' : ''
-            }:`}
+            {numberOfStampsLeftToCollect > 0 ? (
+              <>
+                {`Visit `}
+                <Link href="https://passport.gitcoin.co/" target="_blank">
+                  <Button variant="primary">Gitcoin Passport</Button>
+                </Link>
+                {` and collect ${numberOfStampsLeftToCollect} more of the following stamp${
+                  numberOfStampsLeftToCollect !== 1 ? 's' : ''
+                }:`}
+              </>
+            ) : (
+              !passportLS?.fraud &&
+              'You have collected enough stamps. You can now close this popup and claim your rewards.'
+            )}
           </>
         </Text>
       </Box>

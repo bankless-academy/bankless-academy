@@ -53,6 +53,7 @@ const MintKudos = ({
     false
   )
   const [status, setStatus] = useState('')
+  const [isMintingInProgress, setIsMintingInProgress] = useState(false)
   const [passportLS, setPassportLS] = useLocalStorage(
     'passport',
     EMPTY_PASSPORT
@@ -117,7 +118,7 @@ const MintKudos = ({
             title: `Transaction in progress`,
             description: (
               <Link href={txLink} target="_blank">
-                {txLink}
+                {isSmallScreen ? `${txLink.substring(0, 40)}...` : txLink}
               </Link>
             ),
             status: 'warning',
@@ -138,12 +139,25 @@ const MintKudos = ({
   }
 
   const mintKudos = async () => {
-    if (status) return
+    if (status !== '') return
+    setStatus('Minting in progress ...')
+    // TODO: add 1 min timeout
     if (chainId !== MINTKUDOS_CHAIN_ID) {
-      await switchNetwork(networkKey)
+      const network = Object.values(NETWORKS).find(
+        (network) => network.chainId === MINTKUDOS_CHAIN_ID
+      )
+      toast.closeAll()
+      if (!library.provider.isMetaMask) {
+        toast({
+          title: 'Wrong network',
+          description: `Switch network to ${network.name} in order to mint your badge.`,
+          status: 'warning',
+          duration: null,
+        })
+      }
+      await switchNetwork(library.provider, networkKey)
     }
 
-    setStatus('🛠 minting in progress ...')
     const receiverTypes = {
       CommunityAdminAirdropReceiverConsent: [
         { name: 'tokenId', type: 'uint256' },
@@ -169,6 +183,7 @@ const MintKudos = ({
         signature,
         message: value,
       }
+      setIsMintingInProgress(true)
       const result = await axios.post(`/api/mint-kudos`, bodyParameters)
       console.log(result.data)
       if (result.data.location) {
@@ -178,13 +193,15 @@ const MintKudos = ({
         // TODO: add 🎊
         // TODO: refresh list of Kudos in the wallet
         toast({
-          title: 'Credential minted 🎉',
+          title: 'Badge minted 🎉',
           status: 'success',
           duration: 10000,
         })
         setStatus('')
+        setIsMintingInProgress(false)
       } else {
         setStatus('')
+        setIsMintingInProgress(false)
         toast.closeAll()
         toast({
           title: '⚠️ problem while minting',
@@ -207,6 +224,7 @@ const MintKudos = ({
     } catch (error) {
       // TODO: add error feedback
       console.error(error)
+      setStatus('')
       checkPassport()
     }
   }
@@ -236,7 +254,7 @@ const MintKudos = ({
           <Passport displayStamps />
         </ModalBody>
         <ModalFooter>
-          <Link href="/faq#257d4f97419e48cbad7b030b516a444e" target="_blank">
+          <Link href="/faq#640071a81daf4aa4b7df00b1eec1c58d" target="_blank">
             Help
           </Link>
         </ModalFooter>
@@ -250,6 +268,7 @@ const MintKudos = ({
     lesson.name
   }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
 ${MINTKUDOS_URL}profile/${account}?tab=Received&tokenId=${kudosId}
+
 ${
   IS_WHITELABEL
     ? ''
@@ -285,7 +304,7 @@ ${
                 <span style={{ color: theme.colors.secondary }}>
                   {lesson.name}
                 </span>
-                {` credential ${isKudosMintedLS ? 'claimed' : 'available'}!`}
+                {` badge ${isKudosMintedLS ? 'claimed' : 'available'}!`}
               </Heading>
               <Box display="flex" justifyContent="center" mb={10} mt={-3}>
                 <Link href={`${MINTKUDOS_URL}`} target="_blank">
@@ -316,14 +335,16 @@ ${
                     </Button>
                   </Link>
                 </Box>
-              ) : passportLS?.verified ? (
+              ) : passportLS?.verified && !isOpen ? (
                 <Box textAlign="center">
                   <Button
                     colorScheme={'green'}
                     onClick={mintKudos}
                     variant="primary"
+                    isLoading={isMintingInProgress}
+                    loadingText={status}
                   >
-                    {status !== '' ? status : 'Mint credential 🛠'}
+                    {status !== '' ? status : 'Mint badge 🛠'}
                   </Button>
                 </Box>
               ) : (
