@@ -30,12 +30,12 @@ export default async function handler(
   type SybilCheckTypes = 'GITCOIN_PASSPORT' | '35kBANK'
   const SYBIL_CHECK: SybilCheckTypes = 'GITCOIN_PASSPORT'
 
+  const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
   if (SYBIL_CHECK === 'GITCOIN_PASSPORT') {
     try {
       const passport: Passport = await reader.getPassport(address)
       // console.log('** passport **', passport)
       const validStamps = filterValidStamps(passport.stamps)
-      const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
       // console.log('validStamps', validStamps)
       const stampHashes = {}
       const stampProviders = {}
@@ -99,6 +99,7 @@ export default async function handler(
       console.error(error)
       res.json({
         error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
+        requirement,
       })
     }
   } else if (SYBIL_CHECK === '35kBANK') {
