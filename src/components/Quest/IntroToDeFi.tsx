@@ -33,7 +33,7 @@ const IntroToDeFi = (
       if (!library.provider.isMetaMask) {
         toast({
           title: 'Wrong network',
-          description: `switch network to ${network.name}`,
+          description: `Switch network to ${network.name} before signing this message.`,
           status: 'warning',
           duration: null,
         })
