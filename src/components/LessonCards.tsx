@@ -130,7 +130,7 @@ const LessonCards: React.FC = () => {
                     href={lesson.communityDiscussionLink}
                     mr="16px"
                   >
-                    <Button variant="outline">👨‍🚀 Community</Button>
+                    <Button variant="outline">👨‍🚀 Discussion</Button>
                   </Link>
                 </Tooltip>
               ) : null}
