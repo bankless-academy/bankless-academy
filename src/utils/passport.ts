@@ -8,7 +8,7 @@ export const filterValidStamps = (stamps: Stamp[]): Stamp[] => {
   // const currentTimestamp = 1665401965000
   const currentTimestamp = Date.now()
   const filteredStamps = []
-  for (let i = 0; i < stamps.length; i++) {
+  for (let i = 0; i < stamps?.length; i++) {
     const stamp = stamps[i]
     if (
       stamp.credential.issuer === ALLOWED_ISSUER &&
@@ -28,5 +28,5 @@ export const getNumberOfValidStamps = (stamps: Stamps): number | null => {
   if (!array.length) {
     return 0
   }
-  return filterValidStamps(Object.values(stamps)).length
+  return filterValidStamps(Object.values(stamps))?.length || 0
 }
