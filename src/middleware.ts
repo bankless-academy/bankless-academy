@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-export function middleware(request: NextRequest) {
+export function middleware(request: NextRequest): NextResponse {
   const ipAddress = request.ip || 'local'
   // disable API calls if maintenance in progress
   if (
