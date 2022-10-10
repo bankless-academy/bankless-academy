@@ -33,6 +33,7 @@ export default async function handler(
   const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
   if (SYBIL_CHECK === 'GITCOIN_PASSPORT') {
     try {
+      // read passport
       const passport: Passport = await reader.getPassport(address)
       // console.log('** passport **', passport)
       const validStamps = filterValidStamps(passport.stamps)
@@ -63,6 +64,7 @@ export default async function handler(
           if (index > 0) whereCondition += ' OR gitcoin_stamps @> ?'
         })
         // console.log('stampHashesSearch', stampHashesSearch)
+        // check whether a stamp hash has already been registered by another user (duplicate stamp detection)
         const sybil = await db(TABLES.users)
           .select('id', 'address')
           .whereNot(TABLE.users.id, userId)
@@ -71,6 +73,7 @@ export default async function handler(
           .where(db.raw(`(${whereCondition})`, stampHashesSearch))
         console.log('sybil', sybil)
         if (sybil?.length) {
+          // mark this user as a sybil attacker
           console.log('fraud detected', sybil)
           await db(TABLES.users)
             .where(TABLE.users.id, userId)
@@ -105,6 +108,7 @@ export default async function handler(
       })
     }
   } else if (SYBIL_CHECK === '35kBANK') {
+    // not implemented yet
     const NUMBER_OF_BANK_REQUIRED = 35000
     const requirement = `Hold a minimum of ${NUMBER_OF_BANK_REQUIRED} BANK tokens for at least 1 month˝`
     return res.json({ verified: 'TODO', requirement })

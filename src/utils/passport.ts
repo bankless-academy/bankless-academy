@@ -11,9 +11,13 @@ export const filterValidStamps = (stamps: Stamp[]): Stamp[] => {
   for (let i = 0; i < stamps?.length; i++) {
     const stamp = stamps[i]
     if (
+      // only count stamps from ALLOWED_ISSUER for now
       stamp.credential.issuer === ALLOWED_ISSUER &&
+      // only count stamps from our ALLOWED_PROVIDERS
       ALLOWED_PROVIDERS.includes(stamp.provider) &&
+      // select the first stamp when a provider is stored multiple times (should be the most recent)
       !stamps.slice(i + 1).find((s) => s.provider === stamp.provider) &&
+      // check if stamp is not expired yet
       Date.parse(stamp.credential.expirationDate) > currentTimestamp
     ) {
       filteredStamps.push(stamp)
