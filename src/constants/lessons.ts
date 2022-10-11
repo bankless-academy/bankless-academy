@@ -1212,13 +1212,13 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: '/lesson/dex-aggregators/poap-a82f8a55.mp4',
+    poapImageLink: '/lesson/dex-aggregators/poap-ddb9db8b.png',
     lessonImageLink: '/lesson/dex-aggregators/lesson-39d1fc1c.png',
     socialImageLink: '/lesson/dex-aggregators/social-2724db28.jpg',
     learningActions: '',
     marketingDescription: 'Level up and learn about DEX Aggregators, liquidity, and the trade-offs of using various types of exchange.',
     poapEventId: null,
-    kudosId: null,
+    kudosId: 2608,
     duration: 15,
     learnings: '',
     difficulty: undefined,
@@ -1227,9 +1227,9 @@ const LESSONS: LessonType[] = [
     quest: 'DEXAggregators',
     publicationStatus: 'hidden',
     isFeaturedOnHomepage: false,
-    isCommentsEnabled: true,
-    endOfLessonRedirect: 'https://tally.so/r/mODMpA',
-    endOfLessonText: 'To give feedback about this lesson, click Next.',
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
     communityDiscussionLink: null,
     notionId: '42578b8813114832b8930cf59f6125af',
     slug: 'dex-aggregators',
@@ -1420,7 +1420,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   }
