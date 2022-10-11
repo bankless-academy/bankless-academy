@@ -80,7 +80,7 @@ const DEXAggregators = (
               <Input
                 placeholder="0x..."
                 value={tx}
-                mb="8"
+                mb="4"
                 onChange={(e): void => {
                   setTx(e.target.value)
                   localStorage.setItem(
@@ -100,6 +100,19 @@ const DEXAggregators = (
                 )}
               </InputRightElement>
             </InputGroup>
+            {isTransactionVerified === false && tx && tx.length !== 0 && (
+              <Box mb="4">
+                <b>Tip:</b> Watch the video for more information.
+              </Box>
+            )}
+            <Box mt="4">
+              <b>Disclaimer:</b> This quest is not available to US users at this
+              time, due to US regulation and 1inch Terms of Service.
+              <br />
+              <Box mt="2">
+                We expect this to be resolved in the coming months.
+              </Box>
+            </Box>
           </div>
           <div className="bloc2">
             <Image src="/images/dex-aggregators-quest.png" />
