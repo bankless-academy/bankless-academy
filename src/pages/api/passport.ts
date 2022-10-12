@@ -30,16 +30,17 @@ export default async function handler(
   type SybilCheckTypes = 'GITCOIN_PASSPORT' | '35kBANK'
   const SYBIL_CHECK: SybilCheckTypes = 'GITCOIN_PASSPORT'
 
+  const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
   if (SYBIL_CHECK === 'GITCOIN_PASSPORT') {
     try {
+      // read passport
       const passport: Passport = await reader.getPassport(address)
       // console.log('** passport **', passport)
       const validStamps = filterValidStamps(passport.stamps)
-      const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
       // console.log('validStamps', validStamps)
       const stampHashes = {}
       const stampProviders = {}
-      if (passport?.stamps) {
+      if (passport?.stamps?.length) {
         for (const stamp of passport?.stamps) {
           stampHashes[stamp.provider] = stamp.credential.credentialSubject.hash
         }
@@ -63,6 +64,7 @@ export default async function handler(
           if (index > 0) whereCondition += ' OR gitcoin_stamps @> ?'
         })
         // console.log('stampHashesSearch', stampHashesSearch)
+        // check whether a stamp hash has already been registered by another user (duplicate stamp detection)
         const sybil = await db(TABLES.users)
           .select('id', 'address')
           .whereNot(TABLE.users.id, userId)
@@ -70,7 +72,8 @@ export default async function handler(
           // query for json instead of jsonb: .where(db.raw('gitcoin_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
           .where(db.raw(`(${whereCondition})`, stampHashesSearch))
         console.log('sybil', sybil)
-        if (sybil.length) {
+        if (sybil?.length) {
+          // mark this user as a sybil attacker
           console.log('fraud detected', sybil)
           await db(TABLES.users)
             .where(TABLE.users.id, userId)
@@ -98,10 +101,14 @@ export default async function handler(
     } catch (error) {
       console.error(error)
       res.json({
+        verified: false,
+        requirement,
+        validStampsCount: 0,
         error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
       })
     }
   } else if (SYBIL_CHECK === '35kBANK') {
+    // not implemented yet
     const NUMBER_OF_BANK_REQUIRED = 35000
     const requirement = `Hold a minimum of ${NUMBER_OF_BANK_REQUIRED} BANK tokens for at least 1 month˝`
     return res.json({ verified: 'TODO', requirement })

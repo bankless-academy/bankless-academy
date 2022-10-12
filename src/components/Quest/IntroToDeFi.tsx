@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Button, Box, Link } from '@chakra-ui/react'
-import { isMobile } from 'react-device-detect'
+import { Button, Box, useToast } from '@chakra-ui/react'
 
 import { useActiveWeb3React } from 'hooks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 import { track, verifySignature, getSignature } from 'utils'
+import { NETWORKS } from 'constants/networks'
 
 const VERBS = ['Investing', 'Trading', 'Lending & Borrowing', 'Staking']
 
@@ -14,14 +14,32 @@ const IntroToDeFi = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  const [answer, setAnswer] = useState(null)
-  const [isSignatureVerified, setIsSignatureVerified] = useState(false)
+  const [answer, setAnswer] = useState(
+    localStorage.getItem('quest-intro-to-defi')
+  )
+  const [isSignatureVerified, setIsSignatureVerified] = useState(
+    localStorage.getItem('quest-intro-to-defi')
+  )
+  const toast = useToast()
 
   const { library, chainId } = useActiveWeb3React()
 
-  const hostname = window?.location.hostname
-
   const signMessage = async () => {
+    if (chainId !== 137) {
+      const network = Object.values(NETWORKS).find(
+        (network) => network.chainId === 137
+      )
+      toast.closeAll()
+      if (!library.provider.isMetaMask) {
+        toast({
+          title: 'Wrong network',
+          description: `Switch network to ${network.name} before signing this message.`,
+          status: 'warning',
+          duration: null,
+        })
+      }
+      await switchNetwork(library.provider, 'matic')
+    }
     if (isSignatureVerified) return
     const message = `I want to learn more about ${answer}`
 
@@ -31,51 +49,15 @@ const IntroToDeFi = (
       if (verified) {
         track('intro_to_defi_quest_answer', answer)
       }
-      setIsSignatureVerified(verified)
+      setIsSignatureVerified(verified ? answer : 'false')
+      localStorage.setItem('quest-intro-to-defi', verified ? answer : 'false')
     } catch (error) {
       console.error(error)
     }
   }
 
-  const signatureButton = () => (
-    <>
-      <Button
-        colorScheme={isSignatureVerified ? 'green' : 'red'}
-        onClick={signMessage}
-        variant="primary"
-        isDisabled={!answer}
-      >
-        {isSignatureVerified
-          ? 'Signature verified'
-          : answer
-          ? 'Sign your answer'
-          : 'Select your answer'}
-      </Button>
-      {isMobile && (
-        <p>
-          * if you have trouble signing on mobile, we recommend to open this
-          website directly inside&nbsp;
-          <Link href={`https://metamask.app.link/dapp/${hostname}`} color="red">
-            MetaMask&apos;s browser
-          </Link>
-        </p>
-      )}
-    </>
-  )
-
-  const networkSwitchButton = () => (
-    <>
-      <Button
-        colorScheme={isSignatureVerified ? 'green' : 'red'}
-        onClick={() => switchNetwork('mainnet')}
-      >
-        Switch Network to {'"Ethereum"'}
-      </Button>
-    </>
-  )
-
   return {
-    isQuestCompleted: isSignatureVerified,
+    isQuestCompleted: VERBS.includes(isSignatureVerified),
     questComponent: (
       <>
         <h2>What are you most interested to learn to do with DeFi?</h2>
@@ -93,7 +75,18 @@ const IntroToDeFi = (
             </Button>
           ))}
         </Box>
-        {chainId === 1 ? signatureButton() : networkSwitchButton()}
+        <Button
+          colorScheme={isSignatureVerified ? 'green' : 'red'}
+          onClick={signMessage}
+          variant="primary"
+          isDisabled={!answer}
+        >
+          {isSignatureVerified
+            ? 'Signature verified'
+            : answer
+            ? 'Sign your answer'
+            : 'Select your answer'}
+        </Button>
       </>
     ),
   }

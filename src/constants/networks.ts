@@ -41,3 +41,9 @@ export const NETWORKS = Object.freeze({
 export const SUPPORTED_NETWORKS_IDS = Object.values(NETWORKS).map(
   (network) => network.chainId
 )
+
+export const RPCS = {}
+
+Object.values(NETWORKS).map((network) => {
+  RPCS[network.chainId] = network.rpcUrl
+})

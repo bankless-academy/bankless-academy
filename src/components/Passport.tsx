@@ -42,7 +42,7 @@ const PassportComponent = ({
   return (
     <>
       <Box mb={6}>
-        {passportLS.verified === false && passportLS?.fraud && (
+        {passportLS.verified === false && passportLS?.fraud ? (
           <Box display="flex" my={2} justifyContent="center" mb={4}>
             <Box
               display="flex"
@@ -67,20 +67,25 @@ const PassportComponent = ({
               Switch back to {shortenAddress(passportLS?.fraud)}
             </Text>
           </Box>
+        ) : (
+          <Text fontSize="2xl">
+            <>
+              {numberOfStampsLeftToCollect > 0 ? (
+                <>
+                  {`Visit `}
+                  <Link href="https://passport.gitcoin.co/" target="_blank">
+                    <Button variant="primary">Gitcoin Passport</Button>
+                  </Link>
+                  {` and collect ${numberOfStampsLeftToCollect} more of the following stamp${
+                    numberOfStampsLeftToCollect !== 1 ? 's' : ''
+                  }:`}
+                </>
+              ) : (
+                'You have collected enough stamps. You can now close this popup and claim your rewards.'
+              )}
+            </>
+          </Text>
         )}
-        <Text fontSize="2xl">
-          <>
-            {`Visit `}
-            <Link href="https://passport.gitcoin.co/" target="_blank">
-              <Button variant="primary">Gitcoin Passport</Button>
-            </Link>
-            {` and collect ${
-              numberOfStampsLeftToCollect >= 1 ? numberOfStampsLeftToCollect : 0
-            } more of the following stamp${
-              numberOfStampsLeftToCollect !== 1 ? 's' : ''
-            }:`}
-          </>
-        </Text>
       </Box>
       <GitcoinPassport
         stamps={passportLS ? passportLS.stamps : null}

@@ -50,7 +50,10 @@ const FeaturedLessons: React.FC = () => {
                   {lesson.marketingDescription}
                 </Text>
                 <NextLink href={`/lessons/${lesson.slug}`}>
-                  <Button variant="primary" mt="4">
+                  <Button
+                    variant={isKudosMinted ? 'secondary' : 'primary'}
+                    mt="4"
+                  >
                     {isKudosMinted
                       ? 'Review Lesson'
                       : isLessonStarted

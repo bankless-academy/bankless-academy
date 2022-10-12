@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import {
   Input,
   Box,
-  Image,
   InputRightElement,
   InputGroup,
   Spinner,
@@ -75,12 +74,23 @@ const DEXAggregators = (
               </a>
               .
             </p>
-            <p>3. Enter the transaction ID below:</p>
+            <p>
+              {'3. View your transaction on '}
+              <a
+                href={`https://polygonscan.com/address/${account}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                PolygonScan
+              </a>
+              .
+            </p>
+            <p>4. Paste the transaction hash (ID) of your token swap below:</p>
             <InputGroup maxW="530px">
               <Input
                 placeholder="0x..."
                 value={tx}
-                mb="8"
+                mb="4"
                 onChange={(e): void => {
                   setTx(e.target.value)
                   localStorage.setItem(
@@ -100,13 +110,27 @@ const DEXAggregators = (
                 )}
               </InputRightElement>
             </InputGroup>
+            {isTransactionVerified === false && tx && tx.length !== 0 && (
+              <Box mb="4">
+                <b>Tip:</b> Make sure you paste the swap transaction hash and
+                not the approval transaction hash. Watch the video for more
+                information.
+              </Box>
+            )}
+            <Box mt="4">
+              <b>Disclaimer:</b> Unfortunately, this quest is not available for
+              US residents at the moment due to geographic restrictions.
+              <br />
+              <Box mt="2">
+                We expect this to be resolved in the coming months.
+              </Box>
+            </Box>
           </div>
           <div className="bloc2">
-            <Image src="/images/dex-aggregators-quest.png" />
-            {/* <iframe
-              src="https://www.youtube.com/embed/PWtVAAGKTXI?start=509&rel=0"
+            <iframe
+              src="https://www.youtube.com/embed/0K8W_4PW7-s?rel=0"
               allowFullScreen
-            ></iframe> */}
+            ></iframe>
           </div>
         </Box>
       </>

@@ -15,7 +15,7 @@ import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 import switchNetwork from './switchNetwork'
-import handleNetworkChange from './handleNetworkChange'
+import { useActiveWeb3React } from 'hooks'
 
 const CircleIcon = (props) => (
   <Icon viewBox="0 0 200 200" {...props}>
@@ -33,15 +33,19 @@ const SwitchNetworkButton = ({
 }): any => {
   const toast = useToast()
   const [currentNetwork, setCurrentNetwork] = useState(NETWORKS.mainnet)
+  const { library, chainId } = useActiveWeb3React()
 
   const handleChange = async (networkName) => {
-    await switchNetwork(networkName.toLowerCase(), setCurrentNetwork)
+    await switchNetwork(
+      library.provider,
+      networkName.toLowerCase(),
+      setCurrentNetwork
+    )
   }
 
   useEffect(() => {
-    const metamask = window.ethereum
-    metamask?.on('networkChanged', function (networkId) {
-      if (!SUPPORTED_NETWORKS_IDS.includes(parseInt(networkId))) {
+    if (chainId) {
+      if (!SUPPORTED_NETWORKS_IDS.includes(chainId)) {
         // wrong network
         toast.closeAll()
         toast({
@@ -53,16 +57,13 @@ const SwitchNetworkButton = ({
       } else {
         // correct network
         toast.closeAll()
+        const networkName = Object.keys(NETWORKS).find(
+          (network) => NETWORKS[network]?.chainId === chainId
+        )
+        setCurrentNetwork(NETWORKS[networkName])
       }
-    })
-    if (metamask) {
-      handleNetworkChange(metamask, setCurrentNetwork)
-      // MetaMask mobile hack
-      setTimeout(() => handleNetworkChange(metamask, setCurrentNetwork), 1000)
-    } else {
-      console.error('no ethereum detected')
     }
-  }, [window.ethereum])
+  }, [chainId])
 
   return (
     <div>

@@ -28,6 +28,11 @@ const Stats = (): JSX.Element => {
         console.error(error)
       })
   }, [])
+
+  let totalLessonCompletion = 0
+  stats?.monthyCompletion.map(
+    (monthlyStats) => (totalLessonCompletion += parseInt(monthlyStats.count))
+  )
   return (
     <Container maxW="container.xl">
       {stats && (
@@ -109,6 +114,12 @@ const Stats = (): JSX.Element => {
                 }`}</p>
               </>
             ))}
+          </Box>
+          <Box mt={8}>
+            <Text fontSize="lg" color="orange.300">
+              Total lesson completion
+            </Text>
+            <p>{totalLessonCompletion}</p>
           </Box>
         </Box>
       )}

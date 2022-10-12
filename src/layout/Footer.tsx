@@ -43,15 +43,8 @@ const Footer: React.FC = () => {
               Community
             </Link>
             <span>&nbsp;|&nbsp;</span>
-            <Link
-              target="_blank"
-              href="https://whitelabel.banklessacademy.com/"
-            >
-              Whitelabel
-            </Link>
-            <span>&nbsp;|&nbsp;</span>
-            <Link target="_blank" href="https://talent.banklessacademy.com/">
-              Join the team
+            <Link target="_blank" href="/faq">
+              FAQ
             </Link>
           </>
         )}

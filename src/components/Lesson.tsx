@@ -711,7 +711,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           {slide.type === 'QUEST' && !Quest?.isQuestCompleted ? (
             <Tooltip
               hasArrow
-              label="By skipping this quest you won't be able to claim the lesson credential"
+              label="By skipping this quest you won't be able to claim the lesson badge"
             >
               <Button
                 variant="outline"
