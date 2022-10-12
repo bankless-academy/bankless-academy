@@ -16,12 +16,12 @@ console.log('NOTION_ID', NOTION_ID)
 // TODO: make sure these color are OK
 // TODO: how to handle dark mode?
 // TODO: move color logic to frontend
-const COLOR_MATCHING = {
-  green: 'rgba(0, 135, 107, 1)',
-  blue: 'rgba(0, 120, 223, 1)',
-  red: 'rgba(255, 0, 26, 1)',
-  black: 'rgba(128, 128, 128, 1)',
-}
+// const COLOR_MATCHING = {
+//   green: 'rgba(0, 135, 107, 1)',
+//   blue: 'rgba(0, 120, 223, 1)',
+//   red: 'rgba(255, 0, 26, 1)',
+//   black: 'rgba(128, 128, 128, 1)',
+// }
 
 const keywords = {}
 
@@ -29,9 +29,9 @@ axios
   .get(`${POTION_API}/table?id=${NOTION_ID}&sort=keyword`)
   .then((response) => {
     response.data.map((k) => {
-      const { definition, color, keyword } = k.fields
+      const { definition, keyword } = k.fields
       if (definition !== undefined)
-        keywords[keyword] = { definition, color: COLOR_MATCHING[color] }
+        keywords[keyword] = { definition }
     })
     console.log(keywords)
     const FILE_CONTENT = `${JSON.stringify(keywords, null, 2)}
