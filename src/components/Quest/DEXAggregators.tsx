@@ -74,7 +74,18 @@ const DEXAggregators = (
               </a>
               .
             </p>
-            <p>3. Enter the transaction ID below:</p>
+            <p>
+              {'3. View your transaction on '}
+              <a
+                href={`https://polygonscan.com/address/${account}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Polygonscan
+              </a>
+              .
+            </p>
+            <p>4. Paste the transaction hash (ID) of your token swap below:</p>
             <InputGroup maxW="530px">
               <Input
                 placeholder="0x..."
@@ -101,7 +112,9 @@ const DEXAggregators = (
             </InputGroup>
             {isTransactionVerified === false && tx && tx.length !== 0 && (
               <Box mb="4">
-                <b>Tip:</b> Watch the video for more information.
+                <b>Tip:</b> Make sure you paste the swap transaction hash and
+                not the approval transaction hash. Watch the video for more
+                information.
               </Box>
             )}
             <Box mt="4">
