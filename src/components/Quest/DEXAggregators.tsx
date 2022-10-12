@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import {
   Input,
   Box,
-  Image,
   InputRightElement,
   InputGroup,
   Spinner,
@@ -115,11 +114,10 @@ const DEXAggregators = (
             </Box>
           </div>
           <div className="bloc2">
-            <Image src="/images/dex-aggregators-quest.png" />
-            {/* <iframe
-              src="https://www.youtube.com/embed/PWtVAAGKTXI?start=509&rel=0"
+            <iframe
+              src="https://www.youtube.com/embed/0K8W_4PW7-s?rel=0"
               allowFullScreen
-            ></iframe> */}
+            ></iframe>
           </div>
         </Box>
       </>
