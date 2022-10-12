@@ -105,8 +105,8 @@ const DEXAggregators = (
               </Box>
             )}
             <Box mt="4">
-              <b>Disclaimer:</b> This quest is not available to US users at this
-              time, due to US regulation and 1inch Terms of Service.
+              <b>Disclaimer:</b> Unfortunately, this quest is not available for
+              US residents at the moment due to geographic restrictions.
               <br />
               <Box mt="2">
                 We expect this to be resolved in the coming months.
