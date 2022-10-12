@@ -81,7 +81,7 @@ const DEXAggregators = (
                 target="_blank"
                 rel="noreferrer"
               >
-                Polygonscan
+                PolygonScan
               </a>
               .
             </p>
