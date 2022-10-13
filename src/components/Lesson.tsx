@@ -672,7 +672,9 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                   ) : (
                     <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   )}
-                  <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
+                  <p>
+                    {!embed && lesson.endOfLessonText && lesson.endOfLessonText}
+                  </p>
                 </>
               )}
             </VStack>
@@ -723,7 +725,23 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               </Button>
             </Tooltip>
           ) : null}
-          {!isLastSlide || lesson.endOfLessonText ? (
+          {!embed && lesson.communityDiscussionLink && (
+            <Tooltip
+              hasArrow
+              label="Join other explorers to discuss this lesson."
+            >
+              <Link
+                target="_blank"
+                rel="noreferrer"
+                href={lesson.communityDiscussionLink}
+              >
+                <Button variant="outline">
+                  👨‍🚀{isSmallScreen ? '' : ' Community discussion'}
+                </Button>
+              </Link>
+            </Tooltip>
+          )}
+          {!isLastSlide || (lesson.endOfLessonText && !embed) ? (
             <Button
               ref={buttonRightRef}
               variant={isLastSlide ? 'primaryBigLast' : 'primaryBig'}
@@ -741,22 +759,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
             </Button>
           ) : (
             <>
-              {lesson.communityDiscussionLink && (
-                <Tooltip
-                  hasArrow
-                  label="Join other explorers to discuss this lesson."
-                >
-                  <Link
-                    target="_blank"
-                    rel="noreferrer"
-                    href={lesson.communityDiscussionLink}
-                  >
-                    <Button variant="outline">
-                      👨‍🚀{isSmallScreen ? '' : ' Community discussion'}
-                    </Button>
-                  </Link>
-                </Tooltip>
-              )}
               {embed ? null : (
                 <NextLink href={IS_WHITELABEL ? `/` : `/lessons`}>
                   <Button
