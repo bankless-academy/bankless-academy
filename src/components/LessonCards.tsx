@@ -119,7 +119,7 @@ const LessonCards: React.FC = () => {
                     : 'Start Lesson'}
                 </Button>
               </NextLink>
-              {isKudosMinted ? (
+              {isKudosMinted && lesson.communityDiscussionLink ? (
                 <Tooltip
                   hasArrow
                   label="Join other explorers to discuss this lesson."
