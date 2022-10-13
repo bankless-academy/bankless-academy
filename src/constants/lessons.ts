@@ -1230,7 +1230,7 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: 'https://tally.so/r/3Ek4N4',
     endOfLessonText: 'To give feedback about this lesson, click Next.',
-    communityDiscussionLink: null,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=671cc928-93d6-4c9a-9718-28ed3d56af7c',
     notionId: '42578b8813114832b8930cf59f6125af',
     slug: 'dex-aggregators',
     imageLinks: [
