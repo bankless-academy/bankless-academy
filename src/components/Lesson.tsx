@@ -725,7 +725,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               </Button>
             </Tooltip>
           ) : null}
-          {!embed && lesson.communityDiscussionLink && (
+          {!embed && isLastSlide && lesson.communityDiscussionLink && (
             <Tooltip
               hasArrow
               label="Join other explorers to discuss this lesson."
