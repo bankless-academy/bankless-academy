@@ -64,7 +64,7 @@ const get_img = (imageLink, slug, image_name) => {
   const local_image_dir = `public${image_dir}`
   // create image directory dynamically in case it doesn't exist yet
   if (!fs.existsSync(local_image_dir)) {
-    fs.mkdirSync(local_image_dir);
+    fs.mkdirSync(local_image_dir)
   }
   const image_path = `${image_dir}/${slugify(image_name)}-${hash}.${file_extension}`
   // console.log('image_path', image_path)
@@ -88,6 +88,10 @@ axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((notionRows) => {
     const lessons = []
+    if (IS_WHITELABEL && !fs.existsSync(`public/${PROJECT_DIR}lesson`)) {
+      // create image directory dynamically in case it doesn't exist yet
+      fs.mkdirSync(`public/${PROJECT_DIR}lesson`)
+    }
     const promiseArray = notionRows.data.map((notion, index) => {
       // DEV_MODE: only test first lesson
       // if (index > 0) return
@@ -211,7 +215,7 @@ axios
                 const local_image_dir = `public${image_dir}`
                 // create image directory dynamically in case it doesn't exist yet
                 if (!fs.existsSync(local_image_dir)) {
-                  fs.mkdirSync(local_image_dir);
+                  fs.mkdirSync(local_image_dir)
                 }
                 const image_path = `${image_dir}/${slugify(slide.title)}-${hash}.${file_extension}`
                 const local_image_path = `public${image_path}`

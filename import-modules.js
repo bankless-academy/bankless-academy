@@ -72,6 +72,15 @@ const modules = []
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((response) => {
+    if (IS_WHITELABEL) {
+      // create image directory dynamically in case it doesn't exist yet
+      if (!fs.existsSync(`public/${PROJECT_DIR}`)) {
+        fs.mkdirSync(`public/${PROJECT_DIR}`)
+      }
+      if (!fs.existsSync(`public/${PROJECT_DIR}module`)) {
+        fs.mkdirSync(`public/${PROJECT_DIR}module`)
+      }
+    }
     response.data.map((notion) => {
       // console.log(notion)
       const module = Object.keys(KEY_MATCHING).reduce(
