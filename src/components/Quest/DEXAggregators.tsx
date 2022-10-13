@@ -16,7 +16,9 @@ const DEXAggregators = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  const [isTransactionVerified, setIsTransactionVerified] = useState(null)
+  const [isTransactionVerified, setIsTransactionVerified] = useState(
+    localStorage.getItem('quest-dex-aggregators')
+  )
   const [isCheckingTx, setIsCheckingTx] = useState(false)
   const [tx, setTx] = useState(localStorage.getItem('quest-dex-aggregators-tx'))
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
@@ -32,9 +34,16 @@ const DEXAggregators = (
           )}`
         )
         setIsCheckingTx(false)
-        setIsTransactionVerified(questResult?.data?.isQuestValidated)
+        setIsTransactionVerified(
+          questResult?.data?.isQuestValidated?.toString()
+        )
+        localStorage.setItem(
+          'quest-dex-aggregators',
+          questResult?.data?.isQuestValidated
+        )
       } else {
         setIsTransactionVerified(null)
+        localStorage.setItem('quest-dex-aggregators', null)
       }
     } catch (error) {
       console.error(error)
@@ -47,7 +56,7 @@ const DEXAggregators = (
   }, [account])
 
   return {
-    isQuestCompleted: isTransactionVerified,
+    isQuestCompleted: isTransactionVerified === 'true',
     questComponent: (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
@@ -94,14 +103,14 @@ const DEXAggregators = (
               <InputRightElement>
                 {isCheckingTx ? (
                   <Spinner speed="1s" color="orange" />
-                ) : isTransactionVerified === true ? (
+                ) : isTransactionVerified === 'true' ? (
                   <CheckIcon color="green.500" />
                 ) : (
                   tx && tx.length !== 0 && <CloseIcon color="red.500" />
                 )}
               </InputRightElement>
             </InputGroup>
-            {isTransactionVerified === false && tx && tx.length !== 0 && (
+            {isTransactionVerified === 'false' && tx && tx.length !== 0 && (
               <Box mb="4">
                 <b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash
                 and not the approval transaction hash. Watch the video for more
