@@ -8,7 +8,7 @@ import {
   MINTKUDOS_API,
   MINTKUDOS_ENCODED_STRING,
   MINTKUDOS_COMMUNITY_ID,
-  COMMUNITY_ADMIN,
+  MINTKUDOS_COMMUNITY_ADMIN,
   MINTKUDOS_DOMAIN_INFO,
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
@@ -127,7 +127,7 @@ export default async function handler(
         try {
           const bodyParameters = {
             receivingAddress: address,
-            adminAddress: COMMUNITY_ADMIN,
+            adminAddress: MINTKUDOS_COMMUNITY_ADMIN,
             adminSignature,
             receiverSignature: signature,
           }

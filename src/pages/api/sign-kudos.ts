@@ -6,7 +6,7 @@ import { MINTKUDOS_DOMAIN_INFO } from 'constants/kudos'
 
 import { db, TABLES } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE, LESSONS } from 'constants/index'
-import { ALLOWED_SIGNERS } from 'constants/kudos'
+import { MINTKUDOS_ALLOWED_SIGNERS } from 'constants/kudos'
 
 export default async function handler(
   req: NextApiRequest,
@@ -27,10 +27,8 @@ export default async function handler(
   console.log('kudosId: ', kudosId)
   // console.log('signature: ', signature)
 
-  // TODO: require to sign in less than 2 minutes?
-
   try {
-    if (!ALLOWED_SIGNERS.includes(address.toLowerCase()))
+    if (!MINTKUDOS_ALLOWED_SIGNERS.includes(address.toLowerCase()))
       return res.json({ error: 'Address not allowed to sign' })
 
     const adminTypes = {
