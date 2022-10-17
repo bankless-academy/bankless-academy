@@ -29,6 +29,7 @@ const KEY_MATCHING = {
   'Homepage logo': 'logo',
   // 'Homepage logo': 'logo_small',
   'Homepage background image': 'homepage_background',
+  'MintKudos community admin': 'mintkudos_community_admin',
 }
 
 // TODO: move to lib file
