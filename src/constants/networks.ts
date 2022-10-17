@@ -1,4 +1,4 @@
-import { INFURA_ID } from './index'
+import { INFURA_ID } from 'constants/index'
 
 export const NETWORKS = Object.freeze({
   mainnet: {

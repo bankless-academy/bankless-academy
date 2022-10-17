@@ -1,7 +1,7 @@
 import { MetaData } from 'components/Head'
-import { WHITELABEL } from './whitelabel'
-import DEFAULT_LESSONS from './lessons'
-import WHITELABEL_LESSONS from './whitelabel_lessons'
+import { WHITELABEL } from 'constants/whitelabel'
+import DEFAULT_LESSONS from 'constants/lessons'
+import WHITELABEL_LESSONS from 'constants/whitelabel_lessons'
 
 export const IS_WHITELABEL = !!WHITELABEL?.project_name
 
