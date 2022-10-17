@@ -2,7 +2,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { db, TABLES, TABLE } from 'utils/db'
-import { POAP_EVENT_IDS, LESSONS } from 'constants/index'
+import { LESSONS } from 'constants/index'
 
 const NOTION_IDS: string[] = LESSONS.filter((lesson) => lesson.quest).map(
   (lesson) => lesson.notionId
@@ -14,34 +14,12 @@ export default async function handler(
 ): Promise<void> {
   const stats = {
     uniqueAddresses: {},
-    remainingPoaps: {},
-    poapDistributed: {},
     lessonCompleted: {},
     monthyCompletion: {},
   }
   try {
     const [uniqueAddresses] = await db(TABLES.users).count('id')
     stats.uniqueAddresses = uniqueAddresses.count
-    const remainingPoaps = await db(TABLES.poaps)
-      .count('id', { as: 'remainingPoaps' })
-      .distinct('event_id')
-      .where('is_claimed', false)
-      .whereIn('event_id', POAP_EVENT_IDS)
-      .groupBy('event_id')
-      .orderBy('event_id')
-    for (const event of remainingPoaps) {
-      stats.remainingPoaps[event.event_id] = event.remainingPoaps
-    }
-    const poapDistributed = await db(TABLES.poaps)
-      .count('id', { as: 'poapDistributed' })
-      .distinct('event_id')
-      .where('is_claimed', true)
-      .whereIn('event_id', POAP_EVENT_IDS)
-      .groupBy('event_id')
-      .orderBy('event_id')
-    for (const event of poapDistributed) {
-      stats.poapDistributed[event.event_id] = event.poapDistributed
-    }
 
     const credentials = await db
       .select('id', 'notion_id')
