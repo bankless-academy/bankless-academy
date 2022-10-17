@@ -21,13 +21,11 @@ const POTION_API = 'https://potion.banklessacademy.com'
 const keywords = IS_WHITELABEL ? whitelabelKeywords : defaultKeywords
 
 const KEY_MATCHING = {
-  'POAP image': 'poapImageLink',
+  'Kudos image': 'kudosImageLink',
   'Lesson image': 'lessonImageLink',
   'Social image': 'socialImageLink',
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
-  // 'Knowledge Requirements': 'knowledgeRequirements',
-  'POAP event ID': 'poapEventId',
   'Kudos ID': 'kudosId',
   'Duration in minutes': 'duration',
   'What will you learn from this?': 'learnings',
@@ -114,9 +112,8 @@ axios
 
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) lesson.socialImageLink = null
-      if (lesson.poapEventId === undefined) lesson.poapEventId = null
       if (lesson.kudosId === undefined) lesson.kudosId = null
-      if (lesson.poapImageLink === undefined) lesson.poapImageLink = null
+      if (lesson.kudosImageLink === undefined) lesson.kudosImageLink = null
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
       if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''
@@ -139,8 +136,8 @@ axios
           await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
             .ignore()
 
-          if (lesson.poapImageLink) {
-            lesson.poapImageLink = get_img(lesson.poapImageLink, lesson.slug, 'poap')
+          if (lesson.kudosImageLink) {
+            lesson.kudosImageLink = get_img(lesson.kudosImageLink, lesson.slug, 'kudos')
           }
           if (lesson.lessonImageLink) {
             lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
@@ -301,11 +298,6 @@ axios
           } else {
             delete lesson.quest
           }
-          // TEMP: replace POAP with END flow
-          // slides.push({
-          //   type: 'POAP',
-          //   title: `Collect your <span class="tooltip" definition="${keywords['POAP'].definition}">POAP</span>`,
-          // })
           slides.push({
             type: 'END',
             title: lesson.kudosId ? 'Lesson Reward' : 'End of lesson',
