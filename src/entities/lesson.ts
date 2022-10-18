@@ -1,18 +1,17 @@
 import { QuestComponentType } from 'components/Quest/QuestComponent'
 
-export type SlideType = 'LEARN' | 'QUIZ' | 'QUEST' | 'POAP' | 'END'
+export type SlideType = 'LEARN' | 'QUIZ' | 'QUEST' | 'END'
 
 export interface LessonType {
   name: string
   slug: string
   notionId: string
-  poapEventId?: number
   kudosId?: number
   description: string
   marketingDescription: string
   duration: number
   difficulty: 'Easy' | 'Advanced' | 'Expert'
-  poapImageLink?: string
+  kudosImageLink?: string
   lessonImageLink?: string
   socialImageLink?: string
   moduleId?: string

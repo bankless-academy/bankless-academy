@@ -247,7 +247,7 @@ const ConnectWalletButton = ({
                         if (lesson) {
                           return (
                             <Box
-                              key={`poap-${index}`}
+                              key={`kudos-${index}`}
                               justifySelf="center"
                               boxShadow="0px 0px 4px 2px #00000060"
                               borderRadius="3px"

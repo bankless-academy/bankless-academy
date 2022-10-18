@@ -1,7 +1,7 @@
 import { MetaData } from 'components/Head'
-import { WHITELABEL } from './whitelabel'
-import DEFAULT_LESSONS from './lessons'
-import WHITELABEL_LESSONS from './whitelabel_lessons'
+import { WHITELABEL } from 'constants/whitelabel'
+import DEFAULT_LESSONS from 'constants/lessons'
+import WHITELABEL_LESSONS from 'constants/whitelabel_lessons'
 
 export const IS_WHITELABEL = !!WHITELABEL?.project_name
 
@@ -59,24 +59,13 @@ export const DefaultProviderName = 'DEFAULT'
 export const INFURA_ID =
   process.env.INFURA_ID || 'cb578d660f614bbcb41b3c03553ff6f2'
 
-export const POAP_EVENT_IDS: string[] = LESSONS.filter(
-  (lesson) => lesson.poapEventId
-).map((lesson) => lesson.poapEventId?.toString())
-
-export const OLD_POAP_EVENT_IDS: string[] = ['6454', '6455', '16394', '21670']
-
-export const POAP_QUESTS = {}
-LESSONS.filter((lesson) => lesson.poapEventId && lesson.quest).map((lesson) => {
-  POAP_QUESTS[lesson.poapEventId.toString()] = lesson.quest
-})
-
 export const QUESTS: string[] = LESSONS.filter((lesson) => lesson.quest).map(
   (lesson) => lesson.quest
 )
 
-export const POAP_EMAIL_CONTACT = 'poap@banklessacademy.com'
+export const EMAIL_CONTACT = 'contact@banklessacademy.com'
 
-export const GENERIC_ERROR_MESSAGE = `Something went wrong ... please contact ${POAP_EMAIL_CONTACT}`
+export const GENERIC_ERROR_MESSAGE = `Something went wrong ... please contact ${EMAIL_CONTACT}`
 
 export const TWITTER_ACCOUNT = `BanklessAcademy`
 

@@ -1,1 +1,1 @@
-export { default } from './SwitchNetworkButton'
+export { default } from 'components/SwitchNetworkButton/SwitchNetworkButton'

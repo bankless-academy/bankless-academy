@@ -50,7 +50,7 @@ export const QuestIcon = (): React.ReactElement => (
   />
 )
 
-export const PoapIcon = (): React.ReactElement => (
+export const KudosIcon = (): React.ReactElement => (
   <Icon
     as={Medal}
     w={10}

@@ -21,13 +21,11 @@ const POTION_API = 'https://potion.banklessacademy.com'
 const keywords = IS_WHITELABEL ? whitelabelKeywords : defaultKeywords
 
 const KEY_MATCHING = {
-  'POAP image': 'poapImageLink',
+  'Kudos image': 'kudosImageLink',
   'Lesson image': 'lessonImageLink',
   'Social image': 'socialImageLink',
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
-  // 'Knowledge Requirements': 'knowledgeRequirements',
-  'POAP event ID': 'poapEventId',
   'Kudos ID': 'kudosId',
   'Duration in minutes': 'duration',
   'What will you learn from this?': 'learnings',
@@ -56,7 +54,7 @@ const slugify = (text) => text.toLowerCase()
 
 const get_img = (imageLink, slug, image_name) => {
   const [file_name] = imageLink.split('?')
-  const file_extension = file_name.match(/\.(png|svg|jpg|jpeg|webp|mp4)/)[1].replace('jpeg', 'jpg')
+  const file_extension = file_name.match(/\.(png|svg|jpg|jpeg|webp|mp4|gif)/)[1].replace('jpeg', 'jpg')
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
   const hash = crc32(file_name)
@@ -64,7 +62,7 @@ const get_img = (imageLink, slug, image_name) => {
   const local_image_dir = `public${image_dir}`
   // create image directory dynamically in case it doesn't exist yet
   if (!fs.existsSync(local_image_dir)) {
-    fs.mkdirSync(local_image_dir);
+    fs.mkdirSync(local_image_dir)
   }
   const image_path = `${image_dir}/${slugify(image_name)}-${hash}.${file_extension}`
   // console.log('image_path', image_path)
@@ -88,6 +86,10 @@ axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((notionRows) => {
     const lessons = []
+    if (IS_WHITELABEL && !fs.existsSync(`public/${PROJECT_DIR}lesson`)) {
+      // create image directory dynamically in case it doesn't exist yet
+      fs.mkdirSync(`public/${PROJECT_DIR}lesson`)
+    }
     const promiseArray = notionRows.data.map((notion, index) => {
       // DEV_MODE: only test first lesson
       // if (index > 0) return
@@ -110,9 +112,8 @@ axios
 
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) lesson.socialImageLink = null
-      if (lesson.poapEventId === undefined) lesson.poapEventId = null
       if (lesson.kudosId === undefined) lesson.kudosId = null
-      if (lesson.poapImageLink === undefined) lesson.poapImageLink = null
+      if (lesson.kudosImageLink === undefined) lesson.kudosImageLink = null
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
       if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''
@@ -135,8 +136,8 @@ axios
           await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
             .ignore()
 
-          if (lesson.poapImageLink) {
-            lesson.poapImageLink = get_img(lesson.poapImageLink, lesson.slug, 'poap')
+          if (lesson.kudosImageLink) {
+            lesson.kudosImageLink = get_img(lesson.kudosImageLink, lesson.slug, 'kudos')
           }
           if (lesson.lessonImageLink) {
             lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
@@ -204,14 +205,14 @@ axios
               // download images locally
               const imageLinks = [...slide.content.matchAll(/<img src='(.*?)'/gm)].map(a => a[1])
               for (const imageLink of imageLinks) {
-                const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|mp4)\?table=/)[1]
+                const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|mp4|gif)\?table=/)[1]
                 // create "unique" hash based on Notion imageLink (different when re-uploaded)
                 const hash = crc32(imageLink)
                 const image_dir = `/${PROJECT_DIR}lesson/${lesson.slug}`
                 const local_image_dir = `public${image_dir}`
                 // create image directory dynamically in case it doesn't exist yet
                 if (!fs.existsSync(local_image_dir)) {
-                  fs.mkdirSync(local_image_dir);
+                  fs.mkdirSync(local_image_dir)
                 }
                 const image_path = `${image_dir}/${slugify(slide.title)}-${hash}.${file_extension}`
                 const local_image_path = `public${image_path}`
@@ -297,11 +298,6 @@ axios
           } else {
             delete lesson.quest
           }
-          // TEMP: replace POAP with END flow
-          // slides.push({
-          //   type: 'POAP',
-          //   title: `Collect your <span class="tooltip" definition="${keywords['POAP'].definition}">POAP</span>`,
-          // })
           slides.push({
             type: 'END',
             title: lesson.kudosId ? 'Lesson Reward' : 'End of lesson',

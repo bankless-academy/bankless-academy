@@ -16,7 +16,9 @@ const DEXAggregators = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  const [isTransactionVerified, setIsTransactionVerified] = useState(null)
+  const [isTransactionVerified, setIsTransactionVerified] = useState(
+    localStorage.getItem('quest-dex-aggregators')
+  )
   const [isCheckingTx, setIsCheckingTx] = useState(false)
   const [tx, setTx] = useState(localStorage.getItem('quest-dex-aggregators-tx'))
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
@@ -32,9 +34,16 @@ const DEXAggregators = (
           )}`
         )
         setIsCheckingTx(false)
-        setIsTransactionVerified(questResult?.data?.isQuestValidated)
+        setIsTransactionVerified(
+          questResult?.data?.isQuestValidated?.toString()
+        )
+        localStorage.setItem(
+          'quest-dex-aggregators',
+          questResult?.data?.isQuestValidated
+        )
       } else {
         setIsTransactionVerified(null)
+        localStorage.setItem('quest-dex-aggregators', null)
       }
     } catch (error) {
       console.error(error)
@@ -47,7 +56,7 @@ const DEXAggregators = (
   }, [account])
 
   return {
-    isQuestCompleted: isTransactionVerified,
+    isQuestCompleted: isTransactionVerified === 'true',
     questComponent: (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
@@ -55,7 +64,7 @@ const DEXAggregators = (
             <p>
               {'1. Load '}
               <a
-                href="https://app.1inch.io/#/137/unified/swap/MATIC/0xdb7cb471dd0b49b29cab4a1c14d070f27216a0ab"
+                href="https://app.1inch.io/#/137/unified/swap/MATIC/BANK"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -75,17 +84,8 @@ const DEXAggregators = (
               .
             </p>
             <p>
-              {'3. View your transaction on '}
-              <a
-                href={`https://polygonscan.com/address/${account}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                PolygonScan
-              </a>
-              .
+              3. Paste the successful <b>swap</b> transaction hash below:
             </p>
-            <p>4. Paste the transaction hash (ID) of your token swap below:</p>
             <InputGroup maxW="530px">
               <Input
                 placeholder="0x..."
@@ -103,17 +103,17 @@ const DEXAggregators = (
               <InputRightElement>
                 {isCheckingTx ? (
                   <Spinner speed="1s" color="orange" />
-                ) : isTransactionVerified === true ? (
+                ) : isTransactionVerified === 'true' ? (
                   <CheckIcon color="green.500" />
                 ) : (
                   tx && tx.length !== 0 && <CloseIcon color="red.500" />
                 )}
               </InputRightElement>
             </InputGroup>
-            {isTransactionVerified === false && tx && tx.length !== 0 && (
+            {isTransactionVerified === 'false' && tx && tx.length !== 0 && (
               <Box mb="4">
-                <b>Tip:</b> Make sure you paste the swap transaction hash and
-                not the approval transaction hash. Watch the video for more
+                <b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash
+                and not the approval transaction hash. Watch the video for more
                 information.
               </Box>
             )}
@@ -128,7 +128,7 @@ const DEXAggregators = (
           </div>
           <div className="bloc2">
             <iframe
-              src="https://www.youtube.com/embed/0K8W_4PW7-s?rel=0"
+              src="https://www.youtube.com/embed/FBrFUJiBbZk?rel=0"
               allowFullScreen
             ></iframe>
           </div>

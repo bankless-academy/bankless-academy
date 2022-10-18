@@ -9,4 +9,5 @@ export interface WhitelabelType {
   homepage_background?: string
   umami_prod?: string
   notion_pages?: { [key: string]: string }
+  mintkudos_community_admin?: string
 }

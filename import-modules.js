@@ -49,7 +49,7 @@ const download_image = (url, image_path) =>
 const get_img = (imageLink, slug, image_name) => {
   const [file_name] = imageLink.split('?')
   const file_extension = file_name
-    .match(/\.(png|svg|jpg|jpeg|webp|mp4)/)[1]
+    .match(/\.(png|svg|jpg|jpeg|webp|mp4|gif)/)[1]
     .replace('jpeg', 'jpg')
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
@@ -72,6 +72,15 @@ const modules = []
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((response) => {
+    if (IS_WHITELABEL) {
+      // create image directory dynamically in case it doesn't exist yet
+      if (!fs.existsSync(`public/${PROJECT_DIR}`)) {
+        fs.mkdirSync(`public/${PROJECT_DIR}`)
+      }
+      if (!fs.existsSync(`public/${PROJECT_DIR}module`)) {
+        fs.mkdirSync(`public/${PROJECT_DIR}module`)
+      }
+    }
     response.data.map((notion) => {
       // console.log(notion)
       const module = Object.keys(KEY_MATCHING).reduce(

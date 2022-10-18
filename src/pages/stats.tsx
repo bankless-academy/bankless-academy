@@ -38,53 +38,12 @@ const Stats = (): JSX.Element => {
       {stats && (
         <Box maxW="500px">
           {!IS_WHITELABEL && (
-            <>
-              <Box mt={8}>
-                <Text fontSize="lg" color="orange.300">
-                  Number of unique addresses connected to the app
-                </Text>
-                {stats?.uniqueAddresses}
-              </Box>
-              {/* <Box mt={8}>
-                <Text fontSize="lg" color="orange.300">
-                  Remaining POAPs
-                </Text>
-                {LESSONS.map((lesson, index) => {
-                  const remainingPoaps =
-                    stats?.remainingPoaps[lesson.poapEventId] || 0
-                  return (
-                    <>
-                      <p>
-                        {`${index + 1}. ${lesson.name}: `}
-                        {remainingPoaps}
-                        <Progress
-                          value={(remainingPoaps / 200) * 100}
-                          size="md"
-                          colorScheme="yellow"
-                        />
-                      </p>
-                    </>
-                  )
-                })}
-              </Box>
-              <Box mt={8}>
-                <Text fontSize="lg" color="orange.300">
-                  POAP codes distributed
-                </Text>
-                {LESSONS.map((lesson, index) => {
-                  const poapDistributed =
-                    stats?.poapDistributed[lesson.poapEventId] || 0
-                  return (
-                    <>
-                      <p>
-                        {`${index + 1}. ${lesson.name}: `}
-                        {poapDistributed}
-                      </p>
-                    </>
-                  )
-                })}
-              </Box> */}
-            </>
+            <Box mt={8}>
+              <Text fontSize="lg" color="orange.300">
+                Number of unique addresses connected to the app
+              </Text>
+              {stats?.uniqueAddresses}
+            </Box>
           )}
           <Box mt={8}>
             <Text fontSize="lg" color="orange.300">

@@ -8,12 +8,10 @@ import {
   HStack,
   VStack,
   SimpleGrid,
-  useToast,
   Tooltip,
   Link,
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
-import axios from 'axios'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
@@ -30,9 +28,9 @@ import Card from 'components/Card'
 import MintKudos from 'components/MintKudos'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useActiveWeb3React } from 'hooks'
-import { track, verifySignature, getSignature } from 'utils'
-import { GENERIC_ERROR_MESSAGE, IS_WHITELABEL } from 'constants/index'
-import { LearnIcon, QuizIcon, QuestIcon, PoapIcon } from 'components/Icons'
+import { track } from 'utils'
+import { IS_WHITELABEL } from 'constants/index'
+import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
 import { theme } from 'theme/index'
 
 // transform keywords into Tooltip
@@ -184,9 +182,6 @@ const SlideNav = styled(Box)<{ issmallscreen?: string }>`
 `
 
 const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
-  // HACK: fix bug when someone has already claimed the POAP
-  if (localStorage.getItem(`poap-${lesson.slug}`) === 'true')
-    localStorage.removeItem(`poap-${lesson.slug}`)
   const numberOfSlides = lesson.slides.length
   // HACK: when reducing the number of slides in a lesson
   if (
@@ -204,14 +199,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [, setIsClaimingPoap] = useState(false)
-  const [isPoapMinted, setIsPoapMinted] = useState(false)
-  const [poapData, setPoapData] = useState<{ code?: string; error?: string }>(
-    {}
-  )
-  const [isPoapClaimed, setIsPoapClaimed] = useState(
-    !!localStorage.getItem(`poap-${lesson.slug}`)
-  )
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
@@ -225,12 +212,11 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   const router = useRouter()
   // TODO: track embed origin
   const { embed } = router.query
-  const toast = useToast()
   const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
 
-  const { library, account } = useActiveWeb3React()
+  const { account } = useActiveWeb3React()
   const walletAddress = account
   // DEV ENV: you can force a specific wallet address here if you want to test the claiming function
   // walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb44'
@@ -257,7 +243,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
 
   const goToPrevSlide = () => {
     if (!isFirstSlide) {
-      setPoapData({})
       setCurrentSlide(currentSlide - 1)
     }
     setSelectedAnswerNumber(null)
@@ -268,8 +253,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
-      // TEMP: don't block last slide
-      // } else if (isLastSlide && isPoapClaimed) {
     } else if (isLastSlide) {
       if (lesson.endOfLessonRedirect) {
         if (lesson.endOfLessonRedirect.includes('https://tally.so/r/')) {
@@ -313,58 +296,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const signMessage = async () => {
-    const message = Date.now().toString()
-
-    try {
-      const signature = await getSignature(library, account, message)
-      const verified = verifySignature(account, signature, message)
-      if (verified) {
-        claimPoap(message, signature)
-      } else {
-        alert('wrong signature')
-      }
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
-  const claimPoap = (message: string, signature: string) => {
-    setIsClaimingPoap(true)
-    axios
-      .get(
-        `/api/claim-poap?address=${walletAddress}&poapEventId=${lesson.poapEventId}&signature=${signature}&message=${message}`
-      )
-      .then(function (res) {
-        // eslint-disable-next-line no-console
-        console.log(res.data)
-        setIsClaimingPoap(false)
-        setPoapData(
-          (res.data?.code && typeof res.data?.code === 'string') ||
-            (res.data?.error && typeof res.data?.error === 'string')
-            ? res.data
-            : {
-                error: GENERIC_ERROR_MESSAGE,
-              }
-        )
-        if (res.data?.code) {
-          setIsPoapClaimed(true)
-          localStorage.setItem(`poap-${lesson.slug}`, res.data.code)
-        }
-      })
-      .catch(function (error) {
-        console.error(error)
-        toast({
-          title: 'Something went wrong',
-          description: 'Refresh and try again ...',
-          // TODO: claim code manually + improve error handling
-          status: 'error',
-          duration: 10000,
-        })
-      })
-  }
-
   // shortcuts
   // TODO: add modal with all the shortcuts
   useHotkeys('?,shift+/', () =>
@@ -397,11 +328,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
       slide.quiz.rightAnswerNumber
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
-  // TODO: store quest verification state in local storage
-
-  const poapCode = localStorage.getItem(`poap-${lesson.slug}`) || poapData.code
-
-  // const hostname = window?.location.hostname
 
   return (
     <Slide
@@ -435,8 +361,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           {slide.type === 'LEARN' && <LearnIcon />}
           {slide.type === 'QUIZ' && <QuizIcon />}
           {slide.type === 'QUEST' && <QuestIcon />}
-          {slide.type === 'POAP' && <PoapIcon />}
-          {slide.type === 'END' && <PoapIcon />}
+          {slide.type === 'END' && <KudosIcon />}
         </Box>
         <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
           {slide.type === 'QUIZ' ? (
@@ -525,138 +450,26 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               {Quest?.questComponent}
             </VStack>
           )}
-          {slide.type === 'POAP' && (
-            <VStack flex="auto" minH="420px" justifyContent="center">
-              {walletAddress ? (
-                <>
-                  <ChakraImage
-                    src={lesson.poapImageLink}
-                    height="250px"
-                    opacity={isPoapClaimed ? 1 : 0.7}
-                    mb="2"
-                  />
-                  {poapData.error ? (
-                    <Button
-                      variant="outline"
-                      whiteSpace="break-spaces"
-                      color="red.200"
-                      mt="4"
-                      leftIcon={<Warning />}
-                    >
-                      {poapData.error}
-                    </Button>
-                  ) : (
-                    <>
-                      {!isPoapClaimed ? (
-                        // <Button
-                        //   variant="primary"
-                        //   color="white"
-                        //   onClick={signMessage}
-                        //   isLoading={isClaimingPoap}
-                        // >
-                        //   Claim POAP
-                        // </Button>
-                        // TEMP: no POAP message
-                        <Box textAlign="center">
-                          {
-                            'POAP distribution has been disabled due to farmers 👨‍🌾. We are currently working on an alternative.'
-                          }
-                          <br />
-                          {
-                            'Feel free to explore other lessons in the meantime. Thank you for your patience. 🙏'
-                          }
-                          <br />
-                          {'Follow this '}
-                          <Link
-                            href={`https://twitter.com/BanklessAcademy/status/1497225246167941124`}
-                            target="_blank"
-                          >
-                            tweet
-                          </Link>
-                          {' 👀 to stay up to date.'}
-                        </Box>
-                      ) : (
-                        <>
-                          <h2>
-                            {`Congrats on finishing our "${lesson.name}" lesson! 🥳`}
-                          </h2>
-                          {poapCode && (
-                            <>
-                              {isPoapMinted &&
-                              lesson.slug === 'intro-to-defi' ? (
-                                <>
-                                  <Button
-                                    mt="4"
-                                    onClick={() => router.push('/feedback')}
-                                  >
-                                    Feedback form
-                                  </Button>
-                                </>
-                              ) : isPoapMinted ? null : (
-                                <Box display="flex" mt="4" alignItems="center">
-                                  <Link
-                                    href={`https://app.poap.xyz/claim/${poapCode}?address=${walletAddress}`}
-                                    target="_blank"
-                                    onClick={() => setIsPoapMinted(true)}
-                                    mr="4"
-                                  >
-                                    <Button variant="primary" color="white">
-                                      Mint POAP
-                                    </Button>
-                                  </Link>
-                                  <span>
-                                    👈 don&apos;t forget to mint your POAP!
-                                  </span>
-                                </Box>
-                              )}
-                            </>
-                          )}
-                        </>
-                      )}
-                    </>
-                  )}
-                </>
-              ) : (
-                <h2>
-                  ⚠️ Connect your wallet first (&quot;Connect wallet&quot;
-                  button in the top-right corner)
-                </h2>
-              )}
-              {/* TEMP: hide POAP help */}
-              {isPoapClaimed && (
-                <h2>
-                  {'🙋‍♂️ Having trouble claiming/minting your POAP? Check out '}
-                  <Link
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://bankless.notion.site/Bankless-Academy-POAP-support-9a9e60c883ac427da14dad324731028c"
-                  >
-                    this guide
-                  </Link>
-                </h2>
-              )}
-            </VStack>
-          )}
           {slide.type === 'END' && (
             <VStack flex="auto" minH="420px" justifyContent="center">
               {IS_WHITELABEL && !walletAddress ? (
                 <>{Quest?.questComponent}</>
               ) : (
                 <>
-                  {lesson.poapImageLink && (
+                  {lesson.kudosImageLink && (
                     <>
-                      {lesson.poapImageLink.includes('.mp4') ? (
+                      {lesson.kudosImageLink.includes('.mp4') ? (
                         <Box height="250px" width="250px">
                           <video controls autoPlay loop>
                             <source
-                              src={lesson.poapImageLink}
+                              src={lesson.kudosImageLink}
                               type="video/mp4"
                             ></source>
                           </video>
                         </Box>
                       ) : (
                         <ChakraImage
-                          src={lesson.poapImageLink}
+                          src={lesson.kudosImageLink}
                           height="250px"
                           mb="2"
                         />
@@ -672,7 +485,9 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                   ) : (
                     <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   )}
-                  <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
+                  <p>
+                    {!embed && lesson.endOfLessonText && lesson.endOfLessonText}
+                  </p>
                 </>
               )}
             </VStack>
@@ -723,14 +538,28 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               </Button>
             </Tooltip>
           ) : null}
-          {!isLastSlide || lesson.endOfLessonText ? (
+          {!embed && isLastSlide && lesson.communityDiscussionLink && (
+            <Tooltip
+              hasArrow
+              label="Join other explorers to discuss this lesson."
+            >
+              <Link
+                target="_blank"
+                rel="noreferrer"
+                href={lesson.communityDiscussionLink}
+              >
+                <Button variant="outline">
+                  👨‍🚀{isSmallScreen ? '' : ' Community discussion'}
+                </Button>
+              </Link>
+            </Tooltip>
+          )}
+          {!isLastSlide || (lesson.endOfLessonText && !embed) ? (
             <Button
               ref={buttonRightRef}
               variant={isLastSlide ? 'primaryBigLast' : 'primaryBig'}
               size="lg"
               disabled={
-                // TEMP: don't block last slide
-                // (isLastSlide && !isPoapClaimed) ||
                 (slide.quiz && !answerIsCorrect) ||
                 (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
               }
@@ -741,22 +570,6 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
             </Button>
           ) : (
             <>
-              {lesson.communityDiscussionLink && (
-                <Tooltip
-                  hasArrow
-                  label="Join other explorers to discuss this lesson."
-                >
-                  <Link
-                    target="_blank"
-                    rel="noreferrer"
-                    href={lesson.communityDiscussionLink}
-                  >
-                    <Button variant="outline">
-                      👨‍🚀{isSmallScreen ? '' : ' Community discussion'}
-                    </Button>
-                  </Link>
-                </Tooltip>
-              )}
               {embed ? null : (
                 <NextLink href={IS_WHITELABEL ? `/` : `/lessons`}>
                   <Button
