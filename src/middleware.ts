@@ -7,11 +7,12 @@ import type { NextRequest } from 'next/server'
 export function middleware(request: NextRequest): NextResponse {
   const ipAddress = request.ip || 'local'
   // Detect and redirect bots
-  const { isBot } = userAgent(request)
+  const ua = userAgent(request)
   console.log('url', request.url)
-  console.log('isBot', isBot)
-  if (request.url.includes('/api/passport') && !isBot) {
-    return NextResponse.redirect(new URL('/maintenance', request.url))
+  console.log('userAgent', ua)
+  if (ua.isBot) {
+    if (request.url.includes('/api/passport')) return NextResponse.next()
+    else return NextResponse.redirect(new URL('/maintenance', request.url))
   }
   // disable API calls if maintenance in progress
   if (
