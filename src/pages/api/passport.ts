@@ -26,6 +26,16 @@ export default async function handler(
   if (!(userId && Number.isInteger(userId)))
     return res.json({ error: 'userId not found' })
 
+  const [user] = await db(TABLES.users)
+    .select('sybil_user_id')
+    .where('address', 'ilike', `%${address}%`)
+  const isBot =
+    req.headers['user-agent'].includes('python') ||
+    req.headers['user-agent'].includes('curl') ||
+    user?.sybil_user_id ||
+    false
+  console.log('isBot', isBot)
+
   // TODO: make this dynamic
   type SybilCheckTypes = 'GITCOIN_PASSPORT' | '35kBANK'
   const SYBIL_CHECK: SybilCheckTypes = 'GITCOIN_PASSPORT'
@@ -40,6 +50,9 @@ export default async function handler(
       // console.log('validStamps', validStamps)
       const stampHashes = {}
       const stampProviders = {}
+      const stampHashesSearch = []
+      let whereCondition = 'gitcoin_stamps @> ?'
+      let sybil = []
       if (passport?.stamps?.length) {
         for (const stamp of passport?.stamps) {
           stampHashes[stamp.provider] = stamp.credential.credentialSubject.hash
@@ -55,37 +68,40 @@ export default async function handler(
         )
         // console.log('updated', updated)
         if (updated) console.log('stamps updated:', updated?.rowCount)
-        const stampHashesSearch = []
-        let whereCondition = 'gitcoin_stamps @> ?'
         Object.keys(stampHashes).map((key, index) => {
           const stampHash = {}
           stampHash[key] = stampHashes[key]
           stampHashesSearch.push(stampHash)
           if (index > 0) whereCondition += ' OR gitcoin_stamps @> ?'
         })
-        // console.log('stampHashesSearch', stampHashesSearch)
-        // check whether a stamp hash has already been registered by another user (duplicate stamp detection)
-        const sybil = await db(TABLES.users)
+        sybil = await db(TABLES.users)
           .select('id', 'address')
           .whereNot(TABLE.users.id, userId)
           .whereNull(TABLE.users.sybil_user_id)
           // query for json instead of jsonb: .where(db.raw('gitcoin_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
           .where(db.raw(`(${whereCondition})`, stampHashesSearch))
         console.log('sybil', sybil)
-        if (sybil?.length) {
-          // mark this user as a sybil attacker
-          console.log('fraud detected', sybil)
-          await db(TABLES.users)
-            .where(TABLE.users.id, userId)
-            .update({ sybil_user_id: sybil[0]?.id })
-          return res.json({
-            verified: false,
-            requirement,
-            fraud: sybil[0]?.address,
-            validStampsCount: validStamps?.length,
-            stamps: stampProviders,
-          })
+      }
+      if (isBot) {
+        // HACK: bot
+        sybil[0] = {
+          id: 12,
+          address: '0x0000000000000000000000000000000000000000',
         }
+      }
+      if (sybil?.length) {
+        // mark this user as a sybil attacker
+        console.log('fraud detected', sybil)
+        await db(TABLES.users)
+          .where(TABLE.users.id, userId)
+          .update({ sybil_user_id: sybil[0]?.id })
+        return res.json({
+          verified: false,
+          requirement,
+          fraud: sybil[0]?.address,
+          validStampsCount: validStamps?.length,
+          stamps: stampProviders,
+        })
       }
       if (validStamps?.length >= NUMBER_OF_STAMP_REQUIRED) {
         console.log('verified:', validStamps?.length)
