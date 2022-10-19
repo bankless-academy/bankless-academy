@@ -42,7 +42,11 @@ const Stats = (): JSX.Element => {
               <Text fontSize="lg" color="orange.300">
                 Number of unique addresses connected to the app
               </Text>
-              {stats?.uniqueAddresses} ({stats?.uniqueSybils} 👨‍🌾)
+              {stats?.uniqueAddresses} 👨‍🚀
+              <br />
+              {stats?.sybils} 👨‍🌾
+              <br />
+              {stats?.bots} 🤖
             </Box>
           )}
           <Box mt={8}>

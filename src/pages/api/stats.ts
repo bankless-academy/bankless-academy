@@ -14,7 +14,8 @@ export default async function handler(
 ): Promise<void> {
   const stats = {
     uniqueAddresses: {},
-    uniqueSybils: {},
+    bots: {},
+    sybils: {},
     lessonCompleted: {},
     monthyCompletion: {},
   }
@@ -23,10 +24,15 @@ export default async function handler(
       .whereNull(TABLE.users.sybil_user_id)
       .count('id')
     stats.uniqueAddresses = uniqueAddresses.count
-    const [uniqueSybils] = await db(TABLES.users)
-      .whereNotNull(TABLE.users.sybil_user_id)
+    const [bots] = await db(TABLES.users)
+      .where(TABLE.users.sybil_user_id, '12')
       .count('id')
-    stats.uniqueSybils = uniqueSybils.count
+    stats.bots = bots.count
+    const [sybils] = await db(TABLES.users)
+      .whereNotNull(TABLE.users.sybil_user_id)
+      .andWhereNot(TABLE.users.sybil_user_id, '12')
+      .count('id')
+    stats.sybils = sybils.count
 
     const credentials = await db
       .select('id', 'notion_id')
