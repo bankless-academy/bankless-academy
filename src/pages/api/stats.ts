@@ -14,12 +14,19 @@ export default async function handler(
 ): Promise<void> {
   const stats = {
     uniqueAddresses: {},
+    uniqueSybils: {},
     lessonCompleted: {},
     monthyCompletion: {},
   }
   try {
-    const [uniqueAddresses] = await db(TABLES.users).count('id')
+    const [uniqueAddresses] = await db(TABLES.users)
+      .whereNull(TABLE.users.sybil_user_id)
+      .count('id')
     stats.uniqueAddresses = uniqueAddresses.count
+    const [uniqueSybils] = await db(TABLES.users)
+      .whereNotNull(TABLE.users.sybil_user_id)
+      .count('id')
+    stats.uniqueSybils = uniqueSybils.count
 
     const credentials = await db
       .select('id', 'notion_id')
