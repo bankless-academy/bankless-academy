@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Spinner, Box } from '@chakra-ui/react'
-import { Checks } from 'phosphor-react'
+import { Check } from 'phosphor-react'
 import { useMediaQuery } from '@chakra-ui/react'
 
 const WalletBasics = (
@@ -35,7 +35,7 @@ const WalletBasics = (
             </p>
             <Button
               variant="outlined"
-              leftIcon={account ? <Checks /> : <Spinner speed="1s" />}
+              leftIcon={account ? <Check /> : <Spinner speed="1s" />}
               color={account ? 'rgb(68, 169, 145)' : 'orange'}
               cursor="default"
               boxShadow="none !important"
