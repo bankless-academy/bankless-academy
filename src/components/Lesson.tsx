@@ -18,7 +18,7 @@ import { useRouter } from 'next/router'
 import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
 import { useMediaQuery } from '@chakra-ui/react'
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
-import { Warning, Checks } from 'phosphor-react'
+import { Warning, Check } from 'phosphor-react'
 // import { isMobile } from 'react-device-detect'
 import { useLocalStorage } from 'usehooks-ts'
 
@@ -215,6 +215,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
+  const isBeforeLastSlide = currentSlide + 2 === numberOfSlides
 
   const { account } = useActiveWeb3React()
   const walletAddress = account
@@ -427,7 +428,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                             textAlign="left"
                             rightIcon={
                               answerState === 'CORRECT' ? (
-                                <Checks weight="bold" color="white" />
+                                <Check weight="bold" color="white" />
                               ) : (
                                 answerState === 'WRONG' && (
                                   <Warning weight="bold" color="white" />
@@ -557,7 +558,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
           {!isLastSlide || (lesson.endOfLessonText && !embed) ? (
             <Button
               ref={buttonRightRef}
-              variant={isLastSlide ? 'primaryBigLast' : 'primaryBig'}
+              variant={isBeforeLastSlide ? 'primaryBigLast' : 'primaryBig'}
               size="lg"
               disabled={
                 (slide.quiz && !answerIsCorrect) ||
