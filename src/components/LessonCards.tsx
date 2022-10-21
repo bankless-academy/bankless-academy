@@ -116,7 +116,7 @@ const LessonCards: React.FC = () => {
               <NextLink href={`/lessons/${lesson.slug}`}>
                 <Button variant={isKudosMinted ? 'secondary' : 'primary'}>
                   {isKudosMinted
-                    ? 'Review Lesson'
+                    ? 'Retake Lesson'
                     : isLessonStarted
                     ? 'Resume Lesson'
                     : 'Start Lesson'}

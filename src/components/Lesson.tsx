@@ -567,7 +567,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               onClick={goToNextSlide}
               rightIcon={<ArrowForwardIcon />}
             >
-              Next
+              {isBeforeLastSlide ? 'Finish' : 'Next'}
             </Button>
           ) : (
             <>
