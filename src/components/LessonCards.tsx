@@ -14,6 +14,7 @@ import styled from '@emotion/styled'
 import axios from 'axios'
 import { CircleWavyCheck } from 'phosphor-react'
 import { useRouter } from 'next/router'
+import { useLocalStorage } from 'usehooks-ts'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import LessonBanner from 'components/LessonBanner'
@@ -34,6 +35,7 @@ const LessonCards: React.FC = () => {
   const { all, slug } = router.query
 
   const [stats, setStats]: any = useState(null)
+  const [kudosMintedLS] = useLocalStorage('kudosMinted', [])
 
   const moduleId = MODULES.find((m) => m.slug === slug)?.moduleId
 
@@ -67,9 +69,7 @@ const LessonCards: React.FC = () => {
         // lesson not started yet: -1
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
         // const numberOfSlides = lesson.slides.length
-        const isKudosMinted = localStorage.getItem(
-          `isKudosMinted-${lesson.kudosId}`
-        )
+        const isKudosMinted = kudosMintedLS.includes(lesson.kudosId)
         const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
         const lessonCompleted =
           (lesson.quest &&
