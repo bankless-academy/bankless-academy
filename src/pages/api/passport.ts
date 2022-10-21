@@ -41,6 +41,14 @@ export default async function handler(
   const SYBIL_CHECK: SybilCheckTypes = 'GITCOIN_PASSPORT'
 
   const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
+
+  // TEST: bypass passport check
+  // return res.json({
+  //   verified: true,
+  //   requirement,
+  //   validStampsCount: 2,
+  // })
+
   if (SYBIL_CHECK === 'GITCOIN_PASSPORT') {
     try {
       // read passport
