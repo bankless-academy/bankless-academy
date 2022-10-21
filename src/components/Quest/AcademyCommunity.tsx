@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Box, VStack, Button, Spinner, Link } from '@chakra-ui/react'
 import { useMediaQuery } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
 import { CheckIcon } from '@chakra-ui/icons'
 import axios from 'axios'
+
+import { theme } from 'theme/index'
 
 const AcademyCommunity = (
   account: string
@@ -11,8 +12,6 @@ const AcademyCommunity = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  const router = useRouter()
-
   const [hasUserJoinedGM, setHasUserJoinedGM] = useState(false)
   const [hasUserJoinedBA, setHasUserJoinedBA] = useState(false)
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
@@ -65,7 +64,7 @@ const AcademyCommunity = (
                   cursor="default"
                   rightIcon={
                     account ? (
-                      <CheckIcon color="green.500" />
+                      <CheckIcon color={theme.colors.correct} />
                     ) : (
                       <Spinner speed="1s" />
                     )
@@ -77,7 +76,7 @@ const AcademyCommunity = (
                   cursor="default"
                   rightIcon={
                     hasUserJoinedGM ? (
-                      <CheckIcon color="green.500" />
+                      <CheckIcon color={theme.colors.correct} />
                     ) : (
                       <Spinner speed="1s" />
                     )
@@ -96,7 +95,7 @@ const AcademyCommunity = (
                   cursor="default"
                   rightIcon={
                     hasUserJoinedBA ? (
-                      <CheckIcon color="green.500" />
+                      <CheckIcon color={theme.colors.correct} />
                     ) : (
                       <Spinner speed="1s" />
                     )
@@ -114,12 +113,6 @@ const AcademyCommunity = (
               </VStack>
               {!isQuestCompleted && (
                 <Box mt="16" textAlign="center">
-                  <Button
-                    onClick={() => router.push('/lessons')}
-                    variant="outline"
-                  >
-                    Skip quest
-                  </Button>
                   <Button
                     colorScheme={
                       hasUserJoinedGM && hasUserJoinedBA ? 'green' : 'red'

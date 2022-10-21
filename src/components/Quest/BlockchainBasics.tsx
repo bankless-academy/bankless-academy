@@ -9,6 +9,8 @@ import {
 import { useMediaQuery } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 
+import { theme } from 'theme/index'
+
 const BlockchainBasics = (): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
@@ -82,9 +84,9 @@ const BlockchainBasics = (): {
                 />
                 <InputRightElement>
                   {isFromCorrect ? (
-                    <CheckIcon color="green.500" />
+                    <CheckIcon color={theme.colors.correct} />
                   ) : (
-                    from !== '' && <CloseIcon color="red.500" />
+                    from !== '' && <CloseIcon color={theme.colors.incorrect} />
                   )}
                 </InputRightElement>
               </InputGroup>
@@ -105,9 +107,9 @@ const BlockchainBasics = (): {
                 />
                 <InputRightElement>
                   {isToCorrect ? (
-                    <CheckIcon color="green.500" />
+                    <CheckIcon color={theme.colors.correct} />
                   ) : (
-                    to !== '' && <CloseIcon color="red.500" />
+                    to !== '' && <CloseIcon color={theme.colors.incorrect} />
                   )}
                 </InputRightElement>
               </InputGroup>

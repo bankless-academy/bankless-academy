@@ -17,8 +17,8 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
 import { useMediaQuery } from '@chakra-ui/react'
-import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons'
-import { Warning, Check } from 'phosphor-react'
+import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
+import { Warning } from 'phosphor-react'
 // import { isMobile } from 'react-device-detect'
 import { useLocalStorage } from 'usehooks-ts'
 
@@ -428,7 +428,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                             textAlign="left"
                             rightIcon={
                               answerState === 'CORRECT' ? (
-                                <Check weight="bold" color="white" />
+                                <CheckIcon color="white" />
                               ) : (
                                 answerState === 'WRONG' && (
                                   <Warning weight="bold" color="white" />
