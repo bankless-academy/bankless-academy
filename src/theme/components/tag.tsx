@@ -5,14 +5,16 @@ export default {
       solid: {
         container: {
           background:
-            'linear-gradient(95.83deg, #44A991 -9.2%, rgba(127, 84, 247, 0.7) 97.91%)',
+            'linear-gradient(95.83deg, #FBBA59 -9.2%, #BF8260 97.91%)',
           boxShadow: '0px 0px 50px #000000',
           backdropFilter: 'blur(42px)',
           color: '#000000',
+          padding: '7px 12px',
         },
       },
       outline: {
         container: {
+          padding: '7px 12px',
           _before: {
             background:
               'linear-gradient(104.42deg, #B06FD8 35.33%, rgba(89, 122, 238, 0.7) 93.21%)',

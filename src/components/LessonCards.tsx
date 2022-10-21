@@ -18,6 +18,7 @@ import { useRouter } from 'next/router'
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import LessonBanner from 'components/LessonBanner'
 import MODULES from 'constants/whitelabel_modules'
+import { IS_DEBUG } from 'utils/index'
 
 const LessonCard = styled(Box)`
   /* background: linear-gradient(
@@ -48,14 +49,16 @@ const LessonCards: React.FC = () => {
       : LESSONS.filter((lesson) => lesson.publicationStatus === 'publish')
 
   useEffect(() => {
-    axios
-      .get(`/api/stats`)
-      .then(function (res) {
-        setStats(res.data)
-      })
-      .catch(function (error) {
-        console.error(error)
-      })
+    if (IS_DEBUG) {
+      axios
+        .get(`/api/stats`)
+        .then(function (res) {
+          setStats(res.data)
+        })
+        .catch(function (error) {
+          console.error(error)
+        })
+    }
   }, [])
 
   return (
@@ -86,13 +89,13 @@ const LessonCards: React.FC = () => {
             </Text>
             <Text fontSize="lg">{lesson.description}</Text>
             <Box display="flex" justifyContent="space-between" my="4">
-              <Tag size="sm" variant={isKudosMinted ? 'solid' : 'outline'}>
+              <Tag size="md" variant={isKudosMinted ? 'solid' : 'outline'}>
                 {isKudosMinted ? 'Done' : `${lesson.duration} minutes`}
                 {isKudosMinted ? (
                   <TagRightIcon as={CircleWavyCheck} weight="bold" />
                 ) : null}
               </Tag>
-              <Text fontSize="sm">
+              <Text fontSize="md">
                 {lessonCompleted > 0 && `${lessonCompleted} Completions`}
               </Text>
             </Box>
