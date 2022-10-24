@@ -23,8 +23,10 @@ const FeaturedLessons: React.FC = () => {
         Featured Lessons
       </Heading>
       <Box>
-        {LESSONS.filter((lesson) => lesson.isFeaturedOnHomepage).map(
-          (lesson, key) => {
+        {[...LESSONS]
+          .reverse()
+          .filter((lesson) => lesson.isFeaturedOnHomepage)
+          .map((lesson, key) => {
             const isKudosMinted = localStorage.getItem(
               `isKudosMinted-${lesson.kudosId}`
             )
@@ -84,8 +86,7 @@ const FeaturedLessons: React.FC = () => {
                 )}
               </LessonGrid>
             )
-          }
-        )}
+          })}
       </Box>
     </Box>
   )
