@@ -10,6 +10,13 @@ import {
   Center,
   useMediaQuery,
   Link,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import NextLink from 'next/link'
@@ -45,9 +52,44 @@ const Card = styled(Box)`
   display: flex;
   flex-direction: column;
 `
+const NewsletterButton = styled(Button)`
+  :hover {
+    padding: 0 23px;
+  }
+`
 
 const HomePage = (): JSX.Element => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const NewsletterModal = (
+    <Modal onClose={onClose} size={'xl'} isOpen={isOpen}>
+      <ModalOverlay />
+      <ModalContent bg="linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)">
+        <ModalHeader>Newsletter</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          <Box
+            display="flex"
+            flexShrink="initial"
+            justifyContent="center"
+            p="8"
+            borderRadius="lg"
+            width="100%"
+          >
+            <iframe
+              height="320px"
+              width="320px"
+              style={{ maxWidth: '100%' }}
+              scrolling="yes"
+              src="https://cdn.forms-content.sg-form.com/21588aac-6045-11ed-a92e-a663f73c8296"
+            ></iframe>
+          </Box>
+        </ModalBody>
+      </ModalContent>
+    </Modal>
+  )
+
   if (IS_WHITELABEL) return <WhitelabelHomepage />
   else
     return (
@@ -152,6 +194,23 @@ const HomePage = (): JSX.Element => {
                 </Card>
               </SimpleGrid>
             </Box>
+            <Box
+              border="1px solid #989898"
+              py="8"
+              px="6"
+              mb="8"
+              borderRadius="lg"
+            >
+              <Text fontSize="2xl">
+                {`Sign up for our `}
+                <NewsletterButton variant="primary" size="lg" onClick={onOpen}>
+                  Newsletter
+                </NewsletterButton>
+                {` to be notified of new lessons and platform
+              updates!`}
+              </Text>
+            </Box>
+            {NewsletterModal}
             <FeaturedLessons />
             <>
               <Box mt="16">
@@ -228,43 +287,16 @@ const HomePage = (): JSX.Element => {
                     </Box>
                   </Box>
                 </Box>
-                <Box>
-                  <Heading as="h2" size="xl" mt="16" mb="8">
-                    Newsletter
-                  </Heading>
-                  <Box
-                    display={isSmallScreen ? 'block' : 'flex'}
-                    style={{ gap: '24px' }}
-                  >
-                    <Box
-                      display="flex"
-                      flexShrink="initial"
-                      justifyContent="center"
-                      bgColor="white"
-                      p="8"
-                      borderRadius="10"
-                      bg="linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)"
-                    >
-                      <iframe
-                        height="105px"
-                        style={{ maxWidth: '350px' }}
-                        scrolling="no"
-                        src="https://tally.so/embed/mVVz6m?hideTitle=1&alignLeft=1&transparentBackground=1"
-                      ></iframe>
-                    </Box>
-                    <Box flexGrow="initial" display="flex" alignItems="center">
-                      <Heading as="h2" size="md" mt="8">
-                        Sign up to receive emails when we release new lessons,
-                        project updates and exclusive alpha!
-                      </Heading>
-                    </Box>
-                  </Box>
-                </Box>
               </Box>
               <Box my="16">
                 <Heading as="h2" size="xl" mt="16" mb="8">
                   Work With Us!
                 </Heading>
+                <Text fontSize="2xl" mb="8">
+                  From reviewing lessons to partnering with our platform, there
+                  are plenty of options for collaborating with the Academy
+                  Squad.
+                </Text>
                 <SimpleGrid
                   columns={{ sm: 1, md: 2, lg: 3 }}
                   gap={6}
