@@ -463,8 +463,9 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                         <Box
                           height="250px"
                           width="250px"
-                          borderRadius="10px"
+                          borderRadius="30px"
                           overflow="hidden"
+                          border="2px solid #4b474b"
                         >
                           <video autoPlay loop playsInline muted>
                             <source
