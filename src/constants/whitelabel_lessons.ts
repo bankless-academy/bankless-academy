@@ -2,17 +2,16 @@ import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = [
   {
-    poapImageLink: '/BanklessDAO/lesson/banklessdao-constitution/poap-d7ffe519.png',
+    kudosImageLink: '/BanklessDAO/lesson/banklessdao-constitution/kudos-4c7e3f7a.mp4',
     lessonImageLink: '/BanklessDAO/lesson/banklessdao-constitution/lesson-f5d723aa.jpg',
     socialImageLink: '/BanklessDAO/lesson/banklessdao-constitution/social-ecc89771.jpg',
     learningActions: '',
-    marketingDescription: 'Understand the BanklessDAO constitution.',
-    poapEventId: null,
+    marketingDescription: 'BanklessDAO Constitution and Community Handbook.',
     kudosId: null,
     duration: 20,
     learnings: '',
     difficulty: undefined,
-    description: 'Understand the BanklessDAO constitution.',
+    description: 'BanklessDAO Constitution and Community Handbook.',
     name: 'BanklessDAO Constitution',
     moduleId: 'fe8c38b6b1244b84ae8d185c9a8587b7',
     quest: 'BanklessDAOBanklessDAOConstitution',
@@ -24,9 +23,9 @@ const LESSONS: LessonType[] = [
     notionId: '4a1a397dd4144022932f889d6a16786c',
     slug: 'banklessdao-constitution',
     imageLinks: [
-      '/BanklessDAO/lesson/banklessdao-constitution/introduction-14d348c3.svg',
-      '/BanklessDAO/lesson/banklessdao-constitution/the-genesis-37faf635.svg',
-      '/BanklessDAO/lesson/banklessdao-constitution/the-bankless-movement-51265553.svg',
+      '/BanklessDAO/lesson/banklessdao-constitution/introduction-88a240c0.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/the-genesis-62a4642c.png',
+      '/BanklessDAO/lesson/banklessdao-constitution/the-bankless-movement-1a235439.png',
       '/BanklessDAO/lesson/banklessdao-constitution/banklessdao-1d629c84.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/mission-and-vision-c51d6938.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/values-bc616387.svg',
@@ -48,28 +47,28 @@ const LESSONS: LessonType[] = [
       '/BanklessDAO/lesson/banklessdao-constitution/stage-1-gauge-support-2267ed1b.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/stage-2-draft-proposal-54a4deb4.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/stage-3-vote-e622966e.svg',
-      '/BanklessDAO/lesson/banklessdao-constitution/funding-096b8822.svg',
+      '/BanklessDAO/lesson/banklessdao-constitution/funding-3fecfa12.png',
       '/BanklessDAO/lesson/banklessdao-constitution/intrateam-compensation-e843965d.svg',
-      '/BanklessDAO/lesson/banklessdao-constitution/code-of-conduct-caf85e59.svg'
+      '/BanklessDAO/lesson/banklessdao-constitution/code-of-conduct-ccd4f519.png'
     ],
     slides: [
       {
         type: 'LEARN',
         notionId: 'f105296784134279a3d90697b6c0ace2',
         title: 'Introduction',
-        content: '<div class="bloc1"><p>The BanklessDAO Constitution and Community Handbook captures our community\'s values, mission, structure, processes, and governance. It is the codification of our community operating system, meant to serve rather than constrain its members. Just like our community, it will always be a work in progress. This lesson is a summary of that Handbook. Please refer to the Handbook as the canonical source to answer questions of process and procedure.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/introduction-14d348c3.svg\'></div>'
+        content: '<div class="bloc1"><p>The BanklessDAO <a href=\'https://github.com/BanklessDAO/bankless-dao-constitution\'>Constitution and Community Handbook</a> captures our community\'s values, mission, structure, processes, and governance. It is the codification of our community operating system, meant to serve rather than constrain its members. Just like our community, it will always be a work in progress. This lesson is a summary of that Handbook. Please refer to the Handbook as the canonical source to answer questions of process and procedure.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/introduction-88a240c0.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '110f75fb1df24b96b6f91758515ec899',
         title: 'The Genesis',
-        content: '<div class="bloc1"><p>BanklessDAO was founded by David Hoffman and Ryan Sean Adams on May 4, 2021, when they airdropped BANK tokens to each Bankless newsletter premium subscriber (see <a href=\'https://snapshot.org/#/banklessvault.eth/proposal/QmdoixPMMT76vSt6ewkE87JZJywS1piYsGC3nJJpcrPXKS\'>The Genesis Proposal</a>). Following the true ethos of decentralization, they stepped back and let the DAO take shape. While their media company, Bankless LLC, continues to operate as its own media node, the Bankless brand is further propagated through the DAO and its sub-DAOs. Today, the Bankless ecosystem creates user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/the-genesis-37faf635.svg\'></div>'
+        content: '<div class="bloc1"><p>BanklessDAO was founded by David Hoffman and Ryan Sean Adams on May 4, 2021, when they airdropped BANK tokens to each Bankless newsletter premium subscriber (see <a href=\'https://snapshot.org/#/banklessvault.eth/proposal/QmdoixPMMT76vSt6ewkE87JZJywS1piYsGC3nJJpcrPXKS\'>The Genesis Proposal</a>). Following the true ethos of decentralization, they stepped back and let the DAO take shape. While their media company, Bankless LLC, continues to operate as its own media node, the Bankless brand is further propagated through the DAO and its sub-DAOs. Today, the Bankless ecosystem creates user-friendly onramps for people to discover decentralized financial technologies through education, media, and culture.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/the-genesis-62a4642c.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '9669e4350d404026b190a327308c62bf',
         title: 'The Bankless Movement',
-        content: '<div class="bloc1"><p>Bankless is a movement for pioneers seeking liberation from the tyranny of the traditional financial system. Going Bankless means adopting decentralized, permissionless, and censorship-resistant technology to enable financial self-sovereignty, security, and prosperity.</p><p>We seek new ways to build wealth, solve human coordination problems, create culture, and develop cutting-edge thought leadership in the crypto space. Going Bankless means taking control of your financial health by adopting decentralized and permissionless money systems.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/the-bankless-movement-51265553.svg\'></div>'
+        content: '<div class="bloc1"><p>Bankless is a movement for pioneers seeking liberation from the tyranny of the traditional financial system. Going Bankless means adopting decentralized, permissionless, and censorship-resistant technology to enable financial self-sovereignty, security, and prosperity.</p><p>We seek new ways to build wealth, solve human coordination problems, create culture, and develop cutting-edge thought leadership in the crypto space. Going Bankless means taking control of your financial health by adopting decentralized and permissionless money systems.</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/the-bankless-movement-1a235439.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -261,7 +260,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'c7527607748046fb89596e58a2424cd6',
         title: '<strong>Funding</strong>',
-        content: '<div class="bloc1"><p>Funds are released from the treasury in one of three ways: </p><ol><li>Seasonal Budgets: Previously funded guilds and projects submit funding proposals each season. Following an opportunity for feedback, they collectively go to Snapshot for DAO-wide approval. If this budget is approved, the DAO multi-signers will issue disbursements in accordance with the specified budget.</li><li>Mid-season grants: Groups seeking funding over the course of a season will be directed to the Grants Committee upon successfully passing their Forum proposal. The Grants Committee is responsible for evaluating these requests.</li><li>Coordinape: BanklessDAO runs a monthly Coordinape for Guest Pass holders, L1s, and L2s to reward the community for continued growth and engagement. Just fill out a coordinape-request-form prior to the start of each round using the bot-commands channel on Discord and you will be eligible to allocate GIVE tokens to your peers using the <a href=\'https://app.coordinape.com/\'>Coordinape app</a> after the signup period ends and the allocation period starts.</li></ol></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/funding-096b8822.svg\'></div>'
+        content: '<div class="bloc1"><p>Funds are released from the treasury in one of three ways: </p><ol><li>Seasonal Budgets: Previously funded guilds and projects submit funding proposals each season. Following an opportunity for feedback, they collectively go to Snapshot for DAO-wide approval. If this budget is approved, the DAO multi-signers will issue disbursements in accordance with the specified budget.</li><li>Mid-season grants: Groups seeking funding over the course of a season will be directed to the Grants Committee upon successfully passing their Forum proposal. The Grants Committee is responsible for evaluating these requests.</li><li>Coordinape: BanklessDAO runs a monthly Coordinape for Guest Pass holders, L1s, and L2s to reward the community for continued growth and engagement. Just fill out a coordinape-request-form prior to the start of each round using the bot-commands channel on Discord and you will be eligible to allocate GIVE tokens to your peers using the <a href=\'https://app.coordinape.com/\'>Coordinape app</a> after the signup period ends and the allocation period starts.</li></ol></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/funding-3fecfa12.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -289,7 +288,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '974a52ba581e4a74a1396a937969b016',
         title: '<strong>Code of Conduct</strong>',
-        content: '<div class="bloc1"><p>Every BanklessDAO community member is expected to and responsible for treating others with respect and dignity. We are a globally distributed community representing numerous cultures, languages, and time zones. It\'s our highest priority to be the most welcoming and inviting onboarding experience for Web3. To this end, we encourage any conflict to be addressed between involved persons. If this does not resolve the matter, we encourage Project Champions or Guild Coordinators to help resolve the conflict. If this doesn\'t resolve the matter, parties are encouraged to approach the Ombuds office to help resolve the dispute. Our unity and internal cohesion are essential to accomplishing our massive mission. bDAO Strong!!</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/code-of-conduct-caf85e59.svg\'></div>'
+        content: '<div class="bloc1"><p>Every BanklessDAO community member is expected to and responsible for treating others with respect and dignity. We are a globally distributed community representing numerous cultures, languages, and time zones. It\'s our highest priority to be the most welcoming and inviting onboarding experience for Web3. To this end, we encourage any conflict to be addressed between involved persons. If this does not resolve the matter, we encourage Project Champions or Guild Coordinators to help resolve the conflict. If this doesn\'t resolve the matter, parties are encouraged to approach the Ombuds office to help resolve the dispute. Our unity and internal cohesion are essential to accomplishing our massive mission. bDAO Strong!!</p></div><div class="bloc2"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/code-of-conduct-ccd4f519.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -314,17 +313,16 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    poapImageLink: '/BanklessDAO/lesson/tokenomics-basics/poap-966021c6.png',
+    kudosImageLink: '/BanklessDAO/lesson/tokenomics-basics/kudos-966021c6.png',
     lessonImageLink: '/BanklessDAO/lesson/tokenomics-basics/lesson-361b0f94.png',
     socialImageLink: '/BanklessDAO/lesson/tokenomics-basics/social-0cb57795.png',
     learningActions: '',
-    marketingDescription: 'Understand the basics of tokenomics',
-    poapEventId: null,
+    marketingDescription: 'Understand the basics of tokenomics.',
     kudosId: null,
     duration: 10,
     learnings: '',
     difficulty: undefined,
-    description: 'Understand the basics of tokenomics',
+    description: 'Understand the basics of tokenomics.',
     name: 'Tokenomics Basics',
     moduleId: '27f282f5127e43729aaf1b34da16e9a6',
     quest: 'BanklessDAOTokenomicsBasics',
