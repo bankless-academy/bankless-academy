@@ -58,6 +58,7 @@ const MintKudos = ({
     'passport',
     EMPTY_PASSPORT
   )
+  const [, setRefreshKudosLS] = useLocalStorage('refreshKudos', false)
 
   const { account, library, chainId } = useActiveWeb3React()
   const toast = useToast()
@@ -188,6 +189,7 @@ const MintKudos = ({
       console.log(result.data)
       if (result.data.location) {
         await followOperation(result.data.location)
+        setRefreshKudosLS(true)
         setIsKudosMintedLS(true)
         toast.closeAll()
         // TODO: add 🎊

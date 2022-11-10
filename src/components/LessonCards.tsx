@@ -14,10 +14,12 @@ import styled from '@emotion/styled'
 import axios from 'axios'
 import { CircleWavyCheck } from 'phosphor-react'
 import { useRouter } from 'next/router'
+import { useLocalStorage } from 'usehooks-ts'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import LessonBanner from 'components/LessonBanner'
 import MODULES from 'constants/whitelabel_modules'
+import { IS_DEBUG } from 'utils/index'
 
 const LessonCard = styled(Box)`
   /* background: linear-gradient(
@@ -33,6 +35,7 @@ const LessonCards: React.FC = () => {
   const { all, slug } = router.query
 
   const [stats, setStats]: any = useState(null)
+  const [kudosMintedLS] = useLocalStorage('kudosMinted', [])
 
   const moduleId = MODULES.find((m) => m.slug === slug)?.moduleId
 
@@ -48,14 +51,16 @@ const LessonCards: React.FC = () => {
       : LESSONS.filter((lesson) => lesson.publicationStatus === 'publish')
 
   useEffect(() => {
-    axios
-      .get(`/api/stats`)
-      .then(function (res) {
-        setStats(res.data)
-      })
-      .catch(function (error) {
-        console.error(error)
-      })
+    if (IS_DEBUG) {
+      axios
+        .get(`/api/stats`)
+        .then(function (res) {
+          setStats(res.data)
+        })
+        .catch(function (error) {
+          console.error(error)
+        })
+    }
   }, [])
 
   return (
@@ -64,9 +69,7 @@ const LessonCards: React.FC = () => {
         // lesson not started yet: -1
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
         // const numberOfSlides = lesson.slides.length
-        const isKudosMinted = localStorage.getItem(
-          `isKudosMinted-${lesson.kudosId}`
-        )
+        const isKudosMinted = kudosMintedLS.includes(lesson.kudosId)
         const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
         const lessonCompleted =
           (lesson.quest &&
@@ -86,13 +89,13 @@ const LessonCards: React.FC = () => {
             </Text>
             <Text fontSize="lg">{lesson.description}</Text>
             <Box display="flex" justifyContent="space-between" my="4">
-              <Tag size="sm" variant={isKudosMinted ? 'solid' : 'outline'}>
+              <Tag size="md" variant={isKudosMinted ? 'solid' : 'outline'}>
                 {isKudosMinted ? 'Done' : `${lesson.duration} minutes`}
                 {isKudosMinted ? (
                   <TagRightIcon as={CircleWavyCheck} weight="bold" />
                 ) : null}
               </Tag>
-              <Text fontSize="sm">
+              <Text fontSize="md">
                 {lessonCompleted > 0 && `${lessonCompleted} Completions`}
               </Text>
             </Box>
@@ -113,7 +116,7 @@ const LessonCards: React.FC = () => {
               <NextLink href={`/lessons/${lesson.slug}`}>
                 <Button variant={isKudosMinted ? 'secondary' : 'primary'}>
                   {isKudosMinted
-                    ? 'Review Lesson'
+                    ? 'Retake Lesson'
                     : isLessonStarted
                     ? 'Resume Lesson'
                     : 'Start Lesson'}

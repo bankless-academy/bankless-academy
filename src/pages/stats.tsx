@@ -42,7 +42,11 @@ const Stats = (): JSX.Element => {
               <Text fontSize="lg" color="orange.300">
                 Number of unique addresses connected to the app
               </Text>
-              {stats?.uniqueAddresses}
+              {`${stats?.uniqueAddresses} 👨‍🚀 | ${stats?.uniqueAddresses7days} 'week | ${stats?.uniqueAddresses1day} 'day`}
+              <br />
+              {`${stats?.sybils} 👨‍🌾 | ${stats?.sybils7days} 'week | ${stats?.sybils1day} 'day`}
+              <br />
+              {`${stats?.bots} 🤖 | ${stats?.bots7days} 'week | ${stats?.bots1day} 'day`}
             </Box>
           )}
           <Box mt={8}>
@@ -78,7 +82,9 @@ const Stats = (): JSX.Element => {
             <Text fontSize="lg" color="orange.300">
               Total lesson completion
             </Text>
-            <p>{totalLessonCompletion}</p>
+            <p>
+              {`${totalLessonCompletion} | ${stats?.lessonCompleted7days} 'week | ${stats?.lessonCompleted1day} 'day`}
+            </p>
           </Box>
         </Box>
       )}

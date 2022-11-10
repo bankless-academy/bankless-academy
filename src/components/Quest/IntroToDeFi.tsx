@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { Button, Box, useToast } from '@chakra-ui/react'
+import { CheckIcon } from '@chakra-ui/icons'
 
 import { useActiveWeb3React } from 'hooks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 import { track, verifySignature, getSignature } from 'utils'
 import { NETWORKS } from 'constants/networks'
+import { theme } from 'theme/index'
 
 const VERBS = ['Investing', 'Trading', 'Lending & Borrowing', 'Staking']
 
@@ -40,7 +42,6 @@ const IntroToDeFi = (
       }
       await switchNetwork(library.provider, 'matic')
     }
-    if (isSignatureVerified) return
     const message = `I want to learn more about ${answer}`
 
     try {
@@ -76,9 +77,14 @@ const IntroToDeFi = (
           ))}
         </Box>
         <Button
-          colorScheme={isSignatureVerified ? 'green' : 'red'}
+          colorScheme={isSignatureVerified ? theme.colors.correct : 'red'}
           onClick={signMessage}
-          variant="primary"
+          rightIcon={
+            isSignatureVerified ? (
+              <CheckIcon color={theme.colors.correct} />
+            ) : null
+          }
+          variant={isSignatureVerified ? 'secondary' : 'primary'}
           isDisabled={!answer}
         >
           {isSignatureVerified

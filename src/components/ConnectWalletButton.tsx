@@ -100,6 +100,11 @@ const ConnectWalletButton = ({
     `connectWalletPopup`,
     false
   )
+  const [, setKudosMintedLS] = useLocalStorage('kudosMinted', [])
+  const [refreshKudosLS, setRefreshKudosLS] = useLocalStorage(
+    'refreshKudos',
+    false
+  )
   const { onClose } = useDisclosure()
   const { asPath } = useRouter()
 
@@ -164,6 +169,7 @@ const ConnectWalletButton = ({
 
   useEffect(() => {
     if (walletAddress) {
+      setRefreshKudosLS(false)
       axios
         .get(
           `${MINTKUDOS_API}/v1/wallets/${walletAddress}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
@@ -171,6 +177,11 @@ const ConnectWalletButton = ({
         .then((res) => {
           const data = res.data.data
           if (Array.isArray(data)) {
+            setKudosMintedLS(
+              KUDOS_IDS.filter((kudosId) =>
+                data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
+              )
+            )
             setKudos(
               data.filter((kudos: KudosType) =>
                 KUDOS_IDS.includes(kudos.kudosTokenId)
@@ -179,7 +190,7 @@ const ConnectWalletButton = ({
           }
         })
     }
-  }, [walletAddress])
+  }, [walletAddress, !!refreshKudosLS])
 
   return (
     <>

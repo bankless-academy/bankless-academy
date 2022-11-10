@@ -29,8 +29,9 @@ const App = ({
   isNotion: boolean
 }>): JSX.Element => {
   if (
-    process.env.NEXT_PUBLIC_MAINTENANCE &&
-    process.env.NEXT_PUBLIC_MAINTENANCE !== DEBUG
+    (process.env.NEXT_PUBLIC_MAINTENANCE &&
+      process.env.NEXT_PUBLIC_MAINTENANCE !== DEBUG) ||
+    pageProps.pageMeta?.title === 'Maintenance'
   ) {
     return <>Maintenance in progress ...</>
   }

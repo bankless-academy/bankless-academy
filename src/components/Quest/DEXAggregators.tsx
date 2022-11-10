@@ -10,6 +10,8 @@ import { useMediaQuery } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 
+import { theme } from 'theme/index'
+
 const DEXAggregators = (
   account: string
 ): {
@@ -104,9 +106,12 @@ const DEXAggregators = (
                 {isCheckingTx ? (
                   <Spinner speed="1s" color="orange" />
                 ) : isTransactionVerified === 'true' ? (
-                  <CheckIcon color="green.500" />
+                  <CheckIcon color={theme.colors.correct} />
                 ) : (
-                  tx && tx.length !== 0 && <CloseIcon color="red.500" />
+                  tx &&
+                  tx.length !== 0 && (
+                    <CloseIcon color={theme.colors.incorrect} />
+                  )
                 )}
               </InputRightElement>
             </InputGroup>

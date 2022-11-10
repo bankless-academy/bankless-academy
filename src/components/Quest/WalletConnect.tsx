@@ -1,7 +1,9 @@
 import React from 'react'
 import { Box, Button, Spinner } from '@chakra-ui/react'
-import { Checks } from 'phosphor-react'
+import { CheckIcon } from '@chakra-ui/icons'
 import { useMediaQuery } from '@chakra-ui/react'
+
+import { theme } from 'theme/index'
 
 export const ConnectFirst = (
   isSmallScreen: boolean,
@@ -12,8 +14,8 @@ export const ConnectFirst = (
       <Box display="flex" justifyContent="center" mt="8">
         <Button
           variant="outlined"
-          leftIcon={account ? <Checks /> : <Spinner speed="1s" />}
-          color={account ? 'rgb(68, 169, 145)' : 'orange'}
+          leftIcon={account ? <CheckIcon /> : <Spinner speed="1s" />}
+          color={account ? theme.colors.correct : 'orange'}
           cursor="default"
           boxShadow="none !important"
         >
