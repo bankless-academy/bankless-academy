@@ -460,8 +460,13 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                   {lesson.kudosImageLink && (
                     <>
                       {lesson.kudosImageLink.includes('.mp4') ? (
-                        <Box height="250px" width="250px">
-                          <video controls autoPlay loop>
+                        <Box
+                          height="250px"
+                          width="250px"
+                          borderRadius="10px"
+                          overflow="hidden"
+                        >
+                          <video autoPlay loop playsInline muted>
                             <source
                               src={lesson.kudosImageLink}
                               type="video/mp4"
