@@ -2,12 +2,12 @@ import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = [
   {
-    kudosImageLink: '/BanklessDAO/lesson/banklessdao-constitution/kudos-4c7e3f7a.mp4',
-    lessonImageLink: '/BanklessDAO/lesson/banklessdao-constitution/lesson-f5d723aa.jpg',
-    socialImageLink: '/BanklessDAO/lesson/banklessdao-constitution/social-ecc89771.jpg',
+    kudosImageLink: '/BanklessDAO/lesson/banklessdao-constitution/kudos-e40d4419.mp4',
+    lessonImageLink: '/BanklessDAO/lesson/banklessdao-constitution/lesson-4aeec5c4.png',
+    socialImageLink: '/BanklessDAO/lesson/banklessdao-constitution/social-213ad7f2.png',
     learningActions: '',
     marketingDescription: 'BanklessDAO Constitution and Community Handbook.',
-    kudosId: 976,
+    kudosId: 13761,
     duration: 20,
     learnings: '',
     difficulty: undefined,
@@ -17,7 +17,7 @@ const LESSONS: LessonType[] = [
     quest: 'BanklessDAOBanklessDAOConstitution',
     publicationStatus: 'publish',
     isFeaturedOnHomepage: true,
-    isCommentsEnabled: true,
+    isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
     notionId: '4a1a397dd4144022932f889d6a16786c',
