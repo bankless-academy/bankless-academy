@@ -7,7 +7,7 @@ const LESSONS: LessonType[] = [
     socialImageLink: '/BanklessDAO/lesson/banklessdao-constitution/social-ecc89771.jpg',
     learningActions: '',
     marketingDescription: 'BanklessDAO Constitution and Community Handbook.',
-    kudosId: null,
+    kudosId: 976,
     duration: 20,
     learnings: '',
     difficulty: undefined,
@@ -308,7 +308,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
