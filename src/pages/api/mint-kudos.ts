@@ -86,6 +86,11 @@ export default async function handler(
       const passport = await axios.get(
         `${req.headers.origin}/api/passport?address=${address}`
       )
+      if (passport.data?.error) {
+        return res.json({
+          status: passport.data?.error,
+        })
+      }
       if (!passport.data.verified) {
         return res.json({
           status: `Passport requirement: ${passport.data.requirement}`,
