@@ -467,7 +467,13 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                           overflow="hidden"
                           border="2px solid #4b474b"
                         >
-                          <video autoPlay loop playsInline muted>
+                          <video
+                            autoPlay
+                            loop
+                            playsInline
+                            muted
+                            style={{ borderRadius: '30px', overflow: 'hidden' }}
+                          >
                             <source
                               src={lesson.kudosImageLink}
                               type="video/mp4"
