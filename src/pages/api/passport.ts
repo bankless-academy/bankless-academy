@@ -32,6 +32,7 @@ export default async function handler(
   const isBot =
     req.headers['user-agent'].includes('python') ||
     req.headers['user-agent'].includes('curl') ||
+    req.headers['user-agent'].includes('axios') ||
     user?.sybil_user_id ||
     false
   console.log('isBot', isBot)
