@@ -19,8 +19,8 @@ export function trackBA(
 ): void {
   const data_object =
     typeof data === 'object'
-      ? { $referring_domain: DOMAIN_PROD, ...data }
-      : { project: DOMAIN_PROD }
+      ? { domain: DOMAIN_PROD, ...data }
+      : { domain: DOMAIN_PROD }
   if (mixpanel_distinct_id !== address.toLowerCase())
     mixpanel.alias(address.toLowerCase(), mixpanel_distinct_id)
   mixpanel.track(event, {
