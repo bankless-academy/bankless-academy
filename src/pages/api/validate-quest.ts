@@ -5,17 +5,19 @@ import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { LESSONS, QUESTS, GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { ONCHAIN_QUESTS } from 'components/Quest/QuestComponent'
 import { validateOnchainQuest } from 'utils/index'
+import { trackBA } from 'utils/mixpanel'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { address, quest, tx } = req.query
+  const { address, quest, tx, distinct_id } = req.query
   if (
     !address ||
     // TODO: replace quest with notionId?
     !quest ||
     typeof address === 'object' ||
+    typeof distinct_id === 'object' ||
     typeof quest === 'object' ||
     !QUESTS.includes(quest)
   )
@@ -44,7 +46,7 @@ export default async function handler(
   }
 
   try {
-    const userId = await getUserId(address)
+    const userId = await getUserId(address, distinct_id)
     console.log(userId)
     if (!(userId && Number.isInteger(userId)))
       return res.json({ error: 'userId not found' })
@@ -73,6 +75,7 @@ export default async function handler(
 
       if (createQuestCompleted?.id) {
         questStatus = 'Quest completed'
+        trackBA(address, distinct_id, 'quest_completed', { quest })
       } else {
         questStatus = 'Problem while adding quest'
       }

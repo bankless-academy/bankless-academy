@@ -14,6 +14,7 @@ import { ConnectFirst } from 'components/Quest/WalletConnect'
 
 import { useActiveWeb3React } from 'hooks'
 import { QUESTS } from 'constants/index'
+import { mixpanel_distinct_id } from 'utils'
 
 export type QuestComponentType = typeof QUESTS[number]
 
@@ -56,7 +57,9 @@ const QuestComponent = (
       axios
         .get(
           `/api/validate-quest?address=${account}&quest=${component}${
-            kudosId ? `&kudosId=${kudosId}` : ''
+            kudosId
+              ? `&kudosId=${kudosId}&distinct_id=${mixpanel_distinct_id}`
+              : ''
           }`
         )
         .catch(function (error) {
