@@ -32,8 +32,6 @@ export default async function handler(
   const isBot =
     req.headers['user-agent'].includes('python') ||
     req.headers['user-agent'].includes('curl') ||
-    req.headers['user-agent'].includes('axios') ||
-    user?.sybil_user_id ||
     false
   console.log('isBot', isBot)
 
@@ -100,14 +98,19 @@ export default async function handler(
       }
       if (isBot) {
         // HACK: bot
-        sybil[0] = {
-          id: 12,
-          address: '0x0000000000000000000000000000000000000000',
-        }
+        console.log('bot detected:', address)
+        await db(TABLES.users)
+          .where(TABLE.users.id, userId)
+          .update({ sybil_user_id: 12 })
+        res.json({
+          verified: false,
+          requirement,
+          validStampsCount: 0,
+        })
       }
       if (sybil?.length) {
         // mark this user as a sybil attacker
-        console.log('fraud detected', sybil)
+        console.log('fraud detected:', sybil)
         await db(TABLES.users)
           .where(TABLE.users.id, userId)
           .update({ sybil_user_id: sybil[0]?.id })
@@ -126,6 +129,10 @@ export default async function handler(
       }
       return res.json({
         verified: validStamps?.length >= NUMBER_OF_STAMP_REQUIRED,
+        fraud:
+          user?.sybil_user_id === 12
+            ? '0x0000000000000000000000000000000000000000'
+            : null,
         requirement,
         validStampsCount: validStamps?.length,
         stamps: stampProviders,

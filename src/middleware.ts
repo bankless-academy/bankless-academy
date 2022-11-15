@@ -10,11 +10,7 @@ export function middleware(request: NextRequest): NextResponse {
   const ua = userAgent(request)
   console.log('url', request.url)
   console.log('userAgent', ua)
-  if (
-    ua.ua.includes('python') ||
-    ua.ua.includes('curl') ||
-    ua.ua.includes('axios')
-  ) {
+  if (ua.ua.includes('python') || ua.ua.includes('curl')) {
     request.headers.set('isBot', 'true')
     if (request.url.includes('/api/passport')) return NextResponse.next()
     else return NextResponse.redirect(new URL('/maintenance', request.url))
