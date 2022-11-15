@@ -64,7 +64,9 @@ const PassportComponent = ({
                 Duplicate stamp detected.
               </Link>
               <br />
-              Switch back to {shortenAddress(passportLS?.fraud)}
+              {passportLS?.fraud
+                ? `Switch back to ${shortenAddress(passportLS?.fraud)}`
+                : null}
             </Text>
           </Box>
         ) : (
