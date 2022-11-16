@@ -36,6 +36,7 @@ import {
   UsersThreeIcon,
 } from 'components/Icons'
 import { HOMEPAGE_BACKGROUND, IS_WHITELABEL } from 'constants/index'
+import { Mixpanel } from 'utils/index'
 
 const Card = styled(Box)`
   border: 1px solid #72757b;
@@ -203,7 +204,14 @@ const HomePage = (): JSX.Element => {
             >
               <Text fontSize="2xl">
                 {`Sign up for our `}
-                <NewsletterButton variant="primary" size="lg" onClick={onOpen}>
+                <NewsletterButton
+                  variant="primary"
+                  size="lg"
+                  onClick={() => {
+                    onOpen()
+                    Mixpanel.track('click_newsletter_modal')
+                  }}
+                >
                   Newsletter
                 </NewsletterButton>
                 {` to be notified of new lessons and platform

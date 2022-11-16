@@ -11,8 +11,9 @@ import { ethers } from 'ethers'
 import { verifyTypedData } from 'ethers/lib/utils'
 import { Network } from '@ethersproject/networks'
 import queryString from 'query-string'
+import mixpanel, { Dict, Query } from 'mixpanel-browser'
 
-import { INFURA_ID } from 'constants/index'
+import { DOMAIN_PROD, INFURA_ID } from 'constants/index'
 import { NETWORKS, SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
 import ONEINCH_SWAP_ABI from 'abis/1inch.json'
 
@@ -261,4 +262,38 @@ export async function validateOnchainQuest(
     console.error(error)
     return false
   }
+}
+
+// TODO: remove debug
+mixpanel.init(process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID, {
+  api_host: '/mp',
+  debug: true,
+})
+export const mixpanel_distinct_id = mixpanel.get_distinct_id()
+
+export const Mixpanel = {
+  identify: (id: string) => {
+    mixpanel.identify(id)
+  },
+  alias: (id: string) => {
+    mixpanel.alias(id)
+  },
+  track: (name: string, props?: Dict) => {
+    const wallets = {
+      wallets: localStorage.getItem('wallets')
+        ? JSON.parse(localStorage.getItem('wallets'))
+        : [],
+    }
+    mixpanel.track(name, { domain: DOMAIN_PROD, ...wallets, ...props })
+  },
+  track_links: (query: Query, name: string) => {
+    mixpanel.track_links(query, name, {
+      referrer: document.referrer,
+    })
+  },
+  people: {
+    set: (props: Dict) => {
+      mixpanel.people.set(props)
+    },
+  },
 }

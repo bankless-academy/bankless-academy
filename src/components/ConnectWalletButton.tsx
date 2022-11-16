@@ -170,6 +170,13 @@ const ConnectWalletButton = ({
   useEffect(() => {
     if (walletAddress) {
       setRefreshKudosLS(false)
+      const wallets = localStorage.getItem('wallets')
+        ? JSON.parse(localStorage.getItem('wallets'))
+        : []
+      if (!wallets.includes(walletAddress.toLowerCase())) {
+        wallets.push(walletAddress.toLowerCase())
+        localStorage.setItem('wallets', JSON.stringify(wallets))
+      }
       axios
         .get(
           `${MINTKUDOS_API}/v1/wallets/${walletAddress}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`

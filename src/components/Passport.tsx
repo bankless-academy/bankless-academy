@@ -8,7 +8,7 @@ import { useActiveWeb3React } from 'hooks'
 import GitcoinPassport from 'components/GitcoinPassport'
 import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
 import { theme } from 'theme/index'
-import { shortenAddress } from 'utils'
+import { shortenAddress, mixpanel_distinct_id } from 'utils'
 
 const PassportComponent = ({
   displayStamps,
@@ -25,7 +25,9 @@ const PassportComponent = ({
   async function checkPassport() {
     setIsLoading(true)
     axios
-      .get(`/api/passport?address=${account}`)
+      .get(
+        `/api/passport?address=${account}&distinct_id=${mixpanel_distinct_id}`
+      )
       .then(function (res) {
         setIsLoading(false)
         console.log('passport', res.data)
