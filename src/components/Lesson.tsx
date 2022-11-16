@@ -28,7 +28,7 @@ import Card from 'components/Card'
 import MintKudos from 'components/MintKudos'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useActiveWeb3React } from 'hooks'
-import { track } from 'utils'
+import { Mixpanel, track } from 'utils'
 import { IS_WHITELABEL } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
 import { theme } from 'theme/index'
@@ -233,6 +233,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   }, [account, slide])
 
   useEffect(() => {
+    Mixpanel.track('open_lesson', { lesson: lesson?.name })
     // preloading all lesson images after 3 seconds for smoother transitions
     setTimeout(() => {
       lesson.imageLinks.forEach((imageLink) => {

@@ -14,18 +14,14 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { address, distinct_id } = req.query
+  const { address } = req.query
 
-  if (
-    !address ||
-    typeof address === 'object' ||
-    typeof distinct_id === 'object'
-  )
+  if (!address || typeof address === 'object')
     return res.json({ error: 'Wrong params' })
 
   console.log('address', address)
 
-  const userId = await getUserId(address, distinct_id)
+  const userId = await getUserId(address)
   console.log(userId)
   if (!(userId && Number.isInteger(userId)))
     return res.json({ error: 'userId not found' })

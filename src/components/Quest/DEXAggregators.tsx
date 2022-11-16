@@ -11,7 +11,6 @@ import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 
 import { theme } from 'theme/index'
-import { mixpanel_distinct_id } from 'utils'
 
 const DEXAggregators = (
   account: string
@@ -31,7 +30,7 @@ const DEXAggregators = (
       if (tx !== '') {
         setIsCheckingTx(true)
         const questResult = await axios.get(
-          `/api/validate-quest?address=${account}&quest=DEXAggregators&distinct_id=${mixpanel_distinct_id}&tx=${tx.replaceAll(
+          `/api/validate-quest?address=${account}&quest=DEXAggregators&tx=${tx.replaceAll(
             'https://polygonscan.com/tx/',
             ''
           )}`
