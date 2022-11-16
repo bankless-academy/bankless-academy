@@ -278,13 +278,22 @@ export const Mixpanel = {
   alias: (id: string) => {
     mixpanel.alias(id)
   },
-  track: (name: string, props?: Dict) => {
+  track: (event_name: string, props?: Dict) => {
     const wallets = {
       wallets: localStorage.getItem('wallets')
         ? JSON.parse(localStorage.getItem('wallets'))
         : [],
     }
-    mixpanel.track(name, { domain: DOMAIN_PROD, ...wallets, ...props })
+    const current_wallet = localStorage.getItem('current_wallet')
+    if (current_wallet) {
+      const mp_current_wallet = localStorage.getItem(`mp_${current_wallet}`)
+      if (!mp_current_wallet?.length) {
+        mixpanel.alias(current_wallet)
+        mixpanel.people.set({ name: current_wallet, wallets })
+        localStorage.setItem(`mp_${current_wallet}`, mixpanel_distinct_id)
+      }
+    }
+    mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
   },
   track_links: (query: Query, name: string) => {
     mixpanel.track_links(query, name, {

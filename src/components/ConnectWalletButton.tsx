@@ -170,6 +170,7 @@ const ConnectWalletButton = ({
   useEffect(() => {
     if (walletAddress) {
       setRefreshKudosLS(false)
+      localStorage.setItem('current_wallet', walletAddress.toLowerCase())
       const wallets = localStorage.getItem('wallets')
         ? JSON.parse(localStorage.getItem('wallets'))
         : []

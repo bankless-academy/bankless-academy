@@ -20,7 +20,7 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   // check params + signature
-  const { address, kudosId, signature, distinct_id } = req.body
+  const { address, kudosId, signature } = req.body
   // console.log(req)
   if (
     !address ||
@@ -55,7 +55,7 @@ export default async function handler(
     )
       return res.json({ error: 'Wrong signature' })
 
-    const userId = await getUserId(address, distinct_id)
+    const userId = await getUserId(address)
     console.log(userId)
     if (!(userId && Number.isInteger(userId)))
       return res.json({ error: 'userId not found' })
@@ -150,10 +150,10 @@ export default async function handler(
             config
           )
           if (result.status === 202) {
-            const quest = LESSONS.find(
+            const lesson = LESSONS.find(
               (lesson) => lesson.kudosId === kudosId
-            )?.quest
-            trackBA(address, distinct_id, 'mint_kudos', { quest, kudosId })
+            )?.name
+            trackBA(address, 'mint_kudos', { lesson, kudosId })
             console.log(result.headers.location)
             return res.json({
               location: `${MINTKUDOS_API}${result.headers?.location}`,

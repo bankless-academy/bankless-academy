@@ -46,7 +46,7 @@ export default async function handler(
   }
 
   try {
-    const userId = await getUserId(address, distinct_id)
+    const userId = await getUserId(address)
     console.log(userId)
     if (!(userId && Number.isInteger(userId)))
       return res.json({ error: 'userId not found' })
@@ -64,8 +64,10 @@ export default async function handler(
       .select(TABLE.completions.id, TABLE.completions.credential_claimed_at)
       .where(TABLE.completions.credential_id, credential.id)
       .where(TABLE.completions.user_id, userId)
+    questStatus = 'Quest already completed'
+    const lesson = LESSONS.find((lesson) => lesson.quest === quest)?.name
     if (questCompleted?.id) {
-      questStatus = 'Quest already completed'
+      trackBA(address, 'quest_already_completed', { lesson })
       return res.json({ isQuestValidated: true, status: questStatus })
     } else {
       const [createQuestCompleted] = await db(TABLES.completions).insert(
@@ -75,7 +77,7 @@ export default async function handler(
 
       if (createQuestCompleted?.id) {
         questStatus = 'Quest completed'
-        trackBA(address, distinct_id, 'quest_completed', { quest })
+        trackBA(address, 'quest_completed', { lesson })
       } else {
         questStatus = 'Problem while adding quest'
       }

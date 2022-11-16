@@ -51,7 +51,7 @@ export const TABLE = {
   },
 }
 
-export async function getUserId(address: string, mixpanel_distinct_id?: string): Promise<number> {
+export async function getUserId(address: string): Promise<number> {
   try {
     // ilike = case insensitive search
     const [user] = await db(TABLES.users)
@@ -64,7 +64,7 @@ export async function getUserId(address: string, mixpanel_distinct_id?: string):
         'id',
       ])
       console.log('createUser', createUser)
-      trackBA(address, mixpanel_distinct_id, 'first_wallet_connection', { user_id: createUser?.id })
+      trackBA(address, 'first_wallet_connection', { user_id: createUser?.id })
     }
     return user?.id || createUser?.id
   } catch (error) {

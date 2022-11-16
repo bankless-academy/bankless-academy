@@ -38,7 +38,6 @@ import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { KudosType } from 'entities/kudos'
 import { theme } from 'theme/index'
-import { mixpanel_distinct_id } from 'utils'
 
 const MintKudos = ({
   kudosId,
@@ -71,9 +70,7 @@ const MintKudos = ({
 
   async function checkPassport() {
     axios
-      .get(
-        `/api/passport?address=${account}&distinct_id=${mixpanel_distinct_id}`
-      )
+      .get(`/api/passport?address=${account}`)
       .then(function (res) {
         console.log('passport', res.data)
         setStatus('')
@@ -186,7 +183,6 @@ const MintKudos = ({
         kudosId,
         signature,
         message: value,
-        distinct_id: mixpanel_distinct_id,
       }
       setIsMintingInProgress(true)
       const result = await axios.post(`/api/mint-kudos`, bodyParameters)
