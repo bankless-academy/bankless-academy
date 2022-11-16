@@ -29,8 +29,8 @@ export function trackBA(
       distinct_id: address?.toLowerCase(),
       ...data_object,
     })
-  }
-  // eslint-disable-next-line no-console
-  else
+  } else {
+    // eslint-disable-next-line no-console
     console.log('wrong tracking params:', `${address?.toLowerCase()}/${event}`)
+  }
 }
