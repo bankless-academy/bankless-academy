@@ -15,7 +15,8 @@ import mixpanel, { Dict, Query } from 'mixpanel-browser'
 
 import { DOMAIN_PROD, INFURA_ID } from 'constants/index'
 import { NETWORKS, SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
-import ONEINCH_SWAP_ABI from 'abis/1inch.json'
+import ONEINCH_V4_ABI from 'abis/1inch_v4.json'
+import ONEINCH_V5_ABI from 'abis/1inch_v5.json'
 
 declare global {
   interface Window {
@@ -226,14 +227,20 @@ export async function validateOnchainQuest(
             check.push(true)
             console.log('OK from')
           }
-          if (
+          // 1inch v4 Router contract
+          const is1inchV4 =
             txDetails.to.toLowerCase() ===
-            // 1inch v4 Router contract
             '0x1111111254fb6c44bac0bed2854e76f90643097d'.toLowerCase()
-          ) {
+          // 1inch v5 Router contract
+          const is1inchV5 =
+            txDetails.to.toLowerCase() ===
+            '0x1111111254EEB25477B68fb85Ed929f73A960582'.toLowerCase()
+          if (is1inchV4 || is1inchV5) {
             check.push(true)
             console.log('OK contract')
-            const iface = new ethers.utils.Interface(ONEINCH_SWAP_ABI)
+            const iface = new ethers.utils.Interface(
+              is1inchV4 ? ONEINCH_V4_ABI : ONEINCH_V5_ABI
+            )
             const decodedData = iface.parseTransaction({
               data: txDetails.data,
               value: txDetails.value,

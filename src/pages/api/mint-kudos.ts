@@ -76,13 +76,13 @@ export default async function handler(
       .where(TABLE.completions.user_id, userId)
     console.log('questCompleted', questCompleted)
 
-    if (questCompleted?.credential_claimed_at) {
-      console.log('kudos already claimed')
-      return res.json({ status: 'kudos already claimed' })
-    }
-
     let questStatus = ''
-    if (kudosId && !questCompleted?.credential_claimed_at) {
+
+    if (questCompleted?.credential_claimed_at) {
+      questStatus = 'badge already claimed'
+      console.log(questStatus)
+      return res.json({ status: questStatus })
+    } else {
       // Sybil check with Academy Passport
       const passport = await axios.get(
         `${req.headers.origin}/api/passport?address=${address}`
@@ -103,24 +103,18 @@ export default async function handler(
       )
       // console.log('userKudos', userKudos?.data?.data)
 
-      const findKudos: KudosType = userKudos?.data?.data.find(
-        (kudos: KudosType) => kudos.kudosTokenId === kudosId
+      const kudosAlreadyClaimed: KudosType = userKudos?.data?.data?.find(
+        (kudos: KudosType) =>
+          kudos.kudosTokenId === kudosId && kudos.claimStatus === 'claimed'
       )
 
-      if (findKudos) {
-        const isKudosAlreadyClaimed = findKudos.claimStatus === 'claimed'
-        if (isKudosAlreadyClaimed) {
-          const updated = await db(TABLES.completions)
-            .where(TABLE.completions.id, questCompleted.id)
-            .update({ credential_claimed_at: findKudos.createdAt })
-          console.log('updated', updated)
-          if (updated) {
-            questStatus = 'updated credential_claimed_at'
-            console.log(questStatus)
-            return res.json({ status: questStatus })
-          }
-        }
-        questStatus = 'address already on allowlist'
+      if (kudosAlreadyClaimed) {
+        // TODO: fix credential_claimed_at (it's not createdAt ... mintedAt?)
+        // const updated = await db(TABLES.completions)
+        //   .where(TABLE.completions.id, questCompleted.id)
+        //   .update({ credential_claimed_at: kudosAlreadyClaimed.createdAt })
+        // console.log(`updated missing credential_claimed_at`, updated)
+        questStatus = 'badge already claimed'
         console.log(questStatus)
         return res.json({ status: questStatus })
       } else {
@@ -150,6 +144,14 @@ export default async function handler(
             config
           )
           if (result.status === 202) {
+            // don't update credential_claimed_at for testing kudos (14067)
+            if (kudosId !== 14067) {
+              await db(TABLES.completions)
+                .where(TABLE.completions.id, questCompleted.id)
+                .update({ credential_claimed_at: db.raw('now()') })
+            }
+            questStatus = 'badge claimed'
+            console.log(questStatus)
             const lesson = LESSONS.find(
               (lesson) => lesson.kudosId === kudosId
             )?.name
@@ -170,10 +172,6 @@ export default async function handler(
           console.error(error?.response?.data)
         }
       }
-    } else if (kudosId && questCompleted?.credential_claimed_at) {
-      questStatus = 'already minted'
-    } else {
-      questStatus = 'kudosID not found'
     }
     return res.json({ status: questStatus })
   } catch (error) {

@@ -108,6 +108,7 @@ axios
         {}
       )
       if (lesson.publicationStatus === undefined) return
+      notion.id = notion.id.replace(/-/g, '')
       console.log('Notion lesson link: ', `${POTION_API}/html?id=${notion.id}`)
 
       if (lesson.description === undefined) lesson.description = ''
@@ -130,7 +131,7 @@ axios
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)
         .then(async (htmlPage) => {
-          lesson.notionId = notion.id.replace(/-/g, '')
+          lesson.notionId = notion.id
           lesson.slug = slugify(lesson.name)
           // add notionId to DB
           await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
