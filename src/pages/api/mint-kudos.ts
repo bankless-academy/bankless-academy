@@ -144,9 +144,12 @@ export default async function handler(
             config
           )
           if (result.status === 202) {
-            await db(TABLES.completions)
-              .where(TABLE.completions.id, questCompleted.id)
-              .update({ credential_claimed_at: db.raw('now()') })
+            // don't update credential_claimed_at for testing kudos (14067)
+            if (kudosId !== 14067) {
+              await db(TABLES.completions)
+                .where(TABLE.completions.id, questCompleted.id)
+                .update({ credential_claimed_at: db.raw('now()') })
+            }
             questStatus = 'badge claimed'
             console.log(questStatus)
             const lesson = LESSONS.find(
