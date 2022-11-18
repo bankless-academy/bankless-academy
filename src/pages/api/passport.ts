@@ -7,6 +7,7 @@ import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { CERAMIC_PASSPORT, NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
 import { filterValidStamps } from 'utils/passport'
+import { trackBA } from 'utils/mixpanel'
 
 const reader = new PassportReader(CERAMIC_PASSPORT, '1')
 
@@ -88,17 +89,23 @@ export default async function handler(
           stampHashesSearch.push(stampHash)
           if (index > 0) whereCondition += ' OR gitcoin_stamps @> ?'
         })
-        sybil = await db(TABLES.users)
+        const sybilQuery = db(TABLES.users)
           .select('id', 'address')
           .whereNot(TABLE.users.id, userId)
           .whereNull(TABLE.users.sybil_user_id)
           // query for json instead of jsonb: .where(db.raw('gitcoin_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
           .where(db.raw(`(${whereCondition})`, stampHashesSearch))
+          .orWhereNot(TABLE.users.id, userId)
+          .where(TABLE.users.sybil_user_id, '=', 12)
+          .where(db.raw(`(${whereCondition})`, stampHashesSearch))
+        // console.log(sybilQuery.toString())
+        sybil = await sybilQuery
         console.log('sybil', sybil)
       }
       if (isBot) {
         // HACK: bot
         console.log('bot detected:', address)
+        trackBA(address, 'bot_detected', { ua: req.headers['user-agent'] })
         await db(TABLES.users)
           .where(TABLE.users.id, userId)
           .update({ sybil_user_id: 12 })
@@ -111,6 +118,7 @@ export default async function handler(
       if (sybil?.length) {
         // mark this user as a sybil attacker
         console.log('fraud detected:', sybil)
+        trackBA(address, 'duplicate_stamps', { target: sybil[0]?.id })
         await db(TABLES.users)
           .where(TABLE.users.id, userId)
           .update({ sybil_user_id: sybil[0]?.id })
