@@ -275,7 +275,7 @@ const MintKudos = ({
     lesson.name
   }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
 ${
-  !IS_WHITELABEL
+  IS_WHITELABEL
     ? `
 Go claim yours on ${DOMAIN_URL}/lessons/${lesson.slug}`
     : `${MINTKUDOS_URL}profile/${account}?tab=Received&tokenId=${kudosId}
