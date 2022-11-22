@@ -277,7 +277,7 @@ const MintKudos = ({
 ${
   IS_WHITELABEL
     ? `
-Go claim yours on ${DOMAIN_URL}/lessons/${lesson.slug}`
+Go claim yours here 👇 ${DOMAIN_URL}/lessons/${lesson.slug}`
     : `${MINTKUDOS_URL}profile/${account}?tab=Received&tokenId=${kudosId}
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
