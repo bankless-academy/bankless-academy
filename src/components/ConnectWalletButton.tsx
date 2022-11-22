@@ -59,6 +59,7 @@ const ConnectWalletButton = ({
 }: {
   isSmallScreen: boolean
 }): React.ReactElement => {
+  const router = useRouter()
   const [web3Provider, setWeb3Provider] = useState()
   const walletWeb3ReactContext = useWalletWeb3React()
   const isConnected = walletWeb3ReactContext.active
@@ -154,10 +155,16 @@ const ConnectWalletButton = ({
       // don't prompt MetaMask popup if wallet isn't unlocked
       !(window?.ethereum?.isMetaMask && !window?.ethereum?.selectedAddress)
     ) {
-      web3Modal = new Web3Modal(web3ModalFrame)
-      web3ModalConnect(web3Modal)
+      // reflect parent web3 connection status when website is embedded
+      if (
+        !router.asPath.includes('embed=') ||
+        !router.asPath.includes('connect=false')
+      ) {
+        web3Modal = new Web3Modal(web3ModalFrame)
+        web3ModalConnect(web3Modal)
+      }
     }
-  }, [])
+  }, [router])
 
   useEffect(() => {
     if (connectClick) {
