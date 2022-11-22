@@ -10,4 +10,5 @@ export interface WhitelabelType {
   umami_prod?: string
   notion_pages?: { [key: string]: string }
   mintkudos_community_admin?: string
+  twitter_account?: string
 }
