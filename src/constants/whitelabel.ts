@@ -9,5 +9,6 @@ export const WHITELABEL: WhitelabelType = {
   logo: '/BanklessDAO/logo-7ee3f640.png',
   homepage_background: '/BanklessDAO/homepage_background-80df8c6d.png',
   logo_small: '/BanklessDAO/logo-7ee3f640.png',
-  umami_prod: 'd9ea7467-a2cf-41ac-8ff3-086bb17046bf'
+  umami_prod: 'd9ea7467-a2cf-41ac-8ff3-086bb17046bf',
+  twitter_account: 'BanklessDAO'
 }
