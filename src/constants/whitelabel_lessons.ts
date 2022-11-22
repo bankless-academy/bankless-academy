@@ -18,8 +18,8 @@ const LESSONS: LessonType[] = [
     publicationStatus: 'publish',
     isFeaturedOnHomepage: true,
     isCommentsEnabled: false,
-    endOfLessonRedirect: null,
-    endOfLessonText: undefined,
+    endOfLessonRedirect: 'https://tally.so/r/mBE1GN',
+    endOfLessonText: 'To give feedback about this lesson and see the special NFT ✨ drop, click Next.',
     notionId: '4a1a397dd4144022932f889d6a16786c',
     slug: 'banklessdao-constitution',
     imageLinks: [
