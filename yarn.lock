@@ -7160,6 +7160,11 @@ lz-string@^1.4.4:
   resolved "https://registry.yarnpkg.com/lz-string/-/lz-string-1.4.4.tgz#c0d8eaf36059f705796e1e344811cf4c498d3a26"
   integrity sha512-0ckx7ZHRPqb0oUm8zNr+90mtf9DQB60H1wMCjBtfi62Kl3a7JbHob6gA2bC+xRvZoOL+1hzUK8jeuEIQE8svEQ==
 
+mac-scrollbar@^0.10.3:
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/mac-scrollbar/-/mac-scrollbar-0.10.3.tgz#048b35e11500582cf0eedc253023da1b996fc9a5"
+  integrity sha512-+dCARf54JUqeAWhjZE+cMBA9kLLIx1V7LRm3Fh27hAVX9J8ZqpSgXkfioFV218tivVFmusv/xHB1+6SgX0HZgg==
+
 make-cancellable-promise@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/make-cancellable-promise/-/make-cancellable-promise-1.1.0.tgz#b4e9fcb31db3a27417e44f80cffa598ec9ac9f4e"

@@ -5,6 +5,9 @@ import 'swiper/swiper-bundle.min.css'
 import { Global, css } from '@emotion/react'
 import 'react-notion-x/src/styles.css'
 import 'prismjs/themes/prism-tomorrow.css'
+import 'mac-scrollbar/dist/mac-scrollbar.css'
+import { GlobalScrollbar } from 'mac-scrollbar'
+import { isMobile } from 'react-device-detect'
 
 import dynamic from 'next/dynamic'
 import Head, { MetaData } from 'components/Head'
@@ -38,6 +41,7 @@ const App = ({
   return (
     <>
       <Head metadata={pageProps.pageMeta} />
+      {!isMobile && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
         <Web3ReactProvider getLibrary={getLibrary}>
           <Web3ReactProviderDefault getLibrary={getLibrary}>
@@ -59,6 +63,13 @@ const App = ({
                 /* Disable focus border in Chakra-UI */
                 *:focus {
                   box-shadow: none !important;
+                }
+                /* custom scrollbar color & width */
+                .ms-track .ms-thumb {
+                  background: #916ab8;
+                }
+                .ms-track.ms-y .ms-thumb {
+                  width: 7px;
                 }
               `}
             />
