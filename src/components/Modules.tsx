@@ -31,7 +31,7 @@ const Modules = ({
         size={parentModule ? '2xl' : 'xl'}
         textAlign={parentModule ? 'center' : 'unset'}
       >
-        {parentModule?.name || `Modules`}
+        {parentModule?.name || `Learning Modules`}
       </Heading>
       <Box>
         {modules.map((module, key) => {
