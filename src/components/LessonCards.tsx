@@ -89,12 +89,17 @@ const LessonCards: React.FC = () => {
             </Text>
             <Text fontSize="lg">{lesson.description}</Text>
             <Box display="flex" justifyContent="space-between" my="4">
-              <Tag size="md" variant={isKudosMinted ? 'solid' : 'outline'}>
-                {isKudosMinted ? 'Done' : `${lesson.duration} minutes`}
-                {isKudosMinted ? (
-                  <TagRightIcon as={CircleWavyCheck} weight="bold" />
-                ) : null}
-              </Tag>
+              {isKudosMinted || lesson.duration ? (
+                <Tag size="md" variant={isKudosMinted ? 'solid' : 'outline'}>
+                  {isKudosMinted ? 'Done' : `${lesson.duration} minutes`}
+                  {isKudosMinted ? (
+                    <TagRightIcon as={CircleWavyCheck} weight="bold" />
+                  ) : null}
+                </Tag>
+              ) : (
+                <Tag size="md" backgroundColor="transparent"></Tag>
+              )}
+
               <Text fontSize="md">
                 {lessonCompleted > 0 && `${lessonCompleted} Completions`}
               </Text>
