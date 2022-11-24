@@ -207,6 +207,10 @@ const ConnectWalletButton = ({
     }
   }, [walletAddress, !!refreshKudosLS])
 
+  const nbKudosToDisplay = kudos?.map((k) =>
+    LESSONS.find((lesson) => lesson.kudosId === k.kudosTokenId)
+  )?.length
+
   return (
     <>
       {isConnected ? (
@@ -260,7 +264,7 @@ const ConnectWalletButton = ({
                   </Text>
                   <Box
                     h="215px"
-                    overflowY="scroll"
+                    overflowY={nbKudosToDisplay <= 6 ? 'hidden' : 'scroll'}
                     overflowX="hidden"
                     backgroundColor="blackAlpha.200"
                     borderRadius="10px"
