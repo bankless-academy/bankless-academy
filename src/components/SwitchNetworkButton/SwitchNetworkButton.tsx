@@ -36,11 +36,13 @@ const SwitchNetworkButton = ({
   const { library, chainId } = useActiveWeb3React()
 
   const handleChange = async (networkName) => {
-    await switchNetwork(
-      library.provider,
-      networkName.toLowerCase(),
-      setCurrentNetwork
-    )
+    if (library?.provider) {
+      await switchNetwork(
+        library.provider,
+        networkName.toLowerCase(),
+        setCurrentNetwork
+      )
+    }
   }
 
   useEffect(() => {
