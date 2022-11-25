@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { isMobile } from 'react-device-detect'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/'
@@ -30,7 +31,11 @@ const Nav: React.FC = () => {
 
   return (
     <header>
-      <Box bgColor="black" borderBottom="1px solid #222222">
+      <Box
+        bgColor="black"
+        borderBottom="1px solid #222222"
+        pr={isMobile ? 0 : 1}
+      >
         <Flex p={4}>
           <Box cursor={embed ? 'auto' : 'pointer'}>
             {embed ? logo : <Link href="/">{logo}</Link>}
