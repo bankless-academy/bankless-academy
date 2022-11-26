@@ -33,16 +33,16 @@ const LESSONS: LessonType[] = [
       '/BanklessDAO/lesson/banklessdao-constitution/values-1f746331.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/values-edda2945.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/dao-membership-af18c9fc.svg',
-      '/BanklessDAO/lesson/banklessdao-constitution/membership-levels-943632e5.svg',
-      '/BanklessDAO/lesson/banklessdao-constitution/membership-levels-099c9744.svg',
-      '/BanklessDAO/lesson/banklessdao-constitution/membership-levels-28247a5c.svg',
+      '/BanklessDAO/lesson/banklessdao-constitution/membership-levels-6f712ae6.svg',
+      '/BanklessDAO/lesson/banklessdao-constitution/membership-levels-8ecb8fca.svg',
+      '/BanklessDAO/lesson/banklessdao-constitution/membership-levels-1f063097.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/guilds-6a4d8c1b.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/projects-f0da1db7.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/grants-committee-9d8ada9e.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/dao-cycles-578afd64.svg',
-      '/BanklessDAO/lesson/banklessdao-constitution/three-cycles-ec3ebe7f.svg',
-      '/BanklessDAO/lesson/banklessdao-constitution/three-cycles-c3c12543.svg',
-      '/BanklessDAO/lesson/banklessdao-constitution/three-cycles-3562efe0.svg',
+      '/BanklessDAO/lesson/banklessdao-constitution/three-cycles-b3d1fdc3.svg',
+      '/BanklessDAO/lesson/banklessdao-constitution/three-cycles-e4741c61.svg',
+      '/BanklessDAO/lesson/banklessdao-constitution/three-cycles-0fc7bd0e.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/dao-governance-edbd3a16.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/stage-1-gauge-support-2267ed1b.svg',
       '/BanklessDAO/lesson/banklessdao-constitution/stage-2-draft-proposal-54a4deb4.svg',
@@ -130,7 +130,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'e7a7a8105f6f43beaa619545533dd3ff',
         title: 'Membership Levels',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/membership-levels-943632e5.svg\'></div><div class="bloc-b"><h2><strong>Contributors (L2)</strong></h2><p>Contributor status is achieved via nomination from one\'s peers. L2s are expected to contribute to the overall health of the DAO and are recognized as valuable members of our community.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/membership-levels-099c9744.svg\'></div><div class="bloc-b"><h2><strong>Whales (L3)</strong></h2><p>Bankless whales hold more than 150K BANK. This membership level grants access to additional Discord channels.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/membership-levels-28247a5c.svg\'></div><div class="bloc-b"><h2><strong>Liquidity Providers (L4)</strong></h2><p>These members provide at least 150K BANK and the required ETH to the ETH/BANK liquidity pools. This membership level grants access to additional Discord channels.</p></div></div>'
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/membership-levels-6f712ae6.svg\'></div><div class="bloc-b"><h2><strong>Contributors (L2)</strong></h2><p>Contributor status is achieved via nomination from one\'s peers. L2s are expected to contribute to the overall health of the DAO and are recognized as valuable members of our community.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/membership-levels-8ecb8fca.svg\'></div><div class="bloc-b"><h2><strong>Whales (L3)</strong></h2><p>Bankless whales hold more than 150K BANK. This membership level grants access to additional Discord channels.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/membership-levels-1f063097.svg\'></div><div class="bloc-b"><h2><strong>Liquidity Providers (L4)</strong></h2><p>These members provide at least 150K BANK and the required ETH to the ETH/BANK liquidity pools. This membership level grants access to additional Discord channels.</p></div></div>'
       },
       {
         type: 'QUIZ',
@@ -198,7 +198,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '2377296d2c234f8684d0620bb13e791f',
         title: 'Three <strong>Cycles</strong>',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/three-cycles-ec3ebe7f.svg\'></div><div class="bloc-b"><h2>Seasons</h2><p>Seasons are three-month funding cycles (disbursed through the Grants Committee) that align the DAO’s collective energy to key objectives.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/three-cycles-c3c12543.svg\'></div><div class="bloc-b"><h2><strong>Bi-weekly Reports</strong></h2><p>Funded projects should provide progress updates every other week. These can be listed on the wiki or Forum posts and should include funding used, progress made, and potential blockers.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/three-cycles-3562efe0.svg\'></div><div class="bloc-b"><h2><strong>Weekly Community Calls</strong></h2><p>The weekly Community Call on Discord provides DAO members with guild and project updates, and provides a forum to discuss timely topics, proposals, and initiatives. Everyone is welcome to attend. The stream is also broadcast to Twitch and posted to YouTube.</p></div></div>'
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/three-cycles-b3d1fdc3.svg\'></div><div class="bloc-b"><h2>Seasons</h2><p>Seasons are three-month funding cycles (disbursed through the Grants Committee) that align the DAO’s collective energy to key objectives.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/three-cycles-e4741c61.svg\'></div><div class="bloc-b"><h2><strong>Bi-weekly Reports</strong></h2><p>Funded projects should provide progress updates every other week. These can be listed on the wiki or Forum posts and should include funding used, progress made, and potential blockers.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/BanklessDAO/lesson/banklessdao-constitution/three-cycles-0fc7bd0e.svg\'></div><div class="bloc-b"><h2><strong>Weekly Community Calls</strong></h2><p>The weekly Community Call on Discord provides DAO members with guild and project updates, and provides a forum to discuss timely topics, proposals, and initiatives. Everyone is welcome to attend. The stream is also broadcast to Twitch and posted to YouTube.</p></div></div>'
       },
       {
         type: 'QUIZ',
