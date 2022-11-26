@@ -12,6 +12,7 @@ import { useRouter } from 'next/router'
 import { isMobile } from 'react-device-detect'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
+import OptionMenu from 'components/OptionMenu'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/'
 import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
 
@@ -41,9 +42,10 @@ const Nav: React.FC = () => {
             {embed ? logo : <Link href="/">{logo}</Link>}
           </Box>
           <Spacer />
-          <HStack spacing={4} justifyContent="space-between">
+          <HStack spacing={2} justifyContent="space-between">
             <SwitchNetworkButton isSmallScreen={isSmallScreen} />
             <ConnectWalletButton isSmallScreen={isSmallScreen} />
+            <OptionMenu isSmallScreen={isSmallScreen} />
           </HStack>
         </Flex>
       </Box>

@@ -10,12 +10,6 @@ import {
   Center,
   useMediaQuery,
   Link,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
   useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
@@ -37,6 +31,7 @@ import {
 } from 'components/Icons'
 import { HOMEPAGE_BACKGROUND, IS_WHITELABEL } from 'constants/index'
 import { Mixpanel } from 'utils/index'
+import NewsletterModal from 'components/NewsletterModal'
 
 const Card = styled(Box)`
   border: 1px solid #72757b;
@@ -62,34 +57,6 @@ const NewsletterButton = styled(Button)`
 const HomePage = (): JSX.Element => {
   const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
   const { isOpen, onOpen, onClose } = useDisclosure()
-
-  const NewsletterModal = (
-    <Modal onClose={onClose} size={'xl'} isOpen={isOpen}>
-      <ModalOverlay />
-      <ModalContent bg="linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)">
-        <ModalHeader>Newsletter</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody>
-          <Box
-            display="flex"
-            flexShrink="initial"
-            justifyContent="center"
-            p="8"
-            borderRadius="lg"
-            width="100%"
-          >
-            <iframe
-              height="320px"
-              width="320px"
-              style={{ maxWidth: '100%' }}
-              scrolling="yes"
-              src="https://cdn.forms-content.sg-form.com/21588aac-6045-11ed-a92e-a663f73c8296"
-            ></iframe>
-          </Box>
-        </ModalBody>
-      </ModalContent>
-    </Modal>
-  )
 
   if (IS_WHITELABEL) return <WhitelabelHomepage />
   else
@@ -218,7 +185,7 @@ const HomePage = (): JSX.Element => {
               updates!`}
               </Text>
             </Box>
-            {NewsletterModal}
+            <NewsletterModal isOpen={isOpen} onClose={onClose} />
             <FeaturedLessons />
             <>
               <Box mt="16">
