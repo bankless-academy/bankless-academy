@@ -212,7 +212,9 @@ export async function validateOnchainQuest(
         name: 'matic',
         chainId: NETWORKS['matic'].chainId,
         _defaultProvider: (providers) =>
-          new providers.JsonRpcProvider(NETWORKS['matic'].rpcUrl),
+          new providers.JsonRpcProvider(
+            `https://polygon-mainnet.infura.io/v3/${INFURA_ID}`
+          ),
       }
       const provider = ethers.getDefaultProvider(matic)
       const receipt = await provider.waitForTransaction(tx, 2)
