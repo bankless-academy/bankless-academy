@@ -1465,7 +1465,7 @@
   resolved "https://registry.yarnpkg.com/@fisch0920/medium-zoom/-/medium-zoom-1.0.7.tgz#46b09b40a1be796f7ff13ea594973e1f1d3c66f6"
   integrity sha512-hPUrgVM/QvsZdZzDTPyL1C1mOtEw03RqTLmK7ZlJ8S/64u4O4O5BvPvjB/9kyLtE6iVaS9UDRAMSwmM9uh2JIw==
 
-"@gitcoinco/passport-sdk-reader@^0.1.3":
+"@gitcoinco/passport-sdk-reader@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@gitcoinco/passport-sdk-reader/-/passport-sdk-reader-0.1.4.tgz#875ee9cc421c6f93e97fcba6d530b5c1882ce71f"
   integrity sha512-MRZ+p3ZdBz7/7U7/+3/LnwU4nXMeWGwPWakvPLTXL0ys74jmIrn0b1j2uh0D8EsdstoAnksbO9wEBRED40wHAg==
