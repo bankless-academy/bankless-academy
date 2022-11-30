@@ -428,12 +428,13 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       -webkit-text-stroke-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke-width: 0px;
       display: block;
-      margin-left: ${(props) => (props.issmallscreen ? '24px' : '0')};
+      margin-left: ${(props) =>
+        props.issmallscreen === 'true' ? '24px' : '0'};
     }
   }
   p > img {
     ${(props) =>
-      props.issmallscreen
+      props.issmallscreen === 'true'
         ? `
       max-width: 100vw;
       margin-left: -24px;
