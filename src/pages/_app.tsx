@@ -1,7 +1,6 @@
 import type { AppProps } from 'next/app'
 import { Web3ReactProvider } from '@web3-react/core'
 import { ethers } from 'ethers'
-import 'swiper/swiper-bundle.min.css'
 import { Global, css } from '@emotion/react'
 import 'react-notion-x/src/styles.css'
 import 'prismjs/themes/prism-tomorrow.css'
