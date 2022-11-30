@@ -392,7 +392,7 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     max-width: 768px;
     overflow-wrap: break-word;
     padding-bottom: 0px;
-    padding-left: 24px;
+    padding-left: ${(props) => (props.issmallscreen === 'true' ? '24px' : '0')};
     padding-right: 24px;
     padding-top: 0px;
     position: relative;
@@ -430,6 +430,10 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       display: block;
       margin-left: ${(props) =>
         props.issmallscreen === 'true' ? '24px' : '0'};
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
   p > img {
