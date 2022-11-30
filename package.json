@@ -66,6 +66,7 @@
     "react-hotkeys-hook": "^3.3.2",
     "react-html-parser": "^2.0.2",
     "react-icons": "^4.2.0",
+    "react-markdown": "^8.0.3",
     "react-notion-x": "^6.13.10",
     "stringify-object": "^3.3.0",
     "usehooks-ts": "^2.7.1",

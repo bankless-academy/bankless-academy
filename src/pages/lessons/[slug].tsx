@@ -4,6 +4,7 @@ import { Container } from '@chakra-ui/react'
 
 import { MetaData } from 'components/Head'
 import Lesson from 'components/Lesson'
+import MicroLesson from 'components/MicroLesson'
 import { LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 
@@ -45,7 +46,11 @@ const LessonPage = (): JSX.Element => {
   } else
     return (
       <Container maxW="container.xl">
-        <Lesson lesson={currentLesson} />
+        {currentLesson.isMicroLesson ? (
+          <MicroLesson lesson={currentLesson} />
+        ) : (
+          <Lesson lesson={currentLesson} />
+        )}
       </Container>
     )
 }

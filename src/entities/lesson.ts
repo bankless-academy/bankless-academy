@@ -19,14 +19,17 @@ export interface LessonType {
   learningActions: string
   knowledgeRequirements?: string
   quest?: QuestComponentType
-  imageLinks: string[]
+  imageLinks?: string[]
   publicationStatus: 'publish' | 'hidden' | 'preview'
   isFeaturedOnHomepage: boolean
   isCommentsEnabled: boolean
   endOfLessonRedirect?: string
   endOfLessonText?: string
   communityDiscussionLink?: string
-  slides: {
+  isMicroLesson?: boolean
+  mirrorLink?: string
+  articleContent?: string
+  slides?: {
     type: SlideType
     title: string
     notionId?: string
