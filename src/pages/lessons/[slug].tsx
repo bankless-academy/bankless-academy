@@ -45,13 +45,15 @@ const LessonPage = (): JSX.Element => {
     return null
   } else
     return (
-      <Container maxW="container.xl">
+      <>
         {currentLesson.isMicroLesson ? (
           <MicroLesson lesson={currentLesson} />
         ) : (
-          <Lesson lesson={currentLesson} />
+          <Container maxW="container.xl">
+            <Lesson lesson={currentLesson} />
+          </Container>
         )}
-      </Container>
+      </>
     )
 }
 

@@ -377,7 +377,8 @@ axios
         })
     })
     axios.all(promiseArray).then(() => {
-      const FILE_CONTENT = `import { LessonType } from 'entities/lesson'
+      const FILE_CONTENT = `/* eslint-disable no-useless-escape */
+import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = ${stringifyObject(lessons, {
         indent: '  ',

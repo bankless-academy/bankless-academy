@@ -1,9 +1,40 @@
-import { Box, Container, Link, Image } from '@chakra-ui/react'
+import { Box, Container, Link, Image, useMediaQuery } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
 
 import { LessonType } from 'entities/lesson'
+
+// TODO: clean dirty copy/paste style
+const H1 = styled(Box)<{ issmallscreen?: string }>`
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  display: block;
+  font-family: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-feature-settings: 'kern', 'liga', 'calt' 0, 'kern';
+  font-kerning: normal;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -0.05px;
+  line-height: 52.8px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  max-width: 768px;
+  padding-bottom: 0px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+  text-rendering: optimizelegibility;
+  /* vertical-align: baseline; */
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke-width: 0px;
+`
 
 // TODO: clean dirty copy/paste style
 const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
@@ -56,7 +87,6 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     padding-left: 24px;
     padding-right: 24px;
     text-rendering: optimizelegibility;
-    width: 768px;
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
   }
@@ -80,7 +110,6 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     padding-left: 24px;
     padding-right: 24px;
     text-rendering: optimizelegibility;
-    width: 768px;
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
   }
@@ -148,7 +177,6 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     padding-left: 24px;
     padding-right: 24px;
     text-rendering: optimizelegibility;
-    width: 768px;
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
   }
@@ -176,7 +204,6 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     padding-right: 24px;
     padding-top: 0px;
     text-rendering: optimizelegibility;
-    width: 768px;
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
   }
@@ -309,7 +336,6 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     padding-top: 48px;
     position: relative;
     text-rendering: optimizelegibility;
-    width: 768px;
     -moz-box-align: center;
     -moz-box-pack: center;
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
@@ -371,7 +397,6 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     padding-top: 0px;
     position: relative;
     text-rendering: optimizelegibility;
-    width: 768px;
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
     ::before {
@@ -411,17 +436,29 @@ const MicroLesson = ({
   lesson,
 }: {
   lesson: LessonType
-}): React.ReactElement => (
-  <Container maxW="container.md">
-    <Image src={lesson.socialImageLink} w="100%" h="auto" />
-    {`Original Mirror article: `}
-    <Link href={lesson.mirrorLink} target="_blank">
-      {lesson.mirrorLink}
-    </Link>
-    <ArticleStyle>
-      <ReactMarkdown>{lesson.articleContent}</ReactMarkdown>
-    </ArticleStyle>
-  </Container>
-)
+}): React.ReactElement => {
+  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  return (
+    <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
+      <Image
+        src={lesson.socialImageLink}
+        w="100%"
+        h="auto"
+        borderRadius={isSmallScreen ? '0' : '0.375rem'}
+        mt={isSmallScreen ? '0' : '24px'}
+      />
+      <H1>{lesson.name}</H1>
+      <Box p="24px">
+        {`Original Mirror article: `}
+        <Link href={lesson.mirrorLink} target="_blank">
+          {lesson.mirrorLink}
+        </Link>
+      </Box>
+      <ArticleStyle>
+        <ReactMarkdown>{lesson.articleContent}</ReactMarkdown>
+      </ArticleStyle>
+    </Container>
+  )
+}
 
 export default MicroLesson
