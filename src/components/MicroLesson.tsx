@@ -6,7 +6,7 @@ import styled from '@emotion/styled'
 import { LessonType } from 'entities/lesson'
 
 // TODO: clean dirty copy/paste style
-const H1 = styled(Box)`
+const H1 = styled(Box)<{ issmallscreen?: string }>`
   border-bottom-width: 0px;
   border-left-width: 0px;
   border-right-width: 0px;
@@ -19,10 +19,10 @@ const H1 = styled(Box)`
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-feature-settings: 'kern', 'liga', 'calt' 0, 'kern';
   font-kerning: normal;
-  font-size: 48px;
+  font-size: ${(props) => (props.issmallscreen === 'true' ? '36px' : '48px')};
   font-weight: 600;
   letter-spacing: -0.05px;
-  line-height: 52.8px;
+  line-height: ${(props) => (props.issmallscreen === 'true' ? '40px' : '52px')};
   margin-bottom: 0px;
   margin-top: 0px;
   max-width: 768px;
@@ -76,10 +76,11 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       'Noto Color Emoji';
     font-feature-settings: 'kern', 'liga', 'calt' 0, 'kern';
     font-kerning: normal;
-    font-size: 29.6px;
+    font-size: ${(props) => (props.issmallscreen === 'true' ? '24px' : '30px')};
     font-weight: 600;
     letter-spacing: -0.444px;
-    line-height: 38.4833px;
+    line-height: ${(props) =>
+      props.issmallscreen === 'true' ? '28px' : '34px'};
     margin-bottom: 12px;
     margin-top: 36px;
     max-width: 768px;
@@ -99,10 +100,11 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       'Noto Color Emoji';
     font-feature-settings: 'kern', 'liga', 'calt' 0, 'kern';
     font-kerning: normal;
-    font-size: 21.6px;
+    font-size: ${(props) => (props.issmallscreen === 'true' ? '18px' : '22px')};
     font-weight: 600;
     letter-spacing: -0.324px;
-    line-height: 30.2333px;
+    line-height: ${(props) =>
+      props.issmallscreen === 'true' ? '22px' : '28px'};
     margin-bottom: 12px;
     margin-top: 0px;
     max-width: 768px;
@@ -463,7 +465,7 @@ const MicroLesson = ({
         borderRadius={isSmallScreen ? '0' : '0.375rem'}
         mt={isSmallScreen ? '0' : '24px'}
       />
-      <H1>{lesson.name}</H1>
+      <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
       <Box p="24px">
         {`Original Mirror article: `}
         <Link href={lesson.mirrorLink} target="_blank">
