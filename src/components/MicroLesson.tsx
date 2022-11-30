@@ -6,7 +6,7 @@ import styled from '@emotion/styled'
 import { LessonType } from 'entities/lesson'
 
 // TODO: clean dirty copy/paste style
-const H1 = styled(Box)<{ issmallscreen?: string }>`
+const H1 = styled(Box)`
   border-bottom-width: 0px;
   border-left-width: 0px;
   border-right-width: 0px;
@@ -428,7 +428,18 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       -webkit-text-stroke-color: rgba(0, 0, 0, 0);
       -webkit-text-stroke-width: 0px;
       display: block;
+      margin-left: ${(props) => (props.issmallscreen ? '24px' : '0')};
     }
+  }
+  p > img {
+    ${(props) =>
+      props.issmallscreen
+        ? `
+      max-width: 100vw;
+      margin-left: -24px;
+      margin-right: -24px;
+      `
+        : ``};
   }
 `
 
@@ -454,7 +465,7 @@ const MicroLesson = ({
           {lesson.mirrorLink}
         </Link>
       </Box>
-      <ArticleStyle>
+      <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown>{lesson.articleContent}</ReactMarkdown>
       </ArticleStyle>
     </Container>
