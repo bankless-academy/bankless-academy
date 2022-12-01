@@ -50,7 +50,7 @@ const OptionMenu = ({
             </MenuItem>
           )}
           <Link href={twitterLink} target="_blank" color="white">
-            <MenuItem>Follow us Twitter</MenuItem>
+            <MenuItem>Follow our Twitter</MenuItem>
           </Link>
         </MenuList>
       </Menu>
