@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
 import {
-  useMediaQuery,
   Box,
   Center,
   InputGroup,
@@ -10,6 +9,7 @@ import {
 } from '@chakra-ui/react'
 
 import Nav from 'layout/Nav'
+import { useSmallScreen } from 'hooks/index'
 
 const Layout = ({
   children,
@@ -18,7 +18,7 @@ const Layout = ({
   children: JSX.Element
   isLesson: boolean
 }): React.ReactElement => {
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
   const [password, setPassword] = useState(localStorage.getItem(`password`))
   const passwordClean = ('' + password)
     .toLowerCase()

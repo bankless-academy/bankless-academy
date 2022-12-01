@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Box, Image, useMediaQuery } from '@chakra-ui/react'
+import { Box, Image } from '@chakra-ui/react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
 import { theme } from 'theme/index'
+import { useSmallScreen } from 'hooks/index'
 
 const ITEMS = ['Bitcoin', 'Ethereum', 'Solana', 'Binance Smart Chain']
 const ICONS = [
@@ -139,7 +140,7 @@ const BlockchainsLayer1 = (): {
       ? JSON.parse(localStorage.getItem('quest-blockchain-layer-1'))
       : [getItems(), [], []]
   )
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
 
   function onDragEnd(result) {
     const { source, destination } = result

@@ -15,13 +15,12 @@ import {
   ModalFooter,
   useDisclosure,
   Heading,
-  useMediaQuery,
 } from '@chakra-ui/react'
 import { ArrowBackIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 
-import { useActiveWeb3React } from 'hooks'
+import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 import Passport from 'components/Passport'
 import {
@@ -67,7 +66,7 @@ const MintKudos = ({
 
   const { account, library, chainId } = useActiveWeb3React()
   const toast = useToast()
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 

@@ -1,6 +1,6 @@
 import { Contract } from '@ethersproject/contracts'
 
-import { useActiveWeb3React } from 'hooks'
+import { useActiveWeb3React } from 'hooks/index'
 import { TOKEN_ADDRESS } from 'constants/index'
 import TOKEN_ABI from 'abis/token.json'
 import { useContract } from 'hooks/useContract'

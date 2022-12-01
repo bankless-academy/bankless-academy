@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Box, VStack, Button, Spinner, Link } from '@chakra-ui/react'
-import { useMediaQuery } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 
 import { theme } from 'theme/index'
+import { useSmallScreen } from 'hooks/index'
 
 const AcademyCommunity = (
   account: string
@@ -14,7 +14,7 @@ const AcademyCommunity = (
 } => {
   const [hasUserJoinedGM, setHasUserJoinedGM] = useState(false)
   const [hasUserJoinedBA, setHasUserJoinedBA] = useState(false)
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
 
   useEffect(() => {
     verifyQuest()

@@ -8,7 +8,6 @@ import {
   SimpleGrid,
   Image,
   Center,
-  useMediaQuery,
   Link,
   useDisclosure,
 } from '@chakra-ui/react'
@@ -32,6 +31,7 @@ import {
 import { HOMEPAGE_BACKGROUND, IS_WHITELABEL } from 'constants/index'
 import { Mixpanel } from 'utils/index'
 import NewsletterModal from 'components/NewsletterModal'
+import { useSmallScreen } from 'hooks/index'
 
 const Card = styled(Box)`
   border: 1px solid #72757b;
@@ -55,7 +55,7 @@ const NewsletterButton = styled(Button)`
 `
 
 const HomePage = (): JSX.Element => {
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   if (IS_WHITELABEL) return <WhitelabelHomepage />

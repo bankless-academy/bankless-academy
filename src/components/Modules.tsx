@@ -1,12 +1,12 @@
 import React from 'react'
 import NextLink from 'next/link'
 import { Box, Text, Image, Heading, Button, SimpleGrid } from '@chakra-ui/react'
-import { useMediaQuery } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 import LessonBanner from 'components/LessonBanner'
 import { IS_WHITELABEL, LESSONS } from 'constants/index'
 import { ModuleType } from 'entities/module'
+import { useSmallScreen } from 'hooks/index'
 
 const LessonGrid = styled(SimpleGrid)`
   border-bottom: 1px solid #72757b;
@@ -22,7 +22,7 @@ const Modules = ({
   modules: ModuleType[]
   parentModule?: ModuleType
 }): React.ReactElement => {
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
 
   return (
     <Box mt="16">

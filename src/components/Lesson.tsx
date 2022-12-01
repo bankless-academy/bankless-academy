@@ -16,7 +16,6 @@ import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
-import { useMediaQuery } from '@chakra-ui/react'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
 import { Warning } from 'phosphor-react'
 // import { isMobile } from 'react-device-detect'
@@ -27,7 +26,7 @@ import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
 import MintKudos from 'components/MintKudos'
 import QuestComponent from 'components/Quest/QuestComponent'
-import { useActiveWeb3React } from 'hooks'
+import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
 import { Mixpanel, track } from 'utils'
 import { IS_WHITELABEL } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
@@ -199,7 +198,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false

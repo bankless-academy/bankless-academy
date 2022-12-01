@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  Box,
-  Image,
-  HStack,
-  Spacer,
-  Flex,
-  useMediaQuery,
-} from '@chakra-ui/react'
+import { Box, Image, HStack, Spacer, Flex } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { isMobile } from 'react-device-detect'
@@ -15,11 +8,12 @@ import ConnectWalletButton from 'components/ConnectWalletButton'
 import OptionMenu from 'components/OptionMenu'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/'
 import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
+import { useSmallScreen } from 'hooks/index'
 
 const Nav: React.FC = () => {
   const router = useRouter()
   const { embed } = router.query
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
 
   const logo = (
     <Image

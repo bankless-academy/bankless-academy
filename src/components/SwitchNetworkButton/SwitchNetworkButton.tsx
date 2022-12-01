@@ -15,7 +15,7 @@ import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
-import { useActiveWeb3React } from 'hooks'
+import { useActiveWeb3React } from 'hooks/index'
 
 const CircleIcon = (props) => (
   <Icon viewBox="0 0 200 200" {...props}>

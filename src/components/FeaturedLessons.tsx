@@ -1,11 +1,11 @@
 import React from 'react'
 import NextLink from 'next/link'
 import { Box, Text, Image, Heading, Button, SimpleGrid } from '@chakra-ui/react'
-import { useMediaQuery } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import LessonBanner from 'components/LessonBanner'
+import { useSmallScreen } from 'hooks/index'
 
 const LessonGrid = styled(SimpleGrid)`
   border-bottom: 1px solid #72757b;
@@ -15,7 +15,7 @@ const LessonGrid = styled(SimpleGrid)`
 `
 
 const FeaturedLessons: React.FC = () => {
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
 
   return (
     <Box mt="16">
