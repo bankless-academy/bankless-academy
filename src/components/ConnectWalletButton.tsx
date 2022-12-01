@@ -22,6 +22,7 @@ import Davatar from '@davatar/react'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
+import { getDefaultProvider } from '@ethersproject/providers'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -31,7 +32,7 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks'
 import { walletConnect, injected } from 'utils'
-import { LESSONS, INFURA_ID, IS_WHITELABEL } from 'constants/index'
+import { LESSONS, INFURA_ID, IS_WHITELABEL, ALCHEMY_ID } from 'constants/index'
 import {
   MINTKUDOS_API,
   MINTKUDOS_COMMUNITY_ID,
@@ -39,6 +40,12 @@ import {
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
 import { SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
+
+export const dAvatarProvider = getDefaultProvider(1, {
+  infura: INFURA_ID,
+  alchemy: ALCHEMY_ID,
+  quorum: 1,
+})
 
 let web3Modal: Web3Modal
 
@@ -228,7 +235,13 @@ const ConnectWalletButton = ({
               variant="secondary"
               size={isSmallScreen ? 'sm' : 'md'}
               // TODO: fix bug when switching wallets
-              leftIcon={<Davatar address={walletAddress} size={25} />}
+              leftIcon={
+                <Davatar
+                  size={25}
+                  address={walletAddress}
+                  provider={dAvatarProvider}
+                />
+              }
               onClick={() => setIsPopOverOn(!isPopOverOn)}
             >
               <Text maxW="200px" display="flex" alignItems="center" isTruncated>
