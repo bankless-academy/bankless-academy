@@ -7,6 +7,8 @@ import { useRouter } from 'next/router'
 import { MetaData } from 'components/Head'
 
 import Lesson from 'components/Lesson'
+import MicroLesson from 'components/MicroLesson'
+import { MIRROR_WHITELISTED_ACCOUNTS } from 'constants/index'
 
 const pageMeta: MetaData = {
   title: 'Lesson preview',
@@ -117,7 +119,7 @@ const POTION_API = 'https://potion.banklessacademy.com'
 
 const Lessons = (): JSX.Element => {
   const router = useRouter()
-  const { id } = router.query
+  const { id, mirror } = router.query
   const [lesson, setLesson]: any = useState(null)
 
   useEffect(() => {
@@ -136,14 +138,70 @@ const Lessons = (): JSX.Element => {
           console.error(error)
         })
     }
-  }, [id])
+    if (
+      mirror &&
+      typeof mirror === 'string' &&
+      MIRROR_WHITELISTED_ACCOUNTS.some((account) => mirror.includes(account))
+    ) {
+      const mirrorId = mirror?.split('/')?.pop()
+      axios({
+        url: 'https://arweave.net/graphql',
+        method: 'post',
+        data: {
+          query: `
+            query GetMirrorTransactions($digest: String!) {
+              transactions(tags:[
+                {
+                  name:"App-Name",
+                  values:["MirrorXYZ"],
+                },
+                {
+                  name:"Original-Content-Digest",
+                  values:[$digest]
+                }
+              ], sort:HEIGHT_DESC, first: 10){
+                edges {
+                  node {
+                    id
+                  }
+                }
+              }
+            }`,
+          variables: { digest: mirrorId },
+        },
+      }).then((result) => {
+        const arweaveTxId = result?.data?.data?.transactions?.edges[0]?.node?.id
+        // console.log(arweaveTxId)
+        if (arweaveTxId) {
+          axios.get(`https://arweave.net/${arweaveTxId}`).then(({ data }) => {
+            // console.log(data)
+            // console.log(data?.content?.body)
+            // console.log(data?.content?.title)
+            setLesson({
+              articleContent: data?.content?.body,
+              name: data?.content?.title,
+              isMicroLesson: true,
+              mirrorLink: mirror,
+              socialImageLink: '/lesson/micro-lesson-test/social-f214b58b.png',
+            })
+          })
+        }
+      })
+    }
+  }, [id, mirror])
 
   if (!lesson) return null
   else
     return (
-      <Container maxW="container.xl">
-        <Lesson lesson={lesson} />
-      </Container>
+      <>
+        {lesson.isMicroLesson ? (
+          <MicroLesson lesson={lesson} />
+        ) : (
+          <Container maxW="container.xl">
+            <Lesson lesson={lesson} />
+          </Container>
+        )}
+      </>
     )
 }
 

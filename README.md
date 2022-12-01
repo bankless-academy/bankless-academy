@@ -1,9 +1,14 @@
 # Bankless Academy
 
-## Project Specifications
+## Project Links
 
-- [Dev Tasks](https://www.notion.so/bankless/Dev-Tasks-d761bb04e7054e1d8e4a75d99288e61c)
-- [Figma wireframe](https://www.figma.com/file/RAaaNdsEWC9tuPuoX35Fsz/Academy?node-id=215%3A1179)
+- [Whitelabel](https://whitelabel.banklessacademy.com/): Build your own web3 educational platform in no time by leveraging Bankless Academy’s infrastructure.
+- [Documentation](https://documentation.banklessacademy.com/): Understand how you can integrate Bankless Academy to your website.
+- [FAQ](https://app.banklessacademy.com/faq): Frequently Asked Questions about Bankless Academy.
+- [Sponsor](https://sponsors.banklessacademy.com/): Sponsor a Bankless Academy lesson.
+- [Gitcoin Grant](https://gitcoin.co/grants/3535/bankless-academy): Donate on Gitcoin Grant to support the project.
+- [Dework](https://app.dework.xyz/bankless-academy-25331): Check for open tasks to help us improve Bankless Academy.
+- [Jobs](https://talent.banklessacademy.com/): Open job positions.
 
 ## Tech Stack
 
@@ -23,10 +28,10 @@
 - Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
 - Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
 
-### Tools
+### Integrations
 
-- [POAP Subgraph](https://thegraph.com/legacy-explorer/subgraph/poap-xyz/poap-xdai) to get the number of POAP claimed
-- [Moralis](https://docs.moralis.io/transactions-and-balances/realtime-transactions) to track onchain transactions (not used yet)
+- [Gitcoin Passport](https://docs.passport.gitcoin.co/) for Sybil protection for lesson badges
+- [Kudos](https://developers.mintkudos.xyz/) to distribute lesson badges (SBTs / non transferable NFTs)
 
 ## Local Development
 
@@ -36,9 +41,8 @@ yarn dev
 
 ## Database
 
-Currently only POAP codes are stored in a PostgreSQL database.
-
-Database setup is not required in order to run the app.
+Wallet addresses, encrypted Passport stamps & lessson completions are stored in a PostgreSQL database.
+Database setup is only required for lesson badge distribution but not to run the app.
 
 ### Setup
 
@@ -46,7 +50,7 @@ Setup and connection to database are done via [Knex.js](https://knexjs.org/#Migr
 
 ### Config
 
-Ask [@didierkrux](https://github.com/didierkrux) for the configs to add to your .env.local file (see [.env.example](https://github.com/BanklessDAO/bankless-academy/blob/main/.env.example)).
+DM `DidierKrux.eth🏴#6120` on Discord if you need the configs to add to your .env.local file (see [.env.example](https://github.com/BanklessDAO/bankless-academy/blob/main/.env.example)).
 
 ### Migrations
 
@@ -63,15 +67,27 @@ knex migrate:rollback
 knex migrate:make nameYourMigration
 ```
 
-## Tracking
+## Data Tracking
 
 ### Umami
 
 Documentation + data tracked: [https://www.notion.so/bankless/Analytics-with-Umami-4f867b3c808e483790db7db617cc51b6](https://www.notion.so/bankless/Analytics-with-Umami-4f867b3c808e483790db7db617cc51b6#33ff53efb0394ed8849e24087054fae0)
 
+### MixPanel
+
+User interactions tracked in the app:
+
+- [front-end](https://github.com/BanklessDAO/bankless-academy/search?q=Mixpanel.track)
+- [back-end](https://github.com/BanklessDAO/bankless-academy/search?q=trackBA)
+
+### Gitcoin Passport
+
+We save the encrypted account username associated of each Passport stamp associated to an address to be able to dectect Sybils.
+
 ### Hotjar
 
 Heatmap recording via [hotjar.com](hotjar.com)
+This helps us understand how a user interacts with the product in order to improve the user experience.
 
 ## How to import content from Notion
 
@@ -113,14 +129,6 @@ yarn import-keywords
 
 ```bash
 yarn import-keywords 623e965e4f10456094d17aa94ec37105
-```
-
-## How to import POAP codes into the database
-
-If your POAP event id is `6454`, rename `links.txt` to `6454.txt`, move it into the `/poaps/` folder, then run the following command to automatically import all the `*.txt` files:
-
-```bash
-yarn import-poaps
 ```
 
 ## How to get started for devs

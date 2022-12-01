@@ -47,6 +47,7 @@ export default async function handler(
     // '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
     '0x1EC1CcEF3e1735bdA3F4BA698e8a524AA7c93274'.toLowerCase(),
     '0x5B1899D88b4Ff0Cf5A34651e7CE7164398211C66'.toLowerCase(),
+    '0xd9c1570148E36FF9657b67AcE540052341DDF7de'.toLowerCase(),
   ]
   if (TEMP_PASSPORT_WHITELIST.includes(address.toLowerCase())) {
     return res.json({

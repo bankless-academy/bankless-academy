@@ -72,3 +72,11 @@ export const TWITTER_ACCOUNT = WHITELABEL?.twitter_account || `BanklessAcademy`
 export const NOTION_PAGES = WHITELABEL?.notion_pages || {
   faq: '97b88d72335a41a1911c12d4e2f99db6',
 }
+
+export const MIRROR_WHITELISTED_ACCOUNTS = [
+  'didierkrux.eth',
+  'tetranome.eth',
+  'ispeaknerd.eth',
+  'ornellaweb3.eth',
+  'hirokennelly.eth',
+]

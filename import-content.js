@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 /* eslint-disable no-console */
 require('dotenv').config()
 const axios = require('axios')
@@ -5,6 +6,7 @@ const knex = require('knex')
 const fs = require('fs')
 const crc32 = require('js-crc').crc32
 const stringifyObject = require('stringify-object')
+
 const config = require('./knexfile.js')
 const db = knex(config)
 const { TABLES } = require('./db.js')
@@ -40,6 +42,8 @@ const KEY_MATCHING = {
   'End of Lesson redirect': 'endOfLessonRedirect',
   'End of Lesson text': 'endOfLessonText',
   'Community discussion link': 'communityDiscussionLink',
+  'Micro lesson': 'isMicroLesson',
+  'Mirror link': 'mirrorLink',
 }
 
 const args = process.argv
@@ -90,7 +94,7 @@ axios
       // create image directory dynamically in case it doesn't exist yet
       fs.mkdirSync(`public/${PROJECT_DIR}lesson`)
     }
-    const promiseArray = notionRows.data.map((notion, index) => {
+    const promiseArray = notionRows.data.map(async (notion, index) => {
       // DEV_MODE: only test first lesson
       // if (index > 0) return
 
@@ -127,6 +131,69 @@ axios
         lesson.moduleId = lesson.moduleId[0]
       }
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
+      if (lesson.isMicroLesson === undefined) delete lesson.isMicroLesson
+      if (lesson.mirrorLink === (undefined || null)) delete lesson.mirrorLink
+
+      // console.log(lesson)
+      const mirrorId = lesson.mirrorLink?.split('/')?.pop()
+      const isMicroLesson = lesson.isMicroLesson && lesson.mirrorLink && mirrorId
+      if (isMicroLesson) {
+        lesson.notionId = notion.id
+        lesson.slug = slugify(lesson.name)
+        delete lesson.quest
+        await axios({
+          url: 'https://arweave.net/graphql',
+          method: 'post',
+          data: {
+            query: `
+              query GetMirrorTransactions($digest: String!) {
+                transactions(tags:[
+                  {
+                    name:"App-Name",
+                    values:["MirrorXYZ"],
+                  },
+                  {
+                    name:"Original-Content-Digest",
+                    values:[$digest]
+                  }
+                ], sort:HEIGHT_DESC, first: 10){
+                  edges {
+                    node {
+                      id
+                    }
+                  }
+                }
+              }`,
+            variables: { "digest": mirrorId }
+          }
+        }).then((result) => {
+          const arweaveTxId = result?.data?.data?.transactions?.edges[0]?.node?.id
+          console.log(arweaveTxId)
+          if (arweaveTxId) {
+            return axios
+              .get(`https://arweave.net/${arweaveTxId}`)
+              .then(async ({ data }) => {
+                // console.log(data)
+                // console.log(data?.content?.body)
+                // console.log(data?.content?.title)
+                lesson.articleContent = data?.content?.body
+                  .replace(/\\\[/g, "[")
+                  .replace(/\\\]/g, "]")
+                // console.log('lesson', lesson)
+
+                if (lesson.lessonImageLink) {
+                  lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
+                }
+                if (lesson.socialImageLink) {
+                  lesson.socialImageLink = get_img(lesson.socialImageLink, lesson.slug, 'social')
+                }
+
+                lessons[index] = lesson
+              })
+          }
+        });
+        return
+      }
 
       return axios
         .get(`${POTION_API}/html?id=${notion.id}`)
@@ -310,7 +377,8 @@ axios
         })
     })
     axios.all(promiseArray).then(() => {
-      const FILE_CONTENT = `import { LessonType } from 'entities/lesson'
+      const FILE_CONTENT = `/* eslint-disable no-useless-escape */
+import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = ${stringifyObject(lessons, {
         indent: '  ',
