@@ -80,3 +80,5 @@ export const MIRROR_WHITELISTED_ACCOUNTS = [
   'ornellaweb3.eth',
   'hirokennelly.eth',
 ]
+
+export const ACTIVATE_MIXPANEL = !!process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID

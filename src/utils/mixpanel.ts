@@ -4,14 +4,16 @@ interface Dict {
   [key: string]: any
 }
 
-import { DOMAIN_PROD } from 'constants/index'
+import { ACTIVATE_MIXPANEL, DOMAIN_PROD } from 'constants/index'
 
 // TODO: remove debug
 
-const mixpanel = Mixpanel.init(process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID, {
-  api_host: 'https://api-eu.mixpanel.com',
-  debug: true,
-})
+const mixpanel = ACTIVATE_MIXPANEL
+  ? Mixpanel.init(process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID, {
+      api_host: 'https://api-eu.mixpanel.com',
+      debug: true,
+    })
+  : null
 
 // call this function in back-end
 export function trackBA(
@@ -25,7 +27,7 @@ export function trackBA(
       typeof data === 'object'
         ? { domain: DOMAIN_PROD, ...data }
         : { domain: DOMAIN_PROD }
-    mixpanel.track(event, {
+    mixpanel?.track(event, {
       distinct_id: address?.toLowerCase(),
       ...data_object,
     })

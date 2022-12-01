@@ -13,7 +13,7 @@ import { Network } from '@ethersproject/networks'
 import queryString from 'query-string'
 import mixpanel, { Dict, Query } from 'mixpanel-browser'
 
-import { DOMAIN_PROD, INFURA_ID } from 'constants/index'
+import { ACTIVATE_MIXPANEL, DOMAIN_PROD, INFURA_ID } from 'constants/index'
 import { NETWORKS, SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
 import ONEINCH_V4_ABI from 'abis/1inch_v4.json'
 import ONEINCH_V5_ABI from 'abis/1inch_v5.json'
@@ -274,44 +274,71 @@ export async function validateOnchainQuest(
 }
 
 // TODO: remove debug
-mixpanel.init(process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID, {
-  api_host: '/mp',
-  debug: true,
-})
-export const mixpanel_distinct_id = mixpanel.get_distinct_id()
-
-export const Mixpanel = {
-  identify: (id: string) => {
-    mixpanel.identify(id)
-  },
-  alias: (id: string) => {
-    mixpanel.alias(id)
-  },
-  track: (event_name: string, props?: Dict) => {
-    const wallets = {
-      wallets: localStorage.getItem('wallets')
-        ? JSON.parse(localStorage.getItem('wallets'))
-        : [],
-    }
-    const current_wallet = localStorage.getItem('current_wallet')
-    if (current_wallet) {
-      const mp_current_wallet = localStorage.getItem(`mp_${current_wallet}`)
-      if (!mp_current_wallet?.length) {
-        mixpanel.alias(current_wallet)
-        mixpanel.people.set({ name: current_wallet, wallets })
-        localStorage.setItem(`mp_${current_wallet}`, mixpanel_distinct_id)
-      }
-    }
-    mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
-  },
-  track_links: (query: Query, name: string) => {
-    mixpanel.track_links(query, name, {
-      referrer: document.referrer,
-    })
-  },
-  people: {
-    set: (props: Dict) => {
-      mixpanel.people.set(props)
-    },
-  },
+if (ACTIVATE_MIXPANEL) {
+  mixpanel.init(process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID, {
+    api_host: '/mp',
+    debug: true,
+  })
 }
+
+export const mixpanel_distinct_id = ACTIVATE_MIXPANEL
+  ? mixpanel.get_distinct_id()
+  : null
+
+export const Mixpanel = ACTIVATE_MIXPANEL
+  ? {
+      identify: (id: string) => {
+        mixpanel.identify(id)
+      },
+      alias: (id: string) => {
+        mixpanel.alias(id)
+      },
+      track: (event_name: string, props?: Dict) => {
+        const wallets = {
+          wallets: localStorage.getItem('wallets')
+            ? JSON.parse(localStorage.getItem('wallets'))
+            : [],
+        }
+        const current_wallet = localStorage.getItem('current_wallet')
+        if (current_wallet) {
+          const mp_current_wallet = localStorage.getItem(`mp_${current_wallet}`)
+          if (!mp_current_wallet?.length) {
+            mixpanel.alias(current_wallet)
+            mixpanel.people.set({ name: current_wallet, wallets })
+            localStorage.setItem(`mp_${current_wallet}`, mixpanel_distinct_id)
+          }
+        }
+        mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
+      },
+      track_links: (query: Query, name: string) => {
+        mixpanel.track_links(query, name, {
+          referrer: document.referrer,
+        })
+      },
+      people: {
+        set: (props: Dict) => {
+          mixpanel.people.set(props)
+        },
+      },
+    }
+  : {
+      identify: (id: string) => {
+        console.log(id)
+      },
+      alias: (id: string) => {
+        console.log(id)
+      },
+      track: (event_name: string, props?: Dict) => {
+        console.log(event_name)
+        console.log(props)
+      },
+      track_links: (query: Query, name: string) => {
+        console.log(query)
+        console.log(name)
+      },
+      people: {
+        set: (props: Dict) => {
+          console.log(props)
+        },
+      },
+    }
