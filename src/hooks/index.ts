@@ -28,5 +28,5 @@ export function useDefaultWeb3React(): Web3ReactContextInterface<Web3Provider> &
 }
 
 export function useSmallScreen(): boolean[] {
-  return useMediaQuery('(max-width: 800px)')
+  return useMediaQuery(['(max-width: 800px)', '(max-width: 1260px)'])
 }

@@ -197,8 +197,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     parseInt(localStorage.getItem(lesson.slug) || '0')
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isSmallScreen] = useSmallScreen()
+  const [, isSmallScreen] = useSmallScreen()
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
