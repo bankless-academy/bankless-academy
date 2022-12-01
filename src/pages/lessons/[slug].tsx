@@ -7,6 +7,7 @@ import Lesson from 'components/Lesson'
 import MicroLesson from 'components/MicroLesson'
 import { LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
+import { useSmallScreen } from 'hooks/index'
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const currentLesson = LESSONS.find(
@@ -16,7 +17,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     title: `Lesson: ${currentLesson.name}`,
     description: currentLesson.description,
     image: currentLesson.socialImageLink,
-    isLesson: true,
+    isLesson: !currentLesson.isMicroLesson,
   }
   return {
     props: { pageMeta },
@@ -34,6 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const LessonPage = (): JSX.Element => {
   const { asPath } = useRouter()
   const [path] = asPath.split('?')
+  const [isSmallScreen] = useSmallScreen()
 
   const currentLesson = LESSONS.find(
     (lesson: LessonType) => `/lessons/${lesson.slug}` === path
@@ -49,7 +51,7 @@ const LessonPage = (): JSX.Element => {
         {currentLesson.isMicroLesson ? (
           <MicroLesson lesson={currentLesson} />
         ) : (
-          <Container maxW="container.xl">
+          <Container maxW="container.xl" px={isSmallScreen ? '8px' : '16px'}>
             <Lesson lesson={currentLesson} />
           </Container>
         )}

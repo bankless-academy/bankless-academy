@@ -99,6 +99,7 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
         margin-top: 24px;
         img {
           width: 100%;
+          max-width: 800px;
         }
       `
         : 'img {  max-height: 60vh; max-height: 600px; }'};
@@ -391,7 +392,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                   </h2>
                 </Box>
               )}
-              <Answers mt={4}>
+              <Answers mt={4} mx={2}>
                 <ButtonGroup size="lg" w="100%">
                   <SimpleGrid
                     columns={[null, null, 1]}
