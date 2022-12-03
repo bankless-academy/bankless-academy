@@ -6,6 +6,7 @@ export const WHITELABEL: WhitelabelType = {
   default_metadata_description: 'Level up your Bankless skills',
   default_metadata_image: '/BanklessDAO/image-f7b3de29.jpg',
   favicon: '/BanklessDAO/favicon-8166eefe.png',
+  apple_touch_icon: '/BanklessDAO/apple-touch-icon.png',
   logo: '/BanklessDAO/logo-7ee3f640.png',
   homepage_background: '/BanklessDAO/homepage_background-80df8c6d.png',
   logo_small: '/BanklessDAO/logo-7ee3f640.png',
