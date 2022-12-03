@@ -28,6 +28,10 @@ export const DEFAULT_METADATA: MetaData = {
 
 export const FAVICON = WHITELABEL?.favicon || '/favicon.png'
 
+export const APPLE_TOUCH_ICON = WHITELABEL?.favicon || '/apple-touch-icon.png'
+export const APPLE_TOUCH_STARTUP_IMAGE =
+  WHITELABEL?.homepage_background || '/apple-touch-startup-image.jpg'
+
 export const LOGO = WHITELABEL?.logo || '/images/BanklessAcademy.svg'
 export const LOGO_SMALL =
   WHITELABEL?.logo_small || '/images/BanklessAcademy_Logo.svg'

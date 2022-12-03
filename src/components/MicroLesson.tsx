@@ -1,9 +1,10 @@
-import { Box, Container, Link, Image, useMediaQuery } from '@chakra-ui/react'
+import { Box, Container, Link, Image } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
 
 import { LessonType } from 'entities/lesson'
+import { useSmallScreen } from 'hooks/index'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -455,7 +456,7 @@ const MicroLesson = ({
 }: {
   lesson: LessonType
 }): React.ReactElement => {
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
   return (
     <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
       <Image

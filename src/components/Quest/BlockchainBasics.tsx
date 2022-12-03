@@ -6,10 +6,10 @@ import {
   Input,
   Box,
 } from '@chakra-ui/react'
-import { useMediaQuery } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 
 import { theme } from 'theme/index'
+import { useSmallScreen } from 'hooks/index'
 
 const BlockchainBasics = (): {
   isQuestCompleted: boolean
@@ -24,7 +24,7 @@ const BlockchainBasics = (): {
   )
   const [isFromCorrect, setIsFromCorrect] = useState(false)
   const [isToCorrect, setIsToCorrect] = useState(false)
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
 
   const verifyFrom = (from) => {
     return from?.toLowerCase() === '0xa1e4380a3b1f749673e270229993ee55f35663b4'

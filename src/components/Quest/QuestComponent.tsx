@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
-import { useMediaQuery } from '@chakra-ui/react'
 
 import WalletConnect from 'components/Quest/WalletConnect'
 import WalletBasics from 'components/Quest/WalletBasics'
@@ -12,7 +11,7 @@ import BlockchainsLayer1 from 'components/Quest/BlockchainsLayer1'
 import DEXAggregators from 'components/Quest/DEXAggregators'
 import { ConnectFirst } from 'components/Quest/WalletConnect'
 
-import { useActiveWeb3React } from 'hooks'
+import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
 import { QUESTS } from 'constants/index'
 
 export type QuestComponentType = typeof QUESTS[number]
@@ -39,7 +38,7 @@ const QuestComponent = (
   if (!component || !QUESTS.includes(component)) return null
 
   const { account } = useActiveWeb3React()
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
 
   const Component =
     component in QUEST_COMPONENTS

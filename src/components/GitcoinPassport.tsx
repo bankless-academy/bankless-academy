@@ -1,9 +1,10 @@
-import { Box, SimpleGrid, Image, useMediaQuery, Icon } from '@chakra-ui/react'
+import { Box, SimpleGrid, Image, Icon } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
 import { Stamps } from 'entities/passport'
 import { theme } from 'theme/index'
+import { useSmallScreen } from 'hooks/index'
 
 const CircleIcon = (props) => (
   <Icon viewBox="0 0 200 200" {...props}>
@@ -28,7 +29,7 @@ const GitcoinPassport = ({
   stamps?: Stamps
   displayStamps?: boolean
 }): React.ReactElement => {
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
   return (
     <>
       {displayStamps && (

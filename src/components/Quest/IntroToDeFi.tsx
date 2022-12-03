@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Button, Box, useToast } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
 
-import { useActiveWeb3React } from 'hooks'
+import { useActiveWeb3React } from 'hooks/index'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 import { track, verifySignature, getSignature } from 'utils'
 import { NETWORKS } from 'constants/networks'

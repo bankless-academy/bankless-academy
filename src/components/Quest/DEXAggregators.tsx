@@ -6,11 +6,11 @@ import {
   InputGroup,
   Spinner,
 } from '@chakra-ui/react'
-import { useMediaQuery } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 
 import { theme } from 'theme/index'
+import { useSmallScreen } from 'hooks/index'
 
 const DEXAggregators = (
   account: string
@@ -23,7 +23,7 @@ const DEXAggregators = (
   )
   const [isCheckingTx, setIsCheckingTx] = useState(false)
   const [tx, setTx] = useState(localStorage.getItem('quest-dex-aggregators-tx'))
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
 
   const validateQuest = async (tx) => {
     try {

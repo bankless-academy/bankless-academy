@@ -1,10 +1,11 @@
 import React from 'react'
-import { Box, Link, useMediaQuery } from '@chakra-ui/react'
+import { Box, Link } from '@chakra-ui/react'
 
 import { PROJECT_NAME, IS_WHITELABEL } from 'constants/index'
+import { useSmallScreen } from 'hooks/index'
 
 const Footer: React.FC = () => {
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
   return (
     <footer>
       <Box

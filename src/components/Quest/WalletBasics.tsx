@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button, Spinner, Box } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
-import { useMediaQuery } from '@chakra-ui/react'
 
 import { theme } from 'theme/index'
+import { useSmallScreen } from 'hooks/index'
 
 const WalletBasics = (
   account: string
@@ -11,7 +11,7 @@ const WalletBasics = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
 
   return {
     isQuestCompleted: !!account,

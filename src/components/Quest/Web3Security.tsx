@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { Box, Image } from '@chakra-ui/react'
-import { useMediaQuery } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+
+import { useSmallScreen } from 'hooks/index'
 
 const StyledDiv = styled(Box)`
   img {
@@ -23,7 +24,7 @@ const Web3Security = (): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
 
   const [selected, setSelected] = useState(
     localStorage.getItem('quest-web3-security-101') !== null

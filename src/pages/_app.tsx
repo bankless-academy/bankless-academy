@@ -72,7 +72,7 @@ const App = ({
                 }
               `}
             />
-            <Layout isLesson={pageProps.pageMeta?.isLesson}>
+            <Layout isLesson={pageProps.pageMeta?.isLesson || false}>
               <Component {...pageProps} />
             </Layout>
           </Web3ReactProviderDefault>

@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box, useMediaQuery } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 
 import { MetaData } from 'components/Head'
-import { useActiveWeb3React } from 'hooks'
+import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
 import { DOMAIN_PROD } from 'constants/index'
 
 const pageMeta: MetaData = {
@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Feedback = (): JSX.Element => {
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
   const { account } = useActiveWeb3React()
 
   return (

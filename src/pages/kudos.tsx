@@ -5,7 +5,7 @@ import { GetStaticProps } from 'next'
 import axios from 'axios'
 
 import { MetaData } from 'components/Head'
-import { useActiveWeb3React } from 'hooks'
+import { useActiveWeb3React } from 'hooks/index'
 import { LESSONS } from 'constants/index'
 import { MINTKUDOS_CHAIN_ID, MINTKUDOS_DOMAIN_INFO } from 'constants/kudos'
 import { NETWORKS } from 'constants/networks'

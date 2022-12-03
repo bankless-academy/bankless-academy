@@ -1,6 +1,7 @@
 import { Web3Provider } from '@ethersproject/providers'
 import { useWeb3React as useWeb3ReactCore } from '@web3-react/core'
 import { Web3ReactContextInterface } from '@web3-react/core/dist/types'
+import { useMediaQuery } from '@chakra-ui/react'
 
 import { DefaultProviderName } from 'constants/index'
 
@@ -24,4 +25,8 @@ export function useDefaultWeb3React(): Web3ReactContextInterface<Web3Provider> &
 } {
   const defaultNetwork = useWeb3ReactCore<Web3Provider>(DefaultProviderName)
   return defaultNetwork
+}
+
+export function useSmallScreen(): boolean[] {
+  return useMediaQuery(['(max-width: 800px)', '(max-width: 1260px)'])
 }

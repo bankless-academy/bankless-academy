@@ -4,7 +4,7 @@ import { Box, Text, Link, Button, Image } from '@chakra-ui/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 
-import { useActiveWeb3React } from 'hooks'
+import { useActiveWeb3React } from 'hooks/index'
 import GitcoinPassport from 'components/GitcoinPassport'
 import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
 import { theme } from 'theme/index'

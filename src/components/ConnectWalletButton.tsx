@@ -30,7 +30,7 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
   OrigPopoverTrigger
 
 import ENSName from 'components/ENSName'
-import { useWalletWeb3React } from 'hooks'
+import { useWalletWeb3React } from 'hooks/index'
 import { walletConnect, injected } from 'utils'
 import { LESSONS, INFURA_ID, IS_WHITELABEL, ALCHEMY_ID } from 'constants/index'
 import {

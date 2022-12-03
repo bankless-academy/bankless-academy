@@ -1,4 +1,6 @@
-import { Box, useMediaQuery } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
+
+import { useSmallScreen } from 'hooks/index'
 
 const ProgressSteps = ({
   step,
@@ -7,7 +9,7 @@ const ProgressSteps = ({
   step: number
   total: number
 }): React.ReactElement => {
-  const [isSmallScreen] = useMediaQuery('(max-width: 800px)')
+  const [isSmallScreen] = useSmallScreen()
   return (
     <Box display="flex" m="3" position="relative">
       {[...Array(total)].map((e, index) => (
