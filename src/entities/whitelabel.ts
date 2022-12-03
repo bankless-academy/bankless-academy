@@ -4,6 +4,7 @@ export interface WhitelabelType {
   default_metadata_description?: string
   default_metadata_image?: string
   favicon?: string
+  apple_touch_icon?: string
   logo?: string
   logo_small?: string
   homepage_background?: string
