@@ -10,6 +10,8 @@ import {
   DEFAULT_METADATA,
   FAVICON,
   UMAMI_PROD,
+  APPLE_TOUCH_ICON,
+  APPLE_TOUCH_STARTUP_IMAGE,
 } from 'constants/index'
 
 export interface MetaData {
@@ -65,6 +67,21 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           type="image/png"
           href={FAVICON}
         />
+        {/* Apple mobile web app */}
+        <link rel="apple-touch-icon" href={APPLE_TOUCH_ICON} />
+        <link
+          rel="apple-touch-startup-image"
+          href={APPLE_TOUCH_STARTUP_IMAGE}
+        />
+        <meta name="apple-mobile-web-app-title" content={PROJECT_NAME} />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link
+          rel="manifest"
+          crossOrigin="use-credentials"
+          href="/manifest.json"
+        />
+        {/* noscript */}
         <noscript>You need to enable JavaScript to run this app.</noscript>
       </NextHead>
       {/* Hotjar */}
