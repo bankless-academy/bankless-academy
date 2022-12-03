@@ -28,7 +28,8 @@ export const DEFAULT_METADATA: MetaData = {
 
 export const FAVICON = WHITELABEL?.favicon || '/favicon.png'
 
-export const APPLE_TOUCH_ICON = WHITELABEL?.favicon || '/apple-touch-icon.png'
+export const APPLE_TOUCH_ICON =
+  WHITELABEL?.apple_touch_icon || WHITELABEL?.favicon || '/apple-touch-icon.png'
 export const APPLE_TOUCH_STARTUP_IMAGE =
   WHITELABEL?.homepage_background || '/apple-touch-startup-image.jpg'
 
