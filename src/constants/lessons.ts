@@ -1218,7 +1218,7 @@ const LESSONS: LessonType[] = [
       '/lesson/blockchains-layer-1/scalability-finality-1e239561.png',
       '/lesson/blockchains-layer-1/decentralization-distributes-power-2ff993cf.jpg',
       '/lesson/blockchains-layer-1/is-it-decentralized-b531bb4b.png',
-      '/lesson/blockchains-layer-1/some-examples-59656842.jpg',
+      '/lesson/blockchains-layer-1/some-examples-ab85ca86.png',
       '/lesson/blockchains-layer-1/so-what-can-be-done-b663dedb.png',
       '/lesson/blockchains-layer-1/the-future-of-ethereum-292e2215.png'
     ],
@@ -1367,7 +1367,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'fdfbd964272445d5981d88c7f4c78410',
         title: 'Some Examples',
-        content: '<div class="bloc1"><p>Each blockchain has its own approach to the trilemma, and each has made tradeoffs to focus on its goals. Bitcoin and Ethereum prioritize security and decentralization over scalability, leading to long transaction <span class="tooltip" definition="How long it takes until it is safe to trust that a transaction is final and accepted.">finality time</span> for Bitcoin and sky-high transaction fees for Ethereum. The demand to use smart contracts as a “decentralized world-finance computer”, especially for DeFi, has meant that many users making small transactions cannot afford Ethereum.</p><p>This high cost to use has provided an opening for alternative Layer 1’s like the Binance chain. Binance prioritized scalability over decentralization for higher transaction throughput and cheaper fees. Third-generation chains like Solana, Hedera, Cosmos, and others use novel methods to solve the trilemma, but all blockchains are still subject to these basic constraints. Each chain’s choice defines its ecosystem through the foundational effects that come from that choice.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/some-examples-59656842.jpg\'></div>'
+        content: '<div class="bloc1"><p>Each blockchain has its own approach to the trilemma, and each has made tradeoffs to focus on its goals. Bitcoin and Ethereum prioritize security and decentralization over scalability, leading to long transaction <span class="tooltip" definition="How long it takes until it is safe to trust that a transaction is final and accepted.">finality time</span> for Bitcoin and sky-high transaction fees for Ethereum. The demand to use smart contracts as a “decentralized world-finance computer”, especially for DeFi, has meant that many users making small transactions cannot afford Ethereum.</p><p>This high cost to use has provided an opening for alternative Layer 1’s like the Binance chain. Binance prioritized scalability over decentralization for higher transaction throughput and cheaper fees. Third-generation chains like Solana, Hedera, Cosmos, and others use novel methods to solve the trilemma, but all blockchains are still subject to these basic constraints. Each chain’s choice defines its ecosystem through the foundational effects that come from that choice.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/some-examples-ab85ca86.png\'></div>'
       },
       {
         type: 'LEARN',
