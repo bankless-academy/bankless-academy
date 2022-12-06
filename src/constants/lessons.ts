@@ -1215,10 +1215,10 @@ const LESSONS: LessonType[] = [
       '/lesson/blockchains-layer-1/security-and-consensus-d1770537.png',
       '/lesson/blockchains-layer-1/security-and-attacks-fcb95760.jpg',
       '/lesson/blockchains-layer-1/scalability-throughput-5fdcb4db.png',
-      '/lesson/blockchains-layer-1/scalability-finality-bc2a3e7d.png',
+      '/lesson/blockchains-layer-1/scalability-finality-1e239561.png',
       '/lesson/blockchains-layer-1/decentralization-distributes-power-2ff993cf.jpg',
       '/lesson/blockchains-layer-1/is-it-decentralized-b531bb4b.png',
-      '/lesson/blockchains-layer-1/some-examples-137357c0.jpg',
+      '/lesson/blockchains-layer-1/some-examples-59656842.jpg',
       '/lesson/blockchains-layer-1/so-what-can-be-done-b663dedb.png',
       '/lesson/blockchains-layer-1/the-future-of-ethereum-292e2215.png'
     ],
@@ -1319,7 +1319,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'cf8aeea9908e4dc7960f63ae71edcad4',
         title: 'Scalability - Finality',
-        content: '<div class="bloc1"><p>The second aspect of blockchain scalability is:</p><p>2) Finality: When can we be reasonably sure a transaction won’t get changed or reversed?</p><p>Finality is typically measured in blocks — how many blocks have passed since the transaction was included in a block? The more blocks that get added to the chain afterward, the more sure we can be that the transaction is finalized and won’t get reverted. Remember, a secure blockchain consensus algorithm makes it very expensive to change past blocks, and the expense increases the farther back someone changes. We convert this block number to a finality time by multiplying the expected number of block confirmations by the blockchain’s TPS. For Ethereum, eight block confirmations times 15 <span class="tooltip" definition="Transactions Per Second. The number of transactions per second processed by a blockchain.">TPS</span> gives 2 minutes of finality time after confirmation.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/scalability-finality-bc2a3e7d.png\'></div>'
+        content: '<div class="bloc1"><p>The second aspect of blockchain scalability is:</p><p>2) Finality: When can we be reasonably sure a transaction won’t get changed or reversed?</p><p>Finality is typically measured in blocks — how many blocks have passed since the transaction was included in a block? The more blocks that get added to the chain afterward, the more sure we can be that the transaction is finalized and won’t get reverted. Remember, a secure blockchain consensus algorithm makes it very expensive to change past blocks, and the expense increases the farther back someone changes. We convert this block number to a finality time by multiplying the expected number of block confirmations by the blockchain’s TPS. For Ethereum, eight block confirmations times 15 <span class="tooltip" definition="Transactions Per Second. The number of transactions per second processed by a blockchain.">TPS</span> gives 2 minutes of finality time after confirmation.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/scalability-finality-1e239561.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -1367,7 +1367,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'fdfbd964272445d5981d88c7f4c78410',
         title: 'Some Examples',
-        content: '<div class="bloc1"><p>Each blockchain has its own approach to the trilemma, and each has made tradeoffs to focus on its goals. Bitcoin and Ethereum prioritize security and decentralization over scalability, leading to long transaction <span class="tooltip" definition="How long it takes until it is safe to trust that a transaction is final and accepted.">finality time</span> for Bitcoin and sky-high transaction fees for Ethereum. The demand to use smart contracts as a “decentralized world-finance computer”, especially for DeFi, has meant that many users making small transactions cannot afford Ethereum.</p><p>This high cost to use has provided an opening for alternative Layer 1’s like the Binance chain. Binance prioritized scalability over decentralization for higher transaction throughput and cheaper fees. Third-generation chains like Solana, Hedera, Cosmos, and others use novel methods to solve the trilemma, but all blockchains are still subject to these basic constraints. Each chain’s choice defines its ecosystem through the foundational effects that come from that choice.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/some-examples-137357c0.jpg\'></div>'
+        content: '<div class="bloc1"><p>Each blockchain has its own approach to the trilemma, and each has made tradeoffs to focus on its goals. Bitcoin and Ethereum prioritize security and decentralization over scalability, leading to long transaction <span class="tooltip" definition="How long it takes until it is safe to trust that a transaction is final and accepted.">finality time</span> for Bitcoin and sky-high transaction fees for Ethereum. The demand to use smart contracts as a “decentralized world-finance computer”, especially for DeFi, has meant that many users making small transactions cannot afford Ethereum.</p><p>This high cost to use has provided an opening for alternative Layer 1’s like the Binance chain. Binance prioritized scalability over decentralization for higher transaction throughput and cheaper fees. Third-generation chains like Solana, Hedera, Cosmos, and others use novel methods to solve the trilemma, but all blockchains are still subject to these basic constraints. Each chain’s choice defines its ecosystem through the foundational effects that come from that choice.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/some-examples-59656842.jpg\'></div>'
       },
       {
         type: 'LEARN',
