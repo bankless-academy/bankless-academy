@@ -172,7 +172,9 @@ const BlockchainsLayer1 = (): {
     questComponent: (
       <>
         <h2>
-          {`Given the current state of blockchain technology, blockchains can only optimize for 2 of the 3 characteristics, at most. Please drag and drop the following blockchains into their corresponding characteristics.`}
+          {`Given the current state of blockchain technology, blockchains can only optimize for 2 of the 3 characteristics, at most.`}
+          <br />
+          {`Please drag and drop the following blockchains into their corresponding characteristics.`}
         </h2>
         <Box display="flex" flexWrap="wrap" justifyContent="center">
           <DragDropContext onDragEnd={onDragEnd}>
