@@ -1240,11 +1240,13 @@ const LESSONS: LessonType[] = [
         notionId: '8a9d852b8f374a9d815917752850955e',
         title: '✅ TODO',
         quiz: {
-          question: 'The Blockchain Trilemma ',
-          rightAnswerNumber: 1,
+          question: 'The Blockchain Trilemma describes the relationship between:',
+          rightAnswerNumber: 3,
           answers: [
-            'answer 1',
-            'answer 2'
+            'ethereum, bitcoin, and altcoins',
+            'security, censorship, and fraud',
+            'decentralization, scalabilty, and security',
+            'money, humans, and blockchains'
           ],
           id: 'blockchains-layer-1-1'
         }
@@ -1325,7 +1327,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '484d38249db74050a6a14cf584f44c15',
         title: 'Decentralization distributes power',
-        content: '<div class="bloc1"><p><span class="tooltip" definition="Principle that no single authority or entity should control the blockchain data.">Decentralization</span> is the final basis of the blockchain trilemma — the process of transferring control and decision-making from a single entity to a distributed network of many. Decentralization is the fundamental principle that enables blockchains to be <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> and censorship-resistant; anyone can use decentralized blockchains, and anyone can build software using them.</p><p>Centralized platforms like Facebook and Twitter can deactivate anyone’s account at any time. Many large streamers on Twitch or Tiktok have found themselves removed from their platforms without cause. Even if social media users can reinstate their accounts, it can be long and painful. A <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> network means the authority is sufficiently decentralized, so there is no way to remove a person or entity.</p><p>Without decentralization, a blockchain <span class="tooltip" definition="The record of all transactions that have ever occurred.">ledger</span> is just a financial spreadsheet on a bank computer; the bankers decide who gets to create an account with them. If the bank or its customers have their assets seized by a malicious government, there is no recourse. Citizens worldwide have seized their assets in banks; Venezuela, Russia, and others have had banks nationalized by governments throughout history.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/decentralization-distributes-power-2ff993cf.jpg\'></div>'
+        content: '<div class="bloc1"><p><span class="tooltip" definition="Principle that no single authority or entity should control the blockchain data.">Decentralization</span> is the final basis of the blockchain trilemma — the process of transferring control and decision-making from a single entity to a distributed network of many. Decentralization is the fundamental principle that enables blockchains to be <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> and censorship-resistant; anyone can use decentralized blockchains, and anyone can build software using them.</p><p>Centralized platforms like Facebook and Twitter can deactivate anyone’s account at any time. Many large streamers on Twitch or Tiktok have found themselves removed from their platforms without cause. Even if social media users can reinstate their accounts, it can be long and painful process. Without decentralization, a blockchain <span class="tooltip" definition="The record of all transactions that have ever occurred.">ledger</span> is just a financial spreadsheet on a bank computer; the bankers decide who gets to create an account with them. A <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> network means authority is sufficiently decentralized; there is no way to remove a person or entity’s access.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/decentralization-distributes-power-2ff993cf.jpg\'></div>'
       },
       {
         type: 'QUIZ',
