@@ -65,6 +65,7 @@ const dropList = (state, ind) => {
                   justifyContent="center"
                   padding="6px"
                   mb="1"
+                  userSelect="none"
                 >
                   <Image
                     src={ICONS[item.index]}
@@ -172,8 +173,9 @@ const BlockchainsLayer1 = (): {
     questComponent: (
       <>
         <h2>
-          What qualities do these blockchains mainly optimize for? Drag them
-          into the correct bucket.
+          {`Given the current state of blockchain technology, blockchains can only optimize for 2 of the 3 characteristics, at most.`}
+          <br />
+          {`Please drag and drop the following blockchains into their corresponding characteristics.`}
         </h2>
         <Box display="flex" flexWrap="wrap" justifyContent="center">
           <DragDropContext onDragEnd={onDragEnd}>

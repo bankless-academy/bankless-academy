@@ -520,7 +520,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               {isLastSlide && isSmallScreen ? '' : 'Prev'}
             </Button>
           )}
-          {lesson.isCommentsEnabled && !isSmallScreen && slide.notionId && (
+          {lesson.isCommentsEnabled && slide.notionId && (
             <Tooltip
               hasArrow
               label="Help us improve the content by commenting this slide on Notion"
@@ -530,7 +530,9 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                 rel="noreferrer"
                 href={`https://www.notion.so/${lesson.notionId}#${slide.notionId}`}
               >
-                <Button variant="outline">🐞 comment this slide</Button>
+                <Button variant="outline">
+                  🐞{isSmallScreen ? '' : ` comment this slide`}
+                </Button>
               </Link>
             </Tooltip>
           )}
