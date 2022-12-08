@@ -65,6 +65,7 @@ const dropList = (state, ind) => {
                   justifyContent="center"
                   padding="6px"
                   mb="1"
+                  userSelect="none"
                 >
                   <Image
                     src={ICONS[item.index]}
