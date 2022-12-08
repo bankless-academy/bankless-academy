@@ -34,7 +34,7 @@ const switchNetwork = async (
               symbol: NETWORKS[networkName].currencySymbol,
               decimals: 18,
             },
-            rpcUrls: [NETWORKS[networkName].rpcUrl],
+            rpcUrls: [NETWORKS[networkName].rpcUrlAdd],
             blockExplorerUrls: [NETWORKS[networkName].blockExplorer],
           },
         ]
