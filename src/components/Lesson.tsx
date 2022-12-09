@@ -243,9 +243,12 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   }, [])
 
   const scrollTop = () => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
+    // 0.3 second delay
+    setTimeout(() => {
+      if (typeof window !== 'undefined') {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    }, 300)
   }
 
   const goToPrevSlide = () => {
