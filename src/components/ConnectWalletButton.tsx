@@ -32,7 +32,7 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
 import ENSName from 'components/ENSName'
 import { useWalletWeb3React } from 'hooks/index'
 import { walletConnect, injected } from 'utils'
-import { LESSONS, INFURA_ID, IS_WHITELABEL, ALCHEMY_ID } from 'constants/index'
+import { LESSONS, INFURA_ID, ALCHEMY_ID } from 'constants/index'
 import {
   MINTKUDOS_API,
   MINTKUDOS_COMMUNITY_ID,
@@ -270,7 +270,7 @@ const ConnectWalletButton = ({
                 </Button>
               </Box>
               {/* TODO: move to dedicated component? */}
-              {!IS_WHITELABEL && kudos?.length > 0 && (
+              {kudos?.length > 0 && (
                 <>
                   <Text fontSize="xl" fontWeight="bold" textAlign="center">
                     My Academy Badges
@@ -288,24 +288,53 @@ const ConnectWalletButton = ({
                           (lesson) => lesson.kudosId === k.kudosTokenId
                         )
                         if (lesson) {
-                          return (
-                            <Box
-                              key={`kudos-${index}`}
-                              justifySelf="center"
-                              boxShadow="0px 0px 4px 2px #00000060"
-                              borderRadius="3px"
-                              backgroundColor="blackAlpha.300"
-                              p={1}
-                            >
-                              <Image
-                                src={k.assetUrl}
-                                width="70px"
-                                height="70px"
-                                alt={lesson.name}
-                                title={lesson.name}
-                              />
-                            </Box>
-                          )
+                          if (lesson.kudosImageLink.includes('.mp4')) {
+                            return (
+                              <Box
+                                key={`kudos-${index}`}
+                                height="78px"
+                                width="78px"
+                                boxShadow="0px 0px 4px 2px #00000060"
+                                borderRadius="3px"
+                                overflow="hidden"
+                                border="1px solid #4b474b"
+                              >
+                                <video
+                                  autoPlay
+                                  loop
+                                  playsInline
+                                  muted
+                                  style={{
+                                    borderRadius: '3px',
+                                    overflow: 'hidden',
+                                  }}
+                                >
+                                  <source
+                                    src={lesson.kudosImageLink}
+                                    type="video/mp4"
+                                  ></source>
+                                </video>
+                              </Box>
+                            )
+                          } else
+                            return (
+                              <Box
+                                key={`kudos-${index}`}
+                                justifySelf="center"
+                                boxShadow="0px 0px 4px 2px #00000060"
+                                borderRadius="3px"
+                                backgroundColor="blackAlpha.300"
+                                p={1}
+                              >
+                                <Image
+                                  src={k.assetUrl}
+                                  width="70px"
+                                  height="70px"
+                                  alt={lesson.name}
+                                  title={lesson.name}
+                                />
+                              </Box>
+                            )
                         }
                       })}
                     </SimpleGrid>
