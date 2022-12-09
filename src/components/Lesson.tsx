@@ -242,9 +242,16 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
     }, 3000)
   }, [])
 
+  const scrollTop = () => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
   const goToPrevSlide = () => {
     if (!isFirstSlide) {
       setCurrentSlide(currentSlide - 1)
+      scrollTop()
     }
     setSelectedAnswerNumber(null)
   }
@@ -254,7 +261,9 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
+      scrollTop()
     } else if (isLastSlide) {
+      scrollTop()
       if (lesson.endOfLessonRedirect) {
         if (lesson.endOfLessonRedirect.includes('https://tally.so/r/')) {
           // redirect to embeded Tally form
