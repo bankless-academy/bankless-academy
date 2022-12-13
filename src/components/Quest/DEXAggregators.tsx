@@ -5,6 +5,7 @@ import {
   InputRightElement,
   InputGroup,
   Spinner,
+  Image,
 } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import axios from 'axios'
@@ -72,7 +73,16 @@ const DEXAggregators = (
               >
                 1inch
               </a>
-              {' on the Polygon network.'}
+              {' on the '}
+              <Image
+                alt="Polygon"
+                src="/images/matic.svg"
+                display="inline-flex"
+                height="24px"
+                m="0px 5px -5px 0"
+              />
+              <b>Polygon network</b>
+              {'.'}
             </p>
             <p>
               {'2. Swap any token to '}
@@ -118,8 +128,8 @@ const DEXAggregators = (
             {isTransactionVerified === 'false' && tx && tx.length !== 0 && (
               <Box mb="4">
                 <b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash
-                and not the approval transaction hash. Watch the video for more
-                information.
+                done on <b>Polygon network</b> and not the approval transaction
+                hash. Watch the video for more information.
               </Box>
             )}
             <Box mt="4">
