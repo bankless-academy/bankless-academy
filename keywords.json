@@ -2,6 +2,9 @@
   "2 Factor Authentication": {
     "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
   },
+  "51% attack": {
+    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+  },
   "address": {
     "definition": "Unique public identifier for an entity on a blockchain"
   },
@@ -10,6 +13,9 @@
   },
   "allowance": {
     "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction"
+  },
+  "alternative Layer 1": {
+    "definition": "Layer 1 blockchains other than Ethereum and Bitcoin."
   },
   "bet": {
     "definition": "risking money in exchange for greater rewards (shorting/longing) ; money verb on the skill cube"
@@ -23,17 +29,26 @@
   "block hash": {
     "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
   },
+  "block reward": {
+    "definition": "The amount of a blockchain’s native asset given to the proposer of a new valid block."
+  },
+  "block space": {
+    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
+  },
   "blockchain": {
     "definition": "A shared, unchangeable database, or ledger, of recorded transactions."
   },
   "blockchain architecture": {
     "definition": "The structures for how data is stored in blockchain technology."
   },
-  "blockspace": {
-    "definition": "Blockspace is amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
+  "Blockchain Trilemma": {
+    "definition": "The problem describing the need for all 3 mutually-interfering blockchain qualities: Security, Scalability, and Decentralization."
   },
   "borrower": {
     "definition": "Willing to pay interest to lenders in order to borrow assets"
+  },
+  "censorship-resistant": {
+    "definition": "No government or company has control to determine what is or is not allowed."
   },
   "centralized exchange": {
     "definition": "(CEX) Platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange"
@@ -54,7 +69,7 @@
     "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan"
   },
   "consensus": {
-    "definition": "Methods used to achieve agreement, trust, and security across a decentralized computer network like blockchains."
+    "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
   },
   "custodial wallet": {
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
@@ -95,8 +110,8 @@
   "Epoch": {
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
-  "finality time": {
-    "definition": "How long it takes until it is safe to trust that a transaction is final and accepted."
+  "finality": {
+    "definition": "How long it takes until it is safe to trust that a new transaction is valid and final."
   },
   "FOMO": {
     "definition": "Fear Of Missing Out. Anxiety or apprehension about missing out on or not getting things"
@@ -133,6 +148,9 @@
   },
   "invest": {
     "definition": "The act of buying a coin/token that uses DeFi technology"
+  },
+  "Layer 2": {
+    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
   },
   "ledger": {
     "definition": "The record of all transactions that have ever occurred."
@@ -188,6 +206,12 @@
   "private keys": {
     "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
   },
+  "Proof of Stake": {
+    "definition": "Blockchain Consensus algorithms that randomly choose a block producer based on the amount of stake each entity has locked into the protocol."
+  },
+  "Proof of Work": {
+    "definition": "Blockchain Consensus algorithms that rely on “work” done by miners competing to create valid blocks by proposing blocks and seeing if each one has a valid hash."
+  },
   "public": {
     "definition": "Public blockchains allow anyone to view the blockchain ledger"
   },
@@ -216,10 +240,13 @@
     "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds"
   },
   "Security": {
-    "definition": "Ability of a blockchain to withstand hacking attempts, code exploits, and economic exploits among other attacks, and continue to function as normal. "
+    "definition": "Ability of a blockchain to withstand hacking attempts, code exploits, and economic exploits among other attacks, and continue to function as normal."
   },
   "seed phrase": {
     "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
+  },
+  "sharding": {
+    "definition": " The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability."
   },
   "slippage tolerance": {
     "definition": "How much can prices change before your trade executes"
@@ -233,6 +260,9 @@
   "spend": {
     "definition": "Using your crypto assets to pay for goods or services."
   },
+  "stake": {
+    "definition": "The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”."
+  },
   "staking": {
     "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")"
   },
@@ -243,7 +273,7 @@
     "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
   },
   "TPS": {
-    "definition": "Transactions Per Second. The number of transactions per second processed by a blockchain."
+    "definition": "A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain."
   },
   "trade": {
     "definition": "exchanging assets or money for something valuable ; money verb on the skill cube"
@@ -259,6 +289,9 @@
   },
   "transaction hash": {
     "definition": "The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions."
+  },
+  "transaction throughput": {
+    "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
   },
   "wallet": {
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
