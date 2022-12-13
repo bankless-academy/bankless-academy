@@ -37,7 +37,7 @@ const PassportComponent = ({
               title: 'Gitcoin Passport stamps not loading',
               description: (
                 <Link
-                  href="/faq#5b4a9aa739ac480fa546c5bd736fd002"
+                  href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
                   target="_blank"
                 >
                   Follow these steps and try again
