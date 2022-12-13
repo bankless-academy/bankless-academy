@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react'
-import { Box, Text, Link, Button, Image } from '@chakra-ui/react'
+import { Box, Text, Link, Button, Image, useToast } from '@chakra-ui/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 
@@ -20,6 +20,7 @@ const PassportComponent = ({
     EMPTY_PASSPORT
   )
   const [isLoading, setIsLoading] = useState(false)
+  const toast = useToast()
   const { account } = useActiveWeb3React()
 
   async function checkPassport() {
@@ -28,7 +29,36 @@ const PassportComponent = ({
       .get(`/api/passport?address=${account}`)
       .then(function (res) {
         setIsLoading(false)
-        console.log('passport', res.data)
+        // console.log('passport', res.data)
+        if (res.data?.error) {
+          toast.closeAll()
+          if (res.data?.error.includes('ERR_BAD_RESPONSE')) {
+            toast({
+              title: 'Gitcoin Passport stamps not loading',
+              description: (
+                <Link
+                  href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
+                  target="_blank"
+                >
+                  Follow these steps and try again
+                </Link>
+              ),
+              status: 'warning',
+              duration: null,
+            })
+          } else {
+            toast({
+              title: 'Gitcoin Passport issue',
+              description: (
+                <Link href="/bug" target="_blank">
+                  Report a bug
+                </Link>
+              ),
+              status: 'warning',
+              duration: null,
+            })
+          }
+        }
         setPassportLS(res.data)
       })
       .catch(function (error) {
