@@ -58,6 +58,7 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   span.tooltip {
     cursor: help;
     border-bottom: 1px dashed grey;
+    display: inline-block !important;
   }
   div.content > div {
     ${(props) =>
