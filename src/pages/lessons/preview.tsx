@@ -138,10 +138,14 @@ const Lessons = (): JSX.Element => {
           console.error(error)
         })
     }
+    const [, , , mirror_account] =
+      mirror && typeof mirror === 'string' ? mirror.split('/') : []
     if (
       mirror &&
       typeof mirror === 'string' &&
-      MIRROR_WHITELISTED_ACCOUNTS.some((account) => mirror.includes(account))
+      MIRROR_WHITELISTED_ACCOUNTS.some((account) =>
+        mirror_account.includes(account)
+      )
     ) {
       const mirrorId = mirror?.split('/')?.pop()
       axios({

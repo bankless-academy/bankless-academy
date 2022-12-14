@@ -82,6 +82,7 @@ export const NOTION_PAGES = WHITELABEL?.notion_pages || {
 }
 
 export const MIRROR_WHITELISTED_ACCOUNTS = [
+  'banklessacademy.eth',
   'didierkrux.eth',
   'tetranome.eth',
   'ispeaknerd.eth',
