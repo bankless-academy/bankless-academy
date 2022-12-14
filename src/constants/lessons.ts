@@ -482,7 +482,7 @@ const LESSONS: LessonType[] = [
     name: 'Blockchain Basics',
     quest: 'BlockchainBasics',
     publicationStatus: 'publish',
-    isFeaturedOnHomepage: true,
+    isFeaturedOnHomepage: false,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
@@ -990,8 +990,8 @@ const LESSONS: LessonType[] = [
     publicationStatus: 'publish',
     isFeaturedOnHomepage: true,
     isCommentsEnabled: false,
-    endOfLessonRedirect: 'https://tally.so/r/3Ek4N4',
-    endOfLessonText: 'To give feedback about this lesson, click Next.',
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
     communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=671cc928-93d6-4c9a-9718-28ed3d56af7c',
     isMicroLesson: false,
     notionId: '42578b8813114832b8930cf59f6125af',
@@ -1188,52 +1188,52 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/blockchains-layer-1/kudos-28a03b13.png',
-    lessonImageLink: '/lesson/blockchains-layer-1/lesson-670d86ca.png',
-    socialImageLink: '/lesson/blockchains-layer-1/social-9e12aa4e.png',
+    kudosImageLink: '/lesson/layer-1-blockchains/kudos-66fa6447.png',
+    lessonImageLink: '/lesson/layer-1-blockchains/lesson-dcff6ea3.png',
+    socialImageLink: '/lesson/layer-1-blockchains/social-db62f5f0.jpg',
     learningActions: '',
     marketingDescription: 'Understand the Layer 1 blockchains basics and their limitations.',
-    kudosId: null,
+    kudosId: 14611,
     duration: 15,
     learnings: '',
     difficulty: undefined,
     description: 'Understand the Layer 1 blockchains basics and their limitations.',
-    name: 'Blockchains Layer 1',
-    quest: 'BlockchainsLayer1',
-    publicationStatus: 'hidden',
-    isFeaturedOnHomepage: false,
+    name: 'Layer 1 Blockchains',
+    quest: 'Layer1Blockchains',
+    publicationStatus: 'publish',
+    isFeaturedOnHomepage: true,
     isCommentsEnabled: false,
-    endOfLessonRedirect: 'https://tally.so/r/w2jxbV',
+    endOfLessonRedirect: 'https://tally.so/r/wdbKjy',
     endOfLessonText: 'To give feedback about this lesson, click Next.',
-    communityDiscussionLink: null,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=cd3e1630-72a6-40c4-ac26-ce5809e19af6',
     isMicroLesson: false,
     notionId: '6e14e3cfc6a44087b3b3d15dd07d2fee',
-    slug: 'blockchains-layer-1',
+    slug: 'layer-1-blockchains',
     imageLinks: [
-      '/lesson/blockchains-layer-1/introduction-6ee405c5.svg',
-      '/lesson/blockchains-layer-1/blockchain-trilemma-b6fee9ea.svg',
-      '/lesson/blockchains-layer-1/security-and-consensus-e36b9e5e.svg',
-      '/lesson/blockchains-layer-1/security-and-attacks-ff993589.svg',
-      '/lesson/blockchains-layer-1/scalability-throughput-3b900e0c.svg',
-      '/lesson/blockchains-layer-1/scalability-finality-ad4c488a.svg',
-      '/lesson/blockchains-layer-1/decentralization-distributes-power-0821311e.svg',
-      '/lesson/blockchains-layer-1/is-it-decentralized-8dde9933.svg',
-      '/lesson/blockchains-layer-1/some-examples-6c9f9810.svg',
-      '/lesson/blockchains-layer-1/so-what-can-be-done-1ba0d441.svg',
-      '/lesson/blockchains-layer-1/the-future-of-ethereum-7bdca06a.svg'
+      '/lesson/layer-1-blockchains/introduction-e0da8469.svg',
+      '/lesson/layer-1-blockchains/blockchain-trilemma-31329f66.svg',
+      '/lesson/layer-1-blockchains/security-and-consensus-5e1f03b6.svg',
+      '/lesson/layer-1-blockchains/security-and-attacks-7d35acf6.svg',
+      '/lesson/layer-1-blockchains/scalability-throughput-a58495ac.svg',
+      '/lesson/layer-1-blockchains/scalability-finality-161f7e2b.svg',
+      '/lesson/layer-1-blockchains/decentralization-distributes-power-829f91a2.svg',
+      '/lesson/layer-1-blockchains/is-it-decentralized-4b5bf857.svg',
+      '/lesson/layer-1-blockchains/some-examples-523b9b96.svg',
+      '/lesson/layer-1-blockchains/so-what-can-be-done-50592b46.svg',
+      '/lesson/layer-1-blockchains/the-future-of-ethereum-2b64fd6b.svg'
     ],
     slides: [
       {
         type: 'LEARN',
         notionId: 'c39a3e32b41c474394eed2485e5f6096',
         title: '<strong>Introduction</strong>',
-        content: '<div class="bloc1"><p>Problems emerge when more users want to use a <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> network than it can handle. Large demand for blockspace can be temporary or can last as long as users continue to have a strong desire to use the blockchain. In times of high demand, Ethereum users can pay skyrocketing fees to still have their transactions processed quickly— ultimately pricing out users with less capital.</p><p>This lesson explores why Ethereum and other blockchains are subject to the <span class="tooltip" definition="The problem describing the need for all 3 mutually-interfering blockchain qualities: Security, Scalability, and Decentralization.">Blockchain Trilemma</span>, how the Trilemma is the root cause of the problems described above, and how the Trilemma affects Ethereum’s plans for serving the needs of all its users. We will look at the tradeoffs several blockchains have made concerning the Blockchain Trilemma, and what those tradeoffs mean for Academy Explorers.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/introduction-6ee405c5.svg\'></div>'
+        content: '<div class="bloc1"><p>Problems emerge when more users want to use a <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> network than it can handle. Large demand for blockspace can be temporary or can last as long as users continue to have a strong desire to use the blockchain. In times of high demand, Ethereum users can pay skyrocketing fees to still have their transactions processed quickly— ultimately pricing out users with less capital.</p><p>This lesson explores why Ethereum and other blockchains are subject to the <span class="tooltip" definition="The problem describing the need for all 3 mutually-interfering blockchain qualities: Security, Scalability, and Decentralization.">Blockchain Trilemma</span>, how the Trilemma is the root cause of the problems described above, and how the Trilemma affects Ethereum’s plans for serving the needs of all its users. We will look at the tradeoffs several blockchains have made concerning the Blockchain Trilemma, and what those tradeoffs mean for Academy Explorers.</p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/introduction-e0da8469.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '4dfda718520e4f5ea01dce2e8ee15529',
         title: 'Blockchain Trilemma',
-        content: '<div class="bloc1"><p>As implied by the word <em><strong>tri</strong></em>lemma, there are three qualities of blockchains that compete with each other and prevent optimizing for all three at once. </p><p>These are: <span class="tooltip" definition="Ability of a blockchain to withstand hacking attempts, code exploits, and economic exploits among other attacks, and continue to function as normal.">Security</span>, <span class="tooltip" definition="A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users.">Scalability</span>, and <span class="tooltip" definition="Principle that no single authority or entity should control the blockchain data.">Decentralization</span>.</p><p>For a blockchain to serve as an unbiased foundation for a monetary system at a global scale, it should excel in all three aspects. A monetary system needs to be secure from fraud, safe from attacks by censors through decentralization, and scalable to meet the needs of over 8 billion humans in a global society.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/blockchain-trilemma-b6fee9ea.svg\'></div>'
+        content: '<div class="bloc1"><p>As implied by the word <em><strong>tri</strong></em>lemma, there are three qualities of blockchains that compete with each other and prevent optimizing for all three at once. </p><p>These are: <span class="tooltip" definition="Ability of a blockchain to withstand hacking attempts, code exploits, and economic exploits among other attacks, and continue to function as normal.">Security</span>, <span class="tooltip" definition="A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users.">Scalability</span>, and <span class="tooltip" definition="Principle that no single authority or entity should control the blockchain data.">Decentralization</span>.</p><p>For a blockchain to serve as an unbiased foundation for a monetary system at a global scale, it should excel in all three aspects. A monetary system needs to be secure from fraud, safe from attacks by censors through decentralization, and scalable to meet the needs of over 8 billion humans in a global society.</p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/blockchain-trilemma-31329f66.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1248,14 +1248,14 @@ const LESSONS: LessonType[] = [
             'decentralization, scalabilty, and security',
             'money, humans, and blockchains'
           ],
-          id: 'blockchains-layer-1-1'
+          id: 'layer-1-blockchains-1'
         }
       },
       {
         type: 'LEARN',
         notionId: '1fc5863c44bb4437a21bc7cc7cb0cfdf',
         title: 'Security and Consensus',
-        content: '<div class="bloc1"><p>Security is the most foundational requirement for a public blockchain. Computers within a network (such as a blockchain network) must agree on what transactions have truly happened to work together; this agreement is called <span class="tooltip" definition="Agreement, trust, and security across a decentralized computer network like blockchains.">consensus</span>. A blockchain is secure if attackers cannot disrupt the network from agreeing on that truth. Consensus algorithms are designed to resist these attacks.</p><p>Chains like Bitcoin that use <span class="tooltip" definition="Blockchain Consensus algorithms that rely on “work” done by miners competing to create valid blocks by proposing blocks and seeing if each one has a valid hash.">Proof of Work</span> consensus prevent fraud by making their consensus algorithm highly competitive; each block producer races to solve a math problem. The first to do so wins the right to create the next block and receives the monetary <span class="tooltip" definition="The amount of a blockchain’s native asset given to the proposer of a new valid block.">block reward</span> that comes with it. Fraud would require massive investments in computing power and energy, so an attacker would likely spend more than they’d gain. </p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/security-and-consensus-e36b9e5e.svg\'></div>'
+        content: '<div class="bloc1"><p>Security is the most foundational requirement for a public blockchain. Computers within a network (such as a blockchain network) must agree on what transactions have truly happened to work together; this agreement is called <span class="tooltip" definition="Agreement, trust, and security across a decentralized computer network like blockchains.">consensus</span>. A blockchain is secure if attackers cannot disrupt the network from agreeing on that truth. Consensus algorithms are designed to resist these attacks.</p><p>Chains like Bitcoin that use <span class="tooltip" definition="Blockchain Consensus algorithms that rely on “work” done by miners competing to create valid blocks by proposing blocks and seeing if each one has a valid hash.">Proof of Work</span> consensus prevent fraud by making their consensus algorithm highly competitive; each block producer races to solve a math problem. The first to do so wins the right to create the next block and receives the monetary <span class="tooltip" definition="The amount of a blockchain’s native asset given to the proposer of a new valid block.">block reward</span> that comes with it. Fraud would require massive investments in computing power and energy, so an attacker would likely spend more than they’d gain. </p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/security-and-consensus-5e1f03b6.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1270,14 +1270,14 @@ const LESSONS: LessonType[] = [
             'Secured through economic incentives',
             'All of the above'
           ],
-          id: 'blockchains-layer-1-2'
+          id: 'layer-1-blockchains-2'
         }
       },
       {
         type: 'LEARN',
         notionId: 'd22518cb06b944acad0745a1121d39b5',
         title: 'Security and Attacks',
-        content: '<div class="bloc1"><p>One potential form of attack on blockchain consensus is a <span class="tooltip" definition="An attack on blockchain consensus by controlling over 51% of the block producing power on the network.">51% attack</span>; an attacker needs to have 51% or more of the consensus power on a network to commit fraud by creating falsified transactions. This means 51% of the computing power solving math problems in Proof of Work consensus and 51% of the <span class="tooltip" definition="The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”.">stake</span> in Proof of Stake consensus. Again, fraud would require a massive capital investment to acquire a stake in the network, which will be destroyed if found to be creating false transactions; an attacker would likely spend more than they’d gain.</p><p>In <span class="tooltip" definition="Blockchain Consensus algorithms that randomly choose a block producer based on the amount of stake each entity has locked into the protocol.">Proof of Stake</span> consensus, the block producer isn’t chosen through competition but is randomly assigned instead. Like with Proof of Work, the consensus algorithm ensures that any single entity cannot regularly “win” the right to create a new <span class="tooltip" definition="A group of transactions on the blockchain.">block</span>. </p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/security-and-attacks-ff993589.svg\'></div>'
+        content: '<div class="bloc1"><p>One potential form of attack on blockchain consensus is a <span class="tooltip" definition="An attack on blockchain consensus by controlling over 51% of the block producing power on the network.">51% attack</span>; an attacker needs to have 51% or more of the consensus power on a network to commit fraud by creating falsified transactions. This means 51% of the computing power solving math problems in Proof of Work consensus and 51% of the <span class="tooltip" definition="The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”.">stake</span> in Proof of Stake consensus. Again, fraud would require a massive capital investment to acquire a stake in the network, which will be destroyed if found to be creating false transactions; an attacker would likely spend more than they’d gain.</p><p>In <span class="tooltip" definition="Blockchain Consensus algorithms that randomly choose a block producer based on the amount of stake each entity has locked into the protocol.">Proof of Stake</span> consensus, the block producer isn’t chosen through competition but is randomly assigned instead. Like with Proof of Work, the consensus algorithm ensures that any single entity cannot regularly “win” the right to create a new <span class="tooltip" definition="A group of transactions on the blockchain.">block</span>. </p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/security-and-attacks-7d35acf6.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1292,14 +1292,14 @@ const LESSONS: LessonType[] = [
             'Create a new cryptocurrency',
             'Eliminate the other 49%'
           ],
-          id: 'blockchains-layer-1-3'
+          id: 'layer-1-blockchains-3'
         }
       },
       {
         type: 'LEARN',
         notionId: '0bfdc60dd92149ee94b626e5c5b9c44d',
         title: 'Scalability - Throughput',
-        content: '<div class="bloc1"><p><span class="tooltip" definition="A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users.">Scalability</span> refers to a blockchain’s ability to process many transactions quickly. Two parts determine a blockchain’s scalability: throughput and finality.</p><p>1) <span class="tooltip" definition="How many transactions a blockchain can process at once, usually measured in transactions per second (TPS).">Transaction throughput</span>: How many transactions a blockchain can process at once, usually measured in transactions per second (<span class="tooltip" definition="A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain.">TPS</span>).</p><p>Imagine many people waiting at a bus stop with more arriving every minute, they all want to travel. But there are only so many people that can travel by bus. To clear the bus stop of people faster, you’d have to use bigger busses (more people) or make the busses run more often (less time). It works the same way with trying to fit many transactions into the small amount of <span class="tooltip" definition="The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s).">block space</span> available for each block. You can see this visualization with live data at <a href=\'https://txstreet.com/v/eth-btc\'>https://txstreet.com/v/eth-btc</a>.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/scalability-throughput-3b900e0c.svg\'></div>'
+        content: '<div class="bloc1"><p><span class="tooltip" definition="A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users.">Scalability</span> refers to a blockchain’s ability to process many transactions quickly. Two parts determine a blockchain’s scalability: throughput and finality.</p><p>1) <span class="tooltip" definition="How many transactions a blockchain can process at once, usually measured in transactions per second (TPS).">Transaction throughput</span>: How many transactions a blockchain can process at once, usually measured in transactions per second (<span class="tooltip" definition="A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain.">TPS</span>).</p><p>Imagine many people waiting at a bus stop with more arriving every minute, they all want to travel. But there are only so many people that can travel by bus. To clear the bus stop of people faster, you’d have to use bigger busses (more people) or make the busses run more often (less time). It works the same way with trying to fit many transactions into the small amount of <span class="tooltip" definition="The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s).">block space</span> available for each block. You can see this visualization with live data at <a href=\'https://txstreet.com/v/eth-btc\'>https://txstreet.com/v/eth-btc</a>.</p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/scalability-throughput-a58495ac.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1314,20 +1314,20 @@ const LESSONS: LessonType[] = [
             'To process more people (transactions) you need faster, larger, and/or more buses (blocks)',
             'All of the above'
           ],
-          id: 'blockchains-layer-1-4'
+          id: 'layer-1-blockchains-4'
         }
       },
       {
         type: 'LEARN',
         notionId: 'cf8aeea9908e4dc7960f63ae71edcad4',
         title: 'Scalability - Finality',
-        content: '<div class="bloc1"><p>The second aspect of blockchain scalability is:</p><p>2) <span class="tooltip" definition="How long it takes until it is safe to trust that a new transaction is valid and final.">Finality</span>: When can we be reasonably sure a transaction won’t get changed or reversed?</p><p>Finality is typically measured in blocks — how many blocks have passed since the transaction was included in a block? The more blocks that get added to the chain afterward, the more sure we can be that the transaction is finalized and won’t get reverted. Remember, a secure blockchain consensus algorithm makes it very expensive to change past blocks, and the expense increases the farther back someone changes. We convert this block number to a finality time by multiplying the expected number of block confirmations by the blockchain’s TPS. For Ethereum, eight block confirmations times 15 <span class="tooltip" definition="A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain.">TPS</span> gives 2 minutes of finality time after confirmation. </p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/scalability-finality-ad4c488a.svg\'></div>'
+        content: '<div class="bloc1"><p>The second aspect of blockchain scalability is:</p><p>2) <span class="tooltip" definition="How long it takes until it is safe to trust that a new transaction is valid and final.">Finality</span>: When can we be reasonably sure a transaction won’t get changed or reversed?</p><p>Finality is typically measured in blocks — how many blocks have passed since the transaction was included in a block? The more blocks that get added to the chain afterward, the more sure we can be that the transaction is finalized and won’t get reverted. Remember, a secure blockchain consensus algorithm makes it very expensive to change past blocks, and the expense increases the farther back someone changes. We convert this block number to a finality time by multiplying the expected number of block confirmations by the blockchain’s TPS. For Ethereum, eight block confirmations times 15 <span class="tooltip" definition="A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain.">TPS</span> gives 2 minutes of finality time after confirmation. </p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/scalability-finality-161f7e2b.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '484d38249db74050a6a14cf584f44c15',
         title: 'Decentralization distributes power',
-        content: '<div class="bloc1"><p><span class="tooltip" definition="Principle that no single authority or entity should control the blockchain data.">Decentralization</span> is the final basis of the blockchain trilemma — the process of transferring control and decision-making from a single entity to a distributed network of many. Decentralization is the fundamental principle that enables blockchains to be <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> and <span class="tooltip" definition="No government or company has control to determine what is or is not allowed.">censorship-resistant</span>; anyone can use decentralized blockchains, and anyone can build software using them.</p><p>Centralized platforms like Facebook and Twitter can deactivate anyone’s account at any time. Many influential streamers on Twitch or Tiktok have found themselves removed from their platforms without cause. Even if social media users can reinstate their accounts, it can be long and painful process. Without decentralization, a blockchain <span class="tooltip" definition="The record of all transactions that have ever occurred.">ledger</span> is just a financial spreadsheet on a bank computer; the bankers decide who gets to create an account with them. A <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> network means authority is sufficiently decentralized; there is no way to remove a person or entity’s access.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/decentralization-distributes-power-0821311e.svg\'></div>'
+        content: '<div class="bloc1"><p><span class="tooltip" definition="Principle that no single authority or entity should control the blockchain data.">Decentralization</span> is the final basis of the blockchain trilemma — the process of transferring control and decision-making from a single entity to a distributed network of many. Decentralization is the fundamental principle that enables blockchains to be <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> and <span class="tooltip" definition="No government or company has control to determine what is or is not allowed.">censorship-resistant</span>; anyone can use decentralized blockchains, and anyone can build software using them.</p><p>Centralized platforms like Facebook and Twitter can deactivate anyone’s account at any time. Many influential streamers on Twitch or Tiktok have found themselves removed from their platforms without cause. Even if social media users can reinstate their accounts, it can be long and painful process. Without decentralization, a blockchain <span class="tooltip" definition="The record of all transactions that have ever occurred.">ledger</span> is just a financial spreadsheet on a bank computer; the bankers decide who gets to create an account with them. A <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> network means authority is sufficiently decentralized; there is no way to remove a person or entity’s access.</p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/decentralization-distributes-power-829f91a2.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1342,14 +1342,14 @@ const LESSONS: LessonType[] = [
             'Decentralization helps authoritarian powers to maintain control',
             'Anyone anywhere can use permissionless systems '
           ],
-          id: 'blockchains-layer-1-5'
+          id: 'layer-1-blockchains-5'
         }
       },
       {
         type: 'LEARN',
         notionId: '08840d13c2fe4acca833d5bd31ce7969',
         title: 'Is it decentralized?',
-        content: '<div class="bloc1"><p>But whether something is decentralized isn’t just a yes or no answer. Are 10 controlling entities decentralized? How about 1000? One million? There isn’t a standard cutoff for something being sufficiently decentralized, so it makes sense to think of decentralization as a spectrum. Rather than the only choices being black and white, there are also many greys between them.</p><p>So we can say something is “more or less decentralized than something else” rather than “centralized or decentralized.” A high degree of decentralization is required for a neutral monetary system to resist state-level censorship. Newer blockchains often trade decentralization for scalability, but they leave themselves vulnerable to the same pressures from societies and governments that fully centralized platforms feel. They may end up engaging in the same censorship seen on centralized social media networks.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/is-it-decentralized-8dde9933.svg\'></div>'
+        content: '<div class="bloc1"><p>But whether something is decentralized isn’t just a yes or no answer. Are 10 controlling entities decentralized? How about 1000? One million? There isn’t a standard cutoff for something being sufficiently decentralized, so it makes sense to think of decentralization as a spectrum. Rather than the only choices being black and white, there are also many greys between them.</p><p>So we can say something is “more or less decentralized than something else” rather than “centralized or decentralized.” A high degree of decentralization is required for a neutral monetary system to resist state-level censorship. Newer blockchains often trade decentralization for scalability, but they leave themselves vulnerable to the same pressures from societies and governments that fully centralized platforms feel. They may end up engaging in the same censorship seen on centralized social media networks.</p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/is-it-decentralized-4b5bf857.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1362,20 +1362,20 @@ const LESSONS: LessonType[] = [
             'True',
             'False'
           ],
-          id: 'blockchains-layer-1-6'
+          id: 'layer-1-blockchains-6'
         }
       },
       {
         type: 'LEARN',
         notionId: 'fdfbd964272445d5981d88c7f4c78410',
         title: 'Some Examples',
-        content: '<div class="bloc1"><p>Each blockchain has its own approach to the trilemma, and each has made tradeoffs to focus on its goals. Bitcoin and Ethereum prioritize security and decentralization over scalability, leading to long transaction finality time for Bitcoin and sky-high transaction fees for Ethereum. The demand to use smart contracts as a “decentralized world-finance computer”, especially for DeFi, has meant that many users making small transactions cannot afford Ethereum.</p><p>This high cost to use has provided an opening for <span class="tooltip" definition="Layer 1 blockchains other than Ethereum and Bitcoin.">alternative Layer 1</span>’s like the Binance chain. Binance prioritized scalability over decentralization for higher <span class="tooltip" definition="How many transactions a blockchain can process at once, usually measured in transactions per second (TPS).">transaction throughput</span> and cheaper fees. Third-generation chains like Solana, Hedera, Cosmos, and others use novel methods to solve the trilemma, but all blockchains are still subject to these basic constraints. Each chain’s choice defines its ecosystem through the foundational effects that come from that choice.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/some-examples-6c9f9810.svg\'></div>'
+        content: '<div class="bloc1"><p>Each blockchain has its own approach to the trilemma, and each has made tradeoffs to focus on its goals. Bitcoin and Ethereum prioritize security and decentralization over scalability, leading to long transaction finality time for Bitcoin and sky-high transaction fees for Ethereum. The demand to use smart contracts as a “decentralized world-finance computer”, especially for DeFi, has meant that many users making small transactions cannot afford Ethereum.</p><p>This high cost to use has provided an opening for <span class="tooltip" definition="Layer 1 blockchains other than Ethereum and Bitcoin.">alternative Layer 1</span>’s like the Binance chain. Binance prioritized scalability over decentralization for higher <span class="tooltip" definition="How many transactions a blockchain can process at once, usually measured in transactions per second (TPS).">transaction throughput</span> and cheaper fees. Third-generation chains like Solana use novel methods to solve the trilemma, but all blockchains are still subject to these basic constraints. Each chain’s choice defines its ecosystem through the foundational effects that come from that choice.</p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/some-examples-523b9b96.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '997686d2404c4556a6841a0232705c8b',
         title: 'So what can be done?',
-        content: '<div class="bloc1"><p>So if Ethereum has prioritized high security and decentralization, how can it scale to serve the needs of all users as the global financial network it aims to become? This is where the Ethereum roadmap can provide some answers: <span class="tooltip" definition="A blockchain that extends Ethereum scalability while inheriting Ethereum security.">Layer 2</span>s and blockchain <span class="tooltip" definition=" The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability.">sharding</span>.</p><p><span class="tooltip" definition="A blockchain that extends Ethereum scalability while inheriting Ethereum security.">Layer 2</span>s are an early solution to increasing Ethereum scalability without compromising on the other two parts of the blockchain trilemma. They are an additional layer sitting on top of the main blockchain, relying on the main chain for security but allowing users to benefit from reduced fees and faster transactions. We will explore them in more detail in our Layer 2 lesson.</p><p><span class="tooltip" definition=" The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability.">Sharding</span> splits the single blockchain into multiple chains that all run together in parallel, like adding more lanes to a road. It enables more transactions to be processed at once without sacrificing security or decentralization.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/so-what-can-be-done-1ba0d441.svg\'></div>'
+        content: '<div class="bloc1"><p>So if Ethereum has prioritized high security and decentralization, how can it scale to serve the needs of all users as the global financial network it aims to become? This is where the Ethereum roadmap can provide some answers: <span class="tooltip" definition="A blockchain that extends Ethereum scalability while inheriting Ethereum security.">Layer 2</span>s and blockchain <span class="tooltip" definition=" The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability.">sharding</span>.</p><p><span class="tooltip" definition="A blockchain that extends Ethereum scalability while inheriting Ethereum security.">Layer 2</span>s are an early solution to increasing Ethereum scalability without compromising on the other two parts of the blockchain trilemma. They are an additional layer sitting on top of the main blockchain, relying on the main chain for security but allowing users to benefit from reduced fees and faster transactions. We will explore them in more detail in our Layer 2 lesson.</p><p><span class="tooltip" definition=" The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability.">Sharding</span> splits the single blockchain into multiple chains that all run together in parallel, like adding more lanes to a road. It enables more transactions to be processed at once without sacrificing security or decentralization.</p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/so-what-can-be-done-50592b46.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1390,14 +1390,14 @@ const LESSONS: LessonType[] = [
             'Increase fees for users',
             'Increase finality time for users'
           ],
-          id: 'blockchains-layer-1-7'
+          id: 'layer-1-blockchains-7'
         }
       },
       {
         type: 'LEARN',
         notionId: '18c497caf1df4810afb1497884a26962',
         title: 'The future of Ethereum',
-        content: '<div class="bloc1"><p>Previously known as the Ethereum 2.0 upgrade, the Ethereum network is evolving its scalability without sacrificing the other aspects of the trilemma. These changes include the merge to <span class="tooltip" definition="Blockchain Consensus algorithms that randomly choose a block producer based on the amount of stake each entity has locked into the protocol.">Proof of Stake</span> consensus, Layer 2s going live, <span class="tooltip" definition=" The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability.">sharding</span> of the main chain, and an overall reduction of energy usage. <strong>All of these changes together will mean a faster, more environmentally-friendly, and cheaper Ethereum while still maintaining security and decentralization as core tenets.</strong> The Ethereum Foundation has an excellent webpage on coming <a href=\'https://ethereum.org/en/upgrades/\'>upgrades to Ethereum</a>.</p><p>These things take time; meanwhile, many <span class="tooltip" definition="A blockchain that extends Ethereum scalability while inheriting Ethereum security.">Layer 2</span> protocols are building on top of Ethereum to help meet user demand in the short term without requiring updates to the Ethereum protocol itself. These Layer 2 protocols rely on Layer 1 Ethereum to provide decentralized security while they provide scalability; the diversity of Layer 2s makes a decentralized ecosystem! Ethereum scaling projects include protocols like Optimistic Ethereum, Polygon, and others.</p></div><div class="bloc2"><img src=\'/lesson/blockchains-layer-1/the-future-of-ethereum-7bdca06a.svg\'></div>'
+        content: '<div class="bloc1"><p>Previously known as the Ethereum 2.0 upgrade, the Ethereum network is evolving its scalability without sacrificing the other aspects of the trilemma. These changes include the merge to <span class="tooltip" definition="Blockchain Consensus algorithms that randomly choose a block producer based on the amount of stake each entity has locked into the protocol.">Proof of Stake</span> consensus, Layer 2s going live, <span class="tooltip" definition=" The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability.">sharding</span> of the main chain, and an overall reduction of energy usage. <strong>All of these changes together will mean a faster, more environmentally-friendly, and cheaper Ethereum while still maintaining security and decentralization as core tenets.</strong> The Ethereum Foundation has an excellent webpage on coming <a href=\'https://ethereum.org/en/upgrades/\'>upgrades to Ethereum</a>.</p><p>These things take time; meanwhile, many <span class="tooltip" definition="A blockchain that extends Ethereum scalability while inheriting Ethereum security.">Layer 2</span> protocols are building on top of Ethereum to help meet user demand in the short term without requiring updates to the Ethereum protocol itself. These Layer 2 protocols rely on Layer 1 Ethereum to provide decentralized security while they provide scalability; the diversity of Layer 2s makes a decentralized ecosystem! Ethereum scaling projects include protocols like Optimistic Ethereum, Polygon, and others.</p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/the-future-of-ethereum-2b64fd6b.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1412,7 +1412,7 @@ const LESSONS: LessonType[] = [
             'Reducing energy consumption of the blockchain using Proof of Stake consensus',
             'All of the above'
           ],
-          id: 'blockchains-layer-1-8'
+          id: 'layer-1-blockchains-8'
         }
       },
       {
@@ -1423,12 +1423,12 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'QUEST',
-        title: 'Blockchains Layer 1 Quest',
-        component: 'BlockchainsLayer1'
+        title: 'Layer 1 Blockchains Quest',
+        component: 'Layer1Blockchains'
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },

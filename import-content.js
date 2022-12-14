@@ -168,7 +168,7 @@ axios
           }
         }).then((result) => {
           const arweaveTxId = result?.data?.data?.transactions?.edges[0]?.node?.id
-          console.log(arweaveTxId)
+          console.log('Mirror article: ', arweaveTxId)
           if (arweaveTxId) {
             return axios
               .get(`https://arweave.net/${arweaveTxId}`)
