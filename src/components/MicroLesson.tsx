@@ -1,7 +1,8 @@
-import { Box, Container, Link, Image } from '@chakra-ui/react'
+import { Box, Container, Link, Image, Tooltip } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
+import keywords from '../../keywords.json'
 
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
@@ -449,6 +450,11 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       `
         : ``};
   }
+  span {
+    cursor: help;
+    border-bottom: 1px dashed grey;
+    display: inline-block !important;
+  }
 `
 
 const MicroLesson = ({
@@ -474,7 +480,25 @@ const MicroLesson = ({
         </Link>
       </Box>
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
-        <ReactMarkdown>{lesson.articleContent}</ReactMarkdown>
+        <ReactMarkdown
+          components={{
+            code: ({ node, ...props }: any) =>
+              node.children[0]?.value in keywords ? (
+                <Tooltip
+                  hasArrow
+                  label={keywords[node.children[0]?.value]?.definition}
+                  closeOnClick={false}
+                  {...props}
+                >
+                  {node.children[0]?.value}
+                </Tooltip>
+              ) : (
+                <>{node.children[0]?.value}</>
+              ),
+          }}
+        >
+          {lesson.articleContent}
+        </ReactMarkdown>
       </ArticleStyle>
     </Container>
   )
