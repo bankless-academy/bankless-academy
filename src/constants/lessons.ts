@@ -235,240 +235,6 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/intro-to-defi/kudos-b4dab2d4.png',
-    lessonImageLink: '/lesson/intro-to-defi/lesson-97291c9d.png',
-    socialImageLink: '/lesson/intro-to-defi/social-ee8d95a4.jpg',
-    learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
-    marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
-    kudosId: 2562,
-    duration: 10,
-    learnings: '',
-    difficulty: 'Easy',
-    description: 'Understand the basics of decentralized finance.',
-    name: 'Intro to DeFi',
-    quest: 'IntroToDeFi',
-    publicationStatus: 'publish',
-    isFeaturedOnHomepage: false,
-    isCommentsEnabled: false,
-    endOfLessonRedirect: null,
-    endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=1ee6aa7e-8174-464c-b13c-69faef819b3e',
-    isMicroLesson: false,
-    notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
-    slug: 'intro-to-defi',
-    imageLinks: [
-      '/lesson/intro-to-defi/defi-defined-46782447.svg',
-      '/lesson/intro-to-defi/earning-yield-c5f123f8.svg',
-      '/lesson/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg',
-      '/lesson/intro-to-defi/investing-d99a6d1f.svg',
-      '/lesson/intro-to-defi/trading-8cd72977.svg',
-      '/lesson/intro-to-defi/lending-borrowing-4fb1c7c3.svg',
-      '/lesson/intro-to-defi/staking-b4b4319d.svg',
-      '/lesson/intro-to-defi/defi-downsides-51dd6225.svg',
-      '/lesson/intro-to-defi/defi-downsides-3a6ce496.svg',
-      '/lesson/intro-to-defi/defi-downsides-83a9391f.svg'
-    ],
-    slides: [
-      {
-        type: 'LEARN',
-        notionId: 'abdb330ec2194271a729128226eadb2d',
-        title: 'DeFi Defined',
-        content: '<div class="bloc1"><p>DeFi—short for <span class="tooltip" definition="No single authority or entity controls the data.">decentralized</span> finance—refers to the fast-growing ecosystem of financial products, protocols, and applications that operate on public <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> networks.</p><p>DeFi is rapidly transforming the world of finance with a range of new tools for putting crypto assets to work. It offers opportunities beyond simply buying crypto on a centralized exchange. It allows anyone and everyone to build a decentralized, Bankless lifestyle.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/defi-defined-46782447.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '5d93d188e0274acbb22cc32e433c3b67',
-        title: 'Why DeFi?',
-        content: '<div class="bloc1"><p>DeFi gives anyone with an internet connection access to sophisticated financial tools: Trading, Options, Lending and Borrowing.</p><p>DeFi offers these tools to users transparently and openly. Anyone can look at the code and verify that the contract does what it says it does, unlike what banks do with your money behind closed doors.</p><p>There are no middlemen to intermediate or take a cut of your transactions.</p></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '920b875598a34fa59affe46e58ed4e58',
-        title: 'Knowledge Check',
-        quiz: {
-          question: 'What does DeFi stand for? ',
-          rightAnswerNumber: 2,
-          answers: [
-            'Derivative fiction',
-            'Decentralized finance',
-            'Deregulation field',
-            'Degenerate fishermen'
-          ],
-          id: 'intro-to-defi-1'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '772e17d6104145f7969b47fd2e132e68',
-        title: '<strong>Earning Yield</strong>',
-        content: '<div class="bloc1"><p>There are a growing number of <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> protocols that enable you to earn interest and other rewards by using your crypto assets. You can have access to financial products that you would typically need a bank or financial services firm to get—but without the paperwork, middleman, approval process, and other hassles of the traditional finance world.</p><p>By removing the middleman, you also remove any service fees, dues, and commissions you would typically pay in the traditional finance world. With DeFi, you get to keep all the rewards, or yield earned from your assets. This is why DeFi is popular. </p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/earning-yield-c5f123f8.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '465a40fdbe24487695394ee1b4a4e97a',
-        title: 'Knowledge Check',
-        quiz: {
-          question: 'How can you earn yield with crypto?',
-          rightAnswerNumber: 3,
-          answers: [
-            '[A] Earning interest by depositing into a DeFi protocol',
-            '[B] Earning rewards by depositing into a DeFi protocol',
-            '[C] Both A and B',
-            '[D] You can’t earn yield on crypto'
-          ],
-          id: 'intro-to-defi-2'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '153a075b1a004f38a9c177486aa95395',
-        title: 'What You Can Do With DeFi',
-        content: '<div class="bloc1"><p><span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transactions are <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span>. This refers to a public <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps. </p><p><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span> and DeFi platforms enable users to make more and more types of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '3b77e3afde594c788122db7fe4afab6e',
-        title: 'Knowledge Check',
-        quiz: {
-          question: 'Fill in the blank: DeFi transactions are ____.',
-          rightAnswerNumber: 3,
-          answers: [
-            'Free',
-            'Controlled',
-            'Permissionless',
-            'Centralized'
-          ],
-          id: 'intro-to-defi-3'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '555dff92a9b34743b498f8a01de6ffa4',
-        title: '<strong>Investing</strong>',
-        content: '<div class="bloc1"><p>The most common <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transaction is to purchase some cryptocurrency with the expectation that it will be worth more in the future. This is known as investing.</p><p>HODL is a term used for keeping crypto assets for a long time. Depending on who you ask, the HODL meme either comes from a typo of HOLD or it stands for <strong>H</strong>old <strong>O</strong>n for <strong>D</strong>ear <strong>L</strong>ife.</p><p>DeFi allows early access to coins and tokens to find and invest in, before they are listed on centralized exchanges (CEX).</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/investing-d99a6d1f.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '6dc82def6bab41e2b54efa5a62f941b7',
-        title: 'Knowledge Check',
-        quiz: {
-          question: 'What does HODL mean?',
-          rightAnswerNumber: 4,
-          answers: [
-            'It’s a misspelling of HOLD',
-            'Hold On for Dear Life',
-            'Keeping crypto for a long time',
-            'All of the above'
-          ],
-          id: 'intro-to-defi-4'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: 'b1da9af463c24fd3a1fb8ce6a5b8dfaf',
-        title: 'Trading',
-        content: '<div class="bloc1"><p>A decentralized exchange (DEX) shows current exchange rates between different crypto tokens and coins and serves as a digital marketplace that facilitates trading one currency for another by bringing together buyers and sellers. </p><p>The parties involved in a DEX trade don’t need to know or trust each other. In fact, it may appear that you are trading with the DEX. However, in most cases, the DEX creates <span class="tooltip" definition="A liquidity pool is a crowdsourced pool of cryptocurrencies or tokens locked in a smart contract that is used to facilitate trades between the assets on a decentralized exchange (DEX)">liquidity pools</span> that facilitate the trade between two traders’ <span class="tooltip" definition="A wallet is an application or device used to send and receive crypto assets on the blockchain.">wallets</span> in a <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> fashion.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/trading-8cd72977.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '4e1e78e61bc240f0836346fcabb49f54',
-        title: 'So What?',
-        content: '<div class="bloc1"><p>Anyone can trade and participate in markets regardless of your net asset worth. Anyone can enter or exit a position via on-chain protocols.</p></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '1d627556f09143b18edefdf87e059db6',
-        title: 'Knowledge Check',
-        quiz: {
-          question: 'What is a DEX?',
-          rightAnswerNumber: 1,
-          answers: [
-            'A decentralized exchange',
-            'A digital electric xylophone',
-            'A crypto index fund',
-            'None of the above'
-          ],
-          id: 'intro-to-defi-5'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '929543eaa9b64ab9b14a6593e95fb9ef',
-        title: '<strong>Lending & Borrowing</strong>',
-        content: '<div class="bloc1"><p>DeFi lending and borrowing offers loans without the need for a bank or intermediary institution. Instead, lending is done on a <span class="tooltip" definition="A transaction between two parties that does not require a middleman or controlling entity.">peer-to-peer</span> level. That means transactions are between two parties and does not require a middleman or controlling entity.</p><p>There are <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span> that enable anyone to lend and borrow crypto assets. Similar to traditional loans, a lender will earn interest on the loan and the borrower will need to pay the principal of the loan plus interest.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/lending-borrowing-4fb1c7c3.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '062707cc00eb4fe9830d8f6535e50387',
-        title: 'Knowledge Check',
-        quiz: {
-          question: 'Fill in the blank: DeFi lending is done on a _____ level.',
-          rightAnswerNumber: 2,
-          answers: [
-            'income to debt',
-            'peer-to-peer',
-            'banks to customers',
-            'income to interest'
-          ],
-          id: 'intro-to-defi-6'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '88ac3e93d3c849db8420b1700884030c',
-        title: '<strong>Staking</strong>',
-        content: '<div class="bloc1"><p>DeFi staking is similar to lending, however it\'s a special type of lending. Instead of lending your crypto to another user on a <span class="tooltip" definition="A transaction between two parties that does not require a middleman or controlling entity.">peer-to-peer</span> basis, you lend your crypto to a network or protocol. In exchange for helping secure the network or protocol, you earn rewards.</p><p>Centralized exchanges also offer staking. However, like their trading pairs, the staking opportunities and rewards are limited. With DeFi, there are many more staking possibilities than there are with centralized exchanges. </p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/staking-b4b4319d.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'ae7f5581ae404a1a83e1542eeee9d945',
-        title: 'Knowledge Check',
-        quiz: {
-          question: 'Lending your crypto to a protocol is an example of?',
-          rightAnswerNumber: 2,
-          answers: [
-            'Trading',
-            'Staking',
-            'Borrowing',
-            'HODLing'
-          ],
-          id: 'intro-to-defi-7'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '9b122d2d398a47428a41838e3bc9a521',
-        title: '<strong>DeFi Downsides</strong>',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/intro-to-defi/defi-downsides-51dd6225.svg\'></div><div class="bloc-b"><p><strong>Hackers</strong></p><p>Where there is money and technology, there are people looking for ways to hack the system and take advantage of poor security measures.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/intro-to-defi/defi-downsides-3a6ce496.svg\'></div><div class="bloc-b"><p><strong>Risk</strong></p><p>DeFi, like blockchain technology, runs on code. If there’s an error or loophole in the code, it can be exploited.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/intro-to-defi/defi-downsides-83a9391f.svg\'></div><div class="bloc-b"><p><strong>No recourse</strong></p><p>Being decentralized also means there are no companies or government agencies that you can appeal to for help if something goes wrong.</p></div></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '4b5bd41ee29942ea8cfc577f2e495baa',
-        title: 'Knowledge Check',
-        quiz: {
-          question: 'What is a risk in DeFi?',
-          rightAnswerNumber: 4,
-          answers: [
-            'There are no risks',
-            'The bank might turn down your loan',
-            'Bad weather could shut down the exchange',
-            'There may be an error in the code'
-          ],
-          id: 'intro-to-defi-8'
-        }
-      },
-      {
-        type: 'QUEST',
-        title: 'Intro to DeFi Quest',
-        component: 'IntroToDeFi'
-      },
-      {
-        type: 'END',
-        title: 'Lesson Reward'
-      }
-    ]
-  },
-  {
     kudosImageLink: '/lesson/blockchain-basics/kudos-b0048cdb.png',
     lessonImageLink: '/lesson/blockchain-basics/lesson-c84db284.png',
     socialImageLink: '/lesson/blockchain-basics/social-07ea2639.jpg',
@@ -671,53 +437,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'Blockchain Basics Quest',
         component: 'BlockchainBasics'
-      },
-      {
-        type: 'END',
-        title: 'Lesson Reward'
-      }
-    ]
-  },
-  {
-    kudosImageLink: '/lesson/academy-community/kudos-4fce19ff.png',
-    lessonImageLink: '/lesson/academy-community/lesson-755fe7a3.png',
-    socialImageLink: '/lesson/academy-community/social-1f64464b.jpg',
-    learningActions: '',
-    marketingDescription: 'Join the Academy Explorer Community on gm.xyz.',
-    kudosId: 2564,
-    duration: 10,
-    learnings: '',
-    difficulty: 'Easy',
-    description: 'Join the Academy Explorer Community on gm.xyz.',
-    name: 'Academy Community',
-    quest: 'AcademyCommunity',
-    publicationStatus: 'publish',
-    isFeaturedOnHomepage: false,
-    isCommentsEnabled: false,
-    endOfLessonRedirect: null,
-    endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=6cda4b4c-5300-4e1e-9a12-a14eecd59ebf',
-    isMicroLesson: false,
-    notionId: '44b8a4937fcd43fa8e12400cb75885a1',
-    slug: 'academy-community',
-    imageLinks: [],
-    slides: [
-      {
-        type: 'LEARN',
-        notionId: 'e398fcd0d14b45f1be30f709019faa50',
-        title: 'You’re one step away, Explorer.',
-        content: '<div class="bloc1"><p>Now that you have your digital wallet, let’s use it to join the Academy Community.</p><p>Wallets don’t only serve the purpose of keeping your digital assets, but also as a means of decentralized verification. </p><p>Thanks to its web3 native nature - wallet login, token-holder roles, and more! - we’ve chosen <a href=\'https://gm.xyz/?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson\'>gm.xyz</a> as our community home. To participate in the conversation, you must sign in with your wallet. We can walk you through it in our video at the end of the lesson.</p><p>Ready to start your community journey? Let’s go Explorer!</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'd88acd5ee49c4fa88e9dc1c4fc136e80',
-        title: 'Why join Bankless Academy?',
-        content: '<div class="bloc1"><p>👋 New to the space? <strong>Meet with fellow Explorers </strong>and share knowledge.</p><p>📖 Been here for a while? <strong>Become a mentor </strong>and gain recognition by teaching others.</p><p>Let’s learn together.</p><p>💬 <strong>General:</strong> Exchange knowledge, tips, and explorers’ stories.</p><p>🎙️ A<strong>sk-me-anything: </strong>Participate in our <strong>AMAs with industry specialists.</strong></p><p>💾 <strong>Library:</strong> Level up your understanding of web3 with our curated resources.</p><p>🌟 <strong>Announcements:</strong> Stay up to date with important community announcements.</p></div>'
-      },
-      {
-        type: 'QUEST',
-        title: 'Academy Community Quest',
-        component: 'AcademyCommunity'
       },
       {
         type: 'END',
@@ -975,211 +694,45 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/dex-aggregators/kudos-ddb9db8b.png',
-    lessonImageLink: '/lesson/dex-aggregators/lesson-39d1fc1c.png',
-    socialImageLink: '/lesson/dex-aggregators/social-2724db28.jpg',
+    kudosImageLink: '/lesson/academy-community/kudos-4fce19ff.png',
+    lessonImageLink: '/lesson/academy-community/lesson-755fe7a3.png',
+    socialImageLink: '/lesson/academy-community/social-1f64464b.jpg',
     learningActions: '',
-    marketingDescription: 'Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.',
-    kudosId: 2608,
-    duration: 15,
+    marketingDescription: 'Join the Academy Explorer Community on gm.xyz.',
+    kudosId: 2564,
+    duration: 10,
     learnings: '',
-    difficulty: undefined,
-    description: 'Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.',
-    name: 'DEX Aggregators',
-    quest: 'DEXAggregators',
+    difficulty: 'Easy',
+    description: 'Join the Academy Explorer Community on gm.xyz.',
+    name: 'Academy Community',
+    quest: 'AcademyCommunity',
     publicationStatus: 'publish',
-    isFeaturedOnHomepage: true,
+    isFeaturedOnHomepage: false,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=671cc928-93d6-4c9a-9718-28ed3d56af7c',
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=6cda4b4c-5300-4e1e-9a12-a14eecd59ebf',
     isMicroLesson: false,
-    notionId: '42578b8813114832b8930cf59f6125af',
-    slug: 'dex-aggregators',
-    imageLinks: [
-      '/lesson/dex-aggregators/introduction-ba453b68.svg',
-      '/lesson/dex-aggregators/an-example-of-how-liquidity-impacts-prices-915b3d84.svg',
-      '/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-c9e0b695.svg',
-      '/lesson/dex-aggregators/recombining-liquidity-with-dex-aggregators-f01777dd.svg',
-      '/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-c34efe86.svg',
-      '/lesson/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-28d6f207.svg',
-      '/lesson/dex-aggregators/meta-aggregators-100793fd.svg',
-      '/lesson/dex-aggregators/avoiding-sandwich-attacks-75f6ae82.svg',
-      '/lesson/dex-aggregators/more-protection-from-sandwiches-otc-trades-04ef66c9.svg'
-    ],
+    notionId: '44b8a4937fcd43fa8e12400cb75885a1',
+    slug: 'academy-community',
+    imageLinks: [],
     slides: [
       {
         type: 'LEARN',
-        notionId: 'fdab9a0b1c7b457a9110f88dbac53d71',
-        title: '<strong>Introduction</strong>',
-        content: '<div class="bloc1"><p><span class="tooltip" definition="(DEX) protocol that facilitates exchange without requiring trusted intermediaries">Decentralized Exchange</span>s (DEXs) eliminate the costs of intermediaries and save Explorers money when trading assets. </p><p>But did you know, Explorer, that there’s more ways to save with DeFi technology? Using DEX aggregators, you can scan all possible trades on various DEX platforms simultaneously and execute the best trade route — all in one action. They help you get the best deal when doing a token <span class="tooltip" definition="A trade from one token to another">swap</span>. Just like airline flight aggregators help you find the cheapest flight, DEX aggregators help you maximize the value of your trade.</p><p>This lesson will show:</p><ol><li>How DEXs split liquidity and how that can result in reduced trading rates.</li><li>How DEX aggregators enable users to view and use multiple DEXs through one interface.</li><li>Multiple ways a single aggregator interface can save Explorers time and money.</li></ol></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/introduction-ba453b68.svg\'></div>'
+        notionId: 'e398fcd0d14b45f1be30f709019faa50',
+        title: 'You’re one step away, Explorer.',
+        content: '<div class="bloc1"><p>Now that you have your digital wallet, let’s use it to join the Academy Community.</p><p>Wallets don’t only serve the purpose of keeping your digital assets, but also as a means of decentralized verification. </p><p>Thanks to its web3 native nature - wallet login, token-holder roles, and more! - we’ve chosen <a href=\'https://gm.xyz/?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson\'>gm.xyz</a> as our community home. To participate in the conversation, you must sign in with your wallet. We can walk you through it in our video at the end of the lesson.</p><p>Ready to start your community journey? Let’s go Explorer!</p></div>'
       },
       {
         type: 'LEARN',
-        notionId: '0e59fd1b9b7943a3a70a44abc9e921c1',
-        title: 'How Liquidity Affects Prices',
-        content: '<div class="bloc1"><p>The amount of any token that is available to trade on a single market is called a token’s <span class="tooltip" definition="How much of a token is available for trading">liquidity</span>. The amount of liquidity available strongly influences the <span class="tooltip" definition="The amount prices on a DEX change due to the trade size">price impact</span> when making trades in DeFi; a large price impact means the trade will cost more, and a low price impact will cost less. Most people prefer to trade in markets with higher liquidity to reduce their price impact. </p><p>You can think of it like a swimming pool; the more water (liquidity) there is, the smaller the <em>change </em>in the water level (price impact) when someone jumps in or leaves. The size of that ‘someone’ (the trade) also affects the <em>change</em> in the water level (price impact).</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '8ea31e80fcfc49d3a88ad09d03341c9c',
-        title: 'An Example of How Liquidity Impacts Prices',
-        content: '<div class="bloc1"><p>Let’s look at an example. </p><p>The BanklessDAO token (BANK) has a liquidity amount of ~30 million BANK on Uniswap, but only ~4.5 million BANK on SushiSwap. Uniswap has over 6x the BANK liquidity of SushiSwap.</p><p>If an Explorer was to purchase 10,000 BANK from each pool, they would find that the <span class="tooltip" definition="The amount prices on a DEX change due to the trade size">price impact</span> of their trade would result in a higher trade price in the SushiSwap pool — because their trade has pulled a larger percentage of the pool’s total liquidity.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/an-example-of-how-liquidity-impacts-prices-915b3d84.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'c60d776bd01247b79e037003d737f924',
-        title: '✅ Question',
-        quiz: {
-          question: 'Fill in the blanks: To find the best price, people will want to trade in markets with ________ liquidity to have ________ price impact on their trades.',
-          rightAnswerNumber: 2,
-          answers: [
-            'good, maximum',
-            'high, low',
-            'low, good',
-            'thin, large'
-          ],
-          id: 'dex-aggregators-1'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: 'b97afba7b0f44b709f57d6e85ce13cc2',
-        title: 'Shortcomings of Traditional DEXs: Thin Liquidity',
-        content: '<div class="bloc1"><p>DeFi continues to grow, but a problem is emerging for users: As more DEXs launch, the total amount of any individual token gets spread out. This is known as thin liquidity.</p><p>Remember the swimming pool: if the available water (<span class="tooltip" definition="How much of a token is available for trading">liquidity</span>) is split between multiple pools, the amount of water will be “thinner” in each pool compared to the total in the single original pool.</p><p>In 2020, Uniswap held much of the DEX liquidity to trade in DeFi. When SushiSwap launched the following month, it attracted over $1B worth of liquidity into its DEX from Uniswap, reducing total liquidity on Uniswap. This was just the start. Since then, more and more DEXs have entered the DeFi ecosystem, progressively thinning the liquidity of each pool.</p><p>Thus, any trade has a larger <span class="tooltip" definition="The amount prices on a DEX change due to the trade size">price impact</span> than when Uniswap held most of the ecosystem’s total liquidity. As more DEXs launch, it costs Explorers more to trade on any single DEX without new innovations.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-c9e0b695.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'd9969ae7f6c247a097f7b7d419b6c119',
-        title: '✅ Question',
-        quiz: {
-          question: 'Which two factors determine the price impact of a DEX trade?',
-          rightAnswerNumber: 3,
-          answers: [
-            'The choice of DEX is used to make the trade and size of the trade',
-            'Which token is chosen to trade and which DEX is used to make the trade',
-            'The size of the trade and amount of liquidity available',
-            'The amount of liquidity available and which token is chosen to trade'
-          ],
-          id: 'dex-aggregators-2'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: 'c06177fa9ee3428c80a9295a8a09a9f2',
-        title: 'Recombining Liquidity With DEX Aggregators',
-        content: '<div class="bloc1"><p>Large amounts of <span class="tooltip" definition="How much of a token is available for trading">liquidity</span> are needed to reduce price impact and save you money. DEX aggregators allow users to run trades through multiple DEXs at once and reduce the price impact; a big trade from an Explorer’s wallet gets broken down into multiple small trades across multiple DEXs.</p><p>DEX aggregators can even route trades through an <span class="tooltip" definition="A token that is part of the middle of a trade route, not the starting or ending token">intermediary token</span> , or more than one, if that gets a better result for users — like the way a flight aggregator might suggest an extra stop at another airport if it’s cheaper for the passenger. This discovery of the optimal trade route is done by sophisticated algorithms searching through all possible paths to find the cheapest trade route at that moment.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/recombining-liquidity-with-dex-aggregators-f01777dd.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '063815f2667146a2921df5c4c3ca1663',
-        title: '✅ Question',
-        quiz: {
-          question: 'Trade routing in DEX aggregators means:',
-          rightAnswerNumber: 4,
-          answers: [
-            'Trades are routed according to liquidity arrangements with specific DEXs',
-            'Trades are always routed through multiple DEXs',
-            'Trades are routed through a user’s favorite DEX only',
-            'Trades can be routed through multiple DEXs and intermediary tokens'
-          ],
-          id: 'dex-aggregators-3'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '1c2f4199a9254d18897593b371ca4d9e',
-        title: 'How Gas Cost Is Calculated on Ethereum',
-        content: '<div class="bloc1"><p>Let’s refresh how gas is calculated before we go on to see how the optimizations DEX aggregators make can reduce network fees for users.</p><p>Just like gas for a car, <span class="tooltip" definition="Transaction fees for blockchain networks">gas</span> is the fuel for running blockchain code on Ethereum. The farther you travel, the more gas your car uses. Likewise, the more computations you do, the more gas your code requires. Gas price is measured in very small amounts of Ether called <span class="tooltip" definition="A unit used on Ethereum blockchain, equivalent to 0.000000001 ETH (one billionth), used commonly to describe gas prices">gwei</span>, like cents to a dollar. 1 gwei is 1 billionth of an ether (1 gwei = 0.00000001 ETH). </p><p>Total gas cost is based on how much gas your transaction uses and the unit price of gas at the time of use. The formula for calculating the price of a transaction is as follows:<br><em>Amount of gas used * Gas price = Total gas cost</em></p><p>As an example, let’s say gas costs are at 22 gwei per gas unit and the transaction uses 120-thousand units:<br><em>120,000 * 22 gwei = 2,640,000 gwei </em><em><strong>or</strong></em><em> 0.00264 ETH</em></p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-c34efe86.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '7196f021bcc541929d68b9bd0c018ac3',
-        title: 'How Aggregators Reduce Gas Costs for Users',
-        content: '<div class="bloc1"><p>Trade splitting would result in more transaction fees from the extra on-chain activity, except that advanced aggregators plan for transaction fees and include them in their calculations of the trade route. They simulate trades off chain, including <span class="tooltip" definition="Transaction fees for blockchain networks">gas</span> costs, to find <span class="tooltip" definition="What is the path taken from starting token to ending token in a trade">trade routes</span> that leave Explorers with the most value at the end of the interaction.</p><p>Some aggregators go even further: they may refund some of the network transaction fees from using their protocol. 1inch currently offers rebates in their token for a portion of gas costs from trading through their <span class="tooltip" definition="A decentralized app that connects to decentralized networks and protocols"><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">dapp</span></span> on Ethereum mainnet.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-28d6f207.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '2cf155ee9e3a4d4fb0a9c78f888d2373',
-        title: '✅ Question',
-        quiz: {
-          question: 'Which of the following is NOT a way DEX aggregators try to reduce transaction costs for users?',
-          rightAnswerNumber: 2,
-          answers: [
-            'Simulate transactions off-chain prior to trade execution',
-            'Ask DEXs to lower network fees for their users',
-            'Account for gas cost in trade routing',
-            'Token rebates on gas costs'
-          ],
-          id: 'dex-aggregators-4'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '19eb7c5516fd4da383c48661d21e34a1',
-        title: 'Meta-Aggregators',
-        content: '<div class="bloc1"><p>There are even meta-aggregators of DEX aggregators! These platforms search through all competing DEX aggregators and serve price quotes to users. An example of this is the in-app swap function in the MetaMask wallet. This feature is actually a meta-aggregator that relies on DEX aggregators like 1inch to function.</p><p>Note: While convenient, <span class="tooltip" definition="A tool that brings together other aggregators into an extra overview layer">meta-aggregator</span> services can add extra costs on top of network transaction fees, increasing the overall cost for users. Explorers: make sure that your trades don’t end up more expensive than you intended. </p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/meta-aggregators-100793fd.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '7abcec930d924ca997d5f4221fae9ad6',
-        title: '✅ Question',
-        quiz: {
-          question: 'Meta-aggregators cross-reference multiple DEX aggregators to find the best prices for their users.',
-          rightAnswerNumber: 1,
-          answers: [
-            'True',
-            'False'
-          ],
-          id: 'dex-aggregators-5'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '44acd0c428aa49e8880b26f1ffffd0b0',
-        title: 'Avoiding Sandwich Attacks',
-        content: '<div class="bloc1"><p>Users swapping directly through DEXs can lose value up to the limit of their <span class="tooltip" definition="How much can prices change before your trade executes">slippage tolerance</span> due to price changes coordinated by block producers — these kinds of losses are called sandwich attacks. Did you know that sandwich attacks led users to a total loss of $235,000,000 during 2021? Explorers can protect themselves by keeping a low slippage tolerance when swapping tokens.</p><p>Fortunately, because of the recombined liquidity offered by DEX aggregators, the price impact of a trade is reduced. Explorers can keep their slippage tolerance low while saving more with DEX aggregators, as opposed to trading directly on a DEX.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/avoiding-sandwich-attacks-75f6ae82.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '9864a66638a3473ca13f8ee2dc8c4b1f',
-        title: '✅ Question',
-        quiz: {
-          question: 'To protect yourself, you should keep your slippage tolerance:',
-          rightAnswerNumber: 1,
-          answers: [
-            'low',
-            'high'
-          ],
-          id: 'dex-aggregators-6'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: 'b1756984326242d4ad5e4ab2cbe2eb32',
-        title: 'More Protection From Sandwiches: OTC Trades',
-        content: '<div class="bloc1"><p>Some aggregators like 1inch even offer specialized <span class="tooltip" definition="(Over the Counter) Trades made directly with private entities">OTC</span> (<span class="tooltip" definition="(OTC) Trades made directly with private entities">Over The Counter</span>) services that provide total protection against sandwich attacks. These optional services enable direct trading with other users, rather than facilitating trades through DeFi <span class="tooltip" definition="A liquidity pool is a crowdsourced pool of cryptocurrencies or tokens locked in a smart contract that is used to facilitate trades between the assets on a decentralized exchange (DEX)">liquidity pools</span>. Anyone can engage in <span class="tooltip" definition="(Over the Counter) Trades made directly with private entities">OTC</span> trades to fully remove the threat of sandwich attacks — providing another great way for Explorers to save.</p><p>CoWSwap is a Meta-Aggregator that also offers sandwich-resistant services, enabled by default, to ensure trades are 100% protected against sandwich attacks.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/more-protection-from-sandwiches-otc-trades-04ef66c9.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '18f1f2c0e7b84cfbafe1b26e139f0c25',
-        title: '✅ Question',
-        quiz: {
-          question: 'Many DEX aggregators offer which tool(s) to save their users money?',
-          rightAnswerNumber: 4,
-          answers: [
-            'Routing trades through aggregated liquidity from multiple DEXs to reduce price impact.',
-            'OTC trades that fully protect against sandwich attacks.',
-            'Account for gas cost when building the best trade routes.',
-            'All of the above'
-          ],
-          id: 'dex-aggregators-7'
-        }
+        notionId: 'd88acd5ee49c4fa88e9dc1c4fc136e80',
+        title: 'Why join Bankless Academy?',
+        content: '<div class="bloc1"><p>👋 New to the space? <strong>Meet with fellow Explorers </strong>and share knowledge.</p><p>📖 Been here for a while? <strong>Become a mentor </strong>and gain recognition by teaching others.</p><p>Let’s learn together.</p><p>💬 <strong>General:</strong> Exchange knowledge, tips, and explorers’ stories.</p><p>🎙️ A<strong>sk-me-anything: </strong>Participate in our <strong>AMAs with industry specialists.</strong></p><p>💾 <strong>Library:</strong> Level up your understanding of web3 with our curated resources.</p><p>🌟 <strong>Announcements:</strong> Stay up to date with important community announcements.</p></div>'
       },
       {
         type: 'QUEST',
-        title: 'DEX Aggregators Quest',
-        component: 'DEXAggregators'
+        title: 'Academy Community Quest',
+        component: 'AcademyCommunity'
       },
       {
         type: 'END',
@@ -1192,12 +745,12 @@ const LESSONS: LessonType[] = [
     lessonImageLink: '/lesson/layer-1-blockchains/lesson-dcff6ea3.png',
     socialImageLink: '/lesson/layer-1-blockchains/social-db62f5f0.jpg',
     learningActions: '',
-    marketingDescription: 'Understand the Layer 1 blockchains basics and their limitations.',
+    marketingDescription: 'Understand how Layer 1 blockchains work - and their limitations!',
     kudosId: 14611,
     duration: 15,
     learnings: '',
     difficulty: undefined,
-    description: 'Understand the Layer 1 blockchains basics and their limitations.',
+    description: 'Understand how Layer 1 blockchains work - and their limitations!',
     name: 'Layer 1 Blockchains',
     quest: 'Layer1Blockchains',
     publicationStatus: 'publish',
@@ -1425,6 +978,453 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'Layer 1 Blockchains Quest',
         component: 'Layer1Blockchains'
+      },
+      {
+        type: 'END',
+        title: 'Lesson Reward'
+      }
+    ]
+  },
+  {
+    kudosImageLink: '/lesson/intro-to-defi/kudos-b4dab2d4.png',
+    lessonImageLink: '/lesson/intro-to-defi/lesson-97291c9d.png',
+    socialImageLink: '/lesson/intro-to-defi/social-ee8d95a4.jpg',
+    learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
+    marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
+    kudosId: 2562,
+    duration: 10,
+    learnings: '',
+    difficulty: 'Easy',
+    description: 'Understand the basics of decentralized finance.',
+    name: 'Intro to DeFi',
+    quest: 'IntroToDeFi',
+    publicationStatus: 'publish',
+    isFeaturedOnHomepage: false,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=1ee6aa7e-8174-464c-b13c-69faef819b3e',
+    isMicroLesson: false,
+    notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
+    slug: 'intro-to-defi',
+    imageLinks: [
+      '/lesson/intro-to-defi/defi-defined-46782447.svg',
+      '/lesson/intro-to-defi/earning-yield-c5f123f8.svg',
+      '/lesson/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg',
+      '/lesson/intro-to-defi/investing-d99a6d1f.svg',
+      '/lesson/intro-to-defi/trading-8cd72977.svg',
+      '/lesson/intro-to-defi/lending-borrowing-4fb1c7c3.svg',
+      '/lesson/intro-to-defi/staking-b4b4319d.svg',
+      '/lesson/intro-to-defi/defi-downsides-51dd6225.svg',
+      '/lesson/intro-to-defi/defi-downsides-3a6ce496.svg',
+      '/lesson/intro-to-defi/defi-downsides-83a9391f.svg'
+    ],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: 'abdb330ec2194271a729128226eadb2d',
+        title: 'DeFi Defined',
+        content: '<div class="bloc1"><p>DeFi—short for <span class="tooltip" definition="No single authority or entity controls the data.">decentralized</span> finance—refers to the fast-growing ecosystem of financial products, protocols, and applications that operate on public <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> networks.</p><p>DeFi is rapidly transforming the world of finance with a range of new tools for putting crypto assets to work. It offers opportunities beyond simply buying crypto on a centralized exchange. It allows anyone and everyone to build a decentralized, Bankless lifestyle.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/defi-defined-46782447.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '5d93d188e0274acbb22cc32e433c3b67',
+        title: 'Why DeFi?',
+        content: '<div class="bloc1"><p>DeFi gives anyone with an internet connection access to sophisticated financial tools: Trading, Options, Lending and Borrowing.</p><p>DeFi offers these tools to users transparently and openly. Anyone can look at the code and verify that the contract does what it says it does, unlike what banks do with your money behind closed doors.</p><p>There are no middlemen to intermediate or take a cut of your transactions.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '920b875598a34fa59affe46e58ed4e58',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'What does DeFi stand for? ',
+          rightAnswerNumber: 2,
+          answers: [
+            'Derivative fiction',
+            'Decentralized finance',
+            'Deregulation field',
+            'Degenerate fishermen'
+          ],
+          id: 'intro-to-defi-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '772e17d6104145f7969b47fd2e132e68',
+        title: '<strong>Earning Yield</strong>',
+        content: '<div class="bloc1"><p>There are a growing number of <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> protocols that enable you to earn interest and other rewards by using your crypto assets. You can have access to financial products that you would typically need a bank or financial services firm to get—but without the paperwork, middleman, approval process, and other hassles of the traditional finance world.</p><p>By removing the middleman, you also remove any service fees, dues, and commissions you would typically pay in the traditional finance world. With DeFi, you get to keep all the rewards, or yield earned from your assets. This is why DeFi is popular. </p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/earning-yield-c5f123f8.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '465a40fdbe24487695394ee1b4a4e97a',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'How can you earn yield with crypto?',
+          rightAnswerNumber: 3,
+          answers: [
+            '[A] Earning interest by depositing into a DeFi protocol',
+            '[B] Earning rewards by depositing into a DeFi protocol',
+            '[C] Both A and B',
+            '[D] You can’t earn yield on crypto'
+          ],
+          id: 'intro-to-defi-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '153a075b1a004f38a9c177486aa95395',
+        title: 'What You Can Do With DeFi',
+        content: '<div class="bloc1"><p><span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transactions are <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span>. This refers to a public <span class="tooltip" definition="A shared, unchangeable database, or ledger, of recorded transactions.">blockchain</span> that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps. </p><p><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span> and DeFi platforms enable users to make more and more types of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '3b77e3afde594c788122db7fe4afab6e',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'Fill in the blank: DeFi transactions are ____.',
+          rightAnswerNumber: 3,
+          answers: [
+            'Free',
+            'Controlled',
+            'Permissionless',
+            'Centralized'
+          ],
+          id: 'intro-to-defi-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '555dff92a9b34743b498f8a01de6ffa4',
+        title: '<strong>Investing</strong>',
+        content: '<div class="bloc1"><p>The most common <span class="tooltip" definition="An abbreviation for decentralized finance.">DeFi</span> transaction is to purchase some cryptocurrency with the expectation that it will be worth more in the future. This is known as investing.</p><p>HODL is a term used for keeping crypto assets for a long time. Depending on who you ask, the HODL meme either comes from a typo of HOLD or it stands for <strong>H</strong>old <strong>O</strong>n for <strong>D</strong>ear <strong>L</strong>ife.</p><p>DeFi allows early access to coins and tokens to find and invest in, before they are listed on centralized exchanges (CEX).</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/investing-d99a6d1f.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '6dc82def6bab41e2b54efa5a62f941b7',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'What does HODL mean?',
+          rightAnswerNumber: 4,
+          answers: [
+            'It’s a misspelling of HOLD',
+            'Hold On for Dear Life',
+            'Keeping crypto for a long time',
+            'All of the above'
+          ],
+          id: 'intro-to-defi-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'b1da9af463c24fd3a1fb8ce6a5b8dfaf',
+        title: 'Trading',
+        content: '<div class="bloc1"><p>A decentralized exchange (DEX) shows current exchange rates between different crypto tokens and coins and serves as a digital marketplace that facilitates trading one currency for another by bringing together buyers and sellers. </p><p>The parties involved in a DEX trade don’t need to know or trust each other. In fact, it may appear that you are trading with the DEX. However, in most cases, the DEX creates <span class="tooltip" definition="A liquidity pool is a crowdsourced pool of cryptocurrencies or tokens locked in a smart contract that is used to facilitate trades between the assets on a decentralized exchange (DEX)">liquidity pools</span> that facilitate the trade between two traders’ <span class="tooltip" definition="A wallet is an application or device used to send and receive crypto assets on the blockchain.">wallets</span> in a <span class="tooltip" definition="Refers to a public blockchain that anyone can use to buy, sell, or trade assets.">permissionless</span> fashion.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/trading-8cd72977.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '4e1e78e61bc240f0836346fcabb49f54',
+        title: 'So What?',
+        content: '<div class="bloc1"><p>Anyone can trade and participate in markets regardless of your net asset worth. Anyone can enter or exit a position via on-chain protocols.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '1d627556f09143b18edefdf87e059db6',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'What is a DEX?',
+          rightAnswerNumber: 1,
+          answers: [
+            'A decentralized exchange',
+            'A digital electric xylophone',
+            'A crypto index fund',
+            'None of the above'
+          ],
+          id: 'intro-to-defi-5'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '929543eaa9b64ab9b14a6593e95fb9ef',
+        title: '<strong>Lending & Borrowing</strong>',
+        content: '<div class="bloc1"><p>DeFi lending and borrowing offers loans without the need for a bank or intermediary institution. Instead, lending is done on a <span class="tooltip" definition="A transaction between two parties that does not require a middleman or controlling entity.">peer-to-peer</span> level. That means transactions are between two parties and does not require a middleman or controlling entity.</p><p>There are <span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">DApps</span> that enable anyone to lend and borrow crypto assets. Similar to traditional loans, a lender will earn interest on the loan and the borrower will need to pay the principal of the loan plus interest.</p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/lending-borrowing-4fb1c7c3.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '062707cc00eb4fe9830d8f6535e50387',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'Fill in the blank: DeFi lending is done on a _____ level.',
+          rightAnswerNumber: 2,
+          answers: [
+            'income to debt',
+            'peer-to-peer',
+            'banks to customers',
+            'income to interest'
+          ],
+          id: 'intro-to-defi-6'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '88ac3e93d3c849db8420b1700884030c',
+        title: '<strong>Staking</strong>',
+        content: '<div class="bloc1"><p>DeFi staking is similar to lending, however it\'s a special type of lending. Instead of lending your crypto to another user on a <span class="tooltip" definition="A transaction between two parties that does not require a middleman or controlling entity.">peer-to-peer</span> basis, you lend your crypto to a network or protocol. In exchange for helping secure the network or protocol, you earn rewards.</p><p>Centralized exchanges also offer staking. However, like their trading pairs, the staking opportunities and rewards are limited. With DeFi, there are many more staking possibilities than there are with centralized exchanges. </p></div><div class="bloc2"><img src=\'/lesson/intro-to-defi/staking-b4b4319d.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'ae7f5581ae404a1a83e1542eeee9d945',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'Lending your crypto to a protocol is an example of?',
+          rightAnswerNumber: 2,
+          answers: [
+            'Trading',
+            'Staking',
+            'Borrowing',
+            'HODLing'
+          ],
+          id: 'intro-to-defi-7'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '9b122d2d398a47428a41838e3bc9a521',
+        title: '<strong>DeFi Downsides</strong>',
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/intro-to-defi/defi-downsides-51dd6225.svg\'></div><div class="bloc-b"><p><strong>Hackers</strong></p><p>Where there is money and technology, there are people looking for ways to hack the system and take advantage of poor security measures.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/intro-to-defi/defi-downsides-3a6ce496.svg\'></div><div class="bloc-b"><p><strong>Risk</strong></p><p>DeFi, like blockchain technology, runs on code. If there’s an error or loophole in the code, it can be exploited.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/intro-to-defi/defi-downsides-83a9391f.svg\'></div><div class="bloc-b"><p><strong>No recourse</strong></p><p>Being decentralized also means there are no companies or government agencies that you can appeal to for help if something goes wrong.</p></div></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '4b5bd41ee29942ea8cfc577f2e495baa',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'What is a risk in DeFi?',
+          rightAnswerNumber: 4,
+          answers: [
+            'There are no risks',
+            'The bank might turn down your loan',
+            'Bad weather could shut down the exchange',
+            'There may be an error in the code'
+          ],
+          id: 'intro-to-defi-8'
+        }
+      },
+      {
+        type: 'QUEST',
+        title: 'Intro to DeFi Quest',
+        component: 'IntroToDeFi'
+      },
+      {
+        type: 'END',
+        title: 'Lesson Reward'
+      }
+    ]
+  },
+  {
+    kudosImageLink: '/lesson/dex-aggregators/kudos-ddb9db8b.png',
+    lessonImageLink: '/lesson/dex-aggregators/lesson-39d1fc1c.png',
+    socialImageLink: '/lesson/dex-aggregators/social-2724db28.jpg',
+    learningActions: '',
+    marketingDescription: 'Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.',
+    kudosId: 2608,
+    duration: 15,
+    learnings: '',
+    difficulty: undefined,
+    description: 'Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.',
+    name: 'DEX Aggregators',
+    quest: 'DEXAggregators',
+    publicationStatus: 'publish',
+    isFeaturedOnHomepage: true,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=671cc928-93d6-4c9a-9718-28ed3d56af7c',
+    isMicroLesson: false,
+    notionId: '42578b8813114832b8930cf59f6125af',
+    slug: 'dex-aggregators',
+    imageLinks: [
+      '/lesson/dex-aggregators/introduction-ba453b68.svg',
+      '/lesson/dex-aggregators/an-example-of-how-liquidity-impacts-prices-915b3d84.svg',
+      '/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-c9e0b695.svg',
+      '/lesson/dex-aggregators/recombining-liquidity-with-dex-aggregators-f01777dd.svg',
+      '/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-c34efe86.svg',
+      '/lesson/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-28d6f207.svg',
+      '/lesson/dex-aggregators/meta-aggregators-100793fd.svg',
+      '/lesson/dex-aggregators/avoiding-sandwich-attacks-75f6ae82.svg',
+      '/lesson/dex-aggregators/more-protection-from-sandwiches-otc-trades-04ef66c9.svg'
+    ],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: 'fdab9a0b1c7b457a9110f88dbac53d71',
+        title: '<strong>Introduction</strong>',
+        content: '<div class="bloc1"><p><span class="tooltip" definition="(DEX) protocol that facilitates exchange without requiring trusted intermediaries">Decentralized Exchange</span>s (DEXs) eliminate the costs of intermediaries and save Explorers money when trading assets. </p><p>But did you know, Explorer, that there’s more ways to save with DeFi technology? Using DEX aggregators, you can scan all possible trades on various DEX platforms simultaneously and execute the best trade route — all in one action. They help you get the best deal when doing a token <span class="tooltip" definition="A trade from one token to another">swap</span>. Just like airline flight aggregators help you find the cheapest flight, DEX aggregators help you maximize the value of your trade.</p><p>This lesson will show:</p><ol><li>How DEXs split liquidity and how that can result in reduced trading rates.</li><li>How DEX aggregators enable users to view and use multiple DEXs through one interface.</li><li>Multiple ways a single aggregator interface can save Explorers time and money.</li></ol></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/introduction-ba453b68.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '0e59fd1b9b7943a3a70a44abc9e921c1',
+        title: 'How Liquidity Affects Prices',
+        content: '<div class="bloc1"><p>The amount of any token that is available to trade on a single market is called a token’s <span class="tooltip" definition="How much of a token is available for trading">liquidity</span>. The amount of liquidity available strongly influences the <span class="tooltip" definition="The amount prices on a DEX change due to the trade size">price impact</span> when making trades in DeFi; a large price impact means the trade will cost more, and a low price impact will cost less. Most people prefer to trade in markets with higher liquidity to reduce their price impact. </p><p>You can think of it like a swimming pool; the more water (liquidity) there is, the smaller the <em>change </em>in the water level (price impact) when someone jumps in or leaves. The size of that ‘someone’ (the trade) also affects the <em>change</em> in the water level (price impact).</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '8ea31e80fcfc49d3a88ad09d03341c9c',
+        title: 'An Example of How Liquidity Impacts Prices',
+        content: '<div class="bloc1"><p>Let’s look at an example. </p><p>The BanklessDAO token (BANK) has a liquidity amount of ~30 million BANK on Uniswap, but only ~4.5 million BANK on SushiSwap. Uniswap has over 6x the BANK liquidity of SushiSwap.</p><p>If an Explorer was to purchase 10,000 BANK from each pool, they would find that the <span class="tooltip" definition="The amount prices on a DEX change due to the trade size">price impact</span> of their trade would result in a higher trade price in the SushiSwap pool — because their trade has pulled a larger percentage of the pool’s total liquidity.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/an-example-of-how-liquidity-impacts-prices-915b3d84.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'c60d776bd01247b79e037003d737f924',
+        title: '✅ Question',
+        quiz: {
+          question: 'Fill in the blanks: To find the best price, people will want to trade in markets with ________ liquidity to have ________ price impact on their trades.',
+          rightAnswerNumber: 2,
+          answers: [
+            'good, maximum',
+            'high, low',
+            'low, good',
+            'thin, large'
+          ],
+          id: 'dex-aggregators-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'b97afba7b0f44b709f57d6e85ce13cc2',
+        title: 'Shortcomings of Traditional DEXs: Thin Liquidity',
+        content: '<div class="bloc1"><p>DeFi continues to grow, but a problem is emerging for users: As more DEXs launch, the total amount of any individual token gets spread out. This is known as thin liquidity.</p><p>Remember the swimming pool: if the available water (<span class="tooltip" definition="How much of a token is available for trading">liquidity</span>) is split between multiple pools, the amount of water will be “thinner” in each pool compared to the total in the single original pool.</p><p>In 2020, Uniswap held much of the DEX liquidity to trade in DeFi. When SushiSwap launched the following month, it attracted over $1B worth of liquidity into its DEX from Uniswap, reducing total liquidity on Uniswap. This was just the start. Since then, more and more DEXs have entered the DeFi ecosystem, progressively thinning the liquidity of each pool.</p><p>Thus, any trade has a larger <span class="tooltip" definition="The amount prices on a DEX change due to the trade size">price impact</span> than when Uniswap held most of the ecosystem’s total liquidity. As more DEXs launch, it costs Explorers more to trade on any single DEX without new innovations.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-c9e0b695.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'd9969ae7f6c247a097f7b7d419b6c119',
+        title: '✅ Question',
+        quiz: {
+          question: 'Which two factors determine the price impact of a DEX trade?',
+          rightAnswerNumber: 3,
+          answers: [
+            'The choice of DEX is used to make the trade and size of the trade',
+            'Which token is chosen to trade and which DEX is used to make the trade',
+            'The size of the trade and amount of liquidity available',
+            'The amount of liquidity available and which token is chosen to trade'
+          ],
+          id: 'dex-aggregators-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'c06177fa9ee3428c80a9295a8a09a9f2',
+        title: 'Recombining Liquidity With DEX Aggregators',
+        content: '<div class="bloc1"><p>Large amounts of <span class="tooltip" definition="How much of a token is available for trading">liquidity</span> are needed to reduce price impact and save you money. DEX aggregators allow users to run trades through multiple DEXs at once and reduce the price impact; a big trade from an Explorer’s wallet gets broken down into multiple small trades across multiple DEXs.</p><p>DEX aggregators can even route trades through an <span class="tooltip" definition="A token that is part of the middle of a trade route, not the starting or ending token">intermediary token</span> , or more than one, if that gets a better result for users — like the way a flight aggregator might suggest an extra stop at another airport if it’s cheaper for the passenger. This discovery of the optimal trade route is done by sophisticated algorithms searching through all possible paths to find the cheapest trade route at that moment.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/recombining-liquidity-with-dex-aggregators-f01777dd.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '063815f2667146a2921df5c4c3ca1663',
+        title: '✅ Question',
+        quiz: {
+          question: 'Trade routing in DEX aggregators means:',
+          rightAnswerNumber: 4,
+          answers: [
+            'Trades are routed according to liquidity arrangements with specific DEXs',
+            'Trades are always routed through multiple DEXs',
+            'Trades are routed through a user’s favorite DEX only',
+            'Trades can be routed through multiple DEXs and intermediary tokens'
+          ],
+          id: 'dex-aggregators-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '1c2f4199a9254d18897593b371ca4d9e',
+        title: 'How Gas Cost Is Calculated on Ethereum',
+        content: '<div class="bloc1"><p>Let’s refresh how gas is calculated before we go on to see how the optimizations DEX aggregators make can reduce network fees for users.</p><p>Just like gas for a car, <span class="tooltip" definition="Transaction fees for blockchain networks">gas</span> is the fuel for running blockchain code on Ethereum. The farther you travel, the more gas your car uses. Likewise, the more computations you do, the more gas your code requires. Gas price is measured in very small amounts of Ether called <span class="tooltip" definition="A unit used on Ethereum blockchain, equivalent to 0.000000001 ETH (one billionth), used commonly to describe gas prices">gwei</span>, like cents to a dollar. 1 gwei is 1 billionth of an ether (1 gwei = 0.00000001 ETH). </p><p>Total gas cost is based on how much gas your transaction uses and the unit price of gas at the time of use. The formula for calculating the price of a transaction is as follows:<br><em>Amount of gas used * Gas price = Total gas cost</em></p><p>As an example, let’s say gas costs are at 22 gwei per gas unit and the transaction uses 120-thousand units:<br><em>120,000 * 22 gwei = 2,640,000 gwei </em><em><strong>or</strong></em><em> 0.00264 ETH</em></p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-c34efe86.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '7196f021bcc541929d68b9bd0c018ac3',
+        title: 'How Aggregators Reduce Gas Costs for Users',
+        content: '<div class="bloc1"><p>Trade splitting would result in more transaction fees from the extra on-chain activity, except that advanced aggregators plan for transaction fees and include them in their calculations of the trade route. They simulate trades off chain, including <span class="tooltip" definition="Transaction fees for blockchain networks">gas</span> costs, to find <span class="tooltip" definition="What is the path taken from starting token to ending token in a trade">trade routes</span> that leave Explorers with the most value at the end of the interaction.</p><p>Some aggregators go even further: they may refund some of the network transaction fees from using their protocol. 1inch currently offers rebates in their token for a portion of gas costs from trading through their <span class="tooltip" definition="A decentralized app that connects to decentralized networks and protocols"><span class="tooltip" definition="Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority.">dapp</span></span> on Ethereum mainnet.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-28d6f207.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '2cf155ee9e3a4d4fb0a9c78f888d2373',
+        title: '✅ Question',
+        quiz: {
+          question: 'Which of the following is NOT a way DEX aggregators try to reduce transaction costs for users?',
+          rightAnswerNumber: 2,
+          answers: [
+            'Simulate transactions off-chain prior to trade execution',
+            'Ask DEXs to lower network fees for their users',
+            'Account for gas cost in trade routing',
+            'Token rebates on gas costs'
+          ],
+          id: 'dex-aggregators-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '19eb7c5516fd4da383c48661d21e34a1',
+        title: 'Meta-Aggregators',
+        content: '<div class="bloc1"><p>There are even meta-aggregators of DEX aggregators! These platforms search through all competing DEX aggregators and serve price quotes to users. An example of this is the in-app swap function in the MetaMask wallet. This feature is actually a meta-aggregator that relies on DEX aggregators like 1inch to function.</p><p>Note: While convenient, <span class="tooltip" definition="A tool that brings together other aggregators into an extra overview layer">meta-aggregator</span> services can add extra costs on top of network transaction fees, increasing the overall cost for users. Explorers: make sure that your trades don’t end up more expensive than you intended. </p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/meta-aggregators-100793fd.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '7abcec930d924ca997d5f4221fae9ad6',
+        title: '✅ Question',
+        quiz: {
+          question: 'Meta-aggregators cross-reference multiple DEX aggregators to find the best prices for their users.',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          id: 'dex-aggregators-5'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '44acd0c428aa49e8880b26f1ffffd0b0',
+        title: 'Avoiding Sandwich Attacks',
+        content: '<div class="bloc1"><p>Users swapping directly through DEXs can lose value up to the limit of their <span class="tooltip" definition="How much can prices change before your trade executes">slippage tolerance</span> due to price changes coordinated by block producers — these kinds of losses are called sandwich attacks. Did you know that sandwich attacks led users to a total loss of $235,000,000 during 2021? Explorers can protect themselves by keeping a low slippage tolerance when swapping tokens.</p><p>Fortunately, because of the recombined liquidity offered by DEX aggregators, the price impact of a trade is reduced. Explorers can keep their slippage tolerance low while saving more with DEX aggregators, as opposed to trading directly on a DEX.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/avoiding-sandwich-attacks-75f6ae82.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '9864a66638a3473ca13f8ee2dc8c4b1f',
+        title: '✅ Question',
+        quiz: {
+          question: 'To protect yourself, you should keep your slippage tolerance:',
+          rightAnswerNumber: 1,
+          answers: [
+            'low',
+            'high'
+          ],
+          id: 'dex-aggregators-6'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'b1756984326242d4ad5e4ab2cbe2eb32',
+        title: 'More Protection From Sandwiches: OTC Trades',
+        content: '<div class="bloc1"><p>Some aggregators like 1inch even offer specialized <span class="tooltip" definition="(Over the Counter) Trades made directly with private entities">OTC</span> (<span class="tooltip" definition="(OTC) Trades made directly with private entities">Over The Counter</span>) services that provide total protection against sandwich attacks. These optional services enable direct trading with other users, rather than facilitating trades through DeFi <span class="tooltip" definition="A liquidity pool is a crowdsourced pool of cryptocurrencies or tokens locked in a smart contract that is used to facilitate trades between the assets on a decentralized exchange (DEX)">liquidity pools</span>. Anyone can engage in <span class="tooltip" definition="(Over the Counter) Trades made directly with private entities">OTC</span> trades to fully remove the threat of sandwich attacks — providing another great way for Explorers to save.</p><p>CoWSwap is a Meta-Aggregator that also offers sandwich-resistant services, enabled by default, to ensure trades are 100% protected against sandwich attacks.</p></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/more-protection-from-sandwiches-otc-trades-04ef66c9.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '18f1f2c0e7b84cfbafe1b26e139f0c25',
+        title: '✅ Question',
+        quiz: {
+          question: 'Many DEX aggregators offer which tool(s) to save their users money?',
+          rightAnswerNumber: 4,
+          answers: [
+            'Routing trades through aggregated liquidity from multiple DEXs to reduce price impact.',
+            'OTC trades that fully protect against sandwich attacks.',
+            'Account for gas cost when building the best trade routes.',
+            'All of the above'
+          ],
+          id: 'dex-aggregators-7'
+        }
+      },
+      {
+        type: 'QUEST',
+        title: 'DEX Aggregators Quest',
+        component: 'DEXAggregators'
       },
       {
         type: 'END',
