@@ -2,10 +2,10 @@ import { Box, Container, Link, Image, Tooltip } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
-import keywords from '../../keywords.json'
 
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
+import { KEYWORDS } from 'constants/index'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -450,7 +450,7 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       `
         : ``};
   }
-  span {
+  span.keyword {
     cursor: help;
     border-bottom: 1px dashed grey;
     display: inline-block !important;
@@ -482,19 +482,23 @@ const MicroLesson = ({
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown
           components={{
-            code: ({ node, ...props }: any) =>
-              node.children[0]?.value in keywords ? (
+            code: ({ node, ...props }: any) => {
+              const keyword = node.children[0]?.value
+              const lowerCaseKeyword = node.children[0]?.value?.toLowerCase()
+              return lowerCaseKeyword?.length &&
+                lowerCaseKeyword in KEYWORDS ? (
                 <Tooltip
                   hasArrow
-                  label={keywords[node.children[0]?.value]?.definition}
+                  label={KEYWORDS[lowerCaseKeyword]?.definition}
                   closeOnClick={false}
                   {...props}
                 >
-                  {node.children[0]?.value}
+                  <span className="keyword">{keyword}</span>
                 </Tooltip>
               ) : (
-                <>{node.children[0]?.value}</>
-              ),
+                <>{keyword}</>
+              )
+            },
           }}
         >
           {lesson.articleContent}

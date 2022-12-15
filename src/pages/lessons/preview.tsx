@@ -99,9 +99,6 @@ const processLesson = (htmlPage, notion_id) => {
         // text only
         slide.content = `<div class="bloc1">${slide.content}</div>`
       }
-      slide.content = slide.content
-        .replace(/<code>/g, '')
-        .replace(/<\/code>/g, '')
     }
     return slide
   })

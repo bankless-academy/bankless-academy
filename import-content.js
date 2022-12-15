@@ -11,16 +11,11 @@ const config = require('./knexfile.js')
 const db = knex(config)
 const { TABLES } = require('./db.js')
 
-const defaultKeywords = require('./keywords.json')
-const whitelabelKeywords = require('./whitelabel-keywords.json')
-
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
 const LESSON_FILENAME = IS_WHITELABEL ? 'whitelabel_lessons' : 'lessons'
 const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
 const POTION_API = 'https://potion.banklessacademy.com'
-
-const keywords = IS_WHITELABEL ? whitelabelKeywords : defaultKeywords
 
 const KEY_MATCHING = {
   'Kudos image': 'kudosImageLink',
@@ -312,39 +307,6 @@ axios
                 // text only
                 slide.content = `<div class="bloc1">${slide.content}</div>`
               }
-              // replace keywords in content
-              // TODO: move this logic to the frontend?
-              const content = slide.content.toLowerCase()
-              for (const word in keywords) {
-                const search = '<code>' + word.toLowerCase() + '</code>'
-                if (content.includes(search)) {
-                  // console.log('word found: ', word)
-                  slide.content = slide.content.replace(
-                    new RegExp(search, 'gi'),
-                    `<span class="tooltip" definition="${keywords[word].definition}">$&</span>`
-                  )
-                }
-              }
-              slide.content = slide.content
-                .replace(/<code>/g, '')
-                .replace(/<\/code>/g, '')
-            }
-            // replace keywords in title
-            if (slide.title && slide.type !== 'QUIZ') {
-              const title = slide.title.toLowerCase()
-              for (const word in keywords) {
-                const search = '<code>' + word.toLowerCase() + '</code>'
-                if (title.includes(search)) {
-                  console.log('word found in title: ', word)
-                  slide.title = slide.title.replace(
-                    new RegExp(search, 'gi'),
-                    `<span class="tooltip" definition="${keywords[word].definition}">$&</span>`
-                  )
-                }
-              }
-              slide.title = slide.title
-                .replace(/<code>/g, '')
-                .replace(/<\/code>/g, '')
             }
             return slide
           })
