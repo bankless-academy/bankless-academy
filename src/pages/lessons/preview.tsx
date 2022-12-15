@@ -103,6 +103,7 @@ const processLesson = (htmlPage, notion_id) => {
     return slide
   })
   lesson.slides = slides
+  lesson.isPreview = true
   return lesson
 }
 
@@ -118,6 +119,29 @@ const Lessons = (): JSX.Element => {
   const router = useRouter()
   const { id, mirror } = router.query
   const [lesson, setLesson]: any = useState(null)
+  const [keywords, setKeywords] = useState({})
+
+  useEffect(() => {
+    // load keywords directly from Notion
+    if (!Object.keys(keywords).length) {
+      // TODO: make NOTION_ID dyn to support WL
+      const NOTION_ID = '623e965e4f10456094d17aa94ec37105'
+      axios
+        .get(`${POTION_API}/table?id=${NOTION_ID}&sort=keyword`)
+        .then(function (response) {
+          const keywords = {}
+          response.data.map((k) => {
+            const { definition, keyword } = k.fields
+            if (definition !== undefined)
+              keywords[keyword?.toLowerCase()] = { definition }
+          })
+          setKeywords(keywords)
+        })
+        .catch(function (error) {
+          console.error(error)
+        })
+    }
+  }, [])
 
   useEffect(() => {
     if (id) {
@@ -135,6 +159,7 @@ const Lessons = (): JSX.Element => {
           console.error(error)
         })
     }
+
     const [, , , mirror_account] =
       mirror && typeof mirror === 'string' ? mirror.split('/') : []
     if (
@@ -150,24 +175,24 @@ const Lessons = (): JSX.Element => {
         method: 'post',
         data: {
           query: `
-            query GetMirrorTransactions($digest: String!) {
-              transactions(tags:[
-                {
-                  name:"App-Name",
-                  values:["MirrorXYZ"],
-                },
-                {
-                  name:"Original-Content-Digest",
-                  values:[$digest]
-                }
-              ], sort:HEIGHT_DESC, first: 10){
-                edges {
-                  node {
-                    id
+                query GetMirrorTransactions($digest: String!) {
+                  transactions(tags:[
+                    {
+                      name:"App-Name",
+                      values:["MirrorXYZ"],
+                    },
+                    {
+                      name:"Original-Content-Digest",
+                      values:[$digest]
+                    }
+                  ], sort:HEIGHT_DESC, first: 10){
+                    edges {
+                      node {
+                        id
+                      }
+                    }
                   }
-                }
-              }
-            }`,
+                }`,
           variables: { digest: mirrorId },
         },
       }).then((result) => {
@@ -184,6 +209,7 @@ const Lessons = (): JSX.Element => {
               isArticle: true,
               mirrorLink: mirror,
               socialImageLink: '/lesson/micro-lesson-test/social-f214b58b.png',
+              isPreview: true,
             })
           })
         }
@@ -196,10 +222,10 @@ const Lessons = (): JSX.Element => {
     return (
       <>
         {lesson.isArticle ? (
-          <Article lesson={lesson} />
+          <Article lesson={lesson} extraKeywords={keywords} />
         ) : (
           <Container maxW="container.xl">
-            <Lesson lesson={lesson} />
+            <Lesson lesson={lesson} extraKeywords={keywords} />
           </Container>
         )}
       </>
