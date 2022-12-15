@@ -4,7 +4,7 @@ import { Container } from '@chakra-ui/react'
 
 import { MetaData } from 'components/Head'
 import Lesson from 'components/Lesson'
-import MicroLesson from 'components/MicroLesson'
+import Article from 'components/Article'
 import { LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
@@ -49,7 +49,7 @@ const LessonPage = (): JSX.Element => {
     return (
       <>
         {currentLesson.isArticle ? (
-          <MicroLesson lesson={currentLesson} />
+          <Article lesson={currentLesson} />
         ) : (
           <Container maxW="container.xl" px={isSmallScreen ? '8px' : '16px'}>
             <Lesson lesson={currentLesson} />

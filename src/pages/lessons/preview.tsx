@@ -7,11 +7,11 @@ import { useRouter } from 'next/router'
 import { MetaData } from 'components/Head'
 
 import Lesson from 'components/Lesson'
-import MicroLesson from 'components/MicroLesson'
+import Article from 'components/Article'
 import { MIRROR_WHITELISTED_ACCOUNTS } from 'constants/index'
 
 const pageMeta: MetaData = {
-  title: 'Lesson preview',
+  title: 'Live preview',
 }
 
 const processLesson = (htmlPage, notion_id) => {
@@ -196,7 +196,7 @@ const Lessons = (): JSX.Element => {
     return (
       <>
         {lesson.isArticle ? (
-          <MicroLesson lesson={lesson} />
+          <Article lesson={lesson} />
         ) : (
           <Container maxW="container.xl">
             <Lesson lesson={lesson} />

@@ -457,11 +457,7 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
   }
 `
 
-const MicroLesson = ({
-  lesson,
-}: {
-  lesson: LessonType
-}): React.ReactElement => {
+const Article = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   const [isSmallScreen] = useSmallScreen()
   return (
     <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
@@ -518,4 +514,4 @@ const MicroLesson = ({
   )
 }
 
-export default MicroLesson
+export default Article
