@@ -1,10 +1,11 @@
-import { Box, Container, Link, Image } from '@chakra-ui/react'
+import { Box, Container, Link, Image, Tooltip } from '@chakra-ui/react'
 import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
 
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
+import { KEYWORDS } from 'constants/index'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -449,13 +450,14 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       `
         : ``};
   }
+  span.keyword {
+    cursor: help;
+    border-bottom: 1px dashed grey;
+    display: inline-block !important;
+  }
 `
 
-const MicroLesson = ({
-  lesson,
-}: {
-  lesson: LessonType
-}): React.ReactElement => {
+const Article = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   const [isSmallScreen] = useSmallScreen()
   return (
     <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
@@ -474,10 +476,42 @@ const MicroLesson = ({
         </Link>
       </Box>
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
-        <ReactMarkdown>{lesson.articleContent}</ReactMarkdown>
+        <ReactMarkdown
+          components={{
+            // Tooltip with definition
+            code: ({ node, ...props }: any) => {
+              const keyword = node.children[0]?.value
+              const lowerCaseKeyword = node.children[0]?.value?.toLowerCase()
+              return lowerCaseKeyword?.length &&
+                lowerCaseKeyword in KEYWORDS ? (
+                <Tooltip
+                  hasArrow
+                  label={KEYWORDS[lowerCaseKeyword]?.definition}
+                  closeOnClick={false}
+                  {...props}
+                >
+                  <span className="keyword">{keyword}</span>
+                </Tooltip>
+              ) : (
+                <>{keyword}</>
+              )
+            },
+            // force links to target _blank
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            a: ({ node, children, ...props }) => {
+              return (
+                <a target="_blank" {...props}>
+                  {children}
+                </a>
+              )
+            },
+          }}
+        >
+          {lesson.articleContent}
+        </ReactMarkdown>
       </ArticleStyle>
     </Container>
   )
 }
 
-export default MicroLesson
+export default Article

@@ -1,6 +1,9 @@
 {
-  "2 Factor Authentication": {
+  "2 factor authentication": {
     "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+  },
+  "51% attack": {
+    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
   },
   "address": {
     "definition": "Unique public identifier for an entity on a blockchain"
@@ -11,10 +14,13 @@
   "allowance": {
     "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction"
   },
+  "alternative layer 1": {
+    "definition": "Layer 1 blockchains other than Ethereum and Bitcoin."
+  },
   "bet": {
     "definition": "risking money in exchange for greater rewards (shorting/longing) ; money verb on the skill cube"
   },
-  "Block": {
+  "block": {
     "definition": "A group of transactions on the blockchain."
   },
   "block explorer": {
@@ -23,17 +29,26 @@
   "block hash": {
     "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
   },
+  "block reward": {
+    "definition": "The amount of a blockchain’s native asset given to the proposer of a new valid block."
+  },
+  "block space": {
+    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
+  },
   "blockchain": {
     "definition": "A shared, unchangeable database, or ledger, of recorded transactions."
   },
   "blockchain architecture": {
     "definition": "The structures for how data is stored in blockchain technology."
   },
-  "blockspace": {
-    "definition": "Blockspace is amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
+  "blockchain trilemma": {
+    "definition": "The problem describing the need for all 3 mutually-interfering blockchain qualities: Security, Scalability, and Decentralization."
   },
   "borrower": {
     "definition": "Willing to pay interest to lenders in order to borrow assets"
+  },
+  "censorship-resistant": {
+    "definition": "No government or company has control to determine what is or is not allowed."
   },
   "centralized exchange": {
     "definition": "(CEX) Platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange"
@@ -54,7 +69,7 @@
     "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan"
   },
   "consensus": {
-    "definition": "Methods used to achieve agreement, trust, and security across a decentralized computer network like blockchains."
+    "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
   },
   "custodial wallet": {
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
@@ -63,15 +78,12 @@
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
   },
   "dapp": {
-    "definition": "A decentralized app that connects to decentralized networks and protocols"
-  },
-  "DApp": {
     "definition": "Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority."
   },
-  "DApps": {
+  "dapps": {
     "definition": "Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority."
   },
-  "Decentralization": {
+  "decentralization": {
     "definition": "Principle that no single authority or entity should control the blockchain data."
   },
   "decentralized": {
@@ -80,10 +92,10 @@
   "decentralized exchange": {
     "definition": "(DEX) protocol that facilitates exchange without requiring trusted intermediaries"
   },
-  "DeFi": {
+  "defi": {
     "definition": "An abbreviation for decentralized finance."
   },
-  "DEX aggregator": {
+  "dex aggregator": {
     "definition": "Protocol that combines DEX liquidity from multiple sources in one interface"
   },
   "digital signature": {
@@ -92,13 +104,13 @@
   "earn": {
     "definition": "contributing value in exchange for rewards ; money verb on the skill cube"
   },
-  "Epoch": {
+  "epoch": {
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
-  "finality time": {
-    "definition": "How long it takes until it is safe to trust that a transaction is final and accepted."
+  "finality": {
+    "definition": "How long it takes until it is safe to trust that a new transaction is valid and final."
   },
-  "FOMO": {
+  "fomo": {
     "definition": "Fear Of Missing Out. Anxiety or apprehension about missing out on or not getting things"
   },
   "gas": {
@@ -119,7 +131,7 @@
   "hashing function": {
     "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
   },
-  "HODL": {
+  "hodl": {
     "definition": "Hold On for Dear Life. Crypto slang for not selling crypto no matter what the market conditions are"
   },
   "hot wallet": {
@@ -133,6 +145,9 @@
   },
   "invest": {
     "definition": "The act of buying a coin/token that uses DeFi technology"
+  },
+  "layer 2": {
+    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
   },
   "ledger": {
     "definition": "The record of all transactions that have ever occurred."
@@ -152,7 +167,7 @@
   "meta-aggregator": {
     "definition": "A tool that brings together other aggregators into an extra overview layer"
   },
-  "MEV": {
+  "mev": {
     "definition": "Maximal extractible value - value extracted by ordering transactions within blocks"
   },
   "non-custodial wallet": {
@@ -161,7 +176,7 @@
   "non-custodial wallets": {
     "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets."
   },
-  "OTC": {
+  "otc": {
     "definition": "(Over the Counter) Trades made directly with private entities"
   },
   "over the counter": {
@@ -176,7 +191,7 @@
   "phishing": {
     "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money"
   },
-  "POAP": {
+  "poap": {
     "definition": "A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson."
   },
   "price impact": {
@@ -187,6 +202,12 @@
   },
   "private keys": {
     "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
+  },
+  "proof of stake": {
+    "definition": "Blockchain Consensus algorithms that randomly choose a block producer based on the amount of stake each entity has locked into the protocol."
+  },
+  "proof of work": {
+    "definition": "Blockchain Consensus algorithms that rely on “work” done by miners competing to create valid blocks by proposing blocks and seeing if each one has a valid hash."
   },
   "public": {
     "definition": "Public blockchains allow anyone to view the blockchain ledger"
@@ -209,17 +230,20 @@
   "sandwich attack": {
     "definition": "A hidden cost for users due to ordering of transactions by block producers"
   },
-  "Scalability": {
+  "scalability": {
     "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
   },
   "scam-token": {
     "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds"
   },
-  "Security": {
-    "definition": "Ability of a blockchain to withstand hacking attempts, code exploits, and economic exploits among other attacks, and continue to function as normal. "
+  "security": {
+    "definition": "Ability of a blockchain to withstand hacking attempts, code exploits, and economic exploits among other attacks, and continue to function as normal."
   },
   "seed phrase": {
     "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
+  },
+  "sharding": {
+    "definition": " The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability."
   },
   "slippage tolerance": {
     "definition": "How much can prices change before your trade executes"
@@ -233,6 +257,9 @@
   "spend": {
     "definition": "Using your crypto assets to pay for goods or services."
   },
+  "stake": {
+    "definition": "The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”."
+  },
   "staking": {
     "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")"
   },
@@ -242,8 +269,8 @@
   "tokens": {
     "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
   },
-  "TPS": {
-    "definition": "Transactions Per Second. The number of transactions per second processed by a blockchain."
+  "tps": {
+    "definition": "A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain."
   },
   "trade": {
     "definition": "exchanging assets or money for something valuable ; money verb on the skill cube"
@@ -259,6 +286,9 @@
   },
   "transaction hash": {
     "definition": "The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions."
+  },
+  "transaction throughput": {
+    "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
   },
   "wallet": {
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."

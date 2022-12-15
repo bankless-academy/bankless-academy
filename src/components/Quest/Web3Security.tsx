@@ -16,6 +16,11 @@ const StyledDiv = styled(Box)`
   h2 {
     text-align: center;
   }
+  span {
+    font-weight: normal;
+    font-size: 16px;
+    color: orange;
+  }
 `
 
 const CORRECT_ANSWERS = [true, true, false, true]
@@ -75,7 +80,15 @@ const Web3Security = (): {
               src="/lesson/web3-security/metamask-wallets-scam.jpg"
             />
           </Box>
-          <h2>Select all screenshots containing scams 👆</h2>
+          <h2>
+            Select all screenshots containing scams 👆
+            {selected.filter((answer) => answer)?.length === 4 && (
+              <>
+                <br />
+                <span>Hint: 1 screenshot is not a scam</span>
+              </>
+            )}
+          </h2>
         </>
       </StyledDiv>
     ),

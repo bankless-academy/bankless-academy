@@ -132,13 +132,13 @@ const getListStyle = (isDraggingOver, index) => ({
   minHeight: 200,
 })
 
-const BlockchainsLayer1 = (): {
+const Layer1Blockchains = (): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
   const [state, setState] = useState(
-    localStorage.getItem('quest-blockchain-layer-1')
-      ? JSON.parse(localStorage.getItem('quest-blockchain-layer-1'))
+    localStorage.getItem('quest-layer-1-blockchains')
+      ? JSON.parse(localStorage.getItem('quest-layer-1-blockchains'))
       : [getItems(), [], []]
   )
   const [isSmallScreen] = useSmallScreen()
@@ -163,7 +163,10 @@ const BlockchainsLayer1 = (): {
       newState[sInd] = result[sInd]
       newState[dInd] = result[dInd]
 
-      localStorage.setItem('quest-blockchain-layer-1', JSON.stringify(newState))
+      localStorage.setItem(
+        'quest-layer-1-blockchains',
+        JSON.stringify(newState)
+      )
       setState(newState)
     }
   }
@@ -202,4 +205,4 @@ const BlockchainsLayer1 = (): {
   }
 }
 
-export default BlockchainsLayer1
+export default Layer1Blockchains

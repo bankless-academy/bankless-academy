@@ -15,7 +15,7 @@ import NextLink from 'next/link'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
+import ReactHtmlParser from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
 import { Warning } from 'phosphor-react'
 // import { isMobile } from 'react-device-detect'
@@ -28,22 +28,30 @@ import MintKudos from 'components/MintKudos'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
 import { Mixpanel, track } from 'utils'
-import { IS_WHITELABEL } from 'constants/index'
+import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
 import { theme } from 'theme/index'
 
 // transform keywords into Tooltip
-function transform(node, index) {
+function transform(node) {
   if (node.type === 'tag' && node.name === 'a') {
     // force links to target _blank
     node.attribs.target = '_blank'
   }
-  if (node.type === 'tag' && node.name === 'span') {
-    // add Tooltip with definition
-    return (
-      <Tooltip hasArrow label={node.attribs.definition} closeOnClick={false}>
-        {convertNodeToElement(node, index, transform)}
+  if (node.type === 'tag' && node.name === 'code') {
+    const keyword = node.children[0]?.data
+    const lowerCaseKeyword = node.children[0]?.data?.toLowerCase()
+    // Tooltip with definition
+    return lowerCaseKeyword?.length && lowerCaseKeyword in KEYWORDS ? (
+      <Tooltip
+        hasArrow
+        label={KEYWORDS[lowerCaseKeyword]?.definition}
+        closeOnClick={false}
+      >
+        <span className="keyword">{keyword}</span>
       </Tooltip>
+    ) : (
+      <>{keyword}</>
     )
   }
 }
@@ -55,9 +63,10 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
     margin-top: 1em;
     font-size: var(--chakra-fontSizes-2xl);
   }
-  span.tooltip {
+  span.keyword {
     cursor: help;
     border-bottom: 1px dashed grey;
+    display: inline-block !important;
   }
   div.content > div {
     ${(props) =>

@@ -7,7 +7,7 @@ import IntroToDeFi from 'components/Quest/IntroToDeFi'
 import BlockchainBasics from 'components/Quest/BlockchainBasics'
 import AcademyCommunity from 'components/Quest/AcademyCommunity'
 import Web3Security from 'components/Quest/Web3Security'
-import BlockchainsLayer1 from 'components/Quest/BlockchainsLayer1'
+import Layer1Blockchains from 'components/Quest/Layer1Blockchains'
 import DEXAggregators from 'components/Quest/DEXAggregators'
 import { ConnectFirst } from 'components/Quest/WalletConnect'
 
@@ -32,7 +32,7 @@ const QuestComponent = (
     BlockchainBasics: BlockchainBasics,
     AcademyCommunity: AcademyCommunity,
     Web3Security: Web3Security,
-    BlockchainsLayer1: BlockchainsLayer1,
+    Layer1Blockchains: Layer1Blockchains,
     DEXAggregators: DEXAggregators,
   }
   if (!component || !QUESTS.includes(component)) return null

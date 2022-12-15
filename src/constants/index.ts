@@ -2,6 +2,8 @@ import { MetaData } from 'components/Head'
 import { WHITELABEL } from 'constants/whitelabel'
 import DEFAULT_LESSONS from 'constants/lessons'
 import WHITELABEL_LESSONS from 'constants/whitelabel_lessons'
+import DEFAULT_KEYWORDS from '../../keywords.json'
+import WHITELABEL_KEYWORDS from '../../whitelabel-keywords.json'
 
 export const IS_WHITELABEL = !!WHITELABEL?.project_name
 
@@ -82,6 +84,7 @@ export const NOTION_PAGES = WHITELABEL?.notion_pages || {
 }
 
 export const MIRROR_WHITELISTED_ACCOUNTS = [
+  'banklessacademy.eth',
   'didierkrux.eth',
   'tetranome.eth',
   'ispeaknerd.eth',
@@ -90,3 +93,8 @@ export const MIRROR_WHITELISTED_ACCOUNTS = [
 ]
 
 export const ACTIVATE_MIXPANEL = !!process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID
+
+export const KEYWORDS =
+  IS_WHITELABEL && Object.keys(WHITELABEL_KEYWORDS).length
+    ? WHITELABEL_KEYWORDS
+    : DEFAULT_KEYWORDS

@@ -4,7 +4,7 @@ import { Container } from '@chakra-ui/react'
 
 import { MetaData } from 'components/Head'
 import Lesson from 'components/Lesson'
-import MicroLesson from 'components/MicroLesson'
+import Article from 'components/Article'
 import { LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     title: `Lesson: ${currentLesson.name}`,
     description: currentLesson.description,
     image: currentLesson.socialImageLink,
-    isLesson: !currentLesson.isMicroLesson,
+    isLesson: !currentLesson.isArticle,
   }
   return {
     props: { pageMeta },
@@ -48,8 +48,8 @@ const LessonPage = (): JSX.Element => {
   } else
     return (
       <>
-        {currentLesson.isMicroLesson ? (
-          <MicroLesson lesson={currentLesson} />
+        {currentLesson.isArticle ? (
+          <Article lesson={currentLesson} />
         ) : (
           <Container maxW="container.xl" px={isSmallScreen ? '8px' : '16px'}>
             <Lesson lesson={currentLesson} />

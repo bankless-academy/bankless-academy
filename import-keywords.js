@@ -31,7 +31,7 @@ axios
     response.data.map((k) => {
       const { definition, keyword } = k.fields
       if (definition !== undefined)
-        keywords[keyword] = { definition }
+        keywords[keyword?.toLowerCase()] = { definition }
     })
     console.log(keywords)
     const FILE_CONTENT = `${JSON.stringify(keywords, null, 2)}

@@ -7,11 +7,11 @@ import { useRouter } from 'next/router'
 import { MetaData } from 'components/Head'
 
 import Lesson from 'components/Lesson'
-import MicroLesson from 'components/MicroLesson'
+import Article from 'components/Article'
 import { MIRROR_WHITELISTED_ACCOUNTS } from 'constants/index'
 
 const pageMeta: MetaData = {
-  title: 'Lesson preview',
+  title: 'Live preview',
 }
 
 const processLesson = (htmlPage, notion_id) => {
@@ -99,9 +99,6 @@ const processLesson = (htmlPage, notion_id) => {
         // text only
         slide.content = `<div class="bloc1">${slide.content}</div>`
       }
-      slide.content = slide.content
-        .replace(/<code>/g, '')
-        .replace(/<\/code>/g, '')
     }
     return slide
   })
@@ -138,10 +135,14 @@ const Lessons = (): JSX.Element => {
           console.error(error)
         })
     }
+    const [, , , mirror_account] =
+      mirror && typeof mirror === 'string' ? mirror.split('/') : []
     if (
       mirror &&
       typeof mirror === 'string' &&
-      MIRROR_WHITELISTED_ACCOUNTS.some((account) => mirror.includes(account))
+      MIRROR_WHITELISTED_ACCOUNTS.some((account) =>
+        mirror_account.includes(account)
+      )
     ) {
       const mirrorId = mirror?.split('/')?.pop()
       axios({
@@ -180,7 +181,7 @@ const Lessons = (): JSX.Element => {
             setLesson({
               articleContent: data?.content?.body,
               name: data?.content?.title,
-              isMicroLesson: true,
+              isArticle: true,
               mirrorLink: mirror,
               socialImageLink: '/lesson/micro-lesson-test/social-f214b58b.png',
             })
@@ -194,8 +195,8 @@ const Lessons = (): JSX.Element => {
   else
     return (
       <>
-        {lesson.isMicroLesson ? (
-          <MicroLesson lesson={lesson} />
+        {lesson.isArticle ? (
+          <Article lesson={lesson} />
         ) : (
           <Container maxW="container.xl">
             <Lesson lesson={lesson} />
