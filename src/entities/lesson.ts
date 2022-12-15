@@ -26,7 +26,7 @@ export interface LessonType {
   endOfLessonRedirect?: string
   endOfLessonText?: string
   communityDiscussionLink?: string
-  isMicroLesson?: boolean
+  isArticle?: boolean
   mirrorLink?: string
   articleContent?: string
   slides?: {

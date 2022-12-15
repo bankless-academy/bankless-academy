@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     title: `Lesson: ${currentLesson.name}`,
     description: currentLesson.description,
     image: currentLesson.socialImageLink,
-    isLesson: !currentLesson.isMicroLesson,
+    isLesson: !currentLesson.isArticle,
   }
   return {
     props: { pageMeta },
@@ -48,7 +48,7 @@ const LessonPage = (): JSX.Element => {
   } else
     return (
       <>
-        {currentLesson.isMicroLesson ? (
+        {currentLesson.isArticle ? (
           <MicroLesson lesson={currentLesson} />
         ) : (
           <Container maxW="container.xl" px={isSmallScreen ? '8px' : '16px'}>

@@ -37,7 +37,6 @@ const KEY_MATCHING = {
   'End of Lesson redirect': 'endOfLessonRedirect',
   'End of Lesson text': 'endOfLessonText',
   'Community discussion link': 'communityDiscussionLink',
-  'Micro lesson': 'isMicroLesson',
   'Mirror link': 'mirrorLink',
 }
 
@@ -126,13 +125,13 @@ axios
         lesson.moduleId = lesson.moduleId[0]
       }
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
-      if (lesson.isMicroLesson === undefined) delete lesson.isMicroLesson
       if (lesson.mirrorLink === (undefined || null)) delete lesson.mirrorLink
 
       // console.log(lesson)
+
       const mirrorId = lesson.mirrorLink?.split('/')?.pop()
-      const isMicroLesson = lesson.isMicroLesson && lesson.mirrorLink && mirrorId
-      if (isMicroLesson) {
+      if (lesson.mirrorLink && mirrorId) {
+        lesson.isArticle = true
         lesson.notionId = notion.id
         lesson.slug = slugify(lesson.name)
         delete lesson.quest

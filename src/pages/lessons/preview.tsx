@@ -181,7 +181,7 @@ const Lessons = (): JSX.Element => {
             setLesson({
               articleContent: data?.content?.body,
               name: data?.content?.title,
-              isMicroLesson: true,
+              isArticle: true,
               mirrorLink: mirror,
               socialImageLink: '/lesson/micro-lesson-test/social-f214b58b.png',
             })
@@ -195,7 +195,7 @@ const Lessons = (): JSX.Element => {
   else
     return (
       <>
-        {lesson.isMicroLesson ? (
+        {lesson.isArticle ? (
           <MicroLesson lesson={lesson} />
         ) : (
           <Container maxW="container.xl">
