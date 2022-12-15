@@ -482,6 +482,7 @@ const MicroLesson = ({
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown
           components={{
+            // Tooltip with definition
             code: ({ node, ...props }: any) => {
               const keyword = node.children[0]?.value
               const lowerCaseKeyword = node.children[0]?.value?.toLowerCase()
@@ -497,6 +498,15 @@ const MicroLesson = ({
                 </Tooltip>
               ) : (
                 <>{keyword}</>
+              )
+            },
+            // force links to target _blank
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            a: ({ node, children, ...props }) => {
+              return (
+                <a target="_blank" {...props}>
+                  {children}
+                </a>
               )
             },
           }}
