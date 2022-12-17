@@ -457,8 +457,16 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
   }
 `
 
-const Article = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
+const Article = ({
+  lesson,
+  extraKeywords,
+}: {
+  lesson: LessonType
+  extraKeywords?: any
+}): React.ReactElement => {
   const [isSmallScreen] = useSmallScreen()
+  const keywords = { ...KEYWORDS, ...extraKeywords }
+
   return (
     <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
       <Image
@@ -483,10 +491,10 @@ const Article = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
               const keyword = node.children[0]?.value
               const lowerCaseKeyword = node.children[0]?.value?.toLowerCase()
               return lowerCaseKeyword?.length &&
-                lowerCaseKeyword in KEYWORDS ? (
+                lowerCaseKeyword in keywords ? (
                 <Tooltip
                   hasArrow
-                  label={KEYWORDS[lowerCaseKeyword]?.definition}
+                  label={keywords[lowerCaseKeyword]?.definition}
                   closeOnClick={false}
                   {...props}
                 >

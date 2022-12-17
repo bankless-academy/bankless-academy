@@ -32,30 +32,6 @@ import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
 import { theme } from 'theme/index'
 
-// transform keywords into Tooltip
-function transform(node) {
-  if (node.type === 'tag' && node.name === 'a') {
-    // force links to target _blank
-    node.attribs.target = '_blank'
-  }
-  if (node.type === 'tag' && node.name === 'code') {
-    const keyword = node.children[0]?.data
-    const lowerCaseKeyword = node.children[0]?.data?.toLowerCase()
-    // Tooltip with definition
-    return lowerCaseKeyword?.length && lowerCaseKeyword in KEYWORDS ? (
-      <Tooltip
-        hasArrow
-        label={KEYWORDS[lowerCaseKeyword]?.definition}
-        closeOnClick={false}
-      >
-        <span className="keyword">{keyword}</span>
-      </Tooltip>
-    ) : (
-      <>{keyword}</>
-    )
-  }
-}
-
 const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   border-radius: 0.5rem;
   ${(props) => props.issmallscreen === 'true' && 'display: contents;'};
@@ -190,7 +166,13 @@ const SlideNav = styled(Box)<{ issmallscreen?: string }>`
       `};
 `
 
-const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
+const Lesson = ({
+  lesson,
+  extraKeywords,
+}: {
+  lesson: LessonType
+  extraKeywords?: any
+}): React.ReactElement => {
   const numberOfSlides = lesson.slides.length
   // HACK: when reducing the number of slides in a lesson
   if (
@@ -229,6 +211,8 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   const walletAddress = account
   // DEV ENV: you can force a specific wallet address here if you want to test the claiming function
   // walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb44'
+
+  const keywords = { ...KEYWORDS, ...extraKeywords }
 
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
@@ -343,6 +327,30 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
   useHotkeys('4', () => {
     answerRef?.current[4]?.click()
   })
+
+  // transform keywords into Tooltip
+  function transform(node) {
+    if (node.type === 'tag' && node.name === 'a') {
+      // force links to target _blank
+      node.attribs.target = '_blank'
+    }
+    if (node.type === 'tag' && node.name === 'code') {
+      const keyword = node.children[0]?.data
+      const lowerCaseKeyword = node.children[0]?.data?.toLowerCase()
+      // Tooltip with definition
+      return lowerCaseKeyword?.length && lowerCaseKeyword in keywords ? (
+        <Tooltip
+          hasArrow
+          label={keywords[lowerCaseKeyword]?.definition}
+          closeOnClick={false}
+        >
+          <span className="keyword">{keyword}</span>
+        </Tooltip>
+      ) : (
+        <>{keyword}</>
+      )
+    }
+  }
 
   const answerIsCorrect =
     slide?.quiz &&
