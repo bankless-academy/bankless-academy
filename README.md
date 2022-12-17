@@ -50,7 +50,7 @@ Setup and connection to database are done via [Knex.js](https://knexjs.org/#Migr
 
 ### Config
 
-DM `DidierKrux.eth🏴#6120` on Discord if you need the configs to add to your .env.local file (see [.env.example](https://github.com/BanklessDAO/bankless-academy/blob/main/.env.example)).
+DM `DidierKrux.eth🏴#1559` on Discord if you need the configs to add to your .env.local file (see [.env.example](https://github.com/BanklessDAO/bankless-academy/blob/main/.env.example)).
 
 ### Migrations
 
