@@ -21,7 +21,7 @@ function Lessons(): JSX.Element {
       <Heading as="h1" size="2xl" textAlign="center" m={4}>
         Explore Lessons
       </Heading>
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={4} mt={8}>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={4} mt={8} mb={8}>
         <LessonCards />
       </SimpleGrid>
     </Container>
