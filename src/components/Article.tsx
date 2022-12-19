@@ -1,6 +1,17 @@
-import { Box, Container, Link, Image, Tooltip } from '@chakra-ui/react'
+import {
+  Box,
+  Container,
+  Link,
+  Image,
+  Tooltip,
+  Button,
+  Text,
+  SimpleGrid,
+} from '@chakra-ui/react'
+import { ArrowRight } from 'phosphor-react'
 import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
+import NextLink from 'next/link'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
 
 import { LessonType } from 'entities/lesson'
@@ -457,6 +468,13 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
   }
 `
 
+const GoldButton = styled(Button)`
+  background: linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%);
+  :hover {
+    border: 1px solid #f1b15a;
+  }
+`
+
 const Article = ({
   lesson,
   extraKeywords,
@@ -478,9 +496,10 @@ const Article = ({
       />
       <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
       <Box p="24px">
-        {`Original Mirror article: `}
         <Link href={lesson.mirrorLink} target="_blank">
-          {lesson.mirrorLink}
+          <Button variant="primary" rightIcon={<ArrowRight size={16} />}>
+            View on Mirror.xyz
+          </Button>
         </Link>
       </Box>
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
@@ -518,6 +537,52 @@ const Article = ({
           {lesson.articleContent}
         </ReactMarkdown>
       </ArticleStyle>
+      <Box
+        border="1px solid #989898"
+        py="8"
+        px="6"
+        m="24px"
+        borderRadius="lg"
+        display={isSmallScreen ? 'block' : 'flex'}
+      >
+        <Box w={isSmallScreen ? '100%' : '70%'}>
+          <Text fontSize="xl" fontWeight="bold">
+            Subscribe to Bankless Academy
+          </Text>
+          <Text fontSize="xl">Receive new entries directly to your inbox.</Text>
+        </Box>
+        <Box
+          textAlign={isSmallScreen ? 'left' : 'right'}
+          w={isSmallScreen ? '100%' : '30%'}
+          alignSelf="center"
+          alignItems="center"
+          mt={isSmallScreen ? '20px' : '0'}
+        >
+          <Link href={lesson.mirrorLink} target="_blank">
+            <Button variant="primary">Subscribe</Button>
+          </Link>
+        </Box>
+      </Box>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="24px">
+        <Box border="1px solid #989898" py="8" px="6" borderRadius="lg">
+          <Link href={lesson.mirrorLink} target="_blank">
+            <GoldButton variant="primary" w="100%">
+              Collect Entry
+            </GoldButton>
+          </Link>
+        </Box>
+        <Box
+          border="1px solid #989898"
+          py="8"
+          px="6"
+          borderRadius="lg"
+          textAlign="center"
+        >
+          <NextLink href={`/lessons`}>
+            <Button variant="primary">Explore more Lessons</Button>
+          </NextLink>
+        </Box>
+      </SimpleGrid>
     </Container>
   )
 }

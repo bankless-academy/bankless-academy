@@ -107,6 +107,7 @@ const LessonCards: React.FC = () => {
             <NextLink href={`/lessons/${lesson.slug}`}>
               <LessonBanner
                 iswhitelabel={IS_WHITELABEL.toString()}
+                isArticle={lesson?.isArticle?.toString()}
                 cursor="pointer"
                 // overflow="hidden"
                 style={{
@@ -119,8 +120,14 @@ const LessonCards: React.FC = () => {
             </NextLink>
             <Box display="flex" flexDirection="row-reverse" mt="4">
               <NextLink href={`/lessons/${lesson.slug}`}>
-                <Button variant={isKudosMinted ? 'secondary' : 'primary'}>
-                  {isKudosMinted
+                <Button
+                  variant={
+                    isKudosMinted || lesson?.isArticle ? 'secondary' : 'primary'
+                  }
+                >
+                  {lesson?.isArticle
+                    ? 'Read Entry'
+                    : isKudosMinted
                     ? 'Retake Lesson'
                     : isLessonStarted
                     ? 'Resume Lesson'
