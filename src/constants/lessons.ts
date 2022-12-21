@@ -1427,8 +1427,8 @@ const LESSONS: LessonType[] = [
   },
   {
     kudosImageLink: null,
-    lessonImageLink: '/lesson/how-to-fund-a-wallet-on-l2/lesson-c820d787.png',
-    socialImageLink: '/lesson/how-to-fund-a-wallet-on-l2/social-d17d4b36.png',
+    lessonImageLink: '/lesson/how-to-fund-a-wallet-on-l2/lesson-d37595cc.png',
+    socialImageLink: '/lesson/how-to-fund-a-wallet-on-l2/social-b4289b34.png',
     learningActions: '',
     marketingDescription: 'Learn how to fund your wallet on L2 via CEXs, third-party onramps or or bridges.',
     kudosId: null,
