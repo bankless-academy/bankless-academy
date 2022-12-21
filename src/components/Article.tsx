@@ -579,7 +579,9 @@ const Article = ({
           textAlign="center"
         >
           <NextLink href={`/lessons`}>
-            <Button variant="primary">Explore more Lessons</Button>
+            <Button variant="primary" w="100%">
+              Explore more Lessons
+            </Button>
           </NextLink>
         </Box>
       </SimpleGrid>
