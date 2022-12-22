@@ -30,6 +30,17 @@ const LessonCard = styled(Box)`
   /* backdrop-filter: blur(42px); */
 `
 
+const StyledTag = styled(Tag)<{ isKudosMinted?: string }>`
+  ${(props) =>
+    props.isKudosMinted === 'true' &&
+    `
+    ::before {
+      background: #F1B15A;
+    }
+    color: #F1B15A;
+  `};
+`
+
 const LessonCards: React.FC = () => {
   const router = useRouter()
   const { all, slug } = router.query
@@ -90,12 +101,16 @@ const LessonCards: React.FC = () => {
             <Text fontSize="lg">{lesson.description}</Text>
             <Box display="flex" justifyContent="space-between" my="4">
               {isKudosMinted || lesson.duration ? (
-                <Tag size="md" variant={isKudosMinted ? 'solid' : 'outline'}>
+                <StyledTag
+                  size="md"
+                  variant="outline"
+                  isKudosMinted={isKudosMinted?.toString()}
+                >
                   {isKudosMinted ? 'Done' : `${lesson.duration} minutes`}
                   {isKudosMinted ? (
                     <TagRightIcon as={CircleWavyCheck} weight="bold" />
                   ) : null}
-                </Tag>
+                </StyledTag>
               ) : (
                 <Tag size="md" backgroundColor="transparent"></Tag>
               )}
@@ -128,7 +143,7 @@ const LessonCards: React.FC = () => {
                   {lesson?.isArticle
                     ? 'Read Entry'
                     : isKudosMinted
-                    ? 'Retake Lesson'
+                    ? 'Revisit Lesson'
                     : isLessonStarted
                     ? 'Resume Lesson'
                     : 'Start Lesson'}

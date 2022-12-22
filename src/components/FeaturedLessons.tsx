@@ -57,7 +57,7 @@ const FeaturedLessons: React.FC = () => {
                     mt="4"
                   >
                     {isKudosMinted
-                      ? 'Retake Lesson'
+                      ? 'Revisit Lesson'
                       : isLessonStarted
                       ? 'Resume Lesson'
                       : 'Start Lesson'}
