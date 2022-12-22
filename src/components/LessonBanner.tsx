@@ -15,11 +15,13 @@ const LessonBanner = styled(Box)<{
   `
       : props.isArticle === 'true'
       ? `
-    margin-left: -16px;
-    margin-right: -16px;
+    margin-left: -23px;
+    margin-right: -23px;
     `
       : `
     transform: scale(1.2);
+    padding-top:var(--chakra-space-6);
+    padding-bottom:var(--chakra-space-6);
   `};
 `
 
