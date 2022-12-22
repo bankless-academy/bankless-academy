@@ -564,7 +564,12 @@ const Article = ({
         </Box>
       </Box>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="24px">
-        <Box border="1px solid #989898" py="8" px="6" borderRadius="lg">
+        <Box
+          // border="1px solid #989898"
+          py={isSmallScreen ? '2' : '6'}
+          px="6"
+          borderRadius="lg"
+        >
           <Link href={lesson.mirrorLink} target="_blank">
             <GoldButton variant="primary" w="100%">
               Collect Entry
@@ -572,8 +577,8 @@ const Article = ({
           </Link>
         </Box>
         <Box
-          border="1px solid #989898"
-          py="8"
+          // border="1px solid #989898"
+          py={isSmallScreen ? '2' : '6'}
           px="6"
           borderRadius="lg"
           textAlign="center"
