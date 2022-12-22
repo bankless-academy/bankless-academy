@@ -25,7 +25,8 @@ const FeaturedLessons: React.FC = () => {
       <Box>
         {[...LESSONS]
           .reverse()
-          .filter((lesson) => lesson.isFeaturedOnHomepage)
+          .filter((lesson) => lesson.featuredOrderOnHomepage)
+          .sort((a, b) => a.featuredOrderOnHomepage - b.featuredOrderOnHomepage)
           .map((lesson, key) => {
             const isKudosMinted = localStorage.getItem(
               `isKudosMinted-${lesson.kudosId}`
@@ -57,7 +58,7 @@ const FeaturedLessons: React.FC = () => {
                     mt="4"
                   >
                     {isKudosMinted
-                      ? 'Retake Lesson'
+                      ? 'Revisit Lesson'
                       : isLessonStarted
                       ? 'Resume Lesson'
                       : 'Start Lesson'}

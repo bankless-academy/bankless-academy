@@ -32,7 +32,7 @@ const KEY_MATCHING = {
   Module: 'moduleId',
   Quest: 'quest',
   'Publication status': 'publicationStatus',
-  'Featured on homepage': 'isFeaturedOnHomepage',
+  'Featured order on homepage': 'featuredOrderOnHomepage',
   'Enable Comments': 'isCommentsEnabled',
   'End of Lesson redirect': 'endOfLessonRedirect',
   'End of Lesson text': 'endOfLessonText',
@@ -117,7 +117,7 @@ axios
       if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''
       if (lesson.learnings === undefined) lesson.learnings = ''
-      if (lesson.isFeaturedOnHomepage === undefined) lesson.isFeaturedOnHomepage = false
+      if (lesson.featuredOrderOnHomepage === undefined) lesson.featuredOrderOnHomepage = false
       if (lesson.isCommentsEnabled === undefined) lesson.isCommentsEnabled = false
       if (lesson.endOfLessonRedirect === undefined) lesson.endOfLessonRedirect = null
       if (lesson.moduleId === undefined) delete lesson.moduleId
