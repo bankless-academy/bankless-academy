@@ -199,19 +199,28 @@ const Lessons = (): JSX.Element => {
         const arweaveTxId = result?.data?.data?.transactions?.edges[0]?.node?.id
         // console.log(arweaveTxId)
         if (arweaveTxId) {
-          axios.get(`https://arweave.net/${arweaveTxId}`).then(({ data }) => {
-            // console.log(data)
-            // console.log(data?.content?.body)
-            // console.log(data?.content?.title)
-            setLesson({
-              articleContent: data?.content?.body,
-              name: data?.content?.title,
-              isArticle: true,
-              mirrorLink: mirror,
-              socialImageLink: '/lesson/micro-lesson-test/social-f214b58b.png',
-              isPreview: true,
+          axios
+            .get(`https://krux.co/extract-og-data.php?url=${mirror}`)
+            .then(({ data }) => {
+              const socialImageLink = data['og:image']
+              axios
+                .get(`https://arweave.net/${arweaveTxId}`)
+                .then(({ data }) => {
+                  // console.log(data)
+                  // console.log(data?.content?.body)
+                  // console.log(data?.content?.title)
+                  setLesson({
+                    articleContent: data?.content?.body,
+                    name: data?.content?.title,
+                    isArticle: true,
+                    mirrorLink: mirror,
+                    socialImageLink:
+                      socialImageLink ||
+                      '/lesson/micro-lesson-test/social-f214b58b.png',
+                    isPreview: true,
+                  })
+                })
             })
-          })
         }
       })
     }
