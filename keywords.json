@@ -78,10 +78,10 @@
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
   },
   "dapp": {
-    "definition": "Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority."
+    "definition": "A decentralized app that connects to decentralized networks and protocols."
   },
   "dapps": {
-    "definition": "Digital applications or programs that exist and run on a blockchain, and are outside the purview and control of a single authority."
+    "definition": "Decentralized apps that connect to decentralized networks and protocols."
   },
   "decentralization": {
     "definition": "Principle that no single authority or entity should control the blockchain data."
