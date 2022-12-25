@@ -42,6 +42,7 @@ import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { KudosType } from 'entities/kudos'
 import { theme } from 'theme/index'
+import { ethers } from 'ethers'
 
 const MintKudos = ({
   kudosId,
@@ -176,11 +177,22 @@ const MintKudos = ({
 
     try {
       const signer = library.getSigner(account)
-      const signature = await signer._signTypedData(
-        MINTKUDOS_DOMAIN_INFO,
-        receiverTypes,
-        value
-      )
+      const signature = library.provider.isMetaMask
+        ? await signer._signTypedData(
+            MINTKUDOS_DOMAIN_INFO,
+            receiverTypes,
+            value
+          )
+        : await signer.provider.send('eth_signTypedData', [
+            account,
+            JSON.stringify(
+              ethers.utils._TypedDataEncoder.getPayload(
+                MINTKUDOS_DOMAIN_INFO,
+                receiverTypes,
+                value
+              )
+            ),
+          ])
       console.log('signature', signature)
       const bodyParameters = {
         address: account,
