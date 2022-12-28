@@ -174,7 +174,8 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
   }
-  p {
+  > p,
+  blockquote p {
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.7);
     font-family: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
@@ -197,7 +198,8 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
   }
-  ul {
+  ul,
+  ol {
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.7);
     display: flex;
@@ -224,7 +226,7 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
   }
-  li {
+  ul li {
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.7);
     font-family: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
@@ -452,6 +454,15 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       margin-top: 0;
       margin-bottom: 0;
     }
+    ul {
+      ${(props) =>
+        props.issmallscreen === 'true'
+          ? `
+        padding-left: 16px;
+        padding-right: 16px;
+      `
+          : ``};
+    }
   }
   p > img {
     ${(props) =>
@@ -467,6 +478,13 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     cursor: help;
     border-bottom: 1px dashed grey;
     display: inline-block !important;
+  }
+  ol {
+    padding-left: 43px;
+    li {
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
   }
 `
 
