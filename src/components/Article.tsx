@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import {
   Box,
   Container,
-  Link,
   Image,
   Tooltip,
   Button,
@@ -15,6 +14,7 @@ import styled from '@emotion/styled'
 import NextLink from 'next/link'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
 
+import Link from 'components/Link'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import { KEYWORDS } from 'constants/index'
@@ -520,7 +520,7 @@ const Article = ({
       />
       <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
       <Box p="24px">
-        <Link href={lesson.mirrorLink} target="_blank">
+        <Link href={lesson.mirrorLink}>
           <Button variant="primary" rightIcon={<ArrowRight size={16} />}>
             View on Mirror.xyz
           </Button>
@@ -582,7 +582,7 @@ const Article = ({
           alignItems="center"
           mt={isSmallScreen ? '20px' : '0'}
         >
-          <Link href={lesson.mirrorLink} target="_blank">
+          <Link href={lesson.mirrorLink}>
             <Button variant="primary">Subscribe</Button>
           </Link>
         </Box>
@@ -594,7 +594,7 @@ const Article = ({
           px="6"
           borderRadius="lg"
         >
-          <Link href={lesson.mirrorLink} target="_blank">
+          <Link href={lesson.mirrorLink}>
             <GoldButton variant="primary" w="100%">
               Collect Entry
             </GoldButton>
