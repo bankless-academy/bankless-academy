@@ -20,7 +20,7 @@ const FeaturedLessons: React.FC = () => {
   return (
     <Box mt="16">
       <Heading as="h2" size="xl">
-        Featured Lessons
+        Featured Content
       </Heading>
       <Box>
         {[...LESSONS]
@@ -35,9 +35,11 @@ const FeaturedLessons: React.FC = () => {
             const LessonImage = (
               <LessonBanner
                 iswhitelabel={IS_WHITELABEL.toString()}
+                isArticle={lesson?.isArticle?.toString()}
                 cursor="pointer"
                 style={{
                   aspectRatio: '1.91/1',
+                  margin: '0 !important',
                 }}
                 maxW="600px"
               >
@@ -57,7 +59,9 @@ const FeaturedLessons: React.FC = () => {
                     variant={isKudosMinted ? 'secondary' : 'primary'}
                     mt="4"
                   >
-                    {isKudosMinted
+                    {lesson?.isArticle
+                      ? 'Read Entry'
+                      : isKudosMinted
                       ? 'Revisit Lesson'
                       : isLessonStarted
                       ? 'Resume Lesson'
