@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react'
 import {
   Box,
   Container,
@@ -17,6 +18,7 @@ import NextLink from 'next/link'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import { KEYWORDS } from 'constants/index'
+import { Mixpanel } from 'utils'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -484,6 +486,10 @@ const Article = ({
 }): React.ReactElement => {
   const [isSmallScreen] = useSmallScreen()
   const keywords = { ...KEYWORDS, ...extraKeywords }
+
+  useEffect(() => {
+    Mixpanel.track('open_lesson', { lesson: lesson?.name })
+  }, [])
 
   return (
     <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
