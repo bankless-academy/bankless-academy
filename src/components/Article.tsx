@@ -571,7 +571,7 @@ const Article = ({
       >
         <Box w={isSmallScreen ? '100%' : '70%'}>
           <Text fontSize="xl" fontWeight="bold">
-            Subscribe to Bankless Academy
+            {`Subscribe to the Explorer's Handbook`}
           </Text>
           <Text fontSize="xl">Receive new entries directly to your inbox.</Text>
         </Box>
