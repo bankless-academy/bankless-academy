@@ -179,18 +179,18 @@ const LessonCards: React.FC = () => {
                   </Button>
                 </InternalLink>
                 {isKudosMinted && lesson.communityDiscussionLink ? (
-                  <Tooltip
-                    hasArrow
-                    label="Join other explorers to discuss this lesson."
+                  <ExternalLink
+                    href={lesson.communityDiscussionLink}
+                    mr="16px"
+                    alt={`${lesson.name} community discussion`}
                   >
-                    <ExternalLink
-                      href={lesson.communityDiscussionLink}
-                      mr="16px"
-                      alt={`${lesson.name} community discussion`}
+                    <Tooltip
+                      hasArrow
+                      label="Join other explorers to discuss this lesson."
                     >
                       <Button variant="outline">👨‍🚀 Discussion</Button>
-                    </ExternalLink>
-                  </Tooltip>
+                    </Tooltip>
+                  </ExternalLink>
                 ) : null}
               </Box>
             </Box>
