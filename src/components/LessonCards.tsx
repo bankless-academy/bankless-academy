@@ -58,9 +58,9 @@ const LessonCard = styled(Box)`
   }
 `
 
-const StyledTag = styled(Tag)<{ isKudosMinted?: string }>`
+const StyledTag = styled(Tag)<{ iskudosminted?: string }>`
   ${(props) =>
-    props.isKudosMinted === 'true' &&
+    props.iskudosminted === 'true' &&
     `
     ::before {
       background: #F1B15A;
@@ -126,7 +126,7 @@ const LessonCards: React.FC = () => {
                   <StyledTag
                     size="md"
                     variant="outline"
-                    isKudosMinted={isKudosMinted?.toString()}
+                    iskudosminted={isKudosMinted?.toString()}
                   >
                     {isKudosMinted ? 'Done' : `${lesson.duration} minutes`}
                     {isKudosMinted ? (

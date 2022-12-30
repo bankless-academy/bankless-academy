@@ -103,7 +103,7 @@ const HomePage = (): JSX.Element => {
               <Heading as="h2" size="xl" m="auto">
                 Start Your Bankless Journey
               </Heading>
-              <Text fontSize="lg" mt="6">
+              <Box fontSize="lg" mt="6">
                 Bankless Academy is on a mission to ensure every web3 Explorer
                 is ready for their crypto-verse voyage.
                 <br />
@@ -113,7 +113,7 @@ const HomePage = (): JSX.Element => {
                   learning path and preparing to blaze new trails across
                   blockchain space. Let’s get started.
                 </Box>
-              </Text>
+              </Box>
               <SimpleGrid
                 columns={{ sm: 1, md: 2, lg: 2 }}
                 gap={6}
@@ -169,7 +169,7 @@ const HomePage = (): JSX.Element => {
               mb="8"
               borderRadius="lg"
             >
-              <Text fontSize="2xl">
+              <Box fontSize="2xl">
                 {`Sign up for our `}
                 <NewsletterButton
                   variant="primary"
@@ -183,7 +183,7 @@ const HomePage = (): JSX.Element => {
                 </NewsletterButton>
                 {` to be notified of new lessons and platform
               updates!`}
-              </Text>
+              </Box>
             </Box>
             <NewsletterModal isOpen={isOpen} onClose={onClose} />
             <FeaturedLessons />

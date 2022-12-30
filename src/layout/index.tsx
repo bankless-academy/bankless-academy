@@ -13,15 +13,15 @@ import Nav from 'layout/Nav'
 import { useSmallScreen } from 'hooks/index'
 
 const StyledBackground = styled(Box)<{
-  isSmallScreen?: string
-  isSmallLesson?: string
-  isLesson?: string
+  issmallscreen?: string
+  issmalllesson?: string
+  islesson?: string
 }>`
   ${(props) =>
-    props.isSmallLesson === 'true' &&
-    props.isLesson === 'true' &&
+    props.issmalllesson === 'true' &&
+    props.islesson === 'true' &&
     `
-  min-height: calc(100vh - ${props.isSmallScreen === 'true' ? '146' : '154'}px);
+  min-height: calc(100vh - ${props.issmallscreen === 'true' ? '146' : '154'}px);
   background: linear-gradient(
     107.1deg,
     rgba(46, 33, 33, 0.3) -3.13%,
@@ -62,9 +62,9 @@ const Layout = ({
         <>
           <Nav />
           <StyledBackground
-            isSmallScreen={isSmallScreen?.toString()}
-            isSmallLesson={isSmallLesson?.toString()}
-            isLesson={isLesson?.toString()}
+            issmallscreen={isSmallScreen?.toString()}
+            issmalllesson={isSmallLesson?.toString()}
+            islesson={isLesson?.toString()}
           >
             <main>{children}</main>
           </StyledBackground>

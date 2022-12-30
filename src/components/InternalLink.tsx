@@ -14,17 +14,16 @@ const InternalLink = ({
   alt,
   ...props
 }: ChakraLinkAndNextProps): JSX.Element => (
-  <NextLink href={href} passHref>
+  <NextLink href={href} passHref legacyBehavior>
     <ChakraLink
       {...props}
-      legacyBehavior
       onClick={() => {
         const link = href || 'NO_LINK'
         const name = alt || getNodeText(children) || 'NO_NAME'
         Mixpanel.track('click_internal_link', { link, name })
       }}
     >
-      <a>{children}</a>
+      {children}
     </ChakraLink>
   </NextLink>
 )
