@@ -547,18 +547,18 @@ const Lesson = ({
             </Button>
           )}
           {lesson.isCommentsEnabled && slide.notionId && (
-            <Tooltip
-              hasArrow
-              label="Help us improve the content by commenting this slide on Notion"
+            <ExternalLink
+              href={`https://www.notion.so/${lesson.notionId}#${slide.notionId}`}
             >
-              <ExternalLink
-                href={`https://www.notion.so/${lesson.notionId}#${slide.notionId}`}
+              <Tooltip
+                hasArrow
+                label="Help us improve the content by commenting this slide on Notion"
               >
                 <Button variant="outline">
                   🐞{isSmallScreen ? '' : ` comment this slide`}
                 </Button>
-              </ExternalLink>
-            </Tooltip>
+              </Tooltip>
+            </ExternalLink>
           )}
         </HStack>
         <HStack>
@@ -578,19 +578,19 @@ const Lesson = ({
             </Tooltip>
           ) : null}
           {!embed && isLastSlide && lesson.communityDiscussionLink && (
-            <Tooltip
-              hasArrow
-              label="Join other explorers to discuss this lesson."
+            <ExternalLink
+              href={lesson.communityDiscussionLink}
+              alt={`${lesson.name} community discussion`}
             >
-              <ExternalLink
-                href={lesson.communityDiscussionLink}
-                alt={`${lesson.name} community discussion`}
+              <Tooltip
+                hasArrow
+                label="Join other explorers to discuss this lesson."
               >
                 <Button variant="outline">
                   👨‍🚀{isSmallScreen ? '' : ' Community discussion'}
                 </Button>
-              </ExternalLink>
-            </Tooltip>
+              </Tooltip>
+            </ExternalLink>
           )}
           {!isLastSlide || (lesson.endOfLessonText && !embed) ? (
             <Button
