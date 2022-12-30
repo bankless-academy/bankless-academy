@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import NextLink from 'next/link'
 import {
   Box,
   Text,
@@ -8,7 +7,6 @@ import {
   TagRightIcon,
   Button,
   Tooltip,
-  Link,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import axios from 'axios'
@@ -17,6 +15,8 @@ import { useRouter } from 'next/router'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
+import ExternalLink from 'components/ExternalLink'
+import InternalLink from 'components/InternalLink'
 import LessonBanner from 'components/LessonBanner'
 import MODULES from 'constants/whitelabel_modules'
 import { IS_DEBUG } from 'utils/index'
@@ -58,9 +58,9 @@ const LessonCard = styled(Box)`
   }
 `
 
-const StyledTag = styled(Tag)<{ isKudosMinted?: string }>`
+const StyledTag = styled(Tag)<{ iskudosminted?: string }>`
   ${(props) =>
-    props.isKudosMinted === 'true' &&
+    props.iskudosminted === 'true' &&
     `
     ::before {
       background: #F1B15A;
@@ -126,7 +126,7 @@ const LessonCards: React.FC = () => {
                   <StyledTag
                     size="md"
                     variant="outline"
-                    isKudosMinted={isKudosMinted?.toString()}
+                    iskudosminted={isKudosMinted?.toString()}
                   >
                     {isKudosMinted ? 'Done' : `${lesson.duration} minutes`}
                     {isKudosMinted ? (
@@ -144,7 +144,7 @@ const LessonCards: React.FC = () => {
               <Text fontSize="lg" minH="54px">
                 {lesson.description}
               </Text>
-              <NextLink href={`/lessons/${lesson.slug}`}>
+              <InternalLink href={`/lessons/${lesson.slug}`} alt={lesson.name}>
                 <LessonBanner
                   iswhitelabel={IS_WHITELABEL.toString()}
                   isArticle={lesson?.isArticle?.toString()}
@@ -156,9 +156,12 @@ const LessonCards: React.FC = () => {
                 >
                   <Image src={lesson.lessonImageLink} />
                 </LessonBanner>
-              </NextLink>
+              </InternalLink>
               <Box display="flex" flexDirection="row-reverse" mt="4">
-                <NextLink href={`/lessons/${lesson.slug}`}>
+                <InternalLink
+                  href={`/lessons/${lesson.slug}`}
+                  alt={lesson.name}
+                >
                   <Button
                     variant={
                       isKudosMinted || lesson?.isArticle
@@ -174,20 +177,19 @@ const LessonCards: React.FC = () => {
                       ? 'Resume Lesson'
                       : 'Start Lesson'}
                   </Button>
-                </NextLink>
+                </InternalLink>
                 {isKudosMinted && lesson.communityDiscussionLink ? (
                   <Tooltip
                     hasArrow
                     label="Join other explorers to discuss this lesson."
                   >
-                    <Link
-                      target="_blank"
-                      rel="noreferrer"
+                    <ExternalLink
                       href={lesson.communityDiscussionLink}
                       mr="16px"
+                      alt={`${lesson.name} community discussion`}
                     >
                       <Button variant="outline">👨‍🚀 Discussion</Button>
-                    </Link>
+                    </ExternalLink>
                   </Tooltip>
                 ) : null}
               </Box>

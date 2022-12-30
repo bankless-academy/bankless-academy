@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Button,
-  Link,
   Menu,
   MenuButton,
   MenuList,
@@ -11,6 +10,7 @@ import {
 import { Mixpanel } from 'utils'
 import NewsletterModal from 'components/NewsletterModal'
 
+import ExternalLink from 'components/ExternalLink'
 import { IS_WHITELABEL, TWITTER_ACCOUNT } from 'constants/index'
 
 const OptionMenu = ({
@@ -33,12 +33,12 @@ const OptionMenu = ({
           ...
         </MenuButton>
         <MenuList>
-          <Link href="/faq" target="_blank" color="white">
+          <ExternalLink href="/faq" color="white">
             <MenuItem>FAQ</MenuItem>
-          </Link>
-          <Link href="/bug" target="_blank" color="white">
+          </ExternalLink>
+          <ExternalLink href="/bug" color="white">
             <MenuItem>Report a bug</MenuItem>
-          </Link>
+          </ExternalLink>
           {!IS_WHITELABEL && (
             <MenuItem
               onClick={() => {
@@ -49,9 +49,9 @@ const OptionMenu = ({
               Newsletter signup
             </MenuItem>
           )}
-          <Link href={twitterLink} target="_blank" color="white">
+          <ExternalLink href={twitterLink} color="white">
             <MenuItem>Follow our Twitter</MenuItem>
-          </Link>
+          </ExternalLink>
         </MenuList>
       </Menu>
       <NewsletterModal isOpen={isOpen} onClose={onClose} />

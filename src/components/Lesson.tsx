@@ -9,9 +9,7 @@ import {
   VStack,
   SimpleGrid,
   Tooltip,
-  Link,
 } from '@chakra-ui/react'
-import NextLink from 'next/link'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
@@ -26,6 +24,8 @@ import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
 import MintKudos from 'components/MintKudos'
 import QuestComponent from 'components/Quest/QuestComponent'
+import ExternalLink from 'components/ExternalLink'
+import InternalLink from 'components/InternalLink'
 import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
 import { Mixpanel, track } from 'utils'
 import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
@@ -332,7 +332,12 @@ const Lesson = ({
   function transform(node) {
     if (node.type === 'tag' && node.name === 'a') {
       // force links to target _blank
-      node.attribs.target = '_blank'
+      if (node.attribs?.href?.length)
+        return (
+          <ExternalLink href={node.attribs?.href}>
+            {node.children[0]?.data}
+          </ExternalLink>
+        )
     }
     if (node.type === 'tag' && node.name === 'code') {
       const keyword = node.children[0]?.data
@@ -369,14 +374,6 @@ const Lesson = ({
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
     >
-      {/* {isMobile && currentSlide === 0 && (
-        <Box py={4}>
-          ⛔️ on mobile, make sure to open this website directly inside&nbsp;
-          <Link href={`https://metamask.app.link/dapp/${hostname}`} color="red">
-            MetaMask&apos;s browser
-          </Link>
-        </Box>
-      )} */}
       <Text
         fontSize={isSmallScreen ? 'xl' : '3xl'}
         my={isSmallScreen ? '2' : '4'}
@@ -554,15 +551,13 @@ const Lesson = ({
               hasArrow
               label="Help us improve the content by commenting this slide on Notion"
             >
-              <Link
-                target="_blank"
-                rel="noreferrer"
+              <ExternalLink
                 href={`https://www.notion.so/${lesson.notionId}#${slide.notionId}`}
               >
                 <Button variant="outline">
                   🐞{isSmallScreen ? '' : ` comment this slide`}
                 </Button>
-              </Link>
+              </ExternalLink>
             </Tooltip>
           )}
         </HStack>
@@ -587,15 +582,14 @@ const Lesson = ({
               hasArrow
               label="Join other explorers to discuss this lesson."
             >
-              <Link
-                target="_blank"
-                rel="noreferrer"
+              <ExternalLink
                 href={lesson.communityDiscussionLink}
+                alt={`${lesson.name} community discussion`}
               >
                 <Button variant="outline">
                   👨‍🚀{isSmallScreen ? '' : ' Community discussion'}
                 </Button>
-              </Link>
+              </ExternalLink>
             </Tooltip>
           )}
           {!isLastSlide || (lesson.endOfLessonText && !embed) ? (
@@ -615,7 +609,7 @@ const Lesson = ({
           ) : (
             <>
               {embed ? null : (
-                <NextLink href={IS_WHITELABEL ? `/` : `/lessons`}>
+                <InternalLink href={IS_WHITELABEL ? `/` : `/lessons`}>
                   <Button
                     variant={
                       lesson.kudosId && !isKudosMintedLS ? 'outline' : 'primary'
@@ -623,7 +617,7 @@ const Lesson = ({
                   >
                     Explore more Lessons
                   </Button>
-                </NextLink>
+                </InternalLink>
               )}
             </>
           )}

@@ -10,6 +10,7 @@ import {
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 
+import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 
@@ -66,13 +67,9 @@ const DEXAggregators = (
           <div className="bloc1">
             <p>
               {'1. Load '}
-              <a
-                href="https://app.1inch.io/#/137/unified/swap/MATIC/BANK"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <ExternalLink href="https://app.1inch.io/#/137/unified/swap/MATIC/BANK">
                 1inch
-              </a>
+              </ExternalLink>
               {' on the '}
               <Image
                 alt="Polygon"
@@ -86,13 +83,9 @@ const DEXAggregators = (
             </p>
             <p>
               {'2. Swap any token to '}
-              <a
-                href="https://polygonscan.com/token/0xdb7cb471dd0b49b29cab4a1c14d070f27216a0ab"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <ExternalLink href="https://polygonscan.com/token/0xdb7cb471dd0b49b29cab4a1c14d070f27216a0ab">
                 $BANK
-              </a>
+              </ExternalLink>
               .
             </p>
             <p>

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Box, Image, HStack, Spacer, Flex } from '@chakra-ui/react'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { isMobile } from 'react-device-detect'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
+import InternalLink from 'components/InternalLink'
 import OptionMenu from 'components/OptionMenu'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/'
 import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
@@ -33,7 +33,13 @@ const Nav: React.FC = () => {
       >
         <Flex p={4}>
           <Box cursor={embed ? 'auto' : 'pointer'}>
-            {embed ? logo : <Link href="/">{logo}</Link>}
+            {embed ? (
+              logo
+            ) : (
+              <InternalLink href="/" alt="homepage">
+                {logo}
+              </InternalLink>
+            )}
           </Box>
           <Spacer />
           <HStack spacing={2} justifyContent="space-between">

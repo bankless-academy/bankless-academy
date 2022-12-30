@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     (lesson: LessonType) => lesson.slug === params.slug
   )
   const pageMeta: MetaData = {
-    title: `Lesson: ${currentLesson.name}`,
+    title: currentLesson.name,
     description: currentLesson.description,
     image: currentLesson.socialImageLink,
     isLesson: !currentLesson.isArticle,

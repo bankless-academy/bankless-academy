@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 
+import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 
@@ -56,13 +57,9 @@ const BlockchainBasics = (): {
                 {
                   'To validate this quest, paste the "from" and "to" addresses of this transaction '
                 }
-                <a
-                  href="https://etherscan.io/tx/0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <ExternalLink href="https://etherscan.io/tx/0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060">
                   https://etherscan.io/tx/0x5c...2060
-                </a>
+                </ExternalLink>
               </>
             </p>
             <Box pr="2">

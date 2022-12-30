@@ -1,9 +1,9 @@
 import React from 'react'
-import NextLink from 'next/link'
 import { Box, Text, Image, Heading, Button, SimpleGrid } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 import LessonBanner from 'components/LessonBanner'
+import InternalLink from 'components/InternalLink'
 import { IS_WHITELABEL, LESSONS } from 'constants/index'
 import { ModuleType } from 'entities/module'
 import { useSmallScreen } from 'hooks/index'
@@ -51,9 +51,9 @@ const Modules = ({
               }}
               maxW="600px"
             >
-              <NextLink href={moduleLink}>
+              <InternalLink href={moduleLink} alt={module.name}>
                 <Image src={module.moduleImageLink} />
-              </NextLink>
+              </InternalLink>
             </LessonBanner>
           )
           const ModuleDescription = (
@@ -62,11 +62,11 @@ const Modules = ({
               <Text fontSize="lg" my="4">
                 {module.description}
               </Text>
-              <NextLink href={moduleLink}>
+              <InternalLink href={moduleLink} alt={module.name}>
                 <Button variant="primary" mt="4">
                   Explore Module
                 </Button>
-              </NextLink>
+              </InternalLink>
             </Box>
           )
           return (

@@ -1,7 +1,7 @@
+import React, { useEffect } from 'react'
 import {
   Box,
   Container,
-  Link,
   Image,
   Tooltip,
   Button,
@@ -11,12 +11,14 @@ import {
 import { ArrowRight } from 'phosphor-react'
 import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
-import NextLink from 'next/link'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
 
+import ExternalLink from 'components/ExternalLink'
+import InternalLink from 'components/InternalLink'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import { KEYWORDS } from 'constants/index'
+import { Mixpanel } from 'utils'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -172,7 +174,8 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
   }
-  p {
+  > p,
+  blockquote p {
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.7);
     font-family: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
@@ -195,7 +198,8 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
   }
-  ul {
+  ul,
+  ol {
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.7);
     display: flex;
@@ -222,7 +226,7 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
   }
-  li {
+  ul li {
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.7);
     font-family: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
@@ -450,6 +454,15 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       margin-top: 0;
       margin-bottom: 0;
     }
+    ul {
+      ${(props) =>
+        props.issmallscreen === 'true'
+          ? `
+        padding-left: 16px;
+        padding-right: 16px;
+      `
+          : ``};
+    }
   }
   p > img {
     ${(props) =>
@@ -465,6 +478,13 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     cursor: help;
     border-bottom: 1px dashed grey;
     display: inline-block !important;
+  }
+  ol {
+    padding-left: 43px;
+    li {
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
   }
 `
 
@@ -485,6 +505,10 @@ const Article = ({
   const [isSmallScreen] = useSmallScreen()
   const keywords = { ...KEYWORDS, ...extraKeywords }
 
+  useEffect(() => {
+    Mixpanel.track('open_lesson', { lesson: lesson?.name })
+  }, [])
+
   return (
     <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
       <Image
@@ -496,11 +520,11 @@ const Article = ({
       />
       <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
       <Box p="24px">
-        <Link href={lesson.mirrorLink} target="_blank">
+        <ExternalLink href={lesson.mirrorLink}>
           <Button variant="primary" rightIcon={<ArrowRight size={16} />}>
             View on Mirror.xyz
           </Button>
-        </Link>
+        </ExternalLink>
       </Box>
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown
@@ -526,11 +550,7 @@ const Article = ({
             // force links to target _blank
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
             a: ({ node, children, ...props }) => {
-              return (
-                <a target="_blank" {...props}>
-                  {children}
-                </a>
-              )
+              return <ExternalLink {...props}>{children}</ExternalLink>
             },
           }}
         >
@@ -547,7 +567,7 @@ const Article = ({
       >
         <Box w={isSmallScreen ? '100%' : '70%'}>
           <Text fontSize="xl" fontWeight="bold">
-            Subscribe to Bankless Academy
+            {`Subscribe to the Explorer's Handbook`}
           </Text>
           <Text fontSize="xl">Receive new entries directly to your inbox.</Text>
         </Box>
@@ -558,9 +578,9 @@ const Article = ({
           alignItems="center"
           mt={isSmallScreen ? '20px' : '0'}
         >
-          <Link href={lesson.mirrorLink} target="_blank">
+          <ExternalLink href={lesson.mirrorLink}>
             <Button variant="primary">Subscribe</Button>
-          </Link>
+          </ExternalLink>
         </Box>
       </Box>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="24px">
@@ -570,11 +590,11 @@ const Article = ({
           px="6"
           borderRadius="lg"
         >
-          <Link href={lesson.mirrorLink} target="_blank">
+          <ExternalLink href={lesson.mirrorLink}>
             <GoldButton variant="primary" w="100%">
               Collect Entry
             </GoldButton>
-          </Link>
+          </ExternalLink>
         </Box>
         <Box
           // border="1px solid #989898"
@@ -583,11 +603,11 @@ const Article = ({
           borderRadius="lg"
           textAlign="center"
         >
-          <NextLink href={`/lessons`}>
+          <InternalLink href={`/lessons`}>
             <Button variant="primary" w="100%">
               Explore more Lessons
             </Button>
-          </NextLink>
+          </InternalLink>
         </Box>
       </SimpleGrid>
     </Container>
