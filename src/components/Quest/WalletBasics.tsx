@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Spinner, Box } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
 
+import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 
@@ -27,13 +28,9 @@ const WalletBasics = (
             </p>
             <p>
               Download the browser extension from the official website:&nbsp;
-              <a
-                href="https://metamask.io/download"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <ExternalLink href="https://metamask.io/download">
                 https://metamask.io/download
-              </a>
+              </ExternalLink>
             </p>
             <Button
               variant="outlined"

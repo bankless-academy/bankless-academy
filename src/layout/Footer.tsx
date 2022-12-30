@@ -1,6 +1,7 @@
 import React from 'react'
-import { Box, Link } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 
+import ExternalLink from 'components/ExternalLink'
 import { PROJECT_NAME, IS_WHITELABEL } from 'constants/index'
 import { useSmallScreen } from 'hooks/index'
 
@@ -22,31 +23,25 @@ const Footer: React.FC = () => {
             <Box textAlign="center">
               <span hidden={isSmallScreen}>&nbsp;|&nbsp;</span>
               powered by&nbsp;
-              <Link
-                target="_blank"
-                href="https://whitelabel.banklessacademy.com/?utm_source=BanklessAcademyWhiteLabel&utm_medium=website&utm_campaign=WhiteLabel"
-              >
+              <ExternalLink href="https://whitelabel.banklessacademy.com/?utm_source=BanklessAcademyWhiteLabel&utm_medium=website&utm_campaign=WhiteLabel">
                 Bankless Academy
-              </Link>
+              </ExternalLink>
             </Box>
           </>
         ) : (
           <>
-            <Link
+            <ExternalLink
               display="flex"
-              target="_blank"
               href="https://twitter.com/BanklessAcademy"
             >
               Twitter
-            </Link>
+            </ExternalLink>
             <span>&nbsp;|&nbsp;</span>
-            <Link target="_blank" href="https://gm.xyz/c/BanklessAcademy">
+            <ExternalLink href="https://gm.xyz/c/BanklessAcademy">
               Community
-            </Link>
+            </ExternalLink>
             <span>&nbsp;|&nbsp;</span>
-            <Link target="_blank" href="/faq">
-              FAQ
-            </Link>
+            <ExternalLink href="/faq">FAQ</ExternalLink>
           </>
         )}
       </Box>

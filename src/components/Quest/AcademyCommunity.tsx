@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Box, VStack, Button, Spinner, Link } from '@chakra-ui/react'
+import { Box, VStack, Button, Spinner } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 
+import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 
@@ -83,13 +84,12 @@ const AcademyCommunity = (
                   }
                 >
                   {'2. Join '}
-                  <Link
+                  <ExternalLink
                     href="https://gm.xyz/?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson"
-                    target="_blank"
                     ml="1"
                   >
                     gm.xyz
-                  </Link>
+                  </ExternalLink>
                 </Button>
                 <Button
                   cursor="default"
@@ -102,13 +102,12 @@ const AcademyCommunity = (
                   }
                 >
                   {'3. Join '}
-                  <Link
+                  <ExternalLink
                     href="https://gm.xyz/c/BanklessAcademy?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson"
-                    target="_blank"
                     ml="1"
                   >
                     gm.xyz/c/BanklessAcademy
-                  </Link>
+                  </ExternalLink>
                 </Button>
               </VStack>
               {!isQuestCompleted && (

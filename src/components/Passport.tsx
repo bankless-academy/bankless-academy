@@ -1,11 +1,12 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react'
-import { Box, Text, Link, Button, Image, useToast } from '@chakra-ui/react'
+import { Box, Text, Button, Image, useToast } from '@chakra-ui/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { useActiveWeb3React } from 'hooks/index'
 import GitcoinPassport from 'components/GitcoinPassport'
+import ExternalLink from 'components/ExternalLink'
 import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
 import { theme } from 'theme/index'
 import { shortenAddress } from 'utils'
@@ -36,12 +37,9 @@ const PassportComponent = ({
             toast({
               title: 'Gitcoin Passport stamps not loading',
               description: (
-                <Link
-                  href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
-                  target="_blank"
-                >
+                <ExternalLink href="/faq#ea6ae6bd9ca645498c15cc611bc181c0">
                   Follow these steps and try again
-                </Link>
+                </ExternalLink>
               ),
               status: 'warning',
               duration: null,
@@ -50,9 +48,7 @@ const PassportComponent = ({
             toast({
               title: 'Gitcoin Passport issue',
               description: (
-                <Link href="/bug" target="_blank">
-                  Report a bug
-                </Link>
+                <ExternalLink href="/bug">Report a bug</ExternalLink>
               ),
               status: 'warning',
               duration: null,
@@ -87,12 +83,9 @@ const PassportComponent = ({
               color={theme.colors.incorrect}
               fontWeight="bold"
             >
-              <Link
-                href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
-                target="_blank"
-              >
+              <ExternalLink href="/faq#ea6ae6bd9ca645498c15cc611bc181c0">
                 Duplicate stamp detected.
-              </Link>
+              </ExternalLink>
               <br />
               {passportLS?.fraud
                 ? `Switch back to ${shortenAddress(passportLS?.fraud)}`
@@ -105,9 +98,9 @@ const PassportComponent = ({
               {numberOfStampsLeftToCollect > 0 ? (
                 <>
                   {`Visit `}
-                  <Link href="https://passport.gitcoin.co/" target="_blank">
+                  <ExternalLink href="https://passport.gitcoin.co/">
                     <Button variant="primary">Gitcoin Passport</Button>
-                  </Link>
+                  </ExternalLink>
                   {` and collect ${numberOfStampsLeftToCollect} more of the following stamp${
                     numberOfStampsLeftToCollect !== 1 ? 's' : ''
                   }:`}

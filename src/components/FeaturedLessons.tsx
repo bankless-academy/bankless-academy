@@ -1,8 +1,8 @@
 import React from 'react'
-import NextLink from 'next/link'
 import { Box, Text, Image, Heading, Button, SimpleGrid } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
+import InternalLink from 'components/InternalLink'
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import LessonBanner from 'components/LessonBanner'
 import { useSmallScreen } from 'hooks/index'
@@ -41,9 +41,12 @@ const FeaturedLessons: React.FC = () => {
                 }}
                 maxW="600px"
               >
-                <NextLink href={`/lessons/${lesson.slug}`}>
+                <InternalLink
+                  href={`/lessons/${lesson.slug}`}
+                  alt={lesson.name}
+                >
                   <Image src={lesson.lessonImageLink} />
-                </NextLink>
+                </InternalLink>
               </LessonBanner>
             )
             const LessonDescription = (
@@ -52,7 +55,10 @@ const FeaturedLessons: React.FC = () => {
                 <Text fontSize="lg" my="4">
                   {lesson.marketingDescription}
                 </Text>
-                <NextLink href={`/lessons/${lesson.slug}`}>
+                <InternalLink
+                  href={`/lessons/${lesson.slug}`}
+                  alt={lesson.name}
+                >
                   <Button
                     variant={isKudosMinted ? 'secondary' : 'primary'}
                     mt="4"
@@ -65,7 +71,7 @@ const FeaturedLessons: React.FC = () => {
                       ? 'Resume Lesson'
                       : 'Start Lesson'}
                   </Button>
-                </NextLink>
+                </InternalLink>
               </Box>
             )
             return (

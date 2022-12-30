@@ -8,14 +8,14 @@ import {
   SimpleGrid,
   Image,
   Center,
-  Link,
   useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import NextLink from 'next/link'
 
 import Footer from 'layout/Footer'
 import FeaturedLessons from 'components/FeaturedLessons'
+import ExternalLink from 'components/ExternalLink'
+import InternalLink from 'components/InternalLink'
 import WhitelabelHomepage from 'pages/whitelabel_homepage'
 import {
   LearnIcon,
@@ -85,7 +85,7 @@ const HomePage = (): JSX.Element => {
               alt="Bankless Academy"
             />
             <Box>
-              <NextLink href={`/lessons`}>
+              <InternalLink href={`/lessons`}>
                 <Button
                   variant="primary"
                   size="lg"
@@ -93,7 +93,7 @@ const HomePage = (): JSX.Element => {
                 >
                   Explore Lessons
                 </Button>
-              </NextLink>
+              </InternalLink>
             </Box>
           </Stack>
         </Center>
@@ -295,14 +295,11 @@ const HomePage = (): JSX.Element => {
                       style={{ flexGrow: 1 }}
                       alignItems="self-end"
                     >
-                      <Link
-                        href="https://sponsors.banklessacademy.com/"
-                        target="_blank"
-                      >
+                      <ExternalLink href="https://sponsors.banklessacademy.com/">
                         <Button variant="secondary" size="md">
                           Collaborate!
                         </Button>
-                      </Link>
+                      </ExternalLink>
                     </Box>
                   </Card>
                   <Card>
@@ -322,14 +319,11 @@ const HomePage = (): JSX.Element => {
                       style={{ flexGrow: 1 }}
                       alignItems="self-end"
                     >
-                      <Link
-                        href="http://whitelabel.banklessacademy.com/"
-                        target="_blank"
-                      >
+                      <ExternalLink href="http://whitelabel.banklessacademy.com/">
                         <Button variant="secondary" size="md">
                           Learn More
                         </Button>
-                      </Link>
+                      </ExternalLink>
                     </Box>
                   </Card>
                   <Card>
@@ -349,11 +343,11 @@ const HomePage = (): JSX.Element => {
                       style={{ flexGrow: 1 }}
                       alignItems="self-end"
                     >
-                      <Link href="https://tally.so/r/w4kXA3" target="_blank">
+                      <ExternalLink href="https://tally.so/r/w4kXA3">
                         <Button variant="secondary" size="md">
                           Send Request
                         </Button>
-                      </Link>
+                      </ExternalLink>
                     </Box>
                   </Card>
                   <Card>
@@ -373,14 +367,11 @@ const HomePage = (): JSX.Element => {
                       style={{ flexGrow: 1 }}
                       alignItems="self-end"
                     >
-                      <Link
-                        href="https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=ead361fe-d823-45bb-8d6c-010eab49174b"
-                        target="_blank"
-                      >
+                      <ExternalLink href="https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=ead361fe-d823-45bb-8d6c-010eab49174b">
                         <Button variant="secondary" size="md">
                           Sign Up
                         </Button>
-                      </Link>
+                      </ExternalLink>
                     </Box>
                   </Card>
                   <Card>
@@ -400,14 +391,11 @@ const HomePage = (): JSX.Element => {
                       style={{ flexGrow: 1 }}
                       alignItems="self-end"
                     >
-                      <Link
-                        href="http://talent.banklessacademy.com/"
-                        target="_blank"
-                      >
+                      <ExternalLink href="http://talent.banklessacademy.com/">
                         <Button variant="secondary" size="md">
                           See Positions
                         </Button>
-                      </Link>
+                      </ExternalLink>
                     </Box>
                   </Card>
                   <Card>
@@ -415,15 +403,15 @@ const HomePage = (): JSX.Element => {
                       Or if you just like what we’re doing, you can help by
                       funding us below.
                     </Text>
-                    <Link
+                    <ExternalLink
                       href="https://gitcoin.co/grants/3535/bankless-academy"
-                      target="_blank"
+                      alt="Donate via Gitcoin"
                     >
                       <Image
                         width="100%"
                         src="/images/Donate-via-Gitcoin.png"
                       />
-                    </Link>
+                    </ExternalLink>
                     <Text fontSize="lg" mt="2">
                       We rely on our public-goods business model to continue
                       providing a free, Bankless education!

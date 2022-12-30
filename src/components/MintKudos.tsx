@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react'
 import {
   Button,
-  Link,
   useToast,
   Image,
   Box,
@@ -23,6 +22,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 import Passport from 'components/Passport'
+import ExternalLink from 'components/ExternalLink'
 import {
   IS_WHITELABEL,
   TWITTER_ACCOUNT,
@@ -123,9 +123,9 @@ const MintKudos = ({
           toast({
             title: `Transaction in progress`,
             description: (
-              <Link href={txLink} target="_blank">
+              <ExternalLink href={txLink} alt="Transaction in progress">
                 {isSmallScreen ? `${txLink.substring(0, 40)}...` : txLink}
-              </Link>
+              </ExternalLink>
             ),
             status: 'warning',
             duration: null,
@@ -226,12 +226,9 @@ const MintKudos = ({
           description: (
             <>
               {`${result.data.status || result.data.error || ''} | `}
-              <Link
-                href="/faq#d1a7f6dda4334a7ba73ee8b3a18a60ad"
-                target="_blank"
-              >
+              <ExternalLink href="/faq#d1a7f6dda4334a7ba73ee8b3a18a60ad">
                 Learn more
-              </Link>
+              </ExternalLink>
             </>
           ),
           status: 'error',
@@ -263,18 +260,18 @@ const MintKudos = ({
           {
             'Explorers must pass unique authentication in order to collect Bankless Academy rewards. '
           }
-          <Link href="/faq#640071a81daf4aa4b7df00b1eec1c58d" target="_blank">
+          <ExternalLink href="/faq#640071a81daf4aa4b7df00b1eec1c58d">
             Learn more
-          </Link>
+          </ExternalLink>
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <Passport displayStamps />
         </ModalBody>
         <ModalFooter>
-          <Link href="/faq#640071a81daf4aa4b7df00b1eec1c58d" target="_blank">
+          <ExternalLink href="/faq#640071a81daf4aa4b7df00b1eec1c58d">
             Help
-          </Link>
+          </ExternalLink>
         </ModalFooter>
       </ModalContent>
     </Modal>
@@ -326,13 +323,16 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 {` badge ${isKudosMintedLS ? 'claimed' : 'available'}!`}
               </Heading>
               <Box display="flex" justifyContent="center" mb={10} mt={-3}>
-                <Link href={`${MINTKUDOS_URL}`} target="_blank">
+                <ExternalLink
+                  href={`${MINTKUDOS_URL}`}
+                  alt="Powered by MintKudos"
+                >
                   <Image width="120px" src="/images/powered-by-MintKudos.svg" />
-                </Link>
+                </ExternalLink>
               </Box>
               {isKudosMintedLS ? (
                 <Box display="flex" justifyContent="center">
-                  <Link href={twitterLink} target="_blank" mr="2">
+                  <ExternalLink href={twitterLink} mr="2">
                     <Button
                       leftIcon={
                         <Image width="24px" src="/images/Twitter-blue.svg" />
@@ -340,11 +340,8 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     >
                       Share on Twitter
                     </Button>
-                  </Link>
-                  <Link
-                    href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`}
-                    target="_blank"
-                  >
+                  </ExternalLink>
+                  <ExternalLink href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`}>
                     <Button
                       leftIcon={
                         <Image width="24px" src="/images/OpenSea.svg" />
@@ -352,7 +349,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     >
                       View on OpenSea
                     </Button>
-                  </Link>
+                  </ExternalLink>
                 </Box>
               ) : passportLS?.verified && !isOpen ? (
                 <Box textAlign="center">

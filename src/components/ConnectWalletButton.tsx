@@ -14,7 +14,6 @@ import {
   useToast,
   useDisclosure,
   Heading,
-  Link,
 } from '@chakra-ui/react'
 import { Wallet } from 'phosphor-react'
 import axios from 'axios'
@@ -30,6 +29,7 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
   OrigPopoverTrigger
 
 import ENSName from 'components/ENSName'
+import ExternalLink from 'components/ExternalLink'
 import { useWalletWeb3React } from 'hooks/index'
 import { walletConnect, injected } from 'utils'
 import { LESSONS, INFURA_ID, ALCHEMY_ID } from 'constants/index'
@@ -381,12 +381,9 @@ const ConnectWalletButton = ({
               </Heading>
               <Text textAlign="center">
                 {`Don’t know how? `}
-                <Link
-                  href="/faq#edf3a4658d3d4aa78eac62e1dcf68978"
-                  target="_blank"
-                >
+                <ExternalLink href="/faq#edf3a4658d3d4aa78eac62e1dcf68978">
                   Get help here
-                </Link>
+                </ExternalLink>
               </Text>
             </PopoverBody>
           </PopoverContent>
