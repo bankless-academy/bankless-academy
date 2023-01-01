@@ -22,7 +22,13 @@ export default async function handler(
 
   console.log('address', address)
 
-  const userId = await getUserId(address)
+  const isBot =
+    req.headers['user-agent'].includes('python') ||
+    req.headers['user-agent'].includes('curl') ||
+    false
+  console.log('isBot', isBot)
+
+  const userId = await getUserId(address, isBot)
   console.log(userId)
   if (!(userId && Number.isInteger(userId)))
     return res.json({ error: 'userId not found' })
@@ -30,11 +36,6 @@ export default async function handler(
   const [user] = await db(TABLES.users)
     .select('sybil_user_id')
     .where('address', 'ilike', `%${address}%`)
-  const isBot =
-    req.headers['user-agent'].includes('python') ||
-    req.headers['user-agent'].includes('curl') ||
-    false
-  console.log('isBot', isBot)
 
   // TODO: make this dynamic
   type SybilCheckTypes = 'GITCOIN_PASSPORT' | '35kBANK'

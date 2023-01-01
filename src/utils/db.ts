@@ -51,7 +51,7 @@ export const TABLE = {
   },
 }
 
-export async function getUserId(address: string): Promise<number> {
+export async function getUserId(address: string, isBot?: boolean): Promise<number> {
   try {
     // ilike = case insensitive search
     const [user] = await db(TABLES.users)
@@ -64,7 +64,12 @@ export async function getUserId(address: string): Promise<number> {
         'id',
       ])
       console.log('createUser', createUser)
-      trackBA(address, 'first_wallet_connection', { user_id: createUser?.id })
+      const data: any = { user_id: createUser?.id }
+      console.log(isBot)
+      if (isBot && isBot === true) {
+        data.is_bot = true
+      }
+      trackBA(address, 'first_wallet_connection', data)
     }
     return user?.id || createUser?.id
   } catch (error) {
