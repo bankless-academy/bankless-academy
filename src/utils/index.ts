@@ -308,6 +308,10 @@ export const Mixpanel = ACTIVATE_MIXPANEL
             localStorage.setItem(`mp_${current_wallet}`, mixpanel_distinct_id)
           }
         }
+        const embed = localStorage.getItem('embed')
+        if (embed && embed.length) {
+          props.embed = embed
+        }
         mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
       },
       track_links: (query: Query, name: string) => {
