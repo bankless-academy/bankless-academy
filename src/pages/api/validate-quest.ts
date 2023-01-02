@@ -5,13 +5,14 @@ import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { LESSONS, QUESTS, GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { ONCHAIN_QUESTS } from 'components/Quest/QuestComponent'
 import { validateOnchainQuest } from 'utils/index'
-import { trackBA } from 'utils/mixpanel'
+import { trackBE } from 'utils/mixpanel'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
   const { address, quest, tx, distinct_id } = req.query
+  const { embed } = req.cookies
   if (
     !address ||
     // TODO: replace quest with notionId?
@@ -46,7 +47,7 @@ export default async function handler(
   }
 
   try {
-    const userId = await getUserId(address)
+    const userId = await getUserId(address, embed)
     console.log(userId)
     if (!(userId && Number.isInteger(userId)))
       return res.json({ error: 'userId not found' })
@@ -67,7 +68,7 @@ export default async function handler(
     questStatus = 'Quest already completed'
     const lesson = LESSONS.find((lesson) => lesson.quest === quest)?.name
     if (questCompleted?.id) {
-      trackBA(address, 'quest_already_completed', { lesson })
+      trackBE(address, 'quest_already_completed', { lesson, embed })
       return res.json({ isQuestValidated: true, status: questStatus })
     } else {
       const [createQuestCompleted] = await db(TABLES.completions).insert(
@@ -77,7 +78,7 @@ export default async function handler(
 
       if (createQuestCompleted?.id) {
         questStatus = 'Quest completed'
-        trackBA(address, 'quest_completed', { lesson })
+        trackBE(address, 'quest_completed', { lesson, embed })
       } else {
         questStatus = 'Problem while adding quest'
       }

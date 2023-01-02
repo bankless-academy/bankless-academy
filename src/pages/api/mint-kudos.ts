@@ -13,7 +13,7 @@ import {
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
 import { verifyTypedSignature } from 'utils'
-import { trackBA } from 'utils/mixpanel'
+import { trackBE } from 'utils/mixpanel'
 
 export default async function handler(
   req: NextApiRequest,
@@ -22,6 +22,7 @@ export default async function handler(
   // check params + signature
   const { address, kudosId, signature } = req.body
   // console.log(req)
+  const { embed } = req.cookies
   if (
     !address ||
     !kudosId ||
@@ -55,7 +56,7 @@ export default async function handler(
     )
       return res.json({ error: 'Wrong signature' })
 
-    const userId = await getUserId(address)
+    const userId = await getUserId(address, embed)
     console.log(userId)
     if (!(userId && Number.isInteger(userId)))
       return res.json({ error: 'userId not found' })
@@ -155,7 +156,7 @@ export default async function handler(
             const lesson = LESSONS.find(
               (lesson) => lesson.kudosId === kudosId
             )?.name
-            trackBA(address, 'mint_kudos', { lesson, kudosId })
+            trackBE(address, 'mint_kudos', { lesson, kudosId, embed })
             console.log(result.headers.location)
             return res.json({
               location: `${MINTKUDOS_API}${result.headers?.location}`,

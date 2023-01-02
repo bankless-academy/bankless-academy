@@ -7,7 +7,7 @@ import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { CERAMIC_PASSPORT, NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
 import { filterValidStamps } from 'utils/passport'
-import { trackBA } from 'utils/mixpanel'
+import { trackBE } from 'utils/mixpanel'
 
 const reader = new PassportReader(CERAMIC_PASSPORT, '1')
 
@@ -16,6 +16,7 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   const { address } = req.query
+  const { embed } = req.cookies
 
   if (!address || typeof address === 'object')
     return res.json({ error: 'Wrong params' })
@@ -28,7 +29,7 @@ export default async function handler(
     false
   console.log('isBot', isBot)
 
-  const userId = await getUserId(address, isBot)
+  const userId = await getUserId(address, embed, isBot)
   console.log(userId)
   if (!(userId && Number.isInteger(userId)))
     return res.json({ error: 'userId not found' })
@@ -108,7 +109,10 @@ export default async function handler(
       if (isBot) {
         // HACK: bot
         console.log('bot detected:', address)
-        trackBA(address, 'bot_detected', { ua: req.headers['user-agent'] })
+        trackBE(address, 'bot_detected', {
+          ua: req.headers['user-agent'],
+          embed,
+        })
         await db(TABLES.users)
           .where(TABLE.users.id, userId)
           .update({ sybil_user_id: 12 })
@@ -121,7 +125,7 @@ export default async function handler(
       if (sybil?.length) {
         // mark this user as a sybil attacker
         console.log('fraud detected:', sybil)
-        trackBA(address, 'duplicate_stamps', { target: sybil[0]?.id })
+        trackBE(address, 'duplicate_stamps', { target: sybil[0]?.id, embed })
         await db(TABLES.users)
           .where(TABLE.users.id, userId)
           .update({ sybil_user_id: sybil[0]?.id })

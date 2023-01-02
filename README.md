@@ -78,7 +78,7 @@ Documentation + data tracked: [https://www.notion.so/bankless/Analytics-with-Uma
 User interactions tracked in the app:
 
 - [front-end](https://github.com/BanklessDAO/bankless-academy/search?q=Mixpanel.track)
-- [back-end](https://github.com/BanklessDAO/bankless-academy/search?q=trackBA)
+- [back-end](https://github.com/BanklessDAO/bankless-academy/search?q=trackBE)
 
 ### Gitcoin Passport
 
