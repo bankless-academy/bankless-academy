@@ -200,7 +200,6 @@ const Lesson = ({
   )
 
   const router = useRouter()
-  // TODO: track embed origin
   const { embed } = router.query
   const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
