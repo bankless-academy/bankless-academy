@@ -7,7 +7,7 @@ import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { CERAMIC_PASSPORT, NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
 import { filterValidStamps } from 'utils/passport'
-import { trackBA } from 'utils/mixpanel'
+import { trackBE } from 'utils/mixpanel'
 
 const reader = new PassportReader(CERAMIC_PASSPORT, '1')
 
@@ -15,10 +15,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { address } = req.query
+  const { address, embed } = req.body
 
   if (!address || typeof address === 'object')
-    return res.json({ error: 'Wrong params' })
+    return res.status(400).json({ error: 'Wrong params' })
 
   console.log('address', address)
 
@@ -28,10 +28,10 @@ export default async function handler(
     false
   console.log('isBot', isBot)
 
-  const userId = await getUserId(address, isBot)
+  const userId = await getUserId(address, embed, isBot)
   console.log(userId)
   if (!(userId && Number.isInteger(userId)))
-    return res.json({ error: 'userId not found' })
+    return res.status(403).json({ error: 'userId not found' })
 
   const [user] = await db(TABLES.users)
     .select('sybil_user_id')
@@ -52,7 +52,7 @@ export default async function handler(
     '0xBDe4CB8d858adFaDDc5517bd54479a066559E575'.toLowerCase(),
   ]
   if (TEMP_PASSPORT_WHITELIST.includes(address.toLowerCase())) {
-    return res.json({
+    return res.status(200).json({
       verified: true,
       requirement,
       validStampsCount: 99,
@@ -108,11 +108,14 @@ export default async function handler(
       if (isBot) {
         // HACK: bot
         console.log('bot detected:', address)
-        trackBA(address, 'bot_detected', { ua: req.headers['user-agent'] })
+        trackBE(address, 'bot_detected', {
+          ua: req.headers['user-agent'],
+          embed,
+        })
         await db(TABLES.users)
           .where(TABLE.users.id, userId)
           .update({ sybil_user_id: 12 })
-        res.json({
+        res.status(403).json({
           verified: false,
           requirement,
           validStampsCount: 0,
@@ -121,11 +124,11 @@ export default async function handler(
       if (sybil?.length) {
         // mark this user as a sybil attacker
         console.log('fraud detected:', sybil)
-        trackBA(address, 'duplicate_stamps', { target: sybil[0]?.id })
+        trackBE(address, 'duplicate_stamps', { target: sybil[0]?.id, embed })
         await db(TABLES.users)
           .where(TABLE.users.id, userId)
           .update({ sybil_user_id: sybil[0]?.id })
-        return res.json({
+        return res.status(403).json({
           verified: false,
           requirement,
           fraud: sybil[0]?.address,
@@ -138,7 +141,7 @@ export default async function handler(
       } else {
         console.log('not verified')
       }
-      return res.json({
+      return res.status(200).json({
         verified: validStamps?.length >= NUMBER_OF_STAMP_REQUIRED,
         fraud:
           user?.sybil_user_id === 12
@@ -150,7 +153,7 @@ export default async function handler(
       })
     } catch (error) {
       console.error(error)
-      res.json({
+      res.status(500).json({
         verified: false,
         requirement,
         validStampsCount: 0,
@@ -161,6 +164,6 @@ export default async function handler(
     // not implemented yet
     const NUMBER_OF_BANK_REQUIRED = 35000
     const requirement = `Hold a minimum of ${NUMBER_OF_BANK_REQUIRED} BANK tokens for at least 1 month˝`
-    return res.json({ verified: 'TODO', requirement })
+    return res.status(200).json({ verified: 'TODO', requirement })
   }
 }

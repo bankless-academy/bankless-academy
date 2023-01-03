@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box, Image, HStack, Spacer, Flex } from '@chakra-ui/react'
-import { useRouter } from 'next/router'
 import { isMobile } from 'react-device-detect'
+import queryString from 'query-string'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import InternalLink from 'components/InternalLink'
@@ -11,9 +11,18 @@ import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
 import { useSmallScreen } from 'hooks/index'
 
 const Nav: React.FC = () => {
-  const router = useRouter()
-  const { embed } = router.query
   const [isSmallScreen] = useSmallScreen()
+
+  const embed =
+    typeof window !== 'undefined'
+      ? (queryString.parse(window.location.search)?.embed || '')?.toString()
+      : undefined
+
+  useEffect((): void => {
+    const embedValue = embed === undefined ? '' : embed
+    // for front-end & back-end tracking
+    localStorage.setItem('embed', embedValue)
+  }, [])
 
   const logo = (
     <Image

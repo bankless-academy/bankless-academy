@@ -17,6 +17,7 @@ import { ACTIVATE_MIXPANEL, DOMAIN_PROD, INFURA_ID } from 'constants/index'
 import { NETWORKS, SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
 import ONEINCH_V4_ABI from 'abis/1inch_v4.json'
 import ONEINCH_V5_ABI from 'abis/1inch_v5.json'
+import axios, { AxiosResponse } from 'axios'
 
 declare global {
   interface Window {
@@ -308,6 +309,10 @@ export const Mixpanel = ACTIVATE_MIXPANEL
             localStorage.setItem(`mp_${current_wallet}`, mixpanel_distinct_id)
           }
         }
+        const embed = localStorage.getItem('embed')
+        if (embed && embed.length) {
+          props.embed = embed
+        }
         mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
       },
       track_links: (query: Query, name: string) => {
@@ -347,4 +352,22 @@ export const getNodeText = (node) => {
   if (['string', 'number'].includes(typeof node)) return node
   if (node instanceof Array) return node.map(getNodeText).join('')
   if (typeof node === 'object' && node) return getNodeText(node.props.children)
+}
+
+export async function api(url: string, data: any): Promise<AxiosResponse> {
+  try {
+    const embed =
+      typeof localStorage !== 'undefined' ? localStorage.getItem('embed') : null
+    if (embed && embed.length) {
+      data.embed = embed
+    }
+    const result = await axios.post(url, data)
+    if (result && result.status !== 200) {
+      console.log('error API', result)
+    } else {
+      return result
+    }
+  } catch (error) {
+    console.error(error)
+  }
 }

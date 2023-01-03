@@ -8,11 +8,11 @@ import {
   Image,
 } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
-import axios from 'axios'
 
 import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
+import { api } from 'utils'
 
 const DEXAggregators = (
   account: string
@@ -31,20 +31,21 @@ const DEXAggregators = (
     try {
       if (tx !== '') {
         setIsCheckingTx(true)
-        const questResult = await axios.get(
-          `/api/validate-quest?address=${account}&quest=DEXAggregators&tx=${tx.replaceAll(
-            'https://polygonscan.com/tx/',
-            ''
-          )}`
-        )
-        setIsCheckingTx(false)
-        setIsTransactionVerified(
-          questResult?.data?.isQuestValidated?.toString()
-        )
-        localStorage.setItem(
-          'quest-dex-aggregators',
-          questResult?.data?.isQuestValidated
-        )
+        const result = await api('/api/validate-quest', {
+          address: account,
+          quest: 'DEXAggregators',
+          tx: tx.replaceAll('https://polygonscan.com/tx/', ''),
+        })
+        if (result && result.status === 200) {
+          setIsCheckingTx(false)
+          setIsTransactionVerified(result?.data?.isQuestValidated?.toString())
+          localStorage.setItem(
+            'quest-dex-aggregators',
+            result?.data?.isQuestValidated
+          )
+        } else {
+          // TODO: handle errors
+        }
       } else {
         setIsTransactionVerified(null)
         localStorage.setItem('quest-dex-aggregators', null)

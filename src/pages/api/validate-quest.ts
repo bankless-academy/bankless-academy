@@ -5,13 +5,13 @@ import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { LESSONS, QUESTS, GENERIC_ERROR_MESSAGE } from 'constants/index'
 import { ONCHAIN_QUESTS } from 'components/Quest/QuestComponent'
 import { validateOnchainQuest } from 'utils/index'
-import { trackBA } from 'utils/mixpanel'
+import { trackBE } from 'utils/mixpanel'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { address, quest, tx, distinct_id } = req.query
+  const { address, quest, tx, distinct_id, embed } = req.body
   if (
     !address ||
     // TODO: replace quest with notionId?
@@ -21,7 +21,9 @@ export default async function handler(
     typeof quest === 'object' ||
     !QUESTS.includes(quest)
   )
-    return res.json({ isQuestValidated: false, error: 'Wrong params' })
+    return res
+      .status(400)
+      .json({ isQuestValidated: false, error: 'Wrong params' })
 
   console.log('address', address)
   console.log('quest', quest)
@@ -29,7 +31,9 @@ export default async function handler(
   // Backend onchain quest verification
   if (ONCHAIN_QUESTS.includes(quest)) {
     if (!tx || typeof tx !== 'string') {
-      return res.json({ isQuestValidated: false, error: 'Missing transaction' })
+      return res
+        .status(403)
+        .json({ isQuestValidated: false, error: 'Missing transaction' })
     }
     if (quest === 'DEXAggregators') {
       const isOnchainQuestCompleted = await validateOnchainQuest(
@@ -38,7 +42,7 @@ export default async function handler(
         tx
       )
       if (!isOnchainQuestCompleted)
-        return res.json({
+        return res.status(403).json({
           isQuestValidated: false,
           error: 'Onchain quest not completed',
         })
@@ -46,18 +50,19 @@ export default async function handler(
   }
 
   try {
-    const userId = await getUserId(address)
+    const userId = await getUserId(address, embed)
     console.log(userId)
     if (!(userId && Number.isInteger(userId)))
-      return res.json({ error: 'userId not found' })
+      return res.status(403).json({ error: 'userId not found' })
 
     const notionId = LESSONS.find((lesson) => lesson.quest === quest)?.notionId
-    if (!notionId) return res.json({ error: 'notionId not found' })
+    if (!notionId) return res.status(403).json({ error: 'notionId not found' })
 
     const [credential] = await db(TABLES.credentials)
       .select('id')
       .where(TABLE.credentials.notion_id, notionId)
-    if (!credential) return res.json({ error: 'credentialId not found' })
+    if (!credential)
+      return res.status(403).json({ error: 'credentialId not found' })
 
     let questStatus = ''
     const [questCompleted] = await db(TABLES.completions)
@@ -67,8 +72,10 @@ export default async function handler(
     questStatus = 'Quest already completed'
     const lesson = LESSONS.find((lesson) => lesson.quest === quest)?.name
     if (questCompleted?.id) {
-      trackBA(address, 'quest_already_completed', { lesson })
-      return res.json({ isQuestValidated: true, status: questStatus })
+      trackBE(address, 'quest_already_completed', { lesson, embed })
+      return res
+        .status(200)
+        .json({ isQuestValidated: true, status: questStatus })
     } else {
       const [createQuestCompleted] = await db(TABLES.completions).insert(
         { credential_id: credential.id, user_id: userId },
@@ -77,18 +84,18 @@ export default async function handler(
 
       if (createQuestCompleted?.id) {
         questStatus = 'Quest completed'
-        trackBA(address, 'quest_completed', { lesson })
+        trackBE(address, 'quest_completed', { lesson, embed })
       } else {
         questStatus = 'Problem while adding quest'
       }
-      return res.json({
+      return res.status(200).json({
         isQuestValidated: !!createQuestCompleted?.id,
         status: questStatus,
       })
     }
   } catch (error) {
     console.error(error)
-    return res.json({
+    return res.status(500).json({
       isQuestValidated: false,
       error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
     })

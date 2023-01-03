@@ -2,7 +2,7 @@
 import knex from 'knex'
 
 const config = require('../../knexfile.js')
-import { trackBA } from 'utils/mixpanel'
+import { trackBE } from 'utils/mixpanel'
 
 export const db = knex(config)
 
@@ -51,7 +51,7 @@ export const TABLE = {
   },
 }
 
-export async function getUserId(address: string, isBot?: boolean): Promise<number> {
+export async function getUserId(address: string, embed: string, isBot?: boolean): Promise<number> {
   try {
     // ilike = case insensitive search
     const [user] = await db(TABLES.users)
@@ -69,7 +69,7 @@ export async function getUserId(address: string, isBot?: boolean): Promise<numbe
       if (isBot && isBot === true) {
         data.is_bot = true
       }
-      trackBA(address, 'first_wallet_connection', data)
+      trackBE(address, 'first_wallet_connection', { ...data, embed })
     }
     return user?.id || createUser?.id
   } catch (error) {

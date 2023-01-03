@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react'
 import { Box, Text, Button, Image, useToast } from '@chakra-ui/react'
-import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { useActiveWeb3React } from 'hooks/index'
@@ -9,7 +8,7 @@ import GitcoinPassport from 'components/GitcoinPassport'
 import ExternalLink from 'components/ExternalLink'
 import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
 import { theme } from 'theme/index'
-import { shortenAddress } from 'utils'
+import { api, shortenAddress } from 'utils'
 
 const PassportComponent = ({
   displayStamps,
@@ -26,40 +25,36 @@ const PassportComponent = ({
 
   async function checkPassport() {
     setIsLoading(true)
-    axios
-      .get(`/api/passport?address=${account}`)
-      .then(function (res) {
-        setIsLoading(false)
-        // console.log('passport', res.data)
-        if (res.data?.error) {
-          toast.closeAll()
-          if (res.data?.error.includes('ERR_BAD_RESPONSE')) {
-            toast({
-              title: 'Gitcoin Passport stamps not loading',
-              description: (
-                <ExternalLink href="/faq#ea6ae6bd9ca645498c15cc611bc181c0">
-                  Follow these steps and try again
-                </ExternalLink>
-              ),
-              status: 'warning',
-              duration: null,
-            })
-          } else {
-            toast({
-              title: 'Gitcoin Passport issue',
-              description: (
-                <ExternalLink href="/bug">Report a bug</ExternalLink>
-              ),
-              status: 'warning',
-              duration: null,
-            })
-          }
+    const result = await api('/api/passport', { address: account })
+    if (result && result.status === 200) {
+      setIsLoading(false)
+      // console.log('passport', result.data)
+      if (result.data?.error) {
+        toast.closeAll()
+        if (result.data?.error.includes('ERR_BAD_RESPONSE')) {
+          toast({
+            title: 'Gitcoin Passport stamps not loading',
+            description: (
+              <ExternalLink href="/faq#ea6ae6bd9ca645498c15cc611bc181c0">
+                Follow these steps and try again
+              </ExternalLink>
+            ),
+            status: 'warning',
+            duration: null,
+          })
+        } else {
+          toast({
+            title: 'Gitcoin Passport issue',
+            description: <ExternalLink href="/bug">Report a bug</ExternalLink>,
+            status: 'warning',
+            duration: null,
+          })
         }
-        setPassportLS(res.data)
-      })
-      .catch(function (error) {
-        console.error(error)
-      })
+      }
+      setPassportLS(result.data)
+    } else {
+      // TODO: handle errors
+    }
   }
 
   const numberOfStampsLeftToCollect =

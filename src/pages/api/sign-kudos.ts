@@ -21,7 +21,7 @@ export default async function handler(
     typeof address === 'object' ||
     typeof signature === 'object'
   )
-    return res.json({ error: 'Wrong params' })
+    return res.status(400).json({ error: 'Wrong params' })
 
   console.log('address: ', address)
   console.log('kudosId: ', kudosId)
@@ -29,7 +29,7 @@ export default async function handler(
 
   try {
     if (!MINTKUDOS_ALLOWED_SIGNERS.includes(address.toLowerCase()))
-      return res.json({ error: 'Address not allowed to sign' })
+      return res.status(403).json({ error: 'Address not allowed to sign' })
 
     const adminTypes = {
       CommunityAdminAirdrop: [{ name: 'tokenId', type: 'uint256' }],
@@ -47,22 +47,23 @@ export default async function handler(
         MINTKUDOS_DOMAIN_INFO
       )
     )
-      return res.json({ error: 'Wrong signature' })
+      return res.status(403).json({ error: 'Wrong signature' })
 
     const notionId = LESSONS.find(
       (lesson) => lesson.kudosId === kudosId
     )?.notionId
-    if (!notionId) return res.json({ error: 'notionId not found' })
+    if (!notionId) return res.status(403).json({ error: 'notionId not found' })
 
     const updated = await db(TABLES.credentials)
       .where('notion_id', notionId)
       .update({ signature })
     console.log(updated)
-    if (updated === 1) return res.json({ result: 'Signature updated' })
-    else return res.json({ error: 'notionID missing?' })
+    if (updated === 1)
+      return res.status(200).json({ result: 'Signature updated' })
+    else return res.status(403).json({ error: 'notionID missing?' })
   } catch (error) {
     console.error(error)
-    res.json({
+    res.status(500).json({
       error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
     })
   }

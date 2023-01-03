@@ -43,6 +43,7 @@ import { EMPTY_PASSPORT } from 'constants/passport'
 import { KudosType } from 'entities/kudos'
 import { theme } from 'theme/index'
 import { ethers } from 'ethers'
+import { api } from 'utils'
 
 const MintKudos = ({
   kudosId,
@@ -74,16 +75,14 @@ const MintKudos = ({
   // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
 
   async function checkPassport() {
-    axios
-      .get(`/api/passport?address=${account}`)
-      .then(function (res) {
-        console.log('passport', res.data)
-        setStatus('')
-        setPassportLS(res.data)
-      })
-      .catch(function (error) {
-        console.error(error)
-      })
+    const result = await api('/api/passport', { address: account })
+    if (result && result.status === 200) {
+      console.log('passport', result.data)
+      setStatus('')
+      setPassportLS(result.data)
+    } else {
+      // TODO: handle errors
+    }
   }
 
   useEffect(() => {
@@ -201,9 +200,8 @@ const MintKudos = ({
         message: value,
       }
       setIsMintingInProgress(true)
-      const result = await axios.post(`/api/mint-kudos`, bodyParameters)
-      console.log(result.data)
-      if (result.data.location) {
+      const result = await api('/api/mint-kudos', bodyParameters)
+      if (result && result.status === 200 && result.data.location) {
         await followOperation(result.data.location)
         setRefreshKudosLS(true)
         setIsKudosMintedLS(true)
