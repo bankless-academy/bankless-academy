@@ -11,8 +11,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { address, quest, tx, distinct_id } = req.query
-  const { embed } = req.cookies
+  const { address, quest, tx, distinct_id, embed } = req.body
   if (
     !address ||
     // TODO: replace quest with notionId?
@@ -22,7 +21,9 @@ export default async function handler(
     typeof quest === 'object' ||
     !QUESTS.includes(quest)
   )
-    return res.json({ isQuestValidated: false, error: 'Wrong params' })
+    return res
+      .status(400)
+      .json({ isQuestValidated: false, error: 'Wrong params' })
 
   console.log('address', address)
   console.log('quest', quest)
@@ -30,7 +31,9 @@ export default async function handler(
   // Backend onchain quest verification
   if (ONCHAIN_QUESTS.includes(quest)) {
     if (!tx || typeof tx !== 'string') {
-      return res.json({ isQuestValidated: false, error: 'Missing transaction' })
+      return res
+        .status(403)
+        .json({ isQuestValidated: false, error: 'Missing transaction' })
     }
     if (quest === 'DEXAggregators') {
       const isOnchainQuestCompleted = await validateOnchainQuest(
@@ -39,7 +42,7 @@ export default async function handler(
         tx
       )
       if (!isOnchainQuestCompleted)
-        return res.json({
+        return res.status(403).json({
           isQuestValidated: false,
           error: 'Onchain quest not completed',
         })
@@ -50,15 +53,16 @@ export default async function handler(
     const userId = await getUserId(address, embed)
     console.log(userId)
     if (!(userId && Number.isInteger(userId)))
-      return res.json({ error: 'userId not found' })
+      return res.status(403).json({ error: 'userId not found' })
 
     const notionId = LESSONS.find((lesson) => lesson.quest === quest)?.notionId
-    if (!notionId) return res.json({ error: 'notionId not found' })
+    if (!notionId) return res.status(403).json({ error: 'notionId not found' })
 
     const [credential] = await db(TABLES.credentials)
       .select('id')
       .where(TABLE.credentials.notion_id, notionId)
-    if (!credential) return res.json({ error: 'credentialId not found' })
+    if (!credential)
+      return res.status(403).json({ error: 'credentialId not found' })
 
     let questStatus = ''
     const [questCompleted] = await db(TABLES.completions)
@@ -69,7 +73,9 @@ export default async function handler(
     const lesson = LESSONS.find((lesson) => lesson.quest === quest)?.name
     if (questCompleted?.id) {
       trackBE(address, 'quest_already_completed', { lesson, embed })
-      return res.json({ isQuestValidated: true, status: questStatus })
+      return res
+        .status(200)
+        .json({ isQuestValidated: true, status: questStatus })
     } else {
       const [createQuestCompleted] = await db(TABLES.completions).insert(
         { credential_id: credential.id, user_id: userId },
@@ -82,14 +88,14 @@ export default async function handler(
       } else {
         questStatus = 'Problem while adding quest'
       }
-      return res.json({
+      return res.status(200).json({
         isQuestValidated: !!createQuestCompleted?.id,
         status: questStatus,
       })
     }
   } catch (error) {
     console.error(error)
-    return res.json({
+    return res.status(500).json({
       isQuestValidated: false,
       error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
     })

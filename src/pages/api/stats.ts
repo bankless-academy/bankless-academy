@@ -140,10 +140,10 @@ export default async function handler(
       .groupByRaw(`date_trunc('month', created_at)`)
       .orderBy('month')
     stats.monthyCompletion = monthyCompletion
-    return res.json(stats)
+    return res.status(200).json(stats)
   } catch (error) {
     console.error(error)
-    res.json({
+    res.status(500).json({
       error: `error ${error?.code}: ${error}`,
     })
   }

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import axios from 'axios'
 
 import WalletConnect from 'components/Quest/WalletConnect'
 import WalletBasics from 'components/Quest/WalletBasics'
@@ -13,6 +12,7 @@ import { ConnectFirst } from 'components/Quest/WalletConnect'
 
 import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
 import { QUESTS } from 'constants/index'
+import { api } from 'utils'
 
 export type QuestComponentType = typeof QUESTS[number]
 
@@ -46,21 +46,23 @@ const QuestComponent = (
       : WalletConnect(account)
 
   useEffect(() => {
+    const validateQuest = async () => {
+      const data: any = { address: account, quest: component }
+      if (kudosId) data.kudosId = kudosId
+      const result = await api('/api/validate-quest', data)
+      if (result && result.status === 200) {
+        // do nothing
+      } else {
+        // TODO: handle errors
+      }
+    }
     if (
       account &&
       Component.isQuestCompleted &&
       // don't do the validation here for onchain quests but inside the quest component instead
       !ONCHAIN_QUESTS.includes(component)
     ) {
-      axios
-        .get(
-          `/api/validate-quest?address=${account}&quest=${component}${
-            kudosId ? `&kudosId=${kudosId}` : ''
-          }`
-        )
-        .catch(function (error) {
-          console.error(error)
-        })
+      validateQuest().catch(console.error)
     }
   }, [account, Component.isQuestCompleted])
 

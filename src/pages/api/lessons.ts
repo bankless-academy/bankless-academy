@@ -6,7 +6,7 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   try {
-    return res.json(
+    return res.status(200).json(
       LESSONS.map((lesson) => {
         delete lesson.imageLinks
         lesson.slides.map((slide) => {
@@ -22,6 +22,6 @@ export default async function handler(
       })
     )
   } catch (error) {
-    res.json({ error })
+    res.status(500).json({ error })
   }
 }

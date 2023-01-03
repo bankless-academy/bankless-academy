@@ -2,7 +2,6 @@
 import React from 'react'
 import { Container, Button, Box, useToast } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
-import axios from 'axios'
 
 import { MetaData } from 'components/Head'
 import { useActiveWeb3React } from 'hooks/index'
@@ -10,6 +9,7 @@ import { LESSONS } from 'constants/index'
 import { MINTKUDOS_CHAIN_ID, MINTKUDOS_DOMAIN_INFO } from 'constants/kudos'
 import { NETWORKS } from 'constants/networks'
 import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
+import { api } from 'utils'
 
 const pageMeta: MetaData = {
   title: 'Kudos',
@@ -65,22 +65,26 @@ const Kudos = (): JSX.Element => {
           kudosId,
           signature,
         }
-        const result = await axios.post(`/api/sign-kudos`, bodyParameters)
+        const result = await api('/api/sign-kudos', bodyParameters)
         console.log(result.data)
-        if (result.data?.error) {
-          toast({
-            title: `Signature for ${kudosId}`,
-            description: result.data?.error,
-            status: 'error',
-            duration: 10000,
-          })
+        if (result && result.status === 200) {
+          if (result.data?.error) {
+            toast({
+              title: `Signature for ${kudosId}`,
+              description: result.data?.error,
+              status: 'error',
+              duration: 10000,
+            })
+          } else {
+            toast({
+              title: `Signature for ${kudosId}`,
+              description: result.data?.result,
+              status: 'success',
+              duration: 10000,
+            })
+          }
         } else {
-          toast({
-            title: `Signature for ${kudosId}`,
-            description: result.data?.result,
-            status: 'success',
-            duration: 10000,
-          })
+          // TODO: handle errors
         }
       } catch (error) {
         // TODO: add error feedback

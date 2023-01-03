@@ -12,7 +12,7 @@ import {
   MINTKUDOS_DOMAIN_INFO,
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
-import { verifyTypedSignature } from 'utils'
+import { api, verifyTypedSignature } from 'utils'
 import { trackBE } from 'utils/mixpanel'
 
 export default async function handler(
@@ -20,16 +20,15 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   // check params + signature
-  const { address, kudosId, signature } = req.body
+  const { address, kudosId, signature, embed } = req.body
   // console.log(req)
-  const { embed } = req.cookies
   if (
     !address ||
     !kudosId ||
     typeof signature === 'object' ||
     typeof address === 'object'
   )
-    return res.json({ error: 'Wrong params' })
+    return res.status(400).json({ error: 'Wrong params' })
 
   console.log('address: ', address)
   console.log('kudosId: ', kudosId)
@@ -54,22 +53,23 @@ export default async function handler(
         MINTKUDOS_DOMAIN_INFO
       )
     )
-      return res.json({ error: 'Wrong signature' })
+      return res.status(403).json({ error: 'Wrong signature' })
 
     const userId = await getUserId(address, embed)
     console.log(userId)
     if (!(userId && Number.isInteger(userId)))
-      return res.json({ error: 'userId not found' })
+      return res.status(403).json({ error: 'userId not found' })
 
     const notionId = LESSONS.find(
       (lesson) => lesson.kudosId === kudosId
     )?.notionId
-    if (!notionId) return res.json({ error: 'notionId not found' })
+    if (!notionId) return res.status(403).json({ error: 'notionId not found' })
 
     const [credential] = await db(TABLES.credentials)
       .select('id')
       .where(TABLE.credentials.notion_id, notionId)
-    if (!credential) return res.json({ error: 'credentialId not found' })
+    if (!credential)
+      return res.status(403).json({ error: 'credentialId not found' })
 
     const [questCompleted] = await db(TABLES.completions)
       .select(TABLE.completions.id, TABLE.completions.credential_claimed_at)
@@ -82,21 +82,25 @@ export default async function handler(
     if (questCompleted?.credential_claimed_at) {
       questStatus = 'badge already claimed'
       console.log(questStatus)
-      return res.json({ status: questStatus })
+      return res.status(200).json({ status: questStatus })
     } else {
       // Sybil check with Academy Passport
-      const passport = await axios.get(
-        `${req.headers.origin}/api/passport?address=${address}`
-      )
-      if (passport.data?.error) {
-        return res.json({
-          status: passport.data?.error,
-        })
-      }
-      if (!passport.data.verified) {
-        return res.json({
-          status: `Passport requirement: ${passport.data.requirement}`,
-        })
+      const result = await api(`${req.headers.origin}/api/passport`, {
+        address: address,
+      })
+      if (result && result.status === 200) {
+        if (result.data?.error) {
+          return res.status(403).json({
+            status: result.data?.error,
+          })
+        }
+        if (!result.data.verified) {
+          return res.status(403).json({
+            status: `Passport requirement: ${result.data.requirement}`,
+          })
+        }
+      } else {
+        // TODO: handle errors
       }
 
       const userKudos = await axios.get(
@@ -117,13 +121,14 @@ export default async function handler(
         // console.log(`updated missing credential_claimed_at`, updated)
         questStatus = 'badge already claimed'
         console.log(questStatus)
-        return res.json({ status: questStatus })
+        return res.status(200).json({ status: questStatus })
       } else {
         const [{ adminSignature }] = await db(TABLES.credentials)
           .select('signature as adminSignature')
           .where('notion_id', notionId)
         // console.log('adminSignature', adminSignature)
-        if (!adminSignature) return res.json({ error: 'signature not found' })
+        if (!adminSignature)
+          return res.status(403).json({ error: 'signature not found' })
 
         try {
           const bodyParameters = {
@@ -158,13 +163,13 @@ export default async function handler(
             )?.name
             trackBE(address, 'mint_kudos', { lesson, kudosId, embed })
             console.log(result.headers.location)
-            return res.json({
+            return res.status(200).json({
               location: `${MINTKUDOS_API}${result.headers?.location}`,
               status: questStatus,
             })
           } else {
             console.log(result)
-            return res.json({
+            return res.status(500).json({
               error: 'something went wrong while minting',
               status: questStatus,
             })
@@ -174,10 +179,10 @@ export default async function handler(
         }
       }
     }
-    return res.json({ status: questStatus })
+    return res.status(500).json({ status: questStatus })
   } catch (error) {
     console.error(error)
-    res.json({
+    res.status(500).json({
       error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
     })
   }
