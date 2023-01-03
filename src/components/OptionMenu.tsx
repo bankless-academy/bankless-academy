@@ -43,7 +43,10 @@ const OptionMenu = ({
             <MenuItem
               onClick={() => {
                 onOpen()
-                Mixpanel.track('click_newsletter_modal')
+                Mixpanel.track('click_internal_link', {
+                  link: 'modal',
+                  name: 'Newsletter signup',
+                })
               }}
             >
               Newsletter signup
