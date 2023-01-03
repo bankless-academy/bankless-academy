@@ -27,7 +27,7 @@ import QuestComponent from 'components/Quest/QuestComponent'
 import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
-import { Mixpanel, track } from 'utils'
+import { Mixpanel } from 'utils'
 import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
 import { theme } from 'theme/index'
@@ -198,6 +198,7 @@ const Lesson = ({
     `isKudosMinted-${lesson.kudosId}`,
     false
   )
+  const [quizWrongCount, setQuizWrongCount] = useState({})
 
   const router = useRouter()
   const { embed } = router.query
@@ -284,20 +285,26 @@ const Lesson = ({
     if (slide.type !== 'QUIZ') return
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
     if (slide.quiz.rightAnswerNumber === answerNumber) {
-      track('quiz_answer', {
-        id: slide.quiz.id,
-        isRightAnswer: true,
-        selectedAnswerNumber: answerNumber,
-      })
       // correct answer
+      Mixpanel.track('quiz_answer', {
+        lesson: lesson?.name,
+        quiz_question: slide.quiz.question,
+        wrong_count: quizWrongCount[slide.quiz.id],
+      })
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
     } else if (!answerIsCorrect) {
-      track('quiz_answer', {
-        id: slide.quiz.id,
-        isRightAnswer: false,
-        selectedAnswerNumber: answerNumber,
-      })
       // wrong answer
+      Mixpanel.track('quiz_wrong_answer', {
+        lesson: lesson?.name,
+        quiz_question: slide.quiz.question,
+        answer: slide.quiz.answers[answerNumber],
+      })
+      const newQuizWrongCount = quizWrongCount
+      newQuizWrongCount[slide.quiz.id] =
+        slide.quiz.id in newQuizWrongCount
+          ? newQuizWrongCount[slide.quiz.id] + 1
+          : 1
+      setQuizWrongCount(newQuizWrongCount)
     }
   }
 
