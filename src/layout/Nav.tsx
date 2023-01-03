@@ -20,10 +20,8 @@ const Nav: React.FC = () => {
 
   useEffect((): void => {
     const embedValue = embed === undefined ? '' : embed
-    // front-end tracking
+    // for front-end & back-end tracking
     localStorage.setItem('embed', embedValue)
-    // back-end tracking
-    document.cookie = `embed=${embedValue}; path=/`
   }, [])
 
   const logo = (
