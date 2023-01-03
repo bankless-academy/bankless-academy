@@ -356,7 +356,8 @@ export const getNodeText = (node) => {
 
 export async function api(url: string, data: any): Promise<AxiosResponse> {
   try {
-    const embed = localStorage.getItem('embed')
+    const embed =
+      typeof localStorage !== 'undefined' ? localStorage.getItem('embed') : null
     if (embed && embed.length) {
       data.embed = embed
     }
