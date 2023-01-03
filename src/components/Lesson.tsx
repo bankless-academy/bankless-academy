@@ -289,7 +289,8 @@ const Lesson = ({
       Mixpanel.track('quiz_answer', {
         lesson: lesson?.name,
         quiz_question: slide.quiz.question,
-        wrong_count: quizWrongCount[slide.quiz.id],
+        wrong_count:
+          slide.quiz.id in quizWrongCount ? quizWrongCount[slide.quiz.id] : 0,
       })
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
     } else if (!answerIsCorrect) {
