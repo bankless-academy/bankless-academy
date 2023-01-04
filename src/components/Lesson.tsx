@@ -302,7 +302,7 @@ const Lesson = ({
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
         }`,
-        quiz_answer: `${answerNumber}. ${slide.quiz.answers[answerNumber]}`,
+        quiz_answer: `${answerNumber}. ${slide.quiz.answers[answerNumber - 1]}`,
       })
       const newQuizRetryCount = quizRetryCount
       newQuizRetryCount[slide.quiz.id] =
