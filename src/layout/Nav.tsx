@@ -10,6 +10,12 @@ import SwitchNetworkButton from 'components/SwitchNetworkButton/'
 import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
 import { useSmallScreen } from 'hooks/index'
 
+declare global {
+  interface Navigator {
+    standalone: any
+  }
+}
+
 const Nav: React.FC = () => {
   const [isSmallScreen] = useSmallScreen()
 
@@ -19,7 +25,9 @@ const Nav: React.FC = () => {
       : undefined
   const webapp =
     typeof window !== 'undefined'
-      ? (queryString.parse(window.location.search)?.webapp || '')?.toString()
+      ? window?.navigator?.standalone
+        ? 'true'
+        : (queryString.parse(window.location.search)?.webapp || '')?.toString()
       : undefined
 
   useEffect((): void => {
