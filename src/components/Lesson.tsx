@@ -198,7 +198,7 @@ const Lesson = ({
     `isKudosMinted-${lesson.kudosId}`,
     false
   )
-  const [quizWrongCount, setQuizWrongCount] = useState({})
+  const [quizRetryCount, setQuizRetryCount] = useState({})
 
   const router = useRouter()
   const { embed } = router.query
@@ -291,8 +291,8 @@ const Lesson = ({
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
         }`,
-        wrong_count:
-          slide.quiz.id in quizWrongCount ? quizWrongCount[slide.quiz.id] : 0,
+        retry:
+          slide.quiz.id in quizRetryCount ? quizRetryCount[slide.quiz.id] : 0,
       })
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
     } else if (!answerIsCorrect) {
@@ -304,12 +304,12 @@ const Lesson = ({
         }`,
         quiz_answer: `${answerNumber}. ${slide.quiz.answers[answerNumber]}`,
       })
-      const newQuizWrongCount = quizWrongCount
-      newQuizWrongCount[slide.quiz.id] =
-        slide.quiz.id in newQuizWrongCount
-          ? newQuizWrongCount[slide.quiz.id] + 1
+      const newQuizRetryCount = quizRetryCount
+      newQuizRetryCount[slide.quiz.id] =
+        slide.quiz.id in newQuizRetryCount
+          ? newQuizRetryCount[slide.quiz.id] + 1
           : 1
-      setQuizWrongCount(newQuizWrongCount)
+      setQuizRetryCount(newQuizRetryCount)
     }
   }
 
