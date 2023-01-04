@@ -288,7 +288,9 @@ const Lesson = ({
       // correct answer
       Mixpanel.track('quiz_answer', {
         lesson: lesson?.name,
-        quiz_question: slide.quiz.question,
+        quiz_question: `${slide.quiz.id.split('-').pop()}. ${
+          slide.quiz.question
+        }`,
         wrong_count:
           slide.quiz.id in quizWrongCount ? quizWrongCount[slide.quiz.id] : 0,
       })
@@ -297,8 +299,10 @@ const Lesson = ({
       // wrong answer
       Mixpanel.track('quiz_wrong_answer', {
         lesson: lesson?.name,
-        quiz_question: slide.quiz.question,
-        answer: slide.quiz.answers[answerNumber],
+        quiz_question: `${slide.quiz.id.split('-').pop()}. ${
+          slide.quiz.question
+        }`,
+        answer: `${answerNumber}. ${slide.quiz.answers[answerNumber]}`,
       })
       const newQuizWrongCount = quizWrongCount
       newQuizWrongCount[slide.quiz.id] =
