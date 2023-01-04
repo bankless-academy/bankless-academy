@@ -67,7 +67,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           type="image/png"
           href={FAVICON}
         />
-        {/* Apple mobile web app */}
+        {/* Progressive Web App */}
         <link rel="apple-touch-icon" href={APPLE_TOUCH_ICON} />
         <link
           rel="apple-touch-startup-image"
