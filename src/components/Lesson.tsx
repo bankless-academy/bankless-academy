@@ -286,7 +286,7 @@ const Lesson = ({
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
     if (slide.quiz.rightAnswerNumber === answerNumber) {
       // correct answer
-      Mixpanel.track('quiz_answer', {
+      Mixpanel.track('quiz_correct_answer', {
         lesson: lesson?.name,
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
@@ -302,7 +302,7 @@ const Lesson = ({
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
         }`,
-        answer: `${answerNumber}. ${slide.quiz.answers[answerNumber]}`,
+        quiz_answer: `${answerNumber}. ${slide.quiz.answers[answerNumber]}`,
       })
       const newQuizWrongCount = quizWrongCount
       newQuizWrongCount[slide.quiz.id] =
