@@ -17,11 +17,17 @@ const Nav: React.FC = () => {
     typeof window !== 'undefined'
       ? (queryString.parse(window.location.search)?.embed || '')?.toString()
       : undefined
+  const webapp =
+    typeof window !== 'undefined'
+      ? (queryString.parse(window.location.search)?.webapp || '')?.toString()
+      : undefined
 
   useEffect((): void => {
-    const embedValue = embed === undefined ? '' : embed
+    const embedValue =
+      webapp === 'true' ? 'webapp' : embed === undefined ? '' : embed
     // for front-end & back-end tracking
-    localStorage.setItem('embed', embedValue)
+    if (localStorage.getItem('embed') !== 'webapp')
+      localStorage.setItem('embed', embedValue)
   }, [])
 
   const logo = (
