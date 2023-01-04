@@ -302,7 +302,7 @@ const Lesson = ({
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
         }`,
-        answer: `${answerNumber}. ${slide.quiz.answers[answerNumber]}`,
+        quiz_answer: `${answerNumber}. ${slide.quiz.answers[answerNumber]}`,
       })
       const newQuizWrongCount = quizWrongCount
       newQuizWrongCount[slide.quiz.id] =
