@@ -128,7 +128,7 @@ export default async function handler(
         await db(TABLES.users)
           .where(TABLE.users.id, userId)
           .update({ sybil_user_id: sybil[0]?.id })
-        return res.status(403).json({
+        return res.status(200).json({
           verified: false,
           requirement,
           fraud: sybil[0]?.address,

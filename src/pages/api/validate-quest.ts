@@ -42,7 +42,7 @@ export default async function handler(
         tx
       )
       if (!isOnchainQuestCompleted)
-        return res.status(403).json({
+        return res.status(200).json({
           isQuestValidated: false,
           error: 'Onchain quest not completed',
         })
