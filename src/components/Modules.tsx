@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box, Text, Image, Heading, Button, SimpleGrid } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
@@ -7,6 +7,7 @@ import InternalLink from 'components/InternalLink'
 import { IS_WHITELABEL, LESSONS } from 'constants/index'
 import { ModuleType } from 'entities/module'
 import { useSmallScreen } from 'hooks/index'
+import { Mixpanel } from 'utils'
 
 const LessonGrid = styled(SimpleGrid)`
   border-bottom: 1px solid #72757b;
@@ -24,6 +25,12 @@ const Modules = ({
 }): React.ReactElement => {
   const [isSmallScreen] = useSmallScreen()
 
+  useEffect(() => {
+    Mixpanel.track('open_module', {
+      module: parentModule?.name || 'Learning Modules',
+    })
+  }, [])
+
   return (
     <Box mt="16">
       <Heading
@@ -31,7 +38,7 @@ const Modules = ({
         size={parentModule ? '2xl' : 'xl'}
         textAlign={parentModule ? 'center' : 'unset'}
       >
-        {parentModule?.name || `Learning Modules`}
+        {parentModule?.name || 'Learning Modules'}
       </Heading>
       <Box>
         {modules.map((module, key) => {
