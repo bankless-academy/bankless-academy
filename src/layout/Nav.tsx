@@ -23,19 +23,35 @@ const Nav: React.FC = () => {
     typeof window !== 'undefined'
       ? (queryString.parse(window.location.search)?.embed || '')?.toString()
       : undefined
+  const fullembed =
+    typeof window !== 'undefined'
+      ? (queryString.parse(window.location.search)?.fullembed || '')?.toString()
+      : undefined
   const webapp =
     typeof window !== 'undefined'
       ? window?.navigator?.standalone
         ? 'true'
         : (queryString.parse(window.location.search)?.webapp || '')?.toString()
       : undefined
+  const isEmbedded = typeof window !== 'undefined' && window.parent?.length > 0
 
   useEffect((): void => {
     const embedValue =
-      webapp === 'true' ? 'webapp' : embed === undefined ? '' : embed
+      webapp === 'true'
+        ? 'webapp'
+        : fullembed?.length
+        ? fullembed
+        : embed?.length
+        ? embed
+        : ''
     // for front-end & back-end tracking
-    if (localStorage.getItem('embed') !== 'webapp')
-      localStorage.setItem('embed', embedValue)
+    if (
+      localStorage.getItem('embed') === 'webapp' ||
+      (isEmbedded && embedValue === '') ||
+      localStorage.getItem('embed') === embedValue
+    ) {
+      // DO nothing
+    } else localStorage.setItem('embed', embedValue)
   }, [])
 
   const logo = (
