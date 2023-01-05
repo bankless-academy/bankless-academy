@@ -90,12 +90,12 @@ export default async function handler(
       })
       if (result && result.status === 200) {
         if (result.data?.error) {
-          return res.status(403).json({
+          return res.status(200).json({
             status: result.data?.error,
           })
         }
         if (!result.data.verified) {
-          return res.status(403).json({
+          return res.status(200).json({
             status: `Passport requirement: ${result.data.requirement}`,
           })
         }

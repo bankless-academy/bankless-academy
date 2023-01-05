@@ -3,7 +3,14 @@
   "short_name": "Academy",
   "theme_color": "#000000",
   "background_color": "#000000",
-  "start_url": "/",
+  "start_url": "/?webapp=true",
+  "icons": [
+    {
+      "src": "/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
   "scope": "/",
   "display": "standalone"
 }
