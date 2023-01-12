@@ -175,6 +175,18 @@ axios
                   .replace(/\\\]/g, "]")
                 // console.log('lesson', lesson)
 
+                if (lesson.articleContent.includes('\n\n\n---\n\n')) {
+                  const articleContentArray = lesson.articleContent.split('\n\n\n---\n\n')
+                  if (articleContentArray.length && articleContentArray[articleContentArray.length - 1].includes('Explore more lessons')) {
+                    articleContentArray.pop()
+                    lesson.articleContent = articleContentArray.join('\n\n\n---\n\n')
+                  }
+                  if (articleContentArray.length && articleContentArray[articleContentArray.length - 1].includes('financial or tax advice')) {
+                    articleContentArray.pop()
+                    lesson.articleContent = articleContentArray.join('\n\n\n---\n\n')
+                  }
+                }
+
                 if (lesson.lessonImageLink) {
                   lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
                 }
