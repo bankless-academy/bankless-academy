@@ -50,7 +50,7 @@
     "ethers": "^5.7.2",
     "framer-motion": "^7.6.15",
     "js-crc": "^0.2.0",
-    "knex": "^2.3.0",
+    "knex": "^2.4.0",
     "mac-scrollbar": "^0.10.3",
     "mixpanel": "^0.17.0",
     "mixpanel-browser": "^2.45.0",
