@@ -43,6 +43,10 @@
       "destination": "/notion/faq"
     },
     {
+      "source": "/disclaimer",
+      "destination": "/notion/disclaimer"
+    },
+    {
       "source": "/mp/lib.min.js",
       "destination": "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"
     },
