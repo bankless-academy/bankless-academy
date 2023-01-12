@@ -36,6 +36,9 @@ const OptionMenu = ({
           <ExternalLink href="/faq" color="white">
             <MenuItem>FAQ</MenuItem>
           </ExternalLink>
+          <ExternalLink href="/disclaimer" color="white">
+            <MenuItem>Disclaimer</MenuItem>
+          </ExternalLink>
           <ExternalLink href="/bug" color="white">
             <MenuItem>Report a bug</MenuItem>
           </ExternalLink>
