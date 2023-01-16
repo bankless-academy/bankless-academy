@@ -488,13 +488,6 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
   }
 `
 
-const GoldButton = styled(Button)`
-  background: linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%);
-  :hover {
-    border: 1px solid #f1b15a;
-  }
-`
-
 const Article = ({
   lesson,
   extraKeywords,
@@ -591,9 +584,9 @@ const Article = ({
           borderRadius="lg"
         >
           <ExternalLink href={lesson.mirrorLink}>
-            <GoldButton variant="primary" w="100%">
+            <Button variant="primaryGold" w="100%">
               Collect Entry
-            </GoldButton>
+            </Button>
           </ExternalLink>
         </Box>
         <Box
