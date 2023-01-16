@@ -73,6 +73,10 @@ export const QUESTS: string[] = LESSONS.filter((lesson) => lesson.quest).map(
   (lesson) => lesson.quest
 )
 
+export const NOTION_IDS: string[] = LESSONS.filter(
+  (lesson) => !lesson.isArticle
+).map((lesson) => lesson.notionId)
+
 export const EMAIL_CONTACT = 'support@banklessacademy.com'
 
 export const GENERIC_ERROR_MESSAGE = `Something went wrong ... please contact ${EMAIL_CONTACT}`
