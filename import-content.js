@@ -110,7 +110,7 @@ axios
       console.log('Notion lesson link: ', `${POTION_API}/html?id=${notion.id}`)
 
       if (lesson.description === undefined) lesson.description = ''
-      if (lesson.socialImageLink === undefined) lesson.socialImageLink = null
+      if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.kudosId === undefined) lesson.kudosId = null
       if (lesson.kudosImageLink === undefined) lesson.kudosImageLink = null
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
@@ -222,7 +222,7 @@ axios
 
           lesson.imageLinks = []
           // data cleaning
-          htmlPage.data = htmlPage.data
+          htmlPage.data = htmlPage.data.includes('<h1 notion-id=') ? htmlPage.data
             .replace(/"/g, "'")
             // strip parentheses content (slide numbers)
             // .replace(/ *\([^)]*\) */g, '')
@@ -234,7 +234,7 @@ axios
             )
             .replace(/<\/h1>/g, `","content": "`)
             // remove extra "}, at the beginning
-            .substr(3)
+            .substr(3) : `{"type": "LEARN", "title": "TODO", "content": "<p>slide content</p>`
           const content = JSON.parse(`[${htmlPage.data}"}]`)
           let quizNb = 0
           const slides = content.map((slide) => {
@@ -346,6 +346,12 @@ axios
           lesson.slides = slides
           // console.log('lesson', lesson)
           lessons[index] = lesson
+
+          if (lesson.publicationStatus === 'planned') {
+            lesson.lessonImageLink = '/images/coming-soon-lesson.png'
+            delete lesson.socialImageLink
+          }
+
           // TODO: remove old images (diff between old/new lesson.imageLinks)
         })
     })
