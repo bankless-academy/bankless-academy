@@ -1,4 +1,4 @@
-import { INFURA_ID } from 'constants/index'
+import { INFURA_KEY } from 'constants/index'
 import { IS_MINTKUDOS_SANDBOX } from 'constants/kudos'
 
 const TESTNET_NETWORKS = IS_MINTKUDOS_SANDBOX
@@ -8,7 +8,7 @@ const TESTNET_NETWORKS = IS_MINTKUDOS_SANDBOX
         image: '/images/eth-test.svg',
         currencySymbol: 'GoerliETH',
         chainId: 5,
-        rpcUrl: `https://goerli.infura.io/v3/${INFURA_ID}`,
+        rpcUrl: `https://goerli.infura.io/v3/${INFURA_KEY}`,
         rpcUrlAdd: 'https://goerli.infura.io/v3/',
         faucet: 'https://goerlifaucet.com/',
         blockExplorer: 'https://goerli.etherscan.io/',
@@ -19,7 +19,7 @@ const TESTNET_NETWORKS = IS_MINTKUDOS_SANDBOX
         networkName: 'Matic (Polygon) Testnet Mumbai',
         currencySymbol: 'MATIC',
         chainId: 80001,
-        rpcUrl: `https://polygon-mumbai.infura.io/v3/${INFURA_ID}`,
+        rpcUrl: `https://polygon-mumbai.infura.io/v3/${INFURA_KEY}`,
         rpcUrlAdd: 'https://rpc-mumbai.maticvigil.com',
         faucet: 'https://faucet.matic.network/',
         blockExplorer: 'https://mumbai.polygonscan.com/',
@@ -33,7 +33,7 @@ export const NETWORKS = Object.freeze({
     image: '/images/eth.svg',
     currencySymbol: 'ETH',
     chainId: 1,
-    rpcUrl: `https://mainnet.infura.io/v3/${INFURA_ID}`,
+    rpcUrl: `https://mainnet.infura.io/v3/${INFURA_KEY}`,
     rpcUrlAdd: 'https://mainnet.infura.io/v3/',
     blockExplorer: 'https://etherscan.io/',
   },
@@ -43,7 +43,7 @@ export const NETWORKS = Object.freeze({
     networkName: 'Matic (Polygon) Mainnet',
     currencySymbol: 'MATIC',
     chainId: 137,
-    rpcUrl: `https://polygon-mainnet.infura.io/v3/${INFURA_ID}`,
+    rpcUrl: `https://polygon-mainnet.infura.io/v3/${INFURA_KEY}`,
     rpcUrlAdd: 'https://polygon-rpc.com',
     faucet: 'https://matic.supply/',
     blockExplorer: 'https://polygonscan.com',

@@ -17,7 +17,7 @@ import {
   ACTIVATE_MIXPANEL,
   ALCHEMY_KEY,
   DOMAIN_PROD,
-  INFURA_ID,
+  INFURA_KEY,
   MIRROR_ARTICLE_ADDRESSES,
 } from 'constants/index'
 import { NETWORKS, SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
@@ -94,7 +94,7 @@ export const injected = new InjectedConnector({
 })
 
 export const walletConnect = new WalletConnectConnector({
-  infuraId: INFURA_ID,
+  infuraId: INFURA_KEY,
   rpc: RPCS,
   bridge: 'https://bridge.walletconnect.org',
   qrcode: true,
@@ -220,7 +220,7 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['matic'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `https://polygon-mainnet.infura.io/v3/${INFURA_ID}`
+            `https://polygon-mainnet.infura.io/v3/${INFURA_KEY}`
           ),
       }
       const provider = ethers.getDefaultProvider(matic)

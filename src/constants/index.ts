@@ -63,8 +63,8 @@ export const MERKLE_DISTRIBUTOR_ADDRESS = {
 
 export const DefaultProviderName = 'DEFAULT'
 
-export const INFURA_ID =
-  process.env.INFURA_ID || 'cb578d660f614bbcb41b3c03553ff6f2'
+export const INFURA_KEY =
+  process.env.NEXT_PUBLIC_INFURA_KEY || 'cb578d660f614bbcb41b3c03553ff6f2'
 
 export const ALCHEMY_KEY = process.env.NEXT_PUBLIC_ALCHEMY_KEY
 
