@@ -179,7 +179,7 @@ const LessonCards: React.FC = () => {
               {lesson.publicationStatus === 'planned' && all === undefined ? (
                 <LessonBanner
                   iswhitelabel={IS_WHITELABEL.toString()}
-                  isArticle={lesson?.isArticle?.toString()}
+                  isarticle={lesson?.isArticle?.toString()}
                   style={{
                     aspectRatio: '1.91/1',
                   }}
@@ -194,7 +194,7 @@ const LessonCards: React.FC = () => {
                 >
                   <LessonBanner
                     iswhitelabel={IS_WHITELABEL.toString()}
-                    isArticle={lesson?.isArticle?.toString()}
+                    isarticle={lesson?.isArticle?.toString()}
                     cursor="pointer"
                     style={{
                       aspectRatio: '1.91/1',
