@@ -20,7 +20,7 @@ import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import LessonBanner from 'components/LessonBanner'
 import MODULES from 'constants/whitelabel_modules'
-import { api, IS_DEBUG, Mixpanel } from 'utils/index'
+import { getArticlesCollected, IS_DEBUG, Mixpanel } from 'utils/index'
 import SubscriptionModal from 'components/SubscriptionModal'
 import { LessonType } from 'entities/lesson'
 import { useActiveWeb3React } from 'hooks'
@@ -79,6 +79,10 @@ const LessonCards: React.FC = () => {
 
   const [stats, setStats]: any = useState(null)
   const [kudosMintedLS] = useLocalStorage('kudosMinted', [])
+  const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
+    'articlesCollected',
+    []
+  )
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [selectedLesson, setSelectedLesson] = useState<LessonType>()
   const { account } = useActiveWeb3React()
@@ -114,19 +118,13 @@ const LessonCards: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    const getArticlesCollected = async () => {
-      const result = await api('/api/articles-collected', {
-        address: account,
-      })
-      if (result && result.status === 200) {
-        // TODO
-        // console.log(result)
-      } else {
-        // TODO: handle errors
-      }
+    const updateArticlesCollected = async () => {
+      const articlesCollected = await getArticlesCollected(account)
+      if (articlesCollected && Array.isArray(articlesCollected))
+        setArticlesCollectedLS(articlesCollected)
     }
-    if (!IS_WHITELABEL) {
-      getArticlesCollected().catch(console.error)
+    if (!IS_WHITELABEL && account) {
+      updateArticlesCollected().catch(console.error)
     }
   }, [account])
 
@@ -147,8 +145,9 @@ const LessonCards: React.FC = () => {
             stats?.lessonCompleted &&
             stats?.lessonCompleted[lesson.notionId]) ||
           0
-        // TODO
-        const isArticleCollected = false
+        const isArticleCollected =
+          lesson.mirrorNFTAddress?.length &&
+          articlesCollectedLS.includes(lesson.mirrorNFTAddress)
         return (
           <LessonCard key={`lesson-${index}`} p={6} pb={8} borderRadius="3xl">
             <Box position="relative" zIndex="1">
@@ -206,7 +205,12 @@ const LessonCards: React.FC = () => {
                   </LessonBanner>
                 </InternalLink>
               )}
-              <Box display="flex" flexDirection="row-reverse" mt="4">
+              <Box
+                display="flex"
+                flexDirection="row-reverse"
+                mt="4"
+                justifyContent="space-between"
+              >
                 {lesson.publicationStatus === 'planned' && all === undefined ? (
                   <Button
                     variant={isNotified ? 'outline' : 'primary'}
@@ -248,7 +252,6 @@ const LessonCards: React.FC = () => {
                 {isKudosMinted && lesson.communityDiscussionLink ? (
                   <ExternalLink
                     href={lesson.communityDiscussionLink}
-                    mr="16px"
                     alt={`${lesson.name} community discussion`}
                   >
                     <Tooltip
@@ -261,14 +264,12 @@ const LessonCards: React.FC = () => {
                 ) : null}
                 {lesson.isArticle ? (
                   isArticleCollected ? (
-                    <Button variant="secondaryGold" mr="16px">
-                      Entry Collected
-                    </Button>
+                    <Button variant="secondaryGold">Entry Collected</Button>
                   ) : (
                     <ExternalLink href={lesson.mirrorLink}>
-                      <Button variant="primaryGold" mr="16px">
-                        Collect Entry
-                      </Button>
+                      <Tooltip hasArrow label="Collect Entry on Mirror.xyz">
+                        <Button variant="primaryGold">Collect Entry</Button>
+                      </Tooltip>
                     </ExternalLink>
                   )
                 ) : null}

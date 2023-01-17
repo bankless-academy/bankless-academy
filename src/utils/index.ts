@@ -13,7 +13,13 @@ import { Network } from '@ethersproject/networks'
 import queryString from 'query-string'
 import mixpanel, { Dict, Query } from 'mixpanel-browser'
 
-import { ACTIVATE_MIXPANEL, DOMAIN_PROD, INFURA_ID } from 'constants/index'
+import {
+  ACTIVATE_MIXPANEL,
+  ALCHEMY_ID,
+  DOMAIN_PROD,
+  INFURA_ID,
+  MIRROR_ARTICLE_ADDRESSES,
+} from 'constants/index'
 import { NETWORKS, SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
 import ONEINCH_V4_ABI from 'abis/1inch_v4.json'
 import ONEINCH_V5_ABI from 'abis/1inch_v5.json'
@@ -369,5 +375,29 @@ export async function api(url: string, data: any): Promise<AxiosResponse> {
     }
   } catch (error) {
     console.error(error)
+  }
+}
+
+export async function getArticlesCollected(address: string): Promise<[]> {
+  try {
+    // TODO: whitelist domains
+    const ownerNFTs = await axios.get(
+      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_ID}/getNFTs?owner=${address}&pageSize=100${MIRROR_ARTICLE_ADDRESSES.map(
+        (articlAddress) => `&contractAddresses[]=${articlAddress}`
+      ).join()}&withMetadata=false`
+    )
+    if (ownerNFTs.data) {
+      // console.log(ownerNFTs.data?.ownedNfts)
+      const articlesCollected = ownerNFTs.data?.ownedNfts.map(
+        (nft) => nft.contract.address
+      )
+      // console.log(articlesCollected)
+      return articlesCollected
+    } else {
+      return []
+    }
+  } catch (error) {
+    console.error(error)
+    return []
   }
 }
