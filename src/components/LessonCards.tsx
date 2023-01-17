@@ -224,6 +224,7 @@ const LessonCards: React.FC = () => {
                         lesson: lesson.name,
                       })
                     }}
+                    cursor={isNotified ? 'default' : 'pointer'}
                   >
                     {isNotified ? 'Subscribed' : 'Notify me'}
                   </Button>
