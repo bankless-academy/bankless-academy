@@ -38,6 +38,7 @@ const KEY_MATCHING = {
   'End of Lesson text': 'endOfLessonText',
   'Community discussion link': 'communityDiscussionLink',
   'Mirror link': 'mirrorLink',
+  'Mirror NFT address': 'mirrorNFTAddress',
 }
 
 const args = process.argv
@@ -98,8 +99,8 @@ axios
           Object.assign(obj, {
             // transform to number if the string contains a number
             [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k])) ||
-              // ignore type transform for ModuleId
-              k === 'Module'
+              // ignore type transform for ModuleId & mirrorNFTAddress
+              (k === 'Module' || k === 'Mirror NFT address')
               ? notion.fields[k]
               : parseInt(notion.fields[k]),
           }),
@@ -125,7 +126,8 @@ axios
         lesson.moduleId = lesson.moduleId[0]
       }
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
-      if (lesson.mirrorLink === (undefined || null)) delete lesson.mirrorLink
+      if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
+      if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
 
       // console.log(lesson)
 

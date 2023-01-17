@@ -28,6 +28,7 @@ export interface LessonType {
   communityDiscussionLink?: string
   isArticle?: boolean
   mirrorLink?: string
+  mirrorNFTAddress?: string
   articleContent?: string
   slides?: {
     type: SlideType
