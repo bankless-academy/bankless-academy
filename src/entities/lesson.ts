@@ -20,7 +20,7 @@ export interface LessonType {
   knowledgeRequirements?: string
   quest?: QuestComponentType
   imageLinks?: string[]
-  publicationStatus: 'publish' | 'hidden' | 'preview'
+  publicationStatus: 'publish' | 'planned' | 'hidden'
   featuredOrderOnHomepage?: number
   isCommentsEnabled: boolean
   endOfLessonRedirect?: string
@@ -28,6 +28,7 @@ export interface LessonType {
   communityDiscussionLink?: string
   isArticle?: boolean
   mirrorLink?: string
+  mirrorNFTAddress?: string
   articleContent?: string
   slides?: {
     type: SlideType

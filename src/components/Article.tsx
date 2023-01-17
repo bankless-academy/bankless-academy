@@ -11,14 +11,15 @@ import {
 import { ArrowRight } from 'phosphor-react'
 import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
+import { useLocalStorage } from 'usehooks-ts'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
 
 import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import { LessonType } from 'entities/lesson'
-import { useSmallScreen } from 'hooks/index'
-import { KEYWORDS } from 'constants/index'
-import { Mixpanel } from 'utils'
+import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
+import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
+import { getArticlesCollected, Mixpanel } from 'utils'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -488,13 +489,6 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
   }
 `
 
-const GoldButton = styled(Button)`
-  background: linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%);
-  :hover {
-    border: 1px solid #f1b15a;
-  }
-`
-
 const Article = ({
   lesson,
   extraKeywords,
@@ -503,11 +497,32 @@ const Article = ({
   extraKeywords?: any
 }): React.ReactElement => {
   const [isSmallScreen] = useSmallScreen()
-  const keywords = { ...KEYWORDS, ...extraKeywords }
+  const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
+    'articlesCollected',
+    []
+  )
+  const { account } = useActiveWeb3React()
 
   useEffect(() => {
     Mixpanel.track('open_lesson', { lesson: lesson?.name })
   }, [])
+
+  useEffect(() => {
+    const updateArticlesCollected = async () => {
+      const articlesCollected = await getArticlesCollected(account)
+      if (articlesCollected && Array.isArray(articlesCollected))
+        setArticlesCollectedLS(articlesCollected)
+    }
+    if (!IS_WHITELABEL && account) {
+      updateArticlesCollected().catch(console.error)
+    }
+  }, [account])
+
+  const keywords = { ...KEYWORDS, ...extraKeywords }
+
+  const isArticleCollected =
+    lesson.mirrorNFTAddress?.length &&
+    articlesCollectedLS.includes(lesson.mirrorNFTAddress)
 
   return (
     <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
@@ -590,11 +605,19 @@ const Article = ({
           px="6"
           borderRadius="lg"
         >
-          <ExternalLink href={lesson.mirrorLink}>
-            <GoldButton variant="primary" w="100%">
-              Collect Entry
-            </GoldButton>
-          </ExternalLink>
+          {isArticleCollected ? (
+            <Button variant="secondaryGold" w="100%">
+              Entry Collected
+            </Button>
+          ) : (
+            <ExternalLink href={lesson.mirrorLink}>
+              <Tooltip hasArrow label="Collect Entry on Mirror.xyz">
+                <Button variant="primaryGold" w="100%">
+                  Collect Entry
+                </Button>
+              </Tooltip>
+            </ExternalLink>
+          )}
         </Box>
         <Box
           // border="1px solid #989898"

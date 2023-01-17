@@ -30,7 +30,7 @@ import {
 } from 'components/Icons'
 import { HOMEPAGE_BACKGROUND, IS_WHITELABEL } from 'constants/index'
 import { Mixpanel } from 'utils/index'
-import NewsletterModal from 'components/NewsletterModal'
+import SubscriptionModal from 'components/SubscriptionModal'
 import { useSmallScreen } from 'hooks/index'
 
 const Card = styled(Box)`
@@ -188,7 +188,7 @@ const HomePage = (): JSX.Element => {
               updates!`}
               </Box>
             </Box>
-            <NewsletterModal isOpen={isOpen} onClose={onClose} />
+            <SubscriptionModal isOpen={isOpen} onClose={onClose} />
             <FeaturedLessons />
             <>
               <Box mt="16">
