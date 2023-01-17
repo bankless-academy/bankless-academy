@@ -32,7 +32,7 @@ import ENSName from 'components/ENSName'
 import ExternalLink from 'components/ExternalLink'
 import { useWalletWeb3React } from 'hooks/index'
 import { walletConnect, injected } from 'utils'
-import { LESSONS, INFURA_ID, ALCHEMY_ID } from 'constants/index'
+import { LESSONS, INFURA_KEY, ALCHEMY_KEY } from 'constants/index'
 import {
   MINTKUDOS_API,
   MINTKUDOS_COMMUNITY_ID,
@@ -42,8 +42,8 @@ import { KudosType } from 'entities/kudos'
 import { SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
 
 export const dAvatarProvider = getDefaultProvider(1, {
-  infura: INFURA_ID,
-  alchemy: ALCHEMY_ID,
+  infura: INFURA_KEY,
+  alchemy: ALCHEMY_KEY,
   quorum: 1,
 })
 
@@ -89,7 +89,7 @@ const ConnectWalletButton = ({
       walletconnect: {
         package: WalletConnectProvider,
         options: {
-          infuraId: INFURA_ID,
+          infuraId: INFURA_KEY,
           rpc: RPCS,
         },
         connector: async () => {

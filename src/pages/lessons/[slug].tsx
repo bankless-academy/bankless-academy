@@ -5,7 +5,7 @@ import { Container } from '@chakra-ui/react'
 import { MetaData } from 'components/Head'
 import Lesson from 'components/Lesson'
 import Article from 'components/Article'
-import { LESSONS } from 'constants/index'
+import { DEFAULT_METADATA, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 
@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const pageMeta: MetaData = {
     title: currentLesson.name,
     description: currentLesson.description,
-    image: currentLesson.socialImageLink,
+    image: currentLesson.socialImageLink || DEFAULT_METADATA.image,
     isLesson: !currentLesson.isArticle,
   }
   return {

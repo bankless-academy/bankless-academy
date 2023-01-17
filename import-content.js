@@ -38,6 +38,7 @@ const KEY_MATCHING = {
   'End of Lesson text': 'endOfLessonText',
   'Community discussion link': 'communityDiscussionLink',
   'Mirror link': 'mirrorLink',
+  'Mirror NFT address': 'mirrorNFTAddress',
 }
 
 const args = process.argv
@@ -98,8 +99,8 @@ axios
           Object.assign(obj, {
             // transform to number if the string contains a number
             [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k])) ||
-              // ignore type transform for ModuleId
-              k === 'Module'
+              // ignore type transform for ModuleId & mirrorNFTAddress
+              (k === 'Module' || k === 'Mirror NFT address')
               ? notion.fields[k]
               : parseInt(notion.fields[k]),
           }),
@@ -110,7 +111,7 @@ axios
       console.log('Notion lesson link: ', `${POTION_API}/html?id=${notion.id}`)
 
       if (lesson.description === undefined) lesson.description = ''
-      if (lesson.socialImageLink === undefined) lesson.socialImageLink = null
+      if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.kudosId === undefined) lesson.kudosId = null
       if (lesson.kudosImageLink === undefined) lesson.kudosImageLink = null
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
@@ -125,7 +126,8 @@ axios
         lesson.moduleId = lesson.moduleId[0]
       }
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
-      if (lesson.mirrorLink === (undefined || null)) delete lesson.mirrorLink
+      if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
+      if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
 
       // console.log(lesson)
 
@@ -222,7 +224,7 @@ axios
 
           lesson.imageLinks = []
           // data cleaning
-          htmlPage.data = htmlPage.data
+          htmlPage.data = htmlPage.data.includes('<h1 notion-id=') ? htmlPage.data
             .replace(/"/g, "'")
             // strip parentheses content (slide numbers)
             // .replace(/ *\([^)]*\) */g, '')
@@ -234,7 +236,7 @@ axios
             )
             .replace(/<\/h1>/g, `","content": "`)
             // remove extra "}, at the beginning
-            .substr(3)
+            .substr(3) : `{"type": "LEARN", "title": "TODO", "content": "<p>slide content</p>`
           const content = JSON.parse(`[${htmlPage.data}"}]`)
           let quizNb = 0
           const slides = content.map((slide) => {
@@ -346,6 +348,12 @@ axios
           lesson.slides = slides
           // console.log('lesson', lesson)
           lessons[index] = lesson
+
+          if (lesson.publicationStatus === 'planned') {
+            lesson.lessonImageLink = '/images/coming-soon-lesson.png'
+            delete lesson.socialImageLink
+          }
+
           // TODO: remove old images (diff between old/new lesson.imageLinks)
         })
     })

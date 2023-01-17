@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 // TODO: clean dirty HACK
 const LessonBanner = styled(Box)<{
   iswhitelabel: string
-  isArticle?: string
+  isarticle?: string
 }>`
   ${(props) =>
     props.iswhitelabel === 'true'
@@ -13,7 +13,7 @@ const LessonBanner = styled(Box)<{
         border-radius: 10px;
       }
   `
-      : props.isArticle === 'true'
+      : props.isarticle === 'true'
       ? `
     margin-left: -23px;
     margin-right: -23px;

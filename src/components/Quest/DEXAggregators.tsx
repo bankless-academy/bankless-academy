@@ -24,17 +24,19 @@ const DEXAggregators = (
     localStorage.getItem('quest-dex-aggregators')
   )
   const [isCheckingTx, setIsCheckingTx] = useState(false)
-  const [tx, setTx] = useState(localStorage.getItem('quest-dex-aggregators-tx'))
+  const [tx, setTx] = useState(
+    localStorage.getItem('quest-dex-aggregators-tx') || ''
+  )
   const [isSmallScreen] = useSmallScreen()
 
   const validateQuest = async (tx) => {
     try {
-      if (tx !== '') {
+      if (tx?.length) {
         setIsCheckingTx(true)
         const result = await api('/api/validate-quest', {
           address: account,
           quest: 'DEXAggregators',
-          tx: tx.replaceAll('https://polygonscan.com/tx/', ''),
+          tx: tx?.replaceAll('https://polygonscan.com/tx/', ''),
         })
         if (result && result.status === 200) {
           setIsCheckingTx(false)
