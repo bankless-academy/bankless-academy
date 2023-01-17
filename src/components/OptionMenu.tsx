@@ -6,6 +6,7 @@ import {
   MenuList,
   MenuItem,
   useDisclosure,
+  Box,
 } from '@chakra-ui/react'
 import { Mixpanel } from 'utils'
 import SubscriptionModal from 'components/SubscriptionModal'
@@ -23,7 +24,7 @@ const OptionMenu = ({
   const twitterLink = `https://twitter.com/${TWITTER_ACCOUNT}`
 
   return (
-    <>
+    <Box zIndex="2">
       <Menu>
         <MenuButton
           variant="secondary"
@@ -61,7 +62,7 @@ const OptionMenu = ({
         </MenuList>
       </Menu>
       <SubscriptionModal isOpen={isOpen} onClose={onClose} />
-    </>
+    </Box>
   )
 }
 
