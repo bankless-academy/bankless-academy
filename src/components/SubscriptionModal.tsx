@@ -65,7 +65,6 @@ const SubscriptionModal = ({
             />
           </InputGroup>
           <Box textAlign="right" mb="6">
-            {/* TODO: create white button theme */}
             <Button
               size="lg"
               variant="primaryWhiteBig"
