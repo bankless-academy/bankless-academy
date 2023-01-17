@@ -15,7 +15,7 @@ import mixpanel, { Dict, Query } from 'mixpanel-browser'
 
 import {
   ACTIVATE_MIXPANEL,
-  ALCHEMY_ID,
+  ALCHEMY_KEY,
   DOMAIN_PROD,
   INFURA_ID,
   MIRROR_ARTICLE_ADDRESSES,
@@ -382,7 +382,7 @@ export async function getArticlesCollected(address: string): Promise<[]> {
   try {
     // TODO: whitelist domains
     const ownerNFTs = await axios.get(
-      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_ID}/getNFTs?owner=${address}&pageSize=100${MIRROR_ARTICLE_ADDRESSES.map(
+      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100${MIRROR_ARTICLE_ADDRESSES.map(
         (articlAddress) => `&contractAddresses[]=${articlAddress}`
       ).join()}&withMetadata=false`
     )

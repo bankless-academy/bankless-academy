@@ -32,7 +32,7 @@ import ENSName from 'components/ENSName'
 import ExternalLink from 'components/ExternalLink'
 import { useWalletWeb3React } from 'hooks/index'
 import { walletConnect, injected } from 'utils'
-import { LESSONS, INFURA_ID, ALCHEMY_ID } from 'constants/index'
+import { LESSONS, INFURA_ID, ALCHEMY_KEY } from 'constants/index'
 import {
   MINTKUDOS_API,
   MINTKUDOS_COMMUNITY_ID,
@@ -43,7 +43,7 @@ import { SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
 
 export const dAvatarProvider = getDefaultProvider(1, {
   infura: INFURA_ID,
-  alchemy: ALCHEMY_ID,
+  alchemy: ALCHEMY_KEY,
   quorum: 1,
 })
 
