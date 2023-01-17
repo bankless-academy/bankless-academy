@@ -68,15 +68,7 @@ const SubscriptionModal = ({
             {/* TODO: create white button theme */}
             <Button
               size="lg"
-              background="white"
-              color="#5D4E78"
-              variant="primaryBig"
-              border="2px solid transparent"
-              _hover={{
-                color: '#432877',
-                background: 'white',
-                border: '2px solid #b357ec',
-              }}
+              variant="primaryWhiteBig"
               onClick={async () => {
                 toast.closeAll()
                 if (!email)

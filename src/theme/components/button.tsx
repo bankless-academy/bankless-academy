@@ -68,6 +68,17 @@ const primaryBig = {
       },
 }
 
+const primaryWhiteBig = {
+  ...primaryBig,
+  background: 'white',
+  color: '#5D4E78',
+  border: '2px solid transparent',
+  _hover: {
+    background: 'white',
+    border: '2px solid #b357ec',
+  },
+}
+
 const primaryBigLast = {
   background:
     'linear-gradient(270deg, #FFFCF9 -44.74%, #F77B54 -11.81%, #916AB8 94.44%)',
@@ -121,6 +132,7 @@ type variantsTypes = {
   primary: variantType
   primaryGold: variantType
   primaryBig: variantType
+  primaryWhiteBig: variantType
   primaryBigLast: variantType
   secondary: variantType
   secondaryGold: variantType
@@ -131,6 +143,7 @@ const variants: variantsTypes = {
   primary,
   primaryGold,
   primaryBig,
+  primaryWhiteBig,
   primaryBigLast,
   secondary,
   secondaryGold,
