@@ -41,7 +41,11 @@ const SubscriptionModal = ({
         borderRadius="3xl"
         backdropFilter="blur(10px)"
       >
-        <ModalHeader>{lesson ? lesson.name : 'Newsletter'}</ModalHeader>
+        <ModalHeader>
+          {lesson
+            ? `Subscribe to '${lesson.name}' notifications`
+            : 'Newsletter'}
+        </ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <InputGroup size="lg">
