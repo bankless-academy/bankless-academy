@@ -53,18 +53,20 @@ const Stats = (): JSX.Element => {
             <Text fontSize="lg" color="orange.300">
               Number of lesson completion
             </Text>
-            {LESSONS.map((lesson, index) => {
-              const lessonCompleted =
-                stats?.lessonCompleted[lesson.notionId] || 0
-              return (
-                <>
-                  <p>
-                    {`${index + 1}. ${lesson.name}: `}
-                    {lessonCompleted}
-                  </p>
-                </>
-              )
-            })}
+            {LESSONS.filter((lesson) => !lesson.isArticle).map(
+              (lesson, index) => {
+                const lessonCompleted =
+                  stats?.lessonCompleted[lesson.notionId] || 0
+                return (
+                  <>
+                    <p>
+                      {`${index + 1}. ${lesson.name}: `}
+                      {lessonCompleted}
+                    </p>
+                  </>
+                )
+              }
+            )}
           </Box>
           <Box mt={8}>
             <Text fontSize="lg" color="orange.300">
