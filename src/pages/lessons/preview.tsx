@@ -10,10 +10,6 @@ import Lesson from 'components/Lesson'
 import Article from 'components/Article'
 import { MIRROR_WHITELISTED_ACCOUNTS } from 'constants/index'
 
-const pageMeta: MetaData = {
-  title: 'Live preview',
-}
-
 const processLesson = (htmlPage, notion_id) => {
   const lesson: any = { slug: 'preview' }
   lesson.imageLinks = []
@@ -107,6 +103,12 @@ const processLesson = (htmlPage, notion_id) => {
   return lesson
 }
 
+const pageMeta: MetaData = {
+  title: 'Live preview',
+  description: 'This is work in progress content.',
+  isLesson: true,
+}
+
 export const getStaticProps: GetStaticProps = async () => {
   return {
     props: { pageMeta },
@@ -150,8 +152,7 @@ const Lessons = (): JSX.Element => {
         .then(function (htmlPage) {
           if (!htmlPage.data.error) {
             const res = processLesson(htmlPage, id)
-            // eslint-disable-next-line no-console
-            console.log(res)
+            // console.log(res)
             setLesson(res)
           }
         })
