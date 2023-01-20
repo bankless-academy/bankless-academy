@@ -15,7 +15,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { address, embed } = req.body
+  const DEV_SECRET = process.env.DEV_SECRET
+  const param =
+    DEV_SECRET && req.query?.dev === DEV_SECRET ? req.query : req.body
+  const { address, embed } = param
 
   if (!address || typeof address === 'object')
     return res.status(400).json({ error: 'Wrong params' })
