@@ -4,9 +4,11 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { db, TABLES, TABLE } from 'utils/db'
 import { LESSONS } from 'constants/index'
 
-const NOTION_IDS: string[] = LESSONS.filter((lesson) => lesson.quest).map(
-  (lesson) => lesson.notionId
-)
+// Don't include Kudos testing or lessons without quest
+const NOTION_IDS: string[] = LESSONS.filter(
+  (lesson) =>
+    lesson.quest && lesson.notionId !== '7bc2bf9be4ac4e9181782f996a2a6060'
+).map((lesson) => lesson.notionId)
 
 export default async function handler(
   req: NextApiRequest,
