@@ -127,7 +127,11 @@ export default async function handler(
       if (sybil?.length) {
         // mark this user as a sybil attacker
         console.log('fraud detected:', sybil)
-        trackBE(address, 'duplicate_stamps', { target: sybil[0]?.id, embed })
+        trackBE(address, 'duplicate_stamps', {
+          sybil_id: sybil[0]?.id,
+          sybil_address: sybil[0]?.address,
+          embed,
+        })
         await db(TABLES.users)
           .where(TABLE.users.id, userId)
           .update({ sybil_user_id: sybil[0]?.id })
