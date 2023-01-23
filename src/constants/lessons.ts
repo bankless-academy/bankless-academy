@@ -122,15 +122,15 @@ const LESSONS: LessonType[] = [
     slug: 'wallet-basics',
     imageLinks: [
       '/lesson/wallet-basics/wallet-intro-7b45d75e.png',
-      '/lesson/wallet-basics/wallet-definition-4b8ae050.png',
-      '/lesson/wallet-basics/recovery-phrase-eaf7036b.png',
-      '/lesson/wallet-basics/public-key-70326f14.png',
-      '/lesson/wallet-basics/private-key-43290e53.png',
-      '/lesson/wallet-basics/custodial-wallet-c3a7cb80.png',
-      '/lesson/wallet-basics/non-custodial-wallet-a37460f1.png',
-      '/lesson/wallet-basics/hot-wallet-6117f51c.png',
-      '/lesson/wallet-basics/cold-wallet-3bd67115.png',
-      '/lesson/wallet-basics/metamask-wallet-a057e5b9.png'
+      '/lesson/wallet-basics/wallet-definition-e8f8f9a8.svg',
+      '/lesson/wallet-basics/recovery-phrase-c2d8fa26.svg',
+      '/lesson/wallet-basics/public-key-b6387071.svg',
+      '/lesson/wallet-basics/private-key-ca271641.svg',
+      '/lesson/wallet-basics/custodial-wallet-0538644f.svg',
+      '/lesson/wallet-basics/non-custodial-wallet-aee2708b.svg',
+      '/lesson/wallet-basics/hot-wallet-1d444d7c.svg',
+      '/lesson/wallet-basics/cold-wallet-59646edb.svg',
+      '/lesson/wallet-basics/metamask-wallet-521de184.svg'
     ],
     slides: [
       {
@@ -143,7 +143,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'baf157b016ba48a890eb4cacb4b903e5',
         title: 'Wallet Definition',
-        content: '<div class="bloc1"><p>In the world of cryptocurrency, a wallet refers to an application or device you can use to interact with a <code>blockchain</code>.</p><p>Your <code>wallet</code> functions as a lock-box that secures your access to the blockchain.</p><p>When your wallet is connected to a blockchain, you can make purchases, transfer digital assets, interact with applications, and more!</p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/wallet-definition-4b8ae050.png\'></div>'
+        content: '<div class="bloc1"><p>In the world of cryptocurrency, a wallet refers to an application or device you can use to interact with a <code>blockchain</code>.</p><p>Your <code>wallet</code> functions as a lock-box that secures your access to the blockchain.</p><p>When your wallet is connected to a blockchain, you can make purchases, transfer digital assets, interact with applications, and more!</p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/wallet-definition-e8f8f9a8.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -165,7 +165,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'f764c92b0620495981b32bd34dd1fc62',
         title: 'Recovery Phrase',
-        content: '<div class="bloc1"><p>When you set up a new <code>wallet</code>, the software generates a unique <code>recovery phrase</code> that is specific to that wallet account.</p><p>Also sometimes called a <em>seed phrase</em> or <em>secret recovery phrase</em>, your recovery phrase can be used to access your wallet and crypto assets if:</p><ul><li>Your wallet app or hardware fails unexpectedly or gets damaged.</li><li>You are unable to access it due to misplacement or theft.</li><li>You want to access your wallet account through the wallet app on a different computer or device.</li></ul><p>Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. That data is used to generate the <code>public key</code> and <code>private key</code> for your wallet.</p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/recovery-phrase-eaf7036b.png\'></div>'
+        content: '<div class="bloc1"><p>When you set up a new <code>wallet</code>, the software generates a unique <code>recovery phrase</code> that is specific to that wallet account.</p><p>Also sometimes called a <em>seed phrase</em> or <em>secret recovery phrase</em>, your recovery phrase can be used to access your wallet and crypto assets if:</p><ul><li>Your wallet app or hardware fails unexpectedly or gets damaged.</li><li>You are unable to access it due to misplacement or theft.</li><li>You want to access your wallet account through the wallet app on a different computer or device.</li></ul><p>Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. That data is used to generate the <code>public key</code> and <code>private key</code> for your wallet.</p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/recovery-phrase-c2d8fa26.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -187,13 +187,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'bf1bf37ca61845c5a4257cbaeff0e13c',
         title: 'Public Key',
-        content: '<div class="bloc1"><p>You just learned how your <code>recovery phrase</code> relates to a <code>public key</code> and <code>private key</code>.</p><p>Note that a wallet can contain multiple accounts, and <em>each account</em> has a unique pair of public and private keys.</p><p>Think of a public key like your home address. It is public, anyone can see it, and it identifies the location to use to send crypto assets to you.</p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/public-key-70326f14.png\'></div>'
+        content: '<div class="bloc1"><p>You just learned how your <code>recovery phrase</code> relates to a <code>public key</code> and <code>private key</code>.</p><p>Note that a wallet can contain multiple accounts, and <em>each account</em> has a unique pair of public and private keys.</p><p>Think of a public key like your home address. It is public, anyone can see it, and it identifies the location to use to send crypto assets to you.</p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/public-key-b6387071.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'a6dab3c7c04949baa0c5448f57c91cfe',
         title: 'Private Key',
-        content: '<div class="bloc1"><p>If your <code>public key</code> is like your home address, then your <code>private key</code> is like your house key.</p><p>It\'s called private because <em>only you</em> should have access to it.</p><p>The private key unlocks access to your wallet and your crypto assets, allowing you to send them to other wallet addresses.</p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/private-key-43290e53.png\'></div>'
+        content: '<div class="bloc1"><p>If your <code>public key</code> is like your home address, then your <code>private key</code> is like your house key.</p><p>It\'s called private because <em>only you</em> should have access to it.</p><p>The private key unlocks access to your wallet and your crypto assets, allowing you to send them to other wallet addresses.</p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/private-key-ca271641.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -215,7 +215,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'a92f95a2da2a4429942b6aad2a260e1b',
         title: 'Custodial Wallet',
-        content: '<div class="bloc1"><p>Since your <code>private key</code> unlocks access to your <code>wallet</code>, keeping it private and secure is very important!</p><p>Not all wallets let you control your private key. With a <code>custodial wallet</code>, another party controls it. Accounts on Coinbase and Kraken are examples of custodial wallets that hold your private key.</p><p>This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Plus, your access to the world of <code>DeFi</code> applications will be limited. </p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/custodial-wallet-c3a7cb80.png\'></div>'
+        content: '<div class="bloc1"><p>Since your <code>private key</code> unlocks access to your <code>wallet</code>, keeping it private and secure is very important!</p><p>Not all wallets let you control your private key. With a <code>custodial wallet</code>, another party controls it. Accounts on Coinbase and Kraken are examples of custodial wallets that hold your private key.</p><p>This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Plus, your access to the world of <code>DeFi</code> applications will be limited. </p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/custodial-wallet-0538644f.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -235,7 +235,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'a78db356b36c4bb19a85af61170b2471',
         title: 'Non-custodial Wallet',
-        content: '<div class="bloc1"><p>Your passport to the exciting worlds of <code>DeFi</code> and <code>Web3</code>—and the best way to safeguard your <code>private key</code> is a <code>non-custodial wallet</code>. </p><p>Remember: if you lose your private key, you will not be able to access your wallet to spend, withdraw, or transfer your crypto assets.</p><p>Fortunately, you <em>can</em> still recover your wallet with your <code>recovery phrase</code>. But if you lose that too, you will lose access to your wallet FOREVER!!!</p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/non-custodial-wallet-a37460f1.png\'></div>'
+        content: '<div class="bloc1"><p>Your passport to the exciting worlds of <code>DeFi</code> and <code>Web3</code>—and the best way to safeguard your <code>private key</code> is a <code>non-custodial wallet</code>. </p><p>Remember: if you lose your private key, you will not be able to access your wallet to spend, withdraw, or transfer your crypto assets.</p><p>Fortunately, you <em>can</em> still recover your wallet with your <code>recovery phrase</code>. But if you lose that too, you will lose access to your wallet FOREVER!!!</p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/non-custodial-wallet-aee2708b.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -277,13 +277,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '6c2cef180a894009807af59ed2d5f27c',
         title: 'Hot Wallet',
-        content: '<div class="bloc1"><p>There are two major types of <code>non-custodial wallets</code>: software wallets (also called <code>hot wallets</code>) and hardware wallets (also called <code>cold wallets</code>)</p><p>A software wallet is an app or browser extension that remains connected to the internet.</p><ul><li>PROS 👍: It is usually free, simple to set up, and easy to use.</li><li>CONS 👎: Because it is software connected to the internet, it\'s potentially a target for hackers.</li></ul></div><div class="bloc2"><img src=\'/lesson/wallet-basics/hot-wallet-6117f51c.png\'></div>'
+        content: '<div class="bloc1"><p>There are two major types of <code>non-custodial wallets</code>: software wallets (also called <code>hot wallets</code>) and hardware wallets (also called <code>cold wallets</code>)</p><p>A software wallet is an app or browser extension that remains connected to the internet.</p><ul><li>PROS 👍: It is usually free, simple to set up, and easy to use.</li><li>CONS 👎: Because it is software connected to the internet, it\'s potentially a target for hackers.</li></ul></div><div class="bloc2"><img src=\'/lesson/wallet-basics/hot-wallet-1d444d7c.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '2db8d9f5695b4b46aa35bef2e17bcb75',
         title: 'Cold Wallet',
-        content: '<div class="bloc1"><p>A <code>cold wallet</code>, or hardware wallet, is only connected to the internet when you physically connect it to a computer or device.</p><ul><li>PROS 👍: It is more secure from threats like hacking.</li><li>CONS 👎: It is not free, not ideal for quick transactions, and can be cumbersome to use.</li></ul></div><div class="bloc2"><img src=\'/lesson/wallet-basics/cold-wallet-3bd67115.png\'></div>'
+        content: '<div class="bloc1"><p>A <code>cold wallet</code>, or hardware wallet, is only connected to the internet when you physically connect it to a computer or device.</p><ul><li>PROS 👍: It is more secure from threats like hacking.</li><li>CONS 👎: It is not free, not ideal for quick transactions, and can be cumbersome to use.</li></ul></div><div class="bloc2"><img src=\'/lesson/wallet-basics/cold-wallet-59646edb.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -303,7 +303,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '66d21ca797f44f02861545e2042582c8',
         title: 'MetaMask Wallet',
-        content: '<div class="bloc1"><p>There are several <code>non-custodial</code> <code>hot wallets</code> available today. We will explore the popular MetaMask Wallet for the remainder of this lesson since:</p><ul><li>It is likely to be compatible with most <code>DeFi</code> apps.</li><li>It has a browser extension for Chrome, Brave, Edge, and Firefox internet browsers.</li><li>It is also available as a mobile app for Android and iOS users.</li></ul></div><div class="bloc2"><img src=\'/lesson/wallet-basics/metamask-wallet-a057e5b9.png\'></div>'
+        content: '<div class="bloc1"><p>There are several <code>non-custodial</code> <code>hot wallets</code> available today. We will explore the popular MetaMask Wallet for the remainder of this lesson since:</p><ul><li>It is likely to be compatible with most <code>DeFi</code> apps.</li><li>It has a browser extension for Chrome, Brave, Edge, and Firefox internet browsers.</li><li>It is also available as a mobile app for Android and iOS users.</li></ul></div><div class="bloc2"><img src=\'/lesson/wallet-basics/metamask-wallet-521de184.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -354,7 +354,7 @@ const LESSONS: LessonType[] = [
     imageLinks: [
       '/lesson/blockchain-basics/introduction-6d0b6137.svg',
       '/lesson/blockchain-basics/blockchain-structure-346dae14.svg',
-      '/lesson/blockchain-basics/examining-the-ledger-82fd9762.svg',
+      '/lesson/blockchain-basics/examining-the-ledger-0fbbcb4a.svg',
       '/lesson/blockchain-basics/transactions-on-the-ledger-f4f9d470.svg',
       '/lesson/blockchain-basics/block-anatomy-8ba3bea2.svg',
       '/lesson/blockchain-basics/inside-a-block-b11c74ce.svg',
@@ -394,7 +394,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'edad96fceca6484eb72f5b301f33dea2',
         title: 'Examining the Ledger',
-        content: '<div class="bloc1"><p>In typical money systems, we trust third parties like banks to keep track of how much money each person has. But, to be truly Bankless, we want a system that doesn’t require us to trust one entity to manage the ledger.</p><p>The <code>ledger</code> is the list of ALL transactions ever made on a blockchain, and anyone can see it for <code>public</code> blockchains. Discrete groups of transactions from the ledger form the blocks that together make the blockchain.</p><p>When new transactions are added to the ledger, balances stored at each <code>address</code> get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever. </p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/examining-the-ledger-82fd9762.svg\'></div>'
+        content: '<div class="bloc1"><p>In typical money systems, we trust third parties like banks to keep track of how much money each person has. But, to be truly Bankless, we want a system that doesn’t require us to trust one entity to manage the ledger.</p><p>The <code>ledger</code> is the list of ALL transactions ever made on a blockchain, and anyone can see it for <code>public</code> blockchains. Discrete groups of transactions from the ledger form the blocks that together make the blockchain.</p><p>When new transactions are added to the ledger, balances stored at each <code>address</code> get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever. </p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/examining-the-ledger-0fbbcb4a.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -544,12 +544,12 @@ const LESSONS: LessonType[] = [
     lessonImageLink: '/lesson/web3-security/lesson-09017125.png',
     socialImageLink: '/lesson/web3-security/social-795f9c67.jpg',
     learningActions: 'Avoid the scams in web3 and keep your assets safe.',
-    marketingDescription: 'Protect yourself from the most common scams in web3.',
+    marketingDescription: 'Protect yourself and your wallet from the most common scams in web3.',
     kudosId: 2565,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
-    description: 'Protect yourself from the most common scams in web3.',
+    description: 'Protect yourself and your wallet from the most common scams in web3.',
     name: 'Web3 Security',
     quest: 'Web3Security',
     publicationStatus: 'publish',
@@ -561,15 +561,15 @@ const LESSONS: LessonType[] = [
     notionId: '7a5b9b7afe804e6984bf279301dfa1db',
     slug: 'web3-security',
     imageLinks: [
-      '/lesson/web3-security/money-in-web2-0faeb54f.svg',
-      '/lesson/web3-security/money-in-web3--28d5af95.svg',
-      '/lesson/web3-security/two-factor-authentication-e91b624a.svg',
-      '/lesson/web3-security/social-engineering-scams-07dbba27.svg',
-      '/lesson/web3-security/social-media-safety-f4f4e1fb.svg',
-      '/lesson/web3-security/social-media-best-practices-34122b30.svg',
-      '/lesson/web3-security/scam-tokens-2fddadcc.svg',
-      '/lesson/web3-security/hardware-wallets-1ab4665d.svg',
-      '/lesson/web3-security/wallet-strategies-e2d78fc5.svg'
+      '/lesson/web3-security/money-in-web2-78779f3c.svg',
+      '/lesson/web3-security/money-in-web3--832997fe.svg',
+      '/lesson/web3-security/two-factor-authentication-75e29563.svg',
+      '/lesson/web3-security/social-engineering-scams-5750ad84.svg',
+      '/lesson/web3-security/social-media-safety-fbe97b9e.svg',
+      '/lesson/web3-security/social-media-best-practices-0776e310.svg',
+      '/lesson/web3-security/scam-tokens-cbab390e.svg',
+      '/lesson/web3-security/hardware-wallets-191cacd1.svg',
+      '/lesson/web3-security/wallet-strategies-857fd09c.svg'
     ],
     slides: [
       {
@@ -582,13 +582,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '44450164401340659f6553fadd0230e4',
         title: 'Money in Web2',
-        content: '<div class="bloc1"><p>In web2, the institutions hold money on behalf of people. A user must prove their identity to an institution in order to access and use their money. It’s the same as a bank account or a <code>centralized exchange</code> (CEX); one needs a login ID and a password.</p><p>For a scammer to gain access to your money, they need this ID + password combination. Because the institutions are charged with protecting your money, fraudulent transactions can be reversed - like a credit card transaction dispute.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/money-in-web2-0faeb54f.svg\'></div>'
+        content: '<div class="bloc1"><p>In web2, the institutions hold money on behalf of people. A user must prove their identity to an institution in order to access and use their money. It’s the same as a bank account or a <code>centralized exchange</code> (CEX); one needs a login ID and a password.</p><p>For a scammer to gain access to your money, they need this ID + password combination. Because the institutions are charged with protecting your money, fraudulent transactions can be reversed - like a credit card transaction dispute.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/money-in-web2-78779f3c.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'c10187a8772f40faace2a77bd2f86940',
         title: 'Money in Web3 ',
-        content: '<div class="bloc1"><p>In web3, money works differently. It’s more like a locked cash wallet; once money is spent, it’s gone. Only private keys control access to the wallet. So for a scammer to gain access they need the <code>seed phrase</code>, that special set of secret words, to access someone’s <code>private keys</code> and steal from their wallet. </p><p>It’s very important to protect seed phrases; people should <em><strong>never</strong></em> give their seed phrase to anyone for any reason. Also, never enter seed phrases digitally; digital photos, notes applications, and text files on your computer can all get compromised.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/money-in-web3--28d5af95.svg\'></div>'
+        content: '<div class="bloc1"><p>In web3, money works differently. It’s more like a locked cash wallet; once money is spent, it’s gone. Only private keys control access to the wallet. So for a scammer to gain access they need the <code>seed phrase</code>, that special set of secret words, to access someone’s <code>private keys</code> and steal from their wallet. </p><p>It’s very important to protect seed phrases; people should <em><strong>never</strong></em> give their seed phrase to anyone for any reason. Also, never enter seed phrases digitally; digital photos, notes applications, and text files on your computer can all get compromised.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/money-in-web3--832997fe.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -636,7 +636,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '43fec0fae2ae42db8ed8780bbbd7f46a',
         title: 'Two Factor Authentication',
-        content: '<div class="bloc1"><p><code>Two Factor Authentication</code>, also known as 2FA, is a secondary layer of web2 security.</p><p>Many people have had their web2 accounts hacked, or have had their money and credentials stolen despite having strong passwords. Web2 websites (and even <code>password managers</code>) often use a second layer of security 2FA as well. 2FA generates single-use codes sent to another device, in addition to the normal password, to enable website log-in. The other device could be a phone, a desktop computer, or even a small device you can attach to your keychain.</p><p>Phone (SMS) 2FA is better than no 2FA, but phone companies are vulnerable to scammers also. They can use <code>social engineering</code> to impersonate the account owner, bypass the company’s security checks, and gain access to the owner’s account - all without the real owner knowing. Authentication applications like Authy or Google Authenticator are more secure 2FA solutions.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/two-factor-authentication-e91b624a.svg\'></div>'
+        content: '<div class="bloc1"><p><code>Two Factor Authentication</code>, also known as 2FA, is a secondary layer of web2 security.</p><p>Many people have had their web2 accounts hacked, or have had their money and credentials stolen despite having strong passwords. Web2 websites (and even <code>password managers</code>) often use a second layer of security 2FA as well. 2FA generates single-use codes sent to another device, in addition to the normal password, to enable website log-in. The other device could be a phone, a desktop computer, or even a small device you can attach to your keychain.</p><p>Phone (SMS) 2FA is better than no 2FA, but phone companies are vulnerable to scammers also. They can use <code>social engineering</code> to impersonate the account owner, bypass the company’s security checks, and gain access to the owner’s account - all without the real owner knowing. Authentication applications like Authy or Google Authenticator are more secure 2FA solutions.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/two-factor-authentication-75e29563.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -658,7 +658,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'ae2890ad87d94b49b1e85575da36c4ee',
         title: 'Social Engineering Scams',
-        content: '<div class="bloc1"><p>In both web2 and web3, scammers use <code>phishing</code> tactics to trick people into giving up their passwords and seed phrases. Often they’ll pretend to be product support staff offering help, “Hello this is Metamask support”, or pretend to be an admin of a community, “New NFT mint, exclusive for our community”.</p><p>They use <code>social engineering</code> to pressure people. Examples include:</p><ul><li>“Time is running out!” - making you feel rushed.</li><li>“Congratulations you won our giveaway!” - making things feel exclusive.</li><li>”Get early access to our pre-mint!” - generating <code>FOMO</code> in the person being scammed.</li></ul></div><div class="bloc2"><img src=\'/lesson/web3-security/social-engineering-scams-07dbba27.svg\'></div>'
+        content: '<div class="bloc1"><p>In both web2 and web3, scammers use <code>phishing</code> tactics to trick people into giving up their passwords and seed phrases. Often they’ll pretend to be product support staff offering help, “Hello this is Metamask support”, or pretend to be an admin of a community, “New NFT mint, exclusive for our community”.</p><p>They use <code>social engineering</code> to pressure people. Examples include:</p><ul><li>“Time is running out!” - making you feel rushed.</li><li>“Congratulations you won our giveaway!” - making things feel exclusive.</li><li>”Get early access to our pre-mint!” - generating <code>FOMO</code> in the person being scammed.</li></ul></div><div class="bloc2"><img src=\'/lesson/web3-security/social-engineering-scams-5750ad84.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -692,19 +692,19 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '276e9374da2e49428b3b4193dc692c86',
         title: 'Social Media Safety',
-        content: '<div class="bloc1"><p>Social media <code>red flags</code>:</p><p>🚩 <strong>Language and grammar errors:</strong> They’re/their/there, etc.</p><p>🚩 <strong>FOMO:</strong> “Don’t miss out!”</p><p>🚩 <strong>Impersonation:</strong> an admin, support desk, Vitalik Buterin, Elon Musk, etc.</p><p>🚩 <strong>Guaranteed returns: </strong>Nothing is guaranteed in crypto.</p><p>🚩 <strong>Un</strong><strong>requested links and offers, </strong><em>especially in direct messages</em>.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/social-media-safety-f4f4e1fb.svg\'></div>'
+        content: '<div class="bloc1"><p>Social media <code>red flags</code>:</p><p>🚩 <strong>Language and grammar errors:</strong> They’re/their/there, etc.</p><p>🚩 <strong>FOMO:</strong> “Don’t miss out!”</p><p>🚩 <strong>Impersonation:</strong> an admin, support desk, Vitalik Buterin, Elon Musk, etc.</p><p>🚩 <strong>Guaranteed returns: </strong>Nothing is guaranteed in crypto.</p><p>🚩 <strong>Un</strong><strong>requested links and offers, </strong><em>especially in direct messages</em>.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/social-media-safety-fbe97b9e.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '66a155651e4b4434a1f1d7c9f7e82e4c',
         title: 'Social Media Best Practices',
-        content: '<div class="bloc1"><p>Practices for staying safe<strong>:</strong></p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our <a href=\'https://gm.xyz/c/BanklessAcademy\'>Explorer Community</a> is a great place for questions like these.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/social-media-best-practices-34122b30.svg\'></div>'
+        content: '<div class="bloc1"><p>Practices for staying safe<strong>:</strong></p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our <a href=\'https://gm.xyz/c/BanklessAcademy\'>Explorer Community</a> is a great place for questions like these.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/social-media-best-practices-0776e310.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '61574044744645b6a4f7fe140539a7ab',
         title: 'Scam-tokens',
-        content: '<div class="bloc1"><p>Besides social engineering, the second most common web3 attack is having <code>scam-tokens</code> sent to your web3 wallet. Scam-tokens are crypto tokens that scammers transfer to many wallets at once, in the hopes that someone will try to move or sell the tokens and trigger the malicious code hiding in the token’s smart contract.</p><p>Malicious contracts often require people to spend far more on a transaction than is necessary in order to sell these scam-tokens, and others can completely drain wallets; these scam-tokens could even be NFTs! If the problem isn’t with the smart contract itself, scam-tokens will often lure victims back to phishing websites where scammers try to trick victims into entering their <code>seed phrase</code> or other credentials.</p><p>The best thing to do when you receive random tokens is to not interact with them at all; leave them in your wallet and never transfer/sell them.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/scam-tokens-2fddadcc.svg\'></div>'
+        content: '<div class="bloc1"><p>Besides social engineering, the second most common web3 attack is having <code>scam-tokens</code> sent to your web3 wallet. Scam-tokens are crypto tokens that scammers transfer to many wallets at once, in the hopes that someone will try to move or sell the tokens and trigger the malicious code hiding in the token’s smart contract.</p><p>Malicious contracts often require people to spend far more on a transaction than is necessary in order to sell these scam-tokens, and others can completely drain wallets; these scam-tokens could even be NFTs! If the problem isn’t with the smart contract itself, scam-tokens will often lure victims back to phishing websites where scammers try to trick victims into entering their <code>seed phrase</code> or other credentials.</p><p>The best thing to do when you receive random tokens is to not interact with them at all; leave them in your wallet and never transfer/sell them.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/scam-tokens-cbab390e.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -726,7 +726,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '617b58e903f54546bf2e6e6cc598c8ed',
         title: 'Hardware Wallets',
-        content: '<div class="bloc1"><p>If you remember from our <a href=\'https://app.banklessacademy.com/lessons/wallet-basics\'>Wallet Basics</a> lesson, a <code>hardware wallet</code> is only connected to the internet when you physically connect it to a computer or device that is connected to the internet. This makes your funds much safer as someone would have to physically steal your device and hack into it in order to find your <code>seed phrase</code>.</p><p>It is even possible to use your hardware wallet through many browser extension wallets, like MetaMask. By using this setup, you receive the convenience of a single wallet interface with the security of using a hardware wallet.</p><p>Ledger has <a href=\'https://www.ledger.com/academy/security/the-safest-way-to-use-metamask\'>written their own guide</a> on how to setup MetaMask for use with their hardware wallet device.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/hardware-wallets-1ab4665d.svg\'></div>'
+        content: '<div class="bloc1"><p>If you remember from our <a href=\'https://app.banklessacademy.com/lessons/wallet-basics\'>Wallet Basics</a> lesson, a <code>hardware wallet</code> is only connected to the internet when you physically connect it to a computer or device that is connected to the internet. This makes your funds much safer as someone would have to physically steal your device and hack into it in order to find your <code>seed phrase</code>.</p><p>It is even possible to use your hardware wallet through many browser extension wallets, like MetaMask. By using this setup, you receive the convenience of a single wallet interface with the security of using a hardware wallet.</p><p>Ledger has <a href=\'https://www.ledger.com/academy/security/the-safest-way-to-use-metamask\'>written their own guide</a> on how to setup MetaMask for use with their hardware wallet device.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/hardware-wallets-191cacd1.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -746,7 +746,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '54e24ec782194af1bf5319f92143ecb8',
         title: 'Wallet Strategies',
-        content: '<div class="bloc1"><p>After adding a hardware wallet to your setup, one of the best ways to secure your funds is to keep them spread between multiple <code>wallets</code>. Here is a compartmentalized strategy using three separate wallets:</p><ol><li><strong>Social Wallet:</strong> A wallet that serves as your web3 identity for logins — like for the <a href=\'https://app.banklessacademy.com/lessons/academy-community\'>Bankless Academy community</a> or web3 social media — use a <code>hardware wallet</code> for extra security.</li><li><strong>Trading Wallet:</strong> A <code>hot wallet</code> for trading and other activities involving funds that may need to be moved on short notice.</li><li><strong>HODL Wallet:</strong> A <code>hardware wallet</code> for the long-term <code>HODL</code> — these are funds intended to hold for a long time. It’s recommended to <em><strong>not </strong></em>use this wallet for interacting with smart contracts.</li></ol><p>👍 <strong>PROs:</strong> Separation ensures that scams only threaten funds in <em>that particular wallet</em> rather than <em>everything</em>.</p><p>👎 <strong>CONs:</strong> It’s more complicated to keep track of, but many wallet applications allow you to name your wallets.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/wallet-strategies-e2d78fc5.svg\'></div>'
+        content: '<div class="bloc1"><p>After adding a hardware wallet to your setup, one of the best ways to secure your funds is to keep them spread between multiple <code>wallets</code>. Here is a compartmentalized strategy using three separate wallets:</p><ol><li><strong>Social Wallet:</strong> A wallet that serves as your web3 identity for logins — like for the <a href=\'https://app.banklessacademy.com/lessons/academy-community\'>Bankless Academy community</a> or web3 social media — use a <code>hardware wallet</code> for extra security.</li><li><strong>Trading Wallet:</strong> A <code>hot wallet</code> for trading and other activities involving funds that may need to be moved on short notice.</li><li><strong>HODL Wallet:</strong> A <code>hardware wallet</code> for the long-term <code>HODL</code> — these are funds intended to hold for a long time. It’s recommended to <em><strong>not </strong></em>use this wallet for interacting with smart contracts.</li></ol><p>👍 <strong>PROs:</strong> Separation ensures that scams only threaten funds in <em>that particular wallet</em> rather than <em>everything</em>.</p><p>👎 <strong>CONs:</strong> It’s more complicated to keep track of, but many wallet applications allow you to name your wallets.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/wallet-strategies-857fd09c.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -792,12 +792,12 @@ const LESSONS: LessonType[] = [
     lessonImageLink: '/lesson/academy-community/lesson-755fe7a3.png',
     socialImageLink: '/lesson/academy-community/social-1f64464b.jpg',
     learningActions: '',
-    marketingDescription: 'Join the conversation in our Academy Explorer Community.',
+    marketingDescription: 'Join the conversation in our Bankless Explorer Community.',
     kudosId: 2564,
     duration: 10,
     learnings: '',
     difficulty: 'Easy',
-    description: 'Join the conversation in our Academy Explorer Community.',
+    description: 'Join the conversation in our Bankless Explorer Community.',
     name: 'Academy Community',
     quest: 'AcademyCommunity',
     publicationStatus: 'publish',
@@ -1123,82 +1123,97 @@ const LESSONS: LessonType[] = [
     notionId: '340eb401ab824dea8f85aace1aaf69c1',
     slug: 'layer-2-blockchains',
     imageLinks: [
-      '/lesson/layer-2-blockchains/for-explorers-tech-summary-47189a70.png',
-      '/lesson/layer-2-blockchains/public-goods-op-retroactive-funding-sequencer-230f011a.png',
-      '/lesson/layer-2-blockchains/how-is-retropgf-distributed-bb3f0237.png'
+      '/lesson/layer-2-blockchains/introduction-92f6d111.svg',
+      '/lesson/layer-2-blockchains/scaling-methods-8d27aa49.svg',
+      '/lesson/layer-2-blockchains/connecting-layer-1-and-layer-2-14ac82b0.svg',
+      '/lesson/layer-2-blockchains/side-chains-6a6a00e6.svg',
+      '/lesson/layer-2-blockchains/rollups-128eeba2.svg',
+      '/lesson/layer-2-blockchains/optimistic-rollups-54772469.svg',
+      '/lesson/layer-2-blockchains/zk-rollups-2af97f9e.svg',
+      '/lesson/layer-2-blockchains/the-age-of-optimistic-rollups-97dc1d52.svg',
+      '/lesson/layer-2-blockchains/academy-and-optimism-naturally-align-c6f0e1cb.svg',
+      '/lesson/layer-2-blockchains/what-are-public-goods-3e533494.svg',
+      '/lesson/layer-2-blockchains/optimisms-funding-mechanism-210c0879.svg',
+      '/lesson/layer-2-blockchains/begin-scaling-your-skills-with-optimism-438b6ab0.svg'
     ],
     slides: [
       {
         type: 'LEARN',
         notionId: 'f6fc99d03e0c4b5b993363554015e1a4',
         title: 'Introduction',
-        content: '<div class="bloc1"><p>The ultimate end state for a blockchain is to be as decentralized, secure, and scalable as possible. Building a blockchain that does all three well has proven to be technologically elusive, and this challenge has been given a name, the <code>Blockchain Trilemma</code> . </p><p>Ethereum, for example, is very decentralized and secure, but it currently doesn’t scale well, as evident from high transaction fees and slow throughput times when the network is busy.</p><p> Although Ethereum’s Roadmap aims to solve this trilemma through the use of a scaling technology known as sharding, overcoming the <code>Blockchain Trilemma</code> may take another decade. In the meantime, scaling solutions like Optimism, Arbitrum, and Polygon are here to help.</p></div>'
+        content: '<div class="bloc1"><p>The ultimate end state for a blockchain is to be as decentralized, secure, and scalable as possible. Building a blockchain that does all three well has proven to be technologically elusive, and this challenge has been given a name, the <code>Blockchain Trilemma</code> . </p><p>Ethereum, for example, is very decentralized and secure, but it currently doesn’t scale well, as evident from high transaction fees and slow throughput times when the network is busy.</p><p>Although Ethereum’s Roadmap aims to solve this trilemma through the use of a scaling technology known as <code>sharding</code>, overcoming the <code>Blockchain Trilemma</code> may take another decade. In the meantime, scaling solutions like Optimism, Arbitrum, and Polygon are here to help.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/introduction-92f6d111.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'dc574962da85412b812f13526ec34e4f',
         title: 'Scaling Methods',
-        content: '<div class="bloc1"><p>Ethereum scaling solutions address <code>scalability</code> without sacrificing <code>security</code> for users. For users of these scaling solutions, the most practical effect is transactions are fast and don’t require much <code>gas</code>to execute, which is a reflection of how much something costs to compute on Mainnet. </p><p>There are a number of ways to scale blockchains. For simple blockchains, like Bitcoin, <code>Payment channel</code>s enable two parties to send bitcoin to each other at reduced fees by batching transactions together and running them at once - much how bar tabs makes it efficient for the bar to keep track of drinks throughout the night but run one transaction when its time to go home. But much like your credit card securing the bar tab, users need to have some collateral locked up to use this solution.</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'e7b402a421f64a77aa97320cb1c15051',
-        title: 'Scaling Methods Continued ',
-        content: '<div class="bloc1"><p>For more complex blockchain like Ethereum, the two main scaling solutions are side chains and <code>Layer 2</code> protocols. Polygon may be Ethereum’s most well-known scaling solution. Polygon’s proof-of-stake <code>PoS</code> <code>sidechain</code> runs along side Ethereum, validating and processing transactions but normally still relying on Mainnet for <code>security</code> . Since the mathematical heavy lifting is processed on the <code>sidechain</code> rather than Mainnet, <code>gas</code>remains low.</p><p>Perhaps more </p><ul><li>Optimistic Rollups</li><li>ZK Rollups</li></ul></div>'
+        content: '<div class="bloc1"><p>Ethereum scaling solutions address <code>scalability</code> without sacrificing <code>security</code> for users. For users of these scaling solutions, the most practical effect is transactions are fast and don’t require much <code>gas</code>to execute, which is a reflection of how much something costs to compute on Mainnet. </p><p>There are a number of ways to scale blockchains. For simple blockchains, like Bitcoin, <code>Payment channel</code>s enable two parties to send bitcoin to each other at reduced fees by batching transactions together and running them at once - much how bar tabs makes it efficient for the bar to keep track of drinks throughout the night but run one transaction when its time to go home. But much like your credit card securing the bar tab, users need to have some <code>collateral</code> locked up to use this solution.</p><p>Yet as we’ll learn later, two other scaling methods, side chains and Layer 2 protocols, offer the types of scaling solutions needed for more complex blockchain networks, like Ethereum. </p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/scaling-methods-8d27aa49.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'cd8cecba43b74bdd881a93394cd61423',
-        title: 'Bridge Infrastructure',
-        content: '<div class="bloc1"><ul><li>as we saw in ‣, Blockchains are <code>ledger</code>s, public records of what transactions have sent how much value to whom</li><li><code>Bridge</code> is a generic term for a connection that allows transfer of value between databases, whether a public blockchain like Ethereum, or a private database like Coinbase</li> <ul><li>Anything that connects two ledgers is a bridge</li><li><code>sidechain</code>s - polygon…</li><li><code>Validating bridge</code>s exist to connect L1s with L2s aka <code>Rollup</code>s - Optimism, Arbitrum, zkSync, and others…</li></ul> <li>Bridges between L1s & L2s use L1 as <code>settlement layer</code> to keep funds secure</li> <ul><li>trust the L1 transactions and base security/finality on that</li></ul> </ul></div>'
+        title: 'Connecting Layer 1 and Layer 2',
+        content: '<div class="bloc1"><p>As we learned in <a href=\'https://app.banklessacademy.com/lessons/blockchain-basics\'>Blockchain Basics</a>, blockchains are just databases, which we call <code>ledger</code>s, that provide a cryptographically secured, chronological list of transactions. Whether a Layer 1 blockchain, side chain, or Layer 2 scaling solution, it’s all about these secured databases. </p><p>There are a number of ways to consider how these databases talk with each other, but perhaps the best analogy involves bridges, those great connectors of people and places. For example, if you think of Mainnet Ethereum (or any other <code>Layer 1</code> blockchain) as one island, and another blockchain or your scaling solution of choice as another, a crypto <code>Bridge</code> is the generic term for the networked highway connecting these two islands. </p><p>While the term <code>Bridge</code> is most often referred to the technology that moves digital assets from Layer 1 to Layer 2 (link to fund wallet on L2), or between Layer 2s, you can also think of <code>Rollup</code>s and side chains as <code>Bridge</code>s, as they are just connecting databases. </p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/connecting-layer-1-and-layer-2-14ac82b0.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '80198f1ac68c4af4a3821d3d3eedd959',
-        title: 'Sidechains',
-        content: '<div class="bloc1"><ul><li>sidechain runs “alongside” L1 chain and publishes periodic snapshots of chain state to L1 <code>settlement layer</code></li><li>Pro</li> <ul><li>separate chain running alongside, tied at regular points, like knotted rope</li><li>can roll back chain to previous snapshot if needed (fraud)</li><li>multiple entities run the chain (<code>PoS</code> consensus) rather than a single one like a <code>CEX</code></li></ul> <li>Con</li> <ul><li>chain pause + rollback possibility means it compromises on being <code>censorship resistant</code> , users have to trust people running the chain</li></ul> </ul></div>'
+        title: 'Side Chains',
+        content: '<div class="bloc1"><p>For more complex blockchain like Ethereum, the two main scaling solutions are side chains and <code>Layer 2</code> protocols. The most prominent scaling solution to implement <code>sidechain</code>s is Polygon, which runs a proof-of-stake <code>PoS</code> <code>sidechain</code> along side Ethereum, validating and processing transactions while normally still relying on Mainnet for <code>security</code> . Since the mathematical heavy lifting is processed on the <code>sidechain</code> rather than Mainnet, <code>gas</code>remains low. The downside to <code>sidechain</code> s is that they tend to be centralized, and therefore less secure. </p><p>From a light technical standpoint, <code>sidechain</code>s are attached to the main chain, or what’s known as the parent chain, by a two-way peg. <code>Sidechain</code>s regularly publish periodic snapshots of the chain state to the <code>Layer 1</code> <code>settlement layer</code>. The chain state sounds complex, but it’s really just a moment-in-time picture of the current makeup of the ledger. This snapshot is useful if fraud is detected, as <code>sidechain</code>s can be rolled back to the previous snapshot if necessary.</p><p>In addition to rollback functionality, the main benefit of sidechains is that they are less expensive to transact on than Layer 2 protocols. The major downside to side chains is that they are the less-secure scaling option and tend to be relatively centralized. </p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/side-chains-6a6a00e6.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'a890d0f6e44040269eade42746f0022b',
         title: 'Rollups',
-        content: '<div class="bloc1"><ul><li><code>Rollup</code>s run “atop” L1 chain, publishes batches of transactions to L1 chain</li><li>they use a <code>validating bridge</code>, so must provide “convincing evidence” to main chain that all txns in the batch are legit, not just accepted </li><li>What is “convincing evidence”?</li> <ul><li>2 methods - <code>Optimistic rollups</code>, and <code>zk Rollups</code></li></ul> </ul></div>'
+        content: '<div class="bloc1"><p>A more secure scaling solution can be found in <code>Layer 2</code> protocols using Rollup technology. Rollups permit transactions to execute outside of Ethereum, but proof of that transaction is bundled (rolled up) and settled on Mainnet, acting as a security layer.</p><p>Rollups use a <code>validating bridge</code>, and they must provide “convincing evidence” to main chain that the transactions in the batch are legitimate. There are two methods to provide this evidence, <code>Optimistic rollups</code>, and <code>zk Rollups</code>.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/rollups-128eeba2.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '6a447dba0cef441dab05c1985c4d4588',
-        title: 'Optimistic Rollup',
-        content: '<div class="bloc1"><ul><li><code>Optimistic rollup</code>, assume there’s no fraud, give some time for anyone to provide evidence of fraud and then move forward after that time is up</li> <ul><li>fast and cheap execution, long finality (security relies on watching out for fraud)</li></ul> <li>tech behind Optimism, Arbitrum, etc.</li></ul></div>'
+        title: 'Optimistic Rollups',
+        content: '<div class="bloc1"><p>The two main Layer 2 protocols, Optimism and Arbitrum, both use <code>Optimistic rollup</code>s as their scaling solution architecture. <code>Optimistic rollup</code>s are so called because the information in the Rollup batch is considered to be valid unless proven otherwise — that is, they assume the best, as would an optimist. </p><p>In order to mitigate against any abuse of this technology, there is typically a seven-day delay between the time a user requests to move funds off of the Layer 2 back to Mainnet. During this time, someone can publish a <code>fraud proof</code> seeking to cancel the withdrawal. Many have compared this fraud-proof mechanism as similar to traditional banking and those clearance processes.</p><p>Note: Third-party bridging services, like Across and Hop, help users bridges these funds back to Mainnet in mere minutes rather than days. </p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/optimistic-rollups-54772469.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '057bb41223514659805e95984d08e127',
-        title: 'ZK Rollup',
-        content: '<div class="bloc1"><ul><li><code>zk Rollup</code>, zero knowledge batch rollup creates a mathematical proof <em>guaranteeing</em> that all txns are legit through <code>zk Proof</code></li> <ul><li>how do <code>zkProof</code>s work? (don’t ask.) <a href=\'https://www.youtube.com/watch?v=fOGdb1CTu5c#t=36s\'>math</a>ematical proof that all txns are valid</li><li>(relatively) slow and expensive, faster finality, guaranteed security</li></ul> <li>tech behind Polygon zkrollup, zkSync, Starkware, etc.</li></ul></div>'
+        title: 'ZK Rollups',
+        content: '<div class="bloc1"><p><code>zk Rollups</code>, also called zero-knowledge proofs, work very differently than <code>Optimistic rollups</code> . Unlike <code>Optimistic rollups</code>, <code>zk Rollups</code>have confirmed the legitimacy of the batched transactions and do not rely on certain users to look for evidence of fraud. Rather than relying on fraud hunters, these rollups confirm these transactions using complex, computation-heavy mathematical models.</p><p>The major upside to <code>zk Rollups</code> is the <code>settlement time</code>, also known as finality. Rather than taking a week to receive funds on Mainnet, <code>zk Rollups</code> enable users to access their funds in about thirty minutes.</p><p>There are some major protocols using <code>zk Rollups</code> to build their Ethereum scaling solutions, including zkSync, StarkNet, and Aztec, so it’s worth doing a compare and contrast of the benefits and burdens of <code>Optimistic rollups</code> and <code>zk Rollups</code>.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/zk-rollups-2af97f9e.svg\'></div>'
       },
       {
         type: 'LEARN',
-        notionId: '5615c0a47e7b4562b0d7fec81845e8b6',
-        title: 'For explorers (tech summary)',
-        content: '<div class="bloc1"><ul><li>there are some differences in the tech for each but no matter which L2 you use, you’ll get cheaper and faster transactions than mainnet ethereum</li> <ul><li>like picking a city to settle down in, pick your L2 and get comfy</li></ul> <li>Academy aligns with Optimistic Ethereum on values in addition to desire for cheaper transactions for Explorers</li> <ul><li>building <code>public goods</code> to attract more and more Explorers</li></ul> </ul></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/for-explorers-tech-summary-47189a70.png\'></div>'
+        notionId: 'b32175e73bf0438d99d8556f323b00c3',
+        title: 'The Age of Optimistic Rollups',
+        content: '<div class="bloc1"><p>While you could think of <code>Optimistic rollups</code> as innocent until proven guilty and <code>zk Rollup</code> as guilty until proven innocent, the practical effect for most people is the withdrawal times. Since these withdrawal lag issues are resolved by third-party bridges, however, it shouldn’t really be a major consideration when deciding which scaling solution to explore. </p><p>On a more practical note, <code>Optimistic rollups</code> give users (and builders) the ability to more closely integrate with the virtual computer than enables the smart contract functionality and dApps which makes Ethereum the blockchain of choice for most builders. Depending on their level of sophistication, some <code>Optimistic rollups</code> can run the same computations as the Ethereum Virtual Machine. This compatibility is said to be EVM equivalent (less functional <code>Optimistic rollups</code> are EVM compatible), which means any dApp that runs on Mainnet can also run on EVM equivalent<code>Optimistic rollups</code>; this same level of functionality is not yet available with <code>zk Rollup</code>s.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/the-age-of-optimistic-rollups-97dc1d52.svg\'></div>'
       },
       {
         type: 'LEARN',
-        notionId: '00bc46e3814a4864b79ea448f412af98',
-        title: 'Public Goods + OP retroactive funding sequencer',
-        content: '<div class="bloc1"><ul><li><a href=\'https://www.optimism.io/vision\'>Vision</a> - Build <code>public good</code>s to build the ecosystem via <a href=\'https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c\'>Retro-Public Goods Funding (RetroPGF)</a></li> <ul><li>Public good - Things that benefit everyone and you cannot be excluded from or have limited access to</li></ul> <li><code>RetroPGF</code> is based on the idea that it’s easier to determine what <em>was </em>useful than to issue proactive grants for what <em>might be </em>useful.</li><li>let people build cool stuff, pay those that created effective things in education, tooling, research, and infrastructure</li> <ul><li>building things that people want to use drives demand for using Optimism</li><li>fees from the rollup sequencer will be distributed to project builders retroactively as <code>RetroPGF</code></li></ul> <li>Learn more about <a href=\'https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY\'>how RetroPGF works in Optimism</a></li></ul></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/public-goods-op-retroactive-funding-sequencer-230f011a.png\'></div>'
+        notionId: '1825171859534afd90daf79776933e1d',
+        title: 'Lesson Recap',
+        content: '<div class="bloc1"><p>Major Layer 1 blockchains like Bitcoin and Ethereum are currently constrained by the <code>Blockchain Trilemma</code>, the idea that current technology forces trade offs between <code>decentralization</code>, <code>security</code>, and <code>scalability</code> . Scaling solutions, like <code>Payment channel</code>s on the Bitcoin network and <code>sidechain</code>s and Layer 2 protocols help these networks scale and resolve this Trilemma.</p><p><code>Bridge</code>s enable users to transfer digital assets between blockchains or otherwise connect the blockchain <code>ledger</code>s together. Although scaling solutions, rollups and side chains can also be considered <code>Bridge</code>s.</p><p>At present,<code>Optimistic rollups</code> offer greater functionality to users, enabling any dApp that runs on Ethereum to run on a Layer 2 built on this technology; however, many believe <code>zk Rollups</code> will become the future of scaling in time. </p></div>'
       },
       {
         type: 'LEARN',
-        notionId: 'db31c8156a5e4ea2812c75e8ee2886cf',
-        title: 'Academy/Optimism Values',
-        content: '<div class="bloc1"><ul><li>education onramp helping people Go Bankless &lt;link&gt;?</li><li>free education for as many people as possible</li> <ul><li>Academy is part of the education that will help drive adoption of Optimistic Ethereum</li><li>empowering individuals to create via web3</li></ul> <li>we are a <code>public good</code></li> <ul><li>Things that benefit everyone and you cannot be excluded from or have limited access to</li><li><a href=\'https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY\'><strong>For Optimism</strong></a><strong>, well-funded public goods means better developer tooling, widespread user education, safer infrastructure, and industry-leading research.</strong></li></ul> </ul></div>'
+        notionId: 'f2d3e7456e8e463186587428720578ab',
+        title: 'Academy and Optimism Naturally Align',
+        content: '<div class="bloc1"><p>When we look at the scaling solution landscape on Ethereum, Optimism, Arbitrum, and Polygon are the clear leaders. But if we’re being honest, the ethos of those blockchains are very different. Both Polygon and Arbitrum are heavily focused on recruiting fiat-space companies to their network, with much success. Optimism, with its focus on funding <code>public good</code>s with network-generated fees, is a scaling solution with a crypto-native soul.</p><p>Bankless Academy is a crypto education onramp that helps people learn about decentralized financial technologies. As a free service, Bankless Academy is a <code>public good</code> empowering people to confidently embark on their Bankless journey.</p><p>Given Optimism\'s focus on funding public goods, it’s natural for Bankless Academy to align with Optimism to help our Explorers learn about and explore Ethereum scaling solutions. But first, a bit of information about <code>public good</code>s.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/academy-and-optimism-naturally-align-c6f0e1cb.svg\'></div>'
       },
       {
         type: 'LEARN',
-        notionId: '81b2733dc5d240b69bb45e9af7584d92',
-        title: 'How is RetroPGF distributed?',
-        content: '<div class="bloc1"><ul><li>OP tokens distributed according to voting by the two bodies of the <a href=\'https://optimism.mirror.xyz/gQWKlrDqHzdKPsB1iUnI-cVN3v0NvsWnazK7ajlt1fI\'>Optimism Collective</a><br> - Citizen’s House and Token House.</li><li>Token House</li> <ul><li>token-weighted voting with OP</li></ul> <li>Citizens’ House</li> <ul><li>individuals who have already added value to Optimism, house grows slowly over time</li><li>1 person, 1 vote</li></ul> <li>projects are nominated for receiving <code>RetroPGF</code> in cycles, see more about it <a href=\'https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY\'>https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY</a></li></ul></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/how-is-retropgf-distributed-bb3f0237.png\'></div>'
+        notionId: '518fb911f0b54f04b6b7d48caf910d2f',
+        title: 'What Are Public Goods',
+        content: '<div class="bloc1"><p>Optimism holds special appeal to Bankless Academy because its founders are aligned with Ethereum’s ethos of permissionless building, progressive decentralization, and <a href=\'https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c\'>public goods funding</a>. </p><p>In brief, public goods are goods or services that we all can use and from which we all derive a benefit, think fire stations and roads, open-source code and Ethereum. Funding publics goods doesn’t just help one company or section - it helps everyone, everywhere. </p><p>While you can fund people and idea based upon what they may do for the greater good, there’s a more powerful, effective way to fund public goods - retroactively: if you built something that had a positive impact, you should be funded for contributing to the public good.</p><p>As Vitalik Buterin <a href=\'https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c\'>writes</a> “The core principle behind the concept of retroactive public goods funding is simple: it’s easier to agree on <em>what was useful</em> than <em>what will be useful</em>”.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/what-are-public-goods-3e533494.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'ee5c8d4f56e7413bbc98810f6c406f57',
+        title: 'Optimism’s Funding Mechanism',
+        content: '<div class="bloc1"><p>Optimism has been retroactively funding public goods for over 18 months, after announcing in <a href=\'https://medium.com/ethereum-optimism/retroactive-public-goods-funding-33c9b7d00f0c\'>July</a> 2021 that all revenue generated from block sequencing would be dedicated to such funding. In other words, fees that could have gone to OP or participants who help keep the network secure, are instead going to fund <code>RetroPGF</code>. </p><p>Optimism also dropped it’s OP token in 2022, and it has pledged to allocate 20% of the initial OP token supply to retroactive public goods funding.</p><p>In fact, Optimism recently <a href=\'https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY\'>announced</a> its second round of Retroactive Public Goods Funding, which dedicates 10 million OP tokens to fund public goods.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/optimisms-funding-mechanism-210c0879.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '66542ecbd6604d30b1ef78ad8eff3529',
+        title: 'Begin Scaling Your Skills With Optimism',
+        content: '<div class="bloc1"><p>Apart from being a public goods funding mechanism, Optimism also happens to be a fully built-out ecosystem. While it’s only two years old, it hosts many of the most popular dApps on Ethereum, but because of drastically reduced gas fees, users are able to use the blockchain without worry of prohibitive transaction fees. </p><p>Unlike Polygon, which uses MATIC as its native token, users pay for transaction fees with ether (ETH), the native token of the Ethereum network. This is convenient for our Explorers because the there’s no additional step needed to begin using the Optimism network, such as swapping ETH for MATIC before or after bridging. </p><p>Your quest for this lesson, Explorers, is simple, but will unlock a world of possibility — you just need to hold ETH on the Optimism network. </p><p> Optimism is not just a platform that relies on the Optimistic Rollup; it’s also a metaphor for the power of technology to solve existing problems and to show us new ways of transacting, new ways of living. And that should make us all optimistic. 🙂</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/begin-scaling-your-skills-with-optimism-438b6ab0.svg\'></div>'
       },
       {
         type: 'QUEST',
