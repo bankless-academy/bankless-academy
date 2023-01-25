@@ -68,7 +68,7 @@ const primaryBig = {
       },
 }
 
-const primaryWhiteBig = {
+const primaryWhite = {
   ...primaryBig,
   background: 'white',
   color: '#5D4E78',
@@ -126,27 +126,39 @@ const secondaryBig = {
       },
 }
 
+const secondaryWhite = {
+  ...secondaryBig,
+  background: 'transparent',
+  color: 'white',
+  border: '2px solid white',
+  _hover: {
+    border: '2px solid transparent',
+  },
+}
+
 // TODO: https://chakra-ui.com/docs/styled-system/advanced-theming#theme-typings for auto-complete
 type variantType = SystemStyleObject | SystemStyleFunction
 type variantsTypes = {
   primary: variantType
   primaryGold: variantType
+  primaryWhite: variantType
   primaryBig: variantType
-  primaryWhiteBig: variantType
   primaryBigLast: variantType
   secondary: variantType
   secondaryGold: variantType
+  secondaryWhite: variantType
   secondaryBig: variantType
 }
 
 const variants: variantsTypes = {
   primary,
   primaryGold,
+  primaryWhite,
   primaryBig,
-  primaryWhiteBig,
   primaryBigLast,
   secondary,
   secondaryGold,
+  secondaryWhite,
   secondaryBig,
 }
 

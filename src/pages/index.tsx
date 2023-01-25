@@ -28,10 +28,13 @@ import {
   EyeIcon,
   UsersThreeIcon,
 } from 'components/Icons'
+import InstallAppModal from 'components/InstallAppModal'
 import { HOMEPAGE_BACKGROUND, IS_WHITELABEL } from 'constants/index'
 import { Mixpanel } from 'utils/index'
 import SubscriptionModal from 'components/SubscriptionModal'
 import { useSmallScreen } from 'hooks/index'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 const Card = styled(Box)`
   border: 1px solid #72757b;
@@ -57,6 +60,15 @@ const NewsletterButton = styled(Button)`
 const HomePage = (): JSX.Element => {
   const [isSmallScreen] = useSmallScreen()
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [isAppModalOpen, setIsAppModalOpen] = useState(false)
+  const { query } = useRouter()
+
+  useEffect(() => {
+    if (query?.mobile === '') {
+      // TODO: add special "install app" social image
+      setIsAppModalOpen(true)
+    }
+  }, [query])
 
   if (IS_WHITELABEL) return <WhitelabelHomepage />
   else
@@ -68,6 +80,10 @@ const HomePage = (): JSX.Element => {
           bgSize="cover"
           bgPosition="center"
         >
+          <InstallAppModal
+            isOpen={isAppModalOpen}
+            onClose={() => setIsAppModalOpen(false)}
+          />
           <Stack
             width="100%"
             maxW="800px"
