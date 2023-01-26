@@ -61,14 +61,13 @@ const HomePage = (): JSX.Element => {
   const [isSmallScreen] = useSmallScreen()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [isAppModalOpen, setIsAppModalOpen] = useState(false)
-  const { query } = useRouter()
+  const { asPath } = useRouter()
 
   useEffect(() => {
-    if (query?.mobile === '') {
-      // TODO: add special "install app" social image
+    if (asPath === '/mobile') {
       setIsAppModalOpen(true)
     }
-  }, [query])
+  }, [asPath])
 
   if (IS_WHITELABEL) return <WhitelabelHomepage />
   else
