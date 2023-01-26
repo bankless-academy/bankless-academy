@@ -61,10 +61,6 @@
     {
       "source": "/mp/:slug",
       "destination": "https://api-eu.mixpanel.com/:slug"
-    },
-    {
-      "source": "/mobile",
-      "destination": "/"
     }
   ]
 }

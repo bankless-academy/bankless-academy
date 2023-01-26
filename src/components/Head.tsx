@@ -37,13 +37,9 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
     ? `${metadata.title} | ${PROJECT_NAME}`
     : PROJECT_NAME
   const description = metadata?.description || DEFAULT_METADATA.description
-  const image =
-    router.asPath === '/mobile'
-      ? // HACK: force image for mobile app download
-        `${DOMAIN_URL}/images/download-mobile-app.png`
-      : metadata?.image
-      ? `${DOMAIN_URL}${metadata?.image}`
-      : DEFAULT_METADATA.image
+  const image = metadata?.image
+    ? `${DOMAIN_URL}${metadata?.image}`
+    : DEFAULT_METADATA.image
   const url = `${DOMAIN_URL}${router.asPath}`
   return (
     <>
