@@ -21,8 +21,6 @@ import {
   MIRROR_ARTICLE_ADDRESSES,
 } from 'constants/index'
 import { NETWORKS, SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
-import ONEINCH_V4_ABI from 'abis/1inch_v4.json'
-import ONEINCH_V5_ABI from 'abis/1inch_v5.json'
 import axios, { AxiosResponse } from 'axios'
 
 declare global {
@@ -232,46 +230,27 @@ export async function validateOnchainQuest(
         const txDetails = await provider.getTransaction(tx)
         // console.log('txDetails', txDetails)
         if (txDetails) {
-          if (txDetails.from.toLowerCase() === address.toLowerCase()) {
+          if (txDetails.data.includes(address.toLowerCase().substring(2))) {
             check.push(true)
-            console.log('OK from')
+            console.log('OK wallet interaction')
           }
-          // 1inch v4 Router contract
-          const is1inchV4 =
-            txDetails.to.toLowerCase() ===
+          // 1inch v4 router contract
+          const address1inchV4 =
             '0x1111111254fb6c44bac0bed2854e76f90643097d'.toLowerCase()
-          // 1inch v5 Router contract
-          const is1inchV5 =
-            txDetails.to.toLowerCase() ===
+          // 1inch v5 router contract
+          const address1inchV5 =
             '0x1111111254EEB25477B68fb85Ed929f73A960582'.toLowerCase()
-          if (is1inchV4 || is1inchV5) {
+          if (
+            txDetails.data.includes(address1inchV4.substring(2)) ||
+            txDetails.data.includes(address1inchV5.substring(2))
+          ) {
             check.push(true)
-            console.log('OK contract')
-            const iface = new ethers.utils.Interface(
-              is1inchV4 ? ONEINCH_V4_ABI : ONEINCH_V5_ABI
-            )
-            const decodedData = iface.parseTransaction({
-              data: txDetails.data,
-              value: txDetails.value,
-            })
-            // console.log('decodedData', decodedData)
-            if (decodedData.name === 'swap') {
-              check.push(true)
-              console.log('OK swap')
-            }
-            if (
-              decodedData.args[1].includes(
-                '0xDB7Cb471dd0b49b29CAB4a1C14d070f27216a0Ab'
-              )
-            ) {
-              check.push(true)
-              console.log('OK BANK swap')
-            }
+            console.log('OK 1inch router contract interaction')
           }
         }
       }
-      console.log('checks validated (5)', check.length)
-      return check.length === 5
+      console.log('checks validated (3)', check.length)
+      return check.length === 3
     }
     return false
   } catch (error) {

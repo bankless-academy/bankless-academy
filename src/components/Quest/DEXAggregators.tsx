@@ -85,11 +85,11 @@ const DEXAggregators = (
               {'.'}
             </p>
             <p>
-              {'2. Swap any token to '}
+              {'2. Swap any token. (You can buy '}
               <ExternalLink href="https://polygonscan.com/token/0xdb7cb471dd0b49b29cab4a1c14d070f27216a0ab">
                 $BANK
               </ExternalLink>
-              .
+              {` if you want to support the Bankless movement.)`}
             </p>
             <p>
               3. Paste the successful <b>swap</b> transaction hash below:
