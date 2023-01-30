@@ -351,7 +351,6 @@ axios
 
           if (lesson.publicationStatus === 'planned') {
             lesson.lessonImageLink = '/images/coming-soon-lesson.png'
-            delete lesson.socialImageLink
           }
 
           // TODO: remove old images (diff between old/new lesson.imageLinks)
