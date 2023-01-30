@@ -11,7 +11,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { address, quest, tx, distinct_id, embed } = req.body
+  const DEV_SECRET = process.env.DEV_SECRET
+  const param =
+    DEV_SECRET && req.query?.dev === DEV_SECRET ? req.query : req.body
+  const { address, quest, tx, distinct_id, embed } = param
   if (
     !address ||
     // TODO: replace quest with notionId?
@@ -30,17 +33,25 @@ export default async function handler(
 
   // Backend onchain quest verification
   if (ONCHAIN_QUESTS.includes(quest)) {
-    if (!tx || typeof tx !== 'string') {
-      return res
-        .status(403)
-        .json({ isQuestValidated: false, error: 'Missing transaction' })
-    }
     if (quest === 'DEXAggregators') {
+      if (!tx || typeof tx !== 'string') {
+        return res
+          .status(403)
+          .json({ isQuestValidated: false, error: 'Missing transaction' })
+      }
       const isOnchainQuestCompleted = await validateOnchainQuest(
         quest,
         address,
         tx
       )
+      if (!isOnchainQuestCompleted)
+        return res.status(200).json({
+          isQuestValidated: false,
+          error: 'Onchain quest not completed',
+        })
+    }
+    if (quest === 'Layer2Blockchains') {
+      const isOnchainQuestCompleted = await validateOnchainQuest(quest, address)
       if (!isOnchainQuestCompleted)
         return res.status(200).json({
           isQuestValidated: false,

@@ -208,7 +208,7 @@ export const verifyTypedSignature = (
 export async function validateOnchainQuest(
   quest: string,
   address: string,
-  tx: string
+  tx?: string
 ): Promise<boolean> {
   try {
     if (quest === 'DEXAggregators') {
@@ -251,6 +251,21 @@ export async function validateOnchainQuest(
       }
       console.log('checks validated (3)', check.length)
       return check.length === 3
+    }
+    if (quest === 'Layer2Blockchains') {
+      const matic: Network = {
+        name: 'optimism',
+        chainId: 10,
+        _defaultProvider: (providers) =>
+          new providers.JsonRpcProvider(
+            `https://optimism-mainnet.infura.io/v3/${INFURA_KEY}`
+          ),
+      }
+      const provider = ethers.getDefaultProvider(matic)
+      const bigNumberBalance = await provider.getBalance(address.toLowerCase())
+      const balance = parseFloat(ethers.utils.formatEther(bigNumberBalance))
+      console.log('balance: ', balance)
+      return balance >= 0.001
     }
     return false
   } catch (error) {

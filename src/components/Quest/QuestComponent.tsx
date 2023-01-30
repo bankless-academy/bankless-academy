@@ -8,6 +8,7 @@ import AcademyCommunity from 'components/Quest/AcademyCommunity'
 import Web3Security from 'components/Quest/Web3Security'
 import Layer1Blockchains from 'components/Quest/Layer1Blockchains'
 import DEXAggregators from 'components/Quest/DEXAggregators'
+import Layer2Blockchains from 'components/Quest/Layer2Blockchains'
 import { ConnectFirst } from 'components/Quest/WalletConnect'
 
 import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
@@ -16,7 +17,7 @@ import { api } from 'utils'
 
 export type QuestComponentType = typeof QUESTS[number]
 
-export const ONCHAIN_QUESTS = ['DEXAggregators']
+export const ONCHAIN_QUESTS = ['DEXAggregators', 'Layer2Blockchains']
 
 const QuestComponent = (
   component: QuestComponentType | null,
@@ -34,6 +35,7 @@ const QuestComponent = (
     Web3Security: Web3Security,
     Layer1Blockchains: Layer1Blockchains,
     DEXAggregators: DEXAggregators,
+    Layer2Blockchains: Layer2Blockchains,
   }
   if (!component || !QUESTS.includes(component)) return null
 
