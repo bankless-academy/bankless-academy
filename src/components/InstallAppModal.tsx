@@ -77,7 +77,9 @@ const InstallAppModal = ({
                     alt="Open website on mobile"
                   />
                   <Text fontSize="md" mt="4" alignSelf="center">
-                    {`Open the website on mobile and follow the instructions`}
+                    {`Open the website `}
+                    <b>on mobile</b>
+                    {` and follow the instructions`}
                   </Text>
                 </>
               ) : isIOS ? (

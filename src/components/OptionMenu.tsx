@@ -74,7 +74,7 @@ const OptionMenu = ({
                     })
                   }}
                 >
-                  📱 Install Mobile App
+                  Install Mobile App 📱
                 </MenuItem>
               )}
             </>
