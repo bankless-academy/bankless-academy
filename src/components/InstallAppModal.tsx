@@ -101,11 +101,11 @@ const InstallAppModal = ({
                     borderRadius="10px"
                     maxH="60vh"
                     m="auto"
-                    src="/images/install-app-Android.png"
+                    src="/images/install-app-Android.gif"
                     alt="Install mobile app on Android"
                   />
                   <Text fontSize="md" mt="4">
-                    {`In your mobile browser, tap on '...' icon for menu options, then click "Add to Home Screen".`}
+                    {`In your mobile browser, click on "︙" icon for menu options, then click "Install app".`}
                   </Text>
                 </>
               )}
