@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Box, VStack, Button, Spinner } from '@chakra-ui/react'
-import { CheckIcon } from '@chakra-ui/icons'
+import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 
 import ExternalLink from 'components/ExternalLink'
@@ -23,6 +23,8 @@ const AcademyCommunity = (
 
   const verifyQuest = async () => {
     if (account) {
+      setHasUserJoinedGM(null)
+      setHasUserJoinedBA(null)
       axios
         .get(`https://api.gm.xyz/api/users/${account.toLowerCase()}`)
         .then(function (res) {
@@ -46,6 +48,8 @@ const AcademyCommunity = (
               })
         })
         .catch(function (error) {
+          setHasUserJoinedGM(false)
+          setHasUserJoinedBA(false)
           console.error(error)
         })
     }
@@ -79,7 +83,13 @@ const AcademyCommunity = (
                     hasUserJoinedGM ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : (
-                      <Spinner speed="1s" />
+                      <>
+                        {hasUserJoinedGM === null ? (
+                          <Spinner speed="1s" />
+                        ) : (
+                          <CloseIcon color={theme.colors.incorrect} />
+                        )}
+                      </>
                     )
                   }
                 >
@@ -97,7 +107,13 @@ const AcademyCommunity = (
                     hasUserJoinedBA ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : (
-                      <Spinner speed="1s" />
+                      <>
+                        {hasUserJoinedBA === null ? (
+                          <Spinner speed="1s" />
+                        ) : (
+                          <CloseIcon color={theme.colors.incorrect} />
+                        )}
+                      </>
                     )
                   }
                 >
