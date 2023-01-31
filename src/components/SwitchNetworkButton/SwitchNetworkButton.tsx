@@ -12,10 +12,9 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
+import { useSwitchNetwork, useNetwork } from 'wagmi'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
-import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
-import { useActiveWeb3React } from 'hooks/index'
 
 const CircleIcon = (props) => (
   <Icon viewBox="0 0 200 200" {...props}>
@@ -33,21 +32,12 @@ const SwitchNetworkButton = ({
 }): any => {
   const toast = useToast()
   const [currentNetwork, setCurrentNetwork] = useState(NETWORKS.mainnet)
-  const { library, chainId } = useActiveWeb3React()
-
-  const handleChange = async (networkName) => {
-    if (library?.provider) {
-      await switchNetwork(
-        library.provider,
-        networkName.toLowerCase(),
-        setCurrentNetwork
-      )
-    }
-  }
+  const { switchNetwork } = useSwitchNetwork()
+  const { chain } = useNetwork()
 
   useEffect(() => {
-    if (chainId) {
-      if (!SUPPORTED_NETWORKS_IDS.includes(chainId)) {
+    if (chain?.id) {
+      if (!SUPPORTED_NETWORKS_IDS.includes(chain?.id)) {
         // wrong network
         toast.closeAll()
         toast({
@@ -60,12 +50,12 @@ const SwitchNetworkButton = ({
         // correct network
         toast.closeAll()
         const networkName = Object.keys(NETWORKS).find(
-          (network) => NETWORKS[network]?.chainId === chainId
+          (network) => NETWORKS[network]?.chainId === chain?.id
         )
         setCurrentNetwork(NETWORKS[networkName])
       }
     }
-  }, [chainId])
+  }, [chain?.id])
 
   return (
     <div>
@@ -102,7 +92,7 @@ const SwitchNetworkButton = ({
                 <MenuItem
                   key={index}
                   minH="40px"
-                  onClick={() => handleChange(network)}
+                  onClick={() => switchNetwork(NETWORKS[network].chainId)}
                   backgroundColor={
                     currentNetwork.chainId === NETWORKS[network].chainId
                       ? 'blackAlpha.300'

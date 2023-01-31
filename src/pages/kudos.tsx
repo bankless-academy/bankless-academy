@@ -2,13 +2,13 @@
 import React from 'react'
 import { Container, Button, Box, useToast } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
+import { useAccount, useNetwork } from 'wagmi'
+import { switchNetwork, signTypedData } from '@wagmi/core'
 
 import { MetaData } from 'components/Head'
-import { useActiveWeb3React } from 'hooks/index'
 import { LESSONS } from 'constants/index'
 import { MINTKUDOS_CHAIN_ID, MINTKUDOS_DOMAIN_INFO } from 'constants/kudos'
 import { NETWORKS } from 'constants/networks'
-import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
 import { api } from 'utils'
 
 const pageMeta: MetaData = {
@@ -22,7 +22,8 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Kudos = (): JSX.Element => {
-  const { account, library, chainId } = useActiveWeb3React()
+  const { address } = useAccount()
+  const { chain } = useNetwork()
   const toast = useToast()
 
   const signMessage = async (kudosId: number) => {
@@ -35,7 +36,7 @@ const Kudos = (): JSX.Element => {
       tokenId: kudosId,
     }
 
-    if (chainId !== MINTKUDOS_CHAIN_ID) {
+    if (chain?.id !== MINTKUDOS_CHAIN_ID) {
       const network = Object.values(NETWORKS).find(
         (network) => network.chainId === MINTKUDOS_CHAIN_ID
       )
@@ -46,50 +47,46 @@ const Kudos = (): JSX.Element => {
         status: 'warning',
         duration: null,
       })
-      const networkKey = Object.keys(NETWORKS).find(
-        (network) => NETWORKS[network].chainId === MINTKUDOS_CHAIN_ID
-      )
-      await switchNetwork(library.provider, networkKey)
-    } else {
-      try {
-        const signer = library.getSigner(account)
-        const signature = await signer._signTypedData(
-          MINTKUDOS_DOMAIN_INFO,
-          adminTypes,
-          value
-        )
-        // console.log('signature', signature)
-        toast.closeAll()
-        const bodyParameters = {
-          address: account,
-          kudosId,
-          signature,
-        }
-        const result = await api('/api/sign-kudos', bodyParameters)
-        console.log(result.data)
-        if (result && result.status === 200) {
-          if (result.data?.error) {
-            toast({
-              title: `Signature for ${kudosId}`,
-              description: result.data?.error,
-              status: 'error',
-              duration: 10000,
-            })
-          } else {
-            toast({
-              title: `Signature for ${kudosId}`,
-              description: result.data?.result,
-              status: 'success',
-              duration: 10000,
-            })
-          }
-        } else {
-          // TODO: handle errors
-        }
-      } catch (error) {
-        // TODO: add error feedback
-        console.error(error)
+      await switchNetwork({ chainId: MINTKUDOS_CHAIN_ID })
+    }
+    try {
+      const signature = await signTypedData({
+        domain: MINTKUDOS_DOMAIN_INFO,
+        types: adminTypes,
+        value,
+      })
+      console.log('signature', signature)
+      toast.closeAll()
+      const bodyParameters = {
+        address,
+        kudosId,
+        signature,
       }
+      console.log(bodyParameters)
+      const result = await api('/api/sign-kudos', bodyParameters)
+      console.log(result.data)
+      if (result && result.status === 200) {
+        if (result.data?.error) {
+          toast({
+            title: `Signature for ${kudosId}`,
+            description: result.data?.error,
+            status: 'error',
+            duration: 10000,
+          })
+        } else {
+          toast({
+            title: `Signature for ${kudosId}`,
+            description: result.data?.result,
+            status: 'success',
+            duration: 10000,
+          })
+        }
+      } else {
+        // TODO: handle errors
+      }
+    } catch (error) {
+      // TODO: add error feedback
+      console.error(error)
     }
   }
 

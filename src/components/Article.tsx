@@ -12,12 +12,13 @@ import { ArrowRight } from 'phosphor-react'
 import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
 import { useLocalStorage } from 'usehooks-ts'
+import { useAccount } from 'wagmi'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
 
 import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import { LessonType } from 'entities/lesson'
-import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
+import { useSmallScreen } from 'hooks/index'
 import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
 import { getArticlesCollected, Mixpanel } from 'utils'
 
@@ -501,7 +502,7 @@ const Article = ({
     'articlesCollected',
     []
   )
-  const { account } = useActiveWeb3React()
+  const { address } = useAccount()
 
   useEffect(() => {
     Mixpanel.track('open_lesson', { lesson: lesson?.name })
@@ -509,14 +510,14 @@ const Article = ({
 
   useEffect(() => {
     const updateArticlesCollected = async () => {
-      const articlesCollected = await getArticlesCollected(account)
+      const articlesCollected = await getArticlesCollected(address)
       if (articlesCollected && Array.isArray(articlesCollected))
         setArticlesCollectedLS(articlesCollected)
     }
-    if (!IS_WHITELABEL && account) {
+    if (!IS_WHITELABEL && address) {
       updateArticlesCollected().catch(console.error)
     }
-  }, [account])
+  }, [address])
 
   const keywords = { ...KEYWORDS, ...extraKeywords }
 

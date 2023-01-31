@@ -18,9 +18,10 @@ import {
 import { ArrowBackIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
+import { useAccount, useNetwork } from 'wagmi'
+import { switchNetwork, signTypedData } from '@wagmi/core'
 
-import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
-import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
+import { useSmallScreen } from 'hooks/index'
 import Passport from 'components/Passport'
 import ExternalLink from 'components/ExternalLink'
 import {
@@ -42,7 +43,6 @@ import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { KudosType } from 'entities/kudos'
 import { theme } from 'theme/index'
-import { ethers } from 'ethers'
 import { api } from 'utils'
 
 const MintKudos = ({
@@ -66,7 +66,8 @@ const MintKudos = ({
   )
   const [, setRefreshKudosLS] = useLocalStorage('refreshKudos', false)
 
-  const { account, library, chainId } = useActiveWeb3React()
+  const { address, connector } = useAccount()
+  const { chain } = useNetwork()
   const toast = useToast()
   const [isSmallScreen] = useSmallScreen()
 
@@ -75,7 +76,7 @@ const MintKudos = ({
   // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
 
   async function checkPassport() {
-    const result = await api('/api/passport', { address: account })
+    const result = await api('/api/passport', { address })
     if (result && result.status === 200) {
       console.log('passport', result.data)
       setStatus('')
@@ -86,11 +87,11 @@ const MintKudos = ({
   }
 
   useEffect(() => {
-    if (account) {
+    if (address) {
       if (!passportLS.verified) checkPassport()
       axios
         .get(
-          `${MINTKUDOS_API}/v1/wallets/${account}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
+          `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
         )
         .then(function (res) {
           const claimedKudos: KudosType = res.data?.data?.find(
@@ -106,11 +107,7 @@ const MintKudos = ({
           console.error(error)
         })
     }
-  }, [account])
-
-  const networkKey = Object.keys(NETWORKS).find(
-    (network) => NETWORKS[network].chainId === MINTKUDOS_CHAIN_ID
-  )
+  }, [address])
 
   const followOperation = async (location: string, iteration = 0) => {
     try {
@@ -147,12 +144,12 @@ const MintKudos = ({
     if (status !== '') return
     setStatus('Minting in progress ...')
     // TODO: add 1 min timeout
-    if (chainId !== MINTKUDOS_CHAIN_ID) {
+    if (chain?.id !== MINTKUDOS_CHAIN_ID) {
       const network = Object.values(NETWORKS).find(
         (network) => network.chainId === MINTKUDOS_CHAIN_ID
       )
       toast.closeAll()
-      if (!library.provider.isMetaMask) {
+      if (connector?.name !== 'MetaMask') {
         toast({
           title: 'Wrong network',
           description: `Switch network to ${network.name} in order to mint your badge.`,
@@ -160,7 +157,7 @@ const MintKudos = ({
           duration: null,
         })
       }
-      await switchNetwork(library.provider, networkKey)
+      await switchNetwork({ chainId: MINTKUDOS_CHAIN_ID })
     }
 
     const receiverTypes = {
@@ -175,26 +172,31 @@ const MintKudos = ({
     }
 
     try {
-      const signer = library.getSigner(account)
-      const signature = library.provider.isMetaMask
-        ? await signer._signTypedData(
-            MINTKUDOS_DOMAIN_INFO,
-            receiverTypes,
-            value
-          )
-        : await signer.provider.send('eth_signTypedData', [
-            account,
-            JSON.stringify(
-              ethers.utils._TypedDataEncoder.getPayload(
-                MINTKUDOS_DOMAIN_INFO,
-                receiverTypes,
-                value
-              )
-            ),
-          ])
+      const signature = await signTypedData({
+        domain: MINTKUDOS_DOMAIN_INFO,
+        types: receiverTypes,
+        value,
+      })
+      // TODO: check if still working with Zerion
+      // const signature = library.provider.isMetaMask
+      //   ? await signer._signTypedData(
+      //       MINTKUDOS_DOMAIN_INFO,
+      //       receiverTypes,
+      //       value
+      //     )
+      //   : await signer.provider.send('eth_signTypedData', [
+      //       address,
+      //       JSON.stringify(
+      //         ethers.utils._TypedDataEncoder.getPayload(
+      //           MINTKUDOS_DOMAIN_INFO,
+      //           receiverTypes,
+      //           value
+      //         )
+      //       ),
+      //     ])
       console.log('signature', signature)
       const bodyParameters = {
-        address: account,
+        address,
         kudosId,
         signature,
         message: value,
@@ -284,7 +286,7 @@ ${
   IS_WHITELABEL
     ? `
 Go claim yours here 👇 ${DOMAIN_URL}/lessons/${lesson.slug}`
-    : `${MINTKUDOS_URL}profile/${account}?tab=Received&tokenId=${kudosId}
+    : `${MINTKUDOS_URL}profile/${address}?tab=Received&tokenId=${kudosId}
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 }`
@@ -295,7 +297,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 
   return (
     <Box>
-      {!account ? (
+      {!address ? (
         <>{ConnectFirst}</>
       ) : (
         <>
