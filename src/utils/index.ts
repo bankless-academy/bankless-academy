@@ -3,9 +3,6 @@
 import { Contract } from '@ethersproject/contracts'
 import { getAddress } from '@ethersproject/address'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
-import { InjectedConnector } from '@web3-react/injected-connector'
-import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
-import { NetworkConnector } from '@web3-react/network-connector'
 import * as ethUtil from 'ethereumjs-util'
 import { ethers } from 'ethers'
 import { verifyTypedData } from 'ethers/lib/utils'
@@ -20,7 +17,7 @@ import {
   INFURA_KEY,
   MIRROR_ARTICLE_ADDRESSES,
 } from 'constants/index'
-import { NETWORKS, SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
+import { NETWORKS } from 'constants/networks'
 import axios, { AxiosResponse } from 'axios'
 
 declare global {
@@ -86,22 +83,6 @@ export function getSigner(
 ): JsonRpcSigner {
   return library.getSigner(account).connectUnchecked()
 }
-
-export const injected = new InjectedConnector({
-  supportedChainIds: SUPPORTED_NETWORKS_IDS,
-})
-
-export const walletConnect = new WalletConnectConnector({
-  infuraId: INFURA_KEY,
-  rpc: RPCS,
-  bridge: 'https://bridge.walletconnect.org',
-  qrcode: true,
-})
-
-export const network = new NetworkConnector({
-  urls: { 1: NETWORKS.mainnet.rpcUrl },
-  defaultChainId: 1,
-})
 
 export const toFixed = function (x) {
   if (Math.abs(x) < 1.0) {
