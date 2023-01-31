@@ -76,7 +76,8 @@ export default async function handler(
       let sybil = []
       if (passport?.stamps?.length) {
         for (const stamp of passport?.stamps) {
-          stampHashes[stamp.provider] = stamp.credential.credentialSubject.hash
+          stampHashes[stamp.provider] =
+            stamp.credential?.credentialSubject?.hash
         }
         for (const stamp of passport?.stamps) {
           stampProviders[stamp.provider] = stamp
