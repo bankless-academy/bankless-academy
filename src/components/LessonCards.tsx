@@ -14,6 +14,7 @@ import axios from 'axios'
 import { CircleWavyCheck } from 'phosphor-react'
 import { useRouter } from 'next/router'
 import { useLocalStorage } from 'usehooks-ts'
+import { isMobile } from 'react-device-detect'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import ExternalLink from 'components/ExternalLink'
@@ -24,6 +25,7 @@ import { getArticlesCollected, IS_DEBUG, Mixpanel } from 'utils/index'
 import SubscriptionModal from 'components/SubscriptionModal'
 import { LessonType } from 'entities/lesson'
 import { useActiveWeb3React } from 'hooks'
+import InstallAppModal from 'components/InstallAppModal'
 
 const LessonCard = styled(Box)`
   position: relative;
@@ -86,6 +88,11 @@ const LessonCards: React.FC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [selectedLesson, setSelectedLesson] = useState<LessonType>()
   const { account } = useActiveWeb3React()
+  const {
+    isOpen: isOpenAppModal,
+    onOpen: onOpenAppModal,
+    onClose: onCloseAppModal,
+  } = useDisclosure()
 
   const moduleId = MODULES.find((m) => m.slug === slug)?.moduleId
 
@@ -116,6 +123,29 @@ const LessonCards: React.FC = () => {
         })
     }
   }, [])
+
+  useEffect(() => {
+    const mobilePreferences = localStorage.getItem('mobile-preferences')
+    // TEMP: remove soon
+    const disableFeature = true
+    if (
+      !disableFeature &&
+      isMobile &&
+      // don't show on embed or webapp
+      !localStorage.getItem('embed')?.length &&
+      // user has at least 1 kudos
+      kudosMintedLS.length > 0 &&
+      // user doesn't want to install the mobile app
+      mobilePreferences !== 'no' &&
+      // user has collected a new badge
+      ((mobilePreferences?.length &&
+        parseInt(mobilePreferences) < kudosMintedLS.length) ||
+        // user has at least 1 badge
+        (!mobilePreferences && kudosMintedLS.length))
+    ) {
+      onOpenAppModal()
+    }
+  }, [kudosMintedLS])
 
   useEffect(() => {
     const updateArticlesCollected = async () => {
@@ -284,6 +314,7 @@ const LessonCards: React.FC = () => {
         isOpen={isOpen}
         onClose={onClose}
       />
+      <InstallAppModal isOpen={isOpenAppModal} onClose={onCloseAppModal} />
     </>
   )
 }

@@ -16,7 +16,6 @@ import { useRouter } from 'next/router'
 import ReactHtmlParser from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
 import { Warning } from 'phosphor-react'
-// import { isMobile } from 'react-device-detect'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { LessonType, SlideType } from 'entities/lesson'

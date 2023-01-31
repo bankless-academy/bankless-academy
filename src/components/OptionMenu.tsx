@@ -10,18 +10,29 @@ import {
 } from '@chakra-ui/react'
 import { Mixpanel } from 'utils'
 import SubscriptionModal from 'components/SubscriptionModal'
+import InstallAppModal from 'components/InstallAppModal'
 
 import ExternalLink from 'components/ExternalLink'
 import { IS_WHITELABEL, TWITTER_ACCOUNT } from 'constants/index'
 
 const OptionMenu = ({
   isSmallScreen,
+  isWebApp,
 }: {
   isSmallScreen: boolean
+  isWebApp: boolean
 }): React.ReactElement => {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const {
+    isOpen: isOpenAppModal,
+    onOpen: onOpenAppModal,
+    onClose: onCloseAppModal,
+  } = useDisclosure()
 
   const twitterLink = `https://twitter.com/${TWITTER_ACCOUNT}`
+
+  // TEMP: remove soon
+  const disableFeature = true
 
   return (
     <Box zIndex="2">
@@ -44,17 +55,32 @@ const OptionMenu = ({
             <MenuItem>Report a bug</MenuItem>
           </ExternalLink>
           {!IS_WHITELABEL && (
-            <MenuItem
-              onClick={() => {
-                onOpen()
-                Mixpanel.track('click_internal_link', {
-                  link: 'modal',
-                  name: 'Newsletter signup',
-                })
-              }}
-            >
-              Newsletter signup
-            </MenuItem>
+            <>
+              <MenuItem
+                onClick={() => {
+                  onOpen()
+                  Mixpanel.track('click_internal_link', {
+                    link: 'modal',
+                    name: 'Newsletter signup',
+                  })
+                }}
+              >
+                Newsletter signup
+              </MenuItem>
+              {isWebApp || disableFeature ? null : (
+                <MenuItem
+                  onClick={() => {
+                    onOpenAppModal()
+                    Mixpanel.track('click_internal_link', {
+                      link: 'modal',
+                      name: 'Install Mobile App',
+                    })
+                  }}
+                >
+                  Install Mobile App 📱
+                </MenuItem>
+              )}
+            </>
           )}
           <ExternalLink href={twitterLink} color="white">
             <MenuItem>Follow our Twitter</MenuItem>
@@ -62,6 +88,11 @@ const OptionMenu = ({
         </MenuList>
       </Menu>
       <SubscriptionModal isOpen={isOpen} onClose={onClose} />
+      <InstallAppModal
+        isOpen={isOpenAppModal}
+        onClose={onCloseAppModal}
+        yes={true}
+      />
     </Box>
   )
 }

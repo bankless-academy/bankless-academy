@@ -67,7 +67,7 @@ const SubscriptionModal = ({
           <Box textAlign="right" mb="6">
             <Button
               size="lg"
-              variant="primaryWhiteBig"
+              variant="primaryWhite"
               onClick={async () => {
                 toast.closeAll()
                 if (!email)
