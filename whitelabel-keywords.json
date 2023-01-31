@@ -1,4 +1,7 @@
 {
+  "bdip": {
+    "definition": "BanklessDAO Improvement Proposal"
+  },
   "blockchain": {
     "definition": "A shared, unchangeable database, or ledger, of recorded transactions."
   },
