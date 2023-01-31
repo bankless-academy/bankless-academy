@@ -16,8 +16,8 @@
 
 - [Next.js](https://nextjs.org/docs)
 - [Chakra UI](https://chakra-ui.com/docs/getting-started) (includes [@emotion/styled](https://emotion.sh/docs/styled), which works like [Styled Components](https://styled-components.com/docs/basics))
-- [Web3React](https://github.com/NoahZinsmeister/web3-react)
-- [Web3 Modal](https://www.npmjs.com/package/web3modal)
+- [wagmi](https://github.com/wagmi-dev/wagmi)
+- [Web3Modal](https://github.com/WalletConnect/web3modal)
 - [Ethers](https://www.npmjs.com/package/ethers)
 
 ### Configured with

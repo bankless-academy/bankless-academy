@@ -41,10 +41,6 @@
     "@sendgrid/client": "^7.7.0",
     "@types/mixpanel-browser": "^2.38.0",
     "@walletconnect/web3-provider": "^1.8.0",
-    "@web3-react/core": "^6.1.9",
-    "@web3-react/injected-connector": "^6.0.7",
-    "@web3-react/network-connector": "^6.1.9",
-    "@web3-react/walletconnect-connector": "^6.2.0",
     "@web3modal/ethereum": "^2.0.0",
     "@web3modal/react": "^2.0.0",
     "axios": "^0.21.1",
@@ -73,8 +69,7 @@
     "react-notion-x": "^6.13.10",
     "stringify-object": "^3.3.0",
     "usehooks-ts": "^2.7.1",
-    "wagmi": "^0.11.2",
-    "web3modal": "^1.9.3"
+    "wagmi": "^0.11.2"
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.5",
