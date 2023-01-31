@@ -132,7 +132,6 @@ const InstallAppModal = ({
               <Box mb="0" textAlign="right">
                 <Box display="inline-flex" mb="2" ml="2">
                   <Button
-                    // size="lg"
                     variant="secondaryWhite"
                     onClick={() => {
                       localStorage.setItem(
@@ -147,7 +146,6 @@ const InstallAppModal = ({
                 </Box>
                 <Box display="inline-flex" mb="2" ml="2">
                   <Button
-                    // size="lg"
                     variant="secondaryWhite"
                     onClick={() => {
                       localStorage.setItem('mobile-preferences', 'no')
@@ -157,7 +155,6 @@ const InstallAppModal = ({
                     No
                   </Button>
                   <Button
-                    // size="lg"
                     ml="2"
                     variant="primaryWhite"
                     onClick={() => setShowInstall(true)}
