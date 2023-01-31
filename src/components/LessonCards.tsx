@@ -126,7 +126,10 @@ const LessonCards: React.FC = () => {
 
   useEffect(() => {
     const mobilePreferences = localStorage.getItem('mobile-preferences')
+    // TEMP: remove soon
+    const disableFeature = true
     if (
+      !disableFeature &&
       isMobile &&
       // don't show on embed or webapp
       !localStorage.getItem('embed')?.length &&
