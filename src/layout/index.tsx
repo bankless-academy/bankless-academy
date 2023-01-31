@@ -1,12 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
-import {
-  Box,
-  Center,
-  InputGroup,
-  InputLeftAddon,
-  Input,
-} from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 import Nav from 'layout/Nav'
@@ -42,14 +35,6 @@ const Layout = ({
   isLesson: boolean
 }): React.ReactElement => {
   const [isSmallScreen, isSmallLesson] = useSmallScreen()
-  const [password, setPassword] = useState(localStorage.getItem(`password`))
-  const passwordClean = ('' + password)
-    .toLowerCase()
-    .replaceAll(' ', '')
-    .replaceAll('!', '')
-  const PASSWORDS = ['dao', 'gobankless', 'gobankless🤫']
-  // TODO: clean password protection 🙈
-  const isPasswordCorrect = true || PASSWORDS.includes(passwordClean)
 
   return (
     <Box
@@ -58,44 +43,15 @@ const Layout = ({
       bgColor="#161515"
       overflowX="hidden"
     >
-      {isPasswordCorrect ? (
-        <>
-          <Nav />
-          <StyledBackground
-            issmallscreen={isSmallScreen?.toString()}
-            issmalllesson={isSmallLesson?.toString()}
-            islesson={isLesson?.toString()}
-          >
-            <main>{children}</main>
-          </StyledBackground>
-          {/* <Footer /> */}
-        </>
-      ) : (
-        <>
-          <Center bgGradient="linear(to-l, #2f1e3a, #1c2444)" h="100vh">
-            <Box
-              borderWidth="1px"
-              borderRadius="12px"
-              maxWidth="600px"
-              width="100%"
-              p="20px"
-            >
-              <InputGroup size="lg" width="100%">
-                <InputLeftAddon>Password: </InputLeftAddon>
-                <Input
-                  type="text"
-                  placeholder="in 👉academy-start-here"
-                  value={password}
-                  onChange={(e): void => {
-                    setPassword(e.target.value)
-                    localStorage.setItem(`password`, e.target.value)
-                  }}
-                />
-              </InputGroup>
-            </Box>
-          </Center>
-        </>
-      )}
+      <Nav />
+      <StyledBackground
+        issmallscreen={isSmallScreen?.toString()}
+        issmalllesson={isSmallLesson?.toString()}
+        islesson={isLesson?.toString()}
+      >
+        <main>{children}</main>
+      </StyledBackground>
+      {/* <Footer /> */}
     </Box>
   )
 }
