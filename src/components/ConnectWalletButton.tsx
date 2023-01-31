@@ -1,6 +1,4 @@
-import Web3Modal from 'web3modal'
 import React, { useState, useEffect } from 'react'
-import WalletConnectProvider from '@walletconnect/web3-provider'
 import {
   Button,
   Text,
@@ -11,9 +9,8 @@ import {
   SimpleGrid,
   Box,
   Image,
-  useToast,
-  useDisclosure,
   Heading,
+  useDisclosure,
 } from '@chakra-ui/react'
 import { Wallet } from 'phosphor-react'
 import axios from 'axios'
@@ -22,16 +19,16 @@ import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import { getDefaultProvider } from '@ethersproject/providers'
+import { useWeb3Modal } from '@web3modal/react'
+import { useAccount } from 'wagmi'
+import { disconnect, fetchEnsName } from '@wagmi/core'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
 export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
   OrigPopoverTrigger
 
-import ENSName from 'components/ENSName'
 import ExternalLink from 'components/ExternalLink'
-import { useWalletWeb3React } from 'hooks/index'
-import { walletConnect, injected } from 'utils'
 import { LESSONS, INFURA_KEY, ALCHEMY_KEY } from 'constants/index'
 import {
   MINTKUDOS_API,
@@ -39,15 +36,13 @@ import {
   KUDOS_IDS,
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
-import { SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
+import { shortenAddress } from 'utils'
 
 export const dAvatarProvider = getDefaultProvider(1, {
   infura: INFURA_KEY,
   alchemy: ALCHEMY_KEY,
   quorum: 1,
 })
-
-let web3Modal: Web3Modal
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -61,49 +56,22 @@ const Overlay = styled(Box)`
   backdrop-filter: blur(2px);
 `
 
+export interface Options {
+  route?: 'Account' | 'ConnectWallet' | 'Help' | 'SelectNetwork'
+}
+
 const ConnectWalletButton = ({
   isSmallScreen,
 }: {
   isSmallScreen: boolean
 }): React.ReactElement => {
-  const router = useRouter()
-  const [web3Provider, setWeb3Provider] = useState()
-  const walletWeb3ReactContext = useWalletWeb3React()
-  const isConnected = walletWeb3ReactContext.active
-  const walletAddress = walletWeb3ReactContext.account
-  const [connectClick, setConnectClick] = useState(false)
+  const { open } = useWeb3Modal()
+  const { address } = useAccount()
+  const [ensName, setEnsName] = useState(null)
+  const isConnected = !!address
   const [isPopOverOn, setIsPopOverOn] = useState(false)
   const [walletIsLoading, setWalletIsLoading] = useState(false)
   const [kudos, setKudos] = useState<KudosType[]>([])
-  const toast = useToast()
-  const web3ModalFrame = {
-    cacheProvider: true,
-    theme: {
-      background: '#010101',
-      main: 'white',
-      secondary: 'white',
-      border: '#252525',
-      hover: '#363636',
-    },
-    providerOptions: {
-      walletconnect: {
-        package: WalletConnectProvider,
-        options: {
-          infuraId: INFURA_KEY,
-          rpc: RPCS,
-        },
-        connector: async () => {
-          return 'walletconnect'
-        },
-      },
-      injected: {
-        package: null,
-        connector: async () => {
-          return 'injected'
-        },
-      },
-    },
-  }
   const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
@@ -118,88 +86,43 @@ const ConnectWalletButton = ({
 
   const isLessonPage = asPath.includes('/lessons/')
 
-  function web3ModalConnect(web3Modal) {
-    web3Modal
-      .connect()
-      .then((provider) => {
-        if (
-          !SUPPORTED_NETWORKS_IDS.includes(
-            parseInt(provider?.networkVersion || provider?.chainId)
-          )
-        ) {
-          // wrong network
-          toast.closeAll()
-          toast({
-            title: 'Wrong network detected',
-            description: 'Please switch back to Ethereum Mainnet',
-            status: 'warning',
-            duration: null,
-          })
-        } else {
-          // correct network
-          toast.closeAll()
-        }
-        setWeb3Provider(provider)
-        if (provider.isMetaMask) {
-          return walletWeb3ReactContext.activate(injected)
-        } else {
-          return walletWeb3ReactContext.activate(walletConnect)
-        }
-      })
-      .then(() => {
-        setConnectClick(false)
-      })
-      .catch((e) => {
-        setWalletIsLoading(false)
-        setConnectClick(false)
-        console.error(e)
-      })
+  async function onOpen() {
+    await open()
+  }
+
+  async function disconnectWallet() {
+    setIsPopOverOn(false)
+    await disconnect()
+    setWalletIsLoading(false)
+    setKudos([])
+  }
+
+  async function updateName() {
+    const ensName = await fetchEnsName({
+      address,
+      chainId: 1,
+    })
+    setEnsName(ensName)
   }
 
   useEffect(() => {
-    if (
-      localStorage.getItem('WEB3_CONNECT_CACHED_PROVIDER') &&
-      // don't prompt MetaMask popup if wallet isn't unlocked
-      !(window?.ethereum?.isMetaMask && !window?.ethereum?.selectedAddress)
-    ) {
-      // reflect parent web3 connection status when website is embedded
-      if (
-        !router.asPath.includes('embed=') ||
-        !router.asPath.includes('connect=false')
-      ) {
-        web3Modal = new Web3Modal(web3ModalFrame)
-        web3ModalConnect(web3Modal)
-      }
-    }
-  }, [router])
-
-  useEffect(() => {
-    if (connectClick) {
-      setWalletIsLoading(true)
-      web3Modal = new Web3Modal(web3ModalFrame)
-      web3ModalConnect(web3Modal)
-    }
-  }, [connectClick])
-
-  useEffect(() => {
-    if (walletAddress) {
+    if (address) {
+      updateName()
       setRefreshKudosLS(false)
-      if (
-        localStorage.getItem('current_wallet') !== walletAddress.toLowerCase()
-      ) {
+      if (localStorage.getItem('current_wallet') !== address.toLowerCase()) {
         localStorage.removeItem('passport')
       }
-      localStorage.setItem('current_wallet', walletAddress.toLowerCase())
+      localStorage.setItem('current_wallet', address.toLowerCase())
       const wallets = localStorage.getItem('wallets')
         ? JSON.parse(localStorage.getItem('wallets'))
         : []
-      if (!wallets.includes(walletAddress.toLowerCase())) {
-        wallets.push(walletAddress.toLowerCase())
+      if (!wallets.includes(address.toLowerCase())) {
+        wallets.push(address.toLowerCase())
         localStorage.setItem('wallets', JSON.stringify(wallets))
       }
       axios
         .get(
-          `${MINTKUDOS_API}/v1/wallets/${walletAddress}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
+          `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
         )
         .then((res) => {
           const data = res.data.data
@@ -217,7 +140,7 @@ const ConnectWalletButton = ({
           }
         })
     }
-  }, [walletAddress, !!refreshKudosLS])
+  }, [address, !!refreshKudosLS])
 
   const nbKudosToDisplay = kudos?.map((k) =>
     LESSONS.find((lesson) => lesson.kudosId === k.kudosTokenId)
@@ -243,14 +166,16 @@ const ConnectWalletButton = ({
               leftIcon={
                 <Davatar
                   size={25}
-                  address={walletAddress}
+                  address={address}
                   provider={dAvatarProvider}
                 />
               }
               onClick={() => setIsPopOverOn(!isPopOverOn)}
             >
               <Text maxW="200px" display="flex" alignItems="center" isTruncated>
-                <ENSName provider={web3Provider} address={walletAddress} />
+                {typeof ensName === 'string'
+                  ? ensName
+                  : shortenAddress(address)}
               </Text>
             </Button>
           </PopoverTrigger>
@@ -262,14 +187,7 @@ const ConnectWalletButton = ({
                   isFullWidth
                   size={isSmallScreen ? 'sm' : 'md'}
                   leftIcon={<Wallet weight="bold" />}
-                  onClick={() => {
-                    setIsPopOverOn(false)
-                    walletWeb3ReactContext.deactivate()
-                    web3Modal.clearCachedProvider()
-                    localStorage.removeItem('walletconnect')
-                    setWalletIsLoading(false)
-                    setKudos([])
-                  }}
+                  onClick={disconnectWallet}
                 >
                   Disconnect wallet
                 </Button>
@@ -365,9 +283,7 @@ const ConnectWalletButton = ({
           />
           <PopoverTrigger>
             <Button
-              onClick={() => {
-                setConnectClick(true)
-              }}
+              onClick={onOpen}
               size={isSmallScreen ? 'sm' : 'md'}
               leftIcon={<Wallet weight="bold" />}
               isLoading={walletIsLoading}

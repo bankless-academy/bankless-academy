@@ -74,10 +74,10 @@ function useName(address, provider) {
 
 export default function ENSName({
   address,
-  provider = window.web3 ? window.web3.currentProvider : window.ethereum,
+  provider,
 }: {
   address: string
-  provider?: any
+  provider: any
 }): React.ReactElement {
   const name = useName(address, provider)
   return <>{name || shortenAddress(address)}</>
