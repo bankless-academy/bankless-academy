@@ -63,15 +63,18 @@ export const MERKLE_DISTRIBUTOR_ADDRESS = {
 
 export const DefaultProviderName = 'DEFAULT'
 
-export const INFURA_ID =
-  process.env.INFURA_ID || 'cb578d660f614bbcb41b3c03553ff6f2'
+export const INFURA_KEY =
+  process.env.NEXT_PUBLIC_INFURA_KEY || 'cb578d660f614bbcb41b3c03553ff6f2'
 
-export const ALCHEMY_ID =
-  process.env.ALCHEMY_ID || 'YOMxKNRHe0u8QF82ls7184P9nyi0EBcJ'
+export const ALCHEMY_KEY = process.env.NEXT_PUBLIC_ALCHEMY_KEY
 
 export const QUESTS: string[] = LESSONS.filter((lesson) => lesson.quest).map(
   (lesson) => lesson.quest
 )
+
+export const NOTION_IDS: string[] = LESSONS.filter(
+  (lesson) => !lesson.isArticle
+).map((lesson) => lesson.notionId)
 
 export const EMAIL_CONTACT = 'support@banklessacademy.com'
 
@@ -92,6 +95,10 @@ export const MIRROR_WHITELISTED_ACCOUNTS = [
   'ornellaweb3.eth',
   'hirokennelly.eth',
 ]
+
+export const MIRROR_ARTICLE_ADDRESSES = LESSONS.filter(
+  (lesson) => lesson.mirrorNFTAddress
+).map((lesson) => lesson.mirrorNFTAddress)
 
 export const ACTIVATE_MIXPANEL = !!process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID
 

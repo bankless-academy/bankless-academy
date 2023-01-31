@@ -8,7 +8,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import { Mixpanel } from 'utils'
-import NewsletterModal from 'components/NewsletterModal'
+import SubscriptionModal from 'components/SubscriptionModal'
 
 import ExternalLink from 'components/ExternalLink'
 import { IS_WHITELABEL, TWITTER_ACCOUNT } from 'constants/index'
@@ -60,7 +60,7 @@ const OptionMenu = ({
           </ExternalLink>
         </MenuList>
       </Menu>
-      <NewsletterModal isOpen={isOpen} onClose={onClose} />
+      <SubscriptionModal isOpen={isOpen} onClose={onClose} />
     </>
   )
 }

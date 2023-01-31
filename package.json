@@ -38,6 +38,7 @@
     "@emotion/styled": "^11",
     "@ensdomains/ensjs": "^2.0.1",
     "@gitcoinco/passport-sdk-reader": "^0.1.4",
+    "@sendgrid/client": "^7.7.0",
     "@types/mixpanel-browser": "^2.38.0",
     "@walletconnect/web3-provider": "^1.8.0",
     "@web3-react/core": "^6.1.9",

@@ -1,3 +1,7 @@
+import {
+  SystemStyleObject,
+  SystemStyleFunction,
+} from '@chakra-ui/theme-tools/src/component'
 import { isMobile } from 'react-device-detect'
 
 const primaryStyle = {
@@ -30,6 +34,122 @@ const secondaryStyle = {
 const padding = { paddingLeft: '15px', paddingRight: '15px' }
 const paddingBig = { paddingLeft: '23px', paddingRight: '23px' }
 
+const primary = {
+  background: 'linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)',
+  backdropFilter: 'blur(50px)',
+  borderRadius: '8px',
+  _hover: isMobile
+    ? {}
+    : {
+        ...padding,
+        ...primaryStyle,
+      },
+}
+
+const primaryGold = {
+  ...primary,
+  background: 'linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%)',
+  _hover: {
+    ...padding,
+    background: 'transparent',
+    border: '1px solid #f1b15a',
+  },
+}
+
+const primaryBig = {
+  background: 'linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)',
+  backdropFilter: 'blur(50px)',
+  borderRadius: '60px',
+  _hover: isMobile
+    ? {}
+    : {
+        ...paddingBig,
+        ...primaryStyle,
+      },
+}
+
+const primaryWhiteBig = {
+  ...primaryBig,
+  background: 'white',
+  color: '#5D4E78',
+  border: '2px solid transparent',
+  _hover: {
+    background: 'white',
+    border: '2px solid #b357ec',
+  },
+}
+
+const primaryBigLast = {
+  background:
+    'linear-gradient(270deg, #FFFCF9 -44.74%, #F77B54 -11.81%, #916AB8 94.44%)',
+  backdropFilter: 'blur(50px)',
+  borderRadius: '60px',
+  _hover: isMobile
+    ? {}
+    : {
+        ...paddingBig,
+        ...primaryStyle,
+      },
+}
+
+const secondary = {
+  background: '#3F3253',
+  backdropFilter: 'blur(50px)',
+  borderRadius: '8px',
+  _hover: isMobile
+    ? {}
+    : {
+        ...padding,
+        ...secondaryStyle,
+      },
+}
+
+const secondaryGold = {
+  ...primary,
+  background: 'transparent',
+  color: '#f1b15a',
+  border: '1px solid #f1b15a',
+  _hover: {
+    cursor: 'default',
+  },
+}
+
+const secondaryBig = {
+  background: '#3F3253',
+  backdropFilter: 'blur(50px)',
+  borderRadius: '60px',
+  _hover: isMobile
+    ? {}
+    : {
+        ...paddingBig,
+        ...secondaryStyle,
+      },
+}
+
+// TODO: https://chakra-ui.com/docs/styled-system/advanced-theming#theme-typings for auto-complete
+type variantType = SystemStyleObject | SystemStyleFunction
+type variantsTypes = {
+  primary: variantType
+  primaryGold: variantType
+  primaryBig: variantType
+  primaryWhiteBig: variantType
+  primaryBigLast: variantType
+  secondary: variantType
+  secondaryGold: variantType
+  secondaryBig: variantType
+}
+
+const variants: variantsTypes = {
+  primary,
+  primaryGold,
+  primaryBig,
+  primaryWhiteBig,
+  primaryBigLast,
+  secondary,
+  secondaryGold,
+  secondaryBig,
+}
+
 export default {
   Button: {
     baseStyle: {
@@ -38,65 +158,6 @@ export default {
         textDecoration: 'none !important',
       },
     },
-    variants: {
-      primary: {
-        background:
-          'linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)',
-        backdropFilter: 'blur(50px)',
-        borderRadius: '8px',
-        _hover: isMobile
-          ? {}
-          : {
-              ...padding,
-              ...primaryStyle,
-            },
-      },
-      primaryBig: {
-        background:
-          'linear-gradient(135.91deg, #B06FD8 29.97%, #597AEE 99.26%)',
-        backdropFilter: 'blur(50px)',
-        borderRadius: '60px',
-        _hover: isMobile
-          ? {}
-          : {
-              ...paddingBig,
-              ...primaryStyle,
-            },
-      },
-      primaryBigLast: {
-        background:
-          'linear-gradient(270deg, #FFFCF9 -44.74%, #F77B54 -11.81%, #916AB8 94.44%)',
-        backdropFilter: 'blur(50px)',
-        borderRadius: '60px',
-        _hover: isMobile
-          ? {}
-          : {
-              ...paddingBig,
-              ...primaryStyle,
-            },
-      },
-      secondary: {
-        background: '#3F3253',
-        backdropFilter: 'blur(50px)',
-        borderRadius: '8px',
-        _hover: isMobile
-          ? {}
-          : {
-              ...padding,
-              ...secondaryStyle,
-            },
-      },
-      secondaryBig: {
-        background: '#3F3253',
-        backdropFilter: 'blur(50px)',
-        borderRadius: '60px',
-        _hover: isMobile
-          ? {}
-          : {
-              ...paddingBig,
-              ...secondaryStyle,
-            },
-      },
-    },
+    variants,
   },
 }

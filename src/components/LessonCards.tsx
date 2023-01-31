@@ -7,6 +7,7 @@ import {
   TagRightIcon,
   Button,
   Tooltip,
+  useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import axios from 'axios'
@@ -19,7 +20,10 @@ import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import LessonBanner from 'components/LessonBanner'
 import MODULES from 'constants/whitelabel_modules'
-import { IS_DEBUG } from 'utils/index'
+import { getArticlesCollected, IS_DEBUG, Mixpanel } from 'utils/index'
+import SubscriptionModal from 'components/SubscriptionModal'
+import { LessonType } from 'entities/lesson'
+import { useActiveWeb3React } from 'hooks'
 
 const LessonCard = styled(Box)`
   position: relative;
@@ -75,6 +79,13 @@ const LessonCards: React.FC = () => {
 
   const [stats, setStats]: any = useState(null)
   const [kudosMintedLS] = useLocalStorage('kudosMinted', [])
+  const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
+    'articlesCollected',
+    []
+  )
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [selectedLesson, setSelectedLesson] = useState<LessonType>()
+  const { account } = useActiveWeb3React()
 
   const moduleId = MODULES.find((m) => m.slug === slug)?.moduleId
 
@@ -87,7 +98,11 @@ const LessonCards: React.FC = () => {
         )
       : all !== undefined
       ? LESSONS
-      : LESSONS.filter((lesson) => lesson.publicationStatus === 'publish')
+      : LESSONS.filter(
+          (lesson) =>
+            lesson.publicationStatus === 'publish' ||
+            lesson.publicationStatus === 'planned'
+        )
 
   useEffect(() => {
     if (IS_DEBUG) {
@@ -102,6 +117,17 @@ const LessonCards: React.FC = () => {
     }
   }, [])
 
+  useEffect(() => {
+    const updateArticlesCollected = async () => {
+      const articlesCollected = await getArticlesCollected(account)
+      if (articlesCollected && Array.isArray(articlesCollected))
+        setArticlesCollectedLS(articlesCollected)
+    }
+    if (!IS_WHITELABEL && account) {
+      updateArticlesCollected().catch(console.error)
+    }
+  }, [account])
+
   return (
     <>
       {Lessons.map((lesson, index) => {
@@ -110,11 +136,18 @@ const LessonCards: React.FC = () => {
         // const numberOfSlides = lesson.slides.length
         const isKudosMinted = kudosMintedLS.includes(lesson.kudosId)
         const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
+        const isNotified =
+          lesson.publicationStatus === 'planned'
+            ? localStorage.getItem(`${lesson.slug}-notification`)
+            : false
         const lessonCompleted =
           (lesson.quest &&
             stats?.lessonCompleted &&
             stats?.lessonCompleted[lesson.notionId]) ||
           0
+        const isArticleCollected =
+          lesson.mirrorNFTAddress?.length &&
+          articlesCollectedLS.includes(lesson.mirrorNFTAddress)
         return (
           <LessonCard key={`lesson-${index}`} p={6} pb={8} borderRadius="3xl">
             <Box position="relative" zIndex="1">
@@ -136,19 +169,17 @@ const LessonCards: React.FC = () => {
                 ) : (
                   <Tag size="md" backgroundColor="transparent"></Tag>
                 )}
-
-                <Text fontSize="md">
+                <Text fontSize="md" alignSelf="center">
                   {lessonCompleted > 0 && `${lessonCompleted} Completions`}
                 </Text>
               </Box>
               <Text fontSize="lg" minH="54px">
                 {lesson.description}
               </Text>
-              <InternalLink href={`/lessons/${lesson.slug}`} alt={lesson.name}>
+              {lesson.publicationStatus === 'planned' && all === undefined ? (
                 <LessonBanner
                   iswhitelabel={IS_WHITELABEL.toString()}
-                  isArticle={lesson?.isArticle?.toString()}
-                  cursor="pointer"
+                  isarticle={lesson?.isArticle?.toString()}
                   style={{
                     aspectRatio: '1.91/1',
                   }}
@@ -156,47 +187,103 @@ const LessonCards: React.FC = () => {
                 >
                   <Image src={lesson.lessonImageLink} />
                 </LessonBanner>
-              </InternalLink>
-              <Box display="flex" flexDirection="row-reverse" mt="4">
+              ) : (
                 <InternalLink
                   href={`/lessons/${lesson.slug}`}
                   alt={lesson.name}
                 >
-                  <Button
-                    variant={
-                      isKudosMinted || lesson?.isArticle
-                        ? 'secondary'
-                        : 'primary'
-                    }
+                  <LessonBanner
+                    iswhitelabel={IS_WHITELABEL.toString()}
+                    isarticle={lesson?.isArticle?.toString()}
+                    cursor="pointer"
+                    style={{
+                      aspectRatio: '1.91/1',
+                    }}
+                    py="4"
                   >
-                    {lesson?.isArticle
-                      ? 'Read Entry'
-                      : isKudosMinted
-                      ? 'Revisit Lesson'
-                      : isLessonStarted
-                      ? 'Resume Lesson'
-                      : 'Start Lesson'}
-                  </Button>
+                    <Image src={lesson.lessonImageLink} />
+                  </LessonBanner>
                 </InternalLink>
+              )}
+              <Box
+                display="flex"
+                flexDirection="row-reverse"
+                mt="4"
+                justifyContent="space-between"
+              >
+                {lesson.publicationStatus === 'planned' && all === undefined ? (
+                  <Button
+                    variant={isNotified ? 'outline' : 'primary'}
+                    onClick={() => {
+                      if (isNotified) return
+                      setSelectedLesson(lesson)
+                      onOpen()
+                      Mixpanel.track('click_internal_link', {
+                        link: 'modal',
+                        name: 'Lesson notification',
+                        lesson: lesson.name,
+                      })
+                    }}
+                    cursor={isNotified ? 'default' : 'pointer'}
+                  >
+                    {isNotified ? 'Subscribed' : 'Notify me'}
+                  </Button>
+                ) : (
+                  <InternalLink
+                    href={`/lessons/${lesson.slug}`}
+                    alt={lesson.name}
+                  >
+                    <Button
+                      variant={
+                        isKudosMinted || lesson?.isArticle
+                          ? 'secondary'
+                          : 'primary'
+                      }
+                    >
+                      {lesson?.isArticle
+                        ? 'Read Entry'
+                        : isKudosMinted
+                        ? 'Revisit Lesson'
+                        : isLessonStarted
+                        ? 'Resume Lesson'
+                        : 'Start Lesson'}
+                    </Button>
+                  </InternalLink>
+                )}
                 {isKudosMinted && lesson.communityDiscussionLink ? (
                   <ExternalLink
                     href={lesson.communityDiscussionLink}
-                    mr="16px"
                     alt={`${lesson.name} community discussion`}
                   >
                     <Tooltip
                       hasArrow
                       label="Join other explorers to discuss this lesson."
                     >
-                      <Button variant="outline">👨‍🚀 Discussion</Button>
+                      <Button variant="secondary">👨‍🚀 Discussion</Button>
                     </Tooltip>
                   </ExternalLink>
+                ) : null}
+                {lesson.isArticle ? (
+                  isArticleCollected ? (
+                    <Button variant="secondaryGold">Entry Collected</Button>
+                  ) : (
+                    <ExternalLink href={lesson.mirrorLink}>
+                      <Tooltip hasArrow label="Collect Entry on Mirror.xyz">
+                        <Button variant="primaryGold">Collect Entry</Button>
+                      </Tooltip>
+                    </ExternalLink>
+                  )
                 ) : null}
               </Box>
             </Box>
           </LessonCard>
         )
       })}
+      <SubscriptionModal
+        lesson={selectedLesson}
+        isOpen={isOpen}
+        onClose={onClose}
+      />
     </>
   )
 }
