@@ -1119,7 +1119,7 @@ const LESSONS: LessonType[] = [
     featuredOrderOnHomepage: null,
     isCommentsEnabled: true,
     endOfLessonRedirect: 'https://tally.so/r/wzEV7E',
-    endOfLessonText: undefined,
+    endOfLessonText: 'To give feedback about this lesson, click Next.',
     communityDiscussionLink: null,
     notionId: '340eb401ab824dea8f85aace1aaf69c1',
     slug: 'layer-2-blockchains',
@@ -1145,14 +1145,14 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'dc574962da85412b812f13526ec34e4f',
         title: 'Payment Channels',
-        content: '<div class="bloc1"><p>There are a number of ways to scale blockchains. On the Bitcoin blockchain, the Lightening Network operates through the use of <code>payment channels</code>, but it doesn’t inherent the Bitcoin network’s security.</p><p>To overcome this security gap, any party who wishes to receive assets must have an equal amount of <code>collateral</code> deposited with the provider, and both parties must sign each transaction. The collateralization and signatures occur off the main chain, which is what permits the network to scale.</p><p>The architecture enables parties to open payment channels between two or more users. Between the opening and closing of a channel, parties can shift funds between themselves. Once the channel is closed, the transactions are sent to the main chain for confirmation and inclusion.</p><p>Payment channels are optimized for finality and the ability to be trustless, but the lockup requirement makes this solution impractical for everyday transactions. </p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/payment-channels-3e833c53.png\'></div>'
+        content: '<div class="bloc1"><p>There are a number of ways to scale blockchains. On the Bitcoin blockchain, the Lightening Network operates through the use of <code>payment channels</code>, but it doesn’t inherent the Bitcoin network’s security.</p><p>To overcome this security gap, any party who wishes to receive assets must have an equal amount of <code>collateral</code> deposited with the provider, and both parties must sign each transaction. The collateralization and signatures occur off the main chain, which is what permits the network to scale.</p><p>The architecture enables parties to open payment channels amongst two or more users. Between the opening and closing of a channel, parties can shift funds between themselves. Once the channel is closed, the transactions are sent to the main chain for confirmation and inclusion.</p><p>Payment channels are optimized for finality and the ability to be trustless, but the lockup requirement makes this solution impractical for everyday transactions. </p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/payment-channels-3e833c53.png\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: 'c936d76401b8492ebc04e9faad4971df',
         title: '✅ Question',
         quiz: {
-          question: 'True or False: payment channels inherit the security of the main chain.',
+          question: 'Payment channels inherit the security of the main chain.',
           rightAnswerNumber: 2,
           answers: [
             'True',
@@ -1176,7 +1176,7 @@ const LESSONS: LessonType[] = [
           rightAnswerNumber: 3,
           answers: [
             'also use payment channels to scale the network. ',
-            'presently rely only on sidechains. ',
+            'presently rely solely on sidechains. ',
             'called Optimistic Rollups and sidechains are currently the most popular. ',
             'are unable to inherent the security of the main chain. '
           ],
@@ -1187,13 +1187,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'cd8cecba43b74bdd881a93394cd61423',
         title: 'Bridging Layer 1 and Layer 2',
-        content: '<div class="bloc1"><p>As we learned in <a href=\'https://app.banklessacademy.com/lessons/blockchain-basics\'>Blockchain Basics</a>, blockchains are just databases, which we call <code>ledgers</code>, that provide a cryptographically secured, chronological list of transactions. Whether a Layer 1 blockchain, sidechain, or Layer 2 scaling solution, it’s all about these secured databases.</p><p>There are a number of ways to consider how these databases talk with each other, but perhaps the best analogy involves bridges, those great connectors of people and places. For example, if you think of Ethereum Mainnet (or any other <code>Layer 1</code> blockchain) as one island, and another blockchain or your scaling solution of choice as another, a crypto <code>bridge</code> is the generic term for the networked highway connecting these two digital islands. Even scaling solutions can be considered bridges, as they ultimately post some data to Mainnet, ensuring that the islands, the databases, must be connected. </p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-0fc615b5.png\'></div>'
+        content: '<div class="bloc1"><p>As we learned in <a href=\'https://app.banklessacademy.com/lessons/blockchain-basics\'>Blockchain Basics</a>, blockchains are just databases, which we call <code>ledgers</code>, that provide a cryptographically secured, chronological list of transactions. Whether a Layer 1 blockchain, sidechain, or Layer 2 scaling solution, it’s all about these secured databases.</p><p>There are a number of ways to consider how these databases talk with each other, but perhaps the best analogy involves bridges, those great connectors of people and places. For example, if you think of Ethereum Mainnet (or any other <code>Layer 1</code> blockchain) as one island, and another blockchain or your scaling solution of choice as another, a crypto <code>bridge</code> is the generic term for the networked highway connecting these two digital islands. Scaling solutions can be considered bridges, as they ultimately post some data to Mainnet, ensuring that the islands, the databases, must be connected. </p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-0fc615b5.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '826947a620bd4c64a9d3eb370bb81f4a',
         title: 'Sidechains',
-        content: '<div class="bloc1"><p>The most prominent scaling solution to implement <code>sidechains</code> is Polygon, which runs a proof-of-stake <code>PoS</code> sidechain along side Ethereum, validating and processing transactions while normally still relying on Mainnet for <code>security</code>. Since the mathematical heavy lifting is processed on the sidechain rather than Mainnet, <code>gas</code> remains low. The downsides to sidechain s are the chains are more centralized than Mainnet, scaling solution isn’t as compatible with Mainnet as Rollups, and a native token, like MATIC, is required to use the network.</p><p>Sidechains regularly publish periodic snapshots of the chain state to the Layer 1 <code>settlement layer</code>. The chain state sounds complex, but it’s really just a moment-in-time picture of the current makeup of the ledger. This snapshot is useful if fraud is detected, as sidechains can be rolled back to the previous snapshot if necessary.</p><p>In addition to rollback functionality, the benefit of sidechains is that they are less expensive to transact on, but the downsides are that they are less secure less compatible than Rollups, and require users to transact in a native token to use the network.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/sidechains-b55fb072.png\'></div>'
+        content: '<div class="bloc1"><p>The most prominent scaling solution to implement <code>sidechains</code> is Polygon, which runs a proof-of-stake <code>PoS</code> sidechain, validating and processing transactions but relying on Mainnet for <code>security</code>. Since the mathematical heavy lifting is processed on the sidechain, <code>gas</code> remains low. The main downsides to sidechains are they aren’t often as compatible with Mainnet as Rollups, the validation can be centralized, and a native token, like MATIC, is required to use the network.</p><p>Sidechains regularly publish periodic snapshots of the chain state to the Layer 1 <code>settlement layer</code> , which is a moment-in-time picture of the current makeup of the ledger. This snapshot is useful if fraud is detected, as sidechains can be rolled back to the previous snapshot.</p><p>In addition to the benefit of rollback functionality, sidechains are less expensive to transact on, but the downsides are that they are less secure and less compatible than Rollups, and require users to transact in a native token to use the network.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/sidechains-b55fb072.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1203,10 +1203,10 @@ const LESSONS: LessonType[] = [
           question: 'Sidechains tend to be cheaper, and:',
           rightAnswerNumber: 4,
           answers: [
-            'more secure than Mainnet. ',
-            'don’t require a native token to use the network.',
-            'offer the same dApps as Mainnet. ',
-            'enable the chain to be rolled back in the case of fraud. '
+            'have greater centralization risks than Mainnet. ',
+            'require a native token to use the network.',
+            'enable the chain to be rolled back in the case of fraud. ',
+            'all the above.'
           ],
           id: 'layer-2-blockchains-3'
         }
@@ -1228,13 +1228,11 @@ const LESSONS: LessonType[] = [
         notionId: '057bb41223514659805e95984d08e127',
         title: '✅ Question',
         quiz: {
-          question: 'On Optimistic Rollups, transactions',
-          rightAnswerNumber: 4,
+          question: 'With Optimistic Rollups, transactions are considered valid until proven otherwise.',
+          rightAnswerNumber: 1,
           answers: [
-            'to Mainnet are nearly instantaneous. ',
-            'occur on a sidechain running next to Mainnet.',
-            'are posted to Mainnet one at a time. ',
-            'are considered valid until proven otherwise. '
+            'True',
+            'False'
           ],
           id: 'layer-2-blockchains-4'
         }
