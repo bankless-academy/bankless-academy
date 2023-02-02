@@ -11,17 +11,16 @@ import {
   Image,
   Heading,
   useDisclosure,
+  Avatar,
 } from '@chakra-ui/react'
 import { Wallet } from 'phosphor-react'
 import axios from 'axios'
-import Davatar from '@davatar/react'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-import { getDefaultProvider } from '@ethersproject/providers'
 import { useWeb3Modal } from '@web3modal/react'
 import { useAccount } from 'wagmi'
-import { disconnect, fetchEnsName } from '@wagmi/core'
+import { disconnect, fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -29,7 +28,7 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
   OrigPopoverTrigger
 
 import ExternalLink from 'components/ExternalLink'
-import { LESSONS, INFURA_KEY, ALCHEMY_KEY } from 'constants/index'
+import { LESSONS } from 'constants/index'
 import {
   MINTKUDOS_API,
   MINTKUDOS_COMMUNITY_ID,
@@ -37,12 +36,6 @@ import {
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
 import { shortenAddress } from 'utils'
-
-export const dAvatarProvider = getDefaultProvider(1, {
-  infura: INFURA_KEY,
-  alchemy: ALCHEMY_KEY,
-  quorum: 1,
-})
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -66,9 +59,9 @@ const ConnectWalletButton = ({
   isSmallScreen: boolean
 }): React.ReactElement => {
   const { open } = useWeb3Modal()
-  const { address } = useAccount()
+  const { address, isConnecting, isDisconnected } = useAccount()
   const [ensName, setEnsName] = useState(null)
-  const isConnected = !!address
+  const [ensAvatar, setEnsAvatar] = useState(null)
   const [isPopOverOn, setIsPopOverOn] = useState(false)
   const [walletIsLoading, setWalletIsLoading] = useState(false)
   const [kudos, setKudos] = useState<KudosType[]>([])
@@ -102,13 +95,41 @@ const ConnectWalletButton = ({
       address,
       chainId: 1,
     })
+    const ensAvatar = await fetchEnsAvatar({
+      address,
+      chainId: 1,
+    })
     setEnsName(ensName)
+    setEnsAvatar(ensAvatar)
+  }
+
+  function refreshKudos() {
+    axios
+      .get(
+        `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
+      )
+      .then((res) => {
+        const data = res.data.data
+        if (Array.isArray(data)) {
+          setKudosMintedLS(
+            KUDOS_IDS.filter((kudosId) =>
+              data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
+            )
+          )
+          setKudos(
+            data.filter((kudos: KudosType) =>
+              KUDOS_IDS.includes(kudos.kudosTokenId)
+            )
+          )
+        }
+      })
   }
 
   useEffect(() => {
+    setEnsName(null)
+    setEnsAvatar(null)
     if (address) {
       updateName()
-      setRefreshKudosLS(false)
       if (localStorage.getItem('current_wallet') !== address.toLowerCase()) {
         localStorage.removeItem('passport')
       }
@@ -120,27 +141,16 @@ const ConnectWalletButton = ({
         wallets.push(address.toLowerCase())
         localStorage.setItem('wallets', JSON.stringify(wallets))
       }
-      axios
-        .get(
-          `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
-        )
-        .then((res) => {
-          const data = res.data.data
-          if (Array.isArray(data)) {
-            setKudosMintedLS(
-              KUDOS_IDS.filter((kudosId) =>
-                data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
-              )
-            )
-            setKudos(
-              data.filter((kudos: KudosType) =>
-                KUDOS_IDS.includes(kudos.kudosTokenId)
-              )
-            )
-          }
-        })
+      refreshKudos()
     }
-  }, [address, !!refreshKudosLS])
+  }, [address])
+
+  useEffect(() => {
+    if (refreshKudosLS) {
+      setRefreshKudosLS(false)
+      refreshKudos()
+    }
+  }, [refreshKudosLS])
 
   const nbKudosToDisplay = kudos?.map((k) =>
     LESSONS.find((lesson) => lesson.kudosId === k.kudosTokenId)
@@ -148,7 +158,7 @@ const ConnectWalletButton = ({
 
   return (
     <>
-      {isConnected ? (
+      {!isDisconnected ? (
         <Popover
           isOpen={isPopOverOn}
           placement="bottom-end"
@@ -162,18 +172,26 @@ const ConnectWalletButton = ({
             <Button
               variant="secondary"
               size={isSmallScreen ? 'sm' : 'md'}
-              // TODO: fix bug when switching wallets
               leftIcon={
-                <Davatar
-                  size={25}
-                  address={address}
-                  provider={dAvatarProvider}
+                <Avatar
+                  w="28px"
+                  h="28px"
+                  src={isConnecting ? null : ensAvatar}
+                  loading="eager"
+                  icon={
+                    <Image
+                      borderRadius="50%"
+                      src="/images/default_avatar.png"
+                    />
+                  }
                 />
               }
               onClick={() => setIsPopOverOn(!isPopOverOn)}
             >
               <Text maxW="200px" display="flex" alignItems="center" isTruncated>
-                {typeof ensName === 'string'
+                {isConnecting
+                  ? '...'
+                  : typeof ensName === 'string'
                   ? ensName
                   : shortenAddress(address)}
               </Text>
