@@ -5,6 +5,8 @@ import 'prismjs/themes/prism-tomorrow.css'
 import 'mac-scrollbar/dist/mac-scrollbar.css'
 import { GlobalScrollbar } from 'mac-scrollbar'
 import { isMobile } from 'react-device-detect'
+import styled from '@emotion/styled'
+import { Box } from '@chakra-ui/react'
 
 import Head, { MetaData } from 'components/Head'
 import Layout from 'layout'
@@ -18,11 +20,24 @@ import {
   walletConnectProvider,
 } from '@web3modal/ethereum'
 
-import { Web3Modal } from '@web3modal/react'
+import { useWeb3Modal, Web3Modal } from '@web3modal/react'
 
 import { configureChains, createClient, WagmiConfig } from 'wagmi'
 
 import { mainnet, polygon } from 'wagmi/chains'
+
+const Overlay = styled(Box)`
+  opacity: 1;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: var(--chakra-colors-blackAlpha-600);
+  z-index: 2;
+  margin: 0;
+  backdrop-filter: blur(10px);
+`
 
 const App = ({
   Component,
@@ -40,6 +55,7 @@ const App = ({
   }
 
   const chains = [mainnet, polygon]
+  const { isOpen } = useWeb3Modal()
 
   // Wagmi client
   const { provider } = configureChains(chains, [
@@ -96,9 +112,13 @@ const App = ({
             </Layout>
           </WagmiConfig>
 
+          <Overlay hidden={!isOpen} />
           <Web3Modal
             projectId={process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID}
             ethereumClient={ethereumClient}
+            themeMode="dark"
+            themeColor="purple"
+            themeBackground="themeColor"
           />
         </NonSSRWrapper>
       </ThemeProvider>
