@@ -1105,7 +1105,7 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/layer-2-blockchains/kudos-761ee1a2.png',
     lessonImageLink: '/images/coming-soon-lesson.png',
-    socialImageLink: '/lesson/layer-2-blockchains/social-55bc6c50.jpg',
+    socialImageLink: '/lesson/layer-2-blockchains/social-788a6512.jpg',
     learningActions: '',
     marketingDescription: 'The Layer 2 revolution has begun. Discover how the Layer 2 ecosystem can boost your transaction speed & reduce gas fees.',
     kudosId: null,
