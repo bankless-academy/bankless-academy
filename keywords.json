@@ -104,9 +104,6 @@
   "epoch": {
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
-  "finality": {
-    "definition": "How long it takes until it is safe to trust that a new transaction is valid and final."
-  },
   "fomo": {
     "definition": "Fear Of Missing Out. Anxiety or apprehension about missing out on or not getting things."
   },
@@ -295,6 +292,9 @@
   },
   "transaction": {
     "definition": "A record of an event."
+  },
+  "transaction finality": {
+    "definition": "The time it takes to be sure that a transaction is valid and final, meaning it won't be reversed or changed."
   },
   "transaction hash": {
     "definition": "The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions."
