@@ -7,7 +7,7 @@ import InstallAppModal from 'components/InstallAppModal'
 
 const pageMeta: MetaData = {
   description: 'Install the Bankless Academy mobile app on Android or iOS.',
-  image: '/images/download-mobile-app-temp.png',
+  image: '/images/download-mobile-app.png',
 }
 
 export const getStaticProps: GetStaticProps = async () => {

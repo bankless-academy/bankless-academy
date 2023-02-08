@@ -97,13 +97,23 @@ const InstallAppModal = ({
                 </>
               ) : (
                 <>
-                  <Image
-                    borderRadius="10px"
-                    maxH="60vh"
-                    m="auto"
-                    src="/images/install-app-Android.gif"
-                    alt="Install mobile app on Android"
-                  />
+                  <video
+                    autoPlay
+                    loop
+                    playsInline
+                    muted
+                    style={{
+                      borderRadius: '10px',
+                      overflow: 'hidden',
+                      maxHeight: '60vh',
+                      margin: 'auto',
+                    }}
+                  >
+                    <source
+                      src="/images/install-app-Android.mp4"
+                      type="video/mp4"
+                    ></source>
+                  </video>
                   <Text fontSize="md" mt="4">
                     {`In your mobile browser, click on "︙" icon for menu options, then click "Install app".`}
                   </Text>
