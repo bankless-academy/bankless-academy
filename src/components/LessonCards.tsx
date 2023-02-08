@@ -27,7 +27,8 @@ import { LessonType } from 'entities/lesson'
 import { useActiveWeb3React } from 'hooks'
 import InstallAppModal from 'components/InstallAppModal'
 
-const LessonCard = styled(Box)`
+// TODO: move to dedicated component file
+export const LessonCard = styled(Box)`
   position: relative;
   ::after {
     background: linear-gradient(
