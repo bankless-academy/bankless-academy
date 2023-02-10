@@ -48,6 +48,7 @@
     "ethereumjs-util": "^7.1.5",
     "ethers": "^5.7.2",
     "framer-motion": "^7.6.15",
+    "iron-session": "^6.3.1",
     "js-crc": "^0.2.0",
     "knex": "^2.4.0",
     "mac-scrollbar": "^0.10.3",
@@ -67,6 +68,7 @@
     "react-icons": "^4.2.0",
     "react-markdown": "^8.0.3",
     "react-notion-x": "^6.13.10",
+    "siwe": "^1.1.6",
     "stringify-object": "^3.3.0",
     "usehooks-ts": "^2.7.1",
     "wagmi": "^0.11.2"
