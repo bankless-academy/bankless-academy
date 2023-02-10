@@ -69,6 +69,11 @@ const InstallAppModal = ({
             <ModalBody px="6" pb="4">
               {isDesktop ? (
                 <>
+                  <Text fontSize="md" mb="4" alignSelf="center">
+                    {`Open the website `}
+                    <b>on mobile</b>
+                    {`, open the main menu, and press "Install Mobile App".`}
+                  </Text>
                   <Image
                     borderRadius="10px"
                     maxH="60vh"
@@ -76,11 +81,6 @@ const InstallAppModal = ({
                     src="/images/install-app-desktop.gif"
                     alt="Open website on mobile"
                   />
-                  <Text fontSize="md" mt="4" alignSelf="center">
-                    {`Open the website `}
-                    <b>on mobile</b>
-                    {` and follow the instructions`}
-                  </Text>
                 </>
               ) : isIOS ? (
                 <>
