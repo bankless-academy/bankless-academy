@@ -2,7 +2,7 @@ import { Box, SimpleGrid, Image, Icon } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
-import { Stamps } from 'entities/passport'
+// import { Stamps } from 'entities/passport'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 
@@ -26,7 +26,7 @@ const GitcoinPassport = ({
   stamps,
   displayStamps,
 }: {
-  stamps?: Stamps
+  stamps?: any
   displayStamps?: boolean
 }): React.ReactElement => {
   const [isSmallScreen] = useSmallScreen()
