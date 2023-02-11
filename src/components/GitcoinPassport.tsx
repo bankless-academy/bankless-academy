@@ -43,9 +43,9 @@ const GitcoinPassport = ({
             const stamp = stamps ? stamps[key] : null
             const currentTimestamp = Date.now()
             const isStampExpired = !(
-              Date.parse(stamp?.credential?.expirationDate) > currentTimestamp
+              Date.parse(stamp?.stamp?.expirationDate) > currentTimestamp
             )
-            const isTrustedIssuer = stamp?.credential?.issuer === ALLOWED_ISSUER
+            const isTrustedIssuer = stamp?.stamp?.issuer === ALLOWED_ISSUER
             return (
               <Box
                 key={`stamp-${key}`}
