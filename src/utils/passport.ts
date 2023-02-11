@@ -1,10 +1,10 @@
-import { Stamp } from '@gitcoinco/passport-sdk-types'
+// import { Stamp } from '@gitcoinco/passport-sdk-types'
 import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
 import { Stamps } from 'entities/passport'
 
 const ALLOWED_PROVIDERS = Object.keys(STAMP_PROVIDERS)
 
-export const filterValidStamps = (stamps: Stamp[]): Stamp[] => {
+export const filterValidStamps = (stamps: any[]): any[] => {
   // const currentTimestamp = 1665401965000
   const currentTimestamp = Date.now()
   const filteredStamps = []
