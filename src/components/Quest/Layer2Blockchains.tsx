@@ -112,17 +112,13 @@ const Layer2Blockchains = (
               <Box mt="8">
                 {`Tip: Check our Explorer's Handbook entry on 'How to Fund a Wallet on Layer 2' to find the best funding pathway for you.`}
               </Box>
-              <Box mt="24px !important" textAlign="center">
-                <Button
-                  colorScheme={
-                    isTransactionVerified === 'true' ? 'green' : 'red'
-                  }
-                  onClick={validateQuest}
-                  variant="primary"
-                >
-                  Refresh balance
-                </Button>
-              </Box>
+              {isTransactionVerified === 'false' && (
+                <Box mt="24px !important" textAlign="center">
+                  <Button onClick={validateQuest} variant="primary">
+                    Refresh balance
+                  </Button>
+                </Box>
+              )}
             </Box>
           </div>
           <div className="bloc2">
