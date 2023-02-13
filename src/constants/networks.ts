@@ -48,6 +48,17 @@ export const NETWORKS = Object.freeze({
     faucet: 'https://matic.supply/',
     blockExplorer: 'https://polygonscan.com',
   },
+  optimism: {
+    name: 'Optimism',
+    image: '/images/op.svg',
+    networkName: 'Optimism Mainnet',
+    currencySymbol: 'ETH',
+    chainId: 10,
+    rpcUrl: `https://optimism-mainnet.infura.io/v3/${INFURA_KEY}`,
+    rpcUrlAdd: 'https://mainnet.optimism.io',
+    faucet: 'https://community.optimism.io/docs/useful-tools/faucets/',
+    blockExplorer: 'https://optimistic.etherscan.io',
+  },
   ...TESTNET_NETWORKS,
 })
 
