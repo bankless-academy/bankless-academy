@@ -61,7 +61,7 @@ const InstallAppModal = ({
                   src="/app-icon.png"
                 />
                 <Text fontSize="lg" alignSelf="center">
-                  How to install the Bankless Academy mobile app
+                  How to install the Bankless Academy Mobile App
                 </Text>
               </Box>
             </ModalHeader>
@@ -89,7 +89,7 @@ const InstallAppModal = ({
                     maxH="60vh"
                     m="auto"
                     src="/images/install-app-iOS.gif"
-                    alt="Install mobile app on iOS"
+                    alt="Install Mobile App on iOS"
                   />
                   <Text fontSize="md" mt="4">
                     {`Open the website in Safari, click "Share" icon, "Add to Home Screen". This won't work with other browsers on iOS.`}
@@ -133,7 +133,7 @@ const InstallAppModal = ({
                   src="/app-icon.png"
                 />
                 <Text fontSize="lg" alignSelf="center">
-                  Do you want to install the Bankless Academy mobile app?
+                  Do you want to install the Bankless Academy Mobile App?
                 </Text>
               </Box>
             </ModalHeader>

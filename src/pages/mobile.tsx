@@ -6,7 +6,7 @@ import HomePage from 'pages/index'
 import InstallAppModal from 'components/InstallAppModal'
 
 const pageMeta: MetaData = {
-  description: 'Install the Bankless Academy mobile app on Android or iOS.',
+  description: 'Install the Bankless Academy Mobile App on Android or iOS.',
   image: '/images/download-mobile-app.png',
 }
 
