@@ -59,7 +59,7 @@ const Layer2Blockchains = (
           <div className="bloc1">
             <Box ml="8">
               <Text mx="0 !important" fontSize="xl" fontWeight="bold">
-                {`Get ready to interact with Layer 2 blockchains.`}
+                {`Begin your L2 journey on the Optimism Network.`}
               </Text>
               <VStack mt="8" alignItems="start">
                 <Button
