@@ -104,6 +104,9 @@
   "epoch": {
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
+  "ethereum virtual machine": {
+    "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network."
+  },
   "fomo": {
     "definition": "Fear Of Missing Out. Anxiety or apprehension about missing out on or not getting things."
   },

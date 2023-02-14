@@ -1108,7 +1108,7 @@ const LESSONS: LessonType[] = [
     socialImageLink: '/lesson/layer-2-blockchains/social-788a6512.jpg',
     learningActions: '',
     marketingDescription: 'The Layer 2 revolution has begun. Discover how the Layer 2 ecosystem can boost your transaction speed & reduce gas fees.',
-    kudosId: null,
+    kudosId: 14886,
     duration: 15,
     learnings: '',
     difficulty: undefined,
@@ -1124,28 +1124,28 @@ const LESSONS: LessonType[] = [
     notionId: '340eb401ab824dea8f85aace1aaf69c1',
     slug: 'layer-2-blockchains',
     imageLinks: [
-      '/lesson/layer-2-blockchains/introduction-92f6d111.svg',
-      '/lesson/layer-2-blockchains/payment-channels-3e833c53.png',
-      '/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-0fc615b5.png',
-      '/lesson/layer-2-blockchains/sidechains-b55fb072.png',
-      '/lesson/layer-2-blockchains/rollups-2a266422.png',
-      '/lesson/layer-2-blockchains/optimistic-rollups-576e8523.png',
-      '/lesson/layer-2-blockchains/zk-rollups-a7f0dd01.png',
-      '/lesson/layer-2-blockchains/cross-chain-dapp-compatibility-1b866d91.png',
-      '/lesson/layer-2-blockchains/start-your-layer-2-journey-with-optimism--5b161e31.png'
+      '/lesson/layer-2-blockchains/introduction-0d584167.svg',
+      '/lesson/layer-2-blockchains/payment-channels-5e29dfd3.svg',
+      '/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-8268ff20.svg',
+      '/lesson/layer-2-blockchains/sidechains-406fe8d1.svg',
+      '/lesson/layer-2-blockchains/rollups-ea8672d0.svg',
+      '/lesson/layer-2-blockchains/optimistic-rollups-75b31999.svg',
+      '/lesson/layer-2-blockchains/zk-rollups-bc7c293e.svg',
+      '/lesson/layer-2-blockchains/cross-chain-dapp-compatibility-eeb2b414.svg',
+      '/lesson/layer-2-blockchains/start-your-layer-2-journey-with-optimism--7999722b.svg'
     ],
     slides: [
       {
         type: 'LEARN',
         notionId: 'f6fc99d03e0c4b5b993363554015e1a4',
         title: 'Introduction',
-        content: '<div class="bloc1"><p>The ultimate end state for any blockchain is to be as decentralized, secure, and scalable as possible. Building a blockchain that does all three well has proven to be technologically elusive, and this challenge has been given a name: the <code>Blockchain Trilemma</code>. </p><p>Bitcoin and Ethereum are both fairly decentralized and secure, but they don’t scale well, as is evident from high transaction fees and long transaction queues when the network is busy. To overcome these issues, blockchains make use of various technologies to drastically decrease transaction costs while increasing transaction speed, which collectively are known as Layer 2 (L2) scaling solutions. </p><p>The Lightning Network is the Bitcoin’s primary scaling solution, and it relies on a technology called <code>payment channels</code> to scale payments between parties. Ethereum has plans to ease the blockchain trilemma through the use of sharding technology in the long run, but for the immediate future the network is relying on L2 solutions to improve scalability.<br></p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/introduction-92f6d111.svg\'></div>'
+        content: '<div class="bloc1"><p>The ultimate end state for any blockchain is to be as decentralized, secure, and scalable as possible. Building a blockchain that does all three well has proven to be technologically elusive, and this challenge has been given a name: the <code>Blockchain Trilemma</code>. </p><p>Bitcoin and Ethereum are both fairly decentralized and secure, but they don’t scale well, as is evident from high transaction fees and long transaction queues when the network is busy. To overcome these issues, blockchains make use of various technologies to drastically decrease transaction costs while increasing transaction speed, which collectively are known as Layer 2 (L2) scaling solutions. </p><p>The Lightning Network is the Bitcoin’s primary scaling solution, and it relies on a technology called <code>payment channels</code> to scale payments between parties. Ethereum has plans to ease the Blockchain Trilemma through the use of sharding technology in the long run, but for the immediate future the network is relying on L2 solutions to improve scalability.<br></p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/introduction-0d584167.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'dc574962da85412b812f13526ec34e4f',
         title: 'Payment Channels',
-        content: '<div class="bloc1"><p>On the Bitcoin blockchain, the Lightning Network relies on bidirectional payment channels, which enables multiple parties to exchange BTC without transacting on the main chain.</p><p>The architecture enables parties to open payment channels amongst two or more users. Between the opening and closing of a channel, parties can shift funds amongst themselves. Each participant micro-ledger entry gets updated after both users sign for the transaction - which requires both users to be online.<br>A channel can be closed at any time by either party by broadcasting the most recent version of the micro-ledger to the blockchain.</p><p>Payment channels don’t support advanced smart contract interactions, only basic peer-to-peer transactions.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/payment-channels-3e833c53.png\'></div>'
+        content: '<div class="bloc1"><p>On the Bitcoin blockchain, the Lightning Network relies on bidirectional payment channels, which enables multiple parties to exchange BTC without transacting on the main chain.</p><p>The architecture enables parties to open payment channels amongst two or more users. Between the opening and closing of a channel, parties can shift funds amongst themselves. Each participant micro-ledger entry gets updated after both users sign for the transaction - which requires both users to be online.<br>A channel can be closed at any time by either party by broadcasting the most recent version of the micro-ledger to the blockchain.</p><p>Payment channels don’t support advanced <code>smart contract</code> interactions, only basic peer-to-peer transactions.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/payment-channels-5e29dfd3.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1153,7 +1153,7 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'You must be online to transact using the Bitcoin Lightning Network.',
-          rightAnswerNumber: 2,
+          rightAnswerNumber: 1,
           answers: [
             'True',
             'False'
@@ -1165,7 +1165,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'ee7b95a6392f4a41b944d03d2fa967fa',
         title: 'Ethereum Scaling Solutions',
-        content: '<div class="bloc1"><p>Where the Lightning Network enables scaling of the Bitcoin network through payment channels, Ethereum developers have been working on other scaling solutions for nearly as long as that network has been live.</p><p>Ethereum scaling solutions address <code>scalability</code> shortcomings without sacrificing <code>security</code>. The most popular scaling solutions are Rollups and Sidechains. For users of these scaling solutions, the most practical effect is that transactions are confirmed quicker than on Ethereum Mainnet and don’t require much <code>gas</code> to execute. This makes transactions faster and more affordable than Ethereum Mainnet.</p><p>Because Ethereum is defined by its smart contract abilities, it is important that its scaling solutions inherit this support, thus each competing scaling solution takes this into account.</p></div>'
+        content: '<div class="bloc1"><p>Where the Lightning Network enables scaling of the Bitcoin network through payment channels, Ethereum developers have been working on Ethereum-native scaling solutions for nearly as long as that network has been live.</p><p>Most Ethereum community members argue that in order to be an “Ethereum scaling solution”, a project must address Ethereum’s <code>scalability</code> shortcomings without sacrificing <code>security</code> or <code>decentralization</code>. Yet for users of these scaling solutions, the most practical need is that transactions are confirmed quicker than on Ethereum Mainnet and don’t require much <code>gas</code> to execute, and so we will see that some scaling solutions are willing to make greater trade-offs on the Trilemma than others.</p><p>And there’s another factor. As Ethereum is defined by its smart contract abilities, it is also important that its scaling solutions inherit this support. There’s no use having fast, cheap transactions if users can’t access their favorite <code>dApps</code>, but from a technology standpoint this is easier said than done!</p><p>Let’s take a closer look at how different projects are approaching the scaling of Ethereum, the trade-offs they’re making in the process, and the technology that makes it all possible.</p></div>'
       },
       {
         type: 'QUIZ',
@@ -1175,10 +1175,10 @@ const LESSONS: LessonType[] = [
           question: 'Ethereum scaling solutions:',
           rightAnswerNumber: 3,
           answers: [
-            'also use payment channels to scale the network.',
-            'presently rely only on Sidechains.',
-            'called Rollups and Sidechains are currently the most popular.',
-            'don’t support smart contract interactions.'
+            'use payment channels to scale the network.',
+            'can’t support smart contract interactions.',
+            'should increase scalability without compromizing on other trilemma attributes.',
+            'allow faster transaction speeds at the cost of higher gas.'
           ],
           id: 'layer-2-blockchains-2'
         }
@@ -1187,13 +1187,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'cd8cecba43b74bdd881a93394cd61423',
         title: 'Bridging Layer 1 and Layer 2',
-        content: '<div class="bloc1"><p>As we learned in <a href=\'https://app.banklessacademy.com/lessons/blockchain-basics\'>Blockchain Basics</a>, blockchains are just databases, which we call <code>ledgers</code>, that provide a cryptographically secured, chronological list of transactions. Whether a L1 blockchain, a L2 scaling solution, each is a blockchain in its own right, hosting their own databases of addresses and data.</p><p>In order to transfer information between these blockchain databases, we use infrastructure called <code>bridges</code> - a technology that works much in the same way as the real world connectors of people and places. For example, if you think of the Ethereum Mainnet (or any other <code>Layer 1</code> blockchain) as one island, and a different blockchain or your preferred scaling solution as another, a crypto bridge is the generic term for the networked highway connecting these two digital islands.</p><p>This can all sound very complicated, but from the end user perspective this process as simple as moving crypto from one layer to another.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-0fc615b5.png\'></div>'
+        content: '<div class="bloc1"><p>As we learned in <a href=\'https://app.banklessacademy.com/lessons/blockchain-basics\'>Blockchain Basics</a>, blockchains are just databases, which we call <code>ledgers</code>, that provide a cryptographically secured, chronological list of transactions. Whether a L1 blockchain, a L2 scaling solution, each is a blockchain in its own right, hosting their own databases of addresses and data.</p><p>In order to transfer information between these blockchain databases, we use infrastructure called <code>bridges</code> - a technology that works much in the same way as the real world connectors of people and places. For example, if you think of the Ethereum Mainnet (or any other <code>Layer 1</code> blockchain) as one island, and a different blockchain or your preferred scaling solution as another, a crypto bridge is the generic term for the networked highway connecting these two digital islands.</p><p>This can all sound very complicated, but from the end user perspective this process as simple as moving crypto from one layer to another.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-8268ff20.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '826947a620bd4c64a9d3eb370bb81f4a',
         title: 'Sidechains',
-        content: '<div class="bloc1"><p>A <code>Sidechain</code> is a separate blockchain that runs independent of Ethereum and is connected to Ethereum Mainnet by a two-way peg. This means that to migrate a native token to the Sidechain, you have to lock them in a <code>smart contract</code> on Mainnet.</p><p>Sidechains regularly publish snapshots of the chain state to the <code>settlement layer</code> (L1), which is a moment-in-time picture of the ledger. This snapshot is useful if fraud is detected, as the Sidechain can be rolled back to the previous snapshot to reverse the fraud - but this reverses all legitimate transactions too.</p><p>The most established scaling protocol to use Sidechain technology is Polygon PoS (Proof of Stake), which validates and processes its own transactions but relies on Mainnet to secure the Sidechain’s collateral. Transactions happening on Sidechains require very low <code>gas</code> fees. The main drawback to Sidechains is that transaction validation is centralized.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/sidechains-b55fb072.png\'></div>'
+        content: '<div class="bloc1"><p>A <code>Sidechain</code> is a separate blockchain that runs independent of Ethereum — while connected to Ethereum Mainnet by a <code>bridge</code> that maintains a two-way peg. This means that to migrate a native token to the Sidechain, you have to lock them in a <code>bridge contract</code> on Ethereum Mainnet, so that the balance on the Sidechain never exceeds the collateral locked on Mainnet. Such bridges grant the Sidechain’s capital the security of Ethereum, while allowing them to validate and processes their own transactions. </p><p>Sidechains are still subject to the Blockchain Trilemma. Their lower <code>gas</code> fees and increased transaction speed can be attributed to a smaller but more powerful validator set — meaning they trade decentralization & security for scalability.</p><p>Sidechains regularly publish snapshots to the L1, saving a moment-in-time picture of their ledger. Snapshots grant Sidechains the possibility to roll the chain state back to a previous snapshot following on-chain fraud or error.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/sidechains-406fe8d1.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1215,13 +1215,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '4d0a5e9e3904406eaf455f8c0066762e',
         title: 'Rollups',
-        content: '<div class="bloc1"><p>A scaling solution that maintains closer alignment with the values of Ethereum Mainnet can be found in L2 protocols that use Rollup technology. Rollups permit on-chain transactions to execute outside of Ethereum Mainnet, but proof of that transaction is bundled (rolled up) and settled on Mainnet - thus inheriting its security properties.</p><p>To inherit this level of security, Rollups must use a <code>validating bridge</code> where they provide “convincing evidence” to the main chain that the transactions in the batch are legitimate. There are two valid methods for providing this evidence: <code>Optimistic Rollups</code>, and <code>ZK Rollups</code>.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/rollups-2a266422.png\'></div>'
+        content: '<div class="bloc1"><p>A scaling solution that maintains closer alignment with the values of Ethereum Mainnet can be found in L2 protocols that use Rollup technology. Rollups permit on-chain transactions to execute outside of Ethereum Mainnet, but proof of that transaction is bundled (rolled up) and settled on Mainnet - thus inheriting its security properties.</p><p>To inherit this level of security, Rollups must use a <code>validating bridge</code> where their validators provide “convincing evidence” to the main chain that the transactions in the batch are legitimate. There are two valid methods for providing this evidence: <code>Optimistic Rollups</code>, and <code>ZK Rollups</code>.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/rollups-ea8672d0.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '6a447dba0cef441dab05c1985c4d4588',
         title: 'Optimistic Rollups',
-        content: '<div class="bloc1"><p>Two popular L2 protocols, Optimism and Arbitrum, both use <code>Optimistic Rollups</code> as their scaling solution architecture. Optimistic Rollups are so-called because the information in the Rollup batch is considered to be valid unless proven otherwise. They assume the best, as would an optimist.</p><p>In order to mitigate against any abuse of this optimistic technique, there is typically a seven-day delay between the time a user requests to move funds off of the L2 back to Mainnet. During this time, L2 validators can publish a <code>fraud proof</code> seeking to cancel the withdrawal. This fraud-proof mechanism is similar to the traditional banking industry’s clearance processes, but decentralised.</p><p>Note: Third-party bridging services, like Across and Hop, help users bridge these funds back to Mainnet in mere minutes rather than days, but these solutions come with an increased risk of attack compared to native bridges due to less sophisticated fraud proof processes.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/optimistic-rollups-576e8523.png\'></div>'
+        content: '<div class="bloc1"><p>Two popular L2 protocols, Optimism and Arbitrum, both use <code>Optimistic Rollups</code> as their scaling solution architecture. Optimistic Rollups are so-called because the information in the Rollup batch is considered to be valid unless proven otherwise. They assume the best, as would an optimist.</p><p>In order to mitigate against any abuse of this optimistic technique, there is typically a seven-day delay between the time a user requests to move funds off of the L2 back to Mainnet. During this time, L2 validators can publish a <code>fraud proof</code> seeking to cancel the withdrawal. This fraud-proof mechanism is similar to the traditional banking industry’s clearance processes, but decentralized.</p><p>Note: Third-party bridging services, like Across and Hop, help users bridge these funds back to Mainnet in mere minutes rather than days, but these solutions come with an increased risk of attack compared to native bridges due to differing fraud proof processes.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/optimistic-rollups-75b31999.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1241,7 +1241,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '4c62c5a8d4714ccdbafde4519a4f08b6',
         title: 'ZK Rollups',
-        content: '<div class="bloc1"><p><code>ZK Rollups</code>, also called zero-knowledge proofs, work very differently than <code>Optimistic Rollups</code>. Unlike Optimistic Rollups, ZK Rollups confirm the legitimacy of the batched transactions almost immediately, and therefore don’t have to rely on certain users to look for evidence of fraud. Instead, these Rollups confirm transactions using complex, computation-heavy mathematical models.</p><p>The major upside to ZK Rollups is the <code>settlement time</code>, also known as <code>transaction </code><code>finality</code>. Rather than taking a week to receive funds on Mainnet, ZK Rollups enable users to access their funds in under an hour. User privacy is also improved because less user data needs to be logged on-chain.</p><p>There are some major protocols using ZK Rollup technology to build their Ethereum scaling solutions, including zkSync, StarkNet, and Aztec. It’s still early in terms of development, but it has great future potential.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/zk-rollups-a7f0dd01.png\'></div>'
+        content: '<div class="bloc1"><p><code>ZK Rollups</code>, also called zero-knowledge proofs, work very differently than <code>Optimistic Rollups</code>. Unlike Optimistic Rollups, ZK Rollups confirm the legitimacy of the batched transactions almost immediately, and therefore don’t have to rely on certain users to look for evidence of fraud. Instead, these Rollups confirm transactions using complex, computation-heavy mathematical models.</p><p>The major upside to ZK Rollups is the <code>settlement time</code>, also known as <code>transaction finality</code>. Rather than taking a week to receive funds on Mainnet, ZK Rollups enable users to access their funds in under an hour. User privacy is also improved because less user data needs to be logged on-chain.</p><p>There are some major protocols using ZK Rollup technology to build their Ethereum scaling solutions, including zkSync, StarkNet, and Aztec. It’s still early in terms of development, but it has great future potential.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/zk-rollups-bc7c293e.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1262,14 +1262,14 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '520c360570574151a8aaa301f66624f1',
         title: 'Cross-chain dApp Compatibility',
-        content: '<div class="bloc1"><p>When comparing <code>Optimistic Rollups</code> and <code>ZK Rollups</code>, the main focus for most users is withdrawal times. However, since these withdrawal lag issues can be resolved by third-party bridges, it shouldn’t be a major consideration when deciding which scaling solution to explore.</p><p>Many Optimistic Rollups are “EVM equivalent”, meaning the L2 network natively supports any dApp that can run on the Ethereum Virtual Machine (EVM). EVM equivalence enables L2 builders to reuse smart contracts previously deployed on Mainnet, and users to access their favourite dApps on L2. This facilitates a virtuous cycle of more users and more builders!</p><p>Sidechains and ZK Rollups do not have full EVM equivalence yet. Polygon’s Sidechain is EVM compatible, meaning it can run some of the computations of the EVM. Many protocols are developing zkEVM equivalency, which would allow for EVM equivalent ZK Rollups. A lack of equivalency limits dApp deployment, leading to a less complete user experience.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/cross-chain-dapp-compatibility-1b866d91.png\'></div>'
+        content: '<div class="bloc1"><p>When comparing <code>Optimistic Rollups</code> and <code>ZK Rollups</code>, the main focus for most users is withdrawal times. However, since these withdrawal lag issues can be resolved by third-party bridges, it shouldn’t be a major consideration when deciding which scaling solution to explore.</p><p>Many Optimistic Rollups are “EVM equivalent”, meaning the L2 natively supports any dApp that can run on the <code>Ethereum Virtual Machine</code> (EVM). EVM equivalence enables L2 builders to easily deploy smart contracts previously deployed on Mainnet - thus allowing L2 users to access their favourite dApps.</p><p>Sidechains and ZK Rollups are not yet fully EVM equivalent. While this currently limits the dApp ecosystems of such networks, it also allows for greater experimentation, and so in time they may discover new ways of building better dApp experiences on top of Ethereum altogether.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/cross-chain-dapp-compatibility-eeb2b414.svg\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '1825171859534afd90daf79776933e1d',
         title: '✅ Question',
         quiz: {
-          question: 'EVM equivalent scaling solutions are able to reuse smart contracts deployed on Mainnet.',
+          question: 'EVM equivalent scaling solutions are able to easily reuse smart contracts deployed on Mainnet.',
           rightAnswerNumber: 1,
           answers: [
             'True',
@@ -1282,13 +1282,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '70caebdf521049a4961568846014eedb',
         title: 'Lesson Recap',
-        content: '<div class="bloc1"><p>L1 blockchains like Bitcoin and Ethereum are currently constrained by the <code>Blockchain Trilemma</code>, the idea that current technology forces trade offs between decentralization, security, and scalability. Scaling solutions, like <code>payment channels</code> on the Bitcoin network and Sidechains + Rollups on Ethereum help these networks scale and ease this Trilemma.</p><p><code>Bridges</code> connect L1 blockchains with Sidechains and L2 blockchains. Transaction data completed on the scaling solution chain ultimately becomes part of the base chain, which allows the scaling solution to inherit the security of the base chain while easing transaction speed and cost.</p><p>At present, <code>Optimistic Rollups</code> offer the greatest level of smart contract compatibility with Ethereum Mainnet, enabling any dApp that runs on Ethereum to run on a L2 built with this technology. Many believe <code>ZK Rollups</code> will become the scaling solution of the future, thanks to their high levels of privacy and security.</p></div>'
+        content: '<div class="bloc1"><p>L1 blockchains like Bitcoin and Ethereum are currently constrained by the <code>Blockchain Trilemma</code>. <code>Payment channels</code> on the Bitcoin network, or Sidechains and Rollups on Ethereum, help these networks to scale and ease this Trilemma.</p><p><code>Bridges</code> connect L1 blockchains with <code>Sidechains</code> and <code>Rollups</code>, and the way in which the bridge contract functions influences the properties of the connected network.</p><p>Sidechain funds inherit the <code>security</code> of Ethereum by a two-way-peg, while the network validates and processes its own transactions. These chains have a small but powerful validator set that allows them to increase transaction speed and lower gas fees, at the cost of decentralization.</p><p>Rollups validate and process transactions on behalf of Ethereum, required to provide “convincing evidence” of appropriate on-chain behaviour to their respective bridge contract. This allows them to uphold Ethereum’s level of <code>security</code> and <code>decentralization</code>. There are two methods of providing this “convincing evidence”…<br><code>Optimistic Rollups</code> maintain a seven-day delay before settling their transaction rollups on Mainnet. During this window, their validators can use on-chain diagnostics to detect and report fraud. <code>ZK Rollups</code> provide mathematical assurance of transaction legitimacy.</p><p>Presently, Optimistic Rollups offer the greatest level of smart contract compatibility with Ethereum Mainnet, enabling dApps from Ethereum Mainnet to easily deploy on their networks. Many believe ZK Rollups will become the scaling solution of the future, thanks to their high levels of privacy and security.</p></div>'
       },
       {
         type: 'LEARN',
         notionId: 'd76fda63e7aa4d339dc66c7f273b7d8f',
         title: 'Start Your Layer 2 Journey With Optimism 🙂',
-        content: '<div class="bloc1"><p>We believe that Optimism, an EVM-equivalent Optimistic Rollup, is a great starting point to explore L2s. Using dApps on Optimism will feel familiar to using L1 dApps, just cheaper and faster, and uses ETH as gas. Your upcoming quest will serve as the first step in your Optimism journey!</p><p>Yet this improved functionality isn’t the only reason Optimism is a great scaling solution for Bankless Explorers. The ecosystem is highly influenced by Ethereum values, with a portion of its transaction fees used to <a href=\'https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY\'>retroactively fund public good projects</a> adding value to the ecosystem. It’s like a digital country that regularly, transparently funds on-chain infrastructure, like free education from Bankless Academy, for everyone.</p><p>Optimism is not simply a platform that relies on the Optimistic Rollup. The network is a metaphor for the power of blockchain technology to solve existing problems and to show us new ways of transacting and living together. And that should make us all optimistic. 🙂</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/start-your-layer-2-journey-with-optimism--5b161e31.png\'></div>'
+        content: '<div class="bloc1"><p>We believe that Optimism, an EVM-equivalent Optimistic Rollup, is a great starting point to explore L2s. Using dApps on Optimism will feel familiar to using L1 dApps, just cheaper and faster, and uses ETH as gas. Your upcoming quest will serve as the first step in your Optimism journey!</p><p>Yet this improved functionality isn’t the only reason Optimism is a great scaling solution for Bankless Explorers. The ecosystem is highly influenced by Ethereum values, with a portion of its transaction fees used to <a href=\'https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY\'>retroactively fund public good projects</a> adding value to the ecosystem. It’s like a digital country that regularly, transparently funds on-chain infrastructure, like free education from Bankless Academy, for everyone.</p><p>Optimism is not simply a platform that relies on the Optimistic Rollup. The network is a metaphor for the power of blockchain technology to solve existing problems and to show us new ways of transacting and living together. And that should make us all optimistic. 🙂</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/start-your-layer-2-journey-with-optimism--7999722b.svg\'></div>'
       },
       {
         type: 'QUEST',
@@ -1297,7 +1297,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
   },
