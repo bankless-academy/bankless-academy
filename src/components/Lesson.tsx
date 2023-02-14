@@ -92,7 +92,7 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
     h2,
     p {
       font-size: var(--chakra-fontSizes-xl);
-      margin: 1em;
+      margin: 0.8em;
     }
     h2 {
       font-weight: bold;
