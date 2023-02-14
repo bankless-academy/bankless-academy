@@ -127,16 +127,13 @@ const LessonCards: React.FC = () => {
 
   useEffect(() => {
     const mobilePreferences = localStorage.getItem('mobile-preferences')
-    // TEMP: remove soon
-    const disableFeature = true
     if (
-      !disableFeature &&
       isMobile &&
       // don't show on embed or webapp
       !localStorage.getItem('embed')?.length &&
       // user has at least 1 kudos
       kudosMintedLS.length > 0 &&
-      // user doesn't want to install the mobile app
+      // user doesn't want to install the Mobile App
       mobilePreferences !== 'no' &&
       // user has collected a new badge
       ((mobilePreferences?.length &&

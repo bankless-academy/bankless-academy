@@ -31,9 +31,6 @@ const OptionMenu = ({
 
   const twitterLink = `https://twitter.com/${TWITTER_ACCOUNT}`
 
-  // TEMP: remove soon
-  const disableFeature = true
-
   return (
     <Box zIndex="2">
       <Menu>
@@ -67,7 +64,7 @@ const OptionMenu = ({
               >
                 Newsletter signup
               </MenuItem>
-              {isWebApp || disableFeature ? null : (
+              {isWebApp ? null : (
                 <MenuItem
                   onClick={() => {
                     onOpenAppModal()
