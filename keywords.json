@@ -320,7 +320,7 @@
   "web3": {
     "definition": "Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data."
   },
-  "zero-knowledge proof": {
+  "zero-knowledge": {
     "definition": "Mathematical method that allows one party to prove a statement is valid without revealing any additional information about it."
   },
   "zk rollup": {
