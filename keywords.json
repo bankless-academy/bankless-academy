@@ -143,6 +143,12 @@
   "invest": {
     "definition": "The act of buying a coin/token that uses DeFi technology."
   },
+  "l1": {
+    "definition": "Layer 1 refers to a base network such as Bitcoin or Ethereum."
+  },
+  "l2": {
+    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
+  },
   "layer 1": {
     "definition": "Layer 1 refers to a base network such as Bitcoin or Ethereum."
   },
