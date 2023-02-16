@@ -1078,6 +1078,205 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
+    kudosImageLink: '/lesson/layer-2-blockchains/kudos-761ee1a2.png',
+    lessonImageLink: '/images/coming-soon-lesson.png',
+    socialImageLink: '/lesson/layer-2-blockchains/social-788a6512.jpg',
+    learningActions: '',
+    marketingDescription: 'The Layer 2 revolution has begun. Discover how the Layer 2 ecosystem can boost your transaction speed & reduce gas fees.',
+    kudosId: 14886,
+    duration: 15,
+    learnings: '',
+    difficulty: undefined,
+    description: 'Join the Layer 2 ecosystem to boost your transaction speed & reduce fees.',
+    name: 'Layer 2 Blockchains',
+    quest: 'Layer2Blockchains',
+    publicationStatus: 'planned',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: true,
+    endOfLessonRedirect: 'https://tally.so/r/wzEV7E',
+    endOfLessonText: 'To give feedback about this lesson and receive a Kudos, click Next.',
+    communityDiscussionLink: null,
+    notionId: '340eb401ab824dea8f85aace1aaf69c1',
+    slug: 'layer-2-blockchains',
+    imageLinks: [
+      '/lesson/layer-2-blockchains/introduction-0d584167.svg',
+      '/lesson/layer-2-blockchains/payment-channels-5e29dfd3.svg',
+      '/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-8268ff20.svg',
+      '/lesson/layer-2-blockchains/sidechains-406fe8d1.svg',
+      '/lesson/layer-2-blockchains/rollups-ea8672d0.svg',
+      '/lesson/layer-2-blockchains/optimistic-rollups-75b31999.svg',
+      '/lesson/layer-2-blockchains/zk-rollups-bc7c293e.svg',
+      '/lesson/layer-2-blockchains/cross-chain-dapp-compatibility-eeb2b414.svg',
+      '/lesson/layer-2-blockchains/start-your-layer-2-journey-with-optimism--7999722b.svg'
+    ],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: 'f6fc99d03e0c4b5b993363554015e1a4',
+        title: 'Introduction',
+        content: '<div class="bloc1"><p>The ultimate end state for any blockchain is to be as decentralized, secure, and scalable as possible. Building a blockchain that does all three well has proven to be technologically elusive, and this challenge has been given a name: the <code>Blockchain Trilemma</code>. </p><p>Bitcoin and Ethereum are both fairly decentralized and secure, but they don’t scale well, as is evident from high transaction fees and long transaction queues when the network is busy. To overcome these issues, blockchains make use of various technologies to drastically decrease transaction costs while increasing transaction speed, which collectively are known as Layer 2 (L2) scaling solutions. </p><p>The Lightning Network is the Bitcoin’s primary scaling solution, and it relies on a technology called <code>payment channels</code> to scale payments between parties. Ethereum has plans to ease the Blockchain Trilemma through the use of sharding technology in the long run, but for the immediate future the network is relying on L2 solutions to improve scalability.<br></p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/introduction-0d584167.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'dc574962da85412b812f13526ec34e4f',
+        title: 'Payment Channels',
+        content: '<div class="bloc1"><p>On the Bitcoin blockchain, the Lightning Network relies on bidirectional payment channels, which enables multiple parties to exchange BTC without transacting on the main chain.</p><p>The architecture enables parties to open payment channels amongst two or more users. Between the opening and closing of a channel, parties can shift funds amongst themselves. Each participant micro-ledger entry gets updated after both users sign for the transaction - which requires both users to be online.<br>A channel can be closed at any time by either party by broadcasting the most recent version of the micro-ledger to the blockchain.</p><p>Payment channels don’t support advanced <code>smart contract</code> interactions, only basic peer-to-peer transactions.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/payment-channels-5e29dfd3.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'c936d76401b8492ebc04e9faad4971df',
+        title: '✅ Question',
+        quiz: {
+          question: 'You must be online to transact using the Bitcoin Lightning Network.',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          id: 'layer-2-blockchains-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'ee7b95a6392f4a41b944d03d2fa967fa',
+        title: 'Ethereum Scaling Solutions',
+        content: '<div class="bloc1"><p>Where the Lightning Network enables scaling of the Bitcoin network through payment channels, Ethereum developers have been working on Ethereum-native scaling solutions for nearly as long as that network has been live.</p><p>Most Ethereum community members argue that in order to be an “Ethereum scaling solution”, a project must address Ethereum’s <code>scalability</code> shortcomings without sacrificing <code>security</code> or <code>decentralization</code>. Yet for users of these scaling solutions, the most practical need is that transactions are confirmed quicker than on Ethereum Mainnet and don’t require much <code>gas</code> to execute, and so we will see that some scaling solutions are willing to make greater trade-offs on the Trilemma than others.</p><p>And there’s another factor. As Ethereum is defined by its smart contract abilities, it is also important that its scaling solutions inherit this support. There’s no use having fast, cheap transactions if users can’t access their favorite <code>dApps</code>, but from a technology standpoint this is easier said than done!</p><p>Let’s take a closer look at how different projects are approaching the scaling of Ethereum, the trade-offs they’re making in the process, and the technology that makes it all possible.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '9ae2b8d3eb6445eeb9ed7f9079e09127',
+        title: '✅ Question',
+        quiz: {
+          question: 'Ethereum scaling solutions:',
+          rightAnswerNumber: 3,
+          answers: [
+            'use payment channels to scale the network.',
+            'can’t support smart contract interactions.',
+            'should increase scalability without compromizing on other trilemma attributes.',
+            'allow faster transaction speeds at the cost of higher gas.'
+          ],
+          id: 'layer-2-blockchains-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'cd8cecba43b74bdd881a93394cd61423',
+        title: 'Bridging Layer 1 and Layer 2',
+        content: '<div class="bloc1"><p>As we learned in <a href=\'https://app.banklessacademy.com/lessons/blockchain-basics\'>Blockchain Basics</a>, blockchains are just databases, which we call <code>ledgers</code>, that provide a cryptographically secured, chronological list of transactions. Whether a L1 blockchain, a L2 scaling solution, each is a blockchain in its own right, hosting their own databases of addresses and data.</p><p>In order to transfer information between these blockchain databases, we use infrastructure called <code>bridges</code> - a technology that works much in the same way as the real world connectors of people and places. For example, if you think of the Ethereum Mainnet (or any other <code>L1</code> blockchain) as one island, and a different blockchain or your preferred scaling solution as another, a crypto bridge is the generic term for the networked highway connecting these two digital islands.</p><p>This can all sound very complicated, but from the end user perspective this process as simple as moving crypto from one layer to another.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-8268ff20.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '826947a620bd4c64a9d3eb370bb81f4a',
+        title: 'Sidechains',
+        content: '<div class="bloc1"><p>A <code>Sidechain</code> is a separate blockchain that runs independent of Ethereum — while connected to Ethereum Mainnet by a <code>bridge</code> that maintains a two-way peg. This means that to migrate a native token to the Sidechain, you have to lock them in a bridge contract on Ethereum Mainnet, so that the balance on the Sidechain never exceeds the collateral locked on Mainnet. Such bridges grant the Sidechain’s capital the security of Ethereum, while allowing them to validate and processes their own transactions. </p><p>Sidechains are still subject to the Blockchain Trilemma. Their lower <code>gas</code> fees and increased transaction speed can be attributed to a smaller but more powerful validator set — meaning they trade decentralization & security for scalability.</p><p>Sidechains, like Polygon, regularly publish snapshots to the L1, saving a moment-in-time picture of their ledger. Snapshots grant Sidechains the possibility to roll the chain state back to a previous snapshot following on-chain fraud or error.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/sidechains-406fe8d1.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'a890d0f6e44040269eade42746f0022b',
+        title: '✅ Question',
+        quiz: {
+          question: 'Sidechains:',
+          rightAnswerNumber: 4,
+          answers: [
+            'hold collateral on Mainnet.',
+            'have cheaper gas fees than Mainnet.',
+            'have greater centralization risks than Mainnet.',
+            'All the above.'
+          ],
+          id: 'layer-2-blockchains-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '4d0a5e9e3904406eaf455f8c0066762e',
+        title: 'Rollups',
+        content: '<div class="bloc1"><p>A scaling solution that maintains closer alignment with the values of Ethereum Mainnet can be found in L2 protocols that use Rollup technology. Rollups, like Sidechains, also permit on-chain transactions to execute outside of Ethereum Mainnet, but these transactions are “rolled up” in batches with proof of each transaction, holding the Rollup to a standard of security that is fraud-resistant enough for Ethereum.</p><p>To meet this security standard, a Rollup must provide “convincing evidence” to the bridge contract on Ethereum Mainnet that the transactions in each submitted batch are secure and valid.</p><p>There are two valid methods for providing this evidence: <code>Optimistic Rollups</code>, and <code>ZK Rollups</code>.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/rollups-ea8672d0.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '6a447dba0cef441dab05c1985c4d4588',
+        title: 'Optimistic Rollups',
+        content: '<div class="bloc1"><p>Two popular L2 protocols, Optimism and Arbitrum, both use <code>Optimistic Rollups</code> as their scaling solution architecture. Optimistic Rollups are so-called because the information in the Rollup batch is considered to be valid unless proven otherwise. They assume the best, as would an optimist.</p><p>In order to mitigate against any abuse of this optimistic technique, there is typically a multi-day delay between the time a user requests to move funds off of the L2 back to Mainnet. During this time, bridge validators can publish a <code>fraud proof</code> seeking to cancel the withdrawal. This fraud-proof mechanism is similar to the traditional banking industry’s clearance processes, but decentralized.</p><p>Note: Third-party bridging services, like Across and Hop, help users bridge these funds back to Mainnet in mere minutes rather than days, but these solutions come with an increased risk of attack compared to native bridges due to differing fraud proof processes.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/optimistic-rollups-75b31999.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '057bb41223514659805e95984d08e127',
+        title: '✅ Question',
+        quiz: {
+          question: 'With Optimistic Rollups, transactions are considered valid until proven otherwise.',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          id: 'layer-2-blockchains-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '4c62c5a8d4714ccdbafde4519a4f08b6',
+        title: 'ZK Rollups',
+        content: '<div class="bloc1"><p><code>ZK Rollups</code> are a type of Rollup that relies on Zero-Knowledge technology. Unlike <code>Optimistic Rollups</code>, ZK Rollups confirm the legitimacy of the batched transactions almost immediately, and therefore don’t have to rely on certain users to look for evidence of fraud. Instead, these Rollups confirm transactions using complex, computation-heavy mathematical models.</p><p>The major upside to ZK Rollups is the <code>settlement time</code>, also known as <code>transaction finality</code>. Rather than taking a week to receive funds on Mainnet, ZK Rollups enable users to access their funds in under an hour. User privacy is also improved because only the mathematical proof is stored on Mainnet.</p><p>There are some major protocols using ZK Rollup technology to build their Ethereum scaling solutions, including zkSync, StarkNet, and Aztec. It’s still early in terms of development, but it has great future potential.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/zk-rollups-bc7c293e.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'b32175e73bf0438d99d8556f323b00c3',
+        title: '✅ Question',
+        quiz: {
+          question: 'Compared to Optimistic Rollups, ZK Rollups:',
+          rightAnswerNumber: 2,
+          answers: [
+            'post more user data to Mainnet.',
+            'offer greater privacy and enable faster transaction finality on Mainnet.',
+            'perform fewer computations to finalize a transaction.'
+          ],
+          id: 'layer-2-blockchains-5'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '520c360570574151a8aaa301f66624f1',
+        title: 'Cross-chain dApp Compatibility',
+        content: '<div class="bloc1"><p>When comparing <code>Optimistic Rollups</code> and <code>ZK Rollups</code>, the main focus for most users is withdrawal times. However, since these withdrawal lag issues can be resolved by third-party bridges, it shouldn’t be a major consideration when deciding which scaling solution to explore.</p><p>Many Optimistic Rollups are “EVM equivalent”, meaning the L2 natively supports any dApp that can run on the <code>Ethereum Virtual Machine</code> (EVM). EVM equivalence enables L2 builders to easily deploy smart contracts previously deployed on Mainnet - thus allowing L2 users to access their favorite dApps.</p><p>Sidechains and ZK Rollups are not yet fully EVM equivalent. While this currently limits the dApp ecosystems of such networks, it also allows for greater experimentation, and so in time they may discover new ways of building better dApp experiences on top of Ethereum altogether.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/cross-chain-dapp-compatibility-eeb2b414.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '1825171859534afd90daf79776933e1d',
+        title: '✅ Question',
+        quiz: {
+          question: 'EVM equivalent scaling solutions are able to easily reuse smart contracts deployed on Mainnet.',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          id: 'layer-2-blockchains-6'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '70caebdf521049a4961568846014eedb',
+        title: 'Lesson Recap',
+        content: '<div class="bloc1"><p>L1 blockchains like Bitcoin and Ethereum are currently constrained by the <code>Blockchain Trilemma</code>. <code>Payment channels</code> on the Bitcoin network, or Sidechains and Rollups on Ethereum, help these networks to scale and ease this Trilemma.</p><p><code>Bridges</code> connect L1 blockchains with <code>Sidechains</code> and <code>Rollups</code>, and the way in which the bridge contract functions influences the properties of the connected network.</p><p>Sidechain funds inherit the <code>security</code> of Ethereum by a two-way-peg, while the network validates and processes its own transactions. These chains have a small but powerful validator set that allows them to increase transaction speed and lower gas fees, at the cost of decentralization.</p><p>Rollups, like Sidechains, also validate and process their own transactions, but their bridge contract requires them to provide “convincing evidence” of transaction validity before the data is considered valid. This allows them to uphold a level of <code>security</code> and <code>decentralization</code> in alignment with Ethereum values. There are two methods for providing this “convincing evidence”…<br><code>Optimistic Rollups</code> maintain a multi-day delay before settling their transaction rollups on Mainnet. In this window, bridge validators detect and report fraud. <code>ZK Rollups</code> provide mathematical assurance of transaction legitimacy, thanks to <code>Zero-Knowledge</code> technology.</p><p>Presently, Optimistic Rollups offer the greatest level of smart contract compatibility with Ethereum Mainnet, enabling dApps from Ethereum Mainnet to easily deploy on their networks. Many believe ZK Rollups will become the scaling solution of the future, thanks to their high levels of privacy and security.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'd76fda63e7aa4d339dc66c7f273b7d8f',
+        title: 'Start Your Layer 2 Journey With Optimism 🙂',
+        content: '<div class="bloc1"><p>We believe that Optimism, an EVM-equivalent Optimistic Rollup, is a great L2 for Explorers to get started on. Using dApps on Optimism will feel familiar to using L1 dApps, just cheaper and faster — and it uses ETH as gas. Your upcoming quest will serve as the first step in your Optimism journey!</p><p>Yet this improved functionality isn’t the only reason Optimism is a great scaling solution for Bankless Explorers. The ecosystem is highly influenced by Ethereum values, with a portion of its transaction fees used to <a href=\'https://optimism.mirror.xyz/wqk1Yeyn2OhV9paDzbRXvQ0m0JYDu2npbSkMClwk1rY\'>retroactively fund public good projects</a> adding value to the ecosystem. It’s like a digital country that regularly, transparently funds on-chain infrastructure, such as free education from Bankless Academy, for everyone.</p><p>Optimism is not simply a platform that relies on the Optimistic Rollup. The network is a metaphor for the power of blockchain technology to solve existing problems and to show us new ways of transacting and living together. And that should make us all optimistic. 🙂</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/start-your-layer-2-journey-with-optimism--7999722b.svg\'></div>'
+      },
+      {
+        type: 'QUEST',
+        title: 'Layer 2 Blockchains Quest',
+        component: 'Layer2Blockchains'
+      },
+      {
+        type: 'END',
+        title: 'Lesson Reward'
+      }
+    ]
+  },
+  {
     kudosImageLink: null,
     lessonImageLink: '/lesson/how-to-fund-a-wallet-on-layer-2/lesson-71b79973.png',
     socialImageLink: '/lesson/how-to-fund-a-wallet-on-layer-2/social-adb1717b.png',
@@ -1101,132 +1300,6 @@ const LESSONS: LessonType[] = [
     notionId: '549533d73275476d905dc2c34c4c2b5c',
     slug: 'how-to-fund-a-wallet-on-layer-2',
     articleContent: '### Key Takeaways\n\n> * There are a number of ways to fund your wallet on an Ethereum scaling solution like Optimism, Arbitrum, or Polygon.\n>\n> * Centralized exchanges often provide a direct Layer 2 onramp.\n>\n> * Third-party payment apps enable users to fund a wallet on Layer 2 from a bank account or a debit or credit card.\n>\n> * Protocol bridges let users send funds from Ethereum Mainnet to Layer 2.\n\nIf you’re new to crypto, all the talk about the importance of `Layer 2` (or L2) must seem a bit odd, confusing really. In contrast to [Layer 1](https://app.banklessacademy.com/lessons/layer-1-blockchains), which often refers to [Ethereum Mainnet](https://ethereum.org/), Layer 2 is a term for a specific type of Ethereum scaling solution that enables users to inherit the security of Ethereum but enjoy low transaction fees and fast `block` inclusion times. If you’ve ever heard of [Optimism](https://www.optimism.io/), [Arbitrum](https://arbitrum.io/), or [Polygon](https://polygon.technology/) (which is really a side chain, but let’s not worry about that here), those are Layer 2 scaling solutions.\n\nWhen the Ethereum network is busy, it can cost the equivalent of 80 USD in transaction fees — known as `gwei` or gas — to swap tokens, and much more to mint NFTs or provide `liquidity` to a `decentralized exchange` (DEX) on Mainnet. When network activity is low, most transactions on Ethereum Mainnet still cost a few dollars, and it takes an [FTX-level debacle](https://www.investopedia.com/ftx-exchange-5200842) or a [beyond-hyped NFT drop](https://dappradar.com/blog/yuga-labs-600m-otherside-nft-land-sale-records-highest-gas-fees-ever-on-ethereum) to really spike transaction fees.\n\nBecause transactions on Layer 2 confirm quickly and are inexpensive to execute, many of the most innovative protocols are building on L2s. Unless you’ve been in the ecosystem for a while, however, it’s not intuitive to know how to start using Layer 2s. But there is a clear place to begin your journey into Ethereum scaling solutions: funding your `wallet` on Layer 2.\n\nThere are three main ways to fund an L2 wallet: moving your crypto from a `centralized exchange` straight to a Layer 2 network, using a third-party crypto payment service to fund an L2 wallet, or sending your digital assets from Mainnet to L2 via a bridging protocol.\n\n> Please note, you’ll need to have a cryptocurrency wallet, like [MetaMask](https://metamask.io/) or [Tally Ho](https://tallyho.org/), and an Ethereum wallet `address` to proceed. If you haven’t yet created a `non-custodial wallet`, please [take this lesson first](https://app.banklessacademy.com/lessons/wallet-basics)!\n>\n> After you have a non-custodial Ethereum wallet address, you’ll be ready to continue on your crypto journey.\n\n## Funding From CEXs\n\nFunding your wallet directly from a centralized exchange (CEX) is perhaps the simplest way to move digital assets to an L2, particularly if you already hold cryptocurrency on the exchange. Most major CEXs offer users this option, although it isn’t always clear to the user.\n\nOn [Coinbase](https://www.coinbase.com/), for example, users can send their funds directly to Optimism or Polygon in just a few steps:\n\n1\. Go to [Coinbase](https://www.coinbase.com/).\n\n2\. [Purchase](https://help.coinbase.com/en/coinbase/trading-and-funding/buying-selling-or-converting-crypto/how-do-i-buy-digital-currency) or hold ETH on Coinbase.\n\n3\. Select ‘Send & Receive’, located at the top of the website.\n\n![](https://images.mirror-media.xyz/publication-images/Rzdn6KxR4U-oVpcgLs_fL.png?height=209&width=1440)\n\n4\. Enter the amount in fiat or ETH you wish to send (you can toggle between fiat and crypto to the right of the amount), select ‘Pay with’ and choose Ethereum, and in the ‘To’ field, enter the wallet address where the funds will be sent. Select ‘Continue’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F2uysvYIN69lbn9rz0yLsf.png&w=3840&q=90)\n\n5\. On the next screen, select ‘Network’ and change the network from Ethereum to Optimism.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Fz_DzBI1lJFVKNisD-8Rcs.png&w=3840&q=90)\n\n6\. Review, and if accurate, select ‘Send Now’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F-J0-k8BzvPCPPJLmnkQw-.png&w=3840&q=90)\n\nMost major exchanges offer users the ability to send their crypto directly to an L2. [Binance](https://www.binance.com/) supports Optimism and Arbitrum, for example. On whatever centralized exchange you convert fiat to crypto, check to see whether it offers support for direct-to-L2 services. Pro Tip: Use [Blockscan](https://blockscan.com/exchanges) to find the exchange compatible with your preferred L2.\n\n## Third-Party Onramps\n\nAnother simple way to fund your L2 wallet is to take advantage of direct-to-L2 services offered by many third-party crypto payment companies. [MoonPay](https://www.moonpay.com/), [Ramp](https://ramp.network/buy/), and [Transak](https://global.transak.com/) are three of the most popular options to fund crypto wallets without having to use a centralized exchange.\n\nLike most exchanges, these third-party onramps will require you to provide Know-Your-Customer information. However, once you get past those basic hurdles, these payment options are an easy way to buy crypto across the ecosystem and transfer it to Layer 2.\n\nFor MoonPay, the steps are:\n\n1\. Go to [MoonPay](https://www.moonpay.com/).\n\n2\. Select ‘Buy crypto’, located at the top or middle of the website.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FUU9Uswhysj9w4WBYI4VWL.png&w=3840&q=90)\n\n3\. Enter the amount of fiat you wish to send and the proper denomination.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FckrX4LeU78MqcPvpAq_VM.png&w=3840&q=90)\n\n4\. Select a digital asset, in this case ETH. Type in “ETH\'“ and you will see different networks on which you can purchase ETH (you may need to scroll down); choose the Layer 2 you want to use. Click ‘Continue’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FLfhhGbE1yfWdOpG1Z5N5S.png&w=3840&q=90)\n\n5\. Next, you will be prompted to enter personal verification and payment data.\n\n6\. Once complete, enter your Ethereum wallet address. You’ll be asked to make sure the wallet is safe to use.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Fn5hbzW-CVKzp3392TT91I.png&w=3840&q=90)\n\n7\. Complete, confirm the information is correct, and select ‘Pay’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F7ZBiVMjLfxQ66p8-cLBhN.png&w=3840&q=90)\n\nAs with CEXs, most major third-party payment onramps provide direct-to-L2 functionality. Take advantage of these innovations to save on transaction fees and increase the range of your `blockchain` explorations.\n\n## Funding Via Bridges\n\nIf you already have funds on Ethereum Mainnet, by far the easiest way to get your crypto on to L2 is to use a bridging protocol. Bridges are the name we’ve given to protocols designed to help us move our funds around the cryptoverse, and there are a number of bridges designed to move crypto from Ethereum Mainnet to Layer 2s.\n\n### Native Bridges\n\nNative bridges are those designed by the Layer 2 protocols themselves. For true Layer 2 scaling solutions like Arbitrum and Optimism, it takes about 30 minutes to move funds onto L2, but one week to move that crypto back over to Mainnet. The [Arbitrum Bridge](https://bridge.arbitrum.io/) and the [Optimism Bridge](https://app.optimism.io/bridge/) both take longer to transfer assets and settle transactions because of the way the scaling solution is designed.\n\n### Third-Party Bridges\n\nBecause no one likes to wait, a number of third-party bridging services exist to help us move our funds instantly to and from L2s. Among the most popular options are [Hop Protocol](https://app.hop.exchange/) and [Across Protocol](https://across.to/bridge), but you can use [Bungee](https://bungee.exchange/) to compare bridging fees across a number of protocols. To use Across, for example, all you need to do is:\n\n1\. Go to the [Across Protocol](https://across.to/bridge) bridge and connect your wallet.\n\n2\. To bridge funds to L2, select Ethereum under ‘From’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FSwt3yjUPwEteAiB5aU9zy.png&w=3840&q=90)\n\n3\. Choose your asset and the amount you wish to bridge (Pro Tip: only bridge a blockchain’s native `coin`, in this case ETH).\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FIBRvNt1d-CEe3XkuuwTvr.png&w=3840&q=90)\n\n4\. Next, select your L2 solution in ‘To’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FMnz8fWPFIGGQp25RA6FKt.png&w=3840&q=90)\n\n5\. Review the transaction, and if all looks correct, select ‘Send’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Ff9PbrvFv90jLNB-j60XlV.png&w=3840&q=90)\n\nMoving funds from Mainnet to L2 is really that simple, and nearly all bridges work the same way. Select a blockchain to send funds from and your destination, pick an asset and amount, and across the blockchain crevice you go. Pro Tip: As with sending from a CEX, you can use [Blockscan](https://blockscan.com/bridges) to find a compatible bridge for your L2 destination.\n\n## The Road to L2\n\nLayer 2s offer users of all experience levels the opportunity to experiment with decentralized finance in a way that is often prohibitive on Mainnet. Because it costs mere pennies to transact on these networks (you can compare costs [here](https://l2fees.info/)), it’s a great place to become familiar with the basic building blocks of decentralized finance, such as swaps, `liquidity pools`, or yield farms.\n\nUsing a CEX or a bridge to move funds to L2 is a necessary step in your journey from crypto novice to crypto competency. Remember, to see your funds displayed in your wallet, you may need to add the network in your wallet settings, which can be done at [Chainlist](https://chainlist.org/). If you just want to check that the funds made it safely to your L2 wallet, you can also check Etherscan (click on the ‘b’ for ‘Blockscan’ to the right of your wallet address to see L2 transactions) or go to a DEX, like [Uniswap](https://app.uniswap.org/), and select the L2 network and the asset to see your balance.\n\nAs you scale up your skills, you’ll need to figure out how to scale down your transaction fees. Learning how to fund an L2 wallet is the first step, but the next steps on your crypto journey are up to you. Welcome, explorer, a new world awaits.\n\n\n***\n\n**Author**\n\n**[Hiro Kennelly](https://twitter.com/HiroKennelly)** is a writer, editor, and coordinator at BanklessDAO and the Editor-in-Chief at Good Morning News. He is also helping to build a grants-focused organization at DAOpunks.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning as much as possible about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.'
-  },
-  {
-    kudosImageLink: '/lesson/layer-2-blockchains/kudos-9321b163.png',
-    lessonImageLink: '/images/coming-soon-lesson.png',
-    socialImageLink: '/lesson/layer-2-blockchains/social-baeeae0d.jpg',
-    learningActions: '',
-    marketingDescription: 'The Layer 2 revolution has begun. Discover how the Layer 2 ecosystem can boost your transaction speed & reduce gas fees.',
-    kudosId: null,
-    duration: 15,
-    learnings: '',
-    difficulty: undefined,
-    description: 'Join the Layer 2 ecosystem to boost your transaction speed & reduce fees.',
-    name: 'Layer 2 Blockchains',
-    quest: 'Layer2Blockchains',
-    publicationStatus: 'planned',
-    featuredOrderOnHomepage: null,
-    isCommentsEnabled: false,
-    endOfLessonRedirect: null,
-    endOfLessonText: undefined,
-    communityDiscussionLink: null,
-    notionId: '340eb401ab824dea8f85aace1aaf69c1',
-    slug: 'layer-2-blockchains',
-    imageLinks: [
-      '/lesson/layer-2-blockchains/introduction-92f6d111.svg',
-      '/lesson/layer-2-blockchains/payment-channels-5b5f1d5f.png',
-      '/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-5006e6f3.png',
-      '/lesson/layer-2-blockchains/sidechains-cb49a249.png',
-      '/lesson/layer-2-blockchains/rollups-be45c414.png',
-      '/lesson/layer-2-blockchains/optimistic-rollups-c370caeb.png',
-      '/lesson/layer-2-blockchains/zk-rollups-6e32c35c.png',
-      '/lesson/layer-2-blockchains/evm-equivalence-dapp-availability-title-in-progress-97dc1d52.svg',
-      '/lesson/layer-2-blockchains/start-your-l2-journey-with-optimism--9bd54cc6.svg'
-    ],
-    slides: [
-      {
-        type: 'LEARN',
-        notionId: 'f6fc99d03e0c4b5b993363554015e1a4',
-        title: 'Introduction',
-        content: '<div class="bloc1"><p>The ultimate end state for a blockchain is to be as decentralized, secure, and scalable as possible. Building a blockchain that does all three well has proven to be technologically elusive, and this challenge has been given a name, the <code>Blockchain Trilemma</code>.</p><p>The Lightening Network is Bitcoin’s primary scaling solution, and it relies on a technology called payment channels to effectuate payments between parties. </p><p>Ethereum, for example, is very decentralized and secure, but it currently doesn’t scale well, as evident from high transaction fees and slow throughput times when the network is busy.</p><p>Although Ethereum’s Roadmap aims to solve this trilemma through the use of a scaling technology known as <code>sharding</code>, overcoming the <code>Blockchain Trilemma</code> may take another decade. In the meantime, scaling solutions like Optimism, Arbitrum, and Polygon are here to help.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/introduction-92f6d111.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'dc574962da85412b812f13526ec34e4f',
-        title: 'Payment Channels',
-        content: '<div class="bloc1"><p>There are a number of ways to scale blockchains. On the Bitcoin blockchain, the Lightening Network enables network users to send bitcoin to each other at reduced fees by batching transactions together and running them at once. Through the use of these <code>Payment channel</code>s, which require users to lock up bitcoin as<code>collateral</code> on the network. With these pyament channels, Bitcoin is able to scale its network (but the channels don’t inherit Bitcoin’s level of security - hence the need for collateral?).</p><p>(Brief walkthrough) The channel is opened on the current block, users exchange Bitcoin amongst themselves with fast results, and when the user is ready to reclaim their collateral the balances are settled and the transaction is closed. (confirm if the channel is between two users, or if the user is joining network).</p><p>Through the use of these <code>Payment channel</code>s, which require users to lock up bitcoin as <code>collateral</code> on the network. Bitcoin is able to scale its network.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/payment-channels-5b5f1d5f.png\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'c936d76401b8492ebc04e9faad4971df',
-        title: '✅ Question',
-        quiz: {
-          question: 'question?',
-          rightAnswerNumber: 2,
-          answers: [
-            'answer 1',
-            'answer 2',
-            'answer 3',
-            'answer 4'
-          ],
-          id: 'layer-2-blockchains-1'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: 'ee7b95a6392f4a41b944d03d2fa967fa',
-        title: 'Ethereum Scaling Solutions',
-        content: '<div class="bloc1"><p>The Lightening Network enables scaling of the Bitcoin network, but for a more complex blockchain architecture that uses virtual computers to power dApps, like Ethereum, more sophisticated scaling solutions are needed.</p><p>Ethereum scaling solutions address <code>scalability</code> without sacrificing <code>security</code> for users. For users of these scaling solutions, the most practical effect is transactions are fast and don’t require much <code>gas</code> to execute, which is a reflection of how much something costs to compute on Mainnet.</p><p>Yet as we’ll learn later, two other scaling methods, side chains and Layer 2 protocols, offer the types of scaling solutions needed for more complex blockchain networks, like Ethereum.</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'cd8cecba43b74bdd881a93394cd61423',
-        title: 'Bridging Layer 1 and Layer 2',
-        content: '<div class="bloc1"><p>As we learned in <a href=\'https://app.banklessacademy.com/lessons/blockchain-basics\'>Blockchain Basics</a>, blockchains are just databases, which we call <code>ledger</code>s, that provide a cryptographically secured, chronological list of transactions. Whether a Layer 1 blockchain, side chain, or Layer 2 scaling solution, it’s all about these secured databases.</p><p>There are a number of ways to consider how these databases talk with each other, but perhaps the best analogy involves bridges, those great connectors of people and places. For example, if you think of Mainnet Ethereum (or any other <code>Layer 1</code> blockchain) as one island, and another blockchain or your scaling solution of choice as another, a crypto <code>Bridge</code> is the generic term for the networked highway connecting these two islands. </p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-5006e6f3.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '80198f1ac68c4af4a3821d3d3eedd959',
-        title: 'Sidechains',
-        content: '<div class="bloc1"><p>For more complex blockchain like Ethereum, the two main scaling solutions are side chains and <code>Layer 2</code> protocols. The most prominent scaling solution to implement <code>sidechain</code>s is Polygon, which runs a proof-of-stake <code>PoS</code> <code>sidechain</code> along side Ethereum, validating and processing transactions while normally still relying on Mainnet for <code>security</code> . Since the mathematical heavy lifting is processed on the <code>sidechain</code> rather than Mainnet, <code>gas</code>remains low. The downside to <code>sidechain</code> s is that they tend to be centralized, and therefore less secure. </p><p>From a light technical standpoint, <code>sidechain</code>s are attached to the main chain, or what’s known as the parent chain, by a two-way peg. <code>Sidechain</code>s regularly publish periodic snapshots of the chain state to the <code>Layer 1</code> <code>settlement layer</code>. The chain state sounds complex, but it’s really just a moment-in-time picture of the current makeup of the ledger. This snapshot is useful if fraud is detected, as <code>sidechain</code>s can be rolled back to the previous snapshot if necessary.</p><p>In addition to rollback functionality, the main benefit of sidechains is that they are less expensive to transact on than Layer 2 protocols. The major downside to side chains is that they are the less-secure scaling option and tend to be relatively centralized. </p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/sidechains-cb49a249.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'a890d0f6e44040269eade42746f0022b',
-        title: 'Rollups',
-        content: '<div class="bloc1"><p>A more secure scaling solution can be found in <code>Layer 2</code> protocols using Rollup technology. Rollups permit transactions to execute outside of Ethereum, but proof of that transaction is bundled (rolled up) and settled on Mainnet, acting as a security layer.</p><p>Rollups use a <code>validating bridge</code>, and they must provide “convincing evidence” to main chain that the transactions in the batch are legitimate. There are two methods to provide this evidence, <code>Optimistic rollups</code>, and <code>zk Rollups</code>.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/rollups-be45c414.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '6a447dba0cef441dab05c1985c4d4588',
-        title: 'Optimistic Rollups',
-        content: '<div class="bloc1"><p>The two main Layer 2 protocols, Optimism and Arbitrum, both use <code>Optimistic rollup</code>s as their scaling solution architecture. <code>Optimistic rollup</code>s are so called because the information in the Rollup batch is considered to be valid unless proven otherwise — that is, they assume the best, as would an optimist.</p><p>In order to mitigate against any abuse of this technology, there is typically a seven-day delay between the time a user requests to move funds off of the Layer 2 back to Mainnet. During this time, someone can publish a <code>fraud proof</code> seeking to cancel the withdrawal. Many have compared this fraud-proof mechanism as similar to traditional banking and those clearance processes.</p><p>Note: Third-party bridging services, like Across and Hop, help users bridges these funds back to Mainnet in mere minutes rather than days. </p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/optimistic-rollups-c370caeb.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '057bb41223514659805e95984d08e127',
-        title: 'ZK Rollups',
-        content: '<div class="bloc1"><p><code>zk Rollups</code>, also called zero-knowledge proofs, work very differently than <code>Optimistic rollups</code> . Unlike <code>Optimistic rollups</code>, <code>zk Rollups</code>have confirmed the legitimacy of the batched transactions and do not rely on certain users to look for evidence of fraud. Rather than relying on fraud hunters, these rollups confirm these transactions using complex, computation-heavy mathematical models.</p><p>The major upside to <code>zk Rollups</code> is the <code>settlement time</code>, also known as finality. Rather than taking a week to receive funds on Mainnet, <code>zk Rollups</code> enable users to access their funds in about thirty minutes.</p><p>There are some major protocols using <code>zk Rollups</code> to build their Ethereum scaling solutions, including zkSync, StarkNet, and Aztec, so it’s worth doing a compare and contrast of the benefits and burdens of <code>Optimistic rollups</code> and <code>zk Rollups</code>.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/zk-rollups-6e32c35c.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'b32175e73bf0438d99d8556f323b00c3',
-        title: 'EVM Equivalence / dApp Availability (title in progress)',
-        content: '<div class="bloc1"><p>While you could think of <code>Optimistic rollups</code> as innocent until proven guilty and <code>zk Rollup</code> as guilty until proven innocent, the practical effect for most people is the withdrawal times. Since these withdrawal lag issues are resolved by third-party bridges, however, it shouldn’t really be a major consideration when deciding which scaling solution to explore.</p><ul><li>Many Optimistic rollups are EVM equivalent, meaning the network natively supports any dApp that works on Mainnet. This creates a healthy builder community (which means more apps!)</li><li>ZK rollups do not yet have this EVM equivalency (though this ZK-EVM tech is being developed) so the dapp ecosystem is less plentiful.</li></ul></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/evm-equivalence-dapp-availability-title-in-progress-97dc1d52.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '1825171859534afd90daf79776933e1d',
-        title: 'Lesson Recap',
-        content: '<div class="bloc1"><p>Major Layer 1 blockchains like Bitcoin and Ethereum are currently constrained by the <code>Blockchain Trilemma</code>, the idea that current technology forces trade offs between <code>decentralization</code>, <code>security</code>, and <code>scalability</code> . Scaling solutions, like <code>Payment channel</code>s on the Bitcoin network and <code>sidechain</code>s and Layer 2 protocols help these networks scale and resolve this Trilemma.</p><p><code>Bridge</code>s enable users to transfer digital assets between blockchains or otherwise connect the blockchain <code>ledger</code>s together. Although scaling solutions, rollups and side chains can also be considered <code>Bridge</code>s.<br>While the term <code>Bridge</code> is most often referred to the technology that moves digital assets from Layer 1 to Layer 2 (link to fund wallet on L2), or between Layer 2s, you can also think of <code>Rollup</code>s and side chains as <code>Bridge</code>s, as they are just connecting databases. </p><p>At present,<code>Optimistic rollups</code> offer greater functionality to users, enabling any dApp that runs on Ethereum to run on a Layer 2 built on this technology; however, many believe <code>zk Rollups</code> will become the future of scaling in time.</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'd76fda63e7aa4d339dc66c7f273b7d8f',
-        title: 'Start Your L2 Journey With Optimism 🙂',
-        content: '<div class="bloc1"><p>…</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/start-your-l2-journey-with-optimism--9bd54cc6.svg\'></div>'
-      },
-      {
-        type: 'QUEST',
-        title: 'Layer 2 Blockchains Quest',
-        component: 'Layer2Blockchains'
-      },
-      {
-        type: 'END',
-        title: 'End of lesson'
-      }
-    ]
   },
   {
     kudosImageLink: '/lesson/intro-to-defi/kudos-b4dab2d4.png',

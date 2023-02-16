@@ -84,7 +84,7 @@ const SwitchNetworkButton = ({
                 {isOpen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
               </Box>
             </MenuButton>
-            <MenuList>
+            <MenuList zIndex="2">
               <Text ml="4" mb="2" color="gray.500">
                 Select a network
               </Text>

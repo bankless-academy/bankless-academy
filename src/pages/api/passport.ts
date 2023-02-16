@@ -1,15 +1,16 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
-import { Passport } from '@gitcoinco/passport-sdk-types'
-import { PassportReader } from '@gitcoinco/passport-sdk-reader'
+// import { Passport } from '@gitcoinco/passport-sdk-types'
+// import { PassportReader } from '@gitcoinco/passport-sdk-reader'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
-import { CERAMIC_PASSPORT, NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
+import { NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
 import { filterValidStamps } from 'utils/passport'
 import { trackBE } from 'utils/mixpanel'
+import axios from 'axios'
 
-const reader = new PassportReader(CERAMIC_PASSPORT, '1')
+// const reader = new PassportReader(CERAMIC_PASSPORT, '1')
 
 export default async function handler(
   req: NextApiRequest,
@@ -65,10 +66,15 @@ export default async function handler(
   if (SYBIL_CHECK === 'GITCOIN_PASSPORT') {
     try {
       // read passport
-      const passport: Passport = await reader.getPassport(address)
-      // console.log('** passport **', passport)
+      // const passportReader: Passport = await reader.getPassport(address)
+      // console.log(passportReader)
+      const passportRes = await axios.get(
+        `https://api.scorer.gitcoin.co/ceramic-cache/stamp?address=${address}`
+      )
+      const passport: any = passportRes.data
+      console.log('** passport **', passport)
       const validStamps = filterValidStamps(passport.stamps)
-      // console.log('validStamps', validStamps)
+      console.log('validStamps', validStamps)
       const stampHashes = {}
       const stampProviders = {}
       const stampHashesSearch = []
@@ -76,8 +82,8 @@ export default async function handler(
       let sybil = []
       if (passport?.stamps?.length) {
         for (const stamp of passport?.stamps) {
-          stampHashes[stamp.provider] =
-            stamp.credential?.credentialSubject?.hash
+          if (stamp.stamp?.credentialSubject?.hash)
+            stampHashes[stamp.provider] = stamp.stamp?.credentialSubject?.hash
         }
         for (const stamp of passport?.stamps) {
           stampProviders[stamp.provider] = stamp

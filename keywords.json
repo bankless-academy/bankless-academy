@@ -11,6 +11,9 @@
   "aggregator": {
     "definition": "Tool that combines multiple sources."
   },
+  "airdrop": {
+    "definition": "A free distribution of crypto assets to users."
+  },
   "allowance": {
     "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
   },
@@ -47,6 +50,9 @@
   "borrower": {
     "definition": "Willing to pay interest to lenders in order to borrow assets."
   },
+  "bridge": {
+    "definition": "Connection that allows two different blockchain networks to communicate with each other and exchange assets."
+  },
   "censorship-resistant": {
     "definition": "No government or company has control to determine what is or is not allowed."
   },
@@ -62,9 +68,6 @@
   "cold wallet": {
     "definition": "A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection."
   },
-  "cold wallets": {
-    "definition": "A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection."
-  },
   "collateral": {
     "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
   },
@@ -74,14 +77,8 @@
   "custodial wallet": {
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
   },
-  "custodial wallets": {
-    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
-  },
   "dapp": {
     "definition": "A decentralized app that connects to decentralized networks and protocols."
-  },
-  "dapps": {
-    "definition": "Decentralized apps that connect to decentralized networks and protocols."
   },
   "decentralization": {
     "definition": "Principle that no single authority or entity should control the blockchain data."
@@ -107,11 +104,14 @@
   "epoch": {
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
-  "finality": {
-    "definition": "How long it takes until it is safe to trust that a new transaction is valid and final."
+  "ethereum virtual machine": {
+    "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network."
   },
   "fomo": {
     "definition": "Fear Of Missing Out. Anxiety or apprehension about missing out on or not getting things."
+  },
+  "fraud proof": {
+    "definition": "Evidence that a transaction is invalid and that fraud has occurred."
   },
   "gas": {
     "definition": "Transaction fees for blockchain networks."
@@ -137,14 +137,20 @@
   "hot wallet": {
     "definition": "A type of non-custodial wallet that is perpetually connected to the internet."
   },
-  "hot wallets": {
-    "definition": "A type of non-custodial wallet that is perpetually connected to the internet."
-  },
   "intermediary token": {
     "definition": "A token that is part of the middle of a trade route, not the starting or ending token."
   },
   "invest": {
     "definition": "The act of buying a coin/token that uses DeFi technology."
+  },
+  "l1": {
+    "definition": "Layer 1 refers to a base network such as Bitcoin or Ethereum."
+  },
+  "l2": {
+    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
+  },
+  "layer 1": {
+    "definition": "Layer 1 refers to a base network such as Bitcoin or Ethereum."
   },
   "layer 2": {
     "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
@@ -161,9 +167,6 @@
   "liquidity pool": {
     "definition": "A pool of tokens in a DEX that facilitates permissionless trades between two tokens."
   },
-  "liquidity pools": {
-    "definition": "A liquidity pool is a crowdsourced pool of cryptocurrencies or tokens locked in a smart contract that is used to facilitate trades between the assets on a decentralized exchange (DEX)."
-  },
   "meta-aggregator": {
     "definition": "A tool that brings together other aggregators into an extra overview layer."
   },
@@ -173,8 +176,8 @@
   "non-custodial wallet": {
     "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets."
   },
-  "non-custodial wallets": {
-    "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  "optimistic rollup": {
+    "definition": "A layer 2 rollup scaling solution that optimistically assumes all transactions in its “rolled up” transaction are valid until they are proven false by a fraud proof."
   },
   "otc": {
     "definition": "(Over the Counter) Trades made directly with private entities."
@@ -182,11 +185,14 @@
   "over the counter": {
     "definition": "(OTC) Trades made directly with private entities."
   },
+  "payment channel": {
+    "definition": "Allows two parties to transact multiple times without the need for each transaction to be recorded on the blockchain."
+  },
   "peer-to-peer": {
     "definition": "A transaction between two parties that does not require a middleman or controlling entity."
   },
   "permissionless": {
-    "definition": "Refers to a public blockchain that anyone can use to buy, sell, or trade assets."
+    "definition": "Not requiring the permission of any entity."
   },
   "phishing": {
     "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
@@ -194,13 +200,13 @@
   "poap": {
     "definition": "A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson."
   },
+  "pos": {
+    "definition": "Proof of Stake consensus."
+  },
   "price impact": {
     "definition": "The amount prices on a DEX change due to the trade size."
   },
   "private key": {
-    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
-  },
-  "private keys": {
     "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
   },
   "proof of stake": {
@@ -212,20 +218,23 @@
   "public": {
     "definition": "Public blockchains allow anyone to view the blockchain ledger."
   },
-  "public key": {
-    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you."
+  "public good": {
+    "definition": "A public good is a commodity or service that is available to all members of society."
   },
-  "public keys": {
+  "public key": {
     "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you."
   },
   "recovery phrase": {
     "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key."
   },
-  "recovery phrases": {
-    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key."
-  },
   "red flag": {
     "definition": "A warning sign of danger."
+  },
+  "retropgf": {
+    "definition": "Retroactive Public Goods Funding."
+  },
+  "rollup": {
+    "definition": "A layer-2 scaling solution that allows for processing a high number of off-chain transactions and aggregating them in a single, larger on-chain transaction, increasing transaction throughput and lowering costs."
   },
   "sandwich attack": {
     "definition": "A hidden cost for users due to ordering of transactions by block producers."
@@ -242,8 +251,17 @@
   "seed phrase": {
     "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
   },
+  "settlement layer": {
+    "definition": "The “lowest” level of a blockchain that records the details of asset exchange from finalized transactions. Mainnet Ethereum is the settlement layer for Ethereum layer 2 scaling solutions."
+  },
+  "settlement time": {
+    "definition": "The time need for a transaction to be confirmed."
+  },
   "sharding": {
     "definition": " The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability."
+  },
+  "sidechain": {
+    "definition": "A mechanism that allows for the transfer of assets and transactions from a main blockchain to a separate, parallel blockchain (sidechain)."
   },
   "slippage tolerance": {
     "definition": "How much can prices change before your trade executes."
@@ -266,7 +284,7 @@
   "swap": {
     "definition": "A trade from one token to another."
   },
-  "tokens": {
+  "token": {
     "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
   },
   "tps": {
@@ -275,7 +293,7 @@
   "trade": {
     "definition": "Exchanging assets or money for something valuable ; money verb on the skill cube."
   },
-  "trade routes": {
+  "trade route": {
     "definition": "What is the path taken from starting token to ending token in a trade."
   },
   "trade routing": {
@@ -284,19 +302,28 @@
   "transaction": {
     "definition": "A record of an event."
   },
+  "transaction finality": {
+    "definition": "The time it takes to be sure that a transaction is valid and final, meaning it won't be reversed or changed."
+  },
   "transaction hash": {
     "definition": "The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions."
   },
   "transaction throughput": {
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
   },
-  "wallet": {
-    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+  "validating bridge": {
+    "definition": "A validating bridge contract is a new design that removes the need to trust any external authority to decide if a withdrawal is valid."
   },
-  "wallets": {
+  "wallet": {
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
   },
   "web3": {
     "definition": "Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data."
+  },
+  "zero-knowledge": {
+    "definition": "Mathematical method that allows one party to prove a statement is valid without revealing any additional information about it."
+  },
+  "zk rollup": {
+    "definition": "A layer-2 rollup scaling solution that uses zero-knowledge proofs to guarantee the validity of “rolled up” transactions while maintaining security and privacy on the layer 1 blockchain."
   }
 }

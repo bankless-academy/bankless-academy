@@ -61,7 +61,7 @@ const InstallAppModal = ({
                   src="/app-icon.png"
                 />
                 <Text fontSize="lg" alignSelf="center">
-                  How to install the Bankless Academy mobile app
+                  How to install the Bankless Academy Mobile App
                 </Text>
               </Box>
             </ModalHeader>
@@ -69,6 +69,11 @@ const InstallAppModal = ({
             <ModalBody px="6" pb="4">
               {isDesktop ? (
                 <>
+                  <Text fontSize="md" mb="4" alignSelf="center">
+                    {`Open the website `}
+                    <b>on mobile</b>
+                    {`, open the main menu, and press "Install Mobile App".`}
+                  </Text>
                   <Image
                     borderRadius="10px"
                     maxH="60vh"
@@ -76,11 +81,6 @@ const InstallAppModal = ({
                     src="/images/install-app-desktop.gif"
                     alt="Open website on mobile"
                   />
-                  <Text fontSize="md" mt="4" alignSelf="center">
-                    {`Open the website `}
-                    <b>on mobile</b>
-                    {` and follow the instructions`}
-                  </Text>
                 </>
               ) : isIOS ? (
                 <>
@@ -89,7 +89,7 @@ const InstallAppModal = ({
                     maxH="60vh"
                     m="auto"
                     src="/images/install-app-iOS.gif"
-                    alt="Install mobile app on iOS"
+                    alt="Install Mobile App on iOS"
                   />
                   <Text fontSize="md" mt="4">
                     {`Open the website in Safari, click "Share" icon, "Add to Home Screen". This won't work with other browsers on iOS.`}
@@ -97,13 +97,23 @@ const InstallAppModal = ({
                 </>
               ) : (
                 <>
-                  <Image
-                    borderRadius="10px"
-                    maxH="60vh"
-                    m="auto"
-                    src="/images/install-app-Android.gif"
-                    alt="Install mobile app on Android"
-                  />
+                  <video
+                    autoPlay
+                    loop
+                    playsInline
+                    muted
+                    style={{
+                      borderRadius: '10px',
+                      overflow: 'hidden',
+                      maxHeight: '60vh',
+                      margin: 'auto',
+                    }}
+                  >
+                    <source
+                      src="/images/install-app-Android.mp4"
+                      type="video/mp4"
+                    ></source>
+                  </video>
                   <Text fontSize="md" mt="4">
                     {`In your mobile browser, click on "︙" icon for menu options, then click "Install app".`}
                   </Text>
@@ -123,7 +133,7 @@ const InstallAppModal = ({
                   src="/app-icon.png"
                 />
                 <Text fontSize="lg" alignSelf="center">
-                  Do you want to install the Bankless Academy mobile app?
+                  Do you want to install the Bankless Academy Mobile App?
                 </Text>
               </Box>
             </ModalHeader>

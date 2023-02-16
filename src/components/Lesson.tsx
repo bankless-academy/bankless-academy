@@ -93,7 +93,7 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
     h2,
     p {
       font-size: var(--chakra-fontSizes-xl);
-      margin: 1em;
+      margin: 0.8em;
     }
     h2 {
       font-weight: bold;
@@ -351,15 +351,19 @@ const Lesson = ({
         )
     }
     if (node.type === 'tag' && node.name === 'code') {
+      // Tooltip with definition
       const keyword = node.children[0]?.data
       const lowerCaseKeyword = node.children[0]?.data?.toLowerCase()
-      // Tooltip with definition
-      return lowerCaseKeyword?.length && lowerCaseKeyword in keywords ? (
-        <Tooltip
-          hasArrow
-          label={keywords[lowerCaseKeyword]?.definition}
-          closeOnClick={false}
-        >
+      const lowerCaseKeywordSingular =
+        lowerCaseKeyword?.length && lowerCaseKeyword.endsWith('s')
+          ? lowerCaseKeyword.slice(0, -1)
+          : undefined
+      if (!lowerCaseKeyword?.length) return <>{keyword}</>
+      const definition =
+        keywords[lowerCaseKeyword]?.definition ||
+        keywords[lowerCaseKeywordSingular]?.definition
+      return definition?.length ? (
+        <Tooltip hasArrow label={definition} closeOnClick={false}>
           <span className="keyword">{keyword}</span>
         </Tooltip>
       ) : (

@@ -64,7 +64,7 @@ const AcademyCommunity = (
         <Box display={isSmallScreen ? 'block' : 'flex'}>
           <div className="bloc1">
             <Box>
-              <VStack mt="20">
+              <VStack mt="20" alignItems="start" mr="4">
                 <Button
                   cursor="default"
                   rightIcon={
@@ -79,6 +79,9 @@ const AcademyCommunity = (
                 </Button>
                 <Button
                   cursor="default"
+                  whiteSpace="break-spaces"
+                  display="initial"
+                  textAlign="left"
                   rightIcon={
                     hasUserJoinedGM ? (
                       <CheckIcon color={theme.colors.correct} />
@@ -93,13 +96,11 @@ const AcademyCommunity = (
                     )
                   }
                 >
-                  {'2. Join '}
-                  <ExternalLink
-                    href="https://gm.xyz/?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson"
-                    ml="1"
-                  >
-                    gm.xyz
+                  {'2. Join gm.xyz using this '}
+                  <ExternalLink href="https://gm.xyz/invite/K3iot3AU7o" mx="1">
+                    invite link
                   </ExternalLink>
+                  {` or register with a phone number`}
                 </Button>
                 <Button
                   cursor="default"

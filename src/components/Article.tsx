@@ -549,11 +549,18 @@ const Article = ({
             code: ({ node, ...props }: any) => {
               const keyword = node.children[0]?.value
               const lowerCaseKeyword = node.children[0]?.value?.toLowerCase()
-              return lowerCaseKeyword?.length &&
-                lowerCaseKeyword in keywords ? (
+              const lowerCaseKeywordSingular =
+                lowerCaseKeyword?.length && lowerCaseKeyword.endsWith('s')
+                  ? lowerCaseKeyword.slice(0, -1)
+                  : undefined
+              if (!lowerCaseKeyword?.length) return <>{keyword}</>
+              const definition =
+                keywords[lowerCaseKeyword]?.definition ||
+                keywords[lowerCaseKeywordSingular]?.definition
+              return definition?.length ? (
                 <Tooltip
                   hasArrow
-                  label={keywords[lowerCaseKeyword]?.definition}
+                  label={definition}
                   closeOnClick={false}
                   {...props}
                 >
