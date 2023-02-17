@@ -432,7 +432,7 @@ const Lesson = ({
                   </h2>
                 </Box>
               )}
-              <Answers mt={4} mx={2}>
+              <Answers mt={4} mx={2} minH={isSmallScreen ? '380px' : '500px'}>
                 <ButtonGroup size="lg" w="100%">
                   <SimpleGrid
                     columns={[null, null, 1]}
