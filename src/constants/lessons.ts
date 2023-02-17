@@ -354,7 +354,7 @@ const LESSONS: LessonType[] = [
     imageLinks: [
       '/lesson/blockchain-basics/introduction-6d0b6137.svg',
       '/lesson/blockchain-basics/blockchain-structure-346dae14.svg',
-      '/lesson/blockchain-basics/examining-the-ledger-0fbbcb4a.svg',
+      '/lesson/blockchain-basics/examining-the-ledger-74e5f072.svg',
       '/lesson/blockchain-basics/transactions-on-the-ledger-f4f9d470.svg',
       '/lesson/blockchain-basics/block-anatomy-8ba3bea2.svg',
       '/lesson/blockchain-basics/inside-a-block-b11c74ce.svg',
@@ -394,7 +394,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'edad96fceca6484eb72f5b301f33dea2',
         title: 'Examining the Ledger',
-        content: '<div class="bloc1"><p>In typical money systems, we trust third parties like banks to keep track of how much money each person has. But, to be truly Bankless, we want a system that doesn’t require us to trust one entity to manage the ledger.</p><p>The <code>ledger</code> is the list of ALL transactions ever made on a blockchain, and anyone can see it for <code>public</code> blockchains. Discrete groups of transactions from the ledger form the blocks that together make the blockchain.</p><p>When new transactions are added to the ledger, balances stored at each <code>address</code> get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever. </p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/examining-the-ledger-0fbbcb4a.svg\'></div>'
+        content: '<div class="bloc1"><p>In typical money systems, we trust third parties like banks to keep track of how much money each person has. But, to be truly Bankless, we want a system that doesn’t require us to trust one entity to manage the ledger.</p><p>The <code>ledger</code> is the list of ALL transactions ever made on a blockchain, and anyone can see it for <code>public</code> blockchains. Discrete groups of transactions from the ledger form the blocks that together make the blockchain.</p><p>When new transactions are added to the ledger, balances stored at each <code>address</code> get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever. </p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/examining-the-ledger-74e5f072.svg\'></div>'
       },
       {
         type: 'LEARN',
