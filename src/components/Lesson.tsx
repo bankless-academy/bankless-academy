@@ -569,7 +569,7 @@ const Lesson = ({
                 label="Help us improve the content by commenting this slide on Notion"
               >
                 <Button variant="outline">
-                  🐞{isSmallScreen ? '' : ` comment this slide`}
+                  💬{isSmallScreen ? '' : ` comment this slide`}
                 </Button>
               </Tooltip>
             </ExternalLink>
