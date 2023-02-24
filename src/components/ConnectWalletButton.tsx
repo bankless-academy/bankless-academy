@@ -20,9 +20,10 @@ import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import { useWeb3Modal } from '@web3modal/react'
-import { useAccount } from 'wagmi'
+import { useAccount, useNetwork, useSignMessage } from 'wagmi'
 import { disconnect, fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
 import makeBlockie from 'ethereum-blockies-base64'
+import { SiweMessage } from 'siwe'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -61,12 +62,16 @@ const ConnectWalletButton = ({
   isSmallScreen: boolean
 }): React.ReactElement => {
   const { open } = useWeb3Modal()
-  const { address, isDisconnected } = useAccount()
+  const { connector, address, isDisconnected } = useAccount()
+  const { chain } = useNetwork()
+  const [state, setState] = useState<{ loading?: boolean; nonce?: string }>({})
+  const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
   const [isPopOverOn, setIsPopOverOn] = useState(false)
   const [walletIsLoading, setWalletIsLoading] = useState(false)
   const [kudos, setKudos] = useState<KudosType[]>([])
+  const [siwe, setSiweLS] = useLocalStorage('siwe', '')
   const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
@@ -89,6 +94,8 @@ const ConnectWalletButton = ({
     setIsPopOverOn(false)
     await disconnect()
     setWalletIsLoading(false)
+    setSiweLS('')
+    fetchNonce()
     setKudos([])
   }
 
@@ -146,28 +153,121 @@ const ConnectWalletButton = ({
       })
   }
 
+  const fetchNonce = async () => {
+    try {
+      const nonceRes = await fetch('/api/nonce')
+      const nonce = await nonceRes.text()
+      setState((x) => ({ ...x, nonce }))
+    } catch (error) {
+      setState((x) => ({ ...x, error: error as Error }))
+    }
+  }
+
+  const loadAddress = (address) => {
+    if (localStorage.getItem('current_wallet') !== address.toLowerCase()) {
+      localStorage.removeItem('passport')
+    }
+    localStorage.setItem('current_wallet', address.toLowerCase())
+    setName(shortenAddress(address))
+    setAvatar(makeBlockie(address))
+    updateName(address)
+    const wallets = localStorage.getItem('wallets')
+      ? JSON.parse(localStorage.getItem('wallets'))
+      : []
+    if (!wallets.includes(address.toLowerCase())) {
+      wallets.push(address.toLowerCase())
+      localStorage.setItem('wallets', JSON.stringify(wallets))
+    }
+    refreshKudos()
+  }
+
+  const verify = async () => {
+    try {
+      console.log('v')
+      const verifyRes = await fetch('/api/verify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: siwe,
+      })
+      console.log('verifyRes', verifyRes)
+      if (!verifyRes.ok) {
+        console.log('nnn')
+        fetchNonce()
+      } else {
+        console.log(address)
+        loadAddress(address)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   useEffect(() => {
-    if (address) {
-      setName(shortenAddress(address))
-      setAvatar(makeBlockie(address))
-      updateName(address)
-      if (localStorage.getItem('current_wallet') !== address.toLowerCase()) {
-        localStorage.removeItem('passport')
-      }
-      localStorage.setItem('current_wallet', address.toLowerCase())
-      const wallets = localStorage.getItem('wallets')
-        ? JSON.parse(localStorage.getItem('wallets'))
-        : []
-      if (!wallets.includes(address.toLowerCase())) {
-        wallets.push(address.toLowerCase())
-        localStorage.setItem('wallets', JSON.stringify(wallets))
-      }
-      refreshKudos()
+    if (siwe?.length) {
+      verify()
+    } else if (!state.nonce) fetchNonce()
+  }, [])
+
+  const signIn = async () => {
+    try {
+      const chainId = chain?.id
+      if (!chainId) return
+
+      setState((x) => ({ ...x, loading: true }))
+      // Create SIWE message with pre-fetched nonce and sign with wallet
+      const message = new SiweMessage({
+        domain: window.location.host,
+        address,
+        statement: 'Sign in with Ethereum to the app.',
+        uri: window.location.origin,
+        version: '1',
+        chainId,
+        nonce: state.nonce,
+      })
+      const signature = await signMessageAsync({
+        message: message.prepareMessage(),
+      })
+
+      // Verify signature
+      const siwe = JSON.stringify({ message, signature })
+      const verifyRes = await fetch('/api/verify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: siwe,
+      })
+      if (!verifyRes.ok) throw new Error('Error verifying message')
+      setSiweLS(siwe)
+      loadAddress(address)
+      setState((x) => ({ ...x, loading: false }))
+    } catch (error) {
+      setState((x) => ({ ...x, loading: false, nonce: undefined }))
+      setName(null)
+      setAvatar(null)
+    }
+  }
+
+  useEffect(() => {
+    console.log(`${address}${siwe}${state.loading}${state.nonce}`)
+    const { message }: any = siwe?.length ? JSON.parse(siwe) : {}
+    console.log(message?.address)
+    if (
+      connector &&
+      state.nonce &&
+      !state.loading &&
+      address &&
+      message?.address !== address
+    ) {
+      console.log('sign')
+      signIn()
     } else {
       setName(null)
       setAvatar(null)
     }
-  }, [address])
+  }, [siwe, address, state, connector])
 
   useEffect(() => {
     if (refreshKudosLS) {
