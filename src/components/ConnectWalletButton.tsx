@@ -37,7 +37,7 @@ import {
   KUDOS_IDS,
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
-import { api, getLensProfile, shortenAddress } from 'utils'
+import { getUD, getLensProfile, shortenAddress } from 'utils'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -112,15 +112,10 @@ const ConnectWalletButton = ({
         setName(lensProfile.name)
       } else {
         console.log('ud')
-        const {
-          data: { domain },
-        }: any = await api('/api/ud', { address })
-        if (domain?.length) {
-          console.log(domain)
-          setName(domain)
-          setAvatar(
-            `https://resolve.unstoppabledomains.com/image-src/${domain}`
-          )
+        const ud = await getUD(address)
+        if (ud?.length) {
+          setName(ud)
+          setAvatar(`https://resolve.unstoppabledomains.com/image-src/${ud}`)
         }
       }
       if (lensProfile.avatar) {

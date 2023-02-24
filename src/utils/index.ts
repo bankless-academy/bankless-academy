@@ -9,6 +9,7 @@ import { verifyTypedData } from 'ethers/lib/utils'
 import { Network } from '@ethersproject/networks'
 import queryString from 'query-string'
 import mixpanel, { Dict, Query } from 'mixpanel-browser'
+import { readContract } from '@wagmi/core'
 
 import {
   ACTIVATE_MIXPANEL,
@@ -19,6 +20,8 @@ import {
 } from 'constants/index'
 import { NETWORKS } from 'constants/networks'
 import axios, { AxiosResponse } from 'axios'
+import UDPolygonABI from 'abis/UDPolygon.json'
+import UDABI from 'abis/UD.json'
 
 declare global {
   interface Window {
@@ -406,6 +409,42 @@ export async function getLensProfile(address: string): Promise<{
     res.avatar = picture?.includes('ipfs://')
       ? `https://gateway.ipfscdn.io/ipfs/${picture?.replace('ipfs://', '')}`
       : picture
+    return res
+  } catch (error) {
+    console.error(error)
+    return res
+  }
+}
+
+export async function getUD(address: string): Promise<string | null> {
+  let res = null
+  try {
+    const balanceOfUDPolygon: any = await readContract({
+      address: '0xa9a6a3626993d487d2dbda3173cf58ca1a9d9e9f',
+      chainId: 137,
+      abi: UDPolygonABI,
+      functionName: 'balanceOf',
+      args: [address],
+    })
+    console.log('balanceOfUDPolygon', parseInt(balanceOfUDPolygon))
+    const balanceOfUD: any = await readContract({
+      address: '0x049aba7510f45ba5b64ea9e658e342f904db358d',
+      chainId: 1,
+      abi: UDABI,
+      functionName: 'balanceOf',
+      args: [address],
+    })
+    console.log('balanceOfUD', parseInt(balanceOfUD))
+    if (parseInt(balanceOfUDPolygon) > 0 || parseInt(balanceOfUD) > 0) {
+      console.log('owns a UD')
+      const {
+        data: { domain },
+      }: any = await api('/api/ud', { address })
+      if (domain?.length) {
+        console.log(domain)
+        res = domain
+      }
+    } else console.log(console.log('NO UD'))
     return res
   } catch (error) {
     console.error(error)
