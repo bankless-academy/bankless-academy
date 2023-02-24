@@ -221,9 +221,13 @@ export async function validateOnchainQuest(
           // 1inch v5 router contract
           const address1inchV5 =
             '0x1111111254EEB25477B68fb85Ed929f73A960582'.toLowerCase()
+          // 1inch Liquidity Pool
+          const address1inchLP =
+            '0x8Acdb3bcC5101b1Ba8a5070F003a77A2da376fe8'.toLowerCase()
           if (
             txDetails.data.includes(address1inchV4.substring(2)) ||
-            txDetails.data.includes(address1inchV5.substring(2))
+            txDetails.data.includes(address1inchV5.substring(2)) ||
+            txDetails.data.includes(address1inchLP.substring(2))
           ) {
             check.push(true)
             console.log('OK 1inch router contract interaction')
