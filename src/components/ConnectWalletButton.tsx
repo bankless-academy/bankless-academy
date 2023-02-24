@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react'
 import {
   Button,
@@ -21,6 +22,7 @@ import { useRouter } from 'next/router'
 import { useWeb3Modal } from '@web3modal/react'
 import { useAccount } from 'wagmi'
 import { disconnect, fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
+import makeBlockie from 'ethereum-blockies-base64'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -35,7 +37,7 @@ import {
   KUDOS_IDS,
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
-import { shortenAddress } from 'utils'
+import { api, getLensProfile, shortenAddress } from 'utils'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -59,9 +61,9 @@ const ConnectWalletButton = ({
   isSmallScreen: boolean
 }): React.ReactElement => {
   const { open } = useWeb3Modal()
-  const { address, isConnecting, isDisconnected } = useAccount()
-  const [ensName, setEnsName] = useState(null)
-  const [ensAvatar, setEnsAvatar] = useState(null)
+  const { address, isDisconnected } = useAccount()
+  const [name, setName] = useState(null)
+  const [avatar, setAvatar] = useState(null)
   const [isPopOverOn, setIsPopOverOn] = useState(false)
   const [walletIsLoading, setWalletIsLoading] = useState(false)
   const [kudos, setKudos] = useState<KudosType[]>([])
@@ -90,17 +92,41 @@ const ConnectWalletButton = ({
     setKudos([])
   }
 
-  async function updateName() {
+  async function updateName(address) {
+    console.log('address', address)
     const ensName = await fetchEnsName({
       address,
       chainId: 1,
     })
-    const ensAvatar = await fetchEnsAvatar({
-      address,
-      chainId: 1,
-    })
-    setEnsName(ensName)
-    setEnsAvatar(ensAvatar)
+    if (ensName) {
+      setName(ensName)
+      const ensAvatar = await fetchEnsAvatar({
+        address,
+        chainId: 1,
+      })
+      if (ensAvatar) setAvatar(ensAvatar)
+    } else {
+      console.log('lens')
+      const lensProfile = await getLensProfile(address)
+      if (lensProfile.name) {
+        setName(lensProfile.name)
+      } else {
+        console.log('ud')
+        const {
+          data: { domain },
+        }: any = await api('/api/ud', { address })
+        if (domain?.length) {
+          console.log(domain)
+          setName(domain)
+          setAvatar(
+            `https://resolve.unstoppabledomains.com/image-src/${domain}`
+          )
+        }
+      }
+      if (lensProfile.avatar) {
+        setAvatar(lensProfile.avatar)
+      }
+    }
   }
 
   function refreshKudos() {
@@ -126,10 +152,10 @@ const ConnectWalletButton = ({
   }
 
   useEffect(() => {
-    setEnsName(null)
-    setEnsAvatar(null)
     if (address) {
-      updateName()
+      setName(shortenAddress(address))
+      setAvatar(makeBlockie(address))
+      updateName(address)
       if (localStorage.getItem('current_wallet') !== address.toLowerCase()) {
         localStorage.removeItem('passport')
       }
@@ -142,6 +168,9 @@ const ConnectWalletButton = ({
         localStorage.setItem('wallets', JSON.stringify(wallets))
       }
       refreshKudos()
+    } else {
+      setName(null)
+      setAvatar(null)
     }
   }, [address])
 
@@ -176,7 +205,7 @@ const ConnectWalletButton = ({
                 <Avatar
                   w="28px"
                   h="28px"
-                  src={isConnecting ? null : ensAvatar}
+                  src={avatar}
                   loading="eager"
                   icon={
                     <Image
@@ -189,11 +218,7 @@ const ConnectWalletButton = ({
               onClick={() => setIsPopOverOn(!isPopOverOn)}
             >
               <Text maxW="200px" display="flex" alignItems="center" isTruncated>
-                {isConnecting
-                  ? '...'
-                  : typeof ensName === 'string'
-                  ? ensName
-                  : shortenAddress(address)}
+                {name}
               </Text>
             </Button>
           </PopoverTrigger>

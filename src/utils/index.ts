@@ -375,3 +375,36 @@ export async function getArticlesCollected(address: string): Promise<[]> {
     return []
   }
 }
+
+export async function getLensProfile(address: string): Promise<{
+  name: string | null
+  avatar: string | null
+}> {
+  const res = {
+    name: null,
+    avatar: null,
+  }
+  try {
+    const data =
+      '{"operationName":"DefaultProfile","variables":{},"query":"query DefaultProfile {\\n  defaultProfile(\\n    request: {ethereumAddress: \\"' +
+      address +
+      '\\"}\\n  ) {\\n    id\\n    handle\\n    picture {\\n      ... on NftImage {\\n        uri\\n      }\\n      ... on MediaSet {\\n        original {\\n          url\\n        }\\n      }\\n    }\\n  }\\n}\\n"}'
+    const config = {
+      headers: {
+        'content-type': 'application/json',
+      },
+    }
+    const r = await axios.post('https://api.lens.dev/', data, config)
+    const profile = r?.data?.data?.defaultProfile
+    res.name = profile?.handle
+    const picture =
+      profile?.picture?.uri || profile?.picture?.original?.url || null
+    res.avatar = picture?.includes('ipfs://')
+      ? `https://gateway.ipfscdn.io/ipfs/${picture?.replace('ipfs://', '')}`
+      : picture
+    return res
+  } catch (error) {
+    console.error(error)
+    return res
+  }
+}

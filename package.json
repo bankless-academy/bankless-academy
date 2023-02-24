@@ -45,6 +45,7 @@
     "@web3modal/react": "^2.0.0",
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
+    "ethereum-blockies-base64": "^1.0.2",
     "ethereumjs-util": "^7.1.5",
     "ethers": "^5.7.2",
     "framer-motion": "^7.6.15",
