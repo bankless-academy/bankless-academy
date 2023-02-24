@@ -24,7 +24,7 @@ import { useWeb3Modal, Web3Modal } from '@web3modal/react'
 
 import { configureChains, createClient, WagmiConfig } from 'wagmi'
 
-import { mainnet, polygon } from 'wagmi/chains'
+import { mainnet, optimism, polygon } from 'wagmi/chains'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -54,7 +54,7 @@ const App = ({
     return <>Maintenance in progress ...</>
   }
 
-  const chains = [mainnet, polygon]
+  const chains = [mainnet, polygon, optimism]
   const { isOpen } = useWeb3Modal()
 
   // Wagmi client
