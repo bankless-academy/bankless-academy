@@ -95,6 +95,7 @@ const ConnectWalletButton = ({
     setName(null)
     setAvatar(null)
     setKudos([])
+    await fetch('/api/siwe/logout')
   }
 
   async function updateName(address) {
@@ -169,7 +170,7 @@ const ConnectWalletButton = ({
 
   const verify = async () => {
     try {
-      const verifyRes = await fetch('/api/verify', {
+      const verifyRes = await fetch('/api/siwe/verify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -197,7 +198,7 @@ const ConnectWalletButton = ({
     try {
       const chainId = chain?.id
       if (!chainId || waitingForSIWE) return
-      const nonceRes = await fetch('/api/nonce')
+      const nonceRes = await fetch('/api/siwe/nonce')
       const nonce = await nonceRes.text()
 
       setWaitingForSIWE(true)
@@ -217,7 +218,9 @@ const ConnectWalletButton = ({
 
       // Verify signature
       const siwe = JSON.stringify({ message, signature })
-      const verifyRes = await fetch('/api/verify', {
+      // TODO: use /me to get verified address
+      // const res = await fetch('/api/siwe/me')
+      const verifyRes = await fetch('/api/siwe/verify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
