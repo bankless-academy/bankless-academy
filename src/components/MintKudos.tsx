@@ -181,7 +181,7 @@ const MintKudos = ({
         types: receiverTypes,
         value,
       })
-      console.log('signature', signature)
+      // console.log('signature', signature)
       const bodyParameters = {
         address,
         kudosId,

@@ -55,7 +55,7 @@ const Kudos = (): JSX.Element => {
         types: adminTypes,
         value,
       })
-      console.log('signature', signature)
+      // console.log('signature', signature)
       toast.closeAll()
       const bodyParameters = {
         address,

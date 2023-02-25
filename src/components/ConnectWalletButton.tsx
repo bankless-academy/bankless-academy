@@ -220,6 +220,8 @@ const ConnectWalletButton = ({
       const siwe = JSON.stringify({ message, signature })
       // TODO: use /me to get verified address
       // const res = await fetch('/api/siwe/me')
+      // TODO: add support for multiple windows open
+      // https://github.com/BanklessDAO/bankless-academy/pull/90/commits/d130d22e70ad146b1e619133864d03a8bf4c3cb4#diff-caedf14611e4652b0b5f0287a5bc59621a76c1d0b41c544302d3c8c1a7641d22L107
       const verifyRes = await fetch('/api/siwe/verify', {
         method: 'POST',
         headers: {
