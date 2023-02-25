@@ -64,7 +64,7 @@ export const MERKLE_DISTRIBUTOR_ADDRESS = {
 export const DefaultProviderName = 'DEFAULT'
 
 export const INFURA_KEY =
-  process.env.NEXT_PUBLIC_INFURA_KEY || 'cb578d660f614bbcb41b3c03553ff6f2'
+  process.env.INFURA_KEY || 'cb578d660f614bbcb41b3c03553ff6f2'
 
 export const ALCHEMY_KEY = process.env.NEXT_PUBLIC_ALCHEMY_KEY
 
@@ -106,3 +106,5 @@ export const KEYWORDS =
   IS_WHITELABEL && Object.keys(WHITELABEL_KEYWORDS).length
     ? WHITELABEL_KEYWORDS
     : DEFAULT_KEYWORDS
+
+export const SIWE_ENABLED = process.env.NEXT_PUBLIC_SIWE_ENABLED || false

@@ -202,7 +202,7 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['matic'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `https://polygon-mainnet.infura.io/v3/${INFURA_KEY}`
+            `${NETWORKS['matic'].infuraRpcUrl}${INFURA_KEY}`
           ),
       }
       const provider = ethers.getDefaultProvider(matic)
@@ -241,15 +241,15 @@ export async function validateOnchainQuest(
       return check.length === 3
     }
     if (quest === 'Layer2Blockchains') {
-      const matic: Network = {
+      const optimism: Network = {
         name: 'optimism',
-        chainId: 10,
+        chainId: NETWORKS['optimism'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `https://optimism-mainnet.infura.io/v3/${INFURA_KEY}`
+            `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
           ),
       }
-      const provider = ethers.getDefaultProvider(matic)
+      const provider = ethers.getDefaultProvider(optimism)
       const bigNumberBalance = await provider.getBalance(address.toLowerCase())
       const balance = parseFloat(ethers.utils.formatEther(bigNumberBalance))
       console.log('balance: ', balance)
