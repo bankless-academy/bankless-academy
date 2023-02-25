@@ -12,7 +12,7 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
-import { useSwitchNetwork, useNetwork } from 'wagmi'
+import { useSwitchNetwork, useNetwork, useAccount } from 'wagmi'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 
@@ -32,6 +32,8 @@ const SwitchNetworkButton = ({
 }): any => {
   const toast = useToast()
   const [currentNetwork, setCurrentNetwork] = useState(NETWORKS.mainnet)
+  const [isNetworkUnknown, setIsNetworkUnknown] = useState(false)
+  const { isConnected } = useAccount()
   const { switchNetwork } = useSwitchNetwork()
   const { chain } = useNetwork()
 
@@ -46,8 +48,10 @@ const SwitchNetworkButton = ({
           status: 'warning',
           duration: null,
         })
+        setIsNetworkUnknown(true)
       } else {
         // correct network
+        setIsNetworkUnknown(false)
         toast.closeAll()
         const networkName = Object.keys(NETWORKS).find(
           (network) => NETWORKS[network]?.chainId === chain?.id
@@ -70,7 +74,11 @@ const SwitchNetworkButton = ({
             >
               <Box display="flex" alignItems="center">
                 <Image
-                  src={currentNetwork.image}
+                  src={
+                    isNetworkUnknown
+                      ? '/images/unknown-network.png'
+                      : currentNetwork.image
+                  }
                   height={22}
                   mr={isSmallScreen ? '0' : '12px'}
                 />
@@ -79,7 +87,9 @@ const SwitchNetworkButton = ({
                   isTruncated
                   display={isSmallScreen ? 'none' : 'inherit'}
                 >
-                  {currentNetwork.name}
+                  {isNetworkUnknown
+                    ? 'Unsupported network'
+                    : currentNetwork.name}
                 </Box>
                 {isOpen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
               </Box>
@@ -92,7 +102,20 @@ const SwitchNetworkButton = ({
                 <MenuItem
                   key={index}
                   minH="40px"
-                  onClick={() => switchNetwork(NETWORKS[network].chainId)}
+                  onClick={() => {
+                    try {
+                      if (isConnected) switchNetwork(NETWORKS[network].chainId)
+                    } catch (error) {
+                      toast.closeAll()
+                      toast({
+                        title: 'Error while trying to change the network.',
+                        description:
+                          'When using Wallet Connect, change the network from your wallet.',
+                        status: 'warning',
+                        duration: 20000,
+                      })
+                    }
+                  }}
                   backgroundColor={
                     currentNetwork.chainId === NETWORKS[network].chainId
                       ? 'blackAlpha.300'

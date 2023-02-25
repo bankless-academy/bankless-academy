@@ -41,7 +41,11 @@ const IntroToDeFi = (
           duration: null,
         })
       }
-      await switchNetwork({ chainId: 137 })
+      try {
+        await switchNetwork({ chainId: 137 })
+      } catch (error) {
+        console.error(console.error)
+      }
     }
     const message = `I want to learn more about ${answer}`
 
