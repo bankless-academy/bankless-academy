@@ -17,6 +17,7 @@ import ReactHtmlParser from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
 import { Warning } from 'phosphor-react'
 import { useLocalStorage } from 'usehooks-ts'
+import { useAccount } from 'wagmi'
 
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
@@ -25,7 +26,7 @@ import MintKudos from 'components/MintKudos'
 import QuestComponent from 'components/Quest/QuestComponent'
 import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
-import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
+import { useSmallScreen } from 'hooks/index'
 import { Mixpanel } from 'utils'
 import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
@@ -206,8 +207,8 @@ const Lesson = ({
   const isLastSlide = currentSlide + 1 === numberOfSlides
   const isBeforeLastSlide = currentSlide + 2 === numberOfSlides
 
-  const { account } = useActiveWeb3React()
-  const walletAddress = account
+  const { address } = useAccount()
+  const walletAddress = address
   // DEV ENV: you can force a specific wallet address here if you want to test the claiming function
   // walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb44'
 
@@ -218,10 +219,10 @@ const Lesson = ({
   }, [currentSlide])
 
   useEffect((): void => {
-    if (account) setConnectWalletPopupLS(false)
-    if ((slide.type === 'QUEST' || slide.type === 'END') && !account)
+    if (address) setConnectWalletPopupLS(false)
+    if ((slide.type === 'QUEST' || slide.type === 'END') && !address)
       setConnectWalletPopupLS(true)
-  }, [account, slide])
+  }, [address, slide])
 
   useEffect(() => {
     Mixpanel.track('open_lesson', { lesson: lesson?.name })

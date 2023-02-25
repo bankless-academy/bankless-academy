@@ -2,8 +2,8 @@
 import React, { useState } from 'react'
 import { Box, Text, Button, Image, useToast } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
+import { useAccount } from 'wagmi'
 
-import { useActiveWeb3React } from 'hooks/index'
 import GitcoinPassport from 'components/GitcoinPassport'
 import ExternalLink from 'components/ExternalLink'
 import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
@@ -21,11 +21,11 @@ const PassportComponent = ({
   )
   const [isLoading, setIsLoading] = useState(false)
   const toast = useToast()
-  const { account } = useActiveWeb3React()
+  const { address } = useAccount()
 
   async function checkPassport() {
     setIsLoading(true)
-    const result = await api('/api/passport', { address: account })
+    const result = await api('/api/passport', { address })
     if (result && result.status === 200) {
       setIsLoading(false)
       // console.log('passport', result.data)

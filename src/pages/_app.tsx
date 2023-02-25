@@ -1,27 +1,43 @@
 import type { AppProps } from 'next/app'
-import { Web3ReactProvider } from '@web3-react/core'
-import { ethers } from 'ethers'
 import { Global, css } from '@emotion/react'
 import 'react-notion-x/src/styles.css'
 import 'prismjs/themes/prism-tomorrow.css'
 import 'mac-scrollbar/dist/mac-scrollbar.css'
 import { GlobalScrollbar } from 'mac-scrollbar'
 import { isMobile } from 'react-device-detect'
+import styled from '@emotion/styled'
+import { Box } from '@chakra-ui/react'
 
-import dynamic from 'next/dynamic'
 import Head, { MetaData } from 'components/Head'
 import Layout from 'layout'
 import ThemeProvider from 'theme'
 import { DEBUG } from 'utils/index'
+import NonSSRWrapper from 'components/NonSSRWrapper'
 
-function getLibrary(provider) {
-  return new ethers.providers.Web3Provider(provider) // this will vary according to whether you use e.g. ethers or web3.js
-}
+import {
+  EthereumClient,
+  modalConnectors,
+  walletConnectProvider,
+} from '@web3modal/ethereum'
 
-const Web3ReactProviderDefault = dynamic(
-  () => import('providers/Web3ReactProviderDefaultSSR'),
-  { ssr: false }
-)
+import { useWeb3Modal, Web3Modal } from '@web3modal/react'
+
+import { configureChains, createClient, WagmiConfig } from 'wagmi'
+
+import { mainnet, optimism, polygon } from 'wagmi/chains'
+
+const Overlay = styled(Box)`
+  opacity: 1;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: var(--chakra-colors-blackAlpha-600);
+  z-index: 2;
+  margin: 0;
+  backdrop-filter: blur(10px);
+`
 
 const App = ({
   Component,
@@ -37,13 +53,32 @@ const App = ({
   ) {
     return <>Maintenance in progress ...</>
   }
+
+  const chains = [mainnet, polygon, optimism]
+  const { isOpen } = useWeb3Modal()
+
+  // Wagmi client
+  const { provider } = configureChains(chains, [
+    walletConnectProvider({
+      projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID,
+    }),
+  ])
+  const wagmiClient = createClient({
+    autoConnect: true,
+    connectors: modalConnectors({ appName: 'Bankless Academy', chains }),
+    provider,
+  })
+
+  // Web3Modal Ethereum Client
+  const ethereumClient = new EthereumClient(wagmiClient, chains)
+
   return (
     <>
       <Head metadata={pageProps.pageMeta} />
       {!isMobile && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
-        <Web3ReactProvider getLibrary={getLibrary}>
-          <Web3ReactProviderDefault getLibrary={getLibrary}>
+        <NonSSRWrapper>
+          <WagmiConfig client={wagmiClient}>
             <Global
               styles={css`
                 .web3modal-modal-lightbox {
@@ -75,8 +110,17 @@ const App = ({
             <Layout isLesson={pageProps.pageMeta?.isLesson || false}>
               <Component {...pageProps} />
             </Layout>
-          </Web3ReactProviderDefault>
-        </Web3ReactProvider>
+          </WagmiConfig>
+
+          <Overlay hidden={!isOpen} />
+          <Web3Modal
+            projectId={process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID}
+            ethereumClient={ethereumClient}
+            themeMode="dark"
+            themeColor="purple"
+            themeBackground="themeColor"
+          />
+        </NonSSRWrapper>
       </ThemeProvider>
     </>
   )

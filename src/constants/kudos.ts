@@ -28,7 +28,11 @@ export const MINTKUDOS_RARIBLE_URL = IS_MINTKUDOS_SANDBOX
 
 export const MINTKUDOS_CHAIN_ID = IS_MINTKUDOS_SANDBOX ? 80001 : 137
 
-export const MINTKUDOS_DOMAIN_INFO = {
+export const MINTKUDOS_DOMAIN_INFO: {
+  name: string
+  chainId: number
+  verifyingContract: `0x${string}`
+} = {
   name: 'Kudos',
   // Mumbai | Polygon
   chainId: MINTKUDOS_CHAIN_ID,

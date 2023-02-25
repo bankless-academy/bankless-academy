@@ -3,15 +3,13 @@
 import { Contract } from '@ethersproject/contracts'
 import { getAddress } from '@ethersproject/address'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
-import { InjectedConnector } from '@web3-react/injected-connector'
-import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
-import { NetworkConnector } from '@web3-react/network-connector'
 import * as ethUtil from 'ethereumjs-util'
 import { ethers } from 'ethers'
 import { verifyTypedData } from 'ethers/lib/utils'
 import { Network } from '@ethersproject/networks'
 import queryString from 'query-string'
 import mixpanel, { Dict, Query } from 'mixpanel-browser'
+import { readContract } from '@wagmi/core'
 
 import {
   ACTIVATE_MIXPANEL,
@@ -20,8 +18,10 @@ import {
   INFURA_KEY,
   MIRROR_ARTICLE_ADDRESSES,
 } from 'constants/index'
-import { NETWORKS, SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
+import { NETWORKS } from 'constants/networks'
 import axios, { AxiosResponse } from 'axios'
+import UDPolygonABI from 'abis/UDPolygon.json'
+import UDABI from 'abis/UD.json'
 
 declare global {
   interface Window {
@@ -86,22 +86,6 @@ export function getSigner(
 ): JsonRpcSigner {
   return library.getSigner(account).connectUnchecked()
 }
-
-export const injected = new InjectedConnector({
-  supportedChainIds: SUPPORTED_NETWORKS_IDS,
-})
-
-export const walletConnect = new WalletConnectConnector({
-  infuraId: INFURA_KEY,
-  rpc: RPCS,
-  bridge: 'https://bridge.walletconnect.org',
-  qrcode: true,
-})
-
-export const network = new NetworkConnector({
-  urls: { 1: NETWORKS.mainnet.rpcUrl },
-  defaultChainId: 1,
-})
 
 export const toFixed = function (x) {
   if (Math.abs(x) < 1.0) {
@@ -218,7 +202,7 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['matic'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `https://polygon-mainnet.infura.io/v3/${INFURA_KEY}`
+            `${NETWORKS['matic'].infuraRpcUrl}${INFURA_KEY}`
           ),
       }
       const provider = ethers.getDefaultProvider(matic)
@@ -257,15 +241,15 @@ export async function validateOnchainQuest(
       return check.length === 3
     }
     if (quest === 'Layer2Blockchains') {
-      const matic: Network = {
+      const optimism: Network = {
         name: 'optimism',
-        chainId: 10,
+        chainId: NETWORKS['optimism'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `https://optimism-mainnet.infura.io/v3/${INFURA_KEY}`
+            `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
           ),
       }
-      const provider = ethers.getDefaultProvider(matic)
+      const provider = ethers.getDefaultProvider(optimism)
       const bigNumberBalance = await provider.getBalance(address.toLowerCase())
       const balance = parseFloat(ethers.utils.formatEther(bigNumberBalance))
       console.log('balance: ', balance)
@@ -396,5 +380,76 @@ export async function getArticlesCollected(address: string): Promise<[]> {
   } catch (error) {
     console.error(error)
     return []
+  }
+}
+
+export async function getLensProfile(address: string): Promise<{
+  name: string | null
+  avatar: string | null
+}> {
+  const res = {
+    name: null,
+    avatar: null,
+  }
+  try {
+    const data =
+      '{"operationName":"DefaultProfile","variables":{},"query":"query DefaultProfile {\\n  defaultProfile(\\n    request: {ethereumAddress: \\"' +
+      address +
+      '\\"}\\n  ) {\\n    id\\n    handle\\n    picture {\\n      ... on NftImage {\\n        uri\\n      }\\n      ... on MediaSet {\\n        original {\\n          url\\n        }\\n      }\\n    }\\n  }\\n}\\n"}'
+    const config = {
+      headers: {
+        'content-type': 'application/json',
+      },
+    }
+    const r = await axios.post('https://api.lens.dev/', data, config)
+    const profile = r?.data?.data?.defaultProfile
+    res.name = profile?.handle
+    const picture =
+      profile?.picture?.uri || profile?.picture?.original?.url || null
+    res.avatar = picture?.includes('ipfs://')
+      ? `https://gateway.ipfscdn.io/ipfs/${picture?.replace('ipfs://', '')}`
+      : picture
+    return res
+  } catch (error) {
+    console.error(error)
+    return res
+  }
+}
+
+export async function getUD(address: string): Promise<string | null> {
+  let res = null
+  try {
+    const balanceOfUDPolygon: any = await readContract({
+      address: '0xa9a6a3626993d487d2dbda3173cf58ca1a9d9e9f',
+      chainId: 137,
+      abi: UDPolygonABI,
+      functionName: 'balanceOf',
+      args: [address],
+    })
+    // console.log('balanceOfUDPolygon', parseInt(balanceOfUDPolygon))
+    const balanceOfUD: any = await readContract({
+      address: '0x049aba7510f45ba5b64ea9e658e342f904db358d',
+      chainId: 1,
+      abi: UDABI,
+      functionName: 'balanceOf',
+      args: [address],
+    })
+    // console.log('balanceOfUD', parseInt(balanceOfUD))
+    if (parseInt(balanceOfUDPolygon) > 0 || parseInt(balanceOfUD) > 0) {
+      // console.log('owns a UD')
+      const {
+        data: { domain },
+      }: any = await api('/api/ud', { address })
+      if (domain?.length) {
+        // console.log(domain)
+        res = domain
+      }
+    } else {
+      // console.log(console.log('NO UD'))
+    }
+    return res
+  } catch (error) {
+    console.error(error)
+    return res
   }
 }

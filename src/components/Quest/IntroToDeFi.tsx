@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Button, Box, useToast } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
+import { useNetwork, useAccount } from 'wagmi'
+import { switchNetwork, signMessage } from '@wagmi/core'
 
-import { useActiveWeb3React } from 'hooks/index'
-import switchNetwork from 'components/SwitchNetworkButton/switchNetwork'
-import { track, verifySignature, getSignature } from 'utils'
+import { track, verifySignature } from 'utils'
 import { NETWORKS } from 'constants/networks'
 import { theme } from 'theme/index'
 
@@ -24,15 +24,16 @@ const IntroToDeFi = (
   )
   const toast = useToast()
 
-  const { library, chainId } = useActiveWeb3React()
+  const { chain } = useNetwork()
+  const { connector } = useAccount()
 
-  const signMessage = async () => {
-    if (chainId !== 137) {
+  const sign = async () => {
+    if (chain?.id !== 137) {
       const network = Object.values(NETWORKS).find(
         (network) => network.chainId === 137
       )
       toast.closeAll()
-      if (!library.provider.isMetaMask) {
+      if (connector?.name !== 'MetaMask') {
         toast({
           title: 'Wrong network',
           description: `Switch network to ${network.name} before signing this message.`,
@@ -40,12 +41,16 @@ const IntroToDeFi = (
           duration: null,
         })
       }
-      await switchNetwork(library.provider, 'matic')
+      try {
+        await switchNetwork({ chainId: 137 })
+      } catch (error) {
+        console.error(console.error)
+      }
     }
     const message = `I want to learn more about ${answer}`
 
     try {
-      const signature = await getSignature(library, account, message)
+      const signature = await signMessage({ message })
       const verified = verifySignature(account, signature, message)
       if (verified) {
         track('intro_to_defi_quest_answer', answer)
@@ -78,7 +83,7 @@ const IntroToDeFi = (
         </Box>
         <Button
           colorScheme={isSignatureVerified ? theme.colors.correct : 'red'}
-          onClick={signMessage}
+          onClick={sign}
           rightIcon={
             isSignatureVerified ? (
               <CheckIcon color={theme.colors.correct} />

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-
 import WalletConnect from 'components/Quest/WalletConnect'
 import WalletBasics from 'components/Quest/WalletBasics'
 import IntroToDeFi from 'components/Quest/IntroToDeFi'
@@ -10,8 +9,9 @@ import Layer1Blockchains from 'components/Quest/Layer1Blockchains'
 import DEXAggregators from 'components/Quest/DEXAggregators'
 import Layer2Blockchains from 'components/Quest/Layer2Blockchains'
 import { ConnectFirst } from 'components/Quest/WalletConnect'
+import { useAccount } from 'wagmi'
 
-import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
+import { useSmallScreen } from 'hooks/index'
 import { QUESTS } from 'constants/index'
 import { api } from 'utils'
 
@@ -39,17 +39,17 @@ const QuestComponent = (
   }
   if (!component || !QUESTS.includes(component)) return null
 
-  const { account } = useActiveWeb3React()
+  const { address } = useAccount()
   const [isSmallScreen] = useSmallScreen()
 
   const Component =
     component in QUEST_COMPONENTS
-      ? QUEST_COMPONENTS[component](account)
-      : WalletConnect(account)
+      ? QUEST_COMPONENTS[component](address)
+      : WalletConnect(address)
 
   useEffect(() => {
     const validateQuest = async () => {
-      const data: any = { address: account, quest: component }
+      const data: any = { address, quest: component }
       if (kudosId) data.kudosId = kudosId
       const result = await api('/api/validate-quest', data)
       if (result && result.status === 200) {
@@ -59,19 +59,19 @@ const QuestComponent = (
       }
     }
     if (
-      account &&
+      address &&
       Component.isQuestCompleted &&
       // don't do the validation here for onchain quests but inside the quest component instead
       !ONCHAIN_QUESTS.includes(component)
     ) {
       validateQuest().catch(console.error)
     }
-  }, [account, Component.isQuestCompleted])
+  }, [address, Component.isQuestCompleted])
 
-  if (!account && component !== 'WalletBasics') {
+  if (!address && component !== 'WalletBasics') {
     return {
       isQuestCompleted: false,
-      questComponent: ConnectFirst(isSmallScreen, account),
+      questComponent: ConnectFirst(isSmallScreen, address),
     }
   }
 

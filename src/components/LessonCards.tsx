@@ -15,6 +15,7 @@ import { CircleWavyCheck } from 'phosphor-react'
 import { useRouter } from 'next/router'
 import { useLocalStorage } from 'usehooks-ts'
 import { isMobile } from 'react-device-detect'
+import { useAccount } from 'wagmi'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import ExternalLink from 'components/ExternalLink'
@@ -24,7 +25,6 @@ import MODULES from 'constants/whitelabel_modules'
 import { getArticlesCollected, IS_DEBUG, Mixpanel } from 'utils/index'
 import SubscriptionModal from 'components/SubscriptionModal'
 import { LessonType } from 'entities/lesson'
-import { useActiveWeb3React } from 'hooks'
 import InstallAppModal from 'components/InstallAppModal'
 
 // TODO: move to dedicated component file
@@ -88,7 +88,7 @@ const LessonCards: React.FC = () => {
   )
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [selectedLesson, setSelectedLesson] = useState<LessonType>()
-  const { account } = useActiveWeb3React()
+  const { address } = useAccount()
   const {
     isOpen: isOpenAppModal,
     onOpen: onOpenAppModal,
@@ -147,14 +147,14 @@ const LessonCards: React.FC = () => {
 
   useEffect(() => {
     const updateArticlesCollected = async () => {
-      const articlesCollected = await getArticlesCollected(account)
+      const articlesCollected = await getArticlesCollected(address)
       if (articlesCollected && Array.isArray(articlesCollected))
         setArticlesCollectedLS(articlesCollected)
     }
-    if (!IS_WHITELABEL && account) {
+    if (!IS_WHITELABEL && address) {
       updateArticlesCollected().catch(console.error)
     }
-  }, [account])
+  }, [address])
 
   return (
     <>
