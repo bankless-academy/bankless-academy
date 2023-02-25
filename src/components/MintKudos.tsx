@@ -157,7 +157,11 @@ const MintKudos = ({
           duration: null,
         })
       }
-      await switchNetwork({ chainId: MINTKUDOS_CHAIN_ID })
+      try {
+        await switchNetwork({ chainId: MINTKUDOS_CHAIN_ID })
+      } catch (error) {
+        setStatus('')
+      }
     }
 
     const receiverTypes = {
@@ -177,23 +181,6 @@ const MintKudos = ({
         types: receiverTypes,
         value,
       })
-      // TODO: check if still working with Zerion
-      // const signature = library.provider.isMetaMask
-      //   ? await signer._signTypedData(
-      //       MINTKUDOS_DOMAIN_INFO,
-      //       receiverTypes,
-      //       value
-      //     )
-      //   : await signer.provider.send('eth_signTypedData', [
-      //       address,
-      //       JSON.stringify(
-      //         ethers.utils._TypedDataEncoder.getPayload(
-      //           MINTKUDOS_DOMAIN_INFO,
-      //           receiverTypes,
-      //           value
-      //         )
-      //       ),
-      //     ])
       console.log('signature', signature)
       const bodyParameters = {
         address,
