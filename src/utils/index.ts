@@ -426,7 +426,7 @@ export async function getUD(address: string): Promise<string | null> {
       functionName: 'balanceOf',
       args: [address],
     })
-    console.log('balanceOfUDPolygon', parseInt(balanceOfUDPolygon))
+    // console.log('balanceOfUDPolygon', parseInt(balanceOfUDPolygon))
     const balanceOfUD: any = await readContract({
       address: '0x049aba7510f45ba5b64ea9e658e342f904db358d',
       chainId: 1,
@@ -434,17 +434,19 @@ export async function getUD(address: string): Promise<string | null> {
       functionName: 'balanceOf',
       args: [address],
     })
-    console.log('balanceOfUD', parseInt(balanceOfUD))
+    // console.log('balanceOfUD', parseInt(balanceOfUD))
     if (parseInt(balanceOfUDPolygon) > 0 || parseInt(balanceOfUD) > 0) {
-      console.log('owns a UD')
+      // console.log('owns a UD')
       const {
         data: { domain },
       }: any = await api('/api/ud', { address })
       if (domain?.length) {
-        console.log(domain)
+        // console.log(domain)
         res = domain
       }
-    } else console.log(console.log('NO UD'))
+    } else {
+      // console.log(console.log('NO UD'))
+    }
     return res
   } catch (error) {
     console.error(error)
