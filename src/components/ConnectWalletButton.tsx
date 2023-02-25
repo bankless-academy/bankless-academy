@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react'
 import {
   Button,
@@ -31,7 +30,7 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
   OrigPopoverTrigger
 
 import ExternalLink from 'components/ExternalLink'
-import { LESSONS } from 'constants/index'
+import { LESSONS, SIWE_ENABLED } from 'constants/index'
 import {
   MINTKUDOS_API,
   MINTKUDOS_COMMUNITY_ID,
@@ -62,14 +61,12 @@ const ConnectWalletButton = ({
   isSmallScreen: boolean
 }): React.ReactElement => {
   const { open } = useWeb3Modal()
-  const { connector, address, isDisconnected } = useAccount()
+  const { connector, address, isConnected } = useAccount()
   const { chain } = useNetwork()
-  const [state, setState] = useState<{ loading?: boolean; nonce?: string }>({})
+  const [waitingForSIWE, setWaitingForSIWE] = useState(false)
   const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
-  const [isPopOverOn, setIsPopOverOn] = useState(false)
-  const [walletIsLoading, setWalletIsLoading] = useState(false)
   const [kudos, setKudos] = useState<KudosType[]>([])
   const [siwe, setSiweLS] = useLocalStorage('siwe', '')
   const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
@@ -81,26 +78,26 @@ const ConnectWalletButton = ({
     'refreshKudos',
     false
   )
-  const { onClose } = useDisclosure()
+  const { onOpen, onClose, isOpen } = useDisclosure()
   const { asPath } = useRouter()
 
   const isLessonPage = asPath.includes('/lessons/')
 
-  async function onOpen() {
+  async function openModal() {
     await open()
   }
 
   async function disconnectWallet() {
-    setIsPopOverOn(false)
+    onClose()
     await disconnect()
-    setWalletIsLoading(false)
+    setWaitingForSIWE(false)
     setSiweLS('')
-    fetchNonce()
+    setName(null)
+    setAvatar(null)
     setKudos([])
   }
 
   async function updateName(address) {
-    console.log('address', address)
     const ensName = await fetchEnsName({
       address,
       chainId: 1,
@@ -113,12 +110,10 @@ const ConnectWalletButton = ({
       })
       if (ensAvatar) setAvatar(ensAvatar)
     } else {
-      console.log('lens')
       const lensProfile = await getLensProfile(address)
       if (lensProfile.name) {
         setName(lensProfile.name)
       } else {
-        console.log('ud')
         const ud = await getUD(address)
         if (ud?.length) {
           setName(ud)
@@ -153,17 +148,8 @@ const ConnectWalletButton = ({
       })
   }
 
-  const fetchNonce = async () => {
-    try {
-      const nonceRes = await fetch('/api/nonce')
-      const nonce = await nonceRes.text()
-      setState((x) => ({ ...x, nonce }))
-    } catch (error) {
-      setState((x) => ({ ...x, error: error as Error }))
-    }
-  }
-
   const loadAddress = (address) => {
+    onClose()
     if (localStorage.getItem('current_wallet') !== address.toLowerCase()) {
       localStorage.removeItem('passport')
     }
@@ -183,7 +169,6 @@ const ConnectWalletButton = ({
 
   const verify = async () => {
     try {
-      console.log('v')
       const verifyRes = await fetch('/api/verify', {
         method: 'POST',
         headers: {
@@ -191,13 +176,11 @@ const ConnectWalletButton = ({
         },
         body: siwe,
       })
-      console.log('verifyRes', verifyRes)
-      if (!verifyRes.ok) {
-        console.log('nnn')
-        fetchNonce()
-      } else {
-        console.log(address)
+      if (verifyRes.ok) {
         loadAddress(address)
+      } else {
+        console.error('pb SIWE signature')
+        disconnectWallet()
       }
     } catch (error) {
       console.error(error)
@@ -207,15 +190,17 @@ const ConnectWalletButton = ({
   useEffect(() => {
     if (siwe?.length) {
       verify()
-    } else if (!state.nonce) fetchNonce()
+    }
   }, [])
 
   const signIn = async () => {
     try {
       const chainId = chain?.id
-      if (!chainId) return
+      if (!chainId || waitingForSIWE) return
+      const nonceRes = await fetch('/api/nonce')
+      const nonce = await nonceRes.text()
 
-      setState((x) => ({ ...x, loading: true }))
+      setWaitingForSIWE(true)
       // Create SIWE message with pre-fetched nonce and sign with wallet
       const message = new SiweMessage({
         domain: window.location.host,
@@ -224,7 +209,7 @@ const ConnectWalletButton = ({
         uri: window.location.origin,
         version: '1',
         chainId,
-        nonce: state.nonce,
+        nonce,
       })
       const signature = await signMessageAsync({
         message: message.prepareMessage(),
@@ -242,32 +227,20 @@ const ConnectWalletButton = ({
       if (!verifyRes.ok) throw new Error('Error verifying message')
       setSiweLS(siwe)
       loadAddress(address)
-      setState((x) => ({ ...x, loading: false }))
+      setWaitingForSIWE(false)
     } catch (error) {
-      setState((x) => ({ ...x, loading: false, nonce: undefined }))
+      setWaitingForSIWE(false)
       setName(null)
       setAvatar(null)
     }
   }
 
   useEffect(() => {
-    console.log(`${address}${siwe}${state.loading}${state.nonce}`)
     const { message }: any = siwe?.length ? JSON.parse(siwe) : {}
-    console.log(message?.address)
-    if (
-      connector &&
-      state.nonce &&
-      !state.loading &&
-      address &&
-      message?.address !== address
-    ) {
-      console.log('sign')
+    if (connector && address && message?.address !== address) {
       signIn()
-    } else {
-      setName(null)
-      setAvatar(null)
     }
-  }, [siwe, address, state, connector])
+  }, [siwe, address, connector])
 
   useEffect(() => {
     if (refreshKudosLS) {
@@ -282,19 +255,17 @@ const ConnectWalletButton = ({
 
   return (
     <>
-      {!isDisconnected ? (
+      {isConnected && !waitingForSIWE ? (
         <Popover
-          isOpen={isPopOverOn}
+          isOpen={isOpen}
           placement="bottom-end"
           returnFocusOnClose={false}
-          onClose={() => {
-            onClose()
-            setIsPopOverOn(false)
-          }}
+          onOpen={onOpen}
+          onClose={onClose}
         >
           <PopoverTrigger>
             <Button
-              variant="secondary"
+              variant={name ? 'secondary' : 'primary'}
               size={isSmallScreen ? 'sm' : 'md'}
               leftIcon={
                 <Avatar
@@ -310,10 +281,10 @@ const ConnectWalletButton = ({
                   }
                 />
               }
-              onClick={() => setIsPopOverOn(!isPopOverOn)}
+              onClick={() => onOpen()}
             >
               <Text maxW="200px" display="flex" alignItems="center" isTruncated>
-                {name}
+                {name || 'Click here to sign in'}
               </Text>
             </Button>
           </PopoverTrigger>
@@ -421,11 +392,13 @@ const ConnectWalletButton = ({
           />
           <PopoverTrigger>
             <Button
-              onClick={onOpen}
+              onClick={openModal}
               size={isSmallScreen ? 'sm' : 'md'}
               leftIcon={<Wallet weight="bold" />}
-              isLoading={walletIsLoading}
-              loadingText="Connecting wallet"
+              isLoading={waitingForSIWE}
+              loadingText={
+                SIWE_ENABLED ? 'Sign In With Ethereum' : 'Connecting wallet'
+              }
               zIndex={2}
               variant="primary"
             >
