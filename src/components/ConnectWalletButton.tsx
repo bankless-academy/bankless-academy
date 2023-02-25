@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react'
 import {
   Button,
@@ -195,6 +196,10 @@ const ConnectWalletButton = ({
   }, [])
 
   const signIn = async () => {
+    const timeout = setTimeout(() => {
+      console.log('SIWE timeout')
+      disconnectWallet()
+    }, 6000)
     try {
       const chainId = chain?.id
       if (!chainId || waitingForSIWE) return
@@ -215,6 +220,7 @@ const ConnectWalletButton = ({
       const signature = await signMessageAsync({
         message: message.prepareMessage(),
       })
+      clearTimeout(timeout)
 
       // Verify signature
       const siwe = JSON.stringify({ message, signature })
@@ -234,6 +240,7 @@ const ConnectWalletButton = ({
       loadAddress(address)
       setWaitingForSIWE(false)
     } catch (error) {
+      clearTimeout(timeout)
       setWaitingForSIWE(false)
       setName(null)
       setAvatar(null)
