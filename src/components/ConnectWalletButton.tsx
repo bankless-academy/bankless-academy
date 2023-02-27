@@ -199,7 +199,7 @@ const ConnectWalletButton = ({
     const timeout = setTimeout(() => {
       console.log('SIWE timeout')
       disconnectWallet()
-    }, 6000)
+    }, 60000)
     try {
       const chainId = chain?.id
       if (!chainId || waitingForSIWE) return
