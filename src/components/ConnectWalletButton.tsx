@@ -100,30 +100,30 @@ const ConnectWalletButton = ({
   }
 
   async function updateName(address) {
-    const ensName = await fetchEnsName({
-      address,
-      chainId: 1,
-    })
-    if (ensName) {
-      setName(ensName)
-      const ensAvatar = await fetchEnsAvatar({
+    const lensProfile = await getLensProfile(address)
+    if (lensProfile.name) {
+      setName(lensProfile.name)
+      if (lensProfile.avatar) {
+        setAvatar(lensProfile.avatar)
+      }
+    } else {
+      const ensName = await fetchEnsName({
         address,
         chainId: 1,
       })
-      if (ensAvatar) setAvatar(ensAvatar)
-    } else {
-      const lensProfile = await getLensProfile(address)
-      if (lensProfile.name) {
-        setName(lensProfile.name)
+      if (ensName) {
+        setName(ensName)
+        const ensAvatar = await fetchEnsAvatar({
+          address,
+          chainId: 1,
+        })
+        if (ensAvatar) setAvatar(ensAvatar)
       } else {
         const ud = await getUD(address)
         if (ud?.length) {
           setName(ud)
           setAvatar(`https://resolve.unstoppabledomains.com/image-src/${ud}`)
         }
-      }
-      if (lensProfile.avatar) {
-        setAvatar(lensProfile.avatar)
       }
     }
   }
