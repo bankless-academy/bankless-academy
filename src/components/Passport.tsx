@@ -93,7 +93,7 @@ const PassportComponent = ({
               {numberOfStampsLeftToCollect > 0 ? (
                 <>
                   {`Visit `}
-                  <ExternalLink href="https://passport.gitcoin.co/">
+                  <ExternalLink href="https://passport.gitcoin.co/?filter=bankless-academy#/dashboard">
                     <Button variant="primary">Gitcoin Passport</Button>
                   </ExternalLink>
                   {` and collect ${numberOfStampsLeftToCollect} more of the following stamp${
