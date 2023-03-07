@@ -61,6 +61,7 @@ const App = ({
   const { provider } = configureChains(chains, [
     walletConnectProvider({
       projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID,
+      // https://docs.walletconnect.com/2.0/web3modal/configuration#mobilewallets-optional
     }),
   ])
   const wagmiClient = createClient({
