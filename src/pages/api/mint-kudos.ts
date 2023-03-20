@@ -20,14 +20,9 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   // check params + signature
-  const { address, kudosId, signature, embed } = req.body
+  const { address, kudosId, signature, chainId, embed } = req.body
   // console.log(req)
-  if (
-    !address ||
-    !kudosId ||
-    typeof signature === 'object' ||
-    typeof address === 'object'
-  )
+  if (!address || !kudosId || !signature || !chainId)
     return res.status(400).json({ error: 'Wrong params' })
 
   console.log('address: ', address)
@@ -43,15 +38,10 @@ export default async function handler(
         { name: 'tokenId', type: 'uint256' },
       ],
     }
-
+    const domain = MINTKUDOS_DOMAIN_INFO
+    domain.chainId = chainId
     if (
-      !verifyTypedSignature(
-        signature,
-        message,
-        address,
-        receiverTypes,
-        MINTKUDOS_DOMAIN_INFO
-      )
+      !verifyTypedSignature(signature, message, address, receiverTypes, domain)
     )
       return res.status(403).json({ error: 'Wrong signature' })
 
@@ -145,7 +135,7 @@ export default async function handler(
           // mint Kudos
           console.log('communityAdminAirdrop:', bodyParameters)
           const result = await axios.post(
-            `${MINTKUDOS_API}/v1/tokens/${kudosId}/communityAdminAirdrop`,
+            `${MINTKUDOS_API}/v1/tokens/${kudosId}/communityAdminAirdropWithoutConsentSig`,
             bodyParameters,
             config
           )

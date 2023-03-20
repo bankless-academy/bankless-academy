@@ -144,7 +144,7 @@ const MintKudos = ({
     if (status !== '') return
     setStatus('Minting in progress ...')
     // TODO: add 1 min timeout
-    if (chain?.id !== MINTKUDOS_CHAIN_ID) {
+    if (![1, 10, 137].includes(chain?.id)) {
       const network = Object.values(NETWORKS).find(
         (network) => network.chainId === MINTKUDOS_CHAIN_ID
       )
@@ -176,8 +176,10 @@ const MintKudos = ({
     }
 
     try {
+      const domain = MINTKUDOS_DOMAIN_INFO
+      domain.chainId = chain?.id
       const signature = await signTypedData({
-        domain: MINTKUDOS_DOMAIN_INFO,
+        domain,
         types: receiverTypes,
         value,
       })
@@ -186,6 +188,7 @@ const MintKudos = ({
         address,
         kudosId,
         signature,
+        chainId: chain?.id,
         message: value,
       }
       setIsMintingInProgress(true)
