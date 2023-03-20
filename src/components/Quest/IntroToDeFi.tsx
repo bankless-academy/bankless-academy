@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Button, Box, useToast } from '@chakra-ui/react'
-import { CheckIcon } from '@chakra-ui/icons'
+import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import { useNetwork, useAccount } from 'wagmi'
 import { switchNetwork, signMessage } from '@wagmi/core'
 
@@ -21,6 +21,8 @@ const IntroToDeFi = (
   )
   const [isSignatureVerified, setIsSignatureVerified] = useState(
     localStorage.getItem('quest-intro-to-defi')
+      ? VERBS.includes(localStorage.getItem('quest-intro-to-defi'))
+      : null
   )
   const toast = useToast()
 
@@ -28,9 +30,9 @@ const IntroToDeFi = (
   const { connector } = useAccount()
 
   const sign = async () => {
-    if (chain?.id !== 137) {
+    if (![1, 10, 137].includes(chain?.id)) {
       const network = Object.values(NETWORKS).find(
-        (network) => network.chainId === 137
+        (network) => network.chainId === 1
       )
       toast.closeAll()
       if (connector?.name !== 'MetaMask') {
@@ -42,7 +44,7 @@ const IntroToDeFi = (
         })
       }
       try {
-        await switchNetwork({ chainId: 137 })
+        await switchNetwork({ chainId: 1 })
       } catch (error) {
         console.error(console.error)
       }
@@ -55,7 +57,7 @@ const IntroToDeFi = (
       if (verified) {
         track('intro_to_defi_quest_answer', answer)
       }
-      setIsSignatureVerified(verified ? answer : 'false')
+      setIsSignatureVerified(verified)
       localStorage.setItem('quest-intro-to-defi', verified ? answer : 'false')
     } catch (error) {
       console.error(error)
@@ -63,7 +65,7 @@ const IntroToDeFi = (
   }
 
   return {
-    isQuestCompleted: VERBS.includes(isSignatureVerified),
+    isQuestCompleted: isSignatureVerified,
     questComponent: (
       <>
         <h2>What are you most interested to learn to do with DeFi?</h2>
@@ -85,9 +87,12 @@ const IntroToDeFi = (
           colorScheme={isSignatureVerified ? theme.colors.correct : 'red'}
           onClick={sign}
           rightIcon={
-            isSignatureVerified ? (
+            isSignatureVerified === null ? null : isSignatureVerified ===
+              true ? (
               <CheckIcon color={theme.colors.correct} />
-            ) : null
+            ) : (
+              <CloseIcon color={theme.colors.incorrect} />
+            )
           }
           variant={isSignatureVerified ? 'secondary' : 'primary'}
           isDisabled={!answer}
