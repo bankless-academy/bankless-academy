@@ -14,11 +14,7 @@ import ThemeProvider from 'theme'
 import { DEBUG } from 'utils/index'
 import NonSSRWrapper from 'components/NonSSRWrapper'
 
-import {
-  EthereumClient,
-  modalConnectors,
-  walletConnectProvider,
-} from '@web3modal/ethereum'
+import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 
 import { useWeb3Modal, Web3Modal } from '@web3modal/react'
 
@@ -57,16 +53,12 @@ const App = ({
   const chains = [mainnet, polygon, optimism]
   const { isOpen } = useWeb3Modal()
 
-  // Wagmi client
-  const { provider } = configureChains(chains, [
-    walletConnectProvider({
-      projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID,
-      // https://docs.walletconnect.com/2.0/web3modal/configuration#mobilewallets-optional
-    }),
-  ])
+  const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID
+
+  const { provider } = configureChains(chains, [w3mProvider({ projectId })])
   const wagmiClient = createClient({
     autoConnect: true,
-    connectors: modalConnectors({ appName: 'Bankless Academy', chains }),
+    connectors: w3mConnectors({ projectId, version: 1, chains }),
     provider,
   })
 
@@ -118,8 +110,10 @@ const App = ({
             projectId={process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID}
             ethereumClient={ethereumClient}
             themeMode="dark"
-            themeColor="purple"
-            themeBackground="themeColor"
+            themeVariables={{
+              '--w3m-background-color': '#B85FF1',
+              '--w3m-accent-color': '#B85FF1',
+            }}
           />
         </NonSSRWrapper>
       </ThemeProvider>

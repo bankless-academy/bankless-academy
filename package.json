@@ -41,13 +41,13 @@
     "@sendgrid/client": "^7.7.0",
     "@types/mixpanel-browser": "^2.38.0",
     "@walletconnect/web3-provider": "^1.8.0",
-    "@web3modal/ethereum": "^2.0.0",
-    "@web3modal/react": "^2.0.0",
+    "@web3modal/ethereum": "^2.2.2",
+    "@web3modal/react": "^2.2.2",
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
     "ethereum-blockies-base64": "^1.0.2",
     "ethereumjs-util": "^7.1.5",
-    "ethers": "^5.7.2",
+    "ethers": "^5",
     "framer-motion": "^7.6.15",
     "iron-session": "^6.3.1",
     "js-crc": "^0.2.0",
@@ -72,7 +72,7 @@
     "siwe": "^1.1.6",
     "stringify-object": "^3.3.0",
     "usehooks-ts": "^2.7.1",
-    "wagmi": "^0.11.2"
+    "wagmi": "^0.12.2"
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.5",

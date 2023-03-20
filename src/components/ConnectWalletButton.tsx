@@ -39,6 +39,7 @@ import {
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
 import { getUD, getLensProfile, shortenAddress } from 'utils'
+import { polygon, optimism } from 'wagmi/chains'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -61,7 +62,7 @@ const ConnectWalletButton = ({
 }: {
   isSmallScreen: boolean
 }): React.ReactElement => {
-  const { open } = useWeb3Modal()
+  const { setDefaultChain, open } = useWeb3Modal()
   const { connector, address, isConnected } = useAccount()
   const { chain } = useNetwork()
   const [waitingForSIWE, setWaitingForSIWE] = useState(false)
@@ -83,6 +84,13 @@ const ConnectWalletButton = ({
   const { asPath } = useRouter()
 
   const isLessonPage = asPath.includes('/lessons/')
+
+  const networkVersion =
+    typeof window !== 'undefined'
+      ? (window as any).ethereum?.networkVersion
+      : ''
+  if (networkVersion === '137') setDefaultChain(polygon)
+  if (networkVersion === '10') setDefaultChain(optimism)
 
   async function openModal() {
     await open()
