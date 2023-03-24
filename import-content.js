@@ -341,10 +341,10 @@ axios
           } else {
             delete lesson.quest
           }
-          slides.push({
-            type: 'END',
-            title: lesson.kudosId ? 'Lesson Reward' : 'End of lesson',
-          })
+          // slides.push({
+          //   type: 'END',
+          //   title: lesson.kudosId ? 'Lesson Reward' : 'End of lesson',
+          // })
           lesson.slides = slides
           // console.log('lesson', lesson)
           lessons[index] = lesson

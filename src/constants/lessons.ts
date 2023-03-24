@@ -92,10 +92,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'Going Bankless Quest',
         component: 'GoingBankless'
-      },
-      {
-        type: 'END',
-        title: 'End of lesson'
       }
     ]
   },
@@ -126,7 +122,7 @@ const LESSONS: LessonType[] = [
       '/lesson/wallet-basics/recovery-phrase-c2d8fa26.svg',
       '/lesson/wallet-basics/public-key-b6387071.svg',
       '/lesson/wallet-basics/private-key-ca271641.svg',
-      '/lesson/wallet-basics/custodial-wallet-0538644f.svg',
+      '/lesson/wallet-basics/custodial-wallet-29ed2b65.svg',
       '/lesson/wallet-basics/non-custodial-wallet-aee2708b.svg',
       '/lesson/wallet-basics/hot-wallet-1d444d7c.svg',
       '/lesson/wallet-basics/cold-wallet-59646edb.svg',
@@ -215,7 +211,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'a92f95a2da2a4429942b6aad2a260e1b',
         title: 'Custodial Wallet',
-        content: '<div class="bloc1"><p>Since your <code>private key</code> unlocks access to your <code>wallet</code>, keeping it private and secure is very important!</p><p>Not all wallets let you control your private key. With a <code>custodial wallet</code>, another party controls it. Accounts on Coinbase and Kraken are examples of custodial wallets that hold your private key.</p><p>This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Plus, your access to the world of <code>DeFi</code> applications will be limited. </p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/custodial-wallet-0538644f.svg\'></div>'
+        content: '<div class="bloc1"><p>Since your <code>private key</code> unlocks access to your <code>wallet</code>, keeping it private and secure is very important!</p><p>Not all wallets let you control your private key. With a <code>custodial wallet</code>, another party controls it. Accounts on Coinbase and Kraken are examples of custodial wallets that hold your private key.</p><p>This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Plus, your access to the world of <code>DeFi</code> applications will be limited. </p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/custodial-wallet-29ed2b65.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -323,10 +319,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'Wallet Basics Quest',
         component: 'WalletBasics'
-      },
-      {
-        type: 'END',
-        title: 'Lesson Reward'
       }
     ]
   },
@@ -532,10 +524,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'Blockchain Basics Quest',
         component: 'BlockchainBasics'
-      },
-      {
-        type: 'END',
-        title: 'Lesson Reward'
       }
     ]
   },
@@ -780,10 +768,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'Web3 Security Quest',
         component: 'Web3Security'
-      },
-      {
-        type: 'END',
-        title: 'Lesson Reward'
       }
     ]
   },
@@ -826,10 +810,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'Academy Community Quest',
         component: 'AcademyCommunity'
-      },
-      {
-        type: 'END',
-        title: 'Lesson Reward'
       }
     ]
   },
@@ -1070,10 +1050,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'Layer 1 Blockchains Quest',
         component: 'Layer1Blockchains'
-      },
-      {
-        type: 'END',
-        title: 'Lesson Reward'
       }
     ]
   },
@@ -1269,10 +1245,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'Layer 2 Blockchains Quest',
         component: 'Layer2Blockchains'
-      },
-      {
-        type: 'END',
-        title: 'Lesson Reward'
       }
     ]
   },
@@ -1527,10 +1499,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'Intro to DeFi Quest',
         component: 'IntroToDeFi'
-      },
-      {
-        type: 'END',
-        title: 'Lesson Reward'
       }
     ]
   },
@@ -1565,10 +1533,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'DEXs and AMMs Quest',
         component: 'DEXsAndAMMs'
-      },
-      {
-        type: 'END',
-        title: 'End of lesson'
       }
     ]
   },
@@ -1777,10 +1741,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'DEX Aggregators Quest',
         component: 'DEXAggregators'
-      },
-      {
-        type: 'END',
-        title: 'Lesson Reward'
       }
     ]
   },
@@ -1816,10 +1776,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'Kudos testing Quest',
         component: 'KudosTesting'
-      },
-      {
-        type: 'END',
-        title: 'Lesson Reward'
       }
     ]
   }
