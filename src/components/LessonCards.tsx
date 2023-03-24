@@ -278,19 +278,9 @@ const LessonCards: React.FC = () => {
                     </Button>
                   </InternalLink>
                 )}
-                {isKudosMinted && lesson.communityDiscussionLink ? (
-                  <ExternalLink
-                    href={lesson.communityDiscussionLink}
-                    alt={`${lesson.name} community discussion`}
-                  >
-                    <Tooltip
-                      hasArrow
-                      label="Join other explorers to discuss this lesson."
-                    >
-                      <Button variant="secondary">👨‍🚀 Discussion</Button>
-                    </Tooltip>
-                  </ExternalLink>
-                ) : null}
+                {lesson.kudosId && (
+                  <Button variant={'primaryGold'}>Collect Lesson</Button>
+                )}
                 {lesson.isArticle ? (
                   isArticleCollected ? (
                     <Button variant="secondaryGold">Entry Collected</Button>
