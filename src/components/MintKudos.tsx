@@ -15,7 +15,6 @@ import {
   useDisclosure,
   Heading,
 } from '@chakra-ui/react'
-import { ArrowBackIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount, useNetwork } from 'wagmi'
@@ -24,19 +23,13 @@ import { switchNetwork, signTypedData } from '@wagmi/core'
 import { useSmallScreen } from 'hooks/index'
 import Passport from 'components/Passport'
 import ExternalLink from 'components/ExternalLink'
-import {
-  IS_WHITELABEL,
-  TWITTER_ACCOUNT,
-  LESSONS,
-  DOMAIN_URL,
-} from 'constants/index'
+import { LESSONS } from 'constants/index'
 import {
   MINTKUDOS_API,
   MINTKUDOS_URL,
   MINTKUDOS_DOMAIN_INFO,
   MINTKUDOS_EXPLORER,
   MINTKUDOS_CHAIN_ID,
-  MINTKUDOS_OPENSEA_URL,
   MINTKUDOS_COMMUNITY_ID,
 } from 'constants/kudos'
 import { NETWORKS } from 'constants/networks'
@@ -45,15 +38,7 @@ import { KudosType } from 'entities/kudos'
 import { theme } from 'theme/index'
 import { api } from 'utils'
 
-const MintKudos = ({
-  kudosId,
-  isQuestCompleted,
-  goToPrevSlide,
-}: {
-  kudosId: number
-  isQuestCompleted: boolean
-  goToPrevSlide: () => void
-}): React.ReactElement => {
+const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   const [isKudosMintedLS, setIsKudosMintedLS] = useLocalStorage(
     `isKudosMinted-${kudosId}`,
     false
@@ -269,111 +254,52 @@ const MintKudos = ({
 
   const lesson = LESSONS.find((lesson) => lesson.kudosId === kudosId)
 
-  const share = `I've just claimed my "${
-    lesson.name
-  }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
-${
-  IS_WHITELABEL
-    ? `
-Go claim yours here 👇 ${DOMAIN_URL}/lessons/${lesson.slug}`
-    : `${MINTKUDOS_URL}profile/${address}?tab=Received&tokenId=${kudosId}
-
-Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
-}`
-
-  const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-    share
-  )}`
-
   return (
     <Box>
       {!address ? (
         <>{ConnectFirst}</>
       ) : (
         <>
-          {!isQuestCompleted ? (
+          <Heading as="h2" size="xl" textAlign="center">
+            <span style={{ color: theme.colors.secondary }}>{lesson.name}</span>
+            {` badge ${isKudosMintedLS ? 'claimed' : 'available'}!`}
+          </Heading>
+          <Box display="flex" justifyContent="center" mb={10} mt={-3}>
+            <ExternalLink href={`${MINTKUDOS_URL}`} alt="Powered by MintKudos">
+              <Image width="120px" src="/images/powered-by-MintKudos.svg" />
+            </ExternalLink>
+          </Box>
+          {isKudosMintedLS ? null : passportLS?.verified && !isOpen ? (
             <Box textAlign="center">
-              <Heading as="h2" size="xl" textAlign="center">
-                Rewards are only available after full lesson completion.
-              </Heading>
               <Button
+                colorScheme={'green'}
+                onClick={mintKudos}
                 variant="primary"
-                onClick={goToPrevSlide}
-                leftIcon={<ArrowBackIcon />}
+                isLoading={isMintingInProgress}
+                loadingText={status}
               >
-                Retry Quest
+                {status !== '' ? status : 'Mint badge 🛠'}
               </Button>
             </Box>
           ) : (
             <>
-              <Heading as="h2" size="xl" textAlign="center">
-                <span style={{ color: theme.colors.secondary }}>
-                  {lesson.name}
-                </span>
-                {` badge ${isKudosMintedLS ? 'claimed' : 'available'}!`}
-              </Heading>
-              <Box display="flex" justifyContent="center" mb={10} mt={-3}>
-                <ExternalLink
-                  href={`${MINTKUDOS_URL}`}
-                  alt="Powered by MintKudos"
-                >
-                  <Image width="120px" src="/images/powered-by-MintKudos.svg" />
-                </ExternalLink>
-              </Box>
-              {isKudosMintedLS ? (
-                <Box display="flex" justifyContent="center">
-                  <ExternalLink href={twitterLink} mr="2">
-                    <Button
-                      leftIcon={
-                        <Image width="24px" src="/images/Twitter-blue.svg" />
-                      }
-                    >
-                      Share on Twitter
-                    </Button>
-                  </ExternalLink>
-                  <ExternalLink href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`}>
-                    <Button
-                      leftIcon={
-                        <Image width="24px" src="/images/OpenSea.svg" />
-                      }
-                    >
-                      View on OpenSea
-                    </Button>
-                  </ExternalLink>
-                </Box>
-              ) : passportLS?.verified && !isOpen ? (
-                <Box textAlign="center">
+              <Box>
+                <Heading as="h2" size="xl" textAlign="center">
+                  {`To claim rewards you need a `}
                   <Button
-                    colorScheme={'green'}
-                    onClick={mintKudos}
                     variant="primary"
-                    isLoading={isMintingInProgress}
-                    loadingText={status}
+                    onClick={onOpen}
+                    mt={isSmallScreen ? '2' : ''}
                   >
-                    {status !== '' ? status : 'Mint badge 🛠'}
+                    {`Gitcoin Passport`}
                   </Button>
-                </Box>
-              ) : (
-                <>
-                  <Box>
-                    <Heading as="h2" size="xl" textAlign="center">
-                      {`To claim rewards you need a `}
-                      <Button
-                        variant="primary"
-                        onClick={onOpen}
-                        mt={isSmallScreen ? '2' : ''}
-                      >
-                        {`Gitcoin Passport`}
-                      </Button>
-                    </Heading>
-                    <p>
-                      Authentication takes ~2 minutes, and protects the
-                      legitimacy of Academy rewards.
-                    </p>
-                  </Box>
-                  {GitcoinModal}
-                </>
-              )}
+                </Heading>
+                <p>
+                  Authentication takes ~2 minutes, and protects the legitimacy
+                  of Academy rewards.
+                </p>
+              </Box>
+              {GitcoinModal}
             </>
           )}
         </>

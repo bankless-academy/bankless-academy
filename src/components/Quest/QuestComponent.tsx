@@ -17,15 +17,17 @@ import { api } from 'utils'
 
 export type QuestComponentType = typeof QUESTS[number]
 
+export type QuestType = {
+  isQuestCompleted: boolean
+  questComponent: React.ReactElement
+}
+
 export const ONCHAIN_QUESTS = ['DEXAggregators', 'Layer2Blockchains']
 
 const QuestComponent = (
   component: QuestComponentType | null,
   kudosId?: number
-): {
-  isQuestCompleted: boolean
-  questComponent: React.ReactElement
-} => {
+): QuestType => {
   const QUEST_COMPONENTS = {
     WalletConnect: WalletConnect,
     WalletBasics: WalletBasics,

@@ -28,13 +28,13 @@ import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
 import MintKudos from 'components/MintKudos'
-import QuestComponent from 'components/Quest/QuestComponent'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
 import { Mixpanel } from 'utils'
 import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
 import { theme } from 'theme/index'
+import { QuestType } from 'components/Quest/QuestComponent'
 
 const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   border-radius: 0.5rem;
@@ -174,10 +174,12 @@ const LessonSlides = ({
   lesson,
   extraKeywords,
   closeLesson,
+  Quest,
 }: {
   lesson: LessonType
   extraKeywords?: any
   closeLesson?: () => void
+  Quest: QuestType
 }): React.ReactElement => {
   const numberOfSlides = lesson.slides.length
   // HACK: when reducing the number of slides in a lesson
@@ -381,8 +383,6 @@ const LessonSlides = ({
     parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
       slide.quiz.rightAnswerNumber
 
-  const Quest = QuestComponent(lesson.quest, lesson.kudosId)
-
   return (
     <Slide
       p={8}
@@ -544,11 +544,7 @@ const LessonSlides = ({
                     </>
                   )}
                   {lesson.kudosId ? (
-                    <MintKudos
-                      kudosId={lesson.kudosId}
-                      isQuestCompleted={Quest?.isQuestCompleted}
-                      goToPrevSlide={goToPrevSlide}
-                    />
+                    <MintKudos kudosId={lesson.kudosId} />
                   ) : (
                     <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   )}
@@ -595,12 +591,7 @@ const LessonSlides = ({
               hasArrow
               label="By skipping this quest you won't be able to claim the lesson badge"
             >
-              <Button
-                variant="outline"
-                onClick={() => {
-                  setCurrentSlide(currentSlide + 1)
-                }}
-              >
+              <Button variant="outline" onClick={() => closeLesson()}>
                 Skip Quest
               </Button>
             </Tooltip>

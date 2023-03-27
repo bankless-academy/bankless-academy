@@ -8,6 +8,8 @@ import { LessonType } from 'entities/lesson'
 import LessonSlides from 'components/LessonSlides'
 import Card from 'components/Card'
 import ExternalLink from 'components/ExternalLink'
+import Badge from 'components/Badge'
+import QuestComponent from 'components/Quest/QuestComponent'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -29,6 +31,8 @@ const Lesson = ({
   const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
   const [isLessonOpen, setIsLessonOpen] = useState<boolean>(false)
 
+  const Quest = QuestComponent(lesson.quest, lesson.kudosId)
+
   return (
     <>
       {isLessonOpen ? (
@@ -36,6 +40,7 @@ const Lesson = ({
           lesson={lesson}
           extraKeywords={extraKeywords}
           closeLesson={() => setIsLessonOpen(false)}
+          Quest={Quest}
         />
       ) : (
         <>
@@ -71,7 +76,10 @@ const Lesson = ({
             </Box>
             <Box>
               <Text>Rewards</Text>
-              ...
+              <Badge
+                lesson={lesson}
+                isQuestCompleted={Quest.isQuestCompleted}
+              />
             </Box>
             <Box
               display="flex"
