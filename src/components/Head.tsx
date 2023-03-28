@@ -96,7 +96,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         data-website-id={umamiWebsiteId}
         src={umamiDomain}
       ></Script>
-      <Script src="https://cdn.pushalert.co/integrate_fbeab364e8dc8094904c6027df908923.js" />
+      <Script src="https://cdn.pushalert.co/integrate_f66ffa93d831a9fac4af96baa20aa69c.js" />
     </>
   )
 }
