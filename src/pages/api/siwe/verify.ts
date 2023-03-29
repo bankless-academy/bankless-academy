@@ -9,16 +9,17 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   switch (method) {
     case 'POST':
       try {
-        const { message, signature } = req.body
+        const { message, signature, embed } = req.body
         const siweMessage = new SiweMessage(message)
         const fields = await siweMessage.validate(signature)
 
         if (
-          // HACK: cookies not accessible when embedded
-          !req.headers?.referer.includes('embed=') &&
-          fields.nonce !== req.session.nonce
+          !(
+            // HACK: cookies not accessible when embedded
+            (embed || fields.nonce === req.session.nonce)
+          )
         )
-          return res.status(422).json({ message: 'Invalid nonce.' })
+          return res.json({ ok: false, message: 'Invalid nonce.' })
 
         req.session.siwe = fields
         await req.session.save()
