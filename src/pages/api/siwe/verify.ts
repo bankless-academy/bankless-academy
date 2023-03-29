@@ -13,7 +13,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         const siweMessage = new SiweMessage(message)
         const fields = await siweMessage.validate(signature)
 
-        if (fields.nonce !== req.session.nonce)
+        if (
+          // HACK: cookies not accessible when embedded
+          !req.headers?.referer.includes('embed=') &&
+          fields.nonce !== req.session.nonce
+        )
           return res.status(422).json({ message: 'Invalid nonce.' })
 
         req.session.siwe = fields
