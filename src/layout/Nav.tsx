@@ -34,7 +34,7 @@ const Nav: React.FC = () => {
         ? 'true'
         : (queryString.parse(window.location.search)?.webapp || '')?.toString()
       : undefined
-  const isEmbedded = typeof window !== 'undefined' && window.parent?.length > 0
+  const isEmbedded = typeof window !== 'undefined' && window !== window.parent
 
   useEffect((): void => {
     const embedValue =
