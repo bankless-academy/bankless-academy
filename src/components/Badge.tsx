@@ -41,18 +41,26 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     <>
       <Box textAlign="center">
         <Box width="290px" m="auto">
-          <Button
-            variant={isKudosMintedLS ? 'secondary' : 'primary'}
-            w="100%"
-            borderBottomRadius="0"
-            disabled={!isQuestCompleted && !isKudosMintedLS}
-          >
-            {isKudosMintedLS ? 'Badge Minted' : 'Mint Badge'}
-          </Button>
+          {isQuestCompleted && (
+            <Button
+              variant={isKudosMintedLS ? 'secondary' : 'primary'}
+              w="100%"
+              borderBottomRadius="0"
+              disabled={!isQuestCompleted && !isKudosMintedLS}
+            >
+              {isKudosMintedLS ? 'Badge Minted' : 'Mint Badge'}
+            </Button>
+          )}
           <Box
             height="290px"
             width="290px"
-            borderRadius={isKudosMintedLS ? '0px' : '0px 0px 8px 8px'}
+            borderRadius={
+              isKudosMintedLS
+                ? '0px'
+                : !isQuestCompleted
+                ? '8px'
+                : '0px 0px 8px 8px'
+            }
             overflow="hidden"
             border="1px solid #4b474b"
             p="20px"
