@@ -126,7 +126,7 @@ const LESSONS: LessonType[] = [
       '/lesson/wallet-basics/recovery-phrase-c2d8fa26.svg',
       '/lesson/wallet-basics/public-key-b6387071.svg',
       '/lesson/wallet-basics/private-key-ca271641.svg',
-      '/lesson/wallet-basics/custodial-wallet-0538644f.svg',
+      '/lesson/wallet-basics/custodial-wallet-29ed2b65.svg',
       '/lesson/wallet-basics/non-custodial-wallet-aee2708b.svg',
       '/lesson/wallet-basics/hot-wallet-1d444d7c.svg',
       '/lesson/wallet-basics/cold-wallet-59646edb.svg',
@@ -215,7 +215,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'a92f95a2da2a4429942b6aad2a260e1b',
         title: 'Custodial Wallet',
-        content: '<div class="bloc1"><p>Since your <code>private key</code> unlocks access to your <code>wallet</code>, keeping it private and secure is very important!</p><p>Not all wallets let you control your private key. With a <code>custodial wallet</code>, another party controls it. Accounts on Coinbase and Kraken are examples of custodial wallets that hold your private key.</p><p>This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Plus, your access to the world of <code>DeFi</code> applications will be limited. </p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/custodial-wallet-0538644f.svg\'></div>'
+        content: '<div class="bloc1"><p>Since your <code>private key</code> unlocks access to your <code>wallet</code>, keeping it private and secure is very important!</p><p>Not all wallets let you control your private key. With a <code>custodial wallet</code>, another party controls it. Accounts on Coinbase and Kraken are examples of custodial wallets that hold your private key.</p><p>This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Plus, your access to the world of <code>DeFi</code> applications will be limited. </p></div><div class="bloc2"><img src=\'/lesson/wallet-basics/custodial-wallet-29ed2b65.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -788,52 +788,6 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/academy-community/kudos-4fce19ff.png',
-    lessonImageLink: '/lesson/academy-community/lesson-755fe7a3.png',
-    socialImageLink: '/lesson/academy-community/social-1f64464b.jpg',
-    learningActions: '',
-    marketingDescription: 'Join the conversation in our Bankless Explorer Community.',
-    kudosId: 2564,
-    duration: 10,
-    learnings: '',
-    difficulty: 'Easy',
-    description: 'Join the conversation in our Bankless Explorer Community.',
-    name: 'Academy Community',
-    quest: 'AcademyCommunity',
-    publicationStatus: 'publish',
-    featuredOrderOnHomepage: null,
-    isCommentsEnabled: false,
-    endOfLessonRedirect: null,
-    endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=6cda4b4c-5300-4e1e-9a12-a14eecd59ebf',
-    notionId: '44b8a4937fcd43fa8e12400cb75885a1',
-    slug: 'academy-community',
-    imageLinks: [],
-    slides: [
-      {
-        type: 'LEARN',
-        notionId: 'e398fcd0d14b45f1be30f709019faa50',
-        title: 'You’re one step away, Explorer.',
-        content: '<div class="bloc1"><p>Now that you have your digital wallet, let’s use it to join the Academy Community.</p><p>Wallets don’t only serve the purpose of keeping your digital assets, but also as a means of decentralized verification. </p><p>Thanks to its web3 native nature - wallet login, token-holder roles, and more! - we’ve chosen <a href=\'https://gm.xyz/?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson\'>gm.xyz</a> as our community home. To participate in the conversation, you must sign in with your wallet. We can walk you through it in our video at the end of the lesson.</p><p>Ready to start your community journey? Let’s go Explorer!</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'd88acd5ee49c4fa88e9dc1c4fc136e80',
-        title: 'Why join Bankless Academy?',
-        content: '<div class="bloc1"><p>👋 New to the space? <strong>Meet with fellow Explorers </strong>and share knowledge.</p><p>📖 Been here for a while? <strong>Become a mentor </strong>and gain recognition by teaching others.</p><p>Let’s learn together.</p><p>💬 <strong>General:</strong> Exchange knowledge, tips, and explorers’ stories.</p><p>🎙️ A<strong>sk-me-anything: </strong>Participate in our <strong>AMAs with industry specialists.</strong></p><p>💾 <strong>Library:</strong> Level up your understanding of web3 with our curated resources.</p><p>🌟 <strong>Announcements:</strong> Stay up to date with important community announcements.</p></div>'
-      },
-      {
-        type: 'QUEST',
-        title: 'Academy Community Quest',
-        component: 'AcademyCommunity'
-      },
-      {
-        type: 'END',
-        title: 'Lesson Reward'
-      }
-    ]
-  },
-  {
     kudosImageLink: '/lesson/layer-1-blockchains/kudos-66fa6447.png',
     lessonImageLink: '/lesson/layer-1-blockchains/lesson-dcff6ea3.png',
     socialImageLink: '/lesson/layer-1-blockchains/social-db62f5f0.jpg',
@@ -1162,7 +1116,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'cd8cecba43b74bdd881a93394cd61423',
         title: 'Bridging Layer 1 and Layer 2',
-        content: '<div class="bloc1"><p>As we learned in <a href=\'https://app.banklessacademy.com/lessons/blockchain-basics\'>Blockchain Basics</a>, blockchains are databases known as <code>ledgers</code>, that record a cryptographically secured, chronological list of transactions. L1 blockchains and L2 scaling solutions are each blockchains in their own right, with their own databases of addresses and data.</p><p>Infrastructure called <code>bridges</code> is used to transfer information between different blockchain databases. For example, if you think of the Ethereum Mainnet (or any other <code>L1</code> blockchain) as one island, and a different blockchain or your preferred scaling solution as another, a crypto bridge is the generic term for the networked highway connecting these two digital islands.</p><p>The technology is very complex, but from the end user perspective this process as simple as choosing a destination.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-8268ff20.svg\'></div>'
+        content: '<div class="bloc1"><p>As we learned in <a href=\'https://app.banklessacademy.com/lessons/blockchain-basics\'>Blockchain Basics</a>, blockchains are databases known as <code>ledgers</code>, that record a cryptographically secured, chronological list of transactions. L1 blockchains and L2 scaling solutions are each blockchains in their own right, with their own databases of addresses and data.</p><p>Infrastructure called <code>bridges</code> is used to transfer information between different blockchain databases. For example, if you think of the Ethereum Mainnet (or any other <code>L1</code> blockchain) as one island, and a different blockchain or your preferred scaling solution as another, a crypto bridge is the generic term for the networked highway connecting these two digital islands.</p><p>The technology is very complex, but from the end user perspective this process is as simple as choosing a destination.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-8268ff20.svg\'></div>'
       },
       {
         type: 'LEARN',
