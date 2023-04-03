@@ -36,7 +36,7 @@ const KEY_MATCHING = {
   'Enable Comments': 'isCommentsEnabled',
   'End of Lesson redirect': 'endOfLessonRedirect',
   'End of Lesson text': 'endOfLessonText',
-  'Community discussion link': 'communityDiscussionLink',
+  // 'Community discussion link': 'communityDiscussionLink',
   'Mirror link': 'mirrorLink',
   'Mirror NFT address': 'mirrorNFTAddress',
 }
