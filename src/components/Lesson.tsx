@@ -8,6 +8,7 @@ import LessonSlides from 'components/LessonSlides'
 import Card from 'components/Card'
 import Badge from 'components/Badge'
 import QuestComponent from 'components/Quest/QuestComponent'
+import CollectLessonButton from 'components/CollectLessonButton'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -109,14 +110,7 @@ const Lesson = ({
               maxW="500px"
               mb="8"
             >
-              {lesson.kudosId && (
-                <Button variant={'primaryGold'} p="2">
-                  <Box>
-                    <Box>Collect Lesson</Box>
-                    <Box fontSize="xs">-XX/100 claimed-</Box>
-                  </Box>
-                </Button>
-              )}
+              <CollectLessonButton lesson={lesson} />
               <Button
                 variant={isKudosMintedLS ? 'secondary' : 'primary'}
                 onClick={() => setIsLessonOpen(true)}

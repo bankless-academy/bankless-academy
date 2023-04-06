@@ -26,6 +26,7 @@ import { getArticlesCollected, IS_DEBUG, Mixpanel } from 'utils/index'
 import SubscriptionModal from 'components/SubscriptionModal'
 import { LessonType } from 'entities/lesson'
 import InstallAppModal from 'components/InstallAppModal'
+import CollectLessonButton from 'components/CollectLessonButton'
 
 // TODO: move to dedicated component file
 export const LessonCard = styled(Box)`
@@ -278,9 +279,7 @@ const LessonCards: React.FC = () => {
                     </Button>
                   </InternalLink>
                 )}
-                {lesson.kudosId && (
-                  <Button variant={'primaryGold'}>Collect Lesson</Button>
-                )}
+                <CollectLessonButton lesson={lesson} />
                 {lesson.isArticle ? (
                   isArticleCollected ? (
                     <Button variant="secondaryGold">Entry Collected</Button>
