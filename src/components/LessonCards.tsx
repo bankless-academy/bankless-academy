@@ -10,8 +10,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import axios from 'axios'
-import { CircleWavyCheck } from 'phosphor-react'
+import { CircleWavyCheck } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
 import { useLocalStorage } from 'usehooks-ts'
 import { isMobile } from 'react-device-detect'
@@ -22,11 +21,10 @@ import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import LessonBanner from 'components/LessonBanner'
 import MODULES from 'constants/whitelabel_modules'
-import { getArticlesCollected, IS_DEBUG, Mixpanel } from 'utils/index'
+import { getArticlesCollected, Mixpanel } from 'utils/index'
 import SubscriptionModal from 'components/SubscriptionModal'
 import { LessonType } from 'entities/lesson'
 import InstallAppModal from 'components/InstallAppModal'
-import CollectLessonButton from 'components/CollectLessonButton'
 
 // TODO: move to dedicated component file
 export const LessonCard = styled(Box)`
@@ -81,7 +79,7 @@ const LessonCards: React.FC = () => {
   const router = useRouter()
   const { all, slug } = router.query
 
-  const [stats, setStats]: any = useState(null)
+  // const [stats, setStats]: any = useState(null)
   const [kudosMintedLS] = useLocalStorage('kudosMinted', [])
   const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
     'articlesCollected',
@@ -113,18 +111,18 @@ const LessonCards: React.FC = () => {
             lesson.publicationStatus === 'planned'
         )
 
-  useEffect(() => {
-    if (IS_DEBUG) {
-      axios
-        .get(`/api/stats`)
-        .then(function (res) {
-          setStats(res.data)
-        })
-        .catch(function (error) {
-          console.error(error)
-        })
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (IS_DEBUG) {
+  //     axios
+  //       .get(`/api/stats`)
+  //       .then(function (res) {
+  //         setStats(res.data)
+  //       })
+  //       .catch(function (error) {
+  //         console.error(error)
+  //       })
+  //   }
+  // }, [])
 
   useEffect(() => {
     const mobilePreferences = localStorage.getItem('mobile-preferences')
@@ -169,11 +167,11 @@ const LessonCards: React.FC = () => {
           lesson.publicationStatus === 'planned'
             ? localStorage.getItem(`${lesson.slug}-notification`)
             : false
-        const lessonCompleted =
-          (lesson.quest &&
-            stats?.lessonCompleted &&
-            stats?.lessonCompleted[lesson.notionId]) ||
-          0
+        // const lessonCompleted =
+        //   (lesson.quest &&
+        //     stats?.lessonCompleted &&
+        //     stats?.lessonCompleted[lesson.notionId]) ||
+        //   0
         const isArticleCollected =
           lesson.mirrorNFTAddress?.length &&
           articlesCollectedLS.includes(lesson.mirrorNFTAddress)
@@ -198,9 +196,16 @@ const LessonCards: React.FC = () => {
                 ) : (
                   <Tag size="md" backgroundColor="transparent"></Tag>
                 )}
-                <Text fontSize="md" alignSelf="center">
-                  {lessonCompleted > 0 && `${lessonCompleted} Completions`}
-                </Text>
+                {/* TODO: add lesson.collectiblesId && !isCollected */}
+                {isKudosMinted && (
+                  <StyledTag
+                    size="md"
+                    variant="outline"
+                    iskudosminted={isKudosMinted?.toString()}
+                  >
+                    Collectible available
+                  </StyledTag>
+                )}
               </Box>
               <Text fontSize="lg" minH="54px">
                 {lesson.description}
@@ -279,7 +284,6 @@ const LessonCards: React.FC = () => {
                     </Button>
                   </InternalLink>
                 )}
-                <CollectLessonButton lesson={lesson} />
                 {lesson.isArticle ? (
                   isArticleCollected ? (
                     <Button variant="secondaryGold">Entry Collected</Button>

@@ -39,7 +39,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 
   return (
     <>
-      <Box textAlign="center">
+      <Box textAlign="center" mb="40px">
         <Box width="290px" m="auto">
           {isQuestCompleted && (
             <Button

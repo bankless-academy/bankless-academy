@@ -14,13 +14,8 @@ import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser from 'react-html-parser'
-import {
-  ArrowBackIcon,
-  ArrowForwardIcon,
-  CheckIcon,
-  CloseIcon,
-} from '@chakra-ui/icons'
-import { Warning } from 'phosphor-react'
+import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
+import { Warning, ArrowUUpLeft } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 
@@ -394,13 +389,15 @@ const LessonSlides = ({
       slidetype={slide.type}
     >
       <Box h="0">
-        <CloseIcon
+        <Button
           position="relative"
-          top="5"
-          left="5"
-          cursor="pointer"
+          top={isSmallScreen ? '8px' : '-38px'}
+          left={isSmallScreen ? '0' : '-67px'}
+          size="lg"
+          variant="secondaryBig"
+          leftIcon={<ArrowUUpLeft />}
           onClick={() => closeLesson()}
-        />
+        ></Button>
       </Box>
       <Text
         fontSize={isSmallScreen ? 'xl' : '3xl'}

@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
 import styled from '@emotion/styled'
-import { Text, Image, Button, Box, Tag } from '@chakra-ui/react'
+import { Text, Image, Button, Box } from '@chakra-ui/react'
+import { ArrowUUpLeft } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { LessonType } from 'entities/lesson'
@@ -9,6 +9,8 @@ import Card from 'components/Card'
 import Badge from 'components/Badge'
 import QuestComponent from 'components/Quest/QuestComponent'
 import CollectLessonButton from 'components/CollectLessonButton'
+import InternalLink from 'components/InternalLink'
+import { useSmallScreen } from 'hooks'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -26,23 +28,61 @@ const Lesson = ({
     `isKudosMinted-${lesson.kudosId}`,
     false
   )
+  const [, isSmallScreen] = useSmallScreen()
   const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
-  const [isLessonOpen, setIsLessonOpen] = useState<boolean>(false)
+  const [isLessonOpenLS, setIsLessonOpenLS] = useLocalStorage(
+    `isLessonOpen`,
+    false
+  )
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
 
   return (
     <>
-      {isLessonOpen ? (
+      {isLessonOpenLS ? (
         <LessonSlides
           lesson={lesson}
           extraKeywords={extraKeywords}
-          closeLesson={() => setIsLessonOpen(false)}
+          closeLesson={() => setIsLessonOpenLS(false)}
           Quest={Quest}
         />
       ) : (
         <>
-          <StyledCard p={6}>
+          {!isSmallScreen && (
+            <Box
+              w="-webkit-fill-available"
+              position="absolute"
+              h="calc( 100vh - 97px)"
+              minH="calc( 100% - 97px)"
+              overflow="hidden"
+            >
+              <Image
+                position="relative"
+                top="0"
+                right="-500px"
+                h="100%"
+                src="/images/bankless-instructor.png"
+              />
+            </Box>
+          )}
+          <StyledCard
+            p={8}
+            maxW="600px"
+            mt={6}
+            display={isSmallScreen ? 'contents' : 'block'}
+          >
+            <Box h="0">
+              <InternalLink href="/lessons" alt={`Back to Lesson Selection`}>
+                <Button
+                  position="relative"
+                  top={isSmallScreen ? '8px' : '-38px'}
+                  left={isSmallScreen ? '0' : '-67px'}
+                  size="lg"
+                  variant="secondaryBig"
+                  leftIcon={<ArrowUUpLeft />}
+                ></Button>
+              </InternalLink>
+            </Box>
             <Text
               as="h1"
               fontSize="2xl"
@@ -63,13 +103,30 @@ const Lesson = ({
                 style={{
                   cursor: 'pointer',
                 }}
-                onClick={() => setIsLessonOpen(true)}
+                onClick={() => setIsLessonOpenLS(true)}
               >
                 <Image src={lesson.lessonImageLink} />
               </Box>
-              <Tag size="md" variant="outline">
-                {`${lesson.duration} minutes`}
-              </Tag>
+            </Box>
+            <Box
+              display="flex"
+              mt="4"
+              justifyContent="space-between"
+              maxW="300px"
+              m="auto"
+              mb="8"
+            >
+              <CollectLessonButton lesson={lesson} />
+              <Button
+                variant={isKudosMintedLS ? 'secondary' : 'primary'}
+                onClick={() => setIsLessonOpenLS(true)}
+              >
+                {isKudosMintedLS
+                  ? 'View Lesson'
+                  : isLessonStarted
+                  ? 'View Lesson'
+                  : 'Start Lesson'}
+              </Button>
             </Box>
             <Box>
               <Text
@@ -102,25 +159,6 @@ const Lesson = ({
                 lesson={lesson}
                 isQuestCompleted={Quest.isQuestCompleted}
               />
-            </Box>
-            <Box
-              display="flex"
-              mt="4"
-              justifyContent="space-between"
-              maxW="500px"
-              mb="8"
-            >
-              <CollectLessonButton lesson={lesson} />
-              <Button
-                variant={isKudosMintedLS ? 'secondary' : 'primary'}
-                onClick={() => setIsLessonOpen(true)}
-              >
-                {isKudosMintedLS
-                  ? 'View Lesson'
-                  : isLessonStarted
-                  ? 'View Lesson'
-                  : 'Start Lesson'}
-              </Button>
             </Box>
             {/* {!embed && lesson.communityDiscussionLink && (
               <ExternalLink
