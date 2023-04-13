@@ -8,7 +8,7 @@ import {
   Text,
   SimpleGrid,
 } from '@chakra-ui/react'
-import { ArrowRight } from 'phosphor-react'
+import { ArrowRight } from '@phosphor-icons/react'
 import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
 import { useLocalStorage } from 'usehooks-ts'

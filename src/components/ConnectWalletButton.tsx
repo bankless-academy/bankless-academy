@@ -14,7 +14,7 @@ import {
   useDisclosure,
   Avatar,
 } from '@chakra-ui/react'
-import { Wallet } from 'phosphor-react'
+import { Wallet } from '@phosphor-icons/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
