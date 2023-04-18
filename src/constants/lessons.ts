@@ -3,8 +3,10 @@ import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = [
   {
-    kudosImageLink: null,
+    kudosImageLink: 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png',
     lessonImageLink: '/images/coming-soon-lesson.png',
+    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
+    lessonNftVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
     learningActions: '',
     marketingDescription: 'What does it mean to go Bankless? In this lesson, we discuss why millions of people are investing in cryptocurrency - and practical first steps for joining the movement.',
     kudosId: null,
@@ -23,82 +25,206 @@ const LESSONS: LessonType[] = [
     notionId: '89cf10ef71b54fbfa7c3e6b41d55b36f',
     slug: 'going-bankless',
     imageLinks: [
-      '/lesson/going-bankless/welcome-to-bankless-academy-cf9ea670.png',
-      '/lesson/going-bankless/upgrading-humanitys-coordination-protocols-2ef0d764.png',
-      '/lesson/going-bankless/your-bankless-journey-9736d072.png'
+      '/lesson/going-bankless/quest-63568085.jpg'
     ],
     slides: [
       {
         type: 'LEARN',
-        notionId: '22f89665f8db4c5a9dec05200f8314e6',
-        title: 'Welcome to Bankless Academy',
-        content: '<div class="bloc1"><p><strong><em>(Bankless Instructor Slide)</em></strong></p><ul><li>Bankless Academy is here to serve as your guide throughout your Bankless journey.</li><li>As the first step in your Bankless journey, we will discuss the shortcomings of the traditional financial system, what it means to go Bankless, and how cryptographic technology is positively transforming financial reality for people of all backgrounds across the globe.</li><li>We’ll finish with Bankless goals to mark on your map, and practical next steps.</li></ul></div><div class="bloc2"><img src=\'/lesson/going-bankless/welcome-to-bankless-academy-cf9ea670.png\'></div>'
+        notionId: '144547c8eda24c059eb6a9b4d204fe22',
+        title: 'Intro',
+        content: '<div class="bloc1"><p>What is the Bankless movement in 1-2 phrases.</p><p>What is Bankless Academy: scalable learning platform to learn the basic on how to become Bankless.</p><p>The usual way of learning Bankless Academy: learning slides + quiz, practice via quests, then after completion receive an onchain lesson badge that proves your knowledge.</p><p>Requirement (who is this for?): web3 and tech curious + interest in self sovereignty</p></div>'
       },
       {
         type: 'LEARN',
-        notionId: 'ed1233aae8704a1694f4281d3761da08',
-        title: 'The Traditional Finance System',
-        content: '<div class="bloc1"><ul><li>Shortcomings:</li> <ul><li>Inefficient<br>(unaccountable tax spending + inflation + payment fees)</li><li>Doesn’t promote healthy competition</li><li>Prone to censorship & corruption<br>(i.e 2008 crisis)</li><li>Leads to local and global wealth inequality</li><li>Unstable in times of economic stress</li><li>Doesn’t hold up in digital age use-cases<br>(i.e digital ownership)</li></ul> <li>Let’s investigate why this might be…</li></ul></div>'
+        notionId: '67a83d074e0346cc8483bcbf3df296e5',
+        title: 'Goal of this lesson',
+        content: '<div class="bloc1"><ul><li>learn about yourself</li> <ul><li>what kind of Bankless person you are (Bankless archetype)</li><li>know your level of “Banklessness” with a score</li></ul> <li>set goals for your Bankless journey</li></ul><p>You’ll receive a recap at the end of this lesson, then you’ll be able to start or continue your Bankless journey!</p><p>Format: a bit of reading but mostly quizzes</p><p>If that’s what you are here for, LFG!</p></div>'
       },
       {
         type: 'LEARN',
-        notionId: '19e9ec7e664c4503a82d1027c59cfb3d',
-        title: 'Central Banks - Monetary Policy',
-        content: '<div class="bloc1"><ul><li>Credible Neutrality: \'a mechanism is credibly neutral if just by looking at the mechanism\'s design, it is easy to see that the mechanism does not discriminate for or against any specific people.”</li><li>You own money but not the system that influences it, and therefore you aren’t in control of your money. i.e Covid-19 & Venezuela hyperinflation.</li><li>Currency Debasement & Inflation:</li> <ul><li>Fiat money does not effectively preserve the fruits of your labor.<br><a href=\'https://www.investopedia.com/terms/d/debasement.asp#:~:text=When%20a%20currency%20is%20debased,their%20work%2C%20resulting%20in%20inflation\'>https://www.investopedia.com/terms/d/debasement.asp#:~:text=When a currency is debased,their work%2C resulting in inflation</a></li><li>Inflation leads to wealth inequality:</li></ul> <li>Wealth inequality due to those without financial education and tooling falling behind by default. This leads to further wealth inequality.</li><li>Unreliable monetary policy increases risk of geopolitical instability (Post-WWI Germany)<br><a href=\'https://www.investopedia.com/terms/d/debasement.asp#:~:text=In%20Germany%20in,gold%20standard\'>https://www.investopedia.com/terms/d/debasement.asp#:~:text=In Germany in,gold standard</a>.</li></ul></div>'
+        notionId: '81f69adc54364e629a310fffc32e9778',
+        title: 'What’s possible to achieve when your are Bankless?',
+        content: '<div class="bloc1"><p>Be independent and have freedom.</p><p>Trust the code instead of trusting human (always greedy).</p><p>Open and accessible information.</p><p>In the next slide we are going to ask questions to determine your Bankless archetype (why you are here).</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '6251cc560e36431f920087a139b4f998',
+        title: '✅ Question to determine Bankless archetype',
+        quiz: {
+          question: 'Why are you interested in web3? (can select multiple answer)',
+          rightAnswerNumber: 1,
+          answers: [
+            'make money',
+            'learn how to be self sovereign',
+            'here for the tech',
+            'freedom',
+            'censorship resistance',
+            'change the world'
+          ],
+          id: 'going-bankless-1'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '57168be2bd5b4fdb85c98f7586ef189c',
+        title: '✅ Question to determine Bankless archetype',
+        quiz: {
+          question: 'Do you trust Central Banks?',
+          rightAnswerNumber: 1,
+          answers: [
+            'yes',
+            'no',
+            'it depends'
+          ],
+          id: 'going-bankless-2'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'a13d3e09756143659612eedd6d175a8f',
+        title: '✅ Question to determine Bankless archetype',
+        quiz: {
+          question: 'Are you worried about inflation?',
+          rightAnswerNumber: 1,
+          answers: [
+            'yes',
+            'no really'
+          ],
+          id: 'going-bankless-3'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'd36756b22bf84581ad6eaf0825c45f3b',
+        title: '✅ Question to determine Bankless archetype',
+        quiz: {
+          question: 'Do you like web2 socials?',
+          rightAnswerNumber: 1,
+          answers: [
+            'yes, I use them often',
+            'no I’m not happy with them',
+            'I don’t trust web2 socials platforms',
+            'I wish I can own my data'
+          ],
+          id: 'going-bankless-4'
+        }
       },
       {
         type: 'LEARN',
-        notionId: '28f8c391f1f443ee987ec9cd3fa7f1c6',
-        title: 'Commercial Banks - Custody',
-        content: '<div class="bloc1"><ul><li>Access to financial tools: Banks use exclusive tools to profit off of your labour points. </li> <ul><li>The Bankless movement advocates education around and access to these tools for the public.<br>(i.e Staking, DeFi, etc.)</li></ul> <li>Censorship: Banks are susceptible to biased government-sanctioned censorship <br>(i.e, Canadian Trucker Protests 2022)</li><li>Payment service intermediaries charge without producing added value.<br>(i.e Visa/Mastercard charging 2-3%)</li><li>Over 25% of the world’s adult population don’t have access to the traditional financial system, with a majority living in hard-to-reach areas or unstable economies.</li><li>Self-custody: The answer is using technology that allows self-custody of funds in a censorship-resistant environment.</li></ul></div>'
+        notionId: '482404e0f6c74c919b95a8d44d6fde11',
+        title: 'Bankless level',
+        content: '<div class="bloc1"><p>Self custody and cryptography are new paradigm and an evolution of web2.</p><p>It’s an evolution of web2:</p><ul><li>Crypto protocols allow for secure communication of value (not just data as per web2). </li><li>Crypto protocols introduce a new ownership primitive: ownership</li></ul><p>It’s risky (scams) but you can gain a lot of freedom.</p><p>In the next slides we are going to determine your level of Banklessness (how familiar your are with Bankless primitives).</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '29571c22d2e14ecba700f8c69552829a',
+        title: '✅ Question to determine your Bankless level',
+        quiz: {
+          question: 'Select the topics you are familiar with (can select multiple answer)',
+          rightAnswerNumber: 1,
+          answers: [
+            'buy/sell crypto on an exchange',
+            'self custody',
+            'swap token on DeFi',
+            'buy an NFT',
+            'join a DAO'
+          ],
+          id: 'going-bankless-5'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '1e9d08d2cfdd47d681c4fdc6876bf4b4',
+        title: '✅ Question to determine your Bankless level',
+        quiz: {
+          question: 'Select more topics you are familiar with (can select multiple answer)',
+          rightAnswerNumber: 1,
+          answers: [
+            'LP',
+            'do a loan',
+            'web3 social',
+            'staking via LSD',
+            'I run a solo node'
+          ],
+          id: 'going-bankless-6'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '3cfc048985694a7b85722bad9a539b15',
+        title: '✅ Question to determine your Bankless level',
+        quiz: {
+          question: 'Are you familiar with the term mentioned in previous slides.',
+          rightAnswerNumber: 1,
+          answers: [
+            'not a all',
+            'no but I’m curious',
+            'I’m familiar with most of them',
+            'I’m already familiar with all'
+          ],
+          id: 'going-bankless-7'
+        }
       },
       {
         type: 'LEARN',
-        notionId: '384375d938c74d4fb381c5fdc0cba962',
-        title: 'Upgrading Humanity’s Coordination Protocols',
-        content: '<div class="bloc1"><ul><li>Human coordination methods:</li> <ul><li>throughout history, Humanity has constantly been refining its ability to coordinate. </li><li>Human coordination has moved through the intense ordering forces of Religion, Nation States etc.</li></ul> <li>Cryptographic Protocols offer new efficient and balanced coordination cases (specifically in money). The technology has the strength to replace the outdated systems of traditional finance.</li> <ul><li>The printing press, double-entry bookkeeping, the internet, cryptocurrency.</li><li>Cryptographic technology reduces the cost and thus increases the efficiency of human coordination.</li></ul> </ul></div><div class="bloc2"><img src=\'/lesson/going-bankless/upgrading-humanitys-coordination-protocols-2ef0d764.png\'><ul><li>Crypto has its hurdles and shortcomings, but with time and thoughtful evolution the possibilities are extremely promising.</li></ul></div>'
+        notionId: 'd13cb16b7b9341968d0de623d63c1ecb',
+        title: 'The Bankless Journey',
+        content: '<div class="bloc1"><p>Being Bankless is a spectrum and a journey.</p><p>Bankless Academy can help you set goals and level up your skills.</p><p>In the next slides we are going to help you set goals for your Bankless Journey.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'e3303cd3d38f40749eefdba5ac81815d',
+        title: '✅ Question to determine your Bankless goals',
+        quiz: {
+          question: 'Select the topics are you curious about (can select multiple answer)',
+          rightAnswerNumber: 1,
+          answers: [
+            'buy/sell crypto on an exchange',
+            'self custody',
+            'swap token on DeFi',
+            'buy an NFT',
+            'join a DAO'
+          ],
+          id: 'going-bankless-8'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '5a72051972c24875a9b591e8d3be7870',
+        title: '✅ Question to determine your Bankless goals',
+        quiz: {
+          question: 'Select more topics are you curious about (can select multiple answer)',
+          rightAnswerNumber: 1,
+          answers: [
+            'LP',
+            'do a loan',
+            'web3 social',
+            'staking via LSD',
+            'I run a solo node'
+          ],
+          id: 'going-bankless-9'
+        }
       },
       {
         type: 'LEARN',
-        notionId: '5a7f85f3c10f44f0b328f5fcfa176904',
-        title: 'The Internet of Value',
-        content: '<div class="bloc1"><ul><li>Evolution of the internet: web1, web2, web3.</li> <ul><li>Crypto protocols allow for secure communication of value (not just data as per web2). </li><li>Crypto protocols introduce a new ownership primitive:</li></ul> </ul></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '724bbda33e9042c5aef0ed8c201e454d',
-        title: 'Transparency - Don’t Trust, Verify',
-        content: '<div class="bloc1"><ul><li>Humanity, power and susceptibility to greed: Our traditional financial institutions, social media tools, etc. have consistently abused the trust of their customers/dependents throughout history.</li><li>System transparency:</li> <ul><li>Preferential treatment & lack of accountability <br>(i.e 2008 crisis, bailouts, no arrests)</li><li>Reserve attestations in CeFi vs. DeFi.<br>(i.e 2008 mortgage crisis, FTX insolvency)</li><li>Public ledger allows auditing of large transactions.<br>(In future, could apply to government & corporate, with privacy layers for citizens)</li><li>Open source code allows users to audit the entire system.</li></ul> <li>Corruption resistance:</li> <ul><li>P2P network</li><li>Decentralisation</li></ul> <li>Not all cryptocurrencies are created equal (shitcoins)</li></ul></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '2bb066a1b2bd43a3bad070f43c2ef463',
-        title: 'The Bankless Movement',
-        content: '<div class="bloc1"><ul><li>The Bankless movement focuses on putting power back into the hands of the individual.</li> <ul><li>Declaring self-sovereignty from the unreliable institutions of traditional finance.</li><li>Gaining access to financial tools typically reserved for financial institutions.</li><li>Evolving the efficiency and fairness of the human monetary coordination system.</li><li>The Bankless movement advocates the separation of monetary policy and state.</li></ul> <li>Cryptocurrencies aren’t just a speculative investment vehicle. There is a promising underlying technology that is driving investor demand & price action.</li> <ul><li>We’re taking risks in heading west - but not for no reason…<br>If we are right, we strike gold: massive gains, new economies, new asset classes.</li><li>In our traditional system where money talks, every bit of fiat currency invested -thoughtfully- in cryptocurrency is a vote for a better world.</li></ul> </ul></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '35b058da7d23478bab954d8f793bc221',
-        title: 'Bankless Goals',
-        content: '<div class="bloc1"><ul><li><strong>Personal:</strong> to maximize personal crypto wealth / gain financial independence, to develop the skills necessary to claim back sovereignty of your money.</li><li><strong>Collective:</strong> a better system for future generations / rejecting authoritarian behaviour, creating a more level global playing field by increasing access for the unbanked around the world, combating inflation, and solving human coordination failures.</li><li>More personal freedom and systemic stability for ourselves and future generations. <br>The world wins.</li></ul></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'da76079088c149109cb9cb2fa282c3d1',
-        title: 'Your Bankless Journey',
-        content: '<div class="bloc1"><p><strong><em>(Bankless Instructor Slide)</em></strong></p><ul><li>Going Bankless is a spectrum; a journey.</li><li>Bankless Academy is here to help you get started, gather your initial equipment, gain the crucial knowledge and skills that allow safe navigation of this new digital landscape, and provide you a place to meet other Explorers on their Bankless journey.</li><li>How BanklessHQ can help you go deeper.</li><li>It’s time to dive into more Bankless Academy lessons filled with practical next steps, skill tests, and on-chain rewards for your accomplishments.</li><li>The first step is to set up your crypto wallet (digital bank account & passport).</li></ul></div><div class="bloc2"><img src=\'/lesson/going-bankless/your-bankless-journey-9736d072.png\'></div>'
+        notionId: 'af594f1cbac5494bacd3a0db0ba644c7',
+        title: 'Quest',
+        content: '<div class="bloc1"><p>Thanks for doing this lesson. Here is a recap of your Bankless profile.</p><p>[dynamic image] 👉: includes your Bankless Archetype (crypto curious/learner/teacher/expert) + your Bankless score (x/100) + goals (list of topics to learn)</p><p>You can download this image and share it on social media if you want with this link: [insert dynamic link]</p><p>(vision: As you complete more lessons, you Bankless profile is going to evolve … could become a dynamic NFT)</p><p>Here are our recommendations as next steps:</p><ul><li>[beginners lvl1]: buy your first crypto</li><li>[beginners lvl2]: do the wallet basics lesson and learn how to self custody</li><li>[beginners lvl2]: go directly on an advanced topic (DeFi, Dex, …)</li><li>[advanced lvl1]: subscribe to the Bankless HQ newsletter</li><li>[advanced lvl2]: join a DAO and get a job in crypto</li></ul></div><div class="bloc2"><img src=\'/lesson/going-bankless/quest-63568085.jpg\'></div>'
       },
       {
         type: 'QUEST',
         title: 'Going Bankless Quest',
         component: 'GoingBankless'
       }
-    ]
+    ],
+    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg'
   },
   {
-    kudosImageLink: '/lesson/wallet-basics/kudos-75d8aa76.png',
-    lessonImageLink: '/lesson/wallet-basics/lesson-5aa84b59.png',
-    socialImageLink: '/lesson/wallet-basics/social-230cc260.jpg',
+    kudosImageLink: 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png',
+    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
+    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
+    lessonNftVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
+    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg',
     learningActions: 'Create and manage your own wallet\nConnect your wallet to a web3 website',
     marketingDescription: 'A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.',
     kudosId: 2561,
@@ -323,9 +449,11 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/blockchain-basics/kudos-b0048cdb.png',
-    lessonImageLink: '/lesson/blockchain-basics/lesson-c84db284.png',
-    socialImageLink: '/lesson/blockchain-basics/social-07ea2639.jpg',
+    kudosImageLink: 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png',
+    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
+    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
+    lessonNftVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
+    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg',
     learningActions: '',
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
     kudosId: 2563,
@@ -528,9 +656,11 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/web3-security/kudos-d2f0df26.png',
-    lessonImageLink: '/lesson/web3-security/lesson-09017125.png',
-    socialImageLink: '/lesson/web3-security/social-795f9c67.jpg',
+    kudosImageLink: 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png',
+    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
+    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
+    lessonNftVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
+    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg',
     learningActions: 'Avoid the scams in web3 and keep your assets safe.',
     marketingDescription: 'Protect yourself and your wallet from the most common scams in web3.',
     kudosId: 2565,
@@ -772,51 +902,11 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/academy-community/kudos-4fce19ff.png',
-    lessonImageLink: '/lesson/academy-community/lesson-755fe7a3.png',
-    socialImageLink: '/lesson/academy-community/social-1f64464b.jpg',
-    learningActions: '',
-    marketingDescription: 'Join the conversation in our Bankless Explorer Community.',
-    kudosId: 2564,
-    duration: 10,
-    learnings: '',
-    difficulty: 'Easy',
-    description: 'Join the conversation in our Bankless Explorer Community.',
-    name: 'Academy Community',
-    quest: 'AcademyCommunity',
-    publicationStatus: 'publish',
-    featuredOrderOnHomepage: null,
-    isCommentsEnabled: false,
-    endOfLessonRedirect: null,
-    endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=6cda4b4c-5300-4e1e-9a12-a14eecd59ebf',
-    notionId: '44b8a4937fcd43fa8e12400cb75885a1',
-    slug: 'academy-community',
-    imageLinks: [],
-    slides: [
-      {
-        type: 'LEARN',
-        notionId: 'e398fcd0d14b45f1be30f709019faa50',
-        title: 'You’re one step away, Explorer.',
-        content: '<div class="bloc1"><p>Now that you have your digital wallet, let’s use it to join the Academy Community.</p><p>Wallets don’t only serve the purpose of keeping your digital assets, but also as a means of decentralized verification. </p><p>Thanks to its web3 native nature - wallet login, token-holder roles, and more! - we’ve chosen <a href=\'https://gm.xyz/?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson\'>gm.xyz</a> as our community home. To participate in the conversation, you must sign in with your wallet. We can walk you through it in our video at the end of the lesson.</p><p>Ready to start your community journey? Let’s go Explorer!</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'd88acd5ee49c4fa88e9dc1c4fc136e80',
-        title: 'Why join Bankless Academy?',
-        content: '<div class="bloc1"><p>👋 New to the space? <strong>Meet with fellow Explorers </strong>and share knowledge.</p><p>📖 Been here for a while? <strong>Become a mentor </strong>and gain recognition by teaching others.</p><p>Let’s learn together.</p><p>💬 <strong>General:</strong> Exchange knowledge, tips, and explorers’ stories.</p><p>🎙️ A<strong>sk-me-anything: </strong>Participate in our <strong>AMAs with industry specialists.</strong></p><p>💾 <strong>Library:</strong> Level up your understanding of web3 with our curated resources.</p><p>🌟 <strong>Announcements:</strong> Stay up to date with important community announcements.</p></div>'
-      },
-      {
-        type: 'QUEST',
-        title: 'Academy Community Quest',
-        component: 'AcademyCommunity'
-      }
-    ]
-  },
-  {
-    kudosImageLink: '/lesson/layer-1-blockchains/kudos-66fa6447.png',
-    lessonImageLink: '/lesson/layer-1-blockchains/lesson-dcff6ea3.png',
-    socialImageLink: '/lesson/layer-1-blockchains/social-db62f5f0.jpg',
+    kudosImageLink: 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png',
+    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
+    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
+    lessonNftVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
+    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg',
     learningActions: '',
     marketingDescription: 'Understand how Layer 1 blockchains work - and learn their limitations!',
     kudosId: 14611,
@@ -1054,9 +1144,11 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/layer-2-blockchains/kudos-761ee1a2.png',
-    lessonImageLink: '/lesson/layer-2-blockchains/lesson-29da6288.png',
-    socialImageLink: '/lesson/layer-2-blockchains/social-788a6512.jpg',
+    kudosImageLink: 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png',
+    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
+    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
+    lessonNftVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
+    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg',
     learningActions: '',
     marketingDescription: 'The Layer 2 revolution has begun. Discover how the Layer 2 ecosystem can boost your transaction speed & reduce gas fees.',
     kudosId: 14886,
@@ -1138,7 +1230,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'cd8cecba43b74bdd881a93394cd61423',
         title: 'Bridging Layer 1 and Layer 2',
-        content: '<div class="bloc1"><p>As we learned in <a href=\'https://app.banklessacademy.com/lessons/blockchain-basics\'>Blockchain Basics</a>, blockchains are databases known as <code>ledgers</code>, that record a cryptographically secured, chronological list of transactions. L1 blockchains and L2 scaling solutions are each blockchains in their own right, with their own databases of addresses and data.</p><p>Infrastructure called <code>bridges</code> is used to transfer information between different blockchain databases. For example, if you think of the Ethereum Mainnet (or any other <code>L1</code> blockchain) as one island, and a different blockchain or your preferred scaling solution as another, a crypto bridge is the generic term for the networked highway connecting these two digital islands.</p><p>The technology is very complex, but from the end user perspective this process as simple as choosing a destination.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-8268ff20.svg\'></div>'
+        content: '<div class="bloc1"><p>As we learned in <a href=\'https://app.banklessacademy.com/lessons/blockchain-basics\'>Blockchain Basics</a>, blockchains are databases known as <code>ledgers</code>, that record a cryptographically secured, chronological list of transactions. L1 blockchains and L2 scaling solutions are each blockchains in their own right, with their own databases of addresses and data.</p><p>Infrastructure called <code>bridges</code> is used to transfer information between different blockchain databases. For example, if you think of the Ethereum Mainnet (or any other <code>L1</code> blockchain) as one island, and a different blockchain or your preferred scaling solution as another, a crypto bridge is the generic term for the networked highway connecting these two digital islands.</p><p>The technology is very complex, but from the end user perspective this process is as simple as choosing a destination.</p></div><div class="bloc2"><img src=\'/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-8268ff20.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -1251,6 +1343,8 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: null,
     lessonImageLink: '/lesson/how-to-fund-a-wallet-on-layer-2/lesson-71b79973.png',
+    lessonCollectedImageLink: undefined,
+    lessonNftVideo: undefined,
     socialImageLink: '/lesson/how-to-fund-a-wallet-on-layer-2/social-adb1717b.png',
     learningActions: '',
     marketingDescription: 'Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.',
@@ -1274,9 +1368,11 @@ const LESSONS: LessonType[] = [
     articleContent: '### Key Takeaways\n\n> * There are a number of ways to fund your wallet on an Ethereum scaling solution like Optimism, Arbitrum, or Polygon.\n>\n> * Centralized exchanges often provide a direct Layer 2 onramp.\n>\n> * Third-party payment apps enable users to fund a wallet on Layer 2 from a bank account or a debit or credit card.\n>\n> * Protocol bridges let users send funds from Ethereum Mainnet to Layer 2.\n\nIf you’re new to crypto, all the talk about the importance of `Layer 2` (or L2) must seem a bit odd, confusing really. In contrast to [Layer 1](https://app.banklessacademy.com/lessons/layer-1-blockchains), which often refers to [Ethereum Mainnet](https://ethereum.org/), Layer 2 is a term for a specific type of Ethereum scaling solution that enables users to inherit the security of Ethereum but enjoy low transaction fees and fast `block` inclusion times. If you’ve ever heard of [Optimism](https://www.optimism.io/), [Arbitrum](https://arbitrum.io/), or [Polygon](https://polygon.technology/) (which is really a side chain, but let’s not worry about that here), those are Layer 2 scaling solutions.\n\nWhen the Ethereum network is busy, it can cost the equivalent of 80 USD in transaction fees — known as `gwei` or gas — to swap tokens, and much more to mint NFTs or provide `liquidity` to a `decentralized exchange` (DEX) on Mainnet. When network activity is low, most transactions on Ethereum Mainnet still cost a few dollars, and it takes an [FTX-level debacle](https://www.investopedia.com/ftx-exchange-5200842) or a [beyond-hyped NFT drop](https://dappradar.com/blog/yuga-labs-600m-otherside-nft-land-sale-records-highest-gas-fees-ever-on-ethereum) to really spike transaction fees.\n\nBecause transactions on Layer 2 confirm quickly and are inexpensive to execute, many of the most innovative protocols are building on L2s. Unless you’ve been in the ecosystem for a while, however, it’s not intuitive to know how to start using Layer 2s. But there is a clear place to begin your journey into Ethereum scaling solutions: funding your `wallet` on Layer 2.\n\nThere are three main ways to fund an L2 wallet: moving your crypto from a `centralized exchange` straight to a Layer 2 network, using a third-party crypto payment service to fund an L2 wallet, or sending your digital assets from Mainnet to L2 via a bridging protocol.\n\n> Please note, you’ll need to have a cryptocurrency wallet, like [MetaMask](https://metamask.io/) or [Tally Ho](https://tallyho.org/), and an Ethereum wallet `address` to proceed. If you haven’t yet created a `non-custodial wallet`, please [take this lesson first](https://app.banklessacademy.com/lessons/wallet-basics)!\n>\n> After you have a non-custodial Ethereum wallet address, you’ll be ready to continue on your crypto journey.\n\n## Funding From CEXs\n\nFunding your wallet directly from a centralized exchange (CEX) is perhaps the simplest way to move digital assets to an L2, particularly if you already hold cryptocurrency on the exchange. Most major CEXs offer users this option, although it isn’t always clear to the user.\n\nOn [Coinbase](https://www.coinbase.com/), for example, users can send their funds directly to Optimism or Polygon in just a few steps:\n\n1\. Go to [Coinbase](https://www.coinbase.com/).\n\n2\. [Purchase](https://help.coinbase.com/en/coinbase/trading-and-funding/buying-selling-or-converting-crypto/how-do-i-buy-digital-currency) or hold ETH on Coinbase.\n\n3\. Select ‘Send & Receive’, located at the top of the website.\n\n![](https://images.mirror-media.xyz/publication-images/Rzdn6KxR4U-oVpcgLs_fL.png?height=209&width=1440)\n\n4\. Enter the amount in fiat or ETH you wish to send (you can toggle between fiat and crypto to the right of the amount), select ‘Pay with’ and choose Ethereum, and in the ‘To’ field, enter the wallet address where the funds will be sent. Select ‘Continue’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F2uysvYIN69lbn9rz0yLsf.png&w=3840&q=90)\n\n5\. On the next screen, select ‘Network’ and change the network from Ethereum to Optimism.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Fz_DzBI1lJFVKNisD-8Rcs.png&w=3840&q=90)\n\n6\. Review, and if accurate, select ‘Send Now’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F-J0-k8BzvPCPPJLmnkQw-.png&w=3840&q=90)\n\nMost major exchanges offer users the ability to send their crypto directly to an L2. [Binance](https://www.binance.com/) supports Optimism and Arbitrum, for example. On whatever centralized exchange you convert fiat to crypto, check to see whether it offers support for direct-to-L2 services. Pro Tip: Use [Blockscan](https://blockscan.com/exchanges) to find the exchange compatible with your preferred L2.\n\n## Third-Party Onramps\n\nAnother simple way to fund your L2 wallet is to take advantage of direct-to-L2 services offered by many third-party crypto payment companies. [MoonPay](https://www.moonpay.com/), [Ramp](https://ramp.network/buy/), and [Transak](https://global.transak.com/) are three of the most popular options to fund crypto wallets without having to use a centralized exchange.\n\nLike most exchanges, these third-party onramps will require you to provide Know-Your-Customer information. However, once you get past those basic hurdles, these payment options are an easy way to buy crypto across the ecosystem and transfer it to Layer 2.\n\nFor MoonPay, the steps are:\n\n1\. Go to [MoonPay](https://www.moonpay.com/).\n\n2\. Select ‘Buy crypto’, located at the top or middle of the website.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FUU9Uswhysj9w4WBYI4VWL.png&w=3840&q=90)\n\n3\. Enter the amount of fiat you wish to send and the proper denomination.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FckrX4LeU78MqcPvpAq_VM.png&w=3840&q=90)\n\n4\. Select a digital asset, in this case ETH. Type in “ETH\'“ and you will see different networks on which you can purchase ETH (you may need to scroll down); choose the Layer 2 you want to use. Click ‘Continue’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FLfhhGbE1yfWdOpG1Z5N5S.png&w=3840&q=90)\n\n5\. Next, you will be prompted to enter personal verification and payment data.\n\n6\. Once complete, enter your Ethereum wallet address. You’ll be asked to make sure the wallet is safe to use.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Fn5hbzW-CVKzp3392TT91I.png&w=3840&q=90)\n\n7\. Complete, confirm the information is correct, and select ‘Pay’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F7ZBiVMjLfxQ66p8-cLBhN.png&w=3840&q=90)\n\nAs with CEXs, most major third-party payment onramps provide direct-to-L2 functionality. Take advantage of these innovations to save on transaction fees and increase the range of your `blockchain` explorations.\n\n## Funding Via Bridges\n\nIf you already have funds on Ethereum Mainnet, by far the easiest way to get your crypto on to L2 is to use a bridging protocol. Bridges are the name we’ve given to protocols designed to help us move our funds around the cryptoverse, and there are a number of bridges designed to move crypto from Ethereum Mainnet to Layer 2s.\n\n### Native Bridges\n\nNative bridges are those designed by the Layer 2 protocols themselves. For true Layer 2 scaling solutions like Arbitrum and Optimism, it takes about 30 minutes to move funds onto L2, but one week to move that crypto back over to Mainnet. The [Arbitrum Bridge](https://bridge.arbitrum.io/) and the [Optimism Bridge](https://app.optimism.io/bridge/) both take longer to transfer assets and settle transactions because of the way the scaling solution is designed.\n\n### Third-Party Bridges\n\nBecause no one likes to wait, a number of third-party bridging services exist to help us move our funds instantly to and from L2s. Among the most popular options are [Hop Protocol](https://app.hop.exchange/) and [Across Protocol](https://across.to/bridge), but you can use [Bungee](https://bungee.exchange/) to compare bridging fees across a number of protocols. To use Across, for example, all you need to do is:\n\n1\. Go to the [Across Protocol](https://across.to/bridge) bridge and connect your wallet.\n\n2\. To bridge funds to L2, select Ethereum under ‘From’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FSwt3yjUPwEteAiB5aU9zy.png&w=3840&q=90)\n\n3\. Choose your asset and the amount you wish to bridge (Pro Tip: only bridge a blockchain’s native `coin`, in this case ETH).\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FIBRvNt1d-CEe3XkuuwTvr.png&w=3840&q=90)\n\n4\. Next, select your L2 solution in ‘To’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FMnz8fWPFIGGQp25RA6FKt.png&w=3840&q=90)\n\n5\. Review the transaction, and if all looks correct, select ‘Send’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Ff9PbrvFv90jLNB-j60XlV.png&w=3840&q=90)\n\nMoving funds from Mainnet to L2 is really that simple, and nearly all bridges work the same way. Select a blockchain to send funds from and your destination, pick an asset and amount, and across the blockchain crevice you go. Pro Tip: As with sending from a CEX, you can use [Blockscan](https://blockscan.com/bridges) to find a compatible bridge for your L2 destination.\n\n## The Road to L2\n\nLayer 2s offer users of all experience levels the opportunity to experiment with decentralized finance in a way that is often prohibitive on Mainnet. Because it costs mere pennies to transact on these networks (you can compare costs [here](https://l2fees.info/)), it’s a great place to become familiar with the basic building blocks of decentralized finance, such as swaps, `liquidity pools`, or yield farms.\n\nUsing a CEX or a bridge to move funds to L2 is a necessary step in your journey from crypto novice to crypto competency. Remember, to see your funds displayed in your wallet, you may need to add the network in your wallet settings, which can be done at [Chainlist](https://chainlist.org/). If you just want to check that the funds made it safely to your L2 wallet, you can also check Etherscan (click on the ‘b’ for ‘Blockscan’ to the right of your wallet address to see L2 transactions) or go to a DEX, like [Uniswap](https://app.uniswap.org/), and select the L2 network and the asset to see your balance.\n\nAs you scale up your skills, you’ll need to figure out how to scale down your transaction fees. Learning how to fund an L2 wallet is the first step, but the next steps on your crypto journey are up to you. Welcome, explorer, a new world awaits.\n\n\n***\n\n**Author**\n\n**[Hiro Kennelly](https://twitter.com/HiroKennelly)** is a writer, editor, and coordinator at BanklessDAO and the Editor-in-Chief at Good Morning News. He is also helping to build a grants-focused organization at DAOpunks.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning as much as possible about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.'
   },
   {
-    kudosImageLink: '/lesson/intro-to-defi/kudos-b4dab2d4.png',
-    lessonImageLink: '/lesson/intro-to-defi/lesson-97291c9d.png',
-    socialImageLink: '/lesson/intro-to-defi/social-ee8d95a4.jpg',
+    kudosImageLink: 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png',
+    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
+    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
+    lessonNftVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
+    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg',
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
     kudosId: 2562,
@@ -1503,8 +1599,10 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: null,
+    kudosImageLink: 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png',
     lessonImageLink: '/images/coming-soon-lesson.png',
+    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
+    lessonNftVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
     learningActions: '',
     marketingDescription: 'DEXs and AMMs have changed the landscape of traditional market trading. It’s time to understand why, and how you can use this technology to your own advantage.',
     kudosId: null,
@@ -1534,12 +1632,15 @@ const LESSONS: LessonType[] = [
         title: 'DEXs and AMMs Quest',
         component: 'DEXsAndAMMs'
       }
-    ]
+    ],
+    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg'
   },
   {
-    kudosImageLink: '/lesson/dex-aggregators/kudos-ddb9db8b.png',
-    lessonImageLink: '/lesson/dex-aggregators/lesson-39d1fc1c.png',
-    socialImageLink: '/lesson/dex-aggregators/social-2724db28.jpg',
+    kudosImageLink: 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png',
+    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
+    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
+    lessonNftVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
+    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg',
     learningActions: '',
     marketingDescription: 'Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.',
     kudosId: 2608,
@@ -1745,9 +1846,11 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/kudos-testing/kudos-5e4cda70.png',
-    lessonImageLink: '/lesson/kudos-testing/lesson-03a3e86a.png',
-    socialImageLink: '/lesson/kudos-testing/social-17fed266.png',
+    kudosImageLink: 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png',
+    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
+    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
+    lessonNftVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
+    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg',
     learningActions: '',
     marketingDescription: 'For testing purposes only',
     kudosId: 14067,

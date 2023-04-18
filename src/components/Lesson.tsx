@@ -11,6 +11,7 @@ import QuestComponent from 'components/Quest/QuestComponent'
 import CollectLessonButton from 'components/CollectLessonButton'
 import InternalLink from 'components/InternalLink'
 import { useSmallScreen } from 'hooks'
+import { useState } from 'react'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -34,6 +35,7 @@ const Lesson = ({
     `isLessonOpen`,
     false
   )
+  const [collectibleHover, setCollectibleHover] = useState(false)
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
 
@@ -70,6 +72,7 @@ const Lesson = ({
             maxW="600px"
             mt={6}
             display={isSmallScreen ? 'contents' : 'block'}
+            position="relative"
           >
             <Box h="0">
               <InternalLink href="/lessons" alt={`Back to Lesson Selection`}>
@@ -103,9 +106,26 @@ const Lesson = ({
                 style={{
                   cursor: 'pointer',
                 }}
+                minH="260px"
                 onClick={() => setIsLessonOpenLS(true)}
+                onMouseOver={() => setCollectibleHover(true)}
+                onMouseOut={() => setCollectibleHover(false)}
               >
-                <Image src={lesson.lessonImageLink} />
+                {/* TEMP: make this dynamic */}
+                {lesson.slug === 'wallet-basics' ? (
+                  collectibleHover ? (
+                    <video autoPlay loop playsInline muted>
+                      <source
+                        src={lesson.lessonNftVideo}
+                        type="video/webm"
+                      ></source>
+                    </video>
+                  ) : (
+                    <Image src={lesson.lessonCollectedImageLink} />
+                  )
+                ) : (
+                  <Image src={lesson.lessonImageLink} />
+                )}
               </Box>
             </Box>
             <Box

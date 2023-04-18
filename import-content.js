@@ -20,6 +20,8 @@ const POTION_API = 'https://potion.banklessacademy.com'
 const KEY_MATCHING = {
   'Kudos image': 'kudosImageLink',
   'Lesson image': 'lessonImageLink',
+  'Lesson collected image': 'lessonCollectedImageLink',
+  'Lesson NFT video': 'lessonNftVideo',
   'Social image': 'socialImageLink',
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
@@ -347,6 +349,14 @@ axios
           // })
           lesson.slides = slides
           // console.log('lesson', lesson)
+
+          // TEMP:
+          lesson.lessonImageLink = 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png'
+          lesson.lessonCollectedImageLink = 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png'
+          lesson.lessonNftVideo = 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm'
+          lesson.socialImageLink = 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg'
+          lesson.kudosImageLink = 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png'
+
           lessons[index] = lesson
 
           if (lesson.publicationStatus === 'planned') {

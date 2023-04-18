@@ -197,7 +197,7 @@ const LessonCards: React.FC = () => {
                   <Tag size="md" backgroundColor="transparent"></Tag>
                 )}
                 {/* TODO: add lesson.collectiblesId && !isCollected */}
-                {isKudosMinted && (
+                {isKudosMinted && lesson.slug !== 'wallet-basics' && (
                   <StyledTag
                     size="md"
                     variant="outline"
@@ -235,7 +235,14 @@ const LessonCards: React.FC = () => {
                     }}
                     py="4"
                   >
-                    <Image src={lesson.lessonImageLink} />
+                    <Image
+                      src={
+                        // TEMP: make this dynamic
+                        lesson.slug === 'wallet-basics'
+                          ? lesson.lessonCollectedImageLink
+                          : lesson.lessonImageLink
+                      }
+                    />
                   </LessonBanner>
                 </InternalLink>
               )}

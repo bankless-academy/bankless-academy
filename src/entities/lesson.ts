@@ -13,6 +13,8 @@ export interface LessonType {
   difficulty: 'Easy' | 'Advanced' | 'Expert'
   kudosImageLink?: string
   lessonImageLink?: string
+  lessonCollectedImageLink?: string
+  lessonNftVideo?: string
   socialImageLink?: string
   moduleId?: string
   learnings: string

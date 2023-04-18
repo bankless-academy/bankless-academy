@@ -52,7 +52,6 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             </Button>
           )}
           <Box
-            height="290px"
             width="290px"
             borderRadius={
               isKudosMintedLS
