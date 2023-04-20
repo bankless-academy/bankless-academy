@@ -1846,7 +1846,7 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png',
+    kudosImageLink: '/lesson/kudos-testing/kudos-ca816a4c.mp4',
     lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
     lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
     lessonNftVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
