@@ -63,8 +63,9 @@ const processLesson = (htmlPage, notion_id) => {
       if ((slide.content.match(/<img /g) || []).length > 1) {
         // multiple images
         const blocs = slide.content
-          .replace(/<img src='/g, '|SPLIT|')
-          .replace(/'>/g, '|SPLIT|')
+          .replace(/<img src='([^>]*)'>/gi, '|SPLIT|$1|SPLIT|')
+          // .replace(/<img src='/g, '|SPLIT|')
+          // .replace(/'>/g, '|SPLIT|')
           .replace('|SPLIT|', '')
           .split('|SPLIT|')
         slide.content = blocs.reduce(
