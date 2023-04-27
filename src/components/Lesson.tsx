@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from '@emotion/styled'
 import { Text, Image, Button, Box } from '@chakra-ui/react'
 import { ArrowUUpLeft } from '@phosphor-icons/react'
@@ -11,7 +12,6 @@ import QuestComponent from 'components/Quest/QuestComponent'
 import CollectLessonButton from 'components/CollectLessonButton'
 import InternalLink from 'components/InternalLink'
 import { useSmallScreen } from 'hooks'
-import { useState } from 'react'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {

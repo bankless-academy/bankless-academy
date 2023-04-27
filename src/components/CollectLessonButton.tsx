@@ -1,8 +1,16 @@
 import { ReactNode } from 'react'
 import { QuestionIcon } from '@chakra-ui/icons'
-import { Button, Box, IconButton, Tooltip } from '@chakra-ui/react'
+import {
+  Button,
+  Box,
+  IconButton,
+  Tooltip,
+  useDisclosure,
+} from '@chakra-ui/react'
 import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
+
+import MintModal from 'components/MintModal'
 
 const ButtonHelper = ({
   info,
@@ -31,6 +39,7 @@ const CollectLessonButton = ({
     `isKudosMinted-${lesson.kudosId}`,
     false
   )
+  const { isOpen, onOpen, onClose } = useDisclosure()
   // TODO: replace with lesson.collectiblesId
   if (lesson.kudosId)
     return (
@@ -39,9 +48,7 @@ const CollectLessonButton = ({
           <Button
             variant={isKudosMintedLS ? 'primaryGold' : 'secondaryGold'}
             // onMouseEnter
-            onClick={() =>
-              isKudosMintedLS && alert(`TODO: collect ${lesson.name}`)
-            }
+            onClick={() => isKudosMintedLS && onOpen()}
           >
             <ButtonHelper
               info="Lesson Collectible"
@@ -73,6 +80,7 @@ const CollectLessonButton = ({
             </Box>
           </Button>
         )}
+        <MintModal isOpen={isOpen} onClose={onClose} />
       </>
     )
 }
