@@ -21,7 +21,11 @@ import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import LessonBanner from 'components/LessonBanner'
 import MODULES from 'constants/whitelabel_modules'
-import { getArticlesCollected, Mixpanel } from 'utils/index'
+import {
+  getArticlesCollected,
+  getLessonsCollected,
+  Mixpanel,
+} from 'utils/index'
 import SubscriptionModal from 'components/SubscriptionModal'
 import { LessonType } from 'entities/lesson'
 import InstallAppModal from 'components/InstallAppModal'
@@ -64,9 +68,9 @@ export const LessonCard = styled(Box)`
   }
 `
 
-const StyledTag = styled(Tag)<{ iskudosminted?: string }>`
+const StyledTag = styled(Tag)<{ isminted?: string }>`
   ${(props) =>
-    props.iskudosminted === 'true' &&
+    props.gold === 'true' &&
     `
     ::before {
       background: #F1B15A;
@@ -83,6 +87,10 @@ const LessonCards: React.FC = () => {
   const [kudosMintedLS] = useLocalStorage('kudosMinted', [])
   const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
     'articlesCollected',
+    []
+  )
+  const [lessonsCollectedLS, setLessonsCollectedLS] = useLocalStorage(
+    'lessonsCollected',
     []
   )
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -145,13 +153,16 @@ const LessonCards: React.FC = () => {
   }, [kudosMintedLS])
 
   useEffect(() => {
-    const updateArticlesCollected = async () => {
+    const updateNFTCollected = async () => {
       const articlesCollected = await getArticlesCollected(address)
       if (articlesCollected && Array.isArray(articlesCollected))
         setArticlesCollectedLS(articlesCollected)
+      const lessonsCollected = await getLessonsCollected(address)
+      if (lessonsCollected && Array.isArray(lessonsCollected))
+        setLessonsCollectedLS(lessonsCollected)
     }
     if (!IS_WHITELABEL && address) {
-      updateArticlesCollected().catch(console.error)
+      updateNFTCollected().catch(console.error)
     }
   }, [address])
 
@@ -175,6 +186,9 @@ const LessonCards: React.FC = () => {
         const isArticleCollected =
           lesson.mirrorNFTAddress?.length &&
           articlesCollectedLS.includes(lesson.mirrorNFTAddress)
+        const isLessonCollected =
+          lesson.LessonCollectibleTokenAddress?.length &&
+          lessonsCollectedLS.includes(lesson.LessonCollectibleTokenAddress)
         return (
           <LessonCard key={`lesson-${index}`} p={6} pb={8} borderRadius="3xl">
             <Box position="relative" zIndex="1">
@@ -186,7 +200,7 @@ const LessonCards: React.FC = () => {
                   <StyledTag
                     size="md"
                     variant="outline"
-                    iskudosminted={isKudosMinted?.toString()}
+                    gold={isKudosMinted?.toString()}
                   >
                     {isKudosMinted ? 'Done' : `${lesson.duration} minutes`}
                     {isKudosMinted ? (
@@ -196,13 +210,8 @@ const LessonCards: React.FC = () => {
                 ) : (
                   <Tag size="md" backgroundColor="transparent"></Tag>
                 )}
-                {/* TODO: add lesson.collectiblesId && !isCollected */}
-                {isKudosMinted && lesson.slug !== 'wallet-basics' && (
-                  <StyledTag
-                    size="md"
-                    variant="outline"
-                    iskudosminted={isKudosMinted?.toString()}
-                  >
+                {isKudosMinted && lesson.hasCollectible && !isLessonCollected && (
+                  <StyledTag size="md" variant="outline" gold="true">
                     Collectible available
                   </StyledTag>
                 )}

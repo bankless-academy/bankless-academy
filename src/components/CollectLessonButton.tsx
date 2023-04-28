@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
 import { QuestionIcon } from '@chakra-ui/icons'
 import {
   Button,
@@ -11,6 +11,8 @@ import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
 
 import MintCollectibleModal from 'components/MintCollectibleModal'
+import { useAccount } from 'wagmi'
+import { getLessonsCollected } from 'utils'
 
 const ButtonHelper = ({
   info,
@@ -35,20 +37,33 @@ const CollectLessonButton = ({
 }: {
   lesson: LessonType
 }): JSX.Element => {
-  const [isKudosMintedLS] = useLocalStorage(
-    `isKudosMinted-${lesson.kudosId}`,
+  const [isLessonMintedLS, setIsLessonMintedLS] = useLocalStorage(
+    `isLessonMinted-${lesson.LessonCollectibleTokenAddress}`,
     false
   )
   const { isOpen, onOpen, onClose } = useDisclosure()
-  // TODO: replace with lesson.collectiblesId
-  if (lesson.kudosId)
+  const { address } = useAccount()
+
+  useEffect(() => {
+    const updateNFTCollected = async () => {
+      const lessonsCollected = await getLessonsCollected(address)
+      if (lessonsCollected && Array.isArray(lessonsCollected))
+        setIsLessonMintedLS(
+          lessonsCollected.includes(lesson.LessonCollectibleTokenAddress)
+        )
+    }
+    if (address) {
+      updateNFTCollected().catch(console.error)
+    }
+  }, [address])
+  if (lesson.hasCollectible)
     return (
       <>
         {lesson.kudosId && (
           <Button
-            variant={isKudosMintedLS ? 'primaryGold' : 'secondaryGold'}
+            variant={isLessonMintedLS ? 'primaryGold' : 'secondaryGold'}
             // onMouseEnter
-            onClick={() => isKudosMintedLS && onOpen()}
+            onClick={() => !isLessonMintedLS && onOpen()}
           >
             <ButtonHelper
               info="Lesson Collectible"
@@ -74,7 +89,7 @@ const CollectLessonButton = ({
             />
             <Box>
               <Box>
-                {isKudosMintedLS ? 'Collect Lesson' : 'Claim Badge First'}
+                {isLessonMintedLS ? 'Collectible Minted' : 'Mint Collectible'}
               </Box>
               <Box fontSize="xs">-XX/100 claimed-</Box>
             </Box>

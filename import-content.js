@@ -22,7 +22,8 @@ const KEY_MATCHING = {
   'Lesson image': 'lessonImageLink',
   'Lesson collected image': 'lessonCollectedImageLink',
   'Lesson collectible video': 'lessonCollectibleVideo',
-  'Lesson collectible ID': 'LessonCollectibleID',
+  'Lesson collectible mint ID': 'LessonCollectibleMintID',
+  'Lesson collectible token address': 'LessonCollectibleTokenAddress',
   'Social image': 'socialImageLink',
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
@@ -103,7 +104,7 @@ axios
             // transform to number if the string contains a number
             [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k])) ||
               // ignore type transform for ModuleId & mirrorNFTAddress
-              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible ID')
+              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible mint ID' || k === 'Lesson collectible token address')
               ? notion.fields[k]
               : parseInt(notion.fields[k]),
           }),
@@ -117,7 +118,9 @@ axios
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.kudosId === undefined) lesson.kudosId = null
       if (lesson.lessonBadgeImageLink === undefined) lesson.lessonBadgeImageLink = null
-      if (lesson.LessonCollectibleID === undefined) delete lesson.LessonCollectibleID
+      if (lesson.LessonCollectibleMintID === undefined) delete lesson.LessonCollectibleMintID
+      if (lesson.LessonCollectibleTokenAddress === undefined) delete lesson.LessonCollectibleTokenAddress
+      if (lesson.LessonCollectibleMintID && lesson.LessonCollectibleTokenAddress) lesson.hasCollectible = true
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
       if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''

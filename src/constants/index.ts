@@ -100,6 +100,10 @@ export const MIRROR_ARTICLE_ADDRESSES = LESSONS.filter(
   (lesson) => lesson.mirrorNFTAddress
 ).map((lesson) => lesson.mirrorNFTAddress)
 
+export const COLLECTIBLE_ADDRESSES = LESSONS.filter(
+  (lesson) => lesson.LessonCollectibleTokenAddress
+).map((lesson) => lesson.LessonCollectibleTokenAddress)
+
 export const ACTIVATE_MIXPANEL = !!process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID
 
 export const KEYWORDS =

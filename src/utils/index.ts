@@ -14,6 +14,7 @@ import { readContract } from '@wagmi/core'
 import {
   ACTIVATE_MIXPANEL,
   ALCHEMY_KEY,
+  COLLECTIBLE_ADDRESSES,
   DOMAIN_PROD,
   INFURA_KEY,
   MIRROR_ARTICLE_ADDRESSES,
@@ -360,11 +361,11 @@ export async function api(url: string, data: any): Promise<AxiosResponse> {
   }
 }
 
-export async function getArticlesCollected(address: string): Promise<[]> {
+export async function getArticlesCollected(address: string): Promise<string[]> {
   try {
     const ownerNFTs = await axios.get(
       `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100${MIRROR_ARTICLE_ADDRESSES.map(
-        (articlAddress) => `&contractAddresses[]=${articlAddress}`
+        (articleAddress) => `&contractAddresses[]=${articleAddress}`
       ).join()}&withMetadata=false`
     )
     if (ownerNFTs.data) {
@@ -374,6 +375,30 @@ export async function getArticlesCollected(address: string): Promise<[]> {
       )
       // console.log(articlesCollected)
       return articlesCollected
+    } else {
+      return []
+    }
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
+export async function getLessonsCollected(address: string): Promise<string[]> {
+  try {
+    // TODO: replace with mainet
+    const ownerNFTs = await axios.get(
+      `https://polygon-mumbai.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100${COLLECTIBLE_ADDRESSES.map(
+        (collectibleAddress) => `&contractAddresses[]=${collectibleAddress}`
+      ).join()}&withMetadata=false`
+    )
+    if (ownerNFTs.data) {
+      // console.log(ownerNFTs.data?.ownedNfts)
+      const lessonsCollected = ownerNFTs.data?.ownedNfts.map(
+        (nft) => nft.contract.address
+      )
+      // console.log(articlesCollected)
+      return lessonsCollected
     } else {
       return []
     }

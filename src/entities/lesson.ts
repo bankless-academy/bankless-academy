@@ -15,7 +15,9 @@ export interface LessonType {
   lessonImageLink?: string
   lessonCollectedImageLink?: string
   lessonCollectibleVideo?: string
-  LessonCollectibleID?: string
+  LessonCollectibleMintID?: string
+  LessonCollectibleTokenAddress?: string
+  hasCollectible?: boolean
   socialImageLink?: string
   moduleId?: string
   learnings: string
