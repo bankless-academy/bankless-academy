@@ -10,7 +10,7 @@ import {
 
 import { LessonType } from 'entities/lesson'
 
-const MintModal = ({
+const MintCollectibleModal = ({
   isOpen,
   onClose,
 }: {
@@ -51,4 +51,4 @@ const MintModal = ({
   )
 }
 
-export default MintModal
+export default MintCollectibleModal
