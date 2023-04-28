@@ -340,7 +340,7 @@ const ConnectWalletButton = ({
                           (lesson) => lesson.kudosId === k.kudosTokenId
                         )
                         if (lesson) {
-                          if (lesson.kudosImageLink.includes('.mp4')) {
+                          if (lesson.lessonBadgeImageLink.includes('.mp4')) {
                             return (
                               <Box
                                 key={`kudos-${index}`}
@@ -362,7 +362,7 @@ const ConnectWalletButton = ({
                                   }}
                                 >
                                   <source
-                                    src={lesson.kudosImageLink}
+                                    src={lesson.lessonBadgeImageLink}
                                     type="video/mp4"
                                   ></source>
                                 </video>

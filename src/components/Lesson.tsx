@@ -101,7 +101,7 @@ const Lesson = ({
             <Text textAlign="center" fontWeight="bold" p="4">
               TODO: add sponsor
             </Text>
-            <Box textAlign="right" maxW="500px">
+            <Box m="auto" maxW="500px">
               <Box
                 style={{
                   cursor: 'pointer',
@@ -116,7 +116,7 @@ const Lesson = ({
                   collectibleHover ? (
                     <video autoPlay loop playsInline muted>
                       <source
-                        src={lesson.lessonNftVideo}
+                        src={lesson.lessonCollectibleVideo}
                         type="video/webm"
                       ></source>
                     </video>

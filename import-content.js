@@ -18,10 +18,11 @@ const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
 const POTION_API = 'https://potion.banklessacademy.com'
 
 const KEY_MATCHING = {
-  'Kudos image': 'kudosImageLink',
+  'Lesson badge image': 'lessonBadgeImageLink',
   'Lesson image': 'lessonImageLink',
   'Lesson collected image': 'lessonCollectedImageLink',
-  'Lesson NFT video': 'lessonNftVideo',
+  'Lesson collectible video': 'lessonCollectibleVideo',
+  'Lesson collectible ID': 'LessonCollectibleID',
   'Social image': 'socialImageLink',
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
@@ -102,7 +103,7 @@ axios
             // transform to number if the string contains a number
             [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k])) ||
               // ignore type transform for ModuleId & mirrorNFTAddress
-              (k === 'Module' || k === 'Mirror NFT address')
+              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible ID')
               ? notion.fields[k]
               : parseInt(notion.fields[k]),
           }),
@@ -115,7 +116,8 @@ axios
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.kudosId === undefined) lesson.kudosId = null
-      if (lesson.kudosImageLink === undefined) lesson.kudosImageLink = null
+      if (lesson.lessonBadgeImageLink === undefined) lesson.lessonBadgeImageLink = null
+      if (lesson.LessonCollectibleID === undefined) delete lesson.LessonCollectibleID
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
       if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''
@@ -214,8 +216,8 @@ axios
           await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
             .ignore()
 
-          if (lesson.kudosImageLink) {
-            lesson.kudosImageLink = get_img(lesson.kudosImageLink, lesson.slug, 'kudos')
+          if (lesson.lessonBadgeImageLink) {
+            lesson.lessonBadgeImageLink = get_img(lesson.lessonBadgeImageLink, lesson.slug, 'kudos')
           }
           if (lesson.lessonImageLink) {
             lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
@@ -353,10 +355,10 @@ axios
           // TEMP:
           lesson.lessonImageLink = 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png'
           lesson.lessonCollectedImageLink = 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png'
-          lesson.lessonNftVideo = 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm'
+          lesson.lessonCollectibleVideo = 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm'
           lesson.socialImageLink = 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1'
           if (lesson.slug !== 'kudos-testing')
-            lesson.kudosImageLink = 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png'
+            lesson.lessonBadgeImageLink = 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png'
 
           lessons[index] = lesson
 

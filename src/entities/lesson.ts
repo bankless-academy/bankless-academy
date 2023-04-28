@@ -11,10 +11,11 @@ export interface LessonType {
   marketingDescription: string
   duration: number
   difficulty: 'Easy' | 'Advanced' | 'Expert'
-  kudosImageLink?: string
+  lessonBadgeImageLink?: string
   lessonImageLink?: string
   lessonCollectedImageLink?: string
-  lessonNftVideo?: string
+  lessonCollectibleVideo?: string
+  LessonCollectibleID?: string
   socialImageLink?: string
   moduleId?: string
   learnings: string

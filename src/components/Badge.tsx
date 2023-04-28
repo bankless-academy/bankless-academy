@@ -64,7 +64,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             border="1px solid #4b474b"
             p="20px"
           >
-            {lesson.kudosImageLink.includes('.mp4') ? (
+            {lesson.lessonBadgeImageLink.includes('.mp4') ? (
               <video
                 autoPlay
                 loop
@@ -72,10 +72,17 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 muted
                 style={{ borderRadius: '30px', overflow: 'hidden' }}
               >
-                <source src={lesson.kudosImageLink} type="video/mp4"></source>
+                <source
+                  src={lesson.lessonBadgeImageLink}
+                  type="video/mp4"
+                ></source>
               </video>
             ) : (
-              <ChakraImage src={lesson.kudosImageLink} height="250px" mb="2" />
+              <ChakraImage
+                src={lesson.lessonBadgeImageLink}
+                height="250px"
+                mb="2"
+              />
             )}
             {lesson.kudosId && <MintKudos kudosId={lesson.kudosId} />}
           </Box>
