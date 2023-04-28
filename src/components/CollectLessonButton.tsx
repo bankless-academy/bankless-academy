@@ -10,7 +10,7 @@ import {
 import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
 
-import MintModal from 'components/MintModal'
+import MintCollectibleModal from 'components/MintCollectibleModal'
 
 const ButtonHelper = ({
   info,
@@ -80,7 +80,7 @@ const CollectLessonButton = ({
             </Box>
           </Button>
         )}
-        <MintModal isOpen={isOpen} onClose={onClose} />
+        <MintCollectibleModal isOpen={isOpen} onClose={onClose} />
       </>
     )
 }
