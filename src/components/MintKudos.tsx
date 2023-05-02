@@ -60,6 +60,14 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
 
   // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
 
+  const PoweredByMintKudos = (
+    <Box display="flex" justifyContent="center" mb={10} mt={-3}>
+      <ExternalLink href={`${MINTKUDOS_URL}`} alt="Powered by MintKudos">
+        <Image width="120px" src="/images/powered-by-MintKudos.svg" />
+      </ExternalLink>
+    </Box>
+  )
+
   async function checkPassport() {
     const result = await api('/api/passport', { address })
     if (result && result.status === 200) {
@@ -102,11 +110,14 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
           toast.closeAll()
           const txLink = `${MINTKUDOS_EXPLORER}tx/${result.data.txHash}`
           toast({
-            title: `Transaction in progress`,
+            title: `Minting in progress:`,
             description: (
-              <ExternalLink href={txLink} alt="Transaction in progress">
-                {isSmallScreen ? `${txLink.substring(0, 40)}...` : txLink}
-              </ExternalLink>
+              <>
+                <ExternalLink href={txLink} alt="Transaction in progress">
+                  {isSmallScreen ? `${txLink.substring(0, 40)}...` : txLink}
+                </ExternalLink>
+                {PoweredByMintKudos}
+              </>
             ),
             status: 'warning',
             duration: null,
@@ -186,7 +197,8 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         // TODO: add 🎊
         // TODO: refresh list of Kudos in the wallet
         toast({
-          title: 'Badge minted 🎉',
+          title: 'Badge successfully minted!',
+          description: PoweredByMintKudos,
           status: 'success',
           duration: 10000,
         })
@@ -219,13 +231,13 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     }
   }
 
-  const ConnectFirst = (
-    <>
-      <Heading as="h2" size="xl" textAlign="center" pt="8">
-        To claim rewards, you must connect your wallet.
-      </Heading>
-    </>
-  )
+  // const ConnectFirst = (
+  //   <>
+  //     <Heading as="h2" size="xl" textAlign="center" pt="8">
+  //       To claim rewards, you must connect your wallet.
+  //     </Heading>
+  //   </>
+  // )
 
   const GitcoinModal = (
     <Modal onClose={onClose} size={'xl'} isOpen={isOpen}>
@@ -256,52 +268,41 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
 
   return (
     <Box>
-      {!address ? (
-        <>{ConnectFirst}</>
+      <Heading as="h2" size="xl" textAlign="center">
+        <span style={{ color: theme.colors.secondary }}>{lesson.name}</span>
+        {` badge ${isKudosMintedLS ? 'claimed' : 'available'}!`}
+      </Heading>
+      {isKudosMintedLS ? null : passportLS?.verified && !isOpen ? (
+        <Box textAlign="center">
+          <Button
+            colorScheme={'green'}
+            onClick={mintKudos}
+            variant="primary"
+            isLoading={isMintingInProgress}
+            loadingText={status}
+          >
+            {status !== '' ? status : 'Mint badge 🛠'}
+          </Button>
+        </Box>
       ) : (
         <>
-          <Heading as="h2" size="xl" textAlign="center">
-            <span style={{ color: theme.colors.secondary }}>{lesson.name}</span>
-            {` badge ${isKudosMintedLS ? 'claimed' : 'available'}!`}
-          </Heading>
-          <Box display="flex" justifyContent="center" mb={10} mt={-3}>
-            <ExternalLink href={`${MINTKUDOS_URL}`} alt="Powered by MintKudos">
-              <Image width="120px" src="/images/powered-by-MintKudos.svg" />
-            </ExternalLink>
-          </Box>
-          {isKudosMintedLS ? null : passportLS?.verified && !isOpen ? (
-            <Box textAlign="center">
+          <Box>
+            <Heading as="h2" size="xl" textAlign="center">
+              {`To claim rewards you need a `}
               <Button
-                colorScheme={'green'}
-                onClick={mintKudos}
                 variant="primary"
-                isLoading={isMintingInProgress}
-                loadingText={status}
+                onClick={onOpen}
+                mt={isSmallScreen ? '2' : ''}
               >
-                {status !== '' ? status : 'Mint badge 🛠'}
+                {`Gitcoin Passport`}
               </Button>
-            </Box>
-          ) : (
-            <>
-              <Box>
-                <Heading as="h2" size="xl" textAlign="center">
-                  {`To claim rewards you need a `}
-                  <Button
-                    variant="primary"
-                    onClick={onOpen}
-                    mt={isSmallScreen ? '2' : ''}
-                  >
-                    {`Gitcoin Passport`}
-                  </Button>
-                </Heading>
-                <p>
-                  Authentication takes ~2 minutes, and protects the legitimacy
-                  of Academy rewards.
-                </p>
-              </Box>
-              {GitcoinModal}
-            </>
-          )}
+            </Heading>
+            <p>
+              Authentication takes ~2 minutes, and protects the legitimacy of
+              Academy rewards.
+            </p>
+          </Box>
+          {GitcoinModal}
         </>
       )}
     </Box>

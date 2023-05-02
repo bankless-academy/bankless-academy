@@ -98,6 +98,7 @@ const CollectLessonButton = ({
         <MintCollectibleModal isOpen={isOpen} onClose={onClose} />
       </>
     )
+  else return <Box />
 }
 
 export default CollectLessonButton

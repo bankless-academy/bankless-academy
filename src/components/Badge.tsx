@@ -47,6 +47,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               w="100%"
               borderBottomRadius="0"
               disabled={!isQuestCompleted && !isKudosMintedLS}
+              cursor={isKudosMintedLS ? 'auto' : 'pointer'}
             >
               {isKudosMintedLS ? 'Badge Minted' : 'Mint Badge'}
             </Button>
@@ -62,16 +63,9 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             }
             overflow="hidden"
             border="1px solid #4b474b"
-            p="20px"
           >
             {lesson.lessonBadgeImageLink.includes('.mp4') ? (
-              <video
-                autoPlay
-                loop
-                playsInline
-                muted
-                style={{ borderRadius: '30px', overflow: 'hidden' }}
-              >
+              <video autoPlay loop playsInline muted>
                 <source
                   src={lesson.lessonBadgeImageLink}
                   type="video/mp4"
@@ -84,7 +78,9 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 mb="2"
               />
             )}
-            {lesson.kudosId && <MintKudos kudosId={lesson.kudosId} />}
+            {lesson.kudosId && !isKudosMintedLS && (
+              <MintKudos kudosId={lesson.kudosId} />
+            )}
           </Box>
           {isKudosMintedLS && (
             <Box

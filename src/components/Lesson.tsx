@@ -75,12 +75,12 @@ const Lesson = ({
             display={isSmallScreen ? 'contents' : 'block'}
             position="relative"
           >
-            <Box maxW="450px" m="auto">
+            <Box m="auto">
               <Box h="0">
                 <InternalLink href="/lessons" alt={`Back to Lesson Selection`}>
                   <Button
                     position="relative"
-                    top={isSmallScreen ? '8px' : '-38px'}
+                    top={isSmallScreen ? '8px' : '-54px'}
                     left={isSmallScreen ? '0' : '-67px'}
                     size="lg"
                     variant="secondaryBig"
@@ -100,9 +100,9 @@ const Lesson = ({
               >
                 {lesson.name}
               </Text>
-              <Text textAlign="center" fontWeight="bold" p="4">
+              {/* <Text textAlign="center" fontWeight="bold" p="4">
                 TODO: add sponsor
-              </Text>
+              </Text> */}
               <Box m="auto" maxW="500px">
                 <Box
                   style={{
