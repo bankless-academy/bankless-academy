@@ -360,8 +360,7 @@ axios
           lesson.lessonCollectedImageLink = 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png'
           lesson.lessonCollectibleVideo = 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm'
           lesson.socialImageLink = 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1'
-          if (lesson.slug !== 'kudos-testing')
-            lesson.lessonBadgeImageLink = 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png'
+          lesson.lessonBadgeImageLink = 'https://link.assetfile.io/Fp8a1TuFMsIAbrsU6j9r3/badge_a01_nftvideo.mp4'
 
           lessons[index] = lesson
 
