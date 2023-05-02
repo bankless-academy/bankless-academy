@@ -61,8 +61,8 @@ const CollectLessonButton = ({
       <>
         {lesson.kudosId && (
           <Button
+            size="lg"
             variant={isLessonMintedLS ? 'primaryGold' : 'secondaryGold'}
-            // onMouseEnter
             onClick={() => !isLessonMintedLS && onOpen()}
           >
             <ButtonHelper

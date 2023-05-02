@@ -126,6 +126,17 @@ const secondaryBig = {
       },
 }
 
+const secondaryLg = {
+  background: '#3F3253',
+  backdropFilter: 'blur(50px)',
+  _hover: isMobile
+    ? {}
+    : {
+        ...paddingBig,
+        ...secondaryStyle,
+      },
+}
+
 const secondaryWhite = {
   ...secondaryBig,
   background: 'transparent',
@@ -146,8 +157,9 @@ type variantsTypes = {
   primaryBigLast: variantType
   secondary: variantType
   secondaryGold: variantType
-  secondaryWhite: variantType
   secondaryBig: variantType
+  secondaryLg: variantType
+  secondaryWhite: variantType
 }
 
 const variants: variantsTypes = {
@@ -158,8 +170,9 @@ const variants: variantsTypes = {
   primaryBigLast,
   secondary,
   secondaryGold,
-  secondaryWhite,
   secondaryBig,
+  secondaryLg,
+  secondaryWhite,
 }
 
 export default {

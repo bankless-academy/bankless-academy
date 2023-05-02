@@ -1,4 +1,4 @@
-import { Box, Button, Image as ChakraImage, Tooltip } from '@chakra-ui/react'
+import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 
@@ -41,7 +41,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     <>
       <Box textAlign="center" mb="40px">
         <Box width="290px" m="auto">
-          {isQuestCompleted && (
+          {(isQuestCompleted || isKudosMintedLS) && (
             <Button
               variant={isKudosMintedLS ? 'secondary' : 'primary'}
               w="100%"
@@ -88,32 +88,40 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           </Box>
           {isKudosMintedLS && (
             <Box
-              display="flex"
+              // display="flex"
               justifyContent="center"
               borderRadius="0px 0px 8px 8px"
               border="1px solid #4b474b"
               borderTop="0"
+              p="4"
             >
+              <Box pb="2">
+                <ExternalLink href={twitterLink} mr="2">
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    isFullWidth
+                    borderBottomRadius="0"
+                    leftIcon={
+                      <ChakraImage width="24px" src="/images/Twitter.svg" />
+                    }
+                  >
+                    Share on Twitter
+                  </Button>
+                </ExternalLink>
+              </Box>
               <ExternalLink href={`${MINTKUDOS_OPENSEA_URL}${lesson.kudosId}`}>
-                <Tooltip hasArrow label="View on OpenSea">
-                  <Button
-                    leftIcon={
-                      <ChakraImage width="24px" src="/images/OpenSea.svg" />
-                    }
-                  ></Button>
-                </Tooltip>
-              </ExternalLink>
-              <ExternalLink href={twitterLink} mr="2">
-                <Tooltip hasArrow label="Share on Twitter">
-                  <Button
-                    leftIcon={
-                      <ChakraImage
-                        width="24px"
-                        src="/images/Twitter-blue.svg"
-                      />
-                    }
-                  ></Button>
-                </Tooltip>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  isFullWidth
+                  borderTopRadius="0"
+                  leftIcon={
+                    <ChakraImage width="24px" src="/images/OpenSea.svg" />
+                  }
+                >
+                  View on OpenSea
+                </Button>
               </ExternalLink>
             </Box>
           )}
