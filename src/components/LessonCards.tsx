@@ -246,8 +246,7 @@ const LessonCards: React.FC = () => {
                   >
                     <Image
                       src={
-                        // TEMP: make this dynamic
-                        lesson.slug === 'wallet-basics'
+                        isLessonCollected
                           ? lesson.lessonCollectedImageLink
                           : lesson.lessonImageLink
                       }

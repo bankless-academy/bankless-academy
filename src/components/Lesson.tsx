@@ -35,7 +35,7 @@ const Lesson = ({
     `isLessonOpen`,
     false
   )
-  const [collectibleHover, setCollectibleHover] = useState(false)
+  const [collectibleHover] = useState(true)
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
 
@@ -110,8 +110,8 @@ const Lesson = ({
                   }}
                   minH="260px"
                   onClick={() => setIsLessonOpenLS(true)}
-                  onMouseOver={() => setCollectibleHover(true)}
-                  onMouseOut={() => setCollectibleHover(false)}
+                  // onMouseOver={() => setCollectibleHover(true)}
+                  // onMouseOut={() => setCollectibleHover(false)}
                 >
                   {/* TEMP: make this dynamic */}
                   {lesson.slug === 'wallet-basics' ? (
@@ -134,7 +134,7 @@ const Lesson = ({
                 display="flex"
                 mt="4"
                 justifyContent="space-between"
-                maxW="370px"
+                maxW="410px"
                 m="auto"
                 mb="8"
               >

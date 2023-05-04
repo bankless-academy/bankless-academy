@@ -366,7 +366,7 @@ export async function getArticlesCollected(address: string): Promise<string[]> {
     const ownerNFTs = await axios.get(
       `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100${MIRROR_ARTICLE_ADDRESSES.map(
         (articleAddress) => `&contractAddresses[]=${articleAddress}`
-      ).join()}&withMetadata=false`
+      ).join('')}&withMetadata=false`
     )
     if (ownerNFTs.data) {
       // console.log(ownerNFTs.data?.ownedNfts)
@@ -390,7 +390,7 @@ export async function getLessonsCollected(address: string): Promise<string[]> {
     const ownerNFTs = await axios.get(
       `https://polygon-mumbai.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100${COLLECTIBLE_ADDRESSES.map(
         (collectibleAddress) => `&contractAddresses[]=${collectibleAddress}`
-      ).join()}&withMetadata=false`
+      ).join('')}&withMetadata=false`
     )
     if (ownerNFTs.data) {
       // console.log(ownerNFTs.data?.ownedNfts)
@@ -402,6 +402,22 @@ export async function getLessonsCollected(address: string): Promise<string[]> {
     } else {
       return []
     }
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
+export async function getLessonsCollectors(
+  collectibleAddress: string
+): Promise<[]> {
+  try {
+    // TODO: replace with mainet
+    const NFTCollectors = await axios.get(
+      `https://polygon-mumbai.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getOwnersForCollection?contractAddress=${collectibleAddress}`
+    )
+    // console.log(NFTCollectors.data)
+    return NFTCollectors.data?.ownerAddresses || []
   } catch (error) {
     console.error(error)
     return []
