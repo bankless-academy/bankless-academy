@@ -5,14 +5,32 @@
     filter: invert(1);
   }
 
-  .highlight-Paper-root {
+  .highlight-Paper-root,
+  .highlight-1ora4m0,
+  .highlight-Skeleton-root::after,
+  .highlight-Skeleton-root::before {
     background-color: transparent !important;
+  }
+
+  .highlight-Skeleton-root {
+    content: ' ';
+    background-image: url('/loading.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 200px;
+    height: 200px;
   }
 
   video,
   .highlight-Image-imageWrapper,
   .ju367vh {
     filter: invert(1);
+  }
+
+  video {
+    margin-top: -30px;
+    margin-bottom: 30px;
   }
 
   video::-webkit-media-controls {
