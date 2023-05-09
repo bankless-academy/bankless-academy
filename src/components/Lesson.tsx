@@ -63,6 +63,7 @@ const Lesson = ({
                 top="0"
                 right="-500px"
                 h="100%"
+                zIndex="1"
                 // src="/images/bankless-instructor.png"
                 src="https://link.assetfile.io/Pat8R3ry2Whkdey4fj8xr/Instructor.png"
               />
