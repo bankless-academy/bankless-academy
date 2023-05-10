@@ -14,7 +14,6 @@ import { useLocalStorage } from 'usehooks-ts'
 import MintCollectibleModal from 'components/MintCollectibleModal'
 import { getLessonsCollectors } from 'utils'
 import ExternalLink from 'components/ExternalLink'
-import { MINTKUDOS_OPENSEA_URL } from 'constants/kudos'
 
 const ButtonHelper = ({
   info,
@@ -85,10 +84,7 @@ const CollectLessonButton = ({
   if (lesson.hasCollectible)
     return (
       <>
-        <Box
-          cursor={isLessonMintedLS ? 'auto' : 'pointer'}
-          onClick={() => !isLessonMintedLS && onOpen()}
-        >
+        <Box>
           {isLessonMintedLS ? (
             <Box
               border="1px solid #F1B15A"
@@ -98,6 +94,10 @@ const CollectLessonButton = ({
               py="3"
               px="5"
               position="relative"
+              // cursor={isLessonMintedLS ? 'auto' : 'pointer'}
+              cursor="pointer"
+              // onClick={() => !isLessonMintedLS && onOpen()}
+              onClick={() => onOpen()}
             >
               {LessonCollectibleHelper}
               <Box>
@@ -113,6 +113,10 @@ const CollectLessonButton = ({
               py="3"
               px="5"
               position="relative"
+              // cursor={isLessonMintedLS ? 'auto' : 'pointer'}
+              cursor="pointer"
+              // onClick={() => !isLessonMintedLS && onOpen()}
+              onClick={() => onOpen()}
             >
               {LessonCollectibleHelper}
               <Box>
@@ -144,9 +148,7 @@ const CollectLessonButton = ({
                     </Button>
                   </ExternalLink>
                 </Box>
-                <ExternalLink
-                  href={`${MINTKUDOS_OPENSEA_URL}${lesson.kudosId}`}
-                >
+                <ExternalLink href="https://testnets.opensea.io/assets/mumbai/0x464b891cc07adabe10746aa6af73a34c6d473cd9/1">
                   <Button
                     variant="primaryGold"
                     isFullWidth
