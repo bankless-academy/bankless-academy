@@ -75,25 +75,28 @@ export default async function handler(
         },
       }
       const passportRes = await axios.get(
-        `https://api.scorer.gitcoin.co/ceramic-cache/stamp?address=${address}`,
+        `https://api.scorer.gitcoin.co/registry/stamps/${address}?limit=1000`,
         gitcoinConfig
       )
       const passport: any = passportRes.data
       console.log('** passport **', passport)
-      const validStamps = filterValidStamps(passport.stamps)
+      const validStamps = filterValidStamps(passport.items)
       console.log('validStamps', validStamps)
       const stampHashes = {}
       const stampProviders = {}
       const stampHashesSearch = []
       let whereCondition = 'gitcoin_stamps @> ?'
       let sybil = []
-      if (passport?.stamps?.length) {
-        for (const stamp of passport?.stamps) {
-          if (stamp.stamp?.credentialSubject?.hash)
-            stampHashes[stamp.provider] = stamp.stamp?.credentialSubject?.hash
+      if (passport?.items?.length) {
+        for (const stamp of passport?.items) {
+          const provider = stamp.credential?.credentialSubject?.provider
+          console.log(stamp)
+          if (stamp.credential?.credentialSubject?.hash)
+            stampHashes[provider] = stamp.credential?.credentialSubject?.hash
         }
-        for (const stamp of passport?.stamps) {
-          stampProviders[stamp.provider] = stamp
+        for (const stamp of passport?.items) {
+          const provider = stamp.credential?.credentialSubject?.provider
+          stampProviders[provider] = { provider, stamp: stamp.credential }
         }
         console.log('stampHashes', stampHashes)
         // merge previous data without deleting other keys
