@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
               Twitter
             </ExternalLink>
             <span>&nbsp;|&nbsp;</span>
-            <ExternalLink href="https://gm.xyz/c/BanklessAcademy">
+            <ExternalLink href="https://lenster.xyz/u/banklessacademy">
               Community
             </ExternalLink>
             <span>&nbsp;|&nbsp;</span>

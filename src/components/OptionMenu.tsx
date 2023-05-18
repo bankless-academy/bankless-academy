@@ -78,7 +78,7 @@ const OptionMenu = ({
                 </MenuItem>
               )}
               <ExternalLink
-                href="https://www.lensfrens.xyz/banklessacademy.lens/follow"
+                href="https://lenster.xyz/u/banklessacademy"
                 color="white"
               >
                 <MenuItem>
