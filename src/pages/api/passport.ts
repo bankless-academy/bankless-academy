@@ -68,8 +68,15 @@ export default async function handler(
       // read passport
       // const passportReader: Passport = await reader.getPassport(address)
       // console.log(passportReader)
+      const gitcoinConfig = {
+        headers: {
+          accept: 'application/json',
+          'X-API-Key': process.env.GITCOIN_PASSPORT_API_KEY,
+        },
+      }
       const passportRes = await axios.get(
-        `https://api.scorer.gitcoin.co/ceramic-cache/stamp?address=${address}`
+        `https://api.scorer.gitcoin.co/ceramic-cache/stamp?address=${address}`,
+        gitcoinConfig
       )
       const passport: any = passportRes.data
       console.log('** passport **', passport)
