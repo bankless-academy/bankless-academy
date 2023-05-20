@@ -9,6 +9,7 @@ import {
   VStack,
   SimpleGrid,
   Tooltip,
+  useToast,
 } from '@chakra-ui/react'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
@@ -199,6 +200,7 @@ const Lesson = ({
     false
   )
   const [quizRetryCount, setQuizRetryCount] = useState({})
+  const toast = useToast()
 
   const router = useRouter()
   const { embed } = router.query
@@ -284,7 +286,15 @@ const Lesson = ({
   const selectAnswer = (e, answerNumber: number) => {
     if (slide.type !== 'QUIZ') return
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
+    toast.closeAll()
+    const feedback = slide.quiz?.feedback[answerNumber - 1]
     if (slide.quiz.rightAnswerNumber === answerNumber) {
+      if (feedback?.length)
+        toast({
+          title: feedback,
+          status: 'success',
+          duration: 20000,
+        })
       // correct answer
       Mixpanel.track('quiz_correct_answer', {
         lesson: lesson?.name,
@@ -296,6 +306,12 @@ const Lesson = ({
       })
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
     } else if (!answerIsCorrect) {
+      if (feedback?.length)
+        toast({
+          title: feedback,
+          status: 'warning',
+          duration: 20000,
+        })
       // wrong answer
       Mixpanel.track('quiz_wrong_answer', {
         lesson: lesson?.name,
