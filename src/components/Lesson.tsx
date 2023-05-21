@@ -289,7 +289,9 @@ const Lesson = ({
     if (slide.type !== 'QUIZ') return
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
     toast.closeAll()
-    const feedback = slide.quiz?.feedback[answerNumber - 1]
+    const feedback = slide.quiz?.feedback?.length
+      ? slide.quiz?.feedback[answerNumber - 1]
+      : undefined
     if (slide.quiz.rightAnswerNumber === answerNumber) {
       if (feedback?.length)
         toast({
