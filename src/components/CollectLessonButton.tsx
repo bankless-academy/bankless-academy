@@ -12,6 +12,7 @@ import MintCollectibleModal from 'components/MintCollectibleModal'
 import { getLessonsCollectors } from 'utils'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
+import { useAccount } from 'wagmi'
 
 const CollectiblesHelper = (
   <Helper
@@ -42,22 +43,34 @@ const CollectLessonButton = ({
 }: {
   lesson: LessonType
 }): JSX.Element => {
-  const [isLessonMintedLS] = useLocalStorage(
+  const [isLessonMintedLS, setIsLessonMintedLS] = useLocalStorage(
     `isLessonMinted-${lesson.LessonCollectibleTokenAddress}`,
+    false
+  )
+  const [isKudosMintedLS] = useLocalStorage(
+    `isKudosMinted-${lesson.kudosId}`,
     false
   )
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
+  const { address } = useAccount()
 
   useEffect(() => {
     const updateLessonsCollectors = async () => {
       const NFTCollectors = await getLessonsCollectors(
         lesson.LessonCollectibleTokenAddress
       )
+      if (
+        address.length &&
+        NFTCollectors.length &&
+        NFTCollectors.includes(address.toLowerCase())
+      ) {
+        setIsLessonMintedLS(true)
+      }
       if (NFTCollectors) setNumberOfOwners(NFTCollectors.length.toString())
     }
     updateLessonsCollectors().catch(console.error)
-  }, [])
+  }, [address])
 
   const twitterLink = ''
 
@@ -81,7 +94,7 @@ const CollectLessonButton = ({
                 <Box fontSize="xs">- {numberOfOwners}/100 claimed -</Box>
               </Box>
             </Box>
-          ) : (
+          ) : isKudosMintedLS ? (
             <Box
               background="linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%)"
               borderTopRadius="8px"
@@ -98,49 +111,66 @@ const CollectLessonButton = ({
                 <Box fontSize="xs">- {numberOfOwners}/100 claimed -</Box>
               </Box>
             </Box>
+          ) : (
+            <Box
+              border="1px solid #F1B15A"
+              borderRadius="8px"
+              textAlign="center"
+              py="3"
+              px="5"
+              position="relative"
+            >
+              {CollectiblesHelper}
+              <Box color="#F1B15A">
+                <Box fontWeight="bold">Complete to Collect</Box>
+                <Box fontSize="xs">- {numberOfOwners}/100 claimed -</Box>
+              </Box>
+            </Box>
           )}
-          <Box
-            border="1px solid #4b474b"
-            borderBottomRadius="8px"
-            borderTopWidth="0"
-            textAlign="center"
-            p="4"
-          >
-            {isLessonMintedLS ? (
-              <>
-                <Box pb="2">
-                  <ExternalLink href={twitterLink} mr="2">
+          {isKudosMintedLS && (
+            <Box
+              border="1px solid #4b474b"
+              borderBottomRadius="8px"
+              borderTopWidth="0"
+              textAlign="center"
+              p="4"
+            >
+              {isLessonMintedLS ? (
+                <>
+                  <Box pb="2">
+                    <ExternalLink href={twitterLink} mr="2">
+                      <Button
+                        variant="primaryGold"
+                        isFullWidth
+                        borderBottomRadius="0"
+                        leftIcon={
+                          <ChakraImage width="24px" src="/images/Twitter.svg" />
+                        }
+                      >
+                        Share on Twitter
+                      </Button>
+                    </ExternalLink>
+                  </Box>
+                  <ExternalLink href="https://testnets.opensea.io/assets/mumbai/0x464b891cc07adabe10746aa6af73a34c6d473cd9/1">
                     <Button
                       variant="primaryGold"
                       isFullWidth
-                      borderBottomRadius="0"
+                      borderTopRadius="0"
                       leftIcon={
-                        <ChakraImage width="24px" src="/images/Twitter.svg" />
+                        <ChakraImage width="24px" src="/images/OpenSea.svg" />
                       }
                     >
-                      Share on Twitter
+                      View on OpenSea
                     </Button>
                   </ExternalLink>
-                </Box>
-                <ExternalLink href="https://testnets.opensea.io/assets/mumbai/0x464b891cc07adabe10746aa6af73a34c6d473cd9/1">
-                  <Button
-                    variant="primaryGold"
-                    isFullWidth
-                    borderTopRadius="0"
-                    leftIcon={
-                      <ChakraImage width="24px" src="/images/OpenSea.svg" />
-                    }
-                  >
-                    View on OpenSea
-                  </Button>
-                </ExternalLink>
-              </>
-            ) : (
-              <>
-                <b>Price:</b> 0.05 Ξ
-              </>
-            )}
-          </Box>
+                </>
+              ) : (
+                <>
+                  <b>Price:</b> 0.05 Ξ
+                </>
+              )}
+            </Box>
+          )}
         </Box>
         <MintCollectibleModal isOpen={isOpen} onClose={onClose} />
       </>

@@ -410,7 +410,7 @@ export async function getLessonsCollected(address: string): Promise<string[]> {
 
 export async function getLessonsCollectors(
   collectibleAddress: string
-): Promise<[]> {
+): Promise<string[]> {
   try {
     // TODO: replace with mainet
     const NFTCollectors = await axios.get(

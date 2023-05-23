@@ -141,7 +141,7 @@ const Lesson = ({
               >
                 <CollectLessonButton lesson={lesson} />
                 <Button
-                  variant={isKudosMintedLS ? 'secondaryLg' : 'primary'}
+                  variant={Quest.isQuestCompleted ? 'secondaryLg' : 'primary'}
                   size="lg"
                   style={{ padding: '0 23px' }}
                   onClick={() => setIsLessonOpenLS(true)}
@@ -168,7 +168,7 @@ const Lesson = ({
                   {lesson.description}
                 </Text>
               </Box>
-              <Box textAlign="center">
+              <Box>
                 <Text
                   as="h2"
                   fontSize="large"
@@ -179,6 +179,8 @@ const Lesson = ({
                 >
                   Rewards
                 </Text>
+              </Box>
+              <Box textAlign="center">
                 <Badge
                   lesson={lesson}
                   isQuestCompleted={Quest.isQuestCompleted}
