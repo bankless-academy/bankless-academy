@@ -64,7 +64,7 @@ const CollectLessonButton = ({
   if (lesson.hasCollectible)
     return (
       <>
-        <Box>
+        <Box w="232px">
           {isLessonMintedLS ? (
             <Box
               border="1px solid #F1B15A"

@@ -16,7 +16,8 @@ const BadgeHelper = (
       <>
         <Box>
           Academy Badges are non-tradable NFTs that serve as proof of your
-          achievements on the blockchain.
+          achievements on the blockchain. You can mint them for free after you
+          answered all the questions correctly and validated the lesson quest.
         </Box>
       </>
     }

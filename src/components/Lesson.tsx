@@ -135,7 +135,7 @@ const Lesson = ({
                 display="flex"
                 mt="4"
                 justifyContent="space-between"
-                maxW="410px"
+                maxW="500px"
                 m="auto"
                 mb="8"
               >
