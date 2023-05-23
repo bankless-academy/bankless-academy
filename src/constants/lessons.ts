@@ -21,7 +21,6 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: null,
     notionId: '89cf10ef71b54fbfa7c3e6b41d55b36f',
     slug: 'going-bankless',
     imageLinks: [
@@ -241,7 +240,6 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=977d14c9-f368-4047-b058-5f97884125d5',
     hasCollectible: true,
     notionId: '98405bd0f2b94bb2a3079eed504a011e',
     slug: 'wallet-basics',
@@ -473,7 +471,6 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=b46a6fa7-1bf8-4f1e-8db3-a725fe98cac9',
     hasCollectible: true,
     notionId: '562dba7dbd3949b480be367a64821cdf',
     slug: 'blockchain-basics',
@@ -681,7 +678,6 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=c5866aeb-f37d-41a0-995f-46223a9cc729',
     notionId: '7a5b9b7afe804e6984bf279301dfa1db',
     slug: 'web3-security',
     imageLinks: [
@@ -822,7 +818,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '66a155651e4b4434a1f1d7c9f7e82e4c',
         title: 'Social Media Best Practices',
-        content: '<div class="bloc1"><p>Practices for staying safe<strong>:</strong></p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our <a href=\'https://gm.xyz/c/BanklessAcademy\'>Explorer Community</a> is a great place for questions like these.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/social-media-best-practices-0776e310.svg\'></div>'
+        content: '<div class="bloc1"><p>Practices for staying safe<strong>:</strong></p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our <a href=\'https://lenster.xyz/u/banklessacademy\'>Explorer Community</a> is a great place for questions like these.</p></div><div class="bloc2"><img src=\'/lesson/web3-security/social-media-best-practices-0776e310.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -927,7 +923,6 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=cd3e1630-72a6-40c4-ac26-ce5809e19af6',
     notionId: '6e14e3cfc6a44087b3b3d15dd07d2fee',
     slug: 'layer-1-blockchains',
     imageLinks: [
@@ -1169,7 +1164,6 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: 'https://tally.so/r/mZ8orv',
     endOfLessonText: 'To learn more about Optimism and to give feedback about this lesson, click Next.',
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=8686372f-ad12-4b73-9648-9e92c8869d67',
     notionId: '340eb401ab824dea8f85aace1aaf69c1',
     slug: 'layer-2-blockchains',
     imageLinks: [
@@ -1365,7 +1359,6 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: null,
     mirrorLink: 'https://mirror.xyz/banklessacademy.eth/zLajMWXQC44H4uQOXK5j9ROZhuC3xwgoddLtAQQo0k0',
     mirrorNFTAddress: '0x235f3dfe5106f137d8b137c1b7fa115076e8b476',
     isArticle: true,
@@ -1393,7 +1386,6 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=1ee6aa7e-8174-464c-b13c-69faef819b3e',
     notionId: 'fdbf6e4c2ad648c6b815137d0e05eb90',
     slug: 'intro-to-defi',
     imageLinks: [
@@ -1623,7 +1615,6 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: null,
     notionId: '0ff0ff5bde6c43f99f7710352069163e',
     slug: 'dexs-and-amms',
     imageLinks: [],
@@ -1661,7 +1652,6 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: 'https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=671cc928-93d6-4c9a-9718-28ed3d56af7c',
     notionId: '42578b8813114832b8930cf59f6125af',
     slug: 'dex-aggregators',
     imageLinks: [
@@ -1871,7 +1861,6 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
-    communityDiscussionLink: null,
     notionId: '7bc2bf9be4ac4e9181782f996a2a6060',
     slug: 'kudos-testing',
     imageLinks: [],

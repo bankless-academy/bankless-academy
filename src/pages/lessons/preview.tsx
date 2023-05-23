@@ -29,42 +29,48 @@ const processLesson = (htmlPage, notion_id) => {
     // replace with type QUIZ
     if (slide.content.includes("<div class='checklist'>")) {
       quizNb++
-      slide.type = 'QUIZ'
-      const [question, answers] = slide.content.split("<div class='checklist'>")
-      const quiz_answers = answers.split('</label><label>')
-      delete slide.content
       slide.quiz = {}
+      const [question] = slide.content.split("<div class='checklist'>")
       slide.quiz.question = question.replace('<p>', '').replace('</p>', '')
-      slide.quiz.rightAnswerNumber = null
+      slide.type = 'QUIZ'
       slide.quiz.answers = []
-      quiz_answers.map((quiz_answer, i) => {
+      slide.quiz.feedback = []
+      const quizDiv = document.createElement('div')
+      quizDiv.innerHTML = slide.content
+      const checkboxes = quizDiv.querySelectorAll(
+        '.checklist input[type="checkbox"]:disabled'
+      )
+      const blockquotes = quizDiv.querySelectorAll('blockquote')
+      const labels = quizDiv.querySelectorAll('.checklist label')
+
+      for (let i = 0; i < checkboxes.length; i++) {
         const nb = i + 1
-        if (
-          slide.quiz.rightAnswerNumber !== null &&
-          quiz_answer.includes('disabled checked>')
+        const checkbox: any = checkboxes[i]
+        const blockquote = blockquotes[i]
+        const label = labels[i]
+
+        const answer = label.textContent.trim()
+        slide.quiz.answers.push(answer)
+
+        const feedback = blockquote?.textContent.trim()
+        slide.quiz.feedback.push(feedback)
+
+        const isChecked = checkbox?.checked
+        if (isChecked) slide.quiz.rightAnswerNumber = nb
+      }
+      if (!slide.quiz.rightAnswerNumber)
+        throw new Error(
+          `missing right answer, please check ${POTION_API}/html?id=${notion_id}`
         )
-          // NOTION BUG: in case of bug with checked checkbox, recreate a new one
-          throw new Error(
-            `more than 1 right answer, please check ${POTION_API}/html?id=${notion_id}`
-          )
-        if (quiz_answer.includes('disabled checked>'))
-          slide.quiz.rightAnswerNumber = nb
-        slide.quiz.answers.push(
-          quiz_answer.replace(
-            // remove tags
-            /<\/?[^>]+(>|$)/g,
-            ''
-          )
-        )
-      })
       slide.quiz.id = `${lesson.slug}-${quizNb}`
     }
     if (slide.content) {
       if ((slide.content.match(/<img /g) || []).length > 1) {
         // multiple images
         const blocs = slide.content
-          .replace(/<img src='/g, '|SPLIT|')
-          .replace(/'>/g, '|SPLIT|')
+          .replace(/<img src='([^>]*)'>/gi, '|SPLIT|$1|SPLIT|')
+          // .replace(/<img src='/g, '|SPLIT|')
+          // .replace(/'>/g, '|SPLIT|')
           .replace('|SPLIT|', '')
           .split('|SPLIT|')
         slide.content = blocs.reduce(

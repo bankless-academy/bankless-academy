@@ -38,7 +38,7 @@ import {
   KUDOS_IDS,
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
-import { getUD, getLensProfile, shortenAddress } from 'utils'
+import { getUD, getLensProfile, shortenAddress, api } from 'utils'
 import { polygon, optimism } from 'wagmi/chains'
 
 const Overlay = styled(Box)`
@@ -179,14 +179,8 @@ const ConnectWalletButton = ({
 
   const verify = async () => {
     try {
-      const verifyRes = await fetch('/api/siwe/verify', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: siwe,
-      })
-      if (verifyRes.ok) {
+      const verifyRes = await api('/api/siwe/verify', JSON.parse(siwe))
+      if (verifyRes.data.ok) {
         loadAddress(address)
       } else {
         console.error('pb SIWE signature')
@@ -231,20 +225,14 @@ const ConnectWalletButton = ({
       clearTimeout(timeout)
 
       // Verify signature
-      const siwe = JSON.stringify({ message, signature })
+      const siwe = { message, signature }
       // TODO: use /me to get verified address
       // const res = await fetch('/api/siwe/me')
       // TODO: add support for multiple windows open
+      const verifyRes = await api('/api/siwe/verify', siwe)
       // https://github.com/BanklessDAO/bankless-academy/pull/90/commits/d130d22e70ad146b1e619133864d03a8bf4c3cb4#diff-caedf14611e4652b0b5f0287a5bc59621a76c1d0b41c544302d3c8c1a7641d22L107
-      const verifyRes = await fetch('/api/siwe/verify', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: siwe,
-      })
-      if (!verifyRes.ok) throw new Error('Error verifying message')
-      setSiweLS(siwe)
+      if (!verifyRes.data.ok) throw new Error('Error verifying message')
+      setSiweLS(JSON.stringify(siwe))
       loadAddress(address)
       setWaitingForSIWE(false)
     } catch (error) {

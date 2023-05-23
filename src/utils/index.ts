@@ -123,9 +123,9 @@ export const track = (event: string, value?: any): void => {
   if (typeof window !== 'undefined') {
     // TODO: change type of event value to JSON instead of varchar(50)
     // window.umami.trackEvent(typeof value === 'object' ? JSON.stringify(value) : value, event)
-    window?.umami?.trackEvent(
-      typeof value === 'object' ? Object.values(value).join('|') : value,
-      event
+    window?.umami?.track(
+      event,
+      typeof value === 'object' ? Object.values(value).join('|') : value
     )
   }
 }

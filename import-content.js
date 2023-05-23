@@ -1,6 +1,8 @@
 /* eslint-disable no-unreachable */
 /* eslint-disable no-console */
 require('dotenv').config()
+const jsdom = require('jsdom')
+const { JSDOM } = jsdom
 const axios = require('axios')
 const knex = require('knex')
 const fs = require('fs')
@@ -40,7 +42,7 @@ const KEY_MATCHING = {
   'Enable Comments': 'isCommentsEnabled',
   'End of Lesson redirect': 'endOfLessonRedirect',
   'End of Lesson text': 'endOfLessonText',
-  'Community discussion link': 'communityDiscussionLink',
+  // 'Community discussion link': 'communityDiscussionLink',
   'Mirror link': 'mirrorLink',
   'Mirror NFT address': 'mirrorNFTAddress',
 }
@@ -250,38 +252,42 @@ axios
             // replace with type QUIZ
             if (slide.content.includes("<div class='checklist'>")) {
               quizNb++
+              slide.quiz = {}
               slide.type = 'QUIZ'
-              const [question, answers] = slide.content.split(
+              const [question] = slide.content.split(
                 "<div class='checklist'>"
               )
-              const quiz_answers = answers.split('</label><label>')
-              delete slide.content
-              slide.quiz = {}
               slide.quiz.question = question
                 .replace('<p>', '')
                 .replace('</p>', '')
-              slide.quiz.rightAnswerNumber = null
               slide.quiz.answers = []
-              quiz_answers.map((quiz_answer, i) => {
+              slide.quiz.feedback = []
+              const quizDiv = new JSDOM(slide.content);
+              const checkboxes = quizDiv.window.document.querySelectorAll(
+                '.checklist input[type="checkbox"]:disabled'
+              )
+              const blockquotes = quizDiv.window.document.querySelectorAll('blockquote')
+              const labels = quizDiv.window.document.querySelectorAll('.checklist label')
+
+              for (let i = 0; i < checkboxes.length; i++) {
                 const nb = i + 1
-                if (
-                  slide.quiz.rightAnswerNumber !== null &&
-                  quiz_answer.includes('disabled checked>')
+                const checkbox = checkboxes[i]
+                const blockquote = blockquotes[i]
+                const label = labels[i]
+
+                const answer = label.textContent.trim()
+                slide.quiz.answers.push(answer)
+
+                const feedback = blockquote?.textContent.trim()
+                slide.quiz.feedback.push(feedback)
+
+                const isChecked = checkbox?.checked
+                if (isChecked) slide.quiz.rightAnswerNumber = nb
+              }
+              if (!slide.quiz.rightAnswerNumber)
+                throw new Error(
+                  `missing right answer, please check ${POTION_API}/html?id=${notion.id}`
                 )
-                  // NOTION BUG: in case of bug with checked checkbox, recreate a new one
-                  throw new Error(
-                    `more than 1 right answer, please check ${POTION_API}/html?id=${notion.id}`
-                  )
-                if (quiz_answer.includes('disabled checked>'))
-                  slide.quiz.rightAnswerNumber = nb
-                slide.quiz.answers.push(
-                  quiz_answer.replace(
-                    // remove tags
-                    /<\/?[^>]+(>|$)/g,
-                    ''
-                  )
-                )
-              })
               slide.quiz.id = `${lesson.slug}-${quizNb}`
             }
             if (slide.content) {
@@ -309,7 +315,15 @@ axios
 
               if ((slide.content.match(/<img /g) || []).length > 1) {
                 // multiple images
-                const blocs = slide.content.replace(/<img src='/g, '|SPLIT|').replace(/'>/g, '|SPLIT|').replace('|SPLIT|', '').split('|SPLIT|')
+                const blocs = slide.content
+                  .replace(
+                    /<img src='([^>]*)'>/gi,
+                    '|SPLIT|$1|SPLIT|'
+                  )
+                  // .replace(/<img src='/g, '|SPLIT|')
+                  // .replace(/'>/g, '|SPLIT|')
+                  .replace('|SPLIT|', '')
+                  .split('|SPLIT|')
                 slide.content = blocs.reduce((p, c, i) => (i % 2 === 0) ? `${p}<div class="bloc-ab"><div class="bloc-a"><img src='${c}'></div>` : `${p}<div class="bloc-b">${c}</div></div>`, '')
               } else if (slide.content.includes('<img ')) {
                 // content contains an image -> 1st bloc = text | second bloc = square image

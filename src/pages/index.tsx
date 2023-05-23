@@ -370,7 +370,7 @@ const HomePage = (): JSX.Element => {
                       style={{ flexGrow: 1 }}
                       alignItems="self-end"
                     >
-                      <ExternalLink href="https://gm.xyz/c/BanklessAcademy?communityName=BanklessAcademy&sortBy=new&topicUuid=ead361fe-d823-45bb-8d6c-010eab49174b">
+                      <ExternalLink href="https://lenster.xyz/u/banklessacademy">
                         <Button variant="secondary" size="md">
                           Sign Up
                         </Button>
