@@ -7,6 +7,21 @@ import MintKudos from 'components/MintKudos'
 import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL } from 'constants/index'
 import { MINTKUDOS_URL, MINTKUDOS_OPENSEA_URL } from 'constants/kudos'
 import ExternalLink from 'components/ExternalLink'
+import Helper from 'components/Helper'
+
+const BadgeHelper = (
+  <Helper
+    title="Academy Badges"
+    definition={
+      <>
+        <Box>
+          Academy Badges are non-tradable NFTs that serve as proof of your
+          achievements on the blockchain.
+        </Box>
+      </>
+    }
+  />
+)
 
 const Badge = ({
   lesson,
@@ -37,35 +52,43 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     share
   )}`
 
+  const Kudos = (
+    <Box>
+      {lesson.lessonBadgeImageLink.includes('.mp4') ? (
+        <video autoPlay loop playsInline muted>
+          <source src={lesson.lessonBadgeImageLink} type="video/mp4"></source>
+        </video>
+      ) : (
+        <ChakraImage src={lesson.lessonBadgeImageLink} height="250px" mb="2" />
+      )}
+    </Box>
+  )
+  if (!isQuestCompleted) {
+    return (
+      <Box position="relative" w="250px" m="auto" my="6">
+        <Box border="1px solid #4b474b" borderRadius="8px" overflow="hidden">
+          {Kudos}
+        </Box>
+        {BadgeHelper}
+      </Box>
+    )
+  }
+
   return (
     <>
       <Box textAlign="center" mb="40px">
         <Box width="290px" m="auto">
-          {(isQuestCompleted || isKudosMintedLS) && (
-            <>
-              {isKudosMintedLS ? (
-                <Box
-                  border="1px solid #9E72DC"
-                  borderTopRadius="8px"
-                  py="3"
-                  px="5"
-                >
-                  <Box color="#9E72DC" fontWeight="bold" fontSize="xl">
-                    Badge Minted
-                  </Box>
-                </Box>
-              ) : (
-                <Button
-                  variant={isKudosMintedLS ? 'secondary' : 'primary'}
-                  w="100%"
-                  borderBottomRadius="0"
-                  disabled={!isQuestCompleted && !isKudosMintedLS}
-                  cursor={isKudosMintedLS ? 'auto' : 'pointer'}
-                >
-                  {isKudosMintedLS ? 'Badge Minted' : 'Mint Badge'}
-                </Button>
-              )}
-            </>
+          {isKudosMintedLS ? (
+            <Box border="1px solid #9E72DC" borderTopRadius="8px" py="3" px="5">
+              <Box color="#9E72DC" fontWeight="bold" fontSize="xl">
+                Badge Minted
+              </Box>
+            </Box>
+          ) : (
+            <Box position="relative">
+              <MintKudos kudosId={lesson.kudosId} />
+              {BadgeHelper}
+            </Box>
           )}
           <Box
             width="290px"
@@ -79,23 +102,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             overflow="hidden"
             border="1px solid #4b474b"
           >
-            {lesson.lessonBadgeImageLink.includes('.mp4') ? (
-              <video autoPlay loop playsInline muted>
-                <source
-                  src={lesson.lessonBadgeImageLink}
-                  type="video/mp4"
-                ></source>
-              </video>
-            ) : (
-              <ChakraImage
-                src={lesson.lessonBadgeImageLink}
-                height="250px"
-                mb="2"
-              />
-            )}
-            {lesson.kudosId && !isKudosMintedLS && (
-              <MintKudos kudosId={lesson.kudosId} />
-            )}
+            {Kudos}
           </Box>
           {isKudosMintedLS && (
             <Box

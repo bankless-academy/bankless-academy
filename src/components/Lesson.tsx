@@ -143,7 +143,9 @@ const Lesson = ({
                 <Button
                   variant={isKudosMintedLS ? 'secondaryLg' : 'primary'}
                   size="lg"
+                  style={{ padding: '0 23px' }}
                   onClick={() => setIsLessonOpenLS(true)}
+                  m="auto"
                 >
                   {isKudosMintedLS
                     ? 'View Lesson'
@@ -166,7 +168,7 @@ const Lesson = ({
                   {lesson.description}
                 </Text>
               </Box>
-              <Box>
+              <Box textAlign="center">
                 <Text
                   as="h2"
                   fontSize="large"
@@ -181,6 +183,7 @@ const Lesson = ({
                   lesson={lesson}
                   isQuestCompleted={Quest.isQuestCompleted}
                 />
+                <Text fontSize="2xl">“{lesson.name}” Lesson Badge</Text>
               </Box>
             </Box>
             {/* {!embed && lesson.communityDiscussionLink && (

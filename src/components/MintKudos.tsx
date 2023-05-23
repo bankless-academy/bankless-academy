@@ -265,6 +265,22 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   )
 
   const lesson = LESSONS.find((lesson) => lesson.kudosId === kudosId)
+  return (
+    <>
+      <Button
+        variant={'primary'}
+        w="100%"
+        borderBottomRadius="0"
+        cursor={isKudosMintedLS ? 'auto' : 'pointer'}
+        onClick={() => {
+          passportLS?.verified ? mintKudos() : onOpen()
+        }}
+      >
+        Mint Badge
+      </Button>
+      {GitcoinModal}
+    </>
+  )
 
   return (
     <Box>
