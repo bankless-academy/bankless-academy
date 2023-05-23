@@ -138,10 +138,6 @@ const CollectLessonButton = ({
               py="3"
               px="5"
               position="relative"
-              // cursor={isLessonMintedLS ? 'auto' : 'pointer'}
-              cursor="pointer"
-              // onClick={() => !isLessonMintedLS && onOpen()}
-              onClick={() => onOpen()}
             >
               <ButtonHelper onOpenHelpModal={onOpenHelpModal} />
               <Box>
@@ -157,9 +153,7 @@ const CollectLessonButton = ({
               py="3"
               px="5"
               position="relative"
-              // cursor={isLessonMintedLS ? 'auto' : 'pointer'}
               cursor="pointer"
-              // onClick={() => !isLessonMintedLS && onOpen()}
               onClick={() => onOpen()}
             >
               <ButtonHelper onOpenHelpModal={onOpenHelpModal} />
