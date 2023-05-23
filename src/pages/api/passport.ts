@@ -80,8 +80,7 @@ export default async function handler(
       )
       const passport: any = passportRes.data
       console.log('** passport **', passport)
-      const validStamps = filterValidStamps(passport.items)
-      console.log('validStamps', validStamps)
+      let validStamps = []
       const stampHashes = {}
       const stampProviders = {}
       const stampHashesSearch = []
@@ -99,6 +98,8 @@ export default async function handler(
           stampProviders[provider] = { provider, stamp: stamp.credential }
         }
         console.log('stampHashes', stampHashes)
+        validStamps = filterValidStamps(Object.values(stampProviders))
+        console.log('validStamps', validStamps)
         // merge previous data without deleting other keys
         const updated = await db.raw(
           `update "users" set "gitcoin_stamps" = gitcoin_stamps || ? where "users"."id" = ?`,
