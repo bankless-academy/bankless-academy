@@ -8,7 +8,7 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
+  Text,
   ModalCloseButton,
   ModalBody,
   ModalFooter,
@@ -240,23 +240,37 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   // )
 
   const GitcoinModal = (
-    <Modal onClose={onClose} size={'xl'} isOpen={isOpen}>
+    <Modal onClose={onClose} size={'xl'} isOpen={isOpen} isCentered>
       <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>
-          {
-            'Explorers must pass unique authentication in order to collect Bankless Academy rewards. '
-          }
-          <ExternalLink href="/faq#640071a81daf4aa4b7df00b1eec1c58d">
-            Learn more
-          </ExternalLink>
-        </ModalHeader>
+      <ModalContent
+        bg="linear-gradient(180deg, #a379bdcc 0%, #5a5198cc 100%)"
+        border="2px solid #B68BCC"
+        borderRadius="3xl"
+        backdropFilter="blur(10px)"
+      >
         <ModalCloseButton />
         <ModalBody>
+          <Text fontSize="xl">
+            <Box mt="4" mr="4">
+              {`You haven’t set up Gitcoin Passport, or your stamps are out of date.`}
+            </Box>
+            <Box my="4">
+              {`Explorers must have a valid Gitcoin Passport in order to collect Bankless Academy rewards. `}
+              <ExternalLink
+                color="white"
+                href="/faq#640071a81daf4aa4b7df00b1eec1c58d"
+              >
+                Learn more
+              </ExternalLink>
+            </Box>
+          </Text>
           <Passport displayStamps />
         </ModalBody>
         <ModalFooter>
-          <ExternalLink href="/faq#640071a81daf4aa4b7df00b1eec1c58d">
+          <ExternalLink
+            color="white"
+            href="/faq#640071a81daf4aa4b7df00b1eec1c58d"
+          >
             Help
           </ExternalLink>
         </ModalFooter>

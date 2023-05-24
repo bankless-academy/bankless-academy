@@ -23,7 +23,7 @@ const CollectiblesHelper = (
           Lesson collectibles are tradable NFTs containing lesson content from
           Bankless Academy, built for 100 passionate Bankless Explorers. Owning
           a lesson data-disk alters your in-site experience, gets you an invite
-          to our collectors Telegram group, and displays your support for
+          to our collectors Discord channel, and displays your support for
           providing a free blockchain education for internet citizens around the
           globe.
         </Box>

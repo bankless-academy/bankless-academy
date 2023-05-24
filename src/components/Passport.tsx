@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Box, Text, Button, Image, useToast } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
+import { AddressBook } from '@phosphor-icons/react'
 
 import GitcoinPassport from 'components/GitcoinPassport'
 import ExternalLink from 'components/ExternalLink'
@@ -88,17 +89,26 @@ const PassportComponent = ({
             </Text>
           </Box>
         ) : (
-          <Text fontSize="2xl">
+          <Text fontSize="xl">
             <>
               {numberOfStampsLeftToCollect > 0 ? (
                 <>
-                  {`Visit `}
+                  {`Visit here: `}
                   <ExternalLink href="https://passport.gitcoin.co/?filter=bankless-academy#/dashboard">
-                    <Button variant="primary">Gitcoin Passport</Button>
+                    <Button
+                      variant="primaryWhite"
+                      color="#5D4E78"
+                      size="lg"
+                      leftIcon={<AddressBook />}
+                    >
+                      Gitcoin Passport
+                    </Button>
                   </ExternalLink>
-                  {` and collect ${numberOfStampsLeftToCollect} more of the following stamp${
-                    numberOfStampsLeftToCollect !== 1 ? 's' : ''
-                  }:`}
+                  <Box mt="4">
+                    {`Collect ${numberOfStampsLeftToCollect} more of the following stamp${
+                      numberOfStampsLeftToCollect !== 1 ? 's' : ''
+                    }:`}
+                  </Box>
                 </>
               ) : (
                 'You have collected enough stamps. You can now close this popup and claim your rewards.'

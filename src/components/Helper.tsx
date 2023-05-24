@@ -12,7 +12,6 @@ import {
   IconButton,
   Box,
 } from '@chakra-ui/react'
-import { Global, css } from '@emotion/react'
 import { ReactNode, useState } from 'react'
 
 const QuestionIcon = (props) => (
@@ -95,23 +94,12 @@ const Helper = ({
         isOpen={isOpenHelpModal}
         isCentered
       >
-        <Global
-          styles={css`
-            .chakra-modal__content-container {
-              flex-flow: wrap-reverse;
-              .chakra-modal__content {
-                flex-flow: column;
-              }
-            }
-          `}
-        />
         <ModalOverlay />
         <ModalContent
           bg="linear-gradient(180deg, #a379bdcc 0%, #5a5198cc 100%)"
           border="2px solid #B68BCC"
           borderRadius="3xl"
           backdropFilter="blur(10px)"
-          flexFlow="wrap-reverse"
           my="5vw"
           w="92vw"
           maxW="600px"
