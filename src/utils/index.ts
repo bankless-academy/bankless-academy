@@ -260,7 +260,7 @@ export async function validateOnchainQuest(
         check.push(true)
         console.log('OK tx status confirmed')
         const txDetails = await provider.getTransaction(tx)
-        console.log('txDetails', txDetails)
+        // console.log('txDetails', txDetails)
         if (txDetails) {
           if (txDetails.data.includes(address.toLowerCase().substring(2))) {
             check.push(true)
