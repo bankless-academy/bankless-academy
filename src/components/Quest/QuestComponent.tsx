@@ -9,6 +9,7 @@ import Layer1Blockchains from 'components/Quest/Layer1Blockchains'
 import DecentralizedExchanges from 'components/Quest/DecentralizedExchanges'
 import DEXAggregators from 'components/Quest/DEXAggregators'
 import Layer2Blockchains from 'components/Quest/Layer2Blockchains'
+import BanklessArchetypes from 'components/Quest/BanklessArchetypes'
 import { ConnectFirst } from 'components/Quest/WalletConnect'
 import { useAccount } from 'wagmi'
 
@@ -42,6 +43,7 @@ const QuestComponent = (
     DecentralizedExchanges: DecentralizedExchanges,
     DEXAggregators: DEXAggregators,
     Layer2Blockchains: Layer2Blockchains,
+    BanklessArchetypes: BanklessArchetypes,
   }
   if (!component || !QUESTS.includes(component)) return null
 

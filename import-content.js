@@ -280,10 +280,11 @@ axios
                 if (isChecked) slide.quiz.rightAnswerNumber = nb
               }
               if (slide.quiz.feedback.length === 0) delete slide.quiz.feedback
-              if (!slide.quiz.rightAnswerNumber)
+              if (!slide.quiz.rightAnswerNumber && lesson.slug !== 'bankless-archetypes')
                 throw new Error(
                   `missing right answer, please check ${POTION_API}/html?id=${notion.id}`
                 )
+              else if (lesson.slug === 'bankless-archetypes') delete slide.quiz.rightAnswerNumber
               slide.quiz.id = `${lesson.slug}-${quizNb}`
               delete slide.content
             }

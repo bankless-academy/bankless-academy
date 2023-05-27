@@ -287,6 +287,10 @@ const Lesson = ({
 
   const selectAnswer = (e, answerNumber: number) => {
     if (slide.type !== 'QUIZ') return
+    if (lesson.slug === 'bankless-archetypes') {
+      slide.quiz.rightAnswerNumber = answerNumber
+      setSelectedAnswerNumber(answerNumber)
+    }
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
     toast.closeAll()
     const feedback = slide.quiz?.feedback?.length
@@ -392,6 +396,15 @@ const Lesson = ({
     }
   }
 
+  if (
+    slide?.quiz &&
+    lesson.slug === 'bankless-archetypes' &&
+    localStorage.getItem(`quiz-${slide.quiz.id}`)
+  )
+    slide.quiz.rightAnswerNumber = parseInt(
+      localStorage.getItem(`quiz-${slide.quiz.id}`)
+    )
+
   const answerIsCorrect =
     slide?.quiz &&
     parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
@@ -461,7 +474,7 @@ const Lesson = ({
                     w="100%"
                     justifyItems="center"
                   >
-                    {[1, 2, 3, 4].map((n) => {
+                    {[1, 2, 3, 4, 5].map((n) => {
                       const answerState = answerIsCorrect
                         ? slide.quiz.rightAnswerNumber === n
                           ? 'CORRECT'
@@ -496,7 +509,10 @@ const Lesson = ({
                                 )
                               )
                             }
-                            isActive={answerIsCorrect}
+                            isActive={
+                              answerIsCorrect &&
+                              lesson.slug !== 'bankless-archetypes'
+                            }
                           >
                             {slide.quiz.answers[n - 1]}
                           </QuizAnswer>
