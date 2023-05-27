@@ -22,70 +22,191 @@ const LESSONS: LessonType[] = [
     notionId: '89cf10ef71b54fbfa7c3e6b41d55b36f',
     slug: 'going-bankless',
     imageLinks: [
-      '/lesson/going-bankless/welcome-to-bankless-academy-cf9ea670.png',
-      '/lesson/going-bankless/upgrading-humanitys-coordination-protocols-2ef0d764.png',
-      '/lesson/going-bankless/your-bankless-journey-9736d072.png'
+      '/lesson/going-bankless/quest-63568085.jpg'
     ],
     slides: [
       {
         type: 'LEARN',
-        notionId: '22f89665f8db4c5a9dec05200f8314e6',
-        title: 'Welcome to Bankless Academy',
-        content: '<div class="bloc1"><p><strong><em>(Bankless Instructor Slide)</em></strong></p><ul><li>Bankless Academy is here to serve as your guide throughout your Bankless journey.</li><li>As the first step in your Bankless journey, we will discuss the shortcomings of the traditional financial system, what it means to go Bankless, and how cryptographic technology is positively transforming financial reality for people of all backgrounds across the globe.</li><li>We’ll finish with Bankless goals to mark on your map, and practical next steps.</li></ul></div><div class="bloc2"><img src=\'/lesson/going-bankless/welcome-to-bankless-academy-cf9ea670.png\'></div>'
+        notionId: '144547c8eda24c059eb6a9b4d204fe22',
+        title: 'Intro',
+        content: '<div class="bloc1"><p>What is the Bankless movement in 1-2 phrases.</p><p>What is Bankless Academy: scalable learning platform to learn the basic on how to become Bankless.</p><p>The usual way of learning Bankless Academy: learning slides + quiz, practice via quests, then after completion receive an onchain lesson badge that proves your knowledge.</p><p>Requirement (who is this for?): web3 and tech curious + interest in self sovereignty</p></div>'
       },
       {
         type: 'LEARN',
-        notionId: 'ed1233aae8704a1694f4281d3761da08',
-        title: 'The Traditional Finance System',
-        content: '<div class="bloc1"><ul><li>Shortcomings:</li> <ul><li>Inefficient<br>(unaccountable tax spending + inflation + payment fees)</li><li>Doesn’t promote healthy competition</li><li>Prone to censorship & corruption<br>(i.e 2008 crisis)</li><li>Leads to local and global wealth inequality</li><li>Unstable in times of economic stress</li><li>Doesn’t hold up in digital age use-cases<br>(i.e digital ownership)</li></ul> <li>Let’s investigate why this might be…</li></ul></div>'
+        notionId: '67a83d074e0346cc8483bcbf3df296e5',
+        title: 'Goal of this lesson',
+        content: '<div class="bloc1"><h2>learn about yourself</h2><ul><li>what kind of Bankless person you are (Bankless archetype)</li><li>know your level of “Banklessness” with a score</li></ul><h2>set goals for your Bankless journey</h2><p>You’ll receive a recap at the end of this lesson, then you’ll be able to start or continue your Bankless journey!</p><p>Format: a bit of reading but mostly quizzes</p><p>If that’s what you are here for, LFG!</p></div>'
       },
       {
         type: 'LEARN',
-        notionId: '19e9ec7e664c4503a82d1027c59cfb3d',
-        title: 'Central Banks - Monetary Policy',
-        content: '<div class="bloc1"><ul><li>Credible Neutrality: \'a mechanism is credibly neutral if just by looking at the mechanism\'s design, it is easy to see that the mechanism does not discriminate for or against any specific people.”</li><li>You own money but not the system that influences it, and therefore you aren’t in control of your money. i.e Covid-19 & Venezuela hyperinflation.</li><li>Currency Debasement & Inflation:</li> <ul><li>Fiat money does not effectively preserve the fruits of your labor.<br><a href=\'https://www.investopedia.com/terms/d/debasement.asp#:~:text=When%20a%20currency%20is%20debased,their%20work%2C%20resulting%20in%20inflation\'>https://www.investopedia.com/terms/d/debasement.asp#:~:text=When a currency is debased,their work%2C resulting in inflation</a></li><li>Inflation leads to wealth inequality:</li></ul> <li>Wealth inequality due to those without financial education and tooling falling behind by default. This leads to further wealth inequality.</li><li>Unreliable monetary policy increases risk of geopolitical instability (Post-WWI Germany)<br><a href=\'https://www.investopedia.com/terms/d/debasement.asp#:~:text=In%20Germany%20in,gold%20standard\'>https://www.investopedia.com/terms/d/debasement.asp#:~:text=In Germany in,gold standard</a>.</li></ul></div>'
+        notionId: '81f69adc54364e629a310fffc32e9778',
+        title: 'What’s possible to achieve when your are Bankless?',
+        content: '<div class="bloc1"><p>Be independent and have freedom.</p><p>Trust the code instead of trusting human (always greedy).</p><p>Open and accessible information.</p><p>In the next slide we are going to ask questions to determine your Bankless archetype (why you are here).</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '6251cc560e36431f920087a139b4f998',
+        title: '✅ Question to determine Bankless archetype',
+        quiz: {
+          question: 'Why are you interested in web3? (can select multiple answer)',
+          rightAnswerNumber: 1,
+          answers: [
+            'make money',
+            'learn how to be self sovereign',
+            'here for the tech',
+            'freedom',
+            'censorship resistance',
+            'change the world'
+          ],
+          id: 'going-bankless-1'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '57168be2bd5b4fdb85c98f7586ef189c',
+        title: '✅ Question to determine Bankless archetype',
+        quiz: {
+          question: 'Do you trust Central Banks?',
+          rightAnswerNumber: 1,
+          answers: [
+            'yes',
+            'no',
+            'it depends'
+          ],
+          id: 'going-bankless-2'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'a13d3e09756143659612eedd6d175a8f',
+        title: '✅ Question to determine Bankless archetype',
+        quiz: {
+          question: 'Are you worried about inflation?',
+          rightAnswerNumber: 1,
+          answers: [
+            'yes',
+            'no really'
+          ],
+          id: 'going-bankless-3'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'd36756b22bf84581ad6eaf0825c45f3b',
+        title: '✅ Question to determine Bankless archetype',
+        quiz: {
+          question: 'Do you like web2 socials?',
+          rightAnswerNumber: 1,
+          answers: [
+            'yes, I use them often',
+            'no I’m not happy with them',
+            'I don’t trust web2 socials platforms',
+            'I wish I can own my data'
+          ],
+          id: 'going-bankless-4'
+        }
       },
       {
         type: 'LEARN',
-        notionId: '28f8c391f1f443ee987ec9cd3fa7f1c6',
-        title: 'Commercial Banks - Custody',
-        content: '<div class="bloc1"><ul><li>Access to financial tools: Banks use exclusive tools to profit off of your labour points. </li> <ul><li>The Bankless movement advocates education around and access to these tools for the public.<br>(i.e Staking, DeFi, etc.)</li></ul> <li>Censorship: Banks are susceptible to biased government-sanctioned censorship <br>(i.e, Canadian Trucker Protests 2022)</li><li>Payment service intermediaries charge without producing added value.<br>(i.e Visa/Mastercard charging 2-3%)</li><li>Over 25% of the world’s adult population don’t have access to the traditional financial system, with a majority living in hard-to-reach areas or unstable economies.</li><li>Self-custody: The answer is using technology that allows self-custody of funds in a censorship-resistant environment.</li></ul></div>'
+        notionId: '482404e0f6c74c919b95a8d44d6fde11',
+        title: 'Bankless level',
+        content: '<div class="bloc1"><p>Self custody and cryptography are new paradigm and an evolution of web2.</p><p>It’s an evolution of web2:</p><ul><li>Crypto protocols allow for secure communication of value (not just data as per web2). </li><li>Crypto protocols introduce a new ownership primitive: ownership</li></ul><p>It’s risky (scams) but you can gain a lot of freedom.</p><p>In the next slides we are going to determine your level of Banklessness (how familiar your are with Bankless primitives).</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '29571c22d2e14ecba700f8c69552829a',
+        title: '✅ Question to determine your Bankless level',
+        quiz: {
+          question: 'Select the topics you are familiar with (can select multiple answer)',
+          rightAnswerNumber: 1,
+          answers: [
+            'buy/sell crypto on an exchange',
+            'self custody',
+            'swap token on DeFi',
+            'buy an NFT',
+            'join a DAO'
+          ],
+          id: 'going-bankless-5'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '1e9d08d2cfdd47d681c4fdc6876bf4b4',
+        title: '✅ Question to determine your Bankless level',
+        quiz: {
+          question: 'Select more topics you are familiar with (can select multiple answer)',
+          rightAnswerNumber: 1,
+          answers: [
+            'LP',
+            'do a loan',
+            'web3 social',
+            'staking via LSD',
+            'I run a solo node'
+          ],
+          id: 'going-bankless-6'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '3cfc048985694a7b85722bad9a539b15',
+        title: '✅ Question to determine your Bankless level',
+        quiz: {
+          question: 'Are you familiar with the term mentioned in previous slides.',
+          rightAnswerNumber: 1,
+          answers: [
+            'not a all',
+            'no but I’m curious',
+            'I’m familiar with most of them',
+            'I’m already familiar with all'
+          ],
+          id: 'going-bankless-7'
+        }
       },
       {
         type: 'LEARN',
-        notionId: '384375d938c74d4fb381c5fdc0cba962',
-        title: 'Upgrading Humanity’s Coordination Protocols',
-        content: '<div class="bloc1"><ul><li>Human coordination methods:</li> <ul><li>throughout history, Humanity has constantly been refining its ability to coordinate. </li><li>Human coordination has moved through the intense ordering forces of Religion, Nation States etc.</li></ul> <li>Cryptographic Protocols offer new efficient and balanced coordination cases (specifically in money). The technology has the strength to replace the outdated systems of traditional finance.</li> <ul><li>The printing press, double-entry bookkeeping, the internet, cryptocurrency.</li><li>Cryptographic technology reduces the cost and thus increases the efficiency of human coordination.</li></ul> </ul></div><div class="bloc2"><img src=\'/lesson/going-bankless/upgrading-humanitys-coordination-protocols-2ef0d764.png\'><ul><li>Crypto has its hurdles and shortcomings, but with time and thoughtful evolution the possibilities are extremely promising.</li></ul></div>'
+        notionId: 'd13cb16b7b9341968d0de623d63c1ecb',
+        title: 'The Bankless Journey',
+        content: '<div class="bloc1"><p>Being Bankless is a spectrum and a journey.</p><p>Bankless Academy can help you set goals and level up your skills.</p><p>In the next slides we are going to help you set goals for your Bankless Journey.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'e3303cd3d38f40749eefdba5ac81815d',
+        title: '✅ Question to determine your Bankless goals',
+        quiz: {
+          question: 'Select the topics are you curious about (can select multiple answer)',
+          rightAnswerNumber: 1,
+          answers: [
+            'buy/sell crypto on an exchange',
+            'self custody',
+            'swap token on DeFi',
+            'buy an NFT',
+            'join a DAO'
+          ],
+          id: 'going-bankless-8'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '5a72051972c24875a9b591e8d3be7870',
+        title: '✅ Question to determine your Bankless goals',
+        quiz: {
+          question: 'Select more topics are you curious about (can select multiple answer)',
+          rightAnswerNumber: 1,
+          answers: [
+            'LP',
+            'do a loan',
+            'web3 social',
+            'staking via LSD',
+            'I run a solo node'
+          ],
+          id: 'going-bankless-9'
+        }
       },
       {
         type: 'LEARN',
-        notionId: '5a7f85f3c10f44f0b328f5fcfa176904',
-        title: 'The Internet of Value',
-        content: '<div class="bloc1"><ul><li>Evolution of the internet: web1, web2, web3.</li> <ul><li>Crypto protocols allow for secure communication of value (not just data as per web2). </li><li>Crypto protocols introduce a new ownership primitive:</li></ul> </ul></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '724bbda33e9042c5aef0ed8c201e454d',
-        title: 'Transparency - Don’t Trust, Verify',
-        content: '<div class="bloc1"><ul><li>Humanity, power and susceptibility to greed: Our traditional financial institutions, social media tools, etc. have consistently abused the trust of their customers/dependents throughout history.</li><li>System transparency:</li> <ul><li>Preferential treatment & lack of accountability <br>(i.e 2008 crisis, bailouts, no arrests)</li><li>Reserve attestations in CeFi vs. DeFi.<br>(i.e 2008 mortgage crisis, FTX insolvency)</li><li>Public ledger allows auditing of large transactions.<br>(In future, could apply to government & corporate, with privacy layers for citizens)</li><li>Open source code allows users to audit the entire system.</li></ul> <li>Corruption resistance:</li> <ul><li>P2P network</li><li>Decentralisation</li></ul> <li>Not all cryptocurrencies are created equal (shitcoins)</li></ul></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '2bb066a1b2bd43a3bad070f43c2ef463',
-        title: 'The Bankless Movement',
-        content: '<div class="bloc1"><ul><li>The Bankless movement focuses on putting power back into the hands of the individual.</li> <ul><li>Declaring self-sovereignty from the unreliable institutions of traditional finance.</li><li>Gaining access to financial tools typically reserved for financial institutions.</li><li>Evolving the efficiency and fairness of the human monetary coordination system.</li><li>The Bankless movement advocates the separation of monetary policy and state.</li></ul> <li>Cryptocurrencies aren’t just a speculative investment vehicle. There is a promising underlying technology that is driving investor demand & price action.</li> <ul><li>We’re taking risks in heading west - but not for no reason…<br>If we are right, we strike gold: massive gains, new economies, new asset classes.</li><li>In our traditional system where money talks, every bit of fiat currency invested -thoughtfully- in cryptocurrency is a vote for a better world.</li></ul> </ul></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '35b058da7d23478bab954d8f793bc221',
-        title: 'Bankless Goals',
-        content: '<div class="bloc1"><ul><li><strong>Personal:</strong> to maximize personal crypto wealth / gain financial independence, to develop the skills necessary to claim back sovereignty of your money.</li><li><strong>Collective:</strong> a better system for future generations / rejecting authoritarian behaviour, creating a more level global playing field by increasing access for the unbanked around the world, combating inflation, and solving human coordination failures.</li><li>More personal freedom and systemic stability for ourselves and future generations. <br>The world wins.</li></ul></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'da76079088c149109cb9cb2fa282c3d1',
-        title: 'Your Bankless Journey',
-        content: '<div class="bloc1"><p><strong><em>(Bankless Instructor Slide)</em></strong></p><ul><li>Going Bankless is a spectrum; a journey.</li><li>Bankless Academy is here to help you get started, gather your initial equipment, gain the crucial knowledge and skills that allow safe navigation of this new digital landscape, and provide you a place to meet other Explorers on their Bankless journey.</li><li>How BanklessHQ can help you go deeper.</li><li>It’s time to dive into more Bankless Academy lessons filled with practical next steps, skill tests, and on-chain rewards for your accomplishments.</li><li>The first step is to set up your crypto wallet (digital bank account & passport).</li></ul></div><div class="bloc2"><img src=\'/lesson/going-bankless/your-bankless-journey-9736d072.png\'></div>'
+        notionId: 'af594f1cbac5494bacd3a0db0ba644c7',
+        title: 'Quest',
+        content: '<div class="bloc1"><p>Thanks for doing this lesson. Here is a recap of your Bankless profile.</p><p>[dynamic image] 👉: includes your Bankless Archetype (crypto curious/learner/teacher/expert) + your Bankless score (x/100) + goals (list of topics to learn)</p><p>You can download this image and share it on social media if you want with this link: [insert dynamic link]</p><p>(vision: As you complete more lessons, you Bankless profile is going to evolve … could become a dynamic NFT)</p><p>Here are our recommendations as next steps:</p><ul><li>[beginners lvl1]: buy your first crypto</li><li>[beginners lvl2]: do the wallet basics lesson and learn how to self custody</li><li>[beginners lvl2]: go directly on an advanced topic (DeFi, Dex, …)</li><li>[advanced lvl1]: subscribe to the Bankless HQ newsletter</li><li>[advanced lvl2]: join a DAO and get a job in crypto</li></ul></div><div class="bloc2"><img src=\'/lesson/going-bankless/quest-63568085.jpg\'></div>'
       },
       {
         type: 'QUEST',
@@ -931,10 +1052,10 @@ const LESSONS: LessonType[] = [
           question: 'Which of these statements is NOT true for decentralization?',
           rightAnswerNumber: 3,
           answers: [
-            'Decentralization makes blockchains censorship-resistant ',
+            'Decentralization makes blockchains censorship-resistant',
             'Decentralization makes blockchains permissionless',
             'Decentralization helps authoritarian powers to maintain control',
-            'Anyone anywhere can use permissionless systems '
+            'Anyone anywhere can use permissionless systems'
           ],
           id: 'layer-1-blockchains-5'
         }
@@ -1481,41 +1602,309 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: null,
+    kudosImageLink: '/lesson/decentralized-exchanges/kudos-ccd91260.png',
     lessonImageLink: '/images/coming-soon-lesson.png',
     learningActions: '',
     marketingDescription: 'DEXs and AMMs have changed the landscape of traditional market trading. It’s time to understand why, and how you can use this technology to your own advantage.',
-    kudosId: null,
+    kudosId: 2608,
     duration: 15,
     learnings: '',
     difficulty: undefined,
     description: 'Discover how smart-contract exchanges enable permissionless token swaps!',
-    name: 'DEXs and AMMs',
-    quest: 'DEXsAndAMMs',
+    name: 'Decentralized Exchanges',
+    quest: 'DecentralizedExchanges',
     publicationStatus: 'planned',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
     notionId: '0ff0ff5bde6c43f99f7710352069163e',
-    slug: 'dexs-and-amms',
-    imageLinks: [],
+    slug: 'decentralized-exchanges',
+    imageLinks: [
+      '/lesson/decentralized-exchanges/what-is-a-decentralized-exchange-365fd384.png',
+      '/lesson/decentralized-exchanges/centralized-decentralized-exchanges-86e30853.png',
+      '/lesson/decentralized-exchanges/decentralized-applications-be95a017.png',
+      '/lesson/decentralized-exchanges/decentralized-applications-continued-bb7f47c4.png',
+      '/lesson/decentralized-exchanges/automated-market-makers-fb03694e.png',
+      '/lesson/decentralized-exchanges/token-swaps-56cf0154.png',
+      '/lesson/decentralized-exchanges/what-is-liquidity-f7e3fe26.png',
+      '/lesson/decentralized-exchanges/liquidity-providers-dbc7206e.png',
+      '/lesson/decentralized-exchanges/dex-best-practices-1ff2da3b.png'
+    ],
     slides: [
       {
         type: 'LEARN',
-        title: 'TODO',
-        content: '<div class="bloc1"><p>slide content</p></div>'
+        notionId: '2b28e263cbad4a7e848d90254ff8f523',
+        title: 'What is a Decentralized Exchange?',
+        content: '<div class="bloc1"><p>Decentralized Exchanges are on-chain marketplaces that allow all Explorers to securely exchange cryptocurrency with each other, all while maintaining self-custody of their wallet funds. These peer-to-peer trades are facilitated using publicly accessible smart contracts that connect users with large communal vaults of tokens called liquidity pools. Decentralized Exchanges can be found on almost all blockchains, and are present on both Ethereum Layer 1s & 2s.</p><p>Exchanging tokens is an essential part of using <code>DeFi</code> — where you’ll find a wider range of token variety and utility than on a CEX. Some users buy tokens to access on-chain products & services. Others purchase tokens as a short or long term investment in an on-chain project. There are even tokens even grant you voting power used to determine the direction of their respective project — much like holding shares at a traditional corporation! Regardless of your motivation, you’ll be visiting Decentralized Exchanges on a regular basis in DeFi. </p><p>Let’s build an understanding of how they work and how they can best serve you.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/what-is-a-decentralized-exchange-365fd384.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'bf324795d08d43aaa370a5558ddaa100',
+        title: 'Centralized & Decentralized Exchanges',
+        content: '<div class="bloc1"><p>Let’s start by outlining the main differences between Centralized Exchange (like Coinbase, Binance, Kraken) and Decentralized Exchange (like Uniswap, PancakeSwap, Velodrome) technology.</p><p>Centralized Exchanges (CEXs) allow users to trade and invest in cryptocurrency while remaining outside of the blockchain ecosystem. Because your account is on the CEX itself, your private keys and funds are in their custody. You are subject to their management — their protection, their rules, and their flaws.</p><p>Using Decentralized Exchanges (DEXs) is the practical use of cryptocurrency systems; You are on the blockchain, using it for the purpose it was built. The peer-to-peer model allows you to play both the consumer and the provider — accessing financial opportunities previously available only to the financial class. The system benefits from a level of transparency that evens the playing field for all users, and a property of censorship-resistance that protects the ecosystem against attacks or actors seeking unfair advantage.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/centralized-decentralized-exchanges-86e30853.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '091e2ed2c2d540c989e1a97bfe9562f1',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'Which of the following is true regarding cryptocurrency exchanges?<br>(<em>Know the differences between CEXs & DEXs)</em>',
+          rightAnswerNumber: 3,
+          answers: [
+            'While CEXs are operated by a centralized team there is no team behind a DEX.',
+            'You might lose funds on a DEX due to user error, but you can only lose funds on a CEX to a bad trade.',
+            'DEXs allow you to trade while maintaining self-custody, while CEXs do not.'
+          ],
+          feedback: [
+            'ℹ️ DEXs still have development teams, but their influence on the project is limited.',
+            'ℹ️ Even CEXs have their risks. In 2022, the FTX exchange collapsed, with almost all users losing their deposits.',
+            'ℹ️ Unless explicitly stated otherwise, a CEX owns your private keys.'
+          ],
+          id: 'decentralized-exchanges-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '26dde0f86cc6443b91e1e09d8fdda42d',
+        title: 'Decentralized Applications',
+        content: '<div class="bloc1"><p>DEXs are a type of dApp — a decentralized application running on the blockchain. For an internet application to be considered fully ‘decentralized’ it needs to facilitate a user’s desired blockchain action with zero need for oversight, and for any user that uses it. </p><p>This service is facilitated using smart contracts, lines of code that take a user’s on-chain action and return a predictable on-chain action in response. The Ethereum Foundation compares smart contracts to vending machines: The user inputs the number corresponding to the item they’d like to receive, plus the appropriate amount of money, and they receive an expected output — their snack — all without the need for another person to facilitate the transaction.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/decentralized-applications-be95a017.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '8b325ebde4104757b2112ae767486c10',
+        title: 'Decentralized Applications (continued)',
+        content: '<div class="bloc1"><p>DEXs follow the same format as the vending machine: they take a user’s input cryptocurrency and output the desired cryptocurrency. Other examples include:</p><p>🎟️ <strong>Voting dApps:</strong> allocating a user’s vote to a specified party.</p><p>📦 <strong>Bridge dApps:</strong> transferring a user’s cryptocurrency from one network to another.</p><p>🤝 <strong>Lending/Borrowing dApps:</strong> granting loans to users meeting specified requirements.</p><p>It’s interesting to know that smart contracts are actually a type of Ethereum account. They have an address and a balance on the blockchain, performing automated actions when prompted by a transfer and command. When you interact with a DEX, you are interacting with a programmed Ethereum account.</p><p>dApps will typically use a website as a visual interface to let users easily interact with their smart contracts. If the website ever goes down, know that with some experience you can still access the smart contract itself directly. We’ll cover this in future content!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/decentralized-applications-continued-bb7f47c4.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '9d5128296a9f4d6785490a5f83fb5409',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'Which of the below properties are needed for a smart contract to be considered decentralized?',
+          rightAnswerNumber: 4,
+          answers: [
+            'Permissionless; open access to all users.',
+            'Autonomous; interacting with users without need of an intermediary.',
+            'Transparent; the smart contract code is publicly available.',
+            'All of the above.'
+          ],
+          feedback: [
+            'ℹ️ This is a quality of a dApp, but it isn’t the only one.',
+            'ℹ️ This is a quality of a dApp, but it isn’t the only one.',
+            'ℹ️ This is a quality of a dApp, but it isn’t the only one.',
+            'ℹ️ Ethereum dApps are respected for their ability to be permissionless, autonomous, and transparent.'
+          ],
+          id: 'decentralized-exchanges-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '4b647b69cd37476a9ced01d73a721e2c',
+        title: 'Automated Market Makers',
+        content: '<div class="bloc1"><p>In traditional markets and CEXs, your custodian uses an order book: a database filled with buy & sell offers. The CEX connects your trade offer with another person’s. You are usually charged a base/scaling commission on your trade, and you’re also left wondering if the undisclosed matching method found you the best deal… or if a large preferred party was given the better end.</p><p>DEXs use ‘Automated Market Maker’ (AMM) technology, a matchmaking system that makes the best trade, based on a public algorithm. As this algorithm is open-source, anyone can both understand and improve it — leading to constant innovation and better trades for everyone.</p><p>AMMs route user trades through <code>liquidity pools</code>, rather than matching user bids & asks directly. These communal token vaults accumulate & dispense tokens according to user interactions, providing a more efficient, cheaper, and more seamless trade as compared to order book technology.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/automated-market-makers-fb03694e.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '3decaee7ce5241a79094952f8d0b6ab3',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'What is the benefit of using AMMs to complete trades as compared to a traditional order book?',
+          rightAnswerNumber: 3,
+          answers: [
+            'The AMM trade is faster than an order book trade.',
+            'AMMs connect you directly to the other user, rather than through an intermediary.',
+            'You are more confident that you received the best trade possible at the time.'
+          ],
+          feedback: [
+            'ℹ️ When we include network confirmation time, this isn’t necessarily true.',
+            'ℹ️ AMMs route user trades through communal token vaults, called liquidity pools, rather than directly to one another.',
+            'ℹ️ The transparent nature of AMMs means that its a lot harder for platforms to hide malicious intent.'
+          ],
+          id: 'decentralized-exchanges-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '0e5bf65edb464d629a38b8c4e1cb7d83',
+        title: 'Token Swaps',
+        content: '<div class="bloc1"><p>On the blockchain, we refer to cryptocurrency trades as <code>token swaps</code>. These smart contract interactions are the conversion from one cryptocurrency to another, using AMM <code>liquidity pools</code>. By plotting a <code>trade route</code> — a pathway through the appropriate liquidity pools — a DEX smart contract converts your input token into your desired output token. As liquidity pools often consist of only two tokens, and because there aren’t always liquidity pools for every <code>token pair</code>, trade routes may run through more than one liquidity pool to fulfil your desired swap.</p><p>Let’s take a look at an example swap from USDC to BANK on Uniswap, routed through two pools as there is no Uniswap USDC/BANK pool:</p><ol><li>Your transaction and USDC are submitted for validation on the Ethereum network.</li><li>The smart contract is activated, inserting your USDC tokens into the USDC/ETH liquidity pool.</li><li>ETH exits this first liquidity pool and is transferred to the ETH/BANK liquidity pool.</li><li>BANK is dispensed from the second liquidity pool to your wallet address. The transaction is complete.</li></ol></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/token-swaps-56cf0154.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '25fd54f0f113464393f873a43b1d6cf5',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'AMMs can route a trade through multiple liquidity pools, all in a single transaction.',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          feedback: [
+            'ℹ️ Correct! You might pay a higher network fee, but the actions are bundled into one transaction.',
+            'ℹ️ Incorrect, try again.'
+          ],
+          id: 'decentralized-exchanges-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'fc6312a87afe4437aeb06f7ccf56010a',
+        title: 'What is Liquidity?',
+        content: '<div class="bloc1"><p>Liquidity in the crypto space refers to a marketplace’s ability to facilitate digital asset buys & sells at fair prices. When liquidity is high, prices are more stable; When liquidity is low, prices are more volatile. As users are generally attracted to fairer prices, DEXs aim to have high liquidity across all of their liquidity pools.</p><p>High liquidity means there is a high quantity of tokens in the liquidity pool — generally a 50/50 valuation split of the two tokens users are trading in and out of the pool. For example, the USDC & ETH pool on Velodrome facilitates all trades between this <code>token pair</code> on their platform.<br>When there are more tokens, users making trades through the pool have less impact on the 50/50 asset balance, which helps prices remain stable. The amount by which any trade throws off this balance is known as <code>price impact</code>.</p><p>As an Explorer, you want the lowest price impact on your trades as possible, in order to receive the best deal! That means you want high, balanced liquidity.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/what-is-liquidity-f7e3fe26.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '704eb8d4d1ae47008a944f3edfb7ba54',
+        title: 'Liquidity Providers',
+        content: '<div class="bloc1"><p>Optimizing for high liquidity is integral to the success of a DEX — but because there’s only so much liquidity in the cryptocurrency ecosystem, each DEX is in competition to capture as much liquidity as possible. So where does this liquidity come from?</p><p>In a decentralized ecosystem, internet citizens are incentivised to provide liquidity to a given pool to raise the TVL (total value locked) on a platform. Fees gathered from users making trades through the pool are distributed to the LPs (liquidity providers) based on the amount of liquidity provided. You heard that right: by lending your tokens to a DEX liquidity pool, you can generate passive income.</p><p>There are a variety of considerations to make when becoming an LP, and we’ll cover this in future content. For now, know that the large APR (annual projected return) rates displayed across DEX liquidity pools aren’t guaranteed, and there can be losses.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/liquidity-providers-dbc7206e.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '673b5a7b0f3448a0b0e0ae8db5b91956',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'Fill in the blanks: When liquidity is _____ , volatility is _____ .',
+          rightAnswerNumber: 3,
+          answers: [
+            'high, high',
+            'low, low',
+            'low, high'
+          ],
+          feedback: [
+            'ℹ️ Incorrect, try again.',
+            'ℹ️ Incorrect, try again.',
+            'ℹ️ Right! Liquidity and volatility are generally inversely-correlated.'
+          ],
+          id: 'decentralized-exchanges-5'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'ad1cd32bec194feba4d8ceaed89e3a6b',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How do DEXs incentivize users to provide liquidity?',
+          rightAnswerNumber: 2,
+          answers: [
+            'Assurance against trade losses.',
+            'A share of platform fees.',
+            'A stake in platform governance.'
+          ],
+          feedback: [
+            'ℹ️ Neither CEXs or DEXs can protect you from losses on a bad investment.',
+            'ℹ️ The fees charged to use the DEX are often split across various platform stakeholders — including LPs.',
+            'ℹ️ Voting in platform governance often requires holding a governance token, not being an LP.'
+          ],
+          id: 'decentralized-exchanges-6'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '9cda0f8b0fac4fb98b5bebf8c0a46420',
+        title: 'Platform Fees',
+        content: '<div class="bloc1"><p>Both CEXs & DEXs charge fees for the services they provide. While the automation of DEX & AMM technology has reduced the cost for exchanging cryptocurrency, interacting with the blockchain still has its cost. Let’s take a look at five common costs to consider when deciding which platform to use.</p><p>🏷️ <strong>Platform fees:</strong> Approximately 0.5% commission on each trade most CEXs, and 0.05% for most DEXs. These can fluctuate.</p><p>🌐 <strong>Network fees:</strong> Blockchains charge gas fees on top of the dApp transaction. You can minimize these costs by using the network during low periods of activity. Etherscan.io has a real-time estimate of various Ethereum Mainnet actions here: <a href=\'https://etherscan.io/gastracker\'>https://etherscan.io/gastracker</a> (for DEXs, refer to the ‘Swap’ action). On Layer 2s, fees are far cheaper: <a href=\'https://l2fees.info/\'>https://l2fees.info/</a></p><p>📦 <strong>Bridge fees:</strong> Both CEXs and the blockchain will charge you a flat rate for transferring cryptocurrency from one network to another. For CEXs, refer to their on-site information. For the blockchain, check out the ‘Deposit’ action on <a href=\'http://Etherscan.io\'>Etherscan.io</a>.</p><p>💹 <strong>Exchange rates:</strong> When exchanging fiat on a CEX, watch out for exchange rates that don’t reflect the market rate.</p><p>🧊 <strong>Slippage:</strong> As prices change so quickly in this space, DEXs leave room for error on a swap called <code>slippage</code>. This percentage value is customizable, with most dApps recommending 0.5-2%. You may lose up to the slippage value on a trade to have it executed, but if your slippage is too low the trade might be rejected.</p><p>As you can see, there are a lot of factors to consider when comparing exchange fees. It’s always best to do your own research before making a trade to make sure the platform\'s advantages & disadvantages are right for you.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'b6998b02735c41e69527772a6f044b69',
+        title: 'DEX Advantages',
+        content: '<div class="bloc1"><p>We’ve covered a lot of theory in this lesson, but you might still be wondering if DEXs are for you. Generally speaking, you are probably going to benefit from Decentralized Exchanges if:</p><ul><li>🔑 You want to maintain custody over your digital assets.</li><li>🔒 You want to secure your assets on the blockchain, avoiding CEX collapses.</li><li>⌛ You want 24/7 access to the cryptocurrency market.</li><li>👛 You want access to a wider range of cryptocurrencies.</li><li>🤑 You are interested in providing liquidity.</li><li>🛂 You don’t want to register on every platform you interact with.</li><li>⚔️ You seek the additional risks and rewards of exploring Decentralized Finance.</li></ul><p>With that said, almost every DeFi user has an account on a Centralized Exchange. This is because CEXs have easy on/off ramp features to the traditional banking world; you can easily get money from your bank account onto the blockchain and vice-versa. This is great because it means you can start with a CEX account and slowly transition to DeFi as you become more confident in navigation.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'fc884de5c7a9449bba95d6fdec8b87ca',
+        title: 'DEX Risks',
+        content: '<div class="bloc1"><p>Using a DEX also comes with risk. Here are a few of the most impactful ones:</p><p>🐞 <strong>Smart contract risk: </strong>While audits reduce the chances of smart contract bugs, they still exist. In a rare, worst-case scenario, you could lose up to your trade amount to a bug. Only interact with trusted, heavily audited dApps.</p><p>💰 <strong>Self-custody risk:</strong> Sole responsibility for your private keys means you could lose an entire wallet to theft, scams, or a misplaced seed phrase. This is why it is important to mitigate risk with a multi-wallet strategy, and to always keep a copy of your seed phrases backed up in a secure, real world location.</p><p>🥪 <strong>Sandwich attacks: </strong>Setting your swap slippage high increases the likelihood of trade frontrunners coordinating <code>sandwich attacks</code> against you. In a sandwich attack, you could lose up to your slippage amount on a trade. We’ll cover how to protect yourself from this style of attack in future content.</p><p>With these advantages and risks considered, a CEX might be a better fit for your needs if:</p><ul><li>🎓 You’re still early in your cryptocurrency journey, working to understand the risks & rewards.</li><li>⚖️ Your trade frequency and volume are small, making blockchain fees an unrealistic cost.</li><li>🏰 You’d prefer to trust an exchange to watch your funds, rather than being responsible for them.</li></ul><p>Some users take a hybrid approach to lower their overall risk, using a CEX to buy & sell their cryptocurrency, while storing it on the blockchain itself.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '7823339d33a34081aaf96d345196bc01',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'Why would you use a Decentralized Exchange over a Centralized Exchange?',
+          rightAnswerNumber: 4,
+          answers: [
+            'You want to access tokens not listed on a Centralized Exchange.',
+            'You want to maintain full custody over the exchanged funds.',
+            'You’d like to access tools and opportunities not traditionally available to you.',
+            'All of the above.'
+          ],
+          feedback: [
+            'ℹ️ This is a quality of a DEX, but it isn’t the only one.',
+            'ℹ️ This is a quality of a DEX, but it isn’t the only one.',
+            'ℹ️ This is a quality of a DEX, but it isn’t the only one.',
+            'ℹ️ Right! DEXs offer all of these benefits over CEXs.'
+          ],
+          id: 'decentralized-exchanges-7'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '92dc36b6f9fc46a3a3a44dc12e24d242',
+        title: 'Choosing a DEX',
+        content: '<div class="bloc1"><p>There are a lot of Decentralized Exchanges in DeFi, and some are better than others. We often look at five main factors when deciding on which DEX to use:</p><p>🥇 <strong>Legitimacy</strong><strong>:</strong> Is the brand well known for its trustworthiness & quality?</p><p>⛲ <strong>Liquidity:</strong> Is the <code>TVL</code> in the liquidity pool going to give me the best price on my trade?</p><p>🖱️ <strong>Ease of use:</strong> Is the user interface easy to interact with?</p><p>🔐 <strong>Security:</strong> Have the smart contracts been audited by multiple auditors?</p><p>🎁 <strong>Rewards & Features:</strong> Are there loyalty rewards for using the exchange or providing liquidity? Can I vote in governance?</p><p>Notable names that score highly in these areas include Uniswap, Curve, Velodrome, and Balancer. You can easily move from one DEX to another until you find a few favorites! For the lesson quest, we’re going to be using Velodrome — the number one DEX by TVL on Optimism. It’s well known, easy to use, has the deepest liquidity on the network, and because it’s on an L2: the fees are far more reasonable!</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '220fd799170c4f67935f5253a8443ed5',
+        title: 'DEX Best Practices',
+        content: '<div class="bloc1"><p>Before you interact with a dApp, there are some best practices you should follow to keep your funds safe:</p><p>👩‍💻 Always verify the link to a dApp with the official project Twitter (gold check mark) or a trusted third party, and bookmark it once you’ve validated it. A variety of DeFi scams begin with a fake link — even on popular search engines.</p><p>🔓 We will be prompted to grant on-chain <code>token allowances</code> to a smart contract to give it access to specific tokens in our wallet. You should limit these allowances to your trade amount to prevent any chance of interaction with additional funds. We’ll learn how to change & revoke these allowances in future content.</p><p>♟️ Avoid interacting with dApps on your HODL wallet, it’s better to use a separate wallet dedicated to dApp usage — just in case anything goes wrong. Check out our <a href=\'https://app.banklessacademy.com/lessons/web3-security\'>Web3 Security lesson</a> for more information on wallet strategies, and how to stay safe in Web3.</p><p>Now you’re ready to interact with a Decentralized Exchange!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/dex-best-practices-1ff2da3b.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '395bb0ab09724e97a379e95ffce1313b',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How can you be confident that the DEX you have chosen to use is not going to compromise your wallet?',
+          rightAnswerNumber: 1,
+          answers: [
+            'By only following URLs provided by a trusted party, and using thoroughly audited smart contracts.',
+            'By performing a small test interaction when using the platform for the first time.',
+            'All of the above.'
+          ],
+          feedback: [
+            'ℹ️ Right, only interacting with trustworthy URLs is one layer of protection.',
+            'ℹ️ A single interaction with a bad smart contract can drain your entire wallet.',
+            'ℹ️ Incorrect. A single interaction with a bad smart contract can drain your entire wallet.'
+          ],
+          id: 'decentralized-exchanges-8'
+        }
       },
       {
         type: 'QUEST',
-        title: 'DEXs and AMMs Quest',
-        component: 'DEXsAndAMMs'
+        title: 'Decentralized Exchanges Quest',
+        component: 'DecentralizedExchanges'
       },
       {
         type: 'END',
-        title: 'End of lesson'
+        title: 'Lesson Reward'
       }
     ]
+  },
+  {
+    kudosImageLink: null,
+    lessonImageLink: '/lesson/how-to-swap-on-a-decentralized-exchange/lesson-d1e791d2.png',
+    socialImageLink: '/lesson/how-to-swap-on-a-decentralized-exchange/social-f39d5e71.png',
+    learningActions: '',
+    marketingDescription: '',
+    kudosId: null,
+    duration: null,
+    learnings: '',
+    difficulty: undefined,
+    description: '',
+    name: 'How to Swap on a Decentralized Exchange',
+    publicationStatus: 'hidden',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    mirrorLink: 'https://mirror.xyz/banklessacademy.eth/zLajMWXQC44H4uQOXK5j9ROZhuC3xwgoddLtAQQo0k0',
+    isArticle: true,
+    notionId: '926fb19ef46747dbb6b58abd82af92c4',
+    slug: 'how-to-swap-on-a-decentralized-exchange',
+    articleContent: '### Key Takeaways\n\n> * There are a number of ways to fund your wallet on an Ethereum scaling solution like Optimism, Arbitrum, or Polygon.\n>\n> * Centralized exchanges often provide a direct Layer 2 onramp.\n>\n> * Third-party payment apps enable users to fund a wallet on Layer 2 from a bank account or a debit or credit card.\n>\n> * Protocol bridges let users send funds from Ethereum Mainnet to Layer 2.\n\nIf you’re new to crypto, all the talk about the importance of `Layer 2` (or L2) must seem a bit odd, confusing really. In contrast to [Layer 1](https://app.banklessacademy.com/lessons/layer-1-blockchains), which often refers to [Ethereum Mainnet](https://ethereum.org/), Layer 2 is a term for a specific type of Ethereum scaling solution that enables users to inherit the security of Ethereum but enjoy low transaction fees and fast `block` inclusion times. If you’ve ever heard of [Optimism](https://www.optimism.io/), [Arbitrum](https://arbitrum.io/), or [Polygon](https://polygon.technology/) (which is really a side chain, but let’s not worry about that here), those are Layer 2 scaling solutions.\n\nWhen the Ethereum network is busy, it can cost the equivalent of 80 USD in transaction fees — known as `gwei` or gas — to swap tokens, and much more to mint NFTs or provide `liquidity` to a `decentralized exchange` (DEX) on Mainnet. When network activity is low, most transactions on Ethereum Mainnet still cost a few dollars, and it takes an [FTX-level debacle](https://www.investopedia.com/ftx-exchange-5200842) or a [beyond-hyped NFT drop](https://dappradar.com/blog/yuga-labs-600m-otherside-nft-land-sale-records-highest-gas-fees-ever-on-ethereum) to really spike transaction fees.\n\nBecause transactions on Layer 2 confirm quickly and are inexpensive to execute, many of the most innovative protocols are building on L2s. Unless you’ve been in the ecosystem for a while, however, it’s not intuitive to know how to start using Layer 2s. But there is a clear place to begin your journey into Ethereum scaling solutions: funding your `wallet` on Layer 2.\n\nThere are three main ways to fund an L2 wallet: moving your crypto from a `centralized exchange` straight to a Layer 2 network, using a third-party crypto payment service to fund an L2 wallet, or sending your digital assets from Mainnet to L2 via a bridging protocol.\n\n> Please note, you’ll need to have a cryptocurrency wallet, like [MetaMask](https://metamask.io/) or [Tally Ho](https://tallyho.org/), and an Ethereum wallet `address` to proceed. If you haven’t yet created a `non-custodial wallet`, please [take this lesson first](https://app.banklessacademy.com/lessons/wallet-basics)!\n>\n> After you have a non-custodial Ethereum wallet address, you’ll be ready to continue on your crypto journey.\n\n## Funding From CEXs\n\nFunding your wallet directly from a centralized exchange (CEX) is perhaps the simplest way to move digital assets to an L2, particularly if you already hold cryptocurrency on the exchange. Most major CEXs offer users this option, although it isn’t always clear to the user.\n\nOn [Coinbase](https://www.coinbase.com/), for example, users can send their funds directly to Optimism or Polygon in just a few steps:\n\n1\. Go to [Coinbase](https://www.coinbase.com/).\n\n2\. [Purchase](https://help.coinbase.com/en/coinbase/trading-and-funding/buying-selling-or-converting-crypto/how-do-i-buy-digital-currency) or hold ETH on Coinbase.\n\n3\. Select ‘Send & Receive’, located at the top of the website.\n\n![](https://images.mirror-media.xyz/publication-images/Rzdn6KxR4U-oVpcgLs_fL.png?height=209&width=1440)\n\n4\. Enter the amount in fiat or ETH you wish to send (you can toggle between fiat and crypto to the right of the amount), select ‘Pay with’ and choose Ethereum, and in the ‘To’ field, enter the wallet address where the funds will be sent. Select ‘Continue’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F2uysvYIN69lbn9rz0yLsf.png&w=3840&q=90)\n\n5\. On the next screen, select ‘Network’ and change the network from Ethereum to Optimism.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Fz_DzBI1lJFVKNisD-8Rcs.png&w=3840&q=90)\n\n6\. Review, and if accurate, select ‘Send Now’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F-J0-k8BzvPCPPJLmnkQw-.png&w=3840&q=90)\n\nMost major exchanges offer users the ability to send their crypto directly to an L2. [Binance](https://www.binance.com/) supports Optimism and Arbitrum, for example. On whatever centralized exchange you convert fiat to crypto, check to see whether it offers support for direct-to-L2 services. Pro Tip: Use [Blockscan](https://blockscan.com/exchanges) to find the exchange compatible with your preferred L2.\n\n## Third-Party Onramps\n\nAnother simple way to fund your L2 wallet is to take advantage of direct-to-L2 services offered by many third-party crypto payment companies. [MoonPay](https://www.moonpay.com/), [Ramp](https://ramp.network/buy/), and [Transak](https://global.transak.com/) are three of the most popular options to fund crypto wallets without having to use a centralized exchange.\n\nLike most exchanges, these third-party onramps will require you to provide Know-Your-Customer information. However, once you get past those basic hurdles, these payment options are an easy way to buy crypto across the ecosystem and transfer it to Layer 2.\n\nFor MoonPay, the steps are:\n\n1\. Go to [MoonPay](https://www.moonpay.com/).\n\n2\. Select ‘Buy crypto’, located at the top or middle of the website.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FUU9Uswhysj9w4WBYI4VWL.png&w=3840&q=90)\n\n3\. Enter the amount of fiat you wish to send and the proper denomination.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FckrX4LeU78MqcPvpAq_VM.png&w=3840&q=90)\n\n4\. Select a digital asset, in this case ETH. Type in “ETH\'“ and you will see different networks on which you can purchase ETH (you may need to scroll down); choose the Layer 2 you want to use. Click ‘Continue’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FLfhhGbE1yfWdOpG1Z5N5S.png&w=3840&q=90)\n\n5\. Next, you will be prompted to enter personal verification and payment data.\n\n6\. Once complete, enter your Ethereum wallet address. You’ll be asked to make sure the wallet is safe to use.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Fn5hbzW-CVKzp3392TT91I.png&w=3840&q=90)\n\n7\. Complete, confirm the information is correct, and select ‘Pay’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F7ZBiVMjLfxQ66p8-cLBhN.png&w=3840&q=90)\n\nAs with CEXs, most major third-party payment onramps provide direct-to-L2 functionality. Take advantage of these innovations to save on transaction fees and increase the range of your `blockchain` explorations.\n\n## Funding Via Bridges\n\nIf you already have funds on Ethereum Mainnet, by far the easiest way to get your crypto on to L2 is to use a bridging protocol. Bridges are the name we’ve given to protocols designed to help us move our funds around the cryptoverse, and there are a number of bridges designed to move crypto from Ethereum Mainnet to Layer 2s.\n\n### Native Bridges\n\nNative bridges are those designed by the Layer 2 protocols themselves. For true Layer 2 scaling solutions like Arbitrum and Optimism, it takes about 30 minutes to move funds onto L2, but one week to move that crypto back over to Mainnet. The [Arbitrum Bridge](https://bridge.arbitrum.io/) and the [Optimism Bridge](https://app.optimism.io/bridge/) both take longer to transfer assets and settle transactions because of the way the scaling solution is designed.\n\n### Third-Party Bridges\n\nBecause no one likes to wait, a number of third-party bridging services exist to help us move our funds instantly to and from L2s. Among the most popular options are [Hop Protocol](https://app.hop.exchange/) and [Across Protocol](https://across.to/bridge), but you can use [Bungee](https://bungee.exchange/) to compare bridging fees across a number of protocols. To use Across, for example, all you need to do is:\n\n1\. Go to the [Across Protocol](https://across.to/bridge) bridge and connect your wallet.\n\n2\. To bridge funds to L2, select Ethereum under ‘From’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FSwt3yjUPwEteAiB5aU9zy.png&w=3840&q=90)\n\n3\. Choose your asset and the amount you wish to bridge (Pro Tip: only bridge a blockchain’s native `coin`, in this case ETH).\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FIBRvNt1d-CEe3XkuuwTvr.png&w=3840&q=90)\n\n4\. Next, select your L2 solution in ‘To’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FMnz8fWPFIGGQp25RA6FKt.png&w=3840&q=90)\n\n5\. Review the transaction, and if all looks correct, select ‘Send’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Ff9PbrvFv90jLNB-j60XlV.png&w=3840&q=90)\n\nMoving funds from Mainnet to L2 is really that simple, and nearly all bridges work the same way. Select a blockchain to send funds from and your destination, pick an asset and amount, and across the blockchain crevice you go. Pro Tip: As with sending from a CEX, you can use [Blockscan](https://blockscan.com/bridges) to find a compatible bridge for your L2 destination.\n\n## The Road to L2\n\nLayer 2s offer users of all experience levels the opportunity to experiment with decentralized finance in a way that is often prohibitive on Mainnet. Because it costs mere pennies to transact on these networks (you can compare costs [here](https://l2fees.info/)), it’s a great place to become familiar with the basic building blocks of decentralized finance, such as swaps, `liquidity pools`, or yield farms.\n\nUsing a CEX or a bridge to move funds to L2 is a necessary step in your journey from crypto novice to crypto competency. Remember, to see your funds displayed in your wallet, you may need to add the network in your wallet settings, which can be done at [Chainlist](https://chainlist.org/). If you just want to check that the funds made it safely to your L2 wallet, you can also check Etherscan (click on the ‘b’ for ‘Blockscan’ to the right of your wallet address to see L2 transactions) or go to a DEX, like [Uniswap](https://app.uniswap.org/), and select the L2 network and the asset to see your balance.\n\nAs you scale up your skills, you’ll need to figure out how to scale down your transaction fees. Learning how to fund an L2 wallet is the first step, but the next steps on your crypto journey are up to you. Welcome, explorer, a new world awaits.\n\n\n***\n\n**Author**\n\n**[Hiro Kennelly](https://twitter.com/HiroKennelly)** is a writer, editor, and coordinator at BanklessDAO and the Editor-in-Chief at Good Morning News. He is also helping to build a grants-focused organization at DAOpunks.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning as much as possible about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.'
   },
   {
     kudosImageLink: '/lesson/dex-aggregators/kudos-ddb9db8b.png',
@@ -1729,7 +2118,7 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/kudos-testing/kudos-5e4cda70.png',
+    kudosImageLink: '/lesson/kudos-testing/kudos-ca816a4c.mp4',
     lessonImageLink: '/lesson/kudos-testing/lesson-03a3e86a.png',
     socialImageLink: '/lesson/kudos-testing/social-17fed266.png',
     learningActions: '',

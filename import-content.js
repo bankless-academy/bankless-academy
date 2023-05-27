@@ -253,6 +253,7 @@ axios
               slide.quiz.question = question
                 .replace('<p>', '')
                 .replace('</p>', '')
+              slide.quiz.rightAnswerNumber = undefined
               slide.quiz.answers = []
               slide.quiz.feedback = []
               const quizDiv = new JSDOM(slide.content);
@@ -272,16 +273,19 @@ axios
                 slide.quiz.answers.push(answer)
 
                 const feedback = blockquote?.textContent.trim()
-                slide.quiz.feedback.push(feedback)
+                if (feedback)
+                  slide.quiz.feedback.push(feedback)
 
                 const isChecked = checkbox?.checked
                 if (isChecked) slide.quiz.rightAnswerNumber = nb
               }
+              if (slide.quiz.feedback.length === 0) delete slide.quiz.feedback
               if (!slide.quiz.rightAnswerNumber)
                 throw new Error(
                   `missing right answer, please check ${POTION_API}/html?id=${notion.id}`
                 )
               slide.quiz.id = `${lesson.slug}-${quizNb}`
+              delete slide.content
             }
             if (slide.content) {
               // download images locally
