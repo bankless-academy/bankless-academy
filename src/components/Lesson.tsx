@@ -520,7 +520,7 @@ const Lesson = ({
                 <>
                   {lesson.kudosImageLink && (
                     <>
-                      {lesson.kudosImageLink.includes('.mp4') ? (
+                      {lesson.kudosImageLink?.includes('.mp4') ? (
                         <Box
                           height="250px"
                           width="250px"
