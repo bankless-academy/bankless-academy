@@ -45,7 +45,7 @@ export interface LessonType {
       question: string
       answers: string[]
       feedback?: string[]
-      rightAnswerNumber: number
+      rightAnswerNumber?: number
     }
     component?: QuestComponentType
   }[]
