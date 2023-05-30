@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styled from '@emotion/styled'
-import { Text, Image, Button, Box } from '@chakra-ui/react'
+import { Text, Image, Button, Box, useDisclosure } from '@chakra-ui/react'
 import { ArrowUUpLeft } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 
@@ -12,6 +12,7 @@ import QuestComponent from 'components/Quest/QuestComponent'
 import CollectLessonButton from 'components/CollectLessonButton'
 import InternalLink from 'components/InternalLink'
 import { useSmallScreen } from 'hooks'
+import LessonCollectibleModal from 'components/LessonCollectibleModal'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -35,6 +36,7 @@ const Lesson = ({
     `isLessonOpen`,
     false
   )
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const [collectibleHover] = useState(true)
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
@@ -110,7 +112,7 @@ const Lesson = ({
                     cursor: 'pointer',
                   }}
                   minH="260px"
-                  onClick={() => setIsLessonOpenLS(true)}
+                  onClick={() => onOpen()}
                   // onMouseOver={() => setCollectibleHover(true)}
                   // onMouseOut={() => setCollectibleHover(false)}
                 >
@@ -204,6 +206,11 @@ const Lesson = ({
               </ExternalLink>
             )} */}
           </StyledCard>
+          <LessonCollectibleModal
+            isOpen={isOpen}
+            onClose={onClose}
+            lesson={lesson}
+          />
         </>
       )}
     </>

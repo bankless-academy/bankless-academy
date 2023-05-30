@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /* eslint-disable no-unreachable */
 /* eslint-disable no-console */
 require('dotenv').config()
@@ -8,10 +9,89 @@ const knex = require('knex')
 const fs = require('fs')
 const crc32 = require('js-crc').crc32
 const stringifyObject = require('stringify-object')
+const { Client } = require("@notionhq/client")
+const { NotionToMarkdown } = require("notion-to-md")
 
 const config = require('./knexfile.js')
 const db = knex(config)
 const { TABLES } = require('./db.js')
+
+const notion = new Client({
+  auth: process.env.NOTION_SECRET,
+})
+
+const n2m = new NotionToMarkdown({ notionClient: notion })
+
+// types of blocs to ignore
+// BlockType https://github.com/souvikinator/notion-to-md/blob/master/src/types/index.ts
+const blockTypesToIgnore = [
+  // "image",
+  "video",
+  "file",
+  "pdf",
+  "table",
+  "bookmark",
+  "embed",
+  "equation",
+  // "divider",
+  "toggle",
+  // "to_do",
+  "synced_block",
+  "column_list",
+  "column",
+  "link_preview",
+  // "link_to_page",
+  // "paragraph",
+  // "heading_1",
+  // "heading_2",
+  "heading_3",
+  // "bulleted_list_item",
+  // "numbered_list_item",
+  // "quote",
+  "template",
+  "child_page",
+  "child_database",
+  "code",
+  "callout",
+  "breadcrumb",
+  "table_of_contents",
+  "audio",
+  "unsupported"
+]
+for (const blockType of blockTypesToIgnore) {
+  n2m.setCustomTransformer(blockType, async () => {
+    return ""
+  })
+}
+
+const PROTOCOL_VERSION = "0.001"
+
+const mdHeader = (lesson) => `
+__________________________________________________________________________________________________________________________________________________________
+
+$$$$$$$\\                      $$\\       $$\\                                      $$$$$$\\                           $$\\                                   
+$$  __$$\\                     $$ |      $$ |                                    $$  __$$\\                          $$ |                                  
+$$ |  $$ | $$$$$$\\  $$$$$$$\\  $$ |  $$\\ $$ | $$$$$$\\   $$$$$$$\\  $$$$$$$\\       $$ /  $$ | $$$$$$$\\ $$$$$$\\   $$$$$$$ | $$$$$$\\  $$$$$$\\$$$$\\  $$\\   $$\\ 
+$$$$$$$\\ | \\____$$\\ $$  __$$\\ $$ | $$  |$$ |$$  __$$\\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\\____$$\\ $$  __$$ |$$  __$$\\ $$  _$$  _$$\\ $$ |  $$ |
+$$  __$$\\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\\$$$$$$\\  \\$$$$$$\\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
+$$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \\____$$\\  \\____$$\\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
+$$$$$$$  |\\$$$$$$$ |$$ |  $$ |$$ | \\$$\\ $$ |\\$$$$$$$\\ $$$$$$$  |$$$$$$$  |      $$ |  $$ |\\$$$$$$$\\\\$$$$$$$ |\\$$$$$$$ |\\$$$$$$$\\ $$ | $$ | $$ |\\$$$$$$$ |
+\\_______/  \\_______|\\__|  \\__|\\__|  \\__|\\__| \\_______|\\_______/ \\_______/       \\__|  \\__| \\_______|\\_______| \\_______| \\_______|\\__| \\__| \\__| \\____$$ |
+                                                                                                                                               $$\\   $$ |
+                                                                                                                                               \\$$$$$$  |
+                                                                                                                                                \\______/ 
+__________________________________________________________________________________________________________________________________________________________
+PORTABLE LESSON DATADISK™ COLLECTION
+---
+LESSON TITLE: ${lesson.name.toUpperCase()}
+DATA LOCATION: https://app.banklessacademy.com/lessons/${lesson.slug}.md
+PROTOCOL VERSION: ${PROTOCOL_VERSION}
+LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
+__________________________________________________________________________________________________________________________________________________________
+
+   << LESSON START >>
+
+`
 
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
@@ -279,16 +359,19 @@ axios
                 slide.quiz.answers.push(answer)
 
                 const feedback = blockquote?.textContent.trim()
-                slide.quiz.feedback.push(feedback)
+                if (feedback)
+                  slide.quiz.feedback.push(feedback)
 
                 const isChecked = checkbox?.checked
                 if (isChecked) slide.quiz.rightAnswerNumber = nb
               }
-              if (!slide.quiz.rightAnswerNumber)
-                throw new Error(
-                  `missing right answer, please check ${POTION_API}/html?id=${notion.id}`
-                )
+              if (slide.quiz.feedback.length === 0) delete slide.quiz.feedback
+              // if (!slide.quiz.rightAnswerNumber)
+              // throw new Error(
+              //   `missing right answer, please check ${POTION_API}/html?id=${notion.id}`
+              // )
               slide.quiz.id = `${lesson.slug}-${quizNb}`
+              delete slide.content
             }
             if (slide.content) {
               // download images locally
@@ -383,6 +466,23 @@ axios
           }
 
           // TODO: remove old images (diff between old/new lesson.imageLinks)
+
+          // convert to MD
+          console.log(`Converting "${lesson.name}" to MD`)
+          try {
+            const mdblocks = await n2m.pageToMarkdown(notion.id);
+            const mdString = n2m.toMarkdownString(mdblocks);
+            // hide answers
+            const lessonMD = mdString.parent?.replaceAll('[x]', '[ ]')
+            fs.writeFile(`public/lesson/${lesson.slug}.md`, `${mdHeader(lesson)}${lessonMD}`, (error) => {
+              if (error) throw error
+            })
+            console.log(
+              `lesson exported in public/lesson/${lesson.slug}.md`
+            )
+          } catch (error) {
+            console.log(error.headers)
+          }
         })
     })
     axios.all(promiseArray).then(() => {

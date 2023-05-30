@@ -3,7 +3,7 @@ import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = [
   {
-    lessonBadgeImageLink: 'https://link.assetfile.io/5QcimLOnRrX51GXna8L9pb/Kudos.png',
+    lessonBadgeImageLink: 'https://link.assetfile.io/Fp8a1TuFMsIAbrsU6j9r3/badge_a01_nftvideo.mp4',
     lessonImageLink: '/images/coming-soon-lesson.png',
     lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
     lessonCollectibleVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
@@ -37,7 +37,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '67a83d074e0346cc8483bcbf3df296e5',
         title: 'Goal of this lesson',
-        content: '<div class="bloc1"><ul><li>learn about yourself</li> <ul><li>what kind of Bankless person you are (Bankless archetype)</li><li>know your level of “Banklessness” with a score</li></ul> <li>set goals for your Bankless journey</li></ul><p>You’ll receive a recap at the end of this lesson, then you’ll be able to start or continue your Bankless journey!</p><p>Format: a bit of reading but mostly quizzes</p><p>If that’s what you are here for, LFG!</p></div>'
+        content: '<div class="bloc1"><h2>learn about yourself</h2><ul><li>what kind of Bankless person you are (Bankless archetype)</li><li>know your level of “Banklessness” with a score</li></ul><h2>set goals for your Bankless journey</h2><p>You’ll receive a recap at the end of this lesson, then you’ll be able to start or continue your Bankless journey!</p><p>Format: a bit of reading but mostly quizzes</p><p>If that’s what you are here for, LFG!</p></div>'
       },
       {
         type: 'LEARN',
@@ -51,7 +51,6 @@ const LESSONS: LessonType[] = [
         title: '✅ Question to determine Bankless archetype',
         quiz: {
           question: 'Why are you interested in web3? (can select multiple answer)',
-          rightAnswerNumber: 1,
           answers: [
             'make money',
             'learn how to be self sovereign',
@@ -60,6 +59,7 @@ const LESSONS: LessonType[] = [
             'censorship resistance',
             'change the world'
           ],
+          rightAnswerNumber: 1,
           id: 'going-bankless-1'
         }
       },
@@ -69,12 +69,12 @@ const LESSONS: LessonType[] = [
         title: '✅ Question to determine Bankless archetype',
         quiz: {
           question: 'Do you trust Central Banks?',
-          rightAnswerNumber: 1,
           answers: [
             'yes',
             'no',
             'it depends'
           ],
+          rightAnswerNumber: 1,
           id: 'going-bankless-2'
         }
       },
@@ -84,11 +84,11 @@ const LESSONS: LessonType[] = [
         title: '✅ Question to determine Bankless archetype',
         quiz: {
           question: 'Are you worried about inflation?',
-          rightAnswerNumber: 1,
           answers: [
             'yes',
             'no really'
           ],
+          rightAnswerNumber: 1,
           id: 'going-bankless-3'
         }
       },
@@ -98,13 +98,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Question to determine Bankless archetype',
         quiz: {
           question: 'Do you like web2 socials?',
-          rightAnswerNumber: 1,
           answers: [
             'yes, I use them often',
             'no I’m not happy with them',
             'I don’t trust web2 socials platforms',
             'I wish I can own my data'
           ],
+          rightAnswerNumber: 1,
           id: 'going-bankless-4'
         }
       },
@@ -120,7 +120,6 @@ const LESSONS: LessonType[] = [
         title: '✅ Question to determine your Bankless level',
         quiz: {
           question: 'Select the topics you are familiar with (can select multiple answer)',
-          rightAnswerNumber: 1,
           answers: [
             'buy/sell crypto on an exchange',
             'self custody',
@@ -128,6 +127,7 @@ const LESSONS: LessonType[] = [
             'buy an NFT',
             'join a DAO'
           ],
+          rightAnswerNumber: 1,
           id: 'going-bankless-5'
         }
       },
@@ -137,7 +137,6 @@ const LESSONS: LessonType[] = [
         title: '✅ Question to determine your Bankless level',
         quiz: {
           question: 'Select more topics you are familiar with (can select multiple answer)',
-          rightAnswerNumber: 1,
           answers: [
             'LP',
             'do a loan',
@@ -145,6 +144,7 @@ const LESSONS: LessonType[] = [
             'staking via LSD',
             'I run a solo node'
           ],
+          rightAnswerNumber: 1,
           id: 'going-bankless-6'
         }
       },
@@ -154,13 +154,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Question to determine your Bankless level',
         quiz: {
           question: 'Are you familiar with the term mentioned in previous slides.',
-          rightAnswerNumber: 1,
           answers: [
             'not a all',
             'no but I’m curious',
             'I’m familiar with most of them',
             'I’m already familiar with all'
           ],
+          rightAnswerNumber: 1,
           id: 'going-bankless-7'
         }
       },
@@ -176,7 +176,6 @@ const LESSONS: LessonType[] = [
         title: '✅ Question to determine your Bankless goals',
         quiz: {
           question: 'Select the topics are you curious about (can select multiple answer)',
-          rightAnswerNumber: 1,
           answers: [
             'buy/sell crypto on an exchange',
             'self custody',
@@ -184,6 +183,7 @@ const LESSONS: LessonType[] = [
             'buy an NFT',
             'join a DAO'
           ],
+          rightAnswerNumber: 1,
           id: 'going-bankless-8'
         }
       },
@@ -193,7 +193,6 @@ const LESSONS: LessonType[] = [
         title: '✅ Question to determine your Bankless goals',
         quiz: {
           question: 'Select more topics are you curious about (can select multiple answer)',
-          rightAnswerNumber: 1,
           answers: [
             'LP',
             'do a loan',
@@ -201,6 +200,7 @@ const LESSONS: LessonType[] = [
             'staking via LSD',
             'I run a solo node'
           ],
+          rightAnswerNumber: 1,
           id: 'going-bankless-9'
         }
       },
@@ -274,13 +274,13 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'What is a wallet?',
-          rightAnswerNumber: 4,
           answers: [
             'A device equipped with RFID technology',
             'A velcro bi-fold device',
             'An account that protects my assets',
             'An app or device used to interact with a blockchain'
           ],
+          rightAnswerNumber: 4,
           id: 'wallet-basics-1'
         }
       },
@@ -296,13 +296,13 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'What can you do with your recovery phrase?',
-          rightAnswerNumber: 3,
           answers: [
             '[A] Recover your wallet if lost, stolen, or damaged',
             '[B] Access your wallet on multiple devices',
             '[C] Both A & B',
             '[D] None of the above'
           ],
+          rightAnswerNumber: 3,
           id: 'wallet-basics-2'
         }
       },
@@ -324,13 +324,13 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'Your public key is like your _____ and your private key is like your _____',
-          rightAnswerNumber: 2,
           answers: [
             'Routing Number / Account Number',
             'Home address / House key',
             'Address / Zip code',
             'Phone Number / Social Security Number'
           ],
+          rightAnswerNumber: 2,
           id: 'wallet-basics-3'
         }
       },
@@ -346,11 +346,11 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'Do you control your private key with a custodial wallet?',
-          rightAnswerNumber: 2,
           answers: [
             'Yes',
             'No'
           ],
+          rightAnswerNumber: 2,
           id: 'wallet-basics-4'
         }
       },
@@ -366,11 +366,11 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'Are you responsible for your private key with a non-custodial wallet?',
-          rightAnswerNumber: 1,
           answers: [
             'Yes',
             'No'
           ],
+          rightAnswerNumber: 1,
           id: 'wallet-basics-5'
         }
       },
@@ -386,13 +386,13 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'What is the safest way to protect your recovery phrase?',
-          rightAnswerNumber: 4,
           answers: [
             'Save it on your computer and print it out.',
             'Take a screenshot and save it on your phone.',
             'Save it in your Dropbox account.',
             'Write it on a durable material and store it in a safe place.'
           ],
+          rightAnswerNumber: 4,
           id: 'wallet-basics-6'
         }
       },
@@ -414,11 +414,11 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'Is a cold wallet more secure than a hot wallet?',
-          rightAnswerNumber: 1,
           answers: [
             'Yes',
             'No'
           ],
+          rightAnswerNumber: 1,
           id: 'wallet-basics-7'
         }
       },
@@ -434,11 +434,11 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'Is MetaMask a custodial wallet?',
-          rightAnswerNumber: 2,
           answers: [
             'Yes',
             'No'
           ],
+          rightAnswerNumber: 2,
           id: 'wallet-basics-8'
         }
       },
@@ -487,8 +487,8 @@ const LESSONS: LessonType[] = [
     slides: [
       {
         type: 'LEARN',
-        notionId: '2541f10fa3264827ac57b1cf863254fb',
-        title: '<strong>I</strong><strong>ntroduction</strong>',
+        notionId: 'fa33ece84a63449a87487dbd42eac654',
+        title: 'Introduction',
         content: '<div class="bloc1"><p><code>Blockchain</code> technology is a revolutionary way of storing and tracking data, while also making that data accessible to anyone. It is a way of organizing data in a single public list of all historical transactions that anyone can view but cannot edit. This public list of transactions is collectively known as the blockchain <code>ledger</code>.</p><p>After examining the layers of a blockchain, we will be using a blockchain tool called a <code>block explorer</code> to look into the specifics of the Ethereum blockchain structure; we will zoom in on the Ethereum blockchain to view the <strong>list</strong> of blocks, the <strong>transactions</strong> within those blocks, and the <strong>details</strong> of each individual transaction.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/introduction-6d0b6137.svg\'></div>'
       },
       {
@@ -503,13 +503,13 @@ const LESSONS: LessonType[] = [
         title: '✅ quiz',
         quiz: {
           question: 'What is a blockchain?',
-          rightAnswerNumber: 4,
           answers: [
             'Organized groups of transactions called blocks',
             'A list of amounts of money sent between two addresses',
             'Blocks linked together in sequence',
             'All of the above'
           ],
+          rightAnswerNumber: 4,
           id: 'blockchain-basics-1'
         }
       },
@@ -531,13 +531,13 @@ const LESSONS: LessonType[] = [
         title: '✅ quiz',
         quiz: {
           question: 'Which of the following statement(s) is/are true for public blockchain ledgers?',
-          rightAnswerNumber: 4,
           answers: [
             'All transactions are public and past transactions are unchangeable',
             'The ledger tracks how much cryptocurrency each address currently has',
             'The ledger grows as new transactions are added to it',
             'All of the above'
           ],
+          rightAnswerNumber: 4,
           id: 'blockchain-basics-2'
         }
       },
@@ -553,13 +553,13 @@ const LESSONS: LessonType[] = [
         title: '✅ quiz',
         quiz: {
           question: 'What makes a blockchain decentralized?',
-          rightAnswerNumber: 3,
           answers: [
             'Only one entity can write to the blockchain',
             'It meets decentralization requirements set by the government',
             'No single authority or entity controls the ledger or access to the ledger data because it is distributed on a large network of computers',
             'The ledger is stored on a single secure server'
           ],
+          rightAnswerNumber: 3,
           id: 'blockchain-basics-3'
         }
       },
@@ -575,13 +575,13 @@ const LESSONS: LessonType[] = [
         title: '✅ quiz',
         quiz: {
           question: 'What is the purpose of a block hash?',
-          rightAnswerNumber: 2,
           answers: [
             'To encrypt block data so no one can read it',
             'To link each block to the previous one and ensure past transaction data doesn’t change',
             'To ensure transactions are sent to the correct address',
             'To ensure the blockchain stays decentralized'
           ],
+          rightAnswerNumber: 2,
           id: 'blockchain-basics-4'
         }
       },
@@ -597,13 +597,13 @@ const LESSONS: LessonType[] = [
         title: '✅ quiz',
         quiz: {
           question: 'The following information is contained in a block:',
-          rightAnswerNumber: 3,
           answers: [
             'All information contained in previous blocks, so the blockchain is always current',
             'Anything relevant to the blockchain as block size is unlimited',
             'Transaction data and a reference to the previous block',
             'All transaction data generated within a fixed timeframe'
           ],
+          rightAnswerNumber: 3,
           id: 'blockchain-basics-5'
         }
       },
@@ -619,13 +619,13 @@ const LESSONS: LessonType[] = [
         title: '✅ quiz',
         quiz: {
           question: 'Data on a blockchain is simply a list of transactions grouped into blocks. Examples of such transactions might include:',
-          rightAnswerNumber: 1,
           answers: [
             'Sending or receiving crypto assets',
             'Changing the size of the block',
             'Editing past blockchain data',
             'All of the above'
           ],
+          rightAnswerNumber: 1,
           id: 'blockchain-basics-6'
         }
       },
@@ -641,13 +641,13 @@ const LESSONS: LessonType[] = [
         title: '✅ quiz',
         quiz: {
           question: 'What is true about blockchain addresses?',
-          rightAnswerNumber: 4,
           answers: [
             'They are the public identifiers of different entities on a blockchain',
             'They always start with 0x on Ethereum',
             'Whoever controls the private key for an address can use the funds at that address',
             'All of the above'
           ],
+          rightAnswerNumber: 4,
           id: 'blockchain-basics-7'
         }
       },
@@ -716,11 +716,11 @@ const LESSONS: LessonType[] = [
         title: '✅ quiz',
         quiz: {
           question: 'Unlike in web2, in web3, scammers only need the seed phrase to steal everything in a wallet, including tokens and NFTs.',
-          rightAnswerNumber: 1,
           answers: [
             'True',
             'False'
           ],
+          rightAnswerNumber: 1,
           id: 'web3-security-1'
         }
       },
@@ -742,13 +742,13 @@ const LESSONS: LessonType[] = [
         title: '✅ quiz',
         quiz: {
           question: 'Why are password managers helpful?',
-          rightAnswerNumber: 4,
           answers: [
             'People only have to remember their master password to use them.',
             'They generate and store strong, unique passwords.',
             'They encrypt passwords to keep them secure.',
             'All of the above'
           ],
+          rightAnswerNumber: 4,
           id: 'web3-security-2'
         }
       },
@@ -764,13 +764,13 @@ const LESSONS: LessonType[] = [
         title: '✅ quiz',
         quiz: {
           question: 'Why is two-factor authentication strongly recommended?',
-          rightAnswerNumber: 2,
           answers: [
             'It’s impossible to hack an account when the user has 2FA enabled.',
             'It adds another layer of security to web2 accounts.',
             'It makes passwords stronger.',
             'All of the above'
           ],
+          rightAnswerNumber: 2,
           id: 'web3-security-3'
         }
       },
@@ -792,13 +792,13 @@ const LESSONS: LessonType[] = [
         title: '✅ quiz',
         quiz: {
           question: 'How do scammers use social engineering?',
-          rightAnswerNumber: 4,
           answers: [
             'Pretending to be an authority in a community.',
             'Pressuring people with short amounts of time.',
             'Offering giveaways or free NFTs to generate FOMO.',
             'All of the above'
           ],
+          rightAnswerNumber: 4,
           id: 'web3-security-4'
         }
       },
@@ -832,13 +832,13 @@ const LESSONS: LessonType[] = [
         title: '✅ quiz',
         quiz: {
           question: 'Why is interacting with scam-tokens dangerous?',
-          rightAnswerNumber: 4,
           answers: [
             'They could steal all of your ETH.',
             'They could steal other tokens from your wallet.',
             'They could lead to a phishing website where a scammer will try to get your seed phrase.',
             'All of the above'
           ],
+          rightAnswerNumber: 4,
           id: 'web3-security-5'
         }
       },
@@ -854,11 +854,11 @@ const LESSONS: LessonType[] = [
         title: '✅ Knowledge Check',
         quiz: {
           question: 'Is a hardware wallet more secure than a hot wallet?',
-          rightAnswerNumber: 1,
           answers: [
             'Yes',
             'No'
           ],
+          rightAnswerNumber: 1,
           id: 'web3-security-6'
         }
       },
@@ -874,13 +874,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Knowledge Check',
         quiz: {
           question: 'We recommend keeping your funds _______________ for higher security.',
-          rightAnswerNumber: 3,
           answers: [
             'stored in multiple airdrops',
             'locked in multiple NFTs',
             'separated in multiple wallets',
             'liquid in multiple addresses'
           ],
+          rightAnswerNumber: 3,
           id: 'web3-security-7'
         }
       },
@@ -941,7 +941,7 @@ const LESSONS: LessonType[] = [
     slides: [
       {
         type: 'LEARN',
-        notionId: 'c39a3e32b41c474394eed2485e5f6096',
+        notionId: 'd8a93eee9b3d4af9bf180376e26bc422',
         title: '<strong>Introduction</strong>',
         content: '<div class="bloc1"><p>Problems emerge when more users want to use a <code>blockchain</code> network than it can handle. Large demand for <code>blockspace</code> can be temporary or can last as long as users continue to have a strong desire to use the blockchain. In times of high demand, Ethereum users can pay skyrocketing fees to still have their transactions processed quickly— ultimately pricing out users with less capital.</p><p>This lesson explores why Ethereum and other blockchains are subject to the <code>Blockchain Trilemma</code>, how the Trilemma is the root cause of the problems described above, and how the Trilemma affects Ethereum’s plans for serving the needs of all its users. We will look at the tradeoffs several blockchains have made concerning the Blockchain Trilemma, and what those tradeoffs mean for Academy Explorers.</p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/introduction-e0da8469.svg\'></div>'
       },
@@ -957,13 +957,13 @@ const LESSONS: LessonType[] = [
         title: '✅ TODO',
         quiz: {
           question: 'The Blockchain Trilemma describes the relationship between:',
-          rightAnswerNumber: 3,
           answers: [
             'ethereum, bitcoin, and altcoins',
             'security, censorship, and fraud',
             'decentralization, scalabilty, and security',
             'money, humans, and blockchains'
           ],
+          rightAnswerNumber: 3,
           id: 'layer-1-blockchains-1'
         }
       },
@@ -979,13 +979,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Consensus',
         quiz: {
           question: 'Blockchain consensus for cryptocurrencies is:',
-          rightAnswerNumber: 4,
           answers: [
             'The process where all blockchain nodes agree on what has happened on-chain',
             'Important for everyone in that chain’s ecosystem to prevent fraud',
             'Secured through economic incentives',
             'All of the above'
           ],
+          rightAnswerNumber: 4,
           id: 'layer-1-blockchains-2'
         }
       },
@@ -1001,13 +1001,13 @@ const LESSONS: LessonType[] = [
         title: '✅ 51% attacks',
         quiz: {
           question: 'The end-goal of a 51% attack is to:',
-          rightAnswerNumber: 2,
           answers: [
             'Disrupt mining operations',
             'Commit fraud in blockchain systems',
             'Create a new cryptocurrency',
             'Eliminate the other 49%'
           ],
+          rightAnswerNumber: 2,
           id: 'layer-1-blockchains-3'
         }
       },
@@ -1023,13 +1023,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Transactions Per Second',
         quiz: {
           question: 'Which of the following is true for the bus stop analogy for blockchain transactions?',
-          rightAnswerNumber: 4,
           answers: [
             'People (transactions) are grouped together into buses (blocks)',
             'There is a maximum limit on how many people (transactions) can fit into each bus (block)',
             'To process more people (transactions) you need faster, larger, and/or more buses (blocks)',
             'All of the above'
           ],
+          rightAnswerNumber: 4,
           id: 'layer-1-blockchains-4'
         }
       },
@@ -1051,13 +1051,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Why decentralization?',
         quiz: {
           question: 'Which of these statements is NOT true for decentralization?',
-          rightAnswerNumber: 3,
           answers: [
-            'Decentralization makes blockchains censorship-resistant ',
+            'Decentralization makes blockchains censorship-resistant',
             'Decentralization makes blockchains permissionless',
             'Decentralization helps authoritarian powers to maintain control',
-            'Anyone anywhere can use permissionless systems '
+            'Anyone anywhere can use permissionless systems'
           ],
+          rightAnswerNumber: 3,
           id: 'layer-1-blockchains-5'
         }
       },
@@ -1073,11 +1073,11 @@ const LESSONS: LessonType[] = [
         title: '✅ But is it Decentralized?',
         quiz: {
           question: 'Different blockchains use different amounts of decentralization. ',
-          rightAnswerNumber: 1,
           answers: [
             'True',
             'False'
           ],
+          rightAnswerNumber: 1,
           id: 'layer-1-blockchains-6'
         }
       },
@@ -1099,13 +1099,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Layer 2s',
         quiz: {
           question: 'Layer 2s:',
-          rightAnswerNumber: 2,
           answers: [
             'Provide their own security',
             'Increase scalability for the main blockchain',
             'Increase fees for users',
             'Increase finality time for users'
           ],
+          rightAnswerNumber: 2,
           id: 'layer-1-blockchains-7'
         }
       },
@@ -1121,13 +1121,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Ethereum Future',
         quiz: {
           question: 'Ethereum upgrades include:',
-          rightAnswerNumber: 4,
           answers: [
             'Using Layer 2s and sharding to increase scalability',
             'Maintaining decentralization and security as core principles',
             'Reducing energy consumption of the blockchain using Proof of Stake consensus',
             'All of the above'
           ],
+          rightAnswerNumber: 4,
           id: 'layer-1-blockchains-8'
         }
       },
@@ -1196,11 +1196,11 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'You must be online to transact using the Bitcoin Lightning Network.',
-          rightAnswerNumber: 1,
           answers: [
             'True',
             'False'
           ],
+          rightAnswerNumber: 1,
           id: 'layer-2-blockchains-1'
         }
       },
@@ -1216,13 +1216,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'Ethereum scaling solutions:',
-          rightAnswerNumber: 3,
           answers: [
             'use payment channels to scale the network.',
             'can’t support smart contract interactions.',
             'should increase scalability without compromising on other trilemma attributes.',
             'allow faster transaction speeds at the cost of higher gas.'
           ],
+          rightAnswerNumber: 3,
           id: 'layer-2-blockchains-2'
         }
       },
@@ -1244,13 +1244,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'Sidechains:',
-          rightAnswerNumber: 4,
           answers: [
             'hold collateral on Mainnet.',
             'have cheaper gas fees than Mainnet.',
             'have greater centralization risks than Mainnet.',
             'All the above.'
           ],
+          rightAnswerNumber: 4,
           id: 'layer-2-blockchains-3'
         }
       },
@@ -1272,11 +1272,11 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'With Optimistic Rollups, transactions are considered valid until proven otherwise.',
-          rightAnswerNumber: 1,
           answers: [
             'True',
             'False'
           ],
+          rightAnswerNumber: 1,
           id: 'layer-2-blockchains-4'
         }
       },
@@ -1292,12 +1292,12 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'Compared to Optimistic Rollups, ZK Rollups:',
-          rightAnswerNumber: 2,
           answers: [
             'post more user data to Mainnet.',
             'offer greater privacy and enable faster transaction finality on Mainnet.',
             'perform fewer computations to finalize a transaction.'
           ],
+          rightAnswerNumber: 2,
           id: 'layer-2-blockchains-5'
         }
       },
@@ -1313,11 +1313,11 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'EVM equivalent scaling solutions are able to easily reuse smart contracts deployed on Mainnet.',
-          rightAnswerNumber: 1,
           answers: [
             'True',
             'False'
           ],
+          rightAnswerNumber: 1,
           id: 'layer-2-blockchains-6'
         }
       },
@@ -1419,13 +1419,13 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'What does DeFi stand for? ',
-          rightAnswerNumber: 2,
           answers: [
             'Derivative fiction',
             'Decentralized finance',
             'Deregulation field',
             'Degenerate fishermen'
           ],
+          rightAnswerNumber: 2,
           id: 'intro-to-defi-1'
         }
       },
@@ -1441,13 +1441,13 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'How can you earn yield with crypto?',
-          rightAnswerNumber: 3,
           answers: [
             '[A] Earning interest by depositing into a DeFi protocol',
             '[B] Earning rewards by depositing into a DeFi protocol',
             '[C] Both A and B',
             '[D] You can’t earn yield on crypto'
           ],
+          rightAnswerNumber: 3,
           id: 'intro-to-defi-2'
         }
       },
@@ -1463,13 +1463,13 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'Fill in the blank: DeFi transactions are ____.',
-          rightAnswerNumber: 3,
           answers: [
             'Free',
             'Controlled',
             'Permissionless',
             'Centralized'
           ],
+          rightAnswerNumber: 3,
           id: 'intro-to-defi-3'
         }
       },
@@ -1485,13 +1485,13 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'What does HODL mean?',
-          rightAnswerNumber: 4,
           answers: [
             'It’s a misspelling of HOLD',
             'Hold On for Dear Life',
             'Keeping crypto for a long time',
             'All of the above'
           ],
+          rightAnswerNumber: 4,
           id: 'intro-to-defi-4'
         }
       },
@@ -1513,13 +1513,13 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'What is a DEX?',
-          rightAnswerNumber: 1,
           answers: [
             'A decentralized exchange',
             'A digital electric xylophone',
             'A crypto index fund',
             'None of the above'
           ],
+          rightAnswerNumber: 1,
           id: 'intro-to-defi-5'
         }
       },
@@ -1535,13 +1535,13 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'Fill in the blank: DeFi lending is done on a _____ level.',
-          rightAnswerNumber: 2,
           answers: [
             'income to debt',
             'peer-to-peer',
             'banks to customers',
             'income to interest'
           ],
+          rightAnswerNumber: 2,
           id: 'intro-to-defi-6'
         }
       },
@@ -1557,13 +1557,13 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'Lending your crypto to a protocol is an example of?',
-          rightAnswerNumber: 2,
           answers: [
             'Trading',
             'Staking',
             'Borrowing',
             'HODLing'
           ],
+          rightAnswerNumber: 2,
           id: 'intro-to-defi-7'
         }
       },
@@ -1579,13 +1579,13 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'What is a risk in DeFi?',
-          rightAnswerNumber: 4,
           answers: [
             'There are no risks',
             'The bank might turn down your loan',
             'Bad weather could shut down the exchange',
             'There may be an error in the code'
           ],
+          rightAnswerNumber: 4,
           id: 'intro-to-defi-8'
         }
       },
@@ -1603,34 +1603,312 @@ const LESSONS: LessonType[] = [
     lessonCollectibleVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
     learningActions: '',
     marketingDescription: 'DEXs and AMMs have changed the landscape of traditional market trading. It’s time to understand why, and how you can use this technology to your own advantage.',
-    kudosId: null,
+    kudosId: 2608,
     duration: 15,
     learnings: '',
     difficulty: undefined,
     description: 'Discover how smart-contract exchanges enable permissionless token swaps!',
-    name: 'DEXs and AMMs',
-    quest: 'DEXsAndAMMs',
+    name: 'Decentralized Exchanges',
+    quest: 'DecentralizedExchanges',
     publicationStatus: 'planned',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
     notionId: '0ff0ff5bde6c43f99f7710352069163e',
-    slug: 'dexs-and-amms',
-    imageLinks: [],
+    slug: 'decentralized-exchanges',
+    imageLinks: [
+      '/lesson/decentralized-exchanges/what-is-a-decentralized-exchange-926218f4.svg',
+      '/lesson/decentralized-exchanges/centralized-decentralized-exchanges-3d26c102.svg',
+      '/lesson/decentralized-exchanges/decentralized-applications-be95a017.png',
+      '/lesson/decentralized-exchanges/decentralized-applications-59aa4f00.svg',
+      '/lesson/decentralized-exchanges/decentralized-applications-continued-76c427d0.svg',
+      '/lesson/decentralized-exchanges/automated-market-makers-bca26bf3.svg',
+      '/lesson/decentralized-exchanges/token-swaps-fef506ce.svg',
+      '/lesson/decentralized-exchanges/token-swaps-continued-a735b661.svg',
+      '/lesson/decentralized-exchanges/what-is-liquidity-0f1ef874.svg',
+      '/lesson/decentralized-exchanges/liquidity-providers-7ad55a9b.svg',
+      '/lesson/decentralized-exchanges/dex-best-practices-a6443b8d.svg'
+    ],
     slides: [
       {
         type: 'LEARN',
-        title: 'TODO',
-        content: '<div class="bloc1"><p>slide content</p></div>'
+        notionId: '2b28e263cbad4a7e848d90254ff8f523',
+        title: 'What is a Decentralized Exchange?',
+        content: '<div class="bloc1"><p>Decentralized Exchanges are on-chain marketplaces that allow all Explorers to securely exchange cryptocurrency with each other, all while maintaining self-custody of their wallet funds. These peer-to-peer trades are facilitated using publicly accessible smart contracts that connect users with large communal vaults of tokens called liquidity pools. Decentralized Exchanges can be found on almost all blockchains, and are present on both Ethereum Layer 1s & 2s.</p><p>Exchanging tokens is an essential part of using <code>DeFi</code> — where you’ll find a wider range of token variety and utility than on a CEX. Some users buy tokens to access on-chain products & services. Others purchase tokens as a short or long term investment in an on-chain project. There are even tokens even grant you voting power used to determine the direction of their respective project — much like holding shares at a traditional corporation! Regardless of your motivation, you’ll be visiting Decentralized Exchanges on a regular basis in DeFi. </p><p>Let’s build an understanding of how they work and how they can best serve you.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/what-is-a-decentralized-exchange-926218f4.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'f84de8f77ba64d95ae97b0b5bab8f65c',
+        title: 'Centralized & Decentralized Exchanges',
+        content: '<div class="bloc1"><p>Let’s start by outlining the main differences between Centralized Exchange (like Coinbase, Binance, Kraken) and Decentralized Exchange (like Uniswap, PancakeSwap) technology.</p><p>Centralized Exchanges (CEXs) allow users to trade and invest in cryptocurrency while remaining outside of the blockchain ecosystem. Because your account is on the CEX itself, your private keys and funds are in their custody. You are subject to their management — their protection, their rules, and their flaws.</p><p>Using Decentralized Exchanges (DEXs) is the practical use of cryptocurrency systems; You are on the blockchain, using it for the purpose it was built. The peer-to-peer model allows you to play both the consumer and the provider — accessing financial opportunities previously available only to the financial class. There’s no party determining whether you’re allowed to use the system or not — it’s openly available to all. The system also benefits from a level of transparency that evens the playing field for all users, and a property of censorship-resistance that protects the ecosystem against attacks or actors seeking unfair advantage.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/centralized-decentralized-exchanges-3d26c102.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '884e65522a3e49b6b762409b061fe0a3',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'Which of the following is true regarding cryptocurrency exchanges?',
+          answers: [
+            'There is no team behind a DEX.',
+            'You can only lose funds on a CEX to a bad trade.',
+            'DEXs allow you to trade while maintaining self-custody, while CEXs do not.'
+          ],
+          feedback: [
+            'ℹ️ DEXs still have development teams, but their influence on the project is limited.',
+            'ℹ️ Even CEXs have their risks. In 2022, the FTX exchange collapsed, with almost all users losing their deposits.',
+            'ℹ️ Unless explicitly stated otherwise, a CEX owns your private keys.'
+          ],
+          rightAnswerNumber: 3,
+          id: 'decentralized-exchanges-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '26dde0f86cc6443b91e1e09d8fdda42d',
+        title: 'Decentralized Applications',
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'<p>DEXs are a type of dApp — a decentralized application running on the blockchain. For an internet application to be considered fully ‘decentralized’ it needs to facilitate a user’s desired blockchain action with zero need for oversight or a third party, for any user that uses it.</p><p>This service is facilitated using smart contracts, lines of code that take a user’s on-chain action and return a predictable on-chain action in response. The Ethereum Foundation compares smart contracts to vending machines: The user inputs the number corresponding to the item they’d like to receive, plus the appropriate amount of money, and they receive an expected output — their snack — all without the need for another person to facilitate the transaction.</p><p>DEX dApps handle a variety of commands, like swapping, voting, or adding & removing liquidity.</p>/lesson/decentralized-exchanges/decentralized-applications-be95a017.png\'></div><div class="bloc-b"></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/lesson/decentralized-exchanges/decentralized-applications-59aa4f00.svg\'></div><div class="bloc-b"></div></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '8e1ac68e66064904941b5475b9f5899c',
+        title: 'Decentralized Applications (continued)',
+        content: '<div class="bloc1"><p>DEXs follow the same format as the vending machine: they take a user’s input token and output the desired token. Other examples include:</p><p>🎟️ <strong>Voting dApps:</strong> allocating a user’s vote to a specified party.</p><p>📦 <strong>Bridge dApps:</strong> transferring a user’s cryptocurrency from one network to another.</p><p>🤝 <strong>Lending/Borrowing dApps:</strong> granting loans to users meeting specified requirements.</p><p>It’s interesting to know that smart contracts are actually a type of Ethereum account. They have an address and a balance on the blockchain, performing automated actions when prompted by a transfer and command. When you interact with a DEX, you are interacting with a programmed Ethereum account and its functions.</p><p>dApps will typically use a website as a visual interface to let users easily interact with their smart contracts. If the website ever goes down, know that with some experience you can still access the smart contract itself directly. We’ll cover this in future content!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/decentralized-applications-continued-76c427d0.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '67e487c5630e429f87a7c7e0367fe025',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'Which of the below properties are needed for a smart contract to be considered decentralized?',
+          answers: [
+            'Permissionless; open access to all users.',
+            'Autonomous; interacting with users without need of an intermediary.',
+            'Transparent; the smart contract code is publicly available.',
+            'All of the above.'
+          ],
+          feedback: [
+            'ℹ️ This is a quality of a dApp, but it isn’t the only one.',
+            'ℹ️ This is a quality of a dApp, but it isn’t the only one.',
+            'ℹ️ This is a quality of a dApp, but it isn’t the only one.',
+            'ℹ️ Ethereum dApps are respected for their ability to be permissionless, autonomous, and transparent.'
+          ],
+          rightAnswerNumber: 4,
+          id: 'decentralized-exchanges-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '4b647b69cd37476a9ced01d73a721e2c',
+        title: 'Automated Market Makers',
+        content: '<div class="bloc1"><p>In traditional markets and CEXs, your custodian uses an order book: a database filled with buy & sell offers. The CEX connects your trade offer with another person’s. You are usually charged a base/scaling commission on your trade, and you’re also left wondering if the undisclosed matching method found you the best deal… or if a large preferred party was given the better end.</p><p>DEXs use ‘Automated Market Maker’ (AMM) technology, a matchmaking system that makes the best trade, based on a public algorithm. As this algorithm is open-source, anyone can understand, clone, and improve it — leading to healthy competition, constant innovation, and better trades for everyone.</p><p>AMMs route user trades through <code>liquidity pools</code>, rather than matching user bids & asks directly. These communal token vaults accumulate & dispense tokens according to user interactions, providing a more transparent and fair trade as compared to order book technology.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/automated-market-makers-bca26bf3.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '764b929ce95f44c29dc94decf5cf3492',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'What is the benefit of using AMMs to complete trades as compared to a traditional order book?',
+          answers: [
+            'The AMM trade is faster than an order book trade.',
+            'AMMs connect you directly to the other user.',
+            'You are more confident that another party hasn’t benefited unfairly from your trade.'
+          ],
+          feedback: [
+            'ℹ️ When we include network confirmation time, this isn’t necessarily true.',
+            'ℹ️ AMMs route user trades through communal token vaults, called liquidity pools, rather than directly to one another.',
+            'ℹ️ The transparent nature of AMMs means that its a lot harder for platforms to hide malicious actions — or for users to be malicious at all!'
+          ],
+          rightAnswerNumber: 3,
+          id: 'decentralized-exchanges-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '0e5bf65edb464d629a38b8c4e1cb7d83',
+        title: 'Token Swaps',
+        content: '<div class="bloc1"><p>On the blockchain, we refer to cryptocurrency trades as <code>token swaps</code>. These smart contract interactions are the conversion from one cryptocurrency to another, using AMM <code>liquidity pools</code>. By forming a <code>trade route</code> — a pathway through the appropriate liquidity pools — a DEX smart contract converts your input token into your desired output token. As liquidity pools often consist of only two tokens, and because there aren’t always liquidity pools for every <code>token pair</code>, trade routes may run through more than one liquidity pool to fulfil your desired swap.</p><p>In order for a smart contract to access our wallet, we grant it permission to withdraw funds up to a specified (or unlimited) maximum amount. These <code>token allowances</code> enable trusted smart contracts to carry out our transactions, all without sharing our wallet private key. As granting permissions has a gas cost, the permission is left open for future interactions with your wallet. This is one of the reasons why it is safer to use one wallet for trading, while reserving a separate wallet for just holding. We’ll discuss how to monitor and even revoke token allowances in future content.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/token-swaps-fef506ce.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'e9366611b00c4f30915c5b38007b844b',
+        title: 'Token Swaps (continued)',
+        content: '<div class="bloc1"><p>Let’s take a look at an example swap to understand the permission and exchange process. The example is a swap between USDC to OP on Velodrome, routed through two pools as there is no direct USDC/OP pool on Uniswap:</p><ol><li>First, you grant Velodrome the permission to make USDC withdrawals from your wallet.</li><li>You submit your swap transaction request to Velodrome.</li><li>The transaction is accepted: Velodrome withdraws the specified amount of USDC from your wallet, into the USDC/ETH liquidity pool. ETH exits this first liquidity pool and is transferred to the ETH/OP liquidity pool. OP is dispensed from the second liquidity pool to your wallet address.</li></ol><p>The swap transaction is complete. Your USDC has been swapped for OP, using Velodrome.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/token-swaps-continued-a735b661.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '25fd54f0f113464393f873a43b1d6cf5',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'AMMs can route a trade through multiple liquidity pools, all in a single transaction.',
+          answers: [
+            'True',
+            'False'
+          ],
+          feedback: [
+            'ℹ️ Correct! You might pay a higher network fee, but the actions are bundled into one transaction.',
+            'ℹ️ Incorrect, try again.'
+          ],
+          rightAnswerNumber: 1,
+          id: 'decentralized-exchanges-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'fc6312a87afe4437aeb06f7ccf56010a',
+        title: 'What is Liquidity?',
+        content: '<div class="bloc1"><p>Liquidity in the crypto space refers to a marketplace’s ability to facilitate digital asset buys & sells at fair prices. When liquidity is high, prices are more stable; When liquidity is low, prices are more volatile. As users are generally attracted to fairer prices, DEXs aim to have high liquidity across all of their liquidity pools.</p><p>High liquidity means there is a high quantity of tokens in the liquidity pool — generally a 50/50 valuation split of the two tokens users are trading in and out of the pool. For example, the USDC & ETH pool on Balancer facilitates all trades between this <code>token pair</code> on their platform.<br>When there are more tokens, users making trades through the pool have less impact on the 50/50 asset balance, which helps prices remain stable. The amount by which any trade throws off this balance is known as <code>price impact</code>.</p><p>As an Explorer, you want the lowest price impact on your trades as possible, in order to receive the best deal! That means you want high, balanced liquidity.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/what-is-liquidity-0f1ef874.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '704eb8d4d1ae47008a944f3edfb7ba54',
+        title: 'Liquidity Providers',
+        content: '<div class="bloc1"><p>Optimizing for high liquidity is integral to the success of a DEX — but because there’s only so much liquidity in the cryptocurrency ecosystem, each DEX is in competition to capture as much liquidity as possible. So where does this liquidity come from?</p><p>In a decentralized ecosystem, internet citizens are incentivised to provide liquidity to a given pool to raise the TVL (total value locked) on a platform. Fees gathered from users making trades through the pool are distributed to the LPs (liquidity providers) based on the amount of liquidity provided. You heard that right: by lending your tokens to a DEX liquidity pool, you can generate passive income.</p><p>There are a variety of considerations to make when becoming an LP, and we’ll cover this in future content. For now, know that the large APR (annual projected return) rates displayed across DEX liquidity pools aren’t guaranteed, and there can be losses.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/liquidity-providers-7ad55a9b.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '673b5a7b0f3448a0b0e0ae8db5b91956',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'Fill in the blank: When liquidity is _____________',
+          answers: [
+            'high, volatility is high.',
+            'low, volatility is low.',
+            'low, volatility is high.'
+          ],
+          feedback: [
+            'ℹ️ Incorrect, try again.',
+            'ℹ️ Incorrect, try again.',
+            'ℹ️ Right! Liquidity and volatility are generally inversely-correlated.'
+          ],
+          rightAnswerNumber: 3,
+          id: 'decentralized-exchanges-5'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'ad1cd32bec194feba4d8ceaed89e3a6b',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How do DEXs incentivize users to provide liquidity?',
+          answers: [
+            'Assurance against trade losses.',
+            'A share of platform fees.',
+            'A stake in platform governance.'
+          ],
+          feedback: [
+            'ℹ️ Neither CEXs or DEXs can protect you from losses on a bad investment.',
+            'ℹ️ The fees charged to use the DEX are often split across various platform stakeholders — including LPs.',
+            'ℹ️ Voting in platform governance often requires holding a governance token, not being an LP.'
+          ],
+          rightAnswerNumber: 2,
+          id: 'decentralized-exchanges-6'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '9cda0f8b0fac4fb98b5bebf8c0a46420',
+        title: 'Platform Fees',
+        content: '<div class="bloc1"><p>Both CEXs & DEXs charge fees for the services they provide. While the automation of DEX & AMM technology has reduced the cost for exchanging cryptocurrency, interacting with the blockchain still has its cost. Let’s take a look at five common costs to consider when deciding which platform to use.</p><p>🏷️ <strong>Platform fees:</strong> Approximately 0.5% commission on each trade most CEXs, and 0.05% for most DEXs. These can fluctuate.</p><p>🌐 <strong>Network fees:</strong> Blockchains charge gas fees on top of the dApp transaction. You can minimize these costs by using the network during low periods of activity. Etherscan.io has a real-time estimate of various Ethereum Mainnet actions here: <a href=\'https://etherscan.io/gastracker\'>https://etherscan.io/gastracker</a> (for DEXs, refer to the ‘Swap’ action). On Layer 2s, fees are far cheaper: <a href=\'https://l2fees.info/\'>https://l2fees.info/</a></p><p>📦 <strong>Bridge fees:</strong> Both CEXs and the blockchain will charge you a flat rate for transferring cryptocurrency from one network to another. For CEXs, refer to their on-site information. For the blockchain, check out the ‘Deposit’ action on <a href=\'https://etherscan.io/gastracker\'>Etherscan.io</a>.</p><p>💹 <strong>Exchange rates:</strong> When buying cryptocurrency directly with fiat on a CEX or DEX, watch out for exchange rates that don’t reflect the market rate.</p><p>🧊 <strong>Slippage:</strong> As prices change so quickly in this space, DEXs leave room for error on a swap called <code>slippage</code>. This percentage value is customizable, with most dApps recommending 0.5-2%. You may lose up to the slippage value on a trade to have it executed, but if your slippage range is too low the trade might be rejected.</p><p>As you can see, there are a lot of factors to consider when comparing exchange fees. It’s always best to do your own research before making a trade to make sure the platform\'s advantages & disadvantages are right for you.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'b6998b02735c41e69527772a6f044b69',
+        title: 'DEX Advantages',
+        content: '<div class="bloc1"><p>We’ve covered a lot of theory in this lesson, but you might still be wondering if DEXs are for you. Generally speaking, you are probably going to benefit from Decentralized Exchanges if:</p><ul><li>🔑 You want to maintain custody over your digital assets.</li><li>🔒 You want to secure your assets on the blockchain, avoiding CEX collapses.</li><li>⌛ You want 24/7 access to the cryptocurrency market.</li><li>👛 You want access to a wider range of cryptocurrencies.</li><li>🤑 You are interested in providing liquidity.</li><li>🛂 You don’t want to register & KYC on every platform you interact with.</li><li>⚔️ You seek the additional risks and rewards of exploring Decentralized Finance.</li></ul><p>With that said, almost every DeFi user has an account on a Centralized Exchange. This is because CEXs have easy on/off ramp features to the traditional banking world; you can easily get money from your bank account onto the blockchain and vice-versa. DeFi users like to compare this to using the bathroom: you go in, you do your business, you leave.</p><p>This is great because it means you can start with a CEX account and slowly transition to DeFi as you become more confident in navigation.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'fc884de5c7a9449bba95d6fdec8b87ca',
+        title: 'DEX Risks',
+        content: '<div class="bloc1"><p>Using a DEX also comes with risk. Here are a few of the most impactful ones:</p><p>🐞 <strong>Smart contract risk: </strong>While audits reduce the chances of smart contract bugs, they still exist. In a rare, worst-case scenario, you could lose up to your trade amount to a bug. Only interact with trusted, heavily audited dApps.</p><p>💰 <strong>Self-custody risk:</strong> Sole responsibility for your private keys means you could lose an entire wallet to theft, scams, or a misplaced seed phrase. This is why it is important to mitigate risk with a multi-wallet strategy, and to always keep a copy of your seed phrases backed up in a secure, real world location.</p><p>🥪 <strong>Sandwich attacks: </strong>Setting your swap slippage high increases the likelihood of trade frontrunners coordinating <code>sandwich attacks</code> against you. In a sandwich attack, you could lose up to your slippage amount on a trade. We’ll cover how to protect yourself from this style of attack in future content.</p><p>With these advantages and risks considered, a CEX might be a better fit for your needs if:</p><ul><li>🎓 You’re still early in your cryptocurrency journey, working to understand the risks & rewards.</li><li>⚖️ Your trade frequency and volume are small, making blockchain fees an unrealistic cost.</li><li>🏰 You’d prefer to trust an exchange to watch your funds, rather than being responsible for them.</li></ul><p>Some users take a hybrid approach to lower their overall risk, using a CEX to buy & sell their cryptocurrency, while storing it on the blockchain itself.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '7823339d33a34081aaf96d345196bc01',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'Why would you use a Decentralized Exchange over a Centralized Exchange?',
+          answers: [
+            'You want to access tokens not listed on a Centralized Exchange.',
+            'You want to maintain full custody over the exchanged funds.',
+            'You’d like to access tools and opportunities not traditionally available to you.',
+            'All of the above.'
+          ],
+          feedback: [
+            'ℹ️ This is a quality of a DEX, but it isn’t the only one.',
+            'ℹ️ This is a quality of a DEX, but it isn’t the only one.',
+            'ℹ️ This is a quality of a DEX, but it isn’t the only one.',
+            'ℹ️ Right! DEXs offer all of these benefits over CEXs.'
+          ],
+          rightAnswerNumber: 4,
+          id: 'decentralized-exchanges-7'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '92dc36b6f9fc46a3a3a44dc12e24d242',
+        title: 'Choosing a DEX',
+        content: '<div class="bloc1"><p>There are a lot of Decentralized Exchanges in DeFi, and some are better than others. We often look at five main factors when deciding on which DEX to use:</p><p>🥇 <strong>Legitimacy</strong><strong>:</strong> Is the entity well known for its trustworthiness, quality, and longevity?</p><p>⛲ <strong>Liquidity:</strong> Is the liquidity pool <code>TVL</code> high enough to give reasonable price impact?</p><p>🖱️ <strong>Ease of use:</strong> Is the user interface easy to interact with?</p><p>🔐 <strong>Security:</strong> Have the smart contracts been audited by multiple auditors?</p><p>🎁 <strong>Rewards & Features:</strong> Are there loyalty rewards for using the exchange or providing liquidity? Can I vote in governance?</p><p>Notable names that score highly in these areas include Uniswap, Curve, Velodrome, and Balancer. You can easily move from one DEX to another until you find a few favorites! For the lesson quest, we’re going to be using Velodrome — the number one DEX by TVL on Optimism. It’s well known, easy to use, has the deepest liquidity on the network, and because it’s on an L2: the fees are far more reasonable!</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '220fd799170c4f67935f5253a8443ed5',
+        title: 'DEX Best Practices',
+        content: '<div class="bloc1"><p>Before you interact with a dApp, there are some best practices you should follow to keep your funds safe:</p><p>👩‍💻 Always verify the link to a dApp with the official project Twitter (gold check mark) or a trusted third party, and bookmark it once you’ve validated it. A variety of DeFi scams begin with a fake link — even on popular search engines.</p><p>🔓 We will be prompted to grant on-chain <code>token allowances</code> to a smart contract to give it access to specific tokens in our wallet. You should limit these allowances to your trade amount to prevent interaction with additional funds.</p><p>♟️ Avoid interacting with dApps on your HODL wallet, it’s better to use a separate wallet dedicated to dApp usage — just in case anything goes wrong. Check out our <a href=\'https://app.banklessacademy.com/lessons/web3-security\'>Web3 Security lesson</a> for more information on wallet strategies, and how to stay safe in Web3.</p><p>Now you’re ready to interact with a Decentralized Exchange!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/dex-best-practices-a6443b8d.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '395bb0ab09724e97a379e95ffce1313b',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How can you protect yourself while using a reputable DEX you haven’t tried before?',
+          answers: [
+            'By only following URLs provided by a trusted party, and using thoroughly audited smart contracts.',
+            'By performing a small test interaction when using the platform for the first time.',
+            'Both of the above.'
+          ],
+          feedback: [
+            'ℹ️ Right, only interacting with trustworthy URLs is one layer of protection.',
+            'ℹ️ A single interaction with a bad smart contract can drain your entire wallet.',
+            'ℹ️ Incorrect. A single interaction with a bad smart contract can drain your entire wallet.'
+          ],
+          rightAnswerNumber: 1,
+          id: 'decentralized-exchanges-8'
+        }
       },
       {
         type: 'QUEST',
-        title: 'DEXs and AMMs Quest',
-        component: 'DEXsAndAMMs'
+        title: 'Decentralized Exchanges Quest',
+        component: 'DecentralizedExchanges'
       }
     ],
     socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1'
+  },
+  {
+    lessonBadgeImageLink: null,
+    lessonImageLink: '/lesson/how-to-swap-on-a-decentralized-exchange/lesson-d1e791d2.png',
+    lessonCollectedImageLink: undefined,
+    lessonCollectibleVideo: undefined,
+    socialImageLink: '/lesson/how-to-swap-on-a-decentralized-exchange/social-f39d5e71.png',
+    learningActions: '',
+    marketingDescription: '',
+    kudosId: null,
+    duration: null,
+    learnings: '',
+    difficulty: undefined,
+    description: '',
+    name: 'How to Swap on a Decentralized Exchange',
+    publicationStatus: 'hidden',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    mirrorLink: 'https://mirror.xyz/banklessacademy.eth/zLajMWXQC44H4uQOXK5j9ROZhuC3xwgoddLtAQQo0k0',
+    isArticle: true,
+    notionId: '926fb19ef46747dbb6b58abd82af92c4',
+    slug: 'how-to-swap-on-a-decentralized-exchange',
+    articleContent: '### Key Takeaways\n\n> * There are a number of ways to fund your wallet on an Ethereum scaling solution like Optimism, Arbitrum, or Polygon.\n>\n> * Centralized exchanges often provide a direct Layer 2 onramp.\n>\n> * Third-party payment apps enable users to fund a wallet on Layer 2 from a bank account or a debit or credit card.\n>\n> * Protocol bridges let users send funds from Ethereum Mainnet to Layer 2.\n\nIf you’re new to crypto, all the talk about the importance of `Layer 2` (or L2) must seem a bit odd, confusing really. In contrast to [Layer 1](https://app.banklessacademy.com/lessons/layer-1-blockchains), which often refers to [Ethereum Mainnet](https://ethereum.org/), Layer 2 is a term for a specific type of Ethereum scaling solution that enables users to inherit the security of Ethereum but enjoy low transaction fees and fast `block` inclusion times. If you’ve ever heard of [Optimism](https://www.optimism.io/), [Arbitrum](https://arbitrum.io/), or [Polygon](https://polygon.technology/) (which is really a side chain, but let’s not worry about that here), those are Layer 2 scaling solutions.\n\nWhen the Ethereum network is busy, it can cost the equivalent of 80 USD in transaction fees — known as `gwei` or gas — to swap tokens, and much more to mint NFTs or provide `liquidity` to a `decentralized exchange` (DEX) on Mainnet. When network activity is low, most transactions on Ethereum Mainnet still cost a few dollars, and it takes an [FTX-level debacle](https://www.investopedia.com/ftx-exchange-5200842) or a [beyond-hyped NFT drop](https://dappradar.com/blog/yuga-labs-600m-otherside-nft-land-sale-records-highest-gas-fees-ever-on-ethereum) to really spike transaction fees.\n\nBecause transactions on Layer 2 confirm quickly and are inexpensive to execute, many of the most innovative protocols are building on L2s. Unless you’ve been in the ecosystem for a while, however, it’s not intuitive to know how to start using Layer 2s. But there is a clear place to begin your journey into Ethereum scaling solutions: funding your `wallet` on Layer 2.\n\nThere are three main ways to fund an L2 wallet: moving your crypto from a `centralized exchange` straight to a Layer 2 network, using a third-party crypto payment service to fund an L2 wallet, or sending your digital assets from Mainnet to L2 via a bridging protocol.\n\n> Please note, you’ll need to have a cryptocurrency wallet, like [MetaMask](https://metamask.io/) or [Tally Ho](https://tallyho.org/), and an Ethereum wallet `address` to proceed. If you haven’t yet created a `non-custodial wallet`, please [take this lesson first](https://app.banklessacademy.com/lessons/wallet-basics)!\n>\n> After you have a non-custodial Ethereum wallet address, you’ll be ready to continue on your crypto journey.\n\n## Funding From CEXs\n\nFunding your wallet directly from a centralized exchange (CEX) is perhaps the simplest way to move digital assets to an L2, particularly if you already hold cryptocurrency on the exchange. Most major CEXs offer users this option, although it isn’t always clear to the user.\n\nOn [Coinbase](https://www.coinbase.com/), for example, users can send their funds directly to Optimism or Polygon in just a few steps:\n\n1\. Go to [Coinbase](https://www.coinbase.com/).\n\n2\. [Purchase](https://help.coinbase.com/en/coinbase/trading-and-funding/buying-selling-or-converting-crypto/how-do-i-buy-digital-currency) or hold ETH on Coinbase.\n\n3\. Select ‘Send & Receive’, located at the top of the website.\n\n![](https://images.mirror-media.xyz/publication-images/Rzdn6KxR4U-oVpcgLs_fL.png?height=209&width=1440)\n\n4\. Enter the amount in fiat or ETH you wish to send (you can toggle between fiat and crypto to the right of the amount), select ‘Pay with’ and choose Ethereum, and in the ‘To’ field, enter the wallet address where the funds will be sent. Select ‘Continue’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F2uysvYIN69lbn9rz0yLsf.png&w=3840&q=90)\n\n5\. On the next screen, select ‘Network’ and change the network from Ethereum to Optimism.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Fz_DzBI1lJFVKNisD-8Rcs.png&w=3840&q=90)\n\n6\. Review, and if accurate, select ‘Send Now’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F-J0-k8BzvPCPPJLmnkQw-.png&w=3840&q=90)\n\nMost major exchanges offer users the ability to send their crypto directly to an L2. [Binance](https://www.binance.com/) supports Optimism and Arbitrum, for example. On whatever centralized exchange you convert fiat to crypto, check to see whether it offers support for direct-to-L2 services. Pro Tip: Use [Blockscan](https://blockscan.com/exchanges) to find the exchange compatible with your preferred L2.\n\n## Third-Party Onramps\n\nAnother simple way to fund your L2 wallet is to take advantage of direct-to-L2 services offered by many third-party crypto payment companies. [MoonPay](https://www.moonpay.com/), [Ramp](https://ramp.network/buy/), and [Transak](https://global.transak.com/) are three of the most popular options to fund crypto wallets without having to use a centralized exchange.\n\nLike most exchanges, these third-party onramps will require you to provide Know-Your-Customer information. However, once you get past those basic hurdles, these payment options are an easy way to buy crypto across the ecosystem and transfer it to Layer 2.\n\nFor MoonPay, the steps are:\n\n1\. Go to [MoonPay](https://www.moonpay.com/).\n\n2\. Select ‘Buy crypto’, located at the top or middle of the website.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FUU9Uswhysj9w4WBYI4VWL.png&w=3840&q=90)\n\n3\. Enter the amount of fiat you wish to send and the proper denomination.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FckrX4LeU78MqcPvpAq_VM.png&w=3840&q=90)\n\n4\. Select a digital asset, in this case ETH. Type in “ETH\'“ and you will see different networks on which you can purchase ETH (you may need to scroll down); choose the Layer 2 you want to use. Click ‘Continue’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FLfhhGbE1yfWdOpG1Z5N5S.png&w=3840&q=90)\n\n5\. Next, you will be prompted to enter personal verification and payment data.\n\n6\. Once complete, enter your Ethereum wallet address. You’ll be asked to make sure the wallet is safe to use.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Fn5hbzW-CVKzp3392TT91I.png&w=3840&q=90)\n\n7\. Complete, confirm the information is correct, and select ‘Pay’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F7ZBiVMjLfxQ66p8-cLBhN.png&w=3840&q=90)\n\nAs with CEXs, most major third-party payment onramps provide direct-to-L2 functionality. Take advantage of these innovations to save on transaction fees and increase the range of your `blockchain` explorations.\n\n## Funding Via Bridges\n\nIf you already have funds on Ethereum Mainnet, by far the easiest way to get your crypto on to L2 is to use a bridging protocol. Bridges are the name we’ve given to protocols designed to help us move our funds around the cryptoverse, and there are a number of bridges designed to move crypto from Ethereum Mainnet to Layer 2s.\n\n### Native Bridges\n\nNative bridges are those designed by the Layer 2 protocols themselves. For true Layer 2 scaling solutions like Arbitrum and Optimism, it takes about 30 minutes to move funds onto L2, but one week to move that crypto back over to Mainnet. The [Arbitrum Bridge](https://bridge.arbitrum.io/) and the [Optimism Bridge](https://app.optimism.io/bridge/) both take longer to transfer assets and settle transactions because of the way the scaling solution is designed.\n\n### Third-Party Bridges\n\nBecause no one likes to wait, a number of third-party bridging services exist to help us move our funds instantly to and from L2s. Among the most popular options are [Hop Protocol](https://app.hop.exchange/) and [Across Protocol](https://across.to/bridge), but you can use [Bungee](https://bungee.exchange/) to compare bridging fees across a number of protocols. To use Across, for example, all you need to do is:\n\n1\. Go to the [Across Protocol](https://across.to/bridge) bridge and connect your wallet.\n\n2\. To bridge funds to L2, select Ethereum under ‘From’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FSwt3yjUPwEteAiB5aU9zy.png&w=3840&q=90)\n\n3\. Choose your asset and the amount you wish to bridge (Pro Tip: only bridge a blockchain’s native `coin`, in this case ETH).\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FIBRvNt1d-CEe3XkuuwTvr.png&w=3840&q=90)\n\n4\. Next, select your L2 solution in ‘To’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FMnz8fWPFIGGQp25RA6FKt.png&w=3840&q=90)\n\n5\. Review the transaction, and if all looks correct, select ‘Send’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Ff9PbrvFv90jLNB-j60XlV.png&w=3840&q=90)\n\nMoving funds from Mainnet to L2 is really that simple, and nearly all bridges work the same way. Select a blockchain to send funds from and your destination, pick an asset and amount, and across the blockchain crevice you go. Pro Tip: As with sending from a CEX, you can use [Blockscan](https://blockscan.com/bridges) to find a compatible bridge for your L2 destination.\n\n## The Road to L2\n\nLayer 2s offer users of all experience levels the opportunity to experiment with decentralized finance in a way that is often prohibitive on Mainnet. Because it costs mere pennies to transact on these networks (you can compare costs [here](https://l2fees.info/)), it’s a great place to become familiar with the basic building blocks of decentralized finance, such as swaps, `liquidity pools`, or yield farms.\n\nUsing a CEX or a bridge to move funds to L2 is a necessary step in your journey from crypto novice to crypto competency. Remember, to see your funds displayed in your wallet, you may need to add the network in your wallet settings, which can be done at [Chainlist](https://chainlist.org/). If you just want to check that the funds made it safely to your L2 wallet, you can also check Etherscan (click on the ‘b’ for ‘Blockscan’ to the right of your wallet address to see L2 transactions) or go to a DEX, like [Uniswap](https://app.uniswap.org/), and select the L2 network and the asset to see your balance.\n\nAs you scale up your skills, you’ll need to figure out how to scale down your transaction fees. Learning how to fund an L2 wallet is the first step, but the next steps on your crypto journey are up to you. Welcome, explorer, a new world awaits.\n\n\n***\n\n**Author**\n\n**[Hiro Kennelly](https://twitter.com/HiroKennelly)** is a writer, editor, and coordinator at BanklessDAO and the Editor-in-Chief at Good Morning News. He is also helping to build a grants-focused organization at DAOpunks.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning as much as possible about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.'
   },
   {
     lessonBadgeImageLink: 'https://link.assetfile.io/Fp8a1TuFMsIAbrsU6j9r3/badge_a01_nftvideo.mp4',
@@ -1668,7 +1946,7 @@ const LESSONS: LessonType[] = [
     slides: [
       {
         type: 'LEARN',
-        notionId: 'fdab9a0b1c7b457a9110f88dbac53d71',
+        notionId: 'c4f8753138f4438cbc624c329e2a95eb',
         title: '<strong>Introduction</strong>',
         content: '<div class="bloc1"><p><code>Decentralized Exchange</code>s (DEXs) eliminate the costs of intermediaries and save Explorers money when trading assets. </p><p>But did you know, Explorer, that there’s more ways to save with DeFi technology? Using <code>DEX aggregators</code>, you can scan all possible trades on various DEX platforms simultaneously and execute the best trade route — all in one action. They help you get the best deal when doing a token <code>swap</code>. Just like airline flight aggregators help you find the cheapest flight, DEX aggregators help you maximize the value of your trade.</p><p>This lesson will show:</p><ol><li>How DEXs split liquidity and how that can result in reduced trading rates.</li><li>How DEX aggregators enable users to view and use multiple DEXs through one interface.</li><li>Multiple ways a single aggregator interface can save Explorers time and money.</li></ol></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/introduction-ba453b68.svg\'></div>'
       },
@@ -1690,13 +1968,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'Fill in the blanks: To find the best price, people will want to trade in markets with ________ liquidity to have ________ price impact on their trades.',
-          rightAnswerNumber: 2,
           answers: [
             'good, maximum',
             'high, low',
             'low, good',
             'thin, large'
           ],
+          rightAnswerNumber: 2,
           id: 'dex-aggregators-1'
         }
       },
@@ -1712,13 +1990,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'Which two factors determine the price impact of a DEX trade?',
-          rightAnswerNumber: 3,
           answers: [
             'The choice of DEX is used to make the trade and size of the trade',
             'Which token is chosen to trade and which DEX is used to make the trade',
             'The size of the trade and amount of liquidity available',
             'The amount of liquidity available and which token is chosen to trade'
           ],
+          rightAnswerNumber: 3,
           id: 'dex-aggregators-2'
         }
       },
@@ -1734,13 +2012,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'Trade routing in DEX aggregators means:',
-          rightAnswerNumber: 4,
           answers: [
             'Trades are routed according to liquidity arrangements with specific DEXs',
             'Trades are always routed through multiple DEXs',
             'Trades are routed through a user’s favorite DEX only',
             'Trades can be routed through multiple DEXs and intermediary tokens'
           ],
+          rightAnswerNumber: 4,
           id: 'dex-aggregators-3'
         }
       },
@@ -1762,13 +2040,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'Which of the following is NOT a way DEX aggregators try to reduce transaction costs for users?',
-          rightAnswerNumber: 2,
           answers: [
             'Simulate transactions off-chain prior to trade execution',
             'Ask DEXs to lower network fees for their users',
             'Account for gas cost in trade routing',
             'Token rebates on gas costs'
           ],
+          rightAnswerNumber: 2,
           id: 'dex-aggregators-4'
         }
       },
@@ -1784,11 +2062,11 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'Meta-aggregators cross-reference multiple DEX aggregators to find the best prices for their users.',
-          rightAnswerNumber: 1,
           answers: [
             'True',
             'False'
           ],
+          rightAnswerNumber: 1,
           id: 'dex-aggregators-5'
         }
       },
@@ -1804,11 +2082,11 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'To protect yourself, you should keep your slippage tolerance:',
-          rightAnswerNumber: 1,
           answers: [
             'low',
             'high'
           ],
+          rightAnswerNumber: 1,
           id: 'dex-aggregators-6'
         }
       },
@@ -1824,13 +2102,13 @@ const LESSONS: LessonType[] = [
         title: '✅ Question',
         quiz: {
           question: 'Many DEX aggregators offer which tool(s) to save their users money?',
-          rightAnswerNumber: 4,
           answers: [
             'Routing trades through aggregated liquidity from multiple DEXs to reduce price impact.',
             'OTC trades that fully protect against sandwich attacks.',
             'Account for gas cost when building the best trade routes.',
             'All of the above'
           ],
+          rightAnswerNumber: 4,
           id: 'dex-aggregators-7'
         }
       },
@@ -1840,6 +2118,331 @@ const LESSONS: LessonType[] = [
         component: 'DEXAggregators'
       }
     ]
+  },
+  {
+    lessonBadgeImageLink: 'https://link.assetfile.io/Fp8a1TuFMsIAbrsU6j9r3/badge_a01_nftvideo.mp4',
+    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
+    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
+    lessonCollectibleVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
+    learningActions: '',
+    marketingDescription: '',
+    kudosId: null,
+    duration: null,
+    learnings: '',
+    difficulty: undefined,
+    description: '',
+    name: 'Bankless Archetypes',
+    quest: 'BanklessArchetypes',
+    publicationStatus: 'hidden',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    notionId: 'd5c1d9d498084fa4b5e7be801d46cc03',
+    slug: 'bankless-archetypes',
+    imageLinks: [],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: 'b0ee8ce4c70243889dadc0f10cc4ce26',
+        title: '<strong>Introduction</strong>',
+        content: '<div class="bloc1"><p>Answer the following questions to determine your Bankless archetype.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'cc358388122f413ba782d15d340f8336',
+        title: '✅ Knowledge Check: risk',
+        quiz: {
+          question: 'What is your crypto tolerance risk?',
+          answers: [
+            '1 - no risk',
+            '2 - low risk',
+            '3 - medium risk',
+            '4 - risky',
+            '5 - very risky'
+          ],
+          id: 'bankless-archetypes-1'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '2d8f65937d5a4719a2f4aa43dfe6e921',
+        title: '✅ Knowledge Check: self sovereignty',
+        quiz: {
+          question: 'How self sovereignty are you?',
+          answers: [
+            '1 - only relying on traditional system',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - relying 100% on crypto'
+          ],
+          id: 'bankless-archetypes-2'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '41ff50487d6244fd8c0218b22ff005d1',
+        title: '✅ Knowledge Check: DEX',
+        quiz: {
+          question: 'How often are using DEXs?',
+          answers: [
+            '1 - I never used a DEX, only CEX',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - very often'
+          ],
+          id: 'bankless-archetypes-3'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '0814986dc52a4e7382e147060d7a7a8a',
+        title: '✅ Knowledge Check: trade',
+        quiz: {
+          question: 'How often are you trading?',
+          answers: [
+            '1 - never traded',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - trading daily'
+          ],
+          id: 'bankless-archetypes-4'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '84ad617f7dd84fe59260075eb4cc698b',
+        title: '✅ Knowledge Check: LP',
+        quiz: {
+          question: 'How often are you LPing?',
+          answers: [
+            '1 - never LPed',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - very often'
+          ],
+          id: 'bankless-archetypes-5'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '8cb4d106885e4b53be9fa1f557eb8394',
+        title: '✅ Knowledge Check: long term investor',
+        quiz: {
+          question: 'Are you a long term investor?',
+          answers: [
+            '1 - no, I’m a very short term investor',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - very long term investor (never sold)'
+          ],
+          id: 'bankless-archetypes-6'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'a0336e7f72154aec82391826b476fcfb',
+        title: '✅ Knowledge Check: works in a DAO',
+        quiz: {
+          question: 'Are you involved in DAOs?',
+          answers: [
+            '1 - no, what is a DAO?',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - DAOing a lot!'
+          ],
+          id: 'bankless-archetypes-7'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'a0282a36c1cb426ea509e11a9bbfbf7f',
+        title: '✅ Knowledge Check: crypto knowledge',
+        quiz: {
+          question: 'How knowledgable about crypto are you?',
+          answers: [
+            '1 - I’m a beginner',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - I’m an expert'
+          ],
+          id: 'bankless-archetypes-8'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '50f37713ab80402d8b4b1eb6380d930d',
+        title: '✅ Knowledge Check: crypto donation',
+        quiz: {
+          question: 'How often are you doing crypto donations?',
+          answers: [
+            '1 - never',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - very often'
+          ],
+          id: 'bankless-archetypes-9'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '512a45e47f044e1ab556f8bac24cddea',
+        title: '✅ Knowledge Check: buys stuff in crypto',
+        quiz: {
+          question: 'Have you ever bought something in crypto?',
+          answers: [
+            '1 - never',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - I buy everything in crypto'
+          ],
+          id: 'bankless-archetypes-10'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '104c365901a24c9b9fbe7bec48e4bcb2',
+        title: '✅ Knowledge Check: deployed smart contracts',
+        quiz: {
+          question: 'Have you ever deployed any smart contract?',
+          answers: [
+            '1 - never',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - I’ve deployed many'
+          ],
+          id: 'bankless-archetypes-11'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'aa5e9cd5ad7d4d8da703d039196f3d30',
+        title: '✅ Knowledge Check: Anon',
+        quiz: {
+          question: 'How anonymous are you?',
+          answers: [
+            '1 - I use my full birth name & my real picture',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - 100% anonymous, even gender, voice, …'
+          ],
+          id: 'bankless-archetypes-12'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '856ad37f3d164777a0afcfcbce86b64c',
+        title: '✅ Knowledge Check: Works in web3',
+        quiz: {
+          question: 'Do you work in web3',
+          answers: [
+            '1 - never',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - full time web3'
+          ],
+          id: 'bankless-archetypes-13'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'a4c6ecc1c94b41caa5f0f1440bc093f0',
+        title: '✅ Knowledge Check: Creates digital art',
+        quiz: {
+          question: 'Have you ever created digital art?',
+          answers: [
+            '1 - never',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - I live from that'
+          ],
+          id: 'bankless-archetypes-14'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '4f43f712fc0a4b2d8d8f7f2b547052ec',
+        title: '✅ Knowledge Check: Owns Bitcoin',
+        quiz: {
+          question: 'Do you own Bitcoin?',
+          answers: [
+            '1 - never',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - Bitcoin is the only crypto I own'
+          ],
+          id: 'bankless-archetypes-15'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'fc680526635b4fa28ff7729cae7d1e04',
+        title: '✅ Knowledge Check: Owns NFTs',
+        quiz: {
+          question: 'How many NFTs do you own?',
+          answers: [
+            '1 - 0',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - 200+'
+          ],
+          id: 'bankless-archetypes-16'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '4a94db546a5643f4bfbf0efa94cc410a',
+        title: '✅ Knowledge Check: aping into something new',
+        quiz: {
+          question: 'Do fast are you aping into something new?',
+          answers: [
+            '1 - I take my time',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - I ape without checking anything'
+          ],
+          id: 'bankless-archetypes-17'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '80bd44d5031941f59780ddcf91f59c1b',
+        title: '✅ Knowledge Check: owns shitcoins',
+        quiz: {
+          question: 'Do you own shitcoins?',
+          answers: [
+            '1 - I don’t own any shitcoins',
+            '2 - …',
+            '3 - …',
+            '4 - …',
+            '5 - I own many shitcoins'
+          ],
+          id: 'bankless-archetypes-18'
+        }
+      },
+      {
+        type: 'QUEST',
+        title: 'Bankless Archetypes Quest',
+        component: 'BanklessArchetypes'
+      }
+    ],
+    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1'
   },
   {
     lessonBadgeImageLink: 'https://link.assetfile.io/Fp8a1TuFMsIAbrsU6j9r3/badge_a01_nftvideo.mp4',
