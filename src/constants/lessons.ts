@@ -482,8 +482,8 @@ const LESSONS: LessonType[] = [
     slides: [
       {
         type: 'LEARN',
-        notionId: '2541f10fa3264827ac57b1cf863254fb',
-        title: '<strong>I</strong><strong>ntroduction</strong>',
+        notionId: 'fa33ece84a63449a87487dbd42eac654',
+        title: 'Introduction',
         content: '<div class="bloc1"><p><code>Blockchain</code> technology is a revolutionary way of storing and tracking data, while also making that data accessible to anyone. It is a way of organizing data in a single public list of all historical transactions that anyone can view but cannot edit. This public list of transactions is collectively known as the blockchain <code>ledger</code>.</p><p>After examining the layers of a blockchain, we will be using a blockchain tool called a <code>block explorer</code> to look into the specifics of the Ethereum blockchain structure; we will zoom in on the Ethereum blockchain to view the <strong>list</strong> of blocks, the <strong>transactions</strong> within those blocks, and the <strong>details</strong> of each individual transaction.</p></div><div class="bloc2"><img src=\'/lesson/blockchain-basics/introduction-6d0b6137.svg\'></div>'
       },
       {
@@ -940,8 +940,8 @@ const LESSONS: LessonType[] = [
     slides: [
       {
         type: 'LEARN',
-        notionId: 'c39a3e32b41c474394eed2485e5f6096',
-        title: '<strong>Introduction</strong>',
+        notionId: '21dbc915acd24c38896a0468daff30da',
+        title: 'Introduction',
         content: '<div class="bloc1"><p>Problems emerge when more users want to use a <code>blockchain</code> network than it can handle. Large demand for <code>blockspace</code> can be temporary or can last as long as users continue to have a strong desire to use the blockchain. In times of high demand, Ethereum users can pay skyrocketing fees to still have their transactions processed quickly— ultimately pricing out users with less capital.</p><p>This lesson explores why Ethereum and other blockchains are subject to the <code>Blockchain Trilemma</code>, how the Trilemma is the root cause of the problems described above, and how the Trilemma affects Ethereum’s plans for serving the needs of all its users. We will look at the tradeoffs several blockchains have made concerning the Blockchain Trilemma, and what those tradeoffs mean for Academy Explorers.</p></div><div class="bloc2"><img src=\'/lesson/layer-1-blockchains/introduction-e0da8469.svg\'></div>'
       },
       {
@@ -1602,11 +1602,11 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/decentralized-exchanges/kudos-ccd91260.png',
+    kudosImageLink: '/lesson/decentralized-exchanges/kudos-ecf873d9.png',
     lessonImageLink: '/images/coming-soon-lesson.png',
     learningActions: '',
     marketingDescription: 'DEXs and AMMs have changed the landscape of traditional market trading. It’s time to understand why, and how you can use this technology to your own advantage.',
-    kudosId: 2608,
+    kudosId: 15463,
     duration: 15,
     learnings: '',
     difficulty: undefined,
@@ -1615,45 +1615,46 @@ const LESSONS: LessonType[] = [
     quest: 'DecentralizedExchanges',
     publicationStatus: 'planned',
     featuredOrderOnHomepage: null,
-    isCommentsEnabled: false,
+    isCommentsEnabled: true,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
     notionId: '0ff0ff5bde6c43f99f7710352069163e',
     slug: 'decentralized-exchanges',
     imageLinks: [
-      '/lesson/decentralized-exchanges/what-is-a-decentralized-exchange-365fd384.png',
-      '/lesson/decentralized-exchanges/centralized-decentralized-exchanges-86e30853.png',
-      '/lesson/decentralized-exchanges/decentralized-applications-be95a017.png',
-      '/lesson/decentralized-exchanges/decentralized-applications-continued-bb7f47c4.png',
-      '/lesson/decentralized-exchanges/automated-market-makers-fb03694e.png',
-      '/lesson/decentralized-exchanges/token-swaps-56cf0154.png',
-      '/lesson/decentralized-exchanges/what-is-liquidity-f7e3fe26.png',
-      '/lesson/decentralized-exchanges/liquidity-providers-dbc7206e.png',
-      '/lesson/decentralized-exchanges/dex-best-practices-1ff2da3b.png'
+      '/lesson/decentralized-exchanges/what-is-a-decentralized-exchange-3d833117.svg',
+      '/lesson/decentralized-exchanges/centralized-decentralized-exchanges-d8c9e196.svg',
+      '/lesson/decentralized-exchanges/decentralized-applications-86dbc365.svg',
+      '/lesson/decentralized-exchanges/decentralized-applications-continued-274cea35.svg',
+      '/lesson/decentralized-exchanges/automated-market-makers-4154a3c7.svg',
+      '/lesson/decentralized-exchanges/token-swaps-86b7ec84.svg',
+      '/lesson/decentralized-exchanges/token-swaps-continued-3ec28582.svg',
+      '/lesson/decentralized-exchanges/what-is-liquidity-d4c58b6f.svg',
+      '/lesson/decentralized-exchanges/liquidity-providers-5b17c802.svg',
+      '/lesson/decentralized-exchanges/dex-best-practices-7f72a0d5.svg'
     ],
     slides: [
       {
         type: 'LEARN',
         notionId: '2b28e263cbad4a7e848d90254ff8f523',
         title: 'What is a Decentralized Exchange?',
-        content: '<div class="bloc1"><p>Decentralized Exchanges are on-chain marketplaces that allow all Explorers to securely exchange cryptocurrency with each other, all while maintaining self-custody of their wallet funds. These peer-to-peer trades are facilitated using publicly accessible smart contracts that connect users with large communal vaults of tokens called liquidity pools. Decentralized Exchanges can be found on almost all blockchains, and are present on both Ethereum Layer 1s & 2s.</p><p>Exchanging tokens is an essential part of using <code>DeFi</code> — where you’ll find a wider range of token variety and utility than on a CEX. Some users buy tokens to access on-chain products & services. Others purchase tokens as a short or long term investment in an on-chain project. There are even tokens even grant you voting power used to determine the direction of their respective project — much like holding shares at a traditional corporation! Regardless of your motivation, you’ll be visiting Decentralized Exchanges on a regular basis in DeFi. </p><p>Let’s build an understanding of how they work and how they can best serve you.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/what-is-a-decentralized-exchange-365fd384.png\'></div>'
+        content: '<div class="bloc1"><p>Decentralized Exchanges (DEXs) are on-chain marketplaces that allow all Explorers to securely exchange cryptocurrency with each other, all while maintaining self-custody of their wallet funds. These peer-to-peer trades are facilitated using publicly accessible smart contracts that connect users with large communal vaults of tokens called liquidity pools. Decentralized Exchanges can be found on almost all blockchains, and are present on both Ethereum Layer 1s & 2s.</p><p>Exchanging tokens is an essential part of using <code>DeFi</code> — where you’ll find a wider range of token variety and utility than on a <code>CEX</code>. Some users buy tokens to access on-chain products & services. Others purchase tokens as a short or long term investment in an on-chain project. There are even tokens that grant you voting power used to determine the direction of their respective project — much like holding shares at a traditional corporation! Regardless of your motivation, you’ll be visiting Decentralized Exchanges on a regular basis in DeFi.</p><p>Let\'s learn how they work and how they can best serve you.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/what-is-a-decentralized-exchange-3d833117.svg\'></div>'
       },
       {
         type: 'LEARN',
-        notionId: 'bf324795d08d43aaa370a5558ddaa100',
+        notionId: 'f84de8f77ba64d95ae97b0b5bab8f65c',
         title: 'Centralized & Decentralized Exchanges',
-        content: '<div class="bloc1"><p>Let’s start by outlining the main differences between Centralized Exchange (like Coinbase, Binance, Kraken) and Decentralized Exchange (like Uniswap, PancakeSwap, Velodrome) technology.</p><p>Centralized Exchanges (CEXs) allow users to trade and invest in cryptocurrency while remaining outside of the blockchain ecosystem. Because your account is on the CEX itself, your private keys and funds are in their custody. You are subject to their management — their protection, their rules, and their flaws.</p><p>Using Decentralized Exchanges (DEXs) is the practical use of cryptocurrency systems; You are on the blockchain, using it for the purpose it was built. The peer-to-peer model allows you to play both the consumer and the provider — accessing financial opportunities previously available only to the financial class. The system benefits from a level of transparency that evens the playing field for all users, and a property of censorship-resistance that protects the ecosystem against attacks or actors seeking unfair advantage.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/centralized-decentralized-exchanges-86e30853.png\'></div>'
+        content: '<div class="bloc1"><p>Let’s start by outlining the main differences between Centralized Exchange (like Coinbase, Binance, Kraken) and Decentralized Exchange (like Uniswap, PancakeSwap) technology.</p><p>Centralized Exchanges (<code>CEXs</code>) allow users to trade and invest in cryptocurrency while remaining outside of the blockchain ecosystem. As your account is on the CEX itself, your private keys and funds are in their custody. You’re subject to their management, rules, and risks.</p><p>Using Decentralized Exchanges (<code>DEXs</code>) is the practical use of cryptocurrency systems; You are on the blockchain, using it for the purpose it was built. The peer-to-peer model allows you to play both the consumer and the provider — accessing financial opportunities previously available only to the financial class. The system is both transparent and censorship-resistant, creating an even playing field while protecting users from hackers, the state, or any participant seeking to gain an unfair advantage.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/centralized-decentralized-exchanges-d8c9e196.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: '091e2ed2c2d540c989e1a97bfe9562f1',
+        notionId: '884e65522a3e49b6b762409b061fe0a3',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'Which of the following is true regarding cryptocurrency exchanges?<br>(<em>Know the differences between CEXs & DEXs)</em>',
+          question: 'Which of the following is true regarding cryptocurrency exchanges?',
           rightAnswerNumber: 3,
           answers: [
-            'While CEXs are operated by a centralized team there is no team behind a DEX.',
-            'You might lose funds on a DEX due to user error, but you can only lose funds on a CEX to a bad trade.',
+            'There is no team behind a DEX.',
+            'You can only lose funds on a CEX to a bad trade.',
             'DEXs allow you to trade while maintaining self-custody, while CEXs do not.'
           ],
           feedback: [
@@ -1668,17 +1669,17 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '26dde0f86cc6443b91e1e09d8fdda42d',
         title: 'Decentralized Applications',
-        content: '<div class="bloc1"><p>DEXs are a type of dApp — a decentralized application running on the blockchain. For an internet application to be considered fully ‘decentralized’ it needs to facilitate a user’s desired blockchain action with zero need for oversight, and for any user that uses it. </p><p>This service is facilitated using smart contracts, lines of code that take a user’s on-chain action and return a predictable on-chain action in response. The Ethereum Foundation compares smart contracts to vending machines: The user inputs the number corresponding to the item they’d like to receive, plus the appropriate amount of money, and they receive an expected output — their snack — all without the need for another person to facilitate the transaction.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/decentralized-applications-be95a017.png\'></div>'
+        content: '<div class="bloc1"><p>DEXs are a type of <code>dApp</code> — a decentralized application running on the blockchain. For an internet application to be considered fully ‘decentralized’ it needs to facilitate a user’s desired blockchain action with zero need for oversight or a third party, for any user that uses it.</p><p>This service is facilitated using smart contracts, lines of code that take a user’s on-chain action and return a predictable on-chain action in response. The Ethereum Foundation compares smart contracts to vending machines: The user inputs the number corresponding to the item they’d like to receive, plus the appropriate amount of money, and they receive an expected output — their snack — all without the need for another person to facilitate the transaction.</p><p>DEX dApps handle a variety of commands, like swapping, voting, or adding & removing liquidity.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/decentralized-applications-86dbc365.svg\'></div>'
       },
       {
         type: 'LEARN',
-        notionId: '8b325ebde4104757b2112ae767486c10',
+        notionId: '8e1ac68e66064904941b5475b9f5899c',
         title: 'Decentralized Applications (continued)',
-        content: '<div class="bloc1"><p>DEXs follow the same format as the vending machine: they take a user’s input cryptocurrency and output the desired cryptocurrency. Other examples include:</p><p>🎟️ <strong>Voting dApps:</strong> allocating a user’s vote to a specified party.</p><p>📦 <strong>Bridge dApps:</strong> transferring a user’s cryptocurrency from one network to another.</p><p>🤝 <strong>Lending/Borrowing dApps:</strong> granting loans to users meeting specified requirements.</p><p>It’s interesting to know that smart contracts are actually a type of Ethereum account. They have an address and a balance on the blockchain, performing automated actions when prompted by a transfer and command. When you interact with a DEX, you are interacting with a programmed Ethereum account.</p><p>dApps will typically use a website as a visual interface to let users easily interact with their smart contracts. If the website ever goes down, know that with some experience you can still access the smart contract itself directly. We’ll cover this in future content!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/decentralized-applications-continued-bb7f47c4.png\'></div>'
+        content: '<div class="bloc1"><p>DEXs follow the same format as the vending machine: they take a user’s input token and output the desired token. Other dApp examples include:</p><p>🎟️ <strong>Voting dApps:</strong> allocating a user’s vote to a specified party.</p><p>📦 <strong>Bridge dApps:</strong> transferring a user’s cryptocurrency from one network to another.</p><p>🤝 <strong>Lending/Borrowing dApps:</strong> granting loans to users meeting specified requirements.</p><p>Smart contracts are actually accounts on Ethereum — they have an address and balance, performing automated actions when prompted by a transfer and command. A DEX is really a programmed Ethereum account with several available functions.</p><p><code>dApps</code> will typically use a website as a visual interface to help users interact with their smart contracts. If the website is down, you can still access the smart contract with some experience!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/decentralized-applications-continued-274cea35.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: '9d5128296a9f4d6785490a5f83fb5409',
+        notionId: '67e487c5630e429f87a7c7e0367fe025',
         title: '✅ Knowledge Check',
         quiz: {
           question: 'Which of the below properties are needed for a smart contract to be considered decentralized?',
@@ -1702,24 +1703,24 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '4b647b69cd37476a9ced01d73a721e2c',
         title: 'Automated Market Makers',
-        content: '<div class="bloc1"><p>In traditional markets and CEXs, your custodian uses an order book: a database filled with buy & sell offers. The CEX connects your trade offer with another person’s. You are usually charged a base/scaling commission on your trade, and you’re also left wondering if the undisclosed matching method found you the best deal… or if a large preferred party was given the better end.</p><p>DEXs use ‘Automated Market Maker’ (AMM) technology, a matchmaking system that makes the best trade, based on a public algorithm. As this algorithm is open-source, anyone can both understand and improve it — leading to constant innovation and better trades for everyone.</p><p>AMMs route user trades through <code>liquidity pools</code>, rather than matching user bids & asks directly. These communal token vaults accumulate & dispense tokens according to user interactions, providing a more efficient, cheaper, and more seamless trade as compared to order book technology.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/automated-market-makers-fb03694e.png\'></div>'
+        content: '<div class="bloc1"><p>In traditional markets and <code>CEXs</code>, your custodian uses an order book: a database filled with buy & sell offers. The CEX connects your trade offer with another person’s. You are usually charged a base/scaling commission on your trade, and you’re also left wondering if the undisclosed matching method found you the best deal… or if a large preferred party was given the better end.</p><p><code>DEXs</code> use ‘Automated Market Maker’ (<code>AMM</code>) technology, a matchmaking system that makes the best trade, based on a public algorithm. As this algorithm is open-source, anyone can understand, clone, and improve it — leading to healthy competition, constant innovation, and better trades for everyone.</p><p>AMMs route user trades through <code>liquidity pools</code>, rather than matching user bids & asks directly. These communal token vaults accumulate & dispense tokens according to user interactions, providing a more transparent and fair trade as compared to order book technology.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/automated-market-makers-4154a3c7.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: '3decaee7ce5241a79094952f8d0b6ab3',
+        notionId: '764b929ce95f44c29dc94decf5cf3492',
         title: '✅ Knowledge Check',
         quiz: {
           question: 'What is the benefit of using AMMs to complete trades as compared to a traditional order book?',
           rightAnswerNumber: 3,
           answers: [
             'The AMM trade is faster than an order book trade.',
-            'AMMs connect you directly to the other user, rather than through an intermediary.',
-            'You are more confident that you received the best trade possible at the time.'
+            'AMMs connect you directly to the other user.',
+            'You are more confident that another party hasn’t benefited unfairly from your trade.'
           ],
           feedback: [
             'ℹ️ When we include network confirmation time, this isn’t necessarily true.',
             'ℹ️ AMMs route user trades through communal token vaults, called liquidity pools, rather than directly to one another.',
-            'ℹ️ The transparent nature of AMMs means that its a lot harder for platforms to hide malicious intent.'
+            'ℹ️ The transparent nature of AMMs means that its a lot harder for platforms to hide malicious actions — or for users to be malicious at all!'
           ],
           id: 'decentralized-exchanges-3'
         }
@@ -1728,7 +1729,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '0e5bf65edb464d629a38b8c4e1cb7d83',
         title: 'Token Swaps',
-        content: '<div class="bloc1"><p>On the blockchain, we refer to cryptocurrency trades as <code>token swaps</code>. These smart contract interactions are the conversion from one cryptocurrency to another, using AMM <code>liquidity pools</code>. By plotting a <code>trade route</code> — a pathway through the appropriate liquidity pools — a DEX smart contract converts your input token into your desired output token. As liquidity pools often consist of only two tokens, and because there aren’t always liquidity pools for every <code>token pair</code>, trade routes may run through more than one liquidity pool to fulfil your desired swap.</p><p>Let’s take a look at an example swap from USDC to BANK on Uniswap, routed through two pools as there is no Uniswap USDC/BANK pool:</p><ol><li>Your transaction and USDC are submitted for validation on the Ethereum network.</li><li>The smart contract is activated, inserting your USDC tokens into the USDC/ETH liquidity pool.</li><li>ETH exits this first liquidity pool and is transferred to the ETH/BANK liquidity pool.</li><li>BANK is dispensed from the second liquidity pool to your wallet address. The transaction is complete.</li></ol></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/token-swaps-56cf0154.png\'></div>'
+        content: '<div class="bloc1"><p>On the blockchain, we refer to cryptocurrency trades as <code>token swaps</code>. These smart contract interactions are the conversion from one cryptocurrency to another, using AMM <code>liquidity pools</code>. By forming a <code>trade route</code>, a pathway through the appropriate liquidity pools, a DEX smart contract converts your input token into your desired output token. As liquidity pools often consist of only two tokens, and because there aren’t always liquidity pools for every <code>token pair</code>, trade routes may run through more than one liquidity pool to fulfil your swap.</p><p>In order for a smart contract to access our wallet, we grant it permission to withdraw funds up to a specified (or unlimited) amount. These <code>token allowances</code> enable trusted smart contracts to carry out our transactions, all without sharing our wallet private key. As granting permissions has a gas cost, the permission is left open for future interactions with your wallet. This is one of the reasons why it is safer to use one wallet for trading, while reserving a separate wallet for holding. We’ll monitor and revoke token allowances in future content!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/token-swaps-86b7ec84.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'e9366611b00c4f30915c5b38007b844b',
+        title: 'Token Swaps (continued)',
+        content: '<div class="bloc1"><p>Let’s take a look at an example swap to understand the permission and exchange process. The example is a swap between USDC to OP on Velodrome — a large DEX on the Optimism network. The trade is routed through two pools as there is no direct USDC/OP pool on Velodrome:</p><ol><li>First, you grant the appropriate Velodrome smart contract the permission to make USDC withdrawals from your wallet.</li><li>You submit your swap transaction request to Velodrome.</li><li>The transaction is accepted: Velodrome withdraws the specified amount of USDC from your wallet, into the USDC/ETH liquidity pool. ETH exits this first liquidity pool and is transferred to the ETH/OP liquidity pool. OP is dispensed from the second liquidity pool to your wallet address.</li></ol><p>The swap transaction is complete. Your USDC has been swapped for OP!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/token-swaps-continued-3ec28582.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1752,25 +1759,25 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'fc6312a87afe4437aeb06f7ccf56010a',
         title: 'What is Liquidity?',
-        content: '<div class="bloc1"><p>Liquidity in the crypto space refers to a marketplace’s ability to facilitate digital asset buys & sells at fair prices. When liquidity is high, prices are more stable; When liquidity is low, prices are more volatile. As users are generally attracted to fairer prices, DEXs aim to have high liquidity across all of their liquidity pools.</p><p>High liquidity means there is a high quantity of tokens in the liquidity pool — generally a 50/50 valuation split of the two tokens users are trading in and out of the pool. For example, the USDC & ETH pool on Velodrome facilitates all trades between this <code>token pair</code> on their platform.<br>When there are more tokens, users making trades through the pool have less impact on the 50/50 asset balance, which helps prices remain stable. The amount by which any trade throws off this balance is known as <code>price impact</code>.</p><p>As an Explorer, you want the lowest price impact on your trades as possible, in order to receive the best deal! That means you want high, balanced liquidity.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/what-is-liquidity-f7e3fe26.png\'></div>'
+        content: '<div class="bloc1"><p>Liquidity in the crypto space refers to a marketplace’s ability to facilitate digital asset buys & sells at fair prices. When liquidity is high, prices are more stable; When liquidity is low, prices are more volatile. As users are generally attracted to fairer prices, <code>DEXs</code> aim to have high liquidity across all of their liquidity pools.</p><p>High liquidity means there is a high quantity of tokens in the liquidity pool — generally a 50/50 valuation split of the two tokens users are trading in and out of the pool. For example, the USDC & ETH pool on Balancer facilitates all trades between this <code>token pair</code> on their platform.<br>When there are more tokens, users making trades through the pool have less impact on the 50/50 asset balance, which helps prices remain stable. The amount by which any trade throws off this balance is known as <code>price impact</code>.</p><p>As an Explorer, you want the lowest price impact on your trades as possible, in order to receive the best deal! That means you want high, balanced liquidity.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/what-is-liquidity-d4c58b6f.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '704eb8d4d1ae47008a944f3edfb7ba54',
         title: 'Liquidity Providers',
-        content: '<div class="bloc1"><p>Optimizing for high liquidity is integral to the success of a DEX — but because there’s only so much liquidity in the cryptocurrency ecosystem, each DEX is in competition to capture as much liquidity as possible. So where does this liquidity come from?</p><p>In a decentralized ecosystem, internet citizens are incentivised to provide liquidity to a given pool to raise the TVL (total value locked) on a platform. Fees gathered from users making trades through the pool are distributed to the LPs (liquidity providers) based on the amount of liquidity provided. You heard that right: by lending your tokens to a DEX liquidity pool, you can generate passive income.</p><p>There are a variety of considerations to make when becoming an LP, and we’ll cover this in future content. For now, know that the large APR (annual projected return) rates displayed across DEX liquidity pools aren’t guaranteed, and there can be losses.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/liquidity-providers-dbc7206e.png\'></div>'
+        content: '<div class="bloc1"><p>Optimizing for high <code>liquidity</code> is integral to the success of a DEX — but because there’s only so much liquidity in the cryptocurrency ecosystem, each DEX is in competition to capture as much liquidity as possible. So where does this liquidity come from?</p><p>In a decentralized ecosystem, internet citizens are incentivised to provide liquidity to a given pool to raise the TVL (total value locked) on a platform. Fees gathered from users making trades through the pool are distributed to the LPs (liquidity providers) based on the amount of liquidity provided. You heard that right: by lending your tokens to a DEX liquidity pool, you can generate passive income.</p><p>There are a variety of considerations to make when becoming an <code>LP</code>, and we’ll cover this in future content. For now, know that the large APR (annual projected return) rates displayed across DEX liquidity pools aren’t guaranteed, and there can be losses.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/liquidity-providers-5b17c802.svg\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '673b5a7b0f3448a0b0e0ae8db5b91956',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'Fill in the blanks: When liquidity is _____ , volatility is _____ .',
+          question: 'Finish the statement: “When liquidity is __________.”',
           rightAnswerNumber: 3,
           answers: [
-            'high, high',
-            'low, low',
-            'low, high'
+            'high, volatility is high',
+            'low, volatility is low',
+            'low, volatility is high'
           ],
           feedback: [
             'ℹ️ Incorrect, try again.',
@@ -1788,14 +1795,16 @@ const LESSONS: LessonType[] = [
           question: 'How do DEXs incentivize users to provide liquidity?',
           rightAnswerNumber: 2,
           answers: [
-            'Assurance against trade losses.',
+            'Insurance for trade losses.',
             'A share of platform fees.',
-            'A stake in platform governance.'
+            'Access to private liquidity pools.',
+            'All of the above.'
           ],
           feedback: [
-            'ℹ️ Neither CEXs or DEXs can protect you from losses on a bad investment.',
+            'ℹ️ Neither CEXs or DEXs protect you from losses on a bad investment.',
             'ℹ️ The fees charged to use the DEX are often split across various platform stakeholders — including LPs.',
-            'ℹ️ Voting in platform governance often requires holding a governance token, not being an LP.'
+            'ℹ️ There are no private liquidity pools, low traffic wouldn’t provide adequate returns.',
+            'ℹ️ There’s only one correct entry here, can you figure out which one it is?'
           ],
           id: 'decentralized-exchanges-6'
         }
@@ -1804,13 +1813,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '9cda0f8b0fac4fb98b5bebf8c0a46420',
         title: 'Platform Fees',
-        content: '<div class="bloc1"><p>Both CEXs & DEXs charge fees for the services they provide. While the automation of DEX & AMM technology has reduced the cost for exchanging cryptocurrency, interacting with the blockchain still has its cost. Let’s take a look at five common costs to consider when deciding which platform to use.</p><p>🏷️ <strong>Platform fees:</strong> Approximately 0.5% commission on each trade most CEXs, and 0.05% for most DEXs. These can fluctuate.</p><p>🌐 <strong>Network fees:</strong> Blockchains charge gas fees on top of the dApp transaction. You can minimize these costs by using the network during low periods of activity. Etherscan.io has a real-time estimate of various Ethereum Mainnet actions here: <a href=\'https://etherscan.io/gastracker\'>https://etherscan.io/gastracker</a> (for DEXs, refer to the ‘Swap’ action). On Layer 2s, fees are far cheaper: <a href=\'https://l2fees.info/\'>https://l2fees.info/</a></p><p>📦 <strong>Bridge fees:</strong> Both CEXs and the blockchain will charge you a flat rate for transferring cryptocurrency from one network to another. For CEXs, refer to their on-site information. For the blockchain, check out the ‘Deposit’ action on <a href=\'http://Etherscan.io\'>Etherscan.io</a>.</p><p>💹 <strong>Exchange rates:</strong> When exchanging fiat on a CEX, watch out for exchange rates that don’t reflect the market rate.</p><p>🧊 <strong>Slippage:</strong> As prices change so quickly in this space, DEXs leave room for error on a swap called <code>slippage</code>. This percentage value is customizable, with most dApps recommending 0.5-2%. You may lose up to the slippage value on a trade to have it executed, but if your slippage is too low the trade might be rejected.</p><p>As you can see, there are a lot of factors to consider when comparing exchange fees. It’s always best to do your own research before making a trade to make sure the platform\'s advantages & disadvantages are right for you.</p></div>'
+        content: '<div class="bloc1"><p>Both CEXs & DEXs charge fees for the services they provide. While the automation of DEX & AMM technology has reduced the cost for exchanging cryptocurrency, interacting with the blockchain still has its cost. Let’s take a look at five common costs to consider when deciding which platform to use.</p><p>🏷️ <strong>Platform fees:</strong> Approximately 0.5% commission on each trade most CEXs, and 0.05% for most DEXs. These can fluctuate.</p><p>🌐 <strong>Network fees:</strong> Blockchains charge gas fees on top of the dApp transaction. You can minimize these costs by using the network during low periods of activity. Etherscan.io has a real-time estimate of various Ethereum Mainnet actions here: <a href=\'https://etherscan.io/gastracker\'>Etherscan.io</a> (for DEXs, refer to the ‘Swap’ action). On Layer 2s, fees are far cheaper: <a href=\'https://l2fees.info/\'>l2fees.info</a></p><p>📦 <strong>Bridge fees:</strong> Both CEXs and the blockchain will charge you a flat rate for transferring cryptocurrency from one network to another. For CEXs, refer to their on-site information. For the blockchain, check out the ‘Deposit’ action on <a href=\'https://etherscan.io/gastracker\'>Etherscan.io</a>.</p><p>💹 <strong>Exchange rates:</strong> When buying cryptocurrency directly with fiat on a CEX or DEX, watch out for exchange rates that don’t reflect the market rate.</p><p>🧊 <strong>Slippage:</strong> As prices change so quickly in this space, DEXs leave room for error on a swap called <code>slippage</code>. This percentage value is customizable, with most dApps recommending 0.5-2%. You may lose up to the slippage value on a trade to have it executed, but if your slippage range is too low the trade might be rejected.</p><p>As you can see, there are a lot of factors to consider when comparing exchange fees. It’s always best to do your own research before making a trade to make sure the platform\'s advantages & disadvantages are right for you.</p></div>'
       },
       {
         type: 'LEARN',
         notionId: 'b6998b02735c41e69527772a6f044b69',
         title: 'DEX Advantages',
-        content: '<div class="bloc1"><p>We’ve covered a lot of theory in this lesson, but you might still be wondering if DEXs are for you. Generally speaking, you are probably going to benefit from Decentralized Exchanges if:</p><ul><li>🔑 You want to maintain custody over your digital assets.</li><li>🔒 You want to secure your assets on the blockchain, avoiding CEX collapses.</li><li>⌛ You want 24/7 access to the cryptocurrency market.</li><li>👛 You want access to a wider range of cryptocurrencies.</li><li>🤑 You are interested in providing liquidity.</li><li>🛂 You don’t want to register on every platform you interact with.</li><li>⚔️ You seek the additional risks and rewards of exploring Decentralized Finance.</li></ul><p>With that said, almost every DeFi user has an account on a Centralized Exchange. This is because CEXs have easy on/off ramp features to the traditional banking world; you can easily get money from your bank account onto the blockchain and vice-versa. This is great because it means you can start with a CEX account and slowly transition to DeFi as you become more confident in navigation.</p></div>'
+        content: '<div class="bloc1"><p>We’ve covered a lot of theory in this lesson, but you might still be wondering if DEXs are for you. Generally speaking, you are probably going to benefit from Decentralized Exchanges if:</p><ul><li>🔑 You want to maintain custody over your digital assets.</li><li>🔒 You want to secure your assets on the blockchain, avoiding CEX collapses.</li><li>⌛ You want 24/7 access to the cryptocurrency market.</li><li>👛 You want access to a wider range of cryptocurrencies.</li><li>🤑 You are interested in providing liquidity.</li><li>🛂 You don’t want to register & <code>KYC</code> on every platform you interact with.</li><li>⚔️ You seek the additional risks and rewards of exploring Decentralized Finance.</li></ul><p>With that said, almost every DeFi user has an account on a Centralized Exchange. This is because CEXs have easy on/off ramp features to the traditional banking world; you can easily get money from your bank account onto the blockchain and vice-versa. DeFi users like to compare this to using the bathroom: you go in, you do your business, you leave.</p><p>This is great because it means you can start with a CEX account and slowly transition to DeFi as you become more confident in navigation.</p></div>'
       },
       {
         type: 'LEARN',
@@ -1844,25 +1853,25 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '92dc36b6f9fc46a3a3a44dc12e24d242',
         title: 'Choosing a DEX',
-        content: '<div class="bloc1"><p>There are a lot of Decentralized Exchanges in DeFi, and some are better than others. We often look at five main factors when deciding on which DEX to use:</p><p>🥇 <strong>Legitimacy</strong><strong>:</strong> Is the brand well known for its trustworthiness & quality?</p><p>⛲ <strong>Liquidity:</strong> Is the <code>TVL</code> in the liquidity pool going to give me the best price on my trade?</p><p>🖱️ <strong>Ease of use:</strong> Is the user interface easy to interact with?</p><p>🔐 <strong>Security:</strong> Have the smart contracts been audited by multiple auditors?</p><p>🎁 <strong>Rewards & Features:</strong> Are there loyalty rewards for using the exchange or providing liquidity? Can I vote in governance?</p><p>Notable names that score highly in these areas include Uniswap, Curve, Velodrome, and Balancer. You can easily move from one DEX to another until you find a few favorites! For the lesson quest, we’re going to be using Velodrome — the number one DEX by TVL on Optimism. It’s well known, easy to use, has the deepest liquidity on the network, and because it’s on an L2: the fees are far more reasonable!</p></div>'
+        content: '<div class="bloc1"><p>There are a lot of Decentralized Exchanges in DeFi, and some are better than others. We often look at five main factors when deciding on which DEX to use:</p><p>🥇 <strong>Legitimacy</strong><strong>:</strong> Is the entity well known for its trustworthiness, quality, and longevity?</p><p>⛲ <strong>Liquidity:</strong> Is the liquidity pool <code>TVL</code> high enough to give reasonable price impact?</p><p>🖱️ <strong>Ease of use:</strong> Is the user interface easy to interact with?</p><p>🔐 <strong>Security:</strong> Have the smart contracts been audited by multiple auditors?</p><p>🎁 <strong>Rewards & Features:</strong> Are there loyalty rewards for using the exchange or providing liquidity? Can I vote in governance?</p><p>Notable names that score highly in these areas include Uniswap, Curve, Velodrome, and Balancer. You can easily move from one DEX to another until you find a few favorites! For the lesson quest, we’re going to be using Velodrome — the number one DEX by TVL on Optimism. It’s well known, easy to use, has the deepest liquidity on the network, and because it’s on an L2: the fees are far more reasonable!</p></div>'
       },
       {
         type: 'LEARN',
         notionId: '220fd799170c4f67935f5253a8443ed5',
         title: 'DEX Best Practices',
-        content: '<div class="bloc1"><p>Before you interact with a dApp, there are some best practices you should follow to keep your funds safe:</p><p>👩‍💻 Always verify the link to a dApp with the official project Twitter (gold check mark) or a trusted third party, and bookmark it once you’ve validated it. A variety of DeFi scams begin with a fake link — even on popular search engines.</p><p>🔓 We will be prompted to grant on-chain <code>token allowances</code> to a smart contract to give it access to specific tokens in our wallet. You should limit these allowances to your trade amount to prevent any chance of interaction with additional funds. We’ll learn how to change & revoke these allowances in future content.</p><p>♟️ Avoid interacting with dApps on your HODL wallet, it’s better to use a separate wallet dedicated to dApp usage — just in case anything goes wrong. Check out our <a href=\'https://app.banklessacademy.com/lessons/web3-security\'>Web3 Security lesson</a> for more information on wallet strategies, and how to stay safe in Web3.</p><p>Now you’re ready to interact with a Decentralized Exchange!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/dex-best-practices-1ff2da3b.png\'></div>'
+        content: '<div class="bloc1"><p>Before you interact with a dApp, there are some best practices you should follow to keep your funds safe:</p><p>👩‍💻 Always verify the link to a dApp with the official project Twitter (gold check mark) or a trusted third party, and bookmark it once you’ve validated it. A variety of DeFi scams begin with a fake link — even on popular search engines.</p><p>🔓 We will be prompted to grant on-chain <code>token allowances</code> to a smart contract to give it access to specific tokens in our wallet. You should limit these allowances to your trade amount to prevent interaction with additional funds.</p><p>♟️ Avoid interacting with dApps on your HODL wallet, it’s better to use a separate wallet dedicated to dApp usage — just in case anything goes wrong. Check out our <a href=\'https://app.banklessacademy.com/lessons/web3-security\'>Web3 Security lesson</a> for more information on wallet strategies, and how to stay safe in Web3.</p><p>Now you’re ready to interact with a Decentralized Exchange!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/dex-best-practices-7f72a0d5.svg\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '395bb0ab09724e97a379e95ffce1313b',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'How can you be confident that the DEX you have chosen to use is not going to compromise your wallet?',
+          question: 'How can you protect yourself while using a reputable DEX you haven’t tried before?',
           rightAnswerNumber: 1,
           answers: [
             'By only following URLs provided by a trusted party, and using thoroughly audited smart contracts.',
             'By performing a small test interaction when using the platform for the first time.',
-            'All of the above.'
+            'Both of the above.'
           ],
           feedback: [
             'ℹ️ Right, only interacting with trustworthy URLs is one layer of protection.',
@@ -1940,9 +1949,9 @@ const LESSONS: LessonType[] = [
     slides: [
       {
         type: 'LEARN',
-        notionId: 'fdab9a0b1c7b457a9110f88dbac53d71',
-        title: '<strong>Introduction</strong>',
-        content: '<div class="bloc1"><p><code>Decentralized Exchange</code>s (DEXs) eliminate the costs of intermediaries and save Explorers money when trading assets. </p><p>But did you know, Explorer, that there’s more ways to save with DeFi technology? Using <code>DEX aggregators</code>, you can scan all possible trades on various DEX platforms simultaneously and execute the best trade route — all in one action. They help you get the best deal when doing a token <code>swap</code>. Just like airline flight aggregators help you find the cheapest flight, DEX aggregators help you maximize the value of your trade.</p><p>This lesson will show:</p><ol><li>How DEXs split liquidity and how that can result in reduced trading rates.</li><li>How DEX aggregators enable users to view and use multiple DEXs through one interface.</li><li>Multiple ways a single aggregator interface can save Explorers time and money.</li></ol></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/introduction-ba453b68.svg\'></div>'
+        notionId: 'cc07e9a8a87744daa6548a95ae696fd2',
+        title: 'Introduction',
+        content: '<div class="bloc1"><p><code>Decentralized Exchanges</code> (DEXs) eliminate the costs of intermediaries and save Explorers money when trading assets. </p><p>But did you know, Explorer, that there’s more ways to save with DeFi technology? Using <code>DEX aggregators</code>, you can scan all possible trades on various DEX platforms simultaneously and execute the best trade route — all in one action. They help you get the best deal when doing a token <code>swap</code>. Just like airline flight aggregators help you find the cheapest flight, DEX aggregators help you maximize the value of your trade.</p><p>This lesson will show:</p><ol><li>How DEXs split liquidity and how that can result in reduced trading rates.</li><li>How DEX aggregators enable users to view and use multiple DEXs through one interface.</li><li>Multiple ways a single aggregator interface can save Explorers time and money.</li></ol></div><div class="bloc2"><img src=\'/lesson/dex-aggregators/introduction-ba453b68.svg\'></div>'
       },
       {
         type: 'LEARN',
