@@ -99,7 +99,7 @@ const App = ({
                   width: 7px;
                 }
                 #chakra-toast-manager-bottom {
-                  margin-bottom: 81px;
+                  margin-bottom: 81px !important;
                 }
               `}
             />
