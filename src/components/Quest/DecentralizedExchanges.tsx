@@ -17,7 +17,7 @@ import { useSmallScreen } from 'hooks/index'
 import { api } from 'utils'
 import { LessonCard } from 'components/LessonCards'
 import { LESSONS } from 'constants/index'
-import InternalLink from 'components/InternalLink'
+// import InternalLink from 'components/InternalLink'
 
 const DecentralizedExchanges = (
   account: string
@@ -149,22 +149,22 @@ const DecentralizedExchanges = (
                   <Text mt="0 !important" fontSize="xl" fontWeight="bold">
                     {lesson.name}
                   </Text>
-                  <InternalLink
+                  {/* <InternalLink
                     href={`/lessons/${lesson.slug}`}
                     alt={lesson.name}
                     target="_blank"
-                  >
-                    <Image src={lesson.lessonImageLink} />
-                  </InternalLink>
+                  > */}
+                  <Image src={lesson.lessonImageLink} />
+                  {/* </InternalLink> */}
                 </Box>
                 <Box pb="8">
-                  <InternalLink
+                  {/* <InternalLink
                     href={`/lessons/${lesson.slug}`}
                     alt={lesson.name}
                     target="_blank"
-                  >
-                    <Button variant="primary">Read Entry</Button>
-                  </InternalLink>
+                  > */}
+                  <Button variant="primary">Read Entry</Button>
+                  {/* </InternalLink> */}
                 </Box>
               </Box>
             </LessonCard>
