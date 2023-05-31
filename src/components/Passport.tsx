@@ -41,6 +41,7 @@ const PassportComponent = ({
             ),
             status: 'warning',
             duration: null,
+            isClosable: true,
           })
         } else {
           toast({
@@ -48,6 +49,7 @@ const PassportComponent = ({
             description: <ExternalLink href="/bug">Report a bug</ExternalLink>,
             status: 'warning',
             duration: null,
+            isClosable: true,
           })
         }
       }

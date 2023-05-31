@@ -76,6 +76,7 @@ const SubscriptionModal = ({
                     description: 'Provide an email.',
                     status: 'warning',
                     duration: 10000,
+                    isClosable: true,
                   })
                 else if (emailRegex.test(email) === false)
                   toast({
@@ -83,6 +84,7 @@ const SubscriptionModal = ({
                     description: 'Please check your email.',
                     status: 'warning',
                     duration: 10000,
+                    isClosable: true,
                   })
                 else {
                   const paramBE = lesson ? { notionId: lesson.notionId } : {}
@@ -110,6 +112,7 @@ const SubscriptionModal = ({
                       description: "You'll hear from us soon!",
                       status: 'success',
                       duration: 10000,
+                      isClosable: true,
                     })
                   } else {
                     toast({
@@ -118,6 +121,7 @@ const SubscriptionModal = ({
                       description: 'Please try again later.',
                       status: 'warning',
                       duration: 10000,
+                      isClosable: true,
                     })
                   }
                   onClose()

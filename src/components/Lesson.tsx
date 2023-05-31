@@ -302,6 +302,7 @@ const Lesson = ({
           title: feedback,
           status: 'success',
           duration: 20000,
+          isClosable: true,
         })
       // correct answer
       Mixpanel.track('quiz_correct_answer', {
@@ -319,6 +320,7 @@ const Lesson = ({
           title: feedback,
           status: 'warning',
           duration: 20000,
+          isClosable: true,
         })
       // wrong answer
       Mixpanel.track('quiz_wrong_answer', {

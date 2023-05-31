@@ -46,6 +46,7 @@ const Kudos = (): JSX.Element => {
         description: `switch network to ${network.name}`,
         status: 'warning',
         duration: null,
+        isClosable: true,
       })
       await switchNetwork({ chainId: MINTKUDOS_CHAIN_ID })
     }
@@ -72,6 +73,7 @@ const Kudos = (): JSX.Element => {
             description: result.data?.error,
             status: 'error',
             duration: 10000,
+            isClosable: true,
           })
         } else {
           toast({
@@ -79,6 +81,7 @@ const Kudos = (): JSX.Element => {
             description: result.data?.result,
             status: 'success',
             duration: 10000,
+            isClosable: true,
           })
         }
       } else {

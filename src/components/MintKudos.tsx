@@ -125,6 +125,7 @@ const MintKudos = ({
             ),
             status: 'warning',
             duration: null,
+            isClosable: true,
           })
         }
         // wait 1 sec
@@ -155,6 +156,7 @@ const MintKudos = ({
           description: `Switch network to ${network.name} in order to mint your badge.`,
           status: 'warning',
           duration: null,
+          isClosable: true,
         })
       }
       try {
@@ -204,6 +206,7 @@ const MintKudos = ({
           title: 'Badge minted 🎉',
           status: 'success',
           duration: 10000,
+          isClosable: true,
         })
         setStatus('')
         setIsMintingInProgress(false)
@@ -223,6 +226,7 @@ const MintKudos = ({
           ),
           status: 'error',
           duration: 20000,
+          isClosable: true,
         })
         checkPassport()
       }
