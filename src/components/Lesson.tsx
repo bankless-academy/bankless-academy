@@ -546,9 +546,9 @@ const Lesson = ({
                 <>{Quest?.questComponent}</>
               ) : (
                 <>
-                  {lesson.lessonBadgeImageLink && (
+                  {lesson.kudosImageLink && (
                     <>
-                      {lesson.lessonBadgeImageLink.includes('.mp4') ? (
+                      {lesson.kudosImageLink.includes('.mp4') ? (
                         <Box
                           height="250px"
                           width="250px"
@@ -564,14 +564,14 @@ const Lesson = ({
                             style={{ borderRadius: '30px', overflow: 'hidden' }}
                           >
                             <source
-                              src={lesson.lessonBadgeImageLink}
+                              src={lesson.kudosImageLink}
                               type="video/mp4"
                             ></source>
                           </video>
                         </Box>
                       ) : (
                         <ChakraImage
-                          src={lesson.lessonBadgeImageLink}
+                          src={lesson.kudosImageLink}
                           height="250px"
                           mb="2"
                         />

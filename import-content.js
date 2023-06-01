@@ -107,7 +107,7 @@ const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
 const POTION_API = 'https://potion.banklessacademy.com'
 
 const KEY_MATCHING = {
-  'Lesson badge image': 'lessonBadgeImageLink',
+  'Kudos image': 'kudosImageLink',
   'Lesson image': 'lessonImageLink',
   'Lesson collected image': 'lessonCollectedImageLink',
   'Lesson collectible video': 'lessonCollectibleVideo',
@@ -206,7 +206,7 @@ axios
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.kudosId === undefined) lesson.kudosId = null
-      if (lesson.lessonBadgeImageLink === undefined) lesson.lessonBadgeImageLink = null
+      if (lesson.kudosImageLink === undefined) lesson.kudosImageLink = null
       if (lesson.LessonCollectibleMintID === undefined) delete lesson.LessonCollectibleMintID
       if (lesson.LessonCollectibleTokenAddress === undefined) delete lesson.LessonCollectibleTokenAddress
       if (lesson.LessonCollectibleMintID && lesson.LessonCollectibleTokenAddress) lesson.hasCollectible = true
@@ -308,8 +308,8 @@ axios
           await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
             .ignore()
 
-          if (lesson.lessonBadgeImageLink) {
-            lesson.lessonBadgeImageLink = get_img(lesson.lessonBadgeImageLink, lesson.slug, 'kudos')
+          if (lesson.kudosImageLink) {
+            lesson.kudosImageLink = get_img(lesson.kudosImageLink, lesson.slug, 'kudos')
           }
           if (lesson.lessonImageLink) {
             lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
@@ -466,7 +466,6 @@ axios
           lesson.lessonCollectedImageLink = 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png'
           lesson.lessonCollectibleVideo = 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm'
           lesson.socialImageLink = 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1'
-          lesson.lessonBadgeImageLink = 'https://link.assetfile.io/Fp8a1TuFMsIAbrsU6j9r3/badge_a01_nftvideo.mp4'
 
           lessons[index] = lesson
 
