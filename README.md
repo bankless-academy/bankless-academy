@@ -41,7 +41,7 @@ yarn dev
 
 ## Database
 
-Wallet addresses, encrypted Passport stamps & lessson completions are stored in a PostgreSQL database.
+Wallet addresses, encrypted Passport stamps & lesson completions are stored in a PostgreSQL database.
 Database setup is only required for lesson badge distribution but not to run the app.
 
 ### Setup
