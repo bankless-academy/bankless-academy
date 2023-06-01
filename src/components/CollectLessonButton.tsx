@@ -67,7 +67,13 @@ const CollectLessonButton = ({
           setIsLessonMintedLS(true)
         }
       }
-      if (NFTCollectors) setNumberOfOwners(NFTCollectors.length.toString())
+      if (NFTCollectors)
+        setNumberOfOwners(
+          NFTCollectors.reduce(
+            (p, c) => p + c?.tokenBalances?.length,
+            0
+          ).toString()
+        )
     }
     updateLessonsCollectors().catch(console.error)
   }, [address])
