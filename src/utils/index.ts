@@ -451,13 +451,13 @@ export async function getLessonsCollected(address: string): Promise<string[]> {
 
 export async function getLessonsCollectors(
   collectibleAddress: string
-): Promise<string[]> {
+): Promise<any[]> {
   try {
     // TODO: replace with mainet
     const NFTCollectors = await axios.get(
-      `https://polygon-mumbai.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getOwnersForCollection?contractAddress=${collectibleAddress}`
+      `https://opt-goerli.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getOwnersForCollection?contractAddress=${collectibleAddress}&withTokenBalances=true`
     )
-    // console.log(NFTCollectors.data)
+    console.log(NFTCollectors.data)
     return NFTCollectors.data?.ownerAddresses || []
   } catch (error) {
     console.error(error)

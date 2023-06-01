@@ -13,10 +13,11 @@ import { LessonType } from 'entities/lesson'
 const MintCollectibleModal = ({
   isOpen,
   onClose,
+  lesson,
 }: {
   isOpen: boolean
   onClose: () => void
-  lesson?: LessonType
+  lesson: LessonType
 }): React.ReactElement => {
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
   return (
@@ -36,15 +37,17 @@ const MintCollectibleModal = ({
         <ModalHeader>Collect Lesson</ModalHeader>
         <ModalCloseButton />
         <ModalBody padding={isMobileScreen ? '0' : 'default'}>
-          <iframe
-            src="/mint.html?collection=64413093d296198479460ad0"
-            frameBorder="0"
-            style={{
-              width: isMobileScreen ? '100%' : '400px',
-              height: '647px',
-              margin: 'auto',
-            }}
-          ></iframe>
+          {lesson.LessonCollectibleMintID && (
+            <iframe
+              src={`/mint.html?collection=${lesson.LessonCollectibleMintID}`}
+              frameBorder="0"
+              style={{
+                width: isMobileScreen ? '100%' : '400px',
+                height: '647px',
+                margin: 'auto',
+              }}
+            ></iframe>
+          )}
         </ModalBody>
       </ModalContent>
     </Modal>

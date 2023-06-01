@@ -55,19 +55,29 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 
   const Kudos = (
     <Box>
-      {lesson.lessonBadgeImageLink.includes('.mp4') ? (
+      {lesson.kudosImageLink.includes('.mp4') ? (
         <video autoPlay loop playsInline muted>
-          <source src={lesson.lessonBadgeImageLink} type="video/mp4"></source>
+          <source src={lesson.kudosImageLink} type="video/mp4"></source>
         </video>
       ) : (
-        <ChakraImage src={lesson.lessonBadgeImageLink} height="250px" mb="2" />
+        <ChakraImage
+          m="auto"
+          my="19px"
+          src={lesson.kudosImageLink}
+          height="250px"
+        />
       )}
     </Box>
   )
   if (!isQuestCompleted) {
     return (
       <Box position="relative" w="250px" m="auto" my="6">
-        <Box border="1px solid #4b474b" borderRadius="8px" overflow="hidden">
+        <Box
+          border="1px solid #4b474b"
+          borderRadius="8px"
+          overflow="hidden"
+          opacity="0.5"
+        >
           {Kudos}
         </Box>
         {BadgeHelper}

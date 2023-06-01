@@ -51,6 +51,7 @@ const CollectLessonButton = ({
     `isKudosMinted-${lesson.kudosId}`,
     false
   )
+  const [tokenId, setTokenId] = useState(null)
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const { address } = useAccount()
@@ -60,19 +61,25 @@ const CollectLessonButton = ({
       const NFTCollectors = await getLessonsCollectors(
         lesson.LessonCollectibleTokenAddress
       )
-      if (
-        address.length &&
-        NFTCollectors.length &&
-        NFTCollectors.includes(address.toLowerCase())
-      ) {
-        setIsLessonMintedLS(true)
+      for (const NFTCollector of NFTCollectors) {
+        if (NFTCollector.ownerAddress === address.toLowerCase()) {
+          setTokenId(parseInt(NFTCollector.tokenBalances[0].tokenId, 16))
+          setIsLessonMintedLS(true)
+        }
       }
       if (NFTCollectors) setNumberOfOwners(NFTCollectors.length.toString())
     }
     updateLessonsCollectors().catch(console.error)
   }, [address])
 
-  const twitterLink = ''
+  const share = `I've just bought a @BanklessAcademy "${lesson.name}" Lesson DATADISK™ to support the content production.
+https://testnets.opensea.io/assets/optimism-goerli/${lesson.LessonCollectibleTokenAddress}/${tokenId}
+
+Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
+
+  const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+    share
+  )}`
 
   if (lesson.hasCollectible)
     return (
@@ -87,6 +94,8 @@ const CollectLessonButton = ({
               py="3"
               px="5"
               position="relative"
+              cursor="pointer"
+              onClick={() => onOpen()}
             >
               {CollectiblesHelper}
               <Box>
@@ -151,7 +160,9 @@ const CollectLessonButton = ({
                       </Button>
                     </ExternalLink>
                   </Box>
-                  <ExternalLink href="https://testnets.opensea.io/assets/mumbai/0x464b891cc07adabe10746aa6af73a34c6d473cd9/1">
+                  <ExternalLink
+                    href={`https://testnets.opensea.io/assets/optimism-goerli/${lesson.LessonCollectibleTokenAddress}/${tokenId}`}
+                  >
                     <Button
                       variant="primaryGold"
                       isFullWidth
@@ -172,7 +183,11 @@ const CollectLessonButton = ({
             </Box>
           )}
         </Box>
-        <MintCollectibleModal isOpen={isOpen} onClose={onClose} />
+        <MintCollectibleModal
+          isOpen={isOpen}
+          onClose={onClose}
+          lesson={lesson}
+        />
       </>
     )
   else return <Box />
