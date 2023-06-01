@@ -35,6 +35,7 @@ export interface LessonType {
   mirrorLink?: string
   mirrorNFTAddress?: string
   articleContent?: string
+  isPreview?: boolean
   slides?: {
     type: SlideType
     title: string
