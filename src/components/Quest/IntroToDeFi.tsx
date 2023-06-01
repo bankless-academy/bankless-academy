@@ -41,6 +41,7 @@ const IntroToDeFi = (
           description: `Switch network to ${network.name} before signing this message.`,
           status: 'warning',
           duration: null,
+          isClosable: true,
         })
       }
       try {

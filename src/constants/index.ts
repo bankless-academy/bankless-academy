@@ -23,7 +23,7 @@ export const DEFAULT_METADATA: MetaData = {
   description:
     WHITELABEL?.default_metadata_description ||
     'Level up your knowledge of Web3 and DeFi',
-  image: `${DOMAIN_URL}${
+  image: `${
     WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
   }`,
 }

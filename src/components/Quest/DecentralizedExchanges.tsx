@@ -6,6 +6,8 @@ import {
   InputGroup,
   Spinner,
   Image,
+  Text,
+  Button,
 } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 
@@ -13,19 +15,22 @@ import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 import { api } from 'utils'
+import { LessonCard } from 'components/LessonCards'
+import { LESSONS } from 'constants/index'
+// import InternalLink from 'components/InternalLink'
 
-const DEXAggregators = (
+const DecentralizedExchanges = (
   account: string
 ): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
   const [isTransactionVerified, setIsTransactionVerified] = useState(
-    localStorage.getItem('quest-dex-aggregators')
+    localStorage.getItem('quest-decentralized-exchanges')
   )
   const [isCheckingTx, setIsCheckingTx] = useState(false)
   const [tx, setTx] = useState(
-    localStorage.getItem('quest-dex-aggregators-tx') || ''
+    localStorage.getItem('quest-decentralized-exchanges-tx') || ''
   )
   const [isSmallScreen] = useSmallScreen()
 
@@ -35,14 +40,16 @@ const DEXAggregators = (
         setIsCheckingTx(true)
         const result = await api('/api/validate-quest', {
           address: account,
-          quest: 'DEXAggregators',
-          tx: tx?.replaceAll('https://polygonscan.com/tx/', ''),
+          quest: 'DecentralizedExchanges',
+          tx: tx
+            ?.replaceAll('https://optimistic.etherscan.io/tx/', '')
+            ?.replaceAll('https://blockscout.com/optimism/mainnet/tx/', ''),
         })
         if (result && result.status === 200) {
           setIsCheckingTx(false)
           setIsTransactionVerified(result?.data?.isQuestValidated?.toString())
           localStorage.setItem(
-            'quest-dex-aggregators',
+            'quest-decentralized-exchanges',
             result?.data?.isQuestValidated
           )
         } else {
@@ -50,7 +57,7 @@ const DEXAggregators = (
         }
       } else {
         setIsTransactionVerified(null)
-        localStorage.setItem('quest-dex-aggregators', null)
+        localStorage.setItem('quest-decentralized-exchanges', null)
       }
     } catch (error) {
       console.error(error)
@@ -62,35 +69,35 @@ const DEXAggregators = (
     if (account) validateQuest(tx)
   }, [account])
 
+  const lesson = LESSONS.find(
+    (lesson) => lesson.slug === 'how-to-swap-on-a-decentralized-exchange'
+  )
+
+  if (!lesson) return null
+
   return {
     isQuestCompleted: isTransactionVerified === 'true',
     questComponent: (
       <>
-        <Box display={isSmallScreen ? 'block' : 'flex'}>
+        <Box display={isSmallScreen ? 'block' : 'flex'} w="100%">
           <div className="bloc1">
             <p>
               {'1. Load '}
-              <ExternalLink href="https://app.1inch.io/#/137/unified/swap/MATIC/BANK">
-                1inch
+              <ExternalLink href="https://nightride.velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042">
+                Velodrome
               </ExternalLink>
               {' on the '}
               <Image
-                alt="Polygon"
-                src="/images/matic.svg"
+                alt="Optimism"
+                src="/images/op.svg"
                 display="inline-flex"
                 height="24px"
                 m="0px 5px -5px 0"
               />
-              <b>Polygon network</b>
+              <b>Optimism network</b>
               {'.'}
             </p>
-            <p>
-              {'2. Swap any token. (You can buy '}
-              <ExternalLink href="https://polygonscan.com/token/0xdb7cb471dd0b49b29cab4a1c14d070f27216a0ab">
-                $BANK
-              </ExternalLink>
-              {` if you want to support the Bankless movement.)`}
-            </p>
+            <p>{'2. Swap any token.'}</p>
             <p>
               3. Paste the successful <b>swap</b> transaction hash below:
             </p>
@@ -102,7 +109,7 @@ const DEXAggregators = (
                 onChange={(e): void => {
                   setTx(e.target.value)
                   localStorage.setItem(
-                    'quest-dex-aggregators-tx',
+                    'quest-decentralized-exchanges-tx',
                     e.target.value
                   )
                   validateQuest(e.target.value)
@@ -124,24 +131,43 @@ const DEXAggregators = (
             {isTransactionVerified === 'false' && tx && tx.length !== 0 && (
               <Box mb="4">
                 <b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash
-                done on <b>Polygon network</b> and not the token approval
-                transaction hash. Watch the video for more information.
+                done on <b>Optimism network</b> and not the token approval
+                transaction hash. Read the explorer handbook article for more
+                information.
               </Box>
             )}
-            <Box mt="4">
-              <b>Disclaimer:</b> Unfortunately, this quest is not available for
-              US residents at the moment due to geographic restrictions.
-              <br />
-              <Box mt="2">
-                We expect this to be resolved in the coming months.
-              </Box>
-            </Box>
           </div>
           <div className="bloc2">
-            <iframe
-              src="https://www.youtube.com/embed/FBrFUJiBbZk?rel=0"
-              allowFullScreen
-            ></iframe>
+            <LessonCard
+              borderRadius="3xl"
+              maxW="400px"
+              textAlign="center"
+              m="auto"
+            >
+              <Box zIndex="2" position="relative">
+                <Box py="8">
+                  <Text mt="0 !important" fontSize="xl" fontWeight="bold">
+                    {lesson.name}
+                  </Text>
+                  {/* <InternalLink
+                    href={`/lessons/${lesson.slug}`}
+                    alt={lesson.name}
+                    target="_blank"
+                  > */}
+                  <Image src={lesson.lessonImageLink} />
+                  {/* </InternalLink> */}
+                </Box>
+                <Box pb="8">
+                  {/* <InternalLink
+                    href={`/lessons/${lesson.slug}`}
+                    alt={lesson.name}
+                    target="_blank"
+                  > */}
+                  <Button variant="primary">Read Entry</Button>
+                  {/* </InternalLink> */}
+                </Box>
+              </Box>
+            </LessonCard>
           </div>
         </Box>
       </>
@@ -149,4 +175,4 @@ const DEXAggregators = (
   }
 }
 
-export default DEXAggregators
+export default DecentralizedExchanges

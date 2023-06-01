@@ -50,6 +50,23 @@ export default async function handler(
           error: 'Onchain quest not completed',
         })
     }
+    if (quest === 'DecentralizedExchanges') {
+      if (!tx || typeof tx !== 'string') {
+        return res
+          .status(403)
+          .json({ isQuestValidated: false, error: 'Missing transaction' })
+      }
+      const isOnchainQuestCompleted = await validateOnchainQuest(
+        quest,
+        address,
+        tx
+      )
+      if (!isOnchainQuestCompleted)
+        return res.status(200).json({
+          isQuestValidated: false,
+          error: 'Onchain quest not completed',
+        })
+    }
     if (quest === 'Layer2Blockchains') {
       const isOnchainQuestCompleted = await validateOnchainQuest(quest, address)
       if (!isOnchainQuestCompleted)

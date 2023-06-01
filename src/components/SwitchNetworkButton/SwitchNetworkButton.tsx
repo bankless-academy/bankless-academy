@@ -47,6 +47,7 @@ const SwitchNetworkButton = ({
           description: 'Please switch back to Ethereum Mainnet',
           status: 'warning',
           duration: null,
+          isClosable: true,
         })
         setIsNetworkUnknown(true)
       } else {
@@ -113,6 +114,7 @@ const SwitchNetworkButton = ({
                           'When using Wallet Connect, change the network from your wallet.',
                         status: 'warning',
                         duration: 20000,
+                        isClosable: true,
                       })
                     }
                   }}

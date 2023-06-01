@@ -229,12 +229,53 @@ export async function validateOnchainQuest(
           const address1inchLP =
             '0x8Acdb3bcC5101b1Ba8a5070F003a77A2da376fe8'.toLowerCase()
           if (
+            [address1inchV4, address1inchV5, address1inchLP].includes(
+              txDetails.to.toLowerCase()
+            ) ||
             txDetails.data.includes(address1inchV4.substring(2)) ||
             txDetails.data.includes(address1inchV5.substring(2)) ||
             txDetails.data.includes(address1inchLP.substring(2))
           ) {
             check.push(true)
             console.log('OK 1inch router contract interaction')
+          }
+        }
+      }
+      console.log('checks validated (3)', check.length)
+      return check.length === 3
+    }
+    if (quest === 'DecentralizedExchanges') {
+      const check = []
+      const optimism: Network = {
+        name: 'optimism',
+        chainId: NETWORKS['optimism'].chainId,
+        _defaultProvider: (providers) =>
+          new providers.JsonRpcProvider(
+            `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
+          ),
+      }
+      const provider = ethers.getDefaultProvider(optimism)
+      const receipt = await provider.waitForTransaction(tx, 2)
+      // console.log('receipt', receipt.status)
+      if (receipt?.status) {
+        check.push(true)
+        console.log('OK tx status confirmed')
+        const txDetails = await provider.getTransaction(tx)
+        // console.log('txDetails', txDetails)
+        if (txDetails) {
+          if (txDetails.data.includes(address.toLowerCase().substring(2))) {
+            check.push(true)
+            console.log('OK wallet interaction')
+          }
+          // Velodrome router contract
+          const velodromeRouter =
+            '0x9c12939390052919af3155f41bf4160fd3666a6f'.toLowerCase()
+          if (
+            [velodromeRouter].includes(txDetails.to.toLowerCase()) ||
+            txDetails.data.includes(velodromeRouter.substring(2))
+          ) {
+            check.push(true)
+            console.log('OK Velodrome router contract interaction')
           }
         }
       }

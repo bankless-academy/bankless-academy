@@ -6,8 +6,10 @@ import BlockchainBasics from 'components/Quest/BlockchainBasics'
 import AcademyCommunity from 'components/Quest/AcademyCommunity'
 import Web3Security from 'components/Quest/Web3Security'
 import Layer1Blockchains from 'components/Quest/Layer1Blockchains'
+import DecentralizedExchanges from 'components/Quest/DecentralizedExchanges'
 import DEXAggregators from 'components/Quest/DEXAggregators'
 import Layer2Blockchains from 'components/Quest/Layer2Blockchains'
+import BanklessArchetypes from 'components/Quest/BanklessArchetypes'
 import { ConnectFirst } from 'components/Quest/WalletConnect'
 import { useAccount } from 'wagmi'
 
@@ -22,7 +24,11 @@ export type QuestType = {
   questComponent: React.ReactElement
 }
 
-export const ONCHAIN_QUESTS = ['DEXAggregators', 'Layer2Blockchains']
+export const ONCHAIN_QUESTS = [
+  'DEXAggregators',
+  'Layer2Blockchains',
+  'DecentralizedExchanges',
+]
 
 const QuestComponent = (
   component: QuestComponentType | null,
@@ -36,8 +42,10 @@ const QuestComponent = (
     AcademyCommunity: AcademyCommunity,
     Web3Security: Web3Security,
     Layer1Blockchains: Layer1Blockchains,
+    DecentralizedExchanges: DecentralizedExchanges,
     DEXAggregators: DEXAggregators,
     Layer2Blockchains: Layer2Blockchains,
+    BanklessArchetypes: BanklessArchetypes,
   }
   if (!component || !QUESTS.includes(component)) return null
 

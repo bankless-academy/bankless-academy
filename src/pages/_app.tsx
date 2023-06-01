@@ -99,6 +99,9 @@ const App = ({
                 .ms-track.ms-y .ms-thumb {
                   width: 7px;
                 }
+                #chakra-toast-manager-bottom {
+                  margin-bottom: 81px !important;
+                }
               `}
             />
             <Layout isLesson={pageProps.pageMeta?.isLesson || false}>

@@ -20,6 +20,9 @@
   "alternative layer 1": {
     "definition": "Layer 1 blockchains other than Ethereum and Bitcoin."
   },
+  "amm": {
+    "definition": "Automated Market Maker: a trade matchmaking system, based on a public algorithm."
+  },
   "bet": {
     "definition": "Risking money in exchange for greater rewards (shorting/longing) ; money verb on the skill cube."
   },
@@ -57,7 +60,10 @@
     "definition": "No government or company has control to determine what is or is not allowed."
   },
   "centralized exchange": {
-    "definition": "(CEX) Platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+  },
+  "cex": {
+    "definition": "Centralized Exchange: A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "chain": {
     "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
@@ -87,10 +93,13 @@
     "definition": "No single authority or entity controls the data."
   },
   "decentralized exchange": {
-    "definition": "(DEX) protocol that facilitates exchange without requiring trusted intermediaries."
+    "definition": "(DEX) A protocol that facilitates exchange without requiring trusted intermediaries."
   },
   "defi": {
-    "definition": "An abbreviation for decentralized finance."
+    "definition": "An abbreviation for Decentralized Finance."
+  },
+  "dex": {
+    "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
   },
   "dex aggregator": {
     "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
@@ -143,6 +152,9 @@
   "invest": {
     "definition": "The act of buying a coin/token that uses DeFi technology."
   },
+  "kyc": {
+    "definition": "Know-Your-Customer: A government-sanctioned user identification process."
+  },
   "l1": {
     "definition": "Layer 1 refers to a base network such as Bitcoin or Ethereum."
   },
@@ -162,10 +174,13 @@
     "definition": "Deposits assets to earn interest."
   },
   "liquidity": {
-    "definition": "How much of a token is available for trading."
+    "definition": "The quantity of a token available for trading."
   },
   "liquidity pool": {
-    "definition": "A pool of tokens in a DEX that facilitates permissionless trades between two tokens."
+    "definition": "A communal vault of tokens that facilitates permissionless token swaps."
+  },
+  "lp": {
+    "definition": "Liquidity Provider: Blockchain users who loan their tokens to protocols in exchange for a share in fees."
   },
   "meta-aggregator": {
     "definition": "A tool that brings together other aggregators into an extra overview layer."
@@ -263,6 +278,9 @@
   "sidechain": {
     "definition": "A mechanism that allows for the transfer of assets and transactions from a main blockchain to a separate, parallel blockchain (sidechain)."
   },
+  "slippage": {
+    "definition": "A change in buy price that helps your trade to execute."
+  },
   "slippage tolerance": {
     "definition": "How much can prices change before your trade executes."
   },
@@ -287,6 +305,12 @@
   "token": {
     "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
   },
+  "token allowance": {
+    "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
+  },
+  "token pair": {
+    "definition": "The two associated cryptocurrencies that make up a liquidity pool."
+  },
   "tps": {
     "definition": "A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain."
   },
@@ -310,6 +334,9 @@
   },
   "transaction throughput": {
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
+  },
+  "tvl": {
+    "definition": "Total Value Locked: The overall amount of asset value stored in a specific place."
   },
   "validating bridge": {
     "definition": "A validating bridge contract is a new design that removes the need to trust any external authority to decide if a withdrawal is valid."
