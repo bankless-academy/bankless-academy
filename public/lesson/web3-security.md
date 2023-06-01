@@ -18,7 +18,7 @@ PORTABLE LESSON DATADISK™ COLLECTION
 LESSON TITLE: WEB3 SECURITY
 DATA LOCATION: https://app.banklessacademy.com/lessons/web3-security.md
 PROTOCOL VERSION: 0.001
-LAST UPDATED: 30/05/2023
+LAST UPDATED: 01/06/2023
 __________________________________________________________________________________________________________________________________________________________
 
    << LESSON START >>
@@ -49,7 +49,7 @@ In web2, the institutions hold money on behalf of people. A user must prove thei
 For a scammer to gain access to your money, they need this ID + password combination. Because the institutions are charged with protecting your money, fraudulent transactions can be reversed - like a credit card transaction dispute.
 
 
-![Web2_Money.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f9ebddcf-8a37-4f35-b6d7-d57c7470e530/Web2_Money.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=da4827385891fd5d1f668bcbdd0cd6a165109bd592a54f3fe3980a3b968e0ddd&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/web3-security/money-in-web2-78779f3c.svg)
 
 
 # Money in Web3 
@@ -61,7 +61,7 @@ In web3, money works differently. It’s more like a locked cash wallet; once mo
 It’s very important to protect seed phrases; people should _**never**_ give their seed phrase to anyone for any reason. Also, never enter seed phrases digitally; digital photos, notes applications, and text files on your computer can all get compromised.
 
 
-![Web3_Money.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4160352a-afb5-4d66-982f-d4c8d445d823/Web3_Money.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=b4debf374065458af846b8b40a75c8d33b6d0e4187d5a7c289f613d44e8bcc4d&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/web3-security/money-in-web3--832997fe.svg)
 
 
 # ✅ quiz
@@ -125,7 +125,7 @@ Many people have had their web2 accounts hacked, or have had their money and cre
 Phone (SMS) 2FA is better than no 2FA, but phone companies are vulnerable to scammers also. They can use `social engineering` to impersonate the account owner, bypass the company’s security checks, and gain access to the owner’s account - all without the real owner knowing. Authentication applications like Authy or Google Authenticator are more secure 2FA solutions.
 
 
-![2FA.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5ecfc1b0-2dd5-4dc8-bf29-f83eb0b8410e/2FA.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=6fafb0df931c46e6a2fc441f6ab0bd7a4d8d8e98b617fba91f98a038be224be1&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/web3-security/two-factor-authentication-75e29563.svg)
 
 
 # ✅ quiz
@@ -150,7 +150,7 @@ They use `social engineering` to pressure people. Examples include:
 - “Congratulations you won our giveaway!” - making things feel exclusive.
 - ”Get early access to our pre-mint!” - generating `FOMO` in the person being scammed.
 
-![Social_Engineer.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/31929d2a-39b3-403e-85aa-63a7b024ddb3/Social_Engineer.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=ffb96c59d464b2d2c3a8d4422a885ca0eadf2d0df40b8b66627199929413435d&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/web3-security/social-engineering-scams-5750ad84.svg)
 
 
 # Fear Of Missing Out
@@ -202,7 +202,7 @@ Social media `red flags`:
 🚩 **Un****requested links and offers,** _especially in direct messages_.
 
 
-![Red_Flag.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7f254ca3-29c5-46a5-9417-fd1d6cdb8eeb/Red_Flag.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=32d442a3825c82c027439f618b9d7149707b4f013628d0d8a0e6281d9403774d&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/web3-security/social-media-safety-fbe97b9e.svg)
 
 
 # Social Media Best Practices
@@ -223,7 +223,7 @@ Practices for staying safe**:**
 ✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our [Explorer Community](https://lenster.xyz/u/banklessacademy) is a great place for questions like these.
 
 
-![Best_Practice.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/50cc279a-af2c-427b-b09a-2ea0d9d5e89f/Best_Practice.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=9bda1a2d94499be6bb150f808c637449d52f1c55cdea0cae81140b3046923669&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/web3-security/social-media-best-practices-0776e310.svg)
 
 
 # Scam-tokens
@@ -238,7 +238,7 @@ Malicious contracts often require people to spend far more on a transaction than
 The best thing to do when you receive random tokens is to not interact with them at all; leave them in your wallet and never transfer/sell them.
 
 
-![Scam_Token.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7657342e-9b58-42b7-9aa7-f9c2dd43bc37/Scam_Token.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=5b9abbdca7be039bb00fa31e2a0e8c757f284e87a2fc140419e0894a0ad69b3e&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/web3-security/scam-tokens-cbab390e.svg)
 
 
 # ✅ quiz
@@ -263,7 +263,7 @@ It is even possible to use your hardware wallet through many browser extension w
 Ledger has [written their own guide](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask) on how to setup MetaMask for use with their hardware wallet device.
 
 
-![Hardware_Wallets.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/dcecf258-31ec-476f-8d53-a809211f7ab4/Hardware_Wallets.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191651Z&X-Amz-Expires=3600&X-Amz-Signature=c5906f530add8c137514715001d2460a2f5a41be1199b565dfc31dbf11074c03&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/web3-security/hardware-wallets-191cacd1.svg)
 
 
 # ✅ Knowledge Check
@@ -289,7 +289,7 @@ After adding a hardware wallet to your setup, one of the best ways to secure you
 👎 **CONs:** It’s more complicated to keep track of, but many wallet applications allow you to name your wallets.
 
 
-![Wallet_Strategy.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/af0e2e3b-d21f-4441-912d-dc83e8b83657/Wallet_Strategy.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191651Z&X-Amz-Expires=3600&X-Amz-Signature=3db5092637aff3a38598258bc871641768c6c7edeb020d9bda209260ac6dae09&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/web3-security/wallet-strategies-857fd09c.svg)
 
 
 # ✅ Knowledge Check

@@ -18,16 +18,16 @@ PORTABLE LESSON DATADISK™ COLLECTION
 LESSON TITLE: DEX AGGREGATORS
 DATA LOCATION: https://app.banklessacademy.com/lessons/dex-aggregators.md
 PROTOCOL VERSION: 0.001
-LAST UPDATED: 30/05/2023
+LAST UPDATED: 01/06/2023
 __________________________________________________________________________________________________________________________________________________________
 
    << LESSON START >>
 
 
-# **Introduction**
+# Introduction
 
 
-`Decentralized Exchange`s (DEXs) eliminate the costs of intermediaries and save Explorers money when trading assets. 
+`Decentralized Exchanges` (DEXs) eliminate the costs of intermediaries and save Explorers money when trading assets. 
 
 
 But did you know, Explorer, that there’s more ways to save with DeFi technology? Using `DEX aggregators`, you can scan all possible trades on various DEX platforms simultaneously and execute the best trade route — all in one action. They help you get the best deal when doing a token `swap`. Just like airline flight aggregators help you find the cheapest flight, DEX aggregators help you maximize the value of your trade.
@@ -39,7 +39,7 @@ This lesson will show:
 2. How DEX aggregators enable users to view and use multiple DEXs through one interface.
 3. Multiple ways a single aggregator interface can save Explorers time and money.
 
-![001_introduction.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/181783e5-4ec4-46f8-abcf-854977ec461c/001_introduction.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191649Z&X-Amz-Expires=3600&X-Amz-Signature=be7a5dc31564c90f20e14918ed281ccf4b4cb098f0a229ecd19f8856961f7ba4&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/introduction-ba453b68.svg)
 
 
 # How Liquidity Affects Prices
@@ -63,7 +63,7 @@ The BanklessDAO token (BANK) has a liquidity amount of ~30 million BANK on Unisw
 If an Explorer was to purchase 10,000 BANK from each pool, they would find that the `price impact` of their trade would result in a higher trade price in the SushiSwap pool — because their trade has pulled a larger percentage of the pool’s total liquidity.
 
 
-![002_liquidity.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c8308ac3-23d6-406b-9c91-6e43b2afc35f/002_liquidity.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191649Z&X-Amz-Expires=3600&X-Amz-Signature=69863c4fbea0e9d5fb6cc8c2975d71c36285aa691cb890c7a804efaba005e098&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/an-example-of-how-liquidity-impacts-prices-915b3d84.svg)
 
 
 # ✅ Question
@@ -91,7 +91,7 @@ In 2020, Uniswap held much of the DEX liquidity to trade in DeFi. When SushiSwap
 Thus, any trade has a larger `price impact` than when Uniswap held most of the ecosystem’s total liquidity. As more DEXs launch, it costs Explorers more to trade on any single DEX without new innovations.
 
 
-![003_thinLiquidity.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a411c249-d4a7-4d5a-9629-21496cae6d61/003_thinLiquidity.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191649Z&X-Amz-Expires=3600&X-Amz-Signature=8d928b4483fbc7fe6115976c4ded554f664622fa5edebc0effbe7b705f9a8e75&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-c9e0b695.svg)
 
 
 # ✅ Question
@@ -113,7 +113,7 @@ Large amounts of `liquidity` are needed to reduce price impact and save you mone
 DEX aggregators can even route trades through an `intermediary token` , or more than one, if that gets a better result for users — like the way a flight aggregator might suggest an extra stop at another airport if it’s cheaper for the passenger. This discovery of the optimal `trade route` is done by sophisticated algorithms searching through all possible paths to find the cheapest trade route at that moment.
 
 
-![004_recombiningLiquidity.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1a5a40b5-f9af-4f07-949b-78d18132b2a6/004_recombiningLiquidity.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191649Z&X-Amz-Expires=3600&X-Amz-Signature=386031783288b9c94112b9fbc7deffbba4813a26bc53670b33e5e56fa4721447&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/recombining-liquidity-with-dex-aggregators-f01777dd.svg)
 
 
 # ✅ Question
@@ -143,7 +143,7 @@ As an example, let’s say gas costs are at 22 gwei per gas unit and the transac
 _120,000 * 22 gwei = 2,640,000 gwei_ _**or**_ _0.00264 ETH_
 
 
-![005_gas.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4242c94b-7d08-454f-a468-ace6798c744e/005_gas.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191649Z&X-Amz-Expires=3600&X-Amz-Signature=cecf94c29375ee306f3e60e9a9a901bf321edcfb6594a246c9b8ccaba1e203ae&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-c34efe86.svg)
 
 
 # How Aggregators Reduce Gas Costs for Users
@@ -155,7 +155,7 @@ Trade splitting would result in more transaction fees from the extra on-chain ac
 Some aggregators go even further: they may refund some of the network transaction fees from using their protocol. 1inch currently offers rebates in their token for a portion of gas costs from trading through their `dApp` on Ethereum mainnet.
 
 
-![006_tradeRoutes.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0beecb5e-1493-4332-8cc0-26238fd5d84e/006_tradeRoutes.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191649Z&X-Amz-Expires=3600&X-Amz-Signature=705c0fd859a8ad18efc4cab5ebe6bba5642fce859f47b39024bab33b50cc066b&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-28d6f207.svg)
 
 
 # ✅ Question
@@ -177,7 +177,7 @@ There are even meta-aggregators of DEX aggregators! These platforms search throu
 Note: While convenient, `meta-aggregator` services can add extra costs on top of network transaction fees, increasing the overall cost for users. Explorers: make sure that your trades don’t end up more expensive than you intended. 
 
 
-![009_metaaggregators.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/03db243d-6bd5-4e9c-85fb-7d5f3f77a73d/009_metaaggregators.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191649Z&X-Amz-Expires=3600&X-Amz-Signature=5e5694d9404d2240dccf3321984fc5c67cc3c6e14a685a480ac4f8466976aa80&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/meta-aggregators-100793fd.svg)
 
 
 # ✅ Question
@@ -197,7 +197,7 @@ Users swapping directly through `DEXs` can lose value up to the limit of their `
 Fortunately, because of the recombined liquidity offered by DEX aggregators, the price impact of a trade is reduced. Explorers can keep their slippage tolerance low while saving more with DEX aggregators, as opposed to trading directly on a DEX.
 
 
-![007_sandwichAttacks.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/53542ba2-9d20-42c7-93fa-9776983348ef/007_sandwichAttacks.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191649Z&X-Amz-Expires=3600&X-Amz-Signature=e8e3e1d52352382523dff306eea53571ddb4f0f87d2cdb97f9d35d1ecb45ec8a&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/avoiding-sandwich-attacks-75f6ae82.svg)
 
 
 # ✅ Question
@@ -217,7 +217,7 @@ Some aggregators like 1inch even offer specialized `OTC` (`Over The Counter`) se
 CoWSwap is a Meta-Aggregator that also offers sandwich-resistant services, enabled by default, to ensure trades are 100% protected against sandwich attacks.
 
 
-![008_otc.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bed9f3a8-26e1-49ca-9301-0f5685f3e822/008_otc.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191649Z&X-Amz-Expires=3600&X-Amz-Signature=775c762b773bafaf066994b16615fd5def39003b48089497657dc922c09546db&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/more-protection-from-sandwiches-otc-trades-04ef66c9.svg)
 
 
 # ✅ Question

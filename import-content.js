@@ -64,7 +64,14 @@ for (const blockType of blockTypesToIgnore) {
   })
 }
 
+n2m.setCustomTransformer("image", async (b) => {
+  // console.log(b)
+  return `![](https://www.notion.so/image/${encodeURIComponent(b?.image?.file?.url?.split('?')[0].replace('https://s3.', 'https://s3-'))}?table=block&id=${b?.id})`
+})
+
 const PROTOCOL_VERSION = "0.001"
+
+const LESSON_SPLITTER = `<< LESSON START >>`
 
 const mdHeader = (lesson) => `
 __________________________________________________________________________________________________________________________________________________________
@@ -89,7 +96,7 @@ PROTOCOL VERSION: ${PROTOCOL_VERSION}
 LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
 __________________________________________________________________________________________________________________________________________________________
 
-   << LESSON START >>
+   ${LESSON_SPLITTER}
 
 `
 
@@ -177,7 +184,7 @@ axios
     }
     const promiseArray = notionRows.data.map(async (notion, index) => {
       // DEV_MODE: only test first lesson
-      // if (index > 0) return
+      // if (index > 1) return
 
       // replace keys
       const lesson = Object.keys(KEY_MATCHING).reduce(
@@ -288,7 +295,7 @@ axios
                 lessons[index] = lesson
               })
           }
-        });
+        })
         return
       }
 
@@ -343,7 +350,7 @@ axios
               slide.quiz.rightAnswerNumber = undefined
               slide.quiz.answers = []
               slide.quiz.feedback = []
-              const quizDiv = new JSDOM(slide.content);
+              const quizDiv = new JSDOM(slide.content)
               const checkboxes = quizDiv.window.document.querySelectorAll(
                 '.checklist input[type="checkbox"]:disabled'
               )
@@ -472,18 +479,50 @@ axios
           // convert to MD
           console.log(`Converting "${lesson.name}" to MD`)
           try {
-            const mdblocks = await n2m.pageToMarkdown(notion.id);
-            const mdString = n2m.toMarkdownString(mdblocks);
+            const mdblocks = await n2m.pageToMarkdown(notion.id)
+            const mdString = n2m.toMarkdownString(mdblocks)
             // hide answers
-            const lessonMD = mdString.parent?.replaceAll('[x]', '[ ]')
-            fs.writeFile(`public/lesson/${lesson.slug}.md`, `${mdHeader(lesson)}${lessonMD}`, (error) => {
-              if (error) throw error
-            })
-            console.log(
-              `lesson exported in public/lesson/${lesson.slug}.md`
-            )
+            let lessonContentMD = mdString?.parent?.replaceAll('[x]', '[ ]') || ''
+            // HACK: replace image
+            const imageRegex = /!\[.*?\]\((.*?)\)/g;
+            let match
+            let i = 0
+            while ((match = imageRegex.exec(lessonContentMD)) !== null) {
+              lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${lesson.imageLinks[i]}`)
+              i++
+            }
+            // write/update file
+            const lessonPath = `public/lesson/${lesson.slug}.md`
+            const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
+            const lessonHeader = mdHeader(lesson)
+            if (lessonFile) {
+              const [previousLessonHeader, previousLessonContentMD] = lessonFile?.split(LESSON_SPLITTER)
+              // If content has changed
+              const plh = previousLessonHeader?.split('LAST UPDATED:')[0]
+              const lh = lessonHeader?.split('LAST UPDATED:')[0]
+              if (plh.trim() !== lh.trim() ||
+                previousLessonContentMD.trim() !== lessonContentMD.trim()
+              ) {
+                fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
+                  if (error) throw error
+                })
+                console.log(
+                  `"${lesson.name}" updated in ${lessonPath}`
+                )
+              }
+              else console.log(
+                `"${lesson.name}" is unchanged`
+              )
+            } else {
+              fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
+                if (error) throw error
+              })
+              console.log(
+                `"${lesson.name}" exported in ${lessonPath}`
+              )
+            }
           } catch (error) {
-            console.log(error.headers)
+            console.log(error)
           }
         })
     })

@@ -18,7 +18,7 @@ PORTABLE LESSON DATADISK™ COLLECTION
 LESSON TITLE: BLOCKCHAIN BASICS
 DATA LOCATION: https://app.banklessacademy.com/lessons/blockchain-basics.md
 PROTOCOL VERSION: 0.001
-LAST UPDATED: 30/05/2023
+LAST UPDATED: 01/06/2023
 __________________________________________________________________________________________________________________________________________________________
 
    << LESSON START >>
@@ -33,7 +33,7 @@ ________________________________________________________________________________
 After examining the layers of a blockchain, we will be using a blockchain tool called a `block explorer` to look into the specifics of the Ethereum blockchain structure; we will zoom in on the Ethereum blockchain to view the **list** of blocks, the **transactions** within those blocks, and the **details** of each individual transaction.
 
 
-![blockchain.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ec662b2c-45a0-4a6b-968c-e36b24d4ad67/blockchain.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=70db2035e3e5b195adb530d3626f74d293c44a24c70811e5af54a637b060af1e&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/blockchain-basics/introduction-6d0b6137.svg)
 
 
 # Blockchain Structure
@@ -51,7 +51,7 @@ Zooming in from the outside, there are 3 levels of structure in a blockchain:
 This three-tiered structure comes together to create a cryptographic ledger - an unalterable history of all transactions performed on the network.
 
 
-![blockchainStructure.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/efdf57b4-42ed-4b9f-92ac-58ffcfd6e4a3/blockchainStructure.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=ae034fe5eaf097808a12041b8526c52d2e70719dad6dbd56caef161ddbf8b991&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/blockchain-basics/blockchain-structure-346dae14.svg)
 
 
 # ✅ quiz
@@ -76,7 +76,7 @@ The `ledger` is the list of ALL transactions ever made on a blockchain, and anyo
 When new transactions are added to the ledger, balances stored at each `address` get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever. 
 
 
-![ledger-01.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/dd5cd390-e6d3-4231-a565-1b2a5ea1f4ea/ledger-01.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=9eb28fb168dd1dcca243db1893e346ac46408a31831372dde4db8ecf262b9c57&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/blockchain-basics/examining-the-ledger-74e5f072.svg)
 
 
 # Transactions on the Ledger
@@ -102,7 +102,7 @@ Individual transactions show the _change_ in the amount of cryptocurrency for ea
 ⇒ Charlie has gained 2 ETH
 
 
-![ledgerTransactions.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7cf52138-ed5e-4610-bf4e-3725e45dfd53/ledgerTransactions.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=14b7133e866203ba8f5d8ab5f020fa346b91ec4d658b6ac643f5ba61b6ac406d&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/blockchain-basics/transactions-on-the-ledger-f4f9d470.svg)
 
 
 # ✅ quiz
@@ -146,7 +146,7 @@ An important feature of blockchains is that past transaction data cannot be chan
 So each `block` is simply a group of transactions put together in one file along with that block’s `block hash`. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected block_**chain**_. 
 
 
-![blockAnatomy.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0d661f7b-31d8-4721-a9d3-c1062ad7520d/blockAnatomy.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=12fdd4ba44965b9a8c08af4ffd47145c63f5727444976595911c02f31050e3df&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/blockchain-basics/block-anatomy-8ba3bea2.svg)
 
 
 # ✅ quiz
@@ -173,7 +173,7 @@ From our example earlier when discussing the blockchain ledger, both of those tr
 Recall that each block must also reference the past block’s `block hash` to link the blockchain together.
 
 
-![insideBlock.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e76c2cfe-7dfe-487e-9ba2-12d72275cba1/insideBlock.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=f968d4db8f5650ab22662fe04d79187c96297bb1f33b6b1f55e0157a1b657cb4&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/blockchain-basics/inside-a-block-b11c74ce.svg)
 
 
 # ✅ quiz
@@ -201,7 +201,7 @@ Transactions can be simple, like sending crypto assets, or more complex, such as
 Finally, each transaction has a unique digital identifier, called its `transaction hash`, that no other transaction has. This makes it easy to refer to any single transaction later on and ensures that the details of that transaction can’t be changed afterward.
 
 
-![transaction.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/18206b48-9a78-46a6-979c-5df66c5dbbbb/transaction.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=ad9dff8254cfa55b079794928de98b0b9c97b53ac712946ae05da67f7de2fad1&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/blockchain-basics/individual-transactions-2f6bf118.svg)
 
 
 # ✅ quiz
@@ -226,7 +226,7 @@ On Ethereum, an address always starts with _0x__________ and is 42 characters of
 When looking at a single transaction in a block explorer, we can see the From: and To: addresses. This doesn’t tell us who the _people_ are who control those addresses but allows any user to track the movement of cryptocurrency throughout the blockchain ledger.
 
 
-![userAddresses.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/846fda29-cab4-44fa-a65d-1b52b111ef4d/userAddresses.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=db1f7b010fcaf44381aeabab5e4f4f2197156758ccd8a54c410ed955582d8d7e&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/blockchain-basics/user-addresses-e9456d37.svg)
 
 
 # ✅ quiz

@@ -18,7 +18,7 @@ PORTABLE LESSON DATADISK™ COLLECTION
 LESSON TITLE: LAYER 2 BLOCKCHAINS
 DATA LOCATION: https://app.banklessacademy.com/lessons/layer-2-blockchains.md
 PROTOCOL VERSION: 0.001
-LAST UPDATED: 30/05/2023
+LAST UPDATED: 01/06/2023
 __________________________________________________________________________________________________________________________________________________________
 
    << LESSON START >>
@@ -37,7 +37,7 @@ The Lightning Network is Bitcoin’s best-known scaling solution, and it relies 
 
 
 
-![001_Introduction.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/15a9ebee-3115-439f-b61d-91167eb55797/001_Introduction.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=a0e40559cc97956ae73d3c6f3b44bfaff12df3062f0f7fbfb4c10a30f95637d9&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-2-blockchains/introduction-0d584167.svg)
 
 
 # Payment Channels
@@ -53,7 +53,7 @@ A channel can be closed at any time by either party broadcasting the most recent
 Payment channels don’t support advanced `smart contract` interactions, only basic peer-to-peer transactions.
 
 
-![002_PaymentChannels.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/fc927a91-0725-422a-9e53-e46c690689cd/002_PaymentChannels.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=f3f16cf53f4bb677ee82c37100cd90e3239aa4ba94c7ea116e2e1cacc6493854&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-2-blockchains/payment-channels-5e29dfd3.svg)
 
 
 # ✅ Question
@@ -98,7 +98,7 @@ Infrastructure called `bridges` is used to transfer information between differen
 The technology is very complex, but from the end user perspective this process is as simple as choosing a destination.
 
 
-![003_BridgingLayer1andLayer2.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/dc07f048-5229-4997-aeaa-835c587b18fb/003_BridgingLayer1andLayer2.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=152d117b438bbdd0bf7acea2621010c7c2ceed0b9dd1877ed07dc88d4d05e1d6&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-2-blockchains/bridging-layer-1-and-layer-2-8268ff20.svg)
 
 
 # Sidechains
@@ -113,7 +113,7 @@ Sidechains are still subject to the Blockchain Trilemma. Their lower `gas` fees 
 Sidechains, like Polygon PoS, regularly publish snapshots to the L1, saving a moment-in-time status of their ledger. Snapshots enable sidechains to roll the chain state back to a previous snapshot in the case of on-chain fraud or error.
 
 
-![004_Sidechains.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ec6ff31a-0ffd-4461-b45e-d41e7d10237a/004_Sidechains.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=ebcf013b7de22c48eb9657ef86bf0336dad644d31e13cbdf02dfa9496ecf0a8d&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-2-blockchains/sidechains-406fe8d1.svg)
 
 
 # ✅ Question
@@ -141,7 +141,7 @@ In order for the Rollup to prove itself secure enough to process transactions on
 There are currently two Rollup methods that can provide this evidence: `Optimistic Rollups`, and `ZK Rollups`. Let’s take a closer look at these two processes.
 
 
-![005_Rollups.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/2ae5bdaa-cb44-4960-940c-f6dd0bb6dee0/005_Rollups.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=0c2c1b5a82e5e15eef10252b5f6ead0aaca2d984ff5582fef31775ce4f278bd3&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-2-blockchains/rollups-ea8672d0.svg)
 
 
 # Optimistic Rollups
@@ -156,7 +156,7 @@ To mitigate against any abuse of this technique, there is typically a multi-day 
 Note: Third-party bridging services, like Across and Hop, help users bridge funds in mere minutes rather than days, but these solutions come with an increased risk of attack compared to protocol-native bridges due to differing fraud-proof processes.
 
 
-![006_Optimistic.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/fb90f737-b29c-47f6-bec8-fed75962187d/006_Optimistic.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=7ab746e7d20f68a22235cdc2849318229736b7be2d283f298cf45b59a6c304eb&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-2-blockchains/optimistic-rollups-75b31999.svg)
 
 
 # ✅ Question
@@ -179,7 +179,7 @@ The major upside to ZK Rollups is the `settlement time`, also known as `transact
 There are some major protocols using ZK Rollup technology to build their Ethereum scaling solutions, including zkSync, StarkNet, and Aztec. It’s still early in terms of development, but has great future potential.
 
 
-![007_ZK.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/62950c6d-cf1b-4189-a3f7-6ff1dce0b9f1/007_ZK.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=9d810dca4012948661b7ecf85070c8e35a6cd4057369b4e6f59cae898553d802&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-2-blockchains/zk-rollups-bc7c293e.svg)
 
 
 # ✅ Question
@@ -203,7 +203,7 @@ Many Optimistic Rollups are “EVM equivalent”, meaning the L2 natively suppor
 Sidechains and ZK Rollups are not yet fully EVM equivalent. For now this limits the dApp ecosystems of such networks, but also allows for greater experimentation and discovery of new ways to layer dApp experiences on top of Ethereum.
 
 
-![008_dAppAvailability.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7495a256-1281-41cd-9bad-234d79424fbb/008_dAppAvailability.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=860e97617da8102d59e9d705eab53c2f94bce2a113ad68bf0be5b833743c25ba&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-2-blockchains/cross-chain-dapp-compatibility-eeb2b414.svg)
 
 
 # ✅ Question
@@ -244,5 +244,5 @@ This improved functionality isn’t the only reason Optimism is a great scaling 
 Optimism is not simply a platform that relies on the Optimistic Rollup. The network is a metaphor for the power of blockchain technology to solve existing problems and to show us new ways of transacting and living together. And that should make us all optimistic. 🙂
 
 
-![009_StartYourL2JourneyWithOptimism.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b79b7d8b-b959-4670-a0b7-6caa8d548318/009_StartYourL2JourneyWithOptimism.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=f4370e43c6b62d508431f3047e6f47702bb97318c8fd9872d4215685d16f178b&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-2-blockchains/start-your-layer-2-journey-with-optimism--7999722b.svg)
 

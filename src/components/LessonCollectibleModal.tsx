@@ -29,13 +29,13 @@ const StyledMarkdown = styled(Box)`
 
 function replaceImagesInMarkdown(markdownString) {
   // Regular expression to match image Markdown syntax
-  const imageRegex =
-    /!\[<span class="hljs-string">(.*?)<\/span>\]\(<span class="hljs-link">(.*?)<\/span>\)/g
+  const imageRegex = /!\[\]\(<span class="hljs-link">(.*?)<\/span>\)/g
+  // /!\[<span class="hljs-string">(.*?)<\/span>\]\(<span class="hljs-link">(.*?)<\/span>\)/g
 
   // Replace each image syntax with an <img> tag
   const replacedString = markdownString.replace(
     imageRegex,
-    '<img alt="$1" src="$2" width="400px" />'
+    '<img alt="" src="$1" width="400px" />'
   )
 
   return replacedString

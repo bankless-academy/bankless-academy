@@ -18,13 +18,13 @@ PORTABLE LESSON DATADISK™ COLLECTION
 LESSON TITLE: LAYER 1 BLOCKCHAINS
 DATA LOCATION: https://app.banklessacademy.com/lessons/layer-1-blockchains.md
 PROTOCOL VERSION: 0.001
-LAST UPDATED: 30/05/2023
+LAST UPDATED: 01/06/2023
 __________________________________________________________________________________________________________________________________________________________
 
    << LESSON START >>
 
 
-# **Introduction**
+# Introduction
 
 
 Problems emerge when more users want to use a `blockchain` network than it can handle. Large demand for `blockspace` can be temporary or can last as long as users continue to have a strong desire to use the blockchain. In times of high demand, Ethereum users can pay skyrocketing fees to still have their transactions processed quickly— ultimately pricing out users with less capital.
@@ -33,7 +33,7 @@ Problems emerge when more users want to use a `blockchain` network than it can h
 This lesson explores why Ethereum and other blockchains are subject to the `Blockchain Trilemma`, how the Trilemma is the root cause of the problems described above, and how the Trilemma affects Ethereum’s plans for serving the needs of all its users. We will look at the tradeoffs several blockchains have made concerning the Blockchain Trilemma, and what those tradeoffs mean for Academy Explorers.
 
 
-![001_Introduction.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9b2cf1a5-5dc6-4f4e-8ed2-62acb7d84c5b/001_Introduction.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=0600bd901c588a881206d233733bb2f0d69232478da5bf7e0dcf0a237d744a54&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-1-blockchains/introduction-e0da8469.svg)
 
 
 # Blockchain Trilemma
@@ -48,7 +48,7 @@ These are: `Security`, `Scalability`, and `Decentralization`.
 For a blockchain to serve as an unbiased foundation for a monetary system at a global scale, it should excel in all three aspects. A monetary system needs to be secure from fraud, safe from attacks by censors through decentralization, and scalable to meet the needs of over 8 billion humans in a global society.
 
 
-![002_Blockchain_Trilemma.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/fb7883cc-68b7-4c07-8015-a3d713fcccee/002_Blockchain_Trilemma.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=b8a029360002a2fe6e1629b7079308de221aec530a8e53296c2eb5ed7f320684&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-1-blockchains/blockchain-trilemma-31329f66.svg)
 
 
 # ✅ TODO
@@ -70,7 +70,7 @@ Security is the most foundational requirement for a public blockchain. Computers
 Chains like Bitcoin that use `Proof of Work` consensus prevent fraud by making their consensus algorithm highly competitive; each block producer races to solve a math problem. The first to do so wins the right to create the next block and receives the monetary `block reward` that comes with it. Fraud would require massive investments in computing power and energy, so an attacker would likely spend more than they’d gain. 
 
 
-![003_Security_and_Consensus.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/14c64676-4d3e-44d1-b233-3cad07d16007/003_Security_and_Consensus.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=50ce9ec81a5b401a1ee13bffa3b1fe7dfd956f8578e5c2531f48379f4de6d836&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-1-blockchains/security-and-consensus-5e1f03b6.svg)
 
 
 # ✅ Consensus
@@ -92,7 +92,7 @@ One potential form of attack on blockchain consensus is a `51% attack`; an attac
 In `Proof of Stake` consensus, the block producer isn’t chosen through competition but is randomly assigned instead. Like with Proof of Work, the consensus algorithm ensures that any single entity cannot regularly “win” the right to create a new `block`. 
 
 
-![004_Security_and_Attack.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3327a9dd-f21c-4c28-b35f-d9fae864045a/004_Security_and_Attack.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=3f41c8cbdab67c71578fef453b759530c6fc279899536c16bfef76f74d50684b&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-1-blockchains/security-and-attacks-7d35acf6.svg)
 
 
 # ✅ 51% attacks
@@ -117,7 +117,7 @@ The end-goal of a 51% attack is to:
 Imagine many people waiting at a bus stop with more arriving every minute, they all want to travel. But there are only so many people that can travel by bus. To clear the bus stop of people faster, you’d have to use bigger busses (more people) or make the busses run more often (less time). It works the same way with trying to fit many transactions into the small amount of `block space` available for each block. You can see this visualization with live data at [https://txstreet.com/v/eth-btc](https://txstreet.com/v/eth-btc).
 
 
-![005_Scalability_-_Throughput.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b65b9d47-fb02-4134-9398-168fa71fd27b/005_Scalability_-_Throughput.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=f40c5d400ddbd0228b648f8e7e109d6e87e82870a2d180caac7982004ce38d7b&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-1-blockchains/scalability-throughput-4b140ad0.svg)
 
 
 # ✅ Transactions Per Second
@@ -142,7 +142,7 @@ The second aspect of blockchain scalability is:
 Finality is typically measured in blocks — how many blocks have passed since the transaction was included in a block? The more blocks that get added to the chain afterward, the more sure we can be that the transaction is finalized and won’t get reverted. Remember, a secure blockchain consensus algorithm makes it very expensive to change past blocks, and the expense increases the farther back someone changes. We convert this block number to a finality time by multiplying the expected number of block confirmations by the blockchain’s TPS. For Ethereum, eight block confirmations times 15 `TPS` gives 2 minutes of finality time after confirmation. 
 
 
-![006_Scalability_-_Finality.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8b18eebd-fd04-4459-bbaa-7f490f1fdd48/006_Scalability_-_Finality.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=dd3066577a36f9a6f51ef6428616fc7c2272d2cdec7c27ea1c227c435819aa30&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-1-blockchains/scalability-finality-161f7e2b.svg)
 
 
 # Decentralization distributes power
@@ -154,7 +154,7 @@ Finality is typically measured in blocks — how many blocks have passed since t
 Centralized platforms like Facebook and Twitter can deactivate anyone’s account at any time. Many influential streamers on Twitch or Tiktok have found themselves removed from their platforms without cause. Even if social media users can reinstate their accounts, it can be long and painful process. Without decentralization, a blockchain `ledger` is just a financial spreadsheet on a bank computer; the bankers decide who gets to create an account with them. A `permissionless` network means authority is sufficiently decentralized; there is no way to remove a person or entity’s access.
 
 
-![007_Decentralization_distributes_power.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c40ca184-ff5b-45ea-985f-05b31522f78b/007_Decentralization_distributes_power.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=9e867b6ba5769a2dbdb904de4b56fdfc99ab816ee5228797fb9cf11240f6e99c&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-1-blockchains/decentralization-distributes-power-829f91a2.svg)
 
 
 # ✅ Why decentralization?
@@ -176,7 +176,7 @@ But whether something is decentralized isn’t just a yes or no answer. Are 10 c
 So we can say something is “more or less decentralized than something else” rather than “centralized or decentralized.” A high degree of decentralization is required for a neutral monetary system to resist state-level censorship. Newer blockchains often trade decentralization for scalability, but they leave themselves vulnerable to the same pressures from societies and governments that fully centralized platforms feel. They may end up engaging in the same censorship seen on centralized social media networks.
 
 
-![008_Is_it_decentralized.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/afefbbec-4ad8-4fb7-b788-f629fc7025b3/008_Is_it_decentralized.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=e7503a3e12a3f3c5a7abf01f6b58ea8a6d7a83c52a30d28bad55304b3180d5b0&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-1-blockchains/is-it-decentralized-4b5bf857.svg)
 
 
 # ✅ But is it Decentralized?
@@ -196,7 +196,7 @@ Each blockchain has its own approach to the trilemma, and each has made tradeoff
 This high cost to use has provided an opening for `alternative Layer 1`’s like the Binance chain. Binance prioritized scalability over decentralization for higher `transaction throughput` and cheaper fees. Third-generation chains like Solana use novel methods to solve the trilemma, but all blockchains are still subject to these basic constraints. Each chain’s choice defines its ecosystem through the foundational effects that come from that choice.
 
 
-![009_Some_Examples.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9ad46c1e-f823-4566-bef6-486fe21ac61c/009_Some_Examples.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=249b4c6375f261a80e2d7622f9f9d46bbf2f15686ad3b629a0c54a445c52beb8&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-1-blockchains/some-examples-523b9b96.svg)
 
 
 # So what can be done?
@@ -211,7 +211,7 @@ So if Ethereum has prioritized high security and decentralization, how can it sc
 `Sharding` splits the single blockchain into multiple chains that all run together in parallel, like adding more lanes to a road. It enables more transactions to be processed at once without sacrificing security or decentralization.
 
 
-![010_So_what_can_be_done.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0d108282-dd77-4ce3-b3cf-66588f9c2785/010_So_what_can_be_done.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=a31c2e0508b0b48a83e0da23d8cc4cc4844e3c298dbe5bb096a4b6b9d4b2a3bf&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-1-blockchains/so-what-can-be-done-50592b46.svg)
 
 
 # ✅ Layer 2s
@@ -233,7 +233,7 @@ Previously known as the Ethereum 2.0 upgrade, the Ethereum network is evolving i
 These things take time; meanwhile, many `Layer 2` protocols are building on top of Ethereum to help meet user demand in the short term without requiring updates to the Ethereum protocol itself. These Layer 2 protocols rely on Layer 1 Ethereum to provide decentralized security while they provide scalability; the diversity of Layer 2s makes a decentralized ecosystem! Ethereum scaling projects include protocols like Optimistic Ethereum, Polygon, and others.
 
 
-![011_The_future_of_Ethereum.svg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/32b6a793-5648-4f0c-bd9f-ba69463f3c24/011_The_future_of_Ethereum.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=95d9fe95b351b9cbbe15cc1c511e3e96e91fa44174309de37af9a92c47817c63&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/layer-1-blockchains/the-future-of-ethereum-2b64fd6b.svg)
 
 
 # ✅ Ethereum Future

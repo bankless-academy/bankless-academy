@@ -18,9 +18,8 @@ PORTABLE LESSON DATADISK™ COLLECTION
 LESSON TITLE: KUDOS TESTING
 DATA LOCATION: https://app.banklessacademy.com/lessons/kudos-testing.md
 PROTOCOL VERSION: 0.001
-LAST UPDATED: 30/05/2023
+LAST UPDATED: 01/06/2023
 __________________________________________________________________________________________________________________________________________________________
 
    << LESSON START >>
 
-undefined

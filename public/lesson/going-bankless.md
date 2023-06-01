@@ -18,7 +18,7 @@ PORTABLE LESSON DATADISK™ COLLECTION
 LESSON TITLE: GOING BANKLESS
 DATA LOCATION: https://app.banklessacademy.com/lessons/going-bankless.md
 PROTOCOL VERSION: 0.001
-LAST UPDATED: 30/05/2023
+LAST UPDATED: 01/06/2023
 __________________________________________________________________________________________________________________________________________________________
 
    << LESSON START >>
@@ -219,5 +219,5 @@ Here are our recommendations as next steps:
 - [advanced lvl1]: subscribe to the Bankless HQ newsletter
 - [advanced lvl2]: join a DAO and get a job in crypto
 
-![Screenshot_2023-04-13_at_18.16.15.jpg](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3c8bb818-e88f-473f-85ec-7793c3bd619c/Screenshot_2023-04-13_at_18.16.15.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230530%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230530T191650Z&X-Amz-Expires=3600&X-Amz-Signature=e343ae99d5887a1df70784d743090f770177629f70f72225b34e1bdf61e69854&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://app.banklessacademy.com/lesson/going-bankless/quest-63568085.jpg)
 

@@ -111,12 +111,14 @@ const LessonDetail = ({
                   style={{
                     cursor: 'pointer',
                   }}
+                  position="relative"
                   minH="260px"
-                  onClick={() => onOpen()}
+                  onClick={() => setIsLessonOpenLS(true)}
                   // onMouseOver={() => setCollectibleHover(true)}
                   // onMouseOut={() => setCollectibleHover(false)}
                 >
                   {/* TEMP: make this dynamic */}
+
                   {lesson.slug === 'wallet-basics' ? (
                     collectibleHover ? (
                       <video autoPlay loop playsInline muted>
@@ -131,6 +133,19 @@ const LessonDetail = ({
                   ) : (
                     <Image src={lesson.lessonImageLink} />
                   )}
+                  <Button
+                    position="absolute"
+                    size="sm"
+                    top="0"
+                    right="0"
+                    zIndex="1"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onOpen()
+                    }}
+                  >
+                    &lt;/&gt;
+                  </Button>
                 </Box>
               </Box>
               <Box
