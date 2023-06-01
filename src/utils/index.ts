@@ -457,7 +457,7 @@ export async function getLessonsCollectors(
     const NFTCollectors = await axios.get(
       `https://opt-goerli.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getOwnersForCollection?contractAddress=${collectibleAddress}&withTokenBalances=true`
     )
-    console.log(NFTCollectors.data)
+    // console.log(NFTCollectors.data)
     return NFTCollectors.data?.ownerAddresses || []
   } catch (error) {
     console.error(error)
