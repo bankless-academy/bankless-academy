@@ -51,30 +51,34 @@ const CollectLessonButton = ({
     `isKudosMinted-${lesson.kudosId}`,
     false
   )
-  const [tokenId, setTokenId] = useState(null)
+  const [tokenId, setTokenId] = useState('1')
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const { address } = useAccount()
 
-  useEffect(() => {
-    const updateLessonsCollectors = async () => {
-      const NFTCollectors = await getLessonsCollectors(
-        lesson.LessonCollectibleTokenAddress
-      )
-      for (const NFTCollector of NFTCollectors) {
-        if (NFTCollector.ownerAddress === address.toLowerCase()) {
-          setTokenId(parseInt(NFTCollector.tokenBalances[0].tokenId, 16))
-          setIsLessonMintedLS(true)
-        }
-      }
-      if (NFTCollectors)
-        setNumberOfOwners(
-          NFTCollectors.reduce(
-            (p, c) => p + c?.tokenBalances?.length,
-            0
-          ).toString()
+  const updateLessonsCollectors = async () => {
+    const NFTCollectors = await getLessonsCollectors(
+      lesson.LessonCollectibleTokenAddress
+    )
+    setIsLessonMintedLS(false)
+    for (const NFTCollector of NFTCollectors) {
+      if (address && NFTCollector.ownerAddress === address.toLowerCase()) {
+        setTokenId(
+          parseInt(NFTCollector.tokenBalances[0].tokenId, 16).toString()
         )
+        setIsLessonMintedLS(true)
+      }
     }
+    if (NFTCollectors) {
+      setNumberOfOwners(
+        NFTCollectors.reduce(
+          (p, c) => p + c?.tokenBalances?.length,
+          0
+        ).toString()
+      )
+    }
+  }
+  useEffect(() => {
     updateLessonsCollectors().catch(console.error)
   }, [address])
 

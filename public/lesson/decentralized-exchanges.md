@@ -18,7 +18,7 @@ PORTABLE LESSON DATADISK™ COLLECTION
 LESSON TITLE: DECENTRALIZED EXCHANGES
 DATA LOCATION: https://app.banklessacademy.com/lessons/decentralized-exchanges.md
 PROTOCOL VERSION: 0.001
-LAST UPDATED: 01/06/2023
+LAST UPDATED: 02/06/2023
 __________________________________________________________________________________________________________________________________________________________
 
    << LESSON START >>
@@ -185,9 +185,9 @@ Let’s take a look at an example swap to understand the permission and exchange
 
 1. First, you grant the appropriate Velodrome smart contract the permission to make USDC withdrawals from your wallet.
 2. You submit your swap transaction request to Velodrome.
-3. The transaction is accepted: Velodrome withdraws the specified amount of USDC from your wallet, into the USDC/ETH liquidity pool. ETH exits this first liquidity pool and is transferred to the ETH/OP liquidity pool. OP is dispensed from the second liquidity pool to your wallet address.
+3. The transaction is accepted: Velodrome withdraws the specified amount of USDC from your wallet, into the USDC/ETH liquidity pool. ETH exits this first liquidity pool and is transferred to the ETH/OP liquidity pool. Lastly, OP is dispensed from the second liquidity pool to your wallet address.
 
-The swap transaction is complete. Your USDC has been swapped for OP!
+The swap transaction is complete. Your USDC tokens have been swapped for OP!
 
 
 ![](https://app.banklessacademy.com/lesson/decentralized-exchanges/token-swaps-continued-3ec28582.svg)
@@ -210,10 +210,10 @@ AMMs can route a trade through multiple liquidity pools, all in a single transac
 # What is Liquidity?
 
 
-Liquidity in the crypto space refers to a marketplace’s ability to facilitate digital asset buys & sells at fair prices. When liquidity is high, prices are more stable; When liquidity is low, prices are more volatile. As users are generally attracted to fairer prices, `DEXs` aim to have high liquidity across all of their liquidity pools.
+Liquidity in the crypto space refers to a marketplace’s ability to facilitate digital asset buys and sells at fair prices. When liquidity is high, prices are more stable; when liquidity is low, prices are more volatile. As users are generally attracted to fairer prices, `DEXs` aim to have high liquidity across all of their liquidity pools.
 
 
-High liquidity means there is a high quantity of tokens in the liquidity pool — generally a 50/50 valuation split of the two tokens users are trading in and out of the pool. For example, the USDC & ETH pool on Balancer facilitates all trades between this `token pair` on their platform.
+High liquidity means there is a high quantity of tokens in the liquidity pool — generally a 50/50 valuation split of the two tokens users are trading in and out of the pool. For example, the USDC/ETH pool on Balancer facilitates all trades between this `token pair` on their platform.
 When there are more tokens, users making trades through the pool have less impact on the 50/50 asset balance, which helps prices remain stable. The amount by which any trade throws off this balance is known as `price impact`.
 
 
@@ -232,7 +232,7 @@ Optimizing for high `liquidity` is integral to the success of a DEX — but beca
 In a decentralized ecosystem, internet citizens are incentivised to provide liquidity to a given pool to raise the TVL (total value locked) on a platform. Fees gathered from users making trades through the pool are distributed to the LPs (liquidity providers) based on the amount of liquidity provided. You heard that right: by lending your tokens to a DEX liquidity pool, you can generate passive income.
 
 
-There are a variety of considerations to make when becoming an `LP`, and we’ll cover this in future content. For now, know that the large APR (annual projected return) rates displayed across DEX liquidity pools aren’t guaranteed, and there can be losses.
+There are a variety of considerations when becoming an `LP`, and we’ll cover this in future content. For now, know that the large APR (annual projected return) rates displayed across DEX liquidity pools aren’t guaranteed, and there can be losses.
 
 
 ![](https://app.banklessacademy.com/lesson/decentralized-exchanges/liquidity-providers-5b17c802.svg)
@@ -243,15 +243,15 @@ There are a variety of considerations to make when becoming an `LP`, and we’ll
 
 Finish the statement: “When liquidity is __________.”
 
-- [ ] high, volatility is high
+- [ ] high, volatility is high.
 
 > ℹ️ Incorrect, try again.
 
-- [ ] low, volatility is low
+- [ ] low, volatility is low.
 
 > ℹ️ Incorrect, try again.
 
-- [ ] low, volatility is high
+- [ ] low, volatility is high.
 
 > ℹ️ Right! Liquidity and volatility are generally inversely-correlated.
 
@@ -275,31 +275,31 @@ How do DEXs incentivize users to provide liquidity?
 
 - [ ] All of the above.
 
-> ℹ️ There’s only one correct entry here, can you figure out which one it is?
+> ℹ️ There’s only one correct answer here, can you figure out which one it is?
 
 
 # Platform Fees
 
 
-Both CEXs & DEXs charge fees for the services they provide. While the automation of DEX & AMM technology has reduced the cost for exchanging cryptocurrency, interacting with the blockchain still has its cost. Let’s take a look at five common costs to consider when deciding which platform to use.
+Both CEXs and DEXs charge fees for the services they provide. While the automation of DEX and AMM technology has reduced the cost for exchanging cryptocurrency, interacting with the blockchain still has its cost. Let’s take a look at five common costs to consider when deciding which platform to use.
 
 
-🏷️ **Platform fees:** Approximately 0.5% commission on each trade most CEXs, and 0.05% for most DEXs. These can fluctuate.
+🏷️ **Platform fees:** Approximately 0.5% commission on each trade for most CEXs, and 0.05% for most DEXs. These can fluctuate.
 
 
-🌐 **Network fees:** Blockchains charge gas fees on top of the dApp transaction. You can minimize these costs by using the network during low periods of activity. Etherscan.io has a real-time estimate of various Ethereum Mainnet actions here: [Etherscan.io](https://etherscan.io/gastracker) (for DEXs, refer to the ‘Swap’ action). On Layer 2s, fees are far cheaper: [l2fees.info](https://l2fees.info/)
+🌐 **Network fees:** Blockchains charge gas fees on top of the dApp transaction. You can minimize these costs by using the network during low periods of activity. Etherscan.io has a real-time estimate tool for various Ethereum Mainnet actions here: [Etherscan.io](https://etherscan.io/gastracker) (for DEXs, refer to the ‘Swap’ action). On Layer 2s, fees are far cheaper: [l2fees.info](https://l2fees.info/)
 
 
-📦 **Bridge fees:** Both CEXs and the blockchain will charge you a flat rate for transferring cryptocurrency from one network to another. For CEXs, refer to their on-site information. For the blockchain, check out the ‘Deposit’ action on [Etherscan.io](https://etherscan.io/gastracker).
+📦 **Bridge fees:** Both CEXs and the blockchain will charge a flat rate for transferring cryptocurrency from one blockchain network to another. For CEXs, refer to their on-site information. For the blockchain, check out the ‘Deposit’ action on [Etherscan.io](https://etherscan.io/gastracker).
 
 
 💹 **Exchange rates:** When buying cryptocurrency directly with fiat on a CEX or DEX, watch out for exchange rates that don’t reflect the market rate.
 
 
-🧊 **Slippage:** As prices change so quickly in this space, DEXs leave room for error on a swap called `slippage`. This percentage value is customizable, with most dApps recommending 0.5-2%. You may lose up to the slippage value on a trade to have it executed, but if your slippage range is too low the trade might be rejected.
+🧊 **Slippage:** As prices change so quickly in this space, DEXs leave room for error on a swap — this is called `slippage`. This percentage value is customizable, with most dApps recommending 0.5-2%. You may lose up to the slippage value on a trade to have it executed, but if your slippage range is too low the trade might be rejected.
 
 
-As you can see, there are a lot of factors to consider when comparing exchange fees. It’s always best to do your own research before making a trade to make sure the platform's advantages & disadvantages are right for you.
+As you can see, there are many factors to consider when comparing exchange fees. It’s always best to do your own research before making a trade to make sure the platform's advantages and disadvantages are right for you.
 
 
 # DEX Advantages
@@ -312,7 +312,7 @@ We’ve covered a lot of theory in this lesson, but you might still be wondering
 - ⌛ You want 24/7 access to the cryptocurrency market.
 - 👛 You want access to a wider range of cryptocurrencies.
 - 🤑 You are interested in providing liquidity.
-- 🛂 You don’t want to register & `KYC` on every platform you interact with.
+- 🛂 You don’t want to register and `KYC` on every platform you interact with.
 - ⚔️ You seek the additional risks and rewards of exploring Decentralized Finance.
 
 With that said, almost every DeFi user has an account on a Centralized Exchange. This is because CEXs have easy on/off ramp features to the traditional banking world; you can easily get money from your bank account onto the blockchain and vice-versa. DeFi users like to compare this to using the bathroom: you go in, you do your business, you leave.
@@ -324,25 +324,25 @@ This is great because it means you can start with a CEX account and slowly trans
 # DEX Risks
 
 
-Using a DEX also comes with risk. Here are a few of the most impactful ones:
+Using a DEX also comes with risk. Here are a few of the most impactful:
 
 
 🐞 **Smart contract risk:** While audits reduce the chances of smart contract bugs, they still exist. In a rare, worst-case scenario, you could lose up to your trade amount to a bug. Only interact with trusted, heavily audited dApps.
 
 
-💰 **Self-custody risk:** Sole responsibility for your private keys means you could lose an entire wallet to theft, scams, or a misplaced seed phrase. This is why it is important to mitigate risk with a multi-wallet strategy, and to always keep a copy of your seed phrases backed up in a secure, real world location.
+💰 **Self-custody risk:** Sole responsibility for your private keys means you could lose an entire wallet to theft, scams, or a misplaced seed phrase. This is why it is important to mitigate risk with a multi-wallet strategy, and to always keep a copy of your seed phrases backed up in a secure, real-world location.
 
 
 🥪 **Sandwich attacks:** Setting your swap slippage high increases the likelihood of trade frontrunners coordinating `sandwich attacks` against you. In a sandwich attack, you could lose up to your slippage amount on a trade. We’ll cover how to protect yourself from this style of attack in future content.
 
 
-With these advantages and risks considered, a CEX might be a better fit for your needs if:
+With these advantages and risks considered, a CEX might be a better fit for your ~~needs~~ if:
 
-- 🎓 You’re still early in your cryptocurrency journey, working to understand the risks & rewards.
+- 🎓 You’re still early in your cryptocurrency journey, working to understand the risks and rewards.
 - ⚖️ Your trade frequency and volume are small, making blockchain fees an unrealistic cost.
 - 🏰 You’d prefer to trust an exchange to watch your funds, rather than being responsible for them.
 
-Some users take a hybrid approach to lower their overall risk, using a CEX to buy & sell their cryptocurrency, while storing it on the blockchain itself.
+Some users take a hybrid approach to lower their overall risk, using a CEX to buy and sell their cryptocurrency, while storing it on the blockchain itself.
 
 
 # ✅ Knowledge Check
@@ -370,7 +370,7 @@ Why would you use a Decentralized Exchange over a Centralized Exchange?
 # Choosing a DEX
 
 
-There are a lot of Decentralized Exchanges in DeFi, and some are better than others. We often look at five main factors when deciding on which DEX to use:
+There are many Decentralized Exchanges in DeFi, and some are better than others. We often look at five main factors when deciding on which DEX to use:
 
 
 🥇 **Legitimacy****:** Is the entity well known for its trustworthiness, quality, and longevity?
@@ -385,10 +385,10 @@ There are a lot of Decentralized Exchanges in DeFi, and some are better than oth
 🔐 **Security:** Have the smart contracts been audited by multiple auditors?
 
 
-🎁 **Rewards & Features:** Are there loyalty rewards for using the exchange or providing liquidity? Can I vote in governance?
+🎁 **Rewards and Features:** Are there loyalty rewards for using the exchange or providing liquidity? Can you vote in governance?
 
 
-Notable names that score highly in these areas include Uniswap, Curve, Velodrome, and Balancer. You can easily move from one DEX to another until you find a few favorites! For the lesson quest, we’re going to be using Velodrome — the number one DEX by TVL on Optimism. It’s well known, easy to use, has the deepest liquidity on the network, and because it’s on an L2: the fees are far more reasonable!
+Notable names that score highly in these areas include Uniswap, Curve, Velodrome, and Balancer. You can easily move from one DEX to another until you find a few favorites! For the lesson quest, we’re going to use Velodrome — the number one DEX by TVL on Optimism. It’s well known, easy to use, has the deepest liquidity on the network, and because it’s on L2 the fees are far more reasonable!
 
 
 # DEX Best Practices
@@ -397,13 +397,13 @@ Notable names that score highly in these areas include Uniswap, Curve, Velodrome
 Before you interact with a dApp, there are some best practices you should follow to keep your funds safe:
 
 
-👩‍💻 Always verify the link to a dApp with the official project Twitter (gold check mark) or a trusted third party, and bookmark it once you’ve validated it. A variety of DeFi scams begin with a fake link — even on popular search engines.
+👩‍💻 Always verify the link to a dApp by checking the official project Twitter (gold check mark) or a trusted third party, and bookmark it once you’ve validated it. A variety of DeFi scams begin with a fake link — even on popular search engines.
 
 
 🔓 We will be prompted to grant on-chain `token allowances` to a smart contract to give it access to specific tokens in our wallet. You should limit these allowances to your trade amount to prevent interaction with additional funds.
 
 
-♟️ Avoid interacting with dApps on your HODL wallet, it’s better to use a separate wallet dedicated to dApp usage — just in case anything goes wrong. Check out our [Web3 Security lesson](https://app.banklessacademy.com/lessons/web3-security) for more information on wallet strategies, and how to stay safe in Web3.
+♟️ Avoid interacting with dApps on your HODL wallet. It’s better to use a separate wallet dedicated to dApps in case anything goes wrong. Check out our [Web3 Security lesson](https://app.banklessacademy.com/lessons/web3-security) for more information on wallet strategies, and how to stay safe in Web3.
 
 
 Now you’re ready to interact with a Decentralized Exchange!
@@ -415,7 +415,7 @@ Now you’re ready to interact with a Decentralized Exchange!
 # ✅ Knowledge Check
 
 
-How can you protect yourself while using a reputable DEX you haven’t tried before?
+How can you protect yourself while using a reputable DEX that you haven’t tried before?
 
 - [ ] By only following URLs provided by a trusted party, and using thoroughly audited smart contracts.
 

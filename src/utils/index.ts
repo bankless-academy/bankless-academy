@@ -429,7 +429,7 @@ export async function getLessonsCollected(address: string): Promise<string[]> {
   try {
     // TODO: replace with mainet
     const ownerNFTs = await axios.get(
-      `https://polygon-mumbai.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100${COLLECTIBLE_ADDRESSES.map(
+      `https://opt-goerli.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100${COLLECTIBLE_ADDRESSES.map(
         (collectibleAddress) => `&contractAddresses[]=${collectibleAddress}`
       ).join('')}&withMetadata=false`
     )

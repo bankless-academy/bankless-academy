@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 import styled from '@emotion/styled'
 import { Text, Image, Button, Box, useDisclosure } from '@chakra-ui/react'
 import { ArrowUUpLeft } from '@phosphor-icons/react'
@@ -13,6 +13,9 @@ import CollectLessonButton from 'components/CollectLessonButton'
 import InternalLink from 'components/InternalLink'
 import { useSmallScreen } from 'hooks'
 import LessonCollectibleModal from 'components/LessonCollectibleModal'
+import { IS_WHITELABEL } from 'constants/index'
+import { getLessonsCollected } from 'utils'
+import { useAccount } from 'wagmi'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -31,15 +34,36 @@ const LessonDetail = ({
     false
   )
   const [, isSmallScreen] = useSmallScreen()
+  const { address } = useAccount()
   const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
   const [isLessonOpenLS, setIsLessonOpenLS] = useLocalStorage(
     `isLessonOpen`,
     false
   )
+  const [lessonsCollectedLS, setLessonsCollectedLS] = useLocalStorage(
+    'lessonsCollected',
+    []
+  )
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const [collectibleHover] = useState(true)
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
+
+  useEffect(() => {
+    const updateNFTCollected = async () => {
+      const lessonsCollected = await getLessonsCollected(address)
+      if (lessonsCollected && Array.isArray(lessonsCollected))
+        setLessonsCollectedLS(lessonsCollected)
+    }
+    if (!IS_WHITELABEL && address) {
+      updateNFTCollected().catch(console.error)
+    }
+  }, [address])
+
+  const isLessonCollected =
+    !!lesson.LessonCollectibleTokenAddress?.length &&
+    lessonsCollectedLS.includes(
+      lesson.LessonCollectibleTokenAddress.toLowerCase()
+    )
 
   return (
     <>
@@ -114,38 +138,32 @@ const LessonDetail = ({
                   position="relative"
                   minH="260px"
                   onClick={() => setIsLessonOpenLS(true)}
-                  // onMouseOver={() => setCollectibleHover(true)}
-                  // onMouseOut={() => setCollectibleHover(false)}
                 >
-                  {/* TEMP: make this dynamic */}
-
-                  {lesson.slug === 'wallet-basics' ? (
-                    collectibleHover ? (
-                      <video autoPlay loop playsInline muted>
-                        <source
-                          src={lesson.lessonCollectibleVideo}
-                          type="video/webm"
-                        ></source>
-                      </video>
-                    ) : (
-                      <Image src={lesson.lessonCollectedImageLink} />
-                    )
+                  {isLessonCollected ? (
+                    <video autoPlay loop playsInline muted>
+                      <source
+                        src={lesson.lessonCollectibleVideo}
+                        type="video/webm"
+                      ></source>
+                    </video>
                   ) : (
                     <Image src={lesson.lessonImageLink} />
                   )}
-                  <Button
-                    position="absolute"
-                    size="sm"
-                    top="0"
-                    right="0"
-                    zIndex="1"
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      onOpen()
-                    }}
-                  >
-                    &lt;/&gt;
-                  </Button>
+                  {lesson.hasCollectible && (
+                    <Button
+                      position="absolute"
+                      size="sm"
+                      top="0"
+                      right="0"
+                      zIndex="1"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onOpen()
+                      }}
+                    >
+                      &lt;/&gt;
+                    </Button>
+                  )}
                 </Box>
               </Box>
               <Box

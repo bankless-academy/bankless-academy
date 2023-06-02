@@ -185,10 +185,12 @@ const LessonCards: React.FC = () => {
         //   0
         const isArticleCollected =
           lesson.mirrorNFTAddress?.length &&
-          articlesCollectedLS.includes(lesson.mirrorNFTAddress)
+          articlesCollectedLS.includes(lesson.mirrorNFTAddress.toLowerCase())
         const isLessonCollected =
-          lesson.LessonCollectibleTokenAddress?.length &&
-          lessonsCollectedLS.includes(lesson.LessonCollectibleTokenAddress)
+          !!lesson.LessonCollectibleTokenAddress?.length &&
+          lessonsCollectedLS.includes(
+            lesson.LessonCollectibleTokenAddress.toLowerCase()
+          )
         return (
           <LessonCard key={`lesson-${index}`} p={6} pb={8} borderRadius="3xl">
             <Box position="relative" zIndex="1">
@@ -210,8 +212,8 @@ const LessonCards: React.FC = () => {
                 ) : (
                   <Tag size="md" backgroundColor="transparent"></Tag>
                 )}
-                {isKudosMinted && lesson.hasCollectible && !isLessonCollected && (
-                  <StyledTag size="md" variant="outline" gold="true">
+                {lesson.hasCollectible && !isLessonCollected && (
+                  <StyledTag size="md" variant="solid" color="white">
                     Collectible available
                   </StyledTag>
                 )}

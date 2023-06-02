@@ -5,8 +5,8 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: null,
     lessonImageLink: '/images/coming-soon-lesson.png',
-    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
-    lessonCollectibleVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
+    lessonCollectedImageLink: undefined,
+    lessonCollectibleVideo: undefined,
     learningActions: '',
     marketingDescription: 'What does it mean to go Bankless? In this lesson, we discuss why millions of people are investing in cryptocurrency - and practical first steps for joining the movement.',
     kudosId: null,
@@ -215,8 +215,7 @@ const LESSONS: LessonType[] = [
         title: 'Going Bankless Quest',
         component: 'GoingBankless'
       }
-    ],
-    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1'
+    ]
   },
   {
     kudosImageLink: '/lesson/wallet-basics/kudos-75d8aa76.png',
@@ -908,10 +907,10 @@ const LESSONS: LessonType[] = [
   },
   {
     kudosImageLink: '/lesson/layer-1-blockchains/kudos-66fa6447.png',
-    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
-    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
-    lessonCollectibleVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
-    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1',
+    lessonImageLink: '/lesson/layer-1-blockchains/lesson-dcff6ea3.png',
+    lessonCollectedImageLink: undefined,
+    lessonCollectibleVideo: undefined,
+    socialImageLink: '/lesson/layer-1-blockchains/social-db62f5f0.jpg',
     learningActions: '',
     marketingDescription: 'Understand how Layer 1 blockchains work - and learn their limitations!',
     kudosId: 14611,
@@ -1149,10 +1148,10 @@ const LESSONS: LessonType[] = [
   },
   {
     kudosImageLink: '/lesson/layer-2-blockchains/kudos-761ee1a2.png',
-    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
-    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
-    lessonCollectibleVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
-    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1',
+    lessonImageLink: '/lesson/layer-2-blockchains/lesson-29da6288.png',
+    lessonCollectedImageLink: undefined,
+    lessonCollectibleVideo: undefined,
+    socialImageLink: '/lesson/layer-2-blockchains/social-788a6512.jpg',
     learningActions: '',
     marketingDescription: 'The Layer 2 revolution has begun. Discover how the Layer 2 ecosystem can boost your transaction speed & reduce gas fees.',
     kudosId: 14886,
@@ -1371,10 +1370,10 @@ const LESSONS: LessonType[] = [
   },
   {
     kudosImageLink: '/lesson/intro-to-defi/kudos-b4dab2d4.png',
-    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
-    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
-    lessonCollectibleVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
-    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1',
+    lessonImageLink: '/lesson/intro-to-defi/lesson-97291c9d.png',
+    lessonCollectedImageLink: undefined,
+    lessonCollectibleVideo: undefined,
+    socialImageLink: '/lesson/intro-to-defi/social-ee8d95a4.jpg',
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
     kudosId: 2562,
@@ -1602,8 +1601,8 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/decentralized-exchanges/kudos-ecf873d9.png',
     lessonImageLink: '/images/coming-soon-lesson.png',
-    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
-    lessonCollectibleVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
+    lessonCollectedImageLink: undefined,
+    lessonCollectibleVideo: undefined,
     learningActions: '',
     marketingDescription: 'DEXs and AMMs have changed the landscape of traditional market trading. It’s time to understand why, and how you can use this technology to your own advantage.',
     kudosId: 15463,
@@ -1735,7 +1734,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'e9366611b00c4f30915c5b38007b844b',
         title: 'Token Swaps (continued)',
-        content: '<div class="bloc1"><p>Let’s take a look at an example swap to understand the permission and exchange process. The example is a swap between USDC to OP on Velodrome — a large DEX on the Optimism network. The trade is routed through two pools as there is no direct USDC/OP pool on Velodrome:</p><ol><li>First, you grant the appropriate Velodrome smart contract the permission to make USDC withdrawals from your wallet.</li><li>You submit your swap transaction request to Velodrome.</li><li>The transaction is accepted: Velodrome withdraws the specified amount of USDC from your wallet, into the USDC/ETH liquidity pool. ETH exits this first liquidity pool and is transferred to the ETH/OP liquidity pool. OP is dispensed from the second liquidity pool to your wallet address.</li></ol><p>The swap transaction is complete. Your USDC has been swapped for OP!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/token-swaps-continued-3ec28582.svg\'></div>'
+        content: '<div class="bloc1"><p>Let’s take a look at an example swap to understand the permission and exchange process. The example is a swap between USDC to OP on Velodrome — a large DEX on the Optimism network. The trade is routed through two pools as there is no direct USDC/OP pool on Velodrome:</p><ol><li>First, you grant the appropriate Velodrome smart contract the permission to make USDC withdrawals from your wallet.</li><li>You submit your swap transaction request to Velodrome.</li><li>The transaction is accepted: Velodrome withdraws the specified amount of USDC from your wallet, into the USDC/ETH liquidity pool. ETH exits this first liquidity pool and is transferred to the ETH/OP liquidity pool. Lastly, OP is dispensed from the second liquidity pool to your wallet address.</li></ol><p>The swap transaction is complete. Your USDC tokens have been swapped for OP!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/token-swaps-continued-3ec28582.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1759,13 +1758,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'fc6312a87afe4437aeb06f7ccf56010a',
         title: 'What is Liquidity?',
-        content: '<div class="bloc1"><p>Liquidity in the crypto space refers to a marketplace’s ability to facilitate digital asset buys & sells at fair prices. When liquidity is high, prices are more stable; When liquidity is low, prices are more volatile. As users are generally attracted to fairer prices, <code>DEXs</code> aim to have high liquidity across all of their liquidity pools.</p><p>High liquidity means there is a high quantity of tokens in the liquidity pool — generally a 50/50 valuation split of the two tokens users are trading in and out of the pool. For example, the USDC & ETH pool on Balancer facilitates all trades between this <code>token pair</code> on their platform.<br>When there are more tokens, users making trades through the pool have less impact on the 50/50 asset balance, which helps prices remain stable. The amount by which any trade throws off this balance is known as <code>price impact</code>.</p><p>As an Explorer, you want the lowest price impact on your trades as possible, in order to receive the best deal! That means you want high, balanced liquidity.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/what-is-liquidity-d4c58b6f.svg\'></div>'
+        content: '<div class="bloc1"><p>Liquidity in the crypto space refers to a marketplace’s ability to facilitate digital asset buys and sells at fair prices. When liquidity is high, prices are more stable; when liquidity is low, prices are more volatile. As users are generally attracted to fairer prices, <code>DEXs</code> aim to have high liquidity across all of their liquidity pools.</p><p>High liquidity means there is a high quantity of tokens in the liquidity pool — generally a 50/50 valuation split of the two tokens users are trading in and out of the pool. For example, the USDC/ETH pool on Balancer facilitates all trades between this <code>token pair</code> on their platform.<br>When there are more tokens, users making trades through the pool have less impact on the 50/50 asset balance, which helps prices remain stable. The amount by which any trade throws off this balance is known as <code>price impact</code>.</p><p>As an Explorer, you want the lowest price impact on your trades as possible, in order to receive the best deal! That means you want high, balanced liquidity.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/what-is-liquidity-d4c58b6f.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '704eb8d4d1ae47008a944f3edfb7ba54',
         title: 'Liquidity Providers',
-        content: '<div class="bloc1"><p>Optimizing for high <code>liquidity</code> is integral to the success of a DEX — but because there’s only so much liquidity in the cryptocurrency ecosystem, each DEX is in competition to capture as much liquidity as possible. So where does this liquidity come from?</p><p>In a decentralized ecosystem, internet citizens are incentivised to provide liquidity to a given pool to raise the TVL (total value locked) on a platform. Fees gathered from users making trades through the pool are distributed to the LPs (liquidity providers) based on the amount of liquidity provided. You heard that right: by lending your tokens to a DEX liquidity pool, you can generate passive income.</p><p>There are a variety of considerations to make when becoming an <code>LP</code>, and we’ll cover this in future content. For now, know that the large APR (annual projected return) rates displayed across DEX liquidity pools aren’t guaranteed, and there can be losses.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/liquidity-providers-5b17c802.svg\'></div>'
+        content: '<div class="bloc1"><p>Optimizing for high <code>liquidity</code> is integral to the success of a DEX — but because there’s only so much liquidity in the cryptocurrency ecosystem, each DEX is in competition to capture as much liquidity as possible. So where does this liquidity come from?</p><p>In a decentralized ecosystem, internet citizens are incentivised to provide liquidity to a given pool to raise the TVL (total value locked) on a platform. Fees gathered from users making trades through the pool are distributed to the LPs (liquidity providers) based on the amount of liquidity provided. You heard that right: by lending your tokens to a DEX liquidity pool, you can generate passive income.</p><p>There are a variety of considerations when becoming an <code>LP</code>, and we’ll cover this in future content. For now, know that the large APR (annual projected return) rates displayed across DEX liquidity pools aren’t guaranteed, and there can be losses.</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/liquidity-providers-5b17c802.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1775,9 +1774,9 @@ const LESSONS: LessonType[] = [
           question: 'Finish the statement: “When liquidity is __________.”',
           rightAnswerNumber: 3,
           answers: [
-            'high, volatility is high',
-            'low, volatility is low',
-            'low, volatility is high'
+            'high, volatility is high.',
+            'low, volatility is low.',
+            'low, volatility is high.'
           ],
           feedback: [
             'ℹ️ Incorrect, try again.',
@@ -1804,7 +1803,7 @@ const LESSONS: LessonType[] = [
             'ℹ️ Neither CEXs or DEXs protect you from losses on a bad investment.',
             'ℹ️ The fees charged to use the DEX are often split across various platform stakeholders — including LPs.',
             'ℹ️ There are no private liquidity pools, low traffic wouldn’t provide adequate returns.',
-            'ℹ️ There’s only one correct entry here, can you figure out which one it is?'
+            'ℹ️ There’s only one correct answer here, can you figure out which one it is?'
           ],
           id: 'decentralized-exchanges-6'
         }
@@ -1813,19 +1812,19 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '9cda0f8b0fac4fb98b5bebf8c0a46420',
         title: 'Platform Fees',
-        content: '<div class="bloc1"><p>Both CEXs & DEXs charge fees for the services they provide. While the automation of DEX & AMM technology has reduced the cost for exchanging cryptocurrency, interacting with the blockchain still has its cost. Let’s take a look at five common costs to consider when deciding which platform to use.</p><p>🏷️ <strong>Platform fees:</strong> Approximately 0.5% commission on each trade most CEXs, and 0.05% for most DEXs. These can fluctuate.</p><p>🌐 <strong>Network fees:</strong> Blockchains charge gas fees on top of the dApp transaction. You can minimize these costs by using the network during low periods of activity. Etherscan.io has a real-time estimate of various Ethereum Mainnet actions here: <a href=\'https://etherscan.io/gastracker\'>Etherscan.io</a> (for DEXs, refer to the ‘Swap’ action). On Layer 2s, fees are far cheaper: <a href=\'https://l2fees.info/\'>l2fees.info</a></p><p>📦 <strong>Bridge fees:</strong> Both CEXs and the blockchain will charge you a flat rate for transferring cryptocurrency from one network to another. For CEXs, refer to their on-site information. For the blockchain, check out the ‘Deposit’ action on <a href=\'https://etherscan.io/gastracker\'>Etherscan.io</a>.</p><p>💹 <strong>Exchange rates:</strong> When buying cryptocurrency directly with fiat on a CEX or DEX, watch out for exchange rates that don’t reflect the market rate.</p><p>🧊 <strong>Slippage:</strong> As prices change so quickly in this space, DEXs leave room for error on a swap called <code>slippage</code>. This percentage value is customizable, with most dApps recommending 0.5-2%. You may lose up to the slippage value on a trade to have it executed, but if your slippage range is too low the trade might be rejected.</p><p>As you can see, there are a lot of factors to consider when comparing exchange fees. It’s always best to do your own research before making a trade to make sure the platform\'s advantages & disadvantages are right for you.</p></div>'
+        content: '<div class="bloc1"><p>Both CEXs and DEXs charge fees for the services they provide. While the automation of DEX and AMM technology has reduced the cost for exchanging cryptocurrency, interacting with the blockchain still has its cost. Let’s take a look at five common costs to consider when deciding which platform to use.</p><p>🏷️ <strong>Platform fees:</strong> Approximately 0.5% commission on each trade for most CEXs, and 0.05% for most DEXs. These can fluctuate.</p><p>🌐 <strong>Network fees:</strong> Blockchains charge gas fees on top of the dApp transaction. You can minimize these costs by using the network during low periods of activity. Etherscan.io has a real-time estimate tool for various Ethereum Mainnet actions here: <a href=\'https://etherscan.io/gastracker\'>Etherscan.io</a> (for DEXs, refer to the ‘Swap’ action). On Layer 2s, fees are far cheaper: <a href=\'https://l2fees.info/\'>l2fees.info</a></p><p>📦 <strong>Bridge fees:</strong> Both CEXs and the blockchain will charge a flat rate for transferring cryptocurrency from one blockchain network to another. For CEXs, refer to their on-site information. For the blockchain, check out the ‘Deposit’ action on <a href=\'https://etherscan.io/gastracker\'>Etherscan.io</a>.</p><p>💹 <strong>Exchange rates:</strong> When buying cryptocurrency directly with fiat on a CEX or DEX, watch out for exchange rates that don’t reflect the market rate.</p><p>🧊 <strong>Slippage:</strong> As prices change so quickly in this space, DEXs leave room for error on a swap — this is called <code>slippage</code>. This percentage value is customizable, with most dApps recommending 0.5-2%. You may lose up to the slippage value on a trade to have it executed, but if your slippage range is too low the trade might be rejected.</p><p>As you can see, there are many factors to consider when comparing exchange fees. It’s always best to do your own research before making a trade to make sure the platform\'s advantages and disadvantages are right for you.</p></div>'
       },
       {
         type: 'LEARN',
         notionId: 'b6998b02735c41e69527772a6f044b69',
         title: 'DEX Advantages',
-        content: '<div class="bloc1"><p>We’ve covered a lot of theory in this lesson, but you might still be wondering if DEXs are for you. Generally speaking, you are probably going to benefit from Decentralized Exchanges if:</p><ul><li>🔑 You want to maintain custody over your digital assets.</li><li>🔒 You want to secure your assets on the blockchain, avoiding CEX collapses.</li><li>⌛ You want 24/7 access to the cryptocurrency market.</li><li>👛 You want access to a wider range of cryptocurrencies.</li><li>🤑 You are interested in providing liquidity.</li><li>🛂 You don’t want to register & <code>KYC</code> on every platform you interact with.</li><li>⚔️ You seek the additional risks and rewards of exploring Decentralized Finance.</li></ul><p>With that said, almost every DeFi user has an account on a Centralized Exchange. This is because CEXs have easy on/off ramp features to the traditional banking world; you can easily get money from your bank account onto the blockchain and vice-versa. DeFi users like to compare this to using the bathroom: you go in, you do your business, you leave.</p><p>This is great because it means you can start with a CEX account and slowly transition to DeFi as you become more confident in navigation.</p></div>'
+        content: '<div class="bloc1"><p>We’ve covered a lot of theory in this lesson, but you might still be wondering if DEXs are for you. Generally speaking, you are probably going to benefit from Decentralized Exchanges if:</p><ul><li>🔑 You want to maintain custody over your digital assets.</li><li>🔒 You want to secure your assets on the blockchain, avoiding CEX collapses.</li><li>⌛ You want 24/7 access to the cryptocurrency market.</li><li>👛 You want access to a wider range of cryptocurrencies.</li><li>🤑 You are interested in providing liquidity.</li><li>🛂 You don’t want to register and <code>KYC</code> on every platform you interact with.</li><li>⚔️ You seek the additional risks and rewards of exploring Decentralized Finance.</li></ul><p>With that said, almost every DeFi user has an account on a Centralized Exchange. This is because CEXs have easy on/off ramp features to the traditional banking world; you can easily get money from your bank account onto the blockchain and vice-versa. DeFi users like to compare this to using the bathroom: you go in, you do your business, you leave.</p><p>This is great because it means you can start with a CEX account and slowly transition to DeFi as you become more confident in navigation.</p></div>'
       },
       {
         type: 'LEARN',
         notionId: 'fc884de5c7a9449bba95d6fdec8b87ca',
         title: 'DEX Risks',
-        content: '<div class="bloc1"><p>Using a DEX also comes with risk. Here are a few of the most impactful ones:</p><p>🐞 <strong>Smart contract risk: </strong>While audits reduce the chances of smart contract bugs, they still exist. In a rare, worst-case scenario, you could lose up to your trade amount to a bug. Only interact with trusted, heavily audited dApps.</p><p>💰 <strong>Self-custody risk:</strong> Sole responsibility for your private keys means you could lose an entire wallet to theft, scams, or a misplaced seed phrase. This is why it is important to mitigate risk with a multi-wallet strategy, and to always keep a copy of your seed phrases backed up in a secure, real world location.</p><p>🥪 <strong>Sandwich attacks: </strong>Setting your swap slippage high increases the likelihood of trade frontrunners coordinating <code>sandwich attacks</code> against you. In a sandwich attack, you could lose up to your slippage amount on a trade. We’ll cover how to protect yourself from this style of attack in future content.</p><p>With these advantages and risks considered, a CEX might be a better fit for your needs if:</p><ul><li>🎓 You’re still early in your cryptocurrency journey, working to understand the risks & rewards.</li><li>⚖️ Your trade frequency and volume are small, making blockchain fees an unrealistic cost.</li><li>🏰 You’d prefer to trust an exchange to watch your funds, rather than being responsible for them.</li></ul><p>Some users take a hybrid approach to lower their overall risk, using a CEX to buy & sell their cryptocurrency, while storing it on the blockchain itself.</p></div>'
+        content: '<div class="bloc1"><p>Using a DEX also comes with risk. Here are a few of the most impactful:</p><p>🐞 <strong>Smart contract risk: </strong>While audits reduce the chances of smart contract bugs, they still exist. In a rare, worst-case scenario, you could lose up to your trade amount to a bug. Only interact with trusted, heavily audited dApps.</p><p>💰 <strong>Self-custody risk:</strong> Sole responsibility for your private keys means you could lose an entire wallet to theft, scams, or a misplaced seed phrase. This is why it is important to mitigate risk with a multi-wallet strategy, and to always keep a copy of your seed phrases backed up in a secure, real-world location.</p><p>🥪 <strong>Sandwich attacks: </strong>Setting your swap slippage high increases the likelihood of trade frontrunners coordinating <code>sandwich attacks</code> against you. In a sandwich attack, you could lose up to your slippage amount on a trade. We’ll cover how to protect yourself from this style of attack in future content.</p><p>With these advantages and risks considered, a CEX might be a better fit for your <strike>needs</strike> if:</p><ul><li>🎓 You’re still early in your cryptocurrency journey, working to understand the risks and rewards.</li><li>⚖️ Your trade frequency and volume are small, making blockchain fees an unrealistic cost.</li><li>🏰 You’d prefer to trust an exchange to watch your funds, rather than being responsible for them.</li></ul><p>Some users take a hybrid approach to lower their overall risk, using a CEX to buy and sell their cryptocurrency, while storing it on the blockchain itself.</p></div>'
       },
       {
         type: 'QUIZ',
@@ -1853,20 +1852,20 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '92dc36b6f9fc46a3a3a44dc12e24d242',
         title: 'Choosing a DEX',
-        content: '<div class="bloc1"><p>There are a lot of Decentralized Exchanges in DeFi, and some are better than others. We often look at five main factors when deciding on which DEX to use:</p><p>🥇 <strong>Legitimacy</strong><strong>:</strong> Is the entity well known for its trustworthiness, quality, and longevity?</p><p>⛲ <strong>Liquidity:</strong> Is the liquidity pool <code>TVL</code> high enough to give reasonable price impact?</p><p>🖱️ <strong>Ease of use:</strong> Is the user interface easy to interact with?</p><p>🔐 <strong>Security:</strong> Have the smart contracts been audited by multiple auditors?</p><p>🎁 <strong>Rewards & Features:</strong> Are there loyalty rewards for using the exchange or providing liquidity? Can I vote in governance?</p><p>Notable names that score highly in these areas include Uniswap, Curve, Velodrome, and Balancer. You can easily move from one DEX to another until you find a few favorites! For the lesson quest, we’re going to be using Velodrome — the number one DEX by TVL on Optimism. It’s well known, easy to use, has the deepest liquidity on the network, and because it’s on an L2: the fees are far more reasonable!</p></div>'
+        content: '<div class="bloc1"><p>There are many Decentralized Exchanges in DeFi, and some are better than others. We often look at five main factors when deciding on which DEX to use:</p><p>🥇 <strong>Legitimacy</strong><strong>:</strong> Is the entity well known for its trustworthiness, quality, and longevity?</p><p>⛲ <strong>Liquidity:</strong> Is the liquidity pool <code>TVL</code> high enough to give reasonable price impact?</p><p>🖱️ <strong>Ease of use:</strong> Is the user interface easy to interact with?</p><p>🔐 <strong>Security:</strong> Have the smart contracts been audited by multiple auditors?</p><p>🎁 <strong>Rewards and Features:</strong> Are there loyalty rewards for using the exchange or providing liquidity? Can you vote in governance?</p><p>Notable names that score highly in these areas include Uniswap, Curve, Velodrome, and Balancer. You can easily move from one DEX to another until you find a few favorites! For the lesson quest, we’re going to use Velodrome — the number one DEX by TVL on Optimism. It’s well known, easy to use, has the deepest liquidity on the network, and because it’s on L2 the fees are far more reasonable!</p></div>'
       },
       {
         type: 'LEARN',
         notionId: '220fd799170c4f67935f5253a8443ed5',
         title: 'DEX Best Practices',
-        content: '<div class="bloc1"><p>Before you interact with a dApp, there are some best practices you should follow to keep your funds safe:</p><p>👩‍💻 Always verify the link to a dApp with the official project Twitter (gold check mark) or a trusted third party, and bookmark it once you’ve validated it. A variety of DeFi scams begin with a fake link — even on popular search engines.</p><p>🔓 We will be prompted to grant on-chain <code>token allowances</code> to a smart contract to give it access to specific tokens in our wallet. You should limit these allowances to your trade amount to prevent interaction with additional funds.</p><p>♟️ Avoid interacting with dApps on your HODL wallet, it’s better to use a separate wallet dedicated to dApp usage — just in case anything goes wrong. Check out our <a href=\'https://app.banklessacademy.com/lessons/web3-security\'>Web3 Security lesson</a> for more information on wallet strategies, and how to stay safe in Web3.</p><p>Now you’re ready to interact with a Decentralized Exchange!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/dex-best-practices-7f72a0d5.svg\'></div>'
+        content: '<div class="bloc1"><p>Before you interact with a dApp, there are some best practices you should follow to keep your funds safe:</p><p>👩‍💻 Always verify the link to a dApp by checking the official project Twitter (gold check mark) or a trusted third party, and bookmark it once you’ve validated it. A variety of DeFi scams begin with a fake link — even on popular search engines.</p><p>🔓 We will be prompted to grant on-chain <code>token allowances</code> to a smart contract to give it access to specific tokens in our wallet. You should limit these allowances to your trade amount to prevent interaction with additional funds.</p><p>♟️ Avoid interacting with dApps on your HODL wallet. It’s better to use a separate wallet dedicated to dApps in case anything goes wrong. Check out our <a href=\'https://app.banklessacademy.com/lessons/web3-security\'>Web3 Security lesson</a> for more information on wallet strategies, and how to stay safe in Web3.</p><p>Now you’re ready to interact with a Decentralized Exchange!</p></div><div class="bloc2"><img src=\'/lesson/decentralized-exchanges/dex-best-practices-7f72a0d5.svg\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '395bb0ab09724e97a379e95ffce1313b',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'How can you protect yourself while using a reputable DEX you haven’t tried before?',
+          question: 'How can you protect yourself while using a reputable DEX that you haven’t tried before?',
           rightAnswerNumber: 1,
           answers: [
             'By only following URLs provided by a trusted party, and using thoroughly audited smart contracts.',
@@ -1886,8 +1885,7 @@ const LESSONS: LessonType[] = [
         title: 'Decentralized Exchanges Quest',
         component: 'DecentralizedExchanges'
       }
-    ],
-    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1'
+    ]
   },
   {
     kudosImageLink: null,
@@ -1916,10 +1914,10 @@ const LESSONS: LessonType[] = [
   },
   {
     kudosImageLink: '/lesson/dex-aggregators/kudos-ddb9db8b.png',
-    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
-    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
-    lessonCollectibleVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
-    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1',
+    lessonImageLink: '/lesson/dex-aggregators/lesson-39d1fc1c.png',
+    lessonCollectedImageLink: undefined,
+    lessonCollectibleVideo: undefined,
+    socialImageLink: '/lesson/dex-aggregators/social-2724db28.jpg',
     learningActions: '',
     marketingDescription: 'Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.',
     kudosId: 2608,
@@ -2125,9 +2123,9 @@ const LESSONS: LessonType[] = [
   },
   {
     kudosImageLink: null,
-    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
-    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
-    lessonCollectibleVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
+    lessonImageLink: null,
+    lessonCollectedImageLink: undefined,
+    lessonCollectibleVideo: undefined,
     learningActions: '',
     marketingDescription: '',
     kudosId: null,
@@ -2445,15 +2443,14 @@ const LESSONS: LessonType[] = [
         title: 'Bankless Archetypes Quest',
         component: 'BanklessArchetypes'
       }
-    ],
-    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1'
+    ]
   },
   {
     kudosImageLink: '/lesson/kudos-testing/kudos-ca816a4c.mp4',
-    lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png',
-    lessonCollectedImageLink: 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png',
-    lessonCollectibleVideo: 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm',
-    socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?1',
+    lessonImageLink: '/lesson/kudos-testing/lesson-03a3e86a.png',
+    lessonCollectedImageLink: undefined,
+    lessonCollectibleVideo: undefined,
+    socialImageLink: '/lesson/kudos-testing/social-17fed266.png',
     learningActions: '',
     marketingDescription: 'For testing purposes only',
     kudosId: 14067,
