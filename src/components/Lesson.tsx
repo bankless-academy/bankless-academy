@@ -364,6 +364,9 @@ const Lesson = ({
   useHotkeys('4', () => {
     answerRef?.current[4]?.click()
   })
+  useHotkeys('5', () => {
+    answerRef?.current[5]?.click()
+  })
 
   // transform keywords into Tooltip
   function transform(node) {
