@@ -18,8 +18,8 @@ const TRANSLATION = [
     es: 'Comprender una transacción',
   },
   {
-    en: 'To validate this quest, paste the "from" and "to" addresses of this transaction ',
-    es: 'Para validar esta búsqueda, pegue las direcciones "from" y "to" de esta transacción ',
+    en: 'To validate this quest, paste the "From" and "To" addresses of this transaction ',
+    es: 'Para validar este desafío, pega las direcciones "From" y "To" de esta transacción: ',
   },
 ]
 

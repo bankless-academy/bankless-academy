@@ -445,7 +445,11 @@ const Lesson = ({
         </Box>
         <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
           {slide.type === 'QUIZ' ? (
-            <>Knowledge Check</>
+            <>
+              {lesson.slug === 'conceptos-basicos-de-blockchain'
+                ? 'Verificación de conocimientos'
+                : 'Knowledge Check'}
+            </>
           ) : (
             <>{ReactHtmlParser(slide.title, { transform })}</>
           )}

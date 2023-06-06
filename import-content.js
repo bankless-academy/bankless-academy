@@ -356,7 +356,8 @@ axios
             lesson.quest = componentName
             slides.push({
               type: 'QUEST',
-              title: `${lesson.name} Quest`,
+              // HACK: TEMP
+              title: lesson.slug === 'conceptos-basicos-de-blockchain' ? `Desafío: ${lesson.name}` : `${lesson.name} Quest`,
               component: componentName,
             })
           } else {
@@ -364,7 +365,8 @@ axios
           }
           slides.push({
             type: 'END',
-            title: lesson.kudosId ? 'Lesson Reward' : 'End of lesson',
+            // HACK: TEMP
+            title: lesson.kudosId ? lesson.slug === 'conceptos-basicos-de-blockchain' ? 'Recompensa de la lección' : 'Lesson Reward' : 'End of lesson',
           })
           lesson.slides = slides
           // console.log('lesson', lesson)

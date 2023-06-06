@@ -648,12 +648,12 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'QUEST',
-        title: 'Conceptos Básicos de Blockchain Quest',
+        title: 'Desafío: Conceptos Básicos de Blockchain',
         component: 'ConceptosBasicosDeBlockchain'
       },
       {
         type: 'END',
-        title: 'Lesson Reward'
+        title: 'Recompensa de la lección'
       }
     ]
   },
