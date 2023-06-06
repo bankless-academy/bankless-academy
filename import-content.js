@@ -48,6 +48,7 @@ const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : process.env.DEFAU
 console.log('NOTION_ID', NOTION_ID)
 
 const slugify = (text) => text.toLowerCase()
+  .replace('á', 'a')
   .replace(/<[^>]*>?/gm, '') // remove tags
   .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
   .replace(/\s+/g, '-') // collapse whitespace and replace by -
@@ -346,6 +347,7 @@ axios
             .split(' ')
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ')
+            .replace('á', 'a')
             .replace(/\s+/g, '')
             .replace(/[^A-Za-z0-9]/g, '') // remove invalid chars
           if (IS_WHITELABEL) {
