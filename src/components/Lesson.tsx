@@ -447,7 +447,7 @@ const Lesson = ({
           {slide.type === 'QUIZ' ? (
             <>
               {lesson.slug === 'conceptos-basicos-de-blockchain'
-                ? 'Verificación de conocimientos'
+                ? 'Prueba de Conocimientos'
                 : 'Knowledge Check'}
             </>
           ) : (

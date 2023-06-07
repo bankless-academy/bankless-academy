@@ -366,7 +366,7 @@ axios
           slides.push({
             type: 'END',
             // HACK: TEMP
-            title: lesson.kudosId ? lesson.slug === 'conceptos-basicos-de-blockchain' ? 'Recompensa de la lección' : 'Lesson Reward' : 'End of lesson',
+            title: lesson.kudosId ? lesson.slug === 'conceptos-basicos-de-blockchain' ? 'Reconocimiento de Aprendizaje' : 'Lesson Reward' : 'End of lesson',
           })
           lesson.slides = slides
           // console.log('lesson', lesson)
