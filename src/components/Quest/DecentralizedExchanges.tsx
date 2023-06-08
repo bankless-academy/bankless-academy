@@ -6,8 +6,8 @@ import {
   InputGroup,
   Spinner,
   Image,
-  Text,
-  Button,
+  // Text,
+  // Button,
 } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 
@@ -15,7 +15,7 @@ import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 import { api } from 'utils'
-import { LessonCard } from 'components/LessonCards'
+// import { LessonCard } from 'components/LessonCards'
 import { LESSONS } from 'constants/index'
 // import InternalLink from 'components/InternalLink'
 
@@ -83,7 +83,8 @@ const DecentralizedExchanges = (
           <div className="bloc1">
             <p>
               {'1. Load '}
-              <ExternalLink href="https://nightride.velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042">
+              {/* <ExternalLink href="https://app.velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042"> */}
+              <ExternalLink href="https://app.velodrome.finance/swap">
                 Velodrome
               </ExternalLink>
               {' on the '}
@@ -137,7 +138,7 @@ const DecentralizedExchanges = (
               </Box>
             )}
           </div>
-          <div className="bloc2">
+          {/* <div className="bloc2">
             <LessonCard
               borderRadius="3xl"
               maxW="400px"
@@ -149,26 +150,26 @@ const DecentralizedExchanges = (
                   <Text mt="0 !important" fontSize="xl" fontWeight="bold">
                     {lesson.name}
                   </Text>
-                  {/* <InternalLink
+                  <InternalLink
                     href={`/lessons/${lesson.slug}`}
                     alt={lesson.name}
                     target="_blank"
-                  > */}
+                  >
                   <Image src={lesson.lessonImageLink} />
-                  {/* </InternalLink> */}
+                  </InternalLink>
                 </Box>
                 <Box pb="8">
-                  {/* <InternalLink
+                  <InternalLink
                     href={`/lessons/${lesson.slug}`}
                     alt={lesson.name}
                     target="_blank"
-                  > */}
+                  >
                   <Button variant="primary">Read Entry</Button>
-                  {/* </InternalLink> */}
+                  </InternalLink>
                 </Box>
               </Box>
             </LessonCard>
-          </div>
+          </div> */}
         </Box>
       </>
     ),

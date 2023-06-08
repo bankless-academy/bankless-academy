@@ -1824,8 +1824,8 @@ const LESSONS: LessonType[] = [
     publicationStatus: 'planned',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: true,
-    endOfLessonRedirect: null,
-    endOfLessonText: undefined,
+    endOfLessonRedirect: 'https://tally.so/r/3lqV4v',
+    endOfLessonText: 'To give feedback about this lesson and earn a special contributor Kudos, click Next.',
     notionId: '0ff0ff5bde6c43f99f7710352069163e',
     slug: 'decentralized-exchanges',
     imageLinks: [
