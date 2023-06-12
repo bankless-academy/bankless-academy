@@ -1812,6 +1812,7 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/decentralized-exchanges/kudos-ecf873d9.png',
     lessonImageLink: '/images/coming-soon-lesson.png',
+    socialImageLink: '/lesson/decentralized-exchanges/social-0ffc9300.jpg',
     learningActions: '',
     marketingDescription: 'DEXs and AMMs have changed the landscape of traditional market trading. It’s time to understand why, and how you can use this technology to your own advantage.',
     kudosId: 15463,
