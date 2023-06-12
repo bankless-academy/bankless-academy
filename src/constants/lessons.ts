@@ -455,7 +455,7 @@ const LESSONS: LessonType[] = [
     socialImageLink: '/lesson/conceptos-basicos-de-blockchain/social-07ea2639.jpg',
     learningActions: '',
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
-    kudosId: 2563,
+    kudosId: null,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
@@ -653,7 +653,7 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'END',
-        title: 'Reconocimiento de Aprendizaje'
+        title: 'End of lesson'
       }
     ]
   },
