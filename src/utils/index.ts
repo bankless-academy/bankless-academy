@@ -384,6 +384,16 @@ export const getNodeText = (node) => {
 }
 
 export async function api(url: string, data: any): Promise<AxiosResponse> {
+  const wrong = {
+    data: {
+      error: 'something went wrong',
+    },
+    status: 500,
+    statusText: 'KO',
+    headers: {},
+    config: {},
+    request: {},
+  }
   try {
     const embed =
       typeof localStorage !== 'undefined' ? localStorage.getItem('embed') : null
@@ -393,11 +403,15 @@ export async function api(url: string, data: any): Promise<AxiosResponse> {
     const result = await axios.post(url, data)
     if (result && result.status !== 200) {
       console.log('error API', result)
-    } else {
       return result
+    } else if (result?.data) {
+      return result
+    } else {
+      return wrong
     }
   } catch (error) {
     console.error(error)
+    return wrong
   }
 }
 

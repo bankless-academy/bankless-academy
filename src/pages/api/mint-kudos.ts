@@ -163,6 +163,11 @@ export default async function handler(
             })
           } else {
             console.log(result)
+            trackBE(address, 'mint_kudos_issue', {
+              error: result?.data,
+              kudosId,
+              address,
+            })
             return res.status(500).json({
               error: 'something went wrong while minting',
               status: questStatus,
@@ -170,10 +175,18 @@ export default async function handler(
           }
         } catch (error) {
           console.error(error?.response?.data)
+          trackBE(address, 'mint_kudos_issue', {
+            error: error?.response?.data,
+            kudosId,
+            address,
+          })
+          return res.status(500).json({
+            error: 'something went wrong while minting',
+            status: '',
+          })
         }
       }
     }
-    return res.status(500).json({ status: questStatus })
   } catch (error) {
     console.error(error)
     res.status(500).json({

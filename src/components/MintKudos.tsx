@@ -215,7 +215,7 @@ const MintKudos = ({
         setIsMintingInProgress(false)
         toast.closeAll()
         toast({
-          title: '⚠️ problem while minting',
+          title: '⚠️ Problem while minting, try again tomorrow.',
           description: (
             <>
               {`${result.data.status || result.data.error || ''} | `}
