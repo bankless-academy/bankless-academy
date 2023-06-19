@@ -58,7 +58,10 @@ const processLesson = (htmlPage, notion_id) => {
         const isChecked = checkbox?.checked
         if (isChecked) slide.quiz.rightAnswerNumber = nb
       }
-      if (!slide.quiz.rightAnswerNumber)
+      if (
+        !slide.quiz.rightAnswerNumber &&
+        lesson.slug !== 'bankless-archetypes'
+      )
         throw new Error(
           `missing right answer, please check ${POTION_API}/html?id=${notion_id}`
         )

@@ -10,6 +10,7 @@ import {
   MINTKUDOS_COMMUNITY_ID,
   MINTKUDOS_COMMUNITY_ADMIN,
   MINTKUDOS_DOMAIN_INFO,
+  MINTKUDOS_ALLOWED_SIGNERS,
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
 import { api, verifyTypedSignature } from 'utils'
@@ -69,7 +70,10 @@ export default async function handler(
 
     let questStatus = ''
 
-    if (questCompleted?.credential_claimed_at) {
+    if (
+      questCompleted?.credential_claimed_at &&
+      !MINTKUDOS_ALLOWED_SIGNERS.includes(address)
+    ) {
       questStatus = 'badge already claimed'
       console.log(questStatus)
       return res.status(200).json({ status: questStatus })
@@ -159,6 +163,11 @@ export default async function handler(
             })
           } else {
             console.log(result)
+            trackBE(address, 'mint_kudos_issue', {
+              error: result?.data,
+              kudosId,
+              address,
+            })
             return res.status(500).json({
               error: 'something went wrong while minting',
               status: questStatus,
@@ -166,10 +175,18 @@ export default async function handler(
           }
         } catch (error) {
           console.error(error?.response?.data)
+          trackBE(address, 'mint_kudos_issue', {
+            error: error?.response?.data,
+            kudosId,
+            address,
+          })
+          return res.status(500).json({
+            error: 'something went wrong while minting',
+            status: '',
+          })
         }
       }
     }
-    return res.status(500).json({ status: questStatus })
   } catch (error) {
     console.error(error)
     res.status(500).json({

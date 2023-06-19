@@ -56,7 +56,7 @@ const Stats = (): JSX.Element => {
             {LESSONS.filter(
               (lesson) =>
                 !lesson.isArticle &&
-                lesson.publicationStatus !== 'planned' &&
+                // lesson.publicationStatus !== 'planned' &&
                 lesson.notionId !== '7bc2bf9be4ac4e9181782f996a2a6060'
             ).map((lesson, index) => {
               const lessonCompleted =

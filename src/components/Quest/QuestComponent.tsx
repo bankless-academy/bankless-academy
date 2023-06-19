@@ -53,7 +53,13 @@ const QuestComponent = (
   const [isSmallScreen] = useSmallScreen()
 
   const Component =
-    component in QUEST_COMPONENTS
+    component === 'ConceptosBasicosDeBlockchain'
+      ? // HACK: TEMP
+        QUEST_COMPONENTS['BlockchainBasics']('es')
+      : component === 'BlockchainBasics'
+      ? // HACK: TEMP
+        QUEST_COMPONENTS['BlockchainBasics']('en')
+      : component in QUEST_COMPONENTS
       ? QUEST_COMPONENTS[component](address)
       : WalletConnect(address)
 

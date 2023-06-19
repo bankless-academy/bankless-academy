@@ -360,6 +360,9 @@ const Lesson = ({
   useHotkeys('4', () => {
     answerRef?.current[4]?.click()
   })
+  useHotkeys('5', () => {
+    answerRef?.current[5]?.click()
+  })
   useHotkeys('Esc', () => {
     closeLesson()
   })
@@ -452,7 +455,11 @@ const Lesson = ({
         </Box>
         <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
           {slide.type === 'QUIZ' ? (
-            <>Knowledge Check</>
+            <>
+              {lesson.slug === 'conceptos-basicos-de-blockchain'
+                ? 'Prueba de Conocimientos'
+                : 'Knowledge Check'}
+            </>
           ) : (
             <>{ReactHtmlParser(slide.title, { transform })}</>
           )}

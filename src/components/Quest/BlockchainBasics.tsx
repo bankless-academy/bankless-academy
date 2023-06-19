@@ -12,7 +12,25 @@ import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 
-const BlockchainBasics = (): {
+const TRANSLATION = [
+  {
+    en: 'Understand a transaction',
+    es: 'Comprender una transacción',
+  },
+  {
+    en: 'To validate this quest, paste the "From" and "To" addresses of this transaction ',
+    es: 'Para validar este desafío, pega las direcciones "From" y "To" de esta transacción: ',
+  },
+]
+
+const tr = (language: string, i: number) => {
+  return TRANSLATION[i][language?.length ? language : 'en']
+}
+
+const BlockchainBasics = (
+  // TODO: replace to object in all quests
+  language: string
+): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
@@ -51,12 +69,10 @@ const BlockchainBasics = (): {
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
           <div className="bloc1">
-            <h2>Understand a transaction</h2>
+            <h2>{tr(language, 0)}</h2>
             <p>
               <>
-                {
-                  'To validate this quest, paste the "from" and "to" addresses of this transaction '
-                }
+                {tr(language, 1)}
                 <ExternalLink href="https://etherscan.io/tx/0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060">
                   https://etherscan.io/tx/0x5c...2060
                 </ExternalLink>
@@ -114,7 +130,11 @@ const BlockchainBasics = (): {
           </div>
           <div className="bloc2">
             <iframe
-              src="https://www.youtube.com/embed/8z2rL99sLGA?rel=0"
+              src={`https://www.youtube.com/embed/8z2rL99sLGA?rel=0${
+                language !== 'en'
+                  ? `&cc_load_policy=1&cc_lang_pref=${language}&hl=${language}`
+                  : ``
+              }`}
               allowFullScreen
             ></iframe>
           </div>
