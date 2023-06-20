@@ -96,34 +96,37 @@ const LessonDetail = ({
             </Box>
           )}
           <StyledCard
-            p={8}
+            p={12}
             maxW="600px"
             mt={6}
             display={isSmallScreen ? 'contents' : 'block'}
             position="relative"
           >
-            <Box m="auto">
+            <Box m="auto" p={isSmallScreen ? '12px' : 'auto'}>
               <Box h="0">
                 <InternalLink href="/lessons" alt={`Back to Lesson Selection`}>
                   <Button
                     position="relative"
-                    top={isSmallScreen ? '8px' : '-54px'}
-                    left={isSmallScreen ? '0' : '-67px'}
-                    size="lg"
+                    top={isSmallScreen ? '-4px' : '-70px'}
+                    left={isSmallScreen ? '-10px' : '-83px'}
+                    size={isSmallScreen ? 'md' : 'lg'}
+                    iconSpacing="0"
                     variant="secondaryBig"
-                    leftIcon={<ArrowUUpLeft />}
+                    leftIcon={<ArrowUUpLeft width="24px" height="auto" />}
+                    p={isSmallScreen ? '0' : 'auto'}
                   ></Button>
                 </InternalLink>
               </Box>
               <Text
                 as="h1"
-                fontSize="2xl"
+                fontSize="3xl"
                 fontWeight="bold"
                 textAlign="center"
                 m="auto"
                 borderBottom="1px solid #989898"
-                pb="2"
                 w="fit-content"
+                mb="8"
+                mt={isSmallScreen ? '-10px' : 'auto'}
               >
                 {lesson.name}
               </Text>
@@ -136,7 +139,7 @@ const LessonDetail = ({
                     cursor: 'pointer',
                   }}
                   position="relative"
-                  minH="260px"
+                  minH="200px"
                   onClick={() => setIsLessonOpenLS(true)}
                 >
                   {isLessonCollected ? (
@@ -170,29 +173,30 @@ const LessonDetail = ({
                 display="flex"
                 mt="4"
                 justifyContent="space-between"
-                maxW="500px"
+                maxW="410px"
                 m="auto"
                 mb="8"
               >
                 <CollectLessonButton lesson={lesson} />
-                <Button
-                  variant={Quest.isQuestCompleted ? 'secondaryLg' : 'primary'}
-                  size="lg"
-                  style={{ padding: '0 23px' }}
-                  onClick={() => setIsLessonOpenLS(true)}
-                  m="auto"
-                >
-                  {isKudosMintedLS
-                    ? 'View Lesson'
-                    : isLessonStarted
-                    ? 'View Lesson'
-                    : 'Start Lesson'}
-                </Button>
+                <Box m="auto" pl="12px">
+                  <Button
+                    variant={Quest.isQuestCompleted ? 'secondaryLg' : 'primary'}
+                    size="lg"
+                    style={{ padding: '0 23px' }}
+                    onClick={() => setIsLessonOpenLS(true)}
+                  >
+                    {isKudosMintedLS
+                      ? 'View Lesson'
+                      : isLessonStarted
+                      ? 'View Lesson'
+                      : 'Start Lesson'}
+                  </Button>
+                </Box>
               </Box>
               <Box>
                 <Text
                   as="h2"
-                  fontSize="large"
+                  fontSize="2xl"
                   fontWeight="bold"
                   borderBottom="1px solid #989898"
                   pb="2"
@@ -203,14 +207,13 @@ const LessonDetail = ({
                   {lesson.description}
                 </Text>
               </Box>
-              <Box>
+              <Box pb="8">
                 <Text
                   as="h2"
-                  fontSize="large"
+                  fontSize="2xl"
                   fontWeight="bold"
                   borderBottom="1px solid #989898"
                   pb="2"
-                  mb="4"
                 >
                   Rewards
                 </Text>
@@ -220,7 +223,9 @@ const LessonDetail = ({
                   lesson={lesson}
                   isQuestCompleted={Quest.isQuestCompleted}
                 />
-                <Text fontSize="2xl">“{lesson.name}” Lesson Badge</Text>
+                <Text fontSize="2xl" mb="4">
+                  “{lesson.name}” Lesson Badge
+                </Text>
               </Box>
             </Box>
             {/* {!embed && lesson.communityDiscussionLink && (

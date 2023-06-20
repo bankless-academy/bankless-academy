@@ -429,11 +429,13 @@ const Lesson = ({
           <Button
             position="relative"
             top={isSmallScreen ? '8px' : '-38px'}
-            left={isSmallScreen ? '0' : '-67px'}
-            size="lg"
+            left={isSmallScreen ? '2px' : '-67px'}
+            size={isSmallScreen ? 'md' : 'lg'}
+            iconSpacing="0"
             variant="secondaryBig"
-            leftIcon={<ArrowUUpLeft />}
+            leftIcon={<ArrowUUpLeft width="24px" height="auto" />}
             onClick={() => closeLesson()}
+            p={isSmallScreen ? '0' : 'auto'}
           ></Button>
         </Box>
       )}

@@ -152,7 +152,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               borderBottomRadius="8px"
               borderTopWidth="0"
               textAlign="center"
-              p="4"
+              p="10px"
             >
               {isLessonMintedLS ? (
                 <>

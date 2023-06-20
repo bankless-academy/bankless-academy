@@ -85,8 +85,11 @@ const LessonCollectibleModal = ({
       >
         <ModalHeader>LESSON DATADISK™ CONTENT</ModalHeader>
         <ModalCloseButton />
-        <ModalBody padding={isMobileScreen ? '0' : 'default'}>
-          <StyledMarkdown overflow="scroll" maxHeight="85vh">
+        <ModalBody padding={isMobileScreen ? '10px' : 'default'}>
+          <StyledMarkdown
+            overflow="scroll"
+            maxHeight={isMobileScreen ? 'calc( 100vh - 82px )' : '85vh'}
+          >
             <Box
               dangerouslySetInnerHTML={{ __html: intro }}
               width="min-content"

@@ -269,7 +269,71 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   // )
 
   const GitcoinModal = (
-    <Modal onClose={onClose} size={'xl'} isOpen={isOpen} isCentered>
+    <Modal
+      onClose={() => {
+        if (passportLS?.verified) {
+          toast.closeAll()
+          toast({
+            description: (
+              <>
+                <Box>
+                  <Box display="flex">
+                    <Box mr="4">
+                      <Image
+                        src="/images/gitcoin-passport.svg"
+                        alt="Gitcoin Passport"
+                      />
+                    </Box>
+                    <Box flexDirection="column" alignSelf="center">
+                      <Box fontWeight="bold">
+                        Gitcoin Passport successfully set up.
+                      </Box>
+                      <Box mt="4">Try to mint your badge again.</Box>
+                    </Box>
+                  </Box>
+                </Box>
+              </>
+            ),
+            status: 'success',
+            duration: 10000,
+            isClosable: true,
+          })
+        } else {
+          toast.closeAll()
+          toast({
+            description: (
+              <>
+                <Box>
+                  <Box display="flex">
+                    <Box mr="4">
+                      <Image
+                        src="/images/gitcoin-passport.svg"
+                        alt="Gitcoin Passport"
+                      />
+                    </Box>
+                    <Box flexDirection="column" alignSelf="center">
+                      <Box fontWeight="bold">Gitcoin Passport not set up.</Box>
+                      <Box mt="4">
+                        <ExternalLink href="/faq#ea6ae6bd9ca645498c15cc611bc181c0">
+                          Follow these steps and try again
+                        </ExternalLink>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+              </>
+            ),
+            status: 'warning',
+            duration: 20000,
+            isClosable: true,
+          })
+        }
+        onClose()
+      }}
+      size={'xl'}
+      isOpen={isOpen}
+      isCentered
+    >
       <ModalOverlay />
       <ModalContent
         bg="linear-gradient(180deg, #a379bdcc 0%, #5a5198cc 100%)"
@@ -280,9 +344,11 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         <ModalCloseButton />
         <ModalBody>
           <Text fontSize="xl">
-            <Box mt="4" mr="4">
-              {`You haven’t set up Gitcoin Passport, or your stamps are out of date.`}
-            </Box>
+            {!passportLS?.verified && (
+              <Box mt="4" mr="4">
+                {`You haven’t set up Gitcoin Passport, or your stamps are out of date.`}
+              </Box>
+            )}
             <Box my="4">
               {`Explorers must have a valid Gitcoin Passport in order to collect Bankless Academy rewards. `}
               <ExternalLink

@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { Box, Text, Button, Image, useToast } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
-import { AddressBook } from '@phosphor-icons/react'
 
 import GitcoinPassport from 'components/GitcoinPassport'
 import ExternalLink from 'components/ExternalLink'
@@ -101,7 +100,13 @@ const PassportComponent = ({
                       variant="primaryWhite"
                       color="#5D4E78"
                       size="lg"
-                      leftIcon={<AddressBook />}
+                      leftIcon={
+                        <Image
+                          width="20px"
+                          src="/images/gitcoin-passport.svg"
+                          alt="Gitcoin Passport"
+                        />
+                      }
                     >
                       Gitcoin Passport
                     </Button>
