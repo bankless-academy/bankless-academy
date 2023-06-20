@@ -163,7 +163,11 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                         isFullWidth
                         borderBottomRadius="0"
                         leftIcon={
-                          <ChakraImage width="24px" src="/images/Twitter.svg" />
+                          <ChakraImage
+                            width="24px"
+                            height="24px"
+                            src="/images/Twitter.svg"
+                          />
                         }
                       >
                         Share on Twitter
@@ -178,7 +182,11 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                       isFullWidth
                       borderTopRadius="0"
                       leftIcon={
-                        <ChakraImage width="24px" src="/images/OpenSea.svg" />
+                        <ChakraImage
+                          width="24px"
+                          height="24px"
+                          src="/images/OpenSea.svg"
+                        />
                       }
                     >
                       View on OpenSea
