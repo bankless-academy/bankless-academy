@@ -19,6 +19,7 @@ import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount, useNetwork } from 'wagmi'
 import { switchNetwork, signTypedData } from '@wagmi/core'
+import { Gear, SealCheck } from '@phosphor-icons/react'
 
 import { useSmallScreen } from 'hooks/index'
 import Passport from 'components/Passport'
@@ -61,9 +62,9 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
 
   const PoweredByMintKudos = (
-    <Box display="flex" justifyContent="center" mb={10} mt={-3}>
+    <Box display="flex" justifyContent="center" my={4}>
       <ExternalLink href={`${MINTKUDOS_URL}`} alt="Powered by MintKudos">
-        <Image width="120px" src="/images/powered-by-MintKudos.svg" />
+        <Image width="150px" src="/images/powered-by-MintKudos.svg" />
       </ExternalLink>
     </Box>
   )
@@ -110,12 +111,23 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
           toast.closeAll()
           const txLink = `${MINTKUDOS_EXPLORER}tx/${result.data.txHash}`
           toast({
-            title: `Minting in progress:`,
             description: (
               <>
-                <ExternalLink href={txLink} alt="Transaction in progress">
-                  {isSmallScreen ? `${txLink.substring(0, 40)}...` : txLink}
-                </ExternalLink>
+                <Box>
+                  <Box display="flex">
+                    <Box mr="4">
+                      <Gear width="40px" height="auto" />
+                    </Box>
+                    <Box flexDirection="column">
+                      <Box>Minting in progress:</Box>
+                      <ExternalLink href={txLink} alt="Transaction in progress">
+                        {isSmallScreen
+                          ? `${txLink.substring(0, 40)}...`
+                          : txLink}
+                      </ExternalLink>
+                    </Box>
+                  </Box>
+                </Box>
                 {PoweredByMintKudos}
               </>
             ),
@@ -199,8 +211,21 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         // TODO: add 🎊
         // TODO: refresh list of Kudos in the wallet
         toast({
-          title: 'Badge successfully minted!',
-          description: PoweredByMintKudos,
+          description: (
+            <>
+              <Box>
+                <Box display="flex">
+                  <Box mr="4">
+                    <SealCheck width="40px" height="auto" />
+                  </Box>
+                  <Box flexDirection="column" alignSelf="center">
+                    <Box>Badge successfully minted!</Box>
+                  </Box>
+                </Box>
+              </Box>
+              {PoweredByMintKudos}
+            </>
+          ),
           status: 'success',
           duration: 10000,
           isClosable: true,
@@ -289,6 +314,8 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         variant={'primary'}
         w="100%"
         borderBottomRadius="0"
+        isLoading={isMintingInProgress}
+        loadingText="Minting Badge ..."
         cursor={isKudosMintedLS ? 'auto' : 'pointer'}
         onClick={() => {
           passportLS?.verified ? mintKudos() : onOpen()

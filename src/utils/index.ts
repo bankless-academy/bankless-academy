@@ -387,7 +387,7 @@ export const getNodeText = (node) => {
 export async function api(url: string, data: any): Promise<AxiosResponse> {
   const wrong = {
     data: {
-      error: 'something went wrong',
+      error: 'API error',
     },
     status: 500,
     statusText: 'KO',

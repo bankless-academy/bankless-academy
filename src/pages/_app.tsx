@@ -102,6 +102,49 @@ const App = ({
                 #chakra-toast-manager-bottom {
                   margin-bottom: 81px !important;
                 }
+                /* HACK: custom toast */
+                .css-hdx5ch,
+                .css-19os7cz,
+                .css-12sfbjg {
+                  color: white !important;
+                  border-radius: 15px !important;
+                  a {
+                    color: white !important;
+                    text-decoration: underline;
+                    text-underline-position: under;
+                  }
+                }
+                /* success toast */
+                .css-hdx5ch {
+                  background: linear-gradient(
+                    180deg,
+                    #429683,
+                    #35564f
+                  ) !important;
+                  border: 2px solid #a4d7cb !important;
+                }
+                /* warning toast */
+                .css-19os7cz {
+                  background: linear-gradient(
+                    180deg,
+                    #e7b283,
+                    #8e5c49
+                  ) !important;
+                  border: 2px solid #ffe0bb !important;
+                }
+                /* error toast */
+                .css-12sfbjg {
+                  background: linear-gradient(
+                    180deg,
+                    #fe7a7a,
+                    #e05e55
+                  ) !important;
+                  border: 2px solid #f5a98d !important;
+                }
+                /* hide toast status logo */
+                .css-4hbvqh {
+                  display: none !important;
+                }
               `}
             />
             <Layout isLesson={pageProps.pageMeta?.isLesson || false}>
