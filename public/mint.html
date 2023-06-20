@@ -46,12 +46,17 @@
   }
 </style>
 <script>
-  const whitelist_collection = ['64413093d296198479460ad0', '6452a298d9f58a4ffff0225b', '6478cd747dfc721089fe6027']
+  const whitelist_collection = { '64413093d296198479460ad0': { slug: 'wallet-basics' }, '6452a298d9f58a4ffff0225b': { slug: 'blockchain-basics' }, '6478cd747dfc721089fe6027': { slug: 'web3-security' } }
+  const isEmbedded = typeof window !== 'undefined' && window !== window.parent
   const queryString = window.location.search
   const urlParams = new URLSearchParams(queryString)
   const collection = urlParams.get('collection')
-  if (collection?.length && whitelist_collection.includes(collection))
+  if (collection?.length && Object.keys(whitelist_collection).includes(collection)) {
+    if (!isEmbedded) {
+      window.location.href = `/lessons/${whitelist_collection[collection].slug}`
+    }
     document.write(`<div data-widget="highlight-mint-card" data-mint-collection-id="${collection}"></div>`)
+  }
   else if (collection?.length)
     document.write(`<div>wrong collection</div>`)
   else
