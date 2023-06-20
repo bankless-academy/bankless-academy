@@ -433,7 +433,7 @@ const Lesson = ({
             size={isSmallScreen ? 'md' : 'lg'}
             iconSpacing="0"
             variant="secondaryBig"
-            leftIcon={<ArrowUUpLeft width="24px" height="auto" />}
+            leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
             onClick={() => closeLesson()}
             p={isSmallScreen ? '0' : 'auto'}
           ></Button>

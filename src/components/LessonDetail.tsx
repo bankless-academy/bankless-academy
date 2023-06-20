@@ -112,7 +112,7 @@ const LessonDetail = ({
                     size={isSmallScreen ? 'md' : 'lg'}
                     iconSpacing="0"
                     variant="secondaryBig"
-                    leftIcon={<ArrowUUpLeft width="24px" height="auto" />}
+                    leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
                     p={isSmallScreen ? '0' : 'auto'}
                   ></Button>
                 </InternalLink>
