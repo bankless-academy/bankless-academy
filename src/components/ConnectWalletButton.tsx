@@ -144,11 +144,13 @@ const ConnectWalletButton = ({
       .then((res) => {
         const data = res.data.data
         if (Array.isArray(data)) {
-          setKudosMintedLS(
-            KUDOS_IDS.filter((kudosId) =>
-              data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
-            )
+          const kudosMinted = KUDOS_IDS.filter((kudosId) =>
+            data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
           )
+          setKudosMintedLS(kudosMinted)
+          for (const kudosId of kudosMinted) {
+            localStorage.setItem(`isKudosMinted-${kudosId.toString()}`, 'true')
+          }
           setKudos(
             data.filter((kudos: KudosType) =>
               KUDOS_IDS.includes(kudos.kudosTokenId)
