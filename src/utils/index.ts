@@ -420,7 +420,7 @@ export async function getArticlesCollected(address: string): Promise<[]> {
     const ownerNFTs = await axios.get(
       `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100${MIRROR_ARTICLE_ADDRESSES.map(
         (articlAddress) => `&contractAddresses[]=${articlAddress}`
-      ).join()}&withMetadata=false`
+      ).join('')}&withMetadata=false`
     )
     if (ownerNFTs.data) {
       // console.log(ownerNFTs.data?.ownedNfts)
