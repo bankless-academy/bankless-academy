@@ -49,7 +49,11 @@ const Layer2Blockchains = (
     (lesson) => lesson.slug === 'how-to-fund-a-wallet-on-layer-2'
   )
 
-  if (!lesson) return null
+  if (!lesson)
+    return {
+      isQuestCompleted: false,
+      questComponent: <>missing handbook</>,
+    }
 
   return {
     isQuestCompleted: isTransactionVerified === 'true',

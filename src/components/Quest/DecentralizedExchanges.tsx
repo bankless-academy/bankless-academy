@@ -6,8 +6,8 @@ import {
   InputGroup,
   Spinner,
   Image,
-  // Text,
-  // Button,
+  Text,
+  Button,
 } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 
@@ -15,9 +15,9 @@ import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 import { api } from 'utils'
-// import { LessonCard } from 'components/LessonCards'
+import { LessonCard } from 'components/LessonCards'
 import { LESSONS } from 'constants/index'
-// import InternalLink from 'components/InternalLink'
+import InternalLink from 'components/InternalLink'
 
 const DecentralizedExchanges = (
   account: string
@@ -73,7 +73,11 @@ const DecentralizedExchanges = (
     (lesson) => lesson.slug === 'how-to-swap-on-a-decentralized-exchange'
   )
 
-  if (!lesson) return null
+  if (!lesson)
+    return {
+      isQuestCompleted: false,
+      questComponent: <>missing handbook</>,
+    }
 
   return {
     isQuestCompleted: isTransactionVerified === 'true',
@@ -138,7 +142,7 @@ const DecentralizedExchanges = (
               </Box>
             )}
           </div>
-          {/* <div className="bloc2">
+          <div className="bloc2">
             <LessonCard
               borderRadius="3xl"
               maxW="400px"
@@ -155,7 +159,7 @@ const DecentralizedExchanges = (
                     alt={lesson.name}
                     target="_blank"
                   >
-                  <Image src={lesson.lessonImageLink} />
+                    <Image src={lesson.lessonImageLink} />
                   </InternalLink>
                 </Box>
                 <Box pb="8">
@@ -164,12 +168,12 @@ const DecentralizedExchanges = (
                     alt={lesson.name}
                     target="_blank"
                   >
-                  <Button variant="primary">Read Entry</Button>
+                    <Button variant="primary">Read Entry</Button>
                   </InternalLink>
                 </Box>
               </Box>
             </LessonCard>
-          </div> */}
+          </div>
         </Box>
       </>
     ),
