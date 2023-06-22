@@ -87,8 +87,7 @@ const DecentralizedExchanges = (
           <div className="bloc1">
             <p>
               {'1. Load '}
-              {/* <ExternalLink href="https://app.velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042"> */}
-              <ExternalLink href="https://app.velodrome.finance/swap">
+              <ExternalLink href="https://velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042">
                 Velodrome
               </ExternalLink>
               {' on the '}
