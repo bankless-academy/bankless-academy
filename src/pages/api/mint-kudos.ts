@@ -72,7 +72,7 @@ export default async function handler(
 
     if (
       questCompleted?.credential_claimed_at &&
-      !MINTKUDOS_ALLOWED_SIGNERS.includes(address)
+      !MINTKUDOS_ALLOWED_SIGNERS.includes(address.toLowerCase())
     ) {
       questStatus = 'badge already claimed'
       console.log(questStatus)

@@ -497,27 +497,30 @@ axios
             }
             // write/update file
             const lessonPath = `public/lesson/${lesson.slug}.md`
-            const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
             const lessonHeader = mdHeader(lesson)
-            if (lessonFile) {
-              const [previousLessonHeader, previousLessonContentMD] = lessonFile?.split(LESSON_SPLITTER)
-              // If content has changed
-              const plh = previousLessonHeader?.split('LAST UPDATED:')[0]
-              const lh = lessonHeader?.split('LAST UPDATED:')[0]
-              if (plh.trim() !== lh.trim() ||
-                previousLessonContentMD.trim() !== lessonContentMD.trim()
-              ) {
-                fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
-                  if (error) throw error
-                })
-                console.log(
-                  `"${lesson.name}" updated in ${lessonPath}`
+            if (fs.existsSync(lessonPath)) {
+              const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
+              if (lessonFile) {
+                const [previousLessonHeader, previousLessonContentMD] = lessonFile?.split(LESSON_SPLITTER)
+                // If content has changed
+                const plh = previousLessonHeader?.split('LAST UPDATED:')[0]
+                const lh = lessonHeader?.split('LAST UPDATED:')[0]
+                if (plh.trim() !== lh.trim() ||
+                  previousLessonContentMD.trim() !== lessonContentMD.trim()
+                ) {
+                  fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
+                    if (error) throw error
+                  })
+                  console.log(
+                    `"${lesson.name}" updated in ${lessonPath}`
+                  )
+                }
+                else console.log(
+                  `"${lesson.name}" is unchanged`
                 )
               }
-              else console.log(
-                `"${lesson.name}" is unchanged`
-              )
-            } else {
+            }
+            else {
               fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
                 if (error) throw error
               })
@@ -525,6 +528,7 @@ axios
                 `"${lesson.name}" exported in ${lessonPath}`
               )
             }
+
           } catch (error) {
             console.log(error)
           }

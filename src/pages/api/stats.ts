@@ -7,7 +7,9 @@ import { LESSONS } from 'constants/index'
 // Don't include Kudos testing or lessons without quest
 const NOTION_IDS: string[] = LESSONS.filter(
   (lesson) =>
-    lesson.quest && lesson.notionId !== '7bc2bf9be4ac4e9181782f996a2a6060'
+    lesson.quest &&
+    lesson.notionId !== '7bc2bf9be4ac4e9181782f996a2a6060' &&
+    lesson.notionId !== 'fd14e05114294d6282713809742f79a4'
 ).map((lesson) => lesson.notionId)
 
 export default async function handler(
