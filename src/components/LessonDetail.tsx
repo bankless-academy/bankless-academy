@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import styled from '@emotion/styled'
 import { Text, Image, Button, Box, useDisclosure } from '@chakra-ui/react'
 import { ArrowUUpLeft } from '@phosphor-icons/react'
@@ -13,9 +12,7 @@ import CollectLessonButton from 'components/CollectLessonButton'
 import InternalLink from 'components/InternalLink'
 import { useSmallScreen } from 'hooks'
 import LessonCollectibleModal from 'components/LessonCollectibleModal'
-import { IS_WHITELABEL } from 'constants/index'
-import { getLessonsCollected } from 'utils'
-import { useAccount } from 'wagmi'
+import LessonButton from './LessonButton'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -29,41 +26,16 @@ const LessonDetail = ({
   lesson: LessonType
   extraKeywords?: any
 }): React.ReactElement => {
-  const [isKudosMintedLS] = useLocalStorage(
-    `isKudosMinted-${lesson.kudosId}`,
-    false
-  )
   const [, isSmallScreen] = useSmallScreen()
-  const { address } = useAccount()
-  const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
+
   const [isLessonOpenLS, setIsLessonOpenLS] = useLocalStorage(
     `isLessonOpen`,
     false
   )
-  const [lessonsCollectedLS, setLessonsCollectedLS] = useLocalStorage(
-    'lessonsCollected',
-    []
-  )
-  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const { isOpen, onClose } = useDisclosure()
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
-
-  useEffect(() => {
-    const updateNFTCollected = async () => {
-      const lessonsCollected = await getLessonsCollected(address)
-      if (lessonsCollected && Array.isArray(lessonsCollected))
-        setLessonsCollectedLS(lessonsCollected)
-    }
-    if (!IS_WHITELABEL && address) {
-      updateNFTCollected().catch(console.error)
-    }
-  }, [address])
-
-  const isLessonCollected =
-    !!lesson.LessonCollectibleTokenAddress?.length &&
-    lessonsCollectedLS.includes(
-      lesson.LessonCollectibleTokenAddress.toLowerCase()
-    )
 
   return (
     <>
@@ -130,68 +102,18 @@ const LessonDetail = ({
               >
                 {lesson.name}
               </Text>
-              {/* <Text textAlign="center" fontWeight="bold" p="4">
-                TODO: add sponsor
-              </Text> */}
-              <Box m="auto" maxW="500px">
-                <Box
-                  style={{
-                    cursor: 'pointer',
-                  }}
-                  position="relative"
-                  minH="200px"
-                  onClick={() => setIsLessonOpenLS(true)}
-                >
-                  {isLessonCollected ? (
-                    <video autoPlay loop playsInline muted>
-                      <source
-                        src={lesson.lessonCollectibleVideo}
-                        type="video/webm"
-                      ></source>
-                    </video>
-                  ) : (
-                    <Image src={lesson.lessonImageLink} />
-                  )}
-                  {lesson.hasCollectible && (
-                    <Button
-                      position="absolute"
-                      size="sm"
-                      top="0"
-                      right="0"
-                      zIndex="1"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        onOpen()
-                      }}
-                    >
-                      &lt;/&gt;
-                    </Button>
-                  )}
-                </Box>
-              </Box>
               <Box
                 display="flex"
                 mt="4"
                 justifyContent="space-between"
-                maxW="410px"
+                maxW="450px"
                 m="auto"
                 mb="8"
               >
                 <CollectLessonButton lesson={lesson} />
-                <Box m="auto" pl="12px">
-                  <Button
-                    variant={Quest.isQuestCompleted ? 'secondaryLg' : 'primary'}
-                    size="lg"
-                    style={{ padding: '0 23px' }}
-                    onClick={() => setIsLessonOpenLS(true)}
-                  >
-                    {isKudosMintedLS
-                      ? 'View Lesson'
-                      : isLessonStarted
-                      ? 'View Lesson'
-                      : 'Start Lesson'}
-                  </Button>
-                </Box>
+              </Box>
+              <Box display="flex" justifyContent="center" mb="8">
+                <LessonButton lesson={lesson} openLesson={setIsLessonOpenLS} />
               </Box>
               <Box>
                 <Text

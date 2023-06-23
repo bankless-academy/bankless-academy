@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import {
   Box,
+  Image,
   Button,
   useDisclosure,
   Image as ChakraImage,
@@ -13,6 +14,8 @@ import { getLessonsCollectors } from 'utils'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import { useAccount } from 'wagmi'
+import { getLessonsCollected } from 'utils'
+import { IS_WHITELABEL } from 'constants/index'
 
 const CollectiblesHelper = (
   <Helper
@@ -55,6 +58,28 @@ const CollectLessonButton = ({
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const { address } = useAccount()
+  const [lessonsCollectedLS, setLessonsCollectedLS] = useLocalStorage(
+    'lessonsCollected',
+    []
+  )
+  const [, setIsLessonOpenLS] = useLocalStorage(`isLessonOpen`, false)
+
+  const isLessonCollected =
+    !!lesson.LessonCollectibleTokenAddress?.length &&
+    lessonsCollectedLS.includes(
+      lesson.LessonCollectibleTokenAddress.toLowerCase()
+    )
+
+  useEffect(() => {
+    const updateNFTCollected = async () => {
+      const lessonsCollected = await getLessonsCollected(address)
+      if (lessonsCollected && Array.isArray(lessonsCollected))
+        setLessonsCollectedLS(lessonsCollected)
+    }
+    if (!IS_WHITELABEL && address) {
+      updateNFTCollected().catch(console.error)
+    }
+  }, [address])
 
   const updateLessonsCollectors = async () => {
     const NFTCollectors = await getLessonsCollectors(
@@ -91,10 +116,25 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     share
   )}`
 
+  const lessonImage = (
+    <>
+      {isLessonCollected ? (
+        <video autoPlay loop playsInline muted>
+          <source
+            src={lesson.lessonCollectibleVideo}
+            type="video/webm"
+          ></source>
+        </video>
+      ) : (
+        <Image src={lesson.lessonImageLink} />
+      )}
+    </>
+  )
+
   if (lesson.hasCollectible)
     return (
       <>
-        <Box w="232px">
+        <Box w="100%">
           {isLessonMintedLS ? (
             <Box
               border="1px solid #F1B15A"
@@ -146,6 +186,38 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               </Box>
             </Box>
           )}
+          <Box
+            m="auto"
+            maxW="500px"
+            borderX="1px solid #4b474b"
+            borderBottom="1px solid #4b474b"
+          >
+            <Box
+              style={{
+                cursor: 'pointer',
+              }}
+              position="relative"
+              minH="200px"
+              onClick={() => setIsLessonOpenLS(true)}
+            >
+              {lessonImage}
+              {lesson.hasCollectible && (
+                <Button
+                  position="absolute"
+                  size="sm"
+                  top="5px"
+                  right="5px"
+                  zIndex="1"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setIsLessonOpenLS(true)
+                  }}
+                >
+                  &lt;/&gt;
+                </Button>
+              )}
+            </Box>
+          </Box>
           {isKudosMintedLS && (
             <Box
               border="1px solid #4b474b"
@@ -208,7 +280,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
         />
       </>
     )
-  else return <Box />
+  else return <Box>{lessonImage}</Box>
 }
 
 export default CollectLessonButton

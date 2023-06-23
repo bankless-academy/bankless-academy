@@ -132,6 +132,8 @@ const KEY_MATCHING = {
   // 'Community discussion link': 'communityDiscussionLink',
   'Mirror link': 'mirrorLink',
   'Mirror NFT address': 'mirrorNFTAddress',
+  'Sponsor Name': 'sponsorName',
+  'Sponsor Logo': 'sponsorLogo',
 }
 
 const args = process.argv
@@ -194,7 +196,7 @@ axios
             // transform to number if the string contains a number
             [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k])) ||
               // ignore type transform for ModuleId & mirrorNFTAddress
-              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible mint ID' || k === 'Lesson collectible token address')
+              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible mint ID' || k === 'Lesson collectible token address' || k === 'Sponsor Name')
               ? notion.fields[k]
               : parseInt(notion.fields[k]),
           }),
@@ -225,6 +227,8 @@ axios
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
       if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
       if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
+      if (lesson.sponsorName === undefined || lesson.sponsorName === null) delete lesson.sponsorName
+      if (lesson.sponsorLogo === undefined || lesson.sponsorLogo === null) delete lesson.sponsorLogo
 
       // console.log(lesson)
 
@@ -317,6 +321,9 @@ axios
           }
           if (lesson.socialImageLink) {
             lesson.socialImageLink = get_img(lesson.socialImageLink, lesson.slug, 'social')
+          }
+          if (lesson.sponsorLogo) {
+            lesson.sponsorLogo = get_img(lesson.sponsorLogo, lesson.slug, 'sponsor')
           }
 
           lesson.imageLinks = []

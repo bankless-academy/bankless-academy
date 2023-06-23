@@ -29,6 +29,7 @@ import {
 import SubscriptionModal from 'components/SubscriptionModal'
 import { LessonType } from 'entities/lesson'
 import InstallAppModal from 'components/InstallAppModal'
+import LessonButton from 'components/LessonButton'
 
 // TODO: move to dedicated component file
 export const LessonCard = styled(Box)`
@@ -173,7 +174,6 @@ const LessonCards: React.FC = () => {
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
         // const numberOfSlides = lesson.slides.length
         const isKudosMinted = kudosMintedLS.includes(lesson.kudosId)
-        const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
         const isNotified =
           lesson.publicationStatus === 'planned'
             ? localStorage.getItem(`${lesson.slug}-notification`)
@@ -191,6 +191,8 @@ const LessonCards: React.FC = () => {
           lessonsCollectedLS.includes(
             lesson.LessonCollectibleTokenAddress.toLowerCase()
           )
+        const lessonHasSponsor =
+          lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
         return (
           <LessonCard key={`lesson-${index}`} p={6} pb={8} borderRadius="3xl">
             <Box position="relative" zIndex="1">
@@ -261,10 +263,12 @@ const LessonCards: React.FC = () => {
                 flexDirection="row-reverse"
                 mt="4"
                 justifyContent="space-between"
+                alignItems="center"
               >
                 {lesson.publicationStatus === 'planned' && all === undefined ? (
                   <Button
-                    variant={isNotified ? 'outline' : 'primary'}
+                    variant={isNotified ? 'secondaryBig' : 'primaryBig'}
+                    size="lg"
                     onClick={() => {
                       if (isNotified) return
                       setSelectedLesson(lesson)
@@ -283,22 +287,9 @@ const LessonCards: React.FC = () => {
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
                     alt={lesson.name}
+                    margin={lessonHasSponsor ? 'auto' : ''}
                   >
-                    <Button
-                      variant={
-                        isKudosMinted || lesson?.isArticle
-                          ? 'secondary'
-                          : 'primary'
-                      }
-                    >
-                      {lesson?.isArticle
-                        ? 'Read Entry'
-                        : isKudosMinted
-                        ? 'View Lesson'
-                        : isLessonStarted
-                        ? 'View Lesson'
-                        : 'Start Lesson'}
-                    </Button>
+                    <LessonButton lesson={lesson} />
                   </InternalLink>
                 )}
                 {lesson.isArticle ? (
@@ -311,7 +302,12 @@ const LessonCards: React.FC = () => {
                       </Tooltip>
                     </ExternalLink>
                   )
-                ) : null}
+                ) : (
+                  !lessonHasSponsor &&
+                  lesson.publicationStatus !== 'planned' && (
+                    <Box width="100%"></Box>
+                  )
+                )}
               </Box>
             </Box>
           </LessonCard>

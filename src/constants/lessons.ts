@@ -1372,6 +1372,8 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: 'https://tally.so/r/mZ8orv',
     endOfLessonText: 'To learn more about Optimism and to give feedback about this lesson, click Next.',
+    sponsorName: 'Optimism',
+    sponsorLogo: '/lesson/layer-2-blockchains/sponsor-90c31693.png',
     notionId: '340eb401ab824dea8f85aace1aaf69c1',
     slug: 'layer-2-blockchains',
     imageLinks: [
@@ -1824,6 +1826,8 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: 'https://tally.so/r/w2BZaV',
     endOfLessonText: 'To learn more about Optimism and to give feedback about this lesson, click Next.',
+    sponsorName: 'Velodrome',
+    sponsorLogo: '/lesson/decentralized-exchanges/sponsor-f4fee676.png',
     notionId: '0ff0ff5bde6c43f99f7710352069163e',
     slug: 'decentralized-exchanges',
     imageLinks: [
@@ -2140,6 +2144,8 @@ const LESSONS: LessonType[] = [
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
+    sponsorName: '1inch',
+    sponsorLogo: '/lesson/dex-aggregators/sponsor-91f0dd82.png',
     notionId: '42578b8813114832b8930cf59f6125af',
     slug: 'dex-aggregators',
     imageLinks: [
