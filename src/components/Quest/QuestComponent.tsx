@@ -65,6 +65,8 @@ const QuestComponent = (
     const validateQuest = async () => {
       const data: any = { address, quest: component }
       if (kudosId) data.kudosId = kudosId
+      if (data.quest === 'ConceptosBasicosDeBlockchain')
+        data.quest = 'BlockchainBasics'
       const result = await api('/api/validate-quest', data)
       if (result && result.status === 200) {
         // do nothing

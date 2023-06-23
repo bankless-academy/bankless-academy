@@ -1,9 +1,13 @@
 import { LESSONS } from 'constants/index'
 import { WHITELABEL } from 'constants/whitelabel'
 
-export const KUDOS_IDS: number[] = LESSONS.filter(
+const kudosIds = LESSONS.filter((lesson) => lesson.kudosId).map(
   (lesson) => lesson.kudosId
-).map((lesson) => lesson.kudosId)
+)
+
+export const KUDOS_IDS: number[] = kudosIds.filter(
+  (item, index) => kudosIds.indexOf(item) === index
+)
 
 export const MINTKUDOS_API = process.env.NEXT_PUBLIC_MINTKUDOS_API
 
