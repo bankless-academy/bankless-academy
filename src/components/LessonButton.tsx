@@ -2,23 +2,32 @@ import { Button, Box, Image as ChakraImage } from '@chakra-ui/react'
 
 import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
+import { openLesson } from 'components/CollectLessonButton'
 
 const LessonButton = ({
   lesson,
-  openLesson,
+  click,
 }: {
   lesson: LessonType
-  openLesson?: (open: boolean) => void
+  click?: boolean
 }): React.ReactElement => {
   const [isKudosMintedLS] = useLocalStorage(
     `isKudosMinted-${lesson.kudosId}`,
     false
   )
+  const [openLessonLS, setOpenLessonLS] = useLocalStorage(
+    `lessonOpen`,
+    JSON.stringify([])
+  )
   const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
   const lessonHasSponsor =
     lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
   return (
-    <Box onClick={() => (openLesson ? openLesson(true) : null)}>
+    <Box
+      onClick={() =>
+        click ? setOpenLessonLS(openLesson(openLessonLS, lesson)) : null
+      }
+    >
       {lessonHasSponsor && (
         <Button
           variant={'secondaryBig'}

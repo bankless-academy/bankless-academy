@@ -21,6 +21,13 @@ const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   }
 `
 
+const closeLesson = (openedLesson: string, lesson: LessonType): string => {
+  const openedLessonArray = JSON.parse(openedLesson)
+  return JSON.stringify(
+    [...openedLessonArray, lesson.slug].filter((value) => value !== lesson.slug)
+  )
+}
+
 const LessonDetail = ({
   lesson,
   extraKeywords,
@@ -30,9 +37,9 @@ const LessonDetail = ({
 }): React.ReactElement => {
   const [, isSmallScreen] = useSmallScreen()
 
-  const [isLessonOpenLS, setIsLessonOpenLS] = useLocalStorage(
-    `isLessonOpen`,
-    false
+  const [openLessonLS, setOpenLessonLS] = useLocalStorage(
+    `lessonOpen`,
+    JSON.stringify([])
   )
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
@@ -41,11 +48,11 @@ const LessonDetail = ({
 
   return (
     <>
-      {isLessonOpenLS ? (
+      {JSON.parse(openLessonLS)?.includes(lesson.slug) ? (
         <Lesson
           lesson={lesson}
           extraKeywords={extraKeywords}
-          closeLesson={() => setIsLessonOpenLS(false)}
+          closeLesson={() => setOpenLessonLS(closeLesson(openLessonLS, lesson))}
           Quest={Quest}
         />
       ) : (
@@ -115,7 +122,7 @@ const LessonDetail = ({
                 <CollectLessonButton lesson={lesson} />
               </Box>
               <Box display="flex" justifyContent="center" mb="8">
-                <LessonButton lesson={lesson} openLesson={setIsLessonOpenLS} />
+                <LessonButton lesson={lesson} click />
               </Box>
               <Box>
                 <Text

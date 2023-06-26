@@ -42,6 +42,18 @@ const CollectiblesHelper = (
   />
 )
 
+export const openLesson = (
+  openedLesson: string,
+  lesson: LessonType
+): string => {
+  const openedLessonArray = JSON.parse(openedLesson)
+  return JSON.stringify(
+    [...openedLessonArray, lesson.slug].filter(
+      (value, index, array) => array.indexOf(value) === index
+    )
+  )
+}
+
 const CollectLessonButton = ({
   lesson,
 }: {
@@ -72,7 +84,10 @@ const CollectLessonButton = ({
     'lessonsCollected',
     []
   )
-  const [, setIsLessonOpenLS] = useLocalStorage(`isLessonOpen`, false)
+  const [openLessonLS, setOpenLessonLS] = useLocalStorage(
+    `lessonOpen`,
+    JSON.stringify([])
+  )
 
   const isLessonCollected =
     !!lesson.LessonCollectibleTokenAddress?.length &&
@@ -208,7 +223,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               }}
               position="relative"
               minH="200px"
-              onClick={() => setIsLessonOpenLS(true)}
+              onClick={() => setOpenLessonLS(openLesson(openLessonLS, lesson))}
             >
               {lessonImage}
               {lesson.hasCollectible && (
@@ -297,7 +312,10 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     )
   else
     return (
-      <Box onClick={() => setIsLessonOpenLS(true)} cursor="pointer">
+      <Box
+        onClick={() => setOpenLessonLS(openLesson(openLessonLS, lesson))}
+        cursor="pointer"
+      >
         {lessonImage}
       </Box>
     )

@@ -240,8 +240,17 @@ const Lesson = ({
       }
     }
     if (lesson.nftGating) {
-      if (!address) closeLesson()
-      else {
+      if (!address) {
+        toast.closeAll()
+        toast({
+          title: 'This is a token gated lesson',
+          description: 'Connect your wallet to access the lesson.',
+          status: 'warning',
+          duration: 20000,
+          isClosable: true,
+        })
+        closeLesson()
+      } else {
         checkNFT()
       }
     }

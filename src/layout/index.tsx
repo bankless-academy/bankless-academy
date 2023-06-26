@@ -36,12 +36,12 @@ const Layout = ({
   isLesson: boolean
 }): React.ReactElement => {
   const [isSmallScreen, isSmallLesson] = useSmallScreen()
-  const [isLessonOpenLS] = useLocalStorage(`isLessonOpen`, false)
+  const [openLessonLS] = useLocalStorage(`lessonOpen`, JSON.stringify([]))
 
   return (
     <Box
       minH="100vh"
-      paddingBottom={isSmallLesson && isLesson && isLessonOpenLS ? '81px' : '0'}
+      paddingBottom={isSmallLesson && isLesson && openLessonLS ? '81px' : '0'}
       bgColor="#161515"
       overflowX="hidden"
     >
@@ -49,7 +49,12 @@ const Layout = ({
       <StyledBackground
         issmallscreen={isSmallScreen?.toString()}
         issmalllesson={isSmallLesson?.toString()}
-        islesson={(isLesson && isLessonOpenLS)?.toString()}
+        islesson={(
+          isLesson &&
+          JSON.parse(openLessonLS).includes(
+            document?.location.href.split('/').pop()
+          )
+        )?.toString()}
       >
         <main>{children}</main>
       </StyledBackground>
