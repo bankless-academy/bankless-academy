@@ -15,6 +15,7 @@ import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import { useAccount } from 'wagmi'
 import { getLessonsCollected } from 'utils'
+import LessonCollectibleModal from 'components/LessonCollectibleModal'
 import { IS_WHITELABEL } from 'constants/index'
 
 const CollectiblesHelper = (
@@ -55,7 +56,16 @@ const CollectLessonButton = ({
     false
   )
   const [tokenId, setTokenId] = useState('1')
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const {
+    isOpen: isOpenMintCollectibleModal,
+    onOpen: onOpenMintCollectibleModal,
+    onClose: onCloseMintCollectibleModal,
+  } = useDisclosure()
+  const {
+    isOpen: isOpenLessonCollectibleModal,
+    onOpen: onOpenLessonCollectibleModal,
+    onClose: onCloseLessonCollectibleModal,
+  } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const { address } = useAccount()
   const [lessonsCollectedLS, setLessonsCollectedLS] = useLocalStorage(
@@ -145,7 +155,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               px="5"
               position="relative"
               cursor="pointer"
-              onClick={() => onOpen()}
+              onClick={() => onOpenMintCollectibleModal()}
             >
               {CollectiblesHelper}
               <Box>
@@ -162,7 +172,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               px="5"
               position="relative"
               cursor="pointer"
-              onClick={() => onOpen()}
+              onClick={() => onOpenMintCollectibleModal()}
             >
               {CollectiblesHelper}
               <Box>
@@ -210,7 +220,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                   zIndex="1"
                   onClick={(e) => {
                     e.stopPropagation()
-                    setIsLessonOpenLS(true)
+                    onOpenLessonCollectibleModal()
                   }}
                 >
                   &lt;/&gt;
@@ -274,8 +284,13 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           )}
         </Box>
         <MintCollectibleModal
-          isOpen={isOpen}
-          onClose={onClose}
+          isOpen={isOpenMintCollectibleModal}
+          onClose={onCloseMintCollectibleModal}
+          lesson={lesson}
+        />
+        <LessonCollectibleModal
+          isOpen={isOpenLessonCollectibleModal}
+          onClose={onCloseLessonCollectibleModal}
           lesson={lesson}
         />
       </>

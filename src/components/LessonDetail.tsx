@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Text, Image, Button, Box, useDisclosure } from '@chakra-ui/react'
+import { Text, Image, Button, Box } from '@chakra-ui/react'
 import { ArrowUUpLeft } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 
@@ -11,7 +11,6 @@ import QuestComponent from 'components/Quest/QuestComponent'
 import CollectLessonButton from 'components/CollectLessonButton'
 import InternalLink from 'components/InternalLink'
 import { useSmallScreen } from 'hooks'
-import LessonCollectibleModal from 'components/LessonCollectibleModal'
 import LessonButton from './LessonButton'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
@@ -32,8 +31,6 @@ const LessonDetail = ({
     `isLessonOpen`,
     false
   )
-
-  const { isOpen, onClose } = useDisclosure()
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
 
@@ -166,11 +163,6 @@ const LessonDetail = ({
               </ExternalLink>
             )} */}
           </StyledCard>
-          <LessonCollectibleModal
-            isOpen={isOpen}
-            onClose={onClose}
-            lesson={lesson}
-          />
         </>
       )}
     </>
