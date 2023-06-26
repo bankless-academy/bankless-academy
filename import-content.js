@@ -134,6 +134,11 @@ const KEY_MATCHING = {
   'Mirror NFT address': 'mirrorNFTAddress',
   'Sponsor Name': 'sponsorName',
   'Sponsor Logo': 'sponsorLogo',
+  'NFT Gating': 'nftGating',
+  'NFT Gating Requirements': 'nftGatingRequirements',
+  'NFT Gating Image': 'nftGatingImageLink',
+  'NFT Gating Link': 'nftGatingLink',
+  'NFT Gating CTA': 'nftGatingCTA',
 }
 
 const args = process.argv
@@ -229,6 +234,11 @@ axios
       if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
       if (lesson.sponsorName === undefined || lesson.sponsorName === null) delete lesson.sponsorName
       if (lesson.sponsorLogo === undefined || lesson.sponsorLogo === null) delete lesson.sponsorLogo
+      if (lesson.nftGating === undefined || lesson.nftGating === null) delete lesson.nftGating
+      if (lesson.nftGatingRequirements === undefined || lesson.nftGatingRequirements === null) delete lesson.nftGatingRequirements
+      if (lesson.nftGatingImageLink === undefined || lesson.nftGatingImageLink === null) delete lesson.nftGatingImageLink
+      if (lesson.nftGatingLink === undefined || lesson.nftGatingLink === null) delete lesson.nftGatingLink
+      if (lesson.nftGatingCTA === undefined || lesson.nftGatingCTA === null) delete lesson.nftGatingCTA
 
       // console.log(lesson)
 
@@ -324,6 +334,9 @@ axios
           }
           if (lesson.sponsorLogo) {
             lesson.sponsorLogo = get_img(lesson.sponsorLogo, lesson.slug, 'sponsor')
+          }
+          if (lesson.nftGatingImageLink) {
+            lesson.nftGatingImageLink = get_img(lesson.nftGatingImageLink, lesson.slug, 'nft')
           }
 
           lesson.imageLinks = []

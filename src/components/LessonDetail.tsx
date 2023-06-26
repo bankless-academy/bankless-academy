@@ -11,7 +11,10 @@ import QuestComponent from 'components/Quest/QuestComponent'
 import CollectLessonButton from 'components/CollectLessonButton'
 import InternalLink from 'components/InternalLink'
 import { useSmallScreen } from 'hooks'
-import LessonButton from './LessonButton'
+import LessonButton from 'components/LessonButton'
+import NFT from 'components/NFT'
+import ExternalLink from './ExternalLink'
+import { DOMAIN_URL } from 'constants/index'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -33,6 +36,8 @@ const LessonDetail = ({
   )
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
+
+  const hasLessonGating = lesson?.nftGating && lesson?.nftGatingRequirements
 
   return (
     <>
@@ -126,6 +131,32 @@ const LessonDetail = ({
                   {lesson.description}
                 </Text>
               </Box>
+              {hasLessonGating && (
+                <Box my="4">
+                  <Text
+                    as="h2"
+                    fontSize="2xl"
+                    fontWeight="bold"
+                    borderBottom="1px solid #989898"
+                    pb="2"
+                  >
+                    Lesson Requirements
+                  </Text>
+                  <Box textAlign="center">
+                    <NFT nftLink={lesson.nftGatingImageLink} />
+                    <Text as="p" fontSize="medium" py="4">
+                      {lesson.nftGatingRequirements}
+                    </Text>
+                    <ExternalLink
+                      href={lesson.nftGatingLink.replace(DOMAIN_URL, '')}
+                    >
+                      <Button size="lg" variant="primaryBig">
+                        {lesson.nftGatingCTA}
+                      </Button>
+                    </ExternalLink>
+                  </Box>
+                </Box>
+              )}
               <Box pb="8">
                 <Text
                   as="h2"

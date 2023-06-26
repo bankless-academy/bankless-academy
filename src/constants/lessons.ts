@@ -1825,6 +1825,11 @@ const LESSONS: LessonType[] = [
     endOfLessonText: 'To learn more about Optimism and to give feedback about this lesson, click Next.',
     sponsorName: 'Velodrome',
     sponsorLogo: '/lesson/decentralized-exchanges/sponsor-f4fee676.png',
+    nftGating: 'https://opensea.io/assets/matic/0x60576a64851c5b42e8c57e3e4a5cf3cf4eeb2ed6/154630',
+    nftGatingRequirements: 'Complete and claim your ‘Layer 2 Blockchains’ lesson badge first.',
+    nftGatingImageLink: '/lesson/decentralized-exchanges/nft-1809907e.png',
+    nftGatingLink: 'https://app.banklessacademy.com/lessons/layer-2-blockchains',
+    nftGatingCTA: 'View Lesson',
     notionId: '0ff0ff5bde6c43f99f7710352069163e',
     slug: 'decentralized-exchanges',
     imageLinks: [

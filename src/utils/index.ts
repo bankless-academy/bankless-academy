@@ -479,6 +479,36 @@ export async function getLessonsCollectors(
   }
 }
 
+export async function isHolderOfNFT(
+  address: string,
+  openSeaLink: string
+): Promise<boolean> {
+  try {
+    const nftAddress = openSeaLink.replace(
+      'https://opensea.io/assets/matic/',
+      ''
+    )
+    const [contractAddress, tokenId] = nftAddress.split('/')
+    // console.log(contractAddress)
+    // console.log(tokenId)
+    const ownerNFTs = await axios.get(
+      `https://polygon-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100&contractAddresses[]=${contractAddress}&withMetadata=false`
+    )
+    if (ownerNFTs.data) {
+      return (
+        ownerNFTs.data?.ownedNfts.filter(
+          (nft) => parseInt(nft.id.tokenId, 16).toString() === tokenId
+        ).length > 0
+      )
+    } else {
+      return false
+    }
+  } catch (error) {
+    console.error(error)
+    return false
+  }
+}
+
 export async function getLensProfile(address: string): Promise<{
   name: string | null
   avatar: string | null

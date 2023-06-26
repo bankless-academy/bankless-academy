@@ -26,7 +26,7 @@ import Card from 'components/Card'
 import MintKudos from 'components/MintKudos'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
-import { Mixpanel } from 'utils'
+import { isHolderOfNFT, Mixpanel } from 'utils'
 import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
 import { theme } from 'theme/index'
@@ -223,6 +223,29 @@ const Lesson = ({
     if ((slide.type === 'QUEST' || slide.type === 'END') && !address)
       setConnectWalletPopupLS(true)
   }, [address, slide])
+
+  useEffect((): void => {
+    const checkNFT = async () => {
+      const hasNFT = await isHolderOfNFT(address, lesson.nftGating)
+      if (!hasNFT) {
+        toast.closeAll()
+        toast({
+          title: "You don't own the required NFT",
+          description: lesson?.nftGatingRequirements,
+          status: 'warning',
+          duration: 20000,
+          isClosable: true,
+        })
+        closeLesson()
+      }
+    }
+    if (lesson.nftGating) {
+      if (!address) closeLesson()
+      else {
+        checkNFT()
+      }
+    }
+  }, [address])
 
   useEffect(() => {
     Mixpanel.track('open_lesson', { lesson: lesson?.name })

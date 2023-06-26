@@ -295,7 +295,12 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
         />
       </>
     )
-  else return <Box>{lessonImage}</Box>
+  else
+    return (
+      <Box onClick={() => setIsLessonOpenLS(true)} cursor="pointer">
+        {lessonImage}
+      </Box>
+    )
 }
 
 export default CollectLessonButton

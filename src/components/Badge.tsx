@@ -8,6 +8,7 @@ import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL } from 'constants/index'
 import { MINTKUDOS_URL, MINTKUDOS_OPENSEA_URL } from 'constants/kudos'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
+import NFT from 'components/NFT'
 
 const BadgeHelper = (
   <Helper
@@ -53,22 +54,6 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     share
   )}`
 
-  const Kudos = (
-    <Box>
-      {lesson.kudosImageLink.includes('.mp4') ? (
-        <video autoPlay loop playsInline muted>
-          <source src={lesson.kudosImageLink} type="video/mp4"></source>
-        </video>
-      ) : (
-        <ChakraImage
-          m="auto"
-          my="19px"
-          src={lesson.kudosImageLink}
-          height="250px"
-        />
-      )}
-    </Box>
-  )
   if (!isQuestCompleted) {
     return (
       <Box position="relative" w="250px" m="auto" my="6">
@@ -78,7 +63,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           overflow="hidden"
           opacity="0.5"
         >
-          {Kudos}
+          <NFT nftLink={lesson.kudosImageLink} />
         </Box>
         {BadgeHelper}
       </Box>
@@ -113,7 +98,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             overflow="hidden"
             border="1px solid #4b474b"
           >
-            {Kudos}
+            <NFT nftLink={lesson.kudosImageLink} />
           </Box>
           {isKudosMintedLS && (
             <Box

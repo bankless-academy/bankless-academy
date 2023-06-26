@@ -38,6 +38,11 @@ export interface LessonType {
   isPreview?: boolean
   sponsorName?: string
   sponsorLogo?: string
+  nftGating?: string
+  nftGatingRequirements?: string
+  nftGatingImageLink?: string
+  nftGatingLink?: string
+  nftGatingCTA?: string
   slides?: {
     type: SlideType
     title: string
