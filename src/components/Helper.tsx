@@ -52,6 +52,7 @@ const ButtonHelper = ({
   return (
     <Box
       position="absolute"
+      zIndex="2"
       top={isHover ? '-15px' : '-12px'}
       right={isHover ? '-15px' : '-12px'}
     >
