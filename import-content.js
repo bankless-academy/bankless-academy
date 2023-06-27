@@ -75,7 +75,14 @@ const PROTOCOL_VERSION = "0.001"
 
 const LESSON_SPLITTER = `<< LESSON START >>`
 
-const mdHeader = (lesson) => `
+const mdHeader = (lesson) => `---
+LESSON TITLE: ${lesson.name}
+DATA LOCATION: https://app.banklessacademy.com/lessons/${lesson.slug}.md
+PROTOCOL VERSION: ${PROTOCOL_VERSION}
+LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
+---
+
+\`\`\`
 __________________________________________________________________________________________________________________________________________________________
 
 $$$$$$$\\                      $$\\       $$\\                                      $$$$$$\\                           $$\\                                   
@@ -88,18 +95,16 @@ $$$$$$$  |\\$$$$$$$ |$$ |  $$ |$$ | \\$$\\ $$ |\\$$$$$$$\\ $$$$$$$  |$$$$$$$  | 
 \\_______/  \\_______|\\__|  \\__|\\__|  \\__|\\__| \\_______|\\_______/ \\_______/       \\__|  \\__| \\_______|\\_______| \\_______| \\_______|\\__| \\__| \\__| \\____$$ |
                                                                                                                                                $$\\   $$ |
                                                                                                                                                \\$$$$$$  |
-                                                                                                                                                \\______/ 
+                                                                                                                                                \\______/
 __________________________________________________________________________________________________________________________________________________________
+\`\`\`
+
 PORTABLE LESSON DATADISK™ COLLECTION
+
+\`\`\`
+${LESSON_SPLITTER}
+\`\`\`
 ---
-LESSON TITLE: ${lesson.name.toUpperCase()}
-DATA LOCATION: https://app.banklessacademy.com/lessons/${lesson.slug}.md
-PROTOCOL VERSION: ${PROTOCOL_VERSION}
-LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
-__________________________________________________________________________________________________________________________________________________________
-
-   ${LESSON_SPLITTER}
-
 `
 
 const PROJECT_DIR = process.env.PROJECT_DIR || ''

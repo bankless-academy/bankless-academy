@@ -58,13 +58,17 @@ const LessonCollectibleModal = ({
     language: 'markdown',
   }).value
 
+  const SPLIT = `\`\`\`
+<< LESSON START >>
+\`\`\``
+
   useEffect(() => {
     if (lesson?.slug) {
       fetch(`/lesson/${lesson.slug}.md`)
         .then((response) => response.text())
         .then((md) => {
-          const [intro, content] = md?.split('<< LESSON START >>')
-          setIntro(intro + '<< LESSON START >>')
+          const [intro, content] = md?.split(SPLIT)
+          setIntro(intro + SPLIT)
           setContent(content)
         })
     }
@@ -91,8 +95,10 @@ const LessonCollectibleModal = ({
             maxHeight={isMobileScreen ? 'calc( 100vh - 82px )' : '85vh'}
           >
             <Box
-              dangerouslySetInnerHTML={{ __html: intro }}
-              width="min-content"
+              dangerouslySetInnerHTML={{
+                __html: replaceImagesInMarkdown(intro),
+              }}
+              width="1100px"
               overflowX="scroll"
             />
             <Box
