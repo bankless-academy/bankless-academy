@@ -17,7 +17,11 @@ import Helper from 'components/Helper'
 import { useAccount } from 'wagmi'
 import { getLessonsCollected } from 'utils'
 import LessonCollectibleModal from 'components/LessonCollectibleModal'
-import { IS_WHITELABEL, TOKEN_GATING_ENABLED } from 'constants/index'
+import {
+  IS_WHITELABEL,
+  MD_ENABLED,
+  TOKEN_GATING_ENABLED,
+} from 'constants/index'
 
 const CollectiblesHelper = (
   <Helper
@@ -259,7 +263,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               }
             >
               {lessonImage}
-              {lesson.hasCollectible && (
+              {MD_ENABLED && lesson.hasCollectible && (
                 <Button
                   position="absolute"
                   size="sm"

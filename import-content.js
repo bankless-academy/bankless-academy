@@ -16,6 +16,8 @@ const config = require('./knexfile.js')
 const db = knex(config)
 const { TABLES } = require('./db.js')
 
+const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED || false
+
 const notion = new Client({
   auth: process.env.NOTION_SECRET,
 })
@@ -500,57 +502,59 @@ axios
 
           // TODO: remove old images (diff between old/new lesson.imageLinks)
 
-          // convert to MD
-          console.log(`Converting "${lesson.name}" to MD`)
-          try {
-            const mdblocks = await n2m.pageToMarkdown(notion.id)
-            const mdString = n2m.toMarkdownString(mdblocks)
-            // hide answers
-            let lessonContentMD = mdString?.parent?.replaceAll('[x]', '[ ]') || ''
-            // HACK: replace image
-            const imageRegex = /!\[.*?\]\((.*?)\)/g;
-            let match
-            let i = 0
-            while ((match = imageRegex.exec(lessonContentMD)) !== null) {
-              lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${lesson.imageLinks[i]}`)
-              i++
-            }
-            // write/update file
-            const lessonPath = `public/lesson/${lesson.slug}.md`
-            const lessonHeader = mdHeader(lesson)
-            if (fs.existsSync(lessonPath)) {
-              const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
-              if (lessonFile) {
-                const [previousLessonHeader, previousLessonContentMD] = lessonFile?.split(LESSON_SPLITTER)
-                // If content has changed
-                const plh = previousLessonHeader?.split('LAST UPDATED:')[0]
-                const lh = lessonHeader?.split('LAST UPDATED:')[0]
-                if (plh.trim() !== lh.trim() ||
-                  previousLessonContentMD.trim() !== lessonContentMD.trim()
-                ) {
-                  fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
-                    if (error) throw error
-                  })
-                  console.log(
-                    `"${lesson.name}" updated in ${lessonPath}`
+          if (MD_ENABLED) {
+            // convert to MD
+            console.log(`Converting "${lesson.name}" to MD`)
+            try {
+              const mdblocks = await n2m.pageToMarkdown(notion.id)
+              const mdString = n2m.toMarkdownString(mdblocks)
+              // hide answers
+              let lessonContentMD = mdString?.parent?.replaceAll('[x]', '[ ]') || ''
+              // HACK: replace image
+              const imageRegex = /!\[.*?\]\((.*?)\)/g;
+              let match
+              let i = 0
+              while ((match = imageRegex.exec(lessonContentMD)) !== null) {
+                lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${lesson.imageLinks[i]}`)
+                i++
+              }
+              // write/update file
+              const lessonPath = `public/lesson/${lesson.slug}.md`
+              const lessonHeader = mdHeader(lesson)
+              if (fs.existsSync(lessonPath)) {
+                const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
+                if (lessonFile) {
+                  const [previousLessonHeader, previousLessonContentMD] = lessonFile?.split(LESSON_SPLITTER)
+                  // If content has changed
+                  const plh = previousLessonHeader?.split('LAST UPDATED:')[0]
+                  const lh = lessonHeader?.split('LAST UPDATED:')[0]
+                  if (plh.trim() !== lh.trim() ||
+                    previousLessonContentMD.trim() !== lessonContentMD.trim()
+                  ) {
+                    fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
+                      if (error) throw error
+                    })
+                    console.log(
+                      `"${lesson.name}" updated in ${lessonPath}`
+                    )
+                  }
+                  else console.log(
+                    `"${lesson.name}" is unchanged`
                   )
                 }
-                else console.log(
-                  `"${lesson.name}" is unchanged`
+              }
+              else {
+                fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
+                  if (error) throw error
+                })
+                console.log(
+                  `"${lesson.name}" exported in ${lessonPath}`
                 )
               }
-            }
-            else {
-              fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
-                if (error) throw error
-              })
-              console.log(
-                `"${lesson.name}" exported in ${lessonPath}`
-              )
-            }
 
-          } catch (error) {
-            console.log(error)
+            } catch (error) {
+              console.log(error)
+            }
           }
         })
     })

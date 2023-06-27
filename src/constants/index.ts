@@ -113,4 +113,7 @@ export const KEYWORDS =
 
 export const SIWE_ENABLED = process.env.NEXT_PUBLIC_SIWE_ENABLED || false
 
-export const TOKEN_GATING_ENABLED = true
+export const TOKEN_GATING_ENABLED =
+  process.env.NEXT_PUBLIC_TOKEN_GATING_ENABLED || false
+
+export const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED || false
