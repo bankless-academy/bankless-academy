@@ -5,18 +5,19 @@ import {
   Button,
   useDisclosure,
   Image as ChakraImage,
+  useToast,
 } from '@chakra-ui/react'
 import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
 
 import MintCollectibleModal from 'components/MintCollectibleModal'
-import { getLessonsCollectors } from 'utils'
+import { getLessonsCollectors, isHolderOfNFT } from 'utils'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import { useAccount } from 'wagmi'
 import { getLessonsCollected } from 'utils'
 import LessonCollectibleModal from 'components/LessonCollectibleModal'
-import { IS_WHITELABEL } from 'constants/index'
+import { IS_WHITELABEL, TOKEN_GATING_ENABLED } from 'constants/index'
 
 const CollectiblesHelper = (
   <Helper
@@ -42,10 +43,37 @@ const CollectiblesHelper = (
   />
 )
 
-export const openLesson = (
+export const openLesson = async (
   openedLesson: string,
-  lesson: LessonType
-): string => {
+  lesson: LessonType,
+  toast: any,
+  address?: string
+): Promise<string> => {
+  if (TOKEN_GATING_ENABLED && lesson.nftGating) {
+    if (!address) {
+      toast.closeAll()
+      toast({
+        title: 'This is a token gated lesson',
+        description: 'Connect your wallet to access the lesson.',
+        status: 'warning',
+        duration: 20000,
+        isClosable: true,
+      })
+      return openedLesson
+    }
+    const hasNFT = await isHolderOfNFT(address, lesson.nftGating)
+    if (!hasNFT) {
+      toast.closeAll()
+      toast({
+        title: "You don't own the required NFT",
+        description: lesson?.nftGatingRequirements,
+        status: 'warning',
+        duration: 20000,
+        isClosable: true,
+      })
+      return openedLesson
+    }
+  }
   const openedLessonArray = JSON.parse(openedLesson)
   return JSON.stringify(
     [...openedLessonArray, lesson.slug].filter(
@@ -88,6 +116,7 @@ const CollectLessonButton = ({
     `lessonOpen`,
     JSON.stringify([])
   )
+  const toast = useToast()
 
   const isLessonCollected =
     !!lesson.LessonCollectibleTokenAddress?.length &&
@@ -223,7 +252,11 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               }}
               position="relative"
               minH="200px"
-              onClick={() => setOpenLessonLS(openLesson(openLessonLS, lesson))}
+              onClick={async () =>
+                setOpenLessonLS(
+                  await openLesson(openLessonLS, lesson, toast, address)
+                )
+              }
             >
               {lessonImage}
               {lesson.hasCollectible && (
@@ -313,7 +346,11 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
   else
     return (
       <Box
-        onClick={() => setOpenLessonLS(openLesson(openLessonLS, lesson))}
+        onClick={async () =>
+          setOpenLessonLS(
+            await openLesson(openLessonLS, lesson, toast, address)
+          )
+        }
         cursor="pointer"
       >
         {lessonImage}

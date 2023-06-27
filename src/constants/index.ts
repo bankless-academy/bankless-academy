@@ -112,3 +112,5 @@ export const KEYWORDS =
     : DEFAULT_KEYWORDS
 
 export const SIWE_ENABLED = process.env.NEXT_PUBLIC_SIWE_ENABLED || false
+
+export const TOKEN_GATING_ENABLED = true

@@ -1,8 +1,9 @@
-import { Button, Box, Image as ChakraImage } from '@chakra-ui/react'
+import { Button, Box, Image as ChakraImage, useToast } from '@chakra-ui/react'
 
 import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
 import { openLesson } from 'components/CollectLessonButton'
+import { useAccount } from 'wagmi'
 
 const LessonButton = ({
   lesson,
@@ -19,13 +20,20 @@ const LessonButton = ({
     `lessonOpen`,
     JSON.stringify([])
   )
+  const toast = useToast()
+  const { address } = useAccount()
+
   const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
   const lessonHasSponsor =
     lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
   return (
     <Box
-      onClick={() =>
-        click ? setOpenLessonLS(openLesson(openLessonLS, lesson)) : null
+      onClick={async () =>
+        click
+          ? setOpenLessonLS(
+              await openLesson(openLessonLS, lesson, toast, address)
+            )
+          : null
       }
     >
       {lessonHasSponsor && (

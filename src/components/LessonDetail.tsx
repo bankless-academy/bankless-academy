@@ -14,7 +14,7 @@ import { useSmallScreen } from 'hooks'
 import LessonButton from 'components/LessonButton'
 import NFT from 'components/NFT'
 import ExternalLink from './ExternalLink'
-import { DOMAIN_URL } from 'constants/index'
+import { DOMAIN_URL, TOKEN_GATING_ENABLED } from 'constants/index'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -44,7 +44,8 @@ const LessonDetail = ({
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
 
-  const hasLessonGating = lesson?.nftGating && lesson?.nftGatingRequirements
+  const hasLessonGating =
+    TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
 
   return (
     <>

@@ -27,7 +27,7 @@ import MintKudos from 'components/MintKudos'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
 import { isHolderOfNFT, Mixpanel } from 'utils'
-import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
+import { IS_WHITELABEL, KEYWORDS, TOKEN_GATING_ENABLED } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
 import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
@@ -239,7 +239,7 @@ const Lesson = ({
         closeLesson()
       }
     }
-    if (lesson.nftGating) {
+    if (TOKEN_GATING_ENABLED && lesson.nftGating) {
       if (!address) {
         toast.closeAll()
         toast({
