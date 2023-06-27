@@ -267,12 +267,18 @@ export async function validateOnchainQuest(
             check.push(true)
             console.log('OK wallet interaction')
           }
-          // Velodrome router contract
-          const velodromeRouter =
+          // Velodrome v1 router contract
+          const velodromeRouterV1 =
             '0x9c12939390052919af3155f41bf4160fd3666a6f'.toLowerCase()
+          // Velodrome v2 router contract
+          const velodromeRouterV2 =
+            '0xa062ae8a9c5e11aaa026fc2670b0d65ccc8b2858'.toLowerCase()
           if (
-            [velodromeRouter].includes(txDetails.to.toLowerCase()) ||
-            txDetails.data.includes(velodromeRouter.substring(2))
+            [velodromeRouterV1, velodromeRouterV2].includes(
+              txDetails.to.toLowerCase()
+            ) ||
+            txDetails.data.includes(velodromeRouterV1.substring(2)) ||
+            txDetails.data.includes(velodromeRouterV2.substring(2))
           ) {
             check.push(true)
             console.log('OK Velodrome router contract interaction')
