@@ -64,13 +64,20 @@ const LessonCollectibleModal = ({
 
   useEffect(() => {
     if (lesson?.slug) {
-      fetch(`/lesson/${lesson.slug}.md`)
-        .then((response) => response.text())
-        .then((md) => {
-          const [intro, content] = md?.split(SPLIT)
-          setIntro(intro + SPLIT)
-          setContent(content)
-        })
+      try {
+        fetch(`/lesson/en/${lesson.slug}.md`)
+          .then((response) => response.text())
+          .then((md) => {
+            // console.log('md', md)
+            if (md[0] !== '<') {
+              const [intro, content] = md?.split(SPLIT)
+              setIntro(intro + SPLIT)
+              setContent(content)
+            }
+          })
+      } catch (error) {
+        console.error(error)
+      }
     }
   }, [lesson])
   return (

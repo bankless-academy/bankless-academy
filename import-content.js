@@ -71,13 +71,13 @@ n2m.setCustomTransformer("image", async (b) => {
   return `![](https://www.notion.so/image/${encodeURIComponent(b?.image?.file?.url?.split('?')[0].replace('https://s3.', 'https://s3-'))}?table=block&id=${b?.id})`
 })
 
-const PROTOCOL_VERSION = "0.001"
+const PROTOCOL_VERSION = "0.01"
 
 const LESSON_SPLITTER = `<< LESSON START >>`
 
 const mdHeader = (lesson) => `---
 LESSON TITLE: ${lesson.name}
-DATA LOCATION: https://app.banklessacademy.com/lessons/${lesson.slug}.md
+LESSON LINK: https://app.banklessacademy.com/lessons/${lesson.slug}
 PROTOCOL VERSION: ${PROTOCOL_VERSION}
 LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
 ---
@@ -163,7 +163,7 @@ const get_img = (imageLink, slug, image_name) => {
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
   const hash = crc32(file_name)
-  const image_dir = `/${PROJECT_DIR}lesson/${slug}`
+  const image_dir = `/${PROJECT_DIR}lesson/images/${slug}`
   const local_image_dir = `public${image_dir}`
   // create image directory dynamically in case it doesn't exist yet
   if (!fs.existsSync(local_image_dir)) {
@@ -415,7 +415,7 @@ axios
                 const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|mp4|gif)\?table=/)[1]
                 // create "unique" hash based on Notion imageLink (different when re-uploaded)
                 const hash = crc32(imageLink)
-                const image_dir = `/${PROJECT_DIR}lesson/${lesson.slug}`
+                const image_dir = `/${PROJECT_DIR}lesson/images/${lesson.slug}`
                 const local_image_dir = `public${image_dir}`
                 // create image directory dynamically in case it doesn't exist yet
                 if (!fs.existsSync(local_image_dir)) {
@@ -522,7 +522,7 @@ axios
                 i++
               }
               // write/update file
-              const lessonPath = `public/lesson/${lesson.slug}.md`
+              const lessonPath = `public/lesson/en/${lesson.slug}.md`
               const lessonHeader = mdHeader(lesson)
               if (fs.existsSync(lessonPath)) {
                 const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
