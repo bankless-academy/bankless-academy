@@ -7,3 +7,5 @@ targets:
 files:
   - source: /public/lesson/*.md
     translation: /translations/%two_letters_code%/%original_file_name%
+  - source: /src/constants/lessons.ts
+    translation: /src/constants/lessons_%two_letters_code%.ts
