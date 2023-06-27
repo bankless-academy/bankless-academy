@@ -1,0 +1,6 @@
+targets:
+  - name: lessons
+    sources:
+      - /public/lesson/*.md
+    file: /public/lesson/%language%.strings
+    format: macosx
