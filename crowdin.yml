@@ -4,3 +4,6 @@ targets:
       - /public/lesson/*.md
     file: /public/lesson/%language%.strings
     format: macosx
+files:
+  - source: /public/lesson/*.md
+    translation: /translations/%two_letters_code%/%original_file_name%
