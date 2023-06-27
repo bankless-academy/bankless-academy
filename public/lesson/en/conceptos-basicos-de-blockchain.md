@@ -1,8 +1,9 @@
 ---
 LESSON TITLE: Conceptos Básicos de Blockchain
 LESSON LINK: https://app.banklessacademy.com/lessons/conceptos-basicos-de-blockchain
-PROTOCOL VERSION: 0.01
+LANGUAGE: English
 LAST UPDATED: 27/06/2023
+PROTOCOL VERSION: 0.01
 ---
 
 ```

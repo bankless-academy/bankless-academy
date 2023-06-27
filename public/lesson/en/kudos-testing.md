@@ -1,8 +1,9 @@
 ---
 LESSON TITLE: Kudos testing
 LESSON LINK: https://app.banklessacademy.com/lessons/kudos-testing
-PROTOCOL VERSION: 0.01
+LANGUAGE: English
 LAST UPDATED: 27/06/2023
+PROTOCOL VERSION: 0.01
 ---
 
 ```

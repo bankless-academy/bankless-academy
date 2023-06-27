@@ -78,8 +78,9 @@ const LESSON_SPLITTER = `<< LESSON START >>`
 const mdHeader = (lesson) => `---
 LESSON TITLE: ${lesson.name}
 LESSON LINK: https://app.banklessacademy.com/lessons/${lesson.slug}
-PROTOCOL VERSION: ${PROTOCOL_VERSION}
+LANGUAGE: English
 LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
+PROTOCOL VERSION: ${PROTOCOL_VERSION}
 ---
 
 \`\`\`
