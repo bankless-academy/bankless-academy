@@ -206,9 +206,14 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               onClick={() => onOpenMintCollectibleModal()}
             >
               {CollectiblesHelper}
-              <Box>
-                <Box>Collectible Minted</Box>
-                <Box fontSize="xs">- {numberOfOwners}/100 claimed -</Box>
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                fontSize="lg"
+              >
+                <Box fontWeight="bold">Collectible Minted</Box>
+                <Box ml="4">({numberOfOwners}/100 claimed)</Box>
               </Box>
             </Box>
           ) : isKudosMintedLS ? (
@@ -223,9 +228,14 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               onClick={() => onOpenMintCollectibleModal()}
             >
               {CollectiblesHelper}
-              <Box>
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                fontSize="lg"
+              >
                 <Box fontWeight="bold">⚒️ Mint Collectible</Box>
-                <Box fontSize="xs">- {numberOfOwners}/100 claimed -</Box>
+                <Box ml="4">({numberOfOwners}/100 claimed)</Box>
               </Box>
             </Box>
           ) : (
@@ -238,9 +248,15 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               position="relative"
             >
               {CollectiblesHelper}
-              <Box color="#F1B15A">
+              <Box
+                color="#F1B15A"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                fontSize="lg"
+              >
                 <Box fontWeight="bold">Complete to Collect</Box>
-                <Box fontSize="xs">- {numberOfOwners}/100 claimed -</Box>
+                <Box ml="4">({numberOfOwners}/100 claimed)</Box>
               </Box>
             </Box>
           )}
@@ -249,6 +265,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             maxW="500px"
             borderX="1px solid #4b474b"
             borderBottom="1px solid #4b474b"
+            borderBottomRadius={isKudosMintedLS && isLessonMintedLS ? 0 : '8px'}
           >
             <Box
               style={{
@@ -280,7 +297,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               )}
             </Box>
           </Box>
-          {isKudosMintedLS && (
+          {isKudosMintedLS && isLessonMintedLS && (
             <Box
               border="1px solid #4b474b"
               borderBottomRadius="8px"
@@ -288,50 +305,42 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               textAlign="center"
               p="10px"
             >
-              {isLessonMintedLS ? (
-                <>
-                  <Box pb="2">
-                    <ExternalLink href={twitterLink} mr="2">
-                      <Button
-                        variant="primaryGold"
-                        isFullWidth
-                        borderBottomRadius="0"
-                        leftIcon={
-                          <ChakraImage
-                            width="24px"
-                            height="24px"
-                            src="/images/Twitter.svg"
-                          />
-                        }
-                      >
-                        Share on Twitter
-                      </Button>
-                    </ExternalLink>
-                  </Box>
-                  <ExternalLink
-                    href={`https://testnets.opensea.io/assets/optimism-goerli/${lesson.LessonCollectibleTokenAddress}/${tokenId}`}
+              <Box pb="2">
+                <ExternalLink href={twitterLink} mr="2">
+                  <Button
+                    variant="primaryGold"
+                    isFullWidth
+                    borderBottomRadius="0"
+                    leftIcon={
+                      <ChakraImage
+                        width="24px"
+                        height="24px"
+                        src="/images/Twitter.svg"
+                      />
+                    }
                   >
-                    <Button
-                      variant="primaryGold"
-                      isFullWidth
-                      borderTopRadius="0"
-                      leftIcon={
-                        <ChakraImage
-                          width="24px"
-                          height="24px"
-                          src="/images/OpenSea.svg"
-                        />
-                      }
-                    >
-                      View on OpenSea
-                    </Button>
-                  </ExternalLink>
-                </>
-              ) : (
-                <>
-                  <b>Price:</b> 0.05 Ξ
-                </>
-              )}
+                    Share on Twitter
+                  </Button>
+                </ExternalLink>
+              </Box>
+              <ExternalLink
+                href={`https://testnets.opensea.io/assets/optimism-goerli/${lesson.LessonCollectibleTokenAddress}/${tokenId}`}
+              >
+                <Button
+                  variant="primaryGold"
+                  isFullWidth
+                  borderTopRadius="0"
+                  leftIcon={
+                    <ChakraImage
+                      width="24px"
+                      height="24px"
+                      src="/images/OpenSea.svg"
+                    />
+                  }
+                >
+                  View on OpenSea
+                </Button>
+              </ExternalLink>
             </Box>
           )}
         </Box>
