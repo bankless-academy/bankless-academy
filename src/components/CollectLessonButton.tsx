@@ -175,7 +175,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
   )}`
 
   const lessonImage = (
-    <>
+    <Box my="2">
       {isLessonCollected ? (
         <video autoPlay loop playsInline muted>
           <source
@@ -186,7 +186,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
       ) : (
         <Image src={lesson.lessonImageLink} />
       )}
-    </>
+    </Box>
   )
 
   if (lesson.hasCollectible)
@@ -349,11 +349,13 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           onClose={onCloseMintCollectibleModal}
           lesson={lesson}
         />
-        <LessonCollectibleModal
-          isOpen={isOpenLessonCollectibleModal}
-          onClose={onCloseLessonCollectibleModal}
-          lesson={lesson}
-        />
+        {MD_ENABLED && (
+          <LessonCollectibleModal
+            isOpen={isOpenLessonCollectibleModal}
+            onClose={onCloseLessonCollectibleModal}
+            lesson={lesson}
+          />
+        )}
       </>
     )
   else

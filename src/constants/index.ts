@@ -111,9 +111,10 @@ export const KEYWORDS =
     ? WHITELABEL_KEYWORDS
     : DEFAULT_KEYWORDS
 
-export const SIWE_ENABLED = process.env.NEXT_PUBLIC_SIWE_ENABLED || false
+export const SIWE_ENABLED =
+  process.env.NEXT_PUBLIC_SIWE_ENABLED === 'true' || false
 
 export const TOKEN_GATING_ENABLED =
-  process.env.NEXT_PUBLIC_TOKEN_GATING_ENABLED || false
+  process.env.NEXT_PUBLIC_TOKEN_GATING_ENABLED === 'true' || false
 
-export const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED || false
+export const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED === 'true' || false
