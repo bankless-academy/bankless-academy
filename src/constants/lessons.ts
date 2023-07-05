@@ -673,8 +673,8 @@ const LESSONS: LessonType[] = [
     publicationStatus: 'hidden',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
-    endOfLessonRedirect: null,
-    endOfLessonText: undefined,
+    endOfLessonRedirect: 'https://tally.so/r/w2BGOD',
+    endOfLessonText: 'Esperamos hayas disfrutado nuestra primera lección en español. Para dejar comentarios o sugerencias, presiona Next.',
     notionId: 'fd14e05114294d6282713809742f79a4',
     slug: 'conceptos-basicos-de-blockchain',
     imageLinks: [
