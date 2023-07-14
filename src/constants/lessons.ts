@@ -660,7 +660,7 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/conceptos-basicos-de-blockchain/kudos-b0048cdb.png',
     lessonImageLink: '/lesson/conceptos-basicos-de-blockchain/lesson-c84db284.png',
-    socialImageLink: '/lesson/conceptos-basicos-de-blockchain/social-07ea2639.jpg',
+    socialImageLink: '/lesson/conceptos-basicos-de-blockchain/social-974b8d8f.jpg',
     learningActions: '',
     marketingDescription: 'Las blockchains hacen posible las criptomonedas, DeFi y Web3. Descubre cómo se construyen y cómo funcionan las redes blockchain.',
     kudosId: 2563,
