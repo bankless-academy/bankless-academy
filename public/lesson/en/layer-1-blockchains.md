@@ -2,7 +2,7 @@
 LESSON TITLE: Layer 1 Blockchains
 LESSON LINK: https://app.banklessacademy.com/lessons/layer-1-blockchains
 LANGUAGE: English
-LAST UPDATED: 27/06/2023
+LAST UPDATED: 14/07/2023
 PROTOCOL VERSION: 0.01
 ---
 

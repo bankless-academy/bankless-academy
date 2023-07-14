@@ -2,7 +2,7 @@
 LESSON TITLE: DEX Aggregators
 LESSON LINK: https://app.banklessacademy.com/lessons/dex-aggregators
 LANGUAGE: English
-LAST UPDATED: 27/06/2023
+LAST UPDATED: 14/07/2023
 PROTOCOL VERSION: 0.01
 ---
 
