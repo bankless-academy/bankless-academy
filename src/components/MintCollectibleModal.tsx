@@ -6,6 +6,7 @@ import {
   ModalCloseButton,
   ModalBody,
   useMediaQuery,
+  Box,
 } from '@chakra-ui/react'
 
 import { LessonType } from 'entities/lesson'
@@ -33,8 +34,17 @@ const MintCollectibleModal = ({
         border={isMobileScreen ? '0' : '2px solid #B68BCC'}
         borderRadius={isMobileScreen ? '0' : '3xl'}
         backdropFilter="blur(10px)"
+        overflowY="auto"
       >
-        <ModalHeader>Collect Lesson</ModalHeader>
+        <ModalHeader>
+          Collect Lesson
+          <Box mt="4" fontSize="md" fontWeight="normal">
+            Bankless Academy is issuing a small quantity of portable datadisk
+            devices in an effort to decentralize Bankless Academy content, while
+            funding education public goods. Collect yours to become a Guardian
+            of Bankless Academy.
+          </Box>
+        </ModalHeader>
         <ModalCloseButton />
         <ModalBody padding={isMobileScreen ? '0' : 'default'}>
           {lesson.LessonCollectibleMintID && (
