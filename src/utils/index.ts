@@ -447,9 +447,8 @@ export async function getArticlesCollected(address: string): Promise<string[]> {
 
 export async function getLessonsCollected(address: string): Promise<string[]> {
   try {
-    // TODO: replace with mainet
     const ownerNFTs = await axios.get(
-      `https://opt-goerli.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100${COLLECTIBLE_ADDRESSES.map(
+      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100${COLLECTIBLE_ADDRESSES.map(
         (collectibleAddress) => `&contractAddresses[]=${collectibleAddress}`
       ).join('')}&withMetadata=false`
     )
@@ -473,9 +472,8 @@ export async function getLessonsCollectors(
   collectibleAddress: string
 ): Promise<any[]> {
   try {
-    // TODO: replace with mainet
     const NFTCollectors = await axios.get(
-      `https://opt-goerli.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getOwnersForCollection?contractAddress=${collectibleAddress}&withTokenBalances=true`
+      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getOwnersForCollection?contractAddress=${collectibleAddress}&withTokenBalances=true`
     )
     // console.log(NFTCollectors.data)
     return NFTCollectors.data?.ownerAddresses || []

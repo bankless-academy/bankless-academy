@@ -166,7 +166,7 @@ const CollectLessonButton = ({
   }, [address])
 
   const share = `I've just bought a @BanklessAcademy "${lesson.name}" Lesson DATADISK™ to support the content production.
-https://testnets.opensea.io/assets/optimism-goerli/${lesson.LessonCollectibleTokenAddress}/${tokenId}
+https://opensea.io/assets/optimism/${lesson.LessonCollectibleTokenAddress}/${tokenId}
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 
@@ -324,7 +324,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 </ExternalLink>
               </Box>
               <ExternalLink
-                href={`https://testnets.opensea.io/assets/optimism-goerli/${lesson.LessonCollectibleTokenAddress}/${tokenId}`}
+                href={`https://opensea.io/assets/optimism/${lesson.LessonCollectibleTokenAddress}/${tokenId}`}
               >
                 <Button
                   variant="primaryGold"
