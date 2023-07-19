@@ -79,8 +79,8 @@ const mdHeader = (lesson) => `---
 LESSON TITLE: ${lesson.name}
 LESSON LINK: https://app.banklessacademy.com/lessons/${lesson.slug}
 LANGUAGE: English
-LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
 PROTOCOL VERSION: ${PROTOCOL_VERSION}
+LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
 ---
 
 \`\`\`
@@ -160,7 +160,7 @@ const slugify = (text) => text.toLowerCase()
 
 const get_img = (imageLink, slug, image_name) => {
   const [file_name] = imageLink.split('?')
-  const file_extension = file_name.match(/\.(png|svg|jpg|jpeg|webp|mp4|gif)/)[1].replace('jpeg', 'jpg')
+  const file_extension = file_name.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/)[1].replace('jpeg', 'jpg')
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
   const hash = crc32(file_name)
@@ -413,7 +413,7 @@ axios
               // download images locally
               const imageLinks = [...slide.content.matchAll(/<img src='(.*?)'/gm)].map(a => a[1])
               for (const imageLink of imageLinks) {
-                const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|mp4|gif)\?table=/)[1]
+                const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)\?table=/)[1]
                 // create "unique" hash based on Notion imageLink (different when re-uploaded)
                 const hash = crc32(imageLink)
                 const image_dir = `/${PROJECT_DIR}lesson/images/${lesson.slug}`
@@ -490,12 +490,15 @@ axios
           lesson.slides = slides
           // console.log('lesson', lesson)
 
-          // TEMP:
           if (lesson.hasCollectible) {
-            lesson.lessonImageLink = 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png?2'
-            lesson.lessonCollectedImageLink = 'https://link.assetfile.io/1FoR1qWkJ7CvtdzJIYhP3I/Screenshot+2023-04-18+at+11.43.53+copy2.png?2'
-            lesson.lessonCollectibleVideo = 'https://link.assetfile.io/4izrmKkAKuvVJTCCXikhSa/transparentWebmTest.webm?2'
-            lesson.socialImageLink = 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?2'
+            lesson.lessonImageLink = 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png?3'
+            if (lesson.lessonCollectedImageLink) {
+              lesson.lessonCollectedImageLink = get_img(lesson.lessonCollectedImageLink, lesson.slug, 'datadisk-collected')
+            }
+            if (lesson.lessonCollectibleVideo) {
+              lesson.lessonCollectibleVideo = get_img(lesson.lessonCollectibleVideo, lesson.slug, 'datadisk-video')
+            }
+            lesson.socialImageLink = 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?3'
           }
 
           lessons[index] = lesson
@@ -514,6 +517,27 @@ axios
               const mdString = n2m.toMarkdownString(mdblocks)
               // hide answers
               let lessonContentMD = mdString?.parent?.replaceAll('[x]', '[ ]') || ''
+              lessonContentMD = lessonContentMD.replaceAll('\n\n\n\n', '\n\n')
+              lessonContentMD = lessonContentMD.replaceAll('\n\n\n', '\n\n')
+              const slides = lessonContentMD.split('\n# ')
+              slides.shift()
+              let quiz_nb = 0
+              let j = 0
+              for (const slide of slides) {
+                const slide_array = slide.split('\n')
+                let slide_title = slide_array.shift()
+                const slide_content = slide_array.join('\n')
+                // console.log(slide_title)
+                // console.log(slide_content)
+                if (slide_content.includes('- [ ]')) {
+                  quiz_nb++
+                  slide_title = `Knowledge Check ${quiz_nb}`
+                }
+                slides[j] = `\n# ${slide_title}\n${slide_content}`
+                j++
+              }
+              lessonContentMD = slides.join("")
+
               // HACK: replace image
               const imageRegex = /!\[.*?\]\((.*?)\)/g;
               let match

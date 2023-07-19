@@ -2,8 +2,8 @@
 LESSON TITLE: Kudos testing
 LESSON LINK: https://app.banklessacademy.com/lessons/kudos-testing
 LANGUAGE: English
-LAST UPDATED: 14/07/2023
 PROTOCOL VERSION: 0.01
+LAST UPDATED: 19/07/2023
 ---
 
 ```

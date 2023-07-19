@@ -2,8 +2,8 @@
 LESSON TITLE: Bankless Archetypes
 LESSON LINK: https://app.banklessacademy.com/lessons/bankless-archetypes
 LANGUAGE: English
-LAST UPDATED: 14/07/2023
 PROTOCOL VERSION: 0.01
+LAST UPDATED: 19/07/2023
 ---
 
 ```
@@ -30,12 +30,9 @@ ________________________________________________________________________________
 
 # **Introduction**
 
-
 Answer the following questions to determine your Bankless archetype.
 
-
-# ✅ Knowledge Check: risk
-
+# Knowledge Check 1
 
 What is your crypto tolerance risk?
 
@@ -45,8 +42,7 @@ What is your crypto tolerance risk?
 - [ ] 4 - risky
 - [ ] 5 - very risky
 
-# ✅ Knowledge Check: self sovereignty
-
+# Knowledge Check 2
 
 How self sovereignty are you?
 
@@ -56,8 +52,7 @@ How self sovereignty are you?
 - [ ] 4 - …
 - [ ] 5 - relying 100% on crypto
 
-# ✅ Knowledge Check: DEX
-
+# Knowledge Check 3
 
 How often are using DEXs?
 
@@ -67,8 +62,7 @@ How often are using DEXs?
 - [ ] 4 - …
 - [ ] 5 - very often
 
-# ✅ Knowledge Check: trade
-
+# Knowledge Check 4
 
 How often are you trading?
 
@@ -78,8 +72,7 @@ How often are you trading?
 - [ ] 4 - …
 - [ ] 5 - trading daily
 
-# ✅ Knowledge Check: LP
-
+# Knowledge Check 5
 
 How often are you LPing?
 
@@ -89,8 +82,7 @@ How often are you LPing?
 - [ ] 4 - …
 - [ ] 5 - very often
 
-# ✅ Knowledge Check: long term investor
-
+# Knowledge Check 6
 
 Are you a long term investor?
 
@@ -100,8 +92,7 @@ Are you a long term investor?
 - [ ] 4 - …
 - [ ] 5 - very long term investor (never sold)
 
-# ✅ Knowledge Check: works in a DAO
-
+# Knowledge Check 7
 
 Are you involved in DAOs?
 
@@ -111,8 +102,7 @@ Are you involved in DAOs?
 - [ ] 4 - …
 - [ ] 5 - DAOing a lot!
 
-# ✅ Knowledge Check: crypto knowledge
-
+# Knowledge Check 8
 
 How knowledgable about crypto are you?
 
@@ -122,8 +112,7 @@ How knowledgable about crypto are you?
 - [ ] 4 - …
 - [ ] 5 - I’m an expert
 
-# ✅ Knowledge Check: crypto donation
-
+# Knowledge Check 9
 
 How often are you doing crypto donations?
 
@@ -133,8 +122,7 @@ How often are you doing crypto donations?
 - [ ] 4 - …
 - [ ] 5 - very often
 
-# ✅ Knowledge Check: buys stuff in crypto
-
+# Knowledge Check 10
 
 Have you ever bought something in crypto?
 
@@ -144,8 +132,7 @@ Have you ever bought something in crypto?
 - [ ] 4 - …
 - [ ] 5 - I buy everything in crypto
 
-# ✅ Knowledge Check: deployed smart contracts
-
+# Knowledge Check 11
 
 Have you ever deployed any smart contract?
 
@@ -155,8 +142,7 @@ Have you ever deployed any smart contract?
 - [ ] 4 - …
 - [ ] 5 - I’ve deployed many
 
-# ✅ Knowledge Check: Anon
-
+# Knowledge Check 12
 
 How anonymous are you?
 
@@ -166,8 +152,7 @@ How anonymous are you?
 - [ ] 4 - …
 - [ ] 5 - 100% anonymous, even gender, voice, …
 
-# ✅ Knowledge Check: Works in web3
-
+# Knowledge Check 13
 
 Do you work in web3
 
@@ -177,8 +162,7 @@ Do you work in web3
 - [ ] 4 - …
 - [ ] 5 - full time web3
 
-# ✅ Knowledge Check: Creates digital art
-
+# Knowledge Check 14
 
 Have you ever created digital art?
 
@@ -188,8 +172,7 @@ Have you ever created digital art?
 - [ ] 4 - …
 - [ ] 5 - I live from that
 
-# ✅ Knowledge Check: Owns Bitcoin
-
+# Knowledge Check 15
 
 Do you own Bitcoin?
 
@@ -199,8 +182,7 @@ Do you own Bitcoin?
 - [ ] 4 - …
 - [ ] 5 - Bitcoin is the only crypto I own
 
-# ✅ Knowledge Check: Owns NFTs
-
+# Knowledge Check 16
 
 How many NFTs do you own?
 
@@ -210,8 +192,7 @@ How many NFTs do you own?
 - [ ] 4 - …
 - [ ] 5 - 200+
 
-# ✅ Knowledge Check: aping into something new
-
+# Knowledge Check 17
 
 Do fast are you aping into something new?
 
@@ -221,8 +202,7 @@ Do fast are you aping into something new?
 - [ ] 4 - …
 - [ ] 5 - I ape without checking anything
 
-# ✅ Knowledge Check: owns shitcoins
-
+# Knowledge Check 18
 
 Do you own shitcoins?
 

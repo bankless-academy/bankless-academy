@@ -2,8 +2,8 @@
 LESSON TITLE: Going Bankless
 LESSON LINK: https://app.banklessacademy.com/lessons/going-bankless
 LANGUAGE: English
-LAST UPDATED: 14/07/2023
 PROTOCOL VERSION: 0.01
+LAST UPDATED: 19/07/2023
 ---
 
 ```
@@ -30,21 +30,15 @@ ________________________________________________________________________________
 
 # Intro
 
-
 What is the Bankless movement in 1-2 phrases.
-
 
 What is Bankless Academy: scalable learning platform to learn the basic on how to become Bankless.
 
-
 The usual way of learning Bankless Academy: learning slides + quiz, practice via quests, then after completion receive an onchain lesson badge that proves your knowledge.
-
 
 Requirement (who is this for?): web3 and tech curious + interest in self sovereignty
 
-
 # Goal of this lesson
-
 
 ## learn about yourself
 
@@ -53,33 +47,23 @@ Requirement (who is this for?): web3 and tech curious + interest in self soverei
 
 ## set goals for your Bankless journey
 
-
 You’ll receive a recap at the end of this lesson, then you’ll be able to start or continue your Bankless journey!
-
 
 Format: a bit of reading but mostly quizzes
 
-
 If that’s what you are here for, LFG!
-
 
 # What’s possible to achieve when your are Bankless?
 
-
 Be independent and have freedom.
-
 
 Trust the code instead of trusting human (always greedy).
 
-
 Open and accessible information.
-
 
 In the next slide we are going to ask questions to determine your Bankless archetype (why you are here).
 
-
-# ✅ Question to determine Bankless archetype
-
+# Knowledge Check 1
 
 Why are you interested in web3? (can select multiple answer)
 
@@ -90,8 +74,7 @@ Why are you interested in web3? (can select multiple answer)
 - [ ] censorship resistance
 - [ ] change the world
 
-# ✅ Question to determine Bankless archetype
-
+# Knowledge Check 2
 
 Do you trust Central Banks?
 
@@ -99,16 +82,14 @@ Do you trust Central Banks?
 - [ ] no
 - [ ] it depends
 
-# ✅ Question to determine Bankless archetype
-
+# Knowledge Check 3
 
 Are you worried about inflation?
 
 - [ ] yes
 - [ ] no really
 
-# ✅ Question to determine Bankless archetype
-
+# Knowledge Check 4
 
 Do you like web2 socials?
 
@@ -119,9 +100,7 @@ Do you like web2 socials?
 
 # Bankless level
 
-
 Self custody and cryptography are new paradigm and an evolution of web2.
-
 
 It’s an evolution of web2:
 
@@ -130,12 +109,9 @@ It’s an evolution of web2:
 
 It’s risky (scams) but you can gain a lot of freedom.
 
-
 In the next slides we are going to determine your level of Banklessness (how familiar your are with Bankless primitives).
 
-
-# ✅ Question to determine your Bankless level
-
+# Knowledge Check 5
 
 Select the topics you are familiar with (can select multiple answer)
 
@@ -145,8 +121,7 @@ Select the topics you are familiar with (can select multiple answer)
 - [ ] buy an NFT
 - [ ] join a DAO
 
-# ✅ Question to determine your Bankless level
-
+# Knowledge Check 6
 
 Select more topics you are familiar with (can select multiple answer)
 
@@ -156,8 +131,7 @@ Select more topics you are familiar with (can select multiple answer)
 - [ ] staking via LSD
 - [ ] I run a solo node
 
-# ✅ Question to determine your Bankless level
-
+# Knowledge Check 7
 
 Are you familiar with the term mentioned in previous slides.
 
@@ -168,18 +142,13 @@ Are you familiar with the term mentioned in previous slides.
 
 # The Bankless Journey
 
-
 Being Bankless is a spectrum and a journey.
-
 
 Bankless Academy can help you set goals and level up your skills.
 
-
 In the next slides we are going to help you set goals for your Bankless Journey.
 
-
-# ✅ Question to determine your Bankless goals
-
+# Knowledge Check 8
 
 Select the topics are you curious about (can select multiple answer)
 
@@ -189,8 +158,7 @@ Select the topics are you curious about (can select multiple answer)
 - [ ] buy an NFT
 - [ ] join a DAO
 
-# ✅ Question to determine your Bankless goals
-
+# Knowledge Check 9
 
 Select more topics are you curious about (can select multiple answer)
 
@@ -202,18 +170,13 @@ Select more topics are you curious about (can select multiple answer)
 
 # Quest
 
-
 Thanks for doing this lesson. Here is a recap of your Bankless profile.
-
 
 [dynamic image] 👉: includes your Bankless Archetype (crypto curious/learner/teacher/expert) + your Bankless score (x/100) + goals (list of topics to learn)
 
-
 You can download this image and share it on social media if you want with this link: [insert dynamic link]
 
-
 (vision: As you complete more lessons, you Bankless profile is going to evolve … could become a dynamic NFT)
-
 
 Here are our recommendations as next steps:
 

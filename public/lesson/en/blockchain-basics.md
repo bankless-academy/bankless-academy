@@ -2,8 +2,8 @@
 LESSON TITLE: Blockchain Basics
 LESSON LINK: https://app.banklessacademy.com/lessons/blockchain-basics
 LANGUAGE: English
-LAST UPDATED: 14/07/2023
 PROTOCOL VERSION: 0.01
+LAST UPDATED: 19/07/2023
 ---
 
 ```
@@ -30,21 +30,15 @@ ________________________________________________________________________________
 
 # Introduction
 
-
 `Blockchain` technology is a revolutionary way of storing and tracking data, while also making that data accessible to anyone. It is a way of organizing data in a single public list of all historical transactions that anyone can view but cannot edit. This public list of transactions is collectively known as the blockchain `ledger`.
-
 
 After examining the layers of a blockchain, we will be using a blockchain tool called a `block explorer` to look into the specifics of the Ethereum blockchain structure; we will zoom in on the Ethereum blockchain to view the **list** of blocks, the **transactions** within those blocks, and the **details** of each individual transaction.
 
-
 ![](https://app.banklessacademy.com/lesson/images/blockchain-basics/introduction-6d0b6137.svg)
-
 
 # Blockchain Structure
 
-
 The term blockchain can be used as a noun — the Bitcoin blockchain — or as an adjective — blockchain technology. Either way, `blockchain` refers to the entire structure cryptocurrencies are built on.
-
 
 Zooming in from the outside, there are 3 levels of structure in a blockchain:
 
@@ -54,12 +48,9 @@ Zooming in from the outside, there are 3 levels of structure in a blockchain:
 
 This three-tiered structure comes together to create a cryptographic ledger - an unalterable history of all transactions performed on the network.
 
-
 ![](https://app.banklessacademy.com/lesson/images/blockchain-basics/blockchain-structure-346dae14.svg)
 
-
-# ✅ quiz
-
+# Knowledge Check 1
 
 What is a blockchain?
 
@@ -70,21 +61,15 @@ What is a blockchain?
 
 # Examining the Ledger
 
-
 In typical money systems, we trust third parties like banks to keep track of how much money each person has. But, to be truly Bankless, we want a system that doesn’t require us to trust one entity to manage the ledger.
-
 
 The `ledger` is the list of ALL transactions ever made on a blockchain, and anyone can see it for `public` blockchains. Discrete groups of transactions from the ledger form the blocks that together make the blockchain.
 
-
 When new transactions are added to the ledger, balances stored at each `address` get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever. 
-
 
 ![](https://app.banklessacademy.com/lesson/images/blockchain-basics/examining-the-ledger-74e5f072.svg)
 
-
 # Transactions on the Ledger
-
 
 Let’s look at some example transactions:
 
@@ -93,24 +78,17 @@ Let’s look at some example transactions:
 
 Individual transactions show the _change_ in the amount of cryptocurrency for each address so the total result of all transactions IS the amount of cryptocurrency each address has.
 
-
 ---
-
 
 ⇒ Alice has lost 5 ETH
 
-
 ⇒ Bob has gained 3 ETH total (received 5, sent 2)
-
 
 ⇒ Charlie has gained 2 ETH
 
-
 ![](https://app.banklessacademy.com/lesson/images/blockchain-basics/transactions-on-the-ledger-f4f9d470.svg)
 
-
-# ✅ quiz
-
+# Knowledge Check 2
 
 Which of the following statement(s) is/are true for public blockchain ledgers?
 
@@ -121,18 +99,13 @@ Which of the following statement(s) is/are true for public blockchain ledgers?
 
 # Decentralization
 
-
 Not only are transactions included on a `blockchain` ledger unchangeable, they are also shared and distributed amongst a large network of computers. To make sure that no single entity has the power to change the data, the blockchain ledger is stored on every device, called a `node`, on the network.
-
 
 This shared data is what makes the blockchain ledger `decentralized`. No single authority or entity controls the data. Blockchains like Ethereum are also `public` because the ledger can be viewed by anyone. 
 
-
 We will see specifics of how new data is added and how we ensure everyone has a copy of the same data all the time in our upcoming Blockchain Theory lesson. For this lesson, just remember that the ledger data is shared by every computer running on the Ethereum network.
 
-
-# ✅ quiz
-
+# Knowledge Check 3
 
 What makes a blockchain decentralized?
 
@@ -143,18 +116,13 @@ What makes a blockchain decentralized?
 
 # Block Anatomy
 
-
 An important feature of blockchains is that past transaction data cannot be changed after it has been included in a block. This is because each block has a unique `block hash`, like a fingerprint, that is used to link the blocks together one after another. No one can change past transactions without changing that fingerprint and the fingerprint of EVERY block that follows it because each fingerprint depends on the previous one.
-
 
 So each `block` is simply a group of transactions put together in one file along with that block’s `block hash`. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected block_**chain**_. 
 
-
 ![](https://app.banklessacademy.com/lesson/images/blockchain-basics/block-anatomy-8ba3bea2.svg)
 
-
-# ✅ quiz
-
+# Knowledge Check 4
 
 What is the purpose of a block hash?
 
@@ -165,9 +133,7 @@ What is the purpose of a block hash?
 
 # Inside a Block
 
-
 Remember, `block` data is just a group of transactions put together. Looking within a single block, we see a list of transactions and some data about who created the block. 
-
 
 From our example earlier when discussing the blockchain ledger, both of those transactions might be grouped within one block, or spread out into multiple blocks over time. But no matter what block they are included in, they are all added to the overall blockchain ledger eventually.
 
@@ -176,12 +142,9 @@ From our example earlier when discussing the blockchain ledger, both of those tr
 
 Recall that each block must also reference the past block’s `block hash` to link the blockchain together.
 
-
 ![](https://app.banklessacademy.com/lesson/images/blockchain-basics/inside-a-block-b11c74ce.svg)
 
-
-# ✅ quiz
-
+# Knowledge Check 5
 
 The following information is contained in a block:
 
@@ -192,24 +155,17 @@ The following information is contained in a block:
 
 # Individual Transactions
 
-
 The data on any blockchain is simply a list of `transactions`, records of currency moved between users. Each transaction must be signed by the sender’s `digital signature` to be valid. 
-
 
 This is what you do when you confirm a transaction with a wallet, you are signing with your digital signature to authorize a transaction. You can think of it as the digital equivalent of physically signing a check, receipt, or credit card transaction.
 
-
 Transactions can be simple, like sending crypto assets, or more complex, such as swapping crypto assets or even deploying special code that executes when triggered, called `smart contracts`.
-
 
 Finally, each transaction has a unique digital identifier, called its `transaction hash`, that no other transaction has. This makes it easy to refer to any single transaction later on and ensures that the details of that transaction can’t be changed afterward.
 
-
 ![](https://app.banklessacademy.com/lesson/images/blockchain-basics/individual-transactions-2f6bf118.svg)
 
-
-# ✅ quiz
-
+# Knowledge Check 6
 
 Data on a blockchain is simply a list of transactions grouped into blocks. Examples of such transactions might include:
 
@@ -220,21 +176,15 @@ Data on a blockchain is simply a list of transactions grouped into blocks. Examp
 
 # User Addresses
 
-
 An `address` is a public identifier that anyone can look up on the blockchain. Like an email address, anyone can send funds to it but only someone who controls the `private key` can unlock and use the funds at that address.
-
 
 On Ethereum, an address always starts with _0x__________ and is 42 characters of numbers and letters derived from the `public key` of that address.
 
-
 When looking at a single transaction in a block explorer, we can see the From: and To: addresses. This doesn’t tell us who the _people_ are who control those addresses but allows any user to track the movement of cryptocurrency throughout the blockchain ledger.
-
 
 ![](https://app.banklessacademy.com/lesson/images/blockchain-basics/user-addresses-e9456d37.svg)
 
-
-# ✅ quiz
-
+# Knowledge Check 7
 
 What is true about blockchain addresses?
 

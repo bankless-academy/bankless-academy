@@ -2,8 +2,8 @@
 LESSON TITLE: Intro to DeFi
 LESSON LINK: https://app.banklessacademy.com/lessons/intro-to-defi
 LANGUAGE: English
-LAST UPDATED: 14/07/2023
 PROTOCOL VERSION: 0.01
+LAST UPDATED: 19/07/2023
 ---
 
 ```
@@ -30,30 +30,21 @@ ________________________________________________________________________________
 
 # DeFi Defined
 
-
 DeFi—short for `decentralized` finance—refers to the fast-growing ecosystem of financial products, protocols, and applications that operate on public `blockchain` networks.
-
 
 DeFi is rapidly transforming the world of finance with a range of new tools for putting crypto assets to work. It offers opportunities beyond simply buying crypto on a centralized exchange.  It allows anyone and everyone to build a decentralized, Bankless lifestyle.
 
-
 ![](https://app.banklessacademy.com/lesson/images/intro-to-defi/defi-defined-46782447.svg)
-
 
 # Why DeFi?
 
-
 DeFi gives anyone with an internet connection access to sophisticated financial tools: Trading, Options, Lending and Borrowing.
-
 
 DeFi offers these tools to users transparently and openly. Anyone can look at the code and verify that the contract does what it says it does, unlike what banks do with your money behind closed doors.
 
-
 There are no middlemen to intermediate or take a cut of your transactions.
 
-
-# Knowledge Check
-
+# Knowledge Check 1
 
 What does DeFi stand for? 
 
@@ -64,18 +55,13 @@ What does DeFi stand for?
 
 # **Earning Yield**
 
-
 There are a growing number of `DeFi` protocols that enable you to earn interest and other rewards by using your crypto assets. You can have access to financial products that you would typically need a bank or financial services firm to get—but without the paperwork, middleman, approval process, and other hassles of the traditional finance world.
-
 
 By removing the middleman, you also remove any service fees, dues, and commissions you would typically pay in the traditional finance world. With DeFi, you get to keep all the rewards, or yield earned from your assets. This is why DeFi is popular. 
 
-
 ![](https://app.banklessacademy.com/lesson/images/intro-to-defi/earning-yield-c5f123f8.svg)
 
-
-# Knowledge Check
-
+# Knowledge Check 2
 
 How can you earn yield with crypto?
 
@@ -86,18 +72,13 @@ How can you earn yield with crypto?
 
 # What You Can Do With DeFi
 
-
 `DeFi` transactions are `permissionless`. This refers to a public `blockchain` that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps. 
-
 
 `DApps` and DeFi platforms enable users to make more and more types of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.
 
-
 ![](https://app.banklessacademy.com/lesson/images/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg)
 
-
-# Knowledge Check
-
+# Knowledge Check 3
 
 Fill in the blank: DeFi transactions are ____.
 
@@ -108,21 +89,15 @@ Fill in the blank: DeFi transactions are ____.
 
 # **Investing**
 
-
 The most common `DeFi` transaction is to purchase some cryptocurrency with the expectation that it will be worth more in the future. This is known as investing.
-
 
 HODL is a term used for keeping crypto assets for a long time. Depending on who you ask, the HODL meme either comes from a typo of HOLD or it stands for **H**old **O**n for **D**ear **L**ife.
 
-
 DeFi allows early access to coins and tokens to find and invest in, before they are listed on centralized exchanges (CEX).
-
 
 ![](https://app.banklessacademy.com/lesson/images/intro-to-defi/investing-d99a6d1f.svg)
 
-
-# Knowledge Check
-
+# Knowledge Check 4
 
 What does HODL mean?
 
@@ -133,24 +108,17 @@ What does HODL mean?
 
 # Trading
 
-
 A decentralized exchange (DEX) shows current exchange rates between different crypto tokens and coins and serves as a digital marketplace that facilitates trading one currency for another by bringing together buyers and sellers. 
-
 
 The parties involved in a DEX trade don’t need to know or trust each other. In fact, it may appear that you are trading with the DEX. However, in most cases, the DEX creates `liquidity pools` that facilitate the trade between two traders’ `wallets` in a `permissionless` fashion.
 
-
 ![](https://app.banklessacademy.com/lesson/images/intro-to-defi/trading-8cd72977.svg)
-
 
 # So What?
 
-
 Anyone can trade and participate in markets regardless of your net asset worth. Anyone can enter or exit a position via on-chain protocols.
 
-
-# Knowledge Check
-
+# Knowledge Check 5
 
 What is a DEX?
 
@@ -161,18 +129,13 @@ What is a DEX?
 
 # **Lending & Borrowing**
 
-
 DeFi lending and borrowing offers loans without the need for a bank or intermediary institution. Instead, lending is done on a `peer-to-peer` level. That means transactions are between two parties and does not require a middleman or controlling entity.
-
 
 There are `DApps` that enable anyone to lend and borrow crypto assets. Similar to traditional loans, a lender will earn interest on the loan and the borrower will need to pay the principal of the loan plus interest.
 
-
 ![](https://app.banklessacademy.com/lesson/images/intro-to-defi/lending-borrowing-4fb1c7c3.svg)
 
-
-# Knowledge Check
-
+# Knowledge Check 6
 
 Fill in the blank: DeFi lending is done on a _____ level.
 
@@ -183,18 +146,13 @@ Fill in the blank: DeFi lending is done on a _____ level.
 
 # **Staking**
 
-
 DeFi staking is similar to lending, however it's a special type of lending. Instead of lending your crypto to another user on a `peer-to-peer` basis, you lend your crypto to a network or protocol. In exchange for helping secure the network or protocol, you earn rewards.
-
 
 Centralized exchanges also offer staking. However, like their trading pairs, the staking opportunities and rewards are limited. With DeFi, there are many more staking possibilities than there are with centralized exchanges. 
 
-
 ![](https://app.banklessacademy.com/lesson/images/intro-to-defi/staking-b4b4319d.svg)
 
-
-# Knowledge Check
-
+# Knowledge Check 7
 
 Lending your crypto to a protocol is an example of?
 
@@ -205,36 +163,25 @@ Lending your crypto to a protocol is an example of?
 
 # **DeFi Downsides**
 
-
 ![](https://app.banklessacademy.com/lesson/images/intro-to-defi/defi-downsides-51dd6225.svg)
-
 
 **Hackers**
 
-
 Where there is money and technology, there are people looking for ways to hack the system and take advantage of poor security measures.
-
 
 ![](https://app.banklessacademy.com/lesson/images/intro-to-defi/defi-downsides-3a6ce496.svg)
 
-
 **Risk**
-
 
 DeFi, like blockchain technology, runs on code. If there’s an error or loophole in the code, it can be exploited.
 
-
 ![](https://app.banklessacademy.com/lesson/images/intro-to-defi/defi-downsides-83a9391f.svg)
-
 
 **No recourse**
 
-
 Being decentralized also means there are no companies or government agencies that you can appeal to for help if something goes wrong.
 
-
-# Knowledge Check
-
+# Knowledge Check 8
 
 What is a risk in DeFi?
 
