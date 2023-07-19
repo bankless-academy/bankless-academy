@@ -543,7 +543,8 @@ axios
               let match
               let i = 0
               while ((match = imageRegex.exec(lessonContentMD)) !== null) {
-                lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${lesson.imageLinks[i]}`)
+                // TEMP FIX
+                lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${lesson.imageLinks[i].replace('lesson/images', 'lesson')}`)
                 i++
               }
               // write/update file

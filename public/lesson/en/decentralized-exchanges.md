@@ -36,7 +36,7 @@ Exchanging tokens is an essential part of using `DeFi`. In DeFi you’ll find a 
 
 Let's learn how they work and how they can best serve you.
 
-![](https://app.banklessacademy.com/lesson/images/decentralized-exchanges/what-is-a-decentralized-exchange-8ce458f2.svg)
+![](https://app.banklessacademy.com/lesson/decentralized-exchanges/what-is-a-decentralized-exchange-8ce458f2.svg)
 
 # Centralized and Decentralized Exchanges
 
@@ -46,7 +46,7 @@ Centralized Exchanges (`CEXs`) allow users to trade and invest in cryptocurrency
 
 Decentralized Exchanges (`DEXs`) enable users to trade cryptocurrency entirely in self-custody — the original intended purpose of blockchains. The peer-to-peer model allows you to act as both the consumer and the provider, accessing financial opportunities previously available only to the financial class. The blockchain system is both transparent and censorship-resistant, creating equal opportunity while protecting users from hackers, the state, or any participant seeking to gain an unfair advantage.
 
-![](https://app.banklessacademy.com/lesson/images/decentralized-exchanges/centralized-and-decentralized-exchanges-ad25050a.svg)
+![](https://app.banklessacademy.com/lesson/decentralized-exchanges/centralized-and-decentralized-exchanges-ad25050a.svg)
 
 # Knowledge Check 1
 
@@ -72,7 +72,7 @@ dApp services are facilitated using smart contracts, lines of code that take a u
 
 DEX smart contracts handle a variety of commands, like token swapping, voting, or adding and removing `liquidity`.
 
-![](https://app.banklessacademy.com/lesson/images/decentralized-exchanges/decentralized-applications-ee3321de.svg)
+![](https://app.banklessacademy.com/lesson/decentralized-exchanges/decentralized-applications-ee3321de.svg)
 
 # Decentralized Applications (continued)
 
@@ -88,7 +88,7 @@ Smart contracts are accounts on Ethereum — they have an address and balance, p
 
 `dApps` will typically use a website as a visual interface to help users interact with the underlying smart contracts. If the website is down, you can still access the smart contract with some experience!
 
-![](https://app.banklessacademy.com/lesson/images/decentralized-exchanges/decentralized-applications-continued-c1a4b467.svg)
+![](https://app.banklessacademy.com/lesson/decentralized-exchanges/decentralized-applications-continued-c1a4b467.svg)
 
 # Knowledge Check 2
 
@@ -118,7 +118,7 @@ In traditional markets and `CEXs`, your custodian uses an order book: a database
 
 AMMs route user trades through `liquidity pools`, rather than directly matching user bids and asks. These communal token vaults accumulate and dispense tokens according to user interactions, providing a more transparent and fair trade as compared to order book technology.
 
-![](https://app.banklessacademy.com/lesson/images/decentralized-exchanges/automated-market-makers-018428cb.svg)
+![](https://app.banklessacademy.com/lesson/decentralized-exchanges/automated-market-makers-018428cb.svg)
 
 # Knowledge Check 3
 
@@ -142,7 +142,7 @@ Cryptocurrency trades on the blockchain are called `token swaps`. These smart co
 
 In order for a smart contract to access our wallet, we grant it permission to withdraw funds up to a specified (or unlimited) amount. These `token allowances` enable trusted smart contracts to carry out our transactions without sharing our wallet private key. Granting permissions has a gas fee, so the permission is left open for future interactions with your wallet. This is one of the reasons why it is safer to use one wallet for trading, while reserving a separate wallet for holding. We’ll monitor and revoke token allowances in future content!
 
-![](https://app.banklessacademy.com/lesson/images/decentralized-exchanges/token-swaps-f1c9f932.svg)
+![](https://app.banklessacademy.com/lesson/decentralized-exchanges/token-swaps-f1c9f932.svg)
 
 # Token Swaps (continued)
 
@@ -154,7 +154,7 @@ Let’s take a look at an example swap to understand the permission and exchange
 
 The swap transaction is complete. Your USDC tokens have been swapped for OP, via ETH!
 
-![](https://app.banklessacademy.com/lesson/images/decentralized-exchanges/token-swaps-continued-0af4afc8.svg)
+![](https://app.banklessacademy.com/lesson/decentralized-exchanges/token-swaps-continued-0af4afc8.svg)
 
 # Knowledge Check 4
 
@@ -177,7 +177,7 @@ When there are more tokens, users making trades through the pool have less impac
 
 As an Explorer, you want the lowest price impact on your trades as possible, in order to receive the best deal! That means you want high, balanced liquidity.
 
-![](https://app.banklessacademy.com/lesson/images/decentralized-exchanges/what-is-liquidity-99bb4930.svg)
+![](https://app.banklessacademy.com/lesson/decentralized-exchanges/what-is-liquidity-99bb4930.svg)
 
 # Liquidity Providers
 
@@ -187,7 +187,7 @@ In a decentralized ecosystem, DeFi citizens are incentivized to provide liquidit
 
 There are a variety of considerations when becoming an `LP`, and we’ll cover this in future content. For now, know that the large APRs (annual percentage rates) displayed across DEX liquidity pools aren’t guaranteed, and there can be losses.
 
-![](https://app.banklessacademy.com/lesson/images/decentralized-exchanges/liquidity-providers-cd2b7547.svg)
+![](https://app.banklessacademy.com/lesson/decentralized-exchanges/liquidity-providers-cd2b7547.svg)
 
 # Knowledge Check 5
 
@@ -323,7 +323,7 @@ Before you interact with a dApp, there are some best practices you should follow
 
 Now you’re ready to interact with a Decentralized Exchange!
 
-![](https://app.banklessacademy.com/lesson/images/decentralized-exchanges/dex-best-practices-4a9ebcd4.svg)
+![](https://app.banklessacademy.com/lesson/decentralized-exchanges/dex-best-practices-4a9ebcd4.svg)
 
 # Knowledge Check 8
 

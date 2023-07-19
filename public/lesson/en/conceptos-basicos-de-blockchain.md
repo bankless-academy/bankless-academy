@@ -34,7 +34,7 @@ La tecnología de `blockchain` es una forma revolucionaria de almacenar y rastre
 
 Después de examinar las capas de una blockchain, utilizaremos una herramienta de blockchain llamada `explorador de bloques` para investigar los detalles de la estructura de la blockchain de Ethereum. Nuestro foco será ver y analizar: la **lista** de bloques, las **transacciones** dentro de esos bloques y los **detalles** de cada transacción de manera individual.
 
-![](https://app.banklessacademy.com/lesson/images/conceptos-basicos-de-blockchain/introduccin-dd17f448.svg)
+![](https://app.banklessacademy.com/lesson/conceptos-basicos-de-blockchain/introduccin-dd17f448.svg)
 
 # Estructura de la Blockchain
 
@@ -48,7 +48,7 @@ Al acercarnos desde el exterior, existen 3 niveles de estructura en una blockcha
 
 Esta estructura de tres niveles se une para crear un libro de contabilidad criptográfico: un historial inmutable de todas las transacciones realizadas en la red.
 
-![](https://app.banklessacademy.com/lesson/images/conceptos-basicos-de-blockchain/estructura-de-la-blockchain-06363800.svg)
+![](https://app.banklessacademy.com/lesson/conceptos-basicos-de-blockchain/estructura-de-la-blockchain-06363800.svg)
 
 # Knowledge Check 1
 
@@ -67,7 +67,7 @@ El `ledger` es la lista de TODAS las transacciones realizadas en una blockchain,
 
 Cuando se añaden nuevas transacciones al ledger, los saldos almacenados en cada `dirección` se actualizan; y las transacciones pasadas no se pueden alterar. Es como permitir que todos vean el historial completo de transacciones de la cuenta bancaria de todos, en cualquier momento y para siempre.
 
-![](https://app.banklessacademy.com/lesson/images/conceptos-basicos-de-blockchain/examinando-el-ledger-a08c89ad.svg)
+![](https://app.banklessacademy.com/lesson/conceptos-basicos-de-blockchain/examinando-el-ledger-a08c89ad.svg)
 
 # Transacciones en el Ledger
 
@@ -86,7 +86,7 @@ Las transacciones individuales muestran el _cambio_ en la cantidad de criptomone
 
 ⇒ Charlie ha ganado 2 ETH
 
-![](https://app.banklessacademy.com/lesson/images/conceptos-basicos-de-blockchain/transacciones-en-el-ledger-32f9f247.svg)
+![](https://app.banklessacademy.com/lesson/conceptos-basicos-de-blockchain/transacciones-en-el-ledger-32f9f247.svg)
 
 # Knowledge Check 2
 
@@ -120,7 +120,7 @@ Una característica importante de las blockchains es que los datos de transaccio
 
 Entonces, cada `bloque` es simplemente un grupo de transacciones que se juntan en un archivo junto con el `hash de bloque` del mismo. Los bloques se encadenan entre sí, porque cada uno hace referencia a la huella digital única del bloque _anterior_, formando así una _**cadena de bloques**_ conectados.
 
-![](https://app.banklessacademy.com/lesson/images/conceptos-basicos-de-blockchain/anatoma-de-un-bloque-914b2bf9.svg)
+![](https://app.banklessacademy.com/lesson/conceptos-basicos-de-blockchain/anatoma-de-un-bloque-914b2bf9.svg)
 
 # Knowledge Check 4
 
@@ -142,7 +142,7 @@ Siguiendo nuestro ejemplo anterior, cuando discutimos sobre el libro mayor de la
 
 Recuerda que cada bloque también debe hacer referencia al `hash de bloque` del _bloque anterior_ para enlazar la blockchain.
 
-![](https://app.banklessacademy.com/lesson/images/conceptos-basicos-de-blockchain/interior-de-un-bloque-b9ecc7c3.svg)
+![](https://app.banklessacademy.com/lesson/conceptos-basicos-de-blockchain/interior-de-un-bloque-b9ecc7c3.svg)
 
 # Knowledge Check 5
 
@@ -163,7 +163,7 @@ Las transacciones pueden ser simples, como _enviar_ activos de criptomonedas, o 
 
 Finalmente, cada transacción tiene un identificador digital único, llamado su `hash de transacción`, que ninguna otra transacción tiene. Esto facilita referirse a cualquier transacción individual más adelante y garantiza que los detalles de esa transacción no se puedan cambiar después.
 
-![](https://app.banklessacademy.com/lesson/images/conceptos-basicos-de-blockchain/transacciones-individuales-1df9a5c1.svg)
+![](https://app.banklessacademy.com/lesson/conceptos-basicos-de-blockchain/transacciones-individuales-1df9a5c1.svg)
 
 # Knowledge Check 6
 
@@ -182,7 +182,7 @@ En Ethereum, una dirección siempre comienza con _0x__________ y consta de 42 ca
 
 Cuando observamos una transacción individual en un explorador de bloques, podemos ver las direcciones "De:" y "Para:". Esto no nos dice _quiénes son_ las personas que controlan esas direcciones, pero permite a cualquier usuario rastrear el _movimiento_ de criptomonedas en el ledger de la blockchain.
 
-![](https://app.banklessacademy.com/lesson/images/conceptos-basicos-de-blockchain/direcciones-de-usuario-aedccc31.svg)
+![](https://app.banklessacademy.com/lesson/conceptos-basicos-de-blockchain/direcciones-de-usuario-aedccc31.svg)
 
 # Knowledge Check 7
 

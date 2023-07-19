@@ -34,7 +34,7 @@ DeFi—short for `decentralized` finance—refers to the fast-growing ecosystem 
 
 DeFi is rapidly transforming the world of finance with a range of new tools for putting crypto assets to work. It offers opportunities beyond simply buying crypto on a centralized exchange.  It allows anyone and everyone to build a decentralized, Bankless lifestyle.
 
-![](https://app.banklessacademy.com/lesson/images/intro-to-defi/defi-defined-46782447.svg)
+![](https://app.banklessacademy.com/lesson/intro-to-defi/defi-defined-46782447.svg)
 
 # Why DeFi?
 
@@ -59,7 +59,7 @@ There are a growing number of `DeFi` protocols that enable you to earn interest 
 
 By removing the middleman, you also remove any service fees, dues, and commissions you would typically pay in the traditional finance world. With DeFi, you get to keep all the rewards, or yield earned from your assets. This is why DeFi is popular. 
 
-![](https://app.banklessacademy.com/lesson/images/intro-to-defi/earning-yield-c5f123f8.svg)
+![](https://app.banklessacademy.com/lesson/intro-to-defi/earning-yield-c5f123f8.svg)
 
 # Knowledge Check 2
 
@@ -76,7 +76,7 @@ How can you earn yield with crypto?
 
 `DApps` and DeFi platforms enable users to make more and more types of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.
 
-![](https://app.banklessacademy.com/lesson/images/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg)
+![](https://app.banklessacademy.com/lesson/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg)
 
 # Knowledge Check 3
 
@@ -95,7 +95,7 @@ HODL is a term used for keeping crypto assets for a long time. Depending on who 
 
 DeFi allows early access to coins and tokens to find and invest in, before they are listed on centralized exchanges (CEX).
 
-![](https://app.banklessacademy.com/lesson/images/intro-to-defi/investing-d99a6d1f.svg)
+![](https://app.banklessacademy.com/lesson/intro-to-defi/investing-d99a6d1f.svg)
 
 # Knowledge Check 4
 
@@ -112,7 +112,7 @@ A decentralized exchange (DEX) shows current exchange rates between different cr
 
 The parties involved in a DEX trade don’t need to know or trust each other. In fact, it may appear that you are trading with the DEX. However, in most cases, the DEX creates `liquidity pools` that facilitate the trade between two traders’ `wallets` in a `permissionless` fashion.
 
-![](https://app.banklessacademy.com/lesson/images/intro-to-defi/trading-8cd72977.svg)
+![](https://app.banklessacademy.com/lesson/intro-to-defi/trading-8cd72977.svg)
 
 # So What?
 
@@ -133,7 +133,7 @@ DeFi lending and borrowing offers loans without the need for a bank or intermedi
 
 There are `DApps` that enable anyone to lend and borrow crypto assets. Similar to traditional loans, a lender will earn interest on the loan and the borrower will need to pay the principal of the loan plus interest.
 
-![](https://app.banklessacademy.com/lesson/images/intro-to-defi/lending-borrowing-4fb1c7c3.svg)
+![](https://app.banklessacademy.com/lesson/intro-to-defi/lending-borrowing-4fb1c7c3.svg)
 
 # Knowledge Check 6
 
@@ -150,7 +150,7 @@ DeFi staking is similar to lending, however it's a special type of lending. Inst
 
 Centralized exchanges also offer staking. However, like their trading pairs, the staking opportunities and rewards are limited. With DeFi, there are many more staking possibilities than there are with centralized exchanges. 
 
-![](https://app.banklessacademy.com/lesson/images/intro-to-defi/staking-b4b4319d.svg)
+![](https://app.banklessacademy.com/lesson/intro-to-defi/staking-b4b4319d.svg)
 
 # Knowledge Check 7
 
@@ -163,19 +163,19 @@ Lending your crypto to a protocol is an example of?
 
 # **DeFi Downsides**
 
-![](https://app.banklessacademy.com/lesson/images/intro-to-defi/defi-downsides-51dd6225.svg)
+![](https://app.banklessacademy.com/lesson/intro-to-defi/defi-downsides-51dd6225.svg)
 
 **Hackers**
 
 Where there is money and technology, there are people looking for ways to hack the system and take advantage of poor security measures.
 
-![](https://app.banklessacademy.com/lesson/images/intro-to-defi/defi-downsides-3a6ce496.svg)
+![](https://app.banklessacademy.com/lesson/intro-to-defi/defi-downsides-3a6ce496.svg)
 
 **Risk**
 
 DeFi, like blockchain technology, runs on code. If there’s an error or loophole in the code, it can be exploited.
 
-![](https://app.banklessacademy.com/lesson/images/intro-to-defi/defi-downsides-83a9391f.svg)
+![](https://app.banklessacademy.com/lesson/intro-to-defi/defi-downsides-83a9391f.svg)
 
 **No recourse**
 

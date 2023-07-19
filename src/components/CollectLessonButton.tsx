@@ -175,7 +175,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
   )}`
 
   const lessonImage = (
-    <Box my="2">
+    <Box py="2">
       {isLessonCollected ? (
         <video autoPlay loop playsInline muted>
           <source

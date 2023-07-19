@@ -40,7 +40,7 @@ This lesson will show:
 2. How DEX aggregators enable users to view and use multiple DEXs through one interface.
 3. Multiple ways a single aggregator interface can save Explorers time and money.
 
-![](https://app.banklessacademy.com/lesson/images/dex-aggregators/introduction-ba453b68.svg)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/introduction-ba453b68.svg)
 
 # How Liquidity Affects Prices
 
@@ -56,7 +56,7 @@ The BanklessDAO token (BANK) has a liquidity amount of ~30 million BANK on Unisw
 
 If an Explorer was to purchase 10,000 BANK from each pool, they would find that the `price impact` of their trade would result in a higher trade price in the SushiSwap pool — because their trade has pulled a larger percentage of the pool’s total liquidity.
 
-![](https://app.banklessacademy.com/lesson/images/dex-aggregators/an-example-of-how-liquidity-impacts-prices-915b3d84.svg)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/an-example-of-how-liquidity-impacts-prices-915b3d84.svg)
 
 # Knowledge Check 1
 
@@ -77,7 +77,7 @@ In 2020, Uniswap held much of the DEX liquidity to trade in DeFi. When SushiSwap
 
 Thus, any trade has a larger `price impact` than when Uniswap held most of the ecosystem’s total liquidity. As more DEXs launch, it costs Explorers more to trade on any single DEX without new innovations.
 
-![](https://app.banklessacademy.com/lesson/images/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-c9e0b695.svg)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/shortcomings-of-traditional-dexs-thin-liquidity-c9e0b695.svg)
 
 # Knowledge Check 2
 
@@ -94,7 +94,7 @@ Large amounts of `liquidity` are needed to reduce price impact and save you mone
 
 DEX aggregators can even route trades through an `intermediary token` , or more than one, if that gets a better result for users — like the way a flight aggregator might suggest an extra stop at another airport if it’s cheaper for the passenger. This discovery of the optimal `trade route` is done by sophisticated algorithms searching through all possible paths to find the cheapest trade route at that moment.
 
-![](https://app.banklessacademy.com/lesson/images/dex-aggregators/recombining-liquidity-with-dex-aggregators-f01777dd.svg)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/recombining-liquidity-with-dex-aggregators-f01777dd.svg)
 
 # Knowledge Check 3
 
@@ -117,7 +117,7 @@ _Amount of gas used * Gas price = Total gas cost_
 As an example, let’s say gas costs are at 22 gwei per gas unit and the transaction uses 120-thousand units:
 _120,000 * 22 gwei = 2,640,000 gwei_ _**or**_ _0.00264 ETH_
 
-![](https://app.banklessacademy.com/lesson/images/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-c34efe86.svg)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/how-gas-cost-is-calculated-on-ethereum-c34efe86.svg)
 
 # How Aggregators Reduce Gas Costs for Users
 
@@ -125,7 +125,7 @@ Trade splitting would result in more transaction fees from the extra on-chain ac
 
 Some aggregators go even further: they may refund some of the network transaction fees from using their protocol. 1inch currently offers rebates in their token for a portion of gas costs from trading through their `dApp` on Ethereum mainnet.
 
-![](https://app.banklessacademy.com/lesson/images/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-28d6f207.svg)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/how-aggregators-reduce-gas-costs-for-users-28d6f207.svg)
 
 # Knowledge Check 4
 
@@ -142,7 +142,7 @@ There are even meta-aggregators of DEX aggregators! These platforms search throu
 
 Note: While convenient, `meta-aggregator` services can add extra costs on top of network transaction fees, increasing the overall cost for users. Explorers: make sure that your trades don’t end up more expensive than you intended. 
 
-![](https://app.banklessacademy.com/lesson/images/dex-aggregators/meta-aggregators-100793fd.svg)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/meta-aggregators-100793fd.svg)
 
 # Knowledge Check 5
 
@@ -157,7 +157,7 @@ Users swapping directly through `DEXs` can lose value up to the limit of their `
 
 Fortunately, because of the recombined liquidity offered by DEX aggregators, the price impact of a trade is reduced. Explorers can keep their slippage tolerance low while saving more with DEX aggregators, as opposed to trading directly on a DEX.
 
-![](https://app.banklessacademy.com/lesson/images/dex-aggregators/avoiding-sandwich-attacks-75f6ae82.svg)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/avoiding-sandwich-attacks-75f6ae82.svg)
 
 # Knowledge Check 6
 
@@ -172,7 +172,7 @@ Some aggregators like 1inch even offer specialized `OTC` (`Over The Counter`) se
 
 CoWSwap is a Meta-Aggregator that also offers sandwich-resistant services, enabled by default, to ensure trades are 100% protected against sandwich attacks.
 
-![](https://app.banklessacademy.com/lesson/images/dex-aggregators/more-protection-from-sandwiches-otc-trades-04ef66c9.svg)
+![](https://app.banklessacademy.com/lesson/dex-aggregators/more-protection-from-sandwiches-otc-trades-04ef66c9.svg)
 
 # Knowledge Check 7
 

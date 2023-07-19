@@ -186,5 +186,5 @@ Here are our recommendations as next steps:
 - [advanced lvl1]: subscribe to the Bankless HQ newsletter
 - [advanced lvl2]: join a DAO and get a job in crypto
 
-![](https://app.banklessacademy.com/lesson/images/going-bankless/quest-63568085.jpg)
+![](https://app.banklessacademy.com/lesson/going-bankless/quest-63568085.jpg)
 
