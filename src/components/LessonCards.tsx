@@ -215,7 +215,12 @@ const LessonCards: React.FC = () => {
                   <Tag size="md" backgroundColor="transparent"></Tag>
                 )}
                 {lesson.hasCollectible && !isLessonCollected && (
-                  <StyledTag size="md" variant="solid" color="white">
+                  <StyledTag
+                    size="md"
+                    variant="outline"
+                    color="white"
+                    gold="true"
+                  >
                     Collectible available
                   </StyledTag>
                 )}
