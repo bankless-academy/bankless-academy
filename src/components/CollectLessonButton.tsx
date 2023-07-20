@@ -9,12 +9,13 @@ import {
 } from '@chakra-ui/react'
 import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
+import { switchNetwork } from '@wagmi/core'
 
 import MintCollectibleModal from 'components/MintCollectibleModal'
 import { getLessonsCollectors, isHolderOfNFT } from 'utils'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
-import { useAccount } from 'wagmi'
+import { useAccount, useNetwork } from 'wagmi'
 import { getLessonsCollected } from 'utils'
 import LessonCollectibleModal from 'components/LessonCollectibleModal'
 import {
@@ -112,6 +113,7 @@ const CollectLessonButton = ({
   } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const { address } = useAccount()
+  const { chain } = useNetwork()
   const [lessonsCollectedLS, setLessonsCollectedLS] = useLocalStorage(
     'lessonsCollected',
     []
@@ -204,7 +206,10 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               px="5"
               position="relative"
               cursor="pointer"
-              onClick={() => onOpenMintCollectibleModal()}
+              onClick={async () => {
+                if (chain?.id !== 10) await switchNetwork({ chainId: 10 })
+                onOpenMintCollectibleModal()
+              }}
             >
               {CollectiblesHelper}
               <Box
@@ -226,7 +231,10 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               px="5"
               position="relative"
               cursor="pointer"
-              onClick={() => onOpenMintCollectibleModal()}
+              onClick={async () => {
+                if (chain?.id !== 10) await switchNetwork({ chainId: 10 })
+                onOpenMintCollectibleModal()
+              }}
             >
               {CollectiblesHelper}
               <Box
