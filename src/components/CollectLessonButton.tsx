@@ -28,22 +28,26 @@ const CollectiblesHelper = (
   <Helper
     title="Lesson Collectible"
     definition={
-      <>
-        <Box>
+      <Box>
+        <Box mb="4">
           Lesson collectibles are tradable NFTs containing lesson content from
-          Bankless Academy, built for 100 passionate Bankless Explorers. Owning
-          a lesson data-disk alters your in-site experience, gets you an invite
-          to our collectors Discord channel, and displays your support for
-          providing a free blockchain education for internet citizens around the
-          globe.
+          Bankless Academy, built for 100 passionate Bankless Explorers.
         </Box>
-        <Box>
+        <Box mb="4">
+          Owning a lesson data-disk alters your in-site experience, gets you an
+          invite to our collectors Discord channel, and displays your support
+          for providing a free blockchain education for internet citizens around
+          the globe.
+        </Box>
+        <Box mb="4">
           There are only 100 versions available for each collectible lesson, but
           if the original batch sells out you can always try the secondary
           market.
         </Box>
-        <Box>*10% creator fee on secondary trades.</Box>
-      </>
+        <Box mb="4" fontSize="sm" fontStyle="italic">
+          *10% creator fee on secondary trades.
+        </Box>
+      </Box>
     }
   />
 )
