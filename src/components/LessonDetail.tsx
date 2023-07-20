@@ -21,6 +21,11 @@ const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   }
 `
 
+const StyledBox = styled(Box)`
+  width: inherit;
+  width: -moz-available;
+`
+
 const closeLesson = (openedLesson: string, lesson: LessonType): string => {
   const openedLessonArray = JSON.parse(openedLesson)
   return JSON.stringify(
@@ -59,12 +64,11 @@ const LessonDetail = ({
       ) : (
         <>
           {!isSmallScreen && (
-            <Box
+            <StyledBox
               w="-webkit-fill-available"
               position="absolute"
               h="calc( 100vh - 97px)"
               minH="calc( 100% - 97px)"
-              width="-moz-available"
               overflow="hidden"
             >
               <Image
@@ -76,7 +80,7 @@ const LessonDetail = ({
                 // src="/images/bankless-instructor.png"
                 src="https://link.assetfile.io/Pat8R3ry2Whkdey4fj8xr/Instructor.png"
               />
-            </Box>
+            </StyledBox>
           )}
           <StyledCard
             p={12}
