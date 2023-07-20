@@ -64,6 +64,7 @@ const LessonDetail = ({
               position="absolute"
               h="calc( 100vh - 97px)"
               minH="calc( 100% - 97px)"
+              width="-moz-available"
               overflow="hidden"
             >
               <Image
