@@ -28,6 +28,7 @@ const LessonButton = ({
     lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
   return (
     <Box
+      display="flex"
       onClick={async () =>
         click
           ? setOpenLessonLS(
