@@ -177,12 +177,13 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
   const lessonImage = (
     <Box py="2">
       {isLessonCollected ? (
-        <video autoPlay loop playsInline muted>
-          <source
-            src={lesson.lessonCollectibleVideo}
-            type="video/webm"
-          ></source>
-        </video>
+        // <video autoPlay loop playsInline muted>
+        //   <source
+        //     src={lesson.lessonCollectibleVideo}
+        //     type="video/webm"
+        //   ></source>
+        // </video>
+        <Image src={lesson.lessonCollectibleVideo} />
       ) : (
         <Image src={lesson.lessonImageLink} />
       )}
