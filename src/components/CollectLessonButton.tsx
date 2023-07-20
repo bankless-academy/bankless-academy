@@ -207,8 +207,8 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               position="relative"
               cursor="pointer"
               onClick={async () => {
-                if (chain?.id !== 10) await switchNetwork({ chainId: 10 })
                 onOpenMintCollectibleModal()
+                if (chain?.id !== 10) await switchNetwork({ chainId: 10 })
               }}
             >
               {CollectiblesHelper}
@@ -232,8 +232,8 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               position="relative"
               cursor="pointer"
               onClick={async () => {
-                if (chain?.id !== 10) await switchNetwork({ chainId: 10 })
                 onOpenMintCollectibleModal()
+                if (chain?.id !== 10) await switchNetwork({ chainId: 10 })
               }}
             >
               {CollectiblesHelper}
