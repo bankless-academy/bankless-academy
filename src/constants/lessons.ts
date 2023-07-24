@@ -1347,7 +1347,7 @@ const LESSONS: LessonType[] = [
     kudosImageLink: '/lesson/images/layer-2-blockchains/kudos-761ee1a2.png',
     lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png?3',
     lessonCollectedImageLink: '/lesson/images/layer-2-blockchains/datadisk-collected-b3050076.png',
-    lessonCollectibleVideo: '/lesson/images/layer-2-blockchains/datadisk-video-fd981e1f.gif',
+    lessonCollectibleVideo: '/lesson/images/layer-2-blockchains/datadisk-video-567a7a75.gif',
     LessonCollectibleMintID: '64b810dda23ab034b49a1340',
     LessonCollectibleTokenAddress: '0x5ce61b80931Ea67565f0532965DDe5be2d41331d',
     socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?3',
