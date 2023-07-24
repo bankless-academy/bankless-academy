@@ -5,8 +5,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: null,
     lessonImageLink: '/images/coming-soon-lesson.png',
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     learningActions: '',
     marketingDescription: 'What does it mean to go Bankless? In this lesson, we discuss why millions of people are investing in cryptocurrency - and practical first steps for joining the movement.',
     kudosId: null,
@@ -220,8 +218,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/images/wallet-basics/kudos-75d8aa76.png',
     lessonImageLink: '/lesson/images/wallet-basics/lesson-5aa84b59.png',
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     socialImageLink: '/lesson/images/wallet-basics/social-230cc260.jpg',
     learningActions: 'Create and manage your own wallet\nConnect your wallet to a web3 website',
     marketingDescription: 'A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.',
@@ -448,8 +444,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/images/blockchain-basics/kudos-b0048cdb.png',
     lessonImageLink: '/lesson/images/blockchain-basics/lesson-c84db284.png',
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     socialImageLink: '/lesson/images/blockchain-basics/social-07ea2639.jpg',
     learningActions: '',
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
@@ -654,8 +648,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/images/conceptos-basicos-de-blockchain/kudos-b0048cdb.png',
     lessonImageLink: '/lesson/images/conceptos-basicos-de-blockchain/lesson-c84db284.png',
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     socialImageLink: '/lesson/images/conceptos-basicos-de-blockchain/social-974b8d8f.jpg',
     learningActions: '',
     marketingDescription: 'Las blockchains hacen posible las criptomonedas, DeFi y Web3. Descubre cómo se construyen y cómo funcionan las redes blockchain.',
@@ -860,8 +852,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/images/web3-security/kudos-d2f0df26.png',
     lessonImageLink: '/lesson/images/web3-security/lesson-09017125.png',
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     socialImageLink: '/lesson/images/web3-security/social-795f9c67.jpg',
     learningActions: 'Avoid the scams in web3 and keep your assets safe.',
     marketingDescription: 'Protect yourself and your wallet from the most common scams in web3.',
@@ -1105,8 +1095,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/images/layer-1-blockchains/kudos-66fa6447.png',
     lessonImageLink: '/lesson/images/layer-1-blockchains/lesson-dcff6ea3.png',
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     socialImageLink: '/lesson/images/layer-1-blockchains/social-db62f5f0.jpg',
     learningActions: '',
     marketingDescription: 'Understand how Layer 1 blockchains work - and learn their limitations!',
@@ -1347,7 +1335,8 @@ const LESSONS: LessonType[] = [
     kudosImageLink: '/lesson/images/layer-2-blockchains/kudos-761ee1a2.png',
     lessonImageLink: 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png?3',
     lessonCollectedImageLink: '/lesson/images/layer-2-blockchains/datadisk-collected-b3050076.png',
-    lessonCollectibleVideo: '/lesson/images/layer-2-blockchains/datadisk-video-567a7a75.gif',
+    lessonCollectibleGif: '/lesson/images/layer-2-blockchains/datadisk-gif-567a7a75.gif',
+    lessonCollectibleVideo: '/lesson/images/layer-2-blockchains/datadisk-video-df229ea4.webm',
     LessonCollectibleMintID: '64b810dda23ab034b49a1340',
     LessonCollectibleTokenAddress: '0x5ce61b80931Ea67565f0532965DDe5be2d41331d',
     socialImageLink: 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?3',
@@ -1547,8 +1536,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: null,
     lessonImageLink: '/lesson/images/how-to-fund-a-wallet-on-layer-2/lesson-71b79973.png',
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     socialImageLink: '/lesson/images/how-to-fund-a-wallet-on-layer-2/social-adb1717b.png',
     learningActions: '',
     marketingDescription: 'Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.',
@@ -1573,8 +1560,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/images/intro-to-defi/kudos-b4dab2d4.png',
     lessonImageLink: '/lesson/images/intro-to-defi/lesson-97291c9d.png',
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     socialImageLink: '/lesson/images/intro-to-defi/social-ee8d95a4.jpg',
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
@@ -1803,8 +1788,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/images/decentralized-exchanges/kudos-ecf873d9.png',
     lessonImageLink: '/lesson/images/decentralized-exchanges/lesson-a006bb73.png',
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     socialImageLink: '/lesson/images/decentralized-exchanges/social-0ffc9300.jpg',
     learningActions: '',
     marketingDescription: 'DEXs and AMMs have changed the landscape of traditional market trading. It’s time to understand why, and how you can use this technology to your own advantage.',
@@ -2100,8 +2083,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: null,
     lessonImageLink: '/lesson/images/how-to-swap-on-a-decentralized-exchange/lesson-d1e791d2.png',
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     socialImageLink: '/lesson/images/how-to-swap-on-a-decentralized-exchange/social-f39d5e71.png',
     learningActions: '',
     marketingDescription: 'Begin your journey into DeFi with this Decentralized Exchange walkthrough.',
@@ -2126,8 +2107,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/images/dex-aggregators/kudos-ddb9db8b.png',
     lessonImageLink: '/lesson/images/dex-aggregators/lesson-39d1fc1c.png',
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     socialImageLink: '/lesson/images/dex-aggregators/social-2724db28.jpg',
     learningActions: '',
     marketingDescription: 'Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.',
@@ -2337,8 +2316,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: null,
     lessonImageLink: null,
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     learningActions: '',
     marketingDescription: '',
     kudosId: null,
@@ -2661,8 +2638,6 @@ const LESSONS: LessonType[] = [
   {
     kudosImageLink: '/lesson/images/kudos-testing/kudos-ca816a4c.mp4',
     lessonImageLink: '/lesson/images/kudos-testing/lesson-03a3e86a.png',
-    lessonCollectedImageLink: undefined,
-    lessonCollectibleVideo: undefined,
     socialImageLink: '/lesson/images/kudos-testing/social-17fed266.png',
     learningActions: '',
     marketingDescription: 'For testing purposes only',

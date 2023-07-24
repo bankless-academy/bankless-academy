@@ -10,6 +10,7 @@ import {
 import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
 import { switchNetwork } from '@wagmi/core'
+import { isMobile } from 'react-device-detect'
 
 import MintCollectibleModal from 'components/MintCollectibleModal'
 import { getLessonsCollectors, isHolderOfNFT } from 'utils'
@@ -183,13 +184,18 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
   const lessonImage = (
     <Box py="2">
       {isLessonCollected ? (
-        // <video autoPlay loop playsInline muted>
-        //   <source
-        //     src={lesson.lessonCollectibleVideo}
-        //     type="video/webm"
-        //   ></source>
-        // </video>
-        <Image src={lesson.lessonCollectibleVideo} />
+        <>
+          {isMobile ? (
+            <Image src={lesson.lessonCollectibleGif} />
+          ) : (
+            <video autoPlay loop playsInline muted>
+              <source
+                src={lesson.lessonCollectibleVideo}
+                type="video/webm"
+              ></source>
+            </video>
+          )}
+        </>
       ) : (
         <Image src={lesson.lessonImageLink} />
       )}

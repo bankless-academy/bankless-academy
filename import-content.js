@@ -73,7 +73,10 @@ n2m.setCustomTransformer("image", async (b) => {
 
 const PROTOCOL_VERSION = "0.01"
 
-const LESSON_SPLITTER = `<< LESSON START >>`
+const LESSON_SPLITTER = `\`\`\`
+<< LESSON START >>
+\`\`\`
+---`
 
 const mdHeader = (lesson) => `---
 LESSON TITLE: ${lesson.name}
@@ -100,10 +103,7 @@ PORTABLE LESSON DATADISK™ COLLECTION                                          
 __________________________________________________________________________________________________________________________________________________________
 \`\`\`
 
-\`\`\`
 ${LESSON_SPLITTER}
-\`\`\`
----
 `
 
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
@@ -116,6 +116,7 @@ const KEY_MATCHING = {
   'Kudos image': 'kudosImageLink',
   'Lesson image': 'lessonImageLink',
   'Lesson collected image': 'lessonCollectedImageLink',
+  'Lesson collectible gif': 'lessonCollectibleGif',
   'Lesson collectible video': 'lessonCollectibleVideo',
   'Lesson collectible mint ID': 'LessonCollectibleMintID',
   'Lesson collectible token address': 'LessonCollectibleTokenAddress',
@@ -221,6 +222,9 @@ axios
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.kudosId === undefined) lesson.kudosId = null
       if (lesson.kudosImageLink === undefined) lesson.kudosImageLink = null
+      if (lesson.lessonCollectedImageLink === undefined) delete lesson.lessonCollectedImageLink
+      if (lesson.lessonCollectibleVideo === undefined) delete lesson.lessonCollectibleVideo
+      if (lesson.lessonCollectibleGif === undefined) delete lesson.lessonCollectibleGif
       if (lesson.LessonCollectibleMintID === undefined) delete lesson.LessonCollectibleMintID
       if (lesson.LessonCollectibleTokenAddress === undefined) delete lesson.LessonCollectibleTokenAddress
       if (lesson.LessonCollectibleMintID && lesson.LessonCollectibleTokenAddress) lesson.hasCollectible = true
@@ -495,6 +499,9 @@ axios
             if (lesson.lessonCollectedImageLink) {
               lesson.lessonCollectedImageLink = get_img(lesson.lessonCollectedImageLink, lesson.slug, 'datadisk-collected')
             }
+            if (lesson.lessonCollectibleGif) {
+              lesson.lessonCollectibleGif = get_img(lesson.lessonCollectibleGif, lesson.slug, 'datadisk-gif')
+            }
             if (lesson.lessonCollectibleVideo) {
               lesson.lessonCollectibleVideo = get_img(lesson.lessonCollectibleVideo, lesson.slug, 'datadisk-video')
             }
@@ -554,6 +561,8 @@ axios
                 const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
                 if (lessonFile) {
                   const [previousLessonHeader, previousLessonContentMD] = lessonFile?.split(LESSON_SPLITTER)
+                  // console.log(previousLessonContentMD.trim())
+                  // console.log(lessonContentMD.trim())
                   // If content has changed
                   const plh = previousLessonHeader?.split('LAST UPDATED:')[0]
                   const lh = lessonHeader?.split('LAST UPDATED:')[0]

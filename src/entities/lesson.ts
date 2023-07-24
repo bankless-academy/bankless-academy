@@ -14,6 +14,7 @@ export interface LessonType {
   kudosImageLink?: string
   lessonImageLink?: string
   lessonCollectedImageLink?: string
+  lessonCollectibleGif?: string
   lessonCollectibleVideo?: string
   LessonCollectibleMintID?: string
   LessonCollectibleTokenAddress?: string
