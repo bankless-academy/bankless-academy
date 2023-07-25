@@ -137,27 +137,31 @@ const ConnectWalletButton = ({
   }
 
   function refreshKudos() {
-    axios
-      .get(
-        `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
-      )
-      .then((res) => {
-        const data = res.data.data
-        if (Array.isArray(data)) {
-          const kudosMinted = KUDOS_IDS.filter((kudosId) =>
-            data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
-          )
-          setKudosMintedLS(kudosMinted)
-          for (const kudosId of kudosMinted) {
-            localStorage.setItem(`isKudosMinted-${kudosId.toString()}`, 'true')
-          }
-          setKudos(
-            data.filter((kudos: KudosType) =>
-              KUDOS_IDS.includes(kudos.kudosTokenId)
+    if (address)
+      axios
+        .get(
+          `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
+        )
+        .then((res) => {
+          const data = res.data.data
+          if (Array.isArray(data)) {
+            const kudosMinted = KUDOS_IDS.filter((kudosId) =>
+              data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
             )
-          )
-        }
-      })
+            setKudosMintedLS(kudosMinted)
+            for (const kudosId of KUDOS_IDS) {
+              localStorage.setItem(
+                `isKudosMinted-${kudosId.toString()}`,
+                kudosMinted.includes(kudosId).toString()
+              )
+            }
+            setKudos(
+              data.filter((kudos: KudosType) =>
+                KUDOS_IDS.includes(kudos.kudosTokenId)
+              )
+            )
+          }
+        })
   }
 
   const loadAddress = (address) => {
