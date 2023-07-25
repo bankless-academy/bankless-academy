@@ -70,6 +70,8 @@ export const LessonCard = styled(Box)`
 `
 
 const StyledTag = styled(Tag)<{ isminted?: string }>`
+  height: 30px;
+  min-width: 80px;
   ${(props) =>
     props.gold === 'true' &&
     `
@@ -214,15 +216,35 @@ const LessonCards: React.FC = () => {
                 ) : (
                   <Tag size="md" backgroundColor="transparent"></Tag>
                 )}
-                {lesson.hasCollectible && !isLessonCollected && (
+                {lesson.hasCollectible && (
                   <StyledTag
                     size="md"
                     variant="outline"
                     color="white"
                     gold="true"
                   >
-                    Collectible available
+                    {!isLessonCollected
+                      ? 'Collectible available'
+                      : 'Lesson Collected'}
                   </StyledTag>
+                )}
+                {lesson.isArticle ? (
+                  isArticleCollected ? (
+                    <StyledTag size="md" variant="outline" gold="true">
+                      Entry Collected
+                    </StyledTag>
+                  ) : (
+                    <ExternalLink href={lesson.mirrorLink}>
+                      <Tooltip hasArrow label="Collect Entry on Mirror.xyz">
+                        <Button variant="primaryGold">Collect Entry</Button>
+                      </Tooltip>
+                    </ExternalLink>
+                  )
+                ) : (
+                  !lessonHasSponsor &&
+                  lesson.publicationStatus !== 'planned' && (
+                    <Box width="100%"></Box>
+                  )
                 )}
               </Box>
               <Text fontSize="lg" minH="54px">
@@ -297,27 +319,6 @@ const LessonCards: React.FC = () => {
                   >
                     <LessonButton lesson={lesson} />
                   </InternalLink>
-                )}
-                {lesson.isArticle ? (
-                  isArticleCollected ? (
-                    <Button
-                      variant="secondaryGold"
-                      background="transparent !important"
-                    >
-                      Entry Collected
-                    </Button>
-                  ) : (
-                    <ExternalLink href={lesson.mirrorLink}>
-                      <Tooltip hasArrow label="Collect Entry on Mirror.xyz">
-                        <Button variant="primaryGold">Collect Entry</Button>
-                      </Tooltip>
-                    </ExternalLink>
-                  )
-                ) : (
-                  !lessonHasSponsor &&
-                  lesson.publicationStatus !== 'planned' && (
-                    <Box width="100%"></Box>
-                  )
                 )}
               </Box>
             </Box>
