@@ -56,7 +56,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 
   if (!isQuestCompleted) {
     return (
-      <Box position="relative" w="250px" m="auto" my="6">
+      <Box position="relative" w="290px" m="auto" my="6">
         <Box
           border="1px solid #4b474b"
           borderRadius="8px"

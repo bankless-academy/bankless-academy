@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from 'react'
 import {
   Box,
   Text,
-  Image as ChakraImage,
   ButtonGroup,
   Button,
   HStack,
@@ -31,6 +30,7 @@ import { IS_WHITELABEL, KEYWORDS, TOKEN_GATING_ENABLED } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
 import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
+import NFT from 'components/NFT'
 
 const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   border-radius: 0.5rem;
@@ -589,36 +589,9 @@ const Lesson = ({
               ) : (
                 <>
                   {lesson.kudosImageLink && (
-                    <>
-                      {lesson.kudosImageLink.includes('.mp4') ? (
-                        <Box
-                          height="250px"
-                          width="250px"
-                          borderRadius="30px"
-                          overflow="hidden"
-                          border="2px solid #4b474b"
-                        >
-                          <video
-                            autoPlay
-                            loop
-                            playsInline
-                            muted
-                            style={{ borderRadius: '30px', overflow: 'hidden' }}
-                          >
-                            <source
-                              src={lesson.kudosImageLink}
-                              type="video/mp4"
-                            ></source>
-                          </video>
-                        </Box>
-                      ) : (
-                        <ChakraImage
-                          src={lesson.kudosImageLink}
-                          height="250px"
-                          mb="2"
-                        />
-                      )}
-                    </>
+                    <Box w="290px" h="290px">
+                      <NFT nftLink={lesson.kudosImageLink} />
+                    </Box>
                   )}
                   {lesson.kudosId ? (
                     <MintKudos kudosId={lesson.kudosId} />
