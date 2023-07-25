@@ -506,6 +506,10 @@ const Article = ({
 
   useEffect(() => {
     Mixpanel.track('open_lesson', { lesson: lesson?.name })
+    // mark article as read after 30 seconds
+    setTimeout(() => {
+      localStorage.setItem(lesson.slug, 'true')
+    }, 30000)
   }, [])
 
   useEffect(() => {
