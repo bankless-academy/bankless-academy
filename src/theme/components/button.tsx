@@ -21,7 +21,7 @@ const primaryStyle = {
 
 const secondaryStyle = {
   background: 'transparent',
-  border: '1px solid #F2E5FF',
+  border: '1px solid #3f3154',
   boxSizing: 'border-box',
   backdropFilter: 'blur(42px)',
   color: '#F2E5FF',
@@ -117,7 +117,7 @@ const secondaryGold = {
 }
 
 const secondaryBig = {
-  background: '#3F3253',
+  background: '#3f3154',
   backdropFilter: 'blur(50px)',
   borderRadius: '60px',
   _hover: isMobile
@@ -125,6 +125,7 @@ const secondaryBig = {
     : {
         ...paddingBig,
         ...secondaryStyle,
+        background: '#25212e',
       },
 }
 

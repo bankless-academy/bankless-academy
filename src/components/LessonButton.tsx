@@ -17,6 +17,9 @@ const LessonButton = ({
     `isKudosMinted-${lesson.kudosId}`,
     false
   )
+  const isArticleRead = lesson.isArticle
+    ? localStorage.getItem(lesson.slug)
+    : false
   const [openLessonLS, setOpenLessonLS] = useLocalStorage(
     `lessonOpen`,
     JSON.stringify([])
@@ -28,6 +31,7 @@ const LessonButton = ({
   const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
   const lessonHasSponsor =
     lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
+  const completed = isKudosMintedLS || isArticleRead
   return (
     <Box
       display="flex"
@@ -43,11 +47,15 @@ const LessonButton = ({
     >
       {lessonHasSponsor && (
         <Button
-          variant={'secondaryBig'}
+          variant="secondaryBig"
           size="lg"
           w="50%"
-          background="#3F3253 !important"
-          border={'1px solid #B85FF1 !important'}
+          background={completed ? 'transparent' : '#3F3253 !important'}
+          border={
+            completed
+              ? '1px solid #3F3253 !important'
+              : '1px solid #B85FF1 !important'
+          }
           borderRightRadius="0"
           leftIcon={<ChakraImage width="24px" src={lesson?.sponsorLogo} />}
           isActive
@@ -56,13 +64,26 @@ const LessonButton = ({
         </Button>
       )}
       <Button
-        variant={'primaryBig'}
+        variant={completed ? 'secondaryBig' : 'primaryBig'}
         size="lg"
+        paddingX={completed ? '24px !important' : isHover ? '23px' : '24px'}
         w={lessonHasSponsor ? '50%' : 'inherit'}
+        border={
+          completed
+            ? isHover
+              ? '1px solid #3F3253 !important'
+              : '1px solid #3F3253 !important'
+            : isHover
+            ? '1px solid #B85FF1 !important'
+            : 'none'
+        }
         borderLeftRadius={lessonHasSponsor ? '0' : null}
-        border={isHover ? '1px solid #B85FF1 !important' : 'none'}
         background={
-          isHover
+          completed
+            ? isHover
+              ? '#25212e'
+              : '#3F3253'
+            : isHover
             ? 'linear-gradient(132deg, #67407E 0%, #354374 100%)'
             : 'linear-gradient(84.62deg, #B06FD8 7.42%, #597AEE 218.41%)'
         }
