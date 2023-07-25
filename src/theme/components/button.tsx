@@ -8,8 +8,9 @@ const primaryStyle = {
   border: '1px solid #B85FF1',
   boxSizing: 'border-box',
   backdropFilter: 'blur(42px)',
-  background: 'linear-gradient(84.62deg, #B06FD8 7.42%, #597AEE 218.41%)',
-  bgClip: 'text',
+  background: 'linear-gradient(132deg, #67407E 0%, #354374 100%)',
+  // background: 'linear-gradient(84.62deg, #B06FD8 7.42%, #597AEE 218.41%)',
+  // bgClip: 'text',
   color: '#F2E5FF',
   span: {
     path: {
