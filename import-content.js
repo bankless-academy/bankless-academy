@@ -495,6 +495,7 @@ axios
           // console.log('lesson', lesson)
 
           if (lesson.hasCollectible) {
+            // TEMP: remove when deploying to prod
             lesson.lessonImageLink = 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png?3'
             if (lesson.lessonCollectedImageLink) {
               lesson.lessonCollectedImageLink = get_img(lesson.lessonCollectedImageLink, lesson.slug, 'datadisk-collected')
