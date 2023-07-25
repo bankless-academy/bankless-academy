@@ -175,26 +175,30 @@ const LessonDetail = ({
                   </Box>
                 </Box>
               )}
-              <Box pb="8">
-                <Text
-                  as="h2"
-                  fontSize="2xl"
-                  fontWeight="bold"
-                  borderBottom="1px solid #989898"
-                  pb="2"
-                >
-                  Rewards
-                </Text>
-              </Box>
-              <Box textAlign="center">
-                <Badge
-                  lesson={lesson}
-                  isQuestCompleted={Quest.isQuestCompleted}
-                />
-                <Text fontSize="2xl" mb="4">
-                  “{lesson.name}” Lesson Badge
-                </Text>
-              </Box>
+              {lesson.kudosId && (
+                <>
+                  <Box pb="8">
+                    <Text
+                      as="h2"
+                      fontSize="2xl"
+                      fontWeight="bold"
+                      borderBottom="1px solid #989898"
+                      pb="2"
+                    >
+                      Rewards
+                    </Text>
+                  </Box>
+                  <Box textAlign="center">
+                    <Badge
+                      lesson={lesson}
+                      isQuestCompleted={Quest.isQuestCompleted}
+                    />
+                    <Text fontSize="2xl" mb="4">
+                      “{lesson.name}” Lesson Badge
+                    </Text>
+                  </Box>
+                </>
+              )}
             </Box>
             {/* {!embed && lesson.communityDiscussionLink && (
               <ExternalLink
