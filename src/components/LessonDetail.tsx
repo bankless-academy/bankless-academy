@@ -23,7 +23,7 @@ const StyledCard = styled(Card)<{ issmallscreen?: string }>`
 `
 
 const StyledBox = styled(Box)`
-  width: inherit;
+  width: -webkit-fill-available;
   width: -moz-available;
 `
 
