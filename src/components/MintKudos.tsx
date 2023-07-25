@@ -352,7 +352,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
             <Box my="4">
               {`Explorers must have a valid Gitcoin Passport in order to collect Bankless Academy rewards. `}
               <ExternalLink
-                color="white"
+                underline
                 href="/faq#640071a81daf4aa4b7df00b1eec1c58d"
               >
                 Learn more
@@ -362,10 +362,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
           <Passport displayStamps />
         </ModalBody>
         <ModalFooter>
-          <ExternalLink
-            color="white"
-            href="/faq#640071a81daf4aa4b7df00b1eec1c58d"
-          >
+          <ExternalLink underline href="/faq#640071a81daf4aa4b7df00b1eec1c58d">
             Help
           </ExternalLink>
         </ModalFooter>
