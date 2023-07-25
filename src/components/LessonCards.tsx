@@ -71,7 +71,6 @@ export const LessonCard = styled(Box)`
 
 const StyledTag = styled(Tag)<{ isminted?: string }>`
   height: 30px;
-  min-width: 80px;
   ${(props) =>
     props.gold === 'true' &&
     `
@@ -243,7 +242,7 @@ const LessonCards: React.FC = () => {
                 ) : (
                   !lessonHasSponsor &&
                   lesson.publicationStatus !== 'planned' && (
-                    <Box width="100%"></Box>
+                    <Box width="auto"></Box>
                   )
                 )}
               </Box>
