@@ -15,6 +15,7 @@ import LessonButton from 'components/LessonButton'
 import NFT from 'components/NFT'
 import ExternalLink from './ExternalLink'
 import { DOMAIN_URL, TOKEN_GATING_ENABLED } from 'constants/index'
+import { useEffect } from 'react'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -46,6 +47,10 @@ const LessonDetail = ({
     `lessonOpen`,
     JSON.stringify([])
   )
+
+  useEffect((): void => {
+    setOpenLessonLS(closeLesson(openLessonLS, lesson))
+  }, [])
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
 
