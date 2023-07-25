@@ -614,7 +614,11 @@ const Article = ({
           borderRadius="lg"
         >
           {isArticleCollected ? (
-            <Button variant="secondaryGold" w="100%">
+            <Button
+              variant="secondaryGold"
+              w="100%"
+              background="transparent !important"
+            >
               Entry Collected
             </Button>
           ) : (

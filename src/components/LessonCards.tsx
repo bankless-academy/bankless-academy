@@ -300,7 +300,12 @@ const LessonCards: React.FC = () => {
                 )}
                 {lesson.isArticle ? (
                   isArticleCollected ? (
-                    <Button variant="secondaryGold">Entry Collected</Button>
+                    <Button
+                      variant="secondaryGold"
+                      background="transparent !important"
+                    >
+                      Entry Collected
+                    </Button>
                   ) : (
                     <ExternalLink href={lesson.mirrorLink}>
                       <Tooltip hasArrow label="Collect Entry on Mirror.xyz">
