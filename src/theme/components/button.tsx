@@ -52,7 +52,7 @@ const primaryGold = {
   background: 'linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%)',
   _hover: {
     ...padding,
-    background: 'transparent',
+    background: 'linear-gradient(134deg, #9E8053 0%, #684D3E 100%)',
     border: '1px solid #f1b15a',
   },
 }
@@ -112,6 +112,7 @@ const secondaryGold = {
   border: '1px solid #f1b15a',
   _hover: {
     cursor: 'default',
+    background: 'linear-gradient(134deg, #9E8053 0%, #684D3E 100%)',
   },
 }
 
