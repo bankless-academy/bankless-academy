@@ -41,7 +41,8 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   }
   span.keyword {
     cursor: help;
-    border-bottom: 1px dashed grey;
+    border-bottom: 1px dashed #e5afff;
+    color: #e5afff;
     display: inline-block !important;
   }
   div.content > div {
