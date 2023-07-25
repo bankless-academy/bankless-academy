@@ -293,6 +293,7 @@ const LessonCards: React.FC = () => {
                     href={`/lessons/${lesson.slug}`}
                     alt={lesson.name}
                     margin={lessonHasSponsor ? 'auto' : ''}
+                    w={lessonHasSponsor ? '100%' : 'inherit'}
                   >
                     <LessonButton lesson={lesson} />
                   </InternalLink>
