@@ -113,7 +113,6 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 <ExternalLink href={twitterLink} mr="2">
                   <Button
                     variant="primary"
-                    size="lg"
                     isFullWidth
                     borderBottomRadius="0"
                     leftIcon={
@@ -127,7 +126,6 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               <ExternalLink href={`${MINTKUDOS_OPENSEA_URL}${lesson.kudosId}`}>
                 <Button
                   variant="primary"
-                  size="lg"
                   isFullWidth
                   borderTopRadius="0"
                   leftIcon={
