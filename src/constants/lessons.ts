@@ -4,7 +4,7 @@ import { LessonType } from 'entities/lesson'
 const LESSONS: LessonType[] = [
   {
     kudosImageLink: null,
-    lessonImageLink: '/images/coming-soon-lesson.png',
+    lessonImageLink: null,
     learningActions: '',
     marketingDescription: 'What does it mean to go Bankless? In this lesson, we discuss why millions of people are investing in cryptocurrency - and practical first steps for joining the movement.',
     kudosId: null,
@@ -14,7 +14,7 @@ const LESSONS: LessonType[] = [
     description: 'What does it mean to go Bankless? Take your first step, here.',
     name: 'Going Bankless',
     quest: 'GoingBankless',
-    publicationStatus: 'planned',
+    publicationStatus: 'hidden',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
