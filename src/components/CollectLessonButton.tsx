@@ -357,24 +357,44 @@ Become an Academy Guardian today - join the effort to decentralize @BanklessAcad
                   </Button>
                 </ExternalLink>
               </Box>
-              <ExternalLink
-                href={`https://opensea.io/assets/optimism/${lesson.LessonCollectibleTokenAddress}/${tokenId}`}
-              >
-                <Button
-                  variant="primaryGold"
-                  isFullWidth
-                  borderTopRadius="0"
-                  leftIcon={
-                    <ChakraImage
-                      width="24px"
-                      height="24px"
-                      src="/images/OpenSea.svg"
-                    />
-                  }
+              <Box pb="2">
+                <ExternalLink
+                  href={`https://opensea.io/assets/optimism/${lesson.LessonCollectibleTokenAddress}/${tokenId}`}
                 >
-                  View on OpenSea
-                </Button>
-              </ExternalLink>
+                  <Button
+                    variant="primaryGold"
+                    isFullWidth
+                    borderRadius="0"
+                    leftIcon={
+                      <ChakraImage
+                        width="24px"
+                        height="24px"
+                        src="/images/OpenSea.svg"
+                      />
+                    }
+                  >
+                    View on OpenSea
+                  </Button>
+                </ExternalLink>
+              </Box>
+              <Box>
+                <ExternalLink href="https://guild.xyz/bankless-academy">
+                  <Button
+                    variant="primaryGold"
+                    isFullWidth
+                    borderTopRadius="0"
+                    leftIcon={
+                      <ChakraImage
+                        width="28px"
+                        height="28px"
+                        src="/images/Discord.svg"
+                      />
+                    }
+                  >
+                    Join the Discord
+                  </Button>
+                </ExternalLink>
+              </Box>
             </Box>
           )}
         </Box>
