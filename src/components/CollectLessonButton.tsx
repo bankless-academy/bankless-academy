@@ -18,7 +18,6 @@ import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import { useAccount, useNetwork } from 'wagmi'
 import { getLessonsCollected } from 'utils'
-import LessonCollectibleModal from 'components/LessonCollectibleModal'
 import {
   IS_WHITELABEL,
   MD_ENABLED,
@@ -41,9 +40,11 @@ const CollectiblesHelper = (
           - Easy access to the precompiled lesson content
           <br />
           - Replacement of normal lesson card with golden collectible artwork
-          <br />
-          - Early invitation to the official ‘Bankless Academy’ Discord server +
-          the dedicated ‘Academy Guardian’ channel.
+          <br />- Early invitation to the official ‘Bankless Academy’{' '}
+          <ExternalLink underline href="https://guild.xyz/bankless-academy">
+            Discord server
+          </ExternalLink>{' '}
+          + the dedicated ‘Academy Guardian’ channel.
           <br />
           - Public display of your support for Bankless Academy and retroactive
           public goods funding
@@ -122,11 +123,11 @@ const CollectLessonButton = ({
     onOpen: onOpenMintCollectibleModal,
     onClose: onCloseMintCollectibleModal,
   } = useDisclosure()
-  const {
-    isOpen: isOpenLessonCollectibleModal,
-    onOpen: onOpenLessonCollectibleModal,
-    onClose: onCloseLessonCollectibleModal,
-  } = useDisclosure()
+  // const {
+  //   isOpen: isOpenLessonCollectibleModal,
+  //   onOpen: onOpenLessonCollectibleModal,
+  //   onClose: onCloseLessonCollectibleModal,
+  // } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const { address } = useAccount()
   const { chain } = useNetwork()
@@ -311,19 +312,22 @@ Become an Academy Guardian today - join the effort to decentralize @BanklessAcad
             >
               {lessonImage}
               {MD_ENABLED && lesson.hasCollectible && (
-                <Button
-                  position="absolute"
-                  size="sm"
-                  top="5px"
-                  right="5px"
-                  zIndex="1"
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    onOpenLessonCollectibleModal()
-                  }}
-                >
-                  &lt;/&gt;
-                </Button>
+                // TODO: remove branch link
+                <ExternalLink href="https://github.com/BanklessDAO/bankless-academy/blob/lesson-c/public/lesson/en/layer-2-blockchains.md?plain=1">
+                  <Button
+                    position="absolute"
+                    size="sm"
+                    top="5px"
+                    right="5px"
+                    zIndex="1"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      // onOpenLessonCollectibleModal()
+                    }}
+                  >
+                    &lt;/&gt;
+                  </Button>
+                </ExternalLink>
               )}
             </Box>
           </Box>
@@ -379,13 +383,13 @@ Become an Academy Guardian today - join the effort to decentralize @BanklessAcad
           onClose={onCloseMintCollectibleModal}
           lesson={lesson}
         />
-        {MD_ENABLED && (
+        {/* {MD_ENABLED && (
           <LessonCollectibleModal
             isOpen={isOpenLessonCollectibleModal}
             onClose={onCloseLessonCollectibleModal}
             lesson={lesson}
           />
-        )}
+        )} */}
       </>
     )
   else
