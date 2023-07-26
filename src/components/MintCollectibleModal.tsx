@@ -40,10 +40,11 @@ const MintCollectibleModal = ({
         <ModalHeader>
           Collect Lesson
           <Box mt="4" fontSize="md" fontWeight="normal">
-            Bankless Academy is issuing a small quantity of portable datadisk
-            devices in an effort to decentralize Bankless Academy content, while
-            funding education public goods. Collect yours to become a Guardian
-            of Bankless Academy.
+            Bankless Academy is issuing a small quantity of collectible
+            DataDisk™ devices in an evolving effort to decentralize Bankless
+            Academy content. Collect yours to{' '}
+            <b>become a Guardian of Bankless Academy</b>, and retroactively fund
+            education public goods!
           </Box>
         </ModalHeader>
         <ModalCloseButton />

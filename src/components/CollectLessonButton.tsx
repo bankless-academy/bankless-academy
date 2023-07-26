@@ -32,21 +32,32 @@ const CollectiblesHelper = (
       <Box>
         <Box mb="4">
           Lesson collectibles are tradable NFTs containing lesson content from
-          Bankless Academy, built for 100 passionate Bankless Explorers.
+          Bankless Academy.
         </Box>
         <Box mb="4">
-          Owning a lesson data-disk alters your in-site experience, gets you an
-          invite to our collectors Discord channel, and displays your support
-          for providing a free blockchain education for internet citizens around
-          the globe.
+          Built for 100 passionate Bankless Explorers, owning a lesson DataDisk™
+          grants its Guardian the following perks:
+          <br />
+          - Easy access to the precompiled lesson content
+          <br />
+          - Replacement of normal lesson card with golden collectible artwork
+          <br />
+          - Early invitation to the official ‘Bankless Academy’ Discord server +
+          the dedicated ‘Academy Guardian’ channel.
+          <br />
+          - Public display of your support for Bankless Academy and retroactive
+          public goods funding
+          <br />
         </Box>
         <Box mb="4">
-          There are only 100 versions available for each collectible lesson, but
-          if the original batch sells out you can always try the secondary
-          market.
+          There are only 100 versions available for each collectible lesson. If
+          the original batch sells out, try the secondary market.
+          <br />
+          Become a Guardian of Bankless Academy today!
         </Box>
         <Box mb="4" fontSize="sm" fontStyle="italic">
-          *10% creator fee on secondary trades.
+          <b>Note:</b> Maximum of two collectibles per wallet. 10% creator fee
+          on secondary trades.
         </Box>
       </Box>
     }
@@ -172,10 +183,10 @@ const CollectLessonButton = ({
     updateLessonsCollectors().catch(console.error)
   }, [address])
 
-  const share = `I've just bought a @BanklessAcademy "${lesson.name}" Lesson DATADISK™ to support the content production.
+  const share = `I’ve just collected 1 of 100 ‘${lesson.name}’ DataDisks™ from @BanklessAcademy.
 https://opensea.io/assets/optimism/${lesson.LessonCollectibleTokenAddress}/${tokenId}
 
-Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
+Become an Academy Guardian today - join the effort to decentralize @BanklessAcademy content and retroactively fund education public goods!`
 
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
