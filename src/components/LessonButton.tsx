@@ -50,7 +50,7 @@ const LessonButton = ({
           variant="secondaryBig"
           size="lg"
           w="50%"
-          background={completed ? 'transparent' : '#3F3253 !important'}
+          background={'transparent !important'}
           border={
             completed
               ? '1px solid #3F3253 !important'
