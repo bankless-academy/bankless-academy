@@ -66,7 +66,13 @@ const LessonButton = ({
       <Button
         variant={completed ? 'secondaryBig' : 'primaryBig'}
         size="lg"
-        paddingX={completed ? '24px !important' : isHover ? '23px' : '24px'}
+        paddingX={
+          completed
+            ? '24px !important'
+            : isHover
+            ? '23px !important'
+            : '24px !important'
+        }
         w={lessonHasSponsor ? '50%' : 'inherit'}
         border={
           completed
@@ -75,7 +81,7 @@ const LessonButton = ({
               : '1px solid #3F3253 !important'
             : isHover
             ? '1px solid #B85FF1 !important'
-            : 'none'
+            : 'none !important'
         }
         borderLeftRadius={lessonHasSponsor ? '0' : null}
         background={
