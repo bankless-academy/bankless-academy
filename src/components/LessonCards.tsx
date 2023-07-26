@@ -197,7 +197,7 @@ const LessonCards: React.FC = () => {
         return (
           <LessonCard key={`lesson-${index}`} p={6} pb={8} borderRadius="3xl">
             <Box position="relative" zIndex="1">
-              <Text fontSize="xl" fontWeight="bold">
+              <Text fontSize="xl" fontWeight="bold" minH="60px">
                 {lesson.name}
               </Text>
               <Box display="flex" justifyContent="space-between" my="4">
@@ -246,7 +246,7 @@ const LessonCards: React.FC = () => {
                   )
                 )}
               </Box>
-              <Text fontSize="lg" minH="54px">
+              <Text fontSize="lg" minH="81px">
                 {lesson.description}
               </Text>
               {lesson.publicationStatus === 'planned' && all === undefined ? (
@@ -287,7 +287,7 @@ const LessonCards: React.FC = () => {
               <Box
                 display="flex"
                 flexDirection="row-reverse"
-                mt="4"
+                mt={lesson.isArticle || lesson.hasCollectible ? '25px' : '16px'}
                 justifyContent="space-between"
                 alignItems="center"
               >
