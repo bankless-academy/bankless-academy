@@ -117,6 +117,7 @@ const LessonDetail = ({
                 m="auto"
                 borderBottom="1px solid #989898"
                 w="fit-content"
+                maxW="calc(100vw - 100px)"
                 mb="8"
                 mt={isSmallScreen ? '-10px' : 'auto'}
               >
