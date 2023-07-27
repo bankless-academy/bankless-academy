@@ -303,7 +303,6 @@ Become an Academy Guardian today - join the effort to decentralize @BanklessAcad
                 cursor: 'pointer',
               }}
               position="relative"
-              minH="200px"
               onClick={async () =>
                 setOpenLessonLS(
                   await openLesson(openLessonLS, lesson, toast, address)
