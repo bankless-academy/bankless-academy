@@ -66,6 +66,7 @@ const ConnectWalletButton = ({
   const { connector, address, isConnected } = useAccount()
   const { chain } = useNetwork()
   const [waitingForSIWE, setWaitingForSIWE] = useState(false)
+  const [isDisconnecting, setIsDisconnecting] = useState(false)
   const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
@@ -97,6 +98,7 @@ const ConnectWalletButton = ({
   }
 
   async function disconnectWallet() {
+    setIsDisconnecting(true)
     onClose()
     await disconnect()
     setWaitingForSIWE(false)
@@ -105,6 +107,7 @@ const ConnectWalletButton = ({
     setAvatar(null)
     setKudos([])
     await fetch('/api/siwe/logout')
+    setIsDisconnecting(false)
   }
 
   async function updateName(address) {
@@ -250,11 +253,21 @@ const ConnectWalletButton = ({
   }
 
   useEffect(() => {
-    const { message }: any = siwe?.length ? JSON.parse(siwe) : {}
-    if (connector && address && message?.address !== address) {
-      signIn()
+    if (address && !SIWE_ENABLED) {
+      // DO nothing
+    } else {
+      const { message }: any = siwe?.length ? JSON.parse(siwe) : {}
+      if (connector && address && message?.address !== address) {
+        signIn()
+      }
     }
   }, [siwe, address, connector])
+
+  useEffect(() => {
+    if (address && !SIWE_ENABLED) {
+      loadAddress(address)
+    }
+  }, [address])
 
   useEffect(() => {
     if (refreshKudosLS) {
@@ -409,9 +422,13 @@ const ConnectWalletButton = ({
               onClick={openModal}
               size={isSmallScreen ? 'sm' : 'md'}
               leftIcon={<Wallet weight="bold" />}
-              isLoading={waitingForSIWE}
+              isLoading={waitingForSIWE || isDisconnecting}
               loadingText={
-                SIWE_ENABLED ? 'Sign In With Ethereum' : 'Connecting wallet'
+                isDisconnecting
+                  ? 'Disconnecting'
+                  : SIWE_ENABLED
+                  ? 'Sign In With Ethereum'
+                  : 'Connecting wallet'
               }
               zIndex={2}
               variant="primary"
