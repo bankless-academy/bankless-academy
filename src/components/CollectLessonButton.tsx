@@ -256,7 +256,8 @@ Become an Academy Guardian today - join the effort to decentralize @BanklessAcad
               cursor="pointer"
               onClick={async () => {
                 onOpenMintCollectibleModal()
-                if (chain?.id !== 10) await switchNetwork({ chainId: 10 })
+                if (chain?.id !== 10 && address)
+                  await switchNetwork({ chainId: 10 })
               }}
             >
               {CollectiblesHelper}
