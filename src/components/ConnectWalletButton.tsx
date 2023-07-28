@@ -185,6 +185,7 @@ const ConnectWalletButton = ({
   }
 
   const loadAddress = (address) => {
+    setConnectWalletPopupLS(false)
     onClose()
     if (localStorage.getItem('current_wallet') !== address.toLowerCase()) {
       localStorage.removeItem('passport')
@@ -301,7 +302,7 @@ const ConnectWalletButton = ({
 
   return (
     <>
-      {isConnected && !waitingForSIWE ? (
+      {isConnected && !waitingForSIWE && name ? (
         <Popover
           isOpen={isOpen}
           placement="bottom-end"
