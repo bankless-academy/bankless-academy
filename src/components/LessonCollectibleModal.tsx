@@ -70,6 +70,7 @@ const LessonCollectibleModal = ({
           .then((md) => {
             // console.log('md', md)
             if (md[0] !== '<') {
+              // eslint-disable-next-line no-unsafe-optional-chaining
               const [intro, content] = md?.split(SPLIT)
               setIntro(intro + SPLIT)
               setContent(content)

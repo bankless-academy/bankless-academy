@@ -1,7 +1,7 @@
-import {
-  SystemStyleObject,
-  SystemStyleFunction,
-} from '@chakra-ui/theme-tools/src/component'
+// import {
+//   SystemStyleObject,
+//   SystemStyleFunction,
+// } from '@chakra-ui/theme-tools/src/component'
 import { isMobile } from 'react-device-detect'
 
 const primaryStyle = {
@@ -151,7 +151,7 @@ const secondaryWhite = {
 }
 
 // TODO: https://chakra-ui.com/docs/styled-system/advanced-theming#theme-typings for auto-complete
-type variantType = SystemStyleObject | SystemStyleFunction
+type variantType = any
 type variantsTypes = {
   primary: variantType
   primaryGold: variantType

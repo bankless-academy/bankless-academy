@@ -343,7 +343,7 @@ Become an Academy Guardian today - join the effort to decentralize @BanklessAcad
                 <ExternalLink href={twitterLink} mr="2">
                   <Button
                     variant="primaryGold"
-                    isFullWidth
+                    w="100%"
                     borderBottomRadius="0"
                     leftIcon={
                       <ChakraImage
@@ -363,7 +363,7 @@ Become an Academy Guardian today - join the effort to decentralize @BanklessAcad
                 >
                   <Button
                     variant="primaryGold"
-                    isFullWidth
+                    w="100%"
                     borderRadius="0"
                     leftIcon={
                       <ChakraImage
@@ -381,7 +381,7 @@ Become an Academy Guardian today - join the effort to decentralize @BanklessAcad
                 <ExternalLink href="https://guild.xyz/bankless-academy">
                   <Button
                     variant="primaryGold"
-                    isFullWidth
+                    w="100%"
                     borderTopRadius="0"
                     leftIcon={
                       <ChakraImage

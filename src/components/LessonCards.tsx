@@ -69,7 +69,7 @@ export const LessonCard = styled(Box)`
   }
 `
 
-const StyledTag = styled(Tag)<{ isminted?: string }>`
+const StyledTag = styled(Tag)<{ isminted?: string; gold?: string }>`
   height: 30px;
   ${(props) =>
     props.gold === 'true' &&

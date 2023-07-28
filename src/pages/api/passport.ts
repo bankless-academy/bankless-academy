@@ -87,12 +87,14 @@ export default async function handler(
       let whereCondition = 'gitcoin_stamps @> ?'
       let sybil = []
       if (passport?.items?.length) {
+        // eslint-disable-next-line no-unsafe-optional-chaining
         for (const stamp of passport?.items) {
           const provider = stamp.credential?.credentialSubject?.provider
           console.log(stamp)
           if (stamp.credential?.credentialSubject?.hash)
             stampHashes[provider] = stamp.credential?.credentialSubject?.hash
         }
+        // eslint-disable-next-line no-unsafe-optional-chaining
         for (const stamp of passport?.items) {
           const provider = stamp.credential?.credentialSubject?.provider
           stampProviders[provider] = { provider, stamp: stamp.credential }

@@ -113,7 +113,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 <ExternalLink href={twitterLink} mr="2">
                   <Button
                     variant="primary"
-                    isFullWidth
+                    w="100%"
                     borderBottomRadius="0"
                     leftIcon={
                       <ChakraImage width="24px" src="/images/Twitter.svg" />
@@ -126,7 +126,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               <ExternalLink href={`${MINTKUDOS_OPENSEA_URL}${lesson.kudosId}`}>
                 <Button
                   variant="primary"
-                  isFullWidth
+                  w="100%"
                   borderTopRadius="0"
                   leftIcon={
                     <ChakraImage width="24px" src="/images/OpenSea.svg" />

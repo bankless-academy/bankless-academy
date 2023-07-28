@@ -103,20 +103,27 @@ const ConnectWalletButton = ({
   }
 
   async function disconnectWallet() {
-    setWaitingForSIWE(false)
-    setIsDisconnecting(true)
-    onClose()
-    disconnect()
+    try {
+      setWaitingForSIWE(false)
+      setIsDisconnecting(true)
+      onClose()
+      disconnect()
+      setSiweLS('')
+      setName(null)
+      setAvatar(null)
+      setKudos([])
+      await fetch('/api/siwe/logout')
+      setIsDisconnecting(false)
+    } catch (error) {
+      console.error(error)
+    }
     // HACK: mobile wallet disconnect issues
-    localStorage.removeItem('wagmi.wallet')
-    localStorage.removeItem('wagmi.connected')
-    localStorage.removeItem('wc@2:client:0.3//session')
-    setSiweLS('')
-    setName(null)
-    setAvatar(null)
-    setKudos([])
-    await fetch('/api/siwe/logout')
-    setIsDisconnecting(false)
+    if (localStorage.getItem('wagmi.wallet') === 'walletConnect') {
+      localStorage.removeItem('wagmi.wallet')
+      localStorage.removeItem('wagmi.connected')
+      localStorage.removeItem('wc@2:client:0.3//session')
+      location.reload()
+    }
   }
 
   async function updateName(address) {
@@ -134,7 +141,8 @@ const ConnectWalletButton = ({
       if (ensName) {
         setName(ensName)
         const ensAvatar = await fetchEnsAvatar({
-          name: ensName,
+          address,
+          // name: ensName,
           chainId: 1,
         })
         if (ensAvatar) setAvatar(ensAvatar)
@@ -331,7 +339,7 @@ const ConnectWalletButton = ({
             <PopoverBody>
               <Box textAlign="center" m="2">
                 <Button
-                  isFullWidth
+                  w="100%"
                   size={isSmallScreen ? 'sm' : 'md'}
                   leftIcon={<Wallet weight="bold" />}
                   onClick={disconnectWallet}

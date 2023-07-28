@@ -19,7 +19,7 @@ import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 
 import { useWeb3Modal, Web3Modal } from '@web3modal/react'
 
-import { configureChains, createConfig, WagmiConfig } from 'wagmi'
+import { configureChains, createClient, WagmiConfig } from 'wagmi'
 
 import { mainnet, optimism, polygon } from 'wagmi/chains'
 
@@ -58,17 +58,20 @@ const App = ({
   // 1. Get projectID at https://cloud.walletconnect.com
   const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID
 
-  // 2. Configure wagmi client
   const chains = [mainnet, polygon, optimism]
-  const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
-  const wagmiConfig = createConfig({
+  const { provider } = configureChains(chains, [w3mProvider({ projectId })])
+
+  // 2. Configure wagmi client
+  // const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
+  const wagmiClient = createClient({
     autoConnect: true,
     connectors: w3mConnectors({ chains, projectId }),
-    publicClient,
+    provider,
+    // publicClient,
   })
 
   // Web3Modal Ethereum Client
-  const ethereumClient = new EthereumClient(wagmiConfig, chains)
+  const ethereumClient = new EthereumClient(wagmiClient, chains)
 
   return (
     <>
@@ -76,7 +79,8 @@ const App = ({
       {!isMobile && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
         <NonSSRWrapper>
-          <WagmiConfig config={wagmiConfig}>
+          <WagmiConfig client={wagmiClient}>
+            {/* <WagmiConfig config={wagmiConfig}> */}
             <Global
               styles={css`
                 .web3modal-modal-lightbox {

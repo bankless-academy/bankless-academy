@@ -28,7 +28,7 @@ const LessonButton = ({
   const toast = useToast()
   const { address } = useAccount()
 
-  const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
+  const isLessonStarted = (parseInt(localStorage.getItem(lesson.slug)) || 0) > 0
   const lessonHasSponsor =
     lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
   const completed = isKudosMintedLS || isArticleRead
