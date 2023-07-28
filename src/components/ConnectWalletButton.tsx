@@ -20,8 +20,8 @@ import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import { useWeb3Modal } from '@web3modal/react'
-import { useAccount, useNetwork, useSignMessage } from 'wagmi'
-import { disconnect, fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
+import { useAccount, useNetwork, useSignMessage, useDisconnect } from 'wagmi'
+import { fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
 import makeBlockie from 'ethereum-blockies-base64'
 import { SiweMessage } from 'siwe'
 
@@ -83,6 +83,11 @@ const ConnectWalletButton = ({
   )
   const { onOpen, onClose, isOpen } = useDisclosure()
   const { asPath } = useRouter()
+  const { disconnect } = useDisconnect({
+    onError(error) {
+      console.log('Error', error)
+    },
+  })
 
   const isLessonPage = asPath.includes('/lessons/')
 
@@ -98,10 +103,14 @@ const ConnectWalletButton = ({
   }
 
   async function disconnectWallet() {
+    setWaitingForSIWE(false)
     setIsDisconnecting(true)
     onClose()
-    await disconnect()
-    setWaitingForSIWE(false)
+    disconnect()
+    // HACK: mobile wallet disconnect issues
+    localStorage.removeItem('wagmi.wallet')
+    localStorage.removeItem('wagmi.connected')
+    localStorage.removeItem('wc@2:client:0.3//session')
     setSiweLS('')
     setName(null)
     setAvatar(null)
@@ -125,7 +134,7 @@ const ConnectWalletButton = ({
       if (ensName) {
         setName(ensName)
         const ensAvatar = await fetchEnsAvatar({
-          address,
+          name: ensName,
           chainId: 1,
         })
         if (ensAvatar) setAvatar(ensAvatar)
@@ -207,18 +216,19 @@ const ConnectWalletButton = ({
   }, [])
 
   const signIn = async () => {
+    const chainId = chain?.id
+    if (!chainId || waitingForSIWE || isDisconnecting) return
     const timeout = setTimeout(() => {
       console.log('SIWE timeout')
       disconnectWallet()
     }, 60000)
     try {
-      const chainId = chain?.id
-      if (!chainId || waitingForSIWE) return
+      setWaitingForSIWE(true)
       const nonceRes = await fetch('/api/siwe/nonce')
       const nonce = await nonceRes.text()
 
-      setWaitingForSIWE(true)
       // Create SIWE message with pre-fetched nonce and sign with wallet
+      // https://wagmi.sh/examples/sign-in-with-ethereum
       const message = new SiweMessage({
         domain: window.location.host,
         address,
@@ -228,6 +238,7 @@ const ConnectWalletButton = ({
         chainId,
         nonce,
       })
+      await new Promise((resolve) => setTimeout(resolve, 500))
       const signature = await signMessageAsync({
         message: message.prepareMessage(),
       })
