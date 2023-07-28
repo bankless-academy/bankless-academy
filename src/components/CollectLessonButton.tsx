@@ -181,7 +181,8 @@ const CollectLessonButton = ({
     }
   }
   useEffect(() => {
-    updateLessonsCollectors().catch(console.error)
+    if (lesson.LessonCollectibleTokenAddress)
+      updateLessonsCollectors().catch(console.error)
   }, [address])
 
   const share = `I’ve just collected 1 of 100 ‘${lesson.name}’ DataDisks™ from @BanklessAcademy.
