@@ -57,6 +57,7 @@ const MintCollectibleModal = ({
                 width: isMobileScreen ? '100%' : '400px',
                 height: '650px',
                 margin: 'auto',
+                colorScheme: 'none',
               }}
             ></iframe>
           )}
