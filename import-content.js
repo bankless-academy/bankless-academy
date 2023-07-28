@@ -561,6 +561,7 @@ axios
               if (fs.existsSync(lessonPath)) {
                 const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
                 if (lessonFile) {
+                  // eslint-disable-next-line no-unsafe-optional-chaining
                   const [previousLessonHeader, previousLessonContentMD] = lessonFile?.split(LESSON_SPLITTER)
                   // console.log(previousLessonContentMD.trim())
                   // console.log(lessonContentMD.trim())
