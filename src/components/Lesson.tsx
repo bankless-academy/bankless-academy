@@ -278,6 +278,7 @@ const Lesson = ({
   }
 
   const goToPrevSlide = () => {
+    toast.closeAll()
     if (!isFirstSlide) {
       setCurrentSlide(currentSlide - 1)
       scrollTop()
@@ -286,6 +287,7 @@ const Lesson = ({
   }
 
   const goToNextSlide = () => {
+    toast.closeAll()
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
@@ -437,10 +439,11 @@ const Lesson = ({
     slide?.quiz &&
     lesson.slug === 'bankless-archetypes' &&
     localStorage.getItem(`quiz-${slide.quiz.id}`)
-  )
+  ) {
     slide.quiz.rightAnswerNumber = parseInt(
       localStorage.getItem(`quiz-${slide.quiz.id}`)
     )
+  }
 
   const answerIsCorrect =
     slide?.quiz &&
@@ -651,7 +654,7 @@ const Lesson = ({
               ref={buttonRightRef}
               variant="primaryBig"
               size="lg"
-              disabled={
+              isDisabled={
                 (slide.quiz && !answerIsCorrect) ||
                 (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
               }
