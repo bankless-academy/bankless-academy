@@ -6,7 +6,6 @@ import {
   Image,
   TagRightIcon,
   Button,
-  Tooltip,
   useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
@@ -17,7 +16,6 @@ import { isMobile } from 'react-device-detect'
 import { useAccount } from 'wagmi'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
-import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import LessonBanner from 'components/LessonBanner'
 import MODULES from 'constants/whitelabel_modules'
@@ -30,6 +28,7 @@ import SubscriptionModal from 'components/SubscriptionModal'
 import { LessonType } from 'entities/lesson'
 import InstallAppModal from 'components/InstallAppModal'
 import LessonButton from 'components/LessonButton'
+import CollectEntryButton from 'components/CollectEntryButton'
 
 // TODO: move to dedicated component file
 export const LessonCard = styled(Box)`
@@ -239,11 +238,7 @@ const LessonCards: React.FC = () => {
                       Entry Collected
                     </StyledTag>
                   ) : (
-                    <ExternalLink href={lesson.mirrorLink}>
-                      <Tooltip hasArrow label="Collect Entry on Mirror.xyz">
-                        <Button variant="primaryGold">Collect Entry</Button>
-                      </Tooltip>
-                    </ExternalLink>
+                    <CollectEntryButton lesson={lesson} />
                   )
                 ) : (
                   !lessonHasSponsor &&

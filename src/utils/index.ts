@@ -483,6 +483,21 @@ export async function getLessonsCollectors(
   }
 }
 
+export async function getArticlesCollectors(
+  articleAddress: string
+): Promise<any[]> {
+  try {
+    const NFTCollectors = await axios.get(
+      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getOwnersForCollection?contractAddress=${articleAddress}&withTokenBalances=true`
+    )
+    // console.log(NFTCollectors.data)
+    return NFTCollectors.data?.ownerAddresses || []
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
 export async function isHolderOfNFT(
   address: string,
   openSeaLink: string

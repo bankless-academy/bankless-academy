@@ -17,6 +17,7 @@ import { useAccount } from 'wagmi'
 
 import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
+import CollectEntryButton from 'components/CollectEntryButton'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
@@ -626,13 +627,7 @@ const Article = ({
               Entry Collected
             </Button>
           ) : (
-            <ExternalLink href={lesson.mirrorLink}>
-              <Tooltip hasArrow label="Collect Entry on Mirror.xyz">
-                <Button variant="primaryGold" w="100%">
-                  Collect Entry
-                </Button>
-              </Tooltip>
-            </ExternalLink>
+            <CollectEntryButton lesson={lesson} />
           )}
         </Box>
         <Box

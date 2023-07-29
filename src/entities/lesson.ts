@@ -34,7 +34,7 @@ export interface LessonType {
   communityDiscussionLink?: string
   isArticle?: boolean
   mirrorLink?: string
-  mirrorNFTAddress?: string
+  mirrorNFTAddress?: `0x${string}`
   articleContent?: string
   isPreview?: boolean
   sponsorName?: string
