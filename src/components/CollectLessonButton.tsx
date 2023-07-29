@@ -5,7 +5,6 @@ import {
   Button,
   useDisclosure,
   Image as ChakraImage,
-  useToast,
   UnorderedList,
   ListItem,
 } from '@chakra-ui/react'
@@ -25,6 +24,7 @@ import {
   MD_ENABLED,
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
+import OpenLesson from './OpenLesson'
 
 const CollectiblesHelper = (
   <Helper
@@ -147,11 +147,6 @@ const CollectLessonButton = ({
     'lessonsCollected',
     []
   )
-  const [openLessonLS, setOpenLessonLS] = useLocalStorage(
-    `lessonOpen`,
-    JSON.stringify([])
-  )
-  const toast = useToast()
 
   const isLessonCollected =
     !!lesson.LessonCollectibleTokenAddress?.length &&
@@ -314,37 +309,29 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
             borderBottom="1px solid #4b474b"
             borderBottomRadius={isKudosMintedLS && isLessonMintedLS ? 0 : '8px'}
           >
-            <Box
-              style={{
-                cursor: 'pointer',
-              }}
-              position="relative"
-              onClick={async () =>
-                setOpenLessonLS(
-                  await openLesson(openLessonLS, lesson, toast, address)
-                )
-              }
-            >
-              {lessonImage}
-              {MD_ENABLED && lesson.hasCollectible && (
-                // TODO: remove branch link
-                <ExternalLink href="https://github.com/bankless-academy/bankless-academy/blob/lesson-c/public/lesson/en/layer-2-blockchains.md?plain=1">
-                  <Button
-                    position="absolute"
-                    size="sm"
-                    top="5px"
-                    right="5px"
-                    zIndex="1"
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      // onOpenLessonCollectibleModal()
-                    }}
-                  >
-                    &lt;/&gt;
-                  </Button>
-                </ExternalLink>
-              )}
-            </Box>
+            <OpenLesson lesson={lesson} click>
+              <>
+                {lessonImage}
+                {MD_ENABLED && lesson.hasCollectible && (
+                  // TODO: remove branch link
+                  <ExternalLink href="https://github.com/bankless-academy/bankless-academy/blob/lesson-c/public/lesson/en/layer-2-blockchains.md?plain=1">
+                    <Button
+                      position="absolute"
+                      size="sm"
+                      top="5px"
+                      right="5px"
+                      zIndex="1"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        // onOpenLessonCollectibleModal()
+                      }}
+                    >
+                      &lt;/&gt;
+                    </Button>
+                  </ExternalLink>
+                )}
+              </>
+            </OpenLesson>
           </Box>
           {isKudosMintedLS && isLessonMintedLS && (
             <Box
@@ -429,16 +416,9 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
     )
   else
     return (
-      <Box
-        onClick={async () =>
-          setOpenLessonLS(
-            await openLesson(openLessonLS, lesson, toast, address)
-          )
-        }
-        cursor="pointer"
-      >
+      <OpenLesson lesson={lesson} click>
         {lessonImage}
-      </Box>
+      </OpenLesson>
     )
 }
 
