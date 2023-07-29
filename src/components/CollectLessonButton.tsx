@@ -6,6 +6,8 @@ import {
   useDisclosure,
   Image as ChakraImage,
   useToast,
+  UnorderedList,
+  ListItem,
 } from '@chakra-ui/react'
 import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
@@ -37,24 +39,29 @@ const CollectiblesHelper = (
           Built for 100 passionate Bankless Explorers, owning a lesson DataDisk™
           grants its Guardian the following perks:
           <br />
-          - Easy access to the precompiled lesson content
-          <br />
-          - Replacement of normal lesson card with golden collectible artwork
-          <br />- Early invitation to the official ‘Bankless Academy’{' '}
-          <ExternalLink underline href="https://guild.xyz/bankless-academy">
-            Discord server
-          </ExternalLink>{' '}
-          + the dedicated ‘Academy Guardian’ channel.
-          <br />
-          - Public display of your support for Bankless Academy and retroactive
-          public goods funding
-          <br />
+          <UnorderedList>
+            <ListItem>
+              Upgrading of normal lesson card to golden DataDisk™ artwork.
+            </ListItem>
+            <ListItem>
+              Replacement of normal lesson card with golden collectible artwork
+              <br />- Early invitation to the official ‘Bankless Academy’{' '}
+              <ExternalLink underline href="https://guild.xyz/bankless-academy">
+                Discord server
+              </ExternalLink>
+              , and the dedicated ‘Guardian’ channel — where we discuss the
+              future of collectible content at the Academy.
+            </ListItem>
+            <ListItem>
+              Onchain display of your support for Bankless Academy and funding
+              of education public goods.
+            </ListItem>
+          </UnorderedList>
         </Box>
         <Box mb="4">
           There are only 100 versions available for each collectible lesson. If
-          the original batch sells out, try the secondary market.
-          <br />
-          Become a Guardian of Bankless Academy today!
+          the original batch sells out, try the secondary market. Join us and{' '}
+          <b>become a Guardian of Bankless Academy</b> today!
         </Box>
         <Box mb="4" fontSize="sm" fontStyle="italic">
           <b>Note:</b> Maximum of two collectibles per wallet. 10% creator fee
@@ -188,7 +195,7 @@ const CollectLessonButton = ({
   const share = `I’ve just collected 1 of 100 ‘${lesson.name}’ DataDisks™ from @BanklessAcademy.
 https://opensea.io/assets/optimism/${lesson.LessonCollectibleTokenAddress}/${tokenId}
 
-Become an Academy Guardian today - join the effort to decentralize @BanklessAcademy content and retroactively fund education public goods!`
+Become a Guardian of Bankless Academy today - join the effort to circulate @BanklessAcademy content and retroactively fund education public goods!`
 
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
