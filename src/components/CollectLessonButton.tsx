@@ -29,6 +29,7 @@ import {
 const CollectiblesHelper = (
   <Helper
     title="Lesson Collectible"
+    fullscreen
     definition={
       <Box>
         <Box mb="4">

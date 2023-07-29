@@ -11,6 +11,7 @@ import {
   Icon,
   IconButton,
   Box,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import { ReactNode, useState } from 'react'
 
@@ -76,34 +77,36 @@ const ButtonHelper = ({
 const Helper = ({
   title,
   definition,
+  fullscreen,
 }: {
   title: ReactNode
   definition: ReactNode
+  fullscreen?: boolean
 }): React.ReactElement => {
   const {
     isOpen: isOpenHelpModal,
     onOpen: onOpenHelpModal,
     onClose: onCloseHelpModal,
   } = useDisclosure()
+  const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
 
   return (
     <>
       <ButtonHelper onOpenHelpModal={onOpenHelpModal} />
       <Modal
         onClose={onCloseHelpModal}
-        size="xs"
+        size={fullscreen && isMobileScreen ? 'full' : 'md'}
         isOpen={isOpenHelpModal}
         isCentered
       >
         <ModalOverlay />
         <ModalContent
           bg="linear-gradient(180deg, #a379bdcc 0%, #5a5198cc 100%)"
-          border="2px solid #B68BCC"
-          borderRadius="3xl"
+          border={fullscreen && isMobileScreen ? '0' : '2px solid #B68BCC'}
+          borderRadius={fullscreen && isMobileScreen ? '0' : '3xl'}
           backdropFilter="blur(10px)"
-          my="5vw"
-          w="92vw"
-          maxW="600px"
+          overflowY="auto"
+          maxH="100vh"
         >
           <ModalHeader>{title}</ModalHeader>
           <ModalCloseButton />
