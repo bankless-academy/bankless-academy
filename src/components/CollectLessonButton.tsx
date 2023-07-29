@@ -140,6 +140,7 @@ const CollectLessonButton = ({
   //   onClose: onCloseLessonCollectibleModal,
   // } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
+  const [numberIOwn, setNumberIOwn] = useState(1)
   const { address } = useAccount()
   const { chain } = useNetwork()
   const [lessonsCollectedLS, setLessonsCollectedLS] = useLocalStorage(
@@ -179,6 +180,8 @@ const CollectLessonButton = ({
         setTokenId(
           parseInt(NFTCollector.tokenBalances[0].tokenId, 16).toString()
         )
+        if (NFTCollector.tokenBalances?.length >= 1)
+          setNumberIOwn(NFTCollector.tokenBalances?.length)
         setIsLessonMintedLS(true)
       }
     }
@@ -196,7 +199,7 @@ const CollectLessonButton = ({
       updateLessonsCollectors().catch(console.error)
   }, [address])
 
-  const share = `I’ve just collected 1 of 100 ‘${lesson.name}’ DataDisks™ from @BanklessAcademy.
+  const share = `I’ve just collected ${numberIOwn} of 100 ‘${lesson.name}’ DataDisks™ from @BanklessAcademy.
 https://opensea.io/assets/optimism/${lesson.LessonCollectibleTokenAddress}/${tokenId}
 
 Become a Guardian of Bankless Academy today - join the effort to circulate @BanklessAcademy content and retroactively fund education public goods!`
