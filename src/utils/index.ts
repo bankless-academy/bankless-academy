@@ -583,3 +583,12 @@ export async function getUD(address: string): Promise<string | null> {
     return res
   }
 }
+
+export const scrollTop = () => {
+  // 0.3 second delay
+  setTimeout(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }, 300)
+}

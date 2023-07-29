@@ -16,6 +16,7 @@ import NFT from 'components/NFT'
 import ExternalLink from './ExternalLink'
 import { DOMAIN_URL, TOKEN_GATING_ENABLED } from 'constants/index'
 import { useEffect } from 'react'
+import { scrollTop } from 'utils'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -49,6 +50,7 @@ const LessonDetail = ({
   )
 
   useEffect((): void => {
+    scrollTop()
     setOpenLessonLS(closeLesson(openLessonLS, lesson))
   }, [])
 

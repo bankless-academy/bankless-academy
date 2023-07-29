@@ -25,7 +25,7 @@ import Card from 'components/Card'
 import MintKudos from 'components/MintKudos'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
-import { isHolderOfNFT, Mixpanel } from 'utils'
+import { isHolderOfNFT, Mixpanel, scrollTop } from 'utils'
 import { IS_WHITELABEL, KEYWORDS, TOKEN_GATING_ENABLED } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
 import { theme } from 'theme/index'
@@ -267,15 +267,6 @@ const Lesson = ({
       })
     }, 3000)
   }, [])
-
-  const scrollTop = () => {
-    // 0.3 second delay
-    setTimeout(() => {
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-      }
-    }, 300)
-  }
 
   const goToPrevSlide = () => {
     toast.closeAll()
