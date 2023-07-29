@@ -259,7 +259,7 @@ const ConnectWalletButton = ({
       // const res = await fetch('/api/siwe/me')
       // TODO: add support for multiple windows open
       const verifyRes = await api('/api/siwe/verify', siwe)
-      // https://github.com/BanklessDAO/bankless-academy/pull/90/commits/d130d22e70ad146b1e619133864d03a8bf4c3cb4#diff-caedf14611e4652b0b5f0287a5bc59621a76c1d0b41c544302d3c8c1a7641d22L107
+      // https://github.com/bankless-academy/bankless-academy/pull/90/commits/d130d22e70ad146b1e619133864d03a8bf4c3cb4#diff-caedf14611e4652b0b5f0287a5bc59621a76c1d0b41c544302d3c8c1a7641d22L107
       if (!verifyRes.data.ok) throw new Error('Error verifying message')
       setSiweLS(JSON.stringify(siwe))
       loadAddress(address)

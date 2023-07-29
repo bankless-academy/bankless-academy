@@ -314,7 +314,7 @@ Become an Academy Guardian today - join the effort to decentralize @BanklessAcad
               {lessonImage}
               {MD_ENABLED && lesson.hasCollectible && (
                 // TODO: remove branch link
-                <ExternalLink href="https://github.com/BanklessDAO/bankless-academy/blob/lesson-c/public/lesson/en/layer-2-blockchains.md?plain=1">
+                <ExternalLink href="https://github.com/bankless-academy/bankless-academy/blob/lesson-c/public/lesson/en/layer-2-blockchains.md?plain=1">
                   <Button
                     position="absolute"
                     size="sm"
