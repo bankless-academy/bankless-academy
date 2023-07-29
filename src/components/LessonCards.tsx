@@ -28,7 +28,6 @@ import SubscriptionModal from 'components/SubscriptionModal'
 import { LessonType } from 'entities/lesson'
 import InstallAppModal from 'components/InstallAppModal'
 import LessonButton from 'components/LessonButton'
-import CollectEntryButton from 'components/CollectEntryButton'
 
 // TODO: move to dedicated component file
 export const LessonCard = styled(Box)`
@@ -237,9 +236,11 @@ const LessonCards: React.FC = () => {
                     <StyledTag size="md" variant="outline" gold="true">
                       Entry Collected
                     </StyledTag>
-                  ) : (
-                    <CollectEntryButton lesson={lesson} />
-                  )
+                  ) : !lesson.areMirrorNFTAllCollected ? (
+                    <StyledTag size="md" variant="outline" gold="true">
+                      Entry Available
+                    </StyledTag>
+                  ) : null
                 ) : (
                   !lessonHasSponsor &&
                   lesson.publicationStatus !== 'planned' && (

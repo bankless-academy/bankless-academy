@@ -142,30 +142,33 @@ const CollectEntryButton = ({
   return (
     <Box>
       <Tooltip hasArrow label="Collect Mirror Entry">
-        <Button
-          isDisabled={!write || isLoading}
-          loadingText="Minting ..."
-          variant="primaryGold"
-          w="100%"
-          onClick={() =>
-            numberMinted !== '-'
-              ? parseInt(numberMinted) >= 100
-                ? openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
-                : write()
-              : alert('try again in 2 seconds')
-          }
-        >
-          Collect Entry
-        </Button>
+        {lesson.areMirrorNFTAllCollected ? (
+          <ExternalLink
+            href={`https://opensea.io/collection/${lesson.slug}`}
+            alt="Collect on secondary market"
+          >
+            <Button variant="primaryGold" w="100%">
+              Collect on secondary market
+            </Button>
+          </ExternalLink>
+        ) : (
+          <Button
+            isDisabled={!write || isLoading}
+            loadingText="Minting ..."
+            variant="primaryGold"
+            w="100%"
+            onClick={() =>
+              numberMinted !== '-'
+                ? parseInt(numberMinted) >= 100
+                  ? openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
+                  : write()
+                : alert('try again in 2 seconds')
+            }
+          >
+            Collect Entry
+          </Button>
+        )}
       </Tooltip>
-      {isSuccess && (
-        <div>
-          Successfully minted your NFT!
-          <div>
-            <a href={`https://etherscan.io/tx/${data?.hash}`}>Etherscan</a>
-          </div>
-        </div>
-      )}
     </Box>
   )
 }

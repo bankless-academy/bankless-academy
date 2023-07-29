@@ -139,6 +139,7 @@ const KEY_MATCHING = {
   // 'Community discussion link': 'communityDiscussionLink',
   'Mirror link': 'mirrorLink',
   'Mirror NFT address': 'mirrorNFTAddress',
+  'Mirror NFT all collected': 'areMirrorNFTAllCollected',
   'Sponsor Name': 'sponsorName',
   'Sponsor Logo': 'sponsorLogo',
   'NFT Gating': 'nftGating',
@@ -242,6 +243,7 @@ axios
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
       if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
       if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
+      if (lesson.areMirrorNFTAllCollected === undefined) delete lesson.areMirrorNFTAllCollected
       if (lesson.sponsorName === undefined || lesson.sponsorName === null) delete lesson.sponsorName
       if (lesson.sponsorLogo === undefined || lesson.sponsorLogo === null) delete lesson.sponsorLogo
       if (lesson.nftGating === undefined || lesson.nftGating === null) delete lesson.nftGating
@@ -316,6 +318,9 @@ axios
                 if (lesson.socialImageLink) {
                   lesson.socialImageLink = get_img(lesson.socialImageLink, lesson.slug, 'social')
                 }
+                if (lesson.sponsorLogo) {
+                  lesson.sponsorLogo = get_img(lesson.sponsorLogo, lesson.slug, 'sponsor')
+                }
 
                 lessons[index] = lesson
               })
@@ -348,6 +353,7 @@ axios
           if (lesson.nftGatingImageLink) {
             lesson.nftGatingImageLink = get_img(lesson.nftGatingImageLink, lesson.slug, 'nft')
           }
+          delete lesson.areMirrorNFTAllCollected
 
           lesson.imageLinks = []
           // data cleaning

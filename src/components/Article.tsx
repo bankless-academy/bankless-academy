@@ -540,13 +540,43 @@ const Article = ({
         mt={isSmallScreen ? '0' : '24px'}
       />
       <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
-      <Box p="24px">
-        <ExternalLink href={lesson.mirrorLink}>
-          <Button variant="primary" rightIcon={<ArrowRight size={16} />}>
-            View on Mirror.xyz
-          </Button>
-        </ExternalLink>
-      </Box>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="24px">
+        <Box
+          // border="1px solid #989898"
+          py={isSmallScreen ? '2' : '6'}
+          px="6"
+          borderRadius="lg"
+        >
+          {isArticleCollected ? (
+            <Button
+              variant="secondaryGold"
+              w="100%"
+              background="transparent !important"
+            >
+              Entry Collected
+            </Button>
+          ) : (
+            <CollectEntryButton lesson={lesson} />
+          )}
+        </Box>
+        <Box
+          // border="1px solid #989898"
+          py={isSmallScreen ? '2' : '6'}
+          px="6"
+          borderRadius="lg"
+          textAlign="center"
+        >
+          <ExternalLink href={lesson.mirrorLink}>
+            <Button
+              variant="primary"
+              w="100%"
+              rightIcon={<ArrowRight size={16} />}
+            >
+              View on Mirror.xyz
+            </Button>
+          </ExternalLink>
+        </Box>
+      </SimpleGrid>
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown
           components={{
