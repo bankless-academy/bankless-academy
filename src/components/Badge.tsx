@@ -54,7 +54,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     share
   )}`
 
-  if (!isQuestCompleted) {
+  if (!isQuestCompleted && !isKudosMintedLS) {
     return (
       <Box position="relative" w="290px" m="auto" my="6">
         <Box

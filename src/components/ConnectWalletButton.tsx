@@ -111,7 +111,6 @@ const ConnectWalletButton = ({
       setSiweLS('')
       setName(null)
       setAvatar(null)
-      setKudos([])
       await fetch('/api/siwe/logout')
       setIsDisconnecting(false)
     } catch (error) {
