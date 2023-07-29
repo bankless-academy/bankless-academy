@@ -465,7 +465,7 @@ const ConnectWalletButton = ({
               <Text textAlign="center">
                 {`Don’t know how? `}
                 <ExternalLink
-                  underline
+                  underline="true"
                   href="/faq#edf3a4658d3d4aa78eac62e1dcf68978"
                 >
                   Get help here

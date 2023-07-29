@@ -47,7 +47,10 @@ const CollectiblesHelper = (
             <ListItem>
               Replacement of normal lesson card with golden collectible artwork
               <br />- Early invitation to the official ‘Bankless Academy’{' '}
-              <ExternalLink underline href="https://guild.xyz/bankless-academy">
+              <ExternalLink
+                underline="true"
+                href="https://guild.xyz/bankless-academy"
+              >
                 Discord server
               </ExternalLink>
               , and the dedicated ‘Guardian’ channel — where we discuss the

@@ -14,18 +14,19 @@ const ExternalLink = ({
   alt,
   ...props
 }: ChakraLinkAndNextProps): JSX.Element => {
-  const whiteProps = props.underline
-    ? {
-        style: {
-          color: 'white',
-          textDecoration: 'underline',
-          textUnderlinePosition: 'under',
-        },
-        _hover: {
-          textDecoration: 'underline !important',
-        },
-      }
-    : {}
+  const whiteProps =
+    props.underline === 'true'
+      ? {
+          style: {
+            color: 'white',
+            textDecoration: 'underline',
+            textUnderlinePosition: 'under',
+          },
+          _hover: {
+            textDecoration: 'underline !important',
+          },
+        }
+      : {}
   return (
     <NextLink href={href} passHref>
       <ChakraLink
