@@ -153,6 +153,34 @@ const App = ({
                 .css-4hbvqh {
                   display: none !important;
                 }
+                /* menu + popover styling */
+                .chakra-menu__menu-list,
+                .chakra-popover__content {
+                  background: linear-gradient(
+                    rgba(163, 121, 189, 0.8) 0%,
+                    rgba(90, 81, 152, 0.8) 100%
+                  ) !important;
+                  backdrop-filter: blur(10px);
+                  border: 1px solid #b68bcc !important;
+                }
+                .chakra-menu__menuitem {
+                  background: transparent !important;
+                }
+                .css-1slra81 {
+                  background-color: var(
+                    --chakra-colors-blackAlpha-500
+                  ) !important;
+                }
+                .css-1lh2krs:focus,
+                .css-18esm8n:focus {
+                  background-color: var(
+                    --chakra-colors-blackAlpha-300
+                  ) !important;
+                }
+                .chakra-popover__arrow {
+                  background: #86629c !important;
+                  box-shadow: none !important;
+                }
               `}
             />
             <Layout isLesson={pageProps.pageMeta?.isLesson || false}>

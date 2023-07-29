@@ -341,6 +341,7 @@ const ConnectWalletButton = ({
               <Box textAlign="center" m="2">
                 <Button
                   w="100%"
+                  bg="var(--chakra-colors-whiteAlpha-500)"
                   size={isSmallScreen ? 'sm' : 'md'}
                   leftIcon={<Wallet weight="bold" />}
                   onClick={disconnectWallet}
@@ -464,7 +465,10 @@ const ConnectWalletButton = ({
               </Heading>
               <Text textAlign="center">
                 {`Don’t know how? `}
-                <ExternalLink href="/faq#edf3a4658d3d4aa78eac62e1dcf68978">
+                <ExternalLink
+                  underline
+                  href="/faq#edf3a4658d3d4aa78eac62e1dcf68978"
+                >
                   Get help here
                 </ExternalLink>
               </Text>

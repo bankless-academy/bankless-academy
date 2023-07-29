@@ -32,7 +32,7 @@ const OptionMenu = ({
   const twitterLink = `https://twitter.com/${TWITTER_ACCOUNT}`
 
   return (
-    <Box zIndex="2">
+    <Box zIndex="10">
       <Menu>
         <MenuButton
           variant="secondary"
