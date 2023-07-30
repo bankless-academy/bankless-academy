@@ -186,10 +186,10 @@ const ConnectWalletButton = ({
   const loadAddress = (address) => {
     setConnectWalletPopupLS(false)
     onClose()
-    if (localStorage.getItem('current_wallet') !== address.toLowerCase()) {
+    if (localStorage.getItem('current_wallet') !== address?.toLowerCase()) {
       localStorage.removeItem('passport')
     }
-    localStorage.setItem('current_wallet', address.toLowerCase())
+    localStorage.setItem('current_wallet', address?.toLowerCase())
     setName(shortenAddress(address))
     setAvatar(makeBlockie(address))
     updateName(address)
