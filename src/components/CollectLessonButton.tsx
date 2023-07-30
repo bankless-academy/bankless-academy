@@ -60,6 +60,7 @@ const CollectiblesHelper = (
               Onchain display of your support for Bankless Academy and funding
               of education public goods.
             </ListItem>
+            <ListItem>██████████████████ 👀 soon™</ListItem>
           </UnorderedList>
         </Box>
         <Box mb="4">
