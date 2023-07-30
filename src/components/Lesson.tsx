@@ -405,6 +405,7 @@ const Lesson = ({
         )
     }
     if (node.type === 'tag' && node.name === 'code') {
+      const [isOpen, setIsOpen] = useState(false)
       // Tooltip with definition
       const keyword = node.children[0]?.data
       const lowerCaseKeyword = node.children[0]?.data?.toLowerCase()
@@ -417,8 +418,22 @@ const Lesson = ({
         keywords[lowerCaseKeyword]?.definition ||
         keywords[lowerCaseKeywordSingular]?.definition
       return definition?.length ? (
-        <Tooltip hasArrow label={definition} closeOnClick={false}>
-          <span className="keyword">{keyword}</span>
+        <Tooltip
+          hasArrow
+          label={definition}
+          closeOnClick={false}
+          isOpen={isOpen}
+        >
+          <span
+            onMouseEnter={() => setIsOpen(true)}
+            onMouseLeave={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(!isOpen)
+            }}
+            className="keyword"
+          >
+            {keyword}
+          </span>
         </Tooltip>
       ) : (
         <>{keyword}</>

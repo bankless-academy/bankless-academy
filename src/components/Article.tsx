@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Container,
@@ -479,7 +479,8 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
   }
   span.keyword {
     cursor: help;
-    border-bottom: 1px dashed grey;
+    border-bottom: 1px dashed #e5afff;
+    color: #e5afff;
     display: inline-block !important;
   }
   ol {
@@ -582,6 +583,7 @@ const Article = ({
           components={{
             // Tooltip with definition
             code: ({ node, ...props }: any) => {
+              const [isOpen, setIsOpen] = useState(false)
               const keyword = node.children[0]?.value
               const lowerCaseKeyword = node.children[0]?.value?.toLowerCase()
               const lowerCaseKeywordSingular =
@@ -597,9 +599,19 @@ const Article = ({
                   hasArrow
                   label={definition}
                   closeOnClick={false}
+                  isOpen={isOpen}
                   {...props}
                 >
-                  <span className="keyword">{keyword}</span>
+                  <span
+                    onMouseEnter={() => setIsOpen(true)}
+                    onMouseLeave={() => setIsOpen(false)}
+                    onClick={() => {
+                      setIsOpen(!isOpen)
+                    }}
+                    className="keyword"
+                  >
+                    {keyword}
+                  </span>
                 </Tooltip>
               ) : (
                 <>{keyword}</>
