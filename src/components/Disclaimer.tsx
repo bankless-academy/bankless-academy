@@ -12,6 +12,7 @@ import {
   Box,
 } from '@chakra-ui/react'
 import { useEffect } from 'react'
+import ExternalLink from './ExternalLink'
 
 const Disclaimer = ({
   accepted,
@@ -55,22 +56,48 @@ const Disclaimer = ({
         <ModalBody>
           <Box>
             <Box mb="4">
-              This website does not contain financial or tax advice. Bankless
-              Academy is strictly educational and is not investment advice or a
-              solicitation to buy or sell any assets or make any financial
-              decisions. Talk to your accountant. Do your own research.
+              Remember, engaging in crypto is risky. This is the frontier of
+              technology and finance, it’s not for everyone. Even the most
+              trained Explorers{' '}
+              <ExternalLink underline="true" href="/disclaimer">
+                can lose what they put in
+              </ExternalLink>{' '}
+              — but in building expertise, you reduce risk.
+            </Box>
+            <Box mb="4" fontWeight="bold">
+              Do you accept full responsibility for your own Bankless journey?
+            </Box>
+            <Box mb="4">
+              <video autoPlay loop playsInline muted>
+                <source
+                  src="https://openseauserdata.com/files/fafb924293e3b909b4eb5c803fe11e6e.mp4"
+                  type="video/mp4"
+                ></source>
+              </video>
             </Box>
           </Box>
         </ModalBody>
-        <ModalFooter m="auto">
+        <ModalFooter>
           <Button
+            variant="secondaryWhite"
+            onClick={() => {
+              onCloseHelpModal()
+              onClose()
+            }}
+          >
+            &lt; Take me back &gt;
+          </Button>
+
+          <Button
+            variant="primaryWhite"
             onClick={() => {
               accepted()
               onCloseHelpModal()
               onClose()
             }}
+            ml="4"
           >
-            Got it
+            &lt; Yes, let’s go! &gt;
           </Button>
         </ModalFooter>
       </ModalContent>
