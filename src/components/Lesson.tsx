@@ -31,6 +31,7 @@ import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
 import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
 import NFT from 'components/NFT'
+import Keyword from 'components/Keyword'
 
 const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   border-radius: 0.5rem;
@@ -405,7 +406,6 @@ const Lesson = ({
         )
     }
     if (node.type === 'tag' && node.name === 'code') {
-      const [isOpen, setIsOpen] = useState(false)
       // Tooltip with definition
       const keyword = node.children[0]?.data
       const lowerCaseKeyword = node.children[0]?.data?.toLowerCase()
@@ -418,23 +418,7 @@ const Lesson = ({
         keywords[lowerCaseKeyword]?.definition ||
         keywords[lowerCaseKeywordSingular]?.definition
       return definition?.length ? (
-        <Tooltip
-          hasArrow
-          label={definition}
-          closeOnClick={false}
-          isOpen={isOpen}
-        >
-          <span
-            onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}
-            onClick={() => {
-              setIsOpen(!isOpen)
-            }}
-            className="keyword"
-          >
-            {keyword}
-          </span>
-        </Tooltip>
+        <Keyword definition={definition} keyword={keyword} />
       ) : (
         <>{keyword}</>
       )

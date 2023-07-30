@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import {
   Box,
   Container,
   Image,
-  Tooltip,
   Button,
   Text,
   SimpleGrid,
@@ -22,6 +21,7 @@ import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
 import { getArticlesCollected, Mixpanel } from 'utils'
+import Keyword from 'components/Keyword'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -582,8 +582,7 @@ const Article = ({
         <ReactMarkdown
           components={{
             // Tooltip with definition
-            code: ({ node, ...props }: any) => {
-              const [isOpen, setIsOpen] = useState(false)
+            code: ({ node }: any) => {
               const keyword = node.children[0]?.value
               const lowerCaseKeyword = node.children[0]?.value?.toLowerCase()
               const lowerCaseKeywordSingular =
@@ -595,24 +594,7 @@ const Article = ({
                 keywords[lowerCaseKeyword]?.definition ||
                 keywords[lowerCaseKeywordSingular]?.definition
               return definition?.length ? (
-                <Tooltip
-                  hasArrow
-                  label={definition}
-                  closeOnClick={false}
-                  isOpen={isOpen}
-                  {...props}
-                >
-                  <span
-                    onMouseEnter={() => setIsOpen(true)}
-                    onMouseLeave={() => setIsOpen(false)}
-                    onClick={() => {
-                      setIsOpen(!isOpen)
-                    }}
-                    className="keyword"
-                  >
-                    {keyword}
-                  </span>
-                </Tooltip>
+                <Keyword definition={definition} keyword={keyword} />
               ) : (
                 <>{keyword}</>
               )
