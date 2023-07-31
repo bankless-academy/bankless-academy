@@ -45,8 +45,10 @@ const CollectiblesHelper = (
               Upgrading of normal lesson card to golden DataDisk™ artwork.
             </ListItem>
             <ListItem>
-              Replacement of normal lesson card with golden collectible artwork
-              <br />- Early invitation to the official ‘Bankless Academy’{' '}
+              Replacement of normal lesson card with golden collectible artwork.
+            </ListItem>
+            <ListItem>
+              Early invitation to the official ‘Bankless Academy’{' '}
               <ExternalLink
                 underline="true"
                 href="https://guild.xyz/bankless-academy"
