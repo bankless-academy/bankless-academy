@@ -11,6 +11,7 @@ import {
   useMediaQuery,
   Box,
 } from '@chakra-ui/react'
+import { DISCLAIMER_ENABLED } from 'constants/index'
 import { useEffect } from 'react'
 import ExternalLink from './ExternalLink'
 
@@ -29,7 +30,8 @@ const Disclaimer = ({
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
 
   useEffect(() => {
-    onOpenHelpModal()
+    if (DISCLAIMER_ENABLED) onOpenHelpModal()
+    else accepted()
   }, [])
 
   return (

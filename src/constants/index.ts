@@ -118,3 +118,6 @@ export const TOKEN_GATING_ENABLED =
   process.env.NEXT_PUBLIC_TOKEN_GATING_ENABLED === 'true' || false
 
 export const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED === 'true' || false
+
+export const DISCLAIMER_ENABLED =
+  process.env.NEXT_PUBLIC_DISCLAIMER_ENABLED === 'true' || false
