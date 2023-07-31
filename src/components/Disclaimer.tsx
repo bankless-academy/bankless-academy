@@ -67,14 +67,14 @@ const Disclaimer = ({
             <Box mb="4" fontWeight="bold">
               Do you accept full responsibility for your own Bankless journey?
             </Box>
-            <Box mb="4" maxW="90%" m="auto">
+            {/* <Box mb="4" maxW="90%" m="auto">
               <video autoPlay loop playsInline muted>
                 <source
                   src="https://openseauserdata.com/files/fafb924293e3b909b4eb5c803fe11e6e.mp4"
                   type="video/mp4"
                 ></source>
               </video>
-            </Box>
+            </Box> */}
           </Box>
         </ModalBody>
         <ModalFooter>
@@ -85,7 +85,7 @@ const Disclaimer = ({
               onClose()
             }}
           >
-            &lt; Take me back &gt;
+            Take me back
           </Button>
 
           <Button
@@ -97,7 +97,7 @@ const Disclaimer = ({
             }}
             ml="4"
           >
-            &lt; Yes, let’s go! &gt;
+            Yes, let’s go!
           </Button>
         </ModalFooter>
       </ModalContent>
