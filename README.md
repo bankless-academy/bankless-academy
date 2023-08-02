@@ -86,7 +86,7 @@ We save the encrypted account username associated of each Passport stamp associa
 
 ### Hotjar
 
-Heatmap recording via [hotjar.com](hotjar.com)
+Heatmap recording via [https://hotjar.com](hotjar.com)
 This helps us understand how a user interacts with the product in order to improve the user experience.
 
 ## How to import content from Notion
