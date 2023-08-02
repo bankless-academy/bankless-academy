@@ -95,8 +95,17 @@ const SwitchNetworkButton = ({
                 {isOpen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
               </Box>
             </MenuButton>
-            <MenuList zIndex="2">
-              <Text ml="4" mb="2" color="gray.500">
+            <MenuList zIndex="10">
+              <Text
+                mt="-10px"
+                pt="10px"
+                pl="4"
+                pb="2"
+                bg="var(
+                    --chakra-colors-whiteAlpha-200
+                  )"
+                color="lightgrey"
+              >
                 Select a network
               </Text>
               {Object.keys(NETWORKS).map((network, index) => (

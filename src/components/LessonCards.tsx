@@ -6,26 +6,28 @@ import {
   Image,
   TagRightIcon,
   Button,
-  Tooltip,
   useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import axios from 'axios'
-import { CircleWavyCheck } from 'phosphor-react'
+import { CircleWavyCheck } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
 import { useLocalStorage } from 'usehooks-ts'
 import { isMobile } from 'react-device-detect'
 import { useAccount } from 'wagmi'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
-import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import LessonBanner from 'components/LessonBanner'
 import MODULES from 'constants/whitelabel_modules'
-import { getArticlesCollected, IS_DEBUG, Mixpanel } from 'utils/index'
+import {
+  getArticlesCollected,
+  getLessonsCollected,
+  Mixpanel,
+} from 'utils/index'
 import SubscriptionModal from 'components/SubscriptionModal'
 import { LessonType } from 'entities/lesson'
 import InstallAppModal from 'components/InstallAppModal'
+import LessonButton from 'components/LessonButton'
 
 // TODO: move to dedicated component file
 export const LessonCard = styled(Box)`
@@ -65,9 +67,10 @@ export const LessonCard = styled(Box)`
   }
 `
 
-const StyledTag = styled(Tag)<{ iskudosminted?: string }>`
+const StyledTag = styled(Tag)<{ isminted?: string; gold?: string }>`
+  height: 30px;
   ${(props) =>
-    props.iskudosminted === 'true' &&
+    props.gold === 'true' &&
     `
     ::before {
       background: #F1B15A;
@@ -80,10 +83,14 @@ const LessonCards: React.FC = () => {
   const router = useRouter()
   const { all, slug } = router.query
 
-  const [stats, setStats]: any = useState(null)
+  // const [stats, setStats]: any = useState(null)
   const [kudosMintedLS] = useLocalStorage('kudosMinted', [])
   const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
     'articlesCollected',
+    []
+  )
+  const [lessonsCollectedLS, setLessonsCollectedLS] = useLocalStorage(
+    'lessonsCollected',
     []
   )
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -112,18 +119,18 @@ const LessonCards: React.FC = () => {
             lesson.publicationStatus === 'planned'
         )
 
-  useEffect(() => {
-    if (IS_DEBUG) {
-      axios
-        .get(`/api/stats`)
-        .then(function (res) {
-          setStats(res.data)
-        })
-        .catch(function (error) {
-          console.error(error)
-        })
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (IS_DEBUG) {
+  //     axios
+  //       .get(`/api/stats`)
+  //       .then(function (res) {
+  //         setStats(res.data)
+  //       })
+  //       .catch(function (error) {
+  //         console.error(error)
+  //       })
+  //   }
+  // }, [])
 
   useEffect(() => {
     const mobilePreferences = localStorage.getItem('mobile-preferences')
@@ -146,13 +153,16 @@ const LessonCards: React.FC = () => {
   }, [kudosMintedLS])
 
   useEffect(() => {
-    const updateArticlesCollected = async () => {
+    const updateNFTCollected = async () => {
       const articlesCollected = await getArticlesCollected(address)
       if (articlesCollected && Array.isArray(articlesCollected))
         setArticlesCollectedLS(articlesCollected)
+      const lessonsCollected = await getLessonsCollected(address)
+      if (lessonsCollected && Array.isArray(lessonsCollected))
+        setLessonsCollectedLS(lessonsCollected)
     }
     if (!IS_WHITELABEL && address) {
-      updateArticlesCollected().catch(console.error)
+      updateNFTCollected().catch(console.error)
     }
   }, [address])
 
@@ -163,23 +173,35 @@ const LessonCards: React.FC = () => {
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
         // const numberOfSlides = lesson.slides.length
         const isKudosMinted = kudosMintedLS.includes(lesson.kudosId)
-        const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
         const isNotified =
           lesson.publicationStatus === 'planned'
             ? localStorage.getItem(`${lesson.slug}-notification`)
             : false
-        const lessonCompleted =
-          (lesson.quest &&
-            stats?.lessonCompleted &&
-            stats?.lessonCompleted[lesson.notionId]) ||
-          0
+        // const lessonCompleted =
+        //   (lesson.quest &&
+        //     stats?.lessonCompleted &&
+        //     stats?.lessonCompleted[lesson.notionId]) ||
+        //   0
         const isArticleCollected =
           lesson.mirrorNFTAddress?.length &&
-          articlesCollectedLS.includes(lesson.mirrorNFTAddress)
+          articlesCollectedLS.includes(lesson.mirrorNFTAddress.toLowerCase())
+        const isLessonCollected =
+          !!lesson.LessonCollectibleTokenAddress?.length &&
+          lessonsCollectedLS.includes(
+            lesson.LessonCollectibleTokenAddress.toLowerCase()
+          )
+        const lessonHasSponsor =
+          lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
         return (
           <LessonCard key={`lesson-${index}`} p={6} pb={8} borderRadius="3xl">
             <Box position="relative" zIndex="1">
-              <Text fontSize="xl" fontWeight="bold">
+              <Text
+                fontSize="xl"
+                fontWeight="bold"
+                minH="60px"
+                display="flex"
+                alignItems="center"
+              >
                 {lesson.name}
               </Text>
               <Box display="flex" justifyContent="space-between" my="4">
@@ -187,7 +209,7 @@ const LessonCards: React.FC = () => {
                   <StyledTag
                     size="md"
                     variant="outline"
-                    iskudosminted={isKudosMinted?.toString()}
+                    gold={isKudosMinted?.toString()}
                   >
                     {isKudosMinted ? 'Done' : `${lesson.duration} minutes`}
                     {isKudosMinted ? (
@@ -197,11 +219,41 @@ const LessonCards: React.FC = () => {
                 ) : (
                   <Tag size="md" backgroundColor="transparent"></Tag>
                 )}
-                <Text fontSize="md" alignSelf="center">
-                  {lessonCompleted > 0 && `${lessonCompleted} Completions`}
-                </Text>
+                {lesson.hasCollectible && (
+                  <StyledTag
+                    size="md"
+                    variant="outline"
+                    color="white"
+                    gold="true"
+                  >
+                    {!isLessonCollected
+                      ? 'Collectible available'
+                      : 'Lesson Collected'}
+                  </StyledTag>
+                )}
+                {lesson.isArticle ? (
+                  isArticleCollected ? (
+                    <StyledTag size="md" variant="outline" gold="true">
+                      Entry Collected
+                    </StyledTag>
+                  ) : !lesson.areMirrorNFTAllCollected ? (
+                    <StyledTag size="md" variant="outline" gold="true">
+                      Entry Available
+                    </StyledTag>
+                  ) : null
+                ) : (
+                  !lessonHasSponsor &&
+                  lesson.publicationStatus !== 'planned' && (
+                    <Box width="auto"></Box>
+                  )
+                )}
               </Box>
-              <Text fontSize="lg" minH="54px">
+              <Text
+                fontSize="lg"
+                minH="81px"
+                display="flex"
+                alignItems="center"
+              >
                 {lesson.description}
               </Text>
               {lesson.publicationStatus === 'planned' && all === undefined ? (
@@ -229,19 +281,27 @@ const LessonCards: React.FC = () => {
                     }}
                     py="4"
                   >
-                    <Image src={lesson.lessonImageLink} />
+                    <Image
+                      src={
+                        isLessonCollected
+                          ? lesson.lessonCollectedImageLink
+                          : lesson.lessonImageLink
+                      }
+                    />
                   </LessonBanner>
                 </InternalLink>
               )}
               <Box
                 display="flex"
                 flexDirection="row-reverse"
-                mt="4"
+                mt={lesson.isArticle || lesson.hasCollectible ? '25px' : '16px'}
                 justifyContent="space-between"
+                alignItems="center"
               >
                 {lesson.publicationStatus === 'planned' && all === undefined ? (
                   <Button
-                    variant={isNotified ? 'outline' : 'primary'}
+                    variant={isNotified ? 'secondaryBig' : 'primaryBig'}
+                    size="lg"
                     onClick={() => {
                       if (isNotified) return
                       setSelectedLesson(lesson)
@@ -260,48 +320,12 @@ const LessonCards: React.FC = () => {
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
                     alt={lesson.name}
+                    margin={lessonHasSponsor ? 'auto' : ''}
+                    w={lessonHasSponsor ? '100%' : 'inherit'}
                   >
-                    <Button
-                      variant={
-                        isKudosMinted || lesson?.isArticle
-                          ? 'secondary'
-                          : 'primary'
-                      }
-                    >
-                      {lesson?.isArticle
-                        ? 'Read Entry'
-                        : isKudosMinted
-                        ? 'Revisit Lesson'
-                        : isLessonStarted
-                        ? 'Resume Lesson'
-                        : 'Start Lesson'}
-                    </Button>
+                    <LessonButton lesson={lesson} />
                   </InternalLink>
                 )}
-                {isKudosMinted && lesson.communityDiscussionLink ? (
-                  <ExternalLink
-                    href={lesson.communityDiscussionLink}
-                    alt={`${lesson.name} community discussion`}
-                  >
-                    <Tooltip
-                      hasArrow
-                      label="Join other explorers to discuss this lesson."
-                    >
-                      <Button variant="secondary">👨‍🚀 Discussion</Button>
-                    </Tooltip>
-                  </ExternalLink>
-                ) : null}
-                {lesson.isArticle ? (
-                  isArticleCollected ? (
-                    <Button variant="secondaryGold">Entry Collected</Button>
-                  ) : (
-                    <ExternalLink href={lesson.mirrorLink}>
-                      <Tooltip hasArrow label="Collect Entry on Mirror.xyz">
-                        <Button variant="primaryGold">Collect Entry</Button>
-                      </Tooltip>
-                    </ExternalLink>
-                  )
-                ) : null}
               </Box>
             </Box>
           </LessonCard>

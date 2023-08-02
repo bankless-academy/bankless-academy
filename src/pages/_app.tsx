@@ -3,6 +3,7 @@ import { Global, css } from '@emotion/react'
 import 'react-notion-x/src/styles.css'
 import 'prismjs/themes/prism-tomorrow.css'
 import 'mac-scrollbar/dist/mac-scrollbar.css'
+import 'highlight.js/styles/vs.css'
 import { GlobalScrollbar } from 'mac-scrollbar'
 import { isMobile } from 'react-device-detect'
 import styled from '@emotion/styled'
@@ -50,16 +51,23 @@ const App = ({
     return <>Maintenance in progress ...</>
   }
 
-  const chains = [mainnet, polygon, optimism]
   const { isOpen } = useWeb3Modal()
 
+  // https://github.com/WalletConnect/web3modal-examples/tree/main/web3modal-wagmi-react
+  // https://docs.walletconnect.com/2.0/web/web3modal/react/wagmi/installation
+  // 1. Get projectID at https://cloud.walletconnect.com
   const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID
 
+  const chains = [mainnet, polygon, optimism]
   const { provider } = configureChains(chains, [w3mProvider({ projectId })])
+
+  // 2. Configure wagmi client
+  // const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
   const wagmiClient = createClient({
     autoConnect: true,
-    connectors: w3mConnectors({ projectId, version: 2, chains }),
+    connectors: w3mConnectors({ chains, projectId }),
     provider,
+    // publicClient,
   })
 
   // Web3Modal Ethereum Client
@@ -72,6 +80,7 @@ const App = ({
       <ThemeProvider>
         <NonSSRWrapper>
           <WagmiConfig client={wagmiClient}>
+            {/* <WagmiConfig config={wagmiConfig}> */}
             <Global
               styles={css`
                 .web3modal-modal-lightbox {
@@ -100,6 +109,77 @@ const App = ({
                 }
                 #chakra-toast-manager-bottom {
                   margin-bottom: 81px !important;
+                }
+                /* HACK: custom toast */
+                .css-hdx5ch,
+                .css-19os7cz,
+                .css-12sfbjg {
+                  color: white !important;
+                  border-radius: 15px !important;
+                  a {
+                    color: white !important;
+                    text-decoration: underline;
+                    text-underline-position: under;
+                  }
+                }
+                /* success toast */
+                .css-hdx5ch {
+                  background: linear-gradient(
+                    180deg,
+                    #429683,
+                    #35564f
+                  ) !important;
+                  border: 2px solid #a4d7cb !important;
+                }
+                /* warning toast */
+                .css-19os7cz {
+                  background: linear-gradient(
+                    180deg,
+                    #e7b283,
+                    #8e5c49
+                  ) !important;
+                  border: 2px solid #ffe0bb !important;
+                }
+                /* error toast */
+                .css-12sfbjg {
+                  background: linear-gradient(
+                    180deg,
+                    #fe7a7a,
+                    #e05e55
+                  ) !important;
+                  border: 2px solid #f5a98d !important;
+                }
+                /* hide toast status logo */
+                .css-4hbvqh {
+                  display: none !important;
+                }
+                /* menu + popover styling */
+                .chakra-menu__menu-list,
+                .chakra-popover__content {
+                  background: linear-gradient(
+                    rgba(163, 121, 189, 0.8) 0%,
+                    rgba(90, 81, 152, 0.8) 100%
+                  ) !important;
+                  backdrop-filter: blur(10px);
+                  border: 1px solid #b68bcc !important;
+                }
+                .chakra-menu__menuitem {
+                  background: transparent !important;
+                }
+                .css-1slra81 {
+                  background-color: var(
+                    --chakra-colors-blackAlpha-500
+                  ) !important;
+                }
+                .css-1lh2krs:focus,
+                .css-18esm8n:focus {
+                  background-color: var(
+                    --chakra-colors-blackAlpha-300
+                  ) !important;
+                }
+                .chakra-popover__arrow {
+                  background: #86629c !important;
+                  box-shadow: none !important;
                 }
               `}
             />

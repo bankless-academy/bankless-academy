@@ -9,7 +9,7 @@ import {
   Handshake,
   Eye,
   UsersThree,
-} from 'phosphor-react'
+} from '@phosphor-icons/react'
 
 export const LearnIcon = (): React.ReactElement => (
   <Icon

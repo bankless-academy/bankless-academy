@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 /* eslint-disable no-unreachable */
 /* eslint-disable no-console */
 require('dotenv').config()
@@ -8,10 +9,102 @@ const knex = require('knex')
 const fs = require('fs')
 const crc32 = require('js-crc').crc32
 const stringifyObject = require('stringify-object')
+const { Client } = require("@notionhq/client")
+const { NotionToMarkdown } = require("notion-to-md")
 
 const config = require('./knexfile.js')
 const db = knex(config)
 const { TABLES } = require('./db.js')
+
+const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED || false
+
+const notion = new Client({
+  auth: process.env.NOTION_SECRET,
+})
+
+const n2m = new NotionToMarkdown({ notionClient: notion })
+
+// types of blocs to ignore
+// BlockType https://github.com/souvikinator/notion-to-md/blob/master/src/types/index.ts
+const blockTypesToIgnore = [
+  // "image",
+  "video",
+  "file",
+  "pdf",
+  "table",
+  "bookmark",
+  "embed",
+  "equation",
+  // "divider",
+  "toggle",
+  // "to_do",
+  "synced_block",
+  "column_list",
+  "column",
+  "link_preview",
+  // "link_to_page",
+  // "paragraph",
+  // "heading_1",
+  // "heading_2",
+  "heading_3",
+  // "bulleted_list_item",
+  // "numbered_list_item",
+  // "quote",
+  "template",
+  "child_page",
+  "child_database",
+  "code",
+  "callout",
+  "breadcrumb",
+  "table_of_contents",
+  "audio",
+  "unsupported"
+]
+for (const blockType of blockTypesToIgnore) {
+  n2m.setCustomTransformer(blockType, async () => {
+    return ""
+  })
+}
+
+n2m.setCustomTransformer("image", async (b) => {
+  // console.log(b)
+  return `![](https://www.notion.so/image/${encodeURIComponent(b?.image?.file?.url?.split('?')[0].replace('https://s3.', 'https://s3-'))}?table=block&id=${b?.id})`
+})
+
+const PROTOCOL_VERSION = "0.01"
+
+const LESSON_SPLITTER = `\`\`\`
+<< LESSON START >>
+\`\`\`
+---`
+
+const mdHeader = (lesson) => `---
+LESSON TITLE: ${lesson.name}
+LESSON LINK: https://app.banklessacademy.com/lessons/${lesson.slug}
+LANGUAGE: English
+PROTOCOL VERSION: ${PROTOCOL_VERSION}
+LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
+---
+
+\`\`\`
+__________________________________________________________________________________________________________________________________________________________
+
+$$$$$$$\\                      $$\\       $$\\                                      $$$$$$\\                           $$\\                                   
+$$  __$$\\                     $$ |      $$ |                                    $$  __$$\\                          $$ |                                  
+$$ |  $$ | $$$$$$\\  $$$$$$$\\  $$ |  $$\\ $$ | $$$$$$\\   $$$$$$$\\  $$$$$$$\\       $$ /  $$ | $$$$$$$\\ $$$$$$\\   $$$$$$$ | $$$$$$\\  $$$$$$\\$$$$\\  $$\\   $$\\ 
+$$$$$$$\\ | \\____$$\\ $$  __$$\\ $$ | $$  |$$ |$$  __$$\\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\\____$$\\ $$  __$$ |$$  __$$\\ $$  _$$  _$$\\ $$ |  $$ |
+$$  __$$\\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\\$$$$$$\\  \\$$$$$$\\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
+$$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \\____$$\\  \\____$$\\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
+$$$$$$$  |\\$$$$$$$ |$$ |  $$ |$$ | \\$$\\ $$ |\\$$$$$$$\\ $$$$$$$  |$$$$$$$  |      $$ |  $$ |\\$$$$$$$\\\\$$$$$$$ |\\$$$$$$$ |\\$$$$$$$\\ $$ | $$ | $$ |\\$$$$$$$ |
+\\_______/  \\_______|\\__|  \\__|\\__|  \\__|\\__| \\_______|\\_______/ \\_______/       \\__|  \\__| \\_______|\\_______| \\_______| \\_______|\\__| \\__| \\__| \\____$$ |
+                                                                                                                                               $$\\   $$ |
+PORTABLE LESSON DATADISK™ COLLECTION                                                                                                           \\$$$$$$  |
+                                                                                                                                                \\______/
+__________________________________________________________________________________________________________________________________________________________
+\`\`\`
+
+${LESSON_SPLITTER}
+`
 
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
@@ -22,6 +115,11 @@ const POTION_API = 'https://potion.banklessacademy.com'
 const KEY_MATCHING = {
   'Kudos image': 'kudosImageLink',
   'Lesson image': 'lessonImageLink',
+  'Lesson collected image': 'lessonCollectedImageLink',
+  'Lesson collectible gif': 'lessonCollectibleGif',
+  'Lesson collectible video': 'lessonCollectibleVideo',
+  'Lesson collectible mint ID': 'LessonCollectibleMintID',
+  'Lesson collectible token address': 'LessonCollectibleTokenAddress',
   'Social image': 'socialImageLink',
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
@@ -41,6 +139,14 @@ const KEY_MATCHING = {
   // 'Community discussion link': 'communityDiscussionLink',
   'Mirror link': 'mirrorLink',
   'Mirror NFT address': 'mirrorNFTAddress',
+  'Mirror NFT all collected': 'areMirrorNFTAllCollected',
+  'Sponsor Name': 'sponsorName',
+  'Sponsor Logo': 'sponsorLogo',
+  'NFT Gating': 'nftGating',
+  'NFT Gating Requirements': 'nftGatingRequirements',
+  'NFT Gating Image': 'nftGatingImageLink',
+  'NFT Gating Link': 'nftGatingLink',
+  'NFT Gating CTA': 'nftGatingCTA',
 }
 
 const args = process.argv
@@ -56,11 +162,11 @@ const slugify = (text) => text.toLowerCase()
 
 const get_img = (imageLink, slug, image_name) => {
   const [file_name] = imageLink.split('?')
-  const file_extension = file_name.match(/\.(png|svg|jpg|jpeg|webp|mp4|gif)/)[1].replace('jpeg', 'jpg')
+  const file_extension = file_name.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/)[1].replace('jpeg', 'jpg')
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
   const hash = crc32(file_name)
-  const image_dir = `/${PROJECT_DIR}lesson/${slug}`
+  const image_dir = `/${PROJECT_DIR}lesson/images/${slug}`
   const local_image_dir = `public${image_dir}`
   // create image directory dynamically in case it doesn't exist yet
   if (!fs.existsSync(local_image_dir)) {
@@ -94,7 +200,7 @@ axios
     }
     const promiseArray = notionRows.data.map(async (notion, index) => {
       // DEV_MODE: only test first lesson
-      // if (index > 0) return
+      // if (index > 1) return
 
       // replace keys
       const lesson = Object.keys(KEY_MATCHING).reduce(
@@ -103,7 +209,7 @@ axios
             // transform to number if the string contains a number
             [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k])) ||
               // ignore type transform for ModuleId & mirrorNFTAddress
-              (k === 'Module' || k === 'Mirror NFT address')
+              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible mint ID' || k === 'Lesson collectible token address' || k === 'Sponsor Name')
               ? notion.fields[k]
               : parseInt(notion.fields[k]),
           }),
@@ -117,6 +223,12 @@ axios
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.kudosId === undefined) lesson.kudosId = null
       if (lesson.kudosImageLink === undefined) lesson.kudosImageLink = null
+      if (lesson.lessonCollectedImageLink === undefined) delete lesson.lessonCollectedImageLink
+      if (lesson.lessonCollectibleVideo === undefined) delete lesson.lessonCollectibleVideo
+      if (lesson.lessonCollectibleGif === undefined) delete lesson.lessonCollectibleGif
+      if (lesson.LessonCollectibleMintID === undefined) delete lesson.LessonCollectibleMintID
+      if (lesson.LessonCollectibleTokenAddress === undefined) delete lesson.LessonCollectibleTokenAddress
+      if (lesson.LessonCollectibleMintID && lesson.LessonCollectibleTokenAddress) lesson.hasCollectible = true
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
       if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''
@@ -131,6 +243,14 @@ axios
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
       if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
       if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
+      if (lesson.areMirrorNFTAllCollected === undefined) delete lesson.areMirrorNFTAllCollected
+      if (lesson.sponsorName === undefined || lesson.sponsorName === null) delete lesson.sponsorName
+      if (lesson.sponsorLogo === undefined || lesson.sponsorLogo === null) delete lesson.sponsorLogo
+      if (lesson.nftGating === undefined || lesson.nftGating === null) delete lesson.nftGating
+      if (lesson.nftGatingRequirements === undefined || lesson.nftGatingRequirements === null) delete lesson.nftGatingRequirements
+      if (lesson.nftGatingImageLink === undefined || lesson.nftGatingImageLink === null) delete lesson.nftGatingImageLink
+      if (lesson.nftGatingLink === undefined || lesson.nftGatingLink === null) delete lesson.nftGatingLink
+      if (lesson.nftGatingCTA === undefined || lesson.nftGatingCTA === null) delete lesson.nftGatingCTA
 
       // console.log(lesson)
 
@@ -198,11 +318,14 @@ axios
                 if (lesson.socialImageLink) {
                   lesson.socialImageLink = get_img(lesson.socialImageLink, lesson.slug, 'social')
                 }
+                if (lesson.sponsorLogo) {
+                  lesson.sponsorLogo = get_img(lesson.sponsorLogo, lesson.slug, 'sponsor')
+                }
 
                 lessons[index] = lesson
               })
           }
-        });
+        })
         return
       }
 
@@ -224,6 +347,13 @@ axios
           if (lesson.socialImageLink) {
             lesson.socialImageLink = get_img(lesson.socialImageLink, lesson.slug, 'social')
           }
+          if (lesson.sponsorLogo) {
+            lesson.sponsorLogo = get_img(lesson.sponsorLogo, lesson.slug, 'sponsor')
+          }
+          if (lesson.nftGatingImageLink) {
+            lesson.nftGatingImageLink = get_img(lesson.nftGatingImageLink, lesson.slug, 'nft')
+          }
+          delete lesson.areMirrorNFTAllCollected
 
           lesson.imageLinks = []
           // data cleaning
@@ -257,7 +387,7 @@ axios
               slide.quiz.rightAnswerNumber = undefined
               slide.quiz.answers = []
               slide.quiz.feedback = []
-              const quizDiv = new JSDOM(slide.content);
+              const quizDiv = new JSDOM(slide.content)
               const checkboxes = quizDiv.window.document.querySelectorAll(
                 '.checklist input[type="checkbox"]:disabled'
               )
@@ -293,10 +423,10 @@ axios
               // download images locally
               const imageLinks = [...slide.content.matchAll(/<img src='(.*?)'/gm)].map(a => a[1])
               for (const imageLink of imageLinks) {
-                const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|mp4|gif)\?table=/)[1]
+                const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)\?table=/)[1]
                 // create "unique" hash based on Notion imageLink (different when re-uploaded)
                 const hash = crc32(imageLink)
-                const image_dir = `/${PROJECT_DIR}lesson/${lesson.slug}`
+                const image_dir = `/${PROJECT_DIR}lesson/images/${lesson.slug}`
                 const local_image_dir = `public${image_dir}`
                 // create image directory dynamically in case it doesn't exist yet
                 if (!fs.existsSync(local_image_dir)) {
@@ -363,13 +493,25 @@ axios
           } else {
             delete lesson.quest
           }
-          slides.push({
-            type: 'END',
-            // HACK: TEMP
-            title: lesson.kudosId ? lesson.slug === 'conceptos-basicos-de-blockchain' ? 'Reconocimiento de Aprendizaje' : 'Lesson Reward' : 'End of lesson',
-          })
+          // slides.push({
+          //   type: 'END',
+          //   title: lesson.kudosId ? 'Lesson Reward' : 'End of lesson',
+          // })
           lesson.slides = slides
           // console.log('lesson', lesson)
+
+          if (lesson.hasCollectible) {
+            if (lesson.lessonCollectedImageLink) {
+              lesson.lessonCollectedImageLink = get_img(lesson.lessonCollectedImageLink, lesson.slug, 'datadisk-collected')
+            }
+            if (lesson.lessonCollectibleGif) {
+              lesson.lessonCollectibleGif = get_img(lesson.lessonCollectibleGif, lesson.slug, 'datadisk-gif')
+            }
+            if (lesson.lessonCollectibleVideo) {
+              lesson.lessonCollectibleVideo = get_img(lesson.lessonCollectibleVideo, lesson.slug, 'datadisk-video')
+            }
+          }
+
           lessons[index] = lesson
 
           if (lesson.publicationStatus === 'planned') {
@@ -377,6 +519,85 @@ axios
           }
 
           // TODO: remove old images (diff between old/new lesson.imageLinks)
+
+          if (MD_ENABLED) {
+            // convert to MD
+            console.log(`Converting "${lesson.name}" to MD`)
+            try {
+              const mdblocks = await n2m.pageToMarkdown(notion.id)
+              const mdString = n2m.toMarkdownString(mdblocks)
+              // hide answers
+              let lessonContentMD = mdString?.parent?.replaceAll('[x]', '[ ]') || ''
+              lessonContentMD = lessonContentMD.replaceAll('\n\n\n\n', '\n\n')
+              lessonContentMD = lessonContentMD.replaceAll('\n\n\n', '\n\n')
+              const slides = lessonContentMD.split('\n# ')
+              slides.shift()
+              let quiz_nb = 0
+              let j = 0
+              for (const slide of slides) {
+                const slide_array = slide.split('\n')
+                let slide_title = slide_array.shift()
+                const slide_content = slide_array.join('\n')
+                // console.log(slide_title)
+                // console.log(slide_content)
+                if (slide_content.includes('- [ ]')) {
+                  quiz_nb++
+                  slide_title = `Knowledge Check ${quiz_nb}`
+                }
+                slides[j] = `\n# ${slide_title}\n${slide_content}`
+                j++
+              }
+              lessonContentMD = slides.join("")
+
+              // HACK: replace image
+              const imageRegex = /!\[.*?\]\((.*?)\)/g;
+              let match
+              let i = 0
+              while ((match = imageRegex.exec(lessonContentMD)) !== null) {
+                lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${lesson.imageLinks[i]}`)
+                i++
+              }
+              // write/update file
+              const lessonPath = `public/lesson/en/${lesson.slug}.md`
+              const lessonHeader = mdHeader(lesson)
+              if (fs.existsSync(lessonPath)) {
+                const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
+                if (lessonFile) {
+                  // eslint-disable-next-line no-unsafe-optional-chaining
+                  const [previousLessonHeader, previousLessonContentMD] = lessonFile?.split(LESSON_SPLITTER)
+                  // console.log(previousLessonContentMD.trim())
+                  // console.log(lessonContentMD.trim())
+                  // If content has changed
+                  const plh = previousLessonHeader?.split('LAST UPDATED:')[0]
+                  const lh = lessonHeader?.split('LAST UPDATED:')[0]
+                  if (plh.trim() !== lh.trim() ||
+                    previousLessonContentMD.trim() !== lessonContentMD.trim()
+                  ) {
+                    fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
+                      if (error) throw error
+                    })
+                    console.log(
+                      `"${lesson.name}" updated in ${lessonPath}`
+                    )
+                  }
+                  else console.log(
+                    `"${lesson.name}" is unchanged`
+                  )
+                }
+              }
+              else {
+                fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
+                  if (error) throw error
+                })
+                console.log(
+                  `"${lesson.name}" exported in ${lessonPath}`
+                )
+              }
+
+            } catch (error) {
+              console.log(error)
+            }
+          }
         })
     })
     axios.all(promiseArray).then(() => {

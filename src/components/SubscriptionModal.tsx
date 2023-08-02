@@ -13,7 +13,7 @@ import {
   InputLeftElement,
   useToast,
 } from '@chakra-ui/react'
-import { Envelope } from 'phosphor-react'
+import { Envelope } from '@phosphor-icons/react'
 
 import { LessonType } from 'entities/lesson'
 import { api, Mixpanel } from 'utils'

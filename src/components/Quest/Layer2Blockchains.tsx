@@ -17,16 +17,18 @@ const Layer2Blockchains = (
 } => {
   const [isSmallScreen] = useSmallScreen()
   const [isTransactionVerified, setIsTransactionVerified] = useState(
-    localStorage.getItem('quest-layer-2-blockchains')
+    localStorage.getItem('quest-layer-2-blockchains') || 'false'
   )
+  const [isLoading, setIsLoading] = useState(false)
 
   const validateQuest = async () => {
     try {
-      setIsTransactionVerified('loading')
+      setIsLoading(true)
       const result = await api('/api/validate-quest', {
         address: account,
         quest: 'Layer2Blockchains',
       })
+      setIsLoading(false)
       if (result && result.status === 200) {
         setIsTransactionVerified(result?.data?.isQuestValidated?.toString())
         localStorage.setItem(
@@ -101,7 +103,7 @@ const Layer2Blockchains = (
                   rightIcon={
                     isTransactionVerified === 'true' ? (
                       <CheckIcon color={theme.colors.correct} />
-                    ) : isTransactionVerified === 'loading' ? (
+                    ) : isLoading ? (
                       <Spinner speed="1s" />
                     ) : (
                       <CloseIcon color={theme.colors.incorrect} />
@@ -116,7 +118,7 @@ const Layer2Blockchains = (
               <Box mt="8">
                 {`Tip: Check our Explorer's Handbook entry on 'How to Fund a Wallet on Layer 2' to find the best funding pathway for you.`}
               </Box>
-              {isTransactionVerified === 'false' && (
+              {isTransactionVerified !== 'true' && (
                 <Box mt="24px !important" textAlign="center">
                   <Button onClick={validateQuest} variant="primary">
                     Refresh balance

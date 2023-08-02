@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { Container } from '@chakra-ui/react'
 
 import { MetaData } from 'components/Head'
-import Lesson from 'components/Lesson'
+import LessonDetail from 'components/LessonDetail'
 import Article from 'components/Article'
 import { DEFAULT_METADATA, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
@@ -52,7 +52,7 @@ const LessonPage = (): JSX.Element => {
           <Article lesson={currentLesson} />
         ) : (
           <Container maxW="container.xl" px={isSmallScreen ? '8px' : '16px'}>
-            <Lesson lesson={currentLesson} />
+            <LessonDetail lesson={currentLesson} />
           </Container>
         )}
       </>

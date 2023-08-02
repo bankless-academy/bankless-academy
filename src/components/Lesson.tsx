@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from 'react'
 import {
   Box,
   Text,
-  Image as ChakraImage,
   ButtonGroup,
   Button,
   HStack,
@@ -16,7 +15,7 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
-import { Warning } from 'phosphor-react'
+import { Warning, ArrowUUpLeft } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 
@@ -24,14 +23,15 @@ import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
 import MintKudos from 'components/MintKudos'
-import QuestComponent from 'components/Quest/QuestComponent'
 import ExternalLink from 'components/ExternalLink'
-import InternalLink from 'components/InternalLink'
 import { useSmallScreen } from 'hooks/index'
-import { Mixpanel } from 'utils'
-import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
+import { isHolderOfNFT, Mixpanel, scrollTop } from 'utils'
+import { IS_WHITELABEL, KEYWORDS, TOKEN_GATING_ENABLED } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
 import { theme } from 'theme/index'
+import { QuestType } from 'components/Quest/QuestComponent'
+import NFT from 'components/NFT'
+import Keyword from 'components/Keyword'
 
 const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   border-radius: 0.5rem;
@@ -42,7 +42,8 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   }
   span.keyword {
     cursor: help;
-    border-bottom: 1px dashed grey;
+    border-bottom: 1px dashed #e5afff;
+    color: #e5afff;
     display: inline-block !important;
   }
   div.content > div {
@@ -170,9 +171,13 @@ const SlideNav = styled(Box)<{ issmallscreen?: string }>`
 const Lesson = ({
   lesson,
   extraKeywords,
+  closeLesson,
+  Quest,
 }: {
   lesson: LessonType
   extraKeywords?: any
+  closeLesson?: () => void
+  Quest?: QuestType
 }): React.ReactElement => {
   const numberOfSlides = lesson.slides.length
   // HACK: when reducing the number of slides in a lesson
@@ -195,10 +200,6 @@ const Lesson = ({
     `connectWalletPopup`,
     false
   )
-  const [isKudosMintedLS] = useLocalStorage(
-    `isKudosMinted-${lesson.kudosId}`,
-    false
-  )
   const [quizRetryCount, setQuizRetryCount] = useState({})
   const toast = useToast()
 
@@ -207,7 +208,6 @@ const Lesson = ({
   const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
-  const isBeforeLastSlide = currentSlide + 2 === numberOfSlides
 
   const { address } = useAccount()
   const walletAddress = address
@@ -226,6 +226,38 @@ const Lesson = ({
       setConnectWalletPopupLS(true)
   }, [address, slide])
 
+  useEffect((): void => {
+    const checkNFT = async () => {
+      const hasNFT = await isHolderOfNFT(address, lesson.nftGating)
+      if (!hasNFT) {
+        toast.closeAll()
+        toast({
+          title: "You don't own the required NFT",
+          description: lesson?.nftGatingRequirements,
+          status: 'warning',
+          duration: 20000,
+          isClosable: true,
+        })
+        closeLesson()
+      }
+    }
+    if (TOKEN_GATING_ENABLED && lesson.nftGating) {
+      if (!address) {
+        toast.closeAll()
+        toast({
+          title: 'This is a token gated lesson',
+          description: 'Connect your wallet to access the lesson.',
+          status: 'warning',
+          duration: 20000,
+          isClosable: true,
+        })
+        closeLesson()
+      } else {
+        checkNFT()
+      }
+    }
+  }, [address])
+
   useEffect(() => {
     Mixpanel.track('open_lesson', { lesson: lesson?.name })
     // preloading all lesson images after 3 seconds for smoother transitions
@@ -236,15 +268,6 @@ const Lesson = ({
       })
     }, 3000)
   }, [])
-
-  const scrollTop = () => {
-    // 0.3 second delay
-    setTimeout(() => {
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-      }
-    }, 300)
-  }
 
   const goToPrevSlide = () => {
     toast.closeAll()
@@ -367,6 +390,9 @@ const Lesson = ({
   useHotkeys('5', () => {
     answerRef?.current[5]?.click()
   })
+  useHotkeys('Esc', () => {
+    closeLesson()
+  })
 
   // transform keywords into Tooltip
   function transform(node) {
@@ -392,9 +418,7 @@ const Lesson = ({
         keywords[lowerCaseKeyword]?.definition ||
         keywords[lowerCaseKeywordSingular]?.definition
       return definition?.length ? (
-        <Tooltip hasArrow label={definition} closeOnClick={false}>
-          <span className="keyword">{keyword}</span>
-        </Tooltip>
+        <Keyword definition={definition} keyword={keyword} />
       ) : (
         <>{keyword}</>
       )
@@ -405,17 +429,16 @@ const Lesson = ({
     slide?.quiz &&
     lesson.slug === 'bankless-archetypes' &&
     localStorage.getItem(`quiz-${slide.quiz.id}`)
-  )
+  ) {
     slide.quiz.rightAnswerNumber = parseInt(
       localStorage.getItem(`quiz-${slide.quiz.id}`)
     )
+  }
 
   const answerIsCorrect =
     slide?.quiz &&
     parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
       slide.quiz.rightAnswerNumber
-
-  const Quest = QuestComponent(lesson.quest, lesson.kudosId)
 
   return (
     <Slide
@@ -427,6 +450,21 @@ const Lesson = ({
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
     >
+      {!lesson?.isPreview && (
+        <Box h="0">
+          <Button
+            position="relative"
+            top={isSmallScreen ? '8px' : '-38px'}
+            left={isSmallScreen ? '2px' : '-67px'}
+            size={isSmallScreen ? 'md' : 'lg'}
+            iconSpacing="0"
+            variant="secondaryBig"
+            leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
+            onClick={() => closeLesson()}
+            p={isSmallScreen ? '0' : 'auto'}
+          ></Button>
+        </Box>
+      )}
       <Text
         fontSize={isSmallScreen ? 'xl' : '3xl'}
         my={isSmallScreen ? '2' : '4'}
@@ -544,43 +582,12 @@ const Lesson = ({
               ) : (
                 <>
                   {lesson.kudosImageLink && (
-                    <>
-                      {lesson.kudosImageLink?.includes('.mp4') ? (
-                        <Box
-                          height="250px"
-                          width="250px"
-                          borderRadius="30px"
-                          overflow="hidden"
-                          border="2px solid #4b474b"
-                        >
-                          <video
-                            autoPlay
-                            loop
-                            playsInline
-                            muted
-                            style={{ borderRadius: '30px', overflow: 'hidden' }}
-                          >
-                            <source
-                              src={lesson.kudosImageLink}
-                              type="video/mp4"
-                            ></source>
-                          </video>
-                        </Box>
-                      ) : (
-                        <ChakraImage
-                          src={lesson.kudosImageLink}
-                          height="250px"
-                          mb="2"
-                        />
-                      )}
-                    </>
+                    <Box w="290px" h="290px">
+                      <NFT nftLink={lesson.kudosImageLink} />
+                    </Box>
                   )}
                   {lesson.kudosId ? (
-                    <MintKudos
-                      kudosId={lesson.kudosId}
-                      isQuestCompleted={Quest?.isQuestCompleted}
-                      goToPrevSlide={goToPrevSlide}
-                    />
+                    <MintKudos kudosId={lesson.kudosId} />
                   ) : (
                     <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   )}
@@ -627,58 +634,35 @@ const Lesson = ({
               hasArrow
               label="By skipping this quest you won't be able to claim the lesson badge"
             >
-              <Button
-                variant="outline"
-                onClick={() => {
-                  setCurrentSlide(currentSlide + 1)
-                }}
-              >
+              <Button variant="outline" onClick={() => closeLesson()}>
                 Skip Quest
               </Button>
             </Tooltip>
           ) : null}
-          {!embed && isLastSlide && lesson.communityDiscussionLink && (
-            <ExternalLink
-              href={lesson.communityDiscussionLink}
-              alt={`${lesson.name} community discussion`}
-            >
-              <Tooltip
-                hasArrow
-                label="Join other explorers to discuss this lesson."
-              >
-                <Button variant="outline">
-                  👨‍🚀{isSmallScreen ? '' : ' Community discussion'}
-                </Button>
-              </Tooltip>
-            </ExternalLink>
-          )}
           {!isLastSlide || (lesson.endOfLessonText && !embed) ? (
             <Button
               ref={buttonRightRef}
-              variant={isBeforeLastSlide ? 'primaryBigLast' : 'primaryBig'}
+              variant="primaryBig"
               size="lg"
-              disabled={
+              isDisabled={
                 (slide.quiz && !answerIsCorrect) ||
                 (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
               }
               onClick={goToNextSlide}
               rightIcon={<ArrowForwardIcon />}
             >
-              {isBeforeLastSlide ? 'Finish' : 'Next'}
+              Next
             </Button>
           ) : (
             <>
-              {embed ? null : (
-                <InternalLink href={IS_WHITELABEL ? `/` : `/lessons`}>
-                  <Button
-                    variant={
-                      lesson.kudosId && !isKudosMintedLS ? 'outline' : 'primary'
-                    }
-                  >
-                    Explore more Lessons
-                  </Button>
-                </InternalLink>
-              )}
+              <Button
+                size="lg"
+                onClick={() => closeLesson()}
+                variant="primaryBigLast"
+                rightIcon={<ArrowForwardIcon />}
+              >
+                Finish
+              </Button>
             </>
           )}
         </HStack>

@@ -3,12 +3,11 @@ import {
   Box,
   Container,
   Image,
-  Tooltip,
   Button,
   Text,
   SimpleGrid,
 } from '@chakra-ui/react'
-import { ArrowRight } from 'phosphor-react'
+import { ArrowRight } from '@phosphor-icons/react'
 import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
 import { useLocalStorage } from 'usehooks-ts'
@@ -17,10 +16,12 @@ import { useAccount } from 'wagmi'
 
 import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
+import CollectEntryButton from 'components/CollectEntryButton'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
 import { getArticlesCollected, Mixpanel } from 'utils'
+import Keyword from 'components/Keyword'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -478,7 +479,8 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
   }
   span.keyword {
     cursor: help;
-    border-bottom: 1px dashed grey;
+    border-bottom: 1px dashed #e5afff;
+    color: #e5afff;
     display: inline-block !important;
   }
   ol {
@@ -506,6 +508,10 @@ const Article = ({
 
   useEffect(() => {
     Mixpanel.track('open_lesson', { lesson: lesson?.name })
+    // mark article as read after 30 seconds
+    setTimeout(() => {
+      localStorage.setItem(lesson.slug, 'true')
+    }, 30000)
   }, [])
 
   useEffect(() => {
@@ -535,18 +541,48 @@ const Article = ({
         mt={isSmallScreen ? '0' : '24px'}
       />
       <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
-      <Box p="24px">
-        <ExternalLink href={lesson.mirrorLink}>
-          <Button variant="primary" rightIcon={<ArrowRight size={16} />}>
-            View on Mirror.xyz
-          </Button>
-        </ExternalLink>
-      </Box>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="24px">
+        <Box
+          // border="1px solid #989898"
+          py={isSmallScreen ? '2' : '6'}
+          px="6"
+          borderRadius="lg"
+        >
+          {isArticleCollected ? (
+            <Button
+              variant="secondaryGold"
+              w="100%"
+              background="transparent !important"
+            >
+              Entry Collected
+            </Button>
+          ) : (
+            <CollectEntryButton lesson={lesson} />
+          )}
+        </Box>
+        <Box
+          // border="1px solid #989898"
+          py={isSmallScreen ? '2' : '6'}
+          px="6"
+          borderRadius="lg"
+          textAlign="center"
+        >
+          <ExternalLink href={lesson.mirrorLink}>
+            <Button
+              variant="primary"
+              w="100%"
+              rightIcon={<ArrowRight size={16} />}
+            >
+              View on Mirror.xyz
+            </Button>
+          </ExternalLink>
+        </Box>
+      </SimpleGrid>
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown
           components={{
             // Tooltip with definition
-            code: ({ node, ...props }: any) => {
+            code: ({ node }: any) => {
               const keyword = node.children[0]?.value
               const lowerCaseKeyword = node.children[0]?.value?.toLowerCase()
               const lowerCaseKeywordSingular =
@@ -558,14 +594,7 @@ const Article = ({
                 keywords[lowerCaseKeyword]?.definition ||
                 keywords[lowerCaseKeywordSingular]?.definition
               return definition?.length ? (
-                <Tooltip
-                  hasArrow
-                  label={definition}
-                  closeOnClick={false}
-                  {...props}
-                >
-                  <span className="keyword">{keyword}</span>
-                </Tooltip>
+                <Keyword definition={definition} keyword={keyword} />
               ) : (
                 <>{keyword}</>
               )
@@ -614,17 +643,15 @@ const Article = ({
           borderRadius="lg"
         >
           {isArticleCollected ? (
-            <Button variant="secondaryGold" w="100%">
+            <Button
+              variant="secondaryGold"
+              w="100%"
+              background="transparent !important"
+            >
               Entry Collected
             </Button>
           ) : (
-            <ExternalLink href={lesson.mirrorLink}>
-              <Tooltip hasArrow label="Collect Entry on Mirror.xyz">
-                <Button variant="primaryGold" w="100%">
-                  Collect Entry
-                </Button>
-              </Tooltip>
-            </ExternalLink>
+            <CollectEntryButton lesson={lesson} />
           )}
         </Box>
         <Box

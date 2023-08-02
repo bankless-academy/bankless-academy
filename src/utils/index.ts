@@ -14,6 +14,7 @@ import { readContract } from '@wagmi/core'
 import {
   ACTIVATE_MIXPANEL,
   ALCHEMY_KEY,
+  COLLECTIBLE_ADDRESSES,
   DOMAIN_PROD,
   INFURA_KEY,
   MIRROR_ARTICLE_ADDRESSES,
@@ -392,7 +393,7 @@ export const getNodeText = (node) => {
 export async function api(url: string, data: any): Promise<AxiosResponse> {
   const wrong = {
     data: {
-      error: 'something went wrong',
+      error: 'API error',
     },
     status: 500,
     statusText: 'KO',
@@ -421,11 +422,11 @@ export async function api(url: string, data: any): Promise<AxiosResponse> {
   }
 }
 
-export async function getArticlesCollected(address: string): Promise<[]> {
+export async function getArticlesCollected(address: string): Promise<string[]> {
   try {
     const ownerNFTs = await axios.get(
       `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100${MIRROR_ARTICLE_ADDRESSES.map(
-        (articlAddress) => `&contractAddresses[]=${articlAddress}`
+        (articleAddress) => `&contractAddresses[]=${articleAddress}`
       ).join('')}&withMetadata=false`
     )
     if (ownerNFTs.data) {
@@ -441,6 +442,89 @@ export async function getArticlesCollected(address: string): Promise<[]> {
   } catch (error) {
     console.error(error)
     return []
+  }
+}
+
+export async function getLessonsCollected(address: string): Promise<string[]> {
+  try {
+    const ownerNFTs = await axios.get(
+      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100${COLLECTIBLE_ADDRESSES.map(
+        (collectibleAddress) => `&contractAddresses[]=${collectibleAddress}`
+      ).join('')}&withMetadata=false`
+    )
+    if (ownerNFTs.data) {
+      // console.log(ownerNFTs.data?.ownedNfts)
+      const lessonsCollected = ownerNFTs.data?.ownedNfts.map(
+        (nft) => nft.contract.address
+      )
+      // console.log(articlesCollected)
+      return lessonsCollected
+    } else {
+      return []
+    }
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
+export async function getLessonsCollectors(
+  collectibleAddress: string
+): Promise<any[]> {
+  try {
+    const NFTCollectors = await axios.get(
+      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getOwnersForCollection?contractAddress=${collectibleAddress}&withTokenBalances=true`
+    )
+    // console.log(NFTCollectors.data)
+    return NFTCollectors.data?.ownerAddresses || []
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
+export async function getArticlesCollectors(
+  articleAddress: string
+): Promise<any[]> {
+  try {
+    const NFTCollectors = await axios.get(
+      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getOwnersForCollection?contractAddress=${articleAddress}&withTokenBalances=true`
+    )
+    // console.log(NFTCollectors.data)
+    return NFTCollectors.data?.ownerAddresses || []
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
+export async function isHolderOfNFT(
+  address: string,
+  openSeaLink: string
+): Promise<boolean> {
+  try {
+    const nftAddress = openSeaLink.replace(
+      'https://opensea.io/assets/matic/',
+      ''
+    )
+    const [contractAddress, tokenId] = nftAddress.split('/')
+    // console.log(contractAddress)
+    // console.log(tokenId)
+    const ownerNFTs = await axios.get(
+      `https://polygon-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getNFTs?owner=${address}&pageSize=100&contractAddresses[]=${contractAddress}&withMetadata=false`
+    )
+    if (ownerNFTs.data) {
+      return (
+        ownerNFTs.data?.ownedNfts.filter(
+          (nft) => parseInt(nft.id.tokenId, 16).toString() === tokenId
+        ).length > 0
+      )
+    } else {
+      return false
+    }
+  } catch (error) {
+    console.error(error)
+    return false
   }
 }
 
@@ -513,4 +597,13 @@ export async function getUD(address: string): Promise<string | null> {
     console.error(error)
     return res
   }
+}
+
+export const scrollTop = () => {
+  // 0.3 second delay
+  setTimeout(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }, 300)
 }

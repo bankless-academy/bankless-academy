@@ -14,14 +14,14 @@ import {
   useDisclosure,
   Avatar,
 } from '@chakra-ui/react'
-import { Wallet } from 'phosphor-react'
+import { Wallet } from '@phosphor-icons/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import { useWeb3Modal } from '@web3modal/react'
-import { useAccount, useNetwork, useSignMessage } from 'wagmi'
-import { disconnect, fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
+import { useAccount, useNetwork, useSignMessage, useDisconnect } from 'wagmi'
+import { fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
 import makeBlockie from 'ethereum-blockies-base64'
 import { SiweMessage } from 'siwe'
 
@@ -66,6 +66,7 @@ const ConnectWalletButton = ({
   const { connector, address, isConnected } = useAccount()
   const { chain } = useNetwork()
   const [waitingForSIWE, setWaitingForSIWE] = useState(false)
+  const [isDisconnecting, setIsDisconnecting] = useState(false)
   const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
@@ -82,6 +83,11 @@ const ConnectWalletButton = ({
   )
   const { onOpen, onClose, isOpen } = useDisclosure()
   const { asPath } = useRouter()
+  const { disconnect } = useDisconnect({
+    onError(error) {
+      console.log('Error', error)
+    },
+  })
 
   const isLessonPage = asPath.includes('/lessons/')
 
@@ -97,14 +103,26 @@ const ConnectWalletButton = ({
   }
 
   async function disconnectWallet() {
-    onClose()
-    await disconnect()
-    setWaitingForSIWE(false)
-    setSiweLS('')
-    setName(null)
-    setAvatar(null)
-    setKudos([])
-    await fetch('/api/siwe/logout')
+    try {
+      setWaitingForSIWE(false)
+      setIsDisconnecting(true)
+      onClose()
+      disconnect()
+      setSiweLS('')
+      setName(null)
+      setAvatar(null)
+      await fetch('/api/siwe/logout')
+      setIsDisconnecting(false)
+    } catch (error) {
+      console.error(error)
+    }
+    // HACK: mobile wallet disconnect issues
+    if (localStorage.getItem('wagmi.wallet') === 'walletConnect') {
+      localStorage.removeItem('wagmi.wallet')
+      localStorage.removeItem('wagmi.connected')
+      localStorage.removeItem('wc@2:client:0.3//session')
+      location.reload()
+    }
   }
 
   async function updateName(address) {
@@ -123,6 +141,7 @@ const ConnectWalletButton = ({
         setName(ensName)
         const ensAvatar = await fetchEnsAvatar({
           address,
+          // name: ensName,
           chainId: 1,
         })
         if (ensAvatar) setAvatar(ensAvatar)
@@ -137,33 +156,40 @@ const ConnectWalletButton = ({
   }
 
   function refreshKudos() {
-    axios
-      .get(
-        `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
-      )
-      .then((res) => {
-        const data = res.data.data
-        if (Array.isArray(data)) {
-          setKudosMintedLS(
-            KUDOS_IDS.filter((kudosId) =>
+    if (address)
+      axios
+        .get(
+          `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
+        )
+        .then((res) => {
+          const data = res.data.data
+          if (Array.isArray(data)) {
+            const kudosMinted = KUDOS_IDS.filter((kudosId) =>
               data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
             )
-          )
-          setKudos(
-            data.filter((kudos: KudosType) =>
-              KUDOS_IDS.includes(kudos.kudosTokenId)
+            setKudosMintedLS(kudosMinted)
+            for (const kudosId of KUDOS_IDS) {
+              localStorage.setItem(
+                `isKudosMinted-${kudosId.toString()}`,
+                kudosMinted.includes(kudosId).toString()
+              )
+            }
+            setKudos(
+              data.filter((kudos: KudosType) =>
+                KUDOS_IDS.includes(kudos.kudosTokenId)
+              )
             )
-          )
-        }
-      })
+          }
+        })
   }
 
   const loadAddress = (address) => {
+    setConnectWalletPopupLS(false)
     onClose()
-    if (localStorage.getItem('current_wallet') !== address.toLowerCase()) {
+    if (localStorage.getItem('current_wallet') !== address?.toLowerCase()) {
       localStorage.removeItem('passport')
     }
-    localStorage.setItem('current_wallet', address.toLowerCase())
+    localStorage.setItem('current_wallet', address?.toLowerCase())
     setName(shortenAddress(address))
     setAvatar(makeBlockie(address))
     updateName(address)
@@ -198,18 +224,19 @@ const ConnectWalletButton = ({
   }, [])
 
   const signIn = async () => {
+    const chainId = chain?.id
+    if (!chainId || waitingForSIWE || isDisconnecting) return
     const timeout = setTimeout(() => {
       console.log('SIWE timeout')
       disconnectWallet()
     }, 60000)
     try {
-      const chainId = chain?.id
-      if (!chainId || waitingForSIWE) return
+      setWaitingForSIWE(true)
       const nonceRes = await fetch('/api/siwe/nonce')
       const nonce = await nonceRes.text()
 
-      setWaitingForSIWE(true)
       // Create SIWE message with pre-fetched nonce and sign with wallet
+      // https://wagmi.sh/examples/sign-in-with-ethereum
       const message = new SiweMessage({
         domain: window.location.host,
         address,
@@ -219,6 +246,7 @@ const ConnectWalletButton = ({
         chainId,
         nonce,
       })
+      await new Promise((resolve) => setTimeout(resolve, 500))
       const signature = await signMessageAsync({
         message: message.prepareMessage(),
       })
@@ -230,7 +258,7 @@ const ConnectWalletButton = ({
       // const res = await fetch('/api/siwe/me')
       // TODO: add support for multiple windows open
       const verifyRes = await api('/api/siwe/verify', siwe)
-      // https://github.com/BanklessDAO/bankless-academy/pull/90/commits/d130d22e70ad146b1e619133864d03a8bf4c3cb4#diff-caedf14611e4652b0b5f0287a5bc59621a76c1d0b41c544302d3c8c1a7641d22L107
+      // https://github.com/bankless-academy/bankless-academy/pull/90/commits/d130d22e70ad146b1e619133864d03a8bf4c3cb4#diff-caedf14611e4652b0b5f0287a5bc59621a76c1d0b41c544302d3c8c1a7641d22L107
       if (!verifyRes.data.ok) throw new Error('Error verifying message')
       setSiweLS(JSON.stringify(siwe))
       loadAddress(address)
@@ -244,11 +272,21 @@ const ConnectWalletButton = ({
   }
 
   useEffect(() => {
-    const { message }: any = siwe?.length ? JSON.parse(siwe) : {}
-    if (connector && address && message?.address !== address) {
-      signIn()
+    if (address && !SIWE_ENABLED) {
+      // DO nothing
+    } else {
+      const { message }: any = siwe?.length ? JSON.parse(siwe) : {}
+      if (connector && address && message?.address !== address) {
+        signIn()
+      }
     }
   }, [siwe, address, connector])
+
+  useEffect(() => {
+    if (address && !SIWE_ENABLED) {
+      loadAddress(address)
+    }
+  }, [address])
 
   useEffect(() => {
     if (refreshKudosLS) {
@@ -263,7 +301,7 @@ const ConnectWalletButton = ({
 
   return (
     <>
-      {isConnected && !waitingForSIWE ? (
+      {isConnected && !waitingForSIWE && name ? (
         <Popover
           isOpen={isOpen}
           placement="bottom-end"
@@ -301,7 +339,8 @@ const ConnectWalletButton = ({
             <PopoverBody>
               <Box textAlign="center" m="2">
                 <Button
-                  isFullWidth
+                  w="100%"
+                  bg="var(--chakra-colors-whiteAlpha-500)"
                   size={isSmallScreen ? 'sm' : 'md'}
                   leftIcon={<Wallet weight="bold" />}
                   onClick={disconnectWallet}
@@ -328,7 +367,7 @@ const ConnectWalletButton = ({
                           (lesson) => lesson.kudosId === k.kudosTokenId
                         )
                         if (lesson) {
-                          if (lesson.kudosImageLink?.includes('.mp4')) {
+                          if (lesson.kudosImageLink.includes('.mp4')) {
                             return (
                               <Box
                                 key={`kudos-${index}`}
@@ -403,9 +442,13 @@ const ConnectWalletButton = ({
               onClick={openModal}
               size={isSmallScreen ? 'sm' : 'md'}
               leftIcon={<Wallet weight="bold" />}
-              isLoading={waitingForSIWE}
+              isLoading={waitingForSIWE || isDisconnecting}
               loadingText={
-                SIWE_ENABLED ? 'Sign In With Ethereum' : 'Connecting wallet'
+                isDisconnecting
+                  ? 'Disconnecting'
+                  : SIWE_ENABLED
+                  ? 'Sign In With Ethereum'
+                  : 'Connecting wallet'
               }
               zIndex={2}
               variant="primary"
@@ -421,7 +464,10 @@ const ConnectWalletButton = ({
               </Heading>
               <Text textAlign="center">
                 {`Don’t know how? `}
-                <ExternalLink href="/faq#edf3a4658d3d4aa78eac62e1dcf68978">
+                <ExternalLink
+                  underline="true"
+                  href="/faq#edf3a4658d3d4aa78eac62e1dcf68978"
+                >
                   Get help here
                 </ExternalLink>
               </Text>

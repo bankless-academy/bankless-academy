@@ -49,7 +49,7 @@ const download_image = (url, image_path) =>
 const get_img = (imageLink, slug, image_name) => {
   const [file_name] = imageLink.split('?')
   const file_extension = file_name
-    .match(/\.(png|svg|jpg|jpeg|webp|mp4|gif)/)[1]
+    .match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/)[1]
     .replace('jpeg', 'jpg')
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)

@@ -8,35 +8,29 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
+  Text,
   ModalCloseButton,
   ModalBody,
   ModalFooter,
   useDisclosure,
   Heading,
 } from '@chakra-ui/react'
-import { ArrowBackIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount, useNetwork } from 'wagmi'
 import { switchNetwork, signTypedData } from '@wagmi/core'
+import { Gear, SealCheck } from '@phosphor-icons/react'
 
 import { useSmallScreen } from 'hooks/index'
 import Passport from 'components/Passport'
 import ExternalLink from 'components/ExternalLink'
-import {
-  IS_WHITELABEL,
-  TWITTER_ACCOUNT,
-  LESSONS,
-  DOMAIN_URL,
-} from 'constants/index'
+import { LESSONS } from 'constants/index'
 import {
   MINTKUDOS_API,
   MINTKUDOS_URL,
   MINTKUDOS_DOMAIN_INFO,
   MINTKUDOS_EXPLORER,
   MINTKUDOS_CHAIN_ID,
-  MINTKUDOS_OPENSEA_URL,
   MINTKUDOS_COMMUNITY_ID,
 } from 'constants/kudos'
 import { NETWORKS } from 'constants/networks'
@@ -45,15 +39,7 @@ import { KudosType } from 'entities/kudos'
 import { theme } from 'theme/index'
 import { api } from 'utils'
 
-const MintKudos = ({
-  kudosId,
-  isQuestCompleted,
-  goToPrevSlide,
-}: {
-  kudosId: number
-  isQuestCompleted: boolean
-  goToPrevSlide: () => void
-}): React.ReactElement => {
+const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   const [isKudosMintedLS, setIsKudosMintedLS] = useLocalStorage(
     `isKudosMinted-${kudosId}`,
     false
@@ -74,6 +60,14 @@ const MintKudos = ({
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
+
+  const PoweredByMintKudos = (
+    <Box display="flex" justifyContent="center" my={4}>
+      <ExternalLink href={`${MINTKUDOS_URL}`} alt="Powered by MintKudos">
+        <Image width="150px" src="/images/powered-by-MintKudos.svg" />
+      </ExternalLink>
+    </Box>
+  )
 
   async function checkPassport() {
     const result = await api('/api/passport', { address })
@@ -117,11 +111,25 @@ const MintKudos = ({
           toast.closeAll()
           const txLink = `${MINTKUDOS_EXPLORER}tx/${result.data.txHash}`
           toast({
-            title: `Transaction in progress`,
             description: (
-              <ExternalLink href={txLink} alt="Transaction in progress">
-                {isSmallScreen ? `${txLink.substring(0, 40)}...` : txLink}
-              </ExternalLink>
+              <>
+                <Box>
+                  <Box display="flex">
+                    <Box mr="4">
+                      <Gear width="40px" height="auto" />
+                    </Box>
+                    <Box flexDirection="column">
+                      <Box>Minting in progress:</Box>
+                      <ExternalLink href={txLink} alt="Transaction in progress">
+                        {isSmallScreen
+                          ? `${txLink.substring(0, 40)}...`
+                          : txLink}
+                      </ExternalLink>
+                    </Box>
+                  </Box>
+                </Box>
+                {PoweredByMintKudos}
+              </>
             ),
             status: 'warning',
             duration: null,
@@ -203,7 +211,21 @@ const MintKudos = ({
         // TODO: add 🎊
         // TODO: refresh list of Kudos in the wallet
         toast({
-          title: 'Badge minted 🎉',
+          description: (
+            <>
+              <Box>
+                <Box display="flex">
+                  <Box mr="4">
+                    <SealCheck width="40px" height="auto" />
+                  </Box>
+                  <Box flexDirection="column" alignSelf="center">
+                    <Box>Badge successfully minted!</Box>
+                  </Box>
+                </Box>
+              </Box>
+              {PoweredByMintKudos}
+            </>
+          ),
           status: 'success',
           duration: 10000,
           isClosable: true,
@@ -238,32 +260,112 @@ const MintKudos = ({
     }
   }
 
-  const ConnectFirst = (
-    <>
-      <Heading as="h2" size="xl" textAlign="center" pt="8">
-        To claim rewards, you must connect your wallet.
-      </Heading>
-    </>
-  )
+  // const ConnectFirst = (
+  //   <>
+  //     <Heading as="h2" size="xl" textAlign="center" pt="8">
+  //       To claim rewards, you must connect your wallet.
+  //     </Heading>
+  //   </>
+  // )
 
   const GitcoinModal = (
-    <Modal onClose={onClose} size={'xl'} isOpen={isOpen}>
+    <Modal
+      onClose={() => {
+        if (passportLS?.verified) {
+          toast.closeAll()
+          toast({
+            description: (
+              <>
+                <Box>
+                  <Box display="flex">
+                    <Box mr="4">
+                      <Image
+                        src="/images/gitcoin-passport.svg"
+                        alt="Gitcoin Passport"
+                      />
+                    </Box>
+                    <Box flexDirection="column" alignSelf="center">
+                      <Box fontWeight="bold">
+                        Gitcoin Passport successfully set up.
+                      </Box>
+                      <Box mt="4">Try to mint your badge again.</Box>
+                    </Box>
+                  </Box>
+                </Box>
+              </>
+            ),
+            status: 'success',
+            duration: 10000,
+            isClosable: true,
+          })
+        } else {
+          toast.closeAll()
+          toast({
+            description: (
+              <>
+                <Box>
+                  <Box display="flex">
+                    <Box mr="4">
+                      <Image
+                        src="/images/gitcoin-passport.svg"
+                        alt="Gitcoin Passport"
+                      />
+                    </Box>
+                    <Box flexDirection="column" alignSelf="center">
+                      <Box fontWeight="bold">Gitcoin Passport not set up.</Box>
+                      <Box mt="4">
+                        <ExternalLink href="/faq#ea6ae6bd9ca645498c15cc611bc181c0">
+                          Follow these steps and try again
+                        </ExternalLink>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+              </>
+            ),
+            status: 'warning',
+            duration: 20000,
+            isClosable: true,
+          })
+        }
+        onClose()
+      }}
+      size={'xl'}
+      isOpen={isOpen}
+      isCentered
+    >
       <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>
-          {
-            'Explorers must pass unique authentication in order to collect Bankless Academy rewards. '
-          }
-          <ExternalLink href="/faq#640071a81daf4aa4b7df00b1eec1c58d">
-            Learn more
-          </ExternalLink>
-        </ModalHeader>
+      <ModalContent
+        bg="linear-gradient(180deg, #a379bdcc 0%, #5a5198cc 100%)"
+        border="2px solid #B68BCC"
+        borderRadius="3xl"
+        backdropFilter="blur(10px)"
+      >
         <ModalCloseButton />
         <ModalBody>
+          <Text fontSize="xl">
+            {!passportLS?.verified && (
+              <Box mt="4" mr="4">
+                {`You haven’t set up Gitcoin Passport, or your stamps are out of date.`}
+              </Box>
+            )}
+            <Box my="4">
+              {`Explorers must have a valid Gitcoin Passport in order to collect Bankless Academy rewards. `}
+              <ExternalLink
+                underline="true"
+                href="/faq#640071a81daf4aa4b7df00b1eec1c58d"
+              >
+                Learn more
+              </ExternalLink>
+            </Box>
+          </Text>
           <Passport displayStamps />
         </ModalBody>
         <ModalFooter>
-          <ExternalLink href="/faq#640071a81daf4aa4b7df00b1eec1c58d">
+          <ExternalLink
+            underline="true"
+            href="/faq#640071a81daf4aa4b7df00b1eec1c58d"
+          >
             Help
           </ExternalLink>
         </ModalFooter>
@@ -272,114 +374,62 @@ const MintKudos = ({
   )
 
   const lesson = LESSONS.find((lesson) => lesson.kudosId === kudosId)
-
-  const share = `I've just claimed my "${
-    lesson.name
-  }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
-${
-  IS_WHITELABEL
-    ? `
-Go claim yours here 👇 ${DOMAIN_URL}/lessons/${lesson.slug}`
-    : `${MINTKUDOS_URL}profile/${address}?tab=Received&tokenId=${kudosId}
-
-Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
-}`
-
-  const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-    share
-  )}`
+  return (
+    <>
+      <Button
+        variant={'primary'}
+        w="100%"
+        borderBottomRadius="0"
+        isLoading={isMintingInProgress}
+        loadingText="Minting Badge ..."
+        cursor={isKudosMintedLS ? 'auto' : 'pointer'}
+        onClick={() => {
+          passportLS?.verified ? mintKudos() : onOpen()
+        }}
+      >
+        Mint Badge
+      </Button>
+      {GitcoinModal}
+    </>
+  )
 
   return (
     <Box>
-      {!address ? (
-        <>{ConnectFirst}</>
+      <Heading as="h2" size="xl" textAlign="center">
+        <span style={{ color: theme.colors.secondary }}>{lesson.name}</span>
+        {` badge ${isKudosMintedLS ? 'claimed' : 'available'}!`}
+      </Heading>
+      {isKudosMintedLS ? null : passportLS?.verified && !isOpen ? (
+        <Box textAlign="center">
+          <Button
+            colorScheme={'green'}
+            onClick={mintKudos}
+            variant="primary"
+            isLoading={isMintingInProgress}
+            loadingText={status}
+          >
+            {status !== '' ? status : 'Mint badge 🛠'}
+          </Button>
+        </Box>
       ) : (
         <>
-          {!isQuestCompleted ? (
-            <Box textAlign="center">
-              <Heading as="h2" size="xl" textAlign="center">
-                Rewards are only available after full lesson completion.
-              </Heading>
+          <Box>
+            <Heading as="h2" size="xl" textAlign="center">
+              {`To claim rewards you need a `}
               <Button
                 variant="primary"
-                onClick={goToPrevSlide}
-                leftIcon={<ArrowBackIcon />}
+                onClick={onOpen}
+                mt={isSmallScreen ? '2' : ''}
               >
-                Retry Quest
+                {`Gitcoin Passport`}
               </Button>
-            </Box>
-          ) : (
-            <>
-              <Heading as="h2" size="xl" textAlign="center">
-                <span style={{ color: theme.colors.secondary }}>
-                  {lesson.name}
-                </span>
-                {` badge ${isKudosMintedLS ? 'claimed' : 'available'}!`}
-              </Heading>
-              <Box display="flex" justifyContent="center" mb={10} mt={-3}>
-                <ExternalLink
-                  href={`${MINTKUDOS_URL}`}
-                  alt="Powered by MintKudos"
-                >
-                  <Image width="120px" src="/images/powered-by-MintKudos.svg" />
-                </ExternalLink>
-              </Box>
-              {isKudosMintedLS ? (
-                <Box display="flex" justifyContent="center">
-                  <ExternalLink href={twitterLink} mr="2">
-                    <Button
-                      leftIcon={
-                        <Image width="24px" src="/images/Twitter-blue.svg" />
-                      }
-                    >
-                      Share on Twitter
-                    </Button>
-                  </ExternalLink>
-                  <ExternalLink href={`${MINTKUDOS_OPENSEA_URL}${kudosId}`}>
-                    <Button
-                      leftIcon={
-                        <Image width="24px" src="/images/OpenSea.svg" />
-                      }
-                    >
-                      View on OpenSea
-                    </Button>
-                  </ExternalLink>
-                </Box>
-              ) : passportLS?.verified && !isOpen ? (
-                <Box textAlign="center">
-                  <Button
-                    colorScheme={'green'}
-                    onClick={mintKudos}
-                    variant="primary"
-                    isLoading={isMintingInProgress}
-                    loadingText={status}
-                  >
-                    {status !== '' ? status : 'Mint badge 🛠'}
-                  </Button>
-                </Box>
-              ) : (
-                <>
-                  <Box>
-                    <Heading as="h2" size="xl" textAlign="center">
-                      {`To claim rewards you need a `}
-                      <Button
-                        variant="primary"
-                        onClick={onOpen}
-                        mt={isSmallScreen ? '2' : ''}
-                      >
-                        {`Gitcoin Passport`}
-                      </Button>
-                    </Heading>
-                    <p>
-                      Authentication takes ~2 minutes, and protects the
-                      legitimacy of Academy rewards.
-                    </p>
-                  </Box>
-                  {GitcoinModal}
-                </>
-              )}
-            </>
-          )}
+            </Heading>
+            <p>
+              Authentication takes ~2 minutes, and protects the legitimacy of
+              Academy rewards.
+            </p>
+          </Box>
+          {GitcoinModal}
         </>
       )}
     </Box>

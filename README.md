@@ -41,7 +41,7 @@ yarn dev
 
 ## Database
 
-Wallet addresses, encrypted Passport stamps & lessson completions are stored in a PostgreSQL database.
+Wallet addresses, encrypted Passport stamps & lesson completions are stored in a PostgreSQL database.
 Database setup is only required for lesson badge distribution but not to run the app.
 
 ### Setup
@@ -50,11 +50,11 @@ Setup and connection to database are done via [Knex.js](https://knexjs.org/#Migr
 
 ### Config
 
-DM `DidierKrux.eth🏴#1559` on Discord if you need the configs to add to your .env.local file (see [.env.example](https://github.com/BanklessDAO/bankless-academy/blob/main/.env.example)).
+DM `DidierKrux.eth🏴#1559` on Discord if you need the configs to add to your .env.local file (see [.env.example](https://github.com/bankless-academy/bankless-academy/blob/main/.env.example)).
 
 ### Migrations
 
-Migration files: [https://github.com/BanklessDAO/bankless-academy/tree/main/migrations](https://github.com/BanklessDAO/bankless-academy/tree/main/migrations)
+Migration files: [https://github.com/bankless-academy/bankless-academy/tree/main/migrations](https://github.com/bankless-academy/bankless-academy/tree/main/migrations)
 
 ```bash
 # Install Migration CLI
@@ -77,8 +77,8 @@ Documentation + data tracked: [https://www.notion.so/bankless/Analytics-with-Uma
 
 User interactions tracked in the app:
 
-- [front-end](https://github.com/BanklessDAO/bankless-academy/search?q=Mixpanel.track)
-- [back-end](https://github.com/BanklessDAO/bankless-academy/search?q=trackBE)
+- [front-end](https://github.com/bankless-academy/bankless-academy/search?q=Mixpanel.track)
+- [back-end](https://github.com/bankless-academy/bankless-academy/search?q=trackBE)
 
 ### Gitcoin Passport
 
@@ -109,7 +109,7 @@ yarn import-content 1dd77eb6ed4147f6bdfd6f23a30baa46
 
 ### How does it work
 
-The [import script](https://github.com/BanklessDAO/bankless-academy/blob/main/import-content.js) connects to a custom unofficial Notion API called Potion [https://github.com/didierkrux/potion](https://github.com/didierkrux/potion) and transforms the content into [this Object](https://github.com/BanklessDAO/bankless-academy/blob/main/src/constants/lessons.ts).
+The [import script](https://github.com/bankless-academy/bankless-academy/blob/main/import-content.js) connects to a custom unofficial Notion API called Potion [https://github.com/didierkrux/potion](https://github.com/didierkrux/potion) and transforms the content into [this Object](https://github.com/bankless-academy/bankless-academy/blob/main/src/constants/lessons.ts).
 
 ## How to import keywords definitions from Notion
 

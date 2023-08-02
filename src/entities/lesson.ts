@@ -13,6 +13,12 @@ export interface LessonType {
   difficulty: 'Easy' | 'Advanced' | 'Expert'
   kudosImageLink?: string
   lessonImageLink?: string
+  lessonCollectedImageLink?: string
+  lessonCollectibleGif?: string
+  lessonCollectibleVideo?: string
+  LessonCollectibleMintID?: string
+  LessonCollectibleTokenAddress?: string
+  hasCollectible?: boolean
   socialImageLink?: string
   moduleId?: string
   learnings: string
@@ -28,8 +34,17 @@ export interface LessonType {
   communityDiscussionLink?: string
   isArticle?: boolean
   mirrorLink?: string
-  mirrorNFTAddress?: string
+  mirrorNFTAddress?: `0x${string}`
+  areMirrorNFTAllCollected?: boolean
   articleContent?: string
+  isPreview?: boolean
+  sponsorName?: string
+  sponsorLogo?: string
+  nftGating?: string
+  nftGatingRequirements?: string
+  nftGatingImageLink?: string
+  nftGatingLink?: string
+  nftGatingCTA?: string
   slides?: {
     type: SlideType
     title: string

@@ -38,7 +38,9 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
     : PROJECT_NAME
   const description = metadata?.description || DEFAULT_METADATA.description
   const image = metadata?.image
-    ? `${DOMAIN_URL}${metadata?.image}`
+    ? `${metadata?.image.startsWith('https://') ? '' : DOMAIN_URL}${
+        metadata?.image
+      }`
     : `${DOMAIN_URL}${DEFAULT_METADATA.image}`
   const url = `${DOMAIN_URL}${router.asPath}`
   return (
