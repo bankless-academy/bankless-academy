@@ -51,7 +51,7 @@ const Disclaimer = ({
         borderRadius={isMobileScreen ? '0' : '3xl'}
         backdropFilter="blur(10px)"
         overflowY="auto"
-        maxH="100vh"
+        maxH="var(--chakra-vh)"
       >
         <ModalHeader>Disclaimer</ModalHeader>
         <ModalCloseButton />

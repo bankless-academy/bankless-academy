@@ -35,7 +35,7 @@ const MintCollectibleModal = ({
         borderRadius={isMobileScreen ? '0' : '3xl'}
         backdropFilter="blur(10px)"
         overflowY="auto"
-        maxH="100vh"
+        maxH="var(--chakra-vh)"
       >
         <ModalHeader>
           Collect Lesson
@@ -60,6 +60,7 @@ const MintCollectibleModal = ({
                 height: '666px',
                 margin: 'auto',
                 colorScheme: 'none',
+                overflow: 'hidden',
               }}
             ></iframe>
           )}
