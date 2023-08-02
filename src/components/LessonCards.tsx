@@ -185,6 +185,8 @@ const LessonCards: React.FC = () => {
         const isArticleCollected =
           lesson.mirrorNFTAddress?.length &&
           articlesCollectedLS.includes(lesson.mirrorNFTAddress.toLowerCase())
+        const isArticleRead =
+          lesson.isArticle && localStorage.getItem(lesson.slug) === 'true'
         const isLessonCollected =
           !!lesson.LessonCollectibleTokenAddress?.length &&
           lessonsCollectedLS.includes(
@@ -205,14 +207,16 @@ const LessonCards: React.FC = () => {
                 {lesson.name}
               </Text>
               <Box display="flex" justifyContent="space-between" my="4">
-                {isKudosMinted || lesson.duration ? (
+                {isKudosMinted || isArticleRead || lesson.duration ? (
                   <StyledTag
                     size="md"
                     variant="outline"
-                    gold={isKudosMinted?.toString()}
+                    gold={(isKudosMinted || isArticleRead)?.toString()}
                   >
-                    {isKudosMinted ? 'Done' : `${lesson.duration} minutes`}
-                    {isKudosMinted ? (
+                    {isKudosMinted || isArticleRead
+                      ? 'Done'
+                      : `${lesson.duration} minutes`}
+                    {isKudosMinted || isArticleRead ? (
                       <TagRightIcon as={CircleWavyCheck} weight="bold" />
                     ) : null}
                   </StyledTag>
