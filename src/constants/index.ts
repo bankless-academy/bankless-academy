@@ -68,6 +68,8 @@ export const INFURA_KEY =
 
 export const ALCHEMY_KEY = process.env.NEXT_PUBLIC_ALCHEMY_KEY
 
+export const ALCHEMY_KEY_BACKEND = process.env.ALCHEMY_KEY
+
 export const QUESTS: string[] = LESSONS.filter((lesson) => lesson.quest).map(
   (lesson) => lesson.quest
 )

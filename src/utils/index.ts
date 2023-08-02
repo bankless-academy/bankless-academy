@@ -14,6 +14,7 @@ import { readContract } from '@wagmi/core'
 import {
   ACTIVATE_MIXPANEL,
   ALCHEMY_KEY,
+  ALCHEMY_KEY_BACKEND,
   COLLECTIBLE_ADDRESSES,
   DOMAIN_PROD,
   INFURA_KEY,
@@ -251,7 +252,8 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['optimism'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
+            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
+            `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
           ),
       }
       const provider = ethers.getDefaultProvider(optimism)
@@ -289,23 +291,17 @@ export async function validateOnchainQuest(
       return check.length === 3
     }
     if (quest === 'Layer2Blockchains') {
-      const options = {
-        headers: {
-          accept: 'application/json',
-          'content-type': 'application/json',
-        },
+      const optimism: Network = {
+        name: 'optimism',
+        chainId: NETWORKS['optimism'].chainId,
+        _defaultProvider: (providers) =>
+          new providers.JsonRpcProvider(
+            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
+            `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
+          ),
       }
-      const ethBalance = await axios.post(
-        `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY}`,
-        {
-          id: 1,
-          jsonrpc: '2.0',
-          params: [address.toLowerCase(), 'latest'],
-          method: 'eth_getBalance',
-        },
-        options
-      )
-      const bigNumberBalance = ethBalance.data.result
+      const provider = ethers.getDefaultProvider(optimism)
+      const bigNumberBalance = await provider.getBalance(address.toLowerCase())
       const balance = parseFloat(ethers.utils.formatEther(bigNumberBalance))
       console.log('balance: ', balance)
       return balance >= 0.001
