@@ -501,8 +501,6 @@ axios
           // console.log('lesson', lesson)
 
           if (lesson.hasCollectible) {
-            // TEMP: remove when deploying to prod
-            lesson.lessonImageLink = 'https://link.assetfile.io/4pSavwMzYsfXDhNuQ5Khwa/Screenshot+2023-04-18+at+11.43.53.png?3'
             if (lesson.lessonCollectedImageLink) {
               lesson.lessonCollectedImageLink = get_img(lesson.lessonCollectedImageLink, lesson.slug, 'datadisk-collected')
             }
@@ -512,7 +510,6 @@ axios
             if (lesson.lessonCollectibleVideo) {
               lesson.lessonCollectibleVideo = get_img(lesson.lessonCollectibleVideo, lesson.slug, 'datadisk-video')
             }
-            lesson.socialImageLink = 'https://link.assetfile.io/6TXNOC2uuyEQkoj8V2upUh/Lesson+social+media.jpg?3'
           }
 
           lessons[index] = lesson
@@ -557,8 +554,7 @@ axios
               let match
               let i = 0
               while ((match = imageRegex.exec(lessonContentMD)) !== null) {
-                // TEMP FIX
-                lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${lesson.imageLinks[i].replace('lesson/images', 'lesson')}`)
+                lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${lesson.imageLinks[i]}`)
                 i++
               }
               // write/update file

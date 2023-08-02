@@ -3,7 +3,7 @@ LESSON TITLE: Going Bankless
 LESSON LINK: https://app.banklessacademy.com/lessons/going-bankless
 LANGUAGE: English
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 19/07/2023
+LAST UPDATED: 02/08/2023
 ---
 
 ```
@@ -186,5 +186,5 @@ Here are our recommendations as next steps:
 - [advanced lvl1]: subscribe to the Bankless HQ newsletter
 - [advanced lvl2]: join a DAO and get a job in crypto
 
-![](https://app.banklessacademy.com/lesson/going-bankless/quest-63568085.jpg)
+![](https://app.banklessacademy.com/lesson/images/going-bankless/quest-63568085.jpg)
 

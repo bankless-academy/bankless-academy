@@ -3,7 +3,7 @@ LESSON TITLE: Wallet Basics
 LESSON LINK: https://app.banklessacademy.com/lessons/wallet-basics
 LANGUAGE: English
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 19/07/2023
+LAST UPDATED: 02/08/2023
 ---
 
 ```
@@ -40,7 +40,7 @@ In this lesson, we’ll introduce you to digital wallets, how they work, and how
 
 Let’s get started!
 
-![](https://app.banklessacademy.com/lesson/wallet-basics/wallet-intro-7b45d75e.png)
+![](https://app.banklessacademy.com/lesson/images/wallet-basics/wallet-intro-7b45d75e.png)
 
 # Wallet Definition
 
@@ -50,7 +50,7 @@ Your `wallet` functions as a lock-box that secures your access to the blockchain
 
 When your wallet is connected to a blockchain, you can make purchases, transfer digital assets, interact with applications, and more!
 
-![](https://app.banklessacademy.com/lesson/wallet-basics/wallet-definition-e8f8f9a8.svg)
+![](https://app.banklessacademy.com/lesson/images/wallet-basics/wallet-definition-e8f8f9a8.svg)
 
 # Knowledge Check 1
 
@@ -73,7 +73,7 @@ Also sometimes called a _seed phrase_ or _secret recovery phrase_, your recovery
 
 Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. That data is used to generate the `public key` and `private key` for your wallet.
 
-![](https://app.banklessacademy.com/lesson/wallet-basics/recovery-phrase-c2d8fa26.svg)
+![](https://app.banklessacademy.com/lesson/images/wallet-basics/recovery-phrase-c2d8fa26.svg)
 
 # Knowledge Check 2
 
@@ -92,7 +92,7 @@ Note that a wallet can contain multiple accounts, and _each account_ has a uniqu
 
 Think of a public key like your home address. It is public, anyone can see it, and it identifies the location to use to send crypto assets to you.
 
-![](https://app.banklessacademy.com/lesson/wallet-basics/public-key-b6387071.svg)
+![](https://app.banklessacademy.com/lesson/images/wallet-basics/public-key-b6387071.svg)
 
 # Private Key
 
@@ -102,7 +102,7 @@ It's called private because _only you_ should have access to it.
 
 The private key unlocks access to your wallet and your crypto assets, allowing you to send them to other wallet addresses.
 
-![](https://app.banklessacademy.com/lesson/wallet-basics/private-key-ca271641.svg)
+![](https://app.banklessacademy.com/lesson/images/wallet-basics/private-key-ca271641.svg)
 
 # Knowledge Check 3
 
@@ -121,7 +121,7 @@ Not all wallets let you control your private key. With a `custodial wallet`, ano
 
 This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Plus, your access to the world of `DeFi` applications will be limited. 
 
-![](https://app.banklessacademy.com/lesson/wallet-basics/custodial-wallet-29ed2b65.svg)
+![](https://app.banklessacademy.com/lesson/images/wallet-basics/custodial-wallet-29ed2b65.svg)
 
 # Knowledge Check 4
 
@@ -138,7 +138,7 @@ Remember: if you lose your private key, you will not be able to access your wall
 
 Fortunately, you _can_ still recover your wallet with your `recovery phrase`. But if you lose that too, you will lose access to your wallet FOREVER!!!
 
-![](https://app.banklessacademy.com/lesson/wallet-basics/non-custodial-wallet-aee2708b.svg)
+![](https://app.banklessacademy.com/lesson/images/wallet-basics/non-custodial-wallet-aee2708b.svg)
 
 # Knowledge Check 5
 
@@ -183,7 +183,7 @@ A software wallet is an app or browser extension that remains connected to the i
 - PROS 👍: It is usually free, simple to set up, and easy to use.
 - CONS 👎: Because it is software connected to the internet, it's potentially a target for hackers.
 
-![](https://app.banklessacademy.com/lesson/wallet-basics/hot-wallet-1d444d7c.svg)
+![](https://app.banklessacademy.com/lesson/images/wallet-basics/hot-wallet-1d444d7c.svg)
 
 # Cold Wallet
 
@@ -192,7 +192,7 @@ A `cold wallet`, or hardware wallet, is only connected to the internet when you 
 - PROS 👍: It is more secure from threats like hacking.
 - CONS 👎: It is not free, not ideal for quick transactions, and can be cumbersome to use.
 
-![](https://app.banklessacademy.com/lesson/wallet-basics/cold-wallet-59646edb.svg)
+![](https://app.banklessacademy.com/lesson/images/wallet-basics/cold-wallet-59646edb.svg)
 
 # Knowledge Check 7
 
@@ -209,7 +209,7 @@ There are several `non-custodial` `hot wallets` available today. We will explore
 - It has a browser extension for Chrome, Brave, Edge, and Firefox internet browsers.
 - It is also available as a mobile app for Android and iOS users.
 
-![](https://app.banklessacademy.com/lesson/wallet-basics/metamask-wallet-521de184.svg)
+![](https://app.banklessacademy.com/lesson/images/wallet-basics/metamask-wallet-521de184.svg)
 
 # Knowledge Check 8
 
