@@ -12,7 +12,7 @@
     background-color: transparent !important;
   }
 
-  .highlight-driu1u::after {
+  .highlight-driu1u::before {
     content: ' ';
     background-image: url(/images/minted-on-OP.png);
     background-repeat: no-repeat;
@@ -43,8 +43,27 @@
   }
 
   video {
-    margin-top: -15px;
-    margin-bottom: 15px;
+    display: none !important;
+  }
+
+  .highlight-driu1u {
+    height: 190px !important;
+  }
+
+  .highlight-driu1u::after {
+    content: ' ';
+    background-image: url(/lesson/images/layer-2-blockchains/datadisk-gif-567a7a75.gif);
+    background-repeat: no-repeat;
+    width: 350px;
+    max-width: -webkit-fill-available;
+    height: 180px;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background-attachment: unset;
+    background-size: contain;
+    filter: invert(1);
+    display: block;
   }
 
   video::-webkit-media-controls {
