@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Modal,
   ModalContent,
@@ -27,6 +28,7 @@ const Disclaimer = ({
     onOpen: onOpenHelpModal,
     onClose: onCloseHelpModal,
   } = useDisclosure()
+  const initialRef = React.useRef(null)
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
 
   useEffect(() => {
@@ -40,6 +42,7 @@ const Disclaimer = ({
         onCloseHelpModal()
         onClose()
       }}
+      initialFocusRef={initialRef}
       size={isMobileScreen ? 'full' : 'lg'}
       isOpen={isOpenHelpModal}
       isCentered
@@ -98,6 +101,7 @@ const Disclaimer = ({
 
           <Button
             variant="primaryWhite"
+            ref={initialRef}
             onClick={() => {
               accepted()
               onCloseHelpModal()
