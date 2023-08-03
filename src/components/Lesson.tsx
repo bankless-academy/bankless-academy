@@ -202,6 +202,10 @@ const Lesson = ({
   )
   const [quizRetryCount, setQuizRetryCount] = useState({})
   const toast = useToast()
+  const [isKudosMintedLS] = useLocalStorage(
+    `isKudosMinted-${lesson.kudosId}`,
+    false
+  )
 
   const router = useRouter()
   const { embed } = router.query
@@ -661,7 +665,9 @@ const Lesson = ({
                 variant="primaryBigLast"
                 rightIcon={<ArrowForwardIcon />}
               >
-                Finish
+                {lesson.kudosId && isKudosMintedLS === false
+                  ? 'Mint Badge'
+                  : 'Finish'}
               </Button>
             </>
           )}
