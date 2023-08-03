@@ -35,6 +35,19 @@ const closeLesson = (openedLesson: string, lesson: LessonType): string => {
   )
 }
 
+const quizComplete = (lesson: LessonType): boolean => {
+  const quizAnswers = []
+  for (const slide of lesson.slides) {
+    if (slide.type === 'QUIZ') {
+      quizAnswers.push(
+        parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
+          slide.quiz.rightAnswerNumber
+      )
+    }
+  }
+  return !quizAnswers.includes(false)
+}
+
 const LessonDetail = ({
   lesson,
   extraKeywords,
@@ -54,7 +67,10 @@ const LessonDetail = ({
     setOpenLessonLS(closeLesson(openLessonLS, lesson))
   }, [])
 
+  const isQuizComplete = quizComplete(lesson)
+
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
+  if (!isQuizComplete) Quest.isQuestCompleted = false
 
   const hasLessonGating =
     TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
