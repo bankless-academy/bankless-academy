@@ -70,7 +70,6 @@ const LessonDetail = ({
   const isQuizComplete = quizComplete(lesson)
 
   const Quest = QuestComponent(lesson.quest, lesson.kudosId)
-  if (!isQuizComplete) Quest.isQuestCompleted = false
 
   const hasLessonGating =
     TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
@@ -210,7 +209,9 @@ const LessonDetail = ({
                   <Box textAlign="center">
                     <Badge
                       lesson={lesson}
-                      isQuestCompleted={Quest.isQuestCompleted}
+                      isQuestCompleted={
+                        isQuizComplete && Quest.isQuestCompleted
+                      }
                     />
                     <Text fontSize="2xl" mb="4">
                       “{lesson.name}” Lesson Badge
