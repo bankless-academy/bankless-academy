@@ -15,11 +15,14 @@ import {
 import { DISCLAIMER_ENABLED } from 'constants/index'
 import { useEffect } from 'react'
 import ExternalLink from './ExternalLink'
+import { LessonType } from 'entities/lesson'
 
 const Disclaimer = ({
+  lesson,
   accepted,
   onClose,
 }: {
+  lesson: LessonType
   accepted: () => void
   onClose: () => void
 }): React.ReactElement => {
@@ -32,8 +35,12 @@ const Disclaimer = ({
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
 
   useEffect(() => {
-    if (DISCLAIMER_ENABLED) onOpenHelpModal()
-    else accepted()
+    const currentTimestamp = Math.floor(Date.now() / 1000)
+    const disclaimerTimestamp =
+      parseInt(localStorage.getItem(`disclaimer-${lesson.slug}`)) || 0
+    const skipDisclaimer = currentTimestamp - disclaimerTimestamp < 60 * 60 * 24
+    if (!DISCLAIMER_ENABLED || skipDisclaimer) accepted()
+    else onOpenHelpModal()
   }, [])
 
   return (
