@@ -3,7 +3,7 @@ LESSON TITLE: Wallet Basics
 LESSON LINK: https://app.banklessacademy.com/lessons/wallet-basics
 LANGUAGE: English
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 02/08/2023
+LAST UPDATED: 04/08/2023
 ---
 
 ```
@@ -56,10 +56,10 @@ When your wallet is connected to a blockchain, you can make purchases, transfer 
 
 What is a wallet?
 
-- [ ] A device equipped with RFID technology
-- [ ] A velcro bi-fold device
-- [ ] An account that protects my assets
-- [ ] An app or device used to interact with a blockchain
+- [ ] A blockchain
+- [ ] A cryptocurrency
+- [ ] A digital collectible
+- [ ] An app/device used to interact with a blockchain
 
 # Recovery Phrase
 
