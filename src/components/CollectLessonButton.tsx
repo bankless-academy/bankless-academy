@@ -210,7 +210,13 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
           {isMobile ? (
             <Image src={lesson.lessonCollectibleGif} />
           ) : (
-            <video autoPlay loop playsInline muted>
+            <video
+              autoPlay
+              loop
+              playsInline
+              muted
+              style={{ minHeight: '224px' }}
+            >
               <source
                 src={lesson.lessonCollectibleVideo}
                 type="video/webm"
