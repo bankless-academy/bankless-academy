@@ -57,8 +57,9 @@ When your wallet is connected to a blockchain, you can make purchases, transfer 
 What is a wallet?
 
 - [ ] A blockchain
-- [ ] An app/device used to interact with a blockchain
+- [ ] A cryptocurrency
 - [ ] A digital collectible
+- [ ] An app/device used to interact with a blockchain
 
 # Recovery Phrase
 

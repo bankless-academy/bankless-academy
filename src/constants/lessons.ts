@@ -266,11 +266,12 @@ const LESSONS: LessonType[] = [
         title: 'Knowledge Check',
         quiz: {
           question: 'What is a wallet?',
-          rightAnswerNumber: 2,
+          rightAnswerNumber: 4,
           answers: [
             'A blockchain',
-            'An app/device used to interact with a blockchain',
-            'A digital collectible'
+            'A cryptocurrency',
+            'A digital collectible',
+            'An app/device used to interact with a blockchain'
           ],
           id: 'wallet-basics-1'
         }
