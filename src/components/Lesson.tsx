@@ -665,7 +665,9 @@ const Lesson = ({
                 variant="primaryBigLast"
                 rightIcon={<ArrowForwardIcon />}
               >
-                {lesson.kudosId && isKudosMintedLS === false
+                {lesson.kudosId &&
+                isKudosMintedLS === false &&
+                Quest?.isQuestCompleted
                   ? 'Mint Badge'
                   : 'Finish'}
               </Button>
