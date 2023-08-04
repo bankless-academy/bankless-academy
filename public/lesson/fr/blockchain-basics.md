@@ -1,7 +1,7 @@
 ---
-LESSON TITLE: Blockchain Basics
+LESSON TITLE: Les bases de la Blockchain
 LESSON LINK: https://app.banklessacademy.com/lessons/blockchain-basics
-LANGUAGE: English
+LANGUAGE: Français
 PROTOCOL VERSION: 0.01
 LAST UPDATED: 02/08/2023
 ---
@@ -30,7 +30,7 @@ ________________________________________________________________________________
 
 # Introduction
 
-`Blockchain` technology is a revolutionary way of storing and tracking data, while also making that data accessible to anyone. It is a way of organizing data in a single public list of all historical transactions that anyone can view but cannot edit. This public list of transactions is collectively known as the blockchain `ledger`.
+La technologie `Blockchain` est un moyen révolutionnaire de stocker et de suivre des données, tout en rendant ces données accessibles à tous. It is a way of organizing data in a single public list of all historical transactions that anyone can view but cannot edit. This public list of transactions is collectively known as the blockchain `ledger`.
 
 After examining the layers of a blockchain, we will be using a blockchain tool called a `block explorer` to look into the specifics of the Ethereum blockchain structure; we will zoom in on the Ethereum blockchain to view the **list** of blocks, the **transactions** within those blocks, and the **details** of each individual transaction.
 
