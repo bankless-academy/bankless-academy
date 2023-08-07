@@ -162,7 +162,7 @@ const ConnectWalletButton = ({
           setKudosMintedLS(kudosMinted)
           for (const kudosId of KUDOS_IDS) {
             localStorage.setItem(
-              `isKudosMinted-${kudosId.toString()}`,
+              `isBadgeMinted-${kudosId.toString()}`,
               kudosMinted.includes(kudosId).toString()
             )
           }

@@ -12,8 +12,8 @@ const LessonButton = ({
   lesson: LessonType
   click?: boolean
 }): React.ReactElement => {
-  const [isKudosMintedLS] = useLocalStorage(
-    `isKudosMinted-${lesson.kudosId}`,
+  const [isBadgeMintedLS] = useLocalStorage(
+    `isBadgeMinted-${lesson.kudosId}`,
     false
   )
   const isArticleRead = lesson.isArticle
@@ -24,7 +24,7 @@ const LessonButton = ({
   const isLessonStarted = (parseInt(localStorage.getItem(lesson.slug)) || 0) > 0
   const lessonHasSponsor =
     lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
-  const completed = isKudosMintedLS || isArticleRead
+  const completed = isBadgeMintedLS || isArticleRead
   return (
     <OpenLesson lesson={lesson} click={click}>
       <Box
@@ -83,7 +83,7 @@ const LessonButton = ({
         >
           {lesson?.isArticle
             ? 'Read Entry'
-            : isKudosMintedLS
+            : isBadgeMintedLS
             ? 'View Lesson'
             : isLessonStarted
             ? 'View Lesson'

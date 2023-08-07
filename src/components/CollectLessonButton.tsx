@@ -124,8 +124,8 @@ const CollectLessonButton = ({
     `isLessonMinted-${lesson.lessonCollectibleTokenAddress}`,
     false
   )
-  const [isKudosMintedLS] = useLocalStorage(
-    `isKudosMinted-${lesson.kudosId}`,
+  const [isBadgeMintedLS] = useLocalStorage(
+    `isBadgeMinted-${lesson.kudosId}`,
     false
   )
   const [tokenId, setTokenId] = useState('1')
@@ -260,7 +260,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
                 <Box ml="4">({numberOfOwners}/100 claimed)</Box>
               </Box>
             </Box>
-          ) : isKudosMintedLS ? (
+          ) : isBadgeMintedLS ? (
             <Box
               background="linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%)"
               borderTopRadius="8px"
@@ -313,7 +313,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
             maxW="500px"
             borderX="1px solid #4b474b"
             borderBottom="1px solid #4b474b"
-            borderBottomRadius={isKudosMintedLS && isLessonMintedLS ? 0 : '8px'}
+            borderBottomRadius={isBadgeMintedLS && isLessonMintedLS ? 0 : '8px'}
           >
             <OpenLesson lesson={lesson} click>
               <>
@@ -340,7 +340,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
               </>
             </OpenLesson>
           </Box>
-          {isKudosMintedLS && isLessonMintedLS && (
+          {isBadgeMintedLS && isLessonMintedLS && (
             <Box
               border="1px solid #4b474b"
               borderBottomRadius="8px"

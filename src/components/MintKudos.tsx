@@ -39,8 +39,8 @@ import { useContract } from '@thirdweb-dev/react'
 import { Mumbai } from '@thirdweb-dev/chains'
 
 const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
-  const [isKudosMintedLS, setIsKudosMintedLS] = useLocalStorage(
-    `isKudosMinted-${kudosId}`,
+  const [isBadgeMintedLS, setIsKudosMintedLS] = useLocalStorage(
+    `isBadgeMinted-${kudosId}`,
     false
   )
   const [status, setStatus] = useState('')
@@ -364,7 +364,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         borderBottomRadius="0"
         isLoading={isMintingInProgress}
         loadingText="Minting Badge ..."
-        cursor={isKudosMintedLS ? 'auto' : 'pointer'}
+        cursor={isBadgeMintedLS ? 'auto' : 'pointer'}
         onClick={() => {
           passportLS?.verified ? mintKudos() : onOpen()
         }}
@@ -379,9 +379,9 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     <Box>
       <Heading as="h2" size="xl" textAlign="center">
         <span style={{ color: theme.colors.secondary }}>{lesson.name}</span>
-        {` badge ${isKudosMintedLS ? 'claimed' : 'available'}!`}
+        {` badge ${isBadgeMintedLS ? 'claimed' : 'available'}!`}
       </Heading>
-      {isKudosMintedLS ? null : passportLS?.verified && !isOpen ? (
+      {isBadgeMintedLS ? null : passportLS?.verified && !isOpen ? (
         <Box textAlign="center">
           <Button
             colorScheme={'green'}

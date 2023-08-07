@@ -39,8 +39,8 @@ const Badge = ({
   isQuestCompleted: boolean
 }): JSX.Element => {
   const { address } = useAccount()
-  const [isKudosMintedLS] = useLocalStorage(
-    `isKudosMinted-${lesson.kudosId}`,
+  const [isBadgeMintedLS] = useLocalStorage(
+    `isBadgeMinted-${lesson.kudosId}`,
     false
   )
 
@@ -60,7 +60,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     share
   )}`
 
-  if (!isQuestCompleted && !isKudosMintedLS) {
+  if (!isQuestCompleted && !isBadgeMintedLS) {
     return (
       <Box position="relative" w="290px" m="auto" my="6">
         <Box
@@ -80,7 +80,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     <>
       <Box textAlign="center" mb="40px">
         <Box width="290px" m="auto">
-          {isKudosMintedLS ? (
+          {isBadgeMintedLS ? (
             <Box border="1px solid #9E72DC" borderTopRadius="8px" py="3" px="5">
               <Box color="#9E72DC" fontWeight="bold" fontSize="xl">
                 Badge Minted
@@ -113,7 +113,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           <Box
             width="290px"
             borderRadius={
-              isKudosMintedLS
+              isBadgeMintedLS
                 ? '0px'
                 : !isQuestCompleted
                 ? '8px'
@@ -124,7 +124,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           >
             <NFT nftLink={lesson.kudosImageLink} />
           </Box>
-          {isKudosMintedLS && (
+          {isBadgeMintedLS && (
             <Box
               // display="flex"
               justifyContent="center"

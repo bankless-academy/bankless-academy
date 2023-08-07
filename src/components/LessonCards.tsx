@@ -172,7 +172,7 @@ const LessonCards: React.FC = () => {
         // lesson not started yet: -1
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
         // const numberOfSlides = lesson.slides.length
-        const isKudosMinted = kudosMintedLS.includes(lesson.kudosId)
+        const isBadgeMinted = kudosMintedLS.includes(lesson.kudosId)
         const isNotified =
           lesson.publicationStatus === 'planned'
             ? localStorage.getItem(`${lesson.slug}-notification`)
@@ -207,16 +207,16 @@ const LessonCards: React.FC = () => {
                 {lesson.name}
               </Text>
               <Box display="flex" justifyContent="space-between" my="4">
-                {isKudosMinted || isArticleRead || lesson.duration ? (
+                {isBadgeMinted || isArticleRead || lesson.duration ? (
                   <StyledTag
                     size="md"
                     variant="outline"
-                    gold={(isKudosMinted || isArticleRead)?.toString()}
+                    gold={(isBadgeMinted || isArticleRead)?.toString()}
                   >
-                    {isKudosMinted || isArticleRead
+                    {isBadgeMinted || isArticleRead
                       ? 'Done'
                       : `${lesson.duration} minutes`}
-                    {isKudosMinted || isArticleRead ? (
+                    {isBadgeMinted || isArticleRead ? (
                       <TagRightIcon as={CircleWavyCheck} weight="bold" />
                     ) : null}
                   </StyledTag>

@@ -202,8 +202,8 @@ const Lesson = ({
   )
   const [quizRetryCount, setQuizRetryCount] = useState({})
   const toast = useToast()
-  const [isKudosMintedLS] = useLocalStorage(
-    `isKudosMinted-${lesson.kudosId}`,
+  const [isBadgeMintedLS] = useLocalStorage(
+    `isBadgeMinted-${lesson.kudosId}`,
     false
   )
 
@@ -666,7 +666,7 @@ const Lesson = ({
                 rightIcon={<ArrowForwardIcon />}
               >
                 {lesson.kudosId &&
-                isKudosMintedLS === false &&
+                isBadgeMintedLS === false &&
                 Quest?.isQuestCompleted
                   ? 'Mint Badge'
                   : 'Finish'}
