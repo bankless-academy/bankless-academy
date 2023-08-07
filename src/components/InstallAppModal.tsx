@@ -24,7 +24,7 @@ const InstallAppModal = ({
   yes?: boolean
 }): React.ReactElement => {
   const [showInstall, setShowInstall]: any = useState(yes)
-  const [kudosMintedLS] = useLocalStorage('kudosMinted', [])
+  const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
   const isDesktop = !(isAndroid || isIOS)
 
   return (
@@ -146,7 +146,7 @@ const InstallAppModal = ({
                     onClick={() => {
                       localStorage.setItem(
                         'mobile-preferences',
-                        kudosMintedLS?.length.toString() || '0'
+                        badgesMintedLS?.length.toString() || '0'
                       )
                       onClose()
                     }}

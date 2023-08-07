@@ -13,7 +13,7 @@ const LessonButton = ({
   click?: boolean
 }): React.ReactElement => {
   const [isBadgeMintedLS] = useLocalStorage(
-    `isBadgeMinted-${lesson.kudosId}`,
+    `isBadgeMinted-${lesson.badgeId}`,
     false
   )
   const isArticleRead = lesson.isArticle

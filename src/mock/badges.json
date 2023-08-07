@@ -3,92 +3,31 @@
   "offset": 0,
   "data": [
     {
-      "kudosTokenId": 1585,
-      "headline": "Thanks for funding Bankless Academy via Gitcoin",
-      "assetUrl": "https://images.mintkudos.xyz/token/1585.png",
-      "createdAt": "2022-07-25T16:30:23.671Z",
-      "claimStatus": "claimed",
-      "communityId": "a5aed33e-caf7-4825-8087-9cbec17cb84f"
+      "badgeTokenId": 0
     },
     {
-      "kudosTokenId": 2143,
-      "headline": "Bankless Academy X 1inch lesson: DEX Aggregators",
-      "assetUrl": "https://images.mintkudos.xyz/token/2143.mp4",
-      "createdAt": "2022-08-23T16:30:36.279Z",
-      "claimStatus": "claimed",
-      "communityId": "a5aed33e-caf7-4825-8087-9cbec17cb84f"
+      "badgeTokenId": 1
     },
     {
-      "kudosTokenId": 2561,
-      "headline": "Wallet Basics",
-      "assetUrl": "https://images.mintkudos.xyz/token/2561.png",
-      "createdAt": "2022-10-04T16:06:03.183Z",
-      "claimStatus": "claimed",
-      "communityId": "a5aed33e-caf7-4825-8087-9cbec17cb84f"
+      "badgeTokenId": 2
     },
     {
-      "kudosTokenId": 2562,
-      "headline": "Intro to DeFi",
-      "assetUrl": "https://images.mintkudos.xyz/token/2562.png",
-      "createdAt": "2022-10-04T16:10:31.900Z",
-      "claimStatus": "claimed",
-      "communityId": "a5aed33e-caf7-4825-8087-9cbec17cb84f"
+      "badgeTokenId": 3
     },
     {
-      "kudosTokenId": 2563,
-      "headline": "Blockchain Basics",
-      "assetUrl": "https://images.mintkudos.xyz/token/2563.png",
-      "createdAt": "2022-10-04T16:12:29.208Z",
-      "claimStatus": "claimed",
-      "communityId": "a5aed33e-caf7-4825-8087-9cbec17cb84f"
+      "badgeTokenId": 4
     },
     {
-      "kudosTokenId": 2564,
-      "headline": "Academy Community",
-      "assetUrl": "https://images.mintkudos.xyz/token/2564.png",
-      "createdAt": "2022-10-04T16:14:04.315Z",
-      "claimStatus": "claimed",
-      "communityId": "a5aed33e-caf7-4825-8087-9cbec17cb84f"
+      "badgeTokenId": 5
     },
     {
-      "kudosTokenId": 2565,
-      "headline": "Web3 Security",
-      "assetUrl": "https://images.mintkudos.xyz/token/2565.png",
-      "createdAt": "2022-10-04T16:15:31.939Z",
-      "claimStatus": "claimed",
-      "communityId": "a5aed33e-caf7-4825-8087-9cbec17cb84f"
+      "badgeTokenId": 6
     },
     {
-      "kudosTokenId": 2608,
-      "headline": "DEX Aggregators",
-      "assetUrl": "https://images.mintkudos.xyz/token/2608.png",
-      "createdAt": "2022-10-11T15:48:42.902Z",
-      "claimStatus": "claimed",
-      "communityId": "a5aed33e-caf7-4825-8087-9cbec17cb84f"
+      "badgeTokenId": 7
     },
     {
-      "kudosTokenId": 14611,
-      "headline": "Layer 1 Blockchains",
-      "assetUrl": "https://images.mintkudos.xyz/token/14611.png",
-      "createdAt": "2022-12-14T10:59:55.536Z",
-      "claimStatus": "claimed",
-      "communityId": "a5aed33e-caf7-4825-8087-9cbec17cb84f"
-    },
-    {
-      "kudosTokenId": 14886,
-      "headline": "Layer 2 Blockchains",
-      "assetUrl": "https://images.mintkudos.xyz/token/14886.png",
-      "createdAt": "2023-02-14T20:33:50.886Z",
-      "claimStatus": "claimed",
-      "communityId": "a5aed33e-caf7-4825-8087-9cbec17cb84f"
-    },
-    {
-      "kudosTokenId": 15463,
-      "headline": "Decentralized Exchanges",
-      "assetUrl": "https://images.mintkudos.xyz/token/15463.png",
-      "createdAt": "2023-05-31T15:33:19.644Z",
-      "claimStatus": "claimed",
-      "communityId": "a5aed33e-caf7-4825-8087-9cbec17cb84f"
+      "badgeTokenId": 8
     }
   ]
 }

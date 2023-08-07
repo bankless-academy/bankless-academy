@@ -1,12 +1,12 @@
-import { LESSONS } from 'constants/index'
+import { BADGE_ADDRESS, LESSONS } from 'constants/index'
 import { WHITELABEL } from 'constants/whitelabel'
 
-const kudosIds = LESSONS.filter((lesson) => lesson.kudosId).map(
-  (lesson) => lesson.kudosId
+const badgeIds = LESSONS.filter((lesson) => lesson.badgeId).map(
+  (lesson) => lesson.badgeId
 )
 
-export const KUDOS_IDS: number[] = kudosIds.filter(
-  (item, index) => kudosIds.indexOf(item) === index
+export const BADGE_IDS: number[] = badgeIds.filter(
+  (item, index) => badgeIds.indexOf(item) === index
 )
 
 export const MINTKUDOS_API = process.env.NEXT_PUBLIC_MINTKUDOS_API
@@ -22,13 +22,9 @@ export const MINTKUDOS_EXPLORER = IS_MINTKUDOS_SANDBOX
   ? 'https://mumbai.polygonscan.com/'
   : 'https://polygonscan.com/'
 
-export const MINTKUDOS_OPENSEA_URL = IS_MINTKUDOS_SANDBOX
-  ? 'https://testnets.opensea.io/assets/mumbai/0xb876baf8f69cd35fb96a17a599b070fbdd18a6a1/'
-  : 'https://opensea.io/assets/matic/0x60576a64851c5b42e8c57e3e4a5cf3cf4eeb2ed6/'
-
-export const MINTKUDOS_RARIBLE_URL = IS_MINTKUDOS_SANDBOX
-  ? 'https://testnet.rarible.com/token/polygon/0xb876baf8f69cd35fb96a17a599b070fbdd18a6a1:'
-  : 'https://rarible.com/token/polygon/0x60576a64851c5b42e8c57e3e4a5cf3cf4eeb2ed6:'
+export const BADGE_OPENSEA_URL = IS_MINTKUDOS_SANDBOX
+  ? `https://testnets.opensea.io/assets/mumbai/${BADGE_ADDRESS}/`
+  : `https://opensea.io/assets/matic/${BADGE_ADDRESS}/`
 
 export const MINTKUDOS_CHAIN_ID = IS_MINTKUDOS_SANDBOX ? 80001 : 137
 

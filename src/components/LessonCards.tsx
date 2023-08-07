@@ -84,7 +84,7 @@ const LessonCards: React.FC = () => {
   const { all, slug } = router.query
 
   // const [stats, setStats]: any = useState(null)
-  const [kudosMintedLS] = useLocalStorage('kudosMinted', [])
+  const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
     'articlesCollected',
     []
@@ -139,18 +139,18 @@ const LessonCards: React.FC = () => {
       // don't show on embed or webapp
       !localStorage.getItem('embed')?.length &&
       // user has at least 1 kudos
-      kudosMintedLS.length > 0 &&
+      badgesMintedLS.length > 0 &&
       // user doesn't want to install the Mobile App
       mobilePreferences !== 'no' &&
       // user has collected a new badge
       ((mobilePreferences?.length &&
-        parseInt(mobilePreferences) < kudosMintedLS.length) ||
+        parseInt(mobilePreferences) < badgesMintedLS.length) ||
         // user has at least 1 badge
-        (!mobilePreferences && kudosMintedLS.length))
+        (!mobilePreferences && badgesMintedLS.length))
     ) {
       onOpenAppModal()
     }
-  }, [kudosMintedLS])
+  }, [badgesMintedLS])
 
   useEffect(() => {
     const updateNFTCollected = async () => {
@@ -172,7 +172,7 @@ const LessonCards: React.FC = () => {
         // lesson not started yet: -1
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
         // const numberOfSlides = lesson.slides.length
-        const isBadgeMinted = kudosMintedLS.includes(lesson.kudosId)
+        const isBadgeMinted = badgesMintedLS.includes(lesson.badgeId)
         const isNotified =
           lesson.publicationStatus === 'planned'
             ? localStorage.getItem(`${lesson.slug}-notification`)

@@ -32,15 +32,15 @@ import {
 } from 'constants/kudos'
 import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
-import { KudosType } from 'entities/kudos'
+import { BadgeType } from 'entities/kudos'
 import { theme } from 'theme/index'
 import { api } from 'utils'
 import { useContract } from '@thirdweb-dev/react'
 import { Mumbai } from '@thirdweb-dev/chains'
 
-const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
+const MintKudos = ({ badgeId }: { badgeId: number }): React.ReactElement => {
   const [isBadgeMintedLS, setIsKudosMintedLS] = useLocalStorage(
-    `isBadgeMinted-${kudosId}`,
+    `isBadgeMinted-${badgeId}`,
     false
   )
   const [status, setStatus] = useState('')
@@ -86,8 +86,8 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
       axios
         .get(`/api/badges?address=${address}`)
         .then(function (res) {
-          const claimedKudos: KudosType = res.data?.data?.find(
-            (kudos: KudosType) => kudos?.kudosTokenId === kudosId
+          const claimedKudos: BadgeType = res.data?.data?.find(
+            (kudos: BadgeType) => kudos?.badgeTokenId === badgeId
           )
           if (claimedKudos) {
             setIsKudosMintedLS(true)
@@ -134,7 +134,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
 
     // The data to sign
     const value = {
-      tokenId: kudosId,
+      tokenId: badgeId,
     }
 
     try {
@@ -148,7 +148,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
       // console.log('signature', signature)
       const bodyParameters = {
         address,
-        kudosId,
+        badgeId,
         signature,
         chainId: chain?.id,
         message: value,
@@ -355,7 +355,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     </Modal>
   )
 
-  const lesson = LESSONS.find((lesson) => lesson.kudosId === kudosId)
+  const lesson = LESSONS.find((lesson) => lesson.badgeId === badgeId)
   return (
     <>
       <Button

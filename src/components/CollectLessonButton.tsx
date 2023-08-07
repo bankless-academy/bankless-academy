@@ -125,7 +125,7 @@ const CollectLessonButton = ({
     false
   )
   const [isBadgeMintedLS] = useLocalStorage(
-    `isBadgeMinted-${lesson.kudosId}`,
+    `isBadgeMinted-${lesson.badgeId}`,
     false
   )
   const [tokenId, setTokenId] = useState('1')

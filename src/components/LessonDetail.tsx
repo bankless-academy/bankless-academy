@@ -69,7 +69,7 @@ const LessonDetail = ({
 
   const isQuizComplete = quizComplete(lesson)
 
-  const Quest = QuestComponent(lesson.quest, lesson.kudosId)
+  const Quest = QuestComponent(lesson.quest, lesson.badgeId)
 
   const hasLessonGating =
     TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
@@ -193,7 +193,7 @@ const LessonDetail = ({
                   </Box>
                 </Box>
               )}
-              {lesson.kudosId && (
+              {lesson.badgeId && (
                 <>
                   <Box pb="8">
                     <Text

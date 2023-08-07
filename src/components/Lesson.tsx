@@ -203,7 +203,7 @@ const Lesson = ({
   const [quizRetryCount, setQuizRetryCount] = useState({})
   const toast = useToast()
   const [isBadgeMintedLS] = useLocalStorage(
-    `isBadgeMinted-${lesson.kudosId}`,
+    `isBadgeMinted-${lesson.badgeId}`,
     false
   )
 
@@ -590,8 +590,8 @@ const Lesson = ({
                       <NFT nftLink={lesson.kudosImageLink} />
                     </Box>
                   )}
-                  {lesson.kudosId ? (
-                    <MintKudos kudosId={lesson.kudosId} />
+                  {lesson.badgeId ? (
+                    <MintKudos badgeId={lesson.badgeId} />
                   ) : (
                     <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   )}
@@ -665,7 +665,7 @@ const Lesson = ({
                 variant="primaryBigLast"
                 rightIcon={<ArrowForwardIcon />}
               >
-                {lesson.kudosId &&
+                {lesson.badgeId &&
                 isBadgeMintedLS === false &&
                 Quest?.isQuestCompleted
                   ? 'Mint Badge'

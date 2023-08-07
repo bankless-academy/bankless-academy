@@ -32,7 +32,7 @@ export const ONCHAIN_QUESTS = [
 
 const QuestComponent = (
   component: QuestComponentType | null,
-  kudosId?: number
+  badgeId?: number
 ): QuestType => {
   const QUEST_COMPONENTS = {
     WalletConnect: WalletConnect,
@@ -66,7 +66,7 @@ const QuestComponent = (
   useEffect(() => {
     const validateQuest = async () => {
       const data: any = { address, quest: component }
-      if (kudosId) data.kudosId = kudosId
+      if (badgeId) data.badgeId = badgeId
       if (data.quest === 'ConceptosBasicosDeBlockchain')
         data.quest = 'BlockchainBasics'
       const result = await api('/api/validate-quest', data)

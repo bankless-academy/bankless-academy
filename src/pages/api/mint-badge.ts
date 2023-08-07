@@ -16,7 +16,7 @@ import {
   MINTKUDOS_DOMAIN_INFO,
   MINTKUDOS_ALLOWED_SIGNERS,
 } from 'constants/kudos'
-import { KudosType } from 'entities/kudos'
+import { BadgeType } from 'entities/kudos'
 import { api, verifyTypedSignature } from 'utils'
 import { trackBE } from 'utils/mixpanel'
 
@@ -27,16 +27,16 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   // check params + signature
-  const { address, kudosId, signature, chainId, embed } = req.body
+  const { address, badgeId, signature, chainId, embed } = req.body
   // console.log(req)
-  if (!address || !kudosId || !signature || !chainId)
+  if (!address || !badgeId || !signature || !chainId)
     return res.status(400).json({ error: 'Wrong params' })
 
   console.log('address: ', address)
-  console.log('kudosId: ', kudosId)
+  console.log('badgeId: ', badgeId)
   // console.log('signature: ', signature)
 
-  const message = { tokenId: kudosId }
+  const message = { tokenId: badgeId }
   console.log('message: ', message)
 
   try {
@@ -58,7 +58,7 @@ export default async function handler(
       return res.status(403).json({ error: 'userId not found' })
 
     const notionId = LESSONS.find(
-      (lesson) => lesson.kudosId === kudosId
+      (lesson) => lesson.badgeId === badgeId
     )?.notionId
     if (!notionId) return res.status(403).json({ error: 'notionId not found' })
 
@@ -108,9 +108,8 @@ export default async function handler(
       )
       // console.log('userKudos', userKudos?.data?.data)
 
-      const kudosAlreadyClaimed: KudosType = userKudos?.data?.data?.find(
-        (kudos: KudosType) =>
-          kudos.kudosTokenId === kudosId && kudos.claimStatus === 'claimed'
+      const kudosAlreadyClaimed: BadgeType = userKudos?.data?.data?.find(
+        (kudos: BadgeType) => kudos.badgeTokenId === badgeId
       )
 
       if (kudosAlreadyClaimed) {
@@ -151,7 +150,7 @@ export default async function handler(
           console.error(error?.response?.data)
           trackBE(address, 'mint_kudos_issue', {
             error: error?.response?.data,
-            kudosId,
+            badgeId,
             address,
           })
           return res.status(500).json({

@@ -1,6 +1,5 @@
 import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
-import { useAccount } from 'wagmi'
 import { ThirdwebProvider } from '@thirdweb-dev/react'
 
 import { LessonType } from 'entities/lesson'
@@ -11,7 +10,7 @@ import {
   DOMAIN_URL,
   ACTIVE_CHAIN,
 } from 'constants/index'
-import { MINTKUDOS_URL, MINTKUDOS_OPENSEA_URL } from 'constants/kudos'
+import { BADGE_OPENSEA_URL } from 'constants/kudos'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
@@ -38,9 +37,8 @@ const Badge = ({
   lesson: LessonType
   isQuestCompleted: boolean
 }): JSX.Element => {
-  const { address } = useAccount()
   const [isBadgeMintedLS] = useLocalStorage(
-    `isBadgeMinted-${lesson.kudosId}`,
+    `isBadgeMinted-${lesson.badgeId}`,
     false
   )
 
@@ -49,9 +47,8 @@ const Badge = ({
   }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
 ${
   IS_WHITELABEL
-    ? `
-Go claim yours here 👇 ${DOMAIN_URL}/lessons/${lesson.slug}`
-    : `${MINTKUDOS_URL}profile/${address}?tab=Received&tokenId=${lesson.kudosId}
+    ? `${DOMAIN_URL}/lessons/${lesson.slug}`
+    : `${DOMAIN_URL}/lessons/${lesson.slug}
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 }`
@@ -105,7 +102,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                   authUrl: '/api/auth',
                 }}
               >
-                <MintKudos kudosId={lesson.kudosId} />
+                <MintKudos badgeId={lesson.badgeId} />
               </ThirdwebProvider>
               {BadgeHelper}
             </Box>
@@ -147,7 +144,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                   </Button>
                 </ExternalLink>
               </Box>
-              <ExternalLink href={`${MINTKUDOS_OPENSEA_URL}${lesson.kudosId}`}>
+              <ExternalLink href={`${BADGE_OPENSEA_URL}${lesson.badgeId}`}>
                 <Button
                   variant="primary"
                   w="100%"

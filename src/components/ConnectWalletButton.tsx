@@ -32,8 +32,8 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
 
 import ExternalLink from 'components/ExternalLink'
 import { LESSONS, SIWE_ENABLED } from 'constants/index'
-import { KUDOS_IDS } from 'constants/kudos'
-import { KudosType } from 'entities/kudos'
+import { BADGE_IDS } from 'constants/kudos'
+import { BadgeType } from 'entities/kudos'
 import { getUD, getLensProfile, shortenAddress, api } from 'utils'
 import { polygon, optimism } from 'wagmi/chains'
 
@@ -66,13 +66,13 @@ const ConnectWalletButton = ({
   const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
-  const [kudos, setKudos] = useState<KudosType[]>([])
+  const [kudos, setKudos] = useState<BadgeType[]>([])
   const [siwe, setSiweLS] = useLocalStorage('siwe', '')
   const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
   )
-  const [, setKudosMintedLS] = useLocalStorage('kudosMinted', [])
+  const [, setBadgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [refreshKudosLS, setRefreshKudosLS] = useLocalStorage(
     'refreshKudos',
     false
@@ -156,19 +156,19 @@ const ConnectWalletButton = ({
       axios.get(`/api/badges?address=${address}`).then((res) => {
         const data = res.data.data
         if (Array.isArray(data)) {
-          const kudosMinted = KUDOS_IDS.filter((kudosId) =>
-            data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
+          const badgesMinted = BADGE_IDS.filter((badgeId) =>
+            data.some((kudos: BadgeType) => kudos.badgeTokenId === badgeId)
           )
-          setKudosMintedLS(kudosMinted)
-          for (const kudosId of KUDOS_IDS) {
+          setBadgesMintedLS(badgesMinted)
+          for (const badgeId of BADGE_IDS) {
             localStorage.setItem(
-              `isBadgeMinted-${kudosId.toString()}`,
-              kudosMinted.includes(kudosId).toString()
+              `isBadgeMinted-${badgeId.toString()}`,
+              badgesMinted.includes(badgeId).toString()
             )
           }
           setKudos(
-            data.filter((kudos: KudosType) =>
-              KUDOS_IDS.includes(kudos.kudosTokenId)
+            data.filter((kudos: BadgeType) =>
+              BADGE_IDS.includes(kudos.badgeTokenId)
             )
           )
         }
@@ -288,7 +288,7 @@ const ConnectWalletButton = ({
   }, [refreshKudosLS])
 
   const nbKudosToDisplay = kudos?.map((k) =>
-    LESSONS.find((lesson) => lesson.kudosId === k.kudosTokenId)
+    LESSONS.find((lesson) => lesson.badgeId === k.badgeTokenId)
   )?.length
 
   return (
@@ -356,7 +356,7 @@ const ConnectWalletButton = ({
                     <SimpleGrid columns={3} spacing={3} p={3}>
                       {kudos?.map((k, index) => {
                         const lesson = LESSONS.find(
-                          (lesson) => lesson.kudosId === k.kudosTokenId
+                          (lesson) => lesson.badgeId === k.badgeTokenId
                         )
                         if (lesson) {
                           if (lesson.kudosImageLink.includes('.mp4')) {
@@ -398,7 +398,7 @@ const ConnectWalletButton = ({
                                 p={1}
                               >
                                 <Image
-                                  src={k.assetUrl}
+                                  src={lesson.kudosImageLink}
                                   width="70px"
                                   height="70px"
                                   alt={lesson.name}
