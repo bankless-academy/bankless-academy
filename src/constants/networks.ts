@@ -1,4 +1,4 @@
-import { IS_MINTKUDOS_SANDBOX } from 'constants/kudos'
+import { IS_MINTKUDOS_SANDBOX } from 'constants/badges'
 
 const ENABLE_TESTNET = true
 

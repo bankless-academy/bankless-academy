@@ -32,8 +32,8 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
 
 import ExternalLink from 'components/ExternalLink'
 import { LESSONS, SIWE_ENABLED } from 'constants/index'
-import { BADGE_IDS } from 'constants/kudos'
-import { BadgeType } from 'entities/kudos'
+import { BADGE_IDS } from 'constants/badges'
+import { BadgeType } from 'entities/badge'
 import { getUD, getLensProfile, shortenAddress, api } from 'utils'
 import { polygon, optimism } from 'wagmi/chains'
 

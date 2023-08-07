@@ -10,7 +10,7 @@ import {
   DOMAIN_URL,
   ACTIVE_CHAIN,
 } from 'constants/index'
-import { BADGE_OPENSEA_URL } from 'constants/kudos'
+import { BADGE_OPENSEA_URL } from 'constants/badges'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'

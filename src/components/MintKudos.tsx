@@ -27,12 +27,12 @@ import ExternalLink from 'components/ExternalLink'
 import { BADGE_ADDRESS, LESSONS } from 'constants/index'
 import {
   MINTKUDOS_URL,
-  MINTKUDOS_DOMAIN_INFO,
+  BADGE_DOMAIN_INFO,
   MINTKUDOS_CHAIN_ID,
-} from 'constants/kudos'
+} from 'constants/badges'
 import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
-import { BadgeType } from 'entities/kudos'
+import { BadgeType } from 'entities/badge'
 import { theme } from 'theme/index'
 import { api } from 'utils'
 import { useContract } from '@thirdweb-dev/react'
@@ -138,7 +138,7 @@ const MintKudos = ({ badgeId }: { badgeId: number }): React.ReactElement => {
     }
 
     try {
-      const domain = MINTKUDOS_DOMAIN_INFO
+      const domain = BADGE_DOMAIN_INFO
       domain.chainId = chain?.id
       const signature = await signTypedData({
         domain,

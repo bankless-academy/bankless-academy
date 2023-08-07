@@ -12,11 +12,8 @@ import {
   BADGE_ADDRESS,
   ACTIVE_CHAIN,
 } from 'constants/index'
-import {
-  MINTKUDOS_DOMAIN_INFO,
-  MINTKUDOS_ALLOWED_SIGNERS,
-} from 'constants/kudos'
-import { BadgeType } from 'entities/kudos'
+import { BADGE_DOMAIN_INFO, BADGES_ALLOWED_SIGNERS } from 'constants/badges'
+import { BadgeType } from 'entities/badge'
 import { api, verifyTypedSignature } from 'utils'
 import { trackBE } from 'utils/mixpanel'
 
@@ -45,7 +42,7 @@ export default async function handler(
         { name: 'tokenId', type: 'uint256' },
       ],
     }
-    const domain = MINTKUDOS_DOMAIN_INFO
+    const domain = BADGE_DOMAIN_INFO
     domain.chainId = chainId
     if (
       !verifyTypedSignature(signature, message, address, receiverTypes, domain)
@@ -78,7 +75,7 @@ export default async function handler(
 
     if (
       questCompleted?.credential_claimed_at &&
-      !MINTKUDOS_ALLOWED_SIGNERS.includes(address.toLowerCase())
+      !BADGES_ALLOWED_SIGNERS.includes(address.toLowerCase())
     ) {
       questStatus = 'badge already claimed'
       console.log(questStatus)
@@ -103,20 +100,20 @@ export default async function handler(
         // TODO: handle errors
       }
 
-      const userKudos = await axios.get(
+      const userBadges = await axios.get(
         `${req.headers.origin}/api/badges?address=${address}`
       )
-      // console.log('userKudos', userKudos?.data?.data)
+      // console.log('userBadges', userBadges?.data?.data)
 
-      const kudosAlreadyClaimed: BadgeType = userKudos?.data?.data?.find(
-        (kudos: BadgeType) => kudos.badgeTokenId === badgeId
+      const badgeAlreadyClaimed: BadgeType = userBadges?.data?.data?.find(
+        (badge: BadgeType) => badge.badgeTokenId === badgeId
       )
 
-      if (kudosAlreadyClaimed) {
+      if (badgeAlreadyClaimed) {
         // TODO: fix credential_claimed_at (it's not createdAt ... mintedAt?)
         // const updated = await db(TABLES.completions)
         //   .where(TABLE.completions.id, questCompleted.id)
-        //   .update({ credential_claimed_at: kudosAlreadyClaimed.createdAt })
+        //   .update({ credential_claimed_at: badgeAlreadyClaimed.createdAt })
         // console.log(`updated missing credential_claimed_at`, updated)
         questStatus = 'badge already claimed'
         console.log(questStatus)

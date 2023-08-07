@@ -7,7 +7,6 @@ export interface LessonType {
   slug: string
   notionId: string
   badgeId?: number
-  kudosId?: number
   description: string
   marketingDescription: string
   duration: number

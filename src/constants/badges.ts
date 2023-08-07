@@ -28,7 +28,7 @@ export const BADGE_OPENSEA_URL = IS_MINTKUDOS_SANDBOX
 
 export const MINTKUDOS_CHAIN_ID = IS_MINTKUDOS_SANDBOX ? 80001 : 137
 
-export const MINTKUDOS_DOMAIN_INFO: {
+export const BADGE_DOMAIN_INFO: {
   name: string
   chainId: number
   verifyingContract: `0x${string}`
@@ -49,7 +49,7 @@ export const MINTKUDOS_COMMUNITY_ADMIN =
   // credentials.banklessacademy.eth
   '0xe1887ff140bfa9d3b45d0b2077b7471124acd242'
 
-export const MINTKUDOS_ALLOWED_SIGNERS = [
+export const BADGES_ALLOWED_SIGNERS = [
   // didierkrux.eth
   '0xbd19a3f0a9cace18513a1e2863d648d13975cb30'.toLowerCase(),
   MINTKUDOS_COMMUNITY_ADMIN.toLowerCase(),
