@@ -3,9 +3,6 @@
   "offset": 0,
   "data": [
     {
-      "badgeTokenId": 0
-    },
-    {
       "badgeTokenId": 1
     },
     {
@@ -28,6 +25,9 @@
     },
     {
       "badgeTokenId": 8
+    },
+    {
+      "badgeTokenId": 9
     }
   ]
 }

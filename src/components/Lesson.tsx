@@ -22,7 +22,7 @@ import { useAccount } from 'wagmi'
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
-import MintKudos from 'components/MintKudos'
+import MintBadge from 'components/MintBadge'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
 import { isHolderOfNFT, Mixpanel, scrollTop } from 'utils'
@@ -591,7 +591,7 @@ const Lesson = ({
                     </Box>
                   )}
                   {lesson.badgeId ? (
-                    <MintKudos badgeId={lesson.badgeId} />
+                    <MintBadge badgeId={lesson.badgeId} />
                   ) : (
                     <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   )}

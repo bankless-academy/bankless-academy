@@ -25,11 +25,7 @@ import { useSmallScreen } from 'hooks/index'
 import Passport from 'components/Passport'
 import ExternalLink from 'components/ExternalLink'
 import { BADGE_ADDRESS, LESSONS } from 'constants/index'
-import {
-  MINTKUDOS_URL,
-  BADGE_DOMAIN_INFO,
-  MINTKUDOS_CHAIN_ID,
-} from 'constants/badges'
+import { BADGE_DOMAIN_INFO, MINTKUDOS_CHAIN_ID } from 'constants/badges'
 import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { BadgeType } from 'entities/badge'
@@ -38,7 +34,7 @@ import { api } from 'utils'
 import { useContract } from '@thirdweb-dev/react'
 import { Mumbai } from '@thirdweb-dev/chains'
 
-const MintKudos = ({ badgeId }: { badgeId: number }): React.ReactElement => {
+const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
   const [isBadgeMintedLS, setIsKudosMintedLS] = useLocalStorage(
     `isBadgeMinted-${badgeId}`,
     false
@@ -49,7 +45,7 @@ const MintKudos = ({ badgeId }: { badgeId: number }): React.ReactElement => {
     'passport',
     EMPTY_PASSPORT
   )
-  const [, setRefreshKudosLS] = useLocalStorage('refreshKudos', false)
+  const [, setRefreshBadgesLS] = useLocalStorage('refreshBadges', false)
 
   const { address, connector } = useAccount()
   const { chain } = useNetwork()
@@ -60,14 +56,6 @@ const MintKudos = ({ badgeId }: { badgeId: number }): React.ReactElement => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   // TODO: update toast https://chakra-ui.com/docs/components/toast/usage#updating-toasts
-
-  const PoweredByMintKudos = (
-    <Box display="flex" justifyContent="center" my={4}>
-      <ExternalLink href={`${MINTKUDOS_URL}`} alt="Powered by MintKudos">
-        <Image width="150px" src="/images/powered-by-MintKudos.svg" />
-      </ExternalLink>
-    </Box>
-  )
 
   async function checkPassport() {
     const result = await api('/api/passport', { address })
@@ -87,7 +75,7 @@ const MintKudos = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         .get(`/api/badges?address=${address}`)
         .then(function (res) {
           const claimedKudos: BadgeType = res.data?.data?.find(
-            (kudos: BadgeType) => kudos?.badgeTokenId === badgeId
+            (badge: BadgeType) => badge?.badgeTokenId === badgeId
           )
           if (claimedKudos) {
             setIsKudosMintedLS(true)
@@ -174,7 +162,6 @@ const MintKudos = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                   </Box>
                 </Box>
               </Box>
-              {PoweredByMintKudos}
             </>
           ),
           status: 'warning',
@@ -184,7 +171,7 @@ const MintKudos = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         console.log(res)
         const txLink = `${Mumbai.explorers[0].url}/tx/${res.receipt.transactionHash}`
         // await followOperation(result.data.location)
-        setRefreshKudosLS(true)
+        setRefreshBadgesLS(true)
         setIsKudosMintedLS(true)
         toast.closeAll()
         // TODO: add 🎊
@@ -205,7 +192,6 @@ const MintKudos = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                   </Box>
                 </Box>
               </Box>
-              {PoweredByMintKudos}
             </>
           ),
           status: 'success',
@@ -418,4 +404,4 @@ const MintKudos = ({ badgeId }: { badgeId: number }): React.ReactElement => {
   )
 }
 
-export default MintKudos
+export default MintBadge

@@ -3,7 +3,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import { ThirdwebProvider } from '@thirdweb-dev/react'
 
 import { LessonType } from 'entities/lesson'
-import MintKudos from 'components/MintKudos'
+import MintBadge from 'components/MintBadge'
 import {
   IS_WHITELABEL,
   TWITTER_ACCOUNT,
@@ -102,7 +102,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                   authUrl: '/api/auth',
                 }}
               >
-                <MintKudos badgeId={lesson.badgeId} />
+                <MintBadge badgeId={lesson.badgeId} />
               </ThirdwebProvider>
               {BadgeHelper}
             </Box>

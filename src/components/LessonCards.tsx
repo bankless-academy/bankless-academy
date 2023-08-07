@@ -138,7 +138,7 @@ const LessonCards: React.FC = () => {
       isMobile &&
       // don't show on embed or webapp
       !localStorage.getItem('embed')?.length &&
-      // user has at least 1 kudos
+      // user has at least 1 badge
       badgesMintedLS.length > 0 &&
       // user doesn't want to install the Mobile App
       mobilePreferences !== 'no' &&

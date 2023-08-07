@@ -66,15 +66,15 @@ const ConnectWalletButton = ({
   const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
-  const [kudos, setKudos] = useState<BadgeType[]>([])
+  const [badges, setBadges] = useState<BadgeType[]>([])
   const [siwe, setSiweLS] = useLocalStorage('siwe', '')
   const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
   )
   const [, setBadgesMintedLS] = useLocalStorage('badgesMinted', [])
-  const [refreshKudosLS, setRefreshKudosLS] = useLocalStorage(
-    'refreshKudos',
+  const [refreshBadgesLS, setRefreshBadgesLS] = useLocalStorage(
+    'refreshBadges',
     false
   )
   const { onOpen, onClose, isOpen } = useDisclosure()
@@ -151,13 +151,13 @@ const ConnectWalletButton = ({
     }
   }
 
-  function refreshKudos() {
+  function refreshBadges() {
     if (address)
       axios.get(`/api/badges?address=${address}`).then((res) => {
         const data = res.data.data
         if (Array.isArray(data)) {
           const badgesMinted = BADGE_IDS.filter((badgeId) =>
-            data.some((kudos: BadgeType) => kudos.badgeTokenId === badgeId)
+            data.some((badge: BadgeType) => badge.badgeTokenId === badgeId)
           )
           setBadgesMintedLS(badgesMinted)
           for (const badgeId of BADGE_IDS) {
@@ -166,9 +166,9 @@ const ConnectWalletButton = ({
               badgesMinted.includes(badgeId).toString()
             )
           }
-          setKudos(
-            data.filter((kudos: BadgeType) =>
-              BADGE_IDS.includes(kudos.badgeTokenId)
+          setBadges(
+            data.filter((badge: BadgeType) =>
+              BADGE_IDS.includes(badge.badgeTokenId)
             )
           )
         }
@@ -192,7 +192,7 @@ const ConnectWalletButton = ({
       wallets.push(address.toLowerCase())
       localStorage.setItem('wallets', JSON.stringify(wallets))
     }
-    refreshKudos()
+    refreshBadges()
   }
 
   const verify = async () => {
@@ -281,13 +281,13 @@ const ConnectWalletButton = ({
   }, [address])
 
   useEffect(() => {
-    if (refreshKudosLS) {
-      setRefreshKudosLS(false)
-      refreshKudos()
+    if (refreshBadgesLS) {
+      setRefreshBadgesLS(false)
+      refreshBadges()
     }
-  }, [refreshKudosLS])
+  }, [refreshBadgesLS])
 
-  const nbKudosToDisplay = kudos?.map((k) =>
+  const nbBadgesToDisplay = badges?.map((k) =>
     LESSONS.find((lesson) => lesson.badgeId === k.badgeTokenId)
   )?.length
 
@@ -341,20 +341,20 @@ const ConnectWalletButton = ({
                 </Button>
               </Box>
               {/* TODO: move to dedicated component? */}
-              {kudos?.length > 0 && (
+              {badges?.length > 0 && (
                 <>
                   <Text fontSize="xl" fontWeight="bold" textAlign="center">
                     My Academy Badges
                   </Text>
                   <Box
                     h="215px"
-                    overflowY={nbKudosToDisplay <= 6 ? 'hidden' : 'scroll'}
+                    overflowY={nbBadgesToDisplay <= 6 ? 'hidden' : 'scroll'}
                     overflowX="hidden"
                     backgroundColor="blackAlpha.200"
                     borderRadius="10px"
                   >
                     <SimpleGrid columns={3} spacing={3} p={3}>
-                      {kudos?.map((k, index) => {
+                      {badges?.map((k, index) => {
                         const lesson = LESSONS.find(
                           (lesson) => lesson.badgeId === k.badgeTokenId
                         )
@@ -362,7 +362,7 @@ const ConnectWalletButton = ({
                           if (lesson.badgeImageLink.includes('.mp4')) {
                             return (
                               <Box
-                                key={`kudos-${index}`}
+                                key={`badge-${index}`}
                                 height="78px"
                                 width="78px"
                                 boxShadow="0px 0px 4px 2px #00000060"
@@ -390,7 +390,7 @@ const ConnectWalletButton = ({
                           } else
                             return (
                               <Box
-                                key={`kudos-${index}`}
+                                key={`badge-${index}`}
                                 justifySelf="center"
                                 boxShadow="0px 0px 4px 2px #00000060"
                                 borderRadius="3px"
