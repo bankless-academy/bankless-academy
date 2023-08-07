@@ -585,9 +585,9 @@ const Lesson = ({
                 <>{Quest?.questComponent}</>
               ) : (
                 <>
-                  {lesson.kudosImageLink && (
+                  {lesson.badgeImageLink && (
                     <Box w="290px" h="290px">
-                      <NFT nftLink={lesson.kudosImageLink} />
+                      <NFT nftLink={lesson.badgeImageLink} />
                     </Box>
                   )}
                   {lesson.badgeId ? (

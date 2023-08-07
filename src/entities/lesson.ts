@@ -12,7 +12,7 @@ export interface LessonType {
   marketingDescription: string
   duration: number
   difficulty: 'Easy' | 'Advanced' | 'Expert'
-  kudosImageLink?: string
+  badgeImageLink?: string
   lessonImageLink?: string
   lessonCollectedImageLink?: string
   lessonCollectibleGif?: string

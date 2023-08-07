@@ -113,7 +113,7 @@ const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
 const POTION_API = 'https://potion.banklessacademy.com'
 
 const KEY_MATCHING = {
-  'Kudos image': 'kudosImageLink',
+  'Kudos image': 'badgeImageLink',
   'Lesson image': 'lessonImageLink',
   'Lesson collected image': 'lessonCollectedImageLink',
   'Lesson collectible gif': 'lessonCollectibleGif',
@@ -224,7 +224,7 @@ axios
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.badgeId === undefined) lesson.badgeId = null
       if (lesson.kudosId === undefined) lesson.kudosId = null
-      if (lesson.kudosImageLink === undefined) lesson.kudosImageLink = null
+      if (lesson.badgeImageLink === undefined) lesson.badgeImageLink = null
       if (lesson.lessonCollectedImageLink === undefined) delete lesson.lessonCollectedImageLink
       if (lesson.lessonCollectibleVideo === undefined) delete lesson.lessonCollectibleVideo
       if (lesson.lessonCollectibleGif === undefined) delete lesson.lessonCollectibleGif
@@ -340,8 +340,8 @@ axios
           await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
             .ignore()
 
-          if (lesson.kudosImageLink) {
-            lesson.kudosImageLink = get_img(lesson.kudosImageLink, lesson.slug, 'kudos')
+          if (lesson.badgeImageLink) {
+            lesson.badgeImageLink = get_img(lesson.badgeImageLink, lesson.slug, 'badge')
           }
           if (lesson.lessonImageLink) {
             lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')

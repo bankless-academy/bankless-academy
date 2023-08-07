@@ -66,7 +66,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           overflow="hidden"
           opacity="0.5"
         >
-          <NFT nftLink={lesson.kudosImageLink} />
+          <NFT nftLink={lesson.badgeImageLink} />
         </Box>
         {BadgeHelper}
       </Box>
@@ -119,7 +119,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             overflow="hidden"
             border="1px solid #4b474b"
           >
-            <NFT nftLink={lesson.kudosImageLink} />
+            <NFT nftLink={lesson.badgeImageLink} />
           </Box>
           {isBadgeMintedLS && (
             <Box
