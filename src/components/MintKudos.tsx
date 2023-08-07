@@ -24,20 +24,19 @@ import { Gear, SealCheck } from '@phosphor-icons/react'
 import { useSmallScreen } from 'hooks/index'
 import Passport from 'components/Passport'
 import ExternalLink from 'components/ExternalLink'
-import { LESSONS } from 'constants/index'
+import { BADGE_ADDRESS, LESSONS } from 'constants/index'
 import {
-  MINTKUDOS_API,
   MINTKUDOS_URL,
   MINTKUDOS_DOMAIN_INFO,
-  MINTKUDOS_EXPLORER,
   MINTKUDOS_CHAIN_ID,
-  MINTKUDOS_COMMUNITY_ID,
 } from 'constants/kudos'
 import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { KudosType } from 'entities/kudos'
 import { theme } from 'theme/index'
 import { api } from 'utils'
+import { useContract } from '@thirdweb-dev/react'
+import { Mumbai } from '@thirdweb-dev/chains'
 
 const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   const [isKudosMintedLS, setIsKudosMintedLS] = useLocalStorage(
@@ -56,6 +55,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
   const { chain } = useNetwork()
   const toast = useToast()
   const [isSmallScreen] = useSmallScreen()
+  const { contract } = useContract(BADGE_ADDRESS)
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -84,9 +84,7 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
     if (address) {
       if (!passportLS.verified) checkPassport()
       axios
-        .get(
-          `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
-        )
+        .get(`/api/badges?address=${address}`)
         .then(function (res) {
           const claimedKudos: KudosType = res.data?.data?.find(
             (kudos: KudosType) => kudos?.kudosTokenId === kudosId
@@ -102,52 +100,6 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         })
     }
   }, [address])
-
-  const followOperation = async (location: string, iteration = 0) => {
-    try {
-      const result = await axios.get(location)
-      if (result.data?.status !== 'success') {
-        if (iteration === 0) {
-          toast.closeAll()
-          const txLink = `${MINTKUDOS_EXPLORER}tx/${result.data.txHash}`
-          toast({
-            description: (
-              <>
-                <Box>
-                  <Box display="flex">
-                    <Box mr="4">
-                      <Gear width="40px" height="auto" />
-                    </Box>
-                    <Box flexDirection="column">
-                      <Box>Minting in progress:</Box>
-                      <ExternalLink href={txLink} alt="Transaction in progress">
-                        {isSmallScreen
-                          ? `${txLink.substring(0, 40)}...`
-                          : txLink}
-                      </ExternalLink>
-                    </Box>
-                  </Box>
-                </Box>
-                {PoweredByMintKudos}
-              </>
-            ),
-            status: 'warning',
-            duration: null,
-            isClosable: true,
-          })
-        }
-        // wait 1 sec
-        await new Promise((resolve) => setTimeout(resolve, 1000))
-        await followOperation(location, iteration + 1)
-      } else {
-        console.log('done!')
-      }
-      console.log(result.data?.status)
-    } catch (error) {
-      // TODO: add error feedback
-      console.error(error)
-    }
-  }
 
   const mintKudos = async () => {
     if (status !== '') return
@@ -202,9 +154,36 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
         message: value,
       }
       setIsMintingInProgress(true)
-      const result = await api('/api/mint-kudos', bodyParameters)
-      if (result && result.status === 200 && result.data.location) {
-        await followOperation(result.data.location)
+
+      // Contact API to check eligibility and get signature
+      const result = await api('/api/mint-badge', bodyParameters)
+      if (result && result.status === 200 && result.data.signature) {
+        console.log(result.data.signature)
+        const res = await contract.erc1155.signature.mint(result.data.signature)
+        toast.closeAll()
+        toast({
+          description: (
+            <>
+              <Box>
+                <Box display="flex">
+                  <Box mr="4">
+                    <Gear width="40px" height="auto" />
+                  </Box>
+                  <Box flexDirection="column">
+                    <Box>Minting in progress</Box>
+                  </Box>
+                </Box>
+              </Box>
+              {PoweredByMintKudos}
+            </>
+          ),
+          status: 'warning',
+          duration: null,
+          isClosable: true,
+        })
+        console.log(res)
+        const txLink = `${Mumbai.explorers[0].url}/tx/${res.receipt.transactionHash}`
+        // await followOperation(result.data.location)
         setRefreshKudosLS(true)
         setIsKudosMintedLS(true)
         toast.closeAll()
@@ -220,6 +199,9 @@ const MintKudos = ({ kudosId }: { kudosId: number }): React.ReactElement => {
                   </Box>
                   <Box flexDirection="column" alignSelf="center">
                     <Box>Badge successfully minted!</Box>
+                    <ExternalLink href={txLink} alt="Transaction in progress">
+                      {`${txLink.substring(0, 40)}...`}
+                    </ExternalLink>
                   </Box>
                 </Box>
               </Box>

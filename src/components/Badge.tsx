@@ -1,10 +1,16 @@
 import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
+import { ThirdwebProvider } from '@thirdweb-dev/react'
 
 import { LessonType } from 'entities/lesson'
 import MintKudos from 'components/MintKudos'
-import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL } from 'constants/index'
+import {
+  IS_WHITELABEL,
+  TWITTER_ACCOUNT,
+  DOMAIN_URL,
+  ACTIVE_CHAIN,
+} from 'constants/index'
 import { MINTKUDOS_URL, MINTKUDOS_OPENSEA_URL } from 'constants/kudos'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
@@ -82,7 +88,25 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             </Box>
           ) : (
             <Box position="relative">
-              <MintKudos kudosId={lesson.kudosId} />
+              <ThirdwebProvider
+                sdkOptions={{
+                  gasless: {
+                    biconomy: {
+                      // apiKey: "kofXmVpTr.e412e78b-6692-407a-90a5-18f9a788bf90",
+                      apiKey: 'rgzMlYU1Q.b1aa8fd0-ce03-41ec-b6d6-b52cf22995c9',
+                      // 81bb8334-1931-4074-a6a9-7548a428fcb2
+                      apiId: '84120205-399d-49e4-82f8-8bcf99e8e3c8',
+                    },
+                  },
+                }}
+                activeChain={ACTIVE_CHAIN}
+                authConfig={{
+                  domain: 'thirdweb-preview.com',
+                  authUrl: '/api/auth',
+                }}
+              >
+                <MintKudos kudosId={lesson.kudosId} />
+              </ThirdwebProvider>
               {BadgeHelper}
             </Box>
           )}

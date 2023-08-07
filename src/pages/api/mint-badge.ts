@@ -1,20 +1,26 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
+// TODO: mainnet
+import { ThirdwebSDK } from '@thirdweb-dev/sdk'
+import { PrivateKeyWallet } from '@thirdweb-dev/auth/evm'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
-import { LESSONS, GENERIC_ERROR_MESSAGE } from 'constants/index'
 import {
-  MINTKUDOS_API,
-  MINTKUDOS_ENCODED_STRING,
-  MINTKUDOS_COMMUNITY_ID,
-  MINTKUDOS_COMMUNITY_ADMIN,
+  LESSONS,
+  GENERIC_ERROR_MESSAGE,
+  BADGE_ADDRESS,
+  ACTIVE_CHAIN,
+} from 'constants/index'
+import {
   MINTKUDOS_DOMAIN_INFO,
   MINTKUDOS_ALLOWED_SIGNERS,
 } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
 import { api, verifyTypedSignature } from 'utils'
 import { trackBE } from 'utils/mixpanel'
+
+const pkeyWallet = new PrivateKeyWallet(process.env.PRIVATE_KEY)
 
 export default async function handler(
   req: NextApiRequest,
@@ -98,7 +104,7 @@ export default async function handler(
       }
 
       const userKudos = await axios.get(
-        `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
+        `${req.headers.origin}/api/badges?address=${address}`
       )
       // console.log('userKudos', userKudos?.data?.data)
 
@@ -125,54 +131,22 @@ export default async function handler(
           return res.status(403).json({ error: 'signature not found' })
 
         try {
-          const bodyParameters = {
-            receivingAddress: address,
-            adminAddress: MINTKUDOS_COMMUNITY_ADMIN,
-            adminSignature,
-            receiverSignature: signature,
-          }
-          const config = {
-            headers: {
-              Authorization: `Basic ${MINTKUDOS_ENCODED_STRING}`,
-            },
-          }
-          // mint Kudos
-          console.log('communityAdminAirdrop:', bodyParameters)
-          const result = await axios.post(
-            `${MINTKUDOS_API}/v1/tokens/${kudosId}/communityAdminAirdropWithoutConsentSig`,
-            bodyParameters,
-            config
-          )
-          if (result.status === 202) {
-            // don't update credential_claimed_at for testing kudos (14067)
-            if (kudosId !== 14067) {
-              await db(TABLES.completions)
-                .where(TABLE.completions.id, questCompleted.id)
-                .update({ credential_claimed_at: db.raw('now()') })
-            }
-            questStatus = 'badge claimed'
-            console.log(questStatus)
-            const lesson = LESSONS.find(
-              (lesson) => lesson.kudosId === kudosId
-            )?.name
-            trackBE(address, 'mint_kudos', { lesson, kudosId, embed })
-            console.log(result.headers.location)
-            return res.status(200).json({
-              location: `${MINTKUDOS_API}${result.headers?.location}`,
-              status: questStatus,
+          // generate signature
+          const sdk = await ThirdwebSDK.fromWallet(pkeyWallet, ACTIVE_CHAIN)
+          const contract = await sdk.getContract(BADGE_ADDRESS)
+          // Authorized to mint, generate signature
+          const mintingSignature =
+            await contract.erc1155.signature.generateFromTokenId({
+              // TODO: make tokenId dynamic
+              tokenId: 2,
+              to: address.toLowerCase(),
+              quantity: 1,
             })
-          } else {
-            console.log(result)
-            trackBE(address, 'mint_kudos_issue', {
-              error: result?.data,
-              kudosId,
-              address,
-            })
-            return res.status(500).json({
-              error: 'something went wrong while minting',
-              status: questStatus,
-            })
-          }
+          // TODO: save signature in DB + check if already generated
+          return res.status(200).json({
+            signature: mintingSignature,
+            status: questStatus,
+          })
         } catch (error) {
           console.error(error?.response?.data)
           trackBE(address, 'mint_kudos_issue', {

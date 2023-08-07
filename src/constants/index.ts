@@ -4,6 +4,7 @@ import DEFAULT_LESSONS from 'constants/lessons'
 import WHITELABEL_LESSONS from 'constants/whitelabel_lessons'
 import DEFAULT_KEYWORDS from '../../keywords.json'
 import WHITELABEL_KEYWORDS from '../../whitelabel-keywords.json'
+import { Mumbai } from '@thirdweb-dev/chains'
 
 export const IS_WHITELABEL = !!WHITELABEL?.project_name
 
@@ -123,3 +124,7 @@ export const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED === 'true' || false
 
 export const DISCLAIMER_ENABLED =
   process.env.NEXT_PUBLIC_DISCLAIMER_ENABLED === 'true' || false
+
+export const BADGE_ADDRESS = '0x758ec1de5267d4899bc9b545227b13008f8598c2'
+
+export const ACTIVE_CHAIN = Mumbai

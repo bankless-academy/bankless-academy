@@ -32,11 +32,7 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
 
 import ExternalLink from 'components/ExternalLink'
 import { LESSONS, SIWE_ENABLED } from 'constants/index'
-import {
-  MINTKUDOS_API,
-  MINTKUDOS_COMMUNITY_ID,
-  KUDOS_IDS,
-} from 'constants/kudos'
+import { KUDOS_IDS } from 'constants/kudos'
 import { KudosType } from 'entities/kudos'
 import { getUD, getLensProfile, shortenAddress, api } from 'utils'
 import { polygon, optimism } from 'wagmi/chains'
@@ -157,30 +153,26 @@ const ConnectWalletButton = ({
 
   function refreshKudos() {
     if (address)
-      axios
-        .get(
-          `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
-        )
-        .then((res) => {
-          const data = res.data.data
-          if (Array.isArray(data)) {
-            const kudosMinted = KUDOS_IDS.filter((kudosId) =>
-              data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
-            )
-            setKudosMintedLS(kudosMinted)
-            for (const kudosId of KUDOS_IDS) {
-              localStorage.setItem(
-                `isKudosMinted-${kudosId.toString()}`,
-                kudosMinted.includes(kudosId).toString()
-              )
-            }
-            setKudos(
-              data.filter((kudos: KudosType) =>
-                KUDOS_IDS.includes(kudos.kudosTokenId)
-              )
+      axios.get(`/api/badges?address=${address}`).then((res) => {
+        const data = res.data.data
+        if (Array.isArray(data)) {
+          const kudosMinted = KUDOS_IDS.filter((kudosId) =>
+            data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
+          )
+          setKudosMintedLS(kudosMinted)
+          for (const kudosId of KUDOS_IDS) {
+            localStorage.setItem(
+              `isKudosMinted-${kudosId.toString()}`,
+              kudosMinted.includes(kudosId).toString()
             )
           }
-        })
+          setKudos(
+            data.filter((kudos: KudosType) =>
+              KUDOS_IDS.includes(kudos.kudosTokenId)
+            )
+          )
+        }
+      })
   }
 
   const loadAddress = (address) => {
