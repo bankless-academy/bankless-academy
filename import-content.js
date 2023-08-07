@@ -118,11 +118,12 @@ const KEY_MATCHING = {
   'Lesson collected image': 'lessonCollectedImageLink',
   'Lesson collectible gif': 'lessonCollectibleGif',
   'Lesson collectible video': 'lessonCollectibleVideo',
-  'Lesson collectible mint ID': 'LessonCollectibleMintID',
-  'Lesson collectible token address': 'LessonCollectibleTokenAddress',
+  'Lesson collectible mint ID': 'lessonCollectibleMintID',
+  'Lesson collectible token address': 'lessonCollectibleTokenAddress',
   'Social image': 'socialImageLink',
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
+  'Badge ID': 'badgeId',
   'Kudos ID': 'kudosId',
   'Duration in minutes': 'duration',
   'What will you learn from this?': 'learnings',
@@ -221,14 +222,15 @@ axios
 
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
+      if (lesson.badgeId === undefined) lesson.badgeId = null
       if (lesson.kudosId === undefined) lesson.kudosId = null
       if (lesson.kudosImageLink === undefined) lesson.kudosImageLink = null
       if (lesson.lessonCollectedImageLink === undefined) delete lesson.lessonCollectedImageLink
       if (lesson.lessonCollectibleVideo === undefined) delete lesson.lessonCollectibleVideo
       if (lesson.lessonCollectibleGif === undefined) delete lesson.lessonCollectibleGif
-      if (lesson.LessonCollectibleMintID === undefined) delete lesson.LessonCollectibleMintID
-      if (lesson.LessonCollectibleTokenAddress === undefined) delete lesson.LessonCollectibleTokenAddress
-      if (lesson.LessonCollectibleMintID && lesson.LessonCollectibleTokenAddress) lesson.hasCollectible = true
+      if (lesson.lessonCollectibleMintID === undefined) delete lesson.lessonCollectibleMintID
+      if (lesson.lessonCollectibleTokenAddress === undefined) delete lesson.lessonCollectibleTokenAddress
+      if (lesson.lessonCollectibleMintID && lesson.lessonCollectibleTokenAddress) lesson.hasCollectible = true
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
       if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''

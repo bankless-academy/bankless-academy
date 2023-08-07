@@ -6,6 +6,7 @@ export interface LessonType {
   name: string
   slug: string
   notionId: string
+  badgeId?: number
   kudosId?: number
   description: string
   marketingDescription: string
@@ -16,8 +17,8 @@ export interface LessonType {
   lessonCollectedImageLink?: string
   lessonCollectibleGif?: string
   lessonCollectibleVideo?: string
-  LessonCollectibleMintID?: string
-  LessonCollectibleTokenAddress?: string
+  lessonCollectibleMintID?: string
+  lessonCollectibleTokenAddress?: string
   hasCollectible?: boolean
   socialImageLink?: string
   moduleId?: string

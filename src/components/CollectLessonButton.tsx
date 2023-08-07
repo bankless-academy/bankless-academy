@@ -121,7 +121,7 @@ const CollectLessonButton = ({
   lesson: LessonType
 }): JSX.Element => {
   const [isLessonMintedLS, setIsLessonMintedLS] = useLocalStorage(
-    `isLessonMinted-${lesson.LessonCollectibleTokenAddress}`,
+    `isLessonMinted-${lesson.lessonCollectibleTokenAddress}`,
     false
   )
   const [isKudosMintedLS] = useLocalStorage(
@@ -149,9 +149,9 @@ const CollectLessonButton = ({
   )
 
   const isLessonCollected =
-    !!lesson.LessonCollectibleTokenAddress?.length &&
+    !!lesson.lessonCollectibleTokenAddress?.length &&
     lessonsCollectedLS.includes(
-      lesson.LessonCollectibleTokenAddress.toLowerCase()
+      lesson.lessonCollectibleTokenAddress.toLowerCase()
     )
 
   useEffect(() => {
@@ -167,7 +167,7 @@ const CollectLessonButton = ({
 
   const updateLessonsCollectors = async () => {
     const NFTCollectors = await getLessonsCollectors(
-      lesson.LessonCollectibleTokenAddress
+      lesson.lessonCollectibleTokenAddress
     )
     setIsLessonMintedLS(false)
     for (const NFTCollector of NFTCollectors) {
@@ -190,12 +190,12 @@ const CollectLessonButton = ({
     }
   }
   useEffect(() => {
-    if (lesson.LessonCollectibleTokenAddress)
+    if (lesson.lessonCollectibleTokenAddress)
       updateLessonsCollectors().catch(console.error)
   }, [address])
 
   const share = `I’ve just collected ${numberIOwn} of 100 ‘${lesson.name}’ DataDisks™ from @BanklessAcademy.
-https://opensea.io/assets/optimism/${lesson.LessonCollectibleTokenAddress}/${tokenId}
+https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}
 
 Become a Guardian of Bankless Academy today - join the effort to circulate @BanklessAcademy content and retroactively fund education public goods!`
 
@@ -368,7 +368,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
               </Box>
               <Box pb="2">
                 <ExternalLink
-                  href={`https://opensea.io/assets/optimism/${lesson.LessonCollectibleTokenAddress}/${tokenId}`}
+                  href={`https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}`}
                 >
                   <Button
                     variant="primaryGold"

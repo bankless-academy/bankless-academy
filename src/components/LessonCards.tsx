@@ -188,9 +188,9 @@ const LessonCards: React.FC = () => {
         const isArticleRead =
           lesson.isArticle && localStorage.getItem(lesson.slug) === 'true'
         const isLessonCollected =
-          !!lesson.LessonCollectibleTokenAddress?.length &&
+          !!lesson.lessonCollectibleTokenAddress?.length &&
           lessonsCollectedLS.includes(
-            lesson.LessonCollectibleTokenAddress.toLowerCase()
+            lesson.lessonCollectibleTokenAddress.toLowerCase()
           )
         const lessonHasSponsor =
           lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
