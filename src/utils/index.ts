@@ -10,6 +10,7 @@ import { Network } from '@ethersproject/networks'
 import queryString from 'query-string'
 import mixpanel, { Dict, Query } from 'mixpanel-browser'
 import { readContract } from '@wagmi/core'
+import axios, { AxiosResponse } from 'axios'
 
 import {
   ACTIVATE_MIXPANEL,
@@ -21,7 +22,6 @@ import {
   MIRROR_ARTICLE_ADDRESSES,
 } from 'constants/index'
 import { NETWORKS } from 'constants/networks'
-import axios, { AxiosResponse } from 'axios'
 import UDPolygonABI from 'abis/UDPolygon.json'
 import UDABI from 'abis/UD.json'
 
@@ -105,19 +105,6 @@ export const toFixed = function (x) {
     }
   }
   return x
-}
-
-export const trimCurrencyForWhales = (labelValue: number): string | number => {
-  // Nine Zeroes for Billions
-  return Math.abs(Number(labelValue)) >= 1.0e9
-    ? (Math.abs(Number(labelValue)) / 1.0e9).toFixed(2) + 'B'
-    : // Six Zeroes for Millions
-    Math.abs(Number(labelValue)) >= 1.0e6
-    ? (Math.abs(Number(labelValue)) / 1.0e6).toFixed(2) + 'M'
-    : // Three Zeroes for Thousands
-    Math.abs(Number(labelValue)) >= 1.0e3
-    ? (Math.abs(Number(labelValue)) / 1.0e3).toFixed(2) + 'K'
-    : Math.abs(Number(labelValue))
 }
 
 export const track = (event: string, value?: any): void => {
@@ -325,6 +312,28 @@ export const mixpanel_distinct_id = ACTIVATE_MIXPANEL
   ? mixpanel.get_distinct_id()
   : null
 
+const getProps = (props) => {
+  const wallets = {
+    wallets: localStorage.getItem('wallets')
+      ? JSON.parse(localStorage.getItem('wallets'))
+      : [],
+  }
+  const current_wallet = localStorage.getItem('current_wallet')
+  if (current_wallet) {
+    const mp_current_wallet = localStorage.getItem(`mp_${current_wallet}`)
+    if (!mp_current_wallet?.length) {
+      mixpanel.alias(current_wallet)
+      mixpanel.people.set({ name: current_wallet, wallets })
+      localStorage.setItem(`mp_${current_wallet}`, mixpanel_distinct_id)
+    }
+  }
+  const embed = localStorage.getItem('embed')
+  if (embed && embed.length) {
+    props.embed = embed
+  }
+  return props
+}
+
 export const Mixpanel = ACTIVATE_MIXPANEL
   ? {
       identify: (id: string) => {
@@ -334,24 +343,7 @@ export const Mixpanel = ACTIVATE_MIXPANEL
         mixpanel.alias(id)
       },
       track: (event_name: string, props?: Dict) => {
-        const wallets = {
-          wallets: localStorage.getItem('wallets')
-            ? JSON.parse(localStorage.getItem('wallets'))
-            : [],
-        }
-        const current_wallet = localStorage.getItem('current_wallet')
-        if (current_wallet) {
-          const mp_current_wallet = localStorage.getItem(`mp_${current_wallet}`)
-          if (!mp_current_wallet?.length) {
-            mixpanel.alias(current_wallet)
-            mixpanel.people.set({ name: current_wallet, wallets })
-            localStorage.setItem(`mp_${current_wallet}`, mixpanel_distinct_id)
-          }
-        }
-        const embed = localStorage.getItem('embed')
-        if (embed && embed.length) {
-          props.embed = embed
-        }
+        props = getProps(props)
         mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
       },
       track_links: (query: Query, name: string) => {
