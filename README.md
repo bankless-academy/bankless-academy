@@ -31,7 +31,6 @@
 ### Integrations
 
 - [Gitcoin Passport](https://docs.passport.gitcoin.co/) for Sybil protection for lesson badges
-- [Kudos](https://developers.mintkudos.xyz/) to distribute lesson badges (SBTs / non transferable NFTs)
 
 ## Local Development
 

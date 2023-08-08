@@ -33,7 +33,6 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
 import ExternalLink from 'components/ExternalLink'
 import { LESSONS, SIWE_ENABLED } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
-import { BadgeType } from 'entities/badge'
 import { getUD, getLensProfile, shortenAddress, api } from 'utils'
 import { polygon, optimism } from 'wagmi/chains'
 
@@ -66,7 +65,7 @@ const ConnectWalletButton = ({
   const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
-  const [badges, setBadges] = useState<BadgeType[]>([])
+  const [badges, setBadges] = useState<number[]>([])
   const [siwe, setSiweLS] = useLocalStorage('siwe', '')
   const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
@@ -154,11 +153,12 @@ const ConnectWalletButton = ({
   function refreshBadges() {
     if (address)
       axios.get(`/api/badges?address=${address}`).then((res) => {
-        const data = res.data.data
-        if (Array.isArray(data)) {
+        const badgeTokenIds = res?.data?.badgeTokenIds
+        if (Array.isArray(badgeTokenIds)) {
           const badgesMinted = BADGE_IDS.filter((badgeId) =>
-            data.some((badge: BadgeType) => badge.badgeTokenId === badgeId)
+            badgeTokenIds.includes(badgeId)
           )
+          console.log(badgesMinted)
           setBadgesMintedLS(badgesMinted)
           for (const badgeId of BADGE_IDS) {
             localStorage.setItem(
@@ -166,11 +166,7 @@ const ConnectWalletButton = ({
               badgesMinted.includes(badgeId).toString()
             )
           }
-          setBadges(
-            data.filter((badge: BadgeType) =>
-              BADGE_IDS.includes(badge.badgeTokenId)
-            )
-          )
+          setBadges(badgesMinted)
         }
       })
   }
@@ -287,9 +283,7 @@ const ConnectWalletButton = ({
     }
   }, [refreshBadgesLS])
 
-  const nbBadgesToDisplay = badges?.map((k) =>
-    LESSONS.find((lesson) => lesson.badgeId === k.badgeTokenId)
-  )?.length
+  const nbBadgesToDisplay = badges.length
 
   return (
     <>
@@ -354,9 +348,9 @@ const ConnectWalletButton = ({
                     borderRadius="10px"
                   >
                     <SimpleGrid columns={3} spacing={3} p={3}>
-                      {badges?.map((k, index) => {
+                      {badges?.map((badgeTokenId, index) => {
                         const lesson = LESSONS.find(
-                          (lesson) => lesson.badgeId === k.badgeTokenId
+                          (lesson) => lesson.badgeId === badgeTokenId
                         )
                         if (lesson) {
                           if (lesson.badgeImageLink.includes('.mp4')) {

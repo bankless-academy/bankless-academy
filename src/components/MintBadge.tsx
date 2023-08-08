@@ -28,14 +28,13 @@ import { BADGE_ADDRESS, LESSONS } from 'constants/index'
 import { BADGE_DOMAIN_INFO, MINTKUDOS_CHAIN_ID } from 'constants/badges'
 import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
-import { BadgeType } from 'entities/badge'
 import { theme } from 'theme/index'
 import { api } from 'utils'
 import { useContract } from '@thirdweb-dev/react'
 import { Mumbai } from '@thirdweb-dev/chains'
 
 const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
-  const [isBadgeMintedLS, setIsKudosMintedLS] = useLocalStorage(
+  const [isBadgeMintedLS, setIsBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${badgeId}`,
     false
   )
@@ -73,14 +72,15 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
       if (!passportLS.verified) checkPassport()
       axios
         .get(`/api/badges?address=${address}`)
-        .then(function (res) {
-          const claimedKudos: BadgeType = res.data?.data?.find(
-            (badge: BadgeType) => badge?.badgeTokenId === badgeId
-          )
-          if (claimedKudos) {
-            setIsKudosMintedLS(true)
+        .then(function (userBadges) {
+          const badgeAlreadyClaimed: boolean =
+            userBadges?.data?.badgeTokenIds.find(
+              (badge: number) => badge === badgeId
+            ) || false
+          if (badgeAlreadyClaimed) {
+            setIsBadgeMintedLS(true)
           } else {
-            setIsKudosMintedLS(false)
+            setIsBadgeMintedLS(false)
           }
         })
         .catch(function (error) {
@@ -89,7 +89,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
     }
   }, [address])
 
-  const mintKudos = async () => {
+  const mintBadge = async () => {
     if (status !== '') return
     setStatus('Minting in progress ...')
     // TODO: add 1 min timeout
@@ -172,10 +172,10 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         const txLink = `${Mumbai.explorers[0].url}/tx/${res.receipt.transactionHash}`
         // await followOperation(result.data.location)
         setRefreshBadgesLS(true)
-        setIsKudosMintedLS(true)
+        setIsBadgeMintedLS(true)
         toast.closeAll()
         // TODO: add 🎊
-        // TODO: refresh list of Kudos in the wallet
+        // TODO: refresh list of Badges in the wallet
         toast({
           description: (
             <>
@@ -352,7 +352,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         loadingText="Minting Badge ..."
         cursor={isBadgeMintedLS ? 'auto' : 'pointer'}
         onClick={() => {
-          passportLS?.verified ? mintKudos() : onOpen()
+          passportLS?.verified ? mintBadge() : onOpen()
         }}
       >
         Mint Badge
@@ -371,7 +371,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         <Box textAlign="center">
           <Button
             colorScheme={'green'}
-            onClick={mintKudos}
+            onClick={mintBadge}
             variant="primary"
             isLoading={isMintingInProgress}
             loadingText={status}

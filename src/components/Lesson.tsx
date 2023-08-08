@@ -27,7 +27,7 @@ import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
 import { isHolderOfNFT, Mixpanel, scrollTop } from 'utils'
 import { IS_WHITELABEL, KEYWORDS, TOKEN_GATING_ENABLED } from 'constants/index'
-import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
+import { LearnIcon, QuizIcon, QuestIcon, RewardsIcon } from 'components/Icons'
 import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
 import NFT from 'components/NFT'
@@ -483,7 +483,7 @@ const Lesson = ({
           {slide.type === 'LEARN' && <LearnIcon />}
           {slide.type === 'QUIZ' && <QuizIcon />}
           {slide.type === 'QUEST' && <QuestIcon />}
-          {slide.type === 'END' && <KudosIcon />}
+          {slide.type === 'END' && <RewardsIcon />}
         </Box>
         <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
           {slide.type === 'QUIZ' ? (

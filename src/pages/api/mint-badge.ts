@@ -13,7 +13,6 @@ import {
   ACTIVE_CHAIN,
 } from 'constants/index'
 import { BADGE_DOMAIN_INFO, BADGES_ALLOWED_SIGNERS } from 'constants/badges'
-import { BadgeType } from 'entities/badge'
 import { api, verifyTypedSignature } from 'utils'
 import { trackBE } from 'utils/mixpanel'
 
@@ -105,9 +104,10 @@ export default async function handler(
       )
       // console.log('userBadges', userBadges?.data?.data)
 
-      const badgeAlreadyClaimed: BadgeType = userBadges?.data?.data?.find(
-        (badge: BadgeType) => badge.badgeTokenId === badgeId
-      )
+      const badgeAlreadyClaimed: boolean =
+        userBadges?.data?.badgeTokenIds.find(
+          (badge: number) => badge === badgeId
+        ) || false
 
       if (badgeAlreadyClaimed) {
         // TODO: fix credential_claimed_at (it's not createdAt ... mintedAt?)
