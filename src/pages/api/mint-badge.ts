@@ -12,8 +12,8 @@ import {
   BADGE_ADDRESS,
   ACTIVE_CHAIN,
 } from 'constants/index'
-import { BADGE_DOMAIN_INFO, BADGES_ALLOWED_SIGNERS } from 'constants/badges'
-import { api, verifyTypedSignature } from 'utils'
+import { BADGES_ALLOWED_SIGNERS } from 'constants/badges'
+import { api } from 'utils'
 import { trackBE } from 'utils/mixpanel'
 
 const pkeyWallet = new PrivateKeyWallet(process.env.PRIVATE_KEY)
@@ -23,9 +23,9 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   // check params + signature
-  const { address, badgeId, signature, chainId, embed } = req.body
+  const { address, badgeId, embed } = req.body
   // console.log(req)
-  if (!address || !badgeId || !signature || !chainId)
+  if (!address || !badgeId)
     return res.status(400).json({ error: 'Wrong params' })
 
   console.log('address: ', address)
@@ -36,18 +36,6 @@ export default async function handler(
   console.log('message: ', message)
 
   try {
-    const receiverTypes = {
-      CommunityAdminAirdropReceiverConsent: [
-        { name: 'tokenId', type: 'uint256' },
-      ],
-    }
-    const domain = BADGE_DOMAIN_INFO
-    domain.chainId = chainId
-    if (
-      !verifyTypedSignature(signature, message, address, receiverTypes, domain)
-    )
-      return res.status(403).json({ error: 'Wrong signature' })
-
     const userId = await getUserId(address, embed)
     console.log(userId)
     if (!(userId && Number.isInteger(userId)))
@@ -133,8 +121,7 @@ export default async function handler(
           // Authorized to mint, generate signature
           const mintingSignature =
             await contract.erc1155.signature.generateFromTokenId({
-              // TODO: make tokenId dynamic
-              tokenId: 2,
+              tokenId: badgeId,
               to: address.toLowerCase(),
               quantity: 1,
             })

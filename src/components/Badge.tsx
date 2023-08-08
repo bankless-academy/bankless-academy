@@ -89,10 +89,8 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 sdkOptions={{
                   gasless: {
                     biconomy: {
-                      // apiKey: "kofXmVpTr.e412e78b-6692-407a-90a5-18f9a788bf90",
                       apiKey: 'rgzMlYU1Q.b1aa8fd0-ce03-41ec-b6d6-b52cf22995c9',
-                      // 81bb8334-1931-4074-a6a9-7548a428fcb2
-                      apiId: '84120205-399d-49e4-82f8-8bcf99e8e3c8',
+                      apiId: 'c15387fc-357c-4995-909a-3dda0892e64c',
                     },
                   },
                 }}

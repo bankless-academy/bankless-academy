@@ -18,14 +18,14 @@ import {
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount, useNetwork } from 'wagmi'
-import { switchNetwork, signTypedData } from '@wagmi/core'
+import { switchNetwork } from '@wagmi/core'
 import { Gear, SealCheck } from '@phosphor-icons/react'
 
 import { useSmallScreen } from 'hooks/index'
 import Passport from 'components/Passport'
 import ExternalLink from 'components/ExternalLink'
 import { BADGE_ADDRESS, LESSONS } from 'constants/index'
-import { BADGE_DOMAIN_INFO, MINTKUDOS_CHAIN_ID } from 'constants/badges'
+import { MINTKUDOS_CHAIN_ID } from 'constants/badges'
 import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { theme } from 'theme/index'
@@ -114,32 +114,10 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
       }
     }
 
-    const receiverTypes = {
-      CommunityAdminAirdropReceiverConsent: [
-        { name: 'tokenId', type: 'uint256' },
-      ],
-    }
-
-    // The data to sign
-    const value = {
-      tokenId: badgeId,
-    }
-
     try {
-      const domain = BADGE_DOMAIN_INFO
-      domain.chainId = chain?.id
-      const signature = await signTypedData({
-        domain,
-        types: receiverTypes,
-        value,
-      })
-      // console.log('signature', signature)
       const bodyParameters = {
         address,
         badgeId,
-        signature,
-        chainId: chain?.id,
-        message: value,
       }
       setIsMintingInProgress(true)
 
