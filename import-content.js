@@ -339,7 +339,8 @@ axios
             .ignore()
 
           if (lesson.badgeImageLink) {
-            lesson.badgeImageLink = get_img(lesson.badgeImageLink, lesson.slug, 'badge')
+            // TOTO: replace w/ badge
+            lesson.badgeImageLink = get_img(lesson.badgeImageLink, lesson.slug, 'kudos')
           }
           if (lesson.lessonImageLink) {
             lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
