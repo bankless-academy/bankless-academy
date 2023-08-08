@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { BADGE_ADDRESS, DOMAIN_PROD } from 'constants/index'
+import { DOMAIN_PROD } from 'constants/index'
 import LESSONS from 'constants/lessons'
 import { NextApiRequest, NextApiResponse } from 'next'
 
@@ -13,10 +13,11 @@ export default async function handler(
   const {
     slug: [contractAddress, tokenId],
   } = req.query
-  if (!contractAddress || contractAddress !== BADGE_ADDRESS || !tokenId)
+  if (!contractAddress || !tokenId)
     return res.status(400).json({ error: 'Wrong params' })
-  if (contractAddress !== BADGE_ADDRESS)
-    return res.status(400).json({ error: 'Unknown contract' })
+  // TODO: uncomment when pushing to prod
+  // if (contractAddress !== BADGE_ADDRESS)
+  //   return res.status(400).json({ error: 'Unknown contract' })
   const lesson = LESSONS.find((lesson) => lesson.badgeId === parseInt(tokenId))
   if (!lesson) return res.status(400).json({ error: 'Unknown tokenId' })
 
