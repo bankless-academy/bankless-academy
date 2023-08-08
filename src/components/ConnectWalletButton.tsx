@@ -158,7 +158,7 @@ const ConnectWalletButton = ({
           const badgesMinted = BADGE_IDS.filter((badgeId) =>
             badgeTokenIds.includes(badgeId)
           )
-          console.log(badgesMinted)
+          // console.log(badgesMinted)
           setBadgesMintedLS(badgesMinted)
           for (const badgeId of BADGE_IDS) {
             localStorage.setItem(

@@ -21,7 +21,7 @@ import { useWeb3Modal, Web3Modal } from '@web3modal/react'
 
 import { configureChains, createClient, WagmiConfig } from 'wagmi'
 
-import { mainnet, optimism, polygon } from 'wagmi/chains'
+import { mainnet, optimism, polygon, polygonMumbai } from 'wagmi/chains'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -58,7 +58,7 @@ const App = ({
   // 1. Get projectID at https://cloud.walletconnect.com
   const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID
 
-  const chains = [mainnet, polygon, optimism]
+  const chains = [mainnet, polygon, optimism, polygonMumbai]
   const { provider } = configureChains(chains, [w3mProvider({ projectId })])
 
   // 2. Configure wagmi client

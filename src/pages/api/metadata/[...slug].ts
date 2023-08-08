@@ -11,13 +11,11 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   const {
-    slug: [contractAddress, tokenId],
+    slug: [slug, tokenId],
   } = req.query
-  if (!contractAddress || !tokenId)
-    return res.status(400).json({ error: 'Wrong params' })
-  // TODO: uncomment when pushing to prod
-  // if (contractAddress !== BADGE_ADDRESS)
-  //   return res.status(400).json({ error: 'Unknown contract' })
+  if (!slug || !tokenId) return res.status(400).json({ error: 'Wrong params' })
+  if (slug !== 'badge')
+    return res.status(400).json({ error: 'Unknown contract' })
   const lesson = LESSONS.find((lesson) => lesson.badgeId === parseInt(tokenId))
   if (!lesson) return res.status(400).json({ error: 'Unknown tokenId' })
 

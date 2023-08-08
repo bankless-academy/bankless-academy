@@ -19,14 +19,16 @@ export const DOMAIN_URL =
     ? `https://${process.env.VERCEL_URL}`
     : `https://${DOMAIN_PROD}`
 
+const imageMeta = `${
+  WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
+}`
+
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
   description:
     WHITELABEL?.default_metadata_description ||
     'Level up your knowledge of Web3 and DeFi',
-  image: `${
-    WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
-  }`,
+  image: imageMeta,
 }
 
 export const FAVICON = WHITELABEL?.favicon || '/favicon.png'
@@ -125,6 +127,6 @@ export const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED === 'true' || false
 export const DISCLAIMER_ENABLED =
   process.env.NEXT_PUBLIC_DISCLAIMER_ENABLED === 'true' || false
 
-export const BADGE_ADDRESS = '0x758ec1de5267d4899bc9b545227b13008f8598c2'
+export const BADGE_ADDRESS = '0x8C3Fb365c9357e8c455aDb5f84219563a97Dcf53'
 
 export const ACTIVE_CHAIN = Mumbai
