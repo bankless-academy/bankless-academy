@@ -36,12 +36,8 @@ const debugParam =
   typeof window !== 'undefined'
     ? queryString.parse(window.location.search).debug?.toString()
     : undefined
-export const DEBUG: string =
-  debugParam !== undefined
-    ? debugParam
-    : typeof window !== 'undefined'
-    ? localStorage.getItem('debug')
-    : null
+const w = typeof window !== 'undefined' ? localStorage.getItem('debug') : null
+export const DEBUG: string = debugParam !== undefined ? debugParam : w
 export const IS_DEBUG = debugParam !== undefined && debugParam !== 'false'
 if (debugParam !== undefined) localStorage.setItem('debug', DEBUG)
 if (debugParam === 'false') localStorage.removeItem('debug')
@@ -312,72 +308,69 @@ export const mixpanel_distinct_id = ACTIVATE_MIXPANEL
   ? mixpanel.get_distinct_id()
   : null
 
-const getProps = (props) => {
-  const wallets = {
-    wallets: localStorage.getItem('wallets')
-      ? JSON.parse(localStorage.getItem('wallets'))
-      : [],
-  }
-  const current_wallet = localStorage.getItem('current_wallet')
-  if (current_wallet) {
-    const mp_current_wallet = localStorage.getItem(`mp_${current_wallet}`)
-    if (!mp_current_wallet?.length) {
-      mixpanel.alias(current_wallet)
-      mixpanel.people.set({ name: current_wallet, wallets })
-      localStorage.setItem(`mp_${current_wallet}`, mixpanel_distinct_id)
+const withMixpanel = {
+  identify: (id: string) => {
+    mixpanel.identify(id)
+  },
+  alias: (id: string) => {
+    mixpanel.alias(id)
+  },
+  track: (event_name: string, props?: Dict) => {
+    const wallets = {
+      wallets: localStorage.getItem('wallets')
+        ? JSON.parse(localStorage.getItem('wallets'))
+        : [],
     }
-  }
-  const embed = localStorage.getItem('embed')
-  if (embed && embed.length) {
-    props.embed = embed
-  }
-  return props
+    const current_wallet = localStorage.getItem('current_wallet')
+    if (current_wallet) {
+      const mp_current_wallet = localStorage.getItem(`mp_${current_wallet}`)
+      if (!mp_current_wallet?.length) {
+        mixpanel.alias(current_wallet)
+        mixpanel.people.set({ name: current_wallet, wallets })
+        localStorage.setItem(`mp_${current_wallet}`, mixpanel_distinct_id)
+      }
+    }
+    const embed = localStorage.getItem('embed')
+    if (embed && embed.length) {
+      props.embed = embed
+    }
+    mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
+  },
+  track_links: (query: Query, name: string) => {
+    mixpanel.track_links(query, name, {
+      referrer: document.referrer,
+    })
+  },
+  people: {
+    set: (props: Dict) => {
+      mixpanel.people.set(props)
+    },
+  },
 }
 
-export const Mixpanel = ACTIVATE_MIXPANEL
-  ? {
-      identify: (id: string) => {
-        mixpanel.identify(id)
-      },
-      alias: (id: string) => {
-        mixpanel.alias(id)
-      },
-      track: (event_name: string, props?: Dict) => {
-        props = getProps(props)
-        mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
-      },
-      track_links: (query: Query, name: string) => {
-        mixpanel.track_links(query, name, {
-          referrer: document.referrer,
-        })
-      },
-      people: {
-        set: (props: Dict) => {
-          mixpanel.people.set(props)
-        },
-      },
-    }
-  : {
-      identify: (id: string) => {
-        console.log(id)
-      },
-      alias: (id: string) => {
-        console.log(id)
-      },
-      track: (event_name: string, props?: Dict) => {
-        console.log(event_name)
-        console.log(props)
-      },
-      track_links: (query: Query, name: string) => {
-        console.log(query)
-        console.log(name)
-      },
-      people: {
-        set: (props: Dict) => {
-          console.log(props)
-        },
-      },
-    }
+const withoutMixpanel = {
+  identify: (id: string) => {
+    console.log(id)
+  },
+  alias: (id: string) => {
+    console.log(id)
+  },
+  track: (event_name: string, props?: Dict) => {
+    console.log(event_name)
+    console.log(props)
+  },
+  track_links: (query: Query, name: string) => {
+    console.log(query)
+    console.log(name)
+  },
+  people: {
+    set: (props: Dict) => {
+      console.log(props)
+    },
+  },
+}
+
+export const Mixpanel = ACTIVATE_MIXPANEL ? withMixpanel : withoutMixpanel
 
 export const getNodeText = (node) => {
   if (['string', 'number'].includes(typeof node)) return node
