@@ -152,7 +152,7 @@ const ConnectWalletButton = ({
 
   function refreshBadges() {
     if (address)
-      axios.get(`/api/badges?address=${address}`).then((res) => {
+      axios.get(`/api/badges/${address}`).then((res) => {
         const badgeTokenIds = res?.data?.badgeTokenIds
         if (Array.isArray(badgeTokenIds)) {
           const badgesMinted = BADGE_IDS.filter((badgeId) =>

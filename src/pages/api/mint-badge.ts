@@ -100,7 +100,7 @@ export default async function handler(
       }
 
       const userBadges = await axios.get(
-        `${req.headers.origin}/api/badges?address=${address}`
+        `${req.headers.origin}/api/badges/${address}`
       )
       // console.log('userBadges', userBadges?.data?.data)
 
