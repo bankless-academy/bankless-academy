@@ -19,9 +19,7 @@ export const DOMAIN_URL =
     ? `https://${process.env.VERCEL_URL}`
     : `https://${DOMAIN_PROD}`
 
-const imageMeta = `${
-  WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
-}`
+const imageMeta = WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
 
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
@@ -130,3 +128,5 @@ export const DISCLAIMER_ENABLED =
 export const BADGE_ADDRESS = '0x8C3Fb365c9357e8c455aDb5f84219563a97Dcf53'
 
 export const ACTIVE_CHAIN = Mumbai
+
+export const WALLET_SIGNATURE_MESSAGE = 'Signing a message with my wallet to prove I own it so I can claim the lesson badge.'

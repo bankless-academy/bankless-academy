@@ -18,13 +18,17 @@ import {
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount, useNetwork } from 'wagmi'
-import { switchNetwork } from '@wagmi/core'
+import { switchNetwork, signMessage } from '@wagmi/core'
 import { Gear, SealCheck } from '@phosphor-icons/react'
 
 import { useSmallScreen } from 'hooks/index'
 import Passport from 'components/Passport'
 import ExternalLink from 'components/ExternalLink'
-import { BADGE_ADDRESS, LESSONS } from 'constants/index'
+import {
+  BADGE_ADDRESS,
+  LESSONS,
+  WALLET_SIGNATURE_MESSAGE,
+} from 'constants/index'
 import { MINTKUDOS_CHAIN_ID } from 'constants/badges'
 import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
@@ -36,13 +40,13 @@ import { Mumbai } from '@thirdweb-dev/chains'
 const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
   const [isBadgeMintedLS, setIsBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${badgeId}`,
-    false
+    false,
   )
   const [status, setStatus] = useState('')
   const [isMintingInProgress, setIsMintingInProgress] = useState(false)
   const [passportLS, setPassportLS] = useLocalStorage(
     'passport',
-    EMPTY_PASSPORT
+    EMPTY_PASSPORT,
   )
   const [, setRefreshBadgesLS] = useLocalStorage('refreshBadges', false)
 
@@ -75,7 +79,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         .then(function (userBadges) {
           const badgeAlreadyClaimed: boolean =
             userBadges?.data?.badgeTokenIds.find(
-              (badge: number) => badge === badgeId
+              (badge: number) => badge === badgeId,
             ) || false
           if (badgeAlreadyClaimed) {
             setIsBadgeMintedLS(true)
@@ -95,7 +99,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
     // TODO: add 1 min timeout
     if (![1, 10, 137].includes(chain?.id)) {
       const network = Object.values(NETWORKS).find(
-        (network) => network.chainId === MINTKUDOS_CHAIN_ID
+        (network) => network.chainId === MINTKUDOS_CHAIN_ID,
       )
       toast.closeAll()
       if (connector?.name !== 'MetaMask') {
@@ -115,9 +119,13 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
     }
 
     try {
+      const signature = await signMessage({
+        message: WALLET_SIGNATURE_MESSAGE,
+      })
       const bodyParameters = {
         address,
         badgeId,
+        signature: signature,
       }
       setIsMintingInProgress(true)
 

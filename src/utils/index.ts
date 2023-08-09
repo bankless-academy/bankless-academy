@@ -145,8 +145,13 @@ export function verifySignature(
   signature: string,
   message: string
 ): boolean {
-  const signer = recoverPersonalSignature(signature, message)
-  return signer.toLowerCase() === address.toLowerCase()
+  try {
+    const signer = recoverPersonalSignature(signature, message)
+    return signer.toLowerCase() === address.toLowerCase()
+  } catch (error) {
+    console.error(error)
+    return false
+  }
 }
 
 export async function getSignature(
