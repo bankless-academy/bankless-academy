@@ -9,6 +9,7 @@ import {
   useContractWrite,
   useWaitForTransaction,
   useAccount,
+  useNetwork,
 } from 'wagmi'
 import { Gear, SealCheck } from '@phosphor-icons/react'
 
@@ -23,6 +24,7 @@ const CollectEntryButton = ({
 }): JSX.Element => {
   if (!lesson.mirrorNFTAddress) return
   const { address } = useAccount()
+  const { chain } = useNetwork()
   const toast = useToast()
   const [isSmallScreen] = useSmallScreen()
   const [numberMinted, setNumberMinted] = useState('-')
@@ -49,9 +51,10 @@ const CollectEntryButton = ({
     ],
     functionName: 'purchase',
     args: [address, ''],
+    chainId: optimism.id,
+    // 0.01 + 0.00069 in collector fee
+    value: ethers.utils.parseEther('0.01069'),
     overrides: {
-      // 0.01 + 0.00069 in collector fee
-      value: ethers.utils.parseEther('0.01069'),
       gasLimit: ethers.BigNumber.from(150000),
     },
   })
@@ -155,7 +158,7 @@ const CollectEntryButton = ({
           </ExternalLink>
         ) : (
           <Button
-            isDisabled={!write || isLoading}
+            isDisabled={isLoading}
             loadingText="Minting ..."
             variant="primaryGold"
             w="100%"
@@ -164,8 +167,10 @@ const CollectEntryButton = ({
                 if (parseInt(numberMinted) >= 100) {
                   openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
                 } else {
-                  await switchNetwork({ chainId: optimism.id })
-                  write()
+                  if (chain.id !== optimism.id) {
+                    await switchNetwork({ chainId: optimism.id })
+                  }
+                  write?.()
                 }
               } else alert('try again in 2 seconds')
             }}
