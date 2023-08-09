@@ -53,6 +53,7 @@
     "dotenv": "^16.3.1",
     "ethereum-blockies-base64": "^1.0.2",
     "ethereumjs-util": "^7.1.5",
+    "ethers": "^5.7",
     "framer-motion": "^10.15.1",
     "highlight.js": "^11.8.0",
     "iron-session": "^6.3.1",
