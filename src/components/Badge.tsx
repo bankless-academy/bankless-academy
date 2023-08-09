@@ -1,11 +1,10 @@
 import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
-import { useAccount } from 'wagmi'
 
 import { LessonType } from 'entities/lesson'
 import MintKudos from 'components/MintKudos'
 import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL } from 'constants/index'
-import { MINTKUDOS_URL, MINTKUDOS_OPENSEA_URL } from 'constants/kudos'
+import { MINTKUDOS_OPENSEA_URL } from 'constants/kudos'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
@@ -32,7 +31,6 @@ const Badge = ({
   lesson: LessonType
   isQuestCompleted: boolean
 }): JSX.Element => {
-  const { address } = useAccount()
   const [isKudosMintedLS] = useLocalStorage(
     `isKudosMinted-${lesson.kudosId}`,
     false
@@ -45,7 +43,10 @@ ${
   IS_WHITELABEL
     ? `
 Go claim yours here 👇 ${DOMAIN_URL}/lessons/${lesson.slug}`
-    : `${MINTKUDOS_URL}profile/${address}?tab=Received&tokenId=${lesson.kudosId}
+    : `
+${DOMAIN_URL}/lessons/${lesson.slug}
+Go claim yours here 👆
+https://opensea.io/assets/matic/0x60576a64851c5b42e8c57e3e4a5cf3cf4eeb2ed6/${lesson.kudosId}
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 }`
