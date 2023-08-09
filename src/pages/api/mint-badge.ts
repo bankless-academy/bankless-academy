@@ -117,6 +117,7 @@ export default async function handler(
         try {
           // generate signature
           const sdk = await ThirdwebSDK.fromWallet(pkeyWallet, ACTIVE_CHAIN)
+          console.log(sdk.getSigner())
           const contract = await sdk.getContract(BADGE_ADDRESS)
           // Authorized to mint, generate signature
           const mintingSignature =

@@ -125,6 +125,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
       const result = await api('/api/mint-badge', bodyParameters)
       if (result && result.status === 200 && result.data.signature) {
         console.log(result.data.signature)
+        console.log(contract)
         const res = await contract.erc1155.signature.mint(result.data.signature)
         toast.closeAll()
         toast({

@@ -95,10 +95,6 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                   },
                 }}
                 activeChain={ACTIVE_CHAIN}
-                authConfig={{
-                  domain: 'thirdweb-preview.com',
-                  authUrl: '/api/auth',
-                }}
               >
                 <MintBadge badgeId={lesson.badgeId} />
               </ThirdwebProvider>
