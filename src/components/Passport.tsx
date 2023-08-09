@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Text, Button, Image, useToast } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
@@ -22,6 +22,10 @@ const PassportComponent = ({
   const [isLoading, setIsLoading] = useState(false)
   const toast = useToast()
   const { address } = useAccount()
+
+  useEffect(() => {
+    checkPassport()
+  }, [])
 
   async function checkPassport() {
     setIsLoading(true)
