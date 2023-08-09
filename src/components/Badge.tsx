@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { ThirdwebProvider } from '@thirdweb-dev/react'
@@ -75,6 +76,8 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     )
   }
 
+  console.log(walletClient)
+
   return (
     <>
       <Box textAlign="center" mb="40px">
@@ -87,6 +90,9 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             </Box>
           ) : (
             <Box position="relative">
+              {/* https://docs-gasless.biconomy.io/products/enable-gasless-transactions/gasless-sdk-eoa-3 */}
+              {/* https://github.com/bcnmy/mexa-sdk */}
+              {/* TODO: move relayer to backend? */}
               <ThirdwebProvider
                 signer={walletClient as any}
                 sdkOptions={{
