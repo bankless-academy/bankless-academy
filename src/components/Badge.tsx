@@ -14,6 +14,7 @@ import { BADGE_OPENSEA_URL } from 'constants/badges'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
+import { ethers } from 'ethers'
 
 const BadgeHelper = (
   <Helper
@@ -86,6 +87,9 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           ) : (
             <Box position="relative">
               <ThirdwebProvider
+                signer={new ethers.providers.Web3Provider(
+                  window.ethereum
+                ).getSigner()}
                 sdkOptions={{
                   gasless: {
                     biconomy: {
