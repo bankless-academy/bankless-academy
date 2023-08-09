@@ -79,6 +79,7 @@ const CollectiblesHelper = (
 export const openLesson = async (
   openedLesson: string,
   lesson: LessonType,
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   toast: any,
   address?: string
 ): Promise<string> => {
