@@ -80,6 +80,7 @@
     "siwe": "^1.1.6",
     "stringify-object": "^3.3.0",
     "usehooks-ts": "^2.7.1",
+    "viem": "^1.5.4",
     "wagmi": "^1.3.9"
   },
   "devDependencies": {

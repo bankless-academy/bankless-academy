@@ -1,6 +1,5 @@
 import { Box, Button, Tooltip, useToast } from '@chakra-ui/react'
 import { LessonType } from 'entities/lesson'
-import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import { switchNetwork } from '@wagmi/core'
 import { optimism } from 'wagmi/chains'
@@ -16,6 +15,7 @@ import { Gear, SealCheck } from '@phosphor-icons/react'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks'
 import { getArticlesCollectors } from 'utils'
+import { parseEther } from 'viem'
 
 const CollectEntryButton = ({
   lesson,
@@ -53,9 +53,9 @@ const CollectEntryButton = ({
     args: [address, ''],
     chainId: optimism.id,
     // 0.01 + 0.00069 in collector fee
-    value: ethers.utils.parseEther('0.01069'),
+    value: parseEther('0.01069'),
     overrides: {
-      gasLimit: ethers.BigNumber.from(150000),
+      gasLimit: 150000n,
     },
   })
   const { data, write } = useContractWrite(config)
