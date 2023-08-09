@@ -98,6 +98,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     },
                   },
                 }}
+                clientId="63f601d05844f3b37b8edbfd475a3ebd"
                 activeChain={ACTIVE_CHAIN}
               >
                 <MintBadge badgeId={lesson.badgeId} />
