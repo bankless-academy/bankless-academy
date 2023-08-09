@@ -2,6 +2,8 @@ import { Box, Button, Tooltip, useToast } from '@chakra-ui/react'
 import { LessonType } from 'entities/lesson'
 import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
+import { switchNetwork } from '@wagmi/core'
+import { optimism } from 'wagmi/chains'
 import {
   usePrepareContractWrite,
   useContractWrite,
@@ -157,13 +159,16 @@ const CollectEntryButton = ({
             loadingText="Minting ..."
             variant="primaryGold"
             w="100%"
-            onClick={() =>
-              numberMinted !== '-'
-                ? parseInt(numberMinted) >= 100
-                  ? openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
-                  : write()
-                : alert('try again in 2 seconds')
-            }
+            onClick={async () => {
+              if (numberMinted !== '-') {
+                if (parseInt(numberMinted) >= 100) {
+                  openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
+                } else {
+                  await switchNetwork({ chainId: optimism.id })
+                  write()
+                }
+              } else alert('try again in 2 seconds')
+            }}
           >
             Collect Entry
           </Button>
