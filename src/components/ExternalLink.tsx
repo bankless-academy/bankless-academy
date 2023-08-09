@@ -1,4 +1,4 @@
-import NextLink, { LinkProps } from 'next/link'
+import { LinkProps } from 'next/link'
 import {
   Link as ChakraLink,
   LinkProps as ChakraLinkProps,
@@ -28,20 +28,19 @@ const ExternalLink = ({
         }
       : {}
   return (
-    <NextLink href={href} passHref>
-      <ChakraLink
-        {...props}
-        {...whiteProps}
-        isExternal
-        onClick={() => {
-          const link = href || 'NO_LINK'
-          const name = alt || getNodeText(children) || 'NO_NAME'
-          Mixpanel.track('click_external_link', { link, name })
-        }}
-      >
-        {children}
-      </ChakraLink>
-    </NextLink>
+    <ChakraLink
+      href={href}
+      {...props}
+      {...whiteProps}
+      isExternal="true"
+      onClick={() => {
+        const link = href || 'NO_LINK'
+        const name = alt || getNodeText(children) || 'NO_NAME'
+        Mixpanel.track('click_external_link', { link, name })
+      }}
+    >
+      {children}
+    </ChakraLink>
   )
 }
 
