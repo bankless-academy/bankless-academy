@@ -66,7 +66,7 @@ export default async function handler(
     ) {
       questStatus = 'badge already claimed'
       console.log(questStatus)
-      return res.status(200).json({ status: questStatus })
+      return res.status(403).json({ status: questStatus })
     } else {
       // Sybil check with Academy Passport
       const result = await api(`${req.headers.origin}/api/passport`, {
@@ -105,7 +105,7 @@ export default async function handler(
         // console.log(`updated missing credential_claimed_at`, updated)
         questStatus = 'badge already claimed'
         console.log(questStatus)
-        return res.status(200).json({ status: questStatus })
+        return res.status(403).json({ status: questStatus })
       } else {
         const [{ adminSignature }] = await db(TABLES.credentials)
           .select('signature as adminSignature')

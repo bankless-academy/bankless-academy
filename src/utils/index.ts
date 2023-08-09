@@ -10,7 +10,7 @@ import { Network } from '@ethersproject/networks'
 import queryString from 'query-string'
 import mixpanel, { Dict, Query } from 'mixpanel-browser'
 import { readContract } from '@wagmi/core'
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 
 import {
   ACTIVATE_MIXPANEL,
@@ -378,36 +378,43 @@ export const getNodeText = (node) => {
   if (typeof node === 'object' && node) return getNodeText(node.props.children)
 }
 
-export async function api(url: string, data: any): Promise<AxiosResponse> {
+export async function api(
+  url: string,
+  data: any
+): Promise<{ data: any; status: number }> {
   const wrong = {
-    data: {
-      error: 'API error',
-    },
+    data: {},
     status: 500,
-    statusText: 'KO',
-    headers: {},
-    config: {},
-    request: {},
   }
-  try {
-    const embed =
-      typeof localStorage !== 'undefined' ? localStorage.getItem('embed') : null
-    if (embed && embed.length) {
-      data.embed = embed
-    }
-    const result = await axios.post(url, data)
-    if (result && result.status !== 200) {
-      console.log('error API', result)
-      return result
-    } else if (result?.data) {
-      return result
-    } else {
-      return wrong
-    }
-  } catch (error) {
+  const embed =
+    typeof localStorage !== 'undefined' ? localStorage.getItem('embed') : null
+  if (embed && embed.length) {
+    data.embed = embed
+  }
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+
+  if (!response.ok) {
+    const error = `An error occured: ${response.status}`
     console.error(error)
+    if (response.status !== 500) {
+      const d = await response.json()
+      wrong.data = d
+      wrong.status = response.status
+    } else {
+      wrong.data = { status: 'API error' }
+    }
     return wrong
   }
+  const d = await response.json()
+  const r = { status: response.status, data: d }
+  console.log('API OK', r)
+  return r
 }
 
 export async function getArticlesCollected(address: string): Promise<string[]> {

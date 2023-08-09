@@ -52,6 +52,7 @@ export const MINTKUDOS_COMMUNITY_ADMIN =
 export const BADGES_ALLOWED_SIGNERS = [
   // didierkrux.eth
   '0xbd19a3f0a9cace18513a1e2863d648d13975cb30'.toLowerCase(),
+  '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
   MINTKUDOS_COMMUNITY_ADMIN.toLowerCase(),
 ]
 
