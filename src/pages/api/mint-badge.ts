@@ -17,8 +17,6 @@ import { BADGES_ALLOWED_SIGNERS } from 'constants/badges'
 import { api, verifySignature } from 'utils'
 import { trackBE } from 'utils/mixpanel'
 
-const pkeyWallet = new PrivateKeyWallet(process.env.PRIVATE_KEY)
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -122,6 +120,7 @@ export default async function handler(
         if (!adminSignature)
           return res.status(403).json({ error: 'signature not found' })
 
+        const pkeyWallet = new PrivateKeyWallet(process.env.PRIVATE_KEY)
         try {
           // generate signature
           const sdk = await ThirdwebSDK.fromWallet(pkeyWallet, ACTIVE_CHAIN)
