@@ -10903,10 +10903,10 @@ react-focus-lock@^2.9.4:
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
 
-react-hotjar@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/react-hotjar/-/react-hotjar-3.0.1.tgz#7917b57223d37f9ce3bf4638e5f83c5bc46e5e06"
-  integrity sha512-3ZiZQhbsisJkK+iUlPVVTa7hUJXVQ/o/3+Bzocpjb2+of8lMh7uiDXLsSKxD6T4J3JR9sZ+L3v9CYyUgrp1R8g==
+react-hotjar@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/react-hotjar/-/react-hotjar-6.1.0.tgz#910dd5d002f5043a6f34ae7ada545b2aace1edae"
+  integrity sha512-V1UJixDMspAIrbGIFG282U7mH2aK1JBid0YR8F9oscb6lTkjMga+gst2gesxJDsqsax+k+lM1LqRXYzmUu8izA==
 
 react-hotkeys-hook@^3.0.3:
   version "3.4.7"
