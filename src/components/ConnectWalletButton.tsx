@@ -135,8 +135,7 @@ const ConnectWalletButton = ({
       if (ensName) {
         setName(ensName)
         const ensAvatar = await fetchEnsAvatar({
-          address,
-          // name: ensName,
+          name: ensName,
           chainId: 1,
         })
         if (ensAvatar) setAvatar(ensAvatar)
