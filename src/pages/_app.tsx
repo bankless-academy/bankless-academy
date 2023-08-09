@@ -187,7 +187,7 @@ const App = ({
 
           <Overlay hidden={!isOpen} />
           <Web3Modal
-            projectId={process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID}
+            projectId={projectId}
             ethereumClient={ethereumClient}
             themeMode="dark"
             themeVariables={{
