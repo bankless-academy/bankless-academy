@@ -11,9 +11,10 @@ import {
   GENERIC_ERROR_MESSAGE,
   BADGE_ADDRESS,
   ACTIVE_CHAIN,
+  WALLET_SIGNATURE_MESSAGE,
 } from 'constants/index'
 import { BADGES_ALLOWED_SIGNERS } from 'constants/badges'
-import { api } from 'utils'
+import { api, verifySignature } from 'utils'
 import { trackBE } from 'utils/mixpanel'
 
 const pkeyWallet = new PrivateKeyWallet(process.env.PRIVATE_KEY)
@@ -23,14 +24,21 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   // check params + signature
-  const { address, badgeId, embed } = req.body
+  const { address, badgeId, embed, signature } = req.body
   // console.log(req)
   if (!address || !badgeId)
     return res.status(400).json({ error: 'Wrong params' })
 
+
   console.log('address: ', address)
   console.log('badgeId: ', badgeId)
-  // console.log('signature: ', signature)
+  console.log('signature: ', signature)
+
+  if (!signature)
+    return res.status(400).json({ error: 'Missing wallet signature' })
+
+  if (!verifySignature(address, signature, WALLET_SIGNATURE_MESSAGE))
+    return res.status(403).json({ error: 'Wrong signature' })
 
   const message = { tokenId: badgeId }
   console.log('message: ', message)
