@@ -1,6 +1,7 @@
 import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { ThirdwebProvider } from '@thirdweb-dev/react'
+import { useWalletClient } from 'wagmi'
 
 import { LessonType } from 'entities/lesson'
 import MintBadge from 'components/MintBadge'
@@ -14,7 +15,6 @@ import { BADGE_OPENSEA_URL } from 'constants/badges'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
-import { ethers } from 'ethers'
 
 const BadgeHelper = (
   <Helper
@@ -42,6 +42,7 @@ const Badge = ({
     `isBadgeMinted-${lesson.badgeId}`,
     false,
   )
+  const { data: walletClient } = useWalletClient()
 
   const share = `I've just claimed my "${
     lesson.name
@@ -87,9 +88,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           ) : (
             <Box position="relative">
               <ThirdwebProvider
-                signer={new ethers.providers.Web3Provider(
-                  window.ethereum,
-                ).getSigner()}
+                signer={walletClient as any}
                 sdkOptions={{
                   gasless: {
                     biconomy: {
