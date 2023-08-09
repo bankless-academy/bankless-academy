@@ -9,6 +9,7 @@ import {
   useContractWrite,
   useWaitForTransaction,
   useAccount,
+  useNetwork,
 } from 'wagmi'
 import { Gear, SealCheck } from '@phosphor-icons/react'
 
@@ -23,6 +24,7 @@ const CollectEntryButton = ({
 }): JSX.Element => {
   if (!lesson.mirrorNFTAddress) return
   const { address } = useAccount()
+  const { chain } = useNetwork()
   const toast = useToast()
   const [isSmallScreen] = useSmallScreen()
   const [numberMinted, setNumberMinted] = useState('-')
@@ -164,8 +166,10 @@ const CollectEntryButton = ({
                 if (parseInt(numberMinted) >= 100) {
                   openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
                 } else {
-                  await switchNetwork({ chainId: optimism.id })
-                  write()
+                  if (chain.id !== optimism.id) {
+                    await switchNetwork({ chainId: optimism.id })
+                  }
+                  write?.()
                 }
               } else alert('try again in 2 seconds')
             }}
