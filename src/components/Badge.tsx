@@ -40,7 +40,7 @@ const Badge = ({
 }): JSX.Element => {
   const [isBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${lesson.badgeId}`,
-    false
+    false,
   )
 
   const share = `I've just claimed my "${
@@ -55,7 +55,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 }`
 
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-    share
+    share,
   )}`
 
   if (!isQuestCompleted && !isBadgeMintedLS) {
@@ -88,7 +88,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             <Box position="relative">
               <ThirdwebProvider
                 signer={new ethers.providers.Web3Provider(
-                  window.ethereum
+                  window.ethereum,
                 ).getSigner()}
                 sdkOptions={{
                   gasless: {
