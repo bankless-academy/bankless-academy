@@ -24,29 +24,24 @@ import { Gear, SealCheck } from '@phosphor-icons/react'
 import { useSmallScreen } from 'hooks/index'
 import Passport from 'components/Passport'
 import ExternalLink from 'components/ExternalLink'
-import {
-  BADGE_ADDRESS,
-  LESSONS,
-  WALLET_SIGNATURE_MESSAGE,
-} from 'constants/index'
+import { LESSONS, WALLET_SIGNATURE_MESSAGE } from 'constants/index'
 import { MINTKUDOS_CHAIN_ID } from 'constants/badges'
 import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { theme } from 'theme/index'
 import { api } from 'utils'
-import { useContract } from '@thirdweb-dev/react'
 import { Mumbai } from '@thirdweb-dev/chains'
 
 const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
   const [isBadgeMintedLS, setIsBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${badgeId}`,
-    false,
+    false
   )
   const [status, setStatus] = useState('')
   const [isMintingInProgress, setIsMintingInProgress] = useState(false)
   const [passportLS, setPassportLS] = useLocalStorage(
     'passport',
-    EMPTY_PASSPORT,
+    EMPTY_PASSPORT
   )
   const [, setRefreshBadgesLS] = useLocalStorage('refreshBadges', false)
 
@@ -54,7 +49,6 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
   const { chain } = useNetwork()
   const toast = useToast()
   const [isSmallScreen] = useSmallScreen()
-  const { contract } = useContract(BADGE_ADDRESS)
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -79,7 +73,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         .then(function (userBadges) {
           const badgeAlreadyClaimed: boolean =
             userBadges?.data?.badgeTokenIds.find(
-              (badge: number) => badge === badgeId,
+              (badge: number) => badge === badgeId
             ) || false
           if (badgeAlreadyClaimed) {
             setIsBadgeMintedLS(true)
@@ -97,9 +91,9 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
     if (status !== '') return
     setStatus('Minting in progress ...')
     // TODO: add 1 min timeout
-    if (![1, 10, 137].includes(chain?.id)) {
+    if (![1, 10, 137, Mumbai.chainId].includes(chain?.id)) {
       const network = Object.values(NETWORKS).find(
-        (network) => network.chainId === MINTKUDOS_CHAIN_ID,
+        (network) => network.chainId === MINTKUDOS_CHAIN_ID
       )
       toast.closeAll()
       if (connector?.name !== 'MetaMask') {
@@ -129,40 +123,36 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
       }
       setIsMintingInProgress(true)
 
-      // Contact API to check eligibility and get signature
-      const result = await api('/api/mint-badge', bodyParameters)
-      if (result && result.status === 200 && result.data.signature) {
-        console.log(result.data.signature)
-        console.log(contract)
-        const res = await contract.erc1155.signature.mint(result.data.signature)
-        toast.closeAll()
-        toast({
-          description: (
-            <>
-              <Box>
-                <Box display="flex">
-                  <Box mr="4">
-                    <Gear width="40px" height="auto" />
-                  </Box>
-                  <Box flexDirection="column">
-                    <Box>Minting in progress</Box>
-                  </Box>
+      toast.closeAll()
+      toast({
+        description: (
+          <>
+            <Box>
+              <Box display="flex">
+                <Box mr="4">
+                  <Gear width="40px" height="auto" />
+                </Box>
+                <Box flexDirection="column">
+                  <Box>Minting in progress</Box>
+                  <Image src="/images/countdown.gif" alt="Countdown" />
                 </Box>
               </Box>
-            </>
-          ),
-          status: 'warning',
-          duration: null,
-          isClosable: true,
-        })
-        console.log(res)
-        const txLink = `${Mumbai.explorers[0].url}/tx/${res.receipt.transactionHash}`
-        // await followOperation(result.data.location)
+            </Box>
+          </>
+        ),
+        status: 'warning',
+        duration: null,
+        isClosable: true,
+      })
+      const result = await api('/api/mint-badge', bodyParameters)
+      if (result && result.status === 200 && result.data.transactionHash) {
+        console.log(result.data.transactionHash)
+        const txLink = `${Mumbai.explorers[0].url}/tx/${result.data.transactionHash}`
+        // Refresh list of Badges in the wallet
         setRefreshBadgesLS(true)
         setIsBadgeMintedLS(true)
         toast.closeAll()
         // TODO: add 🎊
-        // TODO: refresh list of Badges in the wallet
         toast({
           description: (
             <>
