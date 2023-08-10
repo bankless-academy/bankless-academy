@@ -122,9 +122,17 @@ export default async function handler(
 
         const pkeyWallet = new PrivateKeyWallet(process.env.PRIVATE_KEY)
         try {
+          // TODO: save signature in DB + check if already generated
           // generate signature
-          const sdk = await ThirdwebSDK.fromWallet(pkeyWallet, ACTIVE_CHAIN)
-          console.log(sdk.getSigner())
+          const sdk = await ThirdwebSDK.fromWallet(pkeyWallet, ACTIVE_CHAIN, {
+            gasless: {
+              biconomy: {
+                apiKey: 'rgzMlYU1Q.b1aa8fd0-ce03-41ec-b6d6-b52cf22995c9',
+                apiId: 'c15387fc-357c-4995-909a-3dda0892e64c',
+              },
+            },
+          })
+          // console.log(sdk)
           const contract = await sdk.getContract(BADGE_ADDRESS)
           // Authorized to mint, generate signature
           const mintingSignature =
@@ -133,11 +141,22 @@ export default async function handler(
               to: address.toLowerCase(),
               quantity: 1,
             })
-          // TODO: save signature in DB + check if already generated
-          return res.status(200).json({
-            signature: mintingSignature,
-            status: questStatus,
-          })
+
+          const mint = await contract.erc1155.signature.mint(mintingSignature)
+
+          if (mint.receipt.status === 1) {
+            return res.status(200).json({
+              transactionHash: mint.receipt.transactionHash,
+              status: questStatus,
+            })
+          } else {
+            console.log(mint)
+            questStatus = 'problem while minting'
+            return res.status(200).json({
+              status: questStatus,
+            })
+          }
+
         } catch (error) {
           console.error(error?.response?.data)
           trackBE(address, 'mint_kudos_issue', {
