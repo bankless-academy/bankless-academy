@@ -108,9 +108,9 @@ const App = ({
                   margin-bottom: 81px !important;
                 }
                 /* HACK: custom toast */
-                .css-hdx5ch,
-                .css-19os7cz,
-                .css-12sfbjg {
+                .css-qret8q,
+                .css-zqqgfp,
+                .css-mu48c4 {
                   color: white !important;
                   border-radius: 15px !important;
                   a {
@@ -120,7 +120,7 @@ const App = ({
                   }
                 }
                 /* success toast */
-                .css-hdx5ch {
+                .css-qret8q {
                   background: linear-gradient(
                     180deg,
                     #429683,
@@ -129,7 +129,7 @@ const App = ({
                   border: 2px solid #a4d7cb !important;
                 }
                 /* warning toast */
-                .css-19os7cz {
+                .css-zqqgfp {
                   background: linear-gradient(
                     180deg,
                     #e7b283,
@@ -138,7 +138,7 @@ const App = ({
                   border: 2px solid #ffe0bb !important;
                 }
                 /* error toast */
-                .css-12sfbjg {
+                .css-mu48c4 {
                   background: linear-gradient(
                     180deg,
                     #fe7a7a,
@@ -147,7 +147,7 @@ const App = ({
                   border: 2px solid #f5a98d !important;
                 }
                 /* hide toast status logo */
-                .css-4hbvqh {
+                .css-14ogjxt {
                   display: none !important;
                 }
                 /* menu + popover styling */
