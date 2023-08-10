@@ -74,6 +74,11 @@ const LessonDetail = ({
   const hasLessonGating =
     TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
 
+  const lang =
+    typeof window !== 'undefined' && window.location.search.length
+      ? window.location.search.replace('?lang=', '')
+      : 'en'
+
   return (
     <>
       {JSON.parse(openLessonLS)?.includes(lesson.slug) ? (
@@ -140,6 +145,31 @@ const LessonDetail = ({
               >
                 {lesson.name}
               </Text>
+              {lesson.languages?.length ? (
+                <Box textAlign="center">
+                  <InternalLink
+                    href={`/lessons/${lesson.slug}`}
+                    alt={lesson.name}
+                    ml={3}
+                  >
+                    <Button variant={lang === 'en' ? 'solid' : 'outline'}>
+                      🇺🇸
+                    </Button>
+                  </InternalLink>
+                  {lesson.languages.map((l, k) => (
+                    <InternalLink
+                      href={`/lessons/${lesson.slug}?lang=${l}`}
+                      alt={lesson.name}
+                      key={`lang-${k}`}
+                      ml={3}
+                    >
+                      <Button variant={lang === 'es' ? 'solid' : 'outline'}>
+                        {l === 'es' && '🇪🇸'}
+                      </Button>
+                    </InternalLink>
+                  ))}
+                </Box>
+              ) : null}
               <Box
                 display="flex"
                 mt="4"

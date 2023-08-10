@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { Container } from '@chakra-ui/react'
@@ -8,6 +9,8 @@ import Article from 'components/Article'
 import { DEFAULT_METADATA, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
+import { useEffect, useState } from 'react'
+import { markdown } from 'utils/markdown'
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const currentLesson = LESSONS.find(
@@ -34,12 +37,97 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const LessonPage = (): JSX.Element => {
   const { asPath } = useRouter()
+  const router = useRouter()
   const [path] = asPath.split('?')
   const [isSmallScreen] = useSmallScreen()
+  const [englishContent, setEnglishContent] = useState([])
+  const [name, setName] = useState('')
+  const [description, setDescription] = useState('')
+  const { lang } = router.query
 
   const currentLesson = LESSONS.find(
     (lesson: LessonType) => `/lessons/${lesson.slug}` === path
   )
+
+  const SPLIT = `\`\`\`
+<< LESSON START >>
+\`\`\``
+
+  useEffect((): void => {
+    if (lang?.length && typeof lang === 'string') {
+      if (currentLesson.languages.includes(lang as any)) {
+        if (englishContent.length === 0) {
+          setEnglishContent(JSON.parse(JSON.stringify(currentLesson.slides)))
+          setName(currentLesson.name)
+          setDescription(currentLesson.description)
+        }
+
+        console.log(lang)
+        // console.log(englishContent)
+        try {
+          fetch(
+            `https://bankless-academy-git-l10nmain-bankless-academy.vercel.app/lesson/${lang}/${currentLesson.slug}.md`
+          )
+            .then((response) => response.text())
+            .then(async (md) => {
+              // console.log('md', md)
+              if (md[0] !== '<') {
+                // eslint-disable-next-line no-unsafe-optional-chaining
+                const [intro, content] = md?.split(SPLIT)
+                // console.log(intro)
+                const [, infos] = intro.split('---')
+                // console.log(infos)
+                const [, title] = infos.split('\n')
+                // console.log(title)
+                currentLesson.name = title.replace('LESSON TITLE: ', '')
+                currentLesson.description =
+                  'Aprende sobre la arquitectura fundamental de la tecnología de cadena de bloques (blockchain).'
+                console.log(content)
+                const slides = content.split('# ')
+                slides.shift()
+                // console.log(slides)
+                for (let i = 0; i < currentLesson.slides.length - 1; i++) {
+                  console.log(i)
+                  const [slide_title, slide_content, quizzes] = slides[i].split(
+                    '\n\n',
+                    3
+                  )
+                  // console.log(slide_title)
+                  // console.log(slide_content)
+                  // console.log(quizzes)
+                  currentLesson.slides[i].title = slide_title
+                  if (currentLesson.slides[i].type === 'LEARN') {
+                    const rendered = await markdown.render(slide_content)
+                    currentLesson.slides[i].content = currentLesson.slides[
+                      i
+                    ].content.replace(
+                      /<div class="bloc1">.*?<\/div>/s,
+                      `<div class="bloc1">${rendered}</div>`
+                    )
+                  }
+                  if (currentLesson.slides[i].type === 'QUIZ') {
+                    currentLesson.slides[i].quiz.question = slide_content
+                    quizzes.split('\n').map((quiz, j) => {
+                      const q = quiz.replace('- [ ] ', '').trim()
+                      if (q.length) currentLesson.slides[i].quiz.answers[j] = q
+                    })
+                  }
+                }
+              }
+            })
+        } catch (error) {
+          console.error(error)
+        }
+      }
+    } else {
+      // console.log('reset', englishContent)
+      if (englishContent.length) {
+        currentLesson.slides = JSON.parse(JSON.stringify(englishContent))
+        currentLesson.name = name
+        currentLesson.description = description
+      }
+    }
+  }, [lang, englishContent])
 
   if (!currentLesson) {
     // force redirect to lesson select if lesson is not found

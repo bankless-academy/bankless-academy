@@ -129,6 +129,7 @@ const KEY_MATCHING = {
   Difficulty: 'difficulty',
   Description: 'description',
   Name: 'name',
+  'Languages': 'languages',
   Module: 'moduleId',
   Quest: 'quest',
   'Publication status': 'publicationStatus',
@@ -193,6 +194,7 @@ const download_image = (url, image_path) =>
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((notionRows) => {
+    console.log('Notion DB link: ', `${POTION_API}/table?id=${NOTION_ID}`)
     const lessons = []
     if (IS_WHITELABEL && !fs.existsSync(`public/${PROJECT_DIR}lesson`)) {
       // create image directory dynamically in case it doesn't exist yet
@@ -209,7 +211,7 @@ axios
             // transform to number if the string contains a number
             [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k])) ||
               // ignore type transform for ModuleId & mirrorNFTAddress
-              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible mint ID' || k === 'Lesson collectible token address' || k === 'Sponsor Name')
+              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible mint ID' || k === 'Lesson collectible token address' || k === 'Sponsor Name' || k === 'Languages')
               ? notion.fields[k]
               : parseInt(notion.fields[k]),
           }),
@@ -237,9 +239,8 @@ axios
       if (lesson.isCommentsEnabled === undefined) lesson.isCommentsEnabled = false
       if (lesson.endOfLessonRedirect === undefined) lesson.endOfLessonRedirect = null
       if (lesson.moduleId === undefined) delete lesson.moduleId
-      else {
-        lesson.moduleId = lesson.moduleId[0]
-      }
+      else lesson.moduleId = lesson.moduleId[0]
+      if (lesson.languages === undefined) delete lesson.languages
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
       if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
       if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
