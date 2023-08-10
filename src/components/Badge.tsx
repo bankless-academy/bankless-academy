@@ -1,17 +1,10 @@
 /* eslint-disable no-console */
 import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
-import { ThirdwebProvider } from '@thirdweb-dev/react'
-import { useWalletClient } from 'wagmi'
 
 import { LessonType } from 'entities/lesson'
 import MintBadge from 'components/MintBadge'
-import {
-  IS_WHITELABEL,
-  TWITTER_ACCOUNT,
-  DOMAIN_URL,
-  ACTIVE_CHAIN,
-} from 'constants/index'
+import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL } from 'constants/index'
 import { BADGE_OPENSEA_URL } from 'constants/badges'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
@@ -41,10 +34,8 @@ const Badge = ({
 }): JSX.Element => {
   const [isBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${lesson.badgeId}`,
-    false,
+    false
   )
-  const { data: walletClient } = useWalletClient()
-
   const share = `I've just claimed my "${
     lesson.name
   }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
@@ -57,7 +48,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 }`
 
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-    share,
+    share
   )}`
 
   if (!isQuestCompleted && !isBadgeMintedLS) {
@@ -76,8 +67,6 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     )
   }
 
-  console.log(walletClient)
-
   return (
     <>
       <Box textAlign="center" mb="40px">
@@ -90,24 +79,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             </Box>
           ) : (
             <Box position="relative">
-              {/* https://docs-gasless.biconomy.io/products/enable-gasless-transactions/gasless-sdk-eoa-3 */}
-              {/* https://github.com/bcnmy/mexa-sdk */}
-              {/* TODO: move relayer to backend? */}
-              <ThirdwebProvider
-                signer={walletClient as any}
-                sdkOptions={{
-                  gasless: {
-                    biconomy: {
-                      apiKey: 'rgzMlYU1Q.b1aa8fd0-ce03-41ec-b6d6-b52cf22995c9',
-                      apiId: 'c15387fc-357c-4995-909a-3dda0892e64c',
-                    },
-                  },
-                }}
-                clientId="63f601d05844f3b37b8edbfd475a3ebd"
-                activeChain={ACTIVE_CHAIN}
-              >
-                <MintBadge badgeId={lesson.badgeId} />
-              </ThirdwebProvider>
+              <MintBadge badgeId={lesson.badgeId} />
               {BadgeHelper}
             </Box>
           )}
