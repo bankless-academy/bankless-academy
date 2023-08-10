@@ -24,7 +24,8 @@ export const MINTKUDOS_EXPLORER = IS_MINTKUDOS_SANDBOX
 
 export const BADGE_OPENSEA_URL = IS_MINTKUDOS_SANDBOX
   ? `https://testnets.opensea.io/assets/mumbai/${BADGE_ADDRESS}/`
-  : `https://opensea.io/assets/matic/${BADGE_ADDRESS}/`
+  // TODO: roll back to mainnet when shipping to prod
+  : `https://testnets.opensea.io/assets/mumbai/${BADGE_ADDRESS}/`
 
 export const MINTKUDOS_CHAIN_ID = IS_MINTKUDOS_SANDBOX ? 80001 : 137
 
