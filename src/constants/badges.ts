@@ -54,6 +54,8 @@ export const BADGES_ALLOWED_SIGNERS = [
   // didierkrux.eth
   '0xbd19a3f0a9cace18513a1e2863d648d13975cb30'.toLowerCase(),
   '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
+  '0xB30dD1198Feed1e22EC969f61EEd04cB75937adf'.toLowerCase(),
+  '0xb749A586080436e616f097f193Ba9CB6A25E7Ea6'.toLowerCase(),
   MINTKUDOS_COMMUNITY_ADMIN.toLowerCase(),
 ]
 
