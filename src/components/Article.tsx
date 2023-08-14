@@ -302,6 +302,11 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       -webkit-text-stroke-width: 0px;
       padding: 0;
     }
+    ul {
+      margin-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   hr {
     align-items: center;
