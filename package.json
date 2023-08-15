@@ -39,6 +39,7 @@
     "@ensdomains/ensjs": "^2.0.1",
     "@gitcoinco/passport-sdk-reader": "^0.1.4",
     "@notionhq/client": "^2.2.5",
+    "@openzeppelin/contracts-upgradeable": "^4.9.3",
     "@phosphor-icons/react": "^2.0.8",
     "@sendgrid/client": "^7.7.0",
     "@thirdweb-dev/auth": "^3.2.27",
