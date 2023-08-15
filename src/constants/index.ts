@@ -125,7 +125,7 @@ export const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED === 'true' || false
 export const DISCLAIMER_ENABLED =
   process.env.NEXT_PUBLIC_DISCLAIMER_ENABLED === 'true' || false
 
-export const BADGE_ADDRESS = '0x8C3Fb365c9357e8c455aDb5f84219563a97Dcf53'
+export const BADGE_ADDRESS = '0xd66Aff78E0351D84fE8111daa1a48D35B139416b'
 
 export const ACTIVE_CHAIN = Mumbai
 
