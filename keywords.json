@@ -80,6 +80,9 @@
   "consensus": {
     "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
   },
+  "counterparty risk": {
+    "definition": "The risk that another party may not fulfil its part in an agreement."
+  },
   "custodial wallet": {
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
   },
@@ -112,6 +115,9 @@
   },
   "epoch": {
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
+  },
+  "erc20": {
+    "definition": "A standard for transferable tokens on Ethereum."
   },
   "ethereum virtual machine": {
     "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network."
@@ -182,6 +188,9 @@
   "lp": {
     "definition": "Liquidity Provider: Blockchain users who loan their tokens to protocols in exchange for a share in fees."
   },
+  "market cap": {
+    "definition": "The total value of a given token, or market sector."
+  },
   "meta-aggregator": {
     "definition": "A tool that brings together other aggregators into an extra overview layer."
   },
@@ -205,6 +214,9 @@
   },
   "peer-to-peer": {
     "definition": "A transaction between two parties that does not require a middleman or controlling entity."
+  },
+  "peg": {
+    "definition": "Method of maintaining value equivalence between two or more assets."
   },
   "permissionless": {
     "definition": "Not requiring the permission of any entity."

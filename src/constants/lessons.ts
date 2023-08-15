@@ -2109,7 +2109,7 @@ const LESSONS: LessonType[] = [
     name: 'How to Swap on a Decentralized Exchange',
     languages: [],
     publicationStatus: 'publish',
-    featuredOrderOnHomepage: 1,
+    featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,

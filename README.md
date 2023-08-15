@@ -6,7 +6,7 @@
 - [Documentation](https://documentation.banklessacademy.com/): Understand how you can integrate Bankless Academy to your website.
 - [FAQ](https://app.banklessacademy.com/faq): Frequently Asked Questions about Bankless Academy.
 - [Sponsor](https://sponsors.banklessacademy.com/): Sponsor a Bankless Academy lesson.
-- [Gitcoin Grant](https://gitcoin.co/grants/3535/bankless-academy): Donate on Gitcoin Grant to support the project.
+- [Gitcoin Grant](https://grants.gitcoin.co/): Donate on Gitcoin Grant to support the project.
 - [Dework](https://app.dework.xyz/bankless-academy-25331): Check for open tasks to help us improve Bankless Academy.
 - [Jobs](https://talent.banklessacademy.com/): Open job positions.
 

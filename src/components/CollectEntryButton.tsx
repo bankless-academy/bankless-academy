@@ -16,6 +16,7 @@ import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks'
 import { getArticlesCollectors } from 'utils'
 import { parseEther } from 'viem'
+import { useLocalStorage } from 'usehooks-ts'
 
 const CollectEntryButton = ({
   lesson,
@@ -28,6 +29,10 @@ const CollectEntryButton = ({
   const toast = useToast()
   const [isSmallScreen] = useSmallScreen()
   const [numberMinted, setNumberMinted] = useState('-')
+  const [, setConnectWalletPopupLS] = useLocalStorage(
+    `connectWalletPopup`,
+    false
+  )
 
   const { config } = usePrepareContractWrite({
     address: lesson.mirrorNFTAddress,
@@ -172,7 +177,8 @@ const CollectEntryButton = ({
                   }
                   write?.()
                 }
-              } else alert('try again in 2 seconds')
+              } else if (address) alert('try again in 2 seconds')
+              else setConnectWalletPopupLS(true)
             }}
           >
             Collect Entry
