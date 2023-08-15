@@ -16,7 +16,9 @@ export default async function handler(
   if (!slug || !tokenId) return res.status(400).json({ error: 'Wrong params' })
   if (slug !== 'badge')
     return res.status(400).json({ error: 'Unknown contract' })
-  const lesson = LESSONS.find((lesson) => lesson.badgeId === parseInt(tokenId))
+  const lesson = LESSONS.find(
+    (lesson) => lesson.badgeId === parseInt(tokenId, 10)
+  )
   if (!lesson) return res.status(400).json({ error: 'Unknown tokenId' })
 
   const metadata = {
