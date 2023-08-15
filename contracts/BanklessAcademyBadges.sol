@@ -30,6 +30,7 @@ contract BanklessAcademyBadges is
 
     function initialize() public initializer {
         __ERC1155_init(
+            // CUSTOM: Bankless Academy metadata API
             'https://beta.banklessacademy.com/api/metadata/badge/{id}'
         );
         __AccessControl_init();
@@ -63,6 +64,13 @@ contract BanklessAcademyBadges is
         uint256 amount,
         bytes memory data
     ) public onlyRole(MINTER_ROLE) {
+        // CUSTOM: Only 1 token maximum per account.
+        require(
+            balanceOf(account, id) < 1,
+            'Only 1 token maximum per account.'
+        );
+        // CUSTOM: Maximum 1 token per mint.
+        require(amount < 2, 'Maximum 1 token per mint.');
         _mint(account, id, amount, data);
     }
 
@@ -87,6 +95,13 @@ contract BanklessAcademyBadges is
         override(ERC1155Upgradeable, ERC1155SupplyUpgradeable)
         whenNotPaused
     {
+        // CUSTOM: Disable tokens to be transferred (SBT).
+        for (uint256 i = 0; i < ids.length; i++) {
+            require(
+                from == address(0x0) || to == address(0x0),
+                "This token is a SBT, you can't transfer it, only burn it."
+            );
+        }
         super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
     }
 
