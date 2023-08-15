@@ -129,6 +129,7 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     overflow-wrap: break-word;
     padding-left: 24px;
     padding-right: 24px;
+    margin-top: 24px;
     text-rendering: optimizelegibility;
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
