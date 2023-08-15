@@ -120,6 +120,7 @@ export default async function handler(
         if (!adminSignature)
           return res.status(403).json({ error: 'signature not found' })
 
+        // 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
         const pkeyWallet = new PrivateKeyWallet(process.env.PRIVATE_KEY)
         try {
           // TODO: save signature in DB + check if already generated
