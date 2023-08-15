@@ -400,6 +400,12 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       -webkit-text-stroke-width: 0px;
     }
   }
+  figcaption {
+    font-size: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: rgba(255, 255, 255, 0.35);
+  }
   blockquote {
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.7);
@@ -606,9 +612,16 @@ const Article = ({
               )
             },
             // force links to target _blank
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            a: ({ node, children, ...props }) => {
+            a: ({ children, ...props }) => {
               return <ExternalLink {...props}>{children}</ExternalLink>
+            },
+            img: ({ children, ...props }) => {
+              return (
+                <>
+                  <img {...props}>{children}</img>
+                  <figcaption>{props.alt}</figcaption>
+                </>
+              )
             },
           }}
         >
