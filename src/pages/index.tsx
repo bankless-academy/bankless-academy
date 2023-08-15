@@ -407,7 +407,7 @@ const HomePage = (): JSX.Element => {
                       funding us below.
                     </Text>
                     <ExternalLink
-                      href="https://gitcoin.co/grants/3535/bankless-academy"
+                      href="https://grants.gitcoin.co/"
                       alt="Donate via Gitcoin"
                     >
                       <Image
