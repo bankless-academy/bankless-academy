@@ -14,7 +14,7 @@ export default async function handler(
     slug: [slug, tokenId],
   } = req.query
   if (!slug || !tokenId) return res.status(400).json({ error: 'Wrong params' })
-  if (slug !== 'badge')
+  if (!['badge', 'badgev2'].includes(slug))
     return res.status(400).json({ error: 'Unknown contract' })
   const lesson = LESSONS.find(
     (lesson) => lesson.badgeId === parseInt(tokenId, 10)
@@ -22,7 +22,7 @@ export default async function handler(
   if (!lesson) return res.status(400).json({ error: 'Unknown tokenId' })
 
   const metadata = {
-    name: lesson.name,
+    name: `${lesson.name}${slug === 'badgev2' ? ' v2' : ''}`,
     description: `${lesson.description} ${lessonAddress(lesson)}`,
     external_url: lessonAddress(lesson),
     image: `https://${DOMAIN_PROD}${lesson.badgeImageLink}`,
