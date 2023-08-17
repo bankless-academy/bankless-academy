@@ -131,10 +131,18 @@ export default async function handler(
 
     try {
       console.log('mint !!!!!!!!!')
+      // TODO: move to private repo?
       // TODO: replace with ALCHEMY_KEY_BACKEND
       const provider = new ethers.providers.AlchemyProvider('maticmum', "PgF9CcSS6aBKY3EWk_ecHJNKoskmtT6P")
       // 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
       const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
+      // TODO: add transaction simulation -> cancel if going to fail
+      // TODO: cancel expensive tx > 0.02 $
+      // TODO: too many tx pending
+      // https://docs.alchemy.com/reference/sdk-gettransactioncount pending
+      // TODO: cancel if spent > 1$ in the last hour
+      // https://docs.alchemy.com/reference/sdk-getlogs
+      // TODO: setup email alert if balance low
       const contract = new ethers.Contract(BADGE_ADDRESS, [
         {
           "inputs": [
