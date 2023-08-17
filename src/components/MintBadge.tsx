@@ -220,14 +220,24 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         setStatus('')
         setIsMintingInProgress(false)
         toast.closeAll()
+        const txLink = `${BADGE_EXPLORER}tx/${result.data.transactionHash}`
         toast({
-          title: '⚠️ Problem while minting, try again later.',
+          title:
+            result.data.status || '⚠️ Problem while minting, try again later.',
           description: (
             <>
-              {`${result.data.status || result.data.error || ''} | `}
-              <ExternalLink href="/faq#d1a7f6dda4334a7ba73ee8b3a18a60ad">
-                Learn more
-              </ExternalLink>
+              {result.data.transactionHash ? (
+                <ExternalLink href={txLink} alt="Transaction in progress">
+                  {`${txLink.substring(0, 40)}...`}
+                </ExternalLink>
+              ) : (
+                <>
+                  {`${result.data.status || result.data.error || ''} | `}
+                  <ExternalLink href="/faq#d1a7f6dda4334a7ba73ee8b3a18a60ad">
+                    Learn more
+                  </ExternalLink>
+                </>
+              )}
             </>
           ),
           status: 'error',
