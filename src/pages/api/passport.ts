@@ -82,7 +82,7 @@ export default async function handler(
         gitcoinConfig
       )
       const passport: any = passportRes.data
-      console.log('** passport **', passport)
+      // console.log('** passport **', passport)
       let validStamps = []
       const stampHashes = {}
       const stampProviders = {}
@@ -93,7 +93,7 @@ export default async function handler(
         // eslint-disable-next-line no-unsafe-optional-chaining
         for (const stamp of passport?.items) {
           const provider = stamp.credential?.credentialSubject?.provider
-          console.log(stamp)
+          // console.log(stamp)
           if (stamp.credential?.credentialSubject?.hash)
             stampHashes[provider] = stamp.credential?.credentialSubject?.hash
         }
@@ -102,9 +102,9 @@ export default async function handler(
           const provider = stamp.credential?.credentialSubject?.provider
           stampProviders[provider] = { provider, stamp: stamp.credential }
         }
-        console.log('stampHashes', stampHashes)
+        // console.log('stampHashes', stampHashes)
         validStamps = filterValidStamps(Object.values(stampProviders))
-        console.log('validStamps', validStamps)
+        // console.log('validStamps', validStamps)
         // merge previous data without deleting other keys
         const updated = await db.raw(
           `update "users" set "gitcoin_stamps" = gitcoin_stamps || ? where "users"."id" = ?`,
@@ -167,7 +167,7 @@ export default async function handler(
         })
       }
       if (validStamps?.length >= NUMBER_OF_STAMP_REQUIRED) {
-        console.log('verified:', validStamps?.length)
+        // console.log('verified:', validStamps?.length)
       } else {
         console.log('not verified')
       }
