@@ -23,12 +23,32 @@ contract BanklessAcademyBadges is
     bytes32 public constant MINTER_ROLE = keccak256('MINTER_ROLE');
     bytes32 public constant UPGRADER_ROLE = keccak256('UPGRADER_ROLE');
 
+    // CUSTOM: Token name
+    string public name;
+
+    // CUSTOM: Token symbol
+    string public symbol;
+
+    // CUSTOM:
+    /// @dev Contract level metadata.
+    string public contractURI;
+
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
         _disableInitializers();
     }
 
-    function initialize() public initializer {
+    function initialize(
+        // CUSTOM:
+        string memory _name,
+        string memory _symbol,
+        string memory _contractURI
+    ) public initializer {
+        // CUSTOM:
+        name = _name;
+        symbol = _symbol;
+        contractURI = _contractURI;
+
         __ERC1155_init(
             // CUSTOM: Bankless Academy metadata API
             'https://beta.banklessacademy.com/api/metadata/badge/{id}'
@@ -44,6 +64,14 @@ contract BanklessAcademyBadges is
         _grantRole(PAUSER_ROLE, msg.sender);
         _grantRole(MINTER_ROLE, msg.sender);
         _grantRole(UPGRADER_ROLE, msg.sender);
+    }
+
+    // CUSTOM:
+    /// @dev Lets a URI_SETTER_ROLE set the URI for contract-level metadata.
+    function setContractURI(
+        string calldata _uri
+    ) public onlyRole(URI_SETTER_ROLE) {
+        contractURI = _uri;
     }
 
     function setURI(string memory newuri) public onlyRole(URI_SETTER_ROLE) {
