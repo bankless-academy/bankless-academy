@@ -130,12 +130,25 @@ export default async function handler(
     }
 
     try {
-      console.log('mint !!!!!!!!!')
       // TODO: move to private repo?
-      // TODO: replace with ALCHEMY_KEY_BACKEND
-      const provider = new ethers.providers.AlchemyProvider('maticmum', "PgF9CcSS6aBKY3EWk_ecHJNKoskmtT6P")
-      // 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
-      const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
+
+      // MINTING SECURITY CHECK
+      // check in DB if > than 10 mints in the last 5 min + email alert
+      const numberOfRecentTx = await db(TABLES.completions)
+        .select(TABLE.completions.id)
+        .where(TABLE.completions.transaction_at, '>=', db.raw("NOW() - INTERVAL '5 MINUTE'"))
+      console.log('numberOfRecentTx', numberOfRecentTx)
+      if (numberOfRecentTx?.length >= 10) {
+        trackBE(address, 'badge_overload', {
+          error: numberOfRecentTx,
+          badgeId,
+          address,
+        })
+        questStatus = 'Too many minting ... try again in 10 minutes.'
+        return res.status(200).json({
+          status: questStatus,
+        })
+      }
       // TODO: add transaction simulation -> cancel if going to fail
       // TODO: cancel expensive tx > 0.02 $
       // TODO: too many tx pending
@@ -143,6 +156,12 @@ export default async function handler(
       // TODO: cancel if spent > 1$ in the last hour
       // https://docs.alchemy.com/reference/sdk-getlogs
       // TODO: setup email alert if balance low
+
+      console.log('mint !!!!!!!!!')
+      // TODO: replace with ALCHEMY_KEY_BACKEND
+      const provider = new ethers.providers.AlchemyProvider('maticmum', "PgF9CcSS6aBKY3EWk_ecHJNKoskmtT6P")
+      // 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
+      const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
       const contract = new ethers.Contract(BADGE_ADDRESS, [
         {
           "inputs": [
