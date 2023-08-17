@@ -20,7 +20,7 @@ export default async function handler(
     const metadata = {
       name: "Bankless Academy Badges",
       symbol: "BADGE",
-      description: "Bankless Academy lesson badges https://app.banklessacademy.com/",
+      description: "Learn and claim free lesson badges on https://app.banklessacademy.com/",
       image: "https://app.banklessacademy.com/logo.jpg",
     }
     return res.status(200).json(metadata)
@@ -42,7 +42,7 @@ export default async function handler(
     external_url: lessonAddress(lesson),
     image: `https://${DOMAIN_PROD}${lesson.badgeImageLink}`,
     attributes: [
-      { trait_type: 'created_by', value: 'banklessacademy.eth' },
+      { trait_type: 'created_by', value: 'Bankless Academy' },
       { trait_type: 'links', value: [lessonAddress(lesson)] },
     ],
   }
