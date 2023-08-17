@@ -55,137 +55,153 @@ export default async function handler(
       return res.status(403).json({ error: 'credentialId not found' })
 
     const [questCompleted] = await db(TABLES.completions)
-      .select(TABLE.completions.id, TABLE.completions.credential_claimed_at)
+      .select(TABLE.completions.id, TABLE.completions.transaction_at, TABLE.completions.transaction_hash)
       .where(TABLE.completions.credential_id, credential.id)
       .where(TABLE.completions.user_id, userId)
     console.log('questCompleted', questCompleted)
 
     let questStatus = ''
 
-    if (
-      questCompleted?.credential_claimed_at &&
-      !BADGES_ALLOWED_SIGNERS.includes(address.toLowerCase())
-    ) {
+    if (!questCompleted?.id) {
+      questStatus = 'quest not completed'
+      console.log(questStatus)
+      return res.status(403).json({ status: questStatus })
+    }
+
+    if (questCompleted?.transaction_at) {
+      console.log(questCompleted.transaction_at)
+      const currentTimestamp = Math.floor(Date.now() / 1000)
+      console.log(currentTimestamp)
+      const transactionTimestamp = Date.parse(questCompleted.transaction_at) / 1000
+      console.log(transactionTimestamp)
+      console.log('diff',)
+      const diff = currentTimestamp - transactionTimestamp
+      if (diff < 60) {
+        questStatus = 'minting already in progress ...'
+        console.log(questStatus)
+        return res.status(200).json({ transactionHash: questCompleted.transaction_hash, status: questStatus })
+      } else {
+        // TODO: create email alert
+        trackBE(address, 'badge_issue', {
+          error: questCompleted,
+          badgeId,
+          address,
+        })
+        // TODO: verify tx hash result
+        questStatus = 'minting already in progress ... check back in 1 minute'
+        console.log(questStatus)
+        return res.status(200).json({ transactionHash: questCompleted.transaction_hash, status: questStatus })
+      }
+    }
+
+    const userBadges = await axios.get(
+      `${req.headers.origin}/api/badges/${address}`
+    )
+    // console.log('userBadges', userBadges?.data?.data)
+
+    const badgeAlreadyClaimed: boolean =
+      userBadges?.data?.badgeTokenIds.find(
+        (badge: number) => badge === badgeId
+      ) || false
+
+    if (badgeAlreadyClaimed && !BADGES_ALLOWED_SIGNERS.includes(address.toLowerCase())) {
       questStatus = 'badge already claimed'
       console.log(questStatus)
       return res.status(403).json({ status: questStatus })
+    }
+
+    // Sybil check with Academy Passport
+    const result = await api(`${req.headers.origin}/api/passport`, {
+      address: address,
+    })
+    if (result && result.status === 200) {
+      if (result.data?.error) {
+        return res.status(200).json({
+          status: result.data?.error,
+        })
+      }
+      if (!result.data.verified) {
+        return res.status(200).json({
+          status: `Passport requirement: ${result.data.requirement}`,
+        })
+      }
     } else {
-      // Sybil check with Academy Passport
-      const result = await api(`${req.headers.origin}/api/passport`, {
-        address: address,
-      })
-      if (result && result.status === 200) {
-        if (result.data?.error) {
-          return res.status(200).json({
-            status: result.data?.error,
-          })
-        }
-        if (!result.data.verified) {
-          return res.status(200).json({
-            status: `Passport requirement: ${result.data.requirement}`,
-          })
-        }
-      } else {
-        // TODO: handle errors
-      }
+      // TODO: handle errors
+    }
 
-      const userBadges = await axios.get(
-        `${req.headers.origin}/api/badges/${address}`
-      )
-      // console.log('userBadges', userBadges?.data?.data)
-
-      const badgeAlreadyClaimed: boolean =
-        userBadges?.data?.badgeTokenIds.find(
-          (badge: number) => badge === badgeId
-        ) || false
-
-      if (badgeAlreadyClaimed) {
-        // TODO: fix credential_claimed_at (it's not createdAt ... mintedAt?)
-        // const updated = await db(TABLES.completions)
-        //   .where(TABLE.completions.id, questCompleted.id)
-        //   .update({ credential_claimed_at: badgeAlreadyClaimed.createdAt })
-        // console.log(`updated missing credential_claimed_at`, updated)
-        questStatus = 'badge already claimed'
-        console.log(questStatus)
-        return res.status(403).json({ status: questStatus })
-      } else {
-        const [{ adminSignature }] = await db(TABLES.credentials)
-          .select('signature as adminSignature')
-          .where('notion_id', notionId)
-        // console.log('adminSignature', adminSignature)
-        if (!adminSignature)
-          return res.status(403).json({ error: 'signature not found' })
-
-        try {
-          console.log('mint !!!!!!!!!')
-          const provider = new ethers.providers.AlchemyProvider('maticmum', "PgF9CcSS6aBKY3EWk_ecHJNKoskmtT6P")
-          // 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
-          const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
-          const contract = new ethers.Contract(BADGE_ADDRESS, [
+    try {
+      console.log('mint !!!!!!!!!')
+      // TODO: replace with ALCHEMY_KEY_BACKEND
+      const provider = new ethers.providers.AlchemyProvider('maticmum', "PgF9CcSS6aBKY3EWk_ecHJNKoskmtT6P")
+      // 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
+      const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
+      const contract = new ethers.Contract(BADGE_ADDRESS, [
+        {
+          "inputs": [
             {
-              "inputs": [
-                {
-                  "internalType": "address",
-                  "name": "account",
-                  "type": "address"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "id",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "uint256",
-                  "name": "amount",
-                  "type": "uint256"
-                },
-                {
-                  "internalType": "bytes",
-                  "name": "data",
-                  "type": "bytes"
-                }
-              ],
-              "name": "mint",
-              "outputs": [],
-              "stateMutability": "nonpayable",
-              "type": "function"
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
             },
-          ], signer)
-          const mint = await contract['mint(address,uint256,uint256,bytes)'](
-            address.toLowerCase(),
-            badgeId,
-            1,
-            '0x00'
-          );
-          console.log(mint)
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "name": "mint",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+      ], signer)
+      const mint = await contract['mint(address,uint256,uint256,bytes)'](
+        address.toLowerCase(),
+        badgeId,
+        1,
+        '0x00'
+      );
+      console.log(mint)
 
-          if (mint.hash) {
-            return res.status(200).json({
-              transactionHash: mint.hash,
-              status: questStatus,
-            })
-          } else {
-            console.log(mint)
-            questStatus = 'problem while minting'
-            return res.status(200).json({
-              status: questStatus,
-            })
-          }
-
-        } catch (error) {
-          console.log(error)
-          console.error(error?.response?.data)
-          trackBE(address, 'mint_kudos_issue', {
-            error: error?.response?.data,
-            badgeId,
-            address,
-          })
-          return res.status(500).json({
-            error: 'something went wrong while minting',
-            status: '',
-          })
-        }
+      if (mint.hash) {
+        const updated = await db(TABLES.completions)
+          .where(TABLE.completions.id, questCompleted.id)
+          .update({ transaction_at: db.raw("NOW()"), transaction_hash: mint.hash })
+        console.log(`updated `, updated)
+        return res.status(200).json({
+          transactionHash: mint.hash,
+          status: questStatus,
+        })
+      } else {
+        console.log(mint)
+        questStatus = 'problem while minting'
+        return res.status(200).json({
+          status: questStatus,
+        })
       }
+
+    } catch (error) {
+      console.log(error)
+      console.error(error?.response?.data)
+      trackBE(address, 'mint_kudos_issue', {
+        error: error?.response?.data,
+        badgeId,
+        address,
+      })
+      return res.status(500).json({
+        error: 'something went wrong while minting',
+        status: '',
+      })
     }
   } catch (error) {
     console.error(error)
