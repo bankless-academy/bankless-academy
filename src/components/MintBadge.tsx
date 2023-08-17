@@ -222,8 +222,9 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         toast.closeAll()
         const txLink = `${BADGE_EXPLORER}tx/${result.data.transactionHash}`
         toast({
-          title:
-            result.data.status || '⚠️ Problem while minting, try again later.',
+          title: result.data.transactionHash
+            ? result.data.status
+            : '⚠️ Problem while minting, try again later.',
           description: (
             <>
               {result.data.transactionHash ? (
