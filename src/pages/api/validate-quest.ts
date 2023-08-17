@@ -94,7 +94,7 @@ export default async function handler(
 
     let questStatus = ''
     const [questCompleted] = await db(TABLES.completions)
-      .select(TABLE.completions.id, TABLE.completions.credential_claimed_at)
+      .select(TABLE.completions.id)
       .where(TABLE.completions.credential_id, credential.id)
       .where(TABLE.completions.user_id, userId)
     questStatus = 'Quest already completed'
