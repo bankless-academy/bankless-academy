@@ -15,11 +15,13 @@ export default async function handler(
   } = req.query
 
   if (slug === 'badge-contrat-uri') {
+    // https://beta.banklessacademy.com/api/metadata/badge-contrat-uri
+    // https://app.banklessacademy.com/api/metadata/badge-contrat-uri
     const metadata = {
-      "name": "Bankless Academy Badges",
-      "symbol": "BADGE",
-      "description": "Bankless Academy lesson badges https://app.banklessacademy.com/",
-      "image": "https://app.banklessacademy.com/logo.jpg",
+      name: "Bankless Academy Badges",
+      symbol: "BADGE",
+      description: "Bankless Academy lesson badges https://app.banklessacademy.com/",
+      image: "https://app.banklessacademy.com/logo.jpg",
     }
     return res.status(200).json(metadata)
   }
