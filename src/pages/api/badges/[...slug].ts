@@ -1,15 +1,14 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
-import { ALCHEMY_KEY_BACKEND, BADGE_ADDRESS } from 'constants/index'
-import { BADGE_IDS } from 'constants/badges'
+import { ALCHEMY_KEY_BACKEND } from 'constants/index'
+import { BADGE_ADDRESS, BADGE_IDS, BADGE_API } from 'constants/badges'
 import badges from 'data/badges.json'
 
 async function getBadgeTokensIds(address: string): Promise<number[]> {
   try {
-    // TODO: switch to mainnet
     const badges = await axios.get(
-      `https://polygon-mumbai.g.alchemy.com/nft/v3/${ALCHEMY_KEY_BACKEND}/getNFTsForOwner?owner=${address}&contractAddresses[]=${BADGE_ADDRESS}&withMetadata=false&pageSize=100`
+      `${BADGE_API}${ALCHEMY_KEY_BACKEND}/getNFTsForOwner?owner=${address}&contractAddresses[]=${BADGE_ADDRESS}&withMetadata=false&pageSize=100`
     )
     console.log(badges.data)
     const badgeTokenIds = badges.data.ownedNfts

@@ -6,10 +6,9 @@ import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import {
   LESSONS,
   GENERIC_ERROR_MESSAGE,
-  BADGE_ADDRESS,
   WALLET_SIGNATURE_MESSAGE,
 } from 'constants/index'
-import { BADGES_ALLOWED_SIGNERS } from 'constants/badges'
+import { BADGE_ADDRESS, BADGES_ALLOWED_SIGNERS } from 'constants/badges'
 import { api, verifySignature } from 'utils'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
