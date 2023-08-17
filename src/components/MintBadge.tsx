@@ -25,12 +25,15 @@ import { useSmallScreen } from 'hooks/index'
 import Passport from 'components/Passport'
 import ExternalLink from 'components/ExternalLink'
 import { LESSONS, WALLET_SIGNATURE_MESSAGE } from 'constants/index'
-import { MINTKUDOS_CHAIN_ID } from 'constants/badges'
+import {
+  BADGE_OPENSEA_URL,
+  BADGE_CHAIN_ID,
+  BADGE_EXPLORER,
+} from 'constants/badges'
 import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { theme } from 'theme/index'
 import { api } from 'utils'
-import { Mumbai } from '@thirdweb-dev/chains'
 
 const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
   const [isBadgeMintedLS, setIsBadgeMintedLS] = useLocalStorage(
@@ -91,9 +94,9 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
     if (status !== '') return
     setStatus('Minting in progress ...')
     // TODO: add 1 min timeout
-    if (![1, 10, 137, Mumbai.chainId].includes(chain?.id)) {
+    if (![1, 10, 137, 80001].includes(chain?.id)) {
       const network = Object.values(NETWORKS).find(
-        (network) => network.chainId === MINTKUDOS_CHAIN_ID
+        (network) => network.chainId === BADGE_CHAIN_ID
       )
       toast.closeAll()
       if (connector?.name !== 'MetaMask') {
@@ -106,7 +109,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         })
       }
       try {
-        await switchNetwork({ chainId: MINTKUDOS_CHAIN_ID })
+        await switchNetwork({ chainId: BADGE_CHAIN_ID })
       } catch (error) {
         setStatus('')
       }
@@ -143,9 +146,10 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         isClosable: true,
       })
       const result = await api('/api/mint-badge', bodyParameters)
+      let transactionComfirmed
       if (result && result.status === 200 && result.data.transactionHash) {
         console.log(result.data.transactionHash)
-        const txLink = `${Mumbai.explorers[0].url}/tx/${result.data.transactionHash}`
+        const txLink = `${BADGE_EXPLORER}tx/${result.data.transactionHash}`
         toast.closeAll()
         toast({
           description: (
@@ -169,47 +173,55 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
           duration: null,
           isClosable: true,
         })
-        const transactionComfirmed = await waitForTransaction({
-          chainId: Mumbai.chainId,
+        transactionComfirmed = await waitForTransaction({
+          chainId: BADGE_CHAIN_ID,
           hash: result.data.transactionHash,
           timeout: 60_000, // 60 seconds
         })
         console.log(transactionComfirmed)
-        // Refresh list of Badges in the wallet
-        setRefreshBadgesLS(true)
-        setIsBadgeMintedLS(true)
-        toast.closeAll()
-        // TODO: add 🎊
-        toast({
-          description: (
-            <>
-              <Box>
-                <Box display="flex">
-                  <Box mr="4">
-                    <SealCheck width="40px" height="auto" />
-                  </Box>
-                  <Box flexDirection="column" alignSelf="center">
-                    <Box>Badge successfully minted!</Box>
-                    <ExternalLink href={txLink} alt="Transaction in progress">
-                      {`${txLink.substring(0, 40)}...`}
-                    </ExternalLink>
+        if (transactionComfirmed.status === 'success') {
+          const openSeaLink = `${BADGE_OPENSEA_URL}${badgeId}`
+          // Refresh list of Badges in the wallet
+          setRefreshBadgesLS(true)
+          setIsBadgeMintedLS(true)
+          toast.closeAll()
+          // TODO: add 🎊
+          toast({
+            description: (
+              <>
+                <Box>
+                  <Box display="flex">
+                    <Box mr="4">
+                      <SealCheck width="40px" height="auto" />
+                    </Box>
+                    <Box flexDirection="column" alignSelf="center">
+                      <Box>Badge successfully minted!</Box>
+                      <ExternalLink href={openSeaLink} alt="Lesson badge">
+                        {`${openSeaLink.substring(0, 40)}...`}
+                      </ExternalLink>
+                    </Box>
                   </Box>
                 </Box>
-              </Box>
-            </>
-          ),
-          status: 'success',
-          duration: 10000,
-          isClosable: true,
-        })
-        setStatus('')
-        setIsMintingInProgress(false)
-      } else {
+              </>
+            ),
+            status: 'success',
+            duration: 10000,
+            isClosable: true,
+          })
+          setStatus('')
+          setIsMintingInProgress(false)
+        }
+      }
+      // something went wrong while minting
+      if (
+        result?.status !== 200 ||
+        transactionComfirmed?.status !== 'success'
+      ) {
         setStatus('')
         setIsMintingInProgress(false)
         toast.closeAll()
         toast({
-          title: '⚠️ Problem while minting, try again tomorrow.',
+          title: '⚠️ Problem while minting, try again later.',
           description: (
             <>
               {`${result.data.status || result.data.error || ''} | `}
