@@ -47,7 +47,10 @@ export const TABLE = {
     id: 'completions.id',
     credential_id: 'completions.credential_id',
     user_id: 'completions.user_id',
-    credential_claimed_at: 'completions.credential_claimed_at'
+    // deprecated
+    // credential_claimed_at: 'completions.credential_claimed_at',
+    transaction_at: 'completions.transaction_at',
+    transaction_hash: 'completions.transaction_hash'
   },
 }
 
