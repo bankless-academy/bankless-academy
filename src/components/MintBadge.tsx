@@ -18,7 +18,7 @@ import {
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount, useNetwork } from 'wagmi'
-import { switchNetwork, signMessage } from '@wagmi/core'
+import { switchNetwork, signMessage, waitForTransaction } from '@wagmi/core'
 import { Gear, SealCheck } from '@phosphor-icons/react'
 
 import { useSmallScreen } from 'hooks/index'
@@ -122,7 +122,6 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         signature: signature,
       }
       setIsMintingInProgress(true)
-
       toast.closeAll()
       toast({
         description: (
@@ -133,8 +132,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                   <Gear width="40px" height="auto" />
                 </Box>
                 <Box flexDirection="column">
-                  <Box>Minting in progress</Box>
-                  <Image src="/images/countdown.gif" alt="Countdown" />
+                  <Box>Generating lesson badge ...</Box>
                 </Box>
               </Box>
             </Box>
@@ -148,6 +146,35 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
       if (result && result.status === 200 && result.data.transactionHash) {
         console.log(result.data.transactionHash)
         const txLink = `${Mumbai.explorers[0].url}/tx/${result.data.transactionHash}`
+        toast.closeAll()
+        toast({
+          description: (
+            <>
+              <Box>
+                <Box display="flex">
+                  <Box mr="4">
+                    <Gear width="40px" height="auto" />
+                  </Box>
+                  <Box flexDirection="column">
+                    <Box>Minting in progress ...</Box>
+                    <ExternalLink href={txLink} alt="Transaction in progress">
+                      {`${txLink.substring(0, 40)}...`}
+                    </ExternalLink>
+                  </Box>
+                </Box>
+              </Box>
+            </>
+          ),
+          status: 'warning',
+          duration: null,
+          isClosable: true,
+        })
+        const transactionComfirmed = await waitForTransaction({
+          chainId: Mumbai.chainId,
+          hash: result.data.transactionHash,
+          timeout: 60_000, // 60 seconds
+        })
+        console.log(transactionComfirmed)
         // Refresh list of Badges in the wallet
         setRefreshBadgesLS(true)
         setIsBadgeMintedLS(true)
