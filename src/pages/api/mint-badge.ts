@@ -1,21 +1,18 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
-// TODO: mainnet
-import { ThirdwebSDK } from '@thirdweb-dev/sdk'
-import { PrivateKeyWallet } from '@thirdweb-dev/auth/evm'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import {
   LESSONS,
   GENERIC_ERROR_MESSAGE,
   BADGE_ADDRESS,
-  ACTIVE_CHAIN,
   WALLET_SIGNATURE_MESSAGE,
 } from 'constants/index'
 import { BADGES_ALLOWED_SIGNERS } from 'constants/badges'
 import { api, verifySignature } from 'utils'
 import { trackBE } from 'utils/mixpanel'
+import { ethers } from 'ethers'
 
 export default async function handler(
   req: NextApiRequest,
@@ -120,34 +117,52 @@ export default async function handler(
         if (!adminSignature)
           return res.status(403).json({ error: 'signature not found' })
 
-        // 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
-        const pkeyWallet = new PrivateKeyWallet(process.env.PRIVATE_KEY)
         try {
-          // TODO: save signature in DB + check if already generated
-          // generate signature
-          const sdk = await ThirdwebSDK.fromWallet(pkeyWallet, ACTIVE_CHAIN, {
-            gasless: {
-              biconomy: {
-                apiKey: 'rgzMlYU1Q.b1aa8fd0-ce03-41ec-b6d6-b52cf22995c9',
-                apiId: 'c15387fc-357c-4995-909a-3dda0892e64c',
-              },
+          console.log('mint !!!!!!!!!')
+          const provider = new ethers.providers.AlchemyProvider('maticmum', "PgF9CcSS6aBKY3EWk_ecHJNKoskmtT6P")
+          // 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
+          const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
+          const contract = new ethers.Contract(BADGE_ADDRESS, [
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "account",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "id",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                }
+              ],
+              "name": "mint",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
             },
-          })
-          // console.log(sdk)
-          const contract = await sdk.getContract(BADGE_ADDRESS)
-          // Authorized to mint, generate signature
-          const mintingSignature =
-            await contract.erc1155.signature.generateFromTokenId({
-              tokenId: badgeId,
-              to: address.toLowerCase(),
-              quantity: 1,
-            })
+          ], signer)
+          const mint = await contract['mint(address,uint256,uint256,bytes)'](
+            address.toLowerCase(),
+            badgeId,
+            1,
+            '0x00'
+          );
+          console.log(mint)
 
-          const mint = await contract.erc1155.signature.mint(mintingSignature)
-
-          if (mint.receipt.status === 1) {
+          if (mint.hash) {
             return res.status(200).json({
-              transactionHash: mint.receipt.transactionHash,
+              transactionHash: mint.hash,
               status: questStatus,
             })
           } else {
@@ -159,6 +174,7 @@ export default async function handler(
           }
 
         } catch (error) {
+          console.log(error)
           console.error(error?.response?.data)
           trackBE(address, 'mint_kudos_issue', {
             error: error?.response?.data,
