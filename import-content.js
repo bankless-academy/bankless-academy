@@ -191,6 +191,8 @@ const download_image = (url, image_path) =>
     response.data.pipe(fs.createWriteStream(image_path))
   })
 
+const placeholder = (lesson_title, size) => `https://placehold.co/${size}/4b4665/FFFFFF?text=${lesson_title.replaceAll(' ', '+')}`
+
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((notionRows) => {
@@ -342,13 +344,13 @@ axios
           if (lesson.badgeImageLink) {
             // TOTO: replace w/ badge
             lesson.badgeImageLink = get_img(lesson.badgeImageLink, lesson.slug, 'kudos')
-          }
+          } else lesson.badgeImageLink = placeholder(lesson.name, '600x600')
           if (lesson.lessonImageLink) {
             lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
-          }
+          } else lesson.lessonImageLink = placeholder(lesson.name, '1200x600')
           if (lesson.socialImageLink) {
             lesson.socialImageLink = get_img(lesson.socialImageLink, lesson.slug, 'social')
-          }
+          } else lesson.socialImageLink = placeholder(lesson.name, '1200x600')
           if (lesson.sponsorLogo) {
             lesson.sponsorLogo = get_img(lesson.sponsorLogo, lesson.slug, 'sponsor')
           }
