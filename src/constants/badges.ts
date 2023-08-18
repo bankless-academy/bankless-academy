@@ -1,7 +1,7 @@
 import { LESSONS } from 'constants/index'
 // import { WHITELABEL } from 'constants/whitelabel'
 
-export const BADGE_ADDRESS = '0xA64eAA9f4Be02c7B9dF9293b95cD80CFc908BB3b'
+export const BADGE_ADDRESS = '0xa0656F29Efd33b5d6729C467096f07C1643B275A'
 
 const badgeIds = LESSONS.filter((lesson) => lesson.badgeId).map(
   (lesson) => lesson.badgeId
