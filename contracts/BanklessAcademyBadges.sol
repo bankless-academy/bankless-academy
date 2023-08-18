@@ -33,6 +33,10 @@ contract BanklessAcademyBadges is
     /// @dev Contract level metadata.
     string public contractURI;
 
+    // CUSTOM:
+    /// @dev Owner of the contract (purpose: OpenSea compatibility, etc.)
+    address private _owner;
+
     /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
         _disableInitializers();
@@ -48,6 +52,7 @@ contract BanklessAcademyBadges is
         name = _name;
         symbol = _symbol;
         contractURI = _contractURI;
+        _owner = msg.sender;
 
         __ERC1155_init(
             // CUSTOM: Bankless Academy metadata API
@@ -72,6 +77,14 @@ contract BanklessAcademyBadges is
         string calldata _uri
     ) public onlyRole(URI_SETTER_ROLE) {
         contractURI = _uri;
+    }
+
+    // CUSTOM:
+    /**
+     * @dev Returns the address of the current owner.
+     */
+    function owner() public view returns (address) {
+        return hasRole(DEFAULT_ADMIN_ROLE, _owner) ? _owner : address(0);
     }
 
     function setURI(string memory newuri) public onlyRole(URI_SETTER_ROLE) {
