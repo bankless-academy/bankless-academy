@@ -160,7 +160,8 @@ export default async function handler(
       console.log('mint !!!!!!!!!')
       // TODO: replace with ALCHEMY_KEY_BACKEND
       const provider = new ethers.providers.AlchemyProvider('maticmum', "PgF9CcSS6aBKY3EWk_ecHJNKoskmtT6P")
-      // 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
+      // prod: 0x472A74C4F7e281e590Bed861daa66721A6ACADBC
+      // dev: 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
       const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
       const contract = new ethers.Contract(BADGE_ADDRESS, [
         {
