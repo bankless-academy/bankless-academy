@@ -163,8 +163,12 @@ const LessonDetail = ({
                       key={`lang-${k}`}
                       ml={3}
                     >
-                      <Button variant={lang === 'es' ? 'solid' : 'outline'}>
+                      <Button variant={lang === l ? 'solid' : 'outline'}>
                         {l === 'es' && '🇪🇸'}
+                        {l === 'fr' && '🇫🇷'}
+                        {l === 'de' && '🇩🇪'}
+                        {l === 'jp' && '🇯🇵'}
+                        {l === 'cn' && '🇨🇳'}
                       </Button>
                     </InternalLink>
                   ))}
