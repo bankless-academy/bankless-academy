@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const translations = {}
   // console.log(currentLesson.languages)
   for (const language of currentLesson.languages) {
-    console.log(language)
+    // console.log(language)
     try {
       translations[language] = await fs.readFileSync(
         `public/lesson/${language}/${currentLesson.slug}.md`,
@@ -30,7 +30,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       currentLesson.languages = currentLesson.languages.filter(
         (l) => l !== language
       )
-      console.log(currentLesson.languages)
       console.log('error loading language', language)
     }
   }
