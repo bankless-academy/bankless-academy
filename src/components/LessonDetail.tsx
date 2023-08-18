@@ -244,7 +244,7 @@ const LessonDetail = ({
                     <Badge
                       lesson={lesson}
                       isQuestCompleted={
-                        isQuizComplete && Quest.isQuestCompleted
+                        isQuizComplete && Quest?.isQuestCompleted
                       }
                     />
                     <Text fontSize="2xl" mb="4">
