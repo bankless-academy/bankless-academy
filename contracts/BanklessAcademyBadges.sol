@@ -9,6 +9,7 @@ import '@openzeppelin/contracts-upgradeable/token/ERC1155/extensions/ERC1155Supp
 import '@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol';
 import '@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol';
 
+/// @custom:security-contact security@banklessacademy.com
 contract BanklessAcademyBadges is
     Initializable,
     ERC1155Upgradeable,
