@@ -1,14 +1,16 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
+import { fromHex, formatEther } from 'viem'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import {
   LESSONS,
   GENERIC_ERROR_MESSAGE,
   WALLET_SIGNATURE_MESSAGE,
+  ALCHEMY_KEY_BACKEND,
 } from 'constants/index'
-import { BADGE_ADDRESS, BADGES_ALLOWED_SIGNERS } from 'constants/badges'
+import { BADGE_ADDRESS, BADGE_MINTER, BADGES_ALLOWED_SIGNERS } from 'constants/badges'
 import { api, verifySignature } from 'utils'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
@@ -149,20 +151,42 @@ export default async function handler(
           status: questStatus,
         })
       }
-      // TODO: add transaction simulation -> cancel if going to fail
-      // TODO: cancel expensive tx > 0.02 $
+      // Cancel tx if gas > 300 gwei
+      const response = await (await fetch(`https://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          "id": 1,
+          "jsonrpc": "2.0",
+          "method": "eth_gasPrice"
+        }),
+      })).json()
+      const gasInGwei = fromHex(response.result, 'number') / 1000000000
+      console.log('gas:', gasInGwei)
+      if (gasInGwei > 300) {
+        questStatus = 'Polygon is currently experiencing high gas prices ... try again in 1 hour.'
+        console.log(questStatus)
+        return res.status(403).json({ status: questStatus })
+      }
       // TODO: too many tx pending
       // https://docs.alchemy.com/reference/sdk-gettransactioncount pending
       // TODO: cancel if spent > 1$ in the last hour
       // https://docs.alchemy.com/reference/sdk-getlogs
-      // TODO: setup email alert if balance low
 
       console.log('mint !!!!!!!!!')
-      // TODO: replace with ALCHEMY_KEY_BACKEND
-      const provider = new ethers.providers.AlchemyProvider('maticmum', "PgF9CcSS6aBKY3EWk_ecHJNKoskmtT6P")
+      // send email alert if balance < 1 MATIC
+      const provider = new ethers.providers.AlchemyProvider('maticmum', ALCHEMY_KEY_BACKEND)
+      const balance = formatEther((await provider.getBalance(BADGE_MINTER)).toBigInt())
+      console.log('balance: ', balance)
+      if (parseInt(balance) < 1) {
+        console.log('low balance')
+        trackBE(address, 'low_balance')
+      }
       // prod: 0x472A74C4F7e281e590Bed861daa66721A6ACADBC
       // dev: 0x03ab46a7E99279a4b7931626338244DD8236F0Ac
-      const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
+      const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider)
       const contract = new ethers.Contract(BADGE_ADDRESS, [
         {
           "inputs": [
@@ -193,12 +217,21 @@ export default async function handler(
           "type": "function"
         },
       ], signer)
-      const mint = await contract['mint(address,uint256,uint256,bytes)'](
-        address.toLowerCase(),
-        badgeId,
-        1,
-        '0x00'
-      );
+      const contractFunction = 'mint(address,uint256,uint256,bytes)'
+      const functionParams = [address.toLowerCase(), badgeId, 1, '0x00']
+      // console.log(functionParams)
+      try {
+        // transaction simulation
+        const simulation = await contract.callStatic[contractFunction](...functionParams)
+        console.log('simulation', simulation)
+      } catch (error) {
+        console.log(error)
+        return res.status(500).json({
+          error: 'simulation fail',
+          status: '',
+        })
+      }
+      const mint = await contract[contractFunction](...functionParams)
       console.log(mint)
 
       if (mint.hash) {
@@ -206,6 +239,11 @@ export default async function handler(
           .where(TABLE.completions.id, questCompleted.id)
           .update({ transaction_at: db.raw("NOW()"), transaction_hash: mint.hash })
         console.log(`updated `, updated)
+        trackBE(address, 'mint_badge', {
+          badgeId,
+          address,
+          gas: gasInGwei
+        })
         return res.status(200).json({
           transactionHash: mint.hash,
           status: questStatus,
