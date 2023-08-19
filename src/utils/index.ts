@@ -233,7 +233,7 @@ export async function validateOnchainQuest(
       console.log('checks validated (3)', check.length)
       return check.length === 3
     }
-    if (quest === 'DecentralizedExchanges') {
+    else if (quest === 'DecentralizedExchanges') {
       const check = []
       const optimism: Network = {
         name: 'optimism',
@@ -278,7 +278,7 @@ export async function validateOnchainQuest(
       console.log('checks validated (3)', check.length)
       return check.length === 3
     }
-    if (quest === 'Layer2Blockchains') {
+    else if (quest === 'Layer2Blockchains') {
       const optimism: Network = {
         name: 'optimism',
         chainId: NETWORKS['optimism'].chainId,
@@ -293,6 +293,32 @@ export async function validateOnchainQuest(
       const balance = parseFloat(ethers.utils.formatEther(bigNumberBalance))
       console.log('balance: ', balance)
       return balance >= 0.001
+    }
+    else if (quest === 'OptimismGovernance') {
+      const optimism: Network = {
+        name: 'optimism',
+        chainId: NETWORKS['optimism'].chainId,
+        _defaultProvider: (providers) =>
+          new providers.JsonRpcProvider(
+            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
+            `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
+          ),
+      }
+      const provider = ethers.getDefaultProvider(optimism)
+      const contract = new ethers.Contract('0x4200000000000000000000000000000000000042', [
+        {
+          "inputs": [
+            { "internalType": "address", "name": "account", "type": "address" }
+          ],
+          "name": "delegates",
+          "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+          "stateMutability": "view",
+          "type": "function"
+        },
+      ], provider)
+      const delegate = await contract['delegates(address)'](address.toLowerCase())
+      console.log('delegate', delegate)
+      return delegate?.length === 42 && delegate !== '0x0000000000000000000000000000000000000000'
     }
     return false
   } catch (error) {
