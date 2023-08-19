@@ -3,7 +3,7 @@ LESSON TITLE: Optimism Governance
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
 LANGUAGE: English
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 18/08/2023
+LAST UPDATED: 19/08/2023
 ---
 
 ```
@@ -64,23 +64,23 @@ With many blockchain networks still in their early days, todays voices are extre
 
 How can onchain governance help to solve interhuman debate?
 
-- [ ] By providing automated coordination systems that evolve based on shared human feedback.
+- [ ] By automating human coordination, and evolving based on shared human feedback.
 
-> ℹ️ 
+> ℹ️ This is true, but it isn’t the only answer.
 
 - [ ] Through transparent, attack-resistant voting processes.
 
-> ℹ️ 
+> ℹ️ This is true, but it isn’t the only answer.
 
 - [ ] By hosting an opt-in, mission-oriented community for people across the world.
 
-> ℹ️  
+> ℹ️ This is true, but it isn’t the only answer.
 
 - [ ] All of the above.
 
-> ℹ️  
+> ℹ️ Correct! Onchain governance aims to streamline and protect discussion.
 
-# **The Optimistic Vision**
+# **The Optimistic Mission**
 
 Optimism is on a mission to scale Ethereum by building a `Layer 2` network — a place with lower fees, faster transactions, and Ethereum’s high standard of security. Here’s what it looks like:
 
@@ -114,8 +114,8 @@ Many great blockchain projects begin with a centralized group and vision. This g
 
 On OP, the founder and community groups are thought of as follows:
 
-- **Optimism Foundation:** The network founders, steward of the Collective. They run governance experiments, provide initial resources, build partnerships, and start the ecosystem.
-- **Optimism Collective:** The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem.
+- 🏦 **Optimism Foundation:** The network founders, steward of the Collective. They run governance experiments, provide initial resources, build partnerships, and start the ecosystem.
+- 👬 **Optimism Collective:** The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem.
 
 There are legal checks and balances, such as the Collective’s ability to remove members of the Foundation. This ensures slow transfer of network ownership to the community, before the Foundation eventually dissolves.
 
@@ -129,15 +129,15 @@ The Optimism Foundation will continue to guide the Optimism Collective over the 
 
 - [ ] True
 
-> ℹ️ …
+> ℹ️ Try again!
 
 - [ ] False
 
-> ℹ️ …
+> ℹ️ Correct! The Foundation will eventually dissolve, and the Collective will continue the mission.
 
 # A New **Economy**
 
-At the heart of the Optimism `L2` economy is the Optimistic flywheel. This economic cycle generates revenue, network growth, and the achievement of the Optimistic mission.
+At the center of the Optimism `L2` economy is the Optimistic flywheel. This economic cycle generates revenue, network growth, and the achievement of the Optimistic mission.
 
 1. Users and `dApps` demand network `blockspace`.
 2. The network generates revenue via transaction fees.
@@ -148,17 +148,26 @@ With more valuable onchain infrastructure, demand for OP blockspace increases, a
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-new-economy-2981ffe5.png)
 
-# **Incentivizing** **Public Goods**
+# **Incentivizing** **the Public Goods Economy**
 
-For a project to be considered for public goods funding, OP takes an ‘**Impact = Profit**’ approach. Impact, however, is difficult to anticipate ahead of time. Rather than making predictions, the funding body periodically look over existing projects and assign retroactive funding based on historic performance. As Vitalik Buterin said, 
+As you can see, Public Goods infrastructure is at the heart of Optimism. Yet selecting projects worth funding isn’t simple.
 
+Here, OP takes an ‘**Impact = Profit**’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance. 
+
+As Vitalik Buterin said, 
 _“It’s easier to agree on what was useful than what will be useful.”_
 
-This distribution model is known as ‘Retroactive Public Goods Funding’, or ‘RetroPGF’. This funding mechanism incentivises optimistic thinkers to build public goods that are of service to humanity — free from the value-extraction mindset of traditional free markets. OP calls this effect ‘**Ether’s Phoenix**’, an “angel reaching backwards in time, rewarding those who summon it.”
+This distribution model is known as ‘Retroactive Public Goods Funding’, or ‘RetroPGF’. This funding mechanism incentivises optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional free markets. OP calls this effect ‘**Ether’s Phoenix’**: an “angel reaching backwards in time, rewarding those who summon it.”
+
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg)
+
+# **Incentivizing the Public Goods Economy**
 
 _“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”_
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-public-goods-adc49d00.svg)
+— The Optimism Foundation
+
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-3bf9db24.svg)
 
 # Knowledge Check 4
 
@@ -178,17 +187,17 @@ How is Optimism incentivizing community-focused economics?
 
 - [ ] All of the above.
 
-> ℹ️  Try again! One of these is untrue.
+> ℹ️  Try again! Only one of these is true.
 
 # Introducing the Governing Houses
 
-There are two houses in OP governance, with independent and shared responsibilities in directing the network. 
+There are two houses in OP governance, with independent and shared responsibilities in running the network.
 
-**The Token House** is responsible for managing network upgrades, incentives, and the treasury. It uses a stakeholder structure to incentivize growth of the network economy, and accrue stakeholder value. The house is also responsible for preserving decentralization — preventing capture of the network economy.
+**The Token House** is responsible for managing network upgrades, incentives, and treasury. Its stakeholder structure incentivizes growth of the network economy, and generates stakeholder value. The house is also responsible for preserving decentralization — preventing capture of the network economy.
 
-**The Citizens’ House** allocates `RetroPGF` resources to community projects, according to the ‘Impact = Profit’ ethos, and helps to decide the parameters of citizenship. The house is incentivized to improve network quality-of-life, by funding public goods that improve the value of citizenship!
+**The Citizens’ House** allocates `RetroPGF` resources to community projects, according to the ‘Impact = Profit’ ethos, and helps decide the parameters of citizenship. The house is incentivized to improve network quality-of-life, by funding public goods that improve the value of citizenship!
 
-Both houses maintain network balance through specific duties, voting mechanics, and `veto` abilities. You can join either house, or both! Let’s take a closer look at their functions.
+Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. You can join either house, or both! Let’s take a closer look at each.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/introducing-the-governing-houses-992f67be.png)
 
@@ -198,15 +207,15 @@ How does the Citizens’ House differ from the Token House?
 
 - [ ] The Citizens’ House is the only house with veto abilities.
 
-> ℹ️ Try again! Both houses can veto certain proposals made by the other house.
+> ℹ️ Try again! Both houses have veto powers.
 
 - [ ] The Citizens’ House allocates RetroPGF rewards.
 
-> ℹ️ Correct! The primary role of the Citizens’ House is public goods funding.
+> ℹ️ Correct! The Citizens’ House allocates public goods funding.
 
 - [ ] The Citizens’ House leads network decentralization.
 
-> ℹ️  …
+> ℹ️  Try again! Both houses maintain decentralization.
 
 - [ ] All of the above.
 
@@ -219,7 +228,7 @@ The Token House maintains the economy and defenses of the OP Network.
 Duties include:
 
 - ⚒️ Review and approval of **upgrades to network mechanics**.
-- ⛓️ Selection of network **block producers**.
+- ⛓️ Selection of network `block producers`.
 - 📈 **Allocation of revenue,** using collected transaction fees to fuel network growth.
 
 The Citizens’ House has the right to veto any proposal under the above categories.
@@ -230,33 +239,33 @@ The Token house also has the ability to veto any proposal submitted by the Citiz
 
 # Token House: Joining, Voting, Delegating
 
-Joining the Token House is done via purchasing and holding OP tokens, with voting power scaling based on how many tokens are held. These are ERC20 tokens, and are therefore transferrable; They can be bought and sold on `CEXs`, an Optimism `DEX`, or sent between friends. OP tokens are not available on other networks.
+Joining the Token House is done via purchasing and holding OP tokens. Voting power scales based on how many tokens are held. These are `ERC20` tokens, and are therefore transferrable; They can be bought and sold on `CEXs`, Optimism `DEXs`, or sent between friends. OP tokens are not available on other networks.
 
-With this considered, some users prefer to delegate their voting power to community members — known as Governance Delegates — that they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegating doesn’t require a user to give up ownership of their tokens!
+Now, network governance is only as democratic as its initial `token distribution` — meaning who received voting power in the first place. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced community representation.
+
+Many users prefer to delegate their voting power to leading community members that they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation allows you to maintain ownership of your tokens!
 
 Anyone can become a Token House delegate on Optimism, representing a group of friends, a community, or even a university’s blockchain club! Large, active delegates are often rewarded by the community.
 
-Now, network governance is only as democratic as its initial `token distribution` — meaning who received voting power in the first place. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how Optimism has divided initial governance power, in service of balanced community representation.
-
 # Knowledge Check 6
 
-How does the Token House protect the network from governance capture?
+How does the Token House protect the network from attack?
 
 - [ ] By selecting a diverse set of network block producers.
 
-> ℹ️ …
+> ℹ️ This is true, but it isn’t the only answer.
 
 - [ ] By vetoing Optimism Foundation proposals seen to be reducing token holder rights.
 
-> ℹ️ …
+> ℹ️ This is true, but it isn’t the only answer.
 
-- [ ] Through decentralized token distribution.
+- [ ] By carefully reviewing network upgrade proposals.
 
-> ℹ️  …
+> ℹ️  This is true, but it isn’t the only answer.
 
 - [ ] All of the above.
 
-> ℹ️  …
+> ℹ️  Correct! The Token House has a diverse set of responsibilities in protecting the network.
 
 # The Citizens’ House
 
@@ -266,47 +275,47 @@ Duties include:
 
 - 🎯 **Defining RetroPGF metrics and impact** criteria for measuring project performance.
 - 🔍 **Research and allocation of RetroPGF** to community projects meeting the set guidelines.
-- 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal
+- 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-citizens-house-fd4eef9e.svg)
 
 # Citizens’ House: Joining, Voting, Delegating
 
-New joiners to the Citizen House are currently onboarded by invitation, to slowly scale and refine the House’s process. Membership is marked by holding a Citizen Badge — a nontransferable `ERC-721` token.
+New joiners to the Citizens’ House are currently onboarded by invitation, to slowly scale and refine House process. Membership is marked by holding a ‘Citizen Badge’ — a nontransferable `ERC-721` token.
 
-Invitation can happen in a number of ways, but specific scaling methods have been known to change season to season:
+Invitation can happen in a number of ways, but the specifics change season to season:
 
-- Citizen badgeholders may be granted an additional invite, to be shared with someone they deem of great benefit to the network.
-- Previous recipients of RetroPGF have been granted the opportunity to select one community member for Citizen status.
-- The Optimism Foundation has issued badges to project builders using the network.
+- Current citizens may be granted an additional invite, to be shared with someone they see as a great addition to the network.
+- Previous RetroPGF recipients have been granted the opportunity to select one community member for citizen status.
+- The Optimism Foundation has issued citizenship to project builders using the network.
 
-Each badgeholder has a single vote. Their voting power is non-transferrable, and cannot be delegated, in order to prevent accumulation of House power under a small number of citizens.
+Each citizen has a single vote. Their voting power is non-transferrable, and cannot be delegated. This prevents gathering of House power under a small number of citizens.
 
 # Knowledge Check 7
 
-How does the Citizens’ House protect the network from governance capture?
+How does the Citizens’ House protect the network from attack?
 
 - [ ] By expanding the number of Citizens’ House members.
 
-> ℹ️ 
+> ℹ️ This is true, but it isn’t the only answer.
 
 - [ ] By vetoing Token House proposals seen to be leading to power imbalance.
 
-> ℹ️ 
+> ℹ️ This is true, but it isn’t the only answer.
 
 - [ ] Both of the above.
 
-> ℹ️  
+> ℹ️  Correct! This house diversifies its own perspective, and balances Token House perspective.
 
 # Now… Think Even Bigger!
 
-We’re almost ready to get involved in OP governance. There’s one last thing to mention.
+We’re almost ready to govern on 🔴Optimism. There’s one last thing to mention.
 
-The OP vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. OP technology is built to be scaled across multiple L2s — and even into real world governance scenarios. OP calls it **the Superchain**.
+The OP vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. OP technology is built to be scaled across multiple L2s — and even into real world governance scenarios. OP calls this **the Superchain**.
 
-Coinbase haw already cloned and begun contributing to this shared `open source` initiative, through the Base blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards OP’s impact=profit ethos.
+Coinbase has already forked and started contributing to this `open source` initiative, through the 🔵Base blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards OP’s ‘Impact = Profit’ ethos.
 
-Members are required to abide by the OP governance process to continue their benefits. This sets an exciting economic vision, if we can build sustainable, community-oriented governance practices today!
+Superchain networks who abide by the OP governance process receive numerous benefits. This incentive model sets a bright vision for future internet economies, if we can build sustainable, community-oriented governance practices on Optimism today!
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/now-think-even-bigger-0f29ab97.svg)
 
@@ -314,11 +323,9 @@ Members are required to abide by the OP governance process to continue their ben
 
 History has always been paved by the optimists of humanity — those that dared to think big, and act to achieve it.
 
-By getting involved in innovative communities, using truly `trustless` & fair governance systems, we can continue a movement that has been developing since the dawn of humankind. Our diverse world deserves communication and coordination mechanisms that allow us to not only coexist, but achieve balance and thrive together at local, global, and online scales.
+By getting involved in innovative communities, using truly `trustless` & fair governance systems, we’re continuing a movement started at the dawn of humankind. Our diverse world deserves communication and coordination mechanisms that allow us to grow together. In learning to navigate our differences, humanity can thrive at local, global, and online scales.
 
-We can start our OP Governance journey by joining the Token House. Today’s (optional) quest is to purchase any amount of voting tokens, and assign them to the delegate who best represents your vision for Optimism.
-
-While the Citizens’ House develops its onboarding procedures, you can begin your Citizen journey by getting involved in the [OP community](https://gov.optimism.io/) forum — offering your unique contribution to the OP vision!
+We can start our OP Governance journey today by joining the Token House and delegating our tokens. While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by getting involved in the [OP community](https://gov.optimism.io/) forum — offering our unique contribution to the OP vision!
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg)
 
