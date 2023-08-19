@@ -5,6 +5,18 @@ import { ALCHEMY_KEY_BACKEND } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_IDS, BADGE_API } from 'constants/badges'
 import badges from 'data/badges.json'
 
+
+export const BADGE_TO_KUDOS_IDS = {
+  '1': '2561',
+  '2': '2562',
+  '3': '2563',
+  '5': '2565',
+  '6': '2608',
+  '7': '14611',
+  '8': '14886',
+  '9': '15463'
+}
+
 async function getBadgeTokensIds(address: string): Promise<number[]> {
   try {
     const badges = await axios.get(
@@ -38,11 +50,13 @@ export default async function handler(
 
   if (!address) return res.status(400).json({ error: 'Wrong params' })
 
-  const kudosTokenIds = address in badges ? badges[address] : []
+  const oldBadgeTokenIds = address in badges ? badges[address] : []
   const badgeTokenIds = [
     ...(await getBadgeTokensIds(address)),
-    ...kudosTokenIds,
+    ...oldBadgeTokenIds
   ]
 
-  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)] })
+  const kudosTokenIds = address in badges ? badges[address].map(token => BADGE_TO_KUDOS_IDS[token.toString()]).filter(token => token) : []
+
+  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds })
 }

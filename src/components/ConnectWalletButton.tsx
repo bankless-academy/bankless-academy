@@ -72,6 +72,7 @@ const ConnectWalletButton = ({
     false
   )
   const [, setBadgesMintedLS] = useLocalStorage('badgesMinted', [])
+  const [, setKudosMintedLS] = useLocalStorage('kudosMinted', [])
   const [refreshBadgesLS, setRefreshBadgesLS] = useLocalStorage(
     'refreshBadges',
     false
@@ -166,6 +167,10 @@ const ConnectWalletButton = ({
             )
           }
           setBadges(badgesMinted)
+        }
+        const kudosTokenIds = res?.data?.kudosTokenIds
+        if (Array.isArray(kudosTokenIds)) {
+          setKudosMintedLS(kudosTokenIds)
         }
       })
   }

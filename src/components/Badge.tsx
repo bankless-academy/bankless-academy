@@ -9,6 +9,7 @@ import { BADGE_OPENSEA_URL } from 'constants/badges'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
+import { BADGE_TO_KUDOS_IDS } from 'pages/api/badges/[...slug]'
 
 const BadgeHelper = (
   <Helper
@@ -36,6 +37,7 @@ const Badge = ({
     `isBadgeMinted-${lesson.badgeId}`,
     false
   )
+  const [kudosMintedLS] = useLocalStorage(`kudosMinted`, [])
   const share = `I've just claimed my "${
     lesson.name
   }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
@@ -66,6 +68,13 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
       </Box>
     )
   }
+
+  const kudosId = BADGE_TO_KUDOS_IDS[lesson.badgeId.toString()]
+  const OpenSeaBadgeLink = kudosMintedLS.includes(kudosId)
+    ? // old badges (kudos)
+      `https://opensea.io/assets/matic/0x60576a64851c5b42e8c57e3e4a5cf3cf4eeb2ed6/${kudosId}`
+    : // new badges
+      `${BADGE_OPENSEA_URL}${lesson.badgeId}`
 
   return (
     <>
@@ -120,7 +129,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                   </Button>
                 </ExternalLink>
               </Box>
-              <ExternalLink href={`${BADGE_OPENSEA_URL}${lesson.badgeId}`}>
+              <ExternalLink href={OpenSeaBadgeLink}>
                 <Button
                   variant="primary"
                   w="100%"
