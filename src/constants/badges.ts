@@ -1,8 +1,6 @@
 import { LESSONS } from 'constants/index'
 // import { WHITELABEL } from 'constants/whitelabel'
 
-export const BADGE_ADDRESS = '0xa0656F29Efd33b5d6729C467096f07C1643B275A'
-
 const badgeIds = LESSONS.filter((lesson) => lesson.badgeId).map(
   (lesson) => lesson.badgeId
 )
@@ -15,6 +13,8 @@ export const BADGE_ENV: 'dev' | 'prod' = process.env.NEXT_PUBLIC_BADGE_ENV === '
 
 export const IS_BADGE_PROD = BADGE_ENV === 'prod'
 
+export const BADGE_ADDRESS = IS_BADGE_PROD ? '0x3436d8af0b617DeEF5AADBaFC56f293e102DD886' : '0xa0656F29Efd33b5d6729C467096f07C1643B275A'
+
 export const BADGE_EXPLORER = BADGE_ENV
   ? 'https://mumbai.polygonscan.com/'
   : 'https://polygonscan.com/'
@@ -25,9 +25,9 @@ export const BADGE_OPENSEA_URL = IS_BADGE_PROD
 
 export const BADGE_CHAIN_ID = IS_BADGE_PROD ? 137 : 80001
 
-export const BADGE_MINTER =
-  // WHITELABEL.mintkudos_community_admin ||
+export const BADGE_MINTER = IS_BADGE_PROD ?
   // banklessacademy.polygon
+  '0x472A74C4F7e281e590Bed861daa66721A6ACADBC' :
   '0x03ab46a7E99279a4b7931626338244DD8236F0Ac'
 
 export const BADGES_ALLOWED_SIGNERS = [
