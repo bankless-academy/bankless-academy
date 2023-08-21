@@ -15,9 +15,9 @@ export const IS_BADGE_PROD = BADGE_ENV === 'prod'
 
 export const BADGE_ADDRESS = IS_BADGE_PROD ? '0x3436d8af0b617DeEF5AADBaFC56f293e102DD886' : '0xa0656F29Efd33b5d6729C467096f07C1643B275A'
 
-export const BADGE_EXPLORER = BADGE_ENV
-  ? 'https://mumbai.polygonscan.com/'
-  : 'https://polygonscan.com/'
+export const BADGE_EXPLORER = IS_BADGE_PROD
+  ? 'https://polygonscan.com/'
+  : 'https://mumbai.polygonscan.com/'
 
 export const BADGE_OPENSEA_URL = IS_BADGE_PROD
   ? `https://opensea.io/assets/matic/${BADGE_ADDRESS}/`
