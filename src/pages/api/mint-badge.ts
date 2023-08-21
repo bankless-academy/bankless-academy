@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
-import { fromHex, formatEther } from 'viem'
+import { formatEther } from 'viem'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import {
@@ -10,7 +10,7 @@ import {
   WALLET_SIGNATURE_MESSAGE,
   ALCHEMY_KEY_BACKEND,
 } from 'constants/index'
-import { BADGE_ADDRESS, BADGE_MINTER, BADGES_ALLOWED_SIGNERS } from 'constants/badges'
+import { BADGE_ADDRESS, BADGE_CHAIN_ID, BADGE_MINTER, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
 import { api, verifySignature } from 'utils'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
@@ -152,20 +152,31 @@ export default async function handler(
         })
       }
       // Cancel tx if gas > 300 gwei
-      const response = await (await fetch(`https://polygon-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`, {
-        method: 'POST',
+      // estimate gas fees
+      const estimation = await (await fetch(`https://api.blocknative.com/gasprices/blockprices?chainid=${BADGE_CHAIN_ID}`, {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': process.env.BLOCKNATIVE_API_KEY
         },
-        body: JSON.stringify({
-          "id": 1,
-          "jsonrpc": "2.0",
-          "method": "eth_gasPrice"
-        }),
       })).json()
-      const gasInGwei = fromHex(response.result, 'number') / 1000000000
-      console.log('gas:', gasInGwei)
-      if (gasInGwei > 300) {
+      // select confidence: 95% = [1]
+      console.log(estimation)
+      console.log(estimation.blockPrices[0].estimatedPrices[1])
+      const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[1].maxFeePerGas || 40
+      const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[1].maxPriorityFeePerGas || 40
+      const options = {
+        maxFeePerGas: ethers.utils.parseUnits(
+          Math.ceil(maxFeePerGasInGwei) + '',
+          'gwei'
+        ),
+        maxPriorityFeePerGas: ethers.utils.parseUnits(
+          Math.ceil(maxPriorityFeePerGasInGwei) + '',
+          'gwei'
+        )
+      }
+      console.log(options)
+      if (maxFeePerGasInGwei > 300) {
         questStatus = 'Polygon is currently experiencing high gas prices ... try again in 1 hour.'
         console.log(questStatus)
         return res.status(403).json({ status: questStatus })
@@ -177,7 +188,7 @@ export default async function handler(
 
       console.log('mint !!!!!!!!!')
       // send email alert if balance < 1 MATIC
-      const provider = new ethers.providers.AlchemyProvider('maticmum', ALCHEMY_KEY_BACKEND)
+      const provider = new ethers.providers.AlchemyProvider(IS_BADGE_PROD ? 'matic' : 'maticmum', ALCHEMY_KEY_BACKEND)
       const balance = formatEther((await provider.getBalance(BADGE_MINTER)).toBigInt())
       console.log('balance: ', balance)
       if (parseInt(balance) < 1) {
@@ -231,7 +242,7 @@ export default async function handler(
           status: '',
         })
       }
-      const mint = await contract[contractFunction](...functionParams)
+      const mint = await contract[contractFunction](...functionParams, options)
       console.log(mint)
 
       if (mint.hash) {
@@ -242,7 +253,7 @@ export default async function handler(
         trackBE(address, 'mint_badge', {
           badgeId,
           address,
-          gas: gasInGwei
+          gas: options
         })
         return res.status(200).json({
           transactionHash: mint.hash,
