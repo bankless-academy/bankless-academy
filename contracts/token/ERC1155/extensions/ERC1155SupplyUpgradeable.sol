@@ -24,11 +24,22 @@ abstract contract ERC1155SupplyUpgradeable is
 
     mapping(uint256 => uint256) private _totalSupply;
 
+    // CUSTOM
+    uint256 private _totalSupplyAllCustom;
+
     /**
      * @dev Total amount of tokens in with a given id.
      */
     function totalSupply(uint256 id) public view virtual returns (uint256) {
         return _totalSupply[id];
+    }
+
+    // CUSTOM
+    /**
+     * @dev Total amount of tokens.
+     */
+    function totalSupply() public view virtual returns (uint256) {
+        return _totalSupplyAllCustom;
     }
 
     /**
@@ -52,12 +63,21 @@ abstract contract ERC1155SupplyUpgradeable is
         super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
 
         if (from == address(0)) {
+            // CUSTOM
+            uint256 totalMintAmount = 0;
             for (uint256 i = 0; i < ids.length; ++i) {
-                _totalSupply[ids[i]] += amounts[i];
+                // CUSTOM
+                uint256 amount = amounts[i];
+                _totalSupply[ids[i]] += amount;
+                totalMintAmount += amount;
             }
+            // CUSTOM
+            _totalSupplyAllCustom += totalMintAmount;
         }
 
         if (to == address(0)) {
+            // CUSTOM
+            uint256 totalBurnAmount = 0;
             for (uint256 i = 0; i < ids.length; ++i) {
                 uint256 id = ids[i];
                 uint256 amount = amounts[i];
@@ -68,7 +88,16 @@ abstract contract ERC1155SupplyUpgradeable is
                 );
                 unchecked {
                     _totalSupply[id] = supply - amount;
+
+                    // CUSTOM
+                    // Overflow not possible: sum(amounts[i]) <= sum(totalSupply(i)) <= totalSupplyAll
+                    totalBurnAmount += amount;
                 }
+            }
+            // CUSTOM
+            unchecked {
+                // Overflow not possible: totalBurnAmount = sum(amounts[i]) <= sum(totalSupply(i)) <= totalSupplyAll
+                _totalSupplyAllCustom -= totalBurnAmount;
             }
         }
     }
