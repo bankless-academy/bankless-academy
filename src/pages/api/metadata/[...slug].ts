@@ -36,6 +36,8 @@ export default async function handler(
 
   if (!lesson) return res.status(400).json({ error: 'Unknown tokenId' })
 
+  // https://beta.banklessacademy.com/api/metadata/badge/{id}
+  // https://app.banklessacademy.com/api/metadata/badge/{id}
   const metadata = {
     name: `${lesson.name}${slug === 'badgev2' ? ' v2' : ''}`,
     description: `${lesson.description} ${lessonAddress(lesson)}`,
