@@ -98,8 +98,12 @@ const CollectEntryButton = ({
                 </Box>
                 <Box flexDirection="column">
                   <Box>Minting in progress:</Box>
-                  <ExternalLink href={txLink} alt="Transaction in progress">
-                    {isSmallScreen ? `${txLink.substring(0, 40)}...` : txLink}
+                  <ExternalLink
+                    underline="true"
+                    href={txLink}
+                    alt="Transaction in progress"
+                  >
+                    {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
                   </ExternalLink>
                 </Box>
               </Box>
@@ -130,8 +134,12 @@ const CollectEntryButton = ({
                 </Box>
                 <Box flexDirection="column">
                   <Box>Entry minted:</Box>
-                  <ExternalLink href={txLink} alt="Transaction in progress">
-                    {isSmallScreen ? `${txLink.substring(0, 40)}...` : txLink}
+                  <ExternalLink
+                    underline="true"
+                    href={txLink}
+                    alt="Transaction in progress"
+                  >
+                    {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
                   </ExternalLink>
                 </Box>
               </Box>

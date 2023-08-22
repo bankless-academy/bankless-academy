@@ -17,8 +17,8 @@ import {
 } from '@chakra-ui/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
-import { useAccount, useNetwork } from 'wagmi'
-import { switchNetwork, signMessage, waitForTransaction } from '@wagmi/core'
+import { useAccount } from 'wagmi'
+import { signMessage, waitForTransaction } from '@wagmi/core'
 import { Gear, SealCheck } from '@phosphor-icons/react'
 
 import { useSmallScreen } from 'hooks/index'
@@ -30,7 +30,6 @@ import {
   BADGE_CHAIN_ID,
   BADGE_EXPLORER,
 } from 'constants/badges'
-import { NETWORKS } from 'constants/networks'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { theme } from 'theme/index'
 import { api } from 'utils'
@@ -48,8 +47,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
   )
   const [, setRefreshBadgesLS] = useLocalStorage('refreshBadges', false)
 
-  const { address, connector } = useAccount()
-  const { chain } = useNetwork()
+  const { address } = useAccount()
   const toast = useToast()
   const [isSmallScreen] = useSmallScreen()
 
@@ -94,26 +92,6 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
     if (status !== '') return
     setStatus('Minting in progress ...')
     // TODO: add 1 min timeout
-    if (![1, 10, 137, 80001].includes(chain?.id)) {
-      const network = Object.values(NETWORKS).find(
-        (network) => network.chainId === BADGE_CHAIN_ID
-      )
-      toast.closeAll()
-      if (connector?.name !== 'MetaMask') {
-        toast({
-          title: 'Wrong network',
-          description: `Switch network to ${network.name} in order to mint your badge.`,
-          status: 'warning',
-          duration: null,
-          isClosable: true,
-        })
-      }
-      try {
-        await switchNetwork({ chainId: BADGE_CHAIN_ID })
-      } catch (error) {
-        setStatus('')
-      }
-    }
 
     try {
       const signature = await signMessage({
@@ -161,8 +139,12 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                   </Box>
                   <Box flexDirection="column">
                     <Box>Minting in progress ...</Box>
-                    <ExternalLink href={txLink} alt="Transaction in progress">
-                      {`${txLink.substring(0, 40)}...`}
+                    <ExternalLink
+                      underline="true"
+                      href={txLink}
+                      alt="Transaction in progress"
+                    >
+                      {`${txLink.substring(0, 50)}...`}
                     </ExternalLink>
                   </Box>
                 </Box>
@@ -196,8 +178,12 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                     </Box>
                     <Box flexDirection="column" alignSelf="center">
                       <Box>Badge successfully minted!</Box>
-                      <ExternalLink href={openSeaLink} alt="Lesson badge">
-                        {`${openSeaLink.substring(0, 40)}...`}
+                      <ExternalLink
+                        underline="true"
+                        href={openSeaLink}
+                        alt="Lesson badge"
+                      >
+                        {`${openSeaLink.substring(0, 50)}...`}
                       </ExternalLink>
                     </Box>
                   </Box>
@@ -228,13 +214,20 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
           description: (
             <>
               {result.data.transactionHash ? (
-                <ExternalLink href={txLink} alt="Transaction in progress">
-                  {`${txLink.substring(0, 40)}...`}
+                <ExternalLink
+                  underline="true"
+                  href={txLink}
+                  alt="Transaction in progress"
+                >
+                  {`${txLink.substring(0, 50)}...`}
                 </ExternalLink>
               ) : (
                 <>
                   {`${result.data.status || result.data.error || ''} | `}
-                  <ExternalLink href="/faq#d1a7f6dda4334a7ba73ee8b3a18a60ad">
+                  <ExternalLink
+                    underline="true"
+                    href="/faq#d1a7f6dda4334a7ba73ee8b3a18a60ad"
+                  >
                     Learn more
                   </ExternalLink>
                 </>
@@ -309,7 +302,10 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                     <Box flexDirection="column" alignSelf="center">
                       <Box fontWeight="bold">Gitcoin Passport not set up.</Box>
                       <Box mt="4">
-                        <ExternalLink href="/faq#ea6ae6bd9ca645498c15cc611bc181c0">
+                        <ExternalLink
+                          underline="true"
+                          href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
+                        >
                           Follow these steps and try again
                         </ExternalLink>
                       </Box>

@@ -39,7 +39,10 @@ const PassportComponent = ({
           toast({
             title: 'Gitcoin Passport stamps not loading',
             description: (
-              <ExternalLink href="/faq#ea6ae6bd9ca645498c15cc611bc181c0">
+              <ExternalLink
+                underline="true"
+                href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
+              >
                 Follow these steps and try again
               </ExternalLink>
             ),
@@ -50,7 +53,11 @@ const PassportComponent = ({
         } else {
           toast({
             title: 'Gitcoin Passport issue',
-            description: <ExternalLink href="/bug">Report a bug</ExternalLink>,
+            description: (
+              <ExternalLink underline="true" href="/bug">
+                Report a bug
+              </ExternalLink>
+            ),
             status: 'warning',
             duration: null,
             isClosable: true,
