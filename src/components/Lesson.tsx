@@ -22,12 +22,12 @@ import { useAccount } from 'wagmi'
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
-import MintKudos from 'components/MintKudos'
+import MintBadge from 'components/MintBadge'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
 import { isHolderOfNFT, Mixpanel, scrollTop } from 'utils'
 import { IS_WHITELABEL, KEYWORDS, TOKEN_GATING_ENABLED } from 'constants/index'
-import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
+import { LearnIcon, QuizIcon, QuestIcon, RewardsIcon } from 'components/Icons'
 import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
 import NFT from 'components/NFT'
@@ -202,8 +202,8 @@ const Lesson = ({
   )
   const [quizRetryCount, setQuizRetryCount] = useState({})
   const toast = useToast()
-  const [isKudosMintedLS] = useLocalStorage(
-    `isKudosMinted-${lesson.kudosId}`,
+  const [isBadgeMintedLS] = useLocalStorage(
+    `isBadgeMinted-${lesson.badgeId}`,
     false
   )
 
@@ -483,7 +483,7 @@ const Lesson = ({
           {slide.type === 'LEARN' && <LearnIcon />}
           {slide.type === 'QUIZ' && <QuizIcon />}
           {slide.type === 'QUEST' && <QuestIcon />}
-          {slide.type === 'END' && <KudosIcon />}
+          {slide.type === 'END' && <RewardsIcon />}
         </Box>
         <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
           {slide.type === 'QUIZ' ? (
@@ -585,13 +585,13 @@ const Lesson = ({
                 <>{Quest?.questComponent}</>
               ) : (
                 <>
-                  {lesson.kudosImageLink && (
+                  {lesson.badgeImageLink && (
                     <Box w="290px" h="290px">
-                      <NFT nftLink={lesson.kudosImageLink} />
+                      <NFT nftLink={lesson.badgeImageLink} />
                     </Box>
                   )}
-                  {lesson.kudosId ? (
-                    <MintKudos kudosId={lesson.kudosId} />
+                  {lesson.badgeId ? (
+                    <MintBadge badgeId={lesson.badgeId} />
                   ) : (
                     <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   )}
@@ -665,8 +665,8 @@ const Lesson = ({
                 variant="primaryBigLast"
                 rightIcon={<ArrowForwardIcon />}
               >
-                {lesson.kudosId &&
-                isKudosMintedLS === false &&
+                {lesson.badgeId &&
+                isBadgeMintedLS === false &&
                 Quest?.isQuestCompleted
                   ? 'Mint Badge'
                   : 'Finish'}

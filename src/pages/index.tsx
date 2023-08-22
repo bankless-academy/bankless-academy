@@ -21,7 +21,7 @@ import {
   LearnIcon,
   QuizIcon,
   QuestIcon,
-  KudosIcon,
+  RewardsIcon,
   PencilIcon,
   GraduationCapIcon,
   HandshakeIcon,
@@ -151,7 +151,7 @@ const HomePage = (): JSX.Element => {
                   </Text>
                 </Card>
                 <Card>
-                  <KudosIcon />
+                  <RewardsIcon />
                   <Heading size="lg" mt="2">
                     Earn Rewards
                   </Heading>

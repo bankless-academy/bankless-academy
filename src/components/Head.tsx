@@ -1,7 +1,6 @@
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
-import { hotjar } from 'react-hotjar'
 
 import {
   PROJECT_NAME,
@@ -13,12 +12,14 @@ import {
   APPLE_TOUCH_ICON,
   APPLE_TOUCH_STARTUP_IMAGE,
 } from 'constants/index'
+import { useEffect } from 'react'
 
 export interface MetaData {
   title?: string
   description?: string
   image?: string
   isLesson?: boolean
+  translations?: any
 }
 
 const umamiWebsiteId =
@@ -43,6 +44,19 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
       }`
     : `${DOMAIN_URL}${DEFAULT_METADATA.image}`
   const url = `${DOMAIN_URL}${router.asPath}`
+
+  useEffect(() => {
+    /* Hotjar */
+    if (
+      typeof window !== 'undefined' &&
+      window.location.hostname === 'app.banklessacademy.com'
+    ) {
+      import('react-hotjar').then((hotjarLib) => {
+        hotjarLib.hotjar.initialize(2568813, 6)
+      })
+    }
+  }, [])
+
   return (
     <>
       <NextHead>
@@ -86,11 +100,6 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         {/* noscript */}
         <noscript>You need to enable JavaScript to run this app.</noscript>
       </NextHead>
-      {/* Hotjar */}
-      {typeof window !== 'undefined' &&
-      window.location.hostname === 'app.banklessacademy.com'
-        ? hotjar.initialize(2568813, 6)
-        : null}
       {/* Umami */}
       <Script
         async

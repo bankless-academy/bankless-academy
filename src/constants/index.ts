@@ -18,14 +18,14 @@ export const DOMAIN_URL =
     ? `https://${process.env.VERCEL_URL}`
     : `https://${DOMAIN_PROD}`
 
+const imageMeta = WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
+
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
   description:
     WHITELABEL?.default_metadata_description ||
     'Level up your knowledge of Web3 and DeFi',
-  image: `${
-    WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
-  }`,
+  image: imageMeta,
 }
 
 export const FAVICON = WHITELABEL?.favicon || '/favicon.png'
@@ -103,8 +103,8 @@ export const MIRROR_ARTICLE_ADDRESSES = LESSONS.filter(
 ).map((lesson) => lesson.mirrorNFTAddress)
 
 export const COLLECTIBLE_ADDRESSES = LESSONS.filter(
-  (lesson) => lesson.LessonCollectibleTokenAddress
-).map((lesson) => lesson.LessonCollectibleTokenAddress)
+  (lesson) => lesson.lessonCollectibleTokenAddress
+).map((lesson) => lesson.lessonCollectibleTokenAddress)
 
 export const ACTIVATE_MIXPANEL = !!process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID
 
@@ -123,3 +123,5 @@ export const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED === 'true' || false
 
 export const DISCLAIMER_ENABLED =
   process.env.NEXT_PUBLIC_DISCLAIMER_ENABLED === 'true' || false
+
+export const WALLET_SIGNATURE_MESSAGE = 'Signing a message with my wallet to prove I own it so I can claim the lesson badge.'

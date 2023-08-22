@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Text, Button, Image, useToast } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
@@ -23,6 +23,10 @@ const PassportComponent = ({
   const toast = useToast()
   const { address } = useAccount()
 
+  useEffect(() => {
+    checkPassport()
+  }, [])
+
   async function checkPassport() {
     setIsLoading(true)
     const result = await api('/api/passport', { address })
@@ -35,7 +39,10 @@ const PassportComponent = ({
           toast({
             title: 'Gitcoin Passport stamps not loading',
             description: (
-              <ExternalLink href="/faq#ea6ae6bd9ca645498c15cc611bc181c0">
+              <ExternalLink
+                underline="true"
+                href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
+              >
                 Follow these steps and try again
               </ExternalLink>
             ),
@@ -46,7 +53,11 @@ const PassportComponent = ({
         } else {
           toast({
             title: 'Gitcoin Passport issue',
-            description: <ExternalLink href="/bug">Report a bug</ExternalLink>,
+            description: (
+              <ExternalLink underline="true" href="/bug">
+                Report a bug
+              </ExternalLink>
+            ),
             status: 'warning',
             duration: null,
             isClosable: true,

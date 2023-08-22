@@ -10,6 +10,7 @@ import DecentralizedExchanges from 'components/Quest/DecentralizedExchanges'
 import DEXAggregators from 'components/Quest/DEXAggregators'
 import Layer2Blockchains from 'components/Quest/Layer2Blockchains'
 import BanklessArchetypes from 'components/Quest/BanklessArchetypes'
+import OptimismGovernance from 'components/Quest/OptimismGovernance'
 import { ConnectFirst } from 'components/Quest/WalletConnect'
 import { useAccount } from 'wagmi'
 
@@ -28,11 +29,12 @@ export const ONCHAIN_QUESTS = [
   'DEXAggregators',
   'Layer2Blockchains',
   'DecentralizedExchanges',
+  'OptimismGovernance',
 ]
 
 const QuestComponent = (
   component: QuestComponentType | null,
-  kudosId?: number
+  badgeId?: number
 ): QuestType => {
   const QUEST_COMPONENTS = {
     WalletConnect: WalletConnect,
@@ -46,6 +48,7 @@ const QuestComponent = (
     DEXAggregators: DEXAggregators,
     Layer2Blockchains: Layer2Blockchains,
     BanklessArchetypes: BanklessArchetypes,
+    OptimismGovernance: OptimismGovernance,
   }
   if (!component || !QUESTS.includes(component)) return null
 
@@ -66,7 +69,7 @@ const QuestComponent = (
   useEffect(() => {
     const validateQuest = async () => {
       const data: any = { address, quest: component }
-      if (kudosId) data.kudosId = kudosId
+      if (badgeId) data.badgeId = badgeId
       if (data.quest === 'ConceptosBasicosDeBlockchain')
         data.quest = 'BlockchainBasics'
       const result = await api('/api/validate-quest', data)

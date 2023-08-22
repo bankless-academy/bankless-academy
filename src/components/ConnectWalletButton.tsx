@@ -32,12 +32,7 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
 
 import ExternalLink from 'components/ExternalLink'
 import { LESSONS, SIWE_ENABLED } from 'constants/index'
-import {
-  MINTKUDOS_API,
-  MINTKUDOS_COMMUNITY_ID,
-  KUDOS_IDS,
-} from 'constants/kudos'
-import { KudosType } from 'entities/kudos'
+import { BADGE_IDS } from 'constants/badges'
 import { getUD, getLensProfile, shortenAddress, api } from 'utils'
 import { polygon, optimism } from 'wagmi/chains'
 
@@ -70,15 +65,16 @@ const ConnectWalletButton = ({
   const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
-  const [kudos, setKudos] = useState<KudosType[]>([])
+  const [badges, setBadges] = useState<number[]>([])
   const [siwe, setSiweLS] = useLocalStorage('siwe', '')
   const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
   )
+  const [, setBadgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [, setKudosMintedLS] = useLocalStorage('kudosMinted', [])
-  const [refreshKudosLS, setRefreshKudosLS] = useLocalStorage(
-    'refreshKudos',
+  const [refreshBadgesLS, setRefreshBadgesLS] = useLocalStorage(
+    'refreshBadges',
     false
   )
   const { onOpen, onClose, isOpen } = useDisclosure()
@@ -140,8 +136,7 @@ const ConnectWalletButton = ({
       if (ensName) {
         setName(ensName)
         const ensAvatar = await fetchEnsAvatar({
-          address,
-          // name: ensName,
+          name: ensName,
           chainId: 1,
         })
         if (ensAvatar) setAvatar(ensAvatar)
@@ -155,32 +150,29 @@ const ConnectWalletButton = ({
     }
   }
 
-  function refreshKudos() {
+  function refreshBadges() {
     if (address)
-      axios
-        .get(
-          `${MINTKUDOS_API}/v1/wallets/${address}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
-        )
-        .then((res) => {
-          const data = res.data.data
-          if (Array.isArray(data)) {
-            const kudosMinted = KUDOS_IDS.filter((kudosId) =>
-              data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
-            )
-            setKudosMintedLS(kudosMinted)
-            for (const kudosId of KUDOS_IDS) {
-              localStorage.setItem(
-                `isKudosMinted-${kudosId.toString()}`,
-                kudosMinted.includes(kudosId).toString()
-              )
-            }
-            setKudos(
-              data.filter((kudos: KudosType) =>
-                KUDOS_IDS.includes(kudos.kudosTokenId)
-              )
+      axios.get(`/api/badges/${address}`).then((res) => {
+        const badgeTokenIds = res?.data?.badgeTokenIds
+        if (Array.isArray(badgeTokenIds)) {
+          const badgesMinted = BADGE_IDS.filter((badgeId) =>
+            badgeTokenIds.includes(badgeId)
+          )
+          // console.log(badgesMinted)
+          setBadgesMintedLS(badgesMinted)
+          for (const badgeId of BADGE_IDS) {
+            localStorage.setItem(
+              `isBadgeMinted-${badgeId.toString()}`,
+              badgesMinted.includes(badgeId).toString()
             )
           }
-        })
+          setBadges(badgesMinted)
+        }
+        const kudosTokenIds = res?.data?.kudosTokenIds
+        if (Array.isArray(kudosTokenIds)) {
+          setKudosMintedLS(kudosTokenIds)
+        }
+      })
   }
 
   const loadAddress = (address) => {
@@ -200,7 +192,7 @@ const ConnectWalletButton = ({
       wallets.push(address.toLowerCase())
       localStorage.setItem('wallets', JSON.stringify(wallets))
     }
-    refreshKudos()
+    refreshBadges()
   }
 
   const verify = async () => {
@@ -289,15 +281,13 @@ const ConnectWalletButton = ({
   }, [address])
 
   useEffect(() => {
-    if (refreshKudosLS) {
-      setRefreshKudosLS(false)
-      refreshKudos()
+    if (refreshBadgesLS) {
+      setRefreshBadgesLS(false)
+      refreshBadges()
     }
-  }, [refreshKudosLS])
+  }, [refreshBadgesLS])
 
-  const nbKudosToDisplay = kudos?.map((k) =>
-    LESSONS.find((lesson) => lesson.kudosId === k.kudosTokenId)
-  )?.length
+  const nbBadgesToDisplay = badges.length
 
   return (
     <>
@@ -349,28 +339,28 @@ const ConnectWalletButton = ({
                 </Button>
               </Box>
               {/* TODO: move to dedicated component? */}
-              {kudos?.length > 0 && (
+              {badges?.length > 0 && (
                 <>
                   <Text fontSize="xl" fontWeight="bold" textAlign="center">
                     My Academy Badges
                   </Text>
                   <Box
                     h="215px"
-                    overflowY={nbKudosToDisplay <= 6 ? 'hidden' : 'scroll'}
+                    overflowY={nbBadgesToDisplay <= 6 ? 'hidden' : 'scroll'}
                     overflowX="hidden"
                     backgroundColor="blackAlpha.200"
                     borderRadius="10px"
                   >
                     <SimpleGrid columns={3} spacing={3} p={3}>
-                      {kudos?.map((k, index) => {
+                      {badges?.map((badgeTokenId, index) => {
                         const lesson = LESSONS.find(
-                          (lesson) => lesson.kudosId === k.kudosTokenId
+                          (lesson) => lesson.badgeId === badgeTokenId
                         )
                         if (lesson) {
-                          if (lesson.kudosImageLink.includes('.mp4')) {
+                          if (lesson.badgeImageLink.includes('.mp4')) {
                             return (
                               <Box
-                                key={`kudos-${index}`}
+                                key={`badge-${index}`}
                                 height="78px"
                                 width="78px"
                                 boxShadow="0px 0px 4px 2px #00000060"
@@ -389,7 +379,7 @@ const ConnectWalletButton = ({
                                   }}
                                 >
                                   <source
-                                    src={lesson.kudosImageLink}
+                                    src={lesson.badgeImageLink}
                                     type="video/mp4"
                                   ></source>
                                 </video>
@@ -398,7 +388,7 @@ const ConnectWalletButton = ({
                           } else
                             return (
                               <Box
-                                key={`kudos-${index}`}
+                                key={`badge-${index}`}
                                 justifySelf="center"
                                 boxShadow="0px 0px 4px 2px #00000060"
                                 borderRadius="3px"
@@ -406,7 +396,7 @@ const ConnectWalletButton = ({
                                 p={1}
                               >
                                 <Image
-                                  src={k.assetUrl}
+                                  src={lesson.badgeImageLink}
                                   width="70px"
                                   height="70px"
                                   alt={lesson.name}

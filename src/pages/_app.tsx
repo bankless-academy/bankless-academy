@@ -19,9 +19,9 @@ import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 
 import { useWeb3Modal, Web3Modal } from '@web3modal/react'
 
-import { configureChains, createClient, WagmiConfig } from 'wagmi'
+import { configureChains, createConfig, WagmiConfig } from 'wagmi'
 
-import { mainnet, optimism, polygon } from 'wagmi/chains'
+import { mainnet, optimism, polygon, polygonMumbai } from 'wagmi/chains'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -58,20 +58,18 @@ const App = ({
   // 1. Get projectID at https://cloud.walletconnect.com
   const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID
 
-  const chains = [mainnet, polygon, optimism]
-  const { provider } = configureChains(chains, [w3mProvider({ projectId })])
+  const chains = [mainnet, polygon, optimism, polygonMumbai]
 
   // 2. Configure wagmi client
-  // const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
-  const wagmiClient = createClient({
+  const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
+  const wagmiConfig = createConfig({
     autoConnect: true,
-    connectors: w3mConnectors({ chains, projectId }),
-    provider,
-    // publicClient,
+    connectors: w3mConnectors({ projectId, chains }),
+    publicClient,
   })
 
   // Web3Modal Ethereum Client
-  const ethereumClient = new EthereumClient(wagmiClient, chains)
+  const ethereumClient = new EthereumClient(wagmiConfig, chains)
 
   return (
     <>
@@ -79,8 +77,7 @@ const App = ({
       {!isMobile && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
         <NonSSRWrapper>
-          <WagmiConfig client={wagmiClient}>
-            {/* <WagmiConfig config={wagmiConfig}> */}
+          <WagmiConfig config={wagmiConfig}>
             <Global
               styles={css`
                 .web3modal-modal-lightbox {
@@ -111,9 +108,9 @@ const App = ({
                   margin-bottom: 81px !important;
                 }
                 /* HACK: custom toast */
-                .css-hdx5ch,
-                .css-19os7cz,
-                .css-12sfbjg {
+                .css-qret8q,
+                .css-zqqgfp,
+                .css-mu48c4 {
                   color: white !important;
                   border-radius: 15px !important;
                   a {
@@ -123,7 +120,7 @@ const App = ({
                   }
                 }
                 /* success toast */
-                .css-hdx5ch {
+                .css-qret8q {
                   background: linear-gradient(
                     180deg,
                     #429683,
@@ -132,7 +129,7 @@ const App = ({
                   border: 2px solid #a4d7cb !important;
                 }
                 /* warning toast */
-                .css-19os7cz {
+                .css-zqqgfp {
                   background: linear-gradient(
                     180deg,
                     #e7b283,
@@ -141,7 +138,7 @@ const App = ({
                   border: 2px solid #ffe0bb !important;
                 }
                 /* error toast */
-                .css-12sfbjg {
+                .css-mu48c4 {
                   background: linear-gradient(
                     180deg,
                     #fe7a7a,
@@ -150,8 +147,13 @@ const App = ({
                   border: 2px solid #f5a98d !important;
                 }
                 /* hide toast status logo */
-                .css-4hbvqh {
+                .css-14ogjxt {
                   display: none !important;
+                }
+                /* toast content max width for mobile */
+                /* .css-cgq59l { */
+                .chakra-toast > div > div > div > div > div > div > div {
+                  max-width: calc(100vw - 108px);
                 }
                 /* menu + popover styling */
                 .chakra-menu__menu-list,
@@ -190,7 +192,7 @@ const App = ({
 
           <Overlay hidden={!isOpen} />
           <Web3Modal
-            projectId={process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID}
+            projectId={projectId}
             ethereumClient={ethereumClient}
             themeMode="dark"
             themeVariables={{

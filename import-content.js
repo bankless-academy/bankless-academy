@@ -113,22 +113,23 @@ const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
 const POTION_API = 'https://potion.banklessacademy.com'
 
 const KEY_MATCHING = {
-  'Kudos image': 'kudosImageLink',
+  'Kudos image': 'badgeImageLink',
   'Lesson image': 'lessonImageLink',
   'Lesson collected image': 'lessonCollectedImageLink',
   'Lesson collectible gif': 'lessonCollectibleGif',
   'Lesson collectible video': 'lessonCollectibleVideo',
-  'Lesson collectible mint ID': 'LessonCollectibleMintID',
-  'Lesson collectible token address': 'LessonCollectibleTokenAddress',
+  'Lesson collectible mint ID': 'lessonCollectibleMintID',
+  'Lesson collectible token address': 'lessonCollectibleTokenAddress',
   'Social image': 'socialImageLink',
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
-  'Kudos ID': 'kudosId',
+  'Badge ID': 'badgeId',
   'Duration in minutes': 'duration',
   'What will you learn from this?': 'learnings',
   Difficulty: 'difficulty',
   Description: 'description',
   Name: 'name',
+  'Languages': 'languages',
   Module: 'moduleId',
   Quest: 'quest',
   'Publication status': 'publicationStatus',
@@ -190,9 +191,12 @@ const download_image = (url, image_path) =>
     response.data.pipe(fs.createWriteStream(image_path))
   })
 
+const placeholder = (lesson_title, size) => `https://placehold.co/${size}/4b4665/FFFFFF?text=${lesson_title.replaceAll(' ', '+')}`
+
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((notionRows) => {
+    console.log('Notion DB link: ', `${POTION_API}/table?id=${NOTION_ID}`)
     const lessons = []
     if (IS_WHITELABEL && !fs.existsSync(`public/${PROJECT_DIR}lesson`)) {
       // create image directory dynamically in case it doesn't exist yet
@@ -209,7 +213,7 @@ axios
             // transform to number if the string contains a number
             [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k])) ||
               // ignore type transform for ModuleId & mirrorNFTAddress
-              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible mint ID' || k === 'Lesson collectible token address' || k === 'Sponsor Name')
+              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible mint ID' || k === 'Lesson collectible token address' || k === 'Sponsor Name' || k === 'Languages')
               ? notion.fields[k]
               : parseInt(notion.fields[k]),
           }),
@@ -221,14 +225,14 @@ axios
 
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
-      if (lesson.kudosId === undefined) lesson.kudosId = null
-      if (lesson.kudosImageLink === undefined) lesson.kudosImageLink = null
+      if (lesson.badgeId === undefined) lesson.badgeId = null
+      if (lesson.badgeImageLink === undefined) lesson.badgeImageLink = null
       if (lesson.lessonCollectedImageLink === undefined) delete lesson.lessonCollectedImageLink
       if (lesson.lessonCollectibleVideo === undefined) delete lesson.lessonCollectibleVideo
       if (lesson.lessonCollectibleGif === undefined) delete lesson.lessonCollectibleGif
-      if (lesson.LessonCollectibleMintID === undefined) delete lesson.LessonCollectibleMintID
-      if (lesson.LessonCollectibleTokenAddress === undefined) delete lesson.LessonCollectibleTokenAddress
-      if (lesson.LessonCollectibleMintID && lesson.LessonCollectibleTokenAddress) lesson.hasCollectible = true
+      if (lesson.lessonCollectibleMintID === undefined) delete lesson.lessonCollectibleMintID
+      if (lesson.lessonCollectibleTokenAddress === undefined) delete lesson.lessonCollectibleTokenAddress
+      if (lesson.lessonCollectibleMintID && lesson.lessonCollectibleTokenAddress) lesson.hasCollectible = true
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
       if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''
@@ -237,9 +241,8 @@ axios
       if (lesson.isCommentsEnabled === undefined) lesson.isCommentsEnabled = false
       if (lesson.endOfLessonRedirect === undefined) lesson.endOfLessonRedirect = null
       if (lesson.moduleId === undefined) delete lesson.moduleId
-      else {
-        lesson.moduleId = lesson.moduleId[0]
-      }
+      else lesson.moduleId = lesson.moduleId[0]
+      if (lesson.languages === undefined) delete lesson.languages
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
       if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
       if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
@@ -338,15 +341,16 @@ axios
           await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
             .ignore()
 
-          if (lesson.kudosImageLink) {
-            lesson.kudosImageLink = get_img(lesson.kudosImageLink, lesson.slug, 'kudos')
-          }
+          if (lesson.badgeImageLink) {
+            // TOTO: replace w/ badge
+            lesson.badgeImageLink = get_img(lesson.badgeImageLink, lesson.slug, 'kudos')
+          } else lesson.badgeImageLink = placeholder(lesson.name, '600x600')
           if (lesson.lessonImageLink) {
             lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
-          }
+          } else lesson.lessonImageLink = placeholder(lesson.name, '1200x600')
           if (lesson.socialImageLink) {
             lesson.socialImageLink = get_img(lesson.socialImageLink, lesson.slug, 'social')
-          }
+          } else lesson.socialImageLink = placeholder(lesson.name, '1200x600')
           if (lesson.sponsorLogo) {
             lesson.sponsorLogo = get_img(lesson.sponsorLogo, lesson.slug, 'sponsor')
           }
@@ -493,10 +497,6 @@ axios
           } else {
             delete lesson.quest
           }
-          // slides.push({
-          //   type: 'END',
-          //   title: lesson.kudosId ? 'Lesson Reward' : 'End of lesson',
-          // })
           lesson.slides = slides
           // console.log('lesson', lesson)
 
