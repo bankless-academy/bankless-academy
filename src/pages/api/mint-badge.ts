@@ -70,7 +70,7 @@ export default async function handler(
       return res.status(403).json({ status: questStatus })
     }
 
-    if (questCompleted?.transaction_at) {
+    if (IS_BADGE_PROD && questCompleted?.transaction_at) {
       console.log(questCompleted.transaction_at)
       const currentTimestamp = Math.floor(Date.now() / 1000)
       console.log(currentTimestamp)
