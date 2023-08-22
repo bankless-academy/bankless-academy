@@ -10,7 +10,7 @@ import {
   WALLET_SIGNATURE_MESSAGE,
   ALCHEMY_KEY_BACKEND,
 } from 'constants/index'
-import { BADGE_ADDRESS, BADGE_CHAIN_ID, BADGE_MINTER, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
+import { BADGE_ADDRESS, BADGE_MINTER, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
 import { api, verifySignature } from 'utils'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
@@ -153,7 +153,7 @@ export default async function handler(
       }
       // Cancel tx if gas > 300 gwei
       // estimate gas fees
-      const estimation = await (await fetch(`https://api.blocknative.com/gasprices/blockprices?chainid=${BADGE_CHAIN_ID}`, {
+      const estimation = await (await fetch(`https://api.blocknative.com/gasprices/blockprices?chainid=137`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -165,12 +165,13 @@ export default async function handler(
       console.log(estimation.blockPrices[0].estimatedPrices[1])
       const maxFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[1].maxFeePerGas || 40
       const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[1].maxPriorityFeePerGas || 40
-      const options = {
-        maxFeePerGas: ethers.utils.parseUnits(
+      const options: any = {}
+      if (IS_BADGE_PROD) {
+        options.maxFeePerGas = ethers.utils.parseUnits(
           Math.ceil(maxFeePerGasInGwei) + '',
           'gwei'
-        ),
-        maxPriorityFeePerGas: ethers.utils.parseUnits(
+        )
+        options.maxPriorityFeePerGas = ethers.utils.parseUnits(
           Math.ceil(maxPriorityFeePerGasInGwei) + '',
           'gwei'
         )
