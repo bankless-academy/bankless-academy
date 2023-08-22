@@ -67,13 +67,15 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
     (lesson: LessonType) => `/lessons/${lesson.slug}` === path
   )
 
-  const translationFiles = Object.keys(pageMeta.translations)
-  for (const language of currentLesson.languages) {
-    if (!translationFiles.includes(language)) {
-      // console.log('no lang')
-      currentLesson.languages = currentLesson.languages.filter(
-        (l) => l !== language
-      )
+  const translationFiles = Object.keys(pageMeta?.translations || {})
+  if (translationFiles && currentLesson) {
+    for (const language of currentLesson.languages) {
+      if (!translationFiles.includes(language)) {
+        // console.log('no lang')
+        currentLesson.languages = currentLesson.languages.filter(
+          (l) => l !== language
+        )
+      }
     }
   }
 
@@ -141,7 +143,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
       typeof lang === 'string' &&
       lang in pageMeta.translations
     ) {
-      if (currentLesson.languages.includes(lang as any)) {
+      if (currentLesson && currentLesson.languages.includes(lang as any)) {
         if (
           translations[lang]?.name &&
           translations[lang]?.name !== currentLesson.name
