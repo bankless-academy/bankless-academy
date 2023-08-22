@@ -3,7 +3,7 @@ LESSON TITLE: Optimism Governance
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
 LANGUAGE: English
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 18/08/2023
+LAST UPDATED: 19/08/2023
 ---
 
 ```
@@ -312,7 +312,7 @@ We’re almost ready to govern on 🔴Optimism. There’s one last thing to ment
 
 The OP vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. OP technology is built to be scaled across multiple L2s — and even into real world governance scenarios. OP calls this **the Superchain**.
 
-Coinbase haw already forked and started contributing to this `open source` initiative, through the 🔵Base blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards OP’s ‘Impact = Profit’ ethos.
+Coinbase has already forked and started contributing to this `open source` initiative, through the 🔵Base blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards OP’s ‘Impact = Profit’ ethos.
 
 Superchain networks who abide by the OP governance process receive numerous benefits. This incentive model sets a bright vision for future internet economies, if we can build sustainable, community-oriented governance practices on Optimism today!
 
