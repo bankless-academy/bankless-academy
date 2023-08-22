@@ -150,6 +150,11 @@ const App = ({
                 .css-14ogjxt {
                   display: none !important;
                 }
+                /* toast content max width for mobile */
+                /* .css-cgq59l { */
+                .chakra-toast > div > div > div > div > div > div > div {
+                  max-width: calc(100vw - 108px);
+                }
                 /* menu + popover styling */
                 .chakra-menu__menu-list,
                 .chakra-popover__content {
