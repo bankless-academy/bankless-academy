@@ -7,20 +7,33 @@ import {
   ModalBody,
   useMediaQuery,
   Box,
+  Image,
+  NumberInput,
+  NumberInputField,
+  NumberDecrementStepper,
+  NumberIncrementStepper,
+  NumberInputStepper,
+  Button,
+  Divider,
 } from '@chakra-ui/react'
+import { Lock } from '@phosphor-icons/react'
 
 import { LessonType } from 'entities/lesson'
+import Collectible from 'components/Collectible'
 
 const MintCollectibleModal = ({
   isOpen,
   onClose,
   lesson,
+  numberOfOwners,
 }: {
   isOpen: boolean
   onClose: () => void
   lesson: LessonType
+  numberOfOwners: number
 }): React.ReactElement => {
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
+  const remaining = 100 - numberOfOwners
   return (
     <Modal
       onClose={onClose}
@@ -49,7 +62,89 @@ const MintCollectibleModal = ({
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody padding={isMobileScreen ? '0' : 'default'}>
-          {lesson.lessonCollectibleMintID && (
+          <Box position="relative" h="20px">
+            <Image
+              src="/images/minted-on-OP.png"
+              w="176px"
+              position="absolute"
+              top="-4px"
+              right="10px"
+            />
+          </Box>
+          <Collectible lesson={lesson} />
+          <Box w="90%" m="auto">
+            <Box
+              display="flex"
+              w="100%"
+              background="black"
+              height="48px"
+              borderRadius="8px"
+              alignContent="center"
+              justifyContent="center"
+              alignItems="center"
+              fontSize="lg"
+            >
+              <Lock />
+              <Box ml="1">Claim your lesson badge to unlock</Box>
+            </Box>
+            <Box
+              display="flex"
+              pt="4"
+              w="100%"
+              justifyContent="space-between"
+              alignItems="center"
+            >
+              <Box>
+                <Box display="flex" alignItems="baseline">
+                  <Box fontSize="2xl" fontWeight="bold">
+                    0.03
+                  </Box>
+                  <Box fontSize="lg" ml="1">
+                    ETH
+                  </Box>
+                </Box>
+                <Box fontSize="xs">+ 0.0008 ETH mint fee</Box>
+              </Box>
+              <Box w="80px">
+                <NumberInput defaultValue={1} max={2} min={1}>
+                  <NumberInputField />
+                  <NumberInputStepper>
+                    <NumberIncrementStepper />
+                    <NumberDecrementStepper />
+                  </NumberInputStepper>
+                </NumberInput>
+              </Box>
+            </Box>
+            <Box textAlign="center" pt="4">
+              <Button size="lg" variant="primaryWhite">
+                Mint DataDisk
+              </Button>
+            </Box>
+            <Box fontSize="md" pt="4">
+              * 2 mints allowed per wallet
+            </Box>
+            <Divider my="4" />
+            <Box justifyContent="space-between" display="flex" fontSize="sm">
+              <Box>{numberOfOwners} minted</Box>
+              <Box>{remaining} remaining</Box>
+            </Box>
+            <Box
+              borderRadius="6px"
+              h="6px"
+              w="100%"
+              background="#282827"
+              mt="2"
+              mb="4"
+            >
+              <Box
+                borderRadius="6px"
+                background="white"
+                h="100%"
+                w={`${numberOfOwners}%`}
+              ></Box>
+            </Box>
+          </Box>
+          {/* {lesson.lessonCollectibleMintID && (
             <iframe
               src={`/mint.html?collection=${lesson.lessonCollectibleMintID}${
                 isMobileScreen ? `&mobile=true` : ''
@@ -63,7 +158,7 @@ const MintCollectibleModal = ({
                 overflow: 'hidden',
               }}
             ></iframe>
-          )}
+          )} */}
         </ModalBody>
       </ModalContent>
     </Modal>

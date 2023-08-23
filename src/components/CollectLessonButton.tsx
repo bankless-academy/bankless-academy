@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import {
   Box,
-  Image,
   Button,
   useDisclosure,
   Image as ChakraImage,
@@ -10,21 +9,19 @@ import {
 } from '@chakra-ui/react'
 import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
-import { switchNetwork } from '@wagmi/core'
-import { isMobile } from 'react-device-detect'
 
 import MintCollectibleModal from 'components/MintCollectibleModal'
 import { getLessonsCollectors, isHolderOfNFT } from 'utils'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
-import { useAccount, useNetwork } from 'wagmi'
+import { useAccount } from 'wagmi'
 import { getLessonsCollected } from 'utils'
 import {
   IS_WHITELABEL,
   MD_ENABLED,
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
-import OpenLesson from './OpenLesson'
+import Collectible from 'components/Collectible'
 
 const CollectiblesHelper = (
   <Helper
@@ -143,17 +140,10 @@ const CollectLessonButton = ({
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const [numberIOwn, setNumberIOwn] = useState(1)
   const { address } = useAccount()
-  const { chain } = useNetwork()
   const [lessonsCollectedLS, setLessonsCollectedLS] = useLocalStorage(
     'lessonsCollected',
     []
   )
-
-  const isLessonCollected =
-    !!lesson.lessonCollectibleTokenAddress?.length &&
-    lessonsCollectedLS.includes(
-      lesson.lessonCollectibleTokenAddress.toLowerCase()
-    )
 
   useEffect(() => {
     const updateNFTCollected = async () => {
@@ -204,230 +194,149 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
     share
   )}`
 
-  const lessonImage = (
-    <Box py="2">
-      {isLessonCollected ? (
-        <>
-          {isMobile ? (
-            <Image src={lesson.lessonCollectibleGif} />
-          ) : (
-            <video
-              autoPlay
-              loop
-              playsInline
-              muted
-              style={{ minHeight: '224px' }}
+  return (
+    <Box maxW="450px">
+      <Box w="100%">
+        <Box
+          background="linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%)"
+          borderTopRadius="8px"
+          textAlign="center"
+          py="3"
+          px="5"
+          position="relative"
+          cursor="pointer"
+          onClick={async () => {
+            onOpenMintCollectibleModal()
+            // if (chain?.id !== 10 && address)
+            //   await switchNetwork({ chainId: 10 })
+          }}
+        >
+          {CollectiblesHelper}
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            fontSize="lg"
+          >
+            <Box fontWeight="bold">Collect DataDisk</Box>
+            <Box ml="4">({numberOfOwners}/100 claimed)</Box>
+          </Box>
+        </Box>
+        <Box
+          m="auto"
+          maxW="500px"
+          borderX="1px solid #4b474b"
+          borderBottom="1px solid #4b474b"
+          borderBottomRadius={isBadgeMintedLS && isLessonMintedLS ? 0 : '8px'}
+          position="relative"
+        >
+          <>
+            <Box
+              py="2"
+              opacity={lessonsCollectedLS ? '1' : '0.5'}
+              cursor="pointer"
+              onClick={async () => {
+                onOpenMintCollectibleModal()
+              }}
             >
-              <source
-                src={lesson.lessonCollectibleVideo}
-                type="video/webm"
-              ></source>
-            </video>
-          )}
-        </>
-      ) : (
-        <Image src={lesson.lessonImageLink} />
-      )}
+              <Collectible lesson={lesson} />
+            </Box>
+            {MD_ENABLED && lesson.hasCollectible && (
+              <ExternalLink
+                href={`https://github.com/bankless-academy/bankless-academy/blob/main/public/lesson/en/${lesson.slug}.md?plain=1`}
+              >
+                <Button
+                  position="absolute"
+                  size="sm"
+                  top="5px"
+                  right="5px"
+                  zIndex="1"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    // onOpenLessonCollectibleModal()
+                  }}
+                >
+                  &lt;/&gt;
+                </Button>
+              </ExternalLink>
+            )}
+          </>
+        </Box>
+        {isBadgeMintedLS && isLessonMintedLS && (
+          <Box
+            border="1px solid #4b474b"
+            borderBottomRadius="8px"
+            borderTopWidth="0"
+            textAlign="center"
+            p="10px"
+          >
+            <Box pb="2">
+              <ExternalLink href={twitterLink} mr="2">
+                <Button
+                  variant="primaryGold"
+                  w="100%"
+                  borderBottomRadius="0"
+                  leftIcon={
+                    <ChakraImage
+                      width="24px"
+                      height="24px"
+                      src="/images/Twitter.svg"
+                    />
+                  }
+                >
+                  Share on Twitter
+                </Button>
+              </ExternalLink>
+            </Box>
+            <Box pb="2">
+              <ExternalLink
+                href={`https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}`}
+              >
+                <Button
+                  variant="primaryGold"
+                  w="100%"
+                  borderRadius="0"
+                  leftIcon={
+                    <ChakraImage
+                      width="24px"
+                      height="24px"
+                      src="/images/OpenSea.svg"
+                    />
+                  }
+                >
+                  View on OpenSea
+                </Button>
+              </ExternalLink>
+            </Box>
+            <Box>
+              <ExternalLink href="https://guild.xyz/bankless-academy">
+                <Button
+                  variant="primaryGold"
+                  w="100%"
+                  borderTopRadius="0"
+                  leftIcon={
+                    <ChakraImage
+                      width="28px"
+                      height="28px"
+                      src="/images/Discord.svg"
+                    />
+                  }
+                >
+                  Join the Discord
+                </Button>
+              </ExternalLink>
+            </Box>
+          </Box>
+        )}
+      </Box>
+      <MintCollectibleModal
+        isOpen={isOpenMintCollectibleModal}
+        onClose={onCloseMintCollectibleModal}
+        lesson={lesson}
+        numberOfOwners={parseInt(numberOfOwners)}
+      />
     </Box>
   )
-
-  if (lesson.hasCollectible)
-    return (
-      <>
-        <Box w="100%">
-          {isLessonMintedLS ? (
-            <Box
-              border="1px solid #F1B15A"
-              color="#F1B15A"
-              borderTopRadius="8px"
-              textAlign="center"
-              py="3"
-              px="5"
-              position="relative"
-              cursor="pointer"
-              onClick={async () => {
-                onOpenMintCollectibleModal()
-                if (chain?.id !== 10) await switchNetwork({ chainId: 10 })
-              }}
-            >
-              {CollectiblesHelper}
-              <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                fontSize="lg"
-              >
-                <Box fontWeight="bold">Collectible Minted</Box>
-                <Box ml="4">({numberOfOwners}/100 claimed)</Box>
-              </Box>
-            </Box>
-          ) : isBadgeMintedLS ? (
-            <Box
-              background="linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%)"
-              borderTopRadius="8px"
-              textAlign="center"
-              py="3"
-              px="5"
-              position="relative"
-              cursor="pointer"
-              onClick={async () => {
-                onOpenMintCollectibleModal()
-                if (chain?.id !== 10 && address)
-                  await switchNetwork({ chainId: 10 })
-              }}
-            >
-              {CollectiblesHelper}
-              <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                fontSize="lg"
-              >
-                <Box fontWeight="bold">⚒️ Mint Collectible</Box>
-                <Box ml="4">({numberOfOwners}/100 claimed)</Box>
-              </Box>
-            </Box>
-          ) : (
-            <Box
-              border="1px solid #F1B15A"
-              borderRadius="8px"
-              textAlign="center"
-              py="3"
-              px="5"
-              position="relative"
-            >
-              {CollectiblesHelper}
-              <Box
-                color="#F1B15A"
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                fontSize="lg"
-              >
-                <Box fontWeight="bold">Complete to Collect</Box>
-                <Box ml="4">({numberOfOwners}/100 claimed)</Box>
-              </Box>
-            </Box>
-          )}
-          <Box
-            m="auto"
-            maxW="500px"
-            borderX="1px solid #4b474b"
-            borderBottom="1px solid #4b474b"
-            borderBottomRadius={isBadgeMintedLS && isLessonMintedLS ? 0 : '8px'}
-          >
-            <OpenLesson lesson={lesson} click>
-              <>
-                {lessonImage}
-                {MD_ENABLED && lesson.hasCollectible && (
-                  <ExternalLink
-                    href={`https://github.com/bankless-academy/bankless-academy/blob/main/public/lesson/en/${lesson.slug}.md?plain=1`}
-                  >
-                    <Button
-                      position="absolute"
-                      size="sm"
-                      top="5px"
-                      right="5px"
-                      zIndex="1"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        // onOpenLessonCollectibleModal()
-                      }}
-                    >
-                      &lt;/&gt;
-                    </Button>
-                  </ExternalLink>
-                )}
-              </>
-            </OpenLesson>
-          </Box>
-          {isBadgeMintedLS && isLessonMintedLS && (
-            <Box
-              border="1px solid #4b474b"
-              borderBottomRadius="8px"
-              borderTopWidth="0"
-              textAlign="center"
-              p="10px"
-            >
-              <Box pb="2">
-                <ExternalLink href={twitterLink} mr="2">
-                  <Button
-                    variant="primaryGold"
-                    w="100%"
-                    borderBottomRadius="0"
-                    leftIcon={
-                      <ChakraImage
-                        width="24px"
-                        height="24px"
-                        src="/images/Twitter.svg"
-                      />
-                    }
-                  >
-                    Share on Twitter
-                  </Button>
-                </ExternalLink>
-              </Box>
-              <Box pb="2">
-                <ExternalLink
-                  href={`https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}`}
-                >
-                  <Button
-                    variant="primaryGold"
-                    w="100%"
-                    borderRadius="0"
-                    leftIcon={
-                      <ChakraImage
-                        width="24px"
-                        height="24px"
-                        src="/images/OpenSea.svg"
-                      />
-                    }
-                  >
-                    View on OpenSea
-                  </Button>
-                </ExternalLink>
-              </Box>
-              <Box>
-                <ExternalLink href="https://guild.xyz/bankless-academy">
-                  <Button
-                    variant="primaryGold"
-                    w="100%"
-                    borderTopRadius="0"
-                    leftIcon={
-                      <ChakraImage
-                        width="28px"
-                        height="28px"
-                        src="/images/Discord.svg"
-                      />
-                    }
-                  >
-                    Join the Discord
-                  </Button>
-                </ExternalLink>
-              </Box>
-            </Box>
-          )}
-        </Box>
-        <MintCollectibleModal
-          isOpen={isOpenMintCollectibleModal}
-          onClose={onCloseMintCollectibleModal}
-          lesson={lesson}
-        />
-        {/* {MD_ENABLED && (
-          <LessonCollectibleModal
-            isOpen={isOpenLessonCollectibleModal}
-            onClose={onCloseLessonCollectibleModal}
-            lesson={lesson}
-          />
-        )} */}
-      </>
-    )
-  else
-    return (
-      <OpenLesson lesson={lesson} click>
-        {lessonImage}
-      </OpenLesson>
-    )
 }
 
 export default CollectLessonButton
