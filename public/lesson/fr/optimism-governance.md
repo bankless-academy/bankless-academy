@@ -1,7 +1,8 @@
 ---
 LESSON TITLE: Gouvernance d'Optimism
+LESSON DESCRIPTION:
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
-LANGUAGE: Français
+LANGUAGE: English
 PROTOCOL VERSION: 0.01
 LAST UPDATED: 24/08/2023
 ---
@@ -32,15 +33,15 @@ ________________________________________________________________________________
 
 Les technologies modernes ont radicalement changé la façon dont les humains se perçoivent et interagissent les uns avec les autres. Sur la scène internationale et dans un cyberespace sans frontières, nous avons besoin de nouveaux modèles de coordination pour coexister et prospérer en tant que tribu mondiale.
 
-La vision de la technologie `DAO` est de résoudre des problèmes et le débat entre un grand nombre de collaborateurs - que ce soit sur Internet, dans votre communauté locale ou à l'échelle internationale. This is done by:
+La vision de la technologie `DAO` est de résoudre des problèmes et le débat entre un grand nombre de collaborateurs - que ce soit sur Internet, dans votre communauté locale ou à l'échelle internationale. Pour ce faire, il faut :
 
-- Incentivizing participants to share a common mission.
-- Innovative voting, `delegation`, and `veto` mechanics.
-- Using blockchain technology to decrease the potential for human error or hijacking.
+- Inciter les participants à partager une mission commune.
+- Vote innovant, `délégation` et des mécanismes de `veto`.
+- Utiliser la technologie chaîne de blocs [blockchain] pour diminuer le potentiel d'erreur humaine ou de détournement [hijacking].
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/old-problems-new-tools-1caefce6.svg)
 
-# Network **Governance**
+# Network Governance
 
 Like any real world nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but `asynchronous`, global, and partially mediated by code.
 
@@ -138,7 +139,7 @@ The Optimism Foundation will continue to guide the Optimism Collective over the 
 
 > ℹ️ Correct! The Foundation will eventually dissolve, and the Collective will continue the mission.
 
-# A New **Economy**
+# A New Economy
 
 At the center of the Optimism `L2` economy is the ‘Optimistic Flywheel’. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.
 
@@ -151,7 +152,7 @@ With more valuable onchain infrastructure, demand for Optimism blockspace increa
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-new-economy-2981ffe5.png)
 
-# **Incentivizing** **the Public Goods Economy**
+# Incentivizing the Public Goods Economy
 
 As you can see, public goods infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.
 
@@ -163,7 +164,7 @@ This distribution model is known as ‘**Retroactive Public Goods Funding’**, 
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg)
 
-# **Ether’s Phoenix**
+# Ether’s Phoenix
 
 Optimism calls this effect ‘**Ether’s Phoenix’**: an _“angel reaching backwards in time, rewarding those who summon it.”_
 
@@ -247,7 +248,7 @@ The Token House also has the ability to veto any proposal submitted by the Citiz
 
 🗳️ **Voting:** Voting power scales based on how many tokens are held.
 
-The Token House follows [a five week voting cycle](https://community.optimism.io/docs/governance/token-house-history/#):
+The Token House follows [a five week voting cycle](https://community.optimism.io/docs/governance/token-house-history/):
 
 - Week 1-3: Proposal submission, review, and feedback.
 - Week 4-5: Voting.
