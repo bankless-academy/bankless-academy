@@ -1,7 +1,7 @@
 ---
-LESSON TITLE: Optimism Governance
+LESSON TITLE: Optimism gouvernance
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
-LANGUAGE: English
+LANGUAGE: Français
 PROTOCOL VERSION: 0.01
 LAST UPDATED: 24/08/2023
 ---
