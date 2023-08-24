@@ -30,7 +30,7 @@ ________________________________________________________________________________
 
 # Introduction
 
-La technologie `Blockchain` est un moyen révolutionnaire de stocker et de suivre des données, tout en rendant ces données accessibles à tous. C'est un moyen d'organiser des données dans une seule liste publique de toutes les transactions historiques que n'importe qui peut voir mais ne peut pas modifier. Cette liste publique de transactions est collectivement connue sous le nom de blockchain `registre` [ledger].
+La technologie `Blockchain` est un moyen révolutionnaire de stocker et de suivre des données, tout en rendant ces données accessibles à tous. C'est un moyen d'organiser des données dans une seule liste publique de toutes les transactions historiques que n'importe qui peut voir mais ne peut pas modifier. Cette liste publique de transactions est collectivement connue sous le nom de blockchain `registre [ledger]`.
 
 After examining the layers of a blockchain, we will be using a blockchain tool called a `block explorer` to look into the specifics of the Ethereum blockchain structure; we will zoom in on the Ethereum blockchain to view the **list** of blocks, the **transactions** within those blocks, and the **details** of each individual transaction.
 
