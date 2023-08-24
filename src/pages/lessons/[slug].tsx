@@ -91,10 +91,9 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
       const [, title, description] = (infos || '').split('\n')
       // console.log(title)
       currentLesson.name = title.replace('LESSON TITLE: ', '')
-      currentLesson.description = description.replace(
-        'LESSON DESCRIPTION: ',
-        ''
-      )
+      currentLesson.description = description
+        .replace('LESSON DESCRIPTION:', '')
+        .trim()
       // console.log(currentLesson.description)
       // console.log(content)
       const slides = content?.split('# ')
@@ -126,11 +125,26 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
           // console.log(slide_content)
           const [question] = slide_content.split('\n\n')
           // console.log(question)
-          const answers = slide_content.replace(question, '').trim()
+          const answers = slide_content
+            .replace(question, '')
+            .replaceAll('\n>', '>')
+            .replaceAll('\n\n-', '\n-')
+            .trim()
+          // console.log(answers)
           currentLesson.slides[i].quiz.question = question
-          answers.split('\n').map((quiz, j) => {
-            const q = quiz.replace('- [ ] ', '').trim()
-            if (q.length) currentLesson.slides[i].quiz.answers[j] = q
+          let j = 0
+          answers.split('\n').map((quiz) => {
+            // console.log(quiz)
+            if (quiz.length && quiz.startsWith('- [ ] ')) {
+              currentLesson.slides[i].quiz.answers[j] = quiz
+                .replace('- [ ] ', '')
+                .trim()
+              j++
+            } else if (quiz.length && quiz.startsWith('> ')) {
+              currentLesson.slides[i].quiz.feedback[j - 1] = quiz
+                .replace('> ', '')
+                .trim()
+            }
           })
         }
       }
