@@ -87,31 +87,31 @@ Notre quête se concentrera sur la revendication de nos premiers droits de vote,
 
 Optimism a une mission : faire évoluer Ethereum en construisant un réseau `Layer 2` . Il fait partie de l'écosystème Ethereum, mais avec des frais moins élevés, des transactions plus rapides et le haut niveau de sécurité d'Ethereum. Voici les propriétés qui le définissent :
 
-🏠 **Marché libre :** Lancé comme une extension non seulement de l'`espace de bloc` [blockspace] d'Ethereum, mais aussi des principes d'Ethereum. Elle vise à développer la place de marché sans permission [permissionless], open-source et résistante à la censure d'Ethereum.
+🏠 **Marché Libre :** Lancé comme une extension non seulement de l'`espace de bloc` [blockspace] d'Ethereum, mais aussi des principes d'Ethereum. Elle vise à développer la place de marché sans permission [permissionless], open-source et résistante à la censure d'Ethereum.
 
-🏕️ **Biens publics [Public Goods] :** L'accent est mis sur le financement et la construction `de biens publics` sur la blockchain [onchain]. Il s'agit de ressources gratuites et infinis, mis à la disposition de tous les citoyens du réseau. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
+🏕️ **Biens Publics [Public Goods] :** L'accent est mis sur le financement et la construction `de biens publics` sur la blockchain [onchain]. Il s'agit de ressources gratuites et infinis, mis à la disposition de tous les citoyens du réseau. Votre éducation gratuite à la Bankless Academy a été rendue possible grâce au soutien d'Optimism aux biens publics !
 
-🧑‍🤝‍🧑 **Community Governance:** Optimism is lead by its community.
+🧑‍🤝‍🧑 **Gouvernance Communautaire :** Optimism est dirigé par sa communauté.
 
-Optimism aims to become a free market district of cyberspace that directly provides for — and is governed by — its citizens!
+Optimism vise à devenir un district de libre marché du cyberespace qui subvient directement aux besoins de ses citoyens et qui est gouverné par eux !
 
 # Knowledge Check 2
 
-What definition best fits a ‘public good’?
+Quelle est la meilleure définition d'un "bien public" [public good] ?
 
-- [ ] An unlimited good shared amongst a specific group of people.
+- [ ] Un bien illimité partagé entre un groupe spécifique de personnes.
 
-> ℹ️ Try again! This defines a closed, infinite good, like a cinema or toll road.
+> ℹ️ Réessayez ! Il s'agit d'un bien fermé et infini, comme un cinéma ou une route à péage.
 
-- [ ] An openly public resource that cannot run out.
+- [ ] Une ressource publique qui ne peut être épuisée.
 
-> ℹ️ Correct! This defines an open, infinite good, like software or knowledge.
+> ℹ️ Correct ! Il s'agit d'un bien ouvert et infini, comme un logiciel ou un savoir.
 
-- [ ] Free, limited access to a public service.
+- [ ] Accès gratuit et limité à un service public.
 
-> ℹ️ Try again! This defines an open, finite service, like socialized healthcare.
+> ℹ️ Réessayez ! Il s'agit d'un service ouvert et limité, comme les soins de santé.
 
-# Progressive Decentralization
+# Décentralisation Progressive
 
 Many great blockchain projects begin with a centralized group and vision. This gives the project crucial focus in building and spending, but a global community needs more than promises of eventual decentralization to truly be a `DAO`.
 
