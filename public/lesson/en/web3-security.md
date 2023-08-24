@@ -1,9 +1,10 @@
 ---
 LESSON TITLE: Web3 Security
+LESSON DESCRIPTION: Protect yourself and your wallet from the most common scams in web3.
 LESSON LINK: https://app.banklessacademy.com/lessons/web3-security
 LANGUAGE: English
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 02/08/2023
+LAST UPDATED: 24/08/2023
 ---
 
 ```

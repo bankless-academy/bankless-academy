@@ -1,9 +1,10 @@
 ---
 LESSON TITLE: Decentralized Exchanges
+LESSON DESCRIPTION: Discover how smart-contract exchanges enable permissionless token swaps!
 LESSON LINK: https://app.banklessacademy.com/lessons/decentralized-exchanges
 LANGUAGE: English
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 02/08/2023
+LAST UPDATED: 24/08/2023
 ---
 
 ```

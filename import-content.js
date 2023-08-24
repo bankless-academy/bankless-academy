@@ -80,6 +80,7 @@ const LESSON_SPLITTER = `\`\`\`
 
 const mdHeader = (lesson) => `---
 LESSON TITLE: ${lesson.name}
+LESSON DESCRIPTION: ${lesson.description}
 LESSON LINK: https://app.banklessacademy.com/lessons/${lesson.slug}
 LANGUAGE: English
 PROTOCOL VERSION: ${PROTOCOL_VERSION}

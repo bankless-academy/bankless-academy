@@ -1,9 +1,10 @@
 ---
 LESSON TITLE: Bankless Archetypes
+LESSON DESCRIPTION: 
 LESSON LINK: https://app.banklessacademy.com/lessons/bankless-archetypes
 LANGUAGE: English
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 19/07/2023
+LAST UPDATED: 24/08/2023
 ---
 
 ```

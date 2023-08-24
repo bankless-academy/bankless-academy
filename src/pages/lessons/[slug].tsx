@@ -88,37 +88,47 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
       // console.log(intro)
       const [, infos] = (intro || '').split('---')
       // console.log(infos)
-      const [, title] = (infos || '').split('\n')
+      const [, title, description] = (infos || '').split('\n')
       // console.log(title)
       currentLesson.name = title.replace('LESSON TITLE: ', '')
-      currentLesson.description =
-        'Aprende sobre la arquitectura fundamental de la tecnología de cadena de bloques (blockchain).'
+      currentLesson.description = description.replace(
+        'LESSON DESCRIPTION: ',
+        ''
+      )
+      // console.log(currentLesson.description)
       // console.log(content)
       const slides = content?.split('# ')
       slides.shift()
       // console.log(slides)
       for (let i = 0; i < currentLesson.slides.length - 1; i++) {
         // console.log(i)
-        const [slide_title, slide_content, quizzes] = (slides[i] || '').split(
-          '\n\n',
-          3
-        )
+        const [slide_title] = (slides[i] || '').split('\n\n')
+        const slide_content = slides[i]
+          .replace(slide_title, '')
+          .replace(/!\[\]\(.*?\)/, ``)
+          .trim()
         // console.log(slide_title)
         // console.log(slide_content)
         // console.log(quizzes)
         currentLesson.slides[i].title = slide_title
         if (currentLesson.slides[i].type === 'LEARN' && slide_content) {
+          // console.log(slide_content)
           const rendered = await markdown.render(slide_content)
+          // console.log(currentLesson.slides[i].content)
           currentLesson.slides[i].content = currentLesson.slides[
             i
           ].content.replace(
-            /<div class="bloc1">.*?<\/div>/s,
-            `<div class="bloc1">${rendered}</div>`
+            /<div class="bloc1">.*?<\/div><div class="bloc2">/s,
+            `<div class="bloc1">${rendered}</div><div class="bloc2">`
           )
         }
-        if (currentLesson.slides[i].type === 'QUIZ' && quizzes) {
-          currentLesson.slides[i].quiz.question = slide_content
-          quizzes.split('\n').map((quiz, j) => {
+        if (currentLesson.slides[i].type === 'QUIZ' && slide_content) {
+          // console.log(slide_content)
+          const [question] = slide_content.split('\n\n')
+          // console.log(question)
+          const answers = slide_content.replace(question, '').trim()
+          currentLesson.slides[i].quiz.question = question
+          answers.split('\n').map((quiz, j) => {
             const q = quiz.replace('- [ ] ', '').trim()
             if (q.length) currentLesson.slides[i].quiz.answers[j] = q
           })

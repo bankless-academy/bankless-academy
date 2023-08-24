@@ -437,211 +437,6 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    badgeImageLink: '/lesson/images/conceptos-basicos-de-blockchain/badge-b0048cdb.png',
-    lessonImageLink: '/lesson/images/conceptos-basicos-de-blockchain/lesson-c84db284.png',
-    socialImageLink: '/lesson/images/conceptos-basicos-de-blockchain/social-974b8d8f.jpg',
-    learningActions: '',
-    marketingDescription: 'Las blockchains hacen posible las criptomonedas, DeFi y Web3. Descubre cómo se construyen y cómo funcionan las redes blockchain.',
-    badgeId: 3,
-    duration: 15,
-    learnings: '',
-    difficulty: 'Easy',
-    description: 'Aprende sobre la arquitectura fundamental de la tecnología de cadena de bloques (blockchain).',
-    name: 'Conceptos Básicos de Blockchain',
-    languages: [],
-    quest: 'ConceptosBasicosDeBlockchain',
-    publicationStatus: 'hidden',
-    featuredOrderOnHomepage: null,
-    isCommentsEnabled: false,
-    endOfLessonRedirect: 'https://tally.so/r/w2BGOD',
-    endOfLessonText: 'Esperamos hayas disfrutado nuestra primera lección en español. Para dejar comentarios o sugerencias, presiona Next.',
-    notionId: 'fd14e05114294d6282713809742f79a4',
-    slug: 'conceptos-basicos-de-blockchain',
-    imageLinks: [
-      '/lesson/images/conceptos-basicos-de-blockchain/introduccin-dd17f448.svg',
-      '/lesson/images/conceptos-basicos-de-blockchain/estructura-de-la-blockchain-06363800.svg',
-      '/lesson/images/conceptos-basicos-de-blockchain/examinando-el-ledger-a08c89ad.svg',
-      '/lesson/images/conceptos-basicos-de-blockchain/transacciones-en-el-ledger-32f9f247.svg',
-      '/lesson/images/conceptos-basicos-de-blockchain/anatoma-de-un-bloque-914b2bf9.svg',
-      '/lesson/images/conceptos-basicos-de-blockchain/interior-de-un-bloque-b9ecc7c3.svg',
-      '/lesson/images/conceptos-basicos-de-blockchain/transacciones-individuales-1df9a5c1.svg',
-      '/lesson/images/conceptos-basicos-de-blockchain/direcciones-de-usuario-aedccc31.svg'
-    ],
-    slides: [
-      {
-        type: 'LEARN',
-        notionId: '21da22acccd0422fb04d01de473f6992',
-        title: 'Introducción',
-        content: '<div class="bloc1"><p>La tecnología de <code>blockchain</code> es una forma revolucionaria de almacenar y rastrear datos, la cual al mismo tiempo hace que esos datos sean accesibles para cualquier persona. Es una forma de organizar datos en una única <strong>lista pública</strong>, creada a partir de todas las transacciones históricas existentes donde cualquier persona puede verla, pero no editarla. Esta lista pública de transacciones se conoce colectivamente como el <code>ledger</code> de la blockchain.</p><p>Después de examinar las capas de una blockchain, utilizaremos una herramienta de blockchain llamada <code>explorador de bloques</code> para investigar los detalles de la estructura de la blockchain de Ethereum. Nuestro foco será ver y analizar: la <strong>lista</strong> de bloques, las <strong>transacciones</strong> dentro de esos bloques y los <strong>detalles</strong> de cada transacción de manera individual.</p></div><div class="bloc2"><img src=\'/lesson/images/conceptos-basicos-de-blockchain/introduccin-dd17f448.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '1392674560e74aeab1fa59860ca572b4',
-        title: 'Estructura de la Blockchain',
-        content: '<div class="bloc1"><p>El término \'blockchain\' puede utilizarse como un sustantivo, como \'la blockchain de Bitcoin\', o como un adjetivo, como \'tecnología blockchain\'. En cualquier caso, <code>blockchain</code> se refiere a toda la estructura sobre la cual se construyen las criptomonedas.</p><p>Al acercarnos desde el exterior, existen 3 niveles de estructura en una blockchain:</p><ol><li>La <code>blockchain</code> en general está compuesta por bloques que están vinculados entre sí, en orden.</li><li>Los <code>bloques</code> están formados por grupos de transacciones que se unen.</li><li>Las <code>transacciones</code> son cantidades de dinero enviadas entre dos <code>direcciones</code> en la red.</li></ol><p>Esta estructura de tres niveles se une para crear un libro de contabilidad criptográfico: un historial inmutable de todas las transacciones realizadas en la red.</p></div><div class="bloc2"><img src=\'/lesson/images/conceptos-basicos-de-blockchain/estructura-de-la-blockchain-06363800.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '538cfa2ded5842c2a05079a2872a53e0',
-        title: '✅ quiz',
-        quiz: {
-          question: '¿Qué es una blockchain?',
-          rightAnswerNumber: 4,
-          answers: [
-            'Grupos organizados de transacciones llamados bloques',
-            'Una lista de cantidades de dinero enviadas entre dos direcciones',
-            'Bloques vinculados entre sí en secuencia',
-            'Todas las anteriores'
-          ],
-          id: 'conceptos-basicos-de-blockchain-1'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: 'dac93a0398274a2bb89849eaa9bcfd40',
-        title: 'Examinando el Ledger',
-        content: '<div class="bloc1"><p>En los sistemas monetarios convencionales, confiamos en terceros como los bancos para llevar un registro de cuánto dinero tiene cada persona. Sin embargo, para ser verdaderamente \'Bankless\' (sin bancos), queremos un sistema que no requiera confiar en una entidad para gestionar el libro de contabilidad.</p><p>El <code>ledger</code> es la lista de TODAS las transacciones realizadas en una blockchain, y cualquiera puede verlo en las blockchains <code>públicas</code>. Grupos discretos de transacciones del ledger forman los bloques, los cuales una vez juntos, conforman la blockchain.</p><p>Cuando se añaden nuevas transacciones al ledger, los saldos almacenados en cada <code>dirección</code> se actualizan; y las transacciones pasadas no se pueden alterar. Es como permitir que todos vean el historial completo de transacciones de la cuenta bancaria de todos, en cualquier momento y para siempre.</p></div><div class="bloc2"><img src=\'/lesson/images/conceptos-basicos-de-blockchain/examinando-el-ledger-a08c89ad.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'c4987908578343e79d946e468f2b71c2',
-        title: 'Transacciones en el Ledger',
-        content: '<div class="bloc1"><p>Veamos algunos ejemplos de transacciones:</p><ul><li>Alice envía 5 ETH a Bob</li><li>Bob envía 2 ETH a Charlie</li></ul><p>Las transacciones individuales muestran el <em>cambio</em> en la cantidad de criptomonedas para cada dirección, por lo que el resultado total de todas las transacciones ES la cantidad de criptomoneda que tiene cada dirección.</p><hr><p>⇒ Alice ha perdido 5 ETH</p><p>⇒ Bob ha ganado 3 ETH en total (recibió 5, envió 2)</p><p>⇒ Charlie ha ganado 2 ETH</p></div><div class="bloc2"><img src=\'/lesson/images/conceptos-basicos-de-blockchain/transacciones-en-el-ledger-32f9f247.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '3b33497d089546238437065103732f75',
-        title: '✅ quiz',
-        quiz: {
-          question: '¿Cuál(es) de las siguientes afirmaciones es/son verdadera(s) para los registros de blockchain públicos?',
-          rightAnswerNumber: 4,
-          answers: [
-            'Todas las transacciones son públicas y las transacciones pasadas no se pueden cambiar.',
-            'El registro lleva un seguimiento de la cantidad de criptomoneda que cada dirección tiene actualmente.',
-            'El registro crece a medida que se agregan nuevas transacciones.',
-            'Todas las anteriores'
-          ],
-          id: 'conceptos-basicos-de-blockchain-2'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: 'abc2d9ebea644cd9b1e4c976acbf3c32',
-        title: 'Decentralización',
-        content: '<div class="bloc1"><p>No solo las transacciones incluidas en el registro de la <code>blockchain</code> son inmutables, sino que también se comparten y distribuyen entre una gran red de computadoras. Para asegurarse de que ninguna entidad tenga el poder de cambiar los datos, el registro de la blockchain se almacena en cada dispositivo de la red llamado <code>nodo</code>. </p><p>Estos datos compartidos son los que hacen que el registro de la blockchain sea <code>descentralizado</code>. Ninguna autoridad o entidad única controla los datos. Blockchains como Ethereum también son <code>públicas</code> porque el registro puede ser visto por cualquier persona.</p><p>Veremos los detalles de cómo se añaden nuevos datos y cómo nos aseguramos de que todos tengan una copia de los mismos datos en todo momento en nuestra próxima lección de <strong>Teoría de la Blockchain</strong>. Para esta lección, simplemente recuerda que los datos del registro son compartidos por todas las computadoras que funcionan en la red de Ethereum.</p></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'b7db997a9e8148d597b199d2f83712ab',
-        title: '✅ quiz',
-        quiz: {
-          question: '¿Qué hace que una blockchain sea descentralizada?',
-          rightAnswerNumber: 3,
-          answers: [
-            'Solo una entidad puede escribir en la blockchain.',
-            'Cumple con los requisitos de descentralización establecidos por el gobierno.',
-            'Ninguna autoridad o entidad única controla el registro ni el acceso a los datos del registro, ya que están distribuidos en una gran red de computadoras.',
-            'El registro se almacena en un único servidor seguro.'
-          ],
-          id: 'conceptos-basicos-de-blockchain-3'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '3b5c7642a63948e5b2cdf29a285338c4',
-        title: '<strong>Anatomía de un Bloque</strong>',
-        content: '<div class="bloc1"><p>Una característica importante de las blockchains es que los datos de transacciones pasadas no pueden ser modificados después de haber sido incluidos en un bloque. Esto se debe a que cada bloque tiene un <code>hash de bloque</code> único, como una huella digital, que se utiliza para enlazar los bloques uno después de otro. Nadie puede cambiar las transacciones pasadas sin cambiar esa huella digital y la huella digital de CADA bloque que le sigue, ya que cada una depende de la anterior.</p><p>Entonces, cada <code>bloque</code> es simplemente un grupo de transacciones que se juntan en un archivo junto con el <code>hash de bloque</code> del mismo. Los bloques se encadenan entre sí, porque cada uno hace referencia a la huella digital única del bloque <em>anterior</em>, formando así una <em><strong>cadena de bloques</strong></em> conectados.</p></div><div class="bloc2"><img src=\'/lesson/images/conceptos-basicos-de-blockchain/anatoma-de-un-bloque-914b2bf9.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'a3f98f2993cd4a7e8a46e65b70ae4ae4',
-        title: '✅ quiz',
-        quiz: {
-          question: '¿Cuál es el propósito de un hash de bloque?',
-          rightAnswerNumber: 2,
-          answers: [
-            'Encriptar los datos del bloque para que nadie pueda leerlos.',
-            'Enlazar cada bloque con el anterior y asegurarse de que los datos de transacciones pasadas no cambien.',
-            'Garantizar que las transacciones se envíen a la dirección correcta.',
-            'Asegurar que la blockchain se mantenga descentralizada.'
-          ],
-          id: 'conceptos-basicos-de-blockchain-4'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: 'b995df115f9e440ebad306501a49925b',
-        title: 'Interior<strong> de un Bloque</strong>',
-        content: '<div class="bloc1"><p>Recuerda, los datos de un <code>bloque</code> son simplemente un grupo de transacciones juntas. Al examinar un solo bloque, vemos una lista de transacciones y algunos datos sobre quién creó el bloque.</p><p>Siguiendo nuestro ejemplo anterior, cuando discutimos sobre el libro mayor de la blockchain, ambas transacciones podrían estar agrupadas en un solo bloque o distribuidas en varios bloques a lo largo del tiempo. Pero sin importar en qué bloque se incluyeran, eventualmente se agregarán todas al libro mayor general de la blockchain.</p><ul><li>Alice envía 5 ETH a Bob.</li><li>Bob envía 2 ETH a Charlie.</li></ul><p>Recuerda que cada bloque también debe hacer referencia al <code>hash de bloque</code> del <em>bloque anterior</em> para enlazar la blockchain.</p></div><div class="bloc2"><img src=\'/lesson/images/conceptos-basicos-de-blockchain/interior-de-un-bloque-b9ecc7c3.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '3737749ee9e14222b3f9f0de76fbc6e7',
-        title: '✅ quiz',
-        quiz: {
-          question: 'La siguiente información se encuentra contenida en un bloque:',
-          rightAnswerNumber: 3,
-          answers: [
-            'Toda la información contenida en bloques anteriores, para que la blockchain esté siempre actualizada.',
-            'Cualquier cosa relevante para la blockchain, ya que el tamaño del bloque es ilimitado.',
-            'Datos de transacciones y una referencia al bloque anterior.',
-            'Todos los datos de transacciones generados dentro de un período de tiempo fijo.'
-          ],
-          id: 'conceptos-basicos-de-blockchain-5'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '9930a295b775448f826140e2dc86dd1e',
-        title: '<strong>Transacciones Individuales</strong>',
-        content: '<div class="bloc1"><p>Los datos en cualquier blockchain son simplemente una lista de <code>transacciones</code>, registros de moneda transferida entre usuarios. Cada transacción debe estar firmada con la <code>firma digital</code> del remitente para ser válida.</p><p>Esto es lo que haces cuando confirmas una transacción con una billetera, estás firmando con tu firma digital para autorizar la transacción. Puedes pensar en ello como el equivalente digital de firmar físicamente un cheque, un recibo o una transacción con tarjeta de crédito.</p><p>Las transacciones pueden ser simples, como <em>enviar</em> activos de criptomonedas, o más complejas, como <em>intercambiar</em> activos de criptomonedas o incluso desplegar código especial que se ejecuta cuando se activa, llamado <code>contratos inteligentes</code>.</p><p>Finalmente, cada transacción tiene un identificador digital único, llamado su <code>hash de transacción</code>, que ninguna otra transacción tiene. Esto facilita referirse a cualquier transacción individual más adelante y garantiza que los detalles de esa transacción no se puedan cambiar después.</p></div><div class="bloc2"><img src=\'/lesson/images/conceptos-basicos-de-blockchain/transacciones-individuales-1df9a5c1.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '55f1541094e74eb08cfbe5832d09310c',
-        title: '✅ quiz',
-        quiz: {
-          question: 'Los datos en una blockchain son simplemente una lista de transacciones agrupadas en bloques. Ejemplos de dichas transacciones podrían incluir:',
-          rightAnswerNumber: 1,
-          answers: [
-            'Enviar o recibir activos de criptomonedas.',
-            'Cambiar el tamaño del bloque.',
-            'Editar datos pasados de la blockchain.',
-            'Todas las anteriores.'
-          ],
-          id: 'conceptos-basicos-de-blockchain-6'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '2667f93a9fe6418c93780462fe833006',
-        title: '<strong>Direcciones de Usuario</strong>',
-        content: '<div class="bloc1"><p>Una <code>dirección</code> es un identificador público al que cualquiera puede acceder en la blockchain. Al igual que una dirección de correo electrónico, cualquier persona puede enviar fondos a ella, pero solo alguien que controle la <code>clave privada</code> puede desbloquear y utilizar los fondos en esa dirección.</p><p>En Ethereum, una dirección siempre comienza con <em>0x_________</em> y consta de 42 caracteres de números y letras derivados de la <code>clave pública</code> de esa dirección.</p><p>Cuando observamos una transacción individual en un explorador de bloques, podemos ver las direcciones \'De:\' y \'Para:\'. Esto no nos dice <em>quiénes son</em> las personas que controlan esas direcciones, pero permite a cualquier usuario rastrear el <em>movimiento</em> de criptomonedas en el ledger de la blockchain.</p></div><div class="bloc2"><img src=\'/lesson/images/conceptos-basicos-de-blockchain/direcciones-de-usuario-aedccc31.svg\'></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'efe746739af74ac0880f82b0e55d0f46',
-        title: '✅ quiz',
-        quiz: {
-          question: '¿Qué es cierto acerca de las direcciones de blockchain?',
-          rightAnswerNumber: 4,
-          answers: [
-            'Son los identificadores públicos de diferentes entidades en una blockchain.',
-            'Siempre comienzan con 0x en Ethereum.',
-            'Quien controle la clave privada de una dirección puede utilizar los fondos en esa dirección.',
-            'Todas las anteriores.'
-          ],
-          id: 'conceptos-basicos-de-blockchain-7'
-        }
-      },
-      {
-        type: 'QUEST',
-        title: 'Desafío: Conceptos Básicos de Blockchain',
-        component: 'ConceptosBasicosDeBlockchain'
-      }
-    ]
-  },
-  {
     badgeImageLink: '/lesson/images/web3-security/badge-d2f0df26.png',
     lessonImageLink: '/lesson/images/web3-security/lesson-09017125.png',
     socialImageLink: '/lesson/images/web3-security/social-795f9c67.jpg',
@@ -2198,7 +1993,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '303f183f27b147abbb1e964bd5468fbe',
-        title: 'Network<strong> Governance</strong>',
+        title: 'Network<strong> </strong>Governance',
         content: '<div class="bloc1"><p>Like any real world nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but <code>asynchronous</code>, global, and partially mediated by code.</p><p>📜 <strong>Proposal:</strong> It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘<code>DAO</code>’.</p><p>🗳️ <strong>Vote:</strong> The proposal moves to a vote — hosted via the transparent, censorship-resistant process of <code>onchain governance</code>. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘<code>DAO</code>’ — a quality envisioned to eventually cover the entire governance process.</p><p>🛠️ <strong>Implementation:</strong> The approved proposal is applied to the network, by various incentivized developers if necessary.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/network-governance-ec1d1abb.svg\'></div>'
       },
       {
@@ -2282,19 +2077,19 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: 'c1ee570de27a49b58466df08e2637fab',
-        title: 'A New<strong> Economy</strong>',
+        title: 'A New<strong> </strong>Economy',
         content: '<div class="bloc1"><p>At the center of the Optimism <code>L2</code> economy is the ‘Optimistic Flywheel’. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.</p><ol><li>Users and <code>dApps</code> demand network <code>blockspace</code>.</li><li>The network generates revenue via transaction fees.</li><li>A portion of these taxes are distributed to builders providing impactful public goods infrastructure.</li><li>Everyone gains access to free resources and services.</li></ol><p>With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/a-new-economy-2981ffe5.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'd8361c4c3fd0403b9cc93a8eaee7a02d',
-        title: '<strong>Incentivizing</strong><strong> the Public Goods Economy</strong>',
+        title: 'Incentivizing the Public Goods Economy',
         content: '<div class="bloc1"><p>As you can see, public goods infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.</p><p>Here, Optimism takes an ‘<strong>Impact = Profit</strong>’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.</p><p>As Vitalik Buterin said, <br><em>“It’s easier to agree on what was useful than what will be useful.”</em></p><p>This distribution model is known as ‘<strong>Retroactive Public Goods Funding’</strong>, or <strong>‘RetroPGF’</strong>. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '9222dff9c1e04dd88b551b73ef70bd01',
-        title: '<strong>Ether’s Phoenix</strong>',
+        title: 'Ether’s Phoenix',
         content: '<div class="bloc1"><p>Optimism calls this effect ‘<strong>Ether’s Phoenix’</strong>: an <em>“angel reaching backwards in time, rewarding those who summon it.”</em></p><p><em>“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”</em></p><p>— The Optimism Foundation</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/ethers-phoenix-3bf9db24.svg\'></div>'
       },
       {
@@ -2357,7 +2152,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'f52d961f173846d99f66f081abf7ca94',
         title: 'Token House: Joining, Voting, Delegating',
-        content: '<div class="bloc1"><p>📝 <strong>Joining:</strong> the Token House is done via purchasing and holding OP tokens. These are <code>ERC20</code> tokens, and are therefore transferrable; They can be bought and sold on <code>CEXs</code>, Optimism <code>DEXs</code>, or sent between friends. OP tokens are not available on other networks.</p><p>🗳️ <strong>Voting:</strong> Voting power scales based on how many tokens are held.</p><p>The Token House follows <a href=\'https://community.optimism.io/docs/governance/token-house-history/#\'>a five week voting cycle</a>:</p><ul><li>Week 1-3: Proposal submission, review, and feedback.</li><li>Week 4-5: Voting.</li></ul><p>📢 <strong>Delegating: </strong>Many users prefer to delegate their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.</p><p>Anyone can become a Token House delegate on Optimism, representing a group of friends, a community, or even a university’s blockchain club! Active delegates are often rewarded by the community.</p></div>'
+        content: '<div class="bloc1"><p>📝 <strong>Joining:</strong> the Token House is done via purchasing and holding OP tokens. These are <code>ERC20</code> tokens, and are therefore transferrable; They can be bought and sold on <code>CEXs</code>, Optimism <code>DEXs</code>, or sent between friends. OP tokens are not available on other networks.</p><p>🗳️ <strong>Voting:</strong> Voting power scales based on how many tokens are held.</p><p>The Token House follows <a href=\'https://community.optimism.io/docs/governance/token-house-history/\'>a five week voting cycle</a>:</p><ul><li>Week 1-3: Proposal submission, review, and feedback.</li><li>Week 4-5: Voting.</li></ul><p>📢 <strong>Delegating: </strong>Many users prefer to delegate their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.</p><p>Anyone can become a Token House delegate on Optimism, representing a group of friends, a community, or even a university’s blockchain club! Active delegates are often rewarded by the community.</p></div>'
       },
       {
         type: 'LEARN',
