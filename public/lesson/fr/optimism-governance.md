@@ -1,5 +1,5 @@
 ---
-LESSON TITLE: Optimism gouvernance
+LESSON TITLE: Gouvernance d'Optimism
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
 LANGUAGE: Français
 PROTOCOL VERSION: 0.01
@@ -28,11 +28,11 @@ ________________________________________________________________________________
 ```
 ---
 
-# Old Problems, New Tools
+# Vieux Problèmes, Nouveaux Outils
 
-Modern technology has drastically changed the way in which humans view and interact with each other. On the world stage, and in a borderless cyberspace, we need new coordination models in order to coexist and thrive as a global tribe.
+Les technologies modernes ont radicalement changé la façon dont les humains se perçoivent et interagissent les uns avec les autres. Sur la scène internationale et dans un cyberespace sans frontières, nous avons besoin de nouveaux modèles de coordination pour coexister et prospérer en tant que tribu mondiale.
 
-The vision of `DAO` technology is to host streamlined problem solving and debate between a large number of collaborators — whether on the internet, in your local community, or on an international scale. This is done by:
+La vision de la technologie `DAO` est de résoudre des problèmes et le débat entre un grand nombre de collaborateurs - que ce soit sur Internet, dans votre communauté locale ou à l'échelle internationale. This is done by:
 
 - Incentivizing participants to share a common mission.
 - Innovative voting, `delegation`, and `veto` mechanics.
