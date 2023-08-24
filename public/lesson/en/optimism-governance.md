@@ -3,7 +3,7 @@ LESSON TITLE: Optimism Governance
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
 LANGUAGE: English
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 23/08/2023
+LAST UPDATED: 24/08/2023
 ---
 
 ```
@@ -92,7 +92,7 @@ Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It�
 
 🧑‍🤝‍🧑 **Community Governance:** Optimism is lead by its community.
 
-Optimism aims to become a capitalist district of cyberspace that directly provides for — and is governed by — its citizens!
+Optimism aims to become a free market district of cyberspace that directly provides for — and is governed by — its citizens!
 
 # Knowledge Check 2
 
@@ -160,17 +160,19 @@ Here, Optimism takes an ‘**Impact = Profit**’ approach. Impact, however, is 
 As Vitalik Buterin said, 
 _“It’s easier to agree on what was useful than what will be useful.”_
 
-This distribution model is known as ‘**Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional free markets. Optimism calls this effect ‘**Ether’s Phoenix’**: an “angel reaching backwards in time, rewarding those who summon it.”
+This distribution model is known as ‘**Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg)
 
-# **Incentivizing the Public Goods Economy**
+# **Ether’s Phoenix**
+
+Optimism calls this effect ‘**Ether’s Phoenix’**: an _“angel reaching backwards in time, rewarding those who summon it.”_
 
 _“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”_
 
 — The Optimism Foundation
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-3bf9db24.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/ethers-phoenix-3bf9db24.svg)
 
 # Knowledge Check 4
 
