@@ -88,11 +88,14 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
       // console.log(intro)
       const [, infos] = (intro || '').split('---')
       // console.log(infos)
-      const [, title] = (infos || '').split('\n')
+      const [, title, description] = (infos || '').split('\n')
       // console.log(title)
       currentLesson.name = title.replace('LESSON TITLE: ', '')
-      currentLesson.description =
-        'Aprende sobre la arquitectura fundamental de la tecnología de cadena de bloques (blockchain).'
+      currentLesson.description = description.replace(
+        'LESSON DESCRIPTION: ',
+        ''
+      )
+      console.log(currentLesson.descriptio)
       // console.log(content)
       const slides = content?.split('# ')
       slides.shift()
