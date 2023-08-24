@@ -2,7 +2,7 @@
 LESSON TITLE: Gouvernance d'Optimism
 LESSON DESCRIPTION:
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
-LANGUAGE: English
+LANGUAGE: Français
 PROTOCOL VERSION: 0.01
 LAST UPDATED: 24/08/2023
 ---
@@ -41,45 +41,45 @@ La vision de la technologie `DAO` est de résoudre des problèmes et le débat e
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/old-problems-new-tools-1caefce6.svg)
 
-# Network Governance
+# Gouvernance du Réseau
 
-Like any real world nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but `asynchronous`, global, and partially mediated by code.
+Comme tout État-nation du monde réel disposant de ressources et de participants, une DAO utilise un processus de gouvernance pour piloter le déploiement de ses ressources et la réalisation de sa mission. C'est comme un hôtel de ville, mais `asynchrone`, global et partiellement médiatisé par code.
 
-📜 **Proposal:** It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘`DAO`’.
+📜 **Proposition :** Elle commence par une proposition de gouvernance et une discussion au sein de la communauté. La proposition est mise à jour en fonction des retours du public. Tout le monde peut soumettre une proposition ou en critiquer une. C'est la partie "décentralisée" de "`DAO`".
 
-🗳️ **Vote:** The proposal moves to a vote — hosted via the transparent, censorship-resistant process of `onchain governance`. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘`DAO`’ — a quality envisioned to eventually cover the entire governance process.
+🗳️ **Vote :** La proposition fait l'objet d'un vote - organisé via le processus transparent et résistant à la censure de `gouvernance onchain`. Il n'y a pas de facilitation humaine entre l'ouverture et la clôture du vote ; tout est médiatisé par le code. C'est la partie "autonome" du "`DAO`" - une qualité envisagée pour couvrir à terme l'ensemble du processus de gouvernance.
 
-🛠️ **Implementation:** The approved proposal is applied to the network, by various incentivized developers if necessary.
+🛠️ **Mise en œuvre :** La proposition approuvée est appliquée au réseau, par divers développeurs incités si nécessaire.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/network-governance-ec1d1abb.svg)
 
 # Knowledge Check 1
 
-How can onchain governance help to solve interhuman debate?
+Comment la gouvernance onchain peut-elle contribuer à résoudre le débat interhumain ?
 
-- [ ] By automating human coordination, and evolving based on shared human feedback.
+- [ ] En automatisant la coordination humaine et en évoluant sur la base d'un retour d'information humain partagé.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
-- [ ] Through transparent, attack-resistant voting processes.
+- [ ] Par des processus de vote transparents et résistants aux attaques.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
-- [ ] By hosting an opt-in, mission-oriented community for people across the world.
+- [ ] En hébergeant une communauté opt-in, axée sur la mission pour les gens du monde entier.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
-- [ ] All of the above.
+- [ ] Tous les réponses ci-dessus.
 
-> ℹ️ Correct! Onchain governance aims to streamline and protect group discussion.
+> ℹ️ Correct ! La gouvernance onchain vise à rationaliser et à protéger les discussions de groupe.
 
-# The Optimism Network
+# Le Réseau Optimism
 
-`DAOs` like the `Optimism Collective` are at the frontier of exploring such coordination systems.
+Les `DAO` , comme `le collectif Optimism` , sont à la frontière de l'exploration de tels systèmes de coordination.
 
-In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new frameworks for human coordination in order to achieve it.
+Dans cette leçon, nous allons explorer comment Optimism est le pionnier de la vision des DAO. Nous en apprendrons davantage sur leur mission et sur la manière dont ils élaborent de nouveaux cadres de références pour coordoner humainement.
 
-Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!
+Notre quête se concentrera sur la revendication de nos premiers droits de vote, afin que nous soyons prêts à aider à construire l'avenir d'Ethereum et de la coordination humaine !
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-optimism-network-d43cccdf.svg)
 
