@@ -83,13 +83,13 @@ Notre quête se concentrera sur la revendication de nos premiers droits de vote,
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-optimism-network-d43cccdf.svg)
 
-# The Optimistic Vision
+# La Vision d'Optimism
 
-Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It’s part of the Ethereum ecosystem but with lower fees, faster transactions, and Ethereum’s high standard of security. Here are the defining properties:
+Optimism a une mission : faire évoluer Ethereum en construisant un réseau `Layer 2` . Il fait partie de l'écosystème Ethereum, mais avec des frais moins élevés, des transactions plus rapides et le haut niveau de sécurité d'Ethereum. Voici les propriétés qui le définissent :
 
-🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
+🏠 **Marché libre :** Lancé comme une extension non seulement de l'`espace de bloc` [blockspace] d'Ethereum, mais aussi des principes d'Ethereum. Elle vise à développer la place de marché sans permission [permissionless], open-source et résistante à la censure d'Ethereum.
 
-🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. These are free-to-access, infinite resources and facilities available to all network citizens. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
+🏕️ **Biens publics [Public Goods] :** L'accent est mis sur le financement et la construction `de biens publics` sur la blockchain [onchain]. Il s'agit de ressources gratuites et infinis, mis à la disposition de tous les citoyens du réseau. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
 
 🧑‍🤝‍🧑 **Community Governance:** Optimism is lead by its community.
 
