@@ -1,9 +1,10 @@
 ---
 LESSON TITLE: Wallet Basics
+LESSON DESCRIPTION: Create and securely manage your first crypto wallet.
 LESSON LINK: https://app.banklessacademy.com/lessons/wallet-basics
 LANGUAGE: English
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 04/08/2023
+LAST UPDATED: 24/08/2023
 ---
 
 ```

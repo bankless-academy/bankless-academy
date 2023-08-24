@@ -2198,7 +2198,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '303f183f27b147abbb1e964bd5468fbe',
-        title: 'Network<strong> Governance</strong>',
+        title: 'Network<strong> </strong>Governance',
         content: '<div class="bloc1"><p>Like any real world nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but <code>asynchronous</code>, global, and partially mediated by code.</p><p>📜 <strong>Proposal:</strong> It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘<code>DAO</code>’.</p><p>🗳️ <strong>Vote:</strong> The proposal moves to a vote — hosted via the transparent, censorship-resistant process of <code>onchain governance</code>. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘<code>DAO</code>’ — a quality envisioned to eventually cover the entire governance process.</p><p>🛠️ <strong>Implementation:</strong> The approved proposal is applied to the network, by various incentivized developers if necessary.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/network-governance-ec1d1abb.svg\'></div>'
       },
       {
@@ -2282,19 +2282,19 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: 'c1ee570de27a49b58466df08e2637fab',
-        title: 'A New<strong> Economy</strong>',
+        title: 'A New<strong> </strong>Economy',
         content: '<div class="bloc1"><p>At the center of the Optimism <code>L2</code> economy is the ‘Optimistic Flywheel’. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.</p><ol><li>Users and <code>dApps</code> demand network <code>blockspace</code>.</li><li>The network generates revenue via transaction fees.</li><li>A portion of these taxes are distributed to builders providing impactful public goods infrastructure.</li><li>Everyone gains access to free resources and services.</li></ol><p>With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/a-new-economy-2981ffe5.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'd8361c4c3fd0403b9cc93a8eaee7a02d',
-        title: '<strong>Incentivizing</strong><strong> the Public Goods Economy</strong>',
+        title: 'Incentivizing the Public Goods Economy',
         content: '<div class="bloc1"><p>As you can see, public goods infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.</p><p>Here, Optimism takes an ‘<strong>Impact = Profit</strong>’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.</p><p>As Vitalik Buterin said, <br><em>“It’s easier to agree on what was useful than what will be useful.”</em></p><p>This distribution model is known as ‘<strong>Retroactive Public Goods Funding’</strong>, or <strong>‘RetroPGF’</strong>. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '9222dff9c1e04dd88b551b73ef70bd01',
-        title: '<strong>Ether’s Phoenix</strong>',
+        title: 'Ether’s Phoenix',
         content: '<div class="bloc1"><p>Optimism calls this effect ‘<strong>Ether’s Phoenix’</strong>: an <em>“angel reaching backwards in time, rewarding those who summon it.”</em></p><p><em>“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”</em></p><p>— The Optimism Foundation</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/ethers-phoenix-3bf9db24.svg\'></div>'
       },
       {
@@ -2357,7 +2357,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'f52d961f173846d99f66f081abf7ca94',
         title: 'Token House: Joining, Voting, Delegating',
-        content: '<div class="bloc1"><p>📝 <strong>Joining:</strong> the Token House is done via purchasing and holding OP tokens. These are <code>ERC20</code> tokens, and are therefore transferrable; They can be bought and sold on <code>CEXs</code>, Optimism <code>DEXs</code>, or sent between friends. OP tokens are not available on other networks.</p><p>🗳️ <strong>Voting:</strong> Voting power scales based on how many tokens are held.</p><p>The Token House follows <a href=\'https://community.optimism.io/docs/governance/token-house-history/#\'>a five week voting cycle</a>:</p><ul><li>Week 1-3: Proposal submission, review, and feedback.</li><li>Week 4-5: Voting.</li></ul><p>📢 <strong>Delegating: </strong>Many users prefer to delegate their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.</p><p>Anyone can become a Token House delegate on Optimism, representing a group of friends, a community, or even a university’s blockchain club! Active delegates are often rewarded by the community.</p></div>'
+        content: '<div class="bloc1"><p>📝 <strong>Joining:</strong> the Token House is done via purchasing and holding OP tokens. These are <code>ERC20</code> tokens, and are therefore transferrable; They can be bought and sold on <code>CEXs</code>, Optimism <code>DEXs</code>, or sent between friends. OP tokens are not available on other networks.</p><p>🗳️ <strong>Voting:</strong> Voting power scales based on how many tokens are held.</p><p>The Token House follows <a href=\'https://community.optimism.io/docs/governance/token-house-history/\'>a five week voting cycle</a>:</p><ul><li>Week 1-3: Proposal submission, review, and feedback.</li><li>Week 4-5: Voting.</li></ul><p>📢 <strong>Delegating: </strong>Many users prefer to delegate their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.</p><p>Anyone can become a Token House delegate on Optimism, representing a group of friends, a community, or even a university’s blockchain club! Active delegates are often rewarded by the community.</p></div>'
       },
       {
         type: 'LEARN',

@@ -1,9 +1,10 @@
 ---
 LESSON TITLE: DEX Aggregators
+LESSON DESCRIPTION: Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.
 LESSON LINK: https://app.banklessacademy.com/lessons/dex-aggregators
 LANGUAGE: English
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 02/08/2023
+LAST UPDATED: 24/08/2023
 ---
 
 ```
