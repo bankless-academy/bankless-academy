@@ -21,6 +21,7 @@
 /ideas
 /poaps/*
 tsconfig.tsbuildinfo
+badge.tsx
 
 # debug
 npm-debug.log*
@@ -38,5 +39,5 @@ yarn-error.log*
 # vercel
 .vercel
 
-# vscode 
+# vscode
 .vscode/

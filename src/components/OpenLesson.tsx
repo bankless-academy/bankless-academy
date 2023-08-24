@@ -35,7 +35,13 @@ const OpenLesson = ({
       {children}
       {showDisclaimer && (
         <Disclaimer
+          lesson={lesson}
           accepted={async () => {
+            const currentTimestamp = Math.floor(Date.now() / 1000)
+            localStorage.setItem(
+              `disclaimer-${lesson.slug}`,
+              currentTimestamp.toString()
+            )
             setOpenLessonLS(
               await openLesson(openLessonLS, lesson, toast, address)
             )

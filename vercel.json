@@ -62,5 +62,12 @@
       "source": "/mp/:slug",
       "destination": "https://api-eu.mixpanel.com/:slug"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/lessons/conceptos-(.*)",
+      "destination": "/lessons/blockchain-basics?lang=es",
+      "permanent": false
+    }
   ]
 }

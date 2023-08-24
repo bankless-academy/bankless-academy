@@ -1,14 +1,15 @@
+/* eslint-disable no-console */
 import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
-import { useAccount } from 'wagmi'
 
 import { LessonType } from 'entities/lesson'
-import MintKudos from 'components/MintKudos'
+import MintBadge from 'components/MintBadge'
 import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL } from 'constants/index'
-import { MINTKUDOS_URL, MINTKUDOS_OPENSEA_URL } from 'constants/kudos'
+import { BADGE_OPENSEA_URL } from 'constants/badges'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
+import { BADGE_TO_KUDOS_IDS } from 'pages/api/badges/[...slug]'
 
 const BadgeHelper = (
   <Helper
@@ -32,20 +33,18 @@ const Badge = ({
   lesson: LessonType
   isQuestCompleted: boolean
 }): JSX.Element => {
-  const { address } = useAccount()
-  const [isKudosMintedLS] = useLocalStorage(
-    `isKudosMinted-${lesson.kudosId}`,
+  const [isBadgeMintedLS] = useLocalStorage(
+    `isBadgeMinted-${lesson.badgeId}`,
     false
   )
-
+  const [kudosMintedLS] = useLocalStorage(`kudosMinted`, [])
   const share = `I've just claimed my "${
     lesson.name
   }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
 ${
   IS_WHITELABEL
-    ? `
-Go claim yours here 👇 ${DOMAIN_URL}/lessons/${lesson.slug}`
-    : `${MINTKUDOS_URL}profile/${address}?tab=Received&tokenId=${lesson.kudosId}
+    ? `${DOMAIN_URL}/lessons/${lesson.slug}`
+    : `${DOMAIN_URL}/lessons/${lesson.slug}
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 }`
@@ -54,7 +53,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     share
   )}`
 
-  if (!isQuestCompleted && !isKudosMintedLS) {
+  if (!isQuestCompleted && !isBadgeMintedLS) {
     return (
       <Box position="relative" w="290px" m="auto" my="6">
         <Box
@@ -63,18 +62,25 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           overflow="hidden"
           opacity="0.5"
         >
-          <NFT nftLink={lesson.kudosImageLink} />
+          <NFT nftLink={lesson.badgeImageLink} />
         </Box>
         {BadgeHelper}
       </Box>
     )
   }
 
+  const kudosId = BADGE_TO_KUDOS_IDS[lesson.badgeId.toString()]
+  const OpenSeaBadgeLink = kudosMintedLS.includes(kudosId)
+    ? // old badges (kudos)
+      `https://opensea.io/assets/matic/0x60576a64851c5b42e8c57e3e4a5cf3cf4eeb2ed6/${kudosId}`
+    : // new badges
+      `${BADGE_OPENSEA_URL}${lesson.badgeId}`
+
   return (
     <>
       <Box textAlign="center" mb="40px">
         <Box width="290px" m="auto">
-          {isKudosMintedLS ? (
+          {isBadgeMintedLS ? (
             <Box border="1px solid #9E72DC" borderTopRadius="8px" py="3" px="5">
               <Box color="#9E72DC" fontWeight="bold" fontSize="xl">
                 Badge Minted
@@ -82,14 +88,14 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             </Box>
           ) : (
             <Box position="relative">
-              <MintKudos kudosId={lesson.kudosId} />
+              <MintBadge badgeId={lesson.badgeId} />
               {BadgeHelper}
             </Box>
           )}
           <Box
             width="290px"
             borderRadius={
-              isKudosMintedLS
+              isBadgeMintedLS
                 ? '0px'
                 : !isQuestCompleted
                 ? '8px'
@@ -98,9 +104,9 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             overflow="hidden"
             border="1px solid #4b474b"
           >
-            <NFT nftLink={lesson.kudosImageLink} />
+            <NFT nftLink={lesson.badgeImageLink} />
           </Box>
-          {isKudosMintedLS && (
+          {isBadgeMintedLS && (
             <Box
               // display="flex"
               justifyContent="center"
@@ -123,7 +129,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                   </Button>
                 </ExternalLink>
               </Box>
-              <ExternalLink href={`${MINTKUDOS_OPENSEA_URL}${lesson.kudosId}`}>
+              <ExternalLink href={OpenSeaBadgeLink}>
                 <Button
                   variant="primary"
                   w="100%"

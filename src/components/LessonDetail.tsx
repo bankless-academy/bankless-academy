@@ -35,6 +35,19 @@ const closeLesson = (openedLesson: string, lesson: LessonType): string => {
   )
 }
 
+const quizComplete = (lesson: LessonType): boolean => {
+  const quizAnswers = []
+  for (const slide of lesson.slides) {
+    if (slide.type === 'QUIZ') {
+      quizAnswers.push(
+        parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
+          slide.quiz.rightAnswerNumber
+      )
+    }
+  }
+  return !quizAnswers.includes(false)
+}
+
 const LessonDetail = ({
   lesson,
   extraKeywords,
@@ -54,10 +67,17 @@ const LessonDetail = ({
     setOpenLessonLS(closeLesson(openLessonLS, lesson))
   }, [])
 
-  const Quest = QuestComponent(lesson.quest, lesson.kudosId)
+  const isQuizComplete = quizComplete(lesson)
+
+  const Quest = QuestComponent(lesson.quest, lesson.badgeId)
 
   const hasLessonGating =
     TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
+
+  const lang =
+    typeof window !== 'undefined' && window.location.search.length
+      ? window.location.search.replace('?lang=', '')
+      : 'en'
 
   return (
     <>
@@ -125,6 +145,35 @@ const LessonDetail = ({
               >
                 {lesson.name}
               </Text>
+              {lesson.languages?.length ? (
+                <Box textAlign="center">
+                  <InternalLink
+                    href={`/lessons/${lesson.slug}`}
+                    alt={lesson.name}
+                    ml={3}
+                  >
+                    <Button variant={lang === 'en' ? 'solid' : 'outline'}>
+                      🇺🇸
+                    </Button>
+                  </InternalLink>
+                  {lesson.languages.map((l, k) => (
+                    <InternalLink
+                      href={`/lessons/${lesson.slug}?lang=${l}`}
+                      alt={lesson.name}
+                      key={`lang-${k}`}
+                      ml={3}
+                    >
+                      <Button variant={lang === l ? 'solid' : 'outline'}>
+                        {l === 'es' && '🇪🇸'}
+                        {l === 'fr' && '🇫🇷'}
+                        {l === 'de' && '🇩🇪'}
+                        {l === 'jp' && '🇯🇵'}
+                        {l === 'cn' && '🇨🇳'}
+                      </Button>
+                    </InternalLink>
+                  ))}
+                </Box>
+              ) : null}
               <Box
                 display="flex"
                 mt="4"
@@ -178,7 +227,7 @@ const LessonDetail = ({
                   </Box>
                 </Box>
               )}
-              {lesson.kudosId && (
+              {lesson.badgeId && (
                 <>
                   <Box pb="8">
                     <Text
@@ -194,7 +243,9 @@ const LessonDetail = ({
                   <Box textAlign="center">
                     <Badge
                       lesson={lesson}
-                      isQuestCompleted={Quest.isQuestCompleted}
+                      isQuestCompleted={
+                        isQuizComplete && Quest?.isQuestCompleted
+                      }
                     />
                     <Text fontSize="2xl" mb="4">
                       “{lesson.name}” Lesson Badge

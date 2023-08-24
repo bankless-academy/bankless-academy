@@ -33,7 +33,7 @@ export default async function handler(
 
   // Backend onchain quest verification
   if (ONCHAIN_QUESTS.includes(quest)) {
-    if (quest === 'DEXAggregators') {
+    if (['DEXAggregators', 'DecentralizedExchanges'].includes(quest)) {
       if (!tx || typeof tx !== 'string') {
         return res
           .status(403)
@@ -50,30 +50,18 @@ export default async function handler(
           error: 'Onchain quest not completed',
         })
     }
-    if (quest === 'DecentralizedExchanges') {
-      if (!tx || typeof tx !== 'string') {
-        return res
-          .status(403)
-          .json({ isQuestValidated: false, error: 'Missing transaction' })
-      }
-      const isOnchainQuestCompleted = await validateOnchainQuest(
-        quest,
-        address,
-        tx
-      )
-      if (!isOnchainQuestCompleted)
-        return res.status(200).json({
-          isQuestValidated: false,
-          error: 'Onchain quest not completed',
-        })
-    }
-    if (quest === 'Layer2Blockchains') {
+    else if (['Layer2Blockchains', 'OptimismGovernance'].includes(quest)) {
       const isOnchainQuestCompleted = await validateOnchainQuest(quest, address)
       if (!isOnchainQuestCompleted)
         return res.status(200).json({
           isQuestValidated: false,
           error: 'Onchain quest not completed',
         })
+    } else {
+      return res.status(200).json({
+        isQuestValidated: false,
+        error: 'Onchain quest not completed',
+      })
     }
   }
 
@@ -94,7 +82,7 @@ export default async function handler(
 
     let questStatus = ''
     const [questCompleted] = await db(TABLES.completions)
-      .select(TABLE.completions.id, TABLE.completions.credential_claimed_at)
+      .select(TABLE.completions.id)
       .where(TABLE.completions.credential_id, credential.id)
       .where(TABLE.completions.user_id, userId)
     questStatus = 'Quest already completed'

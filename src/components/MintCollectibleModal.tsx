@@ -49,15 +49,15 @@ const MintCollectibleModal = ({
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody padding={isMobileScreen ? '0' : 'default'}>
-          {lesson.LessonCollectibleMintID && (
+          {lesson.lessonCollectibleMintID && (
             <iframe
-              src={`/mint.html?collection=${lesson.LessonCollectibleMintID}${
+              src={`/mint.html?collection=${lesson.lessonCollectibleMintID}${
                 isMobileScreen ? `&mobile=true` : ''
               }`}
               frameBorder="0"
               style={{
                 width: isMobileScreen ? '100%' : '400px',
-                height: '666px',
+                height: isMobileScreen ? '684px' : '660px',
                 margin: 'auto',
                 colorScheme: 'none',
                 overflow: 'hidden',

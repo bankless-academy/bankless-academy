@@ -1,44 +1,44 @@
-import { IS_MINTKUDOS_SANDBOX } from 'constants/kudos'
+import { IS_BADGE_PROD } from 'constants/badges'
 
 const ENABLE_TESTNET = true
 
 // https://chainlist.org/
 const TESTNET_NETWORKS =
-  IS_MINTKUDOS_SANDBOX || ENABLE_TESTNET
+  !IS_BADGE_PROD || ENABLE_TESTNET
     ? {
-        kovan: {
-          name: 'Goerli Testnet',
-          image: '/images/eth-test.svg',
-          currencySymbol: 'GoerliETH',
-          chainId: 5,
-          infuraRpcUrl: 'https://goerli.infura.io/v3/',
-          rpcUrlAdd: 'https://goerli.infura.io/v3/',
-          faucet: 'https://goerlifaucet.com/',
-          blockExplorer: 'https://goerli.etherscan.io/',
-        },
-        mumbai: {
-          name: 'Mumbai Testnet',
-          image: '/images/matic-test.svg',
-          networkName: 'Matic (Polygon) Testnet Mumbai',
-          currencySymbol: 'MATIC',
-          chainId: 80001,
-          infuraRpcUrl: 'https://polygon-mumbai.infura.io/v3/',
-          rpcUrlAdd: 'https://rpc-mumbai.maticvigil.com',
-          faucet: 'https://faucet.matic.network/',
-          blockExplorer: 'https://mumbai.polygonscan.com/',
-        },
-        goerli: {
-          name: 'Optimism Testnet',
-          image: '/images/op-test.svg',
-          networkName: 'Optimistic Goerli',
-          currencySymbol: 'GoerliETH',
-          chainId: 420,
-          infuraRpcUrl: 'https://optimism-goerli.infura.io/v3/',
-          rpcUrlAdd: 'https://goerli.optimism.io',
-          faucet: 'https://faucet.quicknode.com/optimism/goerli',
-          blockExplorer: 'https://goerli-optimism.etherscan.io/',
-        },
-      }
+      kovan: {
+        name: 'Goerli Testnet',
+        image: '/images/eth-test.svg',
+        currencySymbol: 'GoerliETH',
+        chainId: 5,
+        infuraRpcUrl: 'https://goerli.infura.io/v3/',
+        rpcUrlAdd: 'https://goerli.infura.io/v3/',
+        faucet: 'https://goerlifaucet.com/',
+        blockExplorer: 'https://goerli.etherscan.io/',
+      },
+      mumbai: {
+        name: 'Mumbai Testnet',
+        image: '/images/matic-test.svg',
+        networkName: 'Matic (Polygon) Testnet Mumbai',
+        currencySymbol: 'MATIC',
+        chainId: 80001,
+        infuraRpcUrl: 'https://polygon-mumbai.infura.io/v3/',
+        rpcUrlAdd: 'https://rpc-mumbai.maticvigil.com',
+        faucet: 'https://faucet.matic.network/',
+        blockExplorer: 'https://mumbai.polygonscan.com/',
+      },
+      goerli: {
+        name: 'Optimism Testnet',
+        image: '/images/op-test.svg',
+        networkName: 'Optimistic Goerli',
+        currencySymbol: 'GoerliETH',
+        chainId: 420,
+        infuraRpcUrl: 'https://optimism-goerli.infura.io/v3/',
+        rpcUrlAdd: 'https://goerli.optimism.io',
+        faucet: 'https://faucet.quicknode.com/optimism/goerli',
+        blockExplorer: 'https://goerli-optimism.etherscan.io/',
+      },
+    }
     : {}
 
 export const NETWORKS = Object.freeze({

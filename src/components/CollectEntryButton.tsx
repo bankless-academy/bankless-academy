@@ -1,18 +1,22 @@
 import { Box, Button, Tooltip, useToast } from '@chakra-ui/react'
 import { LessonType } from 'entities/lesson'
-import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
+import { switchNetwork } from '@wagmi/core'
+import { optimism } from 'wagmi/chains'
 import {
   usePrepareContractWrite,
   useContractWrite,
   useWaitForTransaction,
   useAccount,
+  useNetwork,
 } from 'wagmi'
 import { Gear, SealCheck } from '@phosphor-icons/react'
 
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks'
 import { getArticlesCollectors } from 'utils'
+import { parseEther } from 'viem'
+import { useLocalStorage } from 'usehooks-ts'
 
 const CollectEntryButton = ({
   lesson,
@@ -21,9 +25,14 @@ const CollectEntryButton = ({
 }): JSX.Element => {
   if (!lesson.mirrorNFTAddress) return
   const { address } = useAccount()
+  const { chain } = useNetwork()
   const toast = useToast()
   const [isSmallScreen] = useSmallScreen()
   const [numberMinted, setNumberMinted] = useState('-')
+  const [, setConnectWalletPopupLS] = useLocalStorage(
+    `connectWalletPopup`,
+    false
+  )
 
   const { config } = usePrepareContractWrite({
     address: lesson.mirrorNFTAddress,
@@ -47,10 +56,11 @@ const CollectEntryButton = ({
     ],
     functionName: 'purchase',
     args: [address, ''],
+    chainId: optimism.id,
+    // 0.01 + 0.00069 in collector fee
+    value: parseEther('0.01069'),
     overrides: {
-      // 0.01 + 0.00069 in collector fee
-      value: ethers.utils.parseEther('0.01069'),
-      gasLimit: ethers.BigNumber.from(150000),
+      gasLimit: 150000n,
     },
   })
   const { data, write } = useContractWrite(config)
@@ -88,8 +98,12 @@ const CollectEntryButton = ({
                 </Box>
                 <Box flexDirection="column">
                   <Box>Minting in progress:</Box>
-                  <ExternalLink href={txLink} alt="Transaction in progress">
-                    {isSmallScreen ? `${txLink.substring(0, 40)}...` : txLink}
+                  <ExternalLink
+                    underline="true"
+                    href={txLink}
+                    alt="Transaction in progress"
+                  >
+                    {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
                   </ExternalLink>
                 </Box>
               </Box>
@@ -120,8 +134,12 @@ const CollectEntryButton = ({
                 </Box>
                 <Box flexDirection="column">
                   <Box>Entry minted:</Box>
-                  <ExternalLink href={txLink} alt="Transaction in progress">
-                    {isSmallScreen ? `${txLink.substring(0, 40)}...` : txLink}
+                  <ExternalLink
+                    underline="true"
+                    href={txLink}
+                    alt="Transaction in progress"
+                  >
+                    {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
                   </ExternalLink>
                 </Box>
               </Box>
@@ -153,17 +171,23 @@ const CollectEntryButton = ({
           </ExternalLink>
         ) : (
           <Button
-            isDisabled={!write || isLoading}
+            isDisabled={isLoading}
             loadingText="Minting ..."
             variant="primaryGold"
             w="100%"
-            onClick={() =>
-              numberMinted !== '-'
-                ? parseInt(numberMinted) >= 100
-                  ? openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
-                  : write()
-                : alert('try again in 2 seconds')
-            }
+            onClick={async () => {
+              if (numberMinted !== '-') {
+                if (parseInt(numberMinted) >= 100) {
+                  openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
+                } else {
+                  if (chain.id !== optimism.id) {
+                    await switchNetwork({ chainId: optimism.id })
+                  }
+                  write?.()
+                }
+              } else if (address) alert('try again in 2 seconds')
+              else setConnectWalletPopupLS(true)
+            }}
           >
             Collect Entry
           </Button>

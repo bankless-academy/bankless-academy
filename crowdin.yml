@@ -6,4 +6,15 @@ targets:
     format: macosx
 files:
   - source: /public/lesson/en/*.md
+    ignore:
+      - bankless-archetypes.md
+      - going-bankless.md
+      - kudos-testing.md
+      - conceptos-basicos-de-blockchain.md
+      - decentralized-exchanges.md
+      - dex-aggregators.md
+      - intro-to-defi.md
+      - layer-1-blockchains.md
+      - layer-2-blockchains.md
+      - web3-security.md
     translation: /public/lesson/%two_letters_code%/%original_file_name%

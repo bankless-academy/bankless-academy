@@ -79,6 +79,7 @@ const CollectiblesHelper = (
 export const openLesson = async (
   openedLesson: string,
   lesson: LessonType,
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   toast: any,
   address?: string
 ): Promise<string> => {
@@ -121,11 +122,11 @@ const CollectLessonButton = ({
   lesson: LessonType
 }): JSX.Element => {
   const [isLessonMintedLS, setIsLessonMintedLS] = useLocalStorage(
-    `isLessonMinted-${lesson.LessonCollectibleTokenAddress}`,
+    `isLessonMinted-${lesson.lessonCollectibleTokenAddress}`,
     false
   )
-  const [isKudosMintedLS] = useLocalStorage(
-    `isKudosMinted-${lesson.kudosId}`,
+  const [isBadgeMintedLS] = useLocalStorage(
+    `isBadgeMinted-${lesson.badgeId}`,
     false
   )
   const [tokenId, setTokenId] = useState('1')
@@ -149,9 +150,9 @@ const CollectLessonButton = ({
   )
 
   const isLessonCollected =
-    !!lesson.LessonCollectibleTokenAddress?.length &&
+    !!lesson.lessonCollectibleTokenAddress?.length &&
     lessonsCollectedLS.includes(
-      lesson.LessonCollectibleTokenAddress.toLowerCase()
+      lesson.lessonCollectibleTokenAddress.toLowerCase()
     )
 
   useEffect(() => {
@@ -167,7 +168,7 @@ const CollectLessonButton = ({
 
   const updateLessonsCollectors = async () => {
     const NFTCollectors = await getLessonsCollectors(
-      lesson.LessonCollectibleTokenAddress
+      lesson.lessonCollectibleTokenAddress
     )
     setIsLessonMintedLS(false)
     for (const NFTCollector of NFTCollectors) {
@@ -190,12 +191,12 @@ const CollectLessonButton = ({
     }
   }
   useEffect(() => {
-    if (lesson.LessonCollectibleTokenAddress)
+    if (lesson.lessonCollectibleTokenAddress)
       updateLessonsCollectors().catch(console.error)
   }, [address])
 
   const share = `I’ve just collected ${numberIOwn} of 100 ‘${lesson.name}’ DataDisks™ from @BanklessAcademy.
-https://opensea.io/assets/optimism/${lesson.LessonCollectibleTokenAddress}/${tokenId}
+https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}
 
 Become a Guardian of Bankless Academy today - join the effort to circulate @BanklessAcademy content and retroactively fund education public goods!`
 
@@ -210,7 +211,13 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
           {isMobile ? (
             <Image src={lesson.lessonCollectibleGif} />
           ) : (
-            <video autoPlay loop playsInline muted>
+            <video
+              autoPlay
+              loop
+              playsInline
+              muted
+              style={{ minHeight: '224px' }}
+            >
               <source
                 src={lesson.lessonCollectibleVideo}
                 type="video/webm"
@@ -254,7 +261,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
                 <Box ml="4">({numberOfOwners}/100 claimed)</Box>
               </Box>
             </Box>
-          ) : isKudosMintedLS ? (
+          ) : isBadgeMintedLS ? (
             <Box
               background="linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%)"
               borderTopRadius="8px"
@@ -307,7 +314,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
             maxW="500px"
             borderX="1px solid #4b474b"
             borderBottom="1px solid #4b474b"
-            borderBottomRadius={isKudosMintedLS && isLessonMintedLS ? 0 : '8px'}
+            borderBottomRadius={isBadgeMintedLS && isLessonMintedLS ? 0 : '8px'}
           >
             <OpenLesson lesson={lesson} click>
               <>
@@ -334,7 +341,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
               </>
             </OpenLesson>
           </Box>
-          {isKudosMintedLS && isLessonMintedLS && (
+          {isBadgeMintedLS && isLessonMintedLS && (
             <Box
               border="1px solid #4b474b"
               borderBottomRadius="8px"
@@ -362,7 +369,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
               </Box>
               <Box pb="2">
                 <ExternalLink
-                  href={`https://opensea.io/assets/optimism/${lesson.LessonCollectibleTokenAddress}/${tokenId}`}
+                  href={`https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}`}
                 >
                   <Button
                     variant="primaryGold"

@@ -3,230 +3,18 @@ import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = [
   {
-    kudosImageLink: null,
-    lessonImageLink: null,
-    learningActions: '',
-    marketingDescription: 'What does it mean to go Bankless? In this lesson, we discuss why millions of people are investing in cryptocurrency - and practical first steps for joining the movement.',
-    kudosId: null,
-    duration: 10,
-    learnings: '',
-    difficulty: undefined,
-    description: 'What does it mean to go Bankless? Take your first step, here.',
-    name: 'Going Bankless',
-    quest: 'GoingBankless',
-    publicationStatus: 'hidden',
-    featuredOrderOnHomepage: null,
-    isCommentsEnabled: false,
-    endOfLessonRedirect: null,
-    endOfLessonText: undefined,
-    notionId: '89cf10ef71b54fbfa7c3e6b41d55b36f',
-    slug: 'going-bankless',
-    imageLinks: [
-      '/lesson/images/going-bankless/quest-63568085.jpg'
-    ],
-    slides: [
-      {
-        type: 'LEARN',
-        notionId: '144547c8eda24c059eb6a9b4d204fe22',
-        title: 'Intro',
-        content: '<div class="bloc1"><p>What is the Bankless movement in 1-2 phrases.</p><p>What is Bankless Academy: scalable learning platform to learn the basic on how to become Bankless.</p><p>The usual way of learning Bankless Academy: learning slides + quiz, practice via quests, then after completion receive an onchain lesson badge that proves your knowledge.</p><p>Requirement (who is this for?): web3 and tech curious + interest in self sovereignty</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '67a83d074e0346cc8483bcbf3df296e5',
-        title: 'Goal of this lesson',
-        content: '<div class="bloc1"><h2>learn about yourself</h2><ul><li>what kind of Bankless person you are (Bankless archetype)</li><li>know your level of “Banklessness” with a score</li></ul><h2>set goals for your Bankless journey</h2><p>You’ll receive a recap at the end of this lesson, then you’ll be able to start or continue your Bankless journey!</p><p>Format: a bit of reading but mostly quizzes</p><p>If that’s what you are here for, LFG!</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '81f69adc54364e629a310fffc32e9778',
-        title: 'What’s possible to achieve when your are Bankless?',
-        content: '<div class="bloc1"><p>Be independent and have freedom.</p><p>Trust the code instead of trusting human (always greedy).</p><p>Open and accessible information.</p><p>In the next slide we are going to ask questions to determine your Bankless archetype (why you are here).</p></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '6251cc560e36431f920087a139b4f998',
-        title: '✅ Question to determine Bankless archetype',
-        quiz: {
-          question: 'Why are you interested in web3? (can select multiple answer)',
-          rightAnswerNumber: 1,
-          answers: [
-            'make money',
-            'learn how to be self sovereign',
-            'here for the tech',
-            'freedom',
-            'censorship resistance',
-            'change the world'
-          ],
-          id: 'going-bankless-1'
-        }
-      },
-      {
-        type: 'QUIZ',
-        notionId: '57168be2bd5b4fdb85c98f7586ef189c',
-        title: '✅ Question to determine Bankless archetype',
-        quiz: {
-          question: 'Do you trust Central Banks?',
-          rightAnswerNumber: 1,
-          answers: [
-            'yes',
-            'no',
-            'it depends'
-          ],
-          id: 'going-bankless-2'
-        }
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'a13d3e09756143659612eedd6d175a8f',
-        title: '✅ Question to determine Bankless archetype',
-        quiz: {
-          question: 'Are you worried about inflation?',
-          rightAnswerNumber: 1,
-          answers: [
-            'yes',
-            'no really'
-          ],
-          id: 'going-bankless-3'
-        }
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'd36756b22bf84581ad6eaf0825c45f3b',
-        title: '✅ Question to determine Bankless archetype',
-        quiz: {
-          question: 'Do you like web2 socials?',
-          rightAnswerNumber: 1,
-          answers: [
-            'yes, I use them often',
-            'no I’m not happy with them',
-            'I don’t trust web2 socials platforms',
-            'I wish I can own my data'
-          ],
-          id: 'going-bankless-4'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: '482404e0f6c74c919b95a8d44d6fde11',
-        title: 'Bankless level',
-        content: '<div class="bloc1"><p>Self custody and cryptography are new paradigm and an evolution of web2.</p><p>It’s an evolution of web2:</p><ul><li>Crypto protocols allow for secure communication of value (not just data as per web2). </li><li>Crypto protocols introduce a new ownership primitive: ownership</li></ul><p>It’s risky (scams) but you can gain a lot of freedom.</p><p>In the next slides we are going to determine your level of Banklessness (how familiar your are with Bankless primitives).</p></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: '29571c22d2e14ecba700f8c69552829a',
-        title: '✅ Question to determine your Bankless level',
-        quiz: {
-          question: 'Select the topics you are familiar with (can select multiple answer)',
-          rightAnswerNumber: 1,
-          answers: [
-            'buy/sell crypto on an exchange',
-            'self custody',
-            'swap token on DeFi',
-            'buy an NFT',
-            'join a DAO'
-          ],
-          id: 'going-bankless-5'
-        }
-      },
-      {
-        type: 'QUIZ',
-        notionId: '1e9d08d2cfdd47d681c4fdc6876bf4b4',
-        title: '✅ Question to determine your Bankless level',
-        quiz: {
-          question: 'Select more topics you are familiar with (can select multiple answer)',
-          rightAnswerNumber: 1,
-          answers: [
-            'LP',
-            'do a loan',
-            'web3 social',
-            'staking via LSD',
-            'I run a solo node'
-          ],
-          id: 'going-bankless-6'
-        }
-      },
-      {
-        type: 'QUIZ',
-        notionId: '3cfc048985694a7b85722bad9a539b15',
-        title: '✅ Question to determine your Bankless level',
-        quiz: {
-          question: 'Are you familiar with the term mentioned in previous slides.',
-          rightAnswerNumber: 1,
-          answers: [
-            'not a all',
-            'no but I’m curious',
-            'I’m familiar with most of them',
-            'I’m already familiar with all'
-          ],
-          id: 'going-bankless-7'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: 'd13cb16b7b9341968d0de623d63c1ecb',
-        title: 'The Bankless Journey',
-        content: '<div class="bloc1"><p>Being Bankless is a spectrum and a journey.</p><p>Bankless Academy can help you set goals and level up your skills.</p><p>In the next slides we are going to help you set goals for your Bankless Journey.</p></div>'
-      },
-      {
-        type: 'QUIZ',
-        notionId: 'e3303cd3d38f40749eefdba5ac81815d',
-        title: '✅ Question to determine your Bankless goals',
-        quiz: {
-          question: 'Select the topics are you curious about (can select multiple answer)',
-          rightAnswerNumber: 1,
-          answers: [
-            'buy/sell crypto on an exchange',
-            'self custody',
-            'swap token on DeFi',
-            'buy an NFT',
-            'join a DAO'
-          ],
-          id: 'going-bankless-8'
-        }
-      },
-      {
-        type: 'QUIZ',
-        notionId: '5a72051972c24875a9b591e8d3be7870',
-        title: '✅ Question to determine your Bankless goals',
-        quiz: {
-          question: 'Select more topics are you curious about (can select multiple answer)',
-          rightAnswerNumber: 1,
-          answers: [
-            'LP',
-            'do a loan',
-            'web3 social',
-            'staking via LSD',
-            'I run a solo node'
-          ],
-          id: 'going-bankless-9'
-        }
-      },
-      {
-        type: 'LEARN',
-        notionId: 'af594f1cbac5494bacd3a0db0ba644c7',
-        title: 'Quest',
-        content: '<div class="bloc1"><p>Thanks for doing this lesson. Here is a recap of your Bankless profile.</p><p>[dynamic image] 👉: includes your Bankless Archetype (crypto curious/learner/teacher/expert) + your Bankless score (x/100) + goals (list of topics to learn)</p><p>You can download this image and share it on social media if you want with this link: [insert dynamic link]</p><p>(vision: As you complete more lessons, you Bankless profile is going to evolve … could become a dynamic NFT)</p><p>Here are our recommendations as next steps:</p><ul><li>[beginners lvl1]: buy your first crypto</li><li>[beginners lvl2]: do the wallet basics lesson and learn how to self custody</li><li>[beginners lvl2]: go directly on an advanced topic (DeFi, Dex, …)</li><li>[advanced lvl1]: subscribe to the Bankless HQ newsletter</li><li>[advanced lvl2]: join a DAO and get a job in crypto</li></ul></div><div class="bloc2"><img src=\'/lesson/images/going-bankless/quest-63568085.jpg\'></div>'
-      },
-      {
-        type: 'QUEST',
-        title: 'Going Bankless Quest',
-        component: 'GoingBankless'
-      }
-    ]
-  },
-  {
-    kudosImageLink: '/lesson/images/wallet-basics/kudos-75d8aa76.png',
+    badgeImageLink: '/lesson/images/wallet-basics/badge-75d8aa76.png',
     lessonImageLink: '/lesson/images/wallet-basics/lesson-5aa84b59.png',
     socialImageLink: '/lesson/images/wallet-basics/social-230cc260.jpg',
     learningActions: 'Create and manage your own wallet\nConnect your wallet to a web3 website',
     marketingDescription: 'A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.',
-    kudosId: 2561,
+    badgeId: 1,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
     description: 'Create and securely manage your first crypto wallet.',
     name: 'Wallet Basics',
+    languages: [],
     quest: 'WalletBasics',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: null,
@@ -268,10 +56,10 @@ const LESSONS: LessonType[] = [
           question: 'What is a wallet?',
           rightAnswerNumber: 4,
           answers: [
-            'A device equipped with RFID technology',
-            'A velcro bi-fold device',
-            'An account that protects my assets',
-            'An app or device used to interact with a blockchain'
+            'A blockchain',
+            'A cryptocurrency',
+            'A digital collectible',
+            'An app/device used to interact with a blockchain'
           ],
           id: 'wallet-basics-1'
         }
@@ -442,17 +230,20 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/images/blockchain-basics/kudos-b0048cdb.png',
+    badgeImageLink: '/lesson/images/blockchain-basics/badge-b0048cdb.png',
     lessonImageLink: '/lesson/images/blockchain-basics/lesson-c84db284.png',
     socialImageLink: '/lesson/images/blockchain-basics/social-07ea2639.jpg',
     learningActions: '',
     marketingDescription: 'Blockchains make cryptocurrency, DeFi, and Web3 possible. Discover how blockchain networks are built and how they work.',
-    kudosId: 2563,
+    badgeId: 3,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
     description: 'Learn about the fundamental architecture of blockchain technology.',
     name: 'Blockchain Basics',
+    languages: [
+      'es'
+    ],
     quest: 'BlockchainBasics',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: null,
@@ -646,17 +437,18 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/images/conceptos-basicos-de-blockchain/kudos-b0048cdb.png',
+    badgeImageLink: '/lesson/images/conceptos-basicos-de-blockchain/badge-b0048cdb.png',
     lessonImageLink: '/lesson/images/conceptos-basicos-de-blockchain/lesson-c84db284.png',
     socialImageLink: '/lesson/images/conceptos-basicos-de-blockchain/social-974b8d8f.jpg',
     learningActions: '',
     marketingDescription: 'Las blockchains hacen posible las criptomonedas, DeFi y Web3. Descubre cómo se construyen y cómo funcionan las redes blockchain.',
-    kudosId: 2563,
+    badgeId: 3,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
     description: 'Aprende sobre la arquitectura fundamental de la tecnología de cadena de bloques (blockchain).',
     name: 'Conceptos Básicos de Blockchain',
+    languages: [],
     quest: 'ConceptosBasicosDeBlockchain',
     publicationStatus: 'hidden',
     featuredOrderOnHomepage: null,
@@ -850,17 +642,18 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/images/web3-security/kudos-d2f0df26.png',
+    badgeImageLink: '/lesson/images/web3-security/badge-d2f0df26.png',
     lessonImageLink: '/lesson/images/web3-security/lesson-09017125.png',
     socialImageLink: '/lesson/images/web3-security/social-795f9c67.jpg',
     learningActions: 'Avoid the scams in web3 and keep your assets safe.',
     marketingDescription: 'Protect yourself and your wallet from the most common scams in web3.',
-    kudosId: 2565,
+    badgeId: 5,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
     description: 'Protect yourself and your wallet from the most common scams in web3.',
     name: 'Web3 Security',
+    languages: [],
     quest: 'Web3Security',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: null,
@@ -1093,17 +886,18 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/images/layer-1-blockchains/kudos-66fa6447.png',
+    badgeImageLink: '/lesson/images/layer-1-blockchains/badge-66fa6447.png',
     lessonImageLink: '/lesson/images/layer-1-blockchains/lesson-dcff6ea3.png',
     socialImageLink: '/lesson/images/layer-1-blockchains/social-db62f5f0.jpg',
     learningActions: '',
     marketingDescription: 'Understand how Layer 1 blockchains work - and learn their limitations!',
-    kudosId: 14611,
+    badgeId: 7,
     duration: 15,
     learnings: '',
     difficulty: undefined,
     description: 'Understand how Layer 1 blockchains work - and learn their limitations!',
     name: 'Layer 1 Blockchains',
+    languages: [],
     quest: 'Layer1Blockchains',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: null,
@@ -1332,22 +1126,23 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/images/layer-2-blockchains/kudos-761ee1a2.png',
+    badgeImageLink: '/lesson/images/layer-2-blockchains/badge-761ee1a2.png',
     lessonImageLink: '/lesson/images/layer-2-blockchains/lesson-a7d46fcd.png',
     lessonCollectedImageLink: '/lesson/images/layer-2-blockchains/datadisk-collected-b3050076.png',
     lessonCollectibleGif: '/lesson/images/layer-2-blockchains/datadisk-gif-567a7a75.gif',
     lessonCollectibleVideo: '/lesson/images/layer-2-blockchains/datadisk-video-df229ea4.webm',
-    LessonCollectibleMintID: '64b810dda23ab034b49a1340',
-    LessonCollectibleTokenAddress: '0x5ce61b80931Ea67565f0532965DDe5be2d41331d',
+    lessonCollectibleMintID: '64b810dda23ab034b49a1340',
+    lessonCollectibleTokenAddress: '0x5ce61b80931Ea67565f0532965DDe5be2d41331d',
     socialImageLink: '/lesson/images/layer-2-blockchains/social-af4d2034.jpg',
     learningActions: '',
     marketingDescription: 'The Layer 2 revolution has begun. Discover how the Layer 2 ecosystem can boost your transaction speed & reduce gas fees.',
-    kudosId: 14886,
+    badgeId: 8,
     duration: 15,
     learnings: '',
     difficulty: undefined,
     description: 'Join the Layer 2 ecosystem to boost your transaction speed & reduce fees.',
     name: 'Layer 2 Blockchains',
+    languages: [],
     quest: 'Layer2Blockchains',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: 3,
@@ -1534,17 +1329,18 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: null,
+    badgeImageLink: null,
     lessonImageLink: '/lesson/images/how-to-fund-a-wallet-on-layer-2/lesson-71b79973.png',
     socialImageLink: '/lesson/images/how-to-fund-a-wallet-on-layer-2/social-adb1717b.png',
     learningActions: '',
     marketingDescription: 'Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.',
-    kudosId: null,
+    badgeId: null,
     duration: 5,
     learnings: '',
     difficulty: undefined,
     description: 'Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.',
     name: 'How to Fund a Wallet on Layer 2',
+    languages: [],
     publicationStatus: 'publish',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
@@ -1561,17 +1357,18 @@ const LESSONS: LessonType[] = [
     articleContent: '### \n\nKey Takeaways\n\n> * There are a number of ways to fund your wallet on an Ethereum scaling solution like Optimism, Arbitrum, or Polygon.\n>\n> * Centralized exchanges often provide a direct Layer 2 onramp.\n>\n> * Third-party payment apps enable users to fund a wallet on Layer 2 from a bank account or a debit or credit card.\n>\n> * Protocol bridges let users send funds from Ethereum Mainnet to Layer 2.\n\nIf you’re new to crypto, all the talk about the importance of `Layer 2` (or L2) must seem a bit odd, confusing really. In contrast to [Layer 1](https://app.banklessacademy.com/lessons/layer-1-blockchains), which often refers to [Ethereum Mainnet](https://ethereum.org/), Layer 2 is a term for a specific type of Ethereum scaling solution that enables users to inherit the security of Ethereum but enjoy low transaction fees and fast `block` inclusion times. If you’ve ever heard of [Optimism](https://www.optimism.io/), [Arbitrum](https://arbitrum.io/), or [Polygon](https://polygon.technology/) (which is really a side chain, but let’s not worry about that here), those are Layer 2 scaling solutions.\n\nWhen the Ethereum network is busy, it can cost the equivalent of 80 USD in transaction fees — known as `gwei` or gas — to swap tokens, and much more to mint NFTs or provide `liquidity` to a `decentralized exchange` (DEX) on Mainnet. When network activity is low, most transactions on Ethereum Mainnet still cost a few dollars, and it takes an [FTX-level debacle](https://www.investopedia.com/ftx-exchange-5200842) or a [beyond-hyped NFT drop](https://dappradar.com/blog/yuga-labs-600m-otherside-nft-land-sale-records-highest-gas-fees-ever-on-ethereum) to really spike transaction fees.\n\nBecause transactions on Layer 2 confirm quickly and are inexpensive to execute, many of the most innovative protocols are building on L2s. Unless you’ve been in the ecosystem for a while, however, it’s not intuitive to know how to start using Layer 2s. But there is a clear place to begin your journey into Ethereum scaling solutions: funding your `wallet` on Layer 2.\n\nThere are three main ways to fund an L2 wallet: moving your crypto from a `centralized exchange` straight to a Layer 2 network, using a third-party crypto payment service to fund an L2 wallet, or sending your digital assets from Mainnet to L2 via a bridging protocol.\n\n> Please note, you’ll need to have a cryptocurrency wallet, like [MetaMask](https://metamask.io/) or [Tally Ho](https://tallyho.org/), and an Ethereum wallet `address` to proceed. If you haven’t yet created a `non-custodial wallet`, please [take this lesson first](https://app.banklessacademy.com/lessons/wallet-basics)!\n>\n> After you have a non-custodial Ethereum wallet address, you’ll be ready to continue on your crypto journey.\n\n## Funding From CEXs\n\nFunding your wallet directly from a centralized exchange (CEX) is perhaps the simplest way to move digital assets to an L2, particularly if you already hold cryptocurrency on the exchange. Most major CEXs offer users this option, although it isn’t always clear to the user.\n\nOn [Coinbase](https://www.coinbase.com/), for example, users can send their funds directly to Optimism or Polygon in just a few steps:\n\n1\. Go to [Coinbase](https://www.coinbase.com/).\n\n2\. [Purchase](https://help.coinbase.com/en/coinbase/trading-and-funding/buying-selling-or-converting-crypto/how-do-i-buy-digital-currency) or hold ETH on Coinbase.\n\n3\. Select ‘Send & Receive’, located at the top of the website.\n\n![](https://images.mirror-media.xyz/publication-images/Rzdn6KxR4U-oVpcgLs_fL.png?height=209&width=1440)\n\n4\. Enter the amount in fiat or ETH you wish to send (you can toggle between fiat and crypto to the right of the amount), select ‘Pay with’ and choose Ethereum, and in the ‘To’ field, enter the wallet address where the funds will be sent. Select ‘Continue’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F2uysvYIN69lbn9rz0yLsf.png&w=3840&q=90)\n\n5\. On the next screen, select ‘Network’ and change the network from Ethereum to Optimism.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Fz_DzBI1lJFVKNisD-8Rcs.png&w=3840&q=90)\n\n6\. Review, and if accurate, select ‘Send Now’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F-J0-k8BzvPCPPJLmnkQw-.png&w=3840&q=90)\n\nMost major exchanges offer users the ability to send their crypto directly to an L2. [Binance](https://www.binance.com/) supports Optimism and Arbitrum, for example. On whatever centralized exchange you convert fiat to crypto, check to see whether it offers support for direct-to-L2 services. Pro Tip: Use [Blockscan](https://blockscan.com/exchanges) to find the exchange compatible with your preferred L2.\n\n## Third-Party Onramps\n\nAnother simple way to fund your L2 wallet is to take advantage of direct-to-L2 services offered by many third-party crypto payment companies. [MoonPay](https://www.moonpay.com/), [Ramp](https://ramp.network/buy/), and [Transak](https://global.transak.com/) are three of the most popular options to fund crypto wallets without having to use a centralized exchange.\n\nLike most exchanges, these third-party onramps will require you to provide Know-Your-Customer information. However, once you get past those basic hurdles, these payment options are an easy way to buy crypto across the ecosystem and transfer it to Layer 2.\n\nFor MoonPay, the steps are:\n\n1\. Go to [MoonPay](https://www.moonpay.com/).\n\n2\. Select ‘Buy crypto’, located at the top or middle of the website.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FUU9Uswhysj9w4WBYI4VWL.png&w=3840&q=90)\n\n3\. Enter the amount of fiat you wish to send and the proper denomination.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FckrX4LeU78MqcPvpAq_VM.png&w=3840&q=90)\n\n4\. Select a digital asset, in this case ETH. Type in “ETH\'“ and you will see different networks on which you can purchase ETH (you may need to scroll down); choose the Layer 2 you want to use. Click ‘Continue’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FLfhhGbE1yfWdOpG1Z5N5S.png&w=3840&q=90)\n\n5\. Next, you will be prompted to enter personal verification and payment data.\n\n6\. Once complete, enter your Ethereum wallet address. You’ll be asked to make sure the wallet is safe to use.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Fn5hbzW-CVKzp3392TT91I.png&w=3840&q=90)\n\n7\. Complete, confirm the information is correct, and select ‘Pay’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F7ZBiVMjLfxQ66p8-cLBhN.png&w=3840&q=90)\n\nAs with CEXs, most major third-party payment onramps provide direct-to-L2 functionality. Take advantage of these innovations to save on transaction fees and increase the range of your `blockchain` explorations.\n\n## Funding Via Bridges\n\nIf you already have funds on Ethereum Mainnet, by far the easiest way to get your crypto on to L2 is to use a bridging protocol. Bridges are the name we’ve given to protocols designed to help us move our funds around the cryptoverse, and there are a number of bridges designed to move crypto from Ethereum Mainnet to Layer 2s.\n\n### Native Bridges\n\nNative bridges are those designed by the Layer 2 protocols themselves. For true Layer 2 scaling solutions like Arbitrum and Optimism, it takes about 30 minutes to move funds onto L2, but one week to move that crypto back over to Mainnet. The [Arbitrum Bridge](https://bridge.arbitrum.io/) and the [Optimism Bridge](https://app.optimism.io/bridge/) both take longer to transfer assets and settle transactions because of the way the scaling solution is designed.\n\n### Third-Party Bridges\n\nBecause no one likes to wait, a number of third-party bridging services exist to help us move our funds instantly to and from L2s. Among the most popular options are [Hop Protocol](https://app.hop.exchange/) and [Across Protocol](https://across.to/bridge), but you can use [Bungee](https://bungee.exchange/) to compare bridging fees across a number of protocols. To use Across, for example, all you need to do is:\n\n1\. Go to the [Across Protocol](https://across.to/bridge) bridge and connect your wallet.\n\n2\. To bridge funds to L2, select Ethereum under ‘From’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FSwt3yjUPwEteAiB5aU9zy.png&w=3840&q=90)\n\n3\. Choose your asset and the amount you wish to bridge (Pro Tip: only bridge a blockchain’s native `coin`, in this case ETH).\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FIBRvNt1d-CEe3XkuuwTvr.png&w=3840&q=90)\n\n4\. Next, select your L2 solution in ‘To’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FMnz8fWPFIGGQp25RA6FKt.png&w=3840&q=90)\n\n5\. Review the transaction, and if all looks correct, select ‘Send’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Ff9PbrvFv90jLNB-j60XlV.png&w=3840&q=90)\n\nMoving funds from Mainnet to L2 is really that simple, and nearly all bridges work the same way. Select a blockchain to send funds from and your destination, pick an asset and amount, and across the blockchain crevice you go. Pro Tip: As with sending from a CEX, you can use [Blockscan](https://blockscan.com/bridges) to find a compatible bridge for your L2 destination.\n\n## The Road to L2\n\nLayer 2s offer users of all experience levels the opportunity to experiment with decentralized finance in a way that is often prohibitive on Mainnet. Because it costs mere pennies to transact on these networks (you can compare costs [here](https://l2fees.info/)), it’s a great place to become familiar with the basic building blocks of decentralized finance, such as swaps, `liquidity pools`, or yield farms.\n\nUsing a CEX or a bridge to move funds to L2 is a necessary step in your journey from crypto novice to crypto competency. Remember, to see your funds displayed in your wallet, you may need to add the network in your wallet settings, which can be done at [Chainlist](https://chainlist.org/). If you just want to check that the funds made it safely to your L2 wallet, you can also check Etherscan (click on the ‘b’ for ‘Blockscan’ to the right of your wallet address to see L2 transactions) or go to a DEX, like [Uniswap](https://app.uniswap.org/), and select the L2 network and the asset to see your balance.\n\nAs you scale up your skills, you’ll need to figure out how to scale down your transaction fees. Learning how to fund an L2 wallet is the first step, but the next steps on your crypto journey are up to you. Welcome, explorer, a new world awaits.\n\n\n***\n\n**Author**\n\n**[Hiro Kennelly](https://twitter.com/HiroKennelly)** is a writer, editor, and coordinator at BanklessDAO and the Editor-in-Chief at Good Morning News. He is also helping to build a grants-focused organization at DAOpunks.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning as much as possible about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.'
   },
   {
-    kudosImageLink: '/lesson/images/intro-to-defi/kudos-b4dab2d4.png',
+    badgeImageLink: '/lesson/images/intro-to-defi/badge-b4dab2d4.png',
     lessonImageLink: '/lesson/images/intro-to-defi/lesson-97291c9d.png',
     socialImageLink: '/lesson/images/intro-to-defi/social-ee8d95a4.jpg',
     learningActions: 'Transfer crypto into your web3 wallet in order to be ready to interact with DeFi later',
     marketingDescription: 'Move beyond centralized exchanges and start exploring the ever-expanding possibilities of decentralized finance.',
-    kudosId: 2562,
+    badgeId: 2,
     duration: 10,
     learnings: '',
     difficulty: 'Easy',
     description: 'Understand the basics of decentralized finance.',
     name: 'Intro to DeFi',
+    languages: [],
     quest: 'IntroToDeFi',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: null,
@@ -1789,23 +1586,50 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: '/lesson/images/decentralized-exchanges/kudos-ecf873d9.png',
+    badgeImageLink: null,
+    lessonImageLink: '/lesson/images/the-stablecoin-guide/lesson-71b79973.png',
+    socialImageLink: '/lesson/images/the-stablecoin-guide/social-adb1717b.png',
+    learningActions: '',
+    marketingDescription: 'Use dollars, euros, and more on the blockchain — made possible by stablecoin technology!',
+    badgeId: null,
+    duration: 5,
+    learnings: '',
+    difficulty: undefined,
+    description: 'Use dollars, euros, and more on the blockchain — made possible by stablecoin technology!',
+    name: 'The Stablecoin Guide',
+    languages: [],
+    publicationStatus: 'publish',
+    featuredOrderOnHomepage: 1,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    mirrorLink: 'https://mirror.xyz/banklessacademy.eth/qc15y-_wur6as8ZRuPOwzpuvZ7NNV7EF2cI3Yb6Jy1w',
+    mirrorNFTAddress: '0x58da595fec45ca61cc68883869885e378caf0231',
+    areMirrorNFTAllCollected: false,
+    isArticle: true,
+    notionId: '80271dde47144db0b587c9ce7f867cd7',
+    slug: 'the-stablecoin-guide',
+    articleContent: '## **Key Takeaways**\n\n> * Stablecoins are the blockchain equivalent of fiat currency, like the dollar or euro.\n>\n> * Stablecoins are `ERC20` tokens: they allow DeFi users to quickly move between fiat value, and crypto value, while staying on the blockchain.\n>\n> * There are several categories of stablecoin, each with their own trade-offs and risk profile.\n>\n> * Stablecoins can generate more annual interest than holding fiat in a traditional bank.\n\n## Why Hold Stablecoins?\n\nStablecoins have become a cornerstone of the DeFi ecosystem, reaching over $140 billion USD in supply value at their 2022 peak. Stablecoins settled over $7 trillion in transaction value that year — that’s \~0.3% of global USD settlement in 2022.\n\n![](https://images.mirror-media.xyz/publication-images/pPowzuR3bjsRxrY_LoYnU.png?height=691&width=1171)\n\nHere’s why they’re in demand:\n\n* **Stability:** Holding stablecoins in your self-custody wallet is like holding fiat currency, but on the blockchain. When holding a stablecoin like Circle’s U.S. dollar (USDC), you can expect it to maintain 1:1 value with the U.S. dollar while the prices of assets like ether and bitcoin fluctuate.\n\n* **Flexibility:** Because this pegged value exists as an ERC20 token on the blockchain, it’s easy to move between fiat value and crypto value.\n\n* **Access:** Stablecoins provide access to a range of decentralized financial services, like permissionless borrowing or lending to earn interest.\n\n* **Security:** Cryptography makes it extremely difficult for attackers to capture or forge transactions.\n\nThe way a stablecoin maintains a 1:1 equivalence, or `peg`, to its fiat counterpart is its most important property. Just as fiat currency is only worth the fundamentals that underlie it, a stablecoin peg mechanism dictates the value of your holdings.\n\n## Stablecoin Categories\n\nThere are three common strategies for a stablecoin to maintain its price peg:\n\n* 💵 **Fiat-backed:** 1:1 collateralized by real-world fiat reserves.\n\n* 🔗 **Crypto-collateralized:** overcollateralized by crypto deposits into DeFi protocols.\n\n* 🔃 **Algorithmic:** fixed supply/demand algorithms that maintain price stability.\n\n### 1\. Fiat-backed Stablecoins\n\nFiat-backed stablecoins maintain value by issuing a fixed token supply matched by real-world currency reserves. Their on-chain price is maintained via supply/demand economics: few people want to pay more than one real-world dollar for a dollar of on-chain value, so they simply take their trade elsewhere. To meet increased demand, the stablecoin issuer locks up additional fiat and increases the token supply by the same amount.\n\nNotable fiat-backed stablecoins include Tether (USDT) and Circle (USDC).\n\nConsiderations:\n\n* **Collateral Audits:** Holders need assurance that their stablecoin tokens are matched one-to-one by fiat reserves. Ideally the provider is open to regular audits by independent parties. USDT has historically made it difficult to know the total value of their locked assets. USDC regularly undergoes independent audits, increasing certainty that their reserves equal their token issuance.\n\n* **Censorship Risk:** With both USDC and USDT subject to government investigation, these tokens’ `smart contracts` include a freeze function whereby a user’s on-chain holdings can be locked in cases of disagreeable activity. This freeze function also applies to tokens held in `non-custodial wallets`.\n\nThe high degree of centralization in the fiat-backed stablecoin sector leaves great room for improvement in holding fiat-pegged value in a crypto-native way.\n\n### 2\. Crypto-collateralized Stablecoins\n\nCrypto-collateralized stablecoins are a more transparent, decentralized option — and these qualities help eliminate certain risks. They maintain a fiat peg through crypto asset reserves. As crypto market volatility influences the total value of these reserves, these stablecoins are overcollateralized — sometimes up to 200%! All collateralized assets are viewable on chain, giving users 24/7 access to the real composition of their stablecoins.\n\nThe most notable example in this category is MakerDAO’s Dai (DAI).\n\n![DAI collateralization breakdown (June 2023) Source: https://makerburn.com/#/rundown](https://images.mirror-media.xyz/publication-images/BrocDZO07BK9Rq5TB-NtN.png?height=937&width=1440)\n\nConsiderations:\n\n* **Collateral Valuation:** A stablecoin’s reserves typically consist of crypto, other stablecoins, and even other asset classes. For example, DAI is backed by BTC, ETH, stablecoins, real world assets, and several other minor components. To mitigate the risks of this diverse range of assets, DAI is overcollateralized (at the time of writing). Even if the ETH price was to crash by 20%, DAI would still have [enough collateral](https://daistats.com/) to cover their token. However, further price volatility across its range of assets could begin to erode the peg.\n\n* `Counterparty Risk`: Reliance on multiple asset classes means there’s a higher chance one of the assets will experience difficulty and affect the value of your holdings. However, you only have fractional exposure to the impact of each individual risk.\n\n* **Governance Risk:** This type of stablecoin and its treasury are managed by a decentralized group of governance voters. This means there are risks of human error, or possible governance capture.\n\n### 3\. Algorithmic Stablecoins\n\nThese tokens maintain their peg by automatically balancing their own supply. An onchain algorithm reduces the number of tokens in circulation when the market price falls below the peg, and injects new tokens when the market price surpasses the peg. Both the balancing algorithm and the stablecoin\'s smart contracts are public, meaning anyone can clone and improve, or audit the existing system.\n\nAs algorithmic stablecoins have the fewest external dependencies, and no administration or governance demands, they almost entirely eliminate counterparty risk. This makes them the most decentralized and self-custody-ready stablecoin option.\n\nNotable examples include Liquity (LUSD) and Frax (FRAX).\n\n![](https://images.mirror-media.xyz/publication-images/BYLEASZwj7QpSGh9OG-66.png?height=772&width=1440)\n\nConsiderations:\n\n* **Dynamic Holdings:** With the balancing algorithm adjusting token supply, your number of tokens held will fluctuate with supply adjustments. The total value of your token holdings remains constant — you aren’t losing or gaining any value — but this aspect can be confusing for new users.\n\n* **Highly Technical:** You need to understand the technology to build confidence and risk/reward awareness.\n\n* **Emergent Tech Risk:** With algorithmic stablecoins being so new, unknown smart contract risks could be present. Only use algorithmic stablecoins with several smart contract audits, performed by top-level auditors.\n\n## Choosing a Stablecoin\n\nWhat is the best stablecoin to hold? As with everything DeFi, the answer to that question depends on your **needs**, **values**, and **risk tolerance**.\n\nHere’s a quick refresher on each category:\n\n* 💵 **Fiat-backed:** The traditional approach — the closest you’ll come to holding fiat on chain.\n\n  * Values: Conventionality, institutional trust.\n\n  * Risks: Opaque collateral backing, ability for provider to freeze funds.\n\n* 🔗 **Crypto-collateralized:** A balanced, crypto-native approach, spreading collateral risk across multiple asset classes.\n\n  * Values: Diversification, transparency, progression.\n\n  * Risks: Crypto market volatility, dependence on other assets.\n\n* 🔃 **Algorithmic:** The decentralized — but experimental — option that minimizes counterparty risk.\n\n  * Values: Self-sovereignty, transparency, progression.\n\n  * Higher risk of smart contract bugs.\n\nAs always, the best way to learn about something is to try it. You might even decide to hold a variety of stablecoins.\n\nAnd remember, not all stablecoins in each category are created equal! Do your own research before interacting with any new token.\n\n## Frequently Asked Questions\n\n### What are the most popular stablecoins?\n\nLooking at the leading stablecoins by `market cap` gives an idea of the current market preference, but this isn’t guidance on how you should position yourself, or how safe that position would be.\n\nHere’s a realtime list of top stablecoins by market cap: <https://defillama.com/stablecoins>\n\nCryptocurrency users often refer to the ‘Lindy Effect’ when choosing investment options. This concept says that the longer something has existed, the more we can expect it will continue to exist. Ten years of cryptocurrency history have shown this to only be true on occasion.\n\n### Where can I buy stablecoins?\n\nCentralized Exchanges (CEXs) offer popular fiat-backed stablecoins (and typically their own branded stablecoin), other types of stablecoin are often missing.\n\nVisit a Decentralized Exchange (DEX), or use a direct wallet on-ramp service like ‘MetaMask Buy’, to acquire crypto-collateralized and algorithmic tokens. Check out our lesson on [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) to learn more about peer-2-peer marketplaces.\n\n### How can I earn interest on stablecoins?\n\nSome CEXs offer yield by just holding stablecoins on their platform, funded by a share of platform profits to incentivize platform use.\n\nYou can also earn interest in DeFi, with trustless lending and borrowing platforms. These platforms connect lenders and borrowers, managing risk through onchain collateral and smart contracts. Stablecoin lenders can earn annual returns far higher than available in the traditional banking sector — but where there’s reward, there’s risk!\n\nThe lending and borrowing topic deserves its own Bankless Academy entry. If you’re already interested in learning more you can research platforms like [Aave.com](https://aave.com/) and [Curve.fi](https://curve.fi/).\n\n### What happens if a stablecoin loses its peg?\n\nThe price of any stablecoin can shift slightly (usually around the +/- 2% mark) in peak network hours. This effect is usually temporary, with prices quickly stabilized by traders taking advantage of arbitrage opportunities.\n\nHowever, there are cases where a stablecoin loses its peg beyond safe, temporary ranges. This effect isn’t necessarily permanent (USDC, March 2023) — but it can be (Terra, May 2022).\n\nSome fiat-backed stablecoin issuers, like USDC, offer 1:1 redemption from their stablecoin to regular fiat through their website. Whether this remains true during times of crisis is another story.\n\n\n---\n\n**Author**\n\n**[Tetranome](https://twitter.com/tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, UI, design, and platform curriculum.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.\n\n**Sponsor**\n\nThis unsponsored article is part of Bankless Academy’s goal to provide free web3 education for all.'
+  },
+  {
+    badgeImageLink: '/lesson/images/decentralized-exchanges/badge-ecf873d9.png',
     lessonImageLink: '/lesson/images/decentralized-exchanges/lesson-a006bb73.png',
     socialImageLink: '/lesson/images/decentralized-exchanges/social-0ffc9300.jpg',
     learningActions: '',
     marketingDescription: 'DEXs and AMMs have changed the landscape of traditional market trading. It’s time to understand why, and how you can use this technology to your own advantage.',
-    kudosId: 15463,
+    badgeId: 9,
     duration: 15,
     learnings: '',
     difficulty: undefined,
     description: 'Discover how smart-contract exchanges enable permissionless token swaps!',
     name: 'Decentralized Exchanges',
+    languages: [],
     quest: 'DecentralizedExchanges',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: 2,
     isCommentsEnabled: false,
-    endOfLessonRedirect: 'https://tally.so/r/w2BZaV',
-    endOfLessonText: 'To learn more about Optimism and to give feedback about this lesson, click Next.',
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
     sponsorName: 'Velodrome',
     sponsorLogo: '/lesson/images/decentralized-exchanges/sponsor-f4fee676.png',
     nftGating: 'https://opensea.io/assets/matic/0x60576a64851c5b42e8c57e3e4a5cf3cf4eeb2ed6/15463',
@@ -2084,19 +1908,20 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: null,
+    badgeImageLink: null,
     lessonImageLink: '/lesson/images/how-to-swap-on-a-decentralized-exchange/lesson-d1e791d2.png',
     socialImageLink: '/lesson/images/how-to-swap-on-a-decentralized-exchange/social-f39d5e71.png',
     learningActions: '',
     marketingDescription: 'Begin your journey into DeFi with this Decentralized Exchange walkthrough.',
-    kudosId: null,
+    badgeId: null,
     duration: 5,
     learnings: '',
     difficulty: undefined,
     description: 'Begin your journey into DeFi with this Decentralized Exchange walkthrough.',
     name: 'How to Swap on a Decentralized Exchange',
+    languages: [],
     publicationStatus: 'publish',
-    featuredOrderOnHomepage: 1,
+    featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     endOfLessonText: undefined,
@@ -2111,17 +1936,18 @@ const LESSONS: LessonType[] = [
     articleContent: '## Key Takeaways\n\n> * Decentralized Exchanges are a type of dApp that facilitate self-custody token swaps.\n>\n> * There is some practical knowledge required for confidently interacting with a DEX.\n>\n> * We can use block explorers to inspect our on-chain transactions.\n\nThe Decentralized Exchange (DEX) is the most commonly used application in the world of `Decentralized Finance` (DeFi) — and for good reason! DEXs enable automated swapping of one cryptocurrency token for another, without need for a mediator. Unlike Centralized Exchanges (CEXs), this type of swap also enables users to swap while retaining full ownership of their assets.\n\nAutonomy, and permissionless protocols, are backbone features of DeFi. They empower DeFi users with true ownership over their digital assets, and open access to fundamental blockchain services 24/7. Anyone with an internet connection can access DeFi, regardless of their personal background, beliefs, or geographical location.\n\nIn this handbook entry, we will cover how to use your self-custody wallet to interact with a DEX, with the goal of swapping one token for another. You can learn more about the mechanics, qualities, and risk profile of this technology, and how it compares to CEXs, in our lesson on [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges).\n\n## Choosing a DEX\n\nSelecting an affordable and safe platform is the first step in performing a token swap. In this walkthrough we will be using Velodrome, the most popular DEX on the Optimism network (at time of writing). As you become more confident in blockchain navigation, you’ll learn how to evaluate other exchanges and find the best fit for your needs. Our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson includes a comprehensive list of qualities to look out for.\n\n![](https://images.mirror-media.xyz/publication-images/LqXEE5G03kTHHeI0WJmwI.png?height=1424&width=2528)\n\nDEXs are a great start to your web3 journey because most dApps follow a user interface layout similar to DEXs, and use similar interactions with your self-custody wallet.\n\nLet’s begin our token swap.\n\n## Performing a Token Swap\n\n**1\. Load the dApp:**\n\nOpen [Velodrome](https://app.velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042) in a new browser tab.\n\n**2\. Connect your wallet:**\n\nUse the standard ‘Connect’ button typically located in the top right corner of any dApp.\n\nIf you are on desktop, connect with your browser wallet.\n\nIf you are on mobile, you will be prompted to use WalletConnect — the web3 standard for connecting mobile wallets to dApps.\n\n![](https://images.mirror-media.xyz/publication-images/6K_OZT6g3nBfRwfXIrNXB.png?height=790&width=1440)\n\n**3\. Approve the connection:**\n\nSelect ‘Connect’ in your wallet application to confirm the site connection. This allows the dApp to see your wallet address and token balances. You haven’t granted any other permissions yet.\n\n![](https://images.mirror-media.xyz/publication-images/XHH_NmOr6x0f-ZZ8LDOxw.png?height=1100&width=1440)\n\n**4\. Check and sign the terms of service (if you accept):**\n\nMany dApps will ask you to sign a message to confirm you have read their terms and conditions. Signing messages doesn’t cost gas, and doesn’t store any information on the blockchain. If you agree with the terms, you can sign the message.\n\n![](https://images.mirror-media.xyz/publication-images/QvizhJG6BUWu6nVTBPap6.png?height=914&width=1440)\n\n**5\. Switch to the right network:**\n\nFor this walkthrough, make sure your wallet is set to the Optimism network.\n\n![](https://images.mirror-media.xyz/publication-images/NblRdKbmmDl7OLf9_PVwG.png?height=1100&width=1440)\n\n**6\. Customize your swap:**\n\nIt’s time to select your desired input and output tokens. In this example, we will be swapping ETH for OP — but you can swap whatever tokens you like!\n\n![](https://images.mirror-media.xyz/publication-images/Ha-xw-U9obLg_KUUhVbgQ.png?height=850&width=1440)\n\n**7\. Approve token permissions:**\n\nYou will be prompted to set and approve permission for Velodrome to access your wallet funds. We recommend limiting this to your trade size to limit future interactions with your tokens. (Stay tuned for future content on token permissions!)\n\n**8\. Confirm the transaction:**\n\nOnce you’re happy with your swap quote and settings, you can begin the swap. This step includes confirming on the dApp, and again in your wallet.\n\n![](https://images.mirror-media.xyz/publication-images/dexs4idO97_RmMIBEX5O9.png?height=1100&width=1440)\n\n**9\. Check your balance:**\n\nYour transaction should take around 40 seconds to confirm, after which you will see your new token balance in your wallet. If your token type is not displayed, make sure you’ve imported the token addresses.\n\n*Optimism token contract address: 0x4200000000000000000000000000000000000042*\n\n![](https://images.mirror-media.xyz/publication-images/13DYUNE9DenpXfpNwARZa.png?height=1100&width=1440)\n\n**10\. Fetch your transaction hash:**\n\nTo complete the quest for our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson, you’ll need the ***transaction hash of the swap*** (not to be confused with the hash from your token permission transaction, or your wallet address). A block explorer link will usually appear on the DEX interface, letting you view the confirmed transaction details.. If you missed it, or it’s missing, you’ll find another link in your wallet activity log — tied directly to your trade.\n\n![](https://images.mirror-media.xyz/publication-images/OpPjFdeyoorF1tlLBn2Nb.png?height=1100&width=1440)\n\n## Frequently Asked Questions\n\n* *Why does my price quote change a few times every minute?*\n\nPrice quotes are typically calculated at the time you enter your desired swap into the DEX interface. As time goes by, other users are making swaps and affecting token supply on the exchange. The DEX will regularly refresh your quote to stay up to date.\n\n* *How long does it take for a token swap to execute?*\n\nThe answer depends on a variety of factors, primarily the block speed of the blockchain and how much you underpay or overpay the gas fee. DEX transactions submitted to Ethereum Mainnet typically take between 15 seconds and a couple of minutes to be confirmed. Layer 2 transactions are usually faster!\n\n* *Why did my transaction fail?*\n\nThere are a number of reasons why a transaction could fail: insufficient funds to pay gas, gas limit set too low, or slippage set too low. The best way to begin troubleshooting is to look for User Interface error messages. You can also view your transaction on a block explorer, like [Etherscan](https://optimistic.etherscan.io/), to check if there are any on-chain error messages. We’ll cover more troubleshooting specifics in future content!\n\n* *Can I change or remove token permissions?*\n\nGranting token permissions to a smart contract can leave our wallet vulnerable to unwanted future interactions, in the case of a smart contract hack. It is possible to change or remove token permissions using apps like [Revoke.cash](https://revoke.cash/). As adjusting permissions costs gas, this precaution can quickly become expensive. This is one of the reasons why many users store their digital assets in one wallet (cold wallet), while interacting with dApps on another (trading wallet). Users transfer assets between them only as necessary.\n\n* *Why is the token I\'m looking for not available to swap?*\n\nIf your token isn’t listed by default, you’ll have to paste the token contract address into the list. To find the token contract address, check <https://www.coingecko.com/> or the official project website.\n\n**Note:** Token addresses can change for a given token on different networks. For example the [USDC contract on Mainnet](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) is different than the [USDC contract on Optimism](https://optimistic.etherscan.io/token/0x7f5c764cbc14f9669b88837ca1490cca17c31607). Always verify token addresses before swapping!\n\n\n---\n\n**Author**\n\n**[Tetranome](https://twitter.com/tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, UI, design, and platform curriculum.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning as much as possible about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.'
   },
   {
-    kudosImageLink: '/lesson/images/dex-aggregators/kudos-ddb9db8b.png',
+    badgeImageLink: '/lesson/images/dex-aggregators/badge-ddb9db8b.png',
     lessonImageLink: '/lesson/images/dex-aggregators/lesson-39d1fc1c.png',
     socialImageLink: '/lesson/images/dex-aggregators/social-2724db28.jpg',
     learningActions: '',
     marketingDescription: 'Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.',
-    kudosId: 2608,
+    badgeId: 6,
     duration: 15,
     learnings: '',
     difficulty: undefined,
     description: 'Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.',
     name: 'DEX Aggregators',
+    languages: [],
     quest: 'DEXAggregators',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: null,
@@ -2320,16 +2146,340 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    kudosImageLink: null,
-    lessonImageLink: null,
+    badgeImageLink: 'https://placehold.co/600x600/4b4665/FFFFFF?text=Optimism+Governance',
+    lessonImageLink: 'https://placehold.co/1200x600/4b4665/FFFFFF?text=Optimism+Governance',
     learningActions: '',
     marketingDescription: '',
-    kudosId: null,
+    badgeId: 10,
+    duration: 20,
+    learnings: '',
+    difficulty: undefined,
+    description: '',
+    name: 'Optimism Governance',
+    languages: [
+      'es',
+      'fr',
+      'de',
+      'jp',
+      'cn'
+    ],
+    quest: 'OptimismGovernance',
+    publicationStatus: 'hidden',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: true,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    notionId: '7b9c38ffdf164099ad3bc19d22484f1c',
+    slug: 'optimism-governance',
+    socialImageLink: 'https://placehold.co/1200x600/4b4665/FFFFFF?text=Optimism+Governance',
+    imageLinks: [
+      '/lesson/images/optimism-governance/old-problems-new-tools-1caefce6.svg',
+      '/lesson/images/optimism-governance/network-governance-ec1d1abb.svg',
+      '/lesson/images/optimism-governance/the-optimism-network-d43cccdf.svg',
+      '/lesson/images/optimism-governance/progressive-decentralization-d2955246.svg',
+      '/lesson/images/optimism-governance/a-new-economy-2981ffe5.png',
+      '/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg',
+      '/lesson/images/optimism-governance/ethers-phoenix-3bf9db24.svg',
+      '/lesson/images/optimism-governance/introducing-the-governing-houses-992f67be.png',
+      '/lesson/images/optimism-governance/the-token-house-6d73a8ae.svg',
+      '/lesson/images/optimism-governance/a-note-on-token-distribution-fe3b01b3.svg',
+      '/lesson/images/optimism-governance/the-citizens-house-fd4eef9e.svg',
+      '/lesson/images/optimism-governance/governance-seasons-89773dbf.svg',
+      '/lesson/images/optimism-governance/now-think-even-bigger-0f29ab97.svg',
+      '/lesson/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg'
+    ],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: '294b4adc1d4244a2adbcca6793f15bb6',
+        title: 'Old Problems, New Tools',
+        content: '<div class="bloc1"><p>Modern technology has drastically changed the way in which humans view and interact with each other. On the world stage, and in a borderless cyberspace, we need new coordination models in order to coexist and thrive as a global tribe.</p><p>The vision of <code>DAO</code> technology is to host streamlined problem solving and debate between a large number of collaborators — whether on the internet, in your local community, or on an international scale. This is done by:</p><ul><li>Incentivizing participants to share a common mission.</li><li>Innovative voting, <code>delegation</code>, and <code>veto</code> mechanics.</li><li>Using blockchain technology to decrease the potential for human error or hijacking.</li></ul></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/old-problems-new-tools-1caefce6.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '303f183f27b147abbb1e964bd5468fbe',
+        title: 'Network<strong> Governance</strong>',
+        content: '<div class="bloc1"><p>Like any real world nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but <code>asynchronous</code>, global, and partially mediated by code.</p><p>📜 <strong>Proposal:</strong> It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘<code>DAO</code>’.</p><p>🗳️ <strong>Vote:</strong> The proposal moves to a vote — hosted via the transparent, censorship-resistant process of <code>onchain governance</code>. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘<code>DAO</code>’ — a quality envisioned to eventually cover the entire governance process.</p><p>🛠️ <strong>Implementation:</strong> The approved proposal is applied to the network, by various incentivized developers if necessary.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/network-governance-ec1d1abb.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '0c36d5b26fb74ac4838392c18bd884f7',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How can onchain governance help to solve interhuman debate?',
+          rightAnswerNumber: 4,
+          answers: [
+            'By automating human coordination, and evolving based on shared human feedback.',
+            'Through transparent, attack-resistant voting processes.',
+            'By hosting an opt-in, mission-oriented community for people across the world.',
+            'All of the above.'
+          ],
+          feedback: [
+            'ℹ️ This is true, but it isn’t the only answer.',
+            'ℹ️ This is true, but it isn’t the only answer.',
+            'ℹ️ This is true, but it isn’t the only answer.',
+            'ℹ️ Correct! Onchain governance aims to streamline and protect group discussion.'
+          ],
+          id: 'optimism-governance-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'f7ca353f75f142fabf75986d54d9423d',
+        title: 'The Optimism Network',
+        content: '<div class="bloc1"><p><code>DAOs</code> like the <code>Optimism Collective</code> are at the frontier of exploring such coordination systems. </p><p>In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new frameworks for human coordination in order to achieve it.</p><p>Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/the-optimism-network-d43cccdf.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'a3b50457cfec4f56ba8416403ebfb35e',
+        title: 'The Optimistic Vision',
+        content: '<div class="bloc1"><p>Optimism is on a mission: to scale Ethereum by building a <code>Layer 2</code> network. It’s part of the Ethereum ecosystem but with lower fees, faster transactions, and Ethereum’s high standard of security. Here are the defining properties:</p><p>🏠 <strong>Free Market:</strong> Launched as an extension of not just Ethereum <code>blockspace</code>, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.</p><p>🏕️ <strong>Public Goods:</strong> Great emphasis on funding and building onchain <code>public goods</code>. These are free-to-access, infinite resources and facilities available to all network citizens. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!</p><p>🧑‍🤝‍🧑 <strong>Community Governance:</strong> Optimism is lead by its community.</p><p>Optimism aims to become a free market district of cyberspace that directly provides for — and is governed by — its citizens!</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '8a79a75d6b394b388eef7099620f2123',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'What definition best fits a ‘public good’?',
+          rightAnswerNumber: 2,
+          answers: [
+            'An unlimited good shared amongst a specific group of people.',
+            'An openly public resource that cannot run out.',
+            'Free, limited access to a public service.'
+          ],
+          feedback: [
+            'ℹ️ Try again! This defines a closed, infinite good, like a cinema or toll road.',
+            'ℹ️ Correct! This defines an open, infinite good, like software or knowledge.',
+            'ℹ️ Try again! This defines an open, finite service, like socialized healthcare.'
+          ],
+          id: 'optimism-governance-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'e5156a8e89684860bfd9a0d4adaf57d4',
+        title: 'Progressive Decentralization',
+        content: '<div class="bloc1"><p>Many great blockchain projects begin with a centralized group and vision. This gives the project crucial focus in building and spending, but a global community needs more than promises of eventual decentralization to truly be a <code>DAO</code>.</p><p>On Optimism, the network, founders, and community are thought of as follows:</p><ul><li>🌐 <strong>Optimism Network:</strong> The autonomous code on the blockchain — the smart contracts.</li><li>🏦 <strong>Optimism Foundation:</strong> The network founders. They kickstart the ecosystem, provide initial resources, and act as community steward, before eventually dissolving.</li><li>👬 <strong>Optimism Collective:</strong> The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem. The term ‘DAO’ covers both the Collective and the Network.</li></ul><p>Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow transfer of network ownership to the community.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/progressive-decentralization-d2955246.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'c4212b5217b14096915d4128ff9e2864',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'True or false?<p>The Optimism Foundation will continue to guide the Optimism Collective over the network’s lifetime.</p>',
+          rightAnswerNumber: 2,
+          answers: [
+            'True',
+            'False'
+          ],
+          feedback: [
+            'ℹ️ Try again!',
+            'ℹ️ Correct! The Foundation will eventually dissolve, and the Collective will continue the mission.'
+          ],
+          id: 'optimism-governance-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'c1ee570de27a49b58466df08e2637fab',
+        title: 'A New<strong> Economy</strong>',
+        content: '<div class="bloc1"><p>At the center of the Optimism <code>L2</code> economy is the ‘Optimistic Flywheel’. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.</p><ol><li>Users and <code>dApps</code> demand network <code>blockspace</code>.</li><li>The network generates revenue via transaction fees.</li><li>A portion of these taxes are distributed to builders providing impactful public goods infrastructure.</li><li>Everyone gains access to free resources and services.</li></ol><p>With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/a-new-economy-2981ffe5.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'd8361c4c3fd0403b9cc93a8eaee7a02d',
+        title: '<strong>Incentivizing</strong><strong> the Public Goods Economy</strong>',
+        content: '<div class="bloc1"><p>As you can see, public goods infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.</p><p>Here, Optimism takes an ‘<strong>Impact = Profit</strong>’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.</p><p>As Vitalik Buterin said, <br><em>“It’s easier to agree on what was useful than what will be useful.”</em></p><p>This distribution model is known as ‘<strong>Retroactive Public Goods Funding’</strong>, or <strong>‘RetroPGF’</strong>. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '9222dff9c1e04dd88b551b73ef70bd01',
+        title: '<strong>Ether’s Phoenix</strong>',
+        content: '<div class="bloc1"><p>Optimism calls this effect ‘<strong>Ether’s Phoenix’</strong>: an <em>“angel reaching backwards in time, rewarding those who summon it.”</em></p><p><em>“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”</em></p><p>— The Optimism Foundation</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/ethers-phoenix-3bf9db24.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '7d28449187374097a114d81829897f24',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How is Optimism incentivizing community-focused economics?',
+          rightAnswerNumber: 3,
+          answers: [
+            'By rewarding all Optimism projects with retroactive funding.',
+            'By providing a free market, but on the blockchain.',
+            'By systemically funding business models that improve the lives of all network users.',
+            'All of the above.'
+          ],
+          feedback: [
+            'ℹ️ Try again! Rewarding all projects regardless of their mission is not Optimism’s approach.',
+            'ℹ️ Try again! Use of blockchain technology alone doesn’t effect economic models.',
+            'ℹ️ Correct! The network allocates a portion of transaction fees towards funding public goods.',
+            'ℹ️ Try again! Only one of these is true.'
+          ],
+          id: 'optimism-governance-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '6eb5a8e674ea4cd0b66eafe123fe33bf',
+        title: 'Introducing the Governing Houses',
+        content: '<div class="bloc1"><p>There are two houses that make up the Optimism Collective, each with independent and shared responsibilities in running the network.</p><p><strong>The Token House</strong> is responsible for managing network upgrades, incentives, and treasury. Its stakeholder structure incentivizes growth of the network economy, and generates stakeholder value. The house is also responsible for preserving decentralization — preventing capture of the network economy.</p><p><strong>The Citizens’ House</strong> allocates <code>RetroPGF</code> resources to community projects, according to the ‘Impact = Profit’ ethos, and helps decide the parameters of citizenship. The house is incentivized to improve network quality of life, by funding public goods that improve the value of citizenship!</p><p>Both houses maintain network balance through their duties, voting mechanics, and <code>veto</code> abilities. Let’s take a closer look.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/introducing-the-governing-houses-992f67be.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '8e07f95287444964888f89decf11c7c5',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How does the Citizens’ House differ from the Token House?',
+          rightAnswerNumber: 2,
+          answers: [
+            'The Citizens’ House is the only house with veto abilities.',
+            'The Citizens’ House allocates RetroPGF rewards.',
+            'The Citizens’ House leads network decentralization.',
+            'All of the above.'
+          ],
+          feedback: [
+            'ℹ️ Try again! Both houses have veto powers.',
+            'ℹ️ Correct! The Citizens’ House allocates public goods funding.',
+            'ℹ️ Try again! Both houses maintain decentralization.',
+            'ℹ️ Try again!'
+          ],
+          id: 'optimism-governance-5'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '89ede93a609c44749d160eb02118dd2d',
+        title: 'The Token House',
+        content: '<div class="bloc1"><p>The Token House maintains the economy and defenses of the Optimism Network. </p><p>Duties include:</p><ul><li>⚒️ Review and approval of <strong>upgrades to network mechanics</strong>.</li><li>⛓️ Selection of network <code>block producers</code>.</li><li>📈 <strong>Allocation of revenue, </strong>using collected transaction fees to fuel network growth. </li></ul><p>The Citizens’ House has the right to veto any proposal under the above categories.</p><p>The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be <strong>reducing rights</strong> of token holders.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/the-token-house-6d73a8ae.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'f52d961f173846d99f66f081abf7ca94',
+        title: 'Token House: Joining, Voting, Delegating',
+        content: '<div class="bloc1"><p>📝 <strong>Joining:</strong> the Token House is done via purchasing and holding OP tokens. These are <code>ERC20</code> tokens, and are therefore transferrable; They can be bought and sold on <code>CEXs</code>, Optimism <code>DEXs</code>, or sent between friends. OP tokens are not available on other networks.</p><p>🗳️ <strong>Voting:</strong> Voting power scales based on how many tokens are held.</p><p>The Token House follows <a href=\'https://community.optimism.io/docs/governance/token-house-history/#\'>a five week voting cycle</a>:</p><ul><li>Week 1-3: Proposal submission, review, and feedback.</li><li>Week 4-5: Voting.</li></ul><p>📢 <strong>Delegating: </strong>Many users prefer to delegate their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.</p><p>Anyone can become a Token House delegate on Optimism, representing a group of friends, a community, or even a university’s blockchain club! Active delegates are often rewarded by the community.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '59421e43c5ef45c593a59ac74df413f6',
+        title: 'A Note on Token Distribution…',
+        content: '<div class="bloc1"><p>Network governance is only as democratic as its initial <code>token distribution</code> — meaning who received voting power in the first place. Check out the <a href=\'https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance\'>OP distribution plan</a> to see how the Optimism Foundation has allocated initial governance power, in service of balanced community representation.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/a-note-on-token-distribution-fe3b01b3.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '06711dccc4c74d469b261f3f4508dac9',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How does the Token House protect the network from attack?',
+          rightAnswerNumber: 4,
+          answers: [
+            'By selecting a diverse set of network block producers.',
+            'By vetoing Optimism Foundation proposals seen to be reducing token holder rights.',
+            'By carefully reviewing network upgrade proposals.',
+            'All of the above.'
+          ],
+          feedback: [
+            'ℹ️ This is true, but it isn’t the only answer.',
+            'ℹ️ This is true, but it isn’t the only answer.',
+            'ℹ️ This is true, but it isn’t the only answer.',
+            'ℹ️ Correct! The Token House has a diverse set of responsibilities in protecting the network.'
+          ],
+          id: 'optimism-governance-6'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '53f830416d224fada656ede4663bf238',
+        title: 'The Citizens’ House',
+        content: '<div class="bloc1"><p>The Citizens’ House conducts the growth of public infrastructure on the Optimism Network.</p><p>Duties include:</p><ul><li>🎯 <strong>Defining RetroPGF metrics and impact</strong> criteria for measuring project performance.</li><li>🔍 <strong>Research and allocation of RetroPGF</strong> to community projects which meet the guidelines.</li><li>👬 <strong>Selection of new citizens</strong> to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.</li></ul></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/the-citizens-house-fd4eef9e.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'a16c3f8e9ef744bea542ceaee53d56f5',
+        title: 'Citizens’ House: Joining, Voting, Delegating',
+        content: '<div class="bloc1"><p>📝 <strong>Joining:</strong> The Citizens’ House currently adds members by invitation, to slowly scale and refine its processes. Membership is marked by holding a ‘Citizen Badge’ — a non-transferable <code>ERC-721</code> token.</p><p>The specifics of invitations change seasonally based on experimentation by the Optimism Foundation. As the scaling methods are refined, this will be automated via <code>onchain governance</code>.</p><ul><li>Current Citizens may be granted an additional invitation, to be shared with someone they see as a great addition to the network.</li><li>Previous RetroPGF recipients have been granted the opportunity to select one community member for Citizen status.</li><li>The Optimism Foundation has issued Citizenship to project builders using the network.</li></ul><p>🗳️ <strong>Voting:</strong> Each Citizen has a single vote. Their voting power cannot be transferred or delegated. This protects against gathering of House power under a small number of Citizens.</p><p>At present, RetroPGF distribution occurs roughly twice per year.</p></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '21573d5324144844afbef73f1f449656',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How does the Citizens’ House protect the network from attack?',
+          rightAnswerNumber: 3,
+          answers: [
+            'By expanding the number of Citizens’ House members.',
+            'By vetoing Token House proposals seen to be leading to power imbalance.',
+            'Both of the above.'
+          ],
+          feedback: [
+            'ℹ️ This is true, but it isn’t the only answer.',
+            'ℹ️ This is true, but it isn’t the only answer.',
+            'ℹ️ Correct! This house diversifies its own perspective, and balances Token House perspective.'
+          ],
+          id: 'optimism-governance-7'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '0e4faf342a6e4d3e92dbdd745260c4ee',
+        title: 'Governance Seasons',
+        content: '<div class="bloc1"><p>Optimism takes an iterative approach to governance, using a calendar structure referred to as ‘Seasons’. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.</p><p>On Optimism a season lasts roughly three months, followed by a reflection period of similar length.</p><p>The thoughtful feedback loops built across Optimism are incredibly important for finding best practices for <code>DAO</code> governance.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/governance-seasons-89773dbf.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '85b015b76e6547e89e96f80539500cf6',
+        title: 'Now… Think Even Bigger!',
+        content: '<div class="bloc1"><p>We’re almost ready to govern on Optimism 🔴. There’s one last thing to mention.</p><p>The Optimistic Vision doesn’t stop at a single <code>L2</code> blockchain. As result of the ability to <code>fork</code> a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this <strong>the Superchain</strong>.</p><p>Coinbase, a prominent <code>CEX</code>, has already forked and started contributing to this <code>open source</code> initiative, through the Base 🔵 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards the ‘Impact = Profit’ ethos.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/now-think-even-bigger-0f29ab97.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '172e6effe6c1431883423ccb1c792cce',
+        title: 'Shaping an Optimistic Future',
+        content: '<div class="bloc1"><p>History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.</p><p>By getting involved in innovative communities, using <code>trustless</code> and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.</p><p>Today’s quest is to join the Token House and delegate our OP tokens. </p><p>While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the <a href=\'https://gov.optimism.io/\'>Optimism community</a> forums.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg\'></div>'
+      },
+      {
+        type: 'QUEST',
+        title: 'Optimism Governance Quest',
+        component: 'OptimismGovernance'
+      }
+    ]
+  },
+  {
+    badgeImageLink: null,
+    lessonImageLink: '/lesson/images/how-to-delegate-on-optimism/lesson-cbf56286.png',
+    learningActions: '',
+    marketingDescription: '',
+    badgeId: null,
+    duration: null,
+    learnings: '',
+    difficulty: undefined,
+    description: '',
+    name: 'How to delegate on Optimism',
+    languages: [],
+    publicationStatus: 'hidden',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    endOfLessonText: undefined,
+    mirrorLink: 'https://mirror.xyz/banklessacademy.eth/zLajMWXQC44H4uQOXK5j9ROZhuC3xwgoddLtAQQo0k0',
+    areMirrorNFTAllCollected: false,
+    isArticle: true,
+    notionId: 'df539538fc644069a413207a35ba444c',
+    slug: 'how-to-delegate-on-optimism',
+    articleContent: '### \n\nKey Takeaways\n\n> * There are a number of ways to fund your wallet on an Ethereum scaling solution like Optimism, Arbitrum, or Polygon.\n>\n> * Centralized exchanges often provide a direct Layer 2 onramp.\n>\n> * Third-party payment apps enable users to fund a wallet on Layer 2 from a bank account or a debit or credit card.\n>\n> * Protocol bridges let users send funds from Ethereum Mainnet to Layer 2.\n\nIf you’re new to crypto, all the talk about the importance of `Layer 2` (or L2) must seem a bit odd, confusing really. In contrast to [Layer 1](https://app.banklessacademy.com/lessons/layer-1-blockchains), which often refers to [Ethereum Mainnet](https://ethereum.org/), Layer 2 is a term for a specific type of Ethereum scaling solution that enables users to inherit the security of Ethereum but enjoy low transaction fees and fast `block` inclusion times. If you’ve ever heard of [Optimism](https://www.optimism.io/), [Arbitrum](https://arbitrum.io/), or [Polygon](https://polygon.technology/) (which is really a side chain, but let’s not worry about that here), those are Layer 2 scaling solutions.\n\nWhen the Ethereum network is busy, it can cost the equivalent of 80 USD in transaction fees — known as `gwei` or gas — to swap tokens, and much more to mint NFTs or provide `liquidity` to a `decentralized exchange` (DEX) on Mainnet. When network activity is low, most transactions on Ethereum Mainnet still cost a few dollars, and it takes an [FTX-level debacle](https://www.investopedia.com/ftx-exchange-5200842) or a [beyond-hyped NFT drop](https://dappradar.com/blog/yuga-labs-600m-otherside-nft-land-sale-records-highest-gas-fees-ever-on-ethereum) to really spike transaction fees.\n\nBecause transactions on Layer 2 confirm quickly and are inexpensive to execute, many of the most innovative protocols are building on L2s. Unless you’ve been in the ecosystem for a while, however, it’s not intuitive to know how to start using Layer 2s. But there is a clear place to begin your journey into Ethereum scaling solutions: funding your `wallet` on Layer 2.\n\nThere are three main ways to fund an L2 wallet: moving your crypto from a `centralized exchange` straight to a Layer 2 network, using a third-party crypto payment service to fund an L2 wallet, or sending your digital assets from Mainnet to L2 via a bridging protocol.\n\n> Please note, you’ll need to have a cryptocurrency wallet, like [MetaMask](https://metamask.io/) or [Tally Ho](https://tallyho.org/), and an Ethereum wallet `address` to proceed. If you haven’t yet created a `non-custodial wallet`, please [take this lesson first](https://app.banklessacademy.com/lessons/wallet-basics)!\n>\n> After you have a non-custodial Ethereum wallet address, you’ll be ready to continue on your crypto journey.\n\n## Funding From CEXs\n\nFunding your wallet directly from a centralized exchange (CEX) is perhaps the simplest way to move digital assets to an L2, particularly if you already hold cryptocurrency on the exchange. Most major CEXs offer users this option, although it isn’t always clear to the user.\n\nOn [Coinbase](https://www.coinbase.com/), for example, users can send their funds directly to Optimism or Polygon in just a few steps:\n\n1\. Go to [Coinbase](https://www.coinbase.com/).\n\n2\. [Purchase](https://help.coinbase.com/en/coinbase/trading-and-funding/buying-selling-or-converting-crypto/how-do-i-buy-digital-currency) or hold ETH on Coinbase.\n\n3\. Select ‘Send & Receive’, located at the top of the website.\n\n![](https://images.mirror-media.xyz/publication-images/Rzdn6KxR4U-oVpcgLs_fL.png?height=209&width=1440)\n\n4\. Enter the amount in fiat or ETH you wish to send (you can toggle between fiat and crypto to the right of the amount), select ‘Pay with’ and choose Ethereum, and in the ‘To’ field, enter the wallet address where the funds will be sent. Select ‘Continue’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F2uysvYIN69lbn9rz0yLsf.png&w=3840&q=90)\n\n5\. On the next screen, select ‘Network’ and change the network from Ethereum to Optimism.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Fz_DzBI1lJFVKNisD-8Rcs.png&w=3840&q=90)\n\n6\. Review, and if accurate, select ‘Send Now’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F-J0-k8BzvPCPPJLmnkQw-.png&w=3840&q=90)\n\nMost major exchanges offer users the ability to send their crypto directly to an L2. [Binance](https://www.binance.com/) supports Optimism and Arbitrum, for example. On whatever centralized exchange you convert fiat to crypto, check to see whether it offers support for direct-to-L2 services. Pro Tip: Use [Blockscan](https://blockscan.com/exchanges) to find the exchange compatible with your preferred L2.\n\n## Third-Party Onramps\n\nAnother simple way to fund your L2 wallet is to take advantage of direct-to-L2 services offered by many third-party crypto payment companies. [MoonPay](https://www.moonpay.com/), [Ramp](https://ramp.network/buy/), and [Transak](https://global.transak.com/) are three of the most popular options to fund crypto wallets without having to use a centralized exchange.\n\nLike most exchanges, these third-party onramps will require you to provide Know-Your-Customer information. However, once you get past those basic hurdles, these payment options are an easy way to buy crypto across the ecosystem and transfer it to Layer 2.\n\nFor MoonPay, the steps are:\n\n1\. Go to [MoonPay](https://www.moonpay.com/).\n\n2\. Select ‘Buy crypto’, located at the top or middle of the website.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FUU9Uswhysj9w4WBYI4VWL.png&w=3840&q=90)\n\n3\. Enter the amount of fiat you wish to send and the proper denomination.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FckrX4LeU78MqcPvpAq_VM.png&w=3840&q=90)\n\n4\. Select a digital asset, in this case ETH. Type in “ETH\'“ and you will see different networks on which you can purchase ETH (you may need to scroll down); choose the Layer 2 you want to use. Click ‘Continue’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FLfhhGbE1yfWdOpG1Z5N5S.png&w=3840&q=90)\n\n5\. Next, you will be prompted to enter personal verification and payment data.\n\n6\. Once complete, enter your Ethereum wallet address. You’ll be asked to make sure the wallet is safe to use.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Fn5hbzW-CVKzp3392TT91I.png&w=3840&q=90)\n\n7\. Complete, confirm the information is correct, and select ‘Pay’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2F7ZBiVMjLfxQ66p8-cLBhN.png&w=3840&q=90)\n\nAs with CEXs, most major third-party payment onramps provide direct-to-L2 functionality. Take advantage of these innovations to save on transaction fees and increase the range of your `blockchain` explorations.\n\n## Funding Via Bridges\n\nIf you already have funds on Ethereum Mainnet, by far the easiest way to get your crypto on to L2 is to use a bridging protocol. Bridges are the name we’ve given to protocols designed to help us move our funds around the cryptoverse, and there are a number of bridges designed to move crypto from Ethereum Mainnet to Layer 2s.\n\n### Native Bridges\n\nNative bridges are those designed by the Layer 2 protocols themselves. For true Layer 2 scaling solutions like Arbitrum and Optimism, it takes about 30 minutes to move funds onto L2, but one week to move that crypto back over to Mainnet. The [Arbitrum Bridge](https://bridge.arbitrum.io/) and the [Optimism Bridge](https://app.optimism.io/bridge/) both take longer to transfer assets and settle transactions because of the way the scaling solution is designed.\n\n### Third-Party Bridges\n\nBecause no one likes to wait, a number of third-party bridging services exist to help us move our funds instantly to and from L2s. Among the most popular options are [Hop Protocol](https://app.hop.exchange/) and [Across Protocol](https://across.to/bridge), but you can use [Bungee](https://bungee.exchange/) to compare bridging fees across a number of protocols. To use Across, for example, all you need to do is:\n\n1\. Go to the [Across Protocol](https://across.to/bridge) bridge and connect your wallet.\n\n2\. To bridge funds to L2, select Ethereum under ‘From’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FSwt3yjUPwEteAiB5aU9zy.png&w=3840&q=90)\n\n3\. Choose your asset and the amount you wish to bridge (Pro Tip: only bridge a blockchain’s native `coin`, in this case ETH).\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FIBRvNt1d-CEe3XkuuwTvr.png&w=3840&q=90)\n\n4\. Next, select your L2 solution in ‘To’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FMnz8fWPFIGGQp25RA6FKt.png&w=3840&q=90)\n\n5\. Review the transaction, and if all looks correct, select ‘Send’.\n\n![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2Ff9PbrvFv90jLNB-j60XlV.png&w=3840&q=90)\n\nMoving funds from Mainnet to L2 is really that simple, and nearly all bridges work the same way. Select a blockchain to send funds from and your destination, pick an asset and amount, and across the blockchain crevice you go. Pro Tip: As with sending from a CEX, you can use [Blockscan](https://blockscan.com/bridges) to find a compatible bridge for your L2 destination.\n\n## The Road to L2\n\nLayer 2s offer users of all experience levels the opportunity to experiment with decentralized finance in a way that is often prohibitive on Mainnet. Because it costs mere pennies to transact on these networks (you can compare costs [here](https://l2fees.info/)), it’s a great place to become familiar with the basic building blocks of decentralized finance, such as swaps, `liquidity pools`, or yield farms.\n\nUsing a CEX or a bridge to move funds to L2 is a necessary step in your journey from crypto novice to crypto competency. Remember, to see your funds displayed in your wallet, you may need to add the network in your wallet settings, which can be done at [Chainlist](https://chainlist.org/). If you just want to check that the funds made it safely to your L2 wallet, you can also check Etherscan (click on the ‘b’ for ‘Blockscan’ to the right of your wallet address to see L2 transactions) or go to a DEX, like [Uniswap](https://app.uniswap.org/), and select the L2 network and the asset to see your balance.\n\nAs you scale up your skills, you’ll need to figure out how to scale down your transaction fees. Learning how to fund an L2 wallet is the first step, but the next steps on your crypto journey are up to you. Welcome, explorer, a new world awaits.\n\n\n***\n\n**Author**\n\n**[Hiro Kennelly](https://twitter.com/HiroKennelly)** is a writer, editor, and coordinator at BanklessDAO and the Editor-in-Chief at Good Morning News. He is also helping to build a grants-focused organization at DAOpunks.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning as much as possible about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.'
+  },
+  {
+    badgeImageLink: 'https://placehold.co/600x600/4b4665/FFFFFF?text=Bankless+Archetypes',
+    lessonImageLink: 'https://placehold.co/1200x600/4b4665/FFFFFF?text=Bankless+Archetypes',
+    learningActions: '',
+    marketingDescription: '',
+    badgeId: null,
     duration: null,
     learnings: '',
     difficulty: undefined,
     description: '',
     name: 'Bankless Archetypes',
+    languages: [],
     quest: 'BanklessArchetypes',
     publicationStatus: 'hidden',
     featuredOrderOnHomepage: null,
@@ -2338,6 +2488,7 @@ const LESSONS: LessonType[] = [
     endOfLessonText: undefined,
     notionId: 'd5c1d9d498084fa4b5e7be801d46cc03',
     slug: 'bankless-archetypes',
+    socialImageLink: 'https://placehold.co/1200x600/4b4665/FFFFFF?text=Bankless+Archetypes',
     imageLinks: [],
     slides: [
       {
@@ -2638,40 +2789,6 @@ const LESSONS: LessonType[] = [
         type: 'QUEST',
         title: 'Bankless Archetypes Quest',
         component: 'BanklessArchetypes'
-      }
-    ]
-  },
-  {
-    kudosImageLink: '/lesson/images/kudos-testing/kudos-ca816a4c.mp4',
-    lessonImageLink: '/lesson/images/kudos-testing/lesson-03a3e86a.png',
-    socialImageLink: '/lesson/images/kudos-testing/social-17fed266.png',
-    learningActions: '',
-    marketingDescription: 'For testing purposes only',
-    kudosId: 14067,
-    duration: null,
-    learnings: '',
-    difficulty: undefined,
-    description: 'For testing purposes only',
-    name: 'Kudos testing',
-    quest: 'KudosTesting',
-    publicationStatus: 'hidden',
-    featuredOrderOnHomepage: null,
-    isCommentsEnabled: false,
-    endOfLessonRedirect: null,
-    endOfLessonText: 'To give feedback about this lesson and earn a special contributor Kudos, click Next.',
-    notionId: '7bc2bf9be4ac4e9181782f996a2a6060',
-    slug: 'kudos-testing',
-    imageLinks: [],
-    slides: [
-      {
-        type: 'LEARN',
-        title: 'TODO',
-        content: '<div class="bloc1"><p>slide content</p></div>'
-      },
-      {
-        type: 'QUEST',
-        title: 'Kudos testing Quest',
-        component: 'KudosTesting'
       }
     ]
   }

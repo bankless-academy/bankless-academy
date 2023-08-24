@@ -23,8 +23,11 @@
   "amm": {
     "definition": "Automated Market Maker: a trade matchmaking system, based on a public algorithm."
   },
+  "asynchronous": {
+    "definition": "Communication between multiple collaborators, where participants don’t have to be present at time of messaging."
+  },
   "bet": {
-    "definition": "Risking money in exchange for greater rewards (shorting/longing) ; money verb on the skill cube."
+    "definition": "Risking money in exchange for greater rewards."
   },
   "block": {
     "definition": "A group of transactions on the blockchain."
@@ -48,7 +51,7 @@
     "definition": "The structures for how data is stored in blockchain technology."
   },
   "blockchain trilemma": {
-    "definition": "The problem describing the need for all 3 mutually-interfering blockchain qualities: Security, Scalability, and Decentralization."
+    "definition": "The problem describing the need for all 3 blockchain qualities: Security, Scalability, and Decentralization."
   },
   "borrower": {
     "definition": "Willing to pay interest to lenders in order to borrow assets."
@@ -80,8 +83,14 @@
   "consensus": {
     "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
   },
+  "counterparty risk": {
+    "definition": "The risk that another party may not fulfil its part in an agreement."
+  },
   "custodial wallet": {
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+  },
+  "dao": {
+    "definition": "(Decentralized Autonomous Organization) An organizational structure that uses blockchain technology to automate voting and management."
   },
   "dapp": {
     "definition": "A decentralized app that connects to decentralized networks and protocols."
@@ -95,8 +104,14 @@
   "decentralized exchange": {
     "definition": "(DEX) A protocol that facilitates exchange without requiring trusted intermediaries."
   },
+  "decentralized finance": {
+    "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
+  },
   "defi": {
-    "definition": "An abbreviation for Decentralized Finance."
+    "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
+  },
+  "delegation": {
+    "definition": "Giving a specific responsibility to another person."
   },
   "dex": {
     "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
@@ -112,6 +127,9 @@
   },
   "epoch": {
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
+  },
+  "erc20": {
+    "definition": "A standard for transferable tokens on Ethereum."
   },
   "ethereum virtual machine": {
     "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network."
@@ -182,6 +200,9 @@
   "lp": {
     "definition": "Liquidity Provider: Blockchain users who loan their tokens to protocols in exchange for a share in fees."
   },
+  "market cap": {
+    "definition": "The total value of a given token, or market sector."
+  },
   "meta-aggregator": {
     "definition": "A tool that brings together other aggregators into an extra overview layer."
   },
@@ -190,6 +211,9 @@
   },
   "non-custodial wallet": {
     "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  },
+  "onchain governance": {
+    "definition": "The system that mediates changes to a blockchain’s structure."
   },
   "optimistic rollup": {
     "definition": "A layer 2 rollup scaling solution that optimistically assumes all transactions in its “rolled up” transaction are valid until they are proven false by a fraud proof."
@@ -205,6 +229,9 @@
   },
   "peer-to-peer": {
     "definition": "A transaction between two parties that does not require a middleman or controlling entity."
+  },
+  "peg": {
+    "definition": "Method of maintaining value equivalence between two or more assets."
   },
   "permissionless": {
     "definition": "Not requiring the permission of any entity."
@@ -324,7 +351,7 @@
     "definition": "Planning the path taken from starting token to ending token in a trade."
   },
   "transaction": {
-    "definition": "A record of an event."
+    "definition": "A record of transfer, monetary or otherwise, on the blockchain."
   },
   "transaction finality": {
     "definition": "The time it takes to be sure that a transaction is valid and final, meaning it won't be reversed or changed."
@@ -336,10 +363,13 @@
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
   },
   "tvl": {
-    "definition": "Total Value Locked: The overall amount of asset value stored in a specific place."
+    "definition": "(Total Value Locked) The overall amount of asset value stored in a specific place."
   },
   "validating bridge": {
     "definition": "A validating bridge contract is a new design that removes the need to trust any external authority to decide if a withdrawal is valid."
+  },
+  "veto": {
+    "definition": "A vote in rejection of a governance proposal."
   },
   "wallet": {
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."

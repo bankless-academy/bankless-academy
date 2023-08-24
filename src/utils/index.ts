@@ -10,6 +10,7 @@ import { Network } from '@ethersproject/networks'
 import queryString from 'query-string'
 import mixpanel, { Dict, Query } from 'mixpanel-browser'
 import { readContract } from '@wagmi/core'
+import axios from 'axios'
 
 import {
   ACTIVATE_MIXPANEL,
@@ -21,7 +22,6 @@ import {
   MIRROR_ARTICLE_ADDRESSES,
 } from 'constants/index'
 import { NETWORKS } from 'constants/networks'
-import axios, { AxiosResponse } from 'axios'
 import UDPolygonABI from 'abis/UDPolygon.json'
 import UDABI from 'abis/UD.json'
 
@@ -36,12 +36,8 @@ const debugParam =
   typeof window !== 'undefined'
     ? queryString.parse(window.location.search).debug?.toString()
     : undefined
-export const DEBUG: string =
-  debugParam !== undefined
-    ? debugParam
-    : typeof window !== 'undefined'
-    ? localStorage.getItem('debug')
-    : null
+const w = typeof window !== 'undefined' ? localStorage.getItem('debug') : null
+export const DEBUG: string = debugParam !== undefined ? debugParam : w
 export const IS_DEBUG = debugParam !== undefined && debugParam !== 'false'
 if (debugParam !== undefined) localStorage.setItem('debug', DEBUG)
 if (debugParam === 'false') localStorage.removeItem('debug')
@@ -107,19 +103,6 @@ export const toFixed = function (x) {
   return x
 }
 
-export const trimCurrencyForWhales = (labelValue: number): string | number => {
-  // Nine Zeroes for Billions
-  return Math.abs(Number(labelValue)) >= 1.0e9
-    ? (Math.abs(Number(labelValue)) / 1.0e9).toFixed(2) + 'B'
-    : // Six Zeroes for Millions
-    Math.abs(Number(labelValue)) >= 1.0e6
-    ? (Math.abs(Number(labelValue)) / 1.0e6).toFixed(2) + 'M'
-    : // Three Zeroes for Thousands
-    Math.abs(Number(labelValue)) >= 1.0e3
-    ? (Math.abs(Number(labelValue)) / 1.0e3).toFixed(2) + 'K'
-    : Math.abs(Number(labelValue))
-}
-
 export const track = (event: string, value?: any): void => {
   if (typeof window !== 'undefined') {
     // TODO: change type of event value to JSON instead of varchar(50)
@@ -162,8 +145,13 @@ export function verifySignature(
   signature: string,
   message: string
 ): boolean {
-  const signer = recoverPersonalSignature(signature, message)
-  return signer.toLowerCase() === address.toLowerCase()
+  try {
+    const signer = recoverPersonalSignature(signature, message)
+    return signer.toLowerCase() === address.toLowerCase()
+  } catch (error) {
+    console.error(error)
+    return false
+  }
 }
 
 export async function getSignature(
@@ -245,7 +233,7 @@ export async function validateOnchainQuest(
       console.log('checks validated (3)', check.length)
       return check.length === 3
     }
-    if (quest === 'DecentralizedExchanges') {
+    else if (quest === 'DecentralizedExchanges') {
       const check = []
       const optimism: Network = {
         name: 'optimism',
@@ -290,7 +278,7 @@ export async function validateOnchainQuest(
       console.log('checks validated (3)', check.length)
       return check.length === 3
     }
-    if (quest === 'Layer2Blockchains') {
+    else if (quest === 'Layer2Blockchains') {
       const optimism: Network = {
         name: 'optimism',
         chainId: NETWORKS['optimism'].chainId,
@@ -305,6 +293,32 @@ export async function validateOnchainQuest(
       const balance = parseFloat(ethers.utils.formatEther(bigNumberBalance))
       console.log('balance: ', balance)
       return balance >= 0.001
+    }
+    else if (quest === 'OptimismGovernance') {
+      const optimism: Network = {
+        name: 'optimism',
+        chainId: NETWORKS['optimism'].chainId,
+        _defaultProvider: (providers) =>
+          new providers.JsonRpcProvider(
+            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
+            `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
+          ),
+      }
+      const provider = ethers.getDefaultProvider(optimism)
+      const contract = new ethers.Contract('0x4200000000000000000000000000000000000042', [
+        {
+          "inputs": [
+            { "internalType": "address", "name": "account", "type": "address" }
+          ],
+          "name": "delegates",
+          "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+          "stateMutability": "view",
+          "type": "function"
+        },
+      ], provider)
+      const delegate = await contract['delegates(address)'](address.toLowerCase())
+      console.log('delegate', delegate)
+      return delegate?.length === 42 && delegate !== '0x0000000000000000000000000000000000000000'
     }
     return false
   } catch (error) {
@@ -325,67 +339,69 @@ export const mixpanel_distinct_id = ACTIVATE_MIXPANEL
   ? mixpanel.get_distinct_id()
   : null
 
-export const Mixpanel = ACTIVATE_MIXPANEL
-  ? {
-      identify: (id: string) => {
-        mixpanel.identify(id)
-      },
-      alias: (id: string) => {
-        mixpanel.alias(id)
-      },
-      track: (event_name: string, props?: Dict) => {
-        const wallets = {
-          wallets: localStorage.getItem('wallets')
-            ? JSON.parse(localStorage.getItem('wallets'))
-            : [],
-        }
-        const current_wallet = localStorage.getItem('current_wallet')
-        if (current_wallet) {
-          const mp_current_wallet = localStorage.getItem(`mp_${current_wallet}`)
-          if (!mp_current_wallet?.length) {
-            mixpanel.alias(current_wallet)
-            mixpanel.people.set({ name: current_wallet, wallets })
-            localStorage.setItem(`mp_${current_wallet}`, mixpanel_distinct_id)
-          }
-        }
-        const embed = localStorage.getItem('embed')
-        if (embed && embed.length) {
-          props.embed = embed
-        }
-        mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
-      },
-      track_links: (query: Query, name: string) => {
-        mixpanel.track_links(query, name, {
-          referrer: document.referrer,
-        })
-      },
-      people: {
-        set: (props: Dict) => {
-          mixpanel.people.set(props)
-        },
-      },
+const withMixpanel = {
+  identify: (id: string) => {
+    mixpanel.identify(id)
+  },
+  alias: (id: string) => {
+    mixpanel.alias(id)
+  },
+  track: (event_name: string, props?: Dict) => {
+    const wallets = {
+      wallets: localStorage.getItem('wallets')
+        ? JSON.parse(localStorage.getItem('wallets'))
+        : [],
     }
-  : {
-      identify: (id: string) => {
-        console.log(id)
-      },
-      alias: (id: string) => {
-        console.log(id)
-      },
-      track: (event_name: string, props?: Dict) => {
-        console.log(event_name)
-        console.log(props)
-      },
-      track_links: (query: Query, name: string) => {
-        console.log(query)
-        console.log(name)
-      },
-      people: {
-        set: (props: Dict) => {
-          console.log(props)
-        },
-      },
+    const current_wallet = localStorage.getItem('current_wallet')
+    if (current_wallet) {
+      const mp_current_wallet = localStorage.getItem(`mp_${current_wallet}`)
+      if (!mp_current_wallet?.length) {
+        mixpanel.alias(current_wallet)
+        mixpanel.people.set({ name: current_wallet, wallets })
+        localStorage.setItem(`mp_${current_wallet}`, mixpanel_distinct_id)
+      }
     }
+    const embed = localStorage.getItem('embed')
+    if (embed && embed.length) {
+      props.embed = embed
+    }
+    mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
+  },
+  track_links: (query: Query, name: string) => {
+    mixpanel.track_links(query, name, {
+      referrer: document.referrer,
+    })
+  },
+  people: {
+    set: (props: Dict) => {
+      mixpanel.people.set(props)
+    },
+  },
+}
+
+const withoutMixpanel = {
+  identify: (id: string) => {
+    console.log(id)
+  },
+  alias: (id: string) => {
+    console.log(id)
+  },
+  track: (event_name: string, props?: Dict) => {
+    console.log(event_name)
+    console.log(props)
+  },
+  track_links: (query: Query, name: string) => {
+    console.log(query)
+    console.log(name)
+  },
+  people: {
+    set: (props: Dict) => {
+      console.log(props)
+    },
+  },
+}
+
+export const Mixpanel = ACTIVATE_MIXPANEL ? withMixpanel : withoutMixpanel
 
 export const getNodeText = (node) => {
   if (['string', 'number'].includes(typeof node)) return node
@@ -393,36 +409,43 @@ export const getNodeText = (node) => {
   if (typeof node === 'object' && node) return getNodeText(node.props.children)
 }
 
-export async function api(url: string, data: any): Promise<AxiosResponse> {
+export async function api(
+  url: string,
+  data: any
+): Promise<{ data: any; status: number }> {
   const wrong = {
-    data: {
-      error: 'API error',
-    },
+    data: {},
     status: 500,
-    statusText: 'KO',
-    headers: {},
-    config: {},
-    request: {},
   }
-  try {
-    const embed =
-      typeof localStorage !== 'undefined' ? localStorage.getItem('embed') : null
-    if (embed && embed.length) {
-      data.embed = embed
-    }
-    const result = await axios.post(url, data)
-    if (result && result.status !== 200) {
-      console.log('error API', result)
-      return result
-    } else if (result?.data) {
-      return result
-    } else {
-      return wrong
-    }
-  } catch (error) {
+  const embed =
+    typeof localStorage !== 'undefined' ? localStorage.getItem('embed') : null
+  if (embed && embed.length) {
+    data.embed = embed
+  }
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+
+  if (!response.ok) {
+    const error = `An error occured: ${response.status}`
     console.error(error)
+    if (response.status !== 500) {
+      const d = await response.json()
+      wrong.data = d
+      wrong.status = response.status
+    } else {
+      wrong.data = { status: 'API error' }
+    }
     return wrong
   }
+  const d = await response.json()
+  const r = { status: response.status, data: d }
+  console.log('API OK', r)
+  return r
 }
 
 export async function getArticlesCollected(address: string): Promise<string[]> {
