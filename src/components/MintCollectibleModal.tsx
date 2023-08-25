@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   Modal,
   ModalOverlay,
@@ -7,19 +8,19 @@ import {
   ModalBody,
   useMediaQuery,
   Box,
-  Image,
-  NumberInput,
-  NumberInputField,
-  NumberDecrementStepper,
-  NumberIncrementStepper,
-  NumberInputStepper,
-  Button,
-  Divider,
+  // Image,
+  // NumberInput,
+  // NumberInputField,
+  // NumberDecrementStepper,
+  // NumberIncrementStepper,
+  // NumberInputStepper,
+  // Button,
+  // Divider,
 } from '@chakra-ui/react'
-import { Lock } from '@phosphor-icons/react'
+// import { Lock } from '@phosphor-icons/react'
 
 import { LessonType } from 'entities/lesson'
-import Collectible from 'components/Collectible'
+// import Collectible from 'components/Collectible'
 
 const MintCollectibleModal = ({
   isOpen,
@@ -34,6 +35,7 @@ const MintCollectibleModal = ({
 }): React.ReactElement => {
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
   const remaining = 100 - numberOfOwners
+  console.log(remaining)
   return (
     <Modal
       onClose={onClose}
@@ -53,16 +55,16 @@ const MintCollectibleModal = ({
         <ModalHeader>
           Collect DataDisk
           <Box mt="4" fontSize="md" fontWeight="normal">
-            Bankless Academy is issuing a small quantity of collectible
-            DataDisk™ devices in an evolving effort to share Bankless Academy
-            content with the deeper reaches of blockspace. Collect yours to{' '}
+            Bankless Academy is issuing a small quantity of collectible DataDisk
+            devices in an evolving effort to share Bankless Academy content with
+            the deeper reaches of blockspace. Collect yours to{' '}
             <b>become a Guardian of Bankless Academy</b>, and retroactively fund
             education public goods!
           </Box>
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody padding={isMobileScreen ? '0' : 'default'}>
-          <Box position="relative" h="20px">
+          {/* <Box position="relative" h="20px">
             <Image
               src="/images/minted-on-OP.png"
               w="176px"
@@ -117,7 +119,7 @@ const MintCollectibleModal = ({
             </Box>
             <Box textAlign="center" pt="4">
               <Button size="lg" variant="primaryWhite">
-                {/* TODO: switch network */}
+               // TODO: switch network
                 Mint DataDisk
               </Button>
             </Box>
@@ -144,8 +146,8 @@ const MintCollectibleModal = ({
                 w={`${numberOfOwners}%`}
               ></Box>
             </Box>
-          </Box>
-          {/* {lesson.lessonCollectibleMintID && (
+          </Box> */}
+          {lesson.lessonCollectibleMintID && (
             <iframe
               src={`/mint.html?collection=${lesson.lessonCollectibleMintID}${
                 isMobileScreen ? `&mobile=true` : ''
@@ -159,7 +161,7 @@ const MintCollectibleModal = ({
                 overflow: 'hidden',
               }}
             ></iframe>
-          )} */}
+          )}
         </ModalBody>
       </ModalContent>
     </Modal>
