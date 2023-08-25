@@ -4,7 +4,7 @@ LESSON DESCRIPTION:
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
 LANGUAGE: English
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 24/08/2023
+LAST UPDATED: 25/08/2023
 ---
 
 ```
@@ -87,11 +87,11 @@ Our quest will focus on claiming our first voting rights, so we’ll be ready to
 
 Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It’s part of the Ethereum ecosystem but with lower fees, faster transactions, and Ethereum’s high standard of security. Here are the defining properties:
 
-🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
-
 🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. These are free-to-access, infinite resources and facilities available to all network citizens. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
 
 🧑‍🤝‍🧑 **Community Governance:** Optimism is lead by its community.
+
+🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
 
 Optimism aims to become a free market district of cyberspace that directly provides for — and is governed by — its citizens!
 
@@ -352,8 +352,9 @@ History has always been paved by the optimists of humanity — those that dared 
 
 By getting involved in innovative communities, using `trustless` and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.
 
-Today’s quest is to join the Token House and delegate our OP tokens. 
+Today’s quest is to join the Token House and delegate our OP tokens.
 
 While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg)
+
