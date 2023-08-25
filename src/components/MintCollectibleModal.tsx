@@ -51,7 +51,7 @@ const MintCollectibleModal = ({
         maxH="var(--chakra-vh)"
       >
         <ModalHeader>
-          Collect Lesson
+          Collect DataDisk
           <Box mt="4" fontSize="md" fontWeight="normal">
             Bankless Academy is issuing a small quantity of collectible
             DataDisk™ devices in an evolving effort to share Bankless Academy
@@ -117,6 +117,7 @@ const MintCollectibleModal = ({
             </Box>
             <Box textAlign="center" pt="4">
               <Button size="lg" variant="primaryWhite">
+                {/* TODO: switch network */}
                 Mint DataDisk
               </Button>
             </Box>

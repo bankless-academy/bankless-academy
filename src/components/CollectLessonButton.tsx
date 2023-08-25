@@ -195,7 +195,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
   )}`
 
   return (
-    <Box maxW="450px">
+    <Box maxW="450px" m="auto">
       <Box w="100%">
         <Box
           background="linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%)"
