@@ -115,9 +115,9 @@ Quelle est la meilleure définition d'un "bien public" [public good] ?
 
 # Décentralisation Progressive
 
-De nombreux grands projets de blockchain commencent avec un groupe centralisé. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization.** On Optimism, the network, founders, and community are thought of as follows:
+De nombreux grands projets de blockchain commencent avec un groupe centralisé. Cela permet au projet de se concentrer sur la construction et les dépenses, mais une `DAO` a besoin de **plus que de promesses de décentralisation**. Sur le réseau Optimism, les fondateurs et la communauté sont considérés comme suit :
 
-- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts and processing of user input.
+- 🌐 **Optimism Network [réseau] :** Le code autonome sur la blockchain — les contrats intelligents [smart contracts].
 - 🏦 **Optimism Foundation [fondation] :** Les fondateurs du réseau. Ils donnent le coup d'envoi à l'écosystème, fournissent des ressources initiales et agissent en tant que steward de la communauté, avant de finalement se dissoudre.
 - 👬 **Optimism Collective [collectif] :** La communauté dirigeante ; un ensemble diversifié de participants mondiaux. Ils sont responsables de la propriété et de la gestion à long terme de l'écosystème. Le terme "DAO" couvre à la fois le Collective et le Network.
 
@@ -337,21 +337,21 @@ Le cycle rétroactif construit à travers Optimism sont incroyablement important
 
 Nous sommes presque prêts à gouverner avec Optimism 🔴. Il y a une dernière chose à mentionner.
 
-La Vision Optimiste ne s'arrête pas à une seule blockchain `L2` . As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **‘The Superchain’**.
+La Vision Optimiste ne s'arrête pas à une seule blockchain `L2` . Grâce à la capacité de `forker` une blockchain, il s'agit d'une expérience de gouvernance clonable. Cette technologie est conçue pour être mise à l'échelle sur plusieurs L2 — et même dans des scénarios de gouvernance mondiale réels. Optimisme appelle ceci **« La Superchaine »** [Superchain].
 
-Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards the ‘Impact = Profit’ ethos.
+Coinbase, un important `CEX`, a déjà forké et commencé à contribuer à cette initiative `open source`, par le biais de la blockchain Base 🔵. Cette mise en commun des ressources de développement accroît l'évolution des infrastructures, tout en canalisant les frais de transaction de la L2 vers l'éthique "Impact = Profit".
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/now-think-even-bigger-0f29ab97.svg)
 
-# Shaping an Optimistic Future
+# Façonner un Avenir Optimiste
 
-History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.
+L'histoire a toujours été pavée par les optimistes de l'humanité — ceux qui ont osé voir grand et ont agi pour y parvenir.
 
-By getting involved in innovative communities, using `trustless` and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.
+En s'impliquant dans des communautés innovantes, en utilisant `trustless` et des systèmes de gouvernance équitable, nous sommes à la pointe de l'avenir de la coordination humaine. Nous construisons un monde où l'humanité peut s'épanouir dans des systèmes locaux, mondiaux et en ligne. Il est temps de commencer notre voyage de gouvernance avec Optimism.
 
-Today’s quest is **to join the Token House and delegate our OP tokens**.
+La quête d'aujourd'hui est **de rejoindre la Maison des Jetons et déléguer nos jetons OP**.
 
-While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
+Pendant que la Maison des Citoyens développe ses procédures d'intégration, nous pouvons commencer notre voyage de Citoyen en participant à une conversation sur les forums de la [communauté Optimism](https://gov.optimism.io/).
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg)
 
