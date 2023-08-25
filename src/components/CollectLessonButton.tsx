@@ -34,12 +34,12 @@ const CollectiblesHelper = (
           Bankless Academy.
         </Box>
         <Box mb="4">
-          Built for 100 passionate Bankless Explorers, owning a lesson DataDisk™
+          Built for 100 passionate Bankless Explorers, owning a lesson DataDisk
           grants its Guardian the following perks:
           <br />
           <UnorderedList>
             <ListItem>
-              Upgrading of normal lesson card to golden DataDisk™ artwork.
+              Upgrading of normal lesson card to golden DataDisk artwork.
             </ListItem>
             <ListItem>
               Early invitation to the official ‘Bankless Academy’{' '}
@@ -185,7 +185,7 @@ const CollectLessonButton = ({
       updateLessonsCollectors().catch(console.error)
   }, [address])
 
-  const share = `I’ve just collected ${numberIOwn} of 100 ‘${lesson.name}’ DataDisks™ from @BanklessAcademy.
+  const share = `I’ve just collected ${numberIOwn} of 100 ‘${lesson.name}’ DataDisks from @BanklessAcademy.
 https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}
 
 Become a Guardian of Bankless Academy today - join the effort to circulate @BanklessAcademy content and retroactively fund education public goods!`
