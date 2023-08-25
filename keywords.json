@@ -128,7 +128,7 @@
   "epoch": {
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
-  "erc20": {
+  "erc-20": {
     "definition": "A standard for transferable tokens on Ethereum."
   },
   "ethereum virtual machine": {
