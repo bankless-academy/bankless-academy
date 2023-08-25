@@ -4,7 +4,7 @@ LESSON DESCRIPTION:
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
 LESSON WRITERS: Tetranome
 LANGUAGE: Français
-TRANSLATORS: X
+TRANSLATORS: Didier Krux
 PROTOCOL VERSION: 0.01
 LAST UPDATED: 25/08/2023
 ---
@@ -69,7 +69,7 @@ Comment la gouvernance onchain peut-elle contribuer à résoudre le débat inter
 
 - [ ] En hébergeant une communauté opt-in, axée sur la mission pour les gens du monde entier.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
 - [ ] Toutes les réponses ci-dessus.
 
@@ -115,15 +115,13 @@ Quelle est la meilleure définition d'un "bien public" [public good] ?
 
 # Décentralisation Progressive
 
-Beaucoup de grands projets de blockchain commencent avec un groupe et une vision centralisés. Cela permet au projet de se concentrer sur la construction et les dépenses, mais une communauté mondiale a besoin de plus que des promesses de décentralisation éventuelle pour être réellement une `DAO`.
+Many great blockchain projects begin with a centralized group. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization.** On Optimism, the network, founders, and community are thought of as follows:
 
-Avec Optimism, le réseau, les fondateurs et la communauté sont considérés comme suit :
-
-- 🌐 **Optimism Network [réseau] :** Le code autonome sur la blockchain — les contrats intelligents [smart contracts].
+- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts and processing of user input.
 - 🏦 **Optimism Foundation [fondation] :** Les fondateurs du réseau. Ils donnent le coup d'envoi à l'écosystème, fournissent des ressources initiales et agissent en tant que steward de la communauté, avant de finalement se dissoudre.
 - 👬 **Optimism Collective [collectif] :** La communauté dirigeante ; un ensemble diversifié de participants mondiaux. Ils sont responsables de la propriété et de la gestion à long terme de l'écosystème. Le terme "DAO" couvre à la fois le Collective et le Network.
 
-Les vérifications et équilibres légaux, tels que la capacité du Collectif à retirer des membres de la Fondation, assurent un transfert lent de la propriété du réseau à la communauté.
+Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow **transfer of network ownership to the community**.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/progressive-decentralization-d2955246.svg)
 
@@ -141,7 +139,7 @@ Vrai ou faux ? La Fondation Optimism continuera à guider le Collectif Optimism 
 
 # Une Nouvelle Économie
 
-At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**. Ce cycle économique génère des revenus, une croissance du réseau et des progrès dans la réalisation de la mission d'Optimism.
+Au centre de l'économie d'Optimism `L2` se trouve le **"Volant d'Inertie Optimiste"** [Optimistic Flywheel]. Ce cycle économique génère des revenus, une croissance du réseau et des progrès dans la réalisation de la mission d'Optimism.
 
 1. Les utilisateurs et `dApps` prennent de l'`espace de blocs` [blockspace] sur le réseau.
 2. Le réseau génère des revenus grâce aux frais de transaction.
@@ -160,13 +158,13 @@ Dans ce cas, Optimism adopte l'approche "**Impact = Profit**". L'impact est tout
 
 Comme l'a dit Vitalik Buterin, _"Il est plus facile de se mettre d'accord sur ce qui était utile que sur ce qui le sera"._
 
-This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. Ce mécanisme de financement incite les penseurs optimistes à créer des biens publics au service de l'humanité. Il nous libère de la mentalité d'extraction de valeur des économies capitalistes traditionnelles.
+Ce modèle de distribution est connu sous le nom de **"Retroactive Public Goods Funding"** [Financement Rétroactif de Bien Public], ou **"RetroPGF"**. Ce mécanisme de financement incite les penseurs optimistes à créer des biens publics au service de l'humanité. Il nous libère de la mentalité d'extraction de valeur des économies capitalistes traditionnelles.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg)
 
 # Le Phénix d'Ether
 
-Optimism calls this effect **‘Ether’s Phoenix’**: an _“angel reaching backwards in time, rewarding those who summon it.”_
+Optimism appelle cet effet '**Le Phénix d'Ether'** [Ether’s Phoenix] : un _"ange remontant le temps, récompensant ceux qui l'invoquent"._
 
 _"Il s'agit d'un algorithme qui récompense les premiers coopérateurs qui ont créé les conditions permettant au financement des biens publics de prospérer. Il s'agit d'un avenir où l'investissement précoce dans les biens publics est reconnu. Il s'agit également d'un état d'esprit : l'optimisme prévaut, de meilleurs systèmes sont possibles et l'humanité sera récompensée pour sa révolution coopérative."_
 
@@ -198,7 +196,7 @@ Comment est-ce qu'Optimism favorise-t-il une économie axée sur la collectivit�
 
 Le Collectif Optimism est composé de deux maisons, chacune ayant des responsabilités indépendantes et partagées dans la gestion du réseau.
 
-**La Maison des Tokens** [Token House] est responsable de la gestion des mises à jour du réseau, des incitations et de la trésorerie. La structure des parties prenantes encourage la croissance de l'économie de réseau et génère de la valeur pour les parties prenantes. La maison est également responsable de la préservation de la décentralisation – en évitant la capture de l’économie du réseau.
+**La Maison des Jetons** [Token House] est responsable de la gestion des mises à jour du réseau, des incitations et de la trésorerie. La structure des parties prenantes encourage la croissance de l'économie de réseau et génère de la valeur pour les parties prenantes. La maison est également responsable de la préservation de la décentralisation – en évitant la capture de l’économie du réseau.
 
 **La Maison des Citoyens** [Citizens’ House] alloue des `RetroPGF` à des projets communautaires, conformément à l'éthique "Impact = Profit", et contribue à définir les paramètres de la citoyenneté. La maison est incitée à améliorer la qualité de vie du réseau, en finançant des biens publics qui améliorent la valeur de la citoyenneté !
 
@@ -208,43 +206,43 @@ Les deux maisons maintiennent l'équilibre du réseau à travers leurs fonctions
 
 # Knowledge Check 5
 
-How does the Citizens’ House differ from the Token House?
+En quoi la Maison des Citoyens diffère-t-elle de la Maison des Jetons ?
 
-- [ ] The Citizens’ House is the only house with veto abilities.
+- [] La Maison des Citoyens est la seule à disposer d'un droit de veto.
 
-> ℹ️ Try again! Both houses have veto powers.
+> ℹ️ Réessayez ! Les deux chambres disposent d'un droit de veto.
 
-- [ ] The Citizens’ House allocates RetroPGF rewards.
+- [La Maison des Citoyens attribue les récompenses RetroPGF.
 
-> ℹ️ Correct! The Citizens’ House allocates public goods funding.
+> ℹ️ Correct ! La Maison des Citoyens attribue les fonds destinés aux biens publics.
 
-- [ ] The Citizens’ House leads network decentralization.
+- [ ] La Maison des Citoyens dirige la décentralisation du réseau.
 
-> ℹ️  Try again! Both houses maintain decentralization.
+> ℹ️ Réessayez ! Les deux chambres maintiennent la décentralisation.
 
-- [ ] All of the above.
+- [ ] Toutes les réponses ci-dessus.
 
-> ℹ️  Try again!
+> ℹ️ Réessayez !
 
-# The Token House
+# La Maison des Jetons [Token House]
 
-The Token House maintains the economy and defenses of the Optimism Network.
+La Maison des Jetons maintient l'économie et la défense du Réseau Optimism.
 
-Duties include:
+Les devoirs comprennent :
 
-- ⚒️ Review and approval of **upgrades to network mechanics**.
-- ⛓️ Selection of network `block producers`.
-- 📈 **Allocation of revenue,** using collected transaction fees to fuel network growth.
+- ⚒️ Examen et approbation **des mises à jour de la mécanique du réseau**.
+- ⛓️ Sélection des `producteurs de blocs` [block producers] du réseau.
+- 📈 **Allocation des revenus,** utilisant les frais de transaction perçus pour alimenter la croissance du réseau.
 
-The Citizens’ House has the right to veto any proposal under the above categories.
+La Maison des Citoyens a le droit d'opposer son veto à toute proposition relevant des catégories susmentionnées.
 
-The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be **reducing rights** of token holders.
+La Maison des Jetons a également la possibilité d'opposer son veto à toute proposition soumise par la Maison des Citoyens ou la Fondation Optimism, qui serait considérée comme **réduisant les droits** des détenteurs de jetons.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-token-house-6d73a8ae.svg)
 
-# Token House: Joining, Voting, Delegating
+# La Maison des Jetons : Adhérer, voter, déléguer
 
-📝 **Joining:** the Token House is done via purchasing and holding OP tokens. These are `ERC20` tokens, and are therefore transferrable; They can be bought and sold on `CEXs`, Optimism `DEXs`, or sent between friends. OP tokens are not available on other networks.
+📝 **Adhérer :** la Maison des Jetons se fait par l'achat et la détention de tokens OP. These are `ERC-20` tokens, and are therefore transferrable; They can be bought and sold on `CEXs`, Optimism `DEXs`, or sent between friends. OP tokens are not available on other networks.
 
 🗳️ **Voting:** Voting power scales based on how many tokens are held.
 
