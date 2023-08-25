@@ -17,6 +17,7 @@ import ExternalLink from './ExternalLink'
 import { DOMAIN_URL, TOKEN_GATING_ENABLED } from 'constants/index'
 import { useEffect } from 'react'
 import { scrollTop } from 'utils'
+import OpenLesson from 'components/OpenLesson'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -56,6 +57,7 @@ const LessonDetail = ({
   extraKeywords?: any
 }): React.ReactElement => {
   const [, isSmallScreen] = useSmallScreen()
+  const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
 
   const [openLessonLS, setOpenLessonLS] = useLocalStorage(
     `lessonOpen`,
@@ -78,6 +80,12 @@ const LessonDetail = ({
     typeof window !== 'undefined' && window.location.search.length
       ? window.location.search.replace('?lang=', '')
       : 'en'
+
+  const isLessonCollected =
+    !!lesson.lessonCollectibleTokenAddress?.length &&
+    lessonsCollectedLS.includes(
+      lesson.lessonCollectibleTokenAddress.toLowerCase()
+    )
 
   return (
     <>
@@ -104,8 +112,7 @@ const LessonDetail = ({
                 right="-500px"
                 h="100%"
                 zIndex="1"
-                // src="/images/bankless-instructor.png"
-                src="https://link.assetfile.io/Pat8R3ry2Whkdey4fj8xr/Instructor.png"
+                src="/images/bankless-instructor.png"
               />
             </StyledBox>
           )}
@@ -182,7 +189,17 @@ const LessonDetail = ({
                 m="auto"
                 mb="8"
               >
-                <CollectLessonButton lesson={lesson} />
+                <OpenLesson lesson={lesson} click>
+                  <Box py="2">
+                    <Image
+                      src={
+                        isLessonCollected
+                          ? lesson.lessonCollectedImageLink
+                          : lesson.lessonImageLink
+                      }
+                    />
+                  </Box>
+                </OpenLesson>
               </Box>
               <Box display="flex" justifyContent="center" mb="8">
                 <LessonButton lesson={lesson} click />
@@ -247,28 +264,13 @@ const LessonDetail = ({
                         isQuizComplete && Quest?.isQuestCompleted
                       }
                     />
-                    <Text fontSize="2xl" mb="4">
-                      “{lesson.name}” Lesson Badge
-                    </Text>
                   </Box>
                 </>
               )}
+              {lesson.hasCollectible ? (
+                <CollectLessonButton lesson={lesson} />
+              ) : null}
             </Box>
-            {/* {!embed && lesson.communityDiscussionLink && (
-              <ExternalLink
-                href={lesson.communityDiscussionLink}
-                alt={`${lesson.name} community discussion`}
-              >
-                <Tooltip
-                  hasArrow
-                  label="Join other explorers to discuss this lesson."
-                >
-                  <Button w="100%" variant="secondary">
-                    Lesson Discussion
-                  </Button>
-                </Tooltip>
-              </ExternalLink>
-            )} */}
           </StyledCard>
         </>
       )}

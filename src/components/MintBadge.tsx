@@ -370,6 +370,9 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
       <Button
         variant={'primary'}
         w="100%"
+        height="51px"
+        fontSize="lg"
+        fontWeight="bold"
         borderBottomRadius="0"
         isLoading={isMintingInProgress}
         loadingText="Minting Badge ..."
