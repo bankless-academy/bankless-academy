@@ -115,15 +115,13 @@ What definition best fits a ‘public good’?
 
 # Progressive Decentralization
 
-Many great blockchain projects begin with a centralized group and vision. This gives the project crucial focus in building and spending, but a global community needs more than promises of eventual decentralization to truly be a `DAO`.
+Many great blockchain projects begin with a centralized group. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization.** On Optimism, the network, founders, and community are thought of as follows:
 
-On Optimism, the network, founders, and community are thought of as follows:
-
-- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts.
+- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts and processing of user input.
 - 🏦 **Optimism Foundation:** The network founders. They kickstart the ecosystem, provide initial resources, and act as community steward, before eventually dissolving.
 - 👬 **Optimism Collective:** The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem. The term ‘DAO’ covers both the Collective and the Network.
 
-Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow transfer of network ownership to the community.
+Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow **transfer of network ownership to the community**.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/progressive-decentralization-d2955246.svg)
 
@@ -244,7 +242,7 @@ The Token House also has the ability to veto any proposal submitted by the Citiz
 
 # Token House: Joining, Voting, Delegating
 
-📝 **Joining:** the Token House is done via purchasing and holding OP tokens. These are `ERC20` tokens, and are therefore transferrable; They can be bought and sold on `CEXs`, Optimism `DEXs`, or sent between friends. OP tokens are not available on other networks.
+📝 **Joining:** the Token House is done via purchasing and holding OP tokens. These are `ERC-20` tokens, and are therefore transferrable; They can be bought and sold on `CEXs`, Optimism `DEXs`, or sent between friends. OP tokens are not available on other networks.
 
 🗳️ **Voting:** Voting power scales based on how many tokens are held.
 
