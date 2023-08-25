@@ -113,50 +113,50 @@ Quelle est la meilleure définition d'un "bien public" [public good] ?
 
 # Décentralisation Progressive
 
-Many great blockchain projects begin with a centralized group and vision. This gives the project crucial focus in building and spending, but a global community needs more than promises of eventual decentralization to truly be a `DAO`.
+Beaucoup de grands projets de blockchain commencent avec un groupe et une vision centralisés. Cela permet au projet de se concentrer sur la construction et les dépenses, mais une communauté mondiale a besoin de plus que des promesses de décentralisation éventuelle pour être réellement une `DAO`.
 
-On Optimism, the network, founders, and community are thought of as follows:
+Avec Optimism, le réseau, les fondateurs et la communauté sont considérés comme suit :
 
-- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts.
-- 🏦 **Optimism Foundation:** The network founders. They kickstart the ecosystem, provide initial resources, and act as community steward, before eventually dissolving.
-- 👬 **Optimism Collective:** The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem. The term ‘DAO’ covers both the Collective and the Network.
+- 🌐 **Optimism Network [réseau] :** Le code autonome sur la blockchain — les contrats intelligents [smart contracts].
+- 🏦 **Optimism Foundation [fondation] :** Les fondateurs du réseau. Ils donnent le coup d'envoi à l'écosystème, fournissent des ressources initiales et agissent en tant que steward de la communauté, avant de finalement se dissoudre.
+- 👬 **Optimism Collective [collectif] :** La communauté dirigeante ; un ensemble diversifié de participants mondiaux. Ils sont responsables de la propriété et de la gestion à long terme de l'écosystème. Le terme "DAO" couvre à la fois le Collective et le Network.
 
-Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow transfer of network ownership to the community.
+Les vérifications et équilibres légaux, tels que la capacité du Collectif à retirer des membres de la Fondation, assurent un transfert lent de la propriété du réseau à la communauté.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/progressive-decentralization-d2955246.svg)
 
 # Knowledge Check 3
 
-True or false?
+Vrai ou faux ?
 
-The Optimism Foundation will continue to guide the Optimism Collective over the network’s lifetime.
+La Fondation Optimism continuera à guider le Collectif Optimism pendant toute la durée de vie du réseau.
 
-- [ ] True
+- [ ] Vrai
 
-> ℹ️ Try again!
+> ℹ️ Réessayez !
 
-- [ ] False
+- [ ] Faux
 
-> ℹ️ Correct! The Foundation will eventually dissolve, and the Collective will continue the mission.
+> ℹ️ Correct ! La Fondation finira par se dissoudre et le Collectif poursuivra sa mission.
 
-# A New Economy
+# Une Nouvelle Économie
 
-At the center of the Optimism `L2` economy is the ‘Optimistic Flywheel’. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.
+Au centre de l'économie d'Optimism `L2` se trouve le "volant d'inertie optimiste" [Optimistic Flywheel]. Ce cycle économique génère des revenus, une croissance du réseau et des progrès dans la réalisation de la mission d'Optimism.
 
-1. Users and `dApps` demand network `blockspace`.
-2. The network generates revenue via transaction fees.
-3. A portion of these taxes are distributed to builders providing impactful public goods infrastructure.
-4. Everyone gains access to free resources and services.
+1. Les utilisateurs et `dApps` prennent de l'`espace de blocs` [blockspace] sur le réseau.
+2. Le réseau génère des revenus grâce aux frais de transaction.
+3. Une partie de ces taxes est distribuée aux constructeurs qui fournissent des infrastructures de biens publics à fort impact.
+4. Tout le monde a accès à des ressources et des services gratuits.
 
-With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!
+Avec une infrastructure onchain de plus grande valeur, la demande d'espace de blocs Optimism augmente, et le cycle continue !
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-new-economy-2981ffe5.png)
 
-# Incentivizing the Public Goods Economy
+# Incitation à l'Économie de Biens Publics
 
-As you can see, public goods infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.
+Comme vous pouvez le constater, les infrastructures de biens publics sont au cœur d'Optimism. Pourtant, il n'est pas simple de sélectionner les projets qui méritent d'être financés.
 
-Here, Optimism takes an ‘**Impact = Profit**’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.
+Dans ce cas, Optimism adopte l'approche "**Impact = Profit**". L'impact est toutefois difficile à anticiper. Plutôt que de faire des prévisions, l'organisme de financement examine périodiquement les projets existants et attribue un financement rétroactif sur la base des performances historiques.
 
 As Vitalik Buterin said, _“It’s easier to agree on what was useful than what will be useful.”_
 
