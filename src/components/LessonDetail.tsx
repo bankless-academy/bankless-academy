@@ -57,6 +57,7 @@ const LessonDetail = ({
   extraKeywords?: any
 }): React.ReactElement => {
   const [, isSmallScreen] = useSmallScreen()
+  const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
 
   const [openLessonLS, setOpenLessonLS] = useLocalStorage(
     `lessonOpen`,
@@ -79,6 +80,12 @@ const LessonDetail = ({
     typeof window !== 'undefined' && window.location.search.length
       ? window.location.search.replace('?lang=', '')
       : 'en'
+
+  const isLessonCollected =
+    !!lesson.lessonCollectibleTokenAddress?.length &&
+    lessonsCollectedLS.includes(
+      lesson.lessonCollectibleTokenAddress.toLowerCase()
+    )
 
   return (
     <>
@@ -184,7 +191,13 @@ const LessonDetail = ({
               >
                 <OpenLesson lesson={lesson} click>
                   <Box py="2">
-                    <Image src={lesson.lessonImageLink} />
+                    <Image
+                      src={
+                        isLessonCollected
+                          ? lesson.lessonCollectedImageLink
+                          : lesson.lessonImageLink
+                      }
+                    />
                   </Box>
                 </OpenLesson>
               </Box>
