@@ -4,7 +4,7 @@ LESSON DESCRIPTION:
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
 LANGUAGE: Français
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 24/08/2023
+LAST UPDATED: 25/08/2023
 ---
 
 ```
@@ -87,11 +87,11 @@ Notre quête se concentrera sur la revendication de nos premiers droits de vote,
 
 Optimism a une mission : faire évoluer Ethereum en construisant un réseau `Layer 2` . Il fait partie de l'écosystème Ethereum, mais avec des frais moins élevés, des transactions plus rapides et le haut niveau de sécurité d'Ethereum. Voici les propriétés qui le définissent :
 
-🏠 **Marché Libre :** Lancé comme une extension non seulement de l'`espace de bloc` [blockspace] d'Ethereum, mais aussi des principes d'Ethereum. Elle vise à développer la place de marché sans permission [permissionless], open-source et résistante à la censure d'Ethereum.
-
 🏕️ **Biens Publics [Public Goods] :** L'accent est mis sur le financement et la construction `de biens publics` sur la blockchain [onchain]. Il s'agit de ressources gratuites et infinis, mis à la disposition de tous les citoyens du réseau. Votre éducation gratuite à la Bankless Academy a été rendue possible grâce au soutien d'Optimism aux biens publics !
 
 🧑‍🤝‍🧑 **Gouvernance Communautaire :** Optimism est dirigé par sa communauté.
+
+🏠 **Marché Libre :** Lancé comme une extension non seulement de l'`espace de bloc` [blockspace] d'Ethereum, mais aussi des principes d'Ethereum. Elle vise à développer la place de marché sans permission [permissionless], open-source et résistante à la censure d'Ethereum.
 
 Optimism vise à devenir un district de libre marché du cyberespace qui subvient directement aux besoins de ses citoyens et qui est gouverné par eux !
 
@@ -356,3 +356,4 @@ Today’s quest is to join the Token House and delegate our OP tokens.
 While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg)
+
