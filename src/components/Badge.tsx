@@ -82,7 +82,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
         <Box width="290px" m="auto">
           {isBadgeMintedLS ? (
             <Box border="1px solid #9E72DC" borderTopRadius="8px" py="3" px="5">
-              <Box color="#9E72DC" fontWeight="bold" fontSize="xl">
+              <Box color="#9E72DC" fontWeight="bold" fontSize="lg">
                 Badge Minted
               </Box>
             </Box>
