@@ -2,7 +2,9 @@
 LESSON TITLE: Gouvernance d'Optimism
 LESSON DESCRIPTION:
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
+LESSON WRITERS: Tetranome
 LANGUAGE: Français
+TRANSLATORS: X
 PROTOCOL VERSION: 0.01
 LAST UPDATED: 25/08/2023
 ---
@@ -45,9 +47,9 @@ La vision de la technologie `DAO` est de résoudre des problèmes et le débat e
 
 Comme tout État-nation du monde réel disposant de ressources et de participants, une DAO utilise un processus de gouvernance pour piloter le déploiement de ses ressources et la réalisation de sa mission. C'est comme un hôtel de ville, mais `asynchrone`, global et partiellement médiatisé par code.
 
-📜 **Proposition :** Elle commence par une proposition de gouvernance et une discussion au sein de la communauté. La proposition est mise à jour en fonction des retours du public. Tout le monde peut soumettre une proposition ou en critiquer une. C'est la partie "décentralisée" de "`DAO`".
+📜 **Proposition :** Elle commence par une proposition de gouvernance et une discussion au sein de la communauté. La proposition est mise à jour en fonction des retours du public. Tout le monde peut soumettre une proposition ou en critiquer une. **This is the ‘decentralized’ part of ‘****`DAO`****’.**
 
-🗳️ **Vote :** La proposition fait l'objet d'un vote - organisé via le processus transparent et résistant à la censure de `gouvernance onchain`. Il n'y a pas de facilitation humaine entre l'ouverture et la clôture du vote ; tout est médiatisé par le code. C'est la partie "autonome" du "`DAO`" - une qualité envisagée pour couvrir à terme l'ensemble du processus de gouvernance.
+🗳️ **Vote :** La proposition fait l'objet d'un vote - organisé via le processus transparent et résistant à la censure de `gouvernance onchain`. Il n'y a pas de facilitation humaine entre l'ouverture et la clôture du vote ; tout est médiatisé par le code. **This is the ‘autonomous’ part of ‘****`DAO`****’** — a quality envisioned to eventually cover the entire governance process.
 
 🛠️ **Mise en œuvre :** La proposition approuvée est appliquée au réseau, par divers développeurs incités si nécessaire.
 
@@ -67,9 +69,9 @@ Comment la gouvernance onchain peut-elle contribuer à résoudre le débat inter
 
 - [ ] En hébergeant une communauté opt-in, axée sur la mission pour les gens du monde entier.
 
-> ℹ️ Vrai, mais ce n'est pas la seule réponse.
+> ℹ️ This is true, but it isn’t the only answer.
 
-- [ ] Tous les réponses ci-dessus.
+- [ ] Toutes les réponses ci-dessus.
 
 > ℹ️ Correct ! La gouvernance onchain vise à rationaliser et à protéger les discussions de groupe.
 
@@ -127,9 +129,7 @@ Les vérifications et équilibres légaux, tels que la capacité du Collectif à
 
 # Knowledge Check 3
 
-Vrai ou faux ?
-
-La Fondation Optimism continuera à guider le Collectif Optimism pendant toute la durée de vie du réseau.
+Vrai ou faux ? La Fondation Optimism continuera à guider le Collectif Optimism pendant toute la durée de vie du réseau.
 
 - [ ] Vrai
 
@@ -141,7 +141,7 @@ La Fondation Optimism continuera à guider le Collectif Optimism pendant toute l
 
 # Une Nouvelle Économie
 
-Au centre de l'économie d'Optimism `L2` se trouve le "volant d'inertie optimiste" [Optimistic Flywheel]. Ce cycle économique génère des revenus, une croissance du réseau et des progrès dans la réalisation de la mission d'Optimism.
+At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**. Ce cycle économique génère des revenus, une croissance du réseau et des progrès dans la réalisation de la mission d'Optimism.
 
 1. Les utilisateurs et `dApps` prennent de l'`espace de blocs` [blockspace] sur le réseau.
 2. Le réseau génère des revenus grâce aux frais de transaction.
@@ -158,51 +158,51 @@ Comme vous pouvez le constater, les infrastructures de biens publics sont au cœ
 
 Dans ce cas, Optimism adopte l'approche "**Impact = Profit**". L'impact est toutefois difficile à anticiper. Plutôt que de faire des prévisions, l'organisme de financement examine périodiquement les projets existants et attribue un financement rétroactif sur la base des performances historiques.
 
-As Vitalik Buterin said, _“It’s easier to agree on what was useful than what will be useful.”_
+Comme l'a dit Vitalik Buterin, _"Il est plus facile de se mettre d'accord sur ce qui était utile que sur ce qui le sera"._
 
-This distribution model is known as ‘**Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
+This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. Ce mécanisme de financement incite les penseurs optimistes à créer des biens publics au service de l'humanité. Il nous libère de la mentalité d'extraction de valeur des économies capitalistes traditionnelles.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg)
 
-# Ether’s Phoenix
+# Le Phénix d'Ether
 
-Optimism calls this effect ‘**Ether’s Phoenix’**: an _“angel reaching backwards in time, rewarding those who summon it.”_
+Optimism calls this effect **‘Ether’s Phoenix’**: an _“angel reaching backwards in time, rewarding those who summon it.”_
 
-_“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”_
+_"Il s'agit d'un algorithme qui récompense les premiers coopérateurs qui ont créé les conditions permettant au financement des biens publics de prospérer. Il s'agit d'un avenir où l'investissement précoce dans les biens publics est reconnu. Il s'agit également d'un état d'esprit : l'optimisme prévaut, de meilleurs systèmes sont possibles et l'humanité sera récompensée pour sa révolution coopérative."_
 
-— The Optimism Foundation
+— La fondation Optimism
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/ethers-phoenix-3bf9db24.svg)
 
 # Knowledge Check 4
 
-How is Optimism incentivizing community-focused economics?
+Comment est-ce qu'Optimism favorise-t-il une économie axée sur la collectivité ?
 
-- [ ] By rewarding all Optimism projects with retroactive funding.
+- [ ] En récompensant tous les projets Optimism par un financement rétroactif.
 
-> ℹ️ Try again! Rewarding all projects regardless of their mission is not Optimism’s approach.
+> ℹ️ Réessayez ! Récompenser tous les projets, quelle que soit leur mission, n'est pas l'approche d'Optimism.
 
-- [ ] By providing a free market, but on the blockchain.
+- [ ] En offrant un marché libre, mais sur la blockchain.
 
-> ℹ️ Try again! Use of blockchain technology alone doesn’t effect economic models.
+> ℹ️ Réessayez ! L'utilisation de la technologie blockchain seule n'a pas d'effet sur les modèles économiques.
 
-- [ ] By systemically funding business models that improve the lives of all network users.
+- [ ] En finançant de façon systémique des modèles d'entreprise qui améliorent la vie de tous les utilisateurs du réseau.
 
-> ℹ️ Correct! The network allocates a portion of transaction fees towards funding public goods.
+> ℹ️ Correct ! Le réseau affecte une partie des frais de transaction au financement de biens publics.
 
-- [ ] All of the above.
+- [ ] Toutes les réponses ci-dessus.
 
-> ℹ️  Try again! Only one of these is true.
+> ℹ️ Réessayez ! Seule l'une d'entre elles est vraie.
 
-# Introducing the Governing Houses
+# Présentation des Maisons Directrices [Governing Houses]
 
-There are two houses that make up the Optimism Collective, each with independent and shared responsibilities in running the network.
+Le Collectif Optimism est composé de deux maisons, chacune ayant des responsabilités indépendantes et partagées dans la gestion du réseau.
 
-**The Token House** is responsible for managing network upgrades, incentives, and treasury. Its stakeholder structure incentivizes growth of the network economy, and generates stakeholder value. The house is also responsible for preserving decentralization — preventing capture of the network economy.
+**La Maison des Tokens** [Token House] est responsable de la gestion des mises à jour du réseau, des incitations et de la trésorerie. La structure des parties prenantes encourage la croissance de l'économie de réseau et génère de la valeur pour les parties prenantes. La maison est également responsable de la préservation de la décentralisation – en évitant la capture de l’économie du réseau.
 
-**The Citizens’ House** allocates `RetroPGF` resources to community projects, according to the ‘Impact = Profit’ ethos, and helps decide the parameters of citizenship. The house is incentivized to improve network quality of life, by funding public goods that improve the value of citizenship!
+**La Maison des Citoyens** [Citizens’ House] alloue des `RetroPGF` à des projets communautaires, conformément à l'éthique "Impact = Profit", et contribue à définir les paramètres de la citoyenneté. La maison est incitée à améliorer la qualité de vie du réseau, en finançant des biens publics qui améliorent la valeur de la citoyenneté !
 
-Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. Let’s take a closer look.
+Les deux maisons maintiennent l'équilibre du réseau à travers leurs fonctions, les mécanismes de vote et les capacités de `veto`. Voyons cela de plus près.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/introducing-the-governing-houses-992f67be.png)
 
@@ -327,7 +327,7 @@ How does the Citizens’ House protect the network from attack?
 
 # Governance Seasons
 
-Optimism takes an iterative approach to governance, using a calendar structure referred to as ‘Seasons’. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
+Optimism takes **an iterative approach to governance**, using a calendar structure referred to as ‘Seasons’. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
 
 On Optimism a season lasts roughly three months, followed by a reflection period of similar length.
 
@@ -339,7 +339,7 @@ The thoughtful feedback loops built across Optimism are incredibly important for
 
 We’re almost ready to govern on Optimism 🔴. There’s one last thing to mention.
 
-The Optimistic Vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **the Superchain**.
+The Optimistic Vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **‘The Superchain’**.
 
 Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards the ‘Impact = Profit’ ethos.
 
@@ -351,7 +351,7 @@ History has always been paved by the optimists of humanity — those that dared 
 
 By getting involved in innovative communities, using `trustless` and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.
 
-Today’s quest is to join the Token House and delegate our OP tokens.
+Today’s quest is **to join the Token House and delegate our OP tokens**.
 
 While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
 
