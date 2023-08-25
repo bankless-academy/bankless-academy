@@ -95,7 +95,7 @@ const LessonCollectibleModal = ({
         borderRadius={isMobileScreen ? '0' : '3xl'}
         backdropFilter="blur(10px)"
       >
-        <ModalHeader>LESSON DATADISK™ CONTENT</ModalHeader>
+        <ModalHeader>LESSON DATADISK CONTENT</ModalHeader>
         <ModalCloseButton />
         <ModalBody padding={isMobileScreen ? '10px' : 'default'}>
           <StyledMarkdown
