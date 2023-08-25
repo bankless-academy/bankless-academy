@@ -62,10 +62,15 @@ const LessonCollectibleModal = ({
 << LESSON START >>
 \`\`\``
 
+  const lang =
+    typeof window !== 'undefined' && window.location.search.length
+      ? window.location.search.replace('?lang=', '')
+      : 'en'
+
   useEffect(() => {
     if (lesson?.slug) {
       try {
-        fetch(`/lesson/en/${lesson.slug}.md`)
+        fetch(`/lesson/${lang}/${lesson.slug}.md`)
           .then((response) => response.text())
           .then((md) => {
             // console.log('md', md)

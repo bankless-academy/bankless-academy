@@ -10,6 +10,7 @@ export interface LessonType {
   badgeId?: number
   description: string
   languages?: LanguageType[]
+  lessonWriters?: string
   marketingDescription: string
   duration: number
   difficulty: 'Easy' | 'Advanced' | 'Expert'

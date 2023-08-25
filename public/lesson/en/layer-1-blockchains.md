@@ -2,9 +2,11 @@
 LESSON TITLE: Layer 1 Blockchains
 LESSON DESCRIPTION: Understand how Layer 1 blockchains work - and learn their limitations!
 LESSON LINK: https://app.banklessacademy.com/lessons/layer-1-blockchains
+LESSON WRITERS: 
 LANGUAGE: English
+TRANSLATORS: X
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 24/08/2023
+LAST UPDATED: 25/08/2023
 ---
 
 ```

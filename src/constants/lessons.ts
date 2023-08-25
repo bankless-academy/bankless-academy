@@ -15,6 +15,7 @@ const LESSONS: LessonType[] = [
     description: 'Create and securely manage your first crypto wallet.',
     name: 'Wallet Basics',
     languages: [],
+    lessonWriters: 'Ap0ll0517',
     quest: 'WalletBasics',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: null,
@@ -938,6 +939,7 @@ const LESSONS: LessonType[] = [
     description: 'Join the Layer 2 ecosystem to boost your transaction speed & reduce fees.',
     name: 'Layer 2 Blockchains',
     languages: [],
+    lessonWriters: 'Tetranome',
     quest: 'Layer2Blockchains',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: 3,
@@ -1419,6 +1421,7 @@ const LESSONS: LessonType[] = [
     description: 'Discover how smart-contract exchanges enable permissionless token swaps!',
     name: 'Decentralized Exchanges',
     languages: [],
+    lessonWriters: 'Tetranome',
     quest: 'DecentralizedExchanges',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: 2,
@@ -1958,6 +1961,7 @@ const LESSONS: LessonType[] = [
       'jp',
       'cn'
     ],
+    lessonWriters: 'Tetranome',
     quest: 'OptimismGovernance',
     publicationStatus: 'hidden',
     featuredOrderOnHomepage: null,
@@ -1994,7 +1998,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '303f183f27b147abbb1e964bd5468fbe',
         title: 'Network<strong> </strong>Governance',
-        content: '<div class="bloc1"><p>Like any real world nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but <code>asynchronous</code>, global, and partially mediated by code.</p><p>📜 <strong>Proposal:</strong> It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘<code>DAO</code>’.</p><p>🗳️ <strong>Vote:</strong> The proposal moves to a vote — hosted via the transparent, censorship-resistant process of <code>onchain governance</code>. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘<code>DAO</code>’ — a quality envisioned to eventually cover the entire governance process.</p><p>🛠️ <strong>Implementation:</strong> The approved proposal is applied to the network, by various incentivized developers if necessary.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/network-governance-ec1d1abb.svg\'></div>'
+        content: '<div class="bloc1"><p>Like any real world nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but <code>asynchronous</code>, global, and partially mediated by code.</p><p>📜 <strong>Proposal:</strong> It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. <strong>This is the ‘decentralized’ part of ‘</strong><strong><code>DAO</code></strong><strong>’.</strong></p><p>🗳️ <strong>Vote:</strong> The proposal moves to a vote — hosted via the transparent, censorship-resistant process of <code>onchain governance</code>. There is zero human facilitation between vote open and close; It is all mediated by code. <strong>This is the ‘autonomous’ part of ‘</strong><strong><code>DAO</code></strong><strong>’</strong> — a quality envisioned to eventually cover the entire governance process.</p><p>🛠️ <strong>Implementation:</strong> The approved proposal is applied to the network, by various incentivized developers if necessary.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/network-governance-ec1d1abb.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -2028,7 +2032,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'a3b50457cfec4f56ba8416403ebfb35e',
         title: 'The Optimistic Vision',
-        content: '<div class="bloc1"><p>Optimism is on a mission: to scale Ethereum by building a <code>Layer 2</code> network. It’s part of the Ethereum ecosystem but with lower fees, faster transactions, and Ethereum’s high standard of security. Here are the defining properties:</p><p>🏠 <strong>Free Market:</strong> Launched as an extension of not just Ethereum <code>blockspace</code>, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.</p><p>🏕️ <strong>Public Goods:</strong> Great emphasis on funding and building onchain <code>public goods</code>. These are free-to-access, infinite resources and facilities available to all network citizens. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!</p><p>🧑‍🤝‍🧑 <strong>Community Governance:</strong> Optimism is lead by its community.</p><p>Optimism aims to become a free market district of cyberspace that directly provides for — and is governed by — its citizens!</p></div>'
+        content: '<div class="bloc1"><p>Optimism is on a mission: to scale Ethereum by building a <code>Layer 2</code> network. It’s part of the Ethereum ecosystem but with lower fees, faster transactions, and Ethereum’s high standard of security. Here are the defining properties:</p><p>🏕️ <strong>Public Goods:</strong> Great emphasis on funding and building onchain <code>public goods</code>. These are free-to-access, infinite resources and facilities available to all network citizens. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!</p><p>🧑‍🤝‍🧑 <strong>Community Governance:</strong> Optimism is lead by its community.</p><p>🏠 <strong>Free Market:</strong> Launched as an extension of not just Ethereum <code>blockspace</code>, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.</p><p>Optimism aims to become a free market district of cyberspace that directly provides for — and is governed by — its citizens!</p></div>'
       },
       {
         type: 'QUIZ',
@@ -2061,7 +2065,7 @@ const LESSONS: LessonType[] = [
         notionId: 'c4212b5217b14096915d4128ff9e2864',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'True or false?<p>The Optimism Foundation will continue to guide the Optimism Collective over the network’s lifetime.</p>',
+          question: 'True or false? The Optimism Foundation will continue to guide the Optimism Collective over the network’s lifetime.',
           rightAnswerNumber: 2,
           answers: [
             'True',
@@ -2078,19 +2082,19 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'c1ee570de27a49b58466df08e2637fab',
         title: 'A New<strong> </strong>Economy',
-        content: '<div class="bloc1"><p>At the center of the Optimism <code>L2</code> economy is the ‘Optimistic Flywheel’. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.</p><ol><li>Users and <code>dApps</code> demand network <code>blockspace</code>.</li><li>The network generates revenue via transaction fees.</li><li>A portion of these taxes are distributed to builders providing impactful public goods infrastructure.</li><li>Everyone gains access to free resources and services.</li></ol><p>With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/a-new-economy-2981ffe5.png\'></div>'
+        content: '<div class="bloc1"><p>At the center of the Optimism <code>L2</code> economy is the <strong>‘Optimistic Flywheel’</strong>. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.</p><ol><li>Users and <code>dApps</code> demand network <code>blockspace</code>.</li><li>The network generates revenue via transaction fees.</li><li>A portion of these taxes are distributed to builders providing impactful public goods infrastructure.</li><li>Everyone gains access to free resources and services.</li></ol><p>With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/a-new-economy-2981ffe5.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'd8361c4c3fd0403b9cc93a8eaee7a02d',
         title: 'Incentivizing the Public Goods Economy',
-        content: '<div class="bloc1"><p>As you can see, public goods infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.</p><p>Here, Optimism takes an ‘<strong>Impact = Profit</strong>’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.</p><p>As Vitalik Buterin said, <br><em>“It’s easier to agree on what was useful than what will be useful.”</em></p><p>This distribution model is known as ‘<strong>Retroactive Public Goods Funding’</strong>, or <strong>‘RetroPGF’</strong>. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg\'></div>'
+        content: '<div class="bloc1"><p>As you can see, public goods infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.</p><p>Here, Optimism takes an ‘<strong>Impact = Profit</strong>’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.</p><p>As Vitalik Buterin said, <br><em>“It’s easier to agree on what was useful than what will be useful.”</em></p><p>This distribution model is known as <strong>‘Retroactive Public Goods Funding’</strong>, or <strong>‘RetroPGF’</strong>. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '9222dff9c1e04dd88b551b73ef70bd01',
         title: 'Ether’s Phoenix',
-        content: '<div class="bloc1"><p>Optimism calls this effect ‘<strong>Ether’s Phoenix’</strong>: an <em>“angel reaching backwards in time, rewarding those who summon it.”</em></p><p><em>“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”</em></p><p>— The Optimism Foundation</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/ethers-phoenix-3bf9db24.svg\'></div>'
+        content: '<div class="bloc1"><p>Optimism calls this effect <strong>‘Ether’s Phoenix’</strong>: an <em>“angel reaching backwards in time, rewarding those who summon it.”</em></p><p><em>“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”</em></p><p>— The Optimism Foundation</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/ethers-phoenix-3bf9db24.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -2218,19 +2222,19 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '0e4faf342a6e4d3e92dbdd745260c4ee',
         title: 'Governance Seasons',
-        content: '<div class="bloc1"><p>Optimism takes an iterative approach to governance, using a calendar structure referred to as ‘Seasons’. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.</p><p>On Optimism a season lasts roughly three months, followed by a reflection period of similar length.</p><p>The thoughtful feedback loops built across Optimism are incredibly important for finding best practices for <code>DAO</code> governance.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/governance-seasons-89773dbf.svg\'></div>'
+        content: '<div class="bloc1"><p>Optimism takes <strong>an iterative approach to governance</strong>, using a calendar structure referred to as ‘Seasons’. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.</p><p>On Optimism a season lasts roughly three months, followed by a reflection period of similar length.</p><p>The thoughtful feedback loops built across Optimism are incredibly important for finding best practices for <code>DAO</code> governance.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/governance-seasons-89773dbf.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '85b015b76e6547e89e96f80539500cf6',
         title: 'Now… Think Even Bigger!',
-        content: '<div class="bloc1"><p>We’re almost ready to govern on Optimism 🔴. There’s one last thing to mention.</p><p>The Optimistic Vision doesn’t stop at a single <code>L2</code> blockchain. As result of the ability to <code>fork</code> a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this <strong>the Superchain</strong>.</p><p>Coinbase, a prominent <code>CEX</code>, has already forked and started contributing to this <code>open source</code> initiative, through the Base 🔵 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards the ‘Impact = Profit’ ethos.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/now-think-even-bigger-0f29ab97.svg\'></div>'
+        content: '<div class="bloc1"><p>We’re almost ready to govern on Optimism 🔴. There’s one last thing to mention.</p><p>The Optimistic Vision doesn’t stop at a single <code>L2</code> blockchain. As result of the ability to <code>fork</code> a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this <strong>‘The Superchain’</strong>.</p><p>Coinbase, a prominent <code>CEX</code>, has already forked and started contributing to this <code>open source</code> initiative, through the Base 🔵 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards the ‘Impact = Profit’ ethos.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/now-think-even-bigger-0f29ab97.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '172e6effe6c1431883423ccb1c792cce',
         title: 'Shaping an Optimistic Future',
-        content: '<div class="bloc1"><p>History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.</p><p>By getting involved in innovative communities, using <code>trustless</code> and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.</p><p>Today’s quest is to join the Token House and delegate our OP tokens. </p><p>While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the <a href=\'https://gov.optimism.io/\'>Optimism community</a> forums.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg\'></div>'
+        content: '<div class="bloc1"><p>History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.</p><p>By getting involved in innovative communities, using <code>trustless</code> and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.</p><p>Today’s quest is <strong>to join the Token House and delegate our OP tokens</strong>.</p><p>While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the <a href=\'https://gov.optimism.io/\'>Optimism community</a> forums.</p></div><div class="bloc2"><img src=\'/lesson/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg\'></div>'
       },
       {
         type: 'QUEST',

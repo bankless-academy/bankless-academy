@@ -2,9 +2,11 @@
 LESSON TITLE: Optimism Governance
 LESSON DESCRIPTION: 
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
+LESSON WRITERS: Tetranome
 LANGUAGE: English
+TRANSLATORS: X
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 24/08/2023
+LAST UPDATED: 25/08/2023
 ---
 
 ```
@@ -45,9 +47,9 @@ The vision of `DAO` technology is to host streamlined problem solving and debate
 
 Like any real world nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but `asynchronous`, global, and partially mediated by code.
 
-📜 **Proposal:** It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘`DAO`’.
+📜 **Proposal:** It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. **This is the ‘decentralized’ part of ‘****`DAO`****’.**
 
-🗳️ **Vote:** The proposal moves to a vote — hosted via the transparent, censorship-resistant process of `onchain governance`. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘`DAO`’ — a quality envisioned to eventually cover the entire governance process.
+🗳️ **Vote:** The proposal moves to a vote — hosted via the transparent, censorship-resistant process of `onchain governance`. There is zero human facilitation between vote open and close; It is all mediated by code. **This is the ‘autonomous’ part of ‘****`DAO`****’** — a quality envisioned to eventually cover the entire governance process.
 
 🛠️ **Implementation:** The approved proposal is applied to the network, by various incentivized developers if necessary.
 
@@ -87,11 +89,11 @@ Our quest will focus on claiming our first voting rights, so we’ll be ready to
 
 Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It’s part of the Ethereum ecosystem but with lower fees, faster transactions, and Ethereum’s high standard of security. Here are the defining properties:
 
-🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
-
 🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. These are free-to-access, infinite resources and facilities available to all network citizens. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
 
 🧑‍🤝‍🧑 **Community Governance:** Optimism is lead by its community.
+
+🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
 
 Optimism aims to become a free market district of cyberspace that directly provides for — and is governed by — its citizens!
 
@@ -127,9 +129,7 @@ Legal checks and balances, such as the Collective’s ability to remove members 
 
 # Knowledge Check 3
 
-True or false?
-
-The Optimism Foundation will continue to guide the Optimism Collective over the network’s lifetime.
+True or false? The Optimism Foundation will continue to guide the Optimism Collective over the network’s lifetime.
 
 - [ ] True
 
@@ -141,7 +141,7 @@ The Optimism Foundation will continue to guide the Optimism Collective over the 
 
 # A New Economy
 
-At the center of the Optimism `L2` economy is the ‘Optimistic Flywheel’. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.
+At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.
 
 1. Users and `dApps` demand network `blockspace`.
 2. The network generates revenue via transaction fees.
@@ -161,13 +161,13 @@ Here, Optimism takes an ‘**Impact = Profit**’ approach. Impact, however, is 
 As Vitalik Buterin said, 
 _“It’s easier to agree on what was useful than what will be useful.”_
 
-This distribution model is known as ‘**Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
+This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg)
 
 # Ether’s Phoenix
 
-Optimism calls this effect ‘**Ether’s Phoenix’**: an _“angel reaching backwards in time, rewarding those who summon it.”_
+Optimism calls this effect **‘Ether’s Phoenix’**: an _“angel reaching backwards in time, rewarding those who summon it.”_
 
 _“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”_
 
@@ -328,7 +328,7 @@ How does the Citizens’ House protect the network from attack?
 
 # Governance Seasons
 
-Optimism takes an iterative approach to governance, using a calendar structure referred to as ‘Seasons’. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
+Optimism takes **an iterative approach to governance**, using a calendar structure referred to as ‘Seasons’. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
 
 On Optimism a season lasts roughly three months, followed by a reflection period of similar length.
 
@@ -340,7 +340,7 @@ The thoughtful feedback loops built across Optimism are incredibly important for
 
 We’re almost ready to govern on Optimism 🔴. There’s one last thing to mention.
 
-The Optimistic Vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **the Superchain**.
+The Optimistic Vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **‘The Superchain’**.
 
 Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards the ‘Impact = Profit’ ethos.
 
@@ -352,8 +352,9 @@ History has always been paved by the optimists of humanity — those that dared 
 
 By getting involved in innovative communities, using `trustless` and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.
 
-Today’s quest is to join the Token House and delegate our OP tokens. 
+Today’s quest is **to join the Token House and delegate our OP tokens**.
 
 While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg)
+

@@ -82,7 +82,9 @@ const mdHeader = (lesson) => `---
 LESSON TITLE: ${lesson.name}
 LESSON DESCRIPTION: ${lesson.description}
 LESSON LINK: https://app.banklessacademy.com/lessons/${lesson.slug}
+LESSON WRITERS: ${lesson.lessonWriters || ''}
 LANGUAGE: English
+TRANSLATORS: X
 PROTOCOL VERSION: ${PROTOCOL_VERSION}
 LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
 ---
@@ -131,6 +133,7 @@ const KEY_MATCHING = {
   Description: 'description',
   Name: 'name',
   'Languages': 'languages',
+  'Lesson Writers': 'lessonWriters',
   Module: 'moduleId',
   Quest: 'quest',
   'Publication status': 'publicationStatus',
@@ -244,6 +247,7 @@ axios
       if (lesson.moduleId === undefined) delete lesson.moduleId
       else lesson.moduleId = lesson.moduleId[0]
       if (lesson.languages === undefined) delete lesson.languages
+      if (lesson.lessonWriters === undefined) delete lesson.lessonWriters
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
       if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
       if (lesson.mirrorNFTAddress === undefined || lesson.mirrorNFTAddress === null) delete lesson.mirrorNFTAddress
