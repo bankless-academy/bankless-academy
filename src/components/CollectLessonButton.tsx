@@ -196,22 +196,19 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
 
   return (
     <Box maxW="450px" m="auto">
-      <Box w="100%">
-        <Box
-          background="linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%)"
-          borderTopRadius="8px"
-          textAlign="center"
-          py="3"
-          px="5"
-          position="relative"
-          cursor="pointer"
+      <Box w="100%" position="relative">
+        {CollectiblesHelper}
+        <Button
+          variant="primaryGold"
+          w="100%"
+          borderBottomRadius="0"
+          height="51px"
           onClick={async () => {
             onOpenMintCollectibleModal()
             // if (chain?.id !== 10 && address)
             //   await switchNetwork({ chainId: 10 })
           }}
         >
-          {CollectiblesHelper}
           <Box
             display="flex"
             justifyContent="center"
@@ -221,7 +218,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
             <Box fontWeight="bold">Collect DataDisk</Box>
             <Box ml="4">({numberOfOwners}/100 claimed)</Box>
           </Box>
-        </Box>
+        </Button>
         <Box
           m="auto"
           maxW="500px"
