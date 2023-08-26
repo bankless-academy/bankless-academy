@@ -115,10 +115,10 @@ What definition best fits a ‘public good’?
 
 # Progressive Decentralization
 
-Many great blockchain projects begin with a centralized group. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization.** On Optimism, the network, founders, and community are thought of as follows:
+Many great blockchain projects begin with a centralized group. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization**. On Optimism, the founders, network, and community are thought of as follows:
 
-- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts and processing of user input.
 - 🏦 **Optimism Foundation:** The network founders. They kickstart the ecosystem, provide initial resources, and act as community steward, before eventually dissolving.
+- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts and processing of user input.
 - 👬 **Optimism Collective:** The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem. The term ‘DAO’ covers both the Collective and the Network.
 
 Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow **transfer of network ownership to the community**.
@@ -202,7 +202,7 @@ There are two houses that make up the Optimism Collective, each with independent
 
 Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. Let’s take a closer look.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/introducing-the-governing-houses-992f67be.png)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/introducing-the-governing-houses-92f32cfe.svg)
 
 # Knowledge Check 5
 
@@ -275,7 +275,7 @@ How does the Token House protect the network from attack?
 
 - [ ] By carefully reviewing network upgrade proposals.
 
-> ℹ️  This is true, but it isn’t the only answer.
+> ℹ️ This is true, but it isn’t the only answer.
 
 - [ ] All of the above.
 
@@ -287,7 +287,7 @@ The Citizens’ House conducts the growth of public infrastructure on the Optimi
 
 Duties include:
 
-- 🎯 **Defining RetroPGF metrics and impact** criteria for measuring project performance.
+- 🎯 **Defining RetroPGF metrics and impact criteria** for measuring project performance.
 - 🔍 **Research and allocation of RetroPGF** to community projects which meet the guidelines.
 - 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.
 
