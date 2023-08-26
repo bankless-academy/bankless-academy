@@ -115,10 +115,10 @@ Quelle est la meilleure définition d'un "bien public" [public good] ?
 
 # Décentralisation Progressive
 
-De nombreux grands projets de blockchain commencent avec un groupe centralisé. Cela permet au projet de se concentrer sur la construction et les dépenses, mais une `DAO` a besoin de **plus que de promesses de décentralisation**. Sur le réseau Optimism, les fondateurs et la communauté sont considérés comme suit :
+De nombreux grands projets de blockchain commencent avec un groupe centralisé. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization**. On Optimism, the founders, network, and community are thought of as follows:
 
+- 🏦 **Optimism Foundation:** The network founders. They kickstart the ecosystem, provide initial resources, and act as community steward, before eventually dissolving.
 - 🌐 **Optimism Network [réseau] :** Le code autonome sur la blockchain — les contrats intelligents [smart contracts].
-- 🏦 **Optimism Foundation [fondation] :** Les fondateurs du réseau. Ils donnent le coup d'envoi à l'écosystème, fournissent des ressources initiales et agissent en tant que steward de la communauté, avant de finalement se dissoudre.
 - 👬 **Optimism Collective [collectif] :** La communauté dirigeante ; un ensemble diversifié de participants mondiaux. Ils sont responsables de la propriété et de la gestion à long terme de l'écosystème. Le terme "DAO" couvre à la fois le Collective et le Network.
 
 Les vérifications et équilibres légaux, tels que la capacité du Collectif à retirer des membres de la Fondation, assurent un **transfert lent de la propriété du réseau à la communauté**.
@@ -202,7 +202,7 @@ Le Collectif Optimism est composé de deux maisons, chacune ayant des responsabi
 
 Les deux maisons maintiennent l'équilibre du réseau à travers leurs fonctions, les mécanismes de vote et les capacités de `veto`. Voyons cela de plus près.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/introducing-the-governing-houses-992f67be.png)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/introducing-the-governing-houses-92f32cfe.svg)
 
 # Knowledge Check 5
 
@@ -287,7 +287,7 @@ La Maison des Citoyens gère la croissance des infrastructures publiques sur le 
 
 Les devoirs comprennent :
 
-- 🎯 **Définition des indicateurs RetroPGF et impact** critères pour mesurer la performance du projet.
+- 🎯 **Defining RetroPGF metrics and impact criteria** for measuring project performance.
 - 🔍 **Recherche et allocation de RetroPGF** aux projets communautaires qui respectent les lignes directrices.
 - 👬 **Sélection de nouveaux citoyens** pour aider à gouverner la Maison des Citoyens et équilibrer la perspective de la Maison des Jetons. La Maison des Jetons dispose d'un droit de veto sur ce type de proposition.
 
@@ -317,7 +317,7 @@ Comment la Maison des Citoyens protège-t-elle le réseau contre les attaques ?
 
 - [ ] En opposant son veto aux propositions de la Maison des Jetons considérées comme entraînant un déséquilibre des pouvoirs.
 
-> ℹ️ Vrai, mais ce n'est pas la seule réponse.
+> ℹ️ This is true, but it isn’t the only answer.
 
 - [ ] Toutes les deux réponses ci-dessus.
 
