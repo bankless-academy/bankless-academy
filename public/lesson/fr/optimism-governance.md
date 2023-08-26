@@ -1,12 +1,12 @@
 ---
 LESSON TITLE: Gouvernance d'Optimism
-LESSON DESCRIPTION:
+LESSON DESCRIPTION: Learn about Optimism governance and how to get involved.
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
 LESSON WRITERS: Tetranome
 LANGUAGE: Français
 TRANSLATORS: Didier Krux
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 25/08/2023
+LAST UPDATED: 26/08/2023
 ---
 
 ```
@@ -115,9 +115,9 @@ Quelle est la meilleure définition d'un "bien public" [public good] ?
 
 # Décentralisation Progressive
 
-De nombreux grands projets de blockchain commencent avec un groupe centralisé. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization**. On Optimism, the founders, network, and community are thought of as follows:
+De nombreux grands projets de blockchain commencent avec un groupe centralisé. Cela permet au projet de se concentrer sur la construction et les dépenses, mais une `DAO` a besoin de **plus que de promesses de décentralisation**. Avec Optimism, les fondateurs, le réseau et la communauté sont considérés comme suit :
 
-- 🏦 **Optimism Foundation:** The network founders. They kickstart the ecosystem, provide initial resources, and act as community steward, before eventually dissolving.
+- 🏦 **Optimism Foundation [fondation] :** Les fondateurs du réseau. Ils donnent le coup d'envoi à l'écosystème, fournissent des ressources initiales et agissent en tant que steward de la communauté, avant de finalement se dissoudre.
 - 🌐 **Optimism Network [réseau] :** Le code autonome sur la blockchain — les contrats intelligents [smart contracts].
 - 👬 **Optimism Collective [collectif] :** La communauté dirigeante ; un ensemble diversifié de participants mondiaux. Ils sont responsables de la propriété et de la gestion à long terme de l'écosystème. Le terme "DAO" couvre à la fois le Collective et le Network.
 
@@ -287,7 +287,7 @@ La Maison des Citoyens gère la croissance des infrastructures publiques sur le 
 
 Les devoirs comprennent :
 
-- 🎯 **Defining RetroPGF metrics and impact criteria** for measuring project performance.
+- 🎯 **Définition des indicateurs RetroPGF et critères d'impact** pour mesurer la performance du projet.
 - 🔍 **Recherche et allocation de RetroPGF** aux projets communautaires qui respectent les lignes directrices.
 - 👬 **Sélection de nouveaux citoyens** pour aider à gouverner la Maison des Citoyens et équilibrer la perspective de la Maison des Jetons. La Maison des Jetons dispose d'un droit de veto sur ce type de proposition.
 
@@ -317,7 +317,7 @@ Comment la Maison des Citoyens protège-t-elle le réseau contre les attaques ?
 
 - [ ] En opposant son veto aux propositions de la Maison des Jetons considérées comme entraînant un déséquilibre des pouvoirs.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
 - [ ] Toutes les deux réponses ci-dessus.
 
