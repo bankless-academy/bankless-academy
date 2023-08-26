@@ -137,16 +137,30 @@ export default async function handler(
       // MINTING SECURITY CHECK
       // check in DB if > than 10 mints in the last 5 min + email alert
       const numberOfRecentTx = await db(TABLES.completions)
-        .select(TABLE.completions.id)
+        .select(TABLE.completions.id, TABLE.completions.user_id)
         .where(TABLE.completions.transaction_at, '>=', db.raw("NOW() - INTERVAL '5 MINUTE'"))
       console.log('numberOfRecentTx', numberOfRecentTx)
+      const numberOfRecentTxFromUser = numberOfRecentTx.filter(c => c.user_id === userId).length
+      console.log('numberOfRecentTxFromUser', numberOfRecentTxFromUser)
+      if (numberOfRecentTxFromUser >= 2) {
+        trackBE(address, 'badge_spam', {
+          error: numberOfRecentTxFromUser,
+          badgeId,
+          address,
+        })
+        questStatus = "Your account has been flagged as doing suspicious activity! Reminder: Lesson badges are a non-transferable digital proofs of your learning. They don't have any monetary value and will never give you access to airdrops."
+        return res.status(200).json({
+          status: questStatus,
+        })
+        // TODO: flag in DB
+      }
       if (numberOfRecentTx?.length >= 10) {
         trackBE(address, 'badge_overload', {
           error: numberOfRecentTx,
           badgeId,
           address,
         })
-        questStatus = 'Too many minting ... try again in 10 minutes.'
+        questStatus = "Too many minting ... try again later. Reminder: Lesson badges are non-transferable digital proofs of your learning. They don't have any monetary value and will never give you access to airdrops."
         return res.status(200).json({
           status: questStatus,
         })
