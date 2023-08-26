@@ -9,12 +9,13 @@ import {
 } from '@chakra-ui/react'
 import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
+import { useAccount, useNetwork } from 'wagmi'
+import { switchNetwork } from '@wagmi/core'
 
 import MintCollectibleModal from 'components/MintCollectibleModal'
 import { getLessonsCollectors, isHolderOfNFT } from 'utils'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
-import { useAccount } from 'wagmi'
 import { getLessonsCollected } from 'utils'
 import {
   IS_WHITELABEL,
@@ -140,10 +141,8 @@ const CollectLessonButton = ({
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const [numberIOwn, setNumberIOwn] = useState(1)
   const { address } = useAccount()
-  const [lessonsCollectedLS, setLessonsCollectedLS] = useLocalStorage(
-    'lessonsCollected',
-    []
-  )
+  const [, setLessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
+  const { chain } = useNetwork()
 
   useEffect(() => {
     const updateNFTCollected = async () => {
@@ -205,8 +204,8 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
           height="51px"
           onClick={async () => {
             onOpenMintCollectibleModal()
-            // if (chain?.id !== 10 && address)
-            //   await switchNetwork({ chainId: 10 })
+            if (chain?.id !== 10 && address)
+              await switchNetwork({ chainId: 10 })
           }}
         >
           <Box
@@ -230,10 +229,12 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
           <>
             <Box
               py="2"
-              opacity={lessonsCollectedLS ? '1' : '0.5'}
+              opacity={isBadgeMintedLS ? '1' : '0.6'}
               cursor="pointer"
               onClick={async () => {
                 onOpenMintCollectibleModal()
+                if (chain?.id !== 10 && address)
+                  await switchNetwork({ chainId: 10 })
               }}
             >
               <Collectible lesson={lesson} />

@@ -8,7 +8,7 @@ import {
   ModalBody,
   useMediaQuery,
   Box,
-  // Image,
+  Image,
   // NumberInput,
   // NumberInputField,
   // NumberDecrementStepper,
@@ -17,9 +17,11 @@ import {
   // Button,
   // Divider,
 } from '@chakra-ui/react'
-// import { Lock } from '@phosphor-icons/react'
+import { Lock } from '@phosphor-icons/react'
 
 import { LessonType } from 'entities/lesson'
+import Collectible from './Collectible'
+import { useLocalStorage } from 'usehooks-ts'
 // import Collectible from 'components/Collectible'
 
 const MintCollectibleModal = ({
@@ -34,6 +36,10 @@ const MintCollectibleModal = ({
   numberOfOwners: number
 }): React.ReactElement => {
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
+  const [isBadgeMintedLS] = useLocalStorage(
+    `isBadgeMinted-${lesson.badgeId}`,
+    false
+  )
   const remaining = 100 - numberOfOwners
   console.log(remaining)
   return (
@@ -64,32 +70,40 @@ const MintCollectibleModal = ({
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody padding={isMobileScreen ? '0' : 'default'}>
-          {/* <Box position="relative" h="20px">
+          {/* TODO: switch network */}
+          <Box position="relative" h="8px">
             <Image
               src="/images/minted-on-OP.png"
-              w="176px"
+              w="160px"
               position="absolute"
               top="-4px"
               right="10px"
             />
           </Box>
-          <Collectible lesson={lesson} />
+          <Box
+            mb={isBadgeMintedLS ? '-25px' : '0px'}
+            opacity={isBadgeMintedLS ? '1' : '0.6'}
+          >
+            <Collectible lesson={lesson} />
+          </Box>
           <Box w="90%" m="auto">
-            <Box
-              display="flex"
-              w="100%"
-              background="black"
-              height="48px"
-              borderRadius="8px"
-              alignContent="center"
-              justifyContent="center"
-              alignItems="center"
-              fontSize="lg"
-            >
-              <Lock />
-              <Box ml="1">Claim your lesson badge to unlock</Box>
-            </Box>
-            <Box
+            {isBadgeMintedLS ? null : (
+              <Box
+                display="flex"
+                w="100%"
+                background="black"
+                height="48px"
+                borderRadius="8px"
+                alignContent="center"
+                justifyContent="center"
+                alignItems="center"
+                fontSize="lg"
+              >
+                <Lock />
+                <Box ml="1">Claim your lesson badge to unlock</Box>
+              </Box>
+            )}
+            {/* <Box
               display="flex"
               pt="4"
               w="100%"
@@ -119,7 +133,6 @@ const MintCollectibleModal = ({
             </Box>
             <Box textAlign="center" pt="4">
               <Button size="lg" variant="primaryWhite">
-               // TODO: switch network
                 Mint DataDisk
               </Button>
             </Box>
@@ -145,8 +158,8 @@ const MintCollectibleModal = ({
                 h="100%"
                 w={`${numberOfOwners}%`}
               ></Box>
-            </Box>
-          </Box> */}
+            </Box> */}
+          </Box>
           {lesson.lessonCollectibleMintID && (
             <iframe
               src={`/mint.html?collection=${lesson.lessonCollectibleMintID}${
@@ -155,7 +168,7 @@ const MintCollectibleModal = ({
               frameBorder="0"
               style={{
                 width: isMobileScreen ? '100%' : '400px',
-                height: isMobileScreen ? '684px' : '660px',
+                height: isMobileScreen ? '378px' : '370px',
                 margin: 'auto',
                 colorScheme: 'none',
                 overflow: 'hidden',
