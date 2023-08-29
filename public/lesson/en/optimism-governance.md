@@ -6,7 +6,7 @@ LESSON WRITERS: Tetranome
 LANGUAGE: English
 TRANSLATORS: X
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 26/08/2023
+LAST UPDATED: 29/08/2023
 ---
 
 ```
@@ -41,7 +41,7 @@ The vision of `DAO` technology is to host streamlined problem solving and debate
 - Innovative voting, `delegation`, and `veto` mechanics.
 - Using blockchain technology to decrease the potential for human error or hijacking.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/old-problems-new-tools-1caefce6.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/old-problems-new-tools-88a65974.svg)
 
 # Network Governance
 
@@ -53,7 +53,7 @@ Like any real world nation-state with resources and participants, a DAO uses a g
 
 🛠️ **Implementation:** The approved proposal is applied to the network, by various incentivized developers if necessary.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/network-governance-ec1d1abb.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/network-governance-759d7774.svg)
 
 # Knowledge Check 1
 
@@ -83,7 +83,7 @@ In this lesson, we will explore how Optimism is pioneering the DAO vision. We wi
 
 Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-optimism-network-d43cccdf.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-optimism-network-d7a652fe.svg)
 
 # The Optimistic Vision
 
@@ -123,7 +123,7 @@ Many great blockchain projects begin with a centralized group. This gives the pr
 
 Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow **transfer of network ownership to the community**.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/progressive-decentralization-d2955246.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/progressive-decentralization-cb1fef1a.svg)
 
 # Knowledge Check 3
 
@@ -148,7 +148,7 @@ At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**.
 
 With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-new-economy-2981ffe5.png)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-new-economy-5fca1b12.svg)
 
 # Incentivizing the Public Goods Economy
 
@@ -161,7 +161,7 @@ _“It’s easier to agree on what was useful than what will be useful.”_
 
 This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-d0f6bb4e.svg)
 
 # Ether’s Phoenix
 
@@ -171,7 +171,7 @@ _“It is an algorithm that rewards the early cooperators who created conditions
 
 — The Optimism Foundation
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/ethers-phoenix-3bf9db24.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/ethers-phoenix-b2b884dd.svg)
 
 # Knowledge Check 4
 
@@ -203,7 +203,7 @@ There are two houses that make up the Optimism Collective, each with independent
 
 Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. Let’s take a closer look.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/introducing-the-governing-houses-92f32cfe.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/introducing-the-governing-houses-09299832.svg)
 
 # Knowledge Check 5
 
@@ -239,7 +239,7 @@ The Citizens’ House has the right to veto any proposal under the above categor
 
 The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be **reducing rights** of token holders.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-token-house-6d73a8ae.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-token-house-5dd95c69.svg)
 
 # Token House: Joining, Voting, Delegating
 
@@ -260,7 +260,7 @@ Anyone can become a Token House delegate on Optimism, representing a group of fr
 
 Network governance is only as democratic as its initial `token distribution` — meaning who received voting power in the first place. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced community representation.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-note-on-token-distribution-fe3b01b3.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-note-on-token-distribution-08d39044.svg)
 
 # Knowledge Check 6
 
@@ -292,7 +292,7 @@ Duties include:
 - 🔍 **Research and allocation of RetroPGF** to community projects which meet the guidelines.
 - 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-citizens-house-fd4eef9e.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-citizens-house-0724be8f.svg)
 
 # Citizens’ House: Joining, Voting, Delegating
 
@@ -332,7 +332,7 @@ On Optimism a season lasts roughly three months, followed by a reflection period
 
 The thoughtful feedback loops built across Optimism are incredibly important for finding best practices for `DAO` governance.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/governance-seasons-89773dbf.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/governance-seasons-faad83a2.svg)
 
 # Now… Think Even Bigger!
 
