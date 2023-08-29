@@ -1,6 +1,7 @@
 ---
 LESSON TITLE: Gouvernance d'Optimism
 LESSON DESCRIPTION: En savoir plus sur la gouvernance d'Optimism et comment s'impliquer.
+LESSON FORMAT: LESSON
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
 LESSON WRITERS: Tetranome
 LANGUAGE: Français
@@ -95,7 +96,7 @@ Optimism a une mission : faire évoluer Ethereum en construisant un réseau `Lay
 
 🏠 **Marché Libre :** Lancé comme une extension non seulement de l'`espace de bloc` [blockspace] d'Ethereum, mais aussi des principes d'Ethereum. Elle vise à développer la place de marché sans permission [permissionless], open-source et résistante à la censure d'Ethereum.
 
-Optimism vise à devenir un district de libre marché du cyberespace qui subvient directement aux besoins de ses citoyens et qui est gouverné par eux !
+Optimism aims to become a free-market district of cyberspace that directly provides for — and is governed by — its citizens!
 
 # Knowledge Check 2
 
