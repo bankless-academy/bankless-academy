@@ -6,7 +6,7 @@ LESSON WRITERS: Tetranome
 LANGUAGE: Français
 TRANSLATORS: Didier Krux
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 26/08/2023
+LAST UPDATED: 29/08/2023
 ---
 
 ```
@@ -41,7 +41,7 @@ La vision de la technologie `DAO` est de résoudre des problèmes et le débat e
 - Vote innovant, `délégation` et des mécanismes de `veto`.
 - Utiliser la technologie chaîne de blocs [blockchain] pour diminuer le potentiel d'erreur humaine ou de détournement [hijacking].
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/old-problems-new-tools-1caefce6.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/old-problems-new-tools-88a65974.svg)
 
 # Gouvernance du Réseau
 
@@ -53,7 +53,7 @@ Comme tout État-nation du monde réel disposant de ressources et de participant
 
 🛠️ **Mise en œuvre :** La proposition approuvée est appliquée au réseau, par divers développeurs incités si nécessaire.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/network-governance-ec1d1abb.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/network-governance-759d7774.svg)
 
 # Knowledge Check 1
 
@@ -83,7 +83,7 @@ Dans cette leçon, nous allons explorer comment Optimism est le pionnier de la v
 
 Notre quête se concentrera sur la revendication de nos premiers droits de vote, afin que nous soyons prêts à aider à construire l'avenir d'Ethereum et de la coordination humaine !
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-optimism-network-d43cccdf.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-optimism-network-d7a652fe.svg)
 
 # La Vision d'Optimism
 
@@ -123,7 +123,7 @@ De nombreux grands projets de blockchain commencent avec un groupe centralisé. 
 
 Les vérifications et équilibres légaux, tels que la capacité du Collectif à retirer des membres de la Fondation, assurent un **transfert lent de la propriété du réseau à la communauté**.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/progressive-decentralization-d2955246.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/progressive-decentralization-cb1fef1a.svg)
 
 # Knowledge Check 3
 
@@ -148,7 +148,7 @@ Au centre de l'économie d'Optimism `L2` se trouve le **"Volant d'Inertie Optimi
 
 Avec une infrastructure onchain de plus grande valeur, la demande d'espace de blocs Optimism augmente, et le cycle continue !
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-new-economy-2981ffe5.png)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-new-economy-5fca1b12.svg)
 
 # Incitation à l'Économie de Biens Publics
 
@@ -160,7 +160,7 @@ Comme l'a dit Vitalik Buterin, _"Il est plus facile de se mettre d'accord sur ce
 
 Ce modèle de distribution est connu sous le nom de **"Retroactive Public Goods Funding"** [Financement Rétroactif de Bien Public], ou **"RetroPGF"**. Ce mécanisme de financement incite les penseurs optimistes à créer des biens publics au service de l'humanité. Il nous libère de la mentalité d'extraction de valeur des économies capitalistes traditionnelles.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-d0f6bb4e.svg)
 
 # Le Phénix d'Ether
 
@@ -170,7 +170,7 @@ _"Il s'agit d'un algorithme qui récompense les premiers coopérateurs qui ont c
 
 — La fondation Optimism
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/ethers-phoenix-3bf9db24.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/ethers-phoenix-b2b884dd.svg)
 
 # Knowledge Check 4
 
@@ -202,7 +202,7 @@ Le Collectif Optimism est composé de deux maisons, chacune ayant des responsabi
 
 Les deux maisons maintiennent l'équilibre du réseau à travers leurs fonctions, les mécanismes de vote et les capacités de `veto`. Voyons cela de plus près.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/introducing-the-governing-houses-92f32cfe.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/introducing-the-governing-houses-09299832.svg)
 
 # Knowledge Check 5
 
@@ -238,7 +238,7 @@ La Maison des Citoyens a le droit d'opposer son veto à toute proposition releva
 
 La Maison des Jetons a également la possibilité d'opposer son veto à toute proposition soumise par la Maison des Citoyens ou la Fondation Optimism, qui serait considérée comme **réduisant les droits** des détenteurs de jetons.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-token-house-6d73a8ae.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-token-house-5dd95c69.svg)
 
 # La Maison des Jetons : Adhérer, voter, déléguer
 
@@ -259,7 +259,7 @@ Tout le monde peut devenir un délégué de la Maison de Jeton sur Optimism, rep
 
 La gouvernance du réseau n'est démocratique que dans la mesure où la `distribution initiale de jetons` — c'est-à-dire qui a reçu le droit de vote en premier lieu. Consultez le [plan de distribution des jetons OP](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) pour voir comment la Fondation Optimism a alloué un pouvoir de gouvernance initial, au service d'une représentation communautaire équilibrée.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-note-on-token-distribution-fe3b01b3.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-note-on-token-distribution-08d39044.svg)
 
 # Knowledge Check 6
 
@@ -291,7 +291,7 @@ Les devoirs comprennent :
 - 🔍 **Recherche et allocation de RetroPGF** aux projets communautaires qui respectent les lignes directrices.
 - 👬 **Sélection de nouveaux citoyens** pour aider à gouverner la Maison des Citoyens et équilibrer la perspective de la Maison des Jetons. La Maison des Jetons dispose d'un droit de veto sur ce type de proposition.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-citizens-house-fd4eef9e.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-citizens-house-0724be8f.svg)
 
 # La Maison des Citoyens : Adhérer, Voter, Déléguer
 
@@ -331,7 +331,7 @@ Avec Optimism, une saison dure environ trois mois, suivie d'une période de réf
 
 Le cycle rétroactif construit à travers Optimism sont incroyablement importantes pour trouver les meilleures pratiques pour la gouvernance du `DAO`.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/governance-seasons-89773dbf.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/governance-seasons-faad83a2.svg)
 
 # Maintenant… Voyez encore plus grand !
 
