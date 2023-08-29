@@ -78,9 +78,10 @@ const LESSON_SPLITTER = `\`\`\`
 \`\`\`
 ---`
 
-const mdHeader = (lesson) => `---
+const mdHeader = (lesson, format) => `---
 LESSON TITLE: ${lesson.name}
 LESSON DESCRIPTION: ${lesson.description}
+LESSON FORMAT: ${format}
 LESSON LINK: https://app.banklessacademy.com/lessons/${lesson.slug}
 LESSON WRITERS: ${lesson.lessonWriters || ''}
 LANGUAGE: English
@@ -293,7 +294,7 @@ axios
               }`,
             variables: { "digest": mirrorId }
           }
-        }).then((result) => {
+        }).then(async (result) => {
           const arweaveTxId = result?.data?.data?.transactions?.edges[0]?.node?.id
           console.log('Mirror article: ', arweaveTxId)
           if (arweaveTxId) {
@@ -320,6 +321,8 @@ axios
                   }
                 }
 
+                // TODO: save mirror images locally
+
                 if (lesson.lessonImageLink) {
                   lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
                 }
@@ -330,7 +333,77 @@ axios
                   lesson.sponsorLogo = get_img(lesson.sponsorLogo, lesson.slug, 'sponsor')
                 }
 
+                lesson.imageLinks = []
                 lessons[index] = lesson
+                if (MD_ENABLED) {
+                  // console.log(lesson.articleContent)
+                  let lessonContentMD = lesson.articleContent
+                  try {
+                    // HACK: replace image
+                    const imageRegex = /!\[.*?\]\((.*?)\)/g;
+                    let match
+                    while ((match = imageRegex.exec(lessonContentMD)) !== null) {
+                      const imageLink = match[1]
+                      const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/)[1]
+                      // create "unique" hash based on Notion imageLink (different when re-uploaded)
+                      const hash = crc32(imageLink)
+                      const image_dir = `/${PROJECT_DIR}lesson/images/${lesson.slug}`
+                      const local_image_dir = `public${image_dir}`
+                      // create image directory dynamically in case it doesn't exist yet
+                      if (!fs.existsSync(local_image_dir)) {
+                        fs.mkdirSync(local_image_dir)
+                      }
+                      const image_path = `${image_dir}/image-${hash}.${file_extension}`
+                      const local_image_path = `public${image_path}`
+                      lesson.imageLinks.push(image_path)
+                      if (!fs.existsSync(local_image_path)) {
+                        download_image(imageLink, local_image_path)
+                        console.log('downloading image: ', local_image_path)
+                      }
+                      lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${image_path}`)
+                    }
+                    lesson.articleContent = lessonContentMD.replaceAll('https://app.banklessacademy.com/lesson/images/', '/lesson/images/')
+                    // write/update file
+                    const lessonPath = `public/lesson/en/${lesson.slug}.md`
+                    const lessonHeader = mdHeader(lesson, 'HANDBOOK')
+                    if (fs.existsSync(lessonPath)) {
+                      const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
+                      if (lessonFile) {
+                        // eslint-disable-next-line no-unsafe-optional-chaining
+                        const [previousLessonHeader, previousLessonContentMD] = lessonFile?.split(LESSON_SPLITTER)
+                        // console.log(previousLessonContentMD.trim())
+                        // console.log(lessonContentMD.trim())
+                        // If content has changed
+                        const plh = previousLessonHeader?.split('LAST UPDATED:')[0]
+                        const lh = lessonHeader?.split('LAST UPDATED:')[0]
+                        if (plh.trim() !== lh.trim() ||
+                          previousLessonContentMD.trim() !== lessonContentMD.trim()
+                        ) {
+                          fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
+                            if (error) throw error
+                          })
+                          console.log(
+                            `"${lesson.name}" updated in ${lessonPath}`
+                          )
+                        }
+                        else console.log(
+                          `"${lesson.name}" is unchanged`
+                        )
+                      }
+                    }
+                    else {
+                      fs.writeFile(lessonPath, `${lessonHeader}${lessonContentMD}`, (error) => {
+                        if (error) throw error
+                      })
+                      console.log(
+                        `"${lesson.name}" exported in ${lessonPath}`
+                      )
+                    }
+
+                  } catch (error) {
+                    console.log(error)
+                  }
+                }
               })
           }
         })
@@ -563,7 +636,7 @@ axios
               }
               // write/update file
               const lessonPath = `public/lesson/en/${lesson.slug}.md`
-              const lessonHeader = mdHeader(lesson)
+              const lessonHeader = mdHeader(lesson, "LESSON")
               if (fs.existsSync(lessonPath)) {
                 const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
                 if (lessonFile) {
