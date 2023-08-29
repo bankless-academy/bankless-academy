@@ -1,12 +1,13 @@
 ---
 LESSON TITLE: Conceptos Básicos de Blockchain
 LESSON DESCRIPTION: Aprende sobre la arquitectura fundamental de la tecnología de cadena de bloques [blockchain].
+LESSON FORMAT: LESSON
 LESSON LINK: https://app.banklessacademy.com/lessons/blockchain-basics
 LESSON WRITERS:
 LANGUAGE: English
 TRANSLATORS: X
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 25/08/2023
+LAST UPDATED: 29/08/2023
 ---
 
 ```
