@@ -4,10 +4,10 @@ LESSON DESCRIPTION: Aprende sobre la arquitectura fundamental de la tecnología 
 LESSON FORMAT: LESSON
 LESSON LINK: https://app.banklessacademy.com/lessons/blockchain-basics
 LESSON WRITERS:
-LANGUAGE: English
+LANGUAGE: Español
 TRANSLATORS: X
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 29/08/2023
+LAST UPDATED: 02/08/2023
 ---
 
 ```
