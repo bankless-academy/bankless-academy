@@ -7,7 +7,7 @@ LESSON WRITERS:
 LANGUAGE: English
 TRANSLATORS: X
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 29/08/2023
+LAST UPDATED: 30/08/2023
 ---
 
 ```
@@ -31,7 +31,7 @@ ________________________________________________________________________________
 << LESSON START >>
 ```
 ---
-## **Key Takeaways**
+## Key Takeaways
 
 > * Stablecoins are the blockchain equivalent of fiat currency, like the dollar or euro.
 > 
@@ -51,7 +51,7 @@ Here’s why they’re in demand:
 
 * **Stability:** Holding stablecoins in your self-custody wallet is like holding fiat currency, but on the blockchain. When holding a stablecoin like Circle’s U.S. dollar (USDC), you can expect it to maintain 1:1 value with the U.S. dollar while the prices of assets like ether and bitcoin fluctuate.
 
-* **Flexibility:** Because this pegged value exists as an ERC20 token on the blockchain, it’s easy to move between fiat value and crypto value.
+* **Flexibility:** Because this pegged value exists as an ERC-20 token on the blockchain, it’s easy to move between fiat value and crypto value.
 
 * **Access:** Stablecoins provide access to a range of decentralized financial services, like permissionless borrowing or lending to earn interest.
 
