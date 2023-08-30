@@ -7,7 +7,7 @@ LESSON WRITERS:
 LANGUAGE: English
 TRANSLATORS: X
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 29/08/2023
+LAST UPDATED: 30/08/2023
 ---
 
 ```
@@ -31,9 +31,7 @@ ________________________________________________________________________________
 << LESSON START >>
 ```
 ---
-###
-
-Key Takeaways
+## Key Takeaways
 
 > * There are a number of ways to fund your wallet on an Ethereum scaling solution like Optimism, Arbitrum, or Polygon.
 > 
