@@ -87,6 +87,9 @@ const LessonDetail = ({
       lesson.lessonCollectibleTokenAddress.toLowerCase()
     )
 
+  const tallyId =
+    lesson.endOfLessonRedirect?.replace('https://tally.so/r/', '') || ''
+
   return (
     <>
       {JSON.parse(openLessonLS)?.includes(lesson.slug) ? (
@@ -244,6 +247,31 @@ const LessonDetail = ({
                   </Box>
                 </Box>
               )}
+              {lesson.endOfLessonRedirect &&
+                isQuizComplete &&
+                Quest?.isQuestCompleted && (
+                  <>
+                    <Box pb="8">
+                      <Text
+                        as="h2"
+                        fontSize="2xl"
+                        fontWeight="bold"
+                        borderBottom="1px solid #989898"
+                        pb="2"
+                      >
+                        Feedback
+                      </Text>
+                    </Box>
+                    <Box>{lesson.endOfLessonText}</Box>
+                    <Box textAlign="center">
+                      <InternalLink href={`/feedback?tally=${tallyId}`}>
+                        <Button variant="primaryBig" size="lg">
+                          Leave feedback
+                        </Button>
+                      </InternalLink>
+                    </Box>
+                  </>
+                )}
               {lesson.badgeId && (
                 <>
                   <Box pb="8">
