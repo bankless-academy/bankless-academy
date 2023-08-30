@@ -36,7 +36,7 @@ ________________________________________________________________________________
 
 Les technologies modernes ont radicalement changé la façon dont les humains se perçoivent et interagissent les uns avec les autres. Sur la scène internationale et dans un cyberespace sans frontières, nous avons besoin de nouveaux modèles de coordination pour coexister et prospérer en tant que tribu mondiale.
 
-The vision of `DAO` technology is to streamline problem-solving and debate between a large number of collaborators — whether on the internet, in your local community, or on an international scale. Pour ce faire, il faut :
+La vision de la technologie `DAO` est de rationaliser la résolution de problèmes et les débats entre un grand nombre de collaborateurs - que ce soit sur Internet, dans votre communauté locale ou à l'échelle internationale. Pour ce faire, il faut :
 
 - Inciter les participants à partager une mission commune.
 - Vote innovant, `délégation` et des mécanismes de `veto`.
@@ -46,11 +46,11 @@ The vision of `DAO` technology is to streamline problem-solving and debate betwe
 
 # Gouvernance du Réseau
 
-Like any traditional nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. C'est comme un hôtel de ville, mais `asynchrone`, global et partiellement médiatisé par code.
+Comme tout État-nation traditionnel disposant de ressources et de participants, une DAO utilise un processus de gouvernance pour piloter le déploiement de ses ressources et la réalisation de sa mission. C'est comme un hôtel de ville, mais `asynchrone`, global et partiellement médiatisé par code.
 
-📜 **Proposition :** Elle commence par une proposition de gouvernance et une discussion au sein de la communauté. La proposition est mise à jour en fonction des retours du public. Tout le monde peut soumettre une proposition ou en critiquer une. This is the ‘decentralized’ part of ‘`DAO`’.
+📜 **Proposition :** Elle commence par une proposition de gouvernance et une discussion au sein de la communauté. La proposition est mise à jour en fonction des retours du public. Tout le monde peut soumettre une proposition ou en critiquer une. Il s'agit de la partie « décentralisée » de «`DAO`».
 
-🗳️ **Vote :** La proposition fait l'objet d'un vote - organisé via le processus transparent et résistant à la censure de `gouvernance onchain`. Il n'y a pas de facilitation humaine entre l'ouverture et la clôture du vote ; tout est médiatisé par le code. This is the ‘autonomous’ part of ‘`DAO`’ — a quality envisioned to eventually cover the entire governance process.
+🗳️ **Vote :** La proposition fait l'objet d'un vote - organisé via le processus transparent et résistant à la censure de `gouvernance onchain`. Il n'y a pas de facilitation humaine entre l'ouverture et la clôture du vote ; tout est médiatisé par le code. Ceci est la partie «autonome» de «`DAO`» — une qualité envisagée pour couvrir éventuellement l’ensemble du processus de gouvernance.
 
 🛠️ **Mise en œuvre :** La proposition approuvée est appliquée au réseau, par divers développeurs incités si nécessaire.
 
@@ -80,7 +80,7 @@ Comment la gouvernance onchain peut-elle contribuer à résoudre le débat inter
 
 Les `DAO` , comme `le collectif Optimism` , sont à la frontière de l'exploration de tels systèmes de coordination.
 
-Dans cette leçon, nous allons explorer comment Optimism est le pionnier de la vision des DAO. We will learn about their mission, and how they’re building new coordination frameworks for humanity.
+Dans cette leçon, nous allons explorer comment Optimism est le pionnier de la vision des DAO. Nous en apprendrons plus sur leur mission et sur la manière dont ils construisent de nouveaux cadres de coordination pour l'humanité.
 
 Notre quête se concentrera sur la revendication de nos premiers droits de vote, afin que nous soyons prêts à aider à construire l'avenir d'Ethereum et de la coordination humaine !
 
@@ -88,35 +88,35 @@ Notre quête se concentrera sur la revendication de nos premiers droits de vote,
 
 # La Vision d'Optimism
 
-Optimism a une mission : faire évoluer Ethereum en construisant un réseau `Layer 2` . It’s part of the Ethereum ecosystem, but with lower fees and faster transactions — while maintaining Ethereum’s high standard of security. Voici les propriétés qui le définissent :
+Optimism a une mission : faire évoluer Ethereum en construisant un réseau `Layer 2` . Il fait partie de l'écosystème Ethereum, mais avec des frais réduits et des transactions plus rapides — tout en maintenant le niveau élevé de sécurité d'Ethereum. Voici les propriétés qui le définissent :
 
-🏕️ **Biens Publics [Public Goods] :** L'accent est mis sur le financement et la construction `de biens publics` sur la blockchain [onchain]. These are free-to-access, infinite resources/facilities available to all network citizens. Votre éducation gratuite à la Bankless Academy a été rendue possible grâce au soutien d'Optimism aux biens publics !
+🏕️ **Biens Publics [Public Goods] :** L'accent est mis sur le financement et la construction `de biens publics` sur la blockchain [onchain]. Il s'agit de ressources et d'installations gratuites et infinies à la disposition de tous les citoyens du réseau. Votre éducation gratuite à la Bankless Academy a été rendue possible grâce au soutien d'Optimism aux biens publics !
 
 🧑‍🤝‍🧑 **Gouvernance Communautaire :** Optimism est dirigé par sa communauté.
 
 🏠 **Marché Libre :** Lancé comme une extension non seulement de l'`espace de bloc` [blockspace] d'Ethereum, mais aussi des principes d'Ethereum. Elle vise à développer la place de marché sans permission [permissionless], open-source et résistante à la censure d'Ethereum.
 
-Optimism aims to become a free-market district of cyberspace that directly provides for — and is governed by — its citizens!
+Optimism vise à devenir un district de libre marché du cyberespace qui subvient directement aux besoins de ses citoyens et qui est gouverné par eux !
 
 # Knowledge Check 2
 
 Quelle est la meilleure définition d'un "bien public" [public good] ?
 
-- [ ] A small restricted facility.
+- [ ] Une petite installation limitée.
 
-> ℹ️ Réessayez ! This defines private property, like someone’s home.
+> ℹ️ Réessayez ! Il s'agit d'une propriété privée, comme le domicile d'une personne.
 
-- [ ] An unlimited service shared amongst a specific group of people.
+- [ ] Un service illimité partagé entre un groupe spécifique de personnes.
 
-> ℹ️ Réessayez ! This defines a club good, like a cinema or toll road.
+> ℹ️ Réessayez ! Il s'agit d'un bien de club, comme un cinéma ou une route à péage.
 
-- [ ] An open resource that cannot run out.
+- [ ] Une ressource publique qui ne peut être épuisée.
 
-> ℹ️ Correct ! This defines a public good, like software or knowledge.
+> ℹ️ Correct ! Il s'agit d'un bien public, comme les logiciels ou les connaissances.
 
-- [ ] Free access to a shared but limited city resource.
+- [ ] Accès gratuit à une ressource de ville partagée mais limitée.
 
-> ℹ️ Réessayez ! This defines commons, like roads, or a lake.
+> ℹ️ Réessayez ! Cela définit les biens communs, comme les routes ou les lacs.
 
 # Décentralisation Progressive
 
@@ -215,7 +215,7 @@ En quoi la Maison des Citoyens diffère-t-elle de la Maison des Jetons ?
 
 - [] La Maison des Citoyens est la seule à disposer d'un droit de veto.
 
-> ℹ️ Try again! Les deux chambres disposent d'un droit de veto.
+> ℹ️ Réessayez ! Les deux chambres disposent d'un droit de veto.
 
 - [La Maison des Citoyens attribue les récompenses RetroPGF.
 
@@ -223,7 +223,7 @@ En quoi la Maison des Citoyens diffère-t-elle de la Maison des Jetons ?
 
 - [ ] La Maison des Citoyens dirige la décentralisation du réseau.
 
-> ℹ️  Try again! Les deux chambres maintiennent la décentralisation.
+> ℹ️ Réessayez ! Les deux chambres maintiennent la décentralisation.
 
 - [ ] Toutes les réponses ci-dessus.
 
@@ -344,7 +344,7 @@ Nous sommes presque prêts à gouverner avec Optimism 🔴. Il y a une dernière
 
 La Vision Optimiste ne s'arrête pas à une seule blockchain `L2` . Grâce à la capacité de `forker` une blockchain, il s'agit d'une expérience de gouvernance clonable. Cette technologie est conçue pour être mise à l'échelle sur plusieurs L2 — et même dans des scénarios de gouvernance mondiale réels. Optimisme appelle ceci **« La Superchaine »** [Superchain].
 
-Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 L2 blockchain. Cette mise en commun des ressources de développement accroît l'évolution des infrastructures, tout en canalisant les frais de transaction de la L2 vers l'éthique "Impact = Profit".
+Coinbase, un important `CEX`, a déjà forké et commencé à contribuer à cette initiative `open source`, par le biais de la blockchain L2 Base 🔵. Cette mise en commun des ressources de développement accroît l'évolution des infrastructures, tout en canalisant les frais de transaction de la L2 vers l'éthique "Impact = Profit".
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/now-think-even-bigger-0f29ab97.svg)
 
