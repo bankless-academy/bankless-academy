@@ -38,6 +38,9 @@
   "block hash": {
     "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
   },
+  "block producer": {
+    "definition": "The user whose hardware is chosen to verify a block's transactions and begin the next block on most Proof-of-Stake (PoS) blockchains."
+  },
   "block reward": {
     "definition": "The amount of a blockchain’s native asset given to the proposer of a new valid block."
   },
@@ -111,7 +114,7 @@
     "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
   },
   "delegation": {
-    "definition": "Giving a specific responsibility to another person."
+    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
   },
   "dex": {
     "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
@@ -131,11 +134,17 @@
   "erc-20": {
     "definition": "A standard for transferable tokens on Ethereum."
   },
+  "erc-721": {
+    "definition": "A standard for non-transferable tokens on Ethereum."
+  },
   "ethereum virtual machine": {
     "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network."
   },
   "fomo": {
-    "definition": "Fear Of Missing Out. Anxiety or apprehension about missing out on or not getting things."
+    "definition": "(Fear Of Missing Out) Anxiety or apprehension about not being included in something."
+  },
+  "fork": {
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
   "fraud proof": {
     "definition": "Evidence that a transaction is invalid and that fraud has occurred."
@@ -214,6 +223,9 @@
   },
   "onchain governance": {
     "definition": "The system that mediates changes to a blockchain’s structure."
+  },
+  "open source": {
+    "definition": "Software with source code that anyone can inspect, modify, and enhance."
   },
   "optimistic rollup": {
     "definition": "A layer 2 rollup scaling solution that optimistically assumes all transactions in its “rolled up” transaction are valid until they are proven false by a fraud proof."
@@ -335,6 +347,9 @@
   "token allowance": {
     "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
   },
+  "token distribution": {
+    "definition": "The way in which tokens are allocated across different stakeholder groups."
+  },
   "token pair": {
     "definition": "The two associated cryptocurrencies that make up a liquidity pool."
   },
@@ -361,6 +376,9 @@
   },
   "transaction throughput": {
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
+  },
+  "trustless": {
+    "definition": "The quality of operating without need to trust in people or institutions. (Automatic, not owned by any one person)."
   },
   "tvl": {
     "definition": "(Total Value Locked) The overall amount of asset value stored in a specific place."
