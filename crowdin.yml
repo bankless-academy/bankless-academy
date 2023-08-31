@@ -22,5 +22,5 @@ files:
       - managing-token-allowances.md
       - the-stablecoin-guide.md
     translation: /translation/lesson/%two_letters_code%/%original_file_name%
-  - source: /translation/ui/en/*.json
-    translation: /translation/ui/%two_letters_code%/%original_file_name%
+  - source: /translation/website/en/*.json
+    translation: /translation/website/%two_letters_code%/%original_file_name%
