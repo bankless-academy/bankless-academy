@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "import-content": "node import-content.js",
+    "import-translations": "node import-translations.js",
     "import-keywords": "node import-keywords.js",
     "import-modules": "node import-modules.js",
     "import-config": "node import-config.js",
