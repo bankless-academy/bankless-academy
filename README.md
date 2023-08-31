@@ -133,6 +133,6 @@ yarn import-keywords 623e965e4f10456094d17aa94ec37105
 ## How to get started for devs
 
 - Get familiar with the project
-- Check [open issues](https://github.com/BanklessDAO/onboard/issues) and assign yourself
+- Check [open issues](https://github.com/bankless-academy/bankless-academy/issues) and assign yourself
 - Create and submit a PR
 - Assign [@didierkrux](https://github.com/didierkrux) as reviewers

@@ -16,5 +16,9 @@ files:
       - intro-to-defi.md
       - layer-1-blockchains.md
       - layer-2-blockchains.md
-      - web3-security.md
+      - how-to-delegate-on-optimism.md
+      - how-to-fund-a-wallet-on-layer-2.md
+      - how-to-swap-on-a-decentralized-exchange.md
+      - managing-token-allowances.md
+      - the-stablecoin-guide.md
     translation: /public/lesson/%two_letters_code%/%original_file_name%

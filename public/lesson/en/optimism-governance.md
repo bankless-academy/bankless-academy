@@ -1,12 +1,13 @@
 ---
 LESSON TITLE: Optimism Governance
-LESSON DESCRIPTION: 
+LESSON DESCRIPTION: Learn about Optimism governance and how to get involved.
+LESSON FORMAT: LESSON
 LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
 LESSON WRITERS: Tetranome
 LANGUAGE: English
 TRANSLATORS: X
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 25/08/2023
+LAST UPDATED: 30/08/2023
 ---
 
 ```
@@ -35,25 +36,25 @@ ________________________________________________________________________________
 
 Modern technology has drastically changed the way in which humans view and interact with each other. On the world stage, and in a borderless cyberspace, we need new coordination models in order to coexist and thrive as a global tribe.
 
-The vision of `DAO` technology is to host streamlined problem solving and debate between a large number of collaborators — whether on the internet, in your local community, or on an international scale. This is done by:
+The vision of `DAO` technology is to streamline problem-solving and debate between a large number of collaborators — whether on the internet, in your local community, or on an international scale. This is done by:
 
 - Incentivizing participants to share a common mission.
 - Innovative voting, `delegation`, and `veto` mechanics.
 - Using blockchain technology to decrease the potential for human error or hijacking.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/old-problems-new-tools-1caefce6.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/old-problems-new-tools-1662dfbf.svg)
 
 # Network Governance
 
-Like any real world nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but `asynchronous`, global, and partially mediated by code.
+Like any traditional nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but `asynchronous`, global, and partially mediated by code.
 
-📜 **Proposal:** It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. **This is the ‘decentralized’ part of ‘****`DAO`****’.**
+📜 **Proposal:** It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘`DAO`’.
 
-🗳️ **Vote:** The proposal moves to a vote — hosted via the transparent, censorship-resistant process of `onchain governance`. There is zero human facilitation between vote open and close; It is all mediated by code. **This is the ‘autonomous’ part of ‘****`DAO`****’** — a quality envisioned to eventually cover the entire governance process.
+🗳️ **Vote:** The proposal moves to a vote — hosted via the transparent, censorship-resistant process of `onchain governance`. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘`DAO`’ — a quality envisioned to eventually cover the entire governance process.
 
 🛠️ **Implementation:** The approved proposal is applied to the network, by various incentivized developers if necessary.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/network-governance-ec1d1abb.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/network-governance-161475d9.svg)
 
 # Knowledge Check 1
 
@@ -79,53 +80,55 @@ How can onchain governance help to solve interhuman debate?
 
 `DAOs` like the `Optimism Collective` are at the frontier of exploring such coordination systems. 
 
-In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new frameworks for human coordination in order to achieve it.
+In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.
 
 Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-optimism-network-d43cccdf.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-optimism-network-99428791.svg)
 
 # The Optimistic Vision
 
-Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It’s part of the Ethereum ecosystem but with lower fees, faster transactions, and Ethereum’s high standard of security. Here are the defining properties:
+Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It’s part of the Ethereum ecosystem, but with lower fees and faster transactions — while maintaining Ethereum’s high standard of security. Here are the defining properties:
 
-🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. These are free-to-access, infinite resources and facilities available to all network citizens. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
+🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. These are free-to-access, infinite resources/facilities available to all network citizens. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
 
 🧑‍🤝‍🧑 **Community Governance:** Optimism is lead by its community.
 
 🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
 
-Optimism aims to become a free market district of cyberspace that directly provides for — and is governed by — its citizens!
+Optimism aims to become a free-market district of cyberspace that directly provides for — and is governed by — its citizens!
 
 # Knowledge Check 2
 
 What definition best fits a ‘public good’?
 
-- [ ] An unlimited good shared amongst a specific group of people.
+- [ ] A small restricted facility.
 
-> ℹ️ Try again! This defines a closed, infinite good, like a cinema or toll road.
+> ℹ️ Try again! This defines private property, like someone’s home.
 
-- [ ] An openly public resource that cannot run out.
+- [ ] An unlimited service shared amongst a specific group of people.
 
-> ℹ️ Correct! This defines an open, infinite good, like software or knowledge.
+> ℹ️ Try again! This defines a club good, like a cinema or toll road.
 
-- [ ] Free, limited access to a public service.
+- [ ] An open resource that cannot run out.
 
-> ℹ️ Try again! This defines an open, finite service, like socialized healthcare.
+> ℹ️ Correct! This defines a public good, like software or knowledge.
+
+- [ ] Free access to a shared but limited city resource.
+
+> ℹ️ Try again! This defines commons, like roads, or a lake.
 
 # Progressive Decentralization
 
-Many great blockchain projects begin with a centralized group and vision. This gives the project crucial focus in building and spending, but a global community needs more than promises of eventual decentralization to truly be a `DAO`.
+Many great blockchain projects begin with a centralized group. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization**. On Optimism, the founders, network, and community are thought of as follows:
 
-On Optimism, the network, founders, and community are thought of as follows:
-
-- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts.
 - 🏦 **Optimism Foundation:** The network founders. They kickstart the ecosystem, provide initial resources, and act as community steward, before eventually dissolving.
+- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts and processing of user input.
 - 👬 **Optimism Collective:** The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem. The term ‘DAO’ covers both the Collective and the Network.
 
-Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow transfer of network ownership to the community.
+Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow **transfer of network ownership to the community**.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/progressive-decentralization-d2955246.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/progressive-decentralization-5f487c1b.svg)
 
 # Knowledge Check 3
 
@@ -150,7 +153,7 @@ At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**.
 
 With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-new-economy-2981ffe5.png)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-new-economy-41fc0d66.svg)
 
 # Incentivizing the Public Goods Economy
 
@@ -163,7 +166,7 @@ _“It’s easier to agree on what was useful than what will be useful.”_
 
 This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-adc49d00.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/incentivizing-the-public-goods-economy-123cdbec.svg)
 
 # Ether’s Phoenix
 
@@ -173,7 +176,7 @@ _“It is an algorithm that rewards the early cooperators who created conditions
 
 — The Optimism Foundation
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/ethers-phoenix-3bf9db24.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/ethers-phoenix-023606f1.svg)
 
 # Knowledge Check 4
 
@@ -205,7 +208,7 @@ There are two houses that make up the Optimism Collective, each with independent
 
 Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. Let’s take a closer look.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/introducing-the-governing-houses-992f67be.png)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/introducing-the-governing-houses-09299832.svg)
 
 # Knowledge Check 5
 
@@ -241,11 +244,11 @@ The Citizens’ House has the right to veto any proposal under the above categor
 
 The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be **reducing rights** of token holders.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-token-house-6d73a8ae.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-token-house-ffa12a64.svg)
 
 # Token House: Joining, Voting, Delegating
 
-📝 **Joining:** the Token House is done via purchasing and holding OP tokens. These are `ERC20` tokens, and are therefore transferrable; They can be bought and sold on `CEXs`, Optimism `DEXs`, or sent between friends. OP tokens are not available on other networks.
+📝 **Joining:** the Token House is done via purchasing and holding OP tokens. These are `ERC-20` tokens, and are therefore transferrable; They can be bought and sold on `CEXs`, Optimism `DEXs`, or sent between friends. OP tokens are not available on other networks.
 
 🗳️ **Voting:** Voting power scales based on how many tokens are held.
 
@@ -262,7 +265,7 @@ Anyone can become a Token House delegate on Optimism, representing a group of fr
 
 Network governance is only as democratic as its initial `token distribution` — meaning who received voting power in the first place. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced community representation.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-note-on-token-distribution-fe3b01b3.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/a-note-on-token-distribution-45e8fc75.svg)
 
 # Knowledge Check 6
 
@@ -278,7 +281,7 @@ How does the Token House protect the network from attack?
 
 - [ ] By carefully reviewing network upgrade proposals.
 
-> ℹ️  This is true, but it isn’t the only answer.
+> ℹ️ This is true, but it isn’t the only answer.
 
 - [ ] All of the above.
 
@@ -290,11 +293,11 @@ The Citizens’ House conducts the growth of public infrastructure on the Optimi
 
 Duties include:
 
-- 🎯 **Defining RetroPGF metrics and impact** criteria for measuring project performance.
+- 🎯 **Defining RetroPGF metrics and impact criteria** for measuring project performance.
 - 🔍 **Research and allocation of RetroPGF** to community projects which meet the guidelines.
 - 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-citizens-house-fd4eef9e.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/the-citizens-house-0724be8f.svg)
 
 # Citizens’ House: Joining, Voting, Delegating
 
@@ -334,7 +337,7 @@ On Optimism a season lasts roughly three months, followed by a reflection period
 
 The thoughtful feedback loops built across Optimism are incredibly important for finding best practices for `DAO` governance.
 
-![](https://app.banklessacademy.com/lesson/images/optimism-governance/governance-seasons-89773dbf.svg)
+![](https://app.banklessacademy.com/lesson/images/optimism-governance/governance-seasons-4ebc291c.svg)
 
 # Now… Think Even Bigger!
 
@@ -342,7 +345,7 @@ We’re almost ready to govern on Optimism 🔴. There’s one last thing to men
 
 The Optimistic Vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **‘The Superchain’**.
 
-Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards the ‘Impact = Profit’ ethos.
+Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 L2 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards the ‘Impact = Profit’ ethos.
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/now-think-even-bigger-0f29ab97.svg)
 

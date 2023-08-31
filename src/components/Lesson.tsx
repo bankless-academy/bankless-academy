@@ -293,15 +293,16 @@ const Lesson = ({
       scrollTop()
       if (lesson.endOfLessonRedirect) {
         if (lesson.endOfLessonRedirect.includes('https://tally.so/r/')) {
-          // redirect to embeded Tally form
-          const tallyId = lesson.endOfLessonRedirect.replace(
-            'https://tally.so/r/',
-            ''
-          )
-          router.push(`/feedback?tally=${tallyId}`)
-        } else {
-          // generic redirect
-          document.location.href = lesson.endOfLessonRedirect
+          closeLesson()
+          //   // redirect to embeded Tally form
+          //   const tallyId = lesson.endOfLessonRedirect.replace(
+          //     'https://tally.so/r/',
+          //     ''
+          //   )
+          //   router.push(`/feedback?tally=${tallyId}`)
+          // } else {
+          //   // generic redirect
+          //   document.location.href = lesson.endOfLessonRedirect
         }
       } else {
         // defaut: go back to lessons
