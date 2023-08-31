@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // console.log(language)
     try {
       translations[language] = await fs.readFileSync(
-        `public/lesson/${language}/${currentLesson.slug}.md`,
+        `translation/lesson/${language}/${currentLesson.slug}.md`,
         'utf8'
       )
     } catch (error) {
@@ -90,10 +90,8 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
       // console.log(infos)
       const [, title, description] = (infos || '').split('\n')
       // console.log(title)
-      currentLesson.name = title.replace('LESSON TITLE: ', '')
-      currentLesson.description = description
-        .replace('LESSON DESCRIPTION:', '')
-        .trim()
+      currentLesson.name = title.replace('TITLE: ', '')
+      currentLesson.description = description.replace('DESCRIPTION:', '').trim()
       // console.log(currentLesson.description)
       // console.log(content)
       const slides = content?.split('# ')
@@ -190,7 +188,12 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
         console.log('language unknown')
       }
     } else {
-      if (lang !== 'en' && lang !== '') {
+      if (
+        lang !== 'en' &&
+        typeof lang === 'string' &&
+        !(lang in pageMeta.translations)
+      ) {
+        console.log('redirect', lang)
         router.push(`/lessons/${currentLesson.slug}`)
       }
       if (
