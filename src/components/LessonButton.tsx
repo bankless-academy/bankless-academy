@@ -1,4 +1,5 @@
 import { Button, Box, Image as ChakraImage } from '@chakra-ui/react'
+import { useTranslation } from 'react-i18next'
 
 import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
@@ -12,6 +13,7 @@ const LessonButton = ({
   lesson: LessonType
   click?: boolean
 }): React.ReactElement => {
+  const { t } = useTranslation('common')
   const [isBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${lesson.badgeId}`,
     false
@@ -84,10 +86,10 @@ const LessonButton = ({
           {lesson?.isArticle
             ? 'Read Entry'
             : isBadgeMintedLS
-            ? 'View Lesson'
+            ? t('View Lesson')
             : isLessonStarted
-            ? 'View Lesson'
-            : 'Start Lesson'}
+            ? t('View Lesson')
+            : t('Start Lesson')}
         </Button>
       </Box>
     </OpenLesson>

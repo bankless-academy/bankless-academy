@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { Text, Image, Button, Box } from '@chakra-ui/react'
 import { ArrowUUpLeft } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
+import { useTranslation } from 'react-i18next'
 
 import { LessonType } from 'entities/lesson'
 import Lesson from 'components/Lesson'
@@ -18,6 +19,7 @@ import { DOMAIN_URL, TOKEN_GATING_ENABLED } from 'constants/index'
 import { useEffect } from 'react'
 import { scrollTop } from 'utils'
 import OpenLesson from 'components/OpenLesson'
+import { useRouter } from 'next/router'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -56,6 +58,8 @@ const LessonDetail = ({
   lesson: LessonType
   extraKeywords?: any
 }): React.ReactElement => {
+  const { i18n } = useTranslation()
+  const router = useRouter()
   const [, isSmallScreen] = useSmallScreen()
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
 
@@ -157,30 +161,34 @@ const LessonDetail = ({
               </Text>
               {lesson.languages?.length ? (
                 <Box textAlign="center">
-                  <InternalLink
-                    href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                  <Button
+                    variant={lang === 'en' ? 'solid' : 'outline'}
                     ml={3}
+                    onClick={() => {
+                      i18n.changeLanguage('en', () =>
+                        router.push(`/lessons/${lesson.slug}?lang=en`)
+                      )
+                    }}
                   >
-                    <Button variant={lang === 'en' ? 'solid' : 'outline'}>
-                      🇺🇸
-                    </Button>
-                  </InternalLink>
-                  {lesson.languages.map((l, k) => (
-                    <InternalLink
-                      href={`/lessons/${lesson.slug}?lang=${l}`}
-                      alt={lesson.name}
-                      key={`lang-${k}`}
+                    🇺🇸
+                  </Button>
+                  {lesson.languages.map((l) => (
+                    <Button
+                      variant={lang === l ? 'solid' : 'outline'}
+                      key={lang}
+                      onClick={() => {
+                        i18n.changeLanguage(l, () =>
+                          router.push(`/lessons/${lesson.slug}?lang=${l}`)
+                        )
+                      }}
                       ml={3}
                     >
-                      <Button variant={lang === l ? 'solid' : 'outline'}>
-                        {l === 'es' && '🇪🇸'}
-                        {l === 'fr' && '🇫🇷'}
-                        {l === 'de' && '🇩🇪'}
-                        {l === 'jp' && '🇯🇵'}
-                        {l === 'cn' && '🇨🇳'}
-                      </Button>
-                    </InternalLink>
+                      {l === 'es' && '🇪🇸'}
+                      {l === 'fr' && '🇫🇷'}
+                      {l === 'de' && '🇩🇪'}
+                      {l === 'jp' && '🇯🇵'}
+                      {l === 'cn' && '🇨🇳'}
+                    </Button>
                   ))}
                 </Box>
               ) : null}

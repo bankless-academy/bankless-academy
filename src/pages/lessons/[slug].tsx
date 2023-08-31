@@ -190,6 +190,9 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
         console.log('language unknown')
       }
     } else {
+      if (lang !== 'en' && lang !== '') {
+        router.push(`/lessons/${currentLesson.slug}`)
+      }
       if (
         translations['en']?.name &&
         translations['en']?.name !== currentLesson.name
