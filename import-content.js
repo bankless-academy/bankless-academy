@@ -365,7 +365,7 @@ axios
                     }
                     lesson.articleContent = lessonContentMD.replaceAll('https://app.banklessacademy.com/images/', '/images/')
                     // write/update file
-                    const lessonPath = `public/lesson/en/${lesson.slug}.md`
+                    const lessonPath = `translation/lesson/en/${lesson.slug}.md`
                     const lessonHeader = mdHeader(lesson, 'HANDBOOK')
                     if (fs.existsSync(lessonPath)) {
                       const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
@@ -604,13 +604,13 @@ axios
               console.log('import translation:', language)
               try {
                 const crowdin = await axios
-                  .get(`https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/public/lesson/${language}/${lesson.slug}.md`)
+                  .get(`https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md`)
                 // console.log(crowdin)
                 if (crowdin.status === 200) {
                   // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
                   const newTranslation = crowdin.data
                   // console.log(newTranslation)
-                  const lessonPath = `public/lesson/${language}/${lesson.slug}.md`
+                  const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
                   const existingTranslation = (await fs.promises.readFile(lessonPath, 'utf8'))
                   // console.log(existingTranslation)
                   // check if translation has been modified
@@ -665,7 +665,7 @@ axios
                 i++
               }
               // write/update file
-              const lessonPath = `public/lesson/en/${lesson.slug}.md`
+              const lessonPath = `translation/lesson/en/${lesson.slug}.md`
               const lessonHeader = mdHeader(lesson, "LESSON")
               if (fs.existsSync(lessonPath)) {
                 const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
