@@ -247,7 +247,7 @@ La Maison des Jetons a également la possibilité d'opposer son veto à toute pr
 
 # La Maison des Jetons : Adhérer, voter, déléguer
 
-📝 **Adhérer :** la Maison des Jetons se fait par l'achat et la détention de tokens OP. Ils peuvent être achetés et vendus sur `CEXs`, Optimism `DEXs`, ou envoyés entre amis. Les jetons OP ne sont pas disponibles sur d'autres réseaux.
+📝 **Adhérer :** la Maison des Jetons se fait par l'achat et la détention de tokens OP. Il s'agit de jetons `ERC-20` , et ils sont donc transférables. Ils peuvent être achetés et vendus sur `CEXs`, Optimism `DEXs`, ou envoyés entre amis. Les jetons OP ne sont pas disponibles sur d'autres réseaux.
 
 🗳️ **Vote :** Le pouvoir de vote varie en fonction du nombre de jetons détenus.
 
@@ -359,4 +359,3 @@ La quête d'aujourd'hui est **de rejoindre la Maison des Jetons et déléguer no
 Pendant que la Maison des Citoyens développe ses procédures d'intégration, nous pouvons commencer notre voyage de Citoyen en participant à une conversation sur les forums de la [communauté Optimism](https://gov.optimism.io/).
 
 ![](https://app.banklessacademy.com/lesson/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg)
-

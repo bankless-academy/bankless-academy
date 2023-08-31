@@ -1,4 +1,4 @@
-import '../translation/config'
+import '../utils/translation'
 import type { AppProps } from 'next/app'
 import { Global, css } from '@emotion/react'
 import 'react-notion-x/src/styles.css'
