@@ -1,13 +1,11 @@
 ---
-LESSON TITLE: Managing Token Allowances
-LESSON DESCRIPTION: Protect your wallet from unwanted smart contract interactions.
-LESSON FORMAT: HANDBOOK
-LESSON LINK: https://app.banklessacademy.com/lessons/managing-token-allowances
-LESSON WRITERS: 
+TITLE: Managing Token Allowances
+DESCRIPTION: Protect your wallet from unwanted smart contract interactions.
 LANGUAGE: English
+WRITERS: 
 TRANSLATORS: X
-PROTOCOL VERSION: 0.01
-LAST UPDATED: 31/08/2023
+LINK: https://app.banklessacademy.com/lessons/managing-token-allowances
+FORMAT: HANDBOOK
 ---
 
 ```

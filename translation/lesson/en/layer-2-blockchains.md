@@ -1,13 +1,11 @@
 ---
-LESSON TITLE: Layer 2 Blockchains
-LESSON DESCRIPTION: Join the Layer 2 ecosystem to boost your transaction speed & reduce fees.
-LESSON FORMAT: LESSON
-LESSON LINK: https://app.banklessacademy.com/lessons/layer-2-blockchains
-LESSON WRITERS: Tetranome
+TITLE: Layer 2 Blockchains
+DESCRIPTION: Join the Layer 2 ecosystem to boost your transaction speed & reduce fees.
 LANGUAGE: English
+WRITERS: Tetranome
 TRANSLATORS: X
-PROTOCOL VERSION: 0.01
-LAST UPDATED: 31/08/2023
+LINK: https://app.banklessacademy.com/lessons/layer-2-blockchains
+FORMAT: LESSON
 ---
 
 ```

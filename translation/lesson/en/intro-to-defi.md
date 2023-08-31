@@ -1,13 +1,11 @@
 ---
-LESSON TITLE: Intro to DeFi
-LESSON DESCRIPTION: Understand the basics of decentralized finance.
-LESSON FORMAT: LESSON
-LESSON LINK: https://app.banklessacademy.com/lessons/intro-to-defi
-LESSON WRITERS: 
+TITLE: Intro to DeFi
+DESCRIPTION: Understand the basics of decentralized finance.
 LANGUAGE: English
+WRITERS: 
 TRANSLATORS: X
-PROTOCOL VERSION: 0.01
-LAST UPDATED: 31/08/2023
+LINK: https://app.banklessacademy.com/lessons/intro-to-defi
+FORMAT: LESSON
 ---
 
 ```

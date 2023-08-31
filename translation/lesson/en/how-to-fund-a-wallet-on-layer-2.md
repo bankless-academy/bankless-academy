@@ -1,13 +1,11 @@
 ---
-LESSON TITLE: How to Fund a Wallet on Layer 2
-LESSON DESCRIPTION: Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.
-LESSON FORMAT: HANDBOOK
-LESSON LINK: https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2
-LESSON WRITERS: 
+TITLE: How to Fund a Wallet on Layer 2
+DESCRIPTION: Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.
 LANGUAGE: English
+WRITERS: 
 TRANSLATORS: X
-PROTOCOL VERSION: 0.01
-LAST UPDATED: 31/08/2023
+LINK: https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2
+FORMAT: HANDBOOK
 ---
 
 ```

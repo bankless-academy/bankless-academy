@@ -1,13 +1,11 @@
 ---
-LESSON TITLE: How to delegate on Optimism
-LESSON DESCRIPTION: 
-LESSON FORMAT: HANDBOOK
-LESSON LINK: https://app.banklessacademy.com/lessons/how-to-delegate-on-optimism
-LESSON WRITERS: 
+TITLE: How to delegate on Optimism
+DESCRIPTION: 
 LANGUAGE: English
+WRITERS: 
 TRANSLATORS: X
-PROTOCOL VERSION: 0.01
-LAST UPDATED: 31/08/2023
+LINK: https://app.banklessacademy.com/lessons/how-to-delegate-on-optimism
+FORMAT: HANDBOOK
 ---
 
 ```

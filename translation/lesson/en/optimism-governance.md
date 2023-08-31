@@ -1,13 +1,11 @@
 ---
-LESSON TITLE: Optimism Governance
-LESSON DESCRIPTION: Learn about Optimism governance and how to get involved.
-LESSON FORMAT: LESSON
-LESSON LINK: https://app.banklessacademy.com/lessons/optimism-governance
-LESSON WRITERS: Tetranome
+TITLE: Optimism Governance
+DESCRIPTION: Learn about Optimism governance and how to get involved.
 LANGUAGE: English
+WRITERS: Tetranome
 TRANSLATORS: X
-PROTOCOL VERSION: 0.01
-LAST UPDATED: 31/08/2023
+LINK: https://app.banklessacademy.com/lessons/optimism-governance
+FORMAT: LESSON
 ---
 
 ```

@@ -1,13 +1,11 @@
 ---
-LESSON TITLE: Decentralized Exchanges
-LESSON DESCRIPTION: Discover how smart-contract exchanges enable permissionless token swaps!
-LESSON FORMAT: LESSON
-LESSON LINK: https://app.banklessacademy.com/lessons/decentralized-exchanges
-LESSON WRITERS: Tetranome
+TITLE: Decentralized Exchanges
+DESCRIPTION: Discover how smart-contract exchanges enable permissionless token swaps!
 LANGUAGE: English
+WRITERS: Tetranome
 TRANSLATORS: X
-PROTOCOL VERSION: 0.01
-LAST UPDATED: 31/08/2023
+LINK: https://app.banklessacademy.com/lessons/decentralized-exchanges
+FORMAT: LESSON
 ---
 
 ```

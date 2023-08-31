@@ -1,13 +1,11 @@
 ---
-LESSON TITLE: Blockchain Basics
-LESSON DESCRIPTION: Learn about the fundamental architecture of blockchain technology.
-LESSON FORMAT: LESSON
-LESSON LINK: https://app.banklessacademy.com/lessons/blockchain-basics
-LESSON WRITERS: 
+TITLE: Blockchain Basics
+DESCRIPTION: Learn about the fundamental architecture of blockchain technology.
 LANGUAGE: English
+WRITERS: 
 TRANSLATORS: X
-PROTOCOL VERSION: 0.01
-LAST UPDATED: 31/08/2023
+LINK: https://app.banklessacademy.com/lessons/blockchain-basics
+FORMAT: LESSON
 ---
 
 ```

@@ -1,13 +1,11 @@
 ---
-LESSON TITLE: The Stablecoin Guide
-LESSON DESCRIPTION: Use dollars, euros, and more on the blockchain — made possible by stablecoin technology!
-LESSON FORMAT: HANDBOOK
-LESSON LINK: https://app.banklessacademy.com/lessons/the-stablecoin-guide
-LESSON WRITERS: 
+TITLE: The Stablecoin Guide
+DESCRIPTION: Use dollars, euros, and more on the blockchain — made possible by stablecoin technology!
 LANGUAGE: English
+WRITERS: 
 TRANSLATORS: X
-PROTOCOL VERSION: 0.01
-LAST UPDATED: 31/08/2023
+LINK: https://app.banklessacademy.com/lessons/the-stablecoin-guide
+FORMAT: HANDBOOK
 ---
 
 ```

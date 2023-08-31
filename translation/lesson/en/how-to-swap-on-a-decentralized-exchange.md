@@ -1,13 +1,11 @@
 ---
-LESSON TITLE: How to Swap on a Decentralized Exchange
-LESSON DESCRIPTION: Begin your journey into DeFi with this Decentralized Exchange walkthrough.
-LESSON FORMAT: HANDBOOK
-LESSON LINK: https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange
-LESSON WRITERS: 
+TITLE: How to Swap on a Decentralized Exchange
+DESCRIPTION: Begin your journey into DeFi with this Decentralized Exchange walkthrough.
 LANGUAGE: English
+WRITERS: 
 TRANSLATORS: X
-PROTOCOL VERSION: 0.01
-LAST UPDATED: 31/08/2023
+LINK: https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange
+FORMAT: HANDBOOK
 ---
 
 ```
