@@ -7,7 +7,7 @@ LESSON WRITERS:
 LANGUAGE: English
 TRANSLATORS: X
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 30/08/2023
+LAST UPDATED: 31/08/2023
 ---
 
 ```
@@ -65,19 +65,19 @@ On [Coinbase](https://www.coinbase.com/), for example, users can send their fund
 
 3\. Select ‘Send & Receive’, located at the top of the website.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-06c6d84b.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-06c6d84b.png)
 
 4\. Enter the amount in fiat or ETH you wish to send (you can toggle between fiat and crypto to the right of the amount), select ‘Pay with’ and choose Ethereum, and in the ‘To’ field, enter the wallet address where the funds will be sent. Select ‘Continue’.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-98f7b580.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-98f7b580.png)
 
 5\. On the next screen, select ‘Network’ and change the network from Ethereum to Optimism.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-41c2bf0b.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-41c2bf0b.png)
 
 6\. Review, and if accurate, select ‘Send Now’.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-1c8e8c0a.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-1c8e8c0a.png)
 
 Most major exchanges offer users the ability to send their crypto directly to an L2. [Binance](https://www.binance.com/) supports Optimism and Arbitrum, for example. On whatever centralized exchange you convert fiat to crypto, check to see whether it offers support for direct-to-L2 services. Pro Tip: Use [Blockscan](https://blockscan.com/exchanges) to find the exchange compatible with your preferred L2.
 
@@ -93,25 +93,25 @@ For MoonPay, the steps are:
 
 2\. Select ‘Buy crypto’, located at the top or middle of the website.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-c61b0868.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-c61b0868.png)
 
 3\. Enter the amount of fiat you wish to send and the proper denomination.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-b17f3ab3.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-b17f3ab3.png)
 
 4\. Select a digital asset, in this case ETH. Type in “ETH'“ and you will see different networks on which you can purchase ETH (you may need to scroll down); choose the Layer 2 you want to use. Click ‘Continue’.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-7772e5a5.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-7772e5a5.png)
 
 5\. Next, you will be prompted to enter personal verification and payment data.
 
 6\. Once complete, enter your Ethereum wallet address. You’ll be asked to make sure the wallet is safe to use.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-9a988bf2.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-9a988bf2.png)
 
 7\. Complete, confirm the information is correct, and select ‘Pay’.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-10834d80.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-10834d80.png)
 
 As with CEXs, most major third-party payment onramps provide direct-to-L2 functionality. Take advantage of these innovations to save on transaction fees and increase the range of your `blockchain` explorations.
 
@@ -131,19 +131,19 @@ Because no one likes to wait, a number of third-party bridging services exist to
 
 2\. To bridge funds to L2, select Ethereum under ‘From’.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-865879a7.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-865879a7.png)
 
 3\. Choose your asset and the amount you wish to bridge (Pro Tip: only bridge a blockchain’s native `coin`, in this case ETH).
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-ec8932e6.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-ec8932e6.png)
 
 4\. Next, select your L2 solution in ‘To’.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-f84f6380.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-f84f6380.png)
 
 5\. Review the transaction, and if all looks correct, select ‘Send’.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-fund-a-wallet-on-layer-2/image-0492a872.png)
+![](https://app.banklessacademy.com/images/how-to-fund-a-wallet-on-layer-2/image-0492a872.png)
 
 Moving funds from Mainnet to L2 is really that simple, and nearly all bridges work the same way. Select a blockchain to send funds from and your destination, pick an asset and amount, and across the blockchain crevice you go. Pro Tip: As with sending from a CEX, you can use [Blockscan](https://blockscan.com/bridges) to find a compatible bridge for your L2 destination.
 

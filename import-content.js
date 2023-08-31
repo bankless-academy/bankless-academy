@@ -172,7 +172,7 @@ const get_img = (imageLink, slug, image_name) => {
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
   const hash = crc32(file_name)
-  const image_dir = `/${PROJECT_DIR}lesson/images/${slug}`
+  const image_dir = `/${PROJECT_DIR}images/${slug}`
   const local_image_dir = `public${image_dir}`
   // create image directory dynamically in case it doesn't exist yet
   if (!fs.existsSync(local_image_dir)) {
@@ -347,7 +347,7 @@ axios
                       const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/)[1]
                       // create "unique" hash based on Notion imageLink (different when re-uploaded)
                       const hash = crc32(imageLink)
-                      const image_dir = `/${PROJECT_DIR}lesson/images/${lesson.slug}`
+                      const image_dir = `/${PROJECT_DIR}images/${lesson.slug}`
                       const local_image_dir = `public${image_dir}`
                       // create image directory dynamically in case it doesn't exist yet
                       if (!fs.existsSync(local_image_dir)) {
@@ -362,7 +362,7 @@ axios
                       }
                       lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${image_path}`)
                     }
-                    lesson.articleContent = lessonContentMD.replaceAll('https://app.banklessacademy.com/lesson/images/', '/lesson/images/')
+                    lesson.articleContent = lessonContentMD.replaceAll('https://app.banklessacademy.com/images/', '/images/')
                     // write/update file
                     const lessonPath = `public/lesson/en/${lesson.slug}.md`
                     const lessonHeader = mdHeader(lesson, 'HANDBOOK')
@@ -507,7 +507,7 @@ axios
                 const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)\?table=/)[1]
                 // create "unique" hash based on Notion imageLink (different when re-uploaded)
                 const hash = crc32(imageLink)
-                const image_dir = `/${PROJECT_DIR}lesson/images/${lesson.slug}`
+                const image_dir = `/${PROJECT_DIR}images/${lesson.slug}`
                 const local_image_dir = `public${image_dir}`
                 // create image directory dynamically in case it doesn't exist yet
                 if (!fs.existsSync(local_image_dir)) {

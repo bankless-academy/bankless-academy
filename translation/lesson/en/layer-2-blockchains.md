@@ -7,7 +7,7 @@ LESSON WRITERS: Tetranome
 LANGUAGE: English
 TRANSLATORS: X
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 29/08/2023
+LAST UPDATED: 31/08/2023
 ---
 
 ```
@@ -40,7 +40,7 @@ Bitcoin and Ethereum are both fairly decentralized and secure, but they don’t 
 
 The Lightning Network is Bitcoin’s best-known scaling solution, and it relies on a technology called `payment channels` to scale payments between parties. Ethereum has plans to eventually ease the Blockchain Trilemma through the use of sharding technology, but for the immediate future the network is relying on various L2 solutions to improve scalability.
 
-![](https://app.banklessacademy.com/lesson/images/layer-2-blockchains/introduction-0d584167.svg)
+![](https://app.banklessacademy.com/images/layer-2-blockchains/introduction-0d584167.svg)
 
 # Payment Channels
 
@@ -51,7 +51,7 @@ A channel can be closed at any time by either party broadcasting the most recent
 
 Payment channels don’t support advanced `smart contract` interactions, only basic peer-to-peer transactions.
 
-![](https://app.banklessacademy.com/lesson/images/layer-2-blockchains/payment-channels-5e29dfd3.svg)
+![](https://app.banklessacademy.com/images/layer-2-blockchains/payment-channels-5e29dfd3.svg)
 
 # Knowledge Check 1
 
@@ -85,7 +85,7 @@ Infrastructure called `bridges` is used to transfer information between differen
 
 The technology is very complex, but from the end user perspective this process is as simple as choosing a destination.
 
-![](https://app.banklessacademy.com/lesson/images/layer-2-blockchains/bridging-layer-1-and-layer-2-8268ff20.svg)
+![](https://app.banklessacademy.com/images/layer-2-blockchains/bridging-layer-1-and-layer-2-8268ff20.svg)
 
 # Sidechains
 
@@ -95,7 +95,7 @@ Sidechains are still subject to the Blockchain Trilemma. Their lower `gas` fees 
 
 Sidechains, like Polygon PoS, regularly publish snapshots to the L1, saving a moment-in-time status of their ledger. Snapshots enable sidechains to roll the chain state back to a previous snapshot in the case of on-chain fraud or error.
 
-![](https://app.banklessacademy.com/lesson/images/layer-2-blockchains/sidechains-406fe8d1.svg)
+![](https://app.banklessacademy.com/images/layer-2-blockchains/sidechains-406fe8d1.svg)
 
 # Knowledge Check 3
 
@@ -116,7 +116,7 @@ In order for the Rollup to prove itself secure enough to process transactions on
 
 There are currently two Rollup methods that can provide this evidence: `Optimistic Rollups`, and `ZK Rollups`. Let’s take a closer look at these two processes.
 
-![](https://app.banklessacademy.com/lesson/images/layer-2-blockchains/rollups-ea8672d0.svg)
+![](https://app.banklessacademy.com/images/layer-2-blockchains/rollups-ea8672d0.svg)
 
 # Optimistic Rollups
 
@@ -126,7 +126,7 @@ To mitigate against any abuse of this technique, there is typically a multi-day 
 
 Note: Third-party bridging services, like Across and Hop, help users bridge funds in mere minutes rather than days, but these solutions come with an increased risk of attack compared to protocol-native bridges due to differing fraud-proof processes.
 
-![](https://app.banklessacademy.com/lesson/images/layer-2-blockchains/optimistic-rollups-75b31999.svg)
+![](https://app.banklessacademy.com/images/layer-2-blockchains/optimistic-rollups-75b31999.svg)
 
 # Knowledge Check 4
 
@@ -143,7 +143,7 @@ The major upside to ZK Rollups is the `settlement time`, also known as `transact
 
 There are some major protocols using ZK Rollup technology to build their Ethereum scaling solutions, including zkSync, StarkNet, and Aztec. It’s still early in terms of development, but has great future potential.
 
-![](https://app.banklessacademy.com/lesson/images/layer-2-blockchains/zk-rollups-bc7c293e.svg)
+![](https://app.banklessacademy.com/images/layer-2-blockchains/zk-rollups-bc7c293e.svg)
 
 # Knowledge Check 5
 
@@ -161,7 +161,7 @@ Many Optimistic Rollups are “EVM equivalent”, meaning the L2 natively suppor
 
 Sidechains and ZK Rollups are not yet fully EVM equivalent. For now this limits the dApp ecosystems of such networks, but also allows for greater experimentation and discovery of new ways to layer dApp experiences on top of Ethereum.
 
-![](https://app.banklessacademy.com/lesson/images/layer-2-blockchains/cross-chain-dapp-compatibility-eeb2b414.svg)
+![](https://app.banklessacademy.com/images/layer-2-blockchains/cross-chain-dapp-compatibility-eeb2b414.svg)
 
 # Knowledge Check 6
 
@@ -190,5 +190,5 @@ This improved functionality isn’t the only reason Optimism is a great scaling 
 
 Optimism is not simply a platform that relies on the Optimistic Rollup. The network is a metaphor for the power of blockchain technology to solve existing problems and to show us new ways of transacting and living together. And that should make us all optimistic. 🙂
 
-![](https://app.banklessacademy.com/lesson/images/layer-2-blockchains/start-your-layer-2-journey-with-optimism--7999722b.svg)
+![](https://app.banklessacademy.com/images/layer-2-blockchains/start-your-layer-2-journey-with-optimism--7999722b.svg)
 

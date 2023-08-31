@@ -7,7 +7,7 @@ LESSON WRITERS:
 LANGUAGE: English
 TRANSLATORS: X
 PROTOCOL VERSION: 0.01
-LAST UPDATED: 30/08/2023
+LAST UPDATED: 31/08/2023
 ---
 
 ```
@@ -45,7 +45,7 @@ ________________________________________________________________________________
 
 Stablecoins have become a cornerstone of the DeFi ecosystem, reaching over $140 billion USD in supply value at their 2022 peak. Stablecoins settled over $7 trillion in transaction value that year — that’s \~0.3% of global USD settlement in 2022.
 
-![](https://app.banklessacademy.com/lesson/images/the-stablecoin-guide/image-0c080b13.png)
+![](https://app.banklessacademy.com/images/the-stablecoin-guide/image-0c080b13.png)
 
 Here’s why they’re in demand:
 
@@ -89,7 +89,7 @@ Crypto-collateralized stablecoins are a more transparent, decentralized option �
 
 The most notable example in this category is MakerDAO’s Dai (DAI).
 
-![DAI collateralization breakdown (June 2023) Source: https://makerburn.com/#/rundown](https://app.banklessacademy.com/lesson/images/the-stablecoin-guide/image-573e657a.png)
+![DAI collateralization breakdown (June 2023) Source: https://makerburn.com/#/rundown](https://app.banklessacademy.com/images/the-stablecoin-guide/image-573e657a.png)
 
 Considerations:
 
@@ -107,7 +107,7 @@ As algorithmic stablecoins have the fewest external dependencies, and no adminis
 
 Notable examples include Liquity (LUSD) and Frax (FRAX).
 
-![](https://app.banklessacademy.com/lesson/images/the-stablecoin-guide/image-4f6e4c7f.png)
+![](https://app.banklessacademy.com/images/the-stablecoin-guide/image-4f6e4c7f.png)
 
 Considerations:
 
