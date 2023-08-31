@@ -598,6 +598,35 @@ axios
           // TODO: remove old images (diff between old/new lesson.imageLinks)
 
           if (MD_ENABLED) {
+            // import translations
+            for (const language of lesson.languages) {
+              console.log('import translation:', language)
+              try {
+                const crowdin = await axios
+                  .get(`https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/public/lesson/${language}/${lesson.slug}.md`)
+                // console.log(crowdin)
+                if (crowdin.status === 200) {
+                  // rm LAST UPDATED
+                  const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
+                  // console.log(newTranslation)
+                  const lessonPath = `public/lesson/${language}/${lesson.slug}.md`
+                  const existingTranslation = (await fs.promises.readFile(lessonPath, 'utf8')).replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
+                  // console.log(existingTranslation)
+                  // check if translation has been modified
+                  if (newTranslation.trim() !== existingTranslation.trim()) {
+                    console.log('- new translation available')
+                    fs.writeFile(lessonPath, `${newTranslation.replace('LAST_UPDATED', `LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}`)}`, (error) => {
+                      if (error) throw error
+                    })
+                  } else {
+                    console.log('- same same')
+                  }
+                }
+              } catch (error) {
+
+                console.log(`- ${language} not available yet`)
+              }
+            }
             // convert to MD
             console.log(`Converting "${lesson.name}" to MD`)
             try {
