@@ -11,6 +11,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 import Footer from 'layout/Footer'
 import FeaturedLessons from 'components/FeaturedLessons'
@@ -55,6 +56,7 @@ const NewsletterButton = styled(Button)`
 `
 
 const HomePage = (): JSX.Element => {
+  const { t } = useTranslation('homepage')
   const [isSmallScreen] = useSmallScreen()
   const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -91,7 +93,7 @@ const HomePage = (): JSX.Element => {
                   size="lg"
                   style={{ padding: '0 23px' }}
                 >
-                  Explore Lessons
+                  {t('Explore Lessons', { ns: 'common' })}
                 </Button>
               </InternalLink>
             </Box>
@@ -101,7 +103,7 @@ const HomePage = (): JSX.Element => {
           <Container maxW="container.lg">
             <Box mt="6">
               <Heading as="h2" size="xl" m="auto">
-                Start Your Bankless Journey
+                {t('Start Your Bankless Journey')}
               </Heading>
               <Box fontSize="lg" mt="6">
                 Bankless Academy is on a mission to ensure every web3 Explorer
