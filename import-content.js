@@ -74,8 +74,7 @@ n2m.setCustomTransformer("image", async (b) => {
 // const PROTOCOL_VERSION = "0.01"
 
 const LESSON_SPLITTER = `\`\`\`
-<< LESSON START >>
-\`\`\`
+
 ---`
 
 // LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
@@ -106,8 +105,6 @@ $$$$$$$  |\\$$$$$$$ |$$ |  $$ |$$ | \\$$\\ $$ |\\$$$$$$$\\ $$$$$$$  |$$$$$$$  | 
 PORTABLE LESSON DATADISK COLLECTION                                                                                                            \\$$$$$$  |
                                                                                                                                                 \\______/
 __________________________________________________________________________________________________________________________________________________________
-\`\`\`
-
 ${LESSON_SPLITTER}
 `
 
