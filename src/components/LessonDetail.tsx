@@ -80,11 +80,6 @@ const LessonDetail = ({
   const hasLessonGating =
     TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
 
-  const lang =
-    typeof window !== 'undefined' && window.location.search.length
-      ? window.location.search.replace('?lang=', '')
-      : 'en'
-
   const isLessonCollected =
     !!lesson.lessonCollectibleTokenAddress?.length &&
     lessonsCollectedLS.includes(
@@ -93,6 +88,8 @@ const LessonDetail = ({
 
   const tallyId =
     lesson.endOfLessonRedirect?.replace('https://tally.so/r/', '') || ''
+
+  const languages = lesson.languages
 
   return (
     <>
@@ -159,23 +156,28 @@ const LessonDetail = ({
               >
                 {lesson.name}
               </Text>
-              {lesson.languages?.length ? (
+              {languages?.length ? (
                 <Box textAlign="center">
                   <Button
-                    variant={lang === 'en' ? 'solid' : 'outline'}
+                    variant={
+                      i18n.language === 'en' ||
+                      !lesson.languages.includes(i18n.language as any)
+                        ? 'solid'
+                        : 'outline'
+                    }
                     ml={3}
                     onClick={() => {
                       i18n.changeLanguage('en', () =>
-                        router.push(`/lessons/${lesson.slug}?lang=en`)
+                        router.push(`/lessons/${lesson.slug}`)
                       )
                     }}
                   >
                     🇺🇸
                   </Button>
-                  {lesson.languages.map((l) => (
+                  {languages.map((l) => (
                     <Button
-                      variant={lang === l ? 'solid' : 'outline'}
-                      key={lang}
+                      variant={i18n.language === l ? 'solid' : 'outline'}
+                      key={`key-${l}`}
                       onClick={() => {
                         i18n.changeLanguage(l, () =>
                           router.push(`/lessons/${lesson.slug}?lang=${l}`)

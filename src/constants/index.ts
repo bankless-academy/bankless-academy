@@ -2,7 +2,7 @@ import { MetaData } from 'components/Head'
 import { WHITELABEL } from 'constants/whitelabel'
 import DEFAULT_LESSONS from 'constants/lessons'
 import WHITELABEL_LESSONS from 'constants/whitelabel_lessons'
-import DEFAULT_KEYWORDS from '../../keywords.json'
+import DEFAULT_KEYWORDS from '../../translation/keywords/en/keywords.json'
 import WHITELABEL_KEYWORDS from '../../whitelabel-keywords.json'
 
 export const IS_WHITELABEL = !!WHITELABEL?.project_name

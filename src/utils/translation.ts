@@ -3,14 +3,17 @@ import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
 // en
-import common from 'translation/en/common.json'
-import homepage from 'translation/en/homepage.json'
-import quests from 'translation/en/quests.json'
+import common from '../../translation/website/en/common.json'
+import homepage from '../../translation/website/en/homepage.json'
+import quests from '../../translation/website/en/quests.json'
+import keywords from '../../translation/keywords/en/keywords.json'
+
 
 // fr
-import commonFR from 'translation/fr/common.json'
-import homepageFR from 'translation/fr/homepage.json'
-import questsFR from 'translation/fr/quests.json'
+import commonFR from '../../translation/website/fr/common.json'
+import homepageFR from '../../translation/website/fr/homepage.json'
+import questsFR from '../../translation/website/fr/quests.json'
+import keywordsFR from '../../translation/keywords/fr/keywords.json'
 
 export const defaultNS = 'common'
 
@@ -25,11 +28,13 @@ i18next
         common,
         homepage,
         quests,
+        keywords,
       },
       fr: {
         common: commonFR,
         homepage: homepageFR,
         quests: questsFR,
+        keywords: keywordsFR,
       }
     },
     defaultNS,

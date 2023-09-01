@@ -14,6 +14,10 @@ import styled from '@emotion/styled'
 
 import { LessonType } from 'entities/lesson'
 
+const SPLIT = `\`\`\`
+
+---`
+
 const StyledMarkdown = styled(Box)`
   font-family: Menlo, Monaco, 'Courier New', monospace;
   font-size: 11.8px;
@@ -57,10 +61,6 @@ const LessonCollectibleModal = ({
   const html = hljs.highlight(content, {
     language: 'markdown',
   }).value
-
-  const SPLIT = `\`\`\`
-<< LESSON START >>
-\`\`\``
 
   const lang =
     typeof window !== 'undefined' && window.location.search.length

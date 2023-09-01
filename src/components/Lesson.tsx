@@ -18,6 +18,7 @@ import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
 import { Warning, ArrowUUpLeft } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
+import { useTranslation } from 'react-i18next'
 
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
@@ -179,6 +180,7 @@ const Lesson = ({
   closeLesson?: () => void
   Quest?: QuestType
 }): React.ReactElement => {
+  const { t, i18n } = useTranslation()
   const numberOfSlides = lesson.slides.length
   // HACK: when reducing the number of slides in a lesson
   if (
@@ -419,9 +421,21 @@ const Lesson = ({
           ? lowerCaseKeyword.slice(0, -1)
           : undefined
       if (!lowerCaseKeyword?.length) return <>{keyword}</>
-      const definition =
+      const englishDefition =
         keywords[lowerCaseKeyword]?.definition ||
         keywords[lowerCaseKeywordSingular]?.definition
+      const definition =
+        i18n.language !== 'en'
+          ? !t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' }).endsWith(
+              '.definition'
+            )
+            ? t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' })
+            : !t(`${lowerCaseKeywordSingular}.definition`, {
+                ns: 'keywords',
+              }).endsWith('.definition')
+            ? t(`${lowerCaseKeywordSingular}.definition`, { ns: 'keywords' })
+            : englishDefition
+          : englishDefition
       return definition?.length ? (
         <Keyword definition={definition} keyword={keyword} />
       ) : (
