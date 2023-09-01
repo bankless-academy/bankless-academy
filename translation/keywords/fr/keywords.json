@@ -1,4 +1,8 @@
 {
+  "adresse": {
+    "keyword": "adresse",
+    "definition": "Identifiant public unique d'une entité sur une blockchain."
+  },
   "dao": {
     "keyword": "DAO",
     "definition": "(Organisation Autonome Décentralisée) Une structure organisationnelle qui utilise la technologie blockchain pour automatiser le vote et la gestion."
