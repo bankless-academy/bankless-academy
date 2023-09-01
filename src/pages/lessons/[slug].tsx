@@ -13,6 +13,10 @@ import { useSmallScreen } from 'hooks/index'
 import { useEffect } from 'react'
 import { markdown } from 'utils/markdown'
 
+const SPLIT = `\`\`\`
+
+---`
+
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const currentLesson = LESSONS.find(
     (lesson: LessonType) => lesson.slug === params.slug
@@ -150,10 +154,6 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
       translations[lang] = JSON.parse(JSON.stringify(currentLesson))
     }
   }
-
-  const SPLIT = `\`\`\`
-<< LESSON START >>
-\`\`\``
 
   useEffect((): void => {
     if (!translations['en']?.name) {
