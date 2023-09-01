@@ -241,7 +241,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
             </Box>
             {MD_ENABLED && lesson.hasCollectible && (
               <ExternalLink
-                href={`https://github.com/bankless-academy/bankless-academy/blob/main/public/lesson/en/${lesson.slug}.md?plain=1`}
+                href={`https://github.com/bankless-academy/bankless-academy/blob/main/translation/lesson/en/${lesson.slug}.md?plain=1`}
               >
                 <Button
                   position="absolute"

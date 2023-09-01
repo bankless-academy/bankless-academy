@@ -1,13 +1,11 @@
 ---
-LESSON TITLE: Managing Token Allowances
-LESSON DESCRIPTION: Protect your wallet from unwanted smart contract interactions.
-LESSON FORMAT: HANDBOOK
-LESSON LINK: https://app.banklessacademy.com/lessons/managing-token-allowances
-LESSON WRITERS: 
+TITLE: Managing Token Allowances
+DESCRIPTION: Protect your wallet from unwanted smart contract interactions.
 LANGUAGE: English
+WRITERS: 
 TRANSLATORS: X
-PROTOCOL VERSION: 0.01
-LAST UPDATED: 30/08/2023
+LINK: https://app.banklessacademy.com/lessons/managing-token-allowances
+FORMAT: HANDBOOK
 ---
 
 ```
@@ -27,9 +25,6 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-```
-<< LESSON START >>
-```
 ---
 ## Key Takeaways
 
@@ -77,19 +72,19 @@ By proactively managing token allowances, users can ensure that no contract with
 
 To begin the process of revoking your token allowances, head to [Revoke.cash](http://revoke.cash/) and click on “Connect Wallet” located in the top-right corner. Alternatively, you can manually enter your wallet public address in the search bar. Once the loading is complete, you’ll see a list of all your token approvals on that network.
 
-![](https://app.banklessacademy.com/lesson/images/managing-token-allowances/image-f95ea594.png)
+![](https://app.banklessacademy.com/images/managing-token-allowances/image-f95ea594.png)
 
 **2\. Inspect your allowances**:
 
 Once you have connected your wallet, you can inspect your existing approvals. You can sort, filter, or search for specific approvals based on the authorized spender address. Sorting by “Newest to Oldest” is particularly useful if you suspect a malicious approval recently. Use the network selection, sorting, and filtering options provided to gain an overview of token allowances you have granted across various networks.
 
-![](https://app.banklessacademy.com/lesson/images/managing-token-allowances/image-f3b00f4a.png)
+![](https://app.banklessacademy.com/images/managing-token-allowances/image-f3b00f4a.png)
 
 **3\. Revoke undesired allowances:**
 
 Once you identify the approvals you want to revoke, simply click the “Revoke” button next to each of them. Optionally, you can update the approval to a different amount by clicking the pencil icon next to the approved amount if you still require the approval in the future but wish to reduce your risk.
 
-![](https://app.banklessacademy.com/lesson/images/managing-token-allowances/image-138cb12e.png)
+![](https://app.banklessacademy.com/images/managing-token-allowances/image-138cb12e.png)
 
 It might be in your best interest to to revoke or adjust a token allowance if:
 

@@ -1,13 +1,11 @@
 ---
-LESSON TITLE: How to Swap on a Decentralized Exchange
-LESSON DESCRIPTION: Begin your journey into DeFi with this Decentralized Exchange walkthrough.
-LESSON FORMAT: HANDBOOK
-LESSON LINK: https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange
-LESSON WRITERS: 
+TITLE: How to Swap on a Decentralized Exchange
+DESCRIPTION: Begin your journey into DeFi with this Decentralized Exchange walkthrough.
 LANGUAGE: English
+WRITERS: 
 TRANSLATORS: X
-PROTOCOL VERSION: 0.01
-LAST UPDATED: 29/08/2023
+LINK: https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange
+FORMAT: HANDBOOK
 ---
 
 ```
@@ -27,9 +25,6 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-```
-<< LESSON START >>
-```
 ---
 ## Key Takeaways
 
@@ -49,7 +44,7 @@ In this handbook entry, we will cover how to use your self-custody wallet to int
 
 Selecting an affordable and safe platform is the first step in performing a token swap. In this walkthrough we will be using Velodrome, the most popular DEX on the Optimism network (at time of writing). As you become more confident in blockchain navigation, you’ll learn how to evaluate other exchanges and find the best fit for your needs. Our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson includes a comprehensive list of qualities to look out for.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-swap-on-a-decentralized-exchange/image-a5b39b1d.png)
+![](https://app.banklessacademy.com/images/how-to-swap-on-a-decentralized-exchange/image-a5b39b1d.png)
 
 DEXs are a great start to your web3 journey because most dApps follow a user interface layout similar to DEXs, and use similar interactions with your self-custody wallet.
 
@@ -69,31 +64,31 @@ If you are on desktop, connect with your browser wallet.
 
 If you are on mobile, you will be prompted to use WalletConnect — the web3 standard for connecting mobile wallets to dApps.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-swap-on-a-decentralized-exchange/image-1d7c44d3.png)
+![](https://app.banklessacademy.com/images/how-to-swap-on-a-decentralized-exchange/image-1d7c44d3.png)
 
 **3\. Approve the connection:**
 
 Select ‘Connect’ in your wallet application to confirm the site connection. This allows the dApp to see your wallet address and token balances. You haven’t granted any other permissions yet.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-swap-on-a-decentralized-exchange/image-6ecdef56.png)
+![](https://app.banklessacademy.com/images/how-to-swap-on-a-decentralized-exchange/image-6ecdef56.png)
 
 **4\. Check and sign the terms of service (if you accept):**
 
 Many dApps will ask you to sign a message to confirm you have read their terms and conditions. Signing messages doesn’t cost gas, and doesn’t store any information on the blockchain. If you agree with the terms, you can sign the message.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-swap-on-a-decentralized-exchange/image-e3f7c7e8.png)
+![](https://app.banklessacademy.com/images/how-to-swap-on-a-decentralized-exchange/image-e3f7c7e8.png)
 
 **5\. Switch to the right network:**
 
 For this walkthrough, make sure your wallet is set to the Optimism network.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-swap-on-a-decentralized-exchange/image-8d15c6f6.png)
+![](https://app.banklessacademy.com/images/how-to-swap-on-a-decentralized-exchange/image-8d15c6f6.png)
 
 **6\. Customize your swap:**
 
 It’s time to select your desired input and output tokens. In this example, we will be swapping ETH for OP — but you can swap whatever tokens you like!
 
-![](https://app.banklessacademy.com/lesson/images/how-to-swap-on-a-decentralized-exchange/image-7b117655.png)
+![](https://app.banklessacademy.com/images/how-to-swap-on-a-decentralized-exchange/image-7b117655.png)
 
 **7\. Approve token permissions:**
 
@@ -103,7 +98,7 @@ You will be prompted to set and approve permission for Velodrome to access your 
 
 Once you’re happy with your swap quote and settings, you can begin the swap. This step includes confirming on the dApp, and again in your wallet.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-swap-on-a-decentralized-exchange/image-89f87156.png)
+![](https://app.banklessacademy.com/images/how-to-swap-on-a-decentralized-exchange/image-89f87156.png)
 
 **9\. Check your balance:**
 
@@ -111,13 +106,13 @@ Your transaction should take around 40 seconds to confirm, after which you will 
 
 *Optimism token contract address: 0x4200000000000000000000000000000000000042*
 
-![](https://app.banklessacademy.com/lesson/images/how-to-swap-on-a-decentralized-exchange/image-c8b8abcc.png)
+![](https://app.banklessacademy.com/images/how-to-swap-on-a-decentralized-exchange/image-c8b8abcc.png)
 
 **10\. Fetch your transaction hash:**
 
 To complete the quest for our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson, you’ll need the ***transaction hash of the swap*** (not to be confused with the hash from your token permission transaction, or your wallet address). A block explorer link will usually appear on the DEX interface, letting you view the confirmed transaction details.. If you missed it, or it’s missing, you’ll find another link in your wallet activity log — tied directly to your trade.
 
-![](https://app.banklessacademy.com/lesson/images/how-to-swap-on-a-decentralized-exchange/image-bcfdf0ee.png)
+![](https://app.banklessacademy.com/images/how-to-swap-on-a-decentralized-exchange/image-bcfdf0ee.png)
 
 ## Frequently Asked Questions
 

@@ -71,23 +71,23 @@ n2m.setCustomTransformer("image", async (b) => {
   return `![](https://www.notion.so/image/${encodeURIComponent(b?.image?.file?.url?.split('?')[0].replace('https://s3.', 'https://s3-'))}?table=block&id=${b?.id})`
 })
 
-const PROTOCOL_VERSION = "0.01"
+// const PROTOCOL_VERSION = "0.01"
 
 const LESSON_SPLITTER = `\`\`\`
-<< LESSON START >>
-\`\`\`
+
 ---`
 
+// LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
+// PROTOCOL VERSION: ${PROTOCOL_VERSION}
+
 const mdHeader = (lesson, format) => `---
-LESSON TITLE: ${lesson.name}
-LESSON DESCRIPTION: ${lesson.description}
-LESSON FORMAT: ${format}
-LESSON LINK: https://app.banklessacademy.com/lessons/${lesson.slug}
-LESSON WRITERS: ${lesson.lessonWriters || ''}
+TITLE: ${lesson.name}
+DESCRIPTION: ${lesson.description}
 LANGUAGE: English
+WRITERS: ${lesson.lessonWriters || ''}
 TRANSLATORS: X
-PROTOCOL VERSION: ${PROTOCOL_VERSION}
-LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
+LINK: https://app.banklessacademy.com/lessons/${lesson.slug}
+FORMAT: ${format}
 ---
 
 \`\`\`
@@ -105,8 +105,6 @@ $$$$$$$  |\\$$$$$$$ |$$ |  $$ |$$ | \\$$\\ $$ |\\$$$$$$$\\ $$$$$$$  |$$$$$$$  | 
 PORTABLE LESSON DATADISK COLLECTION                                                                                                            \\$$$$$$  |
                                                                                                                                                 \\______/
 __________________________________________________________________________________________________________________________________________________________
-\`\`\`
-
 ${LESSON_SPLITTER}
 `
 
@@ -172,7 +170,7 @@ const get_img = (imageLink, slug, image_name) => {
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
   const hash = crc32(file_name)
-  const image_dir = `/${PROJECT_DIR}lesson/images/${slug}`
+  const image_dir = `/${PROJECT_DIR}images/${slug}`
   const local_image_dir = `public${image_dir}`
   // create image directory dynamically in case it doesn't exist yet
   if (!fs.existsSync(local_image_dir)) {
@@ -347,7 +345,7 @@ axios
                       const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/)[1]
                       // create "unique" hash based on Notion imageLink (different when re-uploaded)
                       const hash = crc32(imageLink)
-                      const image_dir = `/${PROJECT_DIR}lesson/images/${lesson.slug}`
+                      const image_dir = `/${PROJECT_DIR}images/${lesson.slug}`
                       const local_image_dir = `public${image_dir}`
                       // create image directory dynamically in case it doesn't exist yet
                       if (!fs.existsSync(local_image_dir)) {
@@ -362,9 +360,9 @@ axios
                       }
                       lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${image_path}`)
                     }
-                    lesson.articleContent = lessonContentMD.replaceAll('https://app.banklessacademy.com/lesson/images/', '/lesson/images/')
+                    lesson.articleContent = lessonContentMD.replaceAll('https://app.banklessacademy.com/images/', '/images/')
                     // write/update file
-                    const lessonPath = `public/lesson/en/${lesson.slug}.md`
+                    const lessonPath = `translation/lesson/en/${lesson.slug}.md`
                     const lessonHeader = mdHeader(lesson, 'HANDBOOK')
                     if (fs.existsSync(lessonPath)) {
                       const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
@@ -374,8 +372,8 @@ axios
                         // console.log(previousLessonContentMD.trim())
                         // console.log(lessonContentMD.trim())
                         // If content has changed
-                        const plh = previousLessonHeader?.split('LAST UPDATED:')[0]
-                        const lh = lessonHeader?.split('LAST UPDATED:')[0]
+                        const plh = previousLessonHeader?.split(/FORMAT\: (.*?)\n/)[0]
+                        const lh = lessonHeader?.split(/FORMAT\: (.*?)\n/)[0]
                         if (plh.trim() !== lh.trim() ||
                           previousLessonContentMD.trim() !== lessonContentMD.trim()
                         ) {
@@ -507,7 +505,7 @@ axios
                 const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)\?table=/)[1]
                 // create "unique" hash based on Notion imageLink (different when re-uploaded)
                 const hash = crc32(imageLink)
-                const image_dir = `/${PROJECT_DIR}lesson/images/${lesson.slug}`
+                const image_dir = `/${PROJECT_DIR}images/${lesson.slug}`
                 const local_image_dir = `public${image_dir}`
                 // create image directory dynamically in case it doesn't exist yet
                 if (!fs.existsSync(local_image_dir)) {
@@ -603,19 +601,19 @@ axios
               console.log('import translation:', language)
               try {
                 const crowdin = await axios
-                  .get(`https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/public/lesson/${language}/${lesson.slug}.md`)
+                  .get(`https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md`)
                 // console.log(crowdin)
                 if (crowdin.status === 200) {
-                  // rm LAST UPDATED
-                  const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
+                  // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
+                  const newTranslation = crowdin.data
                   // console.log(newTranslation)
-                  const lessonPath = `public/lesson/${language}/${lesson.slug}.md`
-                  const existingTranslation = (await fs.promises.readFile(lessonPath, 'utf8')).replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
+                  const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
+                  const existingTranslation = (await fs.promises.readFile(lessonPath, 'utf8'))
                   // console.log(existingTranslation)
                   // check if translation has been modified
                   if (newTranslation.trim() !== existingTranslation.trim()) {
                     console.log('- new translation available')
-                    fs.writeFile(lessonPath, `${newTranslation.replace('LAST_UPDATED', `LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}`)}`, (error) => {
+                    fs.writeFile(lessonPath, `${newTranslation}`, (error) => {
                       if (error) throw error
                     })
                   } else {
@@ -664,7 +662,7 @@ axios
                 i++
               }
               // write/update file
-              const lessonPath = `public/lesson/en/${lesson.slug}.md`
+              const lessonPath = `translation/lesson/en/${lesson.slug}.md`
               const lessonHeader = mdHeader(lesson, "LESSON")
               if (fs.existsSync(lessonPath)) {
                 const lessonFile = await fs.promises.readFile(lessonPath, 'utf8')
@@ -674,8 +672,8 @@ axios
                   // console.log(previousLessonContentMD.trim())
                   // console.log(lessonContentMD.trim())
                   // If content has changed
-                  const plh = previousLessonHeader?.split('LAST UPDATED:')[0]
-                  const lh = lessonHeader?.split('LAST UPDATED:')[0]
+                  const plh = previousLessonHeader?.split(/FORMAT\: (.*?)\n/)[0]
+                  const lh = lessonHeader?.split(/FORMAT\: (.*?)\n/)[0]
                   if (plh.trim() !== lh.trim() ||
                     previousLessonContentMD.trim() !== lessonContentMD.trim()
                   ) {
