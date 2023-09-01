@@ -25,9 +25,6 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-```
-<< LESSON START >>
-```
 ---
 
 # Vieux Problèmes, Nouveaux Outils
@@ -357,3 +354,4 @@ La quête d'aujourd'hui est **de rejoindre la Maison des Jetons et déléguer no
 Pendant que la Maison des Citoyens développe ses procédures d'intégration, nous pouvons commencer notre voyage de Citoyen en participant à une conversation sur les forums de la [communauté Optimism](https://gov.optimism.io/).
 
 ![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg)
+
