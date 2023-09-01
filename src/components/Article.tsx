@@ -12,6 +12,7 @@ import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
+import { useTranslation } from 'react-i18next'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
 
 import ExternalLink from 'components/ExternalLink'
@@ -511,6 +512,7 @@ const Article = ({
   lesson: LessonType
   extraKeywords?: any
 }): React.ReactElement => {
+  const { t, i18n } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
   const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
     'articlesCollected',
@@ -602,9 +604,23 @@ const Article = ({
                   ? lowerCaseKeyword.slice(0, -1)
                   : undefined
               if (!lowerCaseKeyword?.length) return <>{keyword}</>
-              const definition =
+              const englishDefition =
                 keywords[lowerCaseKeyword]?.definition ||
                 keywords[lowerCaseKeywordSingular]?.definition
+              const definition =
+                i18n.language !== 'en'
+                  ? !t(`${lowerCaseKeyword}.definition`, {
+                      ns: 'keywords',
+                    }).endsWith('.definition')
+                    ? t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' })
+                    : !t(`${lowerCaseKeywordSingular}.definition`, {
+                        ns: 'keywords',
+                      }).endsWith('.definition')
+                    ? t(`${lowerCaseKeywordSingular}.definition`, {
+                        ns: 'keywords',
+                      })
+                    : englishDefition
+                  : englishDefition
               return definition?.length ? (
                 <Keyword definition={definition} keyword={keyword} />
               ) : (
