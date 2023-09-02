@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Box, Spinner, Button, VStack, Image, Text } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
+import { useTranslation } from 'react-i18next'
 
 import { LessonCard } from 'components/LessonCards'
 import { theme } from 'theme/index'
@@ -15,6 +16,7 @@ const Layer2Blockchains = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { t } = useTranslation('quests', { keyPrefix: 'Layer2Blockchains' })
   const [isSmallScreen] = useSmallScreen()
   const [isTransactionVerified, setIsTransactionVerified] = useState(
     localStorage.getItem('quest-layer-2-blockchains') || 'false'
@@ -65,7 +67,7 @@ const Layer2Blockchains = (
           <div className="bloc1">
             <Box ml="8">
               <Text mx="0 !important" fontSize="xl" fontWeight="bold">
-                {`Begin your L2 journey on the Optimism Network.`}
+                {t(`Begin your L2 journey on the Optimism Network.`)}
               </Text>
               <VStack mt="8" alignItems="start">
                 <Button
@@ -79,7 +81,7 @@ const Layer2Blockchains = (
                     )
                   }
                 >
-                  {'1. Connect your wallet to Bankless Academy'}
+                  {t('1. Connect your wallet to Bankless Academy')}
                 </Button>
                 {/* TODO: add step later */}
                 {/* <Button
@@ -110,18 +112,20 @@ const Layer2Blockchains = (
                     )
                   }
                 >
-                  {
+                  {t(
                     '2. Hold a balance of at least 0.001 ETH on Optimism Network'
-                  }
+                  )}
                 </Button>
               </VStack>
               <Box mt="8">
-                {`Tip: Check our Explorer's Handbook entry on 'How to Fund a Wallet on Layer 2' to find the best funding pathway for you.`}
+                {t(
+                  `Tip: Check our Explorer's Handbook entry on 'How to Fund a Wallet on Layer 2' to find the best funding pathway for you.`
+                )}
               </Box>
               {isTransactionVerified !== 'true' && (
                 <Box mt="24px !important" textAlign="center">
                   <Button onClick={validateQuest} variant="primary">
-                    Refresh balance
+                    {t('Refresh balance')}
                   </Button>
                 </Box>
               )}
@@ -153,7 +157,7 @@ const Layer2Blockchains = (
                     alt={lesson.name}
                     target="_blank"
                   >
-                    <Button variant="primary">Read Entry</Button>
+                    <Button variant="primary">{t('Read Entry')}</Button>
                   </InternalLink>
                 </Box>
               </Box>
