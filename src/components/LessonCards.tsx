@@ -14,6 +14,7 @@ import { useRouter } from 'next/router'
 import { useLocalStorage } from 'usehooks-ts'
 import { isMobile } from 'react-device-detect'
 import { useAccount } from 'wagmi'
+import { useTranslation } from 'react-i18next'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import InternalLink from 'components/InternalLink'
@@ -80,6 +81,7 @@ const StyledTag = styled(Tag)<{ isminted?: string; gold?: string }>`
 `
 
 const LessonCards: React.FC = () => {
+  const { t } = useTranslation()
   const router = useRouter()
   const { all, slug } = router.query
 
@@ -231,8 +233,8 @@ const LessonCards: React.FC = () => {
                     gold="true"
                   >
                     {!isLessonCollected
-                      ? 'Collectible available'
-                      : 'Lesson Collected'}
+                      ? t('Collectible Available')
+                      : t('Lesson Collected')}
                   </StyledTag>
                 )}
                 {lesson.isArticle ? (

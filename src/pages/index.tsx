@@ -93,7 +93,7 @@ const HomePage = (): JSX.Element => {
                   size="lg"
                   style={{ padding: '0 23px' }}
                 >
-                  {t('Explore Lessons', { ns: 'common' })}
+                  {t('Explore Lessons')}
                 </Button>
               </InternalLink>
             </Box>
