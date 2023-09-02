@@ -1,1 +1,18 @@
-{}
+{
+  "Layer2Blockchains": {
+    "Begin your L2 journey on the Optimism Network.": "Begin your L2 journey on the Optimism Network.",
+    "1. Connect your wallet to Bankless Academy": "1. Connect your wallet to Bankless Academy",
+    "2. Hold a balance of at least 0.001 ETH on Optimism Network": "2. Hold a balance of at least 0.001 ETH on Optimism Network",
+    "Tip: Check our Explorer's Handbook entry on 'How to Fund a Wallet on Layer 2' to find the best funding pathway for you.": "Tip: Check our Explorer's Handbook entry on 'How to Fund a Wallet on Layer 2' to find the best funding pathway for you.",
+    "Refresh balance": "Refresh balance",
+    "Read Entry": "Read Entry"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "Begin your Optimism Network journey by delegating OP.",
+    "1. Connect your wallet to Bankless Academy": "1. Connect your wallet to Bankless Academy",
+    "2. Delegate your vote": "2. Delegate your vote",
+    "Tip: Check our Explorer's Handbook entry on 'How to delegate on Optimism' to learn how to delegate.": "Tip: Check our Explorer's Handbook entry on 'How to delegate on Optimism' to learn how to delegate.",
+    "Refresh": "Refresh",
+    "Read Entry": "Read Entry"
+  }
+}
