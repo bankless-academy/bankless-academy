@@ -14,7 +14,7 @@ import InternalLink from 'components/InternalLink'
 import { useSmallScreen } from 'hooks'
 import LessonButton from 'components/LessonButton'
 import NFT from 'components/NFT'
-import ExternalLink from './ExternalLink'
+import ExternalLink from 'components/ExternalLink'
 import { DOMAIN_URL, TOKEN_GATING_ENABLED } from 'constants/index'
 import { useEffect } from 'react'
 import { scrollTop } from 'utils'
@@ -58,7 +58,7 @@ const LessonDetail = ({
   lesson: LessonType
   extraKeywords?: any
 }): React.ReactElement => {
-  const { i18n } = useTranslation()
+  const { t, i18n } = useTranslation()
   const router = useRouter()
   const [, isSmallScreen] = useSmallScreen()
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
@@ -225,7 +225,7 @@ const LessonDetail = ({
                   borderBottom="1px solid #989898"
                   pb="2"
                 >
-                  Lesson Description
+                  {t('Lesson Description')}
                 </Text>
                 <Text as="p" fontSize="medium" py="4">
                   {lesson.description}
@@ -240,7 +240,7 @@ const LessonDetail = ({
                     borderBottom="1px solid #989898"
                     pb="2"
                   >
-                    Lesson Requirements
+                    {t('Lesson Requirements')}
                   </Text>
                   <Box textAlign="center">
                     <NFT nftLink={lesson.nftGatingImageLink} />
@@ -269,14 +269,14 @@ const LessonDetail = ({
                         borderBottom="1px solid #989898"
                         pb="2"
                       >
-                        Feedback
+                        {t('Feedback')}
                       </Text>
                     </Box>
                     <Box>{lesson.endOfLessonText}</Box>
                     <Box textAlign="center">
                       <InternalLink href={`/feedback?tally=${tallyId}`}>
                         <Button variant="primaryBig" size="lg">
-                          Leave feedback
+                          {t('Leave feedback')}
                         </Button>
                       </InternalLink>
                     </Box>
@@ -292,7 +292,7 @@ const LessonDetail = ({
                       borderBottom="1px solid #989898"
                       pb="2"
                     >
-                      Rewards
+                      {t('Rewards')}
                     </Text>
                   </Box>
                   <Box textAlign="center">

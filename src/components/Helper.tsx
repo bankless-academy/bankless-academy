@@ -14,6 +14,7 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react'
 import { ReactNode, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const QuestionIcon = (props) => (
   <Icon
@@ -83,6 +84,7 @@ const Helper = ({
   definition: ReactNode
   fullscreen?: boolean
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const {
     isOpen: isOpenHelpModal,
     onOpen: onOpenHelpModal,
@@ -112,7 +114,7 @@ const Helper = ({
           <ModalCloseButton />
           <ModalBody>{definition}</ModalBody>
           <ModalFooter m="auto">
-            <Button onClick={onCloseHelpModal}>Got it</Button>
+            <Button onClick={onCloseHelpModal}>{t('Got it')}</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

@@ -12,9 +12,11 @@ import {
   useMediaQuery,
   Box,
 } from '@chakra-ui/react'
+import { useTranslation } from 'react-i18next'
+
 import { DISCLAIMER_ENABLED } from 'constants/index'
 import { useEffect } from 'react'
-import ExternalLink from './ExternalLink'
+import ExternalLink from 'components/ExternalLink'
 import { LessonType } from 'entities/lesson'
 
 const Disclaimer = ({
@@ -31,6 +33,7 @@ const Disclaimer = ({
     onOpen: onOpenHelpModal,
     onClose: onCloseHelpModal,
   } = useDisclosure()
+  const { t } = useTranslation()
   const initialRef = React.useRef(null)
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
 
@@ -63,21 +66,25 @@ const Disclaimer = ({
         overflowY="auto"
         maxH="var(--chakra-vh)"
       >
-        <ModalHeader>Disclaimer</ModalHeader>
+        <ModalHeader>{t('Disclaimer')}</ModalHeader>
         <ModalCloseButton />
         <ModalBody>
           <Box>
             <Box mb="4">
-              Remember, engaging in crypto is risky. This is the frontier of
-              technology and finance, it’s not for everyone. Even the most
-              trained Explorers{' '}
-              <ExternalLink underline="true" href="/disclaimer">
-                can lose what they put in
-              </ExternalLink>{' '}
-              — but in building expertise, you reduce risk.
+              {t('Remember, engaging in crypto is risky.')}{' '}
+              {t(
+                'This is the frontier of technology and finance, it’s not for everyone.'
+              )}{' '}
+              {t(
+                'Even the most trained Explorers can lose what they put in — but in building expertise, you reduce risk.'
+              )}
             </Box>
             <Box mb="4" fontWeight="bold">
-              Do you accept full responsibility for your own Bankless journey?
+              <ExternalLink underline="true" href="/disclaimer">
+                {t(
+                  'Do you accept full responsibility for your own Bankless journey?'
+                )}
+              </ExternalLink>
             </Box>
             {/* <Box
               mb="4"
@@ -103,7 +110,7 @@ const Disclaimer = ({
               onClose()
             }}
           >
-            Take me back
+            {t('Take me back')}
           </Button>
 
           <Button
@@ -116,7 +123,7 @@ const Disclaimer = ({
             }}
             ml="4"
           >
-            Yes, let’s go!
+            {t('Yes, let’s go!')}
           </Button>
         </ModalFooter>
       </ModalContent>

@@ -13,6 +13,7 @@ import {
 import { Global, css } from '@emotion/react'
 import { isAndroid, isIOS } from 'react-device-detect'
 import { useLocalStorage } from 'usehooks-ts'
+import { useTranslation } from 'react-i18next'
 
 const InstallAppModal = ({
   isOpen,
@@ -23,6 +24,7 @@ const InstallAppModal = ({
   onClose: () => void
   yes?: boolean
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const [showInstall, setShowInstall]: any = useState(yes)
   const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
   const isDesktop = !(isAndroid || isIOS)
@@ -61,7 +63,7 @@ const InstallAppModal = ({
                   src="/app-icon.png"
                 />
                 <Text fontSize="lg" alignSelf="center">
-                  How to install the Bankless Academy Mobile App
+                  {t('How to install the Bankless Academy Mobile App')}
                 </Text>
               </Box>
             </ModalHeader>
@@ -70,9 +72,9 @@ const InstallAppModal = ({
               {isDesktop ? (
                 <>
                   <Text fontSize="md" mb="4" alignSelf="center">
-                    {`Open the website `}
-                    <b>on mobile</b>
-                    {`, open the main menu, and press "Install Mobile App".`}
+                    {t(
+                      `Open the website on mobile, open the main menu, and press "Install Mobile App".`
+                    )}
                   </Text>
                   <Image
                     borderRadius="10px"
@@ -92,7 +94,9 @@ const InstallAppModal = ({
                     alt="Install Mobile App on iOS"
                   />
                   <Text fontSize="md" mt="4">
-                    {`Open the website in Safari, click "Share" icon, "Add to Home Screen". This won't work with other browsers on iOS.`}
+                    {t(
+                      `Open the website in Safari, click "Share" icon, "Add to Home Screen". This won't work with other browsers on iOS.`
+                    )}
                   </Text>
                 </>
               ) : (
@@ -115,7 +119,9 @@ const InstallAppModal = ({
                     ></source>
                   </video>
                   <Text fontSize="md" mt="4">
-                    {`In your mobile browser, click on "︙" icon for menu options, then click "Install app".`}
+                    {t(
+                      'In your mobile browser, click on "︙" icon for menu options, then click "Install app".'
+                    )}
                   </Text>
                 </>
               )}
@@ -133,7 +139,7 @@ const InstallAppModal = ({
                   src="/app-icon.png"
                 />
                 <Text fontSize="lg" alignSelf="center">
-                  Do you want to install the Bankless Academy Mobile App?
+                  {t('Do you want to install the Bankless Academy Mobile App?')}
                 </Text>
               </Box>
             </ModalHeader>
@@ -151,7 +157,7 @@ const InstallAppModal = ({
                       onClose()
                     }}
                   >
-                    Remind me later
+                    {t('Remind me later')}
                   </Button>
                 </Box>
                 <Box display="inline-flex" mb="2" ml="2">
@@ -162,14 +168,14 @@ const InstallAppModal = ({
                       onClose()
                     }}
                   >
-                    No
+                    {t('No')}
                   </Button>
                   <Button
                     ml="2"
                     variant="primaryWhite"
                     onClick={() => setShowInstall(true)}
                   >
-                    Yes
+                    {t('Yes')}
                   </Button>
                 </Box>
               </Box>

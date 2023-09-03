@@ -24,6 +24,7 @@ import { useAccount, useNetwork, useSignMessage, useDisconnect } from 'wagmi'
 import { fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
 import makeBlockie from 'ethereum-blockies-base64'
 import { SiweMessage } from 'siwe'
+import { useTranslation } from 'react-i18next'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -57,6 +58,7 @@ const ConnectWalletButton = ({
 }: {
   isSmallScreen: boolean
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const { setDefaultChain, open } = useWeb3Modal()
   const { connector, address, isConnected } = useAccount()
   const { chain } = useNetwork()
@@ -232,7 +234,7 @@ const ConnectWalletButton = ({
       const message = new SiweMessage({
         domain: window.location.host,
         address,
-        statement: 'Sign in with Ethereum to the app.',
+        statement: t('Sign in with Ethereum to the app.'),
         uri: window.location.origin,
         version: '1',
         chainId,
@@ -320,7 +322,7 @@ const ConnectWalletButton = ({
               onClick={() => onOpen()}
             >
               <Text maxW="200px" display="flex" alignItems="center" isTruncated>
-                {name || 'Click here to sign in'}
+                {name || t('Click here to sign in')}
               </Text>
             </Button>
           </PopoverTrigger>
@@ -335,14 +337,14 @@ const ConnectWalletButton = ({
                   leftIcon={<Wallet weight="bold" />}
                   onClick={disconnectWallet}
                 >
-                  Disconnect wallet
+                  {t('Disconnect wallet')}
                 </Button>
               </Box>
               {/* TODO: move to dedicated component? */}
               {badges?.length > 0 && (
                 <>
                   <Text fontSize="xl" fontWeight="bold" textAlign="center">
-                    My Academy Badges
+                    {t('My Academy Badges')}
                   </Text>
                   <Box
                     h="215px"
@@ -435,22 +437,22 @@ const ConnectWalletButton = ({
               isLoading={waitingForSIWE || isDisconnecting}
               loadingText={
                 isDisconnecting
-                  ? 'Disconnecting'
+                  ? t('Disconnecting')
                   : SIWE_ENABLED
-                  ? 'Sign In With Ethereum'
-                  : 'Connecting wallet'
+                  ? t('Sign In With Ethereum')
+                  : t('Connecting wallet')
               }
               zIndex={2}
               variant="primary"
             >
-              Connect wallet
+              {t('Connect wallet')}
             </Button>
           </PopoverTrigger>
           <PopoverContent>
             <PopoverArrow />
             <PopoverBody>
               <Heading as="h2" size="md" textAlign="center" my="2">
-                Connect your wallet to proceed.
+                {t('Connect your wallet to proceed.')}
               </Heading>
               <Text textAlign="center">
                 {`Don’t know how? `}
@@ -458,7 +460,7 @@ const ConnectWalletButton = ({
                   underline="true"
                   href="/faq#edf3a4658d3d4aa78eac62e1dcf68978"
                 >
-                  Get help here
+                  {t('Get help here')}
                 </ExternalLink>
               </Text>
             </PopoverBody>

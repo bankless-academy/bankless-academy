@@ -13,28 +13,27 @@ import {
   ModalBody,
   ModalFooter,
   useDisclosure,
-  Heading,
 } from '@chakra-ui/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { signMessage, waitForTransaction } from '@wagmi/core'
 import { Gear, SealCheck } from '@phosphor-icons/react'
+import { useTranslation } from 'react-i18next'
 
-import { useSmallScreen } from 'hooks/index'
 import Passport from 'components/Passport'
 import ExternalLink from 'components/ExternalLink'
-import { LESSONS, WALLET_SIGNATURE_MESSAGE } from 'constants/index'
+import { WALLET_SIGNATURE_MESSAGE } from 'constants/index'
 import {
   BADGE_OPENSEA_URL,
   BADGE_CHAIN_ID,
   BADGE_EXPLORER,
 } from 'constants/badges'
 import { EMPTY_PASSPORT } from 'constants/passport'
-import { theme } from 'theme/index'
 import { api } from 'utils'
 
 const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
+  const { t } = useTranslation()
   const [isBadgeMintedLS, setIsBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${badgeId}`,
     false
@@ -49,7 +48,6 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
 
   const { address } = useAccount()
   const toast = useToast()
-  const [isSmallScreen] = useSmallScreen()
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
@@ -90,7 +88,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
 
   const mintBadge = async () => {
     if (status !== '') return
-    setStatus('Minting in progress ...')
+    setStatus(t('Minting in progress ...'))
     // TODO: add 1 min timeout
 
     try {
@@ -113,7 +111,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                   <Gear width="40px" height="auto" />
                 </Box>
                 <Box flexDirection="column">
-                  <Box>Generating lesson badge ...</Box>
+                  <Box>{t('Generating lesson badge ...')}</Box>
                 </Box>
               </Box>
             </Box>
@@ -138,11 +136,11 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                     <Gear width="40px" height="auto" />
                   </Box>
                   <Box flexDirection="column">
-                    <Box>Minting in progress ...</Box>
+                    <Box>{t('Minting in progress ...')}</Box>
                     <ExternalLink
                       underline="true"
                       href={txLink}
-                      alt="Transaction in progress"
+                      alt="Minting in progress"
                     >
                       {`${txLink.substring(0, 50)}...`}
                     </ExternalLink>
@@ -177,7 +175,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                       <SealCheck width="40px" height="auto" />
                     </Box>
                     <Box flexDirection="column" alignSelf="center">
-                      <Box>Badge successfully minted!</Box>
+                      <Box>{t('Badge successfully minted!')}</Box>
                       <ExternalLink
                         underline="true"
                         href={openSeaLink}
@@ -210,7 +208,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         toast({
           title: result.data.transactionHash
             ? result.data.status
-            : '⚠️ Problem while minting, try again later.',
+            : t('⚠️ Problem while minting, try again later.'),
           description: (
             <>
               {result.data.transactionHash ? (
@@ -228,7 +226,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                     underline="true"
                     href="/faq#d1a7f6dda4334a7ba73ee8b3a18a60ad"
                   >
-                    Learn more
+                    {t('Learn more')}
                   </ExternalLink>
                 </>
               )}
@@ -274,9 +272,9 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                     </Box>
                     <Box flexDirection="column" alignSelf="center">
                       <Box fontWeight="bold">
-                        Gitcoin Passport successfully set up.
+                        {t('Gitcoin Passport successfully set up.')}
                       </Box>
-                      <Box mt="4">Try to mint your badge again.</Box>
+                      <Box mt="4">{t('Try to mint your badge again.')}</Box>
                     </Box>
                   </Box>
                 </Box>
@@ -300,13 +298,15 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                       />
                     </Box>
                     <Box flexDirection="column" alignSelf="center">
-                      <Box fontWeight="bold">Gitcoin Passport not set up.</Box>
+                      <Box fontWeight="bold">
+                        {t('Gitcoin Passport not set up.')}
+                      </Box>
                       <Box mt="4">
                         <ExternalLink
                           underline="true"
                           href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
                         >
-                          Follow these steps and try again
+                          {t('Follow these steps and try again')}
                         </ExternalLink>
                       </Box>
                     </Box>
@@ -337,16 +337,20 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
           <Text fontSize="xl">
             {!passportLS?.verified && (
               <Box mt="4" mr="4">
-                {`You haven’t set up Gitcoin Passport, or your stamps are out of date.`}
+                {t(
+                  'You haven’t set up Gitcoin Passport, or your stamps are out of date.'
+                )}
               </Box>
             )}
             <Box my="4">
-              {`Explorers must have a valid Gitcoin Passport in order to collect Bankless Academy rewards. `}
+              {t(
+                'Explorers must have a valid Gitcoin Passport in order to collect Bankless Academy rewards.'
+              )}{' '}
               <ExternalLink
                 underline="true"
                 href="/faq#640071a81daf4aa4b7df00b1eec1c58d"
               >
-                Learn more
+                {t('Learn more')}
               </ExternalLink>
             </Box>
           </Text>
@@ -357,14 +361,13 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
             underline="true"
             href="/faq#640071a81daf4aa4b7df00b1eec1c58d"
           >
-            Help
+            {t('Help')}
           </ExternalLink>
         </ModalFooter>
       </ModalContent>
     </Modal>
   )
 
-  const lesson = LESSONS.find((lesson) => lesson.badgeId === badgeId)
   return (
     <>
       <Button
@@ -375,58 +378,16 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         fontWeight="bold"
         borderBottomRadius="0"
         isLoading={isMintingInProgress}
-        loadingText="Minting Badge ..."
+        loadingText={t('Minting Badge ...')}
         cursor={isBadgeMintedLS ? 'auto' : 'pointer'}
         onClick={() => {
           passportLS?.verified ? mintBadge() : onOpen()
         }}
       >
-        Mint Badge
+        {t('Mint Badge')}
       </Button>
       {GitcoinModal}
     </>
-  )
-
-  return (
-    <Box>
-      <Heading as="h2" size="xl" textAlign="center">
-        <span style={{ color: theme.colors.secondary }}>{lesson.name}</span>
-        {` badge ${isBadgeMintedLS ? 'claimed' : 'available'}!`}
-      </Heading>
-      {isBadgeMintedLS ? null : passportLS?.verified && !isOpen ? (
-        <Box textAlign="center">
-          <Button
-            colorScheme={'green'}
-            onClick={mintBadge}
-            variant="primary"
-            isLoading={isMintingInProgress}
-            loadingText={status}
-          >
-            {status !== '' ? status : 'Mint badge 🛠'}
-          </Button>
-        </Box>
-      ) : (
-        <>
-          <Box>
-            <Heading as="h2" size="xl" textAlign="center">
-              {`To claim rewards you need a `}
-              <Button
-                variant="primary"
-                onClick={onOpen}
-                mt={isSmallScreen ? '2' : ''}
-              >
-                {`Gitcoin Passport`}
-              </Button>
-            </Heading>
-            <p>
-              Authentication takes ~2 minutes, and protects the legitimacy of
-              Academy rewards.
-            </p>
-          </Box>
-          {GitcoinModal}
-        </>
-      )}
-    </Box>
   )
 }
 

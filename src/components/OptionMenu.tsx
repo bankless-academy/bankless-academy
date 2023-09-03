@@ -9,9 +9,10 @@ import {
   Box,
 } from '@chakra-ui/react'
 import { Mixpanel } from 'utils'
+import { useTranslation } from 'react-i18next'
+
 import SubscriptionModal from 'components/SubscriptionModal'
 import InstallAppModal from 'components/InstallAppModal'
-
 import ExternalLink from 'components/ExternalLink'
 import { IS_WHITELABEL, TWITTER_ACCOUNT } from 'constants/index'
 
@@ -22,6 +23,7 @@ const OptionMenu = ({
   isSmallScreen: boolean
   isWebApp: boolean
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const {
     isOpen: isOpenAppModal,
@@ -43,13 +45,13 @@ const OptionMenu = ({
         </MenuButton>
         <MenuList>
           <ExternalLink href="/faq" color="white">
-            <MenuItem>FAQ</MenuItem>
+            <MenuItem>{t('FAQ')}</MenuItem>
           </ExternalLink>
           <ExternalLink href="/disclaimer" color="white">
-            <MenuItem>Disclaimer</MenuItem>
+            <MenuItem>{t('Disclaimer')}</MenuItem>
           </ExternalLink>
           <ExternalLink href="/bug" color="white">
-            <MenuItem>Report a bug</MenuItem>
+            <MenuItem>{t('Report a bug')}</MenuItem>
           </ExternalLink>
           {!IS_WHITELABEL && (
             <>
@@ -62,7 +64,7 @@ const OptionMenu = ({
                   })
                 }}
               >
-                Newsletter signup 📩
+                {t('Newsletter signup')} 📩
               </MenuItem>
               {isWebApp ? null : (
                 <MenuItem
@@ -74,7 +76,7 @@ const OptionMenu = ({
                     })
                   }}
                 >
-                  Install Mobile App 📱
+                  {t('Install Mobile App')} 📱
                 </MenuItem>
               )}
               <ExternalLink
@@ -82,7 +84,7 @@ const OptionMenu = ({
                 color="white"
               >
                 <MenuItem>
-                  Follow our Lens
+                  {t('Follow our Lens')}
                   <svg
                     width="16"
                     height="16"
@@ -102,7 +104,7 @@ const OptionMenu = ({
           )}
           <ExternalLink href={twitterLink} color="white">
             <MenuItem>
-              Follow our Twitter
+              {t('Follow our Twitter')}
               <svg
                 width="16"
                 height="16"

@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
+import { useTranslation } from 'react-i18next'
 
 import { LessonType } from 'entities/lesson'
 import MintBadge from 'components/MintBadge'
@@ -11,21 +12,6 @@ import Helper from 'components/Helper'
 import NFT from 'components/NFT'
 import { BADGE_TO_KUDOS_IDS } from 'pages/api/badges/[...slug]'
 
-const BadgeHelper = (
-  <Helper
-    title="Academy Badges"
-    definition={
-      <>
-        <Box>
-          Academy Badges are non-tradable NFTs that serve as proof of your
-          achievements on the blockchain. You can mint them for free after you
-          answered all the questions correctly and validated the lesson quest.
-        </Box>
-      </>
-    }
-  />
-)
-
 const Badge = ({
   lesson,
   isQuestCompleted,
@@ -33,11 +19,13 @@ const Badge = ({
   lesson: LessonType
   isQuestCompleted: boolean
 }): JSX.Element => {
+  const { t } = useTranslation()
   const [isBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${lesson.badgeId}`,
     false
   )
   const [kudosMintedLS] = useLocalStorage(`kudosMinted`, [])
+  // TODO: TRANSLATE
   const share = `I've just claimed my "${
     lesson.name
   }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
@@ -52,6 +40,21 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
   )}`
+
+  const BadgeHelper = (
+    <Helper
+      title={t('Academy Badges')}
+      definition={
+        <>
+          <Box>
+            {t(
+              'Academy Badges are non-tradable NFTs that serve as proof of your achievements on the blockchain. You can mint them for free after you answered all the questions correctly and validated the lesson quest.'
+            )}
+          </Box>
+        </>
+      }
+    />
+  )
 
   if (!isQuestCompleted && !isBadgeMintedLS) {
     return (
@@ -83,7 +86,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           {isBadgeMintedLS ? (
             <Box border="1px solid #9E72DC" borderTopRadius="8px" py="3" px="5">
               <Box color="#9E72DC" fontWeight="bold" fontSize="lg">
-                Badge Minted
+                {t('Badge Minted')}
               </Box>
             </Box>
           ) : (
@@ -125,7 +128,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                       <ChakraImage width="24px" src="/images/Twitter.svg" />
                     }
                   >
-                    Share on Twitter
+                    {t('Share on Twitter')}
                   </Button>
                 </ExternalLink>
               </Box>
@@ -138,7 +141,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     <ChakraImage width="24px" src="/images/OpenSea.svg" />
                   }
                 >
-                  View on OpenSea
+                  {t('View on OpenSea')}
                 </Button>
               </ExternalLink>
             </Box>

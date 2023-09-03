@@ -11,6 +11,7 @@ import {
   useNetwork,
 } from 'wagmi'
 import { Gear, SealCheck } from '@phosphor-icons/react'
+import { useTranslation } from 'react-i18next'
 
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks'
@@ -24,6 +25,7 @@ const CollectEntryButton = ({
   lesson: LessonType
 }): JSX.Element => {
   if (!lesson.mirrorNFTAddress) return
+  const { t } = useTranslation()
   const { address } = useAccount()
   const { chain } = useNetwork()
   const toast = useToast()
@@ -97,7 +99,7 @@ const CollectEntryButton = ({
                   <Gear width="40px" height="auto" />
                 </Box>
                 <Box flexDirection="column">
-                  <Box>Minting in progress:</Box>
+                  <Box>{t('Minting in progress:')}</Box>
                   <ExternalLink
                     underline="true"
                     href={txLink}
@@ -133,7 +135,7 @@ const CollectEntryButton = ({
                   <SealCheck width="40px" height="auto" />
                 </Box>
                 <Box flexDirection="column">
-                  <Box>Entry minted:</Box>
+                  <Box>{t('Entry minted:')}</Box>
                   <ExternalLink
                     underline="true"
                     href={txLink}
@@ -159,20 +161,20 @@ const CollectEntryButton = ({
 
   return (
     <Box>
-      <Tooltip hasArrow label="Collect Mirror Entry">
+      <Tooltip hasArrow label={t('Collect Mirror Entry')}>
         {lesson.areMirrorNFTAllCollected ? (
           <ExternalLink
             href={`https://opensea.io/collection/${lesson.slug}`}
             alt="Collect on secondary market"
           >
             <Button variant="primaryGold" w="100%">
-              Collect on secondary market
+              {t('Collect on secondary market')}
             </Button>
           </ExternalLink>
         ) : (
           <Button
             isDisabled={isLoading}
-            loadingText="Minting ..."
+            loadingText={t('Minting ...')}
             variant="primaryGold"
             w="100%"
             onClick={async () => {
@@ -189,7 +191,7 @@ const CollectEntryButton = ({
               else setConnectWalletPopupLS(true)
             }}
           >
-            Collect Entry
+            {t('Collect Entry')}
           </Button>
         )}
       </Tooltip>

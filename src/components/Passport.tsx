@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Box, Text, Button, Image, useToast } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
+import { useTranslation } from 'react-i18next'
 
 import GitcoinPassport from 'components/GitcoinPassport'
 import ExternalLink from 'components/ExternalLink'
@@ -15,6 +16,7 @@ const PassportComponent = ({
 }: {
   displayStamps?: boolean
 }): JSX.Element => {
+  const { t } = useTranslation()
   const [passportLS, setPassportLS] = useLocalStorage(
     'passport',
     EMPTY_PASSPORT
@@ -37,13 +39,13 @@ const PassportComponent = ({
         toast.closeAll()
         if (result.data?.error.includes('ERR_BAD_RESPONSE')) {
           toast({
-            title: 'Gitcoin Passport stamps not loading',
+            title: t('Gitcoin Passport stamps not loading'),
             description: (
               <ExternalLink
                 underline="true"
                 href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
               >
-                Follow these steps and try again
+                {t('Follow these steps and try again')}
               </ExternalLink>
             ),
             status: 'warning',
@@ -52,10 +54,10 @@ const PassportComponent = ({
           })
         } else {
           toast({
-            title: 'Gitcoin Passport issue',
+            title: t('Gitcoin Passport issue'),
             description: (
               <ExternalLink underline="true" href="/bug">
-                Report a bug
+                {t('Report a bug')}
               </ExternalLink>
             ),
             status: 'warning',
@@ -92,11 +94,11 @@ const PassportComponent = ({
               fontWeight="bold"
             >
               <ExternalLink href="/faq#ea6ae6bd9ca645498c15cc611bc181c0">
-                Duplicate stamp detected.
+                {t('Duplicate stamp detected.')}
               </ExternalLink>
               <br />
               {passportLS?.fraud
-                ? `Switch back to ${shortenAddress(passportLS?.fraud)}`
+                ? `${t('Switch back to:')} ${shortenAddress(passportLS?.fraud)}`
                 : null}
             </Text>
           </Box>
@@ -119,17 +121,20 @@ const PassportComponent = ({
                         />
                       }
                     >
-                      Gitcoin Passport
+                      {t('Gitcoin Passport')}
                     </Button>
                   </ExternalLink>
                   <Box mt="4">
-                    {`Collect ${numberOfStampsLeftToCollect} more of the following stamp${
-                      numberOfStampsLeftToCollect !== 1 ? 's' : ''
-                    }:`}
+                    {t(
+                      `Collect {{numberOfStampsLeftToCollect}} more of the following stamps:`,
+                      { numberOfStampsLeftToCollect }
+                    )}
                   </Box>
                 </>
               ) : (
-                'You have collected enough stamps. You can now close this popup and claim your rewards.'
+                t(
+                  'You have collected enough stamps. You can now close this popup and claim your rewards.'
+                )
               )}
             </>
           </Text>
@@ -147,7 +152,7 @@ const PassportComponent = ({
           loadingText="Refreshing"
           mt="4"
         >
-          Refresh
+          {t('Refresh')}
         </Button>
       </Box>
     </>

@@ -14,6 +14,7 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import { Envelope } from '@phosphor-icons/react'
+import { useTranslation } from 'react-i18next'
 
 import { LessonType } from 'entities/lesson'
 import { api, Mixpanel } from 'utils'
@@ -27,6 +28,7 @@ const SubscriptionModal = ({
   onClose: () => void
   lesson?: LessonType
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const toast = useToast()
   const [email, setEmail] = useState(localStorage.getItem('email'))
   const emailRegex =
@@ -43,8 +45,8 @@ const SubscriptionModal = ({
       >
         <ModalHeader>
           {lesson
-            ? `Subscribe to '${lesson.name}' notifications`
-            : 'Newsletter'}
+            ? t(`Subscribe to {{lesson.name}} notifications`, lesson)
+            : t('Newsletter')}
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody>
@@ -54,7 +56,7 @@ const SubscriptionModal = ({
             </InputLeftElement>
             <Input
               backgroundColor="black"
-              placeholder="Enter your email address..."
+              placeholder={t('Enter your email address...')}
               type="email"
               value={email}
               mb="8"
@@ -72,16 +74,16 @@ const SubscriptionModal = ({
                 toast.closeAll()
                 if (!email)
                   toast({
-                    title: 'Email missing',
-                    description: 'Provide an email.',
+                    title: t('Email missing'),
+                    description: t('Provide an email.'),
                     status: 'warning',
                     duration: 10000,
                     isClosable: true,
                   })
                 else if (emailRegex.test(email) === false)
                   toast({
-                    title: 'Wrong email format',
-                    description: 'Please check your email.',
+                    title: t('Wrong email format'),
+                    description: t('Please check your email.'),
                     status: 'warning',
                     duration: 10000,
                     isClosable: true,
@@ -108,17 +110,18 @@ const SubscriptionModal = ({
                       }
                     )
                     toast({
-                      title: 'Thanks for subscribing Explorer 🧑‍🚀',
-                      description: "You'll hear from us soon!",
+                      title: t('Thanks for subscribing Explorer 🧑‍🚀'),
+                      description: t(`You'll hear from us soon!`),
                       status: 'success',
                       duration: 10000,
                       isClosable: true,
                     })
                   } else {
                     toast({
-                      title:
-                        "Wrong went wrong ... we couldn't add your subscription.",
-                      description: 'Please try again later.',
+                      title: t(
+                        `Wrong went wrong ... we couldn't add your subscription.`
+                      ),
+                      description: t('Please try again later.'),
                       status: 'warning',
                       duration: 10000,
                       isClosable: true,
@@ -128,7 +131,7 @@ const SubscriptionModal = ({
                 }
               }}
             >
-              {lesson ? 'Notify me' : 'Subscribe'}
+              {lesson ? t('Notify me') : t('Subscribe')}
             </Button>
           </Box>
         </ModalBody>

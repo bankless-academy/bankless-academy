@@ -1,5 +1,6 @@
 import { Box, SimpleGrid, Image, Icon } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
 // import { Stamps } from 'entities/passport'
@@ -29,6 +30,7 @@ const GitcoinPassport = ({
   stamps?: any
   displayStamps?: boolean
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
   return (
     <>
@@ -63,14 +65,14 @@ const GitcoinPassport = ({
                   {stamp ? (
                     isStampExpired ? (
                       <span style={{ color: theme.colors.incorrect }}>
-                        stamp expired
+                        {t('stamp expired')}
                       </span>
                     ) : isTrustedIssuer ? (
                       // OK
                       <CircleIcon color={theme.colors.correct} />
                     ) : (
                       <span style={{ color: theme.colors.incorrect }}>
-                        untrusted DID issuer
+                        {t('untrusted DID issuer')}
                       </span>
                     )
                   ) : stamp === null ? (

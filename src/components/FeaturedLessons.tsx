@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Text, Image, Heading, SimpleGrid } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 import InternalLink from 'components/InternalLink'
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
@@ -16,12 +17,13 @@ const LessonGrid = styled(SimpleGrid)`
 `
 
 const FeaturedLessons: React.FC = () => {
+  const { t } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
 
   return (
     <Box mt="16">
       <Heading as="h2" size="xl">
-        Featured Content
+        {t('Featured Content')}
       </Heading>
       <Box>
         {[...LESSONS]

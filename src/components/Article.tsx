@@ -568,7 +568,7 @@ const Article = ({
               w="100%"
               background="transparent !important"
             >
-              Entry Collected
+              {t('Entry Collected')}
             </Button>
           ) : (
             <CollectEntryButton lesson={lesson} />
@@ -587,7 +587,7 @@ const Article = ({
               w="100%"
               rightIcon={<ArrowRight size={16} />}
             >
-              View on Mirror.xyz
+              {t('View on Mirror.xyz')}
             </Button>
           </ExternalLink>
         </Box>
@@ -656,7 +656,9 @@ const Article = ({
           <Text fontSize="xl" fontWeight="bold">
             {`Subscribe to the Explorer's Handbook`}
           </Text>
-          <Text fontSize="xl">Receive new entries directly to your inbox.</Text>
+          <Text fontSize="xl">
+            {t('Receive new entries directly to your inbox.')}
+          </Text>
         </Box>
         <Box
           textAlign={isSmallScreen ? 'left' : 'right'}
@@ -666,7 +668,7 @@ const Article = ({
           mt={isSmallScreen ? '20px' : '0'}
         >
           <ExternalLink href={lesson.mirrorLink}>
-            <Button variant="primary">Subscribe</Button>
+            <Button variant="primary">{t('Subscribe')}</Button>
           </ExternalLink>
         </Box>
       </Box>
@@ -683,7 +685,7 @@ const Article = ({
               w="100%"
               background="transparent !important"
             >
-              Entry Collected
+              {t('Entry Collected')}
             </Button>
           ) : (
             <CollectEntryButton lesson={lesson} />
@@ -698,7 +700,7 @@ const Article = ({
         >
           <InternalLink href={`/lessons`}>
             <Button variant="primary" w="100%">
-              Explore more Lessons
+              {t('Explore more Lessons')}
             </Button>
           </InternalLink>
         </Box>
