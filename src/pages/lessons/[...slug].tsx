@@ -173,12 +173,12 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
 
   if (!lesson) {
     console.log('redirect to lesson select')
-    // force redirect to lesson select if lesson is not found
+    // redirect to lesson select if lesson is not found
     document.location.href = '/lessons'
     return null
   } else if (lang !== 'en' && lang !== lesson?.lang) {
     console.log('redirect to lesson')
-    // force redirect to lesson select if lesson is not found
+    // redirect to english lesson if translation is not found
     document.location.href = `/lessons/${lesson.slug}`
     return null
   } else
