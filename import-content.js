@@ -166,7 +166,7 @@ const slugify = (text) => text.toLowerCase()
 
 const get_img = (imageLink, slug, image_name) => {
   const [file_name] = imageLink.split('?')
-  const file_extension = file_name.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/)[1].replace('jpeg', 'jpg')
+  const file_extension = (file_name.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/))?.[1].replace('jpeg', 'jpg') || 'png'
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
   const hash = crc32(file_name)
@@ -194,7 +194,10 @@ const download_image = (url, image_path) =>
     response.data.pipe(fs.createWriteStream(image_path))
   })
 
-const placeholder = (lesson_title, size) => `https://placehold.co/${size}/4b4665/FFFFFF?text=${lesson_title.replaceAll(' ', '+')}`
+const placeholder = (lesson, size, image_name) => {
+  const placeholder_link = `https://placehold.co/${size}/4b4665/FFFFFF/png?text=${lesson.name.replaceAll(' ', '+')}`
+  return get_img(placeholder_link, lesson.slug, image_name)
+}
 
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
@@ -421,13 +424,13 @@ axios
 
           if (lesson.badgeImageLink) {
             lesson.badgeImageLink = get_img(lesson.badgeImageLink, lesson.slug, 'badge')
-          } else lesson.badgeImageLink = placeholder(lesson.name, '600x600')
+          } else lesson.badgeImageLink = placeholder(lesson, '600x600', 'badge')
           if (lesson.lessonImageLink) {
             lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
-          } else lesson.lessonImageLink = placeholder(lesson.name, '1200x600')
+          } else lesson.lessonImageLink = placeholder(lesson, '1200x600', 'lesson')
           if (lesson.socialImageLink) {
             lesson.socialImageLink = get_img(lesson.socialImageLink, lesson.slug, 'social')
-          } else lesson.socialImageLink = placeholder(lesson.name, '1200x600')
+          } else lesson.socialImageLink = placeholder(lesson, '1200x600', 'social')
           if (lesson.sponsorLogo) {
             lesson.sponsorLogo = get_img(lesson.sponsorLogo, lesson.slug, 'sponsor')
           }

@@ -1986,8 +1986,8 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    badgeImageLink: 'https://placehold.co/600x600/4b4665/FFFFFF?text=Optimism+Governance',
-    lessonImageLink: 'https://placehold.co/1200x600/4b4665/FFFFFF?text=Optimism+Governance',
+    badgeImageLink: '/images/optimism-governance/badge-da9823bb.png',
+    lessonImageLink: '/images/optimism-governance/lesson-0a24938a.png',
     learningActions: '',
     marketingDescription: 'Learn about Optimism governance and how to get involved.',
     badgeId: null,
@@ -2011,7 +2011,7 @@ const LESSONS: LessonType[] = [
     endOfLessonText: 'Give feedback about this lesson and earn a special contributor badge.',
     notionId: '7b9c38ffdf164099ad3bc19d22484f1c',
     slug: 'optimism-governance',
-    socialImageLink: 'https://placehold.co/1200x600/4b4665/FFFFFF?text=Optimism+Governance',
+    socialImageLink: '/images/optimism-governance/social-0a24938a.png',
     imageLinks: [
       '/images/optimism-governance/old-problems-new-tools-1caefce6.svg',
       '/images/optimism-governance/network-governance-ec1d1abb.svg',
