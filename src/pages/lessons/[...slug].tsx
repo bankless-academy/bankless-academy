@@ -10,6 +10,7 @@ import { DEFAULT_METADATA, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import { markdown } from 'utils/markdown'
+import { useTranslation } from 'react-i18next'
 
 const SPLIT = `\`\`\`
 
@@ -158,20 +159,24 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // TODO: move to /lesson/lesson-name + add redirect
 
 const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
+  const { i18n } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
   const lesson = pageMeta?.lesson
+
+  const lang =
+    typeof window !== 'undefined' &&
+    window.location.pathname.split('/').length === 4
+      ? window.location.pathname.split('/')[2]
+      : 'en'
+
+  if (lang !== i18n.language) i18n.changeLanguage(lang)
 
   if (!lesson) {
     console.log('redirect to lesson select')
     // force redirect to lesson select if lesson is not found
     document.location.href = '/lessons'
     return null
-  } else if (
-    typeof window !== 'undefined' &&
-    window.location.pathname.split('/').length === 4 &&
-    lesson?.lang !== 'en' &&
-    window.location.pathname.split('/')[2] !== lesson?.lang
-  ) {
+  } else if (lang !== 'en' && lang !== lesson?.lang) {
     console.log('redirect to lesson')
     // force redirect to lesson select if lesson is not found
     document.location.href = `/lessons/${lesson.slug}`
