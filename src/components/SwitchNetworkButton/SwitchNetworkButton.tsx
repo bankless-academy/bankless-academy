@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import { useSwitchNetwork, useNetwork, useAccount } from 'wagmi'
+import { useTranslation } from 'react-i18next'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
 
@@ -30,6 +31,7 @@ const SwitchNetworkButton = ({
 }: {
   isSmallScreen: boolean
 }): any => {
+  const { t } = useTranslation()
   const toast = useToast()
   const [currentNetwork, setCurrentNetwork] = useState(NETWORKS.mainnet)
   const [isNetworkUnknown, setIsNetworkUnknown] = useState(false)
@@ -43,8 +45,8 @@ const SwitchNetworkButton = ({
         // wrong network
         toast.closeAll()
         toast({
-          title: 'Wrong network detected',
-          description: 'Please switch back to Ethereum Mainnet',
+          title: t('Wrong network detected'),
+          description: t('Please switch back to Ethereum Mainnet'),
           status: 'warning',
           duration: null,
           isClosable: true,
@@ -106,7 +108,7 @@ const SwitchNetworkButton = ({
                   )"
                 color="lightgrey"
               >
-                Select a network
+                {t('Select a network')}
               </Text>
               {Object.keys(NETWORKS).map((network, index) => (
                 <MenuItem
