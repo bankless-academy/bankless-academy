@@ -257,7 +257,7 @@ const LessonDetail = ({
                   </Box>
                 </Box>
               )}
-              {lesson.endOfLessonRedirect &&
+              {lesson?.endOfLessonRedirect &&
                 isQuizComplete &&
                 Quest?.isQuestCompleted && (
                   <>
@@ -272,7 +272,7 @@ const LessonDetail = ({
                         {t('Feedback')}
                       </Text>
                     </Box>
-                    <Box>{lesson.endOfLessonText}</Box>
+                    <Box>{lesson?.endOfLessonText}</Box>
                     <Box textAlign="center">
                       <InternalLink href={`/feedback?tally=${tallyId}`}>
                         <Button variant="primaryBig" size="lg">

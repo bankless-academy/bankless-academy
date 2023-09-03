@@ -1,7 +1,7 @@
 import { QuestComponentType } from 'components/Quest/QuestComponent'
 
 export type SlideType = 'LEARN' | 'QUIZ' | 'QUEST' | 'END'
-export type LanguageType = 'es' | 'fr' | 'de' | 'jp' | 'cn'
+export type LanguageType = 'en' | 'es' | 'fr' | 'de' | 'jp' | 'cn'
 
 export interface LessonType {
   name: string
@@ -13,7 +13,7 @@ export interface LessonType {
   lessonWriters?: string
   marketingDescription: string
   duration: number
-  difficulty: 'Easy' | 'Advanced' | 'Expert'
+  difficulty?: 'Easy' | 'Advanced' | 'Expert'
   badgeImageLink?: string
   lessonImageLink?: string
   lessonCollectedImageLink?: string
@@ -48,7 +48,7 @@ export interface LessonType {
   nftGatingImageLink?: string
   nftGatingLink?: string
   nftGatingCTA?: string
-  lang?: string
+  lang?: LanguageType
   slides?: {
     type: SlideType
     title: string

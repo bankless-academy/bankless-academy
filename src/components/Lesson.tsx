@@ -611,7 +611,9 @@ const Lesson = ({
                     <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
                   )}
                   <p>
-                    {!embed && lesson.endOfLessonText && lesson.endOfLessonText}
+                    {!embed &&
+                      lesson?.endOfLessonText &&
+                      lesson?.endOfLessonText}
                   </p>
                 </>
               )}
@@ -658,7 +660,7 @@ const Lesson = ({
               </Button>
             </Tooltip>
           ) : null}
-          {!isLastSlide || (lesson.endOfLessonText && !embed) ? (
+          {!isLastSlide || (lesson?.endOfLessonText && !embed) ? (
             <Button
               ref={buttonRightRef}
               variant="primaryBig"
