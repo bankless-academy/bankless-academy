@@ -1,7 +1,6 @@
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import Script from 'next/script'
-import { useTranslation } from 'react-i18next'
 
 import {
   PROJECT_NAME,
@@ -34,23 +33,11 @@ const umamiWebsiteId =
 const umamiDomain = 'https://stats.banklessacademy.com/stats.js'
 
 const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
-  const { i18n } = useTranslation()
-  const translatedTitle =
-    metadata?.translations && i18n.language !== 'en'
-      ? metadata.translations[i18n.language]?.name
-      : ''
-  const translatedDescription =
-    metadata?.translations && i18n.language !== 'en'
-      ? metadata.translations[i18n.language]?.description
-      : ''
   const router = useRouter()
   const title = metadata?.title
-    ? `${translatedTitle || metadata.title} | ${PROJECT_NAME}`
+    ? `${metadata.title} | ${PROJECT_NAME}`
     : PROJECT_NAME
-  const description =
-    translatedDescription ||
-    metadata?.description ||
-    DEFAULT_METADATA.description
+  const description = metadata?.description || DEFAULT_METADATA.description
   const image = metadata?.image
     ? `${metadata?.image.startsWith('https://') ? '' : DOMAIN_URL}${
         metadata?.image
