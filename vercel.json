@@ -70,7 +70,12 @@
   "redirects": [
     {
       "source": "/lessons/conceptos-(.*)",
-      "destination": "/lessons/blockchain-basics?lang=es",
+      "destination": "/lessons/es/blockchain-basics",
+      "permanent": false
+    },
+    {
+      "source": "/lessons/blockchain-basics?lang=es",
+      "destination": "/lessons/es/blockchain-basics",
       "permanent": false
     }
   ]

@@ -180,7 +180,7 @@ const LessonDetail = ({
                       key={`key-${l}`}
                       onClick={() => {
                         i18n.changeLanguage(l, () =>
-                          router.push(`/lessons/${lesson.slug}?lang=${l}`)
+                          router.push(`/lessons/${l}/${lesson.slug}`)
                         )
                       }}
                       ml={3}

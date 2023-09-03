@@ -16,23 +16,22 @@ const InternalLink = ({
   ...props
 }: ChakraLinkAndNextProps): JSX.Element => {
   const i18nextLng = localStorage.getItem('i18nextLng')
-  const lang =
-    href.includes('/lessons/') &&
-    !href.includes('?') &&
+  const iHref =
+    href.startsWith('/lessons/') &&
     i18nextLng !== 'en' &&
     LESSONS.some(
       (lesson) =>
         lesson.slug === href.replace('/lessons/', '') &&
         (lesson.languages as any).includes(i18nextLng)
     )
-      ? `?lang=${i18nextLng}`
-      : ''
+      ? href.replace('/lessons/', `/lessons/${i18nextLng}/`)
+      : href
   return (
-    <NextLink href={`${href}${lang}`} passHref legacyBehavior>
+    <NextLink href={`${iHref}`} passHref legacyBehavior>
       <ChakraLink
         {...props}
         onClick={() => {
-          const link = `${href}${lang}` || 'NO_LINK'
+          const link = `${iHref}` || 'NO_LINK'
           const name = alt || getNodeText(children) || 'NO_NAME'
           Mixpanel.track('click_internal_link', { link, name })
         }}

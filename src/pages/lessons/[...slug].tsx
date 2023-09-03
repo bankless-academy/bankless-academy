@@ -91,8 +91,10 @@ const processMD = async (md, lang, englishLesson) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const slug = params.slug.length === 1 ? params.slug[0] : params.slug[1]
+  const lang = params.slug.length === 1 ? 'en' : params.slug[1]
   const currentLesson = LESSONS.find(
-    (lesson: LessonType) => lesson.slug === params.slug
+    (lesson: LessonType) => lesson.slug === slug
   )
   const translations = {}
   // console.log(currentLesson.languages)
@@ -112,9 +114,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       console.log('error loading language', language)
     }
   }
+
+  const translatedTitle =
+    translations && lang !== 'en' ? translations[lang]?.name : ''
+  const translatedDescription =
+    translations && lang !== 'en' ? translations[lang]?.description : ''
   const pageMeta: MetaData = {
-    title: currentLesson.name,
-    description: currentLesson.description,
+    title: translatedTitle || currentLesson.name,
+    description: translatedDescription || currentLesson.description,
     image: currentLesson.socialImageLink || DEFAULT_METADATA.image,
     isLesson: !currentLesson.isArticle,
     translations: translations,
@@ -124,9 +131,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 }
 export const getStaticPaths: GetStaticPaths = async () => {
-  // TODO: add lang in params
+  const paths = []
+  for (const lesson of LESSONS) {
+    paths.push({ params: { slug: [lesson.slug] } })
+    for (const lang of lesson.languages) {
+      paths.push({ params: { slug: [lang, lesson.slug] } })
+    }
+  }
+  // console.log(paths)
   return {
-    paths: LESSONS.map((lesson) => ({ params: { slug: lesson.slug } })),
+    paths,
     fallback: true,
   }
 }
@@ -141,7 +155,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
   const [isSmallScreen] = useSmallScreen()
   const lessons = JSON.parse(JSON.stringify(LESSONS))
   const englishLesson = lessons.find(
-    (lesson: LessonType) => `/lessons/${lesson.slug}` === path
+    (lesson: LessonType) => `${lesson.slug}` === path.split('/').pop()
   )
   const [currentLesson, setCurrentLesson] = useState(englishLesson)
 
