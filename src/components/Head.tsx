@@ -13,13 +13,14 @@ import {
   APPLE_TOUCH_STARTUP_IMAGE,
 } from 'constants/index'
 import { useEffect } from 'react'
+import { LessonType } from 'entities/lesson'
 
 export interface MetaData {
   title?: string
   description?: string
   image?: string
   isLesson?: boolean
-  translations?: any
+  lesson?: LessonType
 }
 
 const umamiWebsiteId =

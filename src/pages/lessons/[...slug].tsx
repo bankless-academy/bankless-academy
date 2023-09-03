@@ -1,9 +1,7 @@
 /* eslint-disable no-console */
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { useRouter } from 'next/router'
 import { Container } from '@chakra-ui/react'
 import fs from 'fs'
-import { useTranslation } from 'react-i18next'
 
 import { MetaData } from 'components/Head'
 import LessonDetail from 'components/LessonDetail'
@@ -11,7 +9,6 @@ import Article from 'components/Article'
 import { DEFAULT_METADATA, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
-import { useEffect, useState } from 'react'
 import { markdown } from 'utils/markdown'
 
 const SPLIT = `\`\`\`
@@ -92,39 +89,52 @@ const processMD = async (md, lang, englishLesson) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params.slug.length === 1 ? params.slug[0] : params.slug[1]
-  const lang = params.slug.length === 1 ? 'en' : params.slug[1]
-  const currentLesson = LESSONS.find(
-    (lesson: LessonType) => lesson.slug === slug
-  )
-  const translations = {}
-  // console.log(currentLesson.languages)
+  const language: any = params.slug.length === 1 ? 'en' : params.slug[0]
+  let currentLesson = LESSONS.find((lesson: LessonType) => lesson.slug === slug)
+  console.log(currentLesson)
   for (const language of currentLesson.languages) {
-    // console.log(language)
-    try {
+    if (
+      !fs.existsSync(`translation/lesson/${language}/${currentLesson.slug}.md`)
+    ) {
+      currentLesson.languages = currentLesson.languages.filter(
+        (l) => l !== language
+      )
+    }
+  }
+  try {
+    if (
+      fs.existsSync(`translation/lesson/${language}/${currentLesson.slug}.md`)
+    ) {
       const md = await fs.readFileSync(
         `translation/lesson/${language}/${currentLesson.slug}.md`,
         'utf8'
       )
-      if (md)
-        translations[language] = await processMD(md, language, currentLesson)
-    } catch (error) {
-      currentLesson.languages = currentLesson.languages.filter(
-        (l) => l !== language
-      )
-      console.log('error loading language', language)
+      if (md && md.includes('TITLE:') && currentLesson) {
+        console.log('processMD start')
+        currentLesson = await processMD(md, language, currentLesson)
+        currentLesson.lang = language
+      }
+    }
+  } catch (error) {
+    const pageMeta: MetaData = {
+      title: currentLesson.name,
+      description: currentLesson.description,
+      image: currentLesson.socialImageLink || DEFAULT_METADATA.image,
+      isLesson: !currentLesson.isArticle,
+      lesson: currentLesson,
+    }
+    console.log('error loading language', language)
+    return {
+      props: { pageMeta },
     }
   }
 
-  const translatedTitle =
-    translations && lang !== 'en' ? translations[lang]?.name : ''
-  const translatedDescription =
-    translations && lang !== 'en' ? translations[lang]?.description : ''
   const pageMeta: MetaData = {
-    title: translatedTitle || currentLesson.name,
-    description: translatedDescription || currentLesson.description,
+    title: currentLesson.name,
+    description: currentLesson.description,
     image: currentLesson.socialImageLink || DEFAULT_METADATA.image,
     isLesson: !currentLesson.isArticle,
-    translations: translations,
+    lesson: currentLesson,
   }
   return {
     props: { pageMeta },
@@ -148,63 +158,32 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // TODO: move to /lesson/lesson-name + add redirect
 
 const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
-  const { i18n } = useTranslation()
-  const { asPath } = useRouter()
-  const router = useRouter()
-  const [path] = asPath.split('?')
   const [isSmallScreen] = useSmallScreen()
-  const lessons = JSON.parse(JSON.stringify(LESSONS))
-  const englishLesson = lessons.find(
-    (lesson: LessonType) => `${lesson.slug}` === path.split('/').pop()
-  )
-  const [currentLesson, setCurrentLesson] = useState(englishLesson)
+  const lesson = pageMeta?.lesson
 
-  const translationFiles = Object.keys(pageMeta?.translations || {})
-  if (translationFiles && englishLesson) {
-    for (const language of englishLesson.languages) {
-      if (!translationFiles.includes(language)) {
-        // console.log('no lang')
-        englishLesson.languages = englishLesson.languages.filter(
-          (l) => l !== language
-        )
-      }
-    }
-  }
-
-  useEffect((): void => {
-    if (i18n.language?.length && i18n.language in pageMeta.translations) {
-      if (currentLesson && currentLesson.languages.includes(i18n.language)) {
-        try {
-          const translation = pageMeta?.translations[i18n.language]
-          if (translation) setCurrentLesson(translation)
-        } catch (error) {
-          console.error(error)
-        }
-      } else {
-        console.log('language unknown')
-      }
-    } else {
-      if (i18n.language !== 'en' && !(i18n.language in pageMeta.translations)) {
-        console.log('redirect', i18n.language)
-        router.push(`/lessons/${currentLesson.slug}`)
-      }
-      console.log('en')
-      setCurrentLesson(englishLesson)
-    }
-  }, [i18n.language])
-
-  if (currentLesson.name === '') {
+  if (!lesson) {
+    console.log('redirect to lesson select')
     // force redirect to lesson select if lesson is not found
     document.location.href = '/lessons'
+    return null
+  } else if (
+    typeof window !== 'undefined' &&
+    window.location.pathname.split('/').length === 4 &&
+    lesson?.lang !== 'en' &&
+    window.location.pathname.split('/')[2] !== lesson?.lang
+  ) {
+    console.log('redirect to lesson')
+    // force redirect to lesson select if lesson is not found
+    document.location.href = `/lessons/${lesson.slug}`
     return null
   } else
     return (
       <>
-        {currentLesson.isArticle ? (
-          <Article lesson={currentLesson} />
+        {lesson.isArticle ? (
+          <Article lesson={lesson} />
         ) : (
           <Container maxW="container.xl" px={isSmallScreen ? '8px' : '16px'}>
-            <LessonDetail lesson={currentLesson} />
+            <LessonDetail lesson={lesson} />
           </Container>
         )}
       </>
