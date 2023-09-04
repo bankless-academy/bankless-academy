@@ -23,6 +23,7 @@ import { useSmallScreen } from 'hooks/index'
 import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
 import { getArticlesCollected, Mixpanel } from 'utils'
 import Keyword from 'components/Keyword'
+import LanguageSwitch from 'components/LanguageSwitch'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -592,6 +593,7 @@ const Article = ({
           </ExternalLink>
         </Box>
       </SimpleGrid>
+      <LanguageSwitch lesson={lesson} />
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown
           components={{

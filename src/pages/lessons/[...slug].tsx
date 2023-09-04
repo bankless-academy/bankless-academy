@@ -27,60 +27,66 @@ const processMD = async (md, lang, englishLesson) => {
     // console.log(infos)
     const [, title, description] = (infos || '').split('\n')
     // console.log(title)
-    const newLesson = JSON.parse(JSON.stringify(englishLesson))
+    const newLesson: LessonType = JSON.parse(JSON.stringify(englishLesson))
     newLesson.name = title.replace('TITLE: ', '')
     newLesson.description = description.replace('DESCRIPTION:', '').trim()
     // console.log(newLesson.description)
     // console.log(content)
-    const slides = content?.split('# ')
-    slides.shift()
-    // console.log(slides)
-    for (let i = 0; i < newLesson.slides.length - 1; i++) {
-      // console.log(i)
-      const [slide_title] = (slides[i] || '').split('\n\n')
-      const slide_content = slides[i]
-        .replace(slide_title, '')
-        .replace(/!\[\]\(.*?\)/, ``)
-        .trim()
-      // console.log(slide_title)
-      // console.log(slide_content)
-      // console.log(quizzes)
-      newLesson.slides[i].title = slide_title
-      if (newLesson.slides[i].type === 'LEARN' && slide_content) {
-        // console.log(slide_content)
-        const rendered = await markdown.render(slide_content)
-        // console.log(newLesson.slides[i].content)
-        newLesson.slides[i].content = newLesson.slides[i].content.replace(
-          /<div class="bloc1">.*?<\/div><div class="bloc2">/s,
-          `<div class="bloc1">${rendered}</div><div class="bloc2">`
-        )
-      }
-      if (newLesson.slides[i].type === 'QUIZ' && slide_content) {
-        // console.log(slide_content)
-        const [question] = slide_content.split('\n\n')
-        // console.log(question)
-        const answers = slide_content
-          .replace(question, '')
-          .replaceAll('\n>', '>')
-          .replaceAll('\n\n-', '\n-')
+    if (newLesson.slides?.length && !newLesson.isArticle) {
+      // LESSON
+      const slides = content?.split('# ')
+      slides.shift()
+      // console.log(slides)
+      for (let i = 0; i < newLesson.slides.length - 1; i++) {
+        // console.log(i)
+        const [slide_title] = (slides[i] || '').split('\n\n')
+        const slide_content = slides[i]
+          .replace(slide_title, '')
+          .replace(/!\[\]\(.*?\)/, ``)
           .trim()
-        // console.log(answers)
-        newLesson.slides[i].quiz.question = question
-        let j = 0
-        answers.split('\n').map((quiz) => {
-          // console.log(quiz)
-          if (quiz.length && quiz.startsWith('- [ ] ')) {
-            newLesson.slides[i].quiz.answers[j] = quiz
-              .replace('- [ ] ', '')
-              .trim()
-            j++
-          } else if (quiz.length && quiz.startsWith('> ')) {
-            newLesson.slides[i].quiz.feedback[j - 1] = quiz
-              .replace('> ', '')
-              .trim()
-          }
-        })
+        // console.log(slide_title)
+        // console.log(slide_content)
+        // console.log(quizzes)
+        newLesson.slides[i].title = slide_title
+        if (newLesson.slides[i].type === 'LEARN' && slide_content) {
+          // console.log(slide_content)
+          const rendered = await markdown.render(slide_content)
+          // console.log(newLesson.slides[i].content)
+          newLesson.slides[i].content = newLesson.slides[i].content.replace(
+            /<div class="bloc1">.*?<\/div><div class="bloc2">/s,
+            `<div class="bloc1">${rendered}</div><div class="bloc2">`
+          )
+        }
+        if (newLesson.slides[i].type === 'QUIZ' && slide_content) {
+          // console.log(slide_content)
+          const [question] = slide_content.split('\n\n')
+          // console.log(question)
+          const answers = slide_content
+            .replace(question, '')
+            .replaceAll('\n>', '>')
+            .replaceAll('\n\n-', '\n-')
+            .trim()
+          // console.log(answers)
+          newLesson.slides[i].quiz.question = question
+          let j = 0
+          answers.split('\n').map((quiz) => {
+            // console.log(quiz)
+            if (quiz.length && quiz.startsWith('- [ ] ')) {
+              newLesson.slides[i].quiz.answers[j] = quiz
+                .replace('- [ ] ', '')
+                .trim()
+              j++
+            } else if (quiz.length && quiz.startsWith('> ')) {
+              newLesson.slides[i].quiz.feedback[j - 1] = quiz
+                .replace('> ', '')
+                .trim()
+            }
+          })
+        }
       }
+    } else if (newLesson.isArticle) {
+      // HANDBOOK
+      newLesson.articleContent = content
     }
     console.log(`save ${lang}`)
     // console.log(newLesson)
@@ -125,6 +131,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       lesson: currentLesson,
     }
     console.log('error loading language', language)
+    console.log('error', error)
     return {
       props: { pageMeta },
     }

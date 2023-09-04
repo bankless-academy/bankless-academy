@@ -19,7 +19,7 @@ import { DOMAIN_URL, TOKEN_GATING_ENABLED } from 'constants/index'
 import { useEffect } from 'react'
 import { scrollTop } from 'utils'
 import OpenLesson from 'components/OpenLesson'
-import { useRouter } from 'next/router'
+import LanguageSwitch from 'components/LanguageSwitch'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -58,8 +58,8 @@ const LessonDetail = ({
   lesson: LessonType
   extraKeywords?: any
 }): React.ReactElement => {
-  const { t, i18n } = useTranslation()
-  const router = useRouter()
+  const { t } = useTranslation()
+
   const [, isSmallScreen] = useSmallScreen()
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
 
@@ -88,8 +88,6 @@ const LessonDetail = ({
 
   const tallyId =
     lesson.endOfLessonRedirect?.replace('https://tally.so/r/', '') || ''
-
-  const languages = lesson.languages
 
   return (
     <>
@@ -156,44 +154,7 @@ const LessonDetail = ({
               >
                 {lesson.name}
               </Text>
-              {languages?.length ? (
-                <Box textAlign="center">
-                  <Button
-                    variant={
-                      i18n.language === 'en' ||
-                      !lesson.languages.includes(i18n.language as any)
-                        ? 'solid'
-                        : 'outline'
-                    }
-                    ml={3}
-                    onClick={() => {
-                      i18n.changeLanguage('en', () =>
-                        router.push(`/lessons/${lesson.slug}`)
-                      )
-                    }}
-                  >
-                    🇺🇸
-                  </Button>
-                  {languages.map((l) => (
-                    <Button
-                      variant={i18n.language === l ? 'solid' : 'outline'}
-                      key={`key-${l}`}
-                      onClick={() => {
-                        i18n.changeLanguage(l, () =>
-                          router.push(`/lessons/${l}/${lesson.slug}`)
-                        )
-                      }}
-                      ml={3}
-                    >
-                      {l === 'es' && '🇪🇸'}
-                      {l === 'fr' && '🇫🇷'}
-                      {l === 'de' && '🇩🇪'}
-                      {l === 'jp' && '🇯🇵'}
-                      {l === 'cn' && '🇨🇳'}
-                    </Button>
-                  ))}
-                </Box>
-              ) : null}
+              <LanguageSwitch lesson={lesson} />
               <Box
                 display="flex"
                 mt="4"
