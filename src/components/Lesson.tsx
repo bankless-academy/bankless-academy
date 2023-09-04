@@ -678,6 +678,7 @@ const Lesson = ({
             <>
               <Button
                 size="lg"
+                isDisabled={lesson.badgeId && !Quest?.isQuestCompleted}
                 onClick={() => closeLesson()}
                 variant="primaryBigLast"
                 rightIcon={<ArrowForwardIcon />}
