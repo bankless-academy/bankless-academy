@@ -67,7 +67,7 @@ How can onchain governance help to solve interhuman debate?
 
 > ℹ️ This is true, but it isn’t the only answer.
 
-- [ ] All of the above.
+- [ ] All of the above
 
 > ℹ️ Correct! Onchain governance protects the voting process through multiple means.
 
