@@ -2,7 +2,7 @@
 TITLE: Delegating on Optimism
 DESCRIPTION: Grant your OP voting power to people closely following governance.
 LANGUAGE: English
-WRITERS: 
+WRITERS: Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/delegating-on-optimism
 FORMAT: HANDBOOK

@@ -2297,6 +2297,7 @@ const LESSONS: LessonType[] = [
     description: 'Grant your OP voting power to people closely following governance.',
     name: 'Delegating on Optimism',
     languages: [],
+    lessonWriters: 'Tetranome',
     publicationStatus: 'hidden',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
