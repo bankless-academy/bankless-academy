@@ -67,13 +67,13 @@ How can onchain governance help to solve interhuman debate?
 
 > ℹ️ This is true, but it isn’t the only answer.
 
-- [ ] All of the above.
+- [ ] All of the above
 
 > ℹ️ Correct! Onchain governance protects the voting process through multiple means.
 
 # The Optimism Network
 
-`DAOs` like the `Optimism Collective` are at the frontier of exploring such coordination systems. 
+`DAOs` like the `Optimism Collective` are at the frontier of exploring such coordination systems.
 
 In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.
 

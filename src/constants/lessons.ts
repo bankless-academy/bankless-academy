@@ -242,7 +242,8 @@ const LESSONS: LessonType[] = [
     description: 'Learn about the fundamental architecture of blockchain technology.',
     name: 'Blockchain Basics',
     languages: [
-      'es'
+      'es',
+      'de'
     ],
     quest: 'BlockchainBasics',
     publicationStatus: 'publish',
@@ -1996,11 +1997,7 @@ const LESSONS: LessonType[] = [
     description: 'Claim your first piece of network ownership and start voting onchain!',
     name: 'Optimism Governance',
     languages: [
-      'es',
-      'fr',
-      'de',
-      'jp',
-      'cn'
+      'fr'
     ],
     lessonWriters: 'Tetranome',
     quest: 'OptimismGovernance',
@@ -2052,7 +2049,7 @@ const LESSONS: LessonType[] = [
             'Automation',
             'Transparency',
             'Censorship-resistance',
-            'All of the above.'
+            'All of the above'
           ],
           feedback: [
             'ℹ️ This is true, but it isn’t the only answer.',
@@ -2067,7 +2064,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'f7ca353f75f142fabf75986d54d9423d',
         title: 'The Optimism Network',
-        content: '<div class="bloc1"><p><code>DAOs</code> like the <code>Optimism Collective</code> are at the frontier of exploring such coordination systems. </p><p>In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.</p><p>Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!</p></div><div class="bloc2"><img src=\'/images/optimism-governance/the-optimism-network-0c6dff63.svg\'></div>'
+        content: '<div class="bloc1"><p><code>DAOs</code> like the <code>Optimism Collective</code> are at the frontier of exploring such coordination systems.</p><p>In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.</p><p>Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!</p></div><div class="bloc2"><img src=\'/images/optimism-governance/the-optimism-network-0c6dff63.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -2296,7 +2293,9 @@ const LESSONS: LessonType[] = [
     learnings: '',
     description: 'Grant your OP voting power to people closely following governance.',
     name: 'Delegating on Optimism',
-    languages: [],
+    languages: [
+      'fr'
+    ],
     lessonWriters: 'Tetranome',
     publicationStatus: 'hidden',
     featuredOrderOnHomepage: null,
