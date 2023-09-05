@@ -1,6 +1,6 @@
 ---
 TITLE: Gouvernance d'Optimism
-DESCRIPTION: En savoir plus sur la gouvernance d'Optimism et comment s'impliquer.
+DESCRIPTION: Réclamez votre première part de propriété du réseau et commencez à voter sur la chaîne !
 LANGUAGE: Français
 WRITERS: Tetranome
 TRANSLATORS: Didier Krux
@@ -37,7 +37,7 @@ La vision de la technologie `DAO` est de rationaliser la résolution de problèm
 - Vote innovant, `délégation` et des mécanismes de `veto`.
 - Utiliser la technologie chaîne de blocs [blockchain] pour diminuer le potentiel d'erreur humaine ou de détournement [hijacking].
 
-![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-1662dfbf.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
 
 # Gouvernance du Réseau
 
@@ -49,27 +49,27 @@ Comme tout État-nation traditionnel disposant de ressources et de participants,
 
 🛠️ **Mise en œuvre :** La proposition approuvée est appliquée au réseau, par divers développeurs incités si nécessaire.
 
-![](https://app.banklessacademy.com/images/optimism-governance/network-governance-161475d9.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/network-governance-8f310d77.svg)
 
 # Knowledge Check 1
 
 Comment la gouvernance onchain peut-elle contribuer à résoudre le débat interhumain ?
 
-- [ ] En automatisant la coordination humaine et en évoluant sur la base d'un retour d'information humain partagé.
+- [ ] Automatisation
 
 > ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
-- [ ] Par des processus de vote transparents et résistants aux attaques.
+- [ ] Transparence
 
 > ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
-- [ ] En hébergeant une communauté opt-in, axée sur la mission pour les gens du monde entier.
+- [ ] Résistance à la censure
 
 > ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
 - [ ] Toutes les réponses ci-dessus.
 
-> ℹ️ Correct ! La gouvernance onchain vise à rationaliser et à protéger les discussions de groupe.
+> ℹ️ Correct ! La gouvernance onchain protège le processus de vote par de multiples moyens.
 
 # Le Réseau Optimism
 
@@ -79,39 +79,39 @@ Dans cette leçon, nous allons explorer comment Optimism est le pionnier de la v
 
 Notre quête se concentrera sur la revendication de nos premiers droits de vote, afin que nous soyons prêts à aider à construire l'avenir d'Ethereum et de la coordination humaine !
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-99428791.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-0c6dff63.svg)
 
 # La Vision d'Optimism
 
 Optimism a une mission : faire évoluer Ethereum en construisant un réseau `Layer 2` . Il fait partie de l'écosystème Ethereum, mais avec des frais réduits et des transactions plus rapides — tout en maintenant le niveau élevé de sécurité d'Ethereum. Voici les propriétés qui le définissent :
 
-🏕️ **Biens Publics [Public Goods] :** L'accent est mis sur le financement et la construction `de biens publics` sur la blockchain [onchain]. Il s'agit de ressources et d'installations gratuites et infinies à la disposition de tous les citoyens du réseau. Votre éducation gratuite à la Bankless Academy a été rendue possible grâce au soutien d'Optimism aux biens publics !
+🏕️ **Biens Publics [Public Goods] :** L'accent est mis sur le financement et la construction `de biens publics` sur la blockchain [onchain]. Un bien public est un bien qui profite à tous les membres d'une communauté et dont l'utilisation par une personne ne réduit pas sa disponibilité pour les autres. Votre éducation gratuite à la Bankless Academy a été rendue possible grâce au soutien d'Optimism aux biens publics !
 
-🧑‍🤝‍🧑 **Gouvernance Communautaire :** Optimism est dirigé par sa communauté.
+🧑‍🤝‍🧑 **Gouvernance de la communauté :** Le réseau est dirigé par sa communauté.
 
 🏠 **Marché Libre :** Lancé comme une extension non seulement de l'`espace de bloc` [blockspace] d'Ethereum, mais aussi des principes d'Ethereum. Elle vise à développer la place de marché sans permission [permissionless], open-source et résistante à la censure d'Ethereum.
 
-Optimism vise à devenir un district de libre marché du cyberespace qui subvient directement aux besoins de ses citoyens et qui est gouverné par eux !
+Optimism a pour objectif de devenir un « quartier du cyberespace » qui subvient directement aux besoins de ses citoyens et qui est gouverné par eux !
 
 # Knowledge Check 2
 
-Quelle est la meilleure définition d'un "bien public" [public good] ?
+Lequel des éléments suivants n'est PAS un bien public ?
 
-- [ ] Une petite installation limitée.
+- [ ] Éducation
 
-> ℹ️ Réessayez ! Il s'agit d'une propriété privée, comme le domicile d'une personne.
+> ℹ️ L'éducation peut profiter à tout le monde, et l'utilisation d'une personne ne réduit pas sa disponibilité.
 
-- [ ] Un service illimité partagé entre un groupe spécifique de personnes.
+- [ ] Internet
 
-> ℹ️ Réessayez ! Il s'agit d'un bien de club, comme un cinéma ou une route à péage.
+> ℹ️ L'internet peut profiter à tout le monde et l'utilisation d'une personne ne réduit pas sa disponibilité.
 
-- [ ] Une ressource publique qui ne peut être épuisée.
+- [ ] Ethereum
 
-> ℹ️ Correct ! Il s'agit d'un bien public, comme les logiciels ou les connaissances.
+> ℹ️ Ethereum peut profiter à tout le monde et, grâce à la Couche 2, l'utilisation par une personne ne réduit pas sa disponibilité.
 
-- [ ] Accès gratuit à une ressource de ville partagée mais limitée.
+- [ ] Un Échange Centralisé
 
-> ℹ️ Réessayez ! Cela définit les biens communs, comme les routes ou les lacs.
+> ℹ️ Correct. Bien que les CEXs offrent des avantages à la communauté, il s'agit d'entreprises privées.
 
 # Décentralisation Progressive
 
@@ -123,7 +123,7 @@ De nombreux grands projets de blockchain commencent avec un groupe centralisé. 
 
 Les vérifications et équilibres légaux, tels que la capacité du Collectif à retirer des membres de la Fondation, assurent un **transfert lent de la propriété du réseau à la communauté**.
 
-![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-5f487c1b.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-bc757708.svg)
 
 # Knowledge Check 3
 
@@ -144,11 +144,11 @@ Au centre de l'économie d'Optimism `L2` se trouve le **"Volant d'Inertie Optimi
 1. Les utilisateurs et `dApps` prennent de l'`espace de blocs` [blockspace] sur le réseau.
 2. Le réseau génère des revenus grâce aux frais de transaction.
 3. Une partie de ces taxes est distribuée aux constructeurs qui fournissent des infrastructures de biens publics à fort impact.
-4. Tout le monde a accès à des ressources et des services gratuits.
+4. Les utilisateurs du réseau accèdent à des ressources et des services gratuits, augmentant la valeur de l'espace de blocs OP.
 
 Avec une infrastructure onchain de plus grande valeur, la demande d'espace de blocs Optimism augmente, et le cycle continue !
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-41fc0d66.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-e2bd1912.svg)
 
 # Incitation à l'Économie de Biens Publics
 
@@ -156,11 +156,11 @@ Comme vous pouvez le constater, les infrastructures de biens publics sont au cœ
 
 Dans ce cas, Optimism adopte l'approche "**Impact = Profit**". L'impact est toutefois difficile à anticiper. Plutôt que de faire des prévisions, l'organisme de financement examine périodiquement les projets existants et attribue un financement rétroactif sur la base des performances historiques.
 
-Comme l'a dit Vitalik Buterin, _"Il est plus facile de se mettre d'accord sur ce qui était utile que sur ce qui le sera"._
+Comme l'a dit Vitalik Buterin, _"Il est plus facile de se mettre d'accord sur ce qui était utile que sur ce qui le sera."_
 
 Ce modèle de distribution est connu sous le nom de **"Retroactive Public Goods Funding"** [Financement Rétroactif de Bien Public], ou **"RetroPGF"**. Ce mécanisme de financement incite les penseurs optimistes à créer des biens publics au service de l'humanité. Il nous libère de la mentalité d'extraction de valeur des économies capitalistes traditionnelles.
 
-![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-the-public-goods-economy-123cdbec.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-the-public-goods-economy-ff926012.svg)
 
 # Le Phénix d'Ether
 
@@ -170,7 +170,7 @@ _"Il s'agit d'un algorithme qui récompense les premiers coopérateurs qui ont c
 
 — La fondation Optimism
 
-![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-023606f1.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-2c6f05d3.svg)
 
 # Knowledge Check 4
 
@@ -238,7 +238,7 @@ La Maison des Citoyens a le droit d'opposer son veto à toute proposition releva
 
 La Maison des Jetons a également la possibilité d'opposer son veto à toute proposition soumise par la Maison des Citoyens ou la Fondation Optimism, qui serait considérée comme **réduisant les droits** des détenteurs de jetons.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-ffa12a64.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-01fa4823.svg)
 
 # La Maison des Jetons : Adhérer, voter, déléguer
 
@@ -259,7 +259,7 @@ Tout le monde peut devenir un délégué de la Maison de Jeton sur Optimism, rep
 
 La gouvernance du réseau n'est démocratique que dans la mesure où la `distribution initiale de jetons` — c'est-à-dire qui a reçu le droit de vote en premier lieu. Consultez le [plan de distribution des jetons OP](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) pour voir comment la Fondation Optimism a alloué un pouvoir de gouvernance initial, au service d'une représentation communautaire équilibrée.
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-45e8fc75.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-415be7a6.svg)
 
 # Knowledge Check 6
 
@@ -291,7 +291,7 @@ Les devoirs comprennent :
 - 🔍 **Recherche et allocation de RetroPGF** aux projets communautaires qui respectent les lignes directrices.
 - 👬 **Sélection de nouveaux citoyens** pour aider à gouverner la Maison des Citoyens et équilibrer la perspective de la Maison des Jetons. La Maison des Jetons dispose d'un droit de veto sur ce type de proposition.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-0724be8f.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-7d7af195.svg)
 
 # La Maison des Citoyens : Adhérer, Voter, Déléguer
 
