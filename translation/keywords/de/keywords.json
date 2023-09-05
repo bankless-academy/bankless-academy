@@ -44,8 +44,8 @@
     "definition": "A group of transactions on the blockchain."
   },
   "block explorer": {
-    "keyword": "block explorer",
-    "definition": "Search and exploration tool for blockchain data."
+    "keyword": "Block Explorer",
+    "definition": "Suchmaschine und Werkzeug, um Blockchain-Daten zu untersuchen."
   },
   "block hash": {
     "keyword": "block hash",
@@ -64,8 +64,8 @@
     "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
   },
   "blockchain": {
-    "keyword": "blockchain",
-    "definition": "A shared, unchangeable database, or ledger, of recorded transactions."
+    "keyword": "Blockchain",
+    "definition": "Eine gemeinsame, unveränderliche Datenbank oder ein Register mit aufgezeichneten Transaktionen."
   },
   "blockchain architecture": {
     "keyword": "blockchain architecture",
@@ -125,7 +125,7 @@
   },
   "dao": {
     "keyword": "DAO",
-    "definition": "(Decentralized Autonomous Organization) An organizational structure that uses blockchain technology to automate voting and management."
+    "definition": "(Decentralized Autonomous Organization) Eine Organisationsstruktur, die die Blockchain-Technologie zur Automatisierung von Abstimmungen und Verwaltung nutzt."
   },
   "dapp": {
     "keyword": "dApp",
@@ -152,8 +152,8 @@
     "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
   },
   "delegation": {
-    "keyword": "delegation",
-    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+    "keyword": "Delegation",
+    "definition": "Übertragung einer bestimmten Verantwortung auf eine andere Person, d.h. Delegation von Token, welche Stimmrechte geben."
   },
   "dex": {
     "keyword": "DEX",
@@ -260,8 +260,8 @@
     "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
   },
   "ledger": {
-    "keyword": "ledger",
-    "definition": "The record of all transactions that have ever occurred."
+    "keyword": "Register",
+    "definition": "Die Aufzeichnung aller Transaktionen, die jemals stattgefunden haben."
   },
   "lender": {
     "keyword": "lender",
@@ -524,8 +524,8 @@
     "definition": "A validating bridge contract is a new design that removes the need to trust any external authority to decide if a withdrawal is valid."
   },
   "veto": {
-    "keyword": "veto",
-    "definition": "A vote in rejection of a governance proposal."
+    "keyword": "Veto",
+    "definition": "Eine Abstimmung zur Ablehnung eines Vorschlags zur Regierungsführung."
   },
   "wallet": {
     "keyword": "wallet",
