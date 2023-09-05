@@ -1,9 +1,9 @@
 ---
-TITLE: Optimism Governance
-DESCRIPTION: Claim your first piece of network ownership and start voting onchain!
-LANGUAGE: English
+TITLE: Regierungsführung von Optimism
+DESCRIPTION: Sichere dir deinen ersten eigenen Anteil am Netzwerk und beginne damit, auf der Blockchain abzustimmen!
+LANGUAGE: Deutsch
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: Ruben Silva Otero
 LINK: https://app.banklessacademy.com/lessons/optimism-governance
 FORMAT: LESSON
 ---
@@ -27,15 +27,15 @@ ________________________________________________________________________________
 
 ---
 
-# Old Problems, New Tools
+# Alte Probleme, neue Werkzeuge
 
-Modern technology has drastically changed the way in which humans view and interact with each other. On the world stage, and in a borderless cyberspace, we need new coordination models in order to coexist and thrive as a global tribe.
+Moderne Technologien haben die Art und Weise, wie Menschen einander sehen und miteinander umgehen, drastisch verändert. Auf der Weltbühne und in einem grenzenlosen Cyberspace brauchen wir neue Koordinierungsmodelle, um als globaler Volksstamm miteinander zu leben und zu gedeihen.
 
-The vision of `DAO` technology is to streamline problem-solving and debate between a large number of collaborators — whether on the internet, in your local community, or on an international scale. This is done by:
+Die Vision der `DAO` Technologie ist es, Problemlösungen und Debatten zwischen einer großen Anzahl von Mitwirkenden zu vereinfachen - sei es im Internet, in deiner lokalen Gemeinde oder auf internationaler Ebene. Dies geschieht durch:
 
-- Incentivizing participants to share a common mission.
-- Innovative voting, `delegation`, and `veto` mechanics.
-- Using blockchain technology to decrease the potential for human error or hijacking.
+- Die Motivation der Teilnehmer, eine gemeinsame Mission zu teilen.
+- Innovative Abstimmungsmechanismen, `Delegation`, und `Veto`-Mechanismen.
+- Den Einsatz der Blockchain-Technologie zur Verringerung des Potenzials für menschliches Versagen oder Missbrauch.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
 
