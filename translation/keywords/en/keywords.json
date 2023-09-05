@@ -291,6 +291,10 @@
     "keyword": "MEV",
     "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
   },
+  "network governance": {
+    "keyword": "network governance",
+    "definition": "The process by which a decentralized community reaches agreement on network features/upgrades."
+  },
   "nft": {
     "keyword": "NFT",
     "definition": "(Non-fungible Token) A token with a unique ID that cannot be replicated, as compared to a fungible token like Ether that has no unique identifier."

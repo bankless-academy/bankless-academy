@@ -7,7 +7,7 @@ import { LessonCard } from 'components/LessonCards'
 import { theme } from 'theme/index'
 import { api } from 'utils'
 import { useSmallScreen } from 'hooks'
-// import InternalLink from 'components/InternalLink'
+import InternalLink from 'components/InternalLink'
 import { LESSONS } from 'constants/index'
 
 const OptimismGovernance = (
@@ -50,7 +50,7 @@ const OptimismGovernance = (
   }, [account])
 
   const lesson = LESSONS.find(
-    (lesson) => lesson.slug === 'how-to-delegate-on-optimism'
+    (lesson) => lesson.slug === 'delegating-on-optimism'
   )
 
   if (!lesson)
@@ -136,31 +136,27 @@ const OptimismGovernance = (
               textAlign="center"
               m="auto"
             >
-              <Box
-                zIndex="2"
-                position="relative"
-                onClick={() => alert('article not available yet')}
-              >
+              <Box zIndex="2" position="relative">
                 <Box py="8">
                   <Text mt="0 !important" fontSize="xl" fontWeight="bold">
                     {lesson.name}
                   </Text>
-                  {/* <InternalLink
+                  <InternalLink
                     href={`/lessons/${lesson.slug}`}
                     alt={lesson.name}
                     target="_blank"
-                  > */}
-                  <Image src={lesson.lessonImageLink} />
-                  {/* </InternalLink> */}
+                  >
+                    <Image src={lesson.lessonImageLink} />
+                  </InternalLink>
                 </Box>
                 <Box pb="8">
-                  {/* <InternalLink
+                  <InternalLink
                     href={`/lessons/${lesson.slug}`}
                     alt={lesson.name}
                     target="_blank"
-                  > */}
-                  <Button variant="primary">{t('Read Entry')}</Button>
-                  {/* </InternalLink> */}
+                  >
+                    <Button variant="primary">{t('Read Entry')}</Button>
+                  </InternalLink>
                 </Box>
               </Box>
             </LessonCard>
