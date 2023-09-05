@@ -32,8 +32,8 @@
     "definition": "(Automated Market Maker) A trade matchmaking system, based on a public algorithm."
   },
   "asynchronous": {
-    "keyword": "asynchronous",
-    "definition": "Communication between multiple collaborators, where participants don’t have to be present at time of messaging."
+    "keyword": "asynchrone",
+    "definition": "Communication entre plusieurs collaborateurs, où les participants n'ont pas besoin d'être présents au moment de l'envoi du message."
   },
   "bet": {
     "keyword": "bet",
@@ -152,8 +152,8 @@
     "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
   },
   "delegation": {
-    "keyword": "delegation",
-    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+    "keyword": "délégation",
+    "definition": "Donner une responsabilité spécifique à une autre personne, par exemple la délégation d'un pouvoir de vote."
   },
   "dex": {
     "keyword": "DEX",
@@ -256,8 +256,8 @@
     "definition": "Layer 1 refers to a base network such as Bitcoin or Ethereum."
   },
   "layer 2": {
-    "keyword": "Layer 2",
-    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
+    "keyword": "Couche 2",
+    "definition": "Une blockchain qui étend la scalabilité d'Ethereum tout en héritant de la sécurité d'Ethereum."
   },
   "ledger": {
     "keyword": "ledger",
@@ -304,8 +304,8 @@
     "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets."
   },
   "onchain governance": {
-    "keyword": "onchain governance",
-    "definition": "The system that mediates changes to a blockchain’s structure."
+    "keyword": "gouvernance onchain",
+    "definition": "Le système qui permet de modifier la structure d'une blockchain."
   },
   "open source": {
     "keyword": "open source",
@@ -524,8 +524,8 @@
     "definition": "A validating bridge contract is a new design that removes the need to trust any external authority to decide if a withdrawal is valid."
   },
   "veto": {
-    "keyword": "veto",
-    "definition": "A vote in rejection of a governance proposal."
+    "keyword": "véto",
+    "definition": "Un vote de rejet d'une proposition de gouvernance."
   },
   "wallet": {
     "keyword": "wallet",
