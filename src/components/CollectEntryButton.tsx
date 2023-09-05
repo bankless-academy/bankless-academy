@@ -31,6 +31,7 @@ const CollectEntryButton = ({
   const toast = useToast()
   const [isSmallScreen] = useSmallScreen()
   const [numberMinted, setNumberMinted] = useState('-')
+  const [isMinting, setIsMinting] = useState(false)
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
@@ -185,7 +186,13 @@ const CollectEntryButton = ({
                   if (chain.id !== optimism.id) {
                     await switchNetwork({ chainId: optimism.id })
                   }
-                  write?.()
+                  if (!isMinting) {
+                    setIsMinting(true)
+                    setTimeout(() => {
+                      setIsMinting(false)
+                    }, 10000)
+                    write?.()
+                  }
                 }
               } else if (address) alert('try again in 2 seconds')
               else setConnectWalletPopupLS(true)
