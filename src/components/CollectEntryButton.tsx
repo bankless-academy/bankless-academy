@@ -172,6 +172,14 @@ const CollectEntryButton = ({
               {t('Collect on secondary market')}
             </Button>
           </ExternalLink>
+        ) : isSuccess ? (
+          <Button
+            variant="secondaryGold"
+            w="100%"
+            background="transparent !important"
+          >
+            {t('Entry Collected')}
+          </Button>
         ) : (
           <Button
             isDisabled={isLoading}
