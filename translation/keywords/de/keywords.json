@@ -8,8 +8,8 @@
     "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
   },
   "address": {
-    "keyword": "address",
-    "definition": "Unique public identifier for an entity on a blockchain."
+    "keyword": "Adresse",
+    "definition": "Einzigartige öffentliche Kennung für eine Entität in einer Blockchain."
   },
   "aggregator": {
     "keyword": "aggregator",
@@ -41,7 +41,7 @@
   },
   "block": {
     "keyword": "Block",
-    "definition": "A group of transactions on the blockchain."
+    "definition": "Eine Gruppe von Transaktionen auf der Blockchain."
   },
   "block explorer": {
     "keyword": "Block Explorer",
@@ -496,8 +496,8 @@
     "definition": "Planning the path taken from starting token to ending token in a trade."
   },
   "transaction": {
-    "keyword": "transaction",
-    "definition": "A record of transfer, monetary or otherwise, on the blockchain."
+    "keyword": "Transaktion",
+    "definition": "Eine Aufzeichnung einer Übertragung, ob monetär oder anderweitig, auf der Blockchain."
   },
   "transaction finality": {
     "keyword": "transaction finality",
