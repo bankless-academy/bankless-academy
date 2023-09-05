@@ -199,6 +199,38 @@ const placeholder = (lesson, size, image_name) => {
   return get_img(placeholder_link, lesson.slug, image_name)
 }
 
+const importTranslations = async (lesson) => {
+  for (const language of lesson.languages) {
+    console.log('import translation:', language)
+    try {
+      const crowdinFile = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md?${Math.floor(Math.random() * 100000)}`
+      // console.log(crowdinFile)
+      const crowdin = await axios.get(crowdinFile)
+      // console.log(crowdin)
+      if (crowdin.status === 200) {
+        // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
+        const newTranslation = crowdin.data
+        console.log(newTranslation)
+        const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
+        const existingTranslation = fs.existsSync(lessonPath) ? (await fs.promises.readFile(lessonPath, 'utf8')) : ''
+        // console.log(existingTranslation)
+        // check if translation has been modified
+        if (newTranslation.trim() !== existingTranslation.trim()) {
+          console.log('- new translation available')
+          fs.writeFile(lessonPath, `${newTranslation}`, (error) => {
+            if (error) throw error
+          })
+        } else {
+          console.log('- same same')
+        }
+      }
+    } catch (error) {
+
+      console.log(`- ${language} not available yet`)
+    }
+  }
+}
+
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
   .then((notionRows) => {
@@ -339,6 +371,8 @@ axios
                 lesson.imageLinks = []
                 lessons[index] = lesson
                 if (MD_ENABLED) {
+                  // import translations
+                  importTranslations(lesson)
                   // console.log(lesson.articleContent)
                   let lessonContentMD = lesson.articleContent
                   try {
@@ -602,34 +636,7 @@ axios
 
           if (MD_ENABLED) {
             // import translations
-            for (const language of lesson.languages) {
-              console.log('import translation:', language)
-              try {
-                const crowdin = await axios
-                  .get(`https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md`)
-                // console.log(crowdin)
-                if (crowdin.status === 200) {
-                  // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
-                  const newTranslation = crowdin.data
-                  // console.log(newTranslation)
-                  const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
-                  const existingTranslation = (await fs.promises.readFile(lessonPath, 'utf8'))
-                  // console.log(existingTranslation)
-                  // check if translation has been modified
-                  if (newTranslation.trim() !== existingTranslation.trim()) {
-                    console.log('- new translation available')
-                    fs.writeFile(lessonPath, `${newTranslation}`, (error) => {
-                      if (error) throw error
-                    })
-                  } else {
-                    console.log('- same same')
-                  }
-                }
-              } catch (error) {
-
-                console.log(`- ${language} not available yet`)
-              }
-            }
+            importTranslations(lesson)
             // convert to MD
             console.log(`Converting "${lesson.name}" to MD`)
             try {
