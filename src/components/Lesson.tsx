@@ -238,7 +238,7 @@ const Lesson = ({
       if (!hasNFT) {
         toast.closeAll()
         toast({
-          title: "You don't own the required NFT",
+          title: t("You don't own the required NFT"),
           description: lesson?.nftGatingRequirements,
           status: 'warning',
           duration: 20000,
@@ -251,8 +251,8 @@ const Lesson = ({
       if (!address) {
         toast.closeAll()
         toast({
-          title: 'This is a token gated lesson',
-          description: 'Connect your wallet to access the lesson.',
+          title: t('This is a token gated lesson'),
+          description: t('Connect your wallet to access the lesson.'),
           status: 'warning',
           duration: 20000,
           isClosable: true,
@@ -401,7 +401,6 @@ const Lesson = ({
     closeLesson()
   })
 
-  // transform keywords into Tooltip
   function transform(node) {
     if (node.type === 'tag' && node.name === 'a') {
       // force links to target _blank
@@ -502,13 +501,16 @@ const Lesson = ({
         </Box>
         <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
           {slide.type === 'QUIZ' ? (
+            <>{t('Knowledge Check')}</>
+          ) : slide.type === 'QUEST' ? (
             <>
-              {lesson.slug === 'conceptos-basicos-de-blockchain'
-                ? 'Prueba de Conocimientos'
-                : 'Knowledge Check'}
+              {t(`{{lesson_title}} Quest`, {
+                lesson_title: lesson.name,
+                interpolation: { escapeValue: false },
+              })}
             </>
           ) : (
-            <>{ReactHtmlParser(slide.title, { transform })}</>
+            <>{slide.title}</>
           )}
         </Box>
       </Text>
@@ -608,7 +610,15 @@ const Lesson = ({
                   {lesson.badgeId ? (
                     <MintBadge badgeId={lesson.badgeId} />
                   ) : (
-                    <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
+                    <h2>
+                      {t(
+                        `Congrats on finishing our "{{lesson_title}}" lesson! 🥳`,
+                        {
+                          lesson_title: lesson.name,
+                          interpolation: { escapeValue: false },
+                        }
+                      )}
+                    </h2>
                   )}
                   <p>
                     {!embed &&
@@ -640,7 +650,9 @@ const Lesson = ({
             >
               <Tooltip
                 hasArrow
-                label="Help us improve the content by commenting this slide on Notion"
+                label={t(
+                  'Help us improve the content by commenting this slide on Notion'
+                )}
               >
                 <Button variant="outline">
                   💬{isSmallScreen ? '' : ` comment this slide`}
@@ -653,10 +665,12 @@ const Lesson = ({
           {slide.type === 'QUEST' && !Quest?.isQuestCompleted ? (
             <Tooltip
               hasArrow
-              label="By skipping this quest you won't be able to claim the lesson badge"
+              label={t(
+                "By skipping this quest you won't be able to claim the lesson badge"
+              )}
             >
               <Button variant="outline" onClick={() => closeLesson()}>
-                Skip Quest
+                {t('Skip Quest')}
               </Button>
             </Tooltip>
           ) : null}
@@ -672,7 +686,7 @@ const Lesson = ({
               onClick={goToNextSlide}
               rightIcon={<ArrowForwardIcon />}
             >
-              Next
+              {t('Next')}
             </Button>
           ) : (
             <>
@@ -686,8 +700,8 @@ const Lesson = ({
                 {lesson.badgeId &&
                 isBadgeMintedLS === false &&
                 Quest?.isQuestCompleted
-                  ? 'Mint Badge'
-                  : 'Finish'}
+                  ? t('Mint Badge')
+                  : t('Finish')}
               </Button>
             </>
           )}

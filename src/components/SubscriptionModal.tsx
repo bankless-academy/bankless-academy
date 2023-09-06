@@ -45,7 +45,10 @@ const SubscriptionModal = ({
       >
         <ModalHeader>
           {lesson
-            ? t(`Subscribe to {{lesson.name}} notifications`, lesson)
+            ? t(`Subscribe to {{lesson_title}} notifications`, {
+                lesson_title: lesson.name,
+                interpolation: { escapeValue: false },
+              })
             : t('Newsletter')}
         </ModalHeader>
         <ModalCloseButton />

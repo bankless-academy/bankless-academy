@@ -120,9 +120,10 @@ const SwitchNetworkButton = ({
                     } catch (error) {
                       toast.closeAll()
                       toast({
-                        title: 'Error while trying to change the network.',
-                        description:
-                          'When using Wallet Connect, change the network from your wallet.',
+                        title: t('Error while trying to change the network.'),
+                        description: t(
+                          'When using Wallet Connect, change the network from your wallet.'
+                        ),
                         status: 'warning',
                         duration: 20000,
                         isClosable: true,
