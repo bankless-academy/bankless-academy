@@ -32,8 +32,8 @@
     "definition": "(Automated Market Maker) A trade matchmaking system, based on a public algorithm."
   },
   "asynchronous": {
-    "keyword": "asynchronous",
-    "definition": "Communication between multiple collaborators, where participants don’t have to be present at time of messaging."
+    "keyword": "asynchron",
+    "definition": "Kommunikation zwischen mehreren Mitwirkenden, wobei die Teilnehmer zum Zeitpunkt der Nachrichtenübermittlung nicht anwesend sein müssen."
   },
   "bet": {
     "keyword": "bet",
