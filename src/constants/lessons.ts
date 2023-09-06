@@ -2014,13 +2014,13 @@ const LESSONS: LessonType[] = [
       '/images/optimism-governance/network-governance-8f310d77.svg',
       '/images/optimism-governance/the-optimism-network-0c6dff63.svg',
       '/images/optimism-governance/progressive-decentralization-bc757708.svg',
-      '/images/optimism-governance/a-new-economy-e2bd1912.svg',
-      '/images/optimism-governance/incentivizing-the-public-goods-economy-ff926012.svg',
+      '/images/optimism-governance/a-new-economy-3c4e2463.svg',
+      '/images/optimism-governance/incentivizing-the-public-goods-economy-c9597d31.svg',
       '/images/optimism-governance/ethers-phoenix-2c6f05d3.svg',
-      '/images/optimism-governance/introducing-the-governing-houses-09299832.svg',
+      '/images/optimism-governance/introducing-the-governing-houses-17713ab7.svg',
       '/images/optimism-governance/the-token-house-01fa4823.svg',
       '/images/optimism-governance/a-note-on-token-distribution-415be7a6.svg',
-      '/images/optimism-governance/the-citizens-house-7d7af195.svg',
+      '/images/optimism-governance/the-citizens-house-ea70a9b9.svg',
       '/images/optimism-governance/governance-seasons-4ebc291c.svg',
       '/images/optimism-governance/now-think-even-bigger-0f29ab97.svg',
       '/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg'
@@ -2064,7 +2064,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'f7ca353f75f142fabf75986d54d9423d',
         title: 'The Optimism Network',
-        content: '<div class="bloc1"><p><code>DAOs</code> like the <code>Optimism Collective</code> are at the frontier of exploring such coordination systems.</p><p>In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.</p><p>Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!</p></div><div class="bloc2"><img src=\'/images/optimism-governance/the-optimism-network-0c6dff63.svg\'></div>'
+        content: '<div class="bloc1"><p><code>DAOs</code> like the Optimism Collective are at the frontier of exploring such coordination systems.</p><p>In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.</p><p>Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!</p></div><div class="bloc2"><img src=\'/images/optimism-governance/the-optimism-network-0c6dff63.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -2122,13 +2122,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'c1ee570de27a49b58466df08e2637fab',
         title: 'A New<strong> </strong>Economy',
-        content: '<div class="bloc1"><p>At the center of the Optimism <code>L2</code> economy is the <strong>‘Optimistic Flywheel’</strong>. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.</p><ol><li>Users and <code>dApps</code> demand network <code>blockspace</code>.</li><li>The network generates revenue via transaction fees.</li><li>A portion of these taxes are distributed to builders providing impactful public goods infrastructure.</li><li>Network users gain access to free resources and services, increasing the value of OP blockspace.</li></ol><p>With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!</p></div><div class="bloc2"><img src=\'/images/optimism-governance/a-new-economy-e2bd1912.svg\'></div>'
+        content: '<div class="bloc1"><p>At the center of the Optimism <code>L2</code> economy is the <strong>‘Optimistic Flywheel’</strong>. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.</p><ol><li>Users and <code>dApps</code> demand network <code>blockspace</code>.</li><li>The network generates revenue via transaction fees.</li><li>A portion of these taxes are awarded to builders providing impactful public goods infrastructure.</li><li>Network users gain access to free resources and services, increasing the value of OP blockspace.</li></ol><p>With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!</p></div><div class="bloc2"><img src=\'/images/optimism-governance/a-new-economy-3c4e2463.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'd8361c4c3fd0403b9cc93a8eaee7a02d',
         title: 'Incentivizing the Public Goods Economy',
-        content: '<div class="bloc1"><p>As you can see, public goods infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.</p><p>Here, Optimism takes an ‘<strong>Impact = Profit</strong>’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.</p><p>As Vitalik Buterin said,<br><em>“It’s easier to agree on what was useful than what will be useful.”</em></p><p>This distribution model is known as <strong>‘Retroactive Public Goods Funding’</strong>, or <strong>‘RetroPGF’</strong>. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/incentivizing-the-public-goods-economy-ff926012.svg\'></div>'
+        content: '<div class="bloc1"><p>As you can see, public goods infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.</p><p>Here, Optimism takes an ‘<strong>Impact = Profit</strong>’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.</p><p>As Vitalik Buterin said,<br><em>“It’s easier to agree on what was useful than what will be useful.”</em></p><p>This distribution model is known as <strong>‘Retroactive Public Goods Funding’</strong>, or <strong>‘RetroPGF’</strong>. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/incentivizing-the-public-goods-economy-c9597d31.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -2162,7 +2162,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '6eb5a8e674ea4cd0b66eafe123fe33bf',
         title: 'Introducing the Governing Houses',
-        content: '<div class="bloc1"><p>There are two houses that make up the Optimism Collective, each with independent and shared responsibilities in running the network.</p><p><strong>The Token House</strong> is responsible for managing network upgrades, incentives, and treasury. Its stakeholder structure incentivizes growth of the network economy, and generates stakeholder value. The house is also responsible for preserving decentralization — preventing capture of the network economy.</p><p><strong>The Citizens’ House</strong> allocates <code>RetroPGF</code> resources to community projects, according to the ‘Impact = Profit’ ethos, and helps decide the parameters of citizenship. The house is incentivized to improve network quality of life, by funding public goods that improve the value of citizenship!</p><p>Both houses maintain network balance through their duties, voting mechanics, and <code>veto</code> abilities. Let’s take a closer look.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/introducing-the-governing-houses-09299832.svg\'></div>'
+        content: '<div class="bloc1"><p>There are two houses that make up the Optimism Collective, each with independent and shared responsibilities in running the network.</p><p><strong>The Token House</strong> is responsible for managing network upgrades, incentives, and treasury. Its stakeholder structure incentivizes growth of the network economy, and generates stakeholder value. The house is also responsible for preserving decentralization — preventing capture of the network economy.</p><p><strong>The Citizens’ House</strong> allocates <code>RetroPGF</code> resources to community projects, according to the ‘Impact = Profit’ ethos, and helps decide the parameters of citizenship. The house is incentivized to improve network quality of life, by funding public goods that improve the value of citizenship!</p><p>Both houses maintain network balance through their duties, voting mechanics, and <code>veto</code> abilities. Let’s take a closer look.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/introducing-the-governing-houses-17713ab7.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -2202,7 +2202,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '59421e43c5ef45c593a59ac74df413f6',
         title: 'A Note on Token Distribution…',
-        content: '<div class="bloc1"><p>Network governance is only as democratic as its initial <code>token distribution</code> — meaning who received voting power in the first place. Check out the <a href=\'https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance\'>OP distribution plan</a> to see how the Optimism Foundation has allocated initial governance power, in service of balanced community representation.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/a-note-on-token-distribution-415be7a6.svg\'></div>'
+        content: '<div class="bloc1"><p>Network governance is only as democratic as its initial <code>token distribution</code> — meaning who received voting power in the first place. Check out the <a href=\'https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance\'>OP distribution plan</a> to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/a-note-on-token-distribution-415be7a6.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -2230,7 +2230,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '53f830416d224fada656ede4663bf238',
         title: 'The Citizens’ House',
-        content: '<div class="bloc1"><p>The Citizens’ House conducts the growth of public infrastructure on the Optimism Network.</p><p>Duties include:</p><ul><li>🎯 <strong>Defining RetroPGF metrics and impact criteria</strong> for measuring project performance.</li><li>🔍 <strong>Research and allocation of RetroPGF</strong> to community projects which meet the guidelines.</li><li>👬 <strong>Selection of new citizens</strong> to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.</li></ul></div><div class="bloc2"><img src=\'/images/optimism-governance/the-citizens-house-7d7af195.svg\'></div>'
+        content: '<div class="bloc1"><p>The Citizens’ House conducts the growth of public infrastructure on the Optimism Network.</p><p>Duties include:</p><ul><li>🎯 <strong>Defining RetroPGF metrics and impact criteria</strong> for measuring project performance.</li><li>🔍 <strong>Research and allocation of RetroPGF</strong> to community projects which meet the guidelines.</li><li>👬 <strong>Selection of new citizens</strong> to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.</li></ul></div><div class="bloc2"><img src=\'/images/optimism-governance/the-citizens-house-ea70a9b9.svg\'></div>'
       },
       {
         type: 'LEARN',

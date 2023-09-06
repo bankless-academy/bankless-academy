@@ -42,10 +42,10 @@ Der Begriff Blockchain kann als Substantiv - die Bitcoin-Blockchain - oder als A
 Von außen betrachtet, gibt es 3 Strukturebenen innerhalb einer Blockchain:
 
 1. Die gesamte `Blockchain` besteht aus Blöcken, die in einer geordneten Reihenfolge miteinander verbunden sind
-2. `Blöcke` bestehen aus Gruppen von Transaktionen, die zusammengefügt werden
-3. `Transaktionen` repräsentieren Geldbeträge, die zwischen zwei `Adressen` im Netzwerk versendet werden
+2. Ein `Block` besteht aus Gruppen von Transaktionen, die zusammengefügt werden
+3. Eine `Transaktion` repräsentiert einen Geldbetrag, der zwischen zwei `Adressen` im Netzwerk versendet wird
 
-Diese dreistufige Struktur führt zu einem kryptografischen Register [Ledger] - einer unveränderlichen Historie aller im Netzwerk durchgeführten Transaktionen.
+Diese dreistufige Struktur führt zu einem kryptografischen Register - einer unveränderlichen Historie aller im Netzwerk durchgeführten Transaktionen.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/blockchain-structure-346dae14.svg)
 

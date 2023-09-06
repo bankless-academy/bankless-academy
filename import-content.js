@@ -210,7 +210,7 @@ const importTranslations = async (lesson) => {
       if (crowdin.status === 200) {
         // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
         const newTranslation = crowdin.data
-        console.log(newTranslation)
+        // console.log(newTranslation)
         const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
         const existingTranslation = fs.existsSync(lessonPath) ? (await fs.promises.readFile(lessonPath, 'utf8')) : ''
         // console.log(existingTranslation)

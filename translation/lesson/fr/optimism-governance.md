@@ -34,7 +34,7 @@ Les technologies modernes ont radicalement changé la façon dont les humains se
 La vision de la technologie `DAO` est de rationaliser la résolution de problèmes et les débats entre un grand nombre de collaborateurs - que ce soit sur Internet, dans votre communauté locale ou à l'échelle internationale. Pour ce faire, il faut :
 
 - Inciter les participants à partager une mission commune.
-- Vote innovant, `délégation` et des mécanismes de `veto`.
+- Vote innovant, `délégation` et des mécanismes de `véto`.
 - Utiliser la technologie chaîne de blocs [blockchain] pour diminuer le potentiel d'erreur humaine ou de détournement [hijacking].
 
 ![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
@@ -67,7 +67,7 @@ Comment la gouvernance onchain peut-elle contribuer à résoudre le débat inter
 
 > ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
-- [ ] Toutes les réponses ci-dessus.
+- [ ] All of the above
 
 > ℹ️ Correct ! La gouvernance onchain protège le processus de vote par de multiples moyens.
 
