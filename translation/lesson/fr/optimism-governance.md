@@ -49,7 +49,7 @@ Comme tout État-nation traditionnel disposant de ressources et de participants,
 
 🛠️ **Mise en œuvre :** La proposition approuvée est appliquée au réseau, par divers développeurs incités si nécessaire.
 
-![](https://app.banklessacademy.com/images/optimism-governance/network-governance-8f310d77.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
 
 # Knowledge Check 1
 
@@ -79,7 +79,7 @@ Dans cette leçon, nous allons explorer comment Optimism est le pionnier de la v
 
 Notre quête se concentrera sur la revendication de nos premiers droits de vote, afin que nous soyons prêts à aider à construire l'avenir d'Ethereum et de la coordination humaine !
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-0c6dff63.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-b8104c1b.svg)
 
 # La Vision d'Optimism
 
@@ -123,7 +123,7 @@ De nombreux grands projets de blockchain commencent avec un groupe centralisé. 
 
 Les vérifications et équilibres légaux, tels que la capacité du Collectif à retirer des membres de la Fondation, assurent un **transfert lent de la propriété du réseau à la communauté**.
 
-![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-bc757708.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
 
 # Knowledge Check 3
 
@@ -148,11 +148,11 @@ Au centre de l'économie d'Optimism `L2` se trouve le **"Volant d'Inertie Optimi
 
 Avec une infrastructure onchain de plus grande valeur, la demande d'espace de blocs Optimism augmente, et le cycle continue !
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-3c4e2463.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-a8decde0.svg)
 
-# Incitation à l'Économie de Biens Publics
+# Incentivizing Public Goods
 
-Comme vous pouvez le constater, les infrastructures de biens publics sont au cœur d'Optimism. Pourtant, il n'est pas simple de sélectionner les projets qui méritent d'être financés.
+As you can see, `public goods` infrastructure is at the heart of Optimism. Pourtant, il n'est pas simple de sélectionner les projets qui méritent d'être financés.
 
 Dans ce cas, Optimism adopte l'approche "**Impact = Profit**". L'impact est toutefois difficile à anticiper. Plutôt que de faire des prévisions, l'organisme de financement examine périodiquement les projets existants et attribue un financement rétroactif sur la base des performances historiques.
 
@@ -160,7 +160,7 @@ Comme l'a dit Vitalik Buterin, _"Il est plus facile de se mettre d'accord sur ce
 
 Ce modèle de distribution est connu sous le nom de **"Retroactive Public Goods Funding"** [Financement Rétroactif de Bien Public], ou **"RetroPGF"**. Ce mécanisme de financement incite les penseurs optimistes à créer des biens publics au service de l'humanité. Il nous libère de la mentalité d'extraction de valeur des économies capitalistes traditionnelles.
 
-![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-the-public-goods-economy-c9597d31.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
 
 # Le Phénix d'Ether
 
@@ -170,7 +170,7 @@ _"Il s'agit d'un algorithme qui récompense les premiers coopérateurs qui ont c
 
 — La fondation Optimism
 
-![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-2c6f05d3.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-f63f460c.svg)
 
 # Knowledge Check 4
 
@@ -259,7 +259,7 @@ Tout le monde peut devenir un délégué de la Maison de Jeton sur Optimism, rep
 
 La gouvernance du réseau n'est démocratique que dans la mesure où la `distribution initiale de jetons` — c'est-à-dire qui a reçu le droit de vote en premier lieu. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-415be7a6.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
 
 # Knowledge Check 6
 
@@ -340,8 +340,6 @@ Nous sommes presque prêts à gouverner avec Optimism 🔴. Il y a une dernière
 La Vision Optimiste ne s'arrête pas à une seule blockchain `L2` . Grâce à la capacité de `forker` une blockchain, il s'agit d'une expérience de gouvernance clonable. Cette technologie est conçue pour être mise à l'échelle sur plusieurs L2 — et même dans des scénarios de gouvernance mondiale réels. Optimisme appelle ceci **« La Superchaine »** [Superchain].
 
 Coinbase, un important `CEX`, a déjà forké et commencé à contribuer à cette initiative `open source`, par le biais de la blockchain L2 Base 🔵. Cette mise en commun des ressources de développement accroît l'évolution des infrastructures, tout en canalisant les frais de transaction de la L2 vers l'éthique "Impact = Profit".
-
-![](https://app.banklessacademy.com/images/optimism-governance/now-think-even-bigger-0f29ab97.svg)
 
 # Façonner un Avenir Optimiste
 
