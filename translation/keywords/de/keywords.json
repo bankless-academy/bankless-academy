@@ -60,8 +60,8 @@
     "definition": "The amount of a blockchain’s native asset given to the proposer of a new valid block."
   },
   "block space": {
-    "keyword": "block space",
-    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
+    "keyword": "Blockspace",
+    "definition": "Die Menge an Speicherplatz auf einer Blockchain, die zum Speichern von Informationen und zum Ausführen von Code verwendet werden kann. Die Menge an \"Platz\" innerhalb eines Blocks (oder einer Reihe von Blöcken)."
   },
   "blockchain": {
     "keyword": "Blockchain",
@@ -129,7 +129,7 @@
   },
   "dapp": {
     "keyword": "dApp",
-    "definition": "A decentralized application that connects to decentralized networks and protocols."
+    "definition": "Eine dezentrale Anwendung, die sich mit dezentralen Netzwerken und Protokollen verbindet."
   },
   "decentralization": {
     "keyword": "Decentralization",
@@ -249,7 +249,7 @@
   },
   "l2": {
     "keyword": "L2",
-    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
+    "definition": "Eine Blockchain, die die Skalierbarkeit von Ethereum erweitert und gleichzeitig die Sicherheit des Ethereum Netzwerks übernimmt."
   },
   "layer 1": {
     "keyword": "Layer 1",
@@ -257,7 +257,7 @@
   },
   "layer 2": {
     "keyword": "Layer 2",
-    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
+    "definition": "Eine Blockchain, die die Skalierbarkeit von Ethereum erweitert und gleichzeitig die Sicherheit des Ethereum Netzwerks übernimmt."
   },
   "ledger": {
     "keyword": "Register",
@@ -304,8 +304,8 @@
     "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets."
   },
   "onchain governance": {
-    "keyword": "onchain governance",
-    "definition": "The system that mediates changes to a blockchain’s structure."
+    "keyword": "Onchain Governance",
+    "definition": "Das System, das Änderungen an der Struktur einer Blockchain vermittelt."
   },
   "open source": {
     "keyword": "open source",
@@ -372,8 +372,8 @@
     "definition": "Public blockchains allow anyone to view the blockchain ledger."
   },
   "public good": {
-    "keyword": "public good",
-    "definition": "A public good is a commodity or service that is available to all members of society."
+    "keyword": "öffentliches Gut",
+    "definition": "Ein öffentliches Gut ist eine Ware oder Dienstleistung, die allen Mitgliedern der Gesellschaft zur Verfügung steht."
   },
   "public key": {
     "keyword": "public key",
