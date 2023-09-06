@@ -45,126 +45,126 @@ Wie jeder traditionelle Nationalstaat mit Ressourcen und Teilnehmern nutzt ein D
 
 📜 **Vorschlag:** Es beginnt mit einem Vorschlag die Regierungsführung betreffend und einer Diskussion innerhalb der Gemeinschaft. Der Vorschlag wird auf der Grundlage öffentlichen Feedbacks aktualisiert. Jeder kann einen Vorschlag einreichen oder einen Vorschlag kritisieren. Dies ist der "dezentralisierte" Teil des Akronyms "`DAO`".
 
-🗳️ **Vote:** The proposal moves to a vote — hosted via the transparent, censorship-resistant process of `onchain governance`. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘`DAO`’ — a quality envisioned to eventually cover the entire governance process.
+🗳️ **Abstimmung:** Der Vorschlag wird zur Abstimmung gestellt - über einen transparenten, gegen Zensur gesicherten Prozess, der sogenannten `Onchain Governance`. Zwischen dem Öffnen und Schließen der Abstimmung gibt es keinerlei menschliche Einwirkung; alles wird durch Code vermittelt. Dies ist der "autonome" Teil des Akronyms "`DAO`" - eine Eigenschaft, die schließlich den gesamten Prozess der Regierungsführung abdecken soll.
 
-🛠️ **Implementation:** The approved proposal is applied to the network, by various incentivized developers if necessary.
+🛠️ **Umsetzung:** Der genehmigte Vorschlag wird innerhalb des Netzwerks umgesetzt, gegebenenfalls durch mehrere Entwickler, welche mithilfe von Anreizen motiviert werden.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
 
 # Knowledge Check 1
 
-How can onchain governance help to solve interhuman debate?
+Wie kann die sogenannte Onchain Governance zur Lösung zwischenmenschlicher Debatten beitragen?
 
-- [ ] Automation
+- [ ] Automatisierung
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- [ ] Transparency
+- [ ] Transparenz
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- [ ] Censorship-resistance
+- Resistenz gegenüber Zensur
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- [ ] All of the above
+- [ ] Alle oben genannten Punkte
 
-> ℹ️ Correct! Onchain governance protects the voting process through multiple means.
+> ℹ️ Richtig! Die Onchain Governance schützt den Abstimmungsprozess durch mehrere Maßnahmen.
 
-# The Optimism Network
+# Das Optimism Netzwerk
 
-`DAOs` like the Optimism Collective are at the frontier of exploring such coordination systems.
+`DAOs` wie das sogennante Optimism Collective befinden sich an der Grenze zur Erforschung solcher Koordinierungssysteme.
 
-In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.
+In dieser Lektion werden wir untersuchen, wie Optimism die DAO-Vision vorantreibt. Wir werden mehr über ihre Mission erfahren und darüber, wie sie einen neuen Koordinierungsrahmen für die Menschheit aufbaut.
 
-Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!
+Unser Ziel wird es sein, unser erstes Stimmrecht in Anspruch zu nehmen, so dass wir bereit sein werden, die Zukunft von Ethereum und die Koordination der Menschheit mitzugestalten!
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-b8104c1b.svg)
 
-# The Optimistic Vision
+# Die optimistische Vision
 
-Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It’s part of the Ethereum ecosystem, but with lower fees and faster transactions — while maintaining Ethereum’s high standard of security. Here are the defining properties:
+Optimism hat eine Mission: die Skalierung von Ethereum durch den Aufbau eines sogenannten `Layer 2` Netzwerks. Es ist Teil des Ethereum-Ökosystems, aber mit niedrigeren Gebühren und schnelleren Transaktionen - unter Beibehaltung des hohen Sicherheitsstandards von Ethereum. Hier sind die entscheidenden Eigenschaften:
 
-🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. A public good is something that benefits everyone in a community, while one person's use of it doesn't reduce its availability for others. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
+🏕️ **Öffentliche Güter:** Große Wertlegung auf die Finanzierung und den Aufbau von `öffentlichen Gütern`. Ein öffentliches Gut ist etwas, das allen in einer Gemeinschaft zugute kommt, während die Nutzung durch eine einzelne Person nicht dazu führt, dass es für andere weniger verfügbar ist. Deine kostenlose Weiterbildung durch die Bankless Academy wurde durch die Unterstützung von Optimism für öffentliche Güter ermöglicht!
 
-🧑‍🤝‍🧑 **Community Governance:** The network is lead by its community.
+🧑‍🤝‍🧑 **Regierungsführung durch die Gemeinschaft:** Das Netzwerk wird von seiner Gemeinschaft geleitet.
 
-🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
+🏠 **Freier Mark:** Als Erweiterung nicht nur durch den sogenannten `Blockspace` von Ethereum gestartet, sondern mithilfe von Ethereum Prinzipien. Es zielt darauf ab, den ohne Zugangsbeschränkungen, quelloffenen und gegenüber Zensur resistenten Marktplatz von Ethereum zu skalieren.
 
-Optimism aims to become a “district of cyberspace” that directly provides for — and is governed by — its citizens!
+Optimism zielt darauf ab, ein „Bezirk innerhalb des Cyberspaces“ zu werden, der direkt für das Wohl seiner Bürger sorgt – und von ihnen regiert wird!
 
 # Knowledge Check 2
 
-Which of the following is NOT a public good?
+Welches der folgenden Güter ist NICHT ein öffentliches Gut?
 
-- [ ] Education
+- [ ] Bildung
 
-> ℹ️ Education can benefit everyone, and one person’s use doesn’t reduce its availability.
+> ℹ️ Bildung kann allen zugute kommen, und die Nutzung durch eine Person schränkt ihre Verfügbarkeit für eine andere Person nicht ein.
 
-- [ ] The Internet
+- [ ] Das Internet
 
-> ℹ️ The internet can benefit everyone, and one person’s use doesn’t reduce its availability.
+> ℹ️ Das Internet kann allen zugute kommen, und die Nutzung durch eine einzelne Person schränkt seine Verfügbarkeit nicht ein.
 
 - [ ] Ethereum
 
-> ℹ️ Ethereum can benefit everyone, and — with Layer 2s — one person’s use doesn’t reduce its availability.
+> ℹ️ Ethereum kann allen zugute kommen, und - durch den Einsatz von Layer 2 Systemen - reduziert die Nutzung durch eine Person nicht seine Verfügbarkeit.
 
-- [ ] A Centralized Exchange
+- [ ] Eine zentralisierte Börse
 
-> ℹ️ Correct. While CEXs provide community benefits, they are private businesses.
+> ℹ️ Richtig. Während zentralisierte Börsen [CEXs] Vorteile für die Gemeinschaft bieten, handelt es sich dabei um Privatunternehmen.
 
-# Progressive Decentralization
+# Progressive Dezentralisierung
 
-Many great blockchain projects begin with a centralized group. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization**. On Optimism, the founders, network, and community are thought of as follows:
+Viele großartige Blockchain-Projekte beginnen durch das Wirken einer zentralisierten Gruppe. Dies gibt dem Projekt einen entscheidenden Fokus bezüglich des Aufbaus und beim Thema Ausgaben, aber ein `DAO` braucht **mehr als nur das Versprechen von Dezentralisierung**. Im Fall von Optimism werden die Gründer, das Netzwerk und die Gemeinschaft wie folgt betrachtet:
 
-- 🏦 **Optimism Foundation:** The network founders. They kickstart the ecosystem, provide initial resources, and act as community steward, before eventually dissolving.
-- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts and processing of user input.
-- 👬 **Optimism Collective:** The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem. The term ‘DAO’ covers both the Collective and the Network.
+- 🏦 **Optimism Foundation:** Die Gründer des Netzwerks. Sie bringen das Ökosystem in Schwung, stellen erste Ressourcen bereit und fungieren als Verwalter der Gemeinschaft, bevor sie sich schließlich auflösen.
+- 🌐 **Optimism Network:** Der autonome Code auf der Blockchain - die sogenannten Smart Contracts [intelligente Verträge] und die Verarbeitung von Nutzereingaben.
+- 👬 **Optimism Collective:** Die regierende Gemeinschaft; eine vielfältige Gruppe von globalen Teilnehmern. Sie sind für den langfristigen Besitz und die Verwaltung des Ökosystems verantwortlich. Der Begriff "DAO" umfasst sowohl das Kollektiv als auch das Netzwerk.
 
-Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow **transfer of network ownership to the community**.
+Rechtliche Kontrollen und Abwägungen, wie z. B. die Möglichkeit des Kollektivs, Mitglieder der Foundation [Stiftung] abzuberufen, gewährleisten eine langsame **Übertragung des Eigentums am Netzwerk auf die Gemeinschaft**.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
 
 # Knowledge Check 3
 
-True or false? The Optimism Foundation will continue to guide the Optimism Collective over the network’s lifetime.
+Richtig oder falsch? Die Optimism Foundation wird das Optimism Collective über die gesamte Lebensdauer des Netzwerks anführen.
 
-- [ ] True
+- [ ] Richtig
 
-> ℹ️ Try again!
+> Versuch nochmal!
 
-- [ ] False
+- [ ] Falsch
 
-> ℹ️ Correct! The Foundation will eventually dissolve, and the Collective will continue the mission.
+> ℹ️ Richtig! Die Foundation wird sich schließlich auflösen, und das Kollektiv wird die Mission weiterführen.
 
-# A New Economy
+# Eine neue Wirtschaft
 
-At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.
+Im Zentrum der `L2` Wirtschaft von Optimism steht das **"Optimistische Schwungrad"**. Dieser Wirtschaftszyklus erzeugt Einnahmen, Netzwerkwachstum und Fortschritte bezüglich der Mission von Optimism.
 
-1. Users and `dApps` demand network `blockspace`.
-2. The network generates revenue via transaction fees.
-3. A portion of these taxes are awarded to builders providing impactful public goods infrastructure.
-4. Network users gain access to free resources and services, increasing the value of OP blockspace.
+1. Nutzer und sogenannte `dApps` fordern `Blockspace` innerhalb des Netzwerks.
+2. Das Netzwerk generiert Einnahmen mithilef von Transaktionsgebühren.
+3. Ein Teil dieser Steuern wird an Bauträger vergeben, die eine leistungsfähige Infrastruktur für öffentliche Güter bereitstellen.
+4. Die Netznutzer erhalten Zugang zu kostenlosen Ressourcen und Diensten, was den Wert von OP-Blockspace erhöht.
 
-With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!
+Mit wertvollerer Infrastruktur auf der Blockchain steigt die Nachfrage nach Optimism-Blockspace, und der Kreislauf geht weiter!
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-a8decde0.svg)
 
-# Incentivizing Public Goods
+# Anreize für öffentliche Güter
 
-As you can see, `public goods` infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.
+Wie du sehen kannst, bildet die Infrarsturktur der `öffentlichen Güter` das Herzstück von Optimism. Die Auswahl förderungswürdiger Projekte ist jedoch nicht einfach.
 
-Here, Optimism takes an ‘**Impact = Profit**’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.
+Hier verfolgt Optimism den Ansatz "**Auswirkung = Gewinn**". Die Auswirkungen lassen sich jedoch nur schwer vorhersehen. Anstatt Vorhersagen zu treffen, überprüft die Finanzierungsstelle regelmäßig bestehende Projekte und vergibt rückwirkende Mittel auf Grundlage bisheriger Leistungen.
 
-As Vitalik Buterin said, _“It’s easier to agree on what was useful than what will be useful.”_
+Wie Vitalik Buterin einmal sagte: _"Es ist einfacher, sich darüber zu einigen, was nützlich war, als darüber, was nützlich sein wird."_
 
-This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
+Dieses Verteilungsmodell ist bekannt unter dem Namen **"Retroactive Public Goods Funding"** [rückwirkende Finanzierung öffentlicher Güter], oder **"RetroPGF"**. Dieser Finanzierungsmechanismus schafft Anreize für optimistische Denker, öffentliche Güter zu schaffen, die der Menschheit dienen. Er befreit uns von der wertschöpfenden Denkweise der traditionellen kapitalistischen Wirtschaft.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
 
-# Ether’s Phoenix
+# Ether’s Phönix
 
-Optimism calls this effect **‘Ether’s Phoenix’**: an _“angel reaching backwards in time, rewarding those who summon it.”_
+Optimism nennt diesen Effekt **„Ether’s Phönix“**: ein _„Engel, der in der Zeit rückwärts reicht, belohnt diejenigen, die ihn beschwören.“_
 
 _“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”_
 
