@@ -73,7 +73,7 @@ How can onchain governance help to solve interhuman debate?
 
 # The Optimism Network
 
-`DAOs` like the `Optimism Collective` are at the frontier of exploring such coordination systems.
+`DAOs` like the Optimism Collective are at the frontier of exploring such coordination systems.
 
 In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.
 
@@ -143,12 +143,12 @@ At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**.
 
 1. Users and `dApps` demand network `blockspace`.
 2. The network generates revenue via transaction fees.
-3. A portion of these taxes are distributed to builders providing impactful public goods infrastructure.
+3. A portion of these taxes are awarded to builders providing impactful public goods infrastructure.
 4. Network users gain access to free resources and services, increasing the value of OP blockspace.
 
 With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-e2bd1912.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-3c4e2463.svg)
 
 # Incentivizing the Public Goods Economy
 
@@ -160,7 +160,7 @@ As Vitalik Buterin said, _“It’s easier to agree on what was useful than wh
 
 This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
 
-![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-the-public-goods-economy-ff926012.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-the-public-goods-economy-c9597d31.svg)
 
 # Ether’s Phoenix
 
@@ -202,7 +202,7 @@ There are two houses that make up the Optimism Collective, each with independent
 
 Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. Let’s take a closer look.
 
-![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-09299832.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-17713ab7.svg)
 
 # Knowledge Check 5
 
@@ -257,7 +257,7 @@ Anyone can become a Token House delegate on Optimism, representing a group of fr
 
 # A Note on Token Distribution…
 
-Network governance is only as democratic as its initial `token distribution` — meaning who received voting power in the first place. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced community representation.
+Network governance is only as democratic as its initial `token distribution` — meaning who received voting power in the first place. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-415be7a6.svg)
 
@@ -291,7 +291,7 @@ Duties include:
 - 🔍 **Research and allocation of RetroPGF** to community projects which meet the guidelines.
 - 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-7d7af195.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-ea70a9b9.svg)
 
 # Citizens’ House: Joining, Voting, Delegating
 
