@@ -52,10 +52,17 @@ const processMD = async (md, lang, englishLesson) => {
           // console.log(slide_content)
           const rendered = await markdown.render(slide_content)
           // console.log(newLesson.slides[i].content)
-          newLesson.slides[i].content = newLesson.slides[i].content.replace(
-            /<div class="bloc1">.*?<\/div><div class="bloc2">/s,
-            `<div class="bloc1">${rendered}</div><div class="bloc2">`
-          )
+          if (newLesson.slides[i].content.includes('<div class="bloc2">')) {
+            newLesson.slides[i].content = newLesson.slides[i].content.replace(
+              /<div class="bloc1">.*?<\/div><div class="bloc2">/s,
+              `<div class="bloc1">${rendered}</div><div class="bloc2">`
+            )
+          } else {
+            newLesson.slides[i].content = newLesson.slides[i].content.replace(
+              /<div class="bloc1">.*?<\/div>/s,
+              `<div class="bloc1">${rendered}</div>`
+            )
+          }
         }
         if (newLesson.slides[i].type === 'QUIZ' && slide_content) {
           // console.log(slide_content)
