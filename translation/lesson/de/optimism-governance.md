@@ -166,31 +166,31 @@ Dieses Verteilungsmodell ist bekannt unter dem Namen **"Retroactive Public Goods
 
 Optimism nennt diesen Effekt **„Ether’s Phönix“**: ein _„Engel, der in der Zeit rückwärts reicht, belohnt diejenigen, die ihn beschwören.“_
 
-_“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”_
+_"Es handelt sich um einen Algorithmus, der diejenigen belohnt, die schon früh kooperiert haben und die Voraussetzungen für das Gedeihen der Finanzierung öffentlicher Güter geschaffen haben. Es ist eine Zukunft, in der frühzeitige Investitionen in öffentliche Güter anerkannt werden. Es ist auch eine Denkweise: dass Optimismus vorherrscht, dass bessere Systeme möglich sind und dass die Menschheit für ihre kooperative Revolution belohnt wird."_
 
-— The Optimism Foundation
+— Die Optimism Foundation
 
 ![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-f63f460c.svg)
 
 # Knowledge Check 4
 
-How is Optimism incentivizing community-focused economics?
+Wie schafft Optimism Anreize für gemeinschaftsorientiertes Wirtschaften?
 
-- [ ] By rewarding all Optimism projects with retroactive funding.
+- [ ] Indem alle Optimism-Projekte mit einer rückwirkenden Finanzierung belohnt werden.
 
-> ℹ️ Try again! Rewarding all projects regardless of their mission is not Optimism’s approach.
+> Versuch nochmal! Alle Projekte unabhängig von ihrem Auftrag zu belohnen, ist nicht der Ansatz von Optimism.
 
-- [ ] By providing a free market, but on the blockchain.
+- [ ] Durch die Bereitstellung eines freien Marktes, aber auf einer Blockchain.
 
-> ℹ️ Try again! Use of blockchain technology alone doesn’t effect economic models.
+> Versuch nochmal! Der Einsatz der Blockchain-Technologie allein hat keine Auswirkungen auf Wirtschaftsmodelle.
 
-- [ ] By systemically funding business models that improve the lives of all network users.
+- [ ] Durch die systematische Finanzierung von Geschäftsmodellen, die das Leben aller Nutzer des Netzwerks verbessern.
 
-> ℹ️ Correct! The network allocates a portion of transaction fees towards funding public goods.
+> ℹ️ Richtig! Das Netzwerk stellt einen Teil der Transaktionsgebühren für die Finanzierung öffentlicher Güter zur Verfügung.
 
-- [ ] All of the above.
+- [ ] Alle oben genannten Punkte.
 
-> ℹ️  Try again! Only one of these is true.
+> Versuch nochmal! Nur einer der Punkte ist richtig.
 
 # Introducing the Governing Houses
 
