@@ -39,11 +39,11 @@ Die Vision der `DAO` Technologie ist es, Problemlösungen und Debatten zwischen 
 
 ![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
 
-# Network Governance
+# Regierungsführung des Netzwerks
 
-Like any traditional nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but `asynchronous`, global, and partially mediated by code.
+Wie jeder traditionelle Nationalstaat mit Ressourcen und Teilnehmern nutzt ein DAO einen Prozess zur Regierungsführung, um den Einsatz von Ressourcen und die Erfüllung seiner Mission zu steuern. Es ist wie ein Rathaus, aber `asynchron`, global und teilweise durch Code vermittelt.
 
-📜 **Proposal:** It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘`DAO`’.
+📜 **Vorschlag:** Es beginnt mit einem Vorschlag die Regierungsführung betreffend und einer Diskussion innerhalb der Gemeinschaft. Der Vorschlag wird auf der Grundlage öffentlichen Feedbacks aktualisiert. Jeder kann einen Vorschlag einreichen oder einen Vorschlag kritisieren. Dies ist der "dezentralisierte" Teil des Akronyms "`DAO`".
 
 🗳️ **Vote:** The proposal moves to a vote — hosted via the transparent, censorship-resistant process of `onchain governance`. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘`DAO`’ — a quality envisioned to eventually cover the entire governance process.
 
