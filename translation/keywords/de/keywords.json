@@ -52,8 +52,8 @@
     "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
   },
   "block producer": {
-    "keyword": "block producer",
-    "definition": "The user whose hardware is chosen to verify a block's transactions and begin the next block on most Proof-of-Stake (PoS) blockchains."
+    "keyword": "Blockproduzenten",
+    "definition": "Der Benutzer, dessen Hardware ausgewählt wird, um die Transaktionen eines Blocks zu verifizieren und den nächsten Block auf den meisten Proof-of-Stake (PoS)-Blockchains zu starten."
   },
   "block reward": {
     "keyword": "block reward",
@@ -93,7 +93,7 @@
   },
   "cex": {
     "keyword": "CEX",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(Centralized Exchange) Eine Plattform, die den Handel mit Kryptowährungen gegen eine Gebühr koordiniert, ähnlich wie eine Börse."
   },
   "chain": {
     "keyword": "chain",
@@ -157,7 +157,7 @@
   },
   "dex": {
     "keyword": "DEX",
-    "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
+    "definition": "Decentralized Exchange: Ein Protokoll, das den Austausch von Kryptowährungen ermöglicht, ohne die Mitwirkung Dritter, denen Nutzer vertrauen müssten."
   },
   "dex aggregator": {
     "keyword": "DEX aggregator",
@@ -176,8 +176,8 @@
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
   "erc-20": {
-    "keyword": "erc-20",
-    "definition": "A standard for transferable tokens on Ethereum."
+    "keyword": "ERC-20",
+    "definition": "Ein Standard für übertragbare Token auf Ethereum."
   },
   "erc-721": {
     "keyword": "erc-721",
@@ -389,7 +389,7 @@
   },
   "retropgf": {
     "keyword": "RetroPGF",
-    "definition": "(Retroactive Public Goods Funding) A mechanism for funding projects, based on their historical impact."
+    "definition": "(Retroactive Public Goods Funding) [rückwirkende Finanzierung öffentlicher Güter] Ein Mechanismus zur Finanzierung von Projekten auf der Grundlage ihrer historischen Auswirkungen."
   },
   "rollup": {
     "keyword": "rollup",
