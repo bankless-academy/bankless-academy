@@ -148,7 +148,7 @@ At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**.
 
 With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-a8decde0.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
 
 # Incentivizing Public Goods
 

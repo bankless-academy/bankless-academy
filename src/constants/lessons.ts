@@ -1987,7 +1987,7 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    badgeImageLink: '/images/optimism-governance/badge-7c75a708.png',
+    badgeImageLink: '/images/optimism-governance/badge-ef203d34.png',
     lessonImageLink: '/images/optimism-governance/lesson-e093ab3a.png',
     socialImageLink: '/images/optimism-governance/social-380550cf.jpg',
     learningActions: '',
@@ -2016,7 +2016,7 @@ const LESSONS: LessonType[] = [
       '/images/optimism-governance/network-governance-1f940de4.svg',
       '/images/optimism-governance/the-optimism-network-b8104c1b.svg',
       '/images/optimism-governance/progressive-decentralization-e6e00611.svg',
-      '/images/optimism-governance/a-new-economy-a8decde0.svg',
+      '/images/optimism-governance/a-new-economy-cd0a0ca1.svg',
       '/images/optimism-governance/incentivizing-public-goods-78035b95.svg',
       '/images/optimism-governance/ethers-phoenix-f63f460c.svg',
       '/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg',
@@ -2123,7 +2123,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'c1ee570de27a49b58466df08e2637fab',
         title: 'A New<strong> </strong>Economy',
-        content: '<div class="bloc1"><p>At the center of the Optimism <code>L2</code> economy is the <strong>‘Optimistic Flywheel’</strong>. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.</p><ol><li>Users and <code>dApps</code> demand network <code>blockspace</code>.</li><li>The network generates revenue via transaction fees.</li><li>A portion of these taxes are awarded to builders providing impactful public goods infrastructure.</li><li>Network users gain access to free resources and services, increasing the value of OP blockspace.</li></ol><p>With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!</p></div><div class="bloc2"><img src=\'/images/optimism-governance/a-new-economy-a8decde0.svg\'></div>'
+        content: '<div class="bloc1"><p>At the center of the Optimism <code>L2</code> economy is the <strong>‘Optimistic Flywheel’</strong>. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.</p><ol><li>Users and <code>dApps</code> demand network <code>blockspace</code>.</li><li>The network generates revenue via transaction fees.</li><li>A portion of these taxes are awarded to builders providing impactful public goods infrastructure.</li><li>Network users gain access to free resources and services, increasing the value of OP blockspace.</li></ol><p>With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!</p></div><div class="bloc2"><img src=\'/images/optimism-governance/a-new-economy-cd0a0ca1.svg\'></div>'
       },
       {
         type: 'LEARN',
