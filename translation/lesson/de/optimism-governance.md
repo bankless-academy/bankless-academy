@@ -192,70 +192,70 @@ Wie schafft Optimism Anreize für gemeinschaftsorientiertes Wirtschaften?
 
 > Versuch nochmal! Nur einer der Punkte ist richtig.
 
-# Introducing the Governing Houses
+# Vorstellung der Häuser zur Regierungsführung
 
-There are two houses that make up the Optimism Collective, each with independent and shared responsibilities in running the network.
+Es gibt zwei Häuser, aus denen sich das Optimism-Kollektiv zusammensetzt, die jeweils eine unabhängige und gemeinsame Verantwortung für die Leitung des Netzwerks tragen.
 
-**The Token House** is responsible for managing network upgrades, incentives, and treasury. Its stakeholder structure incentivizes growth of the network economy, and generates stakeholder value. The house is also responsible for preserving decentralization — preventing capture of the network economy.
+**Das Token-House** ist verantwortlich für die Verwaltung von Netzwerk-Upgrades, der Schaffung von Anreizen und Verwaltung der Finanzen. Durch eine Struktur auf Basis von Stakeholdern bietet es Anreize für das Wachstum der Netzwerkökonomie und schafft Mehrwert für die Stakeholder. Das Haus hat auch die Aufgabe, die Dezentralisierung zu bewahren - und damit die Vereinnahmung der Netzwerkökonomie durch Dritte zu verhindern.
 
-**The Citizens’ House** allocates `RetroPGF` resources to community projects, according to the ‘Impact = Profit’ ethos, and helps decide the parameters of citizenship. The house is incentivized to improve network quality of life, by funding public goods that improve the value of citizenship!
+**Das Bürger-Haus** vergibt die Mittel des `RetroPGF` an Projekte innerhalb der Gemeinschaft nach dem Grundsatz "Auswirkung = Gewinn" und trägt dazu bei, die Parameter der Bürgerbeteiligung festzulegen. Das Haus schafft Anreize, die Lebensqualität im Netzwerk zu verbessern, indem es öffentliche Güter finanziert, die den Wert der Bürger erhöhen!
 
-Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. Let’s take a closer look.
+Beide Häuser erhalten das Gleichgewicht des Netzwerks durch ihre Pflichten, Abstimmungsmechanismen und die Möglichkeit `Veto` einzureichen. Schauen wir uns das einmal genauer an.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
 
 # Knowledge Check 5
 
-How does the Citizens’ House differ from the Token House?
+Wie unterscheidet sich das Bürger-Haus vom Token-Haus?
 
-- [ ] The Citizens’ House is the only house with veto abilities.
+- [ ] Das Bürger-Haus ist das einzige Haus mit Vetorecht.
 
-> ℹ️ Try again! Both houses have veto powers.
+> Versuch nochmal! Beide Häuser haben ein Vetorecht.
 
-- [ ] The Citizens’ House allocates RetroPGF rewards.
+- [ ] Das Bürger-Haus vergibt RetroPGF-Mittel.
 
-> ℹ️ Correct! The Citizens’ House allocates public goods funding.
+> ℹ️ Richtig! Das Bürger-Haus vergibt Mittel zur Förderung öffentlicher Güter.
 
-- [ ] The Citizens’ House leads network decentralization.
+- [ ] Das Bürger-Haus treibt die Dezentralisierung des Netzwerks voran.
 
-> ℹ️  Try again! Both houses maintain decentralization.
+> Versuch nochmal! Beide Häuser halten an der Dezentralisierung fest.
 
-- [ ] All of the above.
+- [ ] Alle oben genannten Punkte.
 
-> ℹ️  Try again!
+> Versuch nochmal!
 
-# The Token House
+# Das Token-Haus
 
-The Token House maintains the economy and defenses of the Optimism Network.
+Das Token-Haus erhält Ökonomie und Verteidigungsmechanismen des Optimism-Netzwerks aufrecht.
 
-Duties include:
+Zu den Aufgaben gehören:
 
-- ⚒️ Review and approval of **upgrades to network mechanics**.
-- ⛓️ Selection of network `block producers`.
-- 📈 **Allocation of revenue,** using collected transaction fees to fuel network growth.
+- ⚒️ Überprüfung und Genehmigung von **Upgrades bezüglich der Mechanik des Netzwerks**.
+- ⛓️ Auswahl von `Blockproduzenten` des Netzwerks.
+- 📈 **Aufteilung der Einnahmen,** Verwendung der eingenommenen Transaktionsgebühren zur Förderung des Netzwerkwachstums.
 
-The Citizens’ House has the right to veto any proposal under the above categories.
+Das Bürger-Haus hat das Recht, gegen jeden Vorschlag der oben genannten Kategorien ein Veto einzulegen.
 
-The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be **reducing rights** of token holders.
+Das Token-Haus hat ebenfalls die Möglichkeit, ein Veto gegen jeden Vorschlag einzulegen, der vom Bürger-Haus oder der Optimism Foundation eingereicht wird und der als **Einschränkung der Rechte** der Token-Inhaber angesehen wird.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
 
-# Token House: Joining, Voting, Delegating
+# Token-Haus: Beitreten, Abstimmen, Delegieren
 
-📝 **Joining:** the Token House is done via purchasing and holding OP tokens. These are `ERC-20` tokens, and are therefore transferrable; They can be bought and sold on `CEXs`, Optimism `DEXs`, or sent between friends. OP tokens are not available on other networks.
+📝 **Beitritt:** zum Token-Haus wird durch den Kauf und Besitz von OP-Tokens erreicht. Dies sind `ERC-20` Token, daher sind sie übertragbar; Sie können mittels `CEXs` und Optimism `DEXs` gekauft und verkauft werden oder an Freunde verschickt werden. OP-Token sind auf anderen Netzwerken nicht verfügbar.
 
-🗳️ **Voting:** Voting power scales based on how many tokens are held.
+🗳️ **Abstimmung:** Das Stimmrecht hängt von der Anzahl der gehaltenen Token ab.
 
-The Token House follows [a five week voting cycle](https://community.optimism.io/docs/governance/token-house-history/):
+Das Token House folgt [einem fünfwöchigen Abstimmungszyklus](https://community.optimism.io/docs/governance/token-house-history/):
 
-- Week 1-3: Proposal submission, review, and feedback.
-- Week 4-5: Voting.
+- Woche 1-3: Einreichung des Vorschlags, Überprüfung und Feedback.
+- Woche 4-5: Abstimmung.
 
-📢 **Delegating:** Many users prefer to delegate their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.
+📢 **Delegieren:** Viele Nutzer ziehen es vor, ihr Stimmrecht an andere Token-Inhaber zu delegieren, von denen sie glauben, dass sie die Interessen der Gemeinschaft am besten vertreten. Dies ist eine großartige Möglichkeit, Einfluss auf das Ökosystem zu nehmen, ohne jeden Vorschlag lesen zu müssen, über den abgestimmt wird. Die Übertragung hat keinen Einfluss auf das Eigentum der Token — delegierte OP-Token bleiben in deiner Wallet.
 
-Anyone can become a Token House delegate on Optimism, representing a group of friends, a community, or even a university’s blockchain club! Active delegates are often rewarded by the community.
+Jeder kann ein Delegierter des Token-Hauses auf Optimism werden und so eine Gruppe von Freunden, eine Gemeinschaft oder sogar den Blockchain-Club einer Universität vertreten! Aktive Delegierte werden oft von der Gemeinschaft belohnt.
 
-# A Note on Token Distribution…
+# Ein Hinweis zur Verteilung der Token…
 
 Network governance is only as democratic as its initial `token distribution` — meaning who received voting power in the first place. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
 
