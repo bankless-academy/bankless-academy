@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-# **Introduction**
+# Introduction
 
 Digital ownership is the new feature of web3. Using blockchains, cryptocurrencies, and NFTs, web3 gives ownership and power back to users. This online ownership of digital financial products is new for many, and that lack of experience gives opportunities for predatory people to scam and steal the assets of others. These scams work so well because most people aren’t aware of how they work. 
 

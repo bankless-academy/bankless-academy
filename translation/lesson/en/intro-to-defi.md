@@ -52,7 +52,7 @@ What does DeFi stand for?
 - [ ] Deregulation field
 - [ ] Degenerate fishermen
 
-# **Earning Yield**
+# Earning Yield
 
 There are a growing number of `DeFi` protocols that enable you to earn interest and other rewards by using your crypto assets. You can have access to financial products that you would typically need a bank or financial services firm to get—but without the paperwork, middleman, approval process, and other hassles of the traditional finance world.
 
@@ -86,7 +86,7 @@ Fill in the blank: DeFi transactions are ____.
 - [ ] Permissionless
 - [ ] Centralized
 
-# **Investing**
+# Investing
 
 The most common `DeFi` transaction is to purchase some cryptocurrency with the expectation that it will be worth more in the future. This is known as investing.
 
@@ -126,7 +126,7 @@ What is a DEX?
 - [ ] A crypto index fund
 - [ ] None of the above
 
-# **Lending & Borrowing**
+# Lending & Borrowing
 
 DeFi lending and borrowing offers loans without the need for a bank or intermediary institution. Instead, lending is done on a `peer-to-peer` level. That means transactions are between two parties and does not require a middleman or controlling entity.
 
@@ -143,7 +143,7 @@ Fill in the blank: DeFi lending is done on a _____ level.
 - [ ] banks to customers
 - [ ] income to interest
 
-# **Staking**
+# Staking
 
 DeFi staking is similar to lending, however it's a special type of lending. Instead of lending your crypto to another user on a `peer-to-peer` basis, you lend your crypto to a network or protocol. In exchange for helping secure the network or protocol, you earn rewards.
 
@@ -160,7 +160,7 @@ Lending your crypto to a protocol is an example of?
 - [ ] Borrowing
 - [ ] HODLing
 
-# **DeFi Downsides**
+# DeFi Downsides
 
 ![](https://app.banklessacademy.com/images/intro-to-defi/defi-downsides-51dd6225.svg)
 

@@ -471,7 +471,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '50b5d9c9a7a34a2c82f6423f97e3e77d',
-        title: '<strong>Introduction</strong>',
+        title: 'Introduction',
         content: '<div class="bloc1"><p>Digital ownership is the new feature of web3. Using blockchains, cryptocurrencies, and NFTs, web3 gives ownership and power back to users. This online ownership of digital financial products is new for many, and that lack of experience gives opportunities for predatory people to scam and steal the assets of others. These scams work so well because most people aren’t aware of how they work. </p><p>But, it\'s not just web3 that suffers from scams, web2 services like email and social media are full of scams as well. In addition, many web3 tools are still tied to web2 services like bank accounts or centralized exchanges so protecting those is important too. So congratulations, Academy Explorer, on taking the time to arm yourself with the knowledge that will protect you as you venture out into <code>web3</code>!</p><p>This lesson will cover:</p><ul><li>Web2 & web3 security.</li><li>The most common ways people lose their funds and how to protect oneself from them.</li><li>A general strategy for wallet security.</li><li>How one can recover if they are the victim of a scam.</li></ul></div>'
       },
       {
@@ -1224,7 +1224,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '772e17d6104145f7969b47fd2e132e68',
-        title: '<strong>Earning Yield</strong>',
+        title: 'Earning Yield',
         content: '<div class="bloc1"><p>There are a growing number of <code>DeFi</code> protocols that enable you to earn interest and other rewards by using your crypto assets. You can have access to financial products that you would typically need a bank or financial services firm to get—but without the paperwork, middleman, approval process, and other hassles of the traditional finance world.</p><p>By removing the middleman, you also remove any service fees, dues, and commissions you would typically pay in the traditional finance world. With DeFi, you get to keep all the rewards, or yield earned from your assets. This is why DeFi is popular. </p></div><div class="bloc2"><img src=\'/images/intro-to-defi/earning-yield-c5f123f8.svg\'></div>'
       },
       {
@@ -1268,7 +1268,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '555dff92a9b34743b498f8a01de6ffa4',
-        title: '<strong>Investing</strong>',
+        title: 'Investing',
         content: '<div class="bloc1"><p>The most common <code>DeFi</code> transaction is to purchase some cryptocurrency with the expectation that it will be worth more in the future. This is known as investing.</p><p>HODL is a term used for keeping crypto assets for a long time. Depending on who you ask, the HODL meme either comes from a typo of HOLD or it stands for <strong>H</strong>old <strong>O</strong>n for <strong>D</strong>ear <strong>L</strong>ife.</p><p>DeFi allows early access to coins and tokens to find and invest in, before they are listed on centralized exchanges (CEX).</p></div><div class="bloc2"><img src=\'/images/intro-to-defi/investing-d99a6d1f.svg\'></div>'
       },
       {
@@ -1318,7 +1318,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '929543eaa9b64ab9b14a6593e95fb9ef',
-        title: '<strong>Lending & Borrowing</strong>',
+        title: 'Lending & Borrowing',
         content: '<div class="bloc1"><p>DeFi lending and borrowing offers loans without the need for a bank or intermediary institution. Instead, lending is done on a <code>peer-to-peer</code> level. That means transactions are between two parties and does not require a middleman or controlling entity.</p><p>There are <code>DApps</code> that enable anyone to lend and borrow crypto assets. Similar to traditional loans, a lender will earn interest on the loan and the borrower will need to pay the principal of the loan plus interest.</p></div><div class="bloc2"><img src=\'/images/intro-to-defi/lending-borrowing-4fb1c7c3.svg\'></div>'
       },
       {
@@ -1340,7 +1340,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '88ac3e93d3c849db8420b1700884030c',
-        title: '<strong>Staking</strong>',
+        title: 'Staking',
         content: '<div class="bloc1"><p>DeFi staking is similar to lending, however it\'s a special type of lending. Instead of lending your crypto to another user on a <code>peer-to-peer</code> basis, you lend your crypto to a network or protocol. In exchange for helping secure the network or protocol, you earn rewards.</p><p>Centralized exchanges also offer staking. However, like their trading pairs, the staking opportunities and rewards are limited. With DeFi, there are many more staking possibilities than there are with centralized exchanges. </p></div><div class="bloc2"><img src=\'/images/intro-to-defi/staking-b4b4319d.svg\'></div>'
       },
       {
@@ -1362,7 +1362,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '9b122d2d398a47428a41838e3bc9a521',
-        title: '<strong>DeFi Downsides</strong>',
+        title: 'DeFi Downsides',
         content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/images/intro-to-defi/defi-downsides-51dd6225.svg\'></div><div class="bloc-b"><p><strong>Hackers</strong></p><p>Where there is money and technology, there are people looking for ways to hack the system and take advantage of poor security measures.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/intro-to-defi/defi-downsides-3a6ce496.svg\'></div><div class="bloc-b"><p><strong>Risk</strong></p><p>DeFi, like blockchain technology, runs on code. If there’s an error or loophole in the code, it can be exploited.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/intro-to-defi/defi-downsides-83a9391f.svg\'></div><div class="bloc-b"><p><strong>No recourse</strong></p><p>Being decentralized also means there are no companies or government agencies that you can appeal to for help if something goes wrong.</p></div></div>'
       },
       {
@@ -2036,7 +2036,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '303f183f27b147abbb1e964bd5468fbe',
-        title: 'Network<strong> </strong>Governance',
+        title: 'Network Governance',
         content: '<div class="bloc1"><p>Like any traditional nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but <code>asynchronous</code>, global, and partially mediated by code.</p><p>📜 <strong>Proposal:</strong> It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘<code>DAO</code>’.</p><p>🗳️ <strong>Vote:</strong> The proposal moves to a vote — hosted via the transparent, censorship-resistant process of <code>onchain governance</code>. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘<code>DAO</code>’ — a quality envisioned to eventually cover the entire governance process.</p><p>🛠️ <strong>Implementation:</strong> The approved proposal is applied to the network, by various incentivized developers if necessary.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/network-governance-1f940de4.svg\'></div>'
       },
       {
@@ -2122,7 +2122,7 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: 'c1ee570de27a49b58466df08e2637fab',
-        title: 'A New<strong> </strong>Economy',
+        title: 'A New Economy',
         content: '<div class="bloc1"><p>At the center of the Optimism <code>L2</code> economy is the <strong>‘Optimistic Flywheel’</strong>. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.</p><ol><li>Users and <code>dApps</code> demand network <code>blockspace</code>.</li><li>The network generates revenue via transaction fees.</li><li>A portion of these taxes are awarded to builders providing impactful public goods infrastructure.</li><li>Network users gain access to free resources and services, increasing the value of OP blockspace.</li></ol><p>With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!</p></div><div class="bloc2"><img src=\'/images/optimism-governance/a-new-economy-cd0a0ca1.svg\'></div>'
       },
       {

@@ -79,7 +79,7 @@ Dans cette leçon, nous allons explorer comment Optimism est le pionnier de la v
 
 Notre quête se concentrera sur la revendication de nos premiers droits de vote, afin que nous soyons prêts à aider à construire l'avenir d'Ethereum et de la coordination humaine !
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-b8104c1b.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
 
 # La Vision d'Optimism
 
@@ -351,5 +351,5 @@ La quête d'aujourd'hui est **de rejoindre la Maison des Jetons et déléguer no
 
 Pendant que la Maison des Citoyens développe ses procédures d'intégration, nous pouvons commencer notre voyage de Citoyen en participant à une conversation sur les forums de la [communauté Optimism](https://gov.optimism.io/).
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-b7ee92dd.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
 
