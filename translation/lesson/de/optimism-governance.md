@@ -79,7 +79,7 @@ In dieser Lektion werden wir untersuchen, wie Optimism die DAO-Vision vorantreib
 
 Unser Ziel wird es sein, unser erstes Stimmrecht in Anspruch zu nehmen, so dass wir bereit sein werden, die Zukunft von Ethereum und die Koordination der Menschheit mitzugestalten!
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-b8104c1b.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
 
 # Die optimistische Vision
 
@@ -351,5 +351,5 @@ Today’s quest is **to join the Token House and delegate our OP tokens**.
 
 While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-b7ee92dd.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
 
