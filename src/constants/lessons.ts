@@ -1432,7 +1432,7 @@ const LESSONS: LessonType[] = [
     lessonWriters: 'Tetranome',
     quest: 'DecentralizedExchanges',
     publicationStatus: 'publish',
-    featuredOrderOnHomepage: 2,
+    featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     sponsorName: 'Velodrome',
@@ -1987,9 +1987,9 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    badgeImageLink: '/images/optimism-governance/badge-ef203d34.png',
-    lessonImageLink: '/images/optimism-governance/lesson-e093ab3a.png',
-    socialImageLink: '/images/optimism-governance/social-380550cf.jpg',
+    badgeImageLink: '/images/optimism-governance/badge-1448ebc2.png',
+    lessonImageLink: '/images/optimism-governance/lesson-a120c424.png',
+    socialImageLink: '/images/optimism-governance/social-f6cda7d9.jpg',
     learningActions: '',
     marketingDescription: 'Claim your first piece of network ownership and start voting onchain!',
     badgeId: 10,
@@ -2003,8 +2003,8 @@ const LESSONS: LessonType[] = [
     ],
     lessonWriters: 'Tetranome',
     quest: 'OptimismGovernance',
-    publicationStatus: 'hidden',
-    featuredOrderOnHomepage: null,
+    publicationStatus: 'publish',
+    featuredOrderOnHomepage: 2,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     sponsorName: 'Optimism',
@@ -2014,7 +2014,7 @@ const LESSONS: LessonType[] = [
     imageLinks: [
       '/images/optimism-governance/old-problems-new-tools-df0ceb84.svg',
       '/images/optimism-governance/network-governance-1f940de4.svg',
-      '/images/optimism-governance/the-optimism-network-b8104c1b.svg',
+      '/images/optimism-governance/the-optimism-network-3e75a5a7.svg',
       '/images/optimism-governance/progressive-decentralization-e6e00611.svg',
       '/images/optimism-governance/a-new-economy-cd0a0ca1.svg',
       '/images/optimism-governance/incentivizing-public-goods-78035b95.svg',
@@ -2024,7 +2024,7 @@ const LESSONS: LessonType[] = [
       '/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg',
       '/images/optimism-governance/the-citizens-house-b16b3d99.svg',
       '/images/optimism-governance/governance-seasons-4ebc291c.svg',
-      '/images/optimism-governance/shaping-an-optimistic-future-b7ee92dd.svg'
+      '/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg'
     ],
     slides: [
       {
@@ -2065,7 +2065,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'f7ca353f75f142fabf75986d54d9423d',
         title: 'The Optimism Network',
-        content: '<div class="bloc1"><p><code>DAOs</code> like the Optimism Collective are at the frontier of exploring such coordination systems.</p><p>In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.</p><p>Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!</p></div><div class="bloc2"><img src=\'/images/optimism-governance/the-optimism-network-b8104c1b.svg\'></div>'
+        content: '<div class="bloc1"><p><code>DAOs</code> like the Optimism Collective are at the frontier of exploring such coordination systems.</p><p>In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.</p><p>Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!</p></div><div class="bloc2"><img src=\'/images/optimism-governance/the-optimism-network-3e75a5a7.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -2275,7 +2275,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '172e6effe6c1431883423ccb1c792cce',
         title: 'Shaping an Optimistic Future',
-        content: '<div class="bloc1"><p>History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.</p><p>By getting involved in innovative communities, using <code>trustless</code> and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.</p><p>Today’s quest is <strong>to join the Token House and delegate our OP tokens</strong>.</p><p>While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the <a href=\'https://gov.optimism.io/\'>Optimism community</a> forums.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/shaping-an-optimistic-future-b7ee92dd.svg\'></div>'
+        content: '<div class="bloc1"><p>History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.</p><p>By getting involved in innovative communities, using <code>trustless</code> and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.</p><p>Today’s quest is <strong>to join the Token House and delegate our OP tokens</strong>.</p><p>While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the <a href=\'https://gov.optimism.io/\'>Optimism community</a> forums.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg\'></div>'
       },
       {
         type: 'QUEST',
@@ -2300,7 +2300,7 @@ const LESSONS: LessonType[] = [
       'es'
     ],
     lessonWriters: 'Tetranome',
-    publicationStatus: 'hidden',
+    publicationStatus: 'publish',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
