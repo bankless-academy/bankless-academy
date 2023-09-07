@@ -1,5 +1,5 @@
 ---
-TITLE: Optimism Governance
+TITLE: Governanza en Optimism
 DESCRIPTION: '¡Reclama tu primera parte de la propiedad de la red y empieza a votar onchain!'
 LANGUAGE: Español
 WRITERS: Tetranome
@@ -39,317 +39,317 @@ La visión de la tecnología `DAO` es agilizar la resolución de problemas y el 
 
 ![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
 
-# Network Governance
+# Gobernanza de la Red
 
-Like any traditional nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but `asynchronous`, global, and partially mediated by code.
+Como cualquier estado-nación tradicional con recursos y participantes, un DAO utiliza un proceso de gobernanza para dirigir el despliegue de sus recursos y el logro de su misión. Es como un ayuntamiento, pero `asíncrono`, global y parcialmente mediado por código.
 
-📜 **Proposal:** It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘`DAO`’.
+📜 **Propuesta:** Comienza con una propuesta de gobernanza y un debate comunitario. La propuesta se actualiza sobre la base de comentarios públicos. Cualquiera puede presentar una propuesta o criticar una. Esta es la parte 'descentralizada' de '`DAO`'.
 
-🗳️ **Vote:** The proposal moves to a vote — hosted via the transparent, censorship-resistant process of `onchain governance`. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘`DAO`’ — a quality envisioned to eventually cover the entire governance process.
+🗳️ **Votación:** La propuesta se somete a votación a través de un proceso transparente y resistente a la censura de `onchain governance`. No hay ninguna facilitación humana entre la apertura y el cierre de la votación; todo está mediado por código. Esta es la parte 'autónoma' de '`DAO`' - una cualidad prevista para cubrir eventualmente todo el proceso de gobernanza.
 
-🛠️ **Implementation:** The approved proposal is applied to the network, by various incentivized developers if necessary.
+🛠️ **Implementación:** La propuesta aprobada es aplicada a la red por varios desarrolladores vatizados si es necesario.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
 
 # Knowledge Check 1
 
-How can onchain governance help to solve interhuman debate?
+¿Cómo puede ayudar la gobernanza onchain a resolver el debate interhumano?
 
-- [ ] Automation
+- [ ] Automatización
 
-> ℹ️ This is true, but it isn’t the only answer.
+> Esto es cierto, pero no es la única respuesta.
 
-- [ ] Transparency
+- [ ] Transparencia
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- [ ] Censorship-resistance
+- Resistencia a la censura
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- [ ] All of the above
+- [ ] Todas las anteriores
 
-> ℹ️ Correct! Onchain governance protects the voting process through multiple means.
+> ℹ️ ¡Correcto! La gobernanza onchain protege el proceso de votación a través de múltiples medios.
 
-# The Optimism Network
+# La Red de Optimism
 
-`DAOs` like the Optimism Collective are at the frontier of exploring such coordination systems.
+`DAO` como el Colectivo Optimism están en la frontera de explorar estos sistemas de coordinación.
 
-In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.
+En esta lección, exploraremos cómo Optimism es pionero en la visión DAO. Aprenderemos acerca de su misión y cómo están construyendo nuevos marcos de coordinación para la humanidad.
 
-Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!
+Nuestra Prueba de Conocimientos se centrará en reclamar nuestros primeros derechos de voto, ¡así estaremos preparados para ayudar a construir el futuro de Ethereum y la coordinación humana!
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-b8104c1b.svg)
 
-# The Optimistic Vision
+# La Visión Optimista
 
-Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It’s part of the Ethereum ecosystem, but with lower fees and faster transactions — while maintaining Ethereum’s high standard of security. Here are the defining properties:
+Optimism tiene una misión: ampliar Ethereum construyendo una red `Layer 2`. Forma parte del ecosistema Ethereum, pero con comisiones más bajas y transacciones más rápidas, manteniendo el alto nivel de seguridad de Ethereum. Estas son las propiedades que lo definen:
 
-🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. A public good is something that benefits everyone in a community, while one person's use of it doesn't reduce its availability for others. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
+🏕️ **Bienes públicos:** Gran énfasis en la financiación y construcción de bienes públicos onchain (en cadena)``. Un bien público es algo que beneficia a todos en una comunidad, mientras que su uso por una persona no reduce su disponibilidad para los demás. Tu educación gratuita en la Academia Bankless ha sido posible gracias al apoyo de Optimism a los bienes públicos!
 
-🧑‍🤝‍🧑 **Community Governance:** The network is lead by its community.
+🧑‍🤝‍🧑 **Gobernanza comunitaria:** La red está dirigida por su comunidad.
 
-🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
+🏠 **Mercado libre:** Lanzado como una extensión no sólo del espacio de bloques de Ethereum``, sino de los principios de Ethereum. Su objetivo es ampliar el mercado exento de permisos, de código abierto y resistente a la censura de Ethereum.
 
-Optimism aims to become a “district of cyberspace” that directly provides for — and is governed by — its citizens!
+Optimism aspira a convertirse en un "distrito del ciberespacio" que atiende directamente a sus ciudadanos y es gobernado por ellos.
 
 # Knowledge Check 2
 
-Which of the following is NOT a public good?
+¿Cuál de los siguientes NO es un bien público?
 
-- [ ] Education
+- [ ] Educación
 
-> ℹ️ Education can benefit everyone, and one person’s use doesn’t reduce its availability.
+> ℹ️ La educación puede beneficiar a todos, y el uso de una persona no reduce su disponibilidad.
 
-- [ ] The Internet
+- [ ] Internet
 
-> ℹ️ The internet can benefit everyone, and one person’s use doesn’t reduce its availability.
+> ℹ️ El Internet puede beneficiar a todos, y el uso de una persona no reduce su disponibilidad.
 
 - [ ] Ethereum
 
-> ℹ️ Ethereum can benefit everyone, and — with Layer 2s — one person’s use doesn’t reduce its availability.
+> ℹ️ La educación puede beneficiar a todos, y además con Layer 2, el uso de una persona no reduce su disponibilidad.
 
-- [ ] A Centralized Exchange
+- [ ] Un Exchange Centralizado
 
-> ℹ️ Correct. While CEXs provide community benefits, they are private businesses.
+> ℹ️ ¡Correcto! Si bien los CEXs proporcionan beneficios a la comunidad, son negocios privados.
 
-# Progressive Decentralization
+# Descentralización Progresiva
 
-Many great blockchain projects begin with a centralized group. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization**. On Optimism, the founders, network, and community are thought of as follows:
+Muchos grandes proyectos de blockchain comienzan con un grupo centralizado. Esto da al proyecto un enfoque crucial en la construcción y el gasto, pero una DAO `` necesita **más que promesas de descentralización**. En Optimism, los fundadores, la red y la comunidad se conciben de la siguiente manera:
 
-- 🏦 **Optimism Foundation:** The network founders. They kickstart the ecosystem, provide initial resources, and act as community steward, before eventually dissolving.
-- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts and processing of user input.
-- 👬 **Optimism Collective:** The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem. The term ‘DAO’ covers both the Collective and the Network.
+- 🏦 **Fundación Optimism:** Fundadores de la red. Empezaron el ecosistema, proporcionaron recursos iniciales y actuaron como guionista de la comunidad, antes de disolverse.
+- 🌐 **La Red de Optimism:** El código autónomo en la blockchain — los contratos inteligentes y el procesamiento de entradas de los usuarios.
+- 👬 **Colectivo Optimismo:** La comunidad gobernante; un conjunto diverso de participantes globales. Son responsables de la propiedad y gestión a largo plazo del ecosistema. El término "DAO" abarca tanto el Colectivo como la Red.
 
-Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow **transfer of network ownership to the community**.
+Los controles y equilibrios legales, como la capacidad del Colectivo para destituir a los miembros de la Fundación, garantizan una transferencia lenta **de la propiedad de la red hacia la comunidad**.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
 
 # Knowledge Check 3
 
-True or false? The Optimism Foundation will continue to guide the Optimism Collective over the network’s lifetime.
+¿Verdadero o falso? La Fundación Optimism seguirá guiando al Colectivo Optimismo durante la vida útil de la red.
 
-- [ ] True
+- [ ] Verdadero
 
-> ℹ️ Try again!
+> ℹ️ ¡Inténtalo de nuevo!
 
-- [ ] False
+- [ ] Falso
 
-> ℹ️ Correct! The Foundation will eventually dissolve, and the Collective will continue the mission.
+> ℹ️ ¡Correcto! La Fundación acabará disolviéndose y el Colectivo continuará la misión.
 
-# A New Economy
+# Una Nueva Economía
 
-At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.
+En el centro de economía`L2` de Optimism, está la **‘Optimistic Flywheel’** o 'Volante de Inercia'. Este ciclo económico genera ingresos, crecimiento de la red y progreso hacia la misión de Optimism.
 
-1. Users and `dApps` demand network `blockspace`.
-2. The network generates revenue via transaction fees.
-3. A portion of these taxes are awarded to builders providing impactful public goods infrastructure.
-4. Network users gain access to free resources and services, increasing the value of OP blockspace.
+1. Usuarios y `dApps` demandan `espacio de bloque` de la red.
+2. La red genera ingresos a través de comisiones de transacción.
+3. Una parte de estos impuestos se concede a los constructores que proporcionan infraestructuras de bienes públicos de gran impacto.
+4. Los usuarios de la red acceden a recursos y servicios gratuitos, lo que aumenta el valor del espacio de bloques OP.
 
-With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!
+Con una infraestructura onchain más valiosa, aumenta la demanda de espacio de bloques Optimism, ¡y el ciclo continúa!
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-a8decde0.svg)
 
-# Incentivizing Public Goods
+# Incentivización de Bienes Públicos
 
-As you can see, `public goods` infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.
+Como puedes ver, la infraestructura `de bienes públicos` está en el corazón de Optimism. Sin embargo, la selección de proyectos merecedores de financiación no es sencilla.
 
-Here, Optimism takes an ‘**Impact = Profit**’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.
+En este caso, Optimism adopta un enfoque '**Impacto = Beneficio**'. El impacto, sin embargo, es difícil de prever. En lugar de hacer predicciones, el organismo de financiación examina periódicamente los proyectos existentes y asigna financiación retroactiva en función de los resultados históricos.
 
-As Vitalik Buterin said, _“It’s easier to agree on what was useful than what will be useful.”_
+Como dijo Vitalik Buterin, _"Es más fácil ponerse de acuerdo sobre lo que fue útil que sobre lo que será útil"._
 
-This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
+Este modelo de distribución se conoce como **"Retroactive Public Goods Funding"** (Financiamiento Retroactivo de Bienes Públicos), o **"RetroPGF"**. Este mecanismo de financiación incentiva a los pensadores optimistas a construir bienes públicos que estén al servicio de la humanidad. Nos libera de la mentalidad de extracción de valor de las economías capitalistas tradicionales.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
 
-# Ether’s Phoenix
+# El Fénix de Éter
 
-Optimism calls this effect **‘Ether’s Phoenix’**: an _“angel reaching backwards in time, rewarding those who summon it.”_
+Optimism llama a este efecto **'Ether's Phoenix'**: un _"ángel que retrocede en el tiempo, recompensando a aquellos que lo invocan"._
 
-_“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”_
+_"Es un algoritmo que recompensa a los primeros cooperadores que crearon las condiciones para que prosperara la financiación de bienes públicos. Es un futuro en el que se reconoce la inversión temprana en bienes públicos. También es una mentalidad de que: el optimismo prevalece, que sistemas mejores son posibles y que la humanidad será recompensada por su revolución cooperativa."_
 
-— The Optimism Foundation
+— Fundación Optimism
 
 ![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-f63f460c.svg)
 
 # Knowledge Check 4
 
-How is Optimism incentivizing community-focused economics?
+¿Cómo incentiva Optimism la economía centrada en la comunidad?
 
-- [ ] By rewarding all Optimism projects with retroactive funding.
+- [ ] Recompensando todos los proyectos Optimism con financiación retroactiva.
 
-> ℹ️ Try again! Rewarding all projects regardless of their mission is not Optimism’s approach.
+> ℹ️ ¡Inténtalo de nuevo! Recompensar todos los proyectos independientemente de su misión no es lo que busca Optimism.
 
-- [ ] By providing a free market, but on the blockchain.
+- [ ] Proporcionando un mercado libre, pero en la blockchain.
 
-> ℹ️ Try again! Use of blockchain technology alone doesn’t effect economic models.
+> ℹ️ ¡Inténtalo de nuevo! El uso de la tecnología blockchain por sí solo no afecta a los modelos económicos.
 
-- [ ] By systemically funding business models that improve the lives of all network users.
+- [ ] Financiando sistemáticamente modelos de negocio que mejoren la vida de todos los usuarios de la red.
 
-> ℹ️ Correct! The network allocates a portion of transaction fees towards funding public goods.
+> ℹ️ ¡Correcto! La red destina una parte de las comisiones de transacción a financiar bienes públicos.
 
-- [ ] All of the above.
+- [ ] Todas las anteriores.
 
-> ℹ️  Try again! Only one of these is true.
+> ℹ️ ¡Inténtalo de nuevo! Sólo una de ellas es cierta.
 
-# Introducing the Governing Houses
+# Introducción a las Casas de Governanza
 
-There are two houses that make up the Optimism Collective, each with independent and shared responsibilities in running the network.
+El Colectivo Optimismo está formado por dos casas, cada una con responsabilidades independientes y compartidas en la gestión de la red.
 
-**The Token House** is responsible for managing network upgrades, incentives, and treasury. Its stakeholder structure incentivizes growth of the network economy, and generates stakeholder value. The house is also responsible for preserving decentralization — preventing capture of the network economy.
+**La Cámara de Tokens** es responsable de administrar las mejoras, incentivos y tesoros de red. Su estructura de partes interesadas o 'stakeholders' incentiva el crecimiento de la economía de red y genera valor para las partes interesadas. La casa también es responsable de preservar la descentralización, evitando la captura de la economía de red.
 
-**The Citizens’ House** allocates `RetroPGF` resources to community projects, according to the ‘Impact = Profit’ ethos, and helps decide the parameters of citizenship. The house is incentivized to improve network quality of life, by funding public goods that improve the value of citizenship!
+**La Cámara de los Ciudadanos** asigna los recursos de `RetroPGF` a proyectos comunitarios, de acuerdo con la ética "Impacto = Beneficio", y ayuda a decidir los parámetros de la ciudadanía. Se incentiva a la casa para que mejore la calidad de vida de la red, financiando bienes públicos que mejoren el valor de la ciudadanía.
 
-Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. Let’s take a closer look.
+Ambas cámaras mantienen el equilibrio de la red a través de sus funciones, mecanismos de votación y capacidad de veto ``. Echemos un vistazo más de cerca.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-17713ab7.svg)
 
 # Knowledge Check 5
 
-How does the Citizens’ House differ from the Token House?
+¿Cómo difiere la Cámara de los Ciudadanos de la Cámara de los Token?
 
-- [ ] The Citizens’ House is the only house with veto abilities.
+- [ ] La Cámara de los Ciudadanos es la única con capacidad de veto.
 
-> ℹ️ Try again! Both houses have veto powers.
+> ℹ️ ¡Inténtalo de nuevo! Ambas cámaras tienen poder de veto.
 
-- [ ] The Citizens’ House allocates RetroPGF rewards.
+- [ ] La Cámara de los Ciudadanos asigna recompensas RetroPGF.
 
-> ℹ️ Correct! The Citizens’ House allocates public goods funding.
+> ℹ️ ¡Correcto! La Cámara de los Ciudadanos asigna fondos de bienes públicos.
 
-- [ ] The Citizens’ House leads network decentralization.
+- [ ] La Cámara de los Ciudadanos lidera la descentralización de la red.
 
-> ℹ️  Try again! Both houses maintain decentralization.
+> ℹ️ ¡Inténtalo de nuevo! Ambas cámaras mantienen la descentralización.
 
-- [ ] All of the above.
+- [ ] Todas las anteriores.
 
-> ℹ️  Try again!
+> ℹ️ ¡Inténtalo de nuevo!
 
-# The Token House
+# La Cámara de Tokens
 
-The Token House maintains the economy and defenses of the Optimism Network.
+La Cámara de Tokens mantiene la economía y las defensas de la Red de Optimism.
 
-Duties include:
+Las funciones incluyen:
 
-- ⚒️ Review and approval of **upgrades to network mechanics**.
-- ⛓️ Selection of network `block producers`.
-- 📈 **Allocation of revenue,** using collected transaction fees to fuel network growth.
+- ⚒️ Revisión y aprobación de **actualizaciones a las mecánicas de la red**.
+- ⛓️ Selección de los `productores de bloques` de la red.
+- 📈 **Asignación de ingresos,** utilizando las tasas de transacción recaudadas para impulsar el crecimiento de la red.
 
-The Citizens’ House has the right to veto any proposal under the above categories.
+La Cámara de los Ciudadanos tiene derecho a vetar cualquier propuesta incluida en las categorías anteriores.
 
-The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be **reducing rights** of token holders.
+La Cámara de Tokens también tiene capacidad para vetar cualquier propuesta presentada por la Casa de los Ciudadanos, o de la Fundación Optimism, que considere **reducir los derechos** de los poseedores de tokens.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-01fa4823.svg)
 
-# Token House: Joining, Voting, Delegating
+# La Cámara de Tokens: Cómo unirse, votar, delegar
 
-📝 **Joining:** the Token House is done via purchasing and holding OP tokens. These are `ERC-20` tokens, and are therefore transferrable; They can be bought and sold on `CEXs`, Optimism `DEXs`, or sent between friends. OP tokens are not available on other networks.
+📝 ** Inscripción:** La inscripción a la Cámara de Tokens se realiza mediante la compra y tenencia de fichas OP. Estos son tokens `ERC-20` , y por lo tanto son transferibles; pueden ser comprados y vendidos en `CEXs`,  `DEXs` de Optimism, o enviados entre amigos. Los tokens OP no están disponibles en otras redes.
 
-🗳️ **Voting:** Voting power scales based on how many tokens are held.
+🗳️ **Votación:** El poder de voto escala en función de cuántos tokens tengas.
 
-The Token House follows [a five week voting cycle](https://community.optimism.io/docs/governance/token-house-history/):
+La Cámara de Tokens sigue [un ciclo de votación de cinco semanas](https://community.optimism.io/docs/governance/token-house-history/):
 
-- Week 1-3: Proposal submission, review, and feedback.
-- Week 4-5: Voting.
+- Semana 1-3: Presentación de propuestas, revisión y comentarios.
+- Semana 4-5: Votación.
 
-📢 **Delegating:** Many users prefer to delegate their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.
+📢 **Delegar:** Muchos usuarios prefieren delegar su poder de voto en otros poseedores de tokens que consideran que representan mejor los intereses de la comunidad. Esta es una gran manera de tener un impacto en el ecosistema sin tener que leer todas las propuestas que entran en la votación. La delegación no afecta a la propiedad de los tokens: los tokens OP delegados permanecen en tu billetera.
 
-Anyone can become a Token House delegate on Optimism, representing a group of friends, a community, or even a university’s blockchain club! Active delegates are often rewarded by the community.
+Cualquiera puede convertirse en delegado de la Cámara de Tokens en Optimism, representando a un grupo de amigos, a una comunidad o incluso al club de blockchain de una universidad. Los delegados activos suelen ser recompensados por la comunidad.
 
-# A Note on Token Distribution…
+# Una nota sobre la Distribución de Tokens…
 
-Network governance is only as democratic as its initial `token distribution` — meaning who received voting power in the first place. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
+La gobernanza de la red es tan democrática como su distribución inicial de tokens `` - es decir, quién recibió el poder de voto en primer lugar. Revisa el [plan de distribución de OP](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) para ver cómo la Fundación Optimism ha asignado el poder inicial de gobernanza, al servicio de la representación equilibrada de los interesados.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
 
 # Knowledge Check 6
 
-How does the Token House protect the network from attack?
+¿Cómo protege la Cámara de Tokens a la red, de ataques?
 
-- [ ] By selecting a diverse set of network block producers.
+- [ ] Seleccionando un conjunto diverso de productores de bloques de red.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- [ ] By vetoing Optimism Foundation proposals seen to be reducing token holder rights.
+- [ ] Vetando las propuestas de la Fundación Optimism que se consideren reductoras de los derechos de los poseedores de tokens.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- [ ] By carefully reviewing network upgrade proposals.
+- [ ] Revisando cuidadosamente las propuestas de mejora de la red.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- [ ] All of the above.
+- [ ] Todas las anteriores.
 
-> ℹ️  Correct! The Token House has a diverse set of responsibilities in protecting the network.
+> ℹ️ ¡Correcto! La Cámara de Tokens tiene diversas responsabilidades en la protección de la red.
 
-# The Citizens’ House
+# La Cámara de Ciudadanos
 
-The Citizens’ House conducts the growth of public infrastructure on the Optimism Network.
+La Cámara de Ciudadanos lleva a cabo el crecimiento de la infraestructura pública en la Red de Optimism.
 
-Duties include:
+Las funciones incluyen:
 
-- 🎯 **Defining RetroPGF metrics and impact criteria** for measuring project performance.
-- 🔍 **Research and allocation of RetroPGF** to community projects which meet the guidelines.
-- 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.
+- 🎯 **Definición de métricas RetroPGF y criterios de impacto** para medir el rendimiento de los proyectos.
+- 🔍 **Investigación y asignación de RetroPGF** a proyectos comunitarios que cumplan las directrices.
+- 👬 **Selección de nuevos ciudadanos** para ayudar a gobernar la Cámara de los Ciudadanos, y equilibrar la perspectiva de la Cámara de Tokens. La Cámara de Tokens tiene derechos de veto para este tipo de propuesta.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-ea70a9b9.svg)
 
-# Citizens’ House: Joining, Voting, Delegating
+# La Cámara de Ciudadanos: Cómo unirse, votar, delegar
 
-📝 **Joining:** The Citizens’ House currently adds members by invitation, to slowly scale and refine its processes. Membership is marked by holding a ‘Citizen Badge’ — a non-transferable `ERC-721` token.
+📝 **Unirse:** La Cámara de los Ciudadanos actualmente suma miembros por invitación, escalando lentamente y refinando sus procesos. Para ser miembro hay que poseer una "insignia de ciudadano", una ficha intransferible `ERC-721` .
 
-The specifics of invitations change seasonally based on experimentation by the Optimism Foundation. As the scaling methods are refined, this will be automated via `onchain governance`.
+Los detalles de las invitaciones cambian estacionalmente a partir de la experimentación de la Fundación Optimism. A medida que los métodos de escalado se refinan, esto se automatizará mediante `de gobernanza onchain`.
 
-- Current Citizens may be granted an additional invitation, to be shared with someone they see as a great addition to the network.
-- Previous RetroPGF recipients have been granted the opportunity to select one community member for Citizen status.
-- The Optimism Foundation has issued Citizenship to project builders using the network.
+- Los ciudadanos actuales pueden recibir una invitación adicional, para ser compartida con alguien que consideren una gran adición a la red.
+- Los anteriores beneficiarios del RetroPGF han tenido la oportunidad de seleccionar a un miembro de la comunidad para el estatus de Ciudadano.
+- La Fundación Optimism ha concedido la ciudadanía a los constructores de proyectos que utilizan la red.
 
-🗳️ **Voting:** Each Citizen has a single vote. Their voting power cannot be transferred or delegated. This protects against gathering of House power under a small number of Citizens.
+🗳️ **Votación:** Cada ciudadano dispone de un voto. Su poder de voto no puede transferirse ni delegarse. Esto protege contra la acumulación del poder de la Cámara bajo un pequeño número de Ciudadanos.
 
-At present, RetroPGF distribution occurs roughly twice per year.
+En la actualidad, la distribución de RetroPGF se realiza aproximadamente dos veces al año.
 
 # Knowledge Check 7
 
-How does the Citizens’ House protect the network from attack?
+¿Cómo protege la Cámara de Ciudadadnos a la red, de ataques?
 
-- [ ] By expanding the number of Citizens’ House members.
+- [ ] Ampliando el número de miembros de la Cámara de los Ciudadanos.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- [ ] By vetoing Token House proposals seen to be leading to power imbalance.
+- [ ] Vetando las propuestas de la Cámara de Tokens que puedan conducir al desequilibrio de poder.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- [ ] Both of the above.
+- [ ] Todas las anteriores.
 
-> ℹ️  Correct! This house diversifies its own perspective, and balances Token House perspective.
+> ℹ️ ¡Correcto! Esta casa diversifica su propia perspectiva y equilibra la perspectiva de la Cámara de Tokens.
 
-# Governance Seasons
+# Temporadas de Gobernanza
 
-Optimism takes **an iterative approach to governance**, using a calendar structure referred to as ‘Seasons’. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
+Optimism adopta **un enfoque iterativo de la gobernanza**, utilizando una estructura de calendario denominada "Temporadas". Al moverse entre períodos de gobernanza activa y reflexión, los participantes ganan experiencia de primera mano, seguida por la comprensión y discusión de las prácticas de gobernanza actuales. Luego, la Fundación Optimism mejora el modelo y comienza así su próxima temporada.
 
-On Optimism a season lasts roughly three months, followed by a reflection period of similar length.
+En Optimism, una temporada dura aproximadamente tres meses, seguida de un periodo de reflexión de duración similar.
 
-The thoughtful feedback loops built across Optimism are incredibly important for finding best practices for `DAO` governance.
+Los bucles de retroalimentación reflexiva construidos a través de Optimism son increíblemente importantes para encontrar las mejores prácticas para la gobernanza de la `DAO`.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
 
-# Now… Think Even Bigger!
+# Ahora… ¡Piensa incluso más grande!
 
-We’re almost ready to govern on Optimism 🔴. There’s one last thing to mention.
+Estamos casi listos para gobernar en Optimism 🔴. Hay una última cosa que mencionar.
 
-The Optimistic Vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **‘The Superchain’**.
+La Visión Optimista no se detiene en una única blockchain `L2` . Como resultado de la habilidad de `bifurcar` una blockchain, este es un experimento de gobernanza clonable. Esta tecnología está concebida para ampliarse a múltiples L2, e incluso a escenarios de gobernanza del mundo real. Optimism llama a esto **'La Supercadena'**.
 
-Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 L2 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards the ‘Impact = Profit’ ethos.
+Coinbase, un destacado `CEX`, ya se ha bifurcado y ha empezado a contribuir a esta iniciativa `de código abierto` , a través de la blockchain Base 🔵 L2. Esta puesta en común de los recursos de desarrollo aumenta la evolución de las infraestructuras, al tiempo que canaliza las comisiones de las transacciones de L2 hacia la ética "Impacto = Beneficio".
 
-# Shaping an Optimistic Future
+# Forjando un futuro Optimista
 
-History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.
+La historia siempre ha estado forjada por los optimistas de la humanidad, aquellos que se atrevieron a pensar a lo grande y actuaron para conseguirlo.
 
-By getting involved in innovative communities, using `trustless` and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.
+Al involucrarnos en comunidades innovadoras, utilizando `sin confianza` y sistemas de gobernanza justos, estamos abriendo camino al futuro de la coordinación humana. Estamos construyendo un mundo en el que la humanidad pueda prosperar en sistemas locales, globales y en línea. Es hora de iniciar nuestro viaje hacia la gobernanza de Optimism.
 
-Today’s quest is **to join the Token House and delegate our OP tokens**.
+La misión de hoy es **unirse a la Cámara de Tokens y delegar nuestros tokens de OP**.
 
-While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
+Por ahora, la Cámara de los Ciudadanos aún desarrolla sus procedimientos de incorporación. Mientras tanto, podemos desde ya comenzar nuestro viaje Ciudadano participando en la conversación en los foros [Optimism community](https://gov.optimism.io/).
 
 ![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg)
 
