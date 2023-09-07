@@ -148,7 +148,7 @@ Im Zentrum der `L2` Wirtschaft von Optimism steht das **"Optimistische Schwungra
 
 Mit wertvollerer Infrastruktur auf der Blockchain steigt die Nachfrage nach Optimism-Blockspace, und der Kreislauf geht weiter!
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-a8decde0.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
 
 # Anreize für öffentliche Güter
 
@@ -202,7 +202,7 @@ There are two houses that make up the Optimism Collective, each with independent
 
 Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. Let’s take a closer look.
 
-![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-17713ab7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
 
 # Knowledge Check 5
 
@@ -238,7 +238,7 @@ The Citizens’ House has the right to veto any proposal under the above categor
 
 The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be **reducing rights** of token holders.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-01fa4823.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
 
 # Token House: Joining, Voting, Delegating
 
@@ -291,7 +291,7 @@ Duties include:
 - 🔍 **Research and allocation of RetroPGF** to community projects which meet the guidelines.
 - 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-ea70a9b9.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-b16b3d99.svg)
 
 # Citizens’ House: Joining, Voting, Delegating
 
@@ -351,5 +351,5 @@ Today’s quest is **to join the Token House and delegate our OP tokens**.
 
 While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-b7ee92dd.svg)
 
