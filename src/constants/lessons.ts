@@ -1987,8 +1987,9 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    badgeImageLink: '/images/optimism-governance/badge-da9823bb.png',
-    lessonImageLink: '/images/optimism-governance/lesson-0a24938a.png',
+    badgeImageLink: '/images/optimism-governance/badge-7c75a708.png',
+    lessonImageLink: '/images/optimism-governance/lesson-e093ab3a.png',
+    socialImageLink: '/images/optimism-governance/social-380550cf.jpg',
     learningActions: '',
     marketingDescription: 'Claim your first piece of network ownership and start voting onchain!',
     badgeId: null,
@@ -1997,7 +1998,8 @@ const LESSONS: LessonType[] = [
     description: 'Claim your first piece of network ownership and start voting onchain!',
     name: 'Optimism Governance',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     lessonWriters: 'Tetranome',
     quest: 'OptimismGovernance',
@@ -2008,7 +2010,6 @@ const LESSONS: LessonType[] = [
     endOfLessonText: 'Give feedback about this lesson and earn a special contributor badge.',
     notionId: '7b9c38ffdf164099ad3bc19d22484f1c',
     slug: 'optimism-governance',
-    socialImageLink: '/images/optimism-governance/social-0a24938a.png',
     imageLinks: [
       '/images/optimism-governance/old-problems-new-tools-df0ceb84.svg',
       '/images/optimism-governance/network-governance-1f940de4.svg',
@@ -2017,12 +2018,12 @@ const LESSONS: LessonType[] = [
       '/images/optimism-governance/a-new-economy-a8decde0.svg',
       '/images/optimism-governance/incentivizing-public-goods-78035b95.svg',
       '/images/optimism-governance/ethers-phoenix-f63f460c.svg',
-      '/images/optimism-governance/introducing-the-governing-houses-17713ab7.svg',
-      '/images/optimism-governance/the-token-house-01fa4823.svg',
+      '/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg',
+      '/images/optimism-governance/the-token-house-7d73ce82.svg',
       '/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg',
-      '/images/optimism-governance/the-citizens-house-ea70a9b9.svg',
+      '/images/optimism-governance/the-citizens-house-b16b3d99.svg',
       '/images/optimism-governance/governance-seasons-4ebc291c.svg',
-      '/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg'
+      '/images/optimism-governance/shaping-an-optimistic-future-4b19f95d.svg'
     ],
     slides: [
       {
@@ -2161,7 +2162,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '6eb5a8e674ea4cd0b66eafe123fe33bf',
         title: 'Introducing the Governing Houses',
-        content: '<div class="bloc1"><p>There are two houses that make up the Optimism Collective, each with independent and shared responsibilities in running the network.</p><p><strong>The Token House</strong> is responsible for managing network upgrades, incentives, and treasury. Its stakeholder structure incentivizes growth of the network economy, and generates stakeholder value. The house is also responsible for preserving decentralization — preventing capture of the network economy.</p><p><strong>The Citizens’ House</strong> allocates <code>RetroPGF</code> resources to community projects, according to the ‘Impact = Profit’ ethos, and helps decide the parameters of citizenship. The house is incentivized to improve network quality of life, by funding public goods that improve the value of citizenship!</p><p>Both houses maintain network balance through their duties, voting mechanics, and <code>veto</code> abilities. Let’s take a closer look.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/introducing-the-governing-houses-17713ab7.svg\'></div>'
+        content: '<div class="bloc1"><p>There are two houses that make up the Optimism Collective, each with independent and shared responsibilities in running the network.</p><p><strong>The Token House</strong> is responsible for managing network upgrades, incentives, and treasury. Its stakeholder structure incentivizes growth of the network economy, and generates stakeholder value. The house is also responsible for preserving decentralization — preventing capture of the network economy.</p><p><strong>The Citizens’ House</strong> allocates <code>RetroPGF</code> resources to community projects, according to the ‘Impact = Profit’ ethos, and helps decide the parameters of citizenship. The house is incentivized to improve network quality of life, by funding public goods that improve the value of citizenship!</p><p>Both houses maintain network balance through their duties, voting mechanics, and <code>veto</code> abilities. Let’s take a closer look.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -2189,7 +2190,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '89ede93a609c44749d160eb02118dd2d',
         title: 'The Token House',
-        content: '<div class="bloc1"><p>The Token House maintains the economy and defenses of the Optimism Network.</p><p>Duties include:</p><ul><li>⚒️ Review and approval of <strong>upgrades to network mechanics</strong>.</li><li>⛓️ Selection of network <code>block producers</code>.</li><li>📈 <strong>Allocation of revenue, </strong>using collected transaction fees to fuel network growth. </li></ul><p>The Citizens’ House has the right to veto any proposal under the above categories.</p><p>The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be <strong>reducing rights</strong> of token holders.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/the-token-house-01fa4823.svg\'></div>'
+        content: '<div class="bloc1"><p>The Token House maintains the economy and defenses of the Optimism Network.</p><p>Duties include:</p><ul><li>⚒️ Review and approval of <strong>upgrades to network mechanics</strong>.</li><li>⛓️ Selection of network <code>block producers</code>.</li><li>📈 <strong>Allocation of revenue, </strong>using collected transaction fees to fuel network growth. </li></ul><p>The Citizens’ House has the right to veto any proposal under the above categories.</p><p>The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be <strong>reducing rights</strong> of token holders.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/the-token-house-7d73ce82.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -2229,7 +2230,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '53f830416d224fada656ede4663bf238',
         title: 'The Citizens’ House',
-        content: '<div class="bloc1"><p>The Citizens’ House conducts the growth of public infrastructure on the Optimism Network.</p><p>Duties include:</p><ul><li>🎯 <strong>Defining RetroPGF metrics and impact criteria</strong> for measuring project performance.</li><li>🔍 <strong>Research and allocation of RetroPGF</strong> to community projects which meet the guidelines.</li><li>👬 <strong>Selection of new citizens</strong> to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.</li></ul></div><div class="bloc2"><img src=\'/images/optimism-governance/the-citizens-house-ea70a9b9.svg\'></div>'
+        content: '<div class="bloc1"><p>The Citizens’ House conducts the growth of public infrastructure on the Optimism Network.</p><p>Duties include:</p><ul><li>🎯 <strong>Defining RetroPGF metrics and impact criteria</strong> for measuring project performance.</li><li>🔍 <strong>Research and allocation of RetroPGF</strong> to community projects which meet the guidelines.</li><li>👬 <strong>Selection of new citizens</strong> to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.</li></ul></div><div class="bloc2"><img src=\'/images/optimism-governance/the-citizens-house-b16b3d99.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -2273,7 +2274,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '172e6effe6c1431883423ccb1c792cce',
         title: 'Shaping an Optimistic Future',
-        content: '<div class="bloc1"><p>History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.</p><p>By getting involved in innovative communities, using <code>trustless</code> and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.</p><p>Today’s quest is <strong>to join the Token House and delegate our OP tokens</strong>.</p><p>While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the <a href=\'https://gov.optimism.io/\'>Optimism community</a> forums.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg\'></div>'
+        content: '<div class="bloc1"><p>History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.</p><p>By getting involved in innovative communities, using <code>trustless</code> and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.</p><p>Today’s quest is <strong>to join the Token House and delegate our OP tokens</strong>.</p><p>While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the <a href=\'https://gov.optimism.io/\'>Optimism community</a> forums.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/shaping-an-optimistic-future-4b19f95d.svg\'></div>'
       },
       {
         type: 'QUEST',
@@ -2293,7 +2294,8 @@ const LESSONS: LessonType[] = [
     description: 'Grant your OP voting power to people closely following governance.',
     name: 'Delegating on Optimism',
     languages: [
-      'fr'
+      'fr',
+      'es'
     ],
     lessonWriters: 'Tetranome',
     publicationStatus: 'hidden',
