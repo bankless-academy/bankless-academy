@@ -5,14 +5,14 @@ const fs = require('fs')
 async function main() {
   const languages = [
     'fr',
-    // 'de',
-    // 'es',
+    'de',
+    'es',
     // 'cn',
     // 'jp'
   ]
   const nameSpaces = [
     'common',
-    'homepage',
+    // 'homepage',
     'quests'
   ]
   for (const language of languages) {
@@ -20,13 +20,14 @@ async function main() {
       try {
         console.log(`${language}/${nameSpace}`)
         const jsonPath = `translation/website/${language}/${nameSpace}.json`
-        const github = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/${jsonPath}`
+        const random = Math.floor(Math.random() * 100000)
+        const github = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/${jsonPath}?${random}`
         console.log(github)
         const crowdin = await axios.get(github)
         if (crowdin.status === 200) {
           const newTranslation = JSON.stringify(crowdin.data, null, 2)
           // console.log('newTranslation', newTranslation)
-          const existingTranslation = await fs.promises.readFile(jsonPath, 'utf8')
+          const existingTranslation = fs.existsSync(jsonPath) ? await fs.promises.readFile(jsonPath, 'utf8') : ''
           // console.log('existingTranslation', existingTranslation)
           if (newTranslation.trim() !== existingTranslation.trim()) {
             console.log('- new translation available')
@@ -38,13 +39,14 @@ async function main() {
           }
         } else console.log(`- ${language}/${nameSpace}.json error ${crowdin.status}`)
       } catch (error) {
-        // console.log(error)
+        console.log(error)
         console.log(`- ${language}/${nameSpace}.json not available yet`)
       }
     }
     try {
       const jsonPath = `translation/keywords/${language}/keywords.json`
-      const github = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/${jsonPath}`
+      const random = Math.floor(Math.random() * 100000)
+      const github = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/${jsonPath}?${random}`
       console.log(github)
       const crowdin = await axios.get(github)
       if (crowdin.status === 200) {
@@ -54,7 +56,7 @@ async function main() {
         }
         // console.log('newTranslation', data)
         const newTranslation = JSON.stringify(data, null, 2)
-        const existingTranslation = await fs.promises.readFile(jsonPath, 'utf8')
+        const existingTranslation = fs.existsSync(jsonPath) ? await fs.promises.readFile(jsonPath, 'utf8') : ''
         // console.log('existingTranslation', existingTranslation)
         if (newTranslation.trim() !== existingTranslation.trim()) {
           console.log('- new translation available')
@@ -66,6 +68,7 @@ async function main() {
         }
       } else console.log(`- ${language}/keywords.json error ${crowdin.status}`)
     } catch (error) {
+      console.log(error)
       console.log(`- ${language}/keywords.json not available yet`)
     }
   }
