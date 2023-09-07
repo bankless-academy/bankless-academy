@@ -1,9 +1,9 @@
 ---
-TITLE: Delegating on Optimism
-DESCRIPTION: Grant your OP voting power to people closely following governance.
-LANGUAGE: English
+TITLE: Cómo Delegar en Optimism
+DESCRIPTION: Conceda el poder de voto de su OP a personas que sigan de cerca la gobernanza.
+LANGUAGE: Español
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: OrnellaWeb3
 LINK: https://app.banklessacademy.com/lessons/delegating-on-optimism
 FORMAT: HANDBOOK
 ---
@@ -26,7 +26,7 @@ ________________________________________________________________________________
 ```
 
 ---
-## Key Takeaways
+## Conclusiones Principales
 
 > * Delegation is a voting mechanic that allows a representative — called a ‘Delegate’ — to make votes on another person’s behalf.
 > 
