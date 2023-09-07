@@ -31,7 +31,7 @@ export default async function handler(
   if (!['badge', 'badgev2'].includes(slug))
     return res.status(400).json({ error: 'Unknown contract' })
   const lesson = LESSONS.find(
-    (lesson) => lesson.badgeId === parseInt(tokenId, 10)
+    (lesson) => lesson.badgeId === parseInt(tokenId, 16)
   )
 
   if (!lesson) return res.status(400).json({ error: 'Unknown tokenId' })
