@@ -1,9 +1,9 @@
 ---
 TITLE: Optimism Governance
-DESCRIPTION: Claim your first piece of network ownership and start voting onchain!
-LANGUAGE: English
+DESCRIPTION: '¡Reclama tu primera parte de la propiedad de la red y empieza a votar onchain!'
+LANGUAGE: Español
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: OrnellaWeb3
 LINK: https://app.banklessacademy.com/lessons/optimism-governance
 FORMAT: LESSON
 ---
@@ -27,15 +27,15 @@ ________________________________________________________________________________
 
 ---
 
-# Old Problems, New Tools
+# Viejos problemas, nuevas herramientas
 
-Modern technology has drastically changed the way in which humans view and interact with each other. On the world stage, and in a borderless cyberspace, we need new coordination models in order to coexist and thrive as a global tribe.
+La tecnología moderna ha cambiado drásticamente la forma en que los seres humanos se ven e interactúan entre sí. En el escenario mundial, y en un ciberespacio sin fronteras, necesitamos nuevos modelos de coordinación para coexistir y prosperar como tribu global.
 
-The vision of `DAO` technology is to streamline problem-solving and debate between a large number of collaborators — whether on the internet, in your local community, or on an international scale. This is done by:
+La visión de la tecnología `DAO` es agilizar la resolución de problemas y el debate entre un gran número de colaboradores, ya sea en Internet, en su comunidad local o a escala internacional. Esto se hace:
 
-- Incentivizing participants to share a common mission.
-- Innovative voting, `delegation`, and `veto` mechanics.
-- Using blockchain technology to decrease the potential for human error or hijacking.
+- Incentivando a los participantes para que compartan una misión común.
+- Usando mecánicas de votación innovadoras, delegación``, y veto``.
+- Utilizar la tecnología blockchain para disminuir las posibilidades de error humano o apropiación.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
 
