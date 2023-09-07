@@ -203,7 +203,8 @@ const importTranslations = async (lesson) => {
   for (const language of lesson.languages) {
     console.log('import translation:', language)
     try {
-      const crowdinFile = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md?${Math.floor(Math.random() * 100000)}`
+      const random = Math.floor(Math.random() * 100000)
+      const crowdinFile = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md?${random}`
       // console.log(crowdinFile)
       const crowdin = await axios.get(crowdinFile)
       // console.log(crowdin)
@@ -212,7 +213,7 @@ const importTranslations = async (lesson) => {
         const newTranslation = crowdin.data
         // console.log(newTranslation)
         const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
-        const existingTranslation = fs.existsSync(lessonPath) ? (await fs.promises.readFile(lessonPath, 'utf8')) : ''
+        const existingTranslation = fs.existsSync(lessonPath) ? await fs.promises.readFile(lessonPath, 'utf8') : ''
         // console.log(existingTranslation)
         // check if translation has been modified
         if (newTranslation.trim() !== existingTranslation.trim()) {
