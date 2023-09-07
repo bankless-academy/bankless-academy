@@ -16,7 +16,7 @@ const LanguageSwitch = ({
   const languages = lesson.languages
 
   // TEMP
-  return null
+  if (i18n.language === 'en') return null
 
   return (
     <Box>
