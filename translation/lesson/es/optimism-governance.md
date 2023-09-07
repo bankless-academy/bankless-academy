@@ -148,7 +148,7 @@ En el centro de economía`L2` de Optimism, está la **‘Optimistic Flywheel’*
 
 Con una infraestructura onchain más valiosa, aumenta la demanda de espacio de bloques Optimism, ¡y el ciclo continúa!
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-a8decde0.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
 
 # Incentivización de Bienes Públicos
 
@@ -202,7 +202,7 @@ El Colectivo Optimismo está formado por dos casas, cada una con responsabilidad
 
 Ambas cámaras mantienen el equilibrio de la red a través de sus funciones, mecanismos de votación y capacidad de veto ``. Echemos un vistazo más de cerca.
 
-![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-17713ab7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
 
 # Knowledge Check 5
 
@@ -238,7 +238,7 @@ La Cámara de los Ciudadanos tiene derecho a vetar cualquier propuesta incluida 
 
 La Cámara de Tokens también tiene capacidad para vetar cualquier propuesta presentada por la Casa de los Ciudadanos, o de la Fundación Optimism, que considere **reducir los derechos** de los poseedores de tokens.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-01fa4823.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
 
 # La Cámara de Tokens: Cómo unirse, votar, delegar
 
@@ -291,7 +291,7 @@ Las funciones incluyen:
 - 🔍 **Investigación y asignación de RetroPGF** a proyectos comunitarios que cumplan las directrices.
 - 👬 **Selección de nuevos ciudadanos** para ayudar a gobernar la Cámara de los Ciudadanos, y equilibrar la perspectiva de la Cámara de Tokens. La Cámara de Tokens tiene derechos de veto para este tipo de propuesta.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-ea70a9b9.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-b16b3d99.svg)
 
 # La Cámara de Ciudadanos: Cómo unirse, votar, delegar
 
@@ -351,5 +351,5 @@ La misión de hoy es **unirse a la Cámara de Tokens y delegar nuestros tokens d
 
 Por ahora, la Cámara de los Ciudadanos aún desarrolla sus procedimientos de incorporación. Mientras tanto, podemos desde ya comenzar nuestro viaje Ciudadano participando en la conversación en los foros [Optimism community](https://gov.optimism.io/).
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-b7ee92dd.svg)
 
