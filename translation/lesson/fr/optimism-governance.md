@@ -148,7 +148,7 @@ Au centre de l'économie d'Optimism `L2` se trouve le **"Volant d'Inertie Optimi
 
 Avec une infrastructure onchain de plus grande valeur, la demande d'espace de blocs Optimism augmente, et le cycle continue !
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-a8decde0.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
 
 # Incentivizing Public Goods
 
@@ -202,7 +202,7 @@ Le Collectif Optimism est composé de deux maisons, chacune ayant des responsabi
 
 Les deux maisons maintiennent l'équilibre du réseau à travers leurs fonctions, les mécanismes de vote et les capacités de `veto`. Voyons cela de plus près.
 
-![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-17713ab7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
 
 # Knowledge Check 5
 
@@ -238,7 +238,7 @@ La Maison des Citoyens a le droit d'opposer son veto à toute proposition releva
 
 La Maison des Jetons a également la possibilité d'opposer son veto à toute proposition soumise par la Maison des Citoyens ou la Fondation Optimism, qui serait considérée comme **réduisant les droits** des détenteurs de jetons.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-01fa4823.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
 
 # La Maison des Jetons : Adhérer, voter, déléguer
 
@@ -291,7 +291,7 @@ Les devoirs comprennent :
 - 🔍 **Recherche et allocation de RetroPGF** aux projets communautaires qui respectent les lignes directrices.
 - 👬 **Sélection de nouveaux citoyens** pour aider à gouverner la Maison des Citoyens et équilibrer la perspective de la Maison des Jetons. La Maison des Jetons dispose d'un droit de veto sur ce type de proposition.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-ea70a9b9.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-b16b3d99.svg)
 
 # La Maison des Citoyens : Adhérer, Voter, Déléguer
 
@@ -351,5 +351,5 @@ La quête d'aujourd'hui est **de rejoindre la Maison des Jetons et déléguer no
 
 Pendant que la Maison des Citoyens développe ses procédures d'intégration, nous pouvons commencer notre voyage de Citoyen en participant à une conversation sur les forums de la [communauté Optimism](https://gov.optimism.io/).
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-b7ee92dd.svg)
 
