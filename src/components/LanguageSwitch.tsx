@@ -15,6 +15,9 @@ const LanguageSwitch = ({
 
   const languages = lesson.languages
 
+  // TEMP
+  return null
+
   return (
     <Box>
       {languages?.length ? (
