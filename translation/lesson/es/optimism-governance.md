@@ -79,7 +79,7 @@ En esta lección, exploraremos cómo Optimism es pionero en la visión DAO. Apre
 
 Nuestra Prueba de Conocimientos se centrará en reclamar nuestros primeros derechos de voto, ¡así estaremos preparados para ayudar a construir el futuro de Ethereum y la coordinación humana!
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-b8104c1b.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
 
 # La Visión Optimista
 
@@ -351,5 +351,5 @@ La misión de hoy es **unirse a la Cámara de Tokens y delegar nuestros tokens d
 
 Por ahora, la Cámara de los Ciudadanos aún desarrolla sus procedimientos de incorporación. Mientras tanto, podemos desde ya comenzar nuestro viaje Ciudadano participando en la conversación en los foros [Optimism community](https://gov.optimism.io/).
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-b7ee92dd.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
 
