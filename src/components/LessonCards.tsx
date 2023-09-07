@@ -303,6 +303,7 @@ const LessonCards: React.FC = () => {
                 mt={lesson.isArticle || lesson.hasCollectible ? '25px' : '16px'}
                 justifyContent="space-between"
                 alignItems="center"
+                maxWidth="calc(100vw - 80px)"
               >
                 {lesson.publicationStatus === 'planned' && all === undefined ? (
                   <Button
