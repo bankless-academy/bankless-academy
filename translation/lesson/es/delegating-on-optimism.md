@@ -28,75 +28,75 @@ ________________________________________________________________________________
 ---
 ## Conclusiones Principales
 
-> * Delegation is a voting mechanic that allows a representative — called a ‘Delegate’ — to make votes on another person’s behalf.
+> * La delegación es un mecanismo de votación que permite a un representante -denominado "Delegado"- votar en nombre de otra persona.
 > 
-> * Optimism handles voting and delegation via their ‘Optimism Agora’ `dApp`.
+> * Optimism gestiona la votación y la delegación a través de su `dApp` 'Optimism Agora'.
 > 
-> * You will maintain self-custody over delegated OP tokens, able to transfer or sell at any time.
+> * Usted mantendrá la autocustodia sobre los tokens OP delegados, siendo capaz de transferir o vender en cualquier momento.
 
-## Introduction
+## Introducción
 
-Delegation is an onchain voting mechanic that allows a community member to temporarily grant their governance voting power to a community representative. This process allows a user to contribute to `network governance`, without having to actively monitor every proposed action or change in the ecosystem.
+La delegación es un mecanismo de votación onchain que permite a un miembro de la comunidad otorgar temporalmente su poder de voto de gobierno a un representante de la comunidad. Este proceso permite al usuario contribuir a la gobernanza de la red ``, sin tener que supervisar activamente cada acción o cambio propuesto en el ecosistema.
 
-On Optimism, governance power is represented by holding OP tokens in a self-custody wallet. OP tokens do not leave your self-custody wallet during delegation. You can transfer or sell them at any time, but your Delegate will only receive the voting power held in your wallet. You can change your community Delegate at any time.
+En Optimism, el poder de gobernanza está representado por la tenencia de tokens OP en una billetera de autocustodia. Los tokens de OP no dejan su cartera de autocustodia durante la delegación. Puedes transferirlos o venderlos en cualquier momento, pero ten en cuenta que tu delegado sólo recibirá el poder de voto que los tokens estén en tu billetera. Puedes cambiar tu Delegado de comunidad, en cualquier momento.
 
-On Optimism we use a voting dApp called ‘Agora’ to look through eligible Delegates, perform delegation, and monitor proposals. Let’s take a closer look.
+En Optimism utilizamos una dApp de votación llamada 'Agora' para buscar entre los Delegados elegibles, realizar la delegación y supervisar las propuestas. Echemos un vistazo más de cerca.
 
-## Delegating on Optimism Agora
+## Cómo Delegar en Optimism Agora
 
-**1\. Buy ETH on the Optimism Network.**
+**1\. Compra ETH en la Red de Optimism**
 
-You can find a step-by-step guide in our Explorer’s Handbook entry, [‘How to fund a Wallet on Layer 2’](https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2).
+Puede encontrar una guía paso a paso nuestro Manual del Explorador, [‘Cómo añadir fondos en a tu billetera en Layer 2’](https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2).
 
-**2\. Swap your ETH to OP tokens on the Optimism Network, using a** `DEX`.
+2\. Cambia tu ETH por tokens OP en la red Optimism, utilizando un</strong> `DEX`.
 
-Check out our Explorer’s Handbook entry on [‘How to Swap on a Decentralized Exchange’](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) for a step-by-step guide on using a DEX to buy OP tokens.
+Consulte nuestro Manual del Explorador en ['Cómo Hacer un Swap en un Exchange Descentralizado Decentralizedo'](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) para obtener una guía paso a paso sobre el uso de un DEX, para comprar tokens OP.
 
-**3\. Open the Optimism Agora dApp: <https://vote.optimism.io/>**
+**3\. Abra la dApp Optimism Agora: <https://vote.optimism.io/>**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
 
-**4\. Connect your wallet.**
+**4\. Conecta tu billetera**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
-**5\. Scroll down, and choose your favorite Delegate.**
+**5\. Desplácese hacia abajo y elija a su Delegado favorito.**
 
-By clicking on a delegate, you will find a short statement, their vote history, and influence measurements. Take your time to find a representative that aligns with your vision for Optimism.
+Al hacer clic en un Delegado, encontrará una breve declaración, su historial de votos y medidas de influencia. Tómese su tiempo para encontrar un representante que se alinee con su visión de Optimism.
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-6443ae02.png)
 
-**6\. Hit the ‘delegate’ button, and approve the transaction in your wallet.**
+**6\. Pulsa el botón "delegar" y aprueba la transacción en tu billetera.**
 
-No OP tokens will leave your wallet throughout this process. There is a small gas fee, charged in ETH.
+Ninguna ficha OP saldrá de tu billetera durante este proceso. Hay una pequeña tasa de gas, que se cobra en ETH.
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-245809cd.png)
 
-## Frequently Asked Questions
+## Preguntas Frecuentes
 
-* *How many tokens do I need to delegate?*
+* *¿Cuántos tokens necesito delegar?*
 
-You can begin delegating while holding any amount of OP tokens — even zero! As you increase or decrease your OP holdings, your delegated voting power will be updated. You don’t have to redelegate every time you make changes to your OP holdings.
+Puedes empezar a delegar teniendo cualquier cantidad de fichas OP, ¡incluso cero! A medida que aumente o disminuya su tenencia de OP tokens, se actualizará su poder de voto delegado. No tiene que redelegar cada vez que haga cambios en sus participaciones en OP.
 
-* *How do I choose the right delegate?*
+* *¿Cómo elijo al delegado adecuado?*
 
-It comes down to your personal values, and your vision for how you want to see Optimism grow. Take some time to scroll through the Delegate profiles and see what resonates with you.
+Todo depende de tus valores personales y de tu visión de cómo quieres que crezca Optimism. Tómate tu tiempo para desplazarte por los perfiles de los Delegados para así ver qué resuena contigo.
 
-* *Can I become a Delegate?*
+* *¿Puedo convertirme en un Delegado?*
 
-You can! Check out the [‘How to be a delegate’](https://community.optimism.io/docs/governance/delegate/) guide, hosted on Optimism Docs.
+¡Tú puedes! Consulta la guía ['How to be a delegate (Cómo ser un Delegado)'](https://community.optimism.io/docs/governance/delegate/), en la documentación de Optimism.
 
-Note: this won’t count for the [‘Optimism Governance’](https://app.banklessacademy.com/lessons/optimism-governance) lesson quest at Bankless Academy.
+Nota: esto no contará para la Prueba de Conocimientos </a> de [ 'Gobernanza en Optimism'](https://app.banklessacademy.com/lessons/optimism-governance) de Bankless Academy.
 
-* *Do I need to delegate to vote?*
+* *¿Necesito delegar para votar?*
 
-You can skip delegation and represent yourself by tracking votes under the ‘Proposals’ tab on Optimism Agora.
+Puedes saltarte la delegación y representarte a ti mismo siguiendo los votos en la pestaña "Propuestas" del Ágora del Optimism.
 
-Note: this also won’t count for the [‘Optimism Governance’](https://app.banklessacademy.com/lessons/optimism-governance) lesson quest at Bankless Academy, but you can do so once you’ve collected your badge!
+Nota: esto no contará para la Prueba de Conocimientos </a> de [ 'Gobernanza en Optimism'](https://app.banklessacademy.com/lessons/optimism-governance) de Bankless Academy.
 
 
 ---
 
-**Author**
+**Autor**
 
-**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+**[Tetranome](https://twitter.com/Tetranome)** es el Campeón de Proyecto en Bankless Academy, su trabajo se centra en la experiencia del usuario, la interfaz, diseño y contenido.
