@@ -352,5 +352,5 @@ Today’s quest is **to join the Token House and delegate our OP tokens**.
 
 While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-4b19f95d.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-b7ee92dd.svg)
 

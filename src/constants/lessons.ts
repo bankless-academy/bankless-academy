@@ -1992,7 +1992,7 @@ const LESSONS: LessonType[] = [
     socialImageLink: '/images/optimism-governance/social-380550cf.jpg',
     learningActions: '',
     marketingDescription: 'Claim your first piece of network ownership and start voting onchain!',
-    badgeId: null,
+    badgeId: 10,
     duration: 20,
     learnings: '',
     description: 'Claim your first piece of network ownership and start voting onchain!',
@@ -2005,9 +2005,10 @@ const LESSONS: LessonType[] = [
     quest: 'OptimismGovernance',
     publicationStatus: 'hidden',
     featuredOrderOnHomepage: null,
-    isCommentsEnabled: true,
-    endOfLessonRedirect: 'https://tally.so/r/wzydj1',
-    endOfLessonText: 'Give feedback about this lesson and earn a special contributor badge.',
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    sponsorName: 'Optimism',
+    sponsorLogo: '/images/optimism-governance/sponsor-c3c045f3.png',
     notionId: '7b9c38ffdf164099ad3bc19d22484f1c',
     slug: 'optimism-governance',
     imageLinks: [
@@ -2023,7 +2024,7 @@ const LESSONS: LessonType[] = [
       '/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg',
       '/images/optimism-governance/the-citizens-house-b16b3d99.svg',
       '/images/optimism-governance/governance-seasons-4ebc291c.svg',
-      '/images/optimism-governance/shaping-an-optimistic-future-4b19f95d.svg'
+      '/images/optimism-governance/shaping-an-optimistic-future-b7ee92dd.svg'
     ],
     slides: [
       {
@@ -2274,7 +2275,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '172e6effe6c1431883423ccb1c792cce',
         title: 'Shaping an Optimistic Future',
-        content: '<div class="bloc1"><p>History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.</p><p>By getting involved in innovative communities, using <code>trustless</code> and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.</p><p>Today’s quest is <strong>to join the Token House and delegate our OP tokens</strong>.</p><p>While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the <a href=\'https://gov.optimism.io/\'>Optimism community</a> forums.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/shaping-an-optimistic-future-4b19f95d.svg\'></div>'
+        content: '<div class="bloc1"><p>History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.</p><p>By getting involved in innovative communities, using <code>trustless</code> and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.</p><p>Today’s quest is <strong>to join the Token House and delegate our OP tokens</strong>.</p><p>While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the <a href=\'https://gov.optimism.io/\'>Optimism community</a> forums.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/shaping-an-optimistic-future-b7ee92dd.svg\'></div>'
       },
       {
         type: 'QUEST',
@@ -2286,6 +2287,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/delegating-on-optimism/lesson-cbf56286.png',
+    socialImageLink: '/images/delegating-on-optimism/social-627dbddb.png',
     learningActions: '',
     marketingDescription: 'Grant your OP voting power to people closely following governance.',
     badgeId: null,
@@ -2305,6 +2307,8 @@ const LESSONS: LessonType[] = [
     mirrorLink: 'https://mirror.xyz/banklessacademy.eth/INead5MxCJbHMVb9lDDSzs3VA1DCAU9SCc4AIdhC58k',
     mirrorNFTAddress: '0xa22ed08b4ed3a34ce5c1802748ed8b294f3ec926',
     areMirrorNFTAllCollected: false,
+    sponsorName: 'Optimism',
+    sponsorLogo: '/images/delegating-on-optimism/sponsor-0dd2870b.png',
     isArticle: true,
     notionId: 'df539538fc644069a413207a35ba444c',
     slug: 'delegating-on-optimism',
