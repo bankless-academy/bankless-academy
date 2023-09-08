@@ -325,21 +325,21 @@ Wie schützt das Bürger-Haus das Netzwerk vor Angriffen?
 
 # Jahreszeiten der Regierungsführung
 
-Optimism verfolgt **einen iterativen Ansatz für die Regierungsführung**und verwendet eine Kalenderstruktur, die als "Seasons" [Jahreszeiten] bezeichnet wird. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
+Optimism verfolgt **einen iterativen Ansatz für die Regierungsführung** und verwendet eine Kalenderstruktur, die als "Seasons" [Jahreszeiten] bezeichnet wird. Durch den Wechsel zwischen Phasen aktiver Regierungsführung und Reflexion sammeln die Teilnehmer Erfahrungen aus erster Hand, die sie anschließend analysieren, um über die aktuellen Praktiken zur Regierungsführung zu diskutieren. Das Modell wird dann von der Optimism Foundation verbessert, und die nächste Jahreszeit kann beginnen.
 
-On Optimism a season lasts roughly three months, followed by a reflection period of similar length.
+Bei Optimism dauert eine Jahreszeit etwa drei Monate, gefolgt von einer ähnlich langen Reflexionsphase.
 
-The thoughtful feedback loops built across Optimism are incredibly important for finding best practices for `DAO` governance.
+Die durchdachten Feedback-Schleifen, die in Optimism aufgebaut wurden, sind unglaublich wichtig, um die besten Praktiken für Regierungsführung in `DAOs` zu finden.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
 
-# Now… Think Even Bigger!
+# Und jetzt… denk noch größer!
 
-We’re almost ready to govern on Optimism 🔴. There’s one last thing to mention.
+Wir sind fast bereit, über Optimism zu regieren 🔴. Es gibt aber noch eine letzte Sache zu erwähnen.
 
-The Optimistic Vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **‘The Superchain’**.
+Die Vision von Optimism bleibt nicht bei einer einzigen `L2` Blockchain stehen. Aufgrund der Fähigkeit, eine Blockchain mittels einer `Gabelung` [fork] zu spalten, ist dies ein klonbares Experiment zur Regierungsführung. Diese Technologie ist so konzipiert, dass sie über mehrere L2s hinweg skaliert werden kann - und sogar auf Szenarien zur Regierungsführung in der realen Welt übertragen werden kann. Optimism nennt diese Eigenschaft **"The Superchain"**.
 
-Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 L2 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards the ‘Impact = Profit’ ethos.
+Coinbase, eine prominente `CEX`, hat bereits eine solche Gabelung vollzogen und begonnen zu dieser `Open-Source` Initiative beizutragen, mittels der L2 Blockchain namens Base 🔵. Durch die gemeinsame Nutzung von Entwicklungsressourcen wird die Entwicklung der Infrastruktur vorangetrieben, während die L2-Transaktionsgebühren dem Ethos "Auswirkung = Gewinn" zugute kommen.
 
 # Shaping an Optimistic Future
 
