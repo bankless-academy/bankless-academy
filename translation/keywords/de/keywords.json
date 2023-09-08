@@ -240,9 +240,9 @@
     "definition": "(Fear Of Missing Out) Anxiety or apprehension about not being included in something."
   },
   "fork": {
-    "keyword": "fork",
-    "keyword_plural": "forks",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+    "keyword": "Gabelung",
+    "keyword_plural": "Gabelungen",
+    "definition": "Bezieht sich auf eine radikale Änderung in einem Blockchain-Netzwerk, die zu zwei Zweigen führt - einem, der dem vorherigen Protokoll folgt, und einem, der einem neuen Protokoll folgt."
   },
   "fraud proof": {
     "keyword": "fraud proof",
@@ -385,9 +385,9 @@
     "definition": "Das System, das Änderungen an der Struktur einer Blockchain vermittelt."
   },
   "open source": {
-    "keyword": "open source",
-    "keyword_plural": "open sources",
-    "definition": "Software with source code that anyone can inspect, modify, and enhance."
+    "keyword": "Open Source",
+    "keyword_plural": "Open Sources",
+    "definition": "[Quelloffen] Software mit Quellcode, den jeder einsehen, ändern und verbessern kann."
   },
   "optimistic rollup": {
     "keyword": "optimistic rollup",
