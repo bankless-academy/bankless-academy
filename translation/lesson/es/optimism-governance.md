@@ -234,9 +234,9 @@ Las funciones incluyen:
 - ⛓️ Selección de los `productores de bloques` de la red.
 - 📈 **Asignación de ingresos,** utilizando las tasas de transacción recaudadas para impulsar el crecimiento de la red.
 
-La Cámara de los Ciudadanos tiene derecho a vetar cualquier propuesta incluida en las categorías anteriores.
+To protect the network, the Citizens’ House has the right to `veto` any proposal under the above categories.
 
-La Cámara de Tokens también tiene capacidad para vetar cualquier propuesta presentada por la Casa de los Ciudadanos, o de la Fundación Optimism, que considere **reducir los derechos** de los poseedores de tokens.
+The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be reducing rights of token holders.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
 
@@ -251,13 +251,15 @@ La Cámara de Tokens sigue [un ciclo de votación de cinco semanas](https://comm
 - Semana 1-3: Presentación de propuestas, revisión y comentarios.
 - Semana 4-5: Votación.
 
-📢 **Delegar:** Muchos usuarios prefieren delegar su poder de voto en otros poseedores de tokens que consideran que representan mejor los intereses de la comunidad. Esta es una gran manera de tener un impacto en el ecosistema sin tener que leer todas las propuestas que entran en la votación. La delegación no afecta a la propiedad de los tokens: los tokens OP delegados permanecen en tu billetera.
+📢 **Delegating:** Many users prefer to `delegate` their voting power to other token holders who they feel best represent the community’s interests. Esta es una gran manera de tener un impacto en el ecosistema sin tener que leer todas las propuestas que entran en la votación. La delegación no afecta a la propiedad de los tokens: los tokens OP delegados permanecen en tu billetera.
 
 Cualquiera puede convertirse en delegado de la Cámara de Tokens en Optimism, representando a un grupo de amigos, a una comunidad o incluso al club de blockchain de una universidad. Los delegados activos suelen ser recompensados por la comunidad.
 
 # Una nota sobre la Distribución de Tokens…
 
-La gobernanza de la red es tan democrática como su distribución inicial de tokens `` - es decir, quién recibió el poder de voto en primer lugar. Revisa el [plan de distribución de OP](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) para ver cómo la Fundación Optimism ha asignado el poder inicial de gobernanza, al servicio de la representación equilibrada de los interesados.
+Network governance is only as democratic as its initial `token distribution`. We should always ask “who received voting power in the first place?” and “how much did they receive?”.
+
+Revisa el [plan de distribución de OP](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) para ver cómo la Fundación Optimism ha asignado el poder inicial de gobernanza, al servicio de la representación equilibrada de los interesados.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
 
@@ -283,7 +285,7 @@ La gobernanza de la red es tan democrática como su distribución inicial de tok
 
 # La Cámara de Ciudadanos
 
-La Cámara de Ciudadanos lleva a cabo el crecimiento de la infraestructura pública en la Red de Optimism.
+La Cámara de Ciudadanos lleva a cabo el crecimiento de la infraestructura pública en la Red de Optimism. It’s primary focus is managing Retroactive Public Goods Funding.
 
 Las funciones incluyen:
 
@@ -291,17 +293,21 @@ Las funciones incluyen:
 - 🔍 **Investigación y asignación de RetroPGF** a proyectos comunitarios que cumplan las directrices.
 - 👬 **Selección de nuevos ciudadanos** para ayudar a gobernar la Cámara de los Ciudadanos, y equilibrar la perspectiva de la Cámara de Tokens. La Cámara de Tokens tiene derechos de veto para este tipo de propuesta.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-b16b3d99.svg)
+The Citizens’ House also ensures that Token House proposals are mission-aligned, using `veto` mechanics to waive unaligned changes to the network.
+
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-ea904e00.svg)
 
 # La Cámara de Ciudadanos: Cómo unirse, votar, delegar
 
 📝 **Unirse:** La Cámara de los Ciudadanos actualmente suma miembros por invitación, escalando lentamente y refinando sus procesos. Para ser miembro hay que poseer una "insignia de ciudadano", una ficha intransferible `ERC-721` .
 
-Los detalles de las invitaciones cambian estacionalmente a partir de la experimentación de la Fundación Optimism. A medida que los métodos de escalado se refinan, esto se automatizará mediante `de gobernanza onchain`.
+The specifics of invitations change seasonally based on experimentation by the Optimism Foundation:
 
 - Los ciudadanos actuales pueden recibir una invitación adicional, para ser compartida con alguien que consideren una gran adición a la red.
 - Los anteriores beneficiarios del RetroPGF han tenido la oportunidad de seleccionar a un miembro de la comunidad para el estatus de Ciudadano.
 - La Fundación Optimism ha concedido la ciudadanía a los constructores de proyectos que utilizan la red.
+
+As the scaling methods are refined, growth will be automated via `onchain governance`.
 
 🗳️ **Votación:** Cada ciudadano dispone de un voto. Su poder de voto no puede transferirse ni delegarse. Esto protege contra la acumulación del poder de la Cámara bajo un pequeño número de Ciudadanos.
 
@@ -315,7 +321,7 @@ En la actualidad, la distribución de RetroPGF se realiza aproximadamente dos ve
 
 > ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- [ ] Vetando las propuestas de la Cámara de Tokens que puedan conducir al desequilibrio de poder.
+- [ ] By vetoing unaligned Token House proposals.
 
 > ℹ️ Esto es cierto, pero no es la única respuesta.
 
@@ -325,11 +331,13 @@ En la actualidad, la distribución de RetroPGF se realiza aproximadamente dos ve
 
 # Temporadas de Gobernanza
 
-Optimism adopta **un enfoque iterativo de la gobernanza**, utilizando una estructura de calendario denominada "Temporadas". Al moverse entre períodos de gobernanza activa y reflexión, los participantes ganan experiencia de primera mano, seguida por la comprensión y discusión de las prácticas de gobernanza actuales. Luego, la Fundación Optimism mejora el modelo y comienza así su próxima temporada.
+Optimism adopta **un enfoque iterativo de la gobernanza**, utilizando una estructura de calendario denominada "Temporadas".
+
+Al moverse entre períodos de gobernanza activa y reflexión, los participantes ganan experiencia de primera mano, seguida por la comprensión y discusión de las prácticas de gobernanza actuales. Luego, la Fundación Optimism mejora el modelo y comienza así su próxima temporada.
 
 En Optimism, una temporada dura aproximadamente tres meses, seguida de un periodo de reflexión de duración similar.
 
-Los bucles de retroalimentación reflexiva construidos a través de Optimism son increíblemente importantes para encontrar las mejores prácticas para la gobernanza de la `DAO`.
+These thoughtful feedback loops, built throughout Optimism’s systems, are incredibly important for building governance best practices in `DAO` communities.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
 
@@ -339,11 +347,13 @@ Estamos casi listos para gobernar en Optimism 🔴. Hay una última cosa que men
 
 La Visión Optimista no se detiene en una única blockchain `L2` . Como resultado de la habilidad de `bifurcar` una blockchain, este es un experimento de gobernanza clonable. Esta tecnología está concebida para ampliarse a múltiples L2, e incluso a escenarios de gobernanza del mundo real. Optimism llama a esto **'La Supercadena'**.
 
-Coinbase, un destacado `CEX`, ya se ha bifurcado y ha empezado a contribuir a esta iniciativa `de código abierto` , a través de la blockchain Base 🔵 L2. Esta puesta en común de los recursos de desarrollo aumenta la evolución de las infraestructuras, al tiempo que canaliza las comisiones de las transacciones de L2 hacia la ética "Impacto = Beneficio".
+Coinbase, un destacado `CEX`, ya se ha bifurcado y ha empezado a contribuir a esta iniciativa `de código abierto` , a través de la blockchain Base 🔵 L2. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards Optimism’s ‘Impact = Profit’ ethos.
+
+RetroPGF rewards now include profits from Base 🔵 transaction fees — which means more funding for `public goods`!
 
 # Forjando un futuro Optimista
 
-La historia siempre ha estado forjada por los optimistas de la humanidad, aquellos que se atrevieron a pensar a lo grande y actuaron para conseguirlo.
+History has always been paved by the optimists of humanity — those that dared to think big, and act to achieve their vision.
 
 Al involucrarnos en comunidades innovadoras, utilizando `sin confianza` y sistemas de gobernanza justos, estamos abriendo camino al futuro de la coordinación humana. Estamos construyendo un mundo en el que la humanidad pueda prosperar en sistemas locales, globales y en línea. Es hora de iniciar nuestro viaje hacia la gobernanza de Optimism.
 
