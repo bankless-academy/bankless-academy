@@ -189,6 +189,11 @@
     "keyword_plural": "DeFis",
     "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
   },
+  "delegate": {
+    "keyword": "delegate",
+    "keyword_plural": "delegates",
+    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+  },
   "delegation": {
     "keyword": "délégation",
     "keyword_plural": "delegations",
@@ -382,7 +387,7 @@
   "onchain governance": {
     "keyword": "gouvernance onchain",
     "keyword_plural": "onchain governances",
-    "definition": "Le système qui permet de modifier la structure d'une blockchain."
+    "definition": "The automated system that mediates changes to a blockchain’s structure."
   },
   "open source": {
     "keyword": "open source",
