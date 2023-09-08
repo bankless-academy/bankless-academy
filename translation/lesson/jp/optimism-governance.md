@@ -234,9 +234,9 @@ Duties include:
 - ⛓️ Selection of network `block producers`.
 - 📈 **Allocation of revenue,** using collected transaction fees to fuel network growth.
 
-The Citizens’ House has the right to veto any proposal under the above categories.
+To protect the network, the Citizens’ House has the right to `veto` any proposal under the above categories.
 
-The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be **reducing rights** of token holders.
+The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be reducing rights of token holders.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
 
@@ -251,13 +251,15 @@ The Token House follows [a five week voting cycle](https://community.optimism.io
 - Week 1-3: Proposal submission, review, and feedback.
 - Week 4-5: Voting.
 
-📢 **Delegating:** Many users prefer to delegate their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.
+📢 **Delegating:** Many users prefer to `delegate` their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.
 
 Anyone can become a Token House delegate on Optimism, representing a group of friends, a community, or even a university’s blockchain club! Active delegates are often rewarded by the community.
 
 # A Note on Token Distribution…
 
-Network governance is only as democratic as its initial `token distribution` — meaning who received voting power in the first place. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
+Network governance is only as democratic as its initial `token distribution`. We should always ask “who received voting power in the first place?” and “how much did they receive?”.
+
+Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
 
@@ -283,7 +285,7 @@ How does the Token House protect the network from attack?
 
 # The Citizens’ House
 
-The Citizens’ House conducts the growth of public infrastructure on the Optimism Network.
+The Citizens’ House conducts the growth of public infrastructure on the Optimism Network. It’s primary focus is managing Retroactive Public Goods Funding.
 
 Duties include:
 
@@ -291,17 +293,21 @@ Duties include:
 - 🔍 **Research and allocation of RetroPGF** to community projects which meet the guidelines.
 - 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-b16b3d99.svg)
+The Citizens’ House also ensures that Token House proposals are mission-aligned, using `veto` mechanics to waive unaligned changes to the network.
+
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-ea904e00.svg)
 
 # Citizens’ House: Joining, Voting, Delegating
 
 📝 **Joining:** The Citizens’ House currently adds members by invitation, to slowly scale and refine its processes. Membership is marked by holding a ‘Citizen Badge’ — a non-transferable `ERC-721` token.
 
-The specifics of invitations change seasonally based on experimentation by the Optimism Foundation. As the scaling methods are refined, this will be automated via `onchain governance`.
+The specifics of invitations change seasonally based on experimentation by the Optimism Foundation:
 
 - Current Citizens may be granted an additional invitation, to be shared with someone they see as a great addition to the network.
 - Previous RetroPGF recipients have been granted the opportunity to select one community member for Citizen status.
 - The Optimism Foundation has issued Citizenship to project builders using the network.
+
+As the scaling methods are refined, growth will be automated via `onchain governance`.
 
 🗳️ **Voting:** Each Citizen has a single vote. Their voting power cannot be transferred or delegated. This protects against gathering of House power under a small number of Citizens.
 
@@ -315,7 +321,7 @@ How does the Citizens’ House protect the network from attack?
 
 > ℹ️ This is true, but it isn’t the only answer.
 
-- [ ] By vetoing Token House proposals seen to be leading to power imbalance.
+- [ ] By vetoing unaligned Token House proposals.
 
 > ℹ️ This is true, but it isn’t the only answer.
 
@@ -325,11 +331,13 @@ How does the Citizens’ House protect the network from attack?
 
 # Governance Seasons
 
-Optimism takes **an iterative approach to governance**, using a calendar structure referred to as ‘Seasons’. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
+Optimism takes **an iterative approach to governance**, using a calendar structure referred to as ‘Seasons’.
+
+By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
 
 On Optimism a season lasts roughly three months, followed by a reflection period of similar length.
 
-The thoughtful feedback loops built across Optimism are incredibly important for finding best practices for `DAO` governance.
+These thoughtful feedback loops, built throughout Optimism’s systems, are incredibly important for building governance best practices in `DAO` communities.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
 
@@ -339,11 +347,13 @@ We’re almost ready to govern on Optimism 🔴. There’s one last thing to men
 
 The Optimistic Vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **‘The Superchain’**.
 
-Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 L2 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards the ‘Impact = Profit’ ethos.
+Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 L2 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards Optimism’s ‘Impact = Profit’ ethos.
+
+RetroPGF rewards now include profits from Base 🔵 transaction fees — which means more funding for `public goods`!
 
 # Shaping an Optimistic Future
 
-History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.
+History has always been paved by the optimists of humanity — those that dared to think big, and act to achieve their vision.
 
 By getting involved in innovative communities, using `trustless` and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.
 
