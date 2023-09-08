@@ -234,9 +234,9 @@ Zu den Aufgaben gehören:
 - ⛓️ Auswahl von `Blockproduzenten` des Netzwerks.
 - 📈 **Aufteilung der Einnahmen,** Verwendung der eingenommenen Transaktionsgebühren zur Förderung des Netzwerkwachstums.
 
-Das Bürger-Haus hat das Recht, gegen jeden Vorschlag der oben genannten Kategorien ein Veto einzulegen.
+To protect the network, the Citizens’ House has the right to `veto` any proposal under the above categories.
 
-Das Token-Haus hat ebenfalls die Möglichkeit, ein Veto gegen jeden Vorschlag einzulegen, der vom Bürger-Haus oder der Optimism Foundation eingereicht wird und der als **Einschränkung der Rechte** der Token-Inhaber angesehen wird.
+The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be reducing rights of token holders.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
 
@@ -251,13 +251,15 @@ Das Token House folgt [einem fünfwöchigen Abstimmungszyklus](https://community
 - Woche 1-3: Einreichung des Vorschlags, Überprüfung und Feedback.
 - Woche 4-5: Abstimmung.
 
-📢 **Delegieren:** Viele Nutzer ziehen es vor, ihr Stimmrecht an andere Token-Inhaber zu delegieren, von denen sie glauben, dass sie die Interessen der Gemeinschaft am besten vertreten. Dies ist eine großartige Möglichkeit, Einfluss auf das Ökosystem zu nehmen, ohne jeden Vorschlag lesen zu müssen, über den abgestimmt wird. Die Übertragung hat keinen Einfluss auf das Eigentum der Token — delegierte OP-Token bleiben in deiner Wallet.
+📢 **Delegating:** Many users prefer to `delegate` their voting power to other token holders who they feel best represent the community’s interests. Dies ist eine großartige Möglichkeit, Einfluss auf das Ökosystem zu nehmen, ohne jeden Vorschlag lesen zu müssen, über den abgestimmt wird. Die Übertragung hat keinen Einfluss auf das Eigentum der Token — delegierte OP-Token bleiben in deiner Wallet.
 
 Jeder kann ein Delegierter des Token-Hauses auf Optimism werden und so eine Gruppe von Freunden, eine Gemeinschaft oder sogar den Blockchain-Club einer Universität vertreten! Aktive Delegierte werden oft von der Gemeinschaft belohnt.
 
 # Ein Hinweis zur Verteilung der Token…
 
-Die Regierungsführung des Netzwerk ist nur so demokratisch wie die ursprüngliche `-Token-Distribution` – wer also zu Beginn des Netzwerks Stimmrecht erhalten hat. Schau dir am besten den [OP Distributionsplan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) an, um zu sehen, wie die Optimism Foundation anfängliche Befugnisse in Bezug auf die Regierungsführung im Dienst einer ausgewogenen Interessenvertretung zugewiesen hat.
+Network governance is only as democratic as its initial `token distribution`. We should always ask “who received voting power in the first place?” and “how much did they receive?”.
+
+Schau dir am besten den [OP Distributionsplan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) an, um zu sehen, wie die Optimism Foundation anfängliche Befugnisse in Bezug auf die Regierungsführung im Dienst einer ausgewogenen Interessenvertretung zugewiesen hat.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
 
@@ -283,7 +285,7 @@ Wie schützt das Token-Haus das Netzwerk vor Angriffen?
 
 # Das Bürger-Haus
 
-Das Bürger-Haus leitet das Wachstum der öffentlichen Infrastruktur innerhalb des Optimism-Netzwerks.
+Das Bürger-Haus leitet das Wachstum der öffentlichen Infrastruktur innerhalb des Optimism-Netzwerks. It’s primary focus is managing Retroactive Public Goods Funding.
 
 Zu den Aufgaben gehören:
 
@@ -291,17 +293,21 @@ Zu den Aufgaben gehören:
 - 🔍 **Recherche und Vergabe von RetroPGF** an Gemeinschaftsprojekte, die den Leitlinien entsprechen.
 - 👬 **Auswahl von neuen Bürgern** um das Bürger-Haus zu regieren und ein Gleichgewicht zu Ansichten des Token-Hauses zu schaffen. Das Token-Haus hat ein Vetorecht für diese Art von Vorschlägen.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-b16b3d99.svg)
+The Citizens’ House also ensures that Token House proposals are mission-aligned, using `veto` mechanics to waive unaligned changes to the network.
+
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-ea904e00.svg)
 
 # Bürger-Haus: Beitreten, Abstimmen, Delegieren
 
 📝 **Beitritt:** Das Bürger-Haus nimmt derzeit Mitglieder auf Basis von Einladungen auf, um seine Prozesse langsam zu erweitern und zu verfeinern. Die Mitgliedschaft wird durch den Besitz einer sogenannten "Citizen Badge" gekennzeichnet - einem nicht übertragbaren `ERC-721` Token.
 
-Die Bestimmungen, auf dessen Basis die Einladungen erfolgen, ändern sich saisonal auf der Grundlage von Experimenten der Optimism Foundation. Sobald die Skalierungsmethoden verfeinert sind, wird dies mit Hilfe von `Onchain Governance`automatisiert werden.
+The specifics of invitations change seasonally based on experimentation by the Optimism Foundation:
 
 - Den Bürgerinnen und Bürgern kann eine zusätzliche Einladung gewährt werden, die sie mit jemandem teilen, den sie als eine großartige Ergänzung zum Netzwerk ansehen.
 - Frühere RetroPGF-Empfänger hatten die Möglichkeit, ein Mitglied der Gemeinschaft für den Bürgerstatus auszuwählen.
 - Die Optimism Foundation hat den Erbauern des Projektes, die das Netzwerk auch nutzen, den Status als Bürger verliehen.
+
+As the scaling methods are refined, growth will be automated via `onchain governance`.
 
 🗳️ **Abstimmung:** Jeder Bürger hat eine einzige Stimme. Ihr Stimmrecht kann nicht übertragen oder delegiert werden. Dies schützt davor, dass sich die Macht des Hauses unter einer kleinen Anzahl von Bürgern bündelt.
 
@@ -315,7 +321,7 @@ Wie schützt das Bürger-Haus das Netzwerk vor Angriffen?
 
 > ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- [ ] Durch Veto gegen Vorschläge des Token-Hauses, die zu einem Machtungleichgewicht führen könnten.
+- [ ] By vetoing unaligned Token House proposals.
 
 > ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
@@ -325,11 +331,13 @@ Wie schützt das Bürger-Haus das Netzwerk vor Angriffen?
 
 # Jahreszeiten der Regierungsführung
 
-Optimism verfolgt **einen iterativen Ansatz für die Regierungsführung** und verwendet eine Kalenderstruktur, die als "Seasons" [Jahreszeiten] bezeichnet wird. Durch den Wechsel zwischen Phasen aktiver Regierungsführung und Reflexion sammeln die Teilnehmer Erfahrungen aus erster Hand, die sie anschließend analysieren, um über die aktuellen Praktiken zur Regierungsführung zu diskutieren. Das Modell wird dann von der Optimism Foundation verbessert, und die nächste Jahreszeit kann beginnen.
+Optimism verfolgt **einen iterativen Ansatz für die Regierungsführung** und verwendet eine Kalenderstruktur, die als "Seasons" [Jahreszeiten] bezeichnet wird.
+
+Durch den Wechsel zwischen Phasen aktiver Regierungsführung und Reflexion sammeln die Teilnehmer Erfahrungen aus erster Hand, die sie anschließend analysieren, um über die aktuellen Praktiken zur Regierungsführung zu diskutieren. Das Modell wird dann von der Optimism Foundation verbessert, und die nächste Jahreszeit kann beginnen.
 
 Bei Optimism dauert eine Jahreszeit etwa drei Monate, gefolgt von einer ähnlich langen Reflexionsphase.
 
-Die durchdachten Feedback-Schleifen, die in Optimism aufgebaut wurden, sind unglaublich wichtig, um die besten Praktiken für Regierungsführung in `DAOs` zu finden.
+These thoughtful feedback loops, built throughout Optimism’s systems, are incredibly important for building governance best practices in `DAO` communities.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
 
@@ -339,11 +347,13 @@ Wir sind fast bereit, über Optimism zu regieren 🔴. Es gibt aber noch eine le
 
 Die Vision von Optimism bleibt nicht bei einer einzigen `L2` Blockchain stehen. Aufgrund der Fähigkeit, eine Blockchain mittels einer `Gabelung` [fork] zu spalten, ist dies ein klonbares Experiment zur Regierungsführung. Diese Technologie ist so konzipiert, dass sie über mehrere L2s hinweg skaliert werden kann - und sogar auf Szenarien zur Regierungsführung in der realen Welt übertragen werden kann. Optimism nennt diese Eigenschaft **"The Superchain"**.
 
-Coinbase, eine prominente `CEX`, hat bereits eine solche Gabelung vollzogen und begonnen zu dieser `Open-Source` Initiative beizutragen, mittels der L2 Blockchain namens Base 🔵. Durch die gemeinsame Nutzung von Entwicklungsressourcen wird die Entwicklung der Infrastruktur vorangetrieben, während die L2-Transaktionsgebühren dem Ethos "Auswirkung = Gewinn" zugute kommen.
+Coinbase, eine prominente `CEX`, hat bereits eine solche Gabelung vollzogen und begonnen zu dieser `Open-Source` Initiative beizutragen, mittels der L2 Blockchain namens Base 🔵. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards Optimism’s ‘Impact = Profit’ ethos.
+
+RetroPGF rewards now include profits from Base 🔵 transaction fees — which means more funding for `public goods`!
 
 # Shaping an Optimistic Future
 
-History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.
+History has always been paved by the optimists of humanity — those that dared to think big, and act to achieve their vision.
 
 By getting involved in innovative communities, using `trustless` and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.
 
