@@ -257,55 +257,55 @@ Jeder kann ein Delegierter des Token-Hauses auf Optimism werden und so eine Grup
 
 # Ein Hinweis zur Verteilung der Token…
 
-Network governance is only as democratic as its initial `token distribution` — meaning who received voting power in the first place. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
+Die Regierungsführung des Netzwerk ist nur so demokratisch wie die ursprüngliche `-Token-Distribution` – wer also zu Beginn des Netzwerks Stimmrecht erhalten hat. Schau dir am besten den [OP Distributionsplan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) an, um zu sehen, wie die Optimism Foundation anfängliche Befugnisse in Bezug auf die Regierungsführung im Dienst einer ausgewogenen Interessenvertretung zugewiesen hat.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
 
 # Knowledge Check 6
 
-How does the Token House protect the network from attack?
+Wie schützt das Token-Haus das Netzwerk vor Angriffen?
 
-- [ ] By selecting a diverse set of network block producers.
+- [ ] Durch Auswahl einer Vielzahl von Netzwerk-Blockproduzenten.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- [ ] By vetoing Optimism Foundation proposals seen to be reducing token holder rights.
+- [ ] Durch das Veto gegen Vorschläge der Optimism Foundation, die die Rechte von Token-Inhabern einschränken könnten.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- [ ] By carefully reviewing network upgrade proposals.
+- [ ] Durch sorgfältige Prüfung von Vorschlägen zu Netzwerk-Upgrades.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- [ ] All of the above.
+- [ ] Alle oben genannten Punkte.
 
-> ℹ️  Correct! The Token House has a diverse set of responsibilities in protecting the network.
+> ℹ️ Richtig! Das Token-Haus hat vielfältige Aufgaben zum Schutz des Netzwerks.
 
-# The Citizens’ House
+# Das Bürger-Haus
 
-The Citizens’ House conducts the growth of public infrastructure on the Optimism Network.
+Das Bürger-Haus leitet das Wachstum der öffentlichen Infrastruktur innerhalb des Optimism-Netzwerks.
 
-Duties include:
+Zu den Aufgaben gehören:
 
-- 🎯 **Defining RetroPGF metrics and impact criteria** for measuring project performance.
-- 🔍 **Research and allocation of RetroPGF** to community projects which meet the guidelines.
-- 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.
+- 🎯 **Definition von RetroPGF-Metriken und Kriterien zur Wirksamkeit** zur Messung der Projektleistung.
+- 🔍 **Recherche und Vergabe von RetroPGF** an Gemeinschaftsprojekte, die den Leitlinien entsprechen.
+- 👬 **Auswahl von neuen Bürgern** um das Bürger-Haus zu regieren und ein Gleichgewicht zu Ansichten des Token-Hauses zu schaffen. Das Token-Haus hat ein Vetorecht für diese Art von Vorschlägen.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-b16b3d99.svg)
 
-# Citizens’ House: Joining, Voting, Delegating
+# Bürger-Haus: Beitreten, Abstimmen, Delegieren
 
-📝 **Joining:** The Citizens’ House currently adds members by invitation, to slowly scale and refine its processes. Membership is marked by holding a ‘Citizen Badge’ — a non-transferable `ERC-721` token.
+📝 **Beitritt:** Das Bürger-Haus nimmt derzeit Mitglieder auf Basis von Einladungen auf, um seine Prozesse langsam zu erweitern und zu verfeinern. Die Mitgliedschaft wird durch den Besitz einer sogenannten "Citizen Badge" gekennzeichnet - einem nicht übertragbaren `ERC-721` Token.
 
-The specifics of invitations change seasonally based on experimentation by the Optimism Foundation. As the scaling methods are refined, this will be automated via `onchain governance`.
+Die Bestimmungen, auf dessen Basis die Einladungen erfolgen, ändern sich saisonal auf der Grundlage von Experimenten der Optimism Foundation. Sobald die Skalierungsmethoden verfeinert sind, wird dies mit Hilfe von `Onchain Governance`automatisiert werden.
 
-- Current Citizens may be granted an additional invitation, to be shared with someone they see as a great addition to the network.
-- Previous RetroPGF recipients have been granted the opportunity to select one community member for Citizen status.
-- The Optimism Foundation has issued Citizenship to project builders using the network.
+- Den Bürgerinnen und Bürgern kann eine zusätzliche Einladung gewährt werden, die sie mit jemandem teilen, den sie als eine großartige Ergänzung zum Netzwerk ansehen.
+- Frühere RetroPGF-Empfänger hatten die Möglichkeit, ein Mitglied der Gemeinschaft für den Bürgerstatus auszuwählen.
+- Die Optimism Foundation hat den Erbauern des Projektes, die das Netzwerk auch nutzen, den Status als Bürger verliehen.
 
-🗳️ **Voting:** Each Citizen has a single vote. Their voting power cannot be transferred or delegated. This protects against gathering of House power under a small number of Citizens.
+🗳️ **Abstimmung:** Jeder Bürger hat eine einzige Stimme. Ihr Stimmrecht kann nicht übertragen oder delegiert werden. Dies schützt davor, dass sich die Macht des Hauses unter einer kleinen Anzahl von Bürgern bündelt.
 
-At present, RetroPGF distribution occurs roughly twice per year.
+Gegenwärtig wird RetroPGF etwa zweimal pro Jahr verteilt.
 
 # Knowledge Check 7
 
