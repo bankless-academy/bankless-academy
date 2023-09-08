@@ -191,7 +191,7 @@
   },
   "delegation": {
     "keyword": "Delegation",
-    "keyword_plural": "delegations",
+    "keyword_plural": "Delegationen",
     "definition": "Übertragung einer bestimmten Verantwortung auf eine andere Person, d.h. Delegation von Token, welche Stimmrechte geben."
   },
   "dex": {
@@ -466,7 +466,7 @@
   },
   "public good": {
     "keyword": "öffentliches Gut",
-    "keyword_plural": "public goods",
+    "keyword_plural": "Öffentliche Güter",
     "definition": "Ein öffentliches Gut ist eine Ware oder Dienstleistung, die allen Mitgliedern der Gesellschaft zur Verfügung steht."
   },
   "public key": {
@@ -656,7 +656,7 @@
   },
   "veto": {
     "keyword": "Veto",
-    "keyword_plural": "vetos",
+    "keyword_plural": "Vetos",
     "definition": "Eine Abstimmung zur Ablehnung eines Vorschlags zur Regierungsführung."
   },
   "wallet": {
