@@ -76,7 +76,7 @@
   },
   "block space": {
     "keyword": "Blockspace",
-    "keyword_plural": "block spaces",
+    "keyword_plural": "Blockspaces",
     "definition": "Die Menge an Speicherplatz auf einer Blockchain, die zum Speichern von Informationen und zum Ausführen von Code verwendet werden kann. Die Menge an \"Platz\" innerhalb eines Blocks (oder einer Reihe von Blöcken)."
   },
   "blockchain": {
@@ -221,13 +221,13 @@
   },
   "erc-20": {
     "keyword": "ERC-20",
-    "keyword_plural": "erc-20s",
+    "keyword_plural": "ERC-20s",
     "definition": "Ein Standard für übertragbare Token auf Ethereum."
   },
   "erc-721": {
-    "keyword": "erc-721",
-    "keyword_plural": "erc-721s",
-    "definition": "A standard for non-transferable tokens on Ethereum."
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721s",
+    "definition": "Ein Standard für nicht übertragbare Token auf Ethereum."
   },
   "ethereum virtual machine": {
     "keyword": "Ethereum Virtual Machine",
@@ -381,7 +381,7 @@
   },
   "onchain governance": {
     "keyword": "Onchain Governance",
-    "keyword_plural": "onchain governances",
+    "keyword_plural": "Onchain Governances",
     "definition": "Das System, das Änderungen an der Struktur einer Blockchain vermittelt."
   },
   "open source": {
@@ -550,9 +550,9 @@
     "definition": "How much can prices change before your trade executes."
   },
   "smart contract": {
-    "keyword": "smart contract",
-    "keyword_plural": "smart contracts",
-    "definition": "Computerized code that execute terms of a contract automatically."
+    "keyword": "Smart Contract",
+    "keyword_plural": "Smart Contracts",
+    "definition": "[Intelligenter Vertrag] Computergestützter Code, der die Bedingungen eines Vertrags automatisch ausführt."
   },
   "social engineering": {
     "keyword": "social engineering",
@@ -580,9 +580,9 @@
     "definition": "A trade from one token to another."
   },
   "token": {
-    "keyword": "token",
-    "keyword_plural": "tokens",
-    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
+    "keyword": "Token",
+    "keyword_plural": "Tokens",
+    "definition": "Einheiten, die für Vermögenswerte oder Sachverhalte stehen können, die auf einer bestehenden Blockchain aufgebaut sind."
   },
   "token allowance": {
     "keyword": "token allowance",
@@ -590,9 +590,9 @@
     "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
   },
   "token distribution": {
-    "keyword": "token distribution",
-    "keyword_plural": "token distributions",
-    "definition": "The way in which tokens are allocated across different stakeholder groups."
+    "keyword": "Token Distribution",
+    "keyword_plural": "Token Distributionen",
+    "definition": "Die Art und Weise, wie Token auf die verschiedenen Interessengruppen verteilt werden."
   },
   "token pair": {
     "keyword": "token pair",
