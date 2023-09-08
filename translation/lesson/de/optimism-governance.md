@@ -309,23 +309,23 @@ Gegenwärtig wird RetroPGF etwa zweimal pro Jahr verteilt.
 
 # Knowledge Check 7
 
-How does the Citizens’ House protect the network from attack?
+Wie schützt das Bürger-Haus das Netzwerk vor Angriffen?
 
-- [ ] By expanding the number of Citizens’ House members.
+- [ ] Durch die Erweiterung der Anzahl der Mitglieder des Bürger-Hauses.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- [ ] By vetoing Token House proposals seen to be leading to power imbalance.
+- [ ] Durch Veto gegen Vorschläge des Token-Hauses, die zu einem Machtungleichgewicht führen könnten.
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- [ ] Both of the above.
+- [ ] Beide oben genannten Punkte.
 
-> ℹ️  Correct! This house diversifies its own perspective, and balances Token House perspective.
+> ℹ️ Richtig! Es diversifiziert seine eigenen Ansichten und gleicht die Ansichten des Token-Hauses aus.
 
-# Governance Seasons
+# Jahreszeiten der Regierungsführung
 
-Optimism takes **an iterative approach to governance**, using a calendar structure referred to as ‘Seasons’. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
+Optimism verfolgt **einen iterativen Ansatz für die Regierungsführung**und verwendet eine Kalenderstruktur, die als "Seasons" [Jahreszeiten] bezeichnet wird. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
 
 On Optimism a season lasts roughly three months, followed by a reflection period of similar length.
 
