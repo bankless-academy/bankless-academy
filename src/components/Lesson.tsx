@@ -15,7 +15,7 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
-import { Warning, ArrowUUpLeft, NotePencil } from '@phosphor-icons/react'
+import { Warning, ArrowUUpLeft } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
@@ -33,6 +33,7 @@ import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
 import NFT from 'components/NFT'
 import Keyword from 'components/Keyword'
+import EditContentModal from 'components/EditContentModal'
 
 const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   border-radius: 0.5rem;
@@ -645,21 +646,9 @@ const Lesson = ({
             </Button>
           )}
           {lesson.isCommentsEnabled && slide.notionId && (
-            <ExternalLink
-              href={`https://www.notion.so/${lesson.notionId}#${slide.notionId}`}
-            >
-              <Tooltip
-                hasArrow
-                label={t('Help us improve the content by suggesting changes')}
-              >
-                <Button
-                  leftIcon={<NotePencil width="24px" height="24px" />}
-                  variant="outline"
-                >
-                  {isSmallScreen ? '' : `suggest changes`}
-                </Button>
-              </Tooltip>
-            </ExternalLink>
+            <>
+              <EditContentModal slide={slide} />
+            </>
           )}
         </HStack>
         <HStack>

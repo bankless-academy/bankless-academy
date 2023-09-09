@@ -50,6 +50,7 @@ const processMD = async (md, lang, englishLesson) => {
         newLesson.slides[i].title = slide_title
         if (newLesson.slides[i].type === 'LEARN' && slide_content) {
           // console.log(slide_content)
+          newLesson.slides[i].md = slide_content
           const rendered = await markdown.render(slide_content)
           // console.log(newLesson.slides[i].content)
           if (newLesson.slides[i].content.includes('<div class="bloc2">')) {
@@ -66,6 +67,7 @@ const processMD = async (md, lang, englishLesson) => {
         }
         if (newLesson.slides[i].type === 'QUIZ' && slide_content) {
           // console.log(slide_content)
+          newLesson.slides[i].md = slide_content
           const [question] = slide_content.split('\n\n')
           // console.log(question)
           const answers = slide_content
@@ -106,45 +108,45 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const language: any = params.slug.length === 1 ? 'en' : params.slug[0]
   let currentLesson = LESSONS.find((lesson: LessonType) => lesson.slug === slug)
   // console.log(currentLesson)
-  if (language !== 'en') {
-    for (const language of currentLesson.languages) {
-      if (
-        !fs.existsSync(
-          `translation/lesson/${language}/${currentLesson.slug}.md`
-        )
-      ) {
-        currentLesson.languages = currentLesson.languages.filter(
-          (l) => l !== language
-        )
-      }
+  for (const language of currentLesson.languages) {
+    if (
+      !fs.existsSync(`translation/lesson/${language}/${currentLesson.slug}.md`)
+    ) {
+      currentLesson.languages = currentLesson.languages.filter(
+        (l) => l !== language
+      )
     }
-    try {
-      if (
-        fs.existsSync(`translation/lesson/${language}/${currentLesson.slug}.md`)
-      ) {
-        const md = await fs.readFileSync(
-          `translation/lesson/${language}/${currentLesson.slug}.md`,
-          'utf8'
-        )
-        if (md && md.includes('TITLE:') && currentLesson) {
-          console.log('processMD start')
+  }
+  try {
+    if (
+      fs.existsSync(`translation/lesson/${language}/${currentLesson.slug}.md`)
+    ) {
+      const md = await fs.readFileSync(
+        `translation/lesson/${language}/${currentLesson.slug}.md`,
+        'utf8'
+      )
+      if (md && md.includes('TITLE:') && currentLesson) {
+        console.log('processMD start')
+        if (language !== 'en' || currentLesson.slug === 'optimism-governance') {
           currentLesson = await processMD(md, language, currentLesson)
           currentLesson.lang = language
+        } else {
+          await processMD(md, language, currentLesson)
         }
       }
-    } catch (error) {
-      const pageMeta: MetaData = {
-        title: currentLesson.name,
-        description: currentLesson.description,
-        image: currentLesson.socialImageLink || DEFAULT_METADATA.image,
-        isLesson: !currentLesson.isArticle,
-        lesson: currentLesson,
-      }
-      console.log('error loading language', language)
-      console.log('error', error)
-      return {
-        props: { pageMeta },
-      }
+    }
+  } catch (error) {
+    const pageMeta: MetaData = {
+      title: currentLesson.name,
+      description: currentLesson.description,
+      image: currentLesson.socialImageLink || DEFAULT_METADATA.image,
+      isLesson: !currentLesson.isArticle,
+      lesson: currentLesson,
+    }
+    console.log('error loading language', language)
+    console.log('error', error)
+    return {
+      props: { pageMeta },
     }
   }
 
