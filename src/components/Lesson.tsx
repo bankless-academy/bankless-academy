@@ -15,7 +15,7 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
-import { Warning, ArrowUUpLeft } from '@phosphor-icons/react'
+import { Warning, ArrowUUpLeft, NotePencil } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
@@ -650,12 +650,13 @@ const Lesson = ({
             >
               <Tooltip
                 hasArrow
-                label={t(
-                  'Help us improve the content by commenting this slide on Notion'
-                )}
+                label={t('Help us improve the content by suggesting changes')}
               >
-                <Button variant="outline">
-                  💬{isSmallScreen ? '' : ` comment this slide`}
+                <Button
+                  leftIcon={<NotePencil width="24px" height="24px" />}
+                  variant="outline"
+                >
+                  {isSmallScreen ? '' : `suggest changes`}
                 </Button>
               </Tooltip>
             </ExternalLink>
