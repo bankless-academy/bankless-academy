@@ -16,7 +16,7 @@ const LanguageSwitch = ({
   const languages = lesson.languages
 
   // TEMP
-  if (i18n.language === 'en') return null
+  if (i18n.language === 'en' && lesson.slug !== 'blockchain-basics') return null
 
   return (
     <Box>
