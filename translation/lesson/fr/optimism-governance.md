@@ -234,9 +234,9 @@ Les devoirs comprennent :
 - ⛓️ Sélection des `producteurs de blocs` [block producers] du réseau.
 - 📈 **Allocation des revenus,** utilisant les frais de transaction perçus pour alimenter la croissance du réseau.
 
-La Maison des Citoyens a le droit d'opposer son veto à toute proposition relevant des catégories susmentionnées.
+To protect the network, the Citizens’ House has the right to `veto` any proposal under the above categories.
 
-La Maison des Jetons a également la possibilité d'opposer son veto à toute proposition soumise par la Maison des Citoyens ou la Fondation Optimism, qui serait considérée comme **réduisant les droits** des détenteurs de jetons.
+The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be reducing rights of token holders.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
 
@@ -251,13 +251,15 @@ La Maison des Jetons suit [un cycle de vote de cinq semaines](https://community.
 - Semaine 1 à 3 : Soumission de la proposition, examen et retour d'information.
 - Semaine 4 et 5: Votes.
 
-📢 **Délégation :** De nombreux utilisateurs préfèrent déléguer leur pouvoir de vote à d'autres détenteurs de jetons qui, selon eux, représentent le mieux les intérêts de la communauté. C'est un excellent moyen d'avoir un impact sur l'écosystème sans avoir à lire chaque proposition soumise au vote. La délégation n'affecte pas la propriété des jetons — les jetons OP délégués restent dans votre portefeuille.
+📢 **Delegating:** Many users prefer to `delegate` their voting power to other token holders who they feel best represent the community’s interests. C'est un excellent moyen d'avoir un impact sur l'écosystème sans avoir à lire chaque proposition soumise au vote. La délégation n'affecte pas la propriété des jetons — les jetons OP délégués restent dans votre portefeuille.
 
 Tout le monde peut devenir un délégué de la Maison de Jeton sur Optimism, représentant un groupe d'amis, une communauté, ou même le club blockchain d'une université ! Les délégués actifs sont souvent récompensés par la communauté.
 
 # Note sur la Distribution des Jetons…
 
-La gouvernance du réseau n'est démocratique que dans la mesure où la `distribution initiale de jetons` — c'est-à-dire qui a reçu le droit de vote en premier lieu. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
+Network governance is only as democratic as its initial `token distribution`. We should always ask “who received voting power in the first place?” and “how much did they receive?”.
+
+Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
 
@@ -283,7 +285,7 @@ Comment la Maison des Jetons protège-t-elle le réseau contre les attaques ?
 
 # La Maison des Citoyens
 
-La Maison des Citoyens gère la croissance des infrastructures publiques sur le Réseau Optimism.
+La Maison des Citoyens gère la croissance des infrastructures publiques sur le Réseau Optimism. It’s primary focus is managing Retroactive Public Goods Funding.
 
 Les devoirs comprennent :
 
@@ -291,17 +293,21 @@ Les devoirs comprennent :
 - 🔍 **Recherche et allocation de RetroPGF** aux projets communautaires qui respectent les lignes directrices.
 - 👬 **Sélection de nouveaux citoyens** pour aider à gouverner la Maison des Citoyens et équilibrer la perspective de la Maison des Jetons. La Maison des Jetons dispose d'un droit de veto sur ce type de proposition.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-b16b3d99.svg)
+The Citizens’ House also ensures that Token House proposals are mission-aligned, using `veto` mechanics to waive unaligned changes to the network.
+
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-ea904e00.svg)
 
 # La Maison des Citoyens : Adhérer, Voter, Déléguer
 
 📝 **Adhésion :** La Maison des Citoyens accueille actuellement des membres sur invitation, afin de développer et d'affiner lentement ses processus. L'adhésion est marquée par la détention d'un "Badge de Citoyen" [Citizen Badge] - un jeton `ERC-721` non transférable.
 
-Les spécificités des invitations changent selon les saisons, sur la base des expériences menées par la Fondation Optimism. Au fur et à mesure que les méthodes de mise à l'échelle seront affinées, elles seront automatisées via une `gouvernance onchain`.
+The specifics of invitations change seasonally based on experimentation by the Optimism Foundation:
 
 - Les citoyens actuels peuvent bénéficier d'une invitation supplémentaire, à partager avec une personne qu'ils considèrent comme un atout pour le réseau.
 - Des précédents bénéficiaires du RetroPGF ont eu la possibilité de sélectionner un membre de la communauté pour obtenir le statut de citoyen.
 - La Fondation Optimism a délivré la citoyenneté aux constructeurs de projets qui utilisent le réseau.
+
+As the scaling methods are refined, growth will be automated via `onchain governance`.
 
 🗳️ **Vote :** Chaque citoyen dispose d'une seule voix. Leur droit de vote ne peut être transféré ou délégué. Cela permet d'éviter que le pouvoir de l'Assemblée ne soit concentré entre les mains d'un petit nombre de citoyens.
 
@@ -315,7 +321,7 @@ Comment la Maison des Citoyens protège-t-elle le réseau contre les attaques ?
 
 > ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
-- [ ] En opposant son veto aux propositions de la Maison des Jetons considérées comme entraînant un déséquilibre des pouvoirs.
+- [ ] By vetoing unaligned Token House proposals.
 
 > ℹ️ Vrai, mais ce n'est pas la seule réponse.
 
@@ -325,11 +331,13 @@ Comment la Maison des Citoyens protège-t-elle le réseau contre les attaques ?
 
 # Saisons de Gouvernance
 
-Optimism prend **une approche itérative de la gouvernance**, en utilisant une structure calendaire appelée "Saisons". En passant de périodes de gouvernance active à des périodes de réflexion, les participants acquièrent une expérience de première main suivie d'une digestion et d'une discussion sur les pratiques de gouvernance actuelles. Le modèle est ensuite amélioré par la Fondation Optimism, et la saison suivante commence.
+Optimism prend **une approche itérative de la gouvernance**, en utilisant une structure calendaire appelée "Saisons".
+
+En passant de périodes de gouvernance active à des périodes de réflexion, les participants acquièrent une expérience de première main suivie d'une digestion et d'une discussion sur les pratiques de gouvernance actuelles. Le modèle est ensuite amélioré par la Fondation Optimism, et la saison suivante commence.
 
 Avec Optimism, une saison dure environ trois mois, suivie d'une période de réflexion de même durée.
 
-Le cycle rétroactif construit à travers Optimism sont incroyablement importantes pour trouver les meilleures pratiques pour la gouvernance du `DAO`.
+These thoughtful feedback loops, built throughout Optimism’s systems, are incredibly important for building governance best practices in `DAO` communities.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
 
@@ -339,11 +347,13 @@ Nous sommes presque prêts à gouverner avec Optimism 🔴. Il y a une dernière
 
 La Vision Optimiste ne s'arrête pas à une seule blockchain `L2` . Grâce à la capacité de `forker` une blockchain, il s'agit d'une expérience de gouvernance clonable. Cette technologie est conçue pour être mise à l'échelle sur plusieurs L2 — et même dans des scénarios de gouvernance mondiale réels. Optimisme appelle ceci **« La Superchaine »** [Superchain].
 
-Coinbase, un important `CEX`, a déjà forké et commencé à contribuer à cette initiative `open source`, par le biais de la blockchain L2 Base 🔵. Cette mise en commun des ressources de développement accroît l'évolution des infrastructures, tout en canalisant les frais de transaction de la L2 vers l'éthique "Impact = Profit".
+Coinbase, un important `CEX`, a déjà forké et commencé à contribuer à cette initiative `open source`, par le biais de la blockchain L2 Base 🔵. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards Optimism’s ‘Impact = Profit’ ethos.
+
+RetroPGF rewards now include profits from Base 🔵 transaction fees — which means more funding for `public goods`!
 
 # Façonner un Avenir Optimiste
 
-L'histoire a toujours été pavée par les optimistes de l'humanité — ceux qui ont osé voir grand et ont agi pour y parvenir.
+History has always been paved by the optimists of humanity — those that dared to think big, and act to achieve their vision.
 
 En s'impliquant dans des communautés innovantes, en utilisant `trustless` et des systèmes de gouvernance équitable, nous sommes à la pointe de l'avenir de la coordination humaine. Nous construisons un monde où l'humanité peut s'épanouir dans des systèmes locaux, mondiaux et en ligne. Il est temps de commencer notre voyage de gouvernance avec Optimism.
 

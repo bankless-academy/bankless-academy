@@ -2022,7 +2022,7 @@ const LESSONS: LessonType[] = [
       '/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg',
       '/images/optimism-governance/the-token-house-7d73ce82.svg',
       '/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg',
-      '/images/optimism-governance/the-citizens-house-ea904e00.svg',
+      '/images/optimism-governance/the-citizens-house-0714976e.svg',
       '/images/optimism-governance/governance-seasons-4ebc291c.svg',
       '/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg'
     ],
@@ -2231,7 +2231,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '53f830416d224fada656ede4663bf238',
         title: 'The Citizens’ House',
-        content: '<div class="bloc1"><p>The Citizens’ House conducts the growth of public infrastructure on the Optimism Network. It’s primary focus is managing Retroactive Public Goods Funding.</p><p>Duties include:</p><ul><li>🎯 <strong>Defining RetroPGF metrics and impact criteria</strong> for measuring project performance.</li><li>🔍 <strong>Research and allocation of RetroPGF</strong> to community projects which meet the guidelines.</li><li>👬 <strong>Selection of new citizens</strong> to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.</li></ul><p>The Citizens’ House also ensures that Token House proposals are mission-aligned, using <code>veto</code> mechanics to waive unaligned changes to the network.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/the-citizens-house-ea904e00.svg\'></div>'
+        content: '<div class="bloc1"><p>The Citizens’ House conducts the growth of public infrastructure on the Optimism Network. It’s primary focus is managing Retroactive Public Goods Funding.</p><p>Duties include:</p><ul><li>🎯 <strong>Defining RetroPGF metrics and impact criteria</strong> for measuring project performance.</li><li>🔍 <strong>Research and allocation of RetroPGF</strong> to community projects which meet the guidelines.</li><li>👬 <strong>Selection of new citizens</strong> to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.</li></ul><p>The Citizens’ House also ensures that Token House proposals are mission-aligned, using <code>veto</code> mechanics to waive unaligned changes to the network.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/the-citizens-house-0714976e.svg\'></div>'
       },
       {
         type: 'LEARN',
