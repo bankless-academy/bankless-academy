@@ -1,7 +1,7 @@
 ---
-TITLE: Optimism Governance
+TITLE: Optimism ガバナンス
 DESCRIPTION: Claim your first piece of network ownership and start voting onchain!
-LANGUAGE: English
+LANGUAGE: 英語
 WRITERS: Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/optimism-governance
