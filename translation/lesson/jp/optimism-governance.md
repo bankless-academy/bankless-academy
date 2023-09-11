@@ -95,13 +95,13 @@ Optimismは、市民に直接サービスを提供し、市民によって統治
 
 # Knowledge Check 2
 
-Which of the following is NOT a public good?
+次のうち、公共財でないものはどれでしょうか？
 
-- [ ] Education
+- [ ] 教育
 
-> ℹ️ Education can benefit everyone, and one person’s use doesn’t reduce its availability.
+> ℹ️ 教育は誰にとっても有益なものであり、ある人が利用したからといって、その利用可能性が減るわけではありません。
 
-- [ ] The Internet
+- [ ] インターネット
 
 > ℹ️ The internet can benefit everyone, and one person’s use doesn’t reduce its availability.
 
