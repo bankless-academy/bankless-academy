@@ -90,13 +90,13 @@ Hinweis: Dies wird dir nicht für die Lektionsaufgabe ['Optimism Governance'](ht
 
 * *Muss ich delegieren, um abzustimmen?*
 
-You can skip delegation and represent yourself by tracking votes under the ‘Proposals’ tab on Optimism Agora.
+Du kannst die Delegation überspringen und dich selbst repräsentieren, indem du Abstimmungen unter der Registerkarte „Proposals“ [Vorschläge] auf Optimism Agora verfolgst.
 
-Note: this also won’t count for the [‘Optimism Governance’](https://app.banklessacademy.com/lessons/optimism-governance) lesson quest at Bankless Academy, but you can do so once you’ve collected your badge!
+Hinweis: Dies wird dir ebenfalls nicht für die Lektionsaufgabe ['Optimism Governance'](https://app.banklessacademy.com/lessons/optimism-governance) an der Bankless Akademy angerechnet, aber du kannst dies auch tun, nachdem du dein Abzeichen bekommen hast!
 
 
 ---
 
-**Author**
+**Autor**
 
-**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+**[Tetranome](https://twitter.com/Tetranome)** ist der Projektmeister der Bankless Academy, der sich auf Benutzererfahrung, Interface, Design und Inhalt konzentriert.
