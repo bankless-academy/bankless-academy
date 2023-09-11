@@ -1,6 +1,6 @@
 ---
 TITLE: Optimism ガバナンス
-DESCRIPTION: Claim your first piece of network ownership and start voting onchain!
+DESCRIPTION: 最初のネットワークオーナーシップを獲得し、オンチェーン投票を開始しましょう！
 LANGUAGE: 英語
 WRITERS: Tetranome
 TRANSLATORS: X
@@ -27,11 +27,11 @@ ________________________________________________________________________________
 
 ---
 
-# Old Problems, New Tools
+# 古き課題、新しい解決法
 
-Modern technology has drastically changed the way in which humans view and interact with each other. On the world stage, and in a borderless cyberspace, we need new coordination models in order to coexist and thrive as a global tribe.
+現代のテクノロジーは、人と人の見方や付き合い方を劇的に変えました。 世界で、そして国境のないサイバー空間で、グローバルに共存し繁栄するためには、新たな協調モデルが必要です。
 
-The vision of `DAO` technology is to streamline problem-solving and debate between a large number of collaborators — whether on the internet, in your local community, or on an international scale. This is done by:
+`DAO`テクノロジーのビジョンは、インターネット上、地域コミュニティ、国際的規模などで、多くの問題解決と議論を効率化することです。 This is done by:
 
 - Incentivizing participants to share a common mission.
 - Innovative voting, `delegation`, and `veto` mechanics.
