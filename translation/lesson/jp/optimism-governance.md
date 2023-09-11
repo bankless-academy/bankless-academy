@@ -103,15 +103,15 @@ Optimismは、市民に直接サービスを提供し、市民によって統治
 
 - [ ] インターネット
 
-> ℹ️ The internet can benefit everyone, and one person’s use doesn’t reduce its availability.
+> ℹ️ インターネットはすべての人に恩恵をもたらすものであり、ある人が利用したからといって、その利用可能性が減るわけではありません。
 
-- [ ] Ethereum
+- [ ] イーサリアム
 
-> ℹ️ Ethereum can benefit everyone, and — with Layer 2s — one person’s use doesn’t reduce its availability.
+> ℹ️ イーサリアムはすべての人に利益をもたらすことができ、L2があれば、1人の利用がその可用性を低下させることはありません。
 
-- [ ] A Centralized Exchange
+- [ ] 中央集権取引所
 
-> ℹ️ Correct. While CEXs provide community benefits, they are private businesses.
+> ℹ️ 正解です。 CEXはコミュニティに利益をもたらす一方で、民間企業でもあります。
 
 # Progressive Decentralization
 
