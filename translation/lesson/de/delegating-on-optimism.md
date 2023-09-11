@@ -88,7 +88,7 @@ Du kannst! Schau dir die Anleitung [‘How to be a delegate’](https://communit
 
 Hinweis: Dies wird dir nicht für die Lektionsaufgabe ['Optimism Governance'](https://app.banklessacademy.com/lessons/optimism-governance) an der Bankless Akademy angerechnet.
 
-* *Do I need to delegate to vote?*
+* *Muss ich delegieren, um abzustimmen?*
 
 You can skip delegation and represent yourself by tracking votes under the ‘Proposals’ tab on Optimism Agora.
 
