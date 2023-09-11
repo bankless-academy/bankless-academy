@@ -190,9 +190,9 @@
     "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
   },
   "delegate": {
-    "keyword": "delegate",
-    "keyword_plural": "delegates",
-    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+    "keyword": "delegieren",
+    "keyword_plural": "Delegierten",
+    "definition": "Übertragung einer bestimmten Verantwortung auf eine andere Person, d.h. Delegation von Token, welche Stimmrechte geben."
   },
   "delegation": {
     "keyword": "Delegation",
@@ -387,7 +387,7 @@
   "onchain governance": {
     "keyword": "Onchain Governance",
     "keyword_plural": "Onchain Governances",
-    "definition": "The automated system that mediates changes to a blockchain’s structure."
+    "definition": "Das automatisierte System, das Änderungen an der Struktur einer Blockchain vermittelt."
   },
   "open source": {
     "keyword": "Open Source",
@@ -595,8 +595,8 @@
     "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
   },
   "token distribution": {
-    "keyword": "Token Distribution",
-    "keyword_plural": "Token Distributionen",
+    "keyword": "Token-Verteilung",
+    "keyword_plural": "Token-Verteilungen",
     "definition": "Die Art und Weise, wie Token auf die verschiedenen Interessengruppen verteilt werden."
   },
   "token pair": {
@@ -645,9 +645,9 @@
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
   },
   "trustless": {
-    "keyword": "trustless",
-    "keyword_plural": "trustlesss",
-    "definition": "The quality of operating without need to trust in people or institutions. (Automatic, not owned by any one person)."
+    "keyword": "vertrauensfrei",
+    "keyword_plural": "vertrauensfreie",
+    "definition": "[trustless] Die Eigenschaft, ohne Vertrauen in Menschen oder Institutionen zu handeln. (Automatisch, nicht im Besitz einer bestimmten Person)."
   },
   "tvl": {
     "keyword": "TVL",
