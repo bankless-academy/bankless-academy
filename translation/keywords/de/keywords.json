@@ -370,9 +370,9 @@
     "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
   },
   "network governance": {
-    "keyword": "network governance",
-    "keyword_plural": "network governances",
-    "definition": "The process by which a decentralized community reaches agreement on network features/upgrades."
+    "keyword": "Regierungsführung des Netzwerks",
+    "keyword_plural": "Regierungsführungen des Netzwerks",
+    "definition": "[Network Governance] Der Prozess, durch den eine dezentralisierte Gemeinschaft eine Einigung über Netzwerkfunktionen und -erweiterungen erzielt."
   },
   "nft": {
     "keyword": "NFT",
