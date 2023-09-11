@@ -31,67 +31,67 @@ ________________________________________________________________________________
 
 現代のテクノロジーは、人と人の見方や付き合い方を劇的に変えました。 世界で、そして国境のないサイバー空間で、グローバルに共存し繁栄するためには、新たな協調モデルが必要です。
 
-`DAO`テクノロジーのビジョンは、インターネット上、地域コミュニティ、国際的規模などで、多くの問題解決と議論を効率化することです。 This is done by:
+`DAO`テクノロジーのビジョンは、インターネット上、地域コミュニティ、国際的規模などで、多くの問題解決と議論を効率化することです。 これは次のような方法で行われます：
 
-- Incentivizing participants to share a common mission.
-- Innovative voting, `delegation`, and `veto` mechanics.
-- Using blockchain technology to decrease the potential for human error or hijacking.
+- 参加者が共通のミッションを共有するようにインセンティブを与える
+- 新しい投票法、 `代議員権、`、 `拒否権、` メカニズム
+- ブロックチェーン技術を利用して、人為的ミスや乗っ取りの可能性を減らす
 
 ![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
 
-# Network Governance
+# ネットワークガバナンス
 
-Like any traditional nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but `asynchronous`, global, and partially mediated by code.
+国家と同様に、DAOはガバナンスプロセスを使用してリソースの展開とミッションの達成を遂行します。 町内会のようなものですが、 `非同期で、`、グローバルで、コードによって部分的に仲介されます。
 
-📜 **Proposal:** It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘`DAO`’.
+📜 **提案：** ガバナンスの提案とコミュニティーの議論から始まります。 提案はパブリックフィードバックに基づいて更新されます。 誰でも企画案を提出することができ、批評することもできます。 これは「`DAO`」の分散型の部分です。
 
-🗳️ **Vote:** The proposal moves to a vote — hosted via the transparent, censorship-resistant process of `onchain governance`. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘`DAO`’ — a quality envisioned to eventually cover the entire governance process.
+🗳️ **投票:**: `オンチェーンガバナンス`の透明性のある検閲に強いプロセスを介してホストされます。 投票期間中に人間が介することなく、すべてコードによって行われます。 これは、「`DAO`」の自律的部分です。これは、最終的にガバナンスプロセス全体をカバーするために想定されるレベルです。
 
-🛠️ **Implementation:** The approved proposal is applied to the network, by various incentivized developers if necessary.
+🛠️ **実装:** 承認された提案は、必要に応じて様々なインセンティブを与えられた開発者によってネットワークに適用されます。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
 
 # Knowledge Check 1
 
-How can onchain governance help to solve interhuman debate?
+オンチェーンガバナンスは、議論を解決するためにどのように役立つのか？
 
-- [ ] Automation
+- [ ] 自動化
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ これは事実ですが、それだけが答えではありません。
 
-- [ ] Transparency
+- [ ] 透明性
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ これも事実ですが、それだけが答えではありません。
 
-- [ ] Censorship-resistance
+- [ ] 検閲性
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ これも事実ですが、それだけが答えではありません。
 
-- [ ] All of the above
+- [ ] 上記全て
 
-> ℹ️ Correct! Onchain governance protects the voting process through multiple means.
+> ℹ️ 正解です。 オンチェーンガバナンスは、複数の手段によって投票プロセスを保護します。
 
-# The Optimism Network
+# Optimismネットワーク
 
-`DAOs` like the Optimism Collective are at the frontier of exploring such coordination systems.
+Optimism Collectiveのような`DAO（` ）は、このような協調システムの最前線にいます。
 
-In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.
+このレッスンでは、OptimismがDAOビジョンをどのように開拓しているかを探ります。 彼らのミッションと、未来の人類のための新しいフレームワークを構築しているかについて紹介します。
 
-Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!
+イーサリアムと人間の協調の未来を築く手助けができるように、最初の投票権を獲得することに焦点を当てましょう。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
 
-# The Optimistic Vision
+# Optimisticビジョン
 
-Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It’s part of the Ethereum ecosystem, but with lower fees and faster transactions — while maintaining Ethereum’s high standard of security. Here are the defining properties:
+Optimismのミッションは、 `L2` ネットワークを構築することでイーサリアムをスケールさせることです。 イーサリアムのエコシステムの一部でありながら、イーサリアムの高水準のセキュリティを維持しつつ、より低い手数料とより高速なトランザクションを実現しています。 以下がその特徴です：
 
-🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. A public good is something that benefits everyone in a community, while one person's use of it doesn't reduce its availability for others. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
+🏕️ **公共財：** 資金調達とオンチェーン`公共財`の構築を重視。 公共財とは、コミュニティーのすべての人に恩恵をもたらすものであり、ある人がそれを利用したからといって、他の人がそれを利用する機会が減ることはありません。 Bankless Academyの無料レッスンは、Optimismの公共財のサポートによって可能になりました。
 
-🧑‍🤝‍🧑 **Community Governance:** The network is lead by its community.
+🧑‍🤝‍🧑 **コミュニティガバナンス：** ネットワークはコミュニティが主導。
 
-🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
+🏠 **フリマ:** イーサリアムの`ブロックスペース`だけでなく、イーサリアムの原則の拡張として開始。 イーサリアムのパーミッションレス、オープンソース、検閲耐性のあるマーケットプレイスを拡張することを目的としています。
 
-Optimism aims to become a “district of cyberspace” that directly provides for — and is governed by — its citizens!
+Optimismは、市民に直接サービスを提供し、市民によって統治されるサイバースペースを目指しています。
 
 # Knowledge Check 2
 
