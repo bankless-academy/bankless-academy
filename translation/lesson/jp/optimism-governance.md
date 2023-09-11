@@ -113,11 +113,11 @@ Optimismは、市民に直接サービスを提供し、市民によって統治
 
 > ℹ️ 正解です。 CEXはコミュニティに利益をもたらす一方で、民間企業でもあります。
 
-# Progressive Decentralization
+# 分散化の進展
 
-Many great blockchain projects begin with a centralized group. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization**. On Optimism, the founders, network, and community are thought of as follows:
+多くの優れたブロックチェーンプロジェクトは中央集権化されたグループから始まります。 これにより、プロジェクトの構築と支出に重点を置くことができますが、 `DAO` は、 **DAOは分散化の約束だけでは不十分です。** Optimismにおいて、創設者、ネットワーク、コミュニティは以下のように考えられます。
 
-- 🏦 **Optimism Foundation:** The network founders. They kickstart the ecosystem, provide initial resources, and act as community steward, before eventually dissolving.
+- 🏦 **Optimism財団** ：ネットワーク創設者。 エコシステムをスタートさせ、最初のリソースを提供し、最終的に解散する前にコミュニティの管理をしています。
 - 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts and processing of user input.
 - 👬 **Optimism Collective:** The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem. The term ‘DAO’ covers both the Collective and the Network.
 
