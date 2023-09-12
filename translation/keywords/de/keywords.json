@@ -41,7 +41,7 @@
   },
   "asynchronous": {
     "keyword": "asynchron",
-    "keyword_plural": "asynchronouss",
+    "keyword_plural": "asynchrone",
     "definition": "Kommunikation zwischen mehreren Mitwirkenden, wobei die Teilnehmer zum Zeitpunkt der Nachrichtenübermittlung nicht anwesend sein müssen."
   },
   "bet": {
@@ -65,8 +65,8 @@
     "definition": "Der eindeutige Bezeichner für jede Blockdatei. Jeder neue Block bezieht sich auf den Block-Hash des vorherigen Blocks, um die verbundene Blockchain, bestehend aus einer einzigen Datei, zu bilden."
   },
   "block producer": {
-    "keyword": "Blockproduzenten",
-    "keyword_plural": "block producers",
+    "keyword": "Blockproduzent",
+    "keyword_plural": "Blockproduzenten",
     "definition": "Der Benutzer, dessen Hardware ausgewählt wird, um die Transaktionen eines Blocks zu verifizieren und den nächsten Block auf den meisten Proof-of-Stake (PoS)-Blockchains zu starten."
   },
   "block reward": {
@@ -390,9 +390,9 @@
     "definition": "Das automatisierte System, das Änderungen an der Struktur einer Blockchain vermittelt."
   },
   "open source": {
-    "keyword": "Open Source",
-    "keyword_plural": "Open Sources",
-    "definition": "[Quelloffen] Software mit Quellcode, den jeder einsehen, ändern und verbessern kann."
+    "keyword": "quelloffen",
+    "keyword_plural": "quelloffenen",
+    "definition": "[open source] Software mit Quellcode, den jeder einsehen, ändern und verbessern kann."
   },
   "optimistic rollup": {
     "keyword": "optimistic rollup",
@@ -471,7 +471,7 @@
   },
   "public good": {
     "keyword": "öffentliches Gut",
-    "keyword_plural": "Öffentliche Güter",
+    "keyword_plural": "Öffentlichen Gütern",
     "definition": "Ein öffentliches Gut ist eine Ware oder Dienstleistung, die allen Mitgliedern der Gesellschaft zur Verfügung steht."
   },
   "public key": {
