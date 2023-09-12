@@ -3,7 +3,7 @@ TITLE: Optimism ガバナンス
 DESCRIPTION: 最初のネットワークオーナーシップを獲得し、オンチェーン投票を開始しましょう！
 LANGUAGE: 英語
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: Yuki, outtawraith
 LINK: https://app.banklessacademy.com/lessons/optimism-governance
 FORMAT: LESSON
 ---
