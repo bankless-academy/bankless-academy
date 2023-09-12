@@ -29,7 +29,7 @@ ________________________________________________________________________________
 
 # Alte Probleme, neue Werkzeuge
 
-Moderne Technologien haben die Art und Weise, wie Menschen einander sehen und miteinander umgehen, drastisch verändert. Auf der Weltbühne und in einem grenzenlosen Cyberspace brauchen wir neue Koordinierungsmodelle, um als globaler Volksstamm miteinander zu leben und zu gedeihen.
+Moderne Technologien haben die Art und Weise, wie Menschen einander sehen und miteinander umgehen, drastisch verändert. Auf der Weltbühne und in einem grenzenlosen Cyberspace brauchen wir neue Modelle der Koordinierung, um als ein globaler Volksstamm miteinander leben und gedeihen zu können.
 
 Die Vision der `DAO` Technologie ist es, Problemlösungen und Debatten zwischen einer großen Anzahl von Mitwirkenden zu vereinfachen - sei es im Internet, in deiner lokalen Gemeinde oder auf internationaler Ebene. Dies geschieht durch:
 
@@ -41,13 +41,13 @@ Die Vision der `DAO` Technologie ist es, Problemlösungen und Debatten zwischen 
 
 # Regierungsführung des Netzwerks
 
-Wie jeder traditionelle Nationalstaat mit Ressourcen und Teilnehmern nutzt ein DAO einen Prozess zur Regierungsführung, um den Einsatz von Ressourcen und die Erfüllung seiner Mission zu steuern. Es ist wie ein Rathaus, aber `asynchron`, global und teilweise durch Code vermittelt.
+Wie jeder traditionelle Nationalstaat mit Ressourcen und Teilnehmern nutzt ebenso ein DAO einen Prozess zur Regierungsführung, um den Einsatz von Ressourcen und die Erfüllung seiner Mission zu steuern. Dies ist vergleichbar mit einem Rathaus, aber `asynchron`, global und teilweise durch Code vermittelt.
 
-📜 **Vorschlag:** Es beginnt mit einem Vorschlag die Regierungsführung betreffend und einer Diskussion innerhalb der Gemeinschaft. Der Vorschlag wird auf der Grundlage öffentlichen Feedbacks aktualisiert. Jeder kann einen Vorschlag einreichen oder einen Vorschlag kritisieren. Dies ist der "dezentralisierte" Teil des Akronyms "`DAO`".
+📜 **Vorschlag:** Es beginnt mit einem Vorschlag in Bezug auf die Regierungsführung und einer Diskussion innerhalb der Gemeinschaft. Der Vorschlag wird auf der Grundlage öffentlichen Feedbacks aktualisiert. Jeder kann einen Vorschlag einreichen oder einen Vorschlag kritisieren. Dies ist der "dezentralisierte" Teil des Akronyms "`DAO`".
 
 🗳️ **Abstimmung:** Der Vorschlag wird zur Abstimmung gestellt - über einen transparenten, gegen Zensur gesicherten Prozess, der sogenannten `Onchain Governance`. Zwischen dem Öffnen und Schließen der Abstimmung gibt es keinerlei menschliche Einwirkung; alles wird durch Code vermittelt. Dies ist der "autonome" Teil des Akronyms "`DAO`" - eine Eigenschaft, die schließlich den gesamten Prozess der Regierungsführung abdecken soll.
 
-🛠️ **Umsetzung:** Der genehmigte Vorschlag wird innerhalb des Netzwerks umgesetzt, gegebenenfalls durch mehrere Entwickler, welche mithilfe von Anreizen motiviert werden.
+🛠️ **Umsetzung:** Der genehmigte Vorschlag wird innerhalb des Netzwerks umgesetzt, gegebenenfalls durch mehrere Entwickler, welche mithilfe von Anreizen dazu motiviert werden.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
 
@@ -63,7 +63,7 @@ Wie kann die sogenannte Onchain Governance zur Lösung zwischenmenschlicher Deba
 
 > ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
-- Resistenz gegenüber Zensur
+- [ ] Resistenz gegenüber Zensur
 
 > ℹ️ Das stimmt, ist aber nicht die einzige Antwort.
 
@@ -77,21 +77,21 @@ Wie kann die sogenannte Onchain Governance zur Lösung zwischenmenschlicher Deba
 
 In dieser Lektion werden wir untersuchen, wie Optimism die DAO-Vision vorantreibt. Wir werden mehr über ihre Mission erfahren und darüber, wie sie einen neuen Koordinierungsrahmen für die Menschheit aufbaut.
 
-Unser Ziel wird es sein, unser erstes Stimmrecht in Anspruch zu nehmen, so dass wir bereit sein werden, die Zukunft von Ethereum und die Koordination der Menschheit mitzugestalten!
+Ziel der Lektion wird es sein, in einer abschließenden Aufgabe sein erstes Stimmrecht in Anspruch zu nehmen, so dass wir bereit sein werden, die Zukunft von Ethereum und die Koordination der Menschheit mitzugestalten!
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
 
 # Die optimistische Vision
 
-Optimism hat eine Mission: die Skalierung von Ethereum durch den Aufbau eines sogenannten `Layer 2` Netzwerks. Es ist Teil des Ethereum-Ökosystems, aber mit niedrigeren Gebühren und schnelleren Transaktionen - unter Beibehaltung des hohen Sicherheitsstandards von Ethereum. Hier sind die entscheidenden Eigenschaften:
+Optimism hat die folgende Mission: die Skalierung von Ethereum durch den Aufbau eines sogenannten `Layer 2` Netzwerks. Es ist Teil des Ethereum-Ökosystems, aber mit niedrigeren Gebühren und schnelleren Transaktionen - unter Beibehaltung des hohen Sicherheitsstandards von Ethereum. Hier sind die entscheidenden Eigenschaften:
 
 🏕️ **Öffentliche Güter:** Große Wertlegung auf die Finanzierung und den Aufbau von `öffentlichen Gütern`. Ein öffentliches Gut ist etwas, das allen in einer Gemeinschaft zugute kommt, während die Nutzung durch eine einzelne Person nicht dazu führt, dass es für andere weniger verfügbar ist. Deine kostenlose Weiterbildung durch die Bankless Academy wurde durch die Unterstützung von Optimism für öffentliche Güter ermöglicht!
 
 🧑‍🤝‍🧑 **Regierungsführung durch die Gemeinschaft:** Das Netzwerk wird von seiner Gemeinschaft geleitet.
 
-🏠 **Freier Mark:** Als Erweiterung nicht nur durch den sogenannten `Blockspace` von Ethereum gestartet, sondern mithilfe von Ethereum Prinzipien. Es zielt darauf ab, den ohne Zugangsbeschränkungen, quelloffenen und gegenüber Zensur resistenten Marktplatz von Ethereum zu skalieren.
+🏠 **Freier Mark:** Als Erweiterung nicht nur durch den sogenannten `Blockspace` von Ethereum, sondern mithilfe der Prinzipien von Ethereum gestartet. Es zielt darauf ab, den ohne Zugangsbeschränkungen [permissionless], quelloffenen [open-source] und gegenüber Zensur resistenten [censorship-resistent] Marktplatz von Ethereum zu skalieren.
 
-Optimism zielt darauf ab, ein „Bezirk innerhalb des Cyberspaces“ zu werden, der direkt für das Wohl seiner Bürger sorgt – und von ihnen regiert wird!
+Optimism möchte ein „Bezirk innerhalb des Cyberspaces“ werden, der direkt für das Wohl seiner Bürger sorgt – und von ihnen regiert wird!
 
 # Knowledge Check 2
 
@@ -115,13 +115,13 @@ Welches der folgenden Güter ist NICHT ein öffentliches Gut?
 
 # Progressive Dezentralisierung
 
-Viele großartige Blockchain-Projekte beginnen durch das Wirken einer zentralisierten Gruppe. Dies gibt dem Projekt einen entscheidenden Fokus bezüglich des Aufbaus und beim Thema Ausgaben, aber ein `DAO` braucht **mehr als nur das Versprechen von Dezentralisierung**. Im Fall von Optimism werden die Gründer, das Netzwerk und die Gemeinschaft wie folgt betrachtet:
+Viele großartige Blockchain-Projekte beginnen durch das Wirken einer zentralisierten Gruppe. Dies gibt dem Projekt zu Beginn einen entscheidenden Fokus bezüglich des Aufbaus und beim Thema Ausgaben, aber ein `DAO` braucht **mehr als nur das Versprechen von Dezentralisierung**. Im Fall von Optimism werden die Gründer, das Netzwerk und die Gemeinschaft wie folgt betrachtet:
 
 - 🏦 **Optimism Foundation:** Die Gründer des Netzwerks. Sie bringen das Ökosystem in Schwung, stellen erste Ressourcen bereit und fungieren als Verwalter der Gemeinschaft, bevor sie sich schließlich auflösen.
 - 🌐 **Optimism Network:** Der autonome Code auf der Blockchain - die sogenannten Smart Contracts [intelligente Verträge] und die Verarbeitung von Nutzereingaben.
 - 👬 **Optimism Collective:** Die regierende Gemeinschaft; eine vielfältige Gruppe von globalen Teilnehmern. Sie sind für den langfristigen Besitz und die Verwaltung des Ökosystems verantwortlich. Der Begriff "DAO" umfasst sowohl das Kollektiv als auch das Netzwerk.
 
-Rechtliche Kontrollen und Abwägungen, wie z. B. die Möglichkeit des Kollektivs, Mitglieder der Foundation [Stiftung] abzuberufen, gewährleisten eine langsame **Übertragung des Eigentums am Netzwerk auf die Gemeinschaft**.
+Rechtliche Kontrollen und Abwägungen, wie z. B. die Möglichkeit des Optimism Collectives, Mitglieder der Optimism Foundation abzuberufen, gewährleisten eine langsame **Übertragung des Eigentums am Netzwerk auf die Gemeinschaft**.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
 
@@ -131,11 +131,11 @@ Richtig oder falsch? Die Optimism Foundation wird das Optimism Collective über 
 
 - [ ] Richtig
 
-> Versuch nochmal!
+> Versuchs nochmal!
 
 - [ ] Falsch
 
-> ℹ️ Richtig! Die Foundation wird sich schließlich auflösen, und das Kollektiv wird die Mission weiterführen.
+> ℹ️ Richtig! Die Optimism Foundation wird sich schließlich auflösen, und das Optimism Collective wird die Mission weiterführen.
 
 # Eine neue Wirtschaft
 
@@ -143,10 +143,10 @@ Im Zentrum der `L2` Wirtschaft von Optimism steht das **"Optimistische Schwungra
 
 1. Nutzer und sogenannte `dApps` fordern `Blockspace` innerhalb des Netzwerks.
 2. Das Netzwerk generiert Einnahmen mithilef von Transaktionsgebühren.
-3. Ein Teil dieser Steuern wird an Bauträger vergeben, die eine leistungsfähige Infrastruktur für öffentliche Güter bereitstellen.
+3. Ein Teil dieser Steuern wird an die Erbauer vergeben, welche eine leistungsfähige Infrastruktur für öffentliche Güter bereitstellen.
 4. Die Netznutzer erhalten Zugang zu kostenlosen Ressourcen und Diensten, was den Wert von OP-Blockspace erhöht.
 
-Mit wertvollerer Infrastruktur auf der Blockchain steigt die Nachfrage nach Optimism-Blockspace, und der Kreislauf geht weiter!
+Mit einer wertvolleren Infrastruktur auf der Blockchain steigt die Nachfrage nach Optimism-Blockspace, und der Kreislauf geht weiter!
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
 
@@ -178,11 +178,11 @@ Wie schafft Optimism Anreize für gemeinschaftsorientiertes Wirtschaften?
 
 - [ ] Indem alle Optimism-Projekte mit einer rückwirkenden Finanzierung belohnt werden.
 
-> Versuch nochmal! Alle Projekte unabhängig von ihrem Auftrag zu belohnen, ist nicht der Ansatz von Optimism.
+> Versuchs nochmal! Alle Projekte unabhängig von ihrem Auftrag zu belohnen, ist nicht der Ansatz von Optimism.
 
 - [ ] Durch die Bereitstellung eines freien Marktes, aber auf einer Blockchain.
 
-> Versuch nochmal! Der Einsatz der Blockchain-Technologie allein hat keine Auswirkungen auf Wirtschaftsmodelle.
+> Versuchs nochmal! Der Einsatz der Blockchain-Technologie allein hat keine Auswirkungen auf Wirtschaftsmodelle.
 
 - [ ] Durch die systematische Finanzierung von Geschäftsmodellen, die das Leben aller Nutzer des Netzwerks verbessern.
 
@@ -190,13 +190,13 @@ Wie schafft Optimism Anreize für gemeinschaftsorientiertes Wirtschaften?
 
 - [ ] Alle oben genannten Punkte.
 
-> Versuch nochmal! Nur einer der Punkte ist richtig.
+> Versuchs nochmal! Nur einer der Punkte ist richtig.
 
 # Vorstellung der Häuser zur Regierungsführung
 
 Es gibt zwei Häuser, aus denen sich das Optimism-Kollektiv zusammensetzt, die jeweils eine unabhängige und gemeinsame Verantwortung für die Leitung des Netzwerks tragen.
 
-**Das Token-House** ist verantwortlich für die Verwaltung von Netzwerk-Upgrades, der Schaffung von Anreizen und Verwaltung der Finanzen. Durch eine Struktur auf Basis von Stakeholdern bietet es Anreize für das Wachstum der Netzwerkökonomie und schafft Mehrwert für die Stakeholder. Das Haus hat auch die Aufgabe, die Dezentralisierung zu bewahren - und damit die Vereinnahmung der Netzwerkökonomie durch Dritte zu verhindern.
+**Das Token-Haus** ist verantwortlich für die Verwaltung von Netzwerk-Upgrades, der Schaffung von Anreizen und Verwaltung der Finanzen. Durch eine Struktur auf Basis von Stakeholdern bietet es Anreize für das Wachstum der Netzwerkökonomie und schafft Mehrwert für die Stakeholder. Das Haus hat auch die Aufgabe, die Dezentralisierung zu bewahren - und damit die Vereinnahmung der Netzwerkökonomie durch Dritte zu verhindern.
 
 **Das Bürger-Haus** vergibt die Mittel des `RetroPGF` an Projekte innerhalb der Gemeinschaft nach dem Grundsatz "Auswirkung = Gewinn" und trägt dazu bei, die Parameter der Bürgerbeteiligung festzulegen. Das Haus schafft Anreize, die Lebensqualität im Netzwerk zu verbessern, indem es öffentliche Güter finanziert, die den Wert der Bürger erhöhen!
 
@@ -210,7 +210,7 @@ Wie unterscheidet sich das Bürger-Haus vom Token-Haus?
 
 - [ ] Das Bürger-Haus ist das einzige Haus mit Vetorecht.
 
-> Versuch nochmal! Beide Häuser haben ein Vetorecht.
+> Versuchs nochmal! Beide Häuser haben ein Vetorecht.
 
 - [ ] Das Bürger-Haus vergibt RetroPGF-Mittel.
 
@@ -218,11 +218,11 @@ Wie unterscheidet sich das Bürger-Haus vom Token-Haus?
 
 - [ ] Das Bürger-Haus treibt die Dezentralisierung des Netzwerks voran.
 
-> Versuch nochmal! Beide Häuser halten an der Dezentralisierung fest.
+> Versuchs nochmal! Beide Häuser halten an der Dezentralisierung fest.
 
 - [ ] Alle oben genannten Punkte.
 
-> Versuch nochmal!
+> Versuchs nochmal!
 
 # Das Token-Haus
 
@@ -246,7 +246,7 @@ Das Token-Haus hat ebenfalls die Möglichkeit, ein Veto gegen jeden Vorschlag ei
 
 🗳️ **Abstimmung:** Das Stimmrecht hängt von der Anzahl der gehaltenen Token ab.
 
-Das Token House folgt [einem fünfwöchigen Abstimmungszyklus](https://community.optimism.io/docs/governance/token-house-history/):
+Das Token-Haus folgt [einem fünfwöchigen Abstimmungszyklus](https://community.optimism.io/docs/governance/token-house-history/):
 
 - Woche 1-3: Einreichung des Vorschlags, Überprüfung und Feedback.
 - Woche 4-5: Abstimmung.
@@ -295,7 +295,7 @@ Zu den Aufgaben gehören:
 
 Das Bürger-Haus stellt auch sicher, dass die Vorschläge des Token-Hauses mit der Mission übereinstimmen, indem es von dem Recht `Veto` einzulegen Gebrauch macht, um Änderungen am Netzwerk aufzuheben, die nicht mit der Mission im Einklang stehen.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-0714976e.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
 
 # Bürger-Haus: Beitreten, Abstimmen, Delegieren
 
@@ -305,9 +305,9 @@ Die Bestimmungen, auf dessen Basis die Einladungen erfolgen, ändern sich saison
 
 - Den Bürgerinnen und Bürgern kann eine zusätzliche Einladung gewährt werden, die sie mit jemandem teilen, den sie als eine großartige Ergänzung zum Netzwerk ansehen.
 - Frühere RetroPGF-Empfänger hatten die Möglichkeit, ein Mitglied der Gemeinschaft für den Bürgerstatus auszuwählen.
-- Die Optimism Foundation hat den Erbauern des Projektes, die das Netzwerk auch nutzen, den Status als Bürger verliehen.
+- Die Optimism Foundation hat den Erbauern des Projektes, die das Netzwerk ebenfalls nutzen, den Status als Bürger verliehen.
 
-Sobald die Skalierungsmethoden verfeinert sind, wird dieser Prozess mit Hilfe von `Onchain Governance`automatisiert werden.
+Sobald die Skalierungsmethoden verfeinert sind, wird dieser Prozess mit Hilfe von `Onchain Governance` automatisiert werden.
 
 🗳️ **Abstimmung:** Jeder Bürger hat eine einzige Stimme. Ihr Stimmrecht kann nicht übertragen oder delegiert werden. Dies schützt davor, dass sich die Macht des Hauses unter einer kleinen Anzahl von Bürgern bündelt.
 
@@ -345,9 +345,9 @@ Die durchdachten Feedback-Schleifen, die in Optimism aufgebaut wurden, sind ungl
 
 Wir sind fast bereit, über Optimism zu regieren 🔴. Es gibt aber noch eine letzte Sache zu erwähnen.
 
-Die Vision von Optimism bleibt nicht bei einer einzigen `L2` Blockchain stehen. Aufgrund der Fähigkeit, eine Blockchain mittels einer `Gabelung` [fork] zu spalten, ist dies ein klonbares Experiment zur Regierungsführung. Diese Technologie ist so konzipiert, dass sie über mehrere L2s hinweg skaliert werden kann - und sogar auf Szenarien zur Regierungsführung in der realen Welt übertragen werden kann. Optimism nennt diese Eigenschaft **"The Superchain"**.
+Die Vision von Optimism bleibt nicht bei einer einzigen `L2` Blockchain stehen. Aufgrund der Fähigkeit, eine Blockchain mittels einer `Gabelung` [fork] zu spalten, ist dies ein klonbares Experiment zur Regierungsführung. Diese Technologie ist so konzipiert, dass sie über mehrere L2s hinweg skaliert werden kann - und sogar auf Szenarien zur Regierungsführung in der realen Welt übertragen werden kann. Optimism nennt diese Eigenschaft **"Die Superchain"**.
 
-Coinbase, eine prominente `CEX`, hat bereits eine solche Gabelung vollzogen und begonnen zu dieser `Open-Source` Initiative beizutragen, mittels der L2 Blockchain namens Base 🔵. Durch die gemeinsame Nutzung von Entwicklungsressourcen wird die Entwicklung der Infrastruktur vorangetrieben, während die L2-Transaktionsgebühren dem Ethos "Auswirkung = Gewinn" zugute kommen.
+Coinbase, eine prominente `CEX`, hat bereits eine solche Gabelung vollzogen und begonnen zu dieser `quelloffenen` [open source] Initiative beizutragen, mittels der L2 Blockchain namens Base 🔵. Durch die gemeinsame Nutzung von Entwicklungsressourcen wird die Entwicklung der Infrastruktur vorangetrieben, während die L2-Transaktionsgebühren dem Ethos "Auswirkung = Gewinn" zugute kommen.
 
 Die RetroPGF-Belohnungen enthalten jetzt auch Gewinne aus den Transaktionsgebühren von Base 🔵 - das bedeutet mehr Mittel für `öffentliche Güter`!
 
@@ -355,7 +355,7 @@ Die RetroPGF-Belohnungen enthalten jetzt auch Gewinne aus den Transaktionsgebüh
 
 Die Geschichte wurde schon immer von den Optimisten der Menschheit geprägt - denjenigen, die es wagten, groß zu denken und zu handeln, um ihre Vision zu verwirklichen.
 
-Indem wir uns in innovativen Gemeinschaften engagieren, `vertrauensfreie` und faire Systeme zur Regierungsführung nutzen, sind wir wegweisend für die Zukunft der menschlichen Koordination. Wir bauen eine Welt auf, in der die Menschheit in lokalen, globalen und Online-Systemen gedeihen kann. Es ist an der Zeit, unsere Reise zum Thema Regierungsführung von Optimism zu beginnen.
+Indem wir uns in innovativen Gemeinschaften engagieren, `vertrauensfreie` [trustless] und faire Systeme zur Regierungsführung nutzen, sind wir wegweisend für die Zukunft der menschlichen Koordination. Wir bauen eine Welt auf, in der die Menschheit in lokalen, globalen und Online-Systemen gedeihen kann. Es ist an der Zeit, unsere Reise zum Thema Regierungsführung von Optimism zu beginnen.
 
 Die heutige Aufgabe lautet **, dem Token-Haus beizutreten und unsere OP-Token zu delegieren**.
 
