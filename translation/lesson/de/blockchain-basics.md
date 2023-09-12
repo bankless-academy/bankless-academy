@@ -29,7 +29,7 @@ ________________________________________________________________________________
 
 # Einführung
 
-Die `Blockchain`-Technologie ist ein revolutionäres Verfahren zur Speicherung und Verfolgung von Daten und macht diese Daten gleichzeitig für jeden zugänglich. Es handelt sich dabei um eine Möglichkeit, Daten aller historischen Transaktionen in einer einzigen öffentlich zugänglichen Liste zu organisieren, die jeder einsehen, aber nicht bearbeiten kann. Diese öffentliche Liste der Transaktionen wird als Blockchain `Register` [Ledger] bezeichnet.
+Die `Blockchain`-Technologie ist ein revolutionäres Verfahren zur Speicherung und Verfolgung von Daten und macht diese Daten gleichzeitig für jeden zugänglich. Es handelt sich dabei um eine Möglichkeit, Daten aller historischen Transaktionen in einer einzigen öffentlich zugänglichen Liste zu organisieren, die jeder einsehen, aber nicht bearbeiten kann. Diese öffentliche Liste der Transaktionen wird als Blockchain `Register` [ledger] bezeichnet.
 
 Nachdem wir die Ebenen einer Blockchain untersucht haben, werden wir ein Blockchain-Tool namens `Block Explorer` verwenden, um die Besonderheiten der Ethereum-Blockchain-Struktur zu untersuchen; wir werden in die Ethereum-Blockchain hineinzoomen, um die **Liste** der Blöcke, die **Transaktionen** innerhalb dieser Blöcke und die **Details** jeder einzelnen Transaktion zu sehen.
 
@@ -115,7 +115,7 @@ Was macht eine Blockchain dezentralisiert?
 
 # Block Anatomie
 
-Ein wichtiges Merkmal von Blockchains ist, dass frühere Transaktionsdaten nicht mehr geändert werden können, nachdem sie in einen Block aufgenommen wurden. Das liegt daran, dass jeder Block einen einzigartigen sogenannten `Blockhash` hat, der wie ein Fingerabdruck verwendet wird, um die Blöcke miteinander zu verbinden. Niemand kann vergangene Transaktionen ändern, ohne diesen Fingerabdruck und den Fingerabdruck JEDES darauf folgenden Blocks zu verändern, da jeder Fingerabdruck vom vorherigen abhängt.
+Ein wichtiges Merkmal von Blockchains ist es, dass frühere Transaktionsdaten nicht mehr geändert werden können, nachdem sie in einen Block aufgenommen wurden. Das liegt daran, dass jeder Block einen einzigartigen sogenannten `Blockhash` hat, der wie ein Fingerabdruck verwendet wird, um die Blöcke miteinander zu verbinden. Niemand kann vergangene Transaktionen ändern, ohne diesen Fingerabdruck und den Fingerabdruck JEDES darauf folgenden Blocks zu verändern, da jeder Fingerabdruck vom vorherigen abhängt.
 
 So ist jeder `Block` einfach eine Gruppierung von Transaktionen, die in einer Datei gemeinsam mit dem `Blockhash` zusammengefasst werden. Die Blöcke sind miteinander verkettet, da jeder Block auf den eindeutigen Fingerabdruck des vorherigen Blocks verweist, um eine zusammenhängende Block_**chain**_ [Kette von Blöcken] zu bilden.
 
@@ -179,7 +179,7 @@ Eine `Adresse` ist eine öffentliche Kennung, die jeder in der Blockchain einseh
 
 Bei Ethereum beginnt eine Adresse immer mit _0x__________ und besteht aus 42 Zeichen aus Zahlen und Buchstaben, die aus dem `öffentlichen Schlüssel` [public key] dieser Adresse abgeleitet sind.
 
-Wenn wir eine einzelne Transaktion in einer Block-Suchmaschine [Explorer] betrachten, können wir die Adresse vom Absender [From:] und die des Adressaten [To:] sehen. Dies verrät uns nicht, wer die _Personen_ sind, die diese Adressen kontrollieren, aber es ermöglicht jedem Benutzer, die Bewegungen der Kryptowährung im Blockchain-Register [Ledger] zu verfolgen.
+Wenn wir eine einzelne Transaktion in einem Block Explorer [Suchmaschine] betrachten, können wir die Adresse vom Absender [From:] und die des Adressaten [To:] sehen. Dies verrät uns nicht, wer die _Personen_ sind, die diese Adressen kontrollieren, aber es ermöglicht jedem Benutzer, die Bewegungen der Kryptowährung im Blockchain-Register zu verfolgen.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/user-addresses-e9456d37.svg)
 
@@ -189,5 +189,5 @@ Was gilt für Blockchain-Adressen?
 
 - [ ] Sie sind die öffentlichen Kennung verschiedener Personen oder Organisationen auf einer Blockchain
 - [ ] Sie beginnen immer mit _0x_ auf Ethereum
-- [ ] Wer den privaten Schlüssel [Private Key] für eine Adresse besitzt, kann über die Mittel dieser Adresse verfügen
-- Alle oben genannten Punkte
+- [ ] Wer den privaten Schlüssel für eine Adresse besitzt, kann über die Mittel dieser Adresse verfügen
+- [ ] Alle oben genannten Punkte
