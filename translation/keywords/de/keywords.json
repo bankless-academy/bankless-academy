@@ -11,7 +11,7 @@
   },
   "address": {
     "keyword": "Adresse",
-    "keyword_plural": "addresss",
+    "keyword_plural": "Adressen",
     "definition": "Einzigartige öffentliche Kennung für eine Entität in einer Blockchain."
   },
   "aggregator": {
@@ -51,18 +51,18 @@
   },
   "block": {
     "keyword": "Block",
-    "keyword_plural": "Blocks",
+    "keyword_plural": "Blöcke",
     "definition": "Eine Gruppe von Transaktionen auf der Blockchain."
   },
   "block explorer": {
     "keyword": "Block Explorer",
-    "keyword_plural": "block explorers",
+    "keyword_plural": "Block Explorers",
     "definition": "Suchmaschine und Werkzeug, um Blockchain-Daten zu untersuchen."
   },
   "block hash": {
-    "keyword": "block hash",
-    "keyword_plural": "block hashs",
-    "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
+    "keyword": "Blockhash",
+    "keyword_plural": "Blockhashs",
+    "definition": "Der eindeutige Bezeichner für jede Blockdatei. Jeder neue Block bezieht sich auf den Block-Hash des vorherigen Blocks, um die verbundene Blockchain, bestehend aus einer einzigen Datei, zu bilden."
   },
   "block producer": {
     "keyword": "Blockproduzenten",
@@ -81,7 +81,7 @@
   },
   "blockchain": {
     "keyword": "Blockchain",
-    "keyword_plural": "blockchains",
+    "keyword_plural": "Blockchains",
     "definition": "Eine gemeinsame, unveränderliche Datenbank oder ein Register mit aufgezeichneten Transaktionen."
   },
   "blockchain architecture": {
@@ -170,9 +170,9 @@
     "definition": "Principle that no single authority or entity should control the blockchain data."
   },
   "decentralized": {
-    "keyword": "decentralized",
-    "keyword_plural": "decentralizeds",
-    "definition": "No single authority or entity controls the data."
+    "keyword": "dezentralisiert",
+    "keyword_plural": "dezentralisierte",
+    "definition": "Keine einzelne Behörde oder Einrichtung kontrolliert die Daten."
   },
   "decentralized exchange": {
     "keyword": "decentralized exchange",
@@ -210,9 +210,9 @@
     "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
   },
   "digital signature": {
-    "keyword": "digital signature",
-    "keyword_plural": "digital signatures",
-    "definition": "The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space."
+    "keyword": "digitale Signatur",
+    "keyword_plural": "digitale Signaturen",
+    "definition": "Der einzigartige Identifikator für jeden Benutzer, der die Funktion persönlicher Stempel oder physischer Signaturen im digitalen Raum bedient."
   },
   "earn": {
     "keyword": "earn",
@@ -331,8 +331,8 @@
   },
   "ledger": {
     "keyword": "Register",
-    "keyword_plural": "ledgers",
-    "definition": "Die Aufzeichnung aller Transaktionen, die jemals stattgefunden haben."
+    "keyword_plural": "Register",
+    "definition": "[Ledger] Die Aufzeichnung aller Transaktionen, die jemals stattgefunden haben."
   },
   "lender": {
     "keyword": "lender",
@@ -450,9 +450,9 @@
     "definition": "The amount prices on a DEX change due to the trade size."
   },
   "private key": {
-    "keyword": "private key",
-    "keyword_plural": "private keys",
-    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
+    "keyword": "privaten Schlüssel",
+    "keyword_plural": "private Schlüssel",
+    "definition": "Ein privater Schlüssel ermöglicht den Zugang zu deiner Wallet, damit du Kryptowährungen an andere Adressen senden kannst."
   },
   "proof of stake": {
     "keyword": "Proof of Stake",
@@ -465,9 +465,9 @@
     "definition": "Blockchain Consensus algorithms that rely on “work” done by miners competing to create valid blocks by proposing blocks and seeing if each one has a valid hash."
   },
   "public": {
-    "keyword": "public",
-    "keyword_plural": "publics",
-    "definition": "Public blockchains allow anyone to view the blockchain ledger."
+    "keyword": "öffentlich",
+    "keyword_plural": "öffentlichen",
+    "definition": "Öffentliche Blockchains erlauben es jedem, das Blockchain-Register [Ledger] einzusehen."
   },
   "public good": {
     "keyword": "öffentliches Gut",
@@ -475,9 +475,9 @@
     "definition": "Ein öffentliches Gut ist eine Ware oder Dienstleistung, die allen Mitgliedern der Gesellschaft zur Verfügung steht."
   },
   "public key": {
-    "keyword": "public key",
-    "keyword_plural": "public keys",
-    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you."
+    "keyword": "öffentlichen Schlüssel",
+    "keyword_plural": "öffentliche Schlüssel",
+    "definition": "Ein öffentlicher Schlüssel ist deine Adresse. Er gibt anderen einen Bezugspunkt, um Krypto-Assets an dich zu senden."
   },
   "recovery phrase": {
     "keyword": "recovery phrase",
@@ -626,7 +626,7 @@
   },
   "transaction": {
     "keyword": "Transaktion",
-    "keyword_plural": "transactions",
+    "keyword_plural": "Transaktionen",
     "definition": "Eine Aufzeichnung einer Übertragung, ob monetär oder anderweitig, auf der Blockchain."
   },
   "transaction finality": {
@@ -635,9 +635,9 @@
     "definition": "The time it takes to be sure that a transaction is valid and final, meaning it won't be reversed or changed."
   },
   "transaction hash": {
-    "keyword": "transaction hash",
-    "keyword_plural": "transaction hashs",
-    "definition": "The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions."
+    "keyword": "Transaktionshash",
+    "keyword_plural": "Transaktionshashs",
+    "definition": "Die eindeutige Kennung für jede Transaktion; sie wird aus den Transaktionsdaten, der digitalen Signatur des Transaktionsabsenders und einer einmalig verwendeten Nummer abgeleitet, um doppelte Transaktionen zu vermeiden."
   },
   "transaction throughput": {
     "keyword": "transaction throughput",
