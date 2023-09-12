@@ -158,7 +158,7 @@ Optimism `L2` 経済の中心には **'Optimistic Flywheel'** があります。
 
 Vitalik Buterinが言ったように、 _「役に立つものよりも役に立つものに同意する方が簡単です。」_
 
-この分配モデルは、 **「レトロアクティブ公共財ファンディング」**、または **「RetroPGF」**として知られている。 この資金調達の仕組みは、optimisticな人たちに、人類に役立つ公共財をビルドするインセンティブを与えます。 It liberates us from the value-extraction mindset of traditional capitalist economies.
+この分配モデルは、 **「レトロアクティブ公共財ファンディング」**、または **「RetroPGF」**として知られている。 この資金調達の仕組みは、optimisticな人たちに、人類に役立つ公共財をビルドするインセンティブを与えます。 伝統的な資本主義経済の価値を高める考え方から解放されるのです
 
 ![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
 
