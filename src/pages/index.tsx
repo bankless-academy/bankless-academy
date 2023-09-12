@@ -162,7 +162,7 @@ const HomePage = (): JSX.Element => {
                   </Heading>
                   <Text fontSize="lg" mt="2">
                     {t(
-                      `Collect badges and other on-chain rewards for successfully finishing lessons and quests.`
+                      `Collect badges and other onchain rewards for successfully finishing lessons and quests.`
                     )}
                   </Text>
                 </Card>
@@ -238,7 +238,7 @@ const HomePage = (): JSX.Element => {
                           {t(`Explore NFTs`)}
                         </Heading>
                         {t(
-                          `Explore the on-chain property rights movement, and the emerging use-cases for this technology.`
+                          `Explore the onchain property rights movement, and the emerging use-cases for this technology.`
                         )}
                       </Box>
                     </Box>
@@ -374,7 +374,7 @@ const HomePage = (): JSX.Element => {
                     </Heading>
                     <Text fontSize="lg" mt="2">
                       {t(
-                        `Anyone can help improve Bankless Academy. Help us by providing feedback on Beta lessons and your on-chain Reviewer badge will make sure we won’t forget it.`
+                        `Anyone can help improve Bankless Academy. Help us by providing feedback on Beta lessons and your onchain Reviewer badge will make sure we won’t forget it.`
                       )}
                     </Text>
                     <Box

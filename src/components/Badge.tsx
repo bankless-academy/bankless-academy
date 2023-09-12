@@ -28,7 +28,7 @@ const Badge = ({
   // TODO: TRANSLATE
   const share = `I've just claimed my "${
     lesson.name
-  }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
+  }" onchain credential at @${TWITTER_ACCOUNT} 🎉
 ${
   IS_WHITELABEL
     ? `${DOMAIN_URL}/lessons/${lesson.slug}`
