@@ -1,9 +1,9 @@
 ---
-TITLE: Optimism Governance
-DESCRIPTION: Claim your first piece of network ownership and start voting onchain!
-LANGUAGE: English
+TITLE: Optimism ガバナンス
+DESCRIPTION: 最初のネットワークオーナーシップを獲得し、オンチェーン投票を開始しましょう！
+LANGUAGE: 英語
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: Yuki, outtawraith
 LINK: https://app.banklessacademy.com/lessons/optimism-governance
 FORMAT: LESSON
 ---
@@ -27,139 +27,138 @@ ________________________________________________________________________________
 
 ---
 
-# Old Problems, New Tools
+# 古き課題、新しい解決法
 
-Modern technology has drastically changed the way in which humans view and interact with each other. On the world stage, and in a borderless cyberspace, we need new coordination models in order to coexist and thrive as a global tribe.
+現代のテクノロジーは、人と人の見方や付き合い方を劇的に変えました。 世界で、そして国境のないサイバー空間で、グローバルに共存し繁栄するためには、新たな協調モデルが必要です。
 
-The vision of `DAO` technology is to streamline problem-solving and debate between a large number of collaborators — whether on the internet, in your local community, or on an international scale. This is done by:
+`DAO`テクノロジーのビジョンは、インターネット上、地域コミュニティ、国際的規模などで、多くの問題解決と議論を効率化することです。 これは次のような方法で行われます：
 
-- Incentivizing participants to share a common mission.
-- Innovative voting, `delegation`, and `veto` mechanics.
-- Using blockchain technology to decrease the potential for human error or hijacking.
+- 参加者が共通のミッションを共有するようにインセンティブを与える
+- 新しい投票法、 `代議員権、`、 `拒否権、` メカニズム
+- ブロックチェーン技術を利用して、人為的ミスや乗っ取りの可能性を減らす
 
 ![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
 
-# Network Governance
+# ネットワークガバナンス
 
-Like any traditional nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but `asynchronous`, global, and partially mediated by code.
+国家と同様に、DAOはガバナンスプロセスを使用してリソースの展開とミッションの達成を遂行します。 町内会のようなものですが、 `非同期で、`、グローバルで、コードによって部分的に仲介されます。
 
-📜 **Proposal:** It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘`DAO`’.
+📜 **提案：** ガバナンスの提案とコミュニティーの議論から始まります。 提案はパブリックフィードバックに基づいて更新されます。 誰でも企画案を提出することができ、批評することもできます。 これは「`DAO`」の分散型の部分です。
 
-🗳️ **Vote:** The proposal moves to a vote — hosted via the transparent, censorship-resistant process of `onchain governance`. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘`DAO`’ — a quality envisioned to eventually cover the entire governance process.
+🗳️ **投票:**: `オンチェーンガバナンス`の透明性のある検閲に強いプロセスを介してホストされます。 投票期間中に人間が介することなく、すべてコードによって行われます。 これは、「`DAO`」の自律的部分です。これは、最終的にガバナンスプロセス全体をカバーするために想定されるレベルです。
 
-🛠️ **Implementation:** The approved proposal is applied to the network, by various incentivized developers if necessary.
+🛠️ **実装:** 承認された提案は、必要に応じて様々なインセンティブを与えられた開発者によってネットワークに適用されます。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
 
 # Knowledge Check 1
 
-How can onchain governance help to solve interhuman debate?
+オンチェーンガバナンスは、議論を解決するためにどのように役立つのか？
 
-- [ ] Automation
+- [ ] 自動化
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ これは事実ですが、それだけが答えではありません。
 
-- [ ] Transparency
+- [ ] 透明性
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ これも事実ですが、それだけが答えではありません。
 
-- [ ] Censorship-resistance
+- [ ] 検閲性
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ これも事実ですが、それだけが答えではありません。
 
-- [ ] All of the above
+- [ ] 上記全て
 
-> ℹ️ Correct! Onchain governance protects the voting process through multiple means.
+> ℹ️ 正解です。 オンチェーンガバナンスは、複数の手段によって投票プロセスを保護します。
 
-# The Optimism Network
+# Optimismネットワーク
 
-`DAOs` like the Optimism Collective are at the frontier of exploring such coordination systems.
+Optimism Collectiveのような`DAO（` ）は、このような協調システムの最前線にいます。
 
-In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.
+このレッスンでは、OptimismがDAOビジョンをどのように開拓しているかを探ります。 彼らのミッションと、未来の人類のための新しいフレームワークを構築しているかについて紹介します。
 
-Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!
+イーサリアムと人間の協調の未来を築く手助けができるように、最初の投票権を獲得することに焦点を当てましょう。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
 
-# The Optimistic Vision
+# Optimisticビジョン
 
-Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It’s part of the Ethereum ecosystem, but with lower fees and faster transactions — while maintaining Ethereum’s high standard of security. Here are the defining properties:
+Optimismのミッションは、 `L2` ネットワークを構築することでイーサリアムをスケールさせることです。 イーサリアムのエコシステムの一部でありながら、イーサリアムの高水準のセキュリティを維持しつつ、より低い手数料とより高速なトランザクションを実現しています。 以下がその特徴です：
 
-🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. A public good is something that benefits everyone in a community, while one person's use of it doesn't reduce its availability for others. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
+🏕️ **公共財：** 資金調達とオンチェーン`公共財`の構築を重視。 公共財とは、コミュニティーのすべての人に恩恵をもたらすものであり、ある人がそれを利用したからといって、他の人がそれを利用する機会が減ることはありません。 Bankless Academyの無料レッスンは、Optimismの公共財のサポートによって可能になりました。
 
-🧑‍🤝‍🧑 **Community Governance:** The network is lead by its community.
+🧑‍🤝‍🧑 **コミュニティガバナンス：** ネットワークはコミュニティが主導。
 
-🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
+🏠 **自由市場:** イーサリアムの`ブロックスペース`だけでなく、イーサリアムの原則の拡張として開始。 イーサリアムのパーミッションレス、オープンソース、検閲耐性のあるマーケットプレイスを拡張することを目的としています。
 
-Optimism aims to become a “district of cyberspace” that directly provides for — and is governed by — its citizens!
+Optimismは、市民に直接サービスを提供し、市民によって統治されるサイバースペースを目指しています。
 
 # Knowledge Check 2
 
-Which of the following is NOT a public good?
+次のうち、公共財でないものはどれでしょうか？
 
-- [ ] Education
+- [ ] 教育
 
-> ℹ️ Education can benefit everyone, and one person’s use doesn’t reduce its availability.
+> ℹ️ 教育は誰にとっても有益なものであり、ある人が利用したからといって、その利用可能性が減るわけではありません。
 
-- [ ] The Internet
+- [ ] インターネット
 
-> ℹ️ The internet can benefit everyone, and one person’s use doesn’t reduce its availability.
+> ℹ️ インターネットはすべての人に恩恵をもたらすものであり、ある人が利用したからといって、その利用可能性が減るわけではありません。
 
-- [ ] Ethereum
+- [ ] イーサリアム
 
-> ℹ️ Ethereum can benefit everyone, and — with Layer 2s — one person’s use doesn’t reduce its availability.
+> ℹ️ イーサリアムはすべての人に利益をもたらすことができ、L2があれば、1人の利用がその可用性を低下させることはありません。
 
-- [ ] A Centralized Exchange
+- [ ] 中央集権取引所
 
-> ℹ️ Correct. While CEXs provide community benefits, they are private businesses.
+> ℹ️ 正解です。 CEXはコミュニティに利益をもたらす一方で、民間企業でもあります。
 
-# Progressive Decentralization
+# 分散化の進展
 
-Many great blockchain projects begin with a centralized group. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization**. On Optimism, the founders, network, and community are thought of as follows:
+多くの優れたブロックチェーンプロジェクトは中央集権化されたグループから始まります。 これにより、プロジェクトの構築と支出に重点を置くことができますが、 `DAO` は、 **DAOは分散化の約束だけでは不十分です。** Optimismにおいて、創設者、ネットワーク、コミュニティは以下のように考えられます。
 
-- 🏦 **Optimism Foundation:** The network founders. They kickstart the ecosystem, provide initial resources, and act as community steward, before eventually dissolving.
-- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts and processing of user input.
-- 👬 **Optimism Collective:** The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem. The term ‘DAO’ covers both the Collective and the Network.
+- 🏦 **Optimism財団** ：ネットワーク創設者。 エコシステムをスタートさせ、最初のリソースを提供し、最終的に解散する前にコミュニティの管理をしています。
+- 🌐 **Optimism Network:** ブロックチェーン上の自律コード — スマートコントラクトとユーザー入力の処理。
+- 👬 **Optimism Collective：** 統治するコミュニティ; 多様なグローバル参加者の集まり。 彼らはエコシステムを長期的に所有し、管理する責任があります。 DAOという用語は、コレクティブとネットワークの両方を表しています。
 
-Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow **transfer of network ownership to the community**.
+コレクティブが財団のメンバーを解任することができるなど、法的なチェックとバランスにより、ネットワークの所有権がコミュニティに**ゆっくりと移譲されます。**
 
 ![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
 
 # Knowledge Check 3
 
-True or false? The Optimism Foundation will continue to guide the Optimism Collective over the network’s lifetime.
+問題。 Optimism Foundationはネットワークの一生にわたるOptimism Collectiveを引き続きガイドする。
 
-- [ ] True
+- [ ] 正しい
 
-> ℹ️ Try again!
+> ℹ️ もう一度考えてみましょう！
 
-- [ ] False
+- [ ] 誤り
 
-> ℹ️ Correct! The Foundation will eventually dissolve, and the Collective will continue the mission.
+> ℹ️ 正解です。 財団は最終的に解散し、コレクティブはミッションを継続します。
 
-# A New Economy
+# 新しい経済
 
-At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.
+Optimism `L2` 経済の中心には **'Optimistic Flywheel'** があります。 この経済サイクルは、収益、ネットワークの成長、およびOptimimsのミッションに向けた進歩を生み出します。
 
-1. Users and `dApps` demand network `blockspace`.
-2. The network generates revenue via transaction fees.
-3. A portion of these taxes are awarded to builders providing impactful public goods infrastructure.
-4. Network users gain access to free resources and services, increasing the value of OP blockspace.
+1. ユーザーと `dApps` はネットワーク `ブロックスペース` を必要とします。
+2. このネットワークは、取引手数料によって収益を上げています。
+3. これらの一部は、重要な公共財インフラを提供するビルダーに付与されます。
+4. ネットワークユーザーは、無料のリソースとサービスにアクセスでき、OPブロックスペースの価値を高めます。
 
-With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!
+より貴重なオンチェーンインフラにより、Optimismブロックスペースの需要が増加し、サイクルが継続します。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
 
-# Incentivizing Public Goods
+# 公共財へのインセンティブ
 
-As you can see, `public goods` infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.
+`公共財` インフラはOptimismの中心にあります。 しかし、資金調達に値するプロジェクトを選ぶことは簡単ではありません。
 
-Here, Optimism takes an ‘**Impact = Profit**’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.
+ここで、Optimimsmは「**インパクト＝利益**」というアプローチを取ります。 しかし、インパクトを予測するのは難しいです。 予測を行うのではなく、定期的に既存のプロジェクトを調べ、歴史的な成果に基づいてレトロアクティブな資金を割り当てます。
 
-As Vitalik Buterin said,
-_“It’s easier to agree on what was useful than what will be useful.”_
+Vitalik Buterinが言ったように、 _「役に立つものよりも役に立つものに同意する方が簡単です。」_
 
-This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
+この分配モデルは、 **「レトロアクティブ公共財ファンディング」**、または **「RetroPGF」**として知られている。 この資金調達の仕組みは、optimisticな人たちに、人類に役立つ公共財をビルドするインセンティブを与えます。 It liberates us from the value-extraction mindset of traditional capitalist economies.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
 
@@ -258,7 +257,7 @@ Anyone can become a Token House delegate on Optimism, representing a group of fr
 
 # A Note on Token Distribution…
 
-Network governance is only as democratic as its initial `token distribution`. We should always ask “who received voting power in the first place?” and “how much did they receive?”. 
+Network governance is only as democratic as its initial `token distribution`. We should always ask “who received voting power in the first place?” and “how much did they receive?”.
 
 Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
 
@@ -296,7 +295,7 @@ Duties include:
 
 The Citizens’ House also ensures that Token House proposals are mission-aligned, using `veto` mechanics to waive unaligned changes to the network.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-0714976e.svg)
 
 # Citizens’ House: Joining, Voting, Delegating
 
@@ -332,7 +331,7 @@ How does the Citizens’ House protect the network from attack?
 
 # Governance Seasons
 
-Optimism takes **an iterative approach to governance**, using a calendar structure referred to as ‘Seasons’. 
+Optimism takes **an iterative approach to governance**, using a calendar structure referred to as ‘Seasons’.
 
 By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
 

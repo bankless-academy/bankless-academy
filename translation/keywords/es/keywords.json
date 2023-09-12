@@ -151,6 +151,10 @@
     "keyword": "DeFi",
     "definition": "(DeFi) Conjunto de herramientas financieras de autocustodia, alojadas en una blockchain."
   },
+  "delegate": {
+    "keyword": "delegate",
+    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+  },
   "delegación": {
     "keyword": "delegación",
     "definition": "Otorgar una responsabilidad específica a otra persona, es decir, delegar un poder de voto simbólico."
@@ -301,7 +305,7 @@
   },
   "gobernanza onchain": {
     "keyword": "gobernanza onchain",
-    "definition": "El sistema que media en los cambios de la estructura de una cadena de bloques."
+    "definition": "The automated system that mediates changes to a blockchain’s structure."
   },
   "código abierto": {
     "keyword": "código abierto",

@@ -295,7 +295,7 @@ Les devoirs comprennent :
 
 The Citizens’ House also ensures that Token House proposals are mission-aligned, using `veto` mechanics to waive unaligned changes to the network.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-ea904e00.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-0714976e.svg)
 
 # La Maison des Citoyens : Adhérer, Voter, Déléguer
 

@@ -47,13 +47,13 @@
     "keyword": "Block Explorer",
     "definition": "Suchmaschine und Werkzeug, um Blockchain-Daten zu untersuchen."
   },
-  "block hash": {
-    "keyword": "block hash",
-    "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
+  "blockhash": {
+    "keyword": "Blockhash",
+    "definition": "Der eindeutige Bezeichner für jede Blockdatei. Jeder neue Block bezieht sich auf den Block-Hash des vorherigen Blocks, um die verbundene Blockchain, bestehend aus einer einzigen Datei, zu bilden."
   },
-  "block producer": {
-    "keyword": "block producer",
-    "definition": "The user whose hardware is chosen to verify a block's transactions and begin the next block on most Proof-of-Stake (PoS) blockchains."
+  "blockproduzenten": {
+    "keyword": "Blockproduzenten",
+    "definition": "Der Benutzer, dessen Hardware ausgewählt wird, um die Transaktionen eines Blocks zu verifizieren und den nächsten Block auf den meisten Proof-of-Stake (PoS)-Blockchains zu starten."
   },
   "block reward": {
     "keyword": "block reward",
@@ -93,7 +93,7 @@
   },
   "cex": {
     "keyword": "CEX",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(Centralized Exchange) Eine Plattform, die den Handel mit Kryptowährungen gegen eine Gebühr koordiniert, ähnlich wie eine Börse."
   },
   "chain": {
     "keyword": "chain",
@@ -135,9 +135,9 @@
     "keyword": "Decentralization",
     "definition": "Principle that no single authority or entity should control the blockchain data."
   },
-  "decentralized": {
-    "keyword": "decentralized",
-    "definition": "No single authority or entity controls the data."
+  "dezentralisiert": {
+    "keyword": "dezentralisiert",
+    "definition": "Keine einzelne Behörde oder Einrichtung kontrolliert die Daten."
   },
   "decentralized exchange": {
     "keyword": "decentralized exchange",
@@ -151,21 +151,25 @@
     "keyword": "DeFi",
     "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
   },
+  "delegieren": {
+    "keyword": "delegieren",
+    "definition": "Übertragung einer bestimmten Verantwortung auf eine andere Person, d.h. Delegation von Token, welche Stimmrechte geben."
+  },
   "delegation": {
     "keyword": "Delegation",
     "definition": "Übertragung einer bestimmten Verantwortung auf eine andere Person, d.h. Delegation von Token, welche Stimmrechte geben."
   },
   "dex": {
     "keyword": "DEX",
-    "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
+    "definition": "Decentralized Exchange: Ein Protokoll, das den Austausch von Kryptowährungen ermöglicht, ohne die Mitwirkung Dritter, denen Nutzer vertrauen müssten."
   },
   "dex aggregator": {
     "keyword": "DEX aggregator",
     "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
   },
-  "digital signature": {
-    "keyword": "digital signature",
-    "definition": "The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space."
+  "digitale signatur": {
+    "keyword": "digitale Signatur",
+    "definition": "Der einzigartige Identifikator für jeden Benutzer, der die Funktion persönlicher Stempel oder physischer Signaturen im digitalen Raum bedient."
   },
   "earn": {
     "keyword": "earn",
@@ -176,12 +180,12 @@
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
   "erc-20": {
-    "keyword": "erc-20",
-    "definition": "A standard for transferable tokens on Ethereum."
+    "keyword": "ERC-20",
+    "definition": "Ein Standard für übertragbare Token auf Ethereum."
   },
   "erc-721": {
-    "keyword": "erc-721",
-    "definition": "A standard for non-transferable tokens on Ethereum."
+    "keyword": "ERC-721",
+    "definition": "Ein Standard für nicht übertragbare Token auf Ethereum."
   },
   "ethereum virtual machine": {
     "keyword": "Ethereum Virtual Machine",
@@ -191,9 +195,9 @@
     "keyword": "FOMO",
     "definition": "(Fear Of Missing Out) Anxiety or apprehension about not being included in something."
   },
-  "fork": {
-    "keyword": "fork",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+  "gabelung": {
+    "keyword": "Gabelung",
+    "definition": "Bezieht sich auf eine radikale Änderung in einem Blockchain-Netzwerk, die zu zwei Zweigen führt - einem, der dem vorherigen Protokoll folgt, und einem, der einem neuen Protokoll folgt."
   },
   "fraud proof": {
     "keyword": "fraud proof",
@@ -261,7 +265,7 @@
   },
   "register": {
     "keyword": "Register",
-    "definition": "Die Aufzeichnung aller Transaktionen, die jemals stattgefunden haben."
+    "definition": "[Ledger] Die Aufzeichnung aller Transaktionen, die jemals stattgefunden haben."
   },
   "lender": {
     "keyword": "lender",
@@ -291,9 +295,9 @@
     "keyword": "MEV",
     "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
   },
-  "network governance": {
-    "keyword": "network governance",
-    "definition": "The process by which a decentralized community reaches agreement on network features/upgrades."
+  "regierungsführung des netzwerks": {
+    "keyword": "Regierungsführung des Netzwerks",
+    "definition": "[Network Governance] Der Prozess, durch den eine dezentralisierte Gemeinschaft eine Einigung über Netzwerkfunktionen und -erweiterungen erzielt."
   },
   "nft": {
     "keyword": "NFT",
@@ -305,11 +309,11 @@
   },
   "onchain governance": {
     "keyword": "Onchain Governance",
-    "definition": "Das System, das Änderungen an der Struktur einer Blockchain vermittelt."
+    "definition": "Das automatisierte System, das Änderungen an der Struktur einer Blockchain vermittelt."
   },
   "open source": {
-    "keyword": "open source",
-    "definition": "Software with source code that anyone can inspect, modify, and enhance."
+    "keyword": "Open Source",
+    "definition": "[Quelloffen] Software mit Quellcode, den jeder einsehen, ändern und verbessern kann."
   },
   "optimistic rollup": {
     "keyword": "optimistic rollup",
@@ -355,9 +359,9 @@
     "keyword": "price impact",
     "definition": "The amount prices on a DEX change due to the trade size."
   },
-  "private key": {
-    "keyword": "private key",
-    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
+  "privaten schlüssel": {
+    "keyword": "privaten Schlüssel",
+    "definition": "Ein privater Schlüssel ermöglicht den Zugang zu deiner Wallet, damit du Kryptowährungen an andere Adressen senden kannst."
   },
   "proof of stake": {
     "keyword": "Proof of Stake",
@@ -367,17 +371,17 @@
     "keyword": "Proof of Work",
     "definition": "Blockchain Consensus algorithms that rely on “work” done by miners competing to create valid blocks by proposing blocks and seeing if each one has a valid hash."
   },
-  "public": {
-    "keyword": "public",
-    "definition": "Public blockchains allow anyone to view the blockchain ledger."
+  "öffentlich": {
+    "keyword": "öffentlich",
+    "definition": "Öffentliche Blockchains erlauben es jedem, das Blockchain-Register [Ledger] einzusehen."
   },
   "öffentliches gut": {
     "keyword": "öffentliches Gut",
     "definition": "Ein öffentliches Gut ist eine Ware oder Dienstleistung, die allen Mitgliedern der Gesellschaft zur Verfügung steht."
   },
-  "public key": {
-    "keyword": "public key",
-    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you."
+  "öffentlichen schlüssel": {
+    "keyword": "öffentlichen Schlüssel",
+    "definition": "Ein öffentlicher Schlüssel ist deine Adresse. Er gibt anderen einen Bezugspunkt, um Krypto-Assets an dich zu senden."
   },
   "recovery phrase": {
     "keyword": "recovery phrase",
@@ -389,7 +393,7 @@
   },
   "retropgf": {
     "keyword": "RetroPGF",
-    "definition": "(Retroactive Public Goods Funding) A mechanism for funding projects, based on their historical impact."
+    "definition": "(Retroactive Public Goods Funding) [rückwirkende Finanzierung öffentlicher Güter] Ein Mechanismus zur Finanzierung von Projekten auf der Grundlage ihrer historischen Auswirkungen."
   },
   "rollup": {
     "keyword": "rollup",
@@ -440,8 +444,8 @@
     "definition": "How much can prices change before your trade executes."
   },
   "smart contract": {
-    "keyword": "smart contract",
-    "definition": "Computerized code that execute terms of a contract automatically."
+    "keyword": "Smart Contract",
+    "definition": "[Intelligenter Vertrag] Computergestützter Code, der die Bedingungen eines Vertrags automatisch ausführt."
   },
   "social engineering": {
     "keyword": "social engineering",
@@ -464,16 +468,16 @@
     "definition": "A trade from one token to another."
   },
   "token": {
-    "keyword": "token",
-    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
+    "keyword": "Token",
+    "definition": "Einheiten, die für Vermögenswerte oder Sachverhalte stehen können, die auf einer bestehenden Blockchain aufgebaut sind."
   },
   "token allowance": {
     "keyword": "token allowance",
     "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
   },
-  "token distribution": {
-    "keyword": "token distribution",
-    "definition": "The way in which tokens are allocated across different stakeholder groups."
+  "token-verteilung": {
+    "keyword": "Token-Verteilung",
+    "definition": "Die Art und Weise, wie Token auf die verschiedenen Interessengruppen verteilt werden."
   },
   "token pair": {
     "keyword": "token pair",
@@ -503,17 +507,17 @@
     "keyword": "transaction finality",
     "definition": "The time it takes to be sure that a transaction is valid and final, meaning it won't be reversed or changed."
   },
-  "transaction hash": {
-    "keyword": "transaction hash",
-    "definition": "The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions."
+  "transaktionshash": {
+    "keyword": "Transaktionshash",
+    "definition": "Die eindeutige Kennung für jede Transaktion; sie wird aus den Transaktionsdaten, der digitalen Signatur des Transaktionsabsenders und einer einmalig verwendeten Nummer abgeleitet, um doppelte Transaktionen zu vermeiden."
   },
   "transaction throughput": {
     "keyword": "transaction throughput",
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
   },
-  "trustless": {
-    "keyword": "trustless",
-    "definition": "The quality of operating without need to trust in people or institutions. (Automatic, not owned by any one person)."
+  "vertrauensfrei": {
+    "keyword": "vertrauensfrei",
+    "definition": "[trustless] Die Eigenschaft, ohne Vertrauen in Menschen oder Institutionen zu handeln. (Automatisch, nicht im Besitz einer bestimmten Person)."
   },
   "tvl": {
     "keyword": "TVL",
