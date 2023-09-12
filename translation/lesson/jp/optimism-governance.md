@@ -118,47 +118,47 @@ Optimismは、市民に直接サービスを提供し、市民によって統治
 多くの優れたブロックチェーンプロジェクトは中央集権化されたグループから始まります。 これにより、プロジェクトの構築と支出に重点を置くことができますが、 `DAO` は、 **DAOは分散化の約束だけでは不十分です。** Optimismにおいて、創設者、ネットワーク、コミュニティは以下のように考えられます。
 
 - 🏦 **Optimism財団** ：ネットワーク創設者。 エコシステムをスタートさせ、最初のリソースを提供し、最終的に解散する前にコミュニティの管理をしています。
-- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts and processing of user input.
-- 👬 **Optimism Collective:** The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem. The term ‘DAO’ covers both the Collective and the Network.
+- 🌐 **Optimism Network:** ブロックチェーン上の自律コード — スマートコントラクトとユーザー入力の処理。
+- 👬 **Optimism Collective：** 統治するコミュニティ; 多様なグローバル参加者の集まり。 彼らはエコシステムを長期的に所有し、管理する責任があります。 DAOという用語は、コレクティブとネットワークの両方を表しています。
 
-Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow **transfer of network ownership to the community**.
+コレクティブが財団のメンバーを解任することができるなど、法的なチェックとバランスにより、ネットワークの所有権がコミュニティに**ゆっくりと移譲されます。**
 
 ![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
 
 # Knowledge Check 3
 
-True or false? The Optimism Foundation will continue to guide the Optimism Collective over the network’s lifetime.
+問題。 Optimism Foundationはネットワークの一生にわたるOptimism Collectiveを引き続きガイドする。
 
-- [ ] True
+- [ ] 正しい
 
-> ℹ️ Try again!
+> ℹ️ もう一度考えてみましょう！
 
-- [ ] False
+- [ ] 誤り
 
-> ℹ️ Correct! The Foundation will eventually dissolve, and the Collective will continue the mission.
+> ℹ️ 正解です。 財団は最終的に解散し、コレクティブはミッションを継続します。
 
-# A New Economy
+# 新しい経済
 
-At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.
+Optimism `L2` 経済の中心には **'Optimistic Flywheel'** があります。 この経済サイクルは、収益、ネットワークの成長、およびOptimimsのミッションに向けた進歩を生み出します。
 
-1. Users and `dApps` demand network `blockspace`.
-2. The network generates revenue via transaction fees.
-3. A portion of these taxes are awarded to builders providing impactful public goods infrastructure.
-4. Network users gain access to free resources and services, increasing the value of OP blockspace.
+1. ユーザーと `dApps` はネットワーク `ブロックスペース` を必要とします。
+2. このネットワークは、取引手数料によって収益を上げています。
+3. これらの一部は、重要な公共財インフラを提供するビルダーに付与されます。
+4. ネットワークユーザーは、無料のリソースとサービスにアクセスでき、OPブロックスペースの価値を高めます。
 
-With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!
+より貴重なオンチェーンインフラにより、Optimismブロックスペースの需要が増加し、サイクルが継続します。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
 
-# Incentivizing Public Goods
+# 公共財へのインセンティブ
 
-As you can see, `public goods` infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.
+`公共財` インフラはOptimismの中心にあります。 しかし、資金調達に値するプロジェクトを選ぶことは簡単ではありません。
 
-Here, Optimism takes an ‘**Impact = Profit**’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.
+ここで、Optimimsmは「**インパクト＝利益**」というアプローチを取ります。 しかし、インパクトを予測するのは難しいです。 予測を行うのではなく、定期的に既存のプロジェクトを調べ、歴史的な成果に基づいてレトロアクティブな資金を割り当てます。
 
-As Vitalik Buterin said, _“It’s easier to agree on what was useful than what will be useful.”_
+Vitalik Buterinが言ったように、 _「役に立つものよりも役に立つものに同意する方が簡単です。」_
 
-This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
+この分配モデルは、 **「レトロアクティブ公共財ファンディング」**、または **「RetroPGF」**として知られている。 この資金調達の仕組みは、optimisticな人たちに、人類に役立つ公共財をビルドするインセンティブを与えます。 It liberates us from the value-extraction mindset of traditional capitalist economies.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
 
