@@ -333,19 +333,19 @@ Optimism Foundationがどのように初期ガバナンス力を、バランス�
 
 </strong>Optimimsmは、シーズンと呼ばれるカレンダー構造を用いて、 **ガバナンスへの反復的アプローチを取ります。 </p>
 
-By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
+アクティブなガバナンスと反省の期間の間を経験することにより、参加者は直接経験を得ることができ、その後、現在のガバナンスの実践の消化と議論が行われます。 その後、Optimism財団によってモデルが改良され、次のシーズンが始まります。
 
-On Optimism a season lasts roughly three months, followed by a reflection period of similar length.
+Optimismでは1シーズンはおよそ3カ月で、その後に同じ長さの反省期間が存在します。
 
-These thoughtful feedback loops, built throughout Optimism’s systems, are incredibly important for building governance best practices in `DAO` communities.
+Optimismのシステム全体に構築されているこれらのフィードバックの期間は、 `DAO` コミュニティにおけるガバナンスの未来の実践に向けて、非常に重要です。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
 
-# Now… Think Even Bigger!
+# 現時点 での広い視点
 
-We’re almost ready to govern on Optimism 🔴. There’s one last thing to mention.
+Optimismについての準備が整いました。 最後にもうひとつ言及すべきことがあります。
 
-The Optimistic Vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **‘The Superchain’**.
+Optimisticビジョンは、単一の `L2` ブロックチェーンにとどまりません。 ブロックチェーンを `フォーク` できる結果、これはクローン可能なガバナンス実験となります。 This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **‘The Superchain’**.
 
 Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 L2 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards Optimism’s ‘Impact = Profit’ ethos.
 
