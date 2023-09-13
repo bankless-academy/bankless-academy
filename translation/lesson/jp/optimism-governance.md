@@ -345,21 +345,21 @@ Optimismのシステム全体に構築されているこれらのフィードバ
 
 Optimismについての準備が整いました。 最後にもうひとつ言及すべきことがあります。
 
-Optimisticビジョンは、単一の `L2` ブロックチェーンにとどまりません。 ブロックチェーンを `フォーク` できる結果、これはクローン可能なガバナンス実験となります。 This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **‘The Superchain’**.
+Optimisticビジョンは、単一の `L2` ブロックチェーンにとどまりません。 ブロックチェーンを `フォーク` できる結果、これはクローン可能なガバナンス実験となります。 このテクノロジーは、複数の L2 にまたがって拡張されるように構築されており、現実世界のガバナンスシナリオにも組み込まれています。 Optimismはこれを **The Superchain** と呼びます。
 
-Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 L2 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards Optimism’s ‘Impact = Profit’ ethos.
+`Coinbase`は、Base L2ブロックチェーンを通じて、すでにこの `オープンソース` イニシアチブにフォークし、貢献を始めています。 このように開発リソースを共同でプールすることで、インフラの進化を高めると同時に、L2の取引手数料をOptimismの「インパクト＝利益」の理念に振り分けられます。
 
-RetroPGF rewards now include profits from Base 🔵 transaction fees — which means more funding for `public goods`!
+RetroPGFの報酬には、Baseの取引手数料から得られる利益も含まれるようになり、 `公共財`への資金が増えることにつながります。
 
-# Shaping an Optimistic Future
+# Optimisticな未来を作る
 
-History has always been paved by the optimists of humanity — those that dared to think big, and act to achieve their vision.
+歴史は常に、楽観主義者たちによって切り開かれてきました。大胆に大きなことを考え、ビジョンを達成するために行動した人たちです。
 
-By getting involved in innovative communities, using `trustless` and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.
+革新的なコミュニティに参加し、 `トラストレス` で、公正なガバナンスシステムを使用することで、私たちは人間協調の未来を開拓しています。 ローカル、グローバル、オンラインのシステムで人類が繁栄できる世界を構築しています。 そして今、Optimismガバナンスを始める時です。
 
-Today’s quest is **to join the Token House and delegate our OP tokens**.
+今日のToDoは **トークンハウスに加入し、OPトークンを委譲することです**。
 
-While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
+シチズンハウスはオンボーディング手続きを進めていますが、 [Optimismコミュニティ](https://gov.optimism.io/) フォーラムに参加することで始めることができます。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
 
