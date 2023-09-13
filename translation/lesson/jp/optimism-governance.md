@@ -206,7 +206,7 @@ Optimism Collectiveを構成する2つのハウスがあり、それぞれ独立
 
 # Knowledge Check 5
 
-How does the Citizens’ House differ from the Token House?
+シチズンハウスとトークンハウスはどう違うのでしょうか？
 
 - [ ] The Citizens’ House is the only house with veto abilities.
 
