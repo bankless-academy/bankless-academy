@@ -1,5 +1,5 @@
 ---
-TITLE: Governanza en Optimism
+TITLE: Gobernanza en Optimism
 DESCRIPTION: '¡Reclama tu primera parte de la propiedad de la red y empieza a votar onchain!'
 LANGUAGE: Español
 WRITERS: Tetranome
