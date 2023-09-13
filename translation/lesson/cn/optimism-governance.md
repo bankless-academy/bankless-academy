@@ -1,9 +1,9 @@
 ---
-TITLE: Optimism Governance
-DESCRIPTION: Claim your first piece of network ownership and start voting onchain!
-LANGUAGE: English
+TITLE: Optimism 治理
+DESCRIPTION: 认领您的第一个网络所有权，并开始投票！
+LANGUAGE: 中文 (Chinese Simplified)
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: 183Aaros, TG
 LINK: https://app.banklessacademy.com/lessons/optimism-governance
 FORMAT: LESSON
 ---
@@ -27,57 +27,57 @@ ________________________________________________________________________________
 
 ---
 
-# Old Problems, New Tools
+# 老问题，新工具
 
-Modern technology has drastically changed the way in which humans view and interact with each other. On the world stage, and in a borderless cyberspace, we need new coordination models in order to coexist and thrive as a global tribe.
+现代技术极大地改变了人类的视角和互动方式。 在世界舞台上，在无国界的网络空间中，我们需要新的协调模式，在这个地球村里共存共荣。
 
-The vision of `DAO` technology is to streamline problem-solving and debate between a large number of collaborators — whether on the internet, in your local community, or on an international scale. This is done by:
+`DAO` （去中心化组织）的愿景是简化大量合作者之间的辩论，解决问题 —— 无论是在互联网线上，还是在线下的当地社区，亦或是国际范围内。 具体做法如下：
 
-- Incentivizing participants to share a common mission.
-- Innovative voting, `delegation`, and `veto` mechanics.
-- Using blockchain technology to decrease the potential for human error or hijacking.
+- 激励参与者共同承担使命。
+- 创新的投票、 `授权`和 `否决` 机制。
+- 使用区块链技术，减少人为错误，或是减少被技术劫持的可能性。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
 
-# Network Governance
+# 网络治理
 
-Like any traditional nation-state with resources and participants, a DAO uses a governance process to steer the deployment of its resources and achievement of its mission. It’s like a town hall, but `asynchronous`, global, and partially mediated by code.
+如同传统拥有资源和广泛参与者的传统民族国家一样，DAO 使用治理流程来指导其资源的部署，实现其使命。 它就像一个市政厅，但却是 `异步`的、全球性的，以代码为部分中介。
 
-📜 **Proposal:** It begins with a governance proposal and community discussion. The proposal is updated based on public feedback. Anyone can submit a proposal, or critique one. This is the ‘decentralized’ part of ‘`DAO`’.
+📜 **提案：** 首先是治理提议和社区讨论。 提案根据公众的反馈意见进行更新。 任何人都可以提交提案，或对提案进行点评。 这是 "`DAO`"的 "去中心化 "部分。
 
-🗳️ **Vote:** The proposal moves to a vote — hosted via the transparent, censorship-resistant process of `onchain governance`. There is zero human facilitation between vote open and close; It is all mediated by code. This is the ‘autonomous’ part of ‘`DAO`’ — a quality envisioned to eventually cover the entire governance process.
+🗳️ **投票：** 提案进入投票阶段--通过 `链上治理` 的透明、抗审查程序进行。 开票和关票没有任何人工协助，全部由代码进行操作。 这是 "`DAO`"中的 "自治 "部分 —— 这样高质量的设想最终将覆盖整个治理过程。
 
-🛠️ **Implementation:** The approved proposal is applied to the network, by various incentivized developers if necessary.
+🛠️ **实施：** 经批准的提案将应用于网络，必要时由各种受激励的开发者们实施。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
 
 # Knowledge Check 1
 
-How can onchain governance help to solve interhuman debate?
+链上治理如何帮助解决人与人之间的辩论？
 
-- [ ] Automation
+- [ ] 自动化
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ 这是正确的，但不是唯一的答案。
 
-- [ ] Transparency
+- [ ] 透明度
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ 这是正确的，但不是唯一的答案。
 
-- [ ] Censorship-resistance
+- [ ] 扛审查
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ 这是正确的，但不是唯一的答案。
 
-- [ ] All of the above
+- [ ] 以上皆是
 
-> ℹ️ Correct! Onchain governance protects the voting process through multiple means.
+> ℹ️ 正确！ 链上治理通过多种方式为投票保驾护航。
 
-# The Optimism Network
+# Optimism 网络
 
-`DAOs` like the Optimism Collective are at the frontier of exploring such coordination systems.
+`DAO` 像最优秀的集体一样，处于探索这种协调系统的前沿。
 
-In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.
+在本课中，我们将探讨 Optimism 如何开拓 DAO 的愿景。 我们将了解他们的使命，以及他们如何为人类建立新的协调框架。
 
-Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!
+我们的追求将集中在获得我们的第一个投票权上，这样我们就能为建设以太坊和人类协调的未来做好准备！
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
 
