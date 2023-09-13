@@ -1,6 +1,6 @@
 ---
 TITLE: Gobernanza en Optimism
-DESCRIPTION: '¡Reclama tu primera parte de la propiedad de la red y empieza a votar onchain!'
+DESCRIPTION: '¡Aprende a votar onchain y mintea tu Academy Badge!'
 LANGUAGE: Español
 WRITERS: Tetranome
 TRANSLATORS: OrnellaWeb3
@@ -31,7 +31,7 @@ ________________________________________________________________________________
 
 La tecnología moderna ha cambiado drásticamente la forma en que los seres humanos se ven e interactúan entre sí. En el escenario mundial, y en un ciberespacio sin fronteras, necesitamos nuevos modelos de coordinación para coexistir y prosperar como tribu global.
 
-La visión de la tecnología `DAO` es agilizar la resolución de problemas y el debate entre un gran número de colaboradores, ya sea en Internet, en su comunidad local o a escala internacional. Esto se hace:
+La visión de una `DAO` es agilizar la resolución de problemas y el debate entre un gran número de colaboradores, ya sea en Internet, en su comunidad local o a escala internacional. Esto se hace:
 
 - Incentivando a los participantes para que compartan una misión común.
 - Usando mecánicas de votación innovadoras, delegación``, y veto``.
@@ -47,7 +47,7 @@ Como cualquier estado-nación tradicional con recursos y participantes, un DAO u
 
 🗳️ **Votación:** La propuesta se somete a votación a través de un proceso transparente y resistente a la censura de `onchain governance`. No hay ninguna facilitación humana entre la apertura y el cierre de la votación; todo está mediado por código. Esta es la parte 'autónoma' de '`DAO`' - una cualidad prevista para cubrir eventualmente todo el proceso de gobernanza.
 
-🛠️ **Implementación:** La propuesta aprobada es aplicada a la red por varios desarrolladores vatizados si es necesario.
+🛠️ **Implementación:** La propuesta aprobada es aplicada a la red, incentivando a los desarrolladores si es necesario.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
 
@@ -73,23 +73,23 @@ Como cualquier estado-nación tradicional con recursos y participantes, un DAO u
 
 # La Red de Optimism
 
-`DAO` como el Colectivo Optimism están en la frontera de explorar estos sistemas de coordinación.
+`DAOs` como el Colectivo Optimism están en la frontera explorando estos sistemas de coordinación.
 
-En esta lección, exploraremos cómo Optimism es pionero en la visión DAO. Aprenderemos acerca de su misión y cómo están construyendo nuevos marcos de coordinación para la humanidad.
+En esta lección, exploraremos cómo Optimism es pionero en la visión DAO. Aprenderemos de su misión y el cómo están construyendo nuevos marcos de coordinación para la humanidad.
 
-Nuestra Prueba de Conocimientos se centrará en reclamar nuestros primeros derechos de voto, ¡así estaremos preparados para ayudar a construir el futuro de Ethereum y la coordinación humana!
+Nuestra Prueba de Conocimientos se centrará en reclamar nuestros primeros derechos de voto. ¡Así estaremos preparados para ayudar a construir el futuro de Ethereum y de la coordinación humana!
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
 
 # La Visión Optimista
 
-Optimism tiene una misión: ampliar Ethereum construyendo una red `Layer 2`. Forma parte del ecosistema Ethereum, pero con comisiones más bajas y transacciones más rápidas, manteniendo el alto nivel de seguridad de Ethereum. Estas son las propiedades que lo definen:
+Optimism tiene una misión: ampliar Ethereum construyendo una red `Layer 2 o Capa 2`. Forma parte del ecosistema Ethereum, pero con comisiones más bajas y transacciones más rápidas, manteniendo el alto nivel de seguridad de Ethereum. Estas son las propiedades que lo definen:
 
-🏕️ **Bienes públicos:** Gran énfasis en la financiación y construcción de bienes públicos onchain (en cadena)``. Un bien público es algo que beneficia a todos en una comunidad, mientras que su uso por una persona no reduce su disponibilidad para los demás. Tu educación gratuita en la Academia Bankless ha sido posible gracias al apoyo de Optimism a los bienes públicos!
+🏕️ **Bienes públicos:** Gran énfasis en la financiación y construcción de bienes públicos onchain (en cadena)``. Un bien público es algo que beneficia a todos en una comunidad, mientras que su uso por una persona no reduce su disponibilidad para los demás. Por ejemplo, tu educación gratuita en Bankless Academy ha sido posible gracias al apoyo de Optimism a los bienes públicos!
 
 🧑‍🤝‍🧑 **Gobernanza comunitaria:** La red está dirigida por su comunidad.
 
-🏠 **Mercado libre:** Lanzado como una extensión no sólo del espacio de bloques de Ethereum``, sino de los principios de Ethereum. Su objetivo es ampliar el mercado exento de permisos, de código abierto y resistente a la censura de Ethereum.
+🏠 **Mercado libre:** Optimism no es sólo una extensión del espacio de bloques de Ethereum``, sino de sus principios. Su objetivo es ampliar el mercado de Ethereum: exento de permisos, con código abierto y resistente a la censura.
 
 Optimism aspira a convertirse en un "distrito del ciberespacio" que atiende directamente a sus ciudadanos y es gobernado por ellos.
 
@@ -117,7 +117,7 @@ Optimism aspira a convertirse en un "distrito del ciberespacio" que atiende dire
 
 Muchos grandes proyectos de blockchain comienzan con un grupo centralizado. Esto da al proyecto un enfoque crucial en la construcción y el gasto, pero una DAO `` necesita **más que promesas de descentralización**. En Optimism, los fundadores, la red y la comunidad se conciben de la siguiente manera:
 
-- 🏦 **Fundación Optimism:** Fundadores de la red. Empezaron el ecosistema, proporcionaron recursos iniciales y actuaron como guionista de la comunidad, antes de disolverse.
+- 🏦 **La Fundación Optimism:** Fundadores de la red. Empezaron el ecosistema, proporcionaron recursos iniciales y actúan como guionistas de la comunidad, antes de disolverla.
 - 🌐 **La Red de Optimism:** El código autónomo en la blockchain — los contratos inteligentes y el procesamiento de entradas de los usuarios.
 - 👬 **Colectivo Optimismo:** La comunidad gobernante; un conjunto diverso de participantes globales. Son responsables de la propiedad y gestión a largo plazo del ecosistema. El término "DAO" abarca tanto el Colectivo como la Red.
 
@@ -127,7 +127,7 @@ Los controles y equilibrios legales, como la capacidad del Colectivo para destit
 
 # Knowledge Check 3
 
-¿Verdadero o falso? La Fundación Optimism seguirá guiando al Colectivo Optimismo durante la vida útil de la red.
+¿Verdadero o falso? La Fundación Optimism seguirá guiando al Colectivo Optimism durante la vida útil de la red.
 
 - [ ] Verdadero
 
@@ -141,9 +141,9 @@ Los controles y equilibrios legales, como la capacidad del Colectivo para destit
 
 En el centro de economía`L2` de Optimism, está la **‘Optimistic Flywheel’** o 'Volante de Inercia'. Este ciclo económico genera ingresos, crecimiento de la red y progreso hacia la misión de Optimism.
 
-1. Usuarios y `dApps` demandan `espacio de bloque` de la red.
+1. Usuarios y `dApps` demandan `espacio de bloque` de red.
 2. La red genera ingresos a través de comisiones de transacción.
-3. Una parte de estos impuestos se concede a los constructores que proporcionan infraestructuras de bienes públicos de gran impacto.
+3. Una parte de estos impuestos se concede a quienes construyen infraestructuras de bienes públicos de alto impacto.
 4. Los usuarios de la red acceden a recursos y servicios gratuitos, lo que aumenta el valor del espacio de bloques OP.
 
 Con una infraestructura onchain más valiosa, aumenta la demanda de espacio de bloques Optimism, ¡y el ciclo continúa!
@@ -164,9 +164,9 @@ Este modelo de distribución se conoce como **"Retroactive Public Goods Funding"
 
 # El Fénix de Éter
 
-Optimism llama a este efecto **'Ether's Phoenix'**: un _"ángel que retrocede en el tiempo, recompensando a aquellos que lo invocan"._
+Optimism llama **'Ether's Phoenix'** al siguiente efecto: un _"ángel que retrocede en el tiempo, recompensando a aquellos que lo invocan"._
 
-_"Es un algoritmo que recompensa a los primeros cooperadores que crearon las condiciones para que prosperara la financiación de bienes públicos. Es un futuro en el que se reconoce la inversión temprana en bienes públicos. También es una mentalidad de que: el optimismo prevalece, que sistemas mejores son posibles y que la humanidad será recompensada por su revolución cooperativa."_
+_"Es un algoritmo que recompensa a los primeros cooperadores que crearon las condiciones para que prosperara la financiación de bienes públicos. Es un futuro en el que se reconoce la inversión temprana en bienes públicos. Es una mentalidad que sostiene que: el optimismo prevalece, que los sistemas mejores son posibles y que la humanidad será recompensada por su revolución cooperativa."_
 
 — Fundación Optimism
 
