@@ -164,9 +164,9 @@ Vitalik Buterinが言ったように、 _「役に立つものよりも役に立
 
 # Ether’s Phoenix
 
-Optimism calls this effect **‘Ether’s Phoenix’**: an _“angel reaching backwards in time, rewarding those who summon it.”_
+Optimismはこの効果を **'Ether's Phoenix'**： _「時を遡り、召喚した者に報いを与える天使」_と呼んでいます。
 
-_“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”_
+_Ether's Phoenixは、公共財の資金調達が繁栄するための条件を作成した初期の協力者に報酬を与えるアルゴリズムです。 公共財への早期投資が認められる未来です。 It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”_
 
 — The Optimism Foundation
 
