@@ -166,41 +166,41 @@ Vitalik Buterinが言ったように、 _「役に立つものよりも役に立
 
 Optimismはこの効果を **'Ether's Phoenix'**： _「時を遡り、召喚した者に報いを与える天使」_と呼んでいます。
 
-_Ether's Phoenixは、公共財の資金調達が繁栄するための条件を作成した初期の協力者に報酬を与えるアルゴリズムです。 公共財への早期投資が認められる未来です。 It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”_
+_Ether's Phoenixは、公共財の資金調達が繁栄するための条件を作成した初期の協力者に報酬を与えるアルゴリズムです。 公共財への早期投資が認められる未来です。 Optimismの人類は協力することで起きる革命によって報われるという考え方です。_
 
-— The Optimism Foundation
+- Optimism財団
 
 ![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-f63f460c.svg)
 
 # Knowledge Check 4
 
-How is Optimism incentivizing community-focused economics?
+Optimismはどのようにコミュニティ重視の経済活動を促しているのでしょうか？
 
-- [ ] By rewarding all Optimism projects with retroactive funding.
+- [ ] すべてのOptimismプロジェクトのレトロアクティブな資金調達で報酬を与える。
 
-> ℹ️ Try again! Rewarding all projects regardless of their mission is not Optimism’s approach.
+> ℹ️ もう一度考えてみましょう！ ミッションに関係なくすべてのプロジェクトに報酬を与えることは、Optimismのアプローチではありません。
 
-- [ ] By providing a free market, but on the blockchain.
+- [ ] ブロックチェーン上で自由市場を提供する。
 
-> ℹ️ Try again! Use of blockchain technology alone doesn’t effect economic models.
+> ℹ️ もう一度考えてみましょう！ ブロックチェーン技術の使用だけでは経済モデルには影響しません。
 
-- [ ] By systemically funding business models that improve the lives of all network users.
+- [ ] すべてのネットワークユーザーの生活を向上させるビジネスモデルに体系的に資金を提供する。
 
-> ℹ️ Correct! The network allocates a portion of transaction fees towards funding public goods.
+> ℹ️ 正解です。 ネットワークは、公共財の資金調達に取引手数料の一部を割り当てます。
 
-- [ ] All of the above.
+- [ ] 上記全て。
 
-> ℹ️  Try again! Only one of these is true.
+> ℹ️ もう一度考えてみましょう！ 上記の内の一つだけが正解です。
 
-# Introducing the Governing Houses
+# ハウスの導入
 
-There are two houses that make up the Optimism Collective, each with independent and shared responsibilities in running the network.
+Optimism Collectiveを構成する2つのハウスがあり、それぞれ独立した責任でネットワークを実行しています。
 
-**The Token House** is responsible for managing network upgrades, incentives, and treasury. Its stakeholder structure incentivizes growth of the network economy, and generates stakeholder value. The house is also responsible for preserving decentralization — preventing capture of the network economy.
+**トークンハウス** は、ネットワークのアップグレード、インセンティブ、および財務の管理を担当します。 そのステークホルダー構造は、ネットワーク経済の成長にインセンティブを与え、ステークホルダーの価値を生み出しています。 またハウスは、ネットワーク経済の支配を防ぐために、分散化を維持する責任も持っています。
 
-**The Citizens’ House** allocates `RetroPGF` resources to community projects, according to the ‘Impact = Profit’ ethos, and helps decide the parameters of citizenship. The house is incentivized to improve network quality of life, by funding public goods that improve the value of citizenship!
+**シチズンハウス** は、コミュニティプロジェクトに `RetroPGF` リソースを割り当てます。 「インパクト = 利益」の精神に基づいて、市民権のパラメータを決めるのに役立ちます。 ハウスは市民権の価値を向上させる公共財に資金を提供することによって、生活のネットワークの質を向上させるためにインセンティブを与えられています。
 
-Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. Let’s take a closer look.
+どちらのハウスも、職務、議決の仕組み、 `拒否権` を通じてネットワークのバランスを維持しています。 もっと詳しく見てみましょう。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
 
