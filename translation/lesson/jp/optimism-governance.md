@@ -208,130 +208,130 @@ Optimism Collectiveを構成する2つのハウスがあり、それぞれ独立
 
 シチズンハウスとトークンハウスはどう違うのでしょうか？
 
-- [ ] The Citizens’ House is the only house with veto abilities.
+- [ ] シチズンハウスは、唯一の拒否権を持つハウスである。
 
-> ℹ️ Try again! Both houses have veto powers.
+> ℹ️ もう一度考えてみましょう！ どちらのハウスにも拒否権がある。
 
-- [ ] The Citizens’ House allocates RetroPGF rewards.
+- [ ] シチズンハウスはRetroPGFの報酬を配分する。
 
-> ℹ️ Correct! The Citizens’ House allocates public goods funding.
+> ℹ️ 正解です。 シチズンハウスは公共財の資金を配分する。
 
-- [ ] The Citizens’ House leads network decentralization.
+- [ ] シチズンズハウスはネットワークの分散化をリードしています。
 
-> ℹ️  Try again! Both houses maintain decentralization.
+> ℹ️ もう一度考えてみましょう！ 両ハウスは地方分権を維持する。
 
-- [ ] All of the above.
+- [ ] 上記全て。
 
-> ℹ️  Try again!
+> ℹ️ もう一度考えてみましょう！
 
-# The Token House
+# トークンハウス
 
-The Token House maintains the economy and defenses of the Optimism Network.
+トークンハウスは、Optimismネットワークの経済と防御を維持しています。
 
-Duties include:
+職務内容は以下の通りです：
 
-- ⚒️ Review and approval of **upgrades to network mechanics**.
-- ⛓️ Selection of network `block producers`.
-- 📈 **Allocation of revenue,** using collected transaction fees to fuel network growth.
+- ⚒️ **ネットワークメカニクス** へのアップグレードのレビューと承認。
+- ⛓️ ネットワーク `ブロック生成者` の選択。
+- 📈 **収入の配分、** 収集された取引手数料を使用してネットワークの成長を促進。
 
-To protect the network, the Citizens’ House has the right to `veto` any proposal under the above categories.
+ネットワークを保護するため、シチズンハウスは上記のカテゴリーに属するいかなる提案に対しても、 `拒否権` を持ちます。
 
-The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be reducing rights of token holders.
+トークンハウスは、シチズンハウスから提出された提案を拒否することもできます。 またはOptimism Foundationはトークンホルダーの権利を削減することが見られます。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
 
-# Token House: Joining, Voting, Delegating
+# トークンハウス：参加、投票、委任
 
-📝 **Joining:** the Token House is done via purchasing and holding OP tokens. These are `ERC-20` tokens, and are therefore transferrable; They can be bought and sold on `CEXs`, Optimism `DEXs`, or sent between friends. OP tokens are not available on other networks.
+📝 **参加:** トークンハウスは、OPトークンの購入と保有を通じて行われる。 これらは `ERC-20` トークンであり、したがって譲渡可能です。 `CEXs`、Optimism `DEXs`、または友人間で売買することもできます。 OPトークンは他のネットワークでは利用できません。
 
-🗳️ **Voting:** Voting power scales based on how many tokens are held.
+🗳️ **投票：** トークンの数に応じて投票力が変化する。
 
-The Token House follows [a five week voting cycle](https://community.optimism.io/docs/governance/token-house-history/):
+トークンハウスは、 [5週間の投票サイクル](https://community.optimism.io/docs/governance/token-house-history/) があります。
 
-- Week 1-3: Proposal submission, review, and feedback.
-- Week 4-5: Voting.
+- 1-3週目: 提案、レビュー、フィードバック
+- 4-5週目：投票
 
-📢 **Delegating:** Many users prefer to `delegate` their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.
+📢 **委任：** 多くのユーザーは、 コミュニティの利益を最もよく代表していると思われる他のトークンホルダーに議決権を`委任する`ことを好みます。 これは、投票に参加するすべての提案に目を通すことなく、エコシステムに影響を与える素晴らしい方法です。 委任はトークンの所有権には影響しません。委任されたOPトークンはあなたのウォレットに残ります。
 
-Anyone can become a Token House delegate on Optimism, representing a group of friends, a community, or even a university’s blockchain club! Active delegates are often rewarded by the community.
+誰でもOptimismのトークンハウス代表になることができ、友人グループやコミュニティを代表することもできます。 アクティブな代表者はしばしばコミュニティから報酬を受けます。
 
-# A Note on Token Distribution…
+# トークン配布に関する注意
 
-Network governance is only as democratic as its initial `token distribution`. We should always ask “who received voting power in the first place?” and “how much did they receive?”.
+ネットワークガバナンスは、最初の `トークン配布` と同じくらい民主的です。 「そもそも誰が投票権を受け取ったのか？」と「どのくらい受け取ったのか？」を常に考える必要があります。
 
-Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
+Optimism Foundationがどのように初期ガバナンス力を、バランスの取れたステークホルダーの代表として割り当てているかについては、 [OP分配プラン](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) をご覧ください。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
 
 # Knowledge Check 6
 
-How does the Token House protect the network from attack?
+トークンハウスはどのようにネットワークを攻撃から保護するでしょうか?
 
-- [ ] By selecting a diverse set of network block producers.
+- [ ] ネットワークブロック生成者の多様なセットを選択する。
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ これは事実ですが、答えはそれだけではありません。
 
-- [ ] By vetoing Optimism Foundation proposals seen to be reducing token holder rights.
+- [ ] 拒否することによりOptimism財団の提案は、トークンホルダーの権利を削減する。
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ これは事実ですが、答えはそれだけではありません。
 
-- [ ] By carefully reviewing network upgrade proposals.
+- [ ] ネットワークアップグレードの提案を慎重に検討する。
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ これは事実ですが、答えはそれだけではありません。
 
-- [ ] All of the above.
+- [ ] 上記全て。
 
-> ℹ️  Correct! The Token House has a diverse set of responsibilities in protecting the network.
+> ℹ️ 正解です。 トークンハウスには、ネットワークを保護する上で様々な責任があります。
 
-# The Citizens’ House
+# シチズンハウス
 
-The Citizens’ House conducts the growth of public infrastructure on the Optimism Network. It’s primary focus is managing Retroactive Public Goods Funding.
+シチズンハウスは、Optimismネットワークの公共インフラの成長を行っています。 主な業務は、レトロアクティブ公共財資金の管理です。
 
-Duties include:
+職務内容は以下の通りです：
 
-- 🎯 **Defining RetroPGF metrics and impact criteria** for measuring project performance.
-- 🔍 **Research and allocation of RetroPGF** to community projects which meet the guidelines.
-- 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.
+- 🎯 **プロジェクトのパフォーマンスを測定するために、RetroPGF指標とインパクト基準** を定義。
+- 🔍 **RetroPGF** のガイドラインを満たすコミュニティプロジェクトへの研究と割り当て。
+- 👬 **新たな市民を選出** シチズンハウスを統治し、トークンハウスのバランスをとる。 トークンハウスには、このタイプの提案に対する拒否権があります。
 
-The Citizens’ House also ensures that Token House proposals are mission-aligned, using `veto` mechanics to waive unaligned changes to the network.
+シチズンハウスは、 `拒否` メカニックを使用して、トークンハウスの提案がミッションアライメントされていることを保証します。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
 
-# Citizens’ House: Joining, Voting, Delegating
+# トークンハウス：参加、投票、委任
 
-📝 **Joining:** The Citizens’ House currently adds members by invitation, to slowly scale and refine its processes. Membership is marked by holding a ‘Citizen Badge’ — a non-transferable `ERC-721` token.
+📝 **参加：** シチズンハウスは現在、徐々に規模を拡大し、プロセスを洗練させるため、招待制で会員を増やしています。 メンバーシップは、譲渡不可の `ERC-721` トークン「シチズンバッジ」を所持することになります。
 
-The specifics of invitations change seasonally based on experimentation by the Optimism Foundation:
+招待の具体的な内容は、Optimism Foundationの実験に基づいてシーズンごとに変化します。
 
-- Current Citizens may be granted an additional invitation, to be shared with someone they see as a great addition to the network.
-- Previous RetroPGF recipients have been granted the opportunity to select one community member for Citizen status.
-- The Optimism Foundation has issued Citizenship to project builders using the network.
+- 現在の市民は、ネットワークにとって良い人を招くために追加の招待を受けることができるかもしれません。
+- これまでのRetroPGFの受賞者には、コミュニティメンバーの中から1人を市民として選ぶ機会が与えられています。
+- Optimism財団は、ネットワークを使用してビルダーをプロジェクトするために市民権を発行しています。
 
-As the scaling methods are refined, growth will be automated via `onchain governance`.
+スケーリング方法が洗練されるにつれて、 `オンチェーンガバナンス`を介して成長が自動化されます。
 
-🗳️ **Voting:** Each Citizen has a single vote. Their voting power cannot be transferred or delegated. This protects against gathering of House power under a small number of Citizens.
+🗳️ **投票：** 各市民は1票を持つ。 投票権は譲渡または委任することはできません。 これは少数の市民の下でハウスの力の収集から保護します。
 
-At present, RetroPGF distribution occurs roughly twice per year.
+現在、RetroPGF分配は年間約2回行われております。
 
 # Knowledge Check 7
 
-How does the Citizens’ House protect the network from attack?
+トークンハウスはどのようにネットワークを攻撃から保護するでしょうか?
 
-- [ ] By expanding the number of Citizens’ House members.
+- [ ] シチズンハウスのメンバー数を拡大する。
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ これは事実ですが、答えはそれだけではありません。
 
-- [ ] By vetoing unaligned Token House proposals.
+- [ ] トークンハウスの提案を拒否する。
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ これは事実ですが、答えはそれだけではありません。
 
-- [ ] Both of the above.
+- [ ] 上記全て。
 
-> ℹ️  Correct! This house diversifies its own perspective, and balances Token House perspective.
+> ℹ️ 正解です。 このハウスは独自の視点を多様化し、トークンハウスの視点とのバランスを取っています。
 
-# Governance Seasons
+# ガバナンスシーズン
 
-Optimism takes **an iterative approach to governance**, using a calendar structure referred to as ‘Seasons’.
+</strong>Optimimsmは、シーズンと呼ばれるカレンダー構造を用いて、 **ガバナンスへの反復的アプローチを取ります。 </p>
 
 By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
 
