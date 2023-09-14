@@ -172,411 +172,411 @@
   "decentralized": {
     "keyword": "分散的な",
     "keyword_plural": "分散的な",
-    "definition": "No single authority or entity controls the data."
+    "definition": "単一の権限やエンティティがデータを管理することはない"
   },
   "decentralized exchange": {
-    "keyword": "decentralized exchange",
-    "keyword_plural": "decentralized exchanges",
-    "definition": "(DEX) A protocol that facilitates exchange without requiring trusted intermediaries."
+    "keyword": "分散型取引所",
+    "keyword_plural": "分散型取引所",
+    "definition": "信頼できる仲介者を必要とせずに交換を容易にするプロトコル"
   },
   "decentralized finance": {
-    "keyword": "Decentralized Finance",
-    "keyword_plural": "Decentralized Finances",
-    "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
+    "keyword": "分散型金融",
+    "keyword_plural": "分散型金融",
+    "definition": "ブロックチェーン上でホストされる、セルフカストディファイナンスツールのセット"
   },
   "defi": {
     "keyword": "DeFi",
-    "keyword_plural": "DeFis",
-    "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
+    "keyword_plural": "DeFi",
+    "definition": "ブロックチェーン上でホストされているセルフカストディファイナンスツール"
   },
   "delegate": {
-    "keyword": "delegate",
-    "keyword_plural": "delegates",
-    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+    "keyword": "委任",
+    "keyword_plural": "委任者",
+    "definition": "特定の責任を他者に与えること、形だけの議決権を委任すること"
   },
   "delegation": {
-    "keyword": "delegation",
-    "keyword_plural": "delegations",
-    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+    "keyword": "委任",
+    "keyword_plural": "委任",
+    "definition": "特定の責任を他者に与えること、形だけの議決権を委任すること"
   },
   "dex": {
     "keyword": "DEX",
     "keyword_plural": "DEXs",
-    "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
+    "definition": "分散型取引所：信頼できる仲介者を必要とせずに交換を促進するプロトコル"
   },
   "dex aggregator": {
-    "keyword": "DEX aggregator",
-    "keyword_plural": "DEX aggregators",
-    "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
+    "keyword": "DEXアグリゲーター",
+    "keyword_plural": "DEXアグリゲーター",
+    "definition": "複数のソースからのDEX流動性を1つのインターフェースに組み合わせたプロトコル"
   },
   "digital signature": {
-    "keyword": "digital signature",
-    "keyword_plural": "digital signatures",
-    "definition": "The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space."
+    "keyword": "デジタル署名",
+    "keyword_plural": "デジタル署名",
+    "definition": "デジタル空間における個人スタンプまたは物理的な署名の機能を提供する各ユーザーの固有の識別子"
   },
   "earn": {
-    "keyword": "earn",
-    "keyword_plural": "earns",
-    "definition": "Contributing value in exchange for rewards ; money verb on the skill cube."
+    "keyword": "収入",
+    "keyword_plural": "収入",
+    "definition": "報酬と引き換えに価値を提供する"
   },
   "epoch": {
-    "keyword": "Epoch",
-    "keyword_plural": "Epochs",
-    "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
+    "keyword": "エポック",
+    "keyword_plural": "エポック",
+    "definition": "特定のブロックチェーンに特定の数のブロックが含まれるまでにかかる時間"
   },
   "erc-20": {
     "keyword": "erc-20",
-    "keyword_plural": "erc-20s",
-    "definition": "A standard for transferable tokens on Ethereum."
+    "keyword_plural": "erc-20",
+    "definition": "イーサリアム上の譲渡可能なトークンのためのスタンダード"
   },
   "erc-721": {
     "keyword": "erc-721",
-    "keyword_plural": "erc-721s",
-    "definition": "A standard for non-transferable tokens on Ethereum."
+    "keyword_plural": "erc-721",
+    "definition": "イーサリアムにおける譲渡不可能なトークンのスタンダード"
   },
   "ethereum virtual machine": {
-    "keyword": "Ethereum Virtual Machine",
-    "keyword_plural": "Ethereum Virtual Machines",
-    "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network."
+    "keyword": "イーサリアム仮想マシン",
+    "keyword_plural": "イーサリアム仮想マシン",
+    "definition": "スマートコントラクトを実行し、イーサリアムネットワークの状態を計算するソフトウェアの一部"
   },
   "fomo": {
     "keyword": "FOMO",
-    "keyword_plural": "FOMOs",
-    "definition": "(Fear Of Missing Out) Anxiety or apprehension about not being included in something."
+    "keyword_plural": "FOMO",
+    "definition": "何かに参加できないことへの不安や恐れ"
   },
   "fork": {
-    "keyword": "fork",
-    "keyword_plural": "forks",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+    "keyword": "フォーク",
+    "keyword_plural": "フォーク",
+    "definition": "ブロックチェーンネットワークの根本的な変更で、1つは以前のプロトコルに従ったもの、もう1つは新しいプロトコルに従ったものという2つの分岐が生じること"
   },
   "fraud proof": {
-    "keyword": "fraud proof",
-    "keyword_plural": "fraud proofs",
-    "definition": "Evidence that a transaction is invalid and that fraud has occurred."
+    "keyword": "不正証明",
+    "keyword_plural": "不正証明",
+    "definition": "トランザクションが無効で詐欺が発生していることの証拠"
   },
   "gas": {
-    "keyword": "gas",
-    "keyword_plural": "gass",
-    "definition": "Transaction fees for blockchain networks."
+    "keyword": "ガス",
+    "keyword_plural": "ガス",
+    "definition": "ブロックチェーンネットワークの取引手数料"
   },
   "gasless transactions": {
-    "keyword": "gasless transactions",
-    "keyword_plural": "gasless transactionss",
-    "definition": "A transaction that pays gas using some of the token to be traded rather than the native coin of the blockchain network."
+    "keyword": "ガスなし取引",
+    "keyword_plural": "ガスなし取引",
+    "definition": "ブロックチェーンネットワークのネイティブコインではなく、いくつかのトークンを使用してガスを支払うトランザクション"
   },
   "gwei": {
     "keyword": "gwei",
-    "keyword_plural": "gweis",
-    "definition": "A unit used on Ethereum blockchain, equivalent to 0.000000001 ETH (one billionth), used commonly to describe gas prices."
+    "keyword_plural": "gwei",
+    "definition": "イーサリアムのブロックチェーンで使用される単位で、0.000000001 ETH（10億分の1）に相当し、ガス価格を表すために一般的に使用される"
   },
   "hardware wallet": {
-    "keyword": "hardware wallet",
-    "keyword_plural": "hardware wallets",
-    "definition": "A type of non-custodial wallet that stores private keys offline in a physical hardware device."
+    "keyword": "ハードウェアウォレット",
+    "keyword_plural": "ハードウェアウォレット",
+    "definition": "ノンカストディアルウォレットの一種で、物理的なハードウェアデバイスに秘密鍵をオフラインで保管する"
   },
   "hash": {
-    "keyword": "hash",
-    "keyword_plural": "hashs",
-    "definition": "A digital fingerprint for information."
+    "keyword": "ハッシュ",
+    "keyword_plural": "ハッシュ",
+    "definition": "情報のデジタル指紋"
   },
   "hashing function": {
-    "keyword": "hashing function",
-    "keyword_plural": "hashing functions",
-    "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
+    "keyword": "ハッシュ関数",
+    "keyword_plural": "ハッシュ関数",
+    "definition": "一方向のみの計算が容易な関数で、入力をリバースエンジニアリングすることはほぼ不可能であり、与えられた入力に対してユニークな出力を機能的に保証する"
   },
   "hodl": {
     "keyword": "HODL",
-    "keyword_plural": "HODLs",
-    "definition": "(Hold On for Dear Life) Crypto slang for not selling crypto no matter what the market conditions are."
+    "keyword_plural": "HODL",
+    "definition": "俗語で、市場の状況がどうであれクリプトを売らないこと"
   },
   "hot wallet": {
-    "keyword": "hot wallet",
-    "keyword_plural": "hot wallets",
-    "definition": "A type of non-custodial wallet that is perpetually connected to the internet."
+    "keyword": "ホットウォレット",
+    "keyword_plural": "ホットウォレット",
+    "definition": "インターネットに永続的に接続されているノンカストディアルウォレットの一種"
   },
   "intermediary token": {
-    "keyword": "intermediary token",
-    "keyword_plural": "intermediary tokens",
-    "definition": "A token that is part of the middle of a trade route, not the starting or ending token."
+    "keyword": "仲介トークン",
+    "keyword_plural": "仲介トークン",
+    "definition": "取引ルートの途中にあるトークンで、始点や終点にあるトークンではない"
   },
   "invest": {
-    "keyword": "invest",
-    "keyword_plural": "invests",
-    "definition": "The act of buying a coin/token that uses DeFi technology."
+    "keyword": "投資",
+    "keyword_plural": "投資",
+    "definition": "DeFi技術を使用するコイン/トークンを購入する"
   },
   "kyc": {
     "keyword": "KYC",
-    "keyword_plural": "KYCs",
-    "definition": "(Know-Your-Customer) A government-sanctioned user identification process."
+    "keyword_plural": "KYC",
+    "definition": "政府認可のユーザー識別プロセス"
   },
   "l1": {
     "keyword": "L1",
-    "keyword_plural": "L1s",
-    "definition": "Layer 1 refers to a base network such as Bitcoin or Ethereum."
+    "keyword_plural": "L1",
+    "definition": "ビットコインやイーサリアムなどのベースネットワーク"
   },
   "l2": {
     "keyword": "L2",
-    "keyword_plural": "L2s",
-    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
+    "keyword_plural": "L2",
+    "definition": "イーサリアムのセキュリティを継承しつつ、イーサリアムのスケーラビリティを拡張したブロックチェーン"
   },
   "layer 1": {
-    "keyword": "Layer 1",
-    "keyword_plural": "Layer 1s",
-    "definition": "Layer 1 refers to a base network such as Bitcoin or Ethereum."
+    "keyword": "L1",
+    "keyword_plural": "L1",
+    "definition": "ビットコインやイーサリアムなどのベースネットワーク"
   },
   "layer 2": {
-    "keyword": "Layer 2",
-    "keyword_plural": "Layer 2s",
-    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
+    "keyword": "L2",
+    "keyword_plural": "L2",
+    "definition": "イーサリアムのセキュリティを継承しつつ、イーサリアムのスケーラビリティを拡張したブロックチェーン"
   },
   "ledger": {
-    "keyword": "ledger",
-    "keyword_plural": "ledgers",
-    "definition": "The record of all transactions that have ever occurred."
+    "keyword": "台帳...",
+    "keyword_plural": "台帳",
+    "definition": "発生したすべてのトランザクションの記録"
   },
   "lender": {
-    "keyword": "lender",
-    "keyword_plural": "lenders",
-    "definition": "Deposits assets to earn interest."
+    "keyword": "貸し手",
+    "keyword_plural": "貸し手",
+    "definition": "利子を得るために資産を預ける"
   },
   "liquidity": {
-    "keyword": "liquidity",
-    "keyword_plural": "liquiditys",
-    "definition": "The quantity of a token available for trading."
+    "keyword": "流動性",
+    "keyword_plural": "流動性",
+    "definition": "取引可能なトークンの数量"
   },
   "liquidity pool": {
-    "keyword": "liquidity pool",
-    "keyword_plural": "liquidity pools",
-    "definition": "A communal vault of tokens that facilitates permissionless token swaps."
+    "keyword": "流動性プール",
+    "keyword_plural": "流動性プール",
+    "definition": "パーミッションレスなトークン交換を容易にするトークンの共同金庫"
   },
   "lp": {
     "keyword": "LP",
-    "keyword_plural": "LPs",
-    "definition": "(Liquidity Provider) Blockchain users who loan their tokens to protocols in exchange for a share in fees."
+    "keyword_plural": "LP",
+    "definition": "ブロックチェーンユーザーが、手数料の分け前と引き換えにトークンをプロトコルに貸し出す"
   },
   "market cap": {
-    "keyword": "market cap",
-    "keyword_plural": "market caps",
-    "definition": "The total value of a given token, or market sector."
+    "keyword": "市場価格",
+    "keyword_plural": "市場価格",
+    "definition": "特定のトークン、または市場セクターの合計値"
   },
   "meta-aggregator": {
-    "keyword": "meta-aggregator",
-    "keyword_plural": "meta-aggregators",
-    "definition": "A tool that brings together other aggregators into an extra overview layer."
+    "keyword": "メタアグリゲーター",
+    "keyword_plural": "メタアグリゲーター",
+    "definition": "他のアグリゲーターを追加の概要レイヤーにまとめるツール"
   },
   "mev": {
     "keyword": "MEV",
-    "keyword_plural": "MEVs",
-    "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
+    "keyword_plural": "MEV",
+    "definition": "ブロック内のトランザクションを順序付けることによって抽出される値"
   },
   "network governance": {
-    "keyword": "network governance",
-    "keyword_plural": "network governances",
-    "definition": "The process by which a decentralized community reaches agreement on network features/upgrades."
+    "keyword": "ネットワークガバナンス",
+    "keyword_plural": "ネットワークガバナンス",
+    "definition": "分散型コミュニティがネットワーク機能/アップグレードに関する合意に達するプロセス"
   },
   "nft": {
     "keyword": "NFT",
-    "keyword_plural": "NFTs",
-    "definition": "(Non-fungible Token) A token with a unique ID that cannot be replicated, as compared to a fungible token like Ether that has no unique identifier."
+    "keyword_plural": "NFT",
+    "definition": "一意の識別子を持たないEtherのようなファンジブルトークンと比較して、複製できないユニークなIDを持つトークン"
   },
   "non-custodial wallet": {
-    "keyword": "non-custodial wallet",
-    "keyword_plural": "non-custodial wallets",
-    "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets."
+    "keyword": "ノンカストディアルウォレット",
+    "keyword_plural": "ノンカストディアルウォレット",
+    "definition": "秘密鍵のみを管理でき、クリプトを管理できるツール"
   },
   "onchain governance": {
-    "keyword": "onchain governance",
-    "keyword_plural": "onchain governances",
-    "definition": "The automated system that mediates changes to a blockchain’s structure."
+    "keyword": "オンチェーンガバナンス",
+    "keyword_plural": "オンチェーンガバナンス",
+    "definition": "ブロックチェーンの構造への変更を仲介する自動化されたシステム"
   },
   "open source": {
-    "keyword": "open source",
-    "keyword_plural": "open sources",
-    "definition": "Software with source code that anyone can inspect, modify, and enhance."
+    "keyword": "オープンソース",
+    "keyword_plural": "オープンソース",
+    "definition": "誰もが検査、修正、拡張できるソースコードを持つソフトウェア"
   },
   "optimistic rollup": {
-    "keyword": "optimistic rollup",
-    "keyword_plural": "optimistic rollups",
-    "definition": "A layer 2 rollup scaling solution that optimistically assumes all transactions in its “rolled up” transaction are valid until they are proven false by a fraud proof."
+    "keyword": "オプティミスティックロールアップ",
+    "keyword_plural": "オプティミスティックロールアップ",
+    "definition": "L2のロールアップスケーリングソリューションは、不正行為証拠によって偽の証明が行われるまで、そのトランザクション内のすべてのトランザクションがロールアップされると楽観的に想定する"
   },
   "otc": {
     "keyword": "OTC",
-    "keyword_plural": "OTCs",
-    "definition": "(Over the Counter) Trades made directly with private entities."
+    "keyword_plural": "OTC",
+    "definition": "プライベートエンティティと直接行う取引"
   },
   "over the counter": {
-    "keyword": "over the counter",
-    "keyword_plural": "over the counters",
-    "definition": "(OTC) Trades made directly with private entities."
+    "keyword": "カウンター取引",
+    "keyword_plural": "カウンター取引",
+    "definition": "プライベートエンティティと直接行う取引"
   },
   "payment channel": {
-    "keyword": "payment channel",
-    "keyword_plural": "payment channels",
-    "definition": "Allows two parties to transact multiple times without the need for each transaction to be recorded on the blockchain."
+    "keyword": "支払いチャネル",
+    "keyword_plural": "支払いチャネル",
+    "definition": "各トランザクションをブロックチェーンに記録することなく、2つの当事者が複数回取引できるようにすること"
   },
   "peer-to-peer": {
-    "keyword": "peer-to-peer",
-    "keyword_plural": "peer-to-peers",
-    "definition": "A transaction between two parties that does not require a middleman or controlling entity."
+    "keyword": "ピアツーピア",
+    "keyword_plural": "ピアツーピア",
+    "definition": "仲介者または管理エンティティを必要としない2つの当事者間の取引"
   },
   "peg": {
-    "keyword": "peg",
-    "keyword_plural": "pegs",
-    "definition": "Method of maintaining value equivalence between two or more assets."
+    "keyword": "ペグ",
+    "keyword_plural": "ペグ",
+    "definition": "2つ以上の資産間の価値等価性を維持する方法"
   },
   "permissionless": {
-    "keyword": "permissionless",
-    "keyword_plural": "permissionlesss",
-    "definition": "Not requiring the permission of any entity."
+    "keyword": "パーミッションレス",
+    "keyword_plural": "パーミッションレス",
+    "definition": "エンティティの許可を必要としない"
   },
   "phishing": {
-    "keyword": "phishing",
-    "keyword_plural": "phishings",
-    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
+    "keyword": "フィッシング",
+    "keyword_plural": "フィッシング",
+    "definition": "ソーシャルエンジニアリング攻撃の一種で、攻撃者が信頼できる人物や組織を装い、被害者を騙して機密情報を共有させたり、金銭を送金させたりする"
   },
   "poap": {
     "keyword": "POAP",
-    "keyword_plural": "POAPs",
-    "definition": "A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson."
+    "keyword_plural": "POAP",
+    "definition": "レッスンを無事に修了したなど、記録をウォレットに残すためのバッジ"
   },
   "pos": {
     "keyword": "PoS",
-    "keyword_plural": "PoSs",
-    "definition": "Proof of Stake consensus."
+    "keyword_plural": "PoS",
+    "definition": "プルーフ・オブ・ステーク・コンセンサス"
   },
   "price impact": {
-    "keyword": "price impact",
-    "keyword_plural": "price impacts",
-    "definition": "The amount prices on a DEX change due to the trade size."
+    "keyword": "価格への影響",
+    "keyword_plural": "価格への影響:",
+    "definition": "DEX上の金額は、取引サイズによって変更されます。"
   },
   "private key": {
-    "keyword": "private key",
-    "keyword_plural": "private keys",
-    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
+    "keyword": "秘密鍵",
+    "keyword_plural": "秘密鍵",
+    "definition": "クリプトを他のアドレスに送信するために、ウォレットへのアクセスを許可する"
   },
   "proof of stake": {
-    "keyword": "Proof of Stake",
-    "keyword_plural": "Proof of Stakes",
-    "definition": "Blockchain Consensus algorithms that randomly choose a block producer based on a stake each entity has locked into the protocol."
+    "keyword": "PoS",
+    "keyword_plural": "PoS",
+    "definition": "ブロックチェーンコンセンサスアルゴリズムは、各エンティティがプロトコルにロックされているステークに基づいてランダムにブロック生成者を選択する"
   },
   "proof of work": {
-    "keyword": "Proof of Work",
-    "keyword_plural": "Proof of Works",
-    "definition": "Blockchain Consensus algorithms that rely on “work” done by miners competing to create valid blocks by proposing blocks and seeing if each one has a valid hash."
+    "keyword": "PoW",
+    "keyword_plural": "PoW",
+    "definition": "ブロックチェーンのコンセンサスアルゴリズムは、ブロックを提案し、それぞれが有効なハッシュを持つかどうかを確認することで、有効なブロックを作成するために競争するマイナーによる作業に依存している"
   },
   "public": {
-    "keyword": "public",
-    "keyword_plural": "publics",
-    "definition": "Public blockchains allow anyone to view the blockchain ledger."
+    "keyword": "パブリック",
+    "keyword_plural": "パブリック",
+    "definition": "パブリックブロックチェーンは誰でもブロックチェーン台帳を閲覧することができる"
   },
   "public good": {
-    "keyword": "public good",
-    "keyword_plural": "public goods",
-    "definition": "A public good is a commodity or service that is available to all members of society."
+    "keyword": "公共財",
+    "keyword_plural": "公共財",
+    "definition": "社会のすべてのメンバーに利用可能な商品またはサービス"
   },
   "public key": {
-    "keyword": "public key",
-    "keyword_plural": "public keys",
-    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you."
+    "keyword": "公開鍵",
+    "keyword_plural": "公開鍵",
+    "definition": "自身のアドレスで、他の人にクリプトを送信するためのリファレンスポイントを与える"
   },
   "recovery phrase": {
-    "keyword": "recovery phrase",
-    "keyword_plural": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key."
+    "keyword": "リカバリーフレーズ",
+    "keyword_plural": "リカバリーフレーズ",
+    "definition": "ウォレットの公開鍵と秘密鍵を生成するために使用される12〜24単語のリスト"
   },
   "red flag": {
-    "keyword": "red flag",
-    "keyword_plural": "red flags",
-    "definition": "A warning sign of danger."
+    "keyword": "レッドフラッグ",
+    "keyword_plural": "レッドフラッグ",
+    "definition": "危険の警告サイン"
   },
   "retropgf": {
     "keyword": "RetroPGF",
-    "keyword_plural": "RetroPGFs",
-    "definition": "(Retroactive Public Goods Funding) A mechanism for funding projects, based on their historical impact."
+    "keyword_plural": "RetroPGF",
+    "definition": "過去の影響に基づくプロジェクトへの資金調達メカニズム"
   },
   "rollup": {
-    "keyword": "rollup",
-    "keyword_plural": "rollups",
-    "definition": "A layer-2 scaling solution that allows for processing a high number of off-chain transactions and aggregating them in a single, larger on-chain transaction, increasing transaction throughput and lowering costs."
+    "keyword": "ロールアップ",
+    "keyword_plural": "ロールアップ",
+    "definition": "L2スケーリングソリューションは、多数のオフチェーントランザクションを処理し、それらを単一の大きなオンチェーントランザクションに集約することを可能にし、トランザクションのスループットを向上させ、コストを削減する"
   },
   "sandwich attack": {
-    "keyword": "sandwich attack",
-    "keyword_plural": "sandwich attacks",
-    "definition": "A hidden cost for users due to ordering of transactions by block producers."
+    "keyword": "サンドイッチ攻撃",
+    "keyword_plural": "サンドイッチ攻撃",
+    "definition": "ブロック生成者によるトランザクションの順序により、ユーザーには隠れたコストがかかる"
   },
   "scalability": {
-    "keyword": "Scalability",
-    "keyword_plural": "Scalabilitys",
-    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
+    "keyword": "スケーラビリティ",
+    "keyword_plural": "スケーラビリティ",
+    "definition": "ユーザーにとって最小限の混乱で増加する作業、取引、および使用量を処理するブロックチェーンの機能"
   },
   "scam-token": {
-    "keyword": "scam-token",
-    "keyword_plural": "scam-tokens",
-    "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds."
+    "keyword": "スキャムトークン",
+    "keyword_plural": "スキャムトークン",
+    "definition": "投資家の資金を盗む唯一の目的で起動されるクリプトトークン"
   },
   "security": {
-    "keyword": "Security",
-    "keyword_plural": "Securitys",
-    "definition": "Ability of a blockchain to withstand hacking attempts, code exploits, and economic exploits among other attacks, and continue to function as normal."
+    "keyword": "セキュリティ",
+    "keyword_plural": "セキュリティ",
+    "definition": "ブロックチェーンがハッキング、コード搾取、経済的搾取などの攻撃に耐え、通常通り機能し続ける能力"
   },
   "seed phrase": {
-    "keyword": "seed phrase",
-    "keyword_plural": "seed phrases",
-    "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
+    "keyword": "シードフレーズ",
+    "keyword_plural": "シードフレーズ",
+    "definition": "セットアップ時にウォレットによって生成されるランダムな単語のグループであり、いかなる理由があろうとも、シードフレーズを他人と共有してはいけない"
   },
   "settlement layer": {
-    "keyword": "settlement layer",
-    "keyword_plural": "settlement layers",
-    "definition": "The “lowest” level of a blockchain that records the details of asset exchange from finalized transactions. Mainnet Ethereum is the settlement layer for Ethereum layer 2 scaling solutions."
+    "keyword": "決済レイヤー",
+    "keyword_plural": "決済レイヤー",
+    "definition": "確定した取引から資産交換の詳細を記録するブロックチェーンの最下層。メインネットイーサリアムはイーサリアムのL2スケーリングソリューションの決済レイヤー"
   },
   "settlement time": {
-    "keyword": "settlement time",
-    "keyword_plural": "settlement times",
-    "definition": "The time need for a transaction to be confirmed."
+    "keyword": "決済時間",
+    "keyword_plural": "決済時間",
+    "definition": "トランザクションが確認されるまでの時間"
   },
   "sharding": {
-    "keyword": "sharding",
-    "keyword_plural": "shardings",
-    "definition": " The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability."
+    "keyword": "シャーディング",
+    "keyword_plural": "シャーディング",
+    "definition": " スケーラビリティを向上させるために、1つのブロックチェーンを複数のチェーンに分割し、すべてを並行して実行するプロセス"
   },
   "sidechain": {
-    "keyword": "sidechain",
-    "keyword_plural": "sidechains",
-    "definition": "A mechanism that allows for the transfer of assets and transactions from a main blockchain to a separate, parallel blockchain (sidechain)."
+    "keyword": "サイドチェーン",
+    "keyword_plural": "サイドチェーン",
+    "definition": "メインのブロックチェーンから別の並列ブロックチェーン（サイドチェーン）に資産や取引を移転できる仕組み"
   },
   "slippage": {
-    "keyword": "slippage",
-    "keyword_plural": "slippages",
-    "definition": "A change in buy price that helps your trade to execute."
+    "keyword": "スリッページ",
+    "keyword_plural": "スリッページ",
+    "definition": "取引が成立しやすくなる買値の変化"
   },
   "slippage tolerance": {
-    "keyword": "slippage tolerance",
-    "keyword_plural": "slippage tolerances",
-    "definition": "How much can prices change before your trade executes."
+    "keyword": "スリッページの許容範囲",
+    "keyword_plural": "スリッページの許容範囲",
+    "definition": "取引が実行される前に価格がどのくらい変化するか"
   },
   "smart contract": {
-    "keyword": "smart contract",
-    "keyword_plural": "smart contracts",
-    "definition": "Computerized code that execute terms of a contract automatically."
+    "keyword": "スマートコントラクト",
+    "keyword_plural": "スマートコントラクト",
+    "definition": "コントラクトの条件を自動的に実行するコンピューターコード"
   },
   "social engineering": {
-    "keyword": "social engineering",
-    "keyword_plural": "social engineerings",
-    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
+    "keyword": "ソーシャルエンジニアリング",
+    "keyword_plural": "ソーシャルエンジニアリング",
+    "definition": "パスワードやシードフレーズなどの機密情報を共有するように操作する"
   },
   "spend": {
-    "keyword": "spend",
-    "keyword_plural": "spends",
-    "definition": "Using your crypto assets to pay for goods or services."
+    "keyword": "支払",
+    "keyword_plural": "支払",
+    "definition": "クリプトを商品やサービスの支払いに使用する"
   },
   "stake": {
-    "keyword": "stake",
-    "keyword_plural": "stakes",
-    "definition": "The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”."
+    "keyword": "ステーク",
+    "keyword_plural": "ステーク",
+    "definition": "クリプトプロトコルにロックされた金融資産の量で、そのプロトコルに対する誰かの金銭的コミットメント"
   },
   "staking": {
-    "keyword": "staking",
-    "keyword_plural": "stakings",
+    "keyword": "ステーキング",
+    "keyword_plural": "ステーキング",
     "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")."
   },
   "swap": {
