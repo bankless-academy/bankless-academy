@@ -10,14 +10,14 @@
     "definition": "通过控制网络上 51% 以上的区块生成能力来攻击区块链共识。"
   },
   "address": {
-    "keyword": "address",
-    "keyword_plural": "addresss",
-    "definition": "Unique public identifier for an entity on a blockchain."
+    "keyword": "地址",
+    "keyword_plural": "地址",
+    "definition": "区块链上实体的唯一公共标识符。"
   },
   "aggregator": {
-    "keyword": "aggregator",
-    "keyword_plural": "aggregators",
-    "definition": "Tool that combines multiple sources, to offer competitive options."
+    "keyword": "聚合器",
+    "keyword_plural": "聚合器",
+    "definition": "结合多种资源的工具，提供有竞争力的选择。"
   },
   "airdrop": {
     "keyword": "airdrop",
