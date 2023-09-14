@@ -52,61 +52,61 @@
   "block": {
     "keyword": "ブロック",
     "keyword_plural": "ブロック",
-    "definition": "A group of transactions on the blockchain."
+    "definition": "ブロックチェーン上のトランザクションのグループ"
   },
   "block explorer": {
-    "keyword": "block explorer",
-    "keyword_plural": "block explorers",
-    "definition": "Search and exploration tool for blockchain data."
+    "keyword": "ブロックエクスプローラ",
+    "keyword_plural": "ブロックエクスプローラ",
+    "definition": "ブロックチェーンデータの検索と探索ツール"
   },
   "block hash": {
-    "keyword": "block hash",
-    "keyword_plural": "block hashs",
-    "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
+    "keyword": "ブロックハッシュ",
+    "keyword_plural": "ブロックハッシュ",
+    "definition": "各ブロックファイルに固有の識別子があり、各新しいブロックは前のブロックのブロックハッシュを参照し、単一ファイル連結ブロックチェーンを形成する"
   },
   "block producer": {
-    "keyword": "block producer",
-    "keyword_plural": "block producers",
-    "definition": "The user whose hardware is chosen to verify a block's transactions and begin the next block on most Proof-of-Stake (PoS) blockchains."
+    "keyword": "ブロック生成者",
+    "keyword_plural": "ブロック生成者",
+    "definition": "ハードウェアがブロックのトランザクションを検証し、ほとんどのPoSブロックチェーンで次のブロックを開始するように選択されたユーザー"
   },
   "block reward": {
-    "keyword": "block reward",
-    "keyword_plural": "block rewards",
-    "definition": "The amount of a blockchain’s native asset given to the proposer of a new valid block."
+    "keyword": "ブロック報酬",
+    "keyword_plural": "ブロック報酬",
+    "definition": "新しい有効なブロックの提案者に与えられたブロックチェーンのネイティブアセットの量"
   },
   "block space": {
-    "keyword": "block space",
-    "keyword_plural": "block spaces",
-    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
+    "keyword": "ブロックスペース",
+    "keyword_plural": "ブロックスペース",
+    "definition": "ブロックチェーン上で、情報の保存やコードの実行に使用できるスペースの量"
   },
   "blockchain": {
-    "keyword": "blockchain",
-    "keyword_plural": "blockchains",
-    "definition": "A shared, unchangeable database, or ledger, of recorded transactions."
+    "keyword": "ブロックチェーン",
+    "keyword_plural": "ブロックチェーン",
+    "definition": "記録されたトランザクションの共有された、変更不可能なデータベース、または元帳"
   },
   "blockchain architecture": {
-    "keyword": "blockchain architecture",
-    "keyword_plural": "blockchain architectures",
-    "definition": "The structures for how data is stored in blockchain technology."
+    "keyword": "ブロックチェーンアーキテクチャ",
+    "keyword_plural": "ブロックチェーンアーキテクチャ",
+    "definition": "ブロックチェーン技術にデータが格納される仕組み"
   },
   "blockchain trilemma": {
-    "keyword": "Blockchain Trilemma",
-    "keyword_plural": "Blockchain Trilemmas",
-    "definition": "The problem describing the need for all 3 blockchain qualities: Security, Scalability, and Decentralization."
+    "keyword": "ブロックチェーンのトリレンマ",
+    "keyword_plural": "ブロックチェーンのトリレンマ",
+    "definition": "セキュリティ、スケーラビリティ、分散化の3つのブロックチェーンのすべての必要性を説明する問題"
   },
   "borrower": {
-    "keyword": "borrower",
-    "keyword_plural": "borrowers",
-    "definition": "Willing to pay interest to lenders in order to borrow assets."
+    "keyword": "借り手",
+    "keyword_plural": "借り手",
+    "definition": "資産を借りるために貸し手に利子を支払うこと"
   },
   "bridge": {
-    "keyword": "bridge",
-    "keyword_plural": "bridges",
-    "definition": "Connection that allows two different blockchain networks to communicate with each other and exchange assets."
+    "keyword": "ブリッジ",
+    "keyword_plural": "ブリッジ",
+    "definition": "2つの異なるブロックチェーンネットワークが互いに通信し、資産を交換することを可能にする接続"
   },
   "censorship-resistant": {
-    "keyword": "censorship-resistant",
-    "keyword_plural": "censorship-resistants",
+    "keyword": "検閲への耐性",
+    "keyword_plural": "検閲への耐性",
     "definition": "No government or company has control to determine what is or is not allowed."
   },
   "centralized exchange": {
