@@ -107,17 +107,17 @@
   "censorship-resistant": {
     "keyword": "検閲への耐性",
     "keyword_plural": "検閲への耐性",
-    "definition": "No government or company has control to determine what is or is not allowed."
+    "definition": "政府も企業も、何が許され、何が許されないかを決めることはできない"
   },
   "centralized exchange": {
-    "keyword": "centralized exchange",
-    "keyword_plural": "centralized exchanges",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "keyword": "中央集権型取引所",
+    "keyword_plural": "中央集権型取引所",
+    "definition": "証券取引所と同様、手数料でクリプト取引を調整するプラットフォーム"
   },
   "cex": {
     "keyword": "CEX",
-    "keyword_plural": "CEXs",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "keyword_plural": "CEX",
+    "definition": "証券取引所と同様、手数料でクリプト取引を調整するプラットフォーム"
   },
   "chain": {
     "keyword": "チェーン",
