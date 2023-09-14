@@ -577,17 +577,17 @@
   "staking": {
     "keyword": "ステーキング",
     "keyword_plural": "ステーキング",
-    "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")."
+    "definition": "一定時間のスマートコントラクトへのクリプトの一部の一時的なコミットメントの利益を得るための交換(報酬)"
   },
   "swap": {
-    "keyword": "swap",
-    "keyword_plural": "swaps",
-    "definition": "A trade from one token to another."
+    "keyword": "スワップ",
+    "keyword_plural": "スワップ",
+    "definition": "あるトークンから別のトークンへのトレード"
   },
   "token": {
-    "keyword": "token",
-    "keyword_plural": "tokens",
-    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
+    "keyword": "トークン",
+    "keyword_plural": "トークン",
+    "definition": "既存のブロックチェーン上に構築された資産や証書を表すことができる単位"
   },
   "token allowance": {
     "keyword": "トークンの割り当て",
@@ -595,49 +595,49 @@
     "definition": "ウォレットとスマートコントラクトの間の合意により、特定のトークンへのアクセスが制限されたり無制限になります。"
   },
   "token distribution": {
-    "keyword": "token distribution",
-    "keyword_plural": "token distributions",
-    "definition": "The way in which tokens are allocated across different stakeholder groups."
+    "keyword": "トークン配布",
+    "keyword_plural": "トークン配布",
+    "definition": "トークンが異なるステークホルダーグループに割り当てられる"
   },
   "token pair": {
-    "keyword": "token pair",
-    "keyword_plural": "token pairs",
-    "definition": "The two associated cryptocurrencies that make up a liquidity pool."
+    "keyword": "トークンペア",
+    "keyword_plural": "トークンペア",
+    "definition": "流動性プールを構成する2つの関連クリプト"
   },
   "tps": {
     "keyword": "TPS",
-    "keyword_plural": "TPSs",
-    "definition": "A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain."
+    "keyword_plural": "TPS",
+    "definition": "ブロックチェーンのスケーラビリティの指標であるTPS、ブロックチェーンが処理する1秒あたりのトランザクション数"
   },
   "trade": {
-    "keyword": "trade",
-    "keyword_plural": "trades",
-    "definition": "Exchanging assets or money for something valuable ; money verb on the skill cube."
+    "keyword": "トレード",
+    "keyword_plural": "トレード",
+    "definition": "資産や金銭を価値あるものと交換する"
   },
   "trade route": {
-    "keyword": "trade route",
-    "keyword_plural": "trade routes",
-    "definition": "What is the path taken from starting token to ending token in a trade."
+    "keyword": "取引ルート",
+    "keyword_plural": "取引ルート",
+    "definition": "トークンの開始から取引でトークンの終了までの経路は何でしょうか。"
   },
   "trade routing": {
-    "keyword": "trade routing",
-    "keyword_plural": "trade routings",
-    "definition": "Planning the path taken from starting token to ending token in a trade."
+    "keyword": "取引ルート",
+    "keyword_plural": "取引ルート",
+    "definition": "トークンの開始から取引でトークンの終了までの経路の計画"
   },
   "transaction": {
-    "keyword": "transaction",
-    "keyword_plural": "transactions",
-    "definition": "A record of transfer, monetary or otherwise, on the blockchain."
+    "keyword": "トランザクション",
+    "keyword_plural": "トランザクション",
+    "definition": "ブロックチェーン上で、転送、金銭的またはその他の記録"
   },
   "transaction finality": {
-    "keyword": "transaction finality",
-    "keyword_plural": "transaction finalitys",
-    "definition": "The time it takes to be sure that a transaction is valid and final, meaning it won't be reversed or changed."
+    "keyword": "トランザクションのファイナリティ",
+    "keyword_plural": "トランザクションのファイナリティ",
+    "definition": "トランザクションが有効かつ最終的であることを確認するのに要する時間で、トランザクションは元に戻されたり変更されたりしない"
   },
   "transaction hash": {
-    "keyword": "transaction hash",
-    "keyword_plural": "transaction hashs",
-    "definition": "The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions."
+    "keyword": "トランザクションハッシュ",
+    "keyword_plural": "トランザクションハッシュ",
+    "definition": "各トランザクションのユニークな識別子で、取引データと取引送信者のデジタル署名と取引の重複を避けるための一回限りの使用番号から派生する"
   },
   "transaction throughput": {
     "keyword": "transaction throughput",
