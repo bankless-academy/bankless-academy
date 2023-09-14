@@ -178,188 +178,188 @@ Optimism 是如何激励以社区为重点的经济学的？
 
 - [ ] 为所有 Optimism 项目提供追溯资金。
 
-> ℹ️ Try again! Rewarding all projects regardless of their mission is not Optimism’s approach.
+> ℹ️ 再试一次！ 不考虑项目的使命而奖励所有项目，这不是 Optimism 的做法。
 
-- [ ] By providing a free market, but on the blockchain.
+- [ ] 提供链上自由市场。
 
-> ℹ️ Try again! Use of blockchain technology alone doesn’t effect economic models.
+> ℹ️ 再试一次！ 单纯使用区块链技术并不会对经济模型造成影响。
 
-- [ ] By systemically funding business models that improve the lives of all network users.
+- [ ] 通过系统地资助商业模型，改善所有网络用户的生活。
 
-> ℹ️ Correct! The network allocates a portion of transaction fees towards funding public goods.
+> ℹ️ 正确！ 网络将部分交易费用用于资助公益事业。
 
-- [ ] All of the above.
+- [ ] 以上皆是.
 
-> ℹ️  Try again! Only one of these is true.
+> ℹ️ 再试一次！ 只有一个是正确的。
 
-# Introducing the Governing Houses
+# 隆重介绍：治理院
 
-There are two houses that make up the Optimism Collective, each with independent and shared responsibilities in running the network.
+Optimism 集体由两个议院组成，在管理网络方面，每个议院都有独立的职责，也有共同的职责。
 
-**The Token House** is responsible for managing network upgrades, incentives, and treasury. Its stakeholder structure incentivizes growth of the network economy, and generates stakeholder value. The house is also responsible for preserving decentralization — preventing capture of the network economy.
+** 代币院（The Token House） ** 负责管理网络升级、奖励和（国库）财政。 其利益相关者结构激励网络经济的发展，并为利益相关者创造价值。 议院还负责维护去中心化程度 —— 防止网络经济被（恶意中心化）俘获。
 
-**The Citizens’ House** allocates `RetroPGF` resources to community projects, according to the ‘Impact = Profit’ ethos, and helps decide the parameters of citizenship. The house is incentivized to improve network quality of life, by funding public goods that improve the value of citizenship!
+** 公民院（The Citizens’ House）** 根据 "影响 = 利润 "的理念，将 `RetroPGF` 资源分配给社区项目，并帮助决定公民的身份参数。 公民院奖励那些改善网络质量的公共产品，为这些产品提供资金。
 
-Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. Let’s take a closer look.
+代币、公民两院通过其职责、投票机制和 `否决权` 能力来保持网络的平衡。 让我们更仔细地看一看。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
 
 # Knowledge Check 5
 
-How does the Citizens’ House differ from the Token House?
+公民院与代币院有什么不同？
 
-- [ ] The Citizens’ House is the only house with veto abilities.
+- [ ] 公民院是唯一拥有否决权的议院。
 
-> ℹ️ Try again! Both houses have veto powers.
+> ℹ️ 再试一次！ 两院都有否决权。
 
-- [ ] The Citizens’ House allocates RetroPGF rewards.
+- [ ] 公民院分配 RetroPGF 奖励。
 
-> ℹ️ Correct! The Citizens’ House allocates public goods funding.
+> ℹ️ 正确！ 公民院分配公共产品资金。
 
-- [ ] The Citizens’ House leads network decentralization.
+- [ ] 公民院领导网络的去中心化进程。
 
-> ℹ️  Try again! Both houses maintain decentralization.
+> ℹ️ 再试一次！ 两院都负责维护网络的去中心化程度。
 
-- [ ] All of the above.
+- [ ] 以上皆是.
 
-> ℹ️  Try again!
+> ℹ️ 再试一次！
 
-# The Token House
+# 代币院
 
-The Token House maintains the economy and defenses of the Optimism Network.
+代币院维护 Optimism 网络的经济和（技术）防御。
 
-Duties include:
+职责包括：
 
-- ⚒️ Review and approval of **upgrades to network mechanics**.
-- ⛓️ Selection of network `block producers`.
-- 📈 **Allocation of revenue,** using collected transaction fees to fuel network growth.
+- ⚒️ 审查和批准 **网络技术升级**.
+- ⛓️ 选择网络的 `区块生产者`.
+- 📈 **收入分配，** 利用收取的交易费促进网络发展。
 
-To protect the network, the Citizens’ House has the right to `veto` any proposal under the above categories.
+为保护网络，公民院有权 `否决` 上述类别下的任何提案。
 
-The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be reducing rights of token holders.
+代币院还可以否决公民院或 Optimism 基金会提交的任何被认为会减少代币持有者权利的提案。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
 
-# Token House: Joining, Voting, Delegating
+# 代币院：加入、投票、授权
 
-📝 **Joining:** the Token House is done via purchasing and holding OP tokens. These are `ERC-20` tokens, and are therefore transferrable; They can be bought and sold on `CEXs`, Optimism `DEXs`, or sent between friends. OP tokens are not available on other networks.
+📝 **加入：** 代币院通过购买和持有 OP 代币完成。 这些是 `ERC-20` 代币，因此可以转让；它们可以在 ` 中心化交易所`、Optimism ` 去中心化交易所 `上买卖，也可以在朋友之间发送。 OP 代币不能在其他网络上使用。
 
-🗳️ **Voting:** Voting power scales based on how many tokens are held.
+🗳️ **投票：** 投票权基于代币持有数增减。
 
-The Token House follows [a five week voting cycle](https://community.optimism.io/docs/governance/token-house-history/):
+代币院根据 [5周投票周期](https://community.optimism.io/docs/governance/token-house-history/) 开展投票
 
-- Week 1-3: Proposal submission, review, and feedback.
-- Week 4-5: Voting.
+- 第 1-3 周：提案提交、审查和反馈。
+- 第 4-5 周：投票。
 
-📢 **Delegating:** Many users prefer to `delegate` their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.
+📢 **委托：** 许多用户喜欢 `将` 投票权委托给他们认为最能代表社区利益的其他代币持有者。 这是对生态系统产生影响而不必阅读每一项表决提案的一个极好的方法。 委托不会影响代币所有权 —— 被委托的 OP 代币将保留在您的钱包中。
 
-Anyone can become a Token House delegate on Optimism, representing a group of friends, a community, or even a university’s blockchain club! Active delegates are often rewarded by the community.
+任何人都可以成为 Optimism 代币院代表，代表一群朋友、一个社区，甚至一所大学的区块链俱乐部！ 积极的代表往往会得到社区的奖励。
 
-# A Note on Token Distribution…
+# 关于代币分发的说明…
 
-Network governance is only as democratic as its initial `token distribution`. We should always ask “who received voting power in the first place?” and “how much did they receive?”.
+网络治理的民主程度取决于其初始 `代币分配`。 我们应该经常质问： "谁首先获得了投票权？"以及 "他们获得了多少投票权？
 
-Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
+请查看 [OP 分配计划](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) ，了解乐观基金会如何分配初始管理权，以实现利益相关者代表的平衡。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
 
 # Knowledge Check 6
 
-How does the Token House protect the network from attack?
+代币院如何保护网络免受攻击？
 
-- [ ] By selecting a diverse set of network block producers.
+- [ ] 选择不同的网络模块开发商。
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ 这是正确的，但不是唯一的答案。
 
-- [ ] By vetoing Optimism Foundation proposals seen to be reducing token holder rights.
+- [ ] 否决、优化减少持有人权利的基金会提案。
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ 这是正确的，但不是唯一的答案。
 
-- [ ] By carefully reviewing network upgrade proposals.
+- [ ] 认真审查网络升级建议。
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ 这是正确的，但不是唯一的答案。
 
-- [ ] All of the above.
+- [ ] 以上皆是。
 
-> ℹ️  Correct! The Token House has a diverse set of responsibilities in protecting the network.
+> ℹ️ 正确！ 代币院在保护网络方面承担着多种责任。
 
-# The Citizens’ House
+# 公民院
 
-The Citizens’ House conducts the growth of public infrastructure on the Optimism Network. It’s primary focus is managing Retroactive Public Goods Funding.
+公民院在 Optimism 上发展公共基础设施。 它的主要重点是管理追溯性公共产品资金。
 
-Duties include:
+职责包括：
 
-- 🎯 **Defining RetroPGF metrics and impact criteria** for measuring project performance.
-- 🔍 **Research and allocation of RetroPGF** to community projects which meet the guidelines.
-- 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.
+- 🎯 **界定 RetroPGF 指标和影响标准** 用于衡量项目绩效。
+- 🔍 **研究并将 RetroPGF** 分配给符合指导方针的社区项目。
+- 👬 **挑选新公民** 帮助管理公民院，平衡代币院的观点。 代币院对此类提案拥有否决权。
 
-The Citizens’ House also ensures that Token House proposals are mission-aligned, using `veto` mechanics to waive unaligned changes to the network.
+公民院还需确保代币院的提案是使命导向的，使用 `否决权` 机制让非使命导向的提案失效。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
 
-# Citizens’ House: Joining, Voting, Delegating
+# 公民院：加入、投票、授权
 
-📝 **Joining:** The Citizens’ House currently adds members by invitation, to slowly scale and refine its processes. Membership is marked by holding a ‘Citizen Badge’ — a non-transferable `ERC-721` token.
+📝 **加入：** 公民院目前通过邀请的方式增加成员，慢慢扩大规模，完善程序。  "公民徽章" 是一种不可转让的 `ERC-721` 通证，持有即可成为公民院的一份子。
 
-The specifics of invitations change seasonally based on experimentation by the Optimism Foundation:
+邀请会根据 Optimism 基金会的实验的情况每个赛季发生变化。
 
-- Current Citizens may be granted an additional invitation, to be shared with someone they see as a great addition to the network.
-- Previous RetroPGF recipients have been granted the opportunity to select one community member for Citizen status.
-- The Optimism Foundation has issued Citizenship to project builders using the network.
+- 现有公民可以获得额外的邀请，与他们认为对网络大有裨益的人分享。
+- 以前的 RetroPGF 获得者有机会选择一名社区成员获得公民身份。
+- Optimism 基金会向使用该网络的项目建设者颁发公民证书。
 
-As the scaling methods are refined, growth will be automated via `onchain governance`.
+随着扩展方法的完善，增长将通过 ` 链上治理 `实现自动化。
 
-🗳️ **Voting:** Each Citizen has a single vote. Their voting power cannot be transferred or delegated. This protects against gathering of House power under a small number of Citizens.
+🗳️ **投票：** 每位公民只有一票。 其表决权不得转让或委托。 这可以防止众议院的权力集中在少数公民手中。
 
-At present, RetroPGF distribution occurs roughly twice per year.
+目前，RetroPGF 大约每年发放两次。
 
 # Knowledge Check 7
 
-How does the Citizens’ House protect the network from attack?
+公民院如何保护网络免受攻击？
 
-- [ ] By expanding the number of Citizens’ House members.
+- [ ] 通过扩大公民院成员的数量。
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ 这是正确的，但不是唯一的答案。
 
-- [ ] By vetoing unaligned Token House proposals.
+- [ ] 否决非使命导向的代币院提案。
 
-> ℹ️ This is true, but it isn’t the only answer.
+> ℹ️ 这是正确的，但不是唯一的答案。
 
-- [ ] Both of the above.
+- [ ] 以上皆是。
 
-> ℹ️  Correct! This house diversifies its own perspective, and balances Token House perspective.
+> ℹ️ 正确！ 公民院的视角更多样化，平衡了代币院的视角。
 
-# Governance Seasons
+# 治理赛季
 
-Optimism takes **an iterative approach to governance**, using a calendar structure referred to as ‘Seasons’.
+Optimism 采用 **一种迭代的治理方法**，使用 "季（赛季）"为日历结构。
 
-By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
+通过在积极治理和反思之间切换，参与者获得了第一手经验，随后对当前的治理做法进行了消化和讨论。 之后，Optimism 基金会将会对模型进行改进，并开始下一季的工作。
 
-On Optimism a season lasts roughly three months, followed by a reflection period of similar length.
+Optimism 的一个赛季大约持续三个月，之后是类似长度的反思期（reflection period ）。
 
-These thoughtful feedback loops, built throughout Optimism’s systems, are incredibly important for building governance best practices in `DAO` communities.
+在整个 Optimism 系统中建立的反馈回路经过反复推敲，这对在 `DAO` 社区里构筑最佳治理实践来说非常重要。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
 
-# Now… Think Even Bigger!
+# 现在... 还可以想得更远！
 
-We’re almost ready to govern on Optimism 🔴. There’s one last thing to mention.
+我们几乎已经准备好治理 Optimism 🔴了。 还有最后一件事要提。
 
-The Optimistic Vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **‘The Superchain’**.
+Optimism 的乐观愿景不会止步于单一的 `L2` 区块链领域。 由于 `fork` 区块链的强大能力，这是一个可复制的治理实验。 该技术可在多个 L2 中使用，甚至可用于现实世界的治理方案。 Optimism 将此 **称为 "超级链（The Superchain）"**。
 
-Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 L2 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards Optimism’s ‘Impact = Profit’ ethos.
+Coinbase 是一家著名的 ` 去中心化交易所 `，已经通过 Base 🔵 L2 区块链分叉并开始为这一 `开源` 计划做出贡献。 这种合作汇集发展资源的方式，在提高基础设施发展水平的同时，也将 L2 交易费用于 Optimism 的 "影响 = 利润 "理念。
 
-RetroPGF rewards now include profits from Base 🔵 transaction fees — which means more funding for `public goods`!
+RetroPGF 的奖励现在包括从 Base🔵 交易费中获得的利润 —— 这意味着有更多资金用于 `公共产品`！
 
-# Shaping an Optimistic Future
+# 塑造乐观的未来
 
-History has always been paved by the optimists of humanity — those that dared to think big, and act to achieve their vision.
+历史总是由人类中的乐观主义者 —— 那些敢想敢做并为实现理想而行动的人铺就的。
 
-By getting involved in innovative communities, using `trustless` and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.
+通过参与创新社区、使用 `、无信任` 和公平治理系统，我们正在开创人类协调的未来。 我们正在建设一个人类能够在本地、全球和线上网络中共同繁荣发展的世界。 是时候开始我们的乐观主义治理之旅了。
 
-Today’s quest is **to join the Token House and delegate our OP tokens**.
+今天的任务是 **，加入代币院并将 OP 代币 委托**。
 
-While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
+在公民院制定入会程序的同时，我们可以通过参与 [Optimism 社区](https://gov.optimism.io/) 论坛上的对话开始我们的公民之旅。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
 
