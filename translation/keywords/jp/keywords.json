@@ -137,41 +137,41 @@
   "collateral": {
     "keyword": "担保",
     "keyword_plural": "担保",
-    "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
+    "definition": "ローンの返済を担保するために、借り手が貸し手に特定の資産を質入れする"
   },
   "consensus": {
-    "keyword": "consensus",
-    "keyword_plural": "consensuss",
-    "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
+    "keyword": "コンセンサス",
+    "keyword_plural": "コンセンサス",
+    "definition": "ブロックチェーンのような分散型コンピュータネットワークを介した合意、信頼、セキュリティ"
   },
   "counterparty risk": {
-    "keyword": "counterparty risk",
-    "keyword_plural": "counterparty risks",
-    "definition": "The risk that another party may not fulfil its part in an agreement."
+    "keyword": "カウンターパーティーリスク",
+    "keyword_plural": "カウンターパーティ・リスク",
+    "definition": "他の当事者が合意の一部を果たさない可能性がある"
   },
   "custodial wallet": {
-    "keyword": "custodial wallet",
-    "keyword_plural": "custodial wallets",
-    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+    "keyword": "カストディアルウォレット",
+    "keyword_plural": "カストディアルウォレット",
+    "definition": "カストディアルウォレットでは、別の当事者が秘密鍵を管理し、クリプトへのアクセスを制御する"
   },
   "dao": {
     "keyword": "DAO",
-    "keyword_plural": "DAOs",
-    "definition": "(Decentralized Autonomous Organization) An organizational structure that uses blockchain technology to automate voting and management."
+    "keyword_plural": "DAO",
+    "definition": "ブロックチェーン技術を使用して投票と管理を自動化する組織体制"
   },
   "dapp": {
     "keyword": "dApp",
     "keyword_plural": "dApps",
-    "definition": "A decentralized application that connects to decentralized networks and protocols."
+    "definition": "分散型ネットワークとプロトコルに接続する分散型アプリケーション"
   },
   "decentralization": {
-    "keyword": "Decentralization",
-    "keyword_plural": "Decentralizations",
-    "definition": "Principle that no single authority or entity should control the blockchain data."
+    "keyword": "分散型",
+    "keyword_plural": "分散型",
+    "definition": "単一の権限やエンティティがブロックチェーンデータを制御する必要はないという原則"
   },
   "decentralized": {
-    "keyword": "decentralized",
-    "keyword_plural": "decentralizeds",
+    "keyword": "分散的な",
+    "keyword_plural": "分散的な",
     "definition": "No single authority or entity controls the data."
   },
   "decentralized exchange": {
