@@ -1,13 +1,13 @@
 {
   "2 factor authentication": {
-    "keyword": "2 Factor Authentication",
-    "keyword_plural": "2 Factor Authentications",
-    "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+    "keyword": "2FA 身份验证",
+    "keyword_plural": "2FA 身份验证",
+    "definition": "一种额外的安全措施，用于确保试图访问在线账户的人就是那个真人。"
   },
   "51% attack": {
-    "keyword": "51% attack",
-    "keyword_plural": "51% attacks",
-    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+    "keyword": "51% 攻击",
+    "keyword_plural": "51% 攻击",
+    "definition": "通过控制网络上 51% 以上的区块生成能力来攻击区块链共识。"
   },
   "address": {
     "keyword": "address",
