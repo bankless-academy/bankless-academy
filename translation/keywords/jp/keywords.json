@@ -1,57 +1,57 @@
 {
   "2 factor authentication": {
-    "keyword": "2 Factor Authentication",
-    "keyword_plural": "2 Factor Authentications",
-    "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+    "keyword": "二段階認証",
+    "keyword_plural": "二段階認証",
+    "definition": "オンラインアカウントにアクセスしようとする人が本人であることを認証するために使用されるセキュリティの追加レイヤー"
   },
   "51% attack": {
-    "keyword": "51% attack",
-    "keyword_plural": "51% attacks",
-    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+    "keyword": "51%攻撃",
+    "keyword_plural": "51%攻撃",
+    "definition": "ネットワーク上のブロック生成力の51％以上を支配することでのブロックチェーンのコンセンサス攻撃"
   },
   "address": {
-    "keyword": "address",
-    "keyword_plural": "addresss",
-    "definition": "Unique public identifier for an entity on a blockchain."
+    "keyword": "アドレス",
+    "keyword_plural": "アドレス",
+    "definition": "ブロックチェーン上のエンティティの固有の公開識別子"
   },
   "aggregator": {
-    "keyword": "aggregator",
-    "keyword_plural": "aggregators",
-    "definition": "Tool that combines multiple sources, to offer competitive options."
+    "keyword": "アグリゲーター",
+    "keyword_plural": "アグリゲーター",
+    "definition": "複数のソースを組み合わせたツールでの競争力のあるオプションの提供"
   },
   "airdrop": {
-    "keyword": "airdrop",
-    "keyword_plural": "airdrops",
-    "definition": "A free distribution of crypto assets to users."
+    "keyword": "エアドロップ",
+    "keyword_plural": "エアドロップ",
+    "definition": "ユーザーへの無料配布"
   },
   "allowance": {
-    "keyword": "allowance",
-    "keyword_plural": "allowances",
-    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
+    "keyword": "割り当て",
+    "keyword_plural": "割り当て",
+    "definition": "通常はスマートコントラクトであるエンティティを許可しており、トランザクションで指定された量のトークンを使用する権利"
   },
   "alternative layer 1": {
-    "keyword": "alternative Layer 1",
-    "keyword_plural": "alternative Layer 1s",
-    "definition": "Layer 1 blockchains other than Ethereum and Bitcoin."
+    "keyword": "代替L1",
+    "keyword_plural": "代替L1",
+    "definition": "イーサリアムとビットコイン以外の L1ブロックチェーン"
   },
   "amm": {
     "keyword": "AMM",
-    "keyword_plural": "AMMs",
-    "definition": "(Automated Market Maker) A trade matchmaking system, based on a public algorithm."
+    "keyword_plural": "AMM",
+    "definition": "(Automated Market Maker) 公開アルゴリズムに基づく取引マッチングシステム"
   },
   "asynchronous": {
-    "keyword": "asynchronous",
-    "keyword_plural": "asynchronouss",
-    "definition": "Communication between multiple collaborators, where participants don’t have to be present at time of messaging."
+    "keyword": "非同期",
+    "keyword_plural": "非同期",
+    "definition": "複数の共同作業者間のコミュニケーションで、参加者はメッセージ送信時にその場にいる必要はない"
   },
   "bet": {
-    "keyword": "bet",
-    "keyword_plural": "bets",
-    "definition": "Risking money in exchange for greater rewards."
+    "keyword": "ベット",
+    "keyword_plural": "ベット",
+    "definition": "より大きな報酬と引き換えにお金を賭ける"
   },
   "block": {
-    "keyword": "Block",
-    "keyword_plural": "Blocks",
+    "keyword": "ブロック",
+    "keyword_plural": "ブロック",
     "definition": "A group of transactions on the blockchain."
   },
   "block explorer": {
@@ -120,23 +120,23 @@
     "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "chain": {
-    "keyword": "chain",
-    "keyword_plural": "chains",
-    "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
+    "keyword": "チェーン",
+    "keyword_plural": "チェーン",
+    "definition": "データのブロックを結合し、変更できないデータベースを形成"
   },
   "coin": {
-    "keyword": "coin",
-    "keyword_plural": "coins",
-    "definition": "The native asset of a blockchain mostly used as a form of currency to facilitate transactions on the network."
+    "keyword": "コイン",
+    "keyword_plural": "コイン",
+    "definition": "ブロックチェーンのネイティブ資産は、主にネットワーク上のトランザクションを容易にするための通貨の一形態として使用される"
   },
   "cold wallet": {
-    "keyword": "cold wallet",
-    "keyword_plural": "cold wallets",
-    "definition": "A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection."
+    "keyword": "コールドウォレット",
+    "keyword_plural": "コールドウォレット",
+    "definition": "ノンカストディアルウォレットの一種で、オフラインで保管され、永続的なインターネット接続を必要としない"
   },
   "collateral": {
-    "keyword": "collateral",
-    "keyword_plural": "collaterals",
+    "keyword": "担保",
+    "keyword_plural": "担保",
     "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
   },
   "consensus": {
@@ -590,9 +590,9 @@
     "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
   },
   "token allowance": {
-    "keyword": "token allowance",
-    "keyword_plural": "token allowances",
-    "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
+    "keyword": "トークンの割り当て",
+    "keyword_plural": "トークンの割り当て",
+    "definition": "ウォレットとスマートコントラクトの間の合意により、特定のトークンへのアクセスが制限されたり無制限になります。"
   },
   "token distribution": {
     "keyword": "token distribution",
