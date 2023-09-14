@@ -640,48 +640,48 @@
     "definition": "各トランザクションのユニークな識別子で、取引データと取引送信者のデジタル署名と取引の重複を避けるための一回限りの使用番号から派生する"
   },
   "transaction throughput": {
-    "keyword": "transaction throughput",
-    "keyword_plural": "transaction throughputs",
-    "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
+    "keyword": "トランザクションスループット",
+    "keyword_plural": "トランザクションスループット",
+    "definition": "ブロックチェーンが一度に処理できるトランザクションの数で、通常は1秒あたりのトランザクション数（TPS）で測定される"
   },
   "trustless": {
-    "keyword": "trustless",
-    "keyword_plural": "trustlesss",
-    "definition": "The quality of operating without need to trust in people or institutions. (Automatic, not owned by any one person)."
+    "keyword": "トラストレス",
+    "keyword_plural": "トラストレス",
+    "definition": "人や機関の信頼を必要とせずに活動できる"
   },
   "tvl": {
     "keyword": "TVL",
-    "keyword_plural": "TVLs",
-    "definition": "(Total Value Locked) The overall amount of asset value stored in a specific place."
+    "keyword_plural": "TVL",
+    "definition": "特定の場所に保管されている資産価値の総量"
   },
   "validating bridge": {
-    "keyword": "validating bridge",
-    "keyword_plural": "validating bridges",
-    "definition": "A validating bridge contract is a new design that removes the need to trust any external authority to decide if a withdrawal is valid."
+    "keyword": "ブリッジの検証",
+    "keyword_plural": "ブリッジの検証",
+    "definition": "検証するブリッジコントラクトは、撤退が有効かどうかを判断するために外部の権限を信頼する必要がなくなる新しいデザイン"
   },
   "veto": {
-    "keyword": "veto",
-    "keyword_plural": "vetos",
-    "definition": "A vote in rejection of a governance proposal."
+    "keyword": "拒否",
+    "keyword_plural": "拒否",
+    "definition": "ガバナンス提案の拒否の投票"
   },
   "wallet": {
-    "keyword": "wallet",
-    "keyword_plural": "wallets",
-    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+    "keyword": "ウォレット",
+    "keyword_plural": "ウォレット",
+    "definition": "ブロックチェーン上でクリプトを送受信するために使用されるアプリケーションまたはデバイス"
   },
   "web3": {
     "keyword": "web3",
-    "keyword_plural": "web3s",
-    "definition": "Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data."
+    "keyword_plural": "web3",
+    "definition": "ブロックチェーン上で動作し、個人データを収益化することなく誰もが参加できるようにするアプリケーション"
   },
   "zero-knowledge": {
-    "keyword": "Zero-Knowledge",
-    "keyword_plural": "Zero-Knowledges",
-    "definition": "Mathematical method that allows one party to prove a statement is valid without revealing any additional information about it."
+    "keyword": "ゼロ知識",
+    "keyword_plural": "ゼロ知識",
+    "definition": "一方の当事者がステートメントについての追加情報を明らかにすることなく有効であることを証明する数学的手法"
   },
   "zk rollup": {
     "keyword": "zk rollup",
-    "keyword_plural": "zk rollups",
-    "definition": "A layer-2 rollup scaling solution that uses zero-knowledge proofs to guarantee the validity of “rolled up” transactions while maintaining security and privacy on the layer 1 blockchain."
+    "keyword_plural": "zk rollup",
+    "definition": "L2のロールアップスケーリングソリューションで、L1ブロックチェーンのセキュリティとプライバシーを維持しながら、ゼロ知識証明を使用してトランザクションのロールアップの有効性を保証する"
   }
 }
