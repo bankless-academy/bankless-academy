@@ -1,7 +1,7 @@
 ---
-TITLE: Delegating on Optimism
-DESCRIPTION: Grant your OP voting power to people closely following governance.
-LANGUAGE: English
+TITLE: Optimismに基づく委任
+DESCRIPTION: ガバナンスに従う人々にOP投票力を与える
+LANGUAGE: 英語
 WRITERS: Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/delegating-on-optimism
@@ -26,77 +26,77 @@ ________________________________________________________________________________
 ```
 
 ---
-## Key Takeaways
+## 要点
 
-> * Delegation is a voting mechanic that allows a representative — called a ‘Delegate’ — to make votes on another person’s behalf.
+> * 委任とは、「Delegate」と呼ばれる代表者が他の人に代わって投票を行うことを可能にする投票の仕組みです。
 > 
-> * Optimism handles voting and delegation via their ‘Optimism Agora’ `dApp`.
+> * Optimismは、「Optimism Agora」 `dApp`を通じて投票と委任を処理します。
 > 
-> * You will maintain self-custody over delegated OP tokens, able to transfer or sell at any time.
+> * 委任されたOPトークンよりも自己管理を維持し、いつでも転送または販売することができます。
 
-## Introduction
+## はじめに
 
-Delegation is an onchain voting mechanic that allows a community member to temporarily grant their governance voting power to a community representative. This process allows a user to contribute to `network governance`, without having to actively monitor every proposed action or change in the ecosystem.
+委任は、コミュニティメンバーがコミュニティ代表にガバナンスの議決権を一時的に付与することを可能にするオンチェーンの投票の仕組みです。 このプロセスにより、ユーザーは `ネットワークガバナンス`に貢献することができます。 全ての行動やエコシステムの変化を積極的に監視する必要はありません。
 
-On Optimism, governance power is represented by holding OP tokens in a self-custody wallet. OP tokens do not leave your self-custody wallet during delegation. You can transfer or sell them at any time, but your Delegate will only receive the voting power held in your wallet. You can change your community Delegate at any time.
+Optimism では、ガバナンス力はOPトークンをセルフカストディアルウォレットに保持することによって表されます。 OPトークンは委任中にセルフカストディアルウォレットに残りません。 いつでも譲渡または販売することができますが、委任者はウォレットに保持されている議決権のみを受け取ります。 コミュニティの委任はいつでも変更できます。
 
-On Optimism we use a voting dApp called ‘Agora’ to look through eligible Delegates, perform delegation, and monitor proposals. Let’s take a closer look.
+Optimismでは、「Agora」と呼ばれる投票用dAppを使って、適格な代理人を調べ、委任を行い、提案を監視しています。 詳しく見てみましょう。
 
-## Delegating on Optimism Agora
+## Optimism Agoraに基づく委任
 
-**1\. Buy ETH on the Optimism Network.**
+**1\. Optimism NetworkでETHを購入します。**
 
-You can find a step-by-step guide in our Explorer’s Handbook entry, [‘How to fund a Wallet on Layer 2’](https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2).
+Explorer’s Handbookのエントリー、 [「How to fund a Wallet on Layer 2」](https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2)にステップバイステップのガイドがあります。
 
-**2\. Swap your ETH to OP tokens on the Optimism Network, using a** `DEX`.
+**2. ** `DEX`を使用して、ETHをOptimismネットワーク上のOPトークンにスワップします。
 
-Check out our Explorer’s Handbook entry on [‘How to Swap on a Decentralized Exchange’](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) for a step-by-step guide on using a DEX to buy OP tokens.
+DEXを使用してOPトークンを購入するためのステップバイステップガイドについては、Explorer’s Handbookのエントリー [「How to Swap on a Decentralized Exchange」](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange)をご確認ください。
 
-**3\. Open the Optimism Agora dApp: <https://vote.optimism.io/>**
+**3\. Optimism Agora dAppを開きます: <https://vote.optimism.io/>**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
 
-**4\. Connect your wallet.**
+**4\. ウォレットを接続します。**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
-**5\. Scroll down, and choose your favorite Delegate.**
+**5\. 下にスクロールし、お気に入りの代理人を選択します。**
 
-By clicking on a delegate, you will find a short statement, their vote history, and influence measurements. Take your time to find a representative that aligns with your vision for Optimism.
+代理人をクリックすると、簡単な声明、投票履歴、影響力の測定値が表示されます。 時間をかけて、オプティミズムのビジョンに沿った代理人を見つけましょう。
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-6443ae02.png)
 
-**6\. Hit the ‘delegate’ button, and approve the transaction in your wallet.**
+**6\. 「delegate」ボタンを押し、ウォレット内の取引を承認します。**
 
-No OP tokens will leave your wallet throughout this process. There is a small gas fee, charged in ETH.
+OPトークンはこのプロセスを通してウォレットに残りません。 少額のガス代がETHで請求されます。
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-245809cd.png)
 
-## Frequently Asked Questions
+## FAQ
 
-* *How many tokens do I need to delegate?*
+* *委任するにはトークンがいくつ必要でしょうか？*
 
-You can begin delegating while holding any amount of OP tokens — even zero! As you increase or decrease your OP holdings, your delegated voting power will be updated. You don’t have to redelegate every time you make changes to your OP holdings.
+OPトークンをいくら持っていても（ゼロでも）、委任を始めることができます。 保有OPの増減に伴い、委任された議決権も更新されます。 OP保有物を変更するたびに再委任する必要はありません。
 
-* *How do I choose the right delegate?*
+* *適切な代理人を選ぶにはどうすればよろしいでしょうか？*
 
-It comes down to your personal values, and your vision for how you want to see Optimism grow. Take some time to scroll through the Delegate profiles and see what resonates with you.
+それは個人的な価値観と、Optimismの成長をどのように見たいかというビジョンによります。 代理人のプロフィールを確認して、心に響くものを見つけてください。
 
-* *Can I become a Delegate?*
+* *代理人になれるのでしょうか？*
 
-You can! Check out the [‘How to be a delegate’](https://community.optimism.io/docs/governance/delegate/) guide, hosted on Optimism Docs.
+可能です。 Optimism Docsに掲載されている [「How to be a delegate」](https://community.optimism.io/docs/governance/delegate/)をご確認ください。
 
-Note: this won’t count for the [‘Optimism Governance’](https://app.banklessacademy.com/lessons/optimism-governance) lesson quest at Bankless Academy.
+注意: これは、Bankless Academyでの [Optimism Governance](https://app.banklessacademy.com/lessons/optimism-governance) レッスンのクエストには当てはまりません。
 
-* *Do I need to delegate to vote?*
+* *投票を委任する必要がありますか？*
 
-You can skip delegation and represent yourself by tracking votes under the ‘Proposals’ tab on Optimism Agora.
+Optimism Agoraの「Proposals」タブの下で投票を追跡することで、委任をスキップして自分を代表することができます。
 
-Note: this also won’t count for the [‘Optimism Governance’](https://app.banklessacademy.com/lessons/optimism-governance) lesson quest at Bankless Academy, but you can do so once you’ve collected your badge!
+注意: これも、Bankless Academyでの [Optimism Governance](https://app.banklessacademy.com/lessons/optimism-governance) レッスンのクエストには当てはまりません。
 
 
 ---
 
-**Author**
+**作者**
 
-**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+**[Tetranome](https://twitter.com/Tetranome)** は、ユーザーエクスペリエンス、インターフェース、デザイン、コンテンツに焦点を当てたBankless Academyのプロジェクトチャンピオンです。
