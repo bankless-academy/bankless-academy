@@ -81,102 +81,102 @@ ________________________________________________________________________________
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
 
-# The Optimistic Vision
+# Optimism 愿景
 
-Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It’s part of the Ethereum ecosystem, but with lower fees and faster transactions — while maintaining Ethereum’s high standard of security. Here are the defining properties:
+Optimism 的使命是：通过构建 `Layer 2` 网络来扩展以太坊。 它是以太坊生态系统的一部分，但费用更低，交易更快，同时保持了以太坊的高标准安全性。 关键属性如下：
 
-🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. A public good is something that benefits everyone in a community, while one person's use of it doesn't reduce its availability for others. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
+🏕️ **公共产品：** 高度重视资助和建设链上 `公共产品`。 公共产品是一种惠及社区内每个人的产品，一个人使用它并不会减少其他人的使用机会。 正是因为 Optimism 对公共产品的支持，您在 Bankless Academy 的免费教育才得以实现！
 
-🧑‍🤝‍🧑 **Community Governance:** The network is lead by its community.
+🧑‍🤝‍🧑 **社区治理：** 网络由社区领导。
 
-🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
+🏠 **自由市场：** 不仅是以太坊 `区块空间`的延伸，也是以太坊原则的延伸。 它旨在扩大以太坊的无许可、开源、抗审查市场。
 
-Optimism aims to become a “district of cyberspace” that directly provides for — and is governed by — its citizens!
+Optimism 旨在成为一个 "网络空间区"，直接为其公民提供服务，并由其公民管理！
 
 # Knowledge Check 2
 
-Which of the following is NOT a public good?
+以下哪项不是公共产品？
 
-- [ ] Education
+- [ ] 教育
 
-> ℹ️ Education can benefit everyone, and one person’s use doesn’t reduce its availability.
+> ℹ️ 教育可以使每个人受益，某个单一消费者的使用并不会减少其总体的可用性。
 
-- [ ] The Internet
+- [ ] 互联网
 
-> ℹ️ The internet can benefit everyone, and one person’s use doesn’t reduce its availability.
+> ℹ️ 互联网可以造福每个人，某个单一消费者的使用并不会减少互联网的可用性。
 
-- [ ] Ethereum
+- [ ] 以太坊
 
-> ℹ️ Ethereum can benefit everyone, and — with Layer 2s — one person’s use doesn’t reduce its availability.
+> ℹ️ 以太坊可以让每个人受益，而且现在我们有了 L2 层，某个单一消费者的使用不会降低其可用性。
 
-- [ ] A Centralized Exchange
+- [ ] 中心化交易所
 
-> ℹ️ Correct. While CEXs provide community benefits, they are private businesses.
+> ℹ️ 正确。 虽然中心化交易所们可能为社区带来了一些好处，但它们是私营企业。
 
-# Progressive Decentralization
+# 渐进式去中心化
 
-Many great blockchain projects begin with a centralized group. This gives the project crucial focus in building and spending, but a `DAO` needs **more than promises of decentralization**. On Optimism, the founders, network, and community are thought of as follows:
+许多伟大的区块链项目都是从一个中心化小组开始的。 </strong>这让项目在建设和支出方面有了重点，但仅仅是去中心化是不够的， `DAO` 需要更多的承诺 **。 在 Optimism，创始人（founders）、网络（network）和社区（community）的概念如下：</p>
 
-- 🏦 **Optimism Foundation:** The network founders. They kickstart the ecosystem, provide initial resources, and act as community steward, before eventually dissolving.
-- 🌐 **Optimism Network:** The autonomous code on the blockchain — the smart contracts and processing of user input.
-- 👬 **Optimism Collective:** The governing community; a diverse set of global participants. They are responsible for the long term ownership and management of the ecosystem. The term ‘DAO’ covers both the Collective and the Network.
+- 🏦 **Optimism 基金会：** 网络创始者们。 他们启动生态系统，提供初始资源，并在最终解散之前充当社区管理者。
+- 🌐 **Optimism 网络：** 区块链上自动运行的代码 —— 智能合约和用户输入处理。
+- 👬 **Optimism 集体：** 治理社区；由不同的全球参与者组成。 他们负责生态系统的长期所有权和管理。 “DAO”这一术语则同时包含了集体和网络。
 
-Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow **transfer of network ownership to the community**.
+律法检查与制衡机制，如集体有权罢免基金会成员，确保**网络所有权缓慢转移至社区**。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
 
 # Knowledge Check 3
 
-True or false? The Optimism Foundation will continue to guide the Optimism Collective over the network’s lifetime.
+对还是错？ Optimism 主义基金会将在网络的整个生命周期内继续指导 Optimism 集体。
 
-- [ ] True
+- [ ] 正确
 
-> ℹ️ Try again!
+> ℹ️ 再试一次！
 
-- [ ] False
+- [ ] 错误
 
-> ℹ️ Correct! The Foundation will eventually dissolve, and the Collective will continue the mission.
+> ℹ️ 答对啦！ 基金会最终将解散，而集体将继续履行使命。
 
-# A New Economy
+# 新经济
 
-At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**. This economic cycle generates revenue, network growth, and progress towards Optimism’s mission.
+乐观 `L2` 经济的中心是 **"Optimistic 飞轮"**。 这种经济循环带来了收入以及网络的增长，并逐步实现 Optimism 的使命。
 
-1. Users and `dApps` demand network `blockspace`.
-2. The network generates revenue via transaction fees.
-3. A portion of these taxes are awarded to builders providing impactful public goods infrastructure.
-4. Network users gain access to free resources and services, increasing the value of OP blockspace.
+1. 用户和 `dApps` 需求网络 `区块空间`。
+2. 该网络通过交易费创收。
+3. 这些税收的一部分将奖励给提供有影响力的公共产品基础设施的建设者。
+4. 网络用户可获得免费资源和服务，提高 OP 区块空间的价值。
 
-With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!
+有了更有价值的链上基础设施，对 Optimism 区块空间的需求就会增加，循环往复！
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
 
-# Incentivizing Public Goods
+# 激励公共产品
 
-As you can see, `public goods` infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.
+如您所见， `公共产品` 基础设施是 Optimism 的核心。 但遴选值得资助的项目并不是一件简单的事。
 
-Here, Optimism takes an ‘**Impact = Profit**’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.
+就此 Optimism 采用 "**影响（Impact）= 收益（Profit）**"的方法。 然而，影响是难以预料的。 提供资金的机构不进行预测，而是定期审查现有项目，并根据历史业绩分配追溯供资。
 
-As Vitalik Buterin said, _“It’s easier to agree on what was useful than what will be useful.”_
+正如 Vitalik Buterin 所说， _"就过去有用的东西达成一致意见比就将来有用的东西达成一致意见更容易"。_
 
-This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
+这种分配模式被称为 **"追溯性公益资助（Retroactive Public Goods Funding）"**，或 **"RetroPGF"**。 这种资助机制激励 Optimism 的乐观思想家们建设服务于全人类的公共产品。 它将我们从传统资本主义经济的价值榨取思维中解放出来。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
 
-# Ether’s Phoenix
+# 以太凤凰
 
-Optimism calls this effect **‘Ether’s Phoenix’**: an _“angel reaching backwards in time, rewarding those who summon it.”_
+Optimism 将这一效果称为 **"以太凤凰"**： _"天使在时间长河里向后展翼，奖励召唤它的人"。_
 
-_“It is an algorithm that rewards the early cooperators who created conditions for public goods funding to prosper. It is a future where early investment in public goods is recognized. It is also a mindset: that optimism prevails, that better systems are possible, and that humankind will be rewarded for its cooperative revolution.”_
+_"这是一种奖励早期合作者的算法，他们为公共产品的繁荣创造了条件。 在这样的未来里，对公共产品的早期投资得到了认可。 这也是一种心态：乐观主义将占据上风，更好的系统是有可能被创造出来的，人类将因合作革命而得到回报"。_
 
-— The Optimism Foundation
+—— Optimism 基金会
 
 ![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-f63f460c.svg)
 
 # Knowledge Check 4
 
-How is Optimism incentivizing community-focused economics?
+Optimism 是如何激励以社区为重点的经济学的？
 
-- [ ] By rewarding all Optimism projects with retroactive funding.
+- [ ] 为所有 Optimism 项目提供追溯资金。
 
 > ℹ️ Try again! Rewarding all projects regardless of their mission is not Optimism’s approach.
 
