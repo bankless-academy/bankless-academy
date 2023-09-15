@@ -127,7 +127,7 @@ Optimismは、市民に直接サービスを提供し、市民によって統治
 
 # Knowledge Check 3
 
-問題。 Optimism Foundationはネットワークが続く限りOptimism Collectiveを引き続きガイドする。
+問題。 Optimism財団はネットワークが続く限りOptimismコレクティブを引き続きガイドする。
 
 - [ ] 正しい
 
@@ -259,7 +259,7 @@ Optimism Collectiveを構成する2つのハウスがあり、それぞれ独立
 
 ネットワークガバナンスがどれくらい民主的になれるかどうかは、最初の `トークン配布` に非常に左右されます。 「そもそも誰が投票権を受け取ったのか？」と「どのくらい受け取ったのか？」を常に考える必要があります。
 
-Optimism Foundationがどのように初期ガバナンス力を、バランスの取れたステークホルダーの代表として割り当てているかについては、 [OP分配プラン](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) をご覧ください。
+Optimism財団がどのように初期ガバナンスパワーを、バランスの取れたステークホルダーの代表として割り当てているかについては、 [OP分配プラン](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) をご覧ください。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
 
@@ -267,11 +267,11 @@ Optimism Foundationがどのように初期ガバナンス力を、バランス�
 
 トークンハウスはどのようにネットワークを攻撃から保護するでしょうか?
 
-- [ ] ネットワークブロック生成者の多様なセットを選択する。
+- [ ] ネットワークブロック生成者として多様なメンバーを選択する。
 
 > ℹ️ これは事実ですが、答えはそれだけではありません。
 
-- [ ] 拒否することによりOptimism財団の提案は、トークンホルダーの権利を削減する。
+- [ ] トークンホルダーの権利を削減するOptimism財団の提案を拒否する。
 
 > ℹ️ これは事実ですが、答えはそれだけではありません。
 
@@ -285,7 +285,7 @@ Optimism Foundationがどのように初期ガバナンス力を、バランス�
 
 # シチズンハウス
 
-シチズンハウスは、Optimismネットワークの公共インフラの成長を行っています。 主な業務は、レトロアクティブ公共財資金の管理です。
+シチズンハウスは、Optimismネットワークの公共インフラの成長を担っています。 主な業務は、レトロアクティブ公共財資金の管理です。
 
 職務内容は以下の通りです：
 
