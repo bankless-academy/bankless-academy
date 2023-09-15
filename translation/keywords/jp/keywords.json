@@ -382,7 +382,7 @@
   "non-custodial wallet": {
     "keyword": "ノンカストディアルウォレット",
     "keyword_plural": "ノンカストディアルウォレット",
-    "definition": "秘密鍵のみを管理でき、クリプトを管理できるツール"
+    "definition": "秘密鍵そしてクリプトを本人のみが管理できるツール"
   },
   "onchain governance": {
     "keyword": "オンチェーンガバナンス",
@@ -447,7 +447,7 @@
   "price impact": {
     "keyword": "価格への影響",
     "keyword_plural": "価格への影響:",
-    "definition": "DEX上の金額は、取引サイズによって変更されます。"
+    "definition": "取引ボリュームによるDEX上での価格の変化"
   },
   "private key": {
     "keyword": "秘密鍵",
