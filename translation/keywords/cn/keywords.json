@@ -356,76 +356,76 @@
   },
   "market cap": {
     "keyword": "市值",
-    "keyword_plural": "market caps",
-    "definition": "The total value of a given token, or market sector."
+    "keyword_plural": "市值",
+    "definition": "特定代币或市场部门的总价值。"
   },
   "meta-aggregator": {
-    "keyword": "meta-aggregator",
-    "keyword_plural": "meta-aggregators",
-    "definition": "A tool that brings together other aggregators into an extra overview layer."
+    "keyword": "元聚合器",
+    "keyword_plural": "元聚合器",
+    "definition": "该工具可将其他聚合器整合为一个额外的总览层。"
   },
   "mev": {
     "keyword": "MEV",
     "keyword_plural": "MEVs",
-    "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
+    "definition": "最大可提取价值--通过对区块内的交易排序提取的价值。"
   },
   "network governance": {
-    "keyword": "network governance",
-    "keyword_plural": "network governances",
-    "definition": "The process by which a decentralized community reaches agreement on network features/upgrades."
+    "keyword": "网络治理",
+    "keyword_plural": "网络治理",
+    "definition": "去中心化社区就网络功能/升级达成一致的过程。"
   },
   "nft": {
     "keyword": "NFT",
     "keyword_plural": "NFTs",
-    "definition": "(Non-fungible Token) A token with a unique ID that cannot be replicated, as compared to a fungible token like Ether that has no unique identifier."
+    "definition": "(非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
   },
   "non-custodial wallet": {
-    "keyword": "non-custodial wallet",
-    "keyword_plural": "non-custodial wallets",
-    "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets."
+    "keyword": "非托管钱包",
+    "keyword_plural": "非托管钱包",
+    "definition": "使用非托管钱包，您可以独自控制私钥，而私钥又可以控制您的加密资产。"
   },
   "onchain governance": {
-    "keyword": "onchain governance",
-    "keyword_plural": "onchain governances",
-    "definition": "The automated system that mediates changes to a blockchain’s structure."
+    "keyword": "链上治理",
+    "keyword_plural": "链上治理",
+    "definition": "调解区块链结构变化的自动化系统。"
   },
   "open source": {
-    "keyword": "open source",
-    "keyword_plural": "open sources",
-    "definition": "Software with source code that anyone can inspect, modify, and enhance."
+    "keyword": "开源",
+    "keyword_plural": "开源",
+    "definition": "任何人都可以检查、修改和增强的带有源代码的软件。"
   },
   "optimistic rollup": {
-    "keyword": "optimistic rollup",
-    "keyword_plural": "optimistic rollups",
-    "definition": "A layer 2 rollup scaling solution that optimistically assumes all transactions in its “rolled up” transaction are valid until they are proven false by a fraud proof."
+    "keyword": "optimistic 卷积",
+    "keyword_plural": "optimistic 卷积",
+    "definition": "一第 2 层卷积扩展解决方案乐观地假设其\"卷积 交易中的所有交易都是有效的，直到被欺诈证明为虚假。"
   },
   "otc": {
     "keyword": "OTC",
     "keyword_plural": "OTCs",
-    "definition": "(Over the Counter) Trades made directly with private entities."
+    "definition": "(柜台交易) 直接与私人实体进行的交易。"
   },
   "over the counter": {
-    "keyword": "over the counter",
-    "keyword_plural": "over the counters",
-    "definition": "(OTC) Trades made directly with private entities."
+    "keyword": "柜台交易",
+    "keyword_plural": "柜台交易",
+    "definition": "(柜台交易) 直接与私人实体进行的交易。"
   },
   "payment channel": {
-    "keyword": "payment channel",
-    "keyword_plural": "payment channels",
-    "definition": "Allows two parties to transact multiple times without the need for each transaction to be recorded on the blockchain."
+    "keyword": "付款通道",
+    "keyword_plural": "付款通道",
+    "definition": "允许双方多次交易，无需在区块链上记录每次交易。"
   },
   "peer-to-peer": {
-    "keyword": "peer-to-peer",
-    "keyword_plural": "peer-to-peers",
-    "definition": "A transaction between two parties that does not require a middleman or controlling entity."
+    "keyword": "点对点传输",
+    "keyword_plural": "点对点传输",
+    "definition": "双方之间不需要中间人或控制实体的交易。"
   },
   "peg": {
     "keyword": "peg",
     "keyword_plural": "pegs",
-    "definition": "Method of maintaining value equivalence between two or more assets."
+    "definition": "保持两种或两种以上资产价值等同的方法。"
   },
   "permissionless": {
-    "keyword": "permissionless",
+    "keyword": "无需准入性",
     "keyword_plural": "许可",
     "definition": "不需要任何实体批准的许可。"
   },
@@ -492,112 +492,112 @@
   "retropgf": {
     "keyword": "RetroPGF",
     "keyword_plural": "RetroPGFs",
-    "definition": "(Retroactive Public Goods Funding) A mechanism for funding projects, based on their historical impact."
+    "definition": "(追溯性公益资助) 根据项目的历史影响资助项目的机制。"
   },
   "rollup": {
-    "keyword": "rollup",
-    "keyword_plural": "rollups",
-    "definition": "A layer-2 scaling solution that allows for processing a high number of off-chain transactions and aggregating them in a single, larger on-chain transaction, increasing transaction throughput and lowering costs."
+    "keyword": "卷积",
+    "keyword_plural": "卷积",
+    "definition": "第二层扩展解决方案，可处理大量链外交易，并将其聚合到一个更大的链上交易中，从而提高交易吞吐量并降低成本。"
   },
   "sandwich attack": {
-    "keyword": "sandwich attack",
-    "keyword_plural": "sandwich attacks",
-    "definition": "A hidden cost for users due to ordering of transactions by block producers."
+    "keyword": "三明治攻击",
+    "keyword_plural": "三明治攻击",
+    "definition": "由于区块生产者对交易进行排序，用户需要支付隐性成本。"
   },
   "scalability": {
-    "keyword": "Scalability",
-    "keyword_plural": "Scalabilitys",
-    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
+    "keyword": "可扩展性",
+    "keyword_plural": "可扩展性",
+    "definition": "区块链能够处理不断 增长 的工作、交易和使用量，同时将对用户的干扰降至最低。"
   },
   "scam-token": {
-    "keyword": "scam-token",
-    "keyword_plural": "scam-tokens",
-    "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds."
+    "keyword": "骗局代币",
+    "keyword_plural": "骗局代币",
+    "definition": "只为盗取投资者资金而推出的加密货币代币。"
   },
   "security": {
-    "keyword": "Security",
-    "keyword_plural": "Securitys",
-    "definition": "Ability of a blockchain to withstand hacking attempts, code exploits, and economic exploits among other attacks, and continue to function as normal."
+    "keyword": "安全性",
+    "keyword_plural": "安全性",
+    "definition": "区块链抵御黑客攻击、代码漏洞和经济漏洞等攻击并继续正常运行的能力。"
   },
   "seed phrase": {
-    "keyword": "seed phrase",
-    "keyword_plural": "seed phrases",
-    "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
+    "keyword": "助记词",
+    "keyword_plural": "助记词",
+    "definition": "由钱包在设置时生成的一组随机词语，它们是该钱包控制的所有账户的主密钥。切勿以任何理由与任何人共享您的助记词。"
   },
   "settlement layer": {
-    "keyword": "settlement layer",
-    "keyword_plural": "settlement layers",
-    "definition": "The “lowest” level of a blockchain that records the details of asset exchange from finalized transactions. Mainnet Ethereum is the settlement layer for Ethereum layer 2 scaling solutions."
+    "keyword": "结算层",
+    "keyword_plural": "结算层",
+    "definition": "区块链的\"最低\"层，记录最终交易的资产交换细节。以太坊主网是以太坊第二层扩展解决方案的结算层。"
   },
   "settlement time": {
-    "keyword": "settlement time",
-    "keyword_plural": "settlement times",
-    "definition": "The time need for a transaction to be confirmed."
+    "keyword": "结算时间",
+    "keyword_plural": "结算时间",
+    "definition": "交易确认所需的时间。"
   },
   "sharding": {
-    "keyword": "sharding",
-    "keyword_plural": "shardings",
-    "definition": " The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability."
+    "keyword": "区块分片",
+    "keyword_plural": "区块分片",
+    "definition": " 将单个区块链拆分成多个并行运行的链，以提高可扩展性。"
   },
   "sidechain": {
-    "keyword": "sidechain",
-    "keyword_plural": "sidechains",
-    "definition": "A mechanism that allows for the transfer of assets and transactions from a main blockchain to a separate, parallel blockchain (sidechain)."
+    "keyword": "侧链",
+    "keyword_plural": "侧链",
+    "definition": "一种允许将资产和交易从主区块链转移到独立、平行的区块链(侧链) 的机制。"
   },
   "slippage": {
-    "keyword": "slippage",
-    "keyword_plural": "slippages",
-    "definition": "A change in buy price that helps your trade to execute."
+    "keyword": "滑点",
+    "keyword_plural": "滑点",
+    "definition": "有助于交易执行的买入价变化。"
   },
   "slippage tolerance": {
-    "keyword": "slippage tolerance",
-    "keyword_plural": "slippage tolerances",
-    "definition": "How much can prices change before your trade executes."
+    "keyword": "滑点范围",
+    "keyword_plural": "滑点范围",
+    "definition": "在交易执行前，价格会有多大变化。"
   },
   "smart contract": {
-    "keyword": "smart contract",
-    "keyword_plural": "smart contracts",
-    "definition": "Computerized code that execute terms of a contract automatically."
+    "keyword": "智能合约",
+    "keyword_plural": "智能合约",
+    "definition": "自动执行合同条款的计算机代码。"
   },
   "social engineering": {
-    "keyword": "social engineering",
-    "keyword_plural": "social engineerings",
-    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
+    "keyword": "社会工程",
+    "keyword_plural": "社会工程",
+    "definition": "操纵 他人共享敏感或 机密信息，如密码或助记词。"
   },
   "spend": {
-    "keyword": "spend",
-    "keyword_plural": "spends",
-    "definition": "Using your crypto assets to pay for goods or services."
+    "keyword": "花费",
+    "keyword_plural": "花费",
+    "definition": "使用您的加密资产支付商品或服务。"
   },
   "stake": {
-    "keyword": "stake",
-    "keyword_plural": "stakes",
-    "definition": "The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”."
+    "keyword": "质押",
+    "keyword_plural": "质押",
+    "definition": "锁定在加密货币协议中的金融资产的数量。它代表着某人对协议的财务承诺，也就是他们的 \"赌注\"。"
   },
   "staking": {
-    "keyword": "staking",
-    "keyword_plural": "stakings",
-    "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")."
+    "keyword": "质押",
+    "keyword_plural": "质押",
+    "definition": "在指定时间内将部分加密货币暂时投入智能合约，以换取利息(\"奖励\")。"
   },
   "swap": {
-    "keyword": "swap",
-    "keyword_plural": "swaps",
-    "definition": "A trade from one token to another."
+    "keyword": "交换",
+    "keyword_plural": "交换",
+    "definition": "从一种代币到另一种代币的交易。"
   },
   "token": {
-    "keyword": "token",
-    "keyword_plural": "tokens",
-    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
+    "keyword": "代币",
+    "keyword_plural": "代币",
+    "definition": "可以代表建立在现有区块链上的资产或契约的单位。"
   },
   "token allowance": {
-    "keyword": "token allowance",
-    "keyword_plural": "token allowances",
-    "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
+    "keyword": "代币授权",
+    "keyword_plural": "代币授权",
+    "definition": "钱包与智能合约之间的协议，允许有限或无限访问特定代币。"
   },
   "token distribution": {
-    "keyword": "token distribution",
-    "keyword_plural": "token distributions",
-    "definition": "The way in which tokens are allocated across different stakeholder groups."
+    "keyword": "代币分配",
+    "keyword_plural": "代币分配",
+    "definition": "代币在不同利益相关群体之间的分配方式。"
   },
   "token pair": {
     "keyword": "token pair",
@@ -672,16 +672,16 @@
   "web3": {
     "keyword": "web3",
     "keyword_plural": "web3s",
-    "definition": "Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data."
+    "definition": "指在区块链上运行的应用程序，任何人都可以参与其中，无需将个人数据货币化。"
   },
   "zero-knowledge": {
-    "keyword": "Zero-Knowledge",
-    "keyword_plural": "Zero-Knowledges",
-    "definition": "Mathematical method that allows one party to prove a statement is valid without revealing any additional information about it."
+    "keyword": "零知识",
+    "keyword_plural": "零知识",
+    "definition": "数学方法，允许一方在不透露任何额外信息的情况下证明声明有效。"
   },
   "zk rollup": {
-    "keyword": "zk rollup",
-    "keyword_plural": "zk rollups",
-    "definition": "A layer-2 rollup scaling solution that uses zero-knowledge proofs to guarantee the validity of “rolled up” transactions while maintaining security and privacy on the layer 1 blockchain."
+    "keyword": "zk 卷积",
+    "keyword_plural": "zk 卷积",
+    "definition": "第二层卷积扩展解决方案，使用零知识证明来保证\"卷积\"交易的有效性，同时维护第一层区块链的安全性和隐私性。"
   }
 }
