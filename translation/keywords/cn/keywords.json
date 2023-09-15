@@ -176,88 +176,88 @@
   },
   "decentralized exchange": {
     "keyword": "去中心化交易所",
-    "keyword_plural": "decentralized exchanges",
-    "definition": "(DEX) A protocol that facilitates exchange without requiring trusted intermediaries."
+    "keyword_plural": "去中心化交易",
+    "definition": "(DEX) 一种无需可信中介就能促进交易的协议。"
   },
   "decentralized finance": {
-    "keyword": "Decentralized Finance",
-    "keyword_plural": "Decentralized Finances",
-    "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
+    "keyword": "去中心化金融",
+    "keyword_plural": "去中心化金融",
+    "definition": "(DeFi) 一套架设在区块链上的自托管金融工具。"
   },
   "defi": {
-    "keyword": "DeFi",
-    "keyword_plural": "DeFis",
-    "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
+    "keyword": "DeFi（去中心化金融）",
+    "keyword_plural": "DeFis（去中心化金融）",
+    "definition": "(Decentralized Finance) 一套架设在区块链上的自托管金融工具。"
   },
   "delegate": {
-    "keyword": "delegate",
-    "keyword_plural": "delegates",
-    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+    "keyword": "代表",
+    "keyword_plural": "代表",
+    "definition": "赋予他人特定的责任，即授予象征性投票权。"
   },
   "delegation": {
-    "keyword": "delegation",
-    "keyword_plural": "delegations",
-    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+    "keyword": "代表",
+    "keyword_plural": "代表",
+    "definition": "赋予他人特定的责任，即授予象征性投票权。"
   },
   "dex": {
-    "keyword": "DEX",
-    "keyword_plural": "DEXs",
-    "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
+    "keyword": "去中心化交易所",
+    "keyword_plural": "去中心化交易所",
+    "definition": "去中心化交易所：一种无需可信中介就能促进交易的协议。"
   },
   "dex aggregator": {
-    "keyword": "DEX aggregator",
-    "keyword_plural": "DEX aggregators",
-    "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
+    "keyword": "DEX 聚合器",
+    "keyword_plural": "DEX 聚合器",
+    "definition": "将多个来源的 DEX 流动性整合到一个界面的协议。"
   },
   "digital signature": {
-    "keyword": "digital signature",
-    "keyword_plural": "digital signatures",
-    "definition": "The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space."
+    "keyword": "数字签名",
+    "keyword_plural": "数字签名",
+    "definition": "每个用户的唯一标识符，在数字空间中起到个人印章或实体签名的作用。"
   },
   "earn": {
-    "keyword": "earn",
-    "keyword_plural": "earns",
-    "definition": "Contributing value in exchange for rewards ; money verb on the skill cube."
+    "keyword": "收入",
+    "keyword_plural": "收入",
+    "definition": "贡献价值以换取奖励；技能方块上的金钱动词。"
   },
   "epoch": {
-    "keyword": "Epoch",
-    "keyword_plural": "Epochs",
-    "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
+    "keyword": "纪元（Epoch）",
+    "keyword_plural": "纪元（Epoch）",
+    "definition": "特定区块链包含特定数量区块所需的时间。"
   },
   "erc-20": {
     "keyword": "erc-20",
     "keyword_plural": "erc-20s",
-    "definition": "A standard for transferable tokens on Ethereum."
+    "definition": "以太坊上可转让代币的标准。"
   },
   "erc-721": {
     "keyword": "erc-721",
     "keyword_plural": "erc-721s",
-    "definition": "A standard for non-transferable tokens on Ethereum."
+    "definition": "以太坊上不可转让代币的标准。"
   },
   "ethereum virtual machine": {
-    "keyword": "Ethereum Virtual Machine",
-    "keyword_plural": "Ethereum Virtual Machines",
-    "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network."
+    "keyword": "以太访虚拟机 (Ethereum Virtual Machine)",
+    "keyword_plural": "以太访虚拟机 (Ethereum Virtual Machine)",
+    "definition": "以太坊虚拟机或 EVM 是一款执行智能合约和计算以太坊网络状态的软件。"
   },
   "fomo": {
     "keyword": "FOMO",
     "keyword_plural": "FOMOs",
-    "definition": "(Fear Of Missing Out) Anxiety or apprehension about not being included in something."
+    "definition": "(Fear Of Missing Out) 担心或忧虑自己无法参与某事。"
   },
   "fork": {
-    "keyword": "fork",
-    "keyword_plural": "forks",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+    "keyword": "分叉",
+    "keyword_plural": "分叉",
+    "definition": "指 区块链网络 中的彻底改变，导致两个分支--一个遵循以前的协议，另一个遵循新的协议。"
   },
   "fraud proof": {
-    "keyword": "fraud proof",
-    "keyword_plural": "fraud proofs",
-    "definition": "Evidence that a transaction is invalid and that fraud has occurred."
+    "keyword": "欺诈证明",
+    "keyword_plural": "欺诈证明",
+    "definition": "交易无效和发生欺诈的证据。"
   },
   "gas": {
     "keyword": "gas",
     "keyword_plural": "gass",
-    "definition": "Transaction fees for blockchain networks."
+    "definition": "区块链网络的交易费用。"
   },
   "gasless transactions": {
     "keyword": "无交易费（gas）的交易",
@@ -352,10 +352,10 @@
   "lp": {
     "keyword": "LP",
     "keyword_plural": "LPs",
-    "definition": "(Liquidity Provider) Blockchain users who loan their tokens to protocols in exchange for a share in fees."
+    "definition": "(流动性提供者) 将其代币借给协议以换取费用分成的区块链用户。"
   },
   "market cap": {
-    "keyword": "market cap",
+    "keyword": "市值",
     "keyword_plural": "market caps",
     "definition": "The total value of a given token, or market sector."
   },
