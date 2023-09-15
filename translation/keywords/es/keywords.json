@@ -1,22 +1,22 @@
 {
   "2 factor authentication": {
     "keyword": "Autenticación de 2 Factores",
-    "keyword_plural": "2 Factor Authentications",
+    "keyword_plural": "Autentificación de 2 Factores",
     "definition": "Una capa adicional de seguridad utilizada para asegurarse de que las personas que intentan acceder a una cuenta en línea son quienes dicen ser."
   },
   "51% attack": {
     "keyword": "Ataque del 51 %",
-    "keyword_plural": "51% attacks",
+    "keyword_plural": "Ataque del 51 %",
     "definition": "Un ataque al consenso de blockchain mediante el control de más del 51% de la potencia de producción de bloques en la red."
   },
   "address": {
     "keyword": "dirección",
-    "keyword_plural": "addresss",
+    "keyword_plural": "direcciones",
     "definition": "Identificador público único de una entidad en una cadena de bloques."
   },
   "aggregator": {
     "keyword": "agregador",
-    "keyword_plural": "aggregators",
+    "keyword_plural": "agregadores",
     "definition": "Herramienta que combina múltiples fuentes para ofrecer opciones competitivas."
   },
   "airdrop": {
@@ -26,22 +26,22 @@
   },
   "allowance": {
     "keyword": "Permiso de acceso",
-    "keyword_plural": "allowances",
+    "keyword_plural": "prestación",
     "definition": "Permite a una entidad, normalmente un contrato inteligente, el derecho a utilizar una cantidad específica de tus tokens en una transacción."
   },
   "alternative layer 1": {
     "keyword": "alternativa Capa 1",
-    "keyword_plural": "alternative Layer 1s",
+    "keyword_plural": "alternativa capa 1",
     "definition": "Blockchains de capa 1 distintas de Ethereum y Bitcoin."
   },
   "amm": {
     "keyword": "AMM",
-    "keyword_plural": "AMMs",
+    "keyword_plural": "AMM",
     "definition": "(Automated Market Maker) Sistema de casación de operaciones, basado en un algoritmo público."
   },
   "asynchronous": {
     "keyword": "asincrónico",
-    "keyword_plural": "asynchronouss",
+    "keyword_plural": "asíncronos",
     "definition": "Comunicación entre varios colaboradores, en la que los participantes no tienen que estar presentes en el momento de enviar el mensaje."
   },
   "bet": {
@@ -51,67 +51,67 @@
   },
   "block": {
     "keyword": "Bloque",
-    "keyword_plural": "Blocks",
+    "keyword_plural": "Bloques",
     "definition": "Un grupo de transacciones en la cadena de bloques."
   },
   "block explorer": {
     "keyword": "explorador de bloques",
-    "keyword_plural": "block explorers",
+    "keyword_plural": "explorador de bloques",
     "definition": "Herramienta de búsqueda y exploración de datos de blockchain."
   },
   "block hash": {
     "keyword": "hash por bloque",
-    "keyword_plural": "block hashs",
+    "keyword_plural": "hash por bloque",
     "definition": "El identificador único para cada archivo de bloque. Cada nuevo bloque hace referencia al hash de bloque del bloque anterior para formar la cadena de bloques conectada de un solo archivo."
   },
   "block producer": {
     "keyword": "productor de bloques",
-    "keyword_plural": "block producers",
+    "keyword_plural": "productor de bloques",
     "definition": "El usuario cuyo hardware se elige para verificar las transacciones de un bloque y comenzar el siguiente bloque en la mayoría de las blockchains Proof-of-Stake (PoS)."
   },
   "block reward": {
     "keyword": "recompensa del bloque",
-    "keyword_plural": "block rewards",
+    "keyword_plural": "recompensa del bloque",
     "definition": "Cantidad del activo nativo de una blockchain que se entrega al proponente de un nuevo bloque válido."
   },
   "block space": {
     "keyword": "espacio de bloque",
-    "keyword_plural": "block spaces",
+    "keyword_plural": "espacio de bloque",
     "definition": "La cantidad de espacio en una cadena de bloques que puede utilizarse para almacenar información y ejecutar código. La cantidad de \"espacio\" dentro de un bloque (o una serie de bloques)."
   },
   "blockchain": {
     "keyword": "cadenas de bloques",
-    "keyword_plural": "blockchains",
+    "keyword_plural": "cadenas de bloques",
     "definition": "Una base de datos compartida e inmutable, o libro mayor, de transacciones registradas."
   },
   "blockchain architecture": {
     "keyword": "arquitectura blockchain",
-    "keyword_plural": "blockchain architectures",
+    "keyword_plural": "arquitectura blockchain",
     "definition": "Las estructuras de almacenamiento de datos en la tecnología blockchain."
   },
   "blockchain trilemma": {
     "keyword": "El trilema de la cadena de bloques",
-    "keyword_plural": "Blockchain Trilemmas",
+    "keyword_plural": "El trilema de la cadena de bloques",
     "definition": "El problema que describe la necesidad de todas las 3 calidades de la cadena de bloques: Seguridad, Escalabilidad y Descentralización."
   },
   "borrower": {
     "keyword": "prestatario",
-    "keyword_plural": "borrowers",
+    "keyword_plural": "prestatario",
     "definition": "Dispuesto a pagar intereses a los prestamistas para pedir préstamos."
   },
   "bridge": {
     "keyword": "puente",
-    "keyword_plural": "bridges",
+    "keyword_plural": "Puentes",
     "definition": "Conexión que permite a dos redes de blockchain diferentes comunicarse entre sí e intercambiar activos."
   },
   "censorship-resistant": {
     "keyword": "resistencia a la censura",
-    "keyword_plural": "censorship-resistants",
+    "keyword_plural": "resistencia a la censura",
     "definition": "Ningún gobierno o empresa tiene el control para determinar lo que está o no está permitido."
   },
   "centralized exchange": {
     "keyword": "exchange centralizado",
-    "keyword_plural": "centralized exchanges",
+    "keyword_plural": "exchange centralizado",
     "definition": "(CEX) Plataforma que coordina el comercio de criptomonedas a cambio de una comisión, de forma similar a una bolsa de valores."
   },
   "cex": {
@@ -121,37 +121,37 @@
   },
   "chain": {
     "keyword": "cadena",
-    "keyword_plural": "chains",
+    "keyword_plural": "cadenas",
     "definition": "Une bloques de datos para formar una base de datos que no puede alterarse ni modificarse."
   },
   "coin": {
     "keyword": "moneda",
-    "keyword_plural": "coins",
+    "keyword_plural": "monedas",
     "definition": "Activo nativo de una cadena de bloques que se utiliza principalmente como moneda para facilitar las transacciones en la red."
   },
   "cold wallet": {
     "keyword": "billetera fría",
-    "keyword_plural": "cold wallets",
+    "keyword_plural": "billetera fría",
     "definition": "Un tipo de billetera no custodiada que se almacena fuera de línea y no requiere una conexión perpetua a Internet."
   },
   "collateral": {
     "keyword": "colateral",
-    "keyword_plural": "collaterals",
+    "keyword_plural": "colateral",
     "definition": "Una garantía de préstamo de activos específicos a un prestamista, para asegurar el reembolso de un préstamo."
   },
   "consensus": {
     "keyword": "consenso",
-    "keyword_plural": "consensuss",
+    "keyword_plural": "consensos",
     "definition": "Acuerdo, confianza y seguridad en una red informática descentralizada como blockchain."
   },
   "counterparty risk": {
     "keyword": "riesgo de contraparte",
-    "keyword_plural": "counterparty risks",
+    "keyword_plural": "riesgo de contraparte",
     "definition": "El riesgo de que otra parte no cumpla su parte en un acuerdo."
   },
   "custodial wallet": {
     "keyword": "billeteras no custodiales",
-    "keyword_plural": "custodial wallets",
+    "keyword_plural": "billeteras de custodia",
     "definition": "Con una cartera de custodia, otra parte controla las claves privadas, controlando así el acceso a sus criptoactivos."
   },
   "dao": {
@@ -166,12 +166,12 @@
   },
   "decentralization": {
     "keyword": "Decentralización",
-    "keyword_plural": "Decentralizations",
+    "keyword_plural": "Descentralización",
     "definition": "Principio según el cual ninguna autoridad o entidad debe controlar los datos de la cadena de bloques."
   },
   "decentralized": {
     "keyword": "descentralizado",
-    "keyword_plural": "decentralizeds",
+    "keyword_plural": "descentralizados",
     "definition": "Ninguna autoridad o entidad única controla los datos."
   },
   "decentralized exchange": {
