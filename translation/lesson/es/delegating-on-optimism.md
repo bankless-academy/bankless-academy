@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 La delegación es un mecanismo de votación onchain que permite a un miembro de la comunidad otorgar temporalmente su poder de voto de gobierno a un representante de la comunidad. Este proceso permite al usuario contribuir a la `gobernanza de la red`, sin tener que supervisar activamente cada acción o cambio propuesto en el ecosistema.
 
-En Optimism, el poder de gobernanza está representado por la tenencia de tokens OP en una billetera de autocustodia. Los tokens de OP no dejan de estar en su cartera de autocustodia durante la delegación. Puede transferirlo o venderlos en cualquier momento, pero tenga en cuenta que su delegado sólo recibirá el poder de voto de los tokens que estén en su billetera. Puede cambiar su Delegado de comunidad en cualquier momento.
+En Optimism, el poder de gobernanza está representado por la tenencia de tokens OP en una billetera de autocustodia. Los tokens de OP no dejan su cartera de autocustodia durante la delegación. Puede transferirlo o venderlos en cualquier momento, pero tenga en cuenta que su delegado sólo recibirá el poder de voto de los tokens que estén en su billetera. Puede cambiar su Delegado de comunidad en cualquier momento.
 
 En Optimism utilizamos una dApp de votación llamada 'Agora' para buscar entre los Delegados elegibles, realizar la delegación y supervisar las propuestas. Echemos un vistazo más de cerca.
 
