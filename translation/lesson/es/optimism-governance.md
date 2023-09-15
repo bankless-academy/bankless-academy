@@ -31,11 +31,11 @@ ________________________________________________________________________________
 
 La tecnología moderna ha cambiado drásticamente la forma en que los seres humanos se ven e interactúan entre sí. En el escenario mundial, y en un ciberespacio sin fronteras, necesitamos nuevos modelos de coordinación para coexistir y prosperar como tribu global.
 
-La visión de una `DAO` es agilizar la resolución de problemas y el debate entre un gran número de colaboradores, ya sea en Internet, en su comunidad local o a escala internacional. Esto se hace:
+La visión de la tecnología `DAO` es agilizar la resolución de problemas y el debate entre un gran número de colaboradores, ya sea en Internet, en su comunidad local o a escala internacional. Esto se hace:
 
 - Incentivando a los participantes para que compartan una misión común.
 - Usando mecánicas de votación innovadoras, delegación``, y veto``.
-- Utilizar la tecnología blockchain para disminuir las posibilidades de error humano o apropiación.
+- Utilizar la tecnología blockchain para disminuir las posibilidades de error humano o secuestro.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
 
@@ -45,9 +45,9 @@ Como cualquier estado-nación tradicional con recursos y participantes, un DAO u
 
 📜 **Propuesta:** Comienza con una propuesta de gobernanza y un debate comunitario. La propuesta se actualiza sobre la base de comentarios públicos. Cualquiera puede presentar una propuesta o criticar una. Esta es la parte 'descentralizada' de '`DAO`'.
 
-🗳️ **Votación:** La propuesta se somete a votación a través de un proceso transparente y resistente a la censura de `onchain governance`. No hay ninguna facilitación humana entre la apertura y el cierre de la votación; todo está mediado por código. Esta es la parte 'autónoma' de '`DAO`' - una cualidad prevista para cubrir eventualmente todo el proceso de gobernanza.
+🗳️ **Votación:** La propuesta se somete a votación a través del proceso transparente y resistente a la censura de `onchain governance`. No hay ninguna facilitación humana entre la apertura y el cierre de la votación; todo está mediado por código. Esta es la parte 'autónoma' de '`DAO`' - una cualidad prevista para cubrir eventualmente todo el proceso de gobernanza.
 
-🛠️ **Implementación:** La propuesta aprobada es aplicada a la red, incentivando a los desarrolladores si es necesario.
+🛠️ **Implementación:** La propuesta aprobada es aplicada a la red por varios desarrolladores vatizados si es necesario.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
 
@@ -75,21 +75,21 @@ Como cualquier estado-nación tradicional con recursos y participantes, un DAO u
 
 `DAOs` como el Colectivo Optimism están en la frontera explorando estos sistemas de coordinación.
 
-En esta lección, exploraremos cómo Optimism es pionero en la visión DAO. Aprenderemos de su misión y el cómo están construyendo nuevos marcos de coordinación para la humanidad.
+En esta lección, exploraremos cómo Optimism es pionero en la visión DAO. Aprenderemos acerca de su misión y cómo están construyendo nuevos marcos de coordinación para la humanidad.
 
-Nuestra Prueba de Conocimientos se centrará en reclamar nuestros primeros derechos de voto. ¡Así estaremos preparados para ayudar a construir el futuro de Ethereum y de la coordinación humana!
+Nuestra búsqueda se centrará en reclamar nuestros primeros derechos de voto, ¡así estaremos preparados para ayudar a construir el futuro de Ethereum y la coordinación humana!
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
 
 # La Visión Optimista
 
-Optimism tiene una misión: ampliar Ethereum construyendo una red `Layer 2 o Capa 2`. Forma parte del ecosistema Ethereum, pero con comisiones más bajas y transacciones más rápidas, manteniendo el alto nivel de seguridad de Ethereum. Estas son las propiedades que lo definen:
+Optimism tiene una misión: ampliar Ethereum construyendo una red `Layer 2`. Forma parte del ecosistema Ethereum, pero con comisiones más bajas y transacciones más rápidas, manteniendo el alto nivel de seguridad de Ethereum. Estas son las propiedades que lo definen:
 
-🏕️ **Bienes públicos:** Gran énfasis en la financiación y construcción de bienes públicos onchain (en cadena)``. Un bien público es algo que beneficia a todos en una comunidad, mientras que su uso por una persona no reduce su disponibilidad para los demás. Por ejemplo, tu educación gratuita en Bankless Academy ha sido posible gracias al apoyo de Optimism a los bienes públicos!
+🏕️ **Bienes públicos:** Gran énfasis en la financiación y construcción de bienes públicos onchain (en cadena)``. Un bien público es algo que beneficia a todos en una comunidad, mientras que su uso por una persona no reduce su disponibilidad para los demás. Tu educación gratuita en la Academia Bankless ha sido posible gracias al apoyo de Optimism a los bienes públicos!
 
 🧑‍🤝‍🧑 **Gobernanza comunitaria:** La red está dirigida por su comunidad.
 
-🏠 **Mercado libre:** Optimism no es sólo una extensión del espacio de bloques de Ethereum``, sino de sus principios. Su objetivo es ampliar el mercado de Ethereum: exento de permisos, con código abierto y resistente a la censura.
+🏠 **Mercado libre:** Lanzado como una extensión no sólo del espacio de bloques de Ethereum``, sino de los principios de Ethereum. Su objetivo es ampliar el mercado de Ethereum: exento de permisos, con código abierto y resistente a la censura.
 
 Optimism aspira a convertirse en un "distrito del ciberespacio" que atiende directamente a sus ciudadanos y es gobernado por ellos.
 
@@ -117,11 +117,11 @@ Optimism aspira a convertirse en un "distrito del ciberespacio" que atiende dire
 
 Muchos grandes proyectos de blockchain comienzan con un grupo centralizado. Esto da al proyecto un enfoque crucial en la construcción y el gasto, pero una DAO `` necesita **más que promesas de descentralización**. En Optimism, los fundadores, la red y la comunidad se conciben de la siguiente manera:
 
-- 🏦 **La Fundación Optimism:** Fundadores de la red. Empezaron el ecosistema, proporcionaron recursos iniciales y actúan como guionistas de la comunidad, antes de disolverla.
-- 🌐 **La Red de Optimism:** El código autónomo en la blockchain — los contratos inteligentes y el procesamiento de entradas de los usuarios.
+- 🏦 **Fundación Optimism:** Fundadores de la red. Empezaron el ecosistema, proporcionaron recursos iniciales y actúan como guionistas de la comunidad, antes de disolverla.
+- 🌐 **La Red de Optimism:** El código autónomo en la blockchain — los contratos inteligentes y el procesamiento de la entrada del usuario.
 - 👬 **Colectivo Optimismo:** La comunidad gobernante; un conjunto diverso de participantes globales. Son responsables de la propiedad y gestión a largo plazo del ecosistema. El término "DAO" abarca tanto el Colectivo como la Red.
 
-Los controles y equilibrios legales, como la capacidad del Colectivo para destituir a los miembros de la Fundación, garantizan una transferencia lenta **de la propiedad de la red hacia la comunidad**.
+Los controles y equilibrios legales, como la capacidad del Colectivo para destituir a los miembros de la Fundación, garantizan una transferencia lenta **de la propiedad de la red a la comunidad**.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
 
