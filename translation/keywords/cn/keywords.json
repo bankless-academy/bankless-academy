@@ -645,29 +645,29 @@
     "definition": "区块链一次可处理的交易量，通常以每秒交易量(TPS) 来衡量。"
   },
   "trustless": {
-    "keyword": "trustless",
-    "keyword_plural": "trustlesss",
-    "definition": "The quality of operating without need to trust in people or institutions. (Automatic, not owned by any one person)."
+    "keyword": "免受信",
+    "keyword_plural": "免受信",
+    "definition": "无需信任他人或机构即可运作的品质。(自动，不为任何人所拥有)。"
   },
   "tvl": {
     "keyword": "TVL",
     "keyword_plural": "TVLs",
-    "definition": "(Total Value Locked) The overall amount of asset value stored in a specific place."
+    "definition": "(锁定总值) 存储在特定位置的资产总值。"
   },
   "validating bridge": {
-    "keyword": "validating bridge",
-    "keyword_plural": "validating bridges",
-    "definition": "A validating bridge contract is a new design that removes the need to trust any external authority to decide if a withdrawal is valid."
+    "keyword": "验证桥",
+    "keyword_plural": "验证桥",
+    "definition": "验证桥式合约是一种新的设计，无需信任任何外部机构来决定撤回是否有效。"
   },
   "veto": {
-    "keyword": "veto",
-    "keyword_plural": "vetos",
-    "definition": "A vote in rejection of a governance proposal."
+    "keyword": "否决票",
+    "keyword_plural": "否决票",
+    "definition": "对治理提案投反对票。"
   },
   "wallet": {
-    "keyword": "wallet",
-    "keyword_plural": "wallets",
-    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+    "keyword": "钱包",
+    "keyword_plural": "钱包",
+    "definition": "钱包是用于在区块链上发送和接收加密资产的应用程序或设备。"
   },
   "web3": {
     "keyword": "web3",
