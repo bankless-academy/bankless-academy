@@ -31,7 +31,7 @@
   },
   "alternative layer 1": {
     "keyword": "代替L1",
-    "keyword_plural": "代替L1",
+    "keyword_plural": "アルトL1",
     "definition": "イーサリアムとビットコイン以外の L1ブロックチェーン"
   },
   "amm": {
@@ -477,7 +477,7 @@
   "public key": {
     "keyword": "公開鍵",
     "keyword_plural": "公開鍵",
-    "definition": "自身のアドレスで、他の人にクリプトを送信するためのリファレンスポイントを与える"
+    "definition": "自身のアドレスで、他の人がクリプトを送信するためのリファレンスポイントを与える"
   },
   "recovery phrase": {
     "keyword": "リカバリーフレーズ",
