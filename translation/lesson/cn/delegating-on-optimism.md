@@ -1,9 +1,9 @@
 ---
-TITLE: Delegating on Optimism
-DESCRIPTION: Grant your OP voting power to people closely following governance.
-LANGUAGE: English
+TITLE: 授权 Optimism
+DESCRIPTION: 将您的 OP 投票权授予密切关注治理情况的人。
+LANGUAGE: 简体中文(Simplified Chinese)
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: TG
 LINK: https://app.banklessacademy.com/lessons/delegating-on-optimism
 FORMAT: HANDBOOK
 ---
@@ -26,77 +26,77 @@ ________________________________________________________________________________
 ```
 
 ---
-## Key Takeaways
+## 要点总结
 
-> * Delegation is a voting mechanic that allows a representative — called a ‘Delegate’ — to make votes on another person’s behalf.
+> * 授权是一种投票机制，允许一名代表 — 称为"代表" — 代表他人投票。
 > 
-> * Optimism handles voting and delegation via their ‘Optimism Agora’ `dApp`.
+> * Optimism 通过其 "Optimism 广场" `dApp`处理投票和授权。
 > 
-> * You will maintain self-custody over delegated OP tokens, able to transfer or sell at any time.
+> * 您将自行保管授权的 OP 代币，可随时转让或出售。
 
-## Introduction
+## 介绍
 
-Delegation is an onchain voting mechanic that allows a community member to temporarily grant their governance voting power to a community representative. This process allows a user to contribute to `network governance`, without having to actively monitor every proposed action or change in the ecosystem.
+授权是一种链上投票机制，允许社区成员将其治理投票权临时授予社区代表。 这一过程可让用户为 `网络治理`做出贡献，而无需积极监控生态系统中的每项拟议行动或变化。
 
-On Optimism, governance power is represented by holding OP tokens in a self-custody wallet. OP tokens do not leave your self-custody wallet during delegation. You can transfer or sell them at any time, but your Delegate will only receive the voting power held in your wallet. You can change your community Delegate at any time.
+在 Optimism，治理权力体现为在自我保管的钱包中持有 OP 代币。 授权期间，OP 代币不会离开您的自管钱包。 您可以随时转让或出售，但您的代表只能获得您钱包中的投票权。 您可以随时更改社区代表。
 
-On Optimism we use a voting dApp called ‘Agora’ to look through eligible Delegates, perform delegation, and monitor proposals. Let’s take a closer look.
+在 Optimism 上，我们使用名为 "Agora（广场）"的投票 dApp 来查看符合条件的代表、执行授权和监控提案。 让我们更仔细地看一看。
 
-## Delegating on Optimism Agora
+## 在 Optimism Agora 授权
 
-**1\. Buy ETH on the Optimism Network.**
+**1\. 在 Optimism 网络上购买 ETH。**
 
-You can find a step-by-step guide in our Explorer’s Handbook entry, [‘How to fund a Wallet on Layer 2’](https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2).
+您可以在我们的《探索者手册》条目中找到分步指南， ["如何在第 2 层为钱包提供资金"](https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2)。
 
-**2\. Swap your ETH to OP tokens on the Optimism Network, using a** `DEX`.
+**2\. 使用** `DEX`在 Optimism 网络上将 ETH 兑换成 OP 代币。
 
-Check out our Explorer’s Handbook entry on [‘How to Swap on a Decentralized Exchange’](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) for a step-by-step guide on using a DEX to buy OP tokens.
+请查看我们的探索者手册 ["如何在去中心化交易所进行交换"条目](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) ，了解使用去中心化交易所购买 OP 代币的分步指南。
 
-**3\. Open the Optimism Agora dApp: <https://vote.optimism.io/>**
+**3\. 打开 Optimism Agora dApp： <https://vote.optimism.io/>**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
 
-**4\. Connect your wallet.**
+**4\. 连接你的钱包。**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
-**5\. Scroll down, and choose your favorite Delegate.**
+**5\. 向下滚动，选择您喜欢的代表。**
 
-By clicking on a delegate, you will find a short statement, their vote history, and influence measurements. Take your time to find a representative that aligns with your vision for Optimism.
+点击代表，您将看到其简短发言、投票历史和影响力测评。 慢慢寻找与您的 Optimism 愿景一致的代表。
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-6443ae02.png)
 
-**6\. Hit the ‘delegate’ button, and approve the transaction in your wallet.**
+**6\. 点击"授权"按钮，批准钱包中的交易。**
 
-No OP tokens will leave your wallet throughout this process. There is a small gas fee, charged in ETH.
+在整个过程中，不会有 OP 代币离开您的钱包。 需要支付小额 gas 费，以 ETH 计算。
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-245809cd.png)
 
-## Frequently Asked Questions
+## 常见问题
 
-* *How many tokens do I need to delegate?*
+* *我需要授权多少代币？*
 
-You can begin delegating while holding any amount of OP tokens — even zero! As you increase or decrease your OP holdings, your delegated voting power will be updated. You don’t have to redelegate every time you make changes to your OP holdings.
+您可以在持有任意数量 OP 代币（甚至是零代币）的情况下开始授权！ 当您增加或减少 OP 持有时，您的委托投票权也会随之更新。 您不必在每次更改 OP 持有量时都重新授权。
 
-* *How do I choose the right delegate?*
+* *如何选择合适的代表？*
 
-It comes down to your personal values, and your vision for how you want to see Optimism grow. Take some time to scroll through the Delegate profiles and see what resonates with you.
+这取决于您的个人价值观，以及您希望看到 Optimism 如何发展的愿景。 花点时间浏览代表简介，看看哪些内容能引起您的共鸣。
 
-* *Can I become a Delegate?*
+* *我能成为代表吗？*
 
-You can! Check out the [‘How to be a delegate’](https://community.optimism.io/docs/governance/delegate/) guide, hosted on Optimism Docs.
+您可以！ 查看 ["如何成为一名代表"](https://community.optimism.io/docs/governance/delegate/) 指南，该指南由 Optimism Docs 托管。
 
-Note: this won’t count for the [‘Optimism Governance’](https://app.banklessacademy.com/lessons/optimism-governance) lesson quest at Bankless Academy.
+注意：这将不计入 ["Optimism 治理"](https://app.banklessacademy.com/lessons/optimism-governance) Bankless 学院的课程任务。
 
-* *Do I need to delegate to vote?*
+* *我需要授权他人投票吗？*
 
-You can skip delegation and represent yourself by tracking votes under the ‘Proposals’ tab on Optimism Agora.
+您可以跳过代表团，在 Optimism Agora 上的"提案"标签下跟踪投票情况，从而代表自己。
 
-Note: this also won’t count for the [‘Optimism Governance’](https://app.banklessacademy.com/lessons/optimism-governance) lesson quest at Bankless Academy, but you can do so once you’ve collected your badge!
+注意：这也不能算作 ["Optimism 治理"](https://app.banklessacademy.com/lessons/optimism-governance) Bankless 学院的课程任务，但您可以在领取徽章后再做！
 
 
 ---
 
-**Author**
+**作者**
 
-**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+**[Tetranome](https://twitter.com/Tetranome)** 是 Bankless 学院的项目负责人，主要负责用户体验、界面、设计和内容。
