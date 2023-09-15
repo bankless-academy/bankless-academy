@@ -600,49 +600,49 @@
     "definition": "代币在不同利益相关群体之间的分配方式。"
   },
   "token pair": {
-    "keyword": "token pair",
-    "keyword_plural": "token pairs",
-    "definition": "The two associated cryptocurrencies that make up a liquidity pool."
+    "keyword": "代币对",
+    "keyword_plural": "代币对",
+    "definition": "构成流动性池的两种相关加密货币。"
   },
   "tps": {
     "keyword": "TPS",
     "keyword_plural": "TPSs",
-    "definition": "A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain."
+    "definition": "TPS 是衡量区块链可扩展性的一个指标，是区块链每秒处理的交易数量。"
   },
   "trade": {
-    "keyword": "trade",
-    "keyword_plural": "trades",
-    "definition": "Exchanging assets or money for something valuable ; money verb on the skill cube."
+    "keyword": "交易",
+    "keyword_plural": "交易",
+    "definition": "用资产或金钱换取有价值的东西；技能方块上的金钱动词。"
   },
   "trade route": {
-    "keyword": "trade route",
-    "keyword_plural": "trade routes",
-    "definition": "What is the path taken from starting token to ending token in a trade."
+    "keyword": "交易路径",
+    "keyword_plural": "交易路径",
+    "definition": "在交易中，从起始代币到终止代币的路径是什么？"
   },
   "trade routing": {
-    "keyword": "trade routing",
-    "keyword_plural": "trade routings",
-    "definition": "Planning the path taken from starting token to ending token in a trade."
+    "keyword": "交易路径",
+    "keyword_plural": "交易路径",
+    "definition": "在交易中，从起始代币到终止代币的路径是什么？"
   },
   "transaction": {
-    "keyword": "transaction",
-    "keyword_plural": "transactions",
-    "definition": "A record of transfer, monetary or otherwise, on the blockchain."
+    "keyword": "交易",
+    "keyword_plural": "交易",
+    "definition": "区块链上的货币或其他形式的转账记录。"
   },
   "transaction finality": {
-    "keyword": "transaction finality",
-    "keyword_plural": "transaction finalitys",
-    "definition": "The time it takes to be sure that a transaction is valid and final, meaning it won't be reversed or changed."
+    "keyword": "交易确定性",
+    "keyword_plural": "交易确定性",
+    "definition": "确保交易有效和最终（即不会被撤销或更改）所需的时间。"
   },
   "transaction hash": {
-    "keyword": "transaction hash",
-    "keyword_plural": "transaction hashs",
-    "definition": "The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions."
+    "keyword": "交易哈希",
+    "keyword_plural": "交易哈希",
+    "definition": "每笔交易的唯一标识符；它来自交易数据、交易发送者的数字签名和一次性使用号码，以避免重复交易。"
   },
   "transaction throughput": {
-    "keyword": "transaction throughput",
-    "keyword_plural": "transaction throughputs",
-    "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
+    "keyword": "交易吞吐量",
+    "keyword_plural": "交易吞吐量",
+    "definition": "区块链一次可处理的交易量，通常以每秒交易量(TPS) 来衡量。"
   },
   "trustless": {
     "keyword": "trustless",
