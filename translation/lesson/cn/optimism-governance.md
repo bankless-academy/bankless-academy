@@ -244,9 +244,9 @@ Optimism 集体由两个议院组成，在管理网络方面，每个议院都�
 
 📝 **加入：** 代币院通过购买和持有 OP 代币完成。 这些是 `ERC-20` 代币，因此可以转让；它们可以在 ` 中心化交易所`、Optimism ` 去中心化交易所 `上买卖，也可以在朋友之间发送。 OP 代币不能在其他网络上使用。
 
-🗳️ **投票：** 投票权基于代币持有数增减。
+🗳️ **投票：**投票权基于代币持有数增减。
 
-代币院根据 [5周投票周期](https://community.optimism.io/docs/governance/token-house-history/) 开展投票
+代币院根据[5周投票周期](https://community.optimism.io/docs/governance/token-house-history/)开展投票
 
 - 第 1-3 周：提案提交、审查和反馈。
 - 第 4-5 周：投票。
