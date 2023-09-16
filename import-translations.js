@@ -7,8 +7,8 @@ async function main() {
     'fr',
     'de',
     'es',
-    // 'cn',
-    // 'jp'
+    'cn',
+    'jp'
   ]
   const nameSpaces = [
     'common',
@@ -53,6 +53,9 @@ async function main() {
         const data = {}
         for (const [, v] of Object.entries(crowdin.data)) {
           data[v.keyword?.toLowerCase()] = { keyword: v.keyword, definition: v.definition }
+          if (v.keyword?.toLowerCase() !== v.keyword_plural?.toLowerCase() && v.keyword_plural !== '') {
+            data[v.keyword_plural?.toLowerCase()] = { keyword: v.keyword_plural, definition: v.definition }
+          }
         }
         // console.log('newTranslation', data)
         const newTranslation = JSON.stringify(data, null, 2)
