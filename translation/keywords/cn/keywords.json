@@ -31,6 +31,10 @@
     "keyword": "AMM",
     "definition": "(自动做市商 Automated Market Maker）基于公共算法的交易撮合系统。"
   },
+  "amms": {
+    "keyword": "AMMs",
+    "definition": "(自动做市商 Automated Market Maker）基于公共算法的交易撮合系统。"
+  },
   "异步": {
     "keyword": "异步",
     "definition": "多个合作者之间的通信，参与者在发送信息时不必在场。"
@@ -95,6 +99,10 @@
     "keyword": "CEX",
     "definition": "(Centralized Exchange）协调加密货币交易并收取费用的平台，类似于证券交易所。"
   },
+  "cexs": {
+    "keyword": "CEXs",
+    "definition": "(Centralized Exchange）协调加密货币交易并收取费用的平台，类似于证券交易所。"
+  },
   "链": {
     "keyword": "链",
     "definition": "将数据块绑定在一起，形成一个无法更改或变更的数据库。"
@@ -127,6 +135,10 @@
     "keyword": "去中心化自治组织（DAO)",
     "definition": "(去中心化自治组织 Decentralized Autonomous Organization）一种利用区块链技术实现投票和管理自动化的组织结构。"
   },
+  "daos": {
+    "keyword": "DAOs",
+    "definition": "(去中心化自治组织 Decentralized Autonomous Organization）一种利用区块链技术实现投票和管理自动化的组织结构。"
+  },
   "去中心化 app （dapp）": {
     "keyword": "去中心化 App （dApp）",
     "definition": "连接分散网络和协议的分散应用程序。"
@@ -139,12 +151,20 @@
     "keyword": "去中心化交易所",
     "definition": "去中心化交易所：一种无需可信中介就能促进交易的协议。"
   },
+  "去中心化交易": {
+    "keyword": "去中心化交易",
+    "definition": "(DEX) 一种无需可信中介就能促进交易的协议。"
+  },
   "去中心化金融": {
     "keyword": "去中心化金融",
     "definition": "(DeFi) 一套架设在区块链上的自托管金融工具。"
   },
   "defi（去中心化金融）": {
     "keyword": "DeFi（去中心化金融）",
+    "definition": "(Decentralized Finance) 一套架设在区块链上的自托管金融工具。"
+  },
+  "defis（去中心化金融）": {
+    "keyword": "DeFis（去中心化金融）",
     "definition": "(Decentralized Finance) 一套架设在区块链上的自托管金融工具。"
   },
   "代表": {
@@ -171,8 +191,16 @@
     "keyword": "erc-20",
     "definition": "以太坊上可转让代币的标准。"
   },
+  "erc-20s": {
+    "keyword": "erc-20s",
+    "definition": "以太坊上可转让代币的标准。"
+  },
   "erc-721": {
     "keyword": "erc-721",
+    "definition": "以太坊上不可转让代币的标准。"
+  },
+  "erc-721s": {
+    "keyword": "erc-721s",
     "definition": "以太坊上不可转让代币的标准。"
   },
   "以太访虚拟机 (ethereum virtual machine)": {
@@ -181,6 +209,10 @@
   },
   "fomo": {
     "keyword": "FOMO",
+    "definition": "(Fear Of Missing Out) 担心或忧虑自己无法参与某事。"
+  },
+  "fomos": {
+    "keyword": "FOMOs",
     "definition": "(Fear Of Missing Out) 担心或忧虑自己无法参与某事。"
   },
   "分叉": {
@@ -195,8 +227,16 @@
     "keyword": "gas",
     "definition": "区块链网络的交易费用。"
   },
+  "gass": {
+    "keyword": "gass",
+    "definition": "区块链网络的交易费用。"
+  },
   "无交易费（gas）的交易": {
     "keyword": "无交易费（gas）的交易",
+    "definition": "一种将部分交易代币用作交易费用（gas），而不是使用该区块链网络原生代币作为交易费用（gas）的交易"
+  },
+  "无交易费（gas）交易": {
+    "keyword": "无交易费（gas）交易",
     "definition": "一种将部分交易代币用作交易费用（gas），而不是使用该区块链网络原生代币作为交易费用（gas）的交易"
   },
   "gwei": {
@@ -271,6 +311,10 @@
     "keyword": "LP",
     "definition": "(流动性提供者) 将其代币借给协议以换取费用分成的区块链用户。"
   },
+  "lps": {
+    "keyword": "LPs",
+    "definition": "(流动性提供者) 将其代币借给协议以换取费用分成的区块链用户。"
+  },
   "市值": {
     "keyword": "市值",
     "definition": "特定代币或市场部门的总价值。"
@@ -283,12 +327,20 @@
     "keyword": "MEV",
     "definition": "最大可提取价值--通过对区块内的交易排序提取的价值。"
   },
+  "mevs": {
+    "keyword": "MEVs",
+    "definition": "最大可提取价值--通过对区块内的交易排序提取的价值。"
+  },
   "网络治理": {
     "keyword": "网络治理",
     "definition": "去中心化社区就网络功能/升级达成一致的过程。"
   },
   "nft": {
     "keyword": "NFT",
+    "definition": "(非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
+  },
+  "nfts": {
+    "keyword": "NFTs",
     "definition": "(非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
   },
   "非托管钱包": {
@@ -311,6 +363,10 @@
     "keyword": "OTC",
     "definition": "(柜台交易) 直接与私人实体进行的交易。"
   },
+  "otcs": {
+    "keyword": "OTCs",
+    "definition": "(柜台交易) 直接与私人实体进行的交易。"
+  },
   "柜台交易": {
     "keyword": "柜台交易",
     "definition": "(柜台交易) 直接与私人实体进行的交易。"
@@ -327,8 +383,16 @@
     "keyword": "peg",
     "definition": "保持两种或两种以上资产价值等同的方法。"
   },
+  "pegs": {
+    "keyword": "pegs",
+    "definition": "保持两种或两种以上资产价值等同的方法。"
+  },
   "无需准入性": {
     "keyword": "无需准入性",
+    "definition": "不需要任何实体批准的许可。"
+  },
+  "许可": {
+    "keyword": "许可",
     "definition": "不需要任何实体批准的许可。"
   },
   "网络钓鱼": {
@@ -341,6 +405,10 @@
   },
   "pos": {
     "keyword": "PoS",
+    "definition": "权益质押证明共识"
+  },
+  "poss": {
+    "keyword": "PoSs",
     "definition": "权益质押证明共识"
   },
   "价格影响": {
@@ -381,6 +449,10 @@
   },
   "retropgf": {
     "keyword": "RetroPGF",
+    "definition": "(追溯性公益资助) 根据项目的历史影响资助项目的机制。"
+  },
+  "retropgfs": {
+    "keyword": "RetroPGFs",
     "definition": "(追溯性公益资助) 根据项目的历史影响资助项目的机制。"
   },
   "卷积": {
@@ -467,6 +539,10 @@
     "keyword": "TPS",
     "definition": "TPS 是衡量区块链可扩展性的一个指标，是区块链每秒处理的交易数量。"
   },
+  "tpss": {
+    "keyword": "TPSs",
+    "definition": "TPS 是衡量区块链可扩展性的一个指标，是区块链每秒处理的交易数量。"
+  },
   "交易": {
     "keyword": "交易",
     "definition": "区块链上的货币或其他形式的转账记录。"
@@ -495,6 +571,10 @@
     "keyword": "TVL",
     "definition": "(锁定总值) 存储在特定位置的资产总值。"
   },
+  "tvls": {
+    "keyword": "TVLs",
+    "definition": "(锁定总值) 存储在特定位置的资产总值。"
+  },
   "验证桥": {
     "keyword": "验证桥",
     "definition": "验证桥式合约是一种新的设计，无需信任任何外部机构来决定撤回是否有效。"
@@ -509,6 +589,10 @@
   },
   "web3": {
     "keyword": "web3",
+    "definition": "指在区块链上运行的应用程序，任何人都可以参与其中，无需将个人数据货币化。"
+  },
+  "web3s": {
+    "keyword": "web3s",
     "definition": "指在区块链上运行的应用程序，任何人都可以参与其中，无需将个人数据货币化。"
   },
   "零知识": {
