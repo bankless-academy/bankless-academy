@@ -1,7 +1,7 @@
 {
   "2 factor authentication": {
     "keyword": "Autenticación de 2 Factores",
-    "keyword_plural": "Autentificación de 2 Factores",
+    "keyword_plural": "Autentificación de 2 factores",
     "definition": "Una capa adicional de seguridad utilizada para asegurarse de que las personas que intentan acceder a una cuenta en línea son quienes dicen ser."
   },
   "51% attack": {
@@ -226,13 +226,13 @@
   },
   "erc-20": {
     "keyword": "ERC-20",
-    "keyword_plural": "ERC-20s",
-    "definition": "A standard for transferable fungible tokens on Ethereum. These tokens are divisible and non-unique."
+    "keyword_plural": "ERC-20",
+    "definition": "Un estándar para tokens fungibles transferibles en Ethereum. Estos tokens son divisibles y no únicos."
   },
   "erc-721": {
     "keyword": "ERC-721",
-    "keyword_plural": "ERC-721s",
-    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
+    "keyword_plural": "ERC-721",
+    "definition": "Un estándar para tokens no fungibles en Ethereum. Estos tokens tienen un identificador digital único, no se pueden copiar, sustituir ni subdividir."
   },
   "ethereum virtual machine": {
     "keyword": "Máquina Virtual de Ethereum (MVE)",
@@ -286,7 +286,7 @@
   },
   "hodl": {
     "keyword": "HODL",
-    "keyword_plural": "HODLs",
+    "keyword_plural": "HODL",
     "definition": "(Hold On for Dear Life) Jerga criptográfica para no vender cripto sin importar las condiciones del mercado."
   },
   "hot wallet": {
@@ -306,7 +306,7 @@
   },
   "kyc": {
     "keyword": "KYC",
-    "keyword_plural": "KYC",
+    "keyword_plural": "KYCs",
     "definition": "(Know-Your-Customer) Proceso de identificación de usuarios sancionado por el gobierno."
   },
   "l1": {
@@ -617,7 +617,7 @@
   "trade route": {
     "keyword": "ruta de intercambio comercial",
     "keyword_plural": "ruta de cambio",
-    "definition": "Cuál es el camino recorrido desde la ficha inicial hasta la ficha final en una operación."
+    "definition": "¿Cuál es el camino recorrido desde el token inicial hasta el token final en una operación?"
   },
   "trade routing": {
     "keyword": "ruta de intercambio comercial",
@@ -646,7 +646,7 @@
   },
   "trustless": {
     "keyword": "sin confianza",
-    "keyword_plural": "trustlesss",
+    "keyword_plural": "sin confianza",
     "definition": "Cualidad de operar sin necesidad de confiar en personas o instituciones (automática, no pertenece a ninguna persona)."
   },
   "tvl": {
