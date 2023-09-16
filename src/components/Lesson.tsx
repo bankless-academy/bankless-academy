@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect, useLayoutEffect } from 'react'
 import {
   Box,
   Text,
@@ -192,11 +192,13 @@ const Lesson = ({
 
   const buttonLeftRef = useRef(null)
   const buttonRightRef = useRef(null)
+  const slideRef = useRef(null)
   const answerRef = useRef([])
   const [currentSlide, setCurrentSlide] = useState(
     parseInt(localStorage.getItem(lesson.slug) || '0')
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
+  const [longSlide, setLongSlide] = useState<boolean>(false)
   const [, isSmallScreen] = useSmallScreen()
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
@@ -221,6 +223,16 @@ const Lesson = ({
   // walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb44'
 
   const keywords = { ...KEYWORDS, ...extraKeywords }
+
+  useLayoutEffect(() => {
+    if (
+      slideRef?.current?.offsetHeight > 600 &&
+      !isSmallScreen &&
+      slide.type === 'LEARN'
+    )
+      setLongSlide(true)
+    else setLongSlide(false)
+  }, [slide])
 
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
@@ -523,7 +535,9 @@ const Lesson = ({
           pt={4}
         >
           {slide.type === 'LEARN' && (
-            <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
+            <Box ref={slideRef}>
+              {ReactHtmlParser(slide.content, { transform })}
+            </Box>
           )}
           {slide.type === 'QUIZ' && (
             <>
@@ -640,6 +654,7 @@ const Lesson = ({
               size="lg"
               onClick={goToPrevSlide}
               leftIcon={<ArrowBackIcon />}
+              ml={longSlide ? '600px' : '0'}
             >
               {isLastSlide && isSmallScreen ? '' : 'Prev'}
             </Button>
