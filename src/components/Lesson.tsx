@@ -232,7 +232,7 @@ const Lesson = ({
     )
       setLongSlide(true)
     else setLongSlide(false)
-  }, [slide])
+  }, [slide, isSmallScreen])
 
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
