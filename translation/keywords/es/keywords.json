@@ -171,7 +171,7 @@
   },
   "decentralized": {
     "keyword": "descentralizado",
-    "keyword_plural": "descentralizados",
+    "keyword_plural": "descentralizado",
     "definition": "Ninguna autoridad o entidad única controla los datos."
   },
   "decentralized exchange": {
@@ -186,7 +186,7 @@
   },
   "defi": {
     "keyword": "DeFi",
-    "keyword_plural": "DeFis",
+    "keyword_plural": "DeFi",
     "definition": "(DeFi) Conjunto de herramientas financieras de autocustodia, alojadas en una blockchain."
   },
   "delegate": {
@@ -331,7 +331,7 @@
   },
   "ledger": {
     "keyword": "libro de contabilidad",
-    "keyword_plural": "ledgers",
+    "keyword_plural": "libro de contabilidad",
     "definition": "El registro de todas las transacciones que se han producido."
   },
   "lender": {
@@ -396,7 +396,7 @@
   },
   "optimistic rollup": {
     "keyword": "rollup optimista",
-    "keyword_plural": "optimistic rollups",
+    "keyword_plural": "rollups optimistias",
     "definition": "Una solución de escalado rollup de capa 2 que asume de forma optimista que todas las transacciones de su transacción \"enrollada\" son válidas hasta que se demuestre que son falsas mediante una prueba de fraude."
   },
   "otc": {
@@ -496,7 +496,7 @@
   },
   "rollup": {
     "keyword": "enrollable",
-    "keyword_plural": "rollups",
+    "keyword_plural": "enrollable",
     "definition": "Una solución de escalado de capa 2 que permite procesar un elevado número de transacciones fuera de la cadena y agregarlas en una única transacción mayor en la cadena, lo que aumenta el rendimiento de las transacciones y reduce los costes."
   },
   "sandwich attack": {
@@ -521,7 +521,7 @@
   },
   "seed phrase": {
     "keyword": "frase semilla",
-    "keyword_plural": "frase de semilla",
+    "keyword_plural": "frase semilla",
     "definition": "Grupo de palabras aleatorias generadas por un monedero en la configuración, actúan como la llave maestra de TODAS las cuentas controladas por ese monedero. NUNCA COMPARTAS TU FRASE SEMILLA CON NADIE POR NINGÚN MOTIVO."
   },
   "settlement layer": {
@@ -531,7 +531,7 @@
   },
   "settlement time": {
     "keyword": "tiempo de asentamiento",
-    "keyword_plural": "tiempo de liquidación",
+    "keyword_plural": "tiempo de asentamiento",
     "definition": "El tiempo necesario para que se confirme una transacción."
   },
   "sharding": {
@@ -666,7 +666,7 @@
   },
   "wallet": {
     "keyword": "billetera",
-    "keyword_plural": "carteras",
+    "keyword_plural": "billeteras",
     "definition": "Una billetera es una aplicación o dispositivo utilizado para enviar y recibir criptoactivos en la cadena de bloques."
   },
   "web3": {
