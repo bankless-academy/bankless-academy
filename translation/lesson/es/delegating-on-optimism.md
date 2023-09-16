@@ -76,27 +76,31 @@ Ningún token OP saldrá de tu billetera durante este proceso. Hay una pequeña 
 
 * *¿Cuántos tokens necesito delegar?*
 
-Puedes empezar a delegar teniendo cualquier cantidad de fichas OP, ¡incluso cero! A medida que aumente o disminuya su tenencia de OP tokens, se actualizará su poder de voto delegado. No tiene que redelegar cada vez que haga cambios en sus participaciones en OP.
+Puedes empezar a delegar teniendo cualquier cantidad de fichas OP, ¡incluso cero! A medida que aumente o disminuya su saldo de OP tokens, se actualizará su poder de voto delegado. No tiene que volver a delegar cada vez que haga cambios en su saldo en OP.
 
 * *¿Cómo elijo al delegado adecuado?*
 
-Todo depende de tus valores personales y de tu visión de cómo quieres que crezca Optimism. Tómate tu tiempo para desplazarte por los perfiles de los Delegados para así ver qué resuena contigo.
+Todo depende de tus valores personales y de tu visión de cómo quieres que crezca Optimism. Tómate tu tiempo para explorar los perfiles de los Delegados y así ver quién resuena contigo.
 
 * *¿Puedo convertirme en un Delegado?*
 
-¡Tú puedes! Consulta la guía ['How to be a delegate (Cómo ser un Delegado)'](https://community.optimism.io/docs/governance/delegate/), en la documentación de Optimism.
+¡Sí! Consulta la guía ['How to be a delegate (Cómo ser un Delegado)'](https://community.optimism.io/docs/governance/delegate/), en la documentación de Optimism.
 
-Nota: esto no contará para la Prueba de Conocimientos </a> de [ 'Gobernanza en Optimism'](https://app.banklessacademy.com/lessons/optimism-governance) de Bankless Academy.
+Nota: esto no contará para la Prueba de Conocimientos de [‘Gobernanza en Optimism’](https://app.banklessacademy.com/lessons/optimism-governance) de Bankless Academy.
 
 * *¿Necesito delegar para votar?*
 
-Puedes saltarte la delegación y representarte a ti mismo siguiendo los votos en la pestaña "Propuestas" del Ágora del Optimism.
+Puedes saltarte la delegación y representarte a ti mismo dando seguimiento a las votaciones en la pestaña "Propuestas" del Ágora de Optimism.
 
-Nota: esto no contará para la Prueba de Conocimientos </a> de [ 'Gobernanza en Optimism'](https://app.banklessacademy.com/lessons/optimism-governance) de Bankless Academy.
+Nota: esto tampoco contará para la Prueba de Conocimientos de </a>'Gobernanza en Optimism'
+
+ de Bankless Academy. Aún así, ¡te invitamos a hacerlo una vez que obtengas tu insignia!</p> 
+
+
 
 
 ---
 
 **Autor**
 
-**[Tetranome](https://twitter.com/Tetranome)** es el Campeón de Proyecto en Bankless Academy, su trabajo se centra en la experiencia del usuario, la interfaz, diseño y contenido.
+**[Tetranome](https://twitter.com/Tetranome)** es el Líder de Proyecto en Bankless Academy, su trabajo se centra en experiencia de usuario, interfaz, diseño y contenido.
