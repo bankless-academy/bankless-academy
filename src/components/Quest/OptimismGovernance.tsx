@@ -116,8 +116,9 @@ const OptimismGovernance = (
                 </Button>
               </VStack>
               <Box mt="8">
+                {t('Tip: ')}
                 {t(
-                  "Tip: Check our Explorer's Handbook entry on 'How to delegate on Optimism' to learn how to delegate."
+                  "Check our Explorer's Handbook entry on 'How to delegate on Optimism' to learn how to delegate."
                 )}
               </Box>
               {isTransactionVerified !== 'true' && (
