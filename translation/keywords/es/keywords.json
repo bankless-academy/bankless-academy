@@ -225,14 +225,14 @@
     "definition": "El tiempo que tarda en incluirse un número específico de bloques en una cadena de bloques determinada."
   },
   "erc-20": {
-    "keyword": "erc-20",
-    "keyword_plural": "erc-20",
-    "definition": "Un estándar para tokens transferibles en Ethereum."
+    "keyword": "ERC-20",
+    "keyword_plural": "ERC-20s",
+    "definition": "A standard for transferable fungible tokens on Ethereum. These tokens are divisible and non-unique."
   },
   "erc-721": {
-    "keyword": "erc-721",
-    "keyword_plural": "erc-721",
-    "definition": "Un estándar para tokens no-transferibles en Ethereum."
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721s",
+    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
   },
   "ethereum virtual machine": {
     "keyword": "Máquina Virtual de Ethereum (MVE)",
