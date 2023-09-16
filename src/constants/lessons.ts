@@ -2001,7 +2001,8 @@ const LESSONS: LessonType[] = [
       'fr',
       'es',
       'de',
-      'jp'
+      'jp',
+      'cn'
     ],
     lessonWriters: 'Tetranome',
     quest: 'OptimismGovernance',
@@ -2300,7 +2301,9 @@ const LESSONS: LessonType[] = [
     languages: [
       'fr',
       'es',
-      'de'
+      'de',
+      'jp',
+      'cn'
     ],
     lessonWriters: 'Tetranome',
     publicationStatus: 'publish',

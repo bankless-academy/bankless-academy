@@ -151,9 +151,9 @@
     "keyword": "DeFi",
     "definition": "(DeFi) Conjunto de herramientas financieras de autocustodia, alojadas en una blockchain."
   },
-  "delegate": {
-    "keyword": "delegate",
-    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+  "delegado": {
+    "keyword": "delegado",
+    "definition": "Otorgar una responsabilidad específica a otra persona, es decir, delegar un poder de voto simbólico."
   },
   "delegación": {
     "keyword": "delegación",
