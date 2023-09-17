@@ -1,13 +1,13 @@
 {
   "2 factor authentication": {
-    "keyword": "2 Factor Authentication",
-    "keyword_plural": "2 Factor Authentications",
-    "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+    "keyword": "Zwei-Faktor-Authentifizierung",
+    "keyword_plural": "Zwei-Faktor-Authentifizierungen",
+    "definition": "Eine zusätzliche Sicherheitsebene, mit der sichergestellt werden soll, dass Personen, die versuchen, Zugang zu einem Online-Konto zu erhalten, auch wirklich diejenigen sind, für die sie sich ausgeben."
   },
   "51% attack": {
-    "keyword": "51% attack",
-    "keyword_plural": "51% attacks",
-    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+    "keyword": "51% Attacke",
+    "keyword_plural": "51% Attacken",
+    "definition": "Ein Angriff auf den Blockchain Konsensmechanismus durch die Kontrolle von über 51 % der produzierenden Blöcke im Netzwerk."
   },
   "address": {
     "keyword": "Adresse",
@@ -15,19 +15,19 @@
     "definition": "Einzigartige öffentliche Kennung für eine Entität in einer Blockchain."
   },
   "aggregator": {
-    "keyword": "aggregator",
-    "keyword_plural": "aggregators",
-    "definition": "Tool that combines multiple sources, to offer competitive options."
+    "keyword": "Aggregator",
+    "keyword_plural": "Aggregatoren",
+    "definition": "Ein Tool, das mehrere Quellen kombiniert, um wettbewerbsfähige Optionen anzubieten."
   },
   "airdrop": {
-    "keyword": "airdrop",
-    "keyword_plural": "airdrops",
-    "definition": "A free distribution of crypto assets to users."
+    "keyword": "AirDrop",
+    "keyword_plural": "AirDrops",
+    "definition": "Eine kostenlose Verteilung von Krypto-Assets an Nutzer."
   },
   "allowance": {
     "keyword": "allowance",
     "keyword_plural": "allowances",
-    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
+    "definition": "Ermöglicht einer Entität, in der Regel einem Smart Contract, das Recht, eine bestimmte Menge deiner Token in einer Transaktion zu verwenden."
   },
   "alternative layer 1": {
     "keyword": "alternative Layer 1",
