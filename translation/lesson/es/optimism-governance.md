@@ -1,5 +1,5 @@
 ---
-TITLE: Gobernanza en Optimism
+TITLE: Governanza en Optimism
 DESCRIPTION: '¡Aprende a votar onchain y mintea tu Academy Badge!'
 LANGUAGE: Español
 WRITERS: Tetranome
@@ -139,11 +139,11 @@ Los controles y equilibrios legales, como la capacidad del Colectivo para destit
 
 # Una Nueva Economía
 
-En el centro de economía`L2` de Optimism, está la **‘Optimistic Flywheel’** o 'Volante de Inercia'. Este ciclo económico genera ingresos, crecimiento de la red y progreso hacia la misión de Optimism.
+En el centro de economía`L2` de Optimism, está la **‘Optimistic Flywheel’**. Este ciclo económico genera ingresos, crecimiento de la red y progreso hacia la misión de Optimism.
 
-1. Usuarios y `dApps` demandan `espacio de bloque` de red.
+1. Usuarios y `dApps` demandan `espacio de bloque` de la red.
 2. La red genera ingresos a través de comisiones de transacción.
-3. Una parte de estos impuestos se concede a quienes construyen infraestructuras de bienes públicos de alto impacto.
+3. Una parte de estos impuestos se concede a los constructores que proporcionan infraestructuras de bienes públicos de gran impacto.
 4. Los usuarios de la red acceden a recursos y servicios gratuitos, lo que aumenta el valor del espacio de bloques OP.
 
 Con una infraestructura onchain más valiosa, aumenta la demanda de espacio de bloques Optimism, ¡y el ciclo continúa!
@@ -168,7 +168,7 @@ Optimism llama **'Ether's Phoenix'** al siguiente efecto: un _"ángel que retroc
 
 _"Es un algoritmo que recompensa a los primeros cooperadores que crearon las condiciones para que prosperara la financiación de bienes públicos. Es un futuro en el que se reconoce la inversión temprana en bienes públicos. Es una mentalidad que sostiene que: el optimismo prevalece, que los sistemas mejores son posibles y que la humanidad será recompensada por su revolución cooperativa."_
 
-— Fundación Optimism
+— La Fundación Optimism
 
 ![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-f63f460c.svg)
 
@@ -196,7 +196,7 @@ _"Es un algoritmo que recompensa a los primeros cooperadores que crearon las con
 
 El Colectivo Optimismo está formado por dos casas, cada una con responsabilidades independientes y compartidas en la gestión de la red.
 
-**La Cámara de Tokens** es responsable de administrar las mejoras, incentivos y la tesorería de la red. Su estructura de partes interesadas o 'stakeholders' incentiva el crecimiento de la economía de la red y genera valor para las mismas. La cámara también es responsable de preservar la descentralización, evitando la captura de la economía de la red.
+**La Cámara de Tokens** es responsable de administrar las mejoras, incentivos y la tesorería de la red. Su estructura de partes interesadas o 'stakeholders' incentiva el crecimiento de la economía de la red y genera valor para las partes interesadas. La cámara también es responsable de preservar la descentralización, evitando la captura de la economía de la red.
 
 **La Cámara de los Ciudadanos** asigna los recursos de `RetroPGF` a proyectos comunitarios, de acuerdo con la ética "Impacto = Beneficio", y ayuda a decidir los parámetros de la ciudadanía. Se incentiva a la cámara para que mejore la calidad de vida de la red, financiando bienes públicos que mejoren el valor de la ciudadanía.
 
@@ -242,7 +242,7 @@ La Cámara de Tokens también tiene capacidad para vetar cualquier propuesta pre
 
 # La Cámara de Tokens: Cómo unirse, votar, y delegar
 
-📝 ** Inscripción:** La inscripción a la Cámara de Tokens se realiza mediante la compra y tenencia de fichas OP. Estos son tokens `ERC-20` , y por lo tanto son transferibles; pueden ser comprados y vendidos en `CEXs`,  `DEXs` de Optimism, o enviados entre amigos. Los tokens OP no están disponibles en otras redes.
+📝 **La inscripción** a la Cámara de Tokens se realiza mediante la compra y tenencia de fichas OP. Estos son tokens `ERC-20` , y por lo tanto son transferibles; pueden ser comprados y vendidos en `CEXs`,  `DEXs` de Optimism, o enviados entre amigos. Los tokens OP no están disponibles en otras redes.
 
 🗳️ **Votación:** El poder de voto escala en función de cuántos tokens tengas.
 
@@ -309,7 +309,7 @@ Los detalles de las invitaciones cambian estacionalmente a partir de la experime
 
 A medida que los métodos de escalado se refinan, esto se automatizará mediante la `gobernanza onchain`.
 
-🗳️ **Votación:** Cada ciudadano dispone de un voto. Su poder de voto no se puede transferir ni delegar. Esto protege contra la acumulación del poder de la Cámara bajo un pequeño número de Ciudadanos.
+🗳️ **Votación:** Cada ciudadano dispone de un voto. Su poder de voto no puede transferirse ni delegarse. Esto protege contra la acumulación del poder de la Cámara bajo un pequeño número de Ciudadanos.
 
 En la actualidad, la distribución de RetroPGF se realiza aproximadamente dos veces al año.
 
@@ -329,7 +329,7 @@ En la actualidad, la distribución de RetroPGF se realiza aproximadamente dos ve
 
 > ℹ️ ¡Correcto! Esta casa diversifica su propia perspectiva y equilibra la perspectiva de la Cámara de Tokens.
 
-# Temporadas de Gobernanza
+# Temporadas de Governanza
 
 Optimism adopta **un enfoque iterativo de la gobernanza**, utilizando una estructura de calendario denominada "Temporadas".
 
@@ -347,7 +347,7 @@ Estamos casi listos para gobernar en Optimism 🔴. Hay una última cosa que men
 
 La Visión Optimista no se detiene en una única blockchain `L2` . Como resultado de la habilidad de `bifurcar` una blockchain, este es un experimento de gobernanza clonable. Esta tecnología está concebida para ampliarse a múltiples L2, e incluso a escenarios de gobernanza del mundo real. Optimism llama a esto **'La Supercadena'**.
 
-Coinbase, un destacado `CEX`, ya se ha bifurcado y ha empezado a contribuir a esta iniciativa `de código abierto` , a través de la blockchain Base 🔵 también de Capa 2 (L2). Esta puesta en común de los recursos de desarrollo aumenta la evolución de las infraestructuras, al tiempo que canaliza las comisiones de las transacciones de L2 hacia la ética "Impacto = Beneficio".
+Coinbase, un destacado `CEX`, ya se ha bifurcado y ha empezado a contribuir a esta iniciativa `de código abierto` , a través de la blockchain Base 🔵 L2. Esta puesta en común de los recursos de desarrollo aumenta la evolución de las infraestructuras, al tiempo que canaliza las comisiones de las transacciones de L2 hacia la ética "Impacto = Beneficio".
 
 ¡Las recompensas RetroPGF incluyen ahora los beneficios de las tasas de transacción de Base 🔵, lo que significa más financiación para los bienes públicos de ``!
 
