@@ -235,14 +235,14 @@
     "definition": "以太坊上不可兑换代币的标准。这些代币具有唯一的数字标识符，不可复制、替代或分割。"
   },
   "ethereum virtual machine": {
-    "keyword": "以太访虚拟机 (Ethereum Virtual Machine)",
-    "keyword_plural": "以太访虚拟机 (Ethereum Virtual Machine)",
+    "keyword": "以太访虚拟机(Ethereum Virtual Machine)",
+    "keyword_plural": "以太访虚拟机(Ethereum Virtual Machines)",
     "definition": "以太坊虚拟机或 EVM 是一款执行智能合约和计算以太坊网络状态的软件。"
   },
   "fomo": {
     "keyword": "FOMO",
     "keyword_plural": "FOMOs",
-    "definition": "(Fear Of Missing Out) 担心或忧虑自己无法参与某事。"
+    "definition": "(Fear Of Missing Out)担心或忧虑自己无法参与某事。"
   },
   "fork": {
     "keyword": "分叉",
@@ -260,7 +260,7 @@
     "definition": "区块链网络的交易费用。"
   },
   "gasless transactions": {
-    "keyword": "无交易费（gas）的交易",
+    "keyword": "无交易费（gas）交易",
     "keyword_plural": "无交易费（gas）交易",
     "definition": "一种将部分交易代币用作交易费用（gas），而不是使用该区块链网络原生代币作为交易费用（gas）的交易"
   },
@@ -287,7 +287,7 @@
   "hodl": {
     "keyword": "HODL",
     "keyword_plural": "HODL",
-    "definition": "(Hold On for Dear Life）加密货币俚语，指无论市场情况如何，都不出售加密货币的持有者。"
+    "definition": "（Hold On for Dear Life）加密货币俚语，指无论市场情况如何，都不出售加密货币的持有者。"
   },
   "hot wallet": {
     "keyword": "热钱包",
