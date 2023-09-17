@@ -65,7 +65,7 @@
   },
   "区块空间": {
     "keyword": "区块空间",
-    "definition": "区块链上可用于存储信息和运行代码的空间大小。一个（或一系列）区块内的 \"空间 \"量。"
+    "definition": "区块链上可用于存储信息和运行代码的空间大小。一个（或一系列）区块内的\"空间\"量。"
   },
   "区块链": {
     "keyword": "区块链",
@@ -93,15 +93,15 @@
   },
   "中心化交易所": {
     "keyword": "中心化交易所",
-    "definition": "中心化交易所 (CEX）一个协调加密货币交易的收费平台，类似于证券交易所。"
+    "definition": "中心化交易所（CEX）一个协调加密货币 交易的收费平台，类似于证券交易所。"
   },
   "cex": {
     "keyword": "CEX",
-    "definition": "(Centralized Exchange）协调加密货币交易并收取费用的平台，类似于证券交易所。"
+    "definition": "（Centralized Exchange）协调加密货币 交易并收取费用的平台，类似于证券交易所。"
   },
   "cexs": {
     "keyword": "CEXs",
-    "definition": "(Centralized Exchange）协调加密货币交易并收取费用的平台，类似于证券交易所。"
+    "definition": "（Centralized Exchange）协调加密货币 交易并收取费用的平台，类似于证券交易所。"
   },
   "链": {
     "keyword": "链",
@@ -131,17 +131,17 @@
     "keyword": "托管钱包",
     "definition": "托管钱包由另一方控制私钥，从而控制对加密资产的访问。"
   },
-  "去中心化自治组织（dao)": {
-    "keyword": "去中心化自治组织（DAO)",
-    "definition": "(去中心化自治组织 Decentralized Autonomous Organization）一种利用区块链技术实现投票和管理自动化的组织结构。"
+  "去中心化自治组织（dao）": {
+    "keyword": "去中心化自治组织（DAO）",
+    "definition": "（去中心化自治组织 Decentralized Autonomous Organization）一种利用区块链技术实现投票和管理自动化的组织结构。"
   },
   "daos": {
     "keyword": "DAOs",
-    "definition": "(去中心化自治组织 Decentralized Autonomous Organization）一种利用区块链技术实现投票和管理自动化的组织结构。"
+    "definition": "（去中心化自治组织 Decentralized Autonomous Organization）一种利用区块链技术实现投票和管理自动化的组织结构。"
   },
-  "去中心化 app （dapp）": {
-    "keyword": "去中心化 App （dApp）",
-    "definition": "连接分散网络和协议的分散应用程序。"
+  "去中心化 app（dapp）": {
+    "keyword": "去中心化 App（dApp）",
+    "definition": "连接去中心化网络和协议的去中心化应用程序。"
   },
   "去中心化": {
     "keyword": "去中心化",
@@ -151,24 +151,20 @@
     "keyword": "去中心化交易所",
     "definition": "去中心化交易所：一种无需可信中介就能促进交易的协议。"
   },
-  "去中心化交易": {
-    "keyword": "去中心化交易",
-    "definition": "(DEX) 一种无需可信中介就能促进交易的协议。"
-  },
   "去中心化金融": {
     "keyword": "去中心化金融",
-    "definition": "(DeFi) 一套架设在区块链上的自托管金融工具。"
+    "definition": "（DeFi）一套架设在区块链上的自托管金融工具。"
   },
   "defi（去中心化金融）": {
     "keyword": "DeFi（去中心化金融）",
-    "definition": "(Decentralized Finance) 一套架设在区块链上的自托管金融工具。"
+    "definition": "（Decentralized Finance）一套架设在区块链上的自托管金融工具。"
   },
   "defis（去中心化金融）": {
     "keyword": "DeFis（去中心化金融）",
-    "definition": "(Decentralized Finance) 一套架设在区块链上的自托管金融工具。"
+    "definition": "（Decentralized Finance）一套架设在区块链上的自托管金融工具。"
   },
-  "代表": {
-    "keyword": "代表",
+  "授权": {
+    "keyword": "授权",
     "definition": "赋予他人特定的责任，即授予象征性投票权。"
   },
   "dex 聚合器": {
@@ -187,33 +183,33 @@
     "keyword": "纪元（Epoch）",
     "definition": "特定区块链包含特定数量区块所需的时间。"
   },
-  "erc-20": {
-    "keyword": "erc-20",
-    "definition": "以太坊上可转让代币的标准。"
+  "纪元（epochs）": {
+    "keyword": "纪元（Epochs）",
+    "definition": "特定区块链包含特定数量区块所需的时间。"
   },
-  "erc-20s": {
-    "keyword": "erc-20s",
-    "definition": "以太坊上可转让代币的标准。"
+  "erc-20 协议": {
+    "keyword": "ERC-20 协议",
+    "definition": "以太坊上可转让可互换代币的标准。这些代币可分割且不具有唯一性。"
   },
-  "erc-721": {
-    "keyword": "erc-721",
-    "definition": "以太坊上不可转让代币的标准。"
+  "erc-721 协议": {
+    "keyword": "ERC-721 协议",
+    "definition": "以太坊上不可兑换代币的标准。这些代币具有唯一的数字标识符，不可复制、替代或分割。"
   },
-  "erc-721s": {
-    "keyword": "erc-721s",
-    "definition": "以太坊上不可转让代币的标准。"
+  "以太访虚拟机(ethereum virtual machine)": {
+    "keyword": "以太访虚拟机(Ethereum Virtual Machine)",
+    "definition": "以太坊虚拟机或 EVM 是一款执行智能合约和计算以太坊网络状态的软件。"
   },
-  "以太访虚拟机 (ethereum virtual machine)": {
-    "keyword": "以太访虚拟机 (Ethereum Virtual Machine)",
+  "以太访虚拟机(ethereum virtual machines)": {
+    "keyword": "以太访虚拟机(Ethereum Virtual Machines)",
     "definition": "以太坊虚拟机或 EVM 是一款执行智能合约和计算以太坊网络状态的软件。"
   },
   "fomo": {
     "keyword": "FOMO",
-    "definition": "(Fear Of Missing Out) 担心或忧虑自己无法参与某事。"
+    "definition": "(Fear Of Missing Out)担心或忧虑自己无法参与某事。"
   },
   "fomos": {
     "keyword": "FOMOs",
-    "definition": "(Fear Of Missing Out) 担心或忧虑自己无法参与某事。"
+    "definition": "(Fear Of Missing Out)担心或忧虑自己无法参与某事。"
   },
   "分叉": {
     "keyword": "分叉",
@@ -230,10 +226,6 @@
   "gass": {
     "keyword": "gass",
     "definition": "区块链网络的交易费用。"
-  },
-  "无交易费（gas）的交易": {
-    "keyword": "无交易费（gas）的交易",
-    "definition": "一种将部分交易代币用作交易费用（gas），而不是使用该区块链网络原生代币作为交易费用（gas）的交易"
   },
   "无交易费（gas）交易": {
     "keyword": "无交易费（gas）交易",
@@ -257,7 +249,7 @@
   },
   "hodl": {
     "keyword": "HODL",
-    "definition": "(Hold On for Dear Life）加密货币俚语，指无论市场情况如何，都不出售加密货币的持有者。"
+    "definition": "（Hold On for Dear Life）加密货币俚语，指无论市场情况如何，都不出售加密货币的持有者。"
   },
   "热钱包": {
     "keyword": "热钱包",

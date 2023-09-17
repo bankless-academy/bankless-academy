@@ -1,19 +1,19 @@
 {
-  "2 factor authentication": {
-    "keyword": "2 Factor Authentication",
-    "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+  "zwei-faktor-authentifizierung": {
+    "keyword": "Zwei-Faktor-Authentifizierung",
+    "definition": "Eine zusätzliche Sicherheitsebene, mit der sichergestellt werden soll, dass Personen, die versuchen, Zugang zu einem Online-Konto zu erhalten, auch wirklich diejenigen sind, für die sie sich ausgeben."
   },
-  "2 factor authentications": {
-    "keyword": "2 Factor Authentications",
-    "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+  "zwei-faktor-authentifizierungen": {
+    "keyword": "Zwei-Faktor-Authentifizierungen",
+    "definition": "Eine zusätzliche Sicherheitsebene, mit der sichergestellt werden soll, dass Personen, die versuchen, Zugang zu einem Online-Konto zu erhalten, auch wirklich diejenigen sind, für die sie sich ausgeben."
   },
-  "51% attack": {
-    "keyword": "51% attack",
-    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+  "51% attacke": {
+    "keyword": "51% Attacke",
+    "definition": "Ein Angriff auf den Blockchain Konsensmechanismus durch die Kontrolle von über 51 % der produzierenden Blöcke im Netzwerk."
   },
-  "51% attacks": {
-    "keyword": "51% attacks",
-    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+  "51% attacken": {
+    "keyword": "51% Attacken",
+    "definition": "Ein Angriff auf den Blockchain Konsensmechanismus durch die Kontrolle von über 51 % der produzierenden Blöcke im Netzwerk."
   },
   "adresse": {
     "keyword": "Adresse",
@@ -24,28 +24,28 @@
     "definition": "Einzigartige öffentliche Kennung für eine Entität in einer Blockchain."
   },
   "aggregator": {
-    "keyword": "aggregator",
-    "definition": "Tool that combines multiple sources, to offer competitive options."
+    "keyword": "Aggregator",
+    "definition": "Ein Tool, das mehrere Quellen kombiniert, um wettbewerbsfähige Optionen anzubieten."
   },
-  "aggregators": {
-    "keyword": "aggregators",
-    "definition": "Tool that combines multiple sources, to offer competitive options."
+  "aggregatoren": {
+    "keyword": "Aggregatoren",
+    "definition": "Ein Tool, das mehrere Quellen kombiniert, um wettbewerbsfähige Optionen anzubieten."
   },
   "airdrop": {
-    "keyword": "airdrop",
-    "definition": "A free distribution of crypto assets to users."
+    "keyword": "AirDrop",
+    "definition": "Eine kostenlose Verteilung von Krypto-Assets an Nutzer."
   },
   "airdrops": {
-    "keyword": "airdrops",
-    "definition": "A free distribution of crypto assets to users."
+    "keyword": "AirDrops",
+    "definition": "Eine kostenlose Verteilung von Krypto-Assets an Nutzer."
   },
   "allowance": {
     "keyword": "allowance",
-    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
+    "definition": "Ermöglicht einer Entität, in der Regel einem Smart Contract, das Recht, eine bestimmte Menge deiner Token in einer Transaktion zu verwenden."
   },
   "allowances": {
     "keyword": "allowances",
-    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
+    "definition": "Ermöglicht einer Entität, in der Regel einem Smart Contract, das Recht, eine bestimmte Menge deiner Token in einer Transaktion zu verwenden."
   },
   "alternative layer 1": {
     "keyword": "alternative Layer 1",
@@ -361,19 +361,19 @@
   },
   "erc-20": {
     "keyword": "ERC-20",
-    "definition": "Ein Standard für übertragbare Token auf Ethereum."
+    "definition": "A standard for transferable fungible tokens on Ethereum. These tokens are divisible and non-unique."
   },
   "erc-20s": {
     "keyword": "ERC-20s",
-    "definition": "Ein Standard für übertragbare Token auf Ethereum."
+    "definition": "A standard for transferable fungible tokens on Ethereum. These tokens are divisible and non-unique."
   },
   "erc-721": {
     "keyword": "ERC-721",
-    "definition": "Ein Standard für nicht übertragbare Token auf Ethereum."
+    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
   },
   "erc-721s": {
     "keyword": "ERC-721s",
-    "definition": "Ein Standard für nicht übertragbare Token auf Ethereum."
+    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
   },
   "ethereum virtual machine": {
     "keyword": "Ethereum Virtual Machine",
