@@ -225,14 +225,14 @@
     "definition": "特定区块链包含特定数量区块所需的时间。"
   },
   "erc-20": {
-    "keyword": "ERC-20",
-    "keyword_plural": "ERC-20s",
-    "definition": "A standard for transferable fungible tokens on Ethereum. These tokens are divisible and non-unique."
+    "keyword": "ERC-20 协议",
+    "keyword_plural": "ERC-20 协议",
+    "definition": "以太坊上可转让可互换代币的标准。这些代币可分割且不具有唯一性。"
   },
   "erc-721": {
-    "keyword": "ERC-721",
-    "keyword_plural": "ERC-721s",
-    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
+    "keyword": "ERC-721 协议",
+    "keyword_plural": "ERC-721 协议",
+    "definition": "以太坊上不可兑换代币的标准。这些代币具有唯一的数字标识符，不可复制、替代或分割。"
   },
   "ethereum virtual machine": {
     "keyword": "以太访虚拟机 (Ethereum Virtual Machine)",
