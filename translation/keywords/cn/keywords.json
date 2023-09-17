@@ -155,14 +155,14 @@
     "definition": "托管钱包由另一方控制私钥，从而控制对加密资产的访问。"
   },
   "dao": {
-    "keyword": "去中心化自治组织（DAO)",
+    "keyword": "去中心化自治组织（DAO）",
     "keyword_plural": "DAOs",
-    "definition": "(去中心化自治组织 Decentralized Autonomous Organization）一种利用区块链技术实现投票和管理自动化的组织结构。"
+    "definition": "（去中心化自治组织 Decentralized Autonomous Organization）一种利用区块链技术实现投票和管理自动化的组织结构。"
   },
   "dapp": {
-    "keyword": "去中心化 App （dApp）",
-    "keyword_plural": "去中心化 App （dApp）",
-    "definition": "连接分散网络和协议的分散应用程序。"
+    "keyword": "去中心化 App（dApp）",
+    "keyword_plural": "去中心化 App（dApp）",
+    "definition": "连接去中心化网络和协议的去中心化应用程序。"
   },
   "decentralization": {
     "keyword": "去中心化",
@@ -176,27 +176,27 @@
   },
   "decentralized exchange": {
     "keyword": "去中心化交易所",
-    "keyword_plural": "去中心化交易",
-    "definition": "(DEX) 一种无需可信中介就能促进交易的协议。"
+    "keyword_plural": "去中心化交易所",
+    "definition": "（DEX)）一种无需可信中介就能促进交易的协议。"
   },
   "decentralized finance": {
     "keyword": "去中心化金融",
     "keyword_plural": "去中心化金融",
-    "definition": "(DeFi) 一套架设在区块链上的自托管金融工具。"
+    "definition": "（DeFi）一套架设在区块链上的自托管金融工具。"
   },
   "defi": {
     "keyword": "DeFi（去中心化金融）",
     "keyword_plural": "DeFis（去中心化金融）",
-    "definition": "(Decentralized Finance) 一套架设在区块链上的自托管金融工具。"
+    "definition": "（Decentralized Finance）一套架设在区块链上的自托管金融工具。"
   },
   "delegate": {
-    "keyword": "代表",
-    "keyword_plural": "代表",
+    "keyword": "授权",
+    "keyword_plural": "授权",
     "definition": "赋予他人特定的责任，即授予象征性投票权。"
   },
   "delegation": {
-    "keyword": "代表",
-    "keyword_plural": "代表",
+    "keyword": "授权",
+    "keyword_plural": "授权",
     "definition": "赋予他人特定的责任，即授予象征性投票权。"
   },
   "dex": {
@@ -221,7 +221,7 @@
   },
   "epoch": {
     "keyword": "纪元（Epoch）",
-    "keyword_plural": "纪元（Epoch）",
+    "keyword_plural": "纪元（Epochs）",
     "definition": "特定区块链包含特定数量区块所需的时间。"
   },
   "erc-20": {
