@@ -77,7 +77,7 @@
   "block space": {
     "keyword": "区块空间",
     "keyword_plural": "区块空间",
-    "definition": "区块链上可用于存储信息和运行代码的空间大小。一个（或一系列）区块内的 \"空间 \"量。"
+    "definition": "区块链上可用于存储信息和运行代码的空间大小。一个（或一系列）区块内的\"空间\"量。"
   },
   "blockchain": {
     "keyword": "区块链",
@@ -112,12 +112,12 @@
   "centralized exchange": {
     "keyword": "中心化交易所",
     "keyword_plural": "中心化交易所",
-    "definition": "中心化交易所 (CEX）一个协调加密货币交易的收费平台，类似于证券交易所。"
+    "definition": "中心化交易所（CEX）一个协调加密货币 交易的收费平台，类似于证券交易所。"
   },
   "cex": {
     "keyword": "CEX",
     "keyword_plural": "CEXs",
-    "definition": "(Centralized Exchange）协调加密货币交易并收取费用的平台，类似于证券交易所。"
+    "definition": "（Centralized Exchange）协调加密货币 交易并收取费用的平台，类似于证券交易所。"
   },
   "chain": {
     "keyword": "链",
