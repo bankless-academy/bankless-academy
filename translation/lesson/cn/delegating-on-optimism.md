@@ -5,7 +5,7 @@ LANGUAGE: 简体中文(Simplified Chinese)
 WRITERS: Tetranome
 TRANSLATORS: TG
 LINK: https://app.banklessacademy.com/lessons/delegating-on-optimism
-FORMAT: HANDBOOK
+FORMAT: 手册
 ---
 
 ```
