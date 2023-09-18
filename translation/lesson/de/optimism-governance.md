@@ -194,11 +194,11 @@ Wie schafft Optimism Anreize für gemeinschaftsorientiertes Wirtschaften?
 
 # Vorstellung der Häuser zur Regierungsführung
 
-Es gibt zwei Häuser, aus denen sich das Optimism-Kollektiv zusammensetzt, die jeweils eine unabhängige und gemeinsame Verantwortung für die Leitung des Netzwerks tragen.
+Es gibt zwei Häuser, aus denen sich das Optimism Collective zusammensetzt, die jeweils eine unabhängige und gemeinsame Verantwortung für die Leitung des Netzwerks tragen.
 
 **Das Token-Haus** ist verantwortlich für die Verwaltung von Netzwerk-Upgrades, der Schaffung von Anreizen und Verwaltung der Finanzen. Durch eine Struktur auf Basis von Stakeholdern bietet es Anreize für das Wachstum der Netzwerkökonomie und schafft Mehrwert für die Stakeholder. Das Haus hat auch die Aufgabe, die Dezentralisierung zu bewahren - und damit die Vereinnahmung der Netzwerkökonomie durch Dritte zu verhindern.
 
-**Das Bürger-Haus** vergibt die Mittel des `RetroPGF` an Projekte innerhalb der Gemeinschaft nach dem Grundsatz "Auswirkung = Gewinn" und trägt dazu bei, die Parameter der Bürgerbeteiligung festzulegen. Das Haus schafft Anreize, die Lebensqualität im Netzwerk zu verbessern, indem es öffentliche Güter finanziert, die den Wert der Bürger erhöhen!
+**Das Bürger-Haus** vergibt die Mittel des `RetroPGF` an Projekte innerhalb der Gemeinschaft nach dem Grundsatz "Wirkung = Gewinn" und trägt dazu bei, die Parameter der Bürgerbeteiligung festzulegen. Das Haus schafft Anreize, die Lebensqualität im Netzwerk zu verbessern, indem es öffentliche Güter finanziert, die den Wert der Bürger erhöhen!
 
 Beide Häuser erhalten das Gleichgewicht des Netzwerks durch ihre Pflichten, Abstimmungsmechanismen und die Möglichkeit `Veto` einzureichen. Schauen wir uns das einmal genauer an.
 
@@ -242,7 +242,7 @@ Das Token-Haus hat ebenfalls die Möglichkeit, ein Veto gegen jeden Vorschlag ei
 
 # Token-Haus: Beitreten, Abstimmen, Delegieren
 
-📝 **Beitritt:** zum Token-Haus wird durch den Kauf und Besitz von OP-Tokens erreicht. Dies sind `ERC-20` Token, daher sind sie übertragbar; Sie können mittels `CEXs` und Optimism `DEXs` gekauft und verkauft werden oder an Freunde verschickt werden. OP-Token sind auf anderen Netzwerken nicht verfügbar.
+📝 **Beitritt:** Zum Token-Haus wird durch den Kauf und Besitz von OP-Tokens erreicht. Dies sind `ERC-20` Token, daher sind sie übertragbar; Sie können mittels `CEXs` und Optimism `DEXs` gekauft und verkauft werden oder an Freunde verschickt werden. OP-Token sind auf anderen Netzwerken nicht verfügbar.
 
 🗳️ **Abstimmung:** Das Stimmrecht hängt von der Anzahl der gehaltenen Token ab.
 
