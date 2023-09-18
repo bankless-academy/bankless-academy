@@ -53,7 +53,7 @@ Diese dreistufige Struktur führt zu einem kryptografischen Register - einer unv
 
 Was ist eine Blockchain?
 
-- [ ] Geordnete Gruppen von Transaktionen, die als Blöcke bezeichnet werden
+- [ ] Eine geordnete Gruppen von Transaktionen, die als Blöcke bezeichnet werden
 - [ ] Eine Liste von Geldbeträgen, die zwischen zwei Adressen verschickt wurden
 - [ ] Blöcke, die in geordneter Reihenfolge miteinander verbunden sind
 - [ ] Alle oben genannten Punkte
@@ -75,7 +75,7 @@ Schauen wir uns einige Beispieltransaktionen an:
 - Alice sendet 5 ETH an Bob
 - Bob schickt 2 ETH an Charlie
 
-Einzelne Transaktionen zeigen die _Änderung_ in der Menge der Kryptowährung für jede einzelne Adresse, so dass das Gesamtergebnis aller Transaktionen die Menge der Kryptowährung IST, die jede Adresse besitzt.
+Einzelne Transaktionen zeigen die _Änderung_ in der Menge der Kryptowährung für jede einzelne Adresse, sodass das Gesamtergebnis aller Transaktionen die Menge der Kryptowährung IST, die jede Adresse besitzt.
 
 ---
 
@@ -106,10 +106,10 @@ In unserer nächsten Lektion zur Blockchain-Theorie werden wir sehen, wie neue D
 
 # Knowledge Check 3
 
-Was macht eine Blockchain dezentralisiert?
+Was macht eine Blockchain dezentral?
 
 - [ ] Nur eine einzelne Person oder Organisation kann in die Blockchain schreiben
-- [ ] Es erfüllt die von Regierungen festgelegten Aanforderungen für Dezentralisierung
+- [ ] Sie erfüllt die von der Regierungen festgelegten Anforderungen zur Dezentralisierung
 - [ ] Keine einzelne Behörde oder Einrichtung kontrolliert das Register oder den Zugang zu den Daten des Registers, da es über ein großes Netzwerk an Computern verteilt ist
 - [ ] Das Register wird auf einem einzigen sicheren Server gespeichert
 
