@@ -3,7 +3,7 @@ TITLE: Optimismに基づく委任
 DESCRIPTION: ガバナンスに従う人々にOP投票力を与える
 LANGUAGE: 英語
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: Yuki, outtawraith
 LINK: https://app.banklessacademy.com/lessons/delegating-on-optimism
 FORMAT: HANDBOOK
 ---
