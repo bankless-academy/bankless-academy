@@ -642,12 +642,12 @@
   "transaction throughput": {
     "keyword": "交易吞吐量",
     "keyword_plural": "交易吞吐量",
-    "definition": "区块链一次可处理的交易量，通常以每秒交易量(TPS) 来衡量。"
+    "definition": "区块链一次可处理的交易量，通常以每秒交易量（TPS）来衡量。"
   },
   "trustless": {
     "keyword": "免受信",
     "keyword_plural": "免受信",
-    "definition": "无需信任他人或机构即可运作的品质。(自动，不为任何人所拥有)。"
+    "definition": "无需信任他人或机构即可运作的品质。（自动，不为任何人所拥有）。"
   },
   "tvl": {
     "keyword": "TVL",
