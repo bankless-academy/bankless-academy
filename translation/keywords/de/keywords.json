@@ -20,9 +20,9 @@
     "definition": "Ein Tool, das mehrere Quellen kombiniert, um wettbewerbsfähige Optionen anzubieten."
   },
   "airdrop": {
-    "keyword": "AirDrop",
-    "keyword_plural": "AirDrops",
-    "definition": "Eine kostenlose Verteilung von Krypto-Assets an Nutzer."
+    "keyword": "airdrop",
+    "keyword_plural": "airdrops",
+    "definition": "A free distribution of crypto assets to users."
   },
   "allowance": {
     "keyword": "allowance",
@@ -60,9 +60,9 @@
     "definition": "Suchmaschine und Werkzeug, um Blockchain-Daten zu untersuchen."
   },
   "block hash": {
-    "keyword": "Blockhash",
-    "keyword_plural": "Blockhashs",
-    "definition": "Der eindeutige Bezeichner für jede Blockdatei. Jeder neue Block bezieht sich auf den Block-Hash des vorherigen Blocks, um die verbundene Blockchain, bestehend aus einer einzigen Datei, zu bilden."
+    "keyword": "Block Hash",
+    "keyword_plural": "Block Hashs",
+    "definition": "Der eindeutige Bezeichner für jede Blockdatei. Jeder neue Block bezieht sich auf den Block Hash des vorherigen Blocks, um die verbundene Blockchain, bestehend aus einer einzigen Datei, zu bilden."
   },
   "block producer": {
     "keyword": "Blockproduzent",
@@ -157,7 +157,7 @@
   "dao": {
     "keyword": "DAO",
     "keyword_plural": "DAOs",
-    "definition": "(Decentralized Autonomous Organization) Eine Organisationsstruktur, die die Blockchain-Technologie zur Automatisierung von Abstimmungen und Verwaltung nutzt."
+    "definition": "(Decentralized Autonomous Organization) Eine Organisationsstruktur, die die Blockchain-Technologie zur Automatisierung von Abstimmungen und zur Verwaltung nutzt."
   },
   "dapp": {
     "keyword": "dApp",
@@ -232,7 +232,7 @@
   "erc-721": {
     "keyword": "ERC-721",
     "keyword_plural": "ERC-721s",
-    "definition": "Ein Standard für nicht-fungible Token auf Ethereum. Diese Token haben eine eindeutige digitale Kennung, können nicht kopiert, ersetzt oder unterteilt werden."
+    "definition": "Ein Standard für nicht-fungible Token (kurz NFT) auf Ethereum. Diese Token haben eine eindeutige digitale Kennung, können nicht kopiert, ersetzt oder unterteilt werden."
   },
   "ethereum virtual machine": {
     "keyword": "Ethereum Virtual Machine",
@@ -245,8 +245,8 @@
     "definition": "(Fear Of Missing Out) Anxiety or apprehension about not being included in something."
   },
   "fork": {
-    "keyword": "Gabelung",
-    "keyword_plural": "Gabelungen",
+    "keyword": "Fork",
+    "keyword_plural": "Forks",
     "definition": "Bezieht sich auf eine radikale Änderung in einem Blockchain-Netzwerk, die zu zwei Zweigen führt - einem, der dem vorherigen Protokoll folgt, und einem, der einem neuen Protokoll folgt."
   },
   "fraud proof": {
