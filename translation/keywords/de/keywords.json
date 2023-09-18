@@ -27,7 +27,7 @@
   "allowance": {
     "keyword": "allowance",
     "keyword_plural": "allowances",
-    "definition": "Ermöglicht einer Entität, in der Regel einem Smart Contract, das Recht, eine bestimmte Menge deiner Token in einer Transaktion zu verwenden."
+    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
   },
   "alternative layer 1": {
     "keyword": "alternative Layer 1",
@@ -56,7 +56,7 @@
   },
   "block explorer": {
     "keyword": "Block Explorer",
-    "keyword_plural": "Block Explorers",
+    "keyword_plural": "Block Explorer",
     "definition": "Suchmaschine und Werkzeug, um Blockchain-Daten zu untersuchen."
   },
   "block hash": {
