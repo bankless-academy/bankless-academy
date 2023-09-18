@@ -48,7 +48,7 @@ Bei Optimism verwenden wir eine Abstimmungs-dApp [dezentralisierte App] namens "
 
 Eine Schritt-für-Schritt-Anleitung findest du in unserem Explorer's Handbuch Eintrag, ['How to fund a Wallet on Layer 2'](https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2) [Wie du eine Wallet auf einer Layer 2 mit Mitteln versiehst].
 
-2\. Tausche dein ETH in OP-Token auf dem Optimism Netzwerk, indem du einen</strong> `DEX` verwendest.
+2\. Tausche dein ETH in OP-Token auf dem Optimism Netzwerk, indem du einen</strong> `DEX` verwendest. Achte dabei darauf, etwas ETH für Gas-Gebühren aufzuheben.
 
 In unserem Explorer's Handbuch auf ["How to Swap on a Decentralized Exchange"](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) [Wie man an einer dezentralisierten Börse tauscht] findest du eine Schritt-für-Schritt-Anleitung zur Verwendung eines DEX zum Kauf von OP-Tokens.
 
