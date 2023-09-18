@@ -15,9 +15,9 @@
     "definition": "Einzigartige öffentliche Kennung für eine Entität in einer Blockchain."
   },
   "aggregator": {
-    "keyword": "Aggregator",
-    "keyword_plural": "Aggregatoren",
-    "definition": "Ein Tool, das mehrere Quellen kombiniert, um wettbewerbsfähige Optionen anzubieten."
+    "keyword": "aggregator",
+    "keyword_plural": "aggregators",
+    "definition": "Tool that combines multiple sources, to offer competitive options."
   },
   "airdrop": {
     "keyword": "airdrop",
@@ -471,13 +471,13 @@
   },
   "public good": {
     "keyword": "öffentliches Gut",
-    "keyword_plural": "Öffentlichen Gütern",
+    "keyword_plural": "öffentliche Güter",
     "definition": "Ein öffentliches Gut ist eine Ware oder Dienstleistung, die allen Mitgliedern der Gesellschaft zur Verfügung steht."
   },
   "public key": {
-    "keyword": "öffentlichen Schlüssel",
+    "keyword": "öffentlicher Schlüssel",
     "keyword_plural": "öffentliche Schlüssel",
-    "definition": "Ein öffentlicher Schlüssel ist deine Adresse. Er gibt anderen einen Bezugspunkt, um Krypto-Assets an dich zu senden."
+    "definition": "Ein öffentlicher Schlüssel ist deine Adresse. Er gibt anderen einen Bezugspunkt, um Krypto-Assets [Vermögenswerten] an dich zu senden."
   },
   "recovery phrase": {
     "keyword": "recovery phrase",
@@ -635,8 +635,8 @@
     "definition": "The time it takes to be sure that a transaction is valid and final, meaning it won't be reversed or changed."
   },
   "transaction hash": {
-    "keyword": "Transaktionshash",
-    "keyword_plural": "Transaktionshashs",
+    "keyword": "Transaktions-Hash",
+    "keyword_plural": "Transaktions-Hashs",
     "definition": "Die eindeutige Kennung für jede Transaktion; sie wird aus den Transaktionsdaten, der digitalen Signatur des Transaktionsabsenders und einer einmalig verwendeten Nummer abgeleitet, um doppelte Transaktionen zu vermeiden."
   },
   "transaction throughput": {
@@ -645,9 +645,9 @@
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
   },
   "trustless": {
-    "keyword": "vertrauensfrei",
+    "keyword": "Vertrauenslosigkeit",
     "keyword_plural": "vertrauensfreie",
-    "definition": "[trustless] Die Eigenschaft, ohne Vertrauen in Menschen oder Institutionen zu handeln. (Automatisch, nicht im Besitz einer bestimmten Person)."
+    "definition": "[trustless] Die Eigenschaft, ohne Vertrauen in Menschen oder Institutionen zu handeln. (Ganz automatisch, ohne Vermittlungsinstanz)."
   },
   "tvl": {
     "keyword": "TVL",
