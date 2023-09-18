@@ -38,7 +38,7 @@ ________________________________________________________________________________
 
 Delegation ist ein Onchain-Abstimmungsmechanismus, der es einem Mitglied der Gemeinschaft ermöglicht, sein Stimmrecht vorübergehend an einen Vertreter der Gemeinschaft zu übertragen. Dieser Prozess ermöglicht es dem Nutzer, einen Beitrag zu `Regierungsführung des Netzwerks`zu leisten, ohne jede vorgeschlagene Aktion oder Änderung im Ökosystem aktiv überwachen zu müssen.
 
-Bei Optimism wird die Regierungsgewalt durch den Besitz von OP-Tokens im Wallet mit Selbstverwahrung [Self-Custody-Wallet] repräsentiert. OP-Tokens verlassen während der Delegation nicht diesen Wallet mit Selbstverwahrung [Self-Custody-Wallet]. Du kannst die OP-Tokens jederzeit übertragen oder verkaufen, aber dein "Delegierter" erhält nur so viel Wahlrecht, wie sich Stimmrechte in deinem Wallet befinden. Du kannst deinen Delegierten der Gemeinschaft jederzeit wechseln.
+Bei Optimism wird die Regierungsgewalt durch den Besitz von OP-Tokens im Wallet mit Selbstverwahrung [Self-Custody-Wallet] repräsentiert. OP-Tokens verlassen während der Delegation nicht diese Wallet mit Selbstverwahrung [Self-Custody-Wallet]. Du kannst die OP-Tokens jederzeit übertragen oder verkaufen, aber dein "Delegierter" erhält nur so viel Wahlrecht, wie sich Stimmrechte in deiner Wallet befinden. Du kannst deinen Delegierten der Gemeinschaft jederzeit wechseln.
 
 Bei Optimism verwenden wir eine Abstimmungs-dApp [dezentralisierte App] namens "Agora", um die infrage kommenden Delegierten zu überprüfen, die Delegationen durchzuführen und Proposals [Vorschläge] zu überwachen. Schauen wir uns das einmal genauer an.
 
@@ -56,7 +56,7 @@ In unserem Explorer's Handbuch auf ["How to Swap on a Decentralized Exchange"](h
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
 
-**4\. Verbinde deinen Wallet.**
+**4\. Verbinde deine Wallet.**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
@@ -66,9 +66,9 @@ Wenn du auf einen Delegierten klickst, findest du eine kurze Beschreibung, die S
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-6443ae02.png)
 
-**6\. Klick auf die Schaltfläche "Delegate", und genehmige die Transaktion in deinem Wallet.**
+**6\. Klick auf die Schaltfläche "Delegate", und genehmige die Transaktion in deiner Wallet.**
 
-Während dieses Vorgangs verlassen keine OP-Token deinen Wallet. Es wird eine kleine Gebühr [Gas Fees] in ETH berechnet.
+Während dieses Vorgangs verlassen keine OP-Token deine Wallet. Es wird eine kleine Gebühr [Gas Fees] in ETH berechnet.
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-245809cd.png)
 
