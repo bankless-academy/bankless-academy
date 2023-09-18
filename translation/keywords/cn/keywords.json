@@ -510,8 +510,8 @@
     "definition": "区块链能够处理不断 增长 的工作、交易和使用量，同时将对用户的干扰降至最低。"
   },
   "scam-token": {
-    "keyword": "骗局代币",
-    "keyword_plural": "骗局代币",
+    "keyword": "诈骗代币",
+    "keyword_plural": "诈骗代币",
     "definition": "只为盗取投资者资金而推出的加密货币代币。"
   },
   "security": {
