@@ -377,7 +377,7 @@
   "nft": {
     "keyword": "NFT",
     "keyword_plural": "NFTs",
-    "definition": "(非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
+    "definition": "（非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
   },
   "non-custodial wallet": {
     "keyword": "非托管钱包",
@@ -402,12 +402,12 @@
   "otc": {
     "keyword": "OTC",
     "keyword_plural": "OTCs",
-    "definition": "(柜台交易) 直接与私人实体进行的交易。"
+    "definition": "（柜台交易) 直接与私人实体进行的交易。"
   },
   "over the counter": {
     "keyword": "柜台交易",
     "keyword_plural": "柜台交易",
-    "definition": "(柜台交易) 直接与私人实体进行的交易。"
+    "definition": "（柜台交易）直接与私人实体进行的交易。"
   },
   "payment channel": {
     "keyword": "付款通道",
@@ -425,14 +425,14 @@
     "definition": "保持两种或两种以上资产价值等同的方法。"
   },
   "permissionless": {
-    "keyword": "无需准入性",
-    "keyword_plural": "许可",
-    "definition": "不需要任何实体批准的许可。"
+    "keyword": "无准入性",
+    "keyword_plural": "无准入性",
+    "definition": "不需要任何实体的许可。"
   },
   "phishing": {
     "keyword": "网络钓鱼",
     "keyword_plural": "网络钓鱼",
-    "definition": "一种社会工程学攻击，攻击者假扮成可信赖的个人或组织，诱骗受害者共享敏感信息或向其汇款。"
+    "definition": "一种 社会工程学攻击，攻击者假扮成可信赖的个人或组织，诱骗受害者共享敏感信息或向其汇款。"
   },
   "poap": {
     "keyword": "POAP 徽章",
@@ -542,7 +542,7 @@
   "sidechain": {
     "keyword": "侧链",
     "keyword_plural": "侧链",
-    "definition": "一种允许将资产和交易从主区块链转移到独立、平行的区块链(侧链) 的机制。"
+    "definition": "一种允许将资产和交易从主区块链转移到独立、平行的区块链（侧链)）的机制。"
   },
   "slippage": {
     "keyword": "滑点",
@@ -572,12 +572,12 @@
   "stake": {
     "keyword": "质押",
     "keyword_plural": "质押",
-    "definition": "锁定在加密货币协议中的金融资产的数量。它代表着某人对协议的财务承诺，也就是他们的 \"赌注\"。"
+    "definition": "锁定在加密货币协议中的金融资产的数量。它代表着某人对协议的财务承诺，也就是他们的\"赌注\"。"
   },
   "staking": {
     "keyword": "质押",
     "keyword_plural": "质押",
-    "definition": "在指定时间内将部分加密货币暂时投入智能合约，以换取利息(\"奖励\")。"
+    "definition": "在指定时间内将部分加密货币暂时投入智能合约，以换取利息（\"奖励\"）。"
   },
   "swap": {
     "keyword": "交换",
