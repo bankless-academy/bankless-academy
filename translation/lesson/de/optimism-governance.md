@@ -29,7 +29,7 @@ ________________________________________________________________________________
 
 # Alte Probleme, neue Werkzeuge
 
-Moderne Technologien haben die Art und Weise, wie Menschen einander sehen und miteinander umgehen, drastisch verändert. Auf der Weltbühne und in einem grenzenlosen Cyberspace brauchen wir neue Modelle der Koordinierung, um als ein globaler Volksstamm miteinander leben und gedeihen zu können.
+Moderne Technologien haben die Art und Weise, wie Menschen einander sehen und miteinander umgehen, drastisch verändert. Auf der Weltbühne und in einem grenzenlosen Cyberspace brauchen wir neue Modelle der Koordinierung, um als eine globale Gemeinschaft miteinander leben und gedeihen zu können.
 
 Die Vision der `DAO` Technologie ist es, Problemlösungen und Debatten zwischen einer großen Anzahl von Mitwirkenden zu vereinfachen - sei es im Internet, in deiner lokalen Gemeinde oder auf internationaler Ebene. Dies geschieht durch:
 
@@ -43,7 +43,7 @@ Die Vision der `DAO` Technologie ist es, Problemlösungen und Debatten zwischen 
 
 Wie jeder traditionelle Nationalstaat mit Ressourcen und Teilnehmern nutzt ebenso ein DAO einen Prozess zur Regierungsführung, um den Einsatz von Ressourcen und die Erfüllung seiner Mission zu steuern. Dies ist vergleichbar mit einem Rathaus, aber `asynchron`, global und teilweise durch Code vermittelt.
 
-📜 **Vorschlag:** Es beginnt mit einem Vorschlag in Bezug auf die Regierungsführung und einer Diskussion innerhalb der Gemeinschaft. Der Vorschlag wird auf der Grundlage öffentlichen Feedbacks aktualisiert. Jeder kann einen Vorschlag einreichen oder einen Vorschlag kritisieren. Dies ist der "dezentralisierte" Teil des Akronyms "`DAO`".
+📜 **Vorschlag:** Es beginnt mit einem Vorschlag in Bezug auf die Regierungsführung und einer Diskussion innerhalb der Gemeinschaft. Der Vorschlag wird auf der Grundlage öffentlichen Feedbacks aktualisiert. Jeder kann einen Vorschlag [Proposal] einreichen oder einen Vorschlag kritisieren. Dies ist der "dezentralisierte" Teil des Akronyms "`DAO`".
 
 🗳️ **Abstimmung:** Der Vorschlag wird zur Abstimmung gestellt - über einen transparenten, gegen Zensur gesicherten Prozess, der sogenannten `Onchain Governance`. Zwischen dem Öffnen und Schließen der Abstimmung gibt es keinerlei menschliche Einwirkung; alles wird durch Code vermittelt. Dies ist der "autonome" Teil des Akronyms "`DAO`" - eine Eigenschaft, die schließlich den gesamten Prozess der Regierungsführung abdecken soll.
 
@@ -53,7 +53,7 @@ Wie jeder traditionelle Nationalstaat mit Ressourcen und Teilnehmern nutzt ebens
 
 # Knowledge Check 1
 
-Wie kann die sogenannte Onchain Governance zur Lösung zwischenmenschlicher Debatten beitragen?
+Wie kann die sogenannte "Onchain Governance" zur Lösung zwischenmenschlicher Debatten beitragen?
 
 - [ ] Automatisierung
 
@@ -73,11 +73,11 @@ Wie kann die sogenannte Onchain Governance zur Lösung zwischenmenschlicher Deba
 
 # Das Optimism Netzwerk
 
-`DAOs` wie das sogennante Optimism Collective befinden sich an der Grenze zur Erforschung solcher Koordinierungssysteme.
+`DAOs` wie das sogenannte "Optimism Collective" erforschen solche Koordinierungssysteme.
 
 In dieser Lektion werden wir untersuchen, wie Optimism die DAO-Vision vorantreibt. Wir werden mehr über ihre Mission erfahren und darüber, wie sie einen neuen Koordinierungsrahmen für die Menschheit aufbaut.
 
-Ziel der Lektion wird es sein, in einer abschließenden Aufgabe sein erstes Stimmrecht in Anspruch zu nehmen, so dass wir bereit sein werden, die Zukunft von Ethereum und die Koordination der Menschheit mitzugestalten!
+Ziel dieser Lektion wird es sein, in einer abschließenden Aufgabe unser erstes Stimmrecht in Anspruch zu nehmen, sodass wir bereit sind, die Zukunft von Ethereum und die Koordination der Menschheit mitzugestalten!
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
 
@@ -85,7 +85,7 @@ Ziel der Lektion wird es sein, in einer abschließenden Aufgabe sein erstes Stim
 
 Optimism hat die folgende Mission: die Skalierung von Ethereum durch den Aufbau eines sogenannten `Layer 2` Netzwerks. Es ist Teil des Ethereum-Ökosystems, aber mit niedrigeren Gebühren und schnelleren Transaktionen - unter Beibehaltung des hohen Sicherheitsstandards von Ethereum. Hier sind die entscheidenden Eigenschaften:
 
-🏕️ **Öffentliche Güter:** Große Wertlegung auf die Finanzierung und den Aufbau von `öffentlichen Gütern`. Ein öffentliches Gut ist etwas, das allen in einer Gemeinschaft zugute kommt, während die Nutzung durch eine einzelne Person nicht dazu führt, dass es für andere weniger verfügbar ist. Deine kostenlose Weiterbildung durch die Bankless Academy wurde durch die Unterstützung von Optimism für öffentliche Güter ermöglicht!
+🏕️ **Öffentliche Güter:** Große Wertlegung auf die Finanzierung und den Aufbau von `öffentlichen Gütern`. Ein öffentliches Gut ist etwas, das allen in einer Gemeinschaft zugutekommt, während die Nutzung durch eine einzelne Person nicht dazu führt, dass es für andere weniger verfügbar ist. Deine kostenlose Weiterbildung durch die Bankless Academy wurde durch die Unterstützung von Optimism für öffentliche Güter ermöglicht!
 
 🧑‍🤝‍🧑 **Regierungsführung durch die Gemeinschaft:** Das Netzwerk wird von seiner Gemeinschaft geleitet.
 
@@ -99,15 +99,15 @@ Welches der folgenden Güter ist NICHT ein öffentliches Gut?
 
 - [ ] Bildung
 
-> ℹ️ Bildung kann allen zugute kommen, und die Nutzung durch eine Person schränkt ihre Verfügbarkeit für eine andere Person nicht ein.
+> ℹ️ Bildung kann allen zugutekommen, und die Nutzung durch eine Person schränkt ihre Verfügbarkeit für eine andere Person nicht ein.
 
 - [ ] Das Internet
 
-> ℹ️ Das Internet kann allen zugute kommen, und die Nutzung durch eine einzelne Person schränkt seine Verfügbarkeit nicht ein.
+> ℹ️ Das Internet kann allen zugutekommen, und die Nutzung durch eine einzelne Person schränkt seine Verfügbarkeit nicht ein.
 
 - [ ] Ethereum
 
-> ℹ️ Ethereum kann allen zugute kommen, und - durch den Einsatz von Layer 2 Systemen - reduziert die Nutzung durch eine Person nicht seine Verfügbarkeit.
+> ℹ️ Ethereum kann allen zugutekommen, und - durch den Einsatz von Layer 2 Systemen - reduziert die Nutzung durch eine Person nicht seine Verfügbarkeit.
 
 - [ ] Eine zentralisierte Börse
 
@@ -139,10 +139,10 @@ Richtig oder falsch? Die Optimism Foundation wird das Optimism Collective über 
 
 # Eine neue Wirtschaft
 
-Im Zentrum der `L2` Wirtschaft von Optimism steht das **"Optimistische Schwungrad"**. Dieser Wirtschaftszyklus erzeugt Einnahmen, Netzwerkwachstum und Fortschritte bezüglich der Mission von Optimism.
+Im Zentrum der `L2` Wirtschaft von Optimism steht das **"Optimistic Flywheel’"**. Dieser Wirtschaftszyklus erzeugt Einnahmen, Netzwerkwachstum und Fortschritte bezüglich der Mission von Optimism.
 
 1. Nutzer und sogenannte `dApps` fordern `Blockspace` innerhalb des Netzwerks.
-2. Das Netzwerk generiert Einnahmen mithilef von Transaktionsgebühren.
+2. Das Netzwerk generiert Einnahmen mithilfe von Transaktionsgebühren.
 3. Ein Teil dieser Steuern wird an die Erbauer vergeben, welche eine leistungsfähige Infrastruktur für öffentliche Güter bereitstellen.
 4. Die Netznutzer erhalten Zugang zu kostenlosen Ressourcen und Diensten, was den Wert von OP-Blockspace erhöht.
 
@@ -154,7 +154,7 @@ Mit einer wertvolleren Infrastruktur auf der Blockchain steigt die Nachfrage nac
 
 Wie du sehen kannst, bildet die Infrarsturktur der `öffentlichen Güter` das Herzstück von Optimism. Die Auswahl förderungswürdiger Projekte ist jedoch nicht einfach.
 
-Hier verfolgt Optimism den Ansatz "**Auswirkung = Gewinn**". Die Auswirkungen lassen sich jedoch nur schwer vorhersehen. Anstatt Vorhersagen zu treffen, überprüft die Finanzierungsstelle regelmäßig bestehende Projekte und vergibt rückwirkende Mittel auf Grundlage bisheriger Leistungen.
+Hier verfolgt Optimism den Ansatz "**Wirkung = Gewinn**". Die tatsächlichen Wirkungen sind jedoch schwer abzuschätzen. Anstatt Vorhersagen zu treffen, überprüft die Finanzierungsstelle regelmäßig bestehende Projekte und vergibt rückwirkende Mittel auf Grundlage bisheriger Leistungen.
 
 Wie Vitalik Buterin einmal sagte: _"Es ist einfacher, sich darüber zu einigen, was nützlich war, als darüber, was nützlich sein wird."_
 
@@ -164,7 +164,7 @@ Dieses Verteilungsmodell ist bekannt unter dem Namen **"Retroactive Public Goods
 
 # Ether’s Phönix
 
-Optimism nennt diesen Effekt **„Ether’s Phönix“**: ein _„Engel, der in der Zeit rückwärts reicht, belohnt diejenigen, die ihn beschwören.“_
+Optimism nennt diesen Effekt **„Ether’s Phönix“**: ein _„Ein Engel, der in der Zeit zurückreist und diejenigen belohnt, die ihn herbeirufen.“_
 
 _"Es handelt sich um einen Algorithmus, der diejenigen belohnt, die schon früh kooperiert haben und die Voraussetzungen für das Gedeihen der Finanzierung öffentlicher Güter geschaffen haben. Es ist eine Zukunft, in der frühzeitige Investitionen in öffentliche Güter anerkannt werden. Es ist auch eine Denkweise: dass Optimismus vorherrscht, dass bessere Systeme möglich sind und dass die Menschheit für ihre kooperative Revolution belohnt wird."_
 
