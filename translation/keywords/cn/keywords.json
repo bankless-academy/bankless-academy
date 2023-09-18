@@ -2,7 +2,7 @@
   "2 factor authentication": {
     "keyword": "2FA 身份验证",
     "keyword_plural": "2FA 身份验证",
-    "definition": "一种额外的安全措施，用于确保试图访问在线账户的人就是那个真人。"
+    "definition": "一种额外的安全措施，用于确保试图访问在线账户的人就是特定真人。"
   },
   "51% attack": {
     "keyword": "51% 攻击",
@@ -12,7 +12,7 @@
   "address": {
     "keyword": "地址",
     "keyword_plural": "地址",
-    "definition": "区块链上实体的唯一公共标识符。"
+    "definition": "区块链上实体的唯一公开标识符。"
   },
   "aggregator": {
     "keyword": "聚合器",
@@ -37,7 +37,7 @@
   "amm": {
     "keyword": "AMM",
     "keyword_plural": "AMMs",
-    "definition": "(自动做市商 Automated Market Maker）基于公共算法的交易撮合系统。"
+    "definition": "（自动做市商 Automated Market Maker）基于公共算法的交易撮合系统。"
   },
   "asynchronous": {
     "keyword": "异步",
