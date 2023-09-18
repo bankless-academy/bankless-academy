@@ -86,13 +86,13 @@ Es kommt auf deine persönlichen Werte und deine Vision an, je nachdem wie du Op
 
 Du kannst! Schau dir die Anleitung [‘How to be a delegate’](https://community.optimism.io/docs/governance/delegate/) [Wie wird man Delegierter] an, die auf den Optimismus Docs zu finden ist.
 
-Hinweis: Dies wird dir nicht für die Lektionsaufgabe ['Optimism Governance'](https://app.banklessacademy.com/lessons/optimism-governance) an der Bankless Akademy angerechnet.
+Hinweis: Dies wird dir nicht für die Lektion ['Optimism Governance'](https://app.banklessacademy.com/lessons/optimism-governance) an der Bankless Academy angerechnet.
 
 * *Muss ich delegieren, um abzustimmen?*
 
 Du kannst die Delegation überspringen und dich selbst repräsentieren, indem du Abstimmungen unter der Registerkarte „Proposals“ [Vorschläge] auf Optimism Agora verfolgst.
 
-Hinweis: Dies wird dir ebenfalls nicht für die Lektionsaufgabe ['Optimism Governance'](https://app.banklessacademy.com/lessons/optimism-governance) an der Bankless Akademy angerechnet, aber du kannst dies auch tun, nachdem du dein Abzeichen bekommen hast!
+Hinweis: Dies wird dir ebenfalls nicht für die Lektion ['Optimism Governance'](https://app.banklessacademy.com/lessons/optimism-governance) an der Bankless Academy angerechnet, aber du kannst dies auch tun, nachdem du dein Abzeichen bekommen hast!
 
 
 ---
