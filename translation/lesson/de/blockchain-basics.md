@@ -156,7 +156,7 @@ Die folgenden Informationen sind in einem Block enthalten:
 
 Die Daten auf jeder Blockchain bestehen einfach aus einer Liste von `Transaktionen`, Aufzeichnungen von Geldbewegungen zwischen Nutzern. Jede Transaktion muss durch die `digitale Signatur` des Absenders unterschrieben werden, um gültig zu sein.
 
-Genau das tust du, wenn du eine Transaktion mit einem Wallet bestätigst: Du unterschreibst mit deiner digitalen Signatur, um eine Transaktion zu autorisieren. Du kannst es dir als das digitale Äquivalent einer physischen Unterzeichnung eines Schecks, Quittung oder Kreditkartentransaktion vorstellen.
+Genau das tust du, wenn du eine Transaktion mit einer Wallet bestätigst: Du unterschreibst mit deiner digitalen Signatur, um eine Transaktion zu autorisieren. Du kannst es dir als das digitale Äquivalent einer physischen Unterzeichnung eines Schecks, Quittung oder Kreditkartentransaktion vorstellen.
 
 Transaktionen können einfach sein, wie das Versenden von Krypto-Vermögenswerten, oder komplexer, wie der Tauschhandel von Krypto-Vermögenswerten oder sogar der Einsatz von speziellem Code, der ausgeführt wird, wenn er ausgelöst wird, ein sogenannter `Smart Contract`.
 
