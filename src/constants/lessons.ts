@@ -242,8 +242,8 @@ const LESSONS: LessonType[] = [
     description: 'Learn about the fundamental architecture of blockchain technology.',
     name: 'Blockchain Basics',
     languages: [
-      'es',
-      'de'
+      'de',
+      'es'
     ],
     quest: 'BlockchainBasics',
     publicationStatus: 'publish',
@@ -1998,11 +1998,11 @@ const LESSONS: LessonType[] = [
     description: 'Claim your first piece of network ownership and start voting onchain!',
     name: 'Optimism Governance',
     languages: [
-      'fr',
-      'es',
+      'cn',
       'de',
-      'jp',
-      'cn'
+      'es',
+      'fr',
+      'jp'
     ],
     lessonWriters: 'Tetranome',
     quest: 'OptimismGovernance',
@@ -2299,11 +2299,11 @@ const LESSONS: LessonType[] = [
     description: 'Grant your OP voting power to people closely following governance.',
     name: 'Delegating on Optimism',
     languages: [
-      'fr',
-      'es',
+      'cn',
       'de',
-      'jp',
-      'cn'
+      'es',
+      'fr',
+      'jp'
     ],
     lessonWriters: 'Tetranome',
     publicationStatus: 'publish',
