@@ -12,7 +12,7 @@ async function main() {
   ]
   const nameSpaces = [
     'common',
-    // 'homepage',
+    'homepage',
     'quests'
   ]
   for (const language of languages) {
@@ -39,8 +39,10 @@ async function main() {
           }
         } else console.log(`- ${language}/${nameSpace}.json error ${crowdin.status}`)
       } catch (error) {
-        console.log(error)
-        console.log(`- ${language}/${nameSpace}.json not available yet`)
+        if (error.response.status === 404)
+          console.log(`- ${language}/${nameSpace}.json not available yet`)
+        else
+          console.log(error)
       }
     }
     try {
@@ -71,8 +73,10 @@ async function main() {
         }
       } else console.log(`- ${language}/keywords.json error ${crowdin.status}`)
     } catch (error) {
-      console.log(error)
-      console.log(`- ${language}/keywords.json not available yet`)
+      if (error.response.status === 404)
+        console.log(`- ${language}/keywords.json not available yet`)
+      else
+        console.log(error)
     }
   }
 }
