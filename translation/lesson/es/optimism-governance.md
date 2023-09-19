@@ -1,6 +1,6 @@
 ---
 TITLE: Gobernanza en Optimism
-DESCRIPTION: '¡Aprende a votar onchain y mintea tu Academy Badge!'
+DESCRIPTION: ¡Aprende a votar onchain y mintea tu Academy Badge!
 LANGUAGE: Español
 WRITERS: Tetranome
 TRANSLATORS: OrnellaWeb3
@@ -362,4 +362,3 @@ La misión de hoy es **unirse a la Cámara de Tokens y delegar nuestros tokens d
 Por ahora, la Cámara de los Ciudadanos aún desarrolla sus procedimientos de incorporación. Mientras tanto, podemos desde ya comenzar nuestro viaje Ciudadano participando en la conversación en los foros de la [comunidad Optimism](https://gov.optimism.io/).
 
 ![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
-
