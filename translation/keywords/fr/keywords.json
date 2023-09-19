@@ -67,7 +67,7 @@
   "block producer": {
     "keyword": "producteur de blocs",
     "keyword_plural": "producteurs de blocs",
-    "definition": "L'utilisateur dont le matériel est choisi pour vérifier les transactions d'un bloc et commencer le bloc suivant sur la plupart des blockchains PoS (Proof-of-Stake)."
+    "definition": "L'utilisateur dont le matériel est choisi pour vérifier les transactions d'un bloc et commencer le bloc suivant sur la plupart des blockchains à preuve d'enjeu [Proof-of-Stake]."
   },
   "block reward": {
     "keyword": "block reward",
@@ -91,7 +91,7 @@
   },
   "blockspace": {
     "keyword": "espace de blocs",
-    "keyword_plural": "blockspaces",
+    "keyword_plural": "espace de bloc",
     "definition": "La quantité d'espace sur une blockchain qui peut être utilisée pour stocker des informations et exécuter du code. La quantité d'\"espace\" à l'intérieur d'un (ou d'une série de) bloc(s)."
   },
   "borrower": {
@@ -112,12 +112,12 @@
   "centralized exchange": {
     "keyword": "centralized exchange",
     "keyword_plural": "centralized exchanges",
-    "definition": "(CEX / Centralized Exchange) Plate-forme centralisée qui coordonne les échanges de crypto-monnaies contre rémunération, à l'instar d'une bourse."
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cex": {
     "keyword": "CEX",
     "keyword_plural": "CEXs",
-    "definition": "(Echange Centralisé) Plateforme qui coordonne les échanges de crypto-monnaies contre rémunération, à l'instar d'une bourse."
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "chain": {
     "keyword": "chain",
@@ -190,9 +190,9 @@
     "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
   },
   "delegate": {
-    "keyword": "delegate",
+    "keyword": "déléguer",
     "keyword_plural": "delegates",
-    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+    "definition": "Donner une responsabilité spécifique à une autre personne, par exemple la délégation d'un pouvoir de vote."
   },
   "delegation": {
     "keyword": "délégation",
@@ -247,7 +247,7 @@
   "fork": {
     "keyword": "forker",
     "keyword_plural": "forks",
-    "definition": "Il s'agit d'un changement radical dans un réseau de blockchain qui donne lieu à deux branches, l'une suivant le protocole précédent et l'autre un nouveau protocole."
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
   "fraud proof": {
     "keyword": "fraud proof",
@@ -432,7 +432,7 @@
   "phishing": {
     "keyword": "phishing",
     "keyword_plural": "phishings",
-    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
   },
   "poap": {
     "keyword": "POAP",
@@ -507,7 +507,7 @@
   "scalability": {
     "keyword": "Scalability",
     "keyword_plural": "Scalabilitys",
-    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
   },
   "scam-token": {
     "keyword": "scam-token",
@@ -562,7 +562,7 @@
   "social engineering": {
     "keyword": "social engineering",
     "keyword_plural": "social engineerings",
-    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
   "spend": {
     "keyword": "spend",
