@@ -110,14 +110,14 @@
     "definition": "No government or company has control to determine what is or is not allowed."
   },
   "centralized exchange": {
-    "keyword": "centralized exchange",
-    "keyword_plural": "centralized exchanges",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "keyword": "échange centralisé",
+    "keyword_plural": "échanges centralisés",
+    "definition": "(Échange Centralisé) Plateforme qui coordonne les échanges de crypto-monnaies contre rémunération, à l'instar d'une bourse."
   },
   "cex": {
     "keyword": "CEX",
     "keyword_plural": "CEXs",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(Échange Centralisé) Plateforme qui coordonne les échanges de crypto-monnaies contre rémunération, à l'instar d'une bourse."
   },
   "chain": {
     "keyword": "chain",
@@ -175,9 +175,9 @@
     "definition": "No single authority or entity controls the data."
   },
   "decentralized exchange": {
-    "keyword": "decentralized exchange",
-    "keyword_plural": "decentralized exchanges",
-    "definition": "(DEX) A protocol that facilitates exchange without requiring trusted intermediaries."
+    "keyword": "èchange décentralisé",
+    "keyword_plural": "échanges décentralisés",
+    "definition": "(Échange Décentralisé) Un protocole qui facilite les échanges sans nécessiter d'intermédiaires de confiance."
   },
   "decentralized finance": {
     "keyword": "Decentralized Finance",
@@ -247,7 +247,7 @@
   "fork": {
     "keyword": "forker",
     "keyword_plural": "forks",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+    "definition": "Il s'agit d'un changement radical dans un réseau de blockchain qui donne lieu à deux branches, l'une suivant le protocole précédent et l'autre un nouveau protocole."
   },
   "fraud proof": {
     "keyword": "fraud proof",
