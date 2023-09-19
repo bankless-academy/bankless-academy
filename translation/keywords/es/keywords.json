@@ -40,8 +40,8 @@
     "definition": "(Automated Market Maker) Sistema de casación de operaciones, basado en un algoritmo público."
   },
   "asynchronous": {
-    "keyword": "asincrónico",
-    "keyword_plural": "asíncronos",
+    "keyword": "asíncrono",
+    "keyword_plural": "asíncrono",
     "definition": "Comunicación entre varios colaboradores, en la que los participantes no tienen que estar presentes en el momento de enviar el mensaje."
   },
   "bet": {
