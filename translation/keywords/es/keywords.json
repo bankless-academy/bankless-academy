@@ -87,10 +87,6 @@
     "keyword": "recompensa del bloque",
     "definition": "Cantidad del activo nativo de una blockchain que se entrega al proponente de un nuevo bloque válido."
   },
-  "espacio de bloque": {
-    "keyword": "espacio de bloque",
-    "definition": "La cantidad de espacio en una cadena de bloques que puede utilizarse para almacenar información y ejecutar código. La cantidad de \"espacio\" dentro de un bloque (o una serie de bloques)."
-  },
   "cadenas de bloques": {
     "keyword": "cadenas de bloques",
     "definition": "Una base de datos compartida e inmutable, o libro mayor, de transacciones registradas."
@@ -102,6 +98,14 @@
   "el trilema de la cadena de bloques": {
     "keyword": "El trilema de la cadena de bloques",
     "definition": "El problema que describe la necesidad de todas las 3 calidades de la cadena de bloques: Seguridad, Escalabilidad y Descentralización."
+  },
+  "espacio de bloque": {
+    "keyword": "espacio de bloque",
+    "definition": "La cantidad de espacio en una cadena de bloques que puede utilizarse para almacenar información y ejecutar código. La cantidad de \"espacio\" dentro de un bloque (o una serie de bloques)."
+  },
+  "blockspaces": {
+    "keyword": "blockspaces",
+    "definition": "La cantidad de espacio en una cadena de bloques que puede utilizarse para almacenar información y ejecutar código. La cantidad de \"espacio\" dentro de un bloque (o una serie de bloques)."
   },
   "prestatario": {
     "keyword": "prestatario",
@@ -121,15 +125,15 @@
   },
   "exchange centralizado": {
     "keyword": "exchange centralizado",
-    "definition": "(CEX) Plataforma que coordina el comercio de criptomonedas a cambio de una comisión, de forma similar a una bolsa de valores."
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cex": {
     "keyword": "CEX",
-    "definition": "(CEX) Plataforma que coordina el comercio de criptomonedas a cambio de una comisión, de forma similar a una bolsa de valores."
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cexs": {
     "keyword": "CEXs",
-    "definition": "(CEX) Plataforma que coordina el comercio de criptomonedas a cambio de una comisión, de forma similar a una bolsa de valores."
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cadena": {
     "keyword": "cadena",
@@ -285,7 +289,7 @@
   },
   "bifurcación": {
     "keyword": "bifurcación",
-    "definition": "Se refiere a un cambio radical en una red blockchain que da lugar a dos ramas: una que sigue el protocolo anterior y otra que sigue uno nuevo."
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
   "prueba de fraude": {
     "keyword": "prueba de fraude",
@@ -461,7 +465,7 @@
   },
   "phishing": {
     "keyword": "phishing",
-    "definition": "Tipo de ataque de ingeniería social en el que el atacante se hace pasar por una persona u organización de confianza para engañar a las víctimas y conseguir que compartan información confidencial o les envíen dinero."
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
   },
   "poap": {
     "keyword": "POAP",
@@ -529,7 +533,7 @@
   },
   "escalabilidad": {
     "keyword": "Escalabilidad",
-    "definition": "La capacidad de una cadena de bloques para gestionar una cantidad creciente de trabajo, transacciones y uso con una interrupción mínima para los usuarios."
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
   },
   "token de estafa": {
     "keyword": "token de estafa",
@@ -581,7 +585,7 @@
   },
   "ingeniería social": {
     "keyword": "ingeniería social",
-    "definition": "Manipular a alguien para que comparta información sensible o confidencial, como contraseñas o frases semilla."
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
   "gastar": {
     "keyword": "gastar",

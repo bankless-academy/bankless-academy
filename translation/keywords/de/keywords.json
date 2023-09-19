@@ -24,28 +24,28 @@
     "definition": "Einzigartige öffentliche Kennung für eine Entität in einer Blockchain."
   },
   "aggregator": {
-    "keyword": "Aggregator",
-    "definition": "Ein Tool, das mehrere Quellen kombiniert, um wettbewerbsfähige Optionen anzubieten."
+    "keyword": "aggregator",
+    "definition": "Tool that combines multiple sources, to offer competitive options."
   },
-  "aggregatoren": {
-    "keyword": "Aggregatoren",
-    "definition": "Ein Tool, das mehrere Quellen kombiniert, um wettbewerbsfähige Optionen anzubieten."
+  "aggregators": {
+    "keyword": "aggregators",
+    "definition": "Tool that combines multiple sources, to offer competitive options."
   },
   "airdrop": {
-    "keyword": "AirDrop",
-    "definition": "Eine kostenlose Verteilung von Krypto-Assets an Nutzer."
+    "keyword": "airdrop",
+    "definition": "A free distribution of crypto assets to users."
   },
   "airdrops": {
-    "keyword": "AirDrops",
-    "definition": "Eine kostenlose Verteilung von Krypto-Assets an Nutzer."
+    "keyword": "airdrops",
+    "definition": "A free distribution of crypto assets to users."
   },
   "allowance": {
     "keyword": "allowance",
-    "definition": "Ermöglicht einer Entität, in der Regel einem Smart Contract, das Recht, eine bestimmte Menge deiner Token in einer Transaktion zu verwenden."
+    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
   },
   "allowances": {
     "keyword": "allowances",
-    "definition": "Ermöglicht einer Entität, in der Regel einem Smart Contract, das Recht, eine bestimmte Menge deiner Token in einer Transaktion zu verwenden."
+    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
   },
   "alternative layer 1": {
     "keyword": "alternative Layer 1",
@@ -91,17 +91,13 @@
     "keyword": "Block Explorer",
     "definition": "Suchmaschine und Werkzeug, um Blockchain-Daten zu untersuchen."
   },
-  "block explorers": {
-    "keyword": "Block Explorers",
-    "definition": "Suchmaschine und Werkzeug, um Blockchain-Daten zu untersuchen."
+  "block hash": {
+    "keyword": "Block Hash",
+    "definition": "Der eindeutige Bezeichner für jede Blockdatei. Jeder neue Block bezieht sich auf den Block Hash des vorherigen Blocks, um die verbundene Blockchain, bestehend aus einer einzigen Datei, zu bilden."
   },
-  "blockhash": {
-    "keyword": "Blockhash",
-    "definition": "Der eindeutige Bezeichner für jede Blockdatei. Jeder neue Block bezieht sich auf den Block-Hash des vorherigen Blocks, um die verbundene Blockchain, bestehend aus einer einzigen Datei, zu bilden."
-  },
-  "blockhashs": {
-    "keyword": "Blockhashs",
-    "definition": "Der eindeutige Bezeichner für jede Blockdatei. Jeder neue Block bezieht sich auf den Block-Hash des vorherigen Blocks, um die verbundene Blockchain, bestehend aus einer einzigen Datei, zu bilden."
+  "block hashs": {
+    "keyword": "Block Hashs",
+    "definition": "Der eindeutige Bezeichner für jede Blockdatei. Jeder neue Block bezieht sich auf den Block Hash des vorherigen Blocks, um die verbundene Blockchain, bestehend aus einer einzigen Datei, zu bilden."
   },
   "blockproduzent": {
     "keyword": "Blockproduzent",
@@ -118,14 +114,6 @@
   "block rewards": {
     "keyword": "block rewards",
     "definition": "The amount of a blockchain’s native asset given to the proposer of a new valid block."
-  },
-  "blockspace": {
-    "keyword": "Blockspace",
-    "definition": "Die Menge an Speicherplatz auf einer Blockchain, die zum Speichern von Informationen und zum Ausführen von Code verwendet werden kann. Die Menge an \"Platz\" innerhalb eines Blocks (oder einer Reihe von Blöcken)."
-  },
-  "blockspaces": {
-    "keyword": "Blockspaces",
-    "definition": "Die Menge an Speicherplatz auf einer Blockchain, die zum Speichern von Informationen und zum Ausführen von Code verwendet werden kann. Die Menge an \"Platz\" innerhalb eines Blocks (oder einer Reihe von Blöcken)."
   },
   "blockchain": {
     "keyword": "Blockchain",
@@ -150,6 +138,14 @@
   "blockchain trilemmas": {
     "keyword": "Blockchain Trilemmas",
     "definition": "The problem describing the need for all 3 blockchain qualities: Security, Scalability, and Decentralization."
+  },
+  "blockspace": {
+    "keyword": "blockspace",
+    "definition": "Die Menge an Speicherplatz auf einer Blockchain, die zum Speichern von Informationen und zum Ausführen von Code verwendet werden kann. Die Menge an \"Platz\" innerhalb eines Blocks (oder einer Reihe von Blöcken)."
+  },
+  "blockspaces": {
+    "keyword": "blockspaces",
+    "definition": "Die Menge an Speicherplatz auf einer Blockchain, die zum Speichern von Informationen und zum Ausführen von Code verwendet werden kann. Die Menge an \"Platz\" innerhalb eines Blocks (oder einer Reihe von Blöcken)."
   },
   "borrower": {
     "keyword": "borrower",
@@ -177,19 +173,19 @@
   },
   "centralized exchange": {
     "keyword": "centralized exchange",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "centralized exchanges": {
     "keyword": "centralized exchanges",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cex": {
     "keyword": "CEX",
-    "definition": "(Centralized Exchange) Eine Plattform, die den Handel mit Kryptowährungen gegen eine Gebühr koordiniert, ähnlich wie eine Börse."
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cexs": {
     "keyword": "CEXs",
-    "definition": "(Centralized Exchange) Eine Plattform, die den Handel mit Kryptowährungen gegen eine Gebühr koordiniert, ähnlich wie eine Börse."
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "chain": {
     "keyword": "chain",
@@ -249,11 +245,11 @@
   },
   "dao": {
     "keyword": "DAO",
-    "definition": "(Decentralized Autonomous Organization) Eine Organisationsstruktur, die die Blockchain-Technologie zur Automatisierung von Abstimmungen und Verwaltung nutzt."
+    "definition": "(Decentralized Autonomous Organization) Eine Organisationsstruktur, die die Blockchain-Technologie zur Automatisierung von Abstimmungen und zur Verwaltung nutzt."
   },
   "daos": {
     "keyword": "DAOs",
-    "definition": "(Decentralized Autonomous Organization) Eine Organisationsstruktur, die die Blockchain-Technologie zur Automatisierung von Abstimmungen und Verwaltung nutzt."
+    "definition": "(Decentralized Autonomous Organization) Eine Organisationsstruktur, die die Blockchain-Technologie zur Automatisierung von Abstimmungen und zur Verwaltung nutzt."
   },
   "dapp": {
     "keyword": "dApp",
@@ -361,19 +357,19 @@
   },
   "erc-20": {
     "keyword": "ERC-20",
-    "definition": "A standard for transferable fungible tokens on Ethereum. These tokens are divisible and non-unique."
+    "definition": "Ein Standard für übertragbare fungible Token auf Ethereum. Diese Token sind teilbar und nicht einzigartig."
   },
   "erc-20s": {
     "keyword": "ERC-20s",
-    "definition": "A standard for transferable fungible tokens on Ethereum. These tokens are divisible and non-unique."
+    "definition": "Ein Standard für übertragbare fungible Token auf Ethereum. Diese Token sind teilbar und nicht einzigartig."
   },
   "erc-721": {
     "keyword": "ERC-721",
-    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
+    "definition": "Ein Standard für nicht-fungible Token (kurz NFT) auf Ethereum. Diese Token haben eine eindeutige digitale Kennung, können nicht kopiert, ersetzt oder unterteilt werden."
   },
   "erc-721s": {
     "keyword": "ERC-721s",
-    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
+    "definition": "Ein Standard für nicht-fungible Token (kurz NFT) auf Ethereum. Diese Token haben eine eindeutige digitale Kennung, können nicht kopiert, ersetzt oder unterteilt werden."
   },
   "ethereum virtual machine": {
     "keyword": "Ethereum Virtual Machine",
@@ -391,13 +387,13 @@
     "keyword": "FOMOs",
     "definition": "(Fear Of Missing Out) Anxiety or apprehension about not being included in something."
   },
-  "gabelung": {
-    "keyword": "Gabelung",
-    "definition": "Bezieht sich auf eine radikale Änderung in einem Blockchain-Netzwerk, die zu zwei Zweigen führt - einem, der dem vorherigen Protokoll folgt, und einem, der einem neuen Protokoll folgt."
+  "fork": {
+    "keyword": "Fork",
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
-  "gabelungen": {
-    "keyword": "Gabelungen",
-    "definition": "Bezieht sich auf eine radikale Änderung in einem Blockchain-Netzwerk, die zu zwei Zweigen führt - einem, der dem vorherigen Protokoll folgt, und einem, der einem neuen Protokoll folgt."
+  "forks": {
+    "keyword": "Forks",
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
   "fraud proof": {
     "keyword": "fraud proof",
@@ -685,11 +681,11 @@
   },
   "phishing": {
     "keyword": "phishing",
-    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
   },
   "phishings": {
     "keyword": "phishings",
-    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
   },
   "poap": {
     "keyword": "POAP",
@@ -751,17 +747,17 @@
     "keyword": "öffentliches Gut",
     "definition": "Ein öffentliches Gut ist eine Ware oder Dienstleistung, die allen Mitgliedern der Gesellschaft zur Verfügung steht."
   },
-  "öffentlichen gütern": {
-    "keyword": "Öffentlichen Gütern",
+  "öffentliche güter": {
+    "keyword": "öffentliche Güter",
     "definition": "Ein öffentliches Gut ist eine Ware oder Dienstleistung, die allen Mitgliedern der Gesellschaft zur Verfügung steht."
   },
-  "öffentlichen schlüssel": {
-    "keyword": "öffentlichen Schlüssel",
-    "definition": "Ein öffentlicher Schlüssel ist deine Adresse. Er gibt anderen einen Bezugspunkt, um Krypto-Assets an dich zu senden."
+  "öffentlicher schlüssel": {
+    "keyword": "öffentlicher Schlüssel",
+    "definition": "Ein öffentlicher Schlüssel ist deine Adresse. Er gibt anderen einen Bezugspunkt, um Krypto-Assets [Vermögenswerten] an dich zu senden."
   },
   "öffentliche schlüssel": {
     "keyword": "öffentliche Schlüssel",
-    "definition": "Ein öffentlicher Schlüssel ist deine Adresse. Er gibt anderen einen Bezugspunkt, um Krypto-Assets an dich zu senden."
+    "definition": "Ein öffentlicher Schlüssel ist deine Adresse. Er gibt anderen einen Bezugspunkt, um Krypto-Assets [Vermögenswerten] an dich zu senden."
   },
   "recovery phrase": {
     "keyword": "recovery phrase",
@@ -805,11 +801,11 @@
   },
   "scalability": {
     "keyword": "Scalability",
-    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
   },
   "scalabilitys": {
     "keyword": "Scalabilitys",
-    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
   },
   "scam-token": {
     "keyword": "scam-token",
@@ -893,11 +889,11 @@
   },
   "social engineering": {
     "keyword": "social engineering",
-    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
   "social engineerings": {
     "keyword": "social engineerings",
-    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
   "spend": {
     "keyword": "spend",
@@ -1011,12 +1007,12 @@
     "keyword": "transaction finalitys",
     "definition": "The time it takes to be sure that a transaction is valid and final, meaning it won't be reversed or changed."
   },
-  "transaktionshash": {
-    "keyword": "Transaktionshash",
+  "transaktions-hash": {
+    "keyword": "Transaktions-Hash",
     "definition": "Die eindeutige Kennung für jede Transaktion; sie wird aus den Transaktionsdaten, der digitalen Signatur des Transaktionsabsenders und einer einmalig verwendeten Nummer abgeleitet, um doppelte Transaktionen zu vermeiden."
   },
-  "transaktionshashs": {
-    "keyword": "Transaktionshashs",
+  "transaktions-hashs": {
+    "keyword": "Transaktions-Hashs",
     "definition": "Die eindeutige Kennung für jede Transaktion; sie wird aus den Transaktionsdaten, der digitalen Signatur des Transaktionsabsenders und einer einmalig verwendeten Nummer abgeleitet, um doppelte Transaktionen zu vermeiden."
   },
   "transaction throughput": {
@@ -1027,13 +1023,13 @@
     "keyword": "transaction throughputs",
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
   },
-  "vertrauensfrei": {
-    "keyword": "vertrauensfrei",
-    "definition": "[trustless] Die Eigenschaft, ohne Vertrauen in Menschen oder Institutionen zu handeln. (Automatisch, nicht im Besitz einer bestimmten Person)."
+  "vertrauenslosigkeit": {
+    "keyword": "Vertrauenslosigkeit",
+    "definition": "[trustless] Die Eigenschaft, ohne Vertrauen in Menschen oder Institutionen zu handeln. (Ganz automatisch, ohne Vermittlungsinstanz)."
   },
   "vertrauensfreie": {
     "keyword": "vertrauensfreie",
-    "definition": "[trustless] Die Eigenschaft, ohne Vertrauen in Menschen oder Institutionen zu handeln. (Automatisch, nicht im Besitz einer bestimmten Person)."
+    "definition": "[trustless] Die Eigenschaft, ohne Vertrauen in Menschen oder Institutionen zu handeln. (Ganz automatisch, ohne Vermittlungsinstanz)."
   },
   "tvl": {
     "keyword": "TVL",

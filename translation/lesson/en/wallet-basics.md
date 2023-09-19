@@ -31,11 +31,13 @@ ________________________________________________________________________________
 
 **Greetings!**
 
-Welcome to Bankless Academy. We’re excited to guide you on your journey into `Web3`. To get started, you will need some essential equipment: a digital wallet.
+Welcome to Bankless Academy. We’re excited to guide you on your journey into `Web3`. Every explorer of this space eventually needs to create a digital wallet.
 
-A digital wallet is your passport to exploring the various worlds of Web3. This tool grants you access to incredible new possibilities while safeguarding your assets and identity.
+Wallets are kind of like accounts you use for everyday apps and sites, but there are also big differences that are important to understand.
 
-In this lesson, we’ll introduce you to digital wallets, how they work, and how to set yours up to safely embark on your Web3 journey.
+A properly set up wallet grants you access to incredible new possibilities while safeguarding your assets and identity.
+
+In this lesson, we’ll introduce you to wallets, wallet types, wallet security basics, and end with a video on how to set one up.
 
 Let’s get started!
 
@@ -43,13 +45,25 @@ Let’s get started!
 
 # Wallet Definition
 
-In the world of cryptocurrency, a wallet refers to an application or device you can use to interact with a `blockchain`.
+What exactly is a wallet?
 
-Your `wallet` functions as a lock-box that secures your access to the blockchain.
+The short definition is: a computer program you use to interact with a `blockchain`.
 
-When your wallet is connected to a blockchain, you can make purchases, transfer digital assets, interact with applications, and more!
+When your `wallet` is connected to a blockchain, you can make purchases, send or receive digital assets, interact with applications, and more.
+
+Unlike regular user accounts you’re used to, a single wallet lets you access a large number of Web3 apps—as long as the wallet is compatible with the blockchain that the app is built on.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-e8f8f9a8.svg)
+
+# **Is creating a wallet difficult?**
+
+It used to be, but these days anyone can create a wallet quite easily.
+
+Remember: all wallets are essentially computer programs. So if you are comfortable with downloading and installing software on your computer (or apps on your phone), then you should have no trouble creating your first wallet.
+
+The trickier parts of managing a wallet involve keeping them secure, which we will dive into next.
+
+Choosing your first wallet may also feel intimidating. We recommend starting with Metamask: it is user friendly and has access to many popular blockchains. As you get more comfortable in the Web3 space, you will likely create a few wallets based on your goals and preferences.
 
 # Knowledge Check 1
 
@@ -58,23 +72,80 @@ What is a wallet?
 - [ ] A blockchain
 - [ ] A cryptocurrency
 - [ ] A digital collectible
-- [ ] An app/device used to interact with a blockchain
+- [ ] A computer program used to interact with a blockchain
+
+# **Wallets & Password Recovery**
+
+**Here is one of the most important things to understand about Web3 wallets: today, there is no “password reset” or frequent password changes.**
+
+Most of us are used to these features. If we forget a password, we click a button, do some things, and get a new password. Easy.
+
+Not so with wallets. Because of how blockchains work, wallets are assigned a “name” and a complex “password” when they’re created (you do not choose them, typically).
+
+This name and password are either impossible or very difficult to change. Let’s learn a bit more about each.
+
+# **Your wallet’s public key**
+
+A `public key` is basically your wallet’s name. Often, this looks like a jumble of random letters and numbers.
+
+Example: _0xb794f5ea0ba39494ce839613fffba74279579268_
+
+It is possible to create easier to remember versions of this with some Web3 services, but that’s a lesson for another time.
+
+You can also think of a public key like the address of a post office box. It is public, anyone can see it, and it tells others where they can send you crypto assets—without revealing anything personal about you.
+
+It is perfectly safe to share your public key.
+
+**Note:** sometimes a single wallet account can hold multiple public (and private keys). Kind of like having many post office boxes under one account.
+
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-6d17439c.svg)
+
+# **Your wallet’s private key**
+
+If the public key is like a post office box, then the `private` key is like the key to the box. It is the “password” to your funds and assets.
+
+It almost always looks like a random jumble of letters and numbers.
+
+**And it is never safe to share this key.**
+
+Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever’s in the `wallet`.
+
+This is more than just a password. You cannot reset it if you lose access to it.
+
+Luckily, most `Web3` applications and programs do not require you to painstakingly type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.
+
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-f4a93387.svg)
+
+# Knowledge Check 2
+
+Your public key is like your _____ and your private key is like your _____
+
+- [ ] Routing Number / Account Number
+- [ ] Post office box / Box key
+- [ ] Address / Zip code
+- [ ] Phone Number / Social Security Number
 
 # Recovery Phrase
 
-When you set up a new `wallet`, the software generates a unique `recovery phrase` that is specific to that wallet account.
+When you set up a new wallet, the software generates a unique `recovery phrase`.
 
-Also sometimes called a _seed phrase_ or _secret recovery phrase_, your recovery phrase can be used to access your wallet and crypto assets if:
+Also sometimes called a “seed phrase” or “secret recovery phrase,” this string of words can be used to access your wallet and crypto assets if:
 
 - Your wallet app or hardware fails unexpectedly or gets damaged.
 - You are unable to access it due to misplacement or theft.
 - You want to access your wallet account through the wallet app on a different computer or device.
 
-Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. That data is used to generate the `public key` and `private key` for your wallet.
+Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. That data is used to generate both the `public key` and `private key` for your wallet.
+
+This does **not** reset the keys.
+
+**Never share a recovery phrase.**
+
+Your recovery phrase is essentially an easier to read version of your private key.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c2d8fa26.svg)
 
-# Knowledge Check 2
+# Knowledge Check 3
 
 What can you do with your recovery phrase?
 
@@ -83,44 +154,26 @@ What can you do with your recovery phrase?
 - [ ] [C] Both A & B
 - [ ] [D] None of the above
 
-# Public Key
+# **Types of wallets**
 
-You just learned how your `recovery phrase` relates to a `public key` and `private key`.
+Just like how there are many different kinds of software and computer programs, there are different kinds of wallets.
 
-Note that a wallet can contain multiple accounts, and _each account_ has a unique pair of public and private keys.
+We will discuss four basic categories:
 
-Think of a public key like your home address. It is public, anyone can see it, and it identifies the location to use to send crypto assets to you.
+- Custodial wallets
+- Non-custodial wallets
+- Hot wallets
+- Cold wallets
 
-![](https://app.banklessacademy.com/images/wallet-basics/public-key-b6387071.svg)
-
-# Private Key
-
-If your `public key` is like your home address, then your `private key` is like your house key.
-
-It's called private because _only you_ should have access to it.
-
-The private key unlocks access to your wallet and your crypto assets, allowing you to send them to other wallet addresses.
-
-![](https://app.banklessacademy.com/images/wallet-basics/private-key-ca271641.svg)
-
-# Knowledge Check 3
-
-Your public key is like your _____ and your private key is like your _____
-
-- [ ] Routing Number / Account Number
-- [ ] Home address / House key
-- [ ] Address / Zip code
-- [ ] Phone Number / Social Security Number
-
-# Custodial Wallet
+# Custodial Wallets
 
 Since your `private key` unlocks access to your `wallet`, keeping it private and secure is very important!
 
-Not all wallets let you control your private key. With a `custodial wallet`, another party controls it. Accounts on Coinbase and Kraken are examples of custodial wallets that hold your private key.
+`Custodial wallet` services, like Coinbase and Kraken, offer to control your private key for you. You access their services like any other website (with an email login and resettable password).
 
-This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Plus, your access to the world of `DeFi` applications will be limited. 
+This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some Web3 applications may be limited.
 
-![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallet-29ed2b65.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-29ed2b65.svg)
 
 # Knowledge Check 4
 
@@ -131,11 +184,13 @@ Do you control your private key with a custodial wallet?
 
 # Non-custodial Wallet
 
-Your passport to the exciting worlds of `DeFi`  and `Web3`—and the best way to safeguard your `private key` is a `non-custodial wallet`. 
+A `non-custodial wallet` (like MetaMask or Trezor) is when you fully control your `private key`. You, and you alone, are responsible for keeping it safe.
 
-Remember: if you lose your private key, you will not be able to access your wallet to spend, withdraw, or transfer your crypto assets.
+These wallets offer the widest range of access and freedom within the world of `Web3`. You never have to worry about a third party freezing or mishandling your funds.
 
-Fortunately, you _can_ still recover your wallet with your `recovery phrase`. But if you lose that too, you will lose access to your wallet FOREVER!!!
+The tradeoff is in risk: if you lose access to your recovery phrase, or your private key is compromised, there is often very little you can do to restore access to the wallet.
+
+Whichever route you choose, it pays to be familiar and comfortable with wallet security. We will cover security basics shortly.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-aee2708b.svg)
 
@@ -146,25 +201,38 @@ Are you responsible for your private key with a non-custodial wallet?
 - [ ] Yes
 - [ ] No
 
-# Wallet Security
+# **Hot and cold wallets**
 
-## ALWAYS do this to protect your recovery phrase:
+You will hear the terms “hot” and “cold wallet” quite a bit in Web3.
 
-✅ write it down
+A `hot wallet` is when the wallet is an online software program. Metamask is a good example. These wallets are always connected to the Internet, since the services that run them are also online.
 
-✅ use a durable material (i.e laminated paper, engraved metal)
+By contrast, a cold wallet is when the wallet software lives on a separate hardware device. You must physically connect the device to a computer for the wallet to be able to access the Internet. Trezor or Ledger are examples of cold wallets.
 
-✅ store it in a safe place
+`Cold wallets` are widely considered to be more secure than hot wallets.
 
-## NEVER do this to protect your recovery phrase:
-
-🛑 save your recovery in an online drive
-
-🛑 screenshot your private key
-
-🛑 reveal your recovery key to anyone
+![](https://app.banklessacademy.com/images/wallet-basics/hot-and-cold-wallets-bdf8ae51.svg)
 
 # Knowledge Check 6
+
+Is a cold wallet more secure than a hot wallet?
+
+- [ ] Yes
+- [ ] No
+- [ ] They are about the same
+
+# Wallet Security
+
+Regardless if your wallet is hot or cold, there are many smart security practices you should develop, especially if using a `non-custodial wallet`.
+
+1. Record your recovery phrase on a physical, durable material (such as steel) and store it somewhere very safe. Never share it or your private key with anyone. **Remember: this is more than just a password.**
+2. When signing transactions or sending funds, even small amounts, double check the details very carefully.
+3. Spend time researching and gathering info on any Web3 application you plan to interact with before connecting your wallet or signing transactions with it.
+4. Use wallets with low amounts of funds to try new things and explore Web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).
+
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-0bc5f7e7.svg)
+
+# Knowledge Check 7
 
 What is the safest way to protect your recovery phrase?
 
@@ -173,34 +241,9 @@ What is the safest way to protect your recovery phrase?
 - [ ] Save it in your Dropbox account.
 - [ ] Write it on a durable material and store it in a safe place.
 
-# Hot Wallet
+# **You’re ready to create your first wallet!**
 
-There are two major types of `non-custodial wallets`: software wallets (also called `hot wallets`) and hardware wallets (also called `cold wallets`)
-
-A software wallet is an app or browser extension that remains connected to the internet.
-
-- PROS 👍: It is usually free, simple to set up, and easy to use.
-- CONS 👎: Because it is software connected to the internet, it's potentially a target for hackers.
-
-![](https://app.banklessacademy.com/images/wallet-basics/hot-wallet-1d444d7c.svg)
-
-# Cold Wallet
-
-A `cold wallet`, or hardware wallet, is only connected to the internet when you physically connect it to a computer or device.
-
-- PROS 👍: It is more secure from threats like hacking.
-- CONS 👎: It is not free, not ideal for quick transactions, and can be cumbersome to use.
-
-![](https://app.banklessacademy.com/images/wallet-basics/cold-wallet-59646edb.svg)
-
-# Knowledge Check 7
-
-Is a cold wallet more secure than a hot wallet?
-
-- [ ] Yes
-- [ ] No
-
-# MetaMask Wallet
+In fact, you’ll need one if you want to claim proof of completing this quest! 
 
 There are several `non-custodial` `hot wallets` available today. We will explore the popular MetaMask Wallet for the remainder of this lesson since:
 
@@ -208,7 +251,9 @@ There are several `non-custodial` `hot wallets` available today. We will explore
 - It has a browser extension for Chrome, Brave, Edge, and Firefox internet browsers.
 - It is also available as a mobile app for Android and iOS users.
 
-![](https://app.banklessacademy.com/images/wallet-basics/metamask-wallet-521de184.svg)
+At the end of the lesson, we will share a short video to help you get set up with MetaMask.
+
+![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-521de184.svg)
 
 # Knowledge Check 8
 

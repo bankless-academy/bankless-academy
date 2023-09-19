@@ -63,10 +63,6 @@
     "keyword": "ブロック報酬",
     "definition": "新しい有効なブロックの提案者に与えられたブロックチェーンのネイティブアセットの量"
   },
-  "ブロックスペース": {
-    "keyword": "ブロックスペース",
-    "definition": "ブロックチェーン上で、情報の保存やコードの実行に使用できるスペースの量"
-  },
   "ブロックチェーン": {
     "keyword": "ブロックチェーン",
     "definition": "記録されたトランザクションの共有された、変更不可能なデータベース、または元帳"
@@ -78,6 +74,14 @@
   "ブロックチェーンのトリレンマ": {
     "keyword": "ブロックチェーンのトリレンマ",
     "definition": "セキュリティ、スケーラビリティ、分散化の3つのブロックチェーンのすべての必要性を説明する問題"
+  },
+  "ブロックスペース": {
+    "keyword": "ブロックスペース",
+    "definition": "ブロックチェーン上で、情報の保存やコードの実行に使用できるスペースの量"
+  },
+  "blockspaces": {
+    "keyword": "blockspaces",
+    "definition": "ブロックチェーン上で、情報の保存やコードの実行に使用できるスペースの量"
   },
   "借り手": {
     "keyword": "借り手",
@@ -93,11 +97,11 @@
   },
   "中央集権型取引所": {
     "keyword": "中央集権型取引所",
-    "definition": "証券取引所と同様、手数料でクリプト取引を調整するプラットフォーム"
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cex": {
     "keyword": "CEX",
-    "definition": "証券取引所と同様、手数料でクリプト取引を調整するプラットフォーム"
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "チェーン": {
     "keyword": "チェーン",
@@ -221,7 +225,7 @@
   },
   "フォーク": {
     "keyword": "フォーク",
-    "definition": "ブロックチェーンネットワークの根本的な変更で、1つは以前のプロトコルに従ったもの、もう1つは新しいプロトコルに従ったものという2つの分岐が生じること"
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
   "不正証明": {
     "keyword": "不正証明",
@@ -365,7 +369,7 @@
   },
   "フィッシング": {
     "keyword": "フィッシング",
-    "definition": "ソーシャルエンジニアリング攻撃の一種で、攻撃者が信頼できる人物や組織を装い、被害者を騙して機密情報を共有させたり、金銭を送金させたりする"
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
   },
   "poap": {
     "keyword": "POAP",
@@ -425,7 +429,7 @@
   },
   "スケーラビリティ": {
     "keyword": "スケーラビリティ",
-    "definition": "ユーザーにとって最小限の混乱で増加する作業、取引、および使用量を処理するブロックチェーンの機能"
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
   },
   "スキャムトークン": {
     "keyword": "スキャムトークン",
@@ -469,7 +473,7 @@
   },
   "ソーシャルエンジニアリング": {
     "keyword": "ソーシャルエンジニアリング",
-    "definition": "パスワードやシードフレーズなどの機密情報を共有するように操作する"
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
   "支払": {
     "keyword": "支払",

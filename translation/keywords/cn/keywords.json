@@ -1,7 +1,7 @@
 {
   "2fa 身份验证": {
     "keyword": "2FA 身份验证",
-    "definition": "一种额外的安全措施，用于确保试图访问在线账户的人就是那个真人。"
+    "definition": "一种额外的安全措施，用于确保试图访问在线账户的人就是特定真人。"
   },
   "51% 攻击": {
     "keyword": "51% 攻击",
@@ -9,7 +9,7 @@
   },
   "地址": {
     "keyword": "地址",
-    "definition": "区块链上实体的唯一公共标识符。"
+    "definition": "区块链上实体的唯一公开标识符。"
   },
   "聚合器": {
     "keyword": "聚合器",
@@ -29,11 +29,11 @@
   },
   "amm": {
     "keyword": "AMM",
-    "definition": "(自动做市商 Automated Market Maker）基于公共算法的交易撮合系统。"
+    "definition": "（自动做市商 Automated Market Maker）基于公共算法的交易撮合系统。"
   },
   "amms": {
     "keyword": "AMMs",
-    "definition": "(自动做市商 Automated Market Maker）基于公共算法的交易撮合系统。"
+    "definition": "（自动做市商 Automated Market Maker）基于公共算法的交易撮合系统。"
   },
   "异步": {
     "keyword": "异步",
@@ -63,10 +63,6 @@
     "keyword": "区块奖励",
     "definition": "给予新有效区块提议者的原生区块链资产。"
   },
-  "区块空间": {
-    "keyword": "区块空间",
-    "definition": "区块链上可用于存储信息和运行代码的空间大小。一个（或一系列）区块内的\"空间\"量。"
-  },
   "区块链": {
     "keyword": "区块链",
     "definition": "一个共享的、不可篡改的交易记录数据库或账本。"
@@ -78,6 +74,14 @@
   "区块链的三难困境": {
     "keyword": "区块链的三难困境",
     "definition": "该问题描述了区块链的 3 个特性：安全性、可扩展性和去中心化。"
+  },
+  "区块空间": {
+    "keyword": "区块空间",
+    "definition": "区块链上可用于存储信息和运行代码的空间大小。一个（或一系列）区块内的\"空间\"量。"
+  },
+  "blockspaces": {
+    "keyword": "blockspaces",
+    "definition": "区块链上可用于存储信息和运行代码的空间大小。一个（或一系列）区块内的\"空间\"量。"
   },
   "借款人": {
     "keyword": "借款人",
@@ -93,15 +97,15 @@
   },
   "中心化交易所": {
     "keyword": "中心化交易所",
-    "definition": "中心化交易所（CEX）一个协调加密货币 交易的收费平台，类似于证券交易所。"
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cex": {
     "keyword": "CEX",
-    "definition": "（Centralized Exchange）协调加密货币 交易并收取费用的平台，类似于证券交易所。"
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cexs": {
     "keyword": "CEXs",
-    "definition": "（Centralized Exchange）协调加密货币 交易并收取费用的平台，类似于证券交易所。"
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "链": {
     "keyword": "链",
@@ -195,25 +199,25 @@
     "keyword": "ERC-721 协议",
     "definition": "以太坊上不可兑换代币的标准。这些代币具有唯一的数字标识符，不可复制、替代或分割。"
   },
-  "以太访虚拟机(ethereum virtual machine)": {
-    "keyword": "以太访虚拟机(Ethereum Virtual Machine)",
+  "以太访虚拟机（ethereum virtual machine）": {
+    "keyword": "以太访虚拟机（Ethereum Virtual Machine）",
     "definition": "以太坊虚拟机或 EVM 是一款执行智能合约和计算以太坊网络状态的软件。"
   },
-  "以太访虚拟机(ethereum virtual machines)": {
-    "keyword": "以太访虚拟机(Ethereum Virtual Machines)",
+  "以太访虚拟机（ethereum virtual machines）": {
+    "keyword": "以太访虚拟机（Ethereum Virtual Machines）",
     "definition": "以太坊虚拟机或 EVM 是一款执行智能合约和计算以太坊网络状态的软件。"
   },
   "fomo": {
     "keyword": "FOMO",
-    "definition": "(Fear Of Missing Out)担心或忧虑自己无法参与某事。"
+    "definition": "（Fear Of Missing Out）担心或忧虑自己无法参与某事。"
   },
   "fomos": {
     "keyword": "FOMOs",
-    "definition": "(Fear Of Missing Out)担心或忧虑自己无法参与某事。"
+    "definition": "（Fear Of Missing Out）担心或忧虑自己无法参与某事。"
   },
   "分叉": {
     "keyword": "分叉",
-    "definition": "指 区块链网络 中的彻底改变，导致两个分支--一个遵循以前的协议，另一个遵循新的协议。"
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
   "欺诈证明": {
     "keyword": "欺诈证明",
@@ -265,14 +269,22 @@
   },
   "kyc": {
     "keyword": "KYC",
-    "definition": "(了解你的客户）政府认可的用户身份识别程序。"
+    "definition": "（了解你的客户）政府认可的用户身份识别程序。"
   },
   "l1": {
     "keyword": "L1",
     "definition": "L1 是指基础网络，如比特币或以太坊。"
   },
+  "l1s": {
+    "keyword": "L1s",
+    "definition": "L1 是指基础网络，如比特币或以太坊。"
+  },
   "l2": {
     "keyword": "L2",
+    "definition": "L2 是在继承以太坊安全性的同时发展了以太坊可扩展性的区块链。"
+  },
+  "l2s": {
+    "keyword": "L2s",
     "definition": "L2 是在继承以太坊安全性的同时发展了以太坊可扩展性的区块链。"
   },
   "l1 层": {
@@ -301,11 +313,11 @@
   },
   "lp": {
     "keyword": "LP",
-    "definition": "(流动性提供者) 将其代币借给协议以换取费用分成的区块链用户。"
+    "definition": "（流动性提供者）将其代币借给协议以换取费用分成的区块链用户。"
   },
   "lps": {
     "keyword": "LPs",
-    "definition": "(流动性提供者) 将其代币借给协议以换取费用分成的区块链用户。"
+    "definition": "（流动性提供者）将其代币借给协议以换取费用分成的区块链用户。"
   },
   "市值": {
     "keyword": "市值",
@@ -329,11 +341,11 @@
   },
   "nft": {
     "keyword": "NFT",
-    "definition": "(非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
+    "definition": "（非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
   },
   "nfts": {
     "keyword": "NFTs",
-    "definition": "(非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
+    "definition": "（非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
   },
   "非托管钱包": {
     "keyword": "非托管钱包",
@@ -353,15 +365,15 @@
   },
   "otc": {
     "keyword": "OTC",
-    "definition": "(柜台交易) 直接与私人实体进行的交易。"
+    "definition": "（柜台交易) 直接与私人实体进行的交易。"
   },
   "otcs": {
     "keyword": "OTCs",
-    "definition": "(柜台交易) 直接与私人实体进行的交易。"
+    "definition": "（柜台交易) 直接与私人实体进行的交易。"
   },
   "柜台交易": {
     "keyword": "柜台交易",
-    "definition": "(柜台交易) 直接与私人实体进行的交易。"
+    "definition": "（柜台交易）直接与私人实体进行的交易。"
   },
   "付款通道": {
     "keyword": "付款通道",
@@ -379,17 +391,13 @@
     "keyword": "pegs",
     "definition": "保持两种或两种以上资产价值等同的方法。"
   },
-  "无需准入性": {
-    "keyword": "无需准入性",
-    "definition": "不需要任何实体批准的许可。"
-  },
-  "许可": {
-    "keyword": "许可",
-    "definition": "不需要任何实体批准的许可。"
+  "免许可": {
+    "keyword": "免许可",
+    "definition": "不需要任何实体的许可。"
   },
   "网络钓鱼": {
     "keyword": "网络钓鱼",
-    "definition": "一种社会工程学攻击，攻击者假扮成可信赖的个人或组织，诱骗受害者共享敏感信息或向其汇款。"
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
   },
   "poap 徽章": {
     "keyword": "POAP 徽章",
@@ -417,7 +425,7 @@
   },
   "工作量证明（pow）": {
     "keyword": "工作量证明（PoW）",
-    "definition": "区块链共识算法依赖矿工所做的 \"工作量\"，矿工通过提出区块并查看每个区块是否具有有效哈希值来竞争创建有效区块。"
+    "definition": "区块链共识算法依赖矿工所做的\"工作量\"，矿工通过提出区块并查看每个区块是否具有有效哈希值来竞争创建有效区块。"
   },
   "公共": {
     "keyword": "公共",
@@ -441,11 +449,11 @@
   },
   "retropgf": {
     "keyword": "RetroPGF",
-    "definition": "(追溯性公益资助) 根据项目的历史影响资助项目的机制。"
+    "definition": "（追溯性公益资助）根据项目的历史影响资助项目的机制。"
   },
   "retropgfs": {
     "keyword": "RetroPGFs",
-    "definition": "(追溯性公益资助) 根据项目的历史影响资助项目的机制。"
+    "definition": "（追溯性公益资助）根据项目的历史影响资助项目的机制。"
   },
   "卷积": {
     "keyword": "卷积",
@@ -457,10 +465,10 @@
   },
   "可扩展性": {
     "keyword": "可扩展性",
-    "definition": "区块链能够处理不断 增长 的工作、交易和使用量，同时将对用户的干扰降至最低。"
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
   },
-  "骗局代币": {
-    "keyword": "骗局代币",
+  "诈骗代币": {
+    "keyword": "诈骗代币",
     "definition": "只为盗取投资者资金而推出的加密货币代币。"
   },
   "安全性": {
@@ -481,7 +489,7 @@
   },
   "侧链": {
     "keyword": "侧链",
-    "definition": "一种允许将资产和交易从主区块链转移到独立、平行的区块链(侧链) 的机制。"
+    "definition": "一种允许将资产和交易从主区块链转移到独立、平行的区块链（侧链)）的机制。"
   },
   "滑点": {
     "keyword": "滑点",
@@ -497,7 +505,7 @@
   },
   "社会工程": {
     "keyword": "社会工程",
-    "definition": "操纵 他人共享敏感或 机密信息，如密码或助记词。"
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
   "花费": {
     "keyword": "花费",
@@ -505,7 +513,7 @@
   },
   "质押": {
     "keyword": "质押",
-    "definition": "在指定时间内将部分加密货币暂时投入智能合约，以换取利息(\"奖励\")。"
+    "definition": "在指定时间内将部分加密货币暂时投入智能合约，以换取利息（\"奖励\"）。"
   },
   "交换": {
     "keyword": "交换",
@@ -553,19 +561,19 @@
   },
   "交易吞吐量": {
     "keyword": "交易吞吐量",
-    "definition": "区块链一次可处理的交易量，通常以每秒交易量(TPS) 来衡量。"
+    "definition": "区块链一次可处理的交易量，通常以每秒交易量（TPS）来衡量。"
   },
   "免受信": {
     "keyword": "免受信",
-    "definition": "无需信任他人或机构即可运作的品质。(自动，不为任何人所拥有)。"
+    "definition": "无需信任他人或机构即可运作的品质。（自动，不为任何人所拥有）。"
   },
   "tvl": {
     "keyword": "TVL",
-    "definition": "(锁定总值) 存储在特定位置的资产总值。"
+    "definition": "（锁定总值）存储在特定位置的资产总值。"
   },
   "tvls": {
     "keyword": "TVLs",
-    "definition": "(锁定总值) 存储在特定位置的资产总值。"
+    "definition": "（锁定总值）存储在特定位置的资产总值。"
   },
   "验证桥": {
     "keyword": "验证桥",

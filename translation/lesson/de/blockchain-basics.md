@@ -53,7 +53,7 @@ Diese dreistufige Struktur führt zu einem kryptografischen Register - einer unv
 
 Was ist eine Blockchain?
 
-- [ ] Geordnete Gruppen von Transaktionen, die als Blöcke bezeichnet werden
+- [ ] Eine geordnete Gruppen von Transaktionen, die als Blöcke bezeichnet werden
 - [ ] Eine Liste von Geldbeträgen, die zwischen zwei Adressen verschickt wurden
 - [ ] Blöcke, die in geordneter Reihenfolge miteinander verbunden sind
 - [ ] Alle oben genannten Punkte
@@ -75,7 +75,7 @@ Schauen wir uns einige Beispieltransaktionen an:
 - Alice sendet 5 ETH an Bob
 - Bob schickt 2 ETH an Charlie
 
-Einzelne Transaktionen zeigen die _Änderung_ in der Menge der Kryptowährung für jede einzelne Adresse, so dass das Gesamtergebnis aller Transaktionen die Menge der Kryptowährung IST, die jede Adresse besitzt.
+Einzelne Transaktionen zeigen die _Änderung_ in der Menge der Kryptowährung für jede einzelne Adresse, sodass das Gesamtergebnis aller Transaktionen die Menge der Kryptowährung IST, die jede Adresse besitzt.
 
 ---
 
@@ -106,24 +106,24 @@ In unserer nächsten Lektion zur Blockchain-Theorie werden wir sehen, wie neue D
 
 # Knowledge Check 3
 
-Was macht eine Blockchain dezentralisiert?
+Was macht eine Blockchain dezentral?
 
 - [ ] Nur eine einzelne Person oder Organisation kann in die Blockchain schreiben
-- [ ] Es erfüllt die von Regierungen festgelegten Aanforderungen für Dezentralisierung
-- [ ] Keine einzelne Behörde oder Einrichtung kontrolliert das Register oder den Zugang zu den Daten des Registers, da es über ein großes Netzwerk an Computern verteilt ist
+- [ ] Sie erfüllt die von der Regierungen festgelegten Anforderungen zur Dezentralisierung
+- [ ] Keine einzelne Behörde oder Einrichtung kontrolliert das Register oder den Zugang zu den Daten des Registers, da es über ein großes Netzwerk von Computern verteilt ist
 - [ ] Das Register wird auf einem einzigen sicheren Server gespeichert
 
 # Block Anatomie
 
-Ein wichtiges Merkmal von Blockchains ist es, dass frühere Transaktionsdaten nicht mehr geändert werden können, nachdem sie in einen Block aufgenommen wurden. Das liegt daran, dass jeder Block einen einzigartigen sogenannten `Blockhash` hat, der wie ein Fingerabdruck verwendet wird, um die Blöcke miteinander zu verbinden. Niemand kann vergangene Transaktionen ändern, ohne diesen Fingerabdruck und den Fingerabdruck JEDES darauf folgenden Blocks zu verändern, da jeder Fingerabdruck vom vorherigen abhängt.
+Ein wichtiges Merkmal von Blockchains ist es, dass frühere Transaktionsdaten nicht mehr geändert werden können, nachdem sie in einen Block aufgenommen wurden. Das liegt daran, dass jeder Block einen einzigartigen sogenannten `Block Hash` hat, der wie ein Fingerabdruck verwendet wird, um die Blöcke miteinander zu verbinden. Niemand kann vergangene Transaktionen ändern, ohne diesen Fingerabdruck und den Fingerabdruck JEDES darauf folgenden Blocks zu verändern, da jeder Fingerabdruck vom vorherigen abhängt.
 
-So ist jeder `Block` einfach eine Gruppierung von Transaktionen, die in einer Datei gemeinsam mit dem `Blockhash` zusammengefasst werden. Die Blöcke sind miteinander verkettet, da jeder Block auf den eindeutigen Fingerabdruck des vorherigen Blocks verweist, um eine zusammenhängende Block_**chain**_ [Kette von Blöcken] zu bilden.
+So ist jeder `Block` einfach eine Gruppierung von Transaktionen, die in einer Datei gemeinsam mit dem `Block Hash` zusammengefasst werden. Die Blöcke sind miteinander verkettet, da jeder Block auf den eindeutigen Fingerabdruck des vorherigen Blocks verweist, um eine zusammenhängende Block_**chain**_ [Kette von Blöcken] zu bilden.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-8ba3bea2.svg)
 
 # Knowledge Check 4
 
-Was ist der Zweck eines Blockhashs?
+Was ist der Zweck eines Block-Hashs?
 
 - [ ] Daten eines Blocks so zu verschlüsseln, dass niemand sie lesen kann
 - [ ] Um jeden Block mit dem vorherigen zu verknüpfen und sicherzustellen, dass sich die Daten vergangener Transaktionen nicht ändern
@@ -139,7 +139,7 @@ In unserem Beispiel von vorhin, als wir das Blockchain-Register besprochen haben
 - Alice sendet 5 ETH an Bob
 - Bob schickt 2 ETH an Charlie
 
-Vielleicht erinnerst du dich, dass jeder Block auch auf den `Blockhash` des vorherigen Blocks verweisen muss, um die Blockchain miteinander zu verbinden.
+Vielleicht erinnerst du dich, dass jeder Block auch auf den `Block Hash` des vorherigen Blocks verweisen muss, um die Blockchain miteinander zu verbinden.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/inside-a-block-b11c74ce.svg)
 
@@ -147,7 +147,7 @@ Vielleicht erinnerst du dich, dass jeder Block auch auf den `Blockhash` des vorh
 
 Die folgenden Informationen sind in einem Block enthalten:
 
-- [ ] Alle Informationen aus früheren Blöcken, so dass die Blockchain immer aktuell ist
+- [ ] Alle Informationen aus früheren Blöcken, sodass die Blockchain immer aktuell ist
 - [ ] Alles, was für die Blockchain relevant ist, da die Blockgröße unbegrenzt ist
 - [ ] Transaktionsdaten und ein Verweis auf den vorherigen Block
 - [ ] Alle Transaktionsdaten, die innerhalb eines festen Zeitrahmens erzeugt werden
@@ -156,17 +156,17 @@ Die folgenden Informationen sind in einem Block enthalten:
 
 Die Daten auf jeder Blockchain bestehen einfach aus einer Liste von `Transaktionen`, Aufzeichnungen von Geldbewegungen zwischen Nutzern. Jede Transaktion muss durch die `digitale Signatur` des Absenders unterschrieben werden, um gültig zu sein.
 
-Genau das tust du, wenn du eine Transaktion mit einer Wallet bestätigst: du unterschreibst mit deiner digitalen Signatur, um eine Transaktion zu autorisieren. Du kannst es dir als das digitale Äquivalent einer physischen Unterzeichnung eines Schecks, Quittung oder Kreditkartentransaktion vorstellen.
+Genau das tust du, wenn du eine Transaktion mit einer Wallet bestätigst: Du unterschreibst mit deiner digitalen Signatur, um eine Transaktion zu autorisieren. Du kannst es dir als das digitale Äquivalent einer physischen Unterzeichnung eines Schecks, Quittung oder Kreditkartentransaktion vorstellen.
 
-Transaktionen können einfach sein, wie das Versenden von Krypto-Vermögenswerten, oder komplexer, wie der Tauschhandel von Krypto-Vermögenswerten oder sogar der Einsatz von speziellem Code, der ausgeführt wird, wenn er ausgelöst wird, ein so genannter `Smart Contract`.
+Transaktionen können einfach sein, wie das Versenden von Krypto-Vermögenswerten, oder komplexer, wie der Tauschhandel von Krypto-Vermögenswerten oder sogar der Einsatz von speziellem Code, der ausgeführt wird, wenn er ausgelöst wird, ein sogenannter `Smart Contract`.
 
-Schließlich hat jede Transaktion einen eindeutigen digitalen Identifikator, den sogenannten `Transaktionshash`, den keine andere Transaktion hat. Dies macht es einfach, später auf einzelne Transaktionen zu verweisen und stellt sicher, dass die Details dieser Transaktion danach nicht geändert werden können.
+Schließlich hat jede Transaktion einen eindeutigen digitalen Identifikator, den sogenannten `Transaktions-Hash`, den keine andere Transaktion hat. Dies macht es einfach, später auf einzelne Transaktionen zu verweisen und stellt sicher, dass die Details dieser Transaktion danach nicht geändert werden können.
 
 ![](https://app.banklessacademy.com/images/blockchain-basics/individual-transactions-2f6bf118.svg)
 
 # Knowledge Check 6
 
-Die Daten auf einer Blockchain sind einfach ausgedrückt eine Liste von Transaktionen, die in Blöcken zusammengefasst wurden. Beispiele für solche Transaktionen können sein:
+Die Daten auf einer Blockchain sind einfach ausgedrückt, eine Liste von Transaktionen, die in Blöcken zusammengefasst wurden. Beispiele für solche Transaktionen können sein:
 
 - [ ] Senden oder Empfangen von Krypto-Vermögenswerten
 - [ ] Ändern der Größe des Blocks
@@ -187,7 +187,7 @@ Wenn wir eine einzelne Transaktion in einem Block Explorer [Suchmaschine] betrac
 
 Was gilt für Blockchain-Adressen?
 
-- [ ] Sie sind die öffentlichen Kennung verschiedener Personen oder Organisationen auf einer Blockchain
+- [ ] Sie sind die öffentliche Kennung verschiedener Personen oder Organisationen auf einer Blockchain
 - [ ] Sie beginnen immer mit _0x_ auf Ethereum
 - [ ] Wer den privaten Schlüssel für eine Adresse besitzt, kann über die Mittel dieser Adresse verfügen
 - [ ] Alle oben genannten Punkte

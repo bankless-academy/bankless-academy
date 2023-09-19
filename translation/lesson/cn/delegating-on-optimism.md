@@ -1,9 +1,9 @@
 ---
 TITLE: 授权 Optimism
 DESCRIPTION: 将您的 OP 投票权授予密切关注治理情况的人。
-LANGUAGE: 简体中文(Simplified Chinese)
+LANGUAGE: 简体中文（Simplified Chinese）
 WRITERS: Tetranome
-TRANSLATORS: TG
+TRANSLATORS: TG、Aaros
 LINK: https://app.banklessacademy.com/lessons/delegating-on-optimism
 FORMAT: HANDBOOK
 ---
@@ -30,17 +30,17 @@ ________________________________________________________________________________
 
 > * 授权是一种投票机制，允许一名代表 — 称为"代表" — 代表他人投票。
 > 
-> * Optimism 通过其 "Optimism 广场" `dApp`处理投票和授权。
+> * Optimism 通过其"Optimism Agora" `dApp` 处理投票和授权。
 > 
 > * 您将自行保管授权的 OP 代币，可随时转让或出售。
 
 ## 介绍
 
-授权是一种链上投票机制，允许社区成员将其治理投票权临时授予社区代表。 这一过程可让用户为 `网络治理`做出贡献，而无需积极监控生态系统中的每项拟议行动或变化。
+授权是一种链上投票机制，允许社区成员将其治理投票权临时授予社区代表。 这一过程可让用户为`网络治理`做出贡献，而无需积极监控生态系统中的每项拟议行动或变化。
 
 在 Optimism，治理权力体现为在自我保管的钱包中持有 OP 代币。 授权期间，OP 代币不会离开您的自管钱包。 您可以随时转让或出售，但您的代表只能获得您钱包中的投票权。 您可以随时更改社区代表。
 
-在 Optimism 上，我们使用名为 "Agora（广场）"的投票 dApp 来查看符合条件的代表、执行授权和监控提案。 让我们更仔细地看一看。
+在 Optimism 上，我们使用名为"Agora（广场）"的投票 dApp 来查看符合条件的代表、执行授权和监控提案。 让我们更仔细地看一看。
 
 ## 在 Optimism Agora 授权
 
@@ -48,7 +48,7 @@ ________________________________________________________________________________
 
 您可以在我们的《探索者手册》条目中找到分步指南， ["如何在第 2 层为钱包提供资金"](https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2)。
 
-**2\. 使用** `DEX`在 Optimism 网络上将 ETH 兑换成 OP 代币。
+**2\. 使用** `DEX`在 Optimism 网络上将 ETH 兑换成 OP 代币。（记得留些许 ETH 作为 gas 费
 
 请查看我们的探索者手册 ["如何在去中心化交易所进行交换"条目](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) ，了解使用去中心化交易所购买 OP 代币的分步指南。
 

@@ -1,6 +1,6 @@
 ---
 TITLE: Delegieren mit Optimism
-DESCRIPTION: Übertrag dein Stimmrecht für deine OP an Personen, die die Regierungsführung genau verfolgen.
+DESCRIPTION: Übertrage dein Stimmrecht für deine OP an Personen, die die Regierungsführung genau verfolgen.
 LANGUAGE: Deutsch
 WRITERS: Tetranome
 TRANSLATORS: Ruben Silva Otero
@@ -38,9 +38,9 @@ ________________________________________________________________________________
 
 Delegation ist ein Onchain-Abstimmungsmechanismus, der es einem Mitglied der Gemeinschaft ermöglicht, sein Stimmrecht vorübergehend an einen Vertreter der Gemeinschaft zu übertragen. Dieser Prozess ermöglicht es dem Nutzer, einen Beitrag zu `Regierungsführung des Netzwerks`zu leisten, ohne jede vorgeschlagene Aktion oder Änderung im Ökosystem aktiv überwachen zu müssen.
 
-Bei Optimism wird die Regierungsgewalt durch den Besitz von OP-Tokens in Wallet zur Selbstverwahrung [self-custody] repräsentiert. OP-Tokens verlassen während der Delegation nicht diese Wallet zur Selbstverwahrung. Du kannst sie jederzeit übertragen oder verkaufen, aber dein Delegierter erhält nur die Stimmrechte, die sich in deiner Wallet befinden. Du kannst deinen Delegierten der Gemeinschaft jederzeit wechseln.
+Bei Optimism wird die Regierungsgewalt durch den Besitz von OP-Tokens im Wallet mit Selbstverwahrung [Self-Custody-Wallet] repräsentiert. OP-Tokens verlassen während der Delegation nicht diese Wallet mit Selbstverwahrung [Self-Custody-Wallet]. Du kannst die OP-Tokens jederzeit übertragen oder verkaufen, aber dein "Delegierter" erhält nur so viel Wahlrecht, wie sich Stimmrechte in deiner Wallet befinden. Du kannst deinen Delegierten der Gemeinschaft jederzeit wechseln.
 
-Bei Optimism verwenden wir eine Abstimmungs-DApp namens "Agora", um die in Frage kommenden Delegierten zu überprüfen, Delegationen durchzuführen und Vorschläge zu überwachen. Schauen wir uns das einmal genauer an.
+Bei Optimism verwenden wir eine Abstimmungs-dApp [dezentralisierte App] namens "Agora", um die infrage kommenden Delegierten zu überprüfen, die Delegationen durchzuführen und Proposals [Vorschläge] zu überwachen. Schauen wir uns das einmal genauer an.
 
 ## Delegieren mit Optimism Agora
 
@@ -48,7 +48,7 @@ Bei Optimism verwenden wir eine Abstimmungs-DApp namens "Agora", um die in Frage
 
 Eine Schritt-für-Schritt-Anleitung findest du in unserem Explorer's Handbuch Eintrag, ['How to fund a Wallet on Layer 2'](https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2) [Wie du eine Wallet auf einer Layer 2 mit Mitteln versiehst].
 
-2\. Tausche dein ETH in OP-Token auf dem Optimism Netzwerk, indem du einen</strong> `DEX` verwendest.
+2\. Tausche dein ETH in OP-Token auf dem Optimism Netzwerk, indem du einen</strong> `DEX` verwendest. Achte dabei darauf, etwas ETH für Gas-Gebühren aufzuheben.
 
 In unserem Explorer's Handbuch auf ["How to Swap on a Decentralized Exchange"](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) [Wie man an einer dezentralisierten Börse tauscht] findest du eine Schritt-für-Schritt-Anleitung zur Verwendung eines DEX zum Kauf von OP-Tokens.
 
@@ -60,15 +60,15 @@ In unserem Explorer's Handbuch auf ["How to Swap on a Decentralized Exchange"](h
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
-**5\. Scroll nach unten und wähle deinen Lieblingsdelegierten aus.**
+**5\. Scroll nach unten und wähle deinen Lieblings-Delegierten aus.**
 
-Wenn du auf einen Delegierten klickst, findest du eine kurze Erklärung, sein Abstimmungsverhalten und eine Bestimmung seines Einflusses. Nimm dir die Zeit, einen Vertreter zu finden, der mit deiner Vision von Optimism übereinstimmt.
+Wenn du auf einen Delegierten klickst, findest du eine kurze Beschreibung, die Stimmhistorie und eine Messung der Einflussnahme. Nimm dir die Zeit, einen Vertreter zu finden, der mit deiner Vision von Optimism übereinstimmt.
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-6443ae02.png)
 
 **6\. Klick auf die Schaltfläche "Delegate", und genehmige die Transaktion in deiner Wallet.**
 
-Während dieses Vorgangs verlassen keine OP-Tokens deine Brieftasche. Es gibt eine kleine Gasgebühr, die in ETH berechnet wird.
+Während dieses Vorgangs verlassen keine OP-Token deine Wallet. Es wird eine kleine Gebühr [Gas Fees] in ETH berechnet.
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-245809cd.png)
 
@@ -86,13 +86,13 @@ Es kommt auf deine persönlichen Werte und deine Vision an, je nachdem wie du Op
 
 Du kannst! Schau dir die Anleitung [‘How to be a delegate’](https://community.optimism.io/docs/governance/delegate/) [Wie wird man Delegierter] an, die auf den Optimismus Docs zu finden ist.
 
-Hinweis: Dies wird dir nicht für die Lektionsaufgabe ['Optimism Governance'](https://app.banklessacademy.com/lessons/optimism-governance) an der Bankless Akademy angerechnet.
+Hinweis: Dies wird dir nicht für die Lektion ['Optimism Governance'](https://app.banklessacademy.com/lessons/optimism-governance) an der Bankless Academy angerechnet.
 
 * *Muss ich delegieren, um abzustimmen?*
 
 Du kannst die Delegation überspringen und dich selbst repräsentieren, indem du Abstimmungen unter der Registerkarte „Proposals“ [Vorschläge] auf Optimism Agora verfolgst.
 
-Hinweis: Dies wird dir ebenfalls nicht für die Lektionsaufgabe ['Optimism Governance'](https://app.banklessacademy.com/lessons/optimism-governance) an der Bankless Akademy angerechnet, aber du kannst dies auch tun, nachdem du dein Abzeichen bekommen hast!
+Hinweis: Dies wird dir ebenfalls nicht für die Lektion ['Optimism Governance'](https://app.banklessacademy.com/lessons/optimism-governance) an der Bankless Academy angerechnet, aber du kannst dies auch tun, nachdem du dein Abzeichen bekommen hast!
 
 
 ---
