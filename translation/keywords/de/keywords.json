@@ -117,7 +117,7 @@
   "cex": {
     "keyword": "CEX",
     "keyword_plural": "CEXs",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(Centralized Exchange) Eine Plattform, die den Handel mit Kryptowährungen gegen eine Gebühr koordiniert, ähnlich wie eine Börse."
   },
   "chain": {
     "keyword": "chain",
@@ -247,7 +247,7 @@
   "fork": {
     "keyword": "Fork",
     "keyword_plural": "Forks",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+    "definition": "Bezieht sich auf eine radikale Änderung in einem Blockchain-Netzwerk, die zu zwei Zweigen führt - einem, der dem vorherigen Protokoll folgt, und einem, der einem neuen Protokoll folgt."
   },
   "fraud proof": {
     "keyword": "fraud proof",
@@ -645,8 +645,8 @@
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
   },
   "trustless": {
-    "keyword": "Vertrauenslosigkeit",
-    "keyword_plural": "vertrauensfreie",
+    "keyword": "trustless",
+    "keyword_plural": "trustlesss",
     "definition": "[trustless] Die Eigenschaft, ohne Vertrauen in Menschen oder Institutionen zu handeln. (Ganz automatisch, ohne Vermittlungsinstanz)."
   },
   "tvl": {
