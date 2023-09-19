@@ -1,6 +1,6 @@
 ---
 TITLE: Gobernanza en Optimism
-DESCRIPTION: '¡Aprende a votar onchain y mintea tu Academy Badge!'
+DESCRIPTION: Aprende a votar onchain y mintea tu Academy Badge.
 LANGUAGE: Español
 WRITERS: Tetranome
 TRANSLATORS: OrnellaWeb3
