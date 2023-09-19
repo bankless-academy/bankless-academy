@@ -200,7 +200,7 @@ Le Collectif Optimism est composé de deux maisons, chacune ayant des responsabi
 
 **La Maison des Citoyens** [Citizens’ House] alloue des `RetroPGF` à des projets communautaires, conformément à l'éthique "Impact = Profit", et contribue à définir les paramètres de la citoyenneté. La maison est incitée à améliorer la qualité de vie du réseau, en finançant des biens publics qui améliorent la valeur de la citoyenneté !
 
-Les deux maisons maintiennent l'équilibre du réseau à travers leurs fonctions, les mécanismes de vote et les capacités de `veto`. Voyons cela de plus près.
+Les deux maisons maintiennent l'équilibre du réseau à travers leurs fonctions, les mécanismes de vote et les capacités de `véto`. Voyons cela de plus près.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
 
