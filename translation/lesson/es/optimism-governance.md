@@ -1,5 +1,5 @@
 ---
-TITLE: Governanza en Optimism
+TITLE: Gobernanza en Optimism
 DESCRIPTION: '¡Aprende a votar onchain y mintea tu Academy Badge!'
 LANGUAGE: Español
 WRITERS: Tetranome
@@ -34,8 +34,8 @@ La tecnología moderna ha cambiado drásticamente la forma en que los seres huma
 La visión de la tecnología `DAO` es agilizar la resolución de problemas y el debate entre un gran número de colaboradores, ya sea en Internet, en su comunidad local o a escala internacional. Esto se hace:
 
 - Incentivando a los participantes para que compartan una misión común.
-- Usando mecánicas de votación innovadoras, delegación``, y veto``.
-- Utilizar la tecnología blockchain para disminuir las posibilidades de error humano o secuestro.
+- Usando mecánicas de votación innovadoras, `delegación`, y `veto`.
+- Utilizando la tecnología blockchain para disminuir las posibilidades de error humano o secuestro.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
 
@@ -83,13 +83,13 @@ Nuestra búsqueda se centrará en reclamar nuestros primeros derechos de voto, �
 
 # La Visión Optimista
 
-Optimism tiene una misión: ampliar Ethereum construyendo una red `Layer 2`. Forma parte del ecosistema Ethereum, pero con comisiones más bajas y transacciones más rápidas, manteniendo el alto nivel de seguridad de Ethereum. Estas son las propiedades que lo definen:
+Optimism tiene una misión: ampliar Ethereum construyendo una red `Capa 2`. Forma parte del ecosistema Ethereum, pero con comisiones más bajas y transacciones más rápidas, manteniendo el alto nivel de seguridad de Ethereum. Estas son las propiedades que lo definen:
 
-🏕️ **Bienes públicos:** Gran énfasis en la financiación y construcción de bienes públicos onchain (en cadena)``. Un bien público es algo que beneficia a todos en una comunidad, mientras que su uso por una persona no reduce su disponibilidad para los demás. Tu educación gratuita en la Academia Bankless ha sido posible gracias al apoyo de Optimism a los bienes públicos!
+🏕️ **Bienes públicos:** Gran énfasis en la financiación y construcción de `bienes públicos` onchain (en la cadena). Un bien público es algo que beneficia a todos en una comunidad, mientras que su uso por una persona no reduce su disponibilidad para los demás. Tu educación gratuita en la Academia Bankless ha sido posible gracias al apoyo de Optimism a los bienes públicos!
 
 🧑‍🤝‍🧑 **Gobernanza comunitaria:** La red está dirigida por su comunidad.
 
-🏠 **Mercado libre:** Lanzado como una extensión no sólo del espacio de bloques de Ethereum``, sino de los principios de Ethereum. Su objetivo es ampliar el mercado de Ethereum: exento de permisos, con código abierto y resistente a la censura.
+🏠 **Mercado libre:** Lanzado como una extensión no sólo del `espacio de bloque` de Ethereum, sino de los principios de Ethereum. Su objetivo es ampliar el mercado de Ethereum: exento de permisos, con código abierto y resistente a la censura.
 
 Optimism aspira a convertirse en un "distrito del ciberespacio" que atiende directamente a sus ciudadanos y es gobernado por ellos.
 
