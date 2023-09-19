@@ -181,11 +181,11 @@
   },
   "cex": {
     "keyword": "CEX",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(Centralized Exchange) Eine Plattform, die den Handel mit Kryptowährungen gegen eine Gebühr koordiniert, ähnlich wie eine Börse."
   },
   "cexs": {
     "keyword": "CEXs",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(Centralized Exchange) Eine Plattform, die den Handel mit Kryptowährungen gegen eine Gebühr koordiniert, ähnlich wie eine Börse."
   },
   "chain": {
     "keyword": "chain",
@@ -389,11 +389,11 @@
   },
   "fork": {
     "keyword": "Fork",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+    "definition": "Bezieht sich auf eine radikale Änderung in einem Blockchain-Netzwerk, die zu zwei Zweigen führt - einem, der dem vorherigen Protokoll folgt, und einem, der einem neuen Protokoll folgt."
   },
   "forks": {
     "keyword": "Forks",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+    "definition": "Bezieht sich auf eine radikale Änderung in einem Blockchain-Netzwerk, die zu zwei Zweigen führt - einem, der dem vorherigen Protokoll folgt, und einem, der einem neuen Protokoll folgt."
   },
   "fraud proof": {
     "keyword": "fraud proof",
@@ -1023,12 +1023,12 @@
     "keyword": "transaction throughputs",
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
   },
-  "vertrauenslosigkeit": {
-    "keyword": "Vertrauenslosigkeit",
+  "trustless": {
+    "keyword": "trustless",
     "definition": "[trustless] Die Eigenschaft, ohne Vertrauen in Menschen oder Institutionen zu handeln. (Ganz automatisch, ohne Vermittlungsinstanz)."
   },
-  "vertrauensfreie": {
-    "keyword": "vertrauensfreie",
+  "trustlesss": {
+    "keyword": "trustlesss",
     "definition": "[trustless] Die Eigenschaft, ohne Vertrauen in Menschen oder Institutionen zu handeln. (Ganz automatisch, ohne Vermittlungsinstanz)."
   },
   "tvl": {

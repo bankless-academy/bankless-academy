@@ -1,6 +1,6 @@
 ---
-TITLE: Governanza en Optimism
-DESCRIPTION: '¡Aprende a votar onchain y mintea tu Academy Badge!'
+TITLE: Gobernanza en Optimism
+DESCRIPTION: Aprende a votar onchain y mintea tu Academy Badge.
 LANGUAGE: Español
 WRITERS: Tetranome
 TRANSLATORS: OrnellaWeb3
@@ -34,8 +34,8 @@ La tecnología moderna ha cambiado drásticamente la forma en que los seres huma
 La visión de la tecnología `DAO` es agilizar la resolución de problemas y el debate entre un gran número de colaboradores, ya sea en Internet, en su comunidad local o a escala internacional. Esto se hace:
 
 - Incentivando a los participantes para que compartan una misión común.
-- Usando mecánicas de votación innovadoras, delegación``, y veto``.
-- Utilizar la tecnología blockchain para disminuir las posibilidades de error humano o secuestro.
+- Usando mecánicas de votación innovadoras, `delegación`, y `veto`.
+- Utilizando la tecnología blockchain para disminuir las posibilidades de error humano o secuestro.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
 
@@ -45,7 +45,7 @@ Como cualquier estado-nación tradicional con recursos y participantes, un DAO u
 
 📜 **Propuesta:** Comienza con una propuesta de gobernanza y un debate comunitario. La propuesta se actualiza sobre la base de comentarios públicos. Cualquiera puede presentar una propuesta o criticar una. Esta es la parte 'descentralizada' de '`DAO`'.
 
-🗳️ **Votación:** La propuesta se somete a votación a través del proceso transparente y resistente a la censura de `onchain governance`. No hay ninguna facilitación humana entre la apertura y el cierre de la votación; todo está mediado por código. Esta es la parte 'autónoma' de '`DAO`' - una cualidad prevista para cubrir eventualmente todo el proceso de gobernanza.
+🗳️ **Votación:** La propuesta se somete a votación a través del proceso transparente y resistente a la censura de `gobernanza onchain`. No hay ninguna facilitación humana entre la apertura y el cierre de la votación; todo está mediado por código. Esta es la parte 'autónoma' de '`DAO`' - una cualidad prevista para cubrir eventualmente todo el proceso de gobernanza.
 
 🛠️ **Implementación:** La propuesta aprobada es aplicada a la red por varios desarrolladores vatizados si es necesario.
 
@@ -63,7 +63,7 @@ Como cualquier estado-nación tradicional con recursos y participantes, un DAO u
 
 > ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- Resistencia a la censura
+- [ ] Resistencia a la censura
 
 > ℹ️ Esto es cierto, pero no es la única respuesta.
 
@@ -83,13 +83,13 @@ Nuestra búsqueda se centrará en reclamar nuestros primeros derechos de voto, �
 
 # La Visión Optimista
 
-Optimism tiene una misión: ampliar Ethereum construyendo una red `Layer 2`. Forma parte del ecosistema Ethereum, pero con comisiones más bajas y transacciones más rápidas, manteniendo el alto nivel de seguridad de Ethereum. Estas son las propiedades que lo definen:
+Optimism tiene una misión: ampliar Ethereum construyendo una red `Capa 2`. Forma parte del ecosistema Ethereum, pero con comisiones más bajas y transacciones más rápidas, manteniendo el alto nivel de seguridad de Ethereum. Estas son las propiedades que lo definen:
 
-🏕️ **Bienes públicos:** Gran énfasis en la financiación y construcción de bienes públicos onchain (en cadena)``. Un bien público es algo que beneficia a todos en una comunidad, mientras que su uso por una persona no reduce su disponibilidad para los demás. Tu educación gratuita en la Academia Bankless ha sido posible gracias al apoyo de Optimism a los bienes públicos!
+🏕️ **Bienes públicos:** Gran énfasis en la financiación y construcción de `bienes públicos` onchain (en la cadena). Un bien público es algo que beneficia a todos en una comunidad, mientras que su uso por una persona no reduce su disponibilidad para los demás. Tu educación gratuita en la Academia Bankless ha sido posible gracias al apoyo de Optimism a los bienes públicos!
 
 🧑‍🤝‍🧑 **Gobernanza comunitaria:** La red está dirigida por su comunidad.
 
-🏠 **Mercado libre:** Lanzado como una extensión no sólo del espacio de bloques de Ethereum``, sino de los principios de Ethereum. Su objetivo es ampliar el mercado de Ethereum: exento de permisos, con código abierto y resistente a la censura.
+🏠 **Mercado libre:** Lanzado como una extensión no sólo del `espacio de bloque` de Ethereum, sino de los principios de Ethereum. Su objetivo es ampliar el mercado de Ethereum: exento de permisos, con código abierto y resistente a la censura.
 
 Optimism aspira a convertirse en un "distrito del ciberespacio" que atiende directamente a sus ciudadanos y es gobernado por ellos.
 
@@ -115,7 +115,7 @@ Optimism aspira a convertirse en un "distrito del ciberespacio" que atiende dire
 
 # Descentralización Progresiva
 
-Muchos grandes proyectos de blockchain comienzan con un grupo centralizado. Esto da al proyecto un enfoque crucial en la construcción y el gasto, pero una DAO `` necesita **más que promesas de descentralización**. En Optimism, los fundadores, la red y la comunidad se conciben de la siguiente manera:
+Muchos grandes proyectos de blockchain comienzan con un grupo centralizado. Esto da al proyecto un enfoque crucial en la construcción y el gasto, pero una `DAO` necesita **más que promesas de descentralización**. En Optimism, los fundadores, la red y la comunidad se conciben de la siguiente manera:
 
 - 🏦 **Fundación Optimism:** Fundadores de la red. Empezaron el ecosistema, proporcionaron recursos iniciales y actúan como guionistas de la comunidad, antes de disolverla.
 - 🌐 **La Red de Optimism:** El código autónomo en la blockchain — los contratos inteligentes y el procesamiento de la entrada del usuario.
@@ -152,7 +152,7 @@ Con una infraestructura onchain más valiosa, aumenta la demanda de espacio de b
 
 # Incentivización de Bienes Públicos
 
-Como puedes ver, la infraestructura `de bienes públicos` está en el corazón de Optimism. Sin embargo, la selección de proyectos merecedores de financiación no es sencilla.
+Como puedes ver, la infraestructura de `bienes públicos` está en el corazón de Optimism. Sin embargo, la selección de proyectos merecedores de financiación no es sencilla.
 
 En este caso, Optimism adopta un enfoque '**Impacto = Beneficio**'. El impacto, sin embargo, es difícil de prever. En lugar de hacer predicciones, el organismo de financiación examina periódicamente los proyectos existentes y asigna financiación retroactiva en función de los resultados históricos.
 
@@ -162,11 +162,11 @@ Este modelo de distribución se conoce como **"Retroactive Public Goods Funding"
 
 ![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
 
-# El Fénix de Éter
+# El Fénix de Ether
 
 Optimism llama **'Ether's Phoenix'** al siguiente efecto: un _"ángel que retrocede en el tiempo, recompensando a aquellos que lo invocan"._
 
-_"Es un algoritmo que recompensa a los primeros cooperadores que crearon las condiciones para que prosperara la financiación de bienes públicos. Es un futuro en el que se reconoce la inversión temprana en bienes públicos. Es una mentalidad que sostiene que: el optimismo prevalece, que los sistemas mejores son posibles y que la humanidad será recompensada por su revolución cooperativa."_
+_"Es un algoritmo que recompensa a los primeros contribuyentes que crearon las condiciones para que prosperara la financiación de bienes públicos. Es un futuro en el que se reconoce la inversión temprana en bienes públicos. Es una mentalidad que sostiene que: el optimismo prevalece, que mejores sistemas son posibles y que la humanidad será recompensada por su revolución cooperativa."_
 
 — La Fundación Optimism
 
@@ -200,7 +200,7 @@ El Colectivo Optimismo está formado por dos casas, cada una con responsabilidad
 
 **La Cámara de los Ciudadanos** asigna los recursos de `RetroPGF` a proyectos comunitarios, de acuerdo con la ética "Impacto = Beneficio", y ayuda a decidir los parámetros de la ciudadanía. Se incentiva a la cámara para que mejore la calidad de vida de la red, financiando bienes públicos que mejoren el valor de la ciudadanía.
 
-Ambas cámaras mantienen el equilibrio de la red a través de sus funciones, mecanismos de votación y capacidad de veto``. Echemos un vistazo más de cerca.
+Ambas cámaras mantienen el equilibrio de la red a través de sus funciones, mecanismos de votación y capacidad de `veto`. Echemos un vistazo más de cerca.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
 
@@ -251,13 +251,13 @@ La Cámara de Tokens sigue [un ciclo de votación de cinco semanas](https://comm
 - Semana 1-3: Presentación de propuestas, revisión y comentarios
 - Semana 4-5: Votación
 
-📢 **Delegar:** Muchos usuarios prefieren delegar su poder de voto en otros poseedores de tokens que consideran que representan mejor los intereses de la comunidad. Esta es una gran manera de tener un impacto en el ecosistema sin tener que leer todas las propuestas que entran en la votación. La delegación no afecta a la propiedad de los tokens: los tokens OP delegados permanecen en tu billetera.
+📢 **Delegar:** Muchos usuarios prefieren `delegar` su poder de voto en otros poseedores de tokens que consideran que representan mejor los intereses de la comunidad. Esta es una gran manera de tener un impacto en el ecosistema sin tener que leer todas las propuestas que entran en la votación. La delegación no afecta a la propiedad de los tokens: los tokens OP delegados permanecen en tu billetera.
 
 Cualquiera puede convertirse en delegado de la Cámara de Tokens en Optimism, representando a un grupo de amigos, a una comunidad o incluso al club de blockchain de una universidad. Los delegados activos suelen ser recompensados por la comunidad.
 
 # Una nota sobre la Distribución de Tokens…
 
-La gobernanza de la red es sólo tan democrática como su distribución de `tokens` inicial. Siempre deberíamos preguntarnos "¿quién recibió el poder de voto en primer lugar?" y "¿cuánto recibió?".
+La gobernanza de la red es sólo tan democrática como su `distribución de tokens` inicial. Siempre deberíamos preguntarnos "¿quién recibió el poder de voto en primer lugar?" y "¿cuánto recibió?".
 
 Revisa el [plan de distribución de OP](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) para ver cómo la Fundación Optimism ha asignado el poder inicial de gobernanza, al servicio de la representación equilibrada de los interesados.
 
@@ -293,7 +293,7 @@ Sus funciones incluyen:
 - 🔍 **Investigación y asignación de RetroPGF** a proyectos comunitarios que cumplan las directrices.
 - 👬 **Selección de nuevos ciudadanos** para ayudar a gobernar la Cámara de los Ciudadanos, y equilibrar la perspectiva de la Cámara de Tokens. La Cámara de Tokens tiene derechos de veto para este tipo de propuesta.
 
-La Cámara de los Ciudadanos también se asegura de que las propuestas de la Casa de Tokens estén alineadas con la misión, utilizando la mecánica de veto `` para renunciar a cambios no alineados en la red.
+La Cámara de los Ciudadanos también se asegura de que las propuestas de la Casa de Tokens estén alineadas con la misión, utilizando la mecánica de `veto` para renunciar a cambios no alineados en la red.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
 
@@ -337,7 +337,7 @@ Al moverse entre períodos de gobernanza activa y reflexión, los participantes 
 
 En Optimism, una temporada dura aproximadamente tres meses, seguida de un periodo de reflexión de duración similar.
 
-Los bucles de retroalimentación reflexiva construidos a través de Optimism son increíblemente importantes para encontrar las mejores prácticas para la gobernanza de la `DAO`.
+Los ciclos de retroalimentación reflexiva y consciente construidos a través de Optimism son increíblemente importantes para encontrar las mejores prácticas para la gobernanza de la `DAO`.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
 
@@ -345,11 +345,11 @@ Los bucles de retroalimentación reflexiva construidos a través de Optimism son
 
 Estamos casi listos para gobernar en Optimism 🔴. Hay una última cosa que mencionar.
 
-La Visión Optimista no se detiene en una única blockchain `L2` . Como resultado de la habilidad de `bifurcar` una blockchain, este es un experimento de gobernanza clonable. Esta tecnología está concebida para ampliarse a múltiples L2, e incluso a escenarios de gobernanza del mundo real. Optimism llama a esto **'La Supercadena'**.
+La Visión Optimista no se detiene en una única blockchain `L2` . Como resultado de la habilidad de `bifurcar` una blockchain, este es un experimento de gobernanza clonable. Esta tecnología está concebida para replicarse a múltiples L2, e incluso a escenarios de gobernanza del mundo real. Optimism llama a esto **'La Supercadena'**.
 
-Coinbase, un destacado `CEX`, ya se ha bifurcado y ha empezado a contribuir a esta iniciativa `de código abierto` , a través de la blockchain Base 🔵 L2. Esta puesta en común de los recursos de desarrollo aumenta la evolución de las infraestructuras, al tiempo que canaliza las comisiones de las transacciones de L2 hacia la ética "Impacto = Beneficio".
+Coinbase, un destacado `CEX`, ya se ha bifurcado y ha empezado a contribuir a esta iniciativa de `código abierto`, a través de la blockchain de Capa 2 llamada Base 🔵. Esta puesta en común de los recursos de desarrollo promueve la evolución de las infraestructuras al tiempo que canaliza las comisiones de las transacciones hacia su desarrollo, reforzando así el ethos de Optimism de que "Impacto = Beneficio".
 
-¡Las recompensas RetroPGF incluyen ahora los beneficios de las tasas de transacción de Base 🔵, lo que significa más financiación para los bienes públicos de ``!
+¡Las recompensas RetroPGF incluyen ahora los beneficios de las tasas de transacción de Base 🔵, lo que significa más financiación para los `bienes públicos`!
 
 # Forjando un futuro Optimista
 
@@ -359,7 +359,7 @@ Al involucrarnos en comunidades innovadoras, utilizando sistemas de gobernanza j
 
 La misión de hoy es **unirse a la Cámara de Tokens y delegar nuestros tokens de OP**.
 
-Por ahora, la Cámara de los Ciudadanos aún desarrolla sus procedimientos de incorporación. Mientras tanto, podemos desde ya comenzar nuestro viaje Ciudadano participando en la conversación en los foros de la comunidad [Optimism](https://gov.optimism.io/).
+Por ahora, la Cámara de los Ciudadanos aún desarrolla sus procedimientos de incorporación. Mientras tanto, podemos desde ya comenzar nuestro viaje Ciudadano participando en la conversación en los foros de la [comunidad Optimism](https://gov.optimism.io/).
 
 ![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
 

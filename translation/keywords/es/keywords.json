@@ -51,12 +51,8 @@
     "keyword": "AMM",
     "definition": "(Automated Market Maker) Sistema de casación de operaciones, basado en un algoritmo público."
   },
-  "asincrónico": {
-    "keyword": "asincrónico",
-    "definition": "Comunicación entre varios colaboradores, en la que los participantes no tienen que estar presentes en el momento de enviar el mensaje."
-  },
-  "asíncronos": {
-    "keyword": "asíncronos",
+  "asíncrono": {
+    "keyword": "asíncrono",
     "definition": "Comunicación entre varios colaboradores, en la que los participantes no tienen que estar presentes en el momento de enviar el mensaje."
   },
   "apuesta": {
@@ -125,15 +121,15 @@
   },
   "exchange centralizado": {
     "keyword": "exchange centralizado",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(CEX) Una plataforma que coordina la compra y venta de criptomonedas a cambio de una comisión, similar a una plataforma de compra y venta de acciones de valores."
   },
   "cex": {
     "keyword": "CEX",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "Exchange centralizado: Una plataforma que coordina la compra y venta de criptomonedas a cambio de una comisión, similar a una plataforma de compra y venta de acciones de valores."
   },
   "cexs": {
     "keyword": "CEXs",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "Exchange centralizado: Una plataforma que coordina la compra y venta de criptomonedas a cambio de una comisión, similar a una plataforma de compra y venta de acciones de valores."
   },
   "cadena": {
     "keyword": "cadena",
@@ -219,8 +215,8 @@
     "keyword": "DeFi",
     "definition": "(DeFi) Conjunto de herramientas financieras de autocustodia, alojadas en una blockchain."
   },
-  "delegado": {
-    "keyword": "delegado",
+  "delegar": {
+    "keyword": "delegar",
     "definition": "Otorgar una responsabilidad específica a otra persona, es decir, delegar un poder de voto simbólico."
   },
   "delegados": {
@@ -237,11 +233,11 @@
   },
   "dex": {
     "keyword": "DEX",
-    "definition": "DEX) Protocolo que facilita el intercambio sin necesidad de intermediarios de confianza."
+    "definition": "Exchange Descentralizado: Protocolo que facilita el intercambio de tokens sin necesidad de confiar en intermediarios."
   },
   "dexs": {
     "keyword": "DEXs",
-    "definition": "DEX) Protocolo que facilita el intercambio sin necesidad de intermediarios de confianza."
+    "definition": "Exchange Descentralizado: Protocolo que facilita el intercambio de tokens sin necesidad de confiar en intermediarios."
   },
   "agregador dex": {
     "keyword": "Agregador DEX",
@@ -287,8 +283,12 @@
     "keyword": "FOMO",
     "definition": "(Fear Of Missing Out) Ansiedad o aprensión por no ser incluido en algo."
   },
-  "bifurcación": {
-    "keyword": "bifurcación",
+  "bifurcar": {
+    "keyword": "bifurcar",
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+  },
+  "bifurcaciones": {
+    "keyword": "bifurcaciones",
     "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
   "prueba de fraude": {
@@ -425,7 +425,7 @@
   },
   "código abierto": {
     "keyword": "código abierto",
-    "definition": "Software con código fuente que cualquiera puede inspeccionar, modificar y mejorar."
+    "definition": "Programa de software con código fuente público que cualquiera puede inspeccionar, modificar y mejorar."
   },
   "rollup optimista": {
     "keyword": "rollup optimista",
@@ -633,7 +633,7 @@
   },
   "distribución de token": {
     "keyword": "distribución de token",
-    "definition": "La forma en que se reparten las fichas entre los distintos grupos de interesados."
+    "definition": "La forma en que se reparten los tokens entre los distintos grupos de interesados."
   },
   "par de token": {
     "keyword": "par de token",
@@ -679,9 +679,9 @@
     "keyword": "rendimiento de la transacción",
     "definition": "El número de transacciones que una cadena de bloques puede procesar a la vez, normalmente medido en transacciones por segundo (TPS)."
   },
-  "sin confianza": {
-    "keyword": "sin confianza",
-    "definition": "Cualidad de operar sin necesidad de confiar en personas o instituciones (automática, no pertenece a ninguna persona)."
+  "sin necesidad de confianza": {
+    "keyword": "sin necesidad de confianza",
+    "definition": "Cualidad de un sistema de operar sin necesidad de confiar en personas o instituciones (automática, no pertenece a ninguna persona)."
   },
   "tvl": {
     "keyword": "TVL",
