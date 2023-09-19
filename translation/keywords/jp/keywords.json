@@ -74,11 +74,6 @@
     "keyword_plural": "ブロック報酬",
     "definition": "新しい有効なブロックの提案者に与えられたブロックチェーンのネイティブアセットの量"
   },
-  "block space": {
-    "keyword": "ブロックスペース",
-    "keyword_plural": "ブロックスペース",
-    "definition": "ブロックチェーン上で、情報の保存やコードの実行に使用できるスペースの量"
-  },
   "blockchain": {
     "keyword": "ブロックチェーン",
     "keyword_plural": "ブロックチェーン",
@@ -93,6 +88,11 @@
     "keyword": "ブロックチェーンのトリレンマ",
     "keyword_plural": "ブロックチェーンのトリレンマ",
     "definition": "セキュリティ、スケーラビリティ、分散化の3つのブロックチェーンのすべての必要性を説明する問題"
+  },
+  "blockspace": {
+    "keyword": "blockspace",
+    "keyword_plural": "blockspaces",
+    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
   },
   "borrower": {
     "keyword": "借り手",
