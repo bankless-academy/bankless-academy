@@ -65,9 +65,9 @@
     "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
   },
   "block producer": {
-    "keyword": "block producer",
-    "keyword_plural": "block producers",
-    "definition": "The user whose hardware is chosen to verify a block's transactions and begin the next block on most Proof-of-Stake (PoS) blockchains."
+    "keyword": "producteur de blocs",
+    "keyword_plural": "producteurs de blocs",
+    "definition": "L'utilisateur dont le matériel est choisi pour vérifier les transactions d'un bloc et commencer le bloc suivant sur la plupart des blockchains PoS (Proof-of-Stake)."
   },
   "block reward": {
     "keyword": "block reward",
@@ -90,9 +90,9 @@
     "definition": "The problem describing the need for all 3 blockchain qualities: Security, Scalability, and Decentralization."
   },
   "blockspace": {
-    "keyword": "blockspace",
+    "keyword": "espace de blocs",
     "keyword_plural": "blockspaces",
-    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
+    "definition": "La quantité d'espace sur une blockchain qui peut être utilisée pour stocker des informations et exécuter du code. La quantité d'\"espace\" à l'intérieur d'un (ou d'une série de) bloc(s)."
   },
   "borrower": {
     "keyword": "borrower",
@@ -112,12 +112,12 @@
   "centralized exchange": {
     "keyword": "centralized exchange",
     "keyword_plural": "centralized exchanges",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(CEX / Centralized Exchange) Plate-forme centralisée qui coordonne les échanges de crypto-monnaies contre rémunération, à l'instar d'une bourse."
   },
   "cex": {
     "keyword": "CEX",
     "keyword_plural": "CEXs",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(Echange Centralisé) Plateforme qui coordonne les échanges de crypto-monnaies contre rémunération, à l'instar d'une bourse."
   },
   "chain": {
     "keyword": "chain",
@@ -162,7 +162,7 @@
   "dapp": {
     "keyword": "dApp",
     "keyword_plural": "dApps",
-    "definition": "A decentralized application that connects to decentralized networks and protocols."
+    "definition": "Une application décentralisée qui se connecte à des réseaux et protocoles décentralisés."
   },
   "decentralization": {
     "keyword": "Decentralization",
@@ -205,7 +205,7 @@
     "definition": "Échange décentralisé : Un protocole qui facilite les échanges sans nécessiter d'intermédiaires de confiance."
   },
   "dex aggregator": {
-    "keyword": "DEX aggregator",
+    "keyword": "Agrégateur D'échange Décentralisé",
     "keyword_plural": "DEX aggregators",
     "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
   },
@@ -227,12 +227,12 @@
   "erc-20": {
     "keyword": "ERC-20",
     "keyword_plural": "ERC-20s",
-    "definition": "A standard for transferable fungible tokens on Ethereum. These tokens are divisible and non-unique."
+    "definition": "Une norme pour les jetons fongibles transférables sur Ethereum. Ces jetons sont divisibles et non uniques."
   },
   "erc-721": {
     "keyword": "ERC-721",
     "keyword_plural": "ERC-721s",
-    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
+    "definition": "Une norme pour les jetons non fongibles sur Ethereum. Ces jetons ont un identifiant numérique unique et ne peuvent pas être copiés, substitués ou divisés."
   },
   "ethereum virtual machine": {
     "keyword": "Ethereum Virtual Machine",
@@ -245,9 +245,9 @@
     "definition": "(Fear Of Missing Out) Anxiety or apprehension about not being included in something."
   },
   "fork": {
-    "keyword": "fork",
+    "keyword": "forker",
     "keyword_plural": "forks",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+    "definition": "Il s'agit d'un changement radical dans un réseau de blockchain qui donne lieu à deux branches, l'une suivant le protocole précédent et l'autre un nouveau protocole."
   },
   "fraud proof": {
     "keyword": "fraud proof",
@@ -317,7 +317,7 @@
   "l2": {
     "keyword": "L2",
     "keyword_plural": "L2s",
-    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
+    "definition": "Une blockchain de Couche 2 [L2/Layer2] étend la scalabilité d'Ethereum tout en héritant de la sécurité d'Ethereum."
   },
   "layer 1": {
     "keyword": "Layer 1",
@@ -327,7 +327,7 @@
   "layer 2": {
     "keyword": "Couche 2",
     "keyword_plural": "Layer 2s",
-    "definition": "Une blockchain qui étend la scalabilité d'Ethereum tout en héritant de la sécurité d'Ethereum."
+    "definition": "Une blockchain de Couche 2 [L2/Layer2] étend la scalabilité d'Ethereum tout en héritant de la sécurité d'Ethereum."
   },
   "ledger": {
     "keyword": "ledger",
@@ -370,9 +370,9 @@
     "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
   },
   "network governance": {
-    "keyword": "network governance",
+    "keyword": "gouvernance du réseau",
     "keyword_plural": "network governances",
-    "definition": "The process by which a decentralized community reaches agreement on network features/upgrades."
+    "definition": "Le processus par lequel une communauté décentralisée parvient à un accord sur les caractéristiques du réseau et ses mises à jour."
   },
   "nft": {
     "keyword": "NFT",
@@ -392,7 +392,7 @@
   "open source": {
     "keyword": "open source",
     "keyword_plural": "open sources",
-    "definition": "Software with source code that anyone can inspect, modify, and enhance."
+    "definition": "Logiciel libre dont le code source peut être consulté, modifié et amélioré par tout un chacun."
   },
   "optimistic rollup": {
     "keyword": "optimistic rollup",
@@ -492,7 +492,7 @@
   "retropgf": {
     "keyword": "RetroPGF",
     "keyword_plural": "RetroPGFs",
-    "definition": "(Retroactive Public Goods Funding) A mechanism for funding projects, based on their historical impact."
+    "definition": "(Financement Rétroactif des Biens Publics) Mécanisme de financement de projets, basé sur leur impact historique."
   },
   "rollup": {
     "keyword": "rollup",
@@ -595,9 +595,9 @@
     "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
   },
   "token distribution": {
-    "keyword": "token distribution",
+    "keyword": "distribution de jetons",
     "keyword_plural": "token distributions",
-    "definition": "The way in which tokens are allocated across different stakeholder groups."
+    "definition": "La manière dont les jetons sont répartis entre les différents groupes de parties prenantes."
   },
   "token pair": {
     "keyword": "token pair",
@@ -645,9 +645,9 @@
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
   },
   "trustless": {
-    "keyword": "trustless",
+    "keyword": "sans tiers de confiance",
     "keyword_plural": "trustlesss",
-    "definition": "The quality of operating without need to trust in people or institutions. (Automatic, not owned by any one person)."
+    "definition": "La qualité de fonctionner sans avoir besoin de faire confiance à des personnes ou à des institutions. (Automatique, n'appartenant à personne)."
   },
   "tvl": {
     "keyword": "TVL",
