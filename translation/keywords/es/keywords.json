@@ -245,8 +245,8 @@
     "definition": "(Fear Of Missing Out) Ansiedad o aprensión por no ser incluido en algo."
   },
   "fork": {
-    "keyword": "bifurcación",
-    "keyword_plural": "bifurcación",
+    "keyword": "bifurcar",
+    "keyword_plural": "bifurcaciones",
     "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
   "fraud proof": {
@@ -392,7 +392,7 @@
   "open source": {
     "keyword": "código abierto",
     "keyword_plural": "código abierto",
-    "definition": "Software con código fuente que cualquiera puede inspeccionar, modificar y mejorar."
+    "definition": "Programa de software con código fuente público que cualquiera puede inspeccionar, modificar y mejorar."
   },
   "optimistic rollup": {
     "keyword": "rollup optimista",
@@ -597,7 +597,7 @@
   "token distribution": {
     "keyword": "distribución de token",
     "keyword_plural": "distribución de token",
-    "definition": "La forma en que se reparten las fichas entre los distintos grupos de interesados."
+    "definition": "La forma en que se reparten los tokens entre los distintos grupos de interesados."
   },
   "token pair": {
     "keyword": "par de token",
@@ -645,9 +645,9 @@
     "definition": "El número de transacciones que una cadena de bloques puede procesar a la vez, normalmente medido en transacciones por segundo (TPS)."
   },
   "trustless": {
-    "keyword": "sin confianza",
-    "keyword_plural": "sin confianza",
-    "definition": "Cualidad de operar sin necesidad de confiar en personas o instituciones (automática, no pertenece a ninguna persona)."
+    "keyword": "sin necesidad de confianza",
+    "keyword_plural": "sin necesidad de confianza",
+    "definition": "Cualidad de un sistema de operar sin necesidad de confiar en personas o instituciones (automática, no pertenece a ninguna persona)."
   },
   "tvl": {
     "keyword": "TVL",
