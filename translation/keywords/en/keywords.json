@@ -74,11 +74,6 @@
     "keyword_plural": "block rewards",
     "definition": "The amount of a blockchain’s native asset given to the proposer of a new valid block."
   },
-  "block space": {
-    "keyword": "block space",
-    "keyword_plural": "block spaces",
-    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
-  },
   "blockchain": {
     "keyword": "blockchain",
     "keyword_plural": "blockchains",
@@ -93,6 +88,11 @@
     "keyword": "Blockchain Trilemma",
     "keyword_plural": "Blockchain Trilemmas",
     "definition": "The problem describing the need for all 3 blockchain qualities: Security, Scalability, and Decentralization."
+  },
+  "blockspace": {
+    "keyword": "blockspace",
+    "keyword_plural": "blockspaces",
+    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
   },
   "borrower": {
     "keyword": "borrower",
