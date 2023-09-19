@@ -85,7 +85,7 @@ Notre quête se concentrera sur la revendication de nos premiers droits de vote,
 
 Optimism a une mission : faire évoluer Ethereum en construisant un réseau de `Couche 2` . Il fait partie de l'écosystème Ethereum, mais avec des frais réduits et des transactions plus rapides — tout en maintenant le niveau élevé de sécurité d'Ethereum. Voici les propriétés qui le définissent :
 
-🏕️ **Biens Publics [Public Goods] :** L'accent est mis sur le financement et la construction `de biens publics` sur la blockchain [onchain]. Un bien public est un bien qui profite à tous les membres d'une communauté et dont l'utilisation par une personne ne réduit pas sa disponibilité pour les autres. Votre éducation gratuite à la Bankless Academy a été rendue possible grâce au soutien d'Optimism aux biens publics !
+🏕️ **Biens Publics [Public Goods] :** L'accent est mis sur le financement et la construction de `biens publics` [public good] sur la blockchain [onchain]. Un bien public est un bien qui profite à tous les membres d'une communauté et dont l'utilisation par une personne ne réduit pas sa disponibilité pour les autres. Votre éducation gratuite à la Bankless Academy a été rendue possible grâce au soutien d'Optimism aux biens publics !
 
 🧑‍🤝‍🧑 **Gouvernance de la communauté :** Le réseau est dirigé par sa communauté.
 
