@@ -74,11 +74,6 @@
     "keyword_plural": "区块奖励",
     "definition": "给予新有效区块提议者的原生区块链资产。"
   },
-  "block space": {
-    "keyword": "区块空间",
-    "keyword_plural": "区块空间",
-    "definition": "区块链上可用于存储信息和运行代码的空间大小。一个（或一系列）区块内的\"空间\"量。"
-  },
   "blockchain": {
     "keyword": "区块链",
     "keyword_plural": "区块链",
@@ -93,6 +88,11 @@
     "keyword": "区块链的三难困境",
     "keyword_plural": "区块链的三难困境",
     "definition": "该问题描述了区块链的 3 个特性：安全性、可扩展性和去中心化。"
+  },
+  "blockspace": {
+    "keyword": "blockspace",
+    "keyword_plural": "blockspaces",
+    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
   },
   "borrower": {
     "keyword": "借款人",
