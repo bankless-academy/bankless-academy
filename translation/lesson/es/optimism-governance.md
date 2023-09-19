@@ -257,7 +257,7 @@ Cualquiera puede convertirse en delegado de la Cámara de Tokens en Optimism, re
 
 # Una nota sobre la Distribución de Tokens…
 
-La gobernanza de la red es sólo tan democrática como su distribución de `tokens` inicial. Siempre deberíamos preguntarnos "¿quién recibió el poder de voto en primer lugar?" y "¿cuánto recibió?".
+La gobernanza de la red es sólo tan democrática como su `distribución de tokens` inicial. Siempre deberíamos preguntarnos "¿quién recibió el poder de voto en primer lugar?" y "¿cuánto recibió?".
 
 Revisa el [plan de distribución de OP](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) para ver cómo la Fundación Optimism ha asignado el poder inicial de gobernanza, al servicio de la representación equilibrada de los interesados.
 
@@ -293,7 +293,7 @@ Sus funciones incluyen:
 - 🔍 **Investigación y asignación de RetroPGF** a proyectos comunitarios que cumplan las directrices.
 - 👬 **Selección de nuevos ciudadanos** para ayudar a gobernar la Cámara de los Ciudadanos, y equilibrar la perspectiva de la Cámara de Tokens. La Cámara de Tokens tiene derechos de veto para este tipo de propuesta.
 
-La Cámara de los Ciudadanos también se asegura de que las propuestas de la Casa de Tokens estén alineadas con la misión, utilizando la mecánica de veto `` para renunciar a cambios no alineados en la red.
+La Cámara de los Ciudadanos también se asegura de que las propuestas de la Casa de Tokens estén alineadas con la misión, utilizando la mecánica de `veto` para renunciar a cambios no alineados en la red.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
 
@@ -337,7 +337,7 @@ Al moverse entre períodos de gobernanza activa y reflexión, los participantes 
 
 En Optimism, una temporada dura aproximadamente tres meses, seguida de un periodo de reflexión de duración similar.
 
-Los bucles de retroalimentación reflexiva construidos a través de Optimism son increíblemente importantes para encontrar las mejores prácticas para la gobernanza de la `DAO`.
+Los ciclos de retroalimentación reflexiva y consciente construidos a través de Optimism son increíblemente importantes para encontrar las mejores prácticas para la gobernanza de la `DAO`.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
 
@@ -345,11 +345,11 @@ Los bucles de retroalimentación reflexiva construidos a través de Optimism son
 
 Estamos casi listos para gobernar en Optimism 🔴. Hay una última cosa que mencionar.
 
-La Visión Optimista no se detiene en una única blockchain `L2` . Como resultado de la habilidad de `bifurcar` una blockchain, este es un experimento de gobernanza clonable. Esta tecnología está concebida para ampliarse a múltiples L2, e incluso a escenarios de gobernanza del mundo real. Optimism llama a esto **'La Supercadena'**.
+La Visión Optimista no se detiene en una única blockchain `L2` . Como resultado de la habilidad de `bifurcar` una blockchain, este es un experimento de gobernanza clonable. Esta tecnología está concebida para replicarse a múltiples L2, e incluso a escenarios de gobernanza del mundo real. Optimism llama a esto **'La Supercadena'**.
 
-Coinbase, un destacado `CEX`, ya se ha bifurcado y ha empezado a contribuir a esta iniciativa `de código abierto` , a través de la blockchain Base 🔵 L2. Esta puesta en común de los recursos de desarrollo aumenta la evolución de las infraestructuras, al tiempo que canaliza las comisiones de las transacciones de L2 hacia la ética "Impacto = Beneficio".
+Coinbase, un destacado `CEX`, ya se ha bifurcado y ha empezado a contribuir a esta iniciativa de `código abierto`, a través de la blockchain de Capa 2 llamada Base 🔵. Esta puesta en común de los recursos de desarrollo promueve la evolución de las infraestructuras al tiempo que canaliza las comisiones de las transacciones hacia su desarrollo, reforzando así el ethos de Optimism de que "Impacto = Beneficio".
 
-¡Las recompensas RetroPGF incluyen ahora los beneficios de las tasas de transacción de Base 🔵, lo que significa más financiación para los bienes públicos de ``!
+¡Las recompensas RetroPGF incluyen ahora los beneficios de las tasas de transacción de Base 🔵, lo que significa más financiación para los `bienes públicos`!
 
 # Forjando un futuro Optimista
 
@@ -359,7 +359,7 @@ Al involucrarnos en comunidades innovadoras, utilizando sistemas de gobernanza j
 
 La misión de hoy es **unirse a la Cámara de Tokens y delegar nuestros tokens de OP**.
 
-Por ahora, la Cámara de los Ciudadanos aún desarrolla sus procedimientos de incorporación. Mientras tanto, podemos desde ya comenzar nuestro viaje Ciudadano participando en la conversación en los foros de la comunidad [Optimism](https://gov.optimism.io/).
+Por ahora, la Cámara de los Ciudadanos aún desarrolla sus procedimientos de incorporación. Mientras tanto, podemos desde ya comenzar nuestro viaje Ciudadano participando en la conversación en los foros de la [comunidad Optimism](https://gov.optimism.io/).
 
 ![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
 
