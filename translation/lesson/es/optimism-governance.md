@@ -115,7 +115,7 @@ Optimism aspira a convertirse en un "distrito del ciberespacio" que atiende dire
 
 # Descentralización Progresiva
 
-Muchos grandes proyectos de blockchain comienzan con un grupo centralizado. Esto da al proyecto un enfoque crucial en la construcción y el gasto, pero una DAO `` necesita **más que promesas de descentralización**. En Optimism, los fundadores, la red y la comunidad se conciben de la siguiente manera:
+Muchos grandes proyectos de blockchain comienzan con un grupo centralizado. Esto da al proyecto un enfoque crucial en la construcción y el gasto, pero una `DAO` necesita **más que promesas de descentralización**. En Optimism, los fundadores, la red y la comunidad se conciben de la siguiente manera:
 
 - 🏦 **Fundación Optimism:** Fundadores de la red. Empezaron el ecosistema, proporcionaron recursos iniciales y actúan como guionistas de la comunidad, antes de disolverla.
 - 🌐 **La Red de Optimism:** El código autónomo en la blockchain — los contratos inteligentes y el procesamiento de la entrada del usuario.
@@ -152,7 +152,7 @@ Con una infraestructura onchain más valiosa, aumenta la demanda de espacio de b
 
 # Incentivización de Bienes Públicos
 
-Como puedes ver, la infraestructura `de bienes públicos` está en el corazón de Optimism. Sin embargo, la selección de proyectos merecedores de financiación no es sencilla.
+Como puedes ver, la infraestructura de `bienes públicos` está en el corazón de Optimism. Sin embargo, la selección de proyectos merecedores de financiación no es sencilla.
 
 En este caso, Optimism adopta un enfoque '**Impacto = Beneficio**'. El impacto, sin embargo, es difícil de prever. En lugar de hacer predicciones, el organismo de financiación examina periódicamente los proyectos existentes y asigna financiación retroactiva en función de los resultados históricos.
 
@@ -162,11 +162,11 @@ Este modelo de distribución se conoce como **"Retroactive Public Goods Funding"
 
 ![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
 
-# El Fénix de Éter
+# El Fénix de Ether
 
 Optimism llama **'Ether's Phoenix'** al siguiente efecto: un _"ángel que retrocede en el tiempo, recompensando a aquellos que lo invocan"._
 
-_"Es un algoritmo que recompensa a los primeros cooperadores que crearon las condiciones para que prosperara la financiación de bienes públicos. Es un futuro en el que se reconoce la inversión temprana en bienes públicos. Es una mentalidad que sostiene que: el optimismo prevalece, que los sistemas mejores son posibles y que la humanidad será recompensada por su revolución cooperativa."_
+_"Es un algoritmo que recompensa a los primeros contribuyentes que crearon las condiciones para que prosperara la financiación de bienes públicos. Es un futuro en el que se reconoce la inversión temprana en bienes públicos. Es una mentalidad que sostiene que: el optimismo prevalece, que mejores sistemas son posibles y que la humanidad será recompensada por su revolución cooperativa."_
 
 — La Fundación Optimism
 
@@ -200,7 +200,7 @@ El Colectivo Optimismo está formado por dos casas, cada una con responsabilidad
 
 **La Cámara de los Ciudadanos** asigna los recursos de `RetroPGF` a proyectos comunitarios, de acuerdo con la ética "Impacto = Beneficio", y ayuda a decidir los parámetros de la ciudadanía. Se incentiva a la cámara para que mejore la calidad de vida de la red, financiando bienes públicos que mejoren el valor de la ciudadanía.
 
-Ambas cámaras mantienen el equilibrio de la red a través de sus funciones, mecanismos de votación y capacidad de veto``. Echemos un vistazo más de cerca.
+Ambas cámaras mantienen el equilibrio de la red a través de sus funciones, mecanismos de votación y capacidad de `veto`. Echemos un vistazo más de cerca.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
 
@@ -251,7 +251,7 @@ La Cámara de Tokens sigue [un ciclo de votación de cinco semanas](https://comm
 - Semana 1-3: Presentación de propuestas, revisión y comentarios
 - Semana 4-5: Votación
 
-📢 **Delegar:** Muchos usuarios prefieren delegar su poder de voto en otros poseedores de tokens que consideran que representan mejor los intereses de la comunidad. Esta es una gran manera de tener un impacto en el ecosistema sin tener que leer todas las propuestas que entran en la votación. La delegación no afecta a la propiedad de los tokens: los tokens OP delegados permanecen en tu billetera.
+📢 **Delegar:** Muchos usuarios prefieren `delegar` su poder de voto en otros poseedores de tokens que consideran que representan mejor los intereses de la comunidad. Esta es una gran manera de tener un impacto en el ecosistema sin tener que leer todas las propuestas que entran en la votación. La delegación no afecta a la propiedad de los tokens: los tokens OP delegados permanecen en tu billetera.
 
 Cualquiera puede convertirse en delegado de la Cámara de Tokens en Optimism, representando a un grupo de amigos, a una comunidad o incluso al club de blockchain de una universidad. Los delegados activos suelen ser recompensados por la comunidad.
 
