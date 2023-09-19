@@ -112,12 +112,12 @@
   "centralized exchange": {
     "keyword": "中心化交易所",
     "keyword_plural": "中心化交易所",
-    "definition": "中心化交易所（CEX）一个协调加密货币 交易的收费平台，类似于证券交易所。"
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cex": {
     "keyword": "CEX",
     "keyword_plural": "CEXs",
-    "definition": "（Centralized Exchange）协调加密货币 交易并收取费用的平台，类似于证券交易所。"
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "chain": {
     "keyword": "链",
@@ -247,7 +247,7 @@
   "fork": {
     "keyword": "分叉",
     "keyword_plural": "分叉",
-    "definition": "指 区块链网络 中的彻底改变，导致两个分支--一个遵循以前的协议，另一个遵循新的协议。"
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
   "fraud proof": {
     "keyword": "欺诈证明",
@@ -432,7 +432,7 @@
   "phishing": {
     "keyword": "网络钓鱼",
     "keyword_plural": "网络钓鱼",
-    "definition": "一种 社会工程学攻击，攻击者假扮成可信赖的个人或组织，诱骗受害者共享敏感信息或向其汇款。"
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
   },
   "poap": {
     "keyword": "POAP 徽章",
@@ -507,7 +507,7 @@
   "scalability": {
     "keyword": "可扩展性",
     "keyword_plural": "可扩展性",
-    "definition": "区块链能够处理不断 增长 的工作、交易和使用量，同时将对用户的干扰降至最低。"
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
   },
   "scam-token": {
     "keyword": "诈骗代币",
@@ -562,7 +562,7 @@
   "social engineering": {
     "keyword": "社会工程",
     "keyword_plural": "社会工程",
-    "definition": "操纵 他人共享敏感或 机密信息，如密码或助记词。"
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
   "spend": {
     "keyword": "花费",
