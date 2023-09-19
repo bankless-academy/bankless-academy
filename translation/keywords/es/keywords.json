@@ -112,12 +112,12 @@
   "centralized exchange": {
     "keyword": "exchange centralizado",
     "keyword_plural": "exchange centralizado",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(CEX) Una plataforma que coordina la compra y venta de criptomonedas a cambio de una comisión, similar a una plataforma de compra y venta de acciones de valores."
   },
   "cex": {
     "keyword": "CEX",
     "keyword_plural": "CEXs",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "Exchange centralizado: Una plataforma que coordina la compra y venta de criptomonedas a cambio de una comisión, similar a una plataforma de compra y venta de acciones de valores."
   },
   "chain": {
     "keyword": "cadena",
@@ -190,7 +190,7 @@
     "definition": "(DeFi) Conjunto de herramientas financieras de autocustodia, alojadas en una blockchain."
   },
   "delegate": {
-    "keyword": "delegado",
+    "keyword": "delegar",
     "keyword_plural": "delegados",
     "definition": "Otorgar una responsabilidad específica a otra persona, es decir, delegar un poder de voto simbólico."
   },
@@ -202,7 +202,7 @@
   "dex": {
     "keyword": "DEX",
     "keyword_plural": "DEXs",
-    "definition": "DEX) Protocolo que facilita el intercambio sin necesidad de intermediarios de confianza."
+    "definition": "Exchange Descentralizado: Protocolo que facilita el intercambio de tokens sin necesidad de confiar en intermediarios."
   },
   "dex aggregator": {
     "keyword": "Agregador DEX",
