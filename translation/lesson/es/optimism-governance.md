@@ -63,7 +63,7 @@ Como cualquier estado-nación tradicional con recursos y participantes, un DAO u
 
 > ℹ️ Esto es cierto, pero no es la única respuesta.
 
-- Resistencia a la censura
+- [ ] Resistencia a la censura
 
 > ℹ️ Esto es cierto, pero no es la única respuesta.
 
