@@ -112,12 +112,12 @@
   "centralized exchange": {
     "keyword": "中央集権型取引所",
     "keyword_plural": "中央集権型取引所",
-    "definition": "証券取引所と同様、手数料でクリプト取引を調整するプラットフォーム"
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cex": {
     "keyword": "CEX",
     "keyword_plural": "CEX",
-    "definition": "証券取引所と同様、手数料でクリプト取引を調整するプラットフォーム"
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "chain": {
     "keyword": "チェーン",
@@ -247,7 +247,7 @@
   "fork": {
     "keyword": "フォーク",
     "keyword_plural": "フォーク",
-    "definition": "ブロックチェーンネットワークの根本的な変更で、1つは以前のプロトコルに従ったもの、もう1つは新しいプロトコルに従ったものという2つの分岐が生じること"
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
   "fraud proof": {
     "keyword": "不正証明",
@@ -432,7 +432,7 @@
   "phishing": {
     "keyword": "フィッシング",
     "keyword_plural": "フィッシング",
-    "definition": "ソーシャルエンジニアリング攻撃の一種で、攻撃者が信頼できる人物や組織を装い、被害者を騙して機密情報を共有させたり、金銭を送金させたりする"
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
   },
   "poap": {
     "keyword": "POAP",
@@ -507,7 +507,7 @@
   "scalability": {
     "keyword": "スケーラビリティ",
     "keyword_plural": "スケーラビリティ",
-    "definition": "ユーザーにとって最小限の混乱で増加する作業、取引、および使用量を処理するブロックチェーンの機能"
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
   },
   "scam-token": {
     "keyword": "スキャムトークン",
@@ -562,7 +562,7 @@
   "social engineering": {
     "keyword": "ソーシャルエンジニアリング",
     "keyword_plural": "ソーシャルエンジニアリング",
-    "definition": "パスワードやシードフレーズなどの機密情報を共有するように操作する"
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
   "spend": {
     "keyword": "支払",
