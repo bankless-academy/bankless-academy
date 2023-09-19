@@ -5,7 +5,7 @@ LANGUAGE: 中文 (Chinese Simplified)
 WRITERS: Tetranome
 TRANSLATORS: 183Aaros, TG
 LINK: https://app.banklessacademy.com/lessons/optimism-governance
-FORMAT: 课程
+FORMAT: LESSON
 ---
 
 ```
