@@ -92,7 +92,7 @@
   "blockspace": {
     "keyword": "blockspace",
     "keyword_plural": "blockspaces",
-    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
+    "definition": "Die Menge an Speicherplatz auf einer Blockchain, die zum Speichern von Informationen und zum Ausführen von Code verwendet werden kann. Die Menge an \"Platz\" innerhalb eines Blocks (oder einer Reihe von Blöcken)."
   },
   "borrower": {
     "keyword": "borrower",
