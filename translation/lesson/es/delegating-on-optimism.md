@@ -92,11 +92,7 @@ Nota: esto no contará para la Prueba de Conocimientos de [‘Gobernanza en Opti
 
 Puedes saltarte la delegación y representarte a ti mismo dando seguimiento a las votaciones en la pestaña "Propuestas" del Ágora de Optimism.
 
-Nota: esto tampoco contará para la Prueba de Conocimientos de </a>'Gobernanza en Optimism'
-
- de Bankless Academy. Aún así, ¡te invitamos a hacerlo una vez que obtengas tu insignia!</p> 
-
-
+Nota: esto tampoco contará para la Prueba de Conocimientos de ['Gobernanza en Optimism'](https://app.banklessacademy.com/lessons/optimism-governance) de Bankless Academy. Aún así, ¡te invitamos a hacerlo una vez que obtengas tu insignia!
 
 
 ---
