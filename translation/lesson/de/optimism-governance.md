@@ -257,7 +257,7 @@ Jeder kann ein Delegierter des Token-Hauses auf Optimism werden und so eine Grup
 
 # Ein Hinweis zur Verteilung der Token…
 
-Die Regierungsführung des Netzwerks ist nur so demokratisch wie seine anfängliche `Token-Verteilung`. Wir sollten uns immer fragen: "Wer hat überhaupt Stimmrecht erhalten?" und "Wie viel haben sie erhalten?".
+Die Regierungsführung des Netzwerks ist nur so demokratisch wie seine ursprüngliche `Token-Verteilung`. Wir sollten uns immer fragen: "Wer hat überhaupt Stimmrecht erhalten?" und "Wie viel haben sie erhalten?".
 
 Schau dir am besten den [OP Distributionsplan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) an, um zu sehen, wie die Optimism Foundation anfängliche Befugnisse in Bezug auf die Regierungsführung im Dienst einer ausgewogenen Interessenvertretung zugewiesen hat.
 
