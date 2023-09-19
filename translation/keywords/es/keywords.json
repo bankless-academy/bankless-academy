@@ -112,12 +112,12 @@
   "centralized exchange": {
     "keyword": "exchange centralizado",
     "keyword_plural": "exchange centralizado",
-    "definition": "(CEX) Plataforma que coordina el comercio de criptomonedas a cambio de una comisión, de forma similar a una bolsa de valores."
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cex": {
     "keyword": "CEX",
     "keyword_plural": "CEXs",
-    "definition": "(CEX) Plataforma que coordina el comercio de criptomonedas a cambio de una comisión, de forma similar a una bolsa de valores."
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "chain": {
     "keyword": "cadena",
@@ -247,7 +247,7 @@
   "fork": {
     "keyword": "bifurcación",
     "keyword_plural": "bifurcación",
-    "definition": "Se refiere a un cambio radical en una red blockchain que da lugar a dos ramas: una que sigue el protocolo anterior y otra que sigue uno nuevo."
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
   "fraud proof": {
     "keyword": "prueba de fraude",
@@ -432,7 +432,7 @@
   "phishing": {
     "keyword": "phishing",
     "keyword_plural": "phishing",
-    "definition": "Tipo de ataque de ingeniería social en el que el atacante se hace pasar por una persona u organización de confianza para engañar a las víctimas y conseguir que compartan información confidencial o les envíen dinero."
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
   },
   "poap": {
     "keyword": "POAP",
@@ -507,7 +507,7 @@
   "scalability": {
     "keyword": "Escalabilidad",
     "keyword_plural": "Escalabilidad",
-    "definition": "La capacidad de una cadena de bloques para gestionar una cantidad creciente de trabajo, transacciones y uso con una interrupción mínima para los usuarios."
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
   },
   "scam-token": {
     "keyword": "token de estafa",
@@ -562,7 +562,7 @@
   "social engineering": {
     "keyword": "ingeniería social",
     "keyword_plural": "ingeniería social",
-    "definition": "Manipular a alguien para que comparta información sensible o confidencial, como contraseñas o frases semilla."
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
   "spend": {
     "keyword": "gastar",
