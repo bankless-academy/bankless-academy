@@ -45,7 +45,7 @@ Como cualquier estado-nación tradicional con recursos y participantes, un DAO u
 
 📜 **Propuesta:** Comienza con una propuesta de gobernanza y un debate comunitario. La propuesta se actualiza sobre la base de comentarios públicos. Cualquiera puede presentar una propuesta o criticar una. Esta es la parte 'descentralizada' de '`DAO`'.
 
-🗳️ **Votación:** La propuesta se somete a votación a través del proceso transparente y resistente a la censura de `onchain governance`. No hay ninguna facilitación humana entre la apertura y el cierre de la votación; todo está mediado por código. Esta es la parte 'autónoma' de '`DAO`' - una cualidad prevista para cubrir eventualmente todo el proceso de gobernanza.
+🗳️ **Votación:** La propuesta se somete a votación a través del proceso transparente y resistente a la censura de `gobernanza onchain`. No hay ninguna facilitación humana entre la apertura y el cierre de la votación; todo está mediado por código. Esta es la parte 'autónoma' de '`DAO`' - una cualidad prevista para cubrir eventualmente todo el proceso de gobernanza.
 
 🛠️ **Implementación:** La propuesta aprobada es aplicada a la red por varios desarrolladores vatizados si es necesario.
 
