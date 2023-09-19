@@ -74,11 +74,6 @@
     "keyword_plural": "recompensa del bloque",
     "definition": "Cantidad del activo nativo de una blockchain que se entrega al proponente de un nuevo bloque válido."
   },
-  "block space": {
-    "keyword": "espacio de bloque",
-    "keyword_plural": "espacio de bloque",
-    "definition": "La cantidad de espacio en una cadena de bloques que puede utilizarse para almacenar información y ejecutar código. La cantidad de \"espacio\" dentro de un bloque (o una serie de bloques)."
-  },
   "blockchain": {
     "keyword": "cadenas de bloques",
     "keyword_plural": "cadenas de bloques",
@@ -93,6 +88,11 @@
     "keyword": "El trilema de la cadena de bloques",
     "keyword_plural": "El trilema de la cadena de bloques",
     "definition": "El problema que describe la necesidad de todas las 3 calidades de la cadena de bloques: Seguridad, Escalabilidad y Descentralización."
+  },
+  "blockspace": {
+    "keyword": "blockspace",
+    "keyword_plural": "blockspaces",
+    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
   },
   "borrower": {
     "keyword": "prestatario",
