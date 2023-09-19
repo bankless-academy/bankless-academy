@@ -206,7 +206,7 @@ const LessonCards: React.FC = () => {
                 display="flex"
                 alignItems="center"
               >
-                {lesson.name}
+                {t(lesson.name, { ns: 'lesson' })}
               </Text>
               <Box display="flex" justifyContent="space-between" my="4">
                 {isBadgeMinted || isArticleRead || lesson.duration ? (
@@ -260,7 +260,7 @@ const LessonCards: React.FC = () => {
                 display="flex"
                 alignItems="center"
               >
-                {lesson.description}
+                {t(lesson.description, { ns: 'lesson' })}
               </Text>
               {lesson.publicationStatus === 'planned' && all === undefined ? (
                 <LessonBanner

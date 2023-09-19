@@ -211,6 +211,20 @@ const importTranslations = async (lesson) => {
       if (crowdin.status === 200) {
         // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
         const newTranslation = crowdin.data
+        const [, title, description] = crowdin.data.match(/---\nTITLE:\s(.*?)\nDESCRIPTION:\s(.*?)\n/)
+        // console.log('title', title)
+        // console.log('description', description)
+        const lessonInfoPath = `translation/website/${language}/lesson.json`
+        const lessonInfo = fs.existsSync(lessonInfoPath) ? await fs.promises.readFile(lessonInfoPath, 'utf8') : '{}'
+        const translationInfo = {}
+        translationInfo[lesson.name] = title
+        translationInfo[lesson.description] = description
+        // console.log('translationInfo', translationInfo)
+        const jsonLessonInfo = { ...JSON.parse(lessonInfo), ...translationInfo }
+        // console.log('jsonLessonInfo', jsonLessonInfo)
+        fs.writeFile(lessonInfoPath, `${JSON.stringify(jsonLessonInfo, null, 2)}`, (error) => {
+          if (error) throw error
+        })
         // console.log(newTranslation)
         const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
         const existingTranslation = fs.existsSync(lessonPath) ? await fs.promises.readFile(lessonPath, 'utf8') : ''
