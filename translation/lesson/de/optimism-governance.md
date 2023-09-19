@@ -289,11 +289,11 @@ Das Bürger-Haus leitet das Wachstum der öffentlichen Infrastruktur innerhalb d
 
 Zu den Aufgaben gehören:
 
-- 🎯 **Definition von RetroPGF-Metriken und Kriterien zur Wirksamkeit** zur Messung der Projektleistung.
+- 🎯 **Definition von RetroPGF-Metriken und Kriterien zur Wirksamkeit** für die Messung der Projektleistung.
 - 🔍 **Recherche und Vergabe von RetroPGF** an Gemeinschaftsprojekte, die den Leitlinien entsprechen.
-- 👬 **Auswahl von neuen Bürgern** um das Bürger-Haus zu regieren und ein Gleichgewicht zu Ansichten des Token-Hauses zu schaffen. Das Token-Haus hat ein Vetorecht für diese Art von Vorschlägen.
+- 👬 **Auswahl neuer Bürger,** um das Bürgerhaus zu regieren und ein Gleichgewicht der Perspektiven des Token-Hauses zu schaffen. Das Token-Haus hat ein Vetorecht für diese Art von Vorschlägen.
 
-Das Bürger-Haus stellt auch sicher, dass die Vorschläge des Token-Hauses mit der Mission übereinstimmen, indem es von dem Recht `Veto` einzulegen Gebrauch macht, um Änderungen am Netzwerk aufzuheben, die nicht mit der Mission im Einklang stehen.
+Das Bürger-Haus stellt auch sicher, dass die Vorschläge des Token-Hauses mit der Mission übereinstimmen, indem es von dem Recht, `Veto` einzulegen Gebrauch macht, um Änderungen am Netzwerk aufzuheben, die nicht mit der Mission im Einklang stehen.
 
 ![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
 
@@ -307,9 +307,9 @@ Die Bestimmungen, auf dessen Basis die Einladungen erfolgen, ändern sich saison
 - Frühere RetroPGF-Empfänger hatten die Möglichkeit, ein Mitglied der Gemeinschaft für den Bürgerstatus auszuwählen.
 - Die Optimism Foundation hat den Erbauern des Projektes, die das Netzwerk ebenfalls nutzen, den Status als Bürger verliehen.
 
-Sobald die Skalierungsmethoden verfeinert sind, wird dieser Prozess mit Hilfe von `Onchain Governance` automatisiert werden.
+Sobald die Skalierungsmethoden verfeinert sind, wird dieser Prozess mithilfe von `Onchain Governance` automatisiert werden.
 
-🗳️ **Abstimmung:** Jeder Bürger hat eine einzige Stimme. Ihr Stimmrecht kann nicht übertragen oder delegiert werden. Dies schützt davor, dass sich die Macht des Hauses unter einer kleinen Anzahl von Bürgern bündelt.
+🗳️ **Abstimmung:** Jeder Bürger hat eine einzige Stimme. Das Stimmrecht kann nicht übertragen oder delegiert werden. Dies schützt davor, dass sich die Macht des Hauses unter einer kleinen Anzahl von Bürgern bündelt.
 
 Gegenwärtig wird RetroPGF etwa zweimal pro Jahr verteilt.
 
@@ -345,9 +345,9 @@ Die durchdachten Feedback-Schleifen, die in Optimism aufgebaut wurden, sind ungl
 
 Wir sind fast bereit, über Optimism zu regieren 🔴. Es gibt aber noch eine letzte Sache zu erwähnen.
 
-Die Vision von Optimism bleibt nicht bei einer einzigen `L2` Blockchain stehen. Aufgrund der Fähigkeit, eine Blockchain mittels einer `Gabelung` [fork] zu spalten, ist dies ein klonbares Experiment zur Regierungsführung. Diese Technologie ist so konzipiert, dass sie über mehrere L2s hinweg skaliert werden kann - und sogar auf Szenarien zur Regierungsführung in der realen Welt übertragen werden kann. Optimism nennt diese Eigenschaft **"Die Superchain"**.
+Die Vision von Optimism bleibt nicht bei einer einzigen `L2` Blockchain stehen. Aufgrund der Fähigkeit, eine Blockchain mittels einem `Fork` [Gabelung] zu spalten, ist dies ein klonbares Experiment zur Regierungsführung. Diese Technologie ist so konzipiert, dass sie über mehrere L2s hinweg skaliert werden kann - und sogar auf Szenarien zur Regierungsführung in der realen Welt übertragen werden kann. Optimism nennt diese Eigenschaft **"Die Superchain"**.
 
-Coinbase, eine prominente `CEX`, hat bereits eine solche Gabelung vollzogen und begonnen zu dieser `quelloffenen` [open source] Initiative beizutragen, mittels der L2 Blockchain namens Base 🔵. Durch die gemeinsame Nutzung von Entwicklungsressourcen wird die Entwicklung der Infrastruktur vorangetrieben, während die L2-Transaktionsgebühren dem Ethos "Auswirkung = Gewinn" zugute kommen.
+Coinbase, eine prominente `CEX`, hat bereits einen solchen "Fork" vollzogen und begonnen zu dieser `quelloffenen` [open source] Initiative beizutragen, mittels der L2 Blockchain namens Base 🔵. Durch die gemeinsame Nutzung von Entwicklungsressourcen wird die Entwicklung der Infrastruktur vorangetrieben, während die L2-Transaktionsgebühren dem Ethos "Wirkung = Gewinn" zugutekommen.
 
 Die RetroPGF-Belohnungen enthalten jetzt auch Gewinne aus den Transaktionsgebühren von Base 🔵 - das bedeutet mehr Mittel für `öffentliche Güter`!
 
@@ -355,7 +355,7 @@ Die RetroPGF-Belohnungen enthalten jetzt auch Gewinne aus den Transaktionsgebüh
 
 Die Geschichte wurde schon immer von den Optimisten der Menschheit geprägt - denjenigen, die es wagten, groß zu denken und zu handeln, um ihre Vision zu verwirklichen.
 
-Indem wir uns in innovativen Gemeinschaften engagieren, `vertrauensfreie` [trustless] und faire Systeme zur Regierungsführung nutzen, sind wir wegweisend für die Zukunft der menschlichen Koordination. Wir bauen eine Welt auf, in der die Menschheit in lokalen, globalen und Online-Systemen gedeihen kann. Es ist an der Zeit, unsere Reise zum Thema Regierungsführung von Optimism zu beginnen.
+Indem wir uns in innovativen Gemeinschaften engagieren, `trustless` [Vertrauenslosigkeit] und faire Systeme zur Regierungsführung nutzen, handeln wir wegweisend für die Zukunft der menschlichen Kooperation. Wir bauen eine Welt auf, in der die Menschheit in lokalen, globalen und Online-Systemen gedeihen kann. Es ist an der Zeit, unsere Reise zum Thema Regierungsführung von Optimism zu beginnen.
 
 Die heutige Aufgabe lautet **, dem Token-Haus beizutreten und unsere OP-Token zu delegieren**.
 
