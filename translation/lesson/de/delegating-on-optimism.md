@@ -30,13 +30,13 @@ ________________________________________________________________________________
 
 > * Bei der Delegation handelt es sich um ein Abstimmungsverfahren, das es einem Vertreter - dem so genannten "Delegierten" - ermöglicht, im Namen einer anderen Person abzustimmen.
 > 
-> * Optimism wickelt Abstimmungen und Delegationen über ihre sogenannte "Optimism Agora" `dApp`ab.
+> * Optimism wickelt Abstimmungen und Delegationen über ihre sogenannte "Optimism Agora" `dApp` ab.
 > 
 > * Du behältst dein Recht über Selbstverwahrung [self-custody] deiner delegierten OP-Token, die du somit jederzeit übertragen oder verkaufen kannst.
 
 ## Einführung
 
-Delegation ist ein Onchain-Abstimmungsmechanismus, der es einem Mitglied der Gemeinschaft ermöglicht, sein Stimmrecht vorübergehend an einen Vertreter der Gemeinschaft zu übertragen. Dieser Prozess ermöglicht es dem Nutzer, einen Beitrag zu `Regierungsführung des Netzwerks`zu leisten, ohne jede vorgeschlagene Aktion oder Änderung im Ökosystem aktiv überwachen zu müssen.
+Delegation ist ein Onchain-Abstimmungsmechanismus, der es einem Mitglied der Gemeinschaft ermöglicht, sein Stimmrecht vorübergehend an einen Vertreter der Gemeinschaft zu übertragen. Dieser Prozess ermöglicht es dem Nutzer, einen Beitrag zur `Regierungsführung des Netzwerks` zu leisten, ohne jede vorgeschlagene Aktion oder Änderung im Ökosystem aktiv überwachen zu müssen.
 
 Bei Optimism wird die Regierungsgewalt durch den Besitz von OP-Tokens im Wallet mit Selbstverwahrung [Self-Custody-Wallet] repräsentiert. OP-Tokens verlassen während der Delegation nicht diese Wallet mit Selbstverwahrung [Self-Custody-Wallet]. Du kannst die OP-Tokens jederzeit übertragen oder verkaufen, aber dein "Delegierter" erhält nur so viel Wahlrecht, wie sich Stimmrechte in deiner Wallet befinden. Du kannst deinen Delegierten der Gemeinschaft jederzeit wechseln.
 

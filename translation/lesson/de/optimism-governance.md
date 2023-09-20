@@ -355,7 +355,7 @@ Die RetroPGF-Belohnungen enthalten jetzt auch Gewinne aus den Transaktionsgebüh
 
 Die Geschichte wurde schon immer von den Optimisten der Menschheit geprägt - denjenigen, die es wagten, groß zu denken und zu handeln, um ihre Vision zu verwirklichen.
 
-Indem wir uns in innovativen Gemeinschaften engagieren, `trustless` [Vertrauenslosigkeit] und faire Systeme zur Regierungsführung nutzen, handeln wir wegweisend für die Zukunft der menschlichen Kooperation. Wir bauen eine Welt auf, in der die Menschheit in lokalen, globalen und Online-Systemen gedeihen kann. Es ist an der Zeit, unsere Reise zum Thema Regierungsführung von Optimism zu beginnen.
+Indem wir uns in innovativen Gemeinschaften engagieren und faire Systeme zur Regierungsführung nutzen, welche `trustless` [Vertrauenslosigkeit] sind, handeln wir wegweisend für die Zukunft der menschlichen Kooperation. Wir bauen eine Welt auf, in der die Menschheit in lokalen, globalen und Online-Systemen gedeihen kann. Es ist an der Zeit, unsere Reise zum Thema Regierungsführung von Optimism zu beginnen.
 
 Die heutige Aufgabe lautet **, dem Token-Haus beizutreten und unsere OP-Token zu delegieren**.
 
