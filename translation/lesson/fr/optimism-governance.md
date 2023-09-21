@@ -164,7 +164,7 @@ Ce modèle de distribution est connu sous le nom de **"Retroactive Public Goods 
 
 # Le Phénix d'Ether
 
-Optimism appelle cet effet '**Le Phénix d'Ether'** [Ether’s Phoenix] : un _"ange remontant le temps, récompensant ceux qui l'invoquent"._
+Optimism appelle cet effet **'Le Phénix d'Ether'** [Ether’s Phoenix] : un _"ange remontant le temps, récompensant ceux qui l'invoquent"._
 
 _"Il s'agit d'un algorithme qui récompense les premiers coopérateurs qui ont créé les conditions permettant au financement des biens publics de prospérer. Il s'agit d'un avenir où l'investissement précoce dans les biens publics est reconnu. Il s'agit également d'un état d'esprit : l'optimisme prévaut, de meilleurs systèmes sont possibles et l'humanité sera récompensée pour sa révolution coopérative."_
 
