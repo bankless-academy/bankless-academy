@@ -81,7 +81,7 @@ User interactions tracked in the app:
 
 ### Gitcoin Passport
 
-We save the encrypted account username associated of each Passport stamp associated to an address to be able to dectect Sybils.
+We save the encrypted account username associated with each Passport stamp associated with an address to be able to detect Sybils.
 
 ### Hotjar
 
