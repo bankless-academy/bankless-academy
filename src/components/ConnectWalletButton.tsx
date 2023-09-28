@@ -19,7 +19,7 @@ import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-import { useWeb3Modal } from '@web3modal/react'
+import { useWeb3Modal } from '@web3modal/wagmi/react'
 import { useAccount, useNetwork, useSignMessage, useDisconnect } from 'wagmi'
 import { fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
 import makeBlockie from 'ethereum-blockies-base64'
@@ -35,7 +35,7 @@ import ExternalLink from 'components/ExternalLink'
 import { LESSONS, SIWE_ENABLED } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
 import { getUD, getLensProfile, shortenAddress, api } from 'utils'
-import { polygon, optimism } from 'wagmi/chains'
+// import { polygon, optimism } from 'wagmi/chains'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -59,7 +59,7 @@ const ConnectWalletButton = ({
   isSmallScreen: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
-  const { setDefaultChain, open } = useWeb3Modal()
+  const { open } = useWeb3Modal()
   const { connector, address, isConnected } = useAccount()
   const { chain } = useNetwork()
   const [waitingForSIWE, setWaitingForSIWE] = useState(false)
@@ -89,15 +89,15 @@ const ConnectWalletButton = ({
 
   const isLessonPage = asPath.includes('/lessons/')
 
-  const networkVersion =
-    typeof window !== 'undefined'
-      ? (window as any).ethereum?.networkVersion
-      : ''
-  if (networkVersion === '137') setDefaultChain(polygon)
-  if (networkVersion === '10') setDefaultChain(optimism)
+  // const networkVersion =
+  //   typeof window !== 'undefined'
+  //     ? (window as any).ethereum?.networkVersion
+  //     : ''
+  // if (networkVersion === '137') setDefaultChain(polygon)
+  // if (networkVersion === '10') setDefaultChain(optimism)
 
   async function openModal() {
-    await open()
+    await open({ view: 'Connect' })
   }
 
   async function disconnectWallet() {
@@ -116,9 +116,7 @@ const ConnectWalletButton = ({
     }
     // HACK: mobile wallet disconnect issues
     if (localStorage.getItem('wagmi.wallet') === 'walletConnect') {
-      localStorage.removeItem('wagmi.wallet')
-      localStorage.removeItem('wagmi.connected')
-      localStorage.removeItem('wc@2:client:0.3//session')
+      console.log('force reload')
       location.reload()
     }
   }

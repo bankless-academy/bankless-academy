@@ -1,4 +1,3 @@
-import '../utils/translation'
 import type { AppProps } from 'next/app'
 import { Global, css } from '@emotion/react'
 import 'react-notion-x/src/styles.css'
@@ -9,20 +8,19 @@ import { GlobalScrollbar } from 'mac-scrollbar'
 import { isMobile } from 'react-device-detect'
 import styled from '@emotion/styled'
 import { Box } from '@chakra-ui/react'
+// https://docs.walletconnect.com/2.0/web3modal/react/about
+import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
+import { useWeb3ModalState } from '@web3modal/wagmi/react'
+import { WagmiConfig } from 'wagmi'
+import { mainnet, optimism, polygon, polygonMumbai } from 'wagmi/chains'
 
 import Head, { MetaData } from 'components/Head'
 import Layout from 'layout'
 import ThemeProvider from 'theme'
 import { DEBUG } from 'utils/index'
 import NonSSRWrapper from 'components/NonSSRWrapper'
-
-import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
-
-import { useWeb3Modal, Web3Modal } from '@web3modal/react'
-
-import { configureChains, createConfig, WagmiConfig } from 'wagmi'
-
-import { mainnet, optimism, polygon, polygonMumbai } from 'wagmi/chains'
+import { PROJECT_NAME } from 'constants/index'
+import 'utils/translation'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -52,25 +50,35 @@ const App = ({
     return <>Maintenance in progress ...</>
   }
 
-  const { isOpen } = useWeb3Modal()
-
-  // https://github.com/WalletConnect/web3modal-examples/tree/main/web3modal-wagmi-react
-  // https://docs.walletconnect.com/2.0/web/web3modal/react/wagmi/installation
   // 1. Get projectID at https://cloud.walletconnect.com
   const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID
 
   const chains = [mainnet, polygon, optimism, polygonMumbai]
 
   // 2. Configure wagmi client
-  const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
-  const wagmiConfig = createConfig({
-    autoConnect: true,
-    connectors: w3mConnectors({ projectId, chains }),
-    publicClient,
+  const metadata = {
+    name: PROJECT_NAME,
+    description: `Connect to ${PROJECT_NAME}`,
+    url: 'https://app.banklessacademy.com/',
+    icons: ['https://app.banklessacademy.com/logo.jpg'],
+  }
+
+  const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
+
+  // 3. createWeb3Modal
+  const themeVariables = {
+    '--w3m-accent': '#B85FF1',
+    '--w3m-color-mix': '#B85FF1',
+  }
+  createWeb3Modal({
+    wagmiConfig,
+    projectId,
+    chains,
+    themeMode: 'dark',
+    themeVariables,
   })
 
-  // Web3Modal Ethereum Client
-  const ethereumClient = new EthereumClient(wagmiConfig, chains)
+  const { open } = useWeb3ModalState()
 
   return (
     <>
@@ -191,16 +199,7 @@ const App = ({
             </Layout>
           </WagmiConfig>
 
-          <Overlay hidden={!isOpen} />
-          <Web3Modal
-            projectId={projectId}
-            ethereumClient={ethereumClient}
-            themeMode="dark"
-            themeVariables={{
-              '--w3m-background-color': '#B85FF1',
-              '--w3m-accent-color': '#B85FF1',
-            }}
-          />
+          <Overlay hidden={!open} />
         </NonSSRWrapper>
       </ThemeProvider>
     </>
