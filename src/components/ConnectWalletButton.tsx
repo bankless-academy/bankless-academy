@@ -83,7 +83,15 @@ const ConnectWalletButton = ({
   const { asPath } = useRouter()
   const { disconnect } = useDisconnect({
     onError(error) {
-      console.log('Error', error)
+      console.log('Error while disconnecting', error)
+    },
+    onSuccess() {
+      console.log('Disconnect success')
+      // HACK: mobile wallet disconnect issues
+      if (localStorage.getItem('wagmi.wallet').includes('walletConnect')) {
+        console.log('force reload')
+        location.reload()
+      }
     },
   })
 
@@ -105,19 +113,14 @@ const ConnectWalletButton = ({
       setWaitingForSIWE(false)
       setIsDisconnecting(true)
       onClose()
-      disconnect()
       setSiweLS('')
       setName(null)
       setAvatar(null)
       await fetch('/api/siwe/logout')
       setIsDisconnecting(false)
+      disconnect()
     } catch (error) {
       console.error(error)
-    }
-    // HACK: mobile wallet disconnect issues
-    if (localStorage.getItem('wagmi.wallet') === 'walletConnect') {
-      console.log('force reload')
-      location.reload()
     }
   }
 
