@@ -1,6 +1,6 @@
 ---
 TITLE: Regierungsführung von Optimism
-DESCRIPTION: Sichere dir deinen ersten eigenen Anteil am Netzwerk und beginne damit, auf der Blockchain abzustimmen!
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: Deutsch
 WRITERS: Tetranome
 TRANSLATORS: Ruben Silva Otero
