@@ -132,7 +132,7 @@
   "cold wallet": {
     "keyword": "billetera fría",
     "keyword_plural": "billetera fría",
-    "definition": "Un tipo de billetera no custodiada que se almacena fuera de línea y no requiere una conexión perpetua a Internet."
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
   },
   "collateral": {
     "keyword": "colateral",
@@ -209,6 +209,11 @@
     "keyword_plural": "agregadores DEX",
     "definition": "Protocolo que combina la liquidez DEX de múltiples fuentes en una sola interfaz."
   },
+  "digital assets": {
+    "keyword": "digital assets",
+    "keyword_plural": "digital assetss",
+    "definition": "Anything, with value, stored digitally."
+  },
   "digital signature": {
     "keyword": "firma digital",
     "keyword_plural": "firmas digitales",
@@ -272,7 +277,7 @@
   "hardware wallet": {
     "keyword": "billetera de hardware",
     "keyword_plural": "monedero de hardware",
-    "definition": "Un tipo de monedero sin custodia que almacena claves privadas fuera de línea en un dispositivo de hardware físico."
+    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
   },
   "hash": {
     "keyword": "hash",
@@ -292,7 +297,7 @@
   "hot wallet": {
     "keyword": "billetera caliente",
     "keyword_plural": "billetera caliente",
-    "definition": "Un tipo de monedero sin custodia que está perpetuamente conectado a Internet."
+    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
   },
   "intermediary token": {
     "keyword": "token intermedio",
@@ -378,11 +383,6 @@
     "keyword": "NFT",
     "keyword_plural": "NFTs",
     "definition": "(Token no fungible) Token con un identificador único que no puede ser replicado, en comparación con un token fungible como el Ether que no tiene identificador único."
-  },
-  "non-custodial wallet": {
-    "keyword": "billeteras no custodiales",
-    "keyword_plural": "billeteras no custodiales",
-    "definition": "Con una cartera no custodial, usted tiene el control exclusivo de sus claves privadas, que a su vez controlan sus activos criptográficos."
   },
   "onchain governance": {
     "keyword": "gobernanza onchain",
@@ -523,6 +523,11 @@
     "keyword": "frase semilla",
     "keyword_plural": "frase semilla",
     "definition": "Grupo de palabras aleatorias generadas por un monedero en la configuración, actúan como la llave maestra de TODAS las cuentas controladas por ese monedero. NUNCA COMPARTAS TU FRASE SEMILLA CON NADIE POR NINGÚN MOTIVO."
+  },
+  "self-custody wallet": {
+    "keyword": "self-custody wallet",
+    "keyword_plural": "self-custody wallets",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
   },
   "settlement layer": {
     "keyword": "capa de asentamiento",
