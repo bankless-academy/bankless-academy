@@ -243,21 +243,21 @@ Sei responsabile della tua chiave privata con un portafoglio in auto-custodia?
 
 > ℹ️ Riprova!
 
-# Portafogli Caldi
+# Portafogli Caldi (Hot Wallets)
 
-Sentirai i termini "portafoglio caldo" e "portafoglio freddo" abbastanza spesso in web3.
+Sentirai i termini "portafoglio caldo" (hot wallet) e "portafoglio freddo" (cold wallet) abbastanza spesso nel mondo web3.
 
-Un `portafoglio caldo` è un portafoglio ospitato tramite un programma software online. MetaMask è un buon esempio. Questi portafogli sono connessi a Internet finché il tuo dispositivo è online e vengono chiamati 'portafogli caldi' per questa connessione 'calda' a Internet.
+Un `portafoglio caldo` è un portafoglio ospitato dentro un software online. MetaMask ne è un buon esempio. Questi portafogli sono connessi a Internet finché il tuo dispositivo è online e vengono chiamati 'portafogli caldi' proprio per questa connessione 'calda' attraverso la rete.
 
-Questo è lo stile di portafoglio che creeremo oggi. Sono flessibili e ottimi per i principianti.
+Questo è il tipo di portafoglio che creeremo oggi. Sono flessibili e ottimi per i principianti.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-bdf8ae51.svg)
 
-# Portafogli Freddi
+# Portafogli Freddi (Cold Wallets)
 
-Mentre ti immergi più a fondo nel tuo viaggio web3, conoscerai un panorama pieno di interessanti compromessi tecnologici.
+Approfondendo il viaggio nel web3, conoscerai un panorama ricco di interessanti compromessi tecnologici.
 
-I `portafogli freddi` offrono una sicurezza superiore al costo della comodità. Un portafoglio freddo utilizza un software che risiede su un dispositivo hardware separato (come una chiavetta USB o un disco rigido esterno). Devi collegare fisicamente il dispositivo a un computer affinché il portafoglio possa accedere a Internet. I portafogli freddi sono chiamati così per questa connessione 'fredda' a Internet.
+`I portafogli freddi` garantiscono una maggiore sicurezza al costo della comodità. Un portafoglio freddo utilizza un software che risiede su un dispositivo hardware separato (come una chiavetta USB o un disco rigido esterno). Devi collegare fisicamente il dispositivo a un computer affinché il portafoglio possa accedere a Internet. I portafogli freddi sono chiamati così proprio per questa connessione 'fredda' a Internet.
 
 Sono ampiamente considerati più sicuri dei `portafogli caldi`, perché la tua `chiave privata` è conservata offline — fuori dalla portata degli aggressori digitali.
 
@@ -267,35 +267,35 @@ Ledger e Trezor sono esempi di `portafogli freddi`
 
 # Knowledge Check 6
 
-Which wallet type is considered to be more secure?
+Quale tipo di portafoglio è considerato più sicuro?
 
-- [ ] A hot wallet
+- [ ] Un portafoglio caldo
 
-> ℹ️ Try again! A hot wallet has an active internet connection which makes it more susceptible to digital attack.
+> ℹ️ Riprova! Un portafoglio caldo ha una connessione internet attiva che lo rende più vulnerabile agli attacchi digitali.
 
-- [ ] A custodial wallet
+- [ ] Un portafoglio custodito
 
-> ℹ️ Try again! The third party holding the private keys can get hacked or go bankrupt.
+> ℹ️ Riprova! La terza parte che detiene le chiavi private può essere hackerata o andare in bancarotta.
 
-- [ ] A mobile wallet
+- [ ] Un portafoglio mobile
 
-> ℹ️ Try again! A mobile wallet is more secure than a browser wallet, but it’s not the most secure type of wallet.
+> ℹ️ Riprova! Un portafoglio mobile è più sicuro di un portafoglio per browser, ma non è il tipo di portafoglio più sicuro.
 
-- [ ] A cold wallet
+- [ ] Un portafoglio freddo
 
-> ℹ️ Correct! Cold wallets aren’t actively connected to the internet, making them more attack-resistant.
+> ℹ️ Corretto! I portafogli freddi non sono attivamente connessi a Internet, il che li rende più resistenti agli attacchi.
 
 # Sicurezza del Portafoglio
 
 Indipendentemente dal fatto che il tuo `portafoglio in auto-custodia` sia caldo o freddo, ci sono molte pratiche di sicurezza intelligenti che dovresti sviluppare.
 
-🖊️ Registra la tua `frase di recupero` su un materiale fisico e durevole (come carta laminata, o addirittura acciaio) e conservala in un luogo molto sicuro. Non condividerla mai né la tua `chiave privata` con nessuno. **Ricorda, questo è più di una semplice password.**
+🖊️ Registra la tua `frase di recupero` su un materiale fisico e durevole (come carta laminata, o addirittura acciaio) e conservala in un luogo molto sicuro. Non condividere mai la tua `frase di recupero`, né la tua `chiave privata` con nessuno. **Ricorda, questa è più di una semplice password.**
 
 🔍 Quando interagisci con una blockchain o invii fondi, anche piccole somme, controlla con molta attenzione i dettagli. I dettagli errati non possono essere modificati dopo un'interazione.
 
-🔭 Dedica del tempo a cercare e raccogliere informazioni su qualsiasi applicazione `web3` con cui prevedi di interagire prima di collegare il tuo portafoglio o firmare transazioni con esso.
+🔭 Dedica del tempo a cercare e raccogliere informazioni su qualsiasi applicazione `web3` con cui prevedi di interagire prima di collegare il tuo portafoglio o firmare transazioni con essa.
 
-💰 Usa portafogli con piccole somme di denaro per provare cose nuove ed esplorare web3, e considera l'idea di conservare asset di alto valore su più account di portafoglio (ossia evita di mettere tutte le tue cripto uova nello stesso paniere).
+💰 Usa portafogli con piccole somme di denaro per provare cose nuove ed esplorare il web3, e considera l'idea di conservare gli asset di alto valore su account diversi nello stesso portafoglio (ossia evita di mettere tutte le tue cripto uova nello stesso paniere).
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-9cc67e4c.png)
 
@@ -309,11 +309,11 @@ Qual è il modo più sicuro per proteggere la tua frase di recupero?
 
 - [ ] Salvala sul tuo computer e stampala.
 
-> ℹ️ Riprova! Se il tuo computer viene hackerato, potresti perdere tutti gli asset nel tuo portafoglio. Anche la stampa apre molte opportunità di attacco.
+> ℹ️ Riprova! Se il tuo computer venisse hackerato, potresti perdere tutti gli asset nel tuo portafoglio. Anche la stamparla apre molte opportunità di attacco.
 
 - [ ] Fai uno screenshot e salvalo sul tuo telefono.
 
-> ℹ️ Riprova! Gli oggetti da collezione digitali sono qualcosa che tieni nel tuo portafoglio.
+> ℹ️ Riprova! Se il tuo telefono venisse hackerato, potresti perdere tutti i beni contenuti nel tuo portafoglio.
 
 - [ ] Salvala nel tuo account Dropbox.
 
@@ -321,9 +321,9 @@ Qual è il modo più sicuro per proteggere la tua frase di recupero?
 
 # Sei pronto a creare il tuo primo portafoglio!
 
-Infatti, ne avrai bisogno se vuoi rivendicare la prova di aver completato questa missione!
+Ne avrai bisogno se vuoi rivendicare la prova di aver completato questa missione!
 
-Oggi sono disponibili diversi fornitori di portafogli hot `auto-custoditi`. Esploreremo il popolare portafoglio MetaMask per il resto di questa lezione poiché:
+Esistono diversi fornitori di `hot wallet` auto-custoditi. Esploreremo il popolare portafoglio MetaMask per il resto di questa lezione poiché:
 
 - è probabile che sia compatibile con la maggior parte delle app `DeFi`.
 - ha un'estensione per browser per Chrome, Brave, Edge e Firefox.
@@ -335,11 +335,11 @@ La fine della lezione è dietro l'angolo, dove condivideremo un breve video per 
 
 # Knowledge Check 8
 
-MetaMask è un portafoglio custodiale?
+MetaMask è un portafoglio custodito?
 
-- [ ] Yes
+- [ ] Sì
 
-> ℹ️ Try again!
+> ℹ️ Riprova!
 
 - [ ] No
 
