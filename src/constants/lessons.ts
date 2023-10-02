@@ -15,7 +15,7 @@ const LESSONS: LessonType[] = [
     description: 'Create and securely manage your first crypto wallet.',
     name: 'Wallet Basics',
     languages: [],
-    lessonWriters: 'Ap0ll0517',
+    lessonWriters: 'Ap0ll0517, Tetranome',
     quest: 'WalletBasics',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: null,
@@ -24,33 +24,41 @@ const LESSONS: LessonType[] = [
     notionId: '98405bd0f2b94bb2a3079eed504a011e',
     slug: 'wallet-basics',
     imageLinks: [
-      '/images/wallet-basics/wallet-intro-7b45d75e.png',
+      '/images/wallet-basics/wallet-intro-1d445d4b.png',
       '/images/wallet-basics/wallet-definition-e8f8f9a8.svg',
+      '/images/wallet-basics/your-wallets-public-key-6d17439c.svg',
+      '/images/wallet-basics/your-wallets-private-key-f4a93387.svg',
       '/images/wallet-basics/recovery-phrase-c2d8fa26.svg',
-      '/images/wallet-basics/public-key-b6387071.svg',
-      '/images/wallet-basics/private-key-ca271641.svg',
-      '/images/wallet-basics/custodial-wallet-29ed2b65.svg',
+      '/images/wallet-basics/types-of-wallet-552ea259.png',
+      '/images/wallet-basics/custodial-wallets-29ed2b65.svg',
       '/images/wallet-basics/non-custodial-wallet-aee2708b.svg',
-      '/images/wallet-basics/hot-wallet-1d444d7c.svg',
-      '/images/wallet-basics/cold-wallet-59646edb.svg',
-      '/images/wallet-basics/metamask-wallet-521de184.svg'
+      '/images/wallet-basics/hot-wallets-bdf8ae51.svg',
+      '/images/wallet-basics/cold-wallets-7b5aeb35.svg',
+      '/images/wallet-basics/wallet-security-9cc67e4c.png',
+      '/images/wallet-basics/youre-ready-to-create-your-first-wallet-521de184.svg'
     ],
     slides: [
       {
         type: 'LEARN',
         notionId: '0bf15ec24615455b9349774527410d81',
         title: 'Wallet Intro',
-        content: '<div class="bloc1"><p><strong>Greetings!</strong></p><p>Welcome to Bankless Academy. We’re excited to guide you on your journey into <code>Web3</code>. To get started, you will need some essential equipment: a digital wallet.</p><p>A digital wallet is your passport to exploring the various worlds of Web3. This tool grants you access to incredible new possibilities while safeguarding your assets and identity.</p><p>In this lesson, we’ll introduce you to digital wallets, how they work, and how to set yours up to safely embark on your Web3 journey.</p><p>Let’s get started!</p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-intro-7b45d75e.png\'></div>'
+        content: '<div class="bloc1"><p><strong>Greetings!</strong></p><p>Welcome to Bankless Academy. We’re excited to guide you on your journey into <code>web3</code>. Every explorer of this space eventually needs to create a digital wallet.</p><p>Wallets are kind of like accounts you use for everyday web3 apps and sites, but there are also big differences that are important to understand. They also hold your cryptocurrency!</p><p>A properly set up wallet grants you access to incredible new possibilities while safeguarding your assets and online identity.</p><p>In this lesson, we’ll introduce you to wallets, wallet types, wallet security basics, and end with a video on how to set one up.</p><p>Let’s get started!</p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-intro-1d445d4b.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'baf157b016ba48a890eb4cacb4b903e5',
         title: 'Wallet Definition',
-        content: '<div class="bloc1"><p>In the world of cryptocurrency, a wallet refers to an application or device you can use to interact with a <code>blockchain</code>.</p><p>Your <code>wallet</code> functions as a lock-box that secures your access to the blockchain.</p><p>When your wallet is connected to a blockchain, you can make purchases, transfer digital assets, interact with applications, and more!</p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-definition-e8f8f9a8.svg\'></div>'
+        content: '<div class="bloc1"><p>What exactly is a wallet?</p><p>The short definition is: a computer program you use to interact with a <code>blockchain</code>.</p><p>When your <code>wallet</code> is connected to a blockchain, you can make purchases, send or receive <code>digital assets</code> like cryptocurrency, interact with web3 applications, and more.</p><p>Unlike regular user accounts you’re used to, a single wallet lets you access a large number of web3 apps — as long as the wallet is compatible with the blockchain that the app is built on. It’s like having one account for the entire internet.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-definition-e8f8f9a8.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '0cb17f7b62904c0c97614698a957212c',
+        title: 'Is creating a wallet difficult?',
+        content: '<div class="bloc1"><p>It used to be, but these days anyone can create a wallet quite easily.</p><p>Wallets are essentially computer programs. If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.</p><p>The trickier parts of managing a wallet involve keeping them secure, which we will dive into next.</p><p>Choosing your first wallet may also feel intimidating. We recommend starting with MetaMask as your wallet provider: their wallets are user friendly and have access to many popular blockchains. As you get more comfortable in the web3 space, you will likely explore other providers and create a few other wallets.</p></div>'
       },
       {
         type: 'QUIZ',
-        notionId: '100f6d3d7cd542889814cf17733e9960',
+        notionId: 'a757c8ded6a848c681e08956cd469b9b',
         title: 'Knowledge Check',
         quiz: {
           question: 'What is a wallet?',
@@ -59,66 +67,92 @@ const LESSONS: LessonType[] = [
             'A blockchain',
             'A cryptocurrency',
             'A digital collectible',
-            'An app/device used to interact with a blockchain'
+            'A blockchain account'
+          ],
+          feedback: [
+            'ℹ️ Try again! Your wallet is hosted on a blockchain.',
+            'ℹ️ Try again! Cryptocurrencies are something you hold in your wallet.',
+            'ℹ️ Try again! Digital collectibles are something you hold in your wallet.',
+            'ℹ️ Correct! Wallets are accounts used to interact with a blockchain.'
           ],
           id: 'wallet-basics-1'
         }
       },
       {
         type: 'LEARN',
-        notionId: 'f764c92b0620495981b32bd34dd1fc62',
-        title: 'Recovery Phrase',
-        content: '<div class="bloc1"><p>When you set up a new <code>wallet</code>, the software generates a unique <code>recovery phrase</code> that is specific to that wallet account.</p><p>Also sometimes called a <em>seed phrase</em> or <em>secret recovery phrase</em>, your recovery phrase can be used to access your wallet and crypto assets if:</p><ul><li>Your wallet app or hardware fails unexpectedly or gets damaged.</li><li>You are unable to access it due to misplacement or theft.</li><li>You want to access your wallet account through the wallet app on a different computer or device.</li></ul><p>Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. That data is used to generate the <code>public key</code> and <code>private key</code> for your wallet.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/recovery-phrase-c2d8fa26.svg\'></div>'
+        notionId: '620e2a25be154359a53fa22139ff6f51',
+        title: 'Wallets & Password Recovery',
+        content: '<div class="bloc1"><p><strong>Here is one of the most important things to understand about web3 wallets: today, there is no “password reset” or frequent password changes.</strong></p><p>Most of us are used to these features. If we forget a password, we click a button, do some things, and get a new password. Easy.</p><p>Not so with wallets. Because of how blockchains work, wallets are assigned a “name” and a complex “password” when they’re created (you do not choose them).</p><p>This name and password combination are impossible to change. Let’s learn a bit more about each.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '922336b82c304ce98a7956cb022efcbb',
+        title: 'Your wallet’s public key',
+        content: '<div class="bloc1"><p>A <code>public key</code> is basically your wallet’s name. Often, this looks like a jumble of random letters and numbers.</p><p>Example: <em>0xe1887fF140BfA9D3b45D0B2077b7471124acD242</em></p><p>It is possible to create easier to remember versions of this with some web3 services, but that’s a lesson for another time.</p><p>You can also think of a public key like the address of a post office box. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.</p><p>It is perfectly safe to share your <strong>public key</strong>.</p><p><strong>Note: </strong>sometimes a single wallet account can hold multiple public (and <code>private keys</code>). Kind of like having many post office boxes under one account.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/your-wallets-public-key-6d17439c.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '8367fb0946674f41a59528dd11c4b034',
+        title: 'Your wallet’s private key',
+        content: '<div class="bloc1"><p>If the public key is like a post office box, then the <code>private key</code> is like the key to the box. It is the “password” to your funds and assets.</p><p>It almost always looks like a random jumble of letters and numbers.</p><p>I<strong>t is never safe to share this key — you could lose your wallet and everything in it.</strong></p><p>Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the <code>wallet</code>.</p><p>This is more than just a password. You cannot reset it if you lose access to it.</p><p>Luckily, most <code>web3</code> applications and programs do not require you to painstakingly type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/your-wallets-private-key-f4a93387.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: '9d0454d30e60454397b0926523f7e73c',
+        notionId: '46cd01aeff8343d1ae0a6340e1f6b4c9',
         title: 'Knowledge Check',
         quiz: {
-          question: 'What can you do with your recovery phrase?',
+          question: 'Your public key is like your _____ and your private key is like your _____ .',
           rightAnswerNumber: 3,
           answers: [
-            '[A] Recover your wallet if lost, stolen, or damaged',
-            '[B] Access your wallet on multiple devices',
-            '[C] Both A & B',
-            '[D] None of the above'
+            'Routing Number / Account Number',
+            'Address / Zip code',
+            'Post office box / Box key',
+            'Phone Number / Passport Number'
+          ],
+          feedback: [
+            'ℹ️ Try again! Your private key shouldn’t be shared with others.',
+            'ℹ️ Try again! Your private key shouldn’t be shared with others.',
+            'ℹ️ Correct! Your public key allows others to identify you, while your private key controls the assets within.',
+            'ℹ️ Try again! These are examples of public & private information, but they don’t grant access to assets.'
           ],
           id: 'wallet-basics-2'
         }
       },
       {
         type: 'LEARN',
-        notionId: 'bf1bf37ca61845c5a4257cbaeff0e13c',
-        title: 'Public Key',
-        content: '<div class="bloc1"><p>You just learned how your <code>recovery phrase</code> relates to a <code>public key</code> and <code>private key</code>.</p><p>Note that a wallet can contain multiple accounts, and <em>each account</em> has a unique pair of public and private keys.</p><p>Think of a public key like your home address. It is public, anyone can see it, and it identifies the location to use to send crypto assets to you.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/public-key-b6387071.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'a6dab3c7c04949baa0c5448f57c91cfe',
-        title: 'Private Key',
-        content: '<div class="bloc1"><p>If your <code>public key</code> is like your home address, then your <code>private key</code> is like your house key.</p><p>It\'s called private because <em>only you</em> should have access to it.</p><p>The private key unlocks access to your wallet and your crypto assets, allowing you to send them to other wallet addresses.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/private-key-ca271641.svg\'></div>'
+        notionId: '99c3226453d247e4a7c5150e00265156',
+        title: 'Recovery Phrase',
+        content: '<div class="bloc1"><p>When you set up a new wallet, the software generates a unique <code>recovery phrase</code>.</p><p>Also sometimes called a “seed phrase” or “secret recovery phrase”, this string of words can be used to access your wallet and crypto assets if:</p><ul><li>Your <code>wallet</code> app or device fails unexpectedly or is damaged.</li><li>You are unable to access it due to misplacement or theft.</li><li>You want to access your wallet account through the wallet app on a different computer or device.</li></ul><p>Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. That data is used to generate both the <code>public key</code> and <code>private key</code> for your wallet.</p><p>This does <strong>not </strong>change or reset the keys.</p><p>Your recovery phrase is essentially an easier to read version of your public/private key pair.</p><p><strong>Never share a recovery phrase.</strong></p></div><div class="bloc2"><img src=\'/images/wallet-basics/recovery-phrase-c2d8fa26.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: '4997e321e0814dd2931dd21c664533d6',
+        notionId: '9d0454d30e60454397b0926523f7e73c',
         title: 'Knowledge Check',
         quiz: {
-          question: 'Your public key is like your _____ and your private key is like your _____',
+          question: 'Can you recover your wallet with a recovery phrase if your device gets damaged or lost?',
           rightAnswerNumber: 2,
           answers: [
-            'Routing Number / Account Number',
-            'Home address / House key',
-            'Address / Zip code',
-            'Phone Number / Social Security Number'
+            'No',
+            'Yes'
+          ],
+          feedback: [
+            'ℹ️ Try again!',
+            'ℹ️ Correct! Recovery phrases grant access to your wallet, even on a multiple devices.'
           ],
           id: 'wallet-basics-3'
         }
       },
       {
         type: 'LEARN',
+        notionId: 'bf1bf37ca61845c5a4257cbaeff0e13c',
+        title: 'Types of Wallet',
+        content: '<div class="bloc1"><p>Just as there are many types of computer software, there many types of wallet. Let’s look at the four main categories:</p><ul><li><strong>Custodial wallets:</strong> where a third party is responsible for your private keys.</li><li><strong>Self-custody (non-custodial) </strong><strong>wallets:</strong> where you are responsible for your private keys.</li></ul><p>There are two styles of <code>self-custody wallet</code>:</p><ul><li><strong>Hot wallets:</strong> software on your desktop or phone.</li><li><strong>Cold wallets:</strong> a piece of hardware (like a memory stick) you store somewhere safe.</li></ul><p>Each wallet solution serves a different use-case. Many advanced users have one of each!</p><p>Don’t worry, we’ll only be creating one wallet today.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/types-of-wallet-552ea259.png\'></div>'
+      },
+      {
+        type: 'LEARN',
         notionId: 'a92f95a2da2a4429942b6aad2a260e1b',
-        title: 'Custodial Wallet',
-        content: '<div class="bloc1"><p>Since your <code>private key</code> unlocks access to your <code>wallet</code>, keeping it private and secure is very important!</p><p>Not all wallets let you control your private key. With a <code>custodial wallet</code>, another party controls it. Accounts on Coinbase and Kraken are examples of custodial wallets that hold your private key.</p><p>This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Plus, your access to the world of <code>DeFi</code> applications will be limited. </p></div><div class="bloc2"><img src=\'/images/wallet-basics/custodial-wallet-29ed2b65.svg\'></div>'
+        title: 'Custodial Wallets',
+        content: '<div class="bloc1"><p>Since your <code>private key</code> unlocks access to your <code>wallet</code>, keeping it private and secure is very important!</p><p><code>Custodial wallet</code> services include cryptocurrency exchanges such as Coinbase and Kraken. They are your wallet ‘custodian’ — they look after your private keys for you. You access their services like any other website (with an email login and resettable password).</p><p>This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some web3 applications may be limited.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/custodial-wallets-29ed2b65.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -131,6 +165,10 @@ const LESSONS: LessonType[] = [
             'Yes',
             'No'
           ],
+          feedback: [
+            'ℹ️ Try again!',
+            'ℹ️ Correct! Custodial wallets require trust in a third party (custodian) to control your private keys.'
+          ],
           id: 'wallet-basics-4'
         }
       },
@@ -138,79 +176,97 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'a78db356b36c4bb19a85af61170b2471',
         title: 'Non-custodial Wallet',
-        content: '<div class="bloc1"><p>Your passport to the exciting worlds of <code>DeFi</code> and <code>Web3</code>—and the best way to safeguard your <code>private key</code> is a <code>non-custodial wallet</code>. </p><p>Remember: if you lose your private key, you will not be able to access your wallet to spend, withdraw, or transfer your crypto assets.</p><p>Fortunately, you <em>can</em> still recover your wallet with your <code>recovery phrase</code>. But if you lose that too, you will lose access to your wallet FOREVER!!!</p></div><div class="bloc2"><img src=\'/images/wallet-basics/non-custodial-wallet-aee2708b.svg\'></div>'
+        content: '<div class="bloc1"><p>A <code>self-custody wallet</code> (like MetaMask or Trezor) is when you fully control your <code>private key</code>. You have <strong>no custodian,</strong> and you alone are responsible for keeping your private key safe.</p><p>These wallets offer the widest range of access and freedom within the world of <code>web3</code>. You never have to worry about a third party freezing or mishandling your funds.</p><p>The tradeoff is in risk: if you lose access to your <code>recovery phrase</code>, or your private key is compromised, there is often very little you can do to restore access to the wallet.</p><p>Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/non-custodial-wallet-aee2708b.svg\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '4c2cc8a6d61247cc87007cfa636ea77f',
         title: 'Knowledge Check',
         quiz: {
-          question: 'Are you responsible for your private key with a non-custodial wallet?',
+          question: 'Are you responsible for your private key with a self-custody wallet?',
           rightAnswerNumber: 1,
           answers: [
             'Yes',
             'No'
+          ],
+          feedback: [
+            'ℹ️ Correct! With a self-custody wallet you are solely responsible for your private keys.',
+            'ℹ️ Try again!'
           ],
           id: 'wallet-basics-5'
         }
       },
       {
         type: 'LEARN',
-        notionId: '266abc84862f425bab294dc99dfddb04',
-        title: 'Wallet Security',
-        content: '<div class="bloc1"><h2>ALWAYS do this to protect your recovery phrase:</h2><p>✅ write it down</p><p>✅ use a durable material (i.e laminated paper, engraved metal)</p><p>✅ store it in a safe place</p><h2>NEVER do this to protect your recovery phrase:</h2><p>🛑 save your recovery in an online drive</p><p>🛑 screenshot your private key</p><p>🛑 reveal your recovery key to anyone</p></div>'
+        notionId: '05e3abd313b640dab9b499d64bfc4823',
+        title: 'Hot Wallets',
+        content: '<div class="bloc1"><p>You will hear the terms “hot” and “cold wallet” quite a bit in web3.</p><p>A <code>hot wallet</code> is a wallet hosted via an online software program. MetaMask is a good example. These wallets are connected to the internet as long as your device is online, and are named ‘hot wallets’ for this ‘hot’ internet connection.</p><p>This is the style of wallet we will be creating today. They’re flexible, and great for beginners.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/hot-wallets-bdf8ae51.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'f40f641af55246068e3169aaadbbffe6',
+        title: 'Cold Wallets',
+        content: '<div class="bloc1"><p>As you dive deeper into your web3 journey, you will come to know a landscape full of interesting tech trade-offs.</p><p><code>Cold wallets</code> grant higher security at the cost of convenience. A cold wallet uses software that lives on a separate hardware device (like a memory stick or external hard drive). You must physically connect the device to a computer for the wallet to be able to access the internet. Cold wallets are named after this ‘cold’ internet connection.</p><p>They are widely considered to be more secure than <code>hot wallets</code>, because your <code>private key</code> is stored offline — out of reach of digital attackers.</p><p>Ledger and Trezor are examples of <code>cold wallets</code>.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/cold-wallets-7b5aeb35.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: '8356a2b7d25c420fb4171ee574f7d748',
+        notionId: '7b837d841a234e1f9a32861f4608485e',
         title: 'Knowledge Check',
         quiz: {
-          question: 'What is the safest way to protect your recovery phrase?',
+          question: 'Which wallet type is considered to be more secure?',
           rightAnswerNumber: 4,
           answers: [
-            'Save it on your computer and print it out.',
-            'Take a screenshot and save it on your phone.',
-            'Save it in your Dropbox account.',
-            'Write it on a durable material and store it in a safe place.'
+            'A hot wallet',
+            'A custodial wallet',
+            'A mobile wallet',
+            'A cold wallet'
+          ],
+          feedback: [
+            'ℹ️ Try again! A hot wallet has an active internet connection which makes it more susceptible to digital attack.',
+            'ℹ️ Try again! The third party holding the private keys can get hacked or go bankrupt.',
+            'ℹ️ Try again! A mobile wallet is more secure than a browser wallet, but it’s not the most secure type of wallet.',
+            'ℹ️ Correct! Cold wallets aren’t actively connected to the internet, making them more attack-resistant.'
           ],
           id: 'wallet-basics-6'
         }
       },
       {
         type: 'LEARN',
-        notionId: '6c2cef180a894009807af59ed2d5f27c',
-        title: 'Hot Wallet',
-        content: '<div class="bloc1"><p>There are two major types of <code>non-custodial wallets</code>: software wallets (also called <code>hot wallets</code>) and hardware wallets (also called <code>cold wallets</code>)</p><p>A software wallet is an app or browser extension that remains connected to the internet.</p><ul><li>PROS 👍: It is usually free, simple to set up, and easy to use.</li><li>CONS 👎: Because it is software connected to the internet, it\'s potentially a target for hackers.</li></ul></div><div class="bloc2"><img src=\'/images/wallet-basics/hot-wallet-1d444d7c.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '2db8d9f5695b4b46aa35bef2e17bcb75',
-        title: 'Cold Wallet',
-        content: '<div class="bloc1"><p>A <code>cold wallet</code>, or hardware wallet, is only connected to the internet when you physically connect it to a computer or device.</p><ul><li>PROS 👍: It is more secure from threats like hacking.</li><li>CONS 👎: It is not free, not ideal for quick transactions, and can be cumbersome to use.</li></ul></div><div class="bloc2"><img src=\'/images/wallet-basics/cold-wallet-59646edb.svg\'></div>'
+        notionId: '2d397d2ffece4fa083a28bd99720e582',
+        title: 'Wallet Security',
+        content: '<div class="bloc1"><p>Regardless if your <code>self-custody wallet</code> is hot or cold, there are many smart security practices you should develop.</p><p>🖊️ Record your <code>recovery phrase</code> on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your <code>private key</code> with anyone. <strong>Remember, this is more than just a password.</strong></p><p>🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.</p><p>🔭 Spend time researching and gathering info on any <code>web3</code> application you plan to interact with before connecting your wallet or signing transactions with it.</p><p>💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).</p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-security-9cc67e4c.png\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: 'e331357c6b07425c8451d2a81c20f885',
+        notionId: '4e63e0e00af1489caf0c18b6f3ce706a',
         title: 'Knowledge Check',
         quiz: {
-          question: 'Is a cold wallet more secure than a hot wallet?',
+          question: 'What is the safest way to protect your recovery phrase?',
           rightAnswerNumber: 1,
           answers: [
-            'Yes',
-            'No'
+            'Write it on a durable material and store it in a safe place.',
+            'Save it on your computer and print it out.',
+            'Take a screenshot and save it on your phone.',
+            'Save it in your Dropbox account.'
+          ],
+          feedback: [
+            'ℹ️ Correct! A safely stored physical backup with no digital traces is the only safe storage option.',
+            'ℹ️ Try again! If your computer is hacked, you could lose all assets in your wallet. Printing also opens many attack opportunities.',
+            'ℹ️ Try again! If your phone is hacked, you could lose all assets in your wallet.',
+            'ℹ️ Try again! Use of password managers resulted in a large number of wallet hacks in 2023.'
           ],
           id: 'wallet-basics-7'
         }
       },
       {
         type: 'LEARN',
-        notionId: '66d21ca797f44f02861545e2042582c8',
-        title: 'MetaMask Wallet',
-        content: '<div class="bloc1"><p>There are several <code>non-custodial</code> <code>hot wallets</code> available today. We will explore the popular MetaMask Wallet for the remainder of this lesson since:</p><ul><li>It is likely to be compatible with most <code>DeFi</code> apps.</li><li>It has a browser extension for Chrome, Brave, Edge, and Firefox internet browsers.</li><li>It is also available as a mobile app for Android and iOS users.</li></ul></div><div class="bloc2"><img src=\'/images/wallet-basics/metamask-wallet-521de184.svg\'></div>'
+        notionId: 'e331357c6b07425c8451d2a81c20f885',
+        title: 'You’re ready to create your first wallet!',
+        content: '<div class="bloc1"><p>In fact, you’ll need one if you want to claim proof of completing this quest!</p><p>There are several self-custody <code>hot wallet</code> providers available today. We will explore the popular MetaMask wallet for the rest of this lesson as:</p><ul><li>it is likely to be compatible with most <code>DeFi</code> apps.</li><li>it has a browser extension for Chrome, Brave, Edge, and Firefox internet browsers.</li><li>it is also available as a mobile app for Android and iOS users.</li></ul><p>The end of the lesson is right around the corner, where we will share a short video to help you get set up with your MetaMask wallet.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/youre-ready-to-create-your-first-wallet-521de184.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: 'e60c91b7bb054ea8b4e449ddf6f1042b',
+        notionId: 'f946d23d54ea48d2b8972305168b5791',
         title: 'Knowledge Check',
         quiz: {
           question: 'Is MetaMask a custodial wallet?',
@@ -218,6 +274,10 @@ const LESSONS: LessonType[] = [
           answers: [
             'Yes',
             'No'
+          ],
+          feedback: [
+            'ℹ️ Try again!',
+            'ℹ️ Correct! MetaMask wallets are self-custody wallets controlled by you — and you alone.'
           ],
           id: 'wallet-basics-8'
         }
@@ -1991,11 +2051,11 @@ const LESSONS: LessonType[] = [
     lessonImageLink: '/images/optimism-governance/lesson-a120c424.png',
     socialImageLink: '/images/optimism-governance/social-f6cda7d9.jpg',
     learningActions: '',
-    marketingDescription: 'Claim your first piece of network ownership and start voting onchain!',
+    marketingDescription: 'Become a governing member of Optimism and help decide the network\'s future.',
     badgeId: 10,
     duration: 20,
     learnings: '',
-    description: 'Claim your first piece of network ownership and start voting onchain!',
+    description: 'Become a governing member of Optimism and help decide the network\'s future.',
     name: 'Optimism Governance',
     languages: [
       'cn',
