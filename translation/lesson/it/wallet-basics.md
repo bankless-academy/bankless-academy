@@ -103,27 +103,27 @@ Esempio: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
 È possibile creare versioni più facili da ricordare attraverso alcuni servizi web3, ma quella è una lezione per un'altra volta.
 
-Puoi anche pensare a una chiave pubblica come all'indirizzo di una casella postale. È pubblica, chiunque può vederla, e dice agli altri dove possono inviarti asset criptati — senza rivelare nulla di personale su di te.
+Si può anche pensare a una chiave pubblica come l'indirizzo di una casella postale. È pubblica, chiunque può vederla, e può dire agli altri dove possono inviarti asset cripto — senza rivelare nulla di personale su di te.
 
 È perfettamente sicuro condividere la tua **chiave pubblica**.
 
-**Nota:** a volte un singolo account portafoglio può contenere molteplici chiavi pubbliche (e `private`). Un po' come avere molte caselle postali sotto un unico account.
+**Nota:** a volte un singolo account di un portafoglio può contenere molteplici chiavi pubbliche (e `private`). Un po' come avere molte caselle postali sotto un unico account.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-6d17439c.svg)
 
 # La chiave privata del tuo portafoglio
 
-Se la chiave pubblica è come una casella postale, allora la `chiave privata` è come la chiave della casella. È la “password” per i tuoi fondi e asset.
+Se la chiave pubblica è come una casella postale, allora la `chiave privata` è come la chiave della casella stessa. È la “password” per i tuoi fondi e asset.
 
-Quasi sempre sembra una combinazione casuale di lettere e numeri.
+Quasi sempre appare come una combinazione casuale di lettere e numeri.
 
 Non è mai sicuro condividere questa chiave — potresti perdere il tuo portafoglio e tutto ciò che contiene.
 
 La maggior parte delle persone raccomanda di non salvarla nemmeno digitalmente. Chiunque abbia accesso a una chiave privata ha accesso a tutto ciò che si trova nel `portafoglio`.
 
-Questo è più di una semplice password. Non puoi reimpostarla se perdi l'accesso.
+Questo è più di una semplice password. Non è possibile ripristinarla se si perde l'accesso.
 
-Fortunatamente, la maggior parte delle applicazioni e dei programmi `web3` non ti richiede di digitare faticosamente una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione blockchain. La chiave privata di solito opera silenziosamente in background.
+Fortunatamente, la maggior parte delle applicazioni e dei programmi `web3` non richiedono di digitare faticosamente una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione blockchain. La chiave privata di solito opera silenziosamente in background.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-f4a93387.svg)
 
@@ -131,7 +131,7 @@ Fortunatamente, la maggior parte delle applicazioni e dei programmi `web3` non t
 
 La tua chiave pubblica è come il tuo _____ e la tua chiave privata è come il tuo _____ .
 
-- [ ] Numero di Instradamento / Numero di Conto
+- [ ] IBAN / Numero di Conto
 
 > ℹ️ Riprova! La tua chiave privata non dovrebbe essere condivisa con altri.
 
@@ -151,15 +151,15 @@ La tua chiave pubblica è come il tuo _____ e la tua chiave privata è come il t
 
 Quando configuri un nuovo portafoglio, il software genera una `frase di recupero` unica.
 
-A volte chiamata anche "frase seme" o "frase di recupero segreta", questa sequenza di parole può essere utilizzata per accedere al tuo portafoglio e ai tuoi asset criptati se:
+A volte chiamata anche “seed phrase” o "frase di recupero segreta", questa sequenza di parole può essere utilizzata per accedere al tuo portafoglio e ai tuoi asset criptati se:
 
 - La tua app `portafoglio` o dispositivo si guasta inaspettatamente o viene danneggiato.
 - Non riesci ad accedervi a causa di smarrimento o furto.
 - Vuoi accedere al tuo account portafoglio tramite l'app portafoglio su un computer o dispositivo differente.
 
-La maggior parte delle frasi di recupero è una lista di 12 a 24 parole che rappresentano un pezzo di dati unico. Questi dati vengono utilizzati per generare sia la `chiave pubblica` che la `chiave privata` per il tuo portafoglio.
+La maggior parte delle frasi di recupero è costituita da un elenco di 12-24 parole che, combinate insieme, generano una chiave univoca. Questi dati vengono utilizzati per generare sia la `chiave pubblica` che la `chiave privata` per il tuo portafoglio.
 
-This does **not** change or reset the keys.
+Questa **non** cambia né resetta le chiavi.
 
 La tua frase di recupero è essenzialmente una versione più facile da leggere della tua coppia di chiavi pubblica/privata.
 
@@ -169,19 +169,19 @@ La tua frase di recupero è essenzialmente una versione più facile da leggere d
 
 # Knowledge Check 3
 
-Can you recover your wallet with a recovery phrase if your device gets damaged or lost?
+È possibile recuperare il portafoglio con una frase di recupero se il dispositivo viene danneggiato o perso?
 
 - [ ] No
 
-> ℹ️ Try again!
+> ℹ️ Riprova!
 
-- [ ] Yes
+- [ ] Sì
 
-> ℹ️ Correct! Recovery phrases grant access to your wallet, even on a multiple devices.
+> ℹ️ Corretto! Le frasi di recupero garantiscono l'accesso al portafoglio, anche su più dispositivi.
 
-# Tipi di Portafoglio
+# Tipi di Portafogli
 
-Così come esistono molti tipi di software per computer, esistono molti tipi di portafoglio. Vediamo le quattro categorie principali:
+Così come esistono molti tipi di software per computer, esistono molti tipi di portafogli. Vediamo le quattro categorie principali:
 
 - **Portafogli custoditi:** dove una terza parte è responsabile delle tue chiavi private.
 - **Portafogli in auto-custodia (non custoditi):** dove sei tu a essere responsabile delle tue chiavi private.
@@ -191,7 +191,7 @@ Ci sono due tipi di `portafoglio in auto-custodia`:
 - **Portafogli caldi (hot):** software sul tuo desktop o telefono.
 - **Portafogli freddi (cold):** un dispositivo hardware (come una chiavetta USB) che conservi in un luogo sicuro.
 
-Ogni soluzione di portafoglio serve uno scopo diverso. Molti utenti avanzati ne hanno uno per ogni tipo!
+Ogni tipo di portafoglio serve per uno scopo diverso. Molti utenti esperti ne hanno uno per ogni tipo!
 
 Non preoccuparti, oggi creeremo solo un portafoglio.
 
@@ -201,33 +201,33 @@ Non preoccuparti, oggi creeremo solo un portafoglio.
 
 Poiché la tua `chiave privata` sblocca l'accesso al tuo `portafoglio`, mantenerla privata e sicura è molto importante!
 
-I servizi di `portafoglio custodito` includono scambi di criptovalute come Coinbase e Kraken. Essi sono i 'custodi' del tuo portafoglio — si occupano delle tue chiavi private per te. Accedi ai loro servizi come a qualsiasi altro sito web (con un login email e una password reimpostabile).
+I servizi di `portafogli custoditi` includono scambi di criptovalute come Coinbase e Kraken. Essi sono i 'custodi' del tuo portafoglio — si occupano delle tue chiavi private per te. Accedi ai loro servizi come a qualsiasi altro sito web (con un login email e una password reimpostabile).
 
-Questo potrebbe essere tutto ciò di cui alcune persone hanno bisogno, ma richiede di fidarsi di queste terze parti per proteggere i tuoi asset criptati e darti accesso quando vuoi scambiarli o inviarli da qualche parte. Inoltre, il tuo accesso ad alcune applicazioni web3 potrebbe essere limitato.
+Per alcuni potrebbe essere l'unica cosa di cui hanno bisogno, ma è necessario fidarsi di queste terze parti per proteggere i propri asset di criptovalute e consentirne l'accesso quando si desidera scambiarli o inviarli da qualche parte. Inoltre, il tuo accesso ad alcune applicazioni web3 potrebbe essere limitato.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-29ed2b65.svg)
 
 # Knowledge Check 4
 
-Controlli la tua chiave privata con un portafoglio custodito?
+Puoi avere il controllo della tua chiave privata con un portafoglio custodito?
 
-- [ ] Yes
+- [ ] Sì
 
-> ℹ️ Try again!
+> ℹ️ Riprova!
 
 - [ ] No
 
-> ℹ️ Corretto! I portafogli custoditi richiedono di fidarsi di una terza parte (custode) per controllare le tue chiavi private.
+> ℹ️ Corretto! I portafogli custoditi richiedono la fiducia in una terza parte (custode) per il controllo delle chiavi private.
 
-# Portafoglio Non-custodito
+# Portafogli Non-custoditi
 
-Un `portafoglio in auto-custodia` (come MetaMask o Trezor) è quando controlli completamente la tua `chiave privata`. Non hai alcun custode, e sei tu da solo a essere responsabile della sicurezza della tua chiave privata.
+Viene definito un `portafoglio di autocustodia` (come MetaMask o Trezor) quando si ha il pieno controllo della propria `chiave privata`. **Non hai alcun custode**, e sei solo tu a essere responsabile della sicurezza della tua chiave privata.
 
-Questi portafogli offrono la più ampia gamma di accesso e libertà nel mondo di `web3`. Non devi mai preoccuparti che una terza parte congeli o gestisca male i tuoi fondi.
+Questi portafogli offrono la più ampia gamma di accesso e libertà nel mondo `web3`. Non devi mai preoccuparti che una terza parte congeli o gestisca male i tuoi fondi.
 
-Il compromesso è nel rischio: se perdi l'accesso alla tua `frase di recupero` o la tua chiave privata viene compromessa, spesso c'è molto poco che puoi fare per ripristinare l'accesso al portafoglio.
+Il compromesso sta nel rischio: se perdi l'accesso alla `frase di recupero`, o la chiave privata viene compromessa, spesso c'è molto poco che puoi fare per ripristinare l'accesso al tuo portafoglio.
 
-Qualunque percorso tu scelga, conviene essere familiari e a proprio agio con la sicurezza del portafoglio. Ti daremo alcuni consigli prima di completare questa lezione.
+Qualunque percorso tu scelga, ti conviene avere familiarità e dimestichezza con la sicurezza del tuo portafoglio. Ti daremo alcuni consigli prima di completare questa lezione.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-aee2708b.svg)
 
@@ -235,13 +235,13 @@ Qualunque percorso tu scelga, conviene essere familiari e a proprio agio con la 
 
 Sei responsabile della tua chiave privata con un portafoglio in auto-custodia?
 
-- [ ] Yes
+- [ ] Sì
 
 > ℹ️ Corretto! Con un portafoglio in auto-custodia sei l'unico responsabile delle tue chiavi private.
 
 - [ ] No
 
-> ℹ️ Try again!
+> ℹ️ Riprova!
 
 # Portafogli Caldi
 
