@@ -132,7 +132,7 @@
   "cold wallet": {
     "keyword": "コールドウォレット",
     "keyword_plural": "コールドウォレット",
-    "definition": "ノンカストディアルウォレットの一種で、オフラインで保管され、永続的なインターネット接続を必要としない"
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
   },
   "collateral": {
     "keyword": "担保",
@@ -209,6 +209,11 @@
     "keyword_plural": "DEXアグリゲーター",
     "definition": "複数のソースからのDEX流動性を1つのインターフェースに組み合わせたプロトコル"
   },
+  "digital assets": {
+    "keyword": "digital assets",
+    "keyword_plural": "digital assetss",
+    "definition": "Anything, with value, stored digitally."
+  },
   "digital signature": {
     "keyword": "デジタル署名",
     "keyword_plural": "デジタル署名",
@@ -272,7 +277,7 @@
   "hardware wallet": {
     "keyword": "ハードウェアウォレット",
     "keyword_plural": "ハードウェアウォレット",
-    "definition": "ノンカストディアルウォレットの一種で、物理的なハードウェアデバイスに秘密鍵をオフラインで保管する"
+    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
   },
   "hash": {
     "keyword": "ハッシュ",
@@ -292,7 +297,7 @@
   "hot wallet": {
     "keyword": "ホットウォレット",
     "keyword_plural": "ホットウォレット",
-    "definition": "インターネットに永続的に接続されているノンカストディアルウォレットの一種"
+    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
   },
   "intermediary token": {
     "keyword": "仲介トークン",
@@ -378,11 +383,6 @@
     "keyword": "NFT",
     "keyword_plural": "NFT",
     "definition": "一意の識別子を持たないEtherのようなファンジブルトークンと比較して、複製できないユニークなIDを持つトークン"
-  },
-  "non-custodial wallet": {
-    "keyword": "ノンカストディアルウォレット",
-    "keyword_plural": "ノンカストディアルウォレット",
-    "definition": "秘密鍵そしてクリプトを本人のみが管理できるツール"
   },
   "onchain governance": {
     "keyword": "オンチェーンガバナンス",
@@ -523,6 +523,11 @@
     "keyword": "シードフレーズ",
     "keyword_plural": "シードフレーズ",
     "definition": "セットアップ時にウォレットによって生成されるランダムな単語のグループであり、いかなる理由があろうとも、シードフレーズを他人と共有してはいけない"
+  },
+  "self-custody wallet": {
+    "keyword": "self-custody wallet",
+    "keyword_plural": "self-custody wallets",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
   },
   "settlement layer": {
     "keyword": "決済レイヤー",
