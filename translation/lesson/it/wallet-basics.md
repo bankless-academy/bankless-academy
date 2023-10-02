@@ -1,7 +1,7 @@
 ---
 TITLE: Le Basi Del Portafoglio
 DESCRIPTION: Crea e gestisci in modo sicuro il tuo primo portafoglio di criptovalute.
-LANGUAGE: English
+LANGUAGE: Italiano
 WRITERS: Ap0ll0517, Tetranome
 TRANSLATORS: OrnellaWeb3, fa3io
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
@@ -31,15 +31,15 @@ ________________________________________________________________________________
 
 **Ciao!**
 
-Benvenuti alla Bankless Academy. Siamo entusiasti di guidarvi nel vostro viaggio nel `web3`. Ogni esploratore di questo spazio ha bisogno, prima o poi, di creare un portafoglio digitale.
+Benvenuti alla Bankless Academy. Siamo entusiasti di guidarti nel tuo viaggio nel `web3`. Ogni esploratore di questo spazio ha bisogno, prima o poi, di creare un portafoglio digitale.
 
-I portafogli sono un po' come gli account che usi per le app e i siti web3 di tutti i giorni, ma ci sono anche grandi differenze importanti da comprendere. Conservano anche la tua criptovaluta!
+I portafogli sono un po' come gli account che usi per le app e i siti web3 di tutti i giorni, ma ci sono anche grandi differenze che sono importanti da capire. Contengono anche le tue criptovalute!
 
-Un portafoglio correttamente impostato ti offre l'accesso a nuove incredibili possibilità proteggendo i tuoi beni e la tua identità online.
+Un portafoglio correttamente configurato ti consente di accedere a nuove incredibili possibilità, proteggendo al contempo i tuoi beni e la tua identità online.
 
-In questa lezione, ti introdurremo ai portafogli, ai tipi di portafoglio, alle basi della sicurezza dei portafogli e concluderemo con un video su come impostarne uno.
+In questa lezione, ti introdurremo ai portafogli, ai tipi di portafogli, alle loro basi di sicurezza e concluderemo con un video su come impostarne uno.
 
-Cominciamo!
+Iniziamo!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-1d445d4b.png)
 
@@ -49,9 +49,9 @@ Cos'è esattamente un portafoglio?
 
 La definizione breve è: un programma informatico che usi per interagire con una `blockchain`.
 
-Quando il tuo `portafoglio` è connesso a una blockchain, puoi fare acquisti, inviare o ricevere `beni digitali` come criptovalute, interagire con applicazioni web3 e altro ancora.
+Quando il tuo `portafoglio` è connesso a una blockchain, puoi fare acquisti, inviare o ricevere `beni digitali` come le criptovalute, interagire con applicazioni web3 e altro ancora.
 
-A differenza degli account utente standard a cui sei abituato, un singolo portafoglio ti permette di accedere a un gran numero di app web3, purché il portafoglio sia compatibile con la blockchain su cui è costruita l'app. È come avere un account per tutto internet.
+A differenza dei normali account a cui sei abituato, un singolo portafoglio ti permette di accedere a un gran numero di app web3, purché il portafoglio sia compatibile con la blockchain su cui è costruita l'app. È come avere un unico account per l'intero Internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-e8f8f9a8.svg)
 
@@ -59,11 +59,11 @@ A differenza degli account utente standard a cui sei abituato, un singolo portaf
 
 Un tempo lo era, ma oggi chiunque può creare facilmente un portafoglio.
 
-I portafogli sono essenzialmente programmi informatici. Se siete a vostro agio nel scaricare e installare software sul vostro computer (o app sul vostro telefono), allora non avrete problemi a creare il vostro primo portafoglio.
+I portafogli sono essenzialmente programmi informatici. Se ti senti a tuo agio nello scaricare e installare software sul tuo computer (o app sul tuo telefono), allora non avrai problemi a creare il tuo primo portafoglio.
 
-Le parti più difficili nella gestione di un portafoglio riguardano la loro sicurezza, su cui approfondiremo successivamente.
+La parte più complicata della gestione di un portafoglio consiste nel mantenerlo sicuro, come vedremo in seguito.
 
-Scegliere il vostro primo portafoglio può sembrare intimidatorio. Raccomandiamo di iniziare con MetaMask come fornitore di portafoglio: i loro portafogli sono facili da usare e hanno accesso a molte blockchain popolari. Man mano che vi sentirete più a vostro agio nello spazio web3, è probabile che esplorerete altri fornitori e creerete altri portafogli.
+Scegliere il tuo primo portafoglio può sembrare intimidatorio. Ti suggeriamo di iniziare con MetaMask come fornitore di portafoglio: offre soluzioni facili da utilizzare e compatibili con le blockchain più diffuse. Man mano che ti sentirai più a tuo agio nello spazio web3, è probabile che esplorerai altri fornitori e creerai altri portafogli.
 
 # Knowledge Check 1
 
@@ -75,11 +75,11 @@ Cos'è un portafoglio?
 
 - [ ] Una criptovaluta
 
-> ℹ️ Try again! A mobile wallet is more secure than a browser wallet, but it’s not the most secure type of wallet.
+> ℹ️ Riprova! Le criptovalute sono qualcosa che tieni nel tuo portafoglio.
 
 - [ ] Un oggetto da collezione digitale
 
-> ℹ️ Riprova! Gli oggetti da collezione digitali sono qualcosa che tieni nel tuo portafoglio.
+> ℹ️ Riprova! Gli oggetti da collezione digitali sono qualcosa che tieni all'interno del tuo portafoglio.
 
 - [ ] Un account blockchain
 
@@ -87,13 +87,13 @@ Cos'è un portafoglio?
 
 # Portafogli & Recupero della Password
 
-**Ecco una delle cose più importanti da capire sui portafogli web3: oggi non c'è un "reset della password" o frequenti cambiamenti di password.**
+**Ecco una delle cose più importanti da capire sui portafogli web3: ad oggi non esiste un "reset della password" o la possibilità di frequenti cambiamenti di password.**
 
 La maggior parte di noi è abituata a queste funzionalità. Se dimentichiamo una password, clicchiamo un pulsante, facciamo alcune operazioni e otteniamo una nuova password. Facile.
 
-Non è così con i portafogli. A causa del funzionamento delle blockchain, ai portafogli viene assegnato un "nome" e una "password" complessa quando vengono creati (non li scegliete voi).
+Con i portafogli, non è così. Per come funziona una blockchain, ai portafogli viene automaticamente assegnato un "nome" e una "password" complessa quando vengono creati (non sarai tu a sceglierli).
 
-Questa combinazione di nome e password è impossibile da cambiare. Scopriamo un po' di più su ognuno di essi.
+Questa combinazione di nome e password è impossibile da cambiare. Scopriamo qualcosa di più su ciascuna di esse.
 
 # La chiave pubblica del tuo portafoglio
 
@@ -101,7 +101,7 @@ Una `chiave pubblica` è sostanzialmente il nome del tuo portafoglio. Spesso, se
 
 Esempio: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-È possibile creare versioni più facili da ricordare di questo con alcuni servizi web3, ma quella è una lezione per un altro momento.
+È possibile creare versioni più facili da ricordare attraverso alcuni servizi web3, ma quella è una lezione per un'altra volta.
 
 Puoi anche pensare a una chiave pubblica come all'indirizzo di una casella postale. È pubblica, chiunque può vederla, e dice agli altri dove possono inviarti asset criptati — senza rivelare nulla di personale su di te.
 
