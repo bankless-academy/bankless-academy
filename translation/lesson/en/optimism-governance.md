@@ -1,6 +1,6 @@
 ---
 TITLE: Optimism Governance
-DESCRIPTION: Claim your first piece of network ownership and start voting onchain!
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: English
 WRITERS: Tetranome
 TRANSLATORS: X
