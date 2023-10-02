@@ -1,6 +1,6 @@
 ---
 TITLE: Optimism 治理
-DESCRIPTION: 认领您的第一个网络所有权，并开始投票！
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: 中文 (Chinese Simplified)
 WRITERS: Tetranome
 TRANSLATORS: 183Aaros, TG
