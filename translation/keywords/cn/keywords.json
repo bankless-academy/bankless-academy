@@ -132,7 +132,7 @@
   "cold wallet": {
     "keyword": "冷钱包",
     "keyword_plural": "冷钱包",
-    "definition": "一种非托管钱包，离线存储，无需永久互联网连接。"
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
   },
   "collateral": {
     "keyword": "保证金",
@@ -209,6 +209,11 @@
     "keyword_plural": "DEX 聚合器",
     "definition": "将多个来源的 DEX 流动性整合到一个界面的协议。"
   },
+  "digital assets": {
+    "keyword": "digital assets",
+    "keyword_plural": "digital assetss",
+    "definition": "Anything, with value, stored digitally."
+  },
   "digital signature": {
     "keyword": "数字签名",
     "keyword_plural": "数字签名",
@@ -272,7 +277,7 @@
   "hardware wallet": {
     "keyword": "硬件钱包",
     "keyword_plural": "硬件钱包",
-    "definition": "一种非托管钱包，可将私钥离线存储在物理硬件设备中。"
+    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
   },
   "hash": {
     "keyword": "哈希",
@@ -292,7 +297,7 @@
   "hot wallet": {
     "keyword": "热钱包",
     "keyword_plural": "热钱包",
-    "definition": "一种永久连接互联网的非托管钱包。"
+    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
   },
   "intermediary token": {
     "keyword": "中介代币",
@@ -378,11 +383,6 @@
     "keyword": "NFT",
     "keyword_plural": "NFTs",
     "definition": "（非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
-  },
-  "non-custodial wallet": {
-    "keyword": "非托管钱包",
-    "keyword_plural": "非托管钱包",
-    "definition": "使用非托管钱包，您可以独自控制私钥，而私钥又可以控制您的加密资产。"
   },
   "onchain governance": {
     "keyword": "链上治理",
@@ -523,6 +523,11 @@
     "keyword": "助记词",
     "keyword_plural": "助记词",
     "definition": "由钱包在设置时生成的一组随机词语，它们是该钱包控制的所有账户的主密钥。切勿以任何理由与任何人共享您的助记词。"
+  },
+  "self-custody wallet": {
+    "keyword": "self-custody wallet",
+    "keyword_plural": "self-custody wallets",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
   },
   "settlement layer": {
     "keyword": "结算层",
