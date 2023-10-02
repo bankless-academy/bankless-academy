@@ -1,6 +1,6 @@
 ---
 TITLE: Gouvernance d'Optimism
-DESCRIPTION: Réclamez votre première part de propriété du réseau et commencez à voter sur la chaîne !
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: Français
 WRITERS: Tetranome
 TRANSLATORS: Didier Krux
