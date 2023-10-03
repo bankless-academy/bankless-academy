@@ -674,10 +674,15 @@
     "keyword_plural": "wallets",
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
   },
+  "web2": {
+    "keyword": "web2",
+    "keyword_plural": "web2s",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
   "web3": {
     "keyword": "web3",
     "keyword_plural": "web3s",
-    "definition": "Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data."
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
   },
   "zero-knowledge": {
     "keyword": "Zero-Knowledge",
