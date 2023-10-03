@@ -674,10 +674,15 @@
     "keyword_plural": "ウォレット",
     "definition": "ブロックチェーン上でクリプトを送受信するために使用されるアプリケーションまたはデバイス"
   },
+  "web2": {
+    "keyword": "web2",
+    "keyword_plural": "web2s",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
   "web3": {
     "keyword": "web3",
     "keyword_plural": "web3",
-    "definition": "ブロックチェーン上で動作し、個人データを収益化することなく誰もが参加できるようにするアプリケーション"
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
   },
   "zero-knowledge": {
     "keyword": "ゼロ知識",
