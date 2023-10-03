@@ -370,26 +370,13 @@ const HomePage = (): JSX.Element => {
                   <Card>
                     <EyeIcon />
                     <Heading size="lg" mt="2">
-                      {t(`Review Our Lessons`)}
+                      {t(`Improve Our Lessons`)}
                     </Heading>
                     <Text fontSize="lg" mt="2">
                       {t(
-                        `Anyone can help improve Bankless Academy. Help us by providing feedback on Beta lessons and your onchain Reviewer badge will make sure we won’t forget it.`
+                        `Everyone can help make Bankless Academy better. Provide feedback on lessons or translations and receive an onchain badge once your feedback is included.`
                       )}
                     </Text>
-                    <Box
-                      display="flex"
-                      flexDirection="row-reverse"
-                      pt="4"
-                      style={{ flexGrow: 1 }}
-                      alignItems="self-end"
-                    >
-                      <ExternalLink href="https://lenster.xyz/u/banklessacademy">
-                        <Button variant="secondary" size="md">
-                          {t(`Sign Up`)}
-                        </Button>
-                      </ExternalLink>
-                    </Box>
                   </Card>
                   <Card>
                     <UsersThreeIcon />
