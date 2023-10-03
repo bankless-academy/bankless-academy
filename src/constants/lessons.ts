@@ -14,7 +14,9 @@ const LESSONS: LessonType[] = [
     difficulty: 'Easy',
     description: 'Create and securely manage your first crypto wallet.',
     name: 'Wallet Basics',
-    languages: [],
+    languages: [
+      'it'
+    ],
     lessonWriters: 'Ap0ll0517, Tetranome',
     quest: 'WalletBasics',
     publicationStatus: 'publish',
@@ -42,7 +44,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '0bf15ec24615455b9349774527410d81',
         title: 'Wallet Intro',
-        content: '<div class="bloc1"><p><strong>Greetings!</strong></p><p>Welcome to Bankless Academy. We’re excited to guide you on your journey into <code>web3</code>. Every explorer of this space eventually needs to create a digital wallet.</p><p>Wallets are kind of like accounts you use for everyday web3 apps and sites, but there are also big differences that are important to understand. They also hold your cryptocurrency!</p><p>A properly set up wallet grants you access to incredible new possibilities while safeguarding your assets and online identity.</p><p>In this lesson, we’ll introduce you to wallets, wallet types, wallet security basics, and end with a video on how to set one up.</p><p>Let’s get started!</p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-intro-1d445d4b.png\'></div>'
+        content: '<div class="bloc1"><p><strong>Greetings!</strong></p><p>Welcome to Bankless Academy. We’re excited to guide you on your journey into <code>web3</code>. Every explorer of this space eventually needs to create a digital wallet.</p><p>Wallets are kind of like the accounts you’re used to in <code>web2</code>. You’ll use them to access web3 apps and sites, but there are also big differences that are important to understand. For example, they can hold cryptocurrency.</p><p>A properly set up wallet grants you access to incredible new possibilities while safeguarding your digital assets and online identity.</p><p>In this lesson, we’ll introduce you to wallets, wallet types, wallet security basics, and end with a video on how to set one up.</p><p>Let’s get started!</p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-intro-1d445d4b.png\'></div>'
       },
       {
         type: 'LEARN',

@@ -33,9 +33,9 @@ ________________________________________________________________________________
 
 Welcome to Bankless Academy. We’re excited to guide you on your journey into `web3`. Every explorer of this space eventually needs to create a digital wallet.
 
-Wallets are kind of like accounts you use for everyday web3 apps and sites, but there are also big differences that are important to understand. They also hold your cryptocurrency!
+Wallets are kind of like the accounts you’re used to in `web2`. You’ll use them to access web3 apps and sites, but there are also big differences that are important to understand. For example, they can hold cryptocurrency.
 
-A properly set up wallet grants you access to incredible new possibilities while safeguarding your assets and online identity.
+A properly set up wallet grants you access to incredible new possibilities while safeguarding your digital assets and online identity.
 
 In this lesson, we’ll introduce you to wallets, wallet types, wallet security basics, and end with a video on how to set one up.
 
