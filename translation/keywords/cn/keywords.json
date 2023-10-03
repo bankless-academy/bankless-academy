@@ -674,10 +674,15 @@
     "keyword_plural": "钱包",
     "definition": "钱包是用于在区块链上发送和接收加密资产的应用程序或设备。"
   },
+  "web2": {
+    "keyword": "web2",
+    "keyword_plural": "web2s",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
   "web3": {
     "keyword": "web3",
     "keyword_plural": "web3s",
-    "definition": "指在区块链上运行的应用程序，任何人都可以参与其中，无需将个人数据货币化。"
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
   },
   "zero-knowledge": {
     "keyword": "零知识",
