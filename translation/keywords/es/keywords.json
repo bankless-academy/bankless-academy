@@ -674,10 +674,15 @@
     "keyword_plural": "billeteras",
     "definition": "Una billetera es una aplicación o dispositivo utilizado para enviar y recibir criptoactivos en la cadena de bloques."
   },
+  "web2": {
+    "keyword": "web2",
+    "keyword_plural": "web2s",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
   "web3": {
     "keyword": "web3",
     "keyword_plural": "web3",
-    "definition": "Se refiere a las aplicaciones que se ejecutan en la cadena de bloques y permiten que cualquiera participe sin monetizar sus datos personales."
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
   },
   "zero-knowledge": {
     "keyword": "Conocimiento-cero",
