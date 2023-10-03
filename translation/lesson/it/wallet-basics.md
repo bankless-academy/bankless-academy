@@ -33,9 +33,9 @@ ________________________________________________________________________________
 
 Benvenuti alla Bankless Academy. Siamo entusiasti di guidarti nel tuo viaggio nel `web3`. Ogni esploratore di questo spazio ha bisogno, prima o poi, di creare un portafoglio digitale.
 
-Wallets are kind of like the accounts you’re used to in `web2`. You’ll use them to access web3 apps and sites, but there are also big differences that are important to understand. For example, they can hold cryptocurrency.
+I portafogli sono come gli account a cui sei abituato nel `web2`. Li userai per accedere alle app e ai siti Web3, ma ci sono anche grandi differenze che sono importanti da capire. Ad esempio, possono contenere criptovaluta.
 
-A properly set up wallet grants you access to incredible new possibilities while safeguarding your digital assets and online identity.
+Un portafoglio correttamente configurato ti consente di accedere a nuove incredibili possibilità, proteggendo al contempo i tuoi beni e la tua identità online.
 
 In questa lezione, ti introdurremo ai portafogli, ai tipi di portafogli, alle loro basi di sicurezza e concluderemo con un video su come impostarne uno.
 
