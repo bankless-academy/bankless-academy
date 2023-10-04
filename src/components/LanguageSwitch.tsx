@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 
 import { LessonType } from 'entities/lesson'
+import { Mixpanel } from 'utils'
 
 const LanguageSwitch = ({
   lesson,
@@ -33,6 +34,10 @@ const LanguageSwitch = ({
               i18n.changeLanguage('en', () =>
                 router.push(`/lessons/${lesson.slug}`)
               )
+              Mixpanel.track('change_language', {
+                link: `/lessons/${lesson.slug}`,
+                name: 'en',
+              })
             }}
           >
             EN
@@ -45,6 +50,10 @@ const LanguageSwitch = ({
                 i18n.changeLanguage(l, () =>
                   router.push(`/lessons/${l}/${lesson.slug}`)
                 )
+                Mixpanel.track('change_language', {
+                  link: `/lessons/${lesson.slug}`,
+                  name: l,
+                })
               }}
               ml={3}
               mb={3}
