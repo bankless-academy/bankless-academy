@@ -33,7 +33,7 @@ ________________________________________________________________________________
 
 Benvenuti alla Bankless Academy. Siamo entusiasti di guidarti nel tuo viaggio nel `web3`. Ogni esploratore di questo spazio ha bisogno, prima o poi, di creare un portafoglio digitale.
 
-I portafogli sono un po' come gli account che usi per le app e i siti web3 di tutti i giorni, ma ci sono anche grandi differenze che sono importanti da capire. Contengono anche le tue criptovalute!
+I portafogli sono come gli account a cui sei abituato nel `web2`. Li userai per accedere alle app e ai siti Web3, ma ci sono anche grandi differenze che sono importanti da capire. Ad esempio, possono contenere criptovaluta.
 
 Un portafoglio correttamente configurato ti consente di accedere a nuove incredibili possibilità, proteggendo al contempo i tuoi beni e la tua identità online.
 
