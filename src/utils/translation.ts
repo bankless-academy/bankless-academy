@@ -37,10 +37,10 @@ import keywordsFR from '../../translation/keywords/fr/keywords.json'
 import lessonFR from '../../translation/website/fr/lesson.json'
 
 // IT
-// import commonIT from '../../translation/website/it/common.json'
+import commonIT from '../../translation/website/it/common.json'
 // import homepageIT from '../../translation/website/it/homepage.json'
-// import questsIT from '../../translation/website/it/quests.json'
-// import keywordsIT from '../../translation/keywords/it/keywords.json'
+import questsIT from '../../translation/website/it/quests.json'
+import keywordsIT from '../../translation/keywords/it/keywords.json'
 import lessonIT from '../../translation/website/it/lesson.json'
 
 // JP
@@ -94,10 +94,10 @@ i18next
         lesson: lessonFR,
       },
       it: {
-        // common: commonIT,
+        common: commonIT,
         // homepage: homepageIT,
-        // quests: questsIT,
-        // keywords: keywordsIT,
+        quests: questsIT,
+        keywords: keywordsIT,
         lesson: lessonIT,
       },
       jp: {
