@@ -277,7 +277,10 @@ const Lesson = ({
   }, [address])
 
   useEffect(() => {
-    Mixpanel.track('open_lesson', { lesson: lesson?.name })
+    Mixpanel.track('open_lesson', {
+      lesson: lesson?.name,
+      language: i18n.language,
+    })
     // preloading all lesson images after 3 seconds for smoother transitions
     setTimeout(() => {
       lesson.imageLinks.forEach((imageLink) => {
