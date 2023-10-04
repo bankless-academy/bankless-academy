@@ -117,7 +117,7 @@
   },
   "冷钱包": {
     "keyword": "冷钱包",
-    "definition": "一种非托管钱包，离线存储，无需永久互联网连接。"
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
   },
   "保证金": {
     "keyword": "保证金",
@@ -174,6 +174,14 @@
   "dex 聚合器": {
     "keyword": "DEX 聚合器",
     "definition": "将多个来源的 DEX 流动性整合到一个界面的协议。"
+  },
+  "digital assets": {
+    "keyword": "digital assets",
+    "definition": "Anything, with value, stored digitally."
+  },
+  "digital assetss": {
+    "keyword": "digital assetss",
+    "definition": "Anything, with value, stored digitally."
   },
   "数字签名": {
     "keyword": "数字签名",
@@ -241,7 +249,7 @@
   },
   "硬件钱包": {
     "keyword": "硬件钱包",
-    "definition": "一种非托管钱包，可将私钥离线存储在物理硬件设备中。"
+    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
   },
   "哈希": {
     "keyword": "哈希",
@@ -257,7 +265,7 @@
   },
   "热钱包": {
     "keyword": "热钱包",
-    "definition": "一种永久连接互联网的非托管钱包。"
+    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
   },
   "中介代币": {
     "keyword": "中介代币",
@@ -346,10 +354,6 @@
   "nfts": {
     "keyword": "NFTs",
     "definition": "（非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
-  },
-  "非托管钱包": {
-    "keyword": "非托管钱包",
-    "definition": "使用非托管钱包，您可以独自控制私钥，而私钥又可以控制您的加密资产。"
   },
   "链上治理": {
     "keyword": "链上治理",
@@ -475,6 +479,14 @@
     "keyword": "安全性",
     "definition": "区块链抵御黑客攻击、代码漏洞和经济漏洞等攻击并继续正常运行的能力。"
   },
+  "self-custody wallet": {
+    "keyword": "self-custody wallet",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  },
+  "self-custody wallets": {
+    "keyword": "self-custody wallets",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  },
   "结算层": {
     "keyword": "结算层",
     "definition": "区块链的\"最低\"层，记录最终交易的资产交换细节。以太坊主网是以太坊第二层扩展解决方案的结算层。"
@@ -587,13 +599,21 @@
     "keyword": "钱包",
     "definition": "钱包是用于在区块链上发送和接收加密资产的应用程序或设备。"
   },
+  "web2": {
+    "keyword": "web2",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
+  "web2s": {
+    "keyword": "web2s",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
   "web3": {
     "keyword": "web3",
-    "definition": "指在区块链上运行的应用程序，任何人都可以参与其中，无需将个人数据货币化。"
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
   },
   "web3s": {
     "keyword": "web3s",
-    "definition": "指在区块链上运行的应用程序，任何人都可以参与其中，无需将个人数据货币化。"
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
   },
   "零知识": {
     "keyword": "零知识",

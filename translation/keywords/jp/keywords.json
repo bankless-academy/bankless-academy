@@ -113,7 +113,7 @@
   },
   "コールドウォレット": {
     "keyword": "コールドウォレット",
-    "definition": "ノンカストディアルウォレットの一種で、オフラインで保管され、永続的なインターネット接続を必要としない"
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
   },
   "担保": {
     "keyword": "担保",
@@ -187,6 +187,14 @@
     "keyword": "DEXアグリゲーター",
     "definition": "複数のソースからのDEX流動性を1つのインターフェースに組み合わせたプロトコル"
   },
+  "digital assets": {
+    "keyword": "digital assets",
+    "definition": "Anything, with value, stored digitally."
+  },
+  "digital assetss": {
+    "keyword": "digital assetss",
+    "definition": "Anything, with value, stored digitally."
+  },
   "デジタル署名": {
     "keyword": "デジタル署名",
     "definition": "デジタル空間における個人スタンプまたは物理的な署名の機能を提供する各ユーザーの固有の識別子"
@@ -245,7 +253,7 @@
   },
   "ハードウェアウォレット": {
     "keyword": "ハードウェアウォレット",
-    "definition": "ノンカストディアルウォレットの一種で、物理的なハードウェアデバイスに秘密鍵をオフラインで保管する"
+    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
   },
   "ハッシュ": {
     "keyword": "ハッシュ",
@@ -261,7 +269,7 @@
   },
   "ホットウォレット": {
     "keyword": "ホットウォレット",
-    "definition": "インターネットに永続的に接続されているノンカストディアルウォレットの一種"
+    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
   },
   "仲介トークン": {
     "keyword": "仲介トークン",
@@ -326,10 +334,6 @@
   "nft": {
     "keyword": "NFT",
     "definition": "一意の識別子を持たないEtherのようなファンジブルトークンと比較して、複製できないユニークなIDを持つトークン"
-  },
-  "ノンカストディアルウォレット": {
-    "keyword": "ノンカストディアルウォレット",
-    "definition": "秘密鍵そしてクリプトを本人のみが管理できるツール"
   },
   "オンチェーンガバナンス": {
     "keyword": "オンチェーンガバナンス",
@@ -443,6 +447,14 @@
     "keyword": "シードフレーズ",
     "definition": "セットアップ時にウォレットによって生成されるランダムな単語のグループであり、いかなる理由があろうとも、シードフレーズを他人と共有してはいけない"
   },
+  "self-custody wallet": {
+    "keyword": "self-custody wallet",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  },
+  "self-custody wallets": {
+    "keyword": "self-custody wallets",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  },
   "決済レイヤー": {
     "keyword": "決済レイヤー",
     "definition": "確定した取引から資産交換の詳細を記録するブロックチェーンの最下層。メインネットイーサリアムはイーサリアムのL2スケーリングソリューションの決済レイヤー"
@@ -555,9 +567,17 @@
     "keyword": "ウォレット",
     "definition": "ブロックチェーン上でクリプトを送受信するために使用されるアプリケーションまたはデバイス"
   },
+  "web2": {
+    "keyword": "web2",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
+  "web2s": {
+    "keyword": "web2s",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
   "web3": {
     "keyword": "web3",
-    "definition": "ブロックチェーン上で動作し、個人データを収益化することなく誰もが参加できるようにするアプリケーション"
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
   },
   "ゼロ知識": {
     "keyword": "ゼロ知識",

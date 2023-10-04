@@ -149,7 +149,7 @@
   },
   "billetera fría": {
     "keyword": "billetera fría",
-    "definition": "Un tipo de billetera no custodiada que se almacena fuera de línea y no requiere una conexión perpetua a Internet."
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
   },
   "colateral": {
     "keyword": "colateral",
@@ -169,7 +169,7 @@
   },
   "billeteras no custodiales": {
     "keyword": "billeteras no custodiales",
-    "definition": "Con una cartera no custodial, usted tiene el control exclusivo de sus claves privadas, que a su vez controlan sus activos criptográficos."
+    "definition": "Con una cartera de custodia, otra parte controla las claves privadas, controlando así el acceso a sus criptoactivos."
   },
   "billeteras de custodia": {
     "keyword": "billeteras de custodia",
@@ -247,6 +247,14 @@
     "keyword": "agregadores DEX",
     "definition": "Protocolo que combina la liquidez DEX de múltiples fuentes en una sola interfaz."
   },
+  "digital assets": {
+    "keyword": "digital assets",
+    "definition": "Anything, with value, stored digitally."
+  },
+  "digital assetss": {
+    "keyword": "digital assetss",
+    "definition": "Anything, with value, stored digitally."
+  },
   "firma digital": {
     "keyword": "firma digital",
     "definition": "Identificador único de cada usuario que cumple la función de sello personal o firma física en el espacio digital."
@@ -309,11 +317,11 @@
   },
   "billetera de hardware": {
     "keyword": "billetera de hardware",
-    "definition": "Un tipo de monedero sin custodia que almacena claves privadas fuera de línea en un dispositivo de hardware físico."
+    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
   },
   "monedero de hardware": {
     "keyword": "monedero de hardware",
-    "definition": "Un tipo de monedero sin custodia que almacena claves privadas fuera de línea en un dispositivo de hardware físico."
+    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
   },
   "hash": {
     "keyword": "hash",
@@ -333,7 +341,7 @@
   },
   "billetera caliente": {
     "keyword": "billetera caliente",
-    "definition": "Un tipo de monedero sin custodia que está perpetuamente conectado a Internet."
+    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
   },
   "token intermedio": {
     "keyword": "token intermedio",
@@ -551,6 +559,14 @@
     "keyword": "frase semilla",
     "definition": "Grupo de palabras aleatorias generadas por un monedero en la configuración, actúan como la llave maestra de TODAS las cuentas controladas por ese monedero. NUNCA COMPARTAS TU FRASE SEMILLA CON NADIE POR NINGÚN MOTIVO."
   },
+  "self-custody wallet": {
+    "keyword": "self-custody wallet",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  },
+  "self-custody wallets": {
+    "keyword": "self-custody wallets",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  },
   "capa de asentamiento": {
     "keyword": "capa de asentamiento",
     "definition": "El nivel \"más bajo\" de una blockchain que registra los detalles del intercambio de activos de las transacciones finalizadas. Mainnet Ethereum es la capa de liquidación para las soluciones de escalado de capa 2 de Ethereum."
@@ -703,9 +719,17 @@
     "keyword": "billeteras",
     "definition": "Una billetera es una aplicación o dispositivo utilizado para enviar y recibir criptoactivos en la cadena de bloques."
   },
+  "web2": {
+    "keyword": "web2",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
+  "web2s": {
+    "keyword": "web2s",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
   "web3": {
     "keyword": "web3",
-    "definition": "Se refiere a las aplicaciones que se ejecutan en la cadena de bloques y permiten que cualquiera participe sin monetizar sus datos personales."
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
   },
   "conocimiento-cero": {
     "keyword": "Conocimiento-cero",

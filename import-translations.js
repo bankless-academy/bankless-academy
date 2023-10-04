@@ -4,10 +4,11 @@ const fs = require('fs')
 
 async function main() {
   const languages = [
-    'fr',
+    'cn',
     'de',
     'es',
-    'cn',
+    'fr',
+    'it',
     'jp'
   ]
   const nameSpaces = [
