@@ -87,7 +87,7 @@ const HomePage = (): JSX.Element => {
               alt="Bankless Academy"
             />
             <Box>
-              <InternalLink href={`/lessons`}>
+              <InternalLink href={`/lessons`} alt="Explore Lessons">
                 <Button
                   variant="primary"
                   size="lg"

@@ -365,6 +365,10 @@ const withMixpanel = {
     if (embed && embed.length) {
       props.embed = embed
     }
+    const i18nextLng = localStorage.getItem('i18nextLng')
+    if (!props.language && i18nextLng?.length) {
+      props.language = i18nextLng
+    }
     mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
   },
   track_links: (query: Query, name: string) => {

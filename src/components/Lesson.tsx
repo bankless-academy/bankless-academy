@@ -278,7 +278,7 @@ const Lesson = ({
 
   useEffect(() => {
     Mixpanel.track('open_lesson', {
-      lesson: lesson?.name,
+      lesson: lesson?.englishName,
       language: i18n.language,
     })
     // preloading all lesson images after 3 seconds for smoother transitions
@@ -351,7 +351,7 @@ const Lesson = ({
         })
       // correct answer
       Mixpanel.track('quiz_correct_answer', {
-        lesson: lesson?.name,
+        lesson: lesson?.englishName,
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
         }`,
@@ -369,7 +369,7 @@ const Lesson = ({
         })
       // wrong answer
       Mixpanel.track('quiz_wrong_answer', {
-        lesson: lesson?.name,
+        lesson: lesson?.englishName,
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
         }`,

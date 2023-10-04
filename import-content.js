@@ -320,6 +320,7 @@ axios
       if (lesson.mirrorLink && mirrorId) {
         lesson.isArticle = true
         lesson.notionId = notion.id
+        lesson.englishName = lesson.name
         lesson.slug = slugify(lesson.name)
         delete lesson.quest
         await axios({
@@ -469,6 +470,7 @@ axios
         .get(`${POTION_API}/html?id=${notion.id}`)
         .then(async (htmlPage) => {
           lesson.notionId = notion.id
+          lesson.englishName = lesson.name
           lesson.slug = slugify(lesson.name)
           // add notionId to DB
           await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')

@@ -35,11 +35,11 @@ const LanguageSwitch = ({
                 router.push(`/lessons/${lesson.slug}`)
               )
               Mixpanel.track('open_lesson', {
-                lesson: lesson?.name,
+                lesson: lesson?.englishName,
                 language: 'en',
               })
               Mixpanel.track('change_language', {
-                lesson: lesson?.name,
+                lesson: lesson?.englishName,
                 language: 'en',
                 link: `/lessons/${lesson.slug}`,
                 name: 'en',
@@ -57,11 +57,11 @@ const LanguageSwitch = ({
                   router.push(`/lessons/${l}/${lesson.slug}`)
                 )
                 Mixpanel.track('open_lesson', {
-                  lesson: lesson?.name,
+                  lesson: lesson?.englishName,
                   language: l,
                 })
                 Mixpanel.track('change_language', {
-                  lesson: lesson?.name,
+                  lesson: lesson?.englishName,
                   language: l,
                   link: `/lessons/${l}/${lesson.slug}`,
                   name: l,

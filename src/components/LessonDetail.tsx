@@ -235,7 +235,10 @@ const LessonDetail = ({
                     </Box>
                     <Box>{lesson?.endOfLessonText}</Box>
                     <Box textAlign="center">
-                      <InternalLink href={`/feedback?tally=${tallyId}`}>
+                      <InternalLink
+                        href={`/feedback?tally=${tallyId}`}
+                        alt="Leave feedback"
+                      >
                         <Button variant="primaryBig" size="lg">
                           {t('Leave feedback')}
                         </Button>

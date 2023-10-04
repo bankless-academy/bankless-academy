@@ -5,6 +5,7 @@ export type LanguageType = 'en' | 'cn' | 'de' | 'es' | 'fr' | 'it' | 'jp'
 
 export interface LessonType {
   name: string
+  englishName: string
   slug: string
   notionId: string
   badgeId?: number

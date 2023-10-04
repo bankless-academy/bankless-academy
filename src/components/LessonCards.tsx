@@ -276,7 +276,7 @@ const LessonCards: React.FC = () => {
               ) : (
                 <InternalLink
                   href={`/lessons/${lesson.slug}`}
-                  alt={lesson.name}
+                  alt={lesson.englishName}
                 >
                   <LessonBanner
                     iswhitelabel={IS_WHITELABEL.toString()}
@@ -316,7 +316,7 @@ const LessonCards: React.FC = () => {
                       Mixpanel.track('click_internal_link', {
                         link: 'modal',
                         name: 'Lesson notification',
-                        lesson: lesson.name,
+                        lesson: lesson.englishName,
                       })
                     }}
                     cursor={isNotified ? 'default' : 'pointer'}
@@ -326,7 +326,7 @@ const LessonCards: React.FC = () => {
                 ) : (
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     margin={lessonHasSponsor ? 'auto' : ''}
                     w={lessonHasSponsor ? '100%' : 'inherit'}
                   >

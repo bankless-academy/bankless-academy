@@ -144,7 +144,7 @@ const OptimismGovernance = (
                   </Text>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     target="_blank"
                   >
                     <Image src={lesson.lessonImageLink} />
@@ -153,7 +153,7 @@ const OptimismGovernance = (
                 <Box pb="8">
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     target="_blank"
                   >
                     <Button variant="primary">{t('Read Entry')}</Button>
