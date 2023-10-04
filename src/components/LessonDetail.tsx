@@ -17,7 +17,7 @@ import NFT from 'components/NFT'
 import ExternalLink from 'components/ExternalLink'
 import { DOMAIN_URL, TOKEN_GATING_ENABLED } from 'constants/index'
 import { useEffect } from 'react'
-import { scrollTop } from 'utils'
+import { Mixpanel, scrollTop } from 'utils'
 import OpenLesson from 'components/OpenLesson'
 import LanguageSwitch from 'components/LanguageSwitch'
 
@@ -58,7 +58,7 @@ const LessonDetail = ({
   lesson: LessonType
   extraKeywords?: any
 }): React.ReactElement => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const [, isSmallScreen] = useSmallScreen()
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
@@ -69,6 +69,10 @@ const LessonDetail = ({
   )
 
   useEffect((): void => {
+    Mixpanel.track('lesson_briefing', {
+      lesson: lesson?.englishName,
+      language: i18n.language,
+    })
     scrollTop()
     setOpenLessonLS(closeLesson(openLessonLS, lesson))
   }, [])

@@ -34,10 +34,13 @@ const LanguageSwitch = ({
               i18n.changeLanguage('en', () =>
                 router.push(`/lessons/${lesson.slug}`)
               )
-              Mixpanel.track('open_lesson', {
-                lesson: lesson?.englishName,
-                language: 'en',
-              })
+              Mixpanel.track(
+                lesson.isArticle ? 'open_lesson' : 'lesson_briefing',
+                {
+                  lesson: lesson?.englishName,
+                  language: 'en',
+                }
+              )
               Mixpanel.track('change_language', {
                 lesson: lesson?.englishName,
                 language: 'en',
@@ -56,10 +59,13 @@ const LanguageSwitch = ({
                 i18n.changeLanguage(l, () =>
                   router.push(`/lessons/${l}/${lesson.slug}`)
                 )
-                Mixpanel.track('open_lesson', {
-                  lesson: lesson?.englishName,
-                  language: l,
-                })
+                Mixpanel.track(
+                  lesson.isArticle ? 'open_lesson' : 'lesson_briefing',
+                  {
+                    lesson: lesson?.englishName,
+                    language: l,
+                  }
+                )
                 Mixpanel.track('change_language', {
                   lesson: lesson?.englishName,
                   language: l,
