@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 
 import { LessonType } from 'entities/lesson'
+import { Mixpanel } from 'utils'
 
 const LanguageSwitch = ({
   lesson,
@@ -15,13 +16,10 @@ const LanguageSwitch = ({
 
   const languages = lesson.languages
 
-  // TEMP
-  if (i18n.language === 'en' && lesson.slug !== 'blockchain-basics') return null
-
   return (
     <Box>
       {languages?.length ? (
-        <Box textAlign="center">
+        <Box textAlign="center" maxW="400px" m="auto">
           <Box display="inline-flex">{t('Select language:')}</Box>
           <Button
             variant={
@@ -31,10 +29,24 @@ const LanguageSwitch = ({
                 : 'outline'
             }
             ml={3}
+            mb={3}
             onClick={() => {
               i18n.changeLanguage('en', () =>
                 router.push(`/lessons/${lesson.slug}`)
               )
+              Mixpanel.track(
+                lesson.isArticle ? 'open_lesson' : 'lesson_briefing',
+                {
+                  lesson: lesson?.englishName,
+                  language: 'en',
+                }
+              )
+              Mixpanel.track('change_language', {
+                lesson: lesson?.englishName,
+                language: 'en',
+                link: `/lessons/${lesson.slug}`,
+                name: 'en',
+              })
             }}
           >
             EN
@@ -47,8 +59,22 @@ const LanguageSwitch = ({
                 i18n.changeLanguage(l, () =>
                   router.push(`/lessons/${l}/${lesson.slug}`)
                 )
+                Mixpanel.track(
+                  lesson.isArticle ? 'open_lesson' : 'lesson_briefing',
+                  {
+                    lesson: lesson?.englishName,
+                    language: l,
+                  }
+                )
+                Mixpanel.track('change_language', {
+                  lesson: lesson?.englishName,
+                  language: l,
+                  link: `/lessons/${l}/${lesson.slug}`,
+                  name: l,
+                })
               }}
               ml={3}
+              mb={3}
             >
               {l.toUpperCase()}
             </Button>

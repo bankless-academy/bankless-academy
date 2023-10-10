@@ -104,7 +104,9 @@ const SubscriptionModal = ({
                       }`,
                       'true'
                     )
-                    const paramStats = lesson ? { lesson: lesson.name } : {}
+                    const paramStats = lesson
+                      ? { lesson: lesson.englishName }
+                      : {}
                     Mixpanel.track(
                       lesson ? 'subscribe_lesson' : 'subscribe_newsletter',
                       {

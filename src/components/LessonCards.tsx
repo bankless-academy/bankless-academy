@@ -206,7 +206,7 @@ const LessonCards: React.FC = () => {
                 display="flex"
                 alignItems="center"
               >
-                {lesson.name}
+                {t(lesson.name, { ns: 'lesson' })}
               </Text>
               <Box display="flex" justifyContent="space-between" my="4">
                 {isBadgeMinted || isArticleRead || lesson.duration ? (
@@ -260,7 +260,7 @@ const LessonCards: React.FC = () => {
                 display="flex"
                 alignItems="center"
               >
-                {lesson.description}
+                {t(lesson.description, { ns: 'lesson' })}
               </Text>
               {lesson.publicationStatus === 'planned' && all === undefined ? (
                 <LessonBanner
@@ -276,7 +276,7 @@ const LessonCards: React.FC = () => {
               ) : (
                 <InternalLink
                   href={`/lessons/${lesson.slug}`}
-                  alt={lesson.name}
+                  alt={lesson.englishName}
                 >
                   <LessonBanner
                     iswhitelabel={IS_WHITELABEL.toString()}
@@ -316,7 +316,7 @@ const LessonCards: React.FC = () => {
                       Mixpanel.track('click_internal_link', {
                         link: 'modal',
                         name: 'Lesson notification',
-                        lesson: lesson.name,
+                        lesson: lesson.englishName,
                       })
                     }}
                     cursor={isNotified ? 'default' : 'pointer'}
@@ -326,7 +326,7 @@ const LessonCards: React.FC = () => {
                 ) : (
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     margin={lessonHasSponsor ? 'auto' : ''}
                     w={lessonHasSponsor ? '100%' : 'inherit'}
                   >

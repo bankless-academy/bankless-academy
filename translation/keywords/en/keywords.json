@@ -74,11 +74,6 @@
     "keyword_plural": "block rewards",
     "definition": "The amount of a blockchain’s native asset given to the proposer of a new valid block."
   },
-  "block space": {
-    "keyword": "block space",
-    "keyword_plural": "block spaces",
-    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
-  },
   "blockchain": {
     "keyword": "blockchain",
     "keyword_plural": "blockchains",
@@ -93,6 +88,11 @@
     "keyword": "Blockchain Trilemma",
     "keyword_plural": "Blockchain Trilemmas",
     "definition": "The problem describing the need for all 3 blockchain qualities: Security, Scalability, and Decentralization."
+  },
+  "blockspace": {
+    "keyword": "blockspace",
+    "keyword_plural": "blockspaces",
+    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
   },
   "borrower": {
     "keyword": "borrower",
@@ -112,12 +112,12 @@
   "centralized exchange": {
     "keyword": "centralized exchange",
     "keyword_plural": "centralized exchanges",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "cex": {
     "keyword": "CEX",
     "keyword_plural": "CEXs",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "chain": {
     "keyword": "chain",
@@ -132,7 +132,7 @@
   "cold wallet": {
     "keyword": "cold wallet",
     "keyword_plural": "cold wallets",
-    "definition": "A type of non-custodial wallet that is stored offline and does not require a perpetual internet connection."
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
   },
   "collateral": {
     "keyword": "collateral",
@@ -209,6 +209,11 @@
     "keyword_plural": "DEX aggregators",
     "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
   },
+  "digital assets": {
+    "keyword": "digital assets",
+    "keyword_plural": "digital assetss",
+    "definition": "Anything, with value, stored digitally."
+  },
   "digital signature": {
     "keyword": "digital signature",
     "keyword_plural": "digital signatures",
@@ -225,14 +230,14 @@
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
   "erc-20": {
-    "keyword": "erc-20",
-    "keyword_plural": "erc-20s",
-    "definition": "A standard for transferable tokens on Ethereum."
+    "keyword": "ERC-20",
+    "keyword_plural": "ERC-20s",
+    "definition": "A standard for transferable fungible tokens on Ethereum. These tokens are divisible and non-unique."
   },
   "erc-721": {
-    "keyword": "erc-721",
-    "keyword_plural": "erc-721s",
-    "definition": "A standard for non-transferable tokens on Ethereum."
+    "keyword": "ERC-721",
+    "keyword_plural": "ERC-721s",
+    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
   },
   "ethereum virtual machine": {
     "keyword": "Ethereum Virtual Machine",
@@ -247,7 +252,7 @@
   "fork": {
     "keyword": "fork",
     "keyword_plural": "forks",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
   "fraud proof": {
     "keyword": "fraud proof",
@@ -272,7 +277,7 @@
   "hardware wallet": {
     "keyword": "hardware wallet",
     "keyword_plural": "hardware wallets",
-    "definition": "A type of non-custodial wallet that stores private keys offline in a physical hardware device."
+    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
   },
   "hash": {
     "keyword": "hash",
@@ -292,7 +297,7 @@
   "hot wallet": {
     "keyword": "hot wallet",
     "keyword_plural": "hot wallets",
-    "definition": "A type of non-custodial wallet that is perpetually connected to the internet."
+    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
   },
   "intermediary token": {
     "keyword": "intermediary token",
@@ -379,11 +384,6 @@
     "keyword_plural": "NFTs",
     "definition": "(Non-fungible Token) A token with a unique ID that cannot be replicated, as compared to a fungible token like Ether that has no unique identifier."
   },
-  "non-custodial wallet": {
-    "keyword": "non-custodial wallet",
-    "keyword_plural": "non-custodial wallets",
-    "definition": "With a non-custodial wallet, you have sole control of your private keys, which in turn control your crypto assets."
-  },
   "onchain governance": {
     "keyword": "onchain governance",
     "keyword_plural": "onchain governances",
@@ -432,7 +432,7 @@
   "phishing": {
     "keyword": "phishing",
     "keyword_plural": "phishings",
-    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
   },
   "poap": {
     "keyword": "POAP",
@@ -507,7 +507,7 @@
   "scalability": {
     "keyword": "Scalability",
     "keyword_plural": "Scalabilitys",
-    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
   },
   "scam-token": {
     "keyword": "scam-token",
@@ -523,6 +523,11 @@
     "keyword": "seed phrase",
     "keyword_plural": "seed phrases",
     "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
+  },
+  "self-custody wallet": {
+    "keyword": "self-custody wallet",
+    "keyword_plural": "self-custody wallets",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
   },
   "settlement layer": {
     "keyword": "settlement layer",
@@ -562,7 +567,7 @@
   "social engineering": {
     "keyword": "social engineering",
     "keyword_plural": "social engineerings",
-    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
   "spend": {
     "keyword": "spend",
@@ -669,10 +674,15 @@
     "keyword_plural": "wallets",
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
   },
+  "web2": {
+    "keyword": "web2",
+    "keyword_plural": "web2s",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
   "web3": {
     "keyword": "web3",
     "keyword_plural": "web3s",
-    "definition": "Refers to applications that run on the blockchain and allow anyone to participate without monetizing their personal data."
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
   },
   "zero-knowledge": {
     "keyword": "Zero-Knowledge",

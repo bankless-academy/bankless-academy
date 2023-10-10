@@ -155,7 +155,7 @@ const DecentralizedExchanges = (
                   </Text>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     target="_blank"
                   >
                     <Image src={lesson.lessonImageLink} />
@@ -164,7 +164,7 @@ const DecentralizedExchanges = (
                 <Box pb="8">
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     target="_blank"
                   >
                     <Button variant="primary">Read Entry</Button>

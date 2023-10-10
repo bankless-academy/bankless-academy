@@ -44,7 +44,7 @@ const FeaturedLessons: React.FC = () => {
               >
                 <InternalLink
                   href={`/lessons/${lesson.slug}`}
-                  alt={lesson.name}
+                  alt={lesson.englishName}
                 >
                   <Image src={lesson.lessonImageLink} />
                 </InternalLink>
@@ -52,13 +52,15 @@ const FeaturedLessons: React.FC = () => {
             )
             const LessonDescription = (
               <Box alignSelf="center" mt="4">
-                <Heading fontSize="2xl">{lesson.name}</Heading>
+                <Heading fontSize="2xl">
+                  {t(lesson.name, { ns: 'lesson' })}
+                </Heading>
                 <Text fontSize="lg" my="4">
-                  {lesson.marketingDescription}
+                  {t(lesson.description, { ns: 'lesson' })}
                 </Text>
                 <InternalLink
                   href={`/lessons/${lesson.slug}`}
-                  alt={lesson.name}
+                  alt={lesson.englishName}
                   margin={lessonHasSponsor ? 'auto' : ''}
                   w={lessonHasSponsor ? '100%' : 'inherit'}
                 >

@@ -1,6 +1,6 @@
 ---
 TITLE: Optimism Governance
-DESCRIPTION: Claim your first piece of network ownership and start voting onchain!
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: English
 WRITERS: Tetranome
 TRANSLATORS: X
@@ -296,7 +296,7 @@ Duties include:
 
 The Citizens’ House also ensures that Token House proposals are mission-aligned, using `veto` mechanics to waive unaligned changes to the network.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-0714976e.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
 
 # Citizens’ House: Joining, Voting, Delegating
 

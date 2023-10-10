@@ -50,6 +50,10 @@ export default async function handler(
     )?.notionId
     if (!notionId) return res.status(403).json({ error: 'notionId not found' })
 
+    const lessonName = LESSONS.find(
+      (lesson) => lesson.badgeId === badgeId
+    )?.englishName
+
     const [credential] = await db(TABLES.credentials)
       .select('id')
       .where(TABLE.credentials.notion_id, notionId)
@@ -266,6 +270,7 @@ export default async function handler(
           .update({ transaction_at: db.raw("NOW()"), transaction_hash: mint.hash })
         console.log(`updated `, updated)
         trackBE(address, 'mint_badge', {
+          lesson: lessonName,
           badgeId,
           address,
           gas: options

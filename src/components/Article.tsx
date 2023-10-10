@@ -522,7 +522,10 @@ const Article = ({
   const { address } = useAccount()
 
   useEffect(() => {
-    Mixpanel.track('open_lesson', { lesson: lesson?.name })
+    Mixpanel.track('open_lesson', {
+      lesson: lesson?.englishName,
+      language: i18n.language,
+    })
     // mark article as read after 30 seconds
     setTimeout(() => {
       localStorage.setItem(lesson.slug, 'true')
@@ -700,7 +703,7 @@ const Article = ({
           borderRadius="lg"
           textAlign="center"
         >
-          <InternalLink href={`/lessons`}>
+          <InternalLink href={`/lessons`} alt="Explore more Lessons">
             <Button variant="primary" w="100%">
               {t('Explore more Lessons')}
             </Button>

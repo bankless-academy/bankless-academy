@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect, useLayoutEffect } from 'react'
 import {
   Box,
   Text,
@@ -193,11 +193,13 @@ const Lesson = ({
 
   const buttonLeftRef = useRef(null)
   const buttonRightRef = useRef(null)
+  const slideRef = useRef(null)
   const answerRef = useRef([])
   const [currentSlide, setCurrentSlide] = useState(
     parseInt(localStorage.getItem(lesson.slug) || '0')
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
+  const [longSlide, setLongSlide] = useState<boolean>(false)
   const [, isSmallScreen] = useSmallScreen()
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
@@ -222,6 +224,16 @@ const Lesson = ({
   // walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb44'
 
   const keywords = { ...KEYWORDS, ...extraKeywords }
+
+  useLayoutEffect(() => {
+    if (
+      slideRef?.current?.offsetHeight > 600 &&
+      !isSmallScreen &&
+      slide.type === 'LEARN'
+    )
+      setLongSlide(true)
+    else setLongSlide(false)
+  }, [slide, isSmallScreen])
 
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
@@ -266,7 +278,10 @@ const Lesson = ({
   }, [address])
 
   useEffect(() => {
-    Mixpanel.track('open_lesson', { lesson: lesson?.name })
+    Mixpanel.track('open_lesson', {
+      lesson: lesson?.englishName,
+      language: i18n.language,
+    })
     // preloading all lesson images after 3 seconds for smoother transitions
     setTimeout(() => {
       lesson.imageLinks.forEach((imageLink) => {
@@ -337,7 +352,7 @@ const Lesson = ({
         })
       // correct answer
       Mixpanel.track('quiz_correct_answer', {
-        lesson: lesson?.name,
+        lesson: lesson?.englishName,
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
         }`,
@@ -355,7 +370,7 @@ const Lesson = ({
         })
       // wrong answer
       Mixpanel.track('quiz_wrong_answer', {
-        lesson: lesson?.name,
+        lesson: lesson?.englishName,
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
         }`,
@@ -524,7 +539,9 @@ const Lesson = ({
           pt={4}
         >
           {slide.type === 'LEARN' && (
-            <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
+            <Box ref={slideRef}>
+              {ReactHtmlParser(slide.content, { transform })}
+            </Box>
           )}
           {slide.type === 'QUIZ' && (
             <>
@@ -641,6 +658,7 @@ const Lesson = ({
               size="lg"
               onClick={goToPrevSlide}
               leftIcon={<ArrowBackIcon />}
+              ml={longSlide ? '600px' : '0'}
             >
               {isLastSlide && isSmallScreen ? '' : 'Prev'}
             </Button>

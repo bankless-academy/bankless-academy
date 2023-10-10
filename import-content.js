@@ -155,6 +155,7 @@ const KEY_MATCHING = {
 
 const args = process.argv
 const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : process.env.DEFAULT_CONTENT_DB_ID || DEFAULT_NOTION_ID
+const TRANSLATION_ONLY = args[2] === 'TR'
 console.log('NOTION_ID', NOTION_ID)
 
 const slugify = (text) => text.toLowerCase()
@@ -211,6 +212,20 @@ const importTranslations = async (lesson) => {
       if (crowdin.status === 200) {
         // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
         const newTranslation = crowdin.data
+        const [, title, description] = crowdin.data.match(/---\nTITLE:\s(.*?)\nDESCRIPTION:\s(.*?)\n/)
+        // console.log('title', title)
+        // console.log('description', description)
+        const lessonInfoPath = `translation/website/${language}/lesson.json`
+        const lessonInfo = fs.existsSync(lessonInfoPath) ? await fs.promises.readFile(lessonInfoPath, 'utf8') : '{}'
+        const translationInfo = {}
+        translationInfo[lesson.name] = title
+        translationInfo[lesson.description] = description
+        // console.log('translationInfo', translationInfo)
+        const jsonLessonInfo = { ...JSON.parse(lessonInfo), ...translationInfo }
+        // console.log('jsonLessonInfo', jsonLessonInfo)
+        fs.writeFile(lessonInfoPath, `${JSON.stringify(jsonLessonInfo, null, 2)}`, (error) => {
+          if (error) throw error
+        })
         // console.log(newTranslation)
         const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
         const existingTranslation = fs.existsSync(lessonPath) ? await fs.promises.readFile(lessonPath, 'utf8') : ''
@@ -284,6 +299,8 @@ axios
       if (lesson.moduleId === undefined) delete lesson.moduleId
       else lesson.moduleId = lesson.moduleId[0]
       if (lesson.languages === undefined) delete lesson.languages
+      // sort languages alphabetically
+      else lesson.languages.sort()
       if (lesson.lessonWriters === undefined) delete lesson.lessonWriters
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
       if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
@@ -303,6 +320,7 @@ axios
       if (lesson.mirrorLink && mirrorId) {
         lesson.isArticle = true
         lesson.notionId = notion.id
+        lesson.englishName = lesson.name
         lesson.slug = slugify(lesson.name)
         delete lesson.quest
         await axios({
@@ -452,6 +470,7 @@ axios
         .get(`${POTION_API}/html?id=${notion.id}`)
         .then(async (htmlPage) => {
           lesson.notionId = notion.id
+          lesson.englishName = lesson.name
           lesson.slug = slugify(lesson.name)
           // add notionId to DB
           await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
@@ -728,9 +747,10 @@ const LESSONS: LessonType[] = ${stringifyObject(lessons, {
 
 export default LESSONS
 `
-      fs.writeFile(`src/constants/${LESSON_FILENAME}.ts`, FILE_CONTENT, (error) => {
-        if (error) throw error
-      })
+      if (!TRANSLATION_ONLY)
+        fs.writeFile(`src/constants/${LESSON_FILENAME}.ts`, FILE_CONTENT, (error) => {
+          if (error) throw error
+        })
       console.log(
         `export done -> check syntax & typing errors in src/constants/${LESSON_FILENAME}.ts`
       )

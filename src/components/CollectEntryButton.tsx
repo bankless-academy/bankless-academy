@@ -182,8 +182,9 @@ const CollectEntryButton = ({
           </Button>
         ) : (
           <Button
-            isDisabled={isLoading}
-            loadingText={t('Minting ...')}
+            isDisabled={isLoading || isMinting}
+            isLoading={isLoading || isMinting}
+            loadingText={isMinting ? t('Collecting Entry') : t('Minting ...')}
             variant="primaryGold"
             w="100%"
             onClick={async () => {
@@ -198,7 +199,7 @@ const CollectEntryButton = ({
                     setIsMinting(true)
                     setTimeout(() => {
                       setIsMinting(false)
-                    }, 10000)
+                    }, 3000)
                     write?.()
                   }
                 }

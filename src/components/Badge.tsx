@@ -19,20 +19,21 @@ const Badge = ({
   lesson: LessonType
   isQuestCompleted: boolean
 }): JSX.Element => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [isBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${lesson.badgeId}`,
     false
   )
   const [kudosMintedLS] = useLocalStorage(`kudosMinted`, [])
   // TODO: TRANSLATE
+  const langURL = i18n.language !== 'en' ? `${i18n.language}/` : ''
   const share = `I've just claimed my "${
     lesson.name
-  }" on-chain credential at @${TWITTER_ACCOUNT} 🎉
+  }" onchain credential at @${TWITTER_ACCOUNT} 🎉
 ${
   IS_WHITELABEL
-    ? `${DOMAIN_URL}/lessons/${lesson.slug}`
-    : `${DOMAIN_URL}/lessons/${lesson.slug}
+    ? `${DOMAIN_URL}/lessons/${langURL}${lesson.slug}`
+    : `${DOMAIN_URL}/lessons/${langURL}${lesson.slug}
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 }`

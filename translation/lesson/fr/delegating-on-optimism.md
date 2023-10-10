@@ -92,11 +92,11 @@ Remarque : cela ne compte pas pour la quête de la leçon ["Gouvernance d'Optimi
 
 Vous pouvez vous passer de la délégation et vous représenter vous-même en suivant les votes sous l'onglet "Propositions" [Proposals] sur Optimism Agora.
 
-Remarque : cela ne compte pas non plus pour la quête de la leçon ["Gouvernance d'Optimism"](https://app.banklessacademy.com/lessons/optimism-governance) à l'Academie Bankless, mais tu pourras le faire une fois que tu auras obtenu ton badge !
+Remarque : cela ne compte pas non plus pour la quête de la leçon ["Gouvernance d'Optimism"](https://app.banklessacademy.com/lessons/optimism-governance) à l'Academie Bankless, mais vous pouvez le faire une fois que tu auras obtenu ton badge !
 
 
 ---
 
 **Auteur**
 
-**[Tetranome](https://twitter.com/Tetranome)** est le Champion du projet à Bankless Academy, se concentrant sur l'expérience utilisateur, l'interface, la conception et le contenu.
+**[Tetranome](https://twitter.com/Tetranome)** est le Champion du projet Bankless Academy, se concentrant sur l'expérience utilisateur, l'interface, la conception et le contenu.

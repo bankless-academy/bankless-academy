@@ -65,7 +65,7 @@ const Stats = (): JSX.Element => {
               return (
                 <>
                   <p>
-                    {`${index + 1}. ${lesson.name}: `}
+                    {`${index + 1}. ${lesson.englishName}: `}
                     {lessonCompleted}
                   </p>
                 </>

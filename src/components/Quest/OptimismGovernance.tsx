@@ -116,8 +116,9 @@ const OptimismGovernance = (
                 </Button>
               </VStack>
               <Box mt="8">
+                {t('Tip: ')}
                 {t(
-                  "Tip: Check our Explorer's Handbook entry on 'How to delegate on Optimism' to learn how to delegate."
+                  "Check our Explorer's Handbook entry on 'How to delegate on Optimism' to learn how to delegate."
                 )}
               </Box>
               {isTransactionVerified !== 'true' && (
@@ -143,7 +144,7 @@ const OptimismGovernance = (
                   </Text>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     target="_blank"
                   >
                     <Image src={lesson.lessonImageLink} />
@@ -152,7 +153,7 @@ const OptimismGovernance = (
                 <Box pb="8">
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     target="_blank"
                   >
                     <Button variant="primary">{t('Read Entry')}</Button>

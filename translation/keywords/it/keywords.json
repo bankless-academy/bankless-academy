@@ -1,0 +1,1114 @@
+{
+  "2 factor authentication": {
+    "keyword": "2 Factor Authentication",
+    "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+  },
+  "2 factor authentications": {
+    "keyword": "2 Factor Authentications",
+    "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+  },
+  "51% attack": {
+    "keyword": "51% attack",
+    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+  },
+  "51% attacks": {
+    "keyword": "51% attacks",
+    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+  },
+  "address": {
+    "keyword": "address",
+    "definition": "Unique public identifier for an entity on a blockchain."
+  },
+  "addresss": {
+    "keyword": "addresss",
+    "definition": "Unique public identifier for an entity on a blockchain."
+  },
+  "aggregator": {
+    "keyword": "aggregator",
+    "definition": "Tool that combines multiple sources, to offer competitive options."
+  },
+  "aggregators": {
+    "keyword": "aggregators",
+    "definition": "Tool that combines multiple sources, to offer competitive options."
+  },
+  "airdrop": {
+    "keyword": "airdrop",
+    "definition": "A free distribution of crypto assets to users."
+  },
+  "airdrops": {
+    "keyword": "airdrops",
+    "definition": "A free distribution of crypto assets to users."
+  },
+  "allowance": {
+    "keyword": "allowance",
+    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
+  },
+  "allowances": {
+    "keyword": "allowances",
+    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
+  },
+  "alternative layer 1": {
+    "keyword": "alternative Layer 1",
+    "definition": "Layer 1 blockchains other than Ethereum and Bitcoin."
+  },
+  "alternative layer 1s": {
+    "keyword": "alternative Layer 1s",
+    "definition": "Layer 1 blockchains other than Ethereum and Bitcoin."
+  },
+  "amm": {
+    "keyword": "AMM",
+    "definition": "(Automated Market Maker) A trade matchmaking system, based on a public algorithm."
+  },
+  "amms": {
+    "keyword": "AMMs",
+    "definition": "(Automated Market Maker) A trade matchmaking system, based on a public algorithm."
+  },
+  "asynchronous": {
+    "keyword": "asynchronous",
+    "definition": "Communication between multiple collaborators, where participants don’t have to be present at time of messaging."
+  },
+  "asynchronouss": {
+    "keyword": "asynchronouss",
+    "definition": "Communication between multiple collaborators, where participants don’t have to be present at time of messaging."
+  },
+  "bet": {
+    "keyword": "bet",
+    "definition": "Risking money in exchange for greater rewards."
+  },
+  "bets": {
+    "keyword": "bets",
+    "definition": "Risking money in exchange for greater rewards."
+  },
+  "block": {
+    "keyword": "Block",
+    "definition": "A group of transactions on the blockchain."
+  },
+  "blocks": {
+    "keyword": "Blocks",
+    "definition": "A group of transactions on the blockchain."
+  },
+  "block explorer": {
+    "keyword": "block explorer",
+    "definition": "Search and exploration tool for blockchain data."
+  },
+  "block explorers": {
+    "keyword": "block explorers",
+    "definition": "Search and exploration tool for blockchain data."
+  },
+  "block hash": {
+    "keyword": "block hash",
+    "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
+  },
+  "block hashs": {
+    "keyword": "block hashs",
+    "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
+  },
+  "block producer": {
+    "keyword": "block producer",
+    "definition": "The user whose hardware is chosen to verify a block's transactions and begin the next block on most Proof-of-Stake (PoS) blockchains."
+  },
+  "block producers": {
+    "keyword": "block producers",
+    "definition": "The user whose hardware is chosen to verify a block's transactions and begin the next block on most Proof-of-Stake (PoS) blockchains."
+  },
+  "block reward": {
+    "keyword": "block reward",
+    "definition": "The amount of a blockchain’s native asset given to the proposer of a new valid block."
+  },
+  "block rewards": {
+    "keyword": "block rewards",
+    "definition": "The amount of a blockchain’s native asset given to the proposer of a new valid block."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "definition": "A shared, unchangeable database, or ledger, of recorded transactions."
+  },
+  "blockchains": {
+    "keyword": "blockchains",
+    "definition": "A shared, unchangeable database, or ledger, of recorded transactions."
+  },
+  "blockchain architecture": {
+    "keyword": "blockchain architecture",
+    "definition": "The structures for how data is stored in blockchain technology."
+  },
+  "blockchain architectures": {
+    "keyword": "blockchain architectures",
+    "definition": "The structures for how data is stored in blockchain technology."
+  },
+  "blockchain trilemma": {
+    "keyword": "Blockchain Trilemma",
+    "definition": "The problem describing the need for all 3 blockchain qualities: Security, Scalability, and Decentralization."
+  },
+  "blockchain trilemmas": {
+    "keyword": "Blockchain Trilemmas",
+    "definition": "The problem describing the need for all 3 blockchain qualities: Security, Scalability, and Decentralization."
+  },
+  "blockspace": {
+    "keyword": "blockspace",
+    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
+  },
+  "blockspaces": {
+    "keyword": "blockspaces",
+    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
+  },
+  "borrower": {
+    "keyword": "borrower",
+    "definition": "Willing to pay interest to lenders in order to borrow assets."
+  },
+  "borrowers": {
+    "keyword": "borrowers",
+    "definition": "Willing to pay interest to lenders in order to borrow assets."
+  },
+  "bridge": {
+    "keyword": "bridge",
+    "definition": "Connection that allows two different blockchain networks to communicate with each other and exchange assets."
+  },
+  "bridges": {
+    "keyword": "bridges",
+    "definition": "Connection that allows two different blockchain networks to communicate with each other and exchange assets."
+  },
+  "censorship-resistant": {
+    "keyword": "censorship-resistant",
+    "definition": "No government or company has control to determine what is or is not allowed."
+  },
+  "censorship-resistants": {
+    "keyword": "censorship-resistants",
+    "definition": "No government or company has control to determine what is or is not allowed."
+  },
+  "centralized exchange": {
+    "keyword": "centralized exchange",
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+  },
+  "centralized exchanges": {
+    "keyword": "centralized exchanges",
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+  },
+  "cex": {
+    "keyword": "CEX",
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+  },
+  "cexs": {
+    "keyword": "CEXs",
+    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+  },
+  "chain": {
+    "keyword": "chain",
+    "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
+  },
+  "chains": {
+    "keyword": "chains",
+    "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
+  },
+  "coin": {
+    "keyword": "coin",
+    "definition": "The native asset of a blockchain mostly used as a form of currency to facilitate transactions on the network."
+  },
+  "coins": {
+    "keyword": "coins",
+    "definition": "The native asset of a blockchain mostly used as a form of currency to facilitate transactions on the network."
+  },
+  "cold wallet": {
+    "keyword": "cold wallet",
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
+  },
+  "cold wallets": {
+    "keyword": "cold wallets",
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
+  },
+  "collateral": {
+    "keyword": "collateral",
+    "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
+  },
+  "collaterals": {
+    "keyword": "collaterals",
+    "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
+  },
+  "consensus": {
+    "keyword": "consensus",
+    "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
+  },
+  "consensuss": {
+    "keyword": "consensuss",
+    "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
+  },
+  "counterparty risk": {
+    "keyword": "counterparty risk",
+    "definition": "The risk that another party may not fulfil its part in an agreement."
+  },
+  "counterparty risks": {
+    "keyword": "counterparty risks",
+    "definition": "The risk that another party may not fulfil its part in an agreement."
+  },
+  "custodial wallet": {
+    "keyword": "custodial wallet",
+    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+  },
+  "custodial wallets": {
+    "keyword": "custodial wallets",
+    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+  },
+  "dao": {
+    "keyword": "DAO",
+    "definition": "(Decentralized Autonomous Organization) An organizational structure that uses blockchain technology to automate voting and management."
+  },
+  "daos": {
+    "keyword": "DAOs",
+    "definition": "(Decentralized Autonomous Organization) An organizational structure that uses blockchain technology to automate voting and management."
+  },
+  "dapp": {
+    "keyword": "dApp",
+    "definition": "A decentralized application that connects to decentralized networks and protocols."
+  },
+  "dapps": {
+    "keyword": "dApps",
+    "definition": "A decentralized application that connects to decentralized networks and protocols."
+  },
+  "decentralization": {
+    "keyword": "Decentralization",
+    "definition": "Principle that no single authority or entity should control the blockchain data."
+  },
+  "decentralizations": {
+    "keyword": "Decentralizations",
+    "definition": "Principle that no single authority or entity should control the blockchain data."
+  },
+  "decentralized": {
+    "keyword": "decentralized",
+    "definition": "No single authority or entity controls the data."
+  },
+  "decentralizeds": {
+    "keyword": "decentralizeds",
+    "definition": "No single authority or entity controls the data."
+  },
+  "decentralized exchange": {
+    "keyword": "decentralized exchange",
+    "definition": "(DEX) A protocol that facilitates exchange without requiring trusted intermediaries."
+  },
+  "decentralized exchanges": {
+    "keyword": "decentralized exchanges",
+    "definition": "(DEX) A protocol that facilitates exchange without requiring trusted intermediaries."
+  },
+  "decentralized finance": {
+    "keyword": "Decentralized Finance",
+    "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
+  },
+  "decentralized finances": {
+    "keyword": "Decentralized Finances",
+    "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
+  },
+  "defi": {
+    "keyword": "DeFi",
+    "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
+  },
+  "defis": {
+    "keyword": "DeFis",
+    "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
+  },
+  "delegate": {
+    "keyword": "delegate",
+    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+  },
+  "delegates": {
+    "keyword": "delegates",
+    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+  },
+  "delegation": {
+    "keyword": "delegation",
+    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+  },
+  "delegations": {
+    "keyword": "delegations",
+    "definition": "Giving a specific responsibility to another person, i.e. delegation of token voting power."
+  },
+  "dex": {
+    "keyword": "DEX",
+    "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
+  },
+  "dexs": {
+    "keyword": "DEXs",
+    "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
+  },
+  "dex aggregator": {
+    "keyword": "DEX aggregator",
+    "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
+  },
+  "dex aggregators": {
+    "keyword": "DEX aggregators",
+    "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
+  },
+  "digital assets": {
+    "keyword": "digital assets",
+    "definition": "Anything, with value, stored digitally."
+  },
+  "digital assetss": {
+    "keyword": "digital assetss",
+    "definition": "Anything, with value, stored digitally."
+  },
+  "digital signature": {
+    "keyword": "digital signature",
+    "definition": "The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space."
+  },
+  "digital signatures": {
+    "keyword": "digital signatures",
+    "definition": "The unique identifier for each user that serves the function of personal stamps or physical signatures in the digital space."
+  },
+  "earn": {
+    "keyword": "earn",
+    "definition": "Contributing value in exchange for rewards ; money verb on the skill cube."
+  },
+  "earns": {
+    "keyword": "earns",
+    "definition": "Contributing value in exchange for rewards ; money verb on the skill cube."
+  },
+  "epoch": {
+    "keyword": "Epoch",
+    "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
+  },
+  "epochs": {
+    "keyword": "Epochs",
+    "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
+  },
+  "erc-20": {
+    "keyword": "ERC-20",
+    "definition": "A standard for transferable fungible tokens on Ethereum. These tokens are divisible and non-unique."
+  },
+  "erc-20s": {
+    "keyword": "ERC-20s",
+    "definition": "A standard for transferable fungible tokens on Ethereum. These tokens are divisible and non-unique."
+  },
+  "erc-721": {
+    "keyword": "ERC-721",
+    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
+  },
+  "erc-721s": {
+    "keyword": "ERC-721s",
+    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
+  },
+  "ethereum virtual machine": {
+    "keyword": "Ethereum Virtual Machine",
+    "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network."
+  },
+  "ethereum virtual machines": {
+    "keyword": "Ethereum Virtual Machines",
+    "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network."
+  },
+  "fomo": {
+    "keyword": "FOMO",
+    "definition": "(Fear Of Missing Out) Anxiety or apprehension about not being included in something."
+  },
+  "fomos": {
+    "keyword": "FOMOs",
+    "definition": "(Fear Of Missing Out) Anxiety or apprehension about not being included in something."
+  },
+  "fork": {
+    "keyword": "fork",
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+  },
+  "forks": {
+    "keyword": "forks",
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+  },
+  "fraud proof": {
+    "keyword": "fraud proof",
+    "definition": "Evidence that a transaction is invalid and that fraud has occurred."
+  },
+  "fraud proofs": {
+    "keyword": "fraud proofs",
+    "definition": "Evidence that a transaction is invalid and that fraud has occurred."
+  },
+  "gas": {
+    "keyword": "gas",
+    "definition": "Transaction fees for blockchain networks."
+  },
+  "gass": {
+    "keyword": "gass",
+    "definition": "Transaction fees for blockchain networks."
+  },
+  "gasless transactions": {
+    "keyword": "gasless transactions",
+    "definition": "A transaction that pays gas using some of the token to be traded rather than the native coin of the blockchain network."
+  },
+  "gasless transactionss": {
+    "keyword": "gasless transactionss",
+    "definition": "A transaction that pays gas using some of the token to be traded rather than the native coin of the blockchain network."
+  },
+  "gwei": {
+    "keyword": "gwei",
+    "definition": "A unit used on Ethereum blockchain, equivalent to 0.000000001 ETH (one billionth), used commonly to describe gas prices."
+  },
+  "gweis": {
+    "keyword": "gweis",
+    "definition": "A unit used on Ethereum blockchain, equivalent to 0.000000001 ETH (one billionth), used commonly to describe gas prices."
+  },
+  "hardware wallet": {
+    "keyword": "hardware wallet",
+    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
+  },
+  "hardware wallets": {
+    "keyword": "hardware wallets",
+    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
+  },
+  "hash": {
+    "keyword": "hash",
+    "definition": "A digital fingerprint for information."
+  },
+  "hashs": {
+    "keyword": "hashs",
+    "definition": "A digital fingerprint for information."
+  },
+  "hashing function": {
+    "keyword": "hashing function",
+    "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
+  },
+  "hashing functions": {
+    "keyword": "hashing functions",
+    "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
+  },
+  "hodl": {
+    "keyword": "HODL",
+    "definition": "(Hold On for Dear Life) Crypto slang for not selling crypto no matter what the market conditions are."
+  },
+  "hodls": {
+    "keyword": "HODLs",
+    "definition": "(Hold On for Dear Life) Crypto slang for not selling crypto no matter what the market conditions are."
+  },
+  "hot wallet": {
+    "keyword": "hot wallet",
+    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
+  },
+  "hot wallets": {
+    "keyword": "hot wallets",
+    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
+  },
+  "intermediary token": {
+    "keyword": "intermediary token",
+    "definition": "A token that is part of the middle of a trade route, not the starting or ending token."
+  },
+  "intermediary tokens": {
+    "keyword": "intermediary tokens",
+    "definition": "A token that is part of the middle of a trade route, not the starting or ending token."
+  },
+  "invest": {
+    "keyword": "invest",
+    "definition": "The act of buying a coin/token that uses DeFi technology."
+  },
+  "invests": {
+    "keyword": "invests",
+    "definition": "The act of buying a coin/token that uses DeFi technology."
+  },
+  "kyc": {
+    "keyword": "KYC",
+    "definition": "(Know-Your-Customer) A government-sanctioned user identification process."
+  },
+  "kycs": {
+    "keyword": "KYCs",
+    "definition": "(Know-Your-Customer) A government-sanctioned user identification process."
+  },
+  "l1": {
+    "keyword": "L1",
+    "definition": "Layer 1 refers to a base network such as Bitcoin or Ethereum."
+  },
+  "l1s": {
+    "keyword": "L1s",
+    "definition": "Layer 1 refers to a base network such as Bitcoin or Ethereum."
+  },
+  "l2": {
+    "keyword": "L2",
+    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
+  },
+  "l2s": {
+    "keyword": "L2s",
+    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
+  },
+  "layer 1": {
+    "keyword": "Layer 1",
+    "definition": "Layer 1 refers to a base network such as Bitcoin or Ethereum."
+  },
+  "layer 1s": {
+    "keyword": "Layer 1s",
+    "definition": "Layer 1 refers to a base network such as Bitcoin or Ethereum."
+  },
+  "layer 2": {
+    "keyword": "Layer 2",
+    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
+  },
+  "layer 2s": {
+    "keyword": "Layer 2s",
+    "definition": "A blockchain that extends Ethereum scalability while inheriting Ethereum security."
+  },
+  "ledger": {
+    "keyword": "ledger",
+    "definition": "The record of all transactions that have ever occurred."
+  },
+  "ledgers": {
+    "keyword": "ledgers",
+    "definition": "The record of all transactions that have ever occurred."
+  },
+  "lender": {
+    "keyword": "lender",
+    "definition": "Deposits assets to earn interest."
+  },
+  "lenders": {
+    "keyword": "lenders",
+    "definition": "Deposits assets to earn interest."
+  },
+  "liquidity": {
+    "keyword": "liquidity",
+    "definition": "The quantity of a token available for trading."
+  },
+  "liquiditys": {
+    "keyword": "liquiditys",
+    "definition": "The quantity of a token available for trading."
+  },
+  "liquidity pool": {
+    "keyword": "liquidity pool",
+    "definition": "A communal vault of tokens that facilitates permissionless token swaps."
+  },
+  "liquidity pools": {
+    "keyword": "liquidity pools",
+    "definition": "A communal vault of tokens that facilitates permissionless token swaps."
+  },
+  "lp": {
+    "keyword": "LP",
+    "definition": "(Liquidity Provider) Blockchain users who loan their tokens to protocols in exchange for a share in fees."
+  },
+  "lps": {
+    "keyword": "LPs",
+    "definition": "(Liquidity Provider) Blockchain users who loan their tokens to protocols in exchange for a share in fees."
+  },
+  "market cap": {
+    "keyword": "market cap",
+    "definition": "The total value of a given token, or market sector."
+  },
+  "market caps": {
+    "keyword": "market caps",
+    "definition": "The total value of a given token, or market sector."
+  },
+  "meta-aggregator": {
+    "keyword": "meta-aggregator",
+    "definition": "A tool that brings together other aggregators into an extra overview layer."
+  },
+  "meta-aggregators": {
+    "keyword": "meta-aggregators",
+    "definition": "A tool that brings together other aggregators into an extra overview layer."
+  },
+  "mev": {
+    "keyword": "MEV",
+    "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
+  },
+  "mevs": {
+    "keyword": "MEVs",
+    "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
+  },
+  "network governance": {
+    "keyword": "network governance",
+    "definition": "The process by which a decentralized community reaches agreement on network features/upgrades."
+  },
+  "network governances": {
+    "keyword": "network governances",
+    "definition": "The process by which a decentralized community reaches agreement on network features/upgrades."
+  },
+  "nft": {
+    "keyword": "NFT",
+    "definition": "(Non-fungible Token) A token with a unique ID that cannot be replicated, as compared to a fungible token like Ether that has no unique identifier."
+  },
+  "nfts": {
+    "keyword": "NFTs",
+    "definition": "(Non-fungible Token) A token with a unique ID that cannot be replicated, as compared to a fungible token like Ether that has no unique identifier."
+  },
+  "onchain governance": {
+    "keyword": "onchain governance",
+    "definition": "The automated system that mediates changes to a blockchain’s structure."
+  },
+  "onchain governances": {
+    "keyword": "onchain governances",
+    "definition": "The automated system that mediates changes to a blockchain’s structure."
+  },
+  "open source": {
+    "keyword": "open source",
+    "definition": "Software with source code that anyone can inspect, modify, and enhance."
+  },
+  "open sources": {
+    "keyword": "open sources",
+    "definition": "Software with source code that anyone can inspect, modify, and enhance."
+  },
+  "optimistic rollup": {
+    "keyword": "optimistic rollup",
+    "definition": "A layer 2 rollup scaling solution that optimistically assumes all transactions in its “rolled up” transaction are valid until they are proven false by a fraud proof."
+  },
+  "optimistic rollups": {
+    "keyword": "optimistic rollups",
+    "definition": "A layer 2 rollup scaling solution that optimistically assumes all transactions in its “rolled up” transaction are valid until they are proven false by a fraud proof."
+  },
+  "otc": {
+    "keyword": "OTC",
+    "definition": "(Over the Counter) Trades made directly with private entities."
+  },
+  "otcs": {
+    "keyword": "OTCs",
+    "definition": "(Over the Counter) Trades made directly with private entities."
+  },
+  "over the counter": {
+    "keyword": "over the counter",
+    "definition": "(OTC) Trades made directly with private entities."
+  },
+  "over the counters": {
+    "keyword": "over the counters",
+    "definition": "(OTC) Trades made directly with private entities."
+  },
+  "payment channel": {
+    "keyword": "payment channel",
+    "definition": "Allows two parties to transact multiple times without the need for each transaction to be recorded on the blockchain."
+  },
+  "payment channels": {
+    "keyword": "payment channels",
+    "definition": "Allows two parties to transact multiple times without the need for each transaction to be recorded on the blockchain."
+  },
+  "peer-to-peer": {
+    "keyword": "peer-to-peer",
+    "definition": "A transaction between two parties that does not require a middleman or controlling entity."
+  },
+  "peer-to-peers": {
+    "keyword": "peer-to-peers",
+    "definition": "A transaction between two parties that does not require a middleman or controlling entity."
+  },
+  "peg": {
+    "keyword": "peg",
+    "definition": "Method of maintaining value equivalence between two or more assets."
+  },
+  "pegs": {
+    "keyword": "pegs",
+    "definition": "Method of maintaining value equivalence between two or more assets."
+  },
+  "permissionless": {
+    "keyword": "permissionless",
+    "definition": "Not requiring the permission of any entity."
+  },
+  "permissionlesss": {
+    "keyword": "permissionlesss",
+    "definition": "Not requiring the permission of any entity."
+  },
+  "phishing": {
+    "keyword": "phishing",
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
+  },
+  "phishings": {
+    "keyword": "phishings",
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
+  },
+  "poap": {
+    "keyword": "POAP",
+    "definition": "A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson."
+  },
+  "poaps": {
+    "keyword": "POAPs",
+    "definition": "A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson."
+  },
+  "pos": {
+    "keyword": "PoS",
+    "definition": "Proof of Stake consensus."
+  },
+  "poss": {
+    "keyword": "PoSs",
+    "definition": "Proof of Stake consensus."
+  },
+  "price impact": {
+    "keyword": "price impact",
+    "definition": "The amount prices on a DEX change due to the trade size."
+  },
+  "price impacts": {
+    "keyword": "price impacts",
+    "definition": "The amount prices on a DEX change due to the trade size."
+  },
+  "private key": {
+    "keyword": "private key",
+    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
+  },
+  "private keys": {
+    "keyword": "private keys",
+    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
+  },
+  "proof of stake": {
+    "keyword": "Proof of Stake",
+    "definition": "Blockchain Consensus algorithms that randomly choose a block producer based on a stake each entity has locked into the protocol."
+  },
+  "proof of stakes": {
+    "keyword": "Proof of Stakes",
+    "definition": "Blockchain Consensus algorithms that randomly choose a block producer based on a stake each entity has locked into the protocol."
+  },
+  "proof of work": {
+    "keyword": "Proof of Work",
+    "definition": "Blockchain Consensus algorithms that rely on “work” done by miners competing to create valid blocks by proposing blocks and seeing if each one has a valid hash."
+  },
+  "proof of works": {
+    "keyword": "Proof of Works",
+    "definition": "Blockchain Consensus algorithms that rely on “work” done by miners competing to create valid blocks by proposing blocks and seeing if each one has a valid hash."
+  },
+  "public": {
+    "keyword": "public",
+    "definition": "Public blockchains allow anyone to view the blockchain ledger."
+  },
+  "publics": {
+    "keyword": "publics",
+    "definition": "Public blockchains allow anyone to view the blockchain ledger."
+  },
+  "public good": {
+    "keyword": "public good",
+    "definition": "A public good is a commodity or service that is available to all members of society."
+  },
+  "public goods": {
+    "keyword": "public goods",
+    "definition": "A public good is a commodity or service that is available to all members of society."
+  },
+  "public key": {
+    "keyword": "public key",
+    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you."
+  },
+  "public keys": {
+    "keyword": "public keys",
+    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you."
+  },
+  "recovery phrase": {
+    "keyword": "recovery phrase",
+    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key."
+  },
+  "recovery phrases": {
+    "keyword": "recovery phrases",
+    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key."
+  },
+  "red flag": {
+    "keyword": "red flag",
+    "definition": "A warning sign of danger."
+  },
+  "red flags": {
+    "keyword": "red flags",
+    "definition": "A warning sign of danger."
+  },
+  "retropgf": {
+    "keyword": "RetroPGF",
+    "definition": "(Retroactive Public Goods Funding) A mechanism for funding projects, based on their historical impact."
+  },
+  "retropgfs": {
+    "keyword": "RetroPGFs",
+    "definition": "(Retroactive Public Goods Funding) A mechanism for funding projects, based on their historical impact."
+  },
+  "rollup": {
+    "keyword": "rollup",
+    "definition": "A layer-2 scaling solution that allows for processing a high number of off-chain transactions and aggregating them in a single, larger on-chain transaction, increasing transaction throughput and lowering costs."
+  },
+  "rollups": {
+    "keyword": "rollups",
+    "definition": "A layer-2 scaling solution that allows for processing a high number of off-chain transactions and aggregating them in a single, larger on-chain transaction, increasing transaction throughput and lowering costs."
+  },
+  "sandwich attack": {
+    "keyword": "sandwich attack",
+    "definition": "A hidden cost for users due to ordering of transactions by block producers."
+  },
+  "sandwich attacks": {
+    "keyword": "sandwich attacks",
+    "definition": "A hidden cost for users due to ordering of transactions by block producers."
+  },
+  "scalability": {
+    "keyword": "Scalability",
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
+  },
+  "scalabilitys": {
+    "keyword": "Scalabilitys",
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
+  },
+  "scam-token": {
+    "keyword": "scam-token",
+    "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds."
+  },
+  "scam-tokens": {
+    "keyword": "scam-tokens",
+    "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds."
+  },
+  "security": {
+    "keyword": "Security",
+    "definition": "Ability of a blockchain to withstand hacking attempts, code exploits, and economic exploits among other attacks, and continue to function as normal."
+  },
+  "securitys": {
+    "keyword": "Securitys",
+    "definition": "Ability of a blockchain to withstand hacking attempts, code exploits, and economic exploits among other attacks, and continue to function as normal."
+  },
+  "seed phrase": {
+    "keyword": "seed phrase",
+    "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
+  },
+  "seed phrases": {
+    "keyword": "seed phrases",
+    "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
+  },
+  "self-custody wallet": {
+    "keyword": "self-custody wallet",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  },
+  "self-custody wallets": {
+    "keyword": "self-custody wallets",
+    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  },
+  "settlement layer": {
+    "keyword": "settlement layer",
+    "definition": "The “lowest” level of a blockchain that records the details of asset exchange from finalized transactions. Mainnet Ethereum is the settlement layer for Ethereum layer 2 scaling solutions."
+  },
+  "settlement layers": {
+    "keyword": "settlement layers",
+    "definition": "The “lowest” level of a blockchain that records the details of asset exchange from finalized transactions. Mainnet Ethereum is the settlement layer for Ethereum layer 2 scaling solutions."
+  },
+  "settlement time": {
+    "keyword": "settlement time",
+    "definition": "The time need for a transaction to be confirmed."
+  },
+  "settlement times": {
+    "keyword": "settlement times",
+    "definition": "The time need for a transaction to be confirmed."
+  },
+  "sharding": {
+    "keyword": "sharding",
+    "definition": " The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability."
+  },
+  "shardings": {
+    "keyword": "shardings",
+    "definition": " The process of splitting a single blockchain into multiple chains that all run together in parallel to increase scalability."
+  },
+  "sidechain": {
+    "keyword": "sidechain",
+    "definition": "A mechanism that allows for the transfer of assets and transactions from a main blockchain to a separate, parallel blockchain (sidechain)."
+  },
+  "sidechains": {
+    "keyword": "sidechains",
+    "definition": "A mechanism that allows for the transfer of assets and transactions from a main blockchain to a separate, parallel blockchain (sidechain)."
+  },
+  "slippage": {
+    "keyword": "slippage",
+    "definition": "A change in buy price that helps your trade to execute."
+  },
+  "slippages": {
+    "keyword": "slippages",
+    "definition": "A change in buy price that helps your trade to execute."
+  },
+  "slippage tolerance": {
+    "keyword": "slippage tolerance",
+    "definition": "How much can prices change before your trade executes."
+  },
+  "slippage tolerances": {
+    "keyword": "slippage tolerances",
+    "definition": "How much can prices change before your trade executes."
+  },
+  "smart contract": {
+    "keyword": "smart contract",
+    "definition": "Computerized code that execute terms of a contract automatically."
+  },
+  "smart contracts": {
+    "keyword": "smart contracts",
+    "definition": "Computerized code that execute terms of a contract automatically."
+  },
+  "social engineering": {
+    "keyword": "social engineering",
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
+  },
+  "social engineerings": {
+    "keyword": "social engineerings",
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
+  },
+  "spend": {
+    "keyword": "spend",
+    "definition": "Using your crypto assets to pay for goods or services."
+  },
+  "spends": {
+    "keyword": "spends",
+    "definition": "Using your crypto assets to pay for goods or services."
+  },
+  "stake": {
+    "keyword": "stake",
+    "definition": "The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”."
+  },
+  "stakes": {
+    "keyword": "stakes",
+    "definition": "The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”."
+  },
+  "staking": {
+    "keyword": "staking",
+    "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")."
+  },
+  "stakings": {
+    "keyword": "stakings",
+    "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")."
+  },
+  "swap": {
+    "keyword": "swap",
+    "definition": "A trade from one token to another."
+  },
+  "swaps": {
+    "keyword": "swaps",
+    "definition": "A trade from one token to another."
+  },
+  "token": {
+    "keyword": "token",
+    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
+  },
+  "tokens": {
+    "keyword": "tokens",
+    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
+  },
+  "token allowance": {
+    "keyword": "token allowance",
+    "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
+  },
+  "token allowances": {
+    "keyword": "token allowances",
+    "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
+  },
+  "token distribution": {
+    "keyword": "token distribution",
+    "definition": "The way in which tokens are allocated across different stakeholder groups."
+  },
+  "token distributions": {
+    "keyword": "token distributions",
+    "definition": "The way in which tokens are allocated across different stakeholder groups."
+  },
+  "token pair": {
+    "keyword": "token pair",
+    "definition": "The two associated cryptocurrencies that make up a liquidity pool."
+  },
+  "token pairs": {
+    "keyword": "token pairs",
+    "definition": "The two associated cryptocurrencies that make up a liquidity pool."
+  },
+  "tps": {
+    "keyword": "TPS",
+    "definition": "A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain."
+  },
+  "tpss": {
+    "keyword": "TPSs",
+    "definition": "A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain."
+  },
+  "trade": {
+    "keyword": "trade",
+    "definition": "Exchanging assets or money for something valuable ; money verb on the skill cube."
+  },
+  "trades": {
+    "keyword": "trades",
+    "definition": "Exchanging assets or money for something valuable ; money verb on the skill cube."
+  },
+  "trade route": {
+    "keyword": "trade route",
+    "definition": "What is the path taken from starting token to ending token in a trade."
+  },
+  "trade routes": {
+    "keyword": "trade routes",
+    "definition": "What is the path taken from starting token to ending token in a trade."
+  },
+  "trade routing": {
+    "keyword": "trade routing",
+    "definition": "Planning the path taken from starting token to ending token in a trade."
+  },
+  "trade routings": {
+    "keyword": "trade routings",
+    "definition": "Planning the path taken from starting token to ending token in a trade."
+  },
+  "transaction": {
+    "keyword": "transaction",
+    "definition": "A record of transfer, monetary or otherwise, on the blockchain."
+  },
+  "transactions": {
+    "keyword": "transactions",
+    "definition": "A record of transfer, monetary or otherwise, on the blockchain."
+  },
+  "transaction finality": {
+    "keyword": "transaction finality",
+    "definition": "The time it takes to be sure that a transaction is valid and final, meaning it won't be reversed or changed."
+  },
+  "transaction finalitys": {
+    "keyword": "transaction finalitys",
+    "definition": "The time it takes to be sure that a transaction is valid and final, meaning it won't be reversed or changed."
+  },
+  "transaction hash": {
+    "keyword": "transaction hash",
+    "definition": "The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions."
+  },
+  "transaction hashs": {
+    "keyword": "transaction hashs",
+    "definition": "The unique identifier for each transaction; it is derived from the transaction data, the digital signature of the transaction sender, and a one-time use number to avoid duplicate transactions."
+  },
+  "transaction throughput": {
+    "keyword": "transaction throughput",
+    "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
+  },
+  "transaction throughputs": {
+    "keyword": "transaction throughputs",
+    "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
+  },
+  "trustless": {
+    "keyword": "trustless",
+    "definition": "The quality of operating without need to trust in people or institutions. (Automatic, not owned by any one person)."
+  },
+  "trustlesss": {
+    "keyword": "trustlesss",
+    "definition": "The quality of operating without need to trust in people or institutions. (Automatic, not owned by any one person)."
+  },
+  "tvl": {
+    "keyword": "TVL",
+    "definition": "(Total Value Locked) The overall amount of asset value stored in a specific place."
+  },
+  "tvls": {
+    "keyword": "TVLs",
+    "definition": "(Total Value Locked) The overall amount of asset value stored in a specific place."
+  },
+  "validating bridge": {
+    "keyword": "validating bridge",
+    "definition": "A validating bridge contract is a new design that removes the need to trust any external authority to decide if a withdrawal is valid."
+  },
+  "validating bridges": {
+    "keyword": "validating bridges",
+    "definition": "A validating bridge contract is a new design that removes the need to trust any external authority to decide if a withdrawal is valid."
+  },
+  "veto": {
+    "keyword": "veto",
+    "definition": "A vote in rejection of a governance proposal."
+  },
+  "vetos": {
+    "keyword": "vetos",
+    "definition": "A vote in rejection of a governance proposal."
+  },
+  "wallet": {
+    "keyword": "wallet",
+    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+  },
+  "wallets": {
+    "keyword": "wallets",
+    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+  },
+  "web2": {
+    "keyword": "web2",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
+  "web2s": {
+    "keyword": "web2s",
+    "definition": "The current state of the internet, without blockchain infrastructure."
+  },
+  "web3": {
+    "keyword": "web3",
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
+  },
+  "web3s": {
+    "keyword": "web3s",
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
+  },
+  "zero-knowledge": {
+    "keyword": "Zero-Knowledge",
+    "definition": "Mathematical method that allows one party to prove a statement is valid without revealing any additional information about it."
+  },
+  "zero-knowledges": {
+    "keyword": "Zero-Knowledges",
+    "definition": "Mathematical method that allows one party to prove a statement is valid without revealing any additional information about it."
+  },
+  "zk rollup": {
+    "keyword": "zk rollup",
+    "definition": "A layer-2 rollup scaling solution that uses zero-knowledge proofs to guarantee the validity of “rolled up” transactions while maintaining security and privacy on the layer 1 blockchain."
+  },
+  "zk rollups": {
+    "keyword": "zk rollups",
+    "definition": "A layer-2 rollup scaling solution that uses zero-knowledge proofs to guarantee the validity of “rolled up” transactions while maintaining security and privacy on the layer 1 blockchain."
+  }
+}

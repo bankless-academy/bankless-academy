@@ -4,15 +4,16 @@ const fs = require('fs')
 
 async function main() {
   const languages = [
-    'fr',
+    'cn',
     'de',
     'es',
-    // 'cn',
-    // 'jp'
+    'fr',
+    'it',
+    'jp'
   ]
   const nameSpaces = [
     'common',
-    // 'homepage',
+    'homepage',
     'quests'
   ]
   for (const language of languages) {
@@ -39,8 +40,10 @@ async function main() {
           }
         } else console.log(`- ${language}/${nameSpace}.json error ${crowdin.status}`)
       } catch (error) {
-        console.log(error)
-        console.log(`- ${language}/${nameSpace}.json not available yet`)
+        if (error.response.status === 404)
+          console.log(`- ${language}/${nameSpace}.json not available yet`)
+        else
+          console.log(error)
       }
     }
     try {
@@ -53,6 +56,9 @@ async function main() {
         const data = {}
         for (const [, v] of Object.entries(crowdin.data)) {
           data[v.keyword?.toLowerCase()] = { keyword: v.keyword, definition: v.definition }
+          if (v.keyword?.toLowerCase() !== v.keyword_plural?.toLowerCase() && v.keyword_plural !== '') {
+            data[v.keyword_plural?.toLowerCase()] = { keyword: v.keyword_plural, definition: v.definition }
+          }
         }
         // console.log('newTranslation', data)
         const newTranslation = JSON.stringify(data, null, 2)
@@ -68,8 +74,10 @@ async function main() {
         }
       } else console.log(`- ${language}/keywords.json error ${crowdin.status}`)
     } catch (error) {
-      console.log(error)
-      console.log(`- ${language}/keywords.json not available yet`)
+      if (error.response.status === 404)
+        console.log(`- ${language}/keywords.json not available yet`)
+      else
+        console.log(error)
     }
   }
 }

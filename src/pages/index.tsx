@@ -87,7 +87,7 @@ const HomePage = (): JSX.Element => {
               alt="Bankless Academy"
             />
             <Box>
-              <InternalLink href={`/lessons`}>
+              <InternalLink href={`/lessons`} alt="Explore Lessons">
                 <Button
                   variant="primary"
                   size="lg"
@@ -162,7 +162,7 @@ const HomePage = (): JSX.Element => {
                   </Heading>
                   <Text fontSize="lg" mt="2">
                     {t(
-                      `Collect badges and other on-chain rewards for successfully finishing lessons and quests.`
+                      `Collect badges and other onchain rewards for successfully finishing lessons and quests.`
                     )}
                   </Text>
                 </Card>
@@ -238,7 +238,7 @@ const HomePage = (): JSX.Element => {
                           {t(`Explore NFTs`)}
                         </Heading>
                         {t(
-                          `Explore the on-chain property rights movement, and the emerging use-cases for this technology.`
+                          `Explore the onchain property rights movement, and the emerging use-cases for this technology.`
                         )}
                       </Box>
                     </Box>
@@ -370,26 +370,13 @@ const HomePage = (): JSX.Element => {
                   <Card>
                     <EyeIcon />
                     <Heading size="lg" mt="2">
-                      {t(`Review Our Lessons`)}
+                      {t(`Improve Our Lessons`)}
                     </Heading>
                     <Text fontSize="lg" mt="2">
                       {t(
-                        `Anyone can help improve Bankless Academy. Help us by providing feedback on Beta lessons and your on-chain Reviewer badge will make sure we won’t forget it.`
+                        `Everyone can help make Bankless Academy better. Provide feedback on lessons or translations and receive an onchain badge once your feedback is included.`
                       )}
                     </Text>
-                    <Box
-                      display="flex"
-                      flexDirection="row-reverse"
-                      pt="4"
-                      style={{ flexGrow: 1 }}
-                      alignItems="self-end"
-                    >
-                      <ExternalLink href="https://lenster.xyz/u/banklessacademy">
-                        <Button variant="secondary" size="md">
-                          {t(`Sign Up`)}
-                        </Button>
-                      </ExternalLink>
-                    </Box>
                   </Card>
                   <Card>
                     <UsersThreeIcon />

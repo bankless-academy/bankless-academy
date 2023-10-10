@@ -4,22 +4,25 @@ Our platform takes a hands-on approach to education, where theory meets practice
 
 The project is pioneering #antisybil efforts as one of the [first education platforms to integrate Gitcoin Passport](https://www.gitcoin.co/blog/bankless-academy-a-gitcoin-passport-case-study). This implementation protects onchain credentials from fraud - preserving the legitimacy of your education!
 
-Currently, our learning journey covers [10 crucial topics](https://app.banklessacademy.com/lessons) for any future Bankless Explorer, including:
+Currently, our learning journey covers [13 crucial topics](https://app.banklessacademy.com/lessons) for any future Bankless Explorer, including:
 
 - [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics)
-- [Blockchain Basics](https://app.banklessacademy.com/lessons/blockchain-basics)
+- [Blockchain Basics](https://app.banklessacademy.com/lessons/blockchain-basics) available in 3 languages
 - [Web3 Security](https://app.banklessacademy.com/lessons/web3-security)
 - [Layer 1 Blockchains](https://app.banklessacademy.com/lessons/layer-1-blockchains)
 - [How to Fund a Wallet on Layer 2](https://app.banklessacademy.com/lessons/how-to-fund-a-wallet-on-layer-2)
 - [Layer 2 Blockchains](https://app.banklessacademy.com/lessons/layer-2-blockchains) (co-built with Optimism)
 - [Intro to DeFi](https://app.banklessacademy.com/lessons/intro-to-defi)
-- [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges)
-- [How to Swap on a Decentralized Exchange](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) (co-built with Velodrome)
-- [DEX Aggregators](https://app.banklessacademy.com/lessons/dex-aggregators)
+- [The Stablecoin Guide](https://app.banklessacademy.com/lessons/the-stablecoin-guide)
+- [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) (co-built with Velodrome)
+- [How to Swap on a Decentralized Exchange](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange)
+- [Managing Token Allowances](https://app.banklessacademy.com/lessons/managing-token-allowances)
+- [DEX Aggregators](https://app.banklessacademy.com/lessons/dex-aggregators) (co-built with 1inch)
+- [Optimism Governance](https://app.banklessacademy.com/lessons/optimism-governance) available in 6 languages
 
 With your support, Bankless Academy is committed to providing free web3 education for all.
 
-## Highlights for Gitcoin Grants Round #18
+## Highlights
 
 ### Onchain Credentials Milestone
 
@@ -41,17 +44,17 @@ In the upcoming months, we're committed to expanding these valuable experiences 
 
 Our latest product upgrade brings a significant enhancement to the user experience and introduces the creation of our first lesson collectibles. Each unique piece is a carefully crafted 3D NFT. By minting a Lesson Collectible, users showcase their support for **web3 education as a public good**. Owners of the new Bankless Academy feature are recognized as Guardians and become valued members of a passionate community advocating for web3 education.
 
-### [Bankless Academy en Español](https://twitter.com/BanklessAcademy/status/1679854581893988357)
+### [Bankless Academy multi-language support](https://twitter.com/banklessDAO/status/1704544221104062682)
 
-[![Bankless Academy en Español](https://pbs.twimg.com/media/F1AK1iHacAEprsP?format=jpg&name=small)](https://app.banklessacademy.com/lessons/conceptos-basicos-de-blockchain)
+[![Blockchain Basics in Spanish](https://pbs.twimg.com/media/F1AK1iHacAEprsP?format=jpg&name=small)](https://app.banklessacademy.com/lessons/es/blockchain-basics)
 
-The project has taken its first steps to break down the language barriers that slow down the spread of web3 knowledge. After attending ETH Barcelona, we launched our first Spanish lesson for Bankless Explorers: [Conceptos Básicos de Blockchain](https://app.banklessacademy.com/lessons/conceptos-basicos-de-blockchain).
+The project has taken its first steps to break down the language barriers that slow down the spread of web3 knowledge. After attending ETH Barcelona, we launched our first Spanish lesson for Bankless Explorers: [Conceptos Básicos de Blockchain](https://app.banklessacademy.com/lessons/es/blockchain-basics).
+We recently launched a new lesson in [6 languages](https://twitter.com/banklessDAO/status/1704544221104062682), and are planning to translate all our existing lessons as well in Spanish 🇪🇸, Japanese 🇯🇵, Chinese 🇨🇳, French 🇫🇷, and German 🇩🇪.
 
 ## What's next for Bankless Academy and future #BanklessExplorers?
 
-- Version 2.0 of our onchain credential system
-- New lesson content around Optimism Governance and Public Goods
-- In-person workshops at upcoming Ethereum events in Europe
+- New lesson content around DAOs, L2s, and Public Goods
+- In-person workshops at upcoming Ethereum events in Europe and in the US
 - Bankless Academy Learning Cohorts
 - More multi-language lessons
 
