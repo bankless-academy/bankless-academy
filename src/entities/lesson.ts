@@ -62,6 +62,7 @@ export interface LessonType {
       feedback?: string[]
       rightAnswerNumber?: number
     }
+    md?: string
     component?: QuestComponentType
   }[]
 }

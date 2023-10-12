@@ -2082,7 +2082,7 @@ const LESSONS: LessonType[] = [
     quest: 'OptimismGovernance',
     publicationStatus: 'publish',
     featuredOrderOnHomepage: 2,
-    isCommentsEnabled: false,
+    isCommentsEnabled: true,
     endOfLessonRedirect: null,
     sponsorName: 'Optimism',
     sponsorLogo: '/images/optimism-governance/sponsor-c3c045f3.png',
