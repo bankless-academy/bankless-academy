@@ -127,12 +127,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       )
       if (md && md.includes('TITLE:') && currentLesson) {
         console.log('processMD start')
-        if (language !== 'en' || currentLesson.slug === 'optimism-governance') {
-          currentLesson = await processMD(md, language, currentLesson)
-          currentLesson.lang = language
-        } else {
-          await processMD(md, language, currentLesson)
-        }
+        currentLesson = await processMD(md, language, currentLesson)
+        currentLesson.lang = language
       }
     }
   } catch (error) {
