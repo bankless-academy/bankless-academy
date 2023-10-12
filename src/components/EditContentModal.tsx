@@ -5,24 +5,24 @@ import {
   ModalCloseButton,
   ModalBody,
   ModalOverlay,
-  ModalFooter,
   Button,
   useDisclosure,
   useMediaQuery,
-  Input,
   Tooltip,
-  Textarea,
+  Box,
 } from '@chakra-ui/react'
 import { NotePencil } from '@phosphor-icons/react'
 import { useSmallScreen } from 'hooks'
 import { useTranslation } from 'react-i18next'
 
-import { SlideType } from 'entities/lesson'
-import { useState } from 'react'
+import { LessonType, SlideType } from 'entities/lesson'
+import { useAccount } from 'wagmi'
 
 const EditContentModal = ({
+  lesson,
   slide,
 }: {
+  lesson: LessonType
   slide: {
     type: SlideType
     title: string
@@ -38,7 +38,7 @@ const EditContentModal = ({
     md?: string
   }
 }): React.ReactElement => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const {
     isOpen: isOpenModal,
     onOpen: onOpenModal,
@@ -46,9 +46,7 @@ const EditContentModal = ({
   } = useDisclosure()
   const [, isSmallScreen] = useSmallScreen()
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
-  const [title, setTitle] = useState<string>(slide.title)
-  const [content, setContent] = useState<string>(slide.md)
-  const [comment, setComment] = useState<string>('')
+  const { address } = useAccount()
 
   return (
     <>
@@ -61,7 +59,7 @@ const EditContentModal = ({
           variant="outline"
           onClick={onOpenModal}
         >
-          {isSmallScreen ? '' : `suggest changes`}
+          {isSmallScreen ? '' : t(`Suggest Changes`)}
         </Button>
       </Tooltip>
       <Modal
@@ -79,44 +77,32 @@ const EditContentModal = ({
           overflowY="auto"
           maxH="var(--chakra-vh)"
         >
-          <ModalHeader>Content suggestion</ModalHeader>
+          <ModalHeader>{t(`Content suggestion`)}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            {slide.type === 'LEARN' && (
-              <>
-                Slide Title
-                <Input
-                  background="whiteAlpha.400"
-                  height="40px"
-                  value={title}
-                  onChange={(e): void => {
-                    setTitle(e.target.value)
-                  }}
-                />
-              </>
-            )}
-            Slide Content
-            <Textarea
-              background="whiteAlpha.400"
-              height={isMobileScreen ? '400px' : '300px'}
-              value={content}
-              onChange={(e): void => {
-                setContent(e.target.value)
-              }}
-            />
-            Comment
-            <Textarea
-              background="whiteAlpha.400"
-              placeholder="Add any comment here ..."
-              value={comment}
-              onChange={(e): void => {
-                setComment(e.target.value)
-              }}
-            />
+            <Box w="100%" h="100%" padding="0" backgroundColor="transparent">
+              <iframe
+                src={`https://form.bankless.ac/suggest-slide-changes?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&wallet=${address}&slide=${encodeURIComponent(
+                  `${lesson.englishName} > ${slide.title}`
+                )}&slide_link=${encodeURIComponent(
+                  `https://www.notion.so/${lesson.notionId}#${
+                    slide.notionId || ''
+                  }`
+                )}&title=${encodeURIComponent(
+                  slide.title
+                )}&language=${encodeURIComponent(
+                  i18n.language
+                )}&content=${encodeURIComponent(slide.md || '')}`}
+                style={{
+                  colorScheme: 'none',
+                }}
+                loading="lazy"
+                width="100%"
+                height="812px"
+                title="Suggest slide changes"
+              ></iframe>
+            </Box>
           </ModalBody>
-          <ModalFooter m="auto">
-            <Button onClick={onCloseModal}>{t('Submit suggestion')}</Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </>
