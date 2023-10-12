@@ -19,6 +19,7 @@ import { Warning, ArrowUUpLeft } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
+import { isMobile } from 'react-device-detect'
 
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
@@ -663,11 +664,18 @@ const Lesson = ({
               {isLastSlide && isSmallScreen ? '' : 'Prev'}
             </Button>
           )}
-          {lesson.isCommentsEnabled && slide.notionId && (
-            <>
-              <EditContentModal slide={slide} />
-            </>
-          )}
+          {
+            /* lesson.isCommentsEnabled && */
+            !isMobile &&
+              (slide.type === 'LEARN' ||
+                (slide.type === 'QUIZ' && answerIsCorrect) ||
+                slide.type === 'QUEST') &&
+              address && (
+                <>
+                  <EditContentModal lesson={lesson} slide={slide} />
+                </>
+              )
+          }
         </HStack>
         <HStack>
           {slide.type === 'QUEST' && !Quest?.isQuestCompleted ? (
