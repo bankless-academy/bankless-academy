@@ -40,7 +40,7 @@ const columns = [
   }),
   columnHelper.accessor('collectibles', {
     cell: (info) => info.getValue(),
-    header: 'collectibles',
+    header: 'lesson collectibles',
   }),
   columnHelper.accessor('handbooks', {
     cell: (info) => info.getValue(),
