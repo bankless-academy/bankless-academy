@@ -51,9 +51,9 @@ The short definition is: a computer program you use to interact with a `blockcha
 
 When your `wallet` is connected to a blockchain, you can make purchases, send or receive `digital assets`  like cryptocurrency, interact with web3 applications, and more.
 
-Unlike regular user accounts you’re used to, a single wallet lets you access a large number of web3 apps — as long as the wallet is compatible with the blockchain that the app is built on. It’s like having one account for the entire internet.
+Unlike regular user accounts you’re used to, a single wallet lets you access a large number of web3 apps. It’s like having one account for the entire internet.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-e8f8f9a8.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-5aa3b680.svg)
 
 # Is creating a wallet difficult?
 
@@ -61,9 +61,9 @@ It used to be, but these days anyone can create a wallet quite easily.
 
 Wallets are essentially computer programs. If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.
 
-The trickier parts of managing a wallet involve keeping them secure, which we will dive into next.
+The trickier part of managing a wallet involves keeping it secure — which we will dive into shortly!
 
-Choosing your first wallet may also feel intimidating. We recommend starting with MetaMask as your wallet provider: their wallets are user friendly and have access to many popular blockchains. As you get more comfortable in the web3 space, you will likely explore other providers and create a few other wallets.
+Choosing your first wallet may also feel intimidating. We recommend starting with MetaMask as your wallet provider: their wallets are user friendly and have access to many popular blockchains. As you get more comfortable in the web3 space, you will likely explore other providers and create multiple wallets.
 
 # Knowledge Check 1
 
@@ -109,7 +109,7 @@ It is perfectly safe to share your **public key**.
 
 **Note:** sometimes a single wallet account can hold multiple public (and `private keys`). Kind of like having many post office boxes under one account.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-6d17439c.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-9784f47e.svg)
 
 # Your wallet’s private key
 
@@ -125,7 +125,7 @@ This is more than just a password. You cannot reset it if you lose access to it.
 
 Luckily, most `web3` applications and programs do not require you to painstakingly type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-f4a93387.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-075ab481.svg)
 
 # Knowledge Check 2
 
@@ -165,7 +165,7 @@ Your recovery phrase is essentially an easier to read version of your public/pri
 
 **Never share a recovery phrase.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c2d8fa26.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-fdb4cc6b.svg)
 
 # Knowledge Check 3
 
@@ -205,7 +205,7 @@ Since your `private key` unlocks access to your `wallet`, keeping it private and
 
 This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some web3 applications may be limited.
 
-![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-29ed2b65.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-cda6e7c6.svg)
 
 # Knowledge Check 4
 
@@ -229,7 +229,7 @@ The tradeoff is in risk: if you lose access to your `recovery phrase`, or your p
 
 Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.
 
-![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-aee2708b.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-2ea3202d.svg)
 
 # Knowledge Check 5
 
@@ -251,7 +251,7 @@ A `hot wallet` is a wallet hosted via an online software program. MetaMask is a 
 
 This is the style of wallet we will be creating today. They’re flexible, and great for beginners.
 
-![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-bdf8ae51.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-0a8332f6.svg)
 
 # Cold Wallets
 
@@ -263,7 +263,7 @@ They are widely considered to be more secure than `hot wallets`, because your `p
 
 Ledger and Trezor are examples of `cold wallets`.
 
-![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-7b5aeb35.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-cd29cabe.svg)
 
 # Knowledge Check 6
 
@@ -331,7 +331,7 @@ There are several self-custody `hot wallet` providers available today. We will e
 
 The end of the lesson is right around the corner, where we will share a short video to help you get set up with your MetaMask wallet.
 
-![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-521de184.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-87cc5825.svg)
 
 # Knowledge Check 8
 
