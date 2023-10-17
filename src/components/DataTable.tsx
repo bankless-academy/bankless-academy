@@ -42,7 +42,7 @@ export function DataTable<Data extends object>({
     <Table>
       <Thead>
         {table.getHeaderGroups().map((headerGroup) => (
-          <Tr key={headerGroup.id}>
+          <Tr key={headerGroup.id} cursor="pointer">
             {headerGroup.headers.map((header) => {
               // see https://tanstack.com/table/v8/docs/api/core/column-def#meta to type this correctly
               const meta: any = header.column.columnDef.meta
