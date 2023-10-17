@@ -77,6 +77,15 @@ const Leaderboard = (): JSX.Element => {
         />
       </Container>
     )
+  else
+    return (
+      <Container maxW="container.xl">
+        <Heading as="h2" size="xl" m="8" textAlign="center">
+          Bankless Academy Leaderboard
+        </Heading>
+        Loading ... please wait at least 15 seconds
+      </Container>
+    )
 }
 
 export default Leaderboard

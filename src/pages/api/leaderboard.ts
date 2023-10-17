@@ -8,9 +8,11 @@ import badges from 'data/badges.json'
 // import leaderboard from 'data/leaderboard.json'
 import { BADGE_ADDRESS, BADGE_IDS } from 'constants/badges'
 
+const CACHE_DATA_IN_HOURS = 1
+
 async function getCollectors(collectibleAddress) {
   // console.log(collectibleAddress)
-  const res = await fetch(`https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY_BACKEND}/getOwnersForCollection?contractAddress=${collectibleAddress}&withTokenBalances=true`)
+  const res = await fetch(`https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY_BACKEND}/getOwnersForCollection?contractAddress=${collectibleAddress}&withTokenBalances=true`, { next: { revalidate: CACHE_DATA_IN_HOURS * 3600 } })
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
@@ -18,7 +20,7 @@ async function getCollectors(collectibleAddress) {
 }
 
 async function getBadgeHolders(tokenId) {
-  const res = await fetch(`https://polygon-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY_BACKEND}/getOwnersForToken?contractAddress=${BADGE_ADDRESS}&tokenId=${tokenId}`)
+  const res = await fetch(`https://polygon-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY_BACKEND}/getOwnersForToken?contractAddress=${BADGE_ADDRESS}&tokenId=${tokenId}`, { next: { revalidate: CACHE_DATA_IN_HOURS * 3600 } })
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
