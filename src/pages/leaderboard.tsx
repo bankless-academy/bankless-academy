@@ -6,6 +6,7 @@ import { createColumnHelper } from '@tanstack/react-table'
 
 import { MetaData } from 'components/Head'
 import { DataTable } from 'components/DataTable'
+import ExternalLink from 'components/ExternalLink'
 
 const pageMeta: MetaData = {
   title: 'Leaderboard',
@@ -20,6 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
 type UnitConversion = {
   address: string
   collectibles: number
+  handbooks: number
   badges: number
 }
 
@@ -27,12 +29,22 @@ const columnHelper = createColumnHelper<UnitConversion>()
 
 const columns = [
   columnHelper.accessor('address', {
-    cell: (info) => info.getValue(),
+    cell: (info) => (
+      <ExternalLink
+        href={`https://opensea.io/${info.getValue()}/collected?search[sortBy]=LAST_TRANSFER_DATE&search[sortAscending]=false`}
+      >
+        {info.getValue()}
+      </ExternalLink>
+    ),
     header: 'address',
   }),
   columnHelper.accessor('collectibles', {
     cell: (info) => info.getValue(),
     header: 'collectibles',
+  }),
+  columnHelper.accessor('handbooks', {
+    cell: (info) => info.getValue(),
+    header: 'handbooks',
   }),
   columnHelper.accessor('badges', {
     cell: (info) => info.getValue(),
