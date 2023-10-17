@@ -51,9 +51,9 @@ La definizione breve è: un programma informatico che usi per interagire con una
 
 Quando il tuo `portafoglio` è connesso a una blockchain, puoi fare acquisti, inviare o ricevere `beni digitali` come le criptovalute, interagire con applicazioni web3 e altro ancora.
 
-A differenza dei normali account a cui sei abituato, un singolo portafoglio ti permette di accedere a un gran numero di app web3, purché il portafoglio sia compatibile con la blockchain su cui è costruita l'app. È come avere un unico account per l'intero Internet.
+Unlike regular user accounts you’re used to, a single wallet lets you access a large number of web3 apps. È come avere un unico account per l'intero Internet.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-e8f8f9a8.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-5aa3b680.svg)
 
 # Creare un portafoglio è difficile?
 
@@ -61,9 +61,9 @@ Un tempo lo era, ma oggi chiunque può creare facilmente un portafoglio.
 
 I portafogli sono essenzialmente programmi informatici. Se ti senti a tuo agio nello scaricare e installare software sul tuo computer (o app sul tuo telefono), allora non avrai problemi a creare il tuo primo portafoglio.
 
-La parte più complicata della gestione di un portafoglio consiste nel mantenerlo sicuro, come vedremo in seguito.
+The trickier part of managing a wallet involves keeping it secure — which we will dive into shortly!
 
-Scegliere il tuo primo portafoglio può sembrare intimidatorio. Ti suggeriamo di iniziare con MetaMask come fornitore di portafoglio: offre soluzioni facili da utilizzare e compatibili con le blockchain più diffuse. Man mano che ti sentirai più a tuo agio nello spazio web3, è probabile che esplorerai altri fornitori e creerai altri portafogli.
+Scegliere il tuo primo portafoglio può sembrare intimidatorio. Ti suggeriamo di iniziare con MetaMask come fornitore di portafoglio: offre soluzioni facili da utilizzare e compatibili con le blockchain più diffuse. As you get more comfortable in the web3 space, you will likely explore other providers and create multiple wallets.
 
 # Knowledge Check 1
 
@@ -109,7 +109,7 @@ Si può anche pensare a una chiave pubblica come l'indirizzo di una casella post
 
 **Nota:** a volte un singolo account di un portafoglio può contenere molteplici chiavi pubbliche (e `private`). Un po' come avere molte caselle postali sotto un unico account.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-6d17439c.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-9784f47e.svg)
 
 # La chiave privata del tuo portafoglio
 
@@ -125,7 +125,7 @@ Questo è più di una semplice password. Non è possibile ripristinarla se si pe
 
 Fortunatamente, la maggior parte delle applicazioni e dei programmi `web3` non richiedono di digitare faticosamente una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione blockchain. La chiave privata di solito opera silenziosamente in background.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-f4a93387.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-075ab481.svg)
 
 # Knowledge Check 2
 
@@ -165,7 +165,7 @@ La tua frase di recupero è essenzialmente una versione più facile da leggere d
 
 **Non condividere mai una frase di recupero.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c2d8fa26.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-fdb4cc6b.svg)
 
 # Knowledge Check 3
 
@@ -205,7 +205,7 @@ I servizi di `portafogli custoditi` includono scambi di criptovalute come Coinba
 
 Per alcuni potrebbe essere l'unica cosa di cui hanno bisogno, ma è necessario fidarsi di queste terze parti per proteggere i propri asset di criptovalute e consentirne l'accesso quando si desidera scambiarli o inviarli da qualche parte. Inoltre, il tuo accesso ad alcune applicazioni web3 potrebbe essere limitato.
 
-![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-29ed2b65.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-cda6e7c6.svg)
 
 # Knowledge Check 4
 
@@ -229,7 +229,7 @@ Il compromesso sta nel rischio: se perdi l'accesso alla `frase di recupero`, o l
 
 Qualunque percorso tu scelga, ti conviene avere familiarità e dimestichezza con la sicurezza del tuo portafoglio. Ti daremo alcuni consigli prima di completare questa lezione.
 
-![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-aee2708b.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-2ea3202d.svg)
 
 # Knowledge Check 5
 
@@ -251,7 +251,7 @@ Un `portafoglio caldo` è un portafoglio ospitato dentro un software online. Met
 
 Questo è il tipo di portafoglio che creeremo oggi. Sono flessibili e ottimi per i principianti.
 
-![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-bdf8ae51.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-0a8332f6.svg)
 
 # Portafogli Freddi (Cold Wallets)
 
@@ -263,7 +263,7 @@ Sono ampiamente considerati più sicuri dei `portafogli caldi`, perché la tua `
 
 Ledger e Trezor sono esempi di `portafogli freddi`
 
-![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-7b5aeb35.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-cd29cabe.svg)
 
 # Knowledge Check 6
 
@@ -331,7 +331,7 @@ Esistono diversi fornitori di `hot wallet` auto-custoditi. Esploreremo il popola
 
 La fine della lezione è dietro l'angolo, dove condivideremo un breve video per aiutarti a configurare il tuo portafoglio MetaMask.
 
-![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-521de184.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-87cc5825.svg)
 
 # Knowledge Check 8
 
