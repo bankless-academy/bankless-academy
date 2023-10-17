@@ -228,9 +228,10 @@ const Lesson = ({
 
   useLayoutEffect(() => {
     if (
-      slideRef?.current?.offsetHeight > 600 &&
+      slideRef?.current?.offsetHeight > 615 &&
       !isSmallScreen &&
-      slide.type === 'LEARN'
+      slide.type === 'LEARN' &&
+      slide.content.includes('bloc2')
     )
       setLongSlide(true)
     else setLongSlide(false)
