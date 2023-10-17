@@ -84,7 +84,7 @@ export default async function handler(
         getEnsNames.push(client.getEnsName({ address: `0x${address.slice(2)}` }))
       }
       // filter low badges
-      if (leaderboard[address].badges < 2 && leaderboard[address].collectibles === 0)
+      if (leaderboard[address].badges < 2 && leaderboard[address].collectibles === 0 && leaderboard[address].handbooks === 0)
         delete leaderboard[address]
     }
     console.log(ensAddresses)
