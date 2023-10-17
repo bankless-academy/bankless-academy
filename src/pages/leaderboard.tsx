@@ -42,7 +42,9 @@ const columns = [
 
 const Leaderboard = (): JSX.Element => {
   const [leaderboard, setLeaderboard]: any = useState(null)
+  const [error, setError]: any = useState('')
   useEffect(() => {
+    setError('')
     axios
       .get(`/api/leaderboard`)
       .then(function (res) {
@@ -52,9 +54,12 @@ const Leaderboard = (): JSX.Element => {
             data.push({ address, ...res.data[address] })
           }
           setLeaderboard(data)
+        } else {
+          setError(res.data.error)
         }
       })
       .catch(function (error) {
+        setError('API limit reached, try again in 1 minute. ' + error?.message)
         console.error(error)
       })
   }, [])
@@ -83,7 +88,7 @@ const Leaderboard = (): JSX.Element => {
         <Heading as="h2" size="xl" m="8" textAlign="center">
           Bankless Academy Leaderboard
         </Heading>
-        Loading ... please wait at least 15 seconds
+        {error || 'Loading ... please wait at least 15 seconds'}
       </Container>
     )
 }
