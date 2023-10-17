@@ -12,7 +12,6 @@ import {
   Image,
   Heading,
   useDisclosure,
-  Avatar,
 } from '@chakra-ui/react'
 import { Wallet } from '@phosphor-icons/react'
 import axios from 'axios'
@@ -73,6 +72,7 @@ const ConnectWalletButton = ({
     `connectWalletPopup`,
     false
   )
+  const [ens, setEns] = useLocalStorage(`ens-cache`, {})
   const [, setBadgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [, setKudosMintedLS] = useLocalStorage('kudosMinted', [])
   const [refreshBadgesLS, setRefreshBadgesLS] = useLocalStorage(
@@ -125,32 +125,56 @@ const ConnectWalletButton = ({
   }
 
   async function updateName(address) {
-    const lensProfile = await getLensProfile(address)
-    if (lensProfile.name) {
-      setName(lensProfile.name)
-      if (lensProfile.avatar) {
-        setAvatar(lensProfile.avatar)
+    let name = shortenAddress(address)
+    let avatar = makeBlockie(address)
+    const replaceName = (newName) => {
+      if (name !== newName) {
+        setName(newName)
+        name = newName
       }
-    } else {
-      const ensName = await fetchEnsName({
-        address,
+    }
+    const replaceAvatar = (newAvatar) => {
+      if (avatar !== newAvatar) {
+        setAvatar(newAvatar)
+        avatar = newAvatar
+      }
+    }
+    if (ens[address]?.name) setName(ens[address].name)
+    else setName(name)
+    if (ens[address]?.avatar) setAvatar(ens[address].avatar)
+    else setAvatar(avatar)
+
+    const ensName = await fetchEnsName({
+      address,
+      chainId: 1,
+    })
+    if (ensName) {
+      replaceName(ensName)
+      const ensAvatar = await fetchEnsAvatar({
+        name: ensName,
         chainId: 1,
       })
-      if (ensName) {
-        setName(ensName)
-        const ensAvatar = await fetchEnsAvatar({
-          name: ensName,
-          chainId: 1,
-        })
-        if (ensAvatar) setAvatar(ensAvatar)
+      if (ensAvatar) replaceAvatar(ensAvatar)
+    } else {
+      const lensProfile = await getLensProfile(address)
+      if (lensProfile.name) {
+        replaceName(lensProfile.name)
+        if (lensProfile.avatar) {
+          replaceAvatar(lensProfile.avatar)
+        }
       } else {
         const ud = await getUD(address)
         if (ud?.length) {
-          setName(ud)
-          setAvatar(`https://resolve.unstoppabledomains.com/image-src/${ud}`)
+          replaceName(ud)
+          replaceAvatar(
+            `https://resolve.unstoppabledomains.com/image-src/${ud}`
+          )
         }
       }
     }
+    const ensCache = JSON.parse(JSON.stringify(ens))
+    ensCache[address] = { name, avatar }
+    setEns(ensCache)
   }
 
   function refreshBadges() {
@@ -185,8 +209,6 @@ const ConnectWalletButton = ({
       localStorage.removeItem('passport')
     }
     localStorage.setItem('current_wallet', address?.toLowerCase())
-    setName(shortenAddress(address))
-    setAvatar(makeBlockie(address))
     updateName(address)
     const wallets = localStorage.getItem('wallets')
       ? JSON.parse(localStorage.getItem('wallets'))
@@ -307,17 +329,12 @@ const ConnectWalletButton = ({
               variant={name ? 'secondary' : 'primary'}
               size={isSmallScreen ? 'sm' : 'md'}
               leftIcon={
-                <Avatar
-                  w="28px"
-                  h="28px"
-                  src={avatar}
-                  loading="eager"
-                  icon={
-                    <Image
-                      borderRadius="50%"
-                      src="/images/default_avatar.png"
-                    />
-                  }
+                <Image
+                  src={avatar || '/images/default_avatar.png'}
+                  borderRadius="50%"
+                  background="gray"
+                  w={isSmallScreen ? '22px' : '28px'}
+                  h={isSmallScreen ? '22px' : '28px'}
                 />
               }
               onClick={() => onOpen()}
