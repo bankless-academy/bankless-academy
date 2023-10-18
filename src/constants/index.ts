@@ -11,6 +11,8 @@ export const LESSONS = IS_WHITELABEL ? WHITELABEL_LESSONS : DEFAULT_LESSONS
 
 export const PROJECT_NAME = WHITELABEL?.project_name || 'Bankless Academy'
 
+export const PROJECT_DESCRIPTION = 'Level up your knowledge of Web3 and DeFi'
+
 export const DOMAIN_PROD = WHITELABEL?.domain_prod || 'app.banklessacademy.com'
 
 export const DOMAIN_URL =
@@ -18,13 +20,12 @@ export const DOMAIN_URL =
     ? `https://${process.env.VERCEL_URL}`
     : `https://${DOMAIN_PROD}`
 
-const imageMeta = WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
+export const imageMeta = WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
 
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
   description:
-    WHITELABEL?.default_metadata_description ||
-    'Level up your knowledge of Web3 and DeFi',
+    WHITELABEL?.default_metadata_description || PROJECT_DESCRIPTION,
   image: imageMeta,
 }
 
