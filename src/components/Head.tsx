@@ -98,6 +98,13 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           crossOrigin="use-credentials"
           href="/manifest.json"
         />
+        {/* RSS Feed */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Bankless Academy lesson feed"
+          href="/rss.xml"
+        />
         {/* noscript */}
         <noscript>You need to enable JavaScript to run this app.</noscript>
       </NextHead>
