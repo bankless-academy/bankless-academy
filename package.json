@@ -50,6 +50,7 @@
     "ethereum-blockies-base64": "^1.0.2",
     "ethereumjs-util": "^7.1.5",
     "ethers": "^5.7",
+    "feed": "^4.2.2",
     "framer-motion": "^7.6.15",
     "highlight.js": "^11.8.0",
     "i18next": "^23.4.6",
