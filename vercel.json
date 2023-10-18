@@ -39,6 +39,10 @@
   ],
   "rewrites": [
     {
+      "source": "/rss.xml",
+      "destination": "/api/rss"
+    },
+    {
       "source": "/faq",
       "destination": "/notion/faq"
     },
