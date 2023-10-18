@@ -136,6 +136,7 @@ const KEY_MATCHING = {
   Module: 'moduleId',
   Quest: 'quest',
   'Publication status': 'publicationStatus',
+  'Publication Date': 'publicationDate',
   'Featured order on homepage': 'featuredOrderOnHomepage',
   'Enable Comments': 'isCommentsEnabled',
   'End of Lesson redirect': 'endOfLessonRedirect',
@@ -267,7 +268,7 @@ axios
             // transform to number if the string contains a number
             [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k])) ||
               // ignore type transform for ModuleId & mirrorNFTAddress
-              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible mint ID' || k === 'Lesson collectible token address' || k === 'Sponsor Name' || k === 'Languages')
+              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible mint ID' || k === 'Lesson collectible token address' || k === 'Sponsor Name' || k === 'Languages' || k === 'Publication Date')
               ? notion.fields[k]
               : parseInt(notion.fields[k]),
           }),
@@ -293,6 +294,7 @@ axios
       if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''
       if (lesson.learnings === undefined) lesson.learnings = ''
+      if (lesson.publicationDate === undefined || lesson.publicationDate === null || !lesson.publicationDate.startsWith('20')) delete lesson.publicationDate
       if (lesson.featuredOrderOnHomepage === undefined) lesson.featuredOrderOnHomepage = false
       if (lesson.isCommentsEnabled === undefined) lesson.isCommentsEnabled = false
       if (lesson.endOfLessonRedirect === undefined) lesson.endOfLessonRedirect = null

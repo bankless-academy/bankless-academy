@@ -31,6 +31,7 @@ export interface LessonType {
   quest?: QuestComponentType
   imageLinks?: string[]
   publicationStatus: 'publish' | 'planned' | 'hidden'
+  publicationDate?: string
   featuredOrderOnHomepage?: number
   isCommentsEnabled: boolean
   endOfLessonRedirect?: string
