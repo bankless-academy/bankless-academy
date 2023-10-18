@@ -18,12 +18,14 @@ import {
   ALCHEMY_KEY_BACKEND,
   COLLECTIBLE_ADDRESSES,
   DOMAIN_PROD,
+  DOMAIN_URL,
   INFURA_KEY,
   MIRROR_ARTICLE_ADDRESSES,
 } from 'constants/index'
 import { NETWORKS } from 'constants/networks'
 import UDPolygonABI from 'abis/UDPolygon.json'
 import UDABI from 'abis/UD.json'
+import { LessonType } from 'entities/lesson'
 
 declare global {
   interface Window {
@@ -636,4 +638,8 @@ export const scrollTop = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, 300)
+}
+
+export const lessonLink = (lesson: LessonType) => {
+  return `${DOMAIN_URL}/lessons/${lesson.slug}`
 }
