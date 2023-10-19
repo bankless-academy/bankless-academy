@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { Mixpanel } from 'utils'
 import { useTranslation } from 'react-i18next'
-import { Bug } from '@phosphor-icons/react'
+import { Bug, Gear } from '@phosphor-icons/react'
 
 import SubscriptionModal from 'components/SubscriptionModal'
 import InstallAppModal from 'components/InstallAppModal'
@@ -55,6 +55,15 @@ const OptionMenu = ({
             <MenuItem>
               {t('Report an Issue')}&nbsp;
               <Bug />
+            </MenuItem>
+          </ExternalLink>
+          <ExternalLink
+            href="https://app.dework.xyz/bankless-academy-25331/suggestions"
+            color="white"
+          >
+            <MenuItem>
+              {t('Feature Request')}&nbsp;
+              <Gear />
             </MenuItem>
           </ExternalLink>
           {!IS_WHITELABEL && (
