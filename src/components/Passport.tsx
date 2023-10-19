@@ -56,8 +56,8 @@ const PassportComponent = ({
           toast({
             title: t('Gitcoin Passport issue'),
             description: (
-              <ExternalLink underline="true" href="/bug">
-                {t('Report a bug')}
+              <ExternalLink underline="true" href="/report-an-issue">
+                {t('Report an Issue')}
               </ExternalLink>
             ),
             status: 'warning',

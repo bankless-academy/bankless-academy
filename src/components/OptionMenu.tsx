@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { Mixpanel } from 'utils'
 import { useTranslation } from 'react-i18next'
+import { Bug } from '@phosphor-icons/react'
 
 import SubscriptionModal from 'components/SubscriptionModal'
 import InstallAppModal from 'components/InstallAppModal'
@@ -50,8 +51,11 @@ const OptionMenu = ({
           <ExternalLink href="/disclaimer" color="white">
             <MenuItem>{t('Disclaimer')}</MenuItem>
           </ExternalLink>
-          <ExternalLink href="/bug" color="white">
-            <MenuItem>{t('Report a bug')}</MenuItem>
+          <ExternalLink href="/report-an-issue" color="white">
+            <MenuItem>
+              {t('Report an Issue')}&nbsp;
+              <Bug />
+            </MenuItem>
           </ExternalLink>
           {!IS_WHITELABEL && (
             <>
@@ -64,7 +68,7 @@ const OptionMenu = ({
                   })
                 }}
               >
-                {t('Newsletter signup')} 📩
+                {t('Newsletter Signup')} 📩
               </MenuItem>
               {isWebApp ? null : (
                 <MenuItem
