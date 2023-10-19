@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Heading } from '@chakra-ui/react'
+import { Container, Heading, Image } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 import axios from 'axios'
 import { createColumnHelper } from '@tanstack/react-table'
@@ -20,6 +20,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 type UnitConversion = {
   address: string
+  score: number
   collectibles: number
   handbooks: number
   badges: number
@@ -37,6 +38,10 @@ const columns = [
       </ExternalLink>
     ),
     header: 'address',
+  }),
+  columnHelper.accessor('score', {
+    cell: (info) => info.getValue(),
+    header: 'score',
   }),
   columnHelper.accessor('collectibles', {
     cell: (info) => info.getValue(),
@@ -63,7 +68,12 @@ const Leaderboard = (): JSX.Element => {
         if (!res.data.error) {
           const data = []
           for (const address of Object.keys(res.data)) {
-            data.push({ address, ...res.data[address] })
+            const addressNumbers = { ...res.data[address] }
+            addressNumbers.score =
+              3 * (addressNumbers?.collectibles || 0) +
+              (addressNumbers?.handbooks || 0) +
+              (addressNumbers?.badges || 0)
+            data.push({ address, ...addressNumbers })
           }
           setLeaderboard(data)
         } else {
@@ -87,7 +97,7 @@ const Leaderboard = (): JSX.Element => {
           data={leaderboard}
           defaultSorting={[
             {
-              id: 'collectibles',
+              id: 'score',
               desc: true,
             },
           ]}
@@ -100,7 +110,14 @@ const Leaderboard = (): JSX.Element => {
         <Heading as="h2" size="xl" m="8" textAlign="center">
           Bankless Academy Leaderboard
         </Heading>
-        {error || 'Loading ... please wait at least 15 seconds'}
+        {error || (
+          <Image
+            margin="auto"
+            paddingTop="200px"
+            width="250px"
+            src="/loading_purple.svg"
+          />
+        )}
       </Container>
     )
 }
