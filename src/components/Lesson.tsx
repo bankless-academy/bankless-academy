@@ -15,7 +15,7 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
-import { Warning, ArrowUUpLeft } from '@phosphor-icons/react'
+import { Warning, ArrowUUpLeft, Bug } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
@@ -669,14 +669,24 @@ const Lesson = ({
             /* lesson.isCommentsEnabled && */
             !isMobile &&
               (slide.type === 'LEARN' ||
-                (slide.type === 'QUIZ' && answerIsCorrect) ||
-                slide.type === 'QUEST') &&
+                (slide.type === 'QUIZ' && answerIsCorrect)) &&
               address && (
                 <>
                   <EditContentModal lesson={lesson} slide={slide} />
                 </>
               )
           }
+          {slide.type === 'QUEST' && address && (
+            <ExternalLink href={'/report-an-issue'} alt={t('Report an Issue')}>
+              <Button
+                leftIcon={<Bug width="24px" height="24px" />}
+                iconSpacing={isSmallScreen ? 0 : '8px'}
+                variant="outline"
+              >
+                {isSmallScreen ? '' : t('Report an Issue')}
+              </Button>
+            </ExternalLink>
+          )}
         </HStack>
         <HStack>
           {slide.type === 'QUEST' && !Quest?.isQuestCompleted ? (
