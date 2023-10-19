@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const Feedback = (): JSX.Element => {
+const ReportAnIssue = (): JSX.Element => {
   const [isSmallScreen] = useSmallScreen()
   const { address } = useAccount()
 
@@ -35,4 +35,4 @@ const Feedback = (): JSX.Element => {
   )
 }
 
-export default Feedback
+export default ReportAnIssue
