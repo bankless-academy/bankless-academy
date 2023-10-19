@@ -8,7 +8,7 @@ import { useSmallScreen } from 'hooks/index'
 import { DOMAIN_PROD } from 'constants/index'
 
 const pageMeta: MetaData = {
-  title: 'Feedback',
+  title: 'Report an Issue',
 }
 
 export const getStaticProps: GetStaticProps = async () => {
