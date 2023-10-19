@@ -9,6 +9,7 @@ import { api } from 'utils'
 import { useSmallScreen } from 'hooks'
 import InternalLink from 'components/InternalLink'
 import { LESSONS } from 'constants/index'
+import ExternalLink from 'components/ExternalLink'
 
 const OptimismGovernance = (
   account: string
@@ -83,22 +84,6 @@ const OptimismGovernance = (
                 >
                   {t('1. Connect your wallet to Bankless Academy')}
                 </Button>
-                {/* TODO: add step later */}
-                {/* <Button
-                  cursor="default"
-                  whiteSpace="break-spaces"
-                  rightIcon={
-                    isTransactionVerified === 'true' ? (
-                      <CheckIcon color={theme.colors.correct} />
-                    ) : isTransactionVerified === 'loading' ? (
-                      <Spinner speed="1s" />
-                    ) : (
-                      <CloseIcon color={theme.colors.incorrect} />
-                    )
-                  }
-                >
-                  {'2. Hold OP'}
-                </Button> */}
                 <Button
                   cursor="default"
                   whiteSpace="break-spaces"
@@ -112,13 +97,24 @@ const OptimismGovernance = (
                     )
                   }
                 >
-                  {t('2. Delegate your vote')}
+                  {t('2. Select a Delegate for your OP')}
                 </Button>
+                <Box>
+                  {t('See the delegation platform here')}
+                  {': '}
+                  <ExternalLink href="https://vote.optimism.io/">
+                    vote.optimism.io
+                  </ExternalLink>
+                </Box>
               </VStack>
               <Box mt="8">
                 {t('Tip: ')}
                 {t(
-                  "Check our Explorer's Handbook entry on 'How to delegate on Optimism' to learn how to delegate."
+                  "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
+                  {
+                    lesson_title: lesson.name,
+                    interpolation: { escapeValue: false },
+                  }
                 )}
               </Box>
               {isTransactionVerified !== 'true' && (
