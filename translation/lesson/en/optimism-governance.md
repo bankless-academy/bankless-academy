@@ -358,7 +358,7 @@ History has always been paved by the optimists of humanity — those that dared 
 
 By getting involved in innovative communities, using `trustless` and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.
 
-Today’s quest is **to join the Token House and delegate our OP tokens**.
+Today’s quest is **to join the Token House and** `delegate` **our OP tokens**.
 
 While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
 
