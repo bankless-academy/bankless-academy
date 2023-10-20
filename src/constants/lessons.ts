@@ -1851,6 +1851,8 @@ const LESSONS: LessonType[] = [
     mirrorLink: 'https://mirror.xyz/banklessacademy.eth/25cFAg4NR8wImRBa4hsYM8cHrzdD5oGa27EYbwRIw2U',
     mirrorNFTAddress: '0x0ae1cfd5f84bde987b255e822463a17705ad9ba9',
     areMirrorNFTAllCollected: false,
+    sponsorName: 'Revoke.cash',
+    sponsorLogo: '/images/managing-token-allowances/sponsor-e0918b81.png',
     isArticle: true,
     notionId: 'f62923507cc04de58ad229242a3b8e8b',
     englishName: 'Managing Token Allowances',
@@ -2366,7 +2368,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '172e6effe6c1431883423ccb1c792cce',
         title: 'Shaping an Optimistic Future',
-        content: '<div class="bloc1"><p>History has always been paved by the optimists of humanity — those that dared to think big, and act to achieve their vision.</p><p>By getting involved in innovative communities, using <code>trustless</code> and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.</p><p>Today’s quest is <strong>to join the Token House and delegate our OP tokens</strong>.</p><p>While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the <a href=\'https://gov.optimism.io/\'>Optimism community</a> forums.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg\'></div>'
+        content: '<div class="bloc1"><p>History has always been paved by the optimists of humanity — those that dared to think big, and act to achieve their vision.</p><p>By getting involved in innovative communities, using <code>trustless</code> and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.</p><p>Today’s quest is <strong>to join the Token House and </strong><code>delegate</code><strong> our OP tokens</strong>.</p><p>While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the <a href=\'https://gov.optimism.io/\'>Optimism community</a> forums.</p></div><div class="bloc2"><img src=\'/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg\'></div>'
       },
       {
         type: 'QUEST',
