@@ -357,7 +357,7 @@ RetroPGF 的奖励现在包括从 Base🔵 交易费中获得的利润 —— �
 
 通过参与创新社区、使用`、免受信`且公平的治理系统，我们正在开创人类协调的未来。 我们正在建设一个人类能够在本地、全球和线上网络中共同繁荣发展的世界。 是时候开始我们的乐观主义治理之旅了。
 
-今天的任务是**，加入代币院并委托 OP 代币**。
+Today’s quest is **to join the Token House and** `delegate` **our OP tokens**.
 
 在公民院制定入会程序的同时，我们可以通过参与[Optimism 社区](https://gov.optimism.io/)论坛上的对话开始我们的公民之旅。
 
