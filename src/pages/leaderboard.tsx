@@ -63,7 +63,7 @@ const Leaderboard = (): JSX.Element => {
   useEffect(() => {
     setError('')
     axios
-      .get(`/api/leaderboard`)
+      .get(`/api/cache/leaderboard`)
       .then(function (res) {
         if (!res.data.error) {
           const data = []

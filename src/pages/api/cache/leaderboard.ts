@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { ALCHEMY_KEY_BACKEND, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
-import { NextResponse } from 'next/server'
+import { NextApiRequest, NextApiResponse } from 'next'
 // import { createPublicClient, http } from 'viem'
 // import { mainnet } from 'viem/chains'
 
@@ -18,11 +18,10 @@ async function getBadgeHolders() {
   return await fetchBE(`https://polygon-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY_BACKEND}/getOwnersForCollection?contractAddress=${BADGE_ADDRESS}&withTokenBalances=true`)
 }
 
-export const config = {
-  runtime: 'edge',
-}
-
-export default async function handler() {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> {
   const leaderboard: any = {}
   try {
     const collectors = await getCollectors('0x5ce61b80931Ea67565f0532965DDe5be2d41331d')
@@ -143,15 +142,11 @@ export default async function handler() {
           delete leaderboard[address]
         }
       }
-      console.log(leaderboard)
-      return new NextResponse(JSON.stringify(leaderboard), {
-        status: 200,
-      })
+      // console.log(leaderboard)
+      return res.status(200).send(leaderboard)
     } catch (error) {
       console.log('API limit reached.', error)
-      return new NextResponse(JSON.stringify(leaderboard), {
-        status: 200,
-      })
+      return res.status(200).send(leaderboard)
     }
   } catch (error) {
     console.error(error)
