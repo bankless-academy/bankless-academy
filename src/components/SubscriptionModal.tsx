@@ -18,6 +18,8 @@ import { useTranslation } from 'react-i18next'
 
 import { LessonType } from 'entities/lesson'
 import { api, Mixpanel } from 'utils'
+import { useAccount } from 'wagmi'
+import { useLocalStorage } from 'usehooks-ts'
 
 const SubscriptionModal = ({
   isOpen,
@@ -30,6 +32,8 @@ const SubscriptionModal = ({
 }): React.ReactElement => {
   const { t } = useTranslation()
   const toast = useToast()
+  const { address } = useAccount()
+  const [ens] = useLocalStorage(`ens-cache`, {})
   const [email, setEmail] = useState(localStorage.getItem('email'))
   const emailRegex =
     // eslint-disable-next-line no-useless-escape
@@ -95,6 +99,11 @@ const SubscriptionModal = ({
                   const paramBE = lesson ? { notionId: lesson.notionId } : {}
                   const result = await api('/api/subscribe-newsletter', {
                     email,
+                    wallet: address,
+                    ens:
+                      address && address in ens
+                        ? ens[address]?.name
+                        : undefined,
                     ...paramBE,
                   })
                   if (result && result.status === 200) {
