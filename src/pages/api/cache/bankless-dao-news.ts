@@ -34,7 +34,8 @@ const websiteFeeds = [
   }
 ]
 
-const parser = new Parser({
+const parser = new Parser()
+const parserWithImage = new Parser({
   customFields: {
     item: [
       ['media:content', 'image', { keepArray: false }],
@@ -75,7 +76,7 @@ export default async function handler(
     // console.log(feed)
     const featured = []
     // bankless.com
-    const latestBanklessArticle = (await parser.parseURL('https://www.bankless.com/rss/feed')).items[0]
+    const latestBanklessArticle = (await parserWithImage.parseURL('https://www.bankless.com/rss/feed')).items[0]
     // console.log(latestBanklessArticle)
     featured.push({
       title: latestBanklessArticle.title,
@@ -92,7 +93,7 @@ export default async function handler(
         link: latestYoutubeCC.link,
         pubDate: latestYoutubeCC.pubDate,
         website: 'BanklessDAO Youtube',
-        image: `https://img.youtube.com/vi/${latestYoutubeCC.id?.replace('yt:video:', '')}/maxresdefault.jpg`
+        image: `https://img.youtube.com/vi/${latestYoutubeCC?.id?.replace('yt:video:', '')}/maxresdefault.jpg`
       })
     // Bankless Academy
     const latestAcademyLesson = LESSONS
