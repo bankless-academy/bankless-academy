@@ -4,17 +4,25 @@ import Parser from 'rss-parser'
 
 import LESSONS from 'constants/lessons'
 import { lessonLink } from 'utils'
-import { DOMAIN_URL } from 'constants/index'
+import { DOMAIN_URL, POTION_API } from 'constants/index'
+import { fetchBE } from 'utils/server'
 
 const websiteFeeds = [
   {
-    name: 'BanklessDAO newsletter',
-    feed: 'https://banklessdao.substack.com/feed/'
+    name: 'BanklessDAO Weekly Rollup',
+    feed: 'https://banklessdao.substack.com/feed?sectionId=11612'
   },
   {
-    name: 'Bankless Publishing',
-    // https://banklesspublishing.com/feed/
-    feed: 'https://krux.co/banklesspublishing.php'
+    name: 'State of the DAOs',
+    feed: 'https://banklessdao.substack.com/feed?sectionId=6708'
+  },
+  {
+    name: 'Bankless Publishing Recap',
+    feed: 'https://banklessdao.substack.com/feed?sectionId=27514'
+  },
+  {
+    name: 'BanklessDAO Forum',
+    feed: 'https://forum.bankless.community/latest.rss'
   },
   {
     name: 'Making Bank',
@@ -26,14 +34,20 @@ const websiteFeeds = [
   }
 ]
 
-const parser = new Parser()
+const parser = new Parser({
+  customFields: {
+    item: [
+      ['media:content', 'image', { keepArray: false }],
+    ]
+  }
+})
 const loadFeeds = async () => {
   try {
     const res = await Promise.all(websiteFeeds.map(website => parser.parseURL(website.feed)))
-    console.log(res)
+    // console.log(res)
     const feed = res.map((website, index) => website.items?.map(item => {
       return {
-        title: item.title,
+        title: item.title.split(' | ')[0],
         link: item.link,
         pubDate: item.pubDate,
         website: websiteFeeds[index].name
@@ -55,9 +69,32 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   try {
+    const announcement = await fetchBE(`${POTION_API}/api/html?id=1eb0f5822f5b4fb8a0d3965a591ddb7e`)
+    // console.log(announcement)
     const feed = await loadFeeds()
-    console.log(feed)
+    // console.log(feed)
     const featured = []
+    // bankless.com
+    const latestBanklessArticle = (await parser.parseURL('https://www.bankless.com/rss/feed')).items[0]
+    // console.log(latestBanklessArticle)
+    featured.push({
+      title: latestBanklessArticle.title,
+      link: `${latestBanklessArticle.link}?ref=bankless.community`,
+      pubDate: latestBanklessArticle.pubDate,
+      website: 'Bankless',
+      image: latestBanklessArticle.image['$']['url']
+    })
+    // bDAO Community Call
+    const latestYoutubeCC = (await parser.parseURL('https://www.youtube.com/feeds/videos.xml?playlist_id=PLxKM96XfN8gCGOxl0wxduL8kfa4wRBvfX'))?.items[0]
+    if (latestYoutubeCC?.title?.includes('Community Call'))
+      featured.push({
+        title: latestYoutubeCC.title,
+        link: latestYoutubeCC.link,
+        pubDate: latestYoutubeCC.pubDate,
+        website: 'BanklessDAO Youtube',
+        image: `https://img.youtube.com/vi/${latestYoutubeCC.id?.replace('yt:video:', '')}/maxresdefault.jpg`
+      })
+    // Bankless Academy
     const latestAcademyLesson = LESSONS
       .filter(lesson => !lesson.isArticle)
       .sort((a, b) => a.publicationDate > b.publicationDate ? -1 : 1)[0]
@@ -68,17 +105,10 @@ export default async function handler(
       website: 'Bankless Academy',
       image: `${DOMAIN_URL}${latestAcademyLesson.socialImageLink}`
     })
-    const latestYoutubeCC = (await parser.parseURL('https://www.youtube.com/feeds/videos.xml?playlist_id=PLxKM96XfN8gCGOxl0wxduL8kfa4wRBvfX'))?.items[0]
-    console.log(featured)
-    if (latestYoutubeCC?.title?.includes('Community Call'))
-      featured.push({
-        title: latestYoutubeCC.title,
-        link: latestYoutubeCC.link,
-        pubDate: latestYoutubeCC.pubDate,
-        website: 'BanklessDAO Youtube',
-        image: `https://img.youtube.com/vi/${latestYoutubeCC.id?.replace('yt:video:', '')}/maxresdefault.jpg`
-      })
-    return res.status(200).send({ feed, featured })
+    // console.log(featured)
+    const news = { announcement, feed, featured }
+    console.log(news)
+    return res.status(200).send(news)
   } catch (error) {
     console.error(error)
     return res.status(500).json({ error })
