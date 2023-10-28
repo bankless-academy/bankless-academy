@@ -5,5 +5,10 @@ export const fetchBE = async (url: string) => {
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
-  return res.json()
+  const text = await res.text()
+  try {
+    return JSON.parse(text)
+  } catch (error) {
+    return text
+  }
 }
