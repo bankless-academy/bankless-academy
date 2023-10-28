@@ -8,7 +8,7 @@ import { MetaData } from 'components/Head'
 
 import Lesson from 'components/Lesson'
 import Article from 'components/Article'
-import { MIRROR_WHITELISTED_ACCOUNTS } from 'constants/index'
+import { MIRROR_WHITELISTED_ACCOUNTS, POTION_API } from 'constants/index'
 
 const processLesson = (htmlPage, notion_id) => {
   const lesson: any = { slug: 'preview' }
@@ -123,8 +123,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: { pageMeta },
   }
 }
-
-const POTION_API = 'https://potion.banklessacademy.com'
 
 const Lessons = (): JSX.Element => {
   const router = useRouter()
