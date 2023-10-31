@@ -68,7 +68,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
     if (address) {
       if (!passportLS.verified) checkPassport()
       axios
-        .get(`/api/badges/${address}`)
+        .get(`/api/user/${address}`)
         .then(function (userBadges) {
           const badgeAlreadyClaimed: boolean =
             userBadges?.data?.badgeTokenIds.find(

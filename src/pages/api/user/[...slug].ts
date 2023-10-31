@@ -4,6 +4,9 @@ import axios from 'axios'
 import { ALCHEMY_KEY_BACKEND } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_IDS, BADGE_API } from 'constants/badges'
 import badges from 'data/badges.json'
+import { TABLES, db } from 'utils/db'
+import { fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
+import makeBlockie from 'ethereum-blockies-base64'
 
 
 export const BADGE_TO_KUDOS_IDS = {
@@ -48,7 +51,13 @@ export default async function handler(
   address = address.toLowerCase()
   // console.log('address', address)
 
-  if (!address) return res.status(400).json({ error: 'Wrong params' })
+  if (!address || !address.startsWith('0x')) return res.status(400).json({ error: 'Wrong params' })
+
+  const [userExist] = await db(TABLES.users)
+    .select('id')
+    .whereILike('address', address)
+  console.log('user', userExist)
+  if (!userExist) res.status(200).json({ error: 'user not found' })
 
   const oldBadgeTokenIds = address in badges ? badges[address] : []
   const badgeTokenIds = [
@@ -58,5 +67,15 @@ export default async function handler(
 
   const kudosTokenIds = address in badges ? badges[address].map(token => BADGE_TO_KUDOS_IDS[token.toString()]).filter(token => token) : []
 
-  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds })
+  const ensName = await fetchEnsName({
+    address: address as `0x${string}`,
+    chainId: 1,
+  })
+
+  const avatar = ensName ? await fetchEnsAvatar({
+    name: ensName,
+    chainId: 1,
+  }) : makeBlockie(address)
+
+  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds, ensName, avatar })
 }
