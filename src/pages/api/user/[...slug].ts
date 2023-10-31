@@ -1,13 +1,14 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
+import makeBlockie from 'ethereum-blockies-base64'
+import { mainnet } from 'viem/chains'
+import { createPublicClient, http } from 'viem'
+
+import badges from 'data/badges.json'
 import { ALCHEMY_KEY_BACKEND } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_IDS, BADGE_API } from 'constants/badges'
-import badges from 'data/badges.json'
 import { TABLES, db } from 'utils/db'
-import { fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
-import makeBlockie from 'ethereum-blockies-base64'
-
 
 export const BADGE_TO_KUDOS_IDS = {
   '1': '2561',
@@ -67,15 +68,16 @@ export default async function handler(
 
   const kudosTokenIds = address in badges ? badges[address].map(token => BADGE_TO_KUDOS_IDS[token.toString()]).filter(token => token) : []
 
-  const ensName = await fetchEnsName({
-    address: address as `0x${string}`,
-    chainId: 1,
+  const transport = http(`https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`)
+  const client = createPublicClient({
+    chain: mainnet,
+    transport,
   })
 
-  const avatar = ensName ? await fetchEnsAvatar({
-    name: ensName,
-    chainId: 1,
-  }) : makeBlockie(address)
+  const ensName = await client.getEnsName({ address: address as `0x${string}` })
+  // console.log(ensName)
+
+  const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : makeBlockie(address)
 
   return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds, ensName, avatar })
 }
