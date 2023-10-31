@@ -40,7 +40,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
     : PROJECT_NAME
   const description = metadata?.description || DEFAULT_METADATA.description
   const image = metadata?.image
-    ? `${metadata?.image.startsWith('https://') ? '' : DOMAIN_URL}${
+    ? `${metadata?.image.startsWith('http') ? '' : DOMAIN_URL}${
         metadata?.image
       }`
     : `${DOMAIN_URL}${DEFAULT_METADATA.image}`
