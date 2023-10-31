@@ -66,6 +66,7 @@
     "md5": "^2.3.0",
     "mixpanel": "^0.17.0",
     "mixpanel-browser": "^2.45.0",
+    "net": "^1.0.2",
     "next": "^13.5.6",
     "notion-client": "^6.13.8",
     "notion-to-md": "^3.0.1",
@@ -84,6 +85,7 @@
     "rss-parser": "^3.13.0",
     "siwe": "^1.1.6",
     "stringify-object": "^3.3.0",
+    "tls": "^0.0.1",
     "usehooks-ts": "^2.7.1",
     "viem": "^1.12.2",
     "wagmi": "^1.4.2"
