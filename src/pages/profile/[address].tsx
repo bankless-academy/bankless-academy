@@ -65,7 +65,11 @@ export default function Page({
     <>
       <Box>
         <h1>{ensName || address}</h1>
-        <Badges badges={badges} badgeToHighlight={badgeToHighlight} />
+        <Badges
+          badges={badges}
+          badgeToHighlight={badgeToHighlight}
+          profile={true}
+        />
       </Box>
     </>
   )

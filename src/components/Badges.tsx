@@ -6,9 +6,11 @@ import { LESSONS } from 'constants/index'
 const Badges = ({
   badges,
   badgeToHighlight,
+  profile,
 }: {
   badges: number[]
   badgeToHighlight?: number
+  profile?: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
 
@@ -20,7 +22,7 @@ const Badges = ({
             {t('My Academy Badges')}
           </Text>
           <Box
-            h="215px"
+            h={profile ? 'unset' : '215px'}
             overflowY={badges.length <= 6 ? 'hidden' : 'scroll'}
             overflowX="hidden"
             backgroundColor="blackAlpha.200"
