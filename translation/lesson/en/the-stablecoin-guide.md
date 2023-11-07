@@ -140,6 +140,16 @@ As always, the best way to learn about something is to try it. You might even de
 
 And remember, not all stablecoins in each category are created equal! Do your own research before interacting with any new token.
 
+
+---
+
+We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘The Stablecoin Guide’.
+
+Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
+
+
+---
+
 ## Frequently Asked Questions
 
 ### What are the most popular stablecoins?
@@ -183,6 +193,6 @@ Some fiat-backed stablecoin issuers, like USDC, offer 1:1 redemption from their 
 
 **[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.
 
-**Sponsor**
+**Patron**
 
-This unsponsored article is part of Bankless Academy’s goal to provide free web3 education for all.
+This unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!
