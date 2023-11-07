@@ -114,25 +114,35 @@ To complete the quest for our [Decentralized Exchanges](https://app.banklessacad
 
 ![](https://app.banklessacademy.com/images/how-to-swap-on-a-decentralized-exchange/image-bcfdf0ee.png)
 
+
+---
+
+It’s time to explore the world of decentralized trading! We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Swapping on a Decentralized Exchange’.
+
+Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
+
+
+---
+
 ## Frequently Asked Questions
 
-* *Why does my price quote change a few times every minute?*
+### Why does my price quote change a few times every minute?
 
 Price quotes are typically calculated at the time you enter your desired swap into the DEX interface. As time goes by, other users are making swaps and affecting token supply on the exchange. The DEX will regularly refresh your quote to stay up to date.
 
-* *How long does it take for a token swap to execute?*
+### How long does it take for a token swap to execute?
 
 The answer depends on a variety of factors, primarily the block speed of the blockchain and how much you underpay or overpay the gas fee. DEX transactions submitted to Ethereum Mainnet typically take between 15 seconds and a couple of minutes to be confirmed. Layer 2 transactions are usually faster!
 
-* *Why did my transaction fail?*
+### Why did my transaction fail?
 
 There are a number of reasons why a transaction could fail: insufficient funds to pay gas, gas limit set too low, or slippage set too low. The best way to begin troubleshooting is to look for User Interface error messages. You can also view your transaction on a block explorer, like [Etherscan](https://optimistic.etherscan.io/), to check if there are any on-chain error messages. We’ll cover more troubleshooting specifics in future content!
 
-* *Can I change or remove token permissions?*
+### Can I change or remove token permissions?
 
 Granting token permissions to a smart contract can leave our wallet vulnerable to unwanted future interactions, in the case of a smart contract hack. It is possible to change or remove token permissions using apps like [Revoke.cash](https://revoke.cash/). As adjusting permissions costs gas, this precaution can quickly become expensive. This is one of the reasons why many users store their digital assets in one wallet (cold wallet), while interacting with dApps on another (trading wallet). Users transfer assets between them only as necessary.
 
-* *Why is the token I'm looking for not available to swap?*
+### Why is the token I'm looking for not available to swap?
 
 If your token isn’t listed by default, you’ll have to paste the token contract address into the list. To find the token contract address, check <https://www.coingecko.com/> or the official project website.
 
@@ -148,3 +158,7 @@ If your token isn’t listed by default, you’ll have to paste the token contra
 **Editor**
 
 **[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning as much as possible about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.
+
+**Patron**
+
+This unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!
