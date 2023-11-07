@@ -96,6 +96,16 @@ It might be in your best interest to to revoke or adjust a token allowance if:
 
    More than $2.5M in assets were compromised when Atlantis Loans, a `DeFi` protocol on a BNB chain, executed a governance proposal that targeted several contracts. Users who managed their approval limit mitigated the risk of their wallets being fully drained by the malicious proposal.
 
+
+---
+
+It’s time to strengthen our wallet defenses! We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Managing Token Allowances’.
+
+Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
+
+
+---
+
 ## FAQ
 
 ### When should I use Revoke.cash?
@@ -141,6 +151,6 @@ Your wallet may contain a “sweeper bot,” a script that monitors and acts on 
 
 **[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.
 
-**Sponsor**
+**Patron**
 
-This unsponsored article is part of a joint education effort by Bankless Academy and Revoke.cash.
+This unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!
