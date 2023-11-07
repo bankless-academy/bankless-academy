@@ -42,7 +42,9 @@ On Optimism, governance power is represented by holding OP tokens in a self-cust
 
 On Optimism we use a voting dApp called ‘Agora’ to look through eligible Delegates, perform delegation, and monitor proposals. Let’s take a closer look.
 
-## Delegating on Optimism Agora
+## Prerequisites
+
+If you want to hold voting power, you’ll need to purchase OP tokens. You can continue without completing these two steps if you simply want to set up delegation.
 
 **1\. Buy ETH on the Optimism Network.**
 
@@ -52,43 +54,55 @@ You can find a step-by-step guide in our Explorer’s Handbook entry, [‘How to
 
 Check out our Explorer’s Handbook entry on [‘How to Swap on a Decentralized Exchange’](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) for a step-by-step guide on using a DEX to buy OP tokens.
 
-**3\. Open the Optimism Agora dApp: <https://vote.optimism.io/>**
+## Delegating on Optimism Agora
+
+**1\. Open the Optimism Agora dApp: <https://vote.optimism.io/>**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
 
-**4\. Connect your wallet.**
+**2\. Connect your wallet.**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
-**5\. Scroll down, and choose your favorite Delegate.**
+**3\. Scroll down, and choose your favorite Delegate.**
 
 By clicking on a delegate, you will find a short statement, their vote history, and influence measurements. Take your time to find a representative that aligns with your vision for Optimism.
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-6443ae02.png)
 
-**6\. Hit the ‘delegate’ button, and approve the transaction in your wallet.**
+**4\. Hit the ‘delegate’ button, and approve the transaction in your wallet.**
 
 No OP tokens will leave your wallet throughout this process. There is a small gas fee, charged in ETH.
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-245809cd.png)
 
+
+---
+
+It’s time to explore better voting systems. We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Delegating on Optimism’.
+
+Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
+
+
+---
+
 ## Frequently Asked Questions
 
-* *How many tokens do I need to delegate?*
+### How many tokens do I need to delegate?
 
 You can begin delegating while holding any amount of OP tokens — even zero! As you increase or decrease your OP holdings, your delegated voting power will be updated. You don’t have to redelegate every time you make changes to your OP holdings.
 
-* *How do I choose the right delegate?*
+### How do I choose the right delegate?
 
 It comes down to your personal values, and your vision for how you want to see Optimism grow. Take some time to scroll through the Delegate profiles and see what resonates with you.
 
-* *Can I become a Delegate?*
+### Can I become a Delegate?
 
 You can! Check out the [‘How to be a delegate’](https://community.optimism.io/docs/governance/delegate/) guide, hosted on Optimism Docs.
 
 Note: this won’t count for the [‘Optimism Governance’](https://app.banklessacademy.com/lessons/optimism-governance) lesson quest at Bankless Academy.
 
-* *Do I need to delegate to vote?*
+### Do I need to delegate to vote?
 
 You can skip delegation and represent yourself by tracking votes under the ‘Proposals’ tab on Optimism Agora.
 
@@ -99,4 +113,8 @@ Note: this also won’t count for the [‘Optimism Governance’](https://app.ba
 
 **Author**
 
-**[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+[Tetranome](https://twitter.com/Tetranome) is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+
+**Patron**
+
+This article was funded by [Optimism](https://www.optimism.io/).
