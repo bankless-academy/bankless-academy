@@ -229,15 +229,20 @@
     "keyword_plural": "Epochs",
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155s",
+    "definition": "A standard for deploying both fungible and non-fungible tokens on Ethereum, under one optimized contract."
+  },
   "erc-20": {
     "keyword": "ERC-20",
     "keyword_plural": "ERC-20s",
-    "definition": "Ein Standard für übertragbare fungible Token auf Ethereum. Diese Token sind teilbar und nicht einzigartig."
+    "definition": "A standard for fungible tokens on Ethereum. These tokens are divisible and non-unique."
   },
   "erc-721": {
     "keyword": "ERC-721",
     "keyword_plural": "ERC-721s",
-    "definition": "Ein Standard für nicht-fungible Token (kurz NFT) auf Ethereum. Diese Token haben eine eindeutige digitale Kennung, können nicht kopiert, ersetzt oder unterteilt werden."
+    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, or subdivided."
   },
   "ethereum virtual machine": {
     "keyword": "Ethereum Virtual Machine",
@@ -364,6 +369,11 @@
     "keyword_plural": "market caps",
     "definition": "The total value of a given token, or market sector."
   },
+  "memecoin": {
+    "keyword": "memecoin",
+    "keyword_plural": "memecoins",
+    "definition": "A cryptocurrency token themed on an internet meme, often with no purpose or utility."
+  },
   "meta-aggregator": {
     "keyword": "meta-aggregator",
     "keyword_plural": "meta-aggregators",
@@ -373,6 +383,11 @@
     "keyword": "MEV",
     "keyword_plural": "MEVs",
     "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
+  },
+  "mint": {
+    "keyword": "mint",
+    "keyword_plural": "mints",
+    "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
   },
   "network governance": {
     "keyword": "Regierungsführung des Netzwerks",
