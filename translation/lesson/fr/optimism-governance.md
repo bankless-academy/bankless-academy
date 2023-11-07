@@ -299,7 +299,7 @@ La Maison des Citoyens veille également à ce que les propositions de la Maison
 
 # La Maison des Citoyens : Adhérer, Voter, Déléguer
 
-📝 **Adhésion :** La Maison des Citoyens accueille actuellement des membres sur invitation, afin de développer et d'affiner lentement ses processus. L'adhésion est marquée par la détention d'un "Badge de Citoyen" [Citizen Badge] - un jeton `ERC-721` non transférable.
+📝 **Adhésion :** La Maison des Citoyens accueille actuellement des membres sur invitation, afin de développer et d'affiner lentement ses processus. Membership is marked by holding a ‘Citizen Badge’.
 
 Les spécificités des invitations changent selon les saisons, sur la base des expériences menées par la Fondation Optimism :
 
