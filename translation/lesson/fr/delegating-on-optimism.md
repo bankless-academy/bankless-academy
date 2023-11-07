@@ -42,7 +42,9 @@ Sur Optimism, le pouvoir de gouvernance est représenté par la détention de je
 
 Sur Optimism, nous utilisons une dApp de vote appelée 'Agora' pour examiner les délégués éligibles, effectuer des délégations et surveiller les propositions de gouvernance. Voyons cela de plus près.
 
-## Déléguer sur Optimism Agora
+## Prerequisites
+
+If you want to hold voting power, you’ll need to purchase OP tokens. You can continue without completing these two steps if you simply want to set up delegation.
 
 **1\. Achetez des ETH sur le réseau Optimism Network.**
 
@@ -52,43 +54,55 @@ Vous trouverez un guide étape par étape dans notre guide de l'Explorateur, ['C
 
 Consultez notre Guide de l’Explorateur [« Comment échanger sur un echange décentralisé](https://app.banklessacademy.com/lessons/how-to-swap-on-a-decentralized-exchange) pour un guide étape par étape sur l’utilisation d’un DEX pour acheter des jetons OP.
 
-**3\. Ouvrez la dApp Optimism Agora : <https://vote.optimism.io/>**
+## Déléguer sur Optimism Agora
+
+**1\. Ouvrez la dApp Optimism Agora : <https://vote.optimism.io/>**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
 
-**4\. Connectez votre portefeuille.**
+**2\. Connectez votre portefeuille.**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
-**5\. Faites défiler vers le bas et choisissez votre délégué préféré.**
+**3\. Faites défiler vers le bas et choisissez votre délégué préféré.**
 
 En cliquant sur un délégué, vous trouverez une brève déclaration, l'historique de ses votes et ses mesures d'influence. Prenez le temps de trouver un représentant qui s'aligne sur votre vision d'Optimism.
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-6443ae02.png)
 
-**6\. Appuyez sur le bouton "déléguer" et approuvez la transaction dans votre portefeuille.**
+**4\. Appuyez sur le bouton "déléguer" et approuvez la transaction dans votre portefeuille.**
 
 Aucun jeton OP ne quittera votre portefeuille au cours de ce processus. Il y a un petit frais de gaz, facturé en ETH.
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-245809cd.png)
 
+
+---
+
+It’s time to explore better voting systems. We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Delegating on Optimism’.
+
+Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
+
+
+---
+
 ## Questions fréquemments posés
 
-* *De combien de jetons ai-je besoin pour déléguer ?*
+### De combien de jetons ai-je besoin pour déléguer ?
 
 Vous pouvez commencer à déléguer tout en détenant n'importe quel montant de jetons OP - même zéro ! Au fur et à mesure que vous augmentez ou diminuez la quantité de jeton OP détenue dans votre portefeuille, votre pouvoir de vote délégué sera mis à jour. Vous n'avez pas besoin de redéléguer chaque fois que vous modifiez vos avoirs en OP.
 
-* *Comment choisir le bon délégué ?*
+### Comment choisir le bon délégué ?
 
 Tout dépend de vos valeurs personnelles et de votre vision de la manière dont vous souhaitez voir l'Optimisme se développer. Prenez le temps de faire défiler les profils des délégués et de voir ce qui résonne avec vous.
 
-* *Puis-je devenir délégué ?*
+### Puis-je devenir délégué ?
 
 Oui, vous pouvez! Consultez le guide ['Comment devenir délégué'](https://community.optimism.io/docs/governance/delegate/) hébergé sur documentation d'Optimism.
 
 Remarque : cela ne compte pas pour la quête de la leçon ["Gouvernance d'Optimism"](https://app.banklessacademy.com/lessons/optimism-governance) sur l'Académie Bankless.
 
-* *Dois-je déléguer pour voter ?*
+### Dois-je déléguer pour voter ?
 
 Vous pouvez vous passer de la délégation et vous représenter vous-même en suivant les votes sous l'onglet "Propositions" [Proposals] sur Optimism Agora.
 
@@ -99,4 +113,8 @@ Remarque : cela ne compte pas non plus pour la quête de la leçon ["Gouvernance
 
 **Auteur**
 
-**[Tetranome](https://twitter.com/Tetranome)** est le Champion du projet Bankless Academy, se concentrant sur l'expérience utilisateur, l'interface, la conception et le contenu.
+[Tetranome](https://twitter.com/Tetranome) is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+
+**Patron**
+
+This article was funded by [Optimism](https://www.optimism.io/).
