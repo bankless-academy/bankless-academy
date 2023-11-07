@@ -229,15 +229,20 @@
     "keyword_plural": "época",
     "definition": "El tiempo que tarda en incluirse un número específico de bloques en una cadena de bloques determinada."
   },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155s",
+    "definition": "A standard for deploying both fungible and non-fungible tokens on Ethereum, under one optimized contract."
+  },
   "erc-20": {
     "keyword": "ERC-20",
     "keyword_plural": "ERC-20",
-    "definition": "Un estándar para tokens fungibles transferibles en Ethereum. Estos tokens son divisibles y no únicos."
+    "definition": "A standard for fungible tokens on Ethereum. These tokens are divisible and non-unique."
   },
   "erc-721": {
     "keyword": "ERC-721",
     "keyword_plural": "ERC-721",
-    "definition": "Un estándar para tokens no fungibles en Ethereum. Estos tokens tienen un identificador digital único, no se pueden copiar, sustituir ni subdividir."
+    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, or subdivided."
   },
   "ethereum virtual machine": {
     "keyword": "Máquina Virtual de Ethereum (MVE)",
@@ -364,6 +369,11 @@
     "keyword_plural": "capitalización de mercado\n",
     "definition": "El valor total de un determinado token, o sector del mercado."
   },
+  "memecoin": {
+    "keyword": "memecoin",
+    "keyword_plural": "memecoins",
+    "definition": "A cryptocurrency token themed on an internet meme, often with no purpose or utility."
+  },
   "meta-aggregator": {
     "keyword": "meta-agregador",
     "keyword_plural": "meta-agregador",
@@ -373,6 +383,11 @@
     "keyword": "MEV",
     "keyword_plural": "MEV",
     "definition": "Valor máximo extraíble: valor extraído ordenando las transacciones dentro de los bloques."
+  },
+  "mint": {
+    "keyword": "mint",
+    "keyword_plural": "mints",
+    "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
   },
   "network governance": {
     "keyword": "gobernanza de la red",
