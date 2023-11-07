@@ -299,7 +299,7 @@ La Cámara de los Ciudadanos también se asegura de que las propuestas de la Cas
 
 # La Cámara de Ciudadanos: Cómo unirse, votar, y delegar
 
-📝 **Unirse:** La Cámara de los Ciudadanos actualmente suma miembros por invitación, escalando lentamente y refinando sus procesos. Para ser miembro hay que poseer una "insignia de ciudadano", una ficha intransferible `ERC-721` .
+📝 **Unirse:** La Cámara de los Ciudadanos actualmente suma miembros por invitación, escalando lentamente y refinando sus procesos. Membership is marked by holding a ‘Citizen Badge’.
 
 Los detalles de las invitaciones cambian estacionalmente a partir de la experimentación de la Fundación Optimism:
 
