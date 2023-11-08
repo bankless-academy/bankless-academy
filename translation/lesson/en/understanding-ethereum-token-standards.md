@@ -235,6 +235,10 @@ Yes, there are other token standards on Ethereum that are not in use or have ver
 
 **[Tetranome](https://twitter.com/Tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
 
+**Editors**
+
+**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.
+
 **Patron**
 
 This unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!
