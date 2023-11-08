@@ -1,6 +1,6 @@
 ---
 TITLE: Understanding Ethereum Token Standards
-DESCRIPTION: null
+DESCRIPTION: Learn how Ethereum’s asset templates support both traditional and emerging asset classes.
 LANGUAGE: English
 WRITERS: null
 TRANSLATORS: X
@@ -77,11 +77,11 @@ Let’s take a look at this concept from traditional economics to understand its
 
 - When the asset is traded, its units are interchangeable without any alteration in value.
 
-  (One U.S. dollar can be exchanged for another U.S. dollar, or four 25 cent coins, or twenty 5 cent coins.)
+  ($1 USD can be exchanged for another $1 USD, or four 25¢ coins, or twenty 5¢ coins.)
 
 - When the asset is divided, the smaller fractions maintain its fundamental characteristics.
 
-  (A U.S dollar, split into four 25 cent coins, still functions as a store of value or is used for making purchases.)
+  ($1 USD, split into four 25¢ coins, still functions as a store of value or is used for making purchases.)
 
 Examples of fungible assets include oil, fiat currency, government bonds, and company shares. These non-unique assets can be easily exchanged and divided.
 
