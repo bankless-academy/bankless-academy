@@ -95,6 +95,21 @@
       "source": "/lessons/conceptos-(.*)",
       "destination": "/lessons/es/blockchain-basics",
       "permanent": false
+    },
+    {
+      "source": "/lessons(.*)/how-to-fund-a-wallet-on-layer-2",
+      "destination": "/lessons/funding-a-wallet-on-layer-2",
+      "permanent": false
+    },
+    {
+      "source": "/lessons(.*)/the-stablecoin-guide",
+      "destination": "/lessons/understanding-stablecoins",
+      "permanent": false
+    },
+    {
+      "source": "/lessons(.*)/how-to-swap-on-a-decentralized-exchange",
+      "destination": "/lessons/swapping-on-a-decentralized-exchange",
+      "permanent": false
     }
   ]
 }
