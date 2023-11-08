@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useRef, useState, useEffect, useLayoutEffect } from 'react'
 import {
   Box,
@@ -453,6 +454,7 @@ const Lesson = ({
             ? t(`${lowerCaseKeywordSingular}.definition`, { ns: 'keywords' })
             : englishDefition
           : englishDefition
+      if (!definition?.length) console.log('Missing definition:', keyword)
       return definition?.length ? (
         <Keyword definition={definition} keyword={keyword} />
       ) : (
