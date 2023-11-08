@@ -1,0 +1,12 @@
+{
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "Begin your Optimism Network journey by delegating OP.",
+    "1. Connect your wallet to Bankless Academy": "1. Connect your wallet to Bankless Academy",
+    "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
+    "See the delegation platform here": "See the delegation platform here",
+    "Tip: ": "Tip: ",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
+    "Refresh": "Refresh",
+    "Read Entry": "Read Entry"
+  }
+}
