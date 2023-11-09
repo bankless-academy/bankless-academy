@@ -56,11 +56,11 @@ DEXを使用してOPトークンを購入するためのステップバイステ
 
 ## Optimism Agoraに基づく委任
 
-**1\. Optimism Agora dAppを開きます: <https://vote.optimism.io/>**
+**3\. Optimism Agora dAppを開きます: <https://vote.optimism.io/>**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
 
-**2\. ウォレットを接続します。**
+**4\. ウォレットを接続します。**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
@@ -113,7 +113,7 @@ Optimism Agoraの「Proposals」タブの下で投票を追跡することで、
 
 **作者**
 
-[Tetranome](https://twitter.com/Tetranome) is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+**[Tetranome](https://twitter.com/Tetranome)** は、ユーザーエクスペリエンス、インターフェース、デザイン、コンテンツに焦点を当てたBankless Academyのプロジェクトチャンピオンです。
 
 **Patron**
 
