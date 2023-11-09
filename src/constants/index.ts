@@ -2,7 +2,7 @@ import { MetaData } from 'components/Head'
 import { WHITELABEL } from 'constants/whitelabel'
 import DEFAULT_LESSONS from 'constants/lessons'
 import WHITELABEL_LESSONS from 'constants/whitelabel_lessons'
-import DEFAULT_KEYWORDS from '../../keywords.json'
+import DEFAULT_KEYWORDS from '../../translation/keywords/en/keywords.json'
 import WHITELABEL_KEYWORDS from '../../whitelabel-keywords.json'
 
 export const IS_WHITELABEL = !!WHITELABEL?.project_name
@@ -11,6 +11,8 @@ export const LESSONS = IS_WHITELABEL ? WHITELABEL_LESSONS : DEFAULT_LESSONS
 
 export const PROJECT_NAME = WHITELABEL?.project_name || 'Bankless Academy'
 
+export const PROJECT_DESCRIPTION = 'Level up your knowledge of Web3 and DeFi'
+
 export const DOMAIN_PROD = WHITELABEL?.domain_prod || 'app.banklessacademy.com'
 
 export const DOMAIN_URL =
@@ -18,14 +20,13 @@ export const DOMAIN_URL =
     ? `https://${process.env.VERCEL_URL}`
     : `https://${DOMAIN_PROD}`
 
+export const imageMeta = WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
+
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
   description:
-    WHITELABEL?.default_metadata_description ||
-    'Level up your knowledge of Web3 and DeFi',
-  image: `${DOMAIN_URL}${
-    WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
-  }`,
+    WHITELABEL?.default_metadata_description || PROJECT_DESCRIPTION,
+  image: imageMeta,
 }
 
 export const FAVICON = WHITELABEL?.favicon || '/favicon.png'
@@ -64,9 +65,11 @@ export const MERKLE_DISTRIBUTOR_ADDRESS = {
 export const DefaultProviderName = 'DEFAULT'
 
 export const INFURA_KEY =
-  process.env.NEXT_PUBLIC_INFURA_KEY || 'cb578d660f614bbcb41b3c03553ff6f2'
+  process.env.INFURA_KEY || 'cb578d660f614bbcb41b3c03553ff6f2'
 
 export const ALCHEMY_KEY = process.env.NEXT_PUBLIC_ALCHEMY_KEY
+
+export const ALCHEMY_KEY_BACKEND = process.env.ALCHEMY_KEY
 
 export const QUESTS: string[] = LESSONS.filter((lesson) => lesson.quest).map(
   (lesson) => lesson.quest
@@ -100,9 +103,28 @@ export const MIRROR_ARTICLE_ADDRESSES = LESSONS.filter(
   (lesson) => lesson.mirrorNFTAddress
 ).map((lesson) => lesson.mirrorNFTAddress)
 
+export const COLLECTIBLE_ADDRESSES = LESSONS.filter(
+  (lesson) => lesson.lessonCollectibleTokenAddress
+).map((lesson) => lesson.lessonCollectibleTokenAddress)
+
 export const ACTIVATE_MIXPANEL = !!process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID
 
 export const KEYWORDS =
   IS_WHITELABEL && Object.keys(WHITELABEL_KEYWORDS).length
     ? WHITELABEL_KEYWORDS
     : DEFAULT_KEYWORDS
+
+export const SIWE_ENABLED =
+  process.env.NEXT_PUBLIC_SIWE_ENABLED === 'true' || false
+
+export const TOKEN_GATING_ENABLED =
+  process.env.NEXT_PUBLIC_TOKEN_GATING_ENABLED === 'true' || false
+
+export const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED === 'true' || false
+
+export const DISCLAIMER_ENABLED =
+  process.env.NEXT_PUBLIC_DISCLAIMER_ENABLED === 'true' || false
+
+export const WALLET_SIGNATURE_MESSAGE = 'Signing a message with my wallet to prove I own it so I can claim the lesson badge.'
+
+export const POTION_API = 'https://potion.banklessacademy.com'

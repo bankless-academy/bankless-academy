@@ -51,15 +51,21 @@ const Stats = (): JSX.Element => {
           )}
           <Box mt={8}>
             <Text fontSize="lg" color="orange.300">
-              Number of lesson completion
+              Number of {IS_WHITELABEL ? 'lesson' : 'quest'} completion
             </Text>
-            {LESSONS.map((lesson, index) => {
+            {LESSONS.filter(
+              (lesson) =>
+                !lesson.isArticle &&
+                // lesson.publicationStatus !== 'planned' &&
+                lesson.notionId !== '7bc2bf9be4ac4e9181782f996a2a6060' &&
+                lesson.notionId !== 'fd14e05114294d6282713809742f79a4'
+            ).map((lesson, index) => {
               const lessonCompleted =
                 stats?.lessonCompleted[lesson.notionId] || 0
               return (
                 <>
                   <p>
-                    {`${index + 1}. ${lesson.name}: `}
+                    {`${index + 1}. ${lesson.englishName}: `}
                     {lessonCompleted}
                   </p>
                 </>
@@ -68,7 +74,7 @@ const Stats = (): JSX.Element => {
           </Box>
           <Box mt={8}>
             <Text fontSize="lg" color="orange.300">
-              Monthly lesson completion
+              Monthly {IS_WHITELABEL ? 'lesson' : 'quest'} completion
             </Text>
             {stats?.monthyCompletion.map((monthlyStats) => (
               <>
@@ -80,7 +86,7 @@ const Stats = (): JSX.Element => {
           </Box>
           <Box mt={8}>
             <Text fontSize="lg" color="orange.300">
-              Total lesson completion
+              Total {IS_WHITELABEL ? 'lesson' : 'quest'} completion
             </Text>
             <p>
               {`${totalLessonCompletion} | ${stats?.lessonCompleted7days} 'week | ${stats?.lessonCompleted1day} 'day`}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Box, VStack, Button, Spinner } from '@chakra-ui/react'
-import { CheckIcon } from '@chakra-ui/icons'
+import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import axios from 'axios'
 
 import ExternalLink from 'components/ExternalLink'
@@ -23,6 +23,8 @@ const AcademyCommunity = (
 
   const verifyQuest = async () => {
     if (account) {
+      setHasUserJoinedGM(null)
+      setHasUserJoinedBA(null)
       axios
         .get(`https://api.gm.xyz/api/users/${account.toLowerCase()}`)
         .then(function (res) {
@@ -46,6 +48,8 @@ const AcademyCommunity = (
               })
         })
         .catch(function (error) {
+          setHasUserJoinedGM(false)
+          setHasUserJoinedBA(false)
           console.error(error)
         })
     }
@@ -60,7 +64,7 @@ const AcademyCommunity = (
         <Box display={isSmallScreen ? 'block' : 'flex'}>
           <div className="bloc1">
             <Box>
-              <VStack mt="20">
+              <VStack mt="20" alignItems="start" mr="4">
                 <Button
                   cursor="default"
                   rightIcon={
@@ -75,21 +79,28 @@ const AcademyCommunity = (
                 </Button>
                 <Button
                   cursor="default"
+                  whiteSpace="break-spaces"
+                  display="initial"
+                  textAlign="left"
                   rightIcon={
                     hasUserJoinedGM ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : (
-                      <Spinner speed="1s" />
+                      <>
+                        {hasUserJoinedGM === null ? (
+                          <Spinner speed="1s" />
+                        ) : (
+                          <CloseIcon color={theme.colors.incorrect} />
+                        )}
+                      </>
                     )
                   }
                 >
-                  {'2. Join '}
-                  <ExternalLink
-                    href="https://gm.xyz/?utm_source=BanklessAcademy&utm_medium=website&utm_campaign=GM-lesson"
-                    ml="1"
-                  >
-                    gm.xyz
+                  {'2. Join gm.xyz using this '}
+                  <ExternalLink href="https://gm.xyz/invite/K3iot3AU7o" mx="1">
+                    invite link
                   </ExternalLink>
+                  {` or register with a phone number`}
                 </Button>
                 <Button
                   cursor="default"
@@ -97,7 +108,13 @@ const AcademyCommunity = (
                     hasUserJoinedBA ? (
                       <CheckIcon color={theme.colors.correct} />
                     ) : (
-                      <Spinner speed="1s" />
+                      <>
+                        {hasUserJoinedBA === null ? (
+                          <Spinner speed="1s" />
+                        ) : (
+                          <CloseIcon color={theme.colors.incorrect} />
+                        )}
+                      </>
                     )
                   }
                 >

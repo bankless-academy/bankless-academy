@@ -1,11 +1,13 @@
 import React from 'react'
-import { Box, Text, Image, Heading, Button, SimpleGrid } from '@chakra-ui/react'
+import { Box, Text, Image, Heading, SimpleGrid } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 import InternalLink from 'components/InternalLink'
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import LessonBanner from 'components/LessonBanner'
 import { useSmallScreen } from 'hooks/index'
+import LessonButton from 'components/LessonButton'
 
 const LessonGrid = styled(SimpleGrid)`
   border-bottom: 1px solid #72757b;
@@ -15,12 +17,13 @@ const LessonGrid = styled(SimpleGrid)`
 `
 
 const FeaturedLessons: React.FC = () => {
+  const { t } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
 
   return (
     <Box mt="16">
       <Heading as="h2" size="xl">
-        Featured Content
+        {t('Featured Content')}
       </Heading>
       <Box>
         {[...LESSONS]
@@ -28,10 +31,8 @@ const FeaturedLessons: React.FC = () => {
           .filter((lesson) => lesson.featuredOrderOnHomepage)
           .sort((a, b) => a.featuredOrderOnHomepage - b.featuredOrderOnHomepage)
           .map((lesson, key) => {
-            const isKudosMinted = localStorage.getItem(
-              `isKudosMinted-${lesson.kudosId}`
-            )
-            const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
+            const lessonHasSponsor =
+              lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
             const LessonImage = (
               <LessonBanner
                 iswhitelabel={(IS_WHITELABEL || lesson?.isArticle)?.toString()}
@@ -43,7 +44,7 @@ const FeaturedLessons: React.FC = () => {
               >
                 <InternalLink
                   href={`/lessons/${lesson.slug}`}
-                  alt={lesson.name}
+                  alt={lesson.englishName}
                 >
                   <Image src={lesson.lessonImageLink} />
                 </InternalLink>
@@ -51,26 +52,19 @@ const FeaturedLessons: React.FC = () => {
             )
             const LessonDescription = (
               <Box alignSelf="center" mt="4">
-                <Heading fontSize="2xl">{lesson.name}</Heading>
+                <Heading fontSize="2xl">
+                  {t(lesson.name, { ns: 'lesson' })}
+                </Heading>
                 <Text fontSize="lg" my="4">
-                  {lesson.marketingDescription}
+                  {t(lesson.description, { ns: 'lesson' })}
                 </Text>
                 <InternalLink
                   href={`/lessons/${lesson.slug}`}
-                  alt={lesson.name}
+                  alt={lesson.englishName}
+                  margin={lessonHasSponsor ? 'auto' : ''}
+                  w={lessonHasSponsor ? '100%' : 'inherit'}
                 >
-                  <Button
-                    variant={isKudosMinted ? 'secondary' : 'primary'}
-                    mt="4"
-                  >
-                    {lesson?.isArticle
-                      ? 'Read Entry'
-                      : isKudosMinted
-                      ? 'Revisit Lesson'
-                      : isLessonStarted
-                      ? 'Resume Lesson'
-                      : 'Start Lesson'}
-                  </Button>
+                  <LessonButton lesson={lesson} />
                 </InternalLink>
               </Box>
             )

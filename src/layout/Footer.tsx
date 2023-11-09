@@ -1,11 +1,13 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
+import { useTranslation } from 'react-i18next'
 
 import ExternalLink from 'components/ExternalLink'
 import { PROJECT_NAME, IS_WHITELABEL } from 'constants/index'
 import { useSmallScreen } from 'hooks/index'
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
   return (
     <footer>
@@ -22,7 +24,7 @@ const Footer: React.FC = () => {
             <Box textAlign="center">{PROJECT_NAME}</Box>
             <Box textAlign="center">
               <span hidden={isSmallScreen}>&nbsp;|&nbsp;</span>
-              powered by&nbsp;
+              {t('powered by')}&nbsp;
               <ExternalLink href="https://whitelabel.banklessacademy.com/?utm_source=BanklessAcademyWhiteLabel&utm_medium=website&utm_campaign=WhiteLabel">
                 Bankless Academy
               </ExternalLink>
@@ -34,14 +36,14 @@ const Footer: React.FC = () => {
               display="flex"
               href="https://twitter.com/BanklessAcademy"
             >
-              Twitter
+              {t('Twitter')}
             </ExternalLink>
             <span>&nbsp;|&nbsp;</span>
-            <ExternalLink href="https://gm.xyz/c/BanklessAcademy">
-              Community
+            <ExternalLink href="https://lenster.xyz/u/banklessacademy">
+              {t('Community')}
             </ExternalLink>
             <span>&nbsp;|&nbsp;</span>
-            <ExternalLink href="/faq">FAQ</ExternalLink>
+            <ExternalLink href="/faq">{t('FAQ')}</ExternalLink>
           </>
         )}
       </Box>

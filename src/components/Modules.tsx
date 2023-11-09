@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Box, Text, Image, Heading, Button, SimpleGrid } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 import LessonBanner from 'components/LessonBanner'
 import InternalLink from 'components/InternalLink'
@@ -23,6 +24,7 @@ const Modules = ({
   modules: ModuleType[]
   parentModule?: ModuleType
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
 
   useEffect(() => {
@@ -71,7 +73,7 @@ const Modules = ({
               </Text>
               <InternalLink href={moduleLink} alt={module.name}>
                 <Button variant="primary" mt="4">
-                  Explore Module
+                  {t('Explore Module')}
                 </Button>
               </InternalLink>
             </Box>

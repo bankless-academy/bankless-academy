@@ -7,23 +7,23 @@ import { useSmallScreen } from 'hooks/index'
 
 export const ConnectFirst = (
   isSmallScreen: boolean,
-  account: string
+  address: string
 ): React.ReactElement => (
   <Box display={isSmallScreen ? 'block' : 'flex'}>
     <div className="bloc1">
       <Box display="flex" justifyContent="center" mt="8">
         <Button
           variant="outlined"
-          leftIcon={account ? <CheckIcon /> : <Spinner speed="1s" />}
-          color={account ? theme.colors.correct : 'orange'}
+          leftIcon={address ? <CheckIcon /> : <Spinner speed="1s" />}
+          color={address ? theme.colors.correct : 'orange'}
           cursor="default"
           boxShadow="none !important"
         >
-          {account ? 'Wallet connected!' : 'Waiting to detect your wallet ...'}
+          {address ? 'Wallet connected!' : 'Waiting to detect your wallet ...'}
         </Button>
       </Box>
       <p>
-        {account ? null : (
+        {address ? null : (
           <>
             {`To finish this lesson, connect your
           wallet to this website.`}
@@ -36,7 +36,7 @@ export const ConnectFirst = (
         )}
       </p>
     </div>
-    {!account && (
+    {!address && (
       <div className="bloc2">
         <iframe
           src="https://www.youtube.com/embed/PjBY0pVFnQ8?rel=0"
@@ -48,7 +48,7 @@ export const ConnectFirst = (
 )
 
 const WalletConnect = (
-  account: string
+  address: string
 ): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
@@ -56,8 +56,8 @@ const WalletConnect = (
   const [isSmallScreen] = useSmallScreen()
 
   return {
-    isQuestCompleted: !!account,
-    questComponent: ConnectFirst(isSmallScreen, account),
+    isQuestCompleted: !!address,
+    questComponent: ConnectFirst(isSmallScreen, address),
   }
 }
 

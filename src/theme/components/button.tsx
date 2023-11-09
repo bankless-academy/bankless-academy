@@ -1,15 +1,16 @@
-import {
-  SystemStyleObject,
-  SystemStyleFunction,
-} from '@chakra-ui/theme-tools/src/component'
+// import {
+//   SystemStyleObject,
+//   SystemStyleFunction,
+// } from '@chakra-ui/theme-tools/src/component'
 import { isMobile } from 'react-device-detect'
 
 const primaryStyle = {
   border: '1px solid #B85FF1',
   boxSizing: 'border-box',
   backdropFilter: 'blur(42px)',
-  background: 'linear-gradient(84.62deg, #B06FD8 7.42%, #597AEE 218.41%)',
-  bgClip: 'text',
+  background: 'linear-gradient(132deg, #67407E 0%, #354374 100%)',
+  // background: 'linear-gradient(84.62deg, #B06FD8 7.42%, #597AEE 218.41%)',
+  // bgClip: 'text',
   color: '#F2E5FF',
   span: {
     path: {
@@ -20,7 +21,7 @@ const primaryStyle = {
 
 const secondaryStyle = {
   background: 'transparent',
-  border: '1px solid #F2E5FF',
+  border: '1px solid #3f3154',
   boxSizing: 'border-box',
   backdropFilter: 'blur(42px)',
   color: '#F2E5FF',
@@ -51,7 +52,7 @@ const primaryGold = {
   background: 'linear-gradient(105.55deg, #fbba59 12.48%, #bf8260 95.84%)',
   _hover: {
     ...padding,
-    background: 'transparent',
+    background: 'linear-gradient(134deg, #9E8053 0%, #684D3E 100%)',
     border: '1px solid #f1b15a',
   },
 }
@@ -68,7 +69,7 @@ const primaryBig = {
       },
 }
 
-const primaryWhiteBig = {
+const primaryWhite = {
   ...primaryBig,
   background: 'white',
   color: '#5D4E78',
@@ -111,13 +112,26 @@ const secondaryGold = {
   border: '1px solid #f1b15a',
   _hover: {
     cursor: 'default',
+    background: 'linear-gradient(134deg, #9E8053 0%, #684D3E 100%)',
   },
 }
 
 const secondaryBig = {
-  background: '#3F3253',
+  background: '#3f3154',
   backdropFilter: 'blur(50px)',
   borderRadius: '60px',
+  _hover: isMobile
+    ? {}
+    : {
+        ...paddingBig,
+        ...secondaryStyle,
+        background: '#25212e',
+      },
+}
+
+const secondaryLg = {
+  background: '#3F3253',
+  backdropFilter: 'blur(50px)',
   _hover: isMobile
     ? {}
     : {
@@ -126,28 +140,42 @@ const secondaryBig = {
       },
 }
 
+const secondaryWhite = {
+  ...secondaryBig,
+  background: 'transparent',
+  color: 'white',
+  border: '2px solid white',
+  _hover: {
+    border: '2px solid transparent',
+  },
+}
+
 // TODO: https://chakra-ui.com/docs/styled-system/advanced-theming#theme-typings for auto-complete
-type variantType = SystemStyleObject | SystemStyleFunction
+type variantType = any
 type variantsTypes = {
   primary: variantType
   primaryGold: variantType
+  primaryWhite: variantType
   primaryBig: variantType
-  primaryWhiteBig: variantType
   primaryBigLast: variantType
   secondary: variantType
   secondaryGold: variantType
   secondaryBig: variantType
+  secondaryLg: variantType
+  secondaryWhite: variantType
 }
 
 const variants: variantsTypes = {
   primary,
   primaryGold,
+  primaryWhite,
   primaryBig,
-  primaryWhiteBig,
   primaryBigLast,
   secondary,
   secondaryGold,
   secondaryBig,
+  secondaryLg,
+  secondaryWhite,
 }
 
 export default {

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react'
 import { GetStaticProps } from 'next'
 import { Container } from '@chakra-ui/react'
@@ -8,11 +9,7 @@ import { MetaData } from 'components/Head'
 
 import Lesson from 'components/Lesson'
 import Article from 'components/Article'
-import { MIRROR_WHITELISTED_ACCOUNTS } from 'constants/index'
-
-const pageMeta: MetaData = {
-  title: 'Live preview',
-}
+import { MIRROR_WHITELISTED_ACCOUNTS, POTION_API } from 'constants/index'
 
 const processLesson = (htmlPage, notion_id) => {
   const lesson: any = { slug: 'preview' }
@@ -29,46 +26,64 @@ const processLesson = (htmlPage, notion_id) => {
     .substr(3)
   const content = JSON.parse(`[${htmlPage.data}"}]`)
   let quizNb = 0
+  const allKeywords = []
   const slides = content.map((slide) => {
     // replace with type QUIZ
     if (slide.content.includes("<div class='checklist'>")) {
       quizNb++
-      slide.type = 'QUIZ'
-      const [question, answers] = slide.content.split("<div class='checklist'>")
-      const quiz_answers = answers.split('</label><label>')
-      delete slide.content
       slide.quiz = {}
+      const [question] = slide.content.split("<div class='checklist'>")
       slide.quiz.question = question.replace('<p>', '').replace('</p>', '')
-      slide.quiz.rightAnswerNumber = null
+      slide.type = 'QUIZ'
       slide.quiz.answers = []
-      quiz_answers.map((quiz_answer, i) => {
+      slide.quiz.feedback = []
+      const quizDiv = document.createElement('div')
+      quizDiv.innerHTML = slide.content
+      const checkboxes = quizDiv.querySelectorAll(
+        '.checklist input[type="checkbox"]:disabled'
+      )
+      const blockquotes = quizDiv.querySelectorAll('blockquote')
+      const labels = quizDiv.querySelectorAll('.checklist label')
+
+      for (let i = 0; i < checkboxes.length; i++) {
         const nb = i + 1
-        if (
-          slide.quiz.rightAnswerNumber !== null &&
-          quiz_answer.includes('disabled checked>')
+        const checkbox: any = checkboxes[i]
+        const blockquote = blockquotes[i]
+        const label = labels[i]
+
+        const answer = label.textContent.trim()
+        slide.quiz.answers.push(answer)
+
+        const feedback = blockquote?.textContent.trim()
+        slide.quiz.feedback.push(feedback)
+
+        const isChecked = checkbox?.checked
+        if (isChecked) slide.quiz.rightAnswerNumber = nb
+      }
+      if (
+        !slide.quiz.rightAnswerNumber &&
+        lesson.slug !== 'bankless-archetypes'
+      )
+        throw new Error(
+          `missing right answer, please check ${POTION_API}/html?id=${notion_id}`
         )
-          // NOTION BUG: in case of bug with checked checkbox, recreate a new one
-          throw new Error(
-            `more than 1 right answer, please check ${POTION_API}/html?id=${notion_id}`
-          )
-        if (quiz_answer.includes('disabled checked>'))
-          slide.quiz.rightAnswerNumber = nb
-        slide.quiz.answers.push(
-          quiz_answer.replace(
-            // remove tags
-            /<\/?[^>]+(>|$)/g,
-            ''
-          )
-        )
-      })
       slide.quiz.id = `${lesson.slug}-${quizNb}`
     }
     if (slide.content) {
+      const contentDiv = document.createElement('div')
+      contentDiv.innerHTML = slide.content
+      const keywords = contentDiv.querySelectorAll('code')
+      for (const keyword of keywords) {
+        const k = keyword.innerText?.toLowerCase()
+        if (!allKeywords.includes(k)) allKeywords.push(k)
+      }
+
       if ((slide.content.match(/<img /g) || []).length > 1) {
         // multiple images
         const blocs = slide.content
-          .replace(/<img src='/g, '|SPLIT|')
-          .replace(/'>/g, '|SPLIT|')
+          .replace(/<img src='([^>]*)'>/gi, '|SPLIT|$1|SPLIT|')
+          // .replace(/<img src='/g, '|SPLIT|')
+          // .replace(/'>/g, '|SPLIT|')
           .replace('|SPLIT|', '')
           .split('|SPLIT|')
         slide.content = blocs.reduce(
@@ -102,9 +117,16 @@ const processLesson = (htmlPage, notion_id) => {
     }
     return slide
   })
+  console.log('List of keywords:', allKeywords.join(', '))
   lesson.slides = slides
   lesson.isPreview = true
   return lesson
+}
+
+const pageMeta: MetaData = {
+  title: 'Live preview',
+  description: 'This is work in progress content.',
+  isLesson: true,
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -112,8 +134,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: { pageMeta },
   }
 }
-
-const POTION_API = 'https://potion.banklessacademy.com'
 
 const Lessons = (): JSX.Element => {
   const router = useRouter()
@@ -150,8 +170,7 @@ const Lessons = (): JSX.Element => {
         .then(function (htmlPage) {
           if (!htmlPage.data.error) {
             const res = processLesson(htmlPage, id)
-            // eslint-disable-next-line no-console
-            console.log(res)
+            // console.log(res)
             setLesson(res)
           }
         })

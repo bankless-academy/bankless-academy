@@ -85,11 +85,11 @@ const DEXAggregators = (
               {'.'}
             </p>
             <p>
-              {'2. Swap any token to '}
+              {'2. Swap any token. (You can buy '}
               <ExternalLink href="https://polygonscan.com/token/0xdb7cb471dd0b49b29cab4a1c14d070f27216a0ab">
                 $BANK
               </ExternalLink>
-              .
+              {` if you want to support the Bankless movement.)`}
             </p>
             <p>
               3. Paste the successful <b>swap</b> transaction hash below:
@@ -124,8 +124,8 @@ const DEXAggregators = (
             {isTransactionVerified === 'false' && tx && tx.length !== 0 && (
               <Box mb="4">
                 <b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash
-                done on <b>Polygon network</b> and not the approval transaction
-                hash. Watch the video for more information.
+                done on <b>Polygon network</b> and not the token approval
+                transaction hash. Watch the video for more information.
               </Box>
             )}
             <Box mt="4">

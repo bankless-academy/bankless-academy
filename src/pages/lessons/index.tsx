@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next'
 import { SimpleGrid, Container, Heading } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 import { MetaData } from 'components/Head'
 import LessonCards from 'components/LessonCards'
@@ -42,10 +43,11 @@ const StyledHeading = styled(Heading)`
 `
 
 function Lessons(): JSX.Element {
+  const { t } = useTranslation()
   return (
     <Container maxW="container.xl">
       <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
-        Lesson Selection
+        {t('Lesson Selection')}
       </StyledHeading>
       <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={4} my={8} gap={6}>
         <LessonCards />

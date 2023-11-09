@@ -1,0 +1,132 @@
+<link rel="stylesheet" href="https://mint.highlight.xyz/assets/embed.css" />
+<style>
+  body {
+    background-color: transparent !important;
+    filter: invert(1);
+    max-height: 300px !important;
+  }
+
+  .highlight-Paper-root,
+  .highlight-1ora4m0,
+  .highlight-Skeleton-root::after,
+  .highlight-Skeleton-root::before {
+    background-color: transparent !important;
+  }
+
+  /* .highlight-driu1u::before {
+    content: ' ';
+    background-image: url(/images/minted-on-OP.png);
+    background-repeat: no-repeat;
+    width: 176px;
+    height: 23px;
+    position: absolute;
+    top: -8px;
+    right: 7px;
+    background-attachment: unset;
+    background-size: contain;
+    filter: invert(1);
+  } */
+
+  .highlight-Skeleton-root {
+    content: ' ';
+    background-image: url('/loading.svg');
+    background-repeat: no-repeat;
+    /* background-position: 50% 10%; */
+    background-position: center;
+    display: block;
+    width: 200px;
+    height: 200px;
+  }
+
+  video,
+  .highlight-Image-imageWrapper,
+  .ju367vh {
+    filter: invert(1);
+  }
+
+  video {
+    display: none !important;
+  }
+
+  .highlight-driu1u {
+    /* height: 190px !important; */
+    display: none !important;
+  }
+
+  .highlight-1ljlxwd,
+  .highlight-1f84zlx,
+  .highlight-8od8ev,
+  .highlight-1pv0usq {
+    display: none !important;
+  }
+
+  .highlight-8od8ev~.highlight-8od8ev {
+    display: flex !important;
+  }
+
+  /* .highlight-driu1u::after {
+    content: ' ';
+    background-image: url(/lesson/images/layer-2-blockchains/datadisk-gif-567a7a75.gif);
+    background-repeat: no-repeat;
+    width: 350px;
+    max-width: -webkit-fill-available;
+    height: 180px;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background-attachment: unset;
+    background-size: contain;
+    filter: invert(1);
+    display: block;
+  } */
+
+  video::-webkit-media-controls {
+    display: none;
+  }
+
+  .highlight-1jw005e {
+    box-shadow: none !important;
+  }
+
+  [data-rk] ._9pm4ki3 {
+    top: 0;
+  }
+
+  .mobile-hack {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+  }
+
+  /* signing modal  */
+  .ju367v8l {
+    /* height: 710px !important; */
+    padding-top: 510px !important;
+  }
+</style>
+<script>
+  const whitelist_collection = { '64b810dda23ab034b49a1340': { slug: 'wallet-layer-2-blockchains' } }
+  const isEmbedded = typeof window !== 'undefined' && window !== window.parent
+  const queryString = window.location.search
+  const urlParams = new URLSearchParams(queryString)
+  const collection = urlParams.get('collection')
+  const isMobile = urlParams.get('mobile') === 'true'
+  if (isMobile) {
+    document.write(`<a target="_blank" href="https://highlight.xyz/mint/${collection}"><div class="mobile-hack"></div></a>`)
+  }
+  if (collection?.length && Object.keys(whitelist_collection).includes(collection)) {
+    if (!isEmbedded) {
+      window.location.href = `/lessons/${whitelist_collection[collection].slug}`
+    }
+    document.write(`<div data-widget="highlight-mint-card" data-mint-collection-id="${collection}"></div>`)
+  }
+  else if (collection?.length)
+    document.write(`<div>wrong collection</div>`)
+  else
+    document.write(`<div>no collection</div>`)
+</script>
+<script type="module" crossorigin="true" src="https://mint.highlight.xyz/assets/embed.js?v=1"></script>

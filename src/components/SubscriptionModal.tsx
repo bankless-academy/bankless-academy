@@ -13,10 +13,13 @@ import {
   InputLeftElement,
   useToast,
 } from '@chakra-ui/react'
-import { Envelope } from 'phosphor-react'
+import { Envelope } from '@phosphor-icons/react'
+import { useTranslation } from 'react-i18next'
 
 import { LessonType } from 'entities/lesson'
 import { api, Mixpanel } from 'utils'
+import { useAccount } from 'wagmi'
+import { useLocalStorage } from 'usehooks-ts'
 
 const SubscriptionModal = ({
   isOpen,
@@ -27,7 +30,10 @@ const SubscriptionModal = ({
   onClose: () => void
   lesson?: LessonType
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const toast = useToast()
+  const { address } = useAccount()
+  const [ens] = useLocalStorage(`ens-cache`, {})
   const [email, setEmail] = useState(localStorage.getItem('email'))
   const emailRegex =
     // eslint-disable-next-line no-useless-escape
@@ -43,8 +49,11 @@ const SubscriptionModal = ({
       >
         <ModalHeader>
           {lesson
-            ? `Subscribe to '${lesson.name}' notifications`
-            : 'Newsletter'}
+            ? t(`Subscribe to {{lesson_title}} notifications`, {
+                lesson_title: lesson.name,
+                interpolation: { escapeValue: false },
+              })
+            : t('Newsletter')}
         </ModalHeader>
         <ModalCloseButton />
         <ModalBody>
@@ -54,7 +63,7 @@ const SubscriptionModal = ({
             </InputLeftElement>
             <Input
               backgroundColor="black"
-              placeholder="Enter your email address..."
+              placeholder={t('Enter your email address...')}
               type="email"
               value={email}
               mb="8"
@@ -67,27 +76,34 @@ const SubscriptionModal = ({
           <Box textAlign="right" mb="6">
             <Button
               size="lg"
-              variant="primaryWhiteBig"
+              variant="primaryWhite"
               onClick={async () => {
                 toast.closeAll()
                 if (!email)
                   toast({
-                    title: 'Email missing',
-                    description: 'Provide an email.',
+                    title: t('Email missing'),
+                    description: t('Provide an email.'),
                     status: 'warning',
                     duration: 10000,
+                    isClosable: true,
                   })
                 else if (emailRegex.test(email) === false)
                   toast({
-                    title: 'Wrong email format',
-                    description: 'Please check your email.',
+                    title: t('Wrong email format'),
+                    description: t('Please check your email.'),
                     status: 'warning',
                     duration: 10000,
+                    isClosable: true,
                   })
                 else {
                   const paramBE = lesson ? { notionId: lesson.notionId } : {}
                   const result = await api('/api/subscribe-newsletter', {
                     email,
+                    wallet: address,
+                    ens:
+                      address && address in ens
+                        ? ens[address]?.name
+                        : undefined,
                     ...paramBE,
                   })
                   if (result && result.status === 200) {
@@ -97,7 +113,9 @@ const SubscriptionModal = ({
                       }`,
                       'true'
                     )
-                    const paramStats = lesson ? { lesson: lesson.name } : {}
+                    const paramStats = lesson
+                      ? { lesson: lesson.englishName }
+                      : {}
                     Mixpanel.track(
                       lesson ? 'subscribe_lesson' : 'subscribe_newsletter',
                       {
@@ -106,25 +124,28 @@ const SubscriptionModal = ({
                       }
                     )
                     toast({
-                      title: 'Thanks for subscribing Explorer 🧑‍🚀',
-                      description: "You'll hear from us soon!",
+                      title: t('Thanks for subscribing Explorer 🧑‍🚀'),
+                      description: t(`You'll hear from us soon!`),
                       status: 'success',
                       duration: 10000,
+                      isClosable: true,
                     })
                   } else {
                     toast({
-                      title:
-                        "Wrong went wrong ... we couldn't add your subscription.",
-                      description: 'Please try again later.',
+                      title: t(
+                        `Something went wrong ... we couldn't add your subscription.`
+                      ),
+                      description: t('Please try again later.'),
                       status: 'warning',
                       duration: 10000,
+                      isClosable: true,
                     })
                   }
                   onClose()
                 }
               }}
             >
-              {lesson ? 'Notify me' : 'Subscribe'}
+              {lesson ? t('Notify me') : t('Subscribe')}
             </Button>
           </Box>
         </ModalBody>

@@ -1,21 +1,25 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
-import { Passport } from '@gitcoinco/passport-sdk-types'
-import { PassportReader } from '@gitcoinco/passport-sdk-reader'
+// import { Passport } from '@gitcoinco/passport-sdk-types'
+// import { PassportReader } from '@gitcoinco/passport-sdk-reader'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
-import { CERAMIC_PASSPORT, NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
+import { NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
 import { filterValidStamps } from 'utils/passport'
 import { trackBE } from 'utils/mixpanel'
+import axios from 'axios'
 
-const reader = new PassportReader(CERAMIC_PASSPORT, '1')
+// const reader = new PassportReader(CERAMIC_PASSPORT, '1')
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { address, embed } = req.body
+  const DEV_SECRET = process.env.DEV_SECRET
+  const param =
+    DEV_SECRET && req.query?.dev === DEV_SECRET ? req.query : req.body
+  const { address, embed } = param
 
   if (!address || typeof address === 'object')
     return res.status(400).json({ error: 'Wrong params' })
@@ -50,6 +54,9 @@ export default async function handler(
     '0x5B1899D88b4Ff0Cf5A34651e7CE7164398211C66'.toLowerCase(),
     '0xd9c1570148E36FF9657b67AcE540052341DDF7de'.toLowerCase(),
     '0xBDe4CB8d858adFaDDc5517bd54479a066559E575'.toLowerCase(),
+    '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
+    '0xB30dD1198Feed1e22EC969f61EEd04cB75937adf'.toLowerCase(),
+    '0xb749A586080436e616f097f193Ba9CB6A25E7Ea6'.toLowerCase(),
   ]
   if (TEMP_PASSPORT_WHITELIST.includes(address.toLowerCase())) {
     return res.status(200).json({
@@ -62,23 +69,42 @@ export default async function handler(
   if (SYBIL_CHECK === 'GITCOIN_PASSPORT') {
     try {
       // read passport
-      const passport: Passport = await reader.getPassport(address)
+      // const passportReader: Passport = await reader.getPassport(address)
+      // console.log(passportReader)
+      const gitcoinConfig = {
+        headers: {
+          accept: 'application/json',
+          'X-API-Key': process.env.GITCOIN_PASSPORT_API_KEY,
+        },
+      }
+      const passportRes = await axios.get(
+        `https://api.scorer.gitcoin.co/registry/stamps/${address}?limit=1000`,
+        gitcoinConfig
+      )
+      const passport: any = passportRes.data
       // console.log('** passport **', passport)
-      const validStamps = filterValidStamps(passport.stamps)
-      // console.log('validStamps', validStamps)
+      let validStamps = []
       const stampHashes = {}
       const stampProviders = {}
       const stampHashesSearch = []
       let whereCondition = 'gitcoin_stamps @> ?'
       let sybil = []
-      if (passport?.stamps?.length) {
-        for (const stamp of passport?.stamps) {
-          stampHashes[stamp.provider] = stamp.credential.credentialSubject.hash
+      if (passport?.items?.length) {
+        // eslint-disable-next-line no-unsafe-optional-chaining
+        for (const stamp of passport?.items) {
+          const provider = stamp.credential?.credentialSubject?.provider
+          // console.log(stamp)
+          if (stamp.credential?.credentialSubject?.hash)
+            stampHashes[provider] = stamp.credential?.credentialSubject?.hash
         }
-        for (const stamp of passport?.stamps) {
-          stampProviders[stamp.provider] = stamp
+        // eslint-disable-next-line no-unsafe-optional-chaining
+        for (const stamp of passport?.items) {
+          const provider = stamp.credential?.credentialSubject?.provider
+          stampProviders[provider] = { provider, stamp: stamp.credential }
         }
-        console.log('stampHashes', stampHashes)
+        // console.log('stampHashes', stampHashes)
+        validStamps = filterValidStamps(Object.values(stampProviders))
+        // console.log('validStamps', validStamps)
         // merge previous data without deleting other keys
         const updated = await db.raw(
           `update "users" set "gitcoin_stamps" = gitcoin_stamps || ? where "users"."id" = ?`,
@@ -124,7 +150,11 @@ export default async function handler(
       if (sybil?.length) {
         // mark this user as a sybil attacker
         console.log('fraud detected:', sybil)
-        trackBE(address, 'duplicate_stamps', { target: sybil[0]?.id, embed })
+        trackBE(address, 'duplicate_stamps', {
+          sybil_id: sybil[0]?.id,
+          sybil_address: sybil[0]?.address,
+          embed,
+        })
         await db(TABLES.users)
           .where(TABLE.users.id, userId)
           .update({ sybil_user_id: sybil[0]?.id })
@@ -137,7 +167,7 @@ export default async function handler(
         })
       }
       if (validStamps?.length >= NUMBER_OF_STAMP_REQUIRED) {
-        console.log('verified:', validStamps?.length)
+        // console.log('verified:', validStamps?.length)
       } else {
         console.log('not verified')
       }

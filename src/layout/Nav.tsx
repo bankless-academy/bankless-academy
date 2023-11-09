@@ -9,6 +9,7 @@ import OptionMenu from 'components/OptionMenu'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/'
 import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
 import { useSmallScreen } from 'hooks/index'
+import ExternalLink from 'components/ExternalLink'
 
 declare global {
   interface Navigator {
@@ -33,7 +34,7 @@ const Nav: React.FC = () => {
         ? 'true'
         : (queryString.parse(window.location.search)?.webapp || '')?.toString()
       : undefined
-  const isEmbedded = typeof window !== 'undefined' && window.parent?.length > 0
+  const isEmbedded = typeof window !== 'undefined' && window !== window.parent
 
   useEffect((): void => {
     const embedValue =
@@ -65,6 +66,11 @@ const Nav: React.FC = () => {
 
   return (
     <header>
+      {isEmbedded && isMobile && typeof window !== 'undefined' ? (
+        <ExternalLink href={`/${window.location.search}`}>
+          <Box w="100%" h="100%" position="absolute" zIndex="3" />
+        </ExternalLink>
+      ) : null}
       <Box
         bgColor="black"
         borderBottom="1px solid #222222"
@@ -84,7 +90,10 @@ const Nav: React.FC = () => {
           <HStack spacing={2} justifyContent="space-between">
             <SwitchNetworkButton isSmallScreen={isSmallScreen} />
             <ConnectWalletButton isSmallScreen={isSmallScreen} />
-            <OptionMenu isSmallScreen={isSmallScreen} />
+            <OptionMenu
+              isSmallScreen={isSmallScreen}
+              isWebApp={webapp === 'true'}
+            />
           </HStack>
         </Flex>
       </Box>

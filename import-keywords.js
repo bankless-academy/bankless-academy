@@ -7,7 +7,7 @@ const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
 const DEFAULT_NOTION_ID = '623e965e4f10456094d17aa94ec37105'
 const POTION_API = 'https://potion.banklessacademy.com'
-const KEYWORDS_FILE = IS_WHITELABEL ? 'whitelabel-keywords.json' : 'keywords.json'
+const KEYWORDS_FILE = IS_WHITELABEL ? 'whitelabel-keywords.json' : 'translation/keywords/en/keywords.json'
 
 const args = process.argv
 const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : process.env.DEFAULT_KEYWORD_DB_ID || DEFAULT_NOTION_ID
@@ -31,7 +31,7 @@ axios
     response.data.map((k) => {
       const { definition, keyword } = k.fields
       if (definition !== undefined)
-        keywords[keyword?.toLowerCase()] = { definition }
+        keywords[keyword?.toLowerCase()] = { keyword, keyword_plural: keyword + 's', definition: definition.replace(' ', ' ') }
     })
     console.log(keywords)
     const FILE_CONTENT = `${JSON.stringify(keywords, null, 2)}

@@ -1,4 +1,4 @@
-import NextLink, { LinkProps } from 'next/link'
+import { LinkProps } from 'next/link'
 import {
   Link as ChakraLink,
   LinkProps as ChakraLinkProps,
@@ -13,11 +13,26 @@ const ExternalLink = ({
   children,
   alt,
   ...props
-}: ChakraLinkAndNextProps): JSX.Element => (
-  <NextLink href={href} passHref>
+}: ChakraLinkAndNextProps): JSX.Element => {
+  const whiteProps =
+    props.underline === 'true'
+      ? {
+          style: {
+            color: 'white',
+            textDecoration: 'underline',
+            textUnderlinePosition: 'under',
+          },
+          _hover: {
+            textDecoration: 'underline !important',
+          },
+        }
+      : {}
+  return (
     <ChakraLink
+      href={href}
       {...props}
-      isExternal
+      {...whiteProps}
+      isExternal="true"
       onClick={() => {
         const link = href || 'NO_LINK'
         const name = alt || getNodeText(children) || 'NO_NAME'
@@ -26,7 +41,7 @@ const ExternalLink = ({
     >
       {children}
     </ChakraLink>
-  </NextLink>
-)
+  )
+}
 
 export default ExternalLink

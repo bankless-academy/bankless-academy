@@ -1,6 +1,5 @@
-import Web3Modal from 'web3modal'
+/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react'
-import WalletConnectProvider from '@walletconnect/web3-provider'
 import {
   Button,
   Text,
@@ -11,43 +10,31 @@ import {
   SimpleGrid,
   Box,
   Image,
-  useToast,
-  useDisclosure,
   Heading,
+  useDisclosure,
 } from '@chakra-ui/react'
-import { Wallet } from 'phosphor-react'
+import { Wallet } from '@phosphor-icons/react'
 import axios from 'axios'
-import Davatar from '@davatar/react'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-import { getDefaultProvider } from '@ethersproject/providers'
+import { useWeb3Modal } from '@web3modal/wagmi/react'
+import { useAccount, useNetwork, useSignMessage, useDisconnect } from 'wagmi'
+import { fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
+import makeBlockie from 'ethereum-blockies-base64'
+import { SiweMessage } from 'siwe'
+import { useTranslation } from 'react-i18next'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
 export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
   OrigPopoverTrigger
 
-import ENSName from 'components/ENSName'
 import ExternalLink from 'components/ExternalLink'
-import { useWalletWeb3React } from 'hooks/index'
-import { walletConnect, injected } from 'utils'
-import { LESSONS, INFURA_KEY, ALCHEMY_KEY } from 'constants/index'
-import {
-  MINTKUDOS_API,
-  MINTKUDOS_COMMUNITY_ID,
-  KUDOS_IDS,
-} from 'constants/kudos'
-import { KudosType } from 'entities/kudos'
-import { SUPPORTED_NETWORKS_IDS, RPCS } from 'constants/networks'
-
-export const dAvatarProvider = getDefaultProvider(1, {
-  infura: INFURA_KEY,
-  alchemy: ALCHEMY_KEY,
-  quorum: 1,
-})
-
-let web3Modal: Web3Modal
+import { LESSONS, SIWE_ENABLED } from 'constants/index'
+import { BADGE_IDS } from 'constants/badges'
+import { getUD, getLensProfile, shortenAddress, api } from 'utils'
+// import { polygon, optimism } from 'wagmi/chains'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -61,196 +48,299 @@ const Overlay = styled(Box)`
   backdrop-filter: blur(2px);
 `
 
+export interface Options {
+  route?: 'Account' | 'ConnectWallet' | 'Help' | 'SelectNetwork'
+}
+
 const ConnectWalletButton = ({
   isSmallScreen,
 }: {
   isSmallScreen: boolean
 }): React.ReactElement => {
-  const router = useRouter()
-  const [web3Provider, setWeb3Provider] = useState()
-  const walletWeb3ReactContext = useWalletWeb3React()
-  const isConnected = walletWeb3ReactContext.active
-  const walletAddress = walletWeb3ReactContext.account
-  const [connectClick, setConnectClick] = useState(false)
-  const [isPopOverOn, setIsPopOverOn] = useState(false)
-  const [walletIsLoading, setWalletIsLoading] = useState(false)
-  const [kudos, setKudos] = useState<KudosType[]>([])
-  const toast = useToast()
-  const web3ModalFrame = {
-    cacheProvider: true,
-    theme: {
-      background: '#010101',
-      main: 'white',
-      secondary: 'white',
-      border: '#252525',
-      hover: '#363636',
-    },
-    providerOptions: {
-      walletconnect: {
-        package: WalletConnectProvider,
-        options: {
-          infuraId: INFURA_KEY,
-          rpc: RPCS,
-        },
-        connector: async () => {
-          return 'walletconnect'
-        },
-      },
-      injected: {
-        package: null,
-        connector: async () => {
-          return 'injected'
-        },
-      },
-    },
-  }
+  const { t } = useTranslation()
+  const { open } = useWeb3Modal()
+  const { connector, address, isConnected } = useAccount()
+  const { chain } = useNetwork()
+  const [waitingForSIWE, setWaitingForSIWE] = useState(false)
+  const [isDisconnecting, setIsDisconnecting] = useState(false)
+  const { signMessageAsync } = useSignMessage()
+  const [name, setName] = useState(null)
+  const [avatar, setAvatar] = useState(null)
+  const [badges, setBadges] = useState<number[]>([])
+  const [siwe, setSiweLS] = useLocalStorage('siwe', '')
   const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
   )
+  const [ens, setEns] = useLocalStorage(`ens-cache`, {})
+  const [, setBadgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [, setKudosMintedLS] = useLocalStorage('kudosMinted', [])
-  const [refreshKudosLS, setRefreshKudosLS] = useLocalStorage(
-    'refreshKudos',
+  const [refreshBadgesLS, setRefreshBadgesLS] = useLocalStorage(
+    'refreshBadges',
     false
   )
-  const { onClose } = useDisclosure()
+  const { onOpen, onClose, isOpen } = useDisclosure()
   const { asPath } = useRouter()
+  const { disconnect } = useDisconnect({
+    onError(error) {
+      console.log('Error while disconnecting', error)
+    },
+    onSuccess() {
+      console.log('Disconnect success')
+      // HACK: mobile wallet disconnect issues
+      if (localStorage.getItem('wagmi.wallet').includes('walletConnect')) {
+        console.log('force reload')
+        location.reload()
+      }
+    },
+  })
 
   const isLessonPage = asPath.includes('/lessons/')
 
-  function web3ModalConnect(web3Modal) {
-    web3Modal
-      .connect()
-      .then((provider) => {
-        if (
-          !SUPPORTED_NETWORKS_IDS.includes(
-            parseInt(provider?.networkVersion || provider?.chainId)
+  // const networkVersion =
+  //   typeof window !== 'undefined'
+  //     ? (window as any).ethereum?.networkVersion
+  //     : ''
+  // if (networkVersion === '137') setDefaultChain(polygon)
+  // if (networkVersion === '10') setDefaultChain(optimism)
+
+  async function openModal() {
+    await open({ view: 'Connect' })
+  }
+
+  async function disconnectWallet() {
+    try {
+      setWaitingForSIWE(false)
+      setIsDisconnecting(true)
+      onClose()
+      setSiweLS('')
+      setName(null)
+      setAvatar(null)
+      await fetch('/api/siwe/logout')
+      setIsDisconnecting(false)
+      disconnect()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  async function updateName(address) {
+    let name = shortenAddress(address)
+    let avatar = makeBlockie(address)
+    const replaceName = (newName) => {
+      if (name !== newName) {
+        setName(newName)
+        name = newName
+      }
+    }
+    const replaceAvatar = (newAvatar) => {
+      if (avatar !== newAvatar) {
+        setAvatar(newAvatar)
+        avatar = newAvatar
+      }
+    }
+    if (ens[address]?.name) setName(ens[address].name)
+    else setName(name)
+    if (ens[address]?.avatar) setAvatar(ens[address].avatar)
+    else setAvatar(avatar)
+
+    const ensName = await fetchEnsName({
+      address,
+      chainId: 1,
+    })
+    if (ensName) {
+      replaceName(ensName)
+      const ensAvatar = await fetchEnsAvatar({
+        name: ensName,
+        chainId: 1,
+      })
+      if (ensAvatar) replaceAvatar(ensAvatar)
+    } else {
+      const lensProfile = await getLensProfile(address)
+      if (lensProfile.name) {
+        replaceName(lensProfile.name)
+        if (lensProfile.avatar) {
+          replaceAvatar(lensProfile.avatar)
+        }
+      } else {
+        const ud = await getUD(address)
+        if (ud?.length) {
+          replaceName(ud)
+          replaceAvatar(
+            `https://resolve.unstoppabledomains.com/image-src/${ud}`
           )
-        ) {
-          // wrong network
-          toast.closeAll()
-          toast({
-            title: 'Wrong network detected',
-            description: 'Please switch back to Ethereum Mainnet',
-            status: 'warning',
-            duration: null,
-          })
-        } else {
-          // correct network
-          toast.closeAll()
         }
-        setWeb3Provider(provider)
-        if (provider.isMetaMask) {
-          return walletWeb3ReactContext.activate(injected)
-        } else {
-          return walletWeb3ReactContext.activate(walletConnect)
+      }
+    }
+    const ensCache = JSON.parse(JSON.stringify(ens))
+    ensCache[address] = { name, avatar }
+    setEns(ensCache)
+  }
+
+  function refreshBadges() {
+    if (address)
+      axios.get(`/api/badges/${address}`).then((res) => {
+        const badgeTokenIds = res?.data?.badgeTokenIds
+        if (Array.isArray(badgeTokenIds)) {
+          const badgesMinted = BADGE_IDS.filter((badgeId) =>
+            badgeTokenIds.includes(badgeId)
+          )
+          // console.log(badgesMinted)
+          setBadgesMintedLS(badgesMinted)
+          for (const badgeId of BADGE_IDS) {
+            localStorage.setItem(
+              `isBadgeMinted-${badgeId.toString()}`,
+              badgesMinted.includes(badgeId).toString()
+            )
+          }
+          setBadges(badgesMinted)
         }
-      })
-      .then(() => {
-        setConnectClick(false)
-      })
-      .catch((e) => {
-        setWalletIsLoading(false)
-        setConnectClick(false)
-        console.error(e)
+        const kudosTokenIds = res?.data?.kudosTokenIds
+        if (Array.isArray(kudosTokenIds)) {
+          setKudosMintedLS(kudosTokenIds)
+        }
       })
   }
 
-  useEffect(() => {
-    if (
-      localStorage.getItem('WEB3_CONNECT_CACHED_PROVIDER') &&
-      // don't prompt MetaMask popup if wallet isn't unlocked
-      !(window?.ethereum?.isMetaMask && !window?.ethereum?.selectedAddress)
-    ) {
-      // reflect parent web3 connection status when website is embedded
-      if (
-        !router.asPath.includes('embed=') ||
-        !router.asPath.includes('connect=false')
-      ) {
-        web3Modal = new Web3Modal(web3ModalFrame)
-        web3ModalConnect(web3Modal)
-      }
+  const loadAddress = (address) => {
+    setConnectWalletPopupLS(false)
+    onClose()
+    if (localStorage.getItem('current_wallet') !== address?.toLowerCase()) {
+      localStorage.removeItem('passport')
     }
-  }, [router])
+    localStorage.setItem('current_wallet', address?.toLowerCase())
+    updateName(address)
+    const wallets = localStorage.getItem('wallets')
+      ? JSON.parse(localStorage.getItem('wallets'))
+      : []
+    if (!wallets.includes(address.toLowerCase())) {
+      wallets.push(address.toLowerCase())
+      localStorage.setItem('wallets', JSON.stringify(wallets))
+    }
+    refreshBadges()
+  }
+
+  const verify = async () => {
+    try {
+      const verifyRes = await api('/api/siwe/verify', JSON.parse(siwe))
+      if (verifyRes.data.ok) {
+        loadAddress(address)
+      } else {
+        console.error('pb SIWE signature')
+        disconnectWallet()
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   useEffect(() => {
-    if (connectClick) {
-      setWalletIsLoading(true)
-      web3Modal = new Web3Modal(web3ModalFrame)
-      web3ModalConnect(web3Modal)
+    if (siwe?.length) {
+      verify()
     }
-  }, [connectClick])
+  }, [])
+
+  const signIn = async () => {
+    const chainId = chain?.id
+    if (!chainId || waitingForSIWE || isDisconnecting) return
+    const timeout = setTimeout(() => {
+      console.log('SIWE timeout')
+      disconnectWallet()
+    }, 60000)
+    try {
+      setWaitingForSIWE(true)
+      const nonceRes = await fetch('/api/siwe/nonce')
+      const nonce = await nonceRes.text()
+
+      // Create SIWE message with pre-fetched nonce and sign with wallet
+      // https://wagmi.sh/examples/sign-in-with-ethereum
+      const message = new SiweMessage({
+        domain: window.location.host,
+        address,
+        statement: t('Sign in with Ethereum to the app.'),
+        uri: window.location.origin,
+        version: '1',
+        chainId,
+        nonce,
+      })
+      await new Promise((resolve) => setTimeout(resolve, 500))
+      const signature = await signMessageAsync({
+        message: message.prepareMessage(),
+      })
+      clearTimeout(timeout)
+
+      // Verify signature
+      const siwe = { message, signature }
+      // TODO: use /me to get verified address
+      // const res = await fetch('/api/siwe/me')
+      // TODO: add support for multiple windows open
+      const verifyRes = await api('/api/siwe/verify', siwe)
+      // https://github.com/bankless-academy/bankless-academy/pull/90/commits/d130d22e70ad146b1e619133864d03a8bf4c3cb4#diff-caedf14611e4652b0b5f0287a5bc59621a76c1d0b41c544302d3c8c1a7641d22L107
+      if (!verifyRes.data.ok) throw new Error('Error verifying message')
+      setSiweLS(JSON.stringify(siwe))
+      loadAddress(address)
+      setWaitingForSIWE(false)
+    } catch (error) {
+      clearTimeout(timeout)
+      setWaitingForSIWE(false)
+      setName(null)
+      setAvatar(null)
+    }
+  }
 
   useEffect(() => {
-    if (walletAddress) {
-      setRefreshKudosLS(false)
-      if (
-        localStorage.getItem('current_wallet') !== walletAddress.toLowerCase()
-      ) {
-        localStorage.removeItem('passport')
+    if (address && !SIWE_ENABLED) {
+      // DO nothing
+    } else {
+      const { message }: any = siwe?.length ? JSON.parse(siwe) : {}
+      if (connector && address && message?.address !== address) {
+        signIn()
       }
-      localStorage.setItem('current_wallet', walletAddress.toLowerCase())
-      const wallets = localStorage.getItem('wallets')
-        ? JSON.parse(localStorage.getItem('wallets'))
-        : []
-      if (!wallets.includes(walletAddress.toLowerCase())) {
-        wallets.push(walletAddress.toLowerCase())
-        localStorage.setItem('wallets', JSON.stringify(wallets))
-      }
-      axios
-        .get(
-          `${MINTKUDOS_API}/v1/wallets/${walletAddress}/tokens?limit=100&communityId=${MINTKUDOS_COMMUNITY_ID}&claimStatus=claimed`
-        )
-        .then((res) => {
-          const data = res.data.data
-          if (Array.isArray(data)) {
-            setKudosMintedLS(
-              KUDOS_IDS.filter((kudosId) =>
-                data.some((kudos: KudosType) => kudos.kudosTokenId === kudosId)
-              )
-            )
-            setKudos(
-              data.filter((kudos: KudosType) =>
-                KUDOS_IDS.includes(kudos.kudosTokenId)
-              )
-            )
-          }
-        })
     }
-  }, [walletAddress, !!refreshKudosLS])
+  }, [siwe, address, connector])
 
-  const nbKudosToDisplay = kudos?.map((k) =>
-    LESSONS.find((lesson) => lesson.kudosId === k.kudosTokenId)
-  )?.length
+  useEffect(() => {
+    if (address && !SIWE_ENABLED) {
+      loadAddress(address)
+    }
+  }, [address])
+
+  useEffect(() => {
+    if (refreshBadgesLS) {
+      setRefreshBadgesLS(false)
+      refreshBadges()
+    }
+  }, [refreshBadgesLS])
+
+  const nbBadgesToDisplay = badges.length
 
   return (
     <>
-      {isConnected ? (
+      {isConnected && !waitingForSIWE && name ? (
         <Popover
-          isOpen={isPopOverOn}
+          isOpen={isOpen}
           placement="bottom-end"
           returnFocusOnClose={false}
-          onClose={() => {
-            onClose()
-            setIsPopOverOn(false)
-          }}
+          onOpen={onOpen}
+          onClose={onClose}
         >
           <PopoverTrigger>
             <Button
-              variant="secondary"
+              variant={name ? 'secondary' : 'primary'}
               size={isSmallScreen ? 'sm' : 'md'}
-              // TODO: fix bug when switching wallets
               leftIcon={
-                <Davatar
-                  size={25}
-                  address={walletAddress}
-                  provider={dAvatarProvider}
+                <Image
+                  src={avatar || '/images/default_avatar.png'}
+                  borderRadius="50%"
+                  background="gray"
+                  w={isSmallScreen ? '22px' : '28px'}
+                  h={isSmallScreen ? '22px' : '28px'}
                 />
               }
-              onClick={() => setIsPopOverOn(!isPopOverOn)}
+              onClick={() => onOpen()}
             >
               <Text maxW="200px" display="flex" alignItems="center" isTruncated>
-                <ENSName provider={web3Provider} address={walletAddress} />
+                {name || t('Click here to sign in')}
               </Text>
             </Button>
           </PopoverTrigger>
@@ -259,44 +349,38 @@ const ConnectWalletButton = ({
             <PopoverBody>
               <Box textAlign="center" m="2">
                 <Button
-                  isFullWidth
+                  w="100%"
+                  bg="var(--chakra-colors-whiteAlpha-500)"
                   size={isSmallScreen ? 'sm' : 'md'}
                   leftIcon={<Wallet weight="bold" />}
-                  onClick={() => {
-                    setIsPopOverOn(false)
-                    walletWeb3ReactContext.deactivate()
-                    web3Modal.clearCachedProvider()
-                    localStorage.removeItem('walletconnect')
-                    setWalletIsLoading(false)
-                    setKudos([])
-                  }}
+                  onClick={disconnectWallet}
                 >
-                  Disconnect wallet
+                  {t('Disconnect wallet')}
                 </Button>
               </Box>
               {/* TODO: move to dedicated component? */}
-              {kudos?.length > 0 && (
+              {badges?.length > 0 && (
                 <>
                   <Text fontSize="xl" fontWeight="bold" textAlign="center">
-                    My Academy Badges
+                    {t('My Academy Badges')}
                   </Text>
                   <Box
                     h="215px"
-                    overflowY={nbKudosToDisplay <= 6 ? 'hidden' : 'scroll'}
+                    overflowY={nbBadgesToDisplay <= 6 ? 'hidden' : 'scroll'}
                     overflowX="hidden"
                     backgroundColor="blackAlpha.200"
                     borderRadius="10px"
                   >
                     <SimpleGrid columns={3} spacing={3} p={3}>
-                      {kudos?.map((k, index) => {
+                      {badges?.map((badgeTokenId, index) => {
                         const lesson = LESSONS.find(
-                          (lesson) => lesson.kudosId === k.kudosTokenId
+                          (lesson) => lesson.badgeId === badgeTokenId
                         )
                         if (lesson) {
-                          if (lesson.kudosImageLink.includes('.mp4')) {
+                          if (lesson.badgeImageLink.includes('.mp4')) {
                             return (
                               <Box
-                                key={`kudos-${index}`}
+                                key={`badge-${index}`}
                                 height="78px"
                                 width="78px"
                                 boxShadow="0px 0px 4px 2px #00000060"
@@ -315,7 +399,7 @@ const ConnectWalletButton = ({
                                   }}
                                 >
                                   <source
-                                    src={lesson.kudosImageLink}
+                                    src={lesson.badgeImageLink}
                                     type="video/mp4"
                                   ></source>
                                 </video>
@@ -324,7 +408,7 @@ const ConnectWalletButton = ({
                           } else
                             return (
                               <Box
-                                key={`kudos-${index}`}
+                                key={`badge-${index}`}
                                 justifySelf="center"
                                 boxShadow="0px 0px 4px 2px #00000060"
                                 borderRadius="3px"
@@ -332,7 +416,7 @@ const ConnectWalletButton = ({
                                 p={1}
                               >
                                 <Image
-                                  src={k.assetUrl}
+                                  src={lesson.badgeImageLink}
                                   width="70px"
                                   height="70px"
                                   alt={lesson.name}
@@ -365,29 +449,36 @@ const ConnectWalletButton = ({
           />
           <PopoverTrigger>
             <Button
-              onClick={() => {
-                setConnectClick(true)
-              }}
+              onClick={openModal}
               size={isSmallScreen ? 'sm' : 'md'}
               leftIcon={<Wallet weight="bold" />}
-              isLoading={walletIsLoading}
-              loadingText="Connecting wallet"
+              isLoading={waitingForSIWE || isDisconnecting}
+              loadingText={
+                isDisconnecting
+                  ? t('Disconnecting')
+                  : SIWE_ENABLED
+                  ? t('Sign In With Ethereum')
+                  : t('Connecting wallet')
+              }
               zIndex={2}
               variant="primary"
             >
-              Connect wallet
+              {t('Connect wallet')}
             </Button>
           </PopoverTrigger>
           <PopoverContent>
             <PopoverArrow />
             <PopoverBody>
               <Heading as="h2" size="md" textAlign="center" my="2">
-                Connect your wallet to proceed.
+                {t('Connect your wallet to proceed.')}
               </Heading>
               <Text textAlign="center">
                 {`Don’t know how? `}
-                <ExternalLink href="/faq#edf3a4658d3d4aa78eac62e1dcf68978">
-                  Get help here
+                <ExternalLink
+                  underline="true"
+                  href="/faq#edf3a4658d3d4aa78eac62e1dcf68978"
+                >
+                  {t('Get help here')}
                 </ExternalLink>
               </Text>
             </PopoverBody>

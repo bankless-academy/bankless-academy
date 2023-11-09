@@ -1,36 +1,41 @@
-import React, { useRef, useState, useEffect } from 'react'
+/* eslint-disable no-console */
+import React, { useRef, useState, useEffect, useLayoutEffect } from 'react'
 import {
   Box,
   Text,
-  Image as ChakraImage,
   ButtonGroup,
   Button,
   HStack,
   VStack,
   SimpleGrid,
   Tooltip,
+  useToast,
 } from '@chakra-ui/react'
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
-import { Warning } from 'phosphor-react'
-// import { isMobile } from 'react-device-detect'
+import { Warning, ArrowUUpLeft, Bug } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
+import { useAccount } from 'wagmi'
+import { useTranslation } from 'react-i18next'
+import { isMobile } from 'react-device-detect'
 
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
-import MintKudos from 'components/MintKudos'
-import QuestComponent from 'components/Quest/QuestComponent'
+import MintBadge from 'components/MintBadge'
 import ExternalLink from 'components/ExternalLink'
-import InternalLink from 'components/InternalLink'
-import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
-import { Mixpanel } from 'utils'
-import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
-import { LearnIcon, QuizIcon, QuestIcon, KudosIcon } from 'components/Icons'
+import { useSmallScreen } from 'hooks/index'
+import { isHolderOfNFT, Mixpanel, scrollTop } from 'utils'
+import { IS_WHITELABEL, KEYWORDS, TOKEN_GATING_ENABLED } from 'constants/index'
+import { LearnIcon, QuizIcon, QuestIcon, RewardsIcon } from 'components/Icons'
 import { theme } from 'theme/index'
+import { QuestType } from 'components/Quest/QuestComponent'
+import NFT from 'components/NFT'
+import Keyword from 'components/Keyword'
+import EditContentModal from 'components/EditContentModal'
 
 const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   border-radius: 0.5rem;
@@ -41,7 +46,8 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   }
   span.keyword {
     cursor: help;
-    border-bottom: 1px dashed grey;
+    border-bottom: 1px dashed #e5afff;
+    color: #e5afff;
     display: inline-block !important;
   }
   div.content > div {
@@ -93,7 +99,7 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
     h2,
     p {
       font-size: var(--chakra-fontSizes-xl);
-      margin: 1em;
+      margin: 0.8em;
     }
     h2 {
       font-weight: bold;
@@ -169,10 +175,15 @@ const SlideNav = styled(Box)<{ issmallscreen?: string }>`
 const Lesson = ({
   lesson,
   extraKeywords,
+  closeLesson,
+  Quest,
 }: {
   lesson: LessonType
   extraKeywords?: any
+  closeLesson?: () => void
+  Quest?: QuestType
 }): React.ReactElement => {
+  const { t, i18n } = useTranslation()
   const numberOfSlides = lesson.slides.length
   // HACK: when reducing the number of slides in a lesson
   if (
@@ -184,48 +195,96 @@ const Lesson = ({
 
   const buttonLeftRef = useRef(null)
   const buttonRightRef = useRef(null)
+  const slideRef = useRef(null)
   const answerRef = useRef([])
   const [currentSlide, setCurrentSlide] = useState(
     parseInt(localStorage.getItem(lesson.slug) || '0')
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
+  const [longSlide, setLongSlide] = useState<boolean>(false)
   const [, isSmallScreen] = useSmallScreen()
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
   )
-  const [isKudosMintedLS] = useLocalStorage(
-    `isKudosMinted-${lesson.kudosId}`,
+  const [quizRetryCount, setQuizRetryCount] = useState({})
+  const toast = useToast()
+  const [isBadgeMintedLS] = useLocalStorage(
+    `isBadgeMinted-${lesson.badgeId}`,
     false
   )
-  const [quizRetryCount, setQuizRetryCount] = useState({})
 
   const router = useRouter()
   const { embed } = router.query
   const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
-  const isBeforeLastSlide = currentSlide + 2 === numberOfSlides
 
-  const { account } = useActiveWeb3React()
-  const walletAddress = account
+  const { address } = useAccount()
+  const walletAddress = address
   // DEV ENV: you can force a specific wallet address here if you want to test the claiming function
   // walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb44'
 
   const keywords = { ...KEYWORDS, ...extraKeywords }
+
+  useLayoutEffect(() => {
+    if (
+      slideRef?.current?.offsetHeight > 615 &&
+      !isSmallScreen &&
+      slide.type === 'LEARN' &&
+      slide.content.includes('bloc2')
+    )
+      setLongSlide(true)
+    else setLongSlide(false)
+  }, [slide, isSmallScreen])
 
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
   }, [currentSlide])
 
   useEffect((): void => {
-    if (account) setConnectWalletPopupLS(false)
-    if ((slide.type === 'QUEST' || slide.type === 'END') && !account)
+    if (address) setConnectWalletPopupLS(false)
+    if ((slide.type === 'QUEST' || slide.type === 'END') && !address)
       setConnectWalletPopupLS(true)
-  }, [account, slide])
+  }, [address, slide])
+
+  useEffect((): void => {
+    const checkNFT = async () => {
+      const hasNFT = await isHolderOfNFT(address, lesson.nftGating)
+      if (!hasNFT) {
+        toast.closeAll()
+        toast({
+          title: t("You don't own the required NFT"),
+          description: lesson?.nftGatingRequirements,
+          status: 'warning',
+          duration: 20000,
+          isClosable: true,
+        })
+        closeLesson()
+      }
+    }
+    if (TOKEN_GATING_ENABLED && lesson.nftGating) {
+      if (!address) {
+        toast.closeAll()
+        toast({
+          title: t('This is a token gated lesson'),
+          description: t('Connect your wallet to access the lesson.'),
+          status: 'warning',
+          duration: 20000,
+          isClosable: true,
+        })
+        closeLesson()
+      } else {
+        checkNFT()
+      }
+    }
+  }, [address])
 
   useEffect(() => {
-    Mixpanel.track('open_lesson', { lesson: lesson?.name })
+    Mixpanel.track('open_lesson', {
+      lesson: lesson?.englishName,
+      language: i18n.language,
+    })
     // preloading all lesson images after 3 seconds for smoother transitions
     setTimeout(() => {
       lesson.imageLinks.forEach((imageLink) => {
@@ -235,16 +294,8 @@ const Lesson = ({
     }, 3000)
   }, [])
 
-  const scrollTop = () => {
-    // 0.3 second delay
-    setTimeout(() => {
-      if (typeof window !== 'undefined') {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-      }
-    }, 300)
-  }
-
   const goToPrevSlide = () => {
+    toast.closeAll()
     if (!isFirstSlide) {
       setCurrentSlide(currentSlide - 1)
       scrollTop()
@@ -253,6 +304,7 @@ const Lesson = ({
   }
 
   const goToNextSlide = () => {
+    toast.closeAll()
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
@@ -262,15 +314,16 @@ const Lesson = ({
       scrollTop()
       if (lesson.endOfLessonRedirect) {
         if (lesson.endOfLessonRedirect.includes('https://tally.so/r/')) {
-          // redirect to embeded Tally form
-          const tallyId = lesson.endOfLessonRedirect.replace(
-            'https://tally.so/r/',
-            ''
-          )
-          router.push(`/feedback?tally=${tallyId}`)
-        } else {
-          // generic redirect
-          document.location.href = lesson.endOfLessonRedirect
+          closeLesson()
+          //   // redirect to embeded Tally form
+          //   const tallyId = lesson.endOfLessonRedirect.replace(
+          //     'https://tally.so/r/',
+          //     ''
+          //   )
+          //   router.push(`/feedback?tally=${tallyId}`)
+          // } else {
+          //   // generic redirect
+          //   document.location.href = lesson.endOfLessonRedirect
         }
       } else {
         // defaut: go back to lessons
@@ -283,11 +336,26 @@ const Lesson = ({
 
   const selectAnswer = (e, answerNumber: number) => {
     if (slide.type !== 'QUIZ') return
+    if (lesson.slug === 'bankless-archetypes') {
+      slide.quiz.rightAnswerNumber = answerNumber
+      setSelectedAnswerNumber(answerNumber)
+    }
     if (!answerIsCorrect) setSelectedAnswerNumber(answerNumber)
+    toast.closeAll()
+    const feedback = slide.quiz?.feedback?.length
+      ? slide.quiz?.feedback[answerNumber - 1]
+      : undefined
     if (slide.quiz.rightAnswerNumber === answerNumber) {
+      if (feedback?.length)
+        toast({
+          title: feedback,
+          status: 'success',
+          duration: 20000,
+          isClosable: true,
+        })
       // correct answer
       Mixpanel.track('quiz_correct_answer', {
-        lesson: lesson?.name,
+        lesson: lesson?.englishName,
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
         }`,
@@ -296,9 +364,16 @@ const Lesson = ({
       })
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
     } else if (!answerIsCorrect) {
+      if (feedback?.length)
+        toast({
+          title: feedback,
+          status: 'warning',
+          duration: 20000,
+          isClosable: true,
+        })
       // wrong answer
       Mixpanel.track('quiz_wrong_answer', {
-        lesson: lesson?.name,
+        lesson: lesson?.englishName,
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
         }`,
@@ -338,8 +413,13 @@ const Lesson = ({
   useHotkeys('4', () => {
     answerRef?.current[4]?.click()
   })
+  useHotkeys('5', () => {
+    answerRef?.current[5]?.click()
+  })
+  useHotkeys('Esc', () => {
+    closeLesson()
+  })
 
-  // transform keywords into Tooltip
   function transform(node) {
     if (node.type === 'tag' && node.name === 'a') {
       // force links to target _blank
@@ -351,29 +431,52 @@ const Lesson = ({
         )
     }
     if (node.type === 'tag' && node.name === 'code') {
+      // Tooltip with definition
       const keyword = node.children[0]?.data
       const lowerCaseKeyword = node.children[0]?.data?.toLowerCase()
-      // Tooltip with definition
-      return lowerCaseKeyword?.length && lowerCaseKeyword in keywords ? (
-        <Tooltip
-          hasArrow
-          label={keywords[lowerCaseKeyword]?.definition}
-          closeOnClick={false}
-        >
-          <span className="keyword">{keyword}</span>
-        </Tooltip>
+      const lowerCaseKeywordSingular =
+        lowerCaseKeyword?.length && lowerCaseKeyword.endsWith('s')
+          ? lowerCaseKeyword.slice(0, -1)
+          : undefined
+      if (!lowerCaseKeyword?.length) return <>{keyword}</>
+      const englishDefition =
+        keywords[lowerCaseKeyword]?.definition ||
+        keywords[lowerCaseKeywordSingular]?.definition
+      const definition =
+        i18n.language !== 'en'
+          ? !t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' }).endsWith(
+              '.definition'
+            )
+            ? t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' })
+            : !t(`${lowerCaseKeywordSingular}.definition`, {
+                ns: 'keywords',
+              }).endsWith('.definition')
+            ? t(`${lowerCaseKeywordSingular}.definition`, { ns: 'keywords' })
+            : englishDefition
+          : englishDefition
+      if (!definition?.length) console.log('Missing definition:', keyword)
+      return definition?.length ? (
+        <Keyword definition={definition} keyword={keyword} />
       ) : (
         <>{keyword}</>
       )
     }
   }
 
+  if (
+    slide?.quiz &&
+    lesson.slug === 'bankless-archetypes' &&
+    localStorage.getItem(`quiz-${slide.quiz.id}`)
+  ) {
+    slide.quiz.rightAnswerNumber = parseInt(
+      localStorage.getItem(`quiz-${slide.quiz.id}`)
+    )
+  }
+
   const answerIsCorrect =
     slide?.quiz &&
     parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
       slide.quiz.rightAnswerNumber
-
-  const Quest = QuestComponent(lesson.quest, lesson.kudosId)
 
   return (
     <Slide
@@ -385,6 +488,21 @@ const Lesson = ({
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
     >
+      {!lesson?.isPreview && (
+        <Box h="0">
+          <Button
+            position="relative"
+            top={isSmallScreen ? '8px' : '-38px'}
+            left={isSmallScreen ? '2px' : '-67px'}
+            size={isSmallScreen ? 'md' : 'lg'}
+            iconSpacing="0"
+            variant="secondaryBig"
+            leftIcon={<ArrowUUpLeft width="24px" height="24px" />}
+            onClick={() => closeLesson()}
+            p={isSmallScreen ? '0' : 'auto'}
+          ></Button>
+        </Box>
+      )}
       <Text
         fontSize={isSmallScreen ? 'xl' : '3xl'}
         my={isSmallScreen ? '2' : '4'}
@@ -399,13 +517,20 @@ const Lesson = ({
           {slide.type === 'LEARN' && <LearnIcon />}
           {slide.type === 'QUIZ' && <QuizIcon />}
           {slide.type === 'QUEST' && <QuestIcon />}
-          {slide.type === 'END' && <KudosIcon />}
+          {slide.type === 'END' && <RewardsIcon />}
         </Box>
         <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
           {slide.type === 'QUIZ' ? (
-            <>Knowledge Check</>
+            <>{t('Knowledge Check')}</>
+          ) : slide.type === 'QUEST' ? (
+            <>
+              {t(`{{lesson_title}} Quest`, {
+                lesson_title: lesson.name,
+                interpolation: { escapeValue: false },
+              })}
+            </>
           ) : (
-            <>{ReactHtmlParser(slide.title, { transform })}</>
+            <>{slide.title}</>
           )}
         </Box>
       </Text>
@@ -418,7 +543,9 @@ const Lesson = ({
           pt={4}
         >
           {slide.type === 'LEARN' && (
-            <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
+            <Box ref={slideRef}>
+              {ReactHtmlParser(slide.content, { transform })}
+            </Box>
           )}
           {slide.type === 'QUIZ' && (
             <>
@@ -429,7 +556,7 @@ const Lesson = ({
                   </h2>
                 </Box>
               )}
-              <Answers mt={4} mx={2}>
+              <Answers mt={4} mx={2} minH={isSmallScreen ? '380px' : '500px'}>
                 <ButtonGroup size="lg" w="100%">
                   <SimpleGrid
                     columns={[null, null, 1]}
@@ -437,7 +564,7 @@ const Lesson = ({
                     w="100%"
                     justifyItems="center"
                   >
-                    {[1, 2, 3, 4].map((n) => {
+                    {[1, 2, 3, 4, 5].map((n) => {
                       const answerState = answerIsCorrect
                         ? slide.quiz.rightAnswerNumber === n
                           ? 'CORRECT'
@@ -472,7 +599,10 @@ const Lesson = ({
                                 )
                               )
                             }
-                            isActive={answerIsCorrect}
+                            isActive={
+                              answerIsCorrect &&
+                              lesson.slug !== 'bankless-archetypes'
+                            }
                           >
                             {slide.quiz.answers[n - 1]}
                           </QuizAnswer>
@@ -494,49 +624,28 @@ const Lesson = ({
                 <>{Quest?.questComponent}</>
               ) : (
                 <>
-                  {lesson.kudosImageLink && (
-                    <>
-                      {lesson.kudosImageLink.includes('.mp4') ? (
-                        <Box
-                          height="250px"
-                          width="250px"
-                          borderRadius="30px"
-                          overflow="hidden"
-                          border="2px solid #4b474b"
-                        >
-                          <video
-                            autoPlay
-                            loop
-                            playsInline
-                            muted
-                            style={{ borderRadius: '30px', overflow: 'hidden' }}
-                          >
-                            <source
-                              src={lesson.kudosImageLink}
-                              type="video/mp4"
-                            ></source>
-                          </video>
-                        </Box>
-                      ) : (
-                        <ChakraImage
-                          src={lesson.kudosImageLink}
-                          height="250px"
-                          mb="2"
-                        />
-                      )}
-                    </>
+                  {lesson.badgeImageLink && (
+                    <Box w="290px" h="290px">
+                      <NFT nftLink={lesson.badgeImageLink} />
+                    </Box>
                   )}
-                  {lesson.kudosId ? (
-                    <MintKudos
-                      kudosId={lesson.kudosId}
-                      isQuestCompleted={Quest?.isQuestCompleted}
-                      goToPrevSlide={goToPrevSlide}
-                    />
+                  {lesson.badgeId ? (
+                    <MintBadge badgeId={lesson.badgeId} />
                   ) : (
-                    <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
+                    <h2>
+                      {t(
+                        `Congrats on finishing our "{{lesson_title}}" lesson! 🥳`,
+                        {
+                          lesson_title: lesson.name,
+                          interpolation: { escapeValue: false },
+                        }
+                      )}
+                    </h2>
                   )}
                   <p>
-                    {!embed && lesson.endOfLessonText && lesson.endOfLessonText}
+                    {!embed &&
+                      lesson?.endOfLessonText &&
+                      lesson?.endOfLessonText}
                   </p>
                 </>
               )}
@@ -553,22 +662,31 @@ const Lesson = ({
               size="lg"
               onClick={goToPrevSlide}
               leftIcon={<ArrowBackIcon />}
+              ml={longSlide ? '600px' : '0'}
             >
               {isLastSlide && isSmallScreen ? '' : 'Prev'}
             </Button>
           )}
-          {lesson.isCommentsEnabled && slide.notionId && (
-            <ExternalLink
-              href={`https://www.notion.so/${lesson.notionId}#${slide.notionId}`}
-            >
-              <Tooltip
-                hasArrow
-                label="Help us improve the content by commenting this slide on Notion"
+          {
+            /* lesson.isCommentsEnabled && */
+            !isMobile &&
+              (slide.type === 'LEARN' ||
+                (slide.type === 'QUIZ' && answerIsCorrect)) &&
+              address && (
+                <>
+                  <EditContentModal lesson={lesson} slide={slide} />
+                </>
+              )
+          }
+          {slide.type === 'QUEST' && address && (
+            <ExternalLink href={'/report-an-issue'} alt={t('Report an Issue')}>
+              <Button
+                leftIcon={<Bug width="24px" height="24px" />}
+                iconSpacing={isSmallScreen ? 0 : '8px'}
+                variant="outline"
               >
-                <Button variant="outline">
-                  🐞{isSmallScreen ? '' : ` comment this slide`}
-                </Button>
-              </Tooltip>
+                {isSmallScreen ? '' : t('Report an Issue')}
+              </Button>
             </ExternalLink>
           )}
         </HStack>
@@ -576,60 +694,44 @@ const Lesson = ({
           {slide.type === 'QUEST' && !Quest?.isQuestCompleted ? (
             <Tooltip
               hasArrow
-              label="By skipping this quest you won't be able to claim the lesson badge"
+              label={t(
+                "By skipping this quest you won't be able to claim the lesson badge"
+              )}
             >
-              <Button
-                variant="outline"
-                onClick={() => {
-                  setCurrentSlide(currentSlide + 1)
-                }}
-              >
-                Skip Quest
+              <Button variant="outline" onClick={() => closeLesson()}>
+                {t('Skip Quest')}
               </Button>
             </Tooltip>
           ) : null}
-          {!embed && isLastSlide && lesson.communityDiscussionLink && (
-            <ExternalLink
-              href={lesson.communityDiscussionLink}
-              alt={`${lesson.name} community discussion`}
-            >
-              <Tooltip
-                hasArrow
-                label="Join other explorers to discuss this lesson."
-              >
-                <Button variant="outline">
-                  👨‍🚀{isSmallScreen ? '' : ' Community discussion'}
-                </Button>
-              </Tooltip>
-            </ExternalLink>
-          )}
-          {!isLastSlide || (lesson.endOfLessonText && !embed) ? (
+          {!isLastSlide || (lesson?.endOfLessonText && !embed) ? (
             <Button
               ref={buttonRightRef}
-              variant={isBeforeLastSlide ? 'primaryBigLast' : 'primaryBig'}
+              variant="primaryBig"
               size="lg"
-              disabled={
+              isDisabled={
                 (slide.quiz && !answerIsCorrect) ||
                 (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
               }
               onClick={goToNextSlide}
               rightIcon={<ArrowForwardIcon />}
             >
-              {isBeforeLastSlide ? 'Finish' : 'Next'}
+              {t('Next')}
             </Button>
           ) : (
             <>
-              {embed ? null : (
-                <InternalLink href={IS_WHITELABEL ? `/` : `/lessons`}>
-                  <Button
-                    variant={
-                      lesson.kudosId && !isKudosMintedLS ? 'outline' : 'primary'
-                    }
-                  >
-                    Explore more Lessons
-                  </Button>
-                </InternalLink>
-              )}
+              <Button
+                size="lg"
+                isDisabled={lesson.badgeId && !Quest?.isQuestCompleted}
+                onClick={() => closeLesson()}
+                variant="primaryBigLast"
+                rightIcon={<ArrowForwardIcon />}
+              >
+                {lesson.badgeId &&
+                isBadgeMintedLS === false &&
+                Quest?.isQuestCompleted
+                  ? t('Mint Badge')
+                  : t('Finish')}
+              </Button>
             </>
           )}
         </HStack>

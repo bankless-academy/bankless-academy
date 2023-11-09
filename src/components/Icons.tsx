@@ -9,7 +9,7 @@ import {
   Handshake,
   Eye,
   UsersThree,
-} from 'phosphor-react'
+} from '@phosphor-icons/react'
 
 export const LearnIcon = (): React.ReactElement => (
   <Icon
@@ -50,7 +50,7 @@ export const QuestIcon = (): React.ReactElement => (
   />
 )
 
-export const KudosIcon = (): React.ReactElement => (
+export const RewardsIcon = (): React.ReactElement => (
   <Icon
     as={Medal}
     w={10}

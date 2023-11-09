@@ -1,8 +1,9 @@
 import { Box, SimpleGrid, Image, Icon } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
-import { Stamps } from 'entities/passport'
+// import { Stamps } from 'entities/passport'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 
@@ -26,9 +27,10 @@ const GitcoinPassport = ({
   stamps,
   displayStamps,
 }: {
-  stamps?: Stamps
+  stamps?: any
   displayStamps?: boolean
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
   return (
     <>
@@ -43,9 +45,9 @@ const GitcoinPassport = ({
             const stamp = stamps ? stamps[key] : null
             const currentTimestamp = Date.now()
             const isStampExpired = !(
-              Date.parse(stamp?.credential?.expirationDate) > currentTimestamp
+              Date.parse(stamp?.stamp?.expirationDate) > currentTimestamp
             )
-            const isTrustedIssuer = stamp?.credential?.issuer === ALLOWED_ISSUER
+            const isTrustedIssuer = stamp?.stamp?.issuer === ALLOWED_ISSUER
             return (
               <Box
                 key={`stamp-${key}`}
@@ -63,14 +65,14 @@ const GitcoinPassport = ({
                   {stamp ? (
                     isStampExpired ? (
                       <span style={{ color: theme.colors.incorrect }}>
-                        stamp expired
+                        {t('stamp expired')}
                       </span>
                     ) : isTrustedIssuer ? (
                       // OK
                       <CircleIcon color={theme.colors.correct} />
                     ) : (
                       <span style={{ color: theme.colors.incorrect }}>
-                        untrusted DID issuer
+                        {t('untrusted DID issuer')}
                       </span>
                     )
                   ) : stamp === null ? (

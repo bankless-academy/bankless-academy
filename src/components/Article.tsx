@@ -3,23 +3,27 @@ import {
   Box,
   Container,
   Image,
-  Tooltip,
   Button,
   Text,
   SimpleGrid,
 } from '@chakra-ui/react'
-import { ArrowRight } from 'phosphor-react'
+import { ArrowRight } from '@phosphor-icons/react'
 import ReactMarkdown from 'react-markdown'
 import styled from '@emotion/styled'
 import { useLocalStorage } from 'usehooks-ts'
+import { useAccount } from 'wagmi'
+import { useTranslation } from 'react-i18next'
 // TODO: migrate to mdxjs https://mdxjs.com/packages/react/
 
 import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
+import CollectEntryButton from 'components/CollectEntryButton'
 import { LessonType } from 'entities/lesson'
-import { useActiveWeb3React, useSmallScreen } from 'hooks/index'
+import { useSmallScreen } from 'hooks/index'
 import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
 import { getArticlesCollected, Mixpanel } from 'utils'
+import Keyword from 'components/Keyword'
+import LanguageSwitch from 'components/LanguageSwitch'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -127,6 +131,7 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     overflow-wrap: break-word;
     padding-left: 24px;
     padding-right: 24px;
+    margin-top: 24px;
     text-rendering: optimizelegibility;
     -webkit-text-stroke-color: rgba(0, 0, 0, 0);
     -webkit-text-stroke-width: 0px;
@@ -300,6 +305,11 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       -webkit-text-stroke-width: 0px;
       padding: 0;
     }
+    ul {
+      margin-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   hr {
     align-items: center;
@@ -392,6 +402,12 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
       -webkit-text-stroke-width: 0px;
     }
   }
+  figcaption {
+    font-size: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: rgba(255, 255, 255, 0.35);
+  }
   blockquote {
     box-sizing: border-box;
     color: rgba(255, 255, 255, 0.7);
@@ -477,7 +493,8 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
   }
   span.keyword {
     cursor: help;
-    border-bottom: 1px dashed grey;
+    border-bottom: 1px dashed #e5afff;
+    color: #e5afff;
     display: inline-block !important;
   }
   ol {
@@ -496,27 +513,35 @@ const Article = ({
   lesson: LessonType
   extraKeywords?: any
 }): React.ReactElement => {
+  const { t, i18n } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
   const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
     'articlesCollected',
     []
   )
-  const { account } = useActiveWeb3React()
+  const { address } = useAccount()
 
   useEffect(() => {
-    Mixpanel.track('open_lesson', { lesson: lesson?.name })
+    Mixpanel.track('open_lesson', {
+      lesson: lesson?.englishName,
+      language: i18n.language,
+    })
+    // mark article as read after 30 seconds
+    setTimeout(() => {
+      localStorage.setItem(lesson.slug, 'true')
+    }, 30000)
   }, [])
 
   useEffect(() => {
     const updateArticlesCollected = async () => {
-      const articlesCollected = await getArticlesCollected(account)
+      const articlesCollected = await getArticlesCollected(address)
       if (articlesCollected && Array.isArray(articlesCollected))
         setArticlesCollectedLS(articlesCollected)
     }
-    if (!IS_WHITELABEL && account) {
+    if (!IS_WHITELABEL && address) {
       updateArticlesCollected().catch(console.error)
     }
-  }, [account])
+  }, [address])
 
   const keywords = { ...KEYWORDS, ...extraKeywords }
 
@@ -534,38 +559,90 @@ const Article = ({
         mt={isSmallScreen ? '0' : '24px'}
       />
       <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
-      <Box p="24px">
-        <ExternalLink href={lesson.mirrorLink}>
-          <Button variant="primary" rightIcon={<ArrowRight size={16} />}>
-            View on Mirror.xyz
-          </Button>
-        </ExternalLink>
-      </Box>
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="24px">
+        <Box
+          // border="1px solid #989898"
+          py={isSmallScreen ? '2' : '6'}
+          px="6"
+          borderRadius="lg"
+        >
+          {isArticleCollected ? (
+            <Button
+              variant="secondaryGold"
+              w="100%"
+              background="transparent !important"
+            >
+              {t('Entry Collected')}
+            </Button>
+          ) : (
+            <CollectEntryButton lesson={lesson} />
+          )}
+        </Box>
+        <Box
+          // border="1px solid #989898"
+          py={isSmallScreen ? '2' : '6'}
+          px="6"
+          borderRadius="lg"
+          textAlign="center"
+        >
+          <ExternalLink href={lesson.mirrorLink}>
+            <Button
+              variant="primary"
+              w="100%"
+              rightIcon={<ArrowRight size={16} />}
+            >
+              {t('View on Mirror.xyz')}
+            </Button>
+          </ExternalLink>
+        </Box>
+      </SimpleGrid>
+      <LanguageSwitch lesson={lesson} />
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown
           components={{
             // Tooltip with definition
-            code: ({ node, ...props }: any) => {
+            code: ({ node }: any) => {
               const keyword = node.children[0]?.value
               const lowerCaseKeyword = node.children[0]?.value?.toLowerCase()
-              return lowerCaseKeyword?.length &&
-                lowerCaseKeyword in keywords ? (
-                <Tooltip
-                  hasArrow
-                  label={keywords[lowerCaseKeyword]?.definition}
-                  closeOnClick={false}
-                  {...props}
-                >
-                  <span className="keyword">{keyword}</span>
-                </Tooltip>
+              const lowerCaseKeywordSingular =
+                lowerCaseKeyword?.length && lowerCaseKeyword.endsWith('s')
+                  ? lowerCaseKeyword.slice(0, -1)
+                  : undefined
+              if (!lowerCaseKeyword?.length) return <>{keyword}</>
+              const englishDefition =
+                keywords[lowerCaseKeyword]?.definition ||
+                keywords[lowerCaseKeywordSingular]?.definition
+              const definition =
+                i18n.language !== 'en'
+                  ? !t(`${lowerCaseKeyword}.definition`, {
+                      ns: 'keywords',
+                    }).endsWith('.definition')
+                    ? t(`${lowerCaseKeyword}.definition`, { ns: 'keywords' })
+                    : !t(`${lowerCaseKeywordSingular}.definition`, {
+                        ns: 'keywords',
+                      }).endsWith('.definition')
+                    ? t(`${lowerCaseKeywordSingular}.definition`, {
+                        ns: 'keywords',
+                      })
+                    : englishDefition
+                  : englishDefition
+              return definition?.length ? (
+                <Keyword definition={definition} keyword={keyword} />
               ) : (
                 <>{keyword}</>
               )
             },
             // force links to target _blank
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            a: ({ node, children, ...props }) => {
+            a: ({ children, ...props }) => {
               return <ExternalLink {...props}>{children}</ExternalLink>
+            },
+            img: ({ children, ...props }) => {
+              return (
+                <>
+                  <img {...props}>{children}</img>
+                  <figcaption>{props.alt}</figcaption>
+                </>
+              )
             },
           }}
         >
@@ -584,7 +661,9 @@ const Article = ({
           <Text fontSize="xl" fontWeight="bold">
             {`Subscribe to the Explorer's Handbook`}
           </Text>
-          <Text fontSize="xl">Receive new entries directly to your inbox.</Text>
+          <Text fontSize="xl">
+            {t('Receive new entries directly to your inbox.')}
+          </Text>
         </Box>
         <Box
           textAlign={isSmallScreen ? 'left' : 'right'}
@@ -594,7 +673,7 @@ const Article = ({
           mt={isSmallScreen ? '20px' : '0'}
         >
           <ExternalLink href={lesson.mirrorLink}>
-            <Button variant="primary">Subscribe</Button>
+            <Button variant="primary">{t('Subscribe')}</Button>
           </ExternalLink>
         </Box>
       </Box>
@@ -606,17 +685,15 @@ const Article = ({
           borderRadius="lg"
         >
           {isArticleCollected ? (
-            <Button variant="secondaryGold" w="100%">
-              Entry Collected
+            <Button
+              variant="secondaryGold"
+              w="100%"
+              background="transparent !important"
+            >
+              {t('Entry Collected')}
             </Button>
           ) : (
-            <ExternalLink href={lesson.mirrorLink}>
-              <Tooltip hasArrow label="Collect Entry on Mirror.xyz">
-                <Button variant="primaryGold" w="100%">
-                  Collect Entry
-                </Button>
-              </Tooltip>
-            </ExternalLink>
+            <CollectEntryButton lesson={lesson} />
           )}
         </Box>
         <Box
@@ -626,9 +703,9 @@ const Article = ({
           borderRadius="lg"
           textAlign="center"
         >
-          <InternalLink href={`/lessons`}>
+          <InternalLink href={`/lessons`} alt="Explore more Lessons">
             <Button variant="primary" w="100%">
-              Explore more Lessons
+              {t('Explore more Lessons')}
             </Button>
           </InternalLink>
         </Box>

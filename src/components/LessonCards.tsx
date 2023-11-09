@@ -6,26 +6,32 @@ import {
   Image,
   TagRightIcon,
   Button,
-  Tooltip,
   useDisclosure,
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import axios from 'axios'
-import { CircleWavyCheck } from 'phosphor-react'
+import { CircleWavyCheck } from '@phosphor-icons/react'
 import { useRouter } from 'next/router'
 import { useLocalStorage } from 'usehooks-ts'
+import { isMobile } from 'react-device-detect'
+import { useAccount } from 'wagmi'
+import { useTranslation } from 'react-i18next'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
-import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import LessonBanner from 'components/LessonBanner'
 import MODULES from 'constants/whitelabel_modules'
-import { getArticlesCollected, IS_DEBUG, Mixpanel } from 'utils/index'
+import {
+  getArticlesCollected,
+  getLessonsCollected,
+  Mixpanel,
+} from 'utils/index'
 import SubscriptionModal from 'components/SubscriptionModal'
 import { LessonType } from 'entities/lesson'
-import { useActiveWeb3React } from 'hooks'
+import InstallAppModal from 'components/InstallAppModal'
+import LessonButton from 'components/LessonButton'
 
-const LessonCard = styled(Box)`
+// TODO: move to dedicated component file
+export const LessonCard = styled(Box)`
   position: relative;
   ::after {
     background: linear-gradient(
@@ -62,9 +68,10 @@ const LessonCard = styled(Box)`
   }
 `
 
-const StyledTag = styled(Tag)<{ iskudosminted?: string }>`
+const StyledTag = styled(Tag)<{ isminted?: string; gold?: string }>`
+  height: 30px;
   ${(props) =>
-    props.iskudosminted === 'true' &&
+    props.gold === 'true' &&
     `
     ::before {
       background: #F1B15A;
@@ -74,18 +81,28 @@ const StyledTag = styled(Tag)<{ iskudosminted?: string }>`
 `
 
 const LessonCards: React.FC = () => {
+  const { t } = useTranslation()
   const router = useRouter()
   const { all, slug } = router.query
 
-  const [stats, setStats]: any = useState(null)
-  const [kudosMintedLS] = useLocalStorage('kudosMinted', [])
+  // const [stats, setStats]: any = useState(null)
+  const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [articlesCollectedLS, setArticlesCollectedLS] = useLocalStorage(
     'articlesCollected',
     []
   )
+  const [lessonsCollectedLS, setLessonsCollectedLS] = useLocalStorage(
+    'lessonsCollected',
+    []
+  )
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [selectedLesson, setSelectedLesson] = useState<LessonType>()
-  const { account } = useActiveWeb3React()
+  const { address } = useAccount()
+  const {
+    isOpen: isOpenAppModal,
+    onOpen: onOpenAppModal,
+    onClose: onCloseAppModal,
+  } = useDisclosure()
 
   const moduleId = MODULES.find((m) => m.slug === slug)?.moduleId
 
@@ -104,29 +121,52 @@ const LessonCards: React.FC = () => {
             lesson.publicationStatus === 'planned'
         )
 
-  useEffect(() => {
-    if (IS_DEBUG) {
-      axios
-        .get(`/api/stats`)
-        .then(function (res) {
-          setStats(res.data)
-        })
-        .catch(function (error) {
-          console.error(error)
-        })
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (IS_DEBUG) {
+  //     axios
+  //       .get(`/api/stats`)
+  //       .then(function (res) {
+  //         setStats(res.data)
+  //       })
+  //       .catch(function (error) {
+  //         console.error(error)
+  //       })
+  //   }
+  // }, [])
 
   useEffect(() => {
-    const updateArticlesCollected = async () => {
-      const articlesCollected = await getArticlesCollected(account)
+    const mobilePreferences = localStorage.getItem('mobile-preferences')
+    if (
+      isMobile &&
+      // don't show on embed or webapp
+      !localStorage.getItem('embed')?.length &&
+      // user has at least 1 badge
+      badgesMintedLS.length > 0 &&
+      // user doesn't want to install the Mobile App
+      mobilePreferences !== 'no' &&
+      // user has collected a new badge
+      ((mobilePreferences?.length &&
+        parseInt(mobilePreferences) < badgesMintedLS.length) ||
+        // user has at least 1 badge
+        (!mobilePreferences && badgesMintedLS.length))
+    ) {
+      onOpenAppModal()
+    }
+  }, [badgesMintedLS])
+
+  useEffect(() => {
+    const updateNFTCollected = async () => {
+      const articlesCollected = await getArticlesCollected(address)
       if (articlesCollected && Array.isArray(articlesCollected))
         setArticlesCollectedLS(articlesCollected)
+      const lessonsCollected = await getLessonsCollected(address)
+      if (lessonsCollected && Array.isArray(lessonsCollected))
+        setLessonsCollectedLS(lessonsCollected)
     }
-    if (!IS_WHITELABEL && account) {
-      updateArticlesCollected().catch(console.error)
+    if (!IS_WHITELABEL && address) {
+      updateNFTCollected().catch(console.error)
     }
-  }, [account])
+  }, [address])
 
   return (
     <>
@@ -134,47 +174,93 @@ const LessonCards: React.FC = () => {
         // lesson not started yet: -1
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
         // const numberOfSlides = lesson.slides.length
-        const isKudosMinted = kudosMintedLS.includes(lesson.kudosId)
-        const isLessonStarted = (localStorage.getItem(lesson.slug) || 0) > 0
+        const isBadgeMinted = badgesMintedLS.includes(lesson.badgeId)
         const isNotified =
           lesson.publicationStatus === 'planned'
             ? localStorage.getItem(`${lesson.slug}-notification`)
             : false
-        const lessonCompleted =
-          (lesson.quest &&
-            stats?.lessonCompleted &&
-            stats?.lessonCompleted[lesson.notionId]) ||
-          0
+        // const lessonCompleted =
+        //   (lesson.quest &&
+        //     stats?.lessonCompleted &&
+        //     stats?.lessonCompleted[lesson.notionId]) ||
+        //   0
         const isArticleCollected =
           lesson.mirrorNFTAddress?.length &&
-          articlesCollectedLS.includes(lesson.mirrorNFTAddress)
+          articlesCollectedLS.includes(lesson.mirrorNFTAddress.toLowerCase())
+        const isArticleRead =
+          lesson.isArticle && localStorage.getItem(lesson.slug) === 'true'
+        const isLessonCollected =
+          !!lesson.lessonCollectibleTokenAddress?.length &&
+          lessonsCollectedLS.includes(
+            lesson.lessonCollectibleTokenAddress.toLowerCase()
+          )
+        const lessonHasSponsor =
+          lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
         return (
           <LessonCard key={`lesson-${index}`} p={6} pb={8} borderRadius="3xl">
             <Box position="relative" zIndex="1">
-              <Text fontSize="xl" fontWeight="bold">
-                {lesson.name}
+              <Text
+                fontSize="xl"
+                fontWeight="bold"
+                minH="60px"
+                display="flex"
+                alignItems="center"
+              >
+                {t(lesson.name, { ns: 'lesson' })}
               </Text>
               <Box display="flex" justifyContent="space-between" my="4">
-                {isKudosMinted || lesson.duration ? (
+                {isBadgeMinted || isArticleRead || lesson.duration ? (
                   <StyledTag
                     size="md"
                     variant="outline"
-                    iskudosminted={isKudosMinted?.toString()}
+                    gold={(isBadgeMinted || isArticleRead)?.toString()}
                   >
-                    {isKudosMinted ? 'Done' : `${lesson.duration} minutes`}
-                    {isKudosMinted ? (
+                    {isBadgeMinted || isArticleRead
+                      ? 'Done'
+                      : `${lesson.duration} minutes`}
+                    {isBadgeMinted || isArticleRead ? (
                       <TagRightIcon as={CircleWavyCheck} weight="bold" />
                     ) : null}
                   </StyledTag>
                 ) : (
                   <Tag size="md" backgroundColor="transparent"></Tag>
                 )}
-                <Text fontSize="md" alignSelf="center">
-                  {lessonCompleted > 0 && `${lessonCompleted} Completions`}
-                </Text>
+                {lesson.hasCollectible && (
+                  <StyledTag
+                    size="md"
+                    variant="outline"
+                    color="white"
+                    gold="true"
+                  >
+                    {!isLessonCollected
+                      ? t('Collectible Available')
+                      : t('Lesson Collected')}
+                  </StyledTag>
+                )}
+                {lesson.isArticle ? (
+                  isArticleCollected ? (
+                    <StyledTag size="md" variant="outline" gold="true">
+                      Entry Collected
+                    </StyledTag>
+                  ) : !lesson.areMirrorNFTAllCollected ? (
+                    <StyledTag size="md" variant="outline" gold="true">
+                      Entry Available
+                    </StyledTag>
+                  ) : null
+                ) : (
+                  !lessonHasSponsor &&
+                  lesson.publicationStatus !== 'planned' && (
+                    <Box width="auto"></Box>
+                  )
+                )}
               </Box>
-              <Text fontSize="lg" minH="54px">
-                {lesson.description}
+              <Text
+                fontSize="lg"
+                minH="81px"
+                display="flex"
+                alignItems="center"
+              >
+                {t(lesson.description, { ns: 'lesson' })}
               </Text>
               {lesson.publicationStatus === 'planned' && all === undefined ? (
                 <LessonBanner
@@ -190,7 +276,7 @@ const LessonCards: React.FC = () => {
               ) : (
                 <InternalLink
                   href={`/lessons/${lesson.slug}`}
-                  alt={lesson.name}
+                  alt={lesson.englishName}
                 >
                   <LessonBanner
                     iswhitelabel={IS_WHITELABEL.toString()}
@@ -201,19 +287,28 @@ const LessonCards: React.FC = () => {
                     }}
                     py="4"
                   >
-                    <Image src={lesson.lessonImageLink} />
+                    <Image
+                      src={
+                        isLessonCollected
+                          ? lesson.lessonCollectedImageLink
+                          : lesson.lessonImageLink
+                      }
+                    />
                   </LessonBanner>
                 </InternalLink>
               )}
               <Box
                 display="flex"
                 flexDirection="row-reverse"
-                mt="4"
+                mt={lesson.isArticle || lesson.hasCollectible ? '25px' : '16px'}
                 justifyContent="space-between"
+                alignItems="center"
+                maxWidth="calc(100vw - 80px)"
               >
                 {lesson.publicationStatus === 'planned' && all === undefined ? (
                   <Button
-                    variant={isNotified ? 'outline' : 'primary'}
+                    variant={isNotified ? 'secondaryBig' : 'primaryBig'}
+                    size="lg"
                     onClick={() => {
                       if (isNotified) return
                       setSelectedLesson(lesson)
@@ -221,7 +316,7 @@ const LessonCards: React.FC = () => {
                       Mixpanel.track('click_internal_link', {
                         link: 'modal',
                         name: 'Lesson notification',
-                        lesson: lesson.name,
+                        lesson: lesson.englishName,
                       })
                     }}
                     cursor={isNotified ? 'default' : 'pointer'}
@@ -231,49 +326,13 @@ const LessonCards: React.FC = () => {
                 ) : (
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
+                    margin={lessonHasSponsor ? 'auto' : ''}
+                    w={lessonHasSponsor ? '100%' : 'inherit'}
                   >
-                    <Button
-                      variant={
-                        isKudosMinted || lesson?.isArticle
-                          ? 'secondary'
-                          : 'primary'
-                      }
-                    >
-                      {lesson?.isArticle
-                        ? 'Read Entry'
-                        : isKudosMinted
-                        ? 'Revisit Lesson'
-                        : isLessonStarted
-                        ? 'Resume Lesson'
-                        : 'Start Lesson'}
-                    </Button>
+                    <LessonButton lesson={lesson} />
                   </InternalLink>
                 )}
-                {isKudosMinted && lesson.communityDiscussionLink ? (
-                  <ExternalLink
-                    href={lesson.communityDiscussionLink}
-                    alt={`${lesson.name} community discussion`}
-                  >
-                    <Tooltip
-                      hasArrow
-                      label="Join other explorers to discuss this lesson."
-                    >
-                      <Button variant="secondary">👨‍🚀 Discussion</Button>
-                    </Tooltip>
-                  </ExternalLink>
-                ) : null}
-                {lesson.isArticle ? (
-                  isArticleCollected ? (
-                    <Button variant="secondaryGold">Entry Collected</Button>
-                  ) : (
-                    <ExternalLink href={lesson.mirrorLink}>
-                      <Tooltip hasArrow label="Collect Entry on Mirror.xyz">
-                        <Button variant="primaryGold">Collect Entry</Button>
-                      </Tooltip>
-                    </ExternalLink>
-                  )
-                ) : null}
               </Box>
             </Box>
           </LessonCard>
@@ -284,6 +343,7 @@ const LessonCards: React.FC = () => {
         isOpen={isOpen}
         onClose={onClose}
       />
+      <InstallAppModal isOpen={isOpenAppModal} onClose={onCloseAppModal} />
     </>
   )
 }
