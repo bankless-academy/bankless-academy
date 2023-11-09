@@ -237,12 +237,12 @@
   "erc-20": {
     "keyword": "ERC-20",
     "keyword_plural": "ERC-20",
-    "definition": "A standard for fungible tokens on Ethereum. These tokens are divisible and non-unique."
+    "definition": "Un estándar para tokens fungibles transferibles en Ethereum. Estos tokens son divisibles y no únicos."
   },
   "erc-721": {
     "keyword": "ERC-721",
     "keyword_plural": "ERC-721",
-    "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, or subdivided."
+    "definition": "Un estándar para tokens no fungibles en Ethereum. Estos tokens tienen un identificador digital único, no se pueden copiar, sustituir ni subdividir."
   },
   "ethereum virtual machine": {
     "keyword": "Máquina Virtual de Ethereum (MVE)",
