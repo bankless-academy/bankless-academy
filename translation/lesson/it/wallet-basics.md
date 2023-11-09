@@ -51,7 +51,7 @@ La definizione breve è: un programma informatico che usi per interagire con una
 
 Quando il tuo `portafoglio` è connesso a una blockchain, puoi fare acquisti, inviare o ricevere `beni digitali` come le criptovalute, interagire con applicazioni web3 e altro ancora.
 
-Unlike regular user accounts you’re used to, a single wallet lets you access a large number of web3 apps. È come avere un unico account per l'intero Internet.
+A differenza dei normali account a cui sei abituato, un singolo portafoglio ti permette di accedere a un gran numero di app web3, purché il portafoglio sia compatibile con la blockchain su cui è costruita l'app. È come avere un unico account per l'intero Internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-5aa3b680.svg)
 
@@ -61,9 +61,9 @@ Un tempo lo era, ma oggi chiunque può creare facilmente un portafoglio.
 
 I portafogli sono essenzialmente programmi informatici. Se ti senti a tuo agio nello scaricare e installare software sul tuo computer (o app sul tuo telefono), allora non avrai problemi a creare il tuo primo portafoglio.
 
-The trickier part of managing a wallet involves keeping it secure — which we will dive into shortly!
+La parte più complicata della gestione di un portafoglio consiste nel mantenerlo sicuro, come vedremo in seguito.
 
-Scegliere il tuo primo portafoglio può sembrare intimidatorio. Ti suggeriamo di iniziare con MetaMask come fornitore di portafoglio: offre soluzioni facili da utilizzare e compatibili con le blockchain più diffuse. As you get more comfortable in the web3 space, you will likely explore other providers and create multiple wallets.
+Scegliere il tuo primo portafoglio può sembrare intimidatorio. Ti suggeriamo di iniziare con MetaMask come fornitore di portafoglio: offre soluzioni facili da utilizzare e compatibili con le blockchain più diffuse. Man mano che ti sentirai più a tuo agio nello spazio web3, è probabile che esplorerai altri fornitori e creerai altri portafogli.
 
 # Knowledge Check 1
 
