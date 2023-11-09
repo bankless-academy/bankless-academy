@@ -70,7 +70,7 @@ const DecentralizedExchanges = (
   }, [account])
 
   const lesson = LESSONS.find(
-    (lesson) => lesson.slug === 'how-to-swap-on-a-decentralized-exchange'
+    (lesson) => lesson.slug === 'swapping-on-a-decentralized-exchange'
   )
 
   if (!lesson)
