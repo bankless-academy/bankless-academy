@@ -56,11 +56,11 @@ Consultez notre Guide de l’Explorateur [« Comment échanger sur un echange d�
 
 ## Déléguer sur Optimism Agora
 
-**1\. Ouvrez la dApp Optimism Agora : <https://vote.optimism.io/>**
+**3\. Ouvrez la dApp Optimism Agora : <https://vote.optimism.io/>**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
 
-**2\. Connectez votre portefeuille.**
+**4\. Connectez votre portefeuille.**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
@@ -113,7 +113,7 @@ Remarque : cela ne compte pas non plus pour la quête de la leçon ["Gouvernance
 
 **Auteur**
 
-[Tetranome](https://twitter.com/Tetranome) is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+**[Tetranome](https://twitter.com/Tetranome)** est le Champion du projet Bankless Academy, se concentrant sur l'expérience utilisateur, l'interface, la conception et le contenu.
 
 **Patron**
 
