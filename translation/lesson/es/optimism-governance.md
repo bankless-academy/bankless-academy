@@ -299,7 +299,7 @@ La Cámara de los Ciudadanos también se asegura de que las propuestas de la Cas
 
 # La Cámara de Ciudadanos: Cómo unirse, votar, y delegar
 
-📝 **Unirse:** La Cámara de los Ciudadanos actualmente suma miembros por invitación, escalando lentamente y refinando sus procesos. Membership is marked by holding a ‘Citizen Badge’.
+📝 **Unirse:** La Cámara de los Ciudadanos actualmente suma miembros por invitación, escalando lentamente y refinando sus procesos. Para ser miembro hay que poseer una "insignia de ciudadano", una ficha intransferible `ERC-721` .
 
 Los detalles de las invitaciones cambian estacionalmente a partir de la experimentación de la Fundación Optimism:
 
@@ -357,7 +357,7 @@ La historia siempre ha estado forjada por los optimistas de la humanidad, aquell
 
 Al involucrarnos en comunidades innovadoras, utilizando sistemas de gobernanza justos y `sin necesidad de confianza`, estamos abriendo camino al futuro de la coordinación humana. Estamos construyendo un mundo en el que la humanidad pueda prosperar en sistemas locales, globales y en línea. Es hora de iniciar nuestro viaje hacia la gobernanza de Optimism.
 
-Today’s quest is **to join the Token House and** `delegate` **our OP tokens**.
+La misión de hoy es **unirse a la Cámara de Tokens y delegar nuestros tokens de OP**.
 
 Por ahora, la Cámara de los Ciudadanos aún desarrolla sus procedimientos de incorporación. Mientras tanto, podemos desde ya comenzar nuestro viaje Ciudadano participando en la conversación en los foros de la [comunidad Optimism](https://gov.optimism.io/).
 
