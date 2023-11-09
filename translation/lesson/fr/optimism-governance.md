@@ -299,7 +299,7 @@ La Maison des Citoyens veille également à ce que les propositions de la Maison
 
 # La Maison des Citoyens : Adhérer, Voter, Déléguer
 
-📝 **Adhésion :** La Maison des Citoyens accueille actuellement des membres sur invitation, afin de développer et d'affiner lentement ses processus. Membership is marked by holding a ‘Citizen Badge’.
+📝 **Adhésion :** La Maison des Citoyens accueille actuellement des membres sur invitation, afin de développer et d'affiner lentement ses processus. L'adhésion est marquée par la détention d'un "Badge de Citoyen" [Citizen Badge] - un jeton `ERC-721` non transférable.
 
 Les spécificités des invitations changent selon les saisons, sur la base des expériences menées par la Fondation Optimism :
 
@@ -357,7 +357,7 @@ L'histoire a toujours été pavée par les optimistes de l'humanité — ceux qu
 
 En s'impliquant dans des communautés innovantes, des systèmes de gouvernance équitable et `sans tiers de confiance`, nous sommes à la pointe de l'avenir de la coordination humaine. Nous construisons un monde où l'humanité peut s'épanouir dans des systèmes locaux, mondiaux et en ligne. Il est temps de commencer notre voyage de gouvernance avec Optimism.
 
-Today’s quest is **to join the Token House and** `delegate` **our OP tokens**.
+La quête d'aujourd'hui est **de rejoindre la Maison des Jetons et déléguer nos jetons OP**.
 
 Pendant que la Maison des Citoyens développe ses procédures d'intégration, nous pouvons commencer notre voyage de Citoyen en participant à une conversation sur les forums de la [communauté Optimism](https://gov.optimism.io/).
 
