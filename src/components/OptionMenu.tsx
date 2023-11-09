@@ -57,15 +57,17 @@ const OptionMenu = ({
               <Bug />
             </MenuItem>
           </ExternalLink>
-          <ExternalLink
-            href="https://app.dework.xyz/bankless-academy-25331/suggestions"
-            color="white"
-          >
-            <MenuItem>
-              {t('Feature Request')}&nbsp;
-              <Gear />
-            </MenuItem>
-          </ExternalLink>
+          {!IS_WHITELABEL && (
+            <ExternalLink
+              href="https://app.dework.xyz/bankless-academy-25331/suggestions"
+              color="white"
+            >
+              <MenuItem>
+                {t('Feature Request')}&nbsp;
+                <Gear />
+              </MenuItem>
+            </ExternalLink>
+          )}
           {!IS_WHITELABEL && (
             <>
               <MenuItem
