@@ -15,10 +15,6 @@ files:
       - dex-aggregators.md
       - intro-to-defi.md
       - layer-1-blockchains.md
-      - layer-2-blockchains.md
-      - how-to-delegate-on-optimism.md
-      - how-to-fund-a-wallet-on-layer-2.md
-      - how-to-swap-on-a-decentralized-exchange.md
       - managing-token-allowances.md
       - the-stablecoin-guide.md
     translation: /translation/lesson/%two_letters_code%/%original_file_name%
