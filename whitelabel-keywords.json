@@ -1,1 +1,65 @@
-{}
+{
+  "adaptable organization": {
+    "definition": "The ability to adjust business processes to achieve organizational goals and objectives."
+  },
+  "agile": {
+    "definition": "A project management approach based on delivering requirements iteratively and incrementally throughout the life cycle."
+  },
+  "aligning": {
+    "definition": "Developing a common understanding among the key stakeholders of the purpose and goals of the project and the means and methods of accomplishing those goals."
+  },
+  "bdip": {
+    "definition": "BanklessDAO Improvement Proposal"
+  },
+  "blockchain": {
+    "definition": "A shared, unchangeable database, or ledger, of recorded transactions."
+  },
+  "bottlenecks": {
+    "definition": "A bottleneck is any point of congestion in a project that causes delays in the workflow."
+  },
+  "bounties": {
+    "definition": "A reward given for completing tasks, mostly in the form of tokens."
+  },
+  "central authority": {
+    "definition": "An agency or organization that is designated to play a key facilitating role in the implementation and operation of an international treaty in public and private international law."
+  },
+  "collaborate": {
+    "definition": "A method by which teams and team leaders plan, coordinate, control and monitor the project they are working on."
+  },
+  "cryptoeconomics": {
+    "definition": "An evolving economic paradigm for a cross-disciplinary approach to the study of digital economies and decentralized finance."
+  },
+  "decentralization": {
+    "definition": "One of the key differences is that a DAO is decentralized, meaning that there is no central authority or hierarchy. Project managers in DAOs have to work in a more decentralized and collaborative way, relying on the input and participation of token holders to drive the project forward."
+  },
+  "decentralized autonomous organizations": {
+    "definition": "A community-led entity with no central authority."
+  },
+  "defi": {
+    "definition": "An abbreviation for decentralized finance."
+  },
+  "engagement": {
+    "definition": "To be present."
+  },
+  "inclusion": {
+    "definition": "The action or state of including or of being included within a group or structure"
+  },
+  "onchain": {
+    "definition": "Transactions are transactions that occur on a blockchain that are reflected on the distributed, public ledger."
+  },
+  "protocols": {
+    "definition": "Are codes, procedures, and rules which govern the systems utilized in DeFi"
+  },
+  "tokenomics": {
+    "definition": "The study of parameters that determine the characteristics of cryptocurrencies (crypto) or cryptographic tokens to create economic value."
+  },
+  "validating": {
+    "definition": "engagement"
+  },
+  "wallet": {
+    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+  },
+  "undefined": {
+    "definition": "A short development phase within a larger project defined by available time (‘timeboxes’) and resources."
+  }
+}
