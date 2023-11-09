@@ -56,11 +56,11 @@ Consulta la sección de nuestro Manual del Explorador sobe ['Cómo Hacer un Swap
 
 ## Cómo Delegar en Optimism Agora
 
-**1\. Abre la dApp Optimism Agora: <https://vote.optimism.io/>**
+**3\. Abre la dApp Optimism Agora: <https://vote.optimism.io/>**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
 
-**2\. Conecta tu billetera**
+**4\. Conecta tu billetera**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
@@ -113,7 +113,7 @@ Nota: esto tampoco contará para la Prueba de Conocimientos de ['Gobernanza en O
 
 **Autor**
 
-[Tetranome](https://twitter.com/Tetranome) is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+**[Tetranome](https://twitter.com/Tetranome)** es el Líder de Proyecto en Bankless Academy, su trabajo se centra en experiencia de usuario, interfaz, diseño y contenido.
 
 **Patron**
 
