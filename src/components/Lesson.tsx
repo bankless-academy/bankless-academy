@@ -670,6 +670,7 @@ const Lesson = ({
           {
             /* lesson.isCommentsEnabled && */
             !isMobile &&
+              !IS_WHITELABEL &&
               (slide.type === 'LEARN' ||
                 (slide.type === 'QUIZ' && answerIsCorrect)) &&
               address && (
