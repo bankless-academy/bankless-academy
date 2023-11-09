@@ -524,6 +524,8 @@ axios
           const content = JSON.parse(`[${htmlPage.data}"}]`)
           let quizNb = 0
           const slides = content.map((slide) => {
+            // remove tags in title
+            slide.title = slide.title.replace(/<[^>]*>?/gm, '')
             // replace with type QUIZ
             if (slide.content.includes("<div class='checklist'>")) {
               quizNb++
@@ -637,8 +639,7 @@ axios
             lesson.quest = componentName
             slides.push({
               type: 'QUEST',
-              // HACK: TEMP
-              title: lesson.slug === 'conceptos-basicos-de-blockchain' ? `Desafío: ${lesson.name}` : `${lesson.name} Quest`,
+              title: `${lesson.name} Quest`,
               component: componentName,
             })
           } else {
