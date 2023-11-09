@@ -15,7 +15,11 @@ import { useSmallScreen } from 'hooks'
 import LessonButton from 'components/LessonButton'
 import NFT from 'components/NFT'
 import ExternalLink from 'components/ExternalLink'
-import { DOMAIN_URL, TOKEN_GATING_ENABLED } from 'constants/index'
+import {
+  DOMAIN_URL,
+  IS_WHITELABEL,
+  TOKEN_GATING_ENABLED,
+} from 'constants/index'
 import { useEffect } from 'react'
 import { Mixpanel, scrollTop } from 'utils'
 import OpenLesson from 'components/OpenLesson'
@@ -104,7 +108,7 @@ const LessonDetail = ({
         />
       ) : (
         <>
-          {!isSmallScreen && (
+          {!isSmallScreen && !IS_WHITELABEL && (
             <StyledBox
               w="-webkit-fill-available"
               position="absolute"
