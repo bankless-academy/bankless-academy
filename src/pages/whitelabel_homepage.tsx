@@ -2,8 +2,9 @@ import { Box, Container, Image } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 
 import Footer from 'layout/Footer'
+import Modules from 'components/Modules'
 import { HOMEPAGE_BACKGROUND } from 'constants/index'
-import FeaturedLessons from 'components/FeaturedLessons'
+import MODULES from 'constants/whitelabel_modules'
 
 const StyledImage = styled(Image)`
   width: 100%;
@@ -17,7 +18,8 @@ const HomePage = (): JSX.Element => {
       <StyledImage src={HOMEPAGE_BACKGROUND} />
       <Box bgColor="#1F2023" p="4" overflow="hidden">
         <Container maxW="container.lg">
-          <FeaturedLessons />
+          {/* Top modules */}
+          <Modules modules={MODULES.filter((m) => !m.parentModule)} />
         </Container>
         <Footer />
       </Box>
