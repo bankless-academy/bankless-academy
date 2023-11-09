@@ -299,7 +299,7 @@ Das Bürger-Haus stellt auch sicher, dass die Vorschläge des Token-Hauses mit d
 
 # Bürger-Haus: Beitreten, Abstimmen, Delegieren
 
-📝 **Beitritt:** Das Bürger-Haus nimmt derzeit Mitglieder auf Basis von Einladungen auf, um seine Prozesse langsam zu erweitern und zu verfeinern. Membership is marked by holding a ‘Citizen Badge’.
+📝 **Beitritt:** Das Bürger-Haus nimmt derzeit Mitglieder auf Basis von Einladungen auf, um seine Prozesse langsam zu erweitern und zu verfeinern. Die Mitgliedschaft wird durch den Besitz einer sogenannten "Citizen Badge" gekennzeichnet - einem nicht übertragbaren `ERC-721` Token.
 
 Die Bestimmungen, auf dessen Basis die Einladungen erfolgen, ändern sich saisonal auf der Grundlage von Experimenten der Optimism Foundation:
 
