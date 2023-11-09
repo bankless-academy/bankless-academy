@@ -56,11 +56,11 @@ In unserem Explorer's Handbuch auf ["How to Swap on a Decentralized Exchange"](h
 
 ## Delegieren mit Optimism Agora
 
-**1\. Öffne die Optimism Agora dApp: <https://vote.optimism.io/>**
+**3\. Öffne die Optimism Agora dApp: <https://vote.optimism.io/>**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-ce643a81.png)
 
-**2\. Verbinde deine Wallet.**
+**4\. Verbinde deine Wallet.**
 
 ![](https://app.banklessacademy.com/images/delegating-on-optimism/image-9ec06fe9.png)
 
@@ -113,7 +113,7 @@ Hinweis: Dies wird dir ebenfalls nicht für die Lektion ['Optimism Governance'](
 
 **Autor**
 
-[Tetranome](https://twitter.com/Tetranome) is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.
+**[Tetranome](https://twitter.com/Tetranome)** ist der Projektmeister der Bankless Academy, der sich auf Benutzererfahrung, Interface, Design und Inhalt konzentriert.
 
 **Patron**
 
