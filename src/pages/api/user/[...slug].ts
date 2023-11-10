@@ -8,7 +8,7 @@ import { createPublicClient, http } from 'viem'
 import badges from 'data/badges.json'
 import { ALCHEMY_KEY_BACKEND } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_IDS, BADGE_API } from 'constants/badges'
-import { TABLES, db } from 'utils/db'
+import { TABLE, TABLES, db } from 'utils/db'
 
 export const BADGE_TO_KUDOS_IDS = {
   '1': '2561',
@@ -55,7 +55,11 @@ export default async function handler(
   if (!address || !address.startsWith('0x')) return res.status(400).json({ error: 'Wrong params' })
 
   const [userExist] = await db(TABLES.users)
-    .select('id')
+    .select(
+      'id',
+      'ens_name',
+      'ens_avatar',
+    )
     .whereILike('address', address)
   console.log('user', userExist)
   if (!userExist) res.status(200).json({ error: 'user not found' })
@@ -79,5 +83,16 @@ export default async function handler(
 
   const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : makeBlockie(address)
 
-  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds, ensName, avatar })
+  if (
+    (ensName && userExist.ens_name !== ensName) ||
+    (avatar && userExist.ens_avatar !== avatar)
+  ) {
+    // update ens_name + ens_avatar in user DB
+    console.log('update ENS details')
+    await db(TABLES.users)
+      .where(TABLE.users.id, userExist.id)
+      .update({ ens_name: ensName, ens_avatar: avatar })
+  }
+
+  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds, ensName, avatar: avatar || makeBlockie(address) })
 }
