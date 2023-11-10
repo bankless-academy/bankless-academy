@@ -6,7 +6,8 @@ import { createColumnHelper } from '@tanstack/react-table'
 
 import { MetaData } from 'components/Head'
 import { DataTable } from 'components/DataTable'
-import ExternalLink from 'components/ExternalLink'
+import { shortenAddress } from 'utils'
+import InternalLink from 'components/InternalLink'
 
 const pageMeta: MetaData = {
   title: 'Leaderboard',
@@ -30,13 +31,17 @@ const columnHelper = createColumnHelper<UnitConversion>()
 
 const columns = [
   columnHelper.accessor('address', {
-    cell: (info) => (
-      <ExternalLink
-        href={`https://opensea.io/${info.getValue()}/collected?search[sortBy]=LAST_TRANSFER_DATE&search[sortAscending]=false`}
-      >
-        {info.getValue()}
-      </ExternalLink>
-    ),
+    cell: (info) => {
+      const address =
+        info.getValue()?.length === 42
+          ? shortenAddress(info.getValue())
+          : info.getValue()
+      return (
+        <InternalLink href={`/profile/${info.getValue()}`}>
+          {address}
+        </InternalLink>
+      )
+    },
     header: 'address',
   }),
   columnHelper.accessor('score', {
@@ -45,7 +50,7 @@ const columns = [
   }),
   columnHelper.accessor('collectibles', {
     cell: (info) => info.getValue(),
-    header: 'lesson collectibles',
+    header: 'lesson datadisk',
   }),
   columnHelper.accessor('handbooks', {
     cell: (info) => info.getValue(),
@@ -91,6 +96,9 @@ const Leaderboard = (): JSX.Element => {
       <Container maxW="container.xl">
         <Heading as="h2" size="xl" m="8" textAlign="center">
           Bankless Academy Leaderboard
+        </Heading>
+        <Heading as="h3" size="md" m="8" textAlign="center">
+          Last update: xx/xx/xxxx
         </Heading>
         <DataTable
           columns={columns}
