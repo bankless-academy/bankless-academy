@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Spinner, Box } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
+import { useTranslation } from 'react-i18next'
 
 import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
@@ -12,6 +13,7 @@ const WalletBasics = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { t } = useTranslation('quests', { keyPrefix: 'WalletBasics' })
   const [isSmallScreen] = useSmallScreen()
 
   return {
@@ -20,14 +22,15 @@ const WalletBasics = (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
           <div className="bloc1">
-            <h2>How to setup a MetaMask wallet</h2>
+            <h2>{t(`How to setup a MetaMask wallet`)}</h2>
             <p>
-              For convenience and ease of access throughout this lesson, you
-              will need a MetaMask wallet. Next we will demonstrate how to set
-              up a MetaMask wallet.
+              {t(
+                `For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.`
+              )}
             </p>
             <p>
-              Download the browser extension from the official website:&nbsp;
+              {t(`Download the browser extension from the official website:`)}
+              &nbsp;
               <ExternalLink href="https://metamask.io/download">
                 https://metamask.io/download
               </ExternalLink>
@@ -40,8 +43,8 @@ const WalletBasics = (
               boxShadow="none !important"
             >
               {account
-                ? 'Congrats for connecting your wallet! 👏🙂'
-                : 'Waiting to detect your wallet ...'}
+                ? t('Congrats for connecting your wallet! 👏🙂')
+                : t('Waiting to detect your wallet ...')}
             </Button>
           </div>
           <div className="bloc2">

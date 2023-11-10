@@ -71,3 +71,37 @@ For more information and to stay connected with Bankless Academy, follow and rea
 - [YouTube](https://www.youtube.com/watch?v=JMeVzmycj_s)
 
 Thank you for your inconditional support! 🙏
+
+## Updates
+
+September - October 2023
+
+- New multilingual functionality
+https://twitter.com/didierkrux/status/1701612539334017262
+- Release of ‘Optimism Governance’ lesson, with support in five languages
+https://twitter.com/BanklessAcademy/status/1699836629773611222
+[![Optimism Governance](https://snipboard.io/D6dsjK.jpg)](https://twitter.com/BanklessAcademy/status/1699836629773611222)
+- Release of ‘Managing Token Allowances’ entry in our Explorer’s Handbook
+https://twitter.com/BanklessAcademy/status/1699407166002913442
+[![Managing Token Allowances](https://pbs.twimg.com/media/F-U5DNrbAAA_5bj?format=png&name=small)](https://twitter.com/BanklessAcademy/status/1699407166002913442)
+- Release of ‘Ethereum Token Standards’ entry in our Explorer’s Handbook
+https://twitter.com/BanklessAcademy/status/1722224860527833105
+[![Ethereum Token Standards](https://pbs.twimg.com/media/F-aSYf-bEAAFAfR?format=png&name=small)](https://twitter.com/BanklessAcademy/status/1722224860527833105)
+- Release of ‘Wallet Basics’ Italian support
+https://twitter.com/BanklessAcademy/status/1710273155145634062
+- ‘Wallet Basics’ talk, in Italian, at ETHMilan
+https://twitter.com/BanklessAcademy/status/1710272622028550245
+- New in-lesson “suggest changes” feature
+[![suggest changes](https://snipboard.io/NW3Z8I.jpg)](https://app.banklessacademy.com/lessons)
+- WalletConnect v2 migration
+https://twitter.com/didierkrux/status/1707425065480982873
+
+## Metrics measurement
+
+Bankless Academy currently measures two metrics for success:
+
+- Lesson completions, measuring the amount of users educated on web3 topics.
+Total badges distributed: https://dune.com/didierkrux/bankless-academy-badges
+[![badges distributed](https://snipboard.io/Bd384n.jpg)](https://dune.com/didierkrux/bankless-academy-badges)
+- Content collects, measuring user’s desire to own Academy content, and donation-based income.
+Total collectibles distributed: https://dune.com/didierkrux/bankless-academy-collectibles

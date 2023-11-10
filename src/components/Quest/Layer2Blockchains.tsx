@@ -48,7 +48,7 @@ const Layer2Blockchains = (
   }, [account])
 
   const lesson = LESSONS.find(
-    (lesson) => lesson.slug === 'how-to-fund-a-wallet-on-layer-2'
+    (lesson) => lesson.slug === 'funding-a-wallet-on-layer-2'
   )
 
   if (!lesson)

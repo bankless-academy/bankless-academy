@@ -300,7 +300,7 @@ The Citizens’ House also ensures that Token House proposals are mission-aligne
 
 # Citizens’ House: Joining, Voting, Delegating
 
-📝 **Joining:** The Citizens’ House currently adds members by invitation, to slowly scale and refine its processes. Membership is marked by holding a ‘Citizen Badge’ — a non-transferable `ERC-721` token.
+📝 **Joining:** The Citizens’ House currently adds members by invitation, to slowly scale and refine its processes. Membership is marked by holding a ‘Citizen Badge’.
 
 The specifics of invitations change seasonally based on experimentation by the Optimism Foundation:
 

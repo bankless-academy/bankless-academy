@@ -6,21 +6,6 @@ targets:
     format: macosx
 files:
   - source: /translation/lesson/en/*.md
-    ignore:
-      - bankless-archetypes.md
-      - going-bankless.md
-      - kudos-testing.md
-      - conceptos-basicos-de-blockchain.md
-      - decentralized-exchanges.md
-      - dex-aggregators.md
-      - intro-to-defi.md
-      - layer-1-blockchains.md
-      - layer-2-blockchains.md
-      - how-to-delegate-on-optimism.md
-      - how-to-fund-a-wallet-on-layer-2.md
-      - how-to-swap-on-a-decentralized-exchange.md
-      - managing-token-allowances.md
-      - the-stablecoin-guide.md
     translation: /translation/lesson/%two_letters_code%/%original_file_name%
   - source: /translation/website/en/*.json
     translation: /translation/website/%two_letters_code%/%original_file_name%

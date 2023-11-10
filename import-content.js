@@ -156,8 +156,11 @@ const KEY_MATCHING = {
 
 const args = process.argv
 const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : process.env.DEFAULT_CONTENT_DB_ID || DEFAULT_NOTION_ID
-const TRANSLATION_ONLY = args[2] === 'TR'
 console.log('NOTION_ID', NOTION_ID)
+const LESSON_NOTION_ID = args.includes('-n') ? args.join(' ').split(' ').pop() : null
+console.log('LESSON_NOTION_ID', LESSON_NOTION_ID)
+const TRANSLATION_ONLY = args.includes('-tr')
+const NO_TRANSLATION = args.includes('-notr')
 
 const slugify = (text) => text.toLowerCase()
   .replace('á', 'a')
@@ -202,6 +205,7 @@ const placeholder = (lesson, size, image_name) => {
 }
 
 const importTranslations = async (lesson) => {
+  if (NO_TRANSLATION) return
   for (const language of lesson.languages) {
     console.log('import translation:', language)
     try {
@@ -274,8 +278,12 @@ axios
           }),
         {}
       )
+      // skip import if LESSON_NOTION_ID is specified
       if (lesson.publicationStatus === undefined) return
       notion.id = notion.id.replace(/-/g, '')
+      if (LESSON_NOTION_ID && notion.id !== LESSON_NOTION_ID) return
+      // TEMP: we don't publish planned lesson ATM
+      if (lesson.publicationStatus === 'planned') return
       console.log('Notion lesson link: ', `${POTION_API}/html?id=${notion.id}`)
 
       if (lesson.description === undefined) lesson.description = ''
@@ -401,7 +409,9 @@ axios
                     const imageRegex = /!\[.*?\]\((.*?)\)/g;
                     let match
                     while ((match = imageRegex.exec(lessonContentMD)) !== null) {
-                      const imageLink = match[1]
+                      // fix weird bug with \
+                      const imageLink = match[1].replace('\\', '')
+                      // console.log(imageLink)
                       const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/)[1]
                       // create "unique" hash based on Notion imageLink (different when re-uploaded)
                       const hash = crc32(imageLink)
@@ -413,6 +423,7 @@ axios
                       }
                       const image_path = `${image_dir}/image-${hash}.${file_extension}`
                       const local_image_path = `public${image_path}`
+                      // console.log(local_image_path)
                       lesson.imageLinks.push(image_path)
                       if (!fs.existsSync(local_image_path)) {
                         download_image(imageLink, local_image_path)
@@ -513,6 +524,8 @@ axios
           const content = JSON.parse(`[${htmlPage.data}"}]`)
           let quizNb = 0
           const slides = content.map((slide) => {
+            // remove tags in title
+            slide.title = slide.title.replace(/<[^>]*>?/gm, '')
             // replace with type QUIZ
             if (slide.content.includes("<div class='checklist'>")) {
               quizNb++
@@ -626,8 +639,7 @@ axios
             lesson.quest = componentName
             slides.push({
               type: 'QUEST',
-              // HACK: TEMP
-              title: lesson.slug === 'conceptos-basicos-de-blockchain' ? `Desafío: ${lesson.name}` : `${lesson.name} Quest`,
+              title: `${lesson.name} Quest`,
               component: componentName,
             })
           } else {

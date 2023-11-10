@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react'
 import { GetStaticProps } from 'next'
 import { Container } from '@chakra-ui/react'
@@ -25,6 +26,7 @@ const processLesson = (htmlPage, notion_id) => {
     .substr(3)
   const content = JSON.parse(`[${htmlPage.data}"}]`)
   let quizNb = 0
+  const allKeywords = []
   const slides = content.map((slide) => {
     // replace with type QUIZ
     if (slide.content.includes("<div class='checklist'>")) {
@@ -68,6 +70,14 @@ const processLesson = (htmlPage, notion_id) => {
       slide.quiz.id = `${lesson.slug}-${quizNb}`
     }
     if (slide.content) {
+      const contentDiv = document.createElement('div')
+      contentDiv.innerHTML = slide.content
+      const keywords = contentDiv.querySelectorAll('code')
+      for (const keyword of keywords) {
+        const k = keyword.innerText?.toLowerCase()
+        if (!allKeywords.includes(k)) allKeywords.push(k)
+      }
+
       if ((slide.content.match(/<img /g) || []).length > 1) {
         // multiple images
         const blocs = slide.content
@@ -107,6 +117,7 @@ const processLesson = (htmlPage, notion_id) => {
     }
     return slide
   })
+  console.log('List of keywords:', allKeywords.join(', '))
   lesson.slides = slides
   lesson.isPreview = true
   return lesson
