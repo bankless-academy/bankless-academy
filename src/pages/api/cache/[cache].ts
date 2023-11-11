@@ -6,7 +6,10 @@ export const config = {
   runtime: 'edge',
 }
 
-export const AUTHORIZED_KV = ['bankless-dao-news']
+export const AUTHORIZED_KV = [
+  'bankless-dao-news',
+  'leaderboard'
+]
 
 export default async function handler(req: NextRequest) {
   const cache = req.nextUrl.pathname.split('/')[3]
