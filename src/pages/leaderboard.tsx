@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Heading, Image } from '@chakra-ui/react'
+import { Box, Container, Heading, Image } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 import axios from 'axios'
 import { createColumnHelper } from '@tanstack/react-table'
@@ -25,6 +25,8 @@ type UnitConversion = {
   collectibles: number
   handbooks: number
   badges: number
+  ens_name?: string
+  ens_avatar?: string
 }
 
 const columnHelper = createColumnHelper<UnitConversion>()
@@ -33,12 +35,23 @@ const columns = [
   columnHelper.accessor('address', {
     cell: (info) => {
       const address =
-        info.getValue()?.length === 42
-          ? shortenAddress(info.getValue())
-          : info.getValue()
+        info.row.original?.ens_name || shortenAddress(info.getValue())
       return (
-        <InternalLink href={`/profile/${info.getValue()}`}>
-          {address}
+        <InternalLink
+          href={`/profile/${info.row.original?.ens_name || info.getValue()}`}
+        >
+          <Box display="flex" alignItems="center">
+            <Image
+              width="30px"
+              height="30px"
+              borderRadius="50%"
+              mr="2"
+              src={
+                info.row.original?.ens_avatar || '/images/default_avatar.png'
+              }
+            />
+            {address}
+          </Box>
         </InternalLink>
       )
     },
