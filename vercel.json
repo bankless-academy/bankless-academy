@@ -39,10 +39,6 @@
     {
       "source": "/api/cache/(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "s-maxage=3600"
-        },
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         {
