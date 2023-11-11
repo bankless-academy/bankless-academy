@@ -80,7 +80,9 @@ export default async function handler(
   const ensName = await client.getEnsName({ address: address as `0x${string}` })
   // console.log(ensName)
 
-  const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : '/images/default_avatar.png'
+  const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/default_avatar.png'
+
+  const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : DEFAULT_AVATAR
 
   if (
     (ensName && userExist.ens_name !== ensName) ||
@@ -90,8 +92,8 @@ export default async function handler(
     console.log('update ENS details')
     await db(TABLES.users)
       .where(TABLE.users.id, userExist.id)
-      .update({ ens_name: ensName, ens_avatar: avatar?.length < 255 && avatar.startsWith('http') ? avatar : null })
+      .update({ ens_name: ensName, ens_avatar: avatar?.length < 255 && avatar !== DEFAULT_AVATAR ? avatar : null })
   }
 
-  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds, ensName, avatar: avatar || '/images/default_avatar.png' })
+  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds, ensName, avatar: avatar })
 }
