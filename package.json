@@ -46,6 +46,7 @@
     "@tanstack/react-table": "^8.10.7",
     "@types/mixpanel-browser": "^2.38.0",
     "@vercel/og": "^0.5.20",
+    "@vercel/kv": "^1.0.0",
     "@web3modal/wagmi": "^3.0.2",
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
