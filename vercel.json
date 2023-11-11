@@ -112,6 +112,10 @@
     {
       "path": "/api/cron/bankless-dao-news",
       "schedule": "0 * * * *"
+    },
+    {
+      "path": "/api/cron/leaderboard",
+      "schedule": "0 * * * *"
     }
   ]
 }
