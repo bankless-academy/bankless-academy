@@ -64,6 +64,8 @@ const columns = [
 
 const Leaderboard = (): JSX.Element => {
   const [leaderboard, setLeaderboard]: any = useState(null)
+  const [fetchedAt, setFetchedAt]: any = useState(null)
+
   const [error, setError]: any = useState('')
   useEffect(() => {
     setError('')
@@ -72,8 +74,8 @@ const Leaderboard = (): JSX.Element => {
       .then(function (res) {
         if (!res.data.error) {
           const data = []
-          for (const address of Object.keys(res.data)) {
-            const addressNumbers = { ...res.data[address] }
+          for (const address of Object.keys(res.data.data)) {
+            const addressNumbers = { ...res.data.data[address] }
             addressNumbers.score =
               3 * (addressNumbers?.collectibles || 0) +
               (addressNumbers?.handbooks || 0) +
@@ -81,6 +83,10 @@ const Leaderboard = (): JSX.Element => {
             data.push({ address, ...addressNumbers })
           }
           setLeaderboard(data)
+          const date = new Date(res.data.fetchedAt)
+          setFetchedAt(
+            `${date.toLocaleDateString()}: ${date.toLocaleTimeString()}`
+          )
         } else {
           setError(res.data.error)
         }
@@ -91,14 +97,14 @@ const Leaderboard = (): JSX.Element => {
       })
   }, [])
 
-  if (leaderboard)
+  if (leaderboard && fetchedAt)
     return (
       <Container maxW="container.xl">
         <Heading as="h2" size="xl" m="8" textAlign="center">
           Bankless Academy Leaderboard
         </Heading>
         <Heading as="h3" size="md" m="8" textAlign="center">
-          Last update: xx/xx/xxxx
+          Last update: {fetchedAt}
         </Heading>
         <DataTable
           columns={columns}
