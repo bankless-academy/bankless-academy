@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
-import makeBlockie from 'ethereum-blockies-base64'
 import { mainnet } from 'viem/chains'
 import { createPublicClient, http } from 'viem'
 
@@ -81,7 +80,7 @@ export default async function handler(
   const ensName = await client.getEnsName({ address: address as `0x${string}` })
   // console.log(ensName)
 
-  const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : makeBlockie(address)
+  const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : '/images/default_avatar.png'
 
   if (
     (ensName && userExist.ens_name !== ensName) ||
@@ -91,8 +90,8 @@ export default async function handler(
     console.log('update ENS details')
     await db(TABLES.users)
       .where(TABLE.users.id, userExist.id)
-      .update({ ens_name: ensName, ens_avatar: avatar })
+      .update({ ens_name: ensName, ens_avatar: avatar?.length < 255 && avatar.startsWith('http') ? avatar : null })
   }
 
-  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds, ensName, avatar: avatar || makeBlockie(address) })
+  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds, ensName, avatar: avatar || '/images/default_avatar.png' })
 }
