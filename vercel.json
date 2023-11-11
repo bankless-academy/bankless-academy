@@ -111,5 +111,11 @@
       "destination": "/lessons/swapping-on-a-decentralized-exchange",
       "permanent": false
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/bankless-dao-news",
+      "schedule": "0 * * * *"
+    }
   ]
 }
