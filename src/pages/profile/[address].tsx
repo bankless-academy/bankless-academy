@@ -2,6 +2,7 @@ import { Box, Heading, Image } from '@chakra-ui/react'
 import Badges from 'components/Badges'
 import { MetaData } from 'components/Head'
 import { ALCHEMY_KEY_BACKEND, DOMAIN_URL } from 'constants/index'
+import { shortenAddress } from 'utils'
 import { TABLES, db } from 'utils/db'
 import { createPublicClient, http } from 'viem'
 import { mainnet } from 'viem/chains'
@@ -59,7 +60,7 @@ export async function getServerSideProps({ query }) {
   const badgeId = badge ? `&badgeId=${badge}` : ''
 
   const pageMeta: MetaData = {
-    title: `profile: ${user.ensName || confirmedAddress}`,
+    title: `Explorer ${user.ensName || shortenAddress(confirmedAddress)}`,
     // description: currentLesson.description,
     image: `${DOMAIN}/api/og/profile?address=${confirmedAddress}${badgeId}`,
   }
@@ -81,12 +82,12 @@ export default function Page({
   return (
     <>
       <Box>
-        <Heading as="h2" size="xl" m="8" textAlign="center">
-          {ensName || address}
-        </Heading>
         <Box display="flex" justifyContent="center" w="100%" mb="8">
           <Image src={avatar} width="100px" height="100px" borderRadius="50%" />
         </Box>
+        <Heading as="h2" size="xl" m="8" textAlign="center">
+          {ensName || shortenAddress(address)}
+        </Heading>
         <Badges
           badges={badges}
           badgeToHighlight={badgeToHighlight}
