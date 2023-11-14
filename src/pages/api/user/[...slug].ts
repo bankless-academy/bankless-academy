@@ -4,7 +4,7 @@ import axios from 'axios'
 import { mainnet } from 'viem/chains'
 import { createPublicClient, http } from 'viem'
 
-import kudosBadges from 'data/badges.json'
+import kudosBadges from '../../../data/badges.json'
 import { ALCHEMY_KEY_BACKEND } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_IDS, BADGE_API } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
