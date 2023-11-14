@@ -4,7 +4,7 @@ import axios from 'axios'
 import { mainnet } from 'viem/chains'
 import { createPublicClient, http } from 'viem'
 
-import badges from 'data/badges.json'
+import kudosBadges from 'data/badges.json'
 import { ALCHEMY_KEY_BACKEND } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_IDS, BADGE_API } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
@@ -58,18 +58,20 @@ export default async function handler(
       'id',
       'ens_name',
       'ens_avatar',
+      'donations'
     )
     .whereILike('address', address)
   console.log('user', userExist)
   if (!userExist) res.status(200).json({ error: 'user not found' })
 
-  const oldBadgeTokenIds = address in badges ? badges[address] : []
+  const oldBadgeTokenIds = address in kudosBadges ? kudosBadges[address] : []
   const badgeTokenIds = [
     ...(await getBadgeTokensIds(address)),
     ...oldBadgeTokenIds
   ]
 
-  const kudosTokenIds = address in badges ? badges[address].map(token => BADGE_TO_KUDOS_IDS[token.toString()]).filter(token => token) : []
+  const kudosTokenIds = address in kudosBadges ? kudosBadges[address].map(token => BADGE_TO_KUDOS_IDS[token.toString()]).filter(token => token) : []
+  console.log(kudosTokenIds)
 
   const transport = http(`https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`)
   const client = createPublicClient({
@@ -95,5 +97,5 @@ export default async function handler(
       .update({ ens_name: ensName, ens_avatar: avatar?.length < 255 && avatar !== DEFAULT_AVATAR ? avatar : null })
   }
 
-  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds, ensName, avatar: avatar || DEFAULT_AVATAR })
+  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds, ensName, avatar: avatar || DEFAULT_AVATAR, donations: userExist.donations })
 }

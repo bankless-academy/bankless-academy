@@ -7,7 +7,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import badges from 'data/badges.json'
 import { fetchBE } from 'utils/server'
 import { BADGE_ADDRESS, BADGE_IDS } from 'constants/badges'
-import { db } from 'utils/db'
+import { TABLE, TABLES, db } from 'utils/db'
 
 async function getCollectors(collectibleAddress) {
   // console.log(collectibleAddress)
@@ -82,9 +82,39 @@ export default async function handler(
           leaderboard[address].ens_name = user.ens_name
         if (user.ens_avatar !== null)
           leaderboard[address].ens_avatar = user.ens_avatar
-
       }
-      // console.log(leaderboard)
+      const donations = await db(TABLES.users)
+        .select(TABLE.users.address, TABLE.users.donations)
+        .whereNot(TABLE.users.donations, '{}')
+      console.log(donations)
+      for (const donation of donations) {
+        const a = donation.address.toLowerCase()
+        if (a in leaderboard)
+          leaderboard[a].donations = donation.donations
+      }
+      const rank = []
+      for (const address of Object.keys(leaderboard)) {
+        // score
+        const score = 3 * (leaderboard[address]?.collectibles || 0) +
+          (leaderboard[address]?.handbooks || 0) +
+          (leaderboard[address]?.badges || 0) +
+          Object.keys(leaderboard[address]?.donations || {})?.length || 0
+
+        leaderboard[address].score = score
+        rank.push({ score, address })
+      }
+      let rankNb = 0
+      const sortedRank = rank.sort((a, b) => b.score - a.score)
+        .map(l => {
+          rankNb++
+          return { ...l, rank: rankNb }
+        })
+      // console.log(rank)
+      // console.log(sortedRank)
+      for (const r of sortedRank) {
+        leaderboard[r.address].rank = r.rank
+      }
+
       return res.status(200).send(leaderboard)
     } catch (error) {
       console.log('API limit reached.', error)

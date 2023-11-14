@@ -27,6 +27,7 @@ type UnitConversion = {
   badges: number
   ens_name?: string
   ens_avatar?: string
+  donations?: any
 }
 
 const columnHelper = createColumnHelper<UnitConversion>()
@@ -69,6 +70,15 @@ const columns = [
     cell: (info) => info.getValue(),
     header: 'handbooks',
   }),
+  columnHelper.accessor('donations', {
+    cell: (info) => {
+      const donation = info.getValue()
+      if (typeof donation === 'object') {
+        return Object.keys(donation).join(', ')
+      } else return '-'
+    },
+    header: 'donations',
+  }),
   columnHelper.accessor('badges', {
     cell: (info) => info.getValue(),
     header: 'badges',
@@ -88,12 +98,7 @@ const Leaderboard = (): JSX.Element => {
         if (!res.data.error) {
           const data = []
           for (const address of Object.keys(res.data.data)) {
-            const addressNumbers = { ...res.data.data[address] }
-            addressNumbers.score =
-              3 * (addressNumbers?.collectibles || 0) +
-              (addressNumbers?.handbooks || 0) +
-              (addressNumbers?.badges || 0)
-            data.push({ address, ...addressNumbers })
+            data.push({ address, ...res.data.data[address] })
           }
           setLeaderboard(data)
           const date = new Date(res.data.fetchedAt)

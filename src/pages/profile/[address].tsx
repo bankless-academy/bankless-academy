@@ -51,10 +51,12 @@ export async function getServerSideProps({ query }) {
     return { props: { error: 'badge not found' } }
   const data = {
     address: confirmedAddress,
-    ensName: user.ensName,
-    avatar: user.avatar,
+    ensName: user?.ensName,
+    avatar: user?.avatar,
     badges: badgeTokenIds,
     badgeToHighlight: parseInt(badge),
+    donations: user?.donations,
+    // rank: user?.rank,
   }
   console.log(data)
   const badgeId = badge ? `&badgeId=${badge}` : ''
@@ -74,6 +76,8 @@ export default function Page({
   avatar,
   badges,
   badgeToHighlight,
+  donations,
+  // rank,
   error,
 }) {
   if (error) return error
@@ -87,6 +91,12 @@ export default function Page({
         </Box>
         <Heading as="h2" size="xl" m="8" textAlign="center">
           {ensName || shortenAddress(address)}
+        </Heading>
+        {/* <Heading as="h3" size="md" m="8" textAlign="center">
+          Rank: #{rank}
+        </Heading> */}
+        <Heading as="h3" size="md" m="8" textAlign="center">
+          Donations: {Object.keys(donations).join(', ')}
         </Heading>
         <Badges
           badges={badges}
