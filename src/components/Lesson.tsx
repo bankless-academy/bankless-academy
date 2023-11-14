@@ -511,7 +511,7 @@ const Lesson = ({
       pb={2}
       mt={6}
       issmallscreen={isSmallScreen.toString()}
-      isPreview={lesson.isPreview.toString()}
+      isPreview={lesson.isPreview?.toString()}
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
     >
