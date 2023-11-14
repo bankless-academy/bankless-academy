@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Container,
@@ -21,7 +21,7 @@ import CollectEntryButton from 'components/CollectEntryButton'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
-import { getArticlesCollected, Mixpanel } from 'utils'
+import { getArticlesCollected, getArticlesCollectors, Mixpanel } from 'utils'
 import Keyword from 'components/Keyword'
 import LanguageSwitch from 'components/LanguageSwitch'
 
@@ -519,6 +519,7 @@ const Article = ({
     'articlesCollected',
     []
   )
+  const [numberCollected, setNumberCollected] = useState<number | '...'>('...')
   const { address } = useAccount()
 
   useEffect(() => {
@@ -530,6 +531,15 @@ const Article = ({
     setTimeout(() => {
       localStorage.setItem(lesson.slug, 'true')
     }, 30000)
+  }, [])
+
+  const updateArticlesCollectors = async () => {
+    const NFTCollectors = await getArticlesCollectors(lesson.mirrorNFTAddress)
+    setNumberCollected(NFTCollectors.length)
+  }
+
+  useEffect(() => {
+    if (lesson.mirrorNFTAddress) updateArticlesCollectors().catch(console.error)
   }, [])
 
   useEffect(() => {
@@ -575,7 +585,10 @@ const Article = ({
               {t('Entry Collected')}
             </Button>
           ) : (
-            <CollectEntryButton lesson={lesson} />
+            <CollectEntryButton
+              lesson={lesson}
+              numberCollected={numberCollected}
+            />
           )}
         </Box>
         <Box
@@ -693,7 +706,10 @@ const Article = ({
               {t('Entry Collected')}
             </Button>
           ) : (
-            <CollectEntryButton lesson={lesson} />
+            <CollectEntryButton
+              lesson={lesson}
+              numberCollected={numberCollected}
+            />
           )}
         </Box>
         <Box

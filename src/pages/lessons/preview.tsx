@@ -117,6 +117,7 @@ const processLesson = (htmlPage, notion_id) => {
     }
     return slide
   })
+  lesson.keywords = allKeywords
   console.log('List of keywords:', allKeywords.join(', '))
   lesson.slides = slides
   lesson.isPreview = true

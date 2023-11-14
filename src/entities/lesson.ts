@@ -51,6 +51,7 @@ export interface LessonType {
   nftGatingLink?: string
   nftGatingCTA?: string
   lang?: LanguageType
+  keywords?: string[]
   slides?: {
     type: SlideType
     title: string

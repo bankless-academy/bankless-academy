@@ -21,8 +21,10 @@ import { useLocalStorage } from 'usehooks-ts'
 
 const CollectEntryButton = ({
   lesson,
+  numberCollected,
 }: {
   lesson: LessonType
+  numberCollected: number | '...'
 }): JSX.Element => {
   if (!lesson.mirrorNFTAddress) return
   const { t } = useTranslation()
@@ -208,6 +210,7 @@ const CollectEntryButton = ({
             }}
           >
             {t('Collect Entry')}
+            {` (${numberCollected}/100) ${t('claimed')}`}
           </Button>
         )}
       </Tooltip>
