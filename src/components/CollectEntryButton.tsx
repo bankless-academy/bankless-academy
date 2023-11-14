@@ -162,8 +162,6 @@ const CollectEntryButton = ({
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
-  const claimed = ` (${numberCollected}/100) ${t('claimed')}`
-
   return (
     <Box>
       <Tooltip hasArrow label={t('Collect Mirror Entry')}>
@@ -183,7 +181,6 @@ const CollectEntryButton = ({
             background="transparent !important"
           >
             {t('Entry Collected')}
-            {/* {claimed} */}
           </Button>
         ) : (
           <Button
@@ -213,7 +210,7 @@ const CollectEntryButton = ({
             }}
           >
             {t('Collect Entry')}
-            {claimed}
+            {` (${numberCollected}/100) ${t('claimed')}`}
           </Button>
         )}
       </Tooltip>

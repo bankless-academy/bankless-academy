@@ -559,8 +559,6 @@ const Article = ({
     lesson.mirrorNFTAddress?.length &&
     articlesCollectedLS.includes(lesson.mirrorNFTAddress)
 
-  const claimed = ` (${numberCollected}/100) ${t('claimed')}`
-
   return (
     <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
       <Image
@@ -585,7 +583,6 @@ const Article = ({
               background="transparent !important"
             >
               {t('Entry Collected')}
-              {claimed}
             </Button>
           ) : (
             <CollectEntryButton
@@ -707,7 +704,6 @@ const Article = ({
               background="transparent !important"
             >
               {t('Entry Collected')}
-              {claimed}
             </Button>
           ) : (
             <CollectEntryButton
