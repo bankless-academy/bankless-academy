@@ -33,14 +33,9 @@ export async function getServerSideProps({ query }) {
   if (error) return { props: { error } }
   const confirmedAddress = userExist.address
 
-  const DOMAIN =
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:3000'
-      : DOMAIN_URL
-
   console.log(confirmedAddress)
   console.log(badge)
-  const res = await fetch(`${DOMAIN}/api/user/${confirmedAddress}`)
+  const res = await fetch(`${DOMAIN_URL}/api/user/${confirmedAddress}`)
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
@@ -64,7 +59,7 @@ export async function getServerSideProps({ query }) {
   const pageMeta: MetaData = {
     title: `Explorer ${user.ensName || shortenAddress(confirmedAddress)}`,
     // description: currentLesson.description,
-    image: `${DOMAIN}/api/og/profile?address=${confirmedAddress}${badgeId}`,
+    image: `${DOMAIN_URL}/api/og/profile?address=${confirmedAddress}${badgeId}`,
   }
 
   return { props: { ...data, pageMeta } }

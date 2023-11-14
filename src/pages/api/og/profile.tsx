@@ -26,15 +26,10 @@ export default async function handler(req: NextApiRequest) {
 
   // console.log(badgeImageLink)
 
-  const DOMAIN =
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:3000'
-      : DOMAIN_URL
-
   let error = ''
   if (!address) error = 'missing address'
 
-  const res = await fetch(`${DOMAIN}/api/user/${address}`)
+  const res = await fetch(`${DOMAIN_URL}/api/user/${address}`)
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
@@ -78,7 +73,7 @@ export default async function handler(req: NextApiRequest) {
 
   const fontData = await fetch(
     new URL(
-      `${DOMAIN}/fonts/clear-sans/TTF/ClearSans-Bold.ttf`,
+      `${DOMAIN_URL}/fonts/clear-sans/TTF/ClearSans-Bold.ttf`,
       import.meta.url
     )
   ).then((res) => res.arrayBuffer())
@@ -95,7 +90,7 @@ export default async function handler(req: NextApiRequest) {
             width: '1200px',
             height: '628px',
           }}
-          src={`${DOMAIN}/images/social_background_purple.png`}
+          src={`${DOMAIN_URL}/images/social_background_purple.png`}
         />
         <img
           style={{
@@ -107,7 +102,7 @@ export default async function handler(req: NextApiRequest) {
             height: '400px',
             borderRadius: '50%',
           }}
-          src={badgeImageLink ? `${DOMAIN}${badgeImageLink}` : user.avatar}
+          src={badgeImageLink ? `${DOMAIN_URL}${badgeImageLink}` : user.avatar}
         />
         <div
           style={{
