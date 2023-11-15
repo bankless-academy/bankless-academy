@@ -11,7 +11,8 @@ export const BADGE_IDS: number[] = badgeIds.filter(
 
 export const BADGE_ENV: 'dev' | 'prod' = process.env.NEXT_PUBLIC_BADGE_ENV === 'prod' ? 'prod' : 'dev' || 'dev'
 
-export const IS_BADGE_PROD = BADGE_ENV === 'prod'
+// export const IS_BADGE_PROD = BADGE_ENV === 'prod'
+export const IS_BADGE_PROD = true
 
 export const BADGE_ADDRESS = IS_BADGE_PROD ? '0x3436d8af0b617DeEF5AADBaFC56f293e102DD886' : '0xa0656F29Efd33b5d6729C467096f07C1643B275A'
 
