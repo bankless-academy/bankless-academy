@@ -85,9 +85,10 @@ export default function Page({
       <Box>
         <Box display="flex" justifyContent="center" w="100%" mb="8">
           <Image
+            position="absolute"
             src={user.avatar}
-            width="100px"
-            height="100px"
+            width="300px"
+            height="300px"
             borderRadius="50%"
           />
         </Box>

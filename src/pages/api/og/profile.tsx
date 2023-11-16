@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import { ImageResponse } from '@vercel/og'
+import OgProfile from 'components/OgProfile'
 import { DOMAIN_URL, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { NextApiRequest } from 'next'
@@ -80,67 +81,20 @@ export default async function handler(req: NextApiRequest) {
 
   // TODO: add badge verification
 
+  const imageLink = badgeImageLink
+    ? `${DOMAIN_URL}${badgeImageLink}`
+    : user.avatar
+
+  const explorerName = user.ensName || shortenAddress(address)
+
   return new ImageResponse(
     (
-      <>
-        <img
-          style={{
-            display: 'flex',
-            position: 'absolute',
-            width: '1200px',
-            height: '628px',
-          }}
-          src={`${DOMAIN_URL}/images/social_background_purple.png`}
-        />
-        <img
-          style={{
-            display: 'flex',
-            position: 'absolute',
-            top: '114px',
-            left: '114px',
-            width: '400px',
-            height: '400px',
-            borderRadius: '50%',
-          }}
-          src={badgeImageLink ? `${DOMAIN_URL}${badgeImageLink}` : user.avatar}
-        />
-        <div
-          style={{
-            display: 'flex',
-            position: 'absolute',
-            top: '180px',
-            left: '600px',
-            fontSize: 50,
-            fontFamily: '"ClearSans"',
-            color: 'white',
-            width: '500px',
-            height: '200px',
-            textAlign: 'center',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          Explorer&apos;s address
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            position: 'absolute',
-            top: '300px',
-            left: '600px',
-            fontSize: 40,
-            fontFamily: '"ClearSans"',
-            color: 'white',
-            width: '500px',
-            height: '200px',
-            textAlign: 'center',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          {user.ensName || shortenAddress(address)}
-        </div>
-      </>
+      <OgProfile
+        imageLink={imageLink}
+        explorerName={explorerName}
+        score={user.stats.score}
+        stats={user.stats}
+      />
     ),
     {
       width: 1200,
