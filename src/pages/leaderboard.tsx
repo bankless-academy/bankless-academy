@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Box, Container, Heading, Image } from '@chakra-ui/react'
+import { Box, Container, Heading, Image, Tooltip } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 import axios from 'axios'
 import { createColumnHelper } from '@tanstack/react-table'
@@ -10,7 +10,7 @@ import { shortenAddress } from 'utils'
 import InternalLink from 'components/InternalLink'
 
 const pageMeta: MetaData = {
-  title: 'Leaderboard',
+  title: 'Bankless Explorer Leaderboard',
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -19,8 +19,25 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
+const DONATION_MAPPING = {
+  GCR1: 'Gitcoin Citizen Round 1',
+  GR11: 'Gitcoin Round 11',
+  GR12: 'Gitcoin Round 12',
+  GR13: 'Gitcoin Round 13',
+  GR14: 'Gitcoin Round 14',
+  GR15: 'Gitcoin Round 15',
+  GR16: 'Gitcoin Round 16',
+  GR17: 'Gitcoin Round 17',
+  GR18: 'Gitcoin Round 18',
+}
+
+export const getDonationdetails = (donations) => {
+  return Object.keys(donations).map((donation) => DONATION_MAPPING[donation])
+}
+
 type UnitConversion = {
   address: string
+  rank: number
   score: number
   collectibles: number
   handbooks: number
@@ -39,14 +56,15 @@ const columns = [
         info.row.original?.ens_name || shortenAddress(info.getValue())
       return (
         <InternalLink
-          href={`/profile/${info.row.original?.ens_name || info.getValue()}`}
+          href={`/explorer/${info.row.original?.ens_name || info.getValue()}`}
         >
           <Box display="flex" alignItems="center">
+            #{info.row.original.rank}
             <Image
               width="30px"
               height="30px"
               borderRadius="50%"
-              mr="2"
+              mx="2"
               src={
                 info.row.original?.ens_avatar || '/images/default_avatar.png'
               }
@@ -60,7 +78,7 @@ const columns = [
   }),
   columnHelper.accessor('score', {
     cell: (info) => info.getValue(),
-    header: 'score',
+    header: 'bankless level',
   }),
   columnHelper.accessor('collectibles', {
     cell: (info) => info.getValue(),
@@ -72,9 +90,17 @@ const columns = [
   }),
   columnHelper.accessor('donations', {
     cell: (info) => {
-      const donation = info.getValue()
-      if (typeof donation === 'object') {
-        return Object.keys(donation).join(', ')
+      const donations = info.getValue()
+      if (typeof donations === 'object') {
+        const donationdetails = getDonationdetails(donations).join(', ')
+        const numberOfDonations = Object.keys(donations)?.length
+        return (
+          <>
+            <Tooltip label={donationdetails}>
+              <Box>{numberOfDonations}</Box>
+            </Tooltip>
+          </>
+        )
       } else return '-'
     },
     header: 'donations',
@@ -119,7 +145,7 @@ const Leaderboard = (): JSX.Element => {
     return (
       <Container maxW="container.xl">
         <Heading as="h2" size="xl" m="8" textAlign="center">
-          Bankless Academy Leaderboard
+          Bankless Explorer Leaderboard
         </Heading>
         <Heading as="h3" size="md" m="8" textAlign="center">
           Last update: {fetchedAt}

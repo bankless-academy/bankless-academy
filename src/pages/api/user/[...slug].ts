@@ -8,6 +8,8 @@ import kudosBadges from 'data/badges.json'
 import { ALCHEMY_KEY_BACKEND } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_IDS, BADGE_API } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
+import { UserType } from 'entities/user'
+import { kv } from '@vercel/kv'
 
 export const BADGE_TO_KUDOS_IDS = {
   '1': '2561',
@@ -98,5 +100,16 @@ export default async function handler(
       .update({ ens_name: ensName, ens_avatar: avatar?.length < 255 && avatar !== DEFAULT_AVATAR ? avatar : null })
   }
 
-  return res.status(200).json({ badgeTokenIds: [...new Set(badgeTokenIds)], kudosTokenIds, ensName, avatar: avatar || DEFAULT_AVATAR, donations: userExist.donations })
+  const leaderboard = (await kv.get('leaderboard') as any)?.data
+
+  const data: UserType = {
+    ensName,
+    avatar: avatar || DEFAULT_AVATAR,
+    stats: leaderboard[addressLowerCase] || {},
+    badgeTokenIds: [...new Set(badgeTokenIds)],
+    kudosTokenIds,
+    donations: userExist.donations
+  }
+
+  return res.status(200).json(data)
 }

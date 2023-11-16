@@ -48,7 +48,7 @@ export default async function handler(
         badgeIds.push(parseInt(token.tokenId, 16))
       })
       if (address in badges) {
-        badges[address] = [...badges[address], ...badgeIds]
+        badges[address] = [...new Set([...badges[address], ...badgeIds])]
       } else {
         badges[address] = badgeIds
       }
