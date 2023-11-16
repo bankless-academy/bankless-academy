@@ -45,7 +45,7 @@ const Slide = styled(Card)<{
 }>`
   border-radius: 0.5rem;
   ${(props) => props.issmallscreen === 'true' && 'display: contents;'};
-  ${(props) => props.isPreview === 'true' && '.is-missing : {color:red}'};
+  ${(props) => props?.isPreview === 'true' && '.is-missing : {color:red}'};
   h1 {
     margin-top: 1em;
     font-size: var(--chakra-fontSizes-2xl);
@@ -511,7 +511,7 @@ const Lesson = ({
       pb={2}
       mt={6}
       issmallscreen={isSmallScreen.toString()}
-      isPreview={lesson.isPreview?.toString()}
+      isPreview={lesson?.isPreview?.toString()}
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
     >
@@ -697,7 +697,7 @@ const Lesson = ({
           {
             /* lesson.isCommentsEnabled && */
             !isMobile &&
-              !lesson.isPreview &&
+              !lesson?.isPreview &&
               !IS_WHITELABEL &&
               (slide.type === 'LEARN' ||
                 (slide.type === 'QUIZ' && answerIsCorrect)) &&
@@ -707,7 +707,7 @@ const Lesson = ({
                 </>
               )
           }
-          {lesson.isPreview && (
+          {lesson?.isPreview && (
             <Box position="relative">
               DEBUG
               <Helper
