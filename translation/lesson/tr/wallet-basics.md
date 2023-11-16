@@ -63,47 +63,47 @@ Cüzdanlar temelde bilgisayar programlarıdır. Bilgisayarınıza yazılım (vey
 
 Bir cüzdanı yönetmenin en zor kısmı onu güvende tutmaktır; bu konuya birazdan değineceğiz!
 
-İlk cüzdanınızı seçmek, göz korkutucu da gelebilir. We recommend starting with MetaMask as your wallet provider: their wallets are user friendly and have access to many popular blockchains. As you get more comfortable in the web3 space, you will likely explore other providers and create multiple wallets.
+İlk cüzdanınızı seçmek, göz korkutucu da gelebilir. Cüzdan sağlayıcısı olarak MetaMask ile başlamanızı öneriyoruz çünkü cüzdanları kullanıcı dostu ve birçok popüler blok zincirine erişime sahip. Web3 dünyasında daha rahat hale geldikçe, muhtemelen diğer sağlayıcıları keşfedecek ve birden fazla cüzdan oluşturacaksınız.
 
 # Knowledge Check 1
 
-What is a wallet?
+Cüzdan nedir?
 
-- [ ] A blockchain
+- [ ] Bir blok zinciri
 
-> ℹ️ Try again! Your wallet is hosted on a blockchain.
+> ℹ️ Tekrar deneyin! Your wallet is hosted on a blockchain.
 
-- [ ] A cryptocurrency
+- [ ] Bir kripto para birimi
 
-> ℹ️ Try again! Cryptocurrencies are something you hold in your wallet.
+> ℹ️ Tekrar deneyin! Kripto para birimleri cüzdanınızda tuttuğunuz şeylerdir.
 
-- [ ] A digital collectible
+- [ ] Bir dijital koleksiyon parçası
 
-> ℹ️ Try again! Digital collectibles are something you hold in your wallet.
+> ℹ️ Tekrar deneyin! Dijital koleksiyon parçaları cüzdanınızda tuttuğunuz şeylerdir.
 
-- [ ] A blockchain account
+- [ ] Bir blok zinciri hesabı
 
-> ℹ️ Correct! Wallets are accounts used to interact with a blockchain.
+> ℹ️ Doğru! Cüzdanlar, bir blok zinciri ile etkileşim kurmak için kullanılan hesaplardır.
 
-# Wallets & Password Recovery
+# Cüzdanlar ve Parola Kurtarma
 
 **Here is one of the most important things to understand about web3 wallets: today, there is no “password reset” or frequent password changes.**
 
-Most of us are used to these features. If we forget a password, we click a button, do some things, and get a new password. Easy.
+Çoğumuz bu özelliklere alışkınız. Bir parolayı unutursak bir düğmeye tıklarız, birkaç şey yaparız ve yeni bir parola alırız. Easy.
 
-Not so with wallets. Because of how blockchains work, wallets are assigned a “name” and a complex “password” when they’re created (you do not choose them).
+Cüzdanlarda öyle değil. Blok zincirlerinin çalışma şekli nedeniyle, cüzdanlara oluşturulduklarında bir "ad" ve karmaşık bir "parola" atanır (bunları siz seçmezsiniz).
 
-This name and password combination are impossible to change. Let’s learn a bit more about each.
+Bu ad ve parola kombinasyonunun değiştirilmesi mümkün değildir. Bunların her biri hakkında biraz daha bilgi edinelim.
 
 # Your wallet’s public key
 
-A `public key` is basically your wallet’s name. Often, this looks like a jumble of random letters and numbers.
+Bir `açık anahtar` temelde cüzdanınızın adıdır. Bu genellikle rastgele harf ve rakamların bir karışımı gibi görünür.
 
-Example: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
+Örnek: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
 It is possible to create easier to remember versions of this with some web3 services, but that’s a lesson for another time.
 
-You can also think of a public key like the address of a post office box. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.
+Açık anahtarı bir posta kutusunun adresi gibi de düşünebilirsiniz. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.
 
 It is perfectly safe to share your **public key**.
 
