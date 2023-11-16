@@ -1,6 +1,6 @@
 ---
 TITLE: Wallet Basics
-DESCRIPTION: Create and securely manage your first crypto wallet.
+DESCRIPTION: İlk kripto cüzdanınızı oluşturun ve güvenli bir şekilde yönetin.
 LANGUAGE: English
 WRITERS: Ap0ll0517, Tetranome
 TRANSLATORS: X
@@ -29,41 +29,41 @@ ________________________________________________________________________________
 
 # Wallet Intro
 
-**Greetings!**
+**Selamlar!**
 
-Welcome to Bankless Academy. We’re excited to guide you on your journey into `web3`. Every explorer of this space eventually needs to create a digital wallet.
+Bankless Academy'e hoş geldiniz. We’re excited to guide you on your journey into `web3`. Bu dünyayı keşfeden her kişinin eninde sonunda bir dijital cüzdan oluşturması gerekir.
 
-Wallets are kind of like the accounts you’re used to in `web2`. You’ll use them to access web3 apps and sites, but there are also big differences that are important to understand. For example, they can hold cryptocurrency.
+Cüzdanlar, `web2`'de kullanmaya alışkın olduğunuz hesaplara benzer. Onları web3 uygulamalarına ve sitelerine erişmek için kullanacaksınız ancak anlamanız gereken büyük farklılıklar da mevcut. For example, they can hold cryptocurrency.
 
-A properly set up wallet grants you access to incredible new possibilities while safeguarding your digital assets and online identity.
+Doğru kurulan bir cüzdan, dijital varlıklarınızı ve çevrimiçi kimliğinizi korurken yeni ve inanılmaz olanaklara erişmenizi sağlar.
 
 In this lesson, we’ll introduce you to wallets, wallet types, wallet security basics, and end with a video on how to set one up.
 
-Let’s get started!
+Hadi başlayalım!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-1d445d4b.png)
 
-# Wallet Definition
+# Cüzdanın Tanımı
 
-What exactly is a wallet?
+Cüzdan tam olarak nedir?
 
-The short definition is: a computer program you use to interact with a `blockchain`.
+Kısa tanımı şöyle: `Blok zinciri` ile etkileşimde bulunmak için kullandığınız bir bilgisayar programı.
 
-When your `wallet` is connected to a blockchain, you can make purchases, send or receive `digital assets`  like cryptocurrency, interact with web3 applications, and more.
+`Cüzdanınız` bir blok zincirine bağlandığında, alışveriş yapabilir, kripto para gibi `dijital varlıkları`  gönderebilir veya alabilir, web3 uygulamalarıyla etkileşimde bulunabilir ve daha birçok şey yapabilirsiniz.
 
-Unlike regular user accounts you’re used to, a single wallet lets you access a large number of web3 apps. It’s like having one account for the entire internet.
+Alışkın olduğunuz normal kullanıcı hesaplarının aksine, tek bir cüzdan, çok sayıda web3 uygulamasına erişmenizi sağlar. It’s like having one account for the entire internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-5aa3b680.svg)
 
-# Is creating a wallet difficult?
+# Cüzdan oluşturmak zor mu?
 
-It used to be, but these days anyone can create a wallet quite easily.
+Eskiden öyleydi, ancak bugünlerde herkes oldukça kolay bir şekilde cüzdan oluşturabiliyor.
 
-Wallets are essentially computer programs. If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.
+Cüzdanlar temelde bilgisayar programlarıdır. Bilgisayarınıza yazılım (veya telefonunuza uygulama) indirme ve yükleme konusunda rahatsanız ilk cüzdanınızı oluştururken sorun yaşamazsınız.
 
-The trickier part of managing a wallet involves keeping it secure — which we will dive into shortly!
+Bir cüzdanı yönetmenin en zor kısmı onu güvende tutmaktır; bu konuya birazdan değineceğiz!
 
-Choosing your first wallet may also feel intimidating. We recommend starting with MetaMask as your wallet provider: their wallets are user friendly and have access to many popular blockchains. As you get more comfortable in the web3 space, you will likely explore other providers and create multiple wallets.
+İlk cüzdanınızı seçmek, göz korkutucu da gelebilir. We recommend starting with MetaMask as your wallet provider: their wallets are user friendly and have access to many popular blockchains. As you get more comfortable in the web3 space, you will likely explore other providers and create multiple wallets.
 
 # Knowledge Check 1
 
