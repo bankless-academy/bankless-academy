@@ -1,7 +1,10 @@
-import { Box, Heading, Image } from '@chakra-ui/react'
+import { Box, Container, Heading, Image } from '@chakra-ui/react'
 import Badges from 'components/Badges'
 import { MetaData } from 'components/Head'
 import { ALCHEMY_KEY_BACKEND, DOMAIN_URL } from 'constants/index'
+import { UserType } from 'entities/user'
+import { useSmallScreen } from 'hooks'
+import { getDonationdetails } from 'pages/leaderboard'
 import { shortenAddress } from 'utils'
 import { TABLES, db } from 'utils/db'
 import { createPublicClient, http } from 'viem'
@@ -45,13 +48,9 @@ export async function getServerSideProps({ query }) {
   if (badge && !badgeTokenIds.includes(parseInt(badge)))
     return { props: { error: 'badge not found' } }
   const data = {
+    user: user,
     address: confirmedAddress,
-    ensName: user?.ensName,
-    avatar: user?.avatar,
-    badges: badgeTokenIds,
     badgeToHighlight: parseInt(badge),
-    donations: user?.donations,
-    // rank: user?.rank,
   }
   console.log(data)
   const badgeId = badge ? `&badgeId=${badge}` : ''
@@ -66,39 +65,58 @@ export async function getServerSideProps({ query }) {
 }
 
 export default function Page({
+  user,
   address,
-  ensName,
-  avatar,
-  badges,
   badgeToHighlight,
-  donations,
-  // rank,
   error,
+}: {
+  user: UserType
+  address: string
+  badgeToHighlight?: number
+  error?: any
 }) {
+  const [isSmallScreen] = useSmallScreen()
+
   if (error) return error
   console.log(badgeToHighlight)
   console.log(address)
   return (
-    <>
+    <Container maxW="container.xl">
       <Box>
         <Box display="flex" justifyContent="center" w="100%" mb="8">
-          <Image src={avatar} width="100px" height="100px" borderRadius="50%" />
+          <Image
+            src={user.avatar}
+            width="100px"
+            height="100px"
+            borderRadius="50%"
+          />
         </Box>
         <Heading as="h2" size="xl" m="8" textAlign="center">
-          {ensName || shortenAddress(address)}
+          {user.ensName || shortenAddress(address)}
         </Heading>
-        {/* <Heading as="h3" size="md" m="8" textAlign="center">
-          Rank: #{rank}
-        </Heading> */}
         <Heading as="h3" size="md" m="8" textAlign="center">
-          Donations: {Object.keys(donations).join(', ')}
+          Rank: #{user.stats.rank}
+          <br />
+          Bankless Level: {user.stats.score}
         </Heading>
-        <Badges
-          badges={badges}
-          badgeToHighlight={badgeToHighlight}
-          profile={true}
-        />
+        <Box display={isSmallScreen ? 'block' : 'flex'}>
+          <Box w={isSmallScreen ? '100%' : '50%'} maxW="624px">
+            <Badges
+              badges={user.badgeTokenIds}
+              badgeToHighlight={badgeToHighlight}
+              profile={true}
+            />
+          </Box>
+          <Box w={isSmallScreen ? '100%' : '50%'}>
+            <Heading as="h3" size="md" m="8">
+              Donations:
+              {getDonationdetails(user.donations).map((donation, index) => (
+                <Box key={`donation-${index}`}>- {donation}</Box>
+              ))}
+            </Heading>
+          </Box>
+        </Box>
       </Box>
-    </>
+    </Container>
   )
 }
