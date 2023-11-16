@@ -85,10 +85,9 @@ export default function Page({
       <Box>
         <Box display="flex" justifyContent="center" w="100%" mb="8">
           <Image
-            position="absolute"
             src={user.avatar}
-            width="300px"
-            height="300px"
+            width="100px"
+            height="100px"
             borderRadius="50%"
           />
         </Box>
@@ -98,7 +97,7 @@ export default function Page({
         <Heading as="h3" size="md" m="8" textAlign="center">
           Rank: #{user.stats.rank}
           <br />
-          Bankless Level: {user.stats.score}
+          Bankless Score: {user.stats.score}
         </Heading>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
           <Box w={isSmallScreen ? '100%' : '50%'} maxW="624px">

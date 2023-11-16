@@ -78,7 +78,7 @@ const columns = [
   }),
   columnHelper.accessor('score', {
     cell: (info) => info.getValue(),
-    header: 'bankless level',
+    header: 'bankless score',
   }),
   columnHelper.accessor('collectibles', {
     cell: (info) => info.getValue(),
