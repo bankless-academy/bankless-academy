@@ -6,11 +6,10 @@ import { useTranslation } from 'react-i18next'
 import { LessonType } from 'entities/lesson'
 import MintBadge from 'components/MintBadge'
 import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL } from 'constants/index'
-import { BADGE_OPENSEA_URL } from 'constants/badges'
+import { BADGE_OPENSEA_URL, BADGE_TO_KUDOS_IDS } from 'constants/badges'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
-import { BADGE_TO_KUDOS_IDS } from 'pages/api/user/[...slug]'
 
 const Badge = ({
   lesson,

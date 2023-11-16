@@ -43,3 +43,14 @@ export const BADGES_ALLOWED_SIGNERS = [
 export const BADGE_API = IS_BADGE_PROD
   ? `https://polygon-mainnet.g.alchemy.com/nft/v3/`
   : `https://polygon-mumbai.g.alchemy.com/nft/v3/`
+
+export const BADGE_TO_KUDOS_IDS = {
+  '1': '2561',
+  '2': '2562',
+  '3': '2563',
+  '5': '2565',
+  '6': '2608',
+  '7': '14611',
+  '8': '14886',
+  '9': '15463'
+}

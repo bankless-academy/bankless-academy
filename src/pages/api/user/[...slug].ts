@@ -6,21 +6,10 @@ import { createPublicClient, http } from 'viem'
 
 import kudosBadges from 'data/badges.json'
 import { ALCHEMY_KEY_BACKEND } from 'constants/index'
-import { BADGE_ADDRESS, BADGE_IDS, BADGE_API } from 'constants/badges'
+import { BADGE_ADDRESS, BADGE_IDS, BADGE_API, BADGE_TO_KUDOS_IDS } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
 import { UserType } from 'entities/user'
 import { kv } from '@vercel/kv'
-
-export const BADGE_TO_KUDOS_IDS = {
-  '1': '2561',
-  '2': '2562',
-  '3': '2563',
-  '5': '2565',
-  '6': '2608',
-  '7': '14611',
-  '8': '14886',
-  '9': '15463'
-}
 
 async function getBadgeTokensIds(address: string): Promise<number[]> {
   try {
