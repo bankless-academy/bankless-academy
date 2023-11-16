@@ -41,11 +41,11 @@ import Helper from 'components/Helper'
 const Slide = styled(Card)<{
   issmallscreen?: string
   slidetype: SlideType
-  isPreview?: string
+  ispreview?: string
 }>`
   border-radius: 0.5rem;
   ${(props) => props.issmallscreen === 'true' && 'display: contents;'};
-  ${(props) => props?.isPreview === 'true' && '.is-missing : {color:red}'};
+  ${(props) => props?.ispreview === 'true' && '.is-missing : {color:red}'};
   h1 {
     margin-top: 1em;
     font-size: var(--chakra-fontSizes-2xl);
@@ -511,7 +511,7 @@ const Lesson = ({
       pb={2}
       mt={6}
       issmallscreen={isSmallScreen.toString()}
-      isPreview={lesson?.isPreview?.toString()}
+      ispreview={lesson?.isPreview?.toString()}
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
     >
