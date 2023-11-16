@@ -5,7 +5,7 @@ import { NextResponse } from 'next/server'
 import { userAgent } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-export function middleware(request: NextRequest): NextResponse {
+export default function middleware(request: NextRequest): NextResponse {
   const ipAddress = request.ip || 'local'
   // Detect and redirect bots
   const ua = userAgent(request)
@@ -26,5 +26,5 @@ export function middleware(request: NextRequest): NextResponse {
 }
 
 export const config = {
-  matcher: ['/api/:path*'],
+  matcher: ['/api/passport', '/api/mint-badge', '/api/validate-quest'],
 }

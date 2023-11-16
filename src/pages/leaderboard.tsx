@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Heading, Image } from '@chakra-ui/react'
+import { Box, Container, Heading, Image, Tooltip } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 import axios from 'axios'
 import { createColumnHelper } from '@tanstack/react-table'
 
 import { MetaData } from 'components/Head'
 import { DataTable } from 'components/DataTable'
-import ExternalLink from 'components/ExternalLink'
+import { shortenAddress } from 'utils'
+import InternalLink from 'components/InternalLink'
 
 const pageMeta: MetaData = {
-  title: 'Leaderboard',
+  title: 'Bankless Explorer Leaderboard',
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -18,38 +19,91 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
+const DONATION_MAPPING = {
+  GCR1: 'Gitcoin Citizen Round 1',
+  GR11: 'Gitcoin Round 11',
+  GR12: 'Gitcoin Round 12',
+  GR13: 'Gitcoin Round 13',
+  GR14: 'Gitcoin Round 14',
+  GR15: 'Gitcoin Round 15',
+  GR16: 'Gitcoin Round 16',
+  GR17: 'Gitcoin Round 17',
+  GR18: 'Gitcoin Round 18',
+}
+
+export const getDonationdetails = (donations) => {
+  return Object.keys(donations).map((donation) => DONATION_MAPPING[donation])
+}
+
 type UnitConversion = {
   address: string
+  rank: number
   score: number
   collectibles: number
   handbooks: number
   badges: number
+  ens_name?: string
+  ens_avatar?: string
+  donations?: any
 }
 
 const columnHelper = createColumnHelper<UnitConversion>()
 
 const columns = [
   columnHelper.accessor('address', {
-    cell: (info) => (
-      <ExternalLink
-        href={`https://opensea.io/${info.getValue()}/collected?search[sortBy]=LAST_TRANSFER_DATE&search[sortAscending]=false`}
-      >
-        {info.getValue()}
-      </ExternalLink>
-    ),
+    cell: (info) => {
+      const address =
+        info.row.original?.ens_name || shortenAddress(info.getValue())
+      return (
+        <InternalLink
+          href={`/explorer/${info.row.original?.ens_name || info.getValue()}`}
+        >
+          <Box display="flex" alignItems="center">
+            #{info.row.original.rank}
+            <Image
+              width="30px"
+              height="30px"
+              borderRadius="50%"
+              mx="2"
+              src={
+                info.row.original?.ens_avatar || '/images/default_avatar.png'
+              }
+            />
+            {address}
+          </Box>
+        </InternalLink>
+      )
+    },
     header: 'address',
   }),
   columnHelper.accessor('score', {
     cell: (info) => info.getValue(),
-    header: 'score',
+    header: 'bankless level',
   }),
   columnHelper.accessor('collectibles', {
     cell: (info) => info.getValue(),
-    header: 'lesson collectibles',
+    header: 'lesson datadisk',
   }),
   columnHelper.accessor('handbooks', {
     cell: (info) => info.getValue(),
     header: 'handbooks',
+  }),
+  columnHelper.accessor('donations', {
+    cell: (info) => {
+      const donations = info.getValue()
+      if (typeof donations === 'object') {
+        const donationdetails = getDonationdetails(donations).join(', ')
+        const numberOfDonations = Object.keys(donations)?.length
+        return (
+          <>
+            <Tooltip label={donationdetails}>
+              <Box>{numberOfDonations}</Box>
+            </Tooltip>
+          </>
+        )
+      } else return '-'
+    },
+    header: 'donations',
   }),
   columnHelper.accessor('badges', {
     cell: (info) => info.getValue(),
@@ -59,6 +113,8 @@ const columns = [
 
 const Leaderboard = (): JSX.Element => {
   const [leaderboard, setLeaderboard]: any = useState(null)
+  const [fetchedAt, setFetchedAt]: any = useState(null)
+
   const [error, setError]: any = useState('')
   useEffect(() => {
     setError('')
@@ -67,15 +123,14 @@ const Leaderboard = (): JSX.Element => {
       .then(function (res) {
         if (!res.data.error) {
           const data = []
-          for (const address of Object.keys(res.data)) {
-            const addressNumbers = { ...res.data[address] }
-            addressNumbers.score =
-              3 * (addressNumbers?.collectibles || 0) +
-              (addressNumbers?.handbooks || 0) +
-              (addressNumbers?.badges || 0)
-            data.push({ address, ...addressNumbers })
+          for (const address of Object.keys(res.data.data)) {
+            data.push({ address, ...res.data.data[address] })
           }
           setLeaderboard(data)
+          const date = new Date(res.data.fetchedAt)
+          setFetchedAt(
+            `${date.toLocaleDateString()}: ${date.toLocaleTimeString()}`
+          )
         } else {
           setError(res.data.error)
         }
@@ -86,11 +141,14 @@ const Leaderboard = (): JSX.Element => {
       })
   }, [])
 
-  if (leaderboard)
+  if (leaderboard && fetchedAt)
     return (
       <Container maxW="container.xl">
         <Heading as="h2" size="xl" m="8" textAlign="center">
-          Bankless Academy Leaderboard
+          Bankless Explorer Leaderboard
+        </Heading>
+        <Heading as="h3" size="md" m="8" textAlign="center">
+          Last update: {fetchedAt}
         </Heading>
         <DataTable
           columns={columns}

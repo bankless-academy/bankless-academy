@@ -7,7 +7,6 @@ import {
   PopoverContent,
   PopoverArrow,
   PopoverBody,
-  SimpleGrid,
   Box,
   Image,
   Heading,
@@ -31,9 +30,10 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
   OrigPopoverTrigger
 
 import ExternalLink from 'components/ExternalLink'
-import { LESSONS, SIWE_ENABLED } from 'constants/index'
+import { SIWE_ENABLED } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
 import { getUD, getLensProfile, shortenAddress, api } from 'utils'
+import Badges from 'components/Badges'
 // import { polygon, optimism } from 'wagmi/chains'
 
 const Overlay = styled(Box)`
@@ -179,7 +179,7 @@ const ConnectWalletButton = ({
 
   function refreshBadges() {
     if (address)
-      axios.get(`/api/badges/${address}`).then((res) => {
+      axios.get(`/api/user/${address}`).then((res) => {
         const badgeTokenIds = res?.data?.badgeTokenIds
         if (Array.isArray(badgeTokenIds)) {
           const badgesMinted = BADGE_IDS.filter((badgeId) =>
@@ -312,8 +312,6 @@ const ConnectWalletButton = ({
     }
   }, [refreshBadgesLS])
 
-  const nbBadgesToDisplay = badges.length
-
   return (
     <>
       {isConnected && !waitingForSIWE && name ? (
@@ -358,78 +356,7 @@ const ConnectWalletButton = ({
                   {t('Disconnect wallet')}
                 </Button>
               </Box>
-              {/* TODO: move to dedicated component? */}
-              {badges?.length > 0 && (
-                <>
-                  <Text fontSize="xl" fontWeight="bold" textAlign="center">
-                    {t('My Academy Badges')}
-                  </Text>
-                  <Box
-                    h="215px"
-                    overflowY={nbBadgesToDisplay <= 6 ? 'hidden' : 'scroll'}
-                    overflowX="hidden"
-                    backgroundColor="blackAlpha.200"
-                    borderRadius="10px"
-                  >
-                    <SimpleGrid columns={3} spacing={3} p={3}>
-                      {badges?.map((badgeTokenId, index) => {
-                        const lesson = LESSONS.find(
-                          (lesson) => lesson.badgeId === badgeTokenId
-                        )
-                        if (lesson) {
-                          if (lesson.badgeImageLink.includes('.mp4')) {
-                            return (
-                              <Box
-                                key={`badge-${index}`}
-                                height="78px"
-                                width="78px"
-                                boxShadow="0px 0px 4px 2px #00000060"
-                                borderRadius="3px"
-                                overflow="hidden"
-                                border="1px solid #4b474b"
-                              >
-                                <video
-                                  autoPlay
-                                  loop
-                                  playsInline
-                                  muted
-                                  style={{
-                                    borderRadius: '3px',
-                                    overflow: 'hidden',
-                                  }}
-                                >
-                                  <source
-                                    src={lesson.badgeImageLink}
-                                    type="video/mp4"
-                                  ></source>
-                                </video>
-                              </Box>
-                            )
-                          } else
-                            return (
-                              <Box
-                                key={`badge-${index}`}
-                                justifySelf="center"
-                                boxShadow="0px 0px 4px 2px #00000060"
-                                borderRadius="3px"
-                                backgroundColor="blackAlpha.300"
-                                p={1}
-                              >
-                                <Image
-                                  src={lesson.badgeImageLink}
-                                  width="70px"
-                                  height="70px"
-                                  alt={lesson.name}
-                                  title={lesson.name}
-                                />
-                              </Box>
-                            )
-                        }
-                      })}
-                    </SimpleGrid>
-                  </Box>
-                </>
-              )}
+              <Badges badges={badges} />
             </PopoverBody>
           </PopoverContent>
         </Popover>

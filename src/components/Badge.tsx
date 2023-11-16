@@ -10,7 +10,7 @@ import { BADGE_OPENSEA_URL } from 'constants/badges'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
-import { BADGE_TO_KUDOS_IDS } from 'pages/api/badges/[...slug]'
+import { BADGE_TO_KUDOS_IDS } from 'pages/api/user/[...slug]'
 
 const Badge = ({
   lesson,
