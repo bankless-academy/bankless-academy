@@ -46,7 +46,7 @@ const Skill = ({ skill, score, max }) => (
   </div>
 )
 
-const OgProfile = ({
+const OgSocial = ({
   imageLink,
   explorerName,
   score,
@@ -169,4 +169,4 @@ const OgProfile = ({
   )
 }
 
-export default OgProfile
+export default OgSocial

@@ -2,7 +2,7 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 
 import { MetaData } from 'components/Head'
-import OgProfile from 'components/OgProfile'
+import OgSocial from 'components/OgSocial'
 import { Box } from '@chakra-ui/react'
 
 const pageMeta: MetaData = {
@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Og = (): JSX.Element => (
   <Box position="relative">
-    <OgProfile />
+    <OgSocial />
   </Box>
 )
 

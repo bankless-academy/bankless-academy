@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { ImageResponse } from '@vercel/og'
-import OgProfile from 'components/OgProfile'
+import OgSocial from 'components/OgSocial'
 import { DOMAIN_URL, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { NextApiRequest } from 'next'
@@ -89,7 +89,7 @@ export default async function handler(req: NextApiRequest) {
 
   return new ImageResponse(
     (
-      <OgProfile
+      <OgSocial
         imageLink={imageLink}
         explorerName={explorerName}
         score={user.stats.score}
