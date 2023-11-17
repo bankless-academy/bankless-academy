@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest) {
   const urlParams = new URLSearchParams(url.search)
   const address = urlParams.get('address')
   // console.log(address)
-  const badgeId = urlParams.get('badgeId')
+  const badgeId = urlParams.get('badge')
   console.log(badgeId)
 
   const badgeImageLink = LESSONS.find(
@@ -79,22 +79,26 @@ export default async function handler(req: NextApiRequest) {
     )
   ).then((res) => res.arrayBuffer())
 
-  // TODO: add badge verification
-
-  const imageLink = badgeImageLink
-    ? `${DOMAIN_URL}${badgeImageLink}`
-    : user.avatar
-
   const explorerName = user.ensName || shortenAddress(address)
 
   return new ImageResponse(
     (
-      <OgSocial
-        imageLink={imageLink}
-        explorerName={explorerName}
-        score={user.stats.score}
-        stats={user.stats}
-      />
+      <>
+        {badgeId ? (
+          <OgSocial
+            explorerAvatar={user.avatar}
+            explorerName={explorerName}
+            badgeImageLink={`${DOMAIN_URL}${badgeImageLink}`}
+          />
+        ) : (
+          <OgSocial
+            explorerAvatar={user.avatar}
+            explorerName={explorerName}
+            score={user.stats.score}
+            stats={user.stats}
+          />
+        )}
+      </>
     ),
     {
       width: 1200,

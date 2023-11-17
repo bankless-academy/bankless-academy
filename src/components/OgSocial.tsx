@@ -46,14 +46,41 @@ const Skill = ({ skill, score, max }) => (
   </div>
 )
 
+const Skills = ({ stats }) => (
+  <div
+    style={{
+      display: 'flex',
+      position: 'relative',
+      width: '430px',
+      height: '258px',
+      marginTop: '4px',
+      flexWrap: 'wrap',
+    }}
+  >
+    <Skill skill="Achievement" score={stats?.badges || 0} max={9} />
+    <Skill
+      skill="Donation"
+      score={stats?.donations ? Object.keys(stats?.donations)?.length || 0 : 0}
+      max={9}
+    />
+    <Skill
+      skill="Collection"
+      score={stats?.collectibles + stats?.handbooks || 0}
+      max={8}
+    />
+  </div>
+)
+
 const OgSocial = ({
-  imageLink,
   explorerName,
+  explorerAvatar,
   score,
   stats,
-}: {
-  imageLink?: string
+  badgeImageLink,
+}: // type,
+{
   explorerName?: string
+  explorerAvatar?: string
   score?: string
   stats?: {
     badges?: number
@@ -61,11 +88,11 @@ const OgSocial = ({
     handbooks?: number
     donations?: any
   }
+  badgeImageLink?: string
+  // type?: 'profile' | 'badge'
 }): React.ReactElement => {
-  const backgroundImageLink = `${DOMAIN_URL}/images/social_background_purple.png`
-  // const score = 4
-  // const max = 8
-  // const skill = 'Knowledge'
+  const profileSocialBackground = `${DOMAIN_URL}/images/profileSocialBackground.png`
+  const badgeSocialBackground = `${DOMAIN_URL}/images/badgeSocialBackground.png`
 
   return (
     <>
@@ -76,7 +103,7 @@ const OgSocial = ({
           width: '1200px',
           height: '628px',
         }}
-        src={backgroundImageLink}
+        src={badgeImageLink ? badgeSocialBackground : profileSocialBackground}
       />
       <img
         style={{
@@ -88,26 +115,28 @@ const OgSocial = ({
           height: '300px',
           borderRadius: '50%',
         }}
-        src={imageLink || DEFAULT_IMAGE}
+        src={explorerAvatar || DEFAULT_IMAGE}
       />
-      <div
-        style={{
-          display: 'flex',
-          position: 'absolute',
-          top: '127px',
-          left: '949px',
-          width: '102px',
-          height: '63px',
-          fontSize: 50,
-          fontFamily: '"ClearSans"',
-          color: '#EAD6FF',
-          textAlign: 'center',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        {score || DEFAULT_SCORE}
-      </div>
+      {!badgeImageLink && (
+        <div
+          style={{
+            display: 'flex',
+            position: 'absolute',
+            top: '127px',
+            left: '949px',
+            width: '102px',
+            height: '63px',
+            fontSize: 50,
+            fontFamily: '"ClearSans"',
+            color: '#EAD6FF',
+            textAlign: 'center',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          {score || DEFAULT_SCORE}
+        </div>
+      )}
       <div
         style={{
           display: 'flex',
@@ -127,44 +156,36 @@ const OgSocial = ({
       >
         {explorerName || DEFAULT_NAME}
       </div>
-      <div
-        style={{
-          display: 'flex',
-          position: 'absolute',
-          top: '266px',
-          left: '630px',
-          width: '430px',
-          height: '258px',
-          fontSize: 20,
-          fontFamily: '"ClearSans"',
-          color: 'white',
-        }}
-      >
+      {badgeImageLink ? (
+        <img
+          style={{
+            display: 'flex',
+            position: 'absolute',
+            top: '230px',
+            left: '725px',
+            width: '300px',
+            height: '300px',
+            borderRadius: '50%',
+          }}
+          src={badgeImageLink}
+        />
+      ) : (
         <div
           style={{
             display: 'flex',
-            position: 'relative',
+            position: 'absolute',
+            top: '266px',
+            left: '630px',
             width: '430px',
             height: '258px',
-            marginTop: '4px',
-            flexWrap: 'wrap',
+            fontSize: 20,
+            fontFamily: '"ClearSans"',
+            color: 'white',
           }}
         >
-          <Skill skill="Achievement" score={stats?.badges || 0} max={9} />
-          <Skill
-            skill="Donation"
-            score={
-              stats?.donations ? Object.keys(stats?.donations)?.length || 0 : 0
-            }
-            max={10}
-          />
-          <Skill
-            skill="Collection"
-            score={stats?.collectibles + stats?.handbooks || 0}
-            max={10}
-          />
+          <Skills stats={stats} />
         </div>
-      </div>
+      )}
     </>
   )
 }

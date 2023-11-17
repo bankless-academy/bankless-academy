@@ -16,8 +16,13 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const Og = (): JSX.Element => (
-  <Box position="relative">
-    <OgSocial />
+  <Box display="grid">
+    <Box position="relative">
+      <OgSocial />
+    </Box>
+    <Box position="relative" mt="700px">
+      <OgSocial badgeImageLink="/images/wallet-basics/badge-75d8aa76.png" />
+    </Box>
   </Box>
 )
 

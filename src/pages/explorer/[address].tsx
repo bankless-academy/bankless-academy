@@ -47,18 +47,20 @@ export async function getServerSideProps({ query }) {
   const badgeTokenIds = user.badgeTokenIds
   if (badge && !badgeTokenIds.includes(parseInt(badge)))
     return { props: { error: 'badge not found' } }
+  const badgeToHighlight = parseInt(badge)
   const data = {
     user: user,
     address: confirmedAddress,
-    badgeToHighlight: parseInt(badge),
+    badgeToHighlight,
   }
   console.log(data)
-  const badgeId = badge ? `&badgeId=${badge}` : ''
 
   const pageMeta: MetaData = {
     title: `Explorer ${user.ensName || shortenAddress(confirmedAddress)}`,
     // description: currentLesson.description,
-    image: `${DOMAIN_URL}/api/og/profile?address=${confirmedAddress}${badgeId}`,
+    image: `${DOMAIN_URL}/api/og/social?address=${confirmedAddress}${
+      badge && `&badge=${badge}&f=1`
+    }`,
   }
 
   return { props: { ...data, pageMeta } }
