@@ -1,15 +1,17 @@
-import { Box, Container, Heading, Image } from '@chakra-ui/react'
+import { Box, Container, Image, Text } from '@chakra-ui/react'
+import { mainnet } from 'viem/chains'
+import { normalize } from 'viem/ens'
+import { createPublicClient, http } from 'viem'
+
 import Badges from 'components/Badges'
+import Card from 'components/Card'
 import { MetaData } from 'components/Head'
 import { ALCHEMY_KEY_BACKEND, DOMAIN_URL } from 'constants/index'
 import { UserType } from 'entities/user'
 import { useSmallScreen } from 'hooks'
-import { getDonationdetails } from 'pages/leaderboard'
 import { shortenAddress } from 'utils'
 import { TABLES, db } from 'utils/db'
-import { createPublicClient, http } from 'viem'
-import { mainnet } from 'viem/chains'
-import { normalize } from 'viem/ens'
+import { t } from 'i18next'
 
 /* eslint-disable no-console */
 export async function getServerSideProps({ query }) {
@@ -80,29 +82,33 @@ export default function Page({
   const [isSmallScreen] = useSmallScreen()
 
   if (error) return error
-  console.log(badgeToHighlight)
-  console.log(address)
   return (
-    <Container maxW="container.xl">
-      <Box>
-        <Box display="flex" justifyContent="center" w="100%" mb="8">
+    <Container maxW="container.lg">
+      <Card mt="8" overflow="hidden">
+        <Box position="relative">
           <Image
-            src={user.avatar}
-            width="100px"
-            height="100px"
-            borderRadius="50%"
+            w="100%"
+            aspectRatio="300/157"
+            src={`${DOMAIN_URL}/api/og/social?address=${address}`}
           />
         </Box>
-        <Heading as="h2" size="xl" m="8" textAlign="center">
-          {user.ensName || shortenAddress(address)}
-        </Heading>
-        <Heading as="h3" size="md" m="8" textAlign="center">
-          Rank: #{user.stats.rank}
-          <br />
-          Bankless Score: {user.stats.score}
-        </Heading>
-        <Box display={isSmallScreen ? 'block' : 'flex'}>
-          <Box w={isSmallScreen ? '100%' : '50%'} maxW="624px">
+        <Box display={isSmallScreen ? 'block' : 'flex'} m="8">
+          <Box
+            w={isSmallScreen ? '100%' : '50%'}
+            maxW="624px"
+            mr={isSmallScreen ? '0' : '10%'}
+          >
+            <Box pb="8">
+              <Text
+                as="h2"
+                fontSize="2xl"
+                fontWeight="bold"
+                borderBottom="1px solid #989898"
+                pb="2"
+              >
+                {t('Badges')}
+              </Text>
+            </Box>
             <Badges
               badges={user.badgeTokenIds}
               badgeToHighlight={badgeToHighlight}
@@ -110,15 +116,21 @@ export default function Page({
             />
           </Box>
           <Box w={isSmallScreen ? '100%' : '50%'}>
-            <Heading as="h3" size="md" m="8">
-              Donations:
-              {getDonationdetails(user.donations).map((donation, index) => (
-                <Box key={`donation-${index}`}>- {donation}</Box>
-              ))}
-            </Heading>
+            <Box pb="8">
+              <Text
+                as="h2"
+                fontSize="2xl"
+                fontWeight="bold"
+                borderBottom="1px solid #989898"
+                pb="2"
+              >
+                {t('Donations')}
+              </Text>
+            </Box>
+            <Badges badges={Object.keys(user.donations)} profile={true} />
           </Box>
         </Box>
-      </Box>
+      </Card>
     </Container>
   )
 }

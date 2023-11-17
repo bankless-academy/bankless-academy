@@ -19,7 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const DONATION_MAPPING = {
+export const DONATION_MAPPING = {
   GCR1: 'Gitcoin Citizen Round 1',
   GR11: 'Gitcoin Round 11',
   GR12: 'Gitcoin Round 12',

@@ -81,7 +81,7 @@ const OgSocial = ({
 {
   explorerName?: string
   explorerAvatar?: string
-  score?: string
+  score?: string | number
   stats?: {
     badges?: number
     collectibles?: number
