@@ -209,8 +209,8 @@ const CollectEntryButton = ({
               else setConnectWalletPopupLS(true)
             }}
           >
-            {t('Collect Entry')}
-            {` (${numberCollected}/100) ${t('claimed')}`}
+            <Box fontWeight="bold">{t('Collect Entry')}</Box>
+            <Box ml="2">{`(${numberCollected}/100 ${t('claimed')})`}</Box>
           </Button>
         )}
       </Tooltip>
