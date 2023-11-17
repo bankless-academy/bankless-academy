@@ -74,19 +74,19 @@ const columns = [
         </InternalLink>
       )
     },
-    header: 'address',
+    header: 'Explorer Address',
   }),
   columnHelper.accessor('score', {
     cell: (info) => info.getValue(),
-    header: 'bankless score',
+    header: 'Bankless Score',
   }),
   columnHelper.accessor('collectibles', {
     cell: (info) => info.getValue(),
-    header: 'lesson datadisk',
+    header: 'Datadisks',
   }),
   columnHelper.accessor('handbooks', {
     cell: (info) => info.getValue(),
-    header: 'handbooks',
+    header: 'Handbooks',
   }),
   columnHelper.accessor('donations', {
     cell: (info) => {
@@ -103,11 +103,11 @@ const columns = [
         )
       } else return '-'
     },
-    header: 'donations',
+    header: 'Donations',
   }),
   columnHelper.accessor('badges', {
     cell: (info) => info.getValue(),
-    header: 'badges',
+    header: 'Badges',
   }),
 ]
 
