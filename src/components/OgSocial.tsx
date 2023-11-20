@@ -57,16 +57,16 @@ const Skills = ({ stats }) => (
       flexWrap: 'wrap',
     }}
   >
-    <Skill skill="Achievement" score={stats?.badges || 0} max={9} />
+    <Skill skill="Badges" score={stats?.badges || 0} max={9} />
     <Skill
-      skill="Donation"
-      score={stats?.donations ? Object.keys(stats?.donations)?.length || 0 : 0}
-      max={9}
-    />
-    <Skill
-      skill="Collection"
+      skill="Collectibles"
       score={stats?.collectibles + stats?.handbooks || 0}
       max={8}
+    />
+    <Skill
+      skill="Donations"
+      score={stats?.donations ? Object.keys(stats?.donations)?.length || 0 : 0}
+      max={9}
     />
   </div>
 )
