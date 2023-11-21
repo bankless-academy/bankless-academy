@@ -8,6 +8,7 @@ import { MetaData } from 'components/Head'
 import { DataTable } from 'components/DataTable'
 import { shortenAddress } from 'utils'
 import InternalLink from 'components/InternalLink'
+import { useRouter } from 'next/router'
 
 const pageMeta: MetaData = {
   title: 'Bankless Explorer Leaderboard',
@@ -114,6 +115,8 @@ const columns = [
 const Leaderboard = (): JSX.Element => {
   const [leaderboard, setLeaderboard]: any = useState(null)
   const [fetchedAt, setFetchedAt]: any = useState(null)
+  const router = useRouter()
+  const [isLoadingProfile, setIsLoadingProfile] = useState(false)
 
   const [error, setError]: any = useState('')
   useEffect(() => {
@@ -141,11 +144,33 @@ const Leaderboard = (): JSX.Element => {
       })
   }, [])
 
-  if (leaderboard && fetchedAt)
+  useEffect(() => {
+    const handleStart = (url) =>
+      url !== router.asPath && setIsLoadingProfile(true)
+    const handleComplete = (url) =>
+      url === router.asPath &&
+      setTimeout(() => {
+        setIsLoadingProfile(false)
+      }, 100)
+
+    router.events.on('routeChangeStart', handleStart)
+    router.events.on('routeChangeComplete', handleComplete)
+    router.events.on('routeChangeError', handleComplete)
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart)
+      router.events.off('routeChangeComplete', handleComplete)
+      router.events.off('routeChangeError', handleComplete)
+    }
+  })
+
+  if (leaderboard && fetchedAt && !isLoadingProfile)
     return (
       <Container maxW="container.xl">
         <Heading as="h2" size="xl" m="8" textAlign="center">
-          Bankless Explorer Leaderboard
+          {isLoadingProfile
+            ? 'Loading Explorer Profile'
+            : 'Bankless Academy Leaderboard'}
         </Heading>
         <Heading as="h3" size="md" m="8" textAlign="center">
           Last update: {fetchedAt}
@@ -166,7 +191,9 @@ const Leaderboard = (): JSX.Element => {
     return (
       <Container maxW="container.xl">
         <Heading as="h2" size="xl" m="8" textAlign="center">
-          Bankless Academy Leaderboard
+          {isLoadingProfile
+            ? 'Loading Explorer Profile'
+            : 'Bankless Academy Leaderboard'}
         </Heading>
         {error || (
           <Image
