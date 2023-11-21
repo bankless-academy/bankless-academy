@@ -4,20 +4,24 @@ import { useTranslation } from 'react-i18next'
 
 import { LESSONS } from 'constants/index'
 import { DONATION_MAPPING } from 'pages/leaderboard'
+import InternalLink from './InternalLink'
+import ExternalLink from './ExternalLink'
 
 const Badges = ({
   badges,
   badgeToHighlight,
   type,
+  isMyProfile,
 }: {
   badges: number[] | string[]
   badgeToHighlight?: number | string
   type?: 'badges' | 'collectibles' | 'donations'
+  isMyProfile?: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
   return (
     <>
-      {badges?.length > 0 && (
+      {(badges?.length > 0 || type) && (
         <>
           {!type && (
             <Text fontSize="xl" fontWeight="bold" textAlign="center">
@@ -138,6 +142,45 @@ const Badges = ({
                     )
                 }
               })}
+              {isMyProfile && type === 'badges' && badges?.length < 9 && (
+                <Box key={`badge-add`} justifySelf="center" p={1}>
+                  <InternalLink href="/lessons">
+                    <Image
+                      src={`/images/add-badge.png`}
+                      width={'100px'}
+                      height="auto"
+                      alt={t('Claim new lesson badge')}
+                      title={t('Claim new lesson badge')}
+                    />
+                  </InternalLink>
+                </Box>
+              )}
+              {isMyProfile && type === 'collectibles' && badges?.length < 8 && (
+                <Box key={`badge-add`} justifySelf="center" p={1}>
+                  <InternalLink href="/lessons">
+                    <Image
+                      src={`/images/add-badge.png`}
+                      width={'100px'}
+                      height="auto"
+                      alt={t('Buy collectible')}
+                      title={t('Buy collectible')}
+                    />
+                  </InternalLink>
+                </Box>
+              )}
+              {isMyProfile && type === 'donations' && (
+                <Box key={`badge-add`} justifySelf="center" p={1}>
+                  <ExternalLink href="https://explorer.gitcoin.co/#/round/424/0x98720dd1925d34a2453ebc1f91c9d48e7e89ec29/0x98720dd1925d34a2453ebc1f91c9d48e7e89ec29-175">
+                    <Image
+                      src={`/images/add-badge.png`}
+                      width={'100px'}
+                      height="auto"
+                      alt={t('Donate on Gitcoin')}
+                      title={t('Donate on Gitcoin')}
+                    />
+                  </ExternalLink>
+                </Box>
+              )}
             </SimpleGrid>
           </Box>
         </>

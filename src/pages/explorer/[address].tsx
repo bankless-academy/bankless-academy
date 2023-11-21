@@ -4,11 +4,13 @@ import {
   Container,
   Image,
   Text,
+  useClipboard,
   useMediaQuery,
 } from '@chakra-ui/react'
 import { mainnet } from 'viem/chains'
 import { normalize } from 'viem/ens'
 import { createPublicClient, http } from 'viem'
+import { UserPlus } from '@phosphor-icons/react'
 
 import Badges from 'components/Badges'
 import Card from 'components/Card'
@@ -39,7 +41,7 @@ export async function getServerSideProps({ query }) {
   const fullAddress = address.endsWith('.eth')
     ? await client.getEnsAddress({ name: normalize(address) })
     : address
-  console.log(fullAddress)
+  // console.log(fullAddress)
   const [userExist] = await db(TABLES.users)
     .select('id', 'address')
     .whereILike('address', fullAddress)
@@ -48,14 +50,14 @@ export async function getServerSideProps({ query }) {
   if (error) return { props: { error } }
   const confirmedAddress = userExist.address
 
-  console.log(confirmedAddress)
-  console.log(badge)
+  // console.log(confirmedAddress)
+  // console.log(badge)
   const res = await fetch(`${DOMAIN_URL}/api/user/${confirmedAddress}`)
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
-  const user = await res.json()
-  console.log(user)
+  const user: UserType = await res.json()
+  // console.log(user)
   const badgeTokenIds = user.badgeTokenIds
   if (badge && !badgeTokenIds.includes(parseInt(badge)))
     return { props: { error: 'badge not found' } }
@@ -65,14 +67,14 @@ export async function getServerSideProps({ query }) {
     userAddress: confirmedAddress,
     badgeToHighlight,
   }
-  console.log(data)
+  // console.log(data)
 
   const pageMeta: MetaData = {
     title: `Explorer ${user.ensName || shortenAddress(confirmedAddress)}`,
     // description: currentLesson.description,
     image: `${DOMAIN_URL}/api/og/social?address=${confirmedAddress}${
       badge ? `&badge=${badge}` : ''
-    }&f=1`,
+    }&score=${user?.stats?.score || 0}&f=1`,
   }
 
   return { props: { ...data, pageMeta } }
@@ -89,9 +91,12 @@ export default function Page({
   badgeToHighlight?: number
   error?: any
 }) {
+  const profileUrl =
+    typeof window !== 'undefined' ? `${window.location.href}?referral=true` : ''
   const [isSmallScreen] = useMediaQuery(['(max-width: 981px)'])
   const { referral } = router.query
   const { address } = useAccount()
+  const { onCopy, hasCopied } = useClipboard(profileUrl)
 
   const collectibles = []
   for (let i = 0; i < user?.stats.collectibles; i++) {
@@ -156,20 +161,33 @@ export default function Page({
           textAlign="center"
           textTransform="uppercase"
           mt="40px"
-          mb="6"
+          mb="8"
         >
           {user.ensName || shortenAddress(userAddress)}
         </Text>
         {isMyProfile && (
-          <Box pb="8" textAlign="center">
-            <ExternalLink href={twitterLink} mb="8">
-              <Button
-                variant="primary"
-                leftIcon={<Image width="24px" src="/images/Twitter.svg" />}
-              >
-                {t('Share on Twitter')}
-              </Button>
-            </ExternalLink>
+          <Box justifyContent="center" w="256px" m="auto" mb="8">
+            <Box pb="2">
+              <ExternalLink href={twitterLink} mr="2">
+                <Button
+                  variant="primary"
+                  w="100%"
+                  borderBottomRadius="0"
+                  leftIcon={<Image width="24px" src="/images/TwitterX.svg" />}
+                >
+                  {t('Share on Twitter')}
+                </Button>
+              </ExternalLink>
+            </Box>
+            <Button
+              variant="primary"
+              w="100%"
+              borderTopRadius="0"
+              leftIcon={<UserPlus size="30px" />}
+              onClick={() => onCopy()}
+            >
+              {hasCopied ? t('Referal link copied') : t('Refer-a-Friend')}
+            </Button>
           </Box>
         )}
       </Card>
@@ -180,7 +198,9 @@ export default function Page({
             <Box
               position="absolute"
               top="69px"
-              left="227px"
+              width="46px"
+              textAlign="center"
+              left="225px"
               fontSize="3xl"
               fontWeight="bold"
             >
@@ -201,6 +221,7 @@ export default function Page({
                 badges={user.badgeTokenIds}
                 badgeToHighlight={badgeToHighlight}
                 type="badges"
+                isMyProfile={isMyProfile}
               />
             </Box>
             <Box w={isSmallScreen ? '100%' : '50%'}>
@@ -209,7 +230,11 @@ export default function Page({
                 score={user.stats?.collectibles + user.stats?.handbooks || 0}
                 max={8}
               />
-              <Badges badges={collectibles} type="collectibles" />
+              <Badges
+                badges={collectibles}
+                type="collectibles"
+                isMyProfile={isMyProfile}
+              />
             </Box>
           </Box>
           <Box
@@ -230,7 +255,11 @@ export default function Page({
                 }
                 max={8}
               />
-              <Badges badges={Object.keys(user.donations)} type="donations" />
+              <Badges
+                badges={Object.keys(user.donations)}
+                type="donations"
+                isMyProfile={isMyProfile}
+              />
             </Box>
           </Box>
         </Box>

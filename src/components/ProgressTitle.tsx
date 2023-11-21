@@ -12,6 +12,7 @@ const ProgressTitle = ({
   <Box
     borderBottom="1px solid #989898"
     display="flex"
+    position="relative"
     fontSize="2xl"
     fontWeight="bold"
     justifyContent="flex-end"
@@ -30,6 +31,14 @@ const ProgressTitle = ({
     >
       {title}
     </Text>
+    <Box
+      display="flex"
+      position="absolute"
+      top="-7px"
+      height="50px"
+      right="198px"
+      borderRight="1px #989898 solid"
+    />
   </Box>
 )
 
