@@ -46,6 +46,7 @@ type UnitConversion = {
   ens_name?: string
   ens_avatar?: string
   donations?: any
+  donations_count?: number
 }
 
 const columnHelper = createColumnHelper<UnitConversion>()
@@ -89,9 +90,9 @@ const columns = [
     cell: (info) => info.getValue(),
     header: 'Handbooks',
   }),
-  columnHelper.accessor('donations', {
+  columnHelper.accessor('donations_count', {
     cell: (info) => {
-      const donations = info.getValue()
+      const donations = info.row.original?.donations
       if (typeof donations === 'object') {
         const donationdetails = getDonationdetails(donations).join(', ')
         const numberOfDonations = Object.keys(donations)?.length
@@ -102,7 +103,14 @@ const columns = [
             </Tooltip>
           </>
         )
-      } else return '-'
+      } else
+        return (
+          <>
+            <Tooltip label="No donation yet.">
+              <Box>0</Box>
+            </Tooltip>
+          </>
+        )
     },
     header: 'Donations',
   }),

@@ -59,28 +59,32 @@ export default async function handler(
       else leaderboard[address] = { collectibles: 0, handbooks: 0, badges: badgeIds?.length }
     }
 
-    const ensAddresses: any = []
+    // const ensAddresses: any = []
     for (const address of Object.keys(leaderboard)) {
       if (leaderboard[address].collectibles >= 1 || leaderboard[address].handbooks >= 2 || leaderboard[address].badges >= BADGE_IDS.length) {
-        ensAddresses.push(address)
+        // ensAddresses.push(address)
       }
       // filter low badges
       if (leaderboard[address].badges < 2 && leaderboard[address].collectibles === 0 && leaderboard[address].handbooks === 0)
         delete leaderboard[address]
     }
-    console.log(ensAddresses)
+    // console.log(ensAddresses)
     try {
+      //       const { rows: users } = await db.raw(`
+      //   SELECT id, address, ens_name, ens_avatar
+      //   FROM users
+      //   WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL) AND LOWER(address) IN (${ensAddresses.map(() => '?').join(', ')})
+      // `, ensAddresses)
       const { rows: users } = await db.raw(`
-  SELECT id, address, ens_name, ens_avatar
-  FROM users
-  WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL) AND LOWER(address) IN (${ensAddresses.map(() => '?').join(', ')})
-`, ensAddresses)
-      console.log(users)
+SELECT id, address, ens_name, ens_avatar
+FROM users
+WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
+      // console.log(users)
       for (const user of users) {
         const address = user.address.toLowerCase()
-        if (user.ens_name !== null)
+        if (user.ens_name !== null && address in leaderboard)
           leaderboard[address].ens_name = user.ens_name
-        if (user.ens_avatar !== null)
+        if (user.ens_avatar !== null && address in leaderboard)
           leaderboard[address].ens_avatar = user.ens_avatar
       }
       const donations = await db(TABLES.users)
@@ -89,8 +93,10 @@ export default async function handler(
       console.log(donations)
       for (const donation of donations) {
         const a = donation.address.toLowerCase()
-        if (a in leaderboard)
+        if (a in leaderboard) {
           leaderboard[a].donations = donation.donations
+          leaderboard[a].donations_count = Object.keys(donation.donations)?.length || 0
+        }
       }
       const rank = []
       for (const address of Object.keys(leaderboard)) {
@@ -101,6 +107,7 @@ export default async function handler(
           Object.keys(leaderboard[address]?.donations || {})?.length || 0
 
         leaderboard[address].score = score
+        leaderboard[address].donations_count = leaderboard[address].donations_count || 0
         rank.push({ score, address })
       }
       let rankNb = 0
