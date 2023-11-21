@@ -1,4 +1,11 @@
-import { Box, Button, Container, Image, Text } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Container,
+  Image,
+  Text,
+  useMediaQuery,
+} from '@chakra-ui/react'
 import { mainnet } from 'viem/chains'
 import { normalize } from 'viem/ens'
 import { createPublicClient, http } from 'viem'
@@ -8,7 +15,6 @@ import Card from 'components/Card'
 import { MetaData } from 'components/Head'
 import { ALCHEMY_KEY_BACKEND, DOMAIN_URL } from 'constants/index'
 import { UserType } from 'entities/user'
-import { useSmallScreen } from 'hooks'
 import { shortenAddress } from 'utils'
 import { TABLES, db } from 'utils/db'
 import { t } from 'i18next'
@@ -83,7 +89,7 @@ export default function Page({
   badgeToHighlight?: number
   error?: any
 }) {
-  const [isSmallScreen] = useSmallScreen()
+  const [isSmallScreen] = useMediaQuery(['(max-width: 981px)'])
   const { referral } = router.query
   const { address } = useAccount()
 
@@ -168,60 +174,64 @@ export default function Page({
         )}
       </Card>
       <Card my="8" borderRadius="2xl !important">
-        <Box m="auto" position="relative" w="300px">
-          <Image w="300px" src="/images/bankless-score.png" />
-          <Box
-            position="absolute"
-            top="69px"
-            left="227px"
-            fontSize="3xl"
-            fontWeight="bold"
-          >
-            {user.stats.score}
+        <Box m="auto" maxW={isSmallScreen ? '600px' : '100%'}>
+          <Box m="auto" position="relative" w="300px">
+            <Image w="300px" src="/images/bankless-score.png" />
+            <Box
+              position="absolute"
+              top="69px"
+              left="227px"
+              fontSize="3xl"
+              fontWeight="bold"
+            >
+              {user.stats.score}
+            </Box>
           </Box>
-        </Box>
-        <Box display={isSmallScreen ? 'block' : 'flex'} m="8">
-          <Box
-            w={isSmallScreen ? '100%' : '50%'}
-            maxW="624px"
-            mr={isSmallScreen ? '0' : '50px'}
-          >
-            <ProgressTitle
-              title={t('Badges')}
-              score={user.stats.badges}
-              max={9}
-            />
-            <Badges
-              badges={user.badgeTokenIds}
-              badgeToHighlight={badgeToHighlight}
-              type="badges"
-            />
+          <Box display={isSmallScreen ? 'block' : 'flex'} m="8">
+            <Box
+              w={isSmallScreen ? '100%' : '50%'}
+              mr={isSmallScreen ? '0' : '50px'}
+            >
+              <ProgressTitle
+                title={t('Badges')}
+                score={user.stats.badges}
+                max={9}
+              />
+              <Badges
+                badges={user.badgeTokenIds}
+                badgeToHighlight={badgeToHighlight}
+                type="badges"
+              />
+            </Box>
+            <Box w={isSmallScreen ? '100%' : '50%'}>
+              <ProgressTitle
+                title={t('Collectibles')}
+                score={user.stats?.collectibles + user.stats?.handbooks || 0}
+                max={8}
+              />
+              <Badges badges={collectibles} type="collectibles" />
+            </Box>
           </Box>
-          <Box w={isSmallScreen ? '100%' : '50%'} maxW="624px">
-            <ProgressTitle
-              title={t('Collectibles')}
-              score={user.stats?.collectibles + user.stats?.handbooks || 0}
-              max={8}
-            />
-            <Badges badges={collectibles} type="collectibles" />
-          </Box>
-        </Box>
-        <Box display={isSmallScreen ? 'block' : 'flex'} m="8">
           <Box
-            w={isSmallScreen ? '100%' : '50%'}
-            maxW={isSmallScreen ? '100%' : '438px'}
-            mr={isSmallScreen ? '0' : '50px'}
+            display={isSmallScreen ? 'block' : 'flex'}
+            m="8"
+            maxW={isSmallScreen ? '600px' : '100%'}
           >
-            <ProgressTitle
-              title={t('Donations')}
-              score={
-                user.stats?.donations
-                  ? Object.keys(user.stats?.donations)?.length || 0
-                  : 0
-              }
-              max={8}
-            />
-            <Badges badges={Object.keys(user.donations)} type="donations" />
+            <Box
+              w={isSmallScreen ? '100%' : '50%'}
+              mr={isSmallScreen ? '0' : '50px'}
+            >
+              <ProgressTitle
+                title={t('Donations')}
+                score={
+                  user.stats?.donations
+                    ? Object.keys(user.stats?.donations)?.length || 0
+                    : 0
+                }
+                max={8}
+              />
+              <Badges badges={Object.keys(user.donations)} type="donations" />
+            </Box>
           </Box>
         </Box>
       </Card>
