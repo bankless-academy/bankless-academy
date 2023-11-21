@@ -178,7 +178,7 @@ const Leaderboard = (): JSX.Element => {
         <Heading as="h2" size="xl" m="8" textAlign="center">
           {isLoadingProfile
             ? 'Loading Explorer Profile'
-            : 'Bankless Academy Leaderboard'}
+            : 'Bankless Explorer Leaderboard'}
         </Heading>
         <Heading as="h3" size="md" m="8" textAlign="center">
           Last update: {fetchedAt}
@@ -201,7 +201,7 @@ const Leaderboard = (): JSX.Element => {
         <Heading as="h2" size="xl" m="8" textAlign="center">
           {isLoadingProfile
             ? 'Loading Explorer Profile'
-            : 'Bankless Academy Leaderboard'}
+            : 'Bankless Explorer Leaderboard'}
         </Heading>
         {error || (
           <Image
