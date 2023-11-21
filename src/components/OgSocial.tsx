@@ -16,6 +16,7 @@ const Skill = ({ skill, score, max }) => (
       width: '100%',
       height: '40px',
       justifyContent: 'flex-end',
+      position: 'relative',
     }}
   >
     <div
@@ -36,13 +37,24 @@ const Skill = ({ skill, score, max }) => (
         alignItems: 'center',
         height: '40px',
         backgroundColor: '#A379BD',
-        borderRadius: '2px',
+        borderBottomLeftRadius: '2px',
+        borderTopLeftRadius: '2px',
         textTransform: 'uppercase',
         paddingRight: '20px',
       }}
     >
       {skill}
     </div>
+    <div
+      style={{
+        display: 'flex',
+        position: 'absolute',
+        top: '-5px',
+        height: '50px',
+        right: '198px',
+        borderRight: '1px #989898 solid',
+      }}
+    />
   </div>
 )
 
@@ -51,7 +63,7 @@ const Skills = ({ stats }) => (
     style={{
       display: 'flex',
       position: 'relative',
-      width: '430px',
+      width: '550px',
       height: '258px',
       marginTop: '4px',
       flexWrap: 'wrap',
@@ -91,8 +103,8 @@ const OgSocial = ({
   badgeImageLink?: string
   // type?: 'profile' | 'badge'
 }): React.ReactElement => {
-  const profileSocialBackground = `${DOMAIN_URL}/images/profileSocialBackground.png`
-  const badgeSocialBackground = `${DOMAIN_URL}/images/badgeSocialBackground.png`
+  const profileSocialBackground = `${DOMAIN_URL}/images/profileSocialBackground.png?f=1`
+  const badgeSocialBackground = `${DOMAIN_URL}/images/badgeSocialBackground.png?f=1`
 
   return (
     <>
@@ -109,10 +121,10 @@ const OgSocial = ({
         style={{
           display: 'flex',
           position: 'absolute',
-          top: '85px',
-          left: '205px',
-          width: '300px',
-          height: '300px',
+          top: '93px',
+          left: '97px',
+          width: '312px',
+          height: '312px',
           borderRadius: '50%',
         }}
         src={explorerAvatar || DEFAULT_IMAGE}
@@ -122,11 +134,11 @@ const OgSocial = ({
           style={{
             display: 'flex',
             position: 'absolute',
-            top: '127px',
-            left: '949px',
+            top: '168px',
+            left: '1012px',
             width: '102px',
             height: '63px',
-            fontSize: 50,
+            fontSize: 63,
             fontFamily: '"ClearSans"',
             color: '#EAD6FF',
             textAlign: 'center',
@@ -142,7 +154,7 @@ const OgSocial = ({
           display: 'flex',
           position: 'absolute',
           top: '432px',
-          left: '141px',
+          left: '32px',
           width: '433px',
           height: '119px',
           fontSize: 40,
@@ -161,10 +173,10 @@ const OgSocial = ({
           style={{
             display: 'flex',
             position: 'absolute',
-            top: '230px',
-            left: '725px',
-            width: '300px',
-            height: '300px',
+            top: '80px',
+            left: '691px',
+            width: '345px',
+            height: '345px',
             borderRadius: '50%',
           }}
           src={badgeImageLink}
@@ -174,9 +186,9 @@ const OgSocial = ({
           style={{
             display: 'flex',
             position: 'absolute',
-            top: '266px',
-            left: '630px',
-            width: '430px',
+            top: '276px',
+            left: '568px',
+            width: '550px',
             height: '258px',
             fontSize: 20,
             fontFamily: '"ClearSans"',
