@@ -281,11 +281,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
                   w="100%"
                   borderBottomRadius="0"
                   leftIcon={
-                    <ChakraImage
-                      width="24px"
-                      height="24px"
-                      src="/images/Twitter.svg"
-                    />
+                    <ChakraImage width="20px" src="/images/TwitterX.svg" />
                   }
                 >
                   {t('Share on Twitter')}
