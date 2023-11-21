@@ -8,42 +8,37 @@ import { DONATION_MAPPING } from 'pages/leaderboard'
 const Badges = ({
   badges,
   badgeToHighlight,
-  profile,
+  type,
 }: {
   badges: number[] | string[]
   badgeToHighlight?: number | string
-  profile?: boolean
+  type?: 'badges' | 'collectibles' | 'donations'
 }): React.ReactElement => {
   const { t } = useTranslation()
-  console.log(badges)
   return (
     <>
       {badges?.length > 0 && (
         <>
-          {!profile && (
+          {!type && (
             <Text fontSize="xl" fontWeight="bold" textAlign="center">
               {t('My Academy Badges')}
             </Text>
           )}
           <Box
-            h={profile ? 'unset' : '215px'}
+            h={type ? 'unset' : '215px'}
             overflowY={badges.length <= 6 ? 'hidden' : 'scroll'}
             overflowX="hidden"
-            backgroundColor={profile ? 'unset' : 'blackAlpha.200'}
+            backgroundColor={type ? 'unset' : 'blackAlpha.200'}
             borderRadius="10px"
           >
             <SimpleGrid columns={3} spacing={3} p={3}>
               {badges?.map((badge, index) => {
-                console.log(badge)
-                if (
-                  typeof badge === 'string' &&
-                  (badge.startsWith('http') || badge.startsWith('/images'))
-                )
+                if (type === 'collectibles')
                   return (
-                    <Box key={`badge-${badge}`} justifySelf="center" p={1}>
+                    <Box key={`badge-${index}`} justifySelf="center" p={1}>
                       <Image
                         src={`${badge}`}
-                        width={profile ? '100px' : '70px'}
+                        width={'100px'}
                         height="auto"
                         alt={
                           badge.startsWith('http')
@@ -58,21 +53,17 @@ const Badges = ({
                       />
                     </Box>
                   )
-                if (
-                  typeof badge === 'string' &&
-                  badge.startsWith('G') &&
-                  badge in DONATION_MAPPING
-                )
+                if (type === 'donations' && badge in DONATION_MAPPING)
                   return (
                     <Box
-                      key={`badge-${badge}`}
+                      key={`badge-${index}`}
                       justifySelf="center"
                       p={1}
                       position="relative"
                     >
                       <Image
                         src={`/images/gitcoin/gitcoin-donation.png`}
-                        width={profile ? '100px' : '70px'}
+                        width={'100px'}
                         height="auto"
                         alt={DONATION_MAPPING[badge]}
                         title={DONATION_MAPPING[badge]}
@@ -125,18 +116,20 @@ const Badges = ({
                       <Box
                         key={`badge-${index}`}
                         justifySelf="center"
-                        boxShadow="0px 0px 4px 2px #00000060"
+                        boxShadow={type ? 'unset' : '0px 0px 4px 2px #00000060'}
                         borderRadius="3px"
                         backgroundColor={
                           badgeToHighlight === badge
                             ? 'orange.200'
+                            : type
+                            ? 'unset'
                             : 'blackAlpha.300'
                         }
                         p={1}
                       >
                         <Image
                           src={lesson.badgeImageLink}
-                          width={profile ? '100px' : '70px'}
+                          width={type ? '100px' : '70px'}
                           height="auto"
                           alt={lesson.name}
                           title={lesson.name}
