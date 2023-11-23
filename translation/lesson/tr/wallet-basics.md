@@ -97,11 +97,11 @@ Bu ad ve parola kombinasyonunun değiştirilmesi mümkün değildir. Bunların h
 
 # Your wallet’s public key
 
-Bir `açık anahtar` temelde cüzdanınızın adıdır. Bu genellikle rastgele harf ve rakamların bir karışımı gibi görünür.
+`Açık anahtar` temelde cüzdanınızın adıdır. Bu genellikle rastgele harf ve rakamların bir karışımı gibi görünür.
 
 Örnek: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-It is possible to create easier to remember versions of this with some web3 services, but that’s a lesson for another time.
+Bazı web3 hizmetleri ile bunun, hatırlanması daha kolay versiyonlarını oluşturmak mümkün olsa da bu başka bir dersin konusu.
 
 Açık anahtarı bir posta kutusunun adresi gibi de düşünebilirsiniz. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.
 
