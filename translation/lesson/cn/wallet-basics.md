@@ -2,7 +2,7 @@
 TITLE: Wallet Basics
 DESCRIPTION: Create and securely manage your first crypto wallet.
 LANGUAGE: English
-WRITERS: Ap0ll0517, Tetranome
+WRITERS: Ap0ll0517, Jordy
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
