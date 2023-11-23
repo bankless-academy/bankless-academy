@@ -2,7 +2,7 @@
 TITLE: Le Basi Del Portafoglio
 DESCRIPTION: Crea e gestisci in modo sicuro il tuo primo portafoglio di criptovalute.
 LANGUAGE: Italiano
-WRITERS: Ap0ll0517, Tetranome
+WRITERS: Ap0ll0517, Jordy
 TRANSLATORS: OrnellaWeb3, fa3io
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
