@@ -2,7 +2,7 @@
 TITLE: Understanding Stablecoins
 DESCRIPTION: Use dollars, euros, and more on the blockchain.
 LANGUAGE: English
-WRITERS: 
+WRITERS: Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/understanding-stablecoins
 FORMAT: HANDBOOK

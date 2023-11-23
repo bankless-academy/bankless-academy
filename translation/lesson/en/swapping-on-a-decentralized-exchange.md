@@ -2,7 +2,7 @@
 TITLE: Swapping on a Decentralized Exchange
 DESCRIPTION: Begin your journey into DeFi with this Decentralized Exchange walkthrough.
 LANGUAGE: English
-WRITERS: 
+WRITERS: Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/swapping-on-a-decentralized-exchange
 FORMAT: HANDBOOK

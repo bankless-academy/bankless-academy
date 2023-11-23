@@ -2,7 +2,7 @@
 TITLE: Understanding Ethereum Token Standards
 DESCRIPTION: Learn how Ethereum’s asset templates support both traditional and emerging asset classes.
 LANGUAGE: English
-WRITERS: 
+WRITERS: Musharef, Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/understanding-ethereum-token-standards
 FORMAT: HANDBOOK

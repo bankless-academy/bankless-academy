@@ -2,7 +2,7 @@
 TITLE: Managing Token Allowances
 DESCRIPTION: Protect your wallet from unwanted smart contract interactions.
 LANGUAGE: English
-WRITERS: 
+WRITERS: Marcus, Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/managing-token-allowances
 FORMAT: HANDBOOK

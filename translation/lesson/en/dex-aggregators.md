@@ -2,7 +2,7 @@
 TITLE: DEX Aggregators
 DESCRIPTION: Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.
 LANGUAGE: English
-WRITERS: 
+WRITERS: iSpeakNerd
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/dex-aggregators
 FORMAT: LESSON
