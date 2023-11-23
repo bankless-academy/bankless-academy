@@ -2,7 +2,7 @@
 TITLE: Layer 2 Blockchains
 DESCRIPTION: Join the Layer 2 ecosystem to boost your transaction speed & reduce fees.
 LANGUAGE: English
-WRITERS: Tetranome
+WRITERS: HiroKennelly, Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/layer-2-blockchains
 FORMAT: LESSON
