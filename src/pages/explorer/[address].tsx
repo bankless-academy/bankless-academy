@@ -262,6 +262,18 @@ export default function Page({
                 isMyProfile={isMyProfile}
               />
             </Box>
+            <Box w={isSmallScreen ? '100%' : '50%'}>
+              <ProgressTitle
+                title={t('Stamps')}
+                score={user.stats?.valid_stamps.length}
+                max={8}
+              />
+              <Badges
+                badges={user.stats?.valid_stamps}
+                type="stamps"
+                isMyProfile={isMyProfile}
+              />
+            </Box>
           </Box>
         </Box>
       </Card>

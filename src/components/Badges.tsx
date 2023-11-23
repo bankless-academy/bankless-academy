@@ -6,6 +6,7 @@ import { COLLECTIBLE_DETAILS, LESSONS } from 'constants/index'
 import { DONATION_MAPPING } from 'pages/leaderboard'
 import InternalLink from './InternalLink'
 import ExternalLink from './ExternalLink'
+import { STAMP_PROVIDERS } from 'constants/passport'
 
 const Badges = ({
   badges,
@@ -15,7 +16,7 @@ const Badges = ({
 }: {
   badges: number[] | string[]
   badgeToHighlight?: number | string
-  type?: 'badges' | 'collectibles' | 'donations'
+  type?: 'badges' | 'collectibles' | 'donations' | 'stamps'
   isMyProfile?: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
@@ -200,6 +201,36 @@ const Badges = ({
                     />
                   </ExternalLink>
                 </Box>
+              )}
+              {isMyProfile && type === 'stamps' && (
+                <>
+                  {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
+                    const ownsBadge = (badges as string[]).includes(key)
+                    return (
+                      <Box key={`badge-${key}`} p={1} position="relative">
+                        <Image
+                          aspectRatio="1"
+                          opacity={ownsBadge ? '1' : '0.2'}
+                          w="100%"
+                          src={provider.icon}
+                          p="4"
+                          border="1px #2d292d solid"
+                          borderRadius="8px"
+                          title={provider.name}
+                        />
+                        {!ownsBadge && (
+                          <Image
+                            w="30px"
+                            src={`/images/add-badge.png`}
+                            position="absolute"
+                            top="-12px"
+                            right="-10px"
+                          />
+                        )}
+                      </Box>
+                    )
+                  })}
+                </>
               )}
             </SimpleGrid>
           </Box>
