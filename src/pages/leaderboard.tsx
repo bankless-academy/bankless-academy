@@ -9,6 +9,7 @@ import { DataTable } from 'components/DataTable'
 import { shortenAddress } from 'utils'
 import InternalLink from 'components/InternalLink'
 import { useRouter } from 'next/router'
+import { STAMP_PROVIDERS } from 'constants/passport'
 
 const pageMeta: MetaData = {
   title: 'Bankless Explorer Leaderboard',
@@ -47,6 +48,8 @@ type UnitConversion = {
   ens_avatar?: string
   donations?: any
   donations_count?: number
+  valid_stamps?: string[]
+  valid_stamps_count?: number
 }
 
 const columnHelper = createColumnHelper<UnitConversion>()
@@ -95,7 +98,7 @@ const columns = [
       const donations = info.row.original?.donations
       if (typeof donations === 'object') {
         const donationdetails = getDonationdetails(donations).join(', ')
-        const numberOfDonations = Object.keys(donations)?.length
+        const numberOfDonations = info.getValue()
         return (
           <>
             <Tooltip label={donationdetails}>
@@ -113,6 +116,23 @@ const columns = [
         )
     },
     header: 'Donations',
+  }),
+  columnHelper.accessor('valid_stamps_count', {
+    cell: (info) => {
+      const stamps = info.row.original?.valid_stamps
+      const stampList = stamps
+        ?.map((stamp) => STAMP_PROVIDERS[stamp]?.name)
+        .join(', ')
+      const numberOfStamps = info.getValue()
+      return (
+        <>
+          <Tooltip label={stampList}>
+            <Box>{numberOfStamps}</Box>
+          </Tooltip>
+        </>
+      )
+    },
+    header: 'Stamps',
   }),
   columnHelper.accessor('badges', {
     cell: (info) => info.getValue(),
@@ -135,7 +155,12 @@ const Leaderboard = (): JSX.Element => {
         if (!res.data.error) {
           const data = []
           for (const address of Object.keys(res.data.data)) {
-            data.push({ address, ...res.data.data[address] })
+            const addressData = res.data.data[address]
+            addressData.valid_stamps_count =
+              addressData.valid_stamps?.length || 0
+            addressData.donations_count =
+              Object.keys(addressData.donations || {})?.length || 0
+            data.push({ address, ...addressData })
           }
           setLeaderboard(data)
           const date = new Date(res.data.fetchedAt)

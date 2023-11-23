@@ -8,6 +8,7 @@ import badges from 'data/badges.json'
 import { fetchBE } from 'utils/server'
 import { BADGE_ADDRESS, BADGE_IDS } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
+import { ALLOWED_PROVIDERS } from 'constants/passport'
 
 async function getCollectors(collectibleAddress) {
   // console.log(collectibleAddress)
@@ -95,8 +96,19 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
         const a = donation.address.toLowerCase()
         if (a in leaderboard) {
           leaderboard[a].donations = donation.donations
-          leaderboard[a].donations_count = Object.keys(donation.donations)?.length || 0
+          // leaderboard[a].donations_count = Object.keys(donation.donations)?.length || 0
         }
+      }
+      // passport
+      const passportUsers = await db(TABLES.users)
+        .select(TABLE.users.address, TABLE.users.gitcoin_stamps)
+        .whereNull(TABLE.users.sybil_user_id)
+        .whereNot(TABLE.users.gitcoin_stamps, '{}')
+      for (const passport of passportUsers) {
+        const address = passport.address?.toLowerCase()
+        const stamps = Object.keys(passport.gitcoin_stamps)
+        if (address in leaderboard)
+          leaderboard[address].valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
       }
       const rank = []
       for (const address of Object.keys(leaderboard)) {
@@ -104,10 +116,12 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
         const score = 3 * (leaderboard[address]?.collectibles || 0) +
           (leaderboard[address]?.handbooks || 0) +
           (leaderboard[address]?.badges || 0) +
-          Object.keys(leaderboard[address]?.donations || {})?.length || 0
+          (Object.keys(leaderboard[address]?.donations || {})?.length || 0) +
+          (leaderboard[address]?.valid_stamps?.length || 0)
 
         leaderboard[address].score = score
-        leaderboard[address].donations_count = leaderboard[address].donations_count || 0
+        // leaderboard[address].donations_count = leaderboard[address].donations_count || 0
+        leaderboard[address].valid_stamps = leaderboard[address].valid_stamps || []
         rank.push({ score, address })
       }
       let rankNb = 0

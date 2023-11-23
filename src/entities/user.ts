@@ -5,6 +5,7 @@ export interface UserType {
     collectibles: number,
     handbooks: number,
     badges: number,
+    valid_stamps: string[],
     ens_name: string,
     ens_avatar: string,
     donations: string[]
