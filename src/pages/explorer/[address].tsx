@@ -202,7 +202,7 @@ export default function Page({
               fontSize="3xl"
               fontWeight="bold"
             >
-              {user.stats.score}
+              {user.stats.score || 0}
             </Box>
           </Box>
           <Box display={isSmallScreen ? 'block' : 'flex'} m="8">
@@ -212,7 +212,7 @@ export default function Page({
             >
               <ProgressTitle
                 title={t('Badges')}
-                score={user.stats.badges}
+                score={user.stats.badges || 0}
                 max={9}
               />
               <Badges

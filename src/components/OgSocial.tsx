@@ -93,7 +93,7 @@ const OgSocial = ({
 {
   explorerName?: string
   explorerAvatar?: string
-  score?: string | number
+  score?: number
   stats?: {
     badges?: number
     datadisks?: string[]
@@ -146,7 +146,7 @@ const OgSocial = ({
             alignItems: 'center',
           }}
         >
-          {score || DEFAULT_SCORE}
+          {score >= 0 ? score : DEFAULT_SCORE}
         </div>
       )}
       <div

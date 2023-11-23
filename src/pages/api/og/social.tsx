@@ -94,7 +94,7 @@ export default async function handler(req: NextApiRequest) {
           <OgSocial
             explorerAvatar={user.avatar}
             explorerName={explorerName}
-            score={user.stats.score}
+            score={user.stats.score || 0}
             stats={user.stats}
           />
         )}
