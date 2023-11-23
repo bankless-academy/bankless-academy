@@ -100,12 +100,10 @@ export default function Page({
 
   const collectibles = []
   for (let i = 0; i < user?.stats.collectibles; i++) {
-    collectibles.push(
-      'https://raw.seadn.io/files/df805d7e6cee4f4697207f7a9929a77f.png'
-    )
+    collectibles.push('/images/collectibles-001.png')
   }
   for (let i = 0; i < user?.stats.handbooks; i++) {
-    collectibles.push('/images/handbook.svg')
+    collectibles.push('/images/handbook-badge.png')
   }
   if (error) return error
 

@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { Text, Box, Image, SimpleGrid } from '@chakra-ui/react'
+import { Text, Box, Image, SimpleGrid, GridItem } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 
 import { LESSONS } from 'constants/index'
@@ -35,28 +35,30 @@ const Badges = ({
             backgroundColor={type ? 'unset' : 'blackAlpha.200'}
             borderRadius="10px"
           >
-            <SimpleGrid columns={3} spacing={3} p={3}>
+            <SimpleGrid columns={type ? 4 : 3} spacing={2} p={2}>
               {badges?.map((badge, index) => {
-                if (type === 'collectibles')
+                if (type === 'collectibles') {
+                  const isCollectible = badge.includes('collectibles')
                   return (
-                    <Box key={`badge-${index}`} justifySelf="center" p={1}>
+                    <GridItem
+                      key={`badge-${index}`}
+                      justifySelf="center"
+                      alignSelf="center"
+                      p={1}
+                      colSpan={isCollectible ? 2 : 1}
+                      border="1px #2d292d solid"
+                      borderRadius="8px"
+                    >
                       <Image
                         src={`${badge}`}
-                        width={'100px'}
-                        height="auto"
-                        alt={
-                          badge.startsWith('http')
-                            ? 'Layer 2 Blockchains'
-                            : 'Handbook'
-                        }
+                        alt={isCollectible ? 'Layer 2 Blockchains' : 'Handbook'}
                         title={
-                          badge.startsWith('http')
-                            ? 'Layer 2 Blockchains'
-                            : 'Handbook'
+                          isCollectible ? 'Layer 2 Blockchains' : 'Handbook'
                         }
                       />
-                    </Box>
+                    </GridItem>
                   )
+                }
                 if (type === 'donations' && badge in DONATION_MAPPING)
                   return (
                     <Box
@@ -67,17 +69,19 @@ const Badges = ({
                     >
                       <Image
                         src={`/images/gitcoin/gitcoin-donation.png`}
-                        width={'100px'}
-                        height="auto"
+                        border="1px #2d292d solid"
+                        borderRadius="8px"
                         alt={DONATION_MAPPING[badge]}
                         title={DONATION_MAPPING[badge]}
                       />
                       <Box
                         fontWeight="bold"
-                        fontSize="xl"
+                        fontSize="lg"
                         position="absolute"
-                        top="-4px"
-                        left="30px"
+                        top="2px"
+                        left="0"
+                        width="100%"
+                        textAlign="center"
                       >
                         {badge}
                       </Box>
@@ -133,8 +137,6 @@ const Badges = ({
                       >
                         <Image
                           src={lesson.badgeImageLink}
-                          width={type ? '100px' : '70px'}
-                          height="auto"
                           alt={lesson.name}
                           title={lesson.name}
                         />
