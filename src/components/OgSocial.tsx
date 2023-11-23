@@ -72,7 +72,7 @@ const Skills = ({ stats }) => (
     <Skill skill="Badges" score={stats?.badges || 0} max={9} />
     <Skill
       skill="Collectibles"
-      score={stats?.collectibles + stats?.handbooks || 0}
+      score={stats?.datadisks?.length + stats?.handbooks?.length || 0}
       max={8}
     />
     <Skill
@@ -96,8 +96,8 @@ const OgSocial = ({
   score?: string | number
   stats?: {
     badges?: number
-    collectibles?: number
-    handbooks?: number
+    datadisks?: string[]
+    handbooks?: string[]
     donations?: any
   }
   badgeImageLink?: string

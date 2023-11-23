@@ -2,8 +2,8 @@ export interface UserType {
   ensName: string
   avatar: string
   stats?: {
-    collectibles: number,
-    handbooks: number,
+    datadisks: string[],
+    handbooks: string[],
     badges: number,
     valid_stamps: string[],
     ens_name: string,

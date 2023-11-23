@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
-import { ALCHEMY_KEY_BACKEND, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
+import { ALCHEMY_KEY_BACKEND, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
 import { NextApiRequest, NextApiResponse } from 'next'
 // import { createPublicClient, http } from 'viem'
 // import { mainnet } from 'viem/chains'
 
 import badges from 'data/badges.json'
 import { fetchBE } from 'utils/server'
-import { BADGE_ADDRESS, BADGE_IDS } from 'constants/badges'
+import { BADGE_ADDRESS } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
 import { ALLOWED_PROVIDERS } from 'constants/passport'
 
@@ -28,15 +28,29 @@ export default async function handler(
     const collectors = await getCollectors('0x5ce61b80931Ea67565f0532965DDe5be2d41331d')
     // console.log(collectors)
     for (const collector of collectors.ownerAddresses) {
-      leaderboard[collector.ownerAddress] = { collectibles: collector.tokenBalances?.length, handbooks: 0, badges: 0 }
+      const datadisks = []
+      for (let i = 0; i < collector.tokenBalances?.length; i++) {
+        datadisks.push('D001')
+      }
+      leaderboard[collector.ownerAddress] = { datadisks: datadisks, handbooks: [], badges: 0 }
     }
 
     for (const mirrorArticleAddress of MIRROR_ARTICLE_ADDRESSES) {
       const collectors = await getCollectors(mirrorArticleAddress)
+      const handbookId = LESSONS.find(
+        (lesson) => lesson.mirrorNFTAddress === mirrorArticleAddress
+      )?.collectibleId
       // console.log(collectors)
       for (const collector of collectors.ownerAddresses) {
-        if (collector.ownerAddress in leaderboard) leaderboard[collector.ownerAddress].handbooks += collector.tokenBalances?.length
-        else leaderboard[collector.ownerAddress] = { collectibles: 0, handbooks: collector.tokenBalances?.length, badges: 0 }
+        const handbooks = []
+        for (let i = 0; i < collector.tokenBalances?.length; i++) {
+          handbooks.push(handbookId)
+        }
+        if (collector.ownerAddress in leaderboard) {
+          const existingHandbooks = leaderboard[collector.ownerAddress]?.handbooks || []
+          leaderboard[collector.ownerAddress].handbooks = [...existingHandbooks, ...handbooks]
+        }
+        else leaderboard[collector.ownerAddress] = { datadisks: [], handbooks: handbooks, badges: 0 }
       }
     }
 
@@ -57,18 +71,15 @@ export default async function handler(
 
     for (const [address, badgeIds] of Object.entries(badges)) {
       if (address in leaderboard) leaderboard[address].badges = badgeIds?.length
-      else leaderboard[address] = { collectibles: 0, handbooks: 0, badges: badgeIds?.length }
+      else leaderboard[address] = { datadisks: [], handbooks: [], badges: badgeIds?.length }
     }
 
     // const ensAddresses: any = []
-    for (const address of Object.keys(leaderboard)) {
-      if (leaderboard[address].collectibles >= 1 || leaderboard[address].handbooks >= 2 || leaderboard[address].badges >= BADGE_IDS.length) {
-        // ensAddresses.push(address)
-      }
-      // filter low badges
-      if (leaderboard[address].badges < 2 && leaderboard[address].collectibles === 0 && leaderboard[address].handbooks === 0)
-        delete leaderboard[address]
-    }
+    // for (const address of Object.keys(leaderboard)) {
+    // filter low badges
+    // if (leaderboard[address].badges < 2 && leaderboard[address].datadisk?.lengths === 0 && leaderboard[address].handbooks?.length === 0)
+    //   delete leaderboard[address]
+    // }
     // console.log(ensAddresses)
     try {
       //       const { rows: users } = await db.raw(`
@@ -113,8 +124,8 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
       const rank = []
       for (const address of Object.keys(leaderboard)) {
         // score
-        const score = 3 * (leaderboard[address]?.collectibles || 0) +
-          (leaderboard[address]?.handbooks || 0) +
+        const score = 3 * (leaderboard[address]?.datadisks?.length || 0) +
+          (leaderboard[address]?.handbooks?.length || 0) +
           (leaderboard[address]?.badges || 0) +
           (Object.keys(leaderboard[address]?.donations || {})?.length || 0) +
           (leaderboard[address]?.valid_stamps?.length || 0)

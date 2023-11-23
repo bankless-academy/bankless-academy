@@ -104,6 +104,14 @@ export const MIRROR_ARTICLE_ADDRESSES = LESSONS.filter(
   (lesson) => lesson.mirrorNFTAddress
 ).map((lesson) => lesson.mirrorNFTAddress)
 
+export const COLLECTIBLE_DETAILS = {}
+LESSONS.filter(
+  (lesson) => lesson.collectibleId
+).map((lesson) => COLLECTIBLE_DETAILS[lesson.collectibleId] = {
+  englishName: lesson.englishName,
+  codeName: lesson.collectibleId.startsWith('H') ? lesson.collectibleId.replace('H', 'HANDBOOK') : lesson.collectibleId.replace('D', 'DATADISK')
+})
+
 export const COLLECTIBLE_ADDRESSES = LESSONS.filter(
   (lesson) => lesson.lessonCollectibleTokenAddress
 ).map((lesson) => lesson.lessonCollectibleTokenAddress)

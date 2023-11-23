@@ -2,7 +2,7 @@
 import { Text, Box, Image, SimpleGrid, GridItem } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 
-import { LESSONS } from 'constants/index'
+import { COLLECTIBLE_DETAILS, LESSONS } from 'constants/index'
 import { DONATION_MAPPING } from 'pages/leaderboard'
 import InternalLink from './InternalLink'
 import ExternalLink from './ExternalLink'
@@ -38,24 +38,42 @@ const Badges = ({
             <SimpleGrid columns={type ? 4 : 3} spacing={2} p={2}>
               {badges?.map((badge, index) => {
                 if (type === 'collectibles') {
-                  const isCollectible = badge.includes('collectibles')
+                  const isDatadisk = badge.startsWith('D')
+                  const collectibleTitle =
+                    COLLECTIBLE_DETAILS[badge]?.englishName
                   return (
                     <GridItem
                       key={`badge-${index}`}
                       justifySelf="center"
                       alignSelf="center"
                       p={1}
-                      colSpan={isCollectible ? 2 : 1}
+                      colSpan={isDatadisk ? 2 : 1}
                       border="1px #2d292d solid"
                       borderRadius="8px"
+                      position="relative"
                     >
                       <Image
-                        src={`${badge}`}
-                        alt={isCollectible ? 'Layer 2 Blockchains' : 'Handbook'}
-                        title={
-                          isCollectible ? 'Layer 2 Blockchains' : 'Handbook'
-                        }
+                        src={`${
+                          isDatadisk
+                            ? '/images/datadisk-001.png'
+                            : '/images/handbook-badge.png'
+                        }`}
+                        alt={collectibleTitle}
+                        title={collectibleTitle}
                       />
+                      {!isDatadisk && (
+                        <Box
+                          fontWeight="bold"
+                          fontSize="lg"
+                          position="absolute"
+                          bottom="2px"
+                          left="0"
+                          width="100%"
+                          textAlign="center"
+                        >
+                          {badge}
+                        </Box>
+                      )}
                     </GridItem>
                   )
                 }

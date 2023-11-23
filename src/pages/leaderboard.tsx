@@ -10,6 +10,7 @@ import { shortenAddress } from 'utils'
 import InternalLink from 'components/InternalLink'
 import { useRouter } from 'next/router'
 import { STAMP_PROVIDERS } from 'constants/passport'
+import { COLLECTIBLE_DETAILS } from 'constants/index'
 
 const pageMeta: MetaData = {
   title: 'Bankless Explorer Leaderboard',
@@ -41,8 +42,10 @@ type UnitConversion = {
   address: string
   rank: number
   score: number
-  collectibles: number
-  handbooks: number
+  datadisks: string[]
+  datadisks_count: number
+  handbooks: string[]
+  handbooks_count: number
   badges: number
   ens_name?: string
   ens_avatar?: string
@@ -85,12 +88,38 @@ const columns = [
     cell: (info) => info.getValue(),
     header: 'Bankless Score',
   }),
-  columnHelper.accessor('collectibles', {
-    cell: (info) => info.getValue(),
+  columnHelper.accessor('datadisks_count', {
+    cell: (info) => {
+      const datadisks = info.row.original?.datadisks
+      const datadisksList = datadisks
+        ?.map((datadisk) => COLLECTIBLE_DETAILS[datadisk]?.englishName)
+        .join(', ')
+      const number = info.getValue()
+      return (
+        <>
+          <Tooltip label={datadisksList}>
+            <Box>{number}</Box>
+          </Tooltip>
+        </>
+      )
+    },
     header: 'Datadisks',
   }),
-  columnHelper.accessor('handbooks', {
-    cell: (info) => info.getValue(),
+  columnHelper.accessor('handbooks_count', {
+    cell: (info) => {
+      const handbooks = info.row.original?.handbooks
+      const handbooksList = handbooks
+        ?.map((handbook) => COLLECTIBLE_DETAILS[handbook]?.englishName)
+        .join(', ')
+      const number = info.getValue()
+      return (
+        <>
+          <Tooltip label={handbooksList}>
+            <Box>{number}</Box>
+          </Tooltip>
+        </>
+      )
+    },
     header: 'Handbooks',
   }),
   columnHelper.accessor('donations_count', {
@@ -150,7 +179,7 @@ const Leaderboard = (): JSX.Element => {
   useEffect(() => {
     setError('')
     axios
-      .get(`/api/cache/leaderboard`)
+      .get(`/api/cache/top1000_leaderboard`)
       .then(function (res) {
         if (!res.data.error) {
           const data = []
@@ -158,6 +187,8 @@ const Leaderboard = (): JSX.Element => {
             const addressData = res.data.data[address]
             addressData.valid_stamps_count =
               addressData.valid_stamps?.length || 0
+            addressData.datadisks_count = addressData.datadisks?.length || 0
+            addressData.handbooks_count = addressData.handbooks?.length || 0
             addressData.donations_count =
               Object.keys(addressData.donations || {})?.length || 0
             data.push({ address, ...addressData })

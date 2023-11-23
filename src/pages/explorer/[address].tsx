@@ -99,11 +99,11 @@ export default function Page({
   const { onCopy, hasCopied } = useClipboard(profileUrl)
 
   const collectibles = []
-  for (let i = 0; i < user?.stats.collectibles; i++) {
-    collectibles.push('/images/collectibles-001.png')
+  for (let i = 0; i < user?.stats.datadisks?.length; i++) {
+    collectibles.push(user?.stats.datadisks[i])
   }
-  for (let i = 0; i < user?.stats.handbooks; i++) {
-    collectibles.push('/images/handbook-badge.png')
+  for (let i = 0; i < user?.stats.handbooks?.length; i++) {
+    collectibles.push(user?.stats.handbooks[i])
   }
   if (error) return error
 
@@ -225,7 +225,10 @@ export default function Page({
             <Box w={isSmallScreen ? '100%' : '50%'}>
               <ProgressTitle
                 title={t('Collectibles')}
-                score={user.stats?.collectibles + user.stats?.handbooks || 0}
+                score={
+                  user.stats?.datadisks?.length +
+                    user.stats?.handbooks?.length || 0
+                }
                 max={8}
               />
               <Badges
