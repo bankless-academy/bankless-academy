@@ -14,7 +14,7 @@ export const AUTHORIZED_KV = [
 export default async function handler(req: NextRequest) {
   const cache = req.nextUrl.pathname.split('/')[3]
   // console.log(cache)
-  if (cache && AUTHORIZED_KV.includes(cache)) {
+  if (cache && (AUTHORIZED_KV.includes(cache) || cache === 'top1000_leaderboard')) {
     const data = await kv.get(cache)
     return new NextResponse(JSON.stringify(data), {
       status: 200,
