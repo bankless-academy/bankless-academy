@@ -11,8 +11,7 @@ const Skill = ({ skill, score, max }) => (
   <div
     style={{
       display: 'flex',
-      opacity: '0.5',
-      marginTop: '40px',
+      marginTop: '24px',
       width: '100%',
       height: '40px',
       justifyContent: 'flex-end',
@@ -32,13 +31,25 @@ const Skill = ({ skill, score, max }) => (
     <div
       style={{
         display: 'flex',
-        width: `${(score / max) * 230 + 200}px`,
-        justifyContent: 'flex-end',
-        alignItems: 'center',
+        width: `${(score / max) * 230}px`,
         height: '40px',
         backgroundColor: '#A379BD',
         borderBottomLeftRadius: '2px',
         borderTopLeftRadius: '2px',
+      }}
+    />
+    <div
+      style={{
+        display: 'flex',
+        width: '200px',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        height: '40px',
+        border: '2px solid #8a68a2',
+        borderLeft: '0',
+        backgroundColor: '#2b2738',
+        borderTopRightRadius: '2px',
+        borderBottomRightRadius: '2px',
         textTransform: 'uppercase',
         paddingRight: '20px',
       }}
@@ -51,7 +62,7 @@ const Skill = ({ skill, score, max }) => (
         position: 'absolute',
         top: '-5px',
         height: '50px',
-        right: '198px',
+        right: '199px',
         borderRight: '1px #989898 solid',
       }}
     />
@@ -80,6 +91,13 @@ const Skills = ({ stats }) => (
       score={stats?.donations ? Object.keys(stats?.donations)?.length || 0 : 0}
       max={9}
     />
+    <Skill
+      skill="Stamps"
+      score={
+        stats?.valid_stamps ? Object.keys(stats?.valid_stamps)?.length || 0 : 0
+      }
+      max={8}
+    />
   </div>
 )
 
@@ -89,8 +107,7 @@ const OgSocial = ({
   score,
   stats,
   badgeImageLink,
-}: // type,
-{
+}: {
   explorerName?: string
   explorerAvatar?: string
   score?: number
@@ -101,10 +118,9 @@ const OgSocial = ({
     donations?: any
   }
   badgeImageLink?: string
-  // type?: 'profile' | 'badge'
 }): React.ReactElement => {
-  const profileSocialBackground = `${DOMAIN_URL}/images/profileSocialBackground.png?f=1`
-  const badgeSocialBackground = `${DOMAIN_URL}/images/badgeSocialBackground.png?f=1`
+  const profileSocialBackground = `${DOMAIN_URL}/images/profileSocialBackground.png?f=2`
+  const badgeSocialBackground = `${DOMAIN_URL}/images/badgeSocialBackground.png?f=2`
 
   return (
     <>
@@ -134,8 +150,8 @@ const OgSocial = ({
           style={{
             display: 'flex',
             position: 'absolute',
-            top: '168px',
-            left: '1012px',
+            top: '160px',
+            left: '972px',
             width: '102px',
             height: '63px',
             fontSize: 63,
@@ -186,7 +202,7 @@ const OgSocial = ({
           style={{
             display: 'flex',
             position: 'absolute',
-            top: '276px',
+            top: '300px',
             left: '568px',
             width: '550px',
             height: '258px',
