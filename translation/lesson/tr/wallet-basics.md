@@ -105,105 +105,105 @@ Bazı web3 hizmetleri ile bunun, hatırlanması daha kolay versiyonlarını olu�
 
 Açık anahtarı bir posta kutusunun adresi gibi de düşünebilirsiniz. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.
 
-It is perfectly safe to share your **public key**.
+**Açık anahtarınızı** paylaşmanız tamamen güvenlidir.
 
-**Note:** sometimes a single wallet account can hold multiple public (and `private keys`). Kind of like having many post office boxes under one account.
+**Not:** Bazen tek bir cüzdan hesabı, birden fazla açık anahtar (ve `özel anahtar`) içerebilir. Tek bir hesap altında birçok posta kutusuna sahip olmak gibi.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-9784f47e.svg)
 
-# Your wallet’s private key
+# Cüzdanınızın özel anahtarı
 
-If the public key is like a post office box, then the `private key` is like the key to the box. It is the “password” to your funds and assets.
+Açık anahtar bir posta kutusu gibiyse `özel anahtar` da bu kutunun anahtarıdır. Bu, fonlarınızın ve varlıklarınızın "parolasıdır".
 
 It almost always looks like a random jumble of letters and numbers.
 
-I**t is never safe to share this key — you could lose your wallet and everything in it.**
+**Bu anahtarı paylaşmak kesinlikle güvenli değildir; cüzdanınızı ve içindeki her şeyi kaybedebilirsiniz.**
 
-Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the `wallet`.
+Çoğu kişi, bu parolayı dijital olarak dahi kaydetmemenizi tavsiye eder. Özel anahtara erişimi olan herkes `cüzdanın` içinde ne varsa ona erişebilir.
 
-This is more than just a password. You cannot reset it if you lose access to it.
+Açık anahtar, bir paroladan daha fazlasıdır. Erişiminizi kaybederseniz sıfırlayamazsınız.
 
-Luckily, most `web3` applications and programs do not require you to painstakingly type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.
+Luckily, most `web3` applications and programs do not require you to painstakingly type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. Özel anahtar genellikle arka planda sessizce çalışır.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-075ab481.svg)
 
 # Knowledge Check 2
 
-Your public key is like your _____ and your private key is like your _____ .
+Açık anahtarınız _____, özel anahtarınız _____ gibidir.
 
-- [ ] Routing Number / Account Number
+- [ ] Yönlendirme Numarası/Hesap Numarası
 
-> ℹ️ Try again! Your private key shouldn’t be shared with others.
+> ℹ️ Tekrar deneyin! Özel anahtarınızı başkalarıyla paylaşmamalısınız.
 
-- [ ] Address / Zip code
+- [ ] Adres/Posta kodu
 
-> ℹ️ Try again! Your private key shouldn’t be shared with others.
+> ℹ️ Tekrar deneyin! Özel anahtarınızı başkalarıyla paylaşmamalısınız.
 
-- [ ] Post office box / Box key
+- [ ] Posta kutusu/Kutu anahtarı
 
-> ℹ️ Correct! Your public key allows others to identify you, while your private key controls the assets within.
+> ℹ️ Doğru! Açık anahtarınız başkalarının sizi tanımlamasını sağlarken, özel anahtarınız içerideki varlıkları kontrol eder.
 
-- [ ] Phone Number / Passport Number
+- [ ] Telefon Numarası/Pasaport Numarası
 
-> ℹ️ Try again! These are examples of public & private information, but they don’t grant access to assets.
+> ℹ️ Tekrar deneyin! Bunlar herkese açık ve özel bilgi örnekleridir ancak varlıklara erişim sağlamazlar.
 
-# Recovery Phrase
+# Kurtarma İfadesi
 
-When you set up a new wallet, the software generates a unique `recovery phrase`.
+Yeni bir cüzdan kurduğunuzda yazılım, benzersiz bir `kurtarma ifadesi`oluşturur.
 
-Also sometimes called a “seed phrase” or “secret recovery phrase”, this string of words can be used to access your wallet and crypto assets if:
+Bazen "tohum ifadesi" veya "gizli kurtarma ifadesi" olarak da adlandırılan bu sözcük dizisi, aşağıdaki durumlarda cüzdanınıza ve kripto varlıklarınıza erişmek için kullanılabilir:
 
-- Your `wallet` app or device fails unexpectedly or is damaged.
-- You are unable to access it due to misplacement or theft.
-- You want to access your wallet account through the wallet app on a different computer or device.
+- `Cüzdan` uygulamanızda veya cihazınızda beklenmedik bir arıza ya da hasar oluştuğunda.
+- Yanlış yere koyma veya hırsızlık nedeniyle ona erişemediğinizde.
+- Cüzdan hesabınıza farklı bir bilgisayar veya cihazdaki cüzdan uygulaması aracılığıyla erişmek istediğinizde.
 
-Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. That data is used to generate both the `public key` and `private key` for your wallet.
+Çoğu kurtarma ifadesi, benzersiz bir grup veriyi temsil eden 12 ila 24 sözcükten oluşan bir listedir. Bu veriler, cüzdanınızın hem `açık anahtarını` hem de `özel anahtarını` oluşturmak için kullanılır.
 
 This does **not** change or reset the keys.
 
-Your recovery phrase is essentially an easier to read version of your public/private key pair.
+Kurtarma ifadeniz aslında açık/özel anahtar çiftinizin okunması daha kolay bir versiyonudur.
 
-**Never share a recovery phrase.**
+**Kurtarma ifadesini asla paylaşmayın.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-fdb4cc6b.svg)
 
 # Knowledge Check 3
 
-Can you recover your wallet with a recovery phrase if your device gets damaged or lost?
+Cihazınız hasar görürse veya kaybolursa cüzdanınızı bir kurtarma ifadesiyle kurtarabilir misiniz?
 
-- [ ] No
+- [ ] Hayır
 
-> ℹ️ Try again!
+> ℹ️ Tekrar deneyin!
 
-- [ ] Yes
+- [ ] Evet
 
-> ℹ️ Correct! Recovery phrases grant access to your wallet, even on a multiple devices.
+> ℹ️ Doğru! Kurtarma ifadeleri, birden fazla cihazda bile cüzdanınıza erişim sağlar.
 
-# Types of Wallet
+# Cüzdan Türleri
 
-Just as there are many types of computer software, there many types of wallet. Let’s look at the four main categories:
+Birçok bilgisayar yazılımı türü olduğu gibi, birçok cüzdan türü de mevcuttur. Şimdi dört ana kategoriye bakalım:
 
-- **Custodial wallets:** where a third party is responsible for your private keys.
-- **Self-custody (non-custodial)** **wallets:** where you are responsible for your private keys.
+- **Gözetimli cüzdanlar:** Özel anahtarlarınızdan üçüncü bir tarafın sorumlu olduğu cüzdanlar.
+- **Gözetimsiz (gözetimli olmayan)** **cüzdanlar:** Özel anahtarlarınızdan sizin sorumlu olduğunuz cüzdanlar.
 
-There are two styles of `self-custody wallet`:
+İki tür `gözetimsiz cüzdan` mevcuttur:
 
-- **Hot wallets:** software on your desktop or phone.
-- **Cold wallets:** a piece of hardware (like a memory stick) you store somewhere safe.
+- **Sıcak cüzdanlar:** Masaüstünüzdeki veya telefonunuzdaki yazılım.
+- **Soğuk cüzdanlar:** Güvenli bir yerde sakladığınız bir donanım parçası (flaş disk gibi).
 
-Each wallet solution serves a different use-case. Many advanced users have one of each!
+Her cüzdan çözümü, farklı bir kullanım durumuna hizmet eder. Many advanced users have one of each!
 
-Don’t worry, we’ll only be creating one wallet today.
+Merak etmeyin, bugün sadece bir cüzdan oluşturacağız.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-552ea259.png)
 
-# Custodial Wallets
+# Gözetimli Cüzdanlar
 
-Since your `private key` unlocks access to your `wallet`, keeping it private and secure is very important!
+`Özel anahtarınız`, `cüzdanınıza` erişimin kilidini açtığından, onu gizli ve güvende tutmak çok önemlidir!
 
-`Custodial wallet` services include cryptocurrency exchanges such as Coinbase and Kraken. They are your wallet ‘custodian’ — they look after your private keys for you. You access their services like any other website (with an email login and resettable password).
+`Gözetimli cüzdan` hizmetleri, Coinbase ve Kraken gibi kripto para borsalarını içerir. Bu borsalar, cüzdanınızın 'emanetçisidir'; yani, sizin için özel anahtarlarınıza göz kulak olurlar. Hizmetlerine diğer web siteleri gibi erişirsiniz (bir e-posta girişi ve sıfırlanabilir parola ile).
 
-This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some web3 applications may be limited.
+Bazı insanların ihtiyacı olan tek şey bu olabilir, ancak kripto varlıklarınızı güvence altına alması ve onları alıp satmak veya bir yere göndermek istediğinizde size erişim sağlaması için bu üçüncü taraflara güvenmeniz gerekir. Also, your access to some web3 applications may be limited.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-cda6e7c6.svg)
 
