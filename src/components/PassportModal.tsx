@@ -18,7 +18,7 @@ import Passport from 'components/Passport'
 import ExternalLink from 'components/ExternalLink'
 import { EMPTY_PASSPORT } from 'constants/passport'
 
-const GitcoinModal = ({
+const PassportModal = ({
   isOpen,
   onClose,
   isProfile,
@@ -146,4 +146,4 @@ const GitcoinModal = ({
   )
 }
 
-export default GitcoinModal
+export default PassportModal

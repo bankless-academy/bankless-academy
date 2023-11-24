@@ -17,7 +17,7 @@ import {
 } from 'constants/badges'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { api } from 'utils'
-import GitcoinModal from 'components/GitcoinModal'
+import PassportModal from 'components/PassportModal'
 
 const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
   const { t } = useTranslation()
@@ -251,7 +251,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
       >
         {t('Mint Badge')}
       </Button>
-      <GitcoinModal isOpen={isOpen} onClose={onClose} />
+      <PassportModal isOpen={isOpen} onClose={onClose} />
     </>
   )
 }

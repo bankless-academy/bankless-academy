@@ -14,7 +14,7 @@ import { DONATION_MAPPING } from 'pages/leaderboard'
 import InternalLink from './InternalLink'
 import ExternalLink from './ExternalLink'
 import { STAMP_PROVIDERS } from 'constants/passport'
-import GitcoinModal from 'components/GitcoinModal'
+import PassportModal from 'components/PassportModal'
 
 const Badges = ({
   badges,
@@ -303,7 +303,7 @@ const Badges = ({
                       </Box>
                     )
                   })}
-                  <GitcoinModal
+                  <PassportModal
                     isOpen={isOpen}
                     onClose={onClose}
                     isProfile={true}
