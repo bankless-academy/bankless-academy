@@ -203,131 +203,131 @@ Merak etmeyin, bugün sadece bir cüzdan oluşturacağız.
 
 `Gözetimli cüzdan` hizmetleri, Coinbase ve Kraken gibi kripto para borsalarını içerir. Bu borsalar, cüzdanınızın 'emanetçisidir'; yani, sizin için özel anahtarlarınıza göz kulak olurlar. Hizmetlerine diğer web siteleri gibi erişirsiniz (bir e-posta girişi ve sıfırlanabilir parola ile).
 
-Bazı insanların ihtiyacı olan tek şey bu olabilir, ancak kripto varlıklarınızı güvence altına alması ve onları alıp satmak veya bir yere göndermek istediğinizde size erişim sağlaması için bu üçüncü taraflara güvenmeniz gerekir. Also, your access to some web3 applications may be limited.
+Bazı insanların ihtiyacı olan tek şey bu olabilir, ancak kripto varlıklarınızı güvence altına alması ve onları alıp satmak veya bir yere göndermek istediğinizde size erişim sağlaması için bu üçüncü taraflara güvenmeniz gerekir. Ayrıca, bazı web3 uygulamalarına erişiminiz sınırlı olabilir.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-cda6e7c6.svg)
 
 # Knowledge Check 4
 
-Do you control your private key with a custodial wallet?
+Özel anahtarınızı bir gözetimli cüzdan ile mi kontrol edersiniz?
 
-- [ ] Yes
+- [ ] Evet
 
-> ℹ️ Try again!
+> ℹ️ Tekrar deneyin!
 
-- [ ] No
+- [ ] Hayır
 
-> ℹ️ Correct! Custodial wallets require trust in a third party (custodian) to control your private keys.
+> ℹ️ Doğru! Gözetimli cüzdanlar, özel anahtarlarınızı kontrol etmesi için üçüncü bir tarafa (emanetçi) güvenmenizi gerektirir.
 
-# Non-custodial Wallet
+# Gözetimsiz Cüzdan
 
-A `self-custody wallet` (like MetaMask or Trezor) is when you fully control your `private key`. You have **no custodian,** and you alone are responsible for keeping your private key safe.
+`Gözetimsiz cüzdan` (MetaMask veya Trezor gibi), `özel anahtarınızın` kontrolünün tamamen size ait olduğu cüzdandır. **Emanetçiniz yoktur** ve özel anahtarınızı güvende tutmaktan yalnızca siz sorumlu olursunuz.
 
-These wallets offer the widest range of access and freedom within the world of `web3`. You never have to worry about a third party freezing or mishandling your funds.
+These wallets offer the widest range of access and freedom within the world of `web3`. Üçüncü bir tarafın fonlarınızı dondurması veya kötüye kullanması konusunda kesinlikle endişe etmeniz gerekmez.
 
-The tradeoff is in risk: if you lose access to your `recovery phrase`, or your private key is compromised, there is often very little you can do to restore access to the wallet.
+Ödünleşim risktedir: `Kurtarma ifadenize` erişiminizi kaybederseniz veya özel anahtarınız tehlikeye girerse cüzdana yeniden erişim sağlamak için genellikle yapabileceğiniz çok az şey vardır.
 
-Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.
+Hangi yolu seçerseniz seçin, cüzdan güvenliği konusunda bilgili ve rahat olmanız önemlidir. Bu dersi tamamlamadan önce size bazı ipuçları vereceğiz.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-2ea3202d.svg)
 
 # Knowledge Check 5
 
-Are you responsible for your private key with a self-custody wallet?
+Gözetimsiz cüzdanda özel anahtarınızdan siz mi sorumlusunuz?
 
-- [ ] Yes
+- [ ] Evet
 
-> ℹ️ Correct! With a self-custody wallet you are solely responsible for your private keys.
+> ℹ️ Doğru! Gözetimsiz cüzdanda özel anahtarlarınızdan yalnızca siz sorumlu olursunuz.
 
-- [ ] No
+- [ ] Hayır
 
-> ℹ️ Try again!
+> ℹ️ Tekrar deneyin!
 
-# Hot Wallets
+# Sıcak Cüzdanlar
 
-You will hear the terms “hot” and “cold wallet” quite a bit in web3.
+Web3'te "sıcak" ve "soğuk cüzdan" terimlerini oldukça sık duyacaksınız.
 
-A `hot wallet` is a wallet hosted via an online software program. MetaMask is a good example. These wallets are connected to the internet as long as your device is online, and are named ‘hot wallets’ for this ‘hot’ internet connection.
+`Sıcak cüzdan` çevrimiçi bir yazılım programı aracılığıyla barındırılan bir cüzdandır. MetaMask buna iyi bir örnektir. Bu cüzdanlar, cihazınız çevrimiçi olduğu sürece internete bağlıdır ve bu 'sıcak' internet bağlantısı için 'sıcak cüzdanlar' olarak adlandırılır.
 
-This is the style of wallet we will be creating today. They’re flexible, and great for beginners.
+Bugün oluşturacağımız cüzdan türü budur. Bu cüzdanlar esnektir ve yeni başlayanlar için harikadır.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-0a8332f6.svg)
 
-# Cold Wallets
+# Soğuk Cüzdanlar
 
-As you dive deeper into your web3 journey, you will come to know a landscape full of interesting tech trade-offs.
+Web3 yolculuğunuzun derinliklerine daldıkça, ilginç teknoloji ödünleşimleriyle dolu bir manzarayla tanışacaksınız.
 
-`Cold wallets` grant higher security at the cost of convenience. A cold wallet uses software that lives on a separate hardware device (like a memory stick or external hard drive). You must physically connect the device to a computer for the wallet to be able to access the internet. Cold wallets are named after this ‘cold’ internet connection.
+`Soğuk cüzdanlar` kolaylık pahasına daha yüksek güvenlik sağlar. Soğuk cüzdan, ayrı bir donanım aygıtında (flaş disk veya harici sabit disk gibi) çalışan bir yazılım kullanır. Cüzdanın internete erişebilmesi için cihazı bir bilgisayara fiziksel olarak bağlamanız gerekir. Soğuk cüzdanlar isimlerini bu 'soğuk' internet bağlantısından alır.
 
-They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline — out of reach of digital attackers.
+Genellikle `sıcak cüzdanlardan` daha güvenli oldukları düşünülür çünkü `özel anahtarınız` dijital saldırganların erişemeyeceği bir yerde, çevrimdışı olarak saklanır.
 
-Ledger and Trezor are examples of `cold wallets`.
+Ledger ve Trezor `soğuk cüzdan` örnekleridir.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-cd29cabe.svg)
 
 # Knowledge Check 6
 
-Which wallet type is considered to be more secure?
+Hangi cüzdan türünün daha güvenli olduğu düşünülür?
 
-- [ ] A hot wallet
+- [ ] Sıcak cüzdan
 
-> ℹ️ Try again! A hot wallet has an active internet connection which makes it more susceptible to digital attack.
+> ℹ️ Tekrar deneyin! Sıcak cüzdanın aktif bir internet bağlantısı vardır ve bu bağlantı, onu dijital saldırılara karşı daha hassas hale getirir.
 
-- [ ] A custodial wallet
+- [ ] Gözetimli cüzdan
 
-> ℹ️ Try again! The third party holding the private keys can get hacked or go bankrupt.
+> ℹ️ Tekrar deneyin! Özel anahtarları elinde tutan üçüncü taraf saldırıya uğrayabilir veya iflas edebilir.
 
-- [ ] A mobile wallet
+- [ ] Mobil cüzdan
 
-> ℹ️ Try again! A mobile wallet is more secure than a browser wallet, but it’s not the most secure type of wallet.
+> ℹ️ Tekrar deneyin! Mobil cüzdan, tarayıcı cüzdanından daha güvenlidir, ancak en güvenli cüzdan türü değildir.
 
-- [ ] A cold wallet
+- [ ] Soğuk cüzdan
 
-> ℹ️ Correct! Cold wallets aren’t actively connected to the internet, making them more attack-resistant.
+> ℹ️ Doğru! Soğuk cüzdanlar aktif olarak internete bağlı değildir ve bu da onları saldırılara karşı daha dirençli hale getirir.
 
-# Wallet Security
+# Cüzdan Güvenliği
 
-Regardless if your `self-custody wallet` is hot or cold, there are many smart security practices you should develop.
+`Gözetimsiz cüzdanınızın` sıcak ya da soğuk olmasından bağımsız olarak öğrenmeniz gereken birçok akıllı güvenlik uygulaması mevcuttur.
 
-🖊️ Record your `recovery phrase` on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your `private key` with anyone. **Remember, this is more than just a password.**
+🖊️ `Kurtarma ifadenizi` fiziksel, dayanıklı bir materyalin (bir yaprak kağıt veya hatta çelik gibi) üzerine kaydedin ve çok güvenli bir yerde saklayın. Bu ifadeyi veya `özel anahtarınızı` kimseyle paylaşmayın. **Bunun bir paroladan daha fazlası olduğunu unutmayın.**
 
-🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.
+🔍 Bir blok zinciri ile etkileşimde bulunurken veya küçük miktarlarda bile olsa para gönderirken, ayrıntıları iki kez çok dikkatli bir şekilde kontrol edin. Yanlış ayrıntılar, bir etkileşimden sonra değiştirilemez.
 
-🔭 Spend time researching and gathering info on any `web3` application you plan to interact with before connecting your wallet or signing transactions with it.
+🔭 Cüzdanınızı bağlamadan veya işlemleri imzalamadan önce etkileşimde bulunmayı planladığınız herhangi bir `web3` uygulaması ile ilgili araştırma yapmaya ve bilgi toplamaya zaman ayırın.
 
-💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).
+💰 Yeni şeyler denemek ve web3'ü keşfetmek için düşük miktarda fon içeren cüzdanlar kullanın ve yüksek değerli varlıkları, birden fazla cüzdan hesabında saklamaya çalışın (yani tüm kripto yumurtalarınızı tek bir sepete koymaktan kaçının).
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-9cc67e4c.png)
 
 # Knowledge Check 7
 
-What is the safest way to protect your recovery phrase?
+Kurtarma ifadenizi korumanın en güvenli yolu nedir?
 
-- [ ] Write it on a durable material and store it in a safe place.
+- [ ] Dayanıklı bir materyalin üzerine yazın ve güvenli bir yerde saklayın.
 
-> ℹ️ Correct! A safely stored physical backup with no digital traces is the only safe storage option.
+> ℹ️ Doğru! Dijital iz bırakmadan güvenli bir şekilde saklanan fiziksel yedekleme, tek güvenli depolama seçeneğidir.
 
-- [ ] Save it on your computer and print it out.
+- [ ] Bilgisayarınıza kaydedin ve çıktısını alın.
 
-> ℹ️ Try again! If your computer is hacked, you could lose all assets in your wallet. Printing also opens many attack opportunities.
+> ℹ️ Tekrar deneyin! Bilgisayarınız saldırıya uğrarsa cüzdanınızdaki tüm varlıkları kaybedebilirsiniz. Çıktı almak, birçok saldırı fırsatının da önünü açar.
 
-- [ ] Take a screenshot and save it on your phone.
+- [ ] Bir ekran görüntüsü alın ve telefonunuza kaydedin.
 
-> ℹ️ Try again! If your phone is hacked, you could lose all assets in your wallet.
+> ℹ️ Tekrar deneyin! Telefonunuz saldırıya uğrarsa cüzdanınızdaki tüm varlıkları kaybedebilirsiniz.
 
-- [ ] Save it in your Dropbox account.
+- [ ] Dropbox hesabınıza kaydedin.
 
-> ℹ️ Try again! Use of password managers resulted in a large number of wallet hacks in 2023.
+> ℹ️ Tekrar deneyin! Parola yöneticilerinin kullanımı, 2023'te çok sayıda cüzdanın saldırıya uğramasına neden olmuştur.
 
-# You’re ready to create your first wallet!
+# İlk cüzdanınızı oluşturmaya hazırsınız!
 
-In fact, you’ll need one if you want to claim proof of completing this quest!
+Aslında, bu görevi tamamladığınıza dair kanıt talep etmek istiyorsanız bir cüzdana ihtiyacınız olacak!
 
-There are several self-custody `hot wallet` providers available today. We will explore the popular MetaMask wallet for the rest of this lesson as:
+Günümüzde, çok sayıda gözetimsiz `sıcak cüzdan` sağlayıcısı mevcuttur. Bu dersin geri kalanında popüler MetaMask cüzdanını keşfedeceğiz. Bu cüzdanı tercih etmemizin sebebi şunlardır:
 
-- it is likely to be compatible with most `DeFi` apps.
-- it has a browser extension for Chrome, Brave, Edge, and Firefox internet browsers.
-- it is also available as a mobile app for Android and iOS users.
+- `DeFi` uygulamalarının çoğu ile uyumlu olması muhtemeldir.
+- Chrome, Brave, Edge ve Firefox internet tarayıcıları için bir tarayıcı uzantısına sahiptir.
+- Android ve iOS kullanıcıları için bir mobil uygulama olarak da mevcuttur.
 
 The end of the lesson is right around the corner, where we will share a short video to help you get set up with your MetaMask wallet.
 
@@ -335,13 +335,13 @@ The end of the lesson is right around the corner, where we will share a short vi
 
 # Knowledge Check 8
 
-Is MetaMask a custodial wallet?
+MetaMask gözetimli bir cüzdan mı?
 
-- [ ] Yes
+- [ ] Evet
 
-> ℹ️ Try again!
+> ℹ️ Tekrar deneyin!
 
-- [ ] No
+- [ ] Hayır
 
-> ℹ️ Correct! MetaMask wallets are self-custody wallets controlled by you — and you alone.
+> ℹ️ Doğru! MetaMask cüzdanlar, yalnızca sizin tarafınızdan kontrol edilen gözetimsiz cüzdanlardır.
 
