@@ -2,7 +2,7 @@
 import { Text, Box, Image, SimpleGrid, GridItem } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 
-import { COLLECTIBLE_DETAILS, LESSONS } from 'constants/index'
+import { LESSONS } from 'constants/index'
 import { DONATION_MAPPING } from 'pages/leaderboard'
 import InternalLink from './InternalLink'
 import ExternalLink from './ExternalLink'
