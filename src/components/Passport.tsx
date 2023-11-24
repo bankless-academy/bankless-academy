@@ -5,7 +5,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
 
-import GitcoinPassport from 'components/GitcoinPassport'
+import PassportStamps from 'components/PassportStamps'
 import ExternalLink from 'components/ExternalLink'
 import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
 import { theme } from 'theme/index'
@@ -136,7 +136,7 @@ const PassportComponent = ({
           </Text>
         )}
       </Box>
-      <GitcoinPassport
+      <PassportStamps
         stamps={passportLS ? passportLS.stamps : null}
         displayStamps={displayStamps}
       />

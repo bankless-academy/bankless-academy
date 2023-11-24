@@ -23,7 +23,7 @@ const GitcoinGrid = styled(SimpleGrid)<{ issmallscreen?: string }>`
   }
 `
 
-const GitcoinPassport = ({
+const PassportStamps = ({
   stamps,
   displayStamps,
 }: {
@@ -99,4 +99,4 @@ const GitcoinPassport = ({
   )
 }
 
-export default GitcoinPassport
+export default PassportStamps
