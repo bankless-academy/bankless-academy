@@ -149,6 +149,7 @@ export default function Page({
             h="260px"
             margin="auto"
             borderRadius="50%"
+            backgroundColor="black"
             src={user.avatar}
           />
         </Box>
@@ -229,8 +230,8 @@ export default function Page({
               <ProgressTitle
                 title={t('Collectibles')}
                 score={
-                  user.stats?.datadisks?.length +
-                    user.stats?.handbooks?.length || 0
+                  3 * (user.stats?.datadisks?.length || 0) +
+                  (user.stats?.handbooks?.length || 0)
                 }
                 max={8}
                 description={t(
