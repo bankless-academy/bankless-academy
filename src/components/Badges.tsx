@@ -38,46 +38,6 @@ const Badges = ({
           >
             <SimpleGrid columns={type ? 4 : 3} spacing={2} p={2}>
               {badges?.map((badge, index) => {
-                if (type === 'collectibles') {
-                  const isDatadisk = badge.startsWith('D')
-                  const collectibleTitle =
-                    COLLECTIBLE_DETAILS[badge]?.englishName
-                  return (
-                    <GridItem
-                      key={`badge-${index}`}
-                      justifySelf="center"
-                      alignSelf="center"
-                      p={1}
-                      colSpan={isDatadisk ? 2 : 1}
-                      border="1px #2d292d solid"
-                      borderRadius="8px"
-                      position="relative"
-                    >
-                      <Image
-                        src={`${
-                          isDatadisk
-                            ? '/images/datadisk-001.png'
-                            : '/images/handbook-badge.png'
-                        }`}
-                        alt={collectibleTitle}
-                        title={collectibleTitle}
-                      />
-                      {!isDatadisk && (
-                        <Box
-                          fontWeight="bold"
-                          fontSize="lg"
-                          position="absolute"
-                          bottom="2px"
-                          left="0"
-                          width="100%"
-                          textAlign="center"
-                        >
-                          {badge}
-                        </Box>
-                      )}
-                    </GridItem>
-                  )
-                }
                 if (type === 'donations' && badge in DONATION_MAPPING)
                   return (
                     <Box
@@ -161,6 +121,98 @@ const Badges = ({
                   }
                 }
               })}
+              {type === 'collectibles' && (
+                <>
+                  {[
+                    ...LESSONS.filter((lesson) =>
+                      lesson.collectibleId?.startsWith('D')
+                    ).sort(
+                      (a, b) =>
+                        parseInt(a.collectibleId.replace('D', ''), 16) -
+                        parseInt(b.collectibleId.replace('D', ''), 16)
+                    ),
+                    ...LESSONS.filter((lesson) =>
+                      lesson.collectibleId?.startsWith('H')
+                    ).sort(
+                      (a, b) =>
+                        parseInt(a.collectibleId.replace('H', ''), 16) -
+                        parseInt(b.collectibleId.replace('H', ''), 16)
+                    ),
+                  ].map((lesson, index) => {
+                    const numberOfCollectiblesOwned = (
+                      badges as string[]
+                    ).filter(
+                      (collectibleId) => collectibleId === lesson.collectibleId
+                    )?.length
+                    const isDatadisk = lesson.collectibleId.startsWith('D')
+                    return (
+                      <GridItem
+                        key={`badge-${index}`}
+                        justifySelf="center"
+                        colSpan={isDatadisk ? 2 : 1}
+                        opacity={numberOfCollectiblesOwned > 0 ? '1' : '0.3'}
+                        backgroundColor={
+                          badgeToHighlight === lesson.badgeId
+                            ? 'orange.200'
+                            : 'unset'
+                        }
+                        p={1}
+                        border="1px #2d292d solid"
+                        borderRadius="8px"
+                        position="relative"
+                      >
+                        <InternalLink
+                          href={`/lessons/${lesson.slug}`}
+                          alt={lesson.englishName}
+                        >
+                          <>
+                            <Image
+                              src={`${
+                                isDatadisk
+                                  ? '/images/datadisk-001.png'
+                                  : '/images/handbook-badge.png'
+                              }`}
+                              alt={lesson.name}
+                              title={lesson.name}
+                            />
+                            {!isDatadisk && (
+                              <Box
+                                fontWeight="bold"
+                                fontSize="lg"
+                                position="absolute"
+                                bottom="2px"
+                                left="0"
+                                width="100%"
+                                textAlign="center"
+                                color="white"
+                              >
+                                {lesson.collectibleId}
+                              </Box>
+                            )}
+                            {numberOfCollectiblesOwned > 1 && (
+                              <Box
+                                fontWeight="bold"
+                                fontSize="12px"
+                                position="absolute"
+                                top="-9px"
+                                right="-9px"
+                                width="18px"
+                                height="18px"
+                                textAlign="center"
+                                color="white"
+                                backgroundColor="#8a68a2"
+                                borderRadius="50%"
+                              >
+                                {numberOfCollectiblesOwned}
+                              </Box>
+                            )}
+                          </>
+                        </InternalLink>
+                      </GridItem>
+                    )
+                  })}
+                </>
+              )}
               {type === 'badges' && (
                 <>
                   {LESSONS.filter((lesson) => lesson.badgeId).map(
@@ -196,19 +248,6 @@ const Badges = ({
                     }
                   )}
                 </>
-              )}
-              {isMyProfile && type === 'collectibles' && badges?.length < 8 && (
-                <Box key={`badge-add`} justifySelf="center" p={1}>
-                  <InternalLink href="/lessons">
-                    <Image
-                      src={`/images/add-badge.png`}
-                      width={'100px'}
-                      height="auto"
-                      alt={t('Buy collectible')}
-                      title={t('Buy collectible')}
-                    />
-                  </InternalLink>
-                </Box>
               )}
               {isMyProfile && type === 'donations' && (
                 <Box key={`badge-add`} justifySelf="center" p={1}>
