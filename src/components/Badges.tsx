@@ -1,5 +1,12 @@
 /* eslint-disable no-console */
-import { Text, Box, Image, SimpleGrid, GridItem } from '@chakra-ui/react'
+import {
+  Text,
+  Box,
+  Image,
+  SimpleGrid,
+  GridItem,
+  useDisclosure,
+} from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 
 import { LESSONS } from 'constants/index'
@@ -7,6 +14,7 @@ import { DONATION_MAPPING } from 'pages/leaderboard'
 import InternalLink from './InternalLink'
 import ExternalLink from './ExternalLink'
 import { STAMP_PROVIDERS } from 'constants/passport'
+import GitcoinModal from 'components/GitcoinModal'
 
 const Badges = ({
   badges,
@@ -20,6 +28,8 @@ const Badges = ({
   isMyProfile?: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
   return (
     <>
       {(badges?.length > 0 || type) && (
@@ -286,11 +296,18 @@ const Badges = ({
                             position="absolute"
                             top="-12px"
                             right="-10px"
+                            cursor="pointer"
+                            onClick={() => onOpen()}
                           />
                         )}
                       </Box>
                     )
                   })}
+                  <GitcoinModal
+                    isOpen={isOpen}
+                    onClose={onClose}
+                    isProfile={true}
+                  />
                 </>
               )}
             </SimpleGrid>

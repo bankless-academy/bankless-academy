@@ -105,37 +105,33 @@ const PassportComponent = ({
         ) : (
           <Text fontSize="xl">
             <>
-              {numberOfStampsLeftToCollect > 0 ? (
-                <>
-                  {`Visit here: `}
-                  <ExternalLink href="https://passport.gitcoin.co/?filter=bankless-academy#/dashboard">
-                    <Button
-                      variant="primaryWhite"
-                      color="#5D4E78"
-                      size="lg"
-                      leftIcon={
-                        <Image
-                          width="20px"
-                          src="/images/gitcoin-passport.svg"
-                          alt="Gitcoin Passport"
-                        />
-                      }
-                    >
-                      {t('Gitcoin Passport')}
-                    </Button>
-                  </ExternalLink>
-                  <Box mt="4">
-                    {t(
+              {`Visit here: `}
+              <ExternalLink href="https://passport.gitcoin.co/?filter=bankless-academy#/dashboard">
+                <Button
+                  variant="primaryWhite"
+                  color="#5D4E78"
+                  size="lg"
+                  leftIcon={
+                    <Image
+                      width="20px"
+                      src="/images/gitcoin-passport.svg"
+                      alt="Gitcoin Passport"
+                    />
+                  }
+                >
+                  {t('Gitcoin Passport')}
+                </Button>
+              </ExternalLink>
+              <Box mt="4">
+                {numberOfStampsLeftToCollect > 0
+                  ? t(
                       `Collect {{numberOfStampsLeftToCollect}} more of the following stamps:`,
                       { numberOfStampsLeftToCollect }
+                    )
+                  : t(
+                      'You have collected enough stamps. You can now close this popup and claim your rewards.'
                     )}
-                  </Box>
-                </>
-              ) : (
-                t(
-                  'You have collected enough stamps. You can now close this popup and claim your rewards.'
-                )
-              )}
+              </Box>
             </>
           </Text>
         )}

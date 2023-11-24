@@ -21,9 +21,11 @@ import { EMPTY_PASSPORT } from 'constants/passport'
 const GitcoinModal = ({
   isOpen,
   onClose,
+  isProfile,
 }: {
   isOpen: boolean
   onClose: () => void
+  isProfile?: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
   const toast = useToast()
@@ -32,7 +34,7 @@ const GitcoinModal = ({
   return (
     <Modal
       onClose={() => {
-        if (passportLS?.verified) {
+        if (passportLS?.verified && !isProfile) {
           toast.closeAll()
           toast({
             description: (
@@ -59,7 +61,7 @@ const GitcoinModal = ({
             duration: 10000,
             isClosable: true,
           })
-        } else {
+        } else if (!isProfile) {
           toast.closeAll()
           toast({
             description: (
