@@ -210,7 +210,7 @@ const Lesson = ({
   Quest?: QuestType
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
-  const numberOfSlides = lesson.slides.length
+  const numberOfSlides = lesson.slides?.length
   // HACK: when reducing the number of slides in a lesson
   if (
     parseInt(localStorage.getItem(lesson.slug) || '0') + 1 >=
@@ -599,7 +599,7 @@ const Lesson = ({
                         : selectedAnswerNumber === n
                         ? 'WRONG'
                         : 'UNSELECTED'
-                      if (slide.quiz.answers.length >= n)
+                      if (slide.quiz.answers?.length >= n)
                         return (
                           <QuizAnswer
                             ref={(el) => (answerRef.current[n] = el)}

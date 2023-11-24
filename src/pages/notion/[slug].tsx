@@ -21,8 +21,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   if (
     !slug ||
-    (slug.length !== 32 && !ALLOWED_SLUGS.includes(slug)) ||
-    (slug.length === 32 && !ALLOWED_IDS.includes(slug))
+    (slug?.length !== 32 && !ALLOWED_SLUGS.includes(slug)) ||
+    (slug?.length === 32 && !ALLOWED_IDS.includes(slug))
   ) {
     return {
       props: {
@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   try {
     const data: ExtendedRecordMap = await notion.getPage(
-      slug.length === 32 ? slug : NOTION_PAGES[slug]
+      slug?.length === 32 ? slug : NOTION_PAGES[slug]
     )
     return {
       props: {

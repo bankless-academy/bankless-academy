@@ -65,7 +65,7 @@ const LessonCollectibleModal = ({
   }).value
 
   const lang =
-    typeof window !== 'undefined' && window.location.search.length
+    typeof window !== 'undefined' && window.location.search?.length
       ? window.location.search.replace('?lang=', '')
       : 'en'
 

@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from 'react'
 
 const setActiveNetwork = (chainId, setNetwork) => {
   const children = Object.keys(NETWORKS)
-  for (let i = 0; i < children.length; i++) {
+  for (let i = 0; i < children?.length; i++) {
     if (NETWORKS[children[i]].chainId === Number(chainId)) {
       return setNetwork(NETWORKS[children[i]])
     }

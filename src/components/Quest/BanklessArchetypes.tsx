@@ -85,7 +85,7 @@ const BanklessArchetypes = (): {
       trait_number++
     }
     const matching_score =
-      matching_array.reduce((x, y) => x + y) / matching_array.length
+      matching_array.reduce((x, y) => x + y) / matching_array?.length
     matching_scores.push({ archetype, score: matching_score })
   }
 

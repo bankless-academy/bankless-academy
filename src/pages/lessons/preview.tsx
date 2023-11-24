@@ -45,7 +45,7 @@ const processLesson = (htmlPage, notion_id) => {
       const blockquotes = quizDiv.querySelectorAll('blockquote')
       const labels = quizDiv.querySelectorAll('.checklist label')
 
-      for (let i = 0; i < checkboxes.length; i++) {
+      for (let i = 0; i < checkboxes?.length; i++) {
         const nb = i + 1
         const checkbox: any = checkboxes[i]
         const blockquote = blockquotes[i]

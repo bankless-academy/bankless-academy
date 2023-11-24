@@ -377,11 +377,11 @@ axios
 
                 if (lesson.articleContent.includes('\n\n\n---\n\n')) {
                   const articleContentArray = lesson.articleContent.split('\n\n\n---\n\n')
-                  if (articleContentArray.length && articleContentArray[articleContentArray.length - 1].includes('Explore more lessons')) {
+                  if (articleContentArray?.length && articleContentArray[articleContentArray?.length - 1].includes('Explore more lessons')) {
                     articleContentArray.pop()
                     lesson.articleContent = articleContentArray.join('\n\n\n---\n\n')
                   }
-                  if (articleContentArray.length && articleContentArray[articleContentArray.length - 1].includes('financial or tax advice')) {
+                  if (articleContentArray?.length && articleContentArray[articleContentArray?.length - 1].includes('financial or tax advice')) {
                     articleContentArray.pop()
                     lesson.articleContent = articleContentArray.join('\n\n\n---\n\n')
                   }
@@ -549,7 +549,7 @@ axios
               const blockquotes = quizDiv.window.document.querySelectorAll('blockquote')
               const labels = quizDiv.window.document.querySelectorAll('.checklist label')
 
-              for (let i = 0; i < checkboxes.length; i++) {
+              for (let i = 0; i < checkboxes?.length; i++) {
                 const nb = i + 1
                 const checkbox = checkboxes[i]
                 const blockquote = blockquotes[i]
@@ -565,7 +565,7 @@ axios
                 const isChecked = checkbox?.checked
                 if (isChecked) slide.quiz.rightAnswerNumber = nb
               }
-              if (slide.quiz.feedback.length === 0) delete slide.quiz.feedback
+              if (slide.quiz.feedback?.length === 0) delete slide.quiz.feedback
               if (!slide.quiz.rightAnswerNumber && lesson.slug !== 'bankless-archetypes')
                 throw new Error(
                   `missing right answer, please check ${POTION_API}/html?id=${notion.id}`

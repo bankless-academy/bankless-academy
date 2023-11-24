@@ -31,6 +31,7 @@ export async function getServerSideProps({ query }) {
 
   let error = ''
   if (!address) error = 'missing address'
+  if (error) return { props: { error } }
   const transport = http(
     `https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
   )
@@ -275,7 +276,7 @@ export default function Page({
             <Box w={isSmallScreen ? '100%' : '50%'}>
               <ProgressTitle
                 title={t('Stamps')}
-                score={user.stats?.valid_stamps.length}
+                score={user.stats?.valid_stamps?.length}
                 max={8}
                 description={t(
                   `Each Gitcoin Passport stamp is going to increase you Bankless Explorer score by 1 point.`

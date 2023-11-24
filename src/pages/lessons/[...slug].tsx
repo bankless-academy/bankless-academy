@@ -37,7 +37,7 @@ const processMD = async (md, lang, englishLesson) => {
       const slides = content?.split('# ')
       slides.shift()
       // console.log(slides)
-      for (let i = 0; i < newLesson.slides.length - 1; i++) {
+      for (let i = 0; i < newLesson.slides?.length - 1; i++) {
         // console.log(i)
         const [slide_title] = (slides[i] || '').split('\n\n')
         const slide_content = slides[i]
@@ -80,12 +80,12 @@ const processMD = async (md, lang, englishLesson) => {
           let j = 0
           answers.split('\n').map((quiz) => {
             // console.log(quiz)
-            if (quiz.length && quiz.startsWith('- [ ] ')) {
+            if (quiz?.length && quiz.startsWith('- [ ] ')) {
               newLesson.slides[i].quiz.answers[j] = quiz
                 .replace('- [ ] ', '')
                 .trim()
               j++
-            } else if (quiz.length && quiz.startsWith('> ')) {
+            } else if (quiz?.length && quiz.startsWith('> ')) {
               newLesson.slides[i].quiz.feedback[j - 1] = quiz
                 .replace('> ', '')
                 .trim()
@@ -104,8 +104,8 @@ const processMD = async (md, lang, englishLesson) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params.slug.length === 1 ? params.slug[0] : params.slug[1]
-  const language: any = params.slug.length === 1 ? 'en' : params.slug[0]
+  const slug = params.slug?.length === 1 ? params.slug[0] : params.slug[1]
+  const language: any = params.slug?.length === 1 ? 'en' : params.slug[0]
   let currentLesson = LESSONS.find((lesson: LessonType) => lesson.slug === slug)
   // console.log(currentLesson)
   if (currentLesson.languages) {

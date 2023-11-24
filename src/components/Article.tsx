@@ -535,7 +535,7 @@ const Article = ({
 
   const updateArticlesCollectors = async () => {
     const NFTCollectors = await getArticlesCollectors(lesson.mirrorNFTAddress)
-    setNumberCollected(NFTCollectors.length)
+    setNumberCollected(NFTCollectors?.length)
   }
 
   useEffect(() => {

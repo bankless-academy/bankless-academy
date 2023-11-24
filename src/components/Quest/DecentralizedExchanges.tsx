@@ -126,13 +126,13 @@ const DecentralizedExchanges = (
                   <CheckIcon color={theme.colors.correct} />
                 ) : (
                   tx &&
-                  tx.length !== 0 && (
+                  tx?.length !== 0 && (
                     <CloseIcon color={theme.colors.incorrect} />
                   )
                 )}
               </InputRightElement>
             </InputGroup>
-            {isTransactionVerified === 'false' && tx && tx.length !== 0 && (
+            {isTransactionVerified === 'false' && tx && tx?.length !== 0 && (
               <Box mb="4">
                 <b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash
                 done on <b>Optimism network</b> and not the token approval

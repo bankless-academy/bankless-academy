@@ -141,14 +141,14 @@ const LessonCards: React.FC = () => {
       // don't show on embed or webapp
       !localStorage.getItem('embed')?.length &&
       // user has at least 1 badge
-      badgesMintedLS.length > 0 &&
+      badgesMintedLS?.length > 0 &&
       // user doesn't want to install the Mobile App
       mobilePreferences !== 'no' &&
       // user has collected a new badge
       ((mobilePreferences?.length &&
-        parseInt(mobilePreferences) < badgesMintedLS.length) ||
+        parseInt(mobilePreferences) < badgesMintedLS?.length) ||
         // user has at least 1 badge
-        (!mobilePreferences && badgesMintedLS.length))
+        (!mobilePreferences && badgesMintedLS?.length))
     ) {
       onOpenAppModal()
     }
@@ -173,7 +173,7 @@ const LessonCards: React.FC = () => {
       {Lessons.map((lesson, index) => {
         // lesson not started yet: -1
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
-        // const numberOfSlides = lesson.slides.length
+        // const numberOfSlides = lesson.slides?.length
         const isBadgeMinted = badgesMintedLS.includes(lesson.badgeId)
         const isNotified =
           lesson.publicationStatus === 'planned'

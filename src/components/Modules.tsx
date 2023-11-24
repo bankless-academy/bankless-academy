@@ -48,7 +48,7 @@ const Modules = ({
             (lesson) => lesson.moduleId === module.moduleId
           )
           const moduleLink =
-            lessonsInModule.length === 1
+            lessonsInModule?.length === 1
               ? `/lessons/${lessonsInModule[0].slug}`
               : `/module/${module.slug}`
           const ModuleImage = (

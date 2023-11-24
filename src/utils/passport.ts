@@ -27,7 +27,7 @@ export const filterValidStamps = (stamps: any[]): any[] => {
 export const getNumberOfValidStamps = (stamps: Stamps): number | null => {
   if (stamps === null || !stamps) return null
   const array = Object.values(stamps)
-  if (!array.length) {
+  if (!array?.length) {
     return 0
   }
   return filterValidStamps(Object.values(stamps))?.length || 0

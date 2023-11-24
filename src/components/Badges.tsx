@@ -31,7 +31,7 @@ const Badges = ({
           )}
           <Box
             h={type ? 'unset' : '215px'}
-            overflowY={badges.length <= 6 ? 'hidden' : 'scroll'}
+            overflowY={badges?.length <= 6 ? 'hidden' : 'scroll'}
             overflowX="hidden"
             backgroundColor={type ? 'unset' : 'blackAlpha.200'}
             borderRadius="10px"
@@ -57,10 +57,11 @@ const Badges = ({
                         fontWeight="bold"
                         fontSize="lg"
                         position="absolute"
-                        top="2px"
+                        bottom="2px"
                         left="0"
                         width="100%"
                         textAlign="center"
+                        color="white"
                       >
                         {badge}
                       </Box>
