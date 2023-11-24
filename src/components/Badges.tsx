@@ -106,75 +106,96 @@ const Badges = ({
                       </Box>
                     </Box>
                   )
-                const lesson = LESSONS.find(
-                  (lesson) => lesson.badgeId === badge
-                )
-                if (lesson) {
-                  if (lesson.badgeImageLink.includes('.mp4')) {
-                    return (
-                      <Box
-                        key={`badge-${index}`}
-                        height="78px"
-                        width="78px"
-                        boxShadow="0px 0px 4px 2px #00000060"
-                        borderRadius="3px"
-                        overflow="hidden"
-                        border="1px solid #4b474b"
-                      >
-                        <video
-                          autoPlay
-                          loop
-                          playsInline
-                          muted
-                          style={{
-                            borderRadius: '3px',
-                            overflow: 'hidden',
-                          }}
+                if (!type) {
+                  const lesson = LESSONS.find(
+                    (lesson) => lesson.badgeId === badge
+                  )
+                  if (lesson) {
+                    if (lesson.badgeImageLink.includes('.mp4')) {
+                      return (
+                        <Box
+                          key={`badge-${index}`}
+                          height="78px"
+                          width="78px"
+                          boxShadow="0px 0px 4px 2px #00000060"
+                          borderRadius="3px"
+                          overflow="hidden"
+                          border="1px solid #4b474b"
                         >
-                          <source
+                          <video
+                            autoPlay
+                            loop
+                            playsInline
+                            muted
+                            style={{
+                              borderRadius: '3px',
+                              overflow: 'hidden',
+                            }}
+                          >
+                            <source
+                              src={lesson.badgeImageLink}
+                              type="video/mp4"
+                            ></source>
+                          </video>
+                        </Box>
+                      )
+                    }
+                    // OLD badge display
+                    else
+                      return (
+                        <Box
+                          key={`badge-${index}`}
+                          justifySelf="center"
+                          boxShadow={'0px 0px 4px 2px #00000060'}
+                          borderRadius="3px"
+                          backgroundColor={'blackAlpha.300'}
+                          p={1}
+                        >
+                          <Image
                             src={lesson.badgeImageLink}
-                            type="video/mp4"
-                          ></source>
-                        </video>
-                      </Box>
-                    )
-                  } else
-                    return (
-                      <Box
-                        key={`badge-${index}`}
-                        justifySelf="center"
-                        boxShadow={type ? 'unset' : '0px 0px 4px 2px #00000060'}
-                        borderRadius="3px"
-                        backgroundColor={
-                          badgeToHighlight === badge
-                            ? 'orange.200'
-                            : type
-                            ? 'unset'
-                            : 'blackAlpha.300'
-                        }
-                        p={1}
-                      >
-                        <Image
-                          src={lesson.badgeImageLink}
-                          alt={lesson.name}
-                          title={lesson.name}
-                        />
-                      </Box>
-                    )
+                            alt={lesson.name}
+                            title={lesson.name}
+                          />
+                        </Box>
+                      )
+                  }
                 }
               })}
-              {isMyProfile && type === 'badges' && badges?.length < 9 && (
-                <Box key={`badge-add`} justifySelf="center" p={1}>
-                  <InternalLink href="/lessons">
-                    <Image
-                      src={`/images/add-badge.png`}
-                      width={'100px'}
-                      height="auto"
-                      alt={t('Claim new lesson badge')}
-                      title={t('Claim new lesson badge')}
-                    />
-                  </InternalLink>
-                </Box>
+              {type === 'badges' && (
+                <>
+                  {LESSONS.filter((lesson) => lesson.badgeId).map(
+                    (lesson, index) => {
+                      const ownsBadge = (badges as number[]).includes(
+                        lesson.badgeId
+                      )
+                      return (
+                        <InternalLink
+                          key={`badge-${index}`}
+                          href={`/lessons/${lesson.slug}`}
+                          alt={lesson.englishName}
+                        >
+                          <Box
+                            justifySelf="center"
+                            opacity={ownsBadge ? '1' : '0.3'}
+                            borderRadius="3px"
+                            backgroundColor={
+                              badgeToHighlight === lesson.badgeId
+                                ? 'orange.200'
+                                : 'unset'
+                            }
+                            p={1}
+                          >
+                            <Image
+                              src={lesson.badgeImageLink}
+                              alt={lesson.name}
+                              title={lesson.name}
+                            />
+                          </Box>
+                        </InternalLink>
+                      )
+                    }
+                  )}
+                </>
               )}
               {isMyProfile && type === 'collectibles' && badges?.length < 8 && (
                 <Box key={`badge-add`} justifySelf="center" p={1}>
