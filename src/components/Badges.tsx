@@ -202,7 +202,7 @@ const Badges = ({
                   </ExternalLink>
                 </Box>
               )}
-              {isMyProfile && type === 'stamps' && (
+              {type === 'stamps' && (
                 <>
                   {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
                     const ownsBadge = (badges as string[]).includes(key)
@@ -218,7 +218,7 @@ const Badges = ({
                           borderRadius="8px"
                           title={provider.name}
                         />
-                        {!ownsBadge && (
+                        {isMyProfile && !ownsBadge && (
                           <Image
                             w="30px"
                             src={`/images/add-badge.png`}

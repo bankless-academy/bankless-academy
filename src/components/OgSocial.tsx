@@ -33,7 +33,7 @@ const Skill = ({ skill, score, max }) => (
         display: 'flex',
         width: `${(score / max) * 230}px`,
         height: '40px',
-        backgroundColor: '#A379BD',
+        background: 'linear-gradient(223deg, #3a355a 16.65%, #634c70 95.78%)',
         borderBottomLeftRadius: '2px',
         borderTopLeftRadius: '2px',
       }}
@@ -47,11 +47,12 @@ const Skill = ({ skill, score, max }) => (
         height: '40px',
         border: '2px solid #8a68a2',
         borderLeft: '0',
-        backgroundColor: '#2b2738',
+        backgroundColor: 'transparent',
         borderTopRightRadius: '2px',
         borderBottomRightRadius: '2px',
         textTransform: 'uppercase',
         paddingRight: '20px',
+        paddingBottom: '2px',
       }}
     >
       {skill}
@@ -137,7 +138,7 @@ const OgSocial = ({
         style={{
           display: 'flex',
           position: 'absolute',
-          top: '93px',
+          top: '94px',
           left: '97px',
           width: '312px',
           height: '312px',
@@ -155,7 +156,7 @@ const OgSocial = ({
             width: '102px',
             height: '63px',
             fontSize: 63,
-            fontFamily: '"ClearSans"',
+            fontFamily: 'ClearSans',
             color: '#EAD6FF',
             textAlign: 'center',
             justifyContent: 'center',
@@ -174,7 +175,7 @@ const OgSocial = ({
           width: '433px',
           height: '119px',
           fontSize: 40,
-          fontFamily: '"ClearSans"',
+          fontFamily: 'ClearSans',
           color: '#EAD6FF',
           textAlign: 'center',
           justifyContent: 'center',
@@ -207,7 +208,7 @@ const OgSocial = ({
             width: '550px',
             height: '258px',
             fontSize: 20,
-            fontFamily: '"ClearSans"',
+            fontFamily: 'ClearSans',
             color: 'white',
           }}
         >

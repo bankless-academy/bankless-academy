@@ -154,7 +154,7 @@ export default function Page({
         </Box>
         <Text
           as="h2"
-          fontSize="3xl"
+          fontSize="4xl"
           fontWeight="bold"
           textAlign="center"
           textTransform="uppercase"
