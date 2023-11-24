@@ -47,16 +47,34 @@ const QuestionIcon = (props) => (
 
 const ButtonHelper = ({
   onOpenHelpModal,
+  isProfile,
 }: {
   onOpenHelpModal: any
+  isProfile?: boolean
 }): JSX.Element => {
   const [isHover, setIsHover] = useState(false)
   return (
     <Box
       position="absolute"
       zIndex="2"
-      top={isHover ? '-15px' : '-12px'}
-      right={isHover ? '-15px' : '-12px'}
+      top={
+        isHover
+          ? isProfile
+            ? '-20px'
+            : '-15px'
+          : isProfile
+          ? '-20px'
+          : '-12px'
+      }
+      right={
+        isHover
+          ? isProfile
+            ? '-14px'
+            : '-15px'
+          : isProfile
+          ? '-11px'
+          : '-12px'
+      }
     >
       <IconButton
         variant="unstyled"
@@ -79,10 +97,12 @@ const Helper = ({
   title,
   definition,
   fullscreen,
+  isProfile,
 }: {
   title: ReactNode
   definition: ReactNode
   fullscreen?: boolean
+  isProfile?: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
   const {
@@ -94,7 +114,7 @@ const Helper = ({
 
   return (
     <>
-      <ButtonHelper onOpenHelpModal={onOpenHelpModal} />
+      <ButtonHelper isProfile={isProfile} onOpenHelpModal={onOpenHelpModal} />
       <Modal
         onClose={onCloseHelpModal}
         size={fullscreen && isMobileScreen ? 'full' : 'md'}

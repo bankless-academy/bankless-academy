@@ -214,6 +214,9 @@ export default function Page({
                 title={t('Badges')}
                 score={user.stats.badges || 0}
                 max={9}
+                description={t(
+                  `Each lesson badges is going to increase your Bankless Explorer score by 1 point.`
+                )}
               />
               <Badges
                 badges={user.badgeTokenIds}
@@ -230,6 +233,9 @@ export default function Page({
                     user.stats?.handbooks?.length || 0
                 }
                 max={8}
+                description={t(
+                  `1 DATADISK will get you 3 points and 1 HANDBOOK is equivalent to 1 point.`
+                )}
               />
               <Badges
                 badges={collectibles}
@@ -255,6 +261,9 @@ export default function Page({
                     : 0
                 }
                 max={8}
+                description={t(
+                  `Each time you donate to Bankless Academy via Gitcoin, you increase your score by 1 point. Donation score are only updated after the end of a round.`
+                )}
               />
               <Badges
                 badges={Object.keys(user.donations)}
@@ -267,6 +276,9 @@ export default function Page({
                 title={t('Stamps')}
                 score={user.stats?.valid_stamps.length}
                 max={8}
+                description={t(
+                  `Each Gitcoin Passport stamp is going to increase you Bankless Explorer score by 1 point.`
+                )}
               />
               <Badges
                 badges={user.stats?.valid_stamps}

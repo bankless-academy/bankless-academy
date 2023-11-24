@@ -1,13 +1,17 @@
 import { Box, Text } from '@chakra-ui/react'
+import { ReactNode } from 'react'
+import Helper from 'components/Helper'
 
 const ProgressTitle = ({
   title,
   score,
   max,
+  description,
 }: {
   title: string
   score: number
   max: number
+  description: ReactNode
 }): React.ReactElement => (
   <Box
     borderBottom="1px solid #989898"
@@ -45,6 +49,15 @@ const ProgressTitle = ({
       height="50px"
       right="199px"
       borderRight="1px #989898 solid"
+    />
+    <Helper
+      title={title}
+      isProfile={true}
+      definition={
+        <>
+          <Box>{description}</Box>
+        </>
+      }
     />
   </Box>
 )
