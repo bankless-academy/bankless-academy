@@ -142,7 +142,7 @@ export default function Page({
           w="284px"
           h="284px"
           borderRadius="50%"
-          backgroundImage="linear-gradient(223deg, #3a355a 16.65%, #634c70 95.78%)"
+          backgroundImage="linear-gradient(180deg, #A379BD 0%, #5B5198 100%)"
         >
           <Image
             w="260px"
@@ -195,11 +195,11 @@ export default function Page({
             <Image w="300px" src="/images/bankless-score.png" />
             <Box
               position="absolute"
-              top="69px"
-              width="46px"
+              top="55px"
+              width="72px"
               textAlign="center"
-              left="225px"
-              fontSize="3xl"
+              left="212px"
+              fontSize="5xl"
               fontWeight="bold"
             >
               {user.stats.score || 0}
