@@ -99,6 +99,10 @@ const App = ({
           <WagmiConfig config={wagmiConfig}>
             <Global
               styles={css`
+                @font-face {
+                  font-family: 'ClearSans';
+                  src: url(/fonts/clear-sans/TTF/ClearSans-Bold.ttf);
+                }
                 .web3modal-modal-lightbox {
                   background: linear-gradient(
                     152.97deg,
