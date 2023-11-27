@@ -3,7 +3,7 @@ TITLE: Cüzdan ile İlgili Temel Bilgiler
 DESCRIPTION: İlk kripto cüzdanınızı oluşturun ve güvenli bir şekilde yönetin.
 LANGUAGE: Türkçe
 WRITERS: Ap0ll0517, Jordy
-TRANSLATORS: X
+TRANSLATORS: ilk
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -27,17 +27,17 @@ ________________________________________________________________________________
 
 ---
 
-# Wallet Intro
+# Cüzdana Giriş
 
 **Selamlar!**
 
-Bankless Academy'e hoş geldiniz. We’re excited to guide you on your journey into `web3`. Bu dünyayı keşfeden her kişinin eninde sonunda bir dijital cüzdan oluşturması gerekir.
+Bankless Academy'e hoş geldiniz. `web3` yolculuğunuzda size rehberlik etmekten heyecan duyuyoruz. Bu dünyayı keşfeden herkesin eninde sonunda bir dijital cüzdan oluşturması gerekir.
 
-Cüzdanlar, `web2`'de kullanmaya alışkın olduğunuz hesaplara benzer. Onları web3 uygulamalarına ve sitelerine erişmek için kullanacaksınız ancak anlamanız gereken büyük farklılıklar da mevcut. For example, they can hold cryptocurrency.
+Cüzdanlar, `web2`'de kullanmaya alışkın olduğunuz hesaplara benzer. Onları web3 uygulamalarına ve sitelerine erişmek için kullanacaksınız ancak anlamanız gereken büyük farklılıklar da mevcut. Örneğin, cüzdanlarda kripto paralarınızı tutabilirsiniz.
 
 Doğru kurulan bir cüzdan, dijital varlıklarınızı ve çevrimiçi kimliğinizi korurken yeni ve inanılmaz olanaklara erişmenizi sağlar.
 
-In this lesson, we’ll introduce you to wallets, wallet types, wallet security basics, and end with a video on how to set one up.
+Bu derste size cüzdanları, cüzdan türlerini, cüzdan güvenliğiyle ilgili temel unsurları tanıtıp konuyu bir cüzdanın nasıl kurulacağına dair bir video ile kapatacağız.
 
 Hadi başlayalım!
 
@@ -51,7 +51,7 @@ Kısa tanımı şöyle: `Blok zinciri` ile etkileşimde bulunmak için kullandı
 
 `Cüzdanınız` bir blok zincirine bağlandığında, alışveriş yapabilir, kripto para gibi `dijital varlıkları`  gönderebilir veya alabilir, web3 uygulamalarıyla etkileşimde bulunabilir ve daha birçok şey yapabilirsiniz.
 
-Alışkın olduğunuz normal kullanıcı hesaplarının aksine, tek bir cüzdan, çok sayıda web3 uygulamasına erişmenizi sağlar. It’s like having one account for the entire internet.
+Alışkın olduğunuz normal kullanıcı hesaplarının aksine, tek bir cüzdan, çok sayıda web3 uygulamasına erişmenizi sağlar. Tüm internet için tek bir hesaba sahip olmak gibi.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-5aa3b680.svg)
 
@@ -71,7 +71,7 @@ Cüzdan nedir?
 
 - [ ] Bir blok zinciri
 
-> ℹ️ Tekrar deneyin! Your wallet is hosted on a blockchain.
+> ℹ️ Tekrar deneyin! Cüzdanınız bir blok zinciri üzerinde barındırılır.
 
 - [ ] Bir kripto para birimi
 
@@ -83,19 +83,19 @@ Cüzdan nedir?
 
 - [ ] Bir blok zinciri hesabı
 
-> ℹ️ Doğru! Cüzdanlar, bir blok zinciri ile etkileşim kurmak için kullanılan hesaplardır.
+> ℹ️ Doğru! Cüzdanlar, bir blok zinciri ile etkileşimde bulunmak için kullanılan hesaplardır.
 
 # Cüzdanlar ve Parola Kurtarma
 
-**Here is one of the most important things to understand about web3 wallets: today, there is no “password reset” or frequent password changes.**
+**İşte web3 cüzdanları hakkında anlamanız gereken en önemli şeylerden biri: Günümüzde "parola sıfırlama" veya sık şifre değiştirme yok.**
 
-Çoğumuz bu özelliklere alışkınız. Bir parolayı unutursak bir düğmeye tıklarız, birkaç şey yaparız ve yeni bir parola alırız. Easy.
+Çoğumuz bu özelliklere alışkınız. Parolayı unutursak bir düğmeye tıklarız, birkaç şey yaparız ve yeni bir parola alırız. Kolay bir çözüm.
 
 Cüzdanlarda öyle değil. Blok zincirlerinin çalışma şekli nedeniyle, cüzdanlara oluşturulduklarında bir "ad" ve karmaşık bir "parola" atanır (bunları siz seçmezsiniz).
 
 Bu ad ve parola kombinasyonunun değiştirilmesi mümkün değildir. Bunların her biri hakkında biraz daha bilgi edinelim.
 
-# Your wallet’s public key
+# Cüzdanınızın açık anahtarı
 
 `Açık anahtar` temelde cüzdanınızın adıdır. Bu genellikle rastgele harf ve rakamların bir karışımı gibi görünür.
 
@@ -103,7 +103,7 @@ Bu ad ve parola kombinasyonunun değiştirilmesi mümkün değildir. Bunların h
 
 Bazı web3 hizmetleri ile bunun, hatırlanması daha kolay versiyonlarını oluşturmak mümkün olsa da bu başka bir dersin konusu.
 
-Açık anahtarı bir posta kutusunun adresi gibi de düşünebilirsiniz. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.
+Açık anahtarı bir posta kutusunun adresi gibi de düşünebilirsiniz. Bu anahtar herkese açıktır, herkes tarafından görülebilir ve başkalarına, sizin için gönderecekleri kripto varlıkları, hakkınızda kişisel hiçbir şey ifşa etmeden nereye gönderebileceklerini söyler.
 
 **Açık anahtarınızı** paylaşmanız tamamen güvenlidir.
 
@@ -113,13 +113,13 @@ Açık anahtarı bir posta kutusunun adresi gibi de düşünebilirsiniz. It is p
 
 # Cüzdanınızın özel anahtarı
 
-Açık anahtar bir posta kutusu gibiyse `özel anahtar` da bu kutunun anahtarıdır. Bu, fonlarınızın ve varlıklarınızın "parolasıdır".
+Açık anahtar bir posta kutusu gibiyse `özel anahtar` da bu kutunun anahtarıdır. O, fonlarınızın ve varlıklarınızın "parolasıdır".
 
-It almost always looks like a random jumble of letters and numbers.
+Neredeyse her zaman rastgele harf ve rakamların bir karışımı gibi görünür.
 
 **Bu anahtarı paylaşmak kesinlikle güvenli değildir; cüzdanınızı ve içindeki her şeyi kaybedebilirsiniz.**
 
-Çoğu kişi, bu parolayı dijital olarak dahi kaydetmemenizi tavsiye eder. Özel anahtara erişimi olan herkes `cüzdanın` içinde ne varsa ona erişebilir.
+Çoğu kişi, bu parolayı dijital olarak kaydetmemenizi dahi tavsiye eder. Özel anahtara erişimi olan herkes `cüzdanın` içinde ne varsa ona erişebilir.
 
 Açık anahtar, bir paroladan daha fazlasıdır. Erişiminizi kaybederseniz sıfırlayamazsınız.
 
