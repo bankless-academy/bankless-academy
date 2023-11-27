@@ -141,7 +141,7 @@ Açık anahtarınız _____, özel anahtarınız _____ gibidir.
 
 - [ ] Posta kutusu/Kutu anahtarı
 
-> ℹ️ Doğru! Açık anahtarınız başkalarının sizi tanımlamasını sağlarken, özel anahtarınız içerideki varlıkları kontrol eder.
+> ℹ️ Doğru! Açık anahtarınız başkalarının sizin kim olduğunuzu tespit etmesini sağlarken, özel anahtarınız içerideki varlıkları kontrol eder.
 
 - [ ] Telefon Numarası/Pasaport Numarası
 
@@ -159,7 +159,7 @@ Bazen "tohum ifadesi" veya "gizli kurtarma ifadesi" olarak da adlandırılan bu 
 
 Çoğu kurtarma ifadesi, benzersiz bir grup veriyi temsil eden 12 ila 24 sözcükten oluşan bir listedir. Bu veriler, cüzdanınızın hem `açık anahtarını` hem de `özel anahtarını` oluşturmak için kullanılır.
 
-This does **not** change or reset the keys.
+Bu, anahtarları **değiştirmez veya sıfırlamaz**.
 
 Kurtarma ifadeniz aslında açık/özel anahtar çiftinizin okunması daha kolay bir versiyonudur.
 
@@ -188,10 +188,10 @@ Birçok bilgisayar yazılımı türü olduğu gibi, birçok cüzdan türü de me
 
 İki tür `gözetimsiz cüzdan` mevcuttur:
 
-- **Sıcak cüzdanlar:** Masaüstünüzdeki veya telefonunuzdaki yazılım.
+- **Sıcak cüzdanlar:** Masaüstünüz veya telefonunuzdaki yazılım.
 - **Soğuk cüzdanlar:** Güvenli bir yerde sakladığınız bir donanım parçası (flaş disk gibi).
 
-Her cüzdan çözümü, farklı bir kullanım durumuna hizmet eder. Many advanced users have one of each!
+Her cüzdan çözümü, farklı bir kullanım durumuna hizmet eder. Birçok ileri düzey kullanıcıda her birinden birer tane mevcuttur!
 
 Merak etmeyin, bugün sadece bir cüzdan oluşturacağız.
 
@@ -209,7 +209,7 @@ Bazı insanların ihtiyacı olan tek şey bu olabilir, ancak kripto varlıkları
 
 # Knowledge Check 4
 
-Özel anahtarınızı bir gözetimli cüzdan ile mi kontrol edersiniz?
+Özel anahtarınızı gözetimli bir cüzdan ile mi kontrol edersiniz?
 
 - [ ] Evet
 
@@ -223,7 +223,7 @@ Bazı insanların ihtiyacı olan tek şey bu olabilir, ancak kripto varlıkları
 
 `Gözetimsiz cüzdan` (MetaMask veya Trezor gibi), `özel anahtarınızın` kontrolünün tamamen size ait olduğu cüzdandır. **Emanetçiniz yoktur** ve özel anahtarınızı güvende tutmaktan yalnızca siz sorumlu olursunuz.
 
-These wallets offer the widest range of access and freedom within the world of `web3`. Üçüncü bir tarafın fonlarınızı dondurması veya kötüye kullanması konusunda kesinlikle endişe etmeniz gerekmez.
+Bu cüzdanlar `web3` dünyasında en geniş erişim ve özgürlük yelpazesini sunar. Üçüncü bir tarafın fonlarınızı dondurması veya kötüye kullanması konusunda kesinlikle endişe etmeniz gerekmez.
 
 Ödünleşim risktedir: `Kurtarma ifadenize` erişiminizi kaybederseniz veya özel anahtarınız tehlikeye girerse cüzdana yeniden erişim sağlamak için genellikle yapabileceğiniz çok az şey vardır.
 
@@ -291,7 +291,7 @@ Hangi cüzdan türünün daha güvenli olduğu düşünülür?
 
 🖊️ `Kurtarma ifadenizi` fiziksel, dayanıklı bir materyalin (bir yaprak kağıt veya hatta çelik gibi) üzerine kaydedin ve çok güvenli bir yerde saklayın. Bu ifadeyi veya `özel anahtarınızı` kimseyle paylaşmayın. **Bunun bir paroladan daha fazlası olduğunu unutmayın.**
 
-🔍 Bir blok zinciri ile etkileşimde bulunurken veya küçük miktarlarda bile olsa para gönderirken, ayrıntıları iki kez çok dikkatli bir şekilde kontrol edin. Yanlış ayrıntılar, bir etkileşimden sonra değiştirilemez.
+🔍 Bir blok zinciri ile etkileşimde bulunurken veya küçük miktarlarda bile olsa para gönderirken, ayrıntıları çok dikkatli bir şekilde iki kez kontrol edin. Yanlış ayrıntılar, bir etkileşimden sonra değiştirilemez.
 
 🔭 Cüzdanınızı bağlamadan veya işlemleri imzalamadan önce etkileşimde bulunmayı planladığınız herhangi bir `web3` uygulaması ile ilgili araştırma yapmaya ve bilgi toplamaya zaman ayırın.
 
@@ -323,7 +323,7 @@ Kurtarma ifadenizi korumanın en güvenli yolu nedir?
 
 Aslında, bu görevi tamamladığınıza dair kanıt talep etmek istiyorsanız bir cüzdana ihtiyacınız olacak!
 
-Günümüzde, çok sayıda gözetimsiz `sıcak cüzdan` sağlayıcısı mevcuttur. Bu dersin geri kalanında popüler MetaMask cüzdanını keşfedeceğiz. Bu cüzdanı tercih etmemizin sebebi şunlardır:
+Günümüzde, çok sayıda gözetimsiz `sıcak cüzdan` sağlayıcısı mevcuttur. Bu dersin geri kalanında popüler MetaMask cüzdanını keşfedeceğiz. Bu cüzdanı tercih etmemizin sebepleri şunlardır:
 
 - `DeFi` uygulamalarının çoğu ile uyumlu olması muhtemeldir.
 - Chrome, Brave, Edge ve Firefox internet tarayıcıları için bir tarayıcı uzantısına sahiptir.
