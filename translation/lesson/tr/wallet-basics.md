@@ -123,7 +123,7 @@ Neredeyse her zaman rastgele harf ve rakamların bir karışımı gibi görünü
 
 Açık anahtar, bir paroladan daha fazlasıdır. Erişiminizi kaybederseniz sıfırlayamazsınız.
 
-Luckily, most `web3` applications and programs do not require you to painstakingly type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. Özel anahtar genellikle arka planda sessizce çalışır.
+Neyse ki, çoğu `web3` uygulaması ve programı, her para göndermeniz veya bir blok zinciri işlemini imzalamanız gerektiğinde uzun, karmaşık bir karakter dizisini özenle yazmanızı gerektirmez. Özel anahtar genellikle arka planda sessizce çalışır.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-075ab481.svg)
 
@@ -133,11 +133,11 @@ Açık anahtarınız _____, özel anahtarınız _____ gibidir.
 
 - [ ] Yönlendirme Numarası/Hesap Numarası
 
-> ℹ️ Tekrar deneyin! Özel anahtarınızı başkalarıyla paylaşmamalısınız.
+> ℹ️ Tekrar deneyin! Özel anahtarınız başkalarıyla paylaşılmamalıdır.
 
 - [ ] Adres/Posta kodu
 
-> ℹ️ Tekrar deneyin! Özel anahtarınızı başkalarıyla paylaşmamalısınız.
+> ℹ️ Tekrar deneyin! Özel anahtarınız başkalarıyla paylaşılmamalıdır.
 
 - [ ] Posta kutusu/Kutu anahtarı
 
