@@ -1,7 +1,7 @@
 ---
-TITLE: Wallet Basics
+TITLE: Cüzdan ile İlgili Temel Bilgiler
 DESCRIPTION: İlk kripto cüzdanınızı oluşturun ve güvenli bir şekilde yönetin.
-LANGUAGE: English
+LANGUAGE: Türkçe
 WRITERS: Ap0ll0517, Jordy
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
