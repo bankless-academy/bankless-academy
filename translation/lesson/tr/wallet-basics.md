@@ -329,7 +329,7 @@ Günümüzde, çok sayıda gözetimsiz `sıcak cüzdan` sağlayıcısı mevcuttu
 - Chrome, Brave, Edge ve Firefox internet tarayıcıları için bir tarayıcı uzantısına sahiptir.
 - Android ve iOS kullanıcıları için bir mobil uygulama olarak da mevcuttur.
 
-The end of the lesson is right around the corner, where we will share a short video to help you get set up with your MetaMask wallet.
+MetaMask cüzdanınızı kurmanıza yardımcı olacak kısa bir video paylaşacağımız ders sonuna çok az kaldı.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-87cc5825.svg)
 
