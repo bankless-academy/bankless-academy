@@ -6,9 +6,10 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import badges from 'data/badges.json'
 import { fetchBE } from 'utils/server'
-import { BADGE_ADDRESS } from 'constants/badges'
+import { BADGE_ADDRESS, BADGE_IDS } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
 import { ALLOWED_PROVIDERS } from 'constants/passport'
+import { calculateExplorerScore } from 'utils/index'
 
 async function getCollectors(collectibleAddress) {
   // console.log(collectibleAddress)
@@ -67,6 +68,8 @@ export default async function handler(
       } else {
         badges[address] = badgeIds
       }
+      // intersect badgeIds
+      badges[address] = badges[address].filter(badgeId => BADGE_IDS.includes(badgeId))
     }
 
     for (const [address, badgeIds] of Object.entries(badges)) {
@@ -124,11 +127,7 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
       const rank = []
       for (const address of Object.keys(leaderboard)) {
         // score
-        const score = 3 * (leaderboard[address]?.datadisks?.length || 0) +
-          (leaderboard[address]?.handbooks?.length || 0) +
-          (leaderboard[address]?.badges || 0) +
-          (Object.keys(leaderboard[address]?.donations || {})?.length || 0) +
-          (leaderboard[address]?.valid_stamps?.length || 0)
+        const score = calculateExplorerScore(leaderboard[address])
 
         leaderboard[address].score = score
         // leaderboard[address].donations_count = leaderboard[address].donations_count || 0

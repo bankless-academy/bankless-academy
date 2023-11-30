@@ -26,6 +26,7 @@ import { NETWORKS } from 'constants/networks'
 import UDPolygonABI from 'abis/UDPolygon.json'
 import UDABI from 'abis/UD.json'
 import { LessonType } from 'entities/lesson'
+import { UserStatsType } from 'entities/user'
 
 declare global {
   interface Window {
@@ -642,4 +643,12 @@ export const scrollTop = () => {
 
 export const lessonLink = (lesson: LessonType) => {
   return `${DOMAIN_URL}/lessons/${lesson.slug}`
+}
+
+export function calculateExplorerScore(stats: UserStatsType) {
+  return 3 * (stats?.datadisks?.length || 0) +
+    (stats?.handbooks?.length || 0) +
+    (stats?.badges || 0) +
+    (Object.keys(stats?.donations || {})?.length || 0) +
+    (stats?.valid_stamps?.length || 0)
 }
