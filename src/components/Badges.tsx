@@ -276,7 +276,7 @@ const Badges = ({
               {type === 'stamps' && (
                 <>
                   {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
-                    const ownsBadge = (badges as string[]).includes(key)
+                    const ownsBadge = (badges as string[])?.includes(key)
                     return (
                       <Box key={`badge-${key}`} p={1} position="relative">
                         <Image
