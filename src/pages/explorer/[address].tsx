@@ -81,12 +81,14 @@ export default function Page({
         else {
           setFullProfileAddress(fullAddress)
           const res = await fetch(`/api/user/${fullAddress}`)
-          if (!res.ok) {
-            setError('Failed to fetch user data.')
-          }
+          if (!res.ok) setError('Failed to fetch user data.')
           const user: UserType = await res.json()
-          if (user) setUser(user)
-          console.log(user)
+          if (user?.error) {
+            setError(user?.error)
+          } else if (user) {
+            setUser(user)
+            console.log(user)
+          }
         }
       } catch (error) {
         console.log(error)
@@ -267,7 +269,7 @@ export default function Page({
                   )}
                 />
                 <Badges
-                  badges={Object.keys(user.donations)}
+                  badges={Object.keys(user.stats?.donations)}
                   type="donations"
                   isMyProfile={isMyProfile}
                 />
