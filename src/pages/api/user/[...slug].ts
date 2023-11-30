@@ -5,11 +5,12 @@ import { mainnet } from 'viem/chains'
 import { createPublicClient, http } from 'viem'
 
 import kudosBadges from 'data/badges.json'
-import { ALCHEMY_KEY_BACKEND } from 'constants/index'
+import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_IDS, BADGE_API, BADGE_TO_KUDOS_IDS } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
-import { UserType } from 'entities/user'
-import { kv } from '@vercel/kv'
+import { UserStatsType, UserType } from 'entities/user'
+import { ALLOWED_PROVIDERS } from 'constants/passport'
+import { calculateExplorerScore } from 'utils/index'
 
 async function getBadgeTokensIds(address: string): Promise<number[]> {
   try {
@@ -32,6 +33,50 @@ async function getBadgeTokensIds(address: string): Promise<number[]> {
   }
 }
 
+async function getDatadisksCollected(address: string): Promise<string[]> {
+  try {
+    const ownerNFTs = await axios.get(
+      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY_BACKEND}/getNFTs?owner=${address}&pageSize=100${COLLECTIBLE_ADDRESSES.map(
+        (collectibleAddress) => `&contractAddresses[]=${collectibleAddress}`
+      ).join('')}&withMetadata=false`
+    )
+    const datadisks = []
+    if (ownerNFTs.data) {
+      // console.log(ownerNFTs.data.ownedNfts)
+      for (const nft of ownerNFTs.data.ownedNfts) {
+        const datadisk = (LESSONS.find(lesson => lesson.lessonCollectibleTokenAddress?.toLowerCase() === nft.contract.address?.toLowerCase())).collectibleId || ''
+        if (datadisk) datadisks.push(datadisk)
+      }
+    }
+    return datadisks
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
+async function getHandbooksCollected(address: string): Promise<string[]> {
+  try {
+    const ownerNFTs = await axios.get(
+      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY_BACKEND}/getNFTs?owner=${address}&pageSize=100${MIRROR_ARTICLE_ADDRESSES.map(
+        (articleAddress) => `&contractAddresses[]=${articleAddress}`
+      ).join('')}&withMetadata=false`
+    )
+    const handbooks = []
+    if (ownerNFTs.data) {
+      // console.log(ownerNFTs.data.ownedNfts)
+      for (const nft of ownerNFTs.data.ownedNfts) {
+        const handbook = (LESSONS.find(lesson => lesson.mirrorNFTAddress?.toLowerCase() === nft.contract.address?.toLowerCase())).collectibleId || ''
+        if (handbook) handbooks.push(handbook)
+      }
+    }
+    return handbooks
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -46,21 +91,22 @@ export default async function handler(
 
   const [userExist] = await db(TABLES.users)
     .select(
-      'id',
-      'ens_name',
-      'ens_avatar',
-      'donations'
+      TABLE.users.id,
+      TABLE.users.ens_name,
+      TABLE.users.ens_avatar,
+      TABLE.users.donations,
+      TABLE.users.gitcoin_stamps
     )
     .whereILike('address', address)
   console.log('user', userExist)
-  if (!userExist) res.status(200).json({ error: 'user not found' })
+  if (!userExist) res.status(200).json({ error: 'Profile not found.' })
 
   const oldBadgeTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase] : []
   console.log(oldBadgeTokenIds)
-  const badgeTokenIds = [
+  const badgeTokenIds = [...new Set([
     ...(await getBadgeTokensIds(address)),
     ...oldBadgeTokenIds
-  ]
+  ])]
 
   const kudosTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase].map(token => BADGE_TO_KUDOS_IDS[token.toString()]).filter(token => token) : []
   console.log(kudosTokenIds)
@@ -89,15 +135,30 @@ export default async function handler(
       .update({ ens_name: ensName, ens_avatar: avatar?.length < 255 && avatar !== DEFAULT_AVATAR ? avatar : null })
   }
 
-  const leaderboard = (await kv.get('leaderboard') as any)?.data
+  const stats: UserStatsType = {}
+  // datadisks
+  stats.datadisks = await getDatadisksCollected(addressLowerCase)
+  // handbooks
+  stats.handbooks = await getHandbooksCollected(addressLowerCase)
+  // badges
+  stats.badges = badgeTokenIds?.length
+  // valid_stamps
+  if (userExist.gitcoin_stamps) {
+    const stamps = Object.keys(userExist.gitcoin_stamps)
+    stats.valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
+  }
+  // donations
+  stats.donations = userExist.donations
+  stats.score = calculateExplorerScore(stats)
+
+  console.log(stats)
 
   const data: UserType = {
     ensName,
     avatar: avatar || DEFAULT_AVATAR,
-    stats: leaderboard[addressLowerCase] || {},
-    badgeTokenIds: [...new Set(badgeTokenIds)],
+    stats,
+    badgeTokenIds,
     kudosTokenIds,
-    donations: userExist.donations
   }
 
   return res.status(200).json(data)
