@@ -72,6 +72,7 @@ const columns = [
               width="30px"
               height="30px"
               borderRadius="50%"
+              loading="lazy"
               mx="2"
               src={
                 info.row.original?.ens_avatar || '/images/default_avatar.png'
