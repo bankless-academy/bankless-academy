@@ -3,6 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 import { mainnet } from 'viem/chains'
 import { createPublicClient, http } from 'viem'
+import { normalize } from 'viem/ens'
 
 import kudosBadges from 'data/badges.json'
 import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
@@ -84,10 +85,24 @@ export default async function handler(
   const {
     slug: [address],
   } = req.query
-  const addressLowerCase = address.toLowerCase()
+  let addressLowerCase = address.toLowerCase()
   // console.log('address', address)
 
-  if (!address || !address.startsWith('0x')) return res.status(400).json({ error: 'Wrong params' })
+  if (!address) return res.status(400).json({ error: 'Wrong params' })
+  const transport = http(`https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`)
+  const client = createPublicClient({
+    chain: mainnet,
+    transport,
+  })
+
+  if (address.endsWith('.eth')) {
+    const fullAddress = await client.getEnsAddress({ name: normalize(addressLowerCase) })
+    if (fullAddress) {
+      addressLowerCase = fullAddress
+    } else {
+      res.status(400).json({ error: 'Wrong params' })
+    }
+  }
 
   const [userExist] = await db(TABLES.users)
     .select(
@@ -97,27 +112,21 @@ export default async function handler(
       TABLE.users.donations,
       TABLE.users.gitcoin_stamps
     )
-    .whereILike('address', address)
+    .whereILike('address', addressLowerCase)
   console.log('user', userExist)
   if (!userExist) res.status(200).json({ error: 'Profile not found.' })
 
   const oldBadgeTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase] : []
   console.log(oldBadgeTokenIds)
   const badgeTokenIds = [...new Set([
-    ...(await getBadgeTokensIds(address)),
+    ...(await getBadgeTokensIds(addressLowerCase)),
     ...oldBadgeTokenIds
   ])]
 
   const kudosTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase].map(token => BADGE_TO_KUDOS_IDS[token.toString()]).filter(token => token) : []
   console.log(kudosTokenIds)
 
-  const transport = http(`https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`)
-  const client = createPublicClient({
-    chain: mainnet,
-    transport,
-  })
-
-  const ensName = await client.getEnsName({ address: address as `0x${string}` })
+  const ensName = await client.getEnsName({ address: addressLowerCase as `0x${string}` })
   // console.log(ensName)
 
   const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/default_avatar.png'
