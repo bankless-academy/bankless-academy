@@ -57,7 +57,7 @@ A differenza dei normali account a cui sei abituato, un singolo portafoglio ti p
 
 # Creare un portafoglio è difficile?
 
-Un tempo lo era, ma oggi chiunque può creare facilmente un portafoglio.
+It used to be difficult, but these days anyone can create a wallet quite easily.
 
 I portafogli sono essenzialmente programmi informatici. Se ti senti a tuo agio nello scaricare e installare software sul tuo computer (o app sul tuo telefono), allora non avrai problemi a creare il tuo primo portafoglio.
 
