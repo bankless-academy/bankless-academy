@@ -57,7 +57,7 @@ Unlike regular user accounts you’re used to, a single wallet lets you access a
 
 # Is creating a wallet difficult?
 
-It used to be, but these days anyone can create a wallet quite easily.
+It used to be difficult, but these days anyone can create a wallet quite easily.
 
 Wallets are essentially computer programs. If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.
 
