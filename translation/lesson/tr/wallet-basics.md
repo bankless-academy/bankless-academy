@@ -57,7 +57,7 @@ Alışkın olduğunuz normal kullanıcı hesaplarının aksine, tek bir cüzdan,
 
 # Cüzdan oluşturmak zor mu?
 
-Eskiden öyleydi, ancak bugünlerde herkes oldukça kolay bir şekilde cüzdan oluşturabiliyor.
+It used to be difficult, but these days anyone can create a wallet quite easily.
 
 Cüzdanlar temelde bilgisayar programlarıdır. Bilgisayarınıza yazılım (veya telefonunuza uygulama) indirme ve yükleme konusunda rahatsanız ilk cüzdanınızı oluştururken sorun yaşamazsınız.
 
