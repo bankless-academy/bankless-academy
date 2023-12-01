@@ -298,7 +298,7 @@ Why would you use a Decentralized Exchange over a Centralized Exchange?
 
 There are many Decentralized Exchanges in DeFi, and some are better than others. Consider these five key factors when deciding on which DEX to use:
 
-🥇 **Legitimacy****:** Is the entity well known for its trustworthiness, quality, and longevity?
+🥇 **Legitimacy:** Is the entity well known for its trustworthiness, quality, and longevity?
 
 ⛲ **Liquidity:** Is the liquidity pool `TVL` high enough to minimize price impact?
 
