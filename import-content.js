@@ -702,12 +702,14 @@ axios
               lessonContentMD = slides.join("")
 
               // HACK: replace image
-              const imageRegex = /!\[.*?\]\((.*?)\)/g;
+              const imageRegex = /!\[.*?\]\(([^)]+)\)/g
+              let matches = []
               let match
-              let i = 0
-              while ((match = imageRegex.exec(lessonContentMD)) !== null) {
-                lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${lesson.imageLinks[i]}`)
-                i++
+              while ((match = imageRegex.exec(lessonContentMD)) !== null && matches.length < lesson.imageLinks.length) {
+                matches.push(match[1])
+              }
+              for (let i = 0; i < matches.length; i++) {
+                lessonContentMD = lessonContentMD.replace(matches[i], `https://app.banklessacademy.com${lesson.imageLinks[i]}`)
               }
               // write/update file
               const lessonPath = `translation/lesson/en/${lesson.slug}.md`
