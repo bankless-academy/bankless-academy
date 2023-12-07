@@ -352,9 +352,11 @@ const Lesson = ({
           //   document.location.href = lesson.endOfLessonRedirect
         }
       } else {
-        // defaut: go back to lessons
-        if (IS_WHITELABEL) router.push('/')
-        else router.push('/lessons')
+        if (IS_WHITELABEL) closeLesson()
+        else {
+          // defaut: go back to lessons
+          router.push('/lessons')
+        }
       }
     }
     setSelectedAnswerNumber(null)
