@@ -22,7 +22,7 @@ const InternalLink = ({
     LESSONS.some(
       (lesson) =>
         lesson.slug === href.replace('/lessons/', '') &&
-        (lesson.languages as any).includes(i18nextLng)
+        (lesson.languages as any)?.includes(i18nextLng)
     )
       ? href.replace('/lessons/', `/lessons/${i18nextLng}/`)
       : href
