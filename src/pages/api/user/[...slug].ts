@@ -98,7 +98,7 @@ export default async function handler(
   if (address.endsWith('.eth')) {
     const fullAddress = await client.getEnsAddress({ name: normalize(addressLowerCase) })
     if (fullAddress) {
-      addressLowerCase = fullAddress
+      addressLowerCase = fullAddress.toLowerCase()
     } else {
       res.status(400).json({ error: 'Wrong params' })
     }
@@ -163,6 +163,7 @@ export default async function handler(
   console.log(stats)
 
   const data: UserType = {
+    address: addressLowerCase,
     ensName,
     avatar: avatar || DEFAULT_AVATAR,
     stats,

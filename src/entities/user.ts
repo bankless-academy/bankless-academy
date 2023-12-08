@@ -10,6 +10,7 @@ export interface UserStatsType {
   rank?: number
 }
 export interface UserType {
+  address: string
   ensName: string
   avatar: string
   stats?: UserStatsType
