@@ -45,7 +45,7 @@ const Skill = ({ skill, score, max }) => (
       style={{
         display: 'flex',
         width: '200px',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         alignItems: 'center',
         height: '40px',
         border: '2px solid #8a68a2',
@@ -54,7 +54,6 @@ const Skill = ({ skill, score, max }) => (
         borderTopRightRadius: '2px',
         borderBottomRightRadius: '2px',
         textTransform: 'uppercase',
-        paddingRight: '20px',
         paddingBottom: '2px',
       }}
     >
