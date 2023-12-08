@@ -1,4 +1,7 @@
-import { DOMAIN_URL } from 'constants/index'
+import { MAX_BADGES } from 'constants/badges'
+import { MAX_DONATIONS } from 'constants/donations'
+import { DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
+import { MAX_STAMPS } from 'constants/passport'
 
 const DEFAULT_IMAGE =
   'https://app.banklessacademy.com/images/default_avatar.png'
@@ -81,25 +84,25 @@ const Skills = ({ stats }) => (
       flexWrap: 'wrap',
     }}
   >
-    <Skill skill="Badges" score={stats?.badges || 0} max={9} />
+    <Skill skill="Badges" score={stats?.badges || 0} max={MAX_BADGES} />
     <Skill
       skill="Collectibles"
       score={
         3 * (stats?.datadisks?.length || 0) + (stats?.handbooks?.length || 0)
       }
-      max={8}
+      max={MAX_COLLECTIBLES}
     />
     <Skill
       skill="Donations"
       score={stats?.donations ? Object.keys(stats?.donations)?.length || 0 : 0}
-      max={9}
+      max={MAX_DONATIONS}
     />
     <Skill
       skill="Stamps"
       score={
         stats?.valid_stamps ? Object.keys(stats?.valid_stamps)?.length || 0 : 0
       }
-      max={8}
+      max={MAX_STAMPS}
     />
   </div>
 )

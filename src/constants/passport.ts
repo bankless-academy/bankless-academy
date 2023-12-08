@@ -58,3 +58,5 @@ export const EMPTY_PASSPORT = {
 }
 
 export const ALLOWED_PROVIDERS = Object.keys(STAMP_PROVIDERS)
+
+export const MAX_STAMPS = ALLOWED_PROVIDERS?.length

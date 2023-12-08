@@ -14,16 +14,18 @@ import { UserPlus } from '@phosphor-icons/react'
 import router from 'next/router'
 import { useAccount } from 'wagmi'
 import { t } from 'i18next'
-import { fetchEnsAddress } from '@wagmi/core'
 
 import Badges from 'components/Badges'
 import Card from 'components/Card'
 import { MetaData } from 'components/Head'
-import { DOMAIN_URL } from 'constants/index'
+import { DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { UserType } from 'entities/user'
 import { shortenAddress } from 'utils'
 import ProgressTitle from 'components/ProgressTitle'
 import ExternalLink from 'components/ExternalLink'
+import { MAX_DONATIONS } from 'constants/donations'
+import { MAX_BADGES } from 'constants/badges'
+import { MAX_STAMPS } from 'constants/passport'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -73,22 +75,15 @@ export default function Page({
   useEffect(() => {
     const loadUser = async () => {
       try {
-        const fullAddress = profileAddress?.endsWith('.eth')
-          ? (await fetchEnsAddress({ name: profileAddress }))?.toLowerCase()
-          : profileAddress?.toLowerCase()
-        console.log(fullAddress)
-        if (!fullAddress) setError('No address found')
-        else {
-          setFullProfileAddress(fullAddress)
-          const res = await fetch(`/api/user/${fullAddress}`)
-          if (!res.ok) setError('Failed to fetch user data.')
-          const user: UserType = await res.json()
-          if (user?.error) {
-            setError(user?.error)
-          } else if (user) {
-            setUser(user)
-            console.log(user)
-          }
+        const res = await fetch(`/api/user/${profileAddress}`)
+        if (!res.ok) setError('Failed to fetch user data.')
+        const user: UserType = await res.json()
+        if (user?.error) {
+          setError(user?.error)
+        } else if (user) {
+          setFullProfileAddress(user.address)
+          setUser(user)
+          console.log(user)
         }
       } catch (error) {
         console.log(error)
@@ -216,7 +211,7 @@ export default function Page({
                 <ProgressTitle
                   title={t('Badges')}
                   score={user.stats.badges || 0}
-                  max={9}
+                  max={MAX_BADGES}
                   description={t(
                     `Each lesson badges is going to increase your Bankless Explorer score by 1 point.`
                   )}
@@ -235,7 +230,7 @@ export default function Page({
                     3 * (user.stats?.datadisks?.length || 0) +
                     (user.stats?.handbooks?.length || 0)
                   }
-                  max={8}
+                  max={MAX_COLLECTIBLES}
                   description={t(
                     `1 DATADISK will get you 3 points and 1 HANDBOOK is equivalent to 1 point.`
                   )}
@@ -263,7 +258,7 @@ export default function Page({
                       ? Object.keys(user.stats?.donations)?.length || 0
                       : 0
                   }
-                  max={8}
+                  max={MAX_DONATIONS}
                   description={t(
                     `Each time you donate to Bankless Academy via Gitcoin, you increase your score by 1 point. Donation score are only updated after the end of a round.`
                   )}
@@ -278,7 +273,7 @@ export default function Page({
                 <ProgressTitle
                   title={t('Stamps')}
                   score={user.stats?.valid_stamps?.length}
-                  max={8}
+                  max={MAX_STAMPS}
                   description={t(
                     `Each Gitcoin Passport stamp is going to increase you Bankless Explorer score by 1 point.`
                   )}
@@ -286,7 +281,7 @@ export default function Page({
                 <Badges
                   badges={user.stats?.valid_stamps}
                   type="stamps"
-                  isMyProfile={isMyProfile}
+                  isMyProfile={address && isMyProfile}
                 />
               </Box>
             </Box>

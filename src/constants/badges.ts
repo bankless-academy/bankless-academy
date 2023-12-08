@@ -5,6 +5,8 @@ const badgeIds = LESSONS.filter((lesson) => lesson.badgeId).map(
   (lesson) => lesson.badgeId
 )
 
+export const MAX_BADGES = badgeIds?.length
+
 export const BADGE_IDS: number[] = badgeIds.filter(
   (item, index) => badgeIds.indexOf(item) === index
 )

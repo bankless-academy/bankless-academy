@@ -116,6 +116,9 @@ export const COLLECTIBLE_ADDRESSES = LESSONS.filter(
   (lesson) => lesson.lessonCollectibleTokenAddress
 ).map((lesson) => lesson.lessonCollectibleTokenAddress)
 
+
+export const MAX_COLLECTIBLES = Object.keys(COLLECTIBLE_DETAILS).reduce((previousValue, currentValue) => previousValue + (currentValue.startsWith('D') ? 3 * 2 : 1), 0)
+
 export const ACTIVATE_MIXPANEL = !!process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID
 
 export const KEYWORDS =
