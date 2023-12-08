@@ -10,9 +10,9 @@ import {
 import { useTranslation } from 'react-i18next'
 
 import { LESSONS } from 'constants/index'
-import { DONATION_MAPPING } from 'pages/leaderboard'
+import { DONATION_MAPPING } from 'constants/donations'
 import InternalLink from './InternalLink'
-import ExternalLink from './ExternalLink'
+// import ExternalLink from './ExternalLink'
 import { STAMP_PROVIDERS } from 'constants/passport'
 import PassportModal from 'components/PassportModal'
 
@@ -260,7 +260,8 @@ const Badges = ({
                   )}
                 </>
               )}
-              {isMyProfile && type === 'donations' && (
+              {/* Ongoing Donation Round */}
+              {/* {isMyProfile && type === 'donations' && (
                 <Box key={`badge-add`} justifySelf="center" p={1}>
                   <ExternalLink href="https://explorer.gitcoin.co/#/round/424/0x98720dd1925d34a2453ebc1f91c9d48e7e89ec29/0x98720dd1925d34a2453ebc1f91c9d48e7e89ec29-175">
                     <Image
@@ -272,7 +273,7 @@ const Badges = ({
                     />
                   </ExternalLink>
                 </Box>
-              )}
+              )} */}
               {type === 'stamps' && (
                 <>
                   {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
