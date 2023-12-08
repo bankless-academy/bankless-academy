@@ -11,6 +11,7 @@ import InternalLink from 'components/InternalLink'
 import { useRouter } from 'next/router'
 import { STAMP_PROVIDERS } from 'constants/passport'
 import { COLLECTIBLE_DETAILS } from 'constants/index'
+import { DONATION_MAPPING } from 'constants/donations'
 
 const pageMeta: MetaData = {
   title: 'Bankless Explorer Leaderboard',
@@ -20,18 +21,6 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: { pageMeta },
   }
-}
-
-export const DONATION_MAPPING = {
-  GCR1: 'Gitcoin Citizen Round 1',
-  GR11: 'Gitcoin Round 11',
-  GR12: 'Gitcoin Round 12',
-  GR13: 'Gitcoin Round 13',
-  GR14: 'Gitcoin Round 14',
-  GR15: 'Gitcoin Round 15',
-  GR16: 'Gitcoin Round 16',
-  GR17: 'Gitcoin Round 17',
-  GR18: 'Gitcoin Round 18',
 }
 
 export const getDonationdetails = (donations) => {
