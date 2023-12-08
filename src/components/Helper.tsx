@@ -60,10 +60,10 @@ const ButtonHelper = ({
       top={
         isHover
           ? isProfile
-            ? '-20px'
+            ? '-16px'
             : '-15px'
           : isProfile
-          ? '-20px'
+          ? '-16px'
           : '-12px'
       }
       right={
