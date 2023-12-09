@@ -35,13 +35,13 @@ const websiteFeeds = [
 ]
 
 const parser = new Parser()
-const parserWithImage = new Parser({
-  customFields: {
-    item: [
-      ['media:content', 'image', { keepArray: false }],
-    ]
-  }
-})
+// const parserWithImage = new Parser({
+//   customFields: {
+//     item: [
+//       ['media:content', 'image', { keepArray: false }],
+//     ]
+//   }
+// })
 const loadFeeds = async () => {
   try {
     const res = await Promise.all(websiteFeeds.map(website => parser.parseURL(website.feed)))
@@ -76,15 +76,15 @@ export default async function handler(
     // console.log(feed)
     const featured = []
     // bankless.com
-    const latestBanklessArticle = (await parserWithImage.parseURL('https://www.bankless.com/rss/feed')).items[0]
+    // const latestBanklessArticle = (await parserWithImage.parseURL('https://www.bankless.com/rss/feed')).items[0]
     // console.log(latestBanklessArticle)
-    featured.push({
-      title: latestBanklessArticle.title,
-      link: `${latestBanklessArticle.link}?ref=bankless.community`,
-      pubDate: latestBanklessArticle.pubDate,
-      website: 'Bankless',
-      image: latestBanklessArticle.image['$']['url']
-    })
+    // featured.push({
+    //   title: latestBanklessArticle.title,
+    //   link: `${latestBanklessArticle.link}?ref=bankless.community`,
+    //   pubDate: latestBanklessArticle.pubDate,
+    //   website: 'Bankless',
+    //   image: latestBanklessArticle.image['$']['url']
+    // })
     // bDAO Community Call
     const latestYoutubeCC = (await parser.parseURL('https://www.youtube.com/feeds/videos.xml?playlist_id=PLxKM96XfN8gCGOxl0wxduL8kfa4wRBvfX'))?.items[0]
     if (latestYoutubeCC?.title?.includes('Community Call'))
