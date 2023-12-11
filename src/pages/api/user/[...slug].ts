@@ -34,47 +34,32 @@ async function getBadgeTokensIds(address: string): Promise<number[]> {
   }
 }
 
-async function getDatadisksCollected(address: string): Promise<string[]> {
+async function getUserCollectibles(address: string): Promise<{ datadisks: string[], handbooks: string[] }> {
   try {
     const ownerNFTs = await axios.get(
       `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY_BACKEND}/getNFTs?owner=${address}&pageSize=100${COLLECTIBLE_ADDRESSES.map(
         (collectibleAddress) => `&contractAddresses[]=${collectibleAddress}`
+      ).join('')}${MIRROR_ARTICLE_ADDRESSES.map(
+        (articleAddress) => `&contractAddresses[]=${articleAddress}`
       ).join('')}&withMetadata=false`
     )
     const datadisks = []
+    const handbooks = []
     if (ownerNFTs.data) {
       // console.log(ownerNFTs.data.ownedNfts)
       for (const nft of ownerNFTs.data.ownedNfts) {
         const datadisk = (LESSONS.find(lesson => lesson.lessonCollectibleTokenAddress?.toLowerCase() === nft.contract.address?.toLowerCase())).collectibleId || ''
         if (datadisk) datadisks.push(datadisk)
       }
-    }
-    return datadisks
-  } catch (error) {
-    console.error(error)
-    return []
-  }
-}
-
-async function getHandbooksCollected(address: string): Promise<string[]> {
-  try {
-    const ownerNFTs = await axios.get(
-      `https://opt-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY_BACKEND}/getNFTs?owner=${address}&pageSize=100${MIRROR_ARTICLE_ADDRESSES.map(
-        (articleAddress) => `&contractAddresses[]=${articleAddress}`
-      ).join('')}&withMetadata=false`
-    )
-    const handbooks = []
-    if (ownerNFTs.data) {
-      // console.log(ownerNFTs.data.ownedNfts)
       for (const nft of ownerNFTs.data.ownedNfts) {
         const handbook = (LESSONS.find(lesson => lesson.mirrorNFTAddress?.toLowerCase() === nft.contract.address?.toLowerCase())).collectibleId || ''
         if (handbook) handbooks.push(handbook)
       }
     }
-    return handbooks
+    return { datadisks, handbooks }
   } catch (error) {
     console.error(error)
-    return []
+    return { datadisks: [], handbooks: [] }
   }
 }
 
@@ -137,10 +122,11 @@ export default async function handler(
   axios.get(`${DOMAIN_URL}/api/updateENS/${addressLowerCase}`)
 
   const stats: UserStatsType = {}
+  const { datadisks, handbooks } = await getUserCollectibles(addressLowerCase)
   // datadisks
-  stats.datadisks = await getDatadisksCollected(addressLowerCase)
+  stats.datadisks = datadisks
   // handbooks
-  stats.handbooks = await getHandbooksCollected(addressLowerCase)
+  stats.handbooks = handbooks
   // badges
   stats.badges = badgeTokenIds?.length
   // valid_stamps
