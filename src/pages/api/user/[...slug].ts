@@ -48,11 +48,11 @@ async function getUserCollectibles(address: string): Promise<{ datadisks: string
     if (ownerNFTs.data) {
       // console.log(ownerNFTs.data.ownedNfts)
       for (const nft of ownerNFTs.data.ownedNfts) {
-        const datadisk = (LESSONS.find(lesson => lesson.lessonCollectibleTokenAddress?.toLowerCase() === nft.contract.address?.toLowerCase())).collectibleId || ''
+        const datadisk = (LESSONS.find(lesson => lesson.lessonCollectibleTokenAddress?.toLowerCase() === nft.contract.address?.toLowerCase()))?.collectibleId || ''
         if (datadisk) datadisks.push(datadisk)
       }
       for (const nft of ownerNFTs.data.ownedNfts) {
-        const handbook = (LESSONS.find(lesson => lesson.mirrorNFTAddress?.toLowerCase() === nft.contract.address?.toLowerCase())).collectibleId || ''
+        const handbook = (LESSONS.find(lesson => lesson.mirrorNFTAddress?.toLowerCase() === nft.contract.address?.toLowerCase()))?.collectibleId || ''
         if (handbook) handbooks.push(handbook)
       }
     }
@@ -74,32 +74,51 @@ export default async function handler(
   // console.log('address', address)
 
   if (!address) return res.status(400).json({ error: 'Wrong params' })
-  const transport = http(`https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`)
-  const client = createPublicClient({
-    chain: mainnet,
-    transport,
-  })
 
+  let userExist = null
   if (address.endsWith('.eth')) {
-    const fullAddress = await client.getEnsAddress({ name: normalize(addressLowerCase) })
-    if (fullAddress) {
-      addressLowerCase = fullAddress.toLowerCase()
+    // check in DB first
+    const [userExist] = await db(TABLES.users)
+      .select(
+        TABLE.users.id,
+        TABLE.users.address,
+        TABLE.users.ens_name,
+        TABLE.users.ens_avatar,
+        TABLE.users.donations,
+        TABLE.users.gitcoin_stamps
+      )
+      .whereILike('ens_name', addressLowerCase)
+    // console.log('userExist1', userExist)
+    if (userExist) {
+      addressLowerCase = userExist.address?.toLowerCase()
     } else {
-      res.status(400).json({ error: 'Wrong params' })
+      const transport = http(`https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`)
+      const client = createPublicClient({
+        chain: mainnet,
+        transport,
+      })
+      const fullAddress = await client.getEnsAddress({ name: normalize(addressLowerCase) })
+      if (fullAddress) {
+        addressLowerCase = fullAddress.toLowerCase()
+      } else {
+        res.status(400).json({ error: 'Wrong params' })
+      }
     }
   }
 
-  const [userExist] = await db(TABLES.users)
-    .select(
-      TABLE.users.id,
-      TABLE.users.ens_name,
-      TABLE.users.ens_avatar,
-      TABLE.users.donations,
-      TABLE.users.gitcoin_stamps
-    )
-    .whereILike('address', addressLowerCase)
-  console.log('user', userExist)
-  if (!userExist) res.status(200).json({ error: 'Profile not found.' })
+  if (!userExist) {
+    [userExist] = await db(TABLES.users)
+      .select(
+        TABLE.users.id,
+        TABLE.users.ens_name,
+        TABLE.users.ens_avatar,
+        TABLE.users.donations,
+        TABLE.users.gitcoin_stamps
+      )
+      .whereILike('address', addressLowerCase)
+    console.log('user', userExist)
+    if (!userExist) res.status(200).json({ error: 'Profile not found.' })
+  }
 
   const oldBadgeTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase] : []
   console.log(oldBadgeTokenIds)
