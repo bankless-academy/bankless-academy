@@ -149,6 +149,8 @@ const OgSocial = ({
           height: '312px',
           borderRadius: '50%',
         }}
+        width="312px"
+        height="312px"
         src={explorerAvatar || DEFAULT_IMAGE}
       />
       {!badgeImageLink && (
