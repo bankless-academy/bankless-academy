@@ -65,7 +65,7 @@ export default function Page({
   preloadError?: string
 }) {
   const profileUrl =
-    typeof window !== 'undefined' ? `${window.location.href}?referral=true` : ''
+    typeof window !== 'undefined' ? `${window.location.href}` : ''
   const [isSmallScreen] = useMediaQuery(['(max-width: 981px)'])
   const { referral } = router.query
   const [user, setUser] = useState<UserType | null>(null)
@@ -73,6 +73,13 @@ export default function Page({
   const [fullProfileAddress, setFullProfileAddress] = useState('')
   const { address } = useAccount()
   const { onCopy, hasCopied } = useClipboard(profileUrl)
+
+  const wallets = localStorage.getItem('wallets')
+    ? JSON.parse(localStorage.getItem('wallets'))
+    : []
+
+  const isMyProfile =
+    fullProfileAddress !== '' && wallets.includes(fullProfileAddress)
 
   useEffect(() => {
     const loadUser = async () => {
@@ -92,8 +99,10 @@ export default function Page({
         setError('Failed to fetch user data from API.')
       }
     }
-    loadUser()
-  }, [])
+    if (isMyProfile && referral !== 'true') {
+      document.location.href = `/explorer/${profileAddress}?referral=true`
+    } else loadUser()
+  }, [isMyProfile])
 
   const collectibles = []
   for (let i = 0; i < user?.stats.datadisks?.length; i++) {
@@ -105,17 +114,10 @@ export default function Page({
 
   const share = `Checkout my @BanklessAcademy Explorer profile ${
     typeof window !== 'undefined' && window.location.href
-  }?referral=true`
+  }`
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
   )}`
-
-  const wallets = localStorage.getItem('wallets')
-    ? JSON.parse(localStorage.getItem('wallets'))
-    : []
-
-  const isMyProfile =
-    fullProfileAddress !== '' && wallets.includes(fullProfileAddress)
 
   if (
     referral === 'true' &&
