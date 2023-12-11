@@ -79,6 +79,23 @@ export default async function handler(req: NextApiRequest) {
     )
   ).then((res) => res.arrayBuffer())
 
+  const ensData = await fetch(`https://ensdata.net/${user.address}`).then(
+    (res) => res.json()
+  )
+
+  console.log(ensData)
+  if (ensData.avatar_url.includes('api.center.dev/v2')) {
+    // convert to v1 to return png instead of webp
+    const [avatar] = ensData.avatar_url
+      .replace('api.center.dev/v2/', 'api.center.dev/v1/')
+      .replace('/nft/', '/')
+      .replace('/render/', '/')
+      .replace('/medium', '/medium/media')
+      .split('?')
+    console.log(avatar)
+    user.avatar = avatar
+  }
+
   const explorerName = user.ensName || shortenAddress(address)
 
   return new ImageResponse(
