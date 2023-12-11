@@ -6,7 +6,7 @@ import { createPublicClient, http } from 'viem'
 import { normalize } from 'viem/ens'
 
 import kudosBadges from 'data/badges.json'
-import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
+import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, DOMAIN_URL, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_IDS, BADGE_API, BADGE_TO_KUDOS_IDS } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
 import { UserStatsType, UserType } from 'entities/user'
@@ -126,23 +126,15 @@ export default async function handler(
   const kudosTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase].map(token => BADGE_TO_KUDOS_IDS[token.toString()]).filter(token => token) : []
   console.log(kudosTokenIds)
 
-  const ensName = await client.getEnsName({ address: addressLowerCase as `0x${string}` })
+  const ensName = userExist.ens_name
   // console.log(ensName)
 
   const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/default_avatar.png'
 
-  const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : DEFAULT_AVATAR
+  const avatar = userExist.ens_avatar || DEFAULT_AVATAR
 
-  if (
-    (ensName && userExist.ens_name !== ensName) ||
-    (avatar && userExist.ens_avatar !== avatar)
-  ) {
-    // update ens_name + ens_avatar in user DB
-    console.log('update ENS details')
-    await db(TABLES.users)
-      .where(TABLE.users.id, userExist.id)
-      .update({ ens_name: ensName, ens_avatar: avatar?.length < 255 && avatar !== DEFAULT_AVATAR ? avatar : null })
-  }
+  // async update ENS (available on next call)
+  axios.get(`${DOMAIN_URL}/api/updateENS/${addressLowerCase}`)
 
   const stats: UserStatsType = {}
   // datadisks
