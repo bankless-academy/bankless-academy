@@ -43,8 +43,10 @@ export async function getServerSideProps({ query }) {
   const random = Math.floor(Math.random() * 100000)
 
   const pageMeta: MetaData = {
-    title: `Explorer ${address}`,
-    description: `${badge ? 'Explorer badge' : 'Explorer profile'}`,
+    title: `${address}`,
+    description: `${
+      badge ? 'Bankless Explorer Badge' : 'Bankless Explorer Profile'
+    }`,
     image: `${DOMAIN_URL}/api/og/social?address=${address}${
       badge ? `&badge=${badge}` : ''
     }&r=${random}`,
