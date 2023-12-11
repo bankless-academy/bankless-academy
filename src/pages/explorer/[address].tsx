@@ -90,19 +90,25 @@ export default function Page({
         if (user?.error) {
           setError(user?.error)
         } else if (user) {
+          console.log(user)
+          if (
+            typeof window !== 'undefined' &&
+            wallets.includes(user.address) &&
+            referral !== 'true'
+          ) {
+            const redirect = `/explorer/${profileAddress}?referral=true`
+            window.history.replaceState(null, null, redirect)
+          }
           setFullProfileAddress(user.address)
           setUser(user)
-          console.log(user)
         }
       } catch (error) {
         console.log(error)
         setError('Failed to fetch user data from API.')
       }
     }
-    if (isMyProfile && referral !== 'true') {
-      document.location.href = `/explorer/${profileAddress}?referral=true`
-    } else loadUser()
-  }, [isMyProfile])
+    loadUser()
+  }, [])
 
   const collectibles = []
   for (let i = 0; i < user?.stats.datadisks?.length; i++) {
