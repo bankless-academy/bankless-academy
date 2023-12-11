@@ -104,7 +104,9 @@ export default function Page({
         }
       } catch (error) {
         console.log(error)
-        setError('Failed to fetch user data from API.')
+        setError(
+          'Failed to fetch user data from API. Please refresh the page manually.'
+        )
       }
     }
     loadUser()
