@@ -122,7 +122,8 @@ export default function Page({
 
   const share = `Checkout my @BanklessAcademy Explorer profile ${
     typeof window !== 'undefined' && window.location.href
-  }`
+  }
+Join me and learn how your can #OwnYourFuture! 👨🏻‍🚀🚀`
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
   )}`
