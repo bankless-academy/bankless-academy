@@ -242,9 +242,9 @@ const Badges = ({
                             opacity={ownsBadge ? '1' : '0.3'}
                             borderRadius="3px"
                             backgroundColor={
-                              badgeToHighlight === lesson.badgeId
-                                ? 'orange.200'
-                                : 'unset'
+                              // badgeToHighlight === lesson.badgeId
+                              // ? 'orange.100' : 'unset'
+                              'unset'
                             }
                             p={1}
                           >
