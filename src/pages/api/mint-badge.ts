@@ -20,7 +20,7 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   // check params + signature
-  const { address, badgeId, embed, signature } = req.body
+  const { address, badgeId, embed, signature, referrer } = req.body
   // console.log(req)
   if (!address || !badgeId)
     return res.status(400).json({ error: 'Wrong params' })
@@ -262,9 +262,52 @@ export default async function handler(
         })
       }
       const mint = await contract[contractFunction](...functionParams, options)
+      // const mint = { hash: 'test' }
       console.log(mint)
 
       if (mint.hash) {
+        // referral
+        console.log('referrer', referrer)
+        if (referrer?.length === 42) {
+          //check if user already has a referrer
+          const [userReferralInfos] = await db(TABLES.users)
+            .select(TABLE.users.created_at, TABLE.users.referrer)
+            .where(TABLE.users.id, userId)
+          console.log(userReferralInfos)
+          if (userReferralInfos && !userReferralInfos.referrer) {
+            const date = new Date(userReferralInfos.created_at)
+            // only valid for newly onboarded users
+            const compareDate = new Date('2023-12-12')
+            console.log(date)
+            console.log(compareDate)
+            if (date > compareDate) {
+              console.log('new user')
+              console.log('add referrer', referrer)
+              const [referrerId] = await db(TABLES.users)
+                .select(
+                  TABLE.users.id,
+                )
+                .whereILike('address', referrer.toLowerCase())
+              if (referrerId) {
+                const addReferrer = await db(TABLES.users)
+                  .where(TABLE.users.id, userId)
+                  .update({ referrer: referrerId.id })
+                console.log('referrer added', addReferrer)
+              } else {
+                console.log('referrer id not found')
+              }
+            } else {
+              console.log('old user')
+            }
+          } else if (userReferralInfos && userReferralInfos.referrer) {
+            console.log('user already has a referrer')
+          } else {
+            console.log('user not found')
+          }
+        } else {
+          console.log('no referrer')
+        }
+
         const updated = await db(TABLES.completions)
           .where(TABLE.completions.id, questCompleted.id)
           .update({ transaction_at: db.raw("NOW()"), transaction_hash: mint.hash })

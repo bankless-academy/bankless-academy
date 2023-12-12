@@ -84,7 +84,7 @@ export default function Page({
   useEffect(() => {
     const loadUser = async () => {
       try {
-        const res = await fetch(`/api/user/${profileAddress}`)
+        const res = await fetch(`/api/user/${profileAddress}?profile=true`)
         if (!res.ok) setError('Failed to fetch user data.')
         const user: UserType = await res.json()
         if (user?.error) {
@@ -130,14 +130,14 @@ export default function Page({
   if (
     referral === 'true' &&
     !isMyProfile &&
-    !localStorage.getItem('referral')?.length &&
+    !localStorage.getItem('referrer')?.length &&
     fullProfileAddress
   ) {
-    console.log('referral', localStorage.getItem('referral'))
-    localStorage.setItem('referral', fullProfileAddress?.toLowerCase())
+    console.log('referrer', localStorage.getItem('referrer'))
+    localStorage.setItem('referrer', fullProfileAddress?.toLowerCase())
   }
-  if (address && localStorage.getItem('referral') === address?.toLowerCase()) {
-    localStorage.setItem('referral', '')
+  if (address && localStorage.getItem('referrer') === address?.toLowerCase()) {
+    localStorage.setItem('referrer', '')
   }
 
   if (user)
