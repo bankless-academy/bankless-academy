@@ -43,7 +43,7 @@ export async function getServerSideProps({ query }) {
   const random = Math.floor(Math.random() * 100000)
 
   const pageMeta: MetaData = {
-    title: `${address}`,
+    title: `${address?.endsWith('.eth') ? address : shortenAddress(address)}`,
     description: `${
       badge ? 'Bankless Explorer Badge' : 'Bankless Explorer Profile'
     }`,
@@ -110,7 +110,7 @@ export default function Page({
       }
     }
     loadUser()
-  }, [])
+  }, [profileAddress])
 
   const collectibles = []
   for (let i = 0; i < user?.stats.datadisks?.length; i++) {
@@ -172,7 +172,11 @@ Join me and learn how your can #OwnYourFuture! 👨🏻‍🚀🚀`
             mt="40px"
             mb="8"
           >
-            {user.ensName || shortenAddress(profileAddress)}
+            {user.ensName?.endsWith('.eth')
+              ? user.ensName
+              : profileAddress?.endsWith('.eth')
+              ? profileAddress
+              : shortenAddress(profileAddress)}
           </Text>
           {isMyProfile && (
             <Box justifyContent="center" w="256px" m="auto" mb="8">
