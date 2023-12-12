@@ -23,7 +23,8 @@ export const TABLE = {
     sybil_user_id: 'users.sybil_user_id',
     ens_name: 'users.ens_name',
     ens_avatar: 'users.ens_avatar',
-    donations: 'users.donations'
+    donations: 'users.donations',
+    referrer: 'users.referrer'
   },
   quests: {
     id: 'quests.id',
