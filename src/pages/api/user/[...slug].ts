@@ -69,6 +69,7 @@ export default async function handler(
 ): Promise<void> {
   const {
     slug: [address],
+    profile,
   } = req.query
   let addressLowerCase = address.toLowerCase()
   // console.log('address', address)
@@ -137,8 +138,10 @@ export default async function handler(
 
   const avatar = userExist.ens_avatar || DEFAULT_AVATAR
 
-  // async update ENS (available on next call)
-  axios.get(`${DOMAIN_URL}/api/updateENS/${addressLowerCase}`)
+  if (profile === 'true') {
+    // async update ENS (available on next call)
+    axios.get(`${DOMAIN_URL}/api/updateENS/${addressLowerCase}`)
+  }
 
   const stats: UserStatsType = {}
   const { datadisks, handbooks } = await getUserCollectibles(addressLowerCase)
