@@ -2,6 +2,7 @@
 import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
+import { useAccount, useEnsName } from 'wagmi'
 
 import { LessonType } from 'entities/lesson'
 import MintBadge from 'components/MintBadge'
@@ -23,6 +24,11 @@ const Badge = ({
     `isBadgeMinted-${lesson.badgeId}`,
     false
   )
+  const { address } = useAccount()
+  const { data: ensName } = useEnsName({
+    address: address,
+    chainId: 1,
+  })
   const [kudosMintedLS] = useLocalStorage(`kudosMinted`, [])
   // TODO: TRANSLATE
   const langURL = i18n.language !== 'en' ? `${i18n.language}/` : ''
@@ -32,7 +38,11 @@ const Badge = ({
 ${
   IS_WHITELABEL
     ? `${DOMAIN_URL}/lessons/${langURL}${lesson.slug}`
-    : `${DOMAIN_URL}/lessons/${langURL}${lesson.slug}
+    : `${DOMAIN_URL}/explorer/${
+        typeof ensName === 'string' && ensName?.endsWith('.eth')
+          ? ensName
+          : address
+      }?badge=${lesson.badgeId}&referral=true
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 }`
