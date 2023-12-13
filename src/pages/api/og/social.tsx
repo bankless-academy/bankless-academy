@@ -84,7 +84,7 @@ export default async function handler(req: NextApiRequest) {
   )
 
   console.log(ensData)
-  if (ensData.avatar_url.includes('api.center.dev/v2')) {
+  if (ensData.avatar_url?.includes('api.center.dev/v2')) {
     // convert to v1 to return png instead of webp
     const [avatar] = ensData.avatar_url
       .replace('api.center.dev/v2/', 'api.center.dev/v1/')
