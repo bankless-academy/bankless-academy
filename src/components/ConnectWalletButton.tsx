@@ -341,18 +341,18 @@ const ConnectWalletButton = ({
               </Text>
             </Button>
           </PopoverTrigger>
-          <PopoverContent>
+          <PopoverContent width={isSmallScreen ? '260px' : '300px'}>
             <PopoverArrow />
             <PopoverBody>
               <Box textAlign="center" m="2">
                 <Button
                   w="100%"
-                  bg="var(--chakra-colors-whiteAlpha-500)"
-                  size={isSmallScreen ? 'sm' : 'md'}
+                  size={isSmallScreen ? 'md' : 'lg'}
+                  variant="primaryWhite"
                   leftIcon={<Power weight="bold" />}
                   onClick={disconnectWallet}
                 >
-                  {t('Disconnect wallet')}
+                  {t('Disconnect Wallet')}
                 </Button>
               </Box>
               <Box textAlign="center" m="2">
@@ -363,8 +363,8 @@ const ConnectWalletButton = ({
                 >
                   <Button
                     w="100%"
-                    bg="var(--chakra-colors-whiteAlpha-500)"
-                    size={isSmallScreen ? 'sm' : 'md'}
+                    size={isSmallScreen ? 'md' : 'lg'}
+                    variant="primaryWhite"
                     leftIcon={<UserCircle weight="bold" />}
                     onClick={onClose}
                   >
@@ -405,7 +405,7 @@ const ConnectWalletButton = ({
               zIndex={2}
               variant="primary"
             >
-              {t('Connect wallet')}
+              {t('Connect Wallet')}
             </Button>
           </PopoverTrigger>
           <PopoverContent>
