@@ -6,7 +6,7 @@ import { MAX_STAMPS } from 'constants/passport'
 const DEFAULT_IMAGE =
   'https://app.banklessacademy.com/images/explorer_avatar.png'
 
-const DEFAULT_NAME = 'explorer.eth'
+const DEFAULT_NAME = 'banklessexplorer.eth'
 
 const DEFAULT_SCORE = 16
 
