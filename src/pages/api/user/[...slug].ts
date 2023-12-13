@@ -70,6 +70,7 @@ export default async function handler(
   const {
     slug: [address],
     profile,
+    badges,
   } = req.query
   let addressLowerCase = address.toLowerCase()
   // console.log('address', address)
@@ -130,6 +131,17 @@ export default async function handler(
 
   const kudosTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase].map(token => BADGE_TO_KUDOS_IDS[token.toString()]).filter(token => token) : []
   console.log(kudosTokenIds)
+
+  if (badges === 'true') {
+    // only return badge details
+    const data = {
+      address: addressLowerCase,
+      badgeTokenIds,
+      kudosTokenIds,
+    }
+
+    return res.status(200).json(data)
+  }
 
   const ensName = userExist.ens_name
   // console.log(ensName)
