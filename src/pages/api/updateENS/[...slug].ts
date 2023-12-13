@@ -38,7 +38,7 @@ export default async function handler(
   const ensName = await client.getEnsName({ address: addressLowerCase as `0x${string}` })
   // console.log(ensName)
 
-  const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/default_avatar.png'
+  const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/explorer_avatar.png'
 
   const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : DEFAULT_AVATAR
 

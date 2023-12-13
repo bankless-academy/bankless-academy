@@ -25,6 +25,7 @@ const ProgressTitle = ({
       justifyContent="flex-end"
       pb="4"
       mb="8"
+      mt="6"
     >
       <Box mr="4" my="4px">
         {score}
@@ -58,7 +59,7 @@ const ProgressTitle = ({
         isProfile={true}
         definition={
           <>
-            <Box>{description}</Box>
+            <Box mb="4">{description}</Box>
           </>
         }
       />
