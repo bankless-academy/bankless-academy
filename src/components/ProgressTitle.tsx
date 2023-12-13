@@ -25,6 +25,7 @@ const ProgressTitle = ({
       justifyContent="flex-end"
       pb="4"
       mb="8"
+      mt="6"
     >
       <Box mr="4" my="4px">
         {score}

@@ -15,6 +15,7 @@ import InternalLink from './InternalLink'
 // import ExternalLink from './ExternalLink'
 import { STAMP_PROVIDERS } from 'constants/passport'
 import PassportModal from 'components/PassportModal'
+import { useSmallScreen } from 'hooks'
 
 const Badges = ({
   badges,
@@ -29,6 +30,7 @@ const Badges = ({
 }): React.ReactElement => {
   const { t } = useTranslation()
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [isSmallScreen] = useSmallScreen()
 
   return (
     <>
@@ -46,7 +48,11 @@ const Badges = ({
             backgroundColor={type ? 'unset' : 'blackAlpha.200'}
             borderRadius="10px"
           >
-            <SimpleGrid columns={type ? 4 : 3} spacing={2} p={2}>
+            <SimpleGrid
+              columns={type && !isSmallScreen ? 4 : 3}
+              spacing={2}
+              p={2}
+            >
               {badges?.map((badge, index) => {
                 if (type === 'donations' && badge in DONATION_MAPPING)
                   return (
@@ -156,71 +162,72 @@ const Badges = ({
                       (collectibleId) => collectibleId === lesson.collectibleId
                     )?.length
                     const isDatadisk = lesson.collectibleId.startsWith('D')
-                    return (
-                      <GridItem
-                        key={`badge-${index}`}
-                        justifySelf="center"
-                        colSpan={isDatadisk ? 2 : 1}
-                        opacity={numberOfCollectiblesOwned > 0 ? '1' : '0.3'}
-                        backgroundColor={
-                          badgeToHighlight === lesson.badgeId
-                            ? 'orange.200'
-                            : 'unset'
-                        }
-                        p={1}
-                        border="1px #2d292d solid"
-                        borderRadius="8px"
-                        position="relative"
-                      >
-                        <InternalLink
-                          href={`/lessons/${lesson.slug}`}
-                          alt={lesson.englishName}
+                    if (isMyProfile || numberOfCollectiblesOwned > 0)
+                      return (
+                        <GridItem
+                          key={`badge-${index}`}
+                          justifySelf="center"
+                          colSpan={isDatadisk ? 2 : 1}
+                          opacity={numberOfCollectiblesOwned > 0 ? '1' : '0.3'}
+                          backgroundColor={
+                            badgeToHighlight === lesson.badgeId
+                              ? 'orange.200'
+                              : 'unset'
+                          }
+                          p={1}
+                          border="1px #2d292d solid"
+                          borderRadius="8px"
+                          position="relative"
                         >
-                          <>
-                            <Image
-                              src={`${
-                                isDatadisk
-                                  ? '/images/datadisk-001.png'
-                                  : '/images/handbook-badge.png'
-                              }`}
-                              alt={lesson.name}
-                              title={lesson.name}
-                            />
-                            {!isDatadisk && (
-                              <Box
-                                fontWeight="bold"
-                                fontSize="lg"
-                                position="absolute"
-                                bottom="2px"
-                                left="0"
-                                width="100%"
-                                textAlign="center"
-                                color="white"
-                              >
-                                {lesson.collectibleId}
-                              </Box>
-                            )}
-                            {numberOfCollectiblesOwned > 1 && (
-                              <Box
-                                fontWeight="bold"
-                                fontSize="12px"
-                                position="absolute"
-                                top="-9px"
-                                right="-9px"
-                                width="18px"
-                                height="18px"
-                                textAlign="center"
-                                color="white"
-                                backgroundColor="#8a68a2"
-                                borderRadius="50%"
-                              >
-                                {numberOfCollectiblesOwned}
-                              </Box>
-                            )}
-                          </>
-                        </InternalLink>
-                      </GridItem>
-                    )
+                          <InternalLink
+                            href={`/lessons/${lesson.slug}`}
+                            alt={lesson.englishName}
+                          >
+                            <>
+                              <Image
+                                src={`${
+                                  isDatadisk
+                                    ? '/images/datadisk-001.png'
+                                    : '/images/handbook-badge.png'
+                                }`}
+                                alt={lesson.name}
+                                title={lesson.name}
+                              />
+                              {!isDatadisk && (
+                                <Box
+                                  fontWeight="bold"
+                                  fontSize="lg"
+                                  position="absolute"
+                                  bottom="2px"
+                                  left="0"
+                                  width="100%"
+                                  textAlign="center"
+                                  color="white"
+                                >
+                                  {lesson.collectibleId}
+                                </Box>
+                              )}
+                              {numberOfCollectiblesOwned > 1 && (
+                                <Box
+                                  fontWeight="bold"
+                                  fontSize="12px"
+                                  position="absolute"
+                                  top="-9px"
+                                  right="-9px"
+                                  width="18px"
+                                  height="18px"
+                                  textAlign="center"
+                                  color="white"
+                                  backgroundColor="#8a68a2"
+                                  borderRadius="50%"
+                                >
+                                  {numberOfCollectiblesOwned}
+                                </Box>
+                              )}
+                            </>
+                          </InternalLink>
+                        </GridItem>
+                      )
                   })}
                 </>
               )}
@@ -231,31 +238,32 @@ const Badges = ({
                       const ownsBadge = (badges as number[]).includes(
                         lesson.badgeId
                       )
-                      return (
-                        <InternalLink
-                          key={`badge-${index}`}
-                          href={`/lessons/${lesson.slug}`}
-                          alt={lesson.englishName}
-                        >
-                          <Box
-                            justifySelf="center"
-                            opacity={ownsBadge ? '1' : '0.3'}
-                            borderRadius="3px"
-                            backgroundColor={
-                              // badgeToHighlight === lesson.badgeId
-                              // ? 'orange.100' : 'unset'
-                              'unset'
-                            }
-                            p={1}
+                      if (isMyProfile || ownsBadge)
+                        return (
+                          <InternalLink
+                            key={`badge-${index}`}
+                            href={`/lessons/${lesson.slug}`}
+                            alt={lesson.englishName}
                           >
-                            <Image
-                              src={lesson.badgeImageLink}
-                              alt={lesson.name}
-                              title={lesson.name}
-                            />
-                          </Box>
-                        </InternalLink>
-                      )
+                            <Box
+                              justifySelf="center"
+                              opacity={ownsBadge ? '1' : '0.3'}
+                              borderRadius="3px"
+                              backgroundColor={
+                                // badgeToHighlight === lesson.badgeId
+                                // ? 'orange.100' : 'unset'
+                                'unset'
+                              }
+                              p={1}
+                            >
+                              <Image
+                                src={lesson.badgeImageLink}
+                                alt={lesson.name}
+                                title={lesson.name}
+                              />
+                            </Box>
+                          </InternalLink>
+                        )
                     }
                   )}
                 </>
@@ -278,31 +286,27 @@ const Badges = ({
                 <>
                   {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
                     const ownsBadge = (badges as string[])?.includes(key)
-                    return (
-                      <Box key={`badge-${key}`} p={1} position="relative">
-                        <Image
-                          aspectRatio="1"
-                          opacity={ownsBadge ? '1' : '0.2'}
-                          w="100%"
-                          src={provider.icon}
-                          p="4"
-                          border="1px #2d292d solid"
-                          borderRadius="8px"
-                          title={provider.name}
-                        />
-                        {isMyProfile && !ownsBadge && (
+                    if (isMyProfile || ownsBadge)
+                      return (
+                        <Box key={`badge-${key}`} p={1} position="relative">
                           <Image
-                            w="30px"
-                            src={`/images/add-badge.png`}
-                            position="absolute"
-                            top="-12px"
-                            right="-10px"
-                            cursor="pointer"
-                            onClick={() => onOpen()}
+                            aspectRatio="1"
+                            opacity={ownsBadge ? '1' : '0.2'}
+                            w="100%"
+                            src={provider.icon}
+                            p="4"
+                            border="1px #2d292d solid"
+                            borderRadius="8px"
+                            title={provider.name}
+                            cursor={
+                              isMyProfile && !ownsBadge ? 'pointer' : 'default'
+                            }
+                            onClick={() =>
+                              isMyProfile && !ownsBadge && onOpen()
+                            }
                           />
-                        )}
-                      </Box>
-                    )
+                        </Box>
+                      )
                   })}
                   <PassportModal
                     isOpen={isOpen}
