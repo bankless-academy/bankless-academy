@@ -10,7 +10,7 @@ import {
   useClipboard,
   useMediaQuery,
 } from '@chakra-ui/react'
-import { UserPlus } from '@phosphor-icons/react'
+import { CopySimple } from '@phosphor-icons/react'
 import router from 'next/router'
 import { useAccount } from 'wagmi'
 import { t } from 'i18next'
@@ -195,10 +195,10 @@ Join me, let's discover the best knowledge and tools to #OwnYourFuture! 👨🏻
                 variant="primary"
                 w="100%"
                 borderTopRadius="0"
-                leftIcon={<UserPlus size="30px" />}
+                leftIcon={<CopySimple size="30px" />}
                 onClick={() => onCopy()}
               >
-                {hasCopied ? t('Referal link copied') : t('Refer-a-Friend')}
+                {hasCopied ? t('Profile Link Copied') : t('Copy Profile Link')}
               </Button>
             </Box>
           )}
