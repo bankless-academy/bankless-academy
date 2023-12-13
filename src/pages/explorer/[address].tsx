@@ -230,7 +230,7 @@ Join me and learn how your can #OwnYourFuture! 👨🏻‍🚀🚀`
                   score={user.stats.badges || 0}
                   max={MAX_BADGES}
                   description={t(
-                    `Each lesson badges is going to increase your Bankless Explorer score by 1 point.`
+                    `Each lesson badge increases your score by 1 point.`
                   )}
                 />
                 <Badges
@@ -249,7 +249,7 @@ Join me and learn how your can #OwnYourFuture! 👨🏻‍🚀🚀`
                   }
                   max={MAX_COLLECTIBLES}
                   description={t(
-                    `1 DATADISK will get you 3 points and 1 HANDBOOK is equivalent to 1 point.`
+                    `Each Handbook increases your score by 1 point, and each DataDisk increases it by 3.`
                   )}
                 />
                 <Badges
@@ -277,7 +277,7 @@ Join me and learn how your can #OwnYourFuture! 👨🏻‍🚀🚀`
                   }
                   max={MAX_DONATIONS}
                   description={t(
-                    `Each time you donate to Bankless Academy via Gitcoin, you increase your score by 1 point. Donation score are only updated after the end of a round.`
+                    `Each round you donate to Bankless Academy on Gitcoin increases your score by 1 point. Points are updated at the end of a round.`
                   )}
                 />
                 <Badges
@@ -292,7 +292,7 @@ Join me and learn how your can #OwnYourFuture! 👨🏻‍🚀🚀`
                   score={user.stats?.valid_stamps?.length}
                   max={MAX_STAMPS}
                   description={t(
-                    `Each Gitcoin Passport stamp is going to increase you Bankless Explorer score by 1 point.`
+                    `Each stamp you collect on Gitcoin Passport increases your score by 1 point.`
                   )}
                 />
                 <Badges
