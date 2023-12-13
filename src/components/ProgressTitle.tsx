@@ -59,7 +59,7 @@ const ProgressTitle = ({
         isProfile={true}
         definition={
           <>
-            <Box>{description}</Box>
+            <Box mb="4">{description}</Box>
           </>
         }
       />
