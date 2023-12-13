@@ -64,7 +64,7 @@ const columns = [
               loading="lazy"
               mx="2"
               src={
-                info.row.original?.ens_avatar || '/images/default_avatar.png'
+                info.row.original?.ens_avatar || '/images/explorer_avatar.png'
               }
             />
             {address}

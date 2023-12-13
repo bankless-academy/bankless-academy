@@ -328,7 +328,7 @@ const ConnectWalletButton = ({
               size={isSmallScreen ? 'sm' : 'md'}
               leftIcon={
                 <Image
-                  src={avatar || '/images/default_avatar.png'}
+                  src={avatar || '/images/explorer_avatar.png'}
                   borderRadius="50%"
                   background="gray"
                   w={isSmallScreen ? '22px' : '28px'}

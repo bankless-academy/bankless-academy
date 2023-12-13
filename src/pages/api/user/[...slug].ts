@@ -146,7 +146,7 @@ export default async function handler(
   const ensName = userExist.ens_name
   // console.log(ensName)
 
-  const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/default_avatar.png'
+  const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/explorer_avatar.png'
 
   const avatar = userExist.ens_avatar || DEFAULT_AVATAR
 

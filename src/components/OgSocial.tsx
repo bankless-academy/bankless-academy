@@ -4,11 +4,11 @@ import { DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { MAX_STAMPS } from 'constants/passport'
 
 const DEFAULT_IMAGE =
-  'https://app.banklessacademy.com/images/default_avatar.png'
+  'https://app.banklessacademy.com/images/explorer_avatar.png'
 
 const DEFAULT_NAME = 'explorer.eth'
 
-const DEFAULT_SCORE = 'XX'
+const DEFAULT_SCORE = 16
 
 const Skill = ({ skill, score, max }) => (
   <div
@@ -27,6 +27,7 @@ const Skill = ({ skill, score, max }) => (
         alignItems: 'center',
         width: '20px',
         height: '40px',
+        color: '#FFFFFF',
       }}
     >
       {score}
@@ -55,6 +56,7 @@ const Skill = ({ skill, score, max }) => (
         borderBottomRightRadius: '2px',
         textTransform: 'uppercase',
         paddingBottom: '2px',
+        color: '#D6D6D6',
       }}
     >
       {skill}
@@ -124,8 +126,8 @@ const OgSocial = ({
   }
   badgeImageLink?: string
 }): React.ReactElement => {
-  const profileSocialBackground = `${DOMAIN_URL}/images/profileSocialBackground.png?f=2`
-  const badgeSocialBackground = `${DOMAIN_URL}/images/badgeSocialBackground.png?f=2`
+  const profileSocialBackground = `${DOMAIN_URL}/images/profileSocialBackground.png?f=3`
+  const badgeSocialBackground = `${DOMAIN_URL}/images/badgeSocialBackground.png?f=3`
 
   return (
     <>
@@ -158,16 +160,17 @@ const OgSocial = ({
           style={{
             display: 'flex',
             position: 'absolute',
-            top: '160px',
-            left: '972px',
+            top: '165px',
+            left: '969px',
             width: '102px',
             height: '63px',
             fontSize: 63,
             fontFamily: 'ClearSans',
-            color: '#EAD6FF',
+            color: '#D6D6D6',
             textAlign: 'center',
             justifyContent: 'center',
             alignItems: 'center',
+            paddingBottom: '8px',
           }}
         >
           {score >= 0 ? score : DEFAULT_SCORE}
@@ -183,7 +186,7 @@ const OgSocial = ({
           height: '119px',
           fontSize: 40,
           fontFamily: 'ClearSans',
-          color: '#EAD6FF',
+          color: '#FFFFFF',
           textAlign: 'center',
           justifyContent: 'center',
           alignItems: 'center',
