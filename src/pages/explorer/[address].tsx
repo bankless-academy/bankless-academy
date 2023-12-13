@@ -120,10 +120,9 @@ export default function Page({
     collectibles.push(user?.stats.handbooks[i])
   }
 
-  const share = `Checkout my @BanklessAcademy Explorer profile ${
-    typeof window !== 'undefined' && window.location.href
-  }
-Join me and learn how your can #OwnYourFuture! 👨🏻‍🚀🚀`
+  const share = `Check out my Bankless Explorer Score, and track my journey on @BanklessAcademy.
+${typeof window !== 'undefined' && window.location.href}
+Join me, let's discover the best knowledge and tools to #OwnYourFuture! 👨🏻‍🚀🚀`
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
   )}`
