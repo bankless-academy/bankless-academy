@@ -37,7 +37,8 @@ const Skill = ({ skill, score, max }) => (
         display: 'flex',
         width: `${(score / max) * 230}px`,
         height: '40px',
-        background: 'linear-gradient(223deg, #3a355a 16.65%, #634c70 95.78%)',
+        background:
+          'linear-gradient(135.91deg, #634c70 29.97%, #3a355a 99.26%)',
         borderBottomLeftRadius: '2px',
         borderTopLeftRadius: '2px',
       }}
