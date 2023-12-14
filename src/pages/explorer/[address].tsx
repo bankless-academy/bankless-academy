@@ -280,7 +280,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                   )}
                 />
                 <Badges
-                  badges={Object.keys(user.stats?.donations)}
+                  badges={Object.keys(user.stats?.donations || {})}
                   type="donations"
                   isMyProfile={isMyProfile}
                 />
@@ -288,14 +288,14 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
               <Box w={isSmallScreen ? '100%' : '50%'}>
                 <ProgressTitle
                   title={t('Stamps')}
-                  score={user.stats?.valid_stamps?.length}
+                  score={user.stats?.valid_stamps?.length || 0}
                   max={MAX_STAMPS}
                   description={t(
                     `Each stamp you collect on Gitcoin Passport increases your score by 1 point.`
                   )}
                 />
                 <Badges
-                  badges={user.stats?.valid_stamps}
+                  badges={user.stats?.valid_stamps || []}
                   type="stamps"
                   isMyProfile={address && isMyProfile}
                 />
