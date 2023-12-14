@@ -205,15 +205,15 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
         </Card>
         <Card my="8" borderRadius="2xl !important">
           <Box m="auto" maxW={isSmallScreen ? '600px' : '100%'}>
-            <Box m="auto" position="relative" w="300px">
+            <Box m="auto" position="relative" w="300px" mt={4}>
               <Image w="300px" src="/images/explorer-score.png" />
               <Box
                 position="absolute"
-                top="43px"
+                top="52.9px"
                 width="72px"
                 textAlign="center"
                 left="212px"
-                fontSize="5xl"
+                fontSize="4xl"
                 fontWeight="bold"
               >
                 {user.stats.score || 0}
