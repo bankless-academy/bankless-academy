@@ -187,7 +187,7 @@ Join me, let's discover the best knowledge and tools to #OwnYourFuture! 👨🏻
                     borderBottomRadius="0"
                     leftIcon={<Image width="24px" src="/images/TwitterX.svg" />}
                   >
-                    {t('Share on Twitter')}
+                    {t('Share on Twitter / X')}
                   </Button>
                 </ExternalLink>
               </Box>

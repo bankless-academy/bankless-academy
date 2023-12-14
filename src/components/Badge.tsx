@@ -128,7 +128,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                       <ChakraImage width="20px" src="/images/TwitterX.svg" />
                     }
                   >
-                    {t('Share on Twitter')}
+                    {t('Share on Twitter / X')}
                   </Button>
                 </ExternalLink>
               </Box>

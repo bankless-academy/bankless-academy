@@ -284,7 +284,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
                     <ChakraImage width="20px" src="/images/TwitterX.svg" />
                   }
                 >
-                  {t('Share on Twitter')}
+                  {t('Share on Twitter / X')}
                 </Button>
               </ExternalLink>
             </Box>
