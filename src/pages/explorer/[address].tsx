@@ -120,9 +120,9 @@ export default function Page({
     collectibles.push(user?.stats.handbooks[i])
   }
 
-  const share = `Check out my Bankless Explorer Score, and track my journey on @BanklessAcademy.
+  const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
 ${typeof window !== 'undefined' && window.location.href}
-Join me, let's discover the best knowledge and tools to #OwnYourFuture! 👨🏻‍🚀🚀`
+Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
   )}`
@@ -187,7 +187,7 @@ Join me, let's discover the best knowledge and tools to #OwnYourFuture! 👨🏻
                     borderBottomRadius="0"
                     leftIcon={<Image width="24px" src="/images/TwitterX.svg" />}
                   >
-                    {t('Share on Twitter')}
+                    {t('Share on Twitter / X')}
                   </Button>
                 </ExternalLink>
               </Box>
@@ -205,15 +205,15 @@ Join me, let's discover the best knowledge and tools to #OwnYourFuture! 👨🏻
         </Card>
         <Card my="8" borderRadius="2xl !important">
           <Box m="auto" maxW={isSmallScreen ? '600px' : '100%'}>
-            <Box m="auto" position="relative" w="300px">
-              <Image w="300px" src="/images/bankless-score.png" />
+            <Box m="auto" position="relative" w="300px" mt={4}>
+              <Image w="300px" src="/images/explorer-score.png" />
               <Box
                 position="absolute"
-                top="55px"
+                top="52.9px"
                 width="72px"
                 textAlign="center"
                 left="212px"
-                fontSize="5xl"
+                fontSize="4xl"
                 fontWeight="bold"
               >
                 {user.stats.score || 0}
@@ -280,7 +280,7 @@ Join me, let's discover the best knowledge and tools to #OwnYourFuture! 👨🏻
                   )}
                 />
                 <Badges
-                  badges={Object.keys(user.stats?.donations)}
+                  badges={Object.keys(user.stats?.donations || {})}
                   type="donations"
                   isMyProfile={isMyProfile}
                 />
@@ -288,14 +288,14 @@ Join me, let's discover the best knowledge and tools to #OwnYourFuture! 👨🏻
               <Box w={isSmallScreen ? '100%' : '50%'}>
                 <ProgressTitle
                   title={t('Stamps')}
-                  score={user.stats?.valid_stamps?.length}
+                  score={user.stats?.valid_stamps?.length || 0}
                   max={MAX_STAMPS}
                   description={t(
                     `Each stamp you collect on Gitcoin Passport increases your score by 1 point.`
                   )}
                 />
                 <Badges
-                  badges={user.stats?.valid_stamps}
+                  badges={user.stats?.valid_stamps || []}
                   type="stamps"
                   isMyProfile={address && isMyProfile}
                 />

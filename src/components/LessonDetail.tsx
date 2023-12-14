@@ -17,6 +17,7 @@ import NFT from 'components/NFT'
 import ExternalLink from 'components/ExternalLink'
 import {
   DOMAIN_URL,
+  IS_WALLET_DISABLED,
   IS_WHITELABEL,
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
@@ -254,32 +255,36 @@ const LessonDetail = ({
                     </Box>
                   </>
                 )}
-              {lesson.badgeId && (
+              {!IS_WALLET_DISABLED && (
                 <>
-                  <Box pb="8">
-                    <Text
-                      as="h2"
-                      fontSize="2xl"
-                      fontWeight="bold"
-                      borderBottom="1px solid #989898"
-                      pb="2"
-                    >
-                      {t('Rewards')}
-                    </Text>
-                  </Box>
-                  <Box textAlign="center">
-                    <Badge
-                      lesson={lesson}
-                      isQuestCompleted={
-                        isQuizComplete && Quest?.isQuestCompleted
-                      }
-                    />
-                  </Box>
+                  {lesson.badgeId && (
+                    <>
+                      <Box pb="8">
+                        <Text
+                          as="h2"
+                          fontSize="2xl"
+                          fontWeight="bold"
+                          borderBottom="1px solid #989898"
+                          pb="2"
+                        >
+                          {t('Rewards')}
+                        </Text>
+                      </Box>
+                      <Box textAlign="center">
+                        <Badge
+                          lesson={lesson}
+                          isQuestCompleted={
+                            isQuizComplete && Quest?.isQuestCompleted
+                          }
+                        />
+                      </Box>
+                    </>
+                  )}
+                  {lesson.hasCollectible ? (
+                    <CollectLessonButton lesson={lesson} />
+                  ) : null}
                 </>
               )}
-              {lesson.hasCollectible ? (
-                <CollectLessonButton lesson={lesson} />
-              ) : null}
             </Box>
           </StyledCard>
         </>

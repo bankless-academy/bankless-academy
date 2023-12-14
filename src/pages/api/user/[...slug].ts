@@ -75,6 +75,8 @@ export default async function handler(
   let addressLowerCase = address.toLowerCase()
   // console.log('address', address)
 
+  const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/explorer_avatar.png'
+
   if (!address) return res.status(400).json({ error: 'Wrong params' })
 
   let userExist = null
@@ -109,6 +111,9 @@ export default async function handler(
   }
 
   if (!userExist) {
+    if (addressLowerCase?.length !== 42) {
+      return res.status(200).json({ error: 'Profile not found.' })
+    }
     [userExist] = await db(TABLES.users)
       .select(
         TABLE.users.id,
@@ -119,7 +124,17 @@ export default async function handler(
       )
       .whereILike('address', addressLowerCase)
     console.log('user', userExist)
-    if (!userExist) res.status(200).json({ error: 'Profile not found.' })
+    if (!userExist) {
+      const emptyUser: UserType = {
+        address: addressLowerCase,
+        ensName: null,
+        avatar: DEFAULT_AVATAR,
+        stats: {},
+        badgeTokenIds: [],
+        kudosTokenIds: [],
+      }
+      return res.status(200).json(emptyUser)
+    }
   }
 
   const oldBadgeTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase] : []
@@ -143,12 +158,10 @@ export default async function handler(
     return res.status(200).json(data)
   }
 
-  const ensName = userExist.ens_name
+  const ensName = userExist?.ens_name
   // console.log(ensName)
 
-  const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/explorer_avatar.png'
-
-  const avatar = userExist.ens_avatar || DEFAULT_AVATAR
+  const avatar = userExist?.ens_avatar || DEFAULT_AVATAR
 
   if (profile === 'true') {
     // async update ENS (available on next call)

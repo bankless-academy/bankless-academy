@@ -41,7 +41,7 @@ export default async function handler(req: NextApiRequest) {
   else {
     if (
       badgeId &&
-      (!badgeImageLink || !badgeTokenIds.includes(parseInt(badgeId)))
+      (!badgeImageLink || !badgeTokenIds?.includes(parseInt(badgeId)))
     )
       error = 'badge not found'
   }

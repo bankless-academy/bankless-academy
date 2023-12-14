@@ -16,6 +16,7 @@ import { useSwitchNetwork, useNetwork, useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
+import { IS_WALLET_DISABLED } from 'constants/index'
 
 const CircleIcon = (props) => (
   <Icon viewBox="0 0 200 200" {...props}>
@@ -63,6 +64,8 @@ const SwitchNetworkButton = ({
       }
     }
   }, [chain?.id])
+
+  if (IS_WALLET_DISABLED) return null
 
   return (
     <div>

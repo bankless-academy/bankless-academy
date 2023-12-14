@@ -88,8 +88,8 @@
     "stringify-object": "^3.3.0",
     "tls": "^0.0.1",
     "usehooks-ts": "^2.7.1",
-    "viem": "^1.12.2",
-    "wagmi": "^1.4.2"
+    "viem": "^1.19.15",
+    "wagmi": "^1.4.12"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.13",

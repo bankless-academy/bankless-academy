@@ -140,3 +140,5 @@ export const DISCLAIMER_ENABLED =
 export const WALLET_SIGNATURE_MESSAGE = 'Signing a message with my wallet to prove I own it so I can claim the lesson badge.'
 
 export const POTION_API = 'https://potion.banklessacademy.com'
+
+export const IS_WALLET_DISABLED = true
