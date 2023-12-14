@@ -206,10 +206,10 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
         <Card my="8" borderRadius="2xl !important">
           <Box m="auto" maxW={isSmallScreen ? '600px' : '100%'}>
             <Box m="auto" position="relative" w="300px">
-              <Image w="300px" src="/images/bankless-score.png" />
+              <Image w="300px" src="/images/explorer-score.png" />
               <Box
                 position="absolute"
-                top="55px"
+                top="43px"
                 width="72px"
                 textAlign="center"
                 left="212px"
