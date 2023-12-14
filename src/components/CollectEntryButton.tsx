@@ -1,4 +1,4 @@
-import { Box, Button, Tooltip, useToast } from '@chakra-ui/react'
+import { Box, Button, useToast } from '@chakra-ui/react'
 import { LessonType } from 'entities/lesson'
 import { useEffect, useState } from 'react'
 import { switchNetwork } from '@wagmi/core'
@@ -164,56 +164,54 @@ const CollectEntryButton = ({
 
   return (
     <Box>
-      <Tooltip hasArrow label={t('Collect Mirror Entry')}>
-        {lesson.areMirrorNFTAllCollected ? (
-          <ExternalLink
-            href={`https://opensea.io/collection/${lesson.slug}`}
-            alt="Collect on secondary market"
-          >
-            <Button variant="primaryGold" w="100%">
-              {t('Collect on secondary market')}
-            </Button>
-          </ExternalLink>
-        ) : isSuccess ? (
-          <Button
-            variant="secondaryGold"
-            w="100%"
-            background="transparent !important"
-          >
-            {t('Entry Collected')}
+      {lesson.areMirrorNFTAllCollected ? (
+        <ExternalLink
+          href={`https://opensea.io/collection/${lesson.slug}`}
+          alt="Collect on secondary market"
+        >
+          <Button variant="primaryGold" w="100%">
+            {t('Collect on secondary market')}
           </Button>
-        ) : (
-          <Button
-            isDisabled={isLoading || isMinting}
-            isLoading={isLoading || isMinting}
-            loadingText={isMinting ? t('Collecting Entry') : t('Minting ...')}
-            variant="primaryGold"
-            w="100%"
-            onClick={async () => {
-              if (numberMinted !== '-') {
-                if (parseInt(numberMinted) >= 100) {
-                  openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
-                } else {
-                  if (chain.id !== optimism.id) {
-                    await switchNetwork({ chainId: optimism.id })
-                  }
-                  if (!isMinting) {
-                    setIsMinting(true)
-                    setTimeout(() => {
-                      setIsMinting(false)
-                    }, 3000)
-                    write?.()
-                  }
+        </ExternalLink>
+      ) : isSuccess ? (
+        <Button
+          variant="secondaryGold"
+          w="100%"
+          background="transparent !important"
+        >
+          {t('Entry Collected')}
+        </Button>
+      ) : (
+        <Button
+          isDisabled={isLoading || isMinting}
+          isLoading={isLoading || isMinting}
+          loadingText={isMinting ? t('Collecting Entry') : t('Minting ...')}
+          variant="primaryGold"
+          w="100%"
+          onClick={async () => {
+            if (numberMinted !== '-') {
+              if (parseInt(numberMinted) >= 100) {
+                openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
+              } else {
+                if (chain.id !== optimism.id) {
+                  await switchNetwork({ chainId: optimism.id })
                 }
-              } else if (address) alert('try again in 2 seconds')
-              else setConnectWalletPopupLS(true)
-            }}
-          >
-            <Box fontWeight="bold">{t('Collect Entry')}</Box>
-            <Box ml="2">{`(${numberCollected}/100 ${t('claimed')})`}</Box>
-          </Button>
-        )}
-      </Tooltip>
+                if (!isMinting) {
+                  setIsMinting(true)
+                  setTimeout(() => {
+                    setIsMinting(false)
+                  }, 3000)
+                  write?.()
+                }
+              }
+            } else if (address) alert('try again in 2 seconds')
+            else setConnectWalletPopupLS(true)
+          }}
+        >
+          <Box fontWeight="bold">{t('Collect Entry')}</Box>
+          <Box ml="2">{`(${numberCollected}/100 ${t('claimed')})`}</Box>
+        </Button>
+      )}
     </Box>
   )
 }

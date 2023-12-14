@@ -30,7 +30,7 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
   OrigPopoverTrigger
 
 import ExternalLink from 'components/ExternalLink'
-import { SIWE_ENABLED } from 'constants/index'
+import { IS_WALLET_DISABLED, SIWE_ENABLED } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
 import { getUD, getLensProfile, shortenAddress, api } from 'utils'
 import Badges from 'components/Badges'
@@ -311,6 +311,8 @@ const ConnectWalletButton = ({
       refreshBadges()
     }
   }, [refreshBadgesLS])
+
+  if (IS_WALLET_DISABLED) return null
 
   return (
     <>

@@ -20,7 +20,7 @@ import InternalLink from 'components/InternalLink'
 import CollectEntryButton from 'components/CollectEntryButton'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
-import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
+import { IS_WALLET_DISABLED, IS_WHITELABEL, KEYWORDS } from 'constants/index'
 import { getArticlesCollected, getArticlesCollectors, Mixpanel } from 'utils'
 import Keyword from 'components/Keyword'
 import LanguageSwitch from 'components/LanguageSwitch'
@@ -569,46 +569,48 @@ const Article = ({
         mt={isSmallScreen ? '0' : '24px'}
       />
       <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="24px">
-        <Box
-          // border="1px solid #989898"
-          py={isSmallScreen ? '2' : '6'}
-          px="6"
-          borderRadius="lg"
-        >
-          {isArticleCollected ? (
-            <Button
-              variant="secondaryGold"
-              w="100%"
-              background="transparent !important"
-            >
-              {t('Entry Collected')}
-            </Button>
-          ) : (
-            <CollectEntryButton
-              lesson={lesson}
-              numberCollected={numberCollected}
-            />
-          )}
-        </Box>
-        <Box
-          // border="1px solid #989898"
-          py={isSmallScreen ? '2' : '6'}
-          px="6"
-          borderRadius="lg"
-          textAlign="center"
-        >
-          <ExternalLink href={lesson.mirrorLink}>
-            <Button
-              variant="primary"
-              w="100%"
-              rightIcon={<ArrowRight size={16} />}
-            >
-              {t('View on Mirror.xyz')}
-            </Button>
-          </ExternalLink>
-        </Box>
-      </SimpleGrid>
+      {!IS_WALLET_DISABLED && (
+        <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="24px">
+          <Box
+            // border="1px solid #989898"
+            py={isSmallScreen ? '2' : '6'}
+            px="6"
+            borderRadius="lg"
+          >
+            {isArticleCollected ? (
+              <Button
+                variant="secondaryGold"
+                w="100%"
+                background="transparent !important"
+              >
+                {t('Entry Collected')}
+              </Button>
+            ) : (
+              <CollectEntryButton
+                lesson={lesson}
+                numberCollected={numberCollected}
+              />
+            )}
+          </Box>
+          <Box
+            // border="1px solid #989898"
+            py={isSmallScreen ? '2' : '6'}
+            px="6"
+            borderRadius="lg"
+            textAlign="center"
+          >
+            <ExternalLink href={lesson.mirrorLink}>
+              <Button
+                variant="primary"
+                w="100%"
+                rightIcon={<ArrowRight size={16} />}
+              >
+                {t('View on Mirror.xyz')}
+              </Button>
+            </ExternalLink>
+          </Box>
+        </SimpleGrid>
+      )}
       <LanguageSwitch lesson={lesson} />
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown
@@ -705,7 +707,7 @@ const Article = ({
             >
               {t('Entry Collected')}
             </Button>
-          ) : (
+          ) : IS_WALLET_DISABLED ? null : (
             <CollectEntryButton
               lesson={lesson}
               numberCollected={numberCollected}
