@@ -141,4 +141,4 @@ export const WALLET_SIGNATURE_MESSAGE = 'Signing a message with my wallet to pro
 
 export const POTION_API = 'https://potion.banklessacademy.com'
 
-export const IS_WALLET_DISABLED = true
+export const IS_WALLET_DISABLED = false
