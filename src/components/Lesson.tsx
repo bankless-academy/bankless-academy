@@ -20,7 +20,7 @@ import { Warning, ArrowUUpLeft, Bug } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
-import { isMobile } from 'react-device-detect'
+import { isMobile, isDesktop } from 'react-device-detect'
 
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
@@ -324,7 +324,7 @@ const Lesson = ({
     toast.closeAll()
     if (!isFirstSlide) {
       setCurrentSlide(currentSlide - 1)
-      scrollTop()
+      if (!isDesktop) scrollTop()
     }
     setSelectedAnswerNumber(null)
   }
@@ -335,9 +335,9 @@ const Lesson = ({
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
-      scrollTop()
+      if (!isDesktop) scrollTop()
     } else if (isLastSlide) {
-      scrollTop()
+      if (!isDesktop) scrollTop()
       if (lesson.endOfLessonRedirect) {
         if (lesson.endOfLessonRedirect.includes('https://tally.so/r/')) {
           closeLesson()
