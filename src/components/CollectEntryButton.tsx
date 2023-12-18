@@ -34,6 +34,7 @@ const CollectEntryButton = ({
   const [isSmallScreen] = useSmallScreen()
   const [numberMinted, setNumberMinted] = useState('-')
   const [isMinting, setIsMinting] = useState(false)
+  const [mintingError, setMintingError] = useState('')
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
@@ -66,6 +67,13 @@ const CollectEntryButton = ({
     value: parseEther('0.01069'),
     overrides: {
       gasLimit: 150000n,
+    },
+    onError(error) {
+      console.error('Error', error)
+      setMintingError(error.message?.split('\n')[0])
+    },
+    onSuccess() {
+      setMintingError('')
     },
   })
   const { data, write } = useContractWrite(config)
@@ -189,23 +197,42 @@ const CollectEntryButton = ({
           variant="primaryGold"
           w="100%"
           onClick={async () => {
-            if (numberMinted !== '-') {
-              if (parseInt(numberMinted) >= 100) {
-                openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
-              } else {
-                if (chain.id !== optimism.id) {
-                  await switchNetwork({ chainId: optimism.id })
+            try {
+              if (numberMinted !== '-') {
+                if (parseInt(numberMinted) >= 100) {
+                  openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
+                } else {
+                  if (chain.id !== optimism.id) {
+                    await switchNetwork({ chainId: optimism.id })
+                  }
+                  if (!isMinting) {
+                    setIsMinting(true)
+                    setTimeout(() => {
+                      setIsMinting(false)
+                    }, 3000)
+                    if (mintingError !== '') {
+                      toast({
+                        title: t('⚠️ Problem while minting:'),
+                        description: (
+                          <>
+                            <Box>{mintingError}</Box>
+                            <Box>
+                              {t('Refresh the page before trying again.')}
+                            </Box>
+                          </>
+                        ),
+                        status: 'error',
+                        duration: null,
+                        isClosable: true,
+                      })
+                    } else write?.()
+                  }
                 }
-                if (!isMinting) {
-                  setIsMinting(true)
-                  setTimeout(() => {
-                    setIsMinting(false)
-                  }, 3000)
-                  write?.()
-                }
-              }
-            } else if (address) alert('try again in 2 seconds')
-            else setConnectWalletPopupLS(true)
+              } else if (address) alert('try again in 2 seconds')
+              else setConnectWalletPopupLS(true)
+            } catch (error) {
+              console.error(error)
+            }
           }}
         >
           <Box fontWeight="bold">{t('Collect Entry')}</Box>
