@@ -204,8 +204,21 @@ const CollectEntryButton = ({
                 } else {
                   if (chain.id !== optimism.id) {
                     await switchNetwork({ chainId: optimism.id })
-                  }
-                  if (!isMinting) {
+                    setIsMinting(false)
+                    toast({
+                      title: t('You were previously on the wrong network.'),
+                      description: (
+                        <>
+                          <Box>
+                            {t('Refresh the page before trying again.')}
+                          </Box>
+                        </>
+                      ),
+                      status: 'error',
+                      duration: null,
+                      isClosable: true,
+                    })
+                  } else if (!isMinting) {
                     setIsMinting(true)
                     setTimeout(() => {
                       setIsMinting(false)
