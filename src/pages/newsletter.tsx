@@ -10,6 +10,7 @@ const pageMeta: MetaData = {
   title: 'Newsletter',
   description:
     'Sign up for our newsletter to be notified of new lessons and platform updates!',
+  canonical: '/',
 }
 
 export const getStaticProps: GetStaticProps = async () => {

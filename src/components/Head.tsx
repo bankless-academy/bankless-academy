@@ -11,6 +11,7 @@ import {
   UMAMI_PROD,
   APPLE_TOUCH_ICON,
   APPLE_TOUCH_STARTUP_IMAGE,
+  IS_PROD,
 } from 'constants/index'
 import { useEffect } from 'react'
 import { LessonType } from 'entities/lesson'
@@ -21,6 +22,7 @@ export interface MetaData {
   image?: string
   isLesson?: boolean
   lesson?: LessonType
+  canonical?: string
 }
 
 const umamiWebsiteId =
@@ -58,6 +60,8 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
     }
   }, [])
 
+  const canonical = url?.split('?')[0]
+
   return (
     <>
       <NextHead>
@@ -71,6 +75,16 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         <meta property="og:image" content={image} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
+        <link
+          rel="canonical"
+          href={
+            metadata.canonical
+              ? `${DOMAIN_URL}${metadata.canonical}`
+              : canonical
+          }
+        />
+        {/* Robot indexing: only index in production */}
+        <meta name="robots" content={IS_PROD ? 'all' : 'noindex'}></meta>
         {/* Twitter */}
         <meta property="twitter:url" content={url} />
         <meta name="twitter:card" content="summary_large_image" />

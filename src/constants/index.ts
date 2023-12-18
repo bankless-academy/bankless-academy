@@ -15,6 +15,8 @@ export const PROJECT_DESCRIPTION = 'Level up your knowledge of Web3 and DeFi'
 
 export const DOMAIN_PROD = WHITELABEL?.domain_prod || 'app.banklessacademy.com'
 
+export const IS_PROD = process.env.VERCEL_ENV === 'production'
+
 export const DOMAIN_URL =
   process.env.NODE_ENV === 'development' ? `http://localhost:3000` :
     process.env.VERCEL_URL && process.env.VERCEL_ENV !== 'production'
