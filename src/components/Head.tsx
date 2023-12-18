@@ -78,7 +78,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
         <link
           rel="canonical"
           href={
-            metadata.canonical
+            metadata?.canonical
               ? `${DOMAIN_URL}${metadata.canonical}`
               : canonical
           }
