@@ -197,6 +197,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 borderTopRadius="0"
                 leftIcon={<CopySimple size="30px" />}
                 onClick={() => onCopy()}
+                isActive={hasCopied}
               >
                 {hasCopied ? t('Profile Link Copied') : t('Copy Profile Link')}
               </Button>
