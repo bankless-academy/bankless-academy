@@ -94,6 +94,11 @@ export default async function handler(req: NextApiRequest) {
       .split('?')
     console.log(avatar)
     user.avatar = avatar
+    //HACK: manually upload broken avatars
+    if (ensData.address === '0xd1fFdA9C225DDEE34f0837BF4D4a441bDd54C473') {
+      user.avatar =
+        'https://app.banklessacademy.com/images/avatars/d0wnlore.jpg'
+    }
   }
 
   const explorerName = user.ensName || shortenAddress(address)
