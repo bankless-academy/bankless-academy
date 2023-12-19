@@ -195,7 +195,7 @@ export default async function handler(
         )
       }
       console.log(options)
-      if (maxFeePerGasInGwei > 300) {
+      if (maxFeePerGasInGwei > 500) {
         questStatus = 'Polygon is currently experiencing high gas prices ... try again in 1 hour.'
         console.log(questStatus)
         return res.status(403).json({ status: questStatus })
