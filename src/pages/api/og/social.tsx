@@ -95,7 +95,7 @@ export default async function handler(req: NextApiRequest) {
     console.log(avatar)
     user.avatar = avatar
     //HACK: manually upload broken avatars
-    if (ensData.address === '0xd1fFdA9C225DDEE34f0837BF4D4a441bDd54C473') {
+    if (ensData.address === '0xd1ffda9c225ddee34f0837bf4d4a441bdd54c473') {
       user.avatar =
         'https://app.banklessacademy.com/images/avatars/d0wnlore.jpg'
     }
