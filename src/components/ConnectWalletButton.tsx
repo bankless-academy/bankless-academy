@@ -12,7 +12,7 @@ import {
   Heading,
   useDisclosure,
 } from '@chakra-ui/react'
-import { Wallet } from '@phosphor-icons/react'
+import { Wallet, Power, UserCircle } from '@phosphor-icons/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
@@ -30,11 +30,10 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
   OrigPopoverTrigger
 
 import ExternalLink from 'components/ExternalLink'
+import InternalLink from 'components/InternalLink'
 import { IS_WALLET_DISABLED, SIWE_ENABLED } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
 import { getUD, getLensProfile, shortenAddress, api } from 'utils'
-import Badges from 'components/Badges'
-// import { polygon, optimism } from 'wagmi/chains'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -66,7 +65,7 @@ const ConnectWalletButton = ({
   const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
-  const [badges, setBadges] = useState<number[]>([])
+  const [, setBadges] = useState<number[]>([])
   const [siwe, setSiweLS] = useLocalStorage('siwe', '')
   const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
@@ -344,21 +343,37 @@ const ConnectWalletButton = ({
               </Text>
             </Button>
           </PopoverTrigger>
-          <PopoverContent>
+          <PopoverContent width={isSmallScreen ? '260px' : '300px'}>
             <PopoverArrow />
             <PopoverBody>
               <Box textAlign="center" m="2">
                 <Button
                   w="100%"
-                  bg="var(--chakra-colors-whiteAlpha-500)"
-                  size={isSmallScreen ? 'sm' : 'md'}
-                  leftIcon={<Wallet weight="bold" />}
+                  size={isSmallScreen ? 'md' : 'lg'}
+                  variant="primaryWhite"
+                  leftIcon={<Power weight="bold" />}
                   onClick={disconnectWallet}
                 >
-                  {t('Disconnect wallet')}
+                  {t('Disconnect Wallet')}
                 </Button>
               </Box>
-              <Badges badges={badges} />
+              <Box textAlign="center" m="2">
+                <InternalLink
+                  href={`/explorer/${
+                    name?.endsWith('.eth') ? name : address
+                  }?referral=true`}
+                >
+                  <Button
+                    w="100%"
+                    size={isSmallScreen ? 'md' : 'lg'}
+                    variant="primaryWhite"
+                    leftIcon={<UserCircle weight="bold" />}
+                    onClick={onClose}
+                  >
+                    {t('My Explorer Profile')}
+                  </Button>
+                </InternalLink>
+              </Box>
             </PopoverBody>
           </PopoverContent>
         </Popover>
@@ -392,7 +407,7 @@ const ConnectWalletButton = ({
               zIndex={2}
               variant="primary"
             >
-              {t('Connect wallet')}
+              {t('Connect Wallet')}
             </Button>
           </PopoverTrigger>
           <PopoverContent>
