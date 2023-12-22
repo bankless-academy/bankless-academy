@@ -15,12 +15,12 @@ export const PROJECT_DESCRIPTION = 'Level up your knowledge of Web3 and DeFi'
 
 export const DOMAIN_PROD = WHITELABEL?.domain_prod || 'app.banklessacademy.com'
 
-export const IS_PROD = process.env.VERCEL_ENV === 'production'
+export const IS_PROD = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
 
 export const DOMAIN_URL =
   process.env.NODE_ENV === 'development' ? `http://localhost:3000` :
-    process.env.VERCEL_URL && process.env.VERCEL_ENV !== 'production'
-      ? `https://${process.env.VERCEL_URL}`
+    process.env.NEXT_PUBLIC_VERCEL_URL && process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production'
+      ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
       : `https://${DOMAIN_PROD}`
 
 export const imageMeta = WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
