@@ -30,8 +30,8 @@ export default async function handler(
           content: `<a href="${lessonLink(lesson)}"><img src="${DOMAIN_URL}${lesson.socialImageLink}" alt="${lesson.englishName}" title="${lesson.englishName}"/></a>`,
           date: new Date(lesson.publicationDate),
           image: `${DOMAIN_URL}${lesson.socialImageLink}`
-        });
-    });
+        })
+    })
     const rss = feed.rss2()
     res.setHeader('Content-Type', 'text/xml')
     return res.status(200).send(rss)
