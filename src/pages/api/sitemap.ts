@@ -1,17 +1,15 @@
 /* eslint-disable no-console */
 import { Feed } from "feed"
 import { NextApiRequest, NextApiResponse } from 'next'
-import fs from 'fs'
 
 import { DEFAULT_METADATA, DOMAIN_URL, GENERIC_ERROR_MESSAGE, LESSONS, PROJECT_DESCRIPTION, PROJECT_NAME, imageMeta } from 'constants/index'
 import { lessonLink } from "utils"
-import { LessonType } from 'entities/lesson'
 
 const SPLIT = `\`\`\`
 
 ---`
 
-const processMD = async (md, lang, englishLesson) => {
+const processMD = async (md, lang) => {
   console.log('processMD:', lang)
   // console.log('md', md)
   if (md[0] !== '<') {
@@ -22,7 +20,7 @@ const processMD = async (md, lang, englishLesson) => {
     // console.log(infos)
     const [, title, description] = (infos || '').split('\n')
     // console.log(title)
-    const newLesson: LessonType = JSON.parse(JSON.stringify(englishLesson))
+    const newLesson: any = {}
     newLesson.name = title.replace('TITLE: ', '')
     newLesson.description = description.replace('DESCRIPTION:', '').trim()
     console.log(`save ${lang}`)
@@ -48,7 +46,7 @@ export default async function handler(
     })
 
     const lessons = []
-    await LESSONS.sort((a, b) => a.publicationDate > b.publicationDate ? -1 : 1).forEach(async (lesson) => {
+    const fetchPromises = LESSONS.sort((a, b) => a.publicationDate > b.publicationDate ? -1 : 1).map(async (lesson) => {
       if (lesson.publicationStatus === 'publish') {
         lessons.push({
           title: `${lesson.englishName}`,
@@ -58,24 +56,31 @@ export default async function handler(
           date: new Date(lesson.publicationDate),
           image: `${DOMAIN_URL}${lesson.socialImageLink}`
         })
-        lesson.languages.forEach(async language => {
-          const md = fs.readFileSync(
-            `translation/lesson/${language}/${lesson.slug}.md`,
-            'utf8'
-          )
-          const currentLesson = await processMD(md, language, lesson)
-          // console.log(currentLesson)
+
+        const languagePromises = lesson.languages.map(async (language) => {
+          const md = await fetch(
+            `https://raw.githubusercontent.com/bankless-academy/bankless-academy/main/translation/lesson/${language}/${lesson.slug}.md`
+          ).then((res) => res.text())
+
+          const translatedLesson = await processMD(md, language)
+          console.log(translatedLesson)
+
           lessons.push({
-            title: `${currentLesson.name}`,
+            title: `${translatedLesson.name}`,
             id: `/lessons/${language}/${lesson.slug}`,
             link: lessonLink(lesson).replace('/lessons/', `/lessons/${language}/`),
-            description: currentLesson.description,
+            description: translatedLesson.description,
             date: new Date(lesson.publicationDate),
             image: `${DOMAIN_URL}${lesson.socialImageLink}`
           })
         })
+
+        await Promise.all(languagePromises)
       }
     })
+
+    await Promise.all(fetchPromises)
+
     const lastUpdate = new Date(lessons[0].date)
     feed.addItem({
       title: PROJECT_NAME,
