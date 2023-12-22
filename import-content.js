@@ -525,6 +525,7 @@ axios
             .substr(3) : `{"type": "LEARN", "title": "TODO", "content": "<p>slide content</p>`
           const content = JSON.parse(`[${htmlPage.data}"}]`)
           let quizNb = 0
+          const allKeywords = []
           const slides = content.map((slide) => {
             // remove tags in title
             slide.title = slide.title.replace(/<[^>]*>?/gm, '')
@@ -575,6 +576,13 @@ axios
               delete slide.content
             }
             if (slide.content) {
+              // keywords
+              const contentDiv = new JSDOM("<div>" + slide.content + "</div>")
+              const keywords = contentDiv.window.document.querySelectorAll('code')
+              for (const keyword of keywords) {
+                const k = keyword.textContent?.toLowerCase()
+                if (!allKeywords.includes(k)) allKeywords.push(k)
+              }
               // download images locally
               const imageLinks = [...slide.content.matchAll(/<img src='(.*?)'/gm)].map(a => a[1])
               for (const imageLink of imageLinks) {
@@ -628,6 +636,7 @@ axios
             }
             return slide
           })
+          lesson.keywords = allKeywords
           const componentName = PROJECT_DIR.replace(/[^A-Za-z0-9]/g, '') + lesson.name
             .split(' ')
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))

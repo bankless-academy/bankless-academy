@@ -41,6 +41,23 @@ const LESSONS: LessonType[] = [
       '/images/wallet-basics/wallet-security-9cc67e4c.png',
       '/images/wallet-basics/youre-ready-to-create-your-first-wallet-87cc5825.svg'
     ],
+    keywords: [
+      'web3',
+      'web2',
+      'blockchain',
+      'wallet',
+      'digital assets',
+      'public key',
+      'private keys',
+      'private key',
+      'recovery phrase',
+      'self-custody wallet',
+      'custodial wallet',
+      'hot wallet',
+      'cold wallets',
+      'hot wallets',
+      'defi'
+    ],
     slides: [
       {
         type: 'LEARN',
@@ -328,6 +345,25 @@ const LESSONS: LessonType[] = [
       '/images/blockchain-basics/individual-transactions-2f6bf118.svg',
       '/images/blockchain-basics/user-addresses-e9456d37.svg'
     ],
+    keywords: [
+      'blockchain',
+      'ledger',
+      'block explorer',
+      'blocks',
+      'transactions',
+      'addresses',
+      'public',
+      'address',
+      'node',
+      'decentralized',
+      'block hash',
+      'block',
+      'digital signature',
+      'smart contracts',
+      'transaction hash',
+      'private key',
+      'public key'
+    ],
     slides: [
       {
         type: 'LEARN',
@@ -534,6 +570,27 @@ const LESSONS: LessonType[] = [
       '/images/web3-security/scam-tokens-cbab390e.svg',
       '/images/web3-security/hardware-wallets-191cacd1.svg',
       '/images/web3-security/wallet-strategies-857fd09c.svg'
+    ],
+    keywords: [
+      'web3',
+      'centralized exchange',
+      'seed phrase',
+      'private keys',
+      'password manager',
+      'two factor authentication',
+      'password managers',
+      'social engineering',
+      'phishing',
+      'fomo',
+      'red flags',
+      'scam-tokens',
+      'hardware wallet',
+      'wallets',
+      'hot wallet',
+      'hodl',
+      '2fa',
+      'allowance',
+      'allowances'
     ],
     slides: [
       {
@@ -780,6 +837,33 @@ const LESSONS: LessonType[] = [
       '/images/layer-1-blockchains/some-examples-523b9b96.svg',
       '/images/layer-1-blockchains/so-what-can-be-done-50592b46.svg',
       '/images/layer-1-blockchains/the-future-of-ethereum-2b64fd6b.svg'
+    ],
+    keywords: [
+      'blockchain',
+      'blockspace',
+      'blockchain trilemma',
+      'security',
+      'scalability',
+      'decentralization',
+      'consensus',
+      'proof of work',
+      'block reward',
+      '51% attack',
+      'stake',
+      'proof of stake',
+      'block',
+      'transaction throughput',
+      'tps',
+      'block space',
+      'finality',
+      'permissionless',
+      'censorship-resistant',
+      'ledger',
+      'finality time',
+      'smart contracts',
+      'alternative layer 1',
+      'layer 2',
+      'sharding'
     ],
     slides: [
       {
@@ -1029,6 +1113,30 @@ const LESSONS: LessonType[] = [
       '/images/layer-2-blockchains/cross-chain-dapp-compatibility-eeb2b414.svg',
       '/images/layer-2-blockchains/start-your-layer-2-journey-with-optimism--7999722b.svg'
     ],
+    keywords: [
+      'blockchain trilemma',
+      'payment channels',
+      'smart contract',
+      'scalability',
+      'security',
+      'decentralization',
+      'gas',
+      'dapps',
+      'ledgers',
+      'bridges',
+      'l1',
+      'sidechain',
+      'bridge',
+      'optimistic rollups',
+      'zk rollups',
+      'fraud proof',
+      'settlement time',
+      'transaction finality',
+      'ethereum virtual machine',
+      'sidechains',
+      'rollups',
+      'zero-knowledge'
+    ],
     slides: [
       {
         type: 'LEARN',
@@ -1269,6 +1377,16 @@ const LESSONS: LessonType[] = [
       '/images/intro-to-defi/defi-downsides-51dd6225.svg',
       '/images/intro-to-defi/defi-downsides-3a6ce496.svg',
       '/images/intro-to-defi/defi-downsides-83a9391f.svg'
+    ],
+    keywords: [
+      'decentralized',
+      'blockchain',
+      'defi',
+      'permissionless',
+      'dapps',
+      'liquidity pools',
+      'wallets',
+      'peer-to-peer'
     ],
     slides: [
       {
@@ -1539,6 +1657,27 @@ const LESSONS: LessonType[] = [
       '/images/decentralized-exchanges/what-is-liquidity-99bb4930.svg',
       '/images/decentralized-exchanges/liquidity-providers-cd2b7547.svg',
       '/images/decentralized-exchanges/dex-best-practices-4a9ebcd4.svg'
+    ],
+    keywords: [
+      'liquidity pools',
+      'defi',
+      'cexs',
+      'dexs',
+      'dapp',
+      'liquidity',
+      'dapps',
+      'amm',
+      'token swaps',
+      'trade route',
+      'token pair',
+      'token allowances',
+      'liquidity pool',
+      'price impact',
+      'lp',
+      'slippage',
+      'kyc',
+      'sandwich attacks',
+      'tvl'
     ],
     slides: [
       {
@@ -1907,6 +2046,26 @@ const LESSONS: LessonType[] = [
       '/images/dex-aggregators/avoiding-sandwich-attacks-75f6ae82.svg',
       '/images/dex-aggregators/more-protection-from-sandwiches-otc-trades-04ef66c9.svg'
     ],
+    keywords: [
+      'decentralized exchanges',
+      'dex aggregators',
+      'swap',
+      'liquidity',
+      'price impact',
+      'intermediary token',
+      'trade route',
+      'gas',
+      'gwei',
+      'trade routes',
+      'dapp',
+      'meta-aggregator',
+      'dexs',
+      'slippage tolerance',
+      'sandwich attacks',
+      'otc',
+      'over the counter',
+      'liquidity pools'
+    ],
     slides: [
       {
         type: 'LEARN',
@@ -2164,6 +2323,30 @@ const LESSONS: LessonType[] = [
       '/images/optimism-governance/the-citizens-house-aa93f52c.svg',
       '/images/optimism-governance/governance-seasons-4ebc291c.svg',
       '/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg'
+    ],
+    keywords: [
+      'dao',
+      'delegation',
+      'veto',
+      'asynchronous',
+      'onchain governance',
+      'daos',
+      'layer 2',
+      'public goods',
+      'blockspace',
+      'l2',
+      'dapps',
+      'retropgf',
+      'block producers',
+      'erc-20',
+      'cexs',
+      'dexs',
+      'delegate',
+      'token distribution',
+      'fork',
+      'cex',
+      'open source',
+      'trustless'
     ],
     slides: [
       {
