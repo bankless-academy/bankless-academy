@@ -206,8 +206,11 @@ export async function validateOnchainQuest(
         console.log('OK tx status confirmed')
         const txDetails = await provider.getTransaction(tx)
         // console.log('txDetails', txDetails)
+        const logs = JSON.stringify((await provider.getTransactionReceipt(tx)).logs)
         if (txDetails) {
-          if (txDetails.data.includes(address.toLowerCase().substring(2))) {
+          if (txDetails.data.toLowerCase().includes(address.toLowerCase().substring(2)) ||
+            logs.toLowerCase().includes(address.toLowerCase().substring(2))
+          ) {
             check.push(true)
             console.log('OK wallet interaction')
           }
@@ -226,7 +229,9 @@ export async function validateOnchainQuest(
             ) ||
             txDetails.data.includes(address1inchV4.substring(2)) ||
             txDetails.data.includes(address1inchV5.substring(2)) ||
-            txDetails.data.includes(address1inchLP.substring(2))
+            txDetails.data.includes(address1inchLP.substring(2)) ||
+            logs.includes(address1inchV5.substring(2)) ||
+            logs.includes(address1inchLP.substring(2))
           ) {
             check.push(true)
             console.log('OK 1inch router contract interaction')
