@@ -37,7 +37,7 @@ The vision of `DAO` technology is to streamline problem-solving and debate betwe
 - Innovative voting, `delegation`, and `veto` mechanics.
 - Using blockchain technology to decrease the potential for human error or hijacking.
 
-![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-fea84c8f.svg)
 
 # Network Governance
 
@@ -49,7 +49,7 @@ Like any traditional nation-state with resources and participants, a DAO uses a 
 
 🛠️ **Implementation:** The approved proposal is applied to the network, by various incentivized developers if necessary.
 
-![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/network-governance-45b77eb1.svg)
 
 # Knowledge Check 1
 
@@ -79,7 +79,7 @@ In this lesson, we will explore how Optimism is pioneering the DAO vision. We wi
 
 Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-af6d1031.svg)
 
 # The Optimistic Vision
 
@@ -123,7 +123,7 @@ Many great blockchain projects begin with a centralized group. This gives the pr
 
 Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow **transfer of network ownership to the community**.
 
-![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-aaa9b55d.svg)
 
 # Knowledge Check 3
 
@@ -148,7 +148,7 @@ At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**.
 
 With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-fd6cac83.svg)
 
 # Incentivizing Public Goods
 
@@ -161,7 +161,7 @@ _“It’s easier to agree on what was useful than what will be useful.”_
 
 This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
 
-![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-b764ca38.svg)
 
 # Ether’s Phoenix
 
@@ -171,7 +171,7 @@ _“It is an algorithm that rewards the early cooperators who created conditions
 
 — The Optimism Foundation
 
-![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-f63f460c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-2b7210df.svg)
 
 # Knowledge Check 4
 
@@ -203,7 +203,7 @@ There are two houses that make up the Optimism Collective, each with independent
 
 Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. Let’s take a closer look.
 
-![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-8f40dd30.svg)
 
 # Knowledge Check 5
 
@@ -239,7 +239,7 @@ To protect the network, the Citizens’ House has the right to `veto` any propos
 
 The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be reducing rights of token holders.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-39ac02b5.svg)
 
 # Token House: Joining, Voting, Delegating
 
@@ -262,7 +262,7 @@ Network governance is only as democratic as its initial `token distribution`. We
 
 Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-5d723b29.svg)
 
 # Knowledge Check 6
 
@@ -296,7 +296,7 @@ Duties include:
 
 The Citizens’ House also ensures that Token House proposals are mission-aligned, using `veto` mechanics to waive unaligned changes to the network.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-4c2b3821.svg)
 
 # Citizens’ House: Joining, Voting, Delegating
 
@@ -340,7 +340,7 @@ On Optimism a season lasts roughly three months, followed by a reflection period
 
 These thoughtful feedback loops, built throughout Optimism’s systems, are incredibly important for building governance best practices in `DAO` communities.
 
-![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-a79f33e7.svg)
 
 # Now… Think Even Bigger!
 
@@ -362,5 +362,5 @@ Today’s quest is **to join the Token House and** `delegate` **our OP tokens**.
 
 While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-c4ff6f41.svg)
 

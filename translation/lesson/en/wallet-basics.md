@@ -41,7 +41,7 @@ In this lesson, we’ll introduce you to wallets, wallet types, wallet security 
 
 Let’s get started!
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-1d445d4b.png)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-cf4e23c2.png)
 
 # Wallet Definition
 
@@ -53,7 +53,7 @@ When your `wallet` is connected to a blockchain, you can make purchases, send or
 
 Unlike regular user accounts you’re used to, a single wallet lets you access a large number of web3 apps. It’s like having one account for the entire internet.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-5aa3b680.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-0816ac58.svg)
 
 # Is creating a wallet difficult?
 
@@ -109,7 +109,7 @@ It is perfectly safe to share your **public key**.
 
 **Note:** sometimes a single wallet account can hold multiple public (and `private keys`). Kind of like having many post office boxes under one account.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-9784f47e.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-416eaa27.svg)
 
 # Your wallet’s private key
 
@@ -125,7 +125,7 @@ This is more than just a password. You cannot reset it if you lose access to it.
 
 Luckily, most `web3` applications and programs do not require you to painstakingly type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-075ab481.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-f4966ef4.svg)
 
 # Knowledge Check 2
 
@@ -165,7 +165,7 @@ Your recovery phrase is essentially an easier to read version of your public/pri
 
 **Never share a recovery phrase.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-fdb4cc6b.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-d856b83a.svg)
 
 # Knowledge Check 3
 
@@ -195,7 +195,7 @@ Each wallet solution serves a different use-case. Many advanced users have one o
 
 Don’t worry, we’ll only be creating one wallet today.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-552ea259.png)
+![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-aa1a0445.png)
 
 # Custodial Wallets
 
@@ -205,7 +205,7 @@ Since your `private key` unlocks access to your `wallet`, keeping it private and
 
 This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some web3 applications may be limited.
 
-![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-cda6e7c6.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-8d2418ba.svg)
 
 # Knowledge Check 4
 
@@ -229,7 +229,7 @@ The tradeoff is in risk: if you lose access to your `recovery phrase`, or your p
 
 Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.
 
-![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-2ea3202d.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-fb499cf7.svg)
 
 # Knowledge Check 5
 
@@ -251,7 +251,7 @@ A `hot wallet` is a wallet hosted via an online software program. MetaMask is a 
 
 This is the style of wallet we will be creating today. They’re flexible, and great for beginners.
 
-![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-0a8332f6.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-7c0fe45a.svg)
 
 # Cold Wallets
 
@@ -263,7 +263,7 @@ They are widely considered to be more secure than `hot wallets`, because your `p
 
 Ledger and Trezor are examples of `cold wallets`.
 
-![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-cd29cabe.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-86fdb409.svg)
 
 # Knowledge Check 6
 
@@ -297,7 +297,7 @@ Regardless if your `self-custody wallet` is hot or cold, there are many smart se
 
 💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-9cc67e4c.png)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-c6f5271b.png)
 
 # Knowledge Check 7
 
@@ -331,7 +331,7 @@ There are several self-custody `hot wallet` providers available today. We will e
 
 The end of the lesson is right around the corner, where we will share a short video to help you get set up with your MetaMask wallet.
 
-![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-87cc5825.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-a18de323.svg)
 
 # Knowledge Check 8
 
