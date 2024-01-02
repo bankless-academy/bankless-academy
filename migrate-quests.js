@@ -7,7 +7,7 @@ const { TABLES } = require('./db.js')
 const POTION_API = 'https://potion.banklessacademy.com'
 
 const NOTION_IDS = {}
-NOTION_IDS['1dd77eb6ed4147f6bdfd6f23a30baa46'] = ''
+NOTION_IDS['129141602de240e484356bd85f7c75e0'] = ''
 NOTION_IDS['4167517c388a45f191931cf783270ec2'] = 'humanDAO/'
 NOTION_IDS['696cedf98b294da186191abb515605d7'] = 'BanklessDAO/'
 

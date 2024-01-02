@@ -5,7 +5,7 @@ const FileSystem = require('fs')
 
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
-const DEFAULT_NOTION_ID = '623e965e4f10456094d17aa94ec37105'
+const DEFAULT_NOTION_ID = 'd452559560a447169e10f2d3c6ee5288'
 const POTION_API = 'https://potion.banklessacademy.com'
 const KEYWORDS_FILE = IS_WHITELABEL ? 'whitelabel-keywords.json' : 'translation/keywords/en/keywords.json'
 

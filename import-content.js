@@ -111,7 +111,7 @@ ${LESSON_SPLITTER}
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
 const LESSON_FILENAME = IS_WHITELABEL ? 'whitelabel_lessons' : 'lessons'
-const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
+const DEFAULT_NOTION_ID = '129141602de240e484356bd85f7c75e0'
 const POTION_API = 'https://potion.banklessacademy.com'
 
 const KEY_MATCHING = {
