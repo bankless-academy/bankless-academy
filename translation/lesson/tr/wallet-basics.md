@@ -41,7 +41,7 @@ Bu derste size cüzdanları, cüzdan türlerini, cüzdan güvenliğiyle ilgili t
 
 Hadi başlayalım!
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-1d445d4b.png)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-cf4e23c2.png)
 
 # Cüzdanın Tanımı
 
@@ -53,7 +53,7 @@ Kısa tanımı şöyle: `Blok zinciri` ile etkileşimde bulunmak için kullandı
 
 Alışkın olduğunuz normal kullanıcı hesaplarının aksine, tek bir cüzdan, çok sayıda web3 uygulamasına erişmenizi sağlar. Tüm internet için tek bir hesaba sahip olmak gibi.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-5aa3b680.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-0816ac58.svg)
 
 # Cüzdan oluşturmak zor mu?
 
@@ -109,7 +109,7 @@ Açık anahtarı bir posta kutusunun adresi gibi de düşünebilirsiniz. Bu anah
 
 **Not:** Bazen tek bir cüzdan hesabı, birden fazla açık anahtar (ve `özel anahtar`) içerebilir. Tek bir hesap altında birçok posta kutusuna sahip olmak gibi.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-9784f47e.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-416eaa27.svg)
 
 # Cüzdanınızın özel anahtarı
 
@@ -125,7 +125,7 @@ Açık anahtar, bir paroladan daha fazlasıdır. Erişiminizi kaybederseniz sıf
 
 Neyse ki, çoğu `web3` uygulaması ve programı, her para göndermeniz veya bir blok zinciri işlemini imzalamanız gerektiğinde uzun, karmaşık bir karakter dizisini özenle yazmanızı gerektirmez. Özel anahtar genellikle arka planda sessizce çalışır.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-075ab481.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-f4966ef4.svg)
 
 # Knowledge Check 2
 
@@ -165,7 +165,7 @@ Kurtarma ifadeniz aslında açık/özel anahtar çiftinizin okunması daha kolay
 
 **Kurtarma ifadesini asla paylaşmayın.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-fdb4cc6b.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-d856b83a.svg)
 
 # Knowledge Check 3
 
@@ -195,7 +195,7 @@ Her cüzdan çözümü, farklı bir kullanım durumuna hizmet eder. Birçok iler
 
 Merak etmeyin, bugün sadece bir cüzdan oluşturacağız.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-552ea259.png)
+![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-aa1a0445.png)
 
 # Gözetimli Cüzdanlar
 
@@ -205,7 +205,7 @@ Merak etmeyin, bugün sadece bir cüzdan oluşturacağız.
 
 Bazı insanların ihtiyacı olan tek şey bu olabilir, ancak kripto varlıklarınızı güvence altına alması ve onları alıp satmak veya bir yere göndermek istediğinizde size erişim sağlaması için bu üçüncü taraflara güvenmeniz gerekir. Ayrıca, bazı web3 uygulamalarına erişiminiz sınırlı olabilir.
 
-![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-cda6e7c6.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-8d2418ba.svg)
 
 # Knowledge Check 4
 
@@ -229,7 +229,7 @@ Bu cüzdanlar `web3` dünyasında en geniş erişim ve özgürlük yelpazesini s
 
 Hangi yolu seçerseniz seçin, cüzdan güvenliği konusunda bilgili ve rahat olmanız önemlidir. Bu dersi tamamlamadan önce size bazı ipuçları vereceğiz.
 
-![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-2ea3202d.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-fb499cf7.svg)
 
 # Knowledge Check 5
 
@@ -251,7 +251,7 @@ Web3'te "sıcak" ve "soğuk cüzdan" terimlerini oldukça sık duyacaksınız.
 
 Bugün oluşturacağımız cüzdan türü budur. Bu cüzdanlar esnektir ve yeni başlayanlar için harikadır.
 
-![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-0a8332f6.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-7c0fe45a.svg)
 
 # Soğuk Cüzdanlar
 
@@ -263,7 +263,7 @@ Genellikle `sıcak cüzdanlardan` daha güvenli oldukları düşünülür çünk
 
 Ledger ve Trezor `soğuk cüzdan` örnekleridir.
 
-![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-cd29cabe.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-86fdb409.svg)
 
 # Knowledge Check 6
 
@@ -297,7 +297,7 @@ Hangi cüzdan türünün daha güvenli olduğu düşünülür?
 
 💰 Yeni şeyler denemek ve web3'ü keşfetmek için düşük miktarda fon içeren cüzdanlar kullanın ve yüksek değerli varlıkları, birden fazla cüzdan hesabında saklamaya çalışın (yani tüm kripto yumurtalarınızı tek bir sepete koymaktan kaçının).
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-9cc67e4c.png)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-c6f5271b.png)
 
 # Knowledge Check 7
 
@@ -331,7 +331,7 @@ Günümüzde, çok sayıda gözetimsiz `sıcak cüzdan` sağlayıcısı mevcuttu
 
 MetaMask cüzdanınızı kurmanıza yardımcı olacak kısa bir video paylaşacağımız ders sonuna çok az kaldı.
 
-![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-87cc5825.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-a18de323.svg)
 
 # Knowledge Check 8
 
