@@ -420,7 +420,7 @@ const ConnectWalletButton = ({
                 {`Don’t know how? `}
                 <ExternalLink
                   underline="true"
-                  href="/faq#edf3a4658d3d4aa78eac62e1dcf68978"
+                  href="/faq#64dbf3c7849542548957f8f6f0053061"
                 >
                   {t('Get help here')}
                 </ExternalLink>

@@ -212,7 +212,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                   {`${result.data.status || result.data.error || ''} | `}
                   <ExternalLink
                     underline="true"
-                    href="/faq#d1a7f6dda4334a7ba73ee8b3a18a60ad"
+                    href="/faq#0c0b44a30724489d927dda0838c085ad"
                   >
                     {t('Learn more')}
                   </ExternalLink>

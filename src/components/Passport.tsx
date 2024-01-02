@@ -43,7 +43,7 @@ const PassportComponent = ({
             description: (
               <ExternalLink
                 underline="true"
-                href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
+                href="/faq#17f5d5963c644fa7af5e32598bd6c793"
               >
                 {t('Follow these steps and try again')}
               </ExternalLink>
@@ -93,7 +93,7 @@ const PassportComponent = ({
               color={theme.colors.incorrect}
               fontWeight="bold"
             >
-              <ExternalLink href="/faq#ea6ae6bd9ca645498c15cc611bc181c0">
+              <ExternalLink href="/faq#17f5d5963c644fa7af5e32598bd6c793">
                 {t('Duplicate stamp detected.')}
               </ExternalLink>
               <br />

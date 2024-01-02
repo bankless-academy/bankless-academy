@@ -81,7 +81,7 @@ const PassportModal = ({
                       <Box mt="4">
                         <ExternalLink
                           underline="true"
-                          href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
+                          href="/faq#17f5d5963c644fa7af5e32598bd6c793"
                         >
                           {t('Follow these steps and try again')}
                         </ExternalLink>
@@ -125,7 +125,7 @@ const PassportModal = ({
               )}{' '}
               <ExternalLink
                 underline="true"
-                href="/faq#640071a81daf4aa4b7df00b1eec1c58d"
+                href="/faq#36c048c07dea4b289d466a4318e41eb2"
               >
                 {t('Learn more')}
               </ExternalLink>
@@ -136,7 +136,7 @@ const PassportModal = ({
         <ModalFooter>
           <ExternalLink
             underline="true"
-            href="/faq#640071a81daf4aa4b7df00b1eec1c58d"
+            href="/faq#36c048c07dea4b289d466a4318e41eb2"
           >
             {t('Help')}
           </ExternalLink>
