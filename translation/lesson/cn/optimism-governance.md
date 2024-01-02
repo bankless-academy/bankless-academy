@@ -37,7 +37,7 @@ ________________________________________________________________________________
 - 创新的投票、 `授权`和 `否决` 机制。
 - 使用区块链技术，减少人为错误，或是减少被技术劫持的可能性。
 
-![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-fea84c8f.svg)
 
 # 网络治理
 
@@ -49,7 +49,7 @@ ________________________________________________________________________________
 
 🛠️ **实施：** 经批准的提案将应用于网络，必要时由各种受激励的开发者们实施。
 
-![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/network-governance-45b77eb1.svg)
 
 # 知识检查 1
 
@@ -79,7 +79,7 @@ ________________________________________________________________________________
 
 我们的追求将集中在获得我们的第一个投票权上，这样我们就能为建设以太坊和人类协调的未来做好准备！
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-af6d1031.svg)
 
 # Optimism 愿景
 
@@ -123,7 +123,7 @@ Optimism 旨在成为一个"网络空间区"，直接为其公民提供服务，
 
 律法检查与制衡机制，如集体有权罢免基金会成员，确保**网络所有权缓慢转移至社区**。
 
-![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-aaa9b55d.svg)
 
 # 知识检查 3
 
@@ -148,7 +148,7 @@ Optimism `L2` 经济的中心是 **"Optimistic 飞轮"**。 这种经济循环�
 
 有了更有价值的链上基础设施，对 Optimism 区块空间的需求就会增加，循环往复！
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-fd6cac83.svg)
 
 # 激励公共产品
 
@@ -160,7 +160,7 @@ Optimism `L2` 经济的中心是 **"Optimistic 飞轮"**。 这种经济循环�
 
 这种分配模式被称为**"追溯性公益资助（Retroactive Public Goods Funding）"**，或 **"RetroPGF"**。 这种资助机制激励 Optimism 的乐观思想家们建设服务于全人类的公共产品。 它将我们从传统资本主义经济的价值榨取思维中解放出来。
 
-![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-b764ca38.svg)
 
 # 以太凤凰
 
@@ -170,7 +170,7 @@ _"这是一种奖励早期合作者的算法，他们为公共产品的繁荣创
 
 —— Optimism 基金会
 
-![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-f63f460c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-2b7210df.svg)
 
 # 知识检查 4
 
@@ -202,7 +202,7 @@ Optimism 集体由两个议院组成，在管理网络方面，每个议院都�
 
 代币、公民两院通过其职责、投票机制和`否决权`能力来保持网络的平衡。 让我们更仔细地看一看。
 
-![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-8f40dd30.svg)
 
 # 知识检查 5
 
@@ -238,7 +238,7 @@ Optimism 集体由两个议院组成，在管理网络方面，每个议院都�
 
 代币院还可以否决公民院或 Optimism 基金会提交的任何被认为会减少代币持有者权利的提案。
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-39ac02b5.svg)
 
 # 代币院：加入、投票、授权
 
@@ -261,7 +261,7 @@ Optimism 集体由两个议院组成，在管理网络方面，每个议院都�
 
 请查看 [OP 分配计划](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) ，了解乐观基金会如何分配初始管理权，以实现利益相关者代表的平衡。
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-5d723b29.svg)
 
 # 知识检查 6
 
@@ -295,7 +295,7 @@ Optimism 集体由两个议院组成，在管理网络方面，每个议院都�
 
 公民院还需确保代币院的提案是使命导向的，使用`否决权`机制让非使命导向的提案失效。
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-4c2b3821.svg)
 
 # 公民院：加入、投票、授权
 
@@ -339,7 +339,7 @@ Optimism 的一个赛季大约持续三个月，之后是类似长度的反思�
 
 在整个 Optimism 系统中建立的反馈回路经过反复推敲，这对在 `DAO` 社区里构筑最佳治理实践来说非常重要。
 
-![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-a79f33e7.svg)
 
 # 现在... 还可以想得更远！
 
@@ -361,5 +361,5 @@ RetroPGF 的奖励现在包括从 Base🔵 交易费中获得的利润 —— �
 
 在公民院制定入会程序的同时，我们可以通过参与[Optimism 社区](https://gov.optimism.io/)论坛上的对话开始我们的公民之旅。
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-c4ff6f41.svg)
 
