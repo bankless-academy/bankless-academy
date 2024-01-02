@@ -33,7 +33,7 @@ ________________________________________________________________________________
 
 After examining the layers of a blockchain, we will be using a blockchain tool called a `block explorer` to look into the specifics of the Ethereum blockchain structure; we will zoom in on the Ethereum blockchain to view the **list** of blocks, the **transactions** within those blocks, and the **details** of each individual transaction.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/introduction-6d0b6137.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/introduction-1e34f31e.svg)
 
 # Blockchain Structure
 
@@ -47,7 +47,7 @@ Zooming in from the outside, there are 3 levels of structure in a blockchain:
 
 This three-tiered structure comes together to create a cryptographic ledger - an unalterable history of all transactions performed on the network.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/blockchain-structure-346dae14.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/blockchain-structure-1c9a9ed4.svg)
 
 # Knowledge Check 1
 
@@ -66,7 +66,7 @@ The `ledger` is the list of ALL transactions ever made on a blockchain, and anyo
 
 When new transactions are added to the ledger, balances stored at each `address` get updated; past transactions cannot be altered. It’s like allowing everyone to look at everyone’s all-time bank account transaction history, at any given time, forever.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/examining-the-ledger-74e5f072.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/examining-the-ledger-838ca24f.svg)
 
 # Transactions on the Ledger
 
@@ -85,7 +85,7 @@ Individual transactions show the _change_ in the amount of cryptocurrency for ea
 
 ⇒ Charlie has gained 2 ETH
 
-![](https://app.banklessacademy.com/images/blockchain-basics/transactions-on-the-ledger-f4f9d470.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/transactions-on-the-ledger-6b86493d.svg)
 
 # Knowledge Check 2
 
@@ -119,7 +119,7 @@ An important feature of blockchains is that past transaction data cannot be chan
 
 So each `block` is simply a group of transactions put together in one file along with that block’s `block hash`. The blocks are chained together because each one references the previous block’s unique fingerprint to form one connected block_**chain**_.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-8ba3bea2.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-5c22845b.svg)
 
 # Knowledge Check 4
 
@@ -141,7 +141,7 @@ From our example earlier when discussing the blockchain ledger, both of those tr
 
 Recall that each block must also reference the past block’s `block hash` to link the blockchain together.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/inside-a-block-b11c74ce.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/inside-a-block-b0c2dd11.svg)
 
 # Knowledge Check 5
 
@@ -162,7 +162,7 @@ Transactions can be simple, like sending crypto assets, or more complex, such as
 
 Finally, each transaction has a unique digital identifier, called its `transaction hash`, that no other transaction has. This makes it easy to refer to any single transaction later on and ensures that the details of that transaction can’t be changed afterward.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/individual-transactions-2f6bf118.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/individual-transactions-de83e15c.svg)
 
 # Knowledge Check 6
 
@@ -181,7 +181,7 @@ On Ethereum, an address always starts with _0x__________ and is 42 characters of
 
 When looking at a single transaction in a block explorer, we can see the From: and To: addresses. This doesn’t tell us who the _people_ are who control those addresses but allows any user to track the movement of cryptocurrency throughout the blockchain ledger.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/user-addresses-e9456d37.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/user-addresses-57e130d9.svg)
 
 # Knowledge Check 7
 
