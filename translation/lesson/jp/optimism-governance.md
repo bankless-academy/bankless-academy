@@ -37,7 +37,7 @@ ________________________________________________________________________________
 - 新しい投票法、 `代議員権、`、 `拒否権、` メカニズム
 - ブロックチェーン技術を利用して、人為的ミスや乗っ取りの可能性を減らす
 
-![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-fea84c8f.svg)
 
 # ネットワークガバナンス
 
@@ -49,7 +49,7 @@ ________________________________________________________________________________
 
 🛠️ **実装:** 承認された提案は、必要に応じて様々なインセンティブを与えられた開発者によってネットワークに適用されます。
 
-![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/network-governance-45b77eb1.svg)
 
 # Knowledge Check 1
 
@@ -79,7 +79,7 @@ Optimism Collectiveのような`DAO（` ）は、このような協調システ�
 
 イーサリアムと人間の協調の未来を築く手助けができるように、最初の投票権を獲得することに焦点を当てましょう。
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-af6d1031.svg)
 
 # Optimisticビジョン
 
@@ -123,7 +123,7 @@ Optimismは、市民に直接サービスを提供し、市民によって統治
 
 コレクティブが財団のメンバーを解任できるなど、法的なチェックとバランスにより、ネットワークの所有権がコミュニティに**ゆっくりと移譲されます。**
 
-![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-aaa9b55d.svg)
 
 # Knowledge Check 3
 
@@ -148,7 +148,7 @@ Optimism `L2` 経済の中心には **'Optimistic Flywheel'** があります。
 
 より価値の高いオンチェーンインフラにより、Optimismブロックスペースの需要が増加し、サイクルが継続します。
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-fd6cac83.svg)
 
 # 公共財へのインセンティブ
 
@@ -160,7 +160,7 @@ Optimism `L2` 経済の中心には **'Optimistic Flywheel'** があります。
 
 この分配モデルは、 **「レトロアクティブ・パブリックグッズ・ファンディング」**、または **「RetroPGF」**として知られています。 この資金調達の仕組みは、optimismに関わる人たちに、人類に役立つ公共財をビルドするインセンティブを与えます。 伝統的な資本主義経済の考え方から解放されるのです
 
-![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-b764ca38.svg)
 
 # Etherのフェニックス
 
@@ -170,7 +170,7 @@ _Etherのフェニックスは、公共財の資金調達が繁栄するため�
 
 - Optimism財団
 
-![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-f63f460c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-2b7210df.svg)
 
 # Knowledge Check 4
 
@@ -202,7 +202,7 @@ Optimism Collectiveを構成する2つのハウスがあり、それぞれ独立
 
 どちらのハウスも、職務、議決の仕組み、 `拒否権` を通じてネットワークのバランスを維持しています。 もっと詳しく見てみましょう。
 
-![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-8f40dd30.svg)
 
 # Knowledge Check 5
 
@@ -238,7 +238,7 @@ Optimism Collectiveを構成する2つのハウスがあり、それぞれ独立
 
 トークンハウスは、シチズンハウスから提出された提案を拒否することもできます。 またはOptimism Foundationはトークンホルダーの権利を削減することが見られます。
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-39ac02b5.svg)
 
 # トークンハウス：参加、投票、委任
 
@@ -261,7 +261,7 @@ Optimism Collectiveを構成する2つのハウスがあり、それぞれ独立
 
 Optimism財団がどのように初期ガバナンスパワーを、バランスの取れたステークホルダーの代表として割り当てているかについては、 [OP分配プラン](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) をご覧ください。
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-5d723b29.svg)
 
 # Knowledge Check 6
 
@@ -295,7 +295,7 @@ Optimism財団がどのように初期ガバナンスパワーを、バランス
 
 シチズンハウスは、 `拒否` メカニックを使用して、トークンハウスの提案がミッションに一致していることを保証します。
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-4c2b3821.svg)
 
 # トークンハウス：参加、投票、委任
 
@@ -339,7 +339,7 @@ Optimismでは1シーズンはおよそ3カ月で、その後に同じ長さの�
 
 Optimismのシステム全体に構築されているこれらのフィードバックの期間は、 `DAO` コミュニティにおけるガバナンスの未来の実践に向けて、非常に重要です。
 
-![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-a79f33e7.svg)
 
 # 今 、  、そしてこれから！
 
@@ -361,5 +361,5 @@ RetroPGFの報酬には、Baseの取引手数料から得られる利益も含�
 
 シチズンハウスはオンボーディング手続きを策定中ですが、 [Optimismコミュニティ](https://gov.optimism.io/) フォーラムに参加することで始めることができます。
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-c4ff6f41.svg)
 
