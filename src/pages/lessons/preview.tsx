@@ -128,6 +128,7 @@ const pageMeta: MetaData = {
   title: 'Live preview',
   description: 'This is work in progress content.',
   isLesson: true,
+  noindex: true,
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -146,7 +147,7 @@ const Lessons = (): JSX.Element => {
     // load keywords directly from Notion
     if (!Object.keys(keywords).length) {
       // TODO: make NOTION_ID dyn to support WL
-      const NOTION_ID = '623e965e4f10456094d17aa94ec37105'
+      const NOTION_ID = 'd452559560a447169e10f2d3c6ee5288'
       axios
         .get(`${POTION_API}/table?id=${NOTION_ID}&sort=keyword`)
         .then(function (response) {

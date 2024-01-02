@@ -8,6 +8,7 @@ import { LESSONS, IS_WHITELABEL } from 'constants/index'
 
 const pageMeta: MetaData = {
   title: 'Stats',
+  noindex: true,
 }
 
 export const getStaticProps: GetStaticProps = async () => {

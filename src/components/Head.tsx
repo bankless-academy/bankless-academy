@@ -23,6 +23,7 @@ export interface MetaData {
   isLesson?: boolean
   lesson?: LessonType
   canonical?: string
+  noindex?: boolean
 }
 
 const umamiWebsiteId =
@@ -84,7 +85,10 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           }
         />
         {/* Robot indexing: only index in production */}
-        <meta name="robots" content={IS_PROD ? 'all' : 'noindex'}></meta>
+        <meta
+          name="robots"
+          content={IS_PROD && !metadata?.noindex ? 'all' : 'noindex'}
+        ></meta>
         {/* Twitter */}
         <meta property="twitter:url" content={url} />
         <meta name="twitter:card" content="summary_large_image" />
