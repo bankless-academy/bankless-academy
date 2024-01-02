@@ -6,9 +6,9 @@ import { useTranslation } from 'react-i18next'
 import { MetaData } from 'components/Head'
 import LessonCards from 'components/LessonCards'
 
-const pageMeta: MetaData = {
+export const pageMeta: MetaData = {
   // TODO: add module name
-  title: 'Lessons',
+  title: 'Lesson Selection',
 }
 
 export const getStaticProps: GetStaticProps = async () => {

@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { DEFAULT_METADATA, DOMAIN_URL, GENERIC_ERROR_MESSAGE, LESSONS, PROJECT_DESCRIPTION, PROJECT_NAME, imageMeta } from 'constants/index'
 import { lessonLink } from "utils"
+import { pageMeta as lessonsPageMeta } from 'pages/lessons/index'
 
 const SPLIT = `\`\`\`
 
@@ -91,9 +92,17 @@ export default async function handler(
       image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
     })
     feed.addItem({
-      title: `Lessons`,
+      title: lessonsPageMeta.title,
       id: `/lessons`,
       link: `${DOMAIN_URL}/lessons`,
+      description: PROJECT_DESCRIPTION,
+      date: lastUpdate,
+      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
+    })
+    feed.addItem({
+      title: `${PROJECT_NAME} - FAQ`,
+      id: `/faq`,
+      link: `${DOMAIN_URL}/faq`,
       description: PROJECT_DESCRIPTION,
       date: lastUpdate,
       image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
