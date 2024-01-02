@@ -32,7 +32,7 @@ ________________________________________________________________________________
 >
 > * They can be exploited by malicious actors if the user is not aware permissions are in place.
 >
-> * Tools like Revoke.cash allow users to easily to inspect and revoke token allowances.
+> * Tools like Revoke.cash allow users to easily inspect and revoke token allowances.
 
 ## Introduction
 
@@ -86,7 +86,7 @@ Once you identify the approvals you want to revoke, simply click the “Revoke�
 
 ![](https://app.banklessacademy.com/images/managing-token-allowances/image-138cb12e.png)
 
-It might be in your best interest to to revoke or adjust a token allowance if:
+It might be in your best interest to revoke or adjust a token allowance if:
 
 1. A recently deployed smart contract is exploited and creates a vulnerability in a `decentralized exchange` you regularly use.
 
