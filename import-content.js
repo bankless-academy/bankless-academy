@@ -255,7 +255,7 @@ const importTranslations = async (lesson) => {
 
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
-  .then((notionRows) => {
+  .then(async (notionRows) => {
     console.log('Notion DB link: ', `${POTION_API}/table?id=${NOTION_ID}`)
     const lessons = []
     if (IS_WHITELABEL && !fs.existsSync(`public/${PROJECT_DIR}lesson`)) {
@@ -763,7 +763,7 @@ axios
           }
         })
     })
-    axios.all(promiseArray).then(() => {
+    await axios.all(promiseArray).then(() => {
       const FILE_CONTENT = `/* eslint-disable no-useless-escape */
 import { LessonType } from 'entities/lesson'
 
