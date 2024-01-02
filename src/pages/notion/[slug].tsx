@@ -7,7 +7,7 @@ import { getPageTitle } from 'notion-utils'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
-import { NOTION_PAGES } from 'constants/index'
+import { NOTION_PAGES, PROJECT_NAME } from 'constants/index'
 
 const notion = new NotionAPI()
 
@@ -83,7 +83,9 @@ const NotionPage = ({
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>
+          {title} | {PROJECT_NAME}
+        </title>
       </Head>
       <NotionRenderer recordMap={recordMap} fullPage={true} darkMode={true} />
       <style>{`

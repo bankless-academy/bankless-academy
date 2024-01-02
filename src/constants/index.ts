@@ -89,8 +89,8 @@ export const GENERIC_ERROR_MESSAGE = `Something went wrong ... please contact ${
 export const TWITTER_ACCOUNT = WHITELABEL?.twitter_account || `BanklessAcademy`
 
 export const NOTION_PAGES = WHITELABEL?.notion_pages || {
-  faq: '97b88d72335a41a1911c12d4e2f99db6',
-  disclaimer: '04cb595cad3f43608a6c410b9672e32b',
+  faq: '8fe3275ffbe74e598cb4574d0207a185',
+  disclaimer: '360b86a86d50421ba3bc7f55607f064a',
 }
 
 export const MIRROR_WHITELISTED_ACCOUNTS = [
