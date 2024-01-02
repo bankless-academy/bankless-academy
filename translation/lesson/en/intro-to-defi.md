@@ -33,7 +33,7 @@ DeFi—short for `decentralized` finance—refers to the fast-growing ecosystem 
 
 DeFi is rapidly transforming the world of finance with a range of new tools for putting crypto assets to work. It offers opportunities beyond simply buying crypto on a centralized exchange.  It allows anyone and everyone to build a decentralized, Bankless lifestyle.
 
-![](https://app.banklessacademy.com/images/intro-to-defi/defi-defined-46782447.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/defi-defined-50338cfd.svg)
 
 # Why DeFi?
 
@@ -52,13 +52,13 @@ What does DeFi stand for?
 - [ ] Deregulation field
 - [ ] Degenerate fishermen
 
-# **Earning Yield**
+# Earning Yield
 
 There are a growing number of `DeFi` protocols that enable you to earn interest and other rewards by using your crypto assets. You can have access to financial products that you would typically need a bank or financial services firm to get—but without the paperwork, middleman, approval process, and other hassles of the traditional finance world.
 
 By removing the middleman, you also remove any service fees, dues, and commissions you would typically pay in the traditional finance world. With DeFi, you get to keep all the rewards, or yield earned from your assets. This is why DeFi is popular. 
 
-![](https://app.banklessacademy.com/images/intro-to-defi/earning-yield-c5f123f8.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/earning-yield-bc952747.svg)
 
 # Knowledge Check 2
 
@@ -75,7 +75,7 @@ How can you earn yield with crypto?
 
 `DApps` and DeFi platforms enable users to make more and more types of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.
 
-![](https://app.banklessacademy.com/images/intro-to-defi/what-you-can-do-with-defi-9b17cf2e.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/what-you-can-do-with-defi-86d92e98.svg)
 
 # Knowledge Check 3
 
@@ -86,7 +86,7 @@ Fill in the blank: DeFi transactions are ____.
 - [ ] Permissionless
 - [ ] Centralized
 
-# **Investing**
+# Investing
 
 The most common `DeFi` transaction is to purchase some cryptocurrency with the expectation that it will be worth more in the future. This is known as investing.
 
@@ -94,7 +94,7 @@ HODL is a term used for keeping crypto assets for a long time. Depending on who 
 
 DeFi allows early access to coins and tokens to find and invest in, before they are listed on centralized exchanges (CEX).
 
-![](https://app.banklessacademy.com/images/intro-to-defi/investing-d99a6d1f.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/investing-7c8b44ed.svg)
 
 # Knowledge Check 4
 
@@ -111,7 +111,7 @@ A decentralized exchange (DEX) shows current exchange rates between different cr
 
 The parties involved in a DEX trade don’t need to know or trust each other. In fact, it may appear that you are trading with the DEX. However, in most cases, the DEX creates `liquidity pools` that facilitate the trade between two traders’ `wallets` in a `permissionless` fashion.
 
-![](https://app.banklessacademy.com/images/intro-to-defi/trading-8cd72977.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/trading-67935721.svg)
 
 # So What?
 
@@ -126,13 +126,13 @@ What is a DEX?
 - [ ] A crypto index fund
 - [ ] None of the above
 
-# **Lending & Borrowing**
+# Lending & Borrowing
 
 DeFi lending and borrowing offers loans without the need for a bank or intermediary institution. Instead, lending is done on a `peer-to-peer` level. That means transactions are between two parties and does not require a middleman or controlling entity.
 
 There are `DApps` that enable anyone to lend and borrow crypto assets. Similar to traditional loans, a lender will earn interest on the loan and the borrower will need to pay the principal of the loan plus interest.
 
-![](https://app.banklessacademy.com/images/intro-to-defi/lending-borrowing-4fb1c7c3.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/lending-borrowing-b7d58dfa.svg)
 
 # Knowledge Check 6
 
@@ -143,13 +143,13 @@ Fill in the blank: DeFi lending is done on a _____ level.
 - [ ] banks to customers
 - [ ] income to interest
 
-# **Staking**
+# Staking
 
 DeFi staking is similar to lending, however it's a special type of lending. Instead of lending your crypto to another user on a `peer-to-peer` basis, you lend your crypto to a network or protocol. In exchange for helping secure the network or protocol, you earn rewards.
 
 Centralized exchanges also offer staking. However, like their trading pairs, the staking opportunities and rewards are limited. With DeFi, there are many more staking possibilities than there are with centralized exchanges. 
 
-![](https://app.banklessacademy.com/images/intro-to-defi/staking-b4b4319d.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/staking-a46efa05.svg)
 
 # Knowledge Check 7
 
@@ -160,21 +160,21 @@ Lending your crypto to a protocol is an example of?
 - [ ] Borrowing
 - [ ] HODLing
 
-# **DeFi Downsides**
+# DeFi Downsides
 
-![](https://app.banklessacademy.com/images/intro-to-defi/defi-downsides-51dd6225.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/defi-downsides-da1fdb68.svg)
 
 **Hackers**
 
 Where there is money and technology, there are people looking for ways to hack the system and take advantage of poor security measures.
 
-![](https://app.banklessacademy.com/images/intro-to-defi/defi-downsides-3a6ce496.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/defi-downsides-d533aeef.svg)
 
 **Risk**
 
 DeFi, like blockchain technology, runs on code. If there’s an error or loophole in the code, it can be exploited.
 
-![](https://app.banklessacademy.com/images/intro-to-defi/defi-downsides-83a9391f.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/defi-downsides-0070f0e1.svg)
 
 **No recourse**
 

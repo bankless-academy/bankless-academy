@@ -1,4 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react'
+/* eslint-disable no-console */
+import React, { useRef, useState, useEffect, useLayoutEffect } from 'react'
 import {
   Box,
   Text,
@@ -15,10 +16,11 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
-import { Warning, ArrowUUpLeft } from '@phosphor-icons/react'
+import { Warning, ArrowUUpLeft, Bug } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
+import { isMobile, isDesktop } from 'react-device-detect'
 
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
@@ -33,10 +35,17 @@ import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
 import NFT from 'components/NFT'
 import Keyword from 'components/Keyword'
+import EditContentModal from 'components/EditContentModal'
+import Helper from 'components/Helper'
 
-const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
+const Slide = styled(Card)<{
+  issmallscreen?: string
+  slidetype: SlideType
+  ispreview?: string
+}>`
   border-radius: 0.5rem;
   ${(props) => props.issmallscreen === 'true' && 'display: contents;'};
+  ${(props) => props?.ispreview === 'true' && '.is-missing : {color:red}'};
   h1 {
     margin-top: 1em;
     font-size: var(--chakra-fontSizes-2xl);
@@ -125,6 +134,15 @@ const Slide = styled(Card)<{ issmallscreen?: string; slidetype: SlideType }>`
   }
 `
 
+const StyledKeywords = styled(Box)`
+  span.keyword {
+    cursor: help;
+    border-bottom: 1px dashed #e5afff;
+    color: #e5afff;
+    display: inline-block !important;
+  }
+`
+
 const Answers = styled(Box)`
   display: flex;
   justify-content: center;
@@ -169,6 +187,17 @@ const SlideNav = styled(Box)<{ issmallscreen?: string }>`
       `};
 `
 
+function countWords(st) {
+  let s
+  s = st?.replace(/(^\s*)|(\s*$)/gi, '') //exclude  start and end white-space
+  s = s?.replace(/[ ]{2,}/gi, ' ') //2 or more space to 1
+  s = s?.replace(/\n /, '\n') // exclude newline with a start spacing
+  return s?.split(' ').filter(function (str) {
+    return str != ''
+  }).length
+  //return s.split(' ').filter(String).length; - this can also be used
+}
+
 const Lesson = ({
   lesson,
   extraKeywords,
@@ -181,7 +210,7 @@ const Lesson = ({
   Quest?: QuestType
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
-  const numberOfSlides = lesson.slides.length
+  const numberOfSlides = lesson.slides?.length
   // HACK: when reducing the number of slides in a lesson
   if (
     parseInt(localStorage.getItem(lesson.slug) || '0') + 1 >=
@@ -192,11 +221,13 @@ const Lesson = ({
 
   const buttonLeftRef = useRef(null)
   const buttonRightRef = useRef(null)
+  const slideRef = useRef(null)
   const answerRef = useRef([])
   const [currentSlide, setCurrentSlide] = useState(
     parseInt(localStorage.getItem(lesson.slug) || '0')
   )
   const [selectedAnswerNumber, setSelectedAnswerNumber] = useState<number>(null)
+  const [longSlide, setLongSlide] = useState<boolean>(false)
   const [, isSmallScreen] = useSmallScreen()
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
@@ -222,6 +253,17 @@ const Lesson = ({
 
   const keywords = { ...KEYWORDS, ...extraKeywords }
 
+  useLayoutEffect(() => {
+    if (
+      slideRef?.current?.offsetHeight > 615 &&
+      !isSmallScreen &&
+      slide.type === 'LEARN' &&
+      slide.content.includes('bloc2')
+    )
+      setLongSlide(true)
+    else setLongSlide(false)
+  }, [slide, isSmallScreen])
+
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
   }, [currentSlide])
@@ -238,7 +280,7 @@ const Lesson = ({
       if (!hasNFT) {
         toast.closeAll()
         toast({
-          title: "You don't own the required NFT",
+          title: t("You don't own the required NFT"),
           description: lesson?.nftGatingRequirements,
           status: 'warning',
           duration: 20000,
@@ -251,8 +293,8 @@ const Lesson = ({
       if (!address) {
         toast.closeAll()
         toast({
-          title: 'This is a token gated lesson',
-          description: 'Connect your wallet to access the lesson.',
+          title: t('This is a token gated lesson'),
+          description: t('Connect your wallet to access the lesson.'),
           status: 'warning',
           duration: 20000,
           isClosable: true,
@@ -265,7 +307,10 @@ const Lesson = ({
   }, [address])
 
   useEffect(() => {
-    Mixpanel.track('open_lesson', { lesson: lesson?.name })
+    Mixpanel.track('open_lesson', {
+      lesson: lesson?.englishName,
+      language: i18n.language,
+    })
     // preloading all lesson images after 3 seconds for smoother transitions
     setTimeout(() => {
       lesson.imageLinks.forEach((imageLink) => {
@@ -279,7 +324,7 @@ const Lesson = ({
     toast.closeAll()
     if (!isFirstSlide) {
       setCurrentSlide(currentSlide - 1)
-      scrollTop()
+      if (!isDesktop) scrollTop()
     }
     setSelectedAnswerNumber(null)
   }
@@ -290,9 +335,9 @@ const Lesson = ({
       alert('select your answer to the quiz first')
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
-      scrollTop()
+      if (!isDesktop) scrollTop()
     } else if (isLastSlide) {
-      scrollTop()
+      if (!isDesktop) scrollTop()
       if (lesson.endOfLessonRedirect) {
         if (lesson.endOfLessonRedirect.includes('https://tally.so/r/')) {
           closeLesson()
@@ -307,9 +352,11 @@ const Lesson = ({
           //   document.location.href = lesson.endOfLessonRedirect
         }
       } else {
-        // defaut: go back to lessons
-        if (IS_WHITELABEL) router.push('/')
-        else router.push('/lessons')
+        if (IS_WHITELABEL) closeLesson()
+        else {
+          // defaut: go back to lessons
+          router.push('/lessons')
+        }
       }
     }
     setSelectedAnswerNumber(null)
@@ -336,7 +383,7 @@ const Lesson = ({
         })
       // correct answer
       Mixpanel.track('quiz_correct_answer', {
-        lesson: lesson?.name,
+        lesson: lesson?.englishName,
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
         }`,
@@ -354,7 +401,7 @@ const Lesson = ({
         })
       // wrong answer
       Mixpanel.track('quiz_wrong_answer', {
-        lesson: lesson?.name,
+        lesson: lesson?.englishName,
         quiz_question: `${slide.quiz.id.split('-').pop()}. ${
           slide.quiz.question
         }`,
@@ -401,7 +448,6 @@ const Lesson = ({
     closeLesson()
   })
 
-  // transform keywords into Tooltip
   function transform(node) {
     if (node.type === 'tag' && node.name === 'a') {
       // force links to target _blank
@@ -436,10 +482,11 @@ const Lesson = ({
             ? t(`${lowerCaseKeywordSingular}.definition`, { ns: 'keywords' })
             : englishDefition
           : englishDefition
+      if (!definition?.length) console.log('Missing definition:', keyword)
       return definition?.length ? (
         <Keyword definition={definition} keyword={keyword} />
       ) : (
-        <>{keyword}</>
+        <span className="is-missing">{keyword}</span>
       )
     }
   }
@@ -466,6 +513,7 @@ const Lesson = ({
       pb={2}
       mt={6}
       issmallscreen={isSmallScreen.toString()}
+      ispreview={lesson?.isPreview?.toString()}
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
     >
@@ -502,13 +550,16 @@ const Lesson = ({
         </Box>
         <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
           {slide.type === 'QUIZ' ? (
+            <>{t('Knowledge Check')}</>
+          ) : slide.type === 'QUEST' ? (
             <>
-              {lesson.slug === 'conceptos-basicos-de-blockchain'
-                ? 'Prueba de Conocimientos'
-                : 'Knowledge Check'}
+              {t(`{{lesson_title}} Quest`, {
+                lesson_title: lesson.name,
+                interpolation: { escapeValue: false },
+              })}
             </>
           ) : (
-            <>{ReactHtmlParser(slide.title, { transform })}</>
+            <>{slide.title}</>
           )}
         </Box>
       </Text>
@@ -521,7 +572,9 @@ const Lesson = ({
           pt={4}
         >
           {slide.type === 'LEARN' && (
-            <Box>{ReactHtmlParser(slide.content, { transform })}</Box>
+            <Box ref={slideRef}>
+              {ReactHtmlParser(slide.content, { transform })}
+            </Box>
           )}
           {slide.type === 'QUIZ' && (
             <>
@@ -548,7 +601,7 @@ const Lesson = ({
                         : selectedAnswerNumber === n
                         ? 'WRONG'
                         : 'UNSELECTED'
-                      if (slide.quiz.answers.length >= n)
+                      if (slide.quiz.answers?.length >= n)
                         return (
                           <QuizAnswer
                             ref={(el) => (answerRef.current[n] = el)}
@@ -608,10 +661,20 @@ const Lesson = ({
                   {lesson.badgeId ? (
                     <MintBadge badgeId={lesson.badgeId} />
                   ) : (
-                    <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
+                    <h2>
+                      {t(
+                        `Congrats on finishing our "{{lesson_title}}" lesson! 🥳`,
+                        {
+                          lesson_title: lesson.name,
+                          interpolation: { escapeValue: false },
+                        }
+                      )}
+                    </h2>
                   )}
                   <p>
-                    {!embed && lesson.endOfLessonText && lesson.endOfLessonText}
+                    {!embed &&
+                      lesson?.endOfLessonText &&
+                      lesson?.endOfLessonText}
                   </p>
                 </>
               )}
@@ -628,22 +691,61 @@ const Lesson = ({
               size="lg"
               onClick={goToPrevSlide}
               leftIcon={<ArrowBackIcon />}
+              ml={longSlide ? '600px' : '0'}
             >
               {isLastSlide && isSmallScreen ? '' : 'Prev'}
             </Button>
           )}
-          {lesson.isCommentsEnabled && slide.notionId && (
-            <ExternalLink
-              href={`https://www.notion.so/${lesson.notionId}#${slide.notionId}`}
-            >
-              <Tooltip
-                hasArrow
-                label="Help us improve the content by commenting this slide on Notion"
+          {
+            /* lesson.isCommentsEnabled && */
+            !isMobile &&
+              !lesson?.isPreview &&
+              !IS_WHITELABEL &&
+              (slide.type === 'LEARN' ||
+                (slide.type === 'QUIZ' && answerIsCorrect)) &&
+              address && (
+                <>
+                  <EditContentModal lesson={lesson} slide={slide} />
+                </>
+              )
+          }
+          {lesson?.isPreview && (
+            <Box position="relative">
+              DEBUG
+              <Helper
+                fullscreen
+                title="DEBUG"
+                definition={
+                  <Box>
+                    <StyledKeywords>
+                      Keyword list:{' '}
+                      {ReactHtmlParser(
+                        lesson.keywords
+                          .map((keyword) => `<code>${keyword}</code>`)
+                          .join(', '),
+                        { transform }
+                      )}
+                    </StyledKeywords>
+                    Number of words:{' '}
+                    {lesson.slides
+                      .map((slide) => countWords(slide.content))
+                      .reduce((a, b) => {
+                        return a + b
+                      }, 0)}
+                  </Box>
+                }
+              />
+            </Box>
+          )}
+          {slide.type === 'QUEST' && address && (
+            <ExternalLink href={'/report-an-issue'} alt={t('Report an Issue')}>
+              <Button
+                leftIcon={<Bug width="24px" height="24px" />}
+                iconSpacing={isSmallScreen ? 0 : '8px'}
+                variant="outline"
               >
-                <Button variant="outline">
-                  💬{isSmallScreen ? '' : ` comment this slide`}
-                </Button>
-              </Tooltip>
+                {isSmallScreen ? '' : t('Report an Issue')}
+              </Button>
             </ExternalLink>
           )}
         </HStack>
@@ -651,14 +753,16 @@ const Lesson = ({
           {slide.type === 'QUEST' && !Quest?.isQuestCompleted ? (
             <Tooltip
               hasArrow
-              label="By skipping this quest you won't be able to claim the lesson badge"
+              label={t(
+                "By skipping this quest you won't be able to claim the lesson badge"
+              )}
             >
               <Button variant="outline" onClick={() => closeLesson()}>
-                Skip Quest
+                {t('Skip Quest')}
               </Button>
             </Tooltip>
           ) : null}
-          {!isLastSlide || (lesson.endOfLessonText && !embed) ? (
+          {!isLastSlide || (lesson?.endOfLessonText && !embed) ? (
             <Button
               ref={buttonRightRef}
               variant="primaryBig"
@@ -670,12 +774,13 @@ const Lesson = ({
               onClick={goToNextSlide}
               rightIcon={<ArrowForwardIcon />}
             >
-              Next
+              {t('Next')}
             </Button>
           ) : (
             <>
               <Button
                 size="lg"
+                isDisabled={lesson.badgeId && !Quest?.isQuestCompleted}
                 onClick={() => closeLesson()}
                 variant="primaryBigLast"
                 rightIcon={<ArrowForwardIcon />}
@@ -683,8 +788,8 @@ const Lesson = ({
                 {lesson.badgeId &&
                 isBadgeMintedLS === false &&
                 Quest?.isQuestCompleted
-                  ? 'Mint Badge'
-                  : 'Finish'}
+                  ? t('Mint Badge')
+                  : t('Finish')}
               </Button>
             </>
           )}

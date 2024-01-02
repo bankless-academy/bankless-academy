@@ -48,7 +48,7 @@ const Layer2Blockchains = (
   }, [account])
 
   const lesson = LESSONS.find(
-    (lesson) => lesson.slug === 'how-to-fund-a-wallet-on-layer-2'
+    (lesson) => lesson.slug === 'funding-a-wallet-on-layer-2'
   )
 
   if (!lesson)
@@ -121,7 +121,7 @@ const Layer2Blockchains = (
               {isTransactionVerified !== 'true' && (
                 <Box mt="24px !important" textAlign="center">
                   <Button onClick={validateQuest} variant="primary">
-                    Refresh balance
+                    {'Refresh balance'}
                   </Button>
                 </Box>
               )}
@@ -141,7 +141,7 @@ const Layer2Blockchains = (
                   </Text>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     target="_blank"
                   >
                     <Image src={lesson.lessonImageLink} />
@@ -150,10 +150,10 @@ const Layer2Blockchains = (
                 <Box pb="8">
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     target="_blank"
                   >
-                    <Button variant="primary">Read Entry</Button>
+                    <Button variant="primary">{'Read Entry'}</Button>
                   </InternalLink>
                 </Box>
               </Box>

@@ -18,9 +18,10 @@ import {
   // Divider,
 } from '@chakra-ui/react'
 import { Lock } from '@phosphor-icons/react'
+import { useTranslation } from 'react-i18next'
 
 import { LessonType } from 'entities/lesson'
-import Collectible from './Collectible'
+import Collectible from 'components/Collectible'
 import { useLocalStorage } from 'usehooks-ts'
 // import Collectible from 'components/Collectible'
 
@@ -35,6 +36,7 @@ const MintCollectibleModal = ({
   lesson: LessonType
   numberOfOwners: number
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
   const [isBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${lesson.badgeId}`,
@@ -42,6 +44,7 @@ const MintCollectibleModal = ({
   )
   const remaining = 100 - numberOfOwners
   console.log(remaining)
+  // TODO: TRANSLATE
   return (
     <Modal
       onClose={onClose}
@@ -59,7 +62,7 @@ const MintCollectibleModal = ({
         maxH="var(--chakra-vh)"
       >
         <ModalHeader>
-          Collect DataDisk
+          {t('Collect DataDisk')}
           <Box mt="4" fontSize="md" fontWeight="normal">
             Bankless Academy is issuing a small quantity of collectible DataDisk
             devices in an evolving effort to share Bankless Academy content with
@@ -100,7 +103,7 @@ const MintCollectibleModal = ({
                 fontSize="lg"
               >
                 <Lock />
-                <Box ml="1">Claim your lesson badge to unlock</Box>
+                <Box ml="1">{t('Claim your lesson badge to unlock')}</Box>
               </Box>
             )}
             {/* <Box

@@ -1,8 +1,6 @@
 // import { Stamp } from '@gitcoinco/passport-sdk-types'
-import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
+import { ALLOWED_ISSUER, ALLOWED_PROVIDERS } from 'constants/passport'
 import { Stamps } from 'entities/passport'
-
-const ALLOWED_PROVIDERS = Object.keys(STAMP_PROVIDERS)
 
 export const filterValidStamps = (stamps: any[]): any[] => {
   // const currentTimestamp = 1665401965000
@@ -29,7 +27,7 @@ export const filterValidStamps = (stamps: any[]): any[] => {
 export const getNumberOfValidStamps = (stamps: Stamps): number | null => {
   if (stamps === null || !stamps) return null
   const array = Object.values(stamps)
-  if (!array.length) {
+  if (!array?.length) {
     return 0
   }
   return filterValidStamps(Object.values(stamps))?.length || 0

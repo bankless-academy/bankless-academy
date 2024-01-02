@@ -14,12 +14,17 @@ import InternalLink from 'components/InternalLink'
 import { useSmallScreen } from 'hooks'
 import LessonButton from 'components/LessonButton'
 import NFT from 'components/NFT'
-import ExternalLink from './ExternalLink'
-import { DOMAIN_URL, TOKEN_GATING_ENABLED } from 'constants/index'
+import ExternalLink from 'components/ExternalLink'
+import {
+  DOMAIN_URL,
+  IS_WALLET_DISABLED,
+  IS_WHITELABEL,
+  TOKEN_GATING_ENABLED,
+} from 'constants/index'
 import { useEffect } from 'react'
-import { scrollTop } from 'utils'
+import { Mixpanel, scrollTop } from 'utils'
 import OpenLesson from 'components/OpenLesson'
-import { useRouter } from 'next/router'
+import LanguageSwitch from 'components/LanguageSwitch'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   h1 {
@@ -58,8 +63,8 @@ const LessonDetail = ({
   lesson: LessonType
   extraKeywords?: any
 }): React.ReactElement => {
-  const { i18n } = useTranslation()
-  const router = useRouter()
+  const { t, i18n } = useTranslation()
+
   const [, isSmallScreen] = useSmallScreen()
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
 
@@ -69,6 +74,10 @@ const LessonDetail = ({
   )
 
   useEffect((): void => {
+    Mixpanel.track('lesson_briefing', {
+      lesson: lesson?.englishName,
+      language: i18n.language,
+    })
     scrollTop()
     setOpenLessonLS(closeLesson(openLessonLS, lesson))
   }, [])
@@ -89,8 +98,6 @@ const LessonDetail = ({
   const tallyId =
     lesson.endOfLessonRedirect?.replace('https://tally.so/r/', '') || ''
 
-  const languages = lesson.languages
-
   return (
     <>
       {JSON.parse(openLessonLS)?.includes(lesson.slug) ? (
@@ -102,7 +109,7 @@ const LessonDetail = ({
         />
       ) : (
         <>
-          {!isSmallScreen && (
+          {!isSmallScreen && !IS_WHITELABEL && (
             <StyledBox
               w="-webkit-fill-available"
               position="absolute"
@@ -156,44 +163,7 @@ const LessonDetail = ({
               >
                 {lesson.name}
               </Text>
-              {languages?.length ? (
-                <Box textAlign="center">
-                  <Button
-                    variant={
-                      i18n.language === 'en' ||
-                      !lesson.languages.includes(i18n.language as any)
-                        ? 'solid'
-                        : 'outline'
-                    }
-                    ml={3}
-                    onClick={() => {
-                      i18n.changeLanguage('en', () =>
-                        router.push(`/lessons/${lesson.slug}`)
-                      )
-                    }}
-                  >
-                    🇺🇸
-                  </Button>
-                  {languages.map((l) => (
-                    <Button
-                      variant={i18n.language === l ? 'solid' : 'outline'}
-                      key={`key-${l}`}
-                      onClick={() => {
-                        i18n.changeLanguage(l, () =>
-                          router.push(`/lessons/${lesson.slug}?lang=${l}`)
-                        )
-                      }}
-                      ml={3}
-                    >
-                      {l === 'es' && '🇪🇸'}
-                      {l === 'fr' && '🇫🇷'}
-                      {l === 'de' && '🇩🇪'}
-                      {l === 'jp' && '🇯🇵'}
-                      {l === 'cn' && '🇨🇳'}
-                    </Button>
-                  ))}
-                </Box>
-              ) : null}
+              <LanguageSwitch lesson={lesson} />
               <Box
                 display="flex"
                 mt="4"
@@ -225,7 +195,7 @@ const LessonDetail = ({
                   borderBottom="1px solid #989898"
                   pb="2"
                 >
-                  Lesson Description
+                  {t('Lesson Description')}
                 </Text>
                 <Text as="p" fontSize="medium" py="4">
                   {lesson.description}
@@ -240,7 +210,7 @@ const LessonDetail = ({
                     borderBottom="1px solid #989898"
                     pb="2"
                   >
-                    Lesson Requirements
+                    {t('Lesson Requirements')}
                   </Text>
                   <Box textAlign="center">
                     <NFT nftLink={lesson.nftGatingImageLink} />
@@ -257,7 +227,7 @@ const LessonDetail = ({
                   </Box>
                 </Box>
               )}
-              {lesson.endOfLessonRedirect &&
+              {lesson?.endOfLessonRedirect &&
                 isQuizComplete &&
                 Quest?.isQuestCompleted && (
                   <>
@@ -269,45 +239,52 @@ const LessonDetail = ({
                         borderBottom="1px solid #989898"
                         pb="2"
                       >
-                        Feedback
+                        {t('Feedback')}
                       </Text>
                     </Box>
-                    <Box>{lesson.endOfLessonText}</Box>
+                    <Box>{lesson?.endOfLessonText}</Box>
                     <Box textAlign="center">
-                      <InternalLink href={`/feedback?tally=${tallyId}`}>
+                      <InternalLink
+                        href={`/feedback?tally=${tallyId}`}
+                        alt="Leave feedback"
+                      >
                         <Button variant="primaryBig" size="lg">
-                          Leave feedback
+                          {t('Leave feedback')}
                         </Button>
                       </InternalLink>
                     </Box>
                   </>
                 )}
-              {lesson.badgeId && (
+              {!IS_WALLET_DISABLED && (
                 <>
-                  <Box pb="8">
-                    <Text
-                      as="h2"
-                      fontSize="2xl"
-                      fontWeight="bold"
-                      borderBottom="1px solid #989898"
-                      pb="2"
-                    >
-                      Rewards
-                    </Text>
-                  </Box>
-                  <Box textAlign="center">
-                    <Badge
-                      lesson={lesson}
-                      isQuestCompleted={
-                        isQuizComplete && Quest?.isQuestCompleted
-                      }
-                    />
-                  </Box>
+                  {lesson.badgeId && (
+                    <>
+                      <Box pb="8">
+                        <Text
+                          as="h2"
+                          fontSize="2xl"
+                          fontWeight="bold"
+                          borderBottom="1px solid #989898"
+                          pb="2"
+                        >
+                          {t('Rewards')}
+                        </Text>
+                      </Box>
+                      <Box textAlign="center">
+                        <Badge
+                          lesson={lesson}
+                          isQuestCompleted={
+                            isQuizComplete && Quest?.isQuestCompleted
+                          }
+                        />
+                      </Box>
+                    </>
+                  )}
+                  {lesson.hasCollectible ? (
+                    <CollectLessonButton lesson={lesson} />
+                  ) : null}
                 </>
               )}
-              {lesson.hasCollectible ? (
-                <CollectLessonButton lesson={lesson} />
-              ) : null}
             </Box>
           </StyledCard>
         </>

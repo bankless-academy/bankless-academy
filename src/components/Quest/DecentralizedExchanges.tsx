@@ -70,7 +70,7 @@ const DecentralizedExchanges = (
   }, [account])
 
   const lesson = LESSONS.find(
-    (lesson) => lesson.slug === 'how-to-swap-on-a-decentralized-exchange'
+    (lesson) => lesson.slug === 'swapping-on-a-decentralized-exchange'
   )
 
   if (!lesson)
@@ -126,13 +126,13 @@ const DecentralizedExchanges = (
                   <CheckIcon color={theme.colors.correct} />
                 ) : (
                   tx &&
-                  tx.length !== 0 && (
+                  tx?.length !== 0 && (
                     <CloseIcon color={theme.colors.incorrect} />
                   )
                 )}
               </InputRightElement>
             </InputGroup>
-            {isTransactionVerified === 'false' && tx && tx.length !== 0 && (
+            {isTransactionVerified === 'false' && tx && tx?.length !== 0 && (
               <Box mb="4">
                 <b>Tip:</b> Make sure you paste the <b>swap</b> transaction hash
                 done on <b>Optimism network</b> and not the token approval
@@ -155,7 +155,7 @@ const DecentralizedExchanges = (
                   </Text>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     target="_blank"
                   >
                     <Image src={lesson.lessonImageLink} />
@@ -164,7 +164,7 @@ const DecentralizedExchanges = (
                 <Box pb="8">
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     target="_blank"
                   >
                     <Button variant="primary">Read Entry</Button>

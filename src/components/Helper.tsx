@@ -14,6 +14,7 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react'
 import { ReactNode, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const QuestionIcon = (props) => (
   <Icon
@@ -46,16 +47,34 @@ const QuestionIcon = (props) => (
 
 const ButtonHelper = ({
   onOpenHelpModal,
+  isProfile,
 }: {
   onOpenHelpModal: any
+  isProfile?: boolean
 }): JSX.Element => {
   const [isHover, setIsHover] = useState(false)
   return (
     <Box
       position="absolute"
       zIndex="2"
-      top={isHover ? '-15px' : '-12px'}
-      right={isHover ? '-15px' : '-12px'}
+      top={
+        isHover
+          ? isProfile
+            ? '-16px'
+            : '-15px'
+          : isProfile
+          ? '-16px'
+          : '-12px'
+      }
+      right={
+        isHover
+          ? isProfile
+            ? '-14px'
+            : '-15px'
+          : isProfile
+          ? '-11px'
+          : '-12px'
+      }
     >
       <IconButton
         variant="unstyled"
@@ -78,11 +97,14 @@ const Helper = ({
   title,
   definition,
   fullscreen,
+  isProfile,
 }: {
   title: ReactNode
   definition: ReactNode
   fullscreen?: boolean
+  isProfile?: boolean
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const {
     isOpen: isOpenHelpModal,
     onOpen: onOpenHelpModal,
@@ -92,7 +114,7 @@ const Helper = ({
 
   return (
     <>
-      <ButtonHelper onOpenHelpModal={onOpenHelpModal} />
+      <ButtonHelper isProfile={isProfile} onOpenHelpModal={onOpenHelpModal} />
       <Modal
         onClose={onCloseHelpModal}
         size={fullscreen && isMobileScreen ? 'full' : 'md'}
@@ -112,7 +134,7 @@ const Helper = ({
           <ModalCloseButton />
           <ModalBody>{definition}</ModalBody>
           <ModalFooter m="auto">
-            <Button onClick={onCloseHelpModal}>Got it</Button>
+            <Button onClick={onCloseHelpModal}>{t('Got it')}</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

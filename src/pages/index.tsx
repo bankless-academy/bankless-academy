@@ -87,13 +87,13 @@ const HomePage = (): JSX.Element => {
               alt="Bankless Academy"
             />
             <Box>
-              <InternalLink href={`/lessons`}>
+              <InternalLink href={`/lessons`} alt="Explore Lessons">
                 <Button
                   variant="primary"
                   size="lg"
                   style={{ padding: '0 23px' }}
                 >
-                  {t('Explore Lessons', { ns: 'common' })}
+                  {t('Explore Lessons')}
                 </Button>
               </InternalLink>
             </Box>
@@ -103,17 +103,17 @@ const HomePage = (): JSX.Element => {
           <Container maxW="container.lg">
             <Box mt="6">
               <Heading as="h2" size="xl" m="auto">
-                {t('Start Your Bankless Journey')}
+                {t(`Start Your Bankless Journey`)}
               </Heading>
               <Box fontSize="lg" mt="6">
-                Bankless Academy is on a mission to ensure every web3 Explorer
-                is ready for their crypto-verse voyage.
+                {t(
+                  `Bankless Academy is on a mission to ensure every web3 Explorer is ready for their crypto-verse voyage.`
+                )}
                 <br />
                 <Box mt={2}>
-                  Using the Academy platform you’ll be taking a confident first
-                  step into the new frontier, before diving down your own unique
-                  learning path and preparing to blaze new trails across
-                  blockchain space. Let’s get started.
+                  {t(
+                    `Using the Academy platform you’ll be taking a confident first step into the new frontier, before diving down your own unique learning path and preparing to blaze new trails across blockchain space. Let’s get started.`
+                  )}
                 </Box>
               </Box>
               <SimpleGrid
@@ -125,41 +125,45 @@ const HomePage = (): JSX.Element => {
                 <Card>
                   <LearnIcon />
                   <Heading size="lg" mt="2">
-                    Advance Your Knowledge
+                    {t(`Advance Your Knowledge`)}
                   </Heading>
                   <Text fontSize="lg" mt="2">
-                    From basics to deep dives, discover the world of web3 with
-                    content built alongside leading experts.
+                    {t(
+                      `From basics to deep dives, discover the world of web3 with content built alongside leading experts.`
+                    )}
                   </Text>
                 </Card>
                 <Card>
                   <QuizIcon />
                   <Heading size="lg" mt="2">
-                    Test Your Abilities
+                    {t(`Test Your Abilities`)}
                   </Heading>
                   <Text fontSize="lg" mt="2">
-                    Complete activities that test your command of crypto
-                    concepts.
+                    {t(
+                      `Complete activities that test your command of crypto concepts.`
+                    )}
                   </Text>
                 </Card>
                 <Card>
                   <QuestIcon />
                   <Heading size="lg" mt="2">
-                    Complete Quests
+                    {t(`Complete Quests`)}
                   </Heading>
                   <Text fontSize="lg" mt="2">
-                    Put knowledge into action with quests that reward first-hand
-                    experience.
+                    {t(
+                      `Put knowledge into action with quests that reward first-hand experience.`
+                    )}
                   </Text>
                 </Card>
                 <Card>
                   <RewardsIcon />
                   <Heading size="lg" mt="2">
-                    Earn Rewards
+                    {t(`Earn Rewards`)}
                   </Heading>
                   <Text fontSize="lg" mt="2">
-                    Collect badges and other on-chain rewards for successfully
-                    finishing lessons and quests.
+                    {t(
+                      `Collect badges and other onchain rewards for successfully finishing lessons and quests.`
+                    )}
                   </Text>
                 </Card>
               </SimpleGrid>
@@ -172,7 +176,6 @@ const HomePage = (): JSX.Element => {
               borderRadius="lg"
             >
               <Box fontSize="2xl">
-                {`Sign up for our `}
                 <NewsletterButton
                   variant="primary"
                   size="lg"
@@ -183,11 +186,13 @@ const HomePage = (): JSX.Element => {
                       name: 'Newsletter signup',
                     })
                   }}
+                  mr="2"
                 >
-                  Newsletter
+                  {t(`Newsletter`)}
                 </NewsletterButton>
-                {` to be notified of new lessons and platform
-              updates!`}
+                {t(
+                  `Sign up for our newsletter to be notified of new lessons and platform updates!`
+                )}
               </Box>
             </Box>
             <SubscriptionModal isOpen={isOpen} onClose={onClose} />
@@ -195,7 +200,7 @@ const HomePage = (): JSX.Element => {
             <>
               <Box mt="16">
                 <Heading as="h2" size="xl" my="16" mb="12">
-                  More Lessons On the Way
+                  {t(`More Lessons On the Way`)}
                 </Heading>
                 <Box maxW="800px" display="flex" margin="auto">
                   <Box width="100%">
@@ -211,10 +216,11 @@ const HomePage = (): JSX.Element => {
                       </Box>
                       <Box ml="4">
                         <Heading size="lg" mb="2">
-                          Dive into DeFi
+                          {t(`Dive into DeFi`)}
                         </Heading>
-                        Learn how crypto protocols and tools are helping
-                        Explorers go Bankless.
+                        {t(
+                          `Learn how crypto protocols and tools are helping Explorers go Bankless.`
+                        )}
                       </Box>
                     </Box>
                     <Box
@@ -229,10 +235,11 @@ const HomePage = (): JSX.Element => {
                       </Box>
                       <Box ml="4">
                         <Heading size="lg" mb="2">
-                          Explore NFTs
+                          {t(`Explore NFTs`)}
                         </Heading>
-                        Explore the on-chain property rights movement, and the
-                        emerging use-cases for this technology.
+                        {t(
+                          `Explore the onchain property rights movement, and the emerging use-cases for this technology.`
+                        )}
                       </Box>
                     </Box>
                     <Box
@@ -247,10 +254,11 @@ const HomePage = (): JSX.Element => {
                       </Box>
                       <Box ml="4">
                         <Heading size="lg" mb="2">
-                          Join a DAO
+                          {t(`Join a DAO`)}
                         </Heading>
-                        The future of work is upon us. Learn how you can work in
-                        crypto, and how to get started.
+                        {t(
+                          `The future of work is upon us. Learn how you can work in crypto, and how to get started.`
+                        )}
                       </Box>
                     </Box>
                     <Box display="flex" pb="6" width="100%">
@@ -259,10 +267,11 @@ const HomePage = (): JSX.Element => {
                       </Box>
                       <Box ml="4">
                         <Heading size="lg" mb="2">
-                          Study Blockchain Architecture & More
+                          {t(`Study Blockchain Architecture & More`)}
                         </Heading>
-                        Let’s explore how blockchain technology makes crypto
-                        currencies and tools possible.
+                        {t(
+                          `Let’s explore how blockchain technology makes crypto currencies and tools possible.`
+                        )}
                       </Box>
                     </Box>
                   </Box>
@@ -270,12 +279,12 @@ const HomePage = (): JSX.Element => {
               </Box>
               <Box my="16">
                 <Heading as="h2" size="xl" mt="16" mb="8">
-                  Work With Us!
+                  {t(`Work With Us!`)}
                 </Heading>
                 <Text fontSize="2xl" mb="8">
-                  From reviewing lessons to partnering with our platform, there
-                  are plenty of options for collaborating with the Academy
-                  Squad.
+                  {t(
+                    `From reviewing lessons to partnering with our platform, there are plenty of options for collaborating with the Academy Squad.`
+                  )}
                 </Text>
                 <SimpleGrid
                   columns={{ sm: 1, md: 2, lg: 3 }}
@@ -286,12 +295,12 @@ const HomePage = (): JSX.Element => {
                   <Card>
                     <PencilIcon />
                     <Heading size="lg" mt="2">
-                      Collaborate On A Lesson
+                      {t(`Collaborate On A Lesson`)}
                     </Heading>
                     <Text fontSize="lg" mt="2">
-                      Join protocols such as 1inch in building a lesson with
-                      Bankless Academy, introducing Explorers to Bankless tools
-                      and learning more about your community in the process.
+                      {t(
+                        `Join protocols such as 1inch in building a lesson with Bankless Academy, introducing Explorers to Bankless tools and learning more about your community in the process.`
+                      )}
                     </Text>
                     <Box
                       display="flex"
@@ -302,7 +311,7 @@ const HomePage = (): JSX.Element => {
                     >
                       <ExternalLink href="https://sponsors.banklessacademy.com/">
                         <Button variant="secondary" size="md">
-                          Collaborate!
+                          {t(`Collaborate!`)}
                         </Button>
                       </ExternalLink>
                     </Box>
@@ -310,12 +319,12 @@ const HomePage = (): JSX.Element => {
                   <Card>
                     <GraduationCapIcon />
                     <Heading size="lg" mt="2">
-                      Open Your Own Academy
+                      {t(`Open Your Own Academy`)}
                     </Heading>
                     <Text fontSize="lg" mt="2">
-                      Our whitelabel platform has helped numerous DAOs
-                      kick-start their community education journey - without any
-                      developer knowledge!
+                      {t(
+                        `Our whitelabel platform has helped numerous DAOs kick-start their community education journey - without any developer knowledge!`
+                      )}
                     </Text>
                     <Box
                       display="flex"
@@ -326,7 +335,7 @@ const HomePage = (): JSX.Element => {
                     >
                       <ExternalLink href="http://whitelabel.banklessacademy.com/">
                         <Button variant="secondary" size="md">
-                          Learn More
+                          {t(`Learn More`)}
                         </Button>
                       </ExternalLink>
                     </Box>
@@ -334,12 +343,15 @@ const HomePage = (): JSX.Element => {
                   <Card>
                     <HandshakeIcon />
                     <Heading size="lg" mt="2">
-                      Partner With Us
+                      {t(`Partner With Us`)}
                     </Heading>
                     <Text fontSize="lg" mt="2">
-                      Do you have an interesting value proposition for our team?
+                      {t(
+                        `Do you have an interesting value proposition for our team?`
+                      )}
                       <br />
-                      Reach out below so we can start a conversation.
+
+                      {t(`Reach out below so we can start a conversation.`)}
                     </Text>
                     <Box
                       display="flex"
@@ -350,7 +362,7 @@ const HomePage = (): JSX.Element => {
                     >
                       <ExternalLink href="https://tally.so/r/w4kXA3">
                         <Button variant="secondary" size="md">
-                          Send Request
+                          {t(`Send Request`)}
                         </Button>
                       </ExternalLink>
                     </Box>
@@ -358,36 +370,23 @@ const HomePage = (): JSX.Element => {
                   <Card>
                     <EyeIcon />
                     <Heading size="lg" mt="2">
-                      Review Our Lessons
+                      {t(`Improve Our Lessons`)}
                     </Heading>
                     <Text fontSize="lg" mt="2">
-                      Anyone can help improve Bankless Academy. Help us by
-                      providing feedback on Beta lessons and your on-chain
-                      Reviewer badge will make sure we won’t forget it.
+                      {t(
+                        `Everyone can help make Bankless Academy better. Provide feedback on lessons or translations and receive an onchain badge once your feedback is included.`
+                      )}
                     </Text>
-                    <Box
-                      display="flex"
-                      flexDirection="row-reverse"
-                      pt="4"
-                      style={{ flexGrow: 1 }}
-                      alignItems="self-end"
-                    >
-                      <ExternalLink href="https://lenster.xyz/u/banklessacademy">
-                        <Button variant="secondary" size="md">
-                          Sign Up
-                        </Button>
-                      </ExternalLink>
-                    </Box>
                   </Card>
                   <Card>
                     <UsersThreeIcon />
                     <Heading size="lg" mt="2">
-                      Join Our Team
+                      {t(`Join Our Team`)}
                     </Heading>
                     <Text fontSize="lg" mt="2">
-                      Got what it takes to join the Academy Squad?
+                      {t(`Got what it takes to join the Academy Squad?`)}
                       <br />
-                      We want to hear from you.
+                      {t(` We want to hear from you.`)}
                     </Text>
                     <Box
                       display="flex"
@@ -398,15 +397,16 @@ const HomePage = (): JSX.Element => {
                     >
                       <ExternalLink href="http://talent.banklessacademy.com/">
                         <Button variant="secondary" size="md">
-                          See Positions
+                          {t(`See Positions`)}
                         </Button>
                       </ExternalLink>
                     </Box>
                   </Card>
                   <Card>
                     <Text fontSize="lg" mb="2">
-                      Or if you just like what we’re doing, you can help by
-                      funding us below.
+                      {t(
+                        `Or if you just like what we’re doing, you can help by funding us below.`
+                      )}
                     </Text>
                     <ExternalLink
                       href="https://grants.gitcoin.co/"
@@ -418,8 +418,9 @@ const HomePage = (): JSX.Element => {
                       />
                     </ExternalLink>
                     <Text fontSize="lg" mt="2">
-                      We rely on our public-goods business model to continue
-                      providing a free, Bankless education!
+                      {t(
+                        `We rely on our public-goods business model to continue providing a free, Bankless education!`
+                      )}
                     </Text>
                   </Card>
                 </SimpleGrid>

@@ -111,7 +111,7 @@ ${LESSON_SPLITTER}
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
 const LESSON_FILENAME = IS_WHITELABEL ? 'whitelabel_lessons' : 'lessons'
-const DEFAULT_NOTION_ID = '1dd77eb6ed4147f6bdfd6f23a30baa46'
+const DEFAULT_NOTION_ID = '129141602de240e484356bd85f7c75e0'
 const POTION_API = 'https://potion.banklessacademy.com'
 
 const KEY_MATCHING = {
@@ -126,6 +126,7 @@ const KEY_MATCHING = {
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
   'Badge ID': 'badgeId',
+  'Collectible ID': 'collectibleId',
   'Duration in minutes': 'duration',
   'What will you learn from this?': 'learnings',
   Difficulty: 'difficulty',
@@ -136,6 +137,7 @@ const KEY_MATCHING = {
   Module: 'moduleId',
   Quest: 'quest',
   'Publication status': 'publicationStatus',
+  'Publication Date': 'publicationDate',
   'Featured order on homepage': 'featuredOrderOnHomepage',
   'Enable Comments': 'isCommentsEnabled',
   'End of Lesson redirect': 'endOfLessonRedirect',
@@ -156,6 +158,10 @@ const KEY_MATCHING = {
 const args = process.argv
 const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : process.env.DEFAULT_CONTENT_DB_ID || DEFAULT_NOTION_ID
 console.log('NOTION_ID', NOTION_ID)
+const LESSON_NOTION_ID = args.includes('-n') ? args.join(' ').split(' ').pop() : null
+console.log('LESSON_NOTION_ID', LESSON_NOTION_ID)
+const TRANSLATION_ONLY = args.includes('-tr')
+const NO_TRANSLATION = args.includes('-notr')
 
 const slugify = (text) => text.toLowerCase()
   .replace('á', 'a')
@@ -166,7 +172,7 @@ const slugify = (text) => text.toLowerCase()
 
 const get_img = (imageLink, slug, image_name) => {
   const [file_name] = imageLink.split('?')
-  const file_extension = file_name.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/)[1].replace('jpeg', 'jpg')
+  const file_extension = (file_name.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/))?.[1].replace('jpeg', 'jpg') || 'png'
   // console.log(file_extension)
   // create "unique" hash based on Notion imageLink (different when re-uploaded)
   const hash = crc32(file_name)
@@ -194,11 +200,62 @@ const download_image = (url, image_path) =>
     response.data.pipe(fs.createWriteStream(image_path))
   })
 
-const placeholder = (lesson_title, size) => `https://placehold.co/${size}/4b4665/FFFFFF?text=${lesson_title.replaceAll(' ', '+')}`
+const placeholder = (lesson, size, image_name) => {
+  const placeholder_link = `https://placehold.co/${size}/4b4665/FFFFFF/png?text=${lesson.name.replaceAll(' ', '+')}`
+  return get_img(placeholder_link, lesson.slug, image_name)
+}
+
+const importTranslations = async (lesson) => {
+  if (NO_TRANSLATION) return
+  for (const language of lesson.languages) {
+    console.log('import translation:', language)
+    try {
+      const random = Math.floor(Math.random() * 100000)
+      const crowdinFile = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md?${random}`
+      // console.log(crowdinFile)
+      const crowdin = await axios.get(crowdinFile)
+      // console.log(crowdin)
+      if (crowdin.status === 200) {
+        // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
+        const newTranslation = crowdin.data
+        const [, title, description] = crowdin.data.match(/---\nTITLE:\s(.*?)\nDESCRIPTION:\s(.*?)\n/)
+        // console.log('title', title)
+        // console.log('description', description)
+        const lessonInfoPath = `translation/website/${language}/lesson.json`
+        const lessonInfo = fs.existsSync(lessonInfoPath) ? await fs.promises.readFile(lessonInfoPath, 'utf8') : '{}'
+        const translationInfo = {}
+        translationInfo[lesson.name] = title
+        translationInfo[lesson.description] = description
+        // console.log('translationInfo', translationInfo)
+        const jsonLessonInfo = { ...JSON.parse(lessonInfo), ...translationInfo }
+        // console.log('jsonLessonInfo', jsonLessonInfo)
+        fs.writeFile(lessonInfoPath, `${JSON.stringify(jsonLessonInfo, null, 2)}`, (error) => {
+          if (error) throw error
+        })
+        // console.log(newTranslation)
+        const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
+        const existingTranslation = fs.existsSync(lessonPath) ? await fs.promises.readFile(lessonPath, 'utf8') : ''
+        // console.log(existingTranslation)
+        // check if translation has been modified
+        if (newTranslation.trim() !== existingTranslation.trim()) {
+          console.log('- new translation available')
+          fs.writeFile(lessonPath, `${newTranslation}`, (error) => {
+            if (error) throw error
+          })
+        } else {
+          console.log('- same same')
+        }
+      }
+    } catch (error) {
+
+      console.log(`- ${language} not available yet`)
+    }
+  }
+}
 
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
-  .then((notionRows) => {
+  .then(async (notionRows) => {
     console.log('Notion DB link: ', `${POTION_API}/table?id=${NOTION_ID}`)
     const lessons = []
     if (IS_WHITELABEL && !fs.existsSync(`public/${PROJECT_DIR}lesson`)) {
@@ -216,19 +273,24 @@ axios
             // transform to number if the string contains a number
             [KEY_MATCHING[k]]: Number.isNaN(parseInt(notion.fields[k])) ||
               // ignore type transform for ModuleId & mirrorNFTAddress
-              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible mint ID' || k === 'Lesson collectible token address' || k === 'Sponsor Name' || k === 'Languages')
+              (k === 'Module' || k === 'Mirror NFT address' || k === 'Lesson collectible mint ID' || k === 'Lesson collectible token address' || k === 'Sponsor Name' || k === 'Languages' || k === 'Publication Date')
               ? notion.fields[k]
               : parseInt(notion.fields[k]),
           }),
         {}
       )
+      // skip import if LESSON_NOTION_ID is specified
       if (lesson.publicationStatus === undefined) return
       notion.id = notion.id.replace(/-/g, '')
+      if (LESSON_NOTION_ID && notion.id !== LESSON_NOTION_ID) return
+      // TEMP: we don't publish planned lesson ATM
+      if (lesson.publicationStatus === 'planned') return
       console.log('Notion lesson link: ', `${POTION_API}/html?id=${notion.id}`)
 
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.badgeId === undefined) lesson.badgeId = null
+      if (lesson.collectibleId === undefined) delete lesson.collectibleId
       if (lesson.badgeImageLink === undefined) lesson.badgeImageLink = null
       if (lesson.lessonCollectedImageLink === undefined) delete lesson.lessonCollectedImageLink
       if (lesson.lessonCollectibleVideo === undefined) delete lesson.lessonCollectibleVideo
@@ -237,15 +299,20 @@ axios
       if (lesson.lessonCollectibleTokenAddress === undefined) delete lesson.lessonCollectibleTokenAddress
       if (lesson.lessonCollectibleMintID && lesson.lessonCollectibleTokenAddress) lesson.hasCollectible = true
       if (lesson.lessonImageLink === undefined) lesson.lessonImageLink = null
+      if (lesson.difficulty === undefined) delete lesson.difficulty
+      if (lesson.endOfLessonText === undefined) delete lesson.endOfLessonText
       if (lesson.marketingDescription === undefined) lesson.marketingDescription = lesson.description
       if (lesson.learningActions === undefined) lesson.learningActions = ''
       if (lesson.learnings === undefined) lesson.learnings = ''
+      if (lesson.publicationDate === undefined || lesson.publicationDate === null || !lesson.publicationDate.startsWith('20')) delete lesson.publicationDate
       if (lesson.featuredOrderOnHomepage === undefined) lesson.featuredOrderOnHomepage = false
       if (lesson.isCommentsEnabled === undefined) lesson.isCommentsEnabled = false
       if (lesson.endOfLessonRedirect === undefined) lesson.endOfLessonRedirect = null
       if (lesson.moduleId === undefined) delete lesson.moduleId
       else lesson.moduleId = lesson.moduleId[0]
       if (lesson.languages === undefined) delete lesson.languages
+      // sort languages alphabetically
+      else lesson.languages.sort()
       if (lesson.lessonWriters === undefined) delete lesson.lessonWriters
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
       if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
@@ -265,6 +332,7 @@ axios
       if (lesson.mirrorLink && mirrorId) {
         lesson.isArticle = true
         lesson.notionId = notion.id
+        lesson.englishName = lesson.name
         lesson.slug = slugify(lesson.name)
         delete lesson.quest
         await axios({
@@ -309,11 +377,11 @@ axios
 
                 if (lesson.articleContent.includes('\n\n\n---\n\n')) {
                   const articleContentArray = lesson.articleContent.split('\n\n\n---\n\n')
-                  if (articleContentArray.length && articleContentArray[articleContentArray.length - 1].includes('Explore more lessons')) {
+                  if (articleContentArray?.length && articleContentArray[articleContentArray?.length - 1].includes('Explore more lessons')) {
                     articleContentArray.pop()
                     lesson.articleContent = articleContentArray.join('\n\n\n---\n\n')
                   }
-                  if (articleContentArray.length && articleContentArray[articleContentArray.length - 1].includes('financial or tax advice')) {
+                  if (articleContentArray?.length && articleContentArray[articleContentArray?.length - 1].includes('financial or tax advice')) {
                     articleContentArray.pop()
                     lesson.articleContent = articleContentArray.join('\n\n\n---\n\n')
                   }
@@ -334,6 +402,8 @@ axios
                 lesson.imageLinks = []
                 lessons[index] = lesson
                 if (MD_ENABLED) {
+                  // import translations
+                  importTranslations(lesson)
                   // console.log(lesson.articleContent)
                   let lessonContentMD = lesson.articleContent
                   try {
@@ -341,7 +411,9 @@ axios
                     const imageRegex = /!\[.*?\]\((.*?)\)/g;
                     let match
                     while ((match = imageRegex.exec(lessonContentMD)) !== null) {
-                      const imageLink = match[1]
+                      // fix weird bug with \
+                      const imageLink = match[1].replace('\\', '')
+                      // console.log(imageLink)
                       const file_extension = imageLink.match(/\.(png|svg|jpg|jpeg|webp|webm|mp4|gif)/)[1]
                       // create "unique" hash based on Notion imageLink (different when re-uploaded)
                       const hash = crc32(imageLink)
@@ -353,6 +425,7 @@ axios
                       }
                       const image_path = `${image_dir}/image-${hash}.${file_extension}`
                       const local_image_path = `public${image_path}`
+                      // console.log(local_image_path)
                       lesson.imageLinks.push(image_path)
                       if (!fs.existsSync(local_image_path)) {
                         download_image(imageLink, local_image_path)
@@ -412,6 +485,7 @@ axios
         .get(`${POTION_API}/html?id=${notion.id}`)
         .then(async (htmlPage) => {
           lesson.notionId = notion.id
+          lesson.englishName = lesson.name
           lesson.slug = slugify(lesson.name)
           // add notionId to DB
           await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
@@ -419,13 +493,13 @@ axios
 
           if (lesson.badgeImageLink) {
             lesson.badgeImageLink = get_img(lesson.badgeImageLink, lesson.slug, 'badge')
-          } else lesson.badgeImageLink = placeholder(lesson.name, '600x600')
+          } else lesson.badgeImageLink = placeholder(lesson, '600x600', 'badge')
           if (lesson.lessonImageLink) {
             lesson.lessonImageLink = get_img(lesson.lessonImageLink, lesson.slug, 'lesson')
-          } else lesson.lessonImageLink = placeholder(lesson.name, '1200x600')
+          } else lesson.lessonImageLink = placeholder(lesson, '1200x600', 'lesson')
           if (lesson.socialImageLink) {
             lesson.socialImageLink = get_img(lesson.socialImageLink, lesson.slug, 'social')
-          } else lesson.socialImageLink = placeholder(lesson.name, '1200x600')
+          } else lesson.socialImageLink = placeholder(lesson, '1200x600', 'social')
           if (lesson.sponsorLogo) {
             lesson.sponsorLogo = get_img(lesson.sponsorLogo, lesson.slug, 'sponsor')
           }
@@ -451,7 +525,10 @@ axios
             .substr(3) : `{"type": "LEARN", "title": "TODO", "content": "<p>slide content</p>`
           const content = JSON.parse(`[${htmlPage.data}"}]`)
           let quizNb = 0
+          const allKeywords = []
           const slides = content.map((slide) => {
+            // remove tags in title
+            slide.title = slide.title.replace(/<[^>]*>?/gm, '')
             // replace with type QUIZ
             if (slide.content.includes("<div class='checklist'>")) {
               quizNb++
@@ -473,7 +550,7 @@ axios
               const blockquotes = quizDiv.window.document.querySelectorAll('blockquote')
               const labels = quizDiv.window.document.querySelectorAll('.checklist label')
 
-              for (let i = 0; i < checkboxes.length; i++) {
+              for (let i = 0; i < checkboxes?.length; i++) {
                 const nb = i + 1
                 const checkbox = checkboxes[i]
                 const blockquote = blockquotes[i]
@@ -489,7 +566,7 @@ axios
                 const isChecked = checkbox?.checked
                 if (isChecked) slide.quiz.rightAnswerNumber = nb
               }
-              if (slide.quiz.feedback.length === 0) delete slide.quiz.feedback
+              if (slide.quiz.feedback?.length === 0) delete slide.quiz.feedback
               if (!slide.quiz.rightAnswerNumber && lesson.slug !== 'bankless-archetypes')
                 throw new Error(
                   `missing right answer, please check ${POTION_API}/html?id=${notion.id}`
@@ -499,6 +576,13 @@ axios
               delete slide.content
             }
             if (slide.content) {
+              // keywords
+              const contentDiv = new JSDOM("<div>" + slide.content + "</div>")
+              const keywords = contentDiv.window.document.querySelectorAll('code')
+              for (const keyword of keywords) {
+                const k = keyword.textContent?.toLowerCase()
+                if (!allKeywords.includes(k)) allKeywords.push(k)
+              }
               // download images locally
               const imageLinks = [...slide.content.matchAll(/<img src='(.*?)'/gm)].map(a => a[1])
               for (const imageLink of imageLinks) {
@@ -552,6 +636,7 @@ axios
             }
             return slide
           })
+          lesson.keywords = allKeywords
           const componentName = PROJECT_DIR.replace(/[^A-Za-z0-9]/g, '') + lesson.name
             .split(' ')
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -565,8 +650,7 @@ axios
             lesson.quest = componentName
             slides.push({
               type: 'QUEST',
-              // HACK: TEMP
-              title: lesson.slug === 'conceptos-basicos-de-blockchain' ? `Desafío: ${lesson.name}` : `${lesson.name} Quest`,
+              title: `${lesson.name} Quest`,
               component: componentName,
             })
           } else {
@@ -597,34 +681,7 @@ axios
 
           if (MD_ENABLED) {
             // import translations
-            for (const language of lesson.languages) {
-              console.log('import translation:', language)
-              try {
-                const crowdin = await axios
-                  .get(`https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md`)
-                // console.log(crowdin)
-                if (crowdin.status === 200) {
-                  // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
-                  const newTranslation = crowdin.data
-                  // console.log(newTranslation)
-                  const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
-                  const existingTranslation = (await fs.promises.readFile(lessonPath, 'utf8'))
-                  // console.log(existingTranslation)
-                  // check if translation has been modified
-                  if (newTranslation.trim() !== existingTranslation.trim()) {
-                    console.log('- new translation available')
-                    fs.writeFile(lessonPath, `${newTranslation}`, (error) => {
-                      if (error) throw error
-                    })
-                  } else {
-                    console.log('- same same')
-                  }
-                }
-              } catch (error) {
-
-                console.log(`- ${language} not available yet`)
-              }
-            }
+            importTranslations(lesson)
             // convert to MD
             console.log(`Converting "${lesson.name}" to MD`)
             try {
@@ -654,12 +711,14 @@ axios
               lessonContentMD = slides.join("")
 
               // HACK: replace image
-              const imageRegex = /!\[.*?\]\((.*?)\)/g;
+              const imageRegex = /!\[.*?\]\(([^)]+)\)/g
+              let matches = []
               let match
-              let i = 0
-              while ((match = imageRegex.exec(lessonContentMD)) !== null) {
-                lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${lesson.imageLinks[i]}`)
-                i++
+              while ((match = imageRegex.exec(lessonContentMD)) !== null && matches.length < lesson.imageLinks.length) {
+                matches.push(match[1])
+              }
+              for (let i = 0; i < matches.length; i++) {
+                lessonContentMD = lessonContentMD.replace(matches[i], `https://app.banklessacademy.com${lesson.imageLinks[i]}`)
               }
               // write/update file
               const lessonPath = `translation/lesson/en/${lesson.slug}.md`
@@ -704,7 +763,7 @@ axios
           }
         })
     })
-    axios.all(promiseArray).then(() => {
+    await axios.all(promiseArray).then(() => {
       const FILE_CONTENT = `/* eslint-disable no-useless-escape */
 import { LessonType } from 'entities/lesson'
 
@@ -715,9 +774,10 @@ const LESSONS: LessonType[] = ${stringifyObject(lessons, {
 
 export default LESSONS
 `
-      fs.writeFile(`src/constants/${LESSON_FILENAME}.ts`, FILE_CONTENT, (error) => {
-        if (error) throw error
-      })
+      if (!TRANSLATION_ONLY)
+        fs.writeFile(`src/constants/${LESSON_FILENAME}.ts`, FILE_CONTENT, (error) => {
+          if (error) throw error
+        })
       console.log(
         `export done -> check syntax & typing errors in src/constants/${LESSON_FILENAME}.ts`
       )

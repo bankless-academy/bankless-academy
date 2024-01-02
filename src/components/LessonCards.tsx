@@ -14,6 +14,7 @@ import { useRouter } from 'next/router'
 import { useLocalStorage } from 'usehooks-ts'
 import { isMobile } from 'react-device-detect'
 import { useAccount } from 'wagmi'
+import { useTranslation } from 'react-i18next'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import InternalLink from 'components/InternalLink'
@@ -80,6 +81,7 @@ const StyledTag = styled(Tag)<{ isminted?: string; gold?: string }>`
 `
 
 const LessonCards: React.FC = () => {
+  const { t } = useTranslation()
   const router = useRouter()
   const { all, slug } = router.query
 
@@ -139,14 +141,14 @@ const LessonCards: React.FC = () => {
       // don't show on embed or webapp
       !localStorage.getItem('embed')?.length &&
       // user has at least 1 badge
-      badgesMintedLS.length > 0 &&
+      badgesMintedLS?.length > 0 &&
       // user doesn't want to install the Mobile App
       mobilePreferences !== 'no' &&
       // user has collected a new badge
       ((mobilePreferences?.length &&
-        parseInt(mobilePreferences) < badgesMintedLS.length) ||
+        parseInt(mobilePreferences) < badgesMintedLS?.length) ||
         // user has at least 1 badge
-        (!mobilePreferences && badgesMintedLS.length))
+        (!mobilePreferences && badgesMintedLS?.length))
     ) {
       onOpenAppModal()
     }
@@ -171,7 +173,7 @@ const LessonCards: React.FC = () => {
       {Lessons.map((lesson, index) => {
         // lesson not started yet: -1
         // const currentSlide = parseInt(localStorage.getItem(lesson.slug) || '-1')
-        // const numberOfSlides = lesson.slides.length
+        // const numberOfSlides = lesson.slides?.length
         const isBadgeMinted = badgesMintedLS.includes(lesson.badgeId)
         const isNotified =
           lesson.publicationStatus === 'planned'
@@ -204,7 +206,7 @@ const LessonCards: React.FC = () => {
                 display="flex"
                 alignItems="center"
               >
-                {lesson.name}
+                {t(lesson.name, { ns: 'lesson' })}
               </Text>
               <Box display="flex" justifyContent="space-between" my="4">
                 {isBadgeMinted || isArticleRead || lesson.duration ? (
@@ -231,8 +233,8 @@ const LessonCards: React.FC = () => {
                     gold="true"
                   >
                     {!isLessonCollected
-                      ? 'Collectible available'
-                      : 'Lesson Collected'}
+                      ? t('Collectible Available')
+                      : t('Lesson Collected')}
                   </StyledTag>
                 )}
                 {lesson.isArticle ? (
@@ -258,7 +260,7 @@ const LessonCards: React.FC = () => {
                 display="flex"
                 alignItems="center"
               >
-                {lesson.description}
+                {t(lesson.description, { ns: 'lesson' })}
               </Text>
               {lesson.publicationStatus === 'planned' && all === undefined ? (
                 <LessonBanner
@@ -274,7 +276,7 @@ const LessonCards: React.FC = () => {
               ) : (
                 <InternalLink
                   href={`/lessons/${lesson.slug}`}
-                  alt={lesson.name}
+                  alt={lesson.englishName}
                 >
                   <LessonBanner
                     iswhitelabel={IS_WHITELABEL.toString()}
@@ -301,6 +303,7 @@ const LessonCards: React.FC = () => {
                 mt={lesson.isArticle || lesson.hasCollectible ? '25px' : '16px'}
                 justifyContent="space-between"
                 alignItems="center"
+                maxWidth="calc(100vw - 80px)"
               >
                 {lesson.publicationStatus === 'planned' && all === undefined ? (
                   <Button
@@ -313,7 +316,7 @@ const LessonCards: React.FC = () => {
                       Mixpanel.track('click_internal_link', {
                         link: 'modal',
                         name: 'Lesson notification',
-                        lesson: lesson.name,
+                        lesson: lesson.englishName,
                       })
                     }}
                     cursor={isNotified ? 'default' : 'pointer'}
@@ -323,7 +326,7 @@ const LessonCards: React.FC = () => {
                 ) : (
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     margin={lessonHasSponsor ? 'auto' : ''}
                     w={lessonHasSponsor ? '100%' : 'inherit'}
                   >

@@ -11,6 +11,7 @@ import {
 import hljs from 'highlight.js'
 import { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 import { LessonType } from 'entities/lesson'
 
@@ -54,6 +55,7 @@ const LessonCollectibleModal = ({
   onClose: () => void
   lesson: LessonType
 }): React.ReactElement => {
+  const { t } = useTranslation()
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
   const [intro, setIntro] = useState('')
   const [content, setContent] = useState('')
@@ -63,7 +65,7 @@ const LessonCollectibleModal = ({
   }).value
 
   const lang =
-    typeof window !== 'undefined' && window.location.search.length
+    typeof window !== 'undefined' && window.location.search?.length
       ? window.location.search.replace('?lang=', '')
       : 'en'
 
@@ -100,7 +102,7 @@ const LessonCollectibleModal = ({
         borderRadius={isMobileScreen ? '0' : '3xl'}
         backdropFilter="blur(10px)"
       >
-        <ModalHeader>LESSON DATADISK CONTENT</ModalHeader>
+        <ModalHeader>{t('LESSON DATADISK CONTENT')}</ModalHeader>
         <ModalCloseButton />
         <ModalBody padding={isMobileScreen ? '10px' : 'default'}>
           <StyledMarkdown

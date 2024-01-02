@@ -13,7 +13,7 @@ const LessonButton = ({
   lesson: LessonType
   click?: boolean
 }): React.ReactElement => {
-  const { t } = useTranslation('common')
+  const { t } = useTranslation()
   const [isBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${lesson.badgeId}`,
     false
@@ -84,7 +84,7 @@ const LessonButton = ({
           }
         >
           {lesson?.isArticle
-            ? 'Read Entry'
+            ? t('Read Entry')
             : isBadgeMintedLS
             ? t('View Lesson')
             : isLessonStarted

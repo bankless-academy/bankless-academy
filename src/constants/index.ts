@@ -11,20 +11,24 @@ export const LESSONS = IS_WHITELABEL ? WHITELABEL_LESSONS : DEFAULT_LESSONS
 
 export const PROJECT_NAME = WHITELABEL?.project_name || 'Bankless Academy'
 
+export const PROJECT_DESCRIPTION = 'Level up your knowledge of Web3 and DeFi'
+
 export const DOMAIN_PROD = WHITELABEL?.domain_prod || 'app.banklessacademy.com'
 
-export const DOMAIN_URL =
-  process.env.VERCEL_URL && process.env.VERCEL_ENV !== 'production'
-    ? `https://${process.env.VERCEL_URL}`
-    : `https://${DOMAIN_PROD}`
+export const IS_PROD = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
 
-const imageMeta = WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
+export const DOMAIN_URL =
+  process.env.NODE_ENV === 'development' ? `http://localhost:3000` :
+    process.env.NEXT_PUBLIC_VERCEL_URL && process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production'
+      ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+      : `https://${DOMAIN_PROD}`
+
+export const imageMeta = WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
 
 export const DEFAULT_METADATA: MetaData = {
   title: PROJECT_NAME,
   description:
-    WHITELABEL?.default_metadata_description ||
-    'Level up your knowledge of Web3 and DeFi',
+    WHITELABEL?.default_metadata_description || PROJECT_DESCRIPTION,
   image: imageMeta,
 }
 
@@ -102,9 +106,20 @@ export const MIRROR_ARTICLE_ADDRESSES = LESSONS.filter(
   (lesson) => lesson.mirrorNFTAddress
 ).map((lesson) => lesson.mirrorNFTAddress)
 
+export const COLLECTIBLE_DETAILS = {}
+LESSONS.filter(
+  (lesson) => lesson.collectibleId
+).map((lesson) => COLLECTIBLE_DETAILS[lesson.collectibleId] = {
+  englishName: lesson.englishName,
+  codeName: lesson.collectibleId.startsWith('H') ? lesson.collectibleId.replace('H', 'HANDBOOK') : lesson.collectibleId.replace('D', 'DATADISK')
+})
+
 export const COLLECTIBLE_ADDRESSES = LESSONS.filter(
   (lesson) => lesson.lessonCollectibleTokenAddress
 ).map((lesson) => lesson.lessonCollectibleTokenAddress)
+
+
+export const MAX_COLLECTIBLES = Object.keys(COLLECTIBLE_DETAILS).reduce((previousValue, currentValue) => previousValue + (currentValue.startsWith('D') ? 3 * 2 : 1), 0)
 
 export const ACTIVATE_MIXPANEL = !!process.env.NEXT_PUBLIC_MIXPANEL_PROJECT_ID
 
@@ -125,3 +140,7 @@ export const DISCLAIMER_ENABLED =
   process.env.NEXT_PUBLIC_DISCLAIMER_ENABLED === 'true' || false
 
 export const WALLET_SIGNATURE_MESSAGE = 'Signing a message with my wallet to prove I own it so I can claim the lesson badge.'
+
+export const POTION_API = 'https://potion.banklessacademy.com'
+
+export const IS_WALLET_DISABLED = false

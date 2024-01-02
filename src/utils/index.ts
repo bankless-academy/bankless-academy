@@ -18,12 +18,15 @@ import {
   ALCHEMY_KEY_BACKEND,
   COLLECTIBLE_ADDRESSES,
   DOMAIN_PROD,
+  DOMAIN_URL,
   INFURA_KEY,
   MIRROR_ARTICLE_ADDRESSES,
 } from 'constants/index'
 import { NETWORKS } from 'constants/networks'
 import UDPolygonABI from 'abis/UDPolygon.json'
 import UDABI from 'abis/UD.json'
+import { LessonType } from 'entities/lesson'
+import { UserStatsType } from 'entities/user'
 
 declare global {
   interface Window {
@@ -203,8 +206,11 @@ export async function validateOnchainQuest(
         console.log('OK tx status confirmed')
         const txDetails = await provider.getTransaction(tx)
         // console.log('txDetails', txDetails)
+        const logs = JSON.stringify((await provider.getTransactionReceipt(tx)).logs)
         if (txDetails) {
-          if (txDetails.data.includes(address.toLowerCase().substring(2))) {
+          if (txDetails.data.toLowerCase().includes(address.toLowerCase().substring(2)) ||
+            logs.toLowerCase().includes(address.toLowerCase().substring(2))
+          ) {
             check.push(true)
             console.log('OK wallet interaction')
           }
@@ -223,15 +229,17 @@ export async function validateOnchainQuest(
             ) ||
             txDetails.data.includes(address1inchV4.substring(2)) ||
             txDetails.data.includes(address1inchV5.substring(2)) ||
-            txDetails.data.includes(address1inchLP.substring(2))
+            txDetails.data.includes(address1inchLP.substring(2)) ||
+            logs.includes(address1inchV5.substring(2)) ||
+            logs.includes(address1inchLP.substring(2))
           ) {
             check.push(true)
             console.log('OK 1inch router contract interaction')
           }
         }
       }
-      console.log('checks validated (3)', check.length)
-      return check.length === 3
+      console.log('checks validated (3)', check?.length)
+      return check?.length === 3
     }
     else if (quest === 'DecentralizedExchanges') {
       const check = []
@@ -275,8 +283,8 @@ export async function validateOnchainQuest(
           }
         }
       }
-      console.log('checks validated (3)', check.length)
-      return check.length === 3
+      console.log('checks validated (3)', check?.length)
+      return check?.length === 3
     }
     else if (quest === 'Layer2Blockchains') {
       const optimism: Network = {
@@ -362,8 +370,12 @@ const withMixpanel = {
       }
     }
     const embed = localStorage.getItem('embed')
-    if (embed && embed.length) {
+    if (embed && embed?.length) {
       props.embed = embed
+    }
+    const i18nextLng = localStorage.getItem('i18nextLng')
+    if (!props.language && i18nextLng?.length) {
+      props.language = i18nextLng
     }
     mixpanel.track(event_name, { domain: DOMAIN_PROD, ...props })
   },
@@ -419,7 +431,7 @@ export async function api(
   }
   const embed =
     typeof localStorage !== 'undefined' ? localStorage.getItem('embed') : null
-  if (embed && embed.length) {
+  if (embed && embed?.length) {
     data.embed = embed
   }
   const response = await fetch(url, {
@@ -632,4 +644,16 @@ export const scrollTop = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, 300)
+}
+
+export const lessonLink = (lesson: LessonType) => {
+  return `${DOMAIN_URL}/lessons/${lesson.slug}`
+}
+
+export function calculateExplorerScore(stats: UserStatsType) {
+  return 3 * (stats?.datadisks?.length || 0) +
+    (stats?.handbooks?.length || 0) +
+    (stats?.badges || 0) +
+    (Object.keys(stats?.donations || {})?.length || 0) +
+    (stats?.valid_stamps?.length || 0)
 }

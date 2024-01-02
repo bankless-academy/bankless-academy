@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useEffect, useState } from 'react'
 import { GetStaticProps } from 'next'
 import { Container } from '@chakra-ui/react'
@@ -8,7 +9,7 @@ import { MetaData } from 'components/Head'
 
 import Lesson from 'components/Lesson'
 import Article from 'components/Article'
-import { MIRROR_WHITELISTED_ACCOUNTS } from 'constants/index'
+import { MIRROR_WHITELISTED_ACCOUNTS, POTION_API } from 'constants/index'
 
 const processLesson = (htmlPage, notion_id) => {
   const lesson: any = { slug: 'preview' }
@@ -25,6 +26,7 @@ const processLesson = (htmlPage, notion_id) => {
     .substr(3)
   const content = JSON.parse(`[${htmlPage.data}"}]`)
   let quizNb = 0
+  const allKeywords = []
   const slides = content.map((slide) => {
     // replace with type QUIZ
     if (slide.content.includes("<div class='checklist'>")) {
@@ -43,7 +45,7 @@ const processLesson = (htmlPage, notion_id) => {
       const blockquotes = quizDiv.querySelectorAll('blockquote')
       const labels = quizDiv.querySelectorAll('.checklist label')
 
-      for (let i = 0; i < checkboxes.length; i++) {
+      for (let i = 0; i < checkboxes?.length; i++) {
         const nb = i + 1
         const checkbox: any = checkboxes[i]
         const blockquote = blockquotes[i]
@@ -68,6 +70,14 @@ const processLesson = (htmlPage, notion_id) => {
       slide.quiz.id = `${lesson.slug}-${quizNb}`
     }
     if (slide.content) {
+      const contentDiv = document.createElement('div')
+      contentDiv.innerHTML = slide.content
+      const keywords = contentDiv.querySelectorAll('code')
+      for (const keyword of keywords) {
+        const k = keyword.innerText?.toLowerCase()
+        if (!allKeywords.includes(k)) allKeywords.push(k)
+      }
+
       if ((slide.content.match(/<img /g) || []).length > 1) {
         // multiple images
         const blocs = slide.content
@@ -107,6 +117,8 @@ const processLesson = (htmlPage, notion_id) => {
     }
     return slide
   })
+  lesson.keywords = allKeywords
+  console.log('List of keywords:', allKeywords.join(', '))
   lesson.slides = slides
   lesson.isPreview = true
   return lesson
@@ -116,6 +128,7 @@ const pageMeta: MetaData = {
   title: 'Live preview',
   description: 'This is work in progress content.',
   isLesson: true,
+  noindex: true,
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -123,8 +136,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: { pageMeta },
   }
 }
-
-const POTION_API = 'https://potion.banklessacademy.com'
 
 const Lessons = (): JSX.Element => {
   const router = useRouter()
@@ -136,7 +147,7 @@ const Lessons = (): JSX.Element => {
     // load keywords directly from Notion
     if (!Object.keys(keywords).length) {
       // TODO: make NOTION_ID dyn to support WL
-      const NOTION_ID = '623e965e4f10456094d17aa94ec37105'
+      const NOTION_ID = 'd452559560a447169e10f2d3c6ee5288'
       axios
         .get(`${POTION_API}/table?id=${NOTION_ID}&sort=keyword`)
         .then(function (response) {

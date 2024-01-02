@@ -45,6 +45,9 @@ const primary = {
         ...padding,
         ...primaryStyle,
       },
+  _active: {
+    background: 'linear-gradient(132deg, #67407E 0%, #354374 100%);',
+  },
 }
 
 const primaryGold = {

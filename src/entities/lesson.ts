@@ -1,19 +1,21 @@
 import { QuestComponentType } from 'components/Quest/QuestComponent'
 
 export type SlideType = 'LEARN' | 'QUIZ' | 'QUEST' | 'END'
-export type LanguageType = 'es' | 'fr' | 'de' | 'jp' | 'cn'
+export type LanguageType = 'en' | 'cn' | 'de' | 'es' | 'fr' | 'it' | 'jp'
 
 export interface LessonType {
   name: string
+  englishName: string
   slug: string
   notionId: string
   badgeId?: number
+  collectibleId?: string
   description: string
   languages?: LanguageType[]
   lessonWriters?: string
   marketingDescription: string
   duration: number
-  difficulty: 'Easy' | 'Advanced' | 'Expert'
+  difficulty?: 'Easy' | 'Advanced' | 'Expert'
   badgeImageLink?: string
   lessonImageLink?: string
   lessonCollectedImageLink?: string
@@ -30,6 +32,7 @@ export interface LessonType {
   quest?: QuestComponentType
   imageLinks?: string[]
   publicationStatus: 'publish' | 'planned' | 'hidden'
+  publicationDate?: string
   featuredOrderOnHomepage?: number
   isCommentsEnabled: boolean
   endOfLessonRedirect?: string
@@ -48,7 +51,8 @@ export interface LessonType {
   nftGatingImageLink?: string
   nftGatingLink?: string
   nftGatingCTA?: string
-  lang?: string
+  lang?: LanguageType
+  keywords?: string[]
   slides?: {
     type: SlideType
     title: string
@@ -61,6 +65,7 @@ export interface LessonType {
       feedback?: string[]
       rightAnswerNumber?: number
     }
+    md?: string
     component?: QuestComponentType
   }[]
 }

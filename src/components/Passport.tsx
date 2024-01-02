@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { Box, Text, Button, Image, useToast } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
+import { useTranslation } from 'react-i18next'
 
-import GitcoinPassport from 'components/GitcoinPassport'
+import PassportStamps from 'components/PassportStamps'
 import ExternalLink from 'components/ExternalLink'
 import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
 import { theme } from 'theme/index'
@@ -15,6 +16,7 @@ const PassportComponent = ({
 }: {
   displayStamps?: boolean
 }): JSX.Element => {
+  const { t } = useTranslation()
   const [passportLS, setPassportLS] = useLocalStorage(
     'passport',
     EMPTY_PASSPORT
@@ -37,13 +39,13 @@ const PassportComponent = ({
         toast.closeAll()
         if (result.data?.error.includes('ERR_BAD_RESPONSE')) {
           toast({
-            title: 'Gitcoin Passport stamps not loading',
+            title: t('Gitcoin Passport stamps not loading'),
             description: (
               <ExternalLink
                 underline="true"
                 href="/faq#ea6ae6bd9ca645498c15cc611bc181c0"
               >
-                Follow these steps and try again
+                {t('Follow these steps and try again')}
               </ExternalLink>
             ),
             status: 'warning',
@@ -52,10 +54,10 @@ const PassportComponent = ({
           })
         } else {
           toast({
-            title: 'Gitcoin Passport issue',
+            title: t('Gitcoin Passport issue'),
             description: (
-              <ExternalLink underline="true" href="/bug">
-                Report a bug
+              <ExternalLink underline="true" href="/report-an-issue">
+                {t('Report an Issue')}
               </ExternalLink>
             ),
             status: 'warning',
@@ -92,50 +94,49 @@ const PassportComponent = ({
               fontWeight="bold"
             >
               <ExternalLink href="/faq#ea6ae6bd9ca645498c15cc611bc181c0">
-                Duplicate stamp detected.
+                {t('Duplicate stamp detected.')}
               </ExternalLink>
               <br />
               {passportLS?.fraud
-                ? `Switch back to ${shortenAddress(passportLS?.fraud)}`
+                ? `${t('Switch back to:')} ${shortenAddress(passportLS?.fraud)}`
                 : null}
             </Text>
           </Box>
         ) : (
           <Text fontSize="xl">
             <>
-              {numberOfStampsLeftToCollect > 0 ? (
-                <>
-                  {`Visit here: `}
-                  <ExternalLink href="https://passport.gitcoin.co/?filter=bankless-academy#/dashboard">
-                    <Button
-                      variant="primaryWhite"
-                      color="#5D4E78"
-                      size="lg"
-                      leftIcon={
-                        <Image
-                          width="20px"
-                          src="/images/gitcoin-passport.svg"
-                          alt="Gitcoin Passport"
-                        />
-                      }
-                    >
-                      Gitcoin Passport
-                    </Button>
-                  </ExternalLink>
-                  <Box mt="4">
-                    {`Collect ${numberOfStampsLeftToCollect} more of the following stamp${
-                      numberOfStampsLeftToCollect !== 1 ? 's' : ''
-                    }:`}
-                  </Box>
-                </>
-              ) : (
-                'You have collected enough stamps. You can now close this popup and claim your rewards.'
-              )}
+              {`Visit here: `}
+              <ExternalLink href="https://passport.gitcoin.co/?filter=bankless-academy#/dashboard">
+                <Button
+                  variant="primaryWhite"
+                  color="#5D4E78"
+                  size="lg"
+                  leftIcon={
+                    <Image
+                      width="20px"
+                      src="/images/gitcoin-passport.svg"
+                      alt="Gitcoin Passport"
+                    />
+                  }
+                >
+                  {t('Gitcoin Passport')}
+                </Button>
+              </ExternalLink>
+              <Box mt="4">
+                {numberOfStampsLeftToCollect > 0
+                  ? t(
+                      `Collect {{numberOfStampsLeftToCollect}} more of the following stamps:`,
+                      { numberOfStampsLeftToCollect }
+                    )
+                  : t(
+                      'You have collected enough stamps. You can now close this popup and claim your rewards.'
+                    )}
+              </Box>
             </>
           </Text>
         )}
       </Box>
-      <GitcoinPassport
+      <PassportStamps
         stamps={passportLS ? passportLS.stamps : null}
         displayStamps={displayStamps}
       />
@@ -147,7 +148,7 @@ const PassportComponent = ({
           loadingText="Refreshing"
           mt="4"
         >
-          Refresh
+          {t('Refresh')}
         </Button>
       </Box>
     </>

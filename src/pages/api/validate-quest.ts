@@ -14,13 +14,12 @@ export default async function handler(
   const DEV_SECRET = process.env.DEV_SECRET
   const param =
     DEV_SECRET && req.query?.dev === DEV_SECRET ? req.query : req.body
-  const { address, quest, tx, distinct_id, embed } = param
+  const { address, quest, tx, embed } = param
   if (
     !address ||
     // TODO: replace quest with notionId?
     !quest ||
     typeof address === 'object' ||
-    typeof distinct_id === 'object' ||
     typeof quest === 'object' ||
     !QUESTS.includes(quest)
   )

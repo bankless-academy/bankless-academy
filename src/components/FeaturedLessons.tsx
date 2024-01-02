@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Text, Image, Heading, SimpleGrid } from '@chakra-ui/react'
 import styled from '@emotion/styled'
+import { useTranslation } from 'react-i18next'
 
 import InternalLink from 'components/InternalLink'
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
@@ -16,12 +17,13 @@ const LessonGrid = styled(SimpleGrid)`
 `
 
 const FeaturedLessons: React.FC = () => {
+  const { t } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
 
   return (
     <Box mt="16">
       <Heading as="h2" size="xl">
-        Featured Content
+        {t('Featured Content')}
       </Heading>
       <Box>
         {[...LESSONS]
@@ -42,7 +44,7 @@ const FeaturedLessons: React.FC = () => {
               >
                 <InternalLink
                   href={`/lessons/${lesson.slug}`}
-                  alt={lesson.name}
+                  alt={lesson.englishName}
                 >
                   <Image src={lesson.lessonImageLink} />
                 </InternalLink>
@@ -50,13 +52,15 @@ const FeaturedLessons: React.FC = () => {
             )
             const LessonDescription = (
               <Box alignSelf="center" mt="4">
-                <Heading fontSize="2xl">{lesson.name}</Heading>
+                <Heading fontSize="2xl">
+                  {t(lesson.name, { ns: 'lesson' })}
+                </Heading>
                 <Text fontSize="lg" my="4">
-                  {lesson.marketingDescription}
+                  {t(lesson.description, { ns: 'lesson' })}
                 </Text>
                 <InternalLink
                   href={`/lessons/${lesson.slug}`}
-                  alt={lesson.name}
+                  alt={lesson.englishName}
                   margin={lessonHasSponsor ? 'auto' : ''}
                   w={lessonHasSponsor ? '100%' : 'inherit'}
                 >

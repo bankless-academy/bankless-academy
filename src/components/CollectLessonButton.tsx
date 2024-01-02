@@ -11,6 +11,7 @@ import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount, useNetwork } from 'wagmi'
 import { switchNetwork } from '@wagmi/core'
+import { useTranslation } from 'react-i18next'
 
 import MintCollectibleModal from 'components/MintCollectibleModal'
 import { getLessonsCollectors, isHolderOfNFT } from 'utils'
@@ -23,56 +24,6 @@ import {
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
 import Collectible from 'components/Collectible'
-
-const CollectiblesHelper = (
-  <Helper
-    title="Lesson Collectible"
-    fullscreen
-    definition={
-      <Box>
-        <Box mb="4">
-          Lesson collectibles are tradable NFTs containing lesson content from
-          Bankless Academy.
-        </Box>
-        <Box mb="4">
-          Built for 100 passionate Bankless Explorers, owning a lesson DataDisk
-          grants its Guardian the following perks:
-          <br />
-          <UnorderedList>
-            <ListItem>
-              Upgrading of normal lesson card to golden DataDisk artwork.
-            </ListItem>
-            <ListItem>
-              Early invitation to the official ‘Bankless Academy’{' '}
-              <ExternalLink
-                underline="true"
-                href="https://guild.xyz/bankless-academy"
-              >
-                Discord server
-              </ExternalLink>
-              , and the dedicated ‘Guardian’ channel — where we discuss the
-              future of collectible content at the Academy.
-            </ListItem>
-            <ListItem>
-              Onchain display of your support for Bankless Academy and funding
-              of education public goods.
-            </ListItem>
-            <ListItem>██████████████████ Soon™</ListItem>
-          </UnorderedList>
-        </Box>
-        <Box mb="4">
-          There are only 100 versions available for each collectible lesson. If
-          the original batch sells out, try the secondary market. Join us and{' '}
-          <b>become a Guardian of Bankless Academy</b> today!
-        </Box>
-        <Box mb="4" fontSize="sm" fontStyle="italic">
-          <b>Note:</b> Maximum of two collectibles per wallet. 10% creator fee
-          on secondary trades.
-        </Box>
-      </Box>
-    }
-  />
-)
 
 export const openLesson = async (
   openedLesson: string,
@@ -119,6 +70,7 @@ const CollectLessonButton = ({
 }: {
   lesson: LessonType
 }): JSX.Element => {
+  const { t } = useTranslation()
   const [isLessonMintedLS, setIsLessonMintedLS] = useLocalStorage(
     `isLessonMinted-${lesson.lessonCollectibleTokenAddress}`,
     false
@@ -184,6 +136,7 @@ const CollectLessonButton = ({
       updateLessonsCollectors().catch(console.error)
   }, [address])
 
+  // TODO: TRANSLATE
   const share = `I’ve just collected ${numberIOwn} of 100 ‘${lesson.name}’ DataDisks from @BanklessAcademy.
 https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}
 
@@ -192,6 +145,57 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
   )}`
+
+  // TODO: TRANSLATE
+  const CollectiblesHelper = (
+    <Helper
+      title="Lesson Collectible"
+      fullscreen
+      definition={
+        <Box>
+          <Box mb="4">
+            Lesson collectibles are tradable NFTs containing lesson content from
+            Bankless Academy.
+          </Box>
+          <Box mb="4">
+            Built for 100 passionate Bankless Explorers, owning a lesson
+            DataDisk grants its Guardian the following perks:
+            <br />
+            <UnorderedList>
+              <ListItem>
+                Upgrading of normal lesson card to golden DataDisk artwork.
+              </ListItem>
+              <ListItem>
+                Early invitation to the official ‘Bankless Academy’{' '}
+                <ExternalLink
+                  underline="true"
+                  href="https://guild.xyz/bankless-academy"
+                >
+                  Discord server
+                </ExternalLink>
+                , and the dedicated ‘Guardian’ channel — where we discuss the
+                future of collectible content at the Academy.
+              </ListItem>
+              <ListItem>
+                Onchain display of your support for Bankless Academy and funding
+                of education public goods.
+              </ListItem>
+              <ListItem>██████████████████ Soon™</ListItem>
+            </UnorderedList>
+          </Box>
+          <Box mb="4">
+            There are only 100 versions available for each collectible lesson.
+            If the original batch sells out, try the secondary market. Join us
+            and <b>become a Guardian of Bankless Academy</b> today!
+          </Box>
+          <Box mb="4" fontSize="sm" fontStyle="italic">
+            <b>Note:</b> Maximum of two collectibles per wallet. 10% creator fee
+            on secondary trades.
+          </Box>
+        </Box>
+      }
+    />
+  )
 
   return (
     <Box maxW="450px" m="auto">
@@ -214,8 +218,10 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
             alignItems="center"
             fontSize="lg"
           >
-            <Box fontWeight="bold">Collect DataDisk</Box>
-            <Box ml="4">({numberOfOwners}/100 claimed)</Box>
+            <Box fontWeight="bold">{t('Collect DataDisk')}</Box>
+            <Box ml="4">
+              ({numberOfOwners}/{t('100 claimed')})
+            </Box>
           </Box>
         </Button>
         <Box
@@ -275,14 +281,10 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
                   w="100%"
                   borderBottomRadius="0"
                   leftIcon={
-                    <ChakraImage
-                      width="24px"
-                      height="24px"
-                      src="/images/Twitter.svg"
-                    />
+                    <ChakraImage width="20px" src="/images/TwitterX.svg" />
                   }
                 >
-                  Share on Twitter
+                  {t('Share on Twitter / X')}
                 </Button>
               </ExternalLink>
             </Box>
@@ -302,7 +304,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
                     />
                   }
                 >
-                  View on OpenSea
+                  {t('View on OpenSea')}
                 </Button>
               </ExternalLink>
             </Box>
@@ -320,7 +322,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
                     />
                   }
                 >
-                  Join the Discord
+                  {t('Join the Discord')}
                 </Button>
               </ExternalLink>
             </Box>

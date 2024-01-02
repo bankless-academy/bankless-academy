@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Container,
@@ -20,9 +20,10 @@ import InternalLink from 'components/InternalLink'
 import CollectEntryButton from 'components/CollectEntryButton'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
-import { IS_WHITELABEL, KEYWORDS } from 'constants/index'
-import { getArticlesCollected, Mixpanel } from 'utils'
+import { IS_WALLET_DISABLED, IS_WHITELABEL, KEYWORDS } from 'constants/index'
+import { getArticlesCollected, getArticlesCollectors, Mixpanel } from 'utils'
 import Keyword from 'components/Keyword'
+import LanguageSwitch from 'components/LanguageSwitch'
 
 // TODO: clean dirty copy/paste style
 const H1 = styled(Box)<{ issmallscreen?: string }>`
@@ -518,14 +519,27 @@ const Article = ({
     'articlesCollected',
     []
   )
+  const [numberCollected, setNumberCollected] = useState<number | '...'>('...')
   const { address } = useAccount()
 
   useEffect(() => {
-    Mixpanel.track('open_lesson', { lesson: lesson?.name })
+    Mixpanel.track('open_lesson', {
+      lesson: lesson?.englishName,
+      language: i18n.language,
+    })
     // mark article as read after 30 seconds
     setTimeout(() => {
       localStorage.setItem(lesson.slug, 'true')
     }, 30000)
+  }, [])
+
+  const updateArticlesCollectors = async () => {
+    const NFTCollectors = await getArticlesCollectors(lesson.mirrorNFTAddress)
+    setNumberCollected(NFTCollectors?.length)
+  }
+
+  useEffect(() => {
+    if (lesson.mirrorNFTAddress) updateArticlesCollectors().catch(console.error)
   }, [])
 
   useEffect(() => {
@@ -555,43 +569,49 @@ const Article = ({
         mt={isSmallScreen ? '0' : '24px'}
       />
       <H1 issmallscreen={isSmallScreen.toString()}>{lesson.name}</H1>
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="24px">
-        <Box
-          // border="1px solid #989898"
-          py={isSmallScreen ? '2' : '6'}
-          px="6"
-          borderRadius="lg"
-        >
-          {isArticleCollected ? (
-            <Button
-              variant="secondaryGold"
-              w="100%"
-              background="transparent !important"
-            >
-              Entry Collected
-            </Button>
-          ) : (
-            <CollectEntryButton lesson={lesson} />
-          )}
-        </Box>
-        <Box
-          // border="1px solid #989898"
-          py={isSmallScreen ? '2' : '6'}
-          px="6"
-          borderRadius="lg"
-          textAlign="center"
-        >
-          <ExternalLink href={lesson.mirrorLink}>
-            <Button
-              variant="primary"
-              w="100%"
-              rightIcon={<ArrowRight size={16} />}
-            >
-              View on Mirror.xyz
-            </Button>
-          </ExternalLink>
-        </Box>
-      </SimpleGrid>
+      {!IS_WALLET_DISABLED && (
+        <SimpleGrid columns={{ sm: 1, md: 2, lg: 2 }} gap={6} m="24px">
+          <Box
+            // border="1px solid #989898"
+            py={isSmallScreen ? '2' : '6'}
+            px="6"
+            borderRadius="lg"
+          >
+            {isArticleCollected ? (
+              <Button
+                variant="secondaryGold"
+                w="100%"
+                background="transparent !important"
+              >
+                {t('Entry Collected')}
+              </Button>
+            ) : (
+              <CollectEntryButton
+                lesson={lesson}
+                numberCollected={numberCollected}
+              />
+            )}
+          </Box>
+          <Box
+            // border="1px solid #989898"
+            py={isSmallScreen ? '2' : '6'}
+            px="6"
+            borderRadius="lg"
+            textAlign="center"
+          >
+            <ExternalLink href={lesson.mirrorLink}>
+              <Button
+                variant="primary"
+                w="100%"
+                rightIcon={<ArrowRight size={16} />}
+              >
+                {t('View on Mirror.xyz')}
+              </Button>
+            </ExternalLink>
+          </Box>
+        </SimpleGrid>
+      )}
+      <LanguageSwitch lesson={lesson} />
       <ArticleStyle issmallscreen={isSmallScreen.toString()}>
         <ReactMarkdown
           components={{
@@ -656,7 +676,9 @@ const Article = ({
           <Text fontSize="xl" fontWeight="bold">
             {`Subscribe to the Explorer's Handbook`}
           </Text>
-          <Text fontSize="xl">Receive new entries directly to your inbox.</Text>
+          <Text fontSize="xl">
+            {t('Receive new entries directly to your inbox.')}
+          </Text>
         </Box>
         <Box
           textAlign={isSmallScreen ? 'left' : 'right'}
@@ -666,7 +688,7 @@ const Article = ({
           mt={isSmallScreen ? '20px' : '0'}
         >
           <ExternalLink href={lesson.mirrorLink}>
-            <Button variant="primary">Subscribe</Button>
+            <Button variant="primary">{t('Subscribe')}</Button>
           </ExternalLink>
         </Box>
       </Box>
@@ -683,10 +705,13 @@ const Article = ({
               w="100%"
               background="transparent !important"
             >
-              Entry Collected
+              {t('Entry Collected')}
             </Button>
-          ) : (
-            <CollectEntryButton lesson={lesson} />
+          ) : IS_WALLET_DISABLED ? null : (
+            <CollectEntryButton
+              lesson={lesson}
+              numberCollected={numberCollected}
+            />
           )}
         </Box>
         <Box
@@ -696,9 +721,9 @@ const Article = ({
           borderRadius="lg"
           textAlign="center"
         >
-          <InternalLink href={`/lessons`}>
+          <InternalLink href={`/lessons`} alt="Explore more Lessons">
             <Button variant="primary" w="100%">
-              Explore more Lessons
+              {t('Explore more Lessons')}
             </Button>
           </InternalLink>
         </Box>

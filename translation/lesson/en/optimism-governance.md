@@ -1,6 +1,6 @@
 ---
 TITLE: Optimism Governance
-DESCRIPTION: Learn about Optimism governance and how to get involved.
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: English
 WRITERS: Tetranome
 TRANSLATORS: X
@@ -37,7 +37,7 @@ The vision of `DAO` technology is to streamline problem-solving and debate betwe
 - Innovative voting, `delegation`, and `veto` mechanics.
 - Using blockchain technology to decrease the potential for human error or hijacking.
 
-![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-1662dfbf.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-fea84c8f.svg)
 
 # Network Governance
 
@@ -49,69 +49,69 @@ Like any traditional nation-state with resources and participants, a DAO uses a 
 
 🛠️ **Implementation:** The approved proposal is applied to the network, by various incentivized developers if necessary.
 
-![](https://app.banklessacademy.com/images/optimism-governance/network-governance-161475d9.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/network-governance-45b77eb1.svg)
 
 # Knowledge Check 1
 
 How can onchain governance help to solve interhuman debate?
 
-- [ ] By automating human coordination, and evolving based on shared human feedback.
+- [ ] Automation
 
 > ℹ️ This is true, but it isn’t the only answer.
 
-- [ ] Through transparent, attack-resistant voting processes.
+- [ ] Transparency
 
 > ℹ️ This is true, but it isn’t the only answer.
 
-- [ ] By hosting an opt-in, mission-oriented community for people across the world.
+- [ ] Censorship-resistance
 
 > ℹ️ This is true, but it isn’t the only answer.
 
-- [ ] All of the above.
+- [ ] All of the above
 
-> ℹ️ Correct! Onchain governance aims to streamline and protect group discussion.
+> ℹ️ Correct! Onchain governance protects the voting process through multiple means.
 
 # The Optimism Network
 
-`DAOs` like the `Optimism Collective` are at the frontier of exploring such coordination systems. 
+`DAOs` like the Optimism Collective are at the frontier of exploring such coordination systems.
 
 In this lesson, we will explore how Optimism is pioneering the DAO vision. We will learn about their mission, and how they’re building new coordination frameworks for humanity.
 
 Our quest will focus on claiming our first voting rights, so we’ll be ready to help build the future of Ethereum and human coordination!
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-99428791.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-af6d1031.svg)
 
 # The Optimistic Vision
 
 Optimism is on a mission: to scale Ethereum by building a `Layer 2` network. It’s part of the Ethereum ecosystem, but with lower fees and faster transactions — while maintaining Ethereum’s high standard of security. Here are the defining properties:
 
-🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. These are free-to-access, infinite resources/facilities available to all network citizens. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
+🏕️ **Public Goods:** Great emphasis on funding and building onchain `public goods`. A public good is something that benefits everyone in a community, while one person's use of it doesn't reduce its availability for others. Your free education at Bankless Academy has been made possible through Optimism’s support of public goods!
 
-🧑‍🤝‍🧑 **Community Governance:** Optimism is lead by its community.
+🧑‍🤝‍🧑 **Community Governance:** The network is lead by its community.
 
 🏠 **Free Market:** Launched as an extension of not just Ethereum `blockspace`, but of Ethereum principles. It aims to scale the permissionless, open-source, censorship-resistant marketplace of Ethereum.
 
-Optimism aims to become a free-market district of cyberspace that directly provides for — and is governed by — its citizens!
+Optimism aims to become a “district of cyberspace” that directly provides for — and is governed by — its citizens!
 
 # Knowledge Check 2
 
-What definition best fits a ‘public good’?
+Which of the following is NOT a public good?
 
-- [ ] A small restricted facility.
+- [ ] Education
 
-> ℹ️ Try again! This defines private property, like someone’s home.
+> ℹ️ Education can benefit everyone, and one person’s use doesn’t reduce its availability.
 
-- [ ] An unlimited service shared amongst a specific group of people.
+- [ ] The Internet
 
-> ℹ️ Try again! This defines a club good, like a cinema or toll road.
+> ℹ️ The internet can benefit everyone, and one person’s use doesn’t reduce its availability.
 
-- [ ] An open resource that cannot run out.
+- [ ] Ethereum
 
-> ℹ️ Correct! This defines a public good, like software or knowledge.
+> ℹ️ Ethereum can benefit everyone, and — with Layer 2s — one person’s use doesn’t reduce its availability.
 
-- [ ] Free access to a shared but limited city resource.
+- [ ] A Centralized Exchange
 
-> ℹ️ Try again! This defines commons, like roads, or a lake.
+> ℹ️ Correct. While CEXs provide community benefits, they are private businesses.
 
 # Progressive Decentralization
 
@@ -123,7 +123,7 @@ Many great blockchain projects begin with a centralized group. This gives the pr
 
 Legal checks and balances, such as the Collective’s ability to remove members of the Foundation, ensure slow **transfer of network ownership to the community**.
 
-![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-5f487c1b.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-aaa9b55d.svg)
 
 # Knowledge Check 3
 
@@ -143,25 +143,25 @@ At the center of the Optimism `L2` economy is the **‘Optimistic Flywheel’**.
 
 1. Users and `dApps` demand network `blockspace`.
 2. The network generates revenue via transaction fees.
-3. A portion of these taxes are distributed to builders providing impactful public goods infrastructure.
-4. Everyone gains access to free resources and services.
+3. A portion of these taxes are awarded to builders providing impactful public goods infrastructure.
+4. Network users gain access to free resources and services, increasing the value of OP blockspace.
 
 With more valuable onchain infrastructure, demand for Optimism blockspace increases, and the cycle continues!
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-41fc0d66.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-fd6cac83.svg)
 
-# Incentivizing the Public Goods Economy
+# Incentivizing Public Goods
 
-As you can see, public goods infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.
+As you can see, `public goods` infrastructure is at the heart of Optimism. Yet selecting projects worthy of funding isn’t simple.
 
 Here, Optimism takes an ‘**Impact = Profit**’ approach. Impact, however, is difficult to anticipate. Rather than making predictions, the funding body periodically looks over existing projects and assigns retroactive funding based on historic performance.
 
-As Vitalik Buterin said, 
+As Vitalik Buterin said,
 _“It’s easier to agree on what was useful than what will be useful.”_
 
 This distribution model is known as **‘Retroactive Public Goods Funding’**, or **‘RetroPGF’**. This funding mechanism incentivizes optimistic thinkers to build public goods that are of service to humanity. It liberates us from the value-extraction mindset of traditional capitalist economies.
 
-![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-the-public-goods-economy-123cdbec.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-b764ca38.svg)
 
 # Ether’s Phoenix
 
@@ -171,7 +171,7 @@ _“It is an algorithm that rewards the early cooperators who created conditions
 
 — The Optimism Foundation
 
-![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-023606f1.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-2b7210df.svg)
 
 # Knowledge Check 4
 
@@ -203,7 +203,7 @@ There are two houses that make up the Optimism Collective, each with independent
 
 Both houses maintain network balance through their duties, voting mechanics, and `veto` abilities. Let’s take a closer look.
 
-![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-09299832.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-8f40dd30.svg)
 
 # Knowledge Check 5
 
@@ -227,7 +227,7 @@ How does the Citizens’ House differ from the Token House?
 
 # The Token House
 
-The Token House maintains the economy and defenses of the Optimism Network. 
+The Token House maintains the economy and defenses of the Optimism Network.
 
 Duties include:
 
@@ -235,11 +235,11 @@ Duties include:
 - ⛓️ Selection of network `block producers`.
 - 📈 **Allocation of revenue,** using collected transaction fees to fuel network growth.
 
-The Citizens’ House has the right to veto any proposal under the above categories.
+To protect the network, the Citizens’ House has the right to `veto` any proposal under the above categories.
 
-The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be **reducing rights** of token holders.
+The Token House also has the ability to veto any proposal submitted by the Citizens’ House, or the Optimism Foundation, which is seen to be reducing rights of token holders.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-ffa12a64.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-39ac02b5.svg)
 
 # Token House: Joining, Voting, Delegating
 
@@ -252,15 +252,17 @@ The Token House follows [a five week voting cycle](https://community.optimism.io
 - Week 1-3: Proposal submission, review, and feedback.
 - Week 4-5: Voting.
 
-📢 **Delegating:** Many users prefer to delegate their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.
+📢 **Delegating:** Many users prefer to `delegate` their voting power to other token holders who they feel best represent the community’s interests. This is a great way to have an impact on the ecosystem without having to read every proposal that enters voting. Delegation does not affect token ownership — delegated OP tokens stay in your wallet.
 
 Anyone can become a Token House delegate on Optimism, representing a group of friends, a community, or even a university’s blockchain club! Active delegates are often rewarded by the community.
 
 # A Note on Token Distribution…
 
-Network governance is only as democratic as its initial `token distribution` — meaning who received voting power in the first place. Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced community representation.
+Network governance is only as democratic as its initial `token distribution`. We should always ask “who received voting power in the first place?” and “how much did they receive?”. 
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-45e8fc75.svg)
+Check out the [OP distribution plan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) to see how the Optimism Foundation has allocated initial governance power, in service of balanced stakeholder representation.
+
+![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-5d723b29.svg)
 
 # Knowledge Check 6
 
@@ -284,7 +286,7 @@ How does the Token House protect the network from attack?
 
 # The Citizens’ House
 
-The Citizens’ House conducts the growth of public infrastructure on the Optimism Network.
+The Citizens’ House conducts the growth of public infrastructure on the Optimism Network. It’s primary focus is managing Retroactive Public Goods Funding.
 
 Duties include:
 
@@ -292,17 +294,21 @@ Duties include:
 - 🔍 **Research and allocation of RetroPGF** to community projects which meet the guidelines.
 - 👬 **Selection of new citizens** to help govern the Citizens’ House, and balance Token House perspective. The Token House has veto rights for this type of proposal.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-0724be8f.svg)
+The Citizens’ House also ensures that Token House proposals are mission-aligned, using `veto` mechanics to waive unaligned changes to the network.
+
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-4c2b3821.svg)
 
 # Citizens’ House: Joining, Voting, Delegating
 
-📝 **Joining:** The Citizens’ House currently adds members by invitation, to slowly scale and refine its processes. Membership is marked by holding a ‘Citizen Badge’ — a non-transferable `ERC-721` token.
+📝 **Joining:** The Citizens’ House currently adds members by invitation, to slowly scale and refine its processes. Membership is marked by holding a ‘Citizen Badge’.
 
-The specifics of invitations change seasonally based on experimentation by the Optimism Foundation. As the scaling methods are refined, this will be automated via `onchain governance`.
+The specifics of invitations change seasonally based on experimentation by the Optimism Foundation:
 
 - Current Citizens may be granted an additional invitation, to be shared with someone they see as a great addition to the network.
 - Previous RetroPGF recipients have been granted the opportunity to select one community member for Citizen status.
 - The Optimism Foundation has issued Citizenship to project builders using the network.
+
+As the scaling methods are refined, growth will be automated via `onchain governance`.
 
 🗳️ **Voting:** Each Citizen has a single vote. Their voting power cannot be transferred or delegated. This protects against gathering of House power under a small number of Citizens.
 
@@ -316,7 +322,7 @@ How does the Citizens’ House protect the network from attack?
 
 > ℹ️ This is true, but it isn’t the only answer.
 
-- [ ] By vetoing Token House proposals seen to be leading to power imbalance.
+- [ ] By vetoing unaligned Token House proposals.
 
 > ℹ️ This is true, but it isn’t the only answer.
 
@@ -326,13 +332,15 @@ How does the Citizens’ House protect the network from attack?
 
 # Governance Seasons
 
-Optimism takes **an iterative approach to governance**, using a calendar structure referred to as ‘Seasons’. By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
+Optimism takes **an iterative approach to governance**, using a calendar structure referred to as ‘Seasons’. 
+
+By moving between periods of active governance and reflection, participants gain firsthand experience followed by digestion and discussion of current governance practices. The model is then improved by the Optimism Foundation, and the next season begins.
 
 On Optimism a season lasts roughly three months, followed by a reflection period of similar length.
 
-The thoughtful feedback loops built across Optimism are incredibly important for finding best practices for `DAO` governance.
+These thoughtful feedback loops, built throughout Optimism’s systems, are incredibly important for building governance best practices in `DAO` communities.
 
-![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-a79f33e7.svg)
 
 # Now… Think Even Bigger!
 
@@ -340,19 +348,19 @@ We’re almost ready to govern on Optimism 🔴. There’s one last thing to men
 
 The Optimistic Vision doesn’t stop at a single `L2` blockchain. As result of the ability to `fork` a blockchain, this is a cloneable governance experiment. This technology is built to be scaled across multiple L2s — and even into real world governance scenarios. Optimism calls this **‘The Superchain’**.
 
-Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 L2 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards the ‘Impact = Profit’ ethos.
+Coinbase, a prominent `CEX`, has already forked and started contributing to this `open source` initiative, through the Base 🔵 L2 blockchain. This collaborative pooling of development resources increases infrastructure evolution, while funneling L2 transaction fees towards Optimism’s ‘Impact = Profit’ ethos.
 
-![](https://app.banklessacademy.com/images/optimism-governance/now-think-even-bigger-0f29ab97.svg)
+RetroPGF rewards now include profits from Base 🔵 transaction fees — which means more funding for `public goods`!
 
 # Shaping an Optimistic Future
 
-History has always been paved by the optimists of humanity — those that dared to think big, and acted to achieve it.
+History has always been paved by the optimists of humanity — those that dared to think big, and act to achieve their vision.
 
 By getting involved in innovative communities, using `trustless` and fair governance systems, we are trailblazing the future of human coordination. We are building a world where humanity can thrive in local, global, and online systems. It’s time to start our Optimism governance journey.
 
-Today’s quest is **to join the Token House and delegate our OP tokens**.
+Today’s quest is **to join the Token House and** `delegate` **our OP tokens**.
 
 While the Citizens’ House develops its onboarding procedures, we can begin our Citizen journey by participating in conversation on the [Optimism community](https://gov.optimism.io/) forums.
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-d3be07e1.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-c4ff6f41.svg)
 

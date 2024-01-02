@@ -81,7 +81,7 @@ User interactions tracked in the app:
 
 ### Gitcoin Passport
 
-We save the encrypted account username associated of each Passport stamp associated to an address to be able to dectect Sybils.
+We save the encrypted account username associated with each Passport stamp associated with an address to be able to detect Sybils.
 
 ### Hotjar
 
@@ -92,7 +92,7 @@ This helps us understand how a user interacts with the product in order to impro
 
 ### Where to update the content
 
-[https://www.notion.so/bankless/1dd77eb6ed4147f6bdfd6f23a30baa46](https://www.notion.so/bankless/1dd77eb6ed4147f6bdfd6f23a30baa46)
+[https://banklessacademy.notion.site/129141602de240e484356bd85f7c75e0](https://banklessacademy.notion.site/129141602de240e484356bd85f7c75e0)
 
 ### Default content import command
 
@@ -103,7 +103,7 @@ yarn import-content
 ### Import content with a specific Notion ID
 
 ```bash
-yarn import-content 1dd77eb6ed4147f6bdfd6f23a30baa46
+yarn import-content 129141602de240e484356bd85f7c75e0
 ```
 
 ### How does it work
@@ -116,7 +116,7 @@ Note: import keywords before importing content.
 
 ### Where to update the keywords
 
-[https://www.notion.so/bankless/623e965e4f10456094d17aa94ec37105](https://www.notion.so/bankless/623e965e4f10456094d17aa94ec37105)
+[https://banklessacademy.notion.site/d452559560a447169e10f2d3c6ee5288](https://banklessacademy.notion.site/d452559560a447169e10f2d3c6ee5288)
 
 ### Default keywords import command
 
@@ -127,7 +127,7 @@ yarn import-keywords
 ### Import keywords with a specific Notion ID
 
 ```bash
-yarn import-keywords 623e965e4f10456094d17aa94ec37105
+yarn import-keywords d452559560a447169e10f2d3c6ee5288
 ```
 
 ## How to get started for devs

@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-# **Introduction**
+# Introduction
 
 Digital ownership is the new feature of web3. Using blockchains, cryptocurrencies, and NFTs, web3 gives ownership and power back to users. This online ownership of digital financial products is new for many, and that lack of experience gives opportunities for predatory people to scam and steal the assets of others. These scams work so well because most people aren’t aware of how they work. 
 
@@ -46,15 +46,15 @@ In web2, the institutions hold money on behalf of people. A user must prove thei
 
 For a scammer to gain access to your money, they need this ID + password combination. Because the institutions are charged with protecting your money, fraudulent transactions can be reversed - like a credit card transaction dispute.
 
-![](https://app.banklessacademy.com/images/web3-security/money-in-web2-78779f3c.svg)
+![](https://app.banklessacademy.com/images/web3-security/money-in-web2-7e1a5fd1.svg)
 
-# Money in Web3 
+# Money in Web3
 
 In web3, money works differently. It’s more like a locked cash wallet; once money is spent, it’s gone. Only private keys control access to the wallet. So for a scammer to gain access they need the `seed phrase`, that special set of secret words, to access someone’s `private keys` and steal from their wallet. 
 
 It’s very important to protect seed phrases; people should _**never**_ give their seed phrase to anyone for any reason. Also, never enter seed phrases digitally; digital photos, notes applications, and text files on your computer can all get compromised.
 
-![](https://app.banklessacademy.com/images/web3-security/money-in-web3--832997fe.svg)
+![](https://app.banklessacademy.com/images/web3-security/money-in-web3-f575b0f6.svg)
 
 # Knowledge Check 1
 
@@ -103,7 +103,7 @@ Many people have had their web2 accounts hacked, or have had their money and cre
 
 Phone (SMS) 2FA is better than no 2FA, but phone companies are vulnerable to scammers also. They can use `social engineering` to impersonate the account owner, bypass the company’s security checks, and gain access to the owner’s account - all without the real owner knowing. Authentication applications like Authy or Google Authenticator are more secure 2FA solutions.
 
-![](https://app.banklessacademy.com/images/web3-security/two-factor-authentication-75e29563.svg)
+![](https://app.banklessacademy.com/images/web3-security/two-factor-authentication-7fa9bfdf.svg)
 
 # Knowledge Check 3
 
@@ -124,7 +124,7 @@ They use `social engineering` to pressure people. Examples include:
 - “Congratulations you won our giveaway!” - making things feel exclusive.
 - ”Get early access to our pre-mint!” - generating `FOMO` in the person being scammed.
 
-![](https://app.banklessacademy.com/images/web3-security/social-engineering-scams-5750ad84.svg)
+![](https://app.banklessacademy.com/images/web3-security/social-engineering-scams-73c69132.svg)
 
 # Fear Of Missing Out
 
@@ -161,7 +161,7 @@ Social media `red flags`:
 
 🚩 **Un****requested links and offers,** _especially in direct messages_.
 
-![](https://app.banklessacademy.com/images/web3-security/social-media-safety-fbe97b9e.svg)
+![](https://app.banklessacademy.com/images/web3-security/social-media-safety-a76a39f4.svg)
 
 # Social Media Best Practices
 
@@ -175,7 +175,7 @@ Practices for staying safe**:**
 
 ✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our [Explorer Community](https://lenster.xyz/u/banklessacademy) is a great place for questions like these.
 
-![](https://app.banklessacademy.com/images/web3-security/social-media-best-practices-0776e310.svg)
+![](https://app.banklessacademy.com/images/web3-security/social-media-best-practices-48ad350f.svg)
 
 # Scam-tokens
 
@@ -185,7 +185,7 @@ Malicious contracts often require people to spend far more on a transaction than
 
 The best thing to do when you receive random tokens is to not interact with them at all; leave them in your wallet and never transfer/sell them.
 
-![](https://app.banklessacademy.com/images/web3-security/scam-tokens-cbab390e.svg)
+![](https://app.banklessacademy.com/images/web3-security/scam-tokens-761d5f63.svg)
 
 # Knowledge Check 5
 
@@ -204,7 +204,7 @@ It is even possible to use your hardware wallet through many browser extension w
 
 Ledger has [written their own guide](https://www.ledger.com/academy/security/the-safest-way-to-use-metamask) on how to setup MetaMask for use with their hardware wallet device.
 
-![](https://app.banklessacademy.com/images/web3-security/hardware-wallets-191cacd1.svg)
+![](https://app.banklessacademy.com/images/web3-security/hardware-wallets-22a096d4.svg)
 
 # Knowledge Check 6
 
@@ -225,7 +225,7 @@ After adding a hardware wallet to your setup, one of the best ways to secure you
 
 👎 **CONs:** It’s more complicated to keep track of, but many wallet applications allow you to name your wallets.
 
-![](https://app.banklessacademy.com/images/web3-security/wallet-strategies-857fd09c.svg)
+![](https://app.banklessacademy.com/images/web3-security/wallet-strategies-d71783ef.svg)
 
 # Knowledge Check 7
 

@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import { Box, Spinner, Button, VStack, Image, Text } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
+import { useTranslation } from 'react-i18next'
 
 import { LessonCard } from 'components/LessonCards'
 import { theme } from 'theme/index'
 import { api } from 'utils'
 import { useSmallScreen } from 'hooks'
-// import InternalLink from 'components/InternalLink'
+import InternalLink from 'components/InternalLink'
 import { LESSONS } from 'constants/index'
+import ExternalLink from 'components/ExternalLink'
 
-const Layer2Blockchains = (
+const OptimismGovernance = (
   account: string
 ): {
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { t } = useTranslation('quests', { keyPrefix: 'OptimismGovernance' })
   const [isSmallScreen] = useSmallScreen()
   const [isTransactionVerified, setIsTransactionVerified] = useState(
     localStorage.getItem('quest-optimism-governance') || 'false'
@@ -48,7 +51,7 @@ const Layer2Blockchains = (
   }, [account])
 
   const lesson = LESSONS.find(
-    (lesson) => lesson.slug === 'how-to-delegate-on-optimism'
+    (lesson) => lesson.slug === 'delegating-on-optimism'
   )
 
   if (!lesson)
@@ -65,7 +68,7 @@ const Layer2Blockchains = (
           <div className="bloc1">
             <Box ml="8">
               <Text mx="0 !important" fontSize="xl" fontWeight="bold">
-                {`Begin your Optimism Network journey by delegating OP.`}
+                {t('Begin your Optimism Network journey by delegating OP.')}
               </Text>
               <VStack mt="8" alignItems="start">
                 <Button
@@ -79,24 +82,8 @@ const Layer2Blockchains = (
                     )
                   }
                 >
-                  {'1. Connect your wallet to Bankless Academy'}
+                  {t('1. Connect your wallet to Bankless Academy')}
                 </Button>
-                {/* TODO: add step later */}
-                {/* <Button
-                  cursor="default"
-                  whiteSpace="break-spaces"
-                  rightIcon={
-                    isTransactionVerified === 'true' ? (
-                      <CheckIcon color={theme.colors.correct} />
-                    ) : isTransactionVerified === 'loading' ? (
-                      <Spinner speed="1s" />
-                    ) : (
-                      <CloseIcon color={theme.colors.incorrect} />
-                    )
-                  }
-                >
-                  {'2. Hold OP'}
-                </Button> */}
                 <Button
                   cursor="default"
                   whiteSpace="break-spaces"
@@ -110,16 +97,30 @@ const Layer2Blockchains = (
                     )
                   }
                 >
-                  {'2. Delegate your vote'}
+                  {t('2. Select a Delegate for your OP')}
                 </Button>
+                <Box>
+                  {t('See the delegation platform here')}
+                  {': '}
+                  <ExternalLink href="https://vote.optimism.io/">
+                    vote.optimism.io
+                  </ExternalLink>
+                </Box>
               </VStack>
               <Box mt="8">
-                {`Tip: Check our Explorer's Handbook entry on 'How to delegate on Optimism' to learn how to delegate.`}
+                {t('Tip: ')}
+                {t(
+                  "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
+                  {
+                    lesson_title: lesson.name,
+                    interpolation: { escapeValue: false },
+                  }
+                )}
               </Box>
               {isTransactionVerified !== 'true' && (
                 <Box mt="24px !important" textAlign="center">
                   <Button onClick={validateQuest} variant="primary">
-                    Refresh
+                    {t('Refresh')}
                   </Button>
                 </Box>
               )}
@@ -132,31 +133,27 @@ const Layer2Blockchains = (
               textAlign="center"
               m="auto"
             >
-              <Box
-                zIndex="2"
-                position="relative"
-                onClick={() => alert('article not available yet')}
-              >
+              <Box zIndex="2" position="relative">
                 <Box py="8">
                   <Text mt="0 !important" fontSize="xl" fontWeight="bold">
                     {lesson.name}
                   </Text>
-                  {/* <InternalLink
+                  <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     target="_blank"
-                  > */}
-                  <Image src={lesson.lessonImageLink} />
-                  {/* </InternalLink> */}
+                  >
+                    <Image src={lesson.lessonImageLink} />
+                  </InternalLink>
                 </Box>
                 <Box pb="8">
-                  {/* <InternalLink
+                  <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.name}
+                    alt={lesson.englishName}
                     target="_blank"
-                  > */}
-                  <Button variant="primary">Read Entry</Button>
-                  {/* </InternalLink> */}
+                  >
+                    <Button variant="primary">{t('Read Entry')}</Button>
+                  </InternalLink>
                 </Box>
               </Box>
             </LessonCard>
@@ -167,4 +164,4 @@ const Layer2Blockchains = (
   }
 }
 
-export default Layer2Blockchains
+export default OptimismGovernance
