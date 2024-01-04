@@ -20,7 +20,7 @@ exports.down = async function (knex) {
 /*
 
 DROP TRIGGER "completions_updated_at" ON "public"."completions";
-UPDATE "public"."completions" SET "is_quest_completed" = 't', "quest_completed_at" = created_at
+UPDATE "public"."completions" SET "is_quest_completed" = 't', "quest_completed_at" = created_at;
 CREATE TRIGGER "completions_updated_at" BEFORE UPDATE ON "public"."completions" FOR EACH ROW EXECUTE FUNCTION on_update_timestamp();
 
 */
