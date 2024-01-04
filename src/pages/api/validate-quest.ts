@@ -30,40 +30,6 @@ export default async function handler(
   console.log('address', address)
   console.log('quest', quest)
 
-  // Backend onchain quest verification
-  if (ONCHAIN_QUESTS.includes(quest)) {
-    if (['DEXAggregators', 'DecentralizedExchanges'].includes(quest)) {
-      if (!tx || typeof tx !== 'string') {
-        return res
-          .status(403)
-          .json({ isQuestValidated: false, error: 'Missing transaction' })
-      }
-      const isOnchainQuestCompleted = await validateOnchainQuest(
-        quest,
-        address,
-        tx
-      )
-      if (!isOnchainQuestCompleted)
-        return res.status(200).json({
-          isQuestValidated: false,
-          error: 'Onchain quest not completed',
-        })
-    }
-    else if (['Layer2Blockchains', 'OptimismGovernance'].includes(quest)) {
-      const isOnchainQuestCompleted = await validateOnchainQuest(quest, address)
-      if (!isOnchainQuestCompleted)
-        return res.status(200).json({
-          isQuestValidated: false,
-          error: 'Onchain quest not completed',
-        })
-    } else {
-      return res.status(200).json({
-        isQuestValidated: false,
-        error: 'Onchain quest not completed',
-      })
-    }
-  }
-
   try {
     const userId = await getUserId(address, embed)
     console.log(userId)
@@ -80,31 +46,80 @@ export default async function handler(
       return res.status(403).json({ error: 'credentialId not found' })
 
     let questStatus = ''
-    const [questCompleted] = await db(TABLES.completions)
-      .select(TABLE.completions.id)
+    const [completion] = await db(TABLES.completions)
+      .select(TABLE.completions.id, TABLE.completions.is_quest_completed)
       .where(TABLE.completions.credential_id, credential.id)
       .where(TABLE.completions.user_id, userId)
+    console.log(completion)
     questStatus = 'Quest already completed'
     const lesson = LESSONS.find((lesson) => lesson.quest === quest)?.name
-    if (questCompleted?.id) {
+    if (completion?.is_quest_completed === true) {
       trackBE(address, 'quest_already_completed', { lesson, embed })
       return res
         .status(200)
         .json({ isQuestValidated: true, status: questStatus })
-    } else {
-      const [createQuestCompleted] = await db(TABLES.completions).insert(
+    }
+    if (!completion) {
+      const [createCompletion] = await db(TABLES.completions).insert(
         { credential_id: credential.id, user_id: userId },
         ['id']
       )
+      console.log('new completion added: ', createCompletion)
+    }
 
-      if (createQuestCompleted?.id) {
-        questStatus = 'Quest completed'
-        trackBE(address, 'quest_completed', { lesson, embed })
-      } else {
-        questStatus = 'Problem while adding quest'
+    // Backend onchain quest verification
+    if (ONCHAIN_QUESTS.includes(quest)) {
+      if (['DEXAggregators', 'DecentralizedExchanges'].includes(quest)) {
+        if (!tx || typeof tx !== 'string') {
+          return res
+            .status(403)
+            .json({ isQuestValidated: false, error: 'Missing transaction' })
+        }
+        const isOnchainQuestCompleted = await validateOnchainQuest(
+          quest,
+          address,
+          tx
+        )
+        if (!isOnchainQuestCompleted)
+          return res.status(200).json({
+            isQuestValidated: false,
+            error: 'Onchain quest not completed',
+          })
       }
+      else if (['Layer2Blockchains', 'OptimismGovernance'].includes(quest)) {
+        const isOnchainQuestCompleted = await validateOnchainQuest(quest, address)
+        if (!isOnchainQuestCompleted)
+          return res.status(200).json({
+            isQuestValidated: false,
+            error: 'Onchain quest not completed',
+          })
+      } else {
+        return res.status(200).json({
+          isQuestValidated: false,
+          error: 'Onchain quest not completed',
+        })
+      }
+    }
+
+    // quest is completed
+    const onchainConversion = completion?.id ? 'quest_conversion' : 'quest_already_done'
+    trackBE(address, onchainConversion, { lesson, embed })
+    const updateQuestCompletion = await db(TABLES.completions)
+      .where(TABLE.completions.credential_id, credential.id)
+      .where(TABLE.completions.user_id, userId)
+      .update({ is_quest_completed: true, is_quest_conversion: onchainConversion === 'quest_conversion', quest_completed_at: db.raw("NOW()") })
+    console.log('update quest completion', updateQuestCompletion)
+    if (updateQuestCompletion) {
+      questStatus = 'Quest completed'
+      trackBE(address, 'quest_completed', { lesson, embed })
       return res.status(200).json({
-        isQuestValidated: !!createQuestCompleted?.id,
+        isQuestValidated: true,
+        status: questStatus,
+      })
+    } else {
+      questStatus = 'Problem while updating quest'
+      return res.status(200).json({
+        isQuestValidated: false,
         status: questStatus,
       })
     }

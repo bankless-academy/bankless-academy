@@ -64,6 +64,7 @@ export default async function handler(
       .select(TABLE.completions.id, TABLE.completions.transaction_at, TABLE.completions.transaction_hash)
       .where(TABLE.completions.credential_id, credential.id)
       .where(TABLE.completions.user_id, userId)
+      .where(TABLE.completions.is_quest_completed, true)
     console.log('questCompleted', questCompleted)
 
     let questStatus = ''
