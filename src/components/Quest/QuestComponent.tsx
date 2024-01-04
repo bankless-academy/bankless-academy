@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import WalletConnect from 'components/Quest/WalletConnect'
+import WhatIsBitcoin from 'components/Quest/WhatIsBitcoin'
 import WalletBasics from 'components/Quest/WalletBasics'
 import IntroToDeFi from 'components/Quest/IntroToDeFi'
 import BlockchainBasics from 'components/Quest/BlockchainBasics'
@@ -38,6 +39,7 @@ const QuestComponent = (
 ): QuestType => {
   const QUEST_COMPONENTS = {
     WalletConnect: WalletConnect,
+    WhatIsBitcoin: WhatIsBitcoin,
     WalletBasics: WalletBasics,
     IntroToDeFi: IntroToDeFi,
     BlockchainBasics: BlockchainBasics,
@@ -89,7 +91,11 @@ const QuestComponent = (
     }
   }, [address, Component.isQuestCompleted])
 
-  if (!address && component !== 'WalletBasics') {
+  if (
+    !address &&
+    component !== 'WalletBasics' &&
+    component !== 'WhatIsBitcoin'
+  ) {
     return {
       isQuestCompleted: false,
       questComponent: ConnectFirst(isSmallScreen, address),

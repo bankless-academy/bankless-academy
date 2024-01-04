@@ -273,7 +273,11 @@ const Lesson = ({
 
   useEffect((): void => {
     if (address) setConnectWalletPopupLS(false)
-    if ((slide.type === 'QUEST' || slide.type === 'END') && !address)
+    if (
+      (slide.type === 'QUEST' || slide.type === 'END') &&
+      !address &&
+      slide.component !== 'WhatIsBitcoin'
+    )
       setConnectWalletPopupLS(true)
   }, [address, slide])
 
