@@ -23,6 +23,7 @@ import { fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
 import makeBlockie from 'ethereum-blockies-base64'
 import { SiweMessage } from 'siwe'
 import { useTranslation } from 'react-i18next'
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -327,20 +328,31 @@ const ConnectWalletButton = ({
             <Button
               variant={name ? 'secondary' : 'primary'}
               size={isSmallScreen ? 'sm' : 'md'}
-              leftIcon={
+              onClick={() => onOpen()}
+            >
+              <Box display="flex" alignItems="center">
                 <Image
                   src={avatar || '/images/explorer_avatar.png'}
                   borderRadius="50%"
                   background="gray"
                   w={isSmallScreen ? '22px' : '28px'}
                   h={isSmallScreen ? '22px' : '28px'}
+                  mr={isSmallScreen ? '0' : '12px'}
                 />
-              }
-              onClick={() => onOpen()}
-            >
-              <Text maxW="200px" display="flex" alignItems="center" isTruncated>
-                {name || t('Click here to sign in')}
-              </Text>
+                {isSmallScreen ? (
+                  ''
+                ) : (
+                  <Text
+                    maxW="200px"
+                    display="flex"
+                    alignItems="center"
+                    isTruncated
+                  >
+                    {name || t('Click here to sign in')}
+                  </Text>
+                )}
+                {isOpen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
+              </Box>
             </Button>
           </PopoverTrigger>
           <PopoverContent width={isSmallScreen ? '260px' : '300px'}>

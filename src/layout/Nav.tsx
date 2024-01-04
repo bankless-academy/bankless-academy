@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
-import { Box, Image, HStack, Spacer, Flex } from '@chakra-ui/react'
+import { Box, Image, HStack, Spacer, Flex, Button } from '@chakra-ui/react'
 import { isMobile } from 'react-device-detect'
 import queryString from 'query-string'
+import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import InternalLink from 'components/InternalLink'
@@ -19,6 +21,8 @@ declare global {
 
 const Nav: React.FC = () => {
   const [isSmallScreen] = useSmallScreen()
+  const { asPath } = useRouter()
+  const { t } = useTranslation()
 
   const embed =
     typeof window !== 'undefined'
@@ -88,6 +92,16 @@ const Nav: React.FC = () => {
           </Box>
           <Spacer />
           <HStack spacing={2} justifyContent="space-between">
+            <InternalLink href={`/lessons`} alt="Explore Lessons">
+              <Button
+                variant={
+                  asPath?.startsWith('/lessons') ? 'secondary' : 'primary'
+                }
+                size={isSmallScreen ? 'sm' : 'md'}
+              >
+                {isSmallScreen ? t('Lessons') : t('Explore Lessons')}
+              </Button>
+            </InternalLink>
             <SwitchNetworkButton isSmallScreen={isSmallScreen} />
             <ConnectWalletButton isSmallScreen={isSmallScreen} />
             <OptionMenu
