@@ -119,6 +119,9 @@ const Slide = styled(Card)<{
       font-size: var(--chakra-fontSizes-xl);
       margin-left: 2em;
     }
+    li {
+      margin-bottom: 8px;
+    }
     iframe {
       margin: 20px auto 0;
       width: 640px;
