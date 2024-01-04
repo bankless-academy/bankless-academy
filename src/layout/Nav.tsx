@@ -4,6 +4,7 @@ import { isMobile } from 'react-device-detect'
 import queryString from 'query-string'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
+import { useAccount } from 'wagmi'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import InternalLink from 'components/InternalLink'
@@ -23,6 +24,7 @@ const Nav: React.FC = () => {
   const [isSmallScreen] = useSmallScreen()
   const { asPath } = useRouter()
   const { t } = useTranslation()
+  const { isConnected } = useAccount()
 
   const embed =
     typeof window !== 'undefined'
@@ -102,7 +104,9 @@ const Nav: React.FC = () => {
                 {isSmallScreen ? t('Lessons') : t('Explore Lessons')}
               </Button>
             </InternalLink>
-            <SwitchNetworkButton isSmallScreen={isSmallScreen} />
+            {isConnected ? (
+              <SwitchNetworkButton isSmallScreen={isSmallScreen} />
+            ) : null}
             <ConnectWalletButton isSmallScreen={isSmallScreen} />
             <OptionMenu
               isSmallScreen={isSmallScreen}
