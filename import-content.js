@@ -488,8 +488,15 @@ axios
           lesson.englishName = lesson.name
           lesson.slug = slugify(lesson.name)
           // add notionId to DB
-          await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
-            .ignore()
+          const [{ id: notionIdExist }] = await db(TABLES.credentials)
+            .select('id')
+            .where('notion_id', lesson.notionId)
+          if (!notionIdExist) {
+            // add new notion_id
+            console.log('add new notion_id')
+            await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
+              .ignore()
+          }
 
           if (lesson.badgeImageLink) {
             lesson.badgeImageLink = get_img(lesson.badgeImageLink, lesson.slug, 'badge')
