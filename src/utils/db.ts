@@ -26,26 +26,30 @@ export const TABLE = {
     donations: 'users.donations',
     referrer: 'users.referrer'
   },
-  quests: {
-    id: 'quests.id',
-    quest: 'quests.quest',
-    user_id: 'quests.user_id'
-  },
-  poaps: {
-    id: 'poaps.id',
-    event_id: 'poaps.event_id',
-    code: 'poaps.code',
-    is_claimed: 'poaps.is_claimed',
-    user_id: 'poaps.user_id',
-    ip_address: 'poaps.ip_address',
-    country_code: 'poaps.country_code'
-  },
+  // deprecated
+  // quests: {
+  //   id: 'quests.id',
+  //   quest: 'quests.quest',
+  //   user_id: 'quests.user_id'
+  // },
+  // deprecated
+  // poaps: {
+  //   id: 'poaps.id',
+  //   event_id: 'poaps.event_id',
+  //   code: 'poaps.code',
+  //   is_claimed: 'poaps.is_claimed',
+  //   user_id: 'poaps.user_id',
+  //   ip_address: 'poaps.ip_address',
+  //   country_code: 'poaps.country_code'
+  // },
+  // list of lesson badges ids matched by notion_id
   credentials: {
     id: 'credentials.id',
     notion_id: 'credentials.notion_id',
-    signature: 'credentials.signature'
-
+    // deprecated
+    // signature: 'credentials.signature'
   },
+  // lesson quest completions
   completions: {
     created_at: 'completions.created_at',
     id: 'completions.id',
@@ -54,7 +58,10 @@ export const TABLE = {
     // deprecated
     // credential_claimed_at: 'completions.credential_claimed_at',
     transaction_at: 'completions.transaction_at',
-    transaction_hash: 'completions.transaction_hash'
+    transaction_hash: 'completions.transaction_hash',
+    is_quest_completed: 'is_quest_completed',
+    is_quest_conversion: 'is_quest_conversion',
+    quest_completed_at: 'quest_completed_at'
   },
 }
 
