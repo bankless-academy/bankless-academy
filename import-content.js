@@ -488,10 +488,10 @@ axios
           lesson.englishName = lesson.name
           lesson.slug = slugify(lesson.name)
           // add notionId to DB
-          const [{ id: notionIdExist }] = await db(TABLES.credentials)
+          const [notionIdExist] = await db(TABLES.credentials)
             .select('id')
             .where('notion_id', lesson.notionId)
-          if (!notionIdExist) {
+          if (!notionIdExist?.id) {
             // add new notion_id
             console.log('add new notion_id')
             await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
