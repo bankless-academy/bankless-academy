@@ -417,7 +417,7 @@ const ConnectWalletButton = ({
                   : t('Connecting wallet')
               }
               zIndex={2}
-              variant="primary"
+              variant={asPath?.startsWith('/lessons') ? 'primary' : 'secondary'}
             >
               {t('Connect Wallet')}
             </Button>
