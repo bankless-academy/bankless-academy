@@ -44,6 +44,11 @@
     "keyword_plural": "异步",
     "definition": "多个合作者之间的通信，参与者在发送信息时不必在场。"
   },
+  "autonomy": {
+    "keyword": "autonomy",
+    "keyword_plural": "autonomys",
+    "definition": "The quality of governing your own actions, rather than adhering to frameworks of others."
+  },
   "bet": {
     "keyword": "投注",
     "keyword_plural": "投注",
@@ -77,12 +82,17 @@
   "blockchain": {
     "keyword": "区块链",
     "keyword_plural": "区块链",
-    "definition": "一个共享的、不可篡改的交易记录数据库或账本。"
+    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
   },
   "blockchain architecture": {
     "keyword": "区块链架构",
     "keyword_plural": "区块链架构",
     "definition": "区块链技术中的数据存储结构。"
+  },
+  "blockchain technology": {
+    "keyword": "blockchain technology",
+    "keyword_plural": "blockchain technologys",
+    "definition": "A new type of network, hosted across many computers. It's adding a new layer of digital ownership to the internet."
   },
   "blockchain trilemma": {
     "keyword": "区块链的三难困境",
@@ -103,6 +113,11 @@
     "keyword": "跨链桥",
     "keyword_plural": "跨链桥",
     "definition": "允许两个不同区块链网络相互通信、交换资产的连接。"
+  },
+  "btc": {
+    "keyword": "BTC",
+    "keyword_plural": "BTCs",
+    "definition": "The market symbol for bitcoin."
   },
   "censorship-resistant": {
     "keyword": "抗审查",
@@ -149,6 +164,26 @@
     "keyword_plural": "交易对手风险",
     "definition": "另一方可能不履行其在协议中责任的风险。"
   },
+  "credible neutrality": {
+    "keyword": "credible neutrality",
+    "keyword_plural": "credible neutralitys",
+    "definition": "A mechanism that does not discriminate for or against any specific people."
+  },
+  "cryptocurrency": {
+    "keyword": "cryptocurrency",
+    "keyword_plural": "cryptocurrencys",
+    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+  },
+  "cryptocurrency mining": {
+    "keyword": "cryptocurrency mining",
+    "keyword_plural": "cryptocurrency minings",
+    "definition": "The process of verifying blockchain transactions in exchange for cryptocurrency rewards."
+  },
+  "cryptocurrency wallet": {
+    "keyword": "cryptocurrency wallet",
+    "keyword_plural": "cryptocurrency wallets",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  },
   "custodial wallet": {
     "keyword": "托管钱包",
     "keyword_plural": "托管钱包",
@@ -167,7 +202,7 @@
   "decentralization": {
     "keyword": "去中心化",
     "keyword_plural": "去中心化",
-    "definition": "原则：没有任何一个机构或实体可以控制区块链数据。"
+    "definition": "The transfer of control to many individuals rather than one single authority."
   },
   "decentralized": {
     "keyword": "去中心化",
@@ -198,6 +233,11 @@
     "keyword": "授权",
     "keyword_plural": "授权",
     "definition": "赋予他人特定的责任，即授予象征性投票权。"
+  },
+  "democracy": {
+    "keyword": "democracy",
+    "keyword_plural": "democracys",
+    "definition": "A system of government where citizens exercise power by playing a key role in decision-making."
   },
   "dex": {
     "keyword": "去中心化交易所",
@@ -274,6 +314,11 @@
     "keyword_plural": "无交易费（gas）交易",
     "definition": "一种将部分交易代币用作交易费用（gas），而不是使用该区块链网络原生代币作为交易费用（gas）的交易"
   },
+  "gold standard": {
+    "keyword": "gold standard",
+    "keyword_plural": "gold standards",
+    "definition": "A monetary system where a country's currency has a value directly linked to gold."
+  },
   "gwei": {
     "keyword": "gwei",
     "keyword_plural": "gwei",
@@ -303,6 +348,11 @@
     "keyword": "热钱包",
     "keyword_plural": "热钱包",
     "definition": "A type of self-custody wallet that is perpetually connected to the internet."
+  },
+  "inflation": {
+    "keyword": "inflation",
+    "keyword_plural": "inflations",
+    "definition": "A general increase in prices and fall in the purchasing power of money."
   },
   "intermediary token": {
     "keyword": "中介代币",
@@ -384,6 +434,16 @@
     "keyword_plural": "MEVs",
     "definition": "最大可提取价值--通过对区块内的交易排序提取的价值。"
   },
+  "miner": {
+    "keyword": "miner",
+    "keyword_plural": "miners",
+    "definition": "An individual who participates in validating cryptocurrency transactions and proposing blocks."
+  },
+  "mining": {
+    "keyword": "mining",
+    "keyword_plural": "minings",
+    "definition": "The process by which transactions are verified and added as blocks to the blockchain."
+  },
   "mint": {
     "keyword": "mint",
     "keyword_plural": "mints",
@@ -393,6 +453,11 @@
     "keyword": "网络治理",
     "keyword_plural": "网络治理",
     "definition": "去中心化社区就网络功能/升级达成一致的过程。"
+  },
+  "neutrality": {
+    "keyword": "neutrality",
+    "keyword_plural": "neutralitys",
+    "definition": "The principle of treating all participants equally, without bias towards any user or group."
   },
   "nft": {
     "keyword": "NFT",
@@ -479,6 +544,11 @@
     "keyword_plural": "工作量证明（PoW）",
     "definition": "区块链共识算法依赖矿工所做的\"工作量\"，矿工通过提出区块并查看每个区块是否具有有效哈希值来竞争创建有效区块。"
   },
+  "pseudonymous": {
+    "keyword": "pseudonymous",
+    "keyword_plural": "pseudonymouss",
+    "definition": "Writing under a false name."
+  },
   "public": {
     "keyword": "公共",
     "keyword_plural": "公共",
@@ -519,6 +589,11 @@
     "keyword_plural": "三明治攻击",
     "definition": "由于区块生产者对交易进行排序，用户需要支付隐性成本。"
   },
+  "satoshi nakamoto": {
+    "keyword": "Satoshi Nakamoto",
+    "keyword_plural": "Satoshi Nakamotos",
+    "definition": "The pseudonymous creator of Bitcoin. To this day, nobody knows their real identity."
+  },
   "scalability": {
     "keyword": "可扩展性",
     "keyword_plural": "可扩展性",
@@ -529,6 +604,11 @@
     "keyword_plural": "诈骗代币",
     "definition": "只为盗取投资者资金而推出的加密货币代币。"
   },
+  "scarcity": {
+    "keyword": "scarcity",
+    "keyword_plural": "scarcitys",
+    "definition": "The state of being in short supply."
+  },
   "security": {
     "keyword": "安全性",
     "keyword_plural": "安全性",
@@ -538,6 +618,16 @@
     "keyword": "助记词",
     "keyword_plural": "助记词",
     "definition": "由钱包在设置时生成的一组随机词语，它们是该钱包控制的所有账户的主密钥。切勿以任何理由与任何人共享您的助记词。"
+  },
+  "self-custodial": {
+    "keyword": "self-custodial",
+    "keyword_plural": "self-custodials",
+    "definition": "A means of holding your assets where only you have access to them."
+  },
+  "self-custody": {
+    "keyword": "self-custody",
+    "keyword_plural": "self-custodys",
+    "definition": "A means of holding your assets where only you have access to them."
   },
   "self-custody wallet": {
     "keyword": "self-custody wallet",
