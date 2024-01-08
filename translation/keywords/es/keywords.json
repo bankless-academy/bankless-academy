@@ -44,6 +44,11 @@
     "keyword_plural": "asíncrono",
     "definition": "Comunicación entre varios colaboradores, en la que los participantes no tienen que estar presentes en el momento de enviar el mensaje."
   },
+  "autonomy": {
+    "keyword": "autonomy",
+    "keyword_plural": "autonomys",
+    "definition": "The quality of governing your own actions, rather than adhering to frameworks of others."
+  },
   "bet": {
     "keyword": "apuesta",
     "keyword_plural": "apuesta",
@@ -77,12 +82,17 @@
   "blockchain": {
     "keyword": "cadenas de bloques",
     "keyword_plural": "cadenas de bloques",
-    "definition": "Una base de datos compartida e inmutable, o libro mayor, de transacciones registradas."
+    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
   },
   "blockchain architecture": {
     "keyword": "arquitectura blockchain",
     "keyword_plural": "arquitectura blockchain",
     "definition": "Las estructuras de almacenamiento de datos en la tecnología blockchain."
+  },
+  "blockchain technology": {
+    "keyword": "blockchain technology",
+    "keyword_plural": "blockchain technologys",
+    "definition": "A new type of network, hosted across many computers. It's adding a new layer of digital ownership to the internet."
   },
   "blockchain trilemma": {
     "keyword": "El trilema de la cadena de bloques",
@@ -103,6 +113,11 @@
     "keyword": "puente",
     "keyword_plural": "Puentes",
     "definition": "Conexión que permite a dos redes de blockchain diferentes comunicarse entre sí e intercambiar activos."
+  },
+  "btc": {
+    "keyword": "BTC",
+    "keyword_plural": "BTCs",
+    "definition": "The market symbol for bitcoin."
   },
   "censorship-resistant": {
     "keyword": "resistencia a la censura",
@@ -149,6 +164,26 @@
     "keyword_plural": "riesgo de contraparte",
     "definition": "El riesgo de que otra parte no cumpla su parte en un acuerdo."
   },
+  "credible neutrality": {
+    "keyword": "credible neutrality",
+    "keyword_plural": "credible neutralitys",
+    "definition": "A mechanism that does not discriminate for or against any specific people."
+  },
+  "cryptocurrency": {
+    "keyword": "cryptocurrency",
+    "keyword_plural": "cryptocurrencys",
+    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+  },
+  "cryptocurrency mining": {
+    "keyword": "cryptocurrency mining",
+    "keyword_plural": "cryptocurrency minings",
+    "definition": "The process of verifying blockchain transactions in exchange for cryptocurrency rewards."
+  },
+  "cryptocurrency wallet": {
+    "keyword": "cryptocurrency wallet",
+    "keyword_plural": "cryptocurrency wallets",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  },
   "custodial wallet": {
     "keyword": "billeteras no custodiales",
     "keyword_plural": "billeteras de custodia",
@@ -167,7 +202,7 @@
   "decentralization": {
     "keyword": "Decentralización",
     "keyword_plural": "Descentralización",
-    "definition": "Principio según el cual ninguna autoridad o entidad debe controlar los datos de la cadena de bloques."
+    "definition": "The transfer of control to many individuals rather than one single authority."
   },
   "decentralized": {
     "keyword": "descentralizado",
@@ -198,6 +233,11 @@
     "keyword": "delegación",
     "keyword_plural": "delegaciones",
     "definition": "Otorgar una responsabilidad específica a otra persona, es decir, delegar un poder de voto simbólico."
+  },
+  "democracy": {
+    "keyword": "democracy",
+    "keyword_plural": "democracys",
+    "definition": "A system of government where citizens exercise power by playing a key role in decision-making."
   },
   "dex": {
     "keyword": "DEX",
@@ -274,6 +314,11 @@
     "keyword_plural": "transacciones sin gas",
     "definition": "Una transacción que paga el gas utilizando parte del token con el que se comercia en lugar de la moneda nativa de la red blockchain."
   },
+  "gold standard": {
+    "keyword": "gold standard",
+    "keyword_plural": "gold standards",
+    "definition": "A monetary system where a country's currency has a value directly linked to gold."
+  },
   "gwei": {
     "keyword": "gwei",
     "keyword_plural": "gwei",
@@ -303,6 +348,11 @@
     "keyword": "billetera caliente",
     "keyword_plural": "billetera caliente",
     "definition": "A type of self-custody wallet that is perpetually connected to the internet."
+  },
+  "inflation": {
+    "keyword": "inflation",
+    "keyword_plural": "inflations",
+    "definition": "A general increase in prices and fall in the purchasing power of money."
   },
   "intermediary token": {
     "keyword": "token intermedio",
@@ -384,6 +434,16 @@
     "keyword_plural": "MEV",
     "definition": "Valor máximo extraíble: valor extraído ordenando las transacciones dentro de los bloques."
   },
+  "miner": {
+    "keyword": "miner",
+    "keyword_plural": "miners",
+    "definition": "An individual who participates in validating cryptocurrency transactions and proposing blocks."
+  },
+  "mining": {
+    "keyword": "mining",
+    "keyword_plural": "minings",
+    "definition": "The process by which transactions are verified and added as blocks to the blockchain."
+  },
   "mint": {
     "keyword": "mint",
     "keyword_plural": "mints",
@@ -393,6 +453,11 @@
     "keyword": "gobernanza de la red",
     "keyword_plural": "gobernanza de la red",
     "definition": "Proceso por el que una comunidad descentralizada llega a un acuerdo sobre las características y mejoras de la red."
+  },
+  "neutrality": {
+    "keyword": "neutrality",
+    "keyword_plural": "neutralitys",
+    "definition": "The principle of treating all participants equally, without bias towards any user or group."
   },
   "nft": {
     "keyword": "NFT",
@@ -479,6 +544,11 @@
     "keyword_plural": "Prueba de Trabajo",
     "definition": "Algoritmos del Consenso de Blockchain que dependen del “trabajo” hecho por los mineros que compiten para crear bloques válidos proponiendo bloques y viendo si cada uno tiene un hash válido."
   },
+  "pseudonymous": {
+    "keyword": "pseudonymous",
+    "keyword_plural": "pseudonymouss",
+    "definition": "Writing under a false name."
+  },
   "public": {
     "keyword": "público",
     "keyword_plural": "público",
@@ -519,6 +589,11 @@
     "keyword_plural": "ataque sándwich",
     "definition": "Un coste oculto para los usuarios debido a la ordenación de las transacciones por parte de los productores de bloques."
   },
+  "satoshi nakamoto": {
+    "keyword": "Satoshi Nakamoto",
+    "keyword_plural": "Satoshi Nakamotos",
+    "definition": "The pseudonymous creator of Bitcoin. To this day, nobody knows their real identity."
+  },
   "scalability": {
     "keyword": "Escalabilidad",
     "keyword_plural": "Escalabilidad",
@@ -529,6 +604,11 @@
     "keyword_plural": "token de estafa",
     "definition": "Un token de criptomoneda que se lanza con el único propósito de robar los fondos de los inversores."
   },
+  "scarcity": {
+    "keyword": "scarcity",
+    "keyword_plural": "scarcitys",
+    "definition": "The state of being in short supply."
+  },
   "security": {
     "keyword": "Seguridad",
     "keyword_plural": "Seguridades",
@@ -538,6 +618,16 @@
     "keyword": "frase semilla",
     "keyword_plural": "frase semilla",
     "definition": "Grupo de palabras aleatorias generadas por un monedero en la configuración, actúan como la llave maestra de TODAS las cuentas controladas por ese monedero. NUNCA COMPARTAS TU FRASE SEMILLA CON NADIE POR NINGÚN MOTIVO."
+  },
+  "self-custodial": {
+    "keyword": "self-custodial",
+    "keyword_plural": "self-custodials",
+    "definition": "A means of holding your assets where only you have access to them."
+  },
+  "self-custody": {
+    "keyword": "self-custody",
+    "keyword_plural": "self-custodys",
+    "definition": "A means of holding your assets where only you have access to them."
   },
   "self-custody wallet": {
     "keyword": "self-custody wallet",
