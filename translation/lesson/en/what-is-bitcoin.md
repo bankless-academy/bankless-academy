@@ -92,7 +92,7 @@ Electronic currency began replacing physical currency — moving a majority of m
 
 # The Problem
 
-Money has lost its `neutrality` and `reliability`.
+Money has lost its `neutrality` and economic reliability.
 
 Modern currency systems have evolved in a way that gives the banking community majority control over money. Today, its value is diluted by the central bank, making it difficult to build long-term savings. Its ownership has been handed over to commercial banks, removing true control over your funds.
 
@@ -247,7 +247,7 @@ This is the `cryptocurrency mining` process. It’s what keeps the network runni
 
 For providing a service to the network, the original miner discovers a new, small amount of bitcoin. This is the “mining of undiscovered gold” we mentioned while discussing `scarcity`. 
 
-`Crptocurrency mining` incentivizes people around the world to help secure the network, while steadily injecting new currency into the bitcoin economy.
+`Cryptocurrency mining` incentivizes people around the world to help secure the network, while steadily injecting new currency into the bitcoin economy.
 
 That’s quite a process!
 

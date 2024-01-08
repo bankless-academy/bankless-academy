@@ -351,7 +351,6 @@ const LESSONS: LessonType[] = [
       'scarcity',
       'gold standard',
       'neutrality',
-      'reliability',
       'self-custodial',
       'inflation',
       'cryptocurrency mining',
@@ -361,7 +360,6 @@ const LESSONS: LessonType[] = [
       'decentralized',
       'miners',
       'btc',
-      'crptocurrency mining',
       'decentralized finance',
       'democracy'
     ],
@@ -408,7 +406,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '459a1518417540c99dc0a0f68ac9cef5',
         title: 'The Problem',
-        content: '<div class="bloc1"><p>Money has lost its <code>neutrality</code> and <code>reliability</code>.</p><p>Modern currency systems have evolved in a way that gives the banking community majority control over money. Today, its value is diluted by the central bank, making it difficult to build long-term savings. Its ownership has been handed over to commercial banks, removing true control over your funds.</p><p>These properties have given the financial sector a disproportionate advantage over the vast majority of a country. As we’ll see, this imbalance is widening the wealth gap between the upper, middle and lower classes — and eroding quality of life for the average citizen.</p><hr><p>For money to once again be neutral and reliable, it must regain the two key properties it has lost:</p><p>💎 <strong>Value:</strong> It must reliably store value over time, so that you aren’t forced to spend it.</p><p>✊ <strong>Ownership:</strong> It must give you sole, unrestricted control over your funds, so they can’t be confiscated without due legal process.</p><p>Only these qualities can return financial freedom & security to modern money.</p></div>'
+        content: '<div class="bloc1"><p>Money has lost its <code>neutrality</code> and economic reliability.</p><p>Modern currency systems have evolved in a way that gives the banking community majority control over money. Today, its value is diluted by the central bank, making it difficult to build long-term savings. Its ownership has been handed over to commercial banks, removing true control over your funds.</p><p>These properties have given the financial sector a disproportionate advantage over the vast majority of a country. As we’ll see, this imbalance is widening the wealth gap between the upper, middle and lower classes — and eroding quality of life for the average citizen.</p><hr><p>For money to once again be neutral and reliable, it must regain the two key properties it has lost:</p><p>💎 <strong>Value:</strong> It must reliably store value over time, so that you aren’t forced to spend it.</p><p>✊ <strong>Ownership:</strong> It must give you sole, unrestricted control over your funds, so they can’t be confiscated without due legal process.</p><p>Only these qualities can return financial freedom & security to modern money.</p></div>'
       },
       {
         type: 'LEARN',
@@ -506,7 +504,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'febf3ea22d734f08a3a60f5a1e9b59b8',
         title: 'How does it work? (Pt. 3)',
-        content: '<div class="bloc1"><p>For providing a service to the network, the original miner discovers a new, small amount of bitcoin. This is the “mining of undiscovered gold” we mentioned while discussing <code>scarcity</code>. </p><p><code>Crptocurrency mining</code> incentivizes people around the world to help secure the network, while steadily injecting new currency into the bitcoin economy.</p><p>That’s quite a process!</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/how-does-it-work-pt-3-3b535f74.svg\'></div>'
+        content: '<div class="bloc1"><p>For providing a service to the network, the original miner discovers a new, small amount of bitcoin. This is the “mining of undiscovered gold” we mentioned while discussing <code>scarcity</code>. </p><p><code>Cryptocurrency mining</code> incentivizes people around the world to help secure the network, while steadily injecting new currency into the bitcoin economy.</p><p>That’s quite a process!</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/how-does-it-work-pt-3-3b535f74.svg\'></div>'
       },
       {
         type: 'QUIZ',
