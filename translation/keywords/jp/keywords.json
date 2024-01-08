@@ -44,6 +44,11 @@
     "keyword_plural": "非同期",
     "definition": "複数の共同作業者間のコミュニケーションで、参加者はメッセージ送信時にその場にいる必要はない"
   },
+  "autonomy": {
+    "keyword": "autonomy",
+    "keyword_plural": "autonomys",
+    "definition": "The quality of governing your own actions, rather than adhering to frameworks of others."
+  },
   "bet": {
     "keyword": "ベット",
     "keyword_plural": "ベット",
@@ -77,12 +82,17 @@
   "blockchain": {
     "keyword": "ブロックチェーン",
     "keyword_plural": "ブロックチェーン",
-    "definition": "記録されたトランザクションの共有された、変更不可能なデータベース、または元帳"
+    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
   },
   "blockchain architecture": {
     "keyword": "ブロックチェーンアーキテクチャ",
     "keyword_plural": "ブロックチェーンアーキテクチャ",
     "definition": "ブロックチェーン技術にデータが格納される仕組み"
+  },
+  "blockchain technology": {
+    "keyword": "blockchain technology",
+    "keyword_plural": "blockchain technologys",
+    "definition": "A new type of network, hosted across many computers. It's adding a new layer of digital ownership to the internet."
   },
   "blockchain trilemma": {
     "keyword": "ブロックチェーンのトリレンマ",
@@ -103,6 +113,11 @@
     "keyword": "ブリッジ",
     "keyword_plural": "ブリッジ",
     "definition": "2つの異なるブロックチェーンネットワークが互いに通信し、資産を交換することを可能にする接続"
+  },
+  "btc": {
+    "keyword": "BTC",
+    "keyword_plural": "BTCs",
+    "definition": "The market symbol for bitcoin."
   },
   "censorship-resistant": {
     "keyword": "検閲への耐性",
@@ -149,6 +164,26 @@
     "keyword_plural": "カウンターパーティ・リスク",
     "definition": "他の当事者が合意の一部を果たさない可能性がある"
   },
+  "credible neutrality": {
+    "keyword": "credible neutrality",
+    "keyword_plural": "credible neutralitys",
+    "definition": "A mechanism that does not discriminate for or against any specific people."
+  },
+  "cryptocurrency": {
+    "keyword": "cryptocurrency",
+    "keyword_plural": "cryptocurrencys",
+    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+  },
+  "cryptocurrency mining": {
+    "keyword": "cryptocurrency mining",
+    "keyword_plural": "cryptocurrency minings",
+    "definition": "The process of verifying blockchain transactions in exchange for cryptocurrency rewards."
+  },
+  "cryptocurrency wallet": {
+    "keyword": "cryptocurrency wallet",
+    "keyword_plural": "cryptocurrency wallets",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  },
   "custodial wallet": {
     "keyword": "カストディアルウォレット",
     "keyword_plural": "カストディアルウォレット",
@@ -167,7 +202,7 @@
   "decentralization": {
     "keyword": "分散型",
     "keyword_plural": "分散型",
-    "definition": "単一の権限やエンティティがブロックチェーンデータを制御するべきではないという原則"
+    "definition": "The transfer of control to many individuals rather than one single authority."
   },
   "decentralized": {
     "keyword": "分散的な",
@@ -198,6 +233,11 @@
     "keyword": "委任",
     "keyword_plural": "委任",
     "definition": "特定の責任を他者に与えること、形だけの議決権を委任すること"
+  },
+  "democracy": {
+    "keyword": "democracy",
+    "keyword_plural": "democracys",
+    "definition": "A system of government where citizens exercise power by playing a key role in decision-making."
   },
   "dex": {
     "keyword": "DEX",
@@ -274,6 +314,11 @@
     "keyword_plural": "ガスなし取引",
     "definition": "ブロックチェーンネットワークのネイティブコインではなく、いくつかのトークンを使用してガスを支払うトランザクション"
   },
+  "gold standard": {
+    "keyword": "gold standard",
+    "keyword_plural": "gold standards",
+    "definition": "A monetary system where a country's currency has a value directly linked to gold."
+  },
   "gwei": {
     "keyword": "gwei",
     "keyword_plural": "gwei",
@@ -303,6 +348,11 @@
     "keyword": "ホットウォレット",
     "keyword_plural": "ホットウォレット",
     "definition": "A type of self-custody wallet that is perpetually connected to the internet."
+  },
+  "inflation": {
+    "keyword": "inflation",
+    "keyword_plural": "inflations",
+    "definition": "A general increase in prices and fall in the purchasing power of money."
   },
   "intermediary token": {
     "keyword": "仲介トークン",
@@ -384,6 +434,16 @@
     "keyword_plural": "MEV",
     "definition": "ブロック内のトランザクションを順序付けることによって抽出される値"
   },
+  "miner": {
+    "keyword": "miner",
+    "keyword_plural": "miners",
+    "definition": "An individual who participates in validating cryptocurrency transactions and proposing blocks."
+  },
+  "mining": {
+    "keyword": "mining",
+    "keyword_plural": "minings",
+    "definition": "The process by which transactions are verified and added as blocks to the blockchain."
+  },
   "mint": {
     "keyword": "mint",
     "keyword_plural": "mints",
@@ -393,6 +453,11 @@
     "keyword": "ネットワークガバナンス",
     "keyword_plural": "ネットワークガバナンス",
     "definition": "分散型コミュニティがネットワーク機能/アップグレードに関する合意に達するプロセス"
+  },
+  "neutrality": {
+    "keyword": "neutrality",
+    "keyword_plural": "neutralitys",
+    "definition": "The principle of treating all participants equally, without bias towards any user or group."
   },
   "nft": {
     "keyword": "NFT",
@@ -479,6 +544,11 @@
     "keyword_plural": "PoW",
     "definition": "ブロックチェーンのコンセンサスアルゴリズムは、ブロックを提案し、それぞれが有効なハッシュを持つかどうかを確認することで、有効なブロックを作成するために競争するマイナーによる作業に依存している"
   },
+  "pseudonymous": {
+    "keyword": "pseudonymous",
+    "keyword_plural": "pseudonymouss",
+    "definition": "Writing under a false name."
+  },
   "public": {
     "keyword": "パブリック",
     "keyword_plural": "パブリック",
@@ -519,6 +589,11 @@
     "keyword_plural": "サンドイッチ攻撃",
     "definition": "ブロック生成者によるトランザクションの順序により、ユーザーには隠れたコストがかかる"
   },
+  "satoshi nakamoto": {
+    "keyword": "Satoshi Nakamoto",
+    "keyword_plural": "Satoshi Nakamotos",
+    "definition": "The pseudonymous creator of Bitcoin. To this day, nobody knows their real identity."
+  },
   "scalability": {
     "keyword": "スケーラビリティ",
     "keyword_plural": "スケーラビリティ",
@@ -529,6 +604,11 @@
     "keyword_plural": "スキャムトークン",
     "definition": "投資家の資金を盗む唯一の目的で起動されるクリプトトークン"
   },
+  "scarcity": {
+    "keyword": "scarcity",
+    "keyword_plural": "scarcitys",
+    "definition": "The state of being in short supply."
+  },
   "security": {
     "keyword": "セキュリティ",
     "keyword_plural": "セキュリティ",
@@ -538,6 +618,16 @@
     "keyword": "シードフレーズ",
     "keyword_plural": "シードフレーズ",
     "definition": "セットアップ時にウォレットによって生成されるランダムな単語のグループであり、いかなる理由があろうとも、シードフレーズを他人と共有してはいけない"
+  },
+  "self-custodial": {
+    "keyword": "self-custodial",
+    "keyword_plural": "self-custodials",
+    "definition": "A means of holding your assets where only you have access to them."
+  },
+  "self-custody": {
+    "keyword": "self-custody",
+    "keyword_plural": "self-custodys",
+    "definition": "A means of holding your assets where only you have access to them."
   },
   "self-custody wallet": {
     "keyword": "self-custody wallet",
