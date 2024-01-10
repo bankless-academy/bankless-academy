@@ -99,6 +99,9 @@ export default async function handler(req: NextApiRequest) {
       user.avatar =
         'https://app.banklessacademy.com/images/avatars/d0wnlore.jpg'
     }
+    if (ensData.address === '0xe8c77e0eabd6d8b2f54343152a8b213d3a42e54e') {
+      user.avatar = 'https://app.banklessacademy.com/images/avatars/doubleb.png'
+    }
   }
 
   const explorerName = user.ensName || shortenAddress(address)
