@@ -33,7 +33,7 @@ DeFi—short for `decentralized` finance—refers to the fast-growing ecosystem 
 
 DeFi is rapidly transforming the world of finance with a range of new tools for putting crypto assets to work. It offers opportunities beyond simply buying crypto on a centralized exchange.  It allows anyone and everyone to build a decentralized, Bankless lifestyle.
 
-![](https://app.banklessacademy.com/images/intro-to-defi/defi-defined-50338cfd.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/defi-defined-759c5922.svg)
 
 # Why DeFi?
 
@@ -75,7 +75,7 @@ How can you earn yield with crypto?
 
 `DApps` and DeFi platforms enable users to make more and more types of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.
 
-![](https://app.banklessacademy.com/images/intro-to-defi/what-you-can-do-with-defi-86d92e98.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/what-you-can-do-with-defi-e1e865b5.svg)
 
 # Knowledge Check 3
 
@@ -149,7 +149,7 @@ DeFi staking is similar to lending, however it's a special type of lending. Inst
 
 Centralized exchanges also offer staking. However, like their trading pairs, the staking opportunities and rewards are limited. With DeFi, there are many more staking possibilities than there are with centralized exchanges. 
 
-![](https://app.banklessacademy.com/images/intro-to-defi/staking-a46efa05.svg)
+![](https://app.banklessacademy.com/images/intro-to-defi/staking-8dbafcb8.svg)
 
 # Knowledge Check 7
 
