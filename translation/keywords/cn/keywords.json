@@ -219,6 +219,11 @@
     "keyword_plural": "去中心化金融",
     "definition": "（DeFi）一套架设在区块链上的自托管金融工具。"
   },
+  "decentralized money": {
+    "keyword": "decentralized money",
+    "keyword_plural": "decentralized moneys",
+    "definition": "Money with properties agreed on by the community, rather than set by an institution."
+  },
   "defi": {
     "keyword": "DeFi（去中心化金融）",
     "keyword_plural": "DeFis（去中心化金融）",
@@ -448,6 +453,11 @@
     "keyword": "mint",
     "keyword_plural": "mints",
     "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
+  },
+  "money": {
+    "keyword": "money",
+    "keyword_plural": "moneys",
+    "definition": "A medium of exchange, a unit of account, and a store of value, used to facilitate transactions for goods and services."
   },
   "network governance": {
     "keyword": "网络治理",
