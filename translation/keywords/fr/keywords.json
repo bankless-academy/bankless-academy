@@ -219,6 +219,11 @@
     "keyword_plural": "Decentralized Finances",
     "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
   },
+  "decentralized money": {
+    "keyword": "decentralized money",
+    "keyword_plural": "decentralized moneys",
+    "definition": "Money with properties agreed on by the community, rather than set by an institution."
+  },
   "defi": {
     "keyword": "DeFi",
     "keyword_plural": "DeFis",
@@ -448,6 +453,11 @@
     "keyword": "mint",
     "keyword_plural": "mints",
     "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
+  },
+  "money": {
+    "keyword": "money",
+    "keyword_plural": "moneys",
+    "definition": "A medium of exchange, a unit of account, and a store of value, used to facilitate transactions for goods and services."
   },
   "network governance": {
     "keyword": "gouvernance du réseau",
