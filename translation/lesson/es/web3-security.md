@@ -225,7 +225,7 @@ After adding a hardware wallet to your setup, one of the best ways to secure you
 
 👎 **CONs:** It’s more complicated to keep track of, but many wallet applications allow you to name your wallets.
 
-![](https://app.banklessacademy.com/images/web3-security/wallet-strategies-d71783ef.svg)
+![](https://app.banklessacademy.com/images/web3-security/wallet-strategies-2b743061.svg)
 
 # Knowledge Check 7
 
