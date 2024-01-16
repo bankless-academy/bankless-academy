@@ -8,7 +8,10 @@ export class PassportCache {
 
   constructor() {
     this.client = createClient({
-      url: process.env.REDIS_URL,
+      url: process.env.KV_URL,
+      socket: {
+        tls: true,
+      },
     });
 
     this.client.on("error", (err: any) => {
