@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
-import * as twitterOAuth from "utils/stamps/platforms/twitter"
 import { NextApiRequest, NextApiResponse } from 'next'
+
+import * as twitterOAuth from "utils/stamps/platforms/twitter"
+import { DOMAIN_URL } from "constants/index";
 
 export type GenerateTwitterAuthUrlRequestBody = {
   callback?: string;
@@ -10,8 +12,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  const { callback: callbackOverride } = req.body as GenerateTwitterAuthUrlRequestBody;
-  twitterOAuth.initClientAndGetAuthUrl(callbackOverride).then((authUrl) => {
+  twitterOAuth.initClientAndGetAuthUrl(`${DOMAIN_URL}/api/stamps/callback`).then((authUrl) => {
     res.redirect(authUrl)
   });
 }
