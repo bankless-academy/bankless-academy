@@ -7,6 +7,7 @@ import { Box } from '@chakra-ui/react'
 
 const pageMeta: MetaData = {
   description: 'OG',
+  noindex: true,
 }
 
 export const getStaticProps: GetStaticProps = async () => {
