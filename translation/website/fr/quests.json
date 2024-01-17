@@ -15,5 +15,8 @@
     "Download the browser extension from the official website:": "Download the browser extension from the official website:",
     "Congrats for connecting your wallet! 👏🙂": "Congrats for connecting your wallet! 👏🙂",
     "Waiting to detect your wallet ...": "Waiting to detect your wallet ..."
+  },
+  "WhatIsBitcoin": {
+    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address"
   }
 }
