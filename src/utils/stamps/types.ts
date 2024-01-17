@@ -1,4 +1,4 @@
-// https://github.com/gitcoinco/passport/blob/main/platforms/src/types.ts
+// SOURCE: https://github.com/gitcoinco/passport/blob/main/platforms/src/types.ts
 
 /* eslint-disable */
 import { ProviderContext, RequestPayload, VerifiedPayload } from "./passport-types"

@@ -1,4 +1,4 @@
-// https://github.com/gitcoinco/passport/blob/main/platforms/src/Twitter/procedures/twitterOauth.ts
+// SOURCE: https://github.com/gitcoinco/passport/blob/main/platforms/src/Twitter/procedures/twitterOauth.ts
 
 /* eslint-disable no-console */
 import {

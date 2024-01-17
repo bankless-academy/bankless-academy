@@ -11,6 +11,7 @@ export type GenerateTwitterAuthUrlRequestBody = {
   callback?: string;
 };
 
+// SOURCE: https://github.com/gitcoinco/passport/blob/main/identity/src/credentials.ts
 // Create an ordered array of the given input (of the form [[key:string, value:string], ...])
 export const objToSortedArray = (obj: { [k: string]: string }): string[][] => {
   const keys: string[] = Object.keys(obj).sort();
@@ -20,6 +21,7 @@ export const objToSortedArray = (obj: { [k: string]: string }): string[][] => {
   }, [] as string[][]);
 };
 
+// SOURCE: https://github.com/gitcoinco/passport/blob/main/platforms/src/Twitter/Providers/twitterAccountAge.ts
 const checkTwitterAccountAge = (numberOfDays: number, createdAt: string): { valid: boolean; errors: string[] } => {
   const creationDate = new Date(createdAt);
   // Get the current date

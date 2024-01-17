@@ -1,4 +1,4 @@
-// partial https://github.com/gitcoinco/passport/blob/main/types/src/index.d.ts
+// SOURCE: https://github.com/gitcoinco/passport/blob/main/types/src/index.d.ts
 
 import { JsonRpcSigner } from "@ethersproject/providers";
 

@@ -6,7 +6,7 @@ export const NUMBER_OF_STAMP_REQUIRED = 2
 export const ALLOWED_ISSUER =
   'did:key:z6MkghvGHLobLEdj1bgRLhS4LPGJAvbMA1tn2zcRyqmYU5LC'
 
-// https://github.com/gitcoinco/passport/blob/main/app/config/providers.ts
+// SOURCE: https://github.com/gitcoinco/passport/blob/main/platforms/src/Twitter/Providers-config.ts
 export const STAMP_PROVIDERS = {
   Google: {
     icon: 'https://passport.gitcoin.co/assets/googleStampIcon.svg',

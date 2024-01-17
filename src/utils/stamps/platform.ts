@@ -1,4 +1,4 @@
-// https://github.com/gitcoinco/passport/blob/main/platforms/src/utils/platform.ts
+// SOURCE: https://github.com/gitcoinco/passport/blob/main/platforms/src/utils/platform.ts
 
 import { AppContext, ProviderPayload } from "./types";
 import { PROVIDER_ID } from "./passport-types";
