@@ -33,6 +33,7 @@ export const ONCHAIN_QUESTS = [
   'OptimismGovernance',
 ]
 
+// TODO: revamp QuestComponent
 const QuestComponent = (
   component: QuestComponentType | null,
   badgeId?: number

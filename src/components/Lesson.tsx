@@ -38,7 +38,7 @@ import Keyword from 'components/Keyword'
 import EditContentModal from 'components/EditContentModal'
 import Helper from 'components/Helper'
 
-const Slide = styled(Card)<{
+export const Slide = styled(Card)<{
   issmallscreen?: string
   slidetype: SlideType
   ispreview?: string
