@@ -6,6 +6,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import * as twitterOAuth from "utils/stamps/platforms/twitter"
 import * as google from "utils/stamps/platforms/google"
 import * as facebook from "utils/stamps/platforms/facebook"
+import * as linkedin from "utils/stamps/platforms/linkedin"
 import { RequestPayload } from "utils/stamps/passport-types";
 
 export const VERSION = "v0.0.0";
@@ -64,7 +65,7 @@ export default async function handler(
     slug: [platform],
     state,
     code,
-    accessToken
+    accessToken,
   } = req.query
   console.log(req.query)
 
@@ -119,9 +120,27 @@ export default async function handler(
     console.log(result)
     if (result.valid && result.record?.user_id) {
       record = {
-        "type": "Google",
+        "type": "Facebook",
         "version": "0.0.0",
         "user_id": result.record.user_id
+      }
+    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+  } else if (platform === 'linkedin') {
+    console.log(req.query)
+    const LinkedinProvider = new linkedin.LinkedinProvider();
+    console.log(LinkedinProvider)
+    const result = await LinkedinProvider.verify({
+      proofs: {
+        code,
+      },
+    } as unknown as RequestPayload)
+    console.log(result)
+    if (result.valid && result.record?.id) {
+      // TODO: understand why user id is different for gitcoin passport
+      record = {
+        "type": "Linkedin",
+        "version": "0.0.0",
+        "id": result.record.id
       }
     } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
   }
