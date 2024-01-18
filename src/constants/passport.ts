@@ -12,11 +12,13 @@ export const STAMP_PROVIDERS = {
     icon: 'https://passport.gitcoin.co/assets/googleStampIcon.svg',
     name: 'Google',
     description: 'Google Authentication',
+    oauth: `https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_CALLBACK}&prompt=consent&response_type=code&client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&scope=email+profile&access_type=offlineRANDOM_STATE`
   },
   Twitter: {
     icon: 'https://passport.gitcoin.co/assets/twitterStampIcon.svg',
     name: 'Twitter',
     description: 'Twitter name',
+    oauth: `/api/stamps/twitter`
   },
   Facebook: {
     icon: 'https://passport.gitcoin.co/assets/facebookStampIcon.svg',
