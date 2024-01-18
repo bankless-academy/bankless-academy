@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Image, Icon } from '@chakra-ui/react'
+import { Box, SimpleGrid, Image, Icon, Button } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
 
@@ -32,6 +32,24 @@ const PassportStamps = ({
 }): React.ReactElement => {
   const { t } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
+
+  const linkPlatform = (platform) => {
+    const width = 600
+    const height = 800
+    const left = window.screen.width / 2 - width / 2
+    const top = window.screen.height / 2 - height / 2
+    const random = Math.floor(Math.random() * 100000)
+    const authUrl: string = STAMP_PROVIDERS[platform].oauth?.replace(
+      'RANDOM_STATE',
+      `&state=${random}`
+    )
+    window.open(
+      authUrl,
+      '_blank',
+      `toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
+    )
+  }
+
   return (
     <>
       {displayStamps && (
@@ -62,6 +80,13 @@ const PassportStamps = ({
                 </Box>
                 <Box m={2}>{`${provider.name}`}</Box>
                 <Box flexGrow={1} textAlign="right">
+                  <Button
+                    variant="outline"
+                    onClick={() => linkPlatform(key)}
+                    mt="4"
+                  >
+                    {t('link')}
+                  </Button>
                   {stamp ? (
                     isStampExpired ? (
                       <span style={{ color: theme.colors.incorrect }}>
