@@ -59,7 +59,9 @@ const QuestComponent = (
   const [isSmallScreen] = useSmallScreen()
 
   const Component =
-    component === 'ConceptosBasicosDeBlockchain'
+    component === 'WhatIsBitcoin'
+      ? QUEST_COMPONENTS['WhatIsBitcoin']({ test: false })
+      : component === 'ConceptosBasicosDeBlockchain'
       ? // HACK: TEMP
         QUEST_COMPONENTS['BlockchainBasics']('es')
       : component === 'BlockchainBasics'

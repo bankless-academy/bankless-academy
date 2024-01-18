@@ -218,8 +218,7 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
       </div>
     </Box>
   )
-
-  if (test) return quesComponent
+  if (test === true) return quesComponent
 
   return {
     isQuestCompleted:
