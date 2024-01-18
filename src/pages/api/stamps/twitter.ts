@@ -12,7 +12,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
-  twitterOAuth.initClientAndGetAuthUrl(`${DOMAIN_URL}/api/stamps/callback`).then((authUrl) => {
+  twitterOAuth.initClientAndGetAuthUrl(`${DOMAIN_URL}/api/stamps/callback/twitter`).then((authUrl) => {
     res.redirect(authUrl)
   });
 }
