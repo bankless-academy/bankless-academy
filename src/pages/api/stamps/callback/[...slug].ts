@@ -4,6 +4,8 @@ import { createHash } from "crypto"
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import * as twitterOAuth from "utils/stamps/platforms/twitter"
+import * as google from "utils/stamps/platforms/google"
+import { RequestPayload } from "utils/stamps/passport-types";
 
 export const VERSION = "v0.0.0";
 
@@ -57,33 +59,62 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
+  const {
+    slug: [platform],
+    state,
+    code
+  } = req.query
+  console.log(req.query)
 
-  const { state, code } = req.query
+  let record = {}
 
-  const context = {}
-  const sessionKey = state
-  const twitterClient = await twitterOAuth.getAuthClient(sessionKey as string, code as string, context);
-  console.log('twitterClient', twitterClient)
-  const data = await twitterOAuth.getTwitterUserData(context, twitterClient);
-  console.log('data', data)
+  if (platform === 'google') {
+    console.log(req.query)
+    const googleProvider = new google.GoogleProvider();
+    console.log(googleProvider)
+    const v = await googleProvider.verify({
+      proofs: {
+        code,
+      },
+    } as unknown as RequestPayload)
+    console.log(v)
+    if (v.record?.email) {
+      record = {
+        "type": "Google",
+        "version": "0.0.0",
+        "email": v.record.email
+      }
+    } else res.status(200).send(`Problem with stamp (${JSON.stringify(v)}): close the window and try again.`)
+  } else if (platform === 'twitter') {
+    const context = {}
+    const sessionKey = state
+    const twitterClient = await twitterOAuth.getAuthClient(sessionKey as string, code as string, context);
+    console.log('twitterClient', twitterClient)
+    const data = await twitterOAuth.getTwitterUserData(context, twitterClient);
+    console.log('data', data)
 
-  const numberOfDays = 180
+    const numberOfDays = 180
 
-  const checkAge = checkTwitterAccountAge(numberOfDays, data.createdAt)
-  if (!checkAge.valid) {
-    res.status(200).send(checkAge.errors)
+    const checkAge = checkTwitterAccountAge(numberOfDays, data.createdAt)
+    if (!checkAge.valid) {
+      res.status(200).send(checkAge.errors)
+    }
+
+    record = {
+      "type": "twitterAccountAgeGte#180",
+      "version": "0.0.0",
+      "id": data.id
+    }
+
   }
-
-  const record = {
-    "type": "twitterAccountAgeGte#180",
-    "version": "0.0.0",
-    "id": data.id
-  }
-
-  const hash = generateHash(record)
+  const hash = `${VERSION}:${generateHash(record)}`
   console.log(hash)
-  // TODO: add to DB
-  const twitterHash = `${VERSION}:${hash}`
-  res.status(200).send(twitterHash);
+  if (hash?.length !== 51)
+    res.status(200).send(`Problem with stamp (${hash}): close the window and try again.`)
+  else {
+    // TODO: add to DB
+    res.status(200).send(`Stamp OK: ${hash} You can close the window.`)
+  }
 
+  return res.status(200).json(req.query)
 }
