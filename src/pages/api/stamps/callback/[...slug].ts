@@ -5,6 +5,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import * as twitterOAuth from "utils/stamps/platforms/twitter"
 import * as google from "utils/stamps/platforms/google"
+import * as facebook from "utils/stamps/platforms/facebook"
 import { RequestPayload } from "utils/stamps/passport-types";
 
 export const VERSION = "v0.0.0";
@@ -62,7 +63,8 @@ export default async function handler(
   const {
     slug: [platform],
     state,
-    code
+    code,
+    accessToken
   } = req.query
   console.log(req.query)
 
@@ -72,19 +74,19 @@ export default async function handler(
     console.log(req.query)
     const googleProvider = new google.GoogleProvider();
     console.log(googleProvider)
-    const v = await googleProvider.verify({
+    const result = await googleProvider.verify({
       proofs: {
         code,
       },
     } as unknown as RequestPayload)
-    console.log(v)
-    if (v.record?.email) {
+    console.log(result)
+    if (result.valid && result.record?.email) {
       record = {
         "type": "Google",
         "version": "0.0.0",
-        "email": v.record.email
+        "email": result.record.email
       }
-    } else res.status(200).send(`Problem with stamp (${JSON.stringify(v)}): close the window and try again.`)
+    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
   } else if (platform === 'twitter') {
     const context = {}
     const sessionKey = state
@@ -105,7 +107,23 @@ export default async function handler(
       "version": "0.0.0",
       "id": data.id
     }
-
+  } else if (platform === 'facebook') {
+    console.log(req.query)
+    const FacebookProvider = new facebook.FacebookProvider();
+    console.log(FacebookProvider)
+    const result = await FacebookProvider.verify({
+      proofs: {
+        accessToken,
+      },
+    } as unknown as RequestPayload)
+    console.log(result)
+    if (result.valid && result.record?.user_id) {
+      record = {
+        "type": "Google",
+        "version": "0.0.0",
+        "user_id": result.record.user_id
+      }
+    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
   }
   const hash = `${VERSION}:${generateHash(record)}`
   console.log(hash)

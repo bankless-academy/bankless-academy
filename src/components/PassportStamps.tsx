@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
 import { Box, SimpleGrid, Image, Icon, Button } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
+import FacebookLogin from 'react-facebook-login'
 
 import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
 // import { Stamps } from 'entities/passport'
@@ -33,16 +35,18 @@ const PassportStamps = ({
   const { t } = useTranslation()
   const [isSmallScreen] = useSmallScreen()
 
-  const linkPlatform = (platform) => {
+  const linkPlatform = (platform, forceAuthUrl) => {
     const width = 600
     const height = 800
     const left = window.screen.width / 2 - width / 2
     const top = window.screen.height / 2 - height / 2
     const random = Math.floor(Math.random() * 100000)
-    const authUrl: string = STAMP_PROVIDERS[platform].oauth?.replace(
-      'RANDOM_STATE',
-      `&state=${random}`
-    )
+    const authUrl: string =
+      forceAuthUrl ||
+      STAMP_PROVIDERS[platform].oauth?.replace(
+        'RANDOM_STATE',
+        `&state=${random}`
+      )
     window.open(
       authUrl,
       '_blank',
@@ -80,13 +84,42 @@ const PassportStamps = ({
                 </Box>
                 <Box m={2}>{`${provider.name}`}</Box>
                 <Box flexGrow={1} textAlign="right">
-                  <Button
-                    variant="outline"
-                    onClick={() => linkPlatform(key)}
-                    mt="4"
-                  >
-                    {t('link')}
-                  </Button>
+                  {key === 'Facebook' ? (
+                    <FacebookLogin
+                      appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
+                      autoLoad={false}
+                      scope="public_profile"
+                      textButton={t('link')}
+                      cssClass="css-1edqdd0"
+                      callback={(res) => {
+                        console.log(res)
+                        if (res?.accessToken)
+                          // TODO: check possible popup issue, call via JS ? + test on mobile
+                          linkPlatform(
+                            'Facebook',
+                            `/api/stamps/callback/facebook?accessToken=${res.accessToken}`
+                          )
+                      }}
+                      redirectUri="/api/stamps/callback/facebook"
+                      render={(renderProps) => (
+                        <Button
+                          variant="outline"
+                          onClick={renderProps.onClick}
+                          mt="4"
+                        >
+                          {t('link')}
+                        </Button>
+                      )}
+                    />
+                  ) : (
+                    <Button
+                      variant="outline"
+                      onClick={() => linkPlatform(key, null)}
+                      mt="4"
+                    >
+                      {t('link')}
+                    </Button>
+                  )}
                   {stamp ? (
                     isStampExpired ? (
                       <span style={{ color: theme.colors.incorrect }}>
