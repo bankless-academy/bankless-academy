@@ -20,7 +20,7 @@ import { LessonCard } from 'components/LessonCards'
 const DEFAULT_ANSWERS = ['1Q2TWHE3GMdB6BZKafqwxXtWAWgFt5Jvm3', '0']
 const CORRECT_ANSWERS = ['1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', '0.00000001']
 
-const WhatIsBitcoin = ({ test }: { test?: boolean }): any => {
+const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
   const { t } = useTranslation('quests', { keyPrefix: 'WhatIsBitcoin' })
   const [isSmallScreen] = useSmallScreen()
   const [hasSimulationRun, setHasSimulationRun] = useState(false)
