@@ -7,6 +7,7 @@ import * as twitterOAuth from "utils/stamps/platforms/twitter"
 import * as google from "utils/stamps/platforms/google"
 import * as facebook from "utils/stamps/platforms/facebook"
 import * as linkedin from "utils/stamps/platforms/linkedin"
+import * as discord from "utils/stamps/platforms/discord"
 import { RequestPayload } from "utils/stamps/passport-types";
 
 export const VERSION = "v0.0.0";
@@ -72,7 +73,6 @@ export default async function handler(
   let record = {}
 
   if (platform === 'google') {
-    console.log(req.query)
     const googleProvider = new google.GoogleProvider();
     console.log(googleProvider)
     const result = await googleProvider.verify({
@@ -109,7 +109,6 @@ export default async function handler(
       "id": data.id
     }
   } else if (platform === 'facebook') {
-    console.log(req.query)
     const FacebookProvider = new facebook.FacebookProvider();
     console.log(FacebookProvider)
     const result = await FacebookProvider.verify({
@@ -126,7 +125,6 @@ export default async function handler(
       }
     } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
   } else if (platform === 'linkedin') {
-    console.log(req.query)
     const LinkedinProvider = new linkedin.LinkedinProvider();
     console.log(LinkedinProvider)
     const result = await LinkedinProvider.verify({
@@ -143,6 +141,26 @@ export default async function handler(
         "id": result.record.id
       }
     } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+  } else if (platform === 'discord') {
+    const DiscordProvider = new discord.DiscordProvider();
+    console.log(DiscordProvider)
+    const result = await DiscordProvider.verify({
+      proofs: {
+        code,
+      },
+    } as unknown as RequestPayload)
+    console.log(result)
+    if (result.valid && result.record?.id) {
+      record = {
+        "type": "Discord",
+        "version": "0.0.0",
+        "id": result.record.id
+      }
+    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+  }
+  console.log(record)
+  if (JSON.stringify(record) === '{}') {
+    res.status(200).send(`Problem with stamp (empty record): close the window and try again.`)
   }
   const hash = `${VERSION}:${generateHash(record)}`
   console.log(hash)

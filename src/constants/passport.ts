@@ -35,6 +35,7 @@ export const STAMP_PROVIDERS = {
     icon: 'https://passport.gitcoin.co/assets/discordStampIcon.svg',
     name: 'Discord',
     description: 'Discord name',
+    oauth: `https://discord.com/api/oauth2/authorize?response_type=code&scope=identify&client_id=${process.env.NEXT_PUBLIC_DISCORD_CLIENT_ID}RANDOM_STATE&redirect_uri=${process.env.NEXT_PUBLIC_DISCORD_CALLBACK}`
   },
   Ens: {
     icon: 'https://passport.gitcoin.co/assets/ensStampIcon.svg',
