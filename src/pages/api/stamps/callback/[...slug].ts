@@ -12,6 +12,7 @@ import * as brightid from "utils/stamps/platforms/brightid"
 import * as poh from "utils/stamps/platforms/poh"
 import * as ens from "utils/stamps/platforms/ens"
 import { RequestPayload } from "utils/stamps/passport-types";
+import { ALLOWED_PROVIDERS } from "constants/passport"
 
 export const VERSION = "v0.0.0";
 
@@ -76,10 +77,14 @@ export default async function handler(
   console.log(req.query)
 
   let record = {}
+  let result: any = {}
+  const version = "0.0.0"
+
+  if (!ALLOWED_PROVIDERS.map(provider => provider?.toLowerCase()).includes(platform)) return res.status(200).send(`Unknown platform.`)
 
   if (platform === 'google') {
     const googleProvider = new google.GoogleProvider();
-    const result = await googleProvider.verify({
+    result = await googleProvider.verify({
       proofs: {
         code,
       },
@@ -88,32 +93,32 @@ export default async function handler(
     if (result.valid && result.record?.email) {
       record = {
         "type": "Google",
-        "version": "0.0.0",
+        version,
         "email": result.record.email
       }
-    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+    } else result.valid = false
   } else if (platform === 'twitter') {
     const context = {}
     const sessionKey = state
     const twitterClient = await twitterOAuth.getAuthClient(sessionKey as string, code as string, context);
     const data = await twitterOAuth.getTwitterUserData(context, twitterClient);
     console.log('data', data)
-
     const numberOfDays = 180
-
     const checkAge = checkTwitterAccountAge(numberOfDays, data.createdAt)
     if (!checkAge.valid) {
-      res.status(200).send(checkAge.errors)
+      return res.status(200).send(checkAge.errors)
     }
-
-    record = {
-      "type": "twitterAccountAgeGte#180",
-      "version": "0.0.0",
-      "id": data.id
-    }
+    result.valid = true
+    if (result.valid && data.id) {
+      record = {
+        "type": "twitterAccountAgeGte#180",
+        version,
+        "id": data.id
+      }
+    } else result.valid = false
   } else if (platform === 'facebook') {
     const FacebookProvider = new facebook.FacebookProvider();
-    const result = await FacebookProvider.verify({
+    result = await FacebookProvider.verify({
       proofs: {
         accessToken,
       },
@@ -122,13 +127,13 @@ export default async function handler(
     if (result.valid && result.record?.user_id) {
       record = {
         "type": "Facebook",
-        "version": "0.0.0",
+        version,
         "user_id": result.record.user_id
       }
-    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+    } else result.valid = false
   } else if (platform === 'linkedin') {
     const LinkedinProvider = new linkedin.LinkedinProvider();
-    const result = await LinkedinProvider.verify({
+    result = await LinkedinProvider.verify({
       proofs: {
         code,
       },
@@ -138,13 +143,13 @@ export default async function handler(
       // TODO: understand why user id is different for gitcoin passport
       record = {
         "type": "Linkedin",
-        "version": "0.0.0",
+        version,
         "id": result.record.id
       }
-    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+    } else result.valid = false
   } else if (platform === 'discord') {
     const DiscordProvider = new discord.DiscordProvider();
-    const result = await DiscordProvider.verify({
+    result = await DiscordProvider.verify({
       proofs: {
         code,
       },
@@ -153,13 +158,13 @@ export default async function handler(
     if (result.valid && result.record?.id) {
       record = {
         "type": "Discord",
-        "version": "0.0.0",
+        version,
         "id": result.record.id
       }
-    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+    } else result.valid = false
   } else if (platform === 'brightid') {
     const BrightidProvider = new brightid.BrightIdProvider();
-    const result = await BrightidProvider.verify({
+    result = await BrightidProvider.verify({
       proofs: {
         did: userDid,
       },
@@ -168,52 +173,51 @@ export default async function handler(
     if (result.valid && result.record?.id) {
       record = {
         "type": "Brightid",
-        "version": "0.0.0",
+        version,
         contextId: result.record.id,
         meets: "true"
       }
-    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+    } else result.valid = false
   } else if (platform === 'poh') {
     // TODO: add signature verification? (Ed25519 / EIP712)
     const PohProvider = new poh.PohProvider();
-    const result = await PohProvider.verify({
+    result = await PohProvider.verify({
       address
     } as unknown as RequestPayload)
     console.log(result)
     if (result.valid && result.record?.address) {
       record = {
         "type": "Poh",
-        "version": "0.0.0",
+        version,
         address: result.record.address,
       }
-    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+    } else result.valid = false
   } else if (platform === 'ens') {
     // TODO: add signature verification? (Ed25519 / EIP712)
     const EnsProvider = new ens.EnsProvider();
-    const result = await EnsProvider.verify({
+    result = await EnsProvider.verify({
       address
     } as unknown as RequestPayload)
     console.log(result)
     if (result.valid && result.record?.ens) {
       record = {
         "type": "Ens",
-        "version": "0.0.0",
+        version,
         ens: result.record.ens,
       }
-    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+    } else result.valid = false
   }
   console.log(record)
-  if (JSON.stringify(record) === '{}') {
-    res.status(200).send(`Problem with stamp (empty record): close the window and try again.`)
-  }
+  if (!result?.valid)
+    return res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+  if (JSON.stringify(record) === '{}')
+    return res.status(200).send(`Problem with stamp (empty record): close the window and try again.`)
   const hash = `${VERSION}:${generateHash(record)}`
   console.log(hash)
   if (hash?.length !== 51)
-    res.status(200).send(`Problem with stamp (${hash}): close the window and try again.`)
+    return res.status(200).send(`Problem with stamp (${hash}): close the window and try again.`)
   else {
     // TODO: add to DB
-    res.status(200).send(`Stamp OK: ${hash} You can close the window.`)
+    return res.status(200).send(`Stamp OK: ${hash} You can close the window.`)
   }
-
-  return res.status(200).json(req.query)
 }
