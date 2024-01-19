@@ -10,6 +10,7 @@ import * as linkedin from "utils/stamps/platforms/linkedin"
 import * as discord from "utils/stamps/platforms/discord"
 import * as brightid from "utils/stamps/platforms/brightid"
 import * as poh from "utils/stamps/platforms/poh"
+import * as ens from "utils/stamps/platforms/ens"
 import { RequestPayload } from "utils/stamps/passport-types";
 
 export const VERSION = "v0.0.0";
@@ -173,17 +174,31 @@ export default async function handler(
       }
     } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
   } else if (platform === 'poh') {
-    // TODO: add signature verification?
+    // TODO: add signature verification? (Ed25519 / EIP712)
     const PohProvider = new poh.PohProvider();
     const result = await PohProvider.verify({
       address
     } as unknown as RequestPayload)
     console.log(result)
-    if (result.valid && result.record?.id) {
+    if (result.valid && result.record?.address) {
       record = {
         "type": "Poh",
         "version": "0.0.0",
         address: result.record.address,
+      }
+    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+  } else if (platform === 'ens') {
+    // TODO: add signature verification? (Ed25519 / EIP712)
+    const EnsProvider = new ens.EnsProvider();
+    const result = await EnsProvider.verify({
+      address
+    } as unknown as RequestPayload)
+    console.log(result)
+    if (result.valid && result.record?.ens) {
+      record = {
+        "type": "Ens",
+        "version": "0.0.0",
+        ens: result.record.ens,
       }
     } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
   }

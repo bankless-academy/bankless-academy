@@ -43,6 +43,7 @@ export const STAMP_PROVIDERS = {
     icon: 'https://passport.gitcoin.co/assets/ensStampIcon.svg',
     name: 'ENS',
     description: 'ENS name',
+    oauth: `/api/stamps/callback/ens?address=REPLACE_ADDRESS`
   },
   Brightid: {
     icon: 'https://passport.gitcoin.co/assets/brightidStampIcon.svg',
