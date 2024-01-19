@@ -1,3 +1,5 @@
+import { DOMAIN_URL } from "constants/index"
+
 export const CERAMIC_PASSPORT = 'https://ceramic.passport-iam.gitcoin.co'
 
 export const NUMBER_OF_STAMP_REQUIRED = 2
@@ -46,6 +48,7 @@ export const STAMP_PROVIDERS = {
     icon: 'https://passport.gitcoin.co/assets/brightidStampIcon.svg',
     name: 'Bright ID',
     description: 'Bright ID',
+    oauth: `${DOMAIN_URL}/brightid.html?callback=${process.env.NEXT_PUBLIC_BRIGHTID_CALLBACK}&userDid=did:pkh:eip155:1:REPLACE_ADDRESS`
   },
   Poh: {
     icon: 'https://passport.gitcoin.co/assets/pohStampIcon.svg',

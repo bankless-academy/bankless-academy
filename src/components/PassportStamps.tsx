@@ -3,6 +3,7 @@ import { Box, SimpleGrid, Image, Icon, Button } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
 import FacebookLogin from 'react-facebook-login'
+import { useAccount } from 'wagmi'
 
 import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
 // import { Stamps } from 'entities/passport'
@@ -33,6 +34,7 @@ const PassportStamps = ({
   displayStamps?: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
+  const { address } = useAccount()
   const [isSmallScreen] = useSmallScreen()
 
   const linkPlatform = (platform, forceAuthUrl) => {
@@ -43,10 +45,9 @@ const PassportStamps = ({
     const random = Math.floor(Math.random() * 100000)
     const authUrl: string =
       forceAuthUrl ||
-      STAMP_PROVIDERS[platform].oauth?.replace(
-        'RANDOM_STATE',
-        `&state=${random}`
-      )
+      STAMP_PROVIDERS[platform].oauth
+        ?.replace('RANDOM_STATE', `&state=${random}`)
+        ?.replace('REPLACE_ADDRESS', `${address}`)
     window.open(
       authUrl,
       '_blank',

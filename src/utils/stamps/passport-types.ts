@@ -1,6 +1,8 @@
 // SOURCE: https://github.com/gitcoinco/passport/blob/main/types/src/index.d.ts
 
 import { JsonRpcSigner } from "@ethersproject/providers";
+// BrightId Shared Types
+export type { BrightIdProcedureResponse, BrightIdVerificationResponse, BrightIdSponsorshipResponse } from "./brightid";
 
 // A ProviderContext is used as a temporary storage so that providers can can share data
 // between them, in case multiple VCs are requests in one http request

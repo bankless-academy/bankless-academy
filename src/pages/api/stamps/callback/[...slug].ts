@@ -8,6 +8,7 @@ import * as google from "utils/stamps/platforms/google"
 import * as facebook from "utils/stamps/platforms/facebook"
 import * as linkedin from "utils/stamps/platforms/linkedin"
 import * as discord from "utils/stamps/platforms/discord"
+import * as brightid from "utils/stamps/platforms/brightid"
 import { RequestPayload } from "utils/stamps/passport-types";
 
 export const VERSION = "v0.0.0";
@@ -67,6 +68,7 @@ export default async function handler(
     state,
     code,
     accessToken,
+    userDid,
   } = req.query
   console.log(req.query)
 
@@ -155,6 +157,23 @@ export default async function handler(
         "type": "Discord",
         "version": "0.0.0",
         "id": result.record.id
+      }
+    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+  } else if (platform === 'brightid') {
+    const BrightidProvider = new brightid.BrightIdProvider();
+    console.log(BrightidProvider)
+    const result = await BrightidProvider.verify({
+      proofs: {
+        did: userDid,
+      },
+    } as unknown as RequestPayload)
+    console.log(result)
+    if (result.valid && result.record?.id) {
+      record = {
+        "type": "Brightid",
+        "version": "0.0.0",
+        contextId: result.record.id,
+        meets: "true"
       }
     } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
   }
