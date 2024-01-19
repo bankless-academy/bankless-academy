@@ -9,6 +9,7 @@ import * as facebook from "utils/stamps/platforms/facebook"
 import * as linkedin from "utils/stamps/platforms/linkedin"
 import * as discord from "utils/stamps/platforms/discord"
 import * as brightid from "utils/stamps/platforms/brightid"
+import * as poh from "utils/stamps/platforms/poh"
 import { RequestPayload } from "utils/stamps/passport-types";
 
 export const VERSION = "v0.0.0";
@@ -69,6 +70,7 @@ export default async function handler(
     code,
     accessToken,
     userDid,
+    address,
   } = req.query
   console.log(req.query)
 
@@ -76,7 +78,6 @@ export default async function handler(
 
   if (platform === 'google') {
     const googleProvider = new google.GoogleProvider();
-    console.log(googleProvider)
     const result = await googleProvider.verify({
       proofs: {
         code,
@@ -94,7 +95,6 @@ export default async function handler(
     const context = {}
     const sessionKey = state
     const twitterClient = await twitterOAuth.getAuthClient(sessionKey as string, code as string, context);
-    console.log('twitterClient', twitterClient)
     const data = await twitterOAuth.getTwitterUserData(context, twitterClient);
     console.log('data', data)
 
@@ -112,7 +112,6 @@ export default async function handler(
     }
   } else if (platform === 'facebook') {
     const FacebookProvider = new facebook.FacebookProvider();
-    console.log(FacebookProvider)
     const result = await FacebookProvider.verify({
       proofs: {
         accessToken,
@@ -128,7 +127,6 @@ export default async function handler(
     } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
   } else if (platform === 'linkedin') {
     const LinkedinProvider = new linkedin.LinkedinProvider();
-    console.log(LinkedinProvider)
     const result = await LinkedinProvider.verify({
       proofs: {
         code,
@@ -145,7 +143,6 @@ export default async function handler(
     } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
   } else if (platform === 'discord') {
     const DiscordProvider = new discord.DiscordProvider();
-    console.log(DiscordProvider)
     const result = await DiscordProvider.verify({
       proofs: {
         code,
@@ -161,7 +158,6 @@ export default async function handler(
     } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
   } else if (platform === 'brightid') {
     const BrightidProvider = new brightid.BrightIdProvider();
-    console.log(BrightidProvider)
     const result = await BrightidProvider.verify({
       proofs: {
         did: userDid,
@@ -174,6 +170,20 @@ export default async function handler(
         "version": "0.0.0",
         contextId: result.record.id,
         meets: "true"
+      }
+    } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
+  } else if (platform === 'poh') {
+    // TODO: add signature verification?
+    const PohProvider = new poh.PohProvider();
+    const result = await PohProvider.verify({
+      address
+    } as unknown as RequestPayload)
+    console.log(result)
+    if (result.valid && result.record?.id) {
+      record = {
+        "type": "Poh",
+        "version": "0.0.0",
+        address: result.record.address,
       }
     } else res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
   }

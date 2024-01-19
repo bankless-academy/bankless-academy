@@ -43,6 +43,7 @@
     "@openzeppelin/contracts-upgradeable": "^4.9.3",
     "@phosphor-icons/react": "^2.0.8",
     "@sendgrid/client": "^7.7.0",
+    "@spruceid/didkit-wasm-node": "^0.2.1",
     "@tanstack/react-table": "^8.10.7",
     "@types/mixpanel-browser": "^2.38.0",
     "@vercel/kv": "^1.0.0",

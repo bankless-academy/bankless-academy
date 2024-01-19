@@ -2861,6 +2861,11 @@
     rpc-websockets "^7.5.1"
     superstruct "^0.14.2"
 
+"@spruceid/didkit-wasm-node@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@spruceid/didkit-wasm-node/-/didkit-wasm-node-0.2.1.tgz#85f7023979b4ef84bd6de16c79c67b6e9a08e1db"
+  integrity sha512-c8e3u5FIRS/2Gf6UHnRPnfRozgKgby4avZzlvIiaJRDVLl1LaX1SE13vEvKV2rAq6NMfZrV4YG908M4uVlT90Q==
+
 "@spruceid/siwe-parser@^1.1.3":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@spruceid/siwe-parser/-/siwe-parser-1.1.3.tgz#0eebe8bbd63c6de89cb44c06b6329b00b305df65"

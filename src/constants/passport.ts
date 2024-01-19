@@ -54,6 +54,7 @@ export const STAMP_PROVIDERS = {
     icon: 'https://passport.gitcoin.co/assets/pohStampIcon.svg',
     name: 'Proof of Humanity',
     description: 'Proof of Humanity',
+    oauth: `/api/stamps/callback/poh?address=REPLACE_ADDRESS`
   },
 }
 
