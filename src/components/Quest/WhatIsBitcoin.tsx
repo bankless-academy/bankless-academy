@@ -82,9 +82,9 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
   }, [])
 
   const quesComponent = (
-    <Box display={isSmallScreen ? 'block' : 'flex'}>
-      <div className="bloc1">
-        <Box ml="8">
+    <Box display={isSmallScreen ? 'block' : 'flex'} maxW="100%">
+      <div className="bloc1" style={{ alignSelf: 'center' }}>
+        <Box m="4">
           <Text mx="0 !important" fontSize="xl">
             <div
               dangerouslySetInnerHTML={{
@@ -131,13 +131,13 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
         ) : (
           <LessonCard
             borderRadius="3xl"
-            maxW="500px"
+            maxW={isSmallScreen ? '100%' : '500px'}
             textAlign="center"
             m="auto"
             p={8}
           >
             <Box zIndex="2" position="relative">
-              <Text fontWeight="bold" textAlign="left">
+              <Text fontWeight="bold" textAlign="left" m="0 !important">
                 Recipient
               </Text>
               <InputGroup maxW="450px" size="lg">
@@ -166,11 +166,16 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                   )}
                 </InputRightElement>
               </InputGroup>
-              <Text fontWeight="bold" textAlign="left">
+              <Text fontWeight="bold" textAlign="left" m="0 !important">
                 Asset
               </Text>
               <Box display="flex" justifyContent="space-between">
-                <Box display="flex" alignItems="center">
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  minW="fit-content"
+                  mr="2"
+                >
                   <Box>
                     <Image
                       w="30px"
