@@ -12,8 +12,9 @@ import * as brightid from "utils/stamps/platforms/brightid"
 import * as poh from "utils/stamps/platforms/poh"
 import * as ens from "utils/stamps/platforms/ens"
 import { RequestPayload } from "utils/stamps/passport-types";
-import { ALLOWED_PROVIDERS } from "constants/passport"
-import { TABLES, db } from "utils/db"
+import { ALLOWED_PLATFORMS, STAMP_PLATFORMS } from "constants/passport"
+import { TABLE, TABLES, db } from "utils/db"
+import { trackBE } from "utils/mixpanel"
 
 export const VERSION = "v0.0.0";
 
@@ -74,11 +75,11 @@ export default async function handler(
     accessToken,
     userDid,
     json,
-    address
+    address: userAddress,
   } = req.query
   console.log(req.query)
-  const userAddress = address || state
-  console.log(userAddress)
+  const address = userAddress as string || state as string
+  console.log(address)
 
   let record: any = {}
   let result: any = {}
@@ -86,11 +87,13 @@ export default async function handler(
   let status = ''
   const version = "0.0.0"
 
-  if (!ALLOWED_PROVIDERS.map(provider => provider?.toLowerCase()).includes(platform?.toLowerCase())) return res.status(200).send(`Unknown platform.`)
+  if (!ALLOWED_PLATFORMS.includes(platform)) return res.status(200).send(`Unknown platform.`)
+
+  const type = STAMP_PLATFORMS[platform].provider
 
   const [user] = await db(TABLES.users)
     .select('id')
-    .where('address', 'ilike', `%${userAddress as string}%`)
+    .where('address', 'ilike', `%${address}%`)
   const userId = user?.id
   console.log(userId)
   if (!(userId && Number.isInteger(userId)))
@@ -106,7 +109,7 @@ export default async function handler(
     console.log(result)
     if (result.valid && result.record?.email) {
       record = {
-        "type": "Google",
+        type,
         version,
         "email": result.record.email
       }
@@ -125,7 +128,7 @@ export default async function handler(
     result.valid = true
     if (result.valid && data.id) {
       record = {
-        "type": "twitterAccountAgeGte#180",
+        type,
         version,
         "id": data.id
       }
@@ -140,7 +143,7 @@ export default async function handler(
     console.log(result)
     if (result.valid && result.record?.user_id) {
       record = {
-        "type": "Facebook",
+        type,
         version,
         "user_id": result.record.user_id
       }
@@ -156,7 +159,7 @@ export default async function handler(
     if (result.valid && result.record?.id) {
       // TODO: understand why user id is different for gitcoin passport
       record = {
-        "type": "Linkedin",
+        type,
         version,
         "id": result.record.id
       }
@@ -171,7 +174,7 @@ export default async function handler(
     console.log(result)
     if (result.valid && result.record?.id) {
       record = {
-        "type": "Discord",
+        type,
         version,
         "id": result.record.id
       }
@@ -186,7 +189,7 @@ export default async function handler(
     console.log(result)
     if (result.valid && result.record?.id) {
       record = {
-        "type": "Brightid",
+        type,
         version,
         contextId: result.record.id,
         meets: "true"
@@ -201,7 +204,7 @@ export default async function handler(
     console.log(result)
     if (result.valid && result.record?.address) {
       record = {
-        "type": "Poh",
+        type,
         version,
         address: result.record.address,
       }
@@ -215,7 +218,7 @@ export default async function handler(
     console.log(result)
     if (result.valid && result.record?.ens) {
       record = {
-        "type": "Ens",
+        type,
         version,
         ens: result.record.ens,
       }
@@ -234,9 +237,48 @@ export default async function handler(
     isStampValidated = false
     status = `Problem with stamp (${hash}): close the window and try again.`
   } else {
-    // TODO: add to DB
+    const stampHashesSearch = []
+    let whereCondition = 'gitcoin_stamps @> ?'
+    let sybil = []
     const stampHashes: any = {}
     stampHashes[record.type] = hash
+    Object.keys(stampHashes).map((key, index) => {
+      const stampHash = {}
+      stampHash[key] = stampHashes[key]
+      stampHashesSearch.push(stampHash)
+      if (index > 0) whereCondition += ' OR gitcoin_stamps @> ?'
+    })
+    // check for sybils
+    const sybilQuery = db(TABLES.users)
+      .select('id', 'address')
+      .whereNot(TABLE.users.id, userId)
+      .whereNull(TABLE.users.sybil_user_id)
+      // query for json instead of jsonb: .where(db.raw('gitcoin_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
+      .where(db.raw(`(${whereCondition})`, stampHashesSearch))
+      .orWhereNot(TABLE.users.id, userId)
+      .where(TABLE.users.sybil_user_id, '=', 12)
+      .where(db.raw(`(${whereCondition})`, stampHashesSearch))
+    // console.log(sybilQuery.toString())
+    sybil = await sybilQuery
+    console.log('sybil', sybil)
+    if (sybil?.length) {
+      // mark this user as a sybil attacker
+      console.log('fraud detected:', sybil)
+      trackBE(address, 'duplicate_stamps_ba', {
+        sybil_id: sybil[0]?.id,
+        sybil_address: sybil[0]?.address,
+        // embed,
+      })
+      await db(TABLES.users)
+        .where(TABLE.users.id, userId)
+        .update({ sybil_user_id: sybil[0]?.id })
+      return res.status(200).json({
+        isStampValidated: false,
+        status: 'duplicate stamp',
+        fraud: sybil[0]?.address,
+      })
+    }
+    // add stamps to ba_stamps
     console.log('stampHashes', stampHashes)
     const updated = await db.raw(
       `update "users" set "ba_stamps" = ba_stamps || ? where "users"."id" = ?`,
