@@ -5,7 +5,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
-import { NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
+import { ALLOWED_PROVIDERS, NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
 import { filterValidStamps } from 'utils/passport'
 import { trackBE } from 'utils/mixpanel'
 import axios from 'axios'
@@ -94,9 +94,10 @@ export default async function handler(
         for (const stamp of passport?.items) {
           const provider = stamp.credential?.credentialSubject?.provider
           // console.log(stamp)
-          if (stamp.credential?.credentialSubject?.hash)
+          if (stamp.credential?.credentialSubject?.hash && ALLOWED_PROVIDERS.includes(provider))
             stampHashes[provider] = stamp.credential?.credentialSubject?.hash
         }
+        console.log('stampHashes', stampHashes)
         // eslint-disable-next-line no-unsafe-optional-chaining
         for (const stamp of passport?.items) {
           const provider = stamp.credential?.credentialSubject?.provider
@@ -112,6 +113,15 @@ export default async function handler(
         )
         // console.log('updated', updated)
         if (updated) console.log('stamps updated:', updated?.rowCount)
+        console.log('validStamps', validStamps)
+        const [{ ba_stamps }] = await db(TABLES.users)
+          .select('ba_stamps')
+          .where(TABLE.users.id, userId)
+        console.log('ba_stamps', ba_stamps)
+        for (const provider of Object.keys(ba_stamps)) {
+          stampHashes[provider] = ba_stamps[provider]
+        }
+        console.log('stampHashes', stampHashes)
         Object.keys(stampHashes).map((key, index) => {
           const stampHash = {}
           stampHash[key] = stampHashes[key]
@@ -163,7 +173,7 @@ export default async function handler(
           requirement,
           fraud: sybil[0]?.address,
           validStampsCount: validStamps?.length,
-          stamps: stampProviders,
+          stamps: stampHashes,
         })
       }
       if (validStamps?.length >= NUMBER_OF_STAMP_REQUIRED) {
@@ -179,7 +189,7 @@ export default async function handler(
             : null,
         requirement,
         validStampsCount: validStamps?.length,
-        stamps: stampProviders,
+        stamps: stampHashes,
       })
     } catch (error) {
       console.error(error)
