@@ -67,7 +67,7 @@ export class DiscordProvider implements Provider {
 const requestAccessToken = async (code: string): Promise<string> => {
   const clientId = process.env.NEXT_PUBLIC_DISCORD_CLIENT_ID;
   const clientSecret = process.env.DISCORD_CLIENT_SECRET;
-  const redirectUri = process.env.NEXT_PUBLIC_DISCORD_CALLBACK;
+  const redirectUri = `${process.env.NEXT_PUBLIC_STAMP_CALLBACK}/discord`;
 
   try {
     // Exchange the code for an access token

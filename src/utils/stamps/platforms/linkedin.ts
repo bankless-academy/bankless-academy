@@ -72,7 +72,7 @@ const requestAccessToken = async (code: string): Promise<string> => {
     const clientSecret = process.env.LINKEDIN_CLIENT_SECRET;
 
     const tokenRequest = await axios.post(
-      `https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code=${code}&client_id=${clientId}&client_secret=${clientSecret}&redirect_uri=${process.env.NEXT_PUBLIC_LINKEDIN_CALLBACK}`,
+      `https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code=${code}&client_id=${clientId}&client_secret=${clientSecret}&redirect_uri=${process.env.NEXT_PUBLIC_STAMP_CALLBACK}/linkedin`,
       {},
       {
         headers: { Accept: "application/json", "Content-Type": "application/x-www-form-urlencoded" },

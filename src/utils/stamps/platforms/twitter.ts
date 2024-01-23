@@ -44,7 +44,7 @@ export const loadTwitterCache = async (token: string): Promise<PlatformSession<T
  */
 export const initClientAndGetAuthUrl = async (callbackOverride?: string): Promise<string> => {
   if (process.env.TWITTER_CLIENT_ID && process.env.TWITTER_CLIENT_SECRET) {
-    const callback = process.env.TWITTER_CALLBACK_OVERRIDE || callbackOverride
+    const callback = callbackOverride
     const client = new TwitterApi({
       clientId: process.env.TWITTER_CLIENT_ID,
       clientSecret: process.env.TWITTER_CLIENT_SECRET,

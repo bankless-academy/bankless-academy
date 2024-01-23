@@ -74,7 +74,7 @@ export class GoogleProvider implements Provider {
 export const requestAccessToken = async (code: string): Promise<string> => {
   const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
   const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
-  const redirectUri = process.env.NEXT_PUBLIC_GOOGLE_CALLBACK;
+  const redirectUri = `${process.env.NEXT_PUBLIC_STAMP_CALLBACK}/google`;
 
   try {
     const url = `https://oauth2.googleapis.com/token?client_id=${clientId}&client_secret=${clientSecret}&code=${code}&grant_type=authorization_code&redirectUri=${redirectUri}`;
