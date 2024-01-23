@@ -140,8 +140,11 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
               <Text fontWeight="bold" textAlign="left" m="0 !important">
                 Recipient
               </Text>
-              <InputGroup maxW="450px" size="lg">
-                <InputLeftAddon>
+              <InputGroup size={isSmallScreen ? 'md' : 'lg'}>
+                <InputLeftAddon
+                  maxW="64px"
+                  padding={isSmallScreen ? '6px' : '0 16'}
+                >
                   <Image
                     w="30px"
                     h="30px"
@@ -176,7 +179,7 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                   minW="fit-content"
                   mr="2"
                 >
-                  <Box>
+                  <Box maxW="30px">
                     <Image
                       w="30px"
                       h="30px"
@@ -186,7 +189,7 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                   </Box>
                   <Box ml="1">BTC</Box>
                 </Box>
-                <InputGroup maxW="200px" size="lg">
+                <InputGroup maxW="200px" size={isSmallScreen ? 'md' : 'lg'}>
                   <Input
                     placeholder={DEFAULT_ANSWERS[1]}
                     value={amount}
@@ -204,9 +207,11 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                   </InputRightElement>
                 </InputGroup>
               </Box>
-              <Text textAlign="left">Balance: 0.0005</Text>
+              <Text textAlign="left" m="0 !important">
+                Balance: 0.0005
+              </Text>
               {areAnswersCorrect !== true && (
-                <Box mt="24px !important" textAlign="center">
+                <Box mt="36px !important" textAlign="center">
                   <Button
                     width="full"
                     onClick={validateQuest}
