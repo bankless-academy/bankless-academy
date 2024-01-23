@@ -21,6 +21,10 @@ const PassportComponent = ({
     'passport',
     EMPTY_PASSPORT
   )
+  const [refreshPassportLS, setRefreshPassportLS] = useLocalStorage(
+    'refreshPassport',
+    false
+  )
   const [isLoading, setIsLoading] = useState(false)
   const toast = useToast()
   const { address } = useAccount()
@@ -28,6 +32,13 @@ const PassportComponent = ({
   useEffect(() => {
     checkPassport()
   }, [])
+
+  useEffect(() => {
+    if (refreshPassportLS) {
+      setRefreshPassportLS(false)
+      checkPassport()
+    }
+  }, [refreshPassportLS])
 
   async function checkPassport() {
     setIsLoading(true)

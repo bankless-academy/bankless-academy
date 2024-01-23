@@ -13,6 +13,7 @@ import * as poh from "utils/stamps/platforms/poh"
 import * as ens from "utils/stamps/platforms/ens"
 import { RequestPayload } from "utils/stamps/passport-types";
 import { ALLOWED_PROVIDERS } from "constants/passport"
+import { TABLES, db } from "utils/db"
 
 export const VERSION = "v0.0.0";
 
@@ -72,15 +73,28 @@ export default async function handler(
     code,
     accessToken,
     userDid,
-    address,
+    json,
+    address
   } = req.query
   console.log(req.query)
+  const userAddress = address || state
+  console.log(userAddress)
 
-  let record = {}
+  let record: any = {}
   let result: any = {}
+  let isStampValidated = false
+  let status = ''
   const version = "0.0.0"
 
-  if (!ALLOWED_PROVIDERS.map(provider => provider?.toLowerCase()).includes(platform)) return res.status(200).send(`Unknown platform.`)
+  if (!ALLOWED_PROVIDERS.map(provider => provider?.toLowerCase()).includes(platform?.toLowerCase())) return res.status(200).send(`Unknown platform.`)
+
+  const [user] = await db(TABLES.users)
+    .select('id')
+    .where('address', 'ilike', `%${userAddress as string}%`)
+  const userId = user?.id
+  console.log(userId)
+  if (!(userId && Number.isInteger(userId)))
+    return res.status(403).json({ error: 'userId not found' })
 
   if (platform === 'google') {
     const googleProvider = new google.GoogleProvider();
@@ -208,16 +222,34 @@ export default async function handler(
     } else result.valid = false
   }
   console.log(record)
-  if (!result?.valid)
-    return res.status(200).send(`Problem with stamp (${JSON.stringify(result)}): close the window and try again.`)
-  if (JSON.stringify(record) === '{}')
-    return res.status(200).send(`Problem with stamp (empty record): close the window and try again.`)
   const hash = `${VERSION}:${generateHash(record)}`
   console.log(hash)
-  if (hash?.length !== 51)
-    return res.status(200).send(`Problem with stamp (${hash}): close the window and try again.`)
-  else {
+  if (!result?.valid) {
+    isStampValidated = false
+    status = `Problem with stamp (${JSON.stringify(result)}): close the window and try again.`
+  }
+  else if (hash?.length !== 51) {
+    console.log(hash)
+    console.log(hash?.length)
+    isStampValidated = false
+    status = `Problem with stamp (${hash}): close the window and try again.`
+  } else {
     // TODO: add to DB
-    return res.status(200).send(`Stamp OK: ${hash} You can close the window.`)
+    const stampHashes: any = {}
+    stampHashes[record.type] = hash
+    console.log('stampHashes', stampHashes)
+    const updated = await db.raw(
+      `update "users" set "ba_stamps" = ba_stamps || ? where "users"."id" = ?`,
+      [stampHashes, userId]
+    )
+    console.log('updated', updated)
+    if (updated) console.log('stamps updated:', updated?.rowCount)
+    isStampValidated = true
+    status = `Stamp OK: ${hash} You can close the window.`
+  }
+  if (json) {
+    return res.status(200).send({ isStampValidated, status })
+  } else {
+    res.redirect(`/stamp_confirmation.html?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}`)
   }
 }

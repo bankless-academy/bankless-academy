@@ -14,48 +14,56 @@ export const STAMP_PROVIDERS = {
     icon: 'https://passport.gitcoin.co/assets/googleStampIcon.svg',
     name: 'Google',
     description: 'Google Authentication',
-    oauth: `https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_CALLBACK}&prompt=consent&response_type=code&client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&scope=email+profile&access_type=offlineRANDOM_STATE`
+    // page
+    oauth: `https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=${process.env.NEXT_PUBLIC_STAMP_CALLBACK}/google&prompt=consent&response_type=code&client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&scope=email+profile&access_type=offline&state=REPLACE_ADDRESS`
   },
   Twitter: {
     icon: 'https://passport.gitcoin.co/assets/twitterStampIcon.svg',
     name: 'Twitter',
     description: 'Twitter name',
-    oauth: `/api/stamps/twitter`
+    // page
+    oauth: `/api/stamps/twitter?address=REPLACE_ADDRESS`
   },
   Facebook: {
     icon: 'https://passport.gitcoin.co/assets/facebookStampIcon.svg',
     name: 'Facebook',
+    // js
     description: 'Facebook name',
   },
   Linkedin: {
     icon: 'https://passport.gitcoin.co/assets/linkedinStampIcon.svg',
     name: 'LinkedIn',
     description: 'LinkedIn name',
-    oauth: `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${process.env.NEXT_PUBLIC_LINKEDIN_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_LINKEDIN_CALLBACK}RANDOM_STATE&scope=openid%20profile`
+    // page
+    oauth: `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${process.env.NEXT_PUBLIC_LINKEDIN_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_STAMP_CALLBACK}/linkedin&state=REPLACE_ADDRESS&scope=openid%20profile`
   },
   Discord: {
     icon: 'https://passport.gitcoin.co/assets/discordStampIcon.svg',
     name: 'Discord',
     description: 'Discord name',
-    oauth: `https://discord.com/api/oauth2/authorize?response_type=code&scope=identify&client_id=${process.env.NEXT_PUBLIC_DISCORD_CLIENT_ID}RANDOM_STATE&redirect_uri=${process.env.NEXT_PUBLIC_DISCORD_CALLBACK}`
+    // page
+    oauth: `https://discord.com/api/oauth2/authorize?response_type=code&scope=identify&client_id=${process.env.NEXT_PUBLIC_DISCORD_CLIENT_ID}RANDOM_STATE&redirect_uri=${process.env.NEXT_PUBLIC_STAMP_CALLBACK}/discord`
   },
   Ens: {
     icon: 'https://passport.gitcoin.co/assets/ensStampIcon.svg',
     name: 'ENS',
     description: 'ENS name',
-    oauth: `/api/stamps/callback/ens?address=REPLACE_ADDRESS`
+    // transparent JS
+    oauth: `/api/stamps/callback/ens?json=true&address=REPLACE_ADDRESS`
   },
   Brightid: {
     icon: 'https://passport.gitcoin.co/assets/brightidStampIcon.svg',
     name: 'Bright ID',
     description: 'Bright ID',
-    oauth: `${DOMAIN_URL}/brightid.html?callback=${process.env.NEXT_PUBLIC_BRIGHTID_CALLBACK}&userDid=did:pkh:eip155:1:REPLACE_ADDRESS`
+    // page
+    oauth: `${DOMAIN_URL}/brightid.html?callback=${process.env.NEXT_PUBLIC_STAMP_CALLBACK}/brightid?address=REPLACE_ADDRESS&userDid=did:pkh:eip155:1:REPLACE_ADDRESS`
   },
   Poh: {
     icon: 'https://passport.gitcoin.co/assets/pohStampIcon.svg',
     name: 'Proof of Humanity',
     description: 'Proof of Humanity',
-    oauth: `/api/stamps/callback/poh?address=REPLACE_ADDRESS`
+    // transparent JS
+    oauth: `/api/stamps/callback/poh?json=true&address=REPLACE_ADDRESS`
   },
 }
 

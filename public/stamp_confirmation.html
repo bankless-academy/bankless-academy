@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="https://mint.highlight.xyz/assets/embed.css" />
+<style>
+  body {
+    background-color: #1a202c;
+    color: white;
+  }
+</style>
+<script>
+  const queryString = window.location.search
+  const urlParams = new URLSearchParams(queryString)
+  const isStampValidated = urlParams.get('isStampValidated') === 'true'
+  const status = urlParams.get('status')
+  document.write(`<h1>${status}</h1>`)
+  localStorage.setItem('refreshPassport', 'true')
+</script>

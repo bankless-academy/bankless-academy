@@ -1,9 +1,18 @@
 /* eslint-disable no-console */
-import { Box, SimpleGrid, Image, Icon, Button } from '@chakra-ui/react'
+import { useEffect, useState } from 'react'
+import {
+  Box,
+  SimpleGrid,
+  Image,
+  Icon,
+  Button,
+  useToast,
+} from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
 import FacebookLogin from 'react-facebook-login'
 import { useAccount } from 'wagmi'
+import { useLocalStorage } from 'usehooks-ts'
 
 import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
 // import { Stamps } from 'entities/passport'
@@ -36,8 +45,19 @@ const PassportStamps = ({
   const { t } = useTranslation()
   const { address } = useAccount()
   const [isSmallScreen] = useSmallScreen()
+  const [loadingStamp, setLoadingStamp] = useState('')
+  const [refreshPassportLS, setRefreshPassportLS] = useLocalStorage(
+    'refreshPassport',
+    false
+  )
+  const toast = useToast()
+
+  useEffect(() => {
+    setLoadingStamp('')
+  }, [refreshPassportLS])
 
   const linkPlatform = (platform, forceAuthUrl) => {
+    setLoadingStamp(platform)
     const width = 600
     const height = 800
     const left = window.screen.width / 2 - width / 2
@@ -47,12 +67,46 @@ const PassportStamps = ({
       forceAuthUrl ||
       STAMP_PROVIDERS[platform].oauth
         ?.replace('RANDOM_STATE', `&state=${random}`)
-        ?.replace('REPLACE_ADDRESS', `${address}`)
-    window.open(
-      authUrl,
-      '_blank',
-      `toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
-    )
+        ?.replaceAll('REPLACE_ADDRESS', `${address}`)
+    console.log(authUrl)
+    if (authUrl.includes('json=true')) {
+      apiCall(authUrl)
+    } else {
+      window.open(
+        authUrl,
+        '_blank',
+        `toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
+      )
+    }
+  }
+
+  const apiCall = (url) => {
+    try {
+      fetch(url)
+        .then((response) => response.json())
+        .then((res) => {
+          console.log(res)
+          toast.closeAll()
+          if (res.isStampValidated) {
+            toast({
+              title: t('Stamp added.'),
+              status: 'success',
+              duration: 10000,
+              isClosable: true,
+            })
+            setRefreshPassportLS(true)
+          } else {
+            toast({
+              title: res.status || t('Issue while adding the stamp.'),
+              status: 'warning',
+              duration: 10000,
+              isClosable: true,
+            })
+          }
+        })
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
@@ -92,16 +146,19 @@ const PassportStamps = ({
                       scope="public_profile"
                       textButton={t('link')}
                       cssClass="css-1edqdd0"
+                      onClick={() => {
+                        setLoadingStamp('Facebook')
+                      }}
                       callback={(res) => {
                         console.log(res)
-                        if (res?.accessToken)
-                          // TODO: check possible popup issue, call via JS ? + test on mobile
-                          linkPlatform(
-                            'Facebook',
-                            `/api/stamps/callback/facebook?accessToken=${res.accessToken}`
+                        if (res?.accessToken) {
+                          apiCall(
+                            `/api/stamps/callback/facebook?accessToken=${res.accessToken}&json=true&address=${address}`
                           )
+                        }
                       }}
                       redirectUri="/api/stamps/callback/facebook"
+                      state={address}
                       render={(renderProps) => (
                         <Button
                           variant="outline"
@@ -115,8 +172,11 @@ const PassportStamps = ({
                   ) : (
                     <Button
                       variant="outline"
-                      onClick={() => linkPlatform(key, null)}
+                      onClick={() => {
+                        linkPlatform(key, null)
+                      }}
                       mt="4"
+                      isLoading={loadingStamp === key}
                     >
                       {t('link')}
                     </Button>
