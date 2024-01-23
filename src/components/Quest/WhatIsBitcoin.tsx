@@ -146,8 +146,8 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                   padding={isSmallScreen ? '6px' : '0 16'}
                 >
                   <Image
-                    w="30px"
-                    h="30px"
+                    w={isSmallScreen ? '26px' : '30px'}
+                    h={isSmallScreen ? '26px' : '30px'}
                     borderRadius="50%"
                     src="/images/explorer_avatar.png"
                   />
@@ -181,8 +181,8 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                 >
                   <Box maxW="30px">
                     <Image
-                      w="30px"
-                      h="30px"
+                      w={isSmallScreen ? '26px' : '30px'}
+                      h={isSmallScreen ? '26px' : '30px'}
                       borderRadius="50%"
                       src="/images/bitcoin.png"
                     />
