@@ -14,7 +14,7 @@ import FacebookLogin from 'react-facebook-login'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
 
-import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
+import { STAMP_PLATFORMS } from 'constants/passport'
 // import { Stamps } from 'entities/passport'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
@@ -65,18 +65,24 @@ const PassportStamps = ({
     const random = Math.floor(Math.random() * 100000)
     const authUrl: string =
       forceAuthUrl ||
-      STAMP_PROVIDERS[platform].oauth
+      STAMP_PLATFORMS[platform].oauth
         ?.replace('RANDOM_STATE', `&state=${random}`)
         ?.replaceAll('REPLACE_ADDRESS', `${address}`)
     console.log(authUrl)
     if (authUrl.includes('json=true')) {
       apiCall(authUrl)
     } else {
-      window.open(
+      const page = window.open(
         authUrl,
         '_blank',
         `toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
       )
+      const timer = setInterval(function () {
+        if (page.closed) {
+          clearInterval(timer)
+          setLoadingStamp('')
+        }
+      }, 1000)
     }
   }
 
@@ -118,13 +124,8 @@ const PassportStamps = ({
           spacingY="0"
           issmallscreen={isSmallScreen.toString()}
         >
-          {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
-            const stamp = stamps ? stamps[key] : null
-            const currentTimestamp = Date.now()
-            const isStampExpired = !(
-              Date.parse(stamp?.stamp?.expirationDate) > currentTimestamp
-            )
-            const isTrustedIssuer = stamp?.stamp?.issuer === ALLOWED_ISSUER
+          {Object.entries(STAMP_PLATFORMS).map(([key, platform]) => {
+            const stamp = stamps ? stamps[platform.provider] : null
             return (
               <Box
                 key={`stamp-${key}`}
@@ -135,11 +136,11 @@ const PassportStamps = ({
                 alignItems="center"
               >
                 <Box width="40px" display="flex" justifyContent="center">
-                  <Image src={provider.icon} height="30px" />
+                  <Image src={platform.icon} height="30px" />
                 </Box>
-                <Box m={2}>{`${provider.name}`}</Box>
+                <Box m={2}>{`${platform.name}`}</Box>
                 <Box flexGrow={1} textAlign="right">
-                  {key === 'Facebook' ? (
+                  {key === 'facebook' ? (
                     <FacebookLogin
                       appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
                       autoLoad={false}
@@ -147,7 +148,7 @@ const PassportStamps = ({
                       textButton={t('link')}
                       cssClass="css-1edqdd0"
                       onClick={() => {
-                        setLoadingStamp('Facebook')
+                        setLoadingStamp('facebook')
                       }}
                       callback={(res) => {
                         console.log(res)
@@ -164,6 +165,7 @@ const PassportStamps = ({
                           variant="outline"
                           onClick={renderProps.onClick}
                           mt="4"
+                          isLoading={loadingStamp === key}
                         >
                           {t('link')}
                         </Button>
@@ -182,28 +184,8 @@ const PassportStamps = ({
                     </Button>
                   )}
                   {stamp ? (
-                    isStampExpired ? (
-                      <span style={{ color: theme.colors.incorrect }}>
-                        {t('stamp expired')}
-                      </span>
-                    ) : isTrustedIssuer ? (
-                      // OK
-                      <CircleIcon color={theme.colors.correct} />
-                    ) : (
-                      <span style={{ color: theme.colors.incorrect }}>
-                        {t('untrusted DID issuer')}
-                      </span>
-                    )
-                  ) : stamp === null ? (
-                    // No info yet
-                    // <CircleIcon color={theme.colors.incorrect} />
-                    <Box
-                      border="1px solid white"
-                      borderRadius="50%"
-                      width="12px"
-                      height="12px"
-                      display="inline-block"
-                    ></Box>
+                    // OK
+                    <CircleIcon color={theme.colors.correct} />
                   ) : (
                     // Not OK
                     <CircleIcon color={theme.colors.incorrect} />

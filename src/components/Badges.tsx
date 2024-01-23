@@ -284,7 +284,7 @@ const Badges = ({
               )} */}
               {type === 'stamps' && (
                 <>
-                  {Object.entries(STAMP_PLATFORMS).map(([key, provider]) => {
+                  {Object.entries(STAMP_PLATFORMS).map(([key, platform]) => {
                     const ownsBadge = (badges as string[])?.includes(
                       STAMP_PLATFORMS[key].provider
                     )
@@ -295,11 +295,11 @@ const Badges = ({
                             aspectRatio="1"
                             opacity={ownsBadge ? '1' : '0.2'}
                             w="100%"
-                            src={provider.icon}
+                            src={platform.icon}
                             p="4"
                             border="1px #2d292d solid"
                             borderRadius="8px"
-                            title={provider.name}
+                            title={platform.name}
                             cursor={
                               isMyProfile && !ownsBadge ? 'pointer' : 'default'
                             }
