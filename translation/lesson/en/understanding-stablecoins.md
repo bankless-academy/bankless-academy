@@ -86,7 +86,13 @@ The most notable example in this category is MakerDAO’s Dai (DAI).
 
 ![DAI collateralization breakdown (June 2023) Source: https://makerburn.com/#/rundown](https://app.banklessacademy.com/images/understanding-stablecoins/image-573e657a.png)
 
-Considerations:
+> **Innovation & Philanthropy through Fiat-Backed Stablecoins: Glo Dollar**
+>
+> The Glo Foundation has introduced an innovative approach when it comes to revenue generation through the creation of [Glo Dollar](https://www.glodollar.org/) (USDGLO), its US dollar-backed stablecoin. Glo Dollar sets itself apart from other stablecoins by directing the interest earned from its reserves towards basic income programs for people in extreme poverty.
+>
+> Holders of USDGLO contribute to this mission by practicing embedded philanthropy. Learn more about Glo Dollar, its mission, and how it works, [here](https://www.glodollar.org/articles/how-glo-works).
+
+Considerations when using fiat-backed stablecoins:
 
 * **Collateral Valuation:** A stablecoin’s reserves typically consist of crypto, other stablecoins, and even other asset classes. For example, DAI is backed by BTC, ETH, stablecoins, real world assets, and several other minor components. To mitigate the risks of this diverse range of assets, DAI is overcollateralized (at the time of writing). Even if the ETH price was to crash by 20%, DAI would still have [enough collateral](https://daistats.com/) to cover their token. However, further price volatility across its range of assets could begin to erode the peg.
 
@@ -143,7 +149,7 @@ And remember, not all stablecoins in each category are created equal! Do your ow
 
 ---
 
-We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘The Stablecoin Guide’.
+We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Understanding Stablecoins’.
 
 Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
 

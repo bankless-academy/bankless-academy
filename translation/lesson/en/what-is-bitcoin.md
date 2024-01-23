@@ -2,7 +2,7 @@
 TITLE: What is Bitcoin?
 DESCRIPTION: 
 LANGUAGE: English
-WRITERS: 
+WRITERS: Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/what-is-bitcoin
 FORMAT: LESSON
@@ -35,7 +35,7 @@ At Bankless Academy, our mission is to provide Explorers such as yourself with t
 
 Using the new era of the internet and `blockchain technology`, we’re unlocking financial freedom, and reclaiming ownership of our data and privacy — from third-parties harvesting it for profit.
 
-Today we’re looking at the first event in blockchain history: the invention of `cryptocurrency`. Cryptocurrency allows `money` to flow beyond traditional financial systems, for reasons we’ll be investigating throughout our lesson.
+Today we’re looking at the first event in blockchain history: the invention of `cryptocurrency`. Cryptocurrency is a type of `money` that moves outside of traditional financial systems, for reasons we’ll be investigating throughout our lesson.
 
 The cryptocurrency boom began with the invention of Bitcoin…
 
@@ -65,7 +65,7 @@ Materials like gold & silver were eventually adopted to solve this problem. Thei
 
 As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Such currency made money recognizable, measurable, while serving as a strong store of value.
 
-![](https://app.banklessacademy.com/images/what-is-bitcoin/a-brief-history-of-money-9e953c28.svg)
+![](https://app.banklessacademy.com/images/what-is-bitcoin/a-brief-history-of-money-b5126abd.svg)
 
 # Knowledge Check 1
 
@@ -90,7 +90,7 @@ Precious metals were slowly disconnected from currencies across the world — an
 
 Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also put for-profit businesses between people and their money.
 
-![](https://app.banklessacademy.com/images/what-is-bitcoin/a-brief-history-of-money-pt-2-9469cde1.svg)
+![](https://app.banklessacademy.com/images/what-is-bitcoin/a-brief-history-of-money-pt-2-3f9be5ac.svg)
 
 # The Problem
 
@@ -248,7 +248,7 @@ This is the `cryptocurrency mining` process. It’s what keeps the network runni
 
 Once a transaction is confirmed, it cannot be reversed.
 
-![](https://app.banklessacademy.com/images/what-is-bitcoin/how-does-it-work-pt-2-059d2cb5.svg)
+![](https://app.banklessacademy.com/images/what-is-bitcoin/how-does-it-work-pt-2-799bae09.svg)
 
 # How does it work? (Pt. 3)
 
@@ -260,7 +260,7 @@ On top of this, the original miner also receives a small, newly minted amount of
 
 That’s quite a process!
 
-![](https://app.banklessacademy.com/images/what-is-bitcoin/how-does-it-work-pt-3-fed5c7a6.svg)
+![](https://app.banklessacademy.com/images/what-is-bitcoin/how-does-it-work-pt-3-9b8a77ea.svg)
 
 # Knowledge Check 5
 
