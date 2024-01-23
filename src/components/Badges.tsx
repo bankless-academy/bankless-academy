@@ -13,7 +13,7 @@ import { LESSONS } from 'constants/index'
 import { DONATION_MAPPING } from 'constants/donations'
 import InternalLink from './InternalLink'
 // import ExternalLink from './ExternalLink'
-import { STAMP_PROVIDERS } from 'constants/passport'
+import { STAMP_PLATFORMS } from 'constants/passport'
 import PassportModal from 'components/PassportModal'
 import { useSmallScreen } from 'hooks'
 
@@ -284,8 +284,10 @@ const Badges = ({
               )} */}
               {type === 'stamps' && (
                 <>
-                  {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
-                    const ownsBadge = (badges as string[])?.includes(key)
+                  {Object.entries(STAMP_PLATFORMS).map(([key, provider]) => {
+                    const ownsBadge = (badges as string[])?.includes(
+                      STAMP_PLATFORMS[key].provider
+                    )
                     if (isMyProfile || ownsBadge)
                       return (
                         <Box key={`badge-${key}`} p={1} position="relative">
