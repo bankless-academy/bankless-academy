@@ -2275,7 +2275,6 @@ const LESSONS: LessonType[] = [
       '/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png',
       '/images/staking-on-ethereum/blockchain-security-bc7a3a45.svg',
       '/images/staking-on-ethereum/proof-of-stake-pt-i-cfc0c9ef.svg',
-      '/images/staking-on-ethereum/proof-of-stake-pt-ii-77dade5f.svg',
       '/images/staking-on-ethereum/centralization-risks-1dd42ec9.svg',
       '/images/staking-on-ethereum/liquid-staking-tokens-0eedad95.svg',
       '/images/staking-on-ethereum/liquid-staking-tokens-pt-2-04710bd7.svg',
@@ -2324,7 +2323,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'd3c93a7fc1e84f8da8fbd7ee91ed7081',
         title: 'Proof of Stake (Pt. II)',
-        content: '<div class="bloc1"><p>Let’s walk through the process step-by-step.</p><ol><li><strong>Staking Tokens:</strong> Users lock their ETH in the staking pool.</li><li><strong>Validator Selection:</strong> The network’s algorithm randomly selects validators, favouring those with more staked ETH.</li><li><strong>Validating Transactions:</strong> The chosen validator reviews the transaction for accuracy.</li><li><strong>Building Blocks:</strong> A block builder compiles the transactions into a block.</li><li><strong>Cross-Verification:</strong> Other validators double-check the transaction’s validity.</li><li><strong>Blockchain Addition:</strong> Once verified, the block joins the Ethereum blockchain.</li><li><strong>Rewards:</strong> The validator earns transaction fees and newly minted ETH for their efforts.</li></ol></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/proof-of-stake-pt-ii-77dade5f.svg\'></div>'
+        content: '<div class="bloc1"><p>Let’s walk through the process step-by-step.</p><ol><li><strong>Staking Tokens:</strong> Users lock their ETH in the staking pool.</li><li><strong>Validator Selection:</strong> The network’s algorithm randomly selects validators, favouring those with more staked ETH.</li><li><strong>Validating Transactions:</strong> The chosen validator reviews the transaction for accuracy.</li><li><strong>Building Blocks:</strong> A block builder compiles the transactions into a block.</li><li><strong>Cross-Verification:</strong> Other validators double-check the transaction’s validity.</li><li><strong>Blockchain Addition:</strong> Once verified, the block joins the Ethereum blockchain.</li><li><strong>Rewards:</strong> The validator earns transaction fees and newly minted ETH for their efforts.</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/bitcoin\'></iframe></div>'
       },
       {
         type: 'LEARN',

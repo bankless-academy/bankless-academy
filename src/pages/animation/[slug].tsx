@@ -1,10 +1,10 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { Box, Button } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
+import { useLocalStorage } from 'usehooks-ts'
+import { Player } from '@lottiefiles/react-lottie-player'
 
 import { MetaData } from 'components/Head'
-import { Player } from '@lottiefiles/react-lottie-player'
-import { useState } from 'react'
 
 const ANIMATIONS = {
   bitcoin: {
@@ -46,9 +46,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const Animation = (): JSX.Element => {
   const router = useRouter()
   const { slug } = router.query
-  const [animationStep, setAnimationStep] = useState(0)
-
   const animationId = slug as string
+  const [animationStepLS, setAnimationStepLS] = useLocalStorage(
+    `animation-${animationId}`,
+    0
+  )
 
   if (!ANIMATION_IDS.includes(animationId)) return null
 
@@ -67,12 +69,12 @@ const Animation = (): JSX.Element => {
         loop={false}
         keepLastFrame={true}
         controls={false}
-        src={animation.steps[animationStep]}
+        src={animation.steps[animationStepLS]}
         style={{ height: '100%', width: '100%' }}
       />
-      {animationStep > 0 && (
+      {animationStepLS > 0 && (
         <Button
-          onClick={() => setAnimationStep(animationStep - 1)}
+          onClick={() => setAnimationStepLS(animationStepLS - 1)}
           position="absolute"
           top="50%"
           left="0"
@@ -80,12 +82,12 @@ const Animation = (): JSX.Element => {
           &lt;
         </Button>
       )}
-      {animationStep + 1 < animation.steps.length && (
+      {animationStepLS + 1 < animation.steps.length && (
         <Button
           position="absolute"
           top="50%"
           right="0"
-          onClick={() => setAnimationStep(animationStep + 1)}
+          onClick={() => setAnimationStepLS(animationStepLS + 1)}
         >
           &gt;
         </Button>

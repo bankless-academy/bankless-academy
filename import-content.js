@@ -33,7 +33,7 @@ const blockTypesToIgnore = [
   "pdf",
   "table",
   "bookmark",
-  "embed",
+  // "embed",
   "equation",
   // "divider",
   "toggle",
@@ -634,7 +634,11 @@ axios
                 const [bloc1, bloc2] = slide.content.split('<iframe ')
                 if (bloc2 !== '') {
                   slide.content = `${bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''}`
-                  slide.content += `<div class="bloc2"><iframe allowfullscreen ${bloc2.replace(/feature=oembed/g, 'feature=oembed&rel=0')}</div>`
+                  let iframeClass = ''
+                  if (bloc2.includes('banklessacademy.com/animation')) {
+                    iframeClass = "class='animation' "
+                  }
+                  slide.content += `<div class="bloc2"><iframe allowfullscreen ${iframeClass}${bloc2.replace(/feature=oembed/g, 'feature=oembed&rel=0')}</div>`
                 }
               } else {
                 // text only

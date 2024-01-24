@@ -87,7 +87,7 @@ Let’s walk through the process step-by-step.
 6. **Blockchain Addition:** Once verified, the block joins the Ethereum blockchain.
 7. **Rewards:** The validator earns transaction fees and newly minted ETH for their efforts.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/proof-of-stake-pt-ii-77dade5f.svg)
+[embed](https://app.banklessacademy.com/animation/bitcoin)
 
 # Ether - The “Triple-Point Asset”
 

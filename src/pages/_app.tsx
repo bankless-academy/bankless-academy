@@ -54,7 +54,9 @@ const App = ({
       <>
         <Head metadata={pageProps.pageMeta} />
         <ThemeProvider>
-          <Component {...pageProps} />
+          <NonSSRWrapper>
+            <Component {...pageProps} />
+          </NonSSRWrapper>
         </ThemeProvider>
       </>
     )

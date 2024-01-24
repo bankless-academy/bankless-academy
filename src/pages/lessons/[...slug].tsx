@@ -44,6 +44,8 @@ const processMD = async (md, lang, englishLesson) => {
           .replace(slide_title, '')
           .replace(/!\[\]\(.*?\)/, ``)
           .trim()
+          // TEMP HACK: hide embed
+          .replace('[embed]', '[]')
         // console.log(slide_title)
         // console.log(slide_content)
         // console.log(quizzes)
