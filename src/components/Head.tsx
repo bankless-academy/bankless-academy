@@ -24,6 +24,7 @@ export interface MetaData {
   lesson?: LessonType
   canonical?: string
   noindex?: boolean
+  nolayout?: boolean
 }
 
 const umamiWebsiteId =

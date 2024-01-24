@@ -49,6 +49,16 @@ const App = ({
   ) {
     return <>Maintenance in progress ...</>
   }
+  if (pageProps.pageMeta.nolayout) {
+    return (
+      <>
+        <Head metadata={pageProps.pageMeta} />
+        <ThemeProvider>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </>
+    )
+  }
 
   // 1. Get projectID at https://cloud.walletconnect.com
   const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID
