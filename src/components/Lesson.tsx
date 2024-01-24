@@ -265,8 +265,8 @@ const Lesson = ({
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
 
-  const isAnimationSlide = slide.content.includes('/animation/')
-  slide.content = slide.content.replace(
+  const isAnimationSlide = slide.content?.includes('/animation/')
+  slide.content = slide.content?.replace(
     // HACK: display local animation
     'https://app.banklessacademy.com/animation',
     '/animation'
