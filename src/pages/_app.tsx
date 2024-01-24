@@ -49,7 +49,7 @@ const App = ({
   ) {
     return <>Maintenance in progress ...</>
   }
-  if (pageProps.pageMeta.nolayout) {
+  if (pageProps.pageMeta?.nolayout) {
     return (
       <>
         <Head metadata={pageProps.pageMeta} />
