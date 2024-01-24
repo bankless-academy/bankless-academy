@@ -70,7 +70,15 @@ Fiat-backed stablecoins maintain value by issuing a fixed token supply matched b
 
 Notable fiat-backed stablecoins include Tether (USDT) and Circle (USDC).
 
-Considerations:
+Stablecoin issuers generate revenue through various methods. These methods include investing a portion of their fiat reserves in short-term US Treasuries and cash equivalents, as well as employing a mixed revenue model that involves collecting transaction fees and offering lending services.
+
+> **Innovation & Philanthropy through Fiat-Backed Stablecoins: Glo Dollar**
+>
+> The Glo Foundation has introduced an innovative approach when it comes to revenue generation through the creation of [Glo Dollar](https://www.glodollar.org/) (USDGLO), its US dollar-backed stablecoin. Glo Dollar sets itself apart from other stablecoins by directing the interest earned from its reserves towards basic income programs for people in extreme poverty.
+>
+> Holders of USDGLO contribute to this mission by practicing embedded philanthropy. Learn more about Glo Dollar and how it works, [here](https://www.glodollar.org/articles/how-glo-works).
+
+Considerations when using fiat-backed stablecoins:
 
 * **Collateral Audits:** Holders need assurance that their stablecoin tokens are matched one-to-one by fiat reserves. Ideally the provider is open to regular audits by independent parties. USDT has historically made it difficult to know the total value of their locked assets. USDC regularly undergoes independent audits, increasing certainty that their reserves equal their token issuance.
 
@@ -86,13 +94,7 @@ The most notable example in this category is MakerDAO’s Dai (DAI).
 
 ![DAI collateralization breakdown (June 2023) Source: https://makerburn.com/#/rundown](https://app.banklessacademy.com/images/understanding-stablecoins/image-573e657a.png)
 
-> **Innovation & Philanthropy through Fiat-Backed Stablecoins: Glo Dollar**
->
-> The Glo Foundation has introduced an innovative approach when it comes to revenue generation through the creation of [Glo Dollar](https://www.glodollar.org/) (USDGLO), its US dollar-backed stablecoin. Glo Dollar sets itself apart from other stablecoins by directing the interest earned from its reserves towards basic income programs for people in extreme poverty.
->
-> Holders of USDGLO contribute to this mission by practicing embedded philanthropy. Learn more about Glo Dollar, its mission, and how it works, [here](https://www.glodollar.org/articles/how-glo-works).
-
-Considerations when using fiat-backed stablecoins:
+Considerations:
 
 * **Collateral Valuation:** A stablecoin’s reserves typically consist of crypto, other stablecoins, and even other asset classes. For example, DAI is backed by BTC, ETH, stablecoins, real world assets, and several other minor components. To mitigate the risks of this diverse range of assets, DAI is overcollateralized (at the time of writing). Even if the ETH price was to crash by 20%, DAI would still have [enough collateral](https://daistats.com/) to cover their token. However, further price volatility across its range of assets could begin to erode the peg.
 
