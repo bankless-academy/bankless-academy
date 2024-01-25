@@ -677,7 +677,7 @@ const Lesson = ({
             </>
           )}
           {slide.type === 'QUEST' && (
-            <VStack flex="auto" minH="420px" justifyContent="center">
+            <VStack flex="auto" minH="inherit" justifyContent="center">
               {Quest?.questComponent}
             </VStack>
           )}
