@@ -1,51 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Button,
   InputGroup,
-  InputLeftAddon,
   Input,
   InputRightElement,
+  Text,
+  Image,
+  InputLeftAddon,
 } from '@chakra-ui/react'
-import styled from '@emotion/styled'
+import { Player } from '@lottiefiles/react-lottie-player'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
+import { useTranslation } from 'react-i18next'
 
 import { theme } from 'theme/index'
+import { useSmallScreen } from 'hooks'
+import { LessonCard } from 'components/LessonCards'
 
-const StyledDiv = styled(Box)`
-  img {
-    display: flex;
-    border-radius: 5px;
-    width: 420px;
-    max-width: 100%;
-    cursor: pointer;
-    margin-bottom: 8px;
-  }
-  h2 {
-    text-align: center;
-  }
-  span {
-    font-weight: normal;
-    font-size: 16px;
-    color: orange;
-  }
-`
+const DEFAULT_ANSWERS = ['1Q2TWHE3GMdB6BZKafqwxXtWAWgFt5Jvm3', '0']
+const CORRECT_ANSWERS = ['1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', '0.00000001']
 
-const DEFAULT_ANSWERS = ['0', '1Q2TWHE3GMdB6BZKafqwxXtWAWgFt5Jvm3']
-const CORRECT_ANSWERS = ['0.00000001', '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa']
-
-const WhatIsBitcoin = (): {
-  isQuestCompleted: boolean
-  questComponent: React.ReactElement
-} => {
+const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
+  const { t } = useTranslation('quests', { keyPrefix: 'WhatIsBitcoin' })
+  const [isSmallScreen] = useSmallScreen()
   const [hasSimulationRun, setHasSimulationRun] = useState(false)
+  const [animationStep, setAnimationStep] = useState(null)
   const initalAnswers = JSON.parse(
     localStorage.getItem('quest-what-is-bitcoin')
   ) || ['', '']
-  const [amount, setAmount] = useState(
+  const [toAddress, setToAddress] = useState(
     initalAnswers[0] === DEFAULT_ANSWERS[0] ? '' : initalAnswers[0]
   )
-  const [toAddress, setToAddress] = useState(
+  const [amount, setAmount] = useState(
     initalAnswers[1] === DEFAULT_ANSWERS[1] ? '' : initalAnswers[1]
   )
   const [selected, setSelected] = useState(
@@ -59,70 +45,195 @@ const WhatIsBitcoin = (): {
   localStorage.setItem('quest-what-is-bitcoin', JSON.stringify(selected))
 
   // TODO: add translation
+  const animationSteps = [
+    'Your transaction is being submitted to the network ...',
+    'step 2 ...',
+    'step 3 ...',
+  ]
+
+  function animation(step) {
+    setTimeout(
+      (step) => {
+        setAnimationStep(step)
+        if (step < animationSteps.length) animation(step + 1)
+      },
+      3000,
+      step
+    )
+  }
 
   const validateQuest = () => {
     setHasSimulationRun(true)
-    alert('Simulation in progress ...')
     localStorage.setItem('quest-what-is-bitcoin', JSON.stringify(selected))
-    setSelected([amount, toAddress])
+    setSelected([toAddress, amount])
   }
 
-  return {
-    isQuestCompleted: areAnswersCorrect,
-    questComponent: (
-      <StyledDiv>
-        <h2>
-          Interact with the following mock-up wallet and send 0.00000001 BTC to
-          Satoshi’s address: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
-        </h2>
-        <Box>
-          <Box>
-            <InputGroup maxW="600px">
-              <InputLeftAddon width="170px">BTC Amount</InputLeftAddon>
-              <Input
-                placeholder={DEFAULT_ANSWERS[0]}
-                value={amount}
-                mb="8"
-                onChange={(e): void => {
-                  setAmount(e.target.value)
-                }}
-              />
-              <InputRightElement>
-                {areAnswersCorrect ? (
-                  <CheckIcon color={theme.colors.correct} />
-                ) : hasSimulationRun ? (
-                  <CloseIcon color={theme.colors.incorrect} />
-                ) : null}
-              </InputRightElement>
-            </InputGroup>
-            <InputGroup maxW="600px">
-              <InputLeftAddon width="170px">Receiver Address</InputLeftAddon>
-              <Input
-                placeholder={DEFAULT_ANSWERS[1]}
-                value={toAddress}
-                onChange={(e): void => {
-                  setToAddress(e.target.value)
-                }}
-              />
-              <InputRightElement>
-                {areAnswersCorrect ? (
-                  <CheckIcon color={theme.colors.correct} />
-                ) : hasSimulationRun ? (
-                  <CloseIcon color={theme.colors.incorrect} />
-                ) : null}
-              </InputRightElement>
-            </InputGroup>
-          </Box>
-          {areAnswersCorrect !== true && (
-            <Box mt="24px !important" textAlign="center">
-              <Button onClick={validateQuest} variant="primary">
-                {'Simulate transaction'}
-              </Button>
-            </Box>
-          )}
+  useEffect(() => {
+    if (hasSimulationRun && areAnswersCorrect) {
+      setAnimationStep(1)
+      animation(2)
+    }
+  }, [areAnswersCorrect, hasSimulationRun])
+
+  useEffect(() => {
+    if (areAnswersCorrect) {
+      setAnimationStep(animationSteps.length)
+    }
+  }, [])
+
+  const quesComponent = (
+    <Box display={isSmallScreen ? 'block' : 'flex'} maxW="100%">
+      <div className="bloc1" style={{ alignSelf: 'center' }}>
+        <Box m="4">
+          <Text mx="0 !important" fontSize="xl">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `${t(
+                  'Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address'
+                )}: `,
+              }}
+            />
+            <strong>{`1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa`}</strong>
+          </Text>
         </Box>
-      </StyledDiv>
-    ),
+      </div>
+      <div className="bloc2">
+        {animationStep ? (
+          <Box>
+            <Player
+              autoplay={true}
+              loop={false}
+              keepLastFrame={true}
+              controls={false}
+              src={`/lotties/bitcoin_step${animationStep}.json`}
+              style={{ height: '250px', width: '250px' }}
+            />
+            <Box>{animationSteps[animationStep - 1]}</Box>
+            {animationStep === animationSteps.length && (
+              <Box>
+                <Button
+                  width="full"
+                  onClick={() => {
+                    setHasSimulationRun(false)
+                    setSelected([])
+                    setToAddress('')
+                    setAmount('')
+                    setAnimationStep(null)
+                  }}
+                  variant="primary"
+                  fontWeight="bold"
+                >
+                  {'Redo'}
+                </Button>
+              </Box>
+            )}
+          </Box>
+        ) : (
+          <LessonCard
+            borderRadius="3xl"
+            maxW={isSmallScreen ? '100%' : '500px'}
+            textAlign="center"
+            m="auto"
+            p={8}
+          >
+            <Box zIndex="2" position="relative">
+              <Text fontWeight="bold" textAlign="left" m="0 !important">
+                Recipient
+              </Text>
+              <InputGroup size={isSmallScreen ? 'md' : 'lg'}>
+                <InputLeftAddon
+                  maxW="64px"
+                  padding={isSmallScreen ? '6px' : '0 16'}
+                >
+                  <Image
+                    w={isSmallScreen ? '26px' : '30px'}
+                    h={isSmallScreen ? '26px' : '30px'}
+                    borderRadius="50%"
+                    src="/images/explorer_avatar.png"
+                  />
+                </InputLeftAddon>
+                <Input
+                  placeholder={DEFAULT_ANSWERS[0]}
+                  value={toAddress}
+                  mb="8"
+                  onChange={(e): void => {
+                    setToAddress(e.target.value)
+                  }}
+                />
+                <InputRightElement>
+                  {!hasSimulationRun ? null : toAddress ===
+                    CORRECT_ANSWERS[0] ? (
+                    <CheckIcon color={theme.colors.correct} />
+                  ) : (
+                    <CloseIcon color={theme.colors.incorrect} />
+                  )}
+                </InputRightElement>
+              </InputGroup>
+              <Text fontWeight="bold" textAlign="left" m="0 !important">
+                Asset
+              </Text>
+              <Box display="flex" justifyContent="space-between">
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  minW="fit-content"
+                  mr="2"
+                >
+                  <Box maxW="30px">
+                    <Image
+                      w={isSmallScreen ? '26px' : '30px'}
+                      h={isSmallScreen ? '26px' : '30px'}
+                      borderRadius="50%"
+                      src="/images/bitcoin.png"
+                    />
+                  </Box>
+                  <Box ml="1">BTC</Box>
+                </Box>
+                <InputGroup maxW="200px" size={isSmallScreen ? 'md' : 'lg'}>
+                  <Input
+                    placeholder={DEFAULT_ANSWERS[1]}
+                    value={amount}
+                    onChange={(e): void => {
+                      setAmount(e.target.value)
+                    }}
+                  />
+                  <InputRightElement>
+                    {!hasSimulationRun ? null : amount ===
+                      CORRECT_ANSWERS[1] ? (
+                      <CheckIcon color={theme.colors.correct} />
+                    ) : (
+                      <CloseIcon color={theme.colors.incorrect} />
+                    )}
+                  </InputRightElement>
+                </InputGroup>
+              </Box>
+              <Text textAlign="left" m="0 !important">
+                Balance: 0.0005
+              </Text>
+              {areAnswersCorrect !== true && (
+                <Box mt="36px !important" textAlign="center">
+                  <Button
+                    width="full"
+                    onClick={validateQuest}
+                    variant="primary"
+                    fontWeight="bold"
+                  >
+                    {'Send'}
+                  </Button>
+                </Box>
+              )}
+            </Box>
+          </LessonCard>
+        )}
+      </div>
+    </Box>
+  )
+  if (test === true) return quesComponent
+
+  return {
+    isQuestCompleted:
+      areAnswersCorrect && animationStep === animationSteps.length,
+    questComponent: quesComponent,
   }
 }
 

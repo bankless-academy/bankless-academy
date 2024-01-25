@@ -6,6 +6,7 @@ import { MetaData } from 'components/Head'
 
 const pageMeta: MetaData = {
   title: 'Debug',
+  noindex: true,
 }
 
 export const getStaticProps: GetStaticProps = async () => {

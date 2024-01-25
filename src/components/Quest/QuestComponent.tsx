@@ -33,6 +33,7 @@ export const ONCHAIN_QUESTS = [
   'OptimismGovernance',
 ]
 
+// TODO: revamp QuestComponent
 const QuestComponent = (
   component: QuestComponentType | null,
   badgeId?: number
@@ -58,7 +59,9 @@ const QuestComponent = (
   const [isSmallScreen] = useSmallScreen()
 
   const Component =
-    component === 'ConceptosBasicosDeBlockchain'
+    component === 'WhatIsBitcoin'
+      ? QUEST_COMPONENTS['WhatIsBitcoin']({ test: false })
+      : component === 'ConceptosBasicosDeBlockchain'
       ? // HACK: TEMP
         QUEST_COMPONENTS['BlockchainBasics']('es')
       : component === 'BlockchainBasics'

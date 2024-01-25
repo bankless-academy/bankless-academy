@@ -70,7 +70,15 @@ Fiat-backed stablecoins maintain value by issuing a fixed token supply matched b
 
 Notable fiat-backed stablecoins include Tether (USDT) and Circle (USDC).
 
-Considerations:
+Stablecoin issuers generate revenue through various methods. These methods include investing a portion of their fiat reserves in short-term US Treasuries and cash equivalents, as well as employing a mixed revenue model that involves collecting transaction fees and offering lending services.
+
+> **Innovation & Philanthropy through Fiat-Backed Stablecoins: Glo Dollar**
+>
+> The Glo Foundation has introduced an innovative approach when it comes to revenue generation through the creation of [Glo Dollar](https://www.glodollar.org/) (USDGLO), its US dollar-backed stablecoin. Glo Dollar sets itself apart from other stablecoins by directing the interest earned from its reserves towards basic income programs for people in extreme poverty.
+>
+> Holders of USDGLO contribute to this mission by practicing embedded philanthropy. Learn more about Glo Dollar and how it works, [here](https://www.glodollar.org/articles/how-glo-works).
+
+Considerations when using fiat-backed stablecoins:
 
 * **Collateral Audits:** Holders need assurance that their stablecoin tokens are matched one-to-one by fiat reserves. Ideally the provider is open to regular audits by independent parties. USDT has historically made it difficult to know the total value of their locked assets. USDC regularly undergoes independent audits, increasing certainty that their reserves equal their token issuance.
 
@@ -143,7 +151,7 @@ And remember, not all stablecoins in each category are created equal! Do your ow
 
 ---
 
-We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘The Stablecoin Guide’.
+We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Understanding Stablecoins’.
 
 Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
 

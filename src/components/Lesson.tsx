@@ -38,10 +38,11 @@ import Keyword from 'components/Keyword'
 import EditContentModal from 'components/EditContentModal'
 import Helper from 'components/Helper'
 
-const Slide = styled(Card)<{
+export const Slide = styled(Card)<{
   issmallscreen?: string
   slidetype: SlideType
   ispreview?: string
+  highlightnumber?: string
 }>`
   border-radius: 0.5rem;
   ${(props) => props.issmallscreen === 'true' && 'display: contents;'};
@@ -122,11 +123,26 @@ const Slide = styled(Card)<{
     li {
       margin-bottom: 8px;
     }
+    ${(props) =>
+      parseInt(props.highlightnumber) >= 0 &&
+      `
+      ol li {
+        opacity: 0.5;
+      }
+      ol li:nth-of-type(${parseInt(props.highlightnumber) + 1}) {
+        opacity: 1;
+      }
+    `};
     iframe {
       margin: 20px auto 0;
       width: 640px;
       max-width: 100%;
       height: 360px;
+    }
+    iframe.animation {
+      margin: 0 auto;
+      width: 590px;
+      height: 590px;
     }
     blockquote {
       font-size: var(--chakra-fontSizes-lg);
@@ -248,6 +264,16 @@ const Lesson = ({
   const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
+
+  const isAnimationSlide = slide.content?.includes('/animation/')
+  slide.content = slide.content?.replace(
+    // HACK: display local animation
+    'https://app.banklessacademy.com/animation',
+    '/animation'
+  )
+  // TODO: make this dynamic
+  const animationSlideId = isAnimationSlide ? 'bitcoin' : ''
+  const [animationStepLS] = useLocalStorage(`animation-${animationSlideId}`, 0)
 
   const { address } = useAccount()
   const walletAddress = address
@@ -521,6 +547,7 @@ const Lesson = ({
       mt={6}
       issmallscreen={isSmallScreen.toString()}
       ispreview={lesson?.isPreview?.toString()}
+      highlightnumber={isAnimationSlide ? animationStepLS.toString() : null}
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
     >
