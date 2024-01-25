@@ -17,6 +17,16 @@
     "Waiting to detect your wallet ...": "Waiting to detect your wallet ..."
   },
   "WhatIsBitcoin": {
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address"
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Your Bitcoin is on its way to Satoshi Nakamoto.",
+    "2. It's now being verified by network miners...": "2. It's now being verified by network miners...",
+    "3. Your transaction is being recorded on the database...": "3. Your transaction is being recorded on the database...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto has received your Bitcoin!",
+    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address",
+    "Recipient": "Recipient",
+    "Address": "Address",
+    "Asset": "Asset",
+    "Amount": "Amount",
+    "Balance: 0.0005": "Balance: 0.0005",
+    "Send": "Send"
   }
 }
