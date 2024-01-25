@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
 import { Global, css } from '@emotion/react'
 import 'react-notion-x/src/styles.css'
@@ -7,9 +8,10 @@ import 'highlight.js/styles/vs.css'
 import { GlobalScrollbar } from 'mac-scrollbar'
 import { isMobile } from 'react-device-detect'
 import styled from '@emotion/styled'
-import { Box } from '@chakra-ui/react'
+import { Box, Container, Heading, Image } from '@chakra-ui/react'
 // https://docs.walletconnect.com/2.0/web3modal/react/about
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
+import Router from 'next/router'
 import { useWeb3ModalState } from '@web3modal/wagmi/react'
 import { WagmiConfig } from 'wagmi'
 import { mainnet, optimism, polygon, polygonMumbai } from 'wagmi/chains'
@@ -101,6 +103,20 @@ const App = ({
   })
 
   const { open } = useWeb3ModalState()
+
+  const [isLoadingProfile, setIsLoadingProfile] = useState(false)
+  useEffect(() => {
+    Router.events.on('routeChangeStart', (url) => {
+      if (url?.startsWith('/explorer/')) setIsLoadingProfile(true)
+    })
+    Router.events.on('routeChangeComplete', () => {
+      setIsLoadingProfile(false)
+    })
+
+    Router.events.on('routeChangeError', () => {
+      setIsLoadingProfile(false)
+    })
+  }, [Router])
 
   return (
     <>
@@ -221,7 +237,21 @@ const App = ({
               `}
             />
             <Layout isLesson={pageProps.pageMeta?.isLesson || false}>
-              <Component {...pageProps} />
+              {isLoadingProfile ? (
+                <Container maxW="container.xl">
+                  <Heading as="h2" size="xl" m="8" textAlign="center">
+                    Loading Explorer Profile
+                  </Heading>
+                  <Image
+                    margin="auto"
+                    paddingTop="200px"
+                    width="250px"
+                    src="/loading_purple.svg"
+                  />
+                </Container>
+              ) : (
+                <Component {...pageProps} />
+              )}
             </Layout>
           </WagmiConfig>
 
