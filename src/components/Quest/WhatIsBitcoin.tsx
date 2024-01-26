@@ -44,23 +44,12 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
     JSON.stringify(selected) === JSON.stringify(CORRECT_ANSWERS)
   localStorage.setItem('quest-what-is-bitcoin', JSON.stringify(selected))
 
-  // TODO: add translation
   const animationSteps = [
-    'Your transaction is being submitted to the network ...',
-    'step 2 ...',
-    'step 3 ...',
+    t('1. Your Bitcoin is on its way to Satoshi Nakamoto.'),
+    t("2. It's now being verified by network miners..."),
+    t('3. Your transaction is being recorded on the database...'),
+    t('4. Satoshi Nakamoto has received your Bitcoin!'),
   ]
-
-  function animation(step) {
-    setTimeout(
-      (step) => {
-        setAnimationStep(step)
-        if (step < animationSteps.length) animation(step + 1)
-      },
-      3000,
-      step
-    )
-  }
 
   const validateQuest = () => {
     setHasSimulationRun(true)
@@ -71,7 +60,6 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
   useEffect(() => {
     if (hasSimulationRun && areAnswersCorrect) {
       setAnimationStep(1)
-      animation(2)
     }
   }, [areAnswersCorrect, hasSimulationRun])
 
@@ -82,7 +70,7 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
   }, [])
 
   const quesComponent = (
-    <Box display={isSmallScreen ? 'block' : 'flex'} maxW="100%">
+    <Box display={isSmallScreen ? 'block' : 'flex'} maxW="100%" minH="inherit">
       <div className="bloc1" style={{ alignSelf: 'center' }}>
         <Box m="4">
           <Text mx="0 !important" fontSize="xl">
@@ -97,7 +85,7 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
           </Text>
         </Box>
       </div>
-      <div className="bloc2">
+      <div className="bloc2" style={{ alignSelf: 'center' }}>
         {animationStep ? (
           <Box>
             <Player
@@ -106,13 +94,18 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
               keepLastFrame={true}
               controls={false}
               src={`/lotties/bitcoin_step${animationStep}.json`}
-              style={{ height: '250px', width: '250px' }}
+              style={{ height: '400px', width: '400px' }}
+              onEvent={(event) => {
+                if (event === 'complete') {
+                  if (animationStep < animationSteps.length)
+                    setAnimationStep(animationStep + 1)
+                }
+              }}
             />
-            <Box>{animationSteps[animationStep - 1]}</Box>
+            <Text fontSize="xl">{animationSteps[animationStep - 1]}</Text>
             {animationStep === animationSteps.length && (
-              <Box>
+              <Box textAlign="center" mt="4">
                 <Button
-                  width="full"
                   onClick={() => {
                     setHasSimulationRun(false)
                     setSelected([])
@@ -123,7 +116,7 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                   variant="primary"
                   fontWeight="bold"
                 >
-                  {'Redo'}
+                  {'Reset simulation'}
                 </Button>
               </Box>
             )}
@@ -136,9 +129,9 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
             m="auto"
             p={8}
           >
-            <Box zIndex="2" position="relative">
+            <Box zIndex="2" position="relative" m="12px 0">
               <Text fontWeight="bold" textAlign="left" m="0 !important">
-                Recipient
+                {t('Recipient')}
               </Text>
               <InputGroup size={isSmallScreen ? 'md' : 'lg'}>
                 <InputLeftAddon
@@ -146,14 +139,14 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                   padding={isSmallScreen ? '6px' : '0 16'}
                 >
                   <Image
-                    w={isSmallScreen ? '26px' : '30px'}
-                    h={isSmallScreen ? '26px' : '30px'}
+                    w={isSmallScreen ? '26px !important' : '30px'}
+                    h={isSmallScreen ? '26px !important' : '30px'}
                     borderRadius="50%"
                     src="/images/explorer_avatar.png"
                   />
                 </InputLeftAddon>
                 <Input
-                  placeholder={DEFAULT_ANSWERS[0]}
+                  placeholder={t('Address')}
                   value={toAddress}
                   mb="8"
                   onChange={(e): void => {
@@ -170,7 +163,7 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                 </InputRightElement>
               </InputGroup>
               <Text fontWeight="bold" textAlign="left" m="0 !important">
-                Asset
+                {t('Asset')}
               </Text>
               <Box display="flex" justifyContent="space-between">
                 <Box
@@ -181,8 +174,8 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                 >
                   <Box maxW="30px">
                     <Image
-                      w={isSmallScreen ? '26px' : '30px'}
-                      h={isSmallScreen ? '26px' : '30px'}
+                      w={isSmallScreen ? '26px !important' : '30px'}
+                      h={isSmallScreen ? '26px !important' : '30px'}
                       borderRadius="50%"
                       src="/images/bitcoin.png"
                     />
@@ -191,7 +184,7 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                 </Box>
                 <InputGroup maxW="200px" size={isSmallScreen ? 'md' : 'lg'}>
                   <Input
-                    placeholder={DEFAULT_ANSWERS[1]}
+                    placeholder={t('Amount')}
                     value={amount}
                     onChange={(e): void => {
                       setAmount(e.target.value)
@@ -208,7 +201,7 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                 </InputGroup>
               </Box>
               <Text textAlign="left" m="0 !important">
-                Balance: 0.0005
+                {t('Balance: 0.0005')}
               </Text>
               {areAnswersCorrect !== true && (
                 <Box mt="36px !important" textAlign="center">
@@ -218,7 +211,7 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                     variant="primary"
                     fontWeight="bold"
                   >
-                    {'Send'}
+                    {t('Send')}
                   </Button>
                 </Box>
               )}

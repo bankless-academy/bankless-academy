@@ -14,7 +14,7 @@ import {
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser, { processNodes } from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
 import { Warning, ArrowUUpLeft, Bug } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
@@ -37,6 +37,8 @@ import NFT from 'components/NFT'
 import Keyword from 'components/Keyword'
 import EditContentModal from 'components/EditContentModal'
 import Helper from 'components/Helper'
+import Animation from 'components/Animation'
+import { ANIMATIONS } from 'constants/animations'
 
 export const Slide = styled(Card)<{
   issmallscreen?: string
@@ -273,7 +275,13 @@ const Lesson = ({
   )
   // TODO: make this dynamic
   const animationSlideId = isAnimationSlide ? 'bitcoin' : ''
-  const [animationStepLS] = useLocalStorage(`animation-${animationSlideId}`, 0)
+  const [animationStepLS, setAnimationStepLS] = useLocalStorage(
+    `animation-${animationSlideId}`,
+    0
+  )
+  const animationSteps = Object.keys(ANIMATIONS).includes(animationSlideId)
+    ? ANIMATIONS[animationSlideId]?.steps?.length
+    : null
 
   const { address } = useAccount()
   const walletAddress = address
@@ -456,12 +464,24 @@ const Lesson = ({
       'TODO: add a modal with all the shortcuts 👉 previous slide ⬅️ | next slide ➡️ | select quiz answer 1️⃣ / 2️⃣ / 3️⃣ / 4️⃣'
     )
   )
-  useHotkeys('left', () => {
-    buttonLeftRef?.current?.click()
-  })
-  useHotkeys('right', () => {
-    buttonRightRef?.current?.click()
-  })
+  useHotkeys(
+    'left',
+    (isAnimationSlide) => {
+      if (isAnimationSlide && animationStepLS > 0) {
+        setAnimationStepLS(animationStepLS - 1)
+      } else buttonLeftRef?.current?.click()
+    },
+    [isAnimationSlide, animationStepLS, animationSlideId]
+  )
+  useHotkeys(
+    'right',
+    () => {
+      if (isAnimationSlide && animationStepLS + 1 < animationSteps) {
+        setAnimationStepLS(animationStepLS + 1)
+      } else buttonRightRef?.current?.click()
+    },
+    [isAnimationSlide, animationStepLS, animationSlideId]
+  )
   useHotkeys('1', () => {
     answerRef?.current[1]?.click()
   })
@@ -481,6 +501,12 @@ const Lesson = ({
     closeLesson()
   })
 
+  function getDomIndex(target) {
+    return [].slice
+      .call(target.parent.children.filter((node) => node.name === 'li'))
+      .indexOf(target)
+  }
+
   function transform(node) {
     if (node.type === 'tag' && node.name === 'a') {
       // force links to target _blank
@@ -490,6 +516,27 @@ const Lesson = ({
             {node.children[0]?.data}
           </ExternalLink>
         )
+    }
+    if (
+      node.type === 'tag' &&
+      node.name === 'iframe' &&
+      node?.attribs?.src?.startsWith('/animation')
+    ) {
+      // HACK: integrate the embed animation iframe as a component
+      return <Animation animationId={animationSlideId} />
+    }
+    if (isAnimationSlide && node.type === 'tag' && node.name === 'li') {
+      const index = getDomIndex(node)
+      // hide next steps
+      if (animationStepLS < index) return null
+      return (
+        <li
+          onClick={() => setAnimationStepLS(index)}
+          style={{ cursor: 'pointer' }}
+        >
+          {processNodes(node.children)}
+        </li>
+      )
     }
     if (node.type === 'tag' && node.name === 'code') {
       // Tooltip with definition
@@ -597,7 +644,15 @@ const Lesson = ({
           )}
         </Box>
       </Text>
-      <ProgressSteps step={currentSlide} total={numberOfSlides} />
+      <ProgressSteps
+        step={currentSlide}
+        total={numberOfSlides}
+        pourcentage={
+          animationSlideId
+            ? ((animationStepLS + 1) / animationSteps) * 100
+            : null
+        }
+      />
       <Box maxH={isSmallScreen ? 'unset' : '600px'}>
         <Box
           className="content"
@@ -677,7 +732,7 @@ const Lesson = ({
             </>
           )}
           {slide.type === 'QUEST' && (
-            <VStack flex="auto" minH="420px" justifyContent="center">
+            <VStack flex="auto" minH="570px" justifyContent="center">
               {Quest?.questComponent}
             </VStack>
           )}
@@ -803,7 +858,8 @@ const Lesson = ({
               size="lg"
               isDisabled={
                 (slide.quiz && !answerIsCorrect) ||
-                (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+                (slide.type === 'QUEST' && !Quest?.isQuestCompleted) ||
+                (isAnimationSlide && animationStepLS < animationSteps - 1)
               }
               onClick={goToNextSlide}
               rightIcon={<ArrowForwardIcon />}
