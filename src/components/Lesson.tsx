@@ -37,7 +37,8 @@ import NFT from 'components/NFT'
 import Keyword from 'components/Keyword'
 import EditContentModal from 'components/EditContentModal'
 import Helper from 'components/Helper'
-import { ANIMATIONS } from 'pages/animation/[slug]'
+import Animation from 'components/Animation'
+import { ANIMATIONS } from 'constants/animations'
 
 export const Slide = styled(Card)<{
   issmallscreen?: string
@@ -510,6 +511,14 @@ const Lesson = ({
             {node.children[0]?.data}
           </ExternalLink>
         )
+    }
+    if (
+      node.type === 'tag' &&
+      node.name === 'iframe' &&
+      node?.attribs?.src?.startsWith('/animation')
+    ) {
+      // HACK: integrate the embed animation iframe as a component
+      return <Animation animationId={animationSlideId} />
     }
     if (node.type === 'tag' && node.name === 'code') {
       // Tooltip with definition
