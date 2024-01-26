@@ -20,11 +20,13 @@ const Animation = ({
 
   return (
     <Box
-      background="blackAlpha.400"
+      // background="blackAlpha.400"
+      background="transparent"
       maxW="600px"
       maxH="600px"
       position="relative"
       aspectRatio="1"
+      m="auto"
     >
       <Player
         autoplay={true}
@@ -36,9 +38,10 @@ const Animation = ({
       />
       {animationStepLS > 0 && (
         <Button
+          variant="secondary"
           onClick={() => setAnimationStepLS(animationStepLS - 1)}
           position="absolute"
-          top="50%"
+          top="calc(50% - 20px)"
           left="0"
         >
           &lt;
@@ -47,7 +50,8 @@ const Animation = ({
       {animationStepLS + 1 < animation.steps.length && (
         <Button
           position="absolute"
-          top="50%"
+          variant="primary"
+          top="calc(50% - 20px)"
           right="0"
           onClick={() => setAnimationStepLS(animationStepLS + 1)}
         >

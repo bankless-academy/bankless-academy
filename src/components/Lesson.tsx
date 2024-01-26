@@ -14,7 +14,7 @@ import {
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser, { processNodes } from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
 import { Warning, ArrowUUpLeft, Bug } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
@@ -279,6 +279,9 @@ const Lesson = ({
     `animation-${animationSlideId}`,
     0
   )
+  const animationSteps = Object.keys(ANIMATIONS).includes(animationSlideId)
+    ? ANIMATIONS[animationSlideId]?.steps?.length
+    : null
 
   const { address } = useAccount()
   const walletAddress = address
@@ -473,11 +476,7 @@ const Lesson = ({
   useHotkeys(
     'right',
     () => {
-      if (
-        isAnimationSlide &&
-        Object.keys(ANIMATIONS).includes(animationSlideId) &&
-        animationStepLS + 1 < ANIMATIONS[animationSlideId]?.steps?.length
-      ) {
+      if (isAnimationSlide && animationStepLS + 1 < animationSteps) {
         setAnimationStepLS(animationStepLS + 1)
       } else buttonRightRef?.current?.click()
     },
@@ -502,6 +501,12 @@ const Lesson = ({
     closeLesson()
   })
 
+  function getDomIndex(target) {
+    return [].slice
+      .call(target.parent.children.filter((node) => node.name === 'li'))
+      .indexOf(target)
+  }
+
   function transform(node) {
     if (node.type === 'tag' && node.name === 'a') {
       // force links to target _blank
@@ -519,6 +524,19 @@ const Lesson = ({
     ) {
       // HACK: integrate the embed animation iframe as a component
       return <Animation animationId={animationSlideId} />
+    }
+    if (isAnimationSlide && node.type === 'tag' && node.name === 'li') {
+      const index = getDomIndex(node)
+      // hide next steps
+      if (animationStepLS < index) return null
+      return (
+        <li
+          onClick={() => setAnimationStepLS(index)}
+          style={{ cursor: 'pointer' }}
+        >
+          {processNodes(node.children)}
+        </li>
+      )
     }
     if (node.type === 'tag' && node.name === 'code') {
       // Tooltip with definition
@@ -626,7 +644,15 @@ const Lesson = ({
           )}
         </Box>
       </Text>
-      <ProgressSteps step={currentSlide} total={numberOfSlides} />
+      <ProgressSteps
+        step={currentSlide}
+        total={numberOfSlides}
+        pourcentage={
+          animationSlideId
+            ? ((animationStepLS + 1) / animationSteps) * 100
+            : null
+        }
+      />
       <Box maxH={isSmallScreen ? 'unset' : '600px'}>
         <Box
           className="content"
@@ -832,7 +858,8 @@ const Lesson = ({
               size="lg"
               isDisabled={
                 (slide.quiz && !answerIsCorrect) ||
-                (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
+                (slide.type === 'QUEST' && !Quest?.isQuestCompleted) ||
+                (isAnimationSlide && animationStepLS < animationSteps - 1)
               }
               onClick={goToNextSlide}
               rightIcon={<ArrowForwardIcon />}
