@@ -6,7 +6,7 @@ import { Player } from '@lottiefiles/react-lottie-player'
 
 import { MetaData } from 'components/Head'
 
-const ANIMATIONS = {
+export const ANIMATIONS = {
   bitcoin: {
     name: 'Bitcoin animation',
     description: 'Animation description',

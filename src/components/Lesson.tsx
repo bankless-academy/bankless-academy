@@ -37,6 +37,7 @@ import NFT from 'components/NFT'
 import Keyword from 'components/Keyword'
 import EditContentModal from 'components/EditContentModal'
 import Helper from 'components/Helper'
+import { ANIMATIONS } from 'pages/animation/[slug]'
 
 export const Slide = styled(Card)<{
   issmallscreen?: string
@@ -273,7 +274,10 @@ const Lesson = ({
   )
   // TODO: make this dynamic
   const animationSlideId = isAnimationSlide ? 'bitcoin' : ''
-  const [animationStepLS] = useLocalStorage(`animation-${animationSlideId}`, 0)
+  const [animationStepLS, setAnimationStepLS] = useLocalStorage(
+    `animation-${animationSlideId}`,
+    0
+  )
 
   const { address } = useAccount()
   const walletAddress = address
@@ -456,12 +460,28 @@ const Lesson = ({
       'TODO: add a modal with all the shortcuts 👉 previous slide ⬅️ | next slide ➡️ | select quiz answer 1️⃣ / 2️⃣ / 3️⃣ / 4️⃣'
     )
   )
-  useHotkeys('left', () => {
-    buttonLeftRef?.current?.click()
-  })
-  useHotkeys('right', () => {
-    buttonRightRef?.current?.click()
-  })
+  useHotkeys(
+    'left',
+    (isAnimationSlide) => {
+      if (isAnimationSlide && animationStepLS > 0) {
+        setAnimationStepLS(animationStepLS - 1)
+      } else buttonLeftRef?.current?.click()
+    },
+    [isAnimationSlide, animationStepLS, animationSlideId]
+  )
+  useHotkeys(
+    'right',
+    () => {
+      if (
+        isAnimationSlide &&
+        Object.keys(ANIMATIONS).includes(animationSlideId) &&
+        animationStepLS + 1 < ANIMATIONS[animationSlideId]?.steps?.length
+      ) {
+        setAnimationStepLS(animationStepLS + 1)
+      } else buttonRightRef?.current?.click()
+    },
+    [isAnimationSlide, animationStepLS, animationSlideId]
+  )
   useHotkeys('1', () => {
     answerRef?.current[1]?.click()
   })
@@ -677,7 +697,7 @@ const Lesson = ({
             </>
           )}
           {slide.type === 'QUEST' && (
-            <VStack flex="auto" minH="inherit" justifyContent="center">
+            <VStack flex="auto" minH="570px" justifyContent="center">
               {Quest?.questComponent}
             </VStack>
           )}
