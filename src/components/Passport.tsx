@@ -13,8 +13,10 @@ import { api, shortenAddress } from 'utils'
 
 const PassportComponent = ({
   displayStamps,
+  isProfile,
 }: {
   displayStamps?: boolean
+  isProfile?: boolean
 }): JSX.Element => {
   const { t } = useTranslation()
   const [passportLS, setPassportLS] = useLocalStorage(
@@ -105,7 +107,7 @@ const PassportComponent = ({
               fontWeight="bold"
             >
               <ExternalLink href="/faq#17f5d5963c644fa7af5e32598bd6c793">
-                {t('Duplicate stamp detected.')}
+                {t('Duplicate account detected.')}
               </ExternalLink>
               <br />
               {passportLS?.fraud
@@ -113,34 +115,17 @@ const PassportComponent = ({
                 : null}
             </Text>
           </Box>
-        ) : (
+        ) : isProfile ? null : (
           <Text fontSize="xl">
             <>
-              {`Visit here: `}
-              <ExternalLink href="https://passport.gitcoin.co/?filter=bankless-academy#/dashboard">
-                <Button
-                  variant="primaryWhite"
-                  color="#5D4E78"
-                  size="lg"
-                  leftIcon={
-                    <Image
-                      width="20px"
-                      src="/images/gitcoin-passport.svg"
-                      alt="Gitcoin Passport"
-                    />
-                  }
-                >
-                  {t('Gitcoin Passport')}
-                </Button>
-              </ExternalLink>
               <Box mt="4">
                 {numberOfStampsLeftToCollect > 0
                   ? t(
-                      `Collect {{numberOfStampsLeftToCollect}} more of the following stamps:`,
+                      `Connect to {{numberOfStampsLeftToCollect}} more accounts:`,
                       { numberOfStampsLeftToCollect }
                     )
                   : t(
-                      'You have collected enough stamps. You can now close this popup and claim your rewards.'
+                      'You have connected enough accounts. You can now close this popup and claim your rewards.'
                     )}
               </Box>
             </>

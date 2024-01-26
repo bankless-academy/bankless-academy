@@ -112,16 +112,16 @@ const PassportModal = ({
         <ModalCloseButton />
         <ModalBody>
           <Text fontSize="xl">
-            {!passportLS?.verified && (
+            {/* {!passportLS?.verified && (
               <Box mt="4" mr="4">
                 {t(
                   'You haven’t set up Gitcoin Passport, or your stamps are out of date.'
                 )}
               </Box>
-            )}
+            )} */}
             <Box my="4">
               {t(
-                'Explorers must have a valid Gitcoin Passport in order to collect Bankless Academy rewards.'
+                'Explorers must connect multiple accounts in order to collect Bankless Academy rewards.'
               )}{' '}
               <ExternalLink
                 underline="true"
@@ -131,9 +131,19 @@ const PassportModal = ({
               </ExternalLink>
             </Box>
           </Text>
-          <Passport displayStamps />
+          <Passport displayStamps isProfile />
         </ModalBody>
-        <ModalFooter>
+        <ModalFooter justifyContent="space-between">
+          <Box display="flex" alignItems="center">
+            {t('Powered by')}
+            <Image
+              src="/images/gitcoin-passport.svg"
+              alt="Gitcoin Passport"
+              p="0 8px"
+              height="30px"
+            />
+            Gitcoin Passport
+          </Box>
           <ExternalLink
             underline="true"
             href="/faq#36c048c07dea4b289d466a4318e41eb2"

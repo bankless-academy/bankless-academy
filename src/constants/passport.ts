@@ -9,7 +9,7 @@ export const ALLOWED_ISSUER =
 // SOURCE: https://github.com/gitcoinco/passport/blob/main/platforms/src/Twitter/Providers-config.ts
 export const STAMP_PLATFORMS = {
   google: {
-    icon: 'https://passport.gitcoin.co/assets/googleStampIcon.svg',
+    icon: '/images/stamp/googleStampIcon.png',
     name: 'Google',
     description: 'Google Authentication',
     // page
@@ -17,7 +17,7 @@ export const STAMP_PLATFORMS = {
     provider: 'Google'
   },
   twitter: {
-    icon: 'https://passport.gitcoin.co/assets/twitterStampIcon.svg',
+    icon: '/images/stamp/xStampIcon.png',
     name: 'Twitter',
     description: 'Twitter name',
     // page
@@ -25,14 +25,14 @@ export const STAMP_PLATFORMS = {
     provider: 'twitterAccountAgeGte#180'
   },
   facebook: {
-    icon: 'https://passport.gitcoin.co/assets/facebookStampIcon.svg',
+    icon: '/images/stamp/facebookStampIcon.png',
     name: 'Facebook',
     // js
     description: 'Facebook name',
     provider: 'Facebook'
   },
   linkedin: {
-    icon: 'https://passport.gitcoin.co/assets/linkedinStampIcon.svg',
+    icon: '/images/stamp/linkedinStampIcon.png',
     name: 'LinkedIn',
     description: 'LinkedIn name',
     // page
@@ -40,7 +40,7 @@ export const STAMP_PLATFORMS = {
     provider: 'Linkedin'
   },
   discord: {
-    icon: 'https://passport.gitcoin.co/assets/discordStampIcon.svg',
+    icon: '/images/stamp/discordStampIcon.png',
     name: 'Discord',
     description: 'Discord name',
     // page
@@ -48,7 +48,7 @@ export const STAMP_PLATFORMS = {
     provider: 'Discord'
   },
   ens: {
-    icon: 'https://passport.gitcoin.co/assets/ensStampIcon.svg',
+    icon: '/images/stamp/ensStampIcon.png',
     name: 'ENS',
     description: 'ENS name',
     // transparent JS
@@ -56,15 +56,15 @@ export const STAMP_PLATFORMS = {
     provider: 'Ens'
   },
   brightid: {
-    icon: 'https://passport.gitcoin.co/assets/brightidStampIcon.svg',
+    icon: '/images/stamp/brightidStampIcon.png',
     name: 'Bright ID',
     description: 'Bright ID',
-    // page
-    oauth: `/brightid.html?callback=${process.env.NEXT_PUBLIC_STAMP_CALLBACK}/brightid?address=REPLACE_ADDRESS&userDid=did:pkh:eip155:1:REPLACE_ADDRESS`,
+    // external
+    oauth: `https://passport.gitcoin.co`,
     provider: 'Brightid'
   },
   poh: {
-    icon: 'https://passport.gitcoin.co/assets/pohStampIcon.svg',
+    icon: '/images/stamp/pohStampIcon.png',
     name: 'Proof of Humanity',
     description: 'Proof of Humanity',
     // transparent JS

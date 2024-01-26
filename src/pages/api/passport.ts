@@ -126,20 +126,23 @@ export default async function handler(
           const stampHash = {}
           stampHash[key] = stampHashes[key]
           stampHashesSearch.push(stampHash)
+          validStamps
           if (index > 0) whereCondition += ' OR gitcoin_stamps @> ?'
         })
-        const sybilQuery = db(TABLES.users)
-          .select('id', 'address')
-          .whereNot(TABLE.users.id, userId)
-          .whereNull(TABLE.users.sybil_user_id)
-          // query for json instead of jsonb: .where(db.raw('gitcoin_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
-          .where(db.raw(`(${whereCondition})`, stampHashesSearch))
-          .orWhereNot(TABLE.users.id, userId)
-          .where(TABLE.users.sybil_user_id, '=', 12)
-          .where(db.raw(`(${whereCondition})`, stampHashesSearch))
-        // console.log(sybilQuery.toString())
-        sybil = await sybilQuery
-        console.log('sybil', sybil)
+        if (stampHashesSearch.length) {
+          const sybilQuery = db(TABLES.users)
+            .select('id', 'address')
+            .whereNot(TABLE.users.id, userId)
+            .whereNull(TABLE.users.sybil_user_id)
+            // query for json instead of jsonb: .where(db.raw('gitcoin_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
+            .where(db.raw(`(${whereCondition})`, stampHashesSearch))
+            .orWhereNot(TABLE.users.id, userId)
+            .where(TABLE.users.sybil_user_id, '=', 12)
+            .where(db.raw(`(${whereCondition})`, stampHashesSearch))
+          // console.log(sybilQuery.toString())
+          sybil = await sybilQuery
+          console.log('sybil', sybil)
+        }
       }
       if (isBot) {
         // HACK: bot
@@ -172,7 +175,7 @@ export default async function handler(
           verified: false,
           requirement,
           fraud: sybil[0]?.address,
-          validStampsCount: validStamps?.length,
+          validStampsCount: Object.keys(stampHashes)?.length,
           stamps: stampHashes,
         })
       }
@@ -188,7 +191,7 @@ export default async function handler(
             ? '0x0000000000000000000000000000000000000000'
             : null,
         requirement,
-        validStampsCount: validStamps?.length,
+        validStampsCount: Object.keys(stampHashes)?.length,
         stamps: stampHashes,
       })
     } catch (error) {

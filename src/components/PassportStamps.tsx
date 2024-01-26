@@ -18,6 +18,7 @@ import { STAMP_PLATFORMS } from 'constants/passport'
 // import { Stamps } from 'entities/passport'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
+import ExternalLink from 'components/ExternalLink'
 
 const CircleIcon = (props) => (
   <Icon viewBox="0 0 200 200" {...props}>
@@ -56,18 +57,16 @@ const PassportStamps = ({
     setLoadingStamp('')
   }, [refreshPassportLS])
 
-  const linkPlatform = (platform, forceAuthUrl) => {
+  const linkPlatform = (platform) => {
     setLoadingStamp(platform)
     const width = 600
     const height = 800
     const left = window.screen.width / 2 - width / 2
     const top = window.screen.height / 2 - height / 2
     const random = Math.floor(Math.random() * 100000)
-    const authUrl: string =
-      forceAuthUrl ||
-      STAMP_PLATFORMS[platform].oauth
-        ?.replace('RANDOM_STATE', `&state=${random}`)
-        ?.replaceAll('REPLACE_ADDRESS', `${address}`)
+    const authUrl: string = STAMP_PLATFORMS[platform].oauth
+      ?.replace('RANDOM_STATE', `&state=${random}`)
+      ?.replaceAll('REPLACE_ADDRESS', `${address}`)
     console.log(authUrl)
     if (authUrl.includes('json=true')) {
       apiCall(authUrl)
@@ -134,61 +133,78 @@ const PassportStamps = ({
                 p="2"
                 display="flex"
                 alignItems="center"
+                h="80px"
               >
                 <Box width="40px" display="flex" justifyContent="center">
-                  <Image src={platform.icon} height="30px" />
+                  <Image src={platform.icon} minHeight="40px" minWidth="40px" />
                 </Box>
                 <Box m={2}>{`${platform.name}`}</Box>
                 <Box flexGrow={1} textAlign="right">
-                  {key === 'facebook' ? (
-                    <FacebookLogin
-                      appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
-                      autoLoad={false}
-                      scope="public_profile"
-                      textButton={t('link')}
-                      cssClass="css-1edqdd0"
-                      onClick={() => {
-                        setLoadingStamp('facebook')
-                      }}
-                      callback={(res) => {
-                        console.log(res)
-                        if (res?.accessToken) {
-                          apiCall(
-                            `/api/stamps/callback/facebook?accessToken=${res.accessToken}&json=true&address=${address}`
-                          )
-                        }
-                      }}
-                      redirectUri="/api/stamps/callback/facebook"
-                      state={address}
-                      render={(renderProps) => (
-                        <Button
-                          variant="outline"
-                          onClick={renderProps.onClick}
-                          mt="4"
-                          isLoading={loadingStamp === key}
-                        >
-                          {t('link')}
-                        </Button>
-                      )}
-                    />
-                  ) : (
-                    <Button
-                      variant="outline"
-                      onClick={() => {
-                        linkPlatform(key, null)
-                      }}
-                      mt="4"
-                      isLoading={loadingStamp === key}
-                    >
-                      {t('link')}
-                    </Button>
-                  )}
                   {stamp ? (
                     // OK
-                    <CircleIcon color={theme.colors.correct} />
+                    <CircleIcon
+                      width="24px"
+                      height="24px"
+                      color={theme.colors.correct}
+                    />
                   ) : (
-                    // Not OK
-                    <CircleIcon color={theme.colors.incorrect} />
+                    <>
+                      {key === 'facebook' ? (
+                        <FacebookLogin
+                          appId={process.env.NEXT_PUBLIC_FACEBOOK_APP_ID}
+                          autoLoad={false}
+                          scope="public_profile"
+                          textButton={t('Connect')}
+                          cssClass="css-rgn8uq"
+                          onClick={() => {
+                            setLoadingStamp('facebook')
+                          }}
+                          callback={(res) => {
+                            console.log(res)
+                            if (res?.accessToken) {
+                              apiCall(
+                                `/api/stamps/callback/facebook?accessToken=${res.accessToken}&json=true&address=${address}`
+                              )
+                            }
+                          }}
+                          redirectUri="/api/stamps/callback/facebook"
+                          state={address}
+                          render={(renderProps) => (
+                            <Button
+                              variant="primaryWhite"
+                              onClick={renderProps.onClick}
+                              isLoading={loadingStamp === key}
+                            >
+                              {t('Connect')}
+                            </Button>
+                          )}
+                        />
+                      ) : key === 'brightid' ? (
+                        <ExternalLink href={STAMP_PLATFORMS[key].oauth}>
+                          <Button
+                            variant="primaryWhite"
+                            isLoading={loadingStamp === key}
+                            onClick={() =>
+                              alert(
+                                'You are going to be redirected to the Gitcoin Passport website. Sign-in with your wallet, go to dashboard, and connect with your Bright-ID account. Once you verified, go back to this page and click the refresh button.'
+                              )
+                            }
+                          >
+                            {t('Connect')}
+                          </Button>
+                        </ExternalLink>
+                      ) : (
+                        <Button
+                          variant="primaryWhite"
+                          onClick={() => {
+                            linkPlatform(key)
+                          }}
+                          isLoading={loadingStamp === key}
+                        >
+                          {t('Connect')}
+                        </Button>
+                      )}
+                    </>
                   )}
                 </Box>
               </Box>
