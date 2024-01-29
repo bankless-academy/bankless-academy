@@ -3,11 +3,14 @@ import { useLocalStorage } from 'usehooks-ts'
 import { Player } from '@lottiefiles/react-lottie-player'
 
 import { ANIMATIONS, ANIMATION_IDS } from 'constants/animations'
+import { useHotkeys } from 'react-hotkeys-hook'
 
 const Animation = ({
   animationId,
+  isEmbedded,
 }: {
   animationId: string
+  isEmbedded?: boolean
 }): React.ReactElement => {
   const [animationStepLS, setAnimationStepLS] = useLocalStorage(
     `animation-${animationId}`,
@@ -17,6 +20,25 @@ const Animation = ({
   if (!ANIMATION_IDS.includes(animationId)) return null
 
   const animation = ANIMATIONS[animationId]
+
+  const animationSteps = Object.keys(ANIMATIONS).includes(animationId)
+    ? ANIMATIONS[animationId]?.steps?.length
+    : null
+
+  const clickLeft = () => {
+    if (animationStepLS > 0) {
+      setAnimationStepLS(animationStepLS - 1)
+    }
+  }
+
+  const clickRight = () => {
+    if (animationStepLS + 1 < animationSteps) {
+      setAnimationStepLS(animationStepLS + 1)
+    }
+  }
+
+  useHotkeys('left', () => clickLeft(), [animationStepLS])
+  useHotkeys('right', () => clickRight(), [animationStepLS])
 
   return (
     <Box
@@ -36,7 +58,7 @@ const Animation = ({
         src={animation.steps[animationStepLS]}
         style={{ height: '100%', width: '100%' }}
       />
-      {animationStepLS > 0 && (
+      {isEmbedded && animationStepLS > 0 && (
         <Button
           variant="secondary"
           onClick={() => setAnimationStepLS(animationStepLS - 1)}
@@ -47,7 +69,7 @@ const Animation = ({
           &lt;
         </Button>
       )}
-      {animationStepLS + 1 < animation.steps.length && (
+      {isEmbedded && animationStepLS + 1 < animation.steps.length && (
         <Button
           position="absolute"
           variant="primary"
