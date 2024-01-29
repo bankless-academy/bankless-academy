@@ -113,7 +113,7 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
                     setAmount('')
                     setAnimationStep(null)
                   }}
-                  variant="primary"
+                  variant="secondary"
                   fontWeight="bold"
                 >
                   {'Reset simulation'}
