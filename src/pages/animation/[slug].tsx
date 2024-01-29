@@ -31,7 +31,7 @@ const AnimationPage = (): JSX.Element => {
   const router = useRouter()
   const { slug } = router.query
   const animationId = slug as string
-  return <Animation animationId={animationId} />
+  return <Animation animationId={animationId} isEmbedded />
 }
 
 export default AnimationPage

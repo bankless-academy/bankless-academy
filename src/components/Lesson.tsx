@@ -361,6 +361,18 @@ const Lesson = ({
     }, 3000)
   }, [])
 
+  const clickLeft = () => {
+    if (isAnimationSlide && animationStepLS > 0) {
+      setAnimationStepLS(animationStepLS - 1)
+    } else goToPrevSlide()
+  }
+
+  const clickRight = () => {
+    if (isAnimationSlide && animationStepLS + 1 < animationSteps) {
+      setAnimationStepLS(animationStepLS + 1)
+    } else goToNextSlide()
+  }
+
   const goToPrevSlide = () => {
     toast.closeAll()
     if (!isFirstSlide) {
@@ -464,24 +476,24 @@ const Lesson = ({
       'TODO: add a modal with all the shortcuts 👉 previous slide ⬅️ | next slide ➡️ | select quiz answer 1️⃣ / 2️⃣ / 3️⃣ / 4️⃣'
     )
   )
-  useHotkeys(
-    'left',
-    (isAnimationSlide) => {
-      if (isAnimationSlide && animationStepLS > 0) {
-        setAnimationStepLS(animationStepLS - 1)
-      } else buttonLeftRef?.current?.click()
-    },
-    [isAnimationSlide, animationStepLS, animationSlideId]
-  )
-  useHotkeys(
-    'right',
-    () => {
-      if (isAnimationSlide && animationStepLS + 1 < animationSteps) {
-        setAnimationStepLS(animationStepLS + 1)
-      } else buttonRightRef?.current?.click()
-    },
-    [isAnimationSlide, animationStepLS, animationSlideId]
-  )
+  useHotkeys('left', () => clickLeft(), [
+    isAnimationSlide,
+    animationStepLS,
+    animationSlideId,
+    currentSlide,
+    isFirstSlide,
+    isDesktop,
+  ])
+  useHotkeys('right', () => clickRight(), [
+    isAnimationSlide,
+    animationStepLS,
+    animationSlideId,
+    slide,
+    isLastSlide,
+    currentSlide,
+    lesson,
+    isDesktop,
+  ])
   useHotkeys('1', () => {
     answerRef?.current[1]?.click()
   })
@@ -778,7 +790,7 @@ const Lesson = ({
               ref={buttonLeftRef}
               variant="secondaryBig"
               size="lg"
-              onClick={goToPrevSlide}
+              onClick={() => clickLeft()}
               leftIcon={<ArrowBackIcon />}
               ml={longSlide ? '600px' : '0'}
             >
@@ -858,10 +870,9 @@ const Lesson = ({
               size="lg"
               isDisabled={
                 (slide.quiz && !answerIsCorrect) ||
-                (slide.type === 'QUEST' && !Quest?.isQuestCompleted) ||
-                (isAnimationSlide && animationStepLS < animationSteps - 1)
+                (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
               }
-              onClick={goToNextSlide}
+              onClick={() => clickRight()}
               rightIcon={<ArrowForwardIcon />}
             >
               {t('Next')}
