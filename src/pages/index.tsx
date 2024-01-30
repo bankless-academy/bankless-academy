@@ -83,6 +83,8 @@ const PARTNERS = [
   },
 ]
 
+const IS_PARTNERSHIP_ACTIVACTED = false
+
 const HomePage = (): JSX.Element => {
   const { t } = useTranslation('homepage')
   const [isSmallScreen] = useSmallScreen()
@@ -114,15 +116,17 @@ const HomePage = (): JSX.Element => {
               src="/images/BanklessAcademy.svg"
               alt="Bankless Academy"
             />
-            <Box ml="24%" w="73%">
-              <Text
-                fontSize={isSmallScreen ? '20px' : '26px'}
-                mt="-35px"
-                w="100%"
-              >
-                {t(`Your platform for exploring digital independence.`)}
-              </Text>
-            </Box>
+            {IS_PARTNERSHIP_ACTIVACTED && (
+              <Box ml="24%" w="73%">
+                <Text
+                  fontSize={isSmallScreen ? '20px' : '26px'}
+                  mt="-35px"
+                  w="100%"
+                >
+                  {t(`Your platform for exploring digital independence.`)}
+                </Text>
+              </Box>
+            )}
             <Box>
               <InternalLink href={`/lessons`} alt="Explore Lessons">
                 <Button
@@ -136,52 +140,54 @@ const HomePage = (): JSX.Element => {
             </Box>
           </Stack>
         </Center>
-        <Box
-          position="relative"
-          w="100%"
-          bgColor="#1F2023"
-          borderBottom="3px solid #423952"
-          pt="2"
-        >
+        {IS_PARTNERSHIP_ACTIVACTED && (
           <Box
-            position="absolute"
-            top="-18px"
-            left="0"
-            width="100%"
-            display="flex"
-            placeItems="center"
+            position="relative"
+            w="100%"
+            bgColor="#1F2023"
+            borderBottom="3px solid #423952"
+            pt="2"
           >
-            <Box w="100%" borderBottom="3px solid #423952" />
-            <Text fontSize="2xl" minW="280px" textAlign="center">
-              {t('Alongside our Partners:')}
-            </Text>
-            <Box w="100%" borderBottom="3px solid #423952" />
+            <Box
+              position="absolute"
+              top="-18px"
+              left="0"
+              width="100%"
+              display="flex"
+              placeItems="center"
+            >
+              <Box w="100%" borderBottom="3px solid #423952" />
+              <Text fontSize="2xl" minW="280px" textAlign="center">
+                {t('Alongside our Partners:')}
+              </Text>
+              <Box w="100%" borderBottom="3px solid #423952" />
+            </Box>
+            <Box
+              display="flex"
+              m="auto"
+              justifyContent="center"
+              flexWrap="wrap"
+              maxWidth="1650px"
+              placeContent="space-around"
+            >
+              {PARTNERS.map((partner) => (
+                <Box
+                  key={partner.name}
+                  m={isSmallScreen ? '20px 10px' : '30px 20px'}
+                >
+                  <ExternalLink href={partner.link}>
+                    <Image
+                      alt={partner.name}
+                      title={partner.name}
+                      height={isSmallScreen ? '40px' : '50px'}
+                      src={`/images/partners/${partner.image}`}
+                    />
+                  </ExternalLink>
+                </Box>
+              ))}
+            </Box>
           </Box>
-          <Box
-            display="flex"
-            m="auto"
-            justifyContent="center"
-            flexWrap="wrap"
-            maxWidth="1650px"
-            placeContent="space-around"
-          >
-            {PARTNERS.map((partner) => (
-              <Box
-                key={partner.name}
-                m={isSmallScreen ? '20px 10px' : '30px 20px'}
-              >
-                <ExternalLink href={partner.link}>
-                  <Image
-                    alt={partner.name}
-                    title={partner.name}
-                    height={isSmallScreen ? '40px' : '50px'}
-                    src={`/images/partners/${partner.image}`}
-                  />
-                </ExternalLink>
-              </Box>
-            ))}
-          </Box>
-        </Box>
+        )}
         <Box bgColor="#1F2023" p="4" overflow="hidden">
           <Container maxW="container.lg">
             <Box mt="6">
