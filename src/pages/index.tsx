@@ -114,8 +114,12 @@ const HomePage = (): JSX.Element => {
               src="/images/BanklessAcademy.svg"
               alt="Bankless Academy"
             />
-            <Box ml="20%" w="80%">
-              <Text fontSize={isSmallScreen ? 'xl' : '3xl'} mt="-35px" w="100%">
+            <Box ml="24%" w="73%">
+              <Text
+                fontSize={isSmallScreen ? '20px' : '26px'}
+                mt="-35px"
+                w="100%"
+              >
                 {t(`Your platform for exploring digital independence.`)}
               </Text>
             </Box>
@@ -153,9 +157,19 @@ const HomePage = (): JSX.Element => {
             </Text>
             <Box w="100%" borderBottom="3px solid #423952" />
           </Box>
-          <Box display="flex" m="auto" justifyContent="center" flexWrap="wrap">
+          <Box
+            display="flex"
+            m="auto"
+            justifyContent="center"
+            flexWrap="wrap"
+            maxWidth="1650px"
+            placeContent="space-around"
+          >
             {PARTNERS.map((partner) => (
-              <Box key={partner.name} m={isSmallScreen ? '20px' : '30px'}>
+              <Box
+                key={partner.name}
+                m={isSmallScreen ? '20px 10px' : '30px 20px'}
+              >
                 <ExternalLink href={partner.link}>
                   <Image
                     alt={partner.name}
