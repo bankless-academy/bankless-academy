@@ -50,6 +50,7 @@
     "@vercel/og": "^0.5.20",
     "@web3modal/wagmi": "^3.0.2",
     "axios": "^1.6.0",
+    "body-parser": "^1.20.2",
     "dotenv": "^10.0.0",
     "ethereum-blockies-base64": "^1.0.2",
     "ethereumjs-util": "^7.1.5",
@@ -90,7 +91,8 @@
     "tls": "^0.0.1",
     "usehooks-ts": "^2.7.1",
     "viem": "^1.19.15",
-    "wagmi": "^1.4.12"
+    "wagmi": "^1.4.12",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.4.13",

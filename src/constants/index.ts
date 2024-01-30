@@ -44,7 +44,7 @@ export const LOGO_SMALL =
   WHITELABEL?.logo_small || '/images/BanklessAcademy_Logo.svg'
 
 export const HOMEPAGE_BACKGROUND =
-  WHITELABEL?.homepage_background || '/images/homepage_background_v3.jpg'
+  WHITELABEL?.homepage_background || '/images/homepage_background_v4.jpg'
 
 export const UMAMI_PROD =
   WHITELABEL?.umami_prod || '62d1cf48-425d-4658-9b86-3eea78ac9714'
