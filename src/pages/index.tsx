@@ -99,7 +99,6 @@ const HomePage = (): JSX.Element => {
           bgImage={HOMEPAGE_BACKGROUND}
           bgSize="cover"
           bgPosition="center"
-          position="relative"
         >
           <Stack
             width="100%"
@@ -107,34 +106,34 @@ const HomePage = (): JSX.Element => {
             spacing={6}
             textAlign="center"
             alignItems="center"
-            pt="6vh"
+            justifyContent="space-around"
+            height="100%"
+            pt="28vh"
+            pb="30px"
           >
-            <Image
-              style={{
-                filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
-              }}
-              maxW="90%"
-              src="/images/BanklessAcademy.svg"
-              alt="Bankless Academy"
-            />
-            {IS_PARTNERSHIP_ACTIVACTED && (
-              <Box ml="24%" w="73%">
-                <Text
-                  fontSize={isSmallScreen ? '20px' : '26px'}
-                  mt="-35px"
-                  w="100%"
-                >
-                  {t(`Your platform for exploring digital independence.`)}
-                </Text>
-              </Box>
-            )}
-            <Box
-              position="absolute"
-              bottom="60px"
-              height="70px"
-              display="flex"
-              alignItems="center"
-            >
+            <Box w="100%" m="auto" maxW="90%">
+              <Image
+                style={{
+                  filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
+                }}
+                maxW="90%"
+                src="/images/BanklessAcademy.svg"
+                alt="Bankless Academy"
+                m="auto"
+              />
+              {IS_PARTNERSHIP_ACTIVACTED && (
+                <Box ml="25%" w="73%">
+                  <Text
+                    fontSize={isSmallScreen ? '20px' : '25px'}
+                    mt="-15px"
+                    w="100%"
+                  >
+                    {t(`Your platform for exploring digital independence.`)}
+                  </Text>
+                </Box>
+              )}
+            </Box>
+            <Box bottom="60px" height="70px" display="flex" alignItems="center">
               <InternalLink href={`/lessons`} alt="Explore Lessons">
                 <Button
                   variant="primary"
