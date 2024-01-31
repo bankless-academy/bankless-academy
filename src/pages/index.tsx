@@ -58,7 +58,7 @@ const NewsletterButton = styled(Button)`
 const PARTNERS = [
   {
     name: 'Gitcoin',
-    image: 'Gitcoin.svg',
+    image: 'Gitcoin.png',
     link: 'https://www.gitcoin.co/',
   },
   {
@@ -83,7 +83,7 @@ const PARTNERS = [
   },
 ]
 
-const IS_PARTNERSHIP_ACTIVACTED = false
+const IS_PARTNERSHIP_ACTIVACTED = true
 
 const HomePage = (): JSX.Element => {
   const { t } = useTranslation('homepage')
@@ -99,6 +99,7 @@ const HomePage = (): JSX.Element => {
           bgImage={HOMEPAGE_BACKGROUND}
           bgSize="cover"
           bgPosition="center"
+          position="relative"
         >
           <Stack
             width="100%"
@@ -106,7 +107,7 @@ const HomePage = (): JSX.Element => {
             spacing={6}
             textAlign="center"
             alignItems="center"
-            pt="20vh"
+            pt="6vh"
           >
             <Image
               style={{
@@ -127,14 +128,24 @@ const HomePage = (): JSX.Element => {
                 </Text>
               </Box>
             )}
-            <Box>
+            <Box
+              position="absolute"
+              bottom="60px"
+              height="70px"
+              display="flex"
+              alignItems="center"
+            >
               <InternalLink href={`/lessons`} alt="Explore Lessons">
                 <Button
                   variant="primary"
                   size="lg"
+                  height="-webkit-fit-content"
+                  width="-webkit-fit-content"
                   style={{ padding: '0 23px' }}
                 >
-                  {t('Explore Lessons')}
+                  <Box m="21px" fontSize="20px">
+                    {t('Explore Lessons')}
+                  </Box>
                 </Button>
               </InternalLink>
             </Box>
@@ -157,8 +168,8 @@ const HomePage = (): JSX.Element => {
               placeItems="center"
             >
               <Box w="100%" borderBottom="3px solid #423952" />
-              <Text fontSize="2xl" minW="280px" textAlign="center">
-                {t('Alongside our Partners:')}
+              <Text fontSize="xl" minW="250px" textAlign="center">
+                {t('alongside our Partners:')}
               </Text>
               <Box w="100%" borderBottom="3px solid #423952" />
             </Box>
