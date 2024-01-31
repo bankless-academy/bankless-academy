@@ -300,12 +300,8 @@ const Badges = ({
                             border="1px #2d292d solid"
                             borderRadius="8px"
                             title={platform.name}
-                            cursor={
-                              isMyProfile && !ownsBadge ? 'pointer' : 'default'
-                            }
-                            onClick={() =>
-                              isMyProfile && !ownsBadge && onOpen()
-                            }
+                            cursor={isMyProfile ? 'pointer' : 'default'}
+                            onClick={() => isMyProfile && onOpen()}
                           />
                         </Box>
                       )
