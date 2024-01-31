@@ -56,6 +56,7 @@ const App = ({
       <>
         <Head metadata={pageProps.pageMeta} />
         <ThemeProvider>
+          <Global styles={css``} />
           <NonSSRWrapper>
             <Component {...pageProps} />
           </NonSSRWrapper>
@@ -233,6 +234,11 @@ const App = ({
                 .chakra-popover__arrow {
                   background: #86629c !important;
                   box-shadow: none !important;
+                }
+                #chakra-toast-manager-top-left {
+                  top: 20% !important;
+                  left: 2vh !important;
+                  max-width: 30vh !important;
                 }
               `}
             />
