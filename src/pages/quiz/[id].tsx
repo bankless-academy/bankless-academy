@@ -6,7 +6,7 @@ import { z } from 'zod'
 import { Box, Button } from '@chakra-ui/react'
 
 import { ImageData, Props } from 'pages/api/frame-og/[props]'
-import { LESSONS } from 'constants/index'
+import { DOMAIN_URL, LESSONS } from 'constants/index'
 import ExternalLink from 'components/ExternalLink'
 
 const questionSchema = z.object({
@@ -58,7 +58,7 @@ export default function UI({
             <meta name="fc:frame:button:1:action" content="post_redirect" />
             <meta
               property="fc:frame:post_url"
-              content={`/api/frame/redirect?id=${lessonSlug}`}
+              content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}`}
             />
           </>
         ) : (
