@@ -31,15 +31,17 @@ export type Quiz = z.infer<typeof quizSchema>
 
 type State = z.infer<typeof schema>
 
-const CTA = 'Start learning and mint your free lesson badge!'
+const CTA = 'Continue learning and mint your free lesson badge!'
+
+const VERSION = 2
 
 export default function UI({
   image,
   action,
   buttons,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const lessonLink = action.replace('/quiz/', '/lessons/')?.split('?state')[0]
-  const lessonSlug = action?.split('?state')[0]?.split('/').pop()
+  const lessonLink = action.replace('/quiz/', '/lessons/')?.split('?')[0]
+  const lessonSlug = action?.split('?')[0]?.split('/').pop()
   return (
     <>
       <Head>
@@ -81,7 +83,7 @@ export default function UI({
           <Box mt="2">
             {buttons.map((button, index) =>
               button && button === CTA ? (
-                <ExternalLink href={lessonLink}>
+                <ExternalLink href={`${lessonLink}?referral=quiz`}>
                   <Button
                     key={button}
                     name="buttonIndex"
@@ -180,7 +182,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 
   return {
     props: {
-      v: 1,
+      v: VERSION,
       image: new URL(
         `/api/frame-og/${ImageData.serialize(props)}`,
         url
@@ -229,7 +231,7 @@ function render(
   if (state.index === 0) {
     return {
       props: {
-        v: 1,
+        v: VERSION,
         state: {
           type: 'intro',
           name: quiz.name,
@@ -244,7 +246,7 @@ function render(
   if (!question) {
     return {
       props: {
-        v: 1,
+        v: VERSION,
         state: {
           type: 'result',
           win: state.score === quiz.questions.length,
@@ -257,7 +259,7 @@ function render(
   if (state.selected == null) {
     return {
       props: {
-        v: 1,
+        v: VERSION,
         state: {
           type: 'question',
           question: question.question,
@@ -271,7 +273,7 @@ function render(
     const question = quiz.questions[state.index - 1]
     return {
       props: {
-        v: 1,
+        v: VERSION,
         state: {
           type: 'question',
           question: question.question,
