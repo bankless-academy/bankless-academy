@@ -31,7 +31,7 @@ export type Quiz = z.infer<typeof quizSchema>
 
 type State = z.infer<typeof schema>
 
-const CTA = 'Start learning!'
+const CTA = 'Start learning and mint your free lesson badge!'
 
 export default function UI({
   image,
@@ -180,6 +180,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
         description: lesson.description,
         image: lesson.socialImageLink,
         nolayout: true,
+        ssr: true,
       },
     },
   }
@@ -235,6 +236,7 @@ function render(
         state: {
           type: 'result',
           win: state.score === quiz.questions.length,
+          score: `${state.score}/${quiz.questions.length}`,
         },
       },
       buttons: [CTA],

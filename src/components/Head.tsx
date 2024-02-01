@@ -25,6 +25,7 @@ export interface MetaData {
   canonical?: string
   noindex?: boolean
   nolayout?: boolean
+  ssr?: boolean
 }
 
 const umamiWebsiteId =
