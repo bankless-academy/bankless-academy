@@ -68,14 +68,14 @@ function Screen(props: Props) {
             border: '3px solid #646587',
             borderRadius: '8px',
             padding: '15px 40px',
-            marginTop: '280px',
+            marginTop: '240px',
           }}
         >
           {`Score: ${props.state.score}`}
         </div>
         <div
           tw="flex flex-col items-center text-center"
-          style={{ fontSize: 50, color: 'white', marginTop: 50 }}
+          style={{ fontSize: 50, color: 'white', marginTop: 20 }}
         >
           <span>Learn more about this topic at</span>
           <span style={{ color: '#FFBF00' }}>banklessacademy.com</span>
@@ -86,10 +86,10 @@ function Screen(props: Props) {
 
   const buttons = ['A', 'B', 'C', 'D']
   const coords = [
-    { x: 123, y: 317 },
-    { x: 654, y: 317 },
-    { x: 123, y: 444 },
-    { x: 654, y: 444 },
+    { x: 123, y: 288 },
+    { x: 654, y: 288 },
+    { x: 123, y: 415 },
+    { x: 654, y: 415 },
   ]
 
   const { selection } = props.state
@@ -161,7 +161,7 @@ function WWTBAMUI({
     >
       <rect
         x="99.5"
-        y="307.5"
+        y="280"
         width="472"
         height="103"
         rx="9.5"
@@ -172,7 +172,7 @@ function WWTBAMUI({
       />
       <rect
         x="624.5"
-        y="307.5"
+        y="280"
         width="472"
         height="103"
         rx="9.5"
@@ -183,7 +183,7 @@ function WWTBAMUI({
       />
       <rect
         x="99.5"
-        y="434.5"
+        y="407"
         width="472"
         height="103"
         rx="9.5"
@@ -194,7 +194,7 @@ function WWTBAMUI({
       />
       <rect
         x="624.5"
-        y="434.5"
+        y="407"
         width="472"
         height="103"
         rx="9.5"

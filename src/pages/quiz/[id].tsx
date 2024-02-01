@@ -39,6 +39,7 @@ export default function UI({
   buttons,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const lessonLink = action.replace('/quiz/', '/lessons/')?.split('?state')[0]
+  const lessonSlug = action?.split('?state')[0]?.split('/').pop()
   return (
     <>
       <Head>
@@ -51,7 +52,18 @@ export default function UI({
             content={button}
           />
         ))}
-        <meta property="fc:frame:post_url" content={action} />
+
+        {buttons[0] === CTA ? (
+          <>
+            <meta name="fc:frame:button:1:action" content="post_redirect" />
+            <meta
+              property="fc:frame:post_url"
+              content={`/api/frame/redirect?id=${lessonSlug}`}
+            />
+          </>
+        ) : (
+          <meta property="fc:frame:post_url" content={action} />
+        )}
       </Head>
       <form
         action={action}
