@@ -106,12 +106,12 @@ const HomePage = (): JSX.Element => {
             spacing={6}
             textAlign="center"
             alignItems="center"
-            justifyContent="space-around"
+            justifyContent="space-evenly"
             height="100%"
-            pt="28vh"
-            pb="30px"
+            pt="27vh"
+            pb="45px"
           >
-            <Box w="100%" m="auto" maxW="90%">
+            <Box w="100%" maxW="90%">
               <Image
                 style={{
                   filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
