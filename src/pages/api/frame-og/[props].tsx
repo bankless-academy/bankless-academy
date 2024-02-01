@@ -68,7 +68,7 @@ function Screen(props: Props) {
             border: '3px solid #646587',
             borderRadius: '8px',
             padding: '15px 40px',
-            marginTop: '240px',
+            marginTop: '180px',
           }}
         >
           {`Score: ${props.state.score}`}

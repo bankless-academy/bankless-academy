@@ -8,6 +8,8 @@ export default async function handler(
 ) {
   const { id } = req.query
   const redirect = `${DOMAIN_URL}/lessons/${id}`
-  res.setHeader('redirect', redirect)
-  return res.status(302).redirect(redirect)
+  return res
+    .status(302)
+    .setHeader('Location', redirect)
+    .send('Redirecting to lesson.')
 }
