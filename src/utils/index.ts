@@ -27,6 +27,8 @@ import UDPolygonABI from 'abis/UDPolygon.json'
 import UDABI from 'abis/UD.json'
 import { LessonType } from 'entities/lesson'
 import { UserStatsType } from 'entities/user'
+import { gql } from 'graphql-request'
+import { graphQLClient } from 'utils/airstack'
 
 declare global {
   interface Window {
@@ -301,6 +303,48 @@ export async function validateOnchainQuest(
       const balance = parseFloat(ethers.utils.formatEther(bigNumberBalance))
       console.log('balance: ', balance)
       return balance >= 0.001
+    }
+    else if (quest === 'StakingOnEthereum') {
+      const query = gql`
+      query MyQuery {
+        Ethereum: TokenBalances(
+          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0xae78736cd615f374d3085123a210448e74fc6393"}, tokenType: {_eq: ERC20}}, blockchain: ethereum, limit: 50}
+        ) {
+          TokenBalance {
+            formattedAmount
+          }
+        }
+        Base: TokenBalances(
+          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0xb6fe221fe9eef5aba221c348ba20a1bf5e73624c"}, tokenType: {_eq: ERC20}}, blockchain: base, limit: 50}
+        ) {
+          TokenBalance {
+            formattedAmount
+          }
+        }
+        Polygon: TokenBalances(
+          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0x0266f4f08d82372cf0fcbccc0ff74309089c74d1"}, tokenType: {_eq: ERC20}}, blockchain: polygon, limit: 50}
+        ) {
+          TokenBalance {
+            formattedAmount
+          }
+        }
+      }`
+      try {
+        const data = await graphQLClient.request(query)
+        const networks = Object.keys(data)
+        let balance = 0
+        for (const network of networks) {
+          if (data[network].TokenBalance !== null) {
+            balance += data[network].TokenBalance[0].formattedAmount
+          }
+        }
+        console.log(data)
+        console.log(balance)
+        return balance >= 0.001
+      } catch (e) {
+        console.error(e)
+        return false
+      }
     }
     else if (quest === 'OptimismGovernance') {
       const optimism: Network = {

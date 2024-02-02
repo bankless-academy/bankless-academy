@@ -86,7 +86,7 @@ export default async function handler(
             error: 'Onchain quest not completed',
           })
       }
-      else if (['Layer2Blockchains', 'OptimismGovernance'].includes(quest)) {
+      else if (['Layer2Blockchains', 'OptimismGovernance', 'StakingOnEthereum'].includes(quest)) {
         const isOnchainQuestCompleted = await validateOnchainQuest(quest, address)
         if (!isOnchainQuestCompleted)
           return res.status(200).json({
