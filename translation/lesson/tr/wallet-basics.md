@@ -109,7 +109,7 @@ Açık anahtarı bir posta kutusunun adresi gibi de düşünebilirsiniz. Bu anah
 
 **Not:** Bazen tek bir cüzdan hesabı, birden fazla açık anahtar (ve `özel anahtar`) içerebilir. Tek bir hesap altında birçok posta kutusuna sahip olmak gibi.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-416eaa27.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-7aff448d.svg)
 
 # Cüzdanınızın özel anahtarı
 
@@ -125,7 +125,7 @@ Açık anahtar, bir paroladan daha fazlasıdır. Erişiminizi kaybederseniz sıf
 
 Neyse ki, çoğu `web3` uygulaması ve programı, her para göndermeniz veya bir blok zinciri işlemini imzalamanız gerektiğinde uzun, karmaşık bir karakter dizisini özenle yazmanızı gerektirmez. Özel anahtar genellikle arka planda sessizce çalışır.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-f4966ef4.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-909a8ebf.svg)
 
 # Knowledge Check 2
 
@@ -165,7 +165,7 @@ Kurtarma ifadeniz aslında açık/özel anahtar çiftinizin okunması daha kolay
 
 **Kurtarma ifadesini asla paylaşmayın.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-d856b83a.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c98b3a63.svg)
 
 # Knowledge Check 3
 
