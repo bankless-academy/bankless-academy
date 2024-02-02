@@ -109,7 +109,7 @@ Si può anche pensare a una chiave pubblica come l'indirizzo di una casella post
 
 **Nota:** a volte un singolo account di un portafoglio può contenere molteplici chiavi pubbliche (e `private`). Un po' come avere molte caselle postali sotto un unico account.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-416eaa27.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-7aff448d.svg)
 
 # La chiave privata del tuo portafoglio
 
@@ -125,7 +125,7 @@ Questo è più di una semplice password. Non è possibile ripristinarla se si pe
 
 Fortunatamente, la maggior parte delle applicazioni e dei programmi `web3` non richiedono di digitare faticosamente una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione blockchain. La chiave privata di solito opera silenziosamente in background.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-f4966ef4.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-909a8ebf.svg)
 
 # Knowledge Check 2
 
@@ -165,7 +165,7 @@ La tua frase di recupero è essenzialmente una versione più facile da leggere d
 
 **Non condividere mai una frase di recupero.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-d856b83a.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c98b3a63.svg)
 
 # Knowledge Check 3
 
