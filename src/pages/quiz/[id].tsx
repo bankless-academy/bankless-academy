@@ -66,19 +66,25 @@ export default function UI({
         ) : (
           <meta property="fc:frame:post_url" content={action} />
         )}
-        {/* Lens Portal */}
+        {/* Lens Portals */}
         <meta property="hey:portal" content="vLatest" />
         <meta property="hey:portal:image" content={image} />
         {buttons.map((button, index) => (
-          <meta
-            key={index}
-            property={`hey:portal:button:${index + 1}`}
-            content={button}
-          />
+          <>
+            <meta
+              property={`hey:portal:button:${index + 1}:type`}
+              content="submit"
+            />
+            <meta
+              key={index}
+              property={`hey:portal:button:${index + 1}`}
+              content={button}
+            />
+          </>
         ))}
         {buttons[0] === CTA ? (
           <>
-            <meta name="hey:portal:button:1:action" content="post_redirect" />
+            <meta property="hey:portal:button:1:type" content="redirect" />
             <meta
               property="hey:portal:post_url"
               content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}`}
