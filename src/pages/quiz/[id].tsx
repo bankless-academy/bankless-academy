@@ -42,6 +42,8 @@ export default function UI({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const lessonLink = action.replace('/quiz/', '/lessons/')?.split('?')[0]
   const lessonSlug = action?.split('?')[0]?.split('/').pop()
+
+  const isRedirect = buttons?.length && buttons[0] === CTA
   return (
     <>
       <Head>
@@ -50,46 +52,44 @@ export default function UI({
         <meta property="fc:frame:image" content={image} />
         {buttons.map((button, index) => (
           <meta
-            key={button}
+            key={`frame-${index}`}
             property={`fc:frame:button:${index + 1}`}
             content={button}
           />
         ))}
-        {buttons[0] === CTA ? (
-          <>
-            <meta name="fc:frame:button:1:action" content="post_redirect" />
-            <meta
-              property="fc:frame:post_url"
-              content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}`}
-            />
-          </>
+        {isRedirect ? (
+          <meta
+            property="fc:frame:post_url"
+            content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}`}
+          />
         ) : (
           <meta property="fc:frame:post_url" content={action} />
+        )}
+        {isRedirect && (
+          <meta name="fc:frame:button:1:action" content="post_redirect" />
         )}
         {/* Lens Portals */}
         <meta property="hey:portal" content="vLatest" />
         <meta property="hey:portal:image" content={image} />
         {buttons.map((button, index) => (
-          <>
-            <meta
-              property={`hey:portal:button:${index + 1}:type`}
-              content="submit"
-            />
-            <meta
-              key={index}
-              property={`hey:portal:button:${index + 1}`}
-              content={button}
-            />
-          </>
+          <meta
+            key={`portal-type-${index}`}
+            property={`hey:portal:button:${index + 1}:type`}
+            content={isRedirect ? 'redirect' : 'submit'}
+          />
         ))}
-        {buttons[0] === CTA ? (
-          <>
-            <meta property="hey:portal:button:1:type" content="redirect" />
-            <meta
-              property="hey:portal:post_url"
-              content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}`}
-            />
-          </>
+        {buttons.map((button, index) => (
+          <meta
+            key={`portal-${index}`}
+            property={`hey:portal:button:${index + 1}`}
+            content={button}
+          />
+        ))}
+        {isRedirect ? (
+          <meta
+            property="hey:portal:post_url"
+            content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}`}
+          />
         ) : (
           <meta property="hey:portal:post_url" content={action} />
         )}
@@ -110,9 +110,8 @@ export default function UI({
           <Box mt="2">
             {buttons.map((button, index) =>
               button && button === CTA ? (
-                <ExternalLink href={`${lessonLink}?referral=quiz`}>
+                <ExternalLink key={button} href={`${lessonLink}?referral=quiz`}>
                   <Button
-                    key={button}
                     name="buttonIndex"
                     variant="primaryWhite"
                     value={index + 1}
