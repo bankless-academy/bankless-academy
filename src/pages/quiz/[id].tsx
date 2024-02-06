@@ -60,7 +60,7 @@ export default function UI({
         {isRedirect ? (
           <meta
             property="fc:frame:post_url"
-            content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}`}
+            content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}&platform=farcaster`}
           />
         ) : (
           <meta property="fc:frame:post_url" content={action} />
@@ -88,7 +88,7 @@ export default function UI({
         {isRedirect ? (
           <meta
             property="hey:portal:post_url"
-            content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}`}
+            content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}&platform=hey`}
           />
         ) : (
           <meta property="hey:portal:post_url" content={action} />

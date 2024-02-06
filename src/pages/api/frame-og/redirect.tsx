@@ -6,8 +6,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { id } = req.query
-  const redirect = `${DOMAIN_URL}/lessons/${id}?referral=quiz`
+  const { id, platform } = req.query
+  const redirect = `${DOMAIN_URL}/lessons/${id}?referral=quiz_${platform}`
   return res
     .status(302)
     .setHeader('Location', redirect)
