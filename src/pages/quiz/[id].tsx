@@ -45,6 +45,7 @@ export default function UI({
   return (
     <>
       <Head>
+        {/* Farcaster Frame */}
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content={image} />
         {buttons.map((button, index) => (
@@ -54,7 +55,6 @@ export default function UI({
             content={button}
           />
         ))}
-
         {buttons[0] === CTA ? (
           <>
             <meta name="fc:frame:button:1:action" content="post_redirect" />
@@ -65,6 +65,27 @@ export default function UI({
           </>
         ) : (
           <meta property="fc:frame:post_url" content={action} />
+        )}
+        {/* Lens Portal */}
+        <meta property="hey:portal" content="vLatest" />
+        <meta property="hey:portal:image" content={image} />
+        {buttons.map((button, index) => (
+          <meta
+            key={index}
+            property={`hey:portal:button:${index + 1}`}
+            content={button}
+          />
+        ))}
+        {buttons[0] === CTA ? (
+          <>
+            <meta name="hey:portal:button:1:action" content="post_redirect" />
+            <meta
+              property="hey:portal:post_url"
+              content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}`}
+            />
+          </>
+        ) : (
+          <meta property="hey:portal:post_url" content={action} />
         )}
       </Head>
       <form
