@@ -562,7 +562,7 @@ const Article = ({
   return (
     <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
       <Image
-        src={lesson.socialImageLink}
+        src={lesson.lessonImageLink}
         w="100%"
         h="auto"
         borderRadius={isSmallScreen ? '0' : '0.375rem'}

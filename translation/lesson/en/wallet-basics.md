@@ -109,7 +109,7 @@ It is perfectly safe to share your **public key**.
 
 **Note:** sometimes a single wallet account can hold multiple public (and `private keys`). Kind of like having many post office boxes under one account.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-416eaa27.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-7aff448d.svg)
 
 # Your wallet’s private key
 
@@ -125,7 +125,7 @@ This is more than just a password. You cannot reset it if you lose access to it.
 
 Luckily, most `web3` applications and programs do not require you to painstakingly type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-f4966ef4.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-909a8ebf.svg)
 
 # Knowledge Check 2
 
@@ -165,7 +165,7 @@ Your recovery phrase is essentially an easier to read version of your public/pri
 
 **Never share a recovery phrase.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-d856b83a.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c98b3a63.svg)
 
 # Knowledge Check 3
 

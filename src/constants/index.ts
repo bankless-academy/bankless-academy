@@ -23,6 +23,11 @@ export const DOMAIN_URL =
       ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
       : `https://${DOMAIN_PROD}`
 
+export const DOMAIN_URL_ = DOMAIN_URL?.replace(
+  'http://localhost:3000',
+  'https://ba.krux.dev'
+)
+
 export const imageMeta = WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
 
 export const DEFAULT_METADATA: MetaData = {

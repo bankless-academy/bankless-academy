@@ -30,9 +30,9 @@ const LESSONS: LessonType[] = [
     imageLinks: [
       '/images/wallet-basics/wallet-intro-cf4e23c2.png',
       '/images/wallet-basics/wallet-definition-0816ac58.svg',
-      '/images/wallet-basics/your-wallets-public-key-416eaa27.svg',
-      '/images/wallet-basics/your-wallets-private-key-f4966ef4.svg',
-      '/images/wallet-basics/recovery-phrase-d856b83a.svg',
+      '/images/wallet-basics/your-wallets-public-key-7aff448d.svg',
+      '/images/wallet-basics/your-wallets-private-key-909a8ebf.svg',
+      '/images/wallet-basics/recovery-phrase-c98b3a63.svg',
       '/images/wallet-basics/types-of-wallet-aa1a0445.png',
       '/images/wallet-basics/custodial-wallets-8d2418ba.svg',
       '/images/wallet-basics/non-custodial-wallet-fb499cf7.svg',
@@ -109,13 +109,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'd5ecee5c72b6408598153431417d9596',
         title: 'Your wallet’s public key',
-        content: '<div class="bloc1"><p>A <code>public key</code> is basically your wallet’s name. Often, this looks like a jumble of random letters and numbers.</p><p>Example: <em>0xe1887fF140BfA9D3b45D0B2077b7471124acD242</em></p><p>It is possible to create easier to remember versions of this with some web3 services, but that’s a lesson for another time.</p><p>You can also think of a public key like the address of a post office box. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.</p><p>It is perfectly safe to share your <strong>public key</strong>.</p><p><strong>Note: </strong>sometimes a single wallet account can hold multiple public (and <code>private keys</code>). Kind of like having many post office boxes under one account.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/your-wallets-public-key-416eaa27.svg\'></div>'
+        content: '<div class="bloc1"><p>A <code>public key</code> is basically your wallet’s name. Often, this looks like a jumble of random letters and numbers.</p><p>Example: <em>0xe1887fF140BfA9D3b45D0B2077b7471124acD242</em></p><p>It is possible to create easier to remember versions of this with some web3 services, but that’s a lesson for another time.</p><p>You can also think of a public key like the address of a post office box. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.</p><p>It is perfectly safe to share your <strong>public key</strong>.</p><p><strong>Note: </strong>sometimes a single wallet account can hold multiple public (and <code>private keys</code>). Kind of like having many post office boxes under one account.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/your-wallets-public-key-7aff448d.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '9cd06f2632d8478082d56e5fdbd3ba37',
         title: 'Your wallet’s private key',
-        content: '<div class="bloc1"><p>If the public key is like a post office box, then the <code>private key</code> is like the key to the box. It is the “password” to your funds and assets.</p><p>It almost always looks like a random jumble of letters and numbers.</p><p>I<strong>t is never safe to share this key — you could lose your wallet and everything in it.</strong></p><p>Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the <code>wallet</code>.</p><p>This is more than just a password. You cannot reset it if you lose access to it.</p><p>Luckily, most <code>web3</code> applications and programs do not require you to painstakingly type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/your-wallets-private-key-f4966ef4.svg\'></div>'
+        content: '<div class="bloc1"><p>If the public key is like a post office box, then the <code>private key</code> is like the key to the box. It is the “password” to your funds and assets.</p><p>It almost always looks like a random jumble of letters and numbers.</p><p>I<strong>t is never safe to share this key — you could lose your wallet and everything in it.</strong></p><p>Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the <code>wallet</code>.</p><p>This is more than just a password. You cannot reset it if you lose access to it.</p><p>Luckily, most <code>web3</code> applications and programs do not require you to painstakingly type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/your-wallets-private-key-909a8ebf.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -143,7 +143,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'd1e68cf58a2943abb3da709fa9c4728e',
         title: 'Recovery Phrase',
-        content: '<div class="bloc1"><p>When you set up a new wallet, the software generates a unique <code>recovery phrase</code>.</p><p>Also sometimes called a “seed phrase” or “secret recovery phrase”, this string of words can be used to access your wallet and crypto assets if:</p><ul><li>Your <code>wallet</code> app or device fails unexpectedly or is damaged.</li><li>You are unable to access it due to misplacement or theft.</li><li>You want to access your wallet account through the wallet app on a different computer or device.</li></ul><p>Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. That data is used to generate both the <code>public key</code> and <code>private key</code> for your wallet.</p><p>This does <strong>not </strong>change or reset the keys.</p><p>Your recovery phrase is essentially an easier to read version of your public/private key pair.</p><p><strong>Never share a recovery phrase.</strong></p></div><div class="bloc2"><img src=\'/images/wallet-basics/recovery-phrase-d856b83a.svg\'></div>'
+        content: '<div class="bloc1"><p>When you set up a new wallet, the software generates a unique <code>recovery phrase</code>.</p><p>Also sometimes called a “seed phrase” or “secret recovery phrase”, this string of words can be used to access your wallet and crypto assets if:</p><ul><li>Your <code>wallet</code> app or device fails unexpectedly or is damaged.</li><li>You are unable to access it due to misplacement or theft.</li><li>You want to access your wallet account through the wallet app on a different computer or device.</li></ul><p>Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. That data is used to generate both the <code>public key</code> and <code>private key</code> for your wallet.</p><p>This does <strong>not </strong>change or reset the keys.</p><p>Your recovery phrase is essentially an easier to read version of your public/private key pair.</p><p><strong>Never share a recovery phrase.</strong></p></div><div class="bloc2"><img src=\'/images/wallet-basics/recovery-phrase-c98b3a63.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -337,8 +337,8 @@ const LESSONS: LessonType[] = [
       '/images/what-is-bitcoin/a-brief-history-of-money-b5126abd.svg',
       '/images/what-is-bitcoin/a-brief-history-of-money-pt-2-3f9be5ac.svg',
       '/images/what-is-bitcoin/enter-bitcoin-b108517c.svg',
-      '/images/what-is-bitcoin/digital-gold-scarcity-422a5cae.svg',
-      '/images/what-is-bitcoin/digital-gold-self-custody-a0d1b047.svg',
+      '/images/what-is-bitcoin/digital-gold-scarcity-eae248f0.svg',
+      '/images/what-is-bitcoin/digital-gold-self-custody-18bd7ba3.svg',
       '/images/what-is-bitcoin/bitcoin-its-like-emailing-money-2e2fb8ad.svg',
       '/images/what-is-bitcoin/how-does-it-work-c57acb1b.svg',
       '/images/what-is-bitcoin/how-does-it-work-pt-2-799bae09.svg',
@@ -347,14 +347,13 @@ const LESSONS: LessonType[] = [
     ],
     keywords: [
       'blockchain technology',
-      'cryptocurrency',
+      'cryptocurrency,',
       'money',
       'satoshi nakamoto',
+      'cryptocurrency',
       'scarcity',
       'gold standard',
-      'neutrality',
       'self-custodial',
-      'inflation',
       'cryptocurrency mining',
       'self-custody',
       'cryptocurrency wallet',
@@ -370,19 +369,19 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'be804c6aecad43af911a5b34026fe79a',
         title: 'Welcome to Bankless Academy',
-        content: '<div class="bloc1"><p>Welcome, bold Explorer, to the frontier of digital innovation.</p><p>At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge for “going bankless!”</p><p>Using the new era of the internet and <code>blockchain technology</code>, we’re unlocking financial freedom, and reclaiming ownership of our data and privacy — from third-parties harvesting it for profit.</p><p>Today we’re looking at the first event in blockchain history: the invention of <code>cryptocurrency</code>. Cryptocurrency is a type of <code>money</code> that moves outside of traditional financial systems, for reasons we’ll be investigating throughout our lesson.</p><p>The cryptocurrency boom began with the invention of Bitcoin…</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/welcome-to-bankless-academy-cc6189d4.png\'></div>'
+        content: '<div class="bloc1"><p>Welcome, bold Explorer, to the frontier of digital innovation.</p><p>At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge for “going bankless!”</p><p>Using the new era of the internet and <code>blockchain technology</code>, we’re unlocking financial freedom and reclaiming ownership of our data and privacy. Which have long been exploited by third parties for profit. </p><p>Today, we’re looking at the first event in blockchain history: the invention of <code>cryptocurrency,</code> a type of <code>money</code> that moves outside of traditional financial systems. </p><p>The cryptocurrency boom began with the invention of Bitcoin…</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/welcome-to-bankless-academy-cc6189d4.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'e1ba1d31d16b4430afa774522ff13fb2',
         title: 'Bitcoin’s Story',
-        content: '<div class="bloc1"><p>Launched in 2009 by the mysterious “<code>Satoshi Nakamoto</code>”, Bitcoin marked the beginning of a new economic era.</p><p>As the first successful <code>cryptocurrency</code>, Bitcoin began a powerful conversation: should the control of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it everyday? If you’re unsure of what exactly this means, you’re in the right place!</p><p>The reality is that today we aren’t really in control of our money.</p><p>It’s time to explore the captivating story of Bitcoin, and learn how the cryptocurrency movement is solving the unseen dilemma behind one of humanity’s oldest tools.</p><p><strong>It’s time to rethink money.</strong></p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/bitcoins-story-98b007a5.png\'></div>'
+        content: '<div class="bloc1"><p>Launched in 2009 by the mysterious “<code>Satoshi Nakamoto</code>,” Bitcoin marked the beginning of a new economic era.</p><p>As the first successful <code>cryptocurrency</code>, Bitcoin began a powerful conversation: should the control of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!</p><p>The reality is that today, we aren’t really in control of our money.</p><p>Dive into Bitcoin\'s journey and how it\'s reshaping finance by tackling age-old challenges.</p><p><strong>It’s time to rethink money.</strong></p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/bitcoins-story-98b007a5.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '30cb635e7580485793f2935d39b1f007',
         title: 'A Brief History of Money',
-        content: '<div class="bloc1"><p>Money has been an integral part of society since our earliest days, where beads, shells and stones were used to exchange goods & services.</p><p>Yet early currencies had a problem: it was too easy for someone to find/create new money. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.</p><p>Materials like gold & silver were eventually adopted to solve this problem. Their <code>scarcity</code> meant that it would be difficult for anyone to add more money to the existing supply.</p><p>As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Such currency made money recognizable, measurable, while serving as a strong store of value.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/a-brief-history-of-money-b5126abd.svg\'></div>'
+        content: '<div class="bloc1"><p>Money has been an integral part of society since our earliest days when beads, shells, and stones were used to exchange goods & services.</p><p>Yet early currencies had a problem: it was too easy for someone to find/create new money. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.</p><p>Materials like gold & silver were eventually adopted to solve this problem. The key advantage of these materials was their scarcity – there wasn\'t an endless supply, making it hard for anyone to increase the amount of money in circulation significantly. This <code>scarcity</code>helped maintain the value of the money.</p><p>As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Such currency made money recognizable and measurable while serving as a strong store of value.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/a-brief-history-of-money-b5126abd.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -402,25 +401,25 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '71abd63b1fa8418e96ad038bbc51cb34',
         title: 'A Brief History of Money (Pt. 2)',
-        content: '<div class="bloc1"><p>With the introduction of paper money, currencies shifted to being \'backed\' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.</p><p>Then, in the 20th century, came the fall of this “<code>Gold Standard</code>”. </p><p>Precious metals were slowly disconnected from currencies across the world — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the supply of money, they could also control its value.</p><p>Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also put for-profit businesses between people and their money.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/a-brief-history-of-money-pt-2-3f9be5ac.svg\'></div>'
+        content: '<div class="bloc1"><p>With the introduction of paper money, currencies shifted to being \'backed\' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.</p><p>Then, in the 20th century, came the fall of this “<code>Gold Standard</code>”. </p><p>Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.</p><p>Moving into the digital age, the electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/a-brief-history-of-money-pt-2-3f9be5ac.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '459a1518417540c99dc0a0f68ac9cef5',
         title: 'The Problem',
-        content: '<div class="bloc1"><p>Money has lost its <code>neutrality</code> and economic reliability. It has evolved in a way that gives the banking community majority control over the value and ownership of money. </p><p>Money’s value is diluted by the central bank, eroding your long-term savings year by year. Money’s control has been handed over to commercial banks, removing true ownership over your funds.</p><p>These properties have given the financial sector a disproportionate advantage over the vast majority of a country. As we’ll see, this imbalance is widening the wealth gap between the upper, middle and lower classes — and eroding quality of life for the average citizen.</p><hr><p>For money to once again be neutral and reliable, it must regain the two key properties it has lost:</p><p>💎 <strong>Value:</strong> Money must reliably store its worth over time. You shouldn\'t feel rushed to spend it because it might lose value.</p><p>✊ <strong>Ownership:</strong> Money must be under your complete control. Any confiscation should require fair legal process — not quick decisions made behind closed doors.</p><p>Only these qualities can return financial freedom & security to modern money.</p></div>'
+        content: '<div class="bloc1"><p>The main problem with our financial system is the lack of control you have over your money. Central banks control the value of money and therefore your spending habits. Subject to human error and greed, mistakes can be made. So, we need money that is beyond control of a single entity and reliably stores its value over time. </p><p>Meanwhile, banks can restrict access to your funds and control where and when you can make transactions. This setup can hinder your financial growth and contribute to wider economic inequality and reduced living standards.</p><hr><p>For money to once again be neutral and reliable, it must regain the two key properties it has lost:</p><p>💎 <strong>Value:</strong> Money must reliably store its worth over time. </p><p>✊ <strong>Ownership:</strong> Money must be under your complete control. Access to it should be guaranteed and protected.</p><p>Only these qualities can return financial freedom & security to modern money.</p></div>'
       },
       {
         type: 'LEARN',
         notionId: 'e1f43554c7964a0ea655c2b299d42844',
         title: 'Enter Bitcoin',
-        content: '<div class="bloc1"><p><code>Satoshi Nakamoto</code> thought that money is too important to humanity to be controlled by just a few people. He wanted to create a type of money that could be fair and reliable for everyone.</p><p>Enter Bitcoin, the digital currency powering global transactions beyond influence of the traditional banking system.</p><ul><li>⛓️ Using <code>blockchain technology</code>, it connects people directly, rather than going through institutions. It’s fast, fully automated, and highly resistant to external pressure.</li><li>💎 With no central authority to print money, Bitcoin has <code>scarcity</code> and value-retention similar to gold.</li><li>✊ It’s <code>self-custodial</code>: It can be held without institutions facilitating transfer or storage. When stored in its natural state, funds are held in a secure online safe where only the owner has access.</li></ul><p>For these qualities, bitcoin has earned the nickname “digital gold”.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/enter-bitcoin-b108517c.svg\'></div>'
+        content: '<div class="bloc1"><p><code>Satoshi Nakamoto</code> thought that money is too important to humanity to be controlled by just a few people. He wanted to create a type of money that could be fair and reliable for everyone.</p><p>Enter Bitcoin, the digital currency powering global transactions beyond the influence of the traditional banking system.</p><ul><li>⛓️ Using <code>blockchain technology</code> connects people directly rather than going through institutions. It’s fast, fully automated, and highly resistant to external pressure.</li><li>💎 With no central authority to print money, Bitcoin has <code>scarcity</code> and value-retention similar to gold.</li><li>✊ It’s <code>self-custodial</code>: It can be held without institutions facilitating transfer or storage. When stored in their natural state, funds are held in a secure online safe to which only the owner has access.</li></ul><p>For these qualities, Bitcoin has earned the nickname “digital gold”.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/enter-bitcoin-b108517c.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '8462f7e2e0694a82a0e6dc126c81b907',
         title: 'Digital Gold: Scarcity',
-        content: '<div class="bloc1"><p>In traditional currencies, a central bank grows the supply by 3% to 15% every year. The devaluation to existing money this causes is known as <code>inflation</code>, leading to a perceived rise in cost of everyday goods and services. It’s not that things are suddenly worth more… your money is just worth less.</p><p>These supply increases disproportionately affect the lower and middle classes. As prices rise, most salaries remain the same — eroding average quality of life. New supply is typically distributed through the financial sector, to its exclusive benefit.</p><hr><p>Bitcoin manages inflation by introducing <code>scarcity</code>, as seen in precious metals. Just as gold has a limited amount available on earth, there is a total supply of 21 million bitcoin ever available to be “discovered”.</p><p>Similar to mining gold from the earth, undiscovered bitcoin is introduced through a laborious process called <code>cryptocurrency mining</code>, making it difficult to increase the supply in circulation.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/digital-gold-scarcity-422a5cae.svg\'></div>'
+        content: '<div class="bloc1"><p>Scarcity in Bitcoin refers to the fact that there is a cap on how many Bitcoins can ever exist - which is a maximum of 21 million. This limited supply is designed into its code, ensuring that Bitcoin remains rare and potentially valuable, much like precious metals such as gold.</p><hr><p>Similar to mining gold from the earth, undiscovered Bitcoin is introduced through a laborious process called <code>cryptocurrency mining</code>, making it difficult to increase the supply in circulation.</p><p>As more people look to own and use it, demand for Bitcoin increases, this scarcity can lead to an increase in its value. Its scarcity is a key factor that could drive its worth over time, making it an attractive asset for investment and savings.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/digital-gold-scarcity-eae248f0.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -442,7 +441,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '52422fece4f34f158bfea69822ee1815',
         title: 'Digital Gold: Self-Custody',
-        content: '<div class="bloc1"><p>If your bank can freeze your life savings at any time… <br><strong>Do you truly own your money?</strong><strong> </strong>💸</p><p>As our assets are increasingly digitized (i.e. your money, your property, and even your identity) it’s important that we maintain ownership of our digital footprint. Ownership is a listed human right — something worth remembering as we move into the digital age.</p><p>Besides risks of censorship or fraud that come with lack of ownership, instant control over an entire nation’s property is simply too much power to put in one place.</p><hr><p>Bitcoin’s <code>self-custody</code> offers true digital ownership: So long as you don’t give your keys to someone else, you are the only person with access to your assets. It’s like having your own vault of gold in a secure online space, and there’s no management.</p><p>This online system gives you total control of your wealth — anywhere in the world, any time.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/digital-gold-self-custody-a0d1b047.svg\'></div>'
+        content: '<div class="bloc1"><p>If your bank can freeze your life savings at any time…<br><strong>Do you truly own your money?</strong><strong> </strong>💸</p><p>As our assets are increasingly digitized (i.e., your money, your property, and even your identity), it’s important that we maintain ownership of our digital footprint. Ownership is a listed human right — something worth remembering as we move into the digital age.</p><p>Besides risks of censorship or fraud that come with lack of ownership, instant control over an entire nation’s property is simply too much power to put in one place.</p><hr><p>Bitcoin’s <code>self-custody</code> offers true digital ownership: So long as you don’t give your keys to someone else, you are the only person with access to your assets. It’s like having your own vault of gold in a secure online space, and there’s no management.</p><p>This online system gives you total control of your wealth — anywhere in the world, any time.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/digital-gold-self-custody-18bd7ba3.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -468,7 +467,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '116bcf310bc044adbce6aefc84902f25',
         title: 'Bitcoin — It’s like Emailing Money!',
-        content: '<div class="bloc1"><p>Just as email simplified sending letters by removing the post office, Bitcoin streamlined the transfer of money.</p><ul><li>⚡ Transfer Bitcoin to anyone else’s address in a short period of time, to and from anywhere in the world.</li><li>📡 Bitcoin is online 24/7. Unlike your bank, you can send money internationally or trade assets at any hour. No waiting, no paperwork, no downtime.</li><li>⚙️ Bitcoin is neutral and automated. Emails depend on their hosts, Bitcoin runs itself.</li></ul><hr><p>In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. You’ll manage your account through a new tool called a <code>cryptocurrency wallet</code>, directly in your web browser or on your phone.</p><p>This cryptocurrency wallet is the easiest “bank account” you’ll ever set up, all from the comfort of your home computer. We’ll set up your first wallet in ‘Wallet Basics’ — your next lesson.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/bitcoin-its-like-emailing-money-2e2fb8ad.svg\'></div>'
+        content: '<div class="bloc1"><p>Just as email simplified sending letters by removing the post office, Bitcoin has streamlined sending money.</p><ul><li>⚡ Transfer Bitcoin to anyone else’s address in a short period of time, to and from anywhere in the world.</li><li>📡 Bitcoin is online 24/7. Unlike your bank, you can send money internationally or trade assets at any hour. No waiting, no paperwork, no downtime.</li><li>⚙️ Bitcoin is neutral and automated. Emails depend on their hosts, Bitcoin runs itself.</li></ul><hr><p>In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. You’ll manage your account through a new tool called a <code>cryptocurrency wallet</code>, directly in your web browser or on your phone.</p><p>This cryptocurrency wallet is the easiest “bank account” you’ll ever set up, all from the comfort of your home computer. We’ll set up your first wallet in ‘Wallet Basics’ — your next lesson.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/bitcoin-its-like-emailing-money-2e2fb8ad.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -494,7 +493,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '87c9b2797a0f4b5cb1ed072d6fc236a8',
         title: 'How does it work?',
-        content: '<div class="bloc1"><p>Let’s switch gears and look at the engine behind bitcoin: the Bitcoin Network.</p><p>Bitcoin runs on a shared network, hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network essentially exists through these computers! If one produces a fraudulent transaction, the others are there to correct it.</p><p>This also means there’s no single point to apply pressure in attempted hacks; In order for the network to be attacked, a majority of the computers would need to be compromised.</p><p>This defense strategy is called <code>decentralization</code>: the shifting of control from one main group to many smaller ones. Decentralization is what makes cryptocurrency transfers virtually unstoppable.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/how-does-it-work-c57acb1b.svg\'></div>'
+        content: '<div class="bloc1"><p>Let’s switch gears and look at the engine behind Bitcoin: the Bitcoin Network.</p><p>Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network essentially exists through these computers! If one produces a fraudulent transaction, the others are there to correct it.</p><p>This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be attacked, a majority of the computers would need to be compromised.</p><p>This defense strategy is called <code>decentralization</code>: the shifting of control from one central group to many smaller ones. Decentralization is what makes cryptocurrency transfers virtually unstoppable.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/how-does-it-work-c57acb1b.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -506,7 +505,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'febf3ea22d734f08a3a60f5a1e9b59b8',
         title: 'How does it work? (Pt. 3)',
-        content: '<div class="bloc1"><p>Every transaction is submitted with a fee, paid by the sender. This is allocated to the miner who verifies your transaction.</p><p>On top of this, the original miner also receives a small, newly minted amount of Bitcoin. This is the “mining of undiscovered gold” we mentioned while discussing <code>scarcity</code>.</p><p><code>Cryptocurrency mining</code> incentivizes people around the world to help secure the network, while steadily injecting new currency into the Bitcoin economy.</p><p>That’s quite a process!</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/how-does-it-work-pt-3-9b8a77ea.svg\'></div>'
+        content: '<div class="bloc1"><p>Every transaction is submitted with a fee paid by the sender. This is allocated to the miner who verifies your transaction.</p><p>On top of this, the original miner also receives a small, newly minted amount of Bitcoin. This is the “mining of undiscovered gold” we mentioned while discussing <code>scarcity</code>.</p><p><code>Cryptocurrency mining</code> incentivizes people around the world to help secure the network while steadily injecting new currency into the Bitcoin economy.</p><p>That’s quite a process!</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/how-does-it-work-pt-3-9b8a77ea.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -516,7 +515,7 @@ const LESSONS: LessonType[] = [
           question: 'What is decentralization?',
           rightAnswerNumber: 2,
           answers: [
-            'The mining of bitcoin.',
+            'The mining of Bitcoin.',
             'A process spreading control across multiple parties.',
             'Another term for scarcity.'
           ],
@@ -532,13 +531,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'e2a5684df9734013afdc8e42a1bb494c',
         title: 'The Innovation of Money',
-        content: '<div class="bloc1"><p>In this lesson we’ve looked at how Bitcoin uses <code>blockchain technology</code> to return lasting value and ownership to money. We learned how the increase of supply in monetary systems erodes long term savings of citizens, and saw how institutional custodians cannot support true ownership over our assets.</p><p>But Bitcoin has become more than just a tool. It’s invention sparked an entire movement of <code>decentralized money</code>, focusing on:</p><ul><li>💵 Solving inefficiencies in digital economics.</li><li>🔎 Reducing institutional fraud and market manipulation.</li><li>⚖️ Building equality of opportunity into money, to close the wealth gap.</li><li>👨‍👩‍👧 Providing unbanked populations with access to modern financial tools.</li><li>🌐 Building true ownership for the digital age.</li></ul><p>The decentralized money community advocates that: just as the separation of church and state empowered the free ownership/transfer of ideas, separation of money and state is necessary for the same freedom of value. In backing such expression of value, the community aims to restore alignment of money with the values of <code>democracy</code>.</p><p>“<em>Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.”</em><em> — United Nations</em></p></div>'
+        content: '<div class="bloc1"><p>In this lesson, we’ve looked at how Bitcoin uses <code>blockchain technology</code> to return lasting value and ownership to money. We learned how Bitcoin\'s scarcity and rising demand may increase its value and saw how institutional custodians could not support true ownership over our assets.</p><p>But Bitcoin has become more than just a tool. It was a catalyst for a revolutionary shift towards <code>decentralized money</code>, focusing on:</p><ul><li>💵 Solving inefficiencies in digital economics.</li><li>🔎 Reducing institutional fraud and market manipulation.</li><li>⚖️ Building equality of opportunity into money to close the wealth gap.</li><li>👨‍👩‍👧 Providing unbanked populations with access to modern financial tools.</li><li>🌐 Building true ownership for the digital age.</li><li>🤝 A global marketplace with no geographic barriers, available 24/7.</li></ul><p>This movement champions the concept of true ownership, empowering individuals to manage their assets without the need for intermediaries like banks. This shift emphasizes the importance of not placing trust in third-party institutions that have historically controlled and monitored financial transactions.</p><p>Blockchain technology revolutionizes finance, ensuring secure, transparent, and equitable transactions for a faster, more trustworthy, and accessible future for all.</p><p>In backing such expression of value, the community aims to restore the alignment of money with the values of <code>democracy</code>.</p><p>“<em>Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.</em></p></div>'
       },
       {
         type: 'LEARN',
         notionId: '9920715e06094e39bf34a5a63891a909',
         title: 'Sending a Bitcoin Transaction',
-        content: '<div class="bloc1"><p>It’s time to simulate your first Bitcoin transaction, and practice your freedom in the digital age. </p><p>Your transaction will include the following details:</p><p>📫 The wallet address of your recipient.</p><p>💰 The amount of Bitcoin to send.</p><p>⛏️ A transaction fee given to the miners.</p><p>Remember to make sure all details are accurate. <br>Once a Bitcoin transaction is confirmed it cannot be reversed.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/sending-a-bitcoin-transaction-aad5de00.png\'></div>'
+        content: '<div class="bloc1"><p>It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age. </p><p>Your transaction will include the following details:</p><p>📫 The wallet address of your recipient.</p><p>💰 The amount of Bitcoin to send.</p><p>⛏️ A transaction fee is given to the miners.</p><p>Remember to make sure all details are accurate. <br>Once a Bitcoin transaction is confirmed, it cannot be reversed.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/sending-a-bitcoin-transaction-aad5de00.png\'></div>'
       },
       {
         type: 'QUEST',
@@ -1824,7 +1823,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/understanding-stablecoins/lesson-dcf41ef6.png',
-    socialImageLink: '/images/understanding-stablecoins/social-00f2f6fe.png',
+    socialImageLink: '/images/understanding-stablecoins/social-807afdfa.jpg',
     learningActions: '',
     marketingDescription: 'Use dollars, euros, and more on the blockchain.',
     badgeId: null,
@@ -2216,9 +2215,250 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
+    badgeImageLink: '/images/staking-on-ethereum/badge-da9823bb.png',
+    lessonImageLink: '/images/staking-on-ethereum/lesson-0a24938a.png',
+    learningActions: '',
+    marketingDescription: '',
+    badgeId: null,
+    duration: null,
+    learnings: '',
+    description: '',
+    name: 'Staking on Ethereum',
+    languages: [],
+    lessonWriters: 'Tetranome',
+    quest: 'StakingOnEthereum',
+    publicationStatus: 'hidden',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    sponsorName: 'Rocket Pool',
+    sponsorLogo: '/images/staking-on-ethereum/sponsor-3c0f08c6.png',
+    notionId: 'e90059604739465ea99b9a2c8af5eb75',
+    englishName: 'Staking on Ethereum',
+    slug: 'staking-on-ethereum',
+    socialImageLink: '/images/staking-on-ethereum/social-0a24938a.png',
+    imageLinks: [
+      '/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png',
+      '/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png',
+      '/images/staking-on-ethereum/blockchain-security-bc7a3a45.svg',
+      '/images/staking-on-ethereum/proof-of-stake-cfc0c9ef.svg',
+      '/images/staking-on-ethereum/ethernomics-d7fc1623.svg',
+      '/images/staking-on-ethereum/types-of-staking-b42f68c6.svg',
+      '/images/staking-on-ethereum/types-of-staking-pt-2-b1d559e7.svg',
+      '/images/staking-on-ethereum/types-of-staking-pt-2-ae5bc160.svg',
+      '/images/staking-on-ethereum/types-of-staking-pt-2-b45b2fba.svg',
+      '/images/staking-on-ethereum/network-centralization-a29ad576.svg',
+      '/images/staking-on-ethereum/staking-pools-0eedad95.svg',
+      '/images/staking-on-ethereum/network-decentralization-again-b1c42b69.svg',
+      '/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-8917f192.svg'
+    ],
+    keywords: [
+      'staking',
+      'ether',
+      'validator node',
+      'staker',
+      'stakers',
+      'fraud',
+      'credible neutrality',
+      'validator nodes',
+      'consensus mechanisms',
+      'consensus mechanism',
+      'stake',
+      'slashed',
+      'proof-of-stake',
+      'block',
+      'ledger',
+      'liquid',
+      're-staked',
+      'consensus',
+      'solo staking',
+      'staking pools',
+      'smart contracts',
+      'staking providers',
+      'node operator',
+      'tokens',
+      'decentralized exchange',
+      'mint'
+    ],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: 'c536e52f31e8469e81f9fda059101e1c',
+        title: 'Staking on Ethereum',
+        content: '<div class="bloc1"><p>Welcome, Explorer, to your next lesson!</p><p>Today we will be investigating the process of “staking”, an action you can take today to build digital wealth by volunteering your computer to help secure Ethereum.</p><p><code>Staking</code> serves the same purpose as mining does on the Bitcoin network: it’s a mechanic for processing transactions on the blockchain, in exchange for rewards. But there’s a crucial difference: On Ethereum, you don’t need a powerful computer to compete against others. Instead you lock up <code>Ether</code>, Ethereum’s native asset, on the network. In exchange, your computer is granted entry to process transactions and earn rewards.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'c53e50f57c1c4cf299aeb9971d739b6d',
+        title: 'Ethereum Wants You!',
+        content: '<div class="bloc1"><p>You can think of <code>staking</code> like an “internet bond”.</p><p>Much like supporting your government through bonds grants return on investment, supporting Ethereum yields staking rewards. More importantly, like government bonds, staking is a way to show financial support for the values you stand for — and the world you want to live in.</p><p>By participating in the staking process and facilitating transactions, your computer becomes a network <code>validator node</code>. Now part of the network itself, your node provides more decentralization and security for everyone using Ethereum. As a <code>staker</code>, you become a <strong>guardian of Ethereum</strong>, and get rewarded in <code>Ether</code>.</p><p>It’s time to dive deeper into staking mechanics and uncover the simple, low cost opportunity to start your staking journey today.</p><p>Grab your gear, let’s go.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'fcf9351332874288b5a7bf2b5b9f6d12',
+        title: 'Blockchain Security',
+        content: '<div class="bloc1"><p><code>Stakers</code> are the line between a secure and legitimate economy on Ethereum, and one filled with <code>fraud</code>.</p><p>As a leading blockchain, Ethereum has become a global digital economy where digital assets are traded every day. In a functional economy, it is vital that every transaction is legitimate and no participant has power over others. This fairness is known as <code>credible neutrality</code> — and without it an economy spins into fraud, distrust, and eventually collapse. In the blockchain world, fraud would look like a user manipulating balances or creating non-existent crypto.</p><p>For a transaction to be considered valid, it must be approved by a majority of <code>validator nodes</code>. This decentralized agreement is reached using specialised systems called <code>consensus mechanisms</code>. </p><p>The mechanism changes depending on the blockchain, but the goal is always the same: <strong>generate decentralized agreement, across the network, on the state of the blockchain.</strong></p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/blockchain-security-bc7a3a45.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '9a6352929e6e494ab3b165039598794c',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How does staking prevent fraud on Ethereum?',
+          rightAnswerNumber: 3,
+          answers: [
+            'By granting power over others.',
+            'By creating non-existent crypto.',
+            'By generating decentralized agreement.'
+          ],
+          id: 'staking-on-ethereum-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '8c558399c3624e3bbc8bea263dd62324',
+        title: 'Proof-of-Stake',
+        content: '<div class="bloc1"><p>On Ethereum, <code>validator nodes</code> use a <code>consensus mechanism</code> called “Proof-of-Stake” to agree on the legitimacy of blockchain transactions. This is where “staking” comes from.</p><p>Users take a financial position in the network by staking <code>Ether</code>, gaining permission to validate its transactions. When a group of transactions are submitted to the network, a node is randomly selected to verify them — with its results double-checked by the others to ensure honesty.</p><p>If your node successfully processes the transactions, your <code>stake</code> grows. If your node is too slow or tries to approve fraud, your stake is <code>slashed</code> — a penalty charge is applied. In this way, your staked Ether is a form of insurance. Everyone is incentivized to act honestly and keep Ethereum running.</p><p>To successfully approve fraud on Ethereum, an attacker would need to gain control of the majority of staked Ether, and therefore a majority of consensus power. That’s why having everyday users involved in staking is so important — it fragments decision making power.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/proof-of-stake-cfc0c9ef.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '3e7bf2b7a80b4d58adb59c9fe47fb7af',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'True or False: Validator nodes caught processing fraudulent transactions will receive penalties.',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          id: 'staking-on-ethereum-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'b9fbae598d8f489a8cdacb40144815de',
+        title: 'Validating Transactions',
+        content: '<div class="bloc1"><p>Let’s look at the step-by-step process of how nodes come to agreement using <code>Proof-of-Stake</code> consensus:</p><ol><li><strong>Staking:</strong> A staker runs a node on their computer, locking their ETH on the network.</li><li><strong>Block Building:</strong> Multiple transactions are bundled into a <code>block</code>.</li><li><strong>Node Assignment:</strong> The network algorithm selects a node to process a block of transactions.</li><li><strong>Block Validation:</strong> The chosen <code>validator node</code> reviews the block, ensuring its transactions line up with the blockchain <code>ledger</code>.</li><li><strong>Cross-Verification:</strong> Other nodes double-check and confirm the block’s validity.</li><li><strong>Blockchain Addition:</strong> A valid block is added to the Ethereum blockchain.</li><li><strong>Rewards:</strong> The staker earns transaction fees and additional Ether rewards.</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/bitcoin\'></iframe></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '802bd3e3ac71461fa38ab668e9873b00',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'What term represents the computer approving Ethereum transactions?',
+          rightAnswerNumber: 2,
+          answers: [
+            'Staker',
+            'Validator Node',
+            'Block Builder'
+          ],
+          id: 'staking-on-ethereum-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '5ac23eb478224f14a8dda33b59a2bf43',
+        title: 'Ethernomics',
+        content: '<div class="bloc1"><p>It’s important to understand where the yield for staked <code>Ether</code> comes from, and how it can fluctuate based on various ecosystem factors. Simply put, rewards are based on transaction fees, plus a small amount of newly issued Ether.</p><p>The resulting yield can look like anything from a 3% to 16% return on investment per year. Where on this spectrum the rewards fall is based on three key factors:</p><ul><li>📈<strong> Network Activity:</strong> In times of low traffic, the reward is lower, and in high traffic, higher.</li><li>👥<strong> Amount of Stakers:</strong> With more participants, rewards have to be further divided.</li><li>⚙️<strong> Staking Method: </strong>How exactly you stake your Ether (we’ll review our options shortly!)</li></ul><p>But before we do, we need to understand that locking Ether to generate yield is just one of it’s core functions. Ether has two other key uses.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/ethernomics-d7fc1623.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '97555683ad6a4f6aafba5c64e90317bd',
+        title: 'Ether - The “Triple-Point Asset”',
+        content: '<div class="bloc1"><p>In the web3 world, Ether is known as the “triple-point asset”.</p><p>In physics, a material’s “triple-point state” is reached when it is engineered to be a solid, liquid, and a gas at the same time. Typically, states of matter are distinct. However, if things are balanced just right, you can enter the triple-point, where all three phases exist at once.</p><p>We call Ether the triple-point asset because it has the economic quality of gold, oil, and a bond, all at the same time.</p><ul><li>🪙 <strong>Digital Gold:</strong> Ether, like Bitcoin, is an easily transferable store of value.</li><li>🛢️ <strong>Digital Oil:</strong> Ether is a consumable asset, like oil. People need it to use or build on Ethereum.</li><li>📜 <strong>Internet Bond:</strong> When staked, Ether becomes a yield-bearing asset, like a government bond.</li></ul><p>This is what makes Ether valuable; It fits into all three major frameworks for what a valuable asset should be. On top of this, even when staked and gathering yield, there are many options for keeping staked Ether <code>liquid</code>. This way it can be traded, used as collateral for loans, or even <code>re-staked</code> for more yield.</p><p>Ether isn’t just an internet bond.</p><p>Ether is an unprecedented form of money.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '7e977dd7c1544b2db6810289a13d2947',
+        title: 'Types of Staking',
+        content: '<div class="bloc1"><p>We’re not going to sugar-coat it: Running a <code>validator node</code> on Ethereum currently requires staking 32 ETH. </p><p>That’s a lot of money.</p><p>Fortunately, there are easier ways to become a staker and protect Ethereum. The three key methods are:</p><ul><li>📡 <strong>Solo Staking:</strong> Running your own validator node.</li><li>⛲ <strong>Staking Pools:</strong> Joining a group of stakers, running a node together.</li><li>🏦 <strong>Centralized Exchange Staking:</strong> Joining a “crypto bank” node.</li></ul><p>Each method requires a different amount of Ether, and technical knowledge to set things up. Generally speaking, the more difficult it is, the more rewards you earn. These methods also have varied impacts on network decentralization — an important point we’ll touch on shortly.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/types-of-staking-b42f68c6.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '20dbf51d28cc48c48868ddbba29b34ac',
+        title: 'Types of Staking (Pt. 2)',
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-b1d559e7.svg\'></div><div class="bloc-b"><p><strong>Solo Staking</strong></p><p>🟡 Requires 32 ETH</p><p>🟡 Technical Setup</p><p>🟢 Decentralizes Ethereum</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-ae5bc160.svg\'></div><div class="bloc-b"><p><strong>Staking Pools</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🟡 Decentralized Options</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-b45b2fba.svg\'></div><div class="bloc-b"><p><strong>Centralized Exchange Staking</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🔴 Centralizes Ethereum</p></div></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '1bdf5971c3c94e5ca3323c7af00fed38',
+        title: 'Network Centralization',
+        content: '<div class="bloc1"><p>Some staking decentralizes Ethereum, some staking actively centralizes it. What’s that about?</p><p>The more validator nodes that are owned by a single entity — a centralized exchange for example — the more power they have to sway <code>consensus</code>. If this entity was to gain enough power, they could overpower the network into approving fraudulent transactions, or even denying valid ones. This would destroy Ethereum’s core property of <code>credible neutrality</code>.</p><p>As guardians of Ethereum, we should be looking for the most decentralized staking option available to us. With the barriers of <code>solo staking</code> too high for most of us, today we will be investigating the beginner’s option to decentralized staking, <code>staking pools</code>.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/network-centralization-a29ad576.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'e9cad4dd12fa472ba02b101739921dd7',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'What would happen if a single entity controlled a majority of staked Ether?',
+          rightAnswerNumber: 1,
+          answers: [
+            'They could approve or deny any transaction.',
+            'They would control all validator nodes.',
+            'Ethereum would stop processing transactions.',
+            'All of the above.'
+          ],
+          id: 'staking-on-ethereum-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '561e1079d9874ee3976977a90426bb5d',
+        title: 'Staking Pools',
+        content: '<div class="bloc1"><p>The best part about <code>staking pools</code> is that it’s entirely handled by <code>smart contracts</code>. You don’t have to have met the other stakers in person. You don’t even have to trust anyone that you’re running the node with!</p><p>Staking pools are coordinated by <code>staking providers</code> like Rocket Pool, connecting stakers across the world! In a pool, a <code>node operator</code> stakes a portion of Ether and runs the node, everyone else supplies the remaining Ether. For their service, the node operator earns additional yield.</p><p>For the participating stakers, their membership to the pool is represented by “Liquid Staking Tokens” (LSTs). These <code>tokens</code> are like a share of a pool’s staked ether; The holder earns a portion of rewards equal to their stake, and can trade or redeem them for their stake at any time.</p><p>So by simply holding Rocket Pool’s staked Ether token, rETH, you’re earning staking rewards and helping to decentralize Ethereum.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/staking-pools-0eedad95.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '3222f2f41d574a28ba4ce99dc7ecbce2',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'Which entity hosts the staking pool?',
+          rightAnswerNumber: 3,
+          answers: [
+            'The Node Operator',
+            'The Additional Stakers',
+            'The Staking Provider'
+          ],
+          id: 'staking-on-ethereum-5'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '4942d5247e6b41899c4f1bf1e6b66a31',
+        title: 'Network Decentralization — Again!',
+        content: '<div class="bloc1"><p>Now, staking pools themselves have the same catch as the different staking methods: <strong>there are varied degrees of centralization and decentralization.</strong> </p><p>While Rocket Pool has taken the steps necessary to allow anyone, anywhere to become a <code>node operator</code>, staking providers like Lido, Bedrock, and Stakewise use a small range of private hosting businesses to run their nodes — centralizing staked Ether!</p><p>If any of these platforms gain control over 33% of all staked Ether, they could begin causing problems on the network at their decision. If they reach 50%, they could begin threatening Ethereum’s <code>credible neutrality</code>. </p><p>Today, Lido’s share hovers around the 33% mark.</p><p>Guarding Ethereum begins with choosing a decentralized staking provider.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/network-decentralization-again-b1c42b69.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '4abc237a56fb4c1c863c0190b17b52f3',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'True or False: Supporting new node operators helps to decentralize Ethereum.',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          id: 'staking-on-ethereum-6'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '691dc0004009411f8cb548e9dd8b8011',
+        title: 'rETH - Your Path to Decentralized Staking',
+        content: '<div class="bloc1"><p>For today’s quest, we are going to become stakers with Rocket Pool, taking shared ownership over a staking pool. Alongside your fellow Explorers, you will be contributing to the decentralization of Ethereum.</p><p>As your Ether holdings grow, you will unlock greater opportunities to decentralize Ethereum and earn rewards. By taking any of these options today, you will complete your quest:</p><ul><li>🪙<strong> ≥</strong>0.001 ETH: Buy rETH on a <code>decentralized exchange</code>.</li><li>💰<strong> ≥</strong>0.1 ETH: <code>Mint</code> new rETH and help run a pool.</li><li>⛲<strong> ≥</strong>8-16 ETH: Run your own pool as a <code>node operator</code>.</li></ul><p>Note: rETH is worth slightly more than regular ETH. This is because staking rewards are directly added to the value of the rETH token. By simply holding, your rETH will grow in value against ETH as staking rewards are added to its value.</p><p>It’s time to become a guardian of Ethereum. Good luck on your quest, Explorer. May your commitment to Ethereum’s decentralized future be greatly rewarded!</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-8917f192.svg\'></div>'
+      },
+      {
+        type: 'QUEST',
+        title: 'Staking on Ethereum Quest',
+        component: 'StakingOnEthereum'
+      }
+    ]
+  },
+  {
     badgeImageLink: null,
     lessonImageLink: '/images/managing-token-allowances/lesson-dcf41ef6.png',
-    socialImageLink: '/images/managing-token-allowances/social-00f2f6fe.png',
+    socialImageLink: '/images/managing-token-allowances/social-4c1e3247.png',
     learningActions: '',
     marketingDescription: 'Protect your wallet from unwanted smart contract interactions.',
     badgeId: null,
@@ -2248,125 +2488,6 @@ const LESSONS: LessonType[] = [
       '/images/managing-token-allowances/image-f95ea594.png',
       '/images/managing-token-allowances/image-f3b00f4a.png',
       '/images/managing-token-allowances/image-138cb12e.png'
-    ]
-  },
-  {
-    badgeImageLink: '/images/staking-on-ethereum/badge-da9823bb.png',
-    lessonImageLink: '/images/staking-on-ethereum/lesson-0a24938a.png',
-    learningActions: '',
-    marketingDescription: '',
-    badgeId: null,
-    duration: null,
-    learnings: '',
-    description: '',
-    name: 'Staking on Ethereum',
-    languages: [],
-    lessonWriters: 'Tetranome',
-    publicationStatus: 'hidden',
-    featuredOrderOnHomepage: null,
-    isCommentsEnabled: false,
-    endOfLessonRedirect: null,
-    notionId: 'e90059604739465ea99b9a2c8af5eb75',
-    englishName: 'Staking on Ethereum',
-    slug: 'staking-on-ethereum',
-    socialImageLink: '/images/staking-on-ethereum/social-0a24938a.png',
-    imageLinks: [
-      '/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png',
-      '/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png',
-      '/images/staking-on-ethereum/blockchain-security-bc7a3a45.svg',
-      '/images/staking-on-ethereum/proof-of-stake-pt-i-cfc0c9ef.svg',
-      '/images/staking-on-ethereum/centralization-risks-1dd42ec9.svg',
-      '/images/staking-on-ethereum/liquid-staking-tokens-0eedad95.svg',
-      '/images/staking-on-ethereum/liquid-staking-tokens-pt-2-04710bd7.svg',
-      '/images/staking-on-ethereum/liquid-staking-tokens-pt-2-0df6e5b0.svg',
-      '/images/staking-on-ethereum/liquid-staking-tokens-pt-2-aed9284a.svg',
-      '/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-8917f192.svg'
-    ],
-    keywords: [
-      'staking',
-      'cryptocurrency',
-      'network validators',
-      'fraud',
-      'credible neutrality',
-      'consensus mechanism',
-      'stake',
-      'slashed',
-      'smart contracts',
-      'mint'
-    ],
-    slides: [
-      {
-        type: 'LEARN',
-        notionId: 'c536e52f31e8469e81f9fda059101e1c',
-        title: 'Staking on Ethereum',
-        content: '<div class="bloc1"><p>Welcome, Explorer, to your next lesson!</p><p>Today we will be investigating the process of <code>staking</code>, an action you can take today to build digital wealth by volunteering your computer to help secure Ethereum.</p><p>Staking is like mining on the Bitcoin network: you process transactions on the blockchain in exchange for rewards. But there’s a crucial difference: On Ethereum, you don’t need a powerful computer to compete against others. Instead, you lock <code>cryptocurrency</code> for a set period of time, granting your computer entry to process transactions and earn rewards.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'c53e50f57c1c4cf299aeb9971d739b6d',
-        title: 'Ethereum Wants You!',
-        content: '<div class="bloc1"><p>You can think of <code>staking</code> like an “internet bond”.</p><p>Just like supporting your government through bonds in exchange for return on investment, you can support Ethereum for staking rewards. And yet just like a government bond, staking is more than an investment opportunity. Your actions have real consequences.</p><p>In volunteering your computer to verify transactions, you become part of the network itself. You increase the total number of <code>network validators</code>, meaning more decentralization and security for the Ethereum community. You become a guardian of Ethereum — and Ethereum wants to reward you for your help.</p><p>It’s time to start your staking journey, dive deeper into staking mechanics, and uncover the simple, low cost staking opportunity to start guarding Ethereum today.</p><p>Grab your gear, let’s go.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'c680b48857c44c72b58ac0f42f38337e',
-        title: 'Blockchain Security',
-        content: '<div class="bloc1"><p>Stakers are the line between a legitimate and secure economy on Ethereum, and one riddled with <code>fraud</code>.</p><p>As a leading blockchain, Ethereum aims to be a “settlement layer of the internet” — a global economy where digital assets are traded every day. In such an economy, it is vital that every transaction is legitimate and no participant has power over others. We call this <code>credible neutrality</code>.</p><p>Without this neutrality, an economy spins into fraud, distrust, and eventually destruction. In the blockchain world, fraud often looks like a user manipulating balances or creating non-existent crypto.</p><p>To decide which transactions are legitimate, network participants work together using a <code>consensus mechanism</code>. Specific methods change depending on the blockchain, but the goal is always the same: generate decentralized agreement, across users, on the state of the blockchain.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/blockchain-security-bc7a3a45.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '3c4fc89e1b624846b628851f1fab3f6e',
-        title: 'Proof of Stake (Pt. I)',
-        content: '<div class="bloc1"><p>On Ethereum, validators use “Proof of Stake” consensus to come to agreement on the legitimacy of blockchain transactions. Staking helps ensure that only legitimate data and transactions are added to the blockchain. </p><p>Users take a financial position in the game by staking Ether, gaining permission to validate the network. Every time a group of transactions are submitted to the network, a validator is randomly selected to verify them — with its results double-checked by the others to ensure it is acting honestly.</p><p>If you successfully process the transactions, your <code>stake</code> grows. If you process fraud, your stake is <code>slashed</code> — a penalty charge is applied. In this way, staked Ether becomes a form of insurance. </p><p>By this method, everyone is incentivized to act honestly and keep Ethereum running. To commit fraud on Ethereum, an attacker would need to gain control of a majority of network consensus power: a majority of staked Ether. That’s very expensive and difficult to do.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/proof-of-stake-pt-i-cfc0c9ef.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'd3c93a7fc1e84f8da8fbd7ee91ed7081',
-        title: 'Proof of Stake (Pt. II)',
-        content: '<div class="bloc1"><p>Let’s walk through the process step-by-step.</p><ol><li><strong>Staking Tokens:</strong> Users lock their ETH in the staking pool.</li><li><strong>Validator Selection:</strong> The network’s algorithm randomly selects validators, favouring those with more staked ETH.</li><li><strong>Validating Transactions:</strong> The chosen validator reviews the transaction for accuracy.</li><li><strong>Building Blocks:</strong> A block builder compiles the transactions into a block.</li><li><strong>Cross-Verification:</strong> Other validators double-check the transaction’s validity.</li><li><strong>Blockchain Addition:</strong> Once verified, the block joins the Ethereum blockchain.</li><li><strong>Rewards:</strong> The validator earns transaction fees and newly minted ETH for their efforts.</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/bitcoin\'></iframe></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '7d1101d3a76a447595f43d8abcd6c31f',
-        title: 'Ether - The “Triple-Point Asset”',
-        content: '<div class="bloc1"><p>Staking Ether is just one of its functions. Before making such an investment, it’s good to understand how else it can be used, and why it’s valuable to hold.</p><p>Ether (ETH) is known in the web3 world as the “triple-point asset”. This is because it has the uncommon quality of combining three distinct financial asset properties. Ether is a:</p><ul><li><strong>Store-of-Value:</strong> ETH preserves value over time, but its also liquid enough to act as money. Like Bitcoin, it’s a digital gold.</li><li><strong>Consumable Asset:</strong> ETH, when used as gas for transactions or <code>smart contracts</code>, behaves like digital oil.</li><li><strong>Capital Asset:</strong> When staked to back network security, ETH becomes a yield-bearing asset, functioning as an “internet bond”.</li></ul><p>The triple-point asset metaphor is based on a principle from physics. Phases of matter are usually distinct; something is either a solid, liquid, or gas. However, if things are balanced just right, you can enter the triple-point, where all three phases exist all at once.</p><p>This is what makes Ether valuable as internet money. It fits into all three major frameworks for what a valuable asset should be. On top of this, the triple-point state remains liquid enough to be used as a financial instrument across the world of decentralized finance. Even when staked, Ether can be traded or used as collateral for loans.</p><p>It’s a financial asset with a lot of firepower.</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '802bd3e3ac71461fa38ab668e9873b00',
-        title: 'Ethernomics',
-        content: '<div class="bloc1"><p>It’s important to understand where the yield for staked Ether comes from, and how it can fluctuate based on various ecosystem factors. Simply put, rewards are based on transaction fees, plus a small amount of newly issued Ether.</p><p>The resulting yield can look like anything from a 3% to 16% return on investment per year. Where on this spectrum the rewards fall is based on two key factors:</p><ul><li><strong>Network Activity:</strong> In times of low traffic, the reward is lower, and in high traffic, higher.</li><li><strong>Amount of Stakers:</strong> With more participants, rewards have to be further divided.</li></ul><p>There’s also a minor modifier added on top, which is the method of staking you use. More direct methods give higher yield, but come with more responsibility and commitment.</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '7e977dd7c1544b2db6810289a13d2947',
-        title: 'Types of Staking',
-        content: '<div class="bloc1"><p>Different staking methods exist because users have varying amounts of tokens, technical skills, and risk preferences. Here are the four methods available, each tailored to different user needs and capabilities:</p><ol><li><strong>Solo Home Staking:</strong> The direct method, running your own validator node from home. This method suits those with 32 ETH and technical skills. No third parties. It adds a new node to Ethereum and earns full rewards.</li><li><strong>Staking as a Service:</strong> A service manages your node, without requiring your private keys. Ideal for users with 32 ETH but less technical inclination. Requires trust of a third party, and payment for the service.</li><li><strong>Pooled Staking:</strong> Collective staking and reward sharing. Using smart contracts, you contribute a portion of 32 Ether to help fund a node. Perfect for those with smaller ETH holdings, seeking a simple staking solution.</li><li><strong>Centralized Exchanges:</strong> Staking through a “crypto-bank”. The exchange runs the nodes, and shares rewards with its stakers. A beginner-friendly option that requires trust in the platform.</li></ol><p>Choosing the right staking method means finding alignment with your resources and expertise. Many people begin their staking journey with the more accessible options, and work towards solo home staking as they grow their ETH holdings.</p></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '1bdf5971c3c94e5ca3323c7af00fed38',
-        title: 'Centralization Risks',
-        content: '<div class="bloc1"><p>While inspecting PoS consensus, we looked at how maintaining decentralization of nodes is crucial for maintaining <code>credible neutrality</code>. Consensus works by majority, so if one participant captures a majority of staked Ether, they gain the ability to sway decisions on what transactions are legitimate and which are fraud. In this way, preserving decentralization on Ethereum becomes paramount.</p><p>Because granting our Ether to centralized staking pools or exchanges creates concentration of stake under one entity, use of certain staking methods can actually centralize Ethereum. If a single entity accumulates too much staked Ether, they can begin to make undesired changes to the network.</p><ul><li><strong>33% Control:</strong> Holding one-third of the staked ETH can disrupt or halt the network.</li><li><strong>50% Control:</strong> This level of control can lead to significant network issues.</li><li><strong>66% Control:</strong> Also known as \'god mode,\' it allows for total dominance over the network.</li></ul><p>Bankless Explorers seeking to stand for the neutrality of Ethereum should choose decentralized staking solutions, where yields can be just as high as centralized options.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/centralization-risks-1dd42ec9.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '37a30c20b15143b198c57d9261b44bfe',
-        title: 'Liquid Staking Tokens',
-        content: '<div class="bloc1"><p>There is a fifth option for staking that we haven’t yet discussed.</p><p>Liquid Staking Tokens (LSTs) are indicators of where reward should be distributed, given to members who have contributed Ether to Staking Pools. By purchasing staking tokens from these participants, you take their share of a staking pool and earn its entitled rewards. LSTs provide an easy route into Ethereum staking, especially for those with smaller ETH holdings.</p><p>As with any token, not all LSTs are created equal. If a platform doesn’t take sufficient steps to decentralize their nodes, they can actually end up centralizing Ethereum because they are pooling lots of staked Ether under one provider.</p><ul><li>validator diversity </li><li>node decentralization</li></ul><p>Rocket Pool for example, has sufficiently decentralized their infrastructure …</p><p>On the other hand, Lido has …</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/liquid-staking-tokens-0eedad95.svg\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'f43b4b21a47b4c17885d7ef1fcaf7ceb',
-        title: 'Liquid Staking Tokens (Pt. 2)',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/liquid-staking-tokens-pt-2-04710bd7.svg\'></div><div class="bloc-b"><p><strong>Rocket Pool</strong></p><p>✅ Open Source</p><p>✅ Decentralized Nodes</p><p>✅ Liquidity Token: rETH</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/liquid-staking-tokens-pt-2-0df6e5b0.svg\'></div><div class="bloc-b"><p><strong>Lido</strong></p><p>✅ Open Source</p><p>❌ Decentralized Nodes</p><p>✅ Liquidity Token: stETH</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/liquid-staking-tokens-pt-2-aed9284a.svg\'></div><div class="bloc-b"><p><strong>Centralized Exchange</strong></p><p>❌ Open Source</p><p>❌ Decentralized Nodes</p><p>❌ No Liquidity Token</p></div></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: 'ac1d718b87514cd6870f6213a752cb77',
-        title: 'rETH - Your Path to Decentralized Staking',
-        content: '<div class="bloc1"><p>For today’s quest, we are going to take partial ownership of a Rocket Pool staking pool. Alongside your fellow Explorers, you will be contributing to the decentralization of Ethereum, driving up demand for use of decentralized LSTs and earning rewards.</p><p>As your Ether holdings grow, you can contribute to Rocket Pool with increasing impact:</p><ul><li>&gt;0.1 ETH: <code>Mint</code> new rETH</li><li>&gt;8-16 ETH: Run an rETH Minipool</li></ul><p>Taking any of these options will serve as completion for today’s quest.</p><p>Rocket Pool distinguishes itself by enabling a progression from passive staking, to becoming an active mini-pool operator where others can gather. This pathway contrasts starkly with centralized LSTs, offering clear path of progression along an involved role in Ethereum\'s ecosystem.</p><p>rETH is more than staking. It\'s a commitment to Ethereum\'s decentralized future, and the beginning of a journey to grow your impact in exchange for increasing rewards.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-8917f192.svg\'></div>'
-      }
     ]
   },
   {
@@ -2603,7 +2724,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/understanding-ethereum-token-standards/lesson-dcf41ef6.png',
-    socialImageLink: '/images/understanding-ethereum-token-standards/social-00f2f6fe.png',
+    socialImageLink: '/images/understanding-ethereum-token-standards/social-26124930.png',
     learningActions: '',
     marketingDescription: 'Learn how Ethereum’s asset templates support both traditional and emerging asset classes.',
     badgeId: null,

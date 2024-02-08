@@ -21,6 +21,9 @@ import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
 import { isMobile, isDesktop } from 'react-device-detect'
+import { Emoji } from 'emoji-picker-react'
+import emojiRegex from 'emoji-regex'
+import emojisToUnified from 'data/emojis.json'
 
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
@@ -63,6 +66,14 @@ export const Slide = styled(Card)<{
     ${(props) =>
       props.slidetype === 'LEARN' &&
       (props.issmallscreen === 'true' ? 'display: block;' : 'display: flex;')};
+  }
+  img.epr-emoji-img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 5px;
+  }
+  li.hide-marker {
+    list-style-type: none;
   }
   div.content > div > img {
     margin: auto;
@@ -519,7 +530,37 @@ const Lesson = ({
       .indexOf(target)
   }
 
+  const emojiRegexPattern = emojiRegex()
+
+  function replaceEmojis(text) {
+    const emojis = text.match(emojiRegexPattern)
+    const parts = text.split(emojiRegexPattern)
+    const result = []
+
+    for (let i = 0; i < parts.length; i++) {
+      // Add the non-emoji part to the result array
+      result.push(parts[i])
+
+      // If there's a corresponding emoji, add the CustomEmojiComponent
+      if (emojis && emojis[i]) {
+        const emoji = emojis[i]
+        const unified = emojisToUnified[emoji]
+        if (!unified) {
+          console.log(`${emoji} no found !!`)
+        } else {
+          const em = <Emoji unified={unified} size={20} />
+          result.push(em)
+        }
+      }
+    }
+
+    return result
+  }
+
   function transform(node) {
+    if (node.type === 'text' && emojiRegexPattern.test(node.data)) {
+      return replaceEmojis(node.data)
+    }
     if (node.type === 'tag' && node.name === 'a') {
       // force links to target _blank
       if (node.attribs?.href?.length)
@@ -547,6 +588,21 @@ const Lesson = ({
           style={{ cursor: 'pointer' }}
         >
           {processNodes(node.children)}
+        </li>
+      )
+    }
+    // paragraphs starting with an emoji -> hide marker
+    if (
+      node.type === 'tag' &&
+      node.name === 'li' &&
+      emojiRegexPattern.test(node.children[0].data)
+    ) {
+      const p = processNodes(node.children)
+      p.shift()
+      return (
+        <li className="hide-marker">
+          {replaceEmojis(node.children[0].data)}
+          {p}
         </li>
       )
     }
