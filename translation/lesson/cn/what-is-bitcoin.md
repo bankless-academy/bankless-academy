@@ -35,7 +35,7 @@ At Bankless Academy, our mission is to provide Explorers such as yourself with t
 
 Using the new era of the internet and `blockchain technology`, we’re unlocking financial freedom and reclaiming ownership of our data and privacy. Which have long been exploited by third parties for profit.
 
-Today, we’re looking at the first event in blockchain history: the invention of `cryptocurrency`. Cryptocurrency is a type of `money` that moves outside of traditional financial systems for reasons we’ll be investigating throughout our lesson.
+Today, we’re looking at the first event in blockchain history: the invention of `cryptocurrency,` a type of `money` that moves outside of traditional financial systems.
 
 The cryptocurrency boom began with the invention of Bitcoin…
 
@@ -49,7 +49,7 @@ As the first successful `cryptocurrency`, Bitcoin began a powerful conversation:
 
 The reality is that today, we aren’t really in control of our money.
 
-It’s time to explore the captivating story of Bitcoin and learn how the cryptocurrency movement is solving the unseen dilemma behind one of humanity’s oldest tools.
+Dive into Bitcoin's journey and how it's reshaping finance by tackling age-old challenges.
 
 **It’s time to rethink money.**
 
@@ -94,9 +94,9 @@ Moving into the digital age, the electronic currency has vastly replaced physica
 
 # The Problem
 
-The main problem with our financial system is the lack of control you have over your money. Central banks manage the economy by adjusting the money supply and interest rates, which can lead to growth or recession. But too much power in their hands can cause huge economic downturns.
+The main problem with our financial system is the lack of control you have over your money. Central banks control the value of money and therefore your spending habits. Subject to human error and greed, mistakes can be made. So, we need money that is beyond control of a single entity and reliably stores its value over time.
 
-Meanwhile, banks can restrict access to your funds and control where and when you can make transactions. This setup can prevent your savings from growing and contribute to wider economic inequality and reduced living standards.
+Meanwhile, banks can restrict access to your funds and control where and when you can make transactions. This setup can hinder your financial growth and contribute to wider economic inequality and reduced living standards.
 
 ***
 
@@ -128,9 +128,9 @@ Scarcity in Bitcoin refers to the fact that there is a cap on how many Bitcoins 
 
 ***
 
-Similar to mining gold from the earth, undiscovered bitcoin is introduced through a laborious process called `cryptocurrency mining`, making it difficult to increase the supply in circulation.
+Similar to mining gold from the earth, undiscovered Bitcoin is introduced through a laborious process called `cryptocurrency mining`, making it difficult to increase the supply in circulation.
 
-As demand for Bitcoin increases, with more people and businesses looking to own and use it, this scarcity can lead to an increase in its value. Its scarcity is a key factor that could drive its worth over time, making it an attractive asset for investment and savings.
+As more people look to own and use it, demand for Bitcoin increases, this scarcity can lead to an increase in its value. Its scarcity is a key factor that could drive its worth over time, making it an attractive asset for investment and savings.
 
 ![](https://app.banklessacademy.com/images/what-is-bitcoin/digital-gold-scarcity-eae248f0.svg)
 
@@ -189,7 +189,7 @@ How does self-custody support a deeper type of ownership?
 
 # Bitcoin — It’s like Emailing Money!
 
-Just as email simplified sending letters by removing the post office, Bitcoin streamlined the transfer of money.
+Just as email simplified sending letters by removing the post office, Bitcoin has streamlined sending money.
 
 - ⚡ Transfer Bitcoin to anyone else’s address in a short period of time, to and from anywhere in the world.
 - 📡 Bitcoin is online 24/7. Unlike your bank, you can send money internationally or trade assets at any hour. No waiting, no paperwork, no downtime.
@@ -227,7 +227,7 @@ Bitcoin runs on a shared network hosted across thousands of computers worldwide.
 
 This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be attacked, a majority of the computers would need to be compromised.
 
-This defense strategy is called `decentralization`: the shifting of control from one main group to many smaller ones. Decentralization is what makes cryptocurrency transfers virtually unstoppable.
+This defense strategy is called `decentralization`: the shifting of control from one central group to many smaller ones. Decentralization is what makes cryptocurrency transfers virtually unstoppable.
 
 ![](https://app.banklessacademy.com/images/what-is-bitcoin/how-does-it-work-c57acb1b.svg)
 
@@ -262,7 +262,7 @@ That’s quite a process!
 
 What is decentralization?
 
-- [ ] The mining of bitcoin.
+- [ ] The mining of Bitcoin.
 
 > While mining works alongside decentralization, they are not the same.
 
@@ -276,9 +276,9 @@ What is decentralization?
 
 # The Innovation of Money
 
-In this lesson, we’ve looked at how Bitcoin uses `blockchain technology` to return lasting value and ownership to money. We learned how the increase of supply in monetary systems erodes citizens' long-term savings and saw how institutional custodians could not support true ownership over our assets.
+In this lesson, we’ve looked at how Bitcoin uses `blockchain technology` to return lasting value and ownership to money. We learned how Bitcoin's scarcity and rising demand may increase its value and saw how institutional custodians could not support true ownership over our assets.
 
-But Bitcoin has become more than just a tool. It was a catalyst for a revolutionary shift towards `decentralized finance`, focusing on:
+But Bitcoin has become more than just a tool. It was a catalyst for a revolutionary shift towards `decentralized money`, focusing on:
 
 - 💵 Solving inefficiencies in digital economics.
 - 🔎 Reducing institutional fraud and market manipulation.
@@ -287,11 +287,11 @@ But Bitcoin has become more than just a tool. It was a catalyst for a revolution
 - 🌐 Building true ownership for the digital age.
 - 🤝 A global marketplace with no geographic barriers, available 24/7.
 
-This movement champions the concept of true ownership and self-custody, empowering individuals to manage their assets without the need for intermediaries like banks. This shift emphasizes the importance of not placing trust in third-party institutions that have historically controlled and monitored financial transactions.
+This movement champions the concept of true ownership, empowering individuals to manage their assets without the need for intermediaries like banks. This shift emphasizes the importance of not placing trust in third-party institutions that have historically controlled and monitored financial transactions.
 
-Highlighting the power of blockchain technology to create a more secure, transparent, and equitable financial future.
+Blockchain technology revolutionizes finance, ensuring secure, transparent, and equitable transactions for a faster, more trustworthy, and accessible future for all.
 
-The decentralized money community advocates that just as the separation of church and state empowered the free ownership/transfer of ideas, the separation of money and state is necessary for the same freedom of value. In backing such expression of value, the community aims to restore the alignment of money with the values of `democracy`.
+In backing such expression of value, the community aims to restore the alignment of money with the values of `democracy`.
 
 “_Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations._
 
