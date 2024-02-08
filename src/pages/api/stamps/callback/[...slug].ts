@@ -50,7 +50,7 @@ const checkTwitterAccountAge = (numberOfDays: number, createdAt: string): { vali
   } else {
     return {
       valid: false,
-      errors: [`Twitter account age is less than ${numberOfDays} days (created at ${createdAt})`],
+      errors: [`Your Twitter account age is less than ${numberOfDays} days (created at ${createdAt?.substring(0, 10)})`],
     };
   }
 };
@@ -117,22 +117,30 @@ export default async function handler(
   } else if (platform === 'twitter') {
     const context = {}
     const sessionKey = state
-    const twitterClient = await twitterOAuth.getAuthClient(sessionKey as string, code as string, context);
-    const data = await twitterOAuth.getTwitterUserData(context, twitterClient);
-    console.log('data', data)
-    const numberOfDays = 180
-    const checkAge = checkTwitterAccountAge(numberOfDays, data.createdAt)
-    if (!checkAge.valid) {
-      return res.status(200).send(checkAge.errors)
-    }
-    result.valid = true
-    if (result.valid && data.id) {
-      record = {
-        type,
-        version,
-        "id": data.id
+    try {
+      const twitterClient = await twitterOAuth.getAuthClient(sessionKey as string, code as string, context);
+      const data = await twitterOAuth.getTwitterUserData(context, twitterClient);
+      console.log('data', data)
+      const numberOfDays = 180
+      const checkAge = checkTwitterAccountAge(numberOfDays, data.createdAt)
+      if (!checkAge.valid) {
+        const status = checkAge.errors
+        res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}`)
+      } else {
+        result.valid = true
       }
-    } else result.valid = false
+      if (result.valid && data.id) {
+        record = {
+          type,
+          version,
+          "id": data.id
+        }
+      } else result.valid = false
+
+    } catch (error) {
+      res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${error}&platform=${platform}`)
+      return
+    }
   } else if (platform === 'facebook') {
     const FacebookProvider = new facebook.FacebookProvider();
     result = await FacebookProvider.verify({
@@ -238,6 +246,7 @@ export default async function handler(
     status = `Problem with stamp (${hash}): close the window and try again.`
   } else {
     const stampHashesSearch = []
+    // TODO: also check for BA stamps fraud
     let whereCondition = 'gitcoin_stamps @> ?'
     let sybil = []
     const stampHashes: any = {}
@@ -272,11 +281,19 @@ export default async function handler(
       await db(TABLES.users)
         .where(TABLE.users.id, userId)
         .update({ sybil_user_id: sybil[0]?.id })
-      return res.status(200).json({
-        isStampValidated: false,
-        status: 'duplicate stamp',
-        fraud: sybil[0]?.address,
-      })
+      isStampValidated = false
+      status = 'Duplicate stamp detected.'
+      const fraud = sybil[0]?.address
+      if (json) {
+        return res.status(200).json({
+          isStampValidated,
+          status,
+          fraud,
+          platform
+        })
+      } else {
+        res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}&fraud=${fraud}`)
+      }
     }
     // add stamps to ba_stamps
     console.log('stampHashes', stampHashes)
@@ -290,8 +307,8 @@ export default async function handler(
     status = `Stamp OK: ${hash} You can close the window.`
   }
   if (json) {
-    return res.status(200).send({ isStampValidated, status })
+    return res.status(200).send({ isStampValidated, status, platform })
   } else {
-    res.redirect(`/stamp_confirmation.html?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}`)
+    res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}`)
   }
 }

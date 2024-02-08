@@ -106,13 +106,20 @@ const PassportComponent = ({
               color={theme.colors.incorrect}
               fontWeight="bold"
             >
-              <ExternalLink href="/faq#17f5d5963c644fa7af5e32598bd6c793">
-                {t('Duplicate account detected.')}
-              </ExternalLink>
+              {/* <ExternalLink href="/faq#17f5d5963c644fa7af5e32598bd6c793"> */}
+              {t('Duplicate account detected.')}
+              {/* </ExternalLink> */}
               <br />
-              {passportLS?.fraud
-                ? `${t('Switch back to:')} ${shortenAddress(passportLS?.fraud)}`
-                : null}
+              {passportLS?.fraud ? (
+                <>
+                  {`${t('Switch back to:')} ${shortenAddress(
+                    passportLS?.fraud
+                  )} or `}
+                  <ExternalLink href="/report-an-issue">
+                    contact us
+                  </ExternalLink>
+                </>
+              ) : null}
             </Text>
           </Box>
         ) : isProfile ? null : (

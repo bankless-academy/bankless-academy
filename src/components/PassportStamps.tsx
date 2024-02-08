@@ -94,7 +94,9 @@ const PassportStamps = ({
           toast.closeAll()
           if (res.isStampValidated) {
             toast({
-              title: t('Stamp added.'),
+              title: `Your ${
+                STAMP_PLATFORMS[res.platform]?.name
+              } account has been connected to your Explorer Profile.`,
               status: 'success',
               duration: 10000,
               isClosable: true,
