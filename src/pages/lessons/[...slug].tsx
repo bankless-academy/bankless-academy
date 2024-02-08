@@ -106,7 +106,9 @@ const processMD = async (md, lang, englishLesson) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params.slug?.length === 1 ? params.slug[0] : params.slug[1]
+  const slug = (
+    params.slug?.length === 1 ? params.slug[0] : params.slug[1]
+  )?.replace('-datadisk', '')
   const language: any = params.slug?.length === 1 ? 'en' : params.slug[0]
   let currentLesson = LESSONS.find((lesson: LessonType) => lesson.slug === slug)
   // console.log(currentLesson)
@@ -152,12 +154,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
 
+  const isDatadisk = params.slug[0]?.endsWith('-datadisk')
+
   const pageMeta: MetaData = {
     title: currentLesson.name,
     description: currentLesson.description,
     image: currentLesson.socialImageLink || DEFAULT_METADATA.image,
     isLesson: !currentLesson.isArticle,
     lesson: currentLesson,
+    isDatadisk,
   }
   return {
     props: { pageMeta },
@@ -169,7 +174,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths.push({ params: { slug: [lesson.slug] } })
     if (lesson.lessonCollectibleGif)
       paths.push({
-        params: { slug: [lesson.slug], query: { datadisk: 'true' } },
+        params: { slug: [`${lesson.slug}-datadisk`] },
       })
     if (lesson.languages) {
       for (const lang of lesson.languages) {

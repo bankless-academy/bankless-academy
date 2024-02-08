@@ -26,6 +26,7 @@ export interface MetaData {
   noindex?: boolean
   nolayout?: boolean
   ssr?: boolean
+  isDatadisk?: boolean
 }
 
 const umamiWebsiteId =
@@ -63,9 +64,9 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
 
   const canonical = url?.split('?')[0]
 
-  const isDatadisk = router.asPath?.endsWith('datadisk=true')
-
   const lesson = metadata?.lesson
+
+  const isDatadisk = metadata?.isDatadisk
 
   const isLesson = metadata?.isLesson && lesson
 
@@ -154,7 +155,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
               property={`fc:frame:button:1`}
               content={
                 isDatadisk
-                  ? `Mint DataDisk to support free education`
+                  ? `Mint a DataDisk, Support Free Education.`
                   : `Learn and claim your free lesson badge now!`
               }
             />
@@ -174,7 +175,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
             <meta name="fc:frame:button:1:action" content="post_redirect" />
             <meta
               property={`fc:frame:button:1`}
-              content={`Collect Handbook Entry`}
+              content={`Collect the guide, take it with you wherever you go.`}
             />
           </>
         )}
