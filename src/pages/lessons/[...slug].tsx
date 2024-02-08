@@ -110,7 +110,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const language: any = params.slug?.length === 1 ? 'en' : params.slug[0]
   let currentLesson = LESSONS.find((lesson: LessonType) => lesson.slug === slug)
   // console.log(currentLesson)
-  if (currentLesson.languages) {
+  if (currentLesson?.languages) {
     for (const language of currentLesson.languages) {
       if (
         !fs.existsSync(
@@ -167,6 +167,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = []
   for (const lesson of LESSONS) {
     paths.push({ params: { slug: [lesson.slug] } })
+    if (lesson.lessonCollectibleGif)
+      paths.push({
+        params: { slug: [lesson.slug], query: { datadisk: 'true' } },
+      })
     if (lesson.languages) {
       for (const lang of lesson.languages) {
         paths.push({ params: { slug: [lang, lesson.slug] } })

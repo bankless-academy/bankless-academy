@@ -1,13 +1,16 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { DOMAIN_URL } from 'constants/index'
+import { DOMAIN_URL_ } from 'constants/index'
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { id, platform } = req.query
-  const redirect = `${DOMAIN_URL}/lessons/${id}?referral=quiz_${platform}`
+  const { lesson_slug, platform, provenance } = req.query
+  const redirect =
+    provenance === 'datadisk'
+      ? `https://highlight.xyz/mint/64b810dda23ab034b49a1340?referral=${provenance}_${platform}`
+      : `${DOMAIN_URL_}/lessons/${lesson_slug}?referral=${provenance}_${platform}`
   return res
     .status(302)
     .setHeader('Location', redirect)

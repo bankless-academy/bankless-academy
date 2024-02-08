@@ -5,7 +5,7 @@ import Script from 'next/script'
 import {
   PROJECT_NAME,
   DOMAIN_PROD,
-  DOMAIN_URL,
+  DOMAIN_URL_,
   DEFAULT_METADATA,
   FAVICON,
   UMAMI_PROD,
@@ -45,11 +45,9 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
     : PROJECT_NAME
   const description = metadata?.description || DEFAULT_METADATA.description
   const image = metadata?.image
-    ? `${metadata?.image.startsWith('http') ? '' : DOMAIN_URL}${
-        metadata?.image
-      }`
-    : `${DOMAIN_URL}${DEFAULT_METADATA.image}`
-  const url = `${DOMAIN_URL}${router.asPath}`
+    ? `${DOMAIN_URL_}${metadata?.image}`
+    : `${DOMAIN_URL_}${DEFAULT_METADATA.image}`
+  const url = `${DOMAIN_URL_}${router.asPath}`
 
   useEffect(() => {
     /* Hotjar */
@@ -64,6 +62,12 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
   }, [])
 
   const canonical = url?.split('?')[0]
+
+  const isDatadisk = router.asPath?.endsWith('datadisk=true')
+
+  const lesson = metadata?.lesson
+
+  const isLesson = metadata?.isLesson && lesson
 
   return (
     <>
@@ -82,7 +86,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           rel="canonical"
           href={
             metadata?.canonical
-              ? `${DOMAIN_URL}${metadata.canonical}`
+              ? `${DOMAIN_URL_}${metadata.canonical}`
               : canonical
           }
         />
@@ -125,6 +129,56 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           title="Bankless Academy lesson feed"
           href="/rss.xml"
         />
+        {/* Farcaster Frame */}
+        {isLesson && lesson && (
+          <>
+            <meta property="fc:frame" content="vNext" />
+            <meta
+              property="fc:frame:image"
+              content={
+                isDatadisk
+                  ? `${DOMAIN_URL_}${lesson.lessonCollectibleGif}`
+                  : image
+              }
+            />
+            <meta
+              property="fc:frame:post_url"
+              content={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${
+                lesson.slug
+              }&platform=farcaster&provenance=${
+                isDatadisk ? 'datadisk' : 'lesson'
+              }`}
+            />
+            <meta name="fc:frame:button:1:action" content="post_redirect" />
+            <meta
+              property={`fc:frame:button:1`}
+              content={
+                isDatadisk
+                  ? `Mint DataDisk to support free education`
+                  : `Learn and claim your free lesson badge now!`
+              }
+            />
+          </>
+        )}
+        {lesson?.isArticle && (
+          <>
+            <meta property="fc:frame" content="vNext" />
+            <meta
+              property="fc:frame:image"
+              content={`${DOMAIN_URL_}${lesson.socialImageLink}`}
+            />
+            <meta
+              property="fc:frame:post_url"
+              content={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${lesson.slug}&platform=farcaster&provenance=handbook`}
+            />
+            <meta name="fc:frame:button:1:action" content="post_redirect" />
+            <meta
+              property={`fc:frame:button:1`}
+              content={`Collect Handbook Entry`}
+            />
+          </>
+        )}
+        {/* Lens Portals */}
         {/* noscript */}
         <noscript>You need to enable JavaScript to run this app.</noscript>
       </NextHead>

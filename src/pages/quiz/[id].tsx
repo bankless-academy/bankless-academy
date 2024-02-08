@@ -6,7 +6,7 @@ import { z } from 'zod'
 import { Box, Button } from '@chakra-ui/react'
 
 import { ImageData, Props } from 'pages/api/frame-og/[props]'
-import { DOMAIN_URL, LESSONS } from 'constants/index'
+import { DOMAIN_URL_, LESSONS } from 'constants/index'
 import ExternalLink from 'components/ExternalLink'
 
 const questionSchema = z.object({
@@ -40,7 +40,6 @@ export default function UI({
   action,
   buttons,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const lessonLink = action.replace('/quiz/', '/lessons/')?.split('?')[0]
   const lessonSlug = action?.split('?')[0]?.split('/').pop()
 
   const isRedirect = buttons?.length && buttons[0] === CTA
@@ -60,7 +59,7 @@ export default function UI({
         {isRedirect ? (
           <meta
             property="fc:frame:post_url"
-            content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}&platform=farcaster`}
+            content={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${lessonSlug}&platform=farcaster&provenance=quiz`}
           />
         ) : (
           <meta property="fc:frame:post_url" content={action} />
@@ -88,7 +87,7 @@ export default function UI({
         {isRedirect ? (
           <meta
             property="hey:portal:post_url"
-            content={`${DOMAIN_URL}/api/frame-og/redirect?id=${lessonSlug}&platform=hey`}
+            content={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${lessonSlug}&platform=hey&provenance=quiz`}
           />
         ) : (
           <meta property="hey:portal:post_url" content={action} />
@@ -110,7 +109,10 @@ export default function UI({
           <Box mt="2">
             {buttons.map((button, index) =>
               button && button === CTA ? (
-                <ExternalLink key={button} href={`${lessonLink}?referral=quiz`}>
+                <ExternalLink
+                  key={button}
+                  href={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${lessonSlug}&platform=web&provenance=quiz`}
+                >
                   <Button
                     name="buttonIndex"
                     variant="primaryWhite"
