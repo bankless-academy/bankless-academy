@@ -50,7 +50,7 @@ const checkTwitterAccountAge = (numberOfDays: number, createdAt: string): { vali
   } else {
     return {
       valid: false,
-      errors: [`Your Twitter account age is less than ${numberOfDays} days (created at ${createdAt?.substring(0, 10)})`],
+      errors: [`Your Twitter account is less than ${numberOfDays} days old (created at ${createdAt?.substring(0, 10)}). Please try another stamp.`],
     };
   }
 };
