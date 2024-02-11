@@ -81,9 +81,10 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
     metadata?.image?.includes('api/og/social') &&
     metadata?.image?.includes('&badge=')
 
-  const explorerAddress = isProfile
-    ? metadata?.image.split('address=')[1].split('&')[0]
-    : null
+  const explorerAddress =
+    isProfile || isBadge
+      ? metadata?.image.split('address=')[1].split('&')[0]
+      : null
 
   const badgeId = isBadge
     ? metadata?.image.split('badge=')[1].split('&')[0]
