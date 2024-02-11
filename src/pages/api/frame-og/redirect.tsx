@@ -20,7 +20,7 @@ export default async function handler(
       ? `https://highlight.xyz/mint/64b810dda23ab034b49a1340?referral=${provenance}_${platform}`
       : explorerAddress
       ? // TODO: redirect to onboarding link + track referralAddress
-        `${DOMAIN_URL_}/explorer/${explorerAddress}`
+        `${DOMAIN_URL_}/explorer/${explorerAddress}?referral=${provenance}_${platform}`
       : `${DOMAIN_URL_}/lessons/${lesson_slug}?referral=${provenance}_${platform}`
   return res
     .status(302)

@@ -128,16 +128,17 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
   )}`
 
   if (
-    referral === 'true' &&
+    referral?.length &&
     !isMyProfile &&
     !localStorage.getItem('referrer')?.length &&
     fullProfileAddress
   ) {
-    console.log('referrer', localStorage.getItem('referrer'))
     localStorage.setItem('referrer', fullProfileAddress?.toLowerCase())
+    console.log('referrer added', localStorage.getItem('referrer'))
   }
   if (address && localStorage.getItem('referrer') === address?.toLowerCase()) {
     localStorage.setItem('referrer', '')
+    console.log('reset referrer')
   }
 
   if (user)
