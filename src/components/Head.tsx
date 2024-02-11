@@ -234,7 +234,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
             <meta name="fc:frame:button:1:action" content="post_redirect" />
             <meta
               property={`fc:frame:button:1`}
-              content={`Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`}
+              content={`Learn and claim your free lesson badge now!`}
             />
           </>
         )}
