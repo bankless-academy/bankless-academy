@@ -311,5 +311,3 @@ Note: rETH is worth slightly more than regular ETH. This is because staking rewa
 
 It’s time to become a guardian of Ethereum. Good luck on your quest, Explorer. May your commitment to Ethereum’s decentralized future be greatly rewarded!
 
-[embed]()
-
