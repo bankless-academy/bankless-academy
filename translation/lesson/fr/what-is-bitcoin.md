@@ -61,7 +61,7 @@ Money has been an integral part of society since our earliest days when beads, s
 
 Yet early currencies had a problem: it was too easy for someone to find/create new money. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.
 
-Materials like gold & silver were eventually adopted to solve this problem. The key advantage of these materials was their scarcity – there wasn't an endless supply, making it hard for anyone to increase the amount of money in circulation significantly. This `scarcity`helped maintain the value of the money.
+Materials like gold & silver were eventually adopted to solve this problem. The key advantage of these materials was their scarcity – there wasn't an endless supply, making it hard for anyone to increase the amount of money in circulation significantly. This `scarcity` helped maintain the value of money.
 
 As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Such currency made money recognizable and measurable while serving as a strong store of value.
 
@@ -88,13 +88,13 @@ Then, in the 20th century, came the fall of this “`Gold Standard`”.
 
 Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.
 
-Moving into the digital age, the electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.
+Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.
 
 ![](https://app.banklessacademy.com/images/what-is-bitcoin/a-brief-history-of-money-pt-2-3f9be5ac.svg)
 
 # The Problem
 
-The main problem with our financial system is the lack of control you have over your money. Central banks control the value of money and therefore your spending habits. Subject to human error and greed, mistakes can be made. So, we need money that is beyond control of a single entity and reliably stores its value over time.
+The main problem with our financial system is the lack of control you have over your money. Central banks control the value of money and, therefore, your spending habits. Subject to human error and greed, mistakes can be made. So, we need money that is beyond the control of a single entity and reliably stores its value over time.
 
 Meanwhile, banks can restrict access to your funds and control where and when you can make transactions. This setup can hinder your financial growth and contribute to wider economic inequality and reduced living standards.
 
@@ -110,11 +110,11 @@ Only these qualities can return financial freedom & security to modern money.
 
 # Enter Bitcoin
 
-`Satoshi Nakamoto` thought that money is too important to humanity to be controlled by just a few people. He wanted to create a type of money that could be fair and reliable for everyone.
+`Satoshi Nakamoto` thought that money was too important to humanity to be controlled by just a few people. He wanted to create a type of money that could be fair and reliable for everyone.
 
 Enter Bitcoin, the digital currency powering global transactions beyond the influence of the traditional banking system.
 
-- ⛓️ Using `blockchain technology` connects people directly rather than going through institutions. It’s fast, fully automated, and highly resistant to external pressure.
+- ⛓️ Using `blockchain technology`, it connects people directly rather than going through institutions. It’s fast, fully automated, and highly resistant to external pressure.
 - 💎 With no central authority to print money, Bitcoin has `scarcity` and value-retention similar to gold.
 - ✊ It’s `self-custodial`: It can be held without institutions facilitating transfer or storage. When stored in their natural state, funds are held in a secure online safe to which only the owner has access.
 
@@ -124,13 +124,16 @@ For these qualities, Bitcoin has earned the nickname “digital gold”.
 
 # Digital Gold: Scarcity
 
-Scarcity in Bitcoin refers to the fact that there is a cap on how many Bitcoins can ever exist - which is a maximum of 21 million. This limited supply is designed into its code, ensuring that Bitcoin remains rare and potentially valuable, much like precious metals such as gold.
+Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist - which is a maximum of 21 million. This limited supply is designed into its code, ensuring that Bitcoin remains rare and potentially valuable, much like precious metals such as gold.
+
+- Circulating Supply: The Bitcoin that's currently being used or available for trading.
+- Total Supply: All the Bitcoin that exists, which is capped at 21 million.
 
 ***
 
 Similar to mining gold from the earth, undiscovered Bitcoin is introduced through a laborious process called `cryptocurrency mining`, making it difficult to increase the supply in circulation.
 
-As more people look to own and use it, demand for Bitcoin increases, this scarcity can lead to an increase in its value. Its scarcity is a key factor that could drive its worth over time, making it an attractive asset for investment and savings.
+Bitcoin's limited supply makes it valuable and protects it from inflation, unlike traditional currencies,  which can lose value when more is printed. This makes Bitcoin an attractive alternative for those seeking to preserve value in the long term.
 
 ![](https://app.banklessacademy.com/images/what-is-bitcoin/digital-gold-scarcity-eae248f0.svg)
 
@@ -189,11 +192,11 @@ How does self-custody support a deeper type of ownership?
 
 # Bitcoin — It’s like Emailing Money!
 
-Just as email simplified sending letters by removing the post office, Bitcoin has streamlined sending money.
+Just as email simplifies sending letters by removing the post office, Bitcoin has streamlined sending money.
 
 - ⚡ Transfer Bitcoin to anyone else’s address in a short period of time, to and from anywhere in the world.
 - 📡 Bitcoin is online 24/7. Unlike your bank, you can send money internationally or trade assets at any hour. No waiting, no paperwork, no downtime.
-- ⚙️ Bitcoin is neutral and automated. Emails depend on their hosts, Bitcoin runs itself.
+- ⚙️ Bitcoin is neutral and automated. Emails depend on their hosts. Bitcoin runs itself.
 
 ***
 
@@ -248,9 +251,11 @@ Once a transaction is confirmed, it cannot be reversed.
 
 # How does it work? (Pt. 3)
 
-Every transaction is submitted with a fee paid by the sender. This is allocated to the miner who verifies your transaction.
+When you send Bitcoin, you pay a fee that rewards the miner who processes your transaction. Miners also earn new Bitcoin, adding to its current circulating supply.
 
-On top of this, the original miner also receives a small, newly minted amount of Bitcoin. This is the “mining of undiscovered gold” we mentioned while discussing `scarcity`.
+<…>
+
+This is the “mining of undiscovered gold” we mentioned while discussing `scarcity`.
 
 `Cryptocurrency mining` incentivizes people around the world to help secure the network while steadily injecting new currency into the Bitcoin economy.
 
@@ -276,22 +281,19 @@ What is decentralization?
 
 # The Innovation of Money
 
-In this lesson, we’ve looked at how Bitcoin uses `blockchain technology` to return lasting value and ownership to money. We learned how Bitcoin's scarcity and rising demand may increase its value and saw how institutional custodians could not support true ownership over our assets.
+In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value and saw that relying on traditional institutions means not having full asset ownership.
 
 But Bitcoin has become more than just a tool. It was a catalyst for a revolutionary shift towards `decentralized money`, focusing on:
 
 - 💵 Solving inefficiencies in digital economics.
 - 🔎 Reducing institutional fraud and market manipulation.
 - ⚖️ Building equality of opportunity into money to close the wealth gap.
-- 👨‍👩‍👧 Providing unbanked populations with access to modern financial tools.
 - 🌐 Building true ownership for the digital age.
-- 🤝 A global marketplace with no geographic barriers, available 24/7.
+- 🤝 A 24/7 global marketplace offers financial tools to unbanked populations worldwide.
 
-This movement champions the concept of true ownership, empowering individuals to manage their assets without the need for intermediaries like banks. This shift emphasizes the importance of not placing trust in third-party institutions that have historically controlled and monitored financial transactions.
+This movement highlights Bitcoin’s role in solving key problems in traditional finance by shifting financial control to individuals, promoting transparency, equality, and reduced corruption.
 
-Blockchain technology revolutionizes finance, ensuring secure, transparent, and equitable transactions for a faster, more trustworthy, and accessible future for all.
-
-In backing such expression of value, the community aims to restore the alignment of money with the values of `democracy`.
+By embodying these principles, it champions the fundamental values of democracy. This guarantees universal access to financial services and true ownership while cultivating a sense of community and shared responsibility among its users.
 
 “_Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations._
 
