@@ -11,6 +11,7 @@ import queryString from 'query-string'
 import mixpanel, { Dict, Query } from 'mixpanel-browser'
 import { readContract } from '@wagmi/core'
 import axios from 'axios'
+import { Network as AlchemyNetwork, Alchemy } from "alchemy-sdk"
 
 import {
   ACTIVATE_MIXPANEL,
@@ -305,6 +306,10 @@ export async function validateOnchainQuest(
       return balance >= 0.001
     }
     else if (quest === 'StakingOnEthereum') {
+      const arbitrumBalance = await getTokenBalance(AlchemyNetwork.ARB_MAINNET, address, ['0xec70dcb4a1efa46b8f2d97c310c9c4790ba5ffa8'])
+      console.log('arbitrumBalance: ', arbitrumBalance)
+      const optimismBalance = await getTokenBalance(AlchemyNetwork.OPT_MAINNET, address, ['0x9bcef72be871e61ed4fbbc7630889bee758eb81d'])
+      console.log('optimismBalance: ', optimismBalance)
       const query = gql`
       query MyQuery {
         Ethereum: TokenBalances(
@@ -332,10 +337,12 @@ export async function validateOnchainQuest(
       try {
         const data = await graphQLClient.request(query)
         const networks = Object.keys(data)
-        let balance = 0
+        let balance = arbitrumBalance + optimismBalance
         for (const network of networks) {
           if (data[network].TokenBalance !== null) {
-            balance += data[network].TokenBalance[0].formattedAmount
+            const networkTokenBalance = data[network].TokenBalance[0].formattedAmount
+            console.log(`${network}Balance: `, networkTokenBalance)
+            balance += networkTokenBalance
           }
         }
         console.log(data)
@@ -700,4 +707,20 @@ export function calculateExplorerScore(stats: UserStatsType) {
     (stats?.badges || 0) +
     (Object.keys(stats?.donations || {})?.length || 0) +
     (stats?.valid_stamps?.length || 0)
+}
+
+export const getTokenBalance = async (network: AlchemyNetwork, ownerAddress: string, tokenContractAddresses: string[]) => {
+  const settings = {
+    apiKey: ALCHEMY_KEY_BACKEND,
+    network,
+  };
+  const alchemy = new Alchemy(settings);
+
+  const res = await alchemy.core.getTokenBalances(
+    ownerAddress,
+    tokenContractAddresses
+  );
+
+  // TEMP: hardcode 18 decimals for token
+  return parseInt(res?.tokenBalances[0]?.tokenBalance, 16) / Math.pow(10, 18)
 }
