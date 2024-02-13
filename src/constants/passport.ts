@@ -75,6 +75,7 @@ export const STAMP_PLATFORMS = {
 
 export const EMPTY_PASSPORT = {
   verified: false,
+  score: '...',
   fraud: null,
   validStampsCount: 0,
   stamps: null,

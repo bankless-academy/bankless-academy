@@ -10,6 +10,7 @@ import ExternalLink from 'components/ExternalLink'
 import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
 import { theme } from 'theme/index'
 import { api, shortenAddress } from 'utils'
+import ScoreRing from 'components/ScoreRing'
 
 const PassportComponent = ({
   displayStamps,
@@ -138,6 +139,16 @@ const PassportComponent = ({
             </>
           </Text>
         )}
+      </Box>
+      <Box
+        borderBottom="1px solid #72757B"
+        paddingBottom="4"
+        marginBottom="8"
+        w="80%"
+        mx="auto"
+        textAlign="center"
+      >
+        <ScoreRing score={passportLS.score} />
       </Box>
       <PassportStamps
         stamps={passportLS ? passportLS.stamps : null}

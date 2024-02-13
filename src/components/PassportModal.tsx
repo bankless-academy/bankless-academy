@@ -120,9 +120,7 @@ const PassportModal = ({
               </Box>
             )} */}
             <Box my="4">
-              {t(
-                'Explorers must connect multiple accounts in order to collect Bankless Academy rewards.'
-              )}{' '}
+              {`Explorers must have a Gitcoin Passport score > 20 or connect at least 2 accounts in order to collect Bankless Academy rewards. `}
               <ExternalLink
                 underline="true"
                 href="/faq#36c048c07dea4b289d466a4318e41eb2"
@@ -139,8 +137,8 @@ const PassportModal = ({
             <Image
               src="/images/gitcoin-passport.svg"
               alt="Gitcoin Passport"
-              p="0 8px"
-              height="30px"
+              p="0 4px 0 8px"
+              height="32px"
             />
             Gitcoin Passport
           </Box>

@@ -9,8 +9,11 @@ import { ALLOWED_PROVIDERS, NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
 import { filterValidStamps } from 'utils/passport'
 import { trackBE } from 'utils/mixpanel'
 import axios from 'axios'
+import { PassportResponseSchema, fetchPassport, submitPassport } from 'utils/passport_lib'
 
 // const reader = new PassportReader(CERAMIC_PASSPORT, '1')
+
+const REQUIRED_PASSPORT_SCORE = 20
 
 export default async function handler(
   req: NextApiRequest,
@@ -46,7 +49,7 @@ export default async function handler(
   const SYBIL_CHECK: SybilCheckTypes = 'GITCOIN_PASSPORT'
 
   const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
-
+  let passportScore = 0
   // TEMP: bypass passport check (accounts having issues with Ceramic API)
   const TEMP_PASSPORT_WHITELIST = [
     // '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
@@ -61,6 +64,7 @@ export default async function handler(
   if (TEMP_PASSPORT_WHITELIST.includes(address.toLowerCase())) {
     return res.status(200).json({
       verified: true,
+      score: 99,
       requirement,
       validStampsCount: 99,
     })
@@ -77,8 +81,25 @@ export default async function handler(
           'X-API-Key': process.env.GITCOIN_PASSPORT_API_KEY,
         },
       }
+      const PASSPORT_COMMUNITY_ID = "6651"
+      let score
+      const submit = await submitPassport(address, PASSPORT_COMMUNITY_ID)
+      // console.log(submit)
+      if (submit.status === 200) {
+        score = await fetchPassport(address, PASSPORT_COMMUNITY_ID)
+      }
+      if (score.ok) {
+        const res = PassportResponseSchema.parse(await score.json())
+        console.log(res)
+        if (res?.score) {
+          passportScore = parseInt(res.score)
+        }
+      } else {
+        console.log('score not found ...')
+      }
       const passportRes = await axios.get(
         `https://api.scorer.gitcoin.co/registry/stamps/${address}?limit=1000`,
+        // `https://api.scorer.gitcoin.co/registry/v2/score/6651/${address}`,
         gitcoinConfig
       )
       const passport: any = passportRes.data
@@ -156,6 +177,7 @@ export default async function handler(
           .update({ sybil_user_id: 12 })
         res.status(403).json({
           verified: false,
+          score: passportScore,
           requirement,
           validStampsCount: 0,
         })
@@ -173,6 +195,7 @@ export default async function handler(
           .update({ sybil_user_id: sybil[0]?.id })
         return res.status(200).json({
           verified: false,
+          score: passportScore,
           requirement,
           fraud: sybil[0]?.address,
           validStampsCount: Object.keys(stampHashes)?.length,
@@ -185,7 +208,8 @@ export default async function handler(
         console.log('not verified')
       }
       return res.status(200).json({
-        verified: validStamps?.length >= NUMBER_OF_STAMP_REQUIRED,
+        verified: validStamps?.length >= NUMBER_OF_STAMP_REQUIRED || passportScore >= REQUIRED_PASSPORT_SCORE,
+        score: passportScore,
         fraud:
           user?.sybil_user_id === 12
             ? '0x0000000000000000000000000000000000000000'
@@ -198,6 +222,7 @@ export default async function handler(
       console.error(error)
       res.status(500).json({
         verified: false,
+        score: passportScore,
         requirement,
         validStampsCount: 0,
         error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
