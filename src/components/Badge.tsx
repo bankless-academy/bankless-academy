@@ -6,7 +6,7 @@ import { useAccount, useEnsName } from 'wagmi'
 
 import { LessonType } from 'entities/lesson'
 import MintBadge from 'components/MintBadge'
-import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL } from 'constants/index'
+import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL_ } from 'constants/index'
 import { BADGE_OPENSEA_URL, BADGE_TO_KUDOS_IDS } from 'constants/badges'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
@@ -24,7 +24,10 @@ const Badge = ({
     `isBadgeMinted-${lesson.badgeId}`,
     false
   )
-  const { address } = useAccount()
+  const current_wallet: any = localStorage.getItem('current_wallet')
+  const { address } = current_wallet
+    ? { address: current_wallet }
+    : useAccount()
   const { data: ensName } = useEnsName({
     address: address,
     chainId: 1,
@@ -37,8 +40,8 @@ const Badge = ({
   }" onchain credential at @${TWITTER_ACCOUNT} 🎉
 ${
   IS_WHITELABEL
-    ? `${DOMAIN_URL}/lessons/${langURL}${lesson.slug}`
-    : `${DOMAIN_URL}/explorer/${
+    ? `${DOMAIN_URL_}/lessons/${langURL}${lesson.slug}`
+    : `${DOMAIN_URL_}/explorer/${
         typeof ensName === 'string' && ensName?.endsWith('.eth')
           ? ensName
           : address
@@ -50,6 +53,13 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
   )}`
+
+  const farcasterLink = twitterLink
+    ?.replace(
+      'https://twitter.com/intent/tweet?url=',
+      'https://warpcast.com/~/compose?text='
+    )
+    ?.replace('BanklessAcademy', 'banklessacademy.eth')
 
   const BadgeHelper = (
     <Helper
@@ -139,6 +149,20 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     }
                   >
                     {t('Share on Twitter / X')}
+                  </Button>
+                </ExternalLink>
+              </Box>
+              <Box pb="2">
+                <ExternalLink href={farcasterLink} mr="2">
+                  <Button
+                    variant="primary"
+                    w="100%"
+                    borderRadius="0"
+                    leftIcon={
+                      <ChakraImage width="20px" src="/images/Farcaster.svg" />
+                    }
+                  >
+                    {t('Share on Farcaster')}
                   </Button>
                 </ExternalLink>
               </Box>

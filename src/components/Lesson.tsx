@@ -396,7 +396,7 @@ const Lesson = ({
   const goToNextSlide = () => {
     toast.closeAll()
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
-      alert('select your answer to the quiz first')
+      console.log('select your answer to the quiz first')
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
       if (!isDesktop) scrollTop()

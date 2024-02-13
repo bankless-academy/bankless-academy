@@ -63,15 +63,16 @@ const StakingOnEthereum = (
     questComponent: (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
-          <div className="bloc1">
-            <Box ml="8">
+          <div className="bloc1" style={{ alignSelf: 'center' }}>
+            <Box m="4">
               <Text mx="0 !important" fontSize="xl" fontWeight="bold">
                 {`Begin your staking journey with Rocket Pool.`}
               </Text>
               <VStack mt="8" alignItems="start">
                 <Button
                   cursor="default"
-                  whiteSpace="break-spaces"
+                  textAlign="start"
+                  height="fit-content"
                   rightIcon={
                     account ? (
                       <CheckIcon color={theme.colors.correct} />
@@ -80,11 +81,14 @@ const StakingOnEthereum = (
                     )
                   }
                 >
-                  {'1. Connect your wallet to Bankless Academy'}
+                  <Box padding="8px 0" whiteSpace="break-spaces">
+                    {'1. Connect your wallet to Bankless Academy.'}
+                  </Box>
                 </Button>
                 <Button
                   cursor="default"
-                  whiteSpace="break-spaces"
+                  textAlign="start"
+                  height="fit-content"
                   rightIcon={
                     isTransactionVerified === 'true' ? (
                       <CheckIcon color={theme.colors.correct} />
@@ -95,18 +99,19 @@ const StakingOnEthereum = (
                     )
                   }
                 >
-                  {
-                    '2. Hold a balance of at least 0.001 rETH on any supported network*.'
-                  }
+                  <Box padding="8px 0" whiteSpace="break-spaces">
+                    {
+                      '2. Hold a balance of at least 0.001 rETH on any supported network*.'
+                    }
+                  </Box>
                 </Button>
               </VStack>
               <Box mt="8">
-                {`Tip: Check our Explorer's Handbook entry on '...' to find the best funding pathway for you.`}
+                {/* TODO: make title dynamic */}
+                {`Tip: Check our Explorer's Handbook entry on 'Staking with Rocket Pool' to find the best funding pathway for you.`}
               </Box>
               <Box mt="8">
-                * Supporting Ethereum, Base and Polygon POS for now.
-                <br />
-                TODO: add support for Optimism & Arbitrum One.
+                * Supporting Ethereum, Optimism, Base, Arbitrum and Polygon POS.
               </Box>
               {isTransactionVerified !== 'true' && (
                 <Box mt="24px !important" textAlign="center">
@@ -117,7 +122,8 @@ const StakingOnEthereum = (
               )}
             </Box>
           </div>
-          <div className="bloc2">
+          <div className="bloc2" style={{ alignSelf: 'center' }}>
+            {/* <Box w= /> */}
             <LessonCard
               borderRadius="3xl"
               maxW="400px"
@@ -127,7 +133,8 @@ const StakingOnEthereum = (
               <Box zIndex="2" position="relative">
                 <Box py="8">
                   <Text mt="0 !important" fontSize="xl" fontWeight="bold">
-                    {lesson.name}
+                    {/* {lesson.name} */}
+                    Staking with Rocket Pool
                   </Text>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
@@ -138,16 +145,16 @@ const StakingOnEthereum = (
                   </InternalLink>
                 </Box>
                 <Box pb="8">
-                  <InternalLink
+                  {/* <InternalLink
                     href={`/lessons/${lesson.slug}`}
                     alt={lesson.englishName}
                     target="_blank"
-                  >
-                    <Button variant="primary">
-                      TODO: replace with correct handbook
-                      {/* {'Read Entry'} */}
-                    </Button>
-                  </InternalLink>
+                  > */}
+                  <Button variant="primary" isDisabled>
+                    {/* TODO: replace with correct handbook */}
+                    {'Read Entry'}
+                  </Button>
+                  {/* </InternalLink> */}
                 </Box>
               </Box>
             </LessonCard>

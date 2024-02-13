@@ -15,6 +15,7 @@ import {
 } from 'constants/index'
 import { useEffect } from 'react'
 import { LessonType } from 'entities/lesson'
+import LESSONS from 'constants/lessons'
 
 export interface MetaData {
   title?: string
@@ -46,7 +47,9 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
     : PROJECT_NAME
   const description = metadata?.description || DEFAULT_METADATA.description
   const image = metadata?.image
-    ? `${DOMAIN_URL_}${metadata?.image}`
+    ? metadata?.image.startsWith('http')
+      ? `${metadata?.image}`
+      : `${DOMAIN_URL_}${metadata?.image}`
     : `${DOMAIN_URL_}${DEFAULT_METADATA.image}`
   const url = `${DOMAIN_URL_}${router.asPath}`
 
@@ -69,6 +72,28 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
   const isDatadisk = metadata?.isDatadisk
 
   const isLesson = metadata?.isLesson && lesson
+
+  const isProfile =
+    metadata?.image?.includes('api/og/social') &&
+    !metadata?.image?.includes('&badge=')
+
+  const isBadge =
+    metadata?.image?.includes('api/og/social') &&
+    metadata?.image?.includes('&badge=')
+
+  const explorerAddress =
+    isProfile || isBadge
+      ? metadata?.image.split('address=')[1].split('&')[0]
+      : null
+
+  const badgeId = isBadge
+    ? metadata?.image.split('badge=')[1].split('&')[0]
+    : null
+
+  const lessonSlug = badgeId
+    ? LESSONS.find((lesson: LessonType) => lesson.badgeId === parseInt(badgeId))
+        .slug
+    : null
 
   return (
     <>
@@ -131,6 +156,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           href="/rss.xml"
         />
         {/* Farcaster Frame */}
+        {/* FC: lesson */}
         {isLesson && lesson && (
           <>
             <meta property="fc:frame" content="vNext" />
@@ -161,6 +187,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
             />
           </>
         )}
+        {/* FC: article */}
         {lesson?.isArticle && (
           <>
             <meta property="fc:frame" content="vNext" />
@@ -176,6 +203,38 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
             <meta
               property={`fc:frame:button:1`}
               content={`Collect the guide, take it with you wherever you go.`}
+            />
+          </>
+        )}
+        {/* FC: profile */}
+        {isProfile && (
+          <>
+            <meta property="fc:frame" content="vNext" />
+            <meta property="fc:frame:image" content={metadata?.image} />
+            <meta
+              property="fc:frame:post_url"
+              content={`${DOMAIN_URL_}/api/frame-og/redirect?referralAddress=${explorerAddress}&explorerAddress=${explorerAddress}&platform=farcaster&provenance=profile`}
+            />
+            <meta name="fc:frame:button:1:action" content="post_redirect" />
+            <meta
+              property={`fc:frame:button:1`}
+              content={`Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`}
+            />
+          </>
+        )}
+        {/* FC: badge */}
+        {isBadge && (
+          <>
+            <meta property="fc:frame" content="vNext" />
+            <meta property="fc:frame:image" content={metadata?.image} />
+            <meta
+              property="fc:frame:post_url"
+              content={`${DOMAIN_URL_}/api/frame-og/redirect?referralAddress=${explorerAddress}&lesson_slug=${lessonSlug}&platform=farcaster&provenance=badge`}
+            />
+            <meta name="fc:frame:button:1:action" content="post_redirect" />
+            <meta
+              property={`fc:frame:button:1`}
+              content={`Learn and claim your free lesson badge now!`}
             />
           </>
         )}
