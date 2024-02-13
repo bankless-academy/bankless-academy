@@ -954,7 +954,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'ed9bce57432f473982482dbd98e33ae5',
         title: 'Social Media Best Practices',
-        content: '<div class="bloc1"><p>Practices for staying safe<strong>:</strong></p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our <a href=\'https://lenster.xyz/u/banklessacademy\'>Explorer Community</a> is a great place for questions like these.</p></div><div class="bloc2"><img src=\'/images/web3-security/social-media-best-practices-48ad350f.svg\'></div>'
+        content: '<div class="bloc1"><p>Practices for staying safe<strong>:</strong></p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our <a href=\'https://warpcast.com/banklessacademy.eth\'>Explorer Community</a> is a great place for questions like these.</p></div><div class="bloc2"><img src=\'/images/web3-security/social-media-best-practices-48ad350f.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -2243,9 +2243,9 @@ const LESSONS: LessonType[] = [
       '/images/staking-on-ethereum/proof-of-stake-8cc7d23c.png',
       '/images/staking-on-ethereum/ethernomics-de40231a.png',
       '/images/staking-on-ethereum/types-of-staking-9b737d1a.png',
-      '/images/staking-on-ethereum/types-of-staking-pt-2-17d5036b.png',
-      '/images/staking-on-ethereum/types-of-staking-pt-2-c96a088e.png',
-      '/images/staking-on-ethereum/types-of-staking-pt-2-5cab8287.png',
+      '/images/staking-on-ethereum/types-of-staking-pt-2-0adb0dc4.png',
+      '/images/staking-on-ethereum/types-of-staking-pt-2-fa455820.png',
+      '/images/staking-on-ethereum/types-of-staking-pt-2-63e5ec68.png',
       '/images/staking-on-ethereum/network-centralization-4ef76ee7.png',
       '/images/staking-on-ethereum/staking-pools-13994270.png',
       '/images/staking-on-ethereum/network-centralization-again-4defb262.png'
@@ -2266,8 +2266,6 @@ const LESSONS: LessonType[] = [
       'proof-of-stake',
       'blocks',
       'ledger',
-      'liquid',
-      're-staked',
       'consensus',
       'solo staking',
       'staking pools',
@@ -2275,6 +2273,9 @@ const LESSONS: LessonType[] = [
       'staking providers',
       'node operator',
       'tokens',
+      'lsts',
+      'liquid',
+      'restaking',
       'decentralized exchange',
       'mint'
     ],
@@ -2357,13 +2358,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '5ac23eb478224f14a8dda33b59a2bf43',
         title: 'Ethernomics',
-        content: '<div class="bloc1"><p>It’s important to understand where the yield for staked <code>Ether</code> comes from, and how it can fluctuate based on various ecosystem factors. Simply put, rewards are based on transaction fees, plus a small amount of newly issued Ether.</p><p>The resulting yield can look like anything from a 3% to 16% return on investment per year. Where on this spectrum the rewards fall is based on three key factors:</p><ul><li>📈<strong> Network Activity:</strong> In times of low traffic, the reward is lower, and in high traffic, higher.</li><li>👥<strong> Amount of Stakers:</strong> With more participants, rewards have to be further divided.</li><li>⚙️<strong> Staking Method: </strong>How exactly you stake your Ether (we’ll review our options shortly!)</li></ul><p>But before we do, we need to understand that locking Ether to generate yield is just one of it’s core functions. Ether has two other key uses.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/ethernomics-de40231a.png\'></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '97555683ad6a4f6aafba5c64e90317bd',
-        title: 'Ether - The “Triple-Point Asset”',
-        content: '<div class="bloc1"><p>In the web3 world, Ether is known as the “triple-point asset”.</p><p>In physics, a material’s “triple-point state” is reached when it is engineered to be a solid, liquid, and a gas at the same time. Typically, states of matter are distinct. However, if things are balanced just right, you can enter the triple-point, where all three phases exist at once.</p><p>We call Ether the triple-point asset because it has the economic quality of gold, oil, and a bond, all at the same time.</p><ul><li>🪙 <strong>Digital Gold:</strong> Ether, like Bitcoin, is an easily transferable store of value.</li><li>🛢️ <strong>Digital Oil:</strong> Ether is a consumable asset, like oil. People need it to use or build on Ethereum.</li><li>📜 <strong>Internet Bond:</strong> When staked, Ether becomes a yield-bearing asset, like a government bond.</li></ul><p>This is what makes Ether valuable; It fits into all three major frameworks for what a valuable asset should be. On top of this, even when staked and gathering yield, there are many options for keeping staked Ether <code>liquid</code>. This way it can be traded, used as collateral for loans, or even <code>re-staked</code> for more yield.</p><p>Ether isn’t just an internet bond.</p><p>Ether is an unprecedented form of money.</p></div>'
+        content: '<div class="bloc1"><p>It’s important to understand where the yield for staked <code>Ether</code> comes from, and how it fluctuates based on various ecosystem factors. Simply put, rewards are a portion of transaction fees, plus a small amount of newly issued Ether.</p><p>The resulting yield can look like anything from a 3% to 16% return on staked Ether per year. The exact amount is based on two key factors:</p><ul><li>📈<strong> Network Activity:</strong> In times of low traffic, the reward is lower, and in high traffic, they’re higher.</li><li>👥<strong> Amount of Stakers:</strong> With more participants, rewards are further divided.</li></ul><p>Yields also change depending on how exactly you stake your Ether. We’ll review our options shortly!</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/ethernomics-de40231a.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -2375,7 +2370,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '20dbf51d28cc48c48868ddbba29b34ac',
         title: 'Types of Staking (Pt. 2)',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-17d5036b.png\'></div><div class="bloc-b"><p><span class=\'color-default\'><strong>Solo Staking</strong></span></p><p>🟡 Requires 32 ETH</p><p>🟡 Technical Setup</p><p>🟢 Decentralizes Ethereum</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-c96a088e.png\'></div><div class="bloc-b"><p><strong>Staking Pools</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🟡 Decentralized Options</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-5cab8287.png\'></div><div class="bloc-b"><p><strong>Centralized Exchange Staking</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🔴 Centralizes Ethereum</p></div></div>'
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-0adb0dc4.png\'></div><div class="bloc-b"><p><span class=\'color-default\'><strong>Solo Staking</strong></span></p><p>🟡 Requires 32 ETH</p><p>🟡 Technical Setup</p><p>🟢 Decentralizes Ethereum</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-fa455820.png\'></div><div class="bloc-b"><p><strong>Staking Pools</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🟡 Decentralized Options</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-63e5ec68.png\'></div><div class="bloc-b"><p><strong>Centralized Exchange Staking</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🔴 Centralizes Ethereum</p></div></div>'
       },
       {
         type: 'LEARN',
@@ -2404,6 +2399,12 @@ const LESSONS: LessonType[] = [
         notionId: '561e1079d9874ee3976977a90426bb5d',
         title: 'Staking Pools',
         content: '<div class="bloc1"><p>The best part about <code>staking pools</code> is that it’s entirely handled by <code>smart contracts</code>. You don’t have to have met the other stakers in person. You don’t even have to trust anyone that you’re running the node with!</p><p>Staking pools are coordinated by <code>staking providers</code> like Rocket Pool, connecting stakers across the world! In a pool, a <code>node operator</code> stakes a portion of Ether and runs the node, everyone else supplies the remaining Ether. For their service, the node operator earns additional yield.</p><p>For the participating stakers, their membership to the pool is represented by “Liquid Staking Tokens” (LSTs). These <code>tokens</code> are like a share of a pool’s staked ether; The holder earns a portion of rewards equal to their stake, and can trade or redeem them for their stake at any time.</p><p>So by simply holding Rocket Pool’s staked Ether token, rETH, you’re earning staking rewards and helping to decentralize Ethereum.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/staking-pools-13994270.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '2664f39b79d2408a9b3de46c76cac42c',
+        title: 'Liquid Staking Tokens',
+        content: '<div class="bloc1"><p>The best thing about <code>LSTs</code> is that even when Ether staked and gathering yield, it’s kept <code>liquid</code>. </p><p>In this case, “liquid” means that it can still flow throughout the ecosystem; It’s like being able to use your share of the staking pool… as money! LSTs can be swapped, used as collateral for loans, or even deposited on <code>restaking</code> platforms for bonus yield.</p><p>Staked Ether is an unprecedented form of money.</p></div>'
       },
       {
         type: 'QUIZ',
