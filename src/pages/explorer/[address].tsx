@@ -122,10 +122,18 @@ export default function Page({
 
   const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
 ${typeof window !== 'undefined' && window.location.href}
+
 Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
   )}`
+
+  const farcasterLink = twitterLink
+    ?.replace(
+      'https://twitter.com/intent/tweet?url=',
+      'https://warpcast.com/~/compose?text='
+    )
+    ?.replace('BanklessAcademy', 'banklessacademy.eth')
 
   if (
     referral?.length &&
@@ -189,6 +197,20 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     leftIcon={<Image width="24px" src="/images/TwitterX.svg" />}
                   >
                     {t('Share on Twitter / X')}
+                  </Button>
+                </ExternalLink>
+              </Box>
+              <Box pb="2">
+                <ExternalLink href={farcasterLink} mr="2">
+                  <Button
+                    variant="primary"
+                    w="100%"
+                    borderRadius="0"
+                    leftIcon={
+                      <Image width="24px" src="/images/Farcaster.svg" />
+                    }
+                  >
+                    {t('Share on Farcaster')}
                   </Button>
                 </ExternalLink>
               </Box>

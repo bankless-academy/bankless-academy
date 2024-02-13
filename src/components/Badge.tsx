@@ -54,6 +54,13 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     share
   )}`
 
+  const farcasterLink = twitterLink
+    ?.replace(
+      'https://twitter.com/intent/tweet?url=',
+      'https://warpcast.com/~/compose?text='
+    )
+    ?.replace('BanklessAcademy', 'banklessacademy.eth')
+
   const BadgeHelper = (
     <Helper
       title={t('Academy Badges')}
@@ -142,6 +149,20 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     }
                   >
                     {t('Share on Twitter / X')}
+                  </Button>
+                </ExternalLink>
+              </Box>
+              <Box pb="2">
+                <ExternalLink href={farcasterLink} mr="2">
+                  <Button
+                    variant="primary"
+                    w="100%"
+                    borderRadius="0"
+                    leftIcon={
+                      <ChakraImage width="20px" src="/images/Farcaster.svg" />
+                    }
+                  >
+                    {t('Share on Farcaster')}
                   </Button>
                 </ExternalLink>
               </Box>
