@@ -2282,7 +2282,9 @@ const LESSONS: LessonType[] = [
       'liquid',
       'restaking',
       'decentralized exchange',
-      'mint'
+      'staking pool',
+      'liquid staking token',
+      'eth'
     ],
     slides: [
       {
@@ -2454,9 +2456,9 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'LEARN',
-        notionId: '691dc0004009411f8cb548e9dd8b8011',
+        notionId: 'a0934d6558514f63bff55fa3207a871a',
         title: 'rETH - Your Path to Decentralized Staking',
-        content: '<div class="bloc1"><p>For today’s quest, we are going to become stakers with Rocket Pool, taking shared ownership over a staking pool. Alongside your fellow Explorers, you will be contributing to the decentralization of Ethereum.</p><p>As your Ether holdings grow, you will unlock greater opportunities to decentralize Ethereum and earn rewards. Today, we will begin with our first bold step as a staker. One day, you too could become a node operator on Ethereum.</p><p>By taking either of these options today, you will complete your quest:</p><ul><li>🪙<strong> ≥</strong>0.001 ETH: Buy rETH on a <code>decentralized exchange</code>.</li><li>💰<strong> ≥</strong>0.01 ETH: <code>Mint</code> new rETH and help run a pool.</li></ul><p>It’s time to become a guardian of Ethereum. Good luck on your quest, Explorer. May your commitment to Ethereum’s decentralized future be greatly rewarded!</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-bc9b67cf.png\'></div>'
+        content: '<div class="bloc1"><p>It’s time to become a staker — a guardian of Ethereum.</p><p>For today’s quest, we will be dipping our toes into a <code>staking pool</code>, over at Rocket Pool. It’s quite simple: mint or buy Rocket Pool’s <code>liquid staking token</code>: <strong>rETH</strong>. As the first step on your staking journey, you’ll be funding a <code>validator node</code> so it can process transactions. You’ll begin decentralizing Ethereum and earning rewards!</p><p>One thing we haven’t mentioned yet is how staking rewards are distributed. It depends on the staking method. On Rocket Pool, rewards are added directly to the value of the rETH token (which is why it’s worth a bit more). As you earn rewards, the value of rETH will continue to rise against regular <code>ETH</code>.</p><p>Good luck on your quest, Explorer. May your commitment to Ethereum’s decentralized future be greatly rewarded!</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-bc9b67cf.png\'></div>'
       },
       {
         type: 'QUEST',

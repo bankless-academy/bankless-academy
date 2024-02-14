@@ -109,39 +109,20 @@ const StakingOnEthereum = (
                     whiteSpace="break-spaces"
                     lineHeight="1.5em"
                   >
-                    {'2. Mint rETH through '}
-                    <ExternalLink href="https://stake.rocketpool.net/">
-                      Rocket Pool
-                    </ExternalLink>
-                    {', or visit a '}
-                    <ExternalLink href="https://app.uniswap.org/tokens/optimism/0x9bcef72be871e61ed4fbbc7630889bee758eb81d">
-                      Decentralized Exchange
-                    </ExternalLink>
-                    {' to swap for rETH.'}
-                  </Box>
-                </Button>
-                <Button
-                  cursor="default"
-                  textAlign="start"
-                  height="fit-content"
-                  rightIcon={
-                    isTransactionVerified === 'true' ? (
-                      <CheckIcon color={theme.colors.correct} />
-                    ) : isLoading ? (
-                      <Spinner speed="1s" />
-                    ) : (
-                      <CloseIcon color={theme.colors.incorrect} />
-                    )
-                  }
-                >
-                  <Box
-                    padding="10px 0"
-                    whiteSpace="break-spaces"
-                    lineHeight="1.5em"
-                  >
-                    {
-                      '3. Hold a balance of at least 0.001 rETH on any supported network*.'
-                    }
+                    {'2. Obtain 0.001 rETH on any supported network*.'}
+                    <Box ml="2">
+                      {'a) Mint rETH via '}
+                      <ExternalLink href="https://stake.rocketpool.net/">
+                        Rocket Pool
+                      </ExternalLink>
+                      {' (0.01 ETH minimum)'}
+                      <br />
+                      {'b) Visit a '}
+                      <ExternalLink href="https://app.uniswap.org/tokens/optimism/0x9bcef72be871e61ed4fbbc7630889bee758eb81d">
+                        Decentralized Exchange
+                      </ExternalLink>
+                      {' to swap for rETH'}
+                    </Box>
                   </Box>
                 </Button>
               </VStack>

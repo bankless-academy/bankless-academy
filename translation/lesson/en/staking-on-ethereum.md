@@ -310,16 +310,13 @@ True or False: Supporting new node operators helps to decentralize Ethereum.
 
 # rETH - Your Path to Decentralized Staking
 
-For today’s quest, we are going to become stakers with Rocket Pool, taking shared ownership over a staking pool. Alongside your fellow Explorers, you will be contributing to the decentralization of Ethereum.
+It’s time to become a staker — a guardian of Ethereum.
 
-As your Ether holdings grow, you will unlock greater opportunities to decentralize Ethereum and earn rewards. Today, we will begin with our first bold step as a staker. One day, you too could become a node operator on Ethereum.
+For today’s quest, we will be dipping our toes into a `staking pool`, over at Rocket Pool. It’s quite simple: mint or buy Rocket Pool’s `liquid staking token`: **rETH**. As the first step on your staking journey, you’ll be funding a `validator node` so it can process transactions. You’ll begin decentralizing Ethereum and earning rewards!
 
-By taking either of these options today, you will complete your quest:
+One thing we haven’t mentioned yet is how staking rewards are distributed. It depends on the staking method. On Rocket Pool, rewards are added directly to the value of the rETH token (which is why it’s worth a bit more). As you earn rewards, the value of rETH will continue to rise against regular `ETH`.
 
-- 🪙 **≥**0.001 ETH: Buy rETH on a `decentralized exchange`.
-- 💰 **≥**0.01 ETH: `Mint` new rETH and help run a pool.
-
-It’s time to become a guardian of Ethereum. Good luck on your quest, Explorer. May your commitment to Ethereum’s decentralized future be greatly rewarded!
+Good luck on your quest, Explorer. May your commitment to Ethereum’s decentralized future be greatly rewarded!
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-bc9b67cf.png)
 
