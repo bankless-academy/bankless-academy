@@ -87,13 +87,17 @@ How does staking prevent fraud on Ethereum?
 
 On Ethereum, `validator nodes` use a `consensus mechanism` called “Proof-of-Stake” to agree on the legitimacy of blockchain transactions. (This is where “staking” comes from).
 
-Users looking to run a validator node on their computer must gather and stake 32 Ether — that’s a lot of money! In exchange for taking a large financial position in the network, the node operator gains permission to validate Ethereum’s transactions, and earn rewards. When a group of transactions are submitted to the network, a node is randomly selected to verify them — with its results double-checked by other nodes to ensure honesty.
+Users looking to run a validator node on their computer must gather and stake 32 Ether — that’s a lot of money! In exchange for taking a large financial position in the network, the `node operator` gains permission to validate Ethereum’s transactions, and earn rewards. When a group of transactions are submitted to the network, a node is randomly selected to verify them — with its results double-checked by other nodes to ensure honesty.
+
+![](https://app.banklessacademy.com/images/staking-on-ethereum/proof-of-stake-8cc7d23c.png)
+
+# Proof-of-Stake (Pt. 2)
 
 When a node successfully processes the transactions, its `stake` grows. If the node is too slow or tries to approve fraud, its stake is `slashed` (a penalty charge is applied). In this way, staked Ether is a form of insurance; Nodes are incentivized to act honestly and keep Ethereum running.
 
 For an attacker to approve fraud on Ethereum, they would need to gain control of the majority of validator nodes, and therefore a majority of staked Ether. That’s why having everyday users involved in staking is so important — the `decentralization` fragments decision making power.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/proof-of-stake-8cc7d23c.png)
+![](https://app.banklessacademy.com/images/staking-on-ethereum/proof-of-stake-pt-2-9101aa4b.png)
 
 # Knowledge Check 2
 
@@ -111,13 +115,13 @@ True or False: Validator nodes caught processing fraudulent transactions will re
 
 Let’s look at the step-by-step process of how nodes come to agreement using `Proof-of-Stake` consensus:
 
-1. **Staking:** A staker runs a node on their computer, locking their ETH on the network.
+1. **Staking:** A staker runs a `validator node` on their computer, locking their ETH on the network.
 2. **Block Building:** Users submit transactions, which are bundled into `blocks`.
 3. **Node Assignment:** The network algorithm selects a node to process a block of transactions.
-4. **Block Validation:** The chosen `validator node` reviews the block, ensuring its transactions are valid.
+4. **Block Validation:** The selected node reviews the block, ensuring its transactions are valid.
 5. **Cross-Verification:** Other nodes double-check and confirm the block’s validity.
 6. **Blockchain Addition:** The valid block is added to the Ethereum blockchain. Invalid blocks are discarded, and the node involved is slashed.
-7. **Rewards:** The staker earns a portion of the block’s transaction fees, and additional rewards.
+7. **Rewards:** The selected node earns a portion of the block’s transaction fees, and additional rewards.
 
 [embed](https://app.banklessacademy.com/animation/validating-tx-with-ethereum-staking)
 
@@ -244,9 +248,9 @@ What would happen if a single entity controlled a majority of staked Ether?
 
 The best part about `staking pools` is that they’re entirely run by `smart contracts`. You don’t have to have met the other stakers in person — and you don’t have to trust them (although you do have to trust the smart contract).
 
-Staking pools are coordinated by `staking providers`, digital platforms connecting stakers across the world! In these pools, a `node operator` stakes a portion of Ether and runs the node, and the other participants supply the remaining Ether. 
+Staking pools are coordinated by `staking providers`, digital platforms connecting stakers across the world! In staking pools, a `node operator` stakes a portion of Ether and runs the node, and the other participants supply the remaining Ether. 
 
-For their service, the node operator earns additional yield. For the remaining staking participants, their membership to the pool is represented by “Liquid Staking Tokens” (LSTs). These `tokens` represent a share of a pool’s staked Ether; The holder earns a portion of rewards equal to their stake, and can redeem them for their stake at any time.
+For their service, the node operator earns additional yield. For the remaining staking participants, their membership to the pool is represented by “Liquid Staking Tokens” (LSTs). These `tokens` represent a share of a pool’s staked Ether; The holder earns a portion of rewards proportional to their stake, and can redeem them for their stake at any time.
 
 So by simply holding an LST, like Rocket Pool’s rETH, you own a share of a staking pool. Your Ether is helping to decentralize Ethereum, and earning staking rewards!
 

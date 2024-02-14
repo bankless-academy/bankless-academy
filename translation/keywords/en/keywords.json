@@ -124,6 +124,11 @@
     "keyword_plural": "censorship-resistants",
     "definition": "No government or company has control to determine what is or is not allowed."
   },
+  "centralized": {
+    "keyword": "centralized",
+    "keyword_plural": "centralizeds",
+    "definition": "A single authority or entity controls the entire system."
+  },
   "centralized exchange": {
     "keyword": "centralized exchange",
     "keyword_plural": "centralized exchanges",
@@ -158,6 +163,16 @@
     "keyword": "consensus",
     "keyword_plural": "consensuss",
     "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
+  },
+  "consensus mechanism": {
+    "keyword": "consensus mechanism",
+    "keyword_plural": "consensus mechanisms",
+    "definition": "The method by which a blockchain network judges which transactions are legitimate, and which are fraudulent."
+  },
+  "consensus mechanisms": {
+    "keyword": "consensus mechanisms",
+    "keyword_plural": "consensus mechanismss",
+    "definition": "Methods by which blockchain networks judge which transactions are legitimate, and which are fraudulent."
   },
   "counterparty risk": {
     "keyword": "counterparty risk",
@@ -207,7 +222,7 @@
   "decentralized": {
     "keyword": "decentralized",
     "keyword_plural": "decentralizeds",
-    "definition": "No single authority or entity controls the data."
+    "definition": "No single authority or entity controls the system."
   },
   "decentralized exchange": {
     "keyword": "decentralized exchange",
@@ -289,6 +304,11 @@
     "keyword_plural": "ERC-721s",
     "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, or subdivided."
   },
+  "ether": {
+    "keyword": "ether",
+    "keyword_plural": "ethers",
+    "definition": "(ETH) Ethereum’s native coin, used in staking, or performing transactions on the network."
+  },
   "ethereum virtual machine": {
     "keyword": "Ethereum Virtual Machine",
     "keyword_plural": "Ethereum Virtual Machines",
@@ -303,6 +323,11 @@
     "keyword": "fork",
     "keyword_plural": "forks",
     "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+  },
+  "fraud": {
+    "keyword": "fraud",
+    "keyword_plural": "frauds",
+    "definition": "In blockchain economies: Unfair or fake transactions, used to change amounts of cryptocurrency held."
   },
   "fraud proof": {
     "keyword": "fraud proof",
@@ -404,6 +429,11 @@
     "keyword_plural": "lenders",
     "definition": "Deposits assets to earn interest."
   },
+  "liquid": {
+    "keyword": "liquid",
+    "keyword_plural": "liquids",
+    "definition": "In blockchain economies: The ability to easily use a digital asset in trading, or use in smart contracts."
+  },
   "liquidity": {
     "keyword": "liquidity",
     "keyword_plural": "liquiditys",
@@ -418,6 +448,11 @@
     "keyword": "LP",
     "keyword_plural": "LPs",
     "definition": "(Liquidity Provider) Blockchain users who loan their tokens to protocols in exchange for a share in fees."
+  },
+  "lsts": {
+    "keyword": "lsts",
+    "keyword_plural": "lstss",
+    "definition": "Tokens representing staked Ether. Holders earn a portion of staking rewards proportial to the amounts staked."
   },
   "market cap": {
     "keyword": "market cap",
@@ -473,6 +508,11 @@
     "keyword": "NFT",
     "keyword_plural": "NFTs",
     "definition": "(Non-fungible Token) A token with a unique ID that cannot be replicated, as compared to a fungible token like Ether that has no unique identifier."
+  },
+  "node operator": {
+    "keyword": "node operator",
+    "keyword_plural": "node operators",
+    "definition": "A member of the Ethereum community, running a validator node to processes transactions on the network."
   },
   "onchain governance": {
     "keyword": "onchain governance",
@@ -554,6 +594,11 @@
     "keyword_plural": "Proof of Works",
     "definition": "Blockchain Consensus algorithms that rely on “work” done by miners competing to create valid blocks by proposing blocks and seeing if each one has a valid hash."
   },
+  "proof-of-stake": {
+    "keyword": "Proof-of-Stake",
+    "keyword_plural": "Proof-of-Stakes",
+    "definition": "A blockchain consensus method that selects validator nodes based on the amount of stake locked by the node."
+  },
   "pseudonymous": {
     "keyword": "pseudonymous",
     "keyword_plural": "pseudonymouss",
@@ -583,6 +628,11 @@
     "keyword": "red flag",
     "keyword_plural": "red flags",
     "definition": "A warning sign of danger."
+  },
+  "restaking": {
+    "keyword": "restaking",
+    "keyword_plural": "restakings",
+    "definition": "Reusing staked Ether tokens to help secure and validate other protocols, in exchange for rewards."
   },
   "retropgf": {
     "keyword": "RetroPGF",
@@ -664,6 +714,11 @@
     "keyword_plural": "sidechains",
     "definition": "A mechanism that allows for the transfer of assets and transactions from a main blockchain to a separate, parallel blockchain (sidechain)."
   },
+  "slashed": {
+    "keyword": "slashed",
+    "keyword_plural": "slasheds",
+    "definition": "A penalty applied to validator nodes for publishing fraudulent transactions on Proof-of-Stake blockchains."
+  },
   "slippage": {
     "keyword": "slippage",
     "keyword_plural": "slippages",
@@ -684,6 +739,11 @@
     "keyword_plural": "social engineerings",
     "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
+  "solo staking": {
+    "keyword": "solo staking",
+    "keyword_plural": "solo stakings",
+    "definition": "Directly running a validator node, granting the ability to directly process transactions in Proof-Of-Stake systems."
+  },
   "spend": {
     "keyword": "spend",
     "keyword_plural": "spends",
@@ -694,10 +754,30 @@
     "keyword_plural": "stakes",
     "definition": "The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”."
   },
+  "staker": {
+    "keyword": "staker",
+    "keyword_plural": "stakers",
+    "definition": "A member of the Ethereum community, providing Ether to a validator node, in exchange for rewards."
+  },
+  "stakers": {
+    "keyword": "stakers",
+    "keyword_plural": "stakerss",
+    "definition": "Members of the Ethereum community, providing Ether to validator nodes, in exchange for rewards."
+  },
   "staking": {
     "keyword": "staking",
     "keyword_plural": "stakings",
     "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")."
+  },
+  "staking pools": {
+    "keyword": "staking pools",
+    "keyword_plural": "staking poolss",
+    "definition": "On Ethereum: Smart contracts through which stakers provide Ether to another staker’s validator node."
+  },
+  "staking providers": {
+    "keyword": "staking providers",
+    "keyword_plural": "staking providerss",
+    "definition": "A digital platform providing staking services, usually through staking pools."
   },
   "swap": {
     "keyword": "swap",
@@ -778,6 +858,16 @@
     "keyword": "validating bridge",
     "keyword_plural": "validating bridges",
     "definition": "A validating bridge contract is a new design that removes the need to trust any external authority to decide if a withdrawal is valid."
+  },
+  "validator node": {
+    "keyword": "validator node",
+    "keyword_plural": "validator nodes",
+    "definition": "A computer device run by a member of the Ethereum community. As the original method of staking, it processes transactions on the network."
+  },
+  "validator nodes": {
+    "keyword": "validator nodes",
+    "keyword_plural": "validator nodess",
+    "definition": "Computer devices run by members of the Ethereum community. As the original method of staking, they process transactions on the network."
   },
   "veto": {
     "keyword": "veto",
