@@ -802,7 +802,7 @@ const Lesson = ({
             </>
           )}
           {slide.type === 'QUEST' && (
-            <VStack flex="auto" minH="570px" justifyContent="center">
+            <VStack flex="auto" minH="520px" justifyContent="center">
               {Quest?.questComponent}
             </VStack>
           )}
