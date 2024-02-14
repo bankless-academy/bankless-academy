@@ -304,10 +304,15 @@
     "keyword_plural": "ERC-721s",
     "definition": "Une norme pour les jetons non fongibles sur Ethereum. Ces jetons ont un identifiant numérique unique et ne peuvent pas être copiés, substitués ou divisés."
   },
+  "eth": {
+    "keyword": "ETH",
+    "keyword_plural": "ETHs",
+    "definition": "(Ether) Ethereum’s native coin. Used in staking and performing transactions on the network."
+  },
   "ether": {
     "keyword": "ether",
     "keyword_plural": "ethers",
-    "definition": "(ETH) Ethereum’s native coin, used in staking, or performing transactions on the network."
+    "definition": "(ETH) Ethereum’s native coin. Used in staking and performing transactions on the network."
   },
   "ethereum virtual machine": {
     "keyword": "Ethereum Virtual Machine",
