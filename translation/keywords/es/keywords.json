@@ -304,10 +304,15 @@
     "keyword_plural": "ERC-721",
     "definition": "Un estándar para tokens no fungibles en Ethereum. Estos tokens tienen un identificador digital único, no se pueden copiar, sustituir ni subdividir."
   },
+  "eth": {
+    "keyword": "ETH",
+    "keyword_plural": "ETHs",
+    "definition": "(Ether) Ethereum’s native coin. Used in staking and performing transactions on the network."
+  },
   "ether": {
     "keyword": "ether",
     "keyword_plural": "ethers",
-    "definition": "(ETH) Ethereum’s native coin, used in staking, or performing transactions on the network."
+    "definition": "(ETH) Ethereum’s native coin. Used in staking and performing transactions on the network."
   },
   "ethereum virtual machine": {
     "keyword": "Máquina Virtual de Ethereum (MVE)",
