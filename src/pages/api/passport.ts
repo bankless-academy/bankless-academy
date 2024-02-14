@@ -22,7 +22,7 @@ export default async function handler(
   const DEV_SECRET = process.env.DEV_SECRET
   const param =
     DEV_SECRET && req.query?.dev === DEV_SECRET ? req.query : req.body
-  const { address, embed } = param
+  const { address, embed, isProfile } = param
 
   if (!address || typeof address === 'object')
     return res.status(400).json({ error: 'Wrong params' })
@@ -49,7 +49,7 @@ export default async function handler(
   const SYBIL_CHECK: SybilCheckTypes = 'GITCOIN_PASSPORT'
 
   const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
-  let passportScore = 0
+  let gitcoinPassportScore = 0
   // TEMP: bypass passport check (accounts having issues with Ceramic API)
   const TEMP_PASSPORT_WHITELIST = [
     // '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
@@ -83,19 +83,21 @@ export default async function handler(
       }
       const PASSPORT_COMMUNITY_ID = "6651"
       let score
-      const submit = await submitPassport(address, PASSPORT_COMMUNITY_ID)
-      // console.log(submit)
-      if (submit.status === 200) {
-        score = await fetchPassport(address, PASSPORT_COMMUNITY_ID)
-      }
-      if (score.ok) {
-        const res = PassportResponseSchema.parse(await score.json())
-        console.log(res)
-        if (res?.score) {
-          passportScore = parseInt(res.score)
+      if (!isProfile) {
+        const submit = await submitPassport(address, PASSPORT_COMMUNITY_ID)
+        // console.log(submit)
+        if (submit.status === 200) {
+          score = await fetchPassport(address, PASSPORT_COMMUNITY_ID)
         }
-      } else {
-        console.log('score not found ...')
+        if (score.ok) {
+          const res = PassportResponseSchema.parse(await score.json())
+          console.log(res)
+          if (res?.score) {
+            gitcoinPassportScore = parseInt(res.score)
+          }
+        } else {
+          console.log('score not found ...')
+        }
       }
       const passportRes = await axios.get(
         `https://api.scorer.gitcoin.co/registry/stamps/${address}?limit=1000`,
@@ -177,7 +179,7 @@ export default async function handler(
           .update({ sybil_user_id: 12 })
         res.status(403).json({
           verified: false,
-          score: passportScore,
+          score: gitcoinPassportScore,
           requirement,
           validStampsCount: 0,
         })
@@ -195,7 +197,7 @@ export default async function handler(
           .update({ sybil_user_id: sybil[0]?.id })
         return res.status(200).json({
           verified: false,
-          score: passportScore,
+          score: gitcoinPassportScore,
           requirement,
           fraud: sybil[0]?.address,
           validStampsCount: Object.keys(stampHashes)?.length,
@@ -208,8 +210,8 @@ export default async function handler(
         console.log('not verified')
       }
       return res.status(200).json({
-        verified: validStamps?.length >= NUMBER_OF_STAMP_REQUIRED || passportScore >= REQUIRED_PASSPORT_SCORE,
-        score: passportScore,
+        verified: validStamps?.length >= NUMBER_OF_STAMP_REQUIRED || gitcoinPassportScore >= REQUIRED_PASSPORT_SCORE,
+        score: gitcoinPassportScore,
         fraud:
           user?.sybil_user_id === 12
             ? '0x0000000000000000000000000000000000000000'
@@ -222,7 +224,7 @@ export default async function handler(
       console.error(error)
       res.status(500).json({
         verified: false,
-        score: passportScore,
+        score: gitcoinPassportScore,
         requirement,
         validStampsCount: 0,
         error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,

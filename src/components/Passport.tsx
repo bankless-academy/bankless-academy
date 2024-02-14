@@ -44,7 +44,7 @@ const PassportComponent = ({
 
   async function checkPassport() {
     setIsLoading(true)
-    const result = await api('/api/passport', { address })
+    const result = await api('/api/passport', { address, isProfile })
     if (result && result.status === 200) {
       setIsLoading(false)
       // console.log('passport', result.data)
