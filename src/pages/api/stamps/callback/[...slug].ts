@@ -8,13 +8,14 @@ import * as google from "utils/stamps/platforms/google"
 import * as facebook from "utils/stamps/platforms/facebook"
 import * as linkedin from "utils/stamps/platforms/linkedin"
 import * as discord from "utils/stamps/platforms/discord"
-import * as brightid from "utils/stamps/platforms/brightid"
 import * as poh from "utils/stamps/platforms/poh"
 import * as ens from "utils/stamps/platforms/ens"
 import { RequestPayload } from "utils/stamps/passport-types";
 import { ALLOWED_PLATFORMS, STAMP_PLATFORMS } from "constants/passport"
 import { TABLE, TABLES, db } from "utils/db"
 import { trackBE } from "utils/mixpanel"
+import { gql } from "graphql-request"
+import { graphQLClient } from "utils/airstack"
 
 export const VERSION = "v0.0.0";
 
@@ -73,7 +74,6 @@ export default async function handler(
     state,
     code,
     accessToken,
-    userDid,
     json,
     address: userAddress,
   } = req.query
@@ -187,22 +187,53 @@ export default async function handler(
         "id": result.record.id
       }
     } else result.valid = false
-  } else if (platform === 'brightid') {
-    const BrightidProvider = new brightid.BrightIdProvider();
-    result = await BrightidProvider.verify({
-      proofs: {
-        did: userDid,
-      },
-    } as unknown as RequestPayload)
-    console.log(result)
-    if (result.valid && result.record?.id) {
-      record = {
-        type,
-        version,
-        contextId: result.record.id,
-        meets: "true"
+  } else if (platform === 'farcaster') {
+    const query = gql`
+      query GetWeb3SocialsOfFarcasters {
+        Socials(input: {filter: {identity: {_in: ["${address}"]}, dappName: { _eq: farcaster }}, blockchain: ethereum}) {
+          Social {
+            dappName
+            profileName
+            userId
+          }
+        }
+      }`
+    try {
+      const data: any = await graphQLClient.request(query)
+      console.log(data)
+      if (data?.Socials?.Social?.length) {
+        const fid = data?.Socials?.Social[0].userId
+        console.log('fid', fid)
+        record = {
+          type,
+          version,
+          id: fid,
+        }
+        result.valid = true
+      } else {
+        result.valid = false
+        result.errors = "No Farcaster account associated to this address."
       }
-    } else result.valid = false
+    } catch (e) {
+      console.error(e)
+      result.valid = false
+    }
+    // } else if (platform === 'brightid') {
+    //   const BrightidProvider = new brightid.BrightIdProvider();
+    //   result = await BrightidProvider.verify({
+    //     proofs: {
+    //       did: userDid,
+    //     },
+    //   } as unknown as RequestPayload)
+    //   console.log(result)
+    //   if (result.valid && result.record?.id) {
+    //     record = {
+    //       type,
+    //       version,
+    //       contextId: result.record.id,
+    //       meets: "true"
+    //     }
+    //   } else result.valid = false
   } else if (platform === 'poh') {
     // TODO: add signature verification? (Ed25519 / EIP712)
     const PohProvider = new poh.PohProvider();
@@ -237,7 +268,7 @@ export default async function handler(
   console.log(hash)
   if (!result?.valid) {
     isStampValidated = false
-    status = `Problem with stamp (${JSON.stringify(result)}): close the window and try again.`
+    status = `Problem with stamp (${JSON.stringify(result?.errors)}): close the window and try again.`
   }
   else if (hash?.length !== 51) {
     console.log(hash)

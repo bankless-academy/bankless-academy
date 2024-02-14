@@ -55,14 +55,22 @@ export const STAMP_PLATFORMS = {
     oauth: `/api/stamps/callback/ens?json=true&address=REPLACE_ADDRESS`,
     provider: 'Ens'
   },
-  brightid: {
-    icon: '/images/stamp/brightidStampIcon.png',
-    name: 'Bright ID',
-    description: 'Bright ID',
-    // external
-    oauth: `https://passport.gitcoin.co`,
-    provider: 'Brightid'
+  farcaster: {
+    icon: '/images/stamp/farcasterStampIcon.png',
+    name: 'Farcaster',
+    description: 'Farcaster ID',
+    // transparent JS
+    oauth: `/api/stamps/callback/farcaster?json=true&address=REPLACE_ADDRESS`,
+    provider: 'Farcaster'
   },
+  // brightid: {
+  //   icon: '/images/stamp/brightidStampIcon.png',
+  //   name: 'Bright ID',
+  //   description: 'Bright ID',
+  //   // external
+  //   oauth: `https://passport.gitcoin.co`,
+  //   provider: 'Brightid'
+  // },
   poh: {
     icon: '/images/stamp/pohStampIcon.png',
     name: 'Proof of Humanity',

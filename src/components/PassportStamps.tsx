@@ -109,6 +109,7 @@ const PassportStamps = ({
               duration: 10000,
               isClosable: true,
             })
+            setLoadingStamp('')
           }
         })
     } catch (error) {
