@@ -115,12 +115,12 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
       }
       // passport
       const passportUsers = await db(TABLES.users)
-        .select(TABLE.users.address, TABLE.users.gitcoin_stamps, TABLE.users.ba_stamps)
+        .select(TABLE.users.address, TABLE.users.ba_stamps)
         .whereNull(TABLE.users.sybil_user_id)
-        .whereNot(TABLE.users.gitcoin_stamps, '{}')
+        .whereNot(TABLE.users.ba_stamps, '{}')
       for (const passport of passportUsers) {
         const address = passport.address?.toLowerCase()
-        const stamps = Object.keys({ ...passport.gitcoin_stamps, ...passport.ba_stamps })
+        const stamps = Object.keys(passport.ba_stamps)
         if (address in leaderboard)
           leaderboard[address].valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
       }

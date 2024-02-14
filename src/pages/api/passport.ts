@@ -5,10 +5,10 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
-import { ALLOWED_PROVIDERS, NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
-import { filterValidStamps } from 'utils/passport'
+import { NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID } from 'constants/passport'
+// import { filterValidStamps } from 'utils/passport'
 import { trackBE } from 'utils/mixpanel'
-import axios from 'axios'
+// import axios from 'axios'
 import { PassportResponseSchema, fetchPassport, submitPassport } from 'utils/passport_lib'
 
 // const reader = new PassportReader(CERAMIC_PASSPORT, '1')
@@ -75,13 +75,13 @@ export default async function handler(
       // read passport
       // const passportReader: Passport = await reader.getPassport(address)
       // console.log(passportReader)
-      const gitcoinConfig = {
-        headers: {
-          accept: 'application/json',
-          'X-API-Key': process.env.GITCOIN_PASSPORT_API_KEY,
-        },
-      }
-      const PASSPORT_COMMUNITY_ID = "6651"
+      // const gitcoinConfig = {
+      //   headers: {
+      //     accept: 'application/json',
+      //     'X-API-Key': process.env.GITCOIN_PASSPORT_API_KEY,
+      //   },
+      // }
+
       let score
       if (!isProfile) {
         const submit = await submitPassport(address, PASSPORT_COMMUNITY_ID)
@@ -99,74 +99,74 @@ export default async function handler(
           console.log('score not found ...')
         }
       }
-      const passportRes = await axios.get(
-        `https://api.scorer.gitcoin.co/registry/stamps/${address}?limit=1000`,
-        // `https://api.scorer.gitcoin.co/registry/v2/score/6651/${address}`,
-        gitcoinConfig
-      )
-      const passport: any = passportRes.data
-      // console.log('** passport **', passport)
-      let validStamps = []
+      // const passportRes = await axios.get(
+      //   `https://api.scorer.gitcoin.co/registry/stamps/${address}?limit=1000`,
+      //   // `https://api.scorer.gitcoin.co/registry/v2/score/6651/${address}`,
+      //   gitcoinConfig
+      // )
+      // const passport: any = passportRes.data
+      // // console.log('** passport **', passport)
+      const validStamps = []
       const stampHashes = {}
-      const stampProviders = {}
+      // const stampProviders = {}
       const stampHashesSearch = []
-      let whereCondition = 'gitcoin_stamps @> ?'
+      let whereCondition = 'ba_stamps @> ?'
       let sybil = []
-      if (passport?.items?.length) {
-        // eslint-disable-next-line no-unsafe-optional-chaining
-        for (const stamp of passport?.items) {
-          const provider = stamp.credential?.credentialSubject?.provider
-          // console.log(stamp)
-          if (stamp.credential?.credentialSubject?.hash && ALLOWED_PROVIDERS.includes(provider))
-            stampHashes[provider] = stamp.credential?.credentialSubject?.hash
-        }
-        console.log('stampHashes', stampHashes)
-        // eslint-disable-next-line no-unsafe-optional-chaining
-        for (const stamp of passport?.items) {
-          const provider = stamp.credential?.credentialSubject?.provider
-          stampProviders[provider] = { provider, stamp: stamp.credential }
-        }
-        // console.log('stampHashes', stampHashes)
-        validStamps = filterValidStamps(Object.values(stampProviders))
-        // console.log('validStamps', validStamps)
-        // merge previous data without deleting other keys
-        const updated = await db.raw(
-          `update "users" set "gitcoin_stamps" = gitcoin_stamps || ? where "users"."id" = ?`,
-          [stampHashes, userId]
-        )
-        // console.log('updated', updated)
-        if (updated) console.log('stamps updated:', updated?.rowCount)
-        console.log('validStamps', validStamps)
-        const [{ ba_stamps }] = await db(TABLES.users)
-          .select('ba_stamps')
-          .where(TABLE.users.id, userId)
-        console.log('ba_stamps', ba_stamps)
-        for (const provider of Object.keys(ba_stamps)) {
-          stampHashes[provider] = ba_stamps[provider]
-        }
-        console.log('stampHashes', stampHashes)
-        Object.keys(stampHashes).map((key, index) => {
-          const stampHash = {}
-          stampHash[key] = stampHashes[key]
-          stampHashesSearch.push(stampHash)
-          validStamps
-          if (index > 0) whereCondition += ' OR gitcoin_stamps @> ?'
-        })
-        if (stampHashesSearch.length) {
-          const sybilQuery = db(TABLES.users)
-            .select('id', 'address')
-            .whereNot(TABLE.users.id, userId)
-            .whereNull(TABLE.users.sybil_user_id)
-            // query for json instead of jsonb: .where(db.raw('gitcoin_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
-            .where(db.raw(`(${whereCondition})`, stampHashesSearch))
-            .orWhereNot(TABLE.users.id, userId)
-            .where(TABLE.users.sybil_user_id, '=', 12)
-            .where(db.raw(`(${whereCondition})`, stampHashesSearch))
-          // console.log(sybilQuery.toString())
-          sybil = await sybilQuery
-          console.log('sybil', sybil)
-        }
+      // if (passport?.items?.length) {
+      //   // eslint-disable-next-line no-unsafe-optional-chaining
+      //   for (const stamp of passport?.items) {
+      //     const provider = stamp.credential?.credentialSubject?.provider
+      //     // console.log(stamp)
+      //     if (stamp.credential?.credentialSubject?.hash && ALLOWED_PROVIDERS.includes(provider))
+      //       stampHashes[provider] = stamp.credential?.credentialSubject?.hash
+      //   }
+      //   console.log('stampHashes', stampHashes)
+      //   // eslint-disable-next-line no-unsafe-optional-chaining
+      //   for (const stamp of passport?.items) {
+      //     const provider = stamp.credential?.credentialSubject?.provider
+      //     stampProviders[provider] = { provider, stamp: stamp.credential }
+      //   }
+      //   // console.log('stampHashes', stampHashes)
+      //   validStamps = filterValidStamps(Object.values(stampProviders))
+      //   // console.log('validStamps', validStamps)
+      //   // merge previous data without deleting other keys
+      //   const updated = await db.raw(
+      //     `update "users" set "gitcoin_stamps" = gitcoin_stamps || ? where "users"."id" = ?`,
+      //     [stampHashes, userId]
+      //   )
+      //   // console.log('updated', updated)
+      //   if (updated) console.log('stamps updated:', updated?.rowCount)
+      const [{ ba_stamps }] = await db(TABLES.users)
+        .select('ba_stamps')
+        .where(TABLE.users.id, userId)
+      console.log('ba_stamps', ba_stamps)
+      for (const provider of Object.keys(ba_stamps)) {
+        stampHashes[provider] = ba_stamps[provider]
       }
+      console.log('stampHashes', stampHashes)
+      Object.keys(stampHashes).map((key, index) => {
+        const stampHash = {}
+        stampHash[key] = stampHashes[key]
+        stampHashesSearch.push(stampHash)
+        validStamps.push(key)
+        if (index > 0) whereCondition += ' OR gitcoin_stamps @> ?'
+      })
+      if (stampHashesSearch.length) {
+        const sybilQuery = db(TABLES.users)
+          .select('id', 'address')
+          .whereNot(TABLE.users.id, userId)
+          .whereNull(TABLE.users.sybil_user_id)
+          // query for json instead of jsonb: .where(db.raw('gitcoin_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
+          .where(db.raw(`(${whereCondition})`, stampHashesSearch))
+          .orWhereNot(TABLE.users.id, userId)
+          .where(TABLE.users.sybil_user_id, '=', 12)
+          .where(db.raw(`(${whereCondition})`, stampHashesSearch))
+        // console.log(sybilQuery.toString())
+        sybil = await sybilQuery
+        console.log('sybil', sybil)
+      }
+      console.log('validStamps', validStamps)
+      // }
       if (isBot) {
         // HACK: bot
         console.log('bot detected:', address)

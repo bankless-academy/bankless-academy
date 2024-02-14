@@ -85,3 +85,5 @@ export const ALLOWED_PLATFORMS = Object.keys(STAMP_PLATFORMS)
 export const ALLOWED_PROVIDERS = Object.keys(STAMP_PLATFORMS).map(platform => STAMP_PLATFORMS[platform].provider)
 
 export const MAX_STAMPS = ALLOWED_PLATFORMS?.length
+
+export const PASSPORT_COMMUNITY_ID = "6651"

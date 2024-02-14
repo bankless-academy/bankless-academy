@@ -19,7 +19,8 @@ export const TABLE = {
     created_at: 'users.created_at',
     id: 'users.id',
     address: 'users.address',
-    gitcoin_stamps: 'users.gitcoin_stamps',
+    // deprecated
+    // gitcoin_stamps: 'users.gitcoin_stamps',
     sybil_user_id: 'users.sybil_user_id',
     ens_name: 'users.ens_name',
     ens_avatar: 'users.ens_avatar',

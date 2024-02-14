@@ -89,7 +89,7 @@ export default async function handler(
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
         TABLE.users.donations,
-        TABLE.users.gitcoin_stamps,
+        // TABLE.users.gitcoin_stamps,
         TABLE.users.ba_stamps
       )
       .whereILike('ens_name', addressLowerCase)
@@ -121,7 +121,7 @@ export default async function handler(
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
         TABLE.users.donations,
-        TABLE.users.gitcoin_stamps,
+        // TABLE.users.gitcoin_stamps,
         TABLE.users.ba_stamps
       )
       .whereILike('address', addressLowerCase)
@@ -179,7 +179,7 @@ export default async function handler(
   // badges
   stats.badges = badgeTokenIds?.length
   // valid_stamps
-  const stamps = Object.keys({ ...userExist.gitcoin_stamps, ...userExist.ba_stamps })
+  const stamps = Object.keys(userExist.ba_stamps)
   console.log(stamps)
   stats.valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
   // donations

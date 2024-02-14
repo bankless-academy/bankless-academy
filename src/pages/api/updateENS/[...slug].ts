@@ -29,7 +29,7 @@ export default async function handler(
       TABLE.users.ens_name,
       TABLE.users.ens_avatar,
       TABLE.users.donations,
-      TABLE.users.gitcoin_stamps
+      TABLE.users.ba_stamps
     )
     .whereILike('address', addressLowerCase)
   // console.log('user', userExist)

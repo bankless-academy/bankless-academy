@@ -247,7 +247,7 @@ export default async function handler(
   } else {
     const stampHashesSearch = []
     // TODO: also check for BA stamps fraud
-    let whereCondition = 'gitcoin_stamps @> ?'
+    let whereCondition = 'ba_stamps @> ?'
     let sybil = []
     const stampHashes: any = {}
     stampHashes[record.type] = hash
@@ -255,14 +255,14 @@ export default async function handler(
       const stampHash = {}
       stampHash[key] = stampHashes[key]
       stampHashesSearch.push(stampHash)
-      if (index > 0) whereCondition += ' OR gitcoin_stamps @> ?'
+      if (index > 0) whereCondition += ' OR ba_stamps @> ?'
     })
     // check for sybils
     const sybilQuery = db(TABLES.users)
       .select('id', 'address')
       .whereNot(TABLE.users.id, userId)
       .whereNull(TABLE.users.sybil_user_id)
-      // query for json instead of jsonb: .where(db.raw('gitcoin_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
+      // query for json instead of jsonb: .where(db.raw('ba_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
       .where(db.raw(`(${whereCondition})`, stampHashesSearch))
       .orWhereNot(TABLE.users.id, userId)
       .where(TABLE.users.sybil_user_id, '=', 12)
