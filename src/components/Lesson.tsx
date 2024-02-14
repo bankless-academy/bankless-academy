@@ -526,12 +526,6 @@ const Lesson = ({
     closeLesson()
   })
 
-  function getDomIndex(target) {
-    return [].slice
-      .call(target.parent.children.filter((node) => node.name === 'li'))
-      .indexOf(target)
-  }
-
   const emojiRegexPattern = emojiRegex()
 
   function replaceEmojis(text) {
@@ -559,7 +553,7 @@ const Lesson = ({
     return result
   }
 
-  function transform(node) {
+  function transform(node, index) {
     if (node.type === 'text' && emojiRegexPattern.test(node.data)) {
       return replaceEmojis(node.data)
     }
@@ -581,15 +575,19 @@ const Lesson = ({
       return <Animation animationId={animationSlideId} />
     }
     if (isAnimationSlide && node.type === 'tag' && node.name === 'li') {
-      const index = getDomIndex(node)
       // hide next steps
       if (animationStepLS < index) return null
+
       return (
         <li
-          onClick={() => setAnimationStepLS(index)}
-          style={{ cursor: 'pointer' }}
+          onClick={
+            animationStepLS === index
+              ? () => {}
+              : () => setAnimationStepLS(index)
+          }
+          style={animationStepLS === index ? {} : { cursor: 'pointer' }}
         >
-          {processNodes(node.children)}
+          {processNodes(node.children, transform)}
         </li>
       )
     }
@@ -599,7 +597,7 @@ const Lesson = ({
       node.name === 'li' &&
       emojiRegexPattern.test(node.children[0].data)
     ) {
-      const p = processNodes(node.children)
+      const p = processNodes(node.children, transform)
       p.shift()
       return (
         <li className="hide-marker">
