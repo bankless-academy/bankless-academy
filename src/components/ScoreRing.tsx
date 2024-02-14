@@ -4,7 +4,7 @@ import { Box, Button } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import ExternalLink from './ExternalLink'
 
-const displayScoreRing = ({ score }: { score: string | number }) => {
+const ScoreRing = ({ score }: { score: string | number }) => {
   const dashLength = 255
   const earlyStartOffset = 6
   const displayScore = score === '...' ? 0 : (score as number)
@@ -456,4 +456,4 @@ const displayScoreRing = ({ score }: { score: string | number }) => {
   )
 }
 
-export default displayScoreRing
+export default ScoreRing
