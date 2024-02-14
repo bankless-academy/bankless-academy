@@ -121,7 +121,7 @@ const Layer2Blockchains = (
               {isTransactionVerified !== 'true' && (
                 <Box mt="24px !important" textAlign="center">
                   <Button onClick={validateQuest} variant="primary">
-                    {'Refresh balance'}
+                    {'Check Quest'}
                   </Button>
                 </Box>
               )}

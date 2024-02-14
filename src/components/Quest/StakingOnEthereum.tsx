@@ -140,7 +140,7 @@ const StakingOnEthereum = (
                     lineHeight="1.5em"
                   >
                     {
-                      '2. Hold a balance of at least 0.001 rETH on any supported network*.'
+                      '3. Hold a balance of at least 0.001 rETH on any supported network*.'
                     }
                   </Box>
                 </Button>
@@ -150,13 +150,13 @@ const StakingOnEthereum = (
                 {`Tip: Check our Explorer's Handbook entry on 'Staking with Rocket Pool' to find the best funding pathway for you.`}
               </Box> */}
               <Box mt="8">
-                Supported networks: Ethereum, Optimism, Base, Abritrum, and
+                Supported networks: Ethereum, Optimism, Base, Abritrum and
                 Polygon (POS)
               </Box>
               {isTransactionVerified !== 'true' && (
                 <Box mt="24px !important" textAlign="center">
                   <Button onClick={validateQuest} variant="primary">
-                    {'Refresh balance'}
+                    {'Check Quest'}
                   </Button>
                 </Box>
               )}

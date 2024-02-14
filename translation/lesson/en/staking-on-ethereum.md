@@ -278,7 +278,7 @@ The best thing about `LSTs` is that even while your Ether is staked and gatherin
 
 In this case, “liquid” means that it can still flow throughout the ecosystem; It’s like being able to use your share of the staking pool… as money! LSTs can be swapped, used as collateral for loans, or even deposited on `restaking` platforms for bonus yield.
 
-This is also great because it further opens access to staked Ether: Often a staking pool has a minimum deposit for adding Ether the pool, somewhere around 0.1 ETH. With LSTs, you can buy even smaller increments of staked Ether on your favourite `decentralized exchange`.
+This is also great because it further opens access to staked Ether: Often a staking pool has a minimum deposit for adding Ether the pool, somewhere around 0.01 ETH. With LSTs, you can buy even smaller increments of staked Ether on your favourite `decentralized exchange`.
 
 Through cases like this, staked Ether starts to seem like an unprecedented form of money — one that protects the ecosystem, while producing yield.
 
@@ -317,7 +317,7 @@ As your Ether holdings grow, you will unlock greater opportunities to decentrali
 By taking either of these options today, you will complete your quest:
 
 - 🪙 **≥**0.001 ETH: Buy rETH on a `decentralized exchange`.
-- 💰 **≥**0.1 ETH: `Mint` new rETH and help run a pool.
+- 💰 **≥**0.01 ETH: `Mint` new rETH and help run a pool.
 
 It’s time to become a guardian of Ethereum. Good luck on your quest, Explorer. May your commitment to Ethereum’s decentralized future be greatly rewarded!
 
