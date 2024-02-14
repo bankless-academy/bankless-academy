@@ -281,11 +281,13 @@ const Lesson = ({
   const isAnimationSlide = slide.content?.includes('/animation/')
   slide.content = slide.content?.replace(
     // HACK: display local animation
-    'https://app.banklessacademy.com/animation',
-    '/animation'
+    'https://app.banklessacademy.com/animation/',
+    '/animation/'
   )
   // TODO: make this dynamic
-  const animationSlideId = isAnimationSlide ? 'bitcoin' : ''
+  const animationSlideId = isAnimationSlide
+    ? 'validating-tx-with-ethereum-staking'
+    : ''
   const [animationStepLS, setAnimationStepLS] = useLocalStorage(
     `animation-${animationSlideId}`,
     0
@@ -524,12 +526,6 @@ const Lesson = ({
     closeLesson()
   })
 
-  function getDomIndex(target) {
-    return [].slice
-      .call(target.parent.children.filter((node) => node.name === 'li'))
-      .indexOf(target)
-  }
-
   const emojiRegexPattern = emojiRegex()
 
   function replaceEmojis(text) {
@@ -557,7 +553,7 @@ const Lesson = ({
     return result
   }
 
-  function transform(node) {
+  function transform(node, index) {
     if (node.type === 'text' && emojiRegexPattern.test(node.data)) {
       return replaceEmojis(node.data)
     }
@@ -573,21 +569,25 @@ const Lesson = ({
     if (
       node.type === 'tag' &&
       node.name === 'iframe' &&
-      node?.attribs?.src?.startsWith('/animation')
+      node?.attribs?.src?.includes('/animation/')
     ) {
       // HACK: integrate the embed animation iframe as a component
       return <Animation animationId={animationSlideId} />
     }
     if (isAnimationSlide && node.type === 'tag' && node.name === 'li') {
-      const index = getDomIndex(node)
       // hide next steps
       if (animationStepLS < index) return null
+
       return (
         <li
-          onClick={() => setAnimationStepLS(index)}
-          style={{ cursor: 'pointer' }}
+          onClick={
+            animationStepLS === index
+              ? () => {}
+              : () => setAnimationStepLS(index)
+          }
+          style={animationStepLS === index ? {} : { cursor: 'pointer' }}
         >
-          {processNodes(node.children)}
+          {processNodes(node.children, transform)}
         </li>
       )
     }
@@ -597,7 +597,7 @@ const Lesson = ({
       node.name === 'li' &&
       emojiRegexPattern.test(node.children[0].data)
     ) {
-      const p = processNodes(node.children)
+      const p = processNodes(node.children, transform)
       p.shift()
       return (
         <li className="hide-marker">
@@ -800,7 +800,7 @@ const Lesson = ({
             </>
           )}
           {slide.type === 'QUEST' && (
-            <VStack flex="auto" minH="570px" justifyContent="center">
+            <VStack flex="auto" minH="520px" justifyContent="center">
               {Quest?.questComponent}
             </VStack>
           )}

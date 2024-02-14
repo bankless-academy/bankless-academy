@@ -13,6 +13,20 @@ export const ANIMATIONS = {
       '/lotties/bitcoin_step3.json',
     ],
   },
+  'validating-tx-with-ethereum-staking': {
+    name: 'Ethereum Staking Animation',
+    description: 'Validating transactions when staking with Ethereum.',
+    socialImageLink: null,
+    steps: [
+      '/images/animations/validating-tx-with-ethereum-staking/step-1.png',
+      '/images/animations/validating-tx-with-ethereum-staking/step-2.png',
+      '/images/animations/validating-tx-with-ethereum-staking/step-3.png',
+      '/images/animations/validating-tx-with-ethereum-staking/step-4.png',
+      '/images/animations/validating-tx-with-ethereum-staking/step-5.png',
+      '/images/animations/validating-tx-with-ethereum-staking/step-6.png',
+      '/images/animations/validating-tx-with-ethereum-staking/step-7.png',
+    ],
+  },
 }
 
 export const ANIMATION_IDS = Object.keys(ANIMATIONS)

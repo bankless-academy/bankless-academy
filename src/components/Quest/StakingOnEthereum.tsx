@@ -8,6 +8,7 @@ import { api } from 'utils'
 import { useSmallScreen } from 'hooks'
 import InternalLink from 'components/InternalLink'
 import { LESSONS } from 'constants/index'
+import ExternalLink from 'components/ExternalLink'
 
 const StakingOnEthereum = (
   account: string
@@ -81,7 +82,11 @@ const StakingOnEthereum = (
                     )
                   }
                 >
-                  <Box padding="8px 0" whiteSpace="break-spaces">
+                  <Box
+                    padding="10px 0"
+                    whiteSpace="break-spaces"
+                    lineHeight="1.5em"
+                  >
                     {'1. Connect your wallet to Bankless Academy.'}
                   </Box>
                 </Button>
@@ -99,24 +104,40 @@ const StakingOnEthereum = (
                     )
                   }
                 >
-                  <Box padding="8px 0" whiteSpace="break-spaces">
-                    {
-                      '2. Hold a balance of at least 0.001 rETH on any supported network*.'
-                    }
+                  <Box
+                    padding="10px 0"
+                    whiteSpace="break-spaces"
+                    lineHeight="1.5em"
+                  >
+                    {'2. Obtain 0.001 rETH on any supported network*.'}
+                    <Box ml="2">
+                      {'a) Mint rETH via '}
+                      <ExternalLink href="https://stake.rocketpool.net/">
+                        Rocket Pool
+                      </ExternalLink>
+                      {' (0.01 ETH minimum)'}
+                      <br />
+                      {'b) Visit a '}
+                      <ExternalLink href="https://app.uniswap.org/tokens/optimism/0x9bcef72be871e61ed4fbbc7630889bee758eb81d">
+                        Decentralized Exchange
+                      </ExternalLink>
+                      {' to swap for rETH'}
+                    </Box>
                   </Box>
                 </Button>
               </VStack>
-              <Box mt="8">
-                {/* TODO: make title dynamic */}
+              {/* <Box mt="8">
+                TODO: make title dynamic
                 {`Tip: Check our Explorer's Handbook entry on 'Staking with Rocket Pool' to find the best funding pathway for you.`}
-              </Box>
+              </Box> */}
               <Box mt="8">
-                * Supporting Ethereum, Optimism, Base, Arbitrum and Polygon POS.
+                Supported networks: Ethereum, Optimism, Base, Abritrum and
+                Polygon (POS)
               </Box>
               {isTransactionVerified !== 'true' && (
                 <Box mt="24px !important" textAlign="center">
                   <Button onClick={validateQuest} variant="primary">
-                    {'Refresh balance'}
+                    {'Check Quest'}
                   </Button>
                 </Box>
               )}

@@ -1,4 +1,4 @@
-import { Box, Button } from '@chakra-ui/react'
+import { Box, Button, Image } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { Player } from '@lottiefiles/react-lottie-player'
 
@@ -40,6 +40,10 @@ const Animation = ({
   useHotkeys('left', () => clickLeft(), [animationStepLS])
   useHotkeys('right', () => clickRight(), [animationStepLS])
 
+  const currentStep: string = animation.steps[animationStepLS]
+
+  const isLottie = currentStep?.endsWith('.json')
+
   return (
     <Box
       // background="blackAlpha.400"
@@ -50,14 +54,18 @@ const Animation = ({
       aspectRatio="1"
       m="auto"
     >
-      <Player
-        autoplay={true}
-        loop={false}
-        keepLastFrame={true}
-        controls={false}
-        src={animation.steps[animationStepLS]}
-        style={{ height: '100%', width: '100%' }}
-      />
+      {isLottie ? (
+        <Player
+          autoplay={true}
+          loop={false}
+          keepLastFrame={true}
+          controls={false}
+          src={currentStep}
+          style={{ height: '100%', width: '100%' }}
+        />
+      ) : (
+        <Image src={currentStep} style={{ height: '100%', width: '100%' }} />
+      )}
       {isEmbedded && animationStepLS > 0 && (
         <Button
           variant="secondary"
