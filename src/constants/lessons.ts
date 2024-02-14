@@ -2214,12 +2214,12 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    badgeImageLink: '/images/staking-on-ethereum/badge-da9823bb.png',
-    lessonImageLink: '/images/staking-on-ethereum/lesson-fcb92f46.png',
-    socialImageLink: '/images/staking-on-ethereum/social-631d7643.jpg',
+    badgeImageLink: '/images/staking-on-ethereum/badge-2714ad22.png',
+    lessonImageLink: '/images/staking-on-ethereum/lesson-0274132a.png',
+    socialImageLink: '/images/staking-on-ethereum/social-c7a9c310.jpg',
     learningActions: '',
     marketingDescription: 'Become a guardian of Ethereum: Secure the network, earn Ether rewards.',
-    badgeId: null,
+    badgeId: 11,
     duration: null,
     learnings: '',
     description: 'Become a guardian of Ethereum: Secure the network, earn Ether rewards.',
@@ -2294,7 +2294,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'c53e50f57c1c4cf299aeb9971d739b6d',
         title: 'Ethereum Wants You!',
-        content: '<div class="bloc1"><p>You can think of <code>staking</code> like an “internet bond”.</p><p>Much like supporting your government through bonds can give a return on investment, supporting Ethereum yields staking rewards. More importantly, like government bonds, staking is a way to show financial support for the values you stand for — and the world you want to live in.</p><p>By participating in the staking process and facilitating transactions, your Ether is assigned to a <code>validator node</code> working to process transactions on Ethereum. The more Ether staked, the more nodes Ethereum has… thus the more <code>decentralized</code> and secure it becomes. </p><p>As a <code>staker</code>, you’ll become a <strong>guardian of Ethereum</strong><strong>!</strong></p><p>It’s time to dive deeper into staking mechanics and uncover the simple, low cost opportunity to start your staking journey today.</p><p>Grab your gear, let’s go.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png\'></div>'
+        content: '<div class="bloc1"><p>You can think of <code>staking</code> like an “internet bond”.</p><p>Much like supporting your government through bonds can give a return on investment, supporting Ethereum yields staking rewards. More importantly, like government bonds, staking is a way to show financial support for the values you stand for — and the world you want to live in.</p><p>By participating in the staking process and facilitating transactions, your Ether is assigned to a <code>validator node</code> working to process transactions on Ethereum. The more Ether staked, the more nodes Ethereum has… thus the more <code>decentralized</code> and secure it becomes. </p><p>As a <code>staker</code>, you’ll become a <strong>guardian of Ethereum!</strong></p><p>It’s time to dive deeper into staking mechanics and uncover the simple, low cost opportunity to start your staking journey today.</p><p>Grab your gear, let’s go.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -2321,7 +2321,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '8c558399c3624e3bbc8bea263dd62324',
         title: 'Proof-of-Stake',
-        content: '<div class="bloc1"><p>On Ethereum, <code>validator nodes</code> use a <code>consensus mechanism</code> called “Proof-of-Stake” to agree on the legitimacy of blockchain transactions. (This is where “staking” comes from).</p><p>Users looking to run a validator node on their computer must gather and stake 32 Ether — that’s a lot of money! In exchange for taking a large financial position in the network, the node operator gains permission to validate Ethereum’s transactions, and earn rewards. When a group of transactions are submitted to the network, a node is randomly selected to verify them — with its results double-checked by other nodes to ensure honesty.</p><p>When a node successfully processes the transactions, its <code>stake</code> grows. If the node is too slow or tries to approve fraud, its stake is <code>slashed</code> (a penalty charge is applied). In this way, staked Ether is a form of insurance; Nodes are incentivized to act honestly and keep Ethereum running.</p><p>For an attacker to approve fraud on Ethereum, they would need to gain control of the majority of nodes Ether, and therefore a majority of staked Ether. That’s why having everyday users involved in staking is so important — the <code>decentralization</code> fragments decision making power.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/proof-of-stake-8cc7d23c.png\'></div>'
+        content: '<div class="bloc1"><p>On Ethereum, <code>validator nodes</code> use a <code>consensus mechanism</code> called “Proof-of-Stake” to agree on the legitimacy of blockchain transactions. (This is where “staking” comes from).</p><p>Users looking to run a validator node on their computer must gather and stake 32 Ether — that’s a lot of money! In exchange for taking a large financial position in the network, the node operator gains permission to validate Ethereum’s transactions, and earn rewards. When a group of transactions are submitted to the network, a node is randomly selected to verify them — with its results double-checked by other nodes to ensure honesty.</p><p>When a node successfully processes the transactions, its <code>stake</code> grows. If the node is too slow or tries to approve fraud, its stake is <code>slashed</code> (a penalty charge is applied). In this way, staked Ether is a form of insurance; Nodes are incentivized to act honestly and keep Ethereum running.</p><p>For an attacker to approve fraud on Ethereum, they would need to gain control of the majority of validator nodes, and therefore a majority of staked Ether. That’s why having everyday users involved in staking is so important — the <code>decentralization</code> fragments decision making power.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/proof-of-stake-8cc7d23c.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -2374,7 +2374,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '20dbf51d28cc48c48868ddbba29b34ac',
         title: 'Types of Staking (Pt. 2)',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-0adb0dc4.png\'></div><div class="bloc-b"><p><span class=\'color-default\'><strong>Solo Staking</strong></span></p><p>🟡 Requires 32 ETH</p><p>🟡 Technical Setup</p><p>🟢 Decentralizes Ethereum</p><p><strong>Risks:</strong> You may lose your private keys, or get slashed when your node is offline.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-fa455820.png\'></div><div class="bloc-b"><p><strong>Staking Pools</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🟡 Decentralized Options</p><p><strong>Risks:</strong> There could be a bug in the staking pool’s smart contract, or you may lose your private keys.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-63e5ec68.png\'></div><div class="bloc-b"><p><strong>Centralized Exchange Staking</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🔴 Centralizes Ethereum</p><p><strong>Risks:</strong> Your exchange could declare bankruptcy, meaning loss of your holdings.</p></div></div>'
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-0adb0dc4.png\'></div><div class="bloc-b"><p><span class=\'color-default\'><strong>Solo Staking</strong></span></p><p>🟡 Requires 32 ETH</p><p>🟡 Technical Setup</p><p>🟢 Decentralizes Ethereum</p><p><strong>Risks:</strong> You may lose your private keys, or get slashed when your node is offline.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-fa455820.png\'></div><div class="bloc-b"><p><strong>Staking Pools</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🟡 Decentralized Options</p><p><strong>Risks:</strong> There could be a bug in the staking pool’s smart contract, or you may lose your private keys.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-63e5ec68.png\'></div><div class="bloc-b"><p><strong>Centralized Exchange Staking</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🔴 Centralizes Ethereum</p><p><strong>Risks:</strong> Your exchange could declare bankruptcy, and may lead to loss of your holdings.</p></div></div>'
       },
       {
         type: 'LEARN',
@@ -2390,9 +2390,9 @@ const LESSONS: LessonType[] = [
           question: 'What would happen if a single entity controlled a majority of staked Ether?',
           rightAnswerNumber: 1,
           answers: [
-            'They could approve or deny any transaction.',
-            'They would control all validator nodes.',
-            'Ethereum would stop processing transactions.',
+            'They could approve fraudulent transactions.',
+            'They’d control all validator nodes.',
+            'Ethereum would stop processing transactions altogether.',
             'All of the above.'
           ],
           id: 'staking-on-ethereum-4'
@@ -2402,7 +2402,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '561e1079d9874ee3976977a90426bb5d',
         title: 'Staking Pools',
-        content: '<div class="bloc1"><p>The best part about <code>staking pools</code> is that they’re entirely run by <code>smart contracts</code>. You don’t have to have met the other stakers in person — and you don’t have to trust them (although you do have to trust the smart contract).</p><p>Staking pools are coordinated by <code>staking providers</code>, digital platforms connecting stakers across the world! In these pools, a <code>node operator</code> stakes a portion of Ether and runs the node, and the other participants supply the remaining Ether. </p><p>For their service, the node operator earns additional yield. For the other staking participants, their membership to the pool is represented by “Liquid Staking Tokens” (LSTs). These <code>tokens</code> represent a share of a pool’s staked ether; The holder earns a portion of rewards equal to their stake, and can redeem them for their stake at any time.</p><p>So by simply holding an LST, like Rocket Pool’s rETH, you own a share of a staking pool. Your Ether is helping to decentralize Ethereum, and earning staking rewards!</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/staking-pools-13994270.png\'></div>'
+        content: '<div class="bloc1"><p>The best part about <code>staking pools</code> is that they’re entirely run by <code>smart contracts</code>. You don’t have to have met the other stakers in person — and you don’t have to trust them (although you do have to trust the smart contract).</p><p>Staking pools are coordinated by <code>staking providers</code>, digital platforms connecting stakers across the world! In these pools, a <code>node operator</code> stakes a portion of Ether and runs the node, and the other participants supply the remaining Ether. </p><p>For their service, the node operator earns additional yield. For the remaining staking participants, their membership to the pool is represented by “Liquid Staking Tokens” (LSTs). These <code>tokens</code> represent a share of a pool’s staked Ether; The holder earns a portion of rewards equal to their stake, and can redeem them for their stake at any time.</p><p>So by simply holding an LST, like Rocket Pool’s rETH, you own a share of a staking pool. Your Ether is helping to decentralize Ethereum, and earning staking rewards!</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/staking-pools-13994270.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -2412,9 +2412,9 @@ const LESSONS: LessonType[] = [
           question: 'Which entity hosts the staking pool?',
           rightAnswerNumber: 3,
           answers: [
-            'The Node Operator',
-            'The Additional Stakers',
-            'The Staking Provider'
+            'The node operator.',
+            'The remaining staking participants.',
+            'The staking provider.'
           ],
           id: 'staking-on-ethereum-5'
         }

@@ -47,7 +47,7 @@ Much like supporting your government through bonds can give a return on investme
 
 By participating in the staking process and facilitating transactions, your Ether is assigned to a `validator node` working to process transactions on Ethereum. The more Ether staked, the more nodes Ethereum has… thus the more `decentralized` and secure it becomes. 
 
-As a `staker`, you’ll become a **guardian of Ethereum****!**
+As a `staker`, you’ll become a **guardian of Ethereum!**
 
 It’s time to dive deeper into staking mechanics and uncover the simple, low cost opportunity to start your staking journey today.
 
@@ -91,7 +91,7 @@ Users looking to run a validator node on their computer must gather and stake 32
 
 When a node successfully processes the transactions, its `stake` grows. If the node is too slow or tries to approve fraud, its stake is `slashed` (a penalty charge is applied). In this way, staked Ether is a form of insurance; Nodes are incentivized to act honestly and keep Ethereum running.
 
-For an attacker to approve fraud on Ethereum, they would need to gain control of the majority of nodes Ether, and therefore a majority of staked Ether. That’s why having everyday users involved in staking is so important — the `decentralization` fragments decision making power.
+For an attacker to approve fraud on Ethereum, they would need to gain control of the majority of validator nodes, and therefore a majority of staked Ether. That’s why having everyday users involved in staking is so important — the `decentralization` fragments decision making power.
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/proof-of-stake-8cc7d23c.png)
 
@@ -206,7 +206,7 @@ Each method has either a positive or negative impact on network decentralization
 
 🔴 Centralizes Ethereum
 
-**Risks:** Your exchange could declare bankruptcy, meaning loss of your holdings.
+**Risks:** Your exchange could declare bankruptcy, and may lead to loss of your holdings.
 
 # Network Centralization
 
@@ -224,15 +224,15 @@ As guardians of Ethereum, we must focus on staking methods that keep the web in 
 
 What would happen if a single entity controlled a majority of staked Ether?
 
-- [ ] They could approve or deny any transaction.
+- [ ] They could approve fraudulent transactions.
 
 	> …
 
-- [ ] They would control all validator nodes.
+- [ ] They’d control all validator nodes.
 
 	> …
 
-- [ ] Ethereum would stop processing transactions.
+- [ ] Ethereum would stop processing transactions altogether.
 
 	> …
 
@@ -246,7 +246,7 @@ The best part about `staking pools` is that they’re entirely run by `smart con
 
 Staking pools are coordinated by `staking providers`, digital platforms connecting stakers across the world! In these pools, a `node operator` stakes a portion of Ether and runs the node, and the other participants supply the remaining Ether. 
 
-For their service, the node operator earns additional yield. For the other staking participants, their membership to the pool is represented by “Liquid Staking Tokens” (LSTs). These `tokens` represent a share of a pool’s staked ether; The holder earns a portion of rewards equal to their stake, and can redeem them for their stake at any time.
+For their service, the node operator earns additional yield. For the remaining staking participants, their membership to the pool is represented by “Liquid Staking Tokens” (LSTs). These `tokens` represent a share of a pool’s staked Ether; The holder earns a portion of rewards equal to their stake, and can redeem them for their stake at any time.
 
 So by simply holding an LST, like Rocket Pool’s rETH, you own a share of a staking pool. Your Ether is helping to decentralize Ethereum, and earning staking rewards!
 
@@ -256,15 +256,15 @@ So by simply holding an LST, like Rocket Pool’s rETH, you own a share of a sta
 
 Which entity hosts the staking pool?
 
-- [ ] The Node Operator
+- [ ] The node operator.
 
 	> …
 
-- [ ] The Additional Stakers
+- [ ] The remaining staking participants.
 
 	> …
 
-- [ ] The Staking Provider
+- [ ] The staking provider.
 
 	> Correct! The pool is hosted via the provider’s smart contracts.
 
