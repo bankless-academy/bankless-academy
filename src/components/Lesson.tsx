@@ -281,8 +281,8 @@ const Lesson = ({
   const isAnimationSlide = slide.content?.includes('/animation/')
   slide.content = slide.content?.replace(
     // HACK: display local animation
-    'https://app.banklessacademy.com/animation',
-    '/animation'
+    'https://app.banklessacademy.com/animation/',
+    '/animation/'
   )
   // TODO: make this dynamic
   const animationSlideId = isAnimationSlide
@@ -569,7 +569,7 @@ const Lesson = ({
     if (
       node.type === 'tag' &&
       node.name === 'iframe' &&
-      node?.attribs?.src?.startsWith('/animation')
+      node?.attribs?.src?.includes('/animation/')
     ) {
       // HACK: integrate the embed animation iframe as a component
       return <Animation animationId={animationSlideId} />
