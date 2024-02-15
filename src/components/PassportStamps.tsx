@@ -15,7 +15,6 @@ import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
 
 import { STAMP_PLATFORMS } from 'constants/passport'
-// import { Stamps } from 'entities/passport'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 import ExternalLink from 'components/ExternalLink'
@@ -171,9 +170,8 @@ const PassportStamps = ({
                               )
                             }
                           }}
+                          // HACK: force login via browser
                           isMobile={false}
-                          // redirectUri={`${window.location.origin}/api/stamps/callback/facebook`}
-                          // state={address}
                           render={(renderProps) => (
                             <Button
                               variant="primaryWhite"
