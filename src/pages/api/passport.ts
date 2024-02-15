@@ -13,7 +13,8 @@ import { PassportResponseSchema, fetchPassport, submitPassport } from 'utils/pas
 
 // const reader = new PassportReader(CERAMIC_PASSPORT, '1')
 
-const REQUIRED_PASSPORT_SCORE = 20
+// TEMP: update back to 20
+const REQUIRED_PASSPORT_SCORE = 100
 
 export default async function handler(
   req: NextApiRequest,
@@ -49,7 +50,7 @@ export default async function handler(
   const SYBIL_CHECK: SybilCheckTypes = 'GITCOIN_PASSPORT'
 
   const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
-  let gitcoinPassportScore = 0
+  let score = 0
   // TEMP: bypass passport check (accounts having issues with Ceramic API)
   const TEMP_PASSPORT_WHITELIST = [
     // '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
@@ -72,101 +73,37 @@ export default async function handler(
 
   if (SYBIL_CHECK === 'GITCOIN_PASSPORT') {
     try {
-      // read passport
-      // const passportReader: Passport = await reader.getPassport(address)
-      // console.log(passportReader)
-      // const gitcoinConfig = {
-      //   headers: {
-      //     accept: 'application/json',
-      //     'X-API-Key': process.env.GITCOIN_PASSPORT_API_KEY,
-      //   },
-      // }
-
-      let score
       if (!isProfile) {
         const submit = await submitPassport(address, PASSPORT_COMMUNITY_ID)
         // console.log(submit)
         if (submit.status === 200) {
-          score = await fetchPassport(address, PASSPORT_COMMUNITY_ID)
-        }
-        if (score.ok) {
-          const res = PassportResponseSchema.parse(await score.json())
-          console.log(res)
-          if (res?.score) {
-            gitcoinPassportScore = parseInt(res.score)
+          const fetchScore = await fetchPassport(address, PASSPORT_COMMUNITY_ID)
+          if (fetchScore.ok) {
+            const res = PassportResponseSchema.parse(await fetchScore.json())
+            console.log(res)
+            if (res?.score) {
+              score = parseInt(res.score)
+            }
+          } else {
+            console.log('score not found ...')
           }
-        } else {
-          console.log('score not found ...')
         }
       }
-      // const passportRes = await axios.get(
-      //   `https://api.scorer.gitcoin.co/registry/stamps/${address}?limit=1000`,
-      //   // `https://api.scorer.gitcoin.co/registry/v2/score/6651/${address}`,
-      //   gitcoinConfig
-      // )
-      // const passport: any = passportRes.data
-      // // console.log('** passport **', passport)
-      const validStamps = []
-      const stampHashes = {}
-      // const stampProviders = {}
-      const stampHashesSearch = []
-      let whereCondition = 'ba_stamps @> ?'
-      let sybil = []
-      // if (passport?.items?.length) {
-      //   // eslint-disable-next-line no-unsafe-optional-chaining
-      //   for (const stamp of passport?.items) {
-      //     const provider = stamp.credential?.credentialSubject?.provider
-      //     // console.log(stamp)
-      //     if (stamp.credential?.credentialSubject?.hash && ALLOWED_PROVIDERS.includes(provider))
-      //       stampHashes[provider] = stamp.credential?.credentialSubject?.hash
-      //   }
-      //   console.log('stampHashes', stampHashes)
-      //   // eslint-disable-next-line no-unsafe-optional-chaining
-      //   for (const stamp of passport?.items) {
-      //     const provider = stamp.credential?.credentialSubject?.provider
-      //     stampProviders[provider] = { provider, stamp: stamp.credential }
-      //   }
-      //   // console.log('stampHashes', stampHashes)
-      //   validStamps = filterValidStamps(Object.values(stampProviders))
-      //   // console.log('validStamps', validStamps)
-      //   // merge previous data without deleting other keys
-      //   const updated = await db.raw(
-      //     `update "users" set "gitcoin_stamps" = gitcoin_stamps || ? where "users"."id" = ?`,
-      //     [stampHashes, userId]
-      //   )
-      //   // console.log('updated', updated)
-      //   if (updated) console.log('stamps updated:', updated?.rowCount)
-      const [{ ba_stamps }] = await db(TABLES.users)
+      const [{ ba_stamps: stampHashes }] = await db(TABLES.users)
         .select('ba_stamps')
         .where(TABLE.users.id, userId)
-      console.log('ba_stamps', ba_stamps)
-      for (const provider of Object.keys(ba_stamps)) {
-        stampHashes[provider] = ba_stamps[provider]
-      }
       console.log('stampHashes', stampHashes)
-      Object.keys(stampHashes).map((key, index) => {
-        const stampHash = {}
-        stampHash[key] = stampHashes[key]
-        stampHashesSearch.push(stampHash)
-        validStamps.push(key)
-        if (index > 0) whereCondition += ' OR gitcoin_stamps @> ?'
-      })
-      if (stampHashesSearch.length) {
-        const sybilQuery = db(TABLES.users)
-          .select('id', 'address')
-          .whereNot(TABLE.users.id, userId)
-          .whereNull(TABLE.users.sybil_user_id)
-          // query for json instead of jsonb: .where(db.raw('gitcoin_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
-          .where(db.raw(`(${whereCondition})`, stampHashesSearch))
-          .orWhereNot(TABLE.users.id, userId)
-          .where(TABLE.users.sybil_user_id, '=', 12)
-          .where(db.raw(`(${whereCondition})`, stampHashesSearch))
-        // console.log(sybilQuery.toString())
-        sybil = await sybilQuery
-        console.log('sybil', sybil)
-      }
+      const validStamps = Object.keys(stampHashes)
       console.log('validStamps', validStamps)
-      // }
+      const sybilQuery = db(TABLES.users)
+        .select('id', 'address')
+        .where(TABLE.users.id, '=', db(TABLES.users)
+          .select('sybil_user_id')
+          .where(TABLE.users.id, userId)
+          .whereNotNull(TABLE.users.sybil_user_id)
+        )
+      const sybil = await sybilQuery
+      console.log('sybil', sybil)
       if (isBot) {
         // HACK: bot
         console.log('bot detected:', address)
@@ -179,52 +116,44 @@ export default async function handler(
           .update({ sybil_user_id: 12 })
         res.status(403).json({
           verified: false,
-          score: gitcoinPassportScore,
+          score,
           requirement,
           validStampsCount: 0,
         })
       }
+
+      const validStampsCount = validStamps?.length
       if (sybil?.length) {
-        // mark this user as a sybil attacker
-        console.log('fraud detected:', sybil)
-        trackBE(address, 'duplicate_stamps', {
-          sybil_id: sybil[0]?.id,
-          sybil_address: sybil[0]?.address,
-          embed,
-        })
-        await db(TABLES.users)
-          .where(TABLE.users.id, userId)
-          .update({ sybil_user_id: sybil[0]?.id })
         return res.status(200).json({
           verified: false,
-          score: gitcoinPassportScore,
+          score,
           requirement,
           fraud: sybil[0]?.address,
-          validStampsCount: Object.keys(stampHashes)?.length,
+          validStampsCount,
           stamps: stampHashes,
         })
       }
       if (validStamps?.length >= NUMBER_OF_STAMP_REQUIRED) {
-        // console.log('verified:', validStamps?.length)
+        console.log('verified:', { validStampsCount, score })
       } else {
-        console.log('not verified')
+        console.log('not verified:', validStamps?.length)
       }
       return res.status(200).json({
-        verified: validStamps?.length >= NUMBER_OF_STAMP_REQUIRED || gitcoinPassportScore >= REQUIRED_PASSPORT_SCORE,
-        score: gitcoinPassportScore,
+        verified: validStamps?.length >= NUMBER_OF_STAMP_REQUIRED || score >= REQUIRED_PASSPORT_SCORE,
+        score,
         fraud:
           user?.sybil_user_id === 12
             ? '0x0000000000000000000000000000000000000000'
             : null,
         requirement,
-        validStampsCount: Object.keys(stampHashes)?.length,
+        validStampsCount: validStamps?.length,
         stamps: stampHashes,
       })
     } catch (error) {
       console.error(error)
       res.status(500).json({
         verified: false,
-        score: gitcoinPassportScore,
+        score,
         requirement,
         validStampsCount: 0,
         error: `error ${error?.code}: ${GENERIC_ERROR_MESSAGE}`,
