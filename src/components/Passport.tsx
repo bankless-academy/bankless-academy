@@ -106,9 +106,7 @@ const PassportComponent = ({
               color={theme.colors.incorrect}
               fontWeight="bold"
             >
-              {/* <ExternalLink href="/faq#17f5d5963c644fa7af5e32598bd6c793"> */}
               {t('Duplicate account detected.')}
-              {/* </ExternalLink> */}
               <br />
               {passportLS?.fraud ? (
                 <>
@@ -126,29 +124,29 @@ const PassportComponent = ({
           <Text fontSize="xl">
             <>
               <Box mt="4">
-                {numberOfStampsLeftToCollect > 0
-                  ? t(
-                      `Connect to {{numberOfStampsLeftToCollect}} more accounts:`,
-                      { numberOfStampsLeftToCollect }
-                    )
-                  : t(
+                {numberOfStampsLeftToCollect > 0 ? (
+                  t(
+                    `Connect to {{numberOfStampsLeftToCollect}} more accounts:`,
+                    { numberOfStampsLeftToCollect }
+                  )
+                ) : (
+                  <Box
+                    background="whiteAlpha.800"
+                    color="green.500"
+                    p="4"
+                    borderRadius="8px"
+                    fontWeight="bold"
+                  >
+                    {t(
                       'You have connected enough accounts. You can now close this popup and claim your rewards.'
                     )}
+                  </Box>
+                )}
               </Box>
             </>
           </Text>
         )}
       </Box>
-      {/* <Box
-        borderBottom="1px solid #72757B"
-        paddingBottom="4"
-        marginBottom="8"
-        w="80%"
-        mx="auto"
-        textAlign="center"
-      >
-        <ScoreRing score={passportLS.score} />
-      </Box> */}
       <PassportStamps
         stamps={passportLS ? passportLS.stamps : null}
         displayStamps={displayStamps}

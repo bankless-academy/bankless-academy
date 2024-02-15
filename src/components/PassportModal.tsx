@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next'
 
 import Passport from 'components/Passport'
 import ExternalLink from 'components/ExternalLink'
-import { EMPTY_PASSPORT } from 'constants/passport'
+import { EMPTY_PASSPORT, NUMBER_OF_STAMP_REQUIRED } from 'constants/passport'
 
 const PassportModal = ({
   isOpen,
@@ -120,7 +120,7 @@ const PassportModal = ({
               </Box>
             )} */}
             <Box my="4">
-              {`Explorers must connect at least 2 accounts in order to collect Bankless Academy rewards. `}
+              {`Explorers must connect at least ${NUMBER_OF_STAMP_REQUIRED} accounts in order to collect Bankless Academy rewards. `}
               <ExternalLink
                 underline="true"
                 href="/faq#36c048c07dea4b289d466a4318e41eb2"
@@ -129,7 +129,7 @@ const PassportModal = ({
               </ExternalLink>
             </Box>
           </Text>
-          <Passport displayStamps isProfile />
+          <Passport displayStamps isProfile={isProfile} />
         </ModalBody>
         <ModalFooter justifyContent="space-between">
           <Box display="flex" alignItems="center">

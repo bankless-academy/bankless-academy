@@ -12,7 +12,6 @@ import { useTranslation } from 'react-i18next'
 import { LESSONS } from 'constants/index'
 import { DONATION_MAPPING } from 'constants/donations'
 import InternalLink from './InternalLink'
-// import ExternalLink from './ExternalLink'
 import { STAMP_PLATFORMS } from 'constants/passport'
 import PassportModal from 'components/PassportModal'
 import { useSmallScreen } from 'hooks'
@@ -309,7 +308,7 @@ const Badges = ({
                   <PassportModal
                     isOpen={isOpen}
                     onClose={onClose}
-                    isProfile={true}
+                    isProfile={isMyProfile}
                   />
                 </>
               )}
