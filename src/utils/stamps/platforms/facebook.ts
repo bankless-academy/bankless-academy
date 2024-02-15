@@ -1,7 +1,7 @@
 // SOURCE: https://github.com/gitcoinco/passport/blob/b7bb11f3e4f7d4c55b36d81d079d96f2e38c116c/platforms/src/Facebook/Providers/facebook.ts
 
 // ----- Types
-import { ProviderExternalVerificationError, type Provider, type ProviderOptions } from "../types";
+import { type Provider, type ProviderOptions } from "../types";
 import type { RequestPayload, VerifiedPayload } from "../passport-types";
 
 // --- Api Library
@@ -67,7 +67,8 @@ export class FacebookProvider implements Provider {
         errors,
       };
     } catch (e: unknown) {
-      throw new ProviderExternalVerificationError(`Error verifying Facebook account: ${JSON.stringify(e)}`);
+      console.error(`Error verifying Facebook account: ${JSON.stringify(e)}`)
+      // throw new ProviderExternalVerificationError(`Error verifying Facebook account: ${JSON.stringify(e)}`);
     }
   }
 }
@@ -82,6 +83,7 @@ export async function verifyFacebook(userAccessToken: string): Promise<Response>
       params: { access_token: appAccessToken, input_token: userAccessToken },
     });
   } catch (error: unknown) {
+    console.error(`Error verifyFacebook: ${JSON.stringify(error)}`)
     // handleProviderAxiosError(error, "verify Facebook", [userAccessToken]);
     return error;
   }

@@ -73,7 +73,6 @@ export default async function handler(
     slug: [platform],
     state,
     code,
-    accessToken,
     json,
     address: userAddress,
   } = req.query
@@ -107,13 +106,13 @@ export default async function handler(
       },
     } as unknown as RequestPayload)
     console.log(result)
-    if (result.valid && result.record?.email) {
+    if (result?.valid && result.record?.email) {
       record = {
         type,
         version,
         "email": result.record.email
       }
-    } else result.valid = false
+    } else result = { valid: false }
   } else if (platform === 'twitter') {
     const context = {}
     const sessionKey = state
@@ -129,13 +128,13 @@ export default async function handler(
       } else {
         result.valid = true
       }
-      if (result.valid && data.id) {
+      if (result?.valid && data.id) {
         record = {
           type,
           version,
           "id": data.id
         }
-      } else result.valid = false
+      } else result = { valid: false }
 
     } catch (error) {
       res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${error}&platform=${platform}`)
@@ -145,17 +144,17 @@ export default async function handler(
     const FacebookProvider = new facebook.FacebookProvider();
     result = await FacebookProvider.verify({
       proofs: {
-        accessToken,
+        accessToken: code,
       },
     } as unknown as RequestPayload)
     console.log(result)
-    if (result.valid && result.record?.user_id) {
+    if (result?.valid && result.record?.user_id) {
       record = {
         type,
         version,
         "user_id": result.record.user_id
       }
-    } else result.valid = false
+    } else result = { valid: false }
   } else if (platform === 'linkedin') {
     const LinkedinProvider = new linkedin.LinkedinProvider();
     result = await LinkedinProvider.verify({
@@ -164,14 +163,14 @@ export default async function handler(
       },
     } as unknown as RequestPayload)
     console.log(result)
-    if (result.valid && result.record?.id) {
+    if (result?.valid && result.record?.id) {
       // TODO: understand why user id is different for gitcoin passport
       record = {
         type,
         version,
         "id": result.record.id
       }
-    } else result.valid = false
+    } else result = { valid: false }
   } else if (platform === 'discord') {
     const DiscordProvider = new discord.DiscordProvider();
     result = await DiscordProvider.verify({
@@ -180,13 +179,13 @@ export default async function handler(
       },
     } as unknown as RequestPayload)
     console.log(result)
-    if (result.valid && result.record?.id) {
+    if (result?.valid && result.record?.id) {
       record = {
         type,
         version,
         "id": result.record.id
       }
-    } else result.valid = false
+    } else result = { valid: false }
   } else if (platform === 'farcaster') {
     const query = gql`
       query GetWeb3SocialsOfFarcasters {
@@ -226,14 +225,14 @@ export default async function handler(
     //     },
     //   } as unknown as RequestPayload)
     //   console.log(result)
-    //   if (result.valid && result.record?.id) {
+    //   if (result?.valid && result.record?.id) {
     //     record = {
     //       type,
     //       version,
     //       contextId: result.record.id,
     //       meets: "true"
     //     }
-    //   } else result.valid = false
+    //   } else result = {valid:false}
   } else if (platform === 'poh') {
     // TODO: add signature verification? (Ed25519 / EIP712)
     const PohProvider = new poh.PohProvider();
@@ -241,13 +240,13 @@ export default async function handler(
       address
     } as unknown as RequestPayload)
     console.log(result)
-    if (result.valid && result.record?.address) {
+    if (result?.valid && result.record?.address) {
       record = {
         type,
         version,
         address: result.record.address,
       }
-    } else result.valid = false
+    } else result = { valid: false }
   } else if (platform === 'ens') {
     // TODO: add signature verification? (Ed25519 / EIP712)
     const EnsProvider = new ens.EnsProvider();
@@ -255,13 +254,13 @@ export default async function handler(
       address
     } as unknown as RequestPayload)
     console.log(result)
-    if (result.valid && result.record?.ens) {
+    if (result?.valid && result.record?.ens) {
       record = {
         type,
         version,
         ens: result.record.ens,
       }
-    } else result.valid = false
+    } else result = { valid: false }
   }
   console.log(record)
   const hash = `${VERSION}:${generateHash(record)}`

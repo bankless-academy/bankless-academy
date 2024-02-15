@@ -167,7 +167,7 @@ const PassportStamps = ({
                             console.log(res)
                             if (res?.accessToken) {
                               apiCall(
-                                `/api/stamps/callback/facebook?accessToken=${res.accessToken}&json=true&address=${address}`
+                                `/api/stamps/callback/facebook?code=${res.accessToken}&json=true&address=${address}`
                               )
                             }
                           }}
