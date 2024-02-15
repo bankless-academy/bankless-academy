@@ -171,8 +171,9 @@ const PassportStamps = ({
                               )
                             }
                           }}
-                          redirectUri={`${window.location.origin}/api/stamps/callback/facebook`}
-                          state={address}
+                          isMobile={false}
+                          // redirectUri={`${window.location.origin}/api/stamps/callback/facebook`}
+                          // state={address}
                           render={(renderProps) => (
                             <Button
                               variant="primaryWhite"
