@@ -19,7 +19,6 @@ import { STAMP_PLATFORMS } from 'constants/passport'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 import ExternalLink from 'components/ExternalLink'
-import { DOMAIN_URL_ } from 'constants/index'
 
 const CircleIcon = (props) => (
   <Icon viewBox="0 0 200 200" {...props}>
@@ -162,7 +161,6 @@ const PassportStamps = ({
                           textButton={t('Connect')}
                           cssClass="css-rgn8uq"
                           onClick={() => {
-                            alert(`${DOMAIN_URL_}/api/stamps/callback/facebook`)
                             setLoadingStamp('facebook')
                           }}
                           callback={(res) => {
@@ -173,7 +171,7 @@ const PassportStamps = ({
                               )
                             }
                           }}
-                          redirectUri={`${DOMAIN_URL_}/api/stamps/callback/facebook`}
+                          redirectUri={`${window.location.origin}/api/stamps/callback/facebook`}
                           state={address}
                           render={(renderProps) => (
                             <Button
