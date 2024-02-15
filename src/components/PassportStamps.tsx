@@ -162,6 +162,7 @@ const PassportStamps = ({
                           textButton={t('Connect')}
                           cssClass="css-rgn8uq"
                           onClick={() => {
+                            alert(`${DOMAIN_URL_}/api/stamps/callback/facebook`)
                             setLoadingStamp('facebook')
                           }}
                           callback={(res) => {
