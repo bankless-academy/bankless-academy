@@ -7,7 +7,7 @@ import { getPageTitle } from 'notion-utils'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
-import { NOTION_PAGES, PROJECT_NAME } from 'constants/index'
+import { IS_PROD, NOTION_PAGES, PROJECT_NAME } from 'constants/index'
 
 const notion = new NotionAPI()
 
@@ -46,6 +46,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     console.error(error)
     return {
       props: {
+        slug,
         recordMap: false,
         isNotion: true,
       },
@@ -55,8 +56,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const NotionPage = ({
+  slug,
   recordMap,
 }: {
+  slug: string
   recordMap: ExtendedRecordMap
 }): JSX.Element => {
   if (!recordMap || Object.keys(recordMap).length === 0) {
@@ -85,6 +88,10 @@ const NotionPage = ({
       <Head>
         <title>
           {title} | {PROJECT_NAME}
+          <meta
+            name="robots"
+            content={IS_PROD && slug === 'faq' ? 'all' : 'noindex'}
+          ></meta>
         </title>
       </Head>
       <NotionRenderer recordMap={recordMap} fullPage={true} darkMode={true} />
