@@ -263,6 +263,7 @@ export default async function handler(
         })
       }
       const mint = await contract[contractFunction](...functionParams, options)
+      // DEV: uncomment this line to test simulate minting
       // const mint = { hash: 'test' }
       console.log(mint)
 

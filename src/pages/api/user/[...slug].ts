@@ -89,11 +89,10 @@ export default async function handler(
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
         TABLE.users.donations,
-        // TABLE.users.gitcoin_stamps,
         TABLE.users.ba_stamps
       )
       .whereILike('ens_name', addressLowerCase)
-    // console.log('userExist1', userExist)
+    // console.log('userExist', userExist)
     if (userExist) {
       addressLowerCase = userExist.address?.toLowerCase()
     } else {
@@ -121,7 +120,6 @@ export default async function handler(
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
         TABLE.users.donations,
-        // TABLE.users.gitcoin_stamps,
         TABLE.users.ba_stamps
       )
       .whereILike('address', addressLowerCase)
@@ -142,6 +140,7 @@ export default async function handler(
   const oldBadgeTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase] : []
   console.log(oldBadgeTokenIds)
   const badgeTokenIds = [...new Set([
+    // DEV: comment these 2 lines when testing
     ...(await getBadgeTokensIds(addressLowerCase)),
     ...oldBadgeTokenIds
   ])]

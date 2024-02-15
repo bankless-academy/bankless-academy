@@ -1,4 +1,4 @@
-// https://github.com/gitcoinco/grants-stack/blob/main/packages/common/src/index.ts
+// SOURCE: https://github.com/gitcoinco/grants-stack/blob/main/packages/common/src/index.ts
 
 import z from "zod";
 
