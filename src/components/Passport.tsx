@@ -124,7 +124,7 @@ const PassportComponent = ({
           <Text fontSize="xl">
             <>
               <Box mt="4">
-                {numberOfStampsLeftToCollect > 0 ? (
+                {!passportLS?.verified ? (
                   t(
                     `Connect to {{numberOfStampsLeftToCollect}} more accounts:`,
                     { numberOfStampsLeftToCollect }
