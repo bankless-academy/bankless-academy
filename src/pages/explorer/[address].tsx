@@ -118,11 +118,15 @@ export default function Page({
     if (isMyProfile && passportLS?.stamps) {
       // update user stamps without requiring to refresh
       const valid_stamps = Object.keys(passportLS.stamps)
-      if (valid_stamps.length) {
+      if (valid_stamps?.length) {
         const updatedUser: any = {
           stats: {
             ...user.stats,
-            valid_stamps: Object.keys(passportLS.stamps),
+            valid_stamps,
+            score:
+              user.stats.score -
+              user.stats.valid_stamps?.length +
+              valid_stamps.length,
           },
         }
         setUser({ ...user, ...updatedUser })
