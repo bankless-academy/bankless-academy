@@ -96,6 +96,7 @@ export const TWITTER_ACCOUNT = WHITELABEL?.twitter_account || `BanklessAcademy`
 export const NOTION_PAGES = WHITELABEL?.notion_pages || {
   faq: '8fe3275ffbe74e598cb4574d0207a185',
   disclaimer: '360b86a86d50421ba3bc7f55607f064a',
+  'privacy-policy': '0c0a262eb63243db97ed235c4512518f',
 }
 
 export const MIRROR_WHITELISTED_ACCOUNTS = [
