@@ -26,7 +26,8 @@ export const TABLE = {
     ens_avatar: 'users.ens_avatar',
     donations: 'users.donations',
     referrer: 'users.referrer',
-    ba_stamps: 'users.ba_stamps'
+    ba_stamps: 'users.ba_stamps',
+    socials: 'users.socials'
   },
   // deprecated
   // quests: {
