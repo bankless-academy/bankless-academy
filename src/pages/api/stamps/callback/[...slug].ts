@@ -80,6 +80,7 @@ export default async function handler(
   const address = userAddress as string || state as string
   console.log(address)
 
+  const socialId: any = {}
   let record: any = {}
   let result: any = {}
   let isStampValidated = false
@@ -107,6 +108,7 @@ export default async function handler(
     } as unknown as RequestPayload)
     console.log(result)
     if (result?.valid && result.record?.email) {
+      socialId[platform] = result.record.email
       record = {
         type,
         version,
@@ -129,6 +131,7 @@ export default async function handler(
         result.valid = true
       }
       if (result?.valid && data.id) {
+        socialId[platform] = data.id
         record = {
           type,
           version,
@@ -149,6 +152,7 @@ export default async function handler(
     } as unknown as RequestPayload)
     console.log(result)
     if (result?.valid && result.record?.user_id) {
+      socialId[platform] = result.record.user_id
       record = {
         type,
         version,
@@ -165,6 +169,7 @@ export default async function handler(
     console.log(result)
     if (result?.valid && result.record?.id) {
       // TODO: understand why user id is different for gitcoin passport
+      socialId[platform] = result.record.id
       record = {
         type,
         version,
@@ -180,6 +185,7 @@ export default async function handler(
     } as unknown as RequestPayload)
     console.log(result)
     if (result?.valid && result.record?.id) {
+      socialId[platform] = result.record.id
       record = {
         type,
         version,
@@ -203,10 +209,11 @@ export default async function handler(
       if (data?.Socials?.Social?.length) {
         const fid = data?.Socials?.Social[0].userId
         console.log('fid', fid)
+        socialId[platform] = fid
         record = {
           type,
           version,
-          id: fid,
+          id: fid
         }
         result.valid = true
       } else {
@@ -226,6 +233,7 @@ export default async function handler(
     //   } as unknown as RequestPayload)
     //   console.log(result)
     //   if (result?.valid && result.record?.id) {
+    //     socialId[platform] = result.record.id
     //     record = {
     //       type,
     //       version,
@@ -241,10 +249,11 @@ export default async function handler(
     } as unknown as RequestPayload)
     console.log(result)
     if (result?.valid && result.record?.address) {
+      socialId[platform] = result.record.address
       record = {
         type,
         version,
-        address: result.record.address,
+        address: result.record.address
       }
     } else result = { valid: false }
   } else if (platform === 'ens') {
@@ -255,10 +264,11 @@ export default async function handler(
     } as unknown as RequestPayload)
     console.log(result)
     if (result?.valid && result.record?.ens) {
+      socialId[platform] = result.record.ens
       record = {
         type,
         version,
-        ens: result.record.ens,
+        ens: result.record.ens
       }
     } else result = { valid: false }
   }
@@ -275,28 +285,20 @@ export default async function handler(
     isStampValidated = false
     status = `Problem with stamp (${hash}): close the window and try again.`
   } else {
-    const stampHashesSearch = []
     // TODO: also check for BA stamps fraud
-    let whereCondition = 'ba_stamps @> ?'
     let sybil = []
-    const stampHashes: any = {}
-    stampHashes[record.type] = hash
-    Object.keys(stampHashes).map((key, index) => {
-      const stampHash = {}
-      stampHash[key] = stampHashes[key]
-      stampHashesSearch.push(stampHash)
-      if (index > 0) whereCondition += ' OR ba_stamps @> ?'
-    })
+    const stampHash: any = {}
+    stampHash[record.type] = hash
     // check for sybils
     const sybilQuery = db(TABLES.users)
       .select('id', 'address')
       .whereNot(TABLE.users.id, userId)
       .whereNull(TABLE.users.sybil_user_id)
       // query for json instead of jsonb: .where(db.raw('ba_stamps::TEXT LIKE ANY(?)', [stampHashesSearch]))
-      .where(db.raw(`(${whereCondition})`, stampHashesSearch))
+      .where(db.raw(`(ba_stamps @> ?)`, [stampHash]))
       .orWhereNot(TABLE.users.id, userId)
       .where(TABLE.users.sybil_user_id, '=', 12)
-      .where(db.raw(`(${whereCondition})`, stampHashesSearch))
+      .where(db.raw(`(ba_stamps @> ?)`, [stampHash]))
     // console.log(sybilQuery.toString())
     sybil = await sybilQuery
     console.log('sybil', sybil)
@@ -326,10 +328,10 @@ export default async function handler(
       }
     }
     // add stamps to ba_stamps
-    console.log('stampHashes', stampHashes)
+    console.log('stampHash', stampHash)
     const updated = await db.raw(
-      `update "users" set "ba_stamps" = ba_stamps || ? where "users"."id" = ?`,
-      [stampHashes, userId]
+      `update "users" set "ba_stamps" = ba_stamps || ?, "socials" = socials || ? where "users"."id" = ?`,
+      [stampHash, socialId, userId]
     )
     console.log('updated', updated)
     if (updated) console.log('stamps updated:', updated?.rowCount)
