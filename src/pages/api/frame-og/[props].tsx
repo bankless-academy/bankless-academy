@@ -18,7 +18,7 @@ const schema = z.object({
     z.object({
       type: z.literal('question'),
       question: z.string(),
-      answers: z.array(z.string()).length(4),
+      answers: z.array(z.string().max(50)).min(2).max(4),
       selection: z
         .object({
           selected: z.number(),
@@ -101,6 +101,7 @@ function Screen(props: Props) {
       <WWTBAMUI
         green={selection && selection.correct}
         red={selection && selection.selected}
+        nb={props.state.answers?.length}
       />
       <div
         tw="absolute flex items-center justify-center text-center text-white text-5xl overflow-hidden"
@@ -147,9 +148,11 @@ export default async function handler(req: NextRequest) {
 function WWTBAMUI({
   green,
   red,
+  nb,
 }: {
   green: number | null
   red: number | null
+  nb: number
 }) {
   return (
     <svg
@@ -181,28 +184,32 @@ function WWTBAMUI({
         stroke-width="3"
         stroke-linejoin="round"
       />
-      <rect
-        x="99.5"
-        y="407"
-        width="472"
-        height="103"
-        rx="9.5"
-        fill={2 == green ? '#44A991' : 2 == red ? '#A94462' : '#060B0F'}
-        stroke="#646587"
-        stroke-width="3"
-        stroke-linejoin="round"
-      />
-      <rect
-        x="624.5"
-        y="407"
-        width="472"
-        height="103"
-        rx="9.5"
-        fill={3 == green ? '#44A991' : 3 == red ? '#A94462' : '#060B0F'}
-        stroke="#646587"
-        stroke-width="3"
-        stroke-linejoin="round"
-      />
+      {nb >= 3 && (
+        <rect
+          x="99.5"
+          y="407"
+          width="472"
+          height="103"
+          rx="9.5"
+          fill={2 == green ? '#44A991' : 2 == red ? '#A94462' : '#060B0F'}
+          stroke="#646587"
+          stroke-width="3"
+          stroke-linejoin="round"
+        />
+      )}
+      {nb >= 4 && (
+        <rect
+          x="624.5"
+          y="407"
+          width="472"
+          height="103"
+          rx="9.5"
+          fill={3 == green ? '#44A991' : 3 == red ? '#A94462' : '#060B0F'}
+          stroke="#646587"
+          stroke-width="3"
+          stroke-linejoin="round"
+        />
+      )}
     </svg>
   )
 }

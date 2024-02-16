@@ -70,6 +70,10 @@
       "destination": "/notion/disclaimer"
     },
     {
+      "source": "/privacy-policy",
+      "destination": "/notion/privacy-policy"
+    },
+    {
       "source": "/mp/lib.min.js",
       "destination": "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"
     },
