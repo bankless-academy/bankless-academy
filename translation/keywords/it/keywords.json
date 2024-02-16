@@ -289,11 +289,6 @@
     "keyword_plural": "Epochs",
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
-  "erc-1155": {
-    "keyword": "ERC-1155",
-    "keyword_plural": "ERC-1155s",
-    "definition": "A standard for deploying both fungible and non-fungible tokens on Ethereum, under one optimized contract."
-  },
   "erc-20": {
     "keyword": "ERC-20",
     "keyword_plural": "ERC-20s",
@@ -303,6 +298,11 @@
     "keyword": "ERC-721",
     "keyword_plural": "ERC-721s",
     "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
+  },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "keyword_plural": "ERC-1155s",
+    "definition": "A standard for deploying both fungible and non-fungible tokens on Ethereum, under one optimized contract."
   },
   "eth": {
     "keyword": "ETH",
@@ -438,6 +438,11 @@
     "keyword": "liquid",
     "keyword_plural": "liquids",
     "definition": "In blockchain economies: The ability to easily use a digital asset in trading, or use in smart contracts."
+  },
+  "liquid staking token": {
+    "keyword": "liquid staking token",
+    "keyword_plural": "liquid staking tokens",
+    "definition": "Tokens representing staked Ether. Holders earn a portion of staking rewards proportial to the amounts staked."
   },
   "liquidity": {
     "keyword": "liquidity",
