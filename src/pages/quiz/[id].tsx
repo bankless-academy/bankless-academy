@@ -11,7 +11,7 @@ import ExternalLink from 'components/ExternalLink'
 
 const questionSchema = z.object({
   question: z.string().min(1).max(100),
-  answers: z.array(z.string().max(50)).length(4),
+  answers: z.array(z.string().max(50)).min(2).max(4),
   correct: z.number().min(0).max(3),
 })
 
@@ -163,7 +163,10 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   for (const slide of lesson.slides) {
     if (
       slide.type === 'QUIZ' &&
-      slide.quiz.answers.filter((answer) => answer.length <= 50).length === 4
+      slide.quiz.answers.filter((answer) => answer.length <= 50).length ===
+        slide.quiz.answers.length &&
+      slide.quiz.answers.length >= 2 &&
+      slide.quiz.answers.length <= 4
     ) {
       quiz.questions.push({
         question: slide.quiz.question,
