@@ -173,7 +173,7 @@ Practices for staying safe**:**
 
 ✅ Verify everything with an outside source, like another official project account.
 
-✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our [Explorer Community](https://warpcast.com/banklessacademy.eth) is a great place for questions like these.
+✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our [Explorer Community](https://bankless.ac/community) is a great place for questions like these.
 
 ![](https://app.banklessacademy.com/images/web3-security/social-media-best-practices-48ad350f.svg)
 

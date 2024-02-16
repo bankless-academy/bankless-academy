@@ -117,7 +117,7 @@ const OptionMenu = ({
                 </MenuItem>
               </ExternalLink>
               <ExternalLink
-                href="https://warpcast.com/banklessacademy.eth"
+                href="https://warpcast.com/banklessacademy"
                 color="white"
               >
                 <MenuItem>

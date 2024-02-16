@@ -340,7 +340,7 @@ const LESSONS: LessonType[] = [
       '/images/what-is-bitcoin/digital-gold-scarcity-eae248f0.svg',
       '/images/what-is-bitcoin/digital-gold-self-custody-18bd7ba3.svg',
       '/images/what-is-bitcoin/bitcoin-its-like-emailing-money-2e2fb8ad.svg',
-      '/images/what-is-bitcoin/how-does-it-work-c57acb1b.svg',
+      '/images/what-is-bitcoin/how-does-it-work-eda52e60.svg',
       '/images/what-is-bitcoin/how-does-it-work-pt-2-799bae09.svg',
       '/images/what-is-bitcoin/how-does-it-work-pt-3-9b8a77ea.svg',
       '/images/what-is-bitcoin/sending-a-bitcoin-transaction-aad5de00.png'
@@ -492,7 +492,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '87c9b2797a0f4b5cb1ed072d6fc236a8',
         title: 'How does it work?',
-        content: '<div class="bloc1"><p>Let’s switch gears and look at the engine behind Bitcoin: the Bitcoin Network.</p><p>Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network essentially exists through these computers! If one produces a fraudulent transaction, the others are there to correct it.</p><p>This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be attacked, a majority of the computers would need to be compromised.</p><p>This defense strategy is called <code>decentralization</code>: the shifting of control from one central group to many smaller ones. Decentralization is what makes cryptocurrency transfers virtually unstoppable.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/how-does-it-work-c57acb1b.svg\'></div>'
+        content: '<div class="bloc1"><p>Let’s switch gears and look at the engine behind Bitcoin: the Bitcoin Network.</p><p>Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network essentially exists through these computers! If one produces a fraudulent transaction, the others are there to correct it.</p><p>This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be attacked, a majority of the computers would need to be compromised.</p><p>This defense strategy is called <code>decentralization</code>: the shifting of control from one central group to many smaller ones. Decentralization is what makes cryptocurrency transfers virtually unstoppable.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/how-does-it-work-eda52e60.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -954,7 +954,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'ed9bce57432f473982482dbd98e33ae5',
         title: 'Social Media Best Practices',
-        content: '<div class="bloc1"><p>Practices for staying safe<strong>:</strong></p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our <a href=\'https://warpcast.com/banklessacademy.eth\'>Explorer Community</a> is a great place for questions like these.</p></div><div class="bloc2"><img src=\'/images/web3-security/social-media-best-practices-48ad350f.svg\'></div>'
+        content: '<div class="bloc1"><p>Practices for staying safe<strong>:</strong></p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our <a href=\'https://bankless.ac/community\'>Explorer Community</a> is a great place for questions like these.</p></div><div class="bloc2"><img src=\'/images/web3-security/social-media-best-practices-48ad350f.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -2458,7 +2458,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'a0934d6558514f63bff55fa3207a871a',
         title: 'rETH - Your Path to Decentralized Staking',
-        content: '<div class="bloc1"><p>It’s time to become a staker — a guardian of Ethereum.</p><p>For today’s quest, we will be dipping our toes into a <code>staking pool</code>, over at Rocket Pool. It’s quite simple: mint or buy Rocket Pool’s <code>liquid staking token</code>: <strong>rETH</strong>. As the first step on your staking journey, you’ll be funding a <code>validator node</code> so it can process transactions. You’ll begin decentralizing Ethereum and earning rewards!</p><p>One thing we haven’t mentioned yet is how staking rewards are distributed. It depends on the staking method. On Rocket Pool, rewards are added directly to the value of the rETH token (which is why it’s worth a bit more). As you earn rewards, the value of rETH will continue to rise against regular <code>ETH</code>.</p><p>Good luck on your quest, Explorer. May your commitment to Ethereum’s decentralized future be greatly rewarded!</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-bc9b67cf.png\'></div>'
+        content: '<div class="bloc1"><p>It’s time to become a staker — a guardian of Ethereum.</p><p>For today’s quest, we will be dipping our toes into a <code>staking pool</code>, over at Rocket Pool. It’s quite simple: mint or buy Rocket Pool’s <code>liquid staking token</code>: <strong>rETH</strong>. As the first step on your staking journey, you’ll be funding a <code>validator node</code> so it can process transactions. You’ll begin decentralizing Ethereum and earning rewards!</p><p><strong>Note:</strong> One thing we haven’t mentioned yet is how staking rewards are distributed. It depends on the staking method. On Rocket Pool, rewards are added directly to the value of the rETH token (which is why it’s worth a bit more). As you earn rewards, the value of rETH will continue to rise against regular <code>ETH</code>.</p><p>Good luck on your quest, Explorer. May your commitment to Ethereum’s decentralized future be greatly rewarded!</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-bc9b67cf.png\'></div>'
       },
       {
         type: 'QUEST',
