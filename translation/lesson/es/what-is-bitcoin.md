@@ -232,7 +232,7 @@ This also means there’s no single point to apply pressure in attempted hacks. 
 
 This defense strategy is called `decentralization`: the shifting of control from one central group to many smaller ones. Decentralization is what makes cryptocurrency transfers virtually unstoppable.
 
-![](https://app.banklessacademy.com/images/what-is-bitcoin/how-does-it-work-c57acb1b.svg)
+![](https://app.banklessacademy.com/images/what-is-bitcoin/how-does-it-work-eda52e60.svg)
 
 # How does it work? (Pt. 2)
 
