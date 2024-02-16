@@ -58,7 +58,7 @@ export default async function handler(
     '0x5B1899D88b4Ff0Cf5A34651e7CE7164398211C66'.toLowerCase(),
     '0xd9c1570148E36FF9657b67AcE540052341DDF7de'.toLowerCase(),
     '0xBDe4CB8d858adFaDDc5517bd54479a066559E575'.toLowerCase(),
-    '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
+    // '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
     '0xB30dD1198Feed1e22EC969f61EEd04cB75937adf'.toLowerCase(),
     '0xb749A586080436e616f097f193Ba9CB6A25E7Ea6'.toLowerCase(),
   ]
