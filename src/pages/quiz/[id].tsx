@@ -6,12 +6,12 @@ import { z } from 'zod'
 import { Box, Button } from '@chakra-ui/react'
 
 import { ImageData, Props } from 'pages/api/frame-og/[props]'
-import { LESSONS } from 'constants/index'
+import { DOMAIN_URL_, LESSONS } from 'constants/index'
 import ExternalLink from 'components/ExternalLink'
 
 const questionSchema = z.object({
   question: z.string().min(1).max(100),
-  answers: z.array(z.string().max(50)).length(4),
+  answers: z.array(z.string().max(50)).min(2).max(4),
   correct: z.number().min(0).max(3),
 })
 
@@ -31,29 +31,67 @@ export type Quiz = z.infer<typeof quizSchema>
 
 type State = z.infer<typeof schema>
 
-const CTA = 'Start learning!'
+const CTA = 'Continue learning and mint your free lesson badge!'
+
+const VERSION = 2
 
 export default function UI({
   image,
   action,
   buttons,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const lessonLink = action.replace('/quiz/', '/lessons/')?.split('?state')[0]
+  const lessonSlug = action?.split('?')[0]?.split('/').pop()
+
+  const isRedirect = buttons?.length && buttons[0] === CTA
   return (
     <>
       <Head>
-        <meta property="og:title" content="Frame" />
-        <meta property="og:image" content={image} />
+        {/* Farcaster Frame */}
         <meta property="fc:frame" content="vNext" />
         <meta property="fc:frame:image" content={image} />
         {buttons.map((button, index) => (
           <meta
-            key={button}
+            key={`frame-${index}`}
             property={`fc:frame:button:${index + 1}`}
             content={button}
           />
         ))}
-        <meta property="fc:frame:post_url" content={action} />
+        {isRedirect ? (
+          <meta
+            property="fc:frame:post_url"
+            content={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${lessonSlug}&platform=farcaster&provenance=quiz`}
+          />
+        ) : (
+          <meta property="fc:frame:post_url" content={action} />
+        )}
+        {isRedirect && (
+          <meta name="fc:frame:button:1:action" content="post_redirect" />
+        )}
+        {/* Lens Portals */}
+        <meta property="hey:portal" content="vLatest" />
+        <meta property="hey:portal:image" content={image} />
+        {buttons.map((button, index) => (
+          <meta
+            key={`portal-type-${index}`}
+            property={`hey:portal:button:${index + 1}:type`}
+            content={isRedirect ? 'redirect' : 'submit'}
+          />
+        ))}
+        {buttons.map((button, index) => (
+          <meta
+            key={`portal-${index}`}
+            property={`hey:portal:button:${index + 1}`}
+            content={button}
+          />
+        ))}
+        {isRedirect ? (
+          <meta
+            property="hey:portal:post_url"
+            content={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${lessonSlug}&platform=hey&provenance=quiz`}
+          />
+        ) : (
+          <meta property="hey:portal:post_url" content={action} />
+        )}
       </Head>
       <form
         action={action}
@@ -71,9 +109,11 @@ export default function UI({
           <Box mt="2">
             {buttons.map((button, index) =>
               button && button === CTA ? (
-                <ExternalLink href={lessonLink}>
+                <ExternalLink
+                  key={button}
+                  href={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${lessonSlug}&platform=web&provenance=quiz`}
+                >
                   <Button
-                    key={button}
                     name="buttonIndex"
                     variant="primaryWhite"
                     value={index + 1}
@@ -123,7 +163,10 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   for (const slide of lesson.slides) {
     if (
       slide.type === 'QUIZ' &&
-      slide.quiz.answers.filter((answer) => answer.length <= 50).length === 4
+      slide.quiz.answers.filter((answer) => answer.length <= 50).length ===
+        slide.quiz.answers.length &&
+      slide.quiz.answers.length >= 2 &&
+      slide.quiz.answers.length <= 4
     ) {
       quiz.questions.push({
         question: slide.quiz.question,
@@ -170,7 +213,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
 
   return {
     props: {
-      v: 1,
+      v: VERSION,
       image: new URL(
         `/api/frame-og/${ImageData.serialize(props)}`,
         url
@@ -178,7 +221,11 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
       action: url.toString(),
       buttons,
       pageMeta: {
+        title: `${lesson.name} Quiz`,
+        description: lesson.description,
+        image: lesson.socialImageLink,
         nolayout: true,
+        ssr: true,
       },
     },
   }
@@ -215,7 +262,7 @@ function render(
   if (state.index === 0) {
     return {
       props: {
-        v: 1,
+        v: VERSION,
         state: {
           type: 'intro',
           name: quiz.name,
@@ -230,10 +277,11 @@ function render(
   if (!question) {
     return {
       props: {
-        v: 1,
+        v: VERSION,
         state: {
           type: 'result',
           win: state.score === quiz.questions.length,
+          score: `${state.score}/${quiz.questions.length}`,
         },
       },
       buttons: [CTA],
@@ -242,7 +290,7 @@ function render(
   if (state.selected == null) {
     return {
       props: {
-        v: 1,
+        v: VERSION,
         state: {
           type: 'question',
           question: question.question,
@@ -256,7 +304,7 @@ function render(
     const question = quiz.questions[state.index - 1]
     return {
       props: {
-        v: 1,
+        v: VERSION,
         state: {
           type: 'question',
           question: question.question,

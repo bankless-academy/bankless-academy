@@ -51,9 +51,9 @@ export default async function handler(
       .where(TABLE.completions.credential_id, credential.id)
       .where(TABLE.completions.user_id, userId)
     console.log(completion)
-    questStatus = 'Quest already completed'
     const lesson = LESSONS.find((lesson) => lesson.quest === quest)?.name
     if (completion?.is_quest_completed === true) {
+      questStatus = 'Quest already completed'
       trackBE(address, 'quest_already_completed', { lesson, embed })
       return res
         .status(200)
@@ -86,7 +86,7 @@ export default async function handler(
             error: 'Onchain quest not completed',
           })
       }
-      else if (['Layer2Blockchains', 'OptimismGovernance'].includes(quest)) {
+      else if (['Layer2Blockchains', 'OptimismGovernance', 'StakingOnEthereum'].includes(quest)) {
         const isOnchainQuestCompleted = await validateOnchainQuest(quest, address)
         if (!isOnchainQuestCompleted)
           return res.status(200).json({

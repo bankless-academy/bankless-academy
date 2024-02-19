@@ -1,5 +1,5 @@
 // import { Stamp } from '@gitcoinco/passport-sdk-types'
-import { ALLOWED_ISSUER, ALLOWED_PROVIDERS } from 'constants/passport'
+import { ALLOWED_STAMP_ISSUERS, ALLOWED_PROVIDERS } from 'constants/passport'
 import { Stamps } from 'entities/passport'
 
 export const filterValidStamps = (stamps: any[]): any[] => {
@@ -9,8 +9,8 @@ export const filterValidStamps = (stamps: any[]): any[] => {
   for (let i = 0; i < stamps?.length; i++) {
     const stamp = stamps[i]
     if (
-      // only count stamps from ALLOWED_ISSUER for now
-      stamp.stamp?.issuer === ALLOWED_ISSUER &&
+      // only count stamps from ALLOWED_STAMP_ISSUERS for now
+      ALLOWED_STAMP_ISSUERS?.includes(stamp?.stamp?.issuer) &&
       // only count stamps from our ALLOWED_PROVIDERS
       ALLOWED_PROVIDERS.includes(stamp.provider) &&
       // select the first stamp when a provider is stored multiple times (should be the most recent)

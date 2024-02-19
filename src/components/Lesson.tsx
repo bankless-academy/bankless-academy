@@ -21,6 +21,9 @@ import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
 import { isMobile, isDesktop } from 'react-device-detect'
+import { Emoji } from 'emoji-picker-react'
+import emojiRegex from 'emoji-regex'
+import emojisToUnified from 'data/emojis.json'
 
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
@@ -63,6 +66,14 @@ export const Slide = styled(Card)<{
     ${(props) =>
       props.slidetype === 'LEARN' &&
       (props.issmallscreen === 'true' ? 'display: block;' : 'display: flex;')};
+  }
+  img.epr-emoji-img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 5px;
+  }
+  li.hide-marker {
+    list-style-type: none;
   }
   div.content > div > img {
     margin: auto;
@@ -270,11 +281,13 @@ const Lesson = ({
   const isAnimationSlide = slide.content?.includes('/animation/')
   slide.content = slide.content?.replace(
     // HACK: display local animation
-    'https://app.banklessacademy.com/animation',
-    '/animation'
+    'https://app.banklessacademy.com/animation/',
+    '/animation/'
   )
   // TODO: make this dynamic
-  const animationSlideId = isAnimationSlide ? 'bitcoin' : ''
+  const animationSlideId = isAnimationSlide
+    ? 'validating-tx-with-ethereum-staking'
+    : ''
   const [animationStepLS, setAnimationStepLS] = useLocalStorage(
     `animation-${animationSlideId}`,
     0
@@ -385,7 +398,7 @@ const Lesson = ({
   const goToNextSlide = () => {
     toast.closeAll()
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
-      alert('select your answer to the quiz first')
+      console.log('select your answer to the quiz first')
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
       if (!isDesktop) scrollTop()
@@ -513,13 +526,37 @@ const Lesson = ({
     closeLesson()
   })
 
-  function getDomIndex(target) {
-    return [].slice
-      .call(target.parent.children.filter((node) => node.name === 'li'))
-      .indexOf(target)
+  const emojiRegexPattern = emojiRegex()
+
+  function replaceEmojis(text) {
+    const emojis = text.match(emojiRegexPattern)
+    const parts = text.split(emojiRegexPattern)
+    const result = []
+
+    for (let i = 0; i < parts.length; i++) {
+      // Add the non-emoji part to the result array
+      result.push(parts[i])
+
+      // If there's a corresponding emoji, add the CustomEmojiComponent
+      if (emojis && emojis[i]) {
+        const emoji = emojis[i]
+        const unified = emojisToUnified[emoji]
+        if (!unified) {
+          console.log(`${emoji} no found !!`)
+        } else {
+          const em = <Emoji unified={unified} size={20} />
+          result.push(em)
+        }
+      }
+    }
+
+    return result
   }
 
-  function transform(node) {
+  function transform(node, index) {
+    if (node.type === 'text' && emojiRegexPattern.test(node.data)) {
+      return replaceEmojis(node.data)
+    }
     if (node.type === 'tag' && node.name === 'a') {
       // force links to target _blank
       if (node.attribs?.href?.length)
@@ -532,21 +569,40 @@ const Lesson = ({
     if (
       node.type === 'tag' &&
       node.name === 'iframe' &&
-      node?.attribs?.src?.startsWith('/animation')
+      node?.attribs?.src?.includes('/animation/')
     ) {
       // HACK: integrate the embed animation iframe as a component
       return <Animation animationId={animationSlideId} />
     }
     if (isAnimationSlide && node.type === 'tag' && node.name === 'li') {
-      const index = getDomIndex(node)
       // hide next steps
       if (animationStepLS < index) return null
+
       return (
         <li
-          onClick={() => setAnimationStepLS(index)}
-          style={{ cursor: 'pointer' }}
+          onClick={
+            animationStepLS === index
+              ? () => {}
+              : () => setAnimationStepLS(index)
+          }
+          style={animationStepLS === index ? {} : { cursor: 'pointer' }}
         >
-          {processNodes(node.children)}
+          {processNodes(node.children, transform)}
+        </li>
+      )
+    }
+    // paragraphs starting with an emoji -> hide marker
+    if (
+      node.type === 'tag' &&
+      node.name === 'li' &&
+      emojiRegexPattern.test(node.children[0].data)
+    ) {
+      const p = processNodes(node.children, transform)
+      p.shift()
+      return (
+        <li className="hide-marker">
+          {replaceEmojis(node.children[0].data)}
+          {p}
         </li>
       )
     }
@@ -744,7 +800,7 @@ const Lesson = ({
             </>
           )}
           {slide.type === 'QUEST' && (
-            <VStack flex="auto" minH="570px" justifyContent="center">
+            <VStack flex="auto" minH="520px" justifyContent="center">
               {Quest?.questComponent}
             </VStack>
           )}

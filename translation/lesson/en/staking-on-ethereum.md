@@ -1,6 +1,6 @@
 ---
 TITLE: Staking on Ethereum
-DESCRIPTION: 
+DESCRIPTION: Become a guardian of Ethereum: Secure the network, earn Ether rewards.
 LANGUAGE: English
 WRITERS: Tetranome
 TRANSLATORS: X
@@ -31,9 +31,11 @@ ________________________________________________________________________________
 
 Welcome, Explorer, to your next lesson!
 
-Today we will be investigating the process of `staking`, an action you can take today to build digital wealth by volunteering your computer to help secure Ethereum.
+Today we will be investigating the process of “staking” — a simple action you can take to begin building digital wealth.
 
-Staking is like mining on the Bitcoin network: you process transactions on the blockchain in exchange for rewards. But there’s a crucial difference: On Ethereum, you don’t need a powerful computer to compete against others. Instead, you lock `cryptocurrency` for a set period of time, granting your computer entry to process transactions and earn rewards.
+`Staking` serves the same purpose as `mining` does on the Bitcoin network: it’s a mechanic for processing transactions on the blockchain, in exchange for rewards. It’s how we keep the network `decentralized`.
+
+However, there’s a crucial difference between mining and staking. When staking on Ethereum, you don’t need a powerful computer to compete against others. By simply locking Ether (ETH) in a network `smart contract`, you help keep Ethereum running and get rewarded!
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png)
 
@@ -41,11 +43,13 @@ Staking is like mining on the Bitcoin network: you process transactions on the b
 
 You can think of `staking` like an “internet bond”.
 
-Just like supporting your government through bonds in exchange for return on investment, you can support Ethereum for staking rewards. And yet just like a government bond, staking is more than an investment opportunity. Your actions have real consequences.
+Much like supporting your government through bonds can give a return on investment, supporting Ethereum yields staking rewards. More importantly, like government bonds, staking is a way to show financial support for the values you stand for — and the world you want to live in.
 
-In volunteering your computer to verify transactions, you become part of the network itself. You increase the total number of `network validators`, meaning more decentralization and security for the Ethereum community. You become a guardian of Ethereum — and Ethereum wants to reward you for your help.
+By participating in the staking process and facilitating transactions, your Ether is assigned to a `validator node` working to process transactions on Ethereum. The more Ether staked, the more nodes Ethereum has… thus the more `decentralized` and secure it becomes. 
 
-It’s time to start your staking journey, dive deeper into staking mechanics, and uncover the simple, low cost staking opportunity to start guarding Ethereum today.
+As a `staker`, you’ll become a **guardian of Ethereum!**
+
+It’s time to dive deeper into staking mechanics and uncover the simple, low cost opportunity to start your staking journey today.
 
 Grab your gear, let’s go.
 
@@ -53,157 +57,266 @@ Grab your gear, let’s go.
 
 # Blockchain Security
 
-Stakers are the line between a legitimate and secure economy on Ethereum, and one riddled with `fraud`.
+`Stakers` are the line between a secure and legitimate economy on Ethereum, and one filled with `fraud`.
 
-As a leading blockchain, Ethereum aims to be a “settlement layer of the internet” — a global economy where digital assets are traded every day. In such an economy, it is vital that every transaction is legitimate and no participant has power over others. We call this `credible neutrality`.
+As a leading blockchain economy, Ethereum must ensure that every transaction is legitimate and no participant has power over others. This fairness, known as `credible neutrality`, is vital for avoiding  fraud, distrust, and the eventual collapse of an economy. Nobody wants to take part in an economy where others cheat. In the blockchain world, fraud looks like a user manipulating balances or creating non-existent crypto.
 
-Without this neutrality, an economy spins into fraud, distrust, and eventually destruction. In the blockchain world, fraud often looks like a user manipulating balances or creating non-existent crypto.
+For a transaction to be considered valid, it must be approved by a majority of `validator nodes`. These nodes reach decentralized agreement using specialised systems called `consensus mechanisms`.
 
-To decide which transactions are legitimate, network participants work together using a `consensus mechanism`. Specific methods change depending on the blockchain, but the goal is always the same: generate decentralized agreement, across users, on the state of the blockchain.
+The mechanism changes depending on the blockchain, but the goal is always the same: **generate decentralized agreement, across the network, on the state of the blockchain.**
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/blockchain-security-bc7a3a45.svg)
+![](https://app.banklessacademy.com/images/staking-on-ethereum/blockchain-security-c6000d23.png)
 
-# Proof of Stake (Pt. I)
+# Knowledge Check 1
 
-On Ethereum, validators use “Proof of Stake” consensus to come to agreement on the legitimacy of blockchain transactions. Staking helps ensure that only legitimate data and transactions are added to the blockchain. 
+How does staking prevent fraud on Ethereum?
 
-Users take a financial position in the game by staking Ether, gaining permission to validate the network. Every time a group of transactions are submitted to the network, a validator is randomly selected to verify them — with its results double-checked by the others to ensure it is acting honestly.
+- [ ] By granting validator nodes power over others.
 
-If you successfully process the transactions, your `stake` grows. If you process fraud, your stake is `slashed` — a penalty charge is applied. In this way, staked Ether becomes a form of insurance. 
+	> …
 
-By this method, everyone is incentivized to act honestly and keep Ethereum running. To commit fraud on Ethereum, an attacker would need to gain control of a majority of network consensus power: a majority of staked Ether. That’s very expensive and difficult to do.
+- [ ] By creating non-existent crypto for certain people.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/proof-of-stake-pt-i-cfc0c9ef.svg)
+	> …
 
-# Proof of Stake (Pt. II)
+- [ ] By generating decentralized agreement.
 
-Let’s walk through the process step-by-step.
+	> …
 
-1. **Staking Tokens:** Users lock their ETH in the staking pool.
-2. **Validator Selection:** The network’s algorithm randomly selects validators, favouring those with more staked ETH.
-3. **Validating Transactions:** The chosen validator reviews the transaction for accuracy.
-4. **Building Blocks:** A block builder compiles the transactions into a block.
-5. **Cross-Verification:** Other validators double-check the transaction’s validity.
-6. **Blockchain Addition:** Once verified, the block joins the Ethereum blockchain.
-7. **Rewards:** The validator earns transaction fees and newly minted ETH for their efforts.
+# Proof-of-Stake
 
-[embed](https://app.banklessacademy.com/animation/bitcoin)
+On Ethereum, `validator nodes` use a `consensus mechanism` called “Proof-of-Stake” to agree on the legitimacy of blockchain transactions. (This is where “staking” comes from).
 
-# Ether - The “Triple-Point Asset”
+Users looking to run a validator node on their computer must gather and stake 32 Ether — that’s a lot of money! In exchange for taking a large financial position in the network, the `node operator` gains permission to validate Ethereum’s transactions, and earn rewards. When a group of transactions are submitted to the network, a node is randomly selected to verify them — with its results double-checked by other nodes to ensure honesty.
 
-Staking Ether is just one of its functions. Before making such an investment, it’s good to understand how else it can be used, and why it’s valuable to hold.
+![](https://app.banklessacademy.com/images/staking-on-ethereum/proof-of-stake-8cc7d23c.png)
 
-Ether (ETH) is known in the web3 world as the “triple-point asset”. This is because it has the uncommon quality of combining three distinct financial asset properties. Ether is a:
+# Proof-of-Stake (Pt. 2)
 
-- **Store-of-Value:** ETH preserves value over time, but its also liquid enough to act as money. Like Bitcoin, it’s a digital gold.
-- **Consumable Asset:** ETH, when used as gas for transactions or `smart contracts`, behaves like digital oil.
-- **Capital Asset:** When staked to back network security, ETH becomes a yield-bearing asset, functioning as an “internet bond”.
+When a node successfully processes the transactions, its `stake` grows. If the node is too slow or tries to approve fraud, its stake is `slashed` (a penalty charge is applied). In this way, staked Ether is a form of insurance; Nodes are incentivized to act honestly and keep Ethereum running.
 
-The triple-point asset metaphor is based on a principle from physics. Phases of matter are usually distinct; something is either a solid, liquid, or gas. However, if things are balanced just right, you can enter the triple-point, where all three phases exist all at once.
+For an attacker to approve fraud on Ethereum, they would need to gain control of the majority of validator nodes, and therefore a majority of staked Ether. That’s why having everyday users involved in staking is so important — the `decentralization` fragments decision making power.
 
-This is what makes Ether valuable as internet money. It fits into all three major frameworks for what a valuable asset should be. On top of this, the triple-point state remains liquid enough to be used as a financial instrument across the world of decentralized finance. Even when staked, Ether can be traded or used as collateral for loans.
+![](https://app.banklessacademy.com/images/staking-on-ethereum/proof-of-stake-pt-2-9101aa4b.png)
 
-It’s a financial asset with a lot of firepower.
+# Knowledge Check 2
+
+True or False: Validator nodes caught processing fraudulent transactions will receive penalties.
+
+- [ ] True
+
+	> …
+
+- [ ] False
+
+	> …
+
+# Validating Transactions
+
+Let’s look at the step-by-step process of how nodes come to agreement using `Proof-of-Stake` consensus:
+
+1. **Staking:** A staker runs a `validator node` on their computer, locking their ETH on the network.
+2. **Block Building:** Users submit transactions, which are bundled into `blocks`.
+3. **Node Assignment:** The network algorithm selects a node to process a block of transactions.
+4. **Block Validation:** The selected node reviews the block, ensuring its transactions are valid.
+5. **Cross-Verification:** Other nodes double-check and confirm the block’s validity.
+6. **Blockchain Addition:** The valid block is added to the Ethereum blockchain. Invalid blocks are discarded, and the node involved is slashed.
+7. **Rewards:** The selected node earns a portion of the block’s transaction fees, and additional rewards.
+
+[embed](https://app.banklessacademy.com/animation/validating-tx-with-ethereum-staking)
+
+# Knowledge Check 3
+
+What term represents the computer approving Ethereum transactions?
+
+- [ ] Staker
+
+	> …
+
+- [ ] Validator Node
+
+	> …
+
+- [ ] Block Builder
+
+	> …
 
 # Ethernomics
 
-It’s important to understand where the yield for staked Ether comes from, and how it can fluctuate based on various ecosystem factors. Simply put, rewards are based on transaction fees, plus a small amount of newly issued Ether.
+It’s important to understand where the yield for staked `Ether` comes from, and how it fluctuates based on various ecosystem factors. Simply put, rewards are a portion of transaction fees, plus a small amount of newly issued Ether.
 
-The resulting yield can look like anything from a 3% to 16% return on investment per year. Where on this spectrum the rewards fall is based on two key factors:
+The resulting yield can look like anything from a 3% to 16% return on staked Ether per year. The exact amount is based on two key factors:
 
-- **Network Activity:** In times of low traffic, the reward is lower, and in high traffic, higher.
-- **Amount of Stakers:** With more participants, rewards have to be further divided.
+- 📈 **Network Activity:** In times of low traffic, the reward is lower, and in high traffic, they’re higher.
+- 👥 **Amount of Stakers:** With more participants, rewards are further divided.
 
-There’s also a minor modifier added on top, which is the method of staking you use. More direct methods give higher yield, but come with more responsibility and commitment.
+Yields also change depending on how exactly you stake your Ether. We’ll review our options shortly!
+
+![](https://app.banklessacademy.com/images/staking-on-ethereum/ethernomics-de40231a.png)
 
 # Types of Staking
 
-Different staking methods exist because users have varying amounts of tokens, technical skills, and risk preferences. Here are the four methods available, each tailored to different user needs and capabilities:
+Running a `validator node`, the fundamental form of staking on Ethereum, currently requires 32 ETH. 
 
-1. **Solo Home Staking:** The direct method, running your own validator node from home. This method suits those with 32 ETH and technical skills. No third parties. It adds a new node to Ethereum and earns full rewards.
-2. **Staking as a Service:** A service manages your node, without requiring your private keys. Ideal for users with 32 ETH but less technical inclination. Requires trust of a third party, and payment for the service.
-3. **Pooled Staking:** Collective staking and reward sharing. Using smart contracts, you contribute a portion of 32 Ether to help fund a node. Perfect for those with smaller ETH holdings, seeking a simple staking solution.
-4. **Centralized Exchanges:** Staking through a “crypto-bank”. The exchange runs the nodes, and shares rewards with its stakers. A beginner-friendly option that requires trust in the platform.
+That’s a lot of money.
 
-Choosing the right staking method means finding alignment with your resources and expertise. Many people begin their staking journey with the more accessible options, and work towards solo home staking as they grow their ETH holdings.
+Fortunately, there are multiple ways to become a staker and protect Ethereum:
 
-# Centralization Risks
+- 📡 **Solo Staking:** Running your own validator node.
+- ⛲ **Staking Pools:** Joining a group of stakers, running a node together.
+- 🏦 **Centralized Exchange Staking:** Joining a “crypto bank” node.
 
-While inspecting PoS consensus, we looked at how maintaining decentralization of nodes is crucial for maintaining `credible neutrality`. Consensus works by majority, so if one participant captures a majority of staked Ether, they gain the ability to sway decisions on what transactions are legitimate and which are fraud. In this way, preserving decentralization on Ethereum becomes paramount.
+Each method requires a different amount of technical knowledge to get set up, and its own associated risks.
 
-Because granting our Ether to centralized staking pools or exchanges creates concentration of stake under one entity, use of certain staking methods can actually centralize Ethereum. If a single entity accumulates too much staked Ether, they can begin to make undesired changes to the network.
+If you’re not yet comfortable with taking `self-custody` of your crypto, you should check out Centralized Exchange staking. (See our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson to boldly take custody of your crypto!)
 
-- **33% Control:** Holding one-third of the staked ETH can disrupt or halt the network.
-- **50% Control:** This level of control can lead to significant network issues.
-- **66% Control:** Also known as 'god mode,' it allows for total dominance over the network.
+If you’re comfortable holding your private keys, but don’t have 32 ETH, you can consider joining others in a staking pool.
 
-Bankless Explorers seeking to stand for the neutrality of Ethereum should choose decentralized staking solutions, where yields can be just as high as centralized options.
+Each method has either a positive or negative impact on network decentralization, **so if you want to become a guardian of Ethereum, you’ll want to help decentralize the network!**
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/centralization-risks-1dd42ec9.svg)
+# Types of Staking (Pt. 2)
+
+![](https://app.banklessacademy.com/images/staking-on-ethereum/types-of-staking-pt-2-0adb0dc4.png)
+
+**Solo Staking**
+
+🟡 Requires 32 ETH
+
+🟡 Technical Setup
+
+🟢 Decentralizes Ethereum
+
+**Risks:** You may lose your private keys, or get slashed when your node is offline.
+
+![](https://app.banklessacademy.com/images/staking-on-ethereum/types-of-staking-pt-2-fa455820.png)
+
+**Staking Pools**
+
+🟢 Any amount of ETH
+
+🟢 Easy Setup
+
+🟡 Decentralized Options
+
+**Risks:** There could be a bug in the staking pool’s smart contract, or you may lose your private keys.
+
+![](https://app.banklessacademy.com/images/staking-on-ethereum/types-of-staking-pt-2-63e5ec68.png)
+
+**Centralized Exchange Staking**
+
+🟢 Any amount of ETH
+
+🟢 Easy Setup
+
+🔴 Centralizes Ethereum
+
+**Risks:** Your exchange could declare bankruptcy, and may lead to loss of your holdings.
+
+# Network Centralization
+
+Imagine Ethereum as a web of `validator nodes`, connected to each other.
+
+The more the nodes are concentrated in one area, the less balanced and secure the entire web would be. For a strong, resilient web, we would want as many evenly-spaced connection points as possible.
+
+If a single entity gained control over enough staked Ether, and therefore enough nodes, transactions would have no choice but to use their `centralized` section of the web. This entity could begin approving fraudulent transactions, or even denying valid ones — destroying Ethereum’s `credible neutrality`.
+
+As guardians of Ethereum, we must focus on staking methods that keep the web in balance, and `decentralized`. With the barriers of `solo staking` so high, let’s investigate the beginner’s option to decentralized staking: `staking pools`.
+
+![](https://app.banklessacademy.com/images/staking-on-ethereum/network-centralization-4ef76ee7.png)
+
+# Knowledge Check 4
+
+What would happen if a single entity controlled a majority of staked Ether?
+
+- [ ] They could approve fraudulent transactions.
+
+	> …
+
+- [ ] They’d control all validator nodes.
+
+	> …
+
+- [ ] Ethereum would stop processing transactions altogether.
+
+	> …
+
+- [ ] All of the above.
+
+	> …
+
+# Staking Pools
+
+The best part about `staking pools` is that they’re entirely run by `smart contracts`. You don’t have to have met the other stakers in person — and you don’t have to trust them (although you do have to trust the smart contract).
+
+Staking pools are coordinated by `staking providers`, digital platforms connecting stakers across the world! In staking pools, a `node operator` stakes a portion of Ether and runs the node, and the other participants supply the remaining Ether. 
+
+For their service, the node operator earns additional yield. For the remaining staking participants, their membership to the pool is represented by “Liquid Staking Tokens” (LSTs). These `tokens` represent a share of a pool’s staked Ether; The holder earns a portion of rewards proportional to their stake, and can redeem them for their stake at any time.
+
+So by simply holding an LST, like Rocket Pool’s rETH, you own a share of a staking pool. Your Ether is helping to decentralize Ethereum, and earning staking rewards!
+
+![](https://app.banklessacademy.com/images/staking-on-ethereum/staking-pools-13994270.png)
+
+# Knowledge Check 5
+
+Which entity hosts the staking pool?
+
+- [ ] The node operator.
+
+	> …
+
+- [ ] The remaining staking participants.
+
+	> …
+
+- [ ] The staking provider.
+
+	> Correct! The pool is hosted via the provider’s smart contracts.
 
 # Liquid Staking Tokens
 
-There is a fifth option for staking that we haven’t yet discussed.
+The best thing about `LSTs` is that even while your Ether is staked and gathering yield, you control it in `liquid` form.
 
-Liquid Staking Tokens (LSTs) are indicators of where reward should be distributed, given to members who have contributed Ether to Staking Pools. By purchasing staking tokens from these participants, you take their share of a staking pool and earn its entitled rewards. LSTs provide an easy route into Ethereum staking, especially for those with smaller ETH holdings.
+In this case, “liquid” means that it can still flow throughout the ecosystem; It’s like being able to use your share of the staking pool… as money! LSTs can be swapped, used as collateral for loans, or even deposited on `restaking` platforms for bonus yield.
 
-As with any token, not all LSTs are created equal. If a platform doesn’t take sufficient steps to decentralize their nodes, they can actually end up centralizing Ethereum because they are pooling lots of staked Ether under one provider.
+This is also great because it further opens access to staked Ether: Often a staking pool has a minimum deposit for adding Ether the pool, somewhere around 0.01 ETH. With LSTs, you can buy even smaller increments of staked Ether on your favourite `decentralized exchange`.
 
-- validator diversity
-- node decentralization
+Through cases like this, staked Ether starts to seem like an unprecedented form of money — one that protects the ecosystem, while producing yield.
 
-Rocket Pool for example, has sufficiently decentralized their infrastructure …
+# Network Centralization — Again!
 
-On the other hand, Lido has …
+Now, staking pools and LSTs have the same catch as the different staking methods: **they have varied degrees of centralization and decentralization.**
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/liquid-staking-tokens-0eedad95.svg)
+Staking providers like Rocket Pool have taken the steps necessary to allow anyone, anywhere to become a `node operator`, supporting new node operators and helping to decentralize Ethereum. However, many staking providers only allow a small range of their contacts to run their nodes, presenting high risk for centralized staked Ether.
 
-# Liquid Staking Tokens (Pt. 2)
+If any entity gained control over 33% of all staked Ether, they could begin causing problems on the network. At 50%, they could begin threatening Ethereum’s `credible neutrality`. 
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/liquid-staking-tokens-pt-2-04710bd7.svg)
+As of early 2024, staking provider Lido has a share hovering around the 33% mark.
 
-**Rocket Pool**
+Guarding Ethereum begins with choosing a decentralized staking provider.
 
-✅ Open Source
+![](https://app.banklessacademy.com/images/staking-on-ethereum/network-centralization-again-4defb262.png)
 
-✅ Decentralized Nodes
+# Knowledge Check 6
 
-✅ Liquidity Token: rETH
+True or False: Supporting new node operators helps to decentralize Ethereum.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/liquid-staking-tokens-pt-2-0df6e5b0.svg)
+- [ ] True
 
-**Lido**
+	> …
 
-✅ Open Source
+- [ ] False
 
-❌ Decentralized Nodes
-
-✅ Liquidity Token: stETH
-
-![](https://app.banklessacademy.com/images/staking-on-ethereum/liquid-staking-tokens-pt-2-aed9284a.svg)
-
-**Centralized Exchange**
-
-❌ Open Source
-
-❌ Decentralized Nodes
-
-❌ No Liquidity Token
+	> …
 
 # rETH - Your Path to Decentralized Staking
 
-For today’s quest, we are going to take partial ownership of a Rocket Pool staking pool. Alongside your fellow Explorers, you will be contributing to the decentralization of Ethereum, driving up demand for use of decentralized LSTs and earning rewards.
+It’s time to become a staker — a guardian of Ethereum.
 
-As your Ether holdings grow, you can contribute to Rocket Pool with increasing impact:
+For today’s quest, we will be dipping our toes into a `staking pool`, over at Rocket Pool. It’s quite simple: mint or buy Rocket Pool’s `liquid staking token`: **rETH**. As the first step on your staking journey, you’ll be funding a `validator node` so it can process transactions. You’ll begin decentralizing Ethereum and earning rewards!
 
-- >0.1 ETH: `Mint` new rETH
-- >8-16 ETH: Run an rETH Minipool
+**Note:** One thing we haven’t mentioned yet is how staking rewards are distributed. It depends on the staking method. On Rocket Pool, rewards are added directly to the value of the rETH token (which is why it’s worth a bit more). As you earn rewards, the value of rETH will continue to rise against regular `ETH`.
 
-Taking any of these options will serve as completion for today’s quest.
+Good luck on your quest, Explorer. May your commitment to Ethereum’s decentralized future be greatly rewarded!
 
-Rocket Pool distinguishes itself by enabling a progression from passive staking, to becoming an active mini-pool operator where others can gather. This pathway contrasts starkly with centralized LSTs, offering clear path of progression along an involved role in Ethereum's ecosystem.
-
-rETH is more than staking. It's a commitment to Ethereum's decentralized future, and the beginning of a journey to grow your impact in exchange for increasing rewards.
-
-![](https://app.banklessacademy.com/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-8917f192.svg)
+![](https://app.banklessacademy.com/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-bc9b67cf.png)
 

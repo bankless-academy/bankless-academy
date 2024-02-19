@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
               {t('Twitter')}
             </ExternalLink>
             <span>&nbsp;|&nbsp;</span>
-            <ExternalLink href="https://lenster.xyz/u/banklessacademy">
+            <ExternalLink href="https://bankless.ac/community">
               {t('Community')}
             </ExternalLink>
             <span>&nbsp;|&nbsp;</span>

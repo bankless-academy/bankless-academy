@@ -2,7 +2,7 @@ import { Box, SimpleGrid, Image, Icon } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
 
-import { ALLOWED_ISSUER, STAMP_PROVIDERS } from 'constants/passport'
+import { ALLOWED_STAMP_ISSUERS, STAMP_PROVIDERS } from 'constants/passport'
 // import { Stamps } from 'entities/passport'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
@@ -47,7 +47,9 @@ const PassportStamps = ({
             const isStampExpired = !(
               Date.parse(stamp?.stamp?.expirationDate) > currentTimestamp
             )
-            const isTrustedIssuer = stamp?.stamp?.issuer === ALLOWED_ISSUER
+            const isTrustedIssuer = ALLOWED_STAMP_ISSUERS?.includes(
+              stamp?.stamp?.issuer
+            )
             return (
               <Box
                 key={`stamp-${key}`}

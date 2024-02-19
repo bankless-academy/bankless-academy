@@ -7,7 +7,7 @@ import { getPageTitle } from 'notion-utils'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
-import { NOTION_PAGES, PROJECT_NAME } from 'constants/index'
+import { IS_PROD, NOTION_PAGES, PROJECT_NAME } from 'constants/index'
 
 const notion = new NotionAPI()
 
@@ -86,6 +86,10 @@ const NotionPage = ({
         <title>
           {title} | {PROJECT_NAME}
         </title>
+        <meta
+          name="robots"
+          content={IS_PROD && asPath?.includes('/faq') ? 'all' : 'noindex'}
+        ></meta>
       </Head>
       <NotionRenderer recordMap={recordMap} fullPage={true} darkMode={true} />
       <style>{`

@@ -5,7 +5,7 @@ import Script from 'next/script'
 import {
   PROJECT_NAME,
   DOMAIN_PROD,
-  DOMAIN_URL,
+  DOMAIN_URL_,
   DEFAULT_METADATA,
   FAVICON,
   UMAMI_PROD,
@@ -15,6 +15,7 @@ import {
 } from 'constants/index'
 import { useEffect } from 'react'
 import { LessonType } from 'entities/lesson'
+import LESSONS from 'constants/lessons'
 
 export interface MetaData {
   title?: string
@@ -25,6 +26,8 @@ export interface MetaData {
   canonical?: string
   noindex?: boolean
   nolayout?: boolean
+  ssr?: boolean
+  isDatadisk?: boolean
 }
 
 const umamiWebsiteId =
@@ -44,11 +47,11 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
     : PROJECT_NAME
   const description = metadata?.description || DEFAULT_METADATA.description
   const image = metadata?.image
-    ? `${metadata?.image.startsWith('http') ? '' : DOMAIN_URL}${
-        metadata?.image
-      }`
-    : `${DOMAIN_URL}${DEFAULT_METADATA.image}`
-  const url = `${DOMAIN_URL}${router.asPath}`
+    ? metadata?.image.startsWith('http')
+      ? `${metadata?.image}`
+      : `${DOMAIN_URL_}${metadata?.image}`
+    : `${DOMAIN_URL_}${DEFAULT_METADATA.image}`
+  const url = `${DOMAIN_URL_}${router.asPath}`
 
   useEffect(() => {
     /* Hotjar */
@@ -63,6 +66,34 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
   }, [])
 
   const canonical = url?.split('?')[0]
+
+  const lesson = metadata?.lesson
+
+  const isDatadisk = metadata?.isDatadisk
+
+  const isLesson = metadata?.isLesson && lesson
+
+  const isProfile =
+    metadata?.image?.includes('api/og/social') &&
+    !metadata?.image?.includes('&badge=')
+
+  const isBadge =
+    metadata?.image?.includes('api/og/social') &&
+    metadata?.image?.includes('&badge=')
+
+  const explorerAddress =
+    isProfile || isBadge
+      ? metadata?.image.split('address=')[1].split('&')[0]
+      : null
+
+  const badgeId = isBadge
+    ? metadata?.image.split('badge=')[1].split('&')[0]
+    : null
+
+  const lessonSlug = badgeId
+    ? LESSONS.find((lesson: LessonType) => lesson.badgeId === parseInt(badgeId))
+        .slug
+    : null
 
   return (
     <>
@@ -81,7 +112,7 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           rel="canonical"
           href={
             metadata?.canonical
-              ? `${DOMAIN_URL}${metadata.canonical}`
+              ? `${DOMAIN_URL_}${metadata.canonical}`
               : canonical
           }
         />
@@ -124,6 +155,90 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           title="Bankless Academy lesson feed"
           href="/rss.xml"
         />
+        {/* Farcaster Frame */}
+        {/* FC: lesson */}
+        {isLesson && lesson && (
+          <>
+            <meta property="fc:frame" content="vNext" />
+            <meta
+              property="fc:frame:image"
+              content={
+                isDatadisk
+                  ? `${DOMAIN_URL_}${lesson.lessonCollectibleGif}`
+                  : image
+              }
+            />
+            <meta
+              property="fc:frame:post_url"
+              content={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${
+                lesson.slug
+              }&platform=farcaster&provenance=${
+                isDatadisk ? 'datadisk' : 'lesson'
+              }`}
+            />
+            <meta name="fc:frame:button:1:action" content="post_redirect" />
+            <meta
+              property={`fc:frame:button:1`}
+              content={
+                isDatadisk
+                  ? `Mint a DataDisk, Support Free Education.`
+                  : `Learn and claim your free lesson badge now!`
+              }
+            />
+          </>
+        )}
+        {/* FC: article */}
+        {lesson?.isArticle && (
+          <>
+            <meta property="fc:frame" content="vNext" />
+            <meta
+              property="fc:frame:image"
+              content={`${DOMAIN_URL_}${lesson.socialImageLink}`}
+            />
+            <meta
+              property="fc:frame:post_url"
+              content={`${DOMAIN_URL_}/api/frame-og/redirect?lesson_slug=${lesson.slug}&platform=farcaster&provenance=handbook`}
+            />
+            <meta name="fc:frame:button:1:action" content="post_redirect" />
+            <meta
+              property={`fc:frame:button:1`}
+              content={`Collect the guide, take it with you wherever you go.`}
+            />
+          </>
+        )}
+        {/* FC: profile */}
+        {isProfile && (
+          <>
+            <meta property="fc:frame" content="vNext" />
+            <meta property="fc:frame:image" content={metadata?.image} />
+            <meta
+              property="fc:frame:post_url"
+              content={`${DOMAIN_URL_}/api/frame-og/redirect?referralAddress=${explorerAddress}&explorerAddress=${explorerAddress}&platform=farcaster&provenance=profile`}
+            />
+            <meta name="fc:frame:button:1:action" content="post_redirect" />
+            <meta
+              property={`fc:frame:button:1`}
+              content={`Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`}
+            />
+          </>
+        )}
+        {/* FC: badge */}
+        {isBadge && (
+          <>
+            <meta property="fc:frame" content="vNext" />
+            <meta property="fc:frame:image" content={metadata?.image} />
+            <meta
+              property="fc:frame:post_url"
+              content={`${DOMAIN_URL_}/api/frame-og/redirect?referralAddress=${explorerAddress}&lesson_slug=${lessonSlug}&platform=farcaster&provenance=badge`}
+            />
+            <meta name="fc:frame:button:1:action" content="post_redirect" />
+            <meta
+              property={`fc:frame:button:1`}
+              content={`Learn and claim your free lesson badge now!`}
+            />
+          </>
+        )}
+        {/* Lens Portals */}
         {/* noscript */}
         <noscript>You need to enable JavaScript to run this app.</noscript>
       </NextHead>

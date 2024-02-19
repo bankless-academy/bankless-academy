@@ -11,6 +11,7 @@ import queryString from 'query-string'
 import mixpanel, { Dict, Query } from 'mixpanel-browser'
 import { readContract } from '@wagmi/core'
 import axios from 'axios'
+import { Network as AlchemyNetwork, Alchemy } from "alchemy-sdk"
 
 import {
   ACTIVATE_MIXPANEL,
@@ -27,6 +28,8 @@ import UDPolygonABI from 'abis/UDPolygon.json'
 import UDABI from 'abis/UD.json'
 import { LessonType } from 'entities/lesson'
 import { UserStatsType } from 'entities/user'
+import { gql } from 'graphql-request'
+import { graphQLClient } from 'utils/airstack'
 
 declare global {
   interface Window {
@@ -301,6 +304,54 @@ export async function validateOnchainQuest(
       const balance = parseFloat(ethers.utils.formatEther(bigNumberBalance))
       console.log('balance: ', balance)
       return balance >= 0.001
+    }
+    else if (quest === 'StakingOnEthereum') {
+      const arbitrumBalance = await getTokenBalance(AlchemyNetwork.ARB_MAINNET, address, ['0xec70dcb4a1efa46b8f2d97c310c9c4790ba5ffa8'])
+      console.log('arbitrumBalance: ', arbitrumBalance)
+      const optimismBalance = await getTokenBalance(AlchemyNetwork.OPT_MAINNET, address, ['0x9bcef72be871e61ed4fbbc7630889bee758eb81d'])
+      console.log('optimismBalance: ', optimismBalance)
+      const query = gql`
+      query MyQuery {
+        Ethereum: TokenBalances(
+          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0xae78736cd615f374d3085123a210448e74fc6393"}, tokenType: {_eq: ERC20}}, blockchain: ethereum, limit: 50}
+        ) {
+          TokenBalance {
+            formattedAmount
+          }
+        }
+        Base: TokenBalances(
+          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0xb6fe221fe9eef5aba221c348ba20a1bf5e73624c"}, tokenType: {_eq: ERC20}}, blockchain: base, limit: 50}
+        ) {
+          TokenBalance {
+            formattedAmount
+          }
+        }
+        Polygon: TokenBalances(
+          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0x0266f4f08d82372cf0fcbccc0ff74309089c74d1"}, tokenType: {_eq: ERC20}}, blockchain: polygon, limit: 50}
+        ) {
+          TokenBalance {
+            formattedAmount
+          }
+        }
+      }`
+      try {
+        const data = await graphQLClient.request(query)
+        const networks = Object.keys(data)
+        let balance = arbitrumBalance + optimismBalance
+        for (const network of networks) {
+          if (data[network].TokenBalance !== null) {
+            const networkTokenBalance = data[network].TokenBalance[0].formattedAmount
+            console.log(`${network}Balance: `, networkTokenBalance)
+            balance += networkTokenBalance
+          }
+        }
+        console.log(data)
+        console.log(balance)
+        return balance >= 0.001
+      } catch (e) {
+        console.error(e)
+        return false
+      }
     }
     else if (quest === 'OptimismGovernance') {
       const optimism: Network = {
@@ -656,4 +707,20 @@ export function calculateExplorerScore(stats: UserStatsType) {
     (stats?.badges || 0) +
     (Object.keys(stats?.donations || {})?.length || 0) +
     (stats?.valid_stamps?.length || 0)
+}
+
+export const getTokenBalance = async (network: AlchemyNetwork, ownerAddress: string, tokenContractAddresses: string[]) => {
+  const settings = {
+    apiKey: ALCHEMY_KEY_BACKEND,
+    network,
+  };
+  const alchemy = new Alchemy(settings);
+
+  const res = await alchemy.core.getTokenBalances(
+    ownerAddress,
+    tokenContractAddresses
+  );
+
+  // TEMP: hardcode 18 decimals for token
+  return parseInt(res?.tokenBalances[0]?.tokenBalance, 16) / Math.pow(10, 18)
 }

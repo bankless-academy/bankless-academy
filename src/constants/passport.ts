@@ -3,8 +3,8 @@ export const CERAMIC_PASSPORT = 'https://ceramic.passport-iam.gitcoin.co'
 export const NUMBER_OF_STAMP_REQUIRED = 2
 
 // issued by Gitcoin
-export const ALLOWED_ISSUER =
-  'did:key:z6MkghvGHLobLEdj1bgRLhS4LPGJAvbMA1tn2zcRyqmYU5LC'
+export const ALLOWED_STAMP_ISSUERS =
+  ['did:key:z6MkghvGHLobLEdj1bgRLhS4LPGJAvbMA1tn2zcRyqmYU5LC', 'did:ethr:0xd6f8d6ca86aa01e551a311d670a0d1bd8577e5fb']
 
 // https://github.com/gitcoinco/passport/blob/main/app/config/providers.ts
 export const STAMP_PROVIDERS = {

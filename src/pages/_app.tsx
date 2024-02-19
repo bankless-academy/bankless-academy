@@ -56,9 +56,13 @@ const App = ({
       <>
         <Head metadata={pageProps.pageMeta} />
         <ThemeProvider>
-          <NonSSRWrapper>
+          {pageProps.pageMeta?.ssr ? (
             <Component {...pageProps} />
-          </NonSSRWrapper>
+          ) : (
+            <NonSSRWrapper>
+              <Component {...pageProps} />
+            </NonSSRWrapper>
+          )}
         </ThemeProvider>
       </>
     )

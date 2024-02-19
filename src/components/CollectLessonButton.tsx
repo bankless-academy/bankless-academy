@@ -138,13 +138,20 @@ const CollectLessonButton = ({
 
   // TODO: TRANSLATE
   const share = `I’ve just collected ${numberIOwn} of 100 ‘${lesson.name}’ DataDisks from @BanklessAcademy.
-https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}
+https://app.banklessacademy.com/lessons/layer-2-blockchains-datadisk
 
-Become a Guardian of Bankless Academy today - join the effort to circulate @BanklessAcademy content and retroactively fund education public goods!`
+Become a Guardian of Bankless Academy today - join the effort to circulate Bankless Academy content and retroactively fund education public goods!`
 
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
   )}`
+
+  const farcasterLink = twitterLink
+    ?.replace(
+      'https://twitter.com/intent/tweet?url=',
+      'https://warpcast.com/~/compose?text='
+    )
+    ?.replace('BanklessAcademy', 'banklessacademy.eth')
 
   // TODO: TRANSLATE
   const CollectiblesHelper = (
@@ -285,6 +292,20 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
                   }
                 >
                   {t('Share on Twitter / X')}
+                </Button>
+              </ExternalLink>
+            </Box>
+            <Box pb="2">
+              <ExternalLink href={farcasterLink} mr="2">
+                <Button
+                  variant="primaryGold"
+                  w="100%"
+                  borderRadius="0"
+                  leftIcon={
+                    <ChakraImage width="20px" src="/images/Farcaster.svg" />
+                  }
+                >
+                  {t('Share on Farcaster')}
                 </Button>
               </ExternalLink>
             </Box>
