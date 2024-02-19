@@ -89,7 +89,7 @@ export const NOTION_IDS: string[] = LESSONS.filter(
 
 export const EMAIL_CONTACT = 'support@banklessacademy.com'
 
-export const GENERIC_ERROR_MESSAGE = `Something went wrong ... please contact ${EMAIL_CONTACT}`
+export const GENERIC_ERROR_MESSAGE = `Something went wrong... please contact ${EMAIL_CONTACT}`
 
 export const TWITTER_ACCOUNT = WHITELABEL?.twitter_account || `BanklessAcademy`
 
