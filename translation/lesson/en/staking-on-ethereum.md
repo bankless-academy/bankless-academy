@@ -314,7 +314,7 @@ It’s time to become a staker — a guardian of Ethereum.
 
 For today’s quest, we will be dipping our toes into a `staking pool`, over at Rocket Pool. It’s quite simple: mint or buy Rocket Pool’s `liquid staking token`: **rETH**. As the first step on your staking journey, you’ll be funding a `validator node` so it can process transactions. You’ll begin decentralizing Ethereum and earning rewards!
 
-One thing we haven’t mentioned yet is how staking rewards are distributed. It depends on the staking method. On Rocket Pool, rewards are added directly to the value of the rETH token (which is why it’s worth a bit more). As you earn rewards, the value of rETH will continue to rise against regular `ETH`.
+**Note:** One thing we haven’t mentioned yet is how staking rewards are distributed. It depends on the staking method. On Rocket Pool, rewards are added directly to the value of the rETH token (which is why it’s worth a bit more). As you earn rewards, the value of rETH will continue to rise against regular `ETH`.
 
 Good luck on your quest, Explorer. May your commitment to Ethereum’s decentralized future be greatly rewarded!
 
