@@ -49,7 +49,7 @@ const PassportModal = ({
                     </Box>
                     <Box flexDirection="column" alignSelf="center">
                       <Box fontWeight="bold">
-                        {t('Gitcoin Passport successfully set up.')}
+                        {t('Wallet protection successfully set up.')}
                       </Box>
                       <Box mt="4">{t('Try to mint your badge again.')}</Box>
                     </Box>
@@ -76,16 +76,21 @@ const PassportModal = ({
                     </Box>
                     <Box flexDirection="column" alignSelf="center">
                       <Box fontWeight="bold">
-                        {t('Gitcoin Passport not set up.')}
+                        {t('Wallet protection not set up.')}
                       </Box>
                       <Box mt="4">
+                        {t(
+                          'Linking accounts to your wallet is required to mint a free lesson badge.'
+                        )}
+                      </Box>
+                      {/* <Box mt="4">
                         <ExternalLink
                           underline="true"
                           href="/faq#17f5d5963c644fa7af5e32598bd6c793"
                         >
                           {t('Follow these steps and try again')}
                         </ExternalLink>
-                      </Box>
+                      </Box> */}
                     </Box>
                   </Box>
                 </Box>
