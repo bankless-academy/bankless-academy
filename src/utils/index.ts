@@ -502,7 +502,8 @@ export async function api(
       wrong.data = d
       wrong.status = response.status
     } else {
-      wrong.data = { status: 'API error' }
+      const d = await response.json()
+      wrong.data = { status: d?.status || 'API error' }
     }
     return wrong
   }

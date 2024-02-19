@@ -259,7 +259,7 @@ export default async function handler(
         console.log(error)
         return res.status(500).json({
           error: 'simulation fail',
-          status: '',
+          status: error?.reason,
         })
       }
       const mint = await contract[contractFunction](...functionParams, options)
