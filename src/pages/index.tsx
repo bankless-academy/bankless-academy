@@ -58,7 +58,7 @@ const NewsletterButton = styled(Button)`
 const PARTNERS = [
   {
     name: 'Gitcoin',
-    image: 'Gitcoin.svg',
+    image: 'Gitcoin.png',
     link: 'https://www.gitcoin.co/',
   },
   {
@@ -83,7 +83,7 @@ const PARTNERS = [
   },
 ]
 
-const IS_PARTNERSHIP_ACTIVACTED = false
+const IS_PARTNERSHIP_ACTIVACTED = true
 
 const HomePage = (): JSX.Element => {
   const { t } = useTranslation('homepage')
@@ -106,35 +106,45 @@ const HomePage = (): JSX.Element => {
             spacing={6}
             textAlign="center"
             alignItems="center"
-            pt="20vh"
+            justifyContent="space-evenly"
+            height="100%"
+            pt="27vh"
+            pb="45px"
           >
-            <Image
-              style={{
-                filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
-              }}
-              maxW="90%"
-              src="/images/BanklessAcademy.svg"
-              alt="Bankless Academy"
-            />
-            {IS_PARTNERSHIP_ACTIVACTED && (
-              <Box ml="24%" w="73%">
-                <Text
-                  fontSize={isSmallScreen ? '20px' : '26px'}
-                  mt="-35px"
-                  w="100%"
-                >
-                  {t(`Your platform for exploring digital independence.`)}
-                </Text>
-              </Box>
-            )}
-            <Box>
+            <Box w="100%" maxW="90%">
+              <Image
+                style={{
+                  filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
+                }}
+                maxW="90%"
+                src="/images/BanklessAcademy.svg"
+                alt="Bankless Academy"
+                m="auto"
+              />
+              {IS_PARTNERSHIP_ACTIVACTED && (
+                <Box ml="25%" w="73%">
+                  <Text
+                    fontSize={isSmallScreen ? '20px' : '25px'}
+                    mt="-15px"
+                    w="100%"
+                  >
+                    {t(`Your platform for building digital independence.`)}
+                  </Text>
+                </Box>
+              )}
+            </Box>
+            <Box bottom="60px" height="70px" display="flex" alignItems="center">
               <InternalLink href={`/lessons`} alt="Explore Lessons">
                 <Button
                   variant="primary"
                   size="lg"
+                  height="-webkit-fit-content"
+                  width="-webkit-fit-content"
                   style={{ padding: '0 23px' }}
                 >
-                  {t('Explore Lessons')}
+                  <Box m="21px" fontSize="20px">
+                    {t('Explore Lessons')}
+                  </Box>
                 </Button>
               </InternalLink>
             </Box>
@@ -157,8 +167,8 @@ const HomePage = (): JSX.Element => {
               placeItems="center"
             >
               <Box w="100%" borderBottom="3px solid #423952" />
-              <Text fontSize="2xl" minW="280px" textAlign="center">
-                {t('Alongside our Partners:')}
+              <Text fontSize="xl" minW="250px" textAlign="center">
+                {t('alongside our Partners:')}
               </Text>
               <Box w="100%" borderBottom="3px solid #423952" />
             </Box>
