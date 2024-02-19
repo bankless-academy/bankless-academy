@@ -347,7 +347,8 @@ export async function validateOnchainQuest(
         }
         console.log(data)
         console.log(balance)
-        return balance >= 0.001
+        // allow a bit less than 0.001 in case someone only buys for 0.001 ETH worth of rETH
+        return balance >= 0.00085
       } catch (e) {
         console.error(e)
         return false
