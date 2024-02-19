@@ -7,7 +7,11 @@ import { useTranslation } from 'react-i18next'
 
 import PassportStamps from 'components/PassportStamps'
 import ExternalLink from 'components/ExternalLink'
-import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
+import {
+  NUMBER_OF_STAMP_REQUIRED,
+  EMPTY_PASSPORT,
+  REQUIRED_PASSPORT_SCORE,
+} from 'constants/passport'
 import { theme } from 'theme/index'
 import { api, shortenAddress } from 'utils'
 
@@ -137,9 +141,14 @@ const PassportComponent = ({
                     borderRadius="8px"
                     fontWeight="bold"
                   >
-                    {t(
-                      'You have connected enough accounts. You can now close this popup and claim your rewards.'
-                    )}
+                    {passportLS?.score !== '...' &&
+                    (passportLS?.score as any) >= REQUIRED_PASSPORT_SCORE
+                      ? t(
+                          'You already have a Gitcoin Passport score > {{required_score}}, so you are not required to connect more accounts.',
+                          { required_score: REQUIRED_PASSPORT_SCORE }
+                        )
+                      : t('You have connected enough accounts.')}{' '}
+                    {t('You can now close this popup and claim your rewards.')}
                   </Box>
                 )}
               </Box>

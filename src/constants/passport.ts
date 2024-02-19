@@ -98,3 +98,5 @@ export const ALLOWED_PROVIDERS = Object.keys(STAMP_PLATFORMS).map(platform => ST
 export const MAX_STAMPS = ALLOWED_PLATFORMS?.length
 
 export const PASSPORT_COMMUNITY_ID = "6651"
+
+export const REQUIRED_PASSPORT_SCORE = 20

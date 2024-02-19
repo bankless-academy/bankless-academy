@@ -1,20 +1,11 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
-// import { Passport } from '@gitcoinco/passport-sdk-types'
-// import { PassportReader } from '@gitcoinco/passport-sdk-reader'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
-import { NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID, PASSPORT_VERSION } from 'constants/passport'
-// import { filterValidStamps } from 'utils/passport'
+import { NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID, PASSPORT_VERSION, REQUIRED_PASSPORT_SCORE } from 'constants/passport'
 import { trackBE } from 'utils/mixpanel'
-// import axios from 'axios'
 import { PassportResponseSchema, fetchPassport, submitPassport } from 'utils/passport_lib'
-
-// const reader = new PassportReader(CERAMIC_PASSPORT, '1')
-
-// TEMP: update back to 20
-const REQUIRED_PASSPORT_SCORE = 100
 
 export default async function handler(
   req: NextApiRequest,
@@ -53,25 +44,25 @@ export default async function handler(
   const requirement = `At least ${NUMBER_OF_STAMP_REQUIRED} Gitcoin Passport stamps`
   let score = 0
   // TEMP: bypass passport check (accounts having issues with Ceramic API)
-  const TEMP_PASSPORT_WHITELIST = [
-    // '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
-    '0x1EC1CcEF3e1735bdA3F4BA698e8a524AA7c93274'.toLowerCase(),
-    '0x5B1899D88b4Ff0Cf5A34651e7CE7164398211C66'.toLowerCase(),
-    '0xd9c1570148E36FF9657b67AcE540052341DDF7de'.toLowerCase(),
-    '0xBDe4CB8d858adFaDDc5517bd54479a066559E575'.toLowerCase(),
-    // '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
-    // '0xB30dD1198Feed1e22EC969f61EEd04cB75937adf'.toLowerCase(),
-    // '0xb749A586080436e616f097f193Ba9CB6A25E7Ea6'.toLowerCase(),
-  ]
-  if (TEMP_PASSPORT_WHITELIST.includes(address.toLowerCase())) {
-    return res.status(200).json({
-      version,
-      verified: true,
-      score: 99,
-      requirement,
-      validStampsCount: 99,
-    })
-  }
+  // const TEMP_PASSPORT_WHITELIST = [
+  // '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
+  // '0x1EC1CcEF3e1735bdA3F4BA698e8a524AA7c93274'.toLowerCase(),
+  // '0x5B1899D88b4Ff0Cf5A34651e7CE7164398211C66'.toLowerCase(),
+  // '0xd9c1570148E36FF9657b67AcE540052341DDF7de'.toLowerCase(),
+  // '0xBDe4CB8d858adFaDDc5517bd54479a066559E575'.toLowerCase(),
+  // '0xda1d8a345Fc6934Da60E81b392F485cbfd350eaE'.toLowerCase(),
+  // '0xB30dD1198Feed1e22EC969f61EEd04cB75937adf'.toLowerCase(),
+  // '0xb749A586080436e616f097f193Ba9CB6A25E7Ea6'.toLowerCase(),
+  // ]
+  // if (TEMP_PASSPORT_WHITELIST.includes(address.toLowerCase())) {
+  //   return res.status(200).json({
+  //     version,
+  //     verified: true,
+  //     score: 99,
+  //     requirement,
+  //     validStampsCount: 99,
+  //   })
+  // }
 
   if (SYBIL_CHECK === 'GITCOIN_PASSPORT') {
     try {
