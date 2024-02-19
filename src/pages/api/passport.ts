@@ -5,7 +5,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
-import { NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID } from 'constants/passport'
+import { NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID, PASSPORT_VERSION } from 'constants/passport'
 // import { filterValidStamps } from 'utils/passport'
 import { trackBE } from 'utils/mixpanel'
 // import axios from 'axios'
@@ -21,6 +21,7 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   const DEV_SECRET = process.env.DEV_SECRET
+  const version = PASSPORT_VERSION
   const param =
     DEV_SECRET && req.query?.dev === DEV_SECRET ? req.query : req.body
   const { address, embed, isProfile } = param
@@ -64,6 +65,7 @@ export default async function handler(
   ]
   if (TEMP_PASSPORT_WHITELIST.includes(address.toLowerCase())) {
     return res.status(200).json({
+      version,
       verified: true,
       score: 99,
       requirement,
@@ -115,6 +117,7 @@ export default async function handler(
           .where(TABLE.users.id, userId)
           .update({ sybil_user_id: 12 })
         res.status(403).json({
+          version,
           verified: false,
           score,
           requirement,
@@ -125,6 +128,7 @@ export default async function handler(
       const validStampsCount = validStamps?.length
       if (sybil?.length) {
         return res.status(200).json({
+          version,
           verified: false,
           score,
           requirement,
@@ -139,6 +143,7 @@ export default async function handler(
         console.log('not verified:', validStamps?.length)
       }
       return res.status(200).json({
+        version,
         verified: validStamps?.length >= NUMBER_OF_STAMP_REQUIRED || score >= REQUIRED_PASSPORT_SCORE,
         score,
         fraud:
@@ -152,6 +157,7 @@ export default async function handler(
     } catch (error) {
       console.error(error)
       res.status(500).json({
+        version,
         verified: false,
         score,
         requirement,

@@ -81,7 +81,10 @@ export const STAMP_PLATFORMS = {
   },
 }
 
+export const PASSPORT_VERSION = 'v2.0'
+
 export const EMPTY_PASSPORT = {
+  version: PASSPORT_VERSION,
   verified: false,
   score: '...',
   fraud: null,

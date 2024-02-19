@@ -115,7 +115,7 @@ export default function Page({
   }, [profileAddress])
 
   useEffect(() => {
-    if (isMyProfile && passportLS?.stamps) {
+    if (isMyProfile && passportLS?.stamps && passportLS?.version) {
       // update user stamps without requiring to refresh
       const valid_stamps = Object.keys(passportLS.stamps)
       if (valid_stamps?.length) {
