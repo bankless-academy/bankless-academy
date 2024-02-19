@@ -77,7 +77,7 @@ export default async function handler(
     address: userAddress,
   } = req.query
   console.log(req.query)
-  const address = userAddress as string || state as string
+  const address = (userAddress as string)?.split('?')[0] || state as string
   console.log(address)
 
   const socialId: any = {}
@@ -114,7 +114,7 @@ export default async function handler(
         version,
         "email": result.record.email
       }
-    } else result = { valid: false }
+    } else result = { valid: false, errors: result?.errors }
   } else if (platform === 'twitter') {
     const context = {}
     const sessionKey = state
@@ -141,7 +141,6 @@ export default async function handler(
 
     } catch (error) {
       res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${error}&platform=${platform}`)
-      return
     }
   } else if (platform === 'facebook') {
     const FacebookProvider = new facebook.FacebookProvider();
@@ -158,7 +157,7 @@ export default async function handler(
         version,
         "user_id": result.record.user_id
       }
-    } else result = { valid: false }
+    } else result = { valid: false, errors: result?.errors }
   } else if (platform === 'linkedin') {
     const LinkedinProvider = new linkedin.LinkedinProvider();
     result = await LinkedinProvider.verify({
@@ -175,7 +174,7 @@ export default async function handler(
         version,
         "id": result.record.id
       }
-    } else result = { valid: false }
+    } else result = { valid: false, errors: result?.errors }
   } else if (platform === 'discord') {
     const DiscordProvider = new discord.DiscordProvider();
     result = await DiscordProvider.verify({
@@ -191,7 +190,7 @@ export default async function handler(
         version,
         "id": result.record.id
       }
-    } else result = { valid: false }
+    } else result = { valid: false, errors: result?.errors }
   } else if (platform === 'farcaster') {
     const query = gql`
       query GetWeb3SocialsOfFarcasters {
@@ -218,7 +217,7 @@ export default async function handler(
         result.valid = true
       } else {
         result.valid = false
-        result.errors = "No Farcaster account associated to this address."
+        result.errors = ["No Farcaster account associated to this address."]
       }
     } catch (e) {
       console.error(e)
@@ -270,15 +269,14 @@ export default async function handler(
         version,
         ens: result.record.ens
       }
-    } else result = { valid: false }
+    } else result = { valid: false, errors: result?.errors }
   }
   console.log(record)
   const hash = `${VERSION}:${generateHash(record)}`
   console.log(hash)
   if (!result?.valid) {
     isStampValidated = false
-    // check of array
-    status = `${result?.errors}`
+    status = `${result?.errors || result?.errors?.length ? result?.errors?.[0] : 'error'}`
   }
   else if (hash?.length !== 51) {
     console.log(hash)
