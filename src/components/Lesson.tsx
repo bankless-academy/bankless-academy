@@ -945,7 +945,8 @@ const Lesson = ({
                 {lesson.badgeId &&
                 isBadgeMintedLS === false &&
                 Quest?.isQuestCompleted
-                  ? t('Mint Badge')
+                  ? // ? t('Mint Badge')
+                    t('Finish')
                   : t('Finish')}
               </Button>
             </>
