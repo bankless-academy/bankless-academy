@@ -255,7 +255,7 @@ export default async function handler(
         version,
         address: result.record.address
       }
-    } else result = { valid: false }
+    } else result = { valid: false, errors: result?.errors }
   } else if (platform === 'ens') {
     // TODO: add signature verification? (Ed25519 / EIP712)
     const EnsProvider = new ens.EnsProvider();
@@ -277,7 +277,8 @@ export default async function handler(
   console.log(hash)
   if (!result?.valid) {
     isStampValidated = false
-    status = `Problem with stamp (${JSON.stringify(result?.errors)}): close the window and try again.`
+    // check of array
+    status = `${result?.errors}`
   }
   else if (hash?.length !== 51) {
     console.log(hash)

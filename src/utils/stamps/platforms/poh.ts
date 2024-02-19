@@ -65,7 +65,7 @@ export class PohProvider implements Provider {
           address,
         };
       } else {
-        errors.push(`Your address is not registered with Proof of Humanity -- isRegistered: ${String(valid)}.`);
+        errors.push(`Your address is not registered with Proof of Humanity.`);
       }
 
       return {
