@@ -7,19 +7,29 @@ import { useTranslation } from 'react-i18next'
 
 import PassportStamps from 'components/PassportStamps'
 import ExternalLink from 'components/ExternalLink'
-import { NUMBER_OF_STAMP_REQUIRED, EMPTY_PASSPORT } from 'constants/passport'
+import {
+  NUMBER_OF_STAMP_REQUIRED,
+  EMPTY_PASSPORT,
+  REQUIRED_PASSPORT_SCORE,
+} from 'constants/passport'
 import { theme } from 'theme/index'
 import { api, shortenAddress } from 'utils'
 
 const PassportComponent = ({
   displayStamps,
+  isProfile,
 }: {
   displayStamps?: boolean
+  isProfile?: boolean
 }): JSX.Element => {
   const { t } = useTranslation()
   const [passportLS, setPassportLS] = useLocalStorage(
     'passport',
     EMPTY_PASSPORT
+  )
+  const [refreshPassportLS, setRefreshPassportLS] = useLocalStorage(
+    'refreshPassport',
+    false
   )
   const [isLoading, setIsLoading] = useState(false)
   const toast = useToast()
@@ -29,9 +39,16 @@ const PassportComponent = ({
     checkPassport()
   }, [])
 
+  useEffect(() => {
+    if (refreshPassportLS) {
+      setRefreshPassportLS(false)
+      checkPassport()
+    }
+  }, [refreshPassportLS])
+
   async function checkPassport() {
     setIsLoading(true)
-    const result = await api('/api/passport', { address })
+    const result = await api('/api/passport', { address, isProfile })
     if (result && result.status === 200) {
       setIsLoading(false)
       // console.log('passport', result.data)
@@ -93,44 +110,47 @@ const PassportComponent = ({
               color={theme.colors.incorrect}
               fontWeight="bold"
             >
-              <ExternalLink href="/faq#17f5d5963c644fa7af5e32598bd6c793">
-                {t('Duplicate stamp detected.')}
-              </ExternalLink>
+              {t('Duplicate account detected.')}
               <br />
-              {passportLS?.fraud
-                ? `${t('Switch back to:')} ${shortenAddress(passportLS?.fraud)}`
-                : null}
+              {passportLS?.fraud ? (
+                <>
+                  {`${t('Switch back to:')} ${shortenAddress(
+                    passportLS?.fraud
+                  )} or `}
+                  <ExternalLink href="/report-an-issue">
+                    contact us
+                  </ExternalLink>
+                </>
+              ) : null}
             </Text>
           </Box>
-        ) : (
+        ) : isProfile ? null : (
           <Text fontSize="xl">
             <>
-              {`Visit here: `}
-              <ExternalLink href="https://passport.gitcoin.co/?filter=bankless-academy#/dashboard">
-                <Button
-                  variant="primaryWhite"
-                  color="#5D4E78"
-                  size="lg"
-                  leftIcon={
-                    <Image
-                      width="20px"
-                      src="/images/gitcoin-passport.svg"
-                      alt="Gitcoin Passport"
-                    />
-                  }
-                >
-                  {t('Gitcoin Passport')}
-                </Button>
-              </ExternalLink>
               <Box mt="4">
-                {numberOfStampsLeftToCollect > 0
-                  ? t(
-                      `Collect {{numberOfStampsLeftToCollect}} more of the following stamps:`,
-                      { numberOfStampsLeftToCollect }
-                    )
-                  : t(
-                      'You have collected enough stamps. You can now close this popup and claim your rewards.'
-                    )}
+                {!passportLS?.verified ? (
+                  t(
+                    `Connect {{numberOfStampsLeftToCollect}} more account(s):`,
+                    { numberOfStampsLeftToCollect }
+                  )
+                ) : (
+                  <Box
+                    background="whiteAlpha.800"
+                    color="green.500"
+                    p="4"
+                    borderRadius="8px"
+                    fontWeight="bold"
+                  >
+                    {passportLS?.score !== '...' &&
+                    (passportLS?.score as any) >= REQUIRED_PASSPORT_SCORE
+                      ? t(
+                          'You already have a Gitcoin Passport score > {{required_score}}, so you are not required to connect more accounts.',
+                          { required_score: REQUIRED_PASSPORT_SCORE }
+                        )
+                      : t('You have connected enough accounts.')}{' '}
+                    {t('You can now close this popup and claim your rewards.')}
+                  </Box>
+                )}
               </Box>
             </>
           </Text>

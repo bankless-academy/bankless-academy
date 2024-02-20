@@ -89,10 +89,10 @@ export default async function handler(
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
         TABLE.users.donations,
-        TABLE.users.gitcoin_stamps
+        TABLE.users.ba_stamps
       )
       .whereILike('ens_name', addressLowerCase)
-    // console.log('userExist1', userExist)
+    // console.log('userExist', userExist)
     if (userExist) {
       addressLowerCase = userExist.address?.toLowerCase()
     } else {
@@ -120,7 +120,7 @@ export default async function handler(
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
         TABLE.users.donations,
-        TABLE.users.gitcoin_stamps
+        TABLE.users.ba_stamps
       )
       .whereILike('address', addressLowerCase)
     console.log('user', userExist)
@@ -140,6 +140,7 @@ export default async function handler(
   const oldBadgeTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase] : []
   console.log(oldBadgeTokenIds)
   const badgeTokenIds = [...new Set([
+    // DEV: comment these 2 lines when testing
     ...(await getBadgeTokensIds(addressLowerCase)),
     ...oldBadgeTokenIds
   ])]
@@ -177,10 +178,9 @@ export default async function handler(
   // badges
   stats.badges = badgeTokenIds?.length
   // valid_stamps
-  if (userExist.gitcoin_stamps) {
-    const stamps = Object.keys(userExist.gitcoin_stamps)
-    stats.valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
-  }
+  const stamps = Object.keys(userExist.ba_stamps)
+  console.log(stamps)
+  stats.valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
   // donations
   stats.donations = userExist.donations
   stats.score = calculateExplorerScore(stats)

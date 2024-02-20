@@ -244,7 +244,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         fontWeight="bold"
         borderBottomRadius="0"
         isLoading={isMintingInProgress}
-        loadingText={t('Minting Badge ...')}
+        loadingText={t('Minting Badge...')}
         cursor={isBadgeMintedLS ? 'auto' : 'pointer'}
         onClick={() => {
           passportLS?.verified ? mintBadge() : onOpen()

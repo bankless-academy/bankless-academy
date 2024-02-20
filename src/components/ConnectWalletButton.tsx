@@ -359,17 +359,6 @@ const ConnectWalletButton = ({
             <PopoverArrow />
             <PopoverBody>
               <Box textAlign="center" m="2">
-                <Button
-                  w="100%"
-                  size={isSmallScreen ? 'md' : 'lg'}
-                  variant="primaryWhite"
-                  leftIcon={<Power weight="bold" />}
-                  onClick={disconnectWallet}
-                >
-                  {t('Disconnect Wallet')}
-                </Button>
-              </Box>
-              <Box textAlign="center" m="2">
                 <InternalLink
                   href={`/explorer/${
                     name?.endsWith('.eth') ? name : address
@@ -385,6 +374,17 @@ const ConnectWalletButton = ({
                     {t('My Explorer Profile')}
                   </Button>
                 </InternalLink>
+              </Box>
+              <Box textAlign="center" m="2">
+                <Button
+                  w="100%"
+                  size={isSmallScreen ? 'md' : 'lg'}
+                  variant="secondaryWhite"
+                  leftIcon={<Power weight="bold" />}
+                  onClick={disconnectWallet}
+                >
+                  {t('Disconnect Wallet')}
+                </Button>
               </Box>
             </PopoverBody>
           </PopoverContent>

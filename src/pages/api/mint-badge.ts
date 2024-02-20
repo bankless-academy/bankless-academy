@@ -95,7 +95,7 @@ export default async function handler(
           address,
         })
         // TODO: verify tx hash result
-        questStatus = 'minting already in progress ... check back in 1 minute'
+        questStatus = 'minting already in progress... check back in 1 minute'
         console.log(questStatus)
         return res.status(200).json({ transactionHash: questCompleted.transaction_hash, status: questStatus })
       }
@@ -165,7 +165,7 @@ export default async function handler(
           badgeId,
           address,
         })
-        questStatus = "Too many minting ... try again later. Reminder: Lesson badges are non-transferable digital proofs of your learning. They don't have any monetary value and will never give you access to airdrops."
+        questStatus = "Too many minting... try again later. Reminder: Lesson badges are non-transferable digital proofs of your learning. They don't have any monetary value and will never give you access to airdrops."
         return res.status(200).json({
           status: questStatus,
         })
@@ -197,7 +197,7 @@ export default async function handler(
       }
       console.log(options)
       if (maxFeePerGasInGwei > 500) {
-        questStatus = 'Polygon is currently experiencing high gas prices ... try again in 1 hour.'
+        questStatus = 'Polygon is currently experiencing high gas prices... try again in 1 hour.'
         console.log(questStatus)
         return res.status(403).json({ status: questStatus })
       }
@@ -259,10 +259,11 @@ export default async function handler(
         console.log(error)
         return res.status(500).json({
           error: 'simulation fail',
-          status: '',
+          status: error?.reason,
         })
       }
       const mint = await contract[contractFunction](...functionParams, options)
+      // DEV: uncomment this line to test simulate minting
       // const mint = { hash: 'test' }
       console.log(mint)
 

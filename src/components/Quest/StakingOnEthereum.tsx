@@ -131,7 +131,7 @@ const StakingOnEthereum = (
                 {`Tip: Check our Explorer's Handbook entry on 'Staking with Rocket Pool' to find the best funding pathway for you.`}
               </Box> */}
               <Box mt="8">
-                Supported networks: Ethereum, Optimism, Base, Abritrum and
+                Supported networks: Ethereum, Optimism, Base, Arbitrum and
                 Polygon (POS)
               </Box>
               {isTransactionVerified !== 'true' && (

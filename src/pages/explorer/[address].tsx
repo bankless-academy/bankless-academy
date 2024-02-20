@@ -25,7 +25,8 @@ import ProgressTitle from 'components/ProgressTitle'
 import ExternalLink from 'components/ExternalLink'
 import { MAX_DONATIONS } from 'constants/donations'
 import { MAX_BADGES } from 'constants/badges'
-import { MAX_STAMPS } from 'constants/passport'
+import { EMPTY_PASSPORT, MAX_STAMPS } from 'constants/passport'
+import { useLocalStorage } from 'usehooks-ts'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -73,6 +74,7 @@ export default function Page({
   const [fullProfileAddress, setFullProfileAddress] = useState('')
   const { address } = useAccount()
   const { onCopy, hasCopied } = useClipboard(profileUrl)
+  const [passportLS] = useLocalStorage('passport', EMPTY_PASSPORT)
 
   const wallets = localStorage.getItem('wallets')
     ? JSON.parse(localStorage.getItem('wallets'))
@@ -112,6 +114,26 @@ export default function Page({
     loadUser()
   }, [profileAddress])
 
+  useEffect(() => {
+    if (isMyProfile && passportLS?.stamps && passportLS?.version) {
+      // update user stamps without requiring to refresh
+      const valid_stamps = Object.keys(passportLS.stamps)
+      if (valid_stamps?.length) {
+        const updatedUser: any = {
+          stats: {
+            ...user.stats,
+            valid_stamps,
+            score:
+              user.stats.score -
+              user.stats.valid_stamps?.length +
+              valid_stamps.length,
+          },
+        }
+        setUser({ ...user, ...updatedUser })
+      }
+    }
+  }, [passportLS])
+
   const collectibles = []
   for (let i = 0; i < user?.stats.datadisks?.length; i++) {
     collectibles.push(user?.stats.datadisks[i])
@@ -120,20 +142,26 @@ export default function Page({
     collectibles.push(user?.stats.handbooks[i])
   }
 
+  const shareLink = typeof window !== 'undefined' && window.location.href
+  ;('https://app.banklessacademy.com/lessons/layer-2-blockchains-datadisk')
   const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
-${typeof window !== 'undefined' && window.location.href}
+${shareLink}
 
 Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
   )}`
 
-  const farcasterLink = twitterLink
-    ?.replace(
-      'https://twitter.com/intent/tweet?url=',
-      'https://warpcast.com/~/compose?text='
-    )
-    ?.replace('BanklessAcademy', 'banklessacademy.eth')
+  const farcasterLink =
+    twitterLink
+      ?.replace(
+        'https://twitter.com/intent/tweet?url=',
+        'https://warpcast.com/~/compose?text='
+      )
+      ?.replace('BanklessAcademy', 'banklessacademy.eth')
+      ?.replace(encodeURIComponent(shareLink + '\n'), '') +
+    '&embeds%5B%5D=' +
+    encodeURIComponent(shareLink)
 
   if (
     referral?.length &&
@@ -315,7 +343,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                   score={user.stats?.valid_stamps?.length || 0}
                   max={MAX_STAMPS}
                   description={t(
-                    `Each stamp you collect on Gitcoin Passport increases your score by 1 point.`
+                    `Each stamp you collect by connecting an account increases your score by 1 point.`
                   )}
                 />
                 <Badges

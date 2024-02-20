@@ -56,6 +56,7 @@ const App = ({
       <>
         <Head metadata={pageProps.pageMeta} />
         <ThemeProvider>
+          <Global styles={css``} />
           {pageProps.pageMeta?.ssr ? (
             <Component {...pageProps} />
           ) : (
@@ -95,14 +96,14 @@ const App = ({
     themeMode: 'dark',
     themeVariables,
     featuredWalletIds: [
-      // MetaMask
-      'c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96',
       // Zerion
       'ecc4036f814562b41a5268adc86270fba1365471402006302e70169465b7ac18',
+      // 1inch
+      'c286eebc742a537cd1d6818363e9dc53b21759a1e8e5d9b263d0c03ec7703576',
       // Rainbow
       '1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369',
-      // Argent
-      'bc949c5d968ae81310268bf9193f9c9fb7bb4e1283e1284af8f2bd4992535fd6',
+      // MetaMask
+      'c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96',
     ],
   })
 
@@ -159,9 +160,9 @@ const App = ({
                 .ms-track.ms-y .ms-thumb {
                   width: 7px;
                 }
-                #chakra-toast-manager-bottom {
+                /* #chakra-toast-manager-bottom {
                   margin-bottom: 81px !important;
-                }
+                } */
                 /* HACK: custom toast */
                 .css-qret8q,
                 .css-zqqgfp,
@@ -237,6 +238,11 @@ const App = ({
                 .chakra-popover__arrow {
                   background: #86629c !important;
                   box-shadow: none !important;
+                }
+                #chakra-toast-manager-top-left {
+                  top: 20% !important;
+                  left: 2vh !important;
+                  max-width: 30vh !important;
                 }
               `}
             />

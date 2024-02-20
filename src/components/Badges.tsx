@@ -12,8 +12,7 @@ import { useTranslation } from 'react-i18next'
 import { LESSONS } from 'constants/index'
 import { DONATION_MAPPING } from 'constants/donations'
 import InternalLink from './InternalLink'
-// import ExternalLink from './ExternalLink'
-import { STAMP_PROVIDERS } from 'constants/passport'
+import { STAMP_PLATFORMS } from 'constants/passport'
 import PassportModal from 'components/PassportModal'
 import { useSmallScreen } from 'hooks'
 
@@ -284,8 +283,10 @@ const Badges = ({
               )} */}
               {type === 'stamps' && (
                 <>
-                  {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
-                    const ownsBadge = (badges as string[])?.includes(key)
+                  {Object.entries(STAMP_PLATFORMS).map(([key, platform]) => {
+                    const ownsBadge = (badges as string[])?.includes(
+                      STAMP_PLATFORMS[key].provider
+                    )
                     if (isMyProfile || ownsBadge)
                       return (
                         <Box key={`badge-${key}`} p={1} position="relative">
@@ -293,17 +294,13 @@ const Badges = ({
                             aspectRatio="1"
                             opacity={ownsBadge ? '1' : '0.2'}
                             w="100%"
-                            src={provider.icon}
-                            p="4"
+                            src={platform.icon}
+                            p="3"
                             border="1px #2d292d solid"
                             borderRadius="8px"
-                            title={provider.name}
-                            cursor={
-                              isMyProfile && !ownsBadge ? 'pointer' : 'default'
-                            }
-                            onClick={() =>
-                              isMyProfile && !ownsBadge && onOpen()
-                            }
+                            title={platform.name}
+                            cursor={isMyProfile ? 'pointer' : 'default'}
+                            onClick={() => isMyProfile && onOpen()}
                           />
                         </Box>
                       )
@@ -311,7 +308,7 @@ const Badges = ({
                   <PassportModal
                     isOpen={isOpen}
                     onClose={onClose}
-                    isProfile={true}
+                    isProfile={isMyProfile}
                   />
                 </>
               )}

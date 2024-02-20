@@ -133,7 +133,7 @@ const SubscriptionModal = ({
                   } else {
                     toast({
                       title: t(
-                        `Something went wrong ... we couldn't add your subscription.`
+                        `Something went wrong... we couldn't add your subscription.`
                       ),
                       description: t('Please try again later.'),
                       status: 'warning',
