@@ -42,7 +42,12 @@ const closeLesson = (
   Quest
 ): string => {
   const openedLessonArray = JSON.parse(openedLesson)
-  if (Quest?.isQuestCompleted) scrollDown()
+  if (
+    Quest?.isQuestCompleted &&
+    lesson?.badgeId &&
+    !(localStorage.getItem(`isBadgeMinted-${lesson.badgeId}`) === 'true')
+  )
+    scrollDown()
   return JSON.stringify(
     [...openedLessonArray, lesson.slug].filter((value) => value !== lesson.slug)
   )
