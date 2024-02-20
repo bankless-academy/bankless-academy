@@ -160,9 +160,9 @@ const App = ({
                 .ms-track.ms-y .ms-thumb {
                   width: 7px;
                 }
-                #chakra-toast-manager-bottom {
+                /* #chakra-toast-manager-bottom {
                   margin-bottom: 81px !important;
-                }
+                } */
                 /* HACK: custom toast */
                 .css-qret8q,
                 .css-zqqgfp,
