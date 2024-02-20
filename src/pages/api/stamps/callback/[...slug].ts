@@ -167,7 +167,6 @@ export default async function handler(
     } as unknown as RequestPayload)
     console.log(result)
     if (result?.valid && result.record?.id) {
-      // TODO: understand why user id is different for gitcoin passport
       socialId[platform] = result.record.id
       record = {
         type,
@@ -241,7 +240,6 @@ export default async function handler(
     //     }
     //   } else result = {valid:false}
   } else if (platform === 'poh') {
-    // TODO: add signature verification? (Ed25519 / EIP712)
     const PohProvider = new poh.PohProvider();
     result = await PohProvider.verify({
       address
@@ -256,7 +254,6 @@ export default async function handler(
       }
     } else result = { valid: false, errors: result?.errors }
   } else if (platform === 'ens') {
-    // TODO: add signature verification? (Ed25519 / EIP712)
     const EnsProvider = new ens.EnsProvider();
     result = await EnsProvider.verify({
       address
@@ -284,7 +281,6 @@ export default async function handler(
     isStampValidated = false
     status = `Problem with stamp (${hash}): close the window and try again.`
   } else {
-    // TODO: also check for BA stamps fraud
     let sybil = []
     const stampHash: any = {}
     stampHash[record.type] = hash
