@@ -137,8 +137,10 @@ const CollectLessonButton = ({
   }, [address])
 
   // TODO: TRANSLATE
+  const shareLink =
+    'https://app.banklessacademy.com/lessons/layer-2-blockchains-datadisk'
   const share = `I’ve just collected ${numberIOwn} of 100 ‘${lesson.name}’ DataDisks from @BanklessAcademy.
-https://app.banklessacademy.com/lessons/layer-2-blockchains-datadisk
+${shareLink}
 
 Become a Guardian of Bankless Academy today - join the effort to circulate Bankless Academy content and retroactively fund education public goods!`
 
@@ -146,12 +148,16 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
     share
   )}`
 
-  const farcasterLink = twitterLink
-    ?.replace(
-      'https://twitter.com/intent/tweet?url=',
-      'https://warpcast.com/~/compose?text='
-    )
-    ?.replace('BanklessAcademy', 'banklessacademy.eth')
+  const farcasterLink =
+    twitterLink
+      ?.replace(
+        'https://twitter.com/intent/tweet?url=',
+        'https://warpcast.com/~/compose?text='
+      )
+      ?.replace('BanklessAcademy', 'banklessacademy.eth')
+      ?.replace(encodeURIComponent(shareLink + '\n'), '') +
+    '&embeds%5B%5D=' +
+    encodeURIComponent(shareLink)
 
   // TODO: TRANSLATE
   const CollectiblesHelper = (

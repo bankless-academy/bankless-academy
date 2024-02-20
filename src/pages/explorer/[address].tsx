@@ -142,20 +142,26 @@ export default function Page({
     collectibles.push(user?.stats.handbooks[i])
   }
 
+  const shareLink = typeof window !== 'undefined' && window.location.href
+  ;('https://app.banklessacademy.com/lessons/layer-2-blockchains-datadisk')
   const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
-${typeof window !== 'undefined' && window.location.href}
+${shareLink}
 
 Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
   )}`
 
-  const farcasterLink = twitterLink
-    ?.replace(
-      'https://twitter.com/intent/tweet?url=',
-      'https://warpcast.com/~/compose?text='
-    )
-    ?.replace('BanklessAcademy', 'banklessacademy.eth')
+  const farcasterLink =
+    twitterLink
+      ?.replace(
+        'https://twitter.com/intent/tweet?url=',
+        'https://warpcast.com/~/compose?text='
+      )
+      ?.replace('BanklessAcademy', 'banklessacademy.eth')
+      ?.replace(encodeURIComponent(shareLink + '\n'), '') +
+    '&embeds%5B%5D=' +
+    encodeURIComponent(shareLink)
 
   if (
     referral?.length &&

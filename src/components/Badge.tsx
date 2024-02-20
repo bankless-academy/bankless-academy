@@ -35,31 +35,33 @@ const Badge = ({
   const [kudosMintedLS] = useLocalStorage(`kudosMinted`, [])
   // TODO: TRANSLATE
   const langURL = i18n.language !== 'en' ? `${i18n.language}/` : ''
-  const share = `I've just claimed my "${
-    lesson.name
-  }" onchain credential at @${TWITTER_ACCOUNT} 🎉
-${
-  IS_WHITELABEL
+  const shareLink = IS_WHITELABEL
     ? `${DOMAIN_URL_}/lessons/${langURL}${lesson.slug}`
     : `${DOMAIN_URL_}/explorer/${
         typeof ensName === 'string' && ensName?.endsWith('.eth')
           ? ensName
           : address
-      }?badge=${lesson.badgeId}&referral=true
+      }?badge=${lesson.badgeId}&referral=true`
+
+  const share = `I've just claimed my "${lesson.name}" onchain credential at @${TWITTER_ACCOUNT} 🎉
+${shareLink}
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
-}`
 
   const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     share
   )}`
 
-  const farcasterLink = twitterLink
-    ?.replace(
-      'https://twitter.com/intent/tweet?url=',
-      'https://warpcast.com/~/compose?text='
-    )
-    ?.replace('BanklessAcademy', 'banklessacademy.eth')
+  const farcasterLink =
+    twitterLink
+      ?.replace(
+        'https://twitter.com/intent/tweet?url=',
+        'https://warpcast.com/~/compose?text='
+      )
+      ?.replace('BanklessAcademy', 'banklessacademy.eth')
+      ?.replace(encodeURIComponent(shareLink + '\n'), '') +
+    '&embeds%5B%5D=' +
+    encodeURIComponent(shareLink)
 
   const BadgeHelper = (
     <Helper
