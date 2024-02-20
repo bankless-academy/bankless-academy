@@ -421,7 +421,8 @@ const Lesson = ({
         if (IS_WHITELABEL) closeLesson()
         else {
           // defaut: go back to lessons
-          router.push('/lessons')
+          closeLesson()
+          // router.push('/lessons')
         }
       }
     }

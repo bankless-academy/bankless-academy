@@ -699,6 +699,15 @@ export const scrollTop = () => {
   }, 300)
 }
 
+export const scrollDown = () => {
+  // 0.3 second delay
+  setTimeout(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+    }
+  }, 300)
+}
+
 export const lessonLink = (lesson: LessonType) => {
   return `${DOMAIN_URL}/lessons/${lesson.slug}`
 }

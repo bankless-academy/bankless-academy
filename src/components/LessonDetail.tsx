@@ -22,7 +22,7 @@ import {
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
 import { useEffect } from 'react'
-import { Mixpanel, scrollTop } from 'utils'
+import { Mixpanel, scrollDown, scrollTop } from 'utils'
 import OpenLesson from 'components/OpenLesson'
 import LanguageSwitch from 'components/LanguageSwitch'
 
@@ -36,8 +36,13 @@ const StyledBox = styled(Box)`
   width: -moz-available;
 `
 
-const closeLesson = (openedLesson: string, lesson: LessonType): string => {
+const closeLesson = (
+  openedLesson: string,
+  lesson: LessonType,
+  Quest
+): string => {
   const openedLessonArray = JSON.parse(openedLesson)
+  if (Quest?.isQuestCompleted) scrollDown()
   return JSON.stringify(
     [...openedLessonArray, lesson.slug].filter((value) => value !== lesson.slug)
   )
@@ -79,7 +84,7 @@ const LessonDetail = ({
       language: i18n.language,
     })
     scrollTop()
-    setOpenLessonLS(closeLesson(openLessonLS, lesson))
+    setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest))
   }, [])
 
   const isQuizComplete = quizComplete(lesson)
@@ -104,7 +109,9 @@ const LessonDetail = ({
         <Lesson
           lesson={lesson}
           extraKeywords={extraKeywords}
-          closeLesson={() => setOpenLessonLS(closeLesson(openLessonLS, lesson))}
+          closeLesson={() =>
+            setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest))
+          }
           Quest={Quest}
         />
       ) : (
