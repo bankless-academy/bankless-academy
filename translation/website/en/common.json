@@ -98,7 +98,7 @@
   "Gitcoin Passport issue": "Gitcoin Passport issue",
   "Duplicate account detected.": "Duplicate account detected.",
   "Switch back to:": "Switch back to:",
-  "Connect to {{numberOfStampsLeftToCollect}} more accounts:": "Connect to {{numberOfStampsLeftToCollect}} more accounts:",
+  "Connect {{numberOfStampsLeftToCollect}} more account(s):": "Connect {{numberOfStampsLeftToCollect}} more account(s):",
   "You already have a Gitcoin Passport score > {{required_score}}, so you are not required to connect more accounts.": "You already have a Gitcoin Passport score > {{required_score}}, so you are not required to connect more accounts.",
   "You have connected enough accounts.": "You have connected enough accounts.",
   "You can now close this popup and claim your rewards.": "You can now close this popup and claim your rewards.",
