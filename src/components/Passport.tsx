@@ -130,7 +130,7 @@ const PassportComponent = ({
               <Box mt="4">
                 {!passportLS?.verified ? (
                   t(
-                    `Connect to {{numberOfStampsLeftToCollect}} more accounts:`,
+                    `Connect {{numberOfStampsLeftToCollect}} more account(s):`,
                     { numberOfStampsLeftToCollect }
                   )
                 ) : (
