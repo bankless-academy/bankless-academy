@@ -115,7 +115,7 @@ Let's get into the step-by-step process of how nodes come to agreement using `Pr
 
 1. **Staking:** A `node operator` locks 32 ETH on the network and begins running a `validator node`.
 2. **Block Building:** Users submit transactions ordered into `blocks` by `block builders`.
-3. **Proposer Selection****:** An algorithm selects a validator node to propose the next block to be added to the blockchain.
+3. **Proposer Selection:** An algorithm selects a validator node to propose the next block to be added to the blockchain.
 4. **Block Proposal:** The `block proposer` reviews potential blocks and selects one, granting their `attestation` if valid.
 5. **Cross-Verification:** Other nodes double-check the block and grant attestation if valid. Invalid blocks are discarded and the proposer is `slashed`.
 6. **Block Addition:** The valid block is added to the Ethereum blockchain.
