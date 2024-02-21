@@ -59,6 +59,11 @@
     "keyword_plural": "区块",
     "definition": "区块链上的一组交易。"
   },
+  "block builder": {
+    "keyword": "block builder",
+    "keyword_plural": "block builders",
+    "definition": "Highly specialized validator nodes who construct blocks from transactions submitted to the network."
+  },
   "block explorer": {
     "keyword": "区块浏览器",
     "keyword_plural": "区块浏览器",
