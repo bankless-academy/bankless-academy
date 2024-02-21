@@ -44,6 +44,11 @@
     "keyword_plural": "非同期",
     "definition": "複数の共同作業者間のコミュニケーションで、参加者はメッセージ送信時にその場にいる必要はない"
   },
+  "attestation": {
+    "keyword": "attestation",
+    "keyword_plural": "attestations",
+    "definition": "A vote made by each validator to reach a consensus on whether to approve a transaction"
+  },
   "autonomy": {
     "keyword": "autonomy",
     "keyword_plural": "autonomys",
@@ -74,15 +79,15 @@
     "keyword_plural": "ブロックハッシュ",
     "definition": "各ブロックファイルに固有の識別子があり、各新しいブロックは前のブロックのブロックハッシュを参照し、単一ファイル連結ブロックチェーンを形成する"
   },
-  "block producer": {
-    "keyword": "ブロック生成者",
-    "keyword_plural": "ブロック生成者",
-    "definition": "ハードウェアがブロックのトランザクションを検証し、ほとんどのPoSブロックチェーンで次のブロックを開始するように選択されたユーザー"
+  "block proposer": {
+    "keyword": "block proposer",
+    "keyword_plural": "block proposers",
+    "definition": "The validator node chosen by the network algorithm to select the next block to be added to the blockchain."
   },
   "block reward": {
     "keyword": "ブロック報酬",
     "keyword_plural": "ブロック報酬",
-    "definition": "新しい有効なブロックの提案者に与えられたブロックチェーンのネイティブアセットの量"
+    "definition": "A random amount of native coin given to the proposer of a new valid block."
   },
   "blockchain": {
     "keyword": "ブロックチェーン",
@@ -138,6 +143,11 @@
     "keyword": "中央集権型取引所",
     "keyword_plural": "中央集権型取引所",
     "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+  },
+  "centralized exchange staking": {
+    "keyword": "Centralized Exchange Staking",
+    "keyword_plural": "Centralized Exchange Stakings",
+    "definition": "Locking tokens through a Centralized Exchange to generate rewards."
   },
   "cex": {
     "keyword": "CEX",
@@ -754,6 +764,11 @@
     "keyword_plural": "ソーシャルエンジニアリング",
     "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
+  "solo staker": {
+    "keyword": "solo staker",
+    "keyword_plural": "solo stakers",
+    "definition": "A node operator running an independent validator node."
+  },
   "solo staking": {
     "keyword": "solo staking",
     "keyword_plural": "solo stakings",
@@ -784,9 +799,9 @@
     "keyword_plural": "ステーキング",
     "definition": "一定時間のスマートコントラクトへのクリプトの一部の一時的なコミットメントの利益を得るための交換(報酬)"
   },
-  "staking pools": {
-    "keyword": "staking pools",
-    "keyword_plural": "staking poolss",
+  "staking pool": {
+    "keyword": "staking pool",
+    "keyword_plural": "staking pools",
     "definition": "On Ethereum: Smart contracts through which stakers provide Ether to another staker’s validator node."
   },
   "staking providers": {
