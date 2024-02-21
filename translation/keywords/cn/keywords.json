@@ -44,6 +44,11 @@
     "keyword_plural": "异步",
     "definition": "多个合作者之间的通信，参与者在发送信息时不必在场。"
   },
+  "attestation": {
+    "keyword": "attestation",
+    "keyword_plural": "attestations",
+    "definition": "A vote made by each validator to reach a consensus on whether to approve a transaction"
+  },
   "autonomy": {
     "keyword": "autonomy",
     "keyword_plural": "autonomys",
@@ -74,15 +79,15 @@
     "keyword_plural": "区块哈希",
     "definition": "每个区块文件的唯一标识符。每个新区块都会参考前一个区块的区块哈希值，从而形成单文件连接的区块链。"
   },
-  "block producer": {
-    "keyword": "区块生产节点",
-    "keyword_plural": "区块生产节点",
-    "definition": "在大多数 \"工作量证明\"（PoS）区块链上，硬件被选中验证区块交易并开始下一个区块的用户。"
+  "block proposer": {
+    "keyword": "block proposer",
+    "keyword_plural": "block proposers",
+    "definition": "The validator node chosen by the network algorithm to select the next block to be added to the blockchain."
   },
   "block reward": {
     "keyword": "区块奖励",
     "keyword_plural": "区块奖励",
-    "definition": "给予新有效区块提议者的原生区块链资产。"
+    "definition": "A random amount of native coin given to the proposer of a new valid block."
   },
   "blockchain": {
     "keyword": "区块链",
@@ -138,6 +143,11 @@
     "keyword": "中心化交易所",
     "keyword_plural": "中心化交易所",
     "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+  },
+  "centralized exchange staking": {
+    "keyword": "Centralized Exchange Staking",
+    "keyword_plural": "Centralized Exchange Stakings",
+    "definition": "Locking tokens through a Centralized Exchange to generate rewards."
   },
   "cex": {
     "keyword": "CEX",
@@ -754,6 +764,11 @@
     "keyword_plural": "社会工程",
     "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
+  "solo staker": {
+    "keyword": "solo staker",
+    "keyword_plural": "solo stakers",
+    "definition": "A node operator running an independent validator node."
+  },
   "solo staking": {
     "keyword": "solo staking",
     "keyword_plural": "solo stakings",
@@ -784,9 +799,9 @@
     "keyword_plural": "质押",
     "definition": "在指定时间内将部分加密货币暂时投入智能合约，以换取利息（\"奖励\"）。"
   },
-  "staking pools": {
-    "keyword": "staking pools",
-    "keyword_plural": "staking poolss",
+  "staking pool": {
+    "keyword": "staking pool",
+    "keyword_plural": "staking pools",
     "definition": "On Ethereum: Smart contracts through which stakers provide Ether to another staker’s validator node."
   },
   "staking providers": {
