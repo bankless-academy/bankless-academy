@@ -48,10 +48,7 @@ const StakingOnEthereum = (
     if (account) validateQuest()
   }, [account])
 
-  // TODO: replace handbook
-  const lesson = LESSONS.find(
-    (lesson) => lesson.slug === 'funding-a-wallet-on-layer-2'
-  )
+  const lesson = LESSONS.find((lesson) => lesson.slug === 'staking-ether')
 
   if (!lesson)
     return {
@@ -126,12 +123,11 @@ const StakingOnEthereum = (
                   </Box>
                 </Button>
               </VStack>
-              {/* <Box mt="8">
-                TODO: make title dynamic
-                {`Tip: Check our Explorer's Handbook entry on 'Staking with Rocket Pool' to find the best funding pathway for you.`}
-              </Box> */}
               <Box mt="8">
-                Supported networks: Ethereum, Optimism, Base, Arbitrum and
+                {`Tip: Check our Explorer's Handbook entry '${lesson.name}' to find the best funding pathway for you.`}
+              </Box>
+              <Box mt="8">
+                * Supported networks: Ethereum, Optimism, Base, Arbitrum and
                 Polygon (POS)
               </Box>
               {isTransactionVerified !== 'true' && (
@@ -144,7 +140,6 @@ const StakingOnEthereum = (
             </Box>
           </div>
           <div className="bloc2" style={{ alignSelf: 'center' }}>
-            {/* <Box w= /> */}
             <LessonCard
               borderRadius="3xl"
               maxW="400px"
@@ -154,8 +149,7 @@ const StakingOnEthereum = (
               <Box zIndex="2" position="relative">
                 <Box py="8">
                   <Text mt="0 !important" fontSize="xl" fontWeight="bold">
-                    {/* {lesson.name} */}
-                    Staking with Rocket Pool
+                    {lesson.name}
                   </Text>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
@@ -166,16 +160,13 @@ const StakingOnEthereum = (
                   </InternalLink>
                 </Box>
                 <Box pb="8">
-                  {/* <InternalLink
+                  <InternalLink
                     href={`/lessons/${lesson.slug}`}
                     alt={lesson.englishName}
                     target="_blank"
-                  > */}
-                  <Button variant="primary" isDisabled>
-                    {/* TODO: replace with correct handbook */}
-                    {'Read Entry'}
-                  </Button>
-                  {/* </InternalLink> */}
+                  >
+                    <Button variant="primary">{'Read Entry'}</Button>
+                  </InternalLink>
                 </Box>
               </Box>
             </LessonCard>
