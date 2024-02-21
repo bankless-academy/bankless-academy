@@ -2227,9 +2227,9 @@ const LESSONS: LessonType[] = [
     languages: [],
     lessonWriters: 'Tetranome',
     quest: 'StakingOnEthereum',
-    publicationStatus: 'hidden',
+    publicationStatus: 'publish',
     publicationDate: '2024-02-21',
-    featuredOrderOnHomepage: null,
+    featuredOrderOnHomepage: 1,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     sponsorName: 'Rocket Pool',
@@ -2463,7 +2463,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '4942d5247e6b41899c4f1bf1e6b66a31',
         title: 'Network Centralization — Again!',
-        content: '<div class="bloc1"><p>Staking pools and LSTs have the same catch as the different staking methods: <strong>they function in different degrees of centralization and decentralization.</strong></p><p>Staking providers like Rocket Pool have made sure that anyone, anywhere can be the <code>node operator</code> of a staking pool. This supports new node operators in building their 32 ETH stake, and helps to decentralize Ethereum. However, other providers only allow a small range of their contacts to run their nodes, making the centralization of staked Ether a risk.</p><p>If any entity gains over 33% control of all staked Ether, they could cause problems on the network. At 50%, they seriously threaten Ethereum’s <code>credible neutrality</code>.</p><p>Staking provider Lido (as of early 2024) already hovers around the problematic 33% mark.</p><p>To guard Ethereum, we need to do our research. Even with <code>staking pools</code> we need to evaluate impacts on decentralization.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/network-centralization-again-43bfd55b.svg\'></div>'
+        content: '<div class="bloc1"><p>Staking pools and LSTs have the same catch as the different staking methods: <strong>they function in different degrees of centralization and decentralization.</strong></p><p>Staking providers like Rocket Pool have made sure that anyone, anywhere can be the <code>node operator</code> of a staking pool. This supports new node operators in building their 32 ETH stake, and helps to decentralize Ethereum. However, other providers only allow a small range of their contacts to run their nodes, making the centralization of staked Ether a risk.</p><p>If any entity gains over 33% control of all staked Ether, they could cause problems on the network. At 50%, they seriously threaten Ethereum’s <code>credible neutrality</code>.</p><p>Staking provider Lido (as of early 2024) already hovers around the problematic 33% mark.</p><p>To guard Ethereum, we need to do our research. Even with <code>staking pools</code> we need to make choices that support decentralization.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/network-centralization-again-43bfd55b.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -2510,7 +2510,7 @@ const LESSONS: LessonType[] = [
     name: 'Staking Ether',
     languages: [],
     lessonWriters: 'Tetranome',
-    publicationStatus: 'hidden',
+    publicationStatus: 'publish',
     publicationDate: '2024-02-21',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
@@ -2814,7 +2814,7 @@ const LESSONS: LessonType[] = [
     lessonWriters: 'Musharef, Tetranome',
     publicationStatus: 'publish',
     publicationDate: '2023-11-08',
-    featuredOrderOnHomepage: 1,
+    featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     mirrorLink: 'https://mirror.xyz/banklessacademy.eth/qxBzms3mPBCZ8XCk2HMmyTm7IWe70wiFFn5J0BSvYiM',

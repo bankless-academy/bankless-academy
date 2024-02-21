@@ -290,7 +290,7 @@ If any entity gains over 33% control of all staked Ether, they could cause probl
 
 Staking provider Lido (as of early 2024) already hovers around the problematic 33% mark.
 
-To guard Ethereum, we need to do our research. Even with `staking pools` we need to evaluate impacts on decentralization.
+To guard Ethereum, we need to do our research. Even with `staking pools` we need to make choices that support decentralization.
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/network-centralization-again-43bfd55b.svg)
 
