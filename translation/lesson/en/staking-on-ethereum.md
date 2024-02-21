@@ -113,7 +113,7 @@ True or False: Validator nodes caught processing fraudulent blocks will receive 
 
 # Validating Transactions
 
-Let's get into the step-by-step process of how nodes come to agreement using `Proof-of-Stake` consensus:
+Let's get into the step-by-step process of how nodes come to agreement using `Proof-of-Stake` consensus:s
 
 1. **Staking:** A `node operator` locks 32 ETH on the network and begins running a `validator node`.
 2. **Block Building:** Users submit transactions ordered into `blocks` by `block builders`.
