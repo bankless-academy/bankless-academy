@@ -779,7 +779,9 @@ const Lesson = ({
                               '1px solid #646587'
                             }
                             whiteSpace="break-spaces"
-                            onClick={(e) => selectAnswer(e, n)}
+                            onClick={(e) => {
+                              if (answerState !== 'CORRECT') selectAnswer(e, n)
+                            }}
                             answerstate={answerState}
                             justifyContent="space-between"
                             textAlign="left"
