@@ -272,13 +272,11 @@ Which entity hosts the staking pool?
 
 # Liquid Staking Tokens
 
-The best thing about `LSTs` is that even while your Ether is staked and gathering yield, you control them in `liquid` form.
+The best thing about `LSTs` is that even while your Ether is staked and gathering yield, it maintains a `liquid` form.
 
-“Liquid” in this case means that it can still flow throughout the ecosystem. Think of holding your share of the staking pool… but you can use it as money! LSTs can be swapped, used as collateral for loans, or even deposited on `restaking` platforms for bonus yield.
+“Liquid” in this case means that it can still flow throughout the ecosystem. Think of holding a share of a staking pool… but you can use it as money! LSTs can be swapped, used as collateral for loans, or even deposited on `restaking` platforms for bonus yield.
 
-This is pretty great because it opens access to staked Ether. A staking pool often has a minimum deposit for adding Ether to the pool (somewhere around 0.01 ETH). With LSTs, you can buy even smaller increments of staked Ether on your favorite `decentralized exchange`.
-
-Through cases like this, staked Ether starts to seem like an exceptional form of money: one that protects the ecosystem and produces yield.
+LSTs are great because they open access to staked Ether. Staking pools often have minimum deposit amounts for adding Ether to the pool (around 0.01 ETH). However, using LSTs, you can buy even smaller increments of staked Ether on your favorite `decentralized exchange`.
 
 # Network Centralization — Again!
 
