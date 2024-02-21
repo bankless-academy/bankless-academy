@@ -44,6 +44,11 @@
     "keyword_plural": "asynchrone",
     "definition": "Kommunikation zwischen mehreren Mitwirkenden, wobei die Teilnehmer zum Zeitpunkt der Nachrichtenübermittlung nicht anwesend sein müssen."
   },
+  "attestation": {
+    "keyword": "attestation",
+    "keyword_plural": "attestations",
+    "definition": "A vote made by each validator to reach a consensus on whether to approve a transaction"
+  },
   "autonomy": {
     "keyword": "autonomy",
     "keyword_plural": "autonomys",
@@ -74,15 +79,15 @@
     "keyword_plural": "Block Hashs",
     "definition": "Der eindeutige Bezeichner für jede Blockdatei. Jeder neue Block bezieht sich auf den Block Hash des vorherigen Blocks, um die verbundene Blockchain, bestehend aus einer einzigen Datei, zu bilden."
   },
-  "block producer": {
-    "keyword": "Blockproduzent",
-    "keyword_plural": "Blockproduzenten",
-    "definition": "Der Benutzer, dessen Hardware ausgewählt wird, um die Transaktionen eines Blocks zu verifizieren und den nächsten Block auf den meisten Proof-of-Stake (PoS)-Blockchains zu starten."
+  "block proposer": {
+    "keyword": "block proposer",
+    "keyword_plural": "block proposers",
+    "definition": "The validator node chosen by the network algorithm to select the next block to be added to the blockchain."
   },
   "block reward": {
     "keyword": "block reward",
     "keyword_plural": "block rewards",
-    "definition": "The amount of a blockchain’s native asset given to the proposer of a new valid block."
+    "definition": "A random amount of native coin given to the proposer of a new valid block."
   },
   "blockchain": {
     "keyword": "Blockchain",
@@ -138,6 +143,11 @@
     "keyword": "centralized exchange",
     "keyword_plural": "centralized exchanges",
     "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+  },
+  "centralized exchange staking": {
+    "keyword": "Centralized Exchange Staking",
+    "keyword_plural": "Centralized Exchange Stakings",
+    "definition": "Locking tokens through a Centralized Exchange to generate rewards."
   },
   "cex": {
     "keyword": "CEX",
@@ -754,6 +764,11 @@
     "keyword_plural": "social engineerings",
     "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
   },
+  "solo staker": {
+    "keyword": "solo staker",
+    "keyword_plural": "solo stakers",
+    "definition": "A node operator running an independent validator node."
+  },
   "solo staking": {
     "keyword": "solo staking",
     "keyword_plural": "solo stakings",
@@ -784,9 +799,9 @@
     "keyword_plural": "stakings",
     "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")."
   },
-  "staking pools": {
-    "keyword": "staking pools",
-    "keyword_plural": "staking poolss",
+  "staking pool": {
+    "keyword": "staking pool",
+    "keyword_plural": "staking pools",
     "definition": "On Ethereum: Smart contracts through which stakers provide Ether to another staker’s validator node."
   },
   "staking providers": {
