@@ -33,7 +33,7 @@ Welcome, Explorer, to your next lesson!
 
 Today, we’ll look at the process of “staking” — one simple way to build digital wealth.
 
-`Staking` works just like `mining` does on the Bitcoin network: as a system that processes transactions on the blockchain in exchange for rewards. It is how we keep the network `decentralized`.
+`Staking` works just like `mining` does on the Bitcoin network: as a system for processing transactions on the blockchain while generating rewards. It is how we keep the network `decentralized`.
 
 However, there’s an important difference between mining and staking. Staking on Ethereum doesn’t require a powerful computer to compete against others. Simply locking Ether (ETH) in a network `smart contract` keeps Ethereum running and rewards you.
 
@@ -43,9 +43,9 @@ However, there’s an important difference between mining and staking. Staking o
 
 Think of `staking` like an “internet bond”.
 
-Just like supporting your government through bonds can give you payoffs, supporting `validator nodes` brings rewards! Even better, staking is a way to show financial support for your values and the world you want to live in. Much like government bonds.
+Just like supporting your government through bonds gives financial returns, supporting `validator nodes` brings rewards! Even better, like government bonds, staking is a way to show financial support for your values and the world you want to live in.
 
-When you stake Ether, it is assigned to a validator node working to process transactions on Ethereum. The more Ether staked, the more nodes Ethereum can have. Therefore, the more `decentralized` and secure it becomes. 
+When you stake Ether, it is assigned to a validator node working to process transactions on Ethereum. The more Ether staked, the more nodes Ethereum can have. Therefore, the more `decentralized` and secure it becomes.
 
 As a `staker`, you become a **guardian of Ethereum!**
 
@@ -61,9 +61,7 @@ Grab your gear, let’s go!
 
 Fraud in the blockchain world looks like a user manipulating balances or creating non-existent crypto. Ethereum’s way of curbing it is ensuring that every transaction is valid and no participant has power over others. This fairness, known as `credible neutrality`, is vital. Why? Nobody wants to be a part of an economy where there's deceit and distrust — it will eventually collapse.
 
-Transactions can only be valid when they're approved by a majority of validator nodes. These nodes separate valid transactions from fraud using a unique system called a `consensus mechanism`.
-
-The consensus mechanism can change depending on the blockchain, but there's one goal: **to** **generate decentralized agreement—across the network—on the state of the blockchain.**
+In a healthy blockchain, validator nodes share one goal: **to** **reach decentralized agreement—across the network—on the state of the blockchain.** Nodes scan transactions, check them against the blockchain’s history, and vote on their validity. Transactions that pass node `consensus` as valid are added to the blockchain.
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/blockchain-security-7f2149fe.svg)
 
@@ -73,31 +71,31 @@ How do validator nodes prevent fraud on Ethereum?
 
 - [ ] By overpowering each other.
 
-	> Try again! Nodes have no influence over each other. They work together to influence the blockchain.
+> Try again! Nodes have no influence over each other. They work together to influence the blockchain.
 
 - [ ] By creating non-existent crypto for certain people.
 
-	> Try again! This would be committing fraud.
+> Try again! This would be committing fraud.
 
 - [ ] By reaching decentralized agreement on valid transactions.
 
-	> Correct! Nodes agree on the state of the blockchain.
+> Correct! Nodes agree on the state of the blockchain.
 
 # Proof-of-Stake
 
-Users who want to run a validator node on their computer must gather and lock 32 ETH — that’s a lot of money. In exchange for taking a large financial “stake” in the network, the node operator is allowed to propose and review blocks of transactions on Ethereum — and earn rewards. Think of blocks as a group of transactions submitted to the network. 
+Users who want to run a `validator node` on their computer must gather and lock 32 ETH — that’s a lot of money. In exchange for taking a large financial “stake” in the network, the `node operator` is allowed to propose and review blocks of transactions on Ethereum — and earn rewards. Think of blocks as groups of transactions submitted to the network.
 
-A validator node is randomly selected to propose the next block and its decision is double-checked by other nodes to ensure honesty. When a node successfully proposes a block, its `stake` grows. 
+The network’s `consensus mechanism` randomly selects a validator node to propose the next block and its decision is double-checked by other nodes to ensure honesty. When a node successfully proposes a block, its `stake` grows.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/proof-of-stake-d4b0117c.svg)
+![](https://app.banklessacademy.com/images/staking-on-ethereum/proof-of-stake-49c358ed.svg)
 
 # Slashing
 
-When it’s too slow or tries to approve fraud, its stake is `slashed` and it gets a penalty charge. This way, staked Ether becomes a form of insurance where nodes are made to be honest and keep Ethereum running.
+When a node is too slow or tries to approve fraud, its stake is `slashed`: it gets a penalty charge. This way, staked Ether becomes a form of insurance where nodes are incentivized to be honest and keep Ethereum running smoothly.
 
-For an attacker to approve fraud on Ethereum, they must have control over majority of the validator nodes and thus, staked Ether. But this can't happen if everyday users are involved in staking.  `Decentralized` ownership breaks down the power to make decisions.
+For an attacker to approve fraud on Ethereum, they must have control over majority of the validator nodes and thus, staked Ether. Fortunately this can't happen if everyday users are involved in staking. `Decentralized` ownership of the network divides the power to make decisions.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/slashing-7caed7cb.svg)
+![](https://app.banklessacademy.com/images/staking-on-ethereum/slashing-ccabe137.svg)
 
 # Knowledge Check 2
 
@@ -105,23 +103,23 @@ True or False: Validator nodes caught processing fraudulent blocks will receive 
 
 - [ ] True
 
-	> Correct! This “slashing” incentivizes nodes to stay honest!
+> Correct! This “slashing” incentivizes nodes to stay honest!
 
 - [ ] False
 
-	> Try again! Nodes must receive some sort of punishment for dishonest actions.
+> Try again! Nodes must receive some sort of punishment for dishonest actions.
 
 # Validating Transactions
 
-Let's get into the step-by-step process of how nodes come to agreement using `Proof-of-Stake` consensus:s
+Let's get into the step-by-step process of how nodes come to agreement using `Proof-of-Stake` consensus:
 
 1. **Staking:** A `node operator` locks 32 ETH on the network and begins running a `validator node`.
 2. **Block Building:** Users submit transactions ordered into `blocks` by `block builders`.
 3. **Proposer Selection****:** An algorithm selects a validator node to propose the next block to be added to the blockchain.
-4. **Block Proposal:** The `block proposer` selects and reviews the potential block, granting their `attestation` if valid.
+4. **Block Proposal:** The `block proposer` reviews potential blocks and selects one, granting their `attestation` if valid.
 5. **Cross-Verification:** Other nodes double-check the block and grant attestation if valid. Invalid blocks are discarded and the proposer is `slashed`.
 6. **Block Addition:** The valid block is added to the Ethereum blockchain.
-7. **Reward:** The block proposer gets part of the block’s transaction fees and additional rewards.
+7. **Reward:** The block proposer is rewarded with the `block reward` and transaction tips.
 
 [embed](https://app.banklessacademy.com/animation/validating-tx-with-ethereum-staking)
 
@@ -131,21 +129,21 @@ What is the name of the validator node selecting the next block to be added to E
 
 - [ ] Staker
 
-	> Try again! Stakers support validator nodes, but don’t run the node themselves.
+> Try again! Stakers support validator nodes, but don’t run the node themselves.
 
 - [ ] Block builder
 
-	> Try again! Block builders order incoming transactions into potential blocks, but don’t add them to the blockchain.
+> Try again! Block builders order incoming transactions into potential blocks, but don’t add them to the blockchain.
 
 - [ ] Block proposer
 
-	> Correct! Block proposers, looking at blocks from block builders, choose one to add to the blockchain.
+> Correct! Block proposers, looking at blocks from block builders, choose one to add to the blockchain.
 
 # Ethernomics
 
 For providing Ether to a validator node, stakers earn a portion of its rewards.
 
-Rewards received by validator nodes are based on various ecosystem factors and can change. Simply put, the rewards are a portion of transaction fees and a small amount of newly issued Ether added to new blocks.
+Rewards received by nodes are based on various ecosystem factors and can change. Simply put, the rewards are a portion of transaction fees and a small amount of newly issued Ether added to new blocks.
 
 Annual yield can look like anything between a 3% to 16% return on staked Ether. The exact amount is based on two key factors:
 
@@ -212,15 +210,15 @@ If you’re not yet okay with taking `self-custody` of your crypto, check out Ce
 
 # Network Centralization
 
-**Some types of staking actively** `centralize` **Ethereum.**
+**Any staking that leads to many nodes under one entity begins to centralize Ethereum.**
 
-Imagine Ethereum as a web of connected `validator nodes`. When nodes are controlled by one or a few entities, the entire web becomes imbalanced and unsafe. For this not to happen, we need lots of unique connection points.
+Imagine Ethereum as a web of connected `validator nodes`. When nodes are concentrated under one or a few entities, the entire web becomes imbalanced and unsafe. For this not to happen, we need lots of unique connection points.
 
-A single entity gaining control over enough staked Ether is bad. This forces blocks of transactions through the centralized section of the web. The centralized entity could begin approving fraudulent blocks, or even denying valid ones. This would destroy Ethereum’s `credible neutrality`. 
+A single entity gaining control over enough nodes is bad. This forces blocks of transactions through the centralized section of the web. The centralized entity could begin approving fraudulent blocks, or even denying valid ones. This would destroy Ethereum’s `credible neutrality`.
 
-As its guardians, we must focus on staking methods that keep the web balanced and `decentralized`. 
+As its guardians, we must focus on staking methods that keep the web balanced and `decentralized`.
 
-You may face many barriers with running your own validator node as a beginner. So let's explore a beginner-friendly option to decentralized staking: `staking pools`.
+You may face many barriers with running your own validator node as a beginner. Instead, let's explore a beginner-friendly option to decentralized staking: `staking pools`.
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/network-centralization-0622ba07.svg)
 
@@ -230,25 +228,25 @@ What would happen if a single entity controlled a majority of validator nodes?
 
 - [ ] They could approve blocks including fraudulent transactions.
 
-	> Correct! Ethereum would lose its credible neutrality.
+> Correct! Ethereum would lose its credible neutrality.
 
 - [ ] They would gain control of all validator nodes.
 
-	> Try again! Other nodes cannot be controlled, but their voice can be overpowered.
+> Try again! Other nodes cannot be controlled, but their voice can be overpowered.
 
 - [ ] Ethereum would stop processing transactions altogether.
 
-	> Try again! Ethereum wouldn’t stop running during such an attack, but its credible neutrality would be lost. 
+> Try again! Ethereum wouldn’t stop running during such an attack, but its credible neutrality would be lost. 
 
 - [ ] All of the above.
 
-	> Try again! Only one of the above answers is correct.
+> Try again! Only one of the above answers is correct.
 
 # Staking Pools
 
 The best part about `staking pools` is that they’re entirely run by `smart contracts`. You don’t have to meet the other stakers in person and you don’t have to trust them. You do however have to trust the smart contract.
 
-Staking pools are organized by `staking providers`, digital platforms connecting stakers across the world! In staking pools, a `node operator` stakes at least 16 ETH and runs the node, while other participants supply the remaining Ether. The node operator earns extra yield for their service. 
+Staking pools are organized by `staking providers`, digital platforms connecting stakers across the world! In staking pools, a `node operator` stakes at least 16 ETH and runs the node, while other participants supply the remaining Ether. The node operator earns extra yield for their service.
 
 The remaining staking participants are given “Liquid Staking Tokens” (LSTs) representing their membership to the pool. These `tokens` stand for a share of a pool’s staked Ether. The holder earns a portion of rewards equal to the represented stake, and can use them to redeem their stake at any time.
 
@@ -262,15 +260,15 @@ Which entity hosts the staking pool?
 
 - [ ] The node operator.
 
-	> Try again! Node operators run the validator node, but not the pool itself.
+> Try again! Node operators run the validator node, but not the pool itself.
 
 - [ ] The remaining staking participants.
 
-	> Try again! Stakers provide Ether, but don’t run the pool.
+> Try again! Stakers provide Ether, but don’t run the pool.
 
 - [ ] The staking provider.
 
-	> Correct! The pool is hosted through the provider’s smart contracts.
+> Correct! The pool is hosted through the provider’s smart contracts.
 
 # Liquid Staking Tokens
 
@@ -302,11 +300,11 @@ True or False: Supporting new node operators helps to decentralize Ethereum.
 
 - [ ] True
 
-	> Correct! More node operators means more independent validator nodes detecting fraud.
+> Correct! More node operators means more independent validator nodes detecting fraud.
 
 - [ ] False
 
-	> Try again! The more independent nodes, the better.
+> Try again! The more independent nodes, the better.
 
 # rETH - Your Path to Decentralized Staking
 

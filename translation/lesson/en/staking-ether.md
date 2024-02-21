@@ -125,13 +125,13 @@ The potential impact of each risk is really difficult to predict, but it’s saf
 
 ### Does all staking benefit Ethereum?
 
-Benefit comes in the form of decentralization — you want as many independent node operators as possible.
+Benefit comes in the form of `decentralization` — you want as many independent `node operators` as possible.
 
-* Solo Staking: Maximum decentralization, as this typically means just a few nodes under one person.
+* `Solo Staking`: Maximum decentralization, as this typically means just a few nodes under one person.
 
-* Staking Pools: It depends on the platform. Some staking providers only allow specific people to act as validator nodes within their pools. That means many nodes under a few people — a centralizing force. Rocket Pool is one of the few providers that allow anyone to become the node operator of a staking pool. This makes their platform one of the best staking options for citizens of Ethereum.
+* `Staking Pools`: It depends on the platform. Some staking providers only allow specific people to act as validator nodes within their pools. That means many nodes under a few people — a centralizing force. Rocket Pool is one of the few providers that allow anyone to become the node operator of a staking pool. This makes their platform one of the best staking options for citizens of Ethereum.
 
-* Centralized Exchange Staking: Much like the centralizing forces within staking pools, many nodes under one entity is bad for Ethereum.
+* `Centralized Exchange Staking`: Much like the centralizing forces within staking pools, many nodes under one entity is bad for Ethereum.
 
 ### Do staking rewards change?
 
@@ -145,9 +145,9 @@ Rewards also change based on the staking method chosen. Check out our [“Stakin
 
 ### How do I run a validator node?
 
-If you want to become a solo staker, you’ll need the full 32 ETH, as well as your validator hardware. Check out [this great guide by CoinCashew](https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet).
+If you want to become a `solo staker`, you’ll need the full 32 ETH, as well as your validator hardware. Check out [this great guide by CoinCashew](https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet).
 
-You can get started with just 16 ETH by running a staking pool with Rocket Pool, where other participants will help you reach the 32 ETH required. Of course, you’ll still need your validator hardware. Check out [the documentation over at Rocket Pool](https://docs.rocketpool.net/guides/) to get started!
+You can get started with just 16 ETH by running a `staking pool` with Rocket Pool, where other participants will help you reach the 32 ETH required. Of course, you’ll still need your validator hardware. Check out [the documentation over at Rocket Pool](https://docs.rocketpool.net/guides/) to get started!
 
 
 ---
