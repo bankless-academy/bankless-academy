@@ -59,6 +59,11 @@
     "keyword_plural": "Bloques",
     "definition": "Un grupo de transacciones en la cadena de bloques."
   },
+  "block builder": {
+    "keyword": "block builder",
+    "keyword_plural": "block builders",
+    "definition": "Highly specialized validator nodes who construct blocks from transactions submitted to the network."
+  },
   "block explorer": {
     "keyword": "explorador de bloques",
     "keyword_plural": "explorador de bloques",
