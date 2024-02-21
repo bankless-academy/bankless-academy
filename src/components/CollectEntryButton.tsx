@@ -42,26 +42,54 @@ const CollectEntryButton = ({
 
   const { config } = usePrepareContractWrite({
     address: lesson.mirrorNFTAddress,
-    abi: [
-      {
-        inputs: [
-          {
-            internalType: 'address',
-            name: 'tokenRecipient',
-            type: 'address',
-          },
-          { internalType: 'string', name: 'message', type: 'string' },
-        ],
-        name: 'purchase',
-        outputs: [
-          { internalType: 'uint256', name: 'tokenId', type: 'uint256' },
-        ],
-        stateMutability: 'payable',
-        type: 'function',
-      },
-    ],
+    abi:
+      lesson.mirrorNFTAddress === '0xe2dd5eb9841920937833c094874ba33d26becb4f'
+        ? [
+            {
+              inputs: [
+                {
+                  internalType: 'address',
+                  name: 'tokenRecipient',
+                  type: 'address',
+                },
+                { internalType: 'string', name: 'message', type: 'string' },
+                {
+                  internalType: 'address',
+                  name: 'mintReferral',
+                  type: 'address',
+                },
+              ],
+              name: 'purchase',
+              outputs: [
+                { internalType: 'uint256', name: 'tokenId', type: 'uint256' },
+              ],
+              stateMutability: 'payable',
+              type: 'function',
+            },
+          ]
+        : [
+            {
+              inputs: [
+                {
+                  internalType: 'address',
+                  name: 'tokenRecipient',
+                  type: 'address',
+                },
+                { internalType: 'string', name: 'message', type: 'string' },
+              ],
+              name: 'purchase',
+              outputs: [
+                { internalType: 'uint256', name: 'tokenId', type: 'uint256' },
+              ],
+              stateMutability: 'payable',
+              type: 'function',
+            },
+          ],
     functionName: 'purchase',
-    args: [address, ''],
+    args:
+      lesson.mirrorNFTAddress === '0xe2dd5eb9841920937833c094874ba33d26becb4f'
+        ? [address, '', '0x0000000000000000000000000000000000000000']
+        : [address, ''],
     chainId: optimism.id,
     // 0.01 + 0.00069 in collector fee
     value: parseEther('0.01069'),
