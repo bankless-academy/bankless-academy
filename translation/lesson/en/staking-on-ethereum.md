@@ -182,7 +182,7 @@ If you’re not yet okay with taking `self-custody` of your crypto, check out Ce
 
 🟢 Decentralizes Ethereum
 
-**Risks:** You may lose your private keys or get slashed when your node is offline.
+**Risks:** You may lose your private keys, get `slashed`, or receive minor penalties for an offline node.
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/types-of-staking-pt-2-96f11caf.svg)
 
