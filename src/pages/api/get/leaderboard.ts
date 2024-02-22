@@ -8,7 +8,7 @@ import badges from 'data/badges.json'
 import { fetchBE } from 'utils/server'
 import { BADGE_ADDRESS, BADGE_IDS } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
-import { ALLOWED_PROVIDERS } from 'constants/passport'
+import { ALLOWED_PLATFORMS, STAMP_PLATFORMS } from 'constants/passport'
 import { calculateExplorerScore } from 'utils/index'
 
 async function getCollectors(collectibleAddress) {
@@ -121,8 +121,9 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
       for (const passport of passportUsers) {
         const address = passport.address?.toLowerCase()
         const stamps = Object.keys(passport.ba_stamps)
+        // TODO: clean
         if (address in leaderboard)
-          leaderboard[address].valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
+          leaderboard[address].valid_stamps = ALLOWED_PLATFORMS.map(value => stamps.includes(STAMP_PLATFORMS[value].provider) ? value : null).filter(v => v) || []
       }
       const rank = []
       for (const address of Object.keys(leaderboard)) {
