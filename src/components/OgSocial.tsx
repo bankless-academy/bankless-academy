@@ -25,9 +25,11 @@ const Skill = ({ skill, score, max }) => (
       style={{
         display: 'flex',
         alignItems: 'center',
-        width: '20px',
+        width: '30px',
         height: '40px',
         color: '#FFFFFF',
+        justifyContent: 'flex-end',
+        paddingRight: '8px',
       }}
     >
       {score}
@@ -101,9 +103,7 @@ const Skills = ({ stats }) => (
     />
     <Skill
       skill="Stamps"
-      score={
-        stats?.valid_stamps ? Object.keys(stats?.valid_stamps)?.length || 0 : 0
-      }
+      score={stats?.valid_stamps?.length || 0}
       max={MAX_STAMPS}
     />
   </div>
@@ -123,7 +123,8 @@ const OgSocial = ({
     badges?: number
     datadisks?: string[]
     handbooks?: string[]
-    donations?: any
+    donations?: { [key: string]: any }
+    valid_stamps?: string[]
   }
   badgeImageLink?: string
 }): React.ReactElement => {

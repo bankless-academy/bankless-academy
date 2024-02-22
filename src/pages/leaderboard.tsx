@@ -38,7 +38,7 @@ type UnitConversion = {
   badges: number
   ens_name?: string
   ens_avatar?: string
-  donations?: any
+  donations?: { [key: string]: any }
   donations_count?: number
   valid_stamps?: string[]
   valid_stamps_count?: number
