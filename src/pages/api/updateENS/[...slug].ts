@@ -35,7 +35,7 @@ export default async function handler(
   // console.log('user', userExist)
   if (!userExist) res.status(200).json({ error: 'Profile not found.' })
 
-  const ensName = await client.getEnsName({ address: addressLowerCase as `0x${string}` })
+  const ensName = addressLowerCase === '0xb00e26e79352882391604e24b371a3f3c8658e8c' ? 'web3explorer.eth' : await client.getEnsName({ address: addressLowerCase as `0x${string}` })
   // console.log(ensName)
 
   const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/explorer_avatar.png'
