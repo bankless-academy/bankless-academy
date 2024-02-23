@@ -19,7 +19,13 @@ import { EMPTY_PASSPORT } from 'constants/passport'
 import { api } from 'utils'
 import PassportModal from 'components/PassportModal'
 
-const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
+const MintBadge = ({
+  badgeId,
+  isQuestCompleted,
+}: {
+  badgeId: number
+  isQuestCompleted: boolean
+}): React.ReactElement => {
   const { t } = useTranslation()
   const [isBadgeMintedLS, setIsBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${badgeId}`,
@@ -242,7 +248,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         height="51px"
         fontSize="lg"
         fontWeight="bold"
-        borderBottomRadius="0"
+        isDisabled={!address || !isQuestCompleted}
         isLoading={isMintingInProgress}
         loadingText={t('Minting Badge...')}
         cursor={isBadgeMintedLS ? 'auto' : 'pointer'}
@@ -250,7 +256,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
           passportLS?.verified ? mintBadge() : onOpen()
         }}
       >
-        {t('Mint Badge')}
+        {t('Mint')}
       </Button>
       <PassportModal isOpen={isOpen} onClose={onClose} />
     </>

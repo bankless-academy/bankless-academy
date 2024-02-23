@@ -78,22 +78,6 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     />
   )
 
-  if (!isQuestCompleted && !isBadgeMintedLS) {
-    return (
-      <Box position="relative" w="290px" m="auto" my="6">
-        <Box
-          border="1px solid #4b474b"
-          borderRadius="8px"
-          overflow="hidden"
-          opacity="0.5"
-        >
-          <NFT nftLink={lesson.badgeImageLink} />
-        </Box>
-        {BadgeHelper}
-      </Box>
-    )
-  }
-
   const kudosId = BADGE_TO_KUDOS_IDS[lesson.badgeId.toString()]
   const OpenSeaBadgeLink = kudosMintedLS.includes(kudosId)
     ? // old badges (kudos)
@@ -105,83 +89,85 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
     <>
       <Box textAlign="center" mb="40px">
         <Box width="290px" m="auto">
-          {isBadgeMintedLS ? (
-            <Box border="1px solid #9E72DC" borderTopRadius="8px" py="3" px="5">
-              <Box color="#9E72DC" fontWeight="bold" fontSize="lg">
-                {t('Badge Minted')}
-              </Box>
+          <Box
+            border="1px solid #9E72DC"
+            borderTopRadius="8px"
+            py="3"
+            px="5"
+            position="relative"
+          >
+            <Box color="#9E72DC" fontWeight="bold" fontSize="lg">
+              {t('Lesson Badge')}
             </Box>
-          ) : (
-            <Box position="relative">
-              <MintBadge badgeId={lesson.badgeId} />
-              {BadgeHelper}
-            </Box>
-          )}
+            {BadgeHelper}
+          </Box>
           <Box
             width="290px"
-            borderRadius={
-              isBadgeMintedLS
-                ? '0px'
-                : !isQuestCompleted
-                ? '8px'
-                : '0px 0px 8px 8px'
-            }
             overflow="hidden"
             border="1px solid #4b474b"
+            borderTop="0"
           >
-            <NFT nftLink={lesson.badgeImageLink} />
-          </Box>
-          {isBadgeMintedLS && (
-            <Box
-              // display="flex"
-              justifyContent="center"
-              borderRadius="0px 0px 8px 8px"
-              border="1px solid #4b474b"
-              borderTop="0"
-              p="4"
-            >
-              <Box pb="2">
-                <ExternalLink href={twitterLink} mr="2">
-                  <Button
-                    variant="primary"
-                    w="100%"
-                    borderBottomRadius="0"
-                    leftIcon={
-                      <ChakraImage width="20px" src="/images/TwitterX.svg" />
-                    }
-                  >
-                    {t('Share on Twitter / X')}
-                  </Button>
-                </ExternalLink>
-              </Box>
-              <Box pb="2">
-                <ExternalLink href={farcasterLink} mr="2">
-                  <Button
-                    variant="primary"
-                    w="100%"
-                    borderRadius="0"
-                    leftIcon={
-                      <ChakraImage width="20px" src="/images/Farcaster.svg" />
-                    }
-                  >
-                    {t('Share on Farcaster')}
-                  </Button>
-                </ExternalLink>
-              </Box>
-              <ExternalLink href={OpenSeaBadgeLink}>
-                <Button
-                  variant="primary"
-                  w="100%"
-                  borderTopRadius="0"
-                  leftIcon={
-                    <ChakraImage width="24px" src="/images/OpenSea.svg" />
-                  }
-                >
-                  {t('View on OpenSea')}
-                </Button>
-              </ExternalLink>
+            <Box opacity={isBadgeMintedLS ? '1' : '0.5'}>
+              <NFT nftLink={lesson.badgeImageLink} />
             </Box>
-          )}
+          </Box>
+          <Box
+            justifyContent="center"
+            borderRadius="0px 0px 8px 8px"
+            border="1px solid #4b474b"
+            borderTop="0"
+            p="4"
+          >
+            {isBadgeMintedLS ? (
+              <Box>
+                <Box pb="2">
+                  <ExternalLink href={twitterLink} mr="2">
+                    <Button
+                      variant="primary"
+                      w="100%"
+                      borderBottomRadius="0"
+                      leftIcon={
+                        <ChakraImage width="20px" src="/images/TwitterX.svg" />
+                      }
+                    >
+                      {t('Share on Twitter / X')}
+                    </Button>
+                  </ExternalLink>
+                </Box>
+                <Box pb="2">
+                  <ExternalLink href={farcasterLink} mr="2">
+                    <Button
+                      variant="primary"
+                      w="100%"
+                      borderRadius="0"
+                      leftIcon={
+                        <ChakraImage width="20px" src="/images/Farcaster.svg" />
+                      }
+                    >
+                      {t('Share on Farcaster')}
+                    </Button>
+                  </ExternalLink>
+                </Box>
+                <ExternalLink href={OpenSeaBadgeLink}>
+                  <Button
+                    variant="primary"
+                    w="100%"
+                    borderTopRadius="0"
+                    leftIcon={
+                      <ChakraImage width="24px" src="/images/OpenSea.svg" />
+                    }
+                  >
+                    {t('View on OpenSea')}
+                  </Button>
+                </ExternalLink>
+              </Box>
+            ) : (
+              <MintBadge
+                badgeId={lesson.badgeId}
+                isQuestCompleted={isQuestCompleted}
+              />
+            )}
+          </Box>
         </Box>
       </Box>
     </>
