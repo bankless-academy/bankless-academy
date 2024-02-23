@@ -54,7 +54,7 @@ Let’s begin our token swap.
 
 **1\. Load the dApp:**
 
-Open [Velodrome](https://app.velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042) in a new browser tab.
+Open [Velodrome](https://velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042) in a new browser tab.
 
 **2\. Connect your wallet:**
 
