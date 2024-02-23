@@ -6,7 +6,7 @@ import { createPublicClient, http } from 'viem'
 import { normalize } from 'viem/ens'
 
 import kudosBadges from 'data/badges.json'
-import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, DOMAIN_URL, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
+import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, DEFAULT_AVATAR, DOMAIN_URL, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_IDS, BADGE_API, BADGE_TO_KUDOS_IDS } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
 import { UserStatsType, UserType } from 'entities/user'
@@ -74,8 +74,6 @@ export default async function handler(
   } = req.query
   let addressLowerCase = address.toLowerCase()
   // console.log('address', address)
-
-  const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/explorer_avatar.png'
 
   if (!address) return res.status(400).json({ error: 'Wrong params' })
 
@@ -183,8 +181,6 @@ export default async function handler(
   stats.valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
   // donations
   stats.donations = userExist.donations
-  stats.score = calculateExplorerScore(stats)
-
   if (addressLowerCase === '0xb00e26e79352882391604e24b371a3f3c8658e8c') {
     stats =
     {
@@ -244,6 +240,8 @@ export default async function handler(
       "score": 37
     }
   }
+  stats.score = calculateExplorerScore(stats)
+
 
   console.log(stats)
 

@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { mainnet } from 'viem/chains'
 import { createPublicClient, http } from 'viem'
 
-import { ALCHEMY_KEY_BACKEND } from 'constants/index'
+import { ALCHEMY_KEY_BACKEND, DEFAULT_AVATAR } from 'constants/index'
 import { TABLE, TABLES, db } from 'utils/db'
 
 export default async function handler(
@@ -37,8 +37,6 @@ export default async function handler(
 
   const ensName = addressLowerCase === '0xb00e26e79352882391604e24b371a3f3c8658e8c' ? 'web3explorer.eth' : await client.getEnsName({ address: addressLowerCase as `0x${string}` })
   // console.log(ensName)
-
-  const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/explorer_avatar.png'
 
   const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : DEFAULT_AVATAR
 

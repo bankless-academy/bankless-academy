@@ -32,7 +32,11 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
 
 import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
-import { IS_WALLET_DISABLED, SIWE_ENABLED } from 'constants/index'
+import {
+  DEFAULT_AVATAR,
+  IS_WALLET_DISABLED,
+  SIWE_ENABLED,
+} from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
 import { getUD, getLensProfile, shortenAddress, api } from 'utils'
 
@@ -59,7 +63,11 @@ const ConnectWalletButton = ({
 }): React.ReactElement => {
   const { t } = useTranslation()
   const { open } = useWeb3Modal()
-  const { connector, address, isConnected } = useAccount()
+  const { connector, isConnected } = useAccount()
+  let { address } = useAccount()
+  const { query, asPath } = useRouter()
+  const { simulate } = query
+  if (simulate) address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
   const { chain } = useNetwork()
   const [waitingForSIWE, setWaitingForSIWE] = useState(false)
   const [isDisconnecting, setIsDisconnecting] = useState(false)
@@ -80,7 +88,6 @@ const ConnectWalletButton = ({
     false
   )
   const { onOpen, onClose, isOpen } = useDisclosure()
-  const { asPath } = useRouter()
   const { disconnect } = useDisconnect({
     onError(error) {
       console.log('Error while disconnecting', error)
@@ -144,10 +151,13 @@ const ConnectWalletButton = ({
     if (ens[address]?.avatar) setAvatar(ens[address].avatar)
     else setAvatar(avatar)
 
-    const ensName = await fetchEnsName({
-      address,
-      chainId: 1,
-    })
+    const ensName =
+      address.toLowerCase() === '0xb00e26e79352882391604e24b371a3f3c8658e8c'
+        ? 'web3explorer.eth'
+        : await fetchEnsName({
+            address,
+            chainId: 1,
+          })
     if (ensName) {
       replaceName(ensName)
       const ensAvatar = await fetchEnsAvatar({
@@ -155,6 +165,7 @@ const ConnectWalletButton = ({
         chainId: 1,
       })
       if (ensAvatar) replaceAvatar(ensAvatar)
+      if (ensName === 'web3explorer.eth') replaceAvatar(DEFAULT_AVATAR)
     } else {
       const lensProfile = await getLensProfile(address)
       if (lensProfile.name) {
@@ -301,6 +312,7 @@ const ConnectWalletButton = ({
 
   useEffect(() => {
     if (address && !SIWE_ENABLED) {
+      console.log(address)
       loadAddress(address)
     }
   }, [address])
