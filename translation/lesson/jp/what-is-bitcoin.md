@@ -33,7 +33,7 @@ Welcome, bold Explorer, to the frontier of digital innovation.
 
 At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge for “going bankless!”
 
-Using the new era of the internet and `blockchain technology`, we’re unlocking financial freedom and reclaiming ownership of our data and privacy. Which have long been exploited by third parties for profit.
+Using the new era of the internet and `blockchain technology`, we’re unlocking financial freedom and reclaiming ownership of our data and privacy — which have long been exploited by third parties for profit.
 
 Today, we’re looking at the first event in blockchain history: the invention of `cryptocurrency,` a type of `money` that moves outside of traditional financial systems.
 
@@ -74,11 +74,11 @@ True or False:
 
 - [ ] True
 
-  > Correct! The more money there is, the less value it has.
+> Correct! The more money there is, the less value it has.
 
 - [ ] False
 
-  > Try again.
+> Try again.
 
 # A Brief History of Money (Pt. 2)
 
@@ -143,19 +143,19 @@ What quality allows Bitcoin to combat inflation?
 
 - [ ] Its high transaction speed.
 
-  > Incorrect. While speed is a feature, it's not the key factor in preserving value.
+> Incorrect. While speed is a feature, it's not the key factor in preserving value.
 
 - [ ] Its global reach and acceptance.
 
-  > Incorrect. Global reach enhances its usability but doesn't primarily retain its value.
+> Incorrect. Global reach enhances its usability but doesn't primarily retain its value.
 
 - [ ] Its finite limit of 21 million coins.
 
-  > Correct! Bitcoin's capped supply creates scarcity, similar to precious metals, aiding value retention.
+> Correct! Bitcoin's capped supply creates scarcity, similar to precious metals, aiding value retention.
 
 - [ ] Its ability to facilitate online transactions.
 
-  > Incorrect. Online transaction capability is a convenience feature, not directly linked to value retention.
+> Incorrect. Online transaction capability is a convenience feature, not directly linked to value retention.
 
 # Digital Gold: Self-Custody
 
@@ -241,7 +241,7 @@ When sending cryptocurrency across this network, your transaction is inspected b
 This is the `cryptocurrency mining` process. It’s what keeps the network running securely. Mining can get quite complicated, so we’ll take a simplified view for today:
 
 1. You submit a transaction to the network, sending 0.1 `BTC` to your friend.
-2. A miner is assigned to check your transaction for errors. Other miners double-check the results.
+2. A miner checks your transaction for errors. Other miners double-check their results.
 3. If approved, your transaction is added to the database.
 4. Your friend receives 0.1 BTC in their `cryptocurrency wallet`.
 
