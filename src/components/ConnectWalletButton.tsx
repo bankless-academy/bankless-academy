@@ -375,7 +375,7 @@ const ConnectWalletButton = ({
               <Box textAlign="center" m="2">
                 <InternalLink
                   href={`/explorer/${
-                    name?.endsWith('.eth') ? name : address
+                    name?.includes('.') ? name : address
                   }?referral=true`}
                 >
                   <Button

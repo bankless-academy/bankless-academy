@@ -78,7 +78,7 @@ export default async function handler(
   if (!address) return res.status(400).json({ error: 'Wrong params' })
 
   let userExist = null
-  if (address.endsWith('.eth')) {
+  if (address?.includes('.')) {
     // check in DB first
     const [userExist] = await db(TABLES.users)
       .select(

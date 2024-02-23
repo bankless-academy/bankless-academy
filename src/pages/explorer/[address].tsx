@@ -44,7 +44,7 @@ export async function getServerSideProps({ query }) {
   const random = Math.floor(Math.random() * 100000)
 
   const pageMeta: MetaData = {
-    title: `${address?.endsWith('.eth') ? address : shortenAddress(address)}`,
+    title: `${address?.includes('.') ? address : shortenAddress(address)}`,
     description: `${
       badge ? 'Bankless Explorer Badge' : 'Bankless Explorer Profile'
     }`,
@@ -209,9 +209,9 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
             mt="40px"
             mb="8"
           >
-            {user.ensName?.endsWith('.eth')
+            {user.ensName?.includes('.')
               ? user.ensName
-              : profileAddress?.endsWith('.eth')
+              : profileAddress?.includes('.')
               ? profileAddress
               : shortenAddress(profileAddress)}
           </Text>

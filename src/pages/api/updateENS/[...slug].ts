@@ -16,7 +16,7 @@ export default async function handler(
   const addressLowerCase = address.toLowerCase()
   // console.log('address', address)
 
-  if (!address || address.length !== 42 || address.endsWith('.eth')) return res.status(400).json({ error: 'Wrong params' })
+  if (!address || address.length !== 42 || address?.includes('.')) return res.status(400).json({ error: 'Wrong params' })
   const transport = http(`https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`)
   const client = createPublicClient({
     chain: mainnet,

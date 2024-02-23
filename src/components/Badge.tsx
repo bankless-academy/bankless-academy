@@ -38,7 +38,7 @@ const Badge = ({
   const shareLink = IS_WHITELABEL
     ? `${DOMAIN_URL_}/lessons/${langURL}${lesson.slug}`
     : `${DOMAIN_URL_}/explorer/${
-        typeof ensName === 'string' && ensName?.endsWith('.eth')
+        typeof ensName === 'string' && ensName?.includes('.')
           ? ensName
           : address
       }?badge=${lesson.badgeId}&referral=true`
