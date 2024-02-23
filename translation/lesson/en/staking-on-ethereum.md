@@ -33,7 +33,7 @@ Welcome, Explorer, to your next lesson!
 
 Today, we’ll look at the process of “staking” — one simple way to build digital wealth.
 
-`Staking` works just like `mining` does on the Bitcoin network: as a system for processing transactions on the blockchain while generating rewards. It is how we keep the network `decentralized`.
+`Staking` is similar to `mining` on the Bitcoin network: they’re both systems for letting participants process transactions on the blockchain in exchange for rewards. They keep our networks `decentralized`.
 
 However, there’s an important difference between mining and staking. Staking on Ethereum doesn’t require a powerful computer to compete against others. Simply locking Ether (ETH) in a network `smart contract` keeps Ethereum running and rewards you.
 
@@ -43,9 +43,9 @@ However, there’s an important difference between mining and staking. Staking o
 
 Think of `staking` like an “internet bond”.
 
-Just like supporting your government through bonds gives financial returns, supporting `validator nodes` brings rewards! Even better, like government bonds, staking is a way to show financial support for your values and the world you want to live in.
+Just like supporting your government through bonds gives financial returns, supporting Ethereum brings rewards! Even better, like government bonds, staking is a way to show financial support for your values and the world you want to live in.
 
-When you stake Ether, it is assigned to a validator node working to process transactions on Ethereum. The more Ether staked, the more nodes Ethereum can have. Therefore, the more `decentralized` and secure it becomes.
+When you stake Ether, it is assigned to a `validator node` working to process transactions on Ethereum. The more Ether staked, the more nodes Ethereum can have. With more nodes, Ethereum becomes more `decentralized` and secure.
 
 As a `staker`, you become a **guardian of Ethereum!**
 
@@ -168,7 +168,7 @@ Each method requires varying levels of technical knowledge to get set up, along 
 
 If you’re comfortable holding your `private keys` but don’t have 32 ETH, then consider joining others in a staking pool. 
 
-If you’re not yet okay with taking `self-custody` of your crypto, check out Centralized Exchange staking. In the mean time, take our our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson to boldly take self-custody of your crypto!
+If you’re not yet okay with taking `self-custody` of your crypto, check out Centralized Exchange staking. In the mean time, take our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson and boldly take ownership of your crypto!
 
 # Types of Staking (Pt. 2)
 
@@ -236,7 +236,7 @@ What would happen if a single entity controlled a majority of validator nodes?
 
 - [ ] Ethereum would stop processing transactions altogether.
 
-> Try again! Ethereum wouldn’t stop running during such an attack, but its credible neutrality would be lost. 
+> Try again! Ethereum wouldn’t stop running during such an attack, but its credible neutrality would be lost.
 
 - [ ] All of the above.
 
@@ -307,14 +307,15 @@ True or False: Supporting new node operators helps to decentralize Ethereum.
 # rETH - Your Path to Decentralized Staking
 
 It’s time to become a staker — a guardian of Ethereum.
+For today’s quest, we’re taking ownership of a `staking pool` at Rocket Pool.
 
-For today’s quest, we will be dipping our toes—and maybe some of our fingers—into a `staking pool` at Rocket Pool. It’s quite simple. Mint or buy Rocket Pool’s `liquid staking token`: **rETH**. As the first step on your staking journey, you’ll be funding a `validator node` to process transactions. You’ll begin decentralizing Ethereum and earning rewards!
+🪙 It’s simple: Mint or buy Rocket Pool’s `liquid staking token`, **rETH**.
 
-With rETH, staking rewards are added to the value of the token. If you hold 1 rETH today, you will still own 1 rETH in a year. It will just be worth more.
+As the first step on your staking journey, you’ll be funding a `validator node` to process blocks, in exchange for Ether rewards.
 
-Good luck on your quest, Explorer!
+**Note:** With rETH, staking rewards are added to the value of the token. If you hold 1 rETH today, you’ll still own 1 rETH in a year. It will just be worth more.
 
-May your commitment to Ethereum’s decentralized future be greatly rewarded.
+Good luck on your quest, Explorer! May your commitment to Ethereum’s decentralized future be greatly rewarded.
 
 ![](https://app.banklessacademy.com/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-a5172608.svg)
 

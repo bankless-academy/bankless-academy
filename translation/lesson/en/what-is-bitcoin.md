@@ -33,9 +33,9 @@ Welcome, bold Explorer, to the frontier of digital innovation.
 
 At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge for “going bankless!”
 
-Using the new era of the internet and `blockchain technology`, we’re unlocking financial freedom and reclaiming ownership of our data and privacy. Which have long been exploited by third parties for profit. 
+Using the new era of the internet and `blockchain technology`, we’re unlocking financial freedom and reclaiming ownership of our data and privacy — which have long been exploited by third parties for profit.
 
-Today, we’re looking at the first event in blockchain history: the invention of `cryptocurrency,` a type of `money` that moves outside of traditional financial systems. 
+Today, we’re looking at the first event in blockchain history: the invention of `cryptocurrency,` a type of `money` that moves outside of traditional financial systems.
 
 The cryptocurrency boom began with the invention of Bitcoin…
 
@@ -69,22 +69,22 @@ As societies grew, a government’s central bank would issue standardized coins 
 
 # Knowledge Check 1
 
-True or False: 
+True or False:
 ”As money is added to a monetary system, the existing money becomes worth less.”
 
 - [ ] True
 
-	> Correct! The more money there is, the less value it has.
+> Correct! The more money there is, the less value it has.
 
 - [ ] False
 
-	> Try again.
+> Try again.
 
 # A Brief History of Money (Pt. 2)
 
 With the introduction of paper money, currencies shifted to being 'backed' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.
 
-Then, in the 20th century, came the fall of this “`Gold Standard`”. 
+Then, in the 20th century, came the fall of this “`Gold Standard`”.
 
 Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.
 
@@ -94,7 +94,7 @@ Moving into the digital age, electronic currency has vastly replaced physical cu
 
 # The Problem
 
-The main problem with our financial system is the lack of control you have over your money. Central banks control the value of money and, therefore, your spending habits. Subject to human error and greed, mistakes can be made. So, we need money that is beyond the control of a single entity and reliably stores its value over time. 
+The main problem with our financial system is the lack of control you have over your money. Central banks control the value of money and, therefore, your spending habits. Subject to human error and greed, mistakes can be made. So, we need money that is beyond the control of a single entity and reliably stores its value over time.
 
 Meanwhile, banks can restrict access to your funds and control where and when you can make transactions. This setup can hinder your financial growth and contribute to wider economic inequality and reduced living standards.
 
@@ -102,7 +102,7 @@ Meanwhile, banks can restrict access to your funds and control where and when yo
 
 For money to once again be neutral and reliable, it must regain the two key properties it has lost:
 
-💎 **Value:** Money must reliably store its worth over time. 
+💎 **Value:** Money must reliably store its worth over time.
 
 ✊ **Ownership:** Money must be under your complete control. Access to it should be guaranteed and protected.
 
@@ -143,19 +143,19 @@ What quality allows Bitcoin to combat inflation?
 
 - [ ] Its high transaction speed.
 
-	> Incorrect. While speed is a feature, it's not the key factor in preserving value.
+> Incorrect. While speed is a feature, it's not the key factor in preserving value.
 
 - [ ] Its global reach and acceptance.
 
-	> Incorrect. Global reach enhances its usability but doesn't primarily retain its value.
+> Incorrect. Global reach enhances its usability but doesn't primarily retain its value.
 
 - [ ] Its finite limit of 21 million coins.
 
-	> Correct! Bitcoin's capped supply creates scarcity, similar to precious metals, aiding value retention.
+> Correct! Bitcoin's capped supply creates scarcity, similar to precious metals, aiding value retention.
 
 - [ ] Its ability to facilitate online transactions.
 
-	> Incorrect. Online transaction capability is a convenience feature, not directly linked to value retention.
+> Incorrect. Online transaction capability is a convenience feature, not directly linked to value retention.
 
 # Digital Gold: Self-Custody
 
@@ -212,7 +212,7 @@ How is Bitcoin similar to email?
 
 - [ ] Both are fast, globally accessible, and online 24/7.
 
-> Correct! 
+> Correct!
 
 - [ ] Both use physical addresses.
 
@@ -241,7 +241,7 @@ When sending cryptocurrency across this network, your transaction is inspected b
 This is the `cryptocurrency mining` process. It’s what keeps the network running securely. Mining can get quite complicated, so we’ll take a simplified view for today:
 
 1. You submit a transaction to the network, sending 0.1 `BTC` to your friend.
-2. A miner is assigned to check your transaction for errors. Other miners double-check the results.
+2. A miner checks your transaction for errors. Other miners double-check their results.
 3. If approved, your transaction is added to the database.
 4. Your friend receives 0.1 BTC in their `cryptocurrency wallet`.
 
@@ -299,7 +299,7 @@ By embodying these principles, it champions the fundamental values of democracy.
 
 # Sending a Bitcoin Transaction
 
-It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age. 
+It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.
 
 Your transaction will include the following details:
 
@@ -309,7 +309,7 @@ Your transaction will include the following details:
 
 ⛏️ A transaction fee is given to the miners.
 
-Remember to make sure all details are accurate. 
+Remember to make sure all details are accurate.
 Once a Bitcoin transaction is confirmed, it cannot be reversed.
 
 ![](https://app.banklessacademy.com/images/what-is-bitcoin/sending-a-bitcoin-transaction-aad5de00.png)
