@@ -26,6 +26,8 @@ const Nav: React.FC = () => {
   const { t } = useTranslation()
   const { isConnected } = useAccount()
 
+  const isProfilePage = asPath.includes('/explorer/my-profile')
+
   const embed =
     typeof window !== 'undefined'
       ? (queryString.parse(window.location.search)?.embed || '')?.toString()
@@ -97,7 +99,9 @@ const Nav: React.FC = () => {
             <InternalLink href={`/lessons`} alt="Explore Lessons">
               <Button
                 variant={
-                  asPath?.startsWith('/lessons') ? 'secondary' : 'primary'
+                  asPath?.startsWith('/lessons') || isProfilePage
+                    ? 'secondary'
+                    : 'primary'
                 }
                 size={isSmallScreen ? 'sm' : 'md'}
               >

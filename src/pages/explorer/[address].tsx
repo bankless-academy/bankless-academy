@@ -14,6 +14,7 @@ import { CopySimple } from '@phosphor-icons/react'
 import router from 'next/router'
 import { useAccount } from 'wagmi'
 import { t } from 'i18next'
+import { useLocalStorage } from 'usehooks-ts'
 
 import Badges from 'components/Badges'
 import Card from 'components/Card'
@@ -26,7 +27,6 @@ import ExternalLink from 'components/ExternalLink'
 import { MAX_DONATIONS } from 'constants/donations'
 import { MAX_BADGES } from 'constants/badges'
 import { EMPTY_PASSPORT, MAX_STAMPS } from 'constants/passport'
-import { useLocalStorage } from 'usehooks-ts'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -178,6 +178,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
   }
 
   if (user)
+    // TODO: create Profile component
     return (
       <Container maxW="container.lg">
         <Card mt="180px" borderRadius="2xl !important">

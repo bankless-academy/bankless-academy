@@ -34,6 +34,7 @@ import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
 import {
   DEFAULT_AVATAR,
+  DEFAULT_ENS,
   IS_WALLET_DISABLED,
   SIWE_ENABLED,
 } from 'constants/index'
@@ -102,7 +103,8 @@ const ConnectWalletButton = ({
     },
   })
 
-  const isLessonPage = asPath.includes('/lessons/')
+  const isLessonPage = asPath.includes('/lessons')
+  const isProfilePage = asPath.includes('/explorer/my-profile')
 
   // const networkVersion =
   //   typeof window !== 'undefined'
@@ -153,7 +155,7 @@ const ConnectWalletButton = ({
 
     const ensName =
       address.toLowerCase() === '0xb00e26e79352882391604e24b371a3f3c8658e8c'
-        ? 'web3explorer.eth'
+        ? DEFAULT_ENS
         : await fetchEnsName({
             address,
             chainId: 1,
@@ -165,7 +167,7 @@ const ConnectWalletButton = ({
         chainId: 1,
       })
       if (ensAvatar) replaceAvatar(ensAvatar)
-      if (ensName === 'web3explorer.eth') replaceAvatar(DEFAULT_AVATAR)
+      if (ensName === DEFAULT_ENS) replaceAvatar(DEFAULT_AVATAR)
     } else {
       const lensProfile = await getLensProfile(address)
       if (lensProfile.name) {
@@ -405,14 +407,16 @@ const ConnectWalletButton = ({
         <Popover
           returnFocusOnClose={false}
           placement="bottom-end"
-          isOpen={connectWalletPopupLS && isLessonPage}
+          isOpen={connectWalletPopupLS && (isLessonPage || isProfilePage)}
           onClose={() => {
-            onClose()
-            setConnectWalletPopupLS(false)
+            if (!isProfilePage) {
+              onClose()
+              setConnectWalletPopupLS(false)
+            }
           }}
         >
           <Overlay
-            hidden={!(connectWalletPopupLS && isLessonPage)}
+            hidden={!(connectWalletPopupLS && (isLessonPage || isProfilePage))}
             margin="0 !important"
           />
           <PopoverTrigger>
@@ -429,7 +433,7 @@ const ConnectWalletButton = ({
                   : t('Connecting wallet')
               }
               zIndex={2}
-              variant={asPath?.startsWith('/lessons') ? 'primary' : 'secondary'}
+              variant={isLessonPage || isProfilePage ? 'primary' : 'secondary'}
             >
               {t('Connect Wallet')}
             </Button>
