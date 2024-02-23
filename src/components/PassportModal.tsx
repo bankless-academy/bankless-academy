@@ -149,7 +149,7 @@ const PassportModal = ({
           </Box>
           <ExternalLink
             underline="true"
-            href="/faq#36c048c07dea4b289d466a4318e41eb2"
+            href={`/report-an-issue?context=connect_stamps_${window?.location.pathname}`}
           >
             {t('Help')}
           </ExternalLink>
