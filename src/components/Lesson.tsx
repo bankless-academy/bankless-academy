@@ -825,7 +825,10 @@ const Lesson = ({
                     </Box>
                   )}
                   {lesson.badgeId ? (
-                    <MintBadge badgeId={lesson.badgeId} />
+                    <MintBadge
+                      badgeId={lesson.badgeId}
+                      isQuestCompleted={Quest.isQuestCompleted}
+                    />
                   ) : (
                     <h2>
                       {t(
