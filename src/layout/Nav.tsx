@@ -5,6 +5,7 @@ import queryString from 'query-string'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { useAccount } from 'wagmi'
+import { useLocalStorage } from 'usehooks-ts'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import InternalLink from 'components/InternalLink'
@@ -25,6 +26,10 @@ const Nav: React.FC = () => {
   const { asPath } = useRouter()
   const { t } = useTranslation()
   const { isConnected } = useAccount()
+  const [, setConnectWalletPopupLS] = useLocalStorage(
+    `connectWalletPopup`,
+    false
+  )
 
   const isProfilePage = asPath.includes('/explorer/my-profile')
 
@@ -85,7 +90,11 @@ const Nav: React.FC = () => {
         pr={isMobile ? 0 : 1}
       >
         <Flex p={4}>
-          <Box cursor={embed ? 'auto' : 'pointer'}>
+          <Box
+            cursor={embed ? 'auto' : 'pointer'}
+            zIndex={2}
+            onClick={() => setConnectWalletPopupLS(false)}
+          >
             {embed ? (
               logo
             ) : (
@@ -96,7 +105,7 @@ const Nav: React.FC = () => {
           </Box>
           <Spacer />
           <HStack spacing={2} justifyContent="space-between">
-            <InternalLink href={`/lessons`} alt="Explore Lessons">
+            <InternalLink href={`/lessons`} alt="Explore Lessons" zIndex={2}>
               <Button
                 variant={
                   asPath?.startsWith('/lessons') || isProfilePage
@@ -104,6 +113,7 @@ const Nav: React.FC = () => {
                     : 'primary'
                 }
                 size={isSmallScreen ? 'sm' : 'md'}
+                onClick={() => setConnectWalletPopupLS(false)}
               >
                 {isSmallScreen ? t('Lessons') : t('Explore Lessons')}
               </Button>
