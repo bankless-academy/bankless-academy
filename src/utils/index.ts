@@ -735,3 +735,16 @@ export const getTokenBalance = async (network: AlchemyNetwork, ownerAddress: str
   // TEMP: hardcode 18 decimals for token
   return parseInt(res?.tokenBalances[0]?.tokenBalance, 16) / Math.pow(10, 18)
 }
+
+export const generateTwitterLink = (text: string, link: string) => {
+  return `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+    `${text}
+`
+  )}&url=${encodeURIComponent(link)}`
+}
+
+export const generateFarcasterLink = (text: string, link: string) => {
+  return `https://warpcast.com/~/compose?text=${encodeURIComponent(
+    text?.replace('@BanklessAcademy', '@banklessacademy')
+  )}&embeds%5B%5D=${encodeURIComponent(link)}`
+}

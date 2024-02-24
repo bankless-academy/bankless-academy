@@ -11,6 +11,7 @@ import { BADGE_OPENSEA_URL, BADGE_TO_KUDOS_IDS } from 'constants/badges'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
+import { generateFarcasterLink, generateTwitterLink } from 'utils/index'
 
 const Badge = ({
   lesson,
@@ -44,24 +45,12 @@ const Badge = ({
       }?badge=${lesson.badgeId}&referral=true`
 
   const share = `I've just claimed my "${lesson.name}" onchain credential at @${TWITTER_ACCOUNT} 🎉
-${shareLink}
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 
-  const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-    share
-  )}`
+  const twitterLink = generateTwitterLink(share, shareLink)
 
-  const farcasterLink =
-    twitterLink
-      ?.replace(
-        'https://twitter.com/intent/tweet?url=',
-        'https://warpcast.com/~/compose?text='
-      )
-      ?.replace('BanklessAcademy', 'banklessacademy')
-      ?.replace(encodeURIComponent(shareLink + '\n'), '') +
-    '&embeds%5B%5D=' +
-    encodeURIComponent(shareLink)
+  const farcasterLink = generateFarcasterLink(share, shareLink)
 
   const BadgeHelper = (
     <Helper

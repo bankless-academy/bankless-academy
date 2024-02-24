@@ -14,10 +14,15 @@ import { switchNetwork } from '@wagmi/core'
 import { useTranslation } from 'react-i18next'
 
 import MintCollectibleModal from 'components/MintCollectibleModal'
-import { getLessonsCollectors, isHolderOfNFT } from 'utils'
+import {
+  generateFarcasterLink,
+  generateTwitterLink,
+  getLessonsCollectors,
+  isHolderOfNFT,
+  getLessonsCollected,
+} from 'utils/index'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
-import { getLessonsCollected } from 'utils'
 import {
   IS_WHITELABEL,
   MD_ENABLED,
@@ -140,24 +145,12 @@ const CollectLessonButton = ({
   const shareLink =
     'https://app.banklessacademy.com/lessons/layer-2-blockchains-datadisk'
   const share = `I’ve just collected ${numberIOwn} of 100 ‘${lesson.name}’ DataDisks from @BanklessAcademy.
-${shareLink}
 
 Become a Guardian of Bankless Academy today - join the effort to circulate Bankless Academy content and retroactively fund education public goods!`
 
-  const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-    share
-  )}`
+  const twitterLink = generateTwitterLink(share, shareLink)
 
-  const farcasterLink =
-    twitterLink
-      ?.replace(
-        'https://twitter.com/intent/tweet?url=',
-        'https://warpcast.com/~/compose?text='
-      )
-      ?.replace('BanklessAcademy', 'banklessacademy')
-      ?.replace(encodeURIComponent(shareLink + '\n'), '') +
-    '&embeds%5B%5D=' +
-    encodeURIComponent(shareLink)
+  const farcasterLink = generateFarcasterLink(share, shareLink)
 
   // TODO: TRANSLATE
   const CollectiblesHelper = (

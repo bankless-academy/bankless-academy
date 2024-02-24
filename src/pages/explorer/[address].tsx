@@ -21,7 +21,11 @@ import Card from 'components/Card'
 import { MetaData } from 'components/Head'
 import { DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { UserType } from 'entities/user'
-import { shortenAddress } from 'utils'
+import {
+  generateFarcasterLink,
+  generateTwitterLink,
+  shortenAddress,
+} from 'utils/index'
 import ProgressTitle from 'components/ProgressTitle'
 import ExternalLink from 'components/ExternalLink'
 import { MAX_DONATIONS } from 'constants/donations'
@@ -142,26 +146,14 @@ export default function Page({
     collectibles.push(user?.stats.handbooks[i])
   }
 
-  const shareLink = typeof window !== 'undefined' && window.location.href
-  ;('https://app.banklessacademy.com/lessons/layer-2-blockchains-datadisk')
+  const shareLink = typeof window !== 'undefined' ? window.location.href : ''
   const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
-${shareLink}
 
 Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
-  const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-    share
-  )}`
 
-  const farcasterLink =
-    twitterLink
-      ?.replace(
-        'https://twitter.com/intent/tweet?url=',
-        'https://warpcast.com/~/compose?text='
-      )
-      ?.replace('BanklessAcademy', 'banklessacademy')
-      ?.replace(encodeURIComponent(shareLink + '\n'), '') +
-    '&embeds%5B%5D=' +
-    encodeURIComponent(shareLink)
+  const twitterLink = generateTwitterLink(share, shareLink)
+
+  const farcasterLink = generateFarcasterLink(share, shareLink)
 
   if (
     referral?.length &&
