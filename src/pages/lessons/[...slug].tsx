@@ -159,7 +159,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const pageMeta: MetaData = {
     title: currentLesson.name,
     description: currentLesson.description,
-    image: currentLesson.socialImageLink || DEFAULT_METADATA.image,
+    image: isDatadisk
+      ? 'https://app.banklessacademy.com/images/layer-2-blockchains/social-datadisk.jpg'
+      : currentLesson.socialImageLink || DEFAULT_METADATA.image,
     isLesson: !currentLesson.isArticle,
     lesson: currentLesson,
     isDatadisk,
