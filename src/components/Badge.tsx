@@ -58,7 +58,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
         'https://twitter.com/intent/tweet?url=',
         'https://warpcast.com/~/compose?text='
       )
-      ?.replace('BanklessAcademy', 'banklessacademy.eth')
+      ?.replace('BanklessAcademy', 'banklessacademy')
       ?.replace(encodeURIComponent(shareLink + '\n'), '') +
     '&embeds%5B%5D=' +
     encodeURIComponent(shareLink)

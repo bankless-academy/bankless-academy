@@ -158,7 +158,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
         'https://twitter.com/intent/tweet?url=',
         'https://warpcast.com/~/compose?text='
       )
-      ?.replace('BanklessAcademy', 'banklessacademy.eth')
+      ?.replace('BanklessAcademy', 'banklessacademy')
       ?.replace(encodeURIComponent(shareLink + '\n'), '') +
     '&embeds%5B%5D=' +
     encodeURIComponent(shareLink)
