@@ -52,7 +52,8 @@ const Stats = (): JSX.Element => {
           )}
           <Box mt={8}>
             <Text fontSize="lg" color="orange.300">
-              Number of {IS_WHITELABEL ? 'lesson' : 'quest'} completion
+              {IS_WHITELABEL ? 'lesson' : 'Quest'} completion{' '}
+              {IS_WHITELABEL ? '' : '/ lesson'}
             </Text>
             {LESSONS.filter(
               (lesson) =>
@@ -63,11 +64,25 @@ const Stats = (): JSX.Element => {
             ).map((lesson, index) => {
               const lessonCompleted =
                 stats?.lessonCompleted[lesson.notionId] || 0
+              const userConverted = stats?.userConverted[lesson.notionId] || 0
+              const badgeClaimed = stats?.badgeClaimed[lesson.notionId] || 0
               return (
                 <>
                   <p>
                     {`${index + 1}. ${lesson.englishName}: `}
-                    {lessonCompleted}
+                    <br />
+                    quest completed: {lessonCompleted}
+                    <br />
+                    badge claimed: {badgeClaimed}
+                    <br />
+                    {lesson.notionId === 'e90059604739465ea99b9a2c8af5eb75' &&
+                      userConverted > 0 && (
+                        <>
+                          user converted: {userConverted}
+                          <br />
+                        </>
+                      )}
+                    <br />
                   </p>
                 </>
               )
