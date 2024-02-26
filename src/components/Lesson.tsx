@@ -639,9 +639,16 @@ const Lesson = ({
             ? t(`${lowerCaseKeywordSingular}.definition`, { ns: 'keywords' })
             : englishDefition
           : englishDefition
+      const nextHasPunctuation =
+        node.next?.data && ['.', ',', ':'].includes(node.next.data)
+      const extra = nextHasPunctuation ? node.next.data : ''
+      if (nextHasPunctuation) node.next.data = ''
       if (!definition?.length) console.log('Missing definition:', keyword)
       return definition?.length ? (
-        <Keyword definition={definition} keyword={keyword} />
+        <span style={{ whiteSpace: 'nowrap' }}>
+          <Keyword definition={definition} keyword={keyword} />
+          {extra}
+        </span>
       ) : (
         <span className="is-missing">{keyword}</span>
       )
