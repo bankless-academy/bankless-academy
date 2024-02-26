@@ -71,14 +71,16 @@ const Stats = (): JSX.Element => {
                   <p>
                     {`${index + 1}. ${lesson.englishName}: `}
                     <br />
-                    quest completed: {lessonCompleted}
+                    &nbsp;|- quest completed: {lessonCompleted}
                     <br />
-                    badge claimed: {badgeClaimed}
+                    &nbsp;|- badge claimed: {badgeClaimed}
+                    {/* <br />&nbsp;|- claim conversion rate:{' '}
+                    {(badgeClaimed / lessonCompleted) * 100}% */}
                     <br />
                     {lesson.notionId === 'e90059604739465ea99b9a2c8af5eb75' &&
                       userConverted > 0 && (
                         <>
-                          user converted: {userConverted}
+                          &nbsp;|- user converted via the quest: {userConverted}
                           <br />
                         </>
                       )}
