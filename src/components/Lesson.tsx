@@ -31,7 +31,7 @@ import Card from 'components/Card'
 import MintBadge from 'components/MintBadge'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
-import { isHolderOfNFT, Mixpanel, scrollTop } from 'utils'
+import { isHolderOfNFT, Mixpanel, scrollDown, scrollTop } from 'utils'
 import { IS_WHITELABEL, KEYWORDS, TOKEN_GATING_ENABLED } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, RewardsIcon } from 'components/Icons'
 import { theme } from 'theme/index'
@@ -377,12 +377,14 @@ const Lesson = ({
   const clickLeft = () => {
     if (isAnimationSlide && animationStepLS > 0) {
       setAnimationStepLS(animationStepLS - 1)
+      if (isSmallScreen) scrollDown()
     } else goToPrevSlide()
   }
 
   const clickRight = () => {
     if (isAnimationSlide && animationStepLS + 1 < animationSteps) {
       setAnimationStepLS(animationStepLS + 1)
+      if (isSmallScreen) scrollDown()
     } else goToNextSlide()
   }
 
