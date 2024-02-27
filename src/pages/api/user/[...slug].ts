@@ -135,6 +135,14 @@ export default async function handler(
     }
   }
 
+  // referrals
+  const referralsAddresses = await db(TABLES.users)
+    .select(
+      TABLE.users.address, TABLE.users.ens_name)
+    .where(TABLE.users.referrer, '=', userExist.id)
+  const referrals = referralsAddresses.map(r => r.ens_name || r.address)
+  console.log('referrals', referrals)
+
   const oldBadgeTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase] : []
   console.log(oldBadgeTokenIds)
   const badgeTokenIds = [...new Set([
@@ -239,6 +247,9 @@ export default async function handler(
       },
       "score": 37
     }
+  }
+  if (referrals?.length) {
+    stats.referrals = referrals
   }
   stats.score = calculateExplorerScore(stats)
 

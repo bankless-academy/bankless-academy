@@ -42,6 +42,7 @@ type UnitConversion = {
   donations_count?: number
   valid_stamps?: string[]
   valid_stamps_count?: number
+  referrals?: number
 }
 
 const columnHelper = createColumnHelper<UnitConversion>()
@@ -152,6 +153,10 @@ const columns = [
       )
     },
     header: 'Stamps',
+  }),
+  columnHelper.accessor('referrals', {
+    cell: (info) => info.getValue(),
+    header: 'Referrals',
   }),
   columnHelper.accessor('badges', {
     cell: (info) => info.getValue(),

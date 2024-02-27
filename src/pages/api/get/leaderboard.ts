@@ -125,6 +125,20 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
         if (address in leaderboard)
           leaderboard[address].valid_stamps = ALLOWED_PLATFORMS.map(value => stamps.includes(STAMP_PLATFORMS[value].provider) ? value : null).filter(v => v) || []
       }
+      const referrals = await db(TABLES.users)
+        .select(TABLE.users.referrer, 'r.address')
+        .count(TABLE.users.referrer)
+        .distinct(TABLE.users.referrer)
+        .leftJoin('users AS r', 'users.referrer', 'r.id')
+        .whereNotNull(TABLE.users.referrer)
+        .groupBy(TABLE.users.referrer)
+        .groupBy('r.address')
+      console.log(referrals)
+      for (const referral of referrals) {
+        const address = referral.address?.toLowerCase()
+        if (address in leaderboard)
+          leaderboard[address].referrals = referral.count
+      }
       const rank = []
       for (const address of Object.keys(leaderboard)) {
         // score

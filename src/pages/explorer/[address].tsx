@@ -105,6 +105,14 @@ export default function Page({
             const redirect = `/explorer/${profileAddress}?referral=true`
             window.history.replaceState(null, null, redirect)
           }
+          if (user?.stats?.referrals?.length) {
+            user?.stats?.referrals.map((r) => {
+              console.log(
+                'Explorer onboarded: ',
+                `https://app.banklessacademy.com/explorer/${r}`
+              )
+            })
+          }
           setFullProfileAddress(user.address)
           setUser(user)
         }
