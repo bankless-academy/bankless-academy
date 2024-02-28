@@ -80,21 +80,12 @@ const CollectLessonButton = ({
     `isLessonMinted-${lesson.lessonCollectibleTokenAddress}`,
     false
   )
-  const [isBadgeMintedLS] = useLocalStorage(
-    `isBadgeMinted-${lesson.badgeId}`,
-    false
-  )
   const [tokenId, setTokenId] = useState('1')
   const {
     isOpen: isOpenMintCollectibleModal,
     onOpen: onOpenMintCollectibleModal,
     onClose: onCloseMintCollectibleModal,
   } = useDisclosure()
-  // const {
-  //   isOpen: isOpenLessonCollectibleModal,
-  //   onOpen: onOpenLessonCollectibleModal,
-  //   onClose: onCloseLessonCollectibleModal,
-  // } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const [numberIOwn, setNumberIOwn] = useState(1)
   const { address } = useAccount()
@@ -207,41 +198,16 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
     <Box maxW="450px" m="auto">
       <Box w="100%" position="relative">
         {CollectiblesHelper}
-        <Button
-          variant="primaryGold"
-          w="100%"
-          borderBottomRadius="0"
-          height="51px"
-          onClick={async () => {
-            onOpenMintCollectibleModal()
-            if (chain?.id !== 10 && address)
-              await switchNetwork({ chainId: 10 })
-          }}
-        >
-          <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            fontSize="lg"
-          >
-            <Box fontWeight="bold">{t('Collect DataDisk')}</Box>
-            <Box ml="4">
-              ({numberOfOwners}/{t('100 claimed')})
-            </Box>
-          </Box>
-        </Button>
         <Box
           m="auto"
           maxW="500px"
-          borderX="1px solid #4b474b"
-          borderBottom="1px solid #4b474b"
-          borderBottomRadius={isBadgeMintedLS && isLessonMintedLS ? 0 : '8px'}
+          border="1px solid #4b474b"
+          borderRadius={isLessonMintedLS ? '8px 8px 0 0' : '8px'}
+          borderBottom={isLessonMintedLS ? '0' : '1px solid #4b474b'}
           position="relative"
         >
           <>
             <Box
-              py="2"
-              opacity={isBadgeMintedLS ? '1' : '0.6'}
               cursor="pointer"
               onClick={async () => {
                 onOpenMintCollectibleModal()
@@ -270,15 +236,40 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
                 </Button>
               </ExternalLink>
             )}
+            <Box display="flex" p="4">
+              <Button
+                variant="primaryGold"
+                w="full"
+                height="51px"
+                m="auto"
+                onClick={async () => {
+                  onOpenMintCollectibleModal()
+                  if (chain?.id !== 10 && address)
+                    await switchNetwork({ chainId: 10 })
+                }}
+              >
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  fontSize="lg"
+                >
+                  <Box fontWeight="bold">{t('Claim DataDisk')}</Box>
+                  <Box ml="2">
+                    ({numberOfOwners}/{t('100 claimed')})
+                  </Box>
+                </Box>
+              </Button>
+            </Box>
           </>
         </Box>
-        {isBadgeMintedLS && isLessonMintedLS && (
+        {isLessonMintedLS && (
           <Box
             border="1px solid #4b474b"
             borderBottomRadius="8px"
             borderTopWidth="0"
             textAlign="center"
-            p="10px"
+            p="16px"
           >
             <Box pb="2">
               <ExternalLink href={twitterLink} mr="2">

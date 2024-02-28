@@ -13,7 +13,7 @@ import {
   Box,
   useMediaQuery,
 } from '@chakra-ui/react'
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const QuestionIcon = (props) => (
@@ -98,11 +98,13 @@ const Helper = ({
   definition,
   fullscreen,
   isProfile,
+  triggerOpen,
 }: {
   title: ReactNode
   definition: ReactNode
   fullscreen?: boolean
   isProfile?: boolean
+  triggerOpen?: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
   const {
@@ -111,6 +113,12 @@ const Helper = ({
     onClose: onCloseHelpModal,
   } = useDisclosure()
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
+
+  useEffect(() => {
+    if (triggerOpen) {
+      onOpenHelpModal()
+    }
+  }, [triggerOpen])
 
   return (
     <>
