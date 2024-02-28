@@ -81,7 +81,8 @@ const ConnectWalletButton = ({
     `connectWalletPopup`,
     false
   )
-  const [ens, setEns] = useLocalStorage(`ens-cache`, {})
+  const [nameCache, setNameCache] = useLocalStorage(`name-cache`, {})
+  const [ens, setEns] = useState('')
   const [, setBadgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [, setKudosMintedLS] = useLocalStorage('kudosMinted', [])
   const [refreshBadgesLS, setRefreshBadgesLS] = useLocalStorage(
@@ -148,9 +149,9 @@ const ConnectWalletButton = ({
         avatar = newAvatar
       }
     }
-    if (ens[address]?.name) setName(ens[address].name)
+    if (nameCache[address]?.name) setName(nameCache[address].name)
     else setName(name)
-    if (ens[address]?.avatar) setAvatar(ens[address].avatar)
+    if (nameCache[address]?.avatar) setAvatar(nameCache[address].avatar)
     else setAvatar(avatar)
 
     const ensName =
@@ -161,6 +162,7 @@ const ConnectWalletButton = ({
             chainId: 1,
           })
     if (ensName) {
+      setEns(ensName)
       replaceName(ensName)
       const ensAvatar = await fetchEnsAvatar({
         name: ensName,
@@ -169,6 +171,7 @@ const ConnectWalletButton = ({
       if (ensAvatar) replaceAvatar(ensAvatar)
       if (ensName === DEFAULT_ENS) replaceAvatar(DEFAULT_AVATAR)
     } else {
+      setEns('')
       const lensProfile = await getLensProfile(address)
       if (lensProfile.name) {
         replaceName(lensProfile.name)
@@ -185,9 +188,9 @@ const ConnectWalletButton = ({
         }
       }
     }
-    const ensCache = JSON.parse(JSON.stringify(ens))
-    ensCache[address] = { name, avatar }
-    setEns(ensCache)
+    const newNameCache = JSON.parse(JSON.stringify(nameCache))
+    newNameCache[address] = { name, avatar }
+    setNameCache(newNameCache)
   }
 
   function refreshBadges() {
@@ -375,9 +378,7 @@ const ConnectWalletButton = ({
               <Box textAlign="center" m="2">
                 <InternalLink
                   href={`/explorer/${
-                    name?.includes('.') && !name?.includes('...')
-                      ? name
-                      : address
+                    ens?.includes('.') ? ens : address
                   }?referral=true`}
                 >
                   <Button
