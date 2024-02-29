@@ -93,7 +93,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
               loop={false}
               keepLastFrame={true}
               controls={false}
-              src={`/lotties/bitcoin_step${animationStep}.json`}
+              src={`/animations/bitcoin/step-${animationStep}.json`}
               style={{ height: '400px', width: '400px' }}
               onEvent={(event) => {
                 if (event === 'complete') {
