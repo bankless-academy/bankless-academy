@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import { useEffect, useState } from 'react'
 import {
   Modal,
   ModalOverlay,
@@ -9,21 +10,35 @@ import {
   useMediaQuery,
   Box,
   Image,
-  // NumberInput,
-  // NumberInputField,
-  // NumberDecrementStepper,
-  // NumberIncrementStepper,
-  // NumberInputStepper,
-  // Button,
-  // Divider,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  Button,
+  Divider,
+  NumberDecrementStepper,
+  useToast,
+  ModalFooter,
 } from '@chakra-ui/react'
-import { Lock } from '@phosphor-icons/react'
+import { switchNetwork } from '@wagmi/core'
+import { optimism } from 'wagmi/chains'
+import {
+  usePrepareContractWrite,
+  useContractWrite,
+  useWaitForTransaction,
+  useAccount,
+  useNetwork,
+} from 'wagmi'
 import { useTranslation } from 'react-i18next'
+import { parseEther } from 'viem'
+import { Gear, SealCheck } from '@phosphor-icons/react'
 
 import { LessonType } from 'entities/lesson'
 import Collectible from 'components/Collectible'
 import { useLocalStorage } from 'usehooks-ts'
-// import Collectible from 'components/Collectible'
+import ExternalLink from 'components/ExternalLink'
+import { useSmallScreen } from 'hooks/index'
+import { NB_DATADISK_MAX } from 'constants/index'
 
 const MintCollectibleModal = ({
   isOpen,
@@ -37,13 +52,138 @@ const MintCollectibleModal = ({
   numberOfOwners: number
 }): React.ReactElement => {
   const { t } = useTranslation()
-  const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
-  const [isBadgeMintedLS] = useLocalStorage(
-    `isBadgeMinted-${lesson.badgeId}`,
-    false
+  const { address } = useAccount()
+  const { chain } = useNetwork()
+  const [isSmallScreen] = useSmallScreen()
+  const toast = useToast()
+  const [isMinting, setIsMinting] = useState(false)
+  const [nbDatadiskMintedLS] = useLocalStorage(
+    `nbDatadiskMinted-${lesson.lessonCollectibleTokenAddress}`,
+    0
   )
+  const [nbMint, setNbMint] = useState(1)
+  const [nextId, setNextId] = useState(null)
+  const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
+  const [mintingError, setMintingError] = useState('')
+  const [, setRefreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
   const remaining = 100 - numberOfOwners
   console.log(remaining)
+
+  const { config } = usePrepareContractWrite({
+    address: '0xFafd47bb399d570b5AC95694c5D2a1fb5EA030bB',
+    abi: [
+      {
+        inputs: [
+          { internalType: 'uint256', name: 'vectorId', type: 'uint256' },
+          { internalType: 'uint48', name: 'numTokensToMint', type: 'uint48' },
+          { internalType: 'address', name: 'mintRecipient', type: 'address' },
+        ],
+        name: 'vectorMint721',
+        outputs: [],
+        stateMutability: 'payable',
+        type: 'function',
+      },
+    ],
+    functionName: 'vectorMint721',
+    args: [123, nbMint, address],
+    chainId: optimism.id,
+    // 0.003 + 0.0008 in collector fee
+    value: parseEther(`${0.0308 * nbMint}`),
+    overrides: {
+      gasLimit: 150000n,
+    },
+    onError(error) {
+      console.error('Error', error)
+      setMintingError(error.message?.split('\n')[0])
+    },
+    onSuccess() {
+      setMintingError('')
+    },
+  })
+  const { data, write } = useContractWrite(config)
+
+  const { isLoading, isSuccess } = useWaitForTransaction({
+    hash:
+      // DEV: simulate tx
+      // '0xbbac72d366946360a3e67f34f974f7d3867bb958cec8a56a7386d64349e0b3a0' ||
+      data?.hash,
+  })
+
+  useEffect(() => {
+    // HACK: guess tokenId
+    setNextId(1 + 100 - remaining)
+  }, [])
+
+  useEffect(() => {
+    if (isLoading) {
+      toast.closeAll()
+      const txLink = `https://optimistic.etherscan.io/tx/${data?.hash}`
+      toast({
+        description: (
+          <>
+            <Box>
+              <Box display="flex">
+                <Box mr="4">
+                  <Gear width="40px" height="auto" />
+                </Box>
+                <Box flexDirection="column">
+                  <Box>{t('Minting in progress:')}</Box>
+                  <ExternalLink
+                    underline="true"
+                    href={txLink}
+                    alt="Transaction in progress"
+                  >
+                    {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
+                  </ExternalLink>
+                </Box>
+              </Box>
+            </Box>
+          </>
+        ),
+        status: 'warning',
+        duration: null,
+        isClosable: true,
+      })
+    }
+  }, [isLoading])
+
+  useEffect(() => {
+    if (isSuccess) {
+      toast.closeAll()
+      const txLink = `https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${nextId}`
+      setRefreshDatadiskLS(true)
+      toast({
+        description: (
+          <>
+            <Box>
+              <Box display="flex">
+                <Box mr="4">
+                  <SealCheck width="40px" height="auto" />
+                </Box>
+                <Box flexDirection="column">
+                  <Box>{t('DataDisk minted:')}</Box>
+                  <ExternalLink
+                    underline="true"
+                    href={txLink}
+                    alt="Transaction in progress"
+                  >
+                    {`${txLink.substring(0, 50)}...`}
+                  </ExternalLink>
+                </Box>
+              </Box>
+            </Box>
+          </>
+        ),
+        status: 'success',
+        duration: 10000,
+        isClosable: true,
+      })
+      setTimeout(() => {
+        onClose()
+      }, 1000)
+    }
+  }, [isSuccess])
+
   // TODO: TRANSLATE
   return (
     <Modal
@@ -84,13 +224,13 @@ const MintCollectibleModal = ({
             />
           </Box>
           <Box
-            mb={isBadgeMintedLS ? '-25px' : '0px'}
-            opacity={isBadgeMintedLS ? '1' : '0.6'}
+            mb={nbDatadiskMintedLS > 0 ? '-25px' : '0px'}
+            opacity={nbDatadiskMintedLS > 0 ? '1' : '0.6'}
           >
             <Collectible lesson={lesson} />
           </Box>
           <Box w="90%" m="auto">
-            {isBadgeMintedLS ? null : (
+            {/* {isBadgeMintedLS ? null : (
               <Box
                 display="flex"
                 w="100%"
@@ -105,8 +245,8 @@ const MintCollectibleModal = ({
                 <Lock />
                 <Box ml="1">{t('Claim your lesson badge to unlock')}</Box>
               </Box>
-            )}
-            {/* <Box
+            )} */}
+            <Box
               display="flex"
               pt="4"
               w="100%"
@@ -116,16 +256,25 @@ const MintCollectibleModal = ({
               <Box>
                 <Box display="flex" alignItems="baseline">
                   <Box fontSize="2xl" fontWeight="bold">
-                    0.03
+                    {0.03 * nbMint}
                   </Box>
                   <Box fontSize="lg" ml="1">
                     ETH
                   </Box>
                 </Box>
-                <Box fontSize="xs">+ 0.0008 ETH mint fee</Box>
+                {/* TODO: make it dynamic */}
+                <Box fontSize="xs">+ {0.0008 * nbMint} ETH mint fee</Box>
               </Box>
               <Box w="80px">
-                <NumberInput defaultValue={1} max={2} min={1}>
+                <NumberInput
+                  defaultValue={nbMint}
+                  isDisabled={NB_DATADISK_MAX - nbDatadiskMintedLS < 1}
+                  max={NB_DATADISK_MAX - nbDatadiskMintedLS}
+                  min={1}
+                  onChange={(newValue) => {
+                    setNbMint(parseInt(newValue))
+                  }}
+                >
                   <NumberInputField />
                   <NumberInputStepper>
                     <NumberIncrementStepper />
@@ -135,12 +284,60 @@ const MintCollectibleModal = ({
               </Box>
             </Box>
             <Box textAlign="center" pt="4">
-              <Button size="lg" variant="primaryWhite">
+              <Button
+                size="lg"
+                variant="primaryWhite"
+                isDisabled={NB_DATADISK_MAX - nbDatadiskMintedLS < 1}
+                onClick={async () => {
+                  try {
+                    if (chain.id !== optimism.id) {
+                      await switchNetwork({ chainId: optimism.id })
+                      setIsMinting(false)
+                      toast({
+                        title: t('You were previously on the wrong network.'),
+                        description: (
+                          <>
+                            <Box>
+                              {t('Refresh the page before trying again.')}
+                            </Box>
+                          </>
+                        ),
+                        status: 'error',
+                        duration: null,
+                        isClosable: true,
+                      })
+                    } else if (!isMinting) {
+                      setIsMinting(true)
+                      setTimeout(() => {
+                        setIsMinting(false)
+                      }, 3000)
+                      if (mintingError !== '') {
+                        toast({
+                          title: t('⚠️ Problem while minting:'),
+                          description: (
+                            <>
+                              <Box>{mintingError}</Box>
+                              <Box>
+                                {t('Refresh the page before trying again.')}
+                              </Box>
+                            </>
+                          ),
+                          status: 'error',
+                          duration: null,
+                          isClosable: true,
+                        })
+                      } else write?.()
+                    }
+                  } catch (error) {
+                    console.error(error)
+                  }
+                }}
+              >
                 Mint DataDisk
               </Button>
             </Box>
             <Box fontSize="md" pt="4">
-              * 2 mints allowed per wallet
+              {`* ${NB_DATADISK_MAX} mints allowed per wallet`}
             </Box>
             <Divider my="4" />
             <Box justifyContent="space-between" display="flex" fontSize="sm">
@@ -161,24 +358,18 @@ const MintCollectibleModal = ({
                 h="100%"
                 w={`${numberOfOwners}%`}
               ></Box>
-            </Box> */}
+            </Box>
           </Box>
-          {lesson.lessonCollectibleMintID && (
-            <iframe
-              src={`/mint.html?collection=${lesson.lessonCollectibleMintID}${
-                isMobileScreen ? `&mobile=true` : ''
-              }`}
-              frameBorder="0"
-              style={{
-                width: isMobileScreen ? '100%' : '400px',
-                height: isMobileScreen ? '378px' : '370px',
-                margin: 'auto',
-                colorScheme: 'none',
-                overflow: 'hidden',
-              }}
-            ></iframe>
-          )}
         </ModalBody>
+        <ModalFooter>
+          <ExternalLink
+            underline="true"
+            href={`/report-an-issue?context=datadisk-minting_${window?.location.pathname}`}
+            alt={t('Report an Issue')}
+          >
+            {t('Help')}
+          </ExternalLink>
+        </ModalFooter>
       </ModalContent>
     </Modal>
   )

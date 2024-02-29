@@ -26,6 +26,7 @@ import Helper from 'components/Helper'
 import {
   IS_WHITELABEL,
   MD_ENABLED,
+  NB_DATADISK_MAX,
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
 import Collectible from 'components/Collectible'
@@ -76,13 +77,9 @@ const CollectLessonButton = ({
   lesson: LessonType
 }): JSX.Element => {
   const { t } = useTranslation()
-  const [isLessonMintedLS, setIsLessonMintedLS] = useLocalStorage(
-    `isLessonMinted-${lesson.lessonCollectibleTokenAddress}`,
-    false
-  )
-  const [isBadgeMintedLS] = useLocalStorage(
-    `isBadgeMinted-${lesson.badgeId}`,
-    false
+  const [nbDatadiskMintedLS, setNbDatadiskMintedLS] = useLocalStorage(
+    `nbDatadiskMinted-${lesson.lessonCollectibleTokenAddress}`,
+    0
   )
   const [tokenId, setTokenId] = useState('1')
   const {
@@ -90,15 +87,14 @@ const CollectLessonButton = ({
     onOpen: onOpenMintCollectibleModal,
     onClose: onCloseMintCollectibleModal,
   } = useDisclosure()
-  // const {
-  //   isOpen: isOpenLessonCollectibleModal,
-  //   onOpen: onOpenLessonCollectibleModal,
-  //   onClose: onCloseLessonCollectibleModal,
-  // } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const [numberIOwn, setNumberIOwn] = useState(1)
   const { address } = useAccount()
   const [, setLessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
+  const [refreshDatadiskLS, setRefreshDatadiskLS] = useLocalStorage(
+    'refreshDatadisk',
+    false
+  )
   const { chain } = useNetwork()
 
   useEffect(() => {
@@ -116,7 +112,7 @@ const CollectLessonButton = ({
     const NFTCollectors = await getLessonsCollectors(
       lesson.lessonCollectibleTokenAddress
     )
-    setIsLessonMintedLS(false)
+    setNbDatadiskMintedLS(0)
     for (const NFTCollector of NFTCollectors) {
       if (address && NFTCollector.ownerAddress === address.toLowerCase()) {
         setTokenId(
@@ -124,7 +120,7 @@ const CollectLessonButton = ({
         )
         if (NFTCollector.tokenBalances?.length >= 1)
           setNumberIOwn(NFTCollector.tokenBalances?.length)
-        setIsLessonMintedLS(true)
+        setNbDatadiskMintedLS(NFTCollector.tokenBalances?.length)
       }
     }
     if (NFTCollectors) {
@@ -137,9 +133,11 @@ const CollectLessonButton = ({
     }
   }
   useEffect(() => {
-    if (lesson.lessonCollectibleTokenAddress)
+    if (lesson.lessonCollectibleTokenAddress) {
+      setRefreshDatadiskLS(false)
       updateLessonsCollectors().catch(console.error)
-  }, [address])
+    }
+  }, [address, refreshDatadiskLS])
 
   // TODO: TRANSLATE
   const shareLink =
@@ -207,50 +205,29 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
     <Box maxW="450px" m="auto">
       <Box w="100%" position="relative">
         {CollectiblesHelper}
-        <Button
-          variant="primaryGold"
-          w="100%"
-          borderBottomRadius="0"
-          height="51px"
-          onClick={async () => {
-            onOpenMintCollectibleModal()
-            if (chain?.id !== 10 && address)
-              await switchNetwork({ chainId: 10 })
-          }}
-        >
-          <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            fontSize="lg"
-          >
-            <Box fontWeight="bold">{t('Collect DataDisk')}</Box>
-            <Box ml="4">
-              ({numberOfOwners}/{t('100 claimed')})
-            </Box>
-          </Box>
-        </Button>
         <Box
           m="auto"
           maxW="500px"
-          borderX="1px solid #4b474b"
-          borderBottom="1px solid #4b474b"
-          borderBottomRadius={isBadgeMintedLS && isLessonMintedLS ? 0 : '8px'}
+          border="1px solid #4b474b"
+          borderRadius={nbDatadiskMintedLS > 0 ? '8px 8px 0 0' : '8px'}
+          borderBottom={nbDatadiskMintedLS > 0 ? '0' : '1px solid #4b474b'}
           position="relative"
         >
           <>
-            <Box
-              py="2"
-              opacity={isBadgeMintedLS ? '1' : '0.6'}
-              cursor="pointer"
-              onClick={async () => {
-                onOpenMintCollectibleModal()
-                if (chain?.id !== 10 && address)
-                  await switchNetwork({ chainId: 10 })
-              }}
-            >
+            {nbDatadiskMintedLS < NB_DATADISK_MAX ? (
+              <Box
+                cursor="pointer"
+                onClick={async () => {
+                  onOpenMintCollectibleModal()
+                  if (chain?.id !== 10 && address)
+                    await switchNetwork({ chainId: 10 })
+                }}
+              >
+                <Collectible lesson={lesson} />
+              </Box>
+            ) : (
               <Collectible lesson={lesson} />
-            </Box>
+            )}
             {MD_ENABLED && lesson.hasCollectible && (
               <ExternalLink
                 href={`https://github.com/bankless-academy/bankless-academy/blob/main/translation/lesson/en/${lesson.slug}.md?plain=1`}
@@ -270,15 +247,42 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
                 </Button>
               </ExternalLink>
             )}
+            {nbDatadiskMintedLS < NB_DATADISK_MAX && (
+              <Box display="flex" p="4">
+                <Button
+                  variant="primaryGold"
+                  w="full"
+                  height="51px"
+                  m="auto"
+                  onClick={async () => {
+                    onOpenMintCollectibleModal()
+                    if (chain?.id !== 10 && address)
+                      await switchNetwork({ chainId: 10 })
+                  }}
+                >
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    fontSize="lg"
+                  >
+                    <Box fontWeight="bold">{t('Claim DataDisk')}</Box>
+                    <Box ml="2">
+                      ({numberOfOwners}/{t('100 minted')})
+                    </Box>
+                  </Box>
+                </Button>
+              </Box>
+            )}
           </>
         </Box>
-        {isBadgeMintedLS && isLessonMintedLS && (
+        {nbDatadiskMintedLS > 0 && (
           <Box
             border="1px solid #4b474b"
             borderBottomRadius="8px"
             borderTopWidth="0"
             textAlign="center"
-            p="10px"
+            p="16px"
           >
             <Box pb="2">
               <ExternalLink href={twitterLink} mr="2">

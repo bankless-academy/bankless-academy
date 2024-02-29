@@ -58,6 +58,11 @@ const primaryGold = {
     background: 'linear-gradient(134deg, #9E8053 0%, #684D3E 100%)',
     border: '1px solid #f1b15a',
   },
+  _active: {
+    ...padding,
+    background: 'linear-gradient(134deg, #9E8053 0%, #684D3E 100%)',
+    border: '1px solid #f1b15a',
+  },
 }
 
 const primaryBig = {

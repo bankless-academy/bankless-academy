@@ -256,7 +256,7 @@ const MintBadge = ({
           passportLS?.verified ? mintBadge() : onOpen()
         }}
       >
-        {t('Mint')}
+        {t('Claim Badge')}
       </Button>
       <PassportModal isOpen={isOpen} onClose={onClose} />
     </>

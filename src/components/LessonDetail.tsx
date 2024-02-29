@@ -77,6 +77,7 @@ const LessonDetail = ({
 
   const [, isSmallScreen] = useSmallScreen()
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
+  const [refreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
 
   const [openLessonLS, setOpenLessonLS] = useLocalStorage(
     `lessonOpen`,
@@ -91,6 +92,10 @@ const LessonDetail = ({
     scrollTop()
     setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest))
   }, [])
+
+  useEffect((): void => {
+    if (refreshDatadiskLS) scrollDown()
+  }, [refreshDatadiskLS])
 
   const isQuizComplete = quizComplete(lesson)
 

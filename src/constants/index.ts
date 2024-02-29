@@ -154,3 +154,6 @@ export const IS_WALLET_DISABLED = false
 export const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/explorer_avatar.png'
 
 export const DEFAULT_ENS = 'web3explorer.eth'
+
+export const NB_DATADISK_MAX = 2
+

@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import { useState } from 'react'
 import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
@@ -21,14 +22,13 @@ const Badge = ({
   isQuestCompleted: boolean
 }): JSX.Element => {
   const { t, i18n } = useTranslation()
+  const [triggerOpen, setTriggerOpen] = useState(false)
   const [isBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${lesson.badgeId}`,
     false
   )
   const current_wallet: any = localStorage.getItem('current_wallet')
-  const { address } = current_wallet
-    ? { address: current_wallet }
-    : useAccount()
+  const { address } = useAccount()
   const { data: ensName } = useEnsName({
     address: address,
     chainId: 1,
@@ -41,7 +41,7 @@ const Badge = ({
     : `${DOMAIN_URL_}/explorer/${
         typeof ensName === 'string' && ensName?.includes('.')
           ? ensName
-          : address
+          : address || current_wallet
       }?badge=${lesson.badgeId}&referral=true`
 
   const share = `I've just claimed my "${lesson.name}" onchain credential at @${TWITTER_ACCOUNT} 🎉
@@ -64,6 +64,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           </Box>
         </>
       }
+      triggerOpen={triggerOpen}
     />
   )
 
@@ -79,83 +80,113 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
       <Box textAlign="center" mb="40px">
         <Box width="290px" m="auto">
           <Box
-            border="1px solid #9E72DC"
-            borderTopRadius="8px"
-            py="3"
-            px="5"
+            width="290px"
+            border="1px solid #4b474b"
+            borderRadius="8px"
             position="relative"
           >
-            <Box color="#9E72DC" fontWeight="bold" fontSize="lg">
-              {t('Lesson Badge')}
-            </Box>
             {BadgeHelper}
-          </Box>
-          <Box
-            width="290px"
-            overflow="hidden"
-            border="1px solid #4b474b"
-            borderTop="0"
-          >
-            <Box opacity={isBadgeMintedLS ? '1' : '0.5'}>
+            <Box opacity={isBadgeMintedLS ? '1' : '0.5'} position="relative">
+              {!isQuestCompleted && (
+                <Box position="absolute" w="100%" height="100%" px="19px">
+                  <Box
+                    w="100%"
+                    height="100%"
+                    cursor="help"
+                    borderRadius="50%"
+                    zIndex="2"
+                    onClick={() => {
+                      console.log('dd')
+                      if (!isQuestCompleted) {
+                        setTriggerOpen(true)
+                        setTimeout(() => {
+                          setTriggerOpen(false)
+                        }, 100)
+                      }
+                    }}
+                  />
+                </Box>
+              )}
               <NFT nftLink={lesson.badgeImageLink} />
             </Box>
-          </Box>
-          <Box
-            justifyContent="center"
-            borderRadius="0px 0px 8px 8px"
-            border="1px solid #4b474b"
-            borderTop="0"
-            p="4"
-          >
-            {isBadgeMintedLS ? (
-              <Box>
-                <Box pb="2">
-                  <ExternalLink href={twitterLink} mr="2">
+            <Box p="4">
+              {isBadgeMintedLS ? (
+                <Box>
+                  <Box pb="2">
+                    <ExternalLink href={twitterLink} mr="2">
+                      <Button
+                        variant="primary"
+                        w="100%"
+                        borderBottomRadius="0"
+                        leftIcon={
+                          <ChakraImage
+                            width="20px"
+                            src="/images/TwitterX.svg"
+                          />
+                        }
+                      >
+                        {t('Share on Twitter / X')}
+                      </Button>
+                    </ExternalLink>
+                  </Box>
+                  <Box pb="2">
+                    <ExternalLink href={farcasterLink} mr="2">
+                      <Button
+                        variant="primary"
+                        w="100%"
+                        borderRadius="0"
+                        leftIcon={
+                          <ChakraImage
+                            width="20px"
+                            src="/images/Farcaster.svg"
+                          />
+                        }
+                      >
+                        {t('Share on Farcaster')}
+                      </Button>
+                    </ExternalLink>
+                  </Box>
+                  <ExternalLink href={OpenSeaBadgeLink}>
                     <Button
                       variant="primary"
                       w="100%"
-                      borderBottomRadius="0"
+                      borderTopRadius="0"
                       leftIcon={
-                        <ChakraImage width="20px" src="/images/TwitterX.svg" />
+                        <ChakraImage width="24px" src="/images/OpenSea.svg" />
                       }
                     >
-                      {t('Share on Twitter / X')}
+                      {t('View on OpenSea')}
                     </Button>
                   </ExternalLink>
                 </Box>
-                <Box pb="2">
-                  <ExternalLink href={farcasterLink} mr="2">
-                    <Button
-                      variant="primary"
+              ) : (
+                <Box position="relative">
+                  {!isQuestCompleted && (
+                    <Box
+                      position="absolute"
+                      cursor="help"
+                      borderRadius="8px"
+                      zIndex="2"
                       w="100%"
-                      borderRadius="0"
-                      leftIcon={
-                        <ChakraImage width="20px" src="/images/Farcaster.svg" />
-                      }
-                    >
-                      {t('Share on Farcaster')}
-                    </Button>
-                  </ExternalLink>
+                      height="100%"
+                      onClick={() => {
+                        console.log('dd')
+                        if (!isQuestCompleted) {
+                          setTriggerOpen(true)
+                          setTimeout(() => {
+                            setTriggerOpen(false)
+                          }, 100)
+                        }
+                      }}
+                    />
+                  )}
+                  <MintBadge
+                    badgeId={lesson.badgeId}
+                    isQuestCompleted={isQuestCompleted}
+                  />
                 </Box>
-                <ExternalLink href={OpenSeaBadgeLink}>
-                  <Button
-                    variant="primary"
-                    w="100%"
-                    borderTopRadius="0"
-                    leftIcon={
-                      <ChakraImage width="24px" src="/images/OpenSea.svg" />
-                    }
-                  >
-                    {t('View on OpenSea')}
-                  </Button>
-                </ExternalLink>
-              </Box>
-            ) : (
-              <MintBadge
-                badgeId={lesson.badgeId}
-                isQuestCompleted={isQuestCompleted}
-              />
-            )}
+              )}
+            </Box>
           </Box>
         </Box>
       </Box>
