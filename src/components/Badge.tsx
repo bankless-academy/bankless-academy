@@ -88,7 +88,27 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
             position="relative"
           >
             {BadgeHelper}
-            <Box opacity={isBadgeMintedLS ? '1' : '0.5'}>
+            <Box opacity={isBadgeMintedLS ? '1' : '0.5'} position="relative">
+              {!isQuestCompleted && (
+                <Box position="absolute" w="100%" height="100%" px="19px">
+                  <Box
+                    w="100%"
+                    height="100%"
+                    cursor="help"
+                    borderRadius="50%"
+                    zIndex="2"
+                    onClick={() => {
+                      console.log('dd')
+                      if (!isQuestCompleted) {
+                        setTriggerOpen(true)
+                        setTimeout(() => {
+                          setTriggerOpen(false)
+                        }, 100)
+                      }
+                    }}
+                  />
+                </Box>
+              )}
               <NFT nftLink={lesson.badgeImageLink} />
             </Box>
             <Box p="4">
@@ -143,22 +163,25 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 </Box>
               ) : (
                 <Box position="relative">
-                  <Box
-                    position="absolute"
-                    cursor="not-allowed"
-                    zIndex="2"
-                    w="100%"
-                    height="100%"
-                    onClick={() => {
-                      console.log('dd')
-                      if (!isQuestCompleted) {
-                        setTriggerOpen(true)
-                        setTimeout(() => {
-                          setTriggerOpen(false)
-                        }, 100)
-                      }
-                    }}
-                  />
+                  {!isQuestCompleted && (
+                    <Box
+                      position="absolute"
+                      cursor="help"
+                      borderRadius="8px"
+                      zIndex="2"
+                      w="100%"
+                      height="100%"
+                      onClick={() => {
+                        console.log('dd')
+                        if (!isQuestCompleted) {
+                          setTriggerOpen(true)
+                          setTimeout(() => {
+                            setTriggerOpen(false)
+                          }, 100)
+                        }
+                      }}
+                    />
+                  )}
                   <MintBadge
                     badgeId={lesson.badgeId}
                     isQuestCompleted={isQuestCompleted}
