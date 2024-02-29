@@ -311,39 +311,38 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    badgeImageLink: '/images/what-is-bitcoin/badge-da9823bb.png',
-    lessonImageLink: '/images/what-is-bitcoin/lesson-0a24938a.png',
+    badgeImageLink: '/images/bitcoin-basics/badge-da9823bb.png',
+    lessonImageLink: '/images/bitcoin-basics/lesson-0a24938a.png',
     learningActions: '',
     marketingDescription: '',
     badgeId: null,
     duration: null,
     learnings: '',
     description: '',
-    name: 'What is Bitcoin?',
+    name: 'Bitcoin Basics',
     languages: [],
     lessonWriters: 'Tetranome',
-    quest: 'WhatIsBitcoin',
+    quest: 'BitcoinBasics',
     publicationStatus: 'hidden',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     notionId: '6a440f5dd00a4179811178943bf89e1d',
-    englishName: 'What is Bitcoin?',
-    slug: 'what-is-bitcoin',
-    socialImageLink: '/images/what-is-bitcoin/social-0a24938a.png',
+    englishName: 'Bitcoin Basics',
+    slug: 'bitcoin-basics',
+    socialImageLink: '/images/bitcoin-basics/social-0a24938a.png',
     imageLinks: [
-      '/images/what-is-bitcoin/welcome-to-bankless-academy-cc6189d4.png',
-      '/images/what-is-bitcoin/bitcoins-story-98b007a5.png',
-      '/images/what-is-bitcoin/a-brief-history-of-money-b5126abd.svg',
-      '/images/what-is-bitcoin/a-brief-history-of-money-pt-2-3f9be5ac.svg',
-      '/images/what-is-bitcoin/enter-bitcoin-b108517c.svg',
-      '/images/what-is-bitcoin/digital-gold-scarcity-eae248f0.svg',
-      '/images/what-is-bitcoin/digital-gold-self-custody-18bd7ba3.svg',
-      '/images/what-is-bitcoin/bitcoin-its-like-emailing-money-2e2fb8ad.svg',
-      '/images/what-is-bitcoin/how-does-it-work-eda52e60.svg',
-      '/images/what-is-bitcoin/how-does-it-work-pt-2-799bae09.svg',
-      '/images/what-is-bitcoin/how-does-it-work-pt-3-9b8a77ea.svg',
-      '/images/what-is-bitcoin/sending-a-bitcoin-transaction-aad5de00.png'
+      '/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png',
+      '/images/bitcoin-basics/bitcoins-story-98b007a5.png',
+      '/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg',
+      '/images/bitcoin-basics/a-brief-history-of-money-pt-2-3f9be5ac.svg',
+      '/images/bitcoin-basics/enter-bitcoin-b108517c.svg',
+      '/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg',
+      '/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg',
+      '/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg',
+      '/images/bitcoin-basics/how-does-it-work-eda52e60.svg',
+      '/images/bitcoin-basics/how-does-it-work-pt-3-9b8a77ea.svg',
+      '/images/bitcoin-basics/sending-a-bitcoin-transaction-aad5de00.png'
     ],
     keywords: [
       'blockchain technology',
@@ -353,14 +352,24 @@ const LESSONS: LessonType[] = [
       'cryptocurrency',
       'scarcity',
       'gold standard',
+      'custodian',
+      'peer-to-peer',
+      'scarce',
       'self-custodial',
+      'total supply',
       'cryptocurrency mining',
+      'circulating supply',
+      'monetary policy',
       'self-custody',
+      'custodians',
       'cryptocurrency wallet',
+      'wealth gap',
+      'equality of opportunity',
       'decentralization',
       'decentralized',
       'miners',
       'btc',
+      'block rewards',
       'decentralized money'
     ],
     slides: [
@@ -368,19 +377,19 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'be804c6aecad43af911a5b34026fe79a',
         title: 'Welcome to Bankless Academy',
-        content: '<div class="bloc1"><p>Welcome, bold Explorer, to the frontier of digital innovation.</p><p>At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge for “going bankless!”</p><p>Using the new era of the internet and <code>blockchain technology</code>, we’re unlocking financial freedom and reclaiming ownership of our data and privacy — which have long been exploited by third parties for profit.</p><p>Today, we’re looking at the first event in blockchain history: the invention of <code>cryptocurrency,</code> a type of <code>money</code> that moves outside of traditional financial systems.</p><p>The cryptocurrency boom began with the invention of Bitcoin…</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/welcome-to-bankless-academy-cc6189d4.png\'></div>'
+        content: '<div class="bloc1"><p>Welcome, bold Explorer, to the frontier of digital innovation.</p><p>At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge for “going bankless!”</p><p>Using the new era of the internet and <code>blockchain technology</code>, we’re unlocking financial freedom and reclaiming ownership of our data and privacy — which have long been exploited by third parties for profit.</p><p>Today, we’re looking at the first event in blockchain history: the invention of <code>cryptocurrency,</code> a type of <code>money</code> that moves outside of traditional financial systems.</p><p>The cryptocurrency boom began with the invention of Bitcoin…</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'e1ba1d31d16b4430afa774522ff13fb2',
         title: 'Bitcoin’s Story',
-        content: '<div class="bloc1"><p>Launched in 2009 by the mysterious “<code>Satoshi Nakamoto</code>,” Bitcoin marked the beginning of a new economic era.</p><p>As the first successful <code>cryptocurrency</code>, Bitcoin began a powerful conversation: should the control of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!</p><p>The reality is that today, we aren’t really in control of our money.</p><p>Dive into Bitcoin\'s journey and how it\'s reshaping finance by tackling age-old challenges.</p><p><strong>It’s time to rethink money.</strong></p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/bitcoins-story-98b007a5.png\'></div>'
+        content: '<div class="bloc1"><p>Launched in 2009 by the mysterious “<code>Satoshi Nakamoto</code>,” Bitcoin marked the beginning of a new economic era.</p><p>As the first successful <code>cryptocurrency</code>, Bitcoin began a powerful conversation: should the control of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!</p><p>The reality is that today, we aren’t in control of our money in the way we think we are.</p><p>It’s time to dive into how Bitcoin is reshaping finance by tackling unsolved monetary mysteries.</p><p><strong>It’s time to rethink money.</strong></p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/bitcoins-story-98b007a5.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '30cb635e7580485793f2935d39b1f007',
         title: 'A Brief History of Money',
-        content: '<div class="bloc1"><p>Money has been an integral part of society since our earliest days when beads, shells, and stones were used to exchange goods & services.</p><p>Yet early currencies had a problem: it was too easy for someone to find/create new money. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.</p><p>Materials like gold & silver were eventually adopted to solve this problem. The key advantage of these materials was their scarcity – there wasn\'t an endless supply, making it hard for anyone to increase the amount of money in circulation significantly. This <code>scarcity</code> helped maintain the value of money.</p><p>As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Such currency made money recognizable and measurable while serving as a strong store of value.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/a-brief-history-of-money-b5126abd.svg\'></div>'
+        content: '<div class="bloc1"><p>Money has been an integral part of society since our earliest days when beads, shells, and stones were used to exchange goods & services.</p><p>Yet early currencies had a problem: it was too easy for someone to find/create new money. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.</p><p>Materials like gold & silver were eventually adopted to solve this problem. The key advantage of these materials was their scarcity – there wasn\'t an endless supply, making it hard for anyone to increase the amount of money in circulation significantly. This <code>scarcity</code> helped maintain the value of money.</p><p>As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Such currency made money recognizable and measurable while serving as a strong store of value.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -397,86 +406,80 @@ const LESSONS: LessonType[] = [
             'Correct! The more money there is, the less value it has.',
             'Try again.'
           ],
-          id: 'what-is-bitcoin-1'
+          id: 'bitcoin-basics-1'
         }
       },
       {
         type: 'LEARN',
         notionId: '71abd63b1fa8418e96ad038bbc51cb34',
         title: 'A Brief History of Money (Pt. 2)',
-        content: '<div class="bloc1"><p>With the introduction of paper money, currencies shifted to being \'backed\' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.</p><p>Then, in the 20th century, came the fall of this “<code>Gold Standard</code>”.</p><p>Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.</p><p>Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/a-brief-history-of-money-pt-2-3f9be5ac.svg\'></div>'
+        content: '<div class="bloc1"><p>With the introduction of paper money, currencies shifted to being \'backed\' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.</p><p>Then, in the 20th century, came the fall of this “<code>Gold Standard</code>”.</p><p>Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.</p><p>Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/a-brief-history-of-money-pt-2-3f9be5ac.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '459a1518417540c99dc0a0f68ac9cef5',
         title: 'The Problem',
-        content: '<div class="bloc1"><p>The main problem with our financial system is the lack of control you have over your money. Central banks control the value of money and, therefore, your spending habits. Subject to human error and greed, mistakes can be made. So, we need money that is beyond the control of a single entity and reliably stores its value over time.</p><p>Meanwhile, banks can restrict access to your funds and control where and when you can make transactions. This setup can hinder your financial growth and contribute to wider economic inequality and reduced living standards.</p><hr><p>For money to once again be neutral and reliable, it must regain the two key properties it has lost:</p><p>💎 <strong>Value:</strong> Money must reliably store its worth over time.</p><p>✊ <strong>Ownership:</strong> Money must be under your complete control. Access to it should be guaranteed and protected.</p><p>Only these qualities can return financial freedom & security to modern money.</p></div>'
+        content: '<div class="bloc1"><p>The problem with our current financial system is the lack of control we have over our money, and how this lowers our ability to freely decide what to save and what to spend.</p><p>Central banks, the bank managing a country’s monetary policy, can introduce any amount of new money. This lack of <code>scarcity</code> often makes our money worth less and less each year. Money with an unpredictable, decreasing value often forces us to spend it: <strong>“If my money is going to be worth less every year, why save? I might as well spend it now.”</strong> 💸</p><p>Commercial banks, those used for everyday saving and spending, also influence our spending habits. As a <code>custodian</code>, they can block transactions or confiscate our funds. Some banks have blocked their clients from buying cryptocurrency! <strong>If your bank can freeze your life savings at any time… do you truly own your money?</strong> 💸</p><hr><p>For money to once again to support financial freedom, it must regain the two key properties it has lost over time:</p><ul><li>💎 <strong>Value:</strong> Money must reliably store its worth over time.</li><li>✊ <strong>Ownership:</strong> Money must be easy to store and protect ourselves.</li></ul><p>Only these qualities can restore our ability to freely save and spend our money.</p></div>'
       },
       {
         type: 'LEARN',
         notionId: 'e1f43554c7964a0ea655c2b299d42844',
         title: 'Enter Bitcoin',
-        content: '<div class="bloc1"><p><code>Satoshi Nakamoto</code> thought that money was too important to humanity to be controlled by just a few people. He wanted to create a type of money that could be fair and reliable for everyone.</p><p>Enter Bitcoin, the digital currency powering global transactions beyond the influence of the traditional banking system.</p><ul><li>⛓️ Using <code>blockchain technology</code>, it connects people directly rather than going through institutions. It’s fast, fully automated, and highly resistant to external pressure.</li><li>💎 With no central authority to print money, Bitcoin has <code>scarcity</code> and value-retention similar to gold.</li><li>✊ It’s <code>self-custodial</code>: It can be held without institutions facilitating transfer or storage. When stored in their natural state, funds are held in a secure online safe to which only the owner has access.</li></ul><p>For these qualities, Bitcoin has earned the nickname “digital gold”.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/enter-bitcoin-b108517c.svg\'></div>'
+        content: '<div class="bloc1"><p><code>Satoshi Nakamoto</code> thought that money was too important to be controlled by just a few people. He wanted to create a type of money that could be fair and reliable for everyone.</p><p>Enter Bitcoin, a digital currency that operates beyond the traditional banking system.</p><ul><li>⛓️ It’s <code>peer-to-peer</code>: It connects people directly to each other. Automated using <code>blockchain technology</code>, it removes need for institutions to facilitate storage or transactions. Advocates call it “a set of rules with no rulers”.</li><li>💎 It’s <code>scarce</code>: With no central bank issuing unlimited new money, Bitcoin has a stable, predictable monetary policy that honors long-term saving.</li><li>✊ It’s <code>self-custodial</code>: It can be held without institutions facilitating transfer or storage. When stored in its natural state, Bitcoin is held in a secure online safe to which only the owner has access.</li></ul><p>For its qualities, Bitcoin has earned the nickname “digital gold”.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/enter-bitcoin-b108517c.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '8462f7e2e0694a82a0e6dc126c81b907',
         title: 'Digital Gold: Scarcity',
-        content: '<div class="bloc1"><p>Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist - which is a maximum of 21 million. This limited supply is designed into its code, ensuring that Bitcoin remains rare and potentially valuable, much like precious metals such as gold.</p><ul><li>Circulating Supply: The Bitcoin that\'s currently being used or available for trading.</li><li>Total Supply: All the Bitcoin that exists, which is capped at 21 million. </li></ul><hr><p>Similar to mining gold from the earth, undiscovered Bitcoin is introduced through a laborious process called <code>cryptocurrency mining</code>, making it difficult to increase the supply in circulation.</p><p>Bitcoin\'s limited supply makes it valuable and protects it from inflation, unlike traditional currencies, which can lose value when more is printed. This makes Bitcoin an attractive alternative for those seeking to preserve value in the long term.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/digital-gold-scarcity-eae248f0.svg\'></div>'
+        content: '<div class="bloc1"><p>Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This <code>total supply</code> is embedded in its code, ensuring that Bitcoin remains rare and potentially valuable, much like gold.</p><p>While Bitcoin’s total supply can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called <code>cryptocurrency mining</code>. This predictable increase in <code>circulating supply</code> helps to stimulate the Bitcoin economy.</p><p>Bitcoin\'s fixed <code>monetary policy</code> makes it an attractive asset for those seeking to preserve value in the long term. It’s short term value remains volatile, due to speculation.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '626fb6d4b2b047db837057cfbb3992e0',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'What quality allows Bitcoin to combat inflation?',
-          rightAnswerNumber: 3,
+          question: 'How does Bitcoin promote value preservation in the long term?',
+          rightAnswerNumber: 1,
           answers: [
-            'Its high transaction speed.',
-            'Its global reach and acceptance.',
-            'Its finite limit of 21 million coins.',
-            'Its ability to facilitate online transactions.'
+            'Using a total supply cap.',
+            'By removing custodians.'
           ],
           feedback: [
-            'Incorrect. While speed is a feature, it\'s not the key factor in preserving value.',
-            'Incorrect. Global reach enhances its usability but doesn\'t primarily retain its value.',
-            'Correct! Bitcoin\'s capped supply creates scarcity, similar to precious metals, aiding value retention.',
-            'Incorrect. Online transaction capability is a convenience feature, not directly linked to value retention.'
+            'Correct! Bitcoin\'s fixed supply creates scarcity similar to precious metals. This aids value retention.',
+            'Try again! Custody relates to ownership, rather than value.'
           ],
-          id: 'what-is-bitcoin-2'
+          id: 'bitcoin-basics-2'
         }
       },
       {
         type: 'LEARN',
         notionId: '52422fece4f34f158bfea69822ee1815',
         title: 'Digital Gold: Self-Custody',
-        content: '<div class="bloc1"><p>If your bank can freeze your life savings at any time…<br><strong>Do you truly own your money?</strong><strong> </strong>💸</p><p>As our assets are increasingly digitized (i.e., your money, your property, and even your identity), it’s important that we maintain ownership of our digital footprint. Ownership is a listed human right — something worth remembering as we move into the digital age.</p><p>Besides risks of censorship or fraud that come with lack of ownership, instant control over an entire nation’s property is simply too much power to put in one place.</p><hr><p>Bitcoin’s <code>self-custody</code> offers true digital ownership: So long as you don’t give your keys to someone else, you are the only person with access to your assets. It’s like having your own vault of gold in a secure online space, and there’s no management.</p><p>This online system gives you total control of your wealth — anywhere in the world, any time.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/digital-gold-self-custody-18bd7ba3.svg\'></div>'
+        content: '<div class="bloc1"><p>In democracies, ownership is a protected human right because it gives citizens increased control and freedom over their lives. Ownership also fragments the power of the state, making it difficult for bad actors to gain control of a country. Your ability to <code>self-custody</code> your assets is essential to preserve your way of life.</p><p>As our assets are increasingly digitized (i.e. your money, your property, and even your identity), our lives take on a digital quality that we must also learn to protect.</p><p>Bitcoin’s self-custody offers true digital ownership, beyond reach of <code>custodians</code>. So long as you don’t share your account information with someone else, you have sole access to your assets. It’s like having your own vault of gold in a secure online space.</p><p>This system of ownership gives you total control of your digital wealth — anywhere in the world, any time.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: 'f8d8e8d58e984f1097f0b17a6d805df8',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'How does self-custody support a deeper type of ownership?',
-          rightAnswerNumber: 3,
+          question: 'How does self-custody enable true ownership?',
+          rightAnswerNumber: 1,
           answers: [
-            'Resistance to inflation.',
-            'You can access your assets from anywhere in the world.',
-            'There’s no third party with control over your assets.'
+            'By giving you sole access to your assets.',
+            'By allowing custodians to access to your assets.'
           ],
           feedback: [
-            'Try again! Inflation and self-custody are unrelated.',
-            'Try again! While this is a quality of self-custody, it doesn’t assure ownership.',
-            'Correct! When others have control over our assets, there is always possibility for them to be unjustly confiscated.'
+            'Correct! Anyone with access to our assets has the ability to confiscate them.',
+            'Try again! Self-custody means there is no custodian that can access our assets.'
           ],
-          id: 'what-is-bitcoin-3'
+          id: 'bitcoin-basics-3'
         }
       },
       {
         type: 'LEARN',
-        notionId: '116bcf310bc044adbce6aefc84902f25',
-        title: 'Bitcoin — It’s like Emailing Money!',
-        content: '<div class="bloc1"><p>Just as email simplifies sending letters by removing the post office, Bitcoin has streamlined sending money.</p><ul><li>⚡ Transfer Bitcoin to anyone else’s address in a short period of time, to and from anywhere in the world.</li><li>📡 Bitcoin is online 24/7. Unlike your bank, you can send money internationally or trade assets at any hour. No waiting, no paperwork, no downtime.</li><li>⚙️ Bitcoin is neutral and automated. Emails depend on their hosts. Bitcoin runs itself.</li></ul><hr><p>In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. You’ll manage your account through a new tool called a <code>cryptocurrency wallet</code>, directly in your web browser or on your phone.</p><p>This cryptocurrency wallet is the easiest “bank account” you’ll ever set up, all from the comfort of your home computer. We’ll set up your first wallet in ‘Wallet Basics’ — your next lesson.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/bitcoin-its-like-emailing-money-2e2fb8ad.svg\'></div>'
+        notionId: 'eb07c4e2402c4eba804d11255352be39',
+        title: 'Bitcoin: It’s like Emailing Money!',
+        content: '<div class="bloc1"><p>Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.</p><ul><li>⚡ You can transfer Bitcoin to anyone’s address in a short period of time, from anywhere in the world.</li><li>⚙️ Bitcoin is online 24/7. Unlike your bank, you can send money internationally or trade assets at any hour. No waiting, no paperwork, no downtime.</li><li>📡 Bitcoin is accessible by anyone with an internet connection, delivering financial tools to remote corners of the globe.</li></ul><p>In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. You’ll manage your account using a <code>cryptocurrency wallet</code>, directly in your web browser or on your phone.</p><p>This cryptocurrency wallet is the easiest “bank account” you’ll ever set up, all from the comfort of your home computer. We’ll set up your first wallet in ‘Wallet Basics’ — your next lesson!</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -493,28 +496,34 @@ const LESSONS: LessonType[] = [
           feedback: [
             'Correct!',
             'Neither Bitcoin nor email require a physical address. Instead, they use digital addresses.',
-            'Email, unlike Bitcoin, is run by private business.'
+            'Unlike Bitcoin, email systems are hosted by private businesses.'
           ],
-          id: 'what-is-bitcoin-4'
+          id: 'bitcoin-basics-4'
         }
       },
       {
         type: 'LEARN',
-        notionId: '87c9b2797a0f4b5cb1ed072d6fc236a8',
+        notionId: '4de062c639a04f68a0ef58ffe4ca4a27',
+        title: 'The Wealth Gap',
+        content: '<div class="bloc1"><p>Across the world there is a growing <code>wealth gap</code> between the lower, middle and upper classes. It is caused by modern monetary policy and systems that accentuate differences in the knowledge and tools citizens have available to them.</p><p>We’ve looked at how money that loses its value over time encourages us to spend it. The wealthy understand they must invest to preserve it. Bitcoin’s scarcity puts forward a monetary model that allows money to perform this service by default.</p><p>Banks run on models where they will loan out their client’s savings for profit. They’ll pay just a fraction to them in interest. What if you were able to take self-custody and have access to tools that let you earn that interest yourself?</p><p>With tools like Bitcoin, these opportunities become available to everyone around the world. Its a monetary system with built in <code>equality of opportunity</code>.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '77a68343994b4aad9aa1c99f35961204',
         title: 'How does it work?',
-        content: '<div class="bloc1"><p>Let’s switch gears and look at the engine behind Bitcoin: the Bitcoin Network.</p><p>Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network essentially exists through these computers! If one produces a fraudulent transaction, the others are there to correct it.</p><p>This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be attacked, a majority of the computers would need to be compromised.</p><p>This defense strategy is called <code>decentralization</code>: the shifting of control from one central group to many smaller ones. Decentralization is what makes cryptocurrency transfers virtually unstoppable.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/how-does-it-work-eda52e60.svg\'></div>'
+        content: '<div class="bloc1"><p>Let’s switch gears and look at the engine behind Bitcoin: the Bitcoin Network.</p><p>Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.</p><p>This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.</p><p>This defense strategy is called <code>decentralization</code>: the shifting of control from one central group to many smaller ones. Decentralization is what makes cryptocurrency transfers virtually unstoppable.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/how-does-it-work-eda52e60.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '8a1ec1c7e35649bb9b26e4a1c1ce5fe1',
         title: 'How does it work? (Pt. 2)',
-        content: '<div class="bloc1"><p>When sending cryptocurrency across this network, your transaction is inspected by these <code>decentralized</code> network participants. Known as <code>miners</code>, these participants constantly check transactions and add them to a database hosted across the network.</p><p>This is the <code>cryptocurrency mining</code> process. It’s what keeps the network running securely. Mining can get quite complicated, so we’ll take a simplified view for today:</p><ol><li>You submit a transaction to the network, sending 0.1 <code>BTC</code> to your friend.</li><li>A miner checks your transaction for errors. Other miners double-check their results.</li><li>If approved, your transaction is added to the database.</li><li>Your friend receives 0.1 BTC in their <code>cryptocurrency wallet</code>.</li></ol><p>Once a transaction is confirmed, it cannot be reversed.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/how-does-it-work-pt-2-799bae09.svg\'></div>'
+        content: '<div class="bloc1"><p>When sending cryptocurrency across this network, your transaction is inspected by these <code>decentralized</code> network participants. Known as <code>miners</code>, these participants constantly check transactions and add them to a database hosted across the network.</p><p>This is the <code>cryptocurrency mining</code> process. It’s what keeps the network running securely. Mining can get quite complicated, so we’ll take a simplified view for today:</p><ol><li>You submit a transaction to the network, sending 0.1 <code>BTC</code> to your friend.</li><li>A miner checks your transaction for errors. Other miners double-check their results.</li><li>If approved, your transaction is added to the database.</li><li>Your friend receives 0.1 BTC in their <code>cryptocurrency wallet</code>.</li></ol><p>Once a transaction is confirmed, it cannot be reversed.</p></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/bitcoin\'></iframe></div>'
       },
       {
         type: 'LEARN',
-        notionId: 'febf3ea22d734f08a3a60f5a1e9b59b8',
+        notionId: '04eef07707554c8983e6926211d932d7',
         title: 'How does it work? (Pt. 3)',
-        content: '<div class="bloc1"><p>When you send Bitcoin, you pay a fee that rewards the miner who processes your transaction. Miners also earn new Bitcoin, adding to its current circulating supply.</p><p>&lt;…&gt;</p><p>This is the “mining of undiscovered gold” we mentioned while discussing <code>scarcity</code>.</p><p><code>Cryptocurrency mining</code> incentivizes people around the world to help secure the network while steadily injecting new currency into the Bitcoin economy.</p><p>That’s quite a process!</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/how-does-it-work-pt-3-9b8a77ea.svg\'></div>'
+        content: '<div class="bloc1"><p>When you send Bitcoin, you pay a small fee that is awarded to the miners who process your transaction. <code>Miners</code> also earn new Bitcoin, called <code>block rewards</code>, for their work.</p><p>These rewards slowly increase Bitcoin’s <code>circulating supply</code> within the <code>total supply</code> cap of 21 million coins.</p><p><code>Cryptocurrency mining</code> incentivizes people around the world to help secure the network while steadily injecting new currency into the Bitcoin economy.</p><p>That’s quite a process!</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/how-does-it-work-pt-3-9b8a77ea.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -524,34 +533,34 @@ const LESSONS: LessonType[] = [
           question: 'What is decentralization?',
           rightAnswerNumber: 2,
           answers: [
-            'The mining of Bitcoin.',
-            'A process spreading control across multiple parties.',
-            'Another term for scarcity.'
+            'Increased scarcity.',
+            'Distribution of control across multiple participants.',
+            'The rewards earned by miners.'
           ],
           feedback: [
-            'While mining works alongside decentralization, they are not the same.',
-            'Correct! And a decentralized network is one where no single entity is in control.',
-            'Decentralization and scarcity are two distinct concepts.'
+            'Try again! Scarcity means an asset is in low supply.',
+            'Correct! This distribution protects the network and its participants.',
+            'Try again! Miners are rewarded with transaction fees and block rewards.'
           ],
-          id: 'what-is-bitcoin-5'
+          id: 'bitcoin-basics-5'
         }
       },
       {
         type: 'LEARN',
         notionId: 'e2a5684df9734013afdc8e42a1bb494c',
         title: 'The Innovation of Money',
-        content: '<div class="bloc1"><p>In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value and saw that relying on traditional institutions means not having full asset ownership. </p><p>But Bitcoin has become more than just a tool. It was a catalyst for a revolutionary shift towards <code>decentralized money</code>, focusing on:</p><ul><li>💵 Solving inefficiencies in digital economics.</li><li>🔎 Reducing institutional fraud and market manipulation.</li><li>⚖️ Building equality of opportunity into money to close the wealth gap.</li><li>🌐 Building true ownership for the digital age.</li><li>🤝 A 24/7 global marketplace offers financial tools to unbanked populations worldwide.</li></ul><p>This movement highlights Bitcoin’s role in solving key problems in traditional finance by shifting financial control to individuals, promoting transparency, equality, and reduced corruption.</p><p>By embodying these principles, it champions the fundamental values of democracy. This guarantees universal access to financial services and true ownership while cultivating a sense of community and shared responsibility among its users.</p><p>“<em>Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.</em></p></div>'
+        content: '<div class="bloc1"><p>In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value, and how institutional management of our assets means giving up full ownership.</p><p>However Bitcoin has evolved beyond a simple monetary tool. It has become a catalyst for a <code>decentralized money</code> revolution. This movement reimagines the traditional financial system by distributing monetary power and control to those who use it.</p><p>By decentralizing money, we can:</p><ul><li>💵 Host a 24/7 global marketplace, secured by citizens around the world.</li><li>🛠️ Offer financial tools to the unbanked regions of the globe.</li><li>🤝 Use <code>peer-to-peer</code> technology to avoid the inefficiencies of middleman institutions.</li><li>🔎 Reduce institutional inequality, fraud and market manipulation.</li><li>⚖️ Build <code>equality of opportunity</code> into monetary systems.</li><li>🌐 Establish true ownership for the digital age.</li></ul><p>The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe — and you’re invited.</p><p>“<em>Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.</em></p></div>'
       },
       {
         type: 'LEARN',
         notionId: '9920715e06094e39bf34a5a63891a909',
         title: 'Sending a Bitcoin Transaction',
-        content: '<div class="bloc1"><p>It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.</p><p>Your transaction will include the following details:</p><p>📫 The wallet address of your recipient.</p><p>💰 The amount of Bitcoin to send.</p><p>⛏️ A transaction fee is given to the miners.</p><p>Remember to make sure all details are accurate.<br>Once a Bitcoin transaction is confirmed, it cannot be reversed.</p></div><div class="bloc2"><img src=\'/images/what-is-bitcoin/sending-a-bitcoin-transaction-aad5de00.png\'></div>'
+        content: '<div class="bloc1"><p>It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.</p><p>Your transaction will include the following details:</p><p>📫 The wallet address of the person you’re sending to.</p><p>💰 The amount of Bitcoin to send.</p><p>⛏️ A transaction fee is given to the <code>miners</code>.</p><p>Remember to make sure all details are accurate.<br>Once a Bitcoin transaction is confirmed, it cannot be reversed.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/sending-a-bitcoin-transaction-aad5de00.png\'></div>'
       },
       {
         type: 'QUEST',
-        title: 'What is Bitcoin? Quest',
-        component: 'WhatIsBitcoin'
+        title: 'Bitcoin Basics Quest',
+        component: 'BitcoinBasics'
       }
     ]
   },
@@ -2369,7 +2378,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'b9fbae598d8f489a8cdacb40144815de',
         title: 'Validating Transactions',
-        content: '<div class="bloc1"><p>Let\'s get into the step-by-step process of how nodes come to agreement using <code>Proof-of-Stake</code> consensus:</p><ol><li><strong>Staking:</strong> A <code>node operator</code> locks 32 ETH on the network and begins running a <code>validator node</code>.</li><li><strong>Block Building:</strong> Users submit transactions ordered into <code>blocks</code> by <code>block builders</code>.</li><li><strong>Proposer Selection:</strong> An algorithm selects a validator node to propose the next block to be added to the blockchain.</li><li><strong>Block Proposal:</strong> The <code>block proposer</code> reviews potential blocks and selects one, granting their <code>attestation</code> if valid.</li><li><strong>Cross-Verification:</strong> Other nodes double-check the block and grant attestation if valid. Invalid blocks are discarded and the proposer is <code>slashed</code>.</li><li><strong>Block Addition:</strong> The valid block is added to the Ethereum blockchain.</li><li><strong>Reward:</strong> The block proposer is rewarded with the <code>block reward</code> and transaction tips.</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/validating-tx-with-ethereum-staking\'></iframe></div>'
+        content: '<div class="bloc1"><p>Let\'s get into the step-by-step process of how nodes come to agreement using <code>Proof-of-Stake</code> consensus:</p><ol><li><strong>Staking:</strong> A <code>node operator</code> locks 32 ETH on the network and begins running a <code>validator node</code>.</li><li><strong>Block Building:</strong> Users submit transactions ordered into <code>blocks</code> by <code>block builders</code>.</li><li><strong>Proposer Selection:</strong> An algorithm selects a validator node to propose the next block to be added to the blockchain.</li><li><strong>Block Proposal:</strong> The <code>block proposer</code> reviews potential blocks and selects one, granting their <code>attestation</code> if valid.</li><li><strong>Cross-Verification:</strong> Other validators double-check the block and grant attestation if valid. Invalid blocks are discarded and the proposer is <code>slashed</code>.</li><li><strong>Block Addition:</strong> The valid block is added to the Ethereum blockchain.</li><li><strong>Rewards:</strong> The block proposer earns a <code>block reward</code> and transaction tips. The other validators are also rewarded.</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/validating-tx-with-ethereum-staking\'></iframe></div>'
       },
       {
         type: 'QUIZ',

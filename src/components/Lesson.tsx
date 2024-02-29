@@ -286,7 +286,9 @@ const Lesson = ({
   )
   // TODO: make this dynamic
   const animationSlideId = isAnimationSlide
-    ? 'validating-tx-with-ethereum-staking'
+    ? lesson.slug === 'bitcoin-basics'
+      ? 'bitcoin'
+      : 'validating-tx-with-ethereum-staking'
     : ''
   const [animationStepLS, setAnimationStepLS] = useLocalStorage(
     `animation-${animationSlideId}`,

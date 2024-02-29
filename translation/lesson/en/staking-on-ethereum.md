@@ -117,9 +117,9 @@ Let's get into the step-by-step process of how nodes come to agreement using `Pr
 2. **Block Building:** Users submit transactions ordered into `blocks` by `block builders`.
 3. **Proposer Selection:** An algorithm selects a validator node to propose the next block to be added to the blockchain.
 4. **Block Proposal:** The `block proposer` reviews potential blocks and selects one, granting their `attestation` if valid.
-5. **Cross-Verification:** Other nodes double-check the block and grant attestation if valid. Invalid blocks are discarded and the proposer is `slashed`.
+5. **Cross-Verification:** Other validators double-check the block and grant attestation if valid. Invalid blocks are discarded and the proposer is `slashed`.
 6. **Block Addition:** The valid block is added to the Ethereum blockchain.
-7. **Reward:** The block proposer is rewarded with the `block reward` and transaction tips.
+7. **Rewards:** The block proposer earns a `block reward` and transaction tips. The other validators are also rewarded.
 
 [embed](https://app.banklessacademy.com/animation/validating-tx-with-ethereum-staking)
 
