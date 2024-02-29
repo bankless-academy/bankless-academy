@@ -4,13 +4,10 @@ export const ANIMATIONS = {
     description: 'Animation description',
     socialImageLink: null,
     steps: [
-      '/lotties/bitcoin_step1.json',
-      '/lotties/bitcoin_step2.json',
-      '/lotties/bitcoin_step3.json',
-      '/lotties/bitcoin_step4.json',
-      '/lotties/bitcoin_step1.json',
-      '/lotties/bitcoin_step2.json',
-      '/lotties/bitcoin_step3.json',
+      '/animations/bitcoin/step-1.json',
+      '/animations/bitcoin/step-2.json',
+      '/animations/bitcoin/step-3.json',
+      '/animations/bitcoin/step-4.json',
     ],
   },
   'validating-tx-with-ethereum-staking': {
