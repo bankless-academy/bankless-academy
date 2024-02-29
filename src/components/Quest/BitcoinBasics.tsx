@@ -20,13 +20,13 @@ import { LessonCard } from 'components/LessonCards'
 const DEFAULT_ANSWERS = ['1Q2TWHE3GMdB6BZKafqwxXtWAWgFt5Jvm3', '0']
 const CORRECT_ANSWERS = ['1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', '0.00000001']
 
-const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
-  const { t } = useTranslation('quests', { keyPrefix: 'WhatIsBitcoin' })
+const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
+  const { t } = useTranslation('quests', { keyPrefix: 'BitcoinBasics' })
   const [isSmallScreen] = useSmallScreen()
   const [hasSimulationRun, setHasSimulationRun] = useState(false)
   const [animationStep, setAnimationStep] = useState(null)
   const initalAnswers = JSON.parse(
-    localStorage.getItem('quest-what-is-bitcoin')
+    localStorage.getItem('quest-bitcoin-basics')
   ) || ['', '']
   const [toAddress, setToAddress] = useState(
     initalAnswers[0] === DEFAULT_ANSWERS[0] ? '' : initalAnswers[0]
@@ -35,14 +35,14 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
     initalAnswers[1] === DEFAULT_ANSWERS[1] ? '' : initalAnswers[1]
   )
   const [selected, setSelected] = useState(
-    localStorage.getItem('quest-what-is-bitcoin') !== null
-      ? JSON.parse(localStorage.getItem('quest-what-is-bitcoin'))
+    localStorage.getItem('quest-bitcoin-basics') !== null
+      ? JSON.parse(localStorage.getItem('quest-bitcoin-basics'))
       : DEFAULT_ANSWERS
   )
 
   const areAnswersCorrect =
     JSON.stringify(selected) === JSON.stringify(CORRECT_ANSWERS)
-  localStorage.setItem('quest-what-is-bitcoin', JSON.stringify(selected))
+  localStorage.setItem('quest-bitcoin-basics', JSON.stringify(selected))
 
   const animationSteps = [
     t('1. Your Bitcoin is on its way to Satoshi Nakamoto.'),
@@ -53,7 +53,7 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
 
   const validateQuest = () => {
     setHasSimulationRun(true)
-    localStorage.setItem('quest-what-is-bitcoin', JSON.stringify(selected))
+    localStorage.setItem('quest-bitcoin-basics', JSON.stringify(selected))
     setSelected([toAddress, amount])
   }
 
@@ -230,4 +230,4 @@ const WhatIsBitcoin = ({ test = false }: { test?: boolean }): any => {
   }
 }
 
-export default WhatIsBitcoin
+export default BitcoinBasics
