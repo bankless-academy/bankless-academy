@@ -41,7 +41,7 @@
     "@lottiefiles/react-lottie-player": "^3.5.3",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@notionhq/client": "^2.2.5",
-    "@openzeppelin/contracts-upgradeable": "^4.9.3",
+    "@openzeppelin/contracts-upgradeable": "^4.9.6",
     "@phosphor-icons/react": "^2.0.8",
     "@sendgrid/client": "^7.7.0",
     "@spruceid/didkit-wasm-node": "^0.2.1",
