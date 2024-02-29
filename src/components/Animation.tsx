@@ -1,9 +1,21 @@
+/* eslint-disable no-console */
 import { Box, Button, Image } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { Player } from '@lottiefiles/react-lottie-player'
+import styled from '@emotion/styled'
 
 import { ANIMATIONS, ANIMATION_IDS } from 'constants/animations'
 import { useHotkeys } from 'react-hotkeys-hook'
+import { useState } from 'react'
+
+const StyledBox = styled(Box)`
+  #lottie svg {
+    display: none;
+  }
+  #lottie svg:last-child {
+    display: block;
+  }
+`
 
 const Animation = ({
   animationId,
@@ -16,36 +28,53 @@ const Animation = ({
     `animation-${animationId}`,
     0
   )
+  const [isDisabled, setIsDisabled] = useState(false)
 
   if (!ANIMATION_IDS.includes(animationId)) return null
 
   const animation = ANIMATIONS[animationId]
 
-  const animationSteps = Object.keys(ANIMATIONS).includes(animationId)
+  const animationLength = Object.keys(ANIMATIONS).includes(animationId)
     ? ANIMATIONS[animationId]?.steps?.length
     : null
 
   const clickLeft = () => {
-    if (animationStepLS > 0) {
-      setAnimationStepLS(animationStepLS - 1)
+    if (!isDisabled) {
+      setIsDisabled(true)
+      if (animationStepLS > 0) {
+        setAnimationStepLS(animationStepLS - 1)
+      }
+      setTimeout(() => {
+        setIsDisabled(false)
+      }, 200)
+    } else {
+      console.log('clicking too fast')
     }
   }
 
   const clickRight = () => {
-    if (animationStepLS + 1 < animationSteps) {
-      setAnimationStepLS(animationStepLS + 1)
+    if (!isDisabled) {
+      setIsDisabled(true)
+      if (animationStepLS + 1 < animationLength) {
+        setAnimationStepLS(animationStepLS + 1)
+      }
+      setTimeout(() => {
+        setIsDisabled(false)
+      }, 200)
+    } else {
+      console.log('clicking too fast')
     }
   }
 
-  useHotkeys('left', () => clickLeft(), [animationStepLS])
-  useHotkeys('right', () => clickRight(), [animationStepLS])
+  useHotkeys('left', () => clickLeft(), [isDisabled, animationStepLS])
+  useHotkeys('right', () => clickRight(), [isDisabled, animationStepLS])
 
   const currentStep: string = animation.steps[animationStepLS]
 
   const isLottie = currentStep?.endsWith('.json')
 
   return (
-    <Box
+    <StyledBox
       // background="blackAlpha.400"
       background="transparent"
       maxW="600px"
@@ -69,7 +98,7 @@ const Animation = ({
       {isEmbedded && animationStepLS > 0 && (
         <Button
           variant="secondary"
-          onClick={() => setAnimationStepLS(animationStepLS - 1)}
+          onClick={() => clickLeft()}
           position="absolute"
           top="calc(50% - 20px)"
           left="0"
@@ -83,12 +112,12 @@ const Animation = ({
           variant="primary"
           top="calc(50% - 20px)"
           right="0"
-          onClick={() => setAnimationStepLS(animationStepLS + 1)}
+          onClick={() => clickRight()}
         >
           &gt;
         </Button>
       )}
-    </Box>
+    </StyledBox>
   )
 }
 
