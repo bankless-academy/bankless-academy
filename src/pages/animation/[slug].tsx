@@ -10,7 +10,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const pageMeta: MetaData = {
     title: animation.name,
     description: animation.description,
-    image: animation.socialImageLink,
+    // image: animation.socialImageLink,
     noindex: true,
     nolayout: true,
   }
