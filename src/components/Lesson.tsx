@@ -325,7 +325,7 @@ const Lesson = ({
     if (
       (slide.type === 'QUEST' || slide.type === 'END') &&
       !address &&
-      slide.component !== 'WhatIsBitcoin'
+      slide.component !== 'BitcoinBasics'
     )
       setConnectWalletPopupLS(true)
   }, [address, slide])
