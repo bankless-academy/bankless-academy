@@ -18,6 +18,7 @@ import {
   Divider,
   NumberDecrementStepper,
   useToast,
+  ModalFooter,
 } from '@chakra-ui/react'
 import { switchNetwork } from '@wagmi/core'
 import { optimism } from 'wagmi/chains'
@@ -37,6 +38,7 @@ import Collectible from 'components/Collectible'
 import { useLocalStorage } from 'usehooks-ts'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
+import { NB_DATADISK_MAX } from 'constants/index'
 
 const MintCollectibleModal = ({
   isOpen,
@@ -55,13 +57,15 @@ const MintCollectibleModal = ({
   const [isSmallScreen] = useSmallScreen()
   const toast = useToast()
   const [isMinting, setIsMinting] = useState(false)
+  const [nbDatadiskMintedLS] = useLocalStorage(
+    `nbDatadiskMinted-${lesson.lessonCollectibleTokenAddress}`,
+    0
+  )
   const [nbMint, setNbMint] = useState(1)
+  const [nextId, setNextId] = useState(null)
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
   const [mintingError, setMintingError] = useState('')
-  const [isBadgeMintedLS] = useLocalStorage(
-    `isBadgeMinted-${lesson.badgeId}`,
-    false
-  )
+  const [, setRefreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
   const remaining = 100 - numberOfOwners
   console.log(remaining)
 
@@ -99,8 +103,16 @@ const MintCollectibleModal = ({
   const { data, write } = useContractWrite(config)
 
   const { isLoading, isSuccess } = useWaitForTransaction({
-    hash: data?.hash,
+    hash:
+      // DEV: simulate tx
+      // '0xbbac72d366946360a3e67f34f974f7d3867bb958cec8a56a7386d64349e0b3a0' ||
+      data?.hash,
   })
+
+  useEffect(() => {
+    // HACK: guess tokenId
+    setNextId(1 + 100 - remaining)
+  }, [])
 
   useEffect(() => {
     if (isLoading) {
@@ -138,10 +150,8 @@ const MintCollectibleModal = ({
   useEffect(() => {
     if (isSuccess) {
       toast.closeAll()
-      // HACK: guess tokenId
-      const txLink = `https://opensea.io/assets/optimism/${
-        lesson.lessonCollectibleTokenAddress
-      }/${1 + 100 - remaining}`
+      const txLink = `https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${nextId}`
+      setRefreshDatadiskLS(true)
       toast({
         description: (
           <>
@@ -151,13 +161,13 @@ const MintCollectibleModal = ({
                   <SealCheck width="40px" height="auto" />
                 </Box>
                 <Box flexDirection="column">
-                  <Box>{t('Entry minted:')}</Box>
+                  <Box>{t('DataDisk minted:')}</Box>
                   <ExternalLink
                     underline="true"
                     href={txLink}
                     alt="Transaction in progress"
                   >
-                    {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
+                    {`${txLink.substring(0, 50)}...`}
                   </ExternalLink>
                 </Box>
               </Box>
@@ -168,6 +178,9 @@ const MintCollectibleModal = ({
         duration: 10000,
         isClosable: true,
       })
+      setTimeout(() => {
+        onClose()
+      }, 1000)
     }
   }, [isSuccess])
 
@@ -211,8 +224,8 @@ const MintCollectibleModal = ({
             />
           </Box>
           <Box
-            mb={isBadgeMintedLS ? '-25px' : '0px'}
-            opacity={isBadgeMintedLS ? '1' : '0.6'}
+            mb={nbDatadiskMintedLS > 0 ? '-25px' : '0px'}
+            opacity={nbDatadiskMintedLS > 0 ? '1' : '0.6'}
           >
             <Collectible lesson={lesson} />
           </Box>
@@ -255,7 +268,8 @@ const MintCollectibleModal = ({
               <Box w="80px">
                 <NumberInput
                   defaultValue={nbMint}
-                  max={2}
+                  isDisabled={NB_DATADISK_MAX - nbDatadiskMintedLS < 1}
+                  max={NB_DATADISK_MAX - nbDatadiskMintedLS}
                   min={1}
                   onChange={(newValue) => {
                     setNbMint(parseInt(newValue))
@@ -273,6 +287,7 @@ const MintCollectibleModal = ({
               <Button
                 size="lg"
                 variant="primaryWhite"
+                isDisabled={NB_DATADISK_MAX - nbDatadiskMintedLS < 1}
                 onClick={async () => {
                   try {
                     if (chain.id !== optimism.id) {
@@ -322,7 +337,7 @@ const MintCollectibleModal = ({
               </Button>
             </Box>
             <Box fontSize="md" pt="4">
-              * 2 mints allowed per wallet
+              {`* ${NB_DATADISK_MAX} mints allowed per wallet`}
             </Box>
             <Divider my="4" />
             <Box justifyContent="space-between" display="flex" fontSize="sm">
@@ -346,6 +361,15 @@ const MintCollectibleModal = ({
             </Box>
           </Box>
         </ModalBody>
+        <ModalFooter>
+          <ExternalLink
+            underline="true"
+            href={`/report-an-issue?context=datadisk-minting_${window?.location.pathname}`}
+            alt={t('Report an Issue')}
+          >
+            {t('Help')}
+          </ExternalLink>
+        </ModalFooter>
       </ModalContent>
     </Modal>
   )

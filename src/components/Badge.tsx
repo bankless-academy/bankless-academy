@@ -28,9 +28,7 @@ const Badge = ({
     false
   )
   const current_wallet: any = localStorage.getItem('current_wallet')
-  const { address } = current_wallet
-    ? { address: current_wallet }
-    : useAccount()
+  const { address } = useAccount()
   const { data: ensName } = useEnsName({
     address: address,
     chainId: 1,
@@ -43,7 +41,7 @@ const Badge = ({
     : `${DOMAIN_URL_}/explorer/${
         typeof ensName === 'string' && ensName?.includes('.')
           ? ensName
-          : address
+          : address || current_wallet
       }?badge=${lesson.badgeId}&referral=true`
 
   const share = `I've just claimed my "${lesson.name}" onchain credential at @${TWITTER_ACCOUNT} 🎉
