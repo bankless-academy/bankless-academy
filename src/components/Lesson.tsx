@@ -271,8 +271,9 @@ const Lesson = ({
     `isBadgeMinted-${lesson.badgeId}`,
     false
   )
-
+  const { address } = useAccount()
   const router = useRouter()
+
   const { embed } = router.query
   const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
@@ -284,9 +285,13 @@ const Lesson = ({
     'https://app.banklessacademy.com/animation/',
     '/animation/'
   )
-  const matchAnimation = /src=["']\/animation\/([^"']+)["']/.exec(slide.content)
+  // const matchAnimation = /src=["']\/animation\/([^"']+)["']/.exec(slide.content)
   const animationSlideId =
-    isAnimationSlide && matchAnimation ? matchAnimation[1] : ''
+    lesson.notionId === '6a440f5dd00a4179811178943bf89e1d'
+      ? 'bitcoin'
+      : lesson.notionId === 'e90059604739465ea99b9a2c8af5eb75'
+      ? 'validating-tx-with-ethereum-staking'
+      : ''
   const [animationStepLS, setAnimationStepLS] = useLocalStorage(
     `animation-${animationSlideId}`,
     0
@@ -295,7 +300,6 @@ const Lesson = ({
     ? ANIMATIONS[animationSlideId]?.steps?.length
     : null
 
-  const { address } = useAccount()
   const walletAddress = address
   // DEV ENV: you can force a specific wallet address here if you want to test the claiming function
   // walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb44'
@@ -374,18 +378,14 @@ const Lesson = ({
   }, [])
 
   const clickLeft = () => {
-    if (isAnimationSlide && animationSlideId?.length && animationStepLS > 0) {
+    if (isAnimationSlide && animationStepLS > 0) {
       setAnimationStepLS(animationStepLS - 1)
       if (isSmallScreen) scrollDown()
     } else goToPrevSlide()
   }
 
   const clickRight = () => {
-    if (
-      isAnimationSlide &&
-      animationSlideId?.length &&
-      animationStepLS + 1 < animationSteps
-    ) {
+    if (isAnimationSlide && animationStepLS + 1 < animationSteps) {
       setAnimationStepLS(animationStepLS + 1)
       if (isSmallScreen) scrollDown()
     } else goToNextSlide()
@@ -581,7 +581,8 @@ const Lesson = ({
     if (
       node.type === 'tag' &&
       node.name === 'iframe' &&
-      node?.attribs?.src?.includes('/animation/')
+      node?.attribs?.src?.includes('/animation/') &&
+      animationSlideId?.length
     ) {
       // HACK: integrate the embed animation iframe as a component
       return <Animation animationId={animationSlideId} />
@@ -735,7 +736,7 @@ const Lesson = ({
         step={currentSlide}
         total={numberOfSlides}
         pourcentage={
-          animationSlideId
+          isAnimationSlide
             ? ((animationStepLS + 1) / animationSteps) * 100
             : null
         }
