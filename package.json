@@ -84,6 +84,7 @@
     "pg": "^8.7.1",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
+    "react-confetti": "^6.1.0",
     "react-device-detect": "^2.0.0",
     "react-dom": "^18.2.0",
     "react-facebook-login": "^4.1.1",
