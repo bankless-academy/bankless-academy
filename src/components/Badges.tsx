@@ -232,39 +232,40 @@ const Badges = ({
               )}
               {type === 'badges' && (
                 <>
-                  {LESSONS.filter((lesson) => lesson.badgeId).map(
-                    (lesson, index) => {
-                      const ownsBadge = (badges as number[]).includes(
-                        lesson.badgeId
-                      )
-                      if (isMyProfile || ownsBadge)
-                        return (
-                          <InternalLink
-                            key={`badge-${index}`}
-                            href={`/lessons/${lesson.slug}`}
-                            alt={lesson.englishName}
+                  {LESSONS.filter(
+                    (lesson) =>
+                      lesson.badgeId && lesson.publicationStatus === 'publish'
+                  ).map((lesson, index) => {
+                    const ownsBadge = (badges as number[]).includes(
+                      lesson.badgeId
+                    )
+                    if (isMyProfile || ownsBadge)
+                      return (
+                        <InternalLink
+                          key={`badge-${index}`}
+                          href={`/lessons/${lesson.slug}`}
+                          alt={lesson.englishName}
+                        >
+                          <Box
+                            justifySelf="center"
+                            opacity={ownsBadge ? '1' : '0.3'}
+                            borderRadius="3px"
+                            backgroundColor={
+                              // badgeToHighlight === lesson.badgeId
+                              // ? 'orange.100' : 'unset'
+                              'unset'
+                            }
+                            p={1}
                           >
-                            <Box
-                              justifySelf="center"
-                              opacity={ownsBadge ? '1' : '0.3'}
-                              borderRadius="3px"
-                              backgroundColor={
-                                // badgeToHighlight === lesson.badgeId
-                                // ? 'orange.100' : 'unset'
-                                'unset'
-                              }
-                              p={1}
-                            >
-                              <Image
-                                src={lesson.badgeImageLink}
-                                alt={lesson.name}
-                                title={lesson.name}
-                              />
-                            </Box>
-                          </InternalLink>
-                        )
-                    }
-                  )}
+                            <Image
+                              src={lesson.badgeImageLink}
+                              alt={lesson.name}
+                              title={lesson.name}
+                            />
+                          </Box>
+                        </InternalLink>
+                      )
+                  })}
                 </>
               )}
               {/* Ongoing Donation Round */}
