@@ -284,12 +284,9 @@ const Lesson = ({
     'https://app.banklessacademy.com/animation/',
     '/animation/'
   )
-  // TODO: make this dynamic
-  const animationSlideId = isAnimationSlide
-    ? lesson.slug === 'bitcoin-basics'
-      ? 'bitcoin'
-      : 'validating-tx-with-ethereum-staking'
-    : ''
+  const matchAnimation = /src=["']\/animation\/([^"']+)["']/.exec(slide.content)
+  const animationSlideId =
+    isAnimationSlide && matchAnimation ? matchAnimation[1] : ''
   const [animationStepLS, setAnimationStepLS] = useLocalStorage(
     `animation-${animationSlideId}`,
     0
@@ -377,14 +374,18 @@ const Lesson = ({
   }, [])
 
   const clickLeft = () => {
-    if (isAnimationSlide && animationStepLS > 0) {
+    if (isAnimationSlide && animationSlideId?.length && animationStepLS > 0) {
       setAnimationStepLS(animationStepLS - 1)
       if (isSmallScreen) scrollDown()
     } else goToPrevSlide()
   }
 
   const clickRight = () => {
-    if (isAnimationSlide && animationStepLS + 1 < animationSteps) {
+    if (
+      isAnimationSlide &&
+      animationSlideId?.length &&
+      animationStepLS + 1 < animationSteps
+    ) {
       setAnimationStepLS(animationStepLS + 1)
       if (isSmallScreen) scrollDown()
     } else goToNextSlide()

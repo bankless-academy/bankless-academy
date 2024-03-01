@@ -311,14 +311,15 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    badgeImageLink: '/images/bitcoin-basics/badge-da9823bb.png',
-    lessonImageLink: '/images/bitcoin-basics/lesson-0a24938a.png',
+    badgeImageLink: '/images/bitcoin-basics/badge-89138e57.png',
+    lessonImageLink: '/images/bitcoin-basics/lesson-4a87d990.png',
+    socialImageLink: '/images/bitcoin-basics/social-9bc40686.jpg',
     learningActions: '',
-    marketingDescription: '',
-    badgeId: null,
+    marketingDescription: 'What is Bitcoin? Let’s explore the first successful cryptocurrency and rethink money.',
+    badgeId: 12,
     duration: null,
     learnings: '',
-    description: '',
+    description: 'What is Bitcoin? Let’s explore the first successful cryptocurrency and rethink money.',
     name: 'Bitcoin Basics',
     languages: [],
     lessonWriters: 'Tetranome',
@@ -330,7 +331,6 @@ const LESSONS: LessonType[] = [
     notionId: '6a440f5dd00a4179811178943bf89e1d',
     englishName: 'Bitcoin Basics',
     slug: 'bitcoin-basics',
-    socialImageLink: '/images/bitcoin-basics/social-0a24938a.png',
     imageLinks: [
       '/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png',
       '/images/bitcoin-basics/bitcoins-story-98b007a5.png',
@@ -341,7 +341,7 @@ const LESSONS: LessonType[] = [
       '/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg',
       '/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg',
       '/images/bitcoin-basics/how-does-it-work-eda52e60.svg',
-      '/images/bitcoin-basics/how-does-it-work-pt-3-9b8a77ea.svg',
+      '/images/bitcoin-basics/mining-bitcoin-9b8a77ea.svg',
       '/images/bitcoin-basics/sending-a-bitcoin-transaction-aad5de00.png'
     ],
     keywords: [
@@ -356,21 +356,22 @@ const LESSONS: LessonType[] = [
       'peer-to-peer',
       'scarce',
       'self-custodial',
-      'total supply',
+      'total',
+      ' supply',
       'cryptocurrency mining',
       'circulating supply',
       'monetary policy',
       'self-custody',
       'custodians',
       'cryptocurrency wallet',
-      'wealth gap',
-      'equality of opportunity',
       'decentralization',
       'decentralized',
       'miners',
-      'btc',
       'block rewards',
-      'decentralized money'
+      'total supply',
+      'btc',
+      'decentralized money',
+      'equality of opportunity'
     ],
     slides: [
       {
@@ -431,7 +432,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '8462f7e2e0694a82a0e6dc126c81b907',
         title: 'Digital Gold: Scarcity',
-        content: '<div class="bloc1"><p>Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This <code>total supply</code> is embedded in its code, ensuring that Bitcoin remains rare and potentially valuable, much like gold.</p><p>While Bitcoin’s total supply can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called <code>cryptocurrency mining</code>. This predictable increase in <code>circulating supply</code> helps to stimulate the Bitcoin economy.</p><p>Bitcoin\'s fixed <code>monetary policy</code> makes it an attractive asset for those seeking to preserve value in the long term. It’s short term value remains volatile, due to speculation.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg\'></div>'
+        content: '<div class="bloc1"><p>Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This <code>total</code><code> supply</code> is embedded in its code, ensuring that Bitcoin remains rare and potentially valuable, much like gold.</p><p>While Bitcoin’s total supply can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called <code>cryptocurrency mining</code>. This predictable increase in <code>circulating supply</code> helps to stimulate the Bitcoin economy.</p><p>Bitcoin\'s fixed <code>monetary policy</code> makes it an attractive asset for those seeking to preserve value in the long term. It’s short term value remains volatile, due to speculation.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -503,12 +504,6 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'LEARN',
-        notionId: '4de062c639a04f68a0ef58ffe4ca4a27',
-        title: 'The Wealth Gap',
-        content: '<div class="bloc1"><p>Across the world there is a growing <code>wealth gap</code> between the lower, middle and upper classes. It is caused by modern monetary policy and systems that accentuate differences in the knowledge and tools citizens have available to them.</p><p>We’ve looked at how money that loses its value over time encourages us to spend it. The wealthy understand they must invest to preserve it. Bitcoin’s scarcity puts forward a monetary model that allows money to perform this service by default.</p><p>Banks run on models where they will loan out their client’s savings for profit. They’ll pay just a fraction to them in interest. What if you were able to take self-custody and have access to tools that let you earn that interest yourself?</p><p>With tools like Bitcoin, these opportunities become available to everyone around the world. Its a monetary system with built in <code>equality of opportunity</code>.</p></div>'
-      },
-      {
-        type: 'LEARN',
         notionId: '77a68343994b4aad9aa1c99f35961204',
         title: 'How does it work?',
         content: '<div class="bloc1"><p>Let’s switch gears and look at the engine behind Bitcoin: the Bitcoin Network.</p><p>Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.</p><p>This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.</p><p>This defense strategy is called <code>decentralization</code>: the shifting of control from one central group to many smaller ones. Decentralization is what makes cryptocurrency transfers virtually unstoppable.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/how-does-it-work-eda52e60.svg\'></div>'
@@ -516,14 +511,14 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '8a1ec1c7e35649bb9b26e4a1c1ce5fe1',
-        title: 'How does it work? (Pt. 2)',
-        content: '<div class="bloc1"><p>When sending cryptocurrency across this network, your transaction is inspected by these <code>decentralized</code> network participants. Known as <code>miners</code>, these participants constantly check transactions and add them to a database hosted across the network.</p><p>This is the <code>cryptocurrency mining</code> process. It’s what keeps the network running securely. Mining can get quite complicated, so we’ll take a simplified view for today:</p><ol><li>You submit a transaction to the network, sending 0.1 <code>BTC</code> to your friend.</li><li>A miner checks your transaction for errors. Other miners double-check their results.</li><li>If approved, your transaction is added to the database.</li><li>Your friend receives 0.1 BTC in their <code>cryptocurrency wallet</code>.</li></ol><p>Once a transaction is confirmed, it cannot be reversed.</p></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/bitcoin\'></iframe></div>'
+        title: 'Mining Bitcoin',
+        content: '<div class="bloc1"><p>When sending cryptocurrency across this network, your transaction is inspected by these <code>decentralized</code> network participants. Known as <code>miners</code>, these participants constantly check transactions and add them to a “database” hosted across the network.</p><p>This is the <code>cryptocurrency mining</code> process. It’s what keeps the network running securely. </p><p>Once a transaction is confirmed, it cannot be reversed.</p><p>&lt;&gt;</p><p>When you send Bitcoin, you pay a small fee that is awarded to the miners who process your transaction. <code>Miners</code> also earn new Bitcoin, called <code>block rewards</code>, for their work.</p><p>These rewards slowly increase Bitcoin’s <code>circulating supply</code> within the <code>total supply</code> cap of 21 million coins.</p><p><code>Cryptocurrency mining</code> incentivizes people around the world to help secure the network while steadily injecting new currency into the Bitcoin economy.</p><p>That’s quite a process!</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/mining-bitcoin-9b8a77ea.svg\'></div>'
       },
       {
         type: 'LEARN',
-        notionId: '04eef07707554c8983e6926211d932d7',
-        title: 'How does it work? (Pt. 3)',
-        content: '<div class="bloc1"><p>When you send Bitcoin, you pay a small fee that is awarded to the miners who process your transaction. <code>Miners</code> also earn new Bitcoin, called <code>block rewards</code>, for their work.</p><p>These rewards slowly increase Bitcoin’s <code>circulating supply</code> within the <code>total supply</code> cap of 21 million coins.</p><p><code>Cryptocurrency mining</code> incentivizes people around the world to help secure the network while steadily injecting new currency into the Bitcoin economy.</p><p>That’s quite a process!</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/how-does-it-work-pt-3-9b8a77ea.svg\'></div>'
+        notionId: '9062ca20dd5541a6ae3a25f5831ee4e2',
+        title: 'TODO: add back slide title',
+        content: '<div class="bloc1"><p>Mining can get quite complicated, so we’ll take a simplified view for today:</p><ol><li>You submit a transaction to the network, sending 0.1 <code>BTC</code> to your friend.</li><li>A miner checks your transaction for errors. Other miners double-check their results.</li><li>If approved, your transaction is added to the blockchain “database”.</li><li>Your friend receives 0.1 BTC in their <code>cryptocurrency wallet</code>.</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/bitcoin\'></iframe></div>'
       },
       {
         type: 'QUIZ',
@@ -555,7 +550,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '9920715e06094e39bf34a5a63891a909',
         title: 'Sending a Bitcoin Transaction',
-        content: '<div class="bloc1"><p>It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.</p><p>Your transaction will include the following details:</p><p>📫 The wallet address of the person you’re sending to.</p><p>💰 The amount of Bitcoin to send.</p><p>⛏️ A transaction fee is given to the <code>miners</code>.</p><p>Remember to make sure all details are accurate.<br>Once a Bitcoin transaction is confirmed, it cannot be reversed.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/sending-a-bitcoin-transaction-aad5de00.png\'></div>'
+        content: '<div class="bloc1"><p>It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.</p><p>Your transaction will include the following details:</p><p>📫 The wallet address of the person you’re sending to.</p><p>💰 The amount of Bitcoin to send.</p><p>It will also include a transaction fee given to the <code>miners</code>, but this part is automated.</p><p>Remember to make sure all details are accurate.<br>Once a Bitcoin transaction is confirmed, you cannot reverse it.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/sending-a-bitcoin-transaction-aad5de00.png\'></div>'
       },
       {
         type: 'QUEST',
