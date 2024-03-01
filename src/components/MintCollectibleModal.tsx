@@ -115,7 +115,7 @@ const MintCollectibleModal = ({
   }, [])
 
   useEffect(() => {
-    if (isLoading) {
+    if (isLoading && data?.hash) {
       toast.closeAll()
       const txLink = `https://optimistic.etherscan.io/tx/${data?.hash}`
       toast({
@@ -212,7 +212,7 @@ const MintCollectibleModal = ({
           </Box>
         </ModalHeader>
         <ModalCloseButton />
-        <ModalBody padding={isMobileScreen ? '0' : 'default'}>
+        <ModalBody padding={isMobileScreen ? '0' : 'default'} pb="0">
           {/* TODO: switch network */}
           <Box position="relative" h="8px">
             <Image
@@ -224,8 +224,9 @@ const MintCollectibleModal = ({
             />
           </Box>
           <Box
-            mb={nbDatadiskMintedLS > 0 ? '-25px' : '0px'}
-            opacity={nbDatadiskMintedLS > 0 ? '1' : '0.6'}
+            // mb={nbDatadiskMintedLS > 0 ? '-25px' : '0px'}
+            mb={'-25px'}
+            // opacity={nbDatadiskMintedLS > 0 ? '1' : '0.6'}
           >
             <Collectible lesson={lesson} />
           </Box>
@@ -291,7 +292,11 @@ const MintCollectibleModal = ({
                 onClick={async () => {
                   try {
                     if (chain.id !== optimism.id) {
-                      await switchNetwork({ chainId: optimism.id })
+                      try {
+                        await switchNetwork({ chainId: optimism.id })
+                      } catch (error) {
+                        console.error(error)
+                      }
                       setIsMinting(false)
                       toast({
                         title: t('You were previously on the wrong network.'),
@@ -350,7 +355,7 @@ const MintCollectibleModal = ({
               w="100%"
               background="#282827"
               mt="2"
-              mb="4"
+              mb="2"
             >
               <Box
                 borderRadius="6px"

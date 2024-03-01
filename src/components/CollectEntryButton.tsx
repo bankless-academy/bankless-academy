@@ -231,7 +231,11 @@ const CollectEntryButton = ({
                   openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
                 } else {
                   if (chain.id !== optimism.id) {
-                    await switchNetwork({ chainId: optimism.id })
+                    try {
+                      await switchNetwork({ chainId: optimism.id })
+                    } catch (error) {
+                      console.error(error)
+                    }
                     setIsMinting(false)
                     toast({
                       title: t('You were previously on the wrong network.'),
