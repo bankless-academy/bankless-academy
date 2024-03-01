@@ -292,7 +292,7 @@ const Badges = ({
                         <Box key={`badge-${key}`} p={1} position="relative">
                           <Image
                             aspectRatio="1"
-                            opacity={ownsBadge ? '1' : '0.2'}
+                            opacity={ownsBadge ? '1' : '0.3'}
                             w="100%"
                             src={platform.icon}
                             p="3"

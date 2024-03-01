@@ -226,7 +226,7 @@ const MintCollectibleModal = ({
           <Box
             // mb={nbDatadiskMintedLS > 0 ? '-25px' : '0px'}
             mb={'-25px'}
-            // opacity={nbDatadiskMintedLS > 0 ? '1' : '0.6'}
+            // opacity={nbDatadiskMintedLS > 0 ? '1' : '0.5'}
           >
             <Collectible lesson={lesson} />
           </Box>

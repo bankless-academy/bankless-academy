@@ -214,20 +214,22 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
           position="relative"
         >
           <>
-            {nbDatadiskMintedLS < NB_DATADISK_MAX ? (
-              <Box
-                cursor="pointer"
-                onClick={async () => {
-                  onOpenMintCollectibleModal()
-                  if (chain?.id !== 10 && address)
-                    await switchNetwork({ chainId: 10 })
-                }}
-              >
+            <Box opacity={nbDatadiskMintedLS > 0 ? '1' : '0.5'}>
+              {nbDatadiskMintedLS < NB_DATADISK_MAX ? (
+                <Box
+                  cursor="pointer"
+                  onClick={async () => {
+                    onOpenMintCollectibleModal()
+                    if (chain?.id !== 10 && address)
+                      await switchNetwork({ chainId: 10 })
+                  }}
+                >
+                  <Collectible lesson={lesson} />
+                </Box>
+              ) : (
                 <Collectible lesson={lesson} />
-              </Box>
-            ) : (
-              <Collectible lesson={lesson} />
-            )}
+              )}
+            </Box>
             {MD_ENABLED && lesson.hasCollectible && (
               <ExternalLink
                 href={`https://github.com/bankless-academy/bankless-academy/blob/main/translation/lesson/en/${lesson.slug}.md?plain=1`}
