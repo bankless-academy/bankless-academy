@@ -174,13 +174,13 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                       w="100%"
                       height="100%"
                       onClick={() => {
-                        console.log('dd')
                         if (!isQuestCompleted) {
                           setTriggerOpen(true)
                           setTimeout(() => {
                             setTriggerOpen(false)
                           }, 100)
-                        } else if (!address) {
+                        }
+                        if (!address) {
                           setConnectWalletPopupLS(true)
                         }
                       }}
