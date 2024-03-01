@@ -59,7 +59,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
         <>
           <Box>
             {t(
-              'Academy Badges are non-tradable NFTs that serve as proof of your achievements on the blockchain. You can mint them for free after you answered all the questions correctly and validated the lesson quest.'
+              "Academy Badges are onchain certifications representing your achievements. You can claim badges for free after you've completed your lesson and quest."
             )}
           </Box>
         </>
