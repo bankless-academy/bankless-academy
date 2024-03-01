@@ -159,9 +159,6 @@ const MintBadge = ({
         console.log(transactionComfirmed)
         if (transactionComfirmed.status === 'success') {
           const openSeaLink = `${BADGE_OPENSEA_URL}${badgeId}`
-          // Refresh list of Badges in the wallet
-          setRefreshBadgesLS(true)
-          setIsBadgeMintedLS(true)
           toast.closeAll()
           setShowConfetti(true)
           toast({
@@ -263,21 +260,22 @@ const MintBadge = ({
         {t('Claim Badge')}
       </Button>
       <PassportModal isOpen={isOpen} onClose={onClose} />
-      {showConfetti && (
-        <Confetti
-          style={{ position: 'fixed', zIndex: '10', top: '0', left: '0' }}
-          width={width}
-          height={height}
-          run={showConfetti}
-          gravity={0.05}
-          numberOfPieces={2000}
-          tweenDuration={10000}
-          recycle={false}
-          onConfettiComplete={() => {
-            setShowConfetti(false)
-          }}
-        />
-      )}
+      <Confetti
+        style={{ position: 'fixed', zIndex: '10', top: '0', left: '0' }}
+        width={width}
+        height={height}
+        run={showConfetti}
+        gravity={0.05}
+        numberOfPieces={2000}
+        tweenDuration={10000}
+        recycle={false}
+        onConfettiComplete={() => {
+          setShowConfetti(false)
+          // Refresh list of Badges in the wallet
+          setIsBadgeMintedLS(true)
+          setRefreshBadgesLS(true)
+        }}
+      />
     </>
   )
 }
