@@ -187,8 +187,6 @@ const MintBadge = ({
             duration: 10000,
             isClosable: true,
           })
-          setStatus('')
-          setIsMintingInProgress(false)
         }
       }
       // something went wrong while minting
@@ -274,6 +272,8 @@ const MintBadge = ({
           // Refresh list of Badges in the wallet
           setIsBadgeMintedLS(true)
           setRefreshBadgesLS(true)
+          setStatus('')
+          setIsMintingInProgress(false)
         }}
       />
     </>
