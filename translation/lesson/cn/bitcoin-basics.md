@@ -1,6 +1,6 @@
 ---
 TITLE: Bitcoin Basics
-DESCRIPTION: null
+DESCRIPTION: What is Bitcoin? Let’s explore the first successful cryptocurrency and rethink money.
 LANGUAGE: English
 WRITERS: Tetranome
 TRANSLATORS: X
@@ -125,7 +125,7 @@ For its qualities, Bitcoin has earned the nickname “digital gold”.
 
 # Digital Gold: Scarcity
 
-Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This `total supply` is embedded in its code, ensuring that Bitcoin remains rare and potentially valuable, much like gold.
+Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This `total` `supply` is embedded in its code, ensuring that Bitcoin remains rare and potentially valuable, much like gold.
 
 While Bitcoin’s total supply can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called `cryptocurrency mining`. This predictable increase in `circulating supply` helps to stimulate the Bitcoin economy.
 
@@ -199,16 +199,6 @@ How is Bitcoin similar to email?
 
 > Unlike Bitcoin, email systems are hosted by private businesses.
 
-# The Wealth Gap
-
-Across the world there is a growing `wealth gap` between the lower, middle and upper classes. It is caused by modern monetary policy and systems that accentuate differences in the knowledge and tools citizens have available to them.
-
-We’ve looked at how money that loses its value over time encourages us to spend it. The wealthy understand they must invest to preserve it. Bitcoin’s scarcity puts forward a monetary model that allows money to perform this service by default.
-
-Banks run on models where they will loan out their client’s savings for profit. They’ll pay just a fraction to them in interest. What if you were able to take self-custody and have access to tools that let you earn that interest yourself?
-
-With tools like Bitcoin, these opportunities become available to everyone around the world. Its a monetary system with built in `equality of opportunity`.
-
 # How does it work?
 
 Let’s switch gears and look at the engine behind Bitcoin: the Bitcoin Network.
@@ -221,22 +211,15 @@ This defense strategy is called `decentralization`: the shifting of control from
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/how-does-it-work-eda52e60.svg)
 
-# How does it work? (Pt. 2)
+# Mining Bitcoin
 
-When sending cryptocurrency across this network, your transaction is inspected by these `decentralized` network participants. Known as `miners`, these participants constantly check transactions and add them to a database hosted across the network.
+When sending cryptocurrency across this network, your transaction is inspected by these `decentralized` network participants. Known as `miners`, these participants constantly check transactions and add them to a “database” hosted across the network.
 
-This is the `cryptocurrency mining` process. It’s what keeps the network running securely. Mining can get quite complicated, so we’ll take a simplified view for today:
-
-1. You submit a transaction to the network, sending 0.1 `BTC` to your friend.
-2. A miner checks your transaction for errors. Other miners double-check their results.
-3. If approved, your transaction is added to the database.
-4. Your friend receives 0.1 BTC in their `cryptocurrency wallet`.
+This is the `cryptocurrency mining` process. It’s what keeps the network running securely.
 
 Once a transaction is confirmed, it cannot be reversed.
 
-[embed](https://app.banklessacademy.com/animation/bitcoin)
-
-# How does it work? (Pt. 3)
+<>
 
 When you send Bitcoin, you pay a small fee that is awarded to the miners who process your transaction. `Miners` also earn new Bitcoin, called `block rewards`, for their work.
 
@@ -246,7 +229,18 @@ These rewards slowly increase Bitcoin’s `circulating supply` within the `total
 
 That’s quite a process!
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/how-does-it-work-pt-3-9b8a77ea.svg)
+![](https://app.banklessacademy.com/images/bitcoin-basics/mining-bitcoin-9b8a77ea.svg)
+
+# TODO: add back slide title
+
+Mining can get quite complicated, so we’ll take a simplified view for today:
+
+1. You submit a transaction to the network, sending 0.1 `BTC` to your friend.
+2. A miner checks your transaction for errors. Other miners double-check their results.
+3. If approved, your transaction is added to the blockchain “database”.
+4. Your friend receives 0.1 BTC in their `cryptocurrency wallet`.
+
+[embed](https://app.banklessacademy.com/animation/bitcoin)
 
 # Knowledge Check 5
 
@@ -293,9 +287,9 @@ Your transaction will include the following details:
 
 💰 The amount of Bitcoin to send.
 
-⛏️ A transaction fee is given to the `miners`.
+It will also include a transaction fee given to the `miners`, but this part is automated.
 
 Remember to make sure all details are accurate.
-Once a Bitcoin transaction is confirmed, it cannot be reversed.
+Once a Bitcoin transaction is confirmed, you cannot reverse it.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/sending-a-bitcoin-transaction-aad5de00.png)
