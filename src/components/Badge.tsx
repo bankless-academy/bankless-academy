@@ -33,6 +33,10 @@ const Badge = ({
     address: address,
     chainId: 1,
   })
+  const [, setConnectWalletPopupLS] = useLocalStorage(
+    `connectWalletPopup`,
+    false
+  )
   const [kudosMintedLS] = useLocalStorage(`kudosMinted`, [])
   // TODO: TRANSLATE
   const langURL = i18n.language !== 'en' ? `${i18n.language}/` : ''
@@ -87,7 +91,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           >
             {BadgeHelper}
             <Box opacity={isBadgeMintedLS ? '1' : '0.5'} position="relative">
-              {!isQuestCompleted && (
+              {(!address || !isQuestCompleted) && (
                 <Box position="absolute" w="100%" height="100%" px="19px">
                   <Box
                     w="100%"
@@ -97,7 +101,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                     zIndex="2"
                     onClick={() => {
                       console.log('dd')
-                      if (!isQuestCompleted) {
+                      if (!address || !isQuestCompleted) {
                         setTriggerOpen(true)
                         setTimeout(() => {
                           setTriggerOpen(false)
@@ -161,7 +165,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                 </Box>
               ) : (
                 <Box position="relative">
-                  {!isQuestCompleted && (
+                  {(!address || !isQuestCompleted) && (
                     <Box
                       position="absolute"
                       cursor="help"
@@ -176,6 +180,8 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                           setTimeout(() => {
                             setTriggerOpen(false)
                           }, 100)
+                        } else if (!address) {
+                          setConnectWalletPopupLS(true)
                         }
                       }}
                     />
