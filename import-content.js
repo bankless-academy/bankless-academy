@@ -291,6 +291,7 @@ axios
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.badgeId === undefined) lesson.badgeId = null
+      if (lesson.datadiskVectorMint === undefined) delete lesson.datadiskVectorMint
       if (lesson.collectibleId === undefined) delete lesson.collectibleId
       if (lesson.badgeImageLink === undefined) lesson.badgeImageLink = null
       if (lesson.lessonCollectedImageLink === undefined) delete lesson.lessonCollectedImageLink

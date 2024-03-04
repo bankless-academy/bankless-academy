@@ -194,7 +194,9 @@ export default async function handler(
     {
       "datadisks": [
         "D001",
-        "D001"
+        "D001",
+        "D002",
+        "D002"
       ],
       "handbooks": [
         "H001",
