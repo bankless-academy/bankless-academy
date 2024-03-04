@@ -186,7 +186,7 @@ const Badges = ({
                               <Image
                                 src={`${
                                   isDatadisk
-                                    ? '/images/datadisk-001.png'
+                                    ? lesson.lessonCollectedImageLink
                                     : '/images/handbook-badge.png'
                                 }`}
                                 alt={lesson.name}
