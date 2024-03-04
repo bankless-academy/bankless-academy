@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { signMessage, waitForTransaction } from '@wagmi/core'
-import { Gear, SealCheck } from '@phosphor-icons/react'
+import { Gear, SealCheck, ShootingStar } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
@@ -247,13 +247,14 @@ const MintBadge = ({
         height="51px"
         fontSize="lg"
         fontWeight="bold"
-        isDisabled={!address || !isQuestCompleted}
+        opacity={!address || !isQuestCompleted ? '0.5' : 1}
         isLoading={isMintingInProgress}
         loadingText={t('Minting Badge...')}
         cursor={isBadgeMintedLS ? 'auto' : 'pointer'}
         onClick={() => {
           passportLS?.verified ? mintBadge() : onOpen()
         }}
+        leftIcon={<ShootingStar width="28px" height="28px" />}
       >
         {t('Claim Badge')}
       </Button>

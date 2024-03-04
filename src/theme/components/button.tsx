@@ -48,6 +48,27 @@ const primary = {
   _active: {
     background: 'linear-gradient(132deg, #67407E 0%, #354374 100%);',
   },
+  _disabled: {
+    ...padding,
+    cursor: 'default',
+    color: '#B85FF1',
+    opacity: '0.6',
+    background: 'transparent',
+    border: '1px solid #B85FF1',
+    span: {
+      path: {
+        fill: '#B85FF1',
+      },
+    },
+    _hover: {
+      color: '#B85FF1',
+      span: {
+        path: {
+          fill: '#B85FF1',
+        },
+      },
+    },
+  },
 }
 
 const primaryGold = {
@@ -61,6 +82,14 @@ const primaryGold = {
   _active: {
     ...padding,
     background: 'linear-gradient(134deg, #9E8053 0%, #684D3E 100%)',
+    border: '1px solid #f1b15a',
+  },
+  _disabled: {
+    ...padding,
+    cursor: 'default',
+    color: '#f1b15a',
+    opacity: '0.6',
+    background: 'transparent',
     border: '1px solid #f1b15a',
   },
 }
@@ -85,6 +114,16 @@ const primaryWhite = {
   _hover: {
     background: 'white',
     border: '2px solid #b357ec',
+  },
+  _disabled: {
+    color: '#5D4E78',
+    border: '2px solid transparent',
+    background: 'white',
+    _hover: {
+      background: 'white',
+      color: 'white',
+      border: '2px solid transparent',
+    },
   },
 }
 
