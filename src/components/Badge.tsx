@@ -91,26 +91,25 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
           >
             {BadgeHelper}
             <Box opacity={isBadgeMintedLS ? '1' : '0.5'} position="relative">
-              {(!address || !isQuestCompleted) && (
-                <Box position="absolute" w="100%" height="100%" px="19px">
-                  <Box
-                    w="100%"
-                    height="100%"
-                    cursor="help"
-                    borderRadius="50%"
-                    zIndex="2"
-                    onClick={() => {
-                      console.log('dd')
-                      if (!address || !isQuestCompleted) {
-                        setTriggerOpen(true)
-                        setTimeout(() => {
-                          setTriggerOpen(false)
-                        }, 100)
-                      }
-                    }}
-                  />
-                </Box>
-              )}
+              <Box position="absolute" w="100%" height="100%" px="19px">
+                <Box
+                  w="100%"
+                  height="100%"
+                  cursor={!isBadgeMintedLS ? 'help' : 'pointer'}
+                  borderRadius="50%"
+                  zIndex="2"
+                  onClick={() => {
+                    if (!isBadgeMintedLS) {
+                      setTriggerOpen(true)
+                      setTimeout(() => {
+                        setTriggerOpen(false)
+                      }, 100)
+                    } else {
+                      window.open(OpenSeaBadgeLink, '_blank')
+                    }
+                  }}
+                />
+              </Box>
               <NFT nftLink={lesson.badgeImageLink} />
             </Box>
             <Box p="4">
