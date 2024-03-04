@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { ALCHEMY_KEY_BACKEND, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
+import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
 import { NextApiRequest, NextApiResponse } from 'next'
 // import { createPublicClient, http } from 'viem'
 // import { mainnet } from 'viem/chains'
@@ -26,14 +26,19 @@ export default async function handler(
 ): Promise<void> {
   const leaderboard: any = {}
   try {
-    const collectors = await getCollectors('0x5ce61b80931Ea67565f0532965DDe5be2d41331d')
-    // console.log(collectors)
-    for (const collector of collectors.ownerAddresses) {
-      const datadisks = []
-      for (let i = 0; i < collector.tokenBalances?.length; i++) {
-        datadisks.push('D001')
+    for (const collectibleAddress of COLLECTIBLE_ADDRESSES) {
+      const collectors = await getCollectors(collectibleAddress)
+      console.log(collectors)
+      const datadiskId = LESSONS.find(
+        (lesson) => lesson.lessonCollectibleTokenAddress === collectibleAddress
+      )?.collectibleId
+      for (const collector of collectors.ownerAddresses) {
+        const datadisks = []
+        for (let i = 0; i < collector.tokenBalances?.length; i++) {
+          datadisks.push(datadiskId)
+        }
+        leaderboard[collector.ownerAddress] = { datadisks: datadisks, handbooks: [], badges: 0 }
       }
-      leaderboard[collector.ownerAddress] = { datadisks: datadisks, handbooks: [], badges: 0 }
     }
 
     for (const mirrorArticleAddress of MIRROR_ARTICLE_ADDRESSES) {
