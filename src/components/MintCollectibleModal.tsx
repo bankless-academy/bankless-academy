@@ -207,10 +207,10 @@ const MintCollectibleModal = ({
             Bankless Academy is issuing a small quantity of collectible DataDisk
             devices in an evolving effort to share educational content with the
             deeper reaches of blockspace.
-            <br />
-            <br />
-            Collect yours to become a Guardian of Bankless Academy{' '}
-            <b>and retroactively fund this lesson!</b>
+            <Box mt="2">
+              Collect yours to become a Guardian of Bankless Academy{' '}
+              <b>and retroactively fund this lesson!</b>
+            </Box>
           </Box>
         </ModalHeader>
         <ModalCloseButton />
