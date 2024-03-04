@@ -126,6 +126,7 @@ const KEY_MATCHING = {
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
   'Badge ID': 'badgeId',
+  'DataDisk vector mint': 'datadiskVectorMint',
   'Collectible ID': 'collectibleId',
   'Duration in minutes': 'duration',
   'What will you learn from this?': 'learnings',

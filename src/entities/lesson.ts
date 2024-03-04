@@ -9,6 +9,7 @@ export interface LessonType {
   slug: string
   notionId: string
   badgeId?: number
+  datadiskVectorMint?: number
   collectibleId?: string
   description: string
   languages?: LanguageType[]
