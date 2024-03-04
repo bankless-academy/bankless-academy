@@ -85,7 +85,7 @@ const MintCollectibleModal = ({
       },
     ],
     functionName: 'vectorMint721',
-    args: [123, nbMint, address],
+    args: [lesson.datadiskVectorMint, nbMint, address],
     chainId: optimism.id,
     // 0.003 + 0.0008 in collector fee
     value: parseEther(`${0.0308 * nbMint}`),
