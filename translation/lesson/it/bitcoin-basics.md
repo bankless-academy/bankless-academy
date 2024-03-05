@@ -31,13 +31,13 @@ ________________________________________________________________________________
 
 Welcome, bold Explorer, to the frontier of digital innovation.
 
-At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge for “going bankless!”
+At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to “go bankless!”
 
-Using the new era of the internet and `blockchain technology`, we’re unlocking financial freedom and reclaiming ownership of our data and privacy — which have long been exploited by third parties for profit.
+Using the new era of the internet and `blockchain technology`, we’re unlocking financial freedom and reclaiming ownership of our assets, data and privacy — which have long been exploited by businesses for profit.
 
-Today, we’re looking at the first event in blockchain history: the invention of `cryptocurrency,` a type of `money` that moves outside of traditional financial systems.
+Today, we’re looking at the first major event in blockchain history: the invention of Bitcoin.
 
-The cryptocurrency boom began with the invention of Bitcoin…
+Bitcoin is a new type of money — a `cryptocurrency`. It grants its holders increased financial freedom and protection for their hard-earned money.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
 
@@ -45,11 +45,11 @@ The cryptocurrency boom began with the invention of Bitcoin…
 
 Launched in 2009 by the mysterious “`Satoshi Nakamoto`,” Bitcoin marked the beginning of a new economic era.
 
-As the first successful `cryptocurrency`, Bitcoin began a powerful conversation: should the control of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!
+As the first successful `cryptocurrency`, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!
 
-The reality is that today, we aren’t in control of our money in the way we think we are.
+The reality is that today, we aren’t in control of our money in the way we think we are, and this has very real consequences.
 
-It’s time to learn how Bitcoin is reshaping finance.
+It’s time to learn how Bitcoin is revolutionizing finance.
 
 **It’s time to rethink money.**
 
@@ -70,7 +70,7 @@ As societies grew, a government’s central bank would issue standardized coins 
 # Knowledge Check 1
 
 True or False:
-”As money is added to a monetary system, the existing money becomes worth less.”
+”As more money is added to a monetary system, the existing money becomes worth less.”
 
 - [ ] True
 
@@ -117,7 +117,7 @@ Enter Bitcoin (`BTC`): a digital currency that operates beyond the traditional b
 
 - ⛓️ It’s `peer-to-peer`: It connects people directly to each other. Automated using `blockchain technology`, it removes need for institutions to facilitate storage or transactions. Advocates call it “a set of rules with no rulers”.
 - 💎 It’s `scarce`: With no central bank issuing unlimited new money, Bitcoin has a stable, predictable monetary policy that honors long-term saving.
-- ✊ It’s `self-custodial`: It can be held without institutions facilitating transfer or storage. When stored in its natural state, Bitcoin is held in a secure online safe to which only the owner has access.
+- ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. When stored in its natural state, Bitcoin is held in a secure online safe and only the owner has access.
 
 For its qualities, Bitcoin has earned the nickname “digital gold”.
 
@@ -125,11 +125,17 @@ For its qualities, Bitcoin has earned the nickname “digital gold”.
 
 # Digital Gold: Scarcity
 
-Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This `max supply` is embedded in its code, ensuring that Bitcoin remains rare and potentially valuable, much like gold.
+📉 Do you find it difficult to keep up with rising costs?
 
-While the max supply of `BTC` can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called `cryptocurrency mining`. This predictable increase in `circulating supply` helps to stimulate the Bitcoin economy.
+***
 
-Bitcoin's fixed `monetary policy` makes it an attractive asset for those seeking to preserve value in the long term. It’s short term value remains volatile, due to speculation.
+Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This `max supply` is embedded in its code, making Bitcoin rare and potentially valuable. This puts it in a good position as a long term store of value, much like gold.
+
+While the max supply of `BTC` can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called `cryptocurrency mining`. This predictable increase in `circulating supply` keeps the Bitcoin economy moving.
+
+Bitcoin's fixed `monetary policy` makes it an attractive asset for those seeking to preserve value in the long term, allowing them to keep up with rising costs.
+
+It’s short term value remains volatile due to speculation.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
@@ -147,11 +153,15 @@ How does Bitcoin promote value preservation in the long term?
 
 # Digital Gold: Self-Custody
 
-In democracies, ownership is a protected human right because it gives citizens increased control and freedom over their lives. Ownership also fragments the power of the state, making it difficult for bad actors to gain control of a country. Your ability to `self-custody` your assets is essential to preserve your way of life.
+🧊 Has your bank frozen your funds without notice, because you performed a transfer that they didn’t like?
 
-As our assets are increasingly digitized (i.e. your money, your property, and even your identity), our lives take on a digital quality that we must also learn to protect.
+***
 
-Bitcoin’s self-custody offers true digital ownership, beyond reach of `custodians`. So long as you don’t share your account information with someone else, you have sole access to your assets. It’s like having your own vault of gold in a secure online space.
+In democracies, ownership is a protected human right because it gives citizens increased control and freedom over their lives. We cannot act freely when our means of survival are conditional — judged by businesses or institutions.
+
+As our assets are increasingly digitized (i.e. your money, your property, and even your identity), our lives are taking on a digital quality that we must learn to protect.
+
+Bitcoin’s `self-custody` offers true digital ownership, beyond reach of `custodians`. So long as you don’t share your account information with someone else, you have sole access to your assets. It’s like having your own vault of gold in a secure online space.
 
 This system of ownership gives you total control of your digital wealth — anywhere in the world, any time.
 
@@ -167,25 +177,23 @@ How does self-custody enable true ownership?
 
 - [ ] By allowing custodians to access to your assets.
 
-> Try again! Self-custody means there is no custodian that can access our assets.
+> Try again! Self-custody means there is no custodian (third party) that can access our assets.
 
 # Bitcoin: It’s like Emailing Money!
 
-Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.
+⌛ Have you ever had to wait several working days to send money internationally, while paying 3-5% in fees?
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-727c0e27.svg)
-
-# Bitcoin: It’s like Emailing Money!
+***
 
 Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.
 
-- ⚡ You can transfer Bitcoin to anyone’s address in a short period of time, from anywhere in the world.
-- ⚙️ Bitcoin is online 24/7. Unlike your bank, you can send money internationally or trade assets at any hour. No waiting, no paperwork, no downtime.
-- 📡 Bitcoin is accessible by anyone with an internet connection, delivering financial tools to remote corners of the globe.
+- ⚡ Transfer Bitcoin globally, to anyone’s address, for a reasonable fee.
+- ⚙️ Send money 24/7. No waiting, no paperwork, no downtime.
+- 📡 Access Bitcoin from anywhere with an internet connection.
 
 In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. You’ll manage your account using a `cryptocurrency wallet`, directly in your web browser or on your phone.
 
-This cryptocurrency wallet is the easiest “bank account” you’ll ever set up. No ID, no appointment. We’ll set up your first wallet in ‘Wallet Basics’ — your next lesson!
+This cryptocurrency wallet is the easiest “bank account” you’ll ever set up. No appointment or ID required!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
@@ -197,11 +205,11 @@ How is Bitcoin similar to email?
 
 > Right! But this isn’t the only correct answer.
 
-- [ ] Both use digital addresses.
+- [ ] Both are digital technologies.
 
 > Right! But this isn’t the only correct answer.
 
-- [ ] Both can be accessed with your phone.
+- [ ] Both can be accessed with a phone.
 
 > Right! But this isn’t the only correct answer.
 
