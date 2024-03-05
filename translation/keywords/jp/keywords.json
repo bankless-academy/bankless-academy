@@ -87,7 +87,7 @@
   "block reward": {
     "keyword": "ブロック報酬",
     "keyword_plural": "ブロック報酬",
-    "definition": "A random amount of native coin given to the proposer of a new valid block."
+    "definition": "An amount of native coin given to the proposer of a new valid block."
   },
   "blockchain": {
     "keyword": "ブロックチェーン",
@@ -134,6 +134,11 @@
     "keyword_plural": "検閲への耐性",
     "definition": "政府も企業も、何が許され、何が許されないかを決めることはできない"
   },
+  "central bank": {
+    "keyword": "central bank",
+    "keyword_plural": "central banks",
+    "definition": "An institution regulating money, banks, and currency in a country."
+  },
   "centralized": {
     "keyword": "centralized",
     "keyword_plural": "centralizeds",
@@ -159,6 +164,11 @@
     "keyword_plural": "チェーン",
     "definition": "データのブロックを結合し、変更できないデータベースを形成"
   },
+  "circulating supply": {
+    "keyword": "circulating supply",
+    "keyword_plural": "circulating supplys",
+    "definition": " T"
+  },
   "coin": {
     "keyword": "コイン",
     "keyword_plural": "コイン",
@@ -173,6 +183,11 @@
     "keyword": "担保",
     "keyword_plural": "担保",
     "definition": "ローンの返済を担保するために、借り手が貸し手に特定の資産を質入れする"
+  },
+  "commercial bank": {
+    "keyword": "commercial bank",
+    "keyword_plural": "commercial banks",
+    "definition": "A bank managing money for people and businesses."
   },
   "consensus": {
     "keyword": "コンセンサス",
@@ -218,6 +233,11 @@
     "keyword": "カストディアルウォレット",
     "keyword_plural": "カストディアルウォレット",
     "definition": "カストディアルウォレットでは、別の当事者が秘密鍵を管理し、クリプトへのアクセスを制御する"
+  },
+  "custodian": {
+    "keyword": "custodian",
+    "keyword_plural": "custodians",
+    "definition": "A financial institution given responsibility to secure your assets."
   },
   "dao": {
     "keyword": "DAO",
@@ -303,6 +323,11 @@
     "keyword": "エポック",
     "keyword_plural": "エポック",
     "definition": "特定のブロックチェーンに特定の数のブロックが含まれるまでにかかる時間"
+  },
+  "equality of opportunity": {
+    "keyword": "equality of opportunity",
+    "keyword_plural": "equality of opportunitys",
+    "definition": "A fairness principle, where everyone has the same chances to succeed regardless of their background or circumstances."
   },
   "erc-20": {
     "keyword": "ERC-20",
@@ -484,6 +509,11 @@
     "keyword_plural": "市場価格",
     "definition": "特定のトークン、または市場セクターの合計値"
   },
+  "max supply": {
+    "keyword": "max supply",
+    "keyword_plural": "max supplys",
+    "definition": "The maximum number of coins or tokens that will ever exist for a particular cryptocurrency."
+  },
   "memecoin": {
     "keyword": "memecoin",
     "keyword_plural": "memecoins",
@@ -513,6 +543,11 @@
     "keyword": "mint",
     "keyword_plural": "mints",
     "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
+  },
+  "monetary policy": {
+    "keyword": "monetary policy",
+    "keyword_plural": "monetary policys",
+    "definition": "How a central bank manages the amount of money circulating in an economy."
   },
   "money": {
     "keyword": "money",
@@ -689,10 +724,15 @@
     "keyword_plural": "スキャムトークン",
     "definition": "投資家の資金を盗む唯一の目的で起動されるクリプトトークン"
   },
+  "scarce": {
+    "keyword": "scarce",
+    "keyword_plural": "scarces",
+    "definition": "The state of being in short supply."
+  },
   "scarcity": {
     "keyword": "scarcity",
     "keyword_plural": "scarcitys",
-    "definition": "The state of being in short supply."
+    "definition": "Being in short supply."
   },
   "security": {
     "keyword": "セキュリティ",
