@@ -87,7 +87,7 @@
   "block reward": {
     "keyword": "区块奖励",
     "keyword_plural": "区块奖励",
-    "definition": "A random amount of native coin given to the proposer of a new valid block."
+    "definition": "An amount of native coin given to the proposer of a new valid block."
   },
   "blockchain": {
     "keyword": "区块链",
@@ -134,6 +134,11 @@
     "keyword_plural": "抗审查",
     "definition": "任何政府或公司都无权决定什么是允许的，什么是不允许的。"
   },
+  "central bank": {
+    "keyword": "central bank",
+    "keyword_plural": "central banks",
+    "definition": "An institution regulating money, banks, and currency in a country."
+  },
   "centralized": {
     "keyword": "centralized",
     "keyword_plural": "centralizeds",
@@ -159,6 +164,11 @@
     "keyword_plural": "链",
     "definition": "将数据块绑定在一起，形成一个无法更改或变更的数据库。"
   },
+  "circulating supply": {
+    "keyword": "circulating supply",
+    "keyword_plural": "circulating supplys",
+    "definition": " T"
+  },
   "coin": {
     "keyword": "币",
     "keyword_plural": "币",
@@ -173,6 +183,11 @@
     "keyword": "保证金",
     "keyword_plural": "保证金",
     "definition": "借款人将特定资产抵押给贷款人，作为偿还贷款的担保。"
+  },
+  "commercial bank": {
+    "keyword": "commercial bank",
+    "keyword_plural": "commercial banks",
+    "definition": "A bank managing money for people and businesses."
   },
   "consensus": {
     "keyword": "共识",
@@ -218,6 +233,11 @@
     "keyword": "托管钱包",
     "keyword_plural": "托管钱包",
     "definition": "托管钱包由另一方控制私钥，从而控制对加密资产的访问。"
+  },
+  "custodian": {
+    "keyword": "custodian",
+    "keyword_plural": "custodians",
+    "definition": "A financial institution given responsibility to secure your assets."
   },
   "dao": {
     "keyword": "去中心化自治组织（DAO）",
@@ -303,6 +323,11 @@
     "keyword": "纪元（Epoch）",
     "keyword_plural": "纪元（Epochs）",
     "definition": "特定区块链包含特定数量区块所需的时间。"
+  },
+  "equality of opportunity": {
+    "keyword": "equality of opportunity",
+    "keyword_plural": "equality of opportunitys",
+    "definition": "A fairness principle, where everyone has the same chances to succeed regardless of their background or circumstances."
   },
   "erc-20": {
     "keyword": "ERC-20 协议",
@@ -484,6 +509,11 @@
     "keyword_plural": "市值",
     "definition": "特定代币或市场部门的总价值。"
   },
+  "max supply": {
+    "keyword": "max supply",
+    "keyword_plural": "max supplys",
+    "definition": "The maximum number of coins or tokens that will ever exist for a particular cryptocurrency."
+  },
   "memecoin": {
     "keyword": "memecoin",
     "keyword_plural": "memecoins",
@@ -513,6 +543,11 @@
     "keyword": "mint",
     "keyword_plural": "mints",
     "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
+  },
+  "monetary policy": {
+    "keyword": "monetary policy",
+    "keyword_plural": "monetary policys",
+    "definition": "How a central bank manages the amount of money circulating in an economy."
   },
   "money": {
     "keyword": "money",
@@ -689,10 +724,15 @@
     "keyword_plural": "诈骗代币",
     "definition": "只为盗取投资者资金而推出的加密货币代币。"
   },
+  "scarce": {
+    "keyword": "scarce",
+    "keyword_plural": "scarces",
+    "definition": "The state of being in short supply."
+  },
   "scarcity": {
     "keyword": "scarcity",
     "keyword_plural": "scarcitys",
-    "definition": "The state of being in short supply."
+    "definition": "Being in short supply."
   },
   "security": {
     "keyword": "安全性",
