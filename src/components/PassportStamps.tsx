@@ -158,7 +158,7 @@ const PassportStamps = ({
                           autoLoad={false}
                           scope="public_profile"
                           textButton={t('Connect')}
-                          cssClass="css-rgn8uq"
+                          cssClass="css-rgn8uq css-1pu4076"
                           onClick={() => {
                             setLoadingStamp('facebook')
                           }}
