@@ -87,7 +87,7 @@
   "block reward": {
     "keyword": "block reward",
     "keyword_plural": "block rewards",
-    "definition": "A random amount of native coin given to the proposer of a new valid block."
+    "definition": "An amount of native coin given to the proposer of a new valid block."
   },
   "blockchain": {
     "keyword": "Blockchain",
@@ -134,6 +134,11 @@
     "keyword_plural": "censorship-resistants",
     "definition": "No government or company has control to determine what is or is not allowed."
   },
+  "central bank": {
+    "keyword": "central bank",
+    "keyword_plural": "central banks",
+    "definition": "An institution regulating money, banks, and currency in a country."
+  },
   "centralized": {
     "keyword": "centralized",
     "keyword_plural": "centralizeds",
@@ -159,6 +164,11 @@
     "keyword_plural": "chains",
     "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
   },
+  "circulating supply": {
+    "keyword": "circulating supply",
+    "keyword_plural": "circulating supplys",
+    "definition": " T"
+  },
   "coin": {
     "keyword": "coin",
     "keyword_plural": "coins",
@@ -173,6 +183,11 @@
     "keyword": "collateral",
     "keyword_plural": "collaterals",
     "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
+  },
+  "commercial bank": {
+    "keyword": "commercial bank",
+    "keyword_plural": "commercial banks",
+    "definition": "A bank managing money for people and businesses."
   },
   "consensus": {
     "keyword": "consensus",
@@ -218,6 +233,11 @@
     "keyword": "custodial wallet",
     "keyword_plural": "custodial wallets",
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+  },
+  "custodian": {
+    "keyword": "custodian",
+    "keyword_plural": "custodians",
+    "definition": "A financial institution given responsibility to secure your assets."
   },
   "dao": {
     "keyword": "DAO",
@@ -303,6 +323,11 @@
     "keyword": "Epoch",
     "keyword_plural": "Epochs",
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
+  },
+  "equality of opportunity": {
+    "keyword": "equality of opportunity",
+    "keyword_plural": "equality of opportunitys",
+    "definition": "A fairness principle, where everyone has the same chances to succeed regardless of their background or circumstances."
   },
   "erc-20": {
     "keyword": "ERC-20",
@@ -484,6 +509,11 @@
     "keyword_plural": "market caps",
     "definition": "The total value of a given token, or market sector."
   },
+  "max supply": {
+    "keyword": "max supply",
+    "keyword_plural": "max supplys",
+    "definition": "The maximum number of coins or tokens that will ever exist for a particular cryptocurrency."
+  },
   "memecoin": {
     "keyword": "memecoin",
     "keyword_plural": "memecoins",
@@ -513,6 +543,11 @@
     "keyword": "mint",
     "keyword_plural": "mints",
     "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
+  },
+  "monetary policy": {
+    "keyword": "monetary policy",
+    "keyword_plural": "monetary policys",
+    "definition": "How a central bank manages the amount of money circulating in an economy."
   },
   "money": {
     "keyword": "money",
@@ -689,10 +724,15 @@
     "keyword_plural": "scam-tokens",
     "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds."
   },
+  "scarce": {
+    "keyword": "scarce",
+    "keyword_plural": "scarces",
+    "definition": "The state of being in short supply."
+  },
   "scarcity": {
     "keyword": "scarcity",
     "keyword_plural": "scarcitys",
-    "definition": "The state of being in short supply."
+    "definition": "Being in short supply."
   },
   "security": {
     "keyword": "Security",
