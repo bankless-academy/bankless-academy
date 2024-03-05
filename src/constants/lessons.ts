@@ -353,20 +353,22 @@ const LESSONS: LessonType[] = [
       '/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png'
     ],
     keywords: [
-      'blockchain technology',
       'cryptocurrency',
       'satoshi nakamoto',
       'scarcity',
       'gold standard',
+      'central banks',
+      'monetary policy',
+      'commercial banks',
       'custodian',
       'btc',
       'peer-to-peer',
+      'blockchain technology',
       'scarce',
       'self-custodial',
       'max supply',
       'cryptocurrency mining',
       'circulating supply',
-      'monetary policy',
       'self-custody',
       'custodians',
       'cryptocurrency wallet',
@@ -374,7 +376,7 @@ const LESSONS: LessonType[] = [
       'decentralized',
       'miners',
       'blockchain',
-      'block rewards',
+      'central bank',
       'decentralized money',
       'equality of opportunity'
     ],
@@ -383,13 +385,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'be804c6aecad43af911a5b34026fe79a',
         title: 'Welcome to Bankless Academy',
-        content: '<div class="bloc1"><p>Welcome, bold Explorer, to the frontier of digital innovation.</p><p>At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to “go bankless!”</p><p>Using the new era of the internet and <code>blockchain technology</code>, we’re unlocking financial freedom and reclaiming ownership of our assets, data and privacy — which have long been exploited by businesses for profit.</p><p>Today, we’re looking at the first major event in blockchain history: the invention of Bitcoin.</p><p>Bitcoin is a new type of money — a <code>cryptocurrency</code>. It grants its holders increased financial freedom and protection for their hard-earned money.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png\'></div>'
+        content: '<div class="bloc1"><p>Welcome, bold Explorer, to the frontier of digital innovation.</p><p>At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to navigate the blockchain universe and “go bankless!”</p><p>Today, we’re looking at the <code>cryptocurrency</code> that started it all: Bitcoin.</p><p>Bitcoin is a new type of money. It increases financial freedom for those who hold it, and protects their hard-earned money from losing value over time.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'e1ba1d31d16b4430afa774522ff13fb2',
         title: 'Bitcoin’s Story',
-        content: '<div class="bloc1"><p>Launched in 2009 by the mysterious “<code>Satoshi Nakamoto</code>,” Bitcoin marked the beginning of a new economic era.</p><p>As the first successful <code>cryptocurrency</code>, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!</p><p>The reality is that today, we aren’t in control of our money in the way we think we are, and this has very real consequences.</p><p>It’s time to learn how Bitcoin is revolutionizing finance.</p><p><strong>It’s time to rethink money.</strong></p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/bitcoins-story-98b007a5.png\'></div>'
+        content: '<div class="bloc1"><p>Launched in 2009 by the mysterious “<code>Satoshi Nakamoto</code>,” Bitcoin marked the beginning of a new economic era.</p><p>As the first successful <code>cryptocurrency</code>, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!</p><p>The reality is that today, we aren’t in control of our money in the way we think we are. This has very real consequences.</p><p>It’s time to learn how Bitcoin is revolutionizing finance.</p><p><strong>It’s time to rethink money.</strong></p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/bitcoins-story-98b007a5.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -425,7 +427,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '459a1518417540c99dc0a0f68ac9cef5',
         title: 'The Problem',
-        content: '<div class="bloc1"><p>The problem with our current financial system is the lack of control we have over our money, and how this lowers our ability to freely decide what to save and what to spend.</p><p>Central banks, the bank managing a country’s monetary policy, can introduce any amount of new money. This lack of <code>scarcity</code> often makes our money worth less and less each year. Money with an unpredictable, decreasing value often forces us to spend it: <strong>“If my money is going to be worth less every year, why save? I might as well spend it now.”</strong> 💸</p><p>Commercial banks, those used for everyday saving and spending, also influence our spending habits. As a <code>custodian</code>, they can block transactions or confiscate our funds. Some banks have blocked their clients from buying cryptocurrency! <strong>If your bank can freeze your life savings at any time… do you truly own your money?</strong> 💸</p><hr><p>For money to once again to support financial freedom, it must regain the two key properties it has lost over time:</p><ul><li>💎 <strong>Value:</strong> Money must reliably store its worth over time.</li><li>✊ <strong>Ownership:</strong> Money must be easy to store and protect ourselves.</li></ul><p>Only these qualities can restore our ability to freely save and spend our money.</p></div>'
+        content: '<div class="bloc1"><p>The problem with our current financial system is the lack of control we have over our money, and how this lowers our ability to freely decide what to save and what to spend.</p><p><code>Central banks</code>, the bank managing a country’s <code>monetary policy</code>, can introduce any amount of new money. This lack of <code>scarcity</code> often makes our money worth less and less each year. Money with an unpredictable, decreasing value often forces us to spend it: <strong>“If my money is going to be worth less every year, why save? I might as well spend it now.”</strong> 💸</p><p><code>Commercial banks</code>, those used for everyday saving and spending, also influence our spending habits. As a <code>custodian</code>, they can block transactions or confiscate our funds. Some banks have blocked their clients from buying cryptocurrency! <strong>If your bank can freeze your life savings at any time… do you truly own your money?</strong> 💸</p><hr><p>For money to once again to support financial freedom, it must regain the two key properties it has lost over time:</p><ul><li>💎 <strong>Value:</strong> Money must reliably store its worth over time.</li><li>✊ <strong>Ownership:</strong> Money must be easy to store and protect ourselves.</li></ul><p>Only these qualities can restore our ability to freely save and spend our money.</p></div>'
       },
       {
         type: 'LEARN',
@@ -513,13 +515,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '77a68343994b4aad9aa1c99f35961204',
         title: 'The Bitcoin Network',
-        content: '<div class="bloc1"><p>Let’s switch gears and look at the engine behind Bitcoin: <strong>the Bitcoin Network</strong>.</p><p>Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.</p><p>This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.</p><p>This defense strategy is called <code>decentralization</code>: the shifting of control from one central group to many smaller ones. It’s what makes cryptocurrency transfers virtually unstoppable.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg\'></div>'
+        content: '<div class="bloc1"><p>Let’s switch gears and look at the engine behind Bitcoin: <br><strong>The Bitcoin Network</strong>.</p><p>Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.</p><p>This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.</p><p>This defense strategy is called <code>decentralization</code>: the shifting of control from one central group to many smaller ones. It’s what makes cryptocurrency transfers virtually unstoppable.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '8a1ec1c7e35649bb9b26e4a1c1ce5fe1',
         title: 'Bitcoin Mining',
-        content: '<div class="bloc1"><p>With the Bitcoin Network having no central bank, the network relies on its <code>decentralized</code> participants. Known as <code>miners</code>, these participants are constantly checking transactions and adding them to a “database” — the <code>blockchain</code>.</p><p>It’s important that these miners are motivated to be active and honest, to protect the network from fraud. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as <code>block rewards</code>, for their work.</p><p>These rewards slowly increase Bitcoin’s <code>circulating supply</code> within the <code>max supply</code> cap of 21 million <code>BTC</code>.</p><p>It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies — those that add as much new currency as their central bank decides each year. Sold on by the miners, this newly introduced supply also helps to ensure there’s Bitcoin available for new network users.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg\'></div>'
+        content: '<div class="bloc1"><p>With the Bitcoin Network having no central bank, the network relies on its <code>decentralized</code> participants. Known as <code>miners</code>, these participants are constantly checking transactions and adding them to a “database” — the <code>blockchain</code>.</p><p>It’s important that these miners are motivated to be active and honest, to protect the network from fraud. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as “block rewards”, for their work.</p><p>These rewards slowly increase Bitcoin’s <code>circulating supply</code> within the <code>max supply</code> cap of 21 million <code>BTC</code>.</p><p>It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies — those that add as much new currency as their <code>central bank</code> decides each year. Sold on by the miners, this newly introduced supply also helps to ensure there’s Bitcoin available for new network users.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -579,7 +581,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '9920715e06094e39bf34a5a63891a909',
         title: 'Your Bitcoin Quest',
-        content: '<div class="bloc1"><p>It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.</p><p>Your transaction will include the following details:</p><p>📫 The wallet address of the person you’re sending to.</p><p>💰 The amount of Bitcoin to send.</p><p>It will also include a transaction fee given to the <code>miners</code>, but this part is automated.</p><p>Remember to make sure all details are accurate.<br>Once a Bitcoin transaction is confirmed, you cannot reverse it.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png\'></div>'
+        content: '<div class="bloc1"><p>It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.</p><p>Your transaction will include the following details:</p><p>📫 The wallet address of the person you’re sending to.</p><p>💰 The amount of Bitcoin to send.</p><p>It will also include a transaction fee given to the <code>miners</code>. This part is handled automatically.</p><p>Remember to make sure all details are accurate.<br>Once a Bitcoin transaction is confirmed, you cannot reverse it.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png\'></div>'
       },
       {
         type: 'QUEST',
