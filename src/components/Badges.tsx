@@ -140,15 +140,19 @@ const Badges = ({
               {type === 'collectibles' && (
                 <>
                   {[
-                    ...LESSONS.filter((lesson) =>
-                      lesson.collectibleId?.startsWith('D')
+                    ...LESSONS.filter(
+                      (lesson) =>
+                        lesson.collectibleId?.startsWith('D') &&
+                        lesson.publicationStatus === 'publish'
                     ).sort(
                       (a, b) =>
                         parseInt(a.collectibleId.replace('D', ''), 16) -
                         parseInt(b.collectibleId.replace('D', ''), 16)
                     ),
-                    ...LESSONS.filter((lesson) =>
-                      lesson.collectibleId?.startsWith('H')
+                    ...LESSONS.filter(
+                      (lesson) =>
+                        lesson.collectibleId?.startsWith('H') &&
+                        lesson.publicationStatus === 'publish'
                     ).sort(
                       (a, b) =>
                         parseInt(a.collectibleId.replace('H', ''), 16) -
