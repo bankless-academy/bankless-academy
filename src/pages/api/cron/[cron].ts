@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { NextRequest, NextResponse } from 'next/server'
 import { kv } from '@vercel/kv'
-import { DOMAIN_URL } from 'constants/index'
+import { DOMAIN_URL, IS_WHITELABEL } from 'constants/index'
 import { AUTHORIZED_KV } from '../cache/[cache]'
 
 export const config = {
@@ -11,6 +11,10 @@ export const config = {
 const AUTHORIZED_CRON = AUTHORIZED_KV
 
 export default async function handler(req: NextRequest) {
+  if (IS_WHITELABEL) {
+    return new Response('Cron disabled on whitelabel', { status: 400 })
+  }
+
   const cron = req.nextUrl.pathname.split('/')[3]
   console.log('cron:', cron)
   if (cron && AUTHORIZED_CRON.includes(cron)) {
