@@ -7,8 +7,6 @@ import { useAccount } from 'wagmi'
 import { signMessage, waitForTransaction } from '@wagmi/core'
 import { Gear, SealCheck, ShootingStar } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
-import useWindowSize from 'react-use/lib/useWindowSize'
-import Confetti from 'react-confetti'
 
 import ExternalLink from 'components/ExternalLink'
 import { WALLET_SIGNATURE_MESSAGE } from 'constants/index'
@@ -20,6 +18,7 @@ import {
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { api } from 'utils'
 import PassportModal from 'components/PassportModal'
+import Confetti from 'components/Confetti'
 
 const MintBadge = ({
   badgeId,
@@ -29,7 +28,6 @@ const MintBadge = ({
   isQuestCompleted: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
-  const { width, height } = useWindowSize()
   const [isBadgeMintedLS, setIsBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${badgeId}`,
     false
@@ -138,7 +136,7 @@ const MintBadge = ({
                     <ExternalLink
                       underline="true"
                       href={txLink}
-                      alt="Minting in progress"
+                      alt="Polyscan transaction link"
                     >
                       {`${txLink.substring(0, 50)}...`}
                     </ExternalLink>
@@ -260,14 +258,7 @@ const MintBadge = ({
       </Button>
       <PassportModal isOpen={isOpen} onClose={onClose} />
       <Confetti
-        style={{ position: 'fixed', zIndex: '10', top: '0', left: '0' }}
-        width={width}
-        height={height}
-        run={showConfetti}
-        gravity={0.05}
-        numberOfPieces={2000}
-        tweenDuration={10000}
-        recycle={false}
+        showConfetti={showConfetti}
         onConfettiComplete={() => {
           setShowConfetti(false)
           // Refresh list of Badges in the wallet

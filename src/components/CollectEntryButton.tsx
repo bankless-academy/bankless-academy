@@ -18,6 +18,7 @@ import { useSmallScreen } from 'hooks'
 import { getArticlesCollectors } from 'utils'
 import { parseEther } from 'viem'
 import { useLocalStorage } from 'usehooks-ts'
+import Confetti from 'components/Confetti'
 
 const CollectEntryButton = ({
   lesson,
@@ -39,6 +40,7 @@ const CollectEntryButton = ({
     `connectWalletPopup`,
     false
   )
+  const [showConfetti, setShowConfetti] = useState(false)
 
   const { config } = usePrepareContractWrite({
     address: lesson.mirrorNFTAddress,
@@ -142,7 +144,7 @@ const CollectEntryButton = ({
                   <ExternalLink
                     underline="true"
                     href={txLink}
-                    alt="Transaction in progress"
+                    alt="Etherscan transaction link"
                   >
                     {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
                   </ExternalLink>
@@ -161,6 +163,7 @@ const CollectEntryButton = ({
   useEffect(() => {
     if (isSuccess) {
       toast.closeAll()
+      setShowConfetti(true)
       // HACK: guess tokenId
       const txLink = `https://opensea.io/assets/optimism/${
         lesson.mirrorNFTAddress
@@ -178,7 +181,7 @@ const CollectEntryButton = ({
                   <ExternalLink
                     underline="true"
                     href={txLink}
-                    alt="Transaction in progress"
+                    alt="OpenSea Link"
                   >
                     {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
                   </ExternalLink>
@@ -284,6 +287,12 @@ const CollectEntryButton = ({
           <Box ml="2">{`(${numberCollected}/100 ${t('claimed')})`}</Box>
         </Button>
       )}
+      <Confetti
+        showConfetti={showConfetti}
+        onConfettiComplete={() => {
+          setShowConfetti(false)
+        }}
+      />
     </Box>
   )
 }
