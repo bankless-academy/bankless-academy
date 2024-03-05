@@ -87,7 +87,7 @@
   "block reward": {
     "keyword": "recompensa del bloque",
     "keyword_plural": "recompensa del bloque",
-    "definition": "A random amount of native coin given to the proposer of a new valid block."
+    "definition": "An amount of native coin given to the proposer of a new valid block."
   },
   "blockchain": {
     "keyword": "cadenas de bloques",
@@ -134,6 +134,11 @@
     "keyword_plural": "resistencia a la censura",
     "definition": "Ningún gobierno o empresa tiene el control para determinar lo que está o no está permitido."
   },
+  "central bank": {
+    "keyword": "central bank",
+    "keyword_plural": "central banks",
+    "definition": "An institution regulating money, banks, and currency in a country."
+  },
   "centralized": {
     "keyword": "centralized",
     "keyword_plural": "centralizeds",
@@ -159,6 +164,11 @@
     "keyword_plural": "cadenas",
     "definition": "Une bloques de datos para formar una base de datos que no puede alterarse ni modificarse."
   },
+  "circulating supply": {
+    "keyword": "circulating supply",
+    "keyword_plural": "circulating supplys",
+    "definition": " T"
+  },
   "coin": {
     "keyword": "moneda",
     "keyword_plural": "monedas",
@@ -173,6 +183,11 @@
     "keyword": "colateral",
     "keyword_plural": "colateral",
     "definition": "Una garantía de préstamo de activos específicos a un prestamista, para asegurar el reembolso de un préstamo."
+  },
+  "commercial bank": {
+    "keyword": "commercial bank",
+    "keyword_plural": "commercial banks",
+    "definition": "A bank managing money for people and businesses."
   },
   "consensus": {
     "keyword": "consenso",
@@ -218,6 +233,11 @@
     "keyword": "billeteras no custodiales",
     "keyword_plural": "billeteras de custodia",
     "definition": "Con una cartera de custodia, otra parte controla las claves privadas, controlando así el acceso a sus criptoactivos."
+  },
+  "custodian": {
+    "keyword": "custodian",
+    "keyword_plural": "custodians",
+    "definition": "A financial institution given responsibility to secure your assets."
   },
   "dao": {
     "keyword": "DAO",
@@ -303,6 +323,11 @@
     "keyword": "Época",
     "keyword_plural": "época",
     "definition": "El tiempo que tarda en incluirse un número específico de bloques en una cadena de bloques determinada."
+  },
+  "equality of opportunity": {
+    "keyword": "equality of opportunity",
+    "keyword_plural": "equality of opportunitys",
+    "definition": "A fairness principle, where everyone has the same chances to succeed regardless of their background or circumstances."
   },
   "erc-20": {
     "keyword": "ERC-20",
@@ -484,6 +509,11 @@
     "keyword_plural": "capitalización de mercado\n",
     "definition": "El valor total de un determinado token, o sector del mercado."
   },
+  "max supply": {
+    "keyword": "max supply",
+    "keyword_plural": "max supplys",
+    "definition": "The maximum number of coins or tokens that will ever exist for a particular cryptocurrency."
+  },
   "memecoin": {
     "keyword": "memecoin",
     "keyword_plural": "memecoins",
@@ -513,6 +543,11 @@
     "keyword": "mint",
     "keyword_plural": "mints",
     "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
+  },
+  "monetary policy": {
+    "keyword": "monetary policy",
+    "keyword_plural": "monetary policys",
+    "definition": "How a central bank manages the amount of money circulating in an economy."
   },
   "money": {
     "keyword": "money",
@@ -689,10 +724,15 @@
     "keyword_plural": "token de estafa",
     "definition": "Un token de criptomoneda que se lanza con el único propósito de robar los fondos de los inversores."
   },
+  "scarce": {
+    "keyword": "scarce",
+    "keyword_plural": "scarces",
+    "definition": "The state of being in short supply."
+  },
   "scarcity": {
     "keyword": "scarcity",
     "keyword_plural": "scarcitys",
-    "definition": "The state of being in short supply."
+    "definition": "Being in short supply."
   },
   "security": {
     "keyword": "Seguridad",
