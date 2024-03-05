@@ -32,6 +32,7 @@ import {
 import { useTranslation } from 'react-i18next'
 import { parseEther } from 'viem'
 import { Gear, SealCheck } from '@phosphor-icons/react'
+import { useWeb3Modal } from '@web3modal/wagmi/react'
 
 import { LessonType } from 'entities/lesson'
 import Collectible from 'components/Collectible'
@@ -52,6 +53,7 @@ const MintCollectibleModal = ({
   numberOfOwners: number
 }): React.ReactElement => {
   const { t } = useTranslation()
+  const { open } = useWeb3Modal()
   const { address } = useAccount()
   const { chain } = useNetwork()
   const [isSmallScreen] = useSmallScreen()
@@ -293,7 +295,10 @@ const MintCollectibleModal = ({
                 isDisabled={NB_DATADISK_MAX - nbDatadiskMintedLS < 1}
                 onClick={async () => {
                   try {
-                    if (chain.id !== optimism.id) {
+                    if (!address) {
+                      onClose()
+                      await open({ view: 'Connect' })
+                    } else if (chain.id !== optimism.id) {
                       try {
                         await switchNetwork({ chainId: optimism.id })
                       } catch (error) {
@@ -340,7 +345,7 @@ const MintCollectibleModal = ({
                   }
                 }}
               >
-                Mint DataDisk
+                {!address ? 'Connect Wallet' : 'Mint DataDisk'}
               </Button>
             </Box>
             <Box fontSize="md" pt="4">
