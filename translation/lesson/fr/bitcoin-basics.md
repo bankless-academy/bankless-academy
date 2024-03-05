@@ -31,13 +31,11 @@ ________________________________________________________________________________
 
 Welcome, bold Explorer, to the frontier of digital innovation.
 
-At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to “go bankless!”
+At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to navigate the blockchain universe and “go bankless!”
 
-Using the new era of the internet and `blockchain technology`, we’re unlocking financial freedom and reclaiming ownership of our assets, data and privacy — which have long been exploited by businesses for profit.
+Today, we’re looking at the `cryptocurrency` that started it all: Bitcoin.
 
-Today, we’re looking at the first major event in blockchain history: the invention of Bitcoin.
-
-Bitcoin is a new type of money — a `cryptocurrency`. It grants its holders increased financial freedom and protection for their hard-earned money.
+Bitcoin is a new type of money. It increases financial freedom for those who hold it, and protects their hard-earned money from losing value over time.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
 
@@ -47,7 +45,7 @@ Launched in 2009 by the mysterious “`Satoshi Nakamoto`,” Bitcoin marked the 
 
 As the first successful `cryptocurrency`, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!
 
-The reality is that today, we aren’t in control of our money in the way we think we are, and this has very real consequences.
+The reality is that today, we aren’t in control of our money in the way we think we are. This has very real consequences.
 
 It’s time to learn how Bitcoin is revolutionizing finance.
 
@@ -96,9 +94,9 @@ Moving into the digital age, electronic currency has vastly replaced physical cu
 
 The problem with our current financial system is the lack of control we have over our money, and how this lowers our ability to freely decide what to save and what to spend.
 
-Central banks, the bank managing a country’s monetary policy, can introduce any amount of new money. This lack of `scarcity` often makes our money worth less and less each year. Money with an unpredictable, decreasing value often forces us to spend it: **“If my money is going to be worth less every year, why save? I might as well spend it now.”** 💸
+`Central banks`, the bank managing a country’s `monetary policy`, can introduce any amount of new money. This lack of `scarcity` often makes our money worth less and less each year. Money with an unpredictable, decreasing value often forces us to spend it: **“If my money is going to be worth less every year, why save? I might as well spend it now.”** 💸
 
-Commercial banks, those used for everyday saving and spending, also influence our spending habits. As a `custodian`, they can block transactions or confiscate our funds. Some banks have blocked their clients from buying cryptocurrency! **If your bank can freeze your life savings at any time… do you truly own your money?** 💸
+`Commercial banks`, those used for everyday saving and spending, also influence our spending habits. As a `custodian`, they can block transactions or confiscate our funds. Some banks have blocked their clients from buying cryptocurrency! **If your bank can freeze your life savings at any time… do you truly own your money?** 💸
 
 ***
 
@@ -219,7 +217,8 @@ How is Bitcoin similar to email?
 
 # The Bitcoin Network
 
-Let’s switch gears and look at the engine behind Bitcoin: **the Bitcoin Network**.
+Let’s switch gears and look at the engine behind Bitcoin:
+**The Bitcoin Network**.
 
 Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.
 
@@ -233,11 +232,11 @@ This defense strategy is called `decentralization`: the shifting of control from
 
 With the Bitcoin Network having no central bank, the network relies on its `decentralized` participants. Known as `miners`, these participants are constantly checking transactions and adding them to a “database” — the `blockchain`.
 
-It’s important that these miners are motivated to be active and honest, to protect the network from fraud. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as `block rewards`, for their work.
+It’s important that these miners are motivated to be active and honest, to protect the network from fraud. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as “block rewards”, for their work.
 
 These rewards slowly increase Bitcoin’s `circulating supply` within the `max supply` cap of 21 million `BTC`.
 
-It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies — those that add as much new currency as their central bank decides each year. Sold on by the miners, this newly introduced supply also helps to ensure there’s Bitcoin available for new network users.
+It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies — those that add as much new currency as their `central bank` decides each year. Sold on by the miners, this newly introduced supply also helps to ensure there’s Bitcoin available for new network users.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg)
 
@@ -319,7 +318,7 @@ Your transaction will include the following details:
 
 💰 The amount of Bitcoin to send.
 
-It will also include a transaction fee given to the `miners`, but this part is automated.
+It will also include a transaction fee given to the `miners`. This part is handled automatically.
 
 Remember to make sure all details are accurate.
 Once a Bitcoin transaction is confirmed, you cannot reverse it.
