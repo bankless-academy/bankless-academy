@@ -572,7 +572,7 @@
   "node operator": {
     "keyword": "node operator",
     "keyword_plural": "node operators",
-    "definition": "A member of the Ethereum community, running a validator node to processes transactions on the network."
+    "definition": "A member of the Ethereum community, running a validator node to process transactions on the network."
   },
   "onchain governance": {
     "keyword": "gobernanza onchain",
