@@ -100,7 +100,7 @@ The problem with our current financial system is the lack of control we have ove
 
 ***
 
-For money to once again to support financial freedom, it must regain the two key properties it has lost over time:
+For money to once again support financial freedom, it must regain the two key properties it has lost over time:
 
 - 💎 **Value:** Money must reliably store its worth over time.
 - ✊ **Ownership:** Money must be easy to store and protect ourselves.
@@ -133,7 +133,7 @@ While the max supply of `BTC` can’t exceed 21 million, new currency is added t
 
 Bitcoin's fixed `monetary policy` makes it an attractive asset for those seeking to preserve value in the long term, allowing them to keep up with rising costs.
 
-It’s short term value remains volatile due to speculation.
+It’s short term value remains volatile due to market speculation.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
@@ -151,7 +151,7 @@ How does Bitcoin promote value preservation in the long term?
 
 # Digital Gold: Self-Custody
 
-🧊 Has your bank frozen your funds without notice, because you performed a transfer that they didn’t like?
+🧊 Has your bank frozen your funds without notice because you performed a transfer that they didn’t like?
 
 ***
 
@@ -185,13 +185,13 @@ How does self-custody enable true ownership?
 
 Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.
 
-- ⚡ Transfer Bitcoin globally, to anyone’s address, for a reasonable fee.
+- ⚡ Transfer Bitcoin globally for a reasonable fee.
 - ⚙️ Send money 24/7. No waiting, no paperwork, no downtime.
 - 📡 Access Bitcoin from anywhere with an internet connection.
 
-In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. You’ll manage your account using a `cryptocurrency wallet`, directly in your web browser or on your phone.
+In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (but we’ll show you how to customize this later!)
 
-This cryptocurrency wallet is the easiest “bank account” you’ll ever set up. No appointment or ID required!
+You’ll manage your account using `cryptocurrency wallet` software connected to your web browser or your phone. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
@@ -236,7 +236,7 @@ It’s important that these miners are motivated to be active and honest, to pro
 
 These rewards slowly increase Bitcoin’s `circulating supply` within the `max supply` cap of 21 million `BTC`.
 
-It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies — those that add as much new currency as their `central bank` decides each year. Sold on by the miners, this newly introduced supply also helps to ensure there’s Bitcoin available for new network users.
+It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies. Everything is managed by community-approved computer code — “rules with no rulers” — and decentralized participants, rather than small groups of people at the `central bank`.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg)
 
@@ -271,7 +271,7 @@ What is decentralization?
 
 # Knowledge Check 6
 
-How does the Bitcoin Network prevent errors?
+How does mining prevent transaction errors?
 
 - [ ] Miners check transactions.
 
