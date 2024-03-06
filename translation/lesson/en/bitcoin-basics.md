@@ -189,7 +189,7 @@ Email simplified sending letters by removing the need for a post office. In a si
 - ⚙️ Send money 24/7. No waiting, no paperwork, no downtime.
 - 📡 Access Bitcoin from anywhere with an internet connection.
 
-In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (but we’ll show you how to customize this later!)
+In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (we’ll show you how to customize this later!)
 
 You’ll manage your account using `cryptocurrency wallet` software connected to your web browser or your phone. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!
 
@@ -224,7 +224,7 @@ Bitcoin runs on a shared network hosted across thousands of computers worldwide.
 
 This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.
 
-This defense strategy is called `decentralization`: the shifting of control from one central group to many smaller ones. It’s what makes cryptocurrency transfers virtually unstoppable.
+This defense strategy is called `decentralization`: the shifting of control from one central group to many smaller ones. It’s what makes cryptocurrency networks virtually unstoppable.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg)
 
@@ -263,7 +263,7 @@ What is decentralization?
 
 - [ ] Distribution of control across multiple participants.
 
-> Correct! This distribution protects the network and its participants.
+> Correct! This distribution protects the network and its users.
 
 - [ ] The rewards earned by miners.
 
@@ -271,23 +271,19 @@ What is decentralization?
 
 # Knowledge Check 6
 
-How does mining prevent transaction errors?
+How does mining protect the Bitcoin Network from fraud?
 
-- [ ] Miners check transactions.
+- [ ] By rewarding miners for checking transactions.
 
-> Right! Transactions are checked for errors, but this isn’t the only option.
+> Correct! Bitcoin rewards attract miners and incentivize them to act honestly.
 
-- [ ] Other miners double-check transactions.
+- [ ] By increasing the circulating supply of Bitcoin.
 
-> Right! This holds the first miner accountable, but this isn’t the only option.
+> Try again! Supply increases don’t help to prevent fraud.
 
-- [ ] Miners are rewarded for successful checks.
+- [ ] Both of the above.
 
-> Right! Rewards incentivize honest behaviour, but this isn’t the only option.
-
-- [ ] All of the above.
-
-> Correct! The mining system incentivizes honest behaviour while holding everyone accountable for their actions.
+> Try again! Only one of the above helps to prevent fraud.
 
 # The Innovation of Money
 
@@ -318,7 +314,7 @@ Your transaction will include the following details:
 
 💰 The amount of Bitcoin to send.
 
-It will also include a transaction fee given to the `miners`. This part is handled automatically.
+It will also include a transaction fee given to the `miners`.
 
 Remember to make sure all details are accurate.
 Once a Bitcoin transaction is confirmed, you cannot reverse it.

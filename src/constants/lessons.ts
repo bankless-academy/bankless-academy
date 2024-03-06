@@ -487,7 +487,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '2e71f5c2c4364496bf982a6d093fc5f5',
         title: 'Bitcoin: It’s like Emailing Money!',
-        content: '<div class="bloc1"><p>⌛ Have you ever had to wait several working days to send money internationally, while paying 3-5% in fees?</p><hr><p>Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.</p><ul><li>⚡ Transfer Bitcoin globally for a reasonable fee.</li><li>⚙️ Send money 24/7. No waiting, no paperwork, no downtime.</li><li>📡 Access Bitcoin from anywhere with an internet connection.</li></ul><p>In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: <em>1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</em> (but we’ll show you how to customize this later!)</p><p>You’ll manage your account using <code>cryptocurrency wallet</code> software connected to your web browser or your phone. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg\'></div>'
+        content: '<div class="bloc1"><p>⌛ Have you ever had to wait several working days to send money internationally, while paying 3-5% in fees?</p><hr><p>Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.</p><ul><li>⚡ Transfer Bitcoin globally for a reasonable fee.</li><li>⚙️ Send money 24/7. No waiting, no paperwork, no downtime.</li><li>📡 Access Bitcoin from anywhere with an internet connection.</li></ul><p>In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: <em>1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</em> (we’ll show you how to customize this later!)</p><p>You’ll manage your account using <code>cryptocurrency wallet</code> software connected to your web browser or your phone. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -515,7 +515,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '77a68343994b4aad9aa1c99f35961204',
         title: 'The Bitcoin Network',
-        content: '<div class="bloc1"><p>Let’s switch gears and look at the engine behind Bitcoin: <br><strong>The Bitcoin Network</strong>.</p><p>Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.</p><p>This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.</p><p>This defense strategy is called <code>decentralization</code>: the shifting of control from one central group to many smaller ones. It’s what makes cryptocurrency transfers virtually unstoppable.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg\'></div>'
+        content: '<div class="bloc1"><p>Let’s switch gears and look at the engine behind Bitcoin: <br><strong>The Bitcoin Network</strong>.</p><p>Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.</p><p>This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.</p><p>This defense strategy is called <code>decentralization</code>: the shifting of control from one central group to many smaller ones. It’s what makes cryptocurrency networks virtually unstoppable.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -543,7 +543,7 @@ const LESSONS: LessonType[] = [
           ],
           feedback: [
             'Try again! Scarcity means an asset is in low supply.',
-            'Correct! This distribution protects the network and its participants.',
+            'Correct! This distribution protects the network and its users.',
             'Try again! Miners are rewarded with transaction fees and block rewards.'
           ],
           id: 'bitcoin-basics-5'
@@ -554,19 +554,17 @@ const LESSONS: LessonType[] = [
         notionId: '59609434869c42b99a54a538d8faa2d5',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'How does mining prevent transaction errors?',
-          rightAnswerNumber: 4,
+          question: 'How does mining protect the Bitcoin Network from fraud?',
+          rightAnswerNumber: 1,
           answers: [
-            'Miners check transactions.',
-            'Other miners double-check transactions.',
-            'Miners are rewarded for successful checks.',
-            'All of the above.'
+            'By rewarding miners for checking transactions.',
+            'By increasing the circulating supply of Bitcoin.',
+            'Both of the above.'
           ],
           feedback: [
-            'Right! Transactions are checked for errors, but this isn’t the only option.',
-            'Right! This holds the first miner accountable, but this isn’t the only option.',
-            'Right! Rewards incentivize honest behaviour, but this isn’t the only option.',
-            'Correct! The mining system incentivizes honest behaviour while holding everyone accountable for their actions.'
+            'Correct! Bitcoin rewards attract miners and incentivize them to act honestly.',
+            'Try again! Supply increases don’t help to prevent fraud.',
+            'Try again! Only one of the above helps to prevent fraud.'
           ],
           id: 'bitcoin-basics-6'
         }
@@ -581,7 +579,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '9920715e06094e39bf34a5a63891a909',
         title: 'Your Bitcoin Quest',
-        content: '<div class="bloc1"><p>It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.</p><p>Your transaction will include the following details:</p><p>📫 The wallet address of the person you’re sending to.</p><p>💰 The amount of Bitcoin to send.</p><p>It will also include a transaction fee given to the <code>miners</code>. This part is handled automatically.</p><p>Remember to make sure all details are accurate.<br>Once a Bitcoin transaction is confirmed, you cannot reverse it.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png\'></div>'
+        content: '<div class="bloc1"><p>It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.</p><p>Your transaction will include the following details:</p><p>📫 The wallet address of the person you’re sending to.</p><p>💰 The amount of Bitcoin to send.</p><p>It will also include a transaction fee given to the <code>miners</code>.</p><p>Remember to make sure all details are accurate.<br>Once a Bitcoin transaction is confirmed, you cannot reverse it.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png\'></div>'
       },
       {
         type: 'QUEST',
