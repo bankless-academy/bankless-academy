@@ -47,7 +47,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
   const animationSteps = [
     t('1. Your Bitcoin is on its way to Satoshi Nakamoto.'),
     t("2. It's now being verified by network miners..."),
-    t('3. Your transaction is being recorded on the database...'),
+    t('3. Your transaction is added to the blockchain “database”...'),
     t('4. Satoshi Nakamoto has received your Bitcoin!'),
   ]
 
@@ -201,7 +201,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
                 </InputGroup>
               </Box>
               <Text textAlign="left" m="0 !important">
-                {t('Balance: 0.0005')}
+                {t(`Balance`)}: 0.0005
               </Text>
               {areAnswersCorrect !== true && (
                 <Box mt="36px !important" textAlign="center">
