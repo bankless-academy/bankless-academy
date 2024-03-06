@@ -125,6 +125,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                   <ExternalLink href={twitterLink} mr="2">
                     <Button
                       variant="primary"
+                      height="51px"
                       w="100%"
                       borderBottomRadius="0"
                       leftIcon={<ShootingStar width="28px" height="28px" />}

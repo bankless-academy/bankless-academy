@@ -51,20 +51,37 @@ const primary = {
   _disabled: {
     ...padding,
     cursor: 'default',
-    color: '#B85FF1',
+    color: '#daa0ff',
     opacity: '0.6',
     background: 'transparent',
-    border: '1px solid #B85FF1',
+    _before: {
+      background:
+        'linear-gradient(104.42deg, #B06FD8 35.33%, rgba(89, 122, 238, 0.7) 93.21%)',
+      content: `""`,
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      borderRadius: '8px',
+      borderBottomRadius: '0',
+      padding: '1px',
+      '-webkit-mask':
+        'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+      '-webkit-mask-composite': 'source-out',
+      'mask-composite': 'exclude',
+    },
     span: {
       path: {
-        fill: '#B85FF1',
+        fill: '#daa0ff',
       },
     },
     _hover: {
-      color: '#B85FF1',
+      border: '0',
+      color: '#daa0ff',
       span: {
         path: {
-          fill: '#B85FF1',
+          fill: '#daa0ff',
         },
       },
     },
