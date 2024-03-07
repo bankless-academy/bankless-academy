@@ -1,3 +1,5 @@
+// SOURCE: https://github.com/gitcoinco/passport/blob/main/identity/src/credentials.ts
+
 import { DIDKitLib, ProofRecord, RequestPayload, VerifiableCredential, IssuedCredential, IssuedChallenge, CredentialResponseBody, SignatureType } from "@gitcoin/passport-types";
 export declare const VERSION = "v0.0.0";
 export declare const MAX_VALID_DID_SESSION_AGE: number;

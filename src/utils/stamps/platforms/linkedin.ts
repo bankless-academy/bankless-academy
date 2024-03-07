@@ -1,4 +1,5 @@
 // SOURCE: https://github.com/gitcoinco/passport/blob/main/platforms/src/Linkedin/Providers/linkedin.ts
+
 // ----- Types
 import type { RequestPayload, VerifiedPayload } from "../passport-types";
 import { ProviderExternalVerificationError, type Provider, type ProviderOptions } from "../types";

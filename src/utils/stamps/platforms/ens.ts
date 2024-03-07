@@ -1,3 +1,5 @@
+// SOURCE: https://github.com/gitcoinco/passport/blob/main/platforms/src/Ens/Providers/EnsProvider.ts
+
 // ----- Types
 import { ProviderExternalVerificationError, type Provider, type ProviderOptions } from "../types";
 import type { RequestPayload, VerifiedPayload } from "../passport-types";
