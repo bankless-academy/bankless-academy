@@ -297,7 +297,7 @@ const HomePage = (): JSX.Element => {
             <SubscriptionModal isOpen={isOpen} onClose={onClose} />
             <FeaturedLessons />
             <>
-              <Box mt="16">
+              {/* <Box mt="16">
                 <Heading as="h2" size="xl" my="16" mb="12">
                   {t(`More Lessons On the Way`)}
                 </Heading>
@@ -375,7 +375,7 @@ const HomePage = (): JSX.Element => {
                     </Box>
                   </Box>
                 </Box>
-              </Box>
+              </Box> */}
               <Box my="16">
                 <Heading as="h2" size="xl" mt="16" mb="8">
                   {t(`Work With Us!`)}
