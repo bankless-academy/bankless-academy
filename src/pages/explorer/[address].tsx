@@ -76,6 +76,7 @@ export default function Page({
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)
   const [fullProfileAddress, setFullProfileAddress] = useState('')
+  const [isMyProfile, setIsMyProfile] = useState(false)
   const { address } = useAccount()
   const { onCopy, hasCopied } = useClipboard(profileUrl)
   const [passportLS] = useLocalStorage('passport', EMPTY_PASSPORT)
@@ -83,9 +84,6 @@ export default function Page({
   const wallets = localStorage.getItem('wallets')
     ? JSON.parse(localStorage.getItem('wallets'))
     : []
-
-  const isMyProfile =
-    fullProfileAddress !== '' && wallets.includes(fullProfileAddress)
 
   useEffect(() => {
     const loadUser = async () => {
@@ -96,6 +94,7 @@ export default function Page({
         if (user?.error) {
           setError(user?.error)
         } else if (user) {
+          setIsMyProfile(false)
           console.log(user)
           if (
             typeof window !== 'undefined' &&
@@ -115,6 +114,9 @@ export default function Page({
           }
           setFullProfileAddress(user.address)
           setUser(user)
+          if (wallets.includes(user.address)) {
+            setIsMyProfile(true)
+          }
         }
       } catch (error) {
         console.log(error)
@@ -144,7 +146,7 @@ export default function Page({
         setUser({ ...user, ...updatedUser })
       }
     }
-  }, [passportLS])
+  }, [passportLS, isMyProfile])
 
   const collectibles = []
   for (let i = 0; i < user?.stats.datadisks?.length; i++) {
