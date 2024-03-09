@@ -27,9 +27,9 @@ ________________________________________________________________________________
 
 ---
 
-# Introduction
+# 导言
 
-`Blockchain` technology is a revolutionary way of storing and tracking data, while also making that data accessible to anyone. It is a way of organizing data in a single public list of all historical transactions that anyone can view but cannot edit. This public list of transactions is collectively known as the blockchain `ledger`.
+`区块链` 是一种革命性的数据存储与跟踪技术，也是一种能让任何人都有权访问链上数据的技术。 它是一种将数据组织在公开账簿里的方法，这个账簿里同时包含所有的历史交易，且具有唯一性，任何人都有权查看但无权编辑。 这份公开的交易清单统称为区块链 `账本（ledger）`</code>。
 
 After examining the layers of a blockchain, we will be using a blockchain tool called a `block explorer` to look into the specifics of the Ethereum blockchain structure; we will zoom in on the Ethereum blockchain to view the **list** of blocks, the **transactions** within those blocks, and the **details** of each individual transaction.
 
