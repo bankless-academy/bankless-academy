@@ -167,7 +167,7 @@
   "circulating supply": {
     "keyword": "circulating supply",
     "keyword_plural": "circulating supplys",
-    "definition": " T"
+    "definition": "The number of a specific cryptocurrency's coins or tokens publicly available for the market to trade."
   },
   "coin": {
     "keyword": "币",
