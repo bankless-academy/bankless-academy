@@ -1,9 +1,9 @@
 ---
-TITLE: Blockchain Basics
-DESCRIPTION: Learn about the fundamental architecture of blockchain technology.
-LANGUAGE: English
+TITLE: 区块链基础知识
+DESCRIPTION: 了解区块链技术的基本架构。
+LANGUAGE: 简体中文（Simplified Chinese）
 WRITERS:
-TRANSLATORS: X
+TRANSLATORS: 183Aaros.eth
 LINK: https://app.banklessacademy.com/lessons/blockchain-basics
 FORMAT: LESSON
 ---
