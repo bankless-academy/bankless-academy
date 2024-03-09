@@ -78,7 +78,7 @@ True or False:
 
 > Try again.
 
-# A Brief History of Money (Pt. 2)
+# A Brief History of Money (Part 2)
 
 With the introduction of paper money, currencies shifted to being 'backed' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.
 
@@ -88,7 +88,7 @@ Precious metals were slowly disconnected from currencies worldwide — an effort
 
 Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-pt-2-3f9be5ac.svg)
+![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg)
 
 # The Problem
 

@@ -170,9 +170,9 @@ If you’re comfortable holding your `private keys` but don’t have 32 ETH, the
 
 If you’re not yet okay with taking `self-custody` of your crypto, check out Centralized Exchange staking. In the mean time, take our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson and boldly take ownership of your crypto!
 
-# Types of Staking (Pt. 2)
+# Types of Staking (Part 2)
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/types-of-staking-pt-2-9de268fd.svg)
+![](https://app.banklessacademy.com/images/staking-on-ethereum/types-of-staking-part-2-9de268fd.svg)
 
 **Solo Staking**
 
@@ -184,7 +184,7 @@ If you’re not yet okay with taking `self-custody` of your crypto, check out Ce
 
 **Risks:** You may lose your private keys, get `slashed`, or receive minor penalties for an offline node.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/types-of-staking-pt-2-96f11caf.svg)
+![](https://app.banklessacademy.com/images/staking-on-ethereum/types-of-staking-part-2-96f11caf.svg)
 
 **Staking Pools**
 
@@ -196,7 +196,7 @@ If you’re not yet okay with taking `self-custody` of your crypto, check out Ce
 
 **Risks:** There could be a bug in the staking pool’s smart contract or you may lose your private keys.
 
-![](https://app.banklessacademy.com/images/staking-on-ethereum/types-of-staking-pt-2-27091ef5.svg)
+![](https://app.banklessacademy.com/images/staking-on-ethereum/types-of-staking-part-2-27091ef5.svg)
 
 **Centralized Exchange Staking**
 

@@ -36,7 +36,7 @@ const LESSONS: LessonType[] = [
       '/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png',
       '/images/bitcoin-basics/bitcoins-story-98b007a5.png',
       '/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg',
-      '/images/bitcoin-basics/a-brief-history-of-money-pt-2-3f9be5ac.svg',
+      '/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg',
       '/images/bitcoin-basics/enter-bitcoin-b108517c.svg',
       '/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg',
       '/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg',
@@ -113,8 +113,8 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '71abd63b1fa8418e96ad038bbc51cb34',
-        title: 'A Brief History of Money (Pt. 2)',
-        content: '<div class="bloc1"><p>With the introduction of paper money, currencies shifted to being \'backed\' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.</p><p>Then, in the 20th century, came the fall of this “<code>Gold Standard</code>”.</p><p>Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.</p><p>Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/a-brief-history-of-money-pt-2-3f9be5ac.svg\'></div>'
+        title: 'A Brief History of Money (Part 2)',
+        content: '<div class="bloc1"><p>With the introduction of paper money, currencies shifted to being \'backed\' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.</p><p>Then, in the 20th century, came the fall of this “<code>Gold Standard</code>”.</p><p>Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.</p><p>Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -2289,9 +2289,9 @@ const LESSONS: LessonType[] = [
       '/images/staking-on-ethereum/proof-of-stake-49c358ed.svg',
       '/images/staking-on-ethereum/slashing-ccabe137.svg',
       '/images/staking-on-ethereum/ethernomics-33407ddc.svg',
-      '/images/staking-on-ethereum/types-of-staking-pt-2-9de268fd.svg',
-      '/images/staking-on-ethereum/types-of-staking-pt-2-96f11caf.svg',
-      '/images/staking-on-ethereum/types-of-staking-pt-2-27091ef5.svg',
+      '/images/staking-on-ethereum/types-of-staking-part-2-9de268fd.svg',
+      '/images/staking-on-ethereum/types-of-staking-part-2-96f11caf.svg',
+      '/images/staking-on-ethereum/types-of-staking-part-2-27091ef5.svg',
       '/images/staking-on-ethereum/network-centralization-0622ba07.svg',
       '/images/staking-on-ethereum/staking-pools-46c96251.svg',
       '/images/staking-on-ethereum/network-centralization-again-43bfd55b.svg',
@@ -2441,8 +2441,8 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '20dbf51d28cc48c48868ddbba29b34ac',
-        title: 'Types of Staking (Pt. 2)',
-        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-9de268fd.svg\'></div><div class="bloc-b"><p><span class=\'color-default\'><strong>Solo Staking</strong></span></p><p>🟡 Requires 32 ETH</p><p>🟡 Technical Setup</p><p>🟢 Decentralizes Ethereum</p><p><strong>Risks:</strong> You may lose your private keys, get <code>slashed</code>, or receive minor penalties for an offline node.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-96f11caf.svg\'></div><div class="bloc-b"><p><strong>Staking Pools</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🟡 Decentralized Options</p><p><strong>Risks:</strong> There could be a bug in the staking pool’s smart contract or you may lose your private keys.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-pt-2-27091ef5.svg\'></div><div class="bloc-b"><p><strong>Centralized Exchange Staking</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🔴 Centralizes Ethereum</p><p><strong>Risks:</strong> Your exchange could declare bankruptcy — this may lead to loss of your holdings.</p></div></div>'
+        title: 'Types of Staking (Part 2)',
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-part-2-9de268fd.svg\'></div><div class="bloc-b"><p><span class=\'color-default\'><strong>Solo Staking</strong></span></p><p>🟡 Requires 32 ETH</p><p>🟡 Technical Setup</p><p>🟢 Decentralizes Ethereum</p><p><strong>Risks:</strong> You may lose your private keys, get <code>slashed</code>, or receive minor penalties for an offline node.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-part-2-96f11caf.svg\'></div><div class="bloc-b"><p><strong>Staking Pools</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🟡 Decentralized Options</p><p><strong>Risks:</strong> There could be a bug in the staking pool’s smart contract or you may lose your private keys.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-part-2-27091ef5.svg\'></div><div class="bloc-b"><p><strong>Centralized Exchange Staking</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🔴 Centralizes Ethereum</p><p><strong>Risks:</strong> Your exchange could declare bankruptcy — this may lead to loss of your holdings.</p></div></div>'
       },
       {
         type: 'LEARN',
