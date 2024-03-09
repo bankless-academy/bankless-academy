@@ -260,7 +260,7 @@ const CollectEntryButton = ({
                     }, 3000)
                     if (mintingError !== '') {
                       toast({
-                        title: t('⚠️ Problem while minting:'),
+                        title: t('⚠️ Problem while minting...'),
                         description: (
                           <>
                             <Box>{mintingError}</Box>
