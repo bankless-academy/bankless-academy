@@ -291,7 +291,7 @@ const LESSONS: LessonType[] = [
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
-    description: 'Create and securely manage your first crypto wallet. ',
+    description: 'Create and securely manage your first crypto wallet.',
     name: 'Wallet Basics',
     languages: [
       'it'
@@ -1583,7 +1583,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/funding-a-wallet-on-layer-2/lesson-dcf41ef6.png',
-    socialImageLink: '/images/funding-a-wallet-on-layer-2/social-00f2f6fe.png',
+    socialImageLink: '/images/funding-a-wallet-on-layer-2/social-4bb4ca84.png',
     learningActions: '',
     marketingDescription: 'Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.',
     badgeId: null,
@@ -1867,7 +1867,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/understanding-stablecoins/lesson-dcf41ef6.png',
-    socialImageLink: '/images/understanding-stablecoins/social-807afdfa.jpg',
+    socialImageLink: '/images/understanding-stablecoins/social-32059ac7.png',
     learningActions: '',
     marketingDescription: 'Use dollars, euros, and more on the blockchain.',
     badgeId: null,
@@ -2220,7 +2220,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/swapping-on-a-decentralized-exchange/lesson-7ca41657.png',
-    socialImageLink: '/images/swapping-on-a-decentralized-exchange/social-5eded9f4.png',
+    socialImageLink: '/images/swapping-on-a-decentralized-exchange/social-523f352a.png',
     learningActions: '',
     marketingDescription: 'Begin your journey into DeFi with this Decentralized Exchange walkthrough.',
     badgeId: null,
@@ -2544,7 +2544,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/staking-ether/lesson-c9e39d73.png',
-    socialImageLink: '/images/staking-ether/social-7700df4f.png',
+    socialImageLink: '/images/staking-ether/social-040aeea7.png',
     learningActions: '',
     marketingDescription: 'Generate yield on your Ether by protecting Ethereum.',
     badgeId: null,
@@ -2580,7 +2580,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/managing-token-allowances/lesson-dcf41ef6.png',
-    socialImageLink: '/images/managing-token-allowances/social-4c1e3247.png',
+    socialImageLink: '/images/managing-token-allowances/social-6f251351.png',
     learningActions: '',
     marketingDescription: 'Protect your wallet from unwanted smart contract interactions.',
     badgeId: null,
@@ -2846,7 +2846,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/understanding-ethereum-token-standards/lesson-dcf41ef6.png',
-    socialImageLink: '/images/understanding-ethereum-token-standards/social-26124930.png',
+    socialImageLink: '/images/understanding-ethereum-token-standards/social-45b8b003.png',
     learningActions: '',
     marketingDescription: 'Learn how Ethereum’s asset templates support both traditional and emerging asset classes.',
     badgeId: null,
@@ -3210,7 +3210,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/delegating-on-optimism/lesson-9ce41ea1.png',
-    socialImageLink: '/images/delegating-on-optimism/social-3947f1e7.png',
+    socialImageLink: '/images/delegating-on-optimism/social-2cbfa86f.png',
     learningActions: '',
     marketingDescription: 'Grant your OP voting power to people closely following governance.',
     badgeId: null,

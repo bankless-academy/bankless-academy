@@ -271,7 +271,13 @@ const LessonCards: React.FC = () => {
                   }}
                   py="4"
                 >
-                  <Image src={lesson.lessonImageLink} />
+                  <Image
+                    src={
+                      lesson.isArticle
+                        ? lesson.socialImageLink
+                        : lesson.lessonImageLink
+                    }
+                  />
                 </LessonBanner>
               ) : (
                 <InternalLink
@@ -291,6 +297,8 @@ const LessonCards: React.FC = () => {
                       src={
                         isLessonCollected
                           ? lesson.lessonCollectedImageLink
+                          : lesson.isArticle
+                          ? lesson.socialImageLink
                           : lesson.lessonImageLink
                       }
                     />
