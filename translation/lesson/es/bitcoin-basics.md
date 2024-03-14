@@ -1,6 +1,6 @@
 ---
-TITLE: Bitcoin Basics
-DESCRIPTION: What is Bitcoin? Explore the first successful cryptocurrency and rethink money.
+TITLE: Conceptos básicos de Bitcoin
+DESCRIPTION: ¿Qué es Bitcoin? Explora la primera criptomoneda exitosa y repiensa el dinero.
 LANGUAGE: English
 WRITERS: Tetranome
 TRANSLATORS: X
@@ -27,11 +27,11 @@ ________________________________________________________________________________
 
 ***
 
-# Welcome to Bankless Academy
+# Bienvenido a Bankless Academy
 
-Welcome, bold Explorer, to the frontier of digital innovation.
+Bienvenido, audaz Explorador, a la frontera de la innovación digital.
 
-At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to navigate the blockchain universe and “go bankless!”
+En Bankless Academy, nuestra misión es proporcionar a Exploradores como tú las mejores herramientas y conocimientos para navegar por el universo blockchain y "¡sin bancos!"
 
 Today, we’re looking at the `cryptocurrency` that started it all: Bitcoin.
 
