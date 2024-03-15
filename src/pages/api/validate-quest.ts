@@ -60,6 +60,7 @@ export default async function handler(
         .json({ isQuestValidated: true, status: questStatus })
     }
     if (!completion) {
+      trackBE(address, 'quest_start', { lesson, embed })
       const [createCompletion] = await db(TABLES.completions).insert(
         { credential_id: credential.id, user_id: userId },
         ['id']
