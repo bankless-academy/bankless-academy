@@ -31,7 +31,7 @@ ________________________________________________________________________________
 
 Bienvenido, audaz Explorador, a la frontera de la innovación digital.
 
-En Bankless Academy, nuestra misión es proporcionar a Exploradores como tú las mejores herramientas y conocimientos para navegar por el universo blockchain y "ser bankless!".
+En Bankless Academy, nuestra misión es proporcionar a Exploradores como tú, las mejores herramientas y conocimientos para navegar por el universo blockchain y "ser bankless!".
 
 Hoy aprenderemos sobre la `criptomoneda` que comenzó todo: Bitcoin.
 
@@ -127,7 +127,7 @@ Por sus cualidades, Bitcoin se ha ganado el apodo de "oro digital".
 
 ***
 
-La escasez en Bitcoin se refiere a que hay un límite en el número de Bitcoins que pueden existir: un máximo de 21 millones. Este `suministro máximo` está incrustado en su código, haciendo que Bitcoin sea raro y potencialmente valioso. Esto lo sitúa en una buena posición como depósito de valor a largo plazo, al igual que el oro.
+La escasez en Bitcoin se refiere a que hay un límite en el número de bitcoins que pueden existir: un máximo de 21 millones. Este `suministro máximo` está incrustado en su código, haciendo que Bitcoin sea raro y potencialmente valioso. Esto lo sitúa en una buena posición como depósito de valor a largo plazo, al igual que el oro.
 
 Mientras que la oferta máxima de `BTC` no puede superar los 21 millones, se agrega nueva moneda al mercado en intervalos regulares. Al igual que la minería de oro, el nuevo Bitcoin se introduce a través de un laborioso proceso llamado `minería de criptomonedas`. Este aumento predecible de su `oferta circulante`, mantiene la economía de Bitcoin en marcha.
 
