@@ -88,7 +88,7 @@ Los metales preciosos se fueron desconectando poco a poco de las monedas de todo
 
 Entrando en la era digital, la moneda electrónica ha reemplazado masivamente a la moneda física. Almacenar nuestro dinero en bancos comerciales nos ha proporcionado la comodidad de las tarjetas de crédito y las aplicaciones de pago. Aunque es fácil y seguro, también interpone empresas con ánimo de lucro entre las personas y su dinero.
 
-![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg)
+
 
 # El Problema
 
@@ -129,194 +129,194 @@ Por sus cualidades, Bitcoin se ha ganado el apodo de "oro digital".
 
 La escasez en Bitcoin se refiere a que hay un límite en el número de Bitcoins que pueden existir: un máximo de 21 millones. Este `suministro máximo` está incrustado en su código, haciendo que Bitcoin sea raro y potencialmente valioso. Esto lo sitúa en una buena posición como depósito de valor a largo plazo, al igual que el oro.
 
-While the max supply of `BTC` can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called `cryptocurrency mining`. This predictable increase in `circulating supply` keeps the Bitcoin economy moving.
+Mientras que la oferta máxima de `BTC` no puede superar los 21 millones, se agrega nueva moneda al mercado en intervalos regulares. Al igual que la minería de oro, el nuevo Bitcoin se introduce a través de un laborioso proceso llamado `minería de criptomonedas`. Este aumento predecible de su `oferta circulante`, mantiene la economía de Bitcoin en marcha.
 
-Bitcoin's fixed `monetary policy` makes it an attractive asset for those seeking to preserve value in the long term, allowing them to keep up with rising costs.
+La `política monetaria` de Bitcoin, al ser fija, lo convierte en un activo atractivo para quienes buscan preservar el valor a largo plazo, ya que a su vez permite estar al día con el aumento del costo de vida.
 
-It’s short term value remains volatile due to market speculation.
+Su valor a corto plazo permanece volátil debido a la especulación del mercado.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
 # Knowledge Check 2
 
-How does Bitcoin promote value preservation in the long term?
+¿Cómo fomenta Bitcoin la preservación del valor a largo plazo?
 
-- [ ] Using a max supply cap.
+- [ ] Utilizando un límite máximo de suministro.
 
-> Correct! Bitcoin's fixed supply creates scarcity similar to precious metals. This aids value retention.
+> ¡Correcto! La oferta fija de Bitcoin crea una escasez similar a la de los metales preciosos. Esto ayuda a retener valor.
 
-- [ ] By removing custodians.
+- [ ] Eliminando a los custodios.
 
-> Try again! Custody relates to ownership, rather than value.
+> ¡Inténtalo de nuevo! La custodia se relaciona con la propiedad, más que con el valor.
 
-# Digital Gold: Self-Custody
+# Oro Digital: Autocustodia
 
-🧊 Has your bank frozen your funds without notice because you performed a transfer that they didn’t like?
+🧊 ¿Tu banco te ha congelado los fondos sin previo aviso porque realizaste una transferencia que no les gustó?
 
 ***
 
-In democracies, ownership is a protected human right because it gives citizens increased control and freedom over their lives. We cannot act freely when our means of survival are conditional — judged by businesses or institutions.
+En democracia, la propiedad es un derecho humano protegido, ya que da a los ciudadanos un mayor control y libertad sobre sus vidas. No podemos actuar libremente cuando nuestros medios de supervivencia están condicionados, juzgados por empresas o instituciones.
 
-As our assets are increasingly digitized (i.e. your money, your property, and even your identity), our lives are taking on a digital quality that we must learn to protect.
+A medida que nuestros activos se digitalizan cada vez más (es decir, nuestro dinero, nuestros bienes e incluso nuestra identidad), nuestras vidas adquieren una cualidad digital que debemos aprender a proteger.
 
-Bitcoin’s `self-custody` offers true digital ownership, beyond reach of `custodians`. So long as you don’t share your account information with someone else, you have sole access to your assets. It’s like having your own vault of gold in a secure online space.
+La `autocustodia` de Bitcoin ofrece una verdadera propiedad digital, más allá del alcance de los `custodios`. Mientras no compartas la información de tu cuenta con otra persona, tendrás acceso exclusivo a tus activos. Es como tener tu propia bóveda de oro en un espacio seguro en línea.
 
-This system of ownership gives you total control of your digital wealth — anywhere in the world, any time.
+Este sistema de propiedad te ofrece el control total de tu patrimonio digital, en cualquier lugar del mundo y en cualquier momento.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg)
 
 # Knowledge Check 3
 
-How does self-custody enable true ownership?
+¿Cómo permite la autocustodia darte verdadera propiedad?
 
-- [ ] By giving you sole access to your assets.
+- [ ] Al darte acceso exclusivo a tus activos.
 
-> Correct! Anyone with access to our assets has the ability to confiscate them.
+> ¡Correcto! Cualquiera que tenga acceso a nuestros activos puede confiscarlos.
 
-- [ ] By allowing custodians to access to your assets.
+- [ ] Permitiendo a los custodios acceder a tus activos.
 
-> Try again! Self-custody means there is no custodian (third party) that can access our assets.
+> ¡Inténtalo de nuevo! La autocustodia significa que no hay ningún custodio (terceros) que pueda acceder a nuestros activos.
 
-# Bitcoin: It’s like Emailing Money!
+# Bitcoin: ¡es como enviar dinero por correo electrónico!
 
-⌛ Have you ever had to wait several working days to send money internationally, while paying 3-5% in fees?
+⌛ ¿Has tenido alguna vez que esperar varios días laborables para enviar dinero internacionalmente, pagando entre un 3% y un 5% de comisiones?
 
 ***
 
-Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.
+El correo electrónico simplificó el envío de cartas al eliminar la necesidad de una oficina de correos. De forma similar, Bitcoin ha agilizado el envío de dinero al eliminar la necesidad de bancos.
 
-- ⚡ Transfer Bitcoin globally for a reasonable fee.
-- ⚙️ Send money 24/7. No waiting, no paperwork, no downtime.
-- 📡 Access Bitcoin from anywhere with an internet connection.
+- ⚡ Transfiere Bitcoin globalmente por una comisión razonable.
+- ⚙️ Envía dinero 24/7. Sin esperas, sin papeleos, sin tiempos muertos.
+- 📡 Accede a Bitcoin desde cualquier lugar con conexión a Internet.
 
-In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (we’ll show you how to customize this later!)
+Del mismo modo que tienes una dirección de correo electrónico, para recibir Bitcoin es necesaria una única dirección Bitcoin. Por defecto tiene este aspecto: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (¡más adelante te enseñaremos a personalizarlo!)
 
-You’ll manage your account using `cryptocurrency wallet` software connected to your web browser or your phone. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!
+Gestionarás tu cuenta usando el software `cryptocurrency wallet` conectado a tu navegador web o tu teléfono. Es la “cuenta bancaria” más fácil que hayas creado nunca. No se necesita cita previa, ¡ni carné de identidad!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
 # Knowledge Check 4
 
-How is Bitcoin similar to email?
+¿En qué se parece Bitcoin al correo electrónico?
 
-- [ ] Both are online 24/7.
+- [ ] Ambos están en línea 24 horas al día, 7 días a la semana.
 
-> Right! But this isn’t the only correct answer.
+> ¡Correcto! Aunque no es la única respuesta correcta.
 
-- [ ] Both are digital technologies.
+- [ ] Ambas son tecnologías digitales.
 
-> Right! But this isn’t the only correct answer.
+> ¡Correcto! Aunque no es la única respuesta correcta.
 
-- [ ] Both can be accessed with a phone.
+- [ ] Ambos se pueden acceder con un teléfono.
 
-> Right! But this isn’t the only correct answer.
+> ¡Correcto! Aunque no es la única respuesta correcta.
 
-- [ ] All of the above.
+- [ ] Todas las anteriores.
 
-> Correct! Both Bitcoin and email innovate on the services that came before them.
+> ¡Correcto! Tanto Bitcoin como el correo electrónico innovan sobre los servicios que les precedieron.
 
-# The Bitcoin Network
+# La Red Bitcoin
 
-Let’s switch gears and look at the engine behind Bitcoin:
-**The Bitcoin Network**.
+Cambiemos de marcha y demos una mirada al motor de Bitcoin:
+**La red Bitcoin**.
 
-Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.
+Bitcoin se ejecuta en una red compartida alojada en miles de computadoras en todo el mundo. Cada computador de la red, desempeña un papel en mantener su funcionamiento; ¡la red existe a través ordenadores! Si una computadora procesa una transacción fraudulenta, existe otra para corregirla.
 
-This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.
+Esto también significa, que no existe un único punto sobre el cual ejercer presión en un intento de hackeo. Para controlar la red, habría que comprometer la mayoría de las computadoras.
 
-This defense strategy is called `decentralization`: the shifting of control from one central group to many smaller ones. It’s what makes cryptocurrency networks virtually unstoppable.
+Esta estrategia de defensa se denomina `descentralización`: el desplazamiento del control de un grupo central a otros más pequeños. Es lo que hace prácticamente imparables las redes de criptomonedas.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg)
 
-# Bitcoin Mining
+# Minería de Bitcoin
 
-With the Bitcoin Network having no central bank, the network relies on its `decentralized` participants. Known as `miners`, these participants are constantly checking transactions and adding them to a “database” — the `blockchain`.
+Al no contar con un banco central, la red de Bitcoin depende de sus participantes `descentralizados`. Conocidos como 'mineros', los participantes verifican constantemente las transacciones y las añaden a la 'base de datos', es decir, a la `blockchain`.
 
-It’s important that these miners are motivated to be active and honest, to protect the network from fraud. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as “block rewards”, for their work.
+Es importante que los mineros sean motivados a ser activos y honestos, protegiendo así la red del fraude. Los mineros frecuentemente comprueban los resultados de los demás, pero también son recompensados por el trabajo que realizan. Cuando enviamos transacciones Bitcoin, pagamos una pequeña comisión que va al minero encargado de validar nuestra transacción. Los mineros también ganan nuevos Bitcoin, conocidos como "recompensas de bloque", por su trabajo.
 
-These rewards slowly increase Bitcoin’s `circulating supply` within the `max supply` cap of 21 million `BTC`.
+Estas recompensas aumentan lentamente la `oferta circulante` de Bitcoin dentro del límite de `suministro máximo` de 21 millones de `BTC`.
 
-It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies. Everything is managed by community-approved computer code — “rules with no rulers” — and decentralized participants, rather than small groups of people at the `central bank`.
+Es la introducción lenta y predecible de nuevas monedas lo que separa a Bitcoin de las divisas tradicionales. Todo se gestiona mediante un código informático aprobado por la comunidad - "reglas sin gobernantes"- y participantes descentralizados, en lugar de pequeños grupos de personas en el `banco central`.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg)
 
-# Sending a Bitcoin Transaction
+# Envío de Transacciones Bitcoin
 
-Understanding the exact mechanisms that power Bitcoin transactions and mining can get quite complicated. That said, using and sending Bitcoin is simple!
+Comprender los mecanismos exactos que impulsan las transacciones y la minería de Bitcoin puede resultar bastante complicado. Dicho esto, utilizar y enviar Bitcoin ¡es muy sencillo!
 
-We’ll take a simplified view of the process for today:
+Por hoy vamos a simplificar el proceso:
 
-1. You submit a transaction using your `cryptocurrency wallet`, sending 0.1 `BTC` to your friend’s wallet address.
-2. A miner checks your transaction for errors. Other miners double-check their results.
-3. If approved, your transaction is added to the `blockchain` “database”.
-4. Your friend receives 0.1 BTC in their wallet.
+1. Envías una transacción utilizando tu `cartera de criptomoneda`, enviando 0,1 `BTC` a la dirección de la billetera de tu amigo.
+2. Un minero comprueba si hay errores en tu transacción. Otros mineros comprueban sus resultados.
+3. Si se aprueba, su transacción se añade a la "base de datos" o `blockchain`.
+4. Tu amigo recibe 0.1 BTC en su billetera.
 
 [embed](https://app.banklessacademy.com/animation/bitcoin)
 
 # Knowledge Check 5
 
-What is decentralization?
+¿Qué es la descentralización?
 
-- [ ] Increased scarcity.
+- [ ] Aumento de la escasez.
 
-> Try again! Scarcity means an asset is in low supply.
+> ¡Inténtalo de nuevo! Escasez significa que la oferta de un bien es escasa.
 
-- [ ] Distribution of control across multiple participants.
+- [ ] Distribución del control entre múltiples participantes.
 
-> Correct! This distribution protects the network and its users.
+> ¡Correcto! Esta distribución protege la red y a sus usuarios.
 
-- [ ] The rewards earned by miners.
+- [ ] Las recompensas obtenidas por los mineros.
 
-> Try again! Miners are rewarded with transaction fees and block rewards.
+> ¡Inténtalo de nuevo! Los mineros son recompensados con comisiones por transacción y recompensas por bloque.
 
 # Knowledge Check 6
 
-How does mining protect the Bitcoin Network from fraud?
+¿Cómo protege la minería a la red Bitcoin del fraude?
 
-- [ ] By rewarding miners for checking transactions.
+- [ ] Recompensando a los mineros por comprobar las transacciones.
 
-> Correct! Bitcoin rewards attract miners and incentivize them to act honestly.
+> ¡Correcto! Las recompensas de Bitcoin atraen a los mineros y los incentiva a actuar honestamente.
 
-- [ ] By increasing the circulating supply of Bitcoin.
+- [ ] Aumentando el suministro circulante de Bitcoin.
 
-> Try again! Supply increases don’t help to prevent fraud.
+> ¡Inténtalo de nuevo! El aumento de la oferta no ayuda a evitar el fraude.
 
-- [ ] Both of the above.
+- [ ] Todas las anteriores.
 
-> Try again! Only one of the above helps to prevent fraud.
+> ¡Inténtalo de nuevo! Sólo una de las anteriores ayuda a prevenir el fraude.
 
-# The Innovation of Money
+# La Innovación del Dinero
 
-In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value, and how institutional management of our assets means giving up full ownership.
+En esta lección, hemos visto cómo la escasez de Bitcoin le ayuda a conservar su valor, y cómo la gestión institucional de nuestros activos implica renunciar a la plena propiedad.
 
-However Bitcoin has evolved beyond a simple monetary tool. It has become a catalyst for a `decentralized money` revolution. This movement reimagines the traditional financial system by distributing monetary power and control to those who use it.
+Sin embargo, Bitcoin ha evolucionado más allá de una simple herramienta monetaria. Se ha convertido en el catalizador de una revolución del `dinero descentralizado`. Este movimiento reimagina el sistema financiero tradicional distribuyendo el poder y el control monetario entre quienes lo utilizan.
 
-By decentralizing money and removing `custodians` we can:
+Descentralizando el dinero y eliminando a los `custodios` podemos hacerlo:
 
-- 💵 Host a 24/7 global marketplace, secured by citizens around the world.
-- 🛠️ Offer financial tools to the unbanked regions of the globe.
-- 🤝 Use `peer-to-peer` technology to avoid the inefficiencies of middleman institutions.
-- 🔎 Reduce institutional inequality, fraud and market manipulation.
-- ⚖️ Build `equality of opportunity` into monetary systems.
-- 🌐 Establish true ownership for the digital age.
+- 💵 Acoger un mercado global 24/7, asegurado por ciudadanos de todo el mundo.
+- 🛠️ Ofrecer herramientas financieras a las regiones no bancarizadas del planeta.
+- 🤝 Usa la tecnología `peer-to-peer` para evitar las ineficiencias de instituciones intermediarias.
+- 🔎 Reducir la desigualdad institucional, el fraude y la manipulación del mercado.
+- ⚖️ Construir la `igualdad de oportunidad` en sistemas monetarios.
+- 🌐 Establecer una verdadera propiedad para la era digital.
 
-The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe — and you’re invited.
+La nueva era del dinero defiende los valores fundamentales de la democracia para aumentar la calidad de la vida cotidiana de los ciudadanos de todo el mundo, y tú, estás invitado.
 
-“_Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations._
+"La democracia proporciona un entorno que respeta los derechos humanos y las libertades fundamentales, y en el que se ejerce la voluntad libremente expresada de las personas" — Naciones Unidas_
 
-# Your Bitcoin Quest
+# Tu Misión Bitcoin
 
-It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.
+Es hora de simular tu primera transacción de Bitcoin y practicar tu libertad en la era digital.
 
-Your transaction will include the following details:
+Tu transacción incluirá los siguientes datos:
 
-📫 The wallet address of the person you’re sending to.
+📫 La dirección de billetera de la persona a la que envías.
 
-💰 The amount of Bitcoin to send.
+💰 La cantidad de Bitcoin a enviar.
 
-It will also include a transaction fee given to the `miners`.
+También incluirá una comisión por transacción que se entregará a los `mineros`.
 
-Remember to make sure all details are accurate.
-Once a Bitcoin transaction is confirmed, you cannot reverse it.
+Asegúrate de que todos los datos sean correctos.
+Una vez confirmada la transacción de Bitcoin, no puedes revertirla.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
