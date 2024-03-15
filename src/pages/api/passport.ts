@@ -128,21 +128,21 @@ export default async function handler(
           stamps: stampHashes,
         })
       }
-      if (validStamps?.length >= NUMBER_OF_STAMP_REQUIRED) {
+      if (validStampsCount >= NUMBER_OF_STAMP_REQUIRED) {
         console.log('verified:', { validStampsCount, score })
       } else {
-        console.log('not verified:', validStamps?.length)
+        console.log('not verified:', validStampsCount)
       }
       return res.status(200).json({
         version,
-        verified: validStamps?.length >= NUMBER_OF_STAMP_REQUIRED || score >= REQUIRED_PASSPORT_SCORE,
+        verified: validStampsCount >= NUMBER_OF_STAMP_REQUIRED || score >= REQUIRED_PASSPORT_SCORE,
         score,
         fraud:
           user?.sybil_user_id === 12
             ? '0x0000000000000000000000000000000000000000'
             : null,
         requirement,
-        validStampsCount: validStamps?.length,
+        validStampsCount: validStampsCount,
         stamps: stampHashes,
       })
     } catch (error) {
