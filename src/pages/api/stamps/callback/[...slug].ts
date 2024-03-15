@@ -329,6 +329,9 @@ export default async function handler(
       [stampHash, socialId, userId]
     )
     console.log('updated', updated)
+    trackBE(address, 'stamp_added', {
+      platform,
+    })
     if (updated) console.log('stamps updated:', updated?.rowCount)
     isStampValidated = true
     status = `Stamp OK: ${hash} You can close the window.`
