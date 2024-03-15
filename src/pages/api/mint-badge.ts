@@ -208,6 +208,7 @@ export default async function handler(
 
       console.log('mint !!!!!!!!!')
       // send email alert if balance < 1 MATIC
+      // TODO: add alternate provider + handle timeout
       const provider = new ethers.providers.AlchemyProvider(IS_BADGE_PROD ? 'matic' : 'maticmum', ALCHEMY_KEY_BACKEND)
       const balance = formatEther((await provider.getBalance(BADGE_MINTER)).toBigInt())
       console.log('balance: ', balance)
@@ -267,7 +268,7 @@ export default async function handler(
       // const mint = { hash: 'test' }
       console.log(mint)
 
-      if (mint.hash) {
+      if (mint?.hash) {
         // referral
         console.log('referrer', referrer)
         if (referrer?.length === 42) {
