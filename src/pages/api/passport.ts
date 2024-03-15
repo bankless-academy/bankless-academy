@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 import { NextApiRequest, NextApiResponse } from 'next'
+import axios from 'axios'
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import { GENERIC_ERROR_MESSAGE } from 'constants/index'
-import { NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID, PASSPORT_VERSION, REQUIRED_PASSPORT_SCORE } from 'constants/passport'
+import { ALLOWED_PROVIDERS, NUMBER_OF_STAMP_REQUIRED, PASSPORT_COMMUNITY_ID, PASSPORT_VERSION, REQUIRED_PASSPORT_SCORE } from 'constants/passport'
 import { trackBE } from 'utils/mixpanel'
 import { PassportResponseSchema, fetchPassport, submitPassport } from 'utils/passport_lib'
 
@@ -34,8 +35,27 @@ export default async function handler(
     return res.status(403).json({ error: 'userId not found' })
 
   const [user] = await db(TABLES.users)
-    .select('sybil_user_id')
+    .select(TABLE.users.sybil_user_id, TABLE.users.ba_stamps)
     .where('address', 'ilike', `%${address}%`)
+
+  const initial_stamps = Object.keys(user.ba_stamps)
+  console.log('initial_stamps', initial_stamps)
+  if (!initial_stamps?.includes('preloaded')) {
+    await axios.get(
+      `${req.headers.origin}/api/stamps/callback/farcaster?json=true&address=${address}`
+    )
+    await axios.get(
+      `${req.headers.origin}/api/stamps/callback/ens?json=true&address=${address}`
+    )
+    // await axios.get(
+    //   `${req.headers.origin}/api/stamps/callback/poh?json=true&address=${address}`
+    // )
+    await db.raw(
+      `update "users" set "ba_stamps" = ba_stamps || ? where "users"."id" = ?`,
+      [{ preloaded: true }, userId]
+    )
+    console.log('stamp_preloaded')
+  }
 
   // TODO: make this dynamic
   type SybilCheckTypes = 'GITCOIN_PASSPORT' | '35kBANK'
@@ -86,7 +106,8 @@ export default async function handler(
         .select('ba_stamps')
         .where(TABLE.users.id, userId)
       console.log('stampHashes', stampHashes)
-      const validStamps = Object.keys(stampHashes)
+      delete stampHashes?.preloaded
+      const validStamps = Object.keys(stampHashes).filter(stamp => ALLOWED_PROVIDERS.includes(stamp))
       console.log('validStamps', validStamps)
       const sybilQuery = db(TABLES.users)
         .select('id', 'address')
