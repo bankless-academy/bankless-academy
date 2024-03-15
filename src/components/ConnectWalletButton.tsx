@@ -68,7 +68,8 @@ const ConnectWalletButton = ({
   let { address } = useAccount()
   const { query, asPath } = useRouter()
   const { simulate } = query
-  if (simulate) address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
+  if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
+    address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
   const { chain } = useNetwork()
   const [waitingForSIWE, setWaitingForSIWE] = useState(false)
   const [isDisconnecting, setIsDisconnecting] = useState(false)

@@ -7,6 +7,7 @@ import { useAccount } from 'wagmi'
 import { signMessage, waitForTransaction } from '@wagmi/core'
 import { Gear, SealCheck, ShootingStar } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
 
 import ExternalLink from 'components/ExternalLink'
 import { WALLET_SIGNATURE_MESSAGE } from 'constants/index'
@@ -40,6 +41,8 @@ const MintBadge = ({
     EMPTY_PASSPORT
   )
   const [, setRefreshBadgesLS] = useLocalStorage('refreshBadges', false)
+  const { query } = useRouter()
+  const { simulate } = query
 
   const { address } = useAccount()
   const toast = useToast()
@@ -87,9 +90,11 @@ const MintBadge = ({
     // TODO: add 1 min timeout
 
     try {
-      const signature = await signMessage({
-        message: WALLET_SIGNATURE_MESSAGE,
-      })
+      const signature = simulate
+        ? 'simulate_signature'
+        : await signMessage({
+            message: WALLET_SIGNATURE_MESSAGE,
+          })
       const bodyParameters = {
         address,
         badgeId,
