@@ -43,177 +43,177 @@ At Bankless Academy, our mission is to provide Explorers such as yourself with t
 
 Запущений у 2009 році таємничим `Сатоші Накамото`, біткоїн ознаменував початок нової економічної ери.
 
-As the first successful `cryptocurrency`, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!
+Як перша успішна `криптовалюта`, біткоїн розпочав потужну дискусію: чи повинен контроль над грошима і надалі залишатися в межах традиційних банківських систем? Чи він належить громадянам, які їх заробляють і використовують щодня? Якщо ви не знаєте, що саме це означає, ви в правильному місці!
 
-The reality is that today, we aren’t in control of our money in the way we think we are. This has very real consequences.
+Реальність така, що сьогодні ми не контролюємо свої гроші так, як нам здається. Це має реальні наслідки.
 
-It’s time to learn how Bitcoin is revolutionizing finance.
+Настав час дізнатися, як Біткоїн революціонізує фінанси.
 
-**It’s time to rethink money.**
+**Настав час переосмислити гроші.**
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
 
-# A Brief History of Money
+# Коротка історія грошей
 
-Money has been an integral part of society since our earliest days when beads, shells, and stones were used to exchange goods & services.
+Гроші були невід'ємною частиною суспільства з найдавніших часів, коли намистини, мушлі та каміння використовувалися для обміну товарами та послугами.
 
-Yet early currencies had a problem: it was too easy for someone to find/create new money. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.
+Проте ранні валюти мали проблему: для когось було надто легко знайти/створити нові гроші. Чим більше чогось є, тим меншу цінність воно має, а отже, гроші кожного поступово стануть коштувати менше. Якщо валюта мала утримувати свою вартість, її потрібно було важче знайти.
 
-Materials like gold & silver were eventually adopted to solve this problem. The key advantage of these materials was their scarcity – there wasn't an endless supply, making it hard for anyone to increase the amount of money in circulation significantly. This `scarcity` helped maintain the value of money.
+Зрештою, для вирішення цієї проблеми були прийняті такі матеріали, як золото та срібло. Ключовою перевагою цих матеріалів був їхній дефіцит - їхня пропозиція не була нескінченною, що ускладнювало можливість значного збільшення кількості грошей в обігу. Цей `дефіцит` допомагав підтримувати вартість грошей.
 
-As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Such currency made money recognizable and measurable while serving as a strong store of value.
+У міру розвитку суспільства центральний банк держави випускав стандартизовані монети, виготовлені із золота та срібла. Така валюта робила гроші впізнаваними та вимірюваними, а також слугувала надійним засобом збереження вартості.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg)
 
 # Knowledge Check 1
 
-True or False:
-”As more money is added to a monetary system, the existing money becomes worth less.”
+Правда чи брехня:
+"Коли до грошової системи додається більше грошей, існуючі гроші стають менш цінними"
 
-- [ ] True
+- [ ] Правда
 
-> Correct! The more money there is, the less value it has.
+> Правильно! Чим більше грошей, тим меншу цінність вони мають.
 
-- [ ] False
+- [ ] Брехня
 
-> Try again.
+> Спробуйте ще раз.
 
-# A Brief History of Money (Part 2)
+# Коротка історія грошей (частина 2)
 
-With the introduction of paper money, currencies shifted to being 'backed' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.
+Із запровадженням паперових грошей валюти стали "підкріплюватися" золотом. Вартість грошей була безпосередньо пов'язана з конкретною кількістю дорогоцінного металу, що знаходився на зберіганні.
 
-Then, in the 20th century, came the fall of this “`Gold Standard`”.
+Потім, у 20-му столітті, настало падіння цього "золотого стандарту".
 
-Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.
+Дорогоцінні метали повільно від'єднували від валют по всьому світу — зусилля, яке дозволило б економіці будь-якої країни зростати, попри пропозицію золота. Оскільки центральний банк більше не потребував золота для створення валюти, він міг створювати стільки нових грошей, скільки вважав за потрібне для економіки своєї країни. Жорстко контролюючи грошову масу, вони могли також контролювати її вартість.
 
-Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.
+У цифрову епоху електронна валюта значною мірою замінила фізичну валюту. Зберігання грошей у комерційних банках дало нам зручність кредитних карток і платіжних додатків. Попри те, що це легко і безпечно, це також створює комерційний бізнес між людьми та своїми грошима.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg)
 
-# The Problem
+# Проблема
 
-The problem with our current financial system is the lack of control we have over our money, and how this lowers our ability to freely decide what to save and what to spend.
+Проблема нашої нинішньої фінансової системи полягає у відсутності контролю над нашими грошима, а також у тому, що це знижує нашу здатність вільно вирішувати, що заощаджувати, а що витрачати.
 
-`Central banks`, the bank managing a country’s `monetary policy`, can introduce any amount of new money. This lack of `scarcity` often makes our money worth less and less each year. Money with an unpredictable, decreasing value often forces us to spend it: **“If my money is going to be worth less every year, why save? I might as well spend it now.”** 💸
+`Центральні банки`, банки, що керують `монетарною політикою` країни, можуть випускати будь-яку кількість нових грошей. Ця відсутність `дефіциту` часто призводить до того, що наші гроші з кожним роком стають все менш і менш цінними. Гроші з непередбачуваною, зменшуваною вартістю часто змушують нас витрачати їх: **"Якщо мої гроші з кожним роком будуть коштувати все менше, навіщо їх заощаджувати? Я можу витратити їх зараз. "** 💸
 
-`Commercial banks`, those used for everyday saving and spending, also influence our spending habits. As a `custodian`, they can block transactions or confiscate our funds. Some banks have blocked their clients from buying cryptocurrency! **If your bank can freeze your life savings at any time… do you truly own your money?** 💸
+`Комерційні банки`, які використовуються для щоденних заощаджень і витрат, також впливають на наші звички. Як `зберігач`, вони можуть заблокувати транзакції або конфіскувати наші кошти. Деякі банки заблокували своїм клієнтам можливість купувати криптовалюту! **Якщо ваш банк може в будь-який момент заморозити ваші заощадження... чи справді ви є власником своїх грошей?** 💸
 
 ***
 
-For money to once again support financial freedom, it must regain the two key properties it has lost over time:
+Для того, щоб гроші знову підтримували фінансову свободу, вони повинні повернути собі дві ключові властивості, які вони втратили з плином часу:
 
-- 💎 **Value:** Money must reliably store its worth over time.
-- ✊ **Ownership:** Money must be easy to store and protect ourselves.
+- 💎 **Цінність:** Гроші повинні надійно зберігати свою вартість протягом тривалого часу.
+- ✊  **Власність:** Гроші має бути легко зберігати та захищати.
 
-Only these qualities can restore our ability to freely save and spend our money.
+Тільки ці якості можуть відновити нашу здатність вільно заощаджувати та витрачати гроші.
 
-# Enter Bitcoin
+# Познайомтеся з Біткоїном
 
-`Satoshi Nakamoto` thought that money was too important to be controlled by just a few people. He wanted to create a type of money that could be fair and reliable for everyone.
+`Сатоші Накамото` вважав, що гроші занадто важливі, щоб їх могли контролювати лише кілька людей. Він хотів створити такий тип грошей, який був би справедливим і надійним для всіх.
 
-Enter Bitcoin (`BTC`): a digital currency that operates beyond the traditional banking system.
+Познайомтеся з Bitcoin (`BTC`): цифровою валютою, яка працює за межами традиційної банківської системи.
 
-- ⛓️ It’s `peer-to-peer`: It connects people directly to each other. Automated using `blockchain technology`, it removes need for institutions to facilitate storage or transactions. Advocates call it “a set of rules with no rulers”.
-- 💎 It’s `scarce`: With no central bank issuing unlimited new money, Bitcoin has a stable, predictable monetary policy that honors long-term saving.
-- ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. When stored in its natural state, Bitcoin is held in a secure online safe and only the owner has access.
+- ⛓️ Це `peer-to-peer`: Він з'єднує людей безпосередньо один з одним. Автоматизований за допомогою `технології "блокчейн`, він усуває необхідність для установ сприяти зберіганню або транзакціям. Прихильники називають його "набором правил без керівників".
+- 💎Він `дефіцитний`: Оскільки центральний банк не випускає необмежену кількість нових грошей, біткоїн має стабільну, передбачувану монетарну політику, яка сприяє довгостроковим заощадженням.
+- ✊Він `самодостатній`: Його можна зберігати без установ, які здійснюють передачу або зберігання. При зберіганні в природному стані біткоїн зберігається в захищеному онлайн-сейфі, доступ до якого має лише власник.
 
-For its qualities, Bitcoin has earned the nickname “digital gold”.
+За свої якості біткойн отримав прізвисько "цифрове золото".
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/enter-bitcoin-b108517c.svg)
 
-# Digital Gold: Scarcity
+# Цифрове золото: Дефіцит
 
-📉 Do you find it difficult to keep up with rising costs?
+📉 Вам важко встигати за зростаючими витратами?
 
 ***
 
-Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This `max supply` is embedded in its code, making Bitcoin rare and potentially valuable. This puts it in a good position as a long term store of value, much like gold.
+Дефіцит біткоїнів означає, що існує обмеження на кількість біткоїнів, яка може коли-небудь існувати — максимум 21 мільйон. Ця `максимальна пропозиція` закладена в його коді, що робить біткоїн рідкісним і потенційно цінним. Це ставить його у вигідне становище як довгострокового засобу збереження вартості, подібно до золота.
 
-While the max supply of `BTC` can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called `cryptocurrency mining`. This predictable increase in `circulating supply` keeps the Bitcoin economy moving.
+Хоча максимальна пропозиція `BTC` не може перевищувати 21 мільйон, нова валюта додається на ринок через регулярні проміжки часу. Подібно до видобутку золота, нові біткоїни з'являються в результаті трудомісткого процесу, який називається `майнінг криптовалют`. Це передбачуване збільшення `циркулюючої пропозиції` підтримує рух біткоїн-економіки.
 
-Bitcoin's fixed `monetary policy` makes it an attractive asset for those seeking to preserve value in the long term, allowing them to keep up with rising costs.
+Фіксована "монетарна політика" біткоїна робить його привабливим активом для тих, хто прагне зберегти вартість у довгостроковій перспективі, дозволяючи їм не відставати від зростаючих витрат.
 
-It’s short term value remains volatile due to market speculation.
+Його короткострокова вартість залишається волатильною через ринкові спекуляції.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
 # Knowledge Check 2
 
-How does Bitcoin promote value preservation in the long term?
+Як Біткоїн сприяє збереженню вартості в довгостроковій перспективі?
 
-- [ ] Using a max supply cap.
+- [ ] Використовуючи максимальний ліміт запасу.
 
-> Correct! Bitcoin's fixed supply creates scarcity similar to precious metals. This aids value retention.
+> Правильно! Фіксована пропозиція Біткоїна створює дефіцит, подібний до дефіциту дорогоцінних металів. Це сприяє збереженню цінності.
 
-- [ ] By removing custodians.
+- [ ] Прибираючи зберігачів.
 
-> Try again! Custody relates to ownership, rather than value.
+> Спробуйте ще раз! Зберігання пов'язане з правом власності, а не з цінністю.
 
-# Digital Gold: Self-Custody
+# Цифрове золото: Самоконтроль
 
-🧊 Has your bank frozen your funds without notice because you performed a transfer that they didn’t like?
+🧊 Чи заморожував ваш банк ваші кошти без попередження через те, що ви здійснили переказ, який йому не сподобався?
 
 ***
 
-In democracies, ownership is a protected human right because it gives citizens increased control and freedom over their lives. We cannot act freely when our means of survival are conditional — judged by businesses or institutions.
+У демократичних країнах право власності є захищеним правом людини, оскільки воно надає громадянам більший контроль і свободу над своїм життям. Ми не можемо діяти вільно, коли наші засоби виживання залежать від умов - від бізнесу чи інституцій.
 
-As our assets are increasingly digitized (i.e. your money, your property, and even your identity), our lives are taking on a digital quality that we must learn to protect.
+Оскільки наші активи все більше оцифровуються (тобто ваші гроші, майно і навіть ваша особистість), наше життя набуває цифрової якості, яку ми повинні навчитися захищати.
 
-Bitcoin’s `self-custody` offers true digital ownership, beyond reach of `custodians`. So long as you don’t share your account information with someone else, you have sole access to your assets. It’s like having your own vault of gold in a secure online space.
+`Самозбереження` біткоїна пропонує справжню цифрову власність, недосяжну для `зберігачів`. Поки ви не ділитеся інформацією про свій обліковий запис з іншими особами, ви маєте одноосібний доступ до своїх активів. Це як мати власне сховище золота в безпечному онлайн-просторі.
 
-This system of ownership gives you total control of your digital wealth — anywhere in the world, any time.
+Ця система власності дає вам повний контроль над вашим цифровим багатством - в будь-якій точці світу, в будь-який час.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg)
 
 # Knowledge Check 3
 
-How does self-custody enable true ownership?
+Як самоконтроль уможливлює справжню власність?
 
-- [ ] By giving you sole access to your assets.
+- [ ] Надаючи вам одноосібний доступ до ваших активів.
 
-> Correct! Anyone with access to our assets has the ability to confiscate them.
+> Правильно! Будь-хто, хто має доступ до наших активів, може їх конфіскувати.
 
-- [ ] By allowing custodians to access to your assets.
+- [ ] Надаючи зберігачам доступ до ваших активів.
 
-> Try again! Self-custody means there is no custodian (third party) that can access our assets.
+> Спробуйте ще раз! Самостійне зберігання означає, що немає жодного зберігача (третьої сторони), який би мав доступ до наших активів.
 
-# Bitcoin: It’s like Emailing Money!
+# Біткоїн: це як надсилати гроші електронною поштою!
 
-⌛ Have you ever had to wait several working days to send money internationally, while paying 3-5% in fees?
+⌛Чи доводилося вам коли-небудь чекати кілька робочих днів, щоб відправити гроші за кордон, сплачуючи при цьому 3-5% комісії?
 
 ***
 
-Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.
+Електронна пошта спростила надсилання листів, усунувши потребу в поштовому відділенні. Подібним чином Біткоїн спростив переказ грошей, усунувши потребу в банках.
 
-- ⚡ Transfer Bitcoin globally for a reasonable fee.
-- ⚙️ Send money 24/7. No waiting, no paperwork, no downtime.
-- 📡 Access Bitcoin from anywhere with an internet connection.
+- ⚡ Переказуйте Біткоїн по всьому світу за розумну комісію.
+- ⚙️ Переказуйте гроші 24/7. Ніякого очікування, ніякої паперової тяганини, ніяких простоїв.
+- 📡  Отримуйте доступ до Біткоїна з будь-якого місця, де є інтернет-зв'язок.
 
-In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (we’ll show you how to customize this later!)
+Так само, як у вас є адреса електронної пошти, для отримання Біткоїнів необхідна єдина Біткоїн-адреса. За замовчуванням це виглядає так: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (пізніше ми покажемо, як це налаштувати!)
 
-You’ll manage your account using `cryptocurrency wallet` software connected to your web browser or your phone. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!
+Ви будете керувати своїм рахунком за допомогою програмного забезпечення `криптовалютного гаманця`, підключеного до вашого веб-браузера або телефону. Це найпростіший "банківський рахунок", який ви коли-небудь створювали. Записуватися або пред'являти посвідчення особи не потрібно!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
 # Knowledge Check 4
 
-How is Bitcoin similar to email?
+Як Біткоїн схожий на електронну пошту?
 
-- [ ] Both are online 24/7.
+- [ ] Обидва доступні в режимі онлайн 24/7.
 
-> Right! But this isn’t the only correct answer.
+> Right! Але це не єдина правильна відповідь.
 
-- [ ] Both are digital technologies.
+- [ ] Обидва є цифровими технологіями.
 
-> Right! But this isn’t the only correct answer.
+> Так! Але це не єдина правильна відповідь.
 
-- [ ] Both can be accessed with a phone.
+- [ ] До обох можна отримати доступ за допомогою телефону.
 
-> Right! But this isn’t the only correct answer.
+> Вірно! Але це не єдина правильна відповідь.
 
-- [ ] All of the above.
+- [ ] Усе вищесказане.
 
-> Correct! Both Bitcoin and email innovate on the services that came before them.
+> Правильно! Both Bitcoin and email innovate on the services that came before them.
 
 # The Bitcoin Network
 
