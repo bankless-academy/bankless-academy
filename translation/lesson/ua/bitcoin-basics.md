@@ -235,87 +235,87 @@ At Bankless Academy, our mission is to provide Explorers such as yourself with t
 
 Ці винагороди повільно збільшують `циркулюючу пропозицію` біткоїна в межах `максимальної пропозиції` у 21 мільйон "BTC".
 
-Саме повільне, передбачуване введення нових монет відрізняє біткоїн від традиційних валют. Everything is managed by community-approved computer code — “rules with no rulers” — and decentralized participants, rather than small groups of people at the `central bank`.
+Саме повільне, передбачуване введення нових монет відрізняє біткоїн від традиційних валют. Всім керує схвалений спільнотою комп'ютерний код - “правила без правителів" - і децентралізовані учасники, а не невеликі групи людей в `центральному банку`.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg)
 
-# Sending a Bitcoin Transaction
+# Надсилання Біткоїн-транзакції
 
-Understanding the exact mechanisms that power Bitcoin transactions and mining can get quite complicated. That said, using and sending Bitcoin is simple!
+Розуміння точних механізмів, що лежать в основі транзакцій і майнінгу біткоїнів, може бути досить складним. Тим не менш, використовувати та відправляти біткойн дуже просто!
 
-We’ll take a simplified view of the process for today:
+Сьогодні ми розглянемо цей процес у спрощеному вигляді:
 
-1. You submit a transaction using your `cryptocurrency wallet`, sending 0.1 `BTC` to your friend’s wallet address.
-2. A miner checks your transaction for errors. Other miners double-check their results.
-3. If approved, your transaction is added to the `blockchain` “database”.
-4. Your friend receives 0.1 BTC in their wallet.
+1. Ви відправляєте транзакцію за допомогою свого `криптовалютного гаманця`, надсилаючи 0,1 `BTC` на адресу гаманця вашого друга.
+2. Майнер перевіряє вашу транзакцію на наявність помилок. Інші майнери перевіряють свої результати.
+3. У разі схвалення ваша транзакція буде додана до `бази даних` блокчейну.
+4. Ваш друг отримує 0.1 BTC на свій гаманець.
 
 [embed](https://app.banklessacademy.com/animation/bitcoin)
 
 # Knowledge Check 5
 
-What is decentralization?
+Що таке децентралізація?
 
-- [ ] Increased scarcity.
+- [ ] Збільшення дефіциту.
 
-> Try again! Scarcity means an asset is in low supply.
+> Спробуй ще раз! Дефіцит означає, що актив має низьку пропозицію.
 
-- [ ] Distribution of control across multiple participants.
+- [ ] Розподіл контролю між кількома учасниками.
 
-> Correct! This distribution protects the network and its users.
+> Правильно! Цей розподіл захищає мережу та її користувачів.
 
-- [ ] The rewards earned by miners.
+- [ ] Винагороди, зароблені майнерами.
 
-> Try again! Miners are rewarded with transaction fees and block rewards.
+> Спробуйте ще раз! Майнери отримують винагороду у вигляді комісії за транзакції та винагороди за блок.
 
 # Knowledge Check 6
 
-How does mining protect the Bitcoin Network from fraud?
+Як майнінг захищає мережу Біткоїн від шахрайства?
 
-- [ ] By rewarding miners for checking transactions.
+- [ ] Винагороджуючи майнерів за перевірку транзакцій.
 
-> Correct! Bitcoin rewards attract miners and incentivize them to act honestly.
+> Правильно! Винагорода в біткоїнах приваблює майнерів і стимулює їх діяти чесно.
 
-- [ ] By increasing the circulating supply of Bitcoin.
+- [ ] Збільшуючи пропозицію біткоїнів в обігу.
 
-> Try again! Supply increases don’t help to prevent fraud.
+> Спробуйте ще раз! Збільшення пропозиції не допомагає запобігти шахрайству.
 
-- [ ] Both of the above.
+- [ ] І те, і інше.
 
-> Try again! Only one of the above helps to prevent fraud.
+> Спробуйте ще раз! Лише одне з перерахованих вище допомагає запобігти шахрайству.
 
-# The Innovation of Money
+# Інновація грошей
 
-In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value, and how institutional management of our assets means giving up full ownership.
+У цьому уроці ми розглянули, як дефіцит біткоїна допомагає йому зберігати вартість і як інституційне управління нашими активами означає відмову від повної власності.
 
-However Bitcoin has evolved beyond a simple monetary tool. It has become a catalyst for a `decentralized money` revolution. This movement reimagines the traditional financial system by distributing monetary power and control to those who use it.
+Однак біткойн вийшов за рамки простого грошового інструменту Він став каталізатором "децентралізованої грошової" революції. Цей рух переосмислює традиційну фінансову систему, розподіляючи монетарну владу і контроль на користь тих, хто нею користується.
 
-By decentralizing money and removing `custodians` we can:
+Децентралізувавши гроші та усунувши "опікунів", ми зможемо це зробити:
 
-- 💵 Host a 24/7 global marketplace, secured by citizens around the world.
-- 🛠️ Offer financial tools to the unbanked regions of the globe.
-- 🤝 Use `peer-to-peer` technology to avoid the inefficiencies of middleman institutions.
-- 🔎 Reduce institutional inequality, fraud and market manipulation.
-- ⚖️ Build `equality of opportunity` into monetary systems.
-- 🌐 Establish true ownership for the digital age.
+- 💵Розмістити глобальний ринок 24/7, захищений громадянами з усього світу.
+- 🛠️ Пропонувати фінансові інструменти небанківським регіонам світу.
+- 🤝 Використовувати технологію " peer-to-peer ", щоб уникнути неефективності посередницьких інституцій.
+- 🔎 Зменшити інституційну нерівність, шахрайство та ринкові маніпуляції.
+- ⚖️ Впровадити `рівність можливостей` у монетарні системи.
+- 🌐 Встановити справжню відповідальність за цифрову епоху.
 
-The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe — and you’re invited.
+Нова ера грошей відстоює фундаментальні цінності демократії, щоб підвищити якість повсякденного життя громадян по всьому світу - і ви запрошені.
 
-“_Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations._
+"_Демократія забезпечує середовище, в якому поважаються права людини та основні свободи, і в якому здійснюється вільне волевиявлення людей" - Організація Об'єднаних Націй.
 
-# Your Bitcoin Quest
+# Ваш Біткойн Квест
 
-It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.
+Настав час змоделювати свою першу біткоїн-транзакцію і попрактикувати свою свободу в цифрову епоху.
 
-Your transaction will include the following details:
+Ваша транзакція буде містити наступні дані:
 
-📫 The wallet address of the person you’re sending to.
+📫 Адреса гаманця людини, якій ви відправляєте.
 
-💰 The amount of Bitcoin to send.
+💰  Кількість біткоїнів для надсилання.
 
-It will also include a transaction fee given to the `miners`.
+Вона також включатиме комісію за транзакцію, яку отримують `майнери`.
 
-Remember to make sure all details are accurate.
-Once a Bitcoin transaction is confirmed, you cannot reverse it.
+Не забудьте переконатися, що всі деталі є точними.
+Після підтвердження біткоїн транзакції ви не можете її скасувати.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
