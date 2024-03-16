@@ -90,9 +90,9 @@
     "definition": "An amount of native coin given to the proposer of a new valid block."
   },
   "blockchain": {
-    "keyword": "blockchain",
+    "keyword": "блокчейн",
     "keyword_plural": "blockchains",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "Система, в якій облік криптовалютних транзакцій ведеться на багатьох комп'ютерах по всьому світу."
   },
   "blockchain architecture": {
     "keyword": "blockchain architecture",
@@ -100,9 +100,9 @@
     "definition": "The structures for how data is stored in blockchain technology."
   },
   "blockchain technology": {
-    "keyword": "blockchain technology",
+    "keyword": "технологія блокчейн",
     "keyword_plural": "blockchain technologys",
-    "definition": "A new type of network, hosted across many computers. It's adding a new layer of digital ownership to the internet."
+    "definition": "Новий тип мережі, розміщений на багатьох комп'ютерах. Це додає новий рівень цифрової власності в Інтернеті."
   },
   "blockchain trilemma": {
     "keyword": "Blockchain Trilemma",
@@ -127,7 +127,7 @@
   "btc": {
     "keyword": "BTC",
     "keyword_plural": "BTCs",
-    "definition": "The market symbol for bitcoin."
+    "definition": "Ринковий символ біткоїна."
   },
   "censorship-resistant": {
     "keyword": "censorship-resistant",
@@ -135,9 +135,9 @@
     "definition": "No government or company has control to determine what is or is not allowed."
   },
   "central bank": {
-    "keyword": "central bank",
-    "keyword_plural": "central banks",
-    "definition": "An institution regulating money, banks, and currency in a country."
+    "keyword": "центральний банк",
+    "keyword_plural": "центральні банки",
+    "definition": "Установа, що регулює гроші, банки та валюту в країні."
   },
   "centralized": {
     "keyword": "centralized",
@@ -165,9 +165,9 @@
     "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
   },
   "circulating supply": {
-    "keyword": "circulating supply",
+    "keyword": "в обігу",
     "keyword_plural": "circulating supplys",
-    "definition": "The number of a specific cryptocurrency's coins or tokens publicly available for the market to trade."
+    "definition": "Кількість монет або токенів певної криптовалюти, доступних для торгівлі на ринку."
   },
   "coin": {
     "keyword": "coin",
@@ -185,9 +185,9 @@
     "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
   },
   "commercial bank": {
-    "keyword": "commercial bank",
-    "keyword_plural": "commercial banks",
-    "definition": "A bank managing money for people and businesses."
+    "keyword": "комерційний банк",
+    "keyword_plural": "комерційні банки",
+    "definition": "Банк, що управляє грошима для людей та бізнесу."
   },
   "consensus": {
     "keyword": "consensus",
@@ -215,19 +215,19 @@
     "definition": "A mechanism that does not discriminate for or against any specific people."
   },
   "cryptocurrency": {
-    "keyword": "cryptocurrency",
+    "keyword": "криптовалюта",
     "keyword_plural": "cryptocurrencys",
-    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+    "definition": "Цифрова валюта, що підтримується технологією блокчейн, а не централізованими органами влади."
   },
   "cryptocurrency mining": {
-    "keyword": "cryptocurrency mining",
+    "keyword": "майнінг криптовалют",
     "keyword_plural": "cryptocurrency minings",
-    "definition": "The process of verifying blockchain transactions in exchange for cryptocurrency rewards."
+    "definition": "Процес перевірки блокчейн-транзакцій в обмін на криптовалютну винагороду."
   },
   "cryptocurrency wallet": {
-    "keyword": "cryptocurrency wallet",
+    "keyword": "криптовалютний гаманець",
     "keyword_plural": "cryptocurrency wallets",
-    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+    "definition": "Додаток, який дозволяє зберігати вашу криптовалюту, а також надсилати/отримувати або витрачати її."
   },
   "custodial wallet": {
     "keyword": "custodial wallet",
@@ -235,9 +235,9 @@
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
   },
   "custodian": {
-    "keyword": "custodian",
-    "keyword_plural": "custodians",
-    "definition": "A financial institution given responsibility to secure your assets."
+    "keyword": "зберігач",
+    "keyword_plural": "зберігачі",
+    "definition": "Фінансова установа, на яку покладено відповідальність за безпеку ваших активів."
   },
   "dao": {
     "keyword": "DAO",
@@ -250,14 +250,14 @@
     "definition": "A decentralized application that connects to decentralized networks and protocols."
   },
   "decentralization": {
-    "keyword": "Decentralization",
+    "keyword": "Децентралізація",
     "keyword_plural": "Decentralizations",
-    "definition": "The transfer of control to many individuals rather than one single authority."
+    "definition": "Передача контролю багатьом особам, а не одному органу влади."
   },
   "decentralized": {
-    "keyword": "decentralized",
+    "keyword": "децентралізований",
     "keyword_plural": "decentralizeds",
-    "definition": "No single authority or entity controls the system."
+    "definition": "Жоден орган чи організація не контролює систему."
   },
   "decentralized exchange": {
     "keyword": "decentralized exchange",
@@ -270,9 +270,9 @@
     "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
   },
   "decentralized money": {
-    "keyword": "decentralized money",
+    "keyword": "децентралізовані гроші",
     "keyword_plural": "decentralized moneys",
-    "definition": "Money with properties agreed on by the community, rather than set by an institution."
+    "definition": "Гроші з властивостями, узгодженими спільнотою, а не установою."
   },
   "defi": {
     "keyword": "DeFi",
@@ -325,9 +325,9 @@
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
   "equality of opportunity": {
-    "keyword": "equality of opportunity",
+    "keyword": "рівність можливостей",
     "keyword_plural": "equality of opportunitys",
-    "definition": "A fairness principle, where everyone has the same chances to succeed regardless of their background or circumstances."
+    "definition": "Принцип справедливості, коли кожен має однакові шанси на успіх, незалежно від походження чи обставин."
   },
   "erc-20": {
     "keyword": "ERC-20",
@@ -390,9 +390,9 @@
     "definition": "A transaction that pays gas using some of the token to be traded rather than the native coin of the blockchain network."
   },
   "gold standard": {
-    "keyword": "gold standard",
+    "keyword": "золотий стандарт",
     "keyword_plural": "gold standards",
-    "definition": "A monetary system where a country's currency has a value directly linked to gold."
+    "definition": "Грошова система, в якій валюта країни має вартість, безпосередньо пов'язану з золотом."
   },
   "gwei": {
     "keyword": "gwei",
@@ -510,9 +510,9 @@
     "definition": "The total value of a given token, or market sector."
   },
   "max supply": {
-    "keyword": "max supply",
+    "keyword": "максимально в обігу",
     "keyword_plural": "max supplys",
-    "definition": "The maximum number of coins or tokens that will ever exist for a particular cryptocurrency."
+    "definition": "Максимальна кількість монет або токенів, які коли-небудь існуватимуть для певної криптовалюти."
   },
   "memecoin": {
     "keyword": "memecoin",
@@ -530,9 +530,9 @@
     "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
   },
   "miner": {
-    "keyword": "miner",
-    "keyword_plural": "miners",
-    "definition": "An individual who participates in validating cryptocurrency transactions and proposing blocks."
+    "keyword": "майнер",
+    "keyword_plural": "майнери",
+    "definition": "Фізична особа, яка бере участь у перевірці криптовалютних транзакцій і пропонує блоки."
   },
   "mining": {
     "keyword": "mining",
@@ -545,9 +545,9 @@
     "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
   },
   "monetary policy": {
-    "keyword": "monetary policy",
+    "keyword": "монетарна політика",
     "keyword_plural": "monetary policys",
-    "definition": "How a central bank manages the amount of money circulating in an economy."
+    "definition": "Як центральний банк управляє кількістю грошей, що циркулюють в економіці."
   },
   "money": {
     "keyword": "money",
@@ -605,7 +605,7 @@
     "definition": "Allows two parties to transact multiple times without the need for each transaction to be recorded on the blockchain."
   },
   "peer-to-peer": {
-    "keyword": "peer-to-peer",
+    "keyword": "одноранговий",
     "keyword_plural": "peer-to-peers",
     "definition": "A transaction between two parties that does not require a middleman or controlling entity."
   },
