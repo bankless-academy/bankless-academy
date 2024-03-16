@@ -1,9 +1,9 @@
 ---
-TITLE: Bitcoin Basics
-DESCRIPTION: What is Bitcoin? Explore the first successful cryptocurrency and rethink money.
-LANGUAGE: English
+TITLE: Основи Біткоїну
+DESCRIPTION: Що таке Біткоїн? Дослідіть першу успішну криптовалюту та переосмисліть гроші.
+LANGUAGE: Українська
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: Romko.eth
 LINK: https://app.banklessacademy.com/lessons/bitcoin-basics
 FORMAT: LESSON
 ---
@@ -27,21 +27,21 @@ ________________________________________________________________________________
 
 ***
 
-# Welcome to Bankless Academy
+# Ласкаво просимо до Bankless Academy
 
-Welcome, bold Explorer, to the frontier of digital innovation.
+Ласкаво просимо, сміливий досліднику, на передову цифрових інновацій.
 
 At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to navigate the blockchain universe and “go bankless!”
 
-Today, we’re looking at the `cryptocurrency` that started it all: Bitcoin.
+Сьогодні ми розглянемо "криптовалюту", з якої все почалося: Біткоїн.
 
-Bitcoin is a new type of money. It increases financial freedom for those who hold it, and protects their hard-earned money from losing value over time.
+Біткоїн — це новий тип грошей. Він збільшує фінансову свободу для тих, хто його тримає, і захищає їхні важко зароблені гроші від знецінення з часом.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
 
-# Bitcoin’s Story
+# Історія Біткоїна
 
-Launched in 2009 by the mysterious “`Satoshi Nakamoto`,” Bitcoin marked the beginning of a new economic era.
+Запущений у 2009 році таємничим `Сатоші Накамото`, біткоїн ознаменував початок нової економічної ери.
 
 As the first successful `cryptocurrency`, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!
 
