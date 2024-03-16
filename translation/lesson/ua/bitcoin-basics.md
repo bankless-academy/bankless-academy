@@ -201,7 +201,7 @@ At Bankless Academy, our mission is to provide Explorers such as yourself with t
 
 - [ ] Обидва доступні в режимі онлайн 24/7.
 
-> Right! Але це не єдина правильна відповідь.
+> Так! Але це не єдина правильна відповідь.
 
 - [ ] Обидва є цифровими технологіями.
 
@@ -213,30 +213,29 @@ At Bankless Academy, our mission is to provide Explorers such as yourself with t
 
 - [ ] Усе вищесказане.
 
-> Правильно! Both Bitcoin and email innovate on the services that came before them.
+> Правильно! І Біткоїн, і електронна пошта є інноваційними сервісами, які з'явилися до них.
 
-# The Bitcoin Network
+# Мережа Bitcoin
 
-Let’s switch gears and look at the engine behind Bitcoin:
-**The Bitcoin Network**.
+Давайте перемкнемо передачу і подивимось на двигун, що стоїть за Біткоїном: \*\*Мережа Bitcoin \*\*.
 
-Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.
+Біткоїн працює у спільній мережі, розміщеній на тисячах комп'ютерів по всьому світу. Кожен комп'ютер у мережі відіграє певну роль у підтримці її роботи; мережа існує завдяки цим комп'ютерам! Якщо один комп'ютер обробляє шахрайську транзакцію, інші готові її виправити.
 
-This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.
+Це також означає, що немає єдиної точки для тиску при спробах взлому. Для того, щоб контролювати мережу, потрібно було б скомпрометувати більшість комп'ютерів.
 
-This defense strategy is called `decentralization`: the shifting of control from one central group to many smaller ones. It’s what makes cryptocurrency networks virtually unstoppable.
+Ця оборонна стратегія називається `децентралізація`: передача контролю від однієї центральної групи до багатьох менших. Це те, що робить криптовалютні мережі практично нездоланними.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg)
 
 # Bitcoin Mining
 
-With the Bitcoin Network having no central bank, the network relies on its `decentralized` participants. Known as `miners`, these participants are constantly checking transactions and adding them to a “database” — the `blockchain`.
+Оскільки мережа Біткоїн не має центрального банку, вона покладається на своїх `децентралізованих` учасників. Відомі як `майнери`, ці учасники постійно перевіряють транзакції і додають їх до `бази даних` - `блокчейну`.
 
-It’s important that these miners are motivated to be active and honest, to protect the network from fraud. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as “block rewards”, for their work.
+Важливо, щоб ці майнери були мотивовані бути активними і чесними, щоб захистити мережу від шахрайства. Майнери часто перевіряють результати один одного, але також отримують винагороду за виконану роботу. Коли ми відправляємо Біткоїн-транзакції, ми сплачуємо невелику комісію, яка йде майнеру нашої транзакції. За свою роботу майнери також отримують нові біткоїни, відомі як "винагорода за блок".
 
-These rewards slowly increase Bitcoin’s `circulating supply` within the `max supply` cap of 21 million `BTC`.
+Ці винагороди повільно збільшують `циркулюючу пропозицію` біткоїна в межах `максимальної пропозиції` у 21 мільйон "BTC".
 
-It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies. Everything is managed by community-approved computer code — “rules with no rulers” — and decentralized participants, rather than small groups of people at the `central bank`.
+Саме повільне, передбачуване введення нових монет відрізняє біткоїн від традиційних валют. Everything is managed by community-approved computer code — “rules with no rulers” — and decentralized participants, rather than small groups of people at the `central bank`.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg)
 
