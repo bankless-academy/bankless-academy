@@ -508,13 +508,10 @@ const HomePage = (): JSX.Element => {
                       )}
                     </Text>
                     <ExternalLink
-                      href="https://grants.gitcoin.co/"
-                      alt="Donate via Gitcoin"
+                      href="https://giveth.io/donate/bankless-academy"
+                      alt="Donate via Giveth"
                     >
-                      <Image
-                        width="100%"
-                        src="/images/Donate-via-Gitcoin.png"
-                      />
+                      <Image width="100%" src="/images/Donate-via-Giveth.png" />
                     </ExternalLink>
                     <Text fontSize="lg" mt="2">
                       {t(
