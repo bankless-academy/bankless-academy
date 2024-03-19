@@ -92,7 +92,7 @@
   "blockchain": {
     "keyword": "blockchain",
     "keyword_plural": "blockchains",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "Um sistema no qual um registro de transações de criptomoedas é mantido em vários computadores em todo o mundo."
   },
   "blockchain architecture": {
     "keyword": "blockchain architecture",
@@ -100,9 +100,9 @@
     "definition": "The structures for how data is stored in blockchain technology."
   },
   "blockchain technology": {
-    "keyword": "blockchain technology",
+    "keyword": "tecnologia blockchain",
     "keyword_plural": "blockchain technologys",
-    "definition": "A new type of network, hosted across many computers. It's adding a new layer of digital ownership to the internet."
+    "definition": "Um novo tipo de rede, hospedada em vários computadores. Ela está adicionando uma nova camada de propriedade digital à Internet."
   },
   "blockchain trilemma": {
     "keyword": "Blockchain Trilemma",
@@ -127,7 +127,7 @@
   "btc": {
     "keyword": "BTC",
     "keyword_plural": "BTCs",
-    "definition": "The market symbol for bitcoin."
+    "definition": "O símbolo de mercado do bitcoin."
   },
   "censorship-resistant": {
     "keyword": "censorship-resistant",
@@ -135,9 +135,9 @@
     "definition": "No government or company has control to determine what is or is not allowed."
   },
   "central bank": {
-    "keyword": "central bank",
-    "keyword_plural": "central banks",
-    "definition": "An institution regulating money, banks, and currency in a country."
+    "keyword": "banco central",
+    "keyword_plural": "bancos centrais",
+    "definition": "Uma instituição que regula o dinheiro, os bancos e a moeda em um país."
   },
   "centralized": {
     "keyword": "centralized",
@@ -165,9 +165,9 @@
     "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
   },
   "circulating supply": {
-    "keyword": "circulating supply",
+    "keyword": "oferta circulante",
     "keyword_plural": "circulating supplys",
-    "definition": "The number of a specific cryptocurrency's coins or tokens publicly available for the market to trade."
+    "definition": "O número de moedas ou tokens de uma criptomoeda específica disponível publicamente para o mercado negociar."
   },
   "coin": {
     "keyword": "coin",
@@ -185,9 +185,9 @@
     "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
   },
   "commercial bank": {
-    "keyword": "commercial bank",
-    "keyword_plural": "commercial banks",
-    "definition": "A bank managing money for people and businesses."
+    "keyword": "banco comercial",
+    "keyword_plural": "bancos comerciais",
+    "definition": "Um banco que administra o dinheiro para pessoas e empresas."
   },
   "consensus": {
     "keyword": "consensus",
@@ -215,19 +215,19 @@
     "definition": "A mechanism that does not discriminate for or against any specific people."
   },
   "cryptocurrency": {
-    "keyword": "cryptocurrency",
+    "keyword": "criptomoeda",
     "keyword_plural": "cryptocurrencys",
-    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+    "definition": "Uma moeda digital hospedada pela tecnologia blockchain em vez de autoridades centralizadas."
   },
   "cryptocurrency mining": {
-    "keyword": "cryptocurrency mining",
+    "keyword": "mineração de criptomoedas",
     "keyword_plural": "cryptocurrency minings",
-    "definition": "The process of verifying blockchain transactions in exchange for cryptocurrency rewards."
+    "definition": "O processo de verificação das transações na blockchain em troca de recompensas em criptomoedas."
   },
   "cryptocurrency wallet": {
-    "keyword": "cryptocurrency wallet",
+    "keyword": "carteira de criptomoedas",
     "keyword_plural": "cryptocurrency wallets",
-    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+    "definition": "Um aplicativo que permite armazenar suas criptomoedas e enviar/receber ou gastá-las."
   },
   "custodial wallet": {
     "keyword": "custodial wallet",
@@ -237,7 +237,7 @@
   "custodian": {
     "keyword": "custodian",
     "keyword_plural": "custodians",
-    "definition": "A financial institution given responsibility to secure your assets."
+    "definition": "Uma instituição financeira que tem a responsabilidade de proteger seus ativos."
   },
   "dao": {
     "keyword": "DAO",
@@ -250,9 +250,9 @@
     "definition": "A decentralized application that connects to decentralized networks and protocols."
   },
   "decentralization": {
-    "keyword": "Decentralization",
+    "keyword": "Descentralização",
     "keyword_plural": "Decentralizations",
-    "definition": "The transfer of control to many individuals rather than one single authority."
+    "definition": "A transferência de controle para vários indivíduos em vez de uma única autoridade."
   },
   "decentralized": {
     "keyword": "decentralized",
@@ -270,7 +270,7 @@
     "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
   },
   "decentralized money": {
-    "keyword": "decentralized money",
+    "keyword": "dinheiro descentralizado",
     "keyword_plural": "decentralized moneys",
     "definition": "Money with properties agreed on by the community, rather than set by an institution."
   },
@@ -325,7 +325,7 @@
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
   "equality of opportunity": {
-    "keyword": "equality of opportunity",
+    "keyword": "igualdade de oportunidades",
     "keyword_plural": "equality of opportunitys",
     "definition": "A fairness principle, where everyone has the same chances to succeed regardless of their background or circumstances."
   },
@@ -510,9 +510,9 @@
     "definition": "The total value of a given token, or market sector."
   },
   "max supply": {
-    "keyword": "max supply",
+    "keyword": "oferta máxima",
     "keyword_plural": "max supplys",
-    "definition": "The maximum number of coins or tokens that will ever exist for a particular cryptocurrency."
+    "definition": "O número máximo de moedas ou tokens que existirão para uma determinada criptomoeda."
   },
   "memecoin": {
     "keyword": "memecoin",
@@ -530,9 +530,9 @@
     "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
   },
   "miner": {
-    "keyword": "miner",
-    "keyword_plural": "miners",
-    "definition": "An individual who participates in validating cryptocurrency transactions and proposing blocks."
+    "keyword": "minerador",
+    "keyword_plural": "mineradores",
+    "definition": "Um indivíduo que participa na validação de transações de criptomoedas e na proposta de blocos."
   },
   "mining": {
     "keyword": "mining",
@@ -545,9 +545,9 @@
     "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
   },
   "monetary policy": {
-    "keyword": "monetary policy",
+    "keyword": "política monetária",
     "keyword_plural": "monetary policys",
-    "definition": "How a central bank manages the amount of money circulating in an economy."
+    "definition": "Como um banco central administra a quantidade de dinheiro que circula em uma economia."
   },
   "money": {
     "keyword": "money",
@@ -607,7 +607,7 @@
   "peer-to-peer": {
     "keyword": "peer-to-peer",
     "keyword_plural": "peer-to-peers",
-    "definition": "A transaction between two parties that does not require a middleman or controlling entity."
+    "definition": "Uma transação entre duas partes que não requer um intermediário ou entidade controladora."
   },
   "peg": {
     "keyword": "peg",
@@ -725,12 +725,12 @@
     "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds."
   },
   "scarce": {
-    "keyword": "scarce",
+    "keyword": "escasso",
     "keyword_plural": "scarces",
     "definition": "The state of being in short supply."
   },
   "scarcity": {
-    "keyword": "scarcity",
+    "keyword": "escassez",
     "keyword_plural": "scarcitys",
     "definition": "Being in short supply."
   },
