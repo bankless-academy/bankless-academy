@@ -27,29 +27,29 @@ ________________________________________________________________________________
 
 ***
 
-# Welcome to Bankless Academy
+# 欢迎来到 Bankless 学院
 
-Welcome, bold Explorer, to the frontier of digital innovation.
+欢迎您，大胆的探索者，来到数字创新的前沿。
 
-At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to navigate the blockchain universe and “go bankless!”
+在 Bankless 学院，我们的使命是为像你这样的探索者提供最好的工具和知识，让你们能够驾驭区块链世界，"无银行化 - Bankless！"
 
-Today, we’re looking at the `cryptocurrency` that started it all: Bitcoin.
+今天，我们来看看开创这一切的 "加密货币（Crypto）"：比特币。
 
-Bitcoin is a new type of money. It increases financial freedom for those who hold it, and protects their hard-earned money from losing value over time.
+比特币是一种新类型的钱。 它提升了持有者的财务自由程度，并保护他们的血汗钱不会随着时间的推移而贬值。
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
 
-# Bitcoin’s Story
+# 比特币的故事
 
-Launched in 2009 by the mysterious “`Satoshi Nakamoto`,” Bitcoin marked the beginning of a new economic era.
+2009 年，神秘的 "中本聪（Satoshi Nakamoto） "推出了比特币，标志着一个新经济时代的开始。
 
-As the first successful `cryptocurrency`, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!
+作为第一种成功的 "加密货币"，比特币开启了一场声势浩大的对话：货币的控制权和权力是否应继续由传统银行系统掌握？ 又或是它应属于每日赚取并使用它的公民？ 如果您不清楚这一切的讨论背后意味着什么，那末您来对地方了！
 
-The reality is that today, we aren’t in control of our money in the way we think we are. This has very real consequences.
+事实上，我们并不像我们自己想象的那样对自己使用的货币有足够的控制权。 这产生了非常现实的后果。
 
-It’s time to learn how Bitcoin is revolutionizing finance.
+是时候了解比特币如何革命金融了。
 
-**It’s time to rethink money.**
+**现在是重新审视货币的最佳良机。**
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
 
@@ -57,34 +57,34 @@ It’s time to learn how Bitcoin is revolutionizing finance.
 
 Money has been an integral part of society since our earliest days when beads, shells, and stones were used to exchange goods & services.
 
-Yet early currencies had a problem: it was too easy for someone to find/create new money. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.
+然而，早期的货币有一个问题：有人想找到/创造新的货币太简单了。 这种货币越多，它蕴含的价值就越低。因此，每个人的钱都会慢慢变得不值钱。 如果货币想要保值，就需要使用更稀有的材料。
 
-Materials like gold & silver were eventually adopted to solve this problem. The key advantage of these materials was their scarcity – there wasn't an endless supply, making it hard for anyone to increase the amount of money in circulation significantly. This `scarcity` helped maintain the value of money.
+最终，人们采用金银等材料来解决这一问题。 这些材料的主要优势在于其稀缺性 —— 没有无穷无尽的供应，因此任何人都很难大幅增加流通中的货币总量。 这种 "稀缺性 "有助于维持货币的价值。
 
-As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Such currency made money recognizable and measurable while serving as a strong store of value.
+随着社会的发展，政府的中央银行会发行标准化的金、银币。 这类货币使货币具有可识别性和可衡量性，同时又是一种强有力的价值贮存手段。
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg)
 
 # Knowledge Check 1
 
-True or False:
-”As more money is added to a monetary system, the existing money becomes worth less.”
+真或假：
+"货币体系中的货币越多，现有货币的价值就越低"。
 
-- [ ] True
+- [ ] 真
 
-> Correct! The more money there is, the less value it has.
+> 正确 ！ 货币总量越多，单位货币价值越低。
 
-- [ ] False
+- [ ] 错误
 
-> Try again.
+> 再试一次
 
-# A Brief History of Money (Part 2)
+# 货币简史（第二部分）
 
-With the introduction of paper money, currencies shifted to being 'backed' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.
+随着现代纸币的出现，货币转而变为被黄金“支撑（backed）”的纸币。 货币价值与贵金属贮存的具体数量直接挂钩。
 
-Then, in the 20th century, came the fall of this “`Gold Standard`”.
+进入 20 世纪后，"金本位（以黄金为基准支撑） "开始衰落。
 
-Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.
+贵金属慢慢地与全球货币脱钩 —— 这允许各国的经济增长（以纸币计价）超过其黄金供应量。 As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.
 
 Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.
 
