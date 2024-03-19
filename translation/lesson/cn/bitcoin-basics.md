@@ -1,9 +1,9 @@
 ---
-TITLE: Bitcoin Basics
-DESCRIPTION: What is Bitcoin? Explore the first successful cryptocurrency and rethink money.
-LANGUAGE: English
+TITLE: 比特币基础知识
+DESCRIPTION: 什么是比特币？ 探索第一种成功的加密货币，重新思考货币。
+LANGUAGE: 简体中文（Simplified Chinese）
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: 183Aaros.eth
 LINK: https://app.banklessacademy.com/lessons/bitcoin-basics
 FORMAT: LESSON
 ---
@@ -35,7 +35,7 @@ ________________________________________________________________________________
 
 今天，我们来看看开创这一切的 "加密货币（Crypto）"：比特币。
 
-比特币是一种新类型的钱。 它提升了持有者的财务自由程度，并保护他们的血汗钱不会随着时间的推移而贬值。
+比特币是一种新类型的钱。 它提升了持有者的金融自由程度，并保护他们的血汗钱不会随着时间的推移而贬值。
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
 
@@ -53,9 +53,9 @@ ________________________________________________________________________________
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
 
-# A Brief History of Money
+# 货币简史（一）
 
-Money has been an integral part of society since our earliest days when beads, shells, and stones were used to exchange goods & services.
+早在人们用珠子、贝壳和石头交换商品和服务的时候，货币就已经成为社会不可或缺的一部分。
 
 然而，早期的货币有一个问题：有人想找到/创造新的货币太简单了。 这种货币越多，它蕴含的价值就越低。因此，每个人的钱都会慢慢变得不值钱。 如果货币想要保值，就需要使用更稀有的材料。
 
@@ -78,50 +78,50 @@ Money has been an integral part of society since our earliest days when beads, s
 
 > 再试一次
 
-# 货币简史（第二部分）
+# 货币简史（二）
 
 随着现代纸币的出现，货币转而变为被黄金“支撑（backed）”的纸币。 货币价值与贵金属贮存的具体数量直接挂钩。
 
-进入 20 世纪后，"金本位（以黄金为基准支撑） "开始衰落。
+进入 20 世纪后，"金本位 "开始衰落。
 
-贵金属慢慢地与全球货币脱钩 —— 这允许各国的经济增长（以纸币计价）超过其黄金供应量。 As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.
+贵金属慢慢地与全球货币脱钩 —— 这允许各国的经济增长（以纸币计价）超过其黄金供应量。 由于中央银行不再需要黄金来创造货币，他们可以根据本国经济的需要创造尽可能多的新货币（纸币）。 通过牢牢控制货币供应量，他们还可以操控货币价值。
 
-Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.
+进入数字时代后，电子货币大范围取代了实体纸币。 将钱存入商业银行为我们带来了信用卡和线上支付的便利。 它既简单又有保障，但在存款人与自己的存款之间、在银行账户里，滋生了有利可图的生意
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg)
 
-# The Problem
+# 存在的问题
 
-The problem with our current financial system is the lack of control we have over our money, and how this lowers our ability to freely decide what to save and what to spend.
+我们当前金融体系的问题在于，我们对自己的钱没有完全的控制权，这削弱了我们自由决定储蓄和消费的能力。
 
-`Central banks`, the bank managing a country’s `monetary policy`, can introduce any amount of new money. This lack of `scarcity` often makes our money worth less and less each year. Money with an unpredictable, decreasing value often forces us to spend it: **“If my money is going to be worth less every year, why save? I might as well spend it now.”** 💸
+`中央银行`，是管理国家`货币政策`的总银行，可以任意引入新数量的货币量。 这种缺乏 `稀缺性（scarcity）` 的情况往往使我们的钱一年比一年不值钱。 价值不可预测、不断减少的钱往往迫使我们花钱： **如果我的钱每年都在贬值，我还存钱干什么？** **我还不如现在就花掉它！** 💸
 
-`Commercial banks`, those used for everyday saving and spending, also influence our spending habits. As a `custodian`, they can block transactions or confiscate our funds. Some banks have blocked their clients from buying cryptocurrency! **If your bank can freeze your life savings at any time… do you truly own your money?** 💸
+`商业银行` 是用于日常储蓄和消费的银行，它们也影响着我们的消费习惯。 作为 `托管人`，它们可以阻止交易，或是没收我们的资金。 **一些银行甚至在禁止客户购买加密货币！** 如果你的银行可以随时冻结你的毕生积蓄… **您真正拥有您的钱吗？** 💸
 
 ***
 
-For money to once again support financial freedom, it must regain the two key properties it has lost over time:
+货币如果要支持金融自由，就必须重拾它随时间推移而丧失两大关键属性：
 
-- 💎 **Value:** Money must reliably store its worth over time.
-- ✊ **Ownership:** Money must be easy to store and protect ourselves.
+- 💎 **价值：** 货币必须长期可靠地贮存价值。
+- ✊**所有权：** 金钱必须易于存放与保护。
 
-Only these qualities can restore our ability to freely save and spend our money.
+货币重获这些属性，我们才能夺回储蓄自由与消费自由。
 
-# Enter Bitcoin
+# 了解比特币
 
-`Satoshi Nakamoto` thought that money was too important to be controlled by just a few people. He wanted to create a type of money that could be fair and reliable for everyone.
+`中本聪`认为货币太重要了，不能仅仅由少数人控制。 他希望创造一种对每个人来说都公平和可靠的货币。
 
-Enter Bitcoin (`BTC`): a digital currency that operates beyond the traditional banking system.
+比特币（BTC）：一种超越传统银行系统运作的数字货币。
 
-- ⛓️ It’s `peer-to-peer`: It connects people directly to each other. Automated using `blockchain technology`, it removes need for institutions to facilitate storage or transactions. Advocates call it “a set of rules with no rulers”.
-- 💎 It’s `scarce`: With no central bank issuing unlimited new money, Bitcoin has a stable, predictable monetary policy that honors long-term saving.
-- ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. When stored in its natural state, Bitcoin is held in a secure online safe and only the owner has access.
+- 它是 `点对点` 的：它将人们直接联系在了一起。 利用 `区块链技术` 实现自动化，无需专门的机构存储或交易它。 倡导者们将它称为“一套没有统治者的规则”。
+- 💎它很 `稀缺`：由于没有中央银行无限制地发行新货币，比特币拥有稳定、可预测的货币政策，有利于长期储蓄。
+- 它是 `自我托管` 的：可以在没有任何托管机构主导交易或存储的情况下持有。 比特币以自然状态存储时，存放在一个安全的在线保险箱中，只有所有者才能访问。
 
-For its qualities, Bitcoin has earned the nickname “digital gold”.
+比特币因其特质赢得了 "数字黄金 "的美誉。
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/enter-bitcoin-b108517c.svg)
 
-# Digital Gold: Scarcity
+# 数字黄金：稀缺性
 
 📉 Do you find it difficult to keep up with rising costs?
 
