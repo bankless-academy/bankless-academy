@@ -249,6 +249,7 @@ const LessonCards: React.FC = () => {
                   ) : null
                 ) : (
                   !lessonHasSponsor &&
+                  !lesson.hasCollectible &&
                   lesson.publicationStatus !== 'planned' && (
                     <Box width="auto"></Box>
                   )
