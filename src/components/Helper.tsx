@@ -142,7 +142,9 @@ const Helper = ({
           <ModalCloseButton />
           <ModalBody>{definition}</ModalBody>
           <ModalFooter m="auto">
-            <Button onClick={onCloseHelpModal}>{t('Got it')}</Button>
+            <Button variant="primaryWhite" onClick={onCloseHelpModal}>
+              {t('Got it')}
+            </Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
