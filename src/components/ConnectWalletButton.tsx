@@ -452,7 +452,7 @@ const ConnectWalletButton = ({
                 {`Don’t know how? `}
                 <ExternalLink
                   underline="true"
-                  href="/faq#64dbf3c7849542548957f8f6f0053061"
+                  href="https://app.banklessacademy.com/lessons/creating-a-crypto-wallet"
                 >
                   {t('Get help here')}
                 </ExternalLink>
