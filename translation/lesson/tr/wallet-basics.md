@@ -1,8 +1,8 @@
 ---
 TITLE: Cüzdan ile İlgili Temel Bilgiler
-DESCRIPTION: İlk kripto cüzdanınızı oluşturun ve güvenli bir şekilde yönetin.
+DESCRIPTION: What is a crypto wallet? Learn more and create your first wallet today!
 LANGUAGE: Türkçe
-WRITERS: Ap0ll0517, Jordy
+WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: ilk
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
@@ -29,19 +29,19 @@ ________________________________________________________________________________
 
 # Cüzdana Giriş
 
-**Selamlar!**
+**Greetings Bankless Explorer!**
 
-Bankless Academy'e hoş geldiniz. `web3` yolculuğunuzda size rehberlik etmekten heyecan duyuyoruz. Bu dünyayı keşfeden herkesin eninde sonunda bir dijital cüzdan oluşturması gerekir.
+It’s time to dive deeper on your journey into `web3`. Every Explorer of this space eventually needs to create a digital wallet.
 
-Cüzdanlar, `web2`'de kullanmaya alışkın olduğunuz hesaplara benzer. Onları web3 uygulamalarına ve sitelerine erişmek için kullanacaksınız ancak anlamanız gereken büyük farklılıklar da mevcut. Örneğin, cüzdanlarda kripto paralarınızı tutabilirsiniz.
+Cüzdanlar, `web2`'de kullanmaya alışkın olduğunuz hesaplara benzer. Onları web3 uygulamalarına ve sitelerine erişmek için kullanacaksınız ancak anlamanız gereken büyük farklılıklar da mevcut. For example, they can hold `cryptocurrency`.
 
 Doğru kurulan bir cüzdan, dijital varlıklarınızı ve çevrimiçi kimliğinizi korurken yeni ve inanılmaz olanaklara erişmenizi sağlar.
 
-Bu derste size cüzdanları, cüzdan türlerini, cüzdan güvenliğiyle ilgili temel unsurları tanıtıp konuyu bir cüzdanın nasıl kurulacağına dair bir video ile kapatacağız.
+In this lesson, we’ll introduce you to wallets, wallet types, wallet security basics, and end with a guide on how to set one up **on the Ethereum blockchain — the home of Bankless Academy.**
 
 Hadi başlayalım!
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-cf4e23c2.png)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
 # Cüzdanın Tanımı
 
@@ -53,7 +53,7 @@ Kısa tanımı şöyle: `Blok zinciri` ile etkileşimde bulunmak için kullandı
 
 Alışkın olduğunuz normal kullanıcı hesaplarının aksine, tek bir cüzdan, çok sayıda web3 uygulamasına erişmenizi sağlar. Tüm internet için tek bir hesaba sahip olmak gibi.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-0816ac58.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
 # Cüzdan oluşturmak zor mu?
 
@@ -63,7 +63,7 @@ Cüzdanlar temelde bilgisayar programlarıdır. Bilgisayarınıza yazılım (vey
 
 Bir cüzdanı yönetmenin en zor kısmı onu güvende tutmaktır; bu konuya birazdan değineceğiz!
 
-İlk cüzdanınızı seçmek, göz korkutucu da gelebilir. Cüzdan sağlayıcısı olarak MetaMask ile başlamanızı öneriyoruz çünkü cüzdanları kullanıcı dostu ve birçok popüler blok zincirine erişime sahip. Web3 dünyasında daha rahat hale geldikçe, muhtemelen diğer sağlayıcıları keşfedecek ve birden fazla cüzdan oluşturacaksınız.
+İlk cüzdanınızı seçmek, göz korkutucu da gelebilir. We recommend starting with Zerion as your wallet provider: their wallets are user friendly and have access to many popular blockchains. Web3 dünyasında daha rahat hale geldikçe, muhtemelen diğer sağlayıcıları keşfedecek ve birden fazla cüzdan oluşturacaksınız.
 
 # Knowledge Check 1
 
@@ -83,7 +83,7 @@ Cüzdan nedir?
 
 - [ ] Bir blok zinciri hesabı
 
-> ℹ️ Doğru! Cüzdanlar, bir blok zinciri ile etkileşimde bulunmak için kullanılan hesaplardır.
+> ℹ️ Doğru! Wallets are accounts used to interact with blockchains.
 
 # Cüzdanlar ve Parola Kurtarma
 
@@ -97,7 +97,7 @@ Bu ad ve parola kombinasyonunun değiştirilmesi mümkün değildir. Bunların h
 
 # Cüzdanınızın açık anahtarı
 
-`Açık anahtar` temelde cüzdanınızın adıdır. Bu genellikle rastgele harf ve rakamların bir karışımı gibi görünür.
+`Açık anahtar` temelde cüzdanınızın adıdır. Often, this looks like a random series of letters and numbers.
 
 Örnek: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
@@ -109,13 +109,13 @@ Açık anahtarı bir posta kutusunun adresi gibi de düşünebilirsiniz. Bu anah
 
 **Not:** Bazen tek bir cüzdan hesabı, birden fazla açık anahtar (ve `özel anahtar`) içerebilir. Tek bir hesap altında birçok posta kutusuna sahip olmak gibi.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-7aff448d.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
 # Cüzdanınızın özel anahtarı
 
 Açık anahtar bir posta kutusu gibiyse `özel anahtar` da bu kutunun anahtarıdır. O, fonlarınızın ve varlıklarınızın "parolasıdır".
 
-Neredeyse her zaman rastgele harf ve rakamların bir karışımı gibi görünür.
+Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
 **Bu anahtarı paylaşmak kesinlikle güvenli değildir; cüzdanınızı ve içindeki her şeyi kaybedebilirsiniz.**
 
@@ -125,7 +125,7 @@ Açık anahtar, bir paroladan daha fazlasıdır. Erişiminizi kaybederseniz sıf
 
 Neyse ki, çoğu `web3` uygulaması ve programı, her para göndermeniz veya bir blok zinciri işlemini imzalamanız gerektiğinde uzun, karmaşık bir karakter dizisini özenle yazmanızı gerektirmez. Özel anahtar genellikle arka planda sessizce çalışır.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-909a8ebf.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
 # Knowledge Check 2
 
@@ -133,25 +133,25 @@ Açık anahtarınız _____, özel anahtarınız _____ gibidir.
 
 - [ ] Yönlendirme Numarası/Hesap Numarası
 
-> ℹ️ Tekrar deneyin! Özel anahtarınız başkalarıyla paylaşılmamalıdır.
+> ℹ️ Tekrar deneyin! Unlike an account number, your private key shouldn’t be shared with others.
 
 - [ ] Adres/Posta kodu
 
-> ℹ️ Tekrar deneyin! Özel anahtarınız başkalarıyla paylaşılmamalıdır.
+> ℹ️ Tekrar deneyin! Unlike a zip code, your private key shouldn’t be shared with others.
 
-- [ ] Posta kutusu/Kutu anahtarı
+- [ ] House address / House key
 
-> ℹ️ Doğru! Açık anahtarınız başkalarının sizin kim olduğunuzu tespit etmesini sağlarken, özel anahtarınız içerideki varlıkları kontrol eder.
+> ℹ️ Doğru! Your public key allows others to find you, while only your private key lets you in.
 
 - [ ] Telefon Numarası/Pasaport Numarası
 
-> ℹ️ Tekrar deneyin! Bunlar herkese açık ve özel bilgi örnekleridir ancak varlıklara erişim sağlamazlar.
+> ℹ️ Tekrar deneyin! These are examples of public & private information, but they’re unrelated.
 
 # Kurtarma İfadesi
 
 Yeni bir cüzdan kurduğunuzda yazılım, benzersiz bir `kurtarma ifadesi`oluşturur.
 
-Bazen "tohum ifadesi" veya "gizli kurtarma ifadesi" olarak da adlandırılan bu sözcük dizisi, aşağıdaki durumlarda cüzdanınıza ve kripto varlıklarınıza erişmek için kullanılabilir:
+Also called a “seed phrase” or “secret phrase”, this string of words can be used to access your wallet and crypto assets if:
 
 - `Cüzdan` uygulamanızda veya cihazınızda beklenmedik bir arıza ya da hasar oluştuğunda.
 - Yanlış yere koyma veya hırsızlık nedeniyle ona erişemediğinizde.
@@ -161,15 +161,13 @@ Bazen "tohum ifadesi" veya "gizli kurtarma ifadesi" olarak da adlandırılan bu 
 
 Bu, anahtarları **değiştirmez veya sıfırlamaz**.
 
-Kurtarma ifadeniz aslında açık/özel anahtar çiftinizin okunması daha kolay bir versiyonudur.
+Your recovery phrase is essentially an easier to read version of your public/private key pair. **Never share your recovery phrase.**
 
-**Kurtarma ifadesini asla paylaşmayın.**
-
-![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c98b3a63.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
 # Knowledge Check 3
 
-Cihazınız hasar görürse veya kaybolursa cüzdanınızı bir kurtarma ifadesiyle kurtarabilir misiniz?
+Can you access your wallet with a recovery phrase if your device gets damaged or lost?
 
 - [ ] Hayır
 
@@ -177,39 +175,39 @@ Cihazınız hasar görürse veya kaybolursa cüzdanınızı bir kurtarma ifadesi
 
 - [ ] Evet
 
-> ℹ️ Doğru! Kurtarma ifadeleri, birden fazla cihazda bile cüzdanınıza erişim sağlar.
+> ℹ️ Doğru! Recovery phrases grant access to your wallet, even on multiple devices.
 
 # Cüzdan Türleri
 
-Birçok bilgisayar yazılımı türü olduğu gibi, birçok cüzdan türü de mevcuttur. Şimdi dört ana kategoriye bakalım:
+Just as there are many types of computer software, there many types of wallet. Let’s look at the four main categories:
 
-- **Gözetimli cüzdanlar:** Özel anahtarlarınızdan üçüncü bir tarafın sorumlu olduğu cüzdanlar.
-- **Gözetimsiz (gözetimli olmayan)** **cüzdanlar:** Özel anahtarlarınızdan sizin sorumlu olduğunuz cüzdanlar.
+- 🏦 **Custodial wallets:** where a third party is responsible for your private keys.
+- 👤 **Self-custody (non-custodial) wallets:** where you are responsible for your private keys.
 
-İki tür `gözetimsiz cüzdan` mevcuttur:
+There are two styles of `self-custody wallet`:
 
-- **Sıcak cüzdanlar:** Masaüstünüz veya telefonunuzdaki yazılım.
-- **Soğuk cüzdanlar:** Güvenli bir yerde sakladığınız bir donanım parçası (flaş disk gibi).
+- 🔥 **Hot wallets:** software on your desktop or phone.
+- 🧊 **Cold wallets:** a piece of hardware (like a memory stick) you store somewhere safe.
 
-Her cüzdan çözümü, farklı bir kullanım durumuna hizmet eder. Birçok ileri düzey kullanıcıda her birinden birer tane mevcuttur!
+Each wallet solution serves a different use-case. Many advanced users have one of each!
 
-Merak etmeyin, bugün sadece bir cüzdan oluşturacağız.
+Don’t worry, we’ll only be creating one wallet today.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-aa1a0445.png)
+![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
 # Gözetimli Cüzdanlar
 
-`Özel anahtarınız`, `cüzdanınıza` erişimin kilidini açtığından, onu gizli ve güvende tutmak çok önemlidir!
+Since your `private key` unlocks access to your `wallet`, keeping it private and secure is very important!
 
-`Gözetimli cüzdan` hizmetleri, Coinbase ve Kraken gibi kripto para borsalarını içerir. Bu borsalar, cüzdanınızın 'emanetçisidir'; yani, sizin için özel anahtarlarınıza göz kulak olurlar. Hizmetlerine diğer web siteleri gibi erişirsiniz (bir e-posta girişi ve sıfırlanabilir parola ile).
+`Custodial wallet` services include cryptocurrency exchanges such as Coinbase and Kraken. They are your wallet ‘custodian’ — they look after your private keys for you. You access their services like any other website (with an email login and resettable password).
 
-Bazı insanların ihtiyacı olan tek şey bu olabilir, ancak kripto varlıklarınızı güvence altına alması ve onları alıp satmak veya bir yere göndermek istediğinizde size erişim sağlaması için bu üçüncü taraflara güvenmeniz gerekir. Ayrıca, bazı web3 uygulamalarına erişiminiz sınırlı olabilir.
+This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some web3 applications may be limited.
 
-![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-8d2418ba.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
 # Knowledge Check 4
 
-Özel anahtarınızı gözetimli bir cüzdan ile mi kontrol edersiniz?
+Do you control your private key with a custodial wallet?
 
 - [ ] Evet
 
@@ -221,19 +219,19 @@ Bazı insanların ihtiyacı olan tek şey bu olabilir, ancak kripto varlıkları
 
 # Gözetimsiz Cüzdan
 
-`Gözetimsiz cüzdan` (MetaMask veya Trezor gibi), `özel anahtarınızın` kontrolünün tamamen size ait olduğu cüzdandır. **Emanetçiniz yoktur** ve özel anahtarınızı güvende tutmaktan yalnızca siz sorumlu olursunuz.
+A `self-custody wallet` (like Zerion or Trezor) is when you fully control your `private key`. You have **no custodian**, and you alone are responsible for keeping your private key safe.
 
-Bu cüzdanlar `web3` dünyasında en geniş erişim ve özgürlük yelpazesini sunar. Üçüncü bir tarafın fonlarınızı dondurması veya kötüye kullanması konusunda kesinlikle endişe etmeniz gerekmez.
+These wallets offer the widest range of access and freedom within the world of `web3`. You never have to worry about a third party freezing or mishandling your funds.
 
-Ödünleşim risktedir: `Kurtarma ifadenize` erişiminizi kaybederseniz veya özel anahtarınız tehlikeye girerse cüzdana yeniden erişim sağlamak için genellikle yapabileceğiniz çok az şey vardır.
+The tradeoff is in risk: if you lose access to your `recovery phrase`, or your private key is compromised, there is often very little you can do to restore access to the wallet.
 
-Hangi yolu seçerseniz seçin, cüzdan güvenliği konusunda bilgili ve rahat olmanız önemlidir. Bu dersi tamamlamadan önce size bazı ipuçları vereceğiz.
+Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.
 
-![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-fb499cf7.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-833c3d6b.svg)
 
 # Knowledge Check 5
 
-Gözetimsiz cüzdanda özel anahtarınızdan siz mi sorumlusunuz?
+Are you responsible for your private key with a self-custody wallet?
 
 - [ ] Evet
 
@@ -245,29 +243,29 @@ Gözetimsiz cüzdanda özel anahtarınızdan siz mi sorumlusunuz?
 
 # Sıcak Cüzdanlar
 
-Web3'te "sıcak" ve "soğuk cüzdan" terimlerini oldukça sık duyacaksınız.
+You will hear the terms “hot” and “cold wallet” quite a bit in web3.
 
-`Sıcak cüzdan` çevrimiçi bir yazılım programı aracılığıyla barındırılan bir cüzdandır. MetaMask buna iyi bir örnektir. Bu cüzdanlar, cihazınız çevrimiçi olduğu sürece internete bağlıdır ve bu 'sıcak' internet bağlantısı için 'sıcak cüzdanlar' olarak adlandırılır.
+A `hot wallet` is a wallet hosted via an online software program. Zerion is a good example. These wallets are connected to the internet as long as your device is online, and are named ‘hot wallets’ for this ‘hot’ internet connection.
 
-Bugün oluşturacağımız cüzdan türü budur. Bu cüzdanlar esnektir ve yeni başlayanlar için harikadır.
+This is the style of wallet we will be creating today. They’re flexible, and great for beginners.
 
-![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-7c0fe45a.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-9356886d.svg)
 
 # Soğuk Cüzdanlar
 
-Web3 yolculuğunuzun derinliklerine daldıkça, ilginç teknoloji ödünleşimleriyle dolu bir manzarayla tanışacaksınız.
+As you dive deeper into your web3 journey, you will come to know a landscape full of interesting tech trade-offs.
 
-`Soğuk cüzdanlar` kolaylık pahasına daha yüksek güvenlik sağlar. Soğuk cüzdan, ayrı bir donanım aygıtında (flaş disk veya harici sabit disk gibi) çalışan bir yazılım kullanır. Cüzdanın internete erişebilmesi için cihazı bir bilgisayara fiziksel olarak bağlamanız gerekir. Soğuk cüzdanlar isimlerini bu 'soğuk' internet bağlantısından alır.
+`Cold wallets` grant higher security at the cost of convenience. A cold wallet uses software that lives on a separate hardware device (like a memory stick or external hard drive). You must physically connect the device to a computer for the wallet to be able to access the internet. Cold wallets are named after this ‘cold’ internet connection.
 
-Genellikle `sıcak cüzdanlardan` daha güvenli oldukları düşünülür çünkü `özel anahtarınız` dijital saldırganların erişemeyeceği bir yerde, çevrimdışı olarak saklanır.
+They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline — out of reach of digital attackers.
 
-Ledger ve Trezor `soğuk cüzdan` örnekleridir.
+Ledger and Trezor are examples of `cold wallets`.
 
-![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-86fdb409.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-0e3183d1.svg)
 
 # Knowledge Check 6
 
-Hangi cüzdan türünün daha güvenli olduğu düşünülür?
+Which wallet type is considered to be more secure?
 
 - [ ] Sıcak cüzdan
 
@@ -287,61 +285,63 @@ Hangi cüzdan türünün daha güvenli olduğu düşünülür?
 
 # Cüzdan Güvenliği
 
-`Gözetimsiz cüzdanınızın` sıcak ya da soğuk olmasından bağımsız olarak öğrenmeniz gereken birçok akıllı güvenlik uygulaması mevcuttur.
+Regardless if your `self-custody wallet` is hot or cold, there are many smart security practices you should develop.
 
-🖊️ `Kurtarma ifadenizi` fiziksel, dayanıklı bir materyalin (bir yaprak kağıt veya hatta çelik gibi) üzerine kaydedin ve çok güvenli bir yerde saklayın. Bu ifadeyi veya `özel anahtarınızı` kimseyle paylaşmayın. **Bunun bir paroladan daha fazlası olduğunu unutmayın.**
+🖊️ Record your `recovery phrase` on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your `private key` with anyone. **Remember, this is more than just a password.**
 
-🔍 Bir blok zinciri ile etkileşimde bulunurken veya küçük miktarlarda bile olsa para gönderirken, ayrıntıları çok dikkatli bir şekilde iki kez kontrol edin. Yanlış ayrıntılar, bir etkileşimden sonra değiştirilemez.
+🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.
 
-🔭 Cüzdanınızı bağlamadan veya işlemleri imzalamadan önce etkileşimde bulunmayı planladığınız herhangi bir `web3` uygulaması ile ilgili araştırma yapmaya ve bilgi toplamaya zaman ayırın.
+🔭 Spend time researching and gathering info on any `web3` application you plan to interact with before connecting your wallet or signing transactions with it.
 
-💰 Yeni şeyler denemek ve web3'ü keşfetmek için düşük miktarda fon içeren cüzdanlar kullanın ve yüksek değerli varlıkları, birden fazla cüzdan hesabında saklamaya çalışın (yani tüm kripto yumurtalarınızı tek bir sepete koymaktan kaçının).
+💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-c6f5271b.png)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
 
 # Knowledge Check 7
 
-Kurtarma ifadenizi korumanın en güvenli yolu nedir?
+What is the safest way to protect your recovery phrase?
 
 - [ ] Dayanıklı bir materyalin üzerine yazın ve güvenli bir yerde saklayın.
 
-> ℹ️ Doğru! Dijital iz bırakmadan güvenli bir şekilde saklanan fiziksel yedekleme, tek güvenli depolama seçeneğidir.
+> ℹ️ Doğru! A safely stored physical backup with no digital traces is the safest storage option.
 
 - [ ] Bilgisayarınıza kaydedin ve çıktısını alın.
 
-> ℹ️ Tekrar deneyin! Bilgisayarınız saldırıya uğrarsa cüzdanınızdaki tüm varlıkları kaybedebilirsiniz. Çıktı almak, birçok saldırı fırsatının da önünü açar.
+> ℹ️ Tekrar deneyin! If your computer is hacked, your recovery phrase could be found. Çıktı almak, birçok saldırı fırsatının da önünü açar.
 
 - [ ] Bir ekran görüntüsü alın ve telefonunuza kaydedin.
 
 > ℹ️ Tekrar deneyin! Telefonunuz saldırıya uğrarsa cüzdanınızdaki tüm varlıkları kaybedebilirsiniz.
 
-- [ ] Dropbox hesabınıza kaydedin.
+- [ ] Save it in your password manager.
 
-> ℹ️ Tekrar deneyin! Parola yöneticilerinin kullanımı, 2023'te çok sayıda cüzdanın saldırıya uğramasına neden olmuştur.
+> ℹ️ Tekrar deneyin! If your password manager is hacked, your recovery phrase could be leaked.
 
 # İlk cüzdanınızı oluşturmaya hazırsınız!
 
-Aslında, bu görevi tamamladığınıza dair kanıt talep etmek istiyorsanız bir cüzdana ihtiyacınız olacak!
+In fact, you’ll need one if you want to claim proof of completing this quest!
 
-Günümüzde, çok sayıda gözetimsiz `sıcak cüzdan` sağlayıcısı mevcuttur. Bu dersin geri kalanında popüler MetaMask cüzdanını keşfedeceğiz. Bu cüzdanı tercih etmemizin sebepleri şunlardır:
+There are several self-custody `hot wallet` providers available today. We will explore the Zerion wallet for the rest of this lesson as:
 
-- `DeFi` uygulamalarının çoğu ile uyumlu olması muhtemeldir.
-- Chrome, Brave, Edge ve Firefox internet tarayıcıları için bir tarayıcı uzantısına sahiptir.
-- Android ve iOS kullanıcıları için bir mobil uygulama olarak da mevcuttur.
+- ⚙️ It’s compatible with most `DeFi` apps.
+- ⚡ The interface is incredibly smooth and easy to use.
+- 💻 It has a browser extension for Chrome, Brave, Edge, and Opera internet browsers.
+- 📱 It is also available as a mobile app for Android and iOS users.
+- 🗣️ Zerion supports a variety of languages.
 
-MetaMask cüzdanınızı kurmanıza yardımcı olacak kısa bir video paylaşacağımız ders sonuna çok az kaldı.
+The end of the lesson is right around the corner, where we will share your instructions for setting up your Zerion wallet!
 
-![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-a18de323.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg)
 
 # Knowledge Check 8
 
-MetaMask gözetimli bir cüzdan mı?
+Is Zerion a custodial wallet?
 
 - [ ] Evet
 
-> ℹ️ Tekrar deneyin!
+> ℹ️ Tekrar deneyin! Your Zerion wallet isn’t controlled by a custodian.
 
 - [ ] Hayır
 
-> ℹ️ Doğru! MetaMask cüzdanlar, yalnızca sizin tarafınızdan kontrol edilen gözetimsiz cüzdanlardır.
+> ℹ️ Doğru! Zerion wallets are self-custody wallets — controlled by you, and you alone.
 
