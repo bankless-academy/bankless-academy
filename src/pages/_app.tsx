@@ -239,6 +239,18 @@ const App = ({
                   background: #86629c !important;
                   box-shadow: none !important;
                 }
+                .chakra-popover__popper[data-popper-placement='right']
+                  .chakra-popover__arrow {
+                  background: #705992 !important;
+                }
+                .chakra-popover__popper[data-popper-placement='top-end']
+                  .chakra-popover__arrow {
+                  background: #514984 !important;
+                }
+                .chakra-popover__popper[data-popper-placement='top']
+                  .chakra-popover__arrow {
+                  background: #514984 !important;
+                }
                 #chakra-toast-manager-top-left {
                   top: 20% !important;
                   left: 2vh !important;
