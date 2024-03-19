@@ -78,6 +78,7 @@ const LessonDetail = ({
   const [, isSmallScreen] = useSmallScreen()
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
   const [refreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
+  const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
 
   const [openLessonLS, setOpenLessonLS] = useLocalStorage(
     `lessonOpen`,
@@ -273,7 +274,16 @@ const LessonDetail = ({
                   </>
                 )}
               {!IS_WALLET_DISABLED && (
-                <>
+                <Box
+                  minH={
+                    isSmallScreen &&
+                    Quest?.isQuestCompleted &&
+                    badgesMintedLS?.length === 0
+                      ? // HACK: make mobile height bigger to show popover under button
+                        '570px'
+                      : 'unset'
+                  }
+                >
                   {lesson.badgeId && (
                     <>
                       <Box pb="8">
@@ -300,7 +310,7 @@ const LessonDetail = ({
                   {lesson.hasCollectible ? (
                     <CollectLessonButton lesson={lesson} />
                   ) : null}
-                </>
+                </Box>
               )}
             </Box>
           </StyledCard>
