@@ -113,7 +113,7 @@ Apenas essas qualidades podem restaurar nossa capacidade de economizar e gastar 
 
 Aqui entra o Bitcoin (BTC): uma moeda digital que opera além do sistema bancário tradicional.
 
-- ⛓️ It’s `peer-to-peer`: It connects people directly to each other. Automated using `blockchain technology`, it removes need for institutions to facilitate storage or transactions. Advocates call it “a set of rules with no rulers”.
+- ⛓️ É `peer-to-peer`: Conecta as pessoas diretamente umas às outras. Automatizado usando a `tecnologia blockchain`, ele elimina a necessidade de instituições para facilitar o armazenamento ou transações. Advocates call it “a set of rules with no rulers”.
 - 💎 It’s `scarce`: With no central bank issuing unlimited new money, Bitcoin has a stable, predictable monetary policy that honors long-term saving.
 - ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. When stored in its natural state, Bitcoin is held in a secure online safe and only the owner has access.
 
