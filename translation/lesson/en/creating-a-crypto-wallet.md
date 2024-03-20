@@ -33,9 +33,9 @@ This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons
 
 ## Key Takeaways
 
-> * A `crypto wallet` is a computer program used to hold cryptocurrency and to interact with blockchain apps.
+> * A `crypto wallet` is an account on a `blockchain`.
 >
-> * These wallets are like your blockchain account, with a unique address and password.
+> * A wallet is used to store digital assets and log into blockchain apps.
 >
 > * Wallets work on both computers and phones.
 >
@@ -43,9 +43,9 @@ This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons
 
 ## What is a Crypto Wallet?
 
-Crypto wallets are an essential piece of web3 equipment, allowing you to use cryptocurrency on your computer or phone. They often come as a web browser extension for your computer, or an app for your phone.
+Crypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.
 
-Yet wallets can do more than hold cryptocurrency. They’re our connection with a blockchain. Wallets are used to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some calling them your digital identity.
+Wallets are more than accounts for holding cryptocurrency. They’re our connection with a blockchain. Wallets are used to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some calling them your digital identity.
 
 Wallets come with two core pieces of account information:
 
@@ -99,7 +99,7 @@ Learn more and get rewarded for creating your first wallet, in our [Wallet Basic
 
 ### What happens if I lose my recovery phrase?
 
-Your recovery phrase is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.
+Your recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.
 
 ### Can Ethereum wallets hold Bitcoin?
 
