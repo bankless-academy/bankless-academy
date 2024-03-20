@@ -147,8 +147,8 @@ export const Slide = styled(Card)<{
       }
     `};
     iframe {
-      margin: 20px auto 0;
-      width: 640px;
+      padding: 16px;
+      aspect-ratio: 16/9;
       max-width: 100%;
       height: 360px;
     }
