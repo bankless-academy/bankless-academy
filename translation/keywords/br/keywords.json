@@ -170,7 +170,7 @@
     "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
   },
   "circulating supply": {
-    "keyword": "oferta circulante",
+    "keyword": "suprimento circulante",
     "keyword_plural": "circulating supplys",
     "definition": "O número de moedas ou tokens de uma criptomoeda específica disponível publicamente para o mercado negociar."
   },
@@ -515,7 +515,7 @@
     "definition": "The total value of a given token, or market sector."
   },
   "max supply": {
-    "keyword": "oferta máxima",
+    "keyword": "suprimento máximo",
     "keyword_plural": "max supplys",
     "definition": "O número máximo de moedas ou tokens que existirão para uma determinada criptomoeda."
   },
@@ -732,12 +732,12 @@
   "scarce": {
     "keyword": "escasso",
     "keyword_plural": "scarces",
-    "definition": "Estar com pouca oferta ou baixa quantidade disponível."
+    "definition": "Estar com pouco suprimento ou baixa quantidade disponível."
   },
   "scarcity": {
     "keyword": "escassez",
     "keyword_plural": "scarcitys",
-    "definition": "Estar com pouca oferta."
+    "definition": "Estar com pouco suprimento."
   },
   "security": {
     "keyword": "Security",
