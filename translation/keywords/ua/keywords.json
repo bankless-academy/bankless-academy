@@ -94,6 +94,11 @@
     "keyword_plural": "blockchains",
     "definition": "Система, в якій облік криптовалютних транзакцій ведеться на багатьох комп'ютерах по всьому світу."
   },
+  "blockchain apps": {
+    "keyword": "blockchain apps",
+    "keyword_plural": "blockchain appss",
+    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
+  },
   "blockchain architecture": {
     "keyword": "blockchain architecture",
     "keyword_plural": "blockchain architectures",
@@ -642,7 +647,7 @@
   "private key": {
     "keyword": "private key",
     "keyword_plural": "private keys",
-    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
+    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
   },
   "proof of stake": {
     "keyword": "Proof of Stake",
@@ -677,12 +682,12 @@
   "public key": {
     "keyword": "public key",
     "keyword_plural": "public keys",
-    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you."
+    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
   },
   "recovery phrase": {
     "keyword": "recovery phrase",
     "keyword_plural": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key."
+    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
   },
   "red flag": {
     "keyword": "red flag",
@@ -948,6 +953,16 @@
     "keyword": "wallet",
     "keyword_plural": "wallets",
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+  },
+  "wallet app": {
+    "keyword": "wallet app",
+    "keyword_plural": "wallet apps",
+    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+  },
+  "wallet provider": {
+    "keyword": "wallet provider",
+    "keyword_plural": "wallet providers",
+    "definition": "The creator of the software you use to access your wallet. These providers do not own your wallet, but instead act as a bridge that lets you access your account on the blockchain."
   },
   "web2": {
     "keyword": "web2",
