@@ -86,22 +86,22 @@ export default async function handler(req: NextApiRequest) {
   console.log(ensData)
   if (ensData.avatar_url?.includes('api.center.dev/v2')) {
     // convert to v1 to return png instead of webp
-    const [avatar] = ensData.avatar_url
-      .replace('api.center.dev/v2/', 'api.center.dev/v1/')
-      .replace('/nft/', '/')
-      .replace('/render/', '/')
-      .replace('/medium', '/medium/media')
-      .split('?')
-    console.log(avatar)
+    const avatar = ensData.avatar_url
+      // .replace('api.center.dev/v2/', 'api.center.dev/v1/')
+      // .replace('/nft/', '/')
+      // .replace('/render/', '/')
+      .replace('render/medium', 'render/small.png')
+    // .split('?')
+    console.log('avatar', avatar)
     user.avatar = avatar
     //HACK: manually upload broken avatars
-    if (ensData.address === '0xd1ffda9c225ddee34f0837bf4d4a441bdd54c473') {
-      user.avatar =
-        'https://app.banklessacademy.com/images/avatars/d0wnlore.jpg'
-    }
-    if (ensData.address === '0xe8c77e0eabd6d8b2f54343152a8b213d3a42e54e') {
-      user.avatar = 'https://app.banklessacademy.com/images/avatars/doubleb.png'
-    }
+    // if (ensData.address === '0xd1ffda9c225ddee34f0837bf4d4a441bdd54c473') {
+    //   user.avatar =
+    //     'https://app.banklessacademy.com/images/avatars/d0wnlore.jpg'
+    // }
+    // if (ensData.address === '0xe8c77e0eabd6d8b2f54343152a8b213d3a42e54e') {
+    //   user.avatar = 'https://app.banklessacademy.com/images/avatars/doubleb.png'
+    // }
   }
 
   const explorerName = user.ensName || shortenAddress(address)
