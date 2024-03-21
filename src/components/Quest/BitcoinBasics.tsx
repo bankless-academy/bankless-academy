@@ -224,8 +224,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
   if (test === true) return quesComponent
 
   return {
-    isQuestCompleted:
-      areAnswersCorrect && animationStep === animationSteps.length,
+    isQuestCompleted: areAnswersCorrect,
     questComponent: quesComponent,
   }
 }
