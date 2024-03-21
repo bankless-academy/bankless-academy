@@ -35,27 +35,32 @@ export default async function handler(
   // console.log('user', userExist)
   if (!userExist) res.status(200).json({ error: 'Profile not found.' })
 
-  const ensName = addressLowerCase === '0xb00e26e79352882391604e24b371a3f3c8658e8c' ? DEFAULT_ENS : await client.getEnsName({ address: addressLowerCase as `0x${string}` })
-  // console.log(ensName)
+  try {
+    const ensName = addressLowerCase === '0xb00e26e79352882391604e24b371a3f3c8658e8c' ? DEFAULT_ENS : await client.getEnsName({ address: addressLowerCase as `0x${string}` })
+    // console.log(ensName)
 
-  const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : DEFAULT_AVATAR
+    const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : DEFAULT_AVATAR
 
-  if (
-    (ensName && userExist.ens_name !== ensName) ||
-    (avatar && userExist.ens_avatar !== avatar)
-  ) {
-    // update ens_name + ens_avatar in user DB
-    console.log('update ENS details', { ensName, avatar })
-    await db(TABLES.users)
-      .where(TABLE.users.id, userExist.id)
-      .update({ ens_name: ensName, ens_avatar: avatar?.length < 255 && avatar !== DEFAULT_AVATAR ? avatar : null })
+    if (
+      (ensName && userExist.ens_name !== ensName) ||
+      (avatar && userExist.ens_avatar !== avatar)
+    ) {
+      // update ens_name + ens_avatar in user DB
+      console.log('update ENS details', { ensName, avatar })
+      await db(TABLES.users)
+        .where(TABLE.users.id, userExist.id)
+        .update({ ens_name: ensName, ens_avatar: avatar?.length < 255 && avatar !== DEFAULT_AVATAR ? avatar : null })
+    }
+
+    const data: any = {
+      address: addressLowerCase,
+      ensName,
+      avatar: avatar || DEFAULT_AVATAR,
+    }
+
+    return res.status(200).json(data)
+  } catch (error) {
+    console.error(console.error())
   }
 
-  const data: any = {
-    address: addressLowerCase,
-    ensName,
-    avatar: avatar || DEFAULT_AVATAR,
-  }
-
-  return res.status(200).json(data)
 }

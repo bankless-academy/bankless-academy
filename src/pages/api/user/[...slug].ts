@@ -171,8 +171,12 @@ export default async function handler(
   const avatar = userExist?.ens_avatar || DEFAULT_AVATAR
 
   if (profile === 'true') {
-    // async update ENS (available on next call)
-    axios.get(`${DOMAIN_URL}/api/updateENS/${addressLowerCase}`)
+    try {
+      // async update ENS (available on next call)
+      axios.get(`${DOMAIN_URL}/api/updateENS/${addressLowerCase}`)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   let stats: UserStatsType = {}
