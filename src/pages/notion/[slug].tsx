@@ -19,6 +19,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const slug =
     typeof context.params?.slug === 'string' ? context.params?.slug : null
 
+  const pageMeta = { noindex: !(slug && slug === 'faq') }
+
   if (
     !slug ||
     (slug?.length !== 32 && !ALLOWED_SLUGS.includes(slug)) ||
@@ -28,6 +30,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       props: {
         recordMap: false,
         isNotion: true,
+        pageMeta,
       },
     }
   }
@@ -40,6 +43,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       props: {
         recordMap: data,
         isNotion: true,
+        pageMeta,
       },
     }
   } catch (error) {
@@ -48,6 +52,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       props: {
         recordMap: false,
         isNotion: true,
+        pageMeta,
       },
     }
   }

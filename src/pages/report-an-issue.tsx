@@ -10,6 +10,7 @@ import { useRouter } from 'next/router'
 
 const pageMeta: MetaData = {
   title: 'Report an Issue',
+  noindex: true,
 }
 
 export const getStaticProps: GetStaticProps = async () => {
