@@ -92,5 +92,10 @@ export async function getUserId(address: string, embed: string, isBot?: boolean)
   } catch (error) {
     // known issue: error 53300, remaining connection slots are reserved for non-replication superuser connections
     console.error(`can't get user id | ${error?.code}: ${error}`)
+    // most likely because of `duplicate key value violates unique constraint "users_address_unique"`
+    const [user] = await db(TABLES.users)
+      .select('id')
+      .where('address', 'ilike', `%${address}%`)
+    return user?.id
   }
 }

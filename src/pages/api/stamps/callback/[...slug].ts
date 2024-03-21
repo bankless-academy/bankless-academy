@@ -96,8 +96,10 @@ export default async function handler(
     .where('address', 'ilike', `%${address}%`)
   const userId = user?.id
   console.log(userId)
-  if (!(userId && Number.isInteger(userId)))
+  if (!(userId && Number.isInteger(userId))) {
+    trackBE(address, 'issue_user_not_found', { context: 'callback' })
     return res.status(403).json({ error: 'userId not found' })
+  }
 
   if (platform === 'google') {
     const googleProvider = new google.GoogleProvider();

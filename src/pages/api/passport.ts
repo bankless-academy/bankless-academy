@@ -31,8 +31,10 @@ export default async function handler(
 
   const userId = await getUserId(address, embed, isBot)
   console.log(userId)
-  if (!(userId && Number.isInteger(userId)))
+  if (!(userId && Number.isInteger(userId))) {
+    trackBE(address, 'issue_user_not_found', { context: 'passport' })
     return res.status(403).json({ error: 'userId not found' })
+  }
 
   const [user] = await db(TABLES.users)
     .select(TABLE.users.sybil_user_id, TABLE.users.ba_stamps)

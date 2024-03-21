@@ -33,8 +33,10 @@ export default async function handler(
   try {
     const userId = await getUserId(address, embed)
     console.log(userId)
-    if (!(userId && Number.isInteger(userId)))
+    if (!(userId && Number.isInteger(userId))) {
+      trackBE(address, 'issue_user_not_found', { context: 'validate-quest' })
       return res.status(403).json({ error: 'userId not found' })
+    }
 
     const notionId = LESSONS.find((lesson) => lesson.quest === quest)?.notionId
     if (!notionId) return res.status(403).json({ error: 'notionId not found' })
