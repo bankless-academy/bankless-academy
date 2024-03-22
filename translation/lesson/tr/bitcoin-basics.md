@@ -41,11 +41,11 @@ Bitcoin, yeni bir para türüdür. It increases financial freedom for those who 
 
 # Bitcoin'in Hikayesi
 
-Launched in 2009 by the mysterious “`Satoshi Nakamoto`,” Bitcoin marked the beginning of a new economic era.
+2009 yılında gizemli "Satoshi Nakamoto" tarafından piyasaya sürülen Bitcoin, yeni bir ekonomi çağının başlangıcı oldu.
 
-İlk başarılı \`kripto para birimi' olan Bitcoin güçlü bir tartışma başlattı: Paranın kontrolü ve gücü geleneksel bankacılık sistemlerinde kalmaya mı devam etmeli? Yoksa her gün onu kazanan ve kullanan vatandaşlara mı ait olmalı? Bunun tam olarak ne anlama geldiğinden emin değilseniz doğru yerdesiniz!
+İlk başarılı 'kripto para birimi' olan Bitcoin güçlü bir tartışma başlattı: Paranın kontrolü ve gücü geleneksel bankacılık sistemlerinde kalmaya mı devam etmeli? Yoksa her gün onu kazanan ve kullanan vatandaşlara mı ait olmalı? Bunun tam olarak ne anlama geldiğinden emin değilseniz doğru yerdesiniz!
 
-Gerçek şu ki, günümüzde paramızın kontrolü sandığımız gibi bizim elimizde değil. This has very real consequences.
+Gerçek şu ki, günümüzde paramızın kontrolü sandığımız gibi bizim elimizde değil. Bunun da oldukça ciddi sonuçları var.
 
 Bitcoin'in finansta nasıl devrim yarattığını öğrenmenin zamanı geldi.
 
@@ -55,24 +55,24 @@ Bitcoin'in finansta nasıl devrim yarattığını öğrenmenin zamanı geldi.
 
 # Paranın Kısa Tarihi
 
-Money has been an integral part of society since our earliest days when beads, shells, and stones were used to exchange goods & services.
+Mal ve hizmet alışverişinde boncukların, deniz kabuklarının ve taşların kullanıldığı en eski zamanlardan bu yana para, toplumun ayrılmaz bir parçası olmuştur.
 
-Ancak ilk para birimlerinin bir sorunu vardı; insanların yeni para bulması/yaratması çok kolaydı. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.
+Ancak ilk para birimlerinin bir sorunu vardı; insanların yeni para bulması/yaratması çok kolaydı. Bir şeyden ne kadar çok varsa değeri o kadar az olur ve bu nedenle, herkesin parası yavaş yavaş daha az değerli hale gelir. Para değerini koruyacaksa bulunması daha zor olmalıdır.
 
-Materials like gold & silver were eventually adopted to solve this problem. The key advantage of these materials was their scarcity – there wasn't an endless supply, making it hard for anyone to increase the amount of money in circulation significantly. This `scarcity` helped maintain the value of money.
+Sonunda bu sorunu çözmek için altın ve gümüş gibi malzemeler kullanılmaya başlandı. Bu malzemelerin en önemli avantajı kıt olmalarıydı; sonsuz bir arz yoktu, bu da birinin dolaşımdaki para miktarını önemli ölçüde artırmasını zorlaştırıyordu. Bu "kıtlık", paranın değerinin korunmasına yardımcı oldu.
 
-As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Such currency made money recognizable and measurable while serving as a strong store of value.
+As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Bu tür bir para birimi, parayı tanınabilir ve ölçülebilir hale getirirken güçlü bir değer deposu işlevi gördü.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg)
 
 # Knowledge Check 1
 
-True or False:
-”As more money is added to a monetary system, the existing money becomes worth less.”
+Doğru ya da Yanlış:
+"Bir para sistemine daha fazla para eklendikçe, mevcut paranın değeri azalır."
 
 - [ ] Doğru
 
-> Doğru! The more money there is, the less value it has.
+> Doğru! Para ne kadar çoksa değeri o kadar az olur.
 
 - [ ] Yanlış
 
@@ -80,23 +80,23 @@ True or False:
 
 # Paranın Kısa Tarihi (Bölüm 2)
 
-With the introduction of paper money, currencies shifted to being 'backed' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.
+Kağıt paranın kullanılmaya başlanmasıyla birlikte para birimleri altınla 'desteklenmeye' başladı. Money’s value was directly linked to a specific amount of the precious metal held in storage.
 
-Then, in the 20th century, came the fall of this “`Gold Standard`”.
+Ardından, 20. yüzyılda, bu "Altın Standardı" çöktü.
 
-Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.
+Dünyanın her yerinde değerli metallerin para birimleriyle bağlantısı yavaş yavaş ortadan kaldırıldı; bu, herhangi bir ülkenin ekonomisinin altın arzının ötesinde büyümesine olanak tanıyacak bir çabaydı. Bir merkez bankasının para birimi yaratmak için artık altına ihtiyacı olmadığından, ülke ekonomisi için gerekli gördükleri kadar yeni para yaratabilirlerdi. Para arzını kararlılıkla kontrol ederek, değerini de kontrol edebilirlerdi.
 
-Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.
+Moving into the digital age, electronic currency has vastly replaced physical currency. Paramızı ticari bankalarda saklamak bize kredi kartlarının ve ödeme uygulamalarının rahatlığını sundu. While easy and secure, it also puts for-profit businesses between people and their money.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg)
 
-# The Problem
+# Sorun
 
-The problem with our current financial system is the lack of control we have over our money, and how this lowers our ability to freely decide what to save and what to spend.
+Mevcut finansal sistemimizle ilgili sorun, paramız üzerinde kontrolümüzün olmaması ve bunun neyi biriktirip neyi harcayacağımıza özgürce karar verme kabiliyetimizi azaltmasıdır.
 
-`Central banks`, the bank managing a country’s `monetary policy`, can introduce any amount of new money. This lack of `scarcity` often makes our money worth less and less each year. Money with an unpredictable, decreasing value often forces us to spend it: **“If my money is going to be worth less every year, why save? I might as well spend it now.”** 💸
+Bir ülkenin 'para politikasını' yöneten banka olan 'merkez bankası' herhangi bir miktarda yeni para çıkarabilir. 'Kıtlığın' olmayışı, paramızı her geçen yıl daha az değerli hale getirir. Öngörülemeyen, azalan bir değere sahip olan para genellikle bizi onu harcamaya zorlar: **"Param her yıl daha az değerli olacaksa neden biriktireyim ki? Şimdi de harcayabilirim."** 💸
 
-`Commercial banks`, those used for everyday saving and spending, also influence our spending habits. As a `custodian`, they can block transactions or confiscate our funds. Some banks have blocked their clients from buying cryptocurrency! **If your bank can freeze your life savings at any time… do you truly own your money?** 💸
+Günlük tasarruf ve harcamalar için kullanılan 'ticari bankalar' da harcama alışkanlıklarımızı etkiler. Bir 'emanetçi' olarak, işlemleri engelleyebilir veya fonlarımıza el koyabilirler. Bazı bankalar müşterilerinin kripto para satın almasını engellemiştir! **Bankanız istediği zaman birikimlerinizi dondurabiliyorsa… paranızın gerçek sahibi siz misiniz?** 💸
 
 ***
 
