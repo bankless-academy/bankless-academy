@@ -115,19 +115,19 @@ L'arrivée de Bitcoin (`BTC`) : une monnaie numérique qui fonctionne en dehors 
 
 - ⛓️ C'est `pair à pair` : Il connecte directement les gens les uns aux autres. Automatisé à l'aide de la `technologie blockchain`, il supprime le besoin pour les institutions de faciliter le stockage ou les transactions. Ses défenseurs l'appellent "un ensemble de règles sans dirigeants".
 - 💎 C'est `rare` : En l'absence de banque centrale émettant de l'argent frais de manière illimitée, le Bitcoin bénéficie d'une politique monétaire stable et prévisible qui favorise l'épargne à long terme.
-- ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. When stored in its natural state, Bitcoin is held in a secure online safe and only the owner has access.
+- ✊ C'est `self-custodial` [autodétenu] : il peut être détenu sans que des institutions assurent les transferts ou le stockage. Lorsqu'il est stocké dans son état naturel, le bitcoin est conservé dans un coffre-fort en ligne sécurisé et seul son propriétaire y a accès.
 
-For its qualities, Bitcoin has earned the nickname “digital gold”.
+Pour ses qualités, le Bitcoin a gagné le surnom de « l'or numérique ».
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/enter-bitcoin-b108517c.svg)
 
-# Digital Gold: Scarcity
+# L'or numérique : rareté
 
-📉 Do you find it difficult to keep up with rising costs?
+📉 Avez-vous des difficultés à faire face à l'augmentation des coûts ?
 
 ***
 
-Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This `max supply` is embedded in its code, making Bitcoin rare and potentially valuable. This puts it in a good position as a long term store of value, much like gold.
+La rareté du bitcoin fait référence au nombre maximal de Bitcoins pouvant exister, soit 21 millions au maximum. Cette `offre maximale` est intégrée dans son code, ce qui rend le Bitcoin rare et potentiellement précieux. Cela le place dans une bonne position en tant que réserve de valeur à long terme, à l'instar de l'or.
 
 While the max supply of `BTC` can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called `cryptocurrency mining`. This predictable increase in `circulating supply` keeps the Bitcoin economy moving.
 
