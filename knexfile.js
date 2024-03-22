@@ -13,6 +13,6 @@ module.exports = {
     password: process.env.DB_PASSWORD || '',
     database: process.env.DB_DATABASE || 'postgres',
     ssl: ssl,
-    pool_size: 10
+    pool_size: 25
   },
 }
