@@ -117,11 +117,11 @@ Enter Bitcoin (`BTC`): a digital currency that operates beyond the traditional b
 - 💎 It’s `scarce`: With no central bank issuing unlimited new money, Bitcoin has a stable, predictable monetary policy that honors long-term saving.
 - ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. When stored in its natural state, Bitcoin is held in a secure online safe and only the owner has access.
 
-For its qualities, Bitcoin has earned the nickname “digital gold”.
+Bitcoin sahip olduğu nitelikler nedeniyle "dijital altın" lakabını kazanmıştır.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/enter-bitcoin-b108517c.svg)
 
-# Digital Gold: Scarcity
+# Dijital Altın: Kıtlık
 
 📉 Do you find it difficult to keep up with rising costs?
 
@@ -129,7 +129,7 @@ For its qualities, Bitcoin has earned the nickname “digital gold”.
 
 Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This `max supply` is embedded in its code, making Bitcoin rare and potentially valuable. This puts it in a good position as a long term store of value, much like gold.
 
-While the max supply of `BTC` can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called `cryptocurrency mining`. This predictable increase in `circulating supply` keeps the Bitcoin economy moving.
+Maksimum 'BTC' arzı 21 milyonu geçemez ve piyasaya düzenli aralıklarla yeni para birimi eklenir. Altın madenciliği gibi, yeni Bitcoin de 'kripto para madenciliği' adı verilen zahmetli bir süreçle çıkarılır. This predictable increase in `circulating supply` keeps the Bitcoin economy moving.
 
 Bitcoin's fixed `monetary policy` makes it an attractive asset for those seeking to preserve value in the long term, allowing them to keep up with rising costs.
 
