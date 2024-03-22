@@ -141,15 +141,15 @@ It’s short term value remains volatile due to market speculation.
 
 How does Bitcoin promote value preservation in the long term?
 
-- [ ] Using a max supply cap.
+- [ ] Maksimum arz üst sınırı kullanarak.
 
-> Correct! Bitcoin's fixed supply creates scarcity similar to precious metals. This aids value retention.
+> Doğru! Bitcoin'in sabit arzı, değerli metallere benzer bir kıtlık oluşturur. Bu da değerin korunmasına yardımcı olur.
 
-- [ ] By removing custodians.
+- [ ] Üçüncü taraf emanetçileri kaldırarak.
 
-> Try again! Custody relates to ownership, rather than value.
+> Yeniden deneyin! Custody relates to ownership, rather than value.
 
-# Digital Gold: Self-Custody
+# Dijital Altın: Gözetimsizlik
 
 🧊 Has your bank frozen your funds without notice because you performed a transfer that they didn’t like?
 
