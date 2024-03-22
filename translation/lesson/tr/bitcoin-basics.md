@@ -171,22 +171,22 @@ How does self-custody enable true ownership?
 
 - [ ] By giving you sole access to your assets.
 
-> Correct! Anyone with access to our assets has the ability to confiscate them.
+> Doğru! Anyone with access to our assets has the ability to confiscate them.
 
 - [ ] By allowing custodians to access to your assets.
 
-> Try again! Self-custody means there is no custodian (third party) that can access our assets.
+> Yeniden deneyin! Gözetimsizlik, varlıklarımıza erişebilecek bir emanetçi (üçüncü taraf) olmadığı anlamına gelir.
 
-# Bitcoin: It’s like Emailing Money!
+# Bitcoin: E-postayla Para Göndermek Gibi!
 
-⌛ Have you ever had to wait several working days to send money internationally, while paying 3-5% in fees?
+⌛ Hiç uluslararası para göndermek için birkaç iş günü beklemek ve %3-5 ücret ödemek zorunda kaldınız mı?
 
 ***
 
-Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.
+E-posta, postane ihtiyacını ortadan kaldırarak mektup göndermeyi kolaylaştırdı. Benzer bir şekilde Bitcoin de bankalara olan ihtiyacı ortadan kaldırarak para gönderimini kolaylaştırdı.
 
 - ⚡ Transfer Bitcoin globally for a reasonable fee.
-- ⚙️ Send money 24/7. No waiting, no paperwork, no downtime.
+- ⚙️ 7/24 para gönderin. No waiting, no paperwork, no downtime.
 - 📡 Access Bitcoin from anywhere with an internet connection.
 
 In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (we’ll show you how to customize this later!)
