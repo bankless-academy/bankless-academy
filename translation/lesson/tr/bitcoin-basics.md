@@ -100,20 +100,20 @@ Günlük tasarruf ve harcamalar için kullanılan 'ticari bankalar' da harcama a
 
 ***
 
-For money to once again support financial freedom, it must regain the two key properties it has lost over time:
+Paranın yeniden finansal özgürlüğü destekleyebilmesi için zaman içinde kaybettiği iki temel özelliği yeniden kazanması gerekir:
 
-- 💎 **Value:** Money must reliably store its worth over time.
-- ✊ **Ownership:** Money must be easy to store and protect ourselves.
+- 💎 **Değer:** Para, zaman içinde değerini eksiksiz bir biçimde korumalıdır.
+- ✊ **Mülkiyet:** Parayı kendimiz saklamak ve korumak kolay olmalıdır.
 
-Only these qualities can restore our ability to freely save and spend our money.
+Yalnızca bu nitelikler, paramızı özgürce biriktirme ve harcama yeteneğimizi geri getirebilir.
 
 # Enter Bitcoin
 
-`Satoshi Nakamoto` thought that money was too important to be controlled by just a few people. He wanted to create a type of money that could be fair and reliable for everyone.
+'Satoshi Nakamoto', paranın sadece birkaç kişi tarafından kontrol edilemeyecek kadar önemli olduğunu düşünüyordu. Herkes için adil ve güvenilir olabilecek bir para türü yaratmak istedi.
 
 Enter Bitcoin (`BTC`): a digital currency that operates beyond the traditional banking system.
 
-- ⛓️ It’s `peer-to-peer`: It connects people directly to each other. Automated using `blockchain technology`, it removes need for institutions to facilitate storage or transactions. Advocates call it “a set of rules with no rulers”.
+- ⛓️ It’s `peer-to-peer`: It connects people directly to each other. Automated using `blockchain technology`, it removes need for institutions to facilitate storage or transactions. Savunucuları ona "yöneticisi olmayan kurallar bütünü" diyor.
 - 💎 It’s `scarce`: With no central bank issuing unlimited new money, Bitcoin has a stable, predictable monetary policy that honors long-term saving.
 - ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. When stored in its natural state, Bitcoin is held in a secure online safe and only the owner has access.
 
