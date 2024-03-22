@@ -33,13 +33,13 @@ Welcome, bold Explorer, to the frontier of digital innovation.
 
 At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to navigate the blockchain universe and “go bankless!”
 
-Today, we’re looking at the `cryptocurrency` that started it all: Bitcoin.
+Bugün, her şeyi başlatan "kripto para birimine" bakıyoruz: Bitcoin.
 
-Bitcoin is a new type of money. It increases financial freedom for those who hold it, and protects their hard-earned money from losing value over time.
+Bitcoin, yeni bir para türüdür. It increases financial freedom for those who hold it, and protects their hard-earned money from losing value over time.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
 
-# Bitcoin’s Story
+# Bitcoin'in Hikayesi
 
 Launched in 2009 by the mysterious “`Satoshi Nakamoto`,” Bitcoin marked the beginning of a new economic era.
 
