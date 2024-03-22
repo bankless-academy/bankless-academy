@@ -129,37 +129,38 @@ Pour ses qualités, le Bitcoin a gagné le surnom de « l'or numérique ».
 
 La rareté du bitcoin fait référence au nombre maximal de Bitcoins pouvant exister, soit 21 millions au maximum. Cette `offre maximale` est intégrée dans son code, ce qui rend le Bitcoin rare et potentiellement précieux. Cela le place dans une bonne position en tant que réserve de valeur à long terme, à l'instar de l'or.
 
-While the max supply of `BTC` can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called `cryptocurrency mining`. This predictable increase in `circulating supply` keeps the Bitcoin economy moving.
+Alors que l'offre maximale de `BTC` ne peut pas dépasser 21 millions, de nouvelles devises sont régulièrement ajoutées aux marchés financiers. Tout comme l'extraction d'or, le nouveau Bitcoin est introduit par un processus laborieux appelé `minage de cryptomonnaies`. Cette augmentation prévisible de l'offre en circulation permet à l'économie du Bitcoin de se développer.
 
-Bitcoin's fixed `monetary policy` makes it an attractive asset for those seeking to preserve value in the long term, allowing them to keep up with rising costs.
+La `politique monétaire` fixe du Bitcoin en fait un atout attrayant pour ceux qui cherchent à préserver la valeur à long terme, leur permettant de suivre la hausse des coûts.
 
-It’s short term value remains volatile due to market speculation.
+Sa valeur à court terme reste volatile en raison de la spéculation du marché.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
 # Knowledge Check 2
 
-How does Bitcoin promote value preservation in the long term?
+Comment Bitcoin favorise-t-il la préservation de la valeur à long terme ?
 
-- [ ] Using a max supply cap.
+- [ ] En utilisant un plafond d'offre maximale.
 
-> Correct! Bitcoin's fixed supply creates scarcity similar to precious metals. This aids value retention.
+> Correct ! L'offre fixe de Bitcoin crée une rareté similaire à celle des métaux précieux. Cela aide à la conservation de la valeur.
 
-- [ ] By removing custodians.
+- [ ] En supprimant les gardiens financiers.
 
-> Try again! Custody relates to ownership, rather than value.
+> Veuillez réessayer ! La garde financière concerne la propriété plutôt que la valeur.
 
-# Digital Gold: Self-Custody
+# L'or numérique : l'autodétention
 
-🧊 Has your bank frozen your funds without notice because you performed a transfer that they didn’t like?
+🧊 Votre banque vous a-t-elle déjà bloqué vos fonds sans préavis parce que vous aviez effectué un virement qui ne lui convenait pas ?
 
 ***
 
-In democracies, ownership is a protected human right because it gives citizens increased control and freedom over their lives. We cannot act freely when our means of survival are conditional — judged by businesses or institutions.
+Dans les démocraties, la propriété est un droit de l'homme protégé car elle permet aux citoyens de mieux contrôler leur vie et d'être plus libres.
+Nous ne pouvons pas agir librement lorsque nos moyens de survie sont conditionnels, jugés par des entreprises ou des institutions.
 
-As our assets are increasingly digitized (i.e. your money, your property, and even your identity), our lives are taking on a digital quality that we must learn to protect.
+Alors que nos biens sont de plus en plus numérisés (c'est-à-dire notre argent, nos biens et même notre identité), nos vies prennent une dimension numérique que nous devons apprendre à protéger.
 
-Bitcoin’s `self-custody` offers true digital ownership, beyond reach of `custodians`. So long as you don’t share your account information with someone else, you have sole access to your assets. It’s like having your own vault of gold in a secure online space.
+L'`autodétention` de Bitcoin offre une véritable propriété numérique, hors de portée des `dépositaires`. So long as you don’t share your account information with someone else, you have sole access to your assets. It’s like having your own vault of gold in a secure online space.
 
 This system of ownership gives you total control of your digital wealth — anywhere in the world, any time.
 
