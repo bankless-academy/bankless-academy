@@ -161,7 +161,7 @@ export default async function handler(
         })
         // TODO: flag in DB
       }
-      if (numberOfRecentTx?.length >= 10) {
+      if (numberOfRecentTx?.length >= 50) {
         trackBE(address, 'badge_overload', {
           error: numberOfRecentTx,
           badgeId,
