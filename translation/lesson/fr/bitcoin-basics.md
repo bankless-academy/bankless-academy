@@ -29,92 +29,92 @@ ________________________________________________________________________________
 
 # Bienvenue à Bankless Academy
 
-Welcome, bold Explorer, to the frontier of digital innovation.
+Bienvenue, explorateur audacieux, à la frontière de l'innovation numérique.
 
-At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to navigate the blockchain universe and “go bankless!”
+À la Bankless Academy, notre mission est de fournir aux explorateurs tels que vous les meilleurs outils et connaissances pour naviguer dans l'univers de la blockchain et "go bankless!" [se passer de banque]
 
-Today, we’re looking at the `cryptocurrency` that started it all: Bitcoin.
+Aujourd'hui, nous nous penchons sur la "crypto-monnaie" qui a tout déclenché : le Bitcoin.
 
-Bitcoin is a new type of money. It increases financial freedom for those who hold it, and protects their hard-earned money from losing value over time.
+Le bitcoin est un nouveau type de monnaie. Il accroît la liberté financière de ceux qui le détiennent et protège leur argent durement gagné contre la perte de valeur au fil du temps.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
 
-# Bitcoin’s Story
+# Histoire du Bitcoin
 
-Launched in 2009 by the mysterious “`Satoshi Nakamoto`,” Bitcoin marked the beginning of a new economic era.
+Lancé en 2009 par le mystérieux "Satoshi Nakamoto", le Bitcoin a marqué le début d'une nouvelle ère économique.
 
-As the first successful `cryptocurrency`, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!
+En tant que première "crypto-monnaie" à avoir connu le succès, le Bitcoin a lancé un débat important : le contrôle et le pouvoir de l'argent doivent-ils continuer à relever des systèmes bancaires traditionnels ? Ou bien appartient-il aux citoyens qui le gagnent et l'utilisent chaque jour ? Si vous n'êtes pas certain de ce que cela signifie exactement, vous êtes au bon endroit !
 
-The reality is that today, we aren’t in control of our money in the way we think we are. This has very real consequences.
+La réalité, c’est qu’aujourd’hui, nous ne contrôlons pas notre argent comme nous le pensons. Cela a des conséquences très concrètes.
 
-It’s time to learn how Bitcoin is revolutionizing finance.
+Il est temps d'apprendre comment le Bitcoin révolutionne la finance.
 
-**It’s time to rethink money.**
+**Il est temps de repenser l'argent.**
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
 
-# A Brief History of Money
+# Un bref historique de l'argent
 
-Money has been an integral part of society since our earliest days when beads, shells, and stones were used to exchange goods & services.
+L'argent fait partie intégrante de la société depuis les temps les plus reculés où les perles, les coquillages et les pierres étaient utilisés pour échanger des biens et des services.
 
-Yet early currencies had a problem: it was too easy for someone to find/create new money. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.
+Cependant, les premières monnaies avaient un problème : il était trop facile pour quelqu'un de trouver/créer de la nouvelle monnaie. Plus une chose est abondante, moins elle a de valeur, et donc l'argent de chacun perdrait peu à peu de sa valeur. Pour que la monnaie conserve sa valeur, il faut qu'elle soit plus difficile à trouver.
 
-Materials like gold & silver were eventually adopted to solve this problem. The key advantage of these materials was their scarcity – there wasn't an endless supply, making it hard for anyone to increase the amount of money in circulation significantly. This `scarcity` helped maintain the value of money.
+Des matériaux comme l'or et l'argent ont finalement été adoptés pour résoudre ce problème. Le principal avantage de ces matériaux était leur rareté - l'offre n'était pas infinie, ce qui rendait difficile l'augmentation significative de la quantité de monnaie en circulation. Cette `rareté` a contribué à maintenir la valeur de l'argent.
 
-As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Such currency made money recognizable and measurable while serving as a strong store of value.
+Au fur et à mesure que les sociétés se développaient, la banque centrale d'un gouvernement émettait des pièces de monnaie normalisées en or et en argent. Cette monnaie rendait l'argent reconnaissable et mesurable tout en constituant une solide réserve de valeur.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg)
 
 # Knowledge Check 1
 
-True or False:
-”As more money is added to a monetary system, the existing money becomes worth less.”
+Vrai ou faux :
+« À mesure que l'on ajoute de la monnaie à un système monétaire, la monnaie existante perd de sa valeur. »
 
-- [ ] True
+- [ ] Vrai
 
-> Correct! The more money there is, the less value it has.
+> Correct ! Plus il y a d'argent, moins il a de valeur.
 
-- [ ] False
+- [ ] Faux
 
-> Try again.
+> Veuillez réessayer.
 
-# A Brief History of Money (Part 2)
+# Une courte histoire d'argent (partie 2)
 
-With the introduction of paper money, currencies shifted to being 'backed' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.
+Avec l'introduction de la monnaie fiduciaire (papier), les monnaies sont devenues "garantie" par l'or. La valeur de la monnaie était directement liée à une quantité spécifique de métal précieux stocké.
 
-Then, in the 20th century, came the fall of this “`Gold Standard`”.
+Puis, au 20ème siècle, l"`étalon-or`" s'est effondré.
 
-Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.
+Les métaux précieux ont été lentement déconnectés des monnaies du monde entier, ce qui a permis à l'économie de n'importe quel pays de croître au-delà de son stock d'or. Une banque centrale n'ayant plus besoin d'or pour créer de la monnaie, elle pouvait créer autant de nouvelle monnaie qu'elle le jugeait nécessaire pour l'économie de son pays. En contrôlant fermement la masse monétaire, ils pouvaient également contrôler sa valeur.
 
-Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.
+À l'ère du numérique, la monnaie électronique a largement remplacé la monnaie physique. Stocker notre argent avec des banques commerciales nous a donné la commodité des cartes de crédit et des applications de paiement. Bien que facile et sécurisée, cela place également des entreprises à but lucratif entre les individus et leur argent.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg)
 
-# The Problem
+# Le problème
 
-The problem with our current financial system is the lack of control we have over our money, and how this lowers our ability to freely decide what to save and what to spend.
+Le problème de notre système financier actuel est le manque de contrôle que nous avons sur notre argent et le fait que cela réduit notre capacité à décider librement de ce que nous voulons épargner et de ce que nous voulons dépenser.
 
-`Central banks`, the bank managing a country’s `monetary policy`, can introduce any amount of new money. This lack of `scarcity` often makes our money worth less and less each year. Money with an unpredictable, decreasing value often forces us to spend it: **“If my money is going to be worth less every year, why save? I might as well spend it now.”** 💸
+Les `banques centrales`, la banque gérant la `politique monétaire`, peut introduire n'importe quelle somme d'argent nouvelle. Cette absence de `rareté` fait que notre argent vaut souvent de moins en moins chaque année. L'argent avec une valeur imprévisible et décroissante nous oblige souvent à le dépenser: **“Si mon argent va avoir moins de valeur chaque année, pourquoi économiser ? Autant le dépenser maintenant. "** 💸
 
-`Commercial banks`, those used for everyday saving and spending, also influence our spending habits. As a `custodian`, they can block transactions or confiscate our funds. Some banks have blocked their clients from buying cryptocurrency! **If your bank can freeze your life savings at any time… do you truly own your money?** 💸
+Les `banques commerciales`, celles qui sont utilisées pour l'épargne et les dépenses quotidiennes, influencent également nos habitudes de consommation. En tant que `dépositaire`, ils peuvent bloquer les transactions ou confisquer nos fonds. Certaines banques ont empêché leurs clients d'acheter des crypto-monnaies ! **Si votre banque peut geler vos économies à tout moment… êtes-vous vraiment propriétaire de votre argent?** 💸
 
 ***
 
-For money to once again support financial freedom, it must regain the two key properties it has lost over time:
+Pour que l'argent soutienne à nouveau la liberté financière, il doit retrouver les deux propriétés essentielles qu'il a perdues au fil du temps :
 
-- 💎 **Value:** Money must reliably store its worth over time.
-- ✊ **Ownership:** Money must be easy to store and protect ourselves.
+- 💎 **Valeur :** L'argent doit conserver de manière fiable sa valeur au fil du temps.
+- ✊ **Propriété :** L'argent doit être facile à stocker et à nous protéger.
 
-Only these qualities can restore our ability to freely save and spend our money.
+Seules ces qualités peuvent restaurer notre capacité à épargner et à dépenser librement notre argent.
 
-# Enter Bitcoin
+# L'arrivée de Bitcoin
 
-`Satoshi Nakamoto` thought that money was too important to be controlled by just a few people. He wanted to create a type of money that could be fair and reliable for everyone.
+`Satoshi Nakamoto` pensait que l'argent était trop important pour être contrôlé par quelques personnes. Il voulait créer un type d'argent qui soit juste et fiable pour tout le monde.
 
-Enter Bitcoin (`BTC`): a digital currency that operates beyond the traditional banking system.
+L'arrivée de Bitcoin (`BTC`) : une monnaie numérique qui fonctionne en dehors du système bancaire traditionnel.
 
-- ⛓️ It’s `peer-to-peer`: It connects people directly to each other. Automated using `blockchain technology`, it removes need for institutions to facilitate storage or transactions. Advocates call it “a set of rules with no rulers”.
-- 💎 It’s `scarce`: With no central bank issuing unlimited new money, Bitcoin has a stable, predictable monetary policy that honors long-term saving.
+- ⛓️ C'est `pair à pair` : Il connecte directement les gens les uns aux autres. Automatisé à l'aide de la `technologie blockchain`, il supprime le besoin pour les institutions de faciliter le stockage ou les transactions. Ses défenseurs l'appellent "un ensemble de règles sans dirigeants".
+- 💎 C'est `rare` : En l'absence de banque centrale émettant de l'argent frais de manière illimitée, le Bitcoin bénéficie d'une politique monétaire stable et prévisible qui favorise l'épargne à long terme.
 - ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. When stored in its natural state, Bitcoin is held in a secure online safe and only the owner has access.
 
 For its qualities, Bitcoin has earned the nickname “digital gold”.
