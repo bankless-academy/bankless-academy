@@ -1,9 +1,9 @@
 ---
-TITLE: Bitcoin Basics
-DESCRIPTION: What is Bitcoin? Explore the first successful cryptocurrency and rethink money.
-LANGUAGE: English
+TITLE: Les bases du Bitcoin
+DESCRIPTION: Qu'est-ce que le Bitcoin ? Découvrez la première crypto-monnaie à succès et repensez l'argent.
+LANGUAGE: Français
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: Didier Krux
 LINK: https://app.banklessacademy.com/lessons/bitcoin-basics
 FORMAT: LESSON
 ---
@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ***
 
-# Welcome to Bankless Academy
+# Bienvenue à Bankless Academy
 
 Welcome, bold Explorer, to the frontier of digital innovation.
 
