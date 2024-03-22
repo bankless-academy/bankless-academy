@@ -160,76 +160,76 @@ Nous ne pouvons pas agir librement lorsque nos moyens de survie sont conditionne
 
 Alors que nos biens sont de plus en plus numérisés (c'est-à-dire notre argent, nos biens et même notre identité), nos vies prennent une dimension numérique que nous devons apprendre à protéger.
 
-L'`autodétention` de Bitcoin offre une véritable propriété numérique, hors de portée des `dépositaires`. So long as you don’t share your account information with someone else, you have sole access to your assets. It’s like having your own vault of gold in a secure online space.
+L'`autodétention` de Bitcoin offre une véritable propriété numérique, hors de portée des `dépositaires`. Tant que vous ne partagez pas les informations de votre compte avec quelqu’un d’autre, vous avez un accès exclusif à vos actifs. C'est comme avoir votre propre coffre-fort d'or dans un espace en ligne sécurisé.
 
-This system of ownership gives you total control of your digital wealth — anywhere in the world, any time.
+Ce système de propriété vous permet de contrôler totalement votre patrimoine numérique, partout dans le monde et à tout moment.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg)
 
 # Knowledge Check 3
 
-How does self-custody enable true ownership?
+Comment l'autodétention permet-elle une véritable propriété?
 
-- [ ] By giving you sole access to your assets.
+- [ ] En vous donnant un accès exclusif à vos actifs.
 
-> Correct! Anyone with access to our assets has the ability to confiscate them.
+> Correct ! Toute personne ayant accès à nos biens a la possibilité de les confisquer.
 
-- [ ] By allowing custodians to access to your assets.
+- [ ] En permettant aux dépositaires d'accéder à vos actifs.
 
-> Try again! Self-custody means there is no custodian (third party) that can access our assets.
+> Veuillez réessayer ! L'autodétention signifie qu'il n'y a pas de dépositaire (tiers) qui puisse accéder à nos actifs.
 
-# Bitcoin: It’s like Emailing Money!
+# Bitcoin : c'est comme envoyer de l'argent par e-mail !
 
-⌛ Have you ever had to wait several working days to send money internationally, while paying 3-5% in fees?
+⌛ Avez-vous déjà dû attendre plusieurs jours ouvrables pour envoyer de l'argent à l'international, tout en payant 3-5% de frais ?
 
 ***
 
-Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.
+L'e-mail a simplifié l'envoi de lettres en supprimant le besoin d'un bureau de poste. De la même manière, le Bitcoin a simplifié l'envoi d'argent en supprimant le recours aux banques.
 
-- ⚡ Transfer Bitcoin globally for a reasonable fee.
-- ⚙️ Send money 24/7. No waiting, no paperwork, no downtime.
-- 📡 Access Bitcoin from anywhere with an internet connection.
+- ⚡ Transférer des Bitcoins dans le monde entier pour une somme raisonnable.
+- ⚙️ Envoyez de l'argent 24 heures sur 24, 7 jours sur 7. Pas d'attente, pas de paperasse, pas d'interruption.
+- 📡 Accéder à Bitcoin de n'importe où avec une connexion Internet.
 
-In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (we’ll show you how to customize this later!)
+De la même manière que vous avez une adresse électronique, une seule adresse Bitcoin est nécessaire pour recevoir des bitcoins. Par défaut, il ressemble à ceci : _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (nous vous montrerons comment le personnaliser plus tard !)
 
-You’ll manage your account using `cryptocurrency wallet` software connected to your web browser or your phone. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!
+Vous gérerez votre compte à l'aide d'un logiciel `portefeuille de crypto-monnaies` connecté à votre navigateur Web ou à votre téléphone. C’est le “compte bancaire” le plus simple que vous ayez jamais créé. Aucun rendez-vous ni pièce d'identité requis !
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
 # Knowledge Check 4
 
-How is Bitcoin similar to email?
+En quoi Bitcoin est-il similaire à l'e-mail ?
 
-- [ ] Both are online 24/7.
+- [ ] Les deux sont en ligne 24 heures sur 24 et 7 jours sur 7.
 
-> Right! But this isn’t the only correct answer.
+> C'est vrai ! Mais ce n'est pas la seule réponse correcte.
 
-- [ ] Both are digital technologies.
+- [ ] Tous deux sont des technologies numériques.
 
-> Right! But this isn’t the only correct answer.
+> C'est vrai ! Mais ce n'est pas la seule réponse correcte.
 
-- [ ] Both can be accessed with a phone.
+- [ ] Tous deux sont accessibles par téléphone.
 
-> Right! But this isn’t the only correct answer.
+> C'est vrai ! Mais ce n'est pas la seule réponse correcte.
 
-- [ ] All of the above.
+- [ ] Toutes les réponses ci-dessus.
 
-> Correct! Both Bitcoin and email innovate on the services that came before them.
+> Correct ! Tant le Bitcoin que l'e-mail innovent sur les services qui les ont précédés.
 
-# The Bitcoin Network
+# Le réseau Bitcoin
 
-Let’s switch gears and look at the engine behind Bitcoin:
-**The Bitcoin Network**.
+Passons à la vitesse supérieure et regardons le moteur derrière le Bitcoin :
+**Le réseau Bitcoin**.
 
-Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.
+Bitcoin fonctionne sur un réseau partagé, hébergé par des milliers d'ordinateurs dans le monde entier. Chaque ordinateur du réseau joue un rôle dans le maintien de son fonctionnement ; le réseau existe grâce à ces ordinateurs ! Si un ordinateur effectue une transaction frauduleuse, les autres sont là pour la corriger.
 
-This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.
+Cela signifie également qu'il n'y a pas de point de pression unique en cas de tentative de piratage. Pour que le réseau puisse être contrôlé, il faudrait que la majorité des ordinateurs soient compromis.
 
-This defense strategy is called `decentralization`: the shifting of control from one central group to many smaller ones. It’s what makes cryptocurrency networks virtually unstoppable.
+Cette stratégie de défense est appelée `décentralisation` : le transfert du contrôle d'un groupe central à plusieurs plus petits. C'est ce qui rend les réseaux de crypto-monnaies pratiquement inarrêtables.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg)
 
-# Bitcoin Mining
+# Minage de Bitcoin
 
 With the Bitcoin Network having no central bank, the network relies on its `decentralized` participants. Known as `miners`, these participants are constantly checking transactions and adding them to a “database” — the `blockchain`.
 
