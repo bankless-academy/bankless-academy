@@ -33,19 +33,21 @@ This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons
 
 ## Key Takeaways
 
-> - A `crypto wallet` is an account on a `blockchain`.
+> - You’ll need a `crypto wallet` to access the world of blockchains!
 >
-> - A wallet is used to store digital assets and log into blockchain apps.
+> - A wallet is like a `blockchain` account.
 >
-> - Wallets work on both computers and phones.
+> - Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.
 >
-> - Creating a wallet is easy and takes around 5 minutes.
+> - These wallets work on both computers and phones.
+>
+> - Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!
 
 ## What is a Crypto Wallet?
 
 Crypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.
 
-Wallets are more than accounts for holding cryptocurrency. They’re our connection with a blockchain. Wallets are used to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some calling them your digital identity.
+It gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
 
 Wallets come with two core pieces of account information:
 
