@@ -1,9 +1,9 @@
 ---
 TITLE: Bitcoin Basics
-DESCRIPTION: What is Bitcoin? Explore the first successful cryptocurrency and rethink money.
-LANGUAGE: English
+DESCRIPTION: Bitcoin nedir? Explore the first successful cryptocurrency and rethink money.
+LANGUAGE: Türkçe
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: İlknur Beyaz
 LINK: https://app.banklessacademy.com/lessons/bitcoin-basics
 FORMAT: LESSON
 ---
@@ -43,21 +43,21 @@ Bitcoin, yeni bir para türüdür. It increases financial freedom for those who 
 
 Launched in 2009 by the mysterious “`Satoshi Nakamoto`,” Bitcoin marked the beginning of a new economic era.
 
-As the first successful `cryptocurrency`, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!
+İlk başarılı \`kripto para birimi' olan Bitcoin güçlü bir tartışma başlattı: Paranın kontrolü ve gücü geleneksel bankacılık sistemlerinde kalmaya mı devam etmeli? Yoksa her gün onu kazanan ve kullanan vatandaşlara mı ait olmalı? Bunun tam olarak ne anlama geldiğinden emin değilseniz doğru yerdesiniz!
 
-The reality is that today, we aren’t in control of our money in the way we think we are. This has very real consequences.
+Gerçek şu ki, günümüzde paramızın kontrolü sandığımız gibi bizim elimizde değil. This has very real consequences.
 
-It’s time to learn how Bitcoin is revolutionizing finance.
+Bitcoin'in finansta nasıl devrim yarattığını öğrenmenin zamanı geldi.
 
 **It’s time to rethink money.**
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
 
-# A Brief History of Money
+# Paranın Kısa Tarihi
 
 Money has been an integral part of society since our earliest days when beads, shells, and stones were used to exchange goods & services.
 
-Yet early currencies had a problem: it was too easy for someone to find/create new money. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.
+Ancak ilk para birimlerinin bir sorunu vardı; insanların yeni para bulması/yaratması çok kolaydı. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.
 
 Materials like gold & silver were eventually adopted to solve this problem. The key advantage of these materials was their scarcity – there wasn't an endless supply, making it hard for anyone to increase the amount of money in circulation significantly. This `scarcity` helped maintain the value of money.
 
@@ -70,15 +70,15 @@ As societies grew, a government’s central bank would issue standardized coins 
 True or False:
 ”As more money is added to a monetary system, the existing money becomes worth less.”
 
-- [ ] True
+- [ ] Doğru
 
-> Correct! The more money there is, the less value it has.
+> Doğru! The more money there is, the less value it has.
 
-- [ ] False
+- [ ] Yanlış
 
-> Try again.
+> Yeniden deneyin.
 
-# A Brief History of Money (Part 2)
+# Paranın Kısa Tarihi (Bölüm 2)
 
 With the introduction of paper money, currencies shifted to being 'backed' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.
 
