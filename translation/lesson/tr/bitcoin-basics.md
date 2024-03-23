@@ -232,7 +232,7 @@ Bu savunma stratejisine 'merkeziyetsizlik' adı verilir: kontrolün tek bir merk
 
 Bitcoin Ağının merkez bankası olmadığından ağ, 'merkezi olmayan' katılımcılarına güvenir. 'Madenciler' olarak bilinen bu katılımcılar, işlemleri sürekli kontrol ederek bir "veri tabanı" olan "blok zincirine" ekler.
 
-Ağı dolandırıcılıktan korumak için bu madencilerin aktif ve dürüst davranmaya motive edilmesi önemlidir. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as “block rewards”, for their work.
+Ağı dolandırıcılıktan korumak için bu madencilerin aktif ve dürüst davranmaya motive edilmesi önemlidir. Miners frequently double-check each other’s results, but are also rewarded for the work they do. Bitcoin işlemleri gönderdiğimizde, işlemimizin madencisine verilen küçük bir ücret öderiz. Madenciler ayrıca çalışmaları karşılığında "blok ödülleri" olarak bilinen yeni Bitcoin kazanırlar.
 
 These rewards slowly increase Bitcoin’s `circulating supply` within the `max supply` cap of 21 million `BTC`.
 
