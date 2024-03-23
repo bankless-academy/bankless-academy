@@ -186,53 +186,53 @@ How does self-custody enable true ownership?
 E-posta, postane ihtiyacını ortadan kaldırarak mektup göndermeyi kolaylaştırdı. Benzer bir şekilde Bitcoin de bankalara olan ihtiyacı ortadan kaldırarak para gönderimini kolaylaştırdı.
 
 - ⚡ Transfer Bitcoin globally for a reasonable fee.
-- ⚙️ 7/24 para gönderin. No waiting, no paperwork, no downtime.
-- 📡 Access Bitcoin from anywhere with an internet connection.
+- ⚙️ 7/24 para gönderin. Beklemek yok, evrak işi yok, kesinti yok.
+- 📡 Bitcoin't internet bağlantısı olan her yerden erişin.
 
-In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (we’ll show you how to customize this later!)
+Bitcoin almak için tıpkı bir e-posta adresiniz olduğu gibi tek bir Bitcoin adresi gereklidir. Varsayılan olarak şöyle görünür: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (bunu nasıl özelleştireceğinizi daha sonra göstereceğiz!)
 
-You’ll manage your account using `cryptocurrency wallet` software connected to your web browser or your phone. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!
+Hesabınızı web tarayıcınıza veya telefonunuza bağlı 'kripto para cüzdanı' yazılımını kullanarak yöneteceksiniz. Bu, kuracağınız en kolay "banka hesabıdır". Randevu ya da kimlik gerekmez!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
 # Knowledge Check 4
 
-How is Bitcoin similar to email?
+Bitcoin neden e-postaya benziyor?
 
-- [ ] Both are online 24/7.
+- [ ] Her ikisi de 7/24 çevrimiçi.
 
-> Right! But this isn’t the only correct answer.
+> Doğru! Ancak bu, tek doğru cevap değil.
 
-- [ ] Both are digital technologies.
+- [ ] Her ikisi de dijital teknolojilerdir.
 
-> Right! But this isn’t the only correct answer.
+> Doğru! Ancak bu, tek doğru cevap değil.
 
-- [ ] Both can be accessed with a phone.
+- [ ] Her ikisine de telefonla erişilebilir.
 
-> Right! But this isn’t the only correct answer.
+> Doğru! Ancak bu, tek doğru cevap değil.
 
-- [ ] All of the above.
+- [ ] Yukarıdakilerin hepsi.
 
-> Correct! Both Bitcoin and email innovate on the services that came before them.
+> Doğru! Hem Bitcoin hem de e-posta, kendilerinden önce gelen hizmetlerle ilgili yenilikler getiriyor.
 
-# The Bitcoin Network
+# Bitcoin Ağı
 
-Let’s switch gears and look at the engine behind Bitcoin:
-**The Bitcoin Network**.
+Hadi konuyu değiştirelim ve Bitcoin'in arkasındaki motora bakalım:
+**Bitcoin Ağı**.
 
-Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.
+Bitcoin, dünya çapında binlerce bilgisayarda barındırılan paylaşımlı bir ağ üzerinde çalışır. Ağdaki her bilgisayar ağın işleyişinin sürdürülmesinde rol oynar; ağ, bu bilgisayarlar aracılığıyla var olur! If one computer processes a fraudulent transaction, the others are there to correct it.
 
-This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.
+Bu aynı zamanda hack girişimlerinde baskı uygulanacak tek bir nokta olmadığı anlamına gelir. Ağın kontrol edilebilmesi için bilgisayarların çoğu, tehlikeye girmiş olmalıdır.
 
-This defense strategy is called `decentralization`: the shifting of control from one central group to many smaller ones. It’s what makes cryptocurrency networks virtually unstoppable.
+Bu savunma stratejisine 'merkeziyetsizlik' adı verilir: kontrolün tek bir merkezi gruptan çok sayıda küçük gruba geçmesi. It’s what makes cryptocurrency networks virtually unstoppable.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg)
 
-# Bitcoin Mining
+# Bitcoin Madenciliği
 
-With the Bitcoin Network having no central bank, the network relies on its `decentralized` participants. Known as `miners`, these participants are constantly checking transactions and adding them to a “database” — the `blockchain`.
+Bitcoin Ağının merkez bankası olmadığından ağ, 'merkezi olmayan' katılımcılarına güvenir. 'Madenciler' olarak bilinen bu katılımcılar, işlemleri sürekli kontrol ederek bir "veri tabanı" olan "blok zincirine" ekler.
 
-It’s important that these miners are motivated to be active and honest, to protect the network from fraud. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as “block rewards”, for their work.
+Ağı dolandırıcılıktan korumak için bu madencilerin aktif ve dürüst davranmaya motive edilmesi önemlidir. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as “block rewards”, for their work.
 
 These rewards slowly increase Bitcoin’s `circulating supply` within the `max supply` cap of 21 million `BTC`.
 
