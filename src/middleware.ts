@@ -12,7 +12,7 @@ export default function middleware(request: NextRequest): NextResponse {
   console.log('url', request.url)
   console.log('userAgent', ua)
   if (ua.ua.includes('python') || ua.ua.includes('curl') || (
-    ua.ua.includes('Mozilla') && ua.ua.includes('Chrome') && ua.ua.includes('Safari')
+    ua.ua.includes('Mozilla') && ua.ua.includes('Chrome')
   )) {
     if (request.url.includes('/api/passport')) return NextResponse.next()
     else return NextResponse.redirect(new URL('/maintenance', request.url))
