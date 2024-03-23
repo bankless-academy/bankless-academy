@@ -236,7 +236,7 @@ Ağı dolandırıcılıktan korumak için bu madencilerin aktif ve dürüst davr
 
 These rewards slowly increase Bitcoin’s `circulating supply` within the `max supply` cap of 21 million `BTC`.
 
-It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies. Everything is managed by community-approved computer code — “rules with no rulers” — and decentralized participants, rather than small groups of people at the `central bank`.
+It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies. Her şey, 'merkez bankasındaki' küçük insan grupları yerine, topluluk tarafından onaylanmış bilgisayar kodu ("yöneticisi olmayan kurallar") ve merkeziyetsiz katılımcılar tarafından yönetilir.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg)
 
