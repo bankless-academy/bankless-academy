@@ -263,19 +263,19 @@ Merkeziyetsizlik nedir?
 
 - [ ] Distribution of control across multiple participants.
 
-> Correct! This distribution protects the network and its users.
+> Doğru! Bu dağıtım sistemi, ağı ve kullanıcılarını korur.
 
-- [ ] The rewards earned by miners.
+- [ ] Madenciler tarafından kazanılan ödüller.
 
-> Try again! Miners are rewarded with transaction fees and block rewards.
+> Yeniden deneyin! Madenciler, işlem ücretleri ve blok ödülleri ile ödüllendirilir.
 
 # Knowledge Check 6
 
 How does mining protect the Bitcoin Network from fraud?
 
-- [ ] By rewarding miners for checking transactions.
+- [ ] İşlemleri kontrol eden madencileri ödüllendirerek.
 
-> Correct! Bitcoin rewards attract miners and incentivize them to act honestly.
+> Doğru! Bitcoin rewards attract miners and incentivize them to act honestly.
 
 - [ ] By increasing the circulating supply of Bitcoin.
 
