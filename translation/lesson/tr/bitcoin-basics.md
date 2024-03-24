@@ -247,19 +247,19 @@ Understanding the exact mechanisms that power Bitcoin transactions and mining ca
 We’ll take a simplified view of the process for today:
 
 1. You submit a transaction using your `cryptocurrency wallet`, sending 0.1 `BTC` to your friend’s wallet address.
-2. A miner checks your transaction for errors. Other miners double-check their results.
-3. If approved, your transaction is added to the `blockchain` “database”.
-4. Your friend receives 0.1 BTC in their wallet.
+2. Bir madenci işleminizde hata olup olmadığını kontrol eder. Other miners double-check their results.
+3. Onaylanırsa işleminiz, 'blok zinciri' "veri tabanına" eklenir.
+4. Arkadaşınız cüzdanına 0,1 BTC alır.
 
 [embed](https://app.banklessacademy.com/animation/bitcoin)
 
 # Knowledge Check 5
 
-What is decentralization?
+Merkeziyetsizlik nedir?
 
-- [ ] Increased scarcity.
+- [ ] Kıtlığın artması.
 
-> Try again! Scarcity means an asset is in low supply.
+> Yeniden deneyin! Kıtlık, bir varlığın arzının düşük olması demektir.
 
 - [ ] Distribution of control across multiple participants.
 
