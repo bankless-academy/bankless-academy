@@ -1,6 +1,6 @@
 ---
 TITLE: Bitcoin Basics
-DESCRIPTION: Bitcoin nedir? Explore the first successful cryptocurrency and rethink money.
+DESCRIPTION: Bitcoin nedir? İlk başarılı kripto para birimini keşfedin ve para ile ilgili düşüncelerinizi gözden geçirin.
 LANGUAGE: Türkçe
 WRITERS: Tetranome
 TRANSLATORS: İlknur Beyaz
@@ -27,15 +27,15 @@ ________________________________________________________________________________
 
 ***
 
-# Welcome to Bankless Academy
+# Bankless Academy'e hoş geldiniz
 
-Welcome, bold Explorer, to the frontier of digital innovation.
+Merhaba cesur Kaşifler, dijital inovasyonun sınır çizgisine hoş geldiniz.
 
-At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to navigate the blockchain universe and “go bankless!”
+Bankless Academy'de misyonumuz, sizin gibi Kaşiflere blok zinciri evreninde gezinmek ve "bankasızlaşmak" için en iyi araçları ve bilgileri sağlamaktır!
 
-Bugün, her şeyi başlatan "kripto para birimine" bakıyoruz: Bitcoin.
+Bugün, her şeyi başlatan 'kripto para birimini' inceliyoruz: Bitcoin.
 
-Bitcoin, yeni bir para türüdür. It increases financial freedom for those who hold it, and protects their hard-earned money from losing value over time.
+Bitcoin, yeni bir para türüdür. Bu para birimini kullananların finansal özgürlüğünü artırır ve zor kazandıkları paralarını, zaman içinde oluşacak değer kaybına karşı korur.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
 
@@ -43,7 +43,7 @@ Bitcoin, yeni bir para türüdür. It increases financial freedom for those who 
 
 2009 yılında gizemli "Satoshi Nakamoto" tarafından piyasaya sürülen Bitcoin, yeni bir ekonomi çağının başlangıcı oldu.
 
-İlk başarılı 'kripto para birimi' olan Bitcoin güçlü bir tartışma başlattı: Paranın kontrolü ve gücü geleneksel bankacılık sistemlerinde kalmaya mı devam etmeli? Yoksa her gün onu kazanan ve kullanan vatandaşlara mı ait olmalı? Bunun tam olarak ne anlama geldiğinden emin değilseniz doğru yerdesiniz!
+As the first successful `cryptocurrency`, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Yoksa her gün onu kazanan ve kullanan vatandaşlara mı ait olmalı? Bunun tam olarak ne anlama geldiğinden emin değilseniz doğru yerdesiniz!
 
 Gerçek şu ki, günümüzde paramızın kontrolü sandığımız gibi bizim elimizde değil. Bunun da oldukça ciddi sonuçları var.
 
@@ -55,13 +55,13 @@ Bitcoin'in finansta nasıl devrim yarattığını öğrenmenin zamanı geldi.
 
 # Paranın Kısa Tarihi
 
-Mal ve hizmet alışverişinde boncukların, deniz kabuklarının ve taşların kullanıldığı en eski zamanlardan bu yana para, toplumun ayrılmaz bir parçası olmuştur.
+Mal ve hizmet alışverişinde boncukların, deniz kabuklarının ve taşların kullanıldığı en eski zamanlardan bu yana para, toplumun ayrılmaz bir parçası oldu.
 
 Ancak ilk para birimlerinin bir sorunu vardı; insanların yeni para bulması/yaratması çok kolaydı. Bir şeyden ne kadar çok varsa değeri o kadar az olur ve bu nedenle, herkesin parası yavaş yavaş daha az değerli hale gelir. Para değerini koruyacaksa bulunması daha zor olmalıdır.
 
-Sonunda bu sorunu çözmek için altın ve gümüş gibi malzemeler kullanılmaya başlandı. Bu malzemelerin en önemli avantajı kıt olmalarıydı; sonsuz bir arz yoktu, bu da birinin dolaşımdaki para miktarını önemli ölçüde artırmasını zorlaştırıyordu. Bu "kıtlık", paranın değerinin korunmasına yardımcı oldu.
+Sonunda bu sorunu çözmek için altın ve gümüş gibi maddeler kullanılmaya başlandı. Bu maddelerin en önemli avantajı, sınırlı miktarda bulunmalarıydı (kıtlık); sonsuz bir arz olmaması insanların, dolaşımdaki para miktarını önemli ölçüde artırmasını zorlaştırıyordu. Bu 'kıtlık', paranın değerinin korunmasına yardımcı oldu.
 
-As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Bu tür bir para birimi, parayı tanınabilir ve ölçülebilir hale getirirken güçlü bir değer deposu işlevi gördü.
+Toplumlar büyüdükçe, hükümetlerin merkez bankaları, altın ve gümüşten yapılmış standart madeni paralar çıkarıyordu. Bu para birimi, parayı tanınabilir ve ölçülebilir hale getirirken güçlü bir değer deposu işlevi gördü.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg)
 
@@ -72,7 +72,7 @@ Doğru ya da Yanlış:
 
 - [ ] Doğru
 
-> Doğru! Para ne kadar çoksa değeri o kadar az olur.
+> Doğru! Para ne kadar çoksa değeri o kadar azdır.
 
 - [ ] Yanlış
 
@@ -80,7 +80,7 @@ Doğru ya da Yanlış:
 
 # Paranın Kısa Tarihi (Bölüm 2)
 
-Kağıt paranın kullanılmaya başlanmasıyla birlikte para birimleri altınla 'desteklenmeye' başladı. Money’s value was directly linked to a specific amount of the precious metal held in storage.
+Kağıt paranın kullanıma alınmasıyla birlikte para birimleri altınla 'desteklenmeye' başladı. Money’s value was directly linked to a specific amount of the precious metal held in storage.
 
 Ardından, 20. yüzyılda, bu "Altın Standardı" çöktü.
 
@@ -277,21 +277,21 @@ How does mining protect the Bitcoin Network from fraud?
 
 > Doğru! Bitcoin rewards attract miners and incentivize them to act honestly.
 
-- [ ] By increasing the circulating supply of Bitcoin.
+- [ ] Dolaşımdaki Bitcoin arzını artırarak.
 
-> Try again! Supply increases don’t help to prevent fraud.
+> Yeniden deneyin! Arzda artış, dolandırıcılığı önlemeye yardımcı olmaz.
 
-- [ ] Both of the above.
+- [ ] Yukarıdakilerin ikisi de.
 
-> Try again! Only one of the above helps to prevent fraud.
+> Yeniden deneyin! Yukarıdakilerden yalnızca biri dolandırıcılığı önlemeye yardımcı olur.
 
 # The Innovation of Money
 
 In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value, and how institutional management of our assets means giving up full ownership.
 
-However Bitcoin has evolved beyond a simple monetary tool. It has become a catalyst for a `decentralized money` revolution. This movement reimagines the traditional financial system by distributing monetary power and control to those who use it.
+Ancak Bitcoin basit bir parasal aracın ötesine geçmiştir. 'Merkeziyetsiz para' devrimi için bir katalizör haline gelmiştir. Bu hareket, parasal gücü ve kontrolü onu kullananlara dağıtarak geleneksel finansal sistemini yeniden tasarlar.
 
-By decentralizing money and removing `custodians` we can:
+İşte parayı merkeziyetsiz hale getirerek ve 'emanetçi' ihtiyacını ortadan kaldırarak yapabileceklerimiz:
 
 - 💵 Host a 24/7 global marketplace, secured by citizens around the world.
 - 🛠️ Offer financial tools to the unbanked regions of the globe.
