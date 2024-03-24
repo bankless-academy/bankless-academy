@@ -80,11 +80,11 @@ Doğru ya da Yanlış:
 
 # Paranın Kısa Tarihi (Bölüm 2)
 
-Kağıt paranın kullanıma alınmasıyla birlikte para birimleri altınla 'desteklenmeye' başladı. Money’s value was directly linked to a specific amount of the precious metal held in storage.
+Kağıt paranın kullanıma alınmasıyla birlikte para birimlerinin değeri, altına 'dayalı' olarak belirlenmeye başladı. Paranın değeri doğrudan, muhafaza edilen belirli miktardaki değerli metale bağlıydı.
 
-Ardından, 20. yüzyılda, bu "Altın Standardı" çöktü.
+20. yüzyıla gelindiğinde ise bu "Altın Standardı" çöktü.
 
-Dünyanın her yerinde değerli metallerin para birimleriyle bağlantısı yavaş yavaş ortadan kaldırıldı; bu, herhangi bir ülkenin ekonomisinin altın arzının ötesinde büyümesine olanak tanıyacak bir çabaydı. Bir merkez bankasının para birimi yaratmak için artık altına ihtiyacı olmadığından, ülke ekonomisi için gerekli gördükleri kadar yeni para yaratabilirlerdi. Para arzını kararlılıkla kontrol ederek, değerini de kontrol edebilirlerdi.
+Değerli metaller ile para birimleri arasındaki ilişki, dünyanın her yerinde yavaş yavaş sonlandırıldı; bu çaba, herhangi bir ülkenin ekonomisinin altın arzının ötesinde büyümesine olanak tanıyordu. Bir merkez bankasının para birimi yaratmak için artık altına ihtiyacı olmadığından, ülke ekonomisi için gerekli gördükleri kadar yeni para yaratabilirlerdi. Para arzını kararlılıkla kontrol ederek, değerini de kontrol edebilirlerdi.
 
 Moving into the digital age, electronic currency has vastly replaced physical currency. Paramızı ticari bankalarda saklamak bize kredi kartlarının ve ödeme uygulamalarının rahatlığını sundu. While easy and secure, it also puts for-profit businesses between people and their money.
 
@@ -92,11 +92,11 @@ Moving into the digital age, electronic currency has vastly replaced physical cu
 
 # Sorun
 
-Mevcut finansal sistemimizle ilgili sorun, paramız üzerinde kontrolümüzün olmaması ve bunun neyi biriktirip neyi harcayacağımıza özgürce karar verme kabiliyetimizi azaltmasıdır.
+Mevcut finansal sistemimizin sorunu, paramız üzerinde kontrolümüzün olmaması ve bu kontrol eksikliğinin, neyi biriktirip neyi harcayacağımıza özgürce karar verme kabiliyetimizi azaltmasıdır.
 
-Bir ülkenin 'para politikasını' yöneten banka olan 'merkez bankası' herhangi bir miktarda yeni para çıkarabilir. 'Kıtlığın' olmayışı, paramızı her geçen yıl daha az değerli hale getirir. Öngörülemeyen, azalan bir değere sahip olan para genellikle bizi onu harcamaya zorlar: **"Param her yıl daha az değerli olacaksa neden biriktireyim ki? Şimdi de harcayabilirim."** 💸
+Bir ülkenin 'para politikasını' yöneten banka olan 'merkez bankaları' herhangi bir miktarda yeni para çıkarabilir. 'Kıtlığın' olmayışı, paramızı her geçen yıl daha az değerli hale getirir. Öngörülemeyen, azalan bir değere sahip olan para genellikle bizi onu harcamaya zorlar: **"Param her yıl daha az değerli olacaksa neden biriktireyim ki? Şimdi de harcayabilirim."** 💸
 
-Günlük tasarruf ve harcamalar için kullanılan 'ticari bankalar' da harcama alışkanlıklarımızı etkiler. Bir 'emanetçi' olarak, işlemleri engelleyebilir veya fonlarımıza el koyabilirler. Bazı bankalar müşterilerinin kripto para satın almasını engellemiştir! **Bankanız istediği zaman birikimlerinizi dondurabiliyorsa… paranızın gerçek sahibi siz misiniz?** 💸
+Günlük birikim ve harcamalar için kullanılan 'ticari bankalar' da harcama alışkanlıklarımızı etkiler. Bir 'emanetçi' olan bu bankalar, işlemleri engelleyebilir veya fonlarımıza el koyabilir. Bazı bankalar, müşterilerinin kripto para satın almasını engeller! **Bankanız istediği zaman birikimlerinizi dondurabiliyorsa… paranızın gerçek sahibi siz misiniz?** 💸
 
 ***
 
@@ -105,16 +105,16 @@ Paranın yeniden finansal özgürlüğü destekleyebilmesi için zaman içinde k
 - 💎 **Değer:** Para, zaman içinde değerini eksiksiz bir biçimde korumalıdır.
 - ✊ **Mülkiyet:** Parayı kendimiz saklamak ve korumak kolay olmalıdır.
 
-Yalnızca bu nitelikler, paramızı özgürce biriktirme ve harcama yeteneğimizi geri getirebilir.
+Yalnızca bu nitelikler, paramızı özgürce biriktirme ve harcama kabiliyetimizi geri getirebilir.
 
-# Enter Bitcoin
+# Bitcoin Sahnede
 
-'Satoshi Nakamoto', paranın sadece birkaç kişi tarafından kontrol edilemeyecek kadar önemli olduğunu düşünüyordu. Herkes için adil ve güvenilir olabilecek bir para türü yaratmak istedi.
+'Satoshi Nakamoto', paranın sadece birkaç kişi tarafından kontrol edilemeyecek kadar önemli olduğunu düşünüyordu. Herkes için adil ve güvenilir olabilecek bir para türü yaratmak istiyordu.
 
 Enter Bitcoin (`BTC`): a digital currency that operates beyond the traditional banking system.
 
-- ⛓️ It’s `peer-to-peer`: It connects people directly to each other. Automated using `blockchain technology`, it removes need for institutions to facilitate storage or transactions. Savunucuları ona "yöneticisi olmayan kurallar bütünü" diyor.
-- 💎 It’s `scarce`: With no central bank issuing unlimited new money, Bitcoin has a stable, predictable monetary policy that honors long-term saving.
+- ⛓️ 'Eşler arası': İnsanları doğrudan birbirlerine bağlar. Automated using `blockchain technology`, it removes need for institutions to facilitate storage or transactions. Savunucuları ona "yöneticisi olmayan kurallar bütünü" diyor.
+- 💎 'Kıt': Sınırsız miktarda yeni para çıkaran bir merkez bankası bulunmayan Bitcoin, uzun vadeli birikimin karşılığını veren istikrarlı, öngörülebilir bir para politikasına sahiptir.
 - ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. When stored in its natural state, Bitcoin is held in a secure online safe and only the owner has access.
 
 Bitcoin sahip olduğu nitelikler nedeniyle "dijital altın" lakabını kazanmıştır.
@@ -127,7 +127,7 @@ Bitcoin sahip olduğu nitelikler nedeniyle "dijital altın" lakabını kazanmı�
 
 ***
 
-Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This `max supply` is embedded in its code, making Bitcoin rare and potentially valuable. This puts it in a good position as a long term store of value, much like gold.
+Bitcoin'de kıtlık, toplamda kaç adet Bitcoin'in var olabileceğine dair bir üst sınır olduğunu ifade eder. Bitcoin'de bu sınır, 21 milyon adettir. Bitcoin'in koduna eklenmiş olan bu 'maksimum arz', Bitcoin'i nadir ve potansiyel olarak değerli kılar. This puts it in a good position as a long term store of value, much like gold.
 
 Maksimum 'BTC' arzı 21 milyonu geçemez ve piyasaya düzenli aralıklarla yeni para birimi eklenir. Altın madenciliği gibi, yeni Bitcoin de 'kripto para madenciliği' adı verilen zahmetli bir süreçle çıkarılır. This predictable increase in `circulating supply` keeps the Bitcoin economy moving.
 
