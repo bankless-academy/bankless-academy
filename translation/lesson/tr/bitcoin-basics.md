@@ -129,11 +129,11 @@ Bitcoin sahip olduğu nitelikler nedeniyle "dijital altın" lakabını kazanmı�
 
 Bitcoin'de kıtlık, toplamda kaç adet Bitcoin'in var olabileceğine dair bir üst sınır olduğunu ifade eder. Bitcoin'de bu sınır, 21 milyon adettir. Bitcoin'in koduna eklenmiş olan bu 'maksimum arz', Bitcoin'i nadir ve potansiyel olarak değerli kılar. This puts it in a good position as a long term store of value, much like gold.
 
-Maksimum 'BTC' arzı 21 milyonu geçemez ve piyasaya düzenli aralıklarla yeni para birimi eklenir. Altın madenciliği gibi, yeni Bitcoin de 'kripto para madenciliği' adı verilen zahmetli bir süreçle çıkarılır. This predictable increase in `circulating supply` keeps the Bitcoin economy moving.
+Maksimum 'BTC' arzı 21 milyonu geçemez ve piyasaya düzenli aralıklarla yeni para birimi eklenir. Altın madenciliğinde olduğu gibi, yeni Bitcoin de 'kripto para madenciliği' adı verilen zahmetli bir süreçle çıkarılır. This predictable increase in `circulating supply` keeps the Bitcoin economy moving.
 
-Bitcoin's fixed `monetary policy` makes it an attractive asset for those seeking to preserve value in the long term, allowing them to keep up with rising costs.
+Bitcoin'in sabit 'para politikası', uzun vadede değer korumayı tercih edenler için onu cazip bir varlık haline getirerek artan maliyetlere yetişmelerini sağlar.
 
-It’s short term value remains volatile due to market speculation.
+Kısa vadeli değeri ise piyasa spekülasyonu nedeniyle dalgalanmayı sürdürür.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg)
 
@@ -143,23 +143,23 @@ How does Bitcoin promote value preservation in the long term?
 
 - [ ] Maksimum arz üst sınırı kullanarak.
 
-> Doğru! Bitcoin'in sabit arzı, değerli metallere benzer bir kıtlık oluşturur. Bu da değerin korunmasına yardımcı olur.
+> Doğru! Bitcoin'in sabit arzı, değerli metallerinkine benzer bir kıtlık oluşturur. Bu da değerin korunmasına yardımcı olur.
 
 - [ ] Üçüncü taraf emanetçileri kaldırarak.
 
-> Yeniden deneyin! Custody relates to ownership, rather than value.
+> Yeniden deneyin! Emanet, değerden ziyade mülkiyetle ilgilidir.
 
 # Dijital Altın: Gözetimsizlik
 
-🧊 Has your bank frozen your funds without notice because you performed a transfer that they didn’t like?
+🧊 Bankanız, onun hoşuna gitmeyen bir transfer yaptığınız için size haber vermeden paranızı dondurdu mu?
 
 ***
 
-In democracies, ownership is a protected human right because it gives citizens increased control and freedom over their lives. We cannot act freely when our means of survival are conditional — judged by businesses or institutions.
+Demokrasilerde mülkiyet, vatandaşlara yaşamları üzerinde daha fazla kontrol ve özgürlük sağladığı için korunan bir insan hakkıdır. Hayatta kalma araçlarımız şarta bağlı olduğunda, yani işletmeler veya kurumlar tarafından değerlendirildiğinde özgürce hareket edemeyiz.
 
 As our assets are increasingly digitized (i.e. your money, your property, and even your identity), our lives are taking on a digital quality that we must learn to protect.
 
-Bitcoin’s `self-custody` offers true digital ownership, beyond reach of `custodians`. So long as you don’t share your account information with someone else, you have sole access to your assets. It’s like having your own vault of gold in a secure online space.
+Bitcoin’s `self-custody` offers true digital ownership, beyond reach of `custodians`. Hesap bilgilerinizi başka biriyle paylaşmadığınız sürece, varlıklarınıza erişim hakkı yalnızca size aittir. Bu, güvenli bir çevrimiçi alanda kendi altın kasanıza sahip olmaya benzer.
 
 This system of ownership gives you total control of your digital wealth — anywhere in the world, any time.
 
@@ -171,9 +171,9 @@ How does self-custody enable true ownership?
 
 - [ ] By giving you sole access to your assets.
 
-> Doğru! Anyone with access to our assets has the ability to confiscate them.
+> Doğru! Varlıklarımıza erişimi olan herhangi biri onlara el koyabilir.
 
-- [ ] By allowing custodians to access to your assets.
+- [ ] Emanetçilerin varlıklarınıza erişmesine izin vererek.
 
 > Yeniden deneyin! Gözetimsizlik, varlıklarımıza erişebilecek bir emanetçi (üçüncü taraf) olmadığı anlamına gelir.
 
@@ -183,15 +183,15 @@ How does self-custody enable true ownership?
 
 ***
 
-E-posta, postane ihtiyacını ortadan kaldırarak mektup göndermeyi kolaylaştırdı. Benzer bir şekilde Bitcoin de bankalara olan ihtiyacı ortadan kaldırarak para gönderimini kolaylaştırdı.
+E-posta, postane ihtiyacını ortadan kaldırarak mektup göndermeyi kolaylaştırdı. Benzer şekilde, Bitcoin de bankalara olan ihtiyacı ortadan kaldırarak para gönderimini kolaylaştırdı.
 
 - ⚡ Transfer Bitcoin globally for a reasonable fee.
-- ⚙️ 7/24 para gönderin. Beklemek yok, evrak işi yok, kesinti yok.
-- 📡 Bitcoin't internet bağlantısı olan her yerden erişin.
+- ⚙️ 7/24 para gönderin. Beklemek yok, evrak işi yok, aksama süresi yok.
+- 📡 İnternet bağlantısı olan her yerden Bitcoin'e erişin.
 
 Bitcoin almak için tıpkı bir e-posta adresiniz olduğu gibi tek bir Bitcoin adresi gereklidir. Varsayılan olarak şöyle görünür: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (bunu nasıl özelleştireceğinizi daha sonra göstereceğiz!)
 
-Hesabınızı web tarayıcınıza veya telefonunuza bağlı 'kripto para cüzdanı' yazılımını kullanarak yöneteceksiniz. Bu, kuracağınız en kolay "banka hesabıdır". Randevu ya da kimlik gerekmez!
+Hesabınızı, web tarayıcınıza veya telefonunuza bağlanan 'kripto para cüzdanı' yazılımını kullanarak yönetirsiniz. Oluşturabileceğiniz en kolay "banka hesabı" budur. Randevu ya da kimlik gerekmez!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
@@ -199,28 +199,28 @@ Hesabınızı web tarayıcınıza veya telefonunuza bağlı 'kripto para cüzdan
 
 Bitcoin neden e-postaya benziyor?
 
-- [ ] Her ikisi de 7/24 çevrimiçi.
+- [ ] Her ikisi de 7/24 çevrimiçidir.
 
-> Doğru! Ancak bu, tek doğru cevap değil.
+> Doğru! Ancak tek doğru cevap bu değil.
 
 - [ ] Her ikisi de dijital teknolojilerdir.
 
-> Doğru! Ancak bu, tek doğru cevap değil.
+> Doğru! Ancak tek doğru cevap bu değil.
 
 - [ ] Her ikisine de telefonla erişilebilir.
 
-> Doğru! Ancak bu, tek doğru cevap değil.
+> Doğru! Ancak tek doğru cevap bu değil.
 
 - [ ] Yukarıdakilerin hepsi.
 
-> Doğru! Hem Bitcoin hem de e-posta, kendilerinden önce gelen hizmetlerle ilgili yenilikler getiriyor.
+> Doğru! Hem Bitcoin hem de e-posta, kendilerinden önce gelmiş olan hizmetlere yenilikler getirir.
 
 # Bitcoin Ağı
 
-Hadi konuyu değiştirelim ve Bitcoin'in arkasındaki motora bakalım:
+Hadi konuyu değiştirelim ve Bitcoin'in arkasındaki güce bakalım:
 **Bitcoin Ağı**.
 
-Bitcoin, dünya çapında binlerce bilgisayarda barındırılan paylaşımlı bir ağ üzerinde çalışır. Ağdaki her bilgisayar ağın işleyişinin sürdürülmesinde rol oynar; ağ, bu bilgisayarlar aracılığıyla var olur! If one computer processes a fraudulent transaction, the others are there to correct it.
+Bitcoin, dünya çapında binlerce bilgisayarda barındırılan paylaşımlı bir ağ üzerinde çalışır. Ağdaki her bilgisayar, ağın işleyişinin sürdürülmesinde rol oynar; ağ ise bu bilgisayarlar aracılığıyla var olur! If one computer processes a fraudulent transaction, the others are there to correct it.
 
 Bu aynı zamanda hack girişimlerinde baskı uygulanacak tek bir nokta olmadığı anlamına gelir. Ağın kontrol edilebilmesi için bilgisayarların çoğu, tehlikeye girmiş olmalıdır.
 
