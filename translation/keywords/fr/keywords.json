@@ -92,12 +92,12 @@
   "blockchain": {
     "keyword": "blockchain",
     "keyword_plural": "blockchains",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "Système dans lequel un enregistrement des transactions en crypto-monnaies est conservé sur de nombreux ordinateurs à travers le monde."
   },
   "blockchain apps": {
-    "keyword": "blockchain apps",
-    "keyword_plural": "blockchain appss",
-    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
+    "keyword": "application blockchain",
+    "keyword_plural": "applications blockchain",
+    "definition": "Des applications blockchain qui vous permettent d'échanger des crypto-monnaies, d'utiliser les médias sociaux web3, de faire des dons caritatifs ou même d'apprendre sur la blockchain - comme à la Bankless Academy."
   },
   "blockchain architecture": {
     "keyword": "blockchain architecture",
@@ -105,9 +105,9 @@
     "definition": "The structures for how data is stored in blockchain technology."
   },
   "blockchain technology": {
-    "keyword": "blockchain technology",
+    "keyword": "technologie blockchain",
     "keyword_plural": "blockchain technologys",
-    "definition": "A new type of network, hosted across many computers. It's adding a new layer of digital ownership to the internet."
+    "definition": "Un nouveau type de réseau, hébergé par de nombreux ordinateurs. Il ajoute une nouvelle couche de propriété numérique à l'internet."
   },
   "blockchain trilemma": {
     "keyword": "Blockchain Trilemma",
@@ -132,7 +132,7 @@
   "btc": {
     "keyword": "BTC",
     "keyword_plural": "BTCs",
-    "definition": "The market symbol for bitcoin."
+    "definition": "Le symbole du marché pour Bitcoin."
   },
   "censorship-resistant": {
     "keyword": "censorship-resistant",
@@ -140,9 +140,9 @@
     "definition": "No government or company has control to determine what is or is not allowed."
   },
   "central bank": {
-    "keyword": "central bank",
-    "keyword_plural": "central banks",
-    "definition": "An institution regulating money, banks, and currency in a country."
+    "keyword": "banque centrale",
+    "keyword_plural": "banques centrales",
+    "definition": "Une institution qui réglemente l'argent, les banques et la monnaie d'un pays."
   },
   "centralized": {
     "keyword": "centralized",
@@ -170,9 +170,9 @@
     "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
   },
   "circulating supply": {
-    "keyword": "circulating supply",
+    "keyword": "offre en circulation",
     "keyword_plural": "circulating supplys",
-    "definition": "The number of a specific cryptocurrency's coins or tokens publicly available for the market to trade."
+    "definition": "Le nombre de pièces ou de jetons d'une crypto-monnaie spécifique disponibles publiquement sur le marché pour être échangés."
   },
   "coin": {
     "keyword": "coin",
@@ -190,9 +190,9 @@
     "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
   },
   "commercial bank": {
-    "keyword": "commercial bank",
-    "keyword_plural": "commercial banks",
-    "definition": "A bank managing money for people and businesses."
+    "keyword": "banque commerciale",
+    "keyword_plural": "banques commerciales",
+    "definition": "Une banque qui gère l'argent des particuliers et des entreprises."
   },
   "consensus": {
     "keyword": "consensus",
@@ -220,19 +220,19 @@
     "definition": "A mechanism that does not discriminate for or against any specific people."
   },
   "cryptocurrency": {
-    "keyword": "cryptocurrency",
+    "keyword": "cryptomonnaie",
     "keyword_plural": "cryptocurrencys",
-    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+    "definition": "Une monnaie numérique hébergée par la technologie blockchain plutôt que par des autorités centralisées."
   },
   "cryptocurrency mining": {
-    "keyword": "cryptocurrency mining",
+    "keyword": "minage de cryptomonnaies",
     "keyword_plural": "cryptocurrency minings",
-    "definition": "The process of verifying blockchain transactions in exchange for cryptocurrency rewards."
+    "definition": "Le processus de vérification des transactions de la blockchain en échange de récompenses en crypto-monnaie."
   },
   "cryptocurrency wallet": {
-    "keyword": "cryptocurrency wallet",
+    "keyword": "portefeuilles de crypto-monnaies",
     "keyword_plural": "cryptocurrency wallets",
-    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+    "definition": "Une application qui vous permet de stocker vos crypto-monnaies et de les envoyer/recevoir ou de les dépenser."
   },
   "custodial wallet": {
     "keyword": "custodial wallet",
@@ -240,9 +240,9 @@
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
   },
   "custodian": {
-    "keyword": "custodian",
-    "keyword_plural": "custodians",
-    "definition": "A financial institution given responsibility to secure your assets."
+    "keyword": "dépositaire",
+    "keyword_plural": "dépositaires",
+    "definition": "Une institution financière chargée de sécuriser vos avoirs."
   },
   "dao": {
     "keyword": "DAO",
@@ -255,14 +255,14 @@
     "definition": "Une application décentralisée qui se connecte à des réseaux et protocoles décentralisés."
   },
   "decentralization": {
-    "keyword": "Decentralization",
+    "keyword": "Décentralisation",
     "keyword_plural": "Decentralizations",
-    "definition": "The transfer of control to many individuals rather than one single authority."
+    "definition": "Le transfert du contrôle à de nombreuses personnes plutôt qu'à une autorité unique."
   },
   "decentralized": {
-    "keyword": "decentralized",
+    "keyword": "décentralisé",
     "keyword_plural": "decentralizeds",
-    "definition": "No single authority or entity controls the system."
+    "definition": "Aucune autorité ou entité unique ne contrôle le système."
   },
   "decentralized exchange": {
     "keyword": "èchange décentralisé",
@@ -275,9 +275,9 @@
     "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
   },
   "decentralized money": {
-    "keyword": "decentralized money",
+    "keyword": "monnaie décentralisée",
     "keyword_plural": "decentralized moneys",
-    "definition": "Money with properties agreed on by the community, rather than set by an institution."
+    "definition": "Monnaie dont les propriétés sont convenues par la communauté, plutôt que fixées par une institution."
   },
   "defi": {
     "keyword": "DeFi",
@@ -330,7 +330,7 @@
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
   "equality of opportunity": {
-    "keyword": "equality of opportunity",
+    "keyword": "égalité des chances",
     "keyword_plural": "equality of opportunitys",
     "definition": "A fairness principle, where everyone has the same chances to succeed regardless of their background or circumstances."
   },
