@@ -332,7 +332,7 @@
   "equality of opportunity": {
     "keyword": "égalité des chances",
     "keyword_plural": "equality of opportunitys",
-    "definition": "A fairness principle, where everyone has the same chances to succeed regardless of their background or circumstances."
+    "definition": "Un principe d'équité, selon lequel chacun a les mêmes chances de réussir, quelles que soient ses origines ou sa situation."
   },
   "erc-20": {
     "keyword": "ERC-20",
@@ -395,9 +395,9 @@
     "definition": "A transaction that pays gas using some of the token to be traded rather than the native coin of the blockchain network."
   },
   "gold standard": {
-    "keyword": "gold standard",
+    "keyword": "étalon-or",
     "keyword_plural": "gold standards",
-    "definition": "A monetary system where a country's currency has a value directly linked to gold."
+    "definition": "Système monétaire dans lequel la monnaie d'un pays a une valeur directement liée à l'or."
   },
   "gwei": {
     "keyword": "gwei",
@@ -515,9 +515,9 @@
     "definition": "The total value of a given token, or market sector."
   },
   "max supply": {
-    "keyword": "max supply",
+    "keyword": "offre maximale",
     "keyword_plural": "max supplys",
-    "definition": "The maximum number of coins or tokens that will ever exist for a particular cryptocurrency."
+    "definition": "Le nombre maximum de pièces ou de jetons qui existeront pour une cryptomonnaie particulière."
   },
   "memecoin": {
     "keyword": "memecoin",
@@ -535,9 +535,9 @@
     "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
   },
   "miner": {
-    "keyword": "miner",
-    "keyword_plural": "miners",
-    "definition": "An individual who participates in validating cryptocurrency transactions and proposing blocks."
+    "keyword": "mineur",
+    "keyword_plural": "mineurs",
+    "definition": "Personne qui participe à la validation des transactions en crypto-monnaie et à la proposition de blocs."
   },
   "mining": {
     "keyword": "mining",
@@ -550,9 +550,9 @@
     "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
   },
   "monetary policy": {
-    "keyword": "monetary policy",
+    "keyword": "politique monétaire",
     "keyword_plural": "monetary policys",
-    "definition": "How a central bank manages the amount of money circulating in an economy."
+    "definition": "La façon dont une banque centrale gère la quantité de monnaie circulant dans une économie."
   },
   "money": {
     "keyword": "money",
@@ -610,9 +610,9 @@
     "definition": "Allows two parties to transact multiple times without the need for each transaction to be recorded on the blockchain."
   },
   "peer-to-peer": {
-    "keyword": "peer-to-peer",
+    "keyword": "pair-à-pair",
     "keyword_plural": "peer-to-peers",
-    "definition": "A transaction between two parties that does not require a middleman or controlling entity."
+    "definition": "Une transaction entre deux parties qui ne nécessite pas d'intermédiaire ou d'entité de contrôle."
   },
   "peg": {
     "keyword": "peg",
@@ -647,7 +647,7 @@
   "private key": {
     "keyword": "private key",
     "keyword_plural": "private keys",
-    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+    "definition": "Une clé privée donne accès à votre portefeuille, ce qui vous permet d'envoyer des crypto-actifs à d'autres portefeuilles."
   },
   "proof of stake": {
     "keyword": "Proof of Stake",
@@ -682,12 +682,12 @@
   "public key": {
     "keyword": "public key",
     "keyword_plural": "public keys",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+    "definition": "La clé publique est l'adresse de votre portefeuille. Elle donne aux autres un point de référence pour vous envoyer des crypto-actifs."
   },
   "recovery phrase": {
     "keyword": "recovery phrase",
     "keyword_plural": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+    "definition": "Une phrase de récupération est une liste de 12 à 24 mots, utilisée pour générer la clé publique et la clé privée de votre portefeuille."
   },
   "red flag": {
     "keyword": "red flag",
@@ -717,7 +717,7 @@
   "satoshi nakamoto": {
     "keyword": "Satoshi Nakamoto",
     "keyword_plural": "Satoshi Nakamotos",
-    "definition": "The pseudonymous creator of Bitcoin. To this day, nobody knows their real identity."
+    "definition": "Le créateur pseudonyme de Bitcoin. À ce jour, personne ne connaît sa véritable identité."
   },
   "scalability": {
     "keyword": "Scalability",
@@ -730,14 +730,14 @@
     "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds."
   },
   "scarce": {
-    "keyword": "scarce",
+    "keyword": "rareté",
     "keyword_plural": "scarces",
-    "definition": "The state of being in short supply."
+    "definition": "L'état d'être rare."
   },
   "scarcity": {
-    "keyword": "scarcity",
+    "keyword": "rareté",
     "keyword_plural": "scarcitys",
-    "definition": "Being in short supply."
+    "definition": "Être rare."
   },
   "security": {
     "keyword": "Security",
@@ -750,14 +750,14 @@
     "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
   },
   "self-custodial": {
-    "keyword": "self-custodial",
+    "keyword": "autodétention",
     "keyword_plural": "self-custodials",
-    "definition": "A means of holding your assets where only you have access to them."
+    "definition": "Il s'agit d'un moyen de conserver vos actifs à un endroit où vous êtes seul à y avoir accès."
   },
   "self-custody": {
-    "keyword": "self-custody",
+    "keyword": "autodétention",
     "keyword_plural": "self-custodys",
-    "definition": "A means of holding your assets where only you have access to them."
+    "definition": "Il s'agit d'un moyen de conserver vos actifs à un endroit où vous êtes seul à y avoir accès."
   },
   "self-custody wallet": {
     "keyword": "self-custody wallet",
@@ -955,14 +955,14 @@
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
   },
   "wallet app": {
-    "keyword": "wallet app",
-    "keyword_plural": "wallet apps",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+    "keyword": "application portefeuille",
+    "keyword_plural": "applications de portefeuille",
+    "definition": "Une application sur votre ordinateur ou votre téléphone, utilisée pour se connecter à votre portefeuille sur la blockchain."
   },
   "wallet provider": {
-    "keyword": "wallet provider",
-    "keyword_plural": "wallet providers",
-    "definition": "The creator of the software you use to access your wallet. These providers do not own your wallet, but instead act as a bridge that lets you access your account on the blockchain."
+    "keyword": "fournisseur de portefeuilles",
+    "keyword_plural": "fournisseurs de portefeuilles",
+    "definition": "Le créateur du logiciel que vous utilisez pour accéder à votre portefeuille. Ces fournisseurs ne possèdent pas votre portefeuille, mais agissent comme un pont qui vous permet d'accéder à votre compte sur la blockchain."
   },
   "web2": {
     "keyword": "web2",
