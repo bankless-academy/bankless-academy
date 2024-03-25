@@ -1,16 +1,16 @@
 {
   "BitcoinBasics": {
-    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Your Bitcoin is on its way to Satoshi Nakamoto.",
-    "2. It's now being verified by network miners...": "2. It's now being verified by network miners...",
-    "3. Your transaction is added to the blockchain “database”...": "3. Your transaction is added to the blockchain “database”...",
-    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto has received your Bitcoin!",
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address",
-    "Recipient": "Recipient",
-    "Address": "Address",
-    "Asset": "Asset",
-    "Amount": "Amount",
-    "Balance": "Balance",
-    "Send": "Send"
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Votre Bitcoin est en route vers Satoshi Nakamoto.",
+    "2. It's now being verified by network miners...": "2. C'est maintenant en cours de vérification par les mineurs du réseau...",
+    "3. Your transaction is added to the blockchain “database”...": "3. Votre transaction est ajoutée à la \"base de données\" de la blockchain...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto a reçu votre Bitcoin !",
+    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "En utilisant notre simulateur Bitcoin, envoyez <strong>0.00000001</strong> BTC à l'adresse de Satoshi Nakamoto",
+    "Recipient": "Destinataire",
+    "Address": "Adresse",
+    "Asset": "Actif",
+    "Amount": "Quantité",
+    "Balance": "Solde",
+    "Send": "Envoyer"
   },
   "OptimismGovernance": {
     "Begin your Optimism Network journey by delegating OP.": "Commencez votre voyage au sein du Réseau Optimism en déléguant vos OP.",
