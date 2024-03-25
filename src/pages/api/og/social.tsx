@@ -36,12 +36,13 @@ export default async function handler(req: NextApiRequest) {
   }
   const user = await res.json()
   console.log(user)
-  const badgeTokenIds = user.badgeTokenIds
+  // const badgeTokenIds = user.badgeTokenIds
   if (user.error) error = user.error
   else {
     if (
       badgeId &&
-      (!badgeImageLink || !badgeTokenIds?.includes(parseInt(badgeId)))
+      !badgeImageLink
+      // || !badgeTokenIds?.includes(parseInt(badgeId))
     )
       error = 'badge not found'
   }
