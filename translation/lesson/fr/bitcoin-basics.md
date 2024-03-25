@@ -231,93 +231,93 @@ Cette stratégie de défense est appelée `décentralisation` : le transfert du 
 
 # Minage de Bitcoin
 
-With the Bitcoin Network having no central bank, the network relies on its `decentralized` participants. Known as `miners`, these participants are constantly checking transactions and adding them to a “database” — the `blockchain`.
+Le réseau Bitcoin n'ayant pas de banque centrale, il s'appuie sur ses participants `décentralisés`. Connus sous le nom de `mineurs`, ces participants vérifient constamment les transactions et les ajoutent à une "base de données", la "blockchain" [chaîne de blocs].
 
-It’s important that these miners are motivated to be active and honest, to protect the network from fraud. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as “block rewards”, for their work.
+Il est important que ces mineurs soient motivés pour être actifs et honnêtes, afin de protéger le réseau contre la fraude. Les mineurs vérifient les résultats des uns et des autres, mais ils sont également récompensés pour le travail qu'ils accomplissent. Lorsque nous soumettons des transactions Bitcoin, nous payons de petits frais qui vont au mineur de notre transaction. Les mineurs gagnent également de nouveaux bitcoins, appelés "récompenses de bloc", pour leur travail.
 
-These rewards slowly increase Bitcoin’s `circulating supply` within the `max supply` cap of 21 million `BTC`.
+Ces récompenses augmentent lentement l'`offre en circulation` de Bitcoin dans la limite de l'`offre maximale` de 21 millions de BTC.
 
-It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies. Everything is managed by community-approved computer code — “rules with no rulers” — and decentralized participants, rather than small groups of people at the `central bank`.
+C'est l'introduction lente et prévisible de nouvelles pièces [coins] qui distingue Bitcoin des monnaies traditionnelles. Tout est géré par un code informatique approuvé par la communauté - des "règles sans dirigeants" - et des participants décentralisés, plutôt que par de petits groupes de personnes à la `banque centrale`.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg)
 
-# Sending a Bitcoin Transaction
+# Envoi d'une transaction Bitcoin
 
-Understanding the exact mechanisms that power Bitcoin transactions and mining can get quite complicated. That said, using and sending Bitcoin is simple!
+Comprendre les mécanismes exacts qui régissent les transactions et l'exploitation minière de Bitcoin peut s'avérer assez compliqué. Cela dit, utiliser et envoyer des bitcoins est très simple !
 
-We’ll take a simplified view of the process for today:
+Nous allons adopter une vue simplifiée du processus pour aujourd'hui :
 
-1. You submit a transaction using your `cryptocurrency wallet`, sending 0.1 `BTC` to your friend’s wallet address.
-2. A miner checks your transaction for errors. Other miners double-check their results.
-3. If approved, your transaction is added to the `blockchain` “database”.
-4. Your friend receives 0.1 BTC in their wallet.
+1. Vous soumettez une transaction en utilisant votre `portefeuille de crypto-monnaie`, envoyant 0,1 `BTC` à l'adresse du portefeuille de votre ami.
+2. Un mineur vérifie que votre transaction ne comporte pas d'erreurs. D'autres mineurs effectuent les mêmes vérifications.
+3. Si elle est approuvée, votre transaction est ajoutée à la "base de données" de la `blockchain`.
+4. Votre ami reçoit 0,1 BTC dans son portefeuille.
 
 [embed](https://app.banklessacademy.com/animation/bitcoin)
 
 # Knowledge Check 5
 
-What is decentralization?
+Qu'est-ce que la décentralisation ?
 
-- [ ] Increased scarcity.
+- [ ] L'augmentation de la rareté.
 
-> Try again! Scarcity means an asset is in low supply.
+> Veuillez réessayer ! La rareté signifie qu'un actif est peu disponible.
 
-- [ ] Distribution of control across multiple participants.
+- [ ] Répartition du contrôle entre plusieurs participants.
 
-> Correct! This distribution protects the network and its users.
+> Correct ! Cette distribution protège le réseau et ses utilisateurs.
 
-- [ ] The rewards earned by miners.
+- [ ] Les récompenses obtenues par les mineurs.
 
-> Try again! Miners are rewarded with transaction fees and block rewards.
+> Veuillez réessayer ! Les mineurs sont récompensés par des frais de transaction et des récompenses de bloc.
 
 # Knowledge Check 6
 
-How does mining protect the Bitcoin Network from fraud?
+Comment le minage protège-t-il le réseau Bitcoin de la fraude ?
 
-- [ ] By rewarding miners for checking transactions.
+- [ ] En récompensant les mineurs qui vérifient les transactions.
 
-> Correct! Bitcoin rewards attract miners and incentivize them to act honestly.
+> Correct ! Les récompenses en bitcoins attirent les mineurs et les incitent à agir honnêtement.
 
-- [ ] By increasing the circulating supply of Bitcoin.
+- [ ] En augmentant l'offre de bitcoins en circulation.
 
-> Try again! Supply increases don’t help to prevent fraud.
+> Veuillez réessayer ! L'augmentation de l'offre ne contribue pas à prévenir la fraude.
 
-- [ ] Both of the above.
+- [ ] Toutes les deux réponses ci-dessus.
 
-> Try again! Only one of the above helps to prevent fraud.
+> Veuillez réessayer ! Seule l'une de ces mesures permet d'éviter la fraude.
 
-# The Innovation of Money
+# L'innovation monétaire
 
-In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value, and how institutional management of our assets means giving up full ownership.
+Dans cette leçon, nous avons vu comment la rareté du bitcoin lui permet de conserver sa valeur, et comment la gestion institutionnelle de nos actifs implique de renoncer à la pleine propriété.
 
-However Bitcoin has evolved beyond a simple monetary tool. It has become a catalyst for a `decentralized money` revolution. This movement reimagines the traditional financial system by distributing monetary power and control to those who use it.
+Cependant, le bitcoin a évolué au-delà d'un simple outil monétaire. Il est devenu le catalyseur d'une révolution de la "monnaie décentralisée". Ce mouvement réimagine le système financier traditionnel en distribuant le pouvoir et le contrôle monétaires à ceux qui l'utilisent.
 
-By decentralizing money and removing `custodians` we can:
+En décentralisant l'argent et en supprimant les `dépositaires`, nous pouvons :
 
-- 💵 Host a 24/7 global marketplace, secured by citizens around the world.
-- 🛠️ Offer financial tools to the unbanked regions of the globe.
-- 🤝 Use `peer-to-peer` technology to avoid the inefficiencies of middleman institutions.
-- 🔎 Reduce institutional inequality, fraud and market manipulation.
-- ⚖️ Build `equality of opportunity` into monetary systems.
-- 🌐 Establish true ownership for the digital age.
+- 💵 Accueillir un marché mondial 24h/24 et 7j/7, sécurisé par les citoyens du monde entier.
+- 🛠️ Offrir des outils financiers aux régions non bancarisées du globe.
+- 🤝 Utiliser la technologie `peer-to-peer` pour éviter les inefficacités des institutions intermédiaires.
+- 🔎 Réduire les inégalités institutionnelles, la fraude et la manipulation des marchés.
+- ⚖️ Construire `l'égalité des opportunités` dans les systèmes monétaires.
+- 🌐 Établir une véritable propriété à l'ère numérique.
 
-The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe — and you’re invited.
+La nouvelle ère de l'argent défend les valeurs fondamentales de la démocratie afin d'améliorer la qualité de la vie quotidienne des citoyens du monde entier - et vous êtes invités.
 
-“_Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations._
+_"La démocratie offre un environnement qui respecte les droits de l'homme et les libertés fondamentales, et dans lequel s'exerce la volonté librement exprimée des personnes." — Les Nations Unies._
 
-# Your Bitcoin Quest
+# Votre quête Bitcoin
 
-It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.
+Il est temps de simuler votre première transaction Bitcoin et de pratiquer votre liberté à l'ère numérique.
 
-Your transaction will include the following details:
+Votre transaction comprendra les détails suivants :
 
-📫 The wallet address of the person you’re sending to.
+📫 L'adresse du portefeuille de la personne à qui vous envoyez les Bitcoins.
 
-💰 The amount of Bitcoin to send.
+💰 La quantité de Bitcoin à envoyer.
 
-It will also include a transaction fee given to the `miners`.
+Il comprendra également une commission de transaction versée aux `mineurs`.
 
-Remember to make sure all details are accurate.
-Once a Bitcoin transaction is confirmed, you cannot reverse it.
+N'oubliez pas de vous assurer que tous les détails sont exacts.
+Une fois qu'une transaction en bitcoins est confirmée, il est impossible de l'annuler.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
