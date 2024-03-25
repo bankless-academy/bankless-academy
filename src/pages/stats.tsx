@@ -45,9 +45,9 @@ const Stats = (): JSX.Element => {
               </Text>
               {`${stats?.uniqueAddresses} 👨‍🚀 | ${stats?.uniqueAddresses7days} 'week | ${stats?.uniqueAddresses1day} 'day`}
               <br />
-              {`${stats?.sybils} 👨‍🌾 | ${stats?.sybils7days} 'week | ${stats?.sybils1day} 'day`}
+              {`${stats?.sybils} 😈 sybils (duplicated stamp detected) | ${stats?.sybils7days} 'week | ${stats?.sybils1day} 'day`}
               <br />
-              {`${stats?.bots} 🤖 | ${stats?.bots7days} 'week | ${stats?.bots1day} 'day`}
+              {`${stats?.bots} 🤖 bots (using scripts to automate) | ${stats?.bots7days} 'week | ${stats?.bots1day} 'day`}
             </Box>
           )}
           <Box mt={8}>
