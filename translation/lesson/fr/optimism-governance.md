@@ -1,6 +1,6 @@
 ---
 TITLE: Gouvernance d'Optimism
-DESCRIPTION: Réclamez votre première part de propriété du réseau et commencez à voter sur la chaîne !
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: Français
 WRITERS: Tetranome
 TRANSLATORS: Didier Krux
@@ -37,7 +37,7 @@ La vision de la technologie `DAO` est de rationaliser la résolution de problèm
 - Vote innovant, `délégation` et des mécanismes de `véto`.
 - Utiliser la technologie chaîne de blocs [blockchain] pour diminuer le potentiel d'erreur humaine ou de détournement [hijacking].
 
-![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-fea84c8f.svg)
 
 # Gouvernance du Réseau
 
@@ -49,7 +49,7 @@ Comme tout État-nation traditionnel disposant de ressources et de participants,
 
 🛠️ **Mise en œuvre :** La proposition approuvée est appliquée au réseau, par divers développeurs incités si nécessaire.
 
-![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/network-governance-45b77eb1.svg)
 
 # Knowledge Check 1
 
@@ -79,7 +79,7 @@ Dans cette leçon, nous allons explorer comment Optimism est le pionnier de la v
 
 Notre quête se concentrera sur la revendication de nos premiers droits de vote, afin que nous soyons prêts à aider à construire l'avenir d'Ethereum et de la coordination humaine !
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-af6d1031.svg)
 
 # La Vision d'Optimism
 
@@ -123,7 +123,7 @@ De nombreux grands projets de blockchain commencent avec un groupe centralisé. 
 
 Les vérifications et équilibres légaux, tels que la capacité du Collectif à retirer des membres de la Fondation, assurent un **transfert lent de la propriété du réseau à la communauté**.
 
-![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-aaa9b55d.svg)
 
 # Knowledge Check 3
 
@@ -148,7 +148,7 @@ Au centre de l'économie d'Optimism `L2` se trouve le **"Volant d'Inertie Optimi
 
 Avec une infrastructure onchain de plus grande valeur, la demande d'espace de blocs Optimism augmente, et le cycle continue !
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-fd6cac83.svg)
 
 # Encourager les biens publics
 
@@ -160,7 +160,7 @@ Comme l'a dit Vitalik Buterin, _"Il est plus facile de se mettre d'accord sur ce
 
 Ce modèle de distribution est connu sous le nom de **"Retroactive Public Goods Funding"** [Financement Rétroactif de Bien Public], ou **"RetroPGF"**. Ce mécanisme de financement incite les penseurs optimistes à créer des biens publics au service de l'humanité. Il nous libère de la mentalité d'extraction de valeur des économies capitalistes traditionnelles.
 
-![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-b764ca38.svg)
 
 # Le Phénix d'Ether
 
@@ -170,7 +170,7 @@ _"Il s'agit d'un algorithme qui récompense les premiers coopérateurs qui ont c
 
 — La fondation Optimism
 
-![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-f63f460c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-2b7210df.svg)
 
 # Knowledge Check 4
 
@@ -202,7 +202,7 @@ Le Collectif Optimism est composé de deux maisons, chacune ayant des responsabi
 
 Les deux maisons maintiennent l'équilibre du réseau à travers leurs fonctions, les mécanismes de vote et les capacités de `véto`. Voyons cela de plus près.
 
-![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-8f40dd30.svg)
 
 # Knowledge Check 5
 
@@ -238,7 +238,7 @@ Pour protéger le réseau, la Maison des Citoyens a le droit d'opposer son `vét
 
 La Maison des Jetons a également la possibilité d’opposer son véto à toute proposition soumise par la Maison des Citoyens ou la Fondation Optimism, qui est censée réduire les droits des détenteurs de jetons.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-39ac02b5.svg)
 
 # La Maison des Jetons : Adhérer, voter, déléguer
 
@@ -261,7 +261,7 @@ La gouvernance du réseau est aussi démocratique que la `distribution de jetons
 
 Consultez le [plan de distribution des jetons OP](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) pour voir comment la Fondation Optimism a alloué un pouvoir de gouvernance initial au service d'une représentation équilibrée des parties prenantes.
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-5d723b29.svg)
 
 # Knowledge Check 6
 
@@ -295,7 +295,7 @@ Les devoirs comprennent :
 
 La Maison des Citoyens veille également à ce que les propositions de la Maison des Jetons soient alignées sur la mission, en utilisant la mécanique de `véto` pour renoncer aux changements non alignés sur le réseau.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-4c2b3821.svg)
 
 # La Maison des Citoyens : Adhérer, Voter, Déléguer
 
@@ -339,13 +339,13 @@ Avec Optimism, une saison dure environ trois mois, suivie d'une période de réf
 
 Ces boucles de feedback construites à travers les systèmes d'Optimism sont incroyablement importantes pour construire les meilleures pratiques de gouvernance dans les communautés de `DAO`.
 
-![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-a79f33e7.svg)
 
 # Maintenant… Voyez encore plus grand !
 
 Nous sommes presque prêts à gouverner avec Optimism 🔴. Il y a une dernière chose à mentionner.
 
-La Vision Optimiste ne s'arrête pas à une seule blockchain `L2` . Grâce à la capacité de `forker` une blockchain, il s'agit d'une expérience de gouvernance clonable. Cette technologie est conçue pour être mise à l'échelle sur plusieurs L2 — et même dans des scénarios de gouvernance mondiale réels. Optimism appelle ceci **« La Superchaine »** [Superchain].
+La Vision Optimiste ne s'arrête pas à une seule blockchain `L2` . Grâce à la capacité de `forker` une blockchain, il s'agit d'une expérience de gouvernance clonable. Cette technologie est conçue pour être mise à l'échelle sur plusieurs L2 — et même dans des scénarios de gouvernance mondiale réels. Optimisme appelle ceci **« La Superchaine »** [Superchain].
 
 Coinbase, un important `CEX`, a déjà forké et commencé à contribuer à cette initiative `open source`, par le biais de la blockchain L2 Base 🔵. Cette mise en commun des ressources de développement accroît l'évolution des infrastructures, tout en canalisant les frais de transaction de la L2 vers l'éthique d'Optimism "Impact = Profit".
 
@@ -361,5 +361,5 @@ La quête d'aujourd'hui est **de rejoindre la Maison des Jetons et déléguer no
 
 Pendant que la Maison des Citoyens développe ses procédures d'intégration, nous pouvons commencer notre voyage de Citoyen en participant à une conversation sur les forums de la [communauté Optimism](https://gov.optimism.io/).
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-c4ff6f41.svg)
 

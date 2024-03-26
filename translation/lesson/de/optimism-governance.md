@@ -1,6 +1,6 @@
 ---
 TITLE: Regierungsführung von Optimism
-DESCRIPTION: Sichere dir deinen ersten eigenen Anteil am Netzwerk und beginne damit, auf der Blockchain abzustimmen!
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: Deutsch
 WRITERS: Tetranome
 TRANSLATORS: Ruben Silva Otero
@@ -37,7 +37,7 @@ Die Vision der `DAO` Technologie ist es, Problemlösungen und Debatten zwischen 
 - Innovative Abstimmungsmechanismen, `Delegation`, und `Veto`-Mechanismen.
 - Den Einsatz der Blockchain-Technologie zur Verringerung des Potenzials für menschliches Versagen oder Missbrauch.
 
-![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-fea84c8f.svg)
 
 # Regierungsführung des Netzwerks
 
@@ -49,7 +49,7 @@ Wie jeder traditionelle Nationalstaat mit Ressourcen und Teilnehmern nutzt ebens
 
 🛠️ **Umsetzung:** Der genehmigte Vorschlag wird innerhalb des Netzwerks umgesetzt, gegebenenfalls durch mehrere Entwickler, welche mithilfe von Anreizen dazu motiviert werden.
 
-![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/network-governance-45b77eb1.svg)
 
 # Knowledge Check 1
 
@@ -79,7 +79,7 @@ In dieser Lektion werden wir untersuchen, wie Optimism die DAO-Vision vorantreib
 
 Ziel dieser Lektion wird es sein, in einer abschließenden Aufgabe unser erstes Stimmrecht in Anspruch zu nehmen, sodass wir bereit sind, die Zukunft von Ethereum und die Koordination der Menschheit mitzugestalten!
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-af6d1031.svg)
 
 # Die optimistische Vision
 
@@ -123,7 +123,7 @@ Viele großartige Blockchain-Projekte beginnen durch das Wirken einer zentralisi
 
 Rechtliche Kontrollen und Abwägungen, wie z. B. die Möglichkeit des Optimism Collectives, Mitglieder der Optimism Foundation abzuberufen, gewährleisten eine langsame **Übertragung des Eigentums am Netzwerk auf die Gemeinschaft**.
 
-![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-aaa9b55d.svg)
 
 # Knowledge Check 3
 
@@ -148,7 +148,7 @@ Im Zentrum der `L2` Wirtschaft von Optimism steht das **"Optimistic Flywheel’"
 
 Mit einer wertvolleren Infrastruktur auf der Blockchain steigt die Nachfrage nach Optimism-Blockspace, und der Kreislauf geht weiter!
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-fd6cac83.svg)
 
 # Anreize für öffentliche Güter
 
@@ -160,7 +160,7 @@ Wie Vitalik Buterin einmal sagte: _"Es ist einfacher, sich darüber zu einigen, 
 
 Dieses Verteilungsmodell ist bekannt unter dem Namen **"Retroactive Public Goods Funding"** [rückwirkende Finanzierung öffentlicher Güter], oder **"RetroPGF"**. Dieser Finanzierungsmechanismus schafft Anreize für optimistische Denker, öffentliche Güter zu schaffen, die der Menschheit dienen. Er befreit uns von der wertschöpfenden Denkweise der traditionellen kapitalistischen Wirtschaft.
 
-![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-b764ca38.svg)
 
 # Ether’s Phönix
 
@@ -170,7 +170,7 @@ _"Es handelt sich um einen Algorithmus, der diejenigen belohnt, die schon früh 
 
 — Die Optimism Foundation
 
-![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-f63f460c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-2b7210df.svg)
 
 # Knowledge Check 4
 
@@ -202,7 +202,7 @@ Es gibt zwei Häuser, aus denen sich das Optimism Collective zusammensetzt, die 
 
 Beide Häuser erhalten das Gleichgewicht des Netzwerks durch ihre Pflichten, Abstimmungsmechanismen und die Möglichkeit `Veto` einzureichen. Schauen wir uns das einmal genauer an.
 
-![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-8f40dd30.svg)
 
 # Knowledge Check 5
 
@@ -238,7 +238,7 @@ Zum Schutz des Netzwerks hat das Bürger-Haus das Recht, ein `Veto` gegen jeden 
 
 Das Token-Haus hat ebenfalls die Möglichkeit, ein Veto gegen jeden Vorschlag einzulegen, der vom Bürger-Haus oder der Optimism Foundation eingereicht wird und der als Einschränkung der Rechte der Token-Inhaber angesehen wird.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-39ac02b5.svg)
 
 # Token-Haus: Beitreten, Abstimmen, Delegieren
 
@@ -261,7 +261,7 @@ Die Regierungsführung des Netzwerks ist nur so demokratisch wie seine ursprüng
 
 Schau dir am besten den [OP Distributionsplan](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) an, um zu sehen, wie die Optimism Foundation anfängliche Befugnisse in Bezug auf die Regierungsführung im Dienst einer ausgewogenen Interessenvertretung zugewiesen hat.
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-5d723b29.svg)
 
 # Knowledge Check 6
 
@@ -295,7 +295,7 @@ Zu den Aufgaben gehören:
 
 Das Bürger-Haus stellt auch sicher, dass die Vorschläge des Token-Hauses mit der Mission übereinstimmen, indem es von dem Recht, `Veto` einzulegen Gebrauch macht, um Änderungen am Netzwerk aufzuheben, die nicht mit der Mission im Einklang stehen.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-4c2b3821.svg)
 
 # Bürger-Haus: Beitreten, Abstimmen, Delegieren
 
@@ -339,7 +339,7 @@ Bei Optimism dauert eine Jahreszeit etwa drei Monate, gefolgt von einer ähnlich
 
 Die durchdachten Feedback-Schleifen, die in Optimism aufgebaut wurden, sind unglaublich wichtig, um die besten Praktiken in Sachen Regierungsführung in `DAOs` zu identifizieren.
 
-![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-a79f33e7.svg)
 
 # Und jetzt… denk noch größer!
 
@@ -357,9 +357,9 @@ Die Geschichte wurde schon immer von den Optimisten der Menschheit geprägt - de
 
 Indem wir uns in innovativen Gemeinschaften engagieren und faire Systeme zur Regierungsführung nutzen, welche `trustless` [Vertrauenslosigkeit] sind, handeln wir wegweisend für die Zukunft der menschlichen Kooperation. Wir bauen eine Welt auf, in der die Menschheit in lokalen, globalen und Online-Systemen gedeihen kann. Es ist an der Zeit, unsere Reise zum Thema Regierungsführung von Optimism zu beginnen.
 
-Die heutige Aufgabe lautet **, dem Token-Haus beizutreten und unsere OP-Token zu delegieren**.
+Today’s quest is **to join the Token House and** `delegate` **our OP tokens**.
 
 Während das Bürger-Haus seine Verfahren zum Onboarding entwickelt, können wir unsere Reise als Bürger mit der Teilnahme an Gesprächen in der [Optimism-Gemeinschaft](https://gov.optimism.io/) beginnen.
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-c4ff6f41.svg)
 
