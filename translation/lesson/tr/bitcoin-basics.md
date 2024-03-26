@@ -29,13 +29,13 @@ ________________________________________________________________________________
 
 # Bankless Academy'e hoş geldiniz
 
-Merhaba cesur Kaşifler, dijital inovasyonun sınır çizgisine hoş geldiniz.
+Merhaba cesur Kaşifler, dijital inovasyonun sınırına hoş geldiniz.
 
-Bankless Academy'de misyonumuz, sizin gibi Kaşiflere blok zinciri evreninde gezinmek ve "bankasızlaşmak" için en iyi araçları ve bilgileri sağlamaktır!
+Bankless Academy'de misyonumuz, sizin gibi Kaşiflere blok zinciri evreninde gezinmek ve "bankasızlaşmak" için en iyi araçları ve bilgileri sağlamak!
 
 Bugün, her şeyi başlatan 'kripto para birimini' inceliyoruz: Bitcoin.
 
-Bitcoin, yeni bir para türüdür. Bu para birimini kullananların finansal özgürlüğünü artırır ve zor kazandıkları paralarını, zaman içinde oluşacak değer kaybına karşı korur.
+Bitcoin, yeni bir para türüdür. Kullanıcılarının finansal özgürlüğünü artırır ve zor kazandıkları paralarını, zaman içinde oluşacak değer kaybına karşı korur.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png)
 
@@ -43,7 +43,7 @@ Bitcoin, yeni bir para türüdür. Bu para birimini kullananların finansal özg
 
 2009 yılında gizemli "Satoshi Nakamoto" tarafından piyasaya sürülen Bitcoin, yeni bir ekonomi çağının başlangıcı oldu.
 
-As the first successful `cryptocurrency`, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Yoksa her gün onu kazanan ve kullanan vatandaşlara mı ait olmalı? Bunun tam olarak ne anlama geldiğinden emin değilseniz doğru yerdesiniz!
+İlk başarılı 'kripto para birimi' olan Bitcoin güçlü bir tartışmayı da beraberinde getirdi: Paranın kontrolü ve gücü geleneksel bankacılık sistemlerinde kalmaya devam mı etmeli? Yoksa her gün onu kazanan ve kullanan vatandaşlara mı ait olmalı? Bunun tam olarak ne anlama geldiğinden emin değilseniz doğru yerdesiniz!
 
 Gerçek şu ki, günümüzde paramızın kontrolü sandığımız gibi bizim elimizde değil. Bunun da oldukça ciddi sonuçları var.
 
