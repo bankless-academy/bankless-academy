@@ -20,7 +20,9 @@ const LESSONS: LessonType[] = [
     learnings: '',
     description: 'What is Bitcoin? Explore the first successful cryptocurrency and rethink money.',
     name: 'Bitcoin Basics',
-    languages: [],
+    languages: [
+      'fr'
+    ],
     lessonWriters: 'Tetranome',
     quest: 'BitcoinBasics',
     publicationStatus: 'publish',
@@ -266,7 +268,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'e2a5684df9734013afdc8e42a1bb494c',
         title: 'The Innovation of Money',
-        content: '<div class="bloc1"><p>In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value, and how institutional management of our assets means giving up full ownership.</p><p>However Bitcoin has evolved beyond a simple monetary tool. It has become a catalyst for a <code>decentralized money</code> revolution. This movement reimagines the traditional financial system by distributing monetary power and control to those who use it.</p><p>By decentralizing money and removing <code>custodians</code> we can:</p><ul><li>💵 Host a 24/7 global marketplace, secured by citizens around the world.</li><li>🛠️ Offer financial tools to the unbanked regions of the globe.</li><li>🤝 Use <code>peer-to-peer</code> technology to avoid the inefficiencies of middleman institutions.</li><li>🔎 Reduce institutional inequality, fraud and market manipulation.</li><li>⚖️ Build <code>equality of opportunity</code> into monetary systems.</li><li>🌐 Establish true ownership for the digital age.</li></ul><p>The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe — and you’re invited.</p><p>“<em>Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.</em></p></div>'
+        content: '<div class="bloc1"><p>In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value, and how institutional management of our assets means giving up full ownership.</p><p>However Bitcoin has evolved beyond a simple monetary tool. It has become a catalyst for a <code>decentralized money</code> revolution. This movement reimagines the traditional financial system by distributing monetary power and control to those who use it.</p><p>By decentralizing money and removing <code>custodians</code> we can:</p><ul><li>💵 Host a 24/7 global marketplace, secured by citizens around the world.</li><li>🛠️ Offer financial tools to the unbanked regions of the globe.</li><li>🤝 Use <code>peer-to-peer</code> technology to avoid the inefficiencies of middleman institutions.</li><li>🔎 Reduce institutional inequality, fraud and market manipulation.</li><li>⚖️ Build <code>equality of opportunity</code> into monetary systems.</li><li>🌐 Establish true ownership for the digital age.</li></ul><p>The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe — and you’re invited.</p><p><em>”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.</em></p></div>'
       },
       {
         type: 'LEARN',
