@@ -57,7 +57,7 @@ Bitcoin'in finansta nasıl devrim yarattığını öğrenmenin zamanı geldi.
 
 Mal ve hizmet alışverişinde boncukların, deniz kabuklarının ve taşların kullanıldığı en eski zamanlardan bu yana para, toplumun ayrılmaz bir parçası oldu.
 
-Ancak ilk para birimlerinin bir sorunu vardı; insanların yeni para bulması/yaratması çok kolaydı. Bir şeyden ne kadar çok varsa değeri o kadar az olur ve bu nedenle, herkesin parası yavaş yavaş daha az değerli hale gelir. Para değerini koruyacaksa bulunması daha zor olmalıdır.
+Ancak ilk para birimlerinin bir sorunu vardı; insanların yeni para bulması/yaratması çok kolaydı. Bir şeyden ne kadar çok varsa değeri o kadar az olacağından, herkesin parası yavaş yavaş daha az değerli hale geliyordu. Para değerini koruyacaksa bulunması daha zor olmalıdır.
 
 Sonunda bu sorunu çözmek için altın ve gümüş gibi maddeler kullanılmaya başlandı. Bu maddelerin en önemli avantajı, sınırlı miktarda bulunmalarıydı (kıtlık); sonsuz bir arz olmaması insanların, dolaşımdaki para miktarını önemli ölçüde artırmasını zorlaştırıyordu. Bu 'kıtlık', paranın değerinin korunmasına yardımcı oldu.
 
@@ -84,7 +84,7 @@ Kağıt paranın kullanıma alınmasıyla birlikte para birimlerinin değeri, al
 
 20. yüzyıla gelindiğinde ise bu "Altın Standardı" çöktü.
 
-Değerli metaller ile para birimleri arasındaki ilişki, dünyanın her yerinde yavaş yavaş sonlandırıldı; bu çaba, herhangi bir ülkenin ekonomisinin altın arzının ötesinde büyümesine olanak tanıyordu. Bir merkez bankasının para birimi yaratmak için artık altına ihtiyacı olmadığından, ülke ekonomisi için gerekli gördükleri kadar yeni para yaratabilirlerdi. Para arzını kararlılıkla kontrol ederek, değerini de kontrol edebilirlerdi.
+Değerli metaller ile para birimleri arasındaki ilişki, dünyanın her yerinde yavaş yavaş sonlandırıldı; bu çaba, herhangi bir ülkenin ekonomisinin, altın arzının ötesinde büyümesine olanak tanıyordu. Bir merkez bankasının para birimi yaratmak için artık altına ihtiyacı olmadığından, ülke ekonomisi için gerekli gördükleri kadar yeni para yaratabilirlerdi. Para arzını kararlılıkla kontrol ederek, değerini de kontrol edebilirlerdi.
 
 Moving into the digital age, electronic currency has vastly replaced physical currency. Paramızı ticari bankalarda saklamak bize kredi kartlarının ve ödeme uygulamalarının rahatlığını sundu. While easy and secure, it also puts for-profit businesses between people and their money.
 
