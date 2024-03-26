@@ -84,9 +84,9 @@ Kağıt paranın kullanıma alınmasıyla birlikte para birimlerinin değeri, al
 
 20. yüzyıla gelindiğinde ise bu "Altın Standardı" çöktü.
 
-Değerli metaller ile para birimleri arasındaki ilişki, dünyanın her yerinde yavaş yavaş sonlandırıldı; bu çaba, herhangi bir ülkenin ekonomisinin, altın arzının ötesinde büyümesine olanak tanıyordu. Bir merkez bankasının para birimi yaratmak için artık altına ihtiyacı olmadığından, ülke ekonomisi için gerekli gördükleri kadar yeni para yaratabilirlerdi. Para arzını kararlılıkla kontrol ederek, değerini de kontrol edebilirlerdi.
+Değerli metaller ile para birimleri arasındaki ilişki, dünyanın her yerinde yavaş yavaş sonlandırıldı; bu çaba, herhangi bir ülkenin ekonomisinin, altın arzının ötesinde büyümesine olanak tanıyordu. Merkez bankaları, para birimi yaratmak için artık altına ihtiyaç duymadığından, ülke ekonomisi için gerekli gördükleri kadar yeni para yaratabiliyordu. Para arzını sıkı önlemlerle kontrol ederek, değerini de kontrol edebiliyorlardı.
 
-Moving into the digital age, electronic currency has vastly replaced physical currency. Paramızı ticari bankalarda saklamak bize kredi kartlarının ve ödeme uygulamalarının rahatlığını sundu. While easy and secure, it also puts for-profit businesses between people and their money.
+Dijital çağa geçişle birlikte, elektronik para birimi büyük ölçüde fiziksel para biriminin yerini aldı. Paramızı ticari bankalarda saklamak bize kredi kartlarının ve ödeme uygulamalarının rahatlığını sundu. While easy and secure, it also puts for-profit businesses between people and their money.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg)
 
