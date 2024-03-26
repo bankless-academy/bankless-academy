@@ -21,6 +21,7 @@ const LESSONS: LessonType[] = [
     description: 'What is Bitcoin? Explore the first successful cryptocurrency and rethink money.',
     name: 'Bitcoin Basics',
     languages: [
+      'es',
       'fr'
     ],
     lessonWriters: 'Tetranome',
