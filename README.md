@@ -100,10 +100,28 @@ This helps us understand how a user interacts with the product in order to impro
 yarn import-content
 ```
 
+### Show import command help
+
+```bash
+yarn import-content -h
+```
+
 ### Import content with a specific Notion ID
 
 ```bash
-yarn import-content 129141602de240e484356bd85f7c75e0
+yarn import-content -nid 129141602de240e484356bd85f7c75e0
+```
+
+### Import all translations for a specific lesson
+
+```bash
+yarn import-content -lid 6a440f5dd00a4179811178943bf89e1d -tr all
+```
+
+### Import a translation for a specific lesson
+
+```bash
+yarn import-content -lid 6a440f5dd00a4179811178943bf89e1d -tr fr
 ```
 
 ### How does it work
