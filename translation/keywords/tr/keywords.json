@@ -95,9 +95,9 @@
     "definition": "Kripto para işlemlerinin kaydının, dünyanın dört bir yanından birçok bilgisayarda tutulduğu sistem."
   },
   "blockchain apps": {
-    "keyword": "blockchain apps",
-    "keyword_plural": "blockchain appss",
-    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
+    "keyword": "blok zinciri uygulamaları",
+    "keyword_plural": "blok zinciri uygulamaları",
+    "definition": "Kripto para takas etmenize, web3 sosyal medyayı kullanmanıza, hayır amaçlı bağışlar yapmanıza ve hatta Bankless Academy'de olduğu gibi zincir üstü bir şeyler öğrenmenize olanak tanıyan blok zinciri uygulamaları."
   },
   "blockchain architecture": {
     "keyword": "blockchain architecture",
@@ -647,7 +647,7 @@
   "private key": {
     "keyword": "private key",
     "keyword_plural": "private keys",
-    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+    "definition": "Özel anahtar, cüzdanınıza erişim sunarak diğer cüzdanlara kripto varlıkları göndermenize olanak tanır."
   },
   "proof of stake": {
     "keyword": "Proof of Stake",
@@ -682,12 +682,12 @@
   "public key": {
     "keyword": "public key",
     "keyword_plural": "public keys",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+    "definition": "Genel anahtar, cüzdanınızın adresidir. Başkalarına size kripto varlıkları göndermeleri için bir referans noktası verir."
   },
   "recovery phrase": {
     "keyword": "recovery phrase",
     "keyword_plural": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+    "definition": "Kurtarma ifadesi, cüzdanınızın genel anahtarını ve özel anahtarını oluşturmak için kullanılan 12 ila 24 kelimeden oluşan bir listedir."
   },
   "red flag": {
     "keyword": "red flag",
@@ -955,13 +955,13 @@
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
   },
   "wallet app": {
-    "keyword": "wallet app",
-    "keyword_plural": "wallet apps",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+    "keyword": "cüzdan uygulaması",
+    "keyword_plural": "cüzdan uygulamaları",
+    "definition": "Bilgisayarınızda veya telefonunuzda, blok zincirindeki cüzdanınıza bağlanmak için kullanılan bir uygulama."
   },
   "wallet provider": {
-    "keyword": "wallet provider",
-    "keyword_plural": "wallet providers",
+    "keyword": "cüzdan sağlayıcısı",
+    "keyword_plural": "cüzdan sağlayıcıları",
     "definition": "The creator of the software you use to access your wallet. These providers do not own your wallet, but instead act as a bridge that lets you access your account on the blockchain."
   },
   "web2": {
