@@ -113,11 +113,11 @@ Yalnızca bu nitelikler, paramızı özgürce biriktirme ve harcama kabiliyetimi
 
 Enter Bitcoin (`BTC`): a digital currency that operates beyond the traditional banking system.
 
-- ⛓️ 'Eşler arası': İnsanları doğrudan birbirlerine bağlar. Automated using `blockchain technology`, it removes need for institutions to facilitate storage or transactions. Savunucuları ona "yöneticisi olmayan kurallar bütünü" diyor.
+- ⛓️ 'Eşler arası': İnsanları doğrudan birbirlerine bağlar. 'Blok zinciri teknolojisiyle' otomatik hale getirilen bu sistem, varlık saklamanın veya işlem yapmanın kurumlarca kolaylaştırılması yönündeki ihtiyacı ortadan kaldırıyor. Savunucuları ona "yöneticisi olmayan kurallar bütünü" diyor.
 - 💎 'Kıt': Sınırsız miktarda yeni para çıkaran bir merkez bankası bulunmayan Bitcoin, uzun vadeli birikimin karşılığını veren istikrarlı, öngörülebilir bir para politikasına sahiptir.
-- ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. When stored in its natural state, Bitcoin is held in a secure online safe and only the owner has access.
+- ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. Doğal haliyle saklandığında Bitcoin, güvenli bir çevrimiçi kasada tutulur ve yalnızca sahibi ona erişebilir.
 
-Bitcoin sahip olduğu nitelikler nedeniyle "dijital altın" lakabını kazanmıştır.
+Bitcoin sahip olduğu nitelikler nedeniyle "dijital altın" lakabını almıştır.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/enter-bitcoin-b108517c.svg)
 
@@ -127,9 +127,9 @@ Bitcoin sahip olduğu nitelikler nedeniyle "dijital altın" lakabını kazanmı�
 
 ***
 
-Bitcoin'de kıtlık, toplamda kaç adet Bitcoin'in var olabileceğine dair bir üst sınır olduğunu ifade eder. Bitcoin'de bu sınır, 21 milyon adettir. Bitcoin'in koduna eklenmiş olan bu 'maksimum arz', Bitcoin'i nadir ve potansiyel olarak değerli kılar. This puts it in a good position as a long term store of value, much like gold.
+Bitcoin'de kıtlık, toplamda kaç adet Bitcoin'in var olabileceğine dair bir üst sınır olduğunu ifade eder. Bitcoin'de bu sınır, 21 milyon adettir. Bitcoin'in koduna dahil edilmiş olan bu 'maksimum arz', Bitcoin'i nadir ve potansiyel olarak değerli kılar. This puts it in a good position as a long term store of value, much like gold.
 
-Maksimum 'BTC' arzı 21 milyonu geçemez ve piyasaya düzenli aralıklarla yeni para birimi eklenir. Altın madenciliğinde olduğu gibi, yeni Bitcoin de 'kripto para madenciliği' adı verilen zahmetli bir süreçle çıkarılır. This predictable increase in `circulating supply` keeps the Bitcoin economy moving.
+Maksimum 'BTC' arzı 21 milyonu geçemez ve piyasaya düzenli aralıklarla yeni para birimi eklenir. Altın madenciliğinde olduğu gibi, yeni Bitcoin de 'kripto para madenciliği' adı verilen zahmetli bir süreçle çıkarılır. 'Dolaşımdaki arzda' oluşan bu öngörülebilir artış, Bitcoin ekonomisini aktif tutar.
 
 Bitcoin'in sabit 'para politikası', uzun vadede değer korumayı tercih edenler için onu cazip bir varlık haline getirerek artan maliyetlere yetişmelerini sağlar.
 
@@ -139,7 +139,7 @@ Kısa vadeli değeri ise piyasa spekülasyonu nedeniyle dalgalanmayı sürdürü
 
 # Knowledge Check 2
 
-How does Bitcoin promote value preservation in the long term?
+Bitcoin uzun vadede değer korumayı nasıl teşvik eder?
 
 - [ ] Maksimum arz üst sınırı kullanarak.
 
@@ -151,11 +151,11 @@ How does Bitcoin promote value preservation in the long term?
 
 # Dijital Altın: Gözetimsizlik
 
-🧊 Bankanız, onun hoşuna gitmeyen bir transfer yaptığınız için size haber vermeden paranızı dondurdu mu?
+🧊 Bankanızın, onun hoşuna gitmeyen bir transfer yaptığınız için size haber vermeden paranızı dondurduğu oldu mu?
 
 ***
 
-Demokrasilerde mülkiyet, vatandaşlara yaşamları üzerinde daha fazla kontrol ve özgürlük sağladığı için korunan bir insan hakkıdır. Hayatta kalma araçlarımız şarta bağlı olduğunda, yani işletmeler veya kurumlar tarafından değerlendirildiğinde özgürce hareket edemeyiz.
+Demokrasilerde mülkiyet korunan bir insan hakkıdır çünkü vatandaşlara, yaşamları üzerinde daha fazla kontrol ve özgürlük sağlar. Hayatta kalma araçlarımız şarta bağlı olduğunda, yani işletmeler veya kurumlar tarafından değerlendirildiğinde özgürce hareket edemeyiz.
 
 As our assets are increasingly digitized (i.e. your money, your property, and even your identity), our lives are taking on a digital quality that we must learn to protect.
 
