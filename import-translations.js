@@ -14,12 +14,16 @@ async function main() {
   const languageSelected = program.opts().language
 
   const languages = [
+    'br',
     'cn',
-    'de',
+    // 'de',
     'es',
     'fr',
-    'it',
-    'jp'
+    // 'it',
+    // 'jp',
+    'tr',
+    'ua'
+
   ].filter(lg => languageSelected === 'all' || languageSelected === lg)
   const nameSpaces = [
     'keywords',
