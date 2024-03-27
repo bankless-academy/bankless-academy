@@ -22,7 +22,7 @@
   "airdrop": {
     "keyword": "airdrop",
     "keyword_plural": "airdroplar",
-    "definition": "A free distribution of crypto assets to users."
+    "definition": "Bir kripto varlığın kullanıcılara ücretsiz dağıtımı."
   },
   "allowance": {
     "keyword": "allowance",
@@ -30,13 +30,13 @@
     "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
   },
   "alternative layer 1": {
-    "keyword": "alternative Layer 1",
-    "keyword_plural": "alternative Layer 1s",
-    "definition": "Layer 1 blockchains other than Ethereum and Bitcoin."
+    "keyword": "alternatif Katman 1",
+    "keyword_plural": "alternatif Katman 1'ler",
+    "definition": "Ethereum ve Bitcoin dışındaki Katman 1 blok zincirleri."
   },
   "amm": {
     "keyword": "AMM",
-    "keyword_plural": "AMMs",
+    "keyword_plural": "AMM'ler",
     "definition": "(Automated Market Maker) A trade matchmaking system, based on a public algorithm."
   },
   "asynchronous": {
@@ -95,9 +95,9 @@
     "definition": "Kripto para işlemlerinin kaydının, dünyanın dört bir yanından birçok bilgisayarda tutulduğu sistem."
   },
   "blockchain apps": {
-    "keyword": "blok zinciri uygulamaları",
+    "keyword": "blok zinciri uygulaması",
     "keyword_plural": "blok zinciri uygulamaları",
-    "definition": "Kripto para takas etmenize, web3 sosyal medyayı kullanmanıza, hayır amaçlı bağışlar yapmanıza ve hatta Bankless Academy'de olduğu gibi zincir üstü bir şeyler öğrenmenize olanak tanıyan blok zinciri uygulamaları."
+    "definition": "Kripto para takas etmenize, web3 sosyal medyasını kullanmanıza, hayır amaçlı bağışlar yapmanıza ve hatta Bankless Academy'de olduğu gibi zincir üstü bir şeyler öğrenmenize olanak tanıyan blok zinciri uygulamaları."
   },
   "blockchain architecture": {
     "keyword": "blockchain architecture",
