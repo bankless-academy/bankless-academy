@@ -111,6 +111,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   )?.replace('-datadisk', '')
   const language: any = params.slug?.length === 1 ? 'en' : params.slug[0]
   let currentLesson = LESSONS.find((lesson: LessonType) => lesson.slug === slug)
+  if (!currentLesson)
+    // lesson not found
+    return {
+      props: {},
+    }
   // console.log(currentLesson)
   if (currentLesson?.languages) {
     for (const language of currentLesson.languages) {
@@ -141,10 +146,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   } catch (error) {
     const pageMeta: MetaData = {
-      title: currentLesson.name,
-      description: currentLesson.description,
-      image: currentLesson.socialImageLink || DEFAULT_METADATA.image,
-      isLesson: !currentLesson.isArticle,
+      title: currentLesson?.name,
+      description: currentLesson?.description,
+      image: currentLesson?.socialImageLink || DEFAULT_METADATA.image,
+      isLesson: !currentLesson?.isArticle,
       lesson: currentLesson,
     }
     console.log('error loading language', language)
