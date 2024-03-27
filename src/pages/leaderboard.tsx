@@ -184,6 +184,7 @@ const Leaderboard = (): JSX.Element => {
               addressData.valid_stamps?.length || 0
             addressData.datadisks_count = addressData.datadisks?.length || 0
             addressData.handbooks_count = addressData.handbooks?.length || 0
+            addressData.referrals = addressData?.referrals || 0
             addressData.donations_count =
               Object.keys(addressData.donations || {})?.length || 0
             data.push({ address, ...addressData })

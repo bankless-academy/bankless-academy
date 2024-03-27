@@ -142,12 +142,12 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
       for (const referral of referrals) {
         const address = referral.address?.toLowerCase()
         if (address in leaderboard)
-          leaderboard[address].referrals = referral.count
+          leaderboard[address].referrals = parseInt(referral.count)
       }
       const rank = []
       for (const address of Object.keys(leaderboard)) {
         // score
-        const score = calculateExplorerScore(leaderboard[address])
+        const score = calculateExplorerScore(leaderboard[address]) + (leaderboard[address]?.referrals || 0)
 
         leaderboard[address].score = score
         // leaderboard[address].donations_count = leaderboard[address].donations_count || 0
@@ -163,7 +163,11 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
       // console.log(rank)
       // console.log(sortedRank)
       for (const r of sortedRank) {
-        leaderboard[r.address].rank = r.rank
+        // LIMIT to first 5000
+        if (r.rank <= 5000)
+          leaderboard[r.address].rank = r.rank
+        else
+          delete leaderboard[r.address]
       }
 
       return res.status(200).send(leaderboard)
