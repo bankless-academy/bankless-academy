@@ -115,13 +115,13 @@ yarn import-content -nid 129141602de240e484356bd85f7c75e0
 ### Import all translations for a specific lesson
 
 ```bash
-yarn import-content -lid 6a440f5dd00a4179811178943bf89e1d -tr all
+yarn import-content -lid 6a440f5dd00a4179811178943bf89e1d -lg all
 ```
 
 ### Import a translation for a specific lesson
 
 ```bash
-yarn import-content -lid 6a440f5dd00a4179811178943bf89e1d -tr fr
+yarn import-content -lid 6a440f5dd00a4179811178943bf89e1d -lg fr
 ```
 
 ### How does it work
