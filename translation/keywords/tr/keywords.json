@@ -92,7 +92,7 @@
   "blockchain": {
     "keyword": "blok zinciri",
     "keyword_plural": "blok zincirleri",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "Kripto para işlemlerinin kaydının, dünyanın dört bir yanından birçok bilgisayarda tutulduğu sistem."
   },
   "blockchain apps": {
     "keyword": "blockchain apps",
@@ -105,9 +105,9 @@
     "definition": "The structures for how data is stored in blockchain technology."
   },
   "blockchain technology": {
-    "keyword": "blockchain technology",
-    "keyword_plural": "blockchain technologys",
-    "definition": "A new type of network, hosted across many computers. It's adding a new layer of digital ownership to the internet."
+    "keyword": "blok zinciri teknolojisi",
+    "keyword_plural": "blok zinciri teknolojileri",
+    "definition": "Birçok bilgisayarda barındırılan yeni bir ağ türü. İnternete yeni bir dijital mülkiyet katmanı eklemektedir."
   },
   "blockchain trilemma": {
     "keyword": "Blockchain Trilemma",
@@ -140,9 +140,9 @@
     "definition": "No government or company has control to determine what is or is not allowed."
   },
   "central bank": {
-    "keyword": "central bank",
-    "keyword_plural": "central banks",
-    "definition": "An institution regulating money, banks, and currency in a country."
+    "keyword": "merkez bankası",
+    "keyword_plural": "merkez bankaları",
+    "definition": "Bir ülkedeki parayı, bankaları ve para birimini düzenleyen kurum."
   },
   "centralized": {
     "keyword": "centralized",
@@ -170,9 +170,9 @@
     "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
   },
   "circulating supply": {
-    "keyword": "circulating supply",
-    "keyword_plural": "circulating supplys",
-    "definition": "The number of a specific cryptocurrency's coins or tokens publicly available for the market to trade."
+    "keyword": "dolaşımdaki arz",
+    "keyword_plural": "dolaşımdaki arzlar",
+    "definition": "Belirli bir kripto paranın piyasada alım satım için halka açık olan coin veya token sayısı."
   },
   "coin": {
     "keyword": "coin",
@@ -190,9 +190,9 @@
     "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
   },
   "commercial bank": {
-    "keyword": "commercial bank",
-    "keyword_plural": "commercial banks",
-    "definition": "A bank managing money for people and businesses."
+    "keyword": "ti̇cari̇ banka",
+    "keyword_plural": "ti̇cari̇ bankalar",
+    "definition": "İnsanlar ve işletmeler için parayı yöneten bir banka."
   },
   "consensus": {
     "keyword": "consensus",
@@ -220,14 +220,14 @@
     "definition": "A mechanism that does not discriminate for or against any specific people."
   },
   "cryptocurrency": {
-    "keyword": "kripto para birimi",
-    "keyword_plural": "cryptocurrencys",
-    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+    "keyword": "kripto para",
+    "keyword_plural": "kripto paralar",
+    "definition": "Merkezi otoriteler yerine blok zinciri teknolojisi tarafından barındırılan bir dijital para birimi."
   },
   "cryptocurrency mining": {
-    "keyword": "cryptocurrency mining",
-    "keyword_plural": "cryptocurrency minings",
-    "definition": "The process of verifying blockchain transactions in exchange for cryptocurrency rewards."
+    "keyword": "kripto para madenciliği",
+    "keyword_plural": "kripto para madencilikleri",
+    "definition": "Kripto para ödülleri karşılığında blok zinciri işlemlerini doğrulama süreci."
   },
   "cryptocurrency wallet": {
     "keyword": "kripto para cüzdanı",
@@ -255,14 +255,14 @@
     "definition": "A decentralized application that connects to decentralized networks and protocols."
   },
   "decentralization": {
-    "keyword": "Decentralization",
-    "keyword_plural": "Decentralizations",
-    "definition": "The transfer of control to many individuals rather than one single authority."
+    "keyword": "Merkeziyetsizlik",
+    "keyword_plural": "Merkeziyetsizlikler",
+    "definition": "Kontrolün tek bir otorite yerine çok sayıda bireye devredilmesi."
   },
   "decentralized": {
-    "keyword": "decentralized",
-    "keyword_plural": "decentralizeds",
-    "definition": "No single authority or entity controls the system."
+    "keyword": "merkeziyetsiz",
+    "keyword_plural": "merkeziyetsizler",
+    "definition": "Sistemin tek bir makam veya kuruluş tarafından kontrol edilmemesi."
   },
   "decentralized exchange": {
     "keyword": "decentralized exchange",
@@ -395,9 +395,9 @@
     "definition": "A transaction that pays gas using some of the token to be traded rather than the native coin of the blockchain network."
   },
   "gold standard": {
-    "keyword": "gold standard",
-    "keyword_plural": "gold standards",
-    "definition": "A monetary system where a country's currency has a value directly linked to gold."
+    "keyword": "altın standardı",
+    "keyword_plural": "altın standartları",
+    "definition": "Bir ülkenin para biriminin doğrudan altına bağlı bir değere sahip olduğu para sistemi."
   },
   "gwei": {
     "keyword": "gwei",
@@ -515,9 +515,9 @@
     "definition": "The total value of a given token, or market sector."
   },
   "max supply": {
-    "keyword": "max supply",
-    "keyword_plural": "max supplys",
-    "definition": "The maximum number of coins or tokens that will ever exist for a particular cryptocurrency."
+    "keyword": "maksimum arz",
+    "keyword_plural": "maksimum arzlar",
+    "definition": "Belirli bir kripto para birimi için var olabilecek maksimum coin veya token sayısı."
   },
   "memecoin": {
     "keyword": "memecoin",
@@ -550,9 +550,9 @@
     "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
   },
   "monetary policy": {
-    "keyword": "monetary policy",
-    "keyword_plural": "monetary policys",
-    "definition": "How a central bank manages the amount of money circulating in an economy."
+    "keyword": "para politikası",
+    "keyword_plural": "para politikaları",
+    "definition": "Merkez bankasının bir ekonomide dolaşımda olan para miktarını yönetme şekli."
   },
   "money": {
     "keyword": "money",
@@ -716,8 +716,8 @@
   },
   "satoshi nakamoto": {
     "keyword": "Satoshi Nakamoto",
-    "keyword_plural": "Satoshi Nakamotos",
-    "definition": "The pseudonymous creator of Bitcoin. To this day, nobody knows their real identity."
+    "keyword_plural": "Satoshi Nakamoto'lar",
+    "definition": "Bitcoin'in takma adlı yaratıcısı. Henüz kimse gerçek kimliğini bilmiyor."
   },
   "scalability": {
     "keyword": "Scalability",
@@ -730,14 +730,14 @@
     "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds."
   },
   "scarce": {
-    "keyword": "scarce",
-    "keyword_plural": "scarces",
-    "definition": "The state of being in short supply."
+    "keyword": "kıt",
+    "keyword_plural": "kıtlar",
+    "definition": "Arzın az olması durumu."
   },
   "scarcity": {
-    "keyword": "scarcity",
-    "keyword_plural": "scarcitys",
-    "definition": "Being in short supply."
+    "keyword": "kıtlık",
+    "keyword_plural": "kıtlıklar",
+    "definition": "Arzın az olması."
   },
   "security": {
     "keyword": "Security",
@@ -750,14 +750,14 @@
     "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
   },
   "self-custodial": {
-    "keyword": "self-custodial",
-    "keyword_plural": "self-custodials",
-    "definition": "A means of holding your assets where only you have access to them."
+    "keyword": "gözetimsiz",
+    "keyword_plural": "gözetimsizler",
+    "definition": "Varlıklarınızı sadece sizin erişebileceğiniz bir yerde tutma yolu."
   },
   "self-custody": {
-    "keyword": "self-custody",
-    "keyword_plural": "self-custodys",
-    "definition": "A means of holding your assets where only you have access to them."
+    "keyword": "gözetimsizlik",
+    "keyword_plural": "gözetimsizlikler",
+    "definition": "Varlıklarınızı sadece sizin erişebileceğiniz bir yerde tutma yolu."
   },
   "self-custody wallet": {
     "keyword": "self-custody wallet",
