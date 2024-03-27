@@ -1,27 +1,27 @@
 {
   "2 factor authentication": {
-    "keyword": "2 Factor Authentication",
-    "keyword_plural": "2 Factor Authentications",
-    "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+    "keyword": "2 Faktörlü Kimlik Doğrulama",
+    "keyword_plural": "2 Faktörlü Kimlik Doğrulamalar",
+    "definition": "Çevrimiçi bir hesaba erişmeye çalışan kişilerin söyledikleri kişi olduklarından emin olmak için kullanılan ek bir güvenlik katmanı."
   },
   "51% attack": {
-    "keyword": "51% attack",
-    "keyword_plural": "51% attacks",
+    "keyword": "%51 saldırısı",
+    "keyword_plural": "%51 saldırıları",
     "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
   },
   "address": {
-    "keyword": "address",
-    "keyword_plural": "addresss",
-    "definition": "Unique public identifier for an entity on a blockchain."
+    "keyword": "adres",
+    "keyword_plural": "adresler",
+    "definition": "Blok zincirindeki bir varlık için benzersiz genel tanımlayıcı."
   },
   "aggregator": {
-    "keyword": "aggregator",
-    "keyword_plural": "aggregators",
-    "definition": "Tool that combines multiple sources, to offer competitive options."
+    "keyword": "toplayıcı",
+    "keyword_plural": "toplayıcılar",
+    "definition": "Rekabetçi seçenekler sunmak için birden fazla kaynağı birleştiren araç."
   },
   "airdrop": {
     "keyword": "airdrop",
-    "keyword_plural": "airdrops",
+    "keyword_plural": "airdroplar",
     "definition": "A free distribution of crypto assets to users."
   },
   "allowance": {
@@ -962,7 +962,7 @@
   "wallet provider": {
     "keyword": "cüzdan sağlayıcısı",
     "keyword_plural": "cüzdan sağlayıcıları",
-    "definition": "The creator of the software you use to access your wallet. These providers do not own your wallet, but instead act as a bridge that lets you access your account on the blockchain."
+    "definition": "Cüzdanınıza erişmek için kullandığınız yazılımın yaratıcısı. Bu sağlayıcılar, cüzdanınızın sahibi değildir ve blok zincirindeki hesabınıza erişmenizi sağlayan bir köprü görevi görürler."
   },
   "web2": {
     "keyword": "web2",
