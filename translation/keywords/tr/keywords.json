@@ -90,8 +90,8 @@
     "definition": "An amount of native coin given to the proposer of a new valid block."
   },
   "blockchain": {
-    "keyword": "blockchain",
-    "keyword_plural": "blockchains",
+    "keyword": "blok zinciri",
+    "keyword_plural": "blok zincirleri",
     "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
   },
   "blockchain apps": {
@@ -131,8 +131,8 @@
   },
   "btc": {
     "keyword": "BTC",
-    "keyword_plural": "BTCs",
-    "definition": "The market symbol for bitcoin."
+    "keyword_plural": "BTC'ler",
+    "definition": "Bitcoin'in piyasada kullanılan sembolü."
   },
   "censorship-resistant": {
     "keyword": "censorship-resistant",
@@ -230,9 +230,9 @@
     "definition": "The process of verifying blockchain transactions in exchange for cryptocurrency rewards."
   },
   "cryptocurrency wallet": {
-    "keyword": "cryptocurrency wallet",
-    "keyword_plural": "cryptocurrency wallets",
-    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+    "keyword": "kripto para cüzdanı",
+    "keyword_plural": "kripto para cüzdanları",
+    "definition": "Kripto paranızı saklamanıza ve göndermenize/almanıza veya harcamanıza olanak tanıyan bir uygulama."
   },
   "custodial wallet": {
     "keyword": "custodial wallet",
@@ -240,9 +240,9 @@
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
   },
   "custodian": {
-    "keyword": "custodian",
-    "keyword_plural": "custodians",
-    "definition": "A financial institution given responsibility to secure your assets."
+    "keyword": "emanetçi",
+    "keyword_plural": "emanetçiler",
+    "definition": "Varlıklarınızı güvence altına alma sorumluluğu verilen bir finans kurumu."
   },
   "dao": {
     "keyword": "DAO",
@@ -275,9 +275,9 @@
     "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
   },
   "decentralized money": {
-    "keyword": "decentralized money",
-    "keyword_plural": "decentralized moneys",
-    "definition": "Money with properties agreed on by the community, rather than set by an institution."
+    "keyword": "merkeziyetsiz para",
+    "keyword_plural": "merkeziyetsiz paralar",
+    "definition": "Özellikleri, bir kurum tarafından belirlenmek yerine topluluk tarafından kararlaştırılan para."
   },
   "defi": {
     "keyword": "DeFi",
@@ -330,9 +330,9 @@
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
   "equality of opportunity": {
-    "keyword": "equality of opportunity",
-    "keyword_plural": "equality of opportunitys",
-    "definition": "A fairness principle, where everyone has the same chances to succeed regardless of their background or circumstances."
+    "keyword": "fırsat eşitliği",
+    "keyword_plural": "fırsat eşitlikleri",
+    "definition": "Geçmişi veya koşulları ne olursa olsun herkesin başarılı olmak için aynı şansa sahip olduğu bir adalet ilkesi."
   },
   "erc-20": {
     "keyword": "ERC-20",
@@ -535,9 +535,9 @@
     "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
   },
   "miner": {
-    "keyword": "miner",
-    "keyword_plural": "miners",
-    "definition": "An individual who participates in validating cryptocurrency transactions and proposing blocks."
+    "keyword": "madenci",
+    "keyword_plural": "madenciler",
+    "definition": "Kripto para işlemlerinin doğrulanması ve blokların önerilmesi sürecine katılan birey."
   },
   "mining": {
     "keyword": "mining",
@@ -610,9 +610,9 @@
     "definition": "Allows two parties to transact multiple times without the need for each transaction to be recorded on the blockchain."
   },
   "peer-to-peer": {
-    "keyword": "peer-to-peer",
-    "keyword_plural": "peer-to-peers",
-    "definition": "A transaction between two parties that does not require a middleman or controlling entity."
+    "keyword": "eşler arası",
+    "keyword_plural": "eşler arası olanlar",
+    "definition": "İki taraf arasında bir aracı veya denetleyici kurum gerektirmeyen işlem."
   },
   "peg": {
     "keyword": "peg",
