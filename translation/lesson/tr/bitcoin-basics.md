@@ -157,19 +157,19 @@ Bitcoin uzun vadede değer korumayı nasıl teşvik eder?
 
 Demokrasilerde mülkiyet korunan bir insan hakkıdır çünkü vatandaşlara, yaşamları üzerinde daha fazla kontrol ve özgürlük sağlar. Hayatta kalma araçlarımız şarta bağlı olduğunda, yani işletmeler veya kurumlar tarafından değerlendirildiğinde özgürce hareket edemeyiz.
 
-As our assets are increasingly digitized (i.e. your money, your property, and even your identity), our lives are taking on a digital quality that we must learn to protect.
+Varlıklarımız (yani paramız, mülkümüz ve hatta kimliğimiz) giderek dijitalleştikçe yaşamımız, korumayı öğrenmemiz gereken dijital bir nitelik kazanıyor.
 
-Bitcoin’s `self-custody` offers true digital ownership, beyond reach of `custodians`. Hesap bilgilerinizi başka biriyle paylaşmadığınız sürece, varlıklarınıza erişim hakkı yalnızca size aittir. Bu, güvenli bir çevrimiçi alanda kendi altın kasanıza sahip olmaya benzer.
+Bitcoin'in 'gözetimsiz' yapısı, 'emanetçilerin' ulaşamayacağı gerçek bir dijital mülkiyet sunar. Hesap bilgilerinizi başka biriyle paylaşmadığınız sürece, varlıklarınıza erişim hakkı yalnızca size aittir. Bu, güvenli bir çevrimiçi alanda kendi altın kasanızın olmasına benzer.
 
-This system of ownership gives you total control of your digital wealth — anywhere in the world, any time.
+Bu mülkiyet sistemi, dijital servetinizin tam kontrolünü dünyanın her yerinde, her zaman size verir.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg)
 
 # Knowledge Check 3
 
-How does self-custody enable true ownership?
+Gözetimsizlik gerçek mülkiyeti nasıl mümkün kılar?
 
-- [ ] By giving you sole access to your assets.
+- [ ] Varlıklarınıza yalnızca sizin erişmenizi sağlayarak.
 
 > Doğru! Varlıklarımıza erişimi olan herhangi biri onlara el koyabilir.
 
@@ -185,11 +185,11 @@ How does self-custody enable true ownership?
 
 E-posta, postane ihtiyacını ortadan kaldırarak mektup göndermeyi kolaylaştırdı. Benzer şekilde, Bitcoin de bankalara olan ihtiyacı ortadan kaldırarak para gönderimini kolaylaştırdı.
 
-- ⚡ Transfer Bitcoin globally for a reasonable fee.
+- ⚡ Bitcoin'i makul bir ücret karşılığında küresel olarak transfer edebilirsiniz.
 - ⚙️ 7/24 para gönderin. Beklemek yok, evrak işi yok, aksama süresi yok.
-- 📡 İnternet bağlantısı olan her yerden Bitcoin'e erişin.
+- 📡 Access Bitcoin from anywhere with an internet connection.
 
-Bitcoin almak için tıpkı bir e-posta adresiniz olduğu gibi tek bir Bitcoin adresi gereklidir. Varsayılan olarak şöyle görünür: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (bunu nasıl özelleştireceğinizi daha sonra göstereceğiz!)
+Tıpkı e-posta adresinizde olduğu gibi, Bitcoin almak için de tek bir Bitcoin adresi gereklidir. Adresiniz varsayılan olarak şöyle görünür: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (bunu nasıl özelleştireceğinizi daha sonra göstereceğiz!)
 
 Hesabınızı, web tarayıcınıza veya telefonunuza bağlanan 'kripto para cüzdanı' yazılımını kullanarak yönetirsiniz. Oluşturabileceğiniz en kolay "banka hesabı" budur. Randevu ya da kimlik gerekmez!
 
