@@ -20,7 +20,14 @@ const LESSONS: LessonType[] = [
     learnings: '',
     description: 'What is Bitcoin? Explore the first successful cryptocurrency and rethink money.',
     name: 'Bitcoin Basics',
-    languages: [],
+    languages: [
+      'br',
+      'cn',
+      'es',
+      'fr',
+      'tr',
+      'ua'
+    ],
     lessonWriters: 'Tetranome',
     quest: 'BitcoinBasics',
     publicationStatus: 'publish',
