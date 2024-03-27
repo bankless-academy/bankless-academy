@@ -109,13 +109,13 @@ Yalnızca bu nitelikler, paramızı özgürce biriktirme ve harcama kabiliyetimi
 
 # Bitcoin Sahnede
 
-'Satoshi Nakamoto', paranın sadece birkaç kişi tarafından kontrol edilemeyecek kadar önemli olduğunu düşünüyordu. Herkes için adil ve güvenilir olabilecek bir para türü yaratmak istiyordu.
+'Satoshi Nakamoto', paranın sadece birkaç kişi tarafından kontrol edilemeyecek kadar önemli olduğunu düşünüyordu. Herkes için adil ve güvenilir olabilecek bir para türü yaratmak istedi.
 
 Enter Bitcoin (`BTC`): a digital currency that operates beyond the traditional banking system.
 
-- ⛓️ 'Eşler arası': İnsanları doğrudan birbirlerine bağlar. 'Blok zinciri teknolojisiyle' otomatik hale getirilen bu sistem, varlık saklamanın veya işlem yapmanın kurumlarca kolaylaştırılması yönündeki ihtiyacı ortadan kaldırıyor. Savunucuları ona "yöneticisi olmayan kurallar bütünü" diyor.
-- 💎 'Kıt': Sınırsız miktarda yeni para çıkaran bir merkez bankası bulunmayan Bitcoin, uzun vadeli birikimin karşılığını veren istikrarlı, öngörülebilir bir para politikasına sahiptir.
-- ✊ It’s `self-custodial`: It can be held without institutions hosting transfers or storage. Doğal haliyle saklandığında Bitcoin, güvenli bir çevrimiçi kasada tutulur ve yalnızca sahibi ona erişebilir.
+- ⛓️ 'Eşler arası' çalışır: İnsanları doğrudan birbirlerine bağlar. 'Blok zinciri teknolojisiyle' otomatik hale getirilen bu sistem, varlık saklamanın veya işlem yapmanın kurumlarca kolaylaştırılması yönündeki ihtiyacı ortadan kaldırıyor. Savunucuları ona "yöneticisi olmayan kurallar bütünü" diyor.
+- 💎 Arzı 'kıttır': Sınırsız miktarda yeni para çıkaran bir merkez bankası bulunmayan Bitcoin, uzun vadeli birikimin karşılığını veren istikrarlı, öngörülebilir bir para politikasına sahiptir.
+- ✊ 'Gözetimsizdir': Transfer veya saklama işlemlerini yöneten kurumlar olmadan sahip olunabilir. Doğal haliyle saklandığında Bitcoin, güvenli bir çevrimiçi kasada tutulur ve yalnızca sahibi ona erişebilir.
 
 Bitcoin sahip olduğu nitelikler nedeniyle "dijital altın" lakabını almıştır.
 
@@ -123,11 +123,11 @@ Bitcoin sahip olduğu nitelikler nedeniyle "dijital altın" lakabını almışt�
 
 # Dijital Altın: Kıtlık
 
-📉 Do you find it difficult to keep up with rising costs?
+📉 Artan maliyetlere yetişmekte zorlanıyor musunuz?
 
 ***
 
-Bitcoin'de kıtlık, toplamda kaç adet Bitcoin'in var olabileceğine dair bir üst sınır olduğunu ifade eder. Bitcoin'de bu sınır, 21 milyon adettir. Bitcoin'in koduna dahil edilmiş olan bu 'maksimum arz', Bitcoin'i nadir ve potansiyel olarak değerli kılar. This puts it in a good position as a long term store of value, much like gold.
+Bitcoin'de kıtlık, toplamda kaç adet Bitcoin'in var olabileceğine dair bir üst sınır olduğunu ifade eder. Bitcoin'de bu sınır, 21 milyon adettir. Bitcoin'in koduna dahil edilmiş olan bu 'maksimum arz', Bitcoin'i nadir ve potansiyel olarak değerli kılar. Tıpkı altın gibi uzun vadeli bir değer saklama aracı olarak iyi bir konuma getirir.
 
 Maksimum 'BTC' arzı 21 milyonu geçemez ve piyasaya düzenli aralıklarla yeni para birimi eklenir. Altın madenciliğinde olduğu gibi, yeni Bitcoin de 'kripto para madenciliği' adı verilen zahmetli bir süreçle çıkarılır. 'Dolaşımdaki arzda' oluşan bu öngörülebilir artış, Bitcoin ekonomisini aktif tutar.
 
