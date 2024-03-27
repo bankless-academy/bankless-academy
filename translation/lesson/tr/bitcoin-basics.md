@@ -1,5 +1,5 @@
 ---
-TITLE: Bitcoin Basics
+TITLE: Bitcoin'in Temelleri
 DESCRIPTION: Bitcoin nedir? İlk başarılı kripto para birimini keşfedin ve para ile ilgili düşüncelerinizi gözden geçirin.
 LANGUAGE: Türkçe
 WRITERS: Tetranome
@@ -57,7 +57,7 @@ Bitcoin'in finansta nasıl devrim yarattığını öğrenmenin zamanı geldi.
 
 Mal ve hizmet alışverişinde boncukların, deniz kabuklarının ve taşların kullanıldığı en eski zamanlardan bu yana para, toplumun ayrılmaz bir parçası oldu.
 
-Ancak ilk para birimlerinin bir sorunu vardı; insanların yeni para bulması/yaratması çok kolaydı. Bir şeyden ne kadar çok varsa değeri o kadar az olacağından, herkesin parası yavaş yavaş daha az değerli hale geliyordu. Para değerini koruyacaksa bulunması daha zor olmalıdır.
+Ancak ilk para birimlerinin bir sorunu vardı; insanların yeni para bulması/yaratması çok kolaydı. Bir şeyden ne kadar çok varsa değeri o kadar az olacağından, herkesin parası yavaş yavaş daha az değerli hale geliyordu. Paranın değerini koruması için bulunması daha zor olmalıdır.
 
 Sonunda bu sorunu çözmek için altın ve gümüş gibi maddeler kullanılmaya başlandı. Bu maddelerin en önemli avantajı, sınırlı miktarda bulunmalarıydı (kıtlık); sonsuz bir arz olmaması insanların, dolaşımdaki para miktarını önemli ölçüde artırmasını zorlaştırıyordu. Bu 'kıtlık', paranın değerinin korunmasına yardımcı oldu.
 
@@ -86,7 +86,7 @@ Kağıt paranın kullanıma alınmasıyla birlikte para birimlerinin değeri, al
 
 Değerli metaller ile para birimleri arasındaki ilişki, dünyanın her yerinde yavaş yavaş sonlandırıldı; bu çaba, herhangi bir ülkenin ekonomisinin, altın arzının ötesinde büyümesine olanak tanıyordu. Merkez bankaları, para birimi yaratmak için artık altına ihtiyaç duymadığından, ülke ekonomisi için gerekli gördükleri kadar yeni para yaratabiliyordu. Para arzını sıkı önlemlerle kontrol ederek, değerini de kontrol edebiliyorlardı.
 
-Dijital çağa geçişle birlikte, elektronik para birimi büyük ölçüde fiziksel para biriminin yerini aldı. Paramızı ticari bankalarda saklamak bize kredi kartlarının ve ödeme uygulamalarının rahatlığını sundu. While easy and secure, it also puts for-profit businesses between people and their money.
+Dijital çağa geçişle birlikte, elektronik para birimi büyük ölçüde fiziksel para biriminin yerini aldı. Paramızı ticari bankalarda saklamak bize kredi kartlarının ve ödeme uygulamalarının rahatlığını sundu. Bu kolay ve güvenli bir seçenek olsa da aynı zamanda insanlarla paraları arasına kar amacı güden işletmeler koydu.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg)
 
@@ -191,13 +191,13 @@ E-posta, postane ihtiyacını ortadan kaldırarak mektup göndermeyi kolaylaşt�
 
 Tıpkı e-posta adresinizde olduğu gibi, Bitcoin almak için de tek bir Bitcoin adresi gereklidir. Adresiniz varsayılan olarak şöyle görünür: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (bunu nasıl özelleştireceğinizi daha sonra göstereceğiz!)
 
-Hesabınızı, web tarayıcınıza veya telefonunuza bağlanan 'kripto para cüzdanı' yazılımını kullanarak yönetirsiniz. Oluşturabileceğiniz en kolay "banka hesabı" budur. Randevu ya da kimlik gerekmez!
+Hesabınızı, web tarayıcınıza veya telefonunuza bağlanan 'kripto para cüzdanı' yazılımını kullanarak yönetirsiniz. Bu, oluşturduğunuz en kolay "banka hesabı" olacak. Randevu ya da kimlik gerekmez!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
 # Knowledge Check 4
 
-Bitcoin neden e-postaya benziyor?
+Bitcoin'in e-posta ile benzerliği nedir?
 
 - [ ] Her ikisi de 7/24 çevrimiçidir.
 
@@ -222,34 +222,34 @@ Hadi konuyu değiştirelim ve Bitcoin'in arkasındaki güce bakalım:
 
 Bitcoin, dünya çapında binlerce bilgisayarda barındırılan paylaşımlı bir ağ üzerinde çalışır. Ağdaki her bilgisayar, ağın işleyişinin sürdürülmesinde rol oynar; ağ ise bu bilgisayarlar aracılığıyla var olur! If one computer processes a fraudulent transaction, the others are there to correct it.
 
-Bu aynı zamanda hack girişimlerinde baskı uygulanacak tek bir nokta olmadığı anlamına gelir. Ağın kontrol edilebilmesi için bilgisayarların çoğu, tehlikeye girmiş olmalıdır.
+Bu aynı zamanda hack girişimlerinde baskı uygulanacak tek bir nokta olmadığı anlamına gelir. Ağın kontrol edilebilmesi için bilgisayarların çoğunun güvenlik sistemi ihlal edilmiş olmalıdır.
 
-Bu savunma stratejisine 'merkeziyetsizlik' adı verilir: kontrolün tek bir merkezi gruptan çok sayıda küçük gruba geçmesi. It’s what makes cryptocurrency networks virtually unstoppable.
+Bu savunma stratejisine 'merkeziyetsizlik' adı verilir: Kontrolün tek bir merkezi gruptan çok sayıda küçük gruba geçmesi. It’s what makes cryptocurrency networks virtually unstoppable.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg)
 
 # Bitcoin Madenciliği
 
-Bitcoin Ağının merkez bankası olmadığından ağ, 'merkezi olmayan' katılımcılarına güvenir. 'Madenciler' olarak bilinen bu katılımcılar, işlemleri sürekli kontrol ederek bir "veri tabanı" olan "blok zincirine" ekler.
+Bitcoin Ağının merkez bankası olmadığından ağ, 'merkeziyetsiz' katılımcılarına güvenir. 'Madenciler' olarak bilinen bu katılımcılar, işlemleri sürekli kontrol ederek bir "veri tabanı" olan "blok zincirine" ekler.
 
-Ağı dolandırıcılıktan korumak için bu madencilerin aktif ve dürüst davranmaya motive edilmesi önemlidir. Miners frequently double-check each other’s results, but are also rewarded for the work they do. Bitcoin işlemleri gönderdiğimizde, işlemimizin madencisine verilen küçük bir ücret öderiz. Madenciler ayrıca çalışmaları karşılığında "blok ödülleri" olarak bilinen yeni Bitcoin kazanırlar.
+Ağı dolandırıcılıktan korumak için bu madencilerin aktif ve dürüst davranmaya motive edilmesi önemlidir. Miners frequently double-check each other’s results, but are also rewarded for the work they do. Bitcoin işlemlerini gönderdiğimizde, işlemimizin madencisine giden küçük bir ücret öderiz. Madenciler ayrıca çalışmaları karşılığında "blok ödülleri" olarak bilinen yeni Bitcoin de kazanırlar.
 
-These rewards slowly increase Bitcoin’s `circulating supply` within the `max supply` cap of 21 million `BTC`.
+Bu ödüller, Bitcoin'in 'dolaşımdaki arzını', 21 milyon 'BTC'lik 'maksimum arz' üst sınırı dahilinde yavaş yavaş artırır.
 
-It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies. Her şey, 'merkez bankasındaki' küçük insan grupları yerine, topluluk tarafından onaylanmış bilgisayar kodu ("yöneticisi olmayan kurallar") ve merkeziyetsiz katılımcılar tarafından yönetilir.
+Bitcoin'i geleneksel para birimlerinden ayıran şey, yeni coinlerin piyasaya yavaş ve öngörülebilir olarak sürülmesidir. Her şey, 'merkez bankasındaki' küçük insan grupları yerine, topluluk tarafından onaylanmış bilgisayar kodu ("yöneticisi olmayan kurallar") ve merkeziyetsiz katılımcılar tarafından yönetilir.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg)
 
 # Sending a Bitcoin Transaction
 
-Understanding the exact mechanisms that power Bitcoin transactions and mining can get quite complicated. That said, using and sending Bitcoin is simple!
+Bitcoin işlemlerine ve madenciliğe güç veren mekanizmaları tam olarak anlamak oldukça karmaşıklaşabilir. Bununla birlikte, Bitcoin kullanmak ve göndermek basittir!
 
-We’ll take a simplified view of the process for today:
+Bugün, süreci basitleştirilmiş bir şekilde ele alacağız:
 
-1. You submit a transaction using your `cryptocurrency wallet`, sending 0.1 `BTC` to your friend’s wallet address.
-2. Bir madenci işleminizde hata olup olmadığını kontrol eder. Other miners double-check their results.
-3. Onaylanırsa işleminiz, 'blok zinciri' "veri tabanına" eklenir.
-4. Arkadaşınız cüzdanına 0,1 BTC alır.
+1. 'Kripto para cüzdanınızı' kullanıp arkadaşınızın cüzdan adresine 0,1 'BTC' göndererek bir işlem yapıyorsunuz.
+2. Bir madenci işleminizde hata olup olmadığını kontrol ediyor. Diğer madenciler, sonuçlarını iki kez kontrol ediyor.
+3. Onaylanırsa işleminiz, 'blok zinciri' "veri tabanına" ekleniyor.
+4. Arkadaşınız da cüzdanına 0,1 BTC alıyor.
 
 [embed](https://app.banklessacademy.com/animation/bitcoin)
 
@@ -261,7 +261,7 @@ Merkeziyetsizlik nedir?
 
 > Yeniden deneyin! Kıtlık, bir varlığın arzının düşük olması demektir.
 
-- [ ] Distribution of control across multiple participants.
+- [ ] Kontrolün birden fazla katılımcı arasında dağıtılması.
 
 > Doğru! Bu dağıtım sistemi, ağı ve kullanıcılarını korur.
 
@@ -271,11 +271,11 @@ Merkeziyetsizlik nedir?
 
 # Knowledge Check 6
 
-How does mining protect the Bitcoin Network from fraud?
+Madencilik Bitcoin Ağını dolandırıcılıktan nasıl korur?
 
-- [ ] İşlemleri kontrol eden madencileri ödüllendirerek.
+- [ ] İşlemleri kontrol etmeleri karşılığında madencileri ödüllendirerek.
 
-> Doğru! Bitcoin rewards attract miners and incentivize them to act honestly.
+> Doğru! Madencilere cazip gelen Bitcoin ödülleri, onları dürüst davranmaya teşvik eder.
 
 - [ ] Dolaşımdaki Bitcoin arzını artırarak.
 
@@ -287,36 +287,36 @@ How does mining protect the Bitcoin Network from fraud?
 
 # The Innovation of Money
 
-In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value, and how institutional management of our assets means giving up full ownership.
+Bu derste, Bitcoin'in kıtlığının değerini korumasına nasıl yardımcı olduğunu ve varlıklarımızın kurumsal yönetiminin tam mülkiyetten vazgeçmek anlamına geldiğini gördük.
 
 Ancak Bitcoin basit bir parasal aracın ötesine geçmiştir. 'Merkeziyetsiz para' devrimi için bir katalizör haline gelmiştir. Bu hareket, parasal gücü ve kontrolü onu kullananlara dağıtarak geleneksel finansal sistemini yeniden tasarlar.
 
 İşte parayı merkeziyetsiz hale getirerek ve 'emanetçi' ihtiyacını ortadan kaldırarak yapabileceklerimiz:
 
 - 💵 Host a 24/7 global marketplace, secured by citizens around the world.
-- 🛠️ Offer financial tools to the unbanked regions of the globe.
-- 🤝 Use `peer-to-peer` technology to avoid the inefficiencies of middleman institutions.
+- 🛠️ Dünyanın bankasız bölgelerine finansal araçlar sunmak.
+- 🤝 Aracı kurumların verimsizliğinden kaçınmak için 'eşler arası' teknoloji kullanmak.
 - 🔎 Reduce institutional inequality, fraud and market manipulation.
 - ⚖️ Build `equality of opportunity` into monetary systems.
-- 🌐 Establish true ownership for the digital age.
+- 🌐 Dijital çağ için gerçek mülkiyet oluşturmak.
 
-The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe — and you’re invited.
+Yeni para çağı, dünyanın dört bir yanındaki vatandaşların günlük yaşam kalitesini artırmak için demokrasinin temel değerlerini savunuyor ve siz de davetlisiniz.
 
-“_Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations._
+“_Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — Birleşmiş Milletler._
 
-# Your Bitcoin Quest
+# Bitcoin Göreviniz
 
 It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.
 
-Your transaction will include the following details:
+İşleminiz aşağıdaki ayrıntıları içerecektir:
 
-📫 The wallet address of the person you’re sending to.
+📫 Bitcoin göndereceğiniz kişinin cüzdan adresi.
 
-💰 The amount of Bitcoin to send.
+💰 Gönderilecek Bitcoin miktarı.
 
-It will also include a transaction fee given to the `miners`.
+Ayrıca 'madencilere' verilen bir işlem ücreti de olacaktır.
 
-Remember to make sure all details are accurate.
-Once a Bitcoin transaction is confirmed, you cannot reverse it.
+Tüm ayrıntıların doğru olduğundan emin olun.
+Bir Bitcoin işlemi onaylandıktan sonra bunu geri alamazsınız.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png)
