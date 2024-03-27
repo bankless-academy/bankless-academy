@@ -33,7 +33,7 @@ Bienvenue, explorateur audacieux, à la frontière de l'innovation numérique.
 
 À la Bankless Academy, notre mission est de fournir aux explorateurs tels que vous les meilleurs outils et connaissances pour naviguer dans l'univers de la blockchain et "go bankless!" [se passer de banque]
 
-Aujourd'hui, nous nous penchons sur la "crypto-monnaie" qui a tout déclenché : le Bitcoin.
+Aujourd'hui, nous nous penchons sur la `crypto-monnaie` qui a tout déclenché : le Bitcoin.
 
 Le bitcoin est un nouveau type de monnaie. Il accroît la liberté financière de ceux qui le détiennent et protège leur argent durement gagné contre la perte de valeur au fil du temps.
 
@@ -41,9 +41,9 @@ Le bitcoin est un nouveau type de monnaie. Il accroît la liberté financière d
 
 # Histoire du Bitcoin
 
-Lancé en 2009 par le mystérieux "Satoshi Nakamoto", le Bitcoin a marqué le début d'une nouvelle ère économique.
+Lancé en 2009 par le mystérieux "`Satoshi Nakamoto`", le Bitcoin a marqué le début d'une nouvelle ère économique.
 
-En tant que première "crypto-monnaie" à avoir connu le succès, le Bitcoin a lancé un débat important : le contrôle et le pouvoir de l'argent doivent-ils continuer à relever des systèmes bancaires traditionnels ? Ou bien appartient-il aux citoyens qui le gagnent et l'utilisent chaque jour ? Si vous n'êtes pas certain de ce que cela signifie exactement, vous êtes au bon endroit !
+En tant que première `crypto-monnaie` à avoir connu le succès, le Bitcoin a lancé un débat important : le contrôle et le pouvoir de l'argent doivent-ils continuer à relever des systèmes bancaires traditionnels ? Ou bien appartient-il aux citoyens qui le gagnent et l'utilisent chaque jour ? Si vous n'êtes pas certain de ce que cela signifie exactement, vous êtes au bon endroit !
 
 La réalité, c’est qu’aujourd’hui, nous ne contrôlons pas notre argent comme nous le pensons. Cela a des conséquences très concrètes.
 
@@ -192,7 +192,7 @@ L'e-mail a simplifié l'envoi de lettres en supprimant le besoin d'un bureau de 
 
 De la même manière que vous avez une adresse électronique, une seule adresse Bitcoin est nécessaire pour recevoir des bitcoins. Par défaut, il ressemble à ceci : _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (nous vous montrerons comment le personnaliser plus tard !)
 
-Vous gérerez votre compte à l'aide d'un logiciel `portefeuille de crypto-monnaies` connecté à votre navigateur Web ou à votre téléphone. C’est le “compte bancaire” le plus simple que vous ayez jamais créé. Aucun rendez-vous ni pièce d'identité requis !
+Vous gérerez votre compte à l'aide d'un logiciel `portefeuille de cryptomonnaies` connecté à votre navigateur Web ou à votre téléphone. C’est le “compte bancaire” le plus simple que vous ayez jamais créé. Aucun rendez-vous ni pièce d'identité requis !
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
@@ -231,7 +231,7 @@ Cette stratégie de défense est appelée `décentralisation` : le transfert du 
 
 # Minage de Bitcoin
 
-Le réseau Bitcoin n'ayant pas de banque centrale, il s'appuie sur ses participants `décentralisés`. Connus sous le nom de `mineurs`, ces participants vérifient constamment les transactions et les ajoutent à une "base de données", la "blockchain" [chaîne de blocs].
+Le réseau Bitcoin n'ayant pas de banque centrale, il s'appuie sur ses participants `décentralisés`. Connus sous le nom de `mineurs`, ces participants vérifient constamment les transactions et les ajoutent à une "base de données", la `blockchain` [chaîne de blocs].
 
 Il est important que ces mineurs soient motivés pour être actifs et honnêtes, afin de protéger le réseau contre la fraude. Les mineurs vérifient les résultats des uns et des autres, mais ils sont également récompensés pour le travail qu'ils accomplissent. Lorsque nous soumettons des transactions Bitcoin, nous payons de petits frais qui vont au mineur de notre transaction. Les mineurs gagnent également de nouveaux bitcoins, appelés "récompenses de bloc", pour leur travail.
 
@@ -247,7 +247,7 @@ Comprendre les mécanismes exacts qui régissent les transactions et l'exploitat
 
 Nous allons adopter une vue simplifiée du processus pour aujourd'hui :
 
-1. Vous soumettez une transaction en utilisant votre `portefeuille de crypto-monnaie`, envoyant 0,1 `BTC` à l'adresse du portefeuille de votre ami.
+1. Vous soumettez une transaction en utilisant votre `portefeuille de cryptomonnaies`, envoyant 0,1 `BTC` à l'adresse du portefeuille de votre ami.
 2. Un mineur vérifie que votre transaction ne comporte pas d'erreurs. D'autres mineurs effectuent les mêmes vérifications.
 3. Si elle est approuvée, votre transaction est ajoutée à la "base de données" de la `blockchain`.
 4. Votre ami reçoit 0,1 BTC dans son portefeuille.
@@ -290,7 +290,7 @@ Comment le minage protège-t-il le réseau Bitcoin de la fraude ?
 
 Dans cette leçon, nous avons vu comment la rareté du bitcoin lui permet de conserver sa valeur, et comment la gestion institutionnelle de nos actifs implique de renoncer à la pleine propriété.
 
-Cependant, le bitcoin a évolué au-delà d'un simple outil monétaire. Il est devenu le catalyseur d'une révolution de la "monnaie décentralisée". Ce mouvement réimagine le système financier traditionnel en distribuant le pouvoir et le contrôle monétaires à ceux qui l'utilisent.
+Cependant, le bitcoin a évolué au-delà d'un simple outil monétaire. Il est devenu le catalyseur d'une révolution de la `monnaie décentralisée`. Ce mouvement réimagine le système financier traditionnel en distribuant le pouvoir et le contrôle monétaires à ceux qui l'utilisent.
 
 En décentralisant l'argent et en supprimant les `dépositaires`, nous pouvons :
 
@@ -303,7 +303,7 @@ En décentralisant l'argent et en supprimant les `dépositaires`, nous pouvons :
 
 La nouvelle ère de l'argent défend les valeurs fondamentales de la démocratie afin d'améliorer la qualité de la vie quotidienne des citoyens du monde entier - et vous êtes invités.
 
-_"La démocratie offre un environnement qui respecte les droits de l'homme et les libertés fondamentales, et dans lequel s'exerce la volonté librement exprimée des personnes." — Les Nations Unies._
+_”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — Les Nations Unies._
 
 # Votre quête Bitcoin
 
