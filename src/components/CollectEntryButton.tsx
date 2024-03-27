@@ -263,7 +263,11 @@ const CollectEntryButton = ({
                         title: t('⚠️ Problem while minting...'),
                         description: (
                           <>
-                            <Box>{mintingError}</Box>
+                            <Box>
+                              {mintingError?.includes('exceeds the balance')
+                                ? 'The total cost including gas fee exceeds your balance of ETH on Optimism.'
+                                : mintingError}
+                            </Box>
                             <Box>
                               {t('Refresh the page before trying again.')}
                             </Box>
@@ -283,8 +287,8 @@ const CollectEntryButton = ({
             }
           }}
         >
-          <Box fontWeight="bold">{t('Collect Entry')}</Box>
-          <Box ml="2">{`(${numberCollected}/100 ${t('claimed')})`}</Box>
+          <Box fontWeight="bold">Mint for 0.01 ETH</Box>
+          <Box ml="2">{`(${numberCollected}/100 minted)`}</Box>
         </Button>
       )}
       <Confetti
