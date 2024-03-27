@@ -90,14 +90,14 @@
     "definition": "An amount of native coin given to the proposer of a new valid block."
   },
   "blockchain": {
-    "keyword": "cadenas de bloques",
+    "keyword": "cadena de bloques",
     "keyword_plural": "cadenas de bloques",
     "definition": "Un sistema en el que se mantiene un registro de las transacciones de criptomoneda en muchos ordenadores de todo el mundo."
   },
   "blockchain apps": {
-    "keyword": "blockchain apps",
-    "keyword_plural": "blockchain appss",
-    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
+    "keyword": "aplicaciones blockchain",
+    "keyword_plural": "aplicaciones blockchain",
+    "definition": "Aplicaciones Blockchain que te permiten intercambiar criptomonedas, usar redes sociales web3, hacer donaciones caritativas, o incluso aprender onchain — como en Bankless Academy."
   },
   "blockchain architecture": {
     "keyword": "arquitectura blockchain",
@@ -647,7 +647,7 @@
   "private key": {
     "keyword": "llave privada",
     "keyword_plural": "llave privada",
-    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+    "definition": "Una llave privada le permite acceder a su billetera para enviar criptoactivos a otra dirección."
   },
   "proof of stake": {
     "keyword": "Prueba de Participación",
@@ -682,12 +682,12 @@
   "public key": {
     "keyword": "llave pública",
     "keyword_plural": "Llave pública",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+    "definition": "Una llave pública es tu dirección. Proporciona a otros un punto de referencia para enviarte criptoactivos."
   },
   "recovery phrase": {
     "keyword": "frase de recuperación",
     "keyword_plural": "frase de recuperación",
-    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+    "definition": "Una frase de recuperación es una lista de 12 a 24 palabras que se utiliza para generar la llave pública y la llave privada de tu billetera."
   },
   "red flag": {
     "keyword": "bandera roja",
@@ -955,14 +955,14 @@
     "definition": "Una billetera es una aplicación o dispositivo utilizado para enviar y recibir criptoactivos en la cadena de bloques."
   },
   "wallet app": {
-    "keyword": "wallet app",
-    "keyword_plural": "wallet apps",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+    "keyword": "app de billetera",
+    "keyword_plural": "apps de billetera",
+    "definition": "Una aplicación en su computador o teléfono, utilizada para conectarse a su billetera blockchain."
   },
   "wallet provider": {
-    "keyword": "wallet provider",
-    "keyword_plural": "wallet providers",
-    "definition": "The creator of the software you use to access your wallet. These providers do not own your wallet, but instead act as a bridge that lets you access your account on the blockchain."
+    "keyword": "proveedor de billetera",
+    "keyword_plural": "proveedores de billetera",
+    "definition": "El creador del software que utilizas para acceder a tu billetera. Estos proveedores no son propietarios de tu billetera, sino que actúan como un puente que te permite acceder a tu cuenta en la blockchain (cadena de bloques)."
   },
   "web2": {
     "keyword": "web2",
