@@ -230,7 +230,7 @@
     "definition": "Le processus de vérification des transactions de la blockchain en échange de récompenses en crypto-monnaie."
   },
   "cryptocurrency wallet": {
-    "keyword": "portefeuilles de crypto-monnaies",
+    "keyword": "portefeuille de cryptomonnaies",
     "keyword_plural": "cryptocurrency wallets",
     "definition": "Une application qui vous permet de stocker vos crypto-monnaies et de les envoyer/recevoir ou de les dépenser."
   },
@@ -330,7 +330,7 @@
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
   "equality of opportunity": {
-    "keyword": "égalité des chances",
+    "keyword": "égalité des opportunités",
     "keyword_plural": "equality of opportunitys",
     "definition": "Un principe d'équité, selon lequel chacun a les mêmes chances de réussir, quelles que soient ses origines ou sa situation."
   },
@@ -610,7 +610,7 @@
     "definition": "Allows two parties to transact multiple times without the need for each transaction to be recorded on the blockchain."
   },
   "peer-to-peer": {
-    "keyword": "pair-à-pair",
+    "keyword": "pair à pair",
     "keyword_plural": "peer-to-peers",
     "definition": "Une transaction entre deux parties qui ne nécessite pas d'intermédiaire ou d'entité de contrôle."
   },
@@ -730,7 +730,7 @@
     "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds."
   },
   "scarce": {
-    "keyword": "rareté",
+    "keyword": "rare",
     "keyword_plural": "scarces",
     "definition": "L'état d'être rare."
   },
