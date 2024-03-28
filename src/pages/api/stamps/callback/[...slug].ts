@@ -130,6 +130,8 @@ export default async function handler(
         const status = checkAge.errors
         console.log('twitter age', status)
         res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}`)
+        // HACK: wait 1 sec (issue error 500)
+        await new Promise(resolve => setTimeout(resolve, 1000))
         return res.status(307).send('redirect')
       } else {
         result.valid = true
@@ -145,6 +147,8 @@ export default async function handler(
 
     } catch (error) {
       console.log('twitter error', error)
+      // HACK: wait 1 sec (issue error 500)
+      await new Promise(resolve => setTimeout(resolve, 1000))
       res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${error}&platform=${platform}`)
       return res.status(307).send('redirect')
     }
@@ -317,6 +321,8 @@ export default async function handler(
       isStampValidated = false
       status = 'Duplicate stamp detected.'
       const fraud = sybil[0]?.address
+      // HACK: wait 1 sec (issue error 500)
+      await new Promise(resolve => setTimeout(resolve, 1000))
       if (json) {
         return res.status(200).json({
           isStampValidated,
@@ -343,6 +349,8 @@ export default async function handler(
     isStampValidated = true
     status = `Stamp OK: ${hash} You can close the window.`
   }
+  // HACK: wait 1 sec (issue error 500)
+  await new Promise(resolve => setTimeout(resolve, 1000))
   if (json) {
     return res.status(200).send({ isStampValidated, status, platform })
   } else {
