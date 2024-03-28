@@ -97,7 +97,7 @@ export default async function handler(
   const userId = user?.id
   console.log(userId)
   if (!(userId && Number.isInteger(userId))) {
-    trackBE(address, 'issue_user_not_found', { context: 'callback' })
+    // trackBE(address, 'issue_user_not_found', { context: 'callback' })
     return res.status(403).json({ error: 'userId not found' })
   }
 
@@ -131,7 +131,7 @@ export default async function handler(
         console.log('twitter age', status)
         res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}`)
         // HACK: wait 1 sec (issue error 500)
-        await new Promise(resolve => setTimeout(resolve, 1000))
+        // await new Promise(resolve => setTimeout(resolve, 1000))
         return res.status(307).send('redirect')
       } else {
         result.valid = true
@@ -148,7 +148,7 @@ export default async function handler(
     } catch (error) {
       console.log('twitter error', error)
       // HACK: wait 1 sec (issue error 500)
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      // await new Promise(resolve => setTimeout(resolve, 1000))
       res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${error}&platform=${platform}`)
       return res.status(307).send('redirect')
     }
@@ -322,7 +322,7 @@ export default async function handler(
       status = 'Duplicate stamp detected.'
       const fraud = sybil[0]?.address
       // HACK: wait 1 sec (issue error 500)
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      // await new Promise(resolve => setTimeout(resolve, 1000))
       if (json) {
         return res.status(200).json({
           isStampValidated,
@@ -342,15 +342,15 @@ export default async function handler(
       [stampHash, socialId, userId]
     )
     console.log('updated', updated)
-    trackBE(address, 'stamp_added', {
-      platform,
-    })
+    // trackBE(address, 'stamp_added', {
+    //   platform,
+    // })
     if (updated) console.log('stamps updated:', updated?.rowCount)
     isStampValidated = true
     status = `Stamp OK: ${hash} You can close the window.`
   }
   // HACK: wait 1 sec (issue error 500)
-  await new Promise(resolve => setTimeout(resolve, 1000))
+  // await new Promise(resolve => setTimeout(resolve, 1000))
   if (json) {
     return res.status(200).send({ isStampValidated, status, platform })
   } else {
