@@ -1,16 +1,16 @@
 {
   "BitcoinBasics": {
-    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Your Bitcoin is on its way to Satoshi Nakamoto.",
-    "2. It's now being verified by network miners...": "2. It's now being verified by network miners...",
-    "3. Your transaction is added to the blockchain “database”...": "3. Your transaction is added to the blockchain “database”...",
-    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto has received your Bitcoin!",
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address",
-    "Recipient": "Recipient",
-    "Address": "Address",
-    "Asset": "Asset",
-    "Amount": "Amount",
-    "Balance": "Balance",
-    "Send": "Send"
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. 你的比特币正在发送中。",
+    "2. It's now being verified by network miners...": "2. 网络矿工正在对其进行验证...",
+    "3. Your transaction is added to the blockchain “database”...": "3.您的交易将被添加到区块链 \"数据库 \"中...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4.中本聪收到了你的比特币！",
+    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "使用我们的比特币模拟器，发送<strong>0.00000001</strong>BTC 到中本聪的地址",
+    "Recipient": "接收者",
+    "Address": "地址",
+    "Asset": "附件",
+    "Amount": "金额",
+    "Balance": "金额",
+    "Send": "发送"
   },
   "OptimismGovernance": {
     "Begin your Optimism Network journey by delegating OP.": "通过授权 OP 开始您的 Optimism 网络之旅。",
