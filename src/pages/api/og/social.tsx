@@ -1,9 +1,27 @@
 /* eslint-disable no-console */
 import { ImageResponse } from '@vercel/og'
 import OgSocial from 'components/OgSocial'
-import { DOMAIN_URL, LESSONS } from 'constants/index'
+import { DEFAULT_AVATAR, DOMAIN_URL, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { NextApiRequest } from 'next'
+
+export const fetchWithTimeout = async (resource, options = {}) => {
+  const { timeout = 8000 } = options as any
+
+  const controller = new AbortController()
+  const id = setTimeout(() => controller.abort(), timeout)
+
+  try {
+    const response = await fetch(resource, {
+      ...options,
+      signal: controller.signal,
+    })
+    clearTimeout(id)
+    return response
+  } catch (error) {
+    return { status: 408 }
+  }
+}
 
 export const config = {
   runtime: 'edge',
@@ -103,6 +121,15 @@ export default async function handler(req: NextApiRequest) {
     // if (ensData.address === '0xe8c77e0eabd6d8b2f54343152a8b213d3a42e54e') {
     //   user.avatar = 'https://app.banklessacademy.com/images/avatars/doubleb.png'
     // }
+  }
+  if (!badgeId && user?.avatar) {
+    // 2 sec timeout
+    const response = await fetchWithTimeout(user.avatar, { timeout: 2000 })
+    const status = await response.status
+    console.log(status)
+    if (status !== 200) {
+      user.avatar = DEFAULT_AVATAR
+    }
   }
 
   const explorerName =
