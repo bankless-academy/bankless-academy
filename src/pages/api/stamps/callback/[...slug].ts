@@ -131,7 +131,6 @@ export default async function handler(
           const status = checkAge.errors
           console.log('twitter age', status)
           res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}`)
-          // return res.status(307).send('redirect')
         } else {
           result.valid = true
         }
@@ -147,7 +146,6 @@ export default async function handler(
       } catch (error) {
         console.log('twitter error', error)
         res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${error}&platform=${platform}`)
-        // return res.status(307).send('redirect')
       }
     } else if (platform === 'facebook') {
       const FacebookProvider = new facebook.FacebookProvider();
@@ -327,7 +325,6 @@ export default async function handler(
           })
         } else {
           res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}&fraud=${fraud}`)
-          // return res.status(307).send('redirect')
         }
       }
       // add stamps to ba_stamps
@@ -348,7 +345,6 @@ export default async function handler(
       return res.status(200).send({ isStampValidated, status, platform })
     } else {
       res.redirect(`/confirmation?isStampValidated=${isStampValidated}&status=${status}&platform=${platform}`)
-      // return res.status(307).send('redirect')
     }
   } catch (error) {
     console.error('tc error', error)
