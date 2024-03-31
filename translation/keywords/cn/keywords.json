@@ -92,12 +92,12 @@
   "blockchain": {
     "keyword": "区块链",
     "keyword_plural": "区块链",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "一种在全球多台计算机上保存加密货币交易记录的系统。"
   },
   "blockchain apps": {
-    "keyword": "blockchain apps",
-    "keyword_plural": "blockchain appss",
-    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
+    "keyword": "区块链应用程序",
+    "keyword_plural": "区块链应用程序",
+    "definition": "允许您交换加密货币的区块链应用程序，使用 web3 社交媒体，进行慈善捐赠，甚至学习连锁学习，就像在 Bankless Academy 一样。"
   },
   "blockchain architecture": {
     "keyword": "区块链架构",
@@ -105,9 +105,9 @@
     "definition": "区块链技术中的数据存储结构。"
   },
   "blockchain technology": {
-    "keyword": "blockchain technology",
+    "keyword": "区块链技术",
     "keyword_plural": "blockchain technologys",
-    "definition": "A new type of network, hosted across many computers. It's adding a new layer of digital ownership to the internet."
+    "definition": "一个新型的网络，在许多计算机上托管。它为互联网添加了全新的数字所有权层。"
   },
   "blockchain trilemma": {
     "keyword": "区块链的三难困境",
@@ -130,9 +130,9 @@
     "definition": "允许两个不同区块链网络相互通信、交换资产的连接。"
   },
   "btc": {
-    "keyword": "BTC",
+    "keyword": "比特币 (BTC)",
     "keyword_plural": "BTCs",
-    "definition": "The market symbol for bitcoin."
+    "definition": "比特币的市场符号。"
   },
   "censorship-resistant": {
     "keyword": "抗审查",
@@ -140,9 +140,9 @@
     "definition": "任何政府或公司都无权决定什么是允许的，什么是不允许的。"
   },
   "central bank": {
-    "keyword": "central bank",
-    "keyword_plural": "central banks",
-    "definition": "An institution regulating money, banks, and currency in a country."
+    "keyword": "中央银行",
+    "keyword_plural": "中央银行",
+    "definition": "一国的货币、银行和货币管理机构。"
   },
   "centralized": {
     "keyword": "centralized",
@@ -170,7 +170,7 @@
     "definition": "将数据块绑定在一起，形成一个无法更改或变更的数据库。"
   },
   "circulating supply": {
-    "keyword": "circulating supply",
+    "keyword": "流通供应量",
     "keyword_plural": "circulating supplys",
     "definition": "The number of a specific cryptocurrency's coins or tokens publicly available for the market to trade."
   },
