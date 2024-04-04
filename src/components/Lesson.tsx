@@ -47,6 +47,7 @@ export const Slide = styled(Card)<{
   issmallscreen?: string
   slidetype: SlideType
   ispreview?: string
+  istranslation?: string
   highlightnumber?: string
 }>`
   border-radius: 0.5rem;
@@ -98,6 +99,7 @@ export const Slide = styled(Card)<{
     flex: 1;
   }
   .bloc2 {
+    ${(props) => props.istranslation === 'true' && ' flex: 0.8;'};
     align-self: center;
     img {
       width: auto;
@@ -119,6 +121,7 @@ export const Slide = styled(Card)<{
     h2,
     p {
       font-size: var(--chakra-fontSizes-xl);
+      ${(props) => props.istranslation === 'true' && 'font-size: 19px;'};
       margin: 0.8em;
     }
     h2 {
@@ -131,6 +134,7 @@ export const Slide = styled(Card)<{
     ul,
     ol {
       font-size: var(--chakra-fontSizes-xl);
+      ${(props) => props.istranslation === 'true' && 'font-size: 19px;'};
       margin-left: 2em;
     }
     li {
@@ -683,6 +687,7 @@ const Lesson = ({
       mt={6}
       issmallscreen={isSmallScreen.toString()}
       ispreview={lesson?.isPreview?.toString()}
+      istranslation={(i18n.language !== 'en').toString()}
       highlightnumber={isAnimationSlide ? animationStepLS.toString() : null}
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
