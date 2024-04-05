@@ -25,7 +25,7 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-***
+---
 
 # Bem-vindo à Bankless Academy
 
@@ -49,7 +49,7 @@ A realidade é que, hoje em dia, não temos o controle do nosso dinheiro da form
 
 Está na hora de aprender como o Bitcoin está revolucionando as finanças.
 
-**Está na hora de repensar dinheiro.**
+**Está na hora de repensar o dinheiro.**
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
 
@@ -57,7 +57,7 @@ Está na hora de aprender como o Bitcoin está revolucionando as finanças.
 
 O dinheiro tem sido uma parte integral da sociedade desde o início, quando miçangas, conchas e pedras eram usadas para comprar bens e serviços.
 
-No entanto, as primeiras moedas tinham um problema: era muito fácil para alguém encontrar/criar dinheiro novo. Quanto mais de algo existir, menos valor tem, e assim o dinheiro de todos lentamente passaria a ser menos valioso. Para que a moeda mantivesse seu valor, ela precisava ser mais difícil de encontrar.
+No entanto, as primeiras moedas tinham um problema: era muito fácil alguém encontrar/criar dinheiro novo. Quanto mais de algo existir, menos valor tem, e assim o dinheiro de todos lentamente passaria a ser menos valioso. Para que a moeda mantivesse seu valor, ela precisava ser mais difícil de encontrar.
 
 Materiais como ouro e prata acabaram sendo adotados para resolver esse problema. A principal vantagem desses materiais era sua escassez: não havia um suprimento infinito, o que dificultava o aumento significativo da quantidade de dinheiro em circulação. Essa `escassez` ajudou a manter o valor do dinheiro.
 
@@ -98,7 +98,7 @@ Os `bancos centrais`, que administram a `política monetária` de um país, pode
 
 Os `bancos comerciais`, aqueles usados para poupança e gastos diários, também influenciam nossos hábitos de consumo. Como `custodiante`, eles podem bloquear transações ou confiscar nossos fundos. Alguns bancos impediram seus clientes de comprar criptomoedas! **Se seu banco pode congelar suas economias a qualquer momento… você é realmente dono de seu dinheiro?** 💸
 
-***
+---
 
 Para que o dinheiro volte a apoiar a liberdade financeira, ele precisa recuperar as duas principais propriedades que perdeu ao longo do tempo:
 
@@ -125,7 +125,7 @@ Graças a essas qualidades, o Bitcoin ganhou o apelido de "ouro digital".
 
 📉 Você acha difícil acompanhar o aumento dos custos?
 
-***
+---
 
 A escassez no Bitcoin se refere ao fato de haver um limite para o número de Bitcoins que podem existir: um máximo de 21 milhões. Esse `suprimento máximo` está incorporado em seu código, tornando o Bitcoin raro e potencialmente valioso. Isso o coloca em uma boa posição como uma reserva de valor a longo prazo, assim como o ouro.
 
@@ -153,7 +153,7 @@ Como o Bitcoin promove a preservação do valor a longo prazo?
 
 🧊 Seu banco já congelou seus fundos sem aviso prévio porque você fez uma transferência que eles não gostaram?
 
-***
+---
 
 Nas democracias, a propriedade é um direito humano protegido porque dá aos cidadãos maior controle e liberdade sobre suas vidas. Não podemos agir livremente quando nossos meios de sobrevivência estão condicionados, julgados por empresas ou instituições.
 
@@ -181,7 +181,7 @@ Como a auto-custódia possibilita a verdadeira propriedade?
 
 ⌛ Você já teve que esperar vários dias úteis para enviar dinheiro internacionalmente, pagando taxas de 3-5%?
 
-***
+---
 
 O e-mail simplificou o envio de cartas ao eliminar a necessidade de uma agência de correios. Da mesma forma, o Bitcoin simplificou o envio de dinheiro ao eliminar a necessidade de bancos.
 
