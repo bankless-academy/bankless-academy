@@ -1,35 +1,27 @@
 {
-  "2 factor authentication": {
-    "keyword": "2 Factor Authentication",
-    "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+  "двохетапна перевірка": {
+    "keyword": "Двохетапна перевірка",
+    "definition": "Додатковий рівень безпеки, який використовується для того, щоб переконатися, що люди, які намагаються отримати доступ до онлайн-акаунту, є тими, за кого себе видають."
   },
-  "2 factor authentications": {
-    "keyword": "2 Factor Authentications",
-    "definition": "An extra layer of security used to make sure that people trying to gain access to an online account are who they say they are."
+  "51% атаки": {
+    "keyword": "51% атаки",
+    "definition": "Атака на консенсус блокчейну шляхом контролю над 51% потужності блоків, що виробляють енергію в мережі."
   },
-  "51% attack": {
-    "keyword": "51% attack",
-    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+  "адреса": {
+    "keyword": "адреса",
+    "definition": "Унікальний публічний ідентифікатор для сутності в блокчейні."
   },
-  "51% attacks": {
-    "keyword": "51% attacks",
-    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+  "адреси": {
+    "keyword": "адреси",
+    "definition": "Унікальний публічний ідентифікатор для сутності в блокчейні."
   },
-  "address": {
-    "keyword": "address",
-    "definition": "Unique public identifier for an entity on a blockchain."
+  "агрегатор": {
+    "keyword": "агрегатор",
+    "definition": "Інструмент, який поєднує кілька джерел, щоб запропонувати конкурентні варіанти."
   },
-  "addresss": {
-    "keyword": "addresss",
-    "definition": "Unique public identifier for an entity on a blockchain."
-  },
-  "aggregator": {
-    "keyword": "aggregator",
-    "definition": "Tool that combines multiple sources, to offer competitive options."
-  },
-  "aggregators": {
-    "keyword": "aggregators",
-    "definition": "Tool that combines multiple sources, to offer competitive options."
+  "агрегатори": {
+    "keyword": "агрегатори",
+    "definition": "Інструмент, який поєднує кілька джерел, щоб запропонувати конкурентні варіанти."
   },
   "airdrop": {
     "keyword": "airdrop",
@@ -151,13 +143,9 @@
     "keyword": "blockchains",
     "definition": "Система, в якій облік криптовалютних транзакцій ведеться на багатьох комп'ютерах по всьому світу."
   },
-  "blockchain apps": {
-    "keyword": "blockchain apps",
-    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
-  },
-  "blockchain appss": {
-    "keyword": "blockchain appss",
-    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
+  "блокчейн-додатки": {
+    "keyword": "блокчейн-додатки",
+    "definition": "Блокчейн-додатки, які дозволяють обмінювати криптовалюту, користуватися соціальними мережами web3, робити благодійні пожертви або навіть навчатися на блокчейні - наприклад, в Bankless Academy."
   },
   "blockchain architecture": {
     "keyword": "blockchain architecture",
@@ -1029,11 +1017,11 @@
   },
   "private key": {
     "keyword": "private key",
-    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+    "definition": "Приватний ключ надає доступ до вашого гаманця, що дозволяє вам надсилати криптоактиви на інші гаманці."
   },
   "private keys": {
     "keyword": "private keys",
-    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+    "definition": "Приватний ключ надає доступ до вашого гаманця, що дозволяє вам надсилати криптоактиви на інші гаманці."
   },
   "proof of stake": {
     "keyword": "Proof of Stake",
@@ -1085,19 +1073,19 @@
   },
   "public key": {
     "keyword": "public key",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+    "definition": "Публічний ключ - це адреса вашого гаманця. Він дає іншим точку відліку, на яку вони можуть надсилати вам криптоактиви."
   },
   "public keys": {
     "keyword": "public keys",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+    "definition": "Публічний ключ - це адреса вашого гаманця. Він дає іншим точку відліку, на яку вони можуть надсилати вам криптоактиви."
   },
   "recovery phrase": {
     "keyword": "recovery phrase",
-    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+    "definition": "Фраза відновлення - це список від 12 до 24 слів, який використовується для генерації відкритого і закритого ключів вашого гаманця."
   },
   "recovery phrases": {
     "keyword": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+    "definition": "Фраза відновлення - це список від 12 до 24 слів, який використовується для генерації відкритого і закритого ключів вашого гаманця."
   },
   "red flag": {
     "keyword": "red flag",
@@ -1515,21 +1503,21 @@
     "keyword": "wallets",
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
   },
-  "wallet app": {
-    "keyword": "wallet app",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+  "додаток до гаманця": {
+    "keyword": "додаток до гаманця",
+    "definition": "Додаток на вашому комп'ютері або телефоні, який використовується для підключення до вашого гаманця на блокчейні."
   },
-  "wallet apps": {
-    "keyword": "wallet apps",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+  "додатки для гаманців": {
+    "keyword": "додатки для гаманців",
+    "definition": "Додаток на вашому комп'ютері або телефоні, який використовується для підключення до вашого гаманця на блокчейні."
   },
-  "wallet provider": {
-    "keyword": "wallet provider",
-    "definition": "The creator of the software you use to access your wallet. These providers do not own your wallet, but instead act as a bridge that lets you access your account on the blockchain."
+  "провайдер гаманця": {
+    "keyword": "провайдер гаманця",
+    "definition": "Розробник програмного забезпечення, яке ви використовуєте для доступу до свого гаманця. Ці провайдери не володіють вашим гаманцем, а виступають в ролі моста, який дозволяє вам отримати доступ до вашого облікового запису в блокчейні."
   },
-  "wallet providers": {
-    "keyword": "wallet providers",
-    "definition": "The creator of the software you use to access your wallet. These providers do not own your wallet, but instead act as a bridge that lets you access your account on the blockchain."
+  "провайдери гаманців": {
+    "keyword": "провайдери гаманців",
+    "definition": "Розробник програмного забезпечення, яке ви використовуєте для доступу до свого гаманця. Ці провайдери не володіють вашим гаманцем, а виступають в ролі моста, який дозволяє вам отримати доступ до вашого облікового запису в блокчейні."
   },
   "web2": {
     "keyword": "web2",

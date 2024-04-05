@@ -39,21 +39,13 @@
     "keyword": "异步",
     "definition": "多个合作者之间的通信，参与者在发送信息时不必在场。"
   },
-  "attestation": {
-    "keyword": "attestation",
-    "definition": "A vote made by each validator to reach a consensus on whether to approve a transaction"
+  "区块认证": {
+    "keyword": "区块认证",
+    "definition": "由每个验证者进行投票，就是否批准交易达成共识"
   },
-  "attestations": {
-    "keyword": "attestations",
-    "definition": "A vote made by each validator to reach a consensus on whether to approve a transaction"
-  },
-  "autonomy": {
-    "keyword": "autonomy",
-    "definition": "The quality of governing your own actions, rather than adhering to frameworks of others."
-  },
-  "autonomys": {
-    "keyword": "autonomys",
-    "definition": "The quality of governing your own actions, rather than adhering to frameworks of others."
+  "自治": {
+    "keyword": "自治",
+    "definition": "管理自己的行为，而不是遵守他人框架的品质。"
   },
   "投注": {
     "keyword": "投注",
@@ -63,13 +55,9 @@
     "keyword": "区块",
     "definition": "区块链上的一组交易。"
   },
-  "block builder": {
-    "keyword": "block builder",
-    "definition": "Highly specialized validator nodes who construct blocks from transactions submitted to the network."
-  },
-  "block builders": {
-    "keyword": "block builders",
-    "definition": "Highly specialized validator nodes who construct blocks from transactions submitted to the network."
+  "区块生成器": {
+    "keyword": "区块生成器",
+    "definition": "高度专业化的验证器节点，根据提交给网络的交易构建区块。"
   },
   "区块浏览器": {
     "keyword": "区块浏览器",
@@ -79,41 +67,29 @@
     "keyword": "区块哈希",
     "definition": "每个区块文件的唯一标识符。每个新区块都会参考前一个区块的区块哈希值，从而形成单文件连接的区块链。"
   },
-  "block proposer": {
-    "keyword": "block proposer",
-    "definition": "The validator node chosen by the network algorithm to select the next block to be added to the blockchain."
-  },
-  "block proposers": {
-    "keyword": "block proposers",
-    "definition": "The validator node chosen by the network algorithm to select the next block to be added to the blockchain."
+  "区块生产节点": {
+    "keyword": "区块生产节点",
+    "definition": "网络算法选择的验证节点，用于选择下一个要添加到区块链中的区块。"
   },
   "区块奖励": {
     "keyword": "区块奖励",
-    "definition": "An amount of native coin given to the proposer of a new valid block."
+    "definition": "给予新有效区块提议者的原生区块链资产。"
   },
   "区块链": {
     "keyword": "区块链",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "一种在全球多台计算机上保存加密货币交易记录的系统。"
   },
-  "blockchain apps": {
-    "keyword": "blockchain apps",
-    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
-  },
-  "blockchain appss": {
-    "keyword": "blockchain appss",
-    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
+  "区块链应用程序": {
+    "keyword": "区块链应用程序",
+    "definition": "允许您交换加密货币的区块链应用程序，使用 web3 社交媒体，进行慈善捐赠，甚至学习连锁学习，就像在 Bankless Academy 一样。"
   },
   "区块链架构": {
     "keyword": "区块链架构",
     "definition": "区块链技术中的数据存储结构。"
   },
-  "blockchain technology": {
-    "keyword": "blockchain technology",
-    "definition": "A new type of network, hosted across many computers. It's adding a new layer of digital ownership to the internet."
-  },
-  "blockchain technologys": {
-    "keyword": "blockchain technologys",
-    "definition": "A new type of network, hosted across many computers. It's adding a new layer of digital ownership to the internet."
+  "区块链技术": {
+    "keyword": "区块链技术",
+    "definition": "一个新型的网络，在许多计算机上托管。它为互联网添加了全新的数字所有权层。"
   },
   "区块链的三难困境": {
     "keyword": "区块链的三难困境",
@@ -121,10 +97,6 @@
   },
   "区块空间": {
     "keyword": "区块空间",
-    "definition": "区块链上可用于存储信息和运行代码的空间大小。一个（或一系列）区块内的\"空间\"量。"
-  },
-  "blockspaces": {
-    "keyword": "blockspaces",
     "definition": "区块链上可用于存储信息和运行代码的空间大小。一个（或一系列）区块内的\"空间\"量。"
   },
   "借款人": {
@@ -135,65 +107,45 @@
     "keyword": "跨链桥",
     "definition": "允许两个不同区块链网络相互通信、交换资产的连接。"
   },
-  "btc": {
-    "keyword": "BTC",
-    "definition": "The market symbol for bitcoin."
-  },
-  "btcs": {
-    "keyword": "BTCs",
-    "definition": "The market symbol for bitcoin."
+  "比特币 (btc)": {
+    "keyword": "比特币 (BTC)",
+    "definition": "比特币的市场符号。"
   },
   "抗审查": {
     "keyword": "抗审查",
     "definition": "任何政府或公司都无权决定什么是允许的，什么是不允许的。"
   },
-  "central bank": {
-    "keyword": "central bank",
-    "definition": "An institution regulating money, banks, and currency in a country."
+  "中央银行": {
+    "keyword": "中央银行",
+    "definition": "一国的货币、银行和货币管理机构。"
   },
-  "central banks": {
-    "keyword": "central banks",
-    "definition": "An institution regulating money, banks, and currency in a country."
-  },
-  "centralized": {
-    "keyword": "centralized",
-    "definition": "A single authority or entity controls the entire system."
-  },
-  "centralizeds": {
-    "keyword": "centralizeds",
-    "definition": "A single authority or entity controls the entire system."
+  "中心化": {
+    "keyword": "中心化",
+    "definition": "一个单独的机构或实体控制这个系统。"
   },
   "中心化交易所": {
     "keyword": "中心化交易所",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "中心化交易所（CEX）一个协调加密货币 交易的收费平台，类似于证券交易所。"
   },
-  "centralized exchange staking": {
-    "keyword": "Centralized Exchange Staking",
-    "definition": "Locking tokens through a Centralized Exchange to generate rewards."
-  },
-  "centralized exchange stakings": {
-    "keyword": "Centralized Exchange Stakings",
-    "definition": "Locking tokens through a Centralized Exchange to generate rewards."
+  "中心化交易所质押": {
+    "keyword": "中心化交易所质押",
+    "definition": "通过中心化交易所锁定代币以产生奖励。"
   },
   "cex": {
     "keyword": "CEX",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "中心化交易所（Cex）一个协调加密货币 交易的收费平台，类似于证券交易所。"
   },
   "cexs": {
     "keyword": "CEXs",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "中心化交易所（Cex）一个协调加密货币 交易的收费平台，类似于证券交易所。"
   },
   "链": {
     "keyword": "链",
     "definition": "将数据块绑定在一起，形成一个无法更改或变更的数据库。"
   },
-  "circulating supply": {
-    "keyword": "circulating supply",
-    "definition": "The number of a specific cryptocurrency's coins or tokens publicly available for the market to trade."
-  },
-  "circulating supplys": {
-    "keyword": "circulating supplys",
-    "definition": "The number of a specific cryptocurrency's coins or tokens publicly available for the market to trade."
+  "流通供应量": {
+    "keyword": "流通供应量",
+    "definition": "市场上可公开交易的特定加密货币或通证的数量。"
   },
   "币": {
     "keyword": "币",
@@ -201,83 +153,51 @@
   },
   "冷钱包": {
     "keyword": "冷钱包",
-    "definition": "A type of self-custody wallet that is stored on offline hardware."
+    "definition": "一种存储在离线硬件上的自我托管钱包。"
   },
   "保证金": {
     "keyword": "保证金",
     "definition": "借款人将特定资产抵押给贷款人，作为偿还贷款的担保。"
   },
-  "commercial bank": {
-    "keyword": "commercial bank",
-    "definition": "A bank managing money for people and businesses."
-  },
-  "commercial banks": {
-    "keyword": "commercial banks",
-    "definition": "A bank managing money for people and businesses."
+  "商业银行": {
+    "keyword": "商业银行",
+    "definition": "为个人和企业管理资金的银行。"
   },
   "共识": {
     "keyword": "共识",
     "definition": "在像区块链这样的去中心化计算机网络上达成一致、信任和安全。"
   },
-  "consensus mechanism": {
-    "keyword": "consensus mechanism",
-    "definition": "The method by which a blockchain network judges which transactions are legitimate, and which are fraudulent."
-  },
-  "consensus mechanisms": {
-    "keyword": "consensus mechanisms",
-    "definition": "Methods by which blockchain networks judge which transactions are legitimate, and which are fraudulent."
-  },
-  "consensus mechanismss": {
-    "keyword": "consensus mechanismss",
-    "definition": "Methods by which blockchain networks judge which transactions are legitimate, and which are fraudulent."
+  "共识机制": {
+    "keyword": "共识机制",
+    "definition": "区块链网络判断哪些是正直交易，哪些是欺诈交易的方法。"
   },
   "交易对手风险": {
     "keyword": "交易对手风险",
     "definition": "另一方可能不履行其在协议中责任的风险。"
   },
-  "credible neutrality": {
-    "keyword": "credible neutrality",
-    "definition": "A mechanism that does not discriminate for or against any specific people."
+  "可信中立": {
+    "keyword": "可信中立",
+    "definition": "一种不歧视或反对任何特定人群的机制。"
   },
-  "credible neutralitys": {
-    "keyword": "credible neutralitys",
-    "definition": "A mechanism that does not discriminate for or against any specific people."
+  "加密货币": {
+    "keyword": "加密货币",
+    "definition": "由区块链技术而非中央机构托管的数字货币。"
   },
-  "cryptocurrency": {
-    "keyword": "cryptocurrency",
-    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+  "加密货币挖矿": {
+    "keyword": "加密货币挖矿",
+    "definition": "验证区块链交易以换取加密货币奖励的过程。"
   },
-  "cryptocurrencys": {
-    "keyword": "cryptocurrencys",
-    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
-  },
-  "cryptocurrency mining": {
-    "keyword": "cryptocurrency mining",
-    "definition": "The process of verifying blockchain transactions in exchange for cryptocurrency rewards."
-  },
-  "cryptocurrency minings": {
-    "keyword": "cryptocurrency minings",
-    "definition": "The process of verifying blockchain transactions in exchange for cryptocurrency rewards."
-  },
-  "cryptocurrency wallet": {
-    "keyword": "cryptocurrency wallet",
-    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
-  },
-  "cryptocurrency wallets": {
-    "keyword": "cryptocurrency wallets",
-    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  "加密货币钱包": {
+    "keyword": "加密货币钱包",
+    "definition": "允许您存储加密货币并发送/接收或使用它的应用程序。"
   },
   "托管钱包": {
     "keyword": "托管钱包",
     "definition": "托管钱包由另一方控制私钥，从而控制对加密资产的访问。"
   },
-  "custodian": {
-    "keyword": "custodian",
-    "definition": "A financial institution given responsibility to secure your assets."
-  },
-  "custodians": {
-    "keyword": "custodians",
-    "definition": "A financial institution given responsibility to secure your assets."
+  "托管": {
+    "keyword": "托管",
+    "definition": "金融机构有责任确保您的资产安全。"
   },
   "去中心化自治组织（dao）": {
     "keyword": "去中心化自治组织（DAO）",
@@ -293,7 +213,7 @@
   },
   "去中心化": {
     "keyword": "去中心化",
-    "definition": "No single authority or entity controls the system."
+    "definition": "没有一个单独的机构或实体控制这个系统。"
   },
   "去中心化交易所": {
     "keyword": "去中心化交易所",
@@ -301,15 +221,11 @@
   },
   "去中心化金融": {
     "keyword": "去中心化金融",
-    "definition": "（DeFi）一套架设在区块链上的自托管金融工具。"
+    "definition": "货币的属性由社区商定，而不是由机构设定。"
   },
-  "decentralized money": {
-    "keyword": "decentralized money",
-    "definition": "Money with properties agreed on by the community, rather than set by an institution."
-  },
-  "decentralized moneys": {
-    "keyword": "decentralized moneys",
-    "definition": "Money with properties agreed on by the community, rather than set by an institution."
+  "去中心化货币": {
+    "keyword": "去中心化货币",
+    "definition": "货币的属性由社区商定，而不是由机构设定。"
   },
   "defi（去中心化金融）": {
     "keyword": "DeFi（去中心化金融）",
@@ -323,25 +239,17 @@
     "keyword": "授权",
     "definition": "赋予他人特定的责任，即授予象征性投票权。"
   },
-  "democracy": {
-    "keyword": "democracy",
-    "definition": "A system of government where citizens exercise power by playing a key role in decision-making."
-  },
-  "democracys": {
-    "keyword": "democracys",
-    "definition": "A system of government where citizens exercise power by playing a key role in decision-making."
+  "民主": {
+    "keyword": "民主",
+    "definition": "公民通过在决策中发挥关键作用来行使权力的制度。"
   },
   "dex 聚合器": {
     "keyword": "DEX 聚合器",
     "definition": "将多个来源的 DEX 流动性整合到一个界面的协议。"
   },
-  "digital assets": {
-    "keyword": "digital assets",
-    "definition": "Anything, with value, stored digitally."
-  },
-  "digital assetss": {
-    "keyword": "digital assetss",
-    "definition": "Anything, with value, stored digitally."
+  "数字资产": {
+    "keyword": "数字资产",
+    "definition": "以数字形式储存的任何有价值的东西"
   },
   "数字签名": {
     "keyword": "数字签名",
@@ -359,17 +267,13 @@
     "keyword": "纪元（Epochs）",
     "definition": "特定区块链包含特定数量区块所需的时间。"
   },
-  "equality of opportunity": {
-    "keyword": "equality of opportunity",
-    "definition": "A fairness principle, where everyone has the same chances to succeed regardless of their background or circumstances."
-  },
-  "equality of opportunitys": {
-    "keyword": "equality of opportunitys",
-    "definition": "A fairness principle, where everyone has the same chances to succeed regardless of their background or circumstances."
+  "机会平等": {
+    "keyword": "机会平等",
+    "definition": "公平原则，即无论背景或环境如何，每个人都有同样的成功机会。"
   },
   "erc-20 协议": {
     "keyword": "ERC-20 协议",
-    "definition": "A standard for fungible tokens on Ethereum. These tokens are divisible and non-unique."
+    "definition": "以太坊上可转让可互换代币的标准。这些代币可分割且不具有唯一性。"
   },
   "erc-721 协议": {
     "keyword": "ERC-721 协议",
@@ -443,13 +347,13 @@
     "keyword": "无交易费（gas）交易",
     "definition": "一种将部分交易代币用作交易费用（gas），而不是使用该区块链网络原生代币作为交易费用（gas）的交易"
   },
-  "gold standard": {
-    "keyword": "gold standard",
-    "definition": "A monetary system where a country's currency has a value directly linked to gold."
+  "金本位": {
+    "keyword": "金本位",
+    "definition": "一国货币的价值与黄金直接挂钩的货币体系。"
   },
   "gold standards": {
     "keyword": "gold standards",
-    "definition": "A monetary system where a country's currency has a value directly linked to gold."
+    "definition": "一国货币的价值与黄金直接挂钩的货币体系。"
   },
   "gwei": {
     "keyword": "gwei",
@@ -537,11 +441,11 @@
   },
   "liquid staking token": {
     "keyword": "liquid staking token",
-    "definition": "Tokens representing staked Ether. Holders earn a portion of staking rewards proportial to the amounts staked."
+    "definition": "代表已质押的以太币的代币。持有代币的人可以获得与质押金额成正比的部分质押奖励。"
   },
   "liquid staking tokens": {
     "keyword": "liquid staking tokens",
-    "definition": "Tokens representing staked Ether. Holders earn a portion of staking rewards proportial to the amounts staked."
+    "definition": "代表已质押的以太币的代币。持有代币的人可以获得与质押金额成正比的部分质押奖励。"
   },
   "流动性": {
     "keyword": "流动性",
@@ -561,31 +465,19 @@
   },
   "lsts": {
     "keyword": "lsts",
-    "definition": "Tokens representing staked Ether. Holders earn a portion of staking rewards proportial to the amounts staked."
-  },
-  "lstss": {
-    "keyword": "lstss",
-    "definition": "Tokens representing staked Ether. Holders earn a portion of staking rewards proportial to the amounts staked."
+    "definition": "代表已质押的以太币的代币。持有代币的人可以获得与质押金额成正比的部分质押奖励。"
   },
   "市值": {
     "keyword": "市值",
     "definition": "特定代币或市场部门的总价值。"
   },
-  "max supply": {
-    "keyword": "max supply",
-    "definition": "The maximum number of coins or tokens that will ever exist for a particular cryptocurrency."
+  "最大供应量": {
+    "keyword": "最大供应量",
+    "definition": "特定加密货币代币或通证的最大数量。"
   },
-  "max supplys": {
-    "keyword": "max supplys",
-    "definition": "The maximum number of coins or tokens that will ever exist for a particular cryptocurrency."
-  },
-  "memecoin": {
-    "keyword": "memecoin",
-    "definition": "A cryptocurrency token themed on an internet meme, often with no purpose or utility."
-  },
-  "memecoins": {
-    "keyword": "memecoins",
-    "definition": "A cryptocurrency token themed on an internet meme, often with no purpose or utility."
+  "模因币": {
+    "keyword": "模因币",
+    "definition": "以网络模因为主题的加密货币代币，通常没有任何目的或用途。"
   },
   "元聚合器": {
     "keyword": "元聚合器",
@@ -599,57 +491,33 @@
     "keyword": "MEVs",
     "definition": "最大可提取价值--通过对区块内的交易排序提取的价值。"
   },
-  "miner": {
-    "keyword": "miner",
-    "definition": "An individual who participates in validating cryptocurrency transactions and proposing blocks."
+  "矿工": {
+    "keyword": "矿工",
+    "definition": "参与验证加密货币交易和提出区块的个人。"
   },
-  "miners": {
-    "keyword": "miners",
-    "definition": "An individual who participates in validating cryptocurrency transactions and proposing blocks."
+  "挖矿": {
+    "keyword": "挖矿",
+    "definition": "交易被验证并作为区块添加到区块链的过程。"
   },
-  "mining": {
-    "keyword": "mining",
-    "definition": "The process by which transactions are verified and added as blocks to the blockchain."
+  "铸造": {
+    "keyword": "铸造",
+    "definition": "在特定区块链上发行新的可替代或不可替代加密货币代币。"
   },
-  "minings": {
-    "keyword": "minings",
-    "definition": "The process by which transactions are verified and added as blocks to the blockchain."
+  "货币政策": {
+    "keyword": "货币政策",
+    "definition": "中央银行如何管理经济体中的货币流通量。"
   },
-  "mint": {
-    "keyword": "mint",
-    "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
-  },
-  "mints": {
-    "keyword": "mints",
-    "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
-  },
-  "monetary policy": {
-    "keyword": "monetary policy",
-    "definition": "How a central bank manages the amount of money circulating in an economy."
-  },
-  "monetary policys": {
-    "keyword": "monetary policys",
-    "definition": "How a central bank manages the amount of money circulating in an economy."
-  },
-  "money": {
-    "keyword": "money",
-    "definition": "A medium of exchange, a unit of account, and a store of value, used to facilitate transactions for goods and services."
-  },
-  "moneys": {
-    "keyword": "moneys",
-    "definition": "A medium of exchange, a unit of account, and a store of value, used to facilitate transactions for goods and services."
+  "钱": {
+    "keyword": "钱",
+    "definition": "交换媒介、记账单位和价值储存，用于促进商品和服务交易。"
   },
   "网络治理": {
     "keyword": "网络治理",
     "definition": "去中心化社区就网络功能/升级达成一致的过程。"
   },
-  "neutrality": {
-    "keyword": "neutrality",
-    "definition": "The principle of treating all participants equally, without bias towards any user or group."
-  },
-  "neutralitys": {
-    "keyword": "neutralitys",
-    "definition": "The principle of treating all participants equally, without bias towards any user or group."
+  "中立": {
+    "keyword": "中立",
+    "definition": "平等对待所有参与者，不偏袒任何用户或群体的原则。"
   },
   "nft": {
     "keyword": "NFT",
@@ -659,13 +527,9 @@
     "keyword": "NFTs",
     "definition": "（非同质化代币) 具有唯一 ID 且不可复制的代币，而以太币等可替代代币则没有唯一标识符。"
   },
-  "node operator": {
-    "keyword": "node operator",
-    "definition": "A member of the Ethereum community, running a validator node to process transactions on the network."
-  },
-  "node operators": {
-    "keyword": "node operators",
-    "definition": "A member of the Ethereum community, running a validator node to process transactions on the network."
+  "节点运营商": {
+    "keyword": "节点运营商",
+    "definition": "以太坊社区成员，运行一个验证器节点来处理网络上的交易。"
   },
   "链上治理": {
     "keyword": "链上治理",
@@ -713,7 +577,7 @@
   },
   "网络钓鱼": {
     "keyword": "网络钓鱼",
-    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
+    "definition": "一种 社会工程学攻击，攻击者假扮成可信赖的个人或组织，诱骗受害者共享敏感信息或向其汇款。"
   },
   "poap 徽章": {
     "keyword": "POAP 徽章",
@@ -733,7 +597,7 @@
   },
   "私钥": {
     "keyword": "私钥",
-    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+    "definition": "私钥授权访问您的钱包，允许您将加密资产发送给其他钱包。"
   },
   "权益证明（proof of stake）": {
     "keyword": "权益证明（Proof of Stake）",
@@ -743,21 +607,13 @@
     "keyword": "工作量证明（PoW）",
     "definition": "区块链共识算法依赖矿工所做的\"工作量\"，矿工通过提出区块并查看每个区块是否具有有效哈希值来竞争创建有效区块。"
   },
-  "proof-of-stake": {
-    "keyword": "Proof-of-Stake",
-    "definition": "A blockchain consensus method that selects validator nodes based on the amount of stake locked by the node."
+  "pos (proof-of-stake 权益证明)": {
+    "keyword": "PoS (Proof-of-Stake 权益证明)",
+    "definition": "一种区块链共识方法，根据节点锁定的质押金额来选择验证器节点。"
   },
-  "proof-of-stakes": {
-    "keyword": "Proof-of-Stakes",
-    "definition": "A blockchain consensus method that selects validator nodes based on the amount of stake locked by the node."
-  },
-  "pseudonymous": {
-    "keyword": "pseudonymous",
-    "definition": "Writing under a false name."
-  },
-  "pseudonymouss": {
-    "keyword": "pseudonymouss",
-    "definition": "Writing under a false name."
+  "匿名": {
+    "keyword": "匿名",
+    "definition": "以假名写入。"
   },
   "公共": {
     "keyword": "公共",
@@ -769,7 +625,7 @@
   },
   "公钥": {
     "keyword": "公钥",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+    "definition": "公钥就是你的地址。它为他人向您发送加密资产提供定位。"
   },
   "助记词": {
     "keyword": "助记词",
@@ -779,13 +635,9 @@
     "keyword": "红标",
     "definition": "危险的警告信号"
   },
-  "restaking": {
-    "keyword": "restaking",
-    "definition": "Reusing staked Ether tokens to help secure and validate other protocols, in exchange for rewards."
-  },
-  "restakings": {
-    "keyword": "restakings",
-    "definition": "Reusing staked Ether tokens to help secure and validate other protocols, in exchange for rewards."
+  "再质押（restaking）": {
+    "keyword": "再质押（Restaking）",
+    "definition": "重复使用以太代币帮助保护和验证其他协议，以换取奖励。"
   },
   "retropgf": {
     "keyword": "RetroPGF",
@@ -803,65 +655,37 @@
     "keyword": "三明治攻击",
     "definition": "由于区块生产者对交易进行排序，用户需要支付隐性成本。"
   },
-  "satoshi nakamoto": {
-    "keyword": "Satoshi Nakamoto",
-    "definition": "The pseudonymous creator of Bitcoin. To this day, nobody knows their real identity."
-  },
-  "satoshi nakamotos": {
-    "keyword": "Satoshi Nakamotos",
-    "definition": "The pseudonymous creator of Bitcoin. To this day, nobody knows their real identity."
+  "中本聪": {
+    "keyword": "中本聪",
+    "definition": "比特币的伪匿名创建者。到今天为止，没有人知道他（们）的真实身份。"
   },
   "可扩展性": {
     "keyword": "可扩展性",
-    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
+    "definition": "区块链能够处理不断增长的工作、交易和使用量，同时将对用户的干扰降至最低。"
   },
   "诈骗代币": {
     "keyword": "诈骗代币",
     "definition": "只为盗取投资者资金而推出的加密货币代币。"
   },
-  "scarce": {
-    "keyword": "scarce",
-    "definition": "The state of being in short supply."
+  "稀缺": {
+    "keyword": "稀缺",
+    "definition": "供不应求的状态。"
   },
-  "scarces": {
-    "keyword": "scarces",
-    "definition": "The state of being in short supply."
-  },
-  "scarcity": {
-    "keyword": "scarcity",
-    "definition": "Being in short supply."
-  },
-  "scarcitys": {
-    "keyword": "scarcitys",
-    "definition": "Being in short supply."
+  "稀缺性": {
+    "keyword": "稀缺性",
+    "definition": "供不应求。"
   },
   "安全性": {
     "keyword": "安全性",
     "definition": "区块链抵御黑客攻击、代码漏洞和经济漏洞等攻击并继续正常运行的能力。"
   },
-  "self-custodial": {
-    "keyword": "self-custodial",
-    "definition": "A means of holding your assets where only you have access to them."
+  "自我托管": {
+    "keyword": "自我托管",
+    "definition": "一种将您的资产存放在只有您能接触到的地方的方法。"
   },
-  "self-custodials": {
-    "keyword": "self-custodials",
-    "definition": "A means of holding your assets where only you have access to them."
-  },
-  "self-custody": {
-    "keyword": "self-custody",
-    "definition": "A means of holding your assets where only you have access to them."
-  },
-  "self-custodys": {
-    "keyword": "self-custodys",
-    "definition": "A means of holding your assets where only you have access to them."
-  },
-  "self-custody wallet": {
-    "keyword": "self-custody wallet",
-    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
-  },
-  "self-custody wallets": {
-    "keyword": "self-custody wallets",
-    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  "自我托管钱包": {
+    "keyword": "自我托管钱包",
+    "definition": "使用非托管钱包，您可以独自控制私钥，而私钥又可以控制您的加密资产。"
   },
   "结算层": {
     "keyword": "结算层",
@@ -879,13 +703,9 @@
     "keyword": "侧链",
     "definition": "一种允许将资产和交易从主区块链转移到独立、平行的区块链（侧链)）的机制。"
   },
-  "slashed": {
-    "keyword": "slashed",
-    "definition": "A penalty applied to validator nodes for publishing fraudulent transactions on Proof-of-Stake blockchains."
-  },
-  "slasheds": {
-    "keyword": "slasheds",
-    "definition": "A penalty applied to validator nodes for publishing fraudulent transactions on Proof-of-Stake blockchains."
+  "鞭笞（slashed）机制": {
+    "keyword": "鞭笞（slashed）机制",
+    "definition": "对在 \"取证 \"区块链上发布欺诈性交易的验证器节点实施的惩罚。"
   },
   "滑点": {
     "keyword": "滑点",
@@ -901,15 +721,11 @@
   },
   "社会工程": {
     "keyword": "社会工程",
-    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
+    "definition": "操纵他人共享敏感或机密信息，如密码或助记词。"
   },
-  "solo staker": {
-    "keyword": "solo staker",
-    "definition": "A node operator running an independent validator node."
-  },
-  "solo stakers": {
-    "keyword": "solo stakers",
-    "definition": "A node operator running an independent validator node."
+  "独立质押人": {
+    "keyword": "独立质押人",
+    "definition": "运行独立验证器节点的节点操作器。"
   },
   "solo staking": {
     "keyword": "solo staking",
@@ -1039,21 +855,13 @@
     "keyword": "钱包",
     "definition": "钱包是用于在区块链上发送和接收加密资产的应用程序或设备。"
   },
-  "wallet app": {
-    "keyword": "wallet app",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+  "钱包应用程序": {
+    "keyword": "钱包应用程序",
+    "definition": "电脑或手机上的应用程序，用于连接区块链上的钱包。"
   },
-  "wallet apps": {
-    "keyword": "wallet apps",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
-  },
-  "wallet provider": {
-    "keyword": "wallet provider",
-    "definition": "The creator of the software you use to access your wallet. These providers do not own your wallet, but instead act as a bridge that lets you access your account on the blockchain."
-  },
-  "wallet providers": {
-    "keyword": "wallet providers",
-    "definition": "The creator of the software you use to access your wallet. These providers do not own your wallet, but instead act as a bridge that lets you access your account on the blockchain."
+  "钱包提供商": {
+    "keyword": "钱包提供商",
+    "definition": "您用来访问钱包的软件的开发者。这些提供商并不拥有您的钱包，而是充当您访问区块链账户的桥梁。"
   },
   "web2": {
     "keyword": "web2",
