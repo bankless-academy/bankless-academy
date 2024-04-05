@@ -244,6 +244,11 @@
     "keyword_plural": "custodios",
     "definition": "Una institución financiera a la que se le ha dado la responsabilidad de asegurar tus activos."
   },
+  "custom record": {
+    "keyword": "Custom Record",
+    "keyword_plural": "Custom Records",
+    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+  },
   "dao": {
     "keyword": "DAO",
     "keyword_plural": "DAOs",
