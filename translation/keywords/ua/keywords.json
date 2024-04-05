@@ -244,6 +244,11 @@
     "keyword_plural": "зберігачі",
     "definition": "Фінансова установа, на яку покладено відповідальність за безпеку ваших активів."
   },
+  "custom record": {
+    "keyword": "Custom Record",
+    "keyword_plural": "Custom Records",
+    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+  },
   "dao": {
     "keyword": "DAO",
     "keyword_plural": "DAOs",
