@@ -296,7 +296,9 @@ axios
           }),
         {}
       )
-      if (lesson.publicationStatus === undefined) return
+      if (lesson.publicationStatus === undefined ||
+        // we only support publish or hidden as status
+        !(lesson.publicationStatus === 'publish' || lesson.publicationStatus === 'hidden')) return
       notion.id = notion.id.replace(/-/g, '')
       // skip import if LESSON_NOTION_ID is specified
       if (LESSON_NOTION_ID && notion.id !== LESSON_NOTION_ID) return
