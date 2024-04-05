@@ -25,7 +25,7 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-***
+---
 
 # Bankless Academy'e hoş geldiniz
 
@@ -98,7 +98,7 @@ Bir ülkenin 'para politikasını' yöneten banka olan 'merkez bankaları' herha
 
 Günlük birikim ve harcamalar için kullanılan 'ticari bankalar' da harcama alışkanlıklarımızı etkiler. Bir 'emanetçi' olan bu bankalar, işlemleri engelleyebilir veya fonlarımıza el koyabilir. Bazı bankalar, müşterilerinin kripto para satın almasını engeller! **Bankanız istediği zaman birikimlerinizi dondurabiliyorsa… paranızın gerçek sahibi siz misiniz?** 💸
 
-***
+---
 
 Paranın yeniden finansal özgürlüğü destekleyebilmesi için zaman içinde kaybettiği iki temel özelliği yeniden kazanması gerekir:
 
@@ -125,7 +125,7 @@ Bitcoin sahip olduğu nitelikler nedeniyle "dijital altın" lakabını almışt�
 
 📉 Artan maliyetlere yetişmekte zorlanıyor musunuz?
 
-***
+---
 
 Bitcoin'de kıtlık, toplamda kaç adet Bitcoin'in var olabileceğine dair bir üst sınır olduğunu ifade eder ve Bitcoin için bu sınır, 21 milyondur. Bitcoin'in koduna dahil edilmiş olan bu 'maksimum arz', Bitcoin'i nadir ve potansiyel olarak değerli kılar. Tıpkı altın gibi uzun vadeli bir değer saklama aracı olarak iyi bir konuma getirir.
 
@@ -153,7 +153,7 @@ Bitcoin uzun vadede değer korumayı nasıl teşvik eder?
 
 🧊 Bankanızın, onun hoşuna gitmeyen bir transfer yaptığınız için size haber vermeden paranızı dondurduğu oldu mu?
 
-***
+---
 
 Demokrasilerde mülkiyet korunan bir insan hakkıdır çünkü vatandaşlara, yaşamları üzerinde daha fazla kontrol ve özgürlük sağlar. Hayatta kalma araçlarımız şarta bağlı olduğunda, yani işletmeler veya kurumlar tarafından değerlendirildiğinde özgürce hareket edemeyiz.
 
@@ -181,7 +181,7 @@ Gözetimsizlik gerçek mülkiyeti nasıl mümkün kılar?
 
 ⌛ Hiç uluslararası para göndermek için birkaç iş günü beklemek ve %3-5 ücret ödemek zorunda kaldınız mı?
 
-***
+---
 
 E-posta, postane ihtiyacını ortadan kaldırarak mektup göndermeyi kolaylaştırdı. Benzer şekilde, Bitcoin de bankalara olan ihtiyacı ortadan kaldırarak para göndermeyi kolaylaştırdı.
 
