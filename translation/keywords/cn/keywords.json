@@ -244,6 +244,11 @@
     "keyword_plural": "托管",
     "definition": "金融机构有责任确保您的资产安全。"
   },
+  "custom record": {
+    "keyword": "Custom Record",
+    "keyword_plural": "Custom Records",
+    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+  },
   "dao": {
     "keyword": "去中心化自治组织（DAO）",
     "keyword_plural": "DAOs",
