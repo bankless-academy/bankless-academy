@@ -962,7 +962,7 @@ const Lesson = ({
               onClick={() => clickRight()}
               rightIcon={<ArrowForwardIcon />}
             >
-              {t('Next')}
+              Next
             </Button>
           ) : (
             <>
