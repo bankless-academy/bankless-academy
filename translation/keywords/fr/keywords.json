@@ -244,6 +244,11 @@
     "keyword_plural": "dépositaires",
     "definition": "Une institution financière chargée de sécuriser vos avoirs."
   },
+  "custom record": {
+    "keyword": "Custom Record",
+    "keyword_plural": "Custom Records",
+    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+  },
   "dao": {
     "keyword": "DAO",
     "keyword_plural": "DAOs",
