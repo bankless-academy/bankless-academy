@@ -27,7 +27,7 @@
   "allowance": {
     "keyword": "allowance",
     "keyword_plural": "allowances",
-    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
+    "definition": "Genellikle akıllı sözleşme olan bir varlığa, tokenlarınızın belirli bir miktarını bir işlemde kullanma hakkı verir."
   },
   "alternative layer 1": {
     "keyword": "alternatif Katman 1",
@@ -245,9 +245,9 @@
     "definition": "Varlıklarınızı güvence altına alma sorumluluğu verilen bir finans kurumu."
   },
   "custom record": {
-    "keyword": "Custom Record",
-    "keyword_plural": "Custom Records",
-    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+    "keyword": "Özel Kayıt",
+    "keyword_plural": "Özel Kayıtlar",
+    "definition": "Standart blok zinciri adreslerinin ötesinde keyfi bilgilerin depolanmasına ve ilişkilendirilmesine olanak tanıyan ve bir ENS alanına bağlı olan kullanıcı tanımlı veri girişi."
   },
   "dao": {
     "keyword": "DAO",
