@@ -109,9 +109,9 @@ Yalnızca bu nitelikler, paramızı özgürce biriktirme ve harcama kabiliyetimi
 
 # Bitcoin Sahnede
 
-'Satoshi Nakamoto', paranın sadece birkaç kişi tarafından kontrol edilemeyecek kadar önemli olduğunu düşünüyordu. Herkes için adil ve güvenilir olabilecek bir para türü yaratmak istedi.
+`Satoshi Nakamoto`, paranın sadece birkaç kişi tarafından kontrol edilemeyecek kadar önemli olduğunu düşünüyordu. Herkes için adil ve güvenilir olabilecek bir para türü yaratmak istedi.
 
-Ve Bitcoin ('BTC') geldi: Geleneksel bankacılık sisteminin ötesinde işleyen bir dijital para birimi.
+Ve Bitcoin (`BTC`) geldi: Geleneksel bankacılık sisteminin ötesinde işleyen bir dijital para birimi.
 
 - ⛓️ 'Eşler arası' çalışır: İnsanları doğrudan birbirlerine bağlar. 'Blok zinciri teknolojisiyle' otomatik hale getirilen bu sistem, varlık saklamanın veya işlem yapmanın kurumlarca kolaylaştırılması yönündeki ihtiyacı ortadan kaldırıyor. Savunucuları ona "yöneticisi olmayan kurallar bütünü" diyor.
 - 💎 Arzı 'kıttır': Sınırsız miktarda yeni para çıkaran bir merkez bankası bulunmayan Bitcoin, uzun vadeli birikimin karşılığını veren istikrarlı, öngörülebilir bir para politikasına sahiptir.
