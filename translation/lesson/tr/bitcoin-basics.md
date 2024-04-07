@@ -33,7 +33,7 @@ Merhaba cesur Kaşifler, dijital inovasyonun sınırına hoş geldiniz.
 
 Bankless Academy'de misyonumuz, sizin gibi Kaşiflere blok zinciri evreninde gezinmek ve "bankasızlaşmak" için en iyi araçları ve bilgileri sağlamak!
 
-Bugün, her şeyi başlatan 'kripto para birimini' inceliyoruz: Bitcoin.
+Bugün, her şeyi başlatan `kripto para birimini` inceliyoruz: Bitcoin.
 
 Bitcoin, yeni bir para türüdür. Kullanıcılarının finansal özgürlüğünü artırır ve zor kazandıkları paralarını, zaman içinde oluşacak değer kaybına karşı korur.
 
