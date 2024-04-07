@@ -41,9 +41,9 @@ Bitcoin, yeni bir para türüdür. Kullanıcılarının finansal özgürlüğün
 
 # Bitcoin'in Hikayesi
 
-2009 yılında gizemli "Satoshi Nakamoto" tarafından piyasaya sürülen Bitcoin, yeni bir ekonomi çağının başlangıcı oldu.
+2009 yılında gizemli "`Satoshi Nakamoto`" tarafından piyasaya sürülen Bitcoin, yeni bir ekonomi çağının başlangıcı oldu.
 
-İlk başarılı 'kripto para birimi' olan Bitcoin güçlü bir tartışmayı da beraberinde getirdi: Paranın kontrolü ve gücü geleneksel bankacılık sistemlerinde kalmaya devam mı etmeli? Yoksa her gün onu kazanan ve kullanan vatandaşlara mı ait olmalı? Bunun tam olarak ne anlama geldiğinden emin değilseniz doğru yerdesiniz!
+İlk başarılı `kripto para birimi` olan Bitcoin güçlü bir tartışmayı da beraberinde getirdi: Paranın kontrolü ve gücü geleneksel bankacılık sistemlerinde kalmaya devam mı etmeli? Yoksa her gün onu kazanan ve kullanan vatandaşlara mı ait olmalı? Bunun tam olarak ne anlama geldiğinden emin değilseniz doğru yerdesiniz!
 
 Gerçek şu ki, günümüzde paramızın kontrolü sandığımız gibi bizim elimizde değil. Bunun da oldukça ciddi sonuçları var.
 
@@ -57,9 +57,9 @@ Bitcoin'in finansta nasıl devrim yarattığını öğrenmenin zamanı geldi.
 
 Mal ve hizmet alışverişinde boncukların, deniz kabuklarının ve taşların kullanıldığı en eski zamanlardan bu yana para, toplumun ayrılmaz bir parçası oldu.
 
-Ancak ilk para birimlerinin bir sorunu vardı; insanların yeni para bulması/yaratması çok kolaydı. Bir şeyden ne kadar çok varsa değeri o kadar az olacağından, herkesin parası yavaş yavaş daha az değerli hale geliyordu. Paranın değerini koruması için bulunması daha zor olmalıdır.
+Ancak ilk para birimlerinin bir sorunu vardı; insanların yeni para bulması/yaratması çok kolaydı. Bir şeyden ne kadar çok varsa değeri o kadar az olacağından, herkesin parası yavaş yavaş daha az değerli hale geliyordu. Paranın değeri korunacaksa onu bulmak daha zor olmalıydı.
 
-Sonunda bu sorunu çözmek için altın ve gümüş gibi maddeler kullanılmaya başlandı. Bu maddelerin en önemli avantajı, sınırlı miktarda bulunmalarıydı (kıtlık); sonsuz bir arz olmaması insanların, dolaşımdaki para miktarını önemli ölçüde artırmasını zorlaştırıyordu. Bu 'kıtlık', paranın değerinin korunmasına yardımcı oldu.
+Sonunda bu sorunu çözmek için altın ve gümüş gibi maddeler kullanılmaya başlandı. Bu maddelerin en önemli avantajı, sınırlı miktarda bulunmalarıydı (kıtlık); sonsuz bir arz olmaması insanların, dolaşımdaki para miktarını önemli ölçüde artırmasını zorlaştırıyordu. Bu `kıtlık`, paranın değerinin korunmasına yardımcı oldu.
 
 Toplumlar büyüdükçe, hükümetlerin merkez bankaları, altın ve gümüşten yapılmış standart madeni paralar çıkarıyordu. Bu para birimi, bir yandan parayı tanınabilir ve ölçülebilir hale getirirken diğer yandan güçlü bir değer deposu işlevi gördü.
 
@@ -82,7 +82,7 @@ Doğru ya da Yanlış:
 
 Kağıt paranın kullanıma alınmasıyla birlikte para birimlerinin değeri, altına 'dayalı' olarak belirlenmeye başladı. Paranın değeri doğrudan, muhafaza edilen belirli miktardaki değerli metale bağlıydı.
 
-20. yüzyıla gelindiğinde ise bu "Altın Standardı" çöktü.
+20. yüzyıla gelindiğinde ise bu “`Altın Standardı`” çöktü.
 
 Değerli metaller ile para birimleri arasındaki ilişki, dünyanın her yerinde yavaş yavaş sonlandırıldı; bu çaba, herhangi bir ülkenin ekonomisinin, altın arzının ötesinde büyümesine olanak tanıyordu. Merkez bankaları, para birimi yaratmak için artık altına ihtiyaç duymadığından, ülke ekonomisi için gerekli gördükleri kadar yeni para yaratabiliyordu. Para arzını sıkı önlemlerle kontrol ederek, değerini de kontrol edebiliyorlardı.
 
@@ -94,9 +94,9 @@ Dijital çağa geçişle birlikte, elektronik para birimi büyük ölçüde fizi
 
 Mevcut finansal sistemimizin sorunu, paramız üzerinde kontrolümüzün olmaması ve bu kontrol eksikliğinin, neyi biriktirip neyi harcayacağımıza özgürce karar verme kabiliyetimizi azaltmasıdır.
 
-Bir ülkenin 'para politikasını' yöneten banka olan 'merkez bankaları' herhangi bir miktarda yeni para çıkarabilir. 'Kıtlığın' olmayışı, paramızı her geçen yıl daha az değerli hale getirir. Öngörülemeyen, azalan bir değere sahip olan para genellikle bizi onu harcamaya zorlar: **"Param her yıl daha az değerli olacaksa neden biriktireyim ki? Şimdi de harcayabilirim."** 💸
+Bir ülkenin `para politikasını` yöneten banka olan `merkez bankaları` herhangi bir miktarda yeni para çıkarabilir. `Kıtlık` olmaması, genellikle paramızın yıllar içinde daha az değerli hale gelmesine sebep olur. Öngörülemeyen, azalan bir değere sahip olan para genellikle bizi onu harcamaya zorlar: **"Param her yıl daha az değerli olacaksa neden biriktireyim ki? Şimdi de harcayabilirim."** 💸
 
-Günlük birikim ve harcamalar için kullanılan 'ticari bankalar' da harcama alışkanlıklarımızı etkiler. Bir 'emanetçi' olan bu bankalar, işlemleri engelleyebilir veya fonlarımıza el koyabilir. Bazı bankalar, müşterilerinin kripto para satın almasını engeller! **Bankanız istediği zaman birikimlerinizi dondurabiliyorsa… paranızın gerçek sahibi siz misiniz?** 💸
+Günlük birikim ve harcamalar için kullanılan `ticari bankalar` da harcama alışkanlıklarımızı etkiler. Bir `emanetçi` olan bu bankalar, işlemleri engelleyebilir veya fonlarımıza el koyabilir. Bazı bankalar, müşterilerinin kripto para satın almasını engeller! **Bankanız istediği zaman birikimlerinizi dondurabiliyorsa… paranızın gerçek sahibi siz misiniz?** 💸
 
 ---
 
