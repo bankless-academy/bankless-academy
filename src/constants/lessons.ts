@@ -1659,7 +1659,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/registering-your-web3-username/lesson-817f2737.png',
-    socialImageLink: '/images/registering-your-web3-username/social-9a9b6ad3.png',
+    socialImageLink: '/images/registering-your-web3-username/social-8ce7fa9d.png',
     learningActions: '',
     marketingDescription: 'Customize your wallet address with ENS, start building your digital identity.',
     badgeId: null,
@@ -1669,7 +1669,7 @@ const LESSONS: LessonType[] = [
     description: 'Customize your wallet address with ENS, start building your digital identity.',
     name: 'Registering Your Web3 Username',
     languages: [],
-    publicationStatus: 'hidden',
+    publicationStatus: 'publish',
     publicationDate: '2024-04-08',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
