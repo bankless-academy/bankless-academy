@@ -25,7 +25,7 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-***
+---
 
 ## Key Takeaways
 
@@ -53,11 +53,11 @@ Let’s begin our token swap.
 
 ## Performing a Token Swap
 
-**1. Load the dApp:**
+**1\. Load the dApp:**
 
 Open [Velodrome](https://velodrome.finance/swap?from=eth\&to=0x4200000000000000000000000000000000000042) in a new browser tab.
 
-**2. Connect your wallet:**
+**2\. Connect your wallet:**
 
 Use the standard ‘Connect’ button typically located in the top right corner of any dApp.
 
@@ -67,41 +67,41 @@ If you are on mobile, you will be prompted to use WalletConnect — the web3 sta
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-1d7c44d3.png)
 
-**3. Approve the connection:**
+**3\. Approve the connection:**
 
 Select ‘Connect’ in your wallet application to confirm the site connection. This allows the dApp to see your wallet address and token balances. You haven’t granted any other permissions yet.
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-6ecdef56.png)
 
-**4. Check and sign the terms of service (if you accept):**
+**4\. Check and sign the terms of service (if you accept):**
 
 Many dApps will ask you to sign a message to confirm you have read their terms and conditions. Signing messages doesn’t cost gas, and doesn’t store any information on the blockchain. If you agree with the terms, you can sign the message.
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-e3f7c7e8.png)
 
-**5. Switch to the right network:**
+**5\. Switch to the right network:**
 
 For this walkthrough, make sure your wallet is set to the Optimism network.
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-8d15c6f6.png)
 
-**6. Customize your swap:**
+**6\. Customize your swap:**
 
 It’s time to select your desired input and output tokens. In this example, we will be swapping ETH for OP — but you can swap whatever tokens you like!
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-7b117655.png)
 
-**7. Approve token permissions:**
+**7\. Approve token permissions:**
 
 You will be prompted to set and approve permission for Velodrome to access your wallet funds. We recommend limiting this to your trade size to limit future interactions with your tokens. (Stay tuned for future content on token permissions!)
 
-**8. Confirm the transaction:**
+**8\. Confirm the transaction:**
 
 Once you’re happy with your swap quote and settings, you can begin the swap. This step includes confirming on the dApp, and again in your wallet.
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-89f87156.png)
 
-**9. Check your balance:**
+**9\. Check your balance:**
 
 Your transaction should take around 40 seconds to confirm, after which you will see your new token balance in your wallet. If your token type is not displayed, make sure you’ve imported the token addresses.
 
@@ -109,19 +109,19 @@ _Optimism token contract address: 0x4200000000000000000000000000000000000042_
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-c8b8abcc.png)
 
-**10. Fetch your transaction hash:**
+**10\. Fetch your transaction hash:**
 
 To complete the quest for our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson, you’ll need the _**transaction hash of the swap**_ (not to be confused with the hash from your token permission transaction, or your wallet address). A block explorer link will usually appear on the DEX interface, letting you view the confirmed transaction details.. If you missed it, or it’s missing, you’ll find another link in your wallet activity log — tied directly to your trade.
 
 ![](https://app.banklessacademy.com/images/swapping-on-a-decentralized-exchange/image-bcfdf0ee.png)
 
-***
+---
 
 It’s time to explore the world of decentralized trading! We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Swapping on a Decentralized Exchange’.
 
 Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
 
-***
+---
 
 ## Frequently Asked Questions
 
@@ -143,11 +143,11 @@ Granting token permissions to a smart contract can leave our wallet vulnerable t
 
 ### Why is the token I'm looking for not available to swap?
 
-If your token isn’t listed by default, you’ll have to paste the token contract address into the list. To find the token contract address, check https\://www\.coingecko.com/ or the official project website.
+If your token isn’t listed by default, you’ll have to paste the token contract address into the list. To find the token contract address, check https://www.coingecko.com/ or the official project website.
 
 **Note:** Token addresses can change for a given token on different networks. For example the [USDC contract on Mainnet](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) is different than the [USDC contract on Optimism](https://optimistic.etherscan.io/token/0x7f5c764cbc14f9669b88837ca1490cca17c31607). Always verify token addresses before swapping!
 
-***
+---
 
 **Author**
 
