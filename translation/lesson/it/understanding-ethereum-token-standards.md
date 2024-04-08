@@ -25,7 +25,7 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-***
+---
 
 ## **Key Takeaways**
 
@@ -113,23 +113,23 @@ When deploying a new token contract on Ethereum, the asset creator will select f
 
 For example, ERC-20 uses functions like these:
 
-**1. totalSupply:** Defines the total supply of an ERC-20 token.
+**1\. totalSupply:** Defines the total supply of an ERC-20 token.
 
 The total supply of a token informs important qualities like its value and distribution.
 
-**2. balanceOf:** Checks the token balance of a specified address.
+**2\. balanceOf:** Checks the token balance of a specified address.
 
 This helps services and platforms check your wallet’s balance before executing your requested transaction.
 
-**3. transfer:** Transfers tokens from your address to other addresses.
+**3\. transfer:** Transfers tokens from your address to other addresses.
 
 Every time you send a crypto token from your wallet to another wallet, you’re using the transfer function.
 
-**4. approve:** Allows an address (usually a smart contract) to automatically transact on behalf of your wallet up to a specified amount.
+**4\. approve:** Allows an address (usually a smart contract) to automatically transact on behalf of your wallet up to a specified amount.
 
 Using this function, you can approve a platform or service to automatically use a defined portion of your funds and execute transactions.
 
-**5. allowance:** Used to get the amount that a spender can transact from a wallet.
+**5\. allowance:** Used to get the amount that a spender can transact from a wallet.
 
 A platform may use this function to check the total amount you’ve approved it to use and if it can execute the transaction without you signing it manually.
 
@@ -147,19 +147,19 @@ Now that we understand token standards, fungibility, and functions, let’s take
 
 ERC-20 tokens can be anything from a `memecoin` to a mode of payment in a decentralized marketplace. In most cases, they’ll fit into one of these four categories:
 
-**1. Utility token:** Serves a specific use case within an app/platform ecosystem.
+**1\. Utility token:** Serves a specific use case within an app/platform ecosystem.
 
 Example: Filecoin (FIL) is used to reward storage providers who validate and add new blocks to their data storage network.
 
-**2. Governance token:** Offers holders voting rights in governance decisions of a platform.
+**2\. Governance token:** Offers holders voting rights in governance decisions of a platform.
 
 Example: Ethereum Name Service (ENS) holders can vote in proposals to update the domain registry protocol.
 
-**3. Stablecoin:** Designed to maintain a stable value, usually equal to the U.S. dollar.
+**3\. Stablecoin:** Designed to maintain a stable value, usually equal to the U.S. dollar.
 
 Examples: Tether (USDT), USDCoin (USDC), DAI (DAI).
 
-**4. Security token:** Represents ownership in an underlying asset, like stocks of a company.
+**4\. Security token:** Represents ownership in an underlying asset, like stocks of a company.
 
 Examples: Blockchain Capital (BCAP)
 
@@ -175,13 +175,13 @@ You can easily [buy ERC-20 tokens on a DEX](https://app.banklessacademy.com/less
 
 What are some use cases of ERC-721 tokens?
 
-**1. Ownership of assets:** ERC-721 tokens are widely used to represent the ownership of unique digital and real-world assets. For example, this Explorer’s Handbook entry has 100 individually numbered versions available — not just to read, but to own — like a book on your digital bookshelf. (You can `mint` and own it by hitting the gold ‘Collect Entry’ button at the top). Bankless Academy’s ‘Datadisk Collectibles’ work in the same way.
+**1\. Ownership of assets:** ERC-721 tokens are widely used to represent the ownership of unique digital and real-world assets. For example, this Explorer’s Handbook entry has 100 individually numbered versions available — not just to read, but to own — like a book on your digital bookshelf. (You can `mint` and own it by hitting the gold ‘Collect Entry’ button at the top). Bankless Academy’s ‘Datadisk Collectibles’ work in the same way.
 
-**2. Subscriptions and memberships:** Creators, artists, clubs, and companies are already using NFTs for subscriptions, event tickets, and memberships. The provable uniqueness of NFTs ensures that each of the fixed supply is tied to an individual user.
+**2\. Subscriptions and memberships:** Creators, artists, clubs, and companies are already using NFTs for subscriptions, event tickets, and memberships. The provable uniqueness of NFTs ensures that each of the fixed supply is tied to an individual user.
 
-**3. Loyalty rewards:** Starbucks launched a loyalty program called Odyssey where its members can complete quests to obtain NFTs that they can redeem for digital and real-world rewards. Many other brands are offering NFTs as a loyalty reward that users can choose to redeem or sell whenever they want.
+**3\. Loyalty rewards:** Starbucks launched a loyalty program called Odyssey where its members can complete quests to obtain NFTs that they can redeem for digital and real-world rewards. Many other brands are offering NFTs as a loyalty reward that users can choose to redeem or sell whenever they want.
 
-**4. Identity and Certifications:** ERC-721 tokens can be used to create tamper-proof identities and certifications. When your digital identity or certificates are ERC-721 tokens, it is easy for you to prove your ownership and nearly impossible for anyone to forge your documents and misuse them.
+**4\. Identity and Certifications:** ERC-721 tokens can be used to create tamper-proof identities and certifications. When your digital identity or certificates are ERC-721 tokens, it is easy for you to prove your ownership and nearly impossible for anyone to forge your documents and misuse them.
 
 To get an ERC-721 token, create an account on an NFT marketplace like [OpenSea](https://opensea.io/) or [Blur](https://blur.io/) and purchase any listed NFT. Make sure you take our [Web3 Security](https://app.banklessacademy.com/lessons/web3-security) lesson to protect yourself from marketplace scams.
 
@@ -195,13 +195,13 @@ This standard also allows the creation of semi-fungible tokens — tokens that a
 
 ERC-1155 also enables batch transactions to send multiple token types at once, potentially reducing the `gas` cost for users.
 
-***
+---
 
 We commend you for making it through this lengthy entry in the Explorer’s Handbook: ‘Understanding Token Standards’.
 
 Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
 
-***
+---
 
 ## Ethereum Token Standard FAQ
 
@@ -225,7 +225,7 @@ To identify the original token, you should check the contract address that’s u
 
 Yes, there are other token standards on Ethereum that are not in use or have very niche use cases. Some examples include [ERC-223](https://eips.ethereum.org/EIPS/eip-223), [ERC-1462](https://eips.ethereum.org/EIPS/eip-1462), [ERC-1948](https://eips.ethereum.org/EIPS/eip-1948), and [ERC-4626](https://eips.ethereum.org/EIPS/eip-4626).
 
-***
+---
 
 **Authors**
 
