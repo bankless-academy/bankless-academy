@@ -301,7 +301,7 @@ Ao descentralizar o dinheiro e remover os `custodiantes`, nós podemos:
 
 A nova era do dinheiro está defendendo os valores fundamentais da democracia para aumentar a qualidade da vida cotidiana de cidadãos em todo o mundo, e você está convidado.
 
-”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.
+”A democracia proporciona um ambiente que respeita os direitos humanos e as liberdades fundamentais, e no qual a vontade livremente expressa das pessoas é exercida.” — Nações Unidas.
 
 # Sua Missão Bitcoin
 
