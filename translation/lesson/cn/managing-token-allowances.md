@@ -25,7 +25,7 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-***
+---
 
 ## Key Takeaways
 
@@ -69,19 +69,19 @@ By proactively managing token allowances, users can ensure that no contract with
 
 [Revoke.cash](https://revoke.cash/) empowers users to easily manage their token allowances through a simple website that helps inspect and monitor allowances given to different dApps. Let’s walkthrough how you can use this powerful community tool to help you safeguard your assets and take back control of your wallet.
 
-**1. Connect your wallet**:
+**1\. Connect your wallet**:
 
 To begin the process of revoking your token allowances, head to [Revoke.cash](http://revoke.cash/) and click on “Connect Wallet” located in the top-right corner. Alternatively, you can manually enter your wallet public address in the search bar. Once the loading is complete, you’ll see a list of all your token approvals on that network.
 
 ![](https://app.banklessacademy.com/images/managing-token-allowances/image-f95ea594.png)
 
-**2. Inspect your allowances**:
+**2\. Inspect your allowances**:
 
 Once you have connected your wallet, you can inspect your existing approvals. You can sort, filter, or search for specific approvals based on the authorized spender address. Sorting by “Newest to Oldest” is particularly useful if you suspect a malicious approval recently. Use the network selection, sorting, and filtering options provided to gain an overview of token allowances you have granted across various networks.
 
 ![](https://app.banklessacademy.com/images/managing-token-allowances/image-f3b00f4a.png)
 
-**3. Revoke undesired allowances:**
+**3\. Revoke undesired allowances:**
 
 Once you identify the approvals you want to revoke, simply click the “Revoke” button next to each of them.Optionally, you can update the approval to a different amount by clicking the pencil icon next to the approved amount if you still require the approval in the future but wish to reduce your risk.
 
@@ -97,13 +97,13 @@ It might be in your best interest to to revoke or adjust a token allowance if:
 
    More than $2.5M in assets were compromised when Atlantis Loans, a `DeFi` protocol on a BNB chain, executed a governance proposal that targeted several contracts. Users who managed their approval limit mitigated the risk of their wallets being fully drained by the malicious proposal.
 
-***
+---
 
 It’s time to strengthen our wallet defenses! We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Managing Token Allowances’.
 
 Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
 
-***
+---
 
 ## FAQ
 
@@ -137,7 +137,7 @@ Unfortunately, Revoke.cash cannot recover stolen funds. It serves as a preventiv
 
 Your wallet may contain a “sweeper bot,” a script that monitors and acts on transactions from a compromised wallet. When it detects such transactions, the bot initiates a new transaction before the original one completes, allowing it to rapidly transfer any new deposits out. If your wallet has such a “sweeper bot” stealing incoming ETH, it means your seed phrase is compromised. Revoking approvals won’t improve your wallet’s security. The best course of action is to abandon the compromised wallet and create a new one.
 
-***
+---
 
 **Author**
 
