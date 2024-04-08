@@ -25,7 +25,7 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-***
+---
 
 # Welcome to Bankless Academy
 
@@ -98,7 +98,7 @@ The problem with our current financial system is the lack of control we have ove
 
 `Commercial banks`, those used for everyday saving and spending, also influence our spending habits. As a `custodian`, they can block transactions or confiscate our funds. Some banks have blocked their clients from buying cryptocurrency! **If your bank can freeze your life savings at any time… do you truly own your money?** 💸
 
-***
+---
 
 For money to once again support financial freedom, it must regain the two key properties it has lost over time:
 
@@ -125,7 +125,7 @@ For its qualities, Bitcoin has earned the nickname “digital gold”.
 
 📉 Do you find it difficult to keep up with rising costs?
 
-***
+---
 
 Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This `max supply` is embedded in its code, making Bitcoin rare and potentially valuable. This puts it in a good position as a long term store of value, much like gold.
 
@@ -153,7 +153,7 @@ How does Bitcoin promote value preservation in the long term?
 
 🧊 Has your bank frozen your funds without notice because you performed a transfer that they didn’t like?
 
-***
+---
 
 In democracies, ownership is a protected human right because it gives citizens increased control and freedom over their lives. We cannot act freely when our means of survival are conditional — judged by businesses or institutions.
 
@@ -181,7 +181,7 @@ How does self-custody enable true ownership?
 
 ⌛ Have you ever had to wait several working days to send money internationally, while paying 3-5% in fees?
 
-***
+---
 
 Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.
 
