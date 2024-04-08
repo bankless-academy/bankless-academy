@@ -295,7 +295,7 @@ Descentralizando el dinero y eliminando a los `custodios` podemos hacerlo:
 
 - 💵 Acoger un mercado global 24/7, asegurado por ciudadanos de todo el mundo.
 - 🛠️ Ofrecer herramientas financieras a las regiones no bancarizadas del planeta.
-- 🤝 Usa tecnología `entre-pares` para evitar las ineficiencias de instituciones intermediarias.
+- 🤝 Usa tecnología `entre pares` para evitar las ineficiencias de instituciones intermediarias.
 - 🔎 Reducir la desigualdad institucional, el fraude y la manipulación del mercado.
 - ⚖️ Construir la `igualdad de oportunidad` en sistemas monetarios.
 - 🌐 Establecer una verdadera propiedad para la era digital.
