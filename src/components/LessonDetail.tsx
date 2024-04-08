@@ -218,7 +218,7 @@ const LessonDetail = ({
                 <Text as="p" fontSize="medium" py="4">
                   {lesson.description}
                 </Text>
-                {process.env.NEXT_PUBLIC_VERCEL_URL === 'translation' &&
+                {process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview' &&
                   i18n.language !== 'en' &&
                   lesson.translationDate && (
                     <Box color="orange">
