@@ -303,7 +303,7 @@ En décentralisant l'argent et en supprimant les `dépositaires`, nous pouvons :
 
 La nouvelle ère de l'argent défend les valeurs fondamentales de la démocratie afin d'améliorer la qualité de la vie quotidienne des citoyens du monde entier - et vous êtes invités.
 
-”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.
+"La démocratie offre un environnement qui respecte les droits de l'homme et les libertés fondamentales, et dans lequel s'exerce la volonté librement exprimée des personnes." — Les Nations Unies.
 
 # Votre quête Bitcoin
 
