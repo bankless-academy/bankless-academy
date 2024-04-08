@@ -25,7 +25,7 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-***
+---
 
 ## Key Takeaways
 
@@ -135,7 +135,7 @@ Because no one likes to wait, a number of third-party bridging services exist to
 
 4\. Next, select your L2 solution in ‘To’.
 
-![](https://mirror.xyz/_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FMnz8fWPFIGGQp25RA6FKt.png\&w=3840\&q=90)
+![](https://mirror.xyz/\_next/image?url=https%3A%2F%2Fimages.mirror-media.xyz%2Fpublication-images%2FMnz8fWPFIGGQp25RA6FKt.png\&w=3840\&q=90)
 
 5\. Review the transaction, and if all looks correct, select ‘Send’.
 
@@ -151,7 +151,7 @@ Using a CEX or a bridge to move funds to L2 is a necessary step in your journey 
 
 As you scale up your skills, you’ll need to figure out how to scale down your transaction fees. Learning how to fund an L2 wallet is the first step, but the next steps on your crypto journey are up to you. Welcome, explorer, a new world awaits.
 
-***
+---
 
 Let’s get moving, Layer 2 Ethereum awaits! We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Funding a Wallet on Layer 2’.
 
