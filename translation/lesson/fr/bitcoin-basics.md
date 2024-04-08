@@ -113,7 +113,7 @@ Seules ces qualités peuvent restaurer notre capacité à épargner et à dépen
 
 L'arrivée de Bitcoin (`BTC`) : une monnaie numérique qui fonctionne en dehors du système bancaire traditionnel.
 
-- ⛓️ C'est `pair à pair` : Il connecte directement les gens les uns aux autres. Automatisé à l'aide de la `technologie blockchain`, il supprime le besoin pour les institutions de faciliter le stockage ou les transactions. Ses défenseurs l'appellent "un ensemble de règles sans dirigeants".
+- ⛓️ C'est `pair à pair` [peer-to-peer] : Il connecte directement les gens les uns aux autres. Automatisé à l'aide de la `technologie blockchain`, il supprime le besoin pour les institutions de faciliter le stockage ou les transactions. Ses défenseurs l'appellent "un ensemble de règles sans dirigeants".
 - 💎 C'est `rare` : En l'absence de banque centrale émettant de l'argent frais de manière illimitée, le Bitcoin bénéficie d'une politique monétaire stable et prévisible qui favorise l'épargne à long terme.
 - ✊ C'est `self-custodial` [autodétenu] : il peut être détenu sans que des institutions assurent les transferts ou le stockage. Lorsqu'il est stocké dans son état naturel, le bitcoin est conservé dans un coffre-fort en ligne sécurisé et seul son propriétaire y a accès.
 
@@ -296,7 +296,7 @@ En décentralisant l'argent et en supprimant les `dépositaires`, nous pouvons :
 
 - 💵 Accueillir un marché mondial 24h/24 et 7j/7, sécurisé par les citoyens du monde entier.
 - 🛠️ Offrir des outils financiers aux régions non bancarisées du globe.
-- 🤝 Utiliser la technologie `peer-to-peer` pour éviter les inefficacités des institutions intermédiaires.
+- 🤝 Utiliser la technologie `pair à pair` [peer-to-peer] pour éviter les inefficacités des institutions intermédiaires.
 - 🔎 Réduire les inégalités institutionnelles, la fraude et la manipulation des marchés.
 - ⚖️ Construire `l'égalité des opportunités` dans les systèmes monétaires.
 - 🌐 Établir une véritable propriété à l'ère numérique.
