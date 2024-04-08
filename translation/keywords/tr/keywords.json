@@ -25,8 +25,8 @@
     "definition": "Bir kripto varlığın kullanıcılara ücretsiz dağıtımı."
   },
   "allowance": {
-    "keyword": "allowance",
-    "keyword_plural": "allowances",
+    "keyword": "izin",
+    "keyword_plural": "izinler",
     "definition": "Genellikle akıllı sözleşme olan bir varlığa, tokenlarınızın belirli bir miktarını bir işlemde kullanma hakkı verir."
   },
   "alternative layer 1": {
@@ -37,7 +37,7 @@
   "amm": {
     "keyword": "AMM",
     "keyword_plural": "AMM'ler",
-    "definition": "(Automated Market Maker) A trade matchmaking system, based on a public algorithm."
+    "definition": "(Otomatik Piyasa Yapıcı) Herkese açık bir algoritmaya dayanan bir işlem eşleştirme sistemi."
   },
   "asynchronous": {
     "keyword": "asynchronous",
@@ -870,9 +870,9 @@
     "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
   },
   "token allowance": {
-    "keyword": "token allowance",
-    "keyword_plural": "token allowances",
-    "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
+    "keyword": "token izni",
+    "keyword_plural": "token izinleri",
+    "definition": "Bir cüzdan ile akıllı sözleşme arasında yapılan ve belirli bir tokena sınırlı veya sınırsız erişim sağlayan bir anlaşma."
   },
   "token distribution": {
     "keyword": "token distribution",
