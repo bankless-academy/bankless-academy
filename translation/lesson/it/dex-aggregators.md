@@ -25,7 +25,7 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-***
+---
 
 # Introduction
 
@@ -51,7 +51,7 @@ You can think of it like a swimming pool; the more water (liquidity) there is, t
 
 Let’s look at an example.
 
-The BanklessDAO token (BANK) has a liquidity amount of \~30 million BANK on Uniswap, but only \~4.5 million BANK on SushiSwap. Uniswap has over 6x the BANK liquidity of SushiSwap.
+The BanklessDAO token (BANK) has a liquidity amount of ~30 million BANK on Uniswap, but only ~4.5 million BANK on SushiSwap. Uniswap has over 6x the BANK liquidity of SushiSwap.
 
 If an Explorer was to purchase 10,000 BANK from each pool, they would find that the `price impact` of their trade would result in a higher trade price in the SushiSwap pool — because their trade has pulled a larger percentage of the pool’s total liquidity.
 
