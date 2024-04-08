@@ -112,6 +112,9 @@ ${LESSON_SPLITTER}
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
 const LESSON_FILENAME = IS_WHITELABEL ? 'whitelabel_lessons' : 'lessons'
+const KEYWORDS_FILE = IS_WHITELABEL ? './whitelabel-keywords.json' : './translation/keywords/en/keywords.json'
+const ALL_ENGLISH_KEYWORDS = require(KEYWORDS_FILE)
+
 const DEFAULT_NOTION_ID = '129141602de240e484356bd85f7c75e0'
 const POTION_API = 'https://potion.banklessacademy.com'
 
@@ -672,6 +675,20 @@ axios
             return slide
           })
           lesson.keywords = allKeywords
+          const lessonKV = {}
+          // create keyword file
+          for (const keyword of allKeywords) {
+            if (keyword in ALL_ENGLISH_KEYWORDS) {
+              lessonKV[keyword] = ALL_ENGLISH_KEYWORDS[keyword]
+            }
+          }
+          if (Object.keys(lessonKV).length) {
+            const lessonKeywordPath = `translation/keywords/en/${lesson.slug}.json`
+            console.log('lessonKV', lessonKV)
+            fs.writeFile(lessonKeywordPath, JSON.stringify(lessonKV, null, 2), (error) => {
+              if (error) throw error
+            })
+          }
           const componentName = PROJECT_DIR.replace(/[^A-Za-z0-9]/g, '') + lesson.name
             .split(' ')
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
