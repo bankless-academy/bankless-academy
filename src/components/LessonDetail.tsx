@@ -218,6 +218,13 @@ const LessonDetail = ({
                 <Text as="p" fontSize="medium" py="4">
                   {lesson.description}
                 </Text>
+                {process.env.NEXT_PUBLIC_VERCEL_URL === 'translation' &&
+                  i18n.language !== 'en' &&
+                  lesson.translationDate && (
+                    <Box color="orange">
+                      Last translation update: {lesson.translationDate}
+                    </Box>
+                  )}
               </Box>
               {hasLessonGating && (
                 <Box my="4">
