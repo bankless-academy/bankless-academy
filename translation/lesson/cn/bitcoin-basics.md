@@ -302,7 +302,7 @@ ________________________________________________________________________________
 
 新的货币时代正在倡导民主的基本价值，提高全球人民民生福祉 —— 新时代欢迎您的参与。
 
-- “民主提供了一种尊重人权和基本自由的环境，在这种环境中行使人民自由表达的意愿”。 —— 联合国
+”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.
 
 # 您的比特币探索之旅
 
