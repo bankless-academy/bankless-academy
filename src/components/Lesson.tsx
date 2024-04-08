@@ -14,13 +14,16 @@ import {
 import { useHotkeys } from 'react-hotkeys-hook'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser, { processNodes } from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
 import { Warning, ArrowUUpLeft, Bug } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
 import { isMobile, isDesktop } from 'react-device-detect'
+import { Emoji } from 'emoji-picker-react'
+import emojiRegex from 'emoji-regex'
+import emojisToUnified from 'data/emojis.json'
 
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
@@ -28,7 +31,7 @@ import Card from 'components/Card'
 import MintBadge from 'components/MintBadge'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
-import { isHolderOfNFT, Mixpanel, scrollTop } from 'utils'
+import { isHolderOfNFT, Mixpanel, scrollDown, scrollTop } from 'utils'
 import { IS_WHITELABEL, KEYWORDS, TOKEN_GATING_ENABLED } from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, RewardsIcon } from 'components/Icons'
 import { theme } from 'theme/index'
@@ -37,11 +40,14 @@ import NFT from 'components/NFT'
 import Keyword from 'components/Keyword'
 import EditContentModal from 'components/EditContentModal'
 import Helper from 'components/Helper'
+import Animation from 'components/Animation'
+import { ANIMATIONS } from 'constants/animations'
 
-const Slide = styled(Card)<{
+export const Slide = styled(Card)<{
   issmallscreen?: string
   slidetype: SlideType
   ispreview?: string
+  highlightnumber?: string
 }>`
   border-radius: 0.5rem;
   ${(props) => props.issmallscreen === 'true' && 'display: contents;'};
@@ -60,6 +66,14 @@ const Slide = styled(Card)<{
     ${(props) =>
       props.slidetype === 'LEARN' &&
       (props.issmallscreen === 'true' ? 'display: block;' : 'display: flex;')};
+  }
+  img.epr-emoji-img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 5px;
+  }
+  li.hide-marker {
+    list-style-type: none;
   }
   div.content > div > img {
     margin: auto;
@@ -119,11 +133,29 @@ const Slide = styled(Card)<{
       font-size: var(--chakra-fontSizes-xl);
       margin-left: 2em;
     }
+    li {
+      margin-bottom: 8px;
+    }
+    ${(props) =>
+      parseInt(props.highlightnumber) >= 0 &&
+      `
+      ol li {
+        opacity: 0.5;
+      }
+      ol li:nth-of-type(${parseInt(props.highlightnumber) + 1}) {
+        opacity: 1;
+      }
+    `};
     iframe {
-      margin: 20px auto 0;
-      width: 640px;
+      padding: 16px;
+      aspect-ratio: 16/9;
       max-width: 100%;
       height: 360px;
+    }
+    iframe.animation {
+      margin: 0 auto;
+      width: 590px;
+      height: 590px;
     }
     blockquote {
       font-size: var(--chakra-fontSizes-lg);
@@ -239,14 +271,35 @@ const Lesson = ({
     `isBadgeMinted-${lesson.badgeId}`,
     false
   )
-
+  const { address } = useAccount()
   const router = useRouter()
+
   const { embed } = router.query
   const slide = lesson.slides[currentSlide]
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
 
-  const { address } = useAccount()
+  const isAnimationSlide = slide.content?.includes('/animation/')
+  slide.content = slide.content?.replace(
+    // HACK: display local animation
+    'https://app.banklessacademy.com/animation/',
+    '/animation/'
+  )
+  // const matchAnimation = /src=["']\/animation\/([^"']+)["']/.exec(slide.content)
+  const animationSlideId =
+    lesson.notionId === '6a440f5dd00a4179811178943bf89e1d'
+      ? 'bitcoin'
+      : lesson.notionId === 'e90059604739465ea99b9a2c8af5eb75'
+      ? 'validating-tx-with-ethereum-staking'
+      : ''
+  const [animationStepLS, setAnimationStepLS] = useLocalStorage(
+    `animation-${animationSlideId}`,
+    0
+  )
+  const animationSteps = Object.keys(ANIMATIONS).includes(animationSlideId)
+    ? ANIMATIONS[animationSlideId]?.steps?.length
+    : null
+
   const walletAddress = address
   // DEV ENV: you can force a specific wallet address here if you want to test the claiming function
   // walletAddress = '0xbd19a3f0a9cace18513a1e2863d648d13975cb44'
@@ -270,7 +323,12 @@ const Lesson = ({
 
   useEffect((): void => {
     if (address) setConnectWalletPopupLS(false)
-    if ((slide.type === 'QUEST' || slide.type === 'END') && !address)
+    if (
+      (slide.type === 'QUEST' || slide.type === 'END') &&
+      !address &&
+      slide.component !== 'BitcoinBasics' &&
+      slide.component !== 'WalletBasics'
+    )
       setConnectWalletPopupLS(true)
   }, [address, slide])
 
@@ -320,6 +378,20 @@ const Lesson = ({
     }, 3000)
   }, [])
 
+  const clickLeft = () => {
+    if (isAnimationSlide && animationStepLS > 0) {
+      setAnimationStepLS(animationStepLS - 1)
+      if (isSmallScreen) scrollDown()
+    } else goToPrevSlide()
+  }
+
+  const clickRight = () => {
+    if (isAnimationSlide && animationStepLS + 1 < animationSteps) {
+      setAnimationStepLS(animationStepLS + 1)
+      if (isSmallScreen) scrollDown()
+    } else goToNextSlide()
+  }
+
   const goToPrevSlide = () => {
     toast.closeAll()
     if (!isFirstSlide) {
@@ -332,7 +404,7 @@ const Lesson = ({
   const goToNextSlide = () => {
     toast.closeAll()
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
-      alert('select your answer to the quiz first')
+      console.log('select your answer to the quiz first')
     } else if (!isLastSlide) {
       setCurrentSlide(currentSlide + 1)
       if (!isDesktop) scrollTop()
@@ -355,7 +427,8 @@ const Lesson = ({
         if (IS_WHITELABEL) closeLesson()
         else {
           // defaut: go back to lessons
-          router.push('/lessons')
+          closeLesson()
+          // router.push('/lessons')
         }
       }
     }
@@ -380,6 +453,9 @@ const Lesson = ({
           status: 'success',
           duration: 20000,
           isClosable: true,
+          containerStyle: {
+            marginBottom: '81px !important',
+          },
         })
       // correct answer
       Mixpanel.track('quiz_correct_answer', {
@@ -398,6 +474,9 @@ const Lesson = ({
           status: 'warning',
           duration: 20000,
           isClosable: true,
+          containerStyle: {
+            marginBottom: '81px !important',
+          },
         })
       // wrong answer
       Mixpanel.track('quiz_wrong_answer', {
@@ -423,12 +502,24 @@ const Lesson = ({
       'TODO: add a modal with all the shortcuts 👉 previous slide ⬅️ | next slide ➡️ | select quiz answer 1️⃣ / 2️⃣ / 3️⃣ / 4️⃣'
     )
   )
-  useHotkeys('left', () => {
-    buttonLeftRef?.current?.click()
-  })
-  useHotkeys('right', () => {
-    buttonRightRef?.current?.click()
-  })
+  useHotkeys('left', () => clickLeft(), [
+    isAnimationSlide,
+    animationStepLS,
+    animationSlideId,
+    currentSlide,
+    isFirstSlide,
+    isDesktop,
+  ])
+  useHotkeys('right', () => clickRight(), [
+    isAnimationSlide,
+    animationStepLS,
+    animationSlideId,
+    slide,
+    isLastSlide,
+    currentSlide,
+    lesson,
+    isDesktop,
+  ])
   useHotkeys('1', () => {
     answerRef?.current[1]?.click()
   })
@@ -448,7 +539,37 @@ const Lesson = ({
     closeLesson()
   })
 
-  function transform(node) {
+  const emojiRegexPattern = emojiRegex()
+
+  function replaceEmojis(text) {
+    const emojis = text.match(emojiRegexPattern)
+    const parts = text.split(emojiRegexPattern)
+    const result = []
+
+    for (let i = 0; i < parts.length; i++) {
+      // Add the non-emoji part to the result array
+      result.push(parts[i])
+
+      // If there's a corresponding emoji, add the CustomEmojiComponent
+      if (emojis && emojis[i]) {
+        const emoji = emojis[i]
+        const unified = emojisToUnified[emoji]
+        if (!unified) {
+          console.log(`${emoji} no found !!`)
+        } else {
+          const em = <Emoji unified={unified} size={20} />
+          result.push(em)
+        }
+      }
+    }
+
+    return result
+  }
+
+  function transform(node, index) {
+    if (node.type === 'text' && emojiRegexPattern.test(node.data)) {
+      return replaceEmojis(node.data)
+    }
     if (node.type === 'tag' && node.name === 'a') {
       // force links to target _blank
       if (node.attribs?.href?.length)
@@ -457,6 +578,47 @@ const Lesson = ({
             {node.children[0]?.data}
           </ExternalLink>
         )
+    }
+    if (
+      node.type === 'tag' &&
+      node.name === 'iframe' &&
+      node?.attribs?.src?.includes('/animation/') &&
+      animationSlideId?.length
+    ) {
+      // HACK: integrate the embed animation iframe as a component
+      return <Animation animationId={animationSlideId} />
+    }
+    if (isAnimationSlide && node.type === 'tag' && node.name === 'li') {
+      // hide next steps
+      if (animationStepLS < index) return null
+
+      return (
+        <li
+          onClick={
+            animationStepLS === index
+              ? () => {}
+              : () => setAnimationStepLS(index)
+          }
+          style={animationStepLS === index ? {} : { cursor: 'pointer' }}
+        >
+          {processNodes(node.children, transform)}
+        </li>
+      )
+    }
+    // paragraphs starting with an emoji -> hide marker
+    if (
+      node.type === 'tag' &&
+      node.name === 'li' &&
+      emojiRegexPattern.test(node.children[0].data)
+    ) {
+      const p = processNodes(node.children, transform)
+      p.shift()
+      return (
+        <li className="hide-marker">
+          {replaceEmojis(node.children[0].data)}
+          {p}
+        </li>
+      )
     }
     if (node.type === 'tag' && node.name === 'code') {
       // Tooltip with definition
@@ -482,9 +644,16 @@ const Lesson = ({
             ? t(`${lowerCaseKeywordSingular}.definition`, { ns: 'keywords' })
             : englishDefition
           : englishDefition
+      const nextHasPunctuation =
+        node.next?.data && ['.', ',', ':'].includes(node.next.data)
+      const extra = nextHasPunctuation ? node.next.data : ''
+      if (nextHasPunctuation) node.next.data = ''
       if (!definition?.length) console.log('Missing definition:', keyword)
       return definition?.length ? (
-        <Keyword definition={definition} keyword={keyword} />
+        <span style={{ whiteSpace: 'nowrap' }}>
+          <Keyword definition={definition} keyword={keyword} />
+          {extra}
+        </span>
       ) : (
         <span className="is-missing">{keyword}</span>
       )
@@ -514,6 +683,7 @@ const Lesson = ({
       mt={6}
       issmallscreen={isSmallScreen.toString()}
       ispreview={lesson?.isPreview?.toString()}
+      highlightnumber={isAnimationSlide ? animationStepLS.toString() : null}
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
     >
@@ -563,7 +733,15 @@ const Lesson = ({
           )}
         </Box>
       </Text>
-      <ProgressSteps step={currentSlide} total={numberOfSlides} />
+      <ProgressSteps
+        step={currentSlide}
+        total={numberOfSlides}
+        pourcentage={
+          isAnimationSlide
+            ? ((animationStepLS + 1) / animationSteps) * 100
+            : null
+        }
+      />
       <Box maxH={isSmallScreen ? 'unset' : '600px'}>
         <Box
           className="content"
@@ -615,7 +793,9 @@ const Lesson = ({
                               '1px solid #646587'
                             }
                             whiteSpace="break-spaces"
-                            onClick={(e) => selectAnswer(e, n)}
+                            onClick={(e) => {
+                              if (answerState !== 'CORRECT') selectAnswer(e, n)
+                            }}
                             answerstate={answerState}
                             justifyContent="space-between"
                             textAlign="left"
@@ -643,7 +823,7 @@ const Lesson = ({
             </>
           )}
           {slide.type === 'QUEST' && (
-            <VStack flex="auto" minH="420px" justifyContent="center">
+            <VStack flex="auto" minH="520px" justifyContent="center">
               {Quest?.questComponent}
             </VStack>
           )}
@@ -659,7 +839,10 @@ const Lesson = ({
                     </Box>
                   )}
                   {lesson.badgeId ? (
-                    <MintBadge badgeId={lesson.badgeId} />
+                    <MintBadge
+                      badgeId={lesson.badgeId}
+                      isQuestCompleted={Quest.isQuestCompleted}
+                    />
                   ) : (
                     <h2>
                       {t(
@@ -689,7 +872,7 @@ const Lesson = ({
               ref={buttonLeftRef}
               variant="secondaryBig"
               size="lg"
-              onClick={goToPrevSlide}
+              onClick={() => clickLeft()}
               leftIcon={<ArrowBackIcon />}
               ml={longSlide ? '600px' : '0'}
             >
@@ -771,7 +954,7 @@ const Lesson = ({
                 (slide.quiz && !answerIsCorrect) ||
                 (slide.type === 'QUEST' && !Quest?.isQuestCompleted)
               }
-              onClick={goToNextSlide}
+              onClick={() => clickRight()}
               rightIcon={<ArrowForwardIcon />}
             >
               {t('Next')}
@@ -788,7 +971,8 @@ const Lesson = ({
                 {lesson.badgeId &&
                 isBadgeMintedLS === false &&
                 Quest?.isQuestCompleted
-                  ? t('Mint Badge')
+                  ? // ? t('Mint Badge')
+                    t('Finish')
                   : t('Finish')}
               </Button>
             </>

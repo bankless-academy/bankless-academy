@@ -9,7 +9,7 @@ import { DataTable } from 'components/DataTable'
 import { shortenAddress } from 'utils'
 import InternalLink from 'components/InternalLink'
 import { useRouter } from 'next/router'
-import { STAMP_PROVIDERS } from 'constants/passport'
+import { STAMP_PLATFORMS } from 'constants/passport'
 import { COLLECTIBLE_DETAILS } from 'constants/index'
 import { DONATION_MAPPING } from 'constants/donations'
 
@@ -38,10 +38,11 @@ type UnitConversion = {
   badges: number
   ens_name?: string
   ens_avatar?: string
-  donations?: any
+  donations?: { [key: string]: any }
   donations_count?: number
   valid_stamps?: string[]
   valid_stamps_count?: number
+  referrals?: number
 }
 
 const columnHelper = createColumnHelper<UnitConversion>()
@@ -140,7 +141,7 @@ const columns = [
     cell: (info) => {
       const stamps = info.row.original?.valid_stamps
       const stampList = stamps
-        ?.map((stamp) => STAMP_PROVIDERS[stamp]?.name)
+        ?.map((stamp) => STAMP_PLATFORMS[stamp]?.name)
         .join(', ')
       const numberOfStamps = info.getValue()
       return (
@@ -152,6 +153,10 @@ const columns = [
       )
     },
     header: 'Stamps',
+  }),
+  columnHelper.accessor('referrals', {
+    cell: (info) => info.getValue(),
+    header: 'Referrals',
   }),
   columnHelper.accessor('badges', {
     cell: (info) => info.getValue(),
@@ -179,6 +184,7 @@ const Leaderboard = (): JSX.Element => {
               addressData.valid_stamps?.length || 0
             addressData.datadisks_count = addressData.datadisks?.length || 0
             addressData.handbooks_count = addressData.handbooks?.length || 0
+            addressData.referrals = addressData?.referrals || 0
             addressData.donations_count =
               Object.keys(addressData.donations || {})?.length || 0
             data.push({ address, ...addressData })

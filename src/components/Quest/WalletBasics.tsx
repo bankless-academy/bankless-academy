@@ -1,11 +1,13 @@
 import React from 'react'
-import { Button, Spinner, Box } from '@chakra-ui/react'
+import { Box, Button, VStack, Image, Text } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
-import { useTranslation } from 'react-i18next'
 
+import { LessonCard } from 'components/LessonCards'
 import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
+import { LESSONS } from 'constants/index'
+import InternalLink from 'components/InternalLink'
 
 const WalletBasics = (
   account: string
@@ -13,45 +15,97 @@ const WalletBasics = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  const { t } = useTranslation('quests', { keyPrefix: 'WalletBasics' })
   const [isSmallScreen] = useSmallScreen()
+
+  const lesson = LESSONS.find(
+    (lesson) => lesson.slug === 'creating-a-crypto-wallet'
+  )
+
+  if (!lesson)
+    return {
+      isQuestCompleted: false,
+      questComponent: <>missing handbook</>,
+    }
 
   return {
     isQuestCompleted: !!account,
     questComponent: (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
-          <div className="bloc1">
-            <h2>{t(`How to setup a MetaMask wallet`)}</h2>
-            <p>
-              {t(
-                `For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.`
-              )}
-            </p>
-            <p>
-              {t(`Download the browser extension from the official website:`)}
-              &nbsp;
-              <ExternalLink href="https://metamask.io/download">
-                https://metamask.io/download
-              </ExternalLink>
-            </p>
-            <Button
-              variant="outlined"
-              leftIcon={account ? <CheckIcon /> : <Spinner speed="1s" />}
-              color={account ? theme.colors.correct : 'orange'}
-              cursor="default"
-              boxShadow="none !important"
-            >
-              {account
-                ? t('Congrats for connecting your wallet! 👏🙂')
-                : t('Waiting to detect your wallet ...')}
-            </Button>
+          <div className="bloc1" style={{ alignSelf: 'center' }}>
+            <Box m="4">
+              <Text mx="0 !important" fontSize="xl" fontWeight="bold">
+                {`Create your first crypto wallet, with Zerion.`}
+              </Text>
+              <VStack mt="8" alignItems="start">
+                <Button cursor="default" textAlign="start" height="fit-content">
+                  <Box
+                    padding="10px 0"
+                    whiteSpace="break-spaces"
+                    lineHeight="1.5em"
+                  >
+                    {'1. Download and install the Zerion wallet from '}
+                    <ExternalLink href="https://zerion.io/">
+                      zerion.io
+                    </ExternalLink>
+                  </Box>
+                </Button>
+                <Box m="0 8px 8px 16px">
+                  If you already have a wallet, move to step 2.
+                </Box>
+                <Button
+                  cursor="default"
+                  textAlign="start"
+                  height="fit-content"
+                  rightIcon={
+                    account ? <CheckIcon color={theme.colors.correct} /> : null
+                  }
+                >
+                  <Box
+                    padding="10px 0"
+                    whiteSpace="break-spaces"
+                    lineHeight="1.5em"
+                  >
+                    {'2. Connect your wallet to Bankless Academy'}
+                  </Box>
+                </Button>
+              </VStack>
+              <Box mt="8">
+                {`Tip: Check our Explorer's Handbook entry on '${lesson.name}' for a step-by-step walkthrough of the quest.`}
+              </Box>
+            </Box>
           </div>
-          <div className="bloc2">
-            <iframe
-              src="https://www.youtube.com/embed/PjBY0pVFnQ8?rel=0"
-              allowFullScreen
-            ></iframe>
+          <div className="bloc2" style={{ alignSelf: 'center' }}>
+            <LessonCard
+              borderRadius="3xl"
+              maxW="400px"
+              textAlign="center"
+              m="auto"
+            >
+              <Box zIndex="2" position="relative">
+                <Box py="8">
+                  <Text mt="0 !important" fontSize="xl" fontWeight="bold">
+                    {lesson.name}
+                  </Text>
+                  <InternalLink
+                    href={`/lessons/${lesson.slug}`}
+                    alt={lesson.englishName}
+                    target="_blank"
+                  >
+                    <Image src={lesson.lessonImageLink} />
+                  </InternalLink>
+                </Box>
+                <Box pb="8">
+                  <InternalLink
+                    href={`/lessons/${lesson.slug}`}
+                    alt={lesson.englishName}
+                    target="_blank"
+                  >
+                    <Button variant="primary">{'Read Entry'}</Button>
+                  </InternalLink>
+                </Box>
+              </Box>
+            </LessonCard>
           </div>
         </Box>
       </>

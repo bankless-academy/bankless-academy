@@ -48,6 +48,44 @@ const primary = {
   _active: {
     background: 'linear-gradient(132deg, #67407E 0%, #354374 100%);',
   },
+  _disabled: {
+    ...padding,
+    cursor: 'default',
+    color: '#daa0ff',
+    opacity: '0.6',
+    background: 'transparent',
+    _before: {
+      background:
+        'linear-gradient(104.42deg, #B06FD8 35.33%, rgba(89, 122, 238, 0.7) 93.21%)',
+      content: `""`,
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      borderRadius: '8px',
+      borderBottomRadius: '0',
+      padding: '1px',
+      '-webkit-mask':
+        'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+      '-webkit-mask-composite': 'source-out',
+      'mask-composite': 'exclude',
+    },
+    span: {
+      path: {
+        fill: '#daa0ff',
+      },
+    },
+    _hover: {
+      border: '0',
+      color: '#daa0ff',
+      span: {
+        path: {
+          fill: '#daa0ff',
+        },
+      },
+    },
+  },
 }
 
 const primaryGold = {
@@ -56,6 +94,19 @@ const primaryGold = {
   _hover: {
     ...padding,
     background: 'linear-gradient(134deg, #9E8053 0%, #684D3E 100%)',
+    border: '1px solid #f1b15a',
+  },
+  _active: {
+    ...padding,
+    background: 'linear-gradient(134deg, #9E8053 0%, #684D3E 100%)',
+    border: '1px solid #f1b15a',
+  },
+  _disabled: {
+    ...padding,
+    cursor: 'default',
+    color: '#f1b15a',
+    opacity: '0.6',
+    background: 'transparent',
     border: '1px solid #f1b15a',
   },
 }
@@ -80,6 +131,16 @@ const primaryWhite = {
   _hover: {
     background: 'white',
     border: '2px solid #b357ec',
+  },
+  _disabled: {
+    color: '#5D4E78',
+    border: '2px solid transparent',
+    background: 'white',
+    _hover: {
+      background: 'white',
+      color: 'white',
+      border: '2px solid transparent',
+    },
   },
 }
 

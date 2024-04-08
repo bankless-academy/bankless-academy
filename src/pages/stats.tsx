@@ -45,14 +45,15 @@ const Stats = (): JSX.Element => {
               </Text>
               {`${stats?.uniqueAddresses} 👨‍🚀 | ${stats?.uniqueAddresses7days} 'week | ${stats?.uniqueAddresses1day} 'day`}
               <br />
-              {`${stats?.sybils} 👨‍🌾 | ${stats?.sybils7days} 'week | ${stats?.sybils1day} 'day`}
+              {`${stats?.sybils} 😈 sybils (duplicated stamp detected) | ${stats?.sybils7days} 'week | ${stats?.sybils1day} 'day`}
               <br />
-              {`${stats?.bots} 🤖 | ${stats?.bots7days} 'week | ${stats?.bots1day} 'day`}
+              {`${stats?.bots} 🤖 bots (using scripts to automate) | ${stats?.bots7days} 'week | ${stats?.bots1day} 'day`}
             </Box>
           )}
           <Box mt={8}>
             <Text fontSize="lg" color="orange.300">
-              Number of {IS_WHITELABEL ? 'lesson' : 'quest'} completion
+              {IS_WHITELABEL ? 'lesson' : 'Quest'} completion{' '}
+              {IS_WHITELABEL ? '' : '/ lesson'}
             </Text>
             {LESSONS.filter(
               (lesson) =>
@@ -63,11 +64,27 @@ const Stats = (): JSX.Element => {
             ).map((lesson, index) => {
               const lessonCompleted =
                 stats?.lessonCompleted[lesson.notionId] || 0
+              const userConverted = stats?.userConverted[lesson.notionId] || 0
+              const badgeClaimed = stats?.badgeClaimed[lesson.notionId] || 0
               return (
                 <>
                   <p>
                     {`${index + 1}. ${lesson.englishName}: `}
-                    {lessonCompleted}
+                    <br />
+                    &nbsp;|- quest completed: {lessonCompleted}
+                    <br />
+                    &nbsp;|- badge claimed: {badgeClaimed}
+                    {/* <br />&nbsp;|- claim conversion rate:{' '}
+                    {(badgeClaimed / lessonCompleted) * 100}% */}
+                    <br />
+                    {lesson.notionId === 'e90059604739465ea99b9a2c8af5eb75' &&
+                      userConverted > 0 && (
+                        <>
+                          &nbsp;|- user converted via the quest: {userConverted}
+                          <br />
+                        </>
+                      )}
+                    <br />
                   </p>
                 </>
               )

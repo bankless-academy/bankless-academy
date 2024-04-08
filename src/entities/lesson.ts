@@ -1,7 +1,7 @@
 import { QuestComponentType } from 'components/Quest/QuestComponent'
 
 export type SlideType = 'LEARN' | 'QUIZ' | 'QUEST' | 'END'
-export type LanguageType = 'en' | 'cn' | 'de' | 'es' | 'fr' | 'it' | 'jp'
+export type LanguageType = 'en' | 'br' | 'cn' | 'de' | 'es' | 'fr' | 'it' | 'jp' | 'tr' | 'ua'
 
 export interface LessonType {
   name: string
@@ -9,6 +9,7 @@ export interface LessonType {
   slug: string
   notionId: string
   badgeId?: number
+  datadiskVectorMint?: number
   collectibleId?: string
   description: string
   languages?: LanguageType[]

@@ -11,6 +11,7 @@ import queryString from 'query-string'
 import mixpanel, { Dict, Query } from 'mixpanel-browser'
 import { readContract } from '@wagmi/core'
 import axios from 'axios'
+import { Network as AlchemyNetwork, Alchemy } from "alchemy-sdk"
 
 import {
   ACTIVATE_MIXPANEL,
@@ -27,6 +28,8 @@ import UDPolygonABI from 'abis/UDPolygon.json'
 import UDABI from 'abis/UD.json'
 import { LessonType } from 'entities/lesson'
 import { UserStatsType } from 'entities/user'
+import { gql } from 'graphql-request'
+import { graphQLClient } from 'utils/airstack'
 
 declare global {
   interface Window {
@@ -271,12 +274,16 @@ export async function validateOnchainQuest(
           // Velodrome v2 router contract
           const velodromeRouterV2 =
             '0xa062ae8a9c5e11aaa026fc2670b0d65ccc8b2858'.toLowerCase()
+          // Velodrome Universal Router
+          const velodromeUR =
+            '0xF132bdb9573867cD72f2585C338B923F973EB817'.toLowerCase()
           if (
-            [velodromeRouterV1, velodromeRouterV2].includes(
+            [velodromeRouterV1, velodromeRouterV2, velodromeUR].includes(
               txDetails.to.toLowerCase()
             ) ||
             txDetails.data.includes(velodromeRouterV1.substring(2)) ||
-            txDetails.data.includes(velodromeRouterV2.substring(2))
+            txDetails.data.includes(velodromeRouterV2.substring(2)) ||
+            txDetails.data.includes(velodromeUR.substring(2))
           ) {
             check.push(true)
             console.log('OK Velodrome router contract interaction')
@@ -301,6 +308,55 @@ export async function validateOnchainQuest(
       const balance = parseFloat(ethers.utils.formatEther(bigNumberBalance))
       console.log('balance: ', balance)
       return balance >= 0.001
+    }
+    else if (quest === 'StakingOnEthereum') {
+      const arbitrumBalance = await getTokenBalance(AlchemyNetwork.ARB_MAINNET, address, ['0xec70dcb4a1efa46b8f2d97c310c9c4790ba5ffa8'])
+      console.log('arbitrumBalance: ', arbitrumBalance)
+      const optimismBalance = await getTokenBalance(AlchemyNetwork.OPT_MAINNET, address, ['0x9bcef72be871e61ed4fbbc7630889bee758eb81d'])
+      console.log('optimismBalance: ', optimismBalance)
+      const query = gql`
+      query MyQuery {
+        Ethereum: TokenBalances(
+          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0xae78736cd615f374d3085123a210448e74fc6393"}, tokenType: {_eq: ERC20}}, blockchain: ethereum, limit: 50}
+        ) {
+          TokenBalance {
+            formattedAmount
+          }
+        }
+        Base: TokenBalances(
+          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0xb6fe221fe9eef5aba221c348ba20a1bf5e73624c"}, tokenType: {_eq: ERC20}}, blockchain: base, limit: 50}
+        ) {
+          TokenBalance {
+            formattedAmount
+          }
+        }
+        Polygon: TokenBalances(
+          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0x0266f4f08d82372cf0fcbccc0ff74309089c74d1"}, tokenType: {_eq: ERC20}}, blockchain: polygon, limit: 50}
+        ) {
+          TokenBalance {
+            formattedAmount
+          }
+        }
+      }`
+      try {
+        const data = await graphQLClient.request(query)
+        const networks = Object.keys(data)
+        let balance = arbitrumBalance + optimismBalance
+        for (const network of networks) {
+          if (data[network].TokenBalance !== null) {
+            const networkTokenBalance = data[network].TokenBalance[0].formattedAmount
+            console.log(`${network}Balance: `, networkTokenBalance)
+            balance += networkTokenBalance
+          }
+        }
+        console.log(data)
+        console.log(balance)
+        // allow a bit less than 0.001 in case someone only buys for 0.001 ETH worth of rETH
+        return balance >= 0.00085
+      } catch (e) {
+        console.error(e)
+        return false
+      }
     }
     else if (quest === 'OptimismGovernance') {
       const optimism: Network = {
@@ -450,7 +506,8 @@ export async function api(
       wrong.data = d
       wrong.status = response.status
     } else {
-      wrong.data = { status: 'API error' }
+      const d = await response.json()
+      wrong.data = { status: d?.status || 'API error' }
     }
     return wrong
   }
@@ -646,6 +703,15 @@ export const scrollTop = () => {
   }, 300)
 }
 
+export const scrollDown = () => {
+  // 0.3 second delay
+  setTimeout(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+    }
+  }, 300)
+}
+
 export const lessonLink = (lesson: LessonType) => {
   return `${DOMAIN_URL}/lessons/${lesson.slug}`
 }
@@ -656,4 +722,33 @@ export function calculateExplorerScore(stats: UserStatsType) {
     (stats?.badges || 0) +
     (Object.keys(stats?.donations || {})?.length || 0) +
     (stats?.valid_stamps?.length || 0)
+}
+
+export const getTokenBalance = async (network: AlchemyNetwork, ownerAddress: string, tokenContractAddresses: string[]) => {
+  const settings = {
+    apiKey: ALCHEMY_KEY_BACKEND,
+    network,
+  };
+  const alchemy = new Alchemy(settings);
+
+  const res = await alchemy.core.getTokenBalances(
+    ownerAddress,
+    tokenContractAddresses
+  );
+
+  // TEMP: hardcode 18 decimals for token
+  return parseInt(res?.tokenBalances[0]?.tokenBalance, 16) / Math.pow(10, 18)
+}
+
+export const generateTwitterLink = (text: string, link: string) => {
+  return `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+    `${text}
+`
+  )}&url=${encodeURIComponent(link)}`
+}
+
+export const generateFarcasterLink = (text: string, link: string) => {
+  return `https://warpcast.com/~/compose?text=${encodeURIComponent(
+    text?.replace('@BanklessAcademy', '@banklessacademy')
+  )}&embeds%5B%5D=${encodeURIComponent(link)}`
 }

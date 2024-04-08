@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
 import { Global, css } from '@emotion/react'
 import 'react-notion-x/src/styles.css'
@@ -7,9 +8,10 @@ import 'highlight.js/styles/vs.css'
 import { GlobalScrollbar } from 'mac-scrollbar'
 import { isMobile } from 'react-device-detect'
 import styled from '@emotion/styled'
-import { Box } from '@chakra-ui/react'
+import { Box, Container, Heading, Image } from '@chakra-ui/react'
 // https://docs.walletconnect.com/2.0/web3modal/react/about
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
+import Router from 'next/router'
 import { useWeb3ModalState } from '@web3modal/wagmi/react'
 import { WagmiConfig } from 'wagmi'
 import { mainnet, optimism, polygon, polygonMumbai } from 'wagmi/chains'
@@ -49,6 +51,23 @@ const App = ({
   ) {
     return <>Maintenance in progress ...</>
   }
+  if (pageProps.pageMeta?.nolayout) {
+    return (
+      <>
+        <Head metadata={pageProps.pageMeta} />
+        <ThemeProvider>
+          <Global styles={css``} />
+          {pageProps.pageMeta?.ssr ? (
+            <Component {...pageProps} />
+          ) : (
+            <NonSSRWrapper>
+              <Component {...pageProps} />
+            </NonSSRWrapper>
+          )}
+        </ThemeProvider>
+      </>
+    )
+  }
 
   // 1. Get projectID at https://cloud.walletconnect.com
   const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID
@@ -77,18 +96,32 @@ const App = ({
     themeMode: 'dark',
     themeVariables,
     featuredWalletIds: [
-      // MetaMask
-      'c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96',
       // Zerion
       'ecc4036f814562b41a5268adc86270fba1365471402006302e70169465b7ac18',
+      // 1inch
+      'c286eebc742a537cd1d6818363e9dc53b21759a1e8e5d9b263d0c03ec7703576',
       // Rainbow
       '1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369',
-      // Argent
-      'bc949c5d968ae81310268bf9193f9c9fb7bb4e1283e1284af8f2bd4992535fd6',
+      // MetaMask
+      'c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96',
     ],
   })
 
   const { open } = useWeb3ModalState()
+
+  const [isLoadingProfile, setIsLoadingProfile] = useState(false)
+  useEffect(() => {
+    Router.events.on('routeChangeStart', (url) => {
+      if (url?.startsWith('/explorer/')) setIsLoadingProfile(true)
+    })
+    Router.events.on('routeChangeComplete', () => {
+      setIsLoadingProfile(false)
+    })
+
+    Router.events.on('routeChangeError', () => {
+      setIsLoadingProfile(false)
+    })
+  }, [Router])
 
   return (
     <>
@@ -127,9 +160,9 @@ const App = ({
                 .ms-track.ms-y .ms-thumb {
                   width: 7px;
                 }
-                #chakra-toast-manager-bottom {
+                /* #chakra-toast-manager-bottom {
                   margin-bottom: 81px !important;
-                }
+                } */
                 /* HACK: custom toast */
                 .css-qret8q,
                 .css-zqqgfp,
@@ -206,10 +239,41 @@ const App = ({
                   background: #86629c !important;
                   box-shadow: none !important;
                 }
+                .chakra-popover__popper[data-popper-placement='right']
+                  .chakra-popover__arrow {
+                  background: #705992 !important;
+                }
+                .chakra-popover__popper[data-popper-placement='top-end']
+                  .chakra-popover__arrow {
+                  background: #514984 !important;
+                }
+                .chakra-popover__popper[data-popper-placement='top']
+                  .chakra-popover__arrow {
+                  background: #514984 !important;
+                }
+                #chakra-toast-manager-top-left {
+                  top: 20% !important;
+                  left: 2vh !important;
+                  max-width: 30vh !important;
+                }
               `}
             />
             <Layout isLesson={pageProps.pageMeta?.isLesson || false}>
-              <Component {...pageProps} />
+              {isLoadingProfile ? (
+                <Container maxW="container.xl">
+                  <Heading as="h2" size="xl" m="8" textAlign="center">
+                    Loading Explorer Profile
+                  </Heading>
+                  <Image
+                    margin="auto"
+                    paddingTop="200px"
+                    width="250px"
+                    src="/loading_purple.svg"
+                  />
+                </Container>
+              ) : (
+                <Component {...pageProps} />
+              )}
             </Layout>
           </WagmiConfig>
 

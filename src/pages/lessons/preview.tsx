@@ -12,7 +12,7 @@ import Article from 'components/Article'
 import { MIRROR_WHITELISTED_ACCOUNTS, POTION_API } from 'constants/index'
 
 const processLesson = (htmlPage, notion_id) => {
-  const lesson: any = { slug: 'preview' }
+  const lesson: any = { slug: 'preview', notionId: notion_id }
   lesson.imageLinks = []
   // data cleaning
   htmlPage.data = htmlPage.data

@@ -18,6 +18,7 @@ import { useSmallScreen } from 'hooks'
 import { getArticlesCollectors } from 'utils'
 import { parseEther } from 'viem'
 import { useLocalStorage } from 'usehooks-ts'
+import Confetti from 'components/Confetti'
 
 const CollectEntryButton = ({
   lesson,
@@ -39,29 +40,58 @@ const CollectEntryButton = ({
     `connectWalletPopup`,
     false
   )
+  const [showConfetti, setShowConfetti] = useState(false)
+
+  const isNewContract = parseInt(lesson?.collectibleId.substring(1), 10) > 6
 
   const { config } = usePrepareContractWrite({
     address: lesson.mirrorNFTAddress,
-    abi: [
-      {
-        inputs: [
+    abi: isNewContract
+      ? [
           {
-            internalType: 'address',
-            name: 'tokenRecipient',
-            type: 'address',
+            inputs: [
+              {
+                internalType: 'address',
+                name: 'tokenRecipient',
+                type: 'address',
+              },
+              { internalType: 'string', name: 'message', type: 'string' },
+              {
+                internalType: 'address',
+                name: 'mintReferral',
+                type: 'address',
+              },
+            ],
+            name: 'purchase',
+            outputs: [
+              { internalType: 'uint256', name: 'tokenId', type: 'uint256' },
+            ],
+            stateMutability: 'payable',
+            type: 'function',
           },
-          { internalType: 'string', name: 'message', type: 'string' },
+        ]
+      : [
+          {
+            inputs: [
+              {
+                internalType: 'address',
+                name: 'tokenRecipient',
+                type: 'address',
+              },
+              { internalType: 'string', name: 'message', type: 'string' },
+            ],
+            name: 'purchase',
+            outputs: [
+              { internalType: 'uint256', name: 'tokenId', type: 'uint256' },
+            ],
+            stateMutability: 'payable',
+            type: 'function',
+          },
         ],
-        name: 'purchase',
-        outputs: [
-          { internalType: 'uint256', name: 'tokenId', type: 'uint256' },
-        ],
-        stateMutability: 'payable',
-        type: 'function',
-      },
-    ],
     functionName: 'purchase',
-    args: [address, ''],
+    args: isNewContract
+      ? [address, '', '0x0000000000000000000000000000000000000000']
+      : [address, ''],
     chainId: optimism.id,
     // 0.01 + 0.00069 in collector fee
     value: parseEther('0.01069'),
@@ -114,7 +144,7 @@ const CollectEntryButton = ({
                   <ExternalLink
                     underline="true"
                     href={txLink}
-                    alt="Transaction in progress"
+                    alt="Etherscan transaction link"
                   >
                     {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
                   </ExternalLink>
@@ -133,6 +163,7 @@ const CollectEntryButton = ({
   useEffect(() => {
     if (isSuccess) {
       toast.closeAll()
+      setShowConfetti(true)
       // HACK: guess tokenId
       const txLink = `https://opensea.io/assets/optimism/${
         lesson.mirrorNFTAddress
@@ -150,7 +181,7 @@ const CollectEntryButton = ({
                   <ExternalLink
                     underline="true"
                     href={txLink}
-                    alt="Transaction in progress"
+                    alt="OpenSea Link"
                   >
                     {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
                   </ExternalLink>
@@ -193,7 +224,7 @@ const CollectEntryButton = ({
         <Button
           isDisabled={isLoading || isMinting}
           isLoading={isLoading || isMinting}
-          loadingText={isMinting ? t('Collecting Entry') : t('Minting ...')}
+          loadingText={isMinting ? t('Collecting Entry') : t('Minting...')}
           variant="primaryGold"
           w="100%"
           onClick={async () => {
@@ -203,7 +234,11 @@ const CollectEntryButton = ({
                   openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
                 } else {
                   if (chain.id !== optimism.id) {
-                    await switchNetwork({ chainId: optimism.id })
+                    try {
+                      await switchNetwork({ chainId: optimism.id })
+                    } catch (error) {
+                      console.error(error)
+                    }
                     setIsMinting(false)
                     toast({
                       title: t('You were previously on the wrong network.'),
@@ -225,10 +260,14 @@ const CollectEntryButton = ({
                     }, 3000)
                     if (mintingError !== '') {
                       toast({
-                        title: t('⚠️ Problem while minting:'),
+                        title: t('⚠️ Problem while minting...'),
                         description: (
                           <>
-                            <Box>{mintingError}</Box>
+                            <Box>
+                              {mintingError?.includes('exceeds the balance')
+                                ? 'The total cost including gas fee exceeds your balance of ETH on Optimism.'
+                                : mintingError}
+                            </Box>
                             <Box>
                               {t('Refresh the page before trying again.')}
                             </Box>
@@ -248,10 +287,16 @@ const CollectEntryButton = ({
             }
           }}
         >
-          <Box fontWeight="bold">{t('Collect Entry')}</Box>
-          <Box ml="2">{`(${numberCollected}/100 ${t('claimed')})`}</Box>
+          <Box fontWeight="bold">Mint for 0.01 ETH</Box>
+          <Box ml="2">{`(${numberCollected}/100 minted)`}</Box>
         </Button>
       )}
+      <Confetti
+        showConfetti={showConfetti}
+        onConfettiComplete={() => {
+          setShowConfetti(false)
+        }}
+      />
     </Box>
   )
 }

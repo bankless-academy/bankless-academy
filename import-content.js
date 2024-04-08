@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-escape */
 /* eslint-disable no-unreachable */
 /* eslint-disable no-console */
+const { Command } = require('commander')
 require('dotenv').config()
 const jsdom = require('jsdom')
 const { JSDOM } = jsdom
@@ -33,7 +34,7 @@ const blockTypesToIgnore = [
   "pdf",
   "table",
   "bookmark",
-  "embed",
+  // "embed",
   "equation",
   // "divider",
   "toggle",
@@ -111,6 +112,9 @@ ${LESSON_SPLITTER}
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
 const LESSON_FILENAME = IS_WHITELABEL ? 'whitelabel_lessons' : 'lessons'
+const KEYWORDS_FILE = IS_WHITELABEL ? './whitelabel-keywords.json' : './translation/keywords/en/keywords.json'
+const ALL_ENGLISH_KEYWORDS = require(KEYWORDS_FILE)
+
 const DEFAULT_NOTION_ID = '129141602de240e484356bd85f7c75e0'
 const POTION_API = 'https://potion.banklessacademy.com'
 
@@ -126,6 +130,7 @@ const KEY_MATCHING = {
   'What will you be able to do after this lesson?': 'learningActions',
   'Landing page copy': 'marketingDescription',
   'Badge ID': 'badgeId',
+  'DataDisk vector mint': 'datadiskVectorMint',
   'Collectible ID': 'collectibleId',
   'Duration in minutes': 'duration',
   'What will you learn from this?': 'learnings',
@@ -155,13 +160,20 @@ const KEY_MATCHING = {
   'NFT Gating CTA': 'nftGatingCTA',
 }
 
-const args = process.argv
-const NOTION_ID = args[2] && args[2].length === 32 ? args[2] : process.env.DEFAULT_CONTENT_DB_ID || DEFAULT_NOTION_ID
+const program = new Command()
+program
+  .option('-d, --debug', 'output extra debugging (not implemented ATM)')
+  .option('-nid, --notionID <type>', 'specify Notion ID of the database', process.env.DEFAULT_CONTENT_DB_ID || DEFAULT_NOTION_ID)
+  .option('-lid, --lessonID <type>', 'specify Lesson Notion ID')
+  .option('-lg, --translate <type>', 'specific language to translate (fr, es, ...) or all')
+
+program.parse(process.argv)
+const NOTION_ID = program.opts().notionID
 console.log('NOTION_ID', NOTION_ID)
-const LESSON_NOTION_ID = args.includes('-n') ? args.join(' ').split(' ').pop() : null
+const LESSON_NOTION_ID = program.opts().lessonID
 console.log('LESSON_NOTION_ID', LESSON_NOTION_ID)
-const TRANSLATION_ONLY = args.includes('-tr')
-const NO_TRANSLATION = args.includes('-notr')
+const TRANSLATION_LANGUAGE = program.opts().translate
+console.log('TRANSLATION_LANGUAGE', TRANSLATION_LANGUAGE)
 
 const slugify = (text) => text.toLowerCase()
   .replace('á', 'a')
@@ -206,49 +218,57 @@ const placeholder = (lesson, size, image_name) => {
 }
 
 const importTranslations = async (lesson) => {
-  if (NO_TRANSLATION) return
+  if (!TRANSLATION_LANGUAGE) return
   for (const language of lesson.languages) {
-    console.log('import translation:', language)
-    try {
-      const random = Math.floor(Math.random() * 100000)
-      const crowdinFile = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md?${random}`
-      // console.log(crowdinFile)
-      const crowdin = await axios.get(crowdinFile)
-      // console.log(crowdin)
-      if (crowdin.status === 200) {
-        // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
-        const newTranslation = crowdin.data
-        const [, title, description] = crowdin.data.match(/---\nTITLE:\s(.*?)\nDESCRIPTION:\s(.*?)\n/)
-        // console.log('title', title)
-        // console.log('description', description)
-        const lessonInfoPath = `translation/website/${language}/lesson.json`
-        const lessonInfo = fs.existsSync(lessonInfoPath) ? await fs.promises.readFile(lessonInfoPath, 'utf8') : '{}'
-        const translationInfo = {}
-        translationInfo[lesson.name] = title
-        translationInfo[lesson.description] = description
-        // console.log('translationInfo', translationInfo)
-        const jsonLessonInfo = { ...JSON.parse(lessonInfo), ...translationInfo }
-        // console.log('jsonLessonInfo', jsonLessonInfo)
-        fs.writeFile(lessonInfoPath, `${JSON.stringify(jsonLessonInfo, null, 2)}`, (error) => {
-          if (error) throw error
-        })
-        // console.log(newTranslation)
-        const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
-        const existingTranslation = fs.existsSync(lessonPath) ? await fs.promises.readFile(lessonPath, 'utf8') : ''
-        // console.log(existingTranslation)
-        // check if translation has been modified
-        if (newTranslation.trim() !== existingTranslation.trim()) {
-          console.log('- new translation available')
-          fs.writeFile(lessonPath, `${newTranslation}`, (error) => {
+    if (language === TRANSLATION_LANGUAGE || TRANSLATION_LANGUAGE === 'all') {
+      console.log('import translation:', language)
+      try {
+        const random = Math.floor(Math.random() * 100000)
+        const crowdinFile = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md?${random}`
+        // console.log(crowdinFile)
+        const crowdin = await axios.get(crowdinFile)
+        // console.log(crowdin)
+        if (crowdin.status === 200) {
+          // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
+          const newTranslation = crowdin.data
+            // fix Crowdin bug
+            .replace(`***
+
+#`, `---
+
+#`)
+          const [, title, description] = crowdin.data.match(/---\nTITLE:\s(.*?)\nDESCRIPTION:\s(.*?)\n/)
+          // console.log('title', title)
+          // console.log('description', description)
+          const lessonInfoPath = `translation/website/${language}/lesson.json`
+          const lessonInfo = fs.existsSync(lessonInfoPath) ? await fs.promises.readFile(lessonInfoPath, 'utf8') : '{}'
+          const translationInfo = {}
+          translationInfo[lesson.name] = title
+          translationInfo[lesson.description] = description
+          // console.log('translationInfo', translationInfo)
+          const jsonLessonInfo = { ...JSON.parse(lessonInfo), ...translationInfo }
+          // console.log('jsonLessonInfo', jsonLessonInfo)
+          fs.writeFile(lessonInfoPath, `${JSON.stringify(jsonLessonInfo, null, 2)}`, (error) => {
             if (error) throw error
           })
-        } else {
-          console.log('- same same')
+          // console.log(newTranslation)
+          const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
+          const existingTranslation = fs.existsSync(lessonPath) ? await fs.promises.readFile(lessonPath, 'utf8') : ''
+          // console.log(existingTranslation)
+          // check if translation has been modified
+          if (newTranslation.trim() !== existingTranslation.trim()) {
+            console.log('- new translation available')
+            fs.writeFile(lessonPath, `${newTranslation}`, (error) => {
+              if (error) throw error
+            })
+          } else {
+            console.log('- same same')
+          }
         }
-      }
-    } catch (error) {
+      } catch (error) {
 
-      console.log(`- ${language} not available yet`)
+        console.log(`- ${language} not available yet`)
+      }
     }
   }
 }
@@ -279,9 +299,11 @@ axios
           }),
         {}
       )
-      // skip import if LESSON_NOTION_ID is specified
-      if (lesson.publicationStatus === undefined) return
+      if (lesson.publicationStatus === undefined ||
+        // we only support publish or hidden as status
+        !(lesson.publicationStatus === 'publish' || lesson.publicationStatus === 'hidden')) return
       notion.id = notion.id.replace(/-/g, '')
+      // skip import if LESSON_NOTION_ID is specified
       if (LESSON_NOTION_ID && notion.id !== LESSON_NOTION_ID) return
       // TEMP: we don't publish planned lesson ATM
       if (lesson.publicationStatus === 'planned') return
@@ -290,6 +312,7 @@ axios
       if (lesson.description === undefined) lesson.description = ''
       if (lesson.socialImageLink === undefined) delete lesson.socialImageLink
       if (lesson.badgeId === undefined) lesson.badgeId = null
+      if (lesson.datadiskVectorMint === undefined) delete lesson.datadiskVectorMint
       if (lesson.collectibleId === undefined) delete lesson.collectibleId
       if (lesson.badgeImageLink === undefined) lesson.badgeImageLink = null
       if (lesson.lessonCollectedImageLink === undefined) delete lesson.lessonCollectedImageLink
@@ -407,6 +430,10 @@ axios
                   // console.log(lesson.articleContent)
                   let lessonContentMD = lesson.articleContent
                   try {
+                    // HACK: replace youtube links with iframe
+                    var youtubeRegex = /<(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})>/g;
+                    // Replace YouTube URL with iframe tag
+                    lessonContentMD = lessonContentMD.replace(youtubeRegex, "[](https://www.youtube-nocookie.com/embed/$1)");
                     // HACK: replace image
                     const imageRegex = /!\[.*?\]\((.*?)\)/g;
                     let match
@@ -488,8 +515,15 @@ axios
           lesson.englishName = lesson.name
           lesson.slug = slugify(lesson.name)
           // add notionId to DB
-          await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
-            .ignore()
+          const [notionIdExist] = await db(TABLES.credentials)
+            .select('id')
+            .where('notion_id', lesson.notionId)
+          if (!notionIdExist?.id) {
+            // add new notion_id
+            console.log('add new notion_id')
+            await db(TABLES.credentials).insert([{ notion_id: lesson.notionId }]).onConflict('notion_id')
+              .ignore()
+          }
 
           if (lesson.badgeImageLink) {
             lesson.badgeImageLink = get_img(lesson.badgeImageLink, lesson.slug, 'badge')
@@ -627,7 +661,11 @@ axios
                 const [bloc1, bloc2] = slide.content.split('<iframe ')
                 if (bloc2 !== '') {
                   slide.content = `${bloc1 !== '' ? `<div class="bloc1">${bloc1}</div>` : ''}`
-                  slide.content += `<div class="bloc2"><iframe allowfullscreen ${bloc2.replace(/feature=oembed/g, 'feature=oembed&rel=0')}</div>`
+                  let iframeClass = ''
+                  if (bloc2.includes('banklessacademy.com/animation')) {
+                    iframeClass = "class='animation' "
+                  }
+                  slide.content += `<div class="bloc2"><iframe allowfullscreen ${iframeClass}${bloc2.replace(/feature=oembed/g, 'feature=oembed&rel=0')}</div>`
                 }
               } else {
                 // text only
@@ -637,6 +675,20 @@ axios
             return slide
           })
           lesson.keywords = allKeywords
+          const lessonKV = {}
+          // create keyword file
+          for (const keyword of allKeywords) {
+            if (keyword in ALL_ENGLISH_KEYWORDS) {
+              lessonKV[keyword] = ALL_ENGLISH_KEYWORDS[keyword]
+            }
+          }
+          if (Object.keys(lessonKV).length) {
+            const lessonKeywordPath = `translation/keywords/en/${lesson.slug}.json`
+            console.log('lessonKV', lessonKV)
+            fs.writeFile(lessonKeywordPath, JSON.stringify(lessonKV, null, 2), (error) => {
+              if (error) throw error
+            })
+          }
           const componentName = PROJECT_DIR.replace(/[^A-Za-z0-9]/g, '') + lesson.name
             .split(' ')
             .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -764,6 +816,17 @@ axios
         })
     })
     await axios.all(promiseArray).then(() => {
+      if (LESSON_NOTION_ID) {
+        const existingLessons = require(`./src/constants/${LESSON_FILENAME}.json`)
+        const newLesson = lessons.pop()
+        for (const lesson of existingLessons) {
+          if (lesson?.slug) {
+            if (lesson.slug === newLesson.slug)
+              lessons.push(newLesson)
+            else lessons.push(lesson)
+          }
+        }
+      }
       const FILE_CONTENT = `/* eslint-disable no-useless-escape */
 import { LessonType } from 'entities/lesson'
 
@@ -774,10 +837,14 @@ const LESSONS: LessonType[] = ${stringifyObject(lessons, {
 
 export default LESSONS
 `
-      if (!TRANSLATION_ONLY)
+      if (!TRANSLATION_LANGUAGE) {
         fs.writeFile(`src/constants/${LESSON_FILENAME}.ts`, FILE_CONTENT, (error) => {
           if (error) throw error
         })
+        fs.writeFile(`src/constants/${LESSON_FILENAME}.json`, JSON.stringify(lessons.filter(item => item !== null), null, 2), (error) => {
+          if (error) throw error
+        })
+      }
       console.log(
         `export done -> check syntax & typing errors in src/constants/${LESSON_FILENAME}.ts`
       )

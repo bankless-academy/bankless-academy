@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { ALCHEMY_KEY_BACKEND, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
+import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
 import { NextApiRequest, NextApiResponse } from 'next'
 // import { createPublicClient, http } from 'viem'
 // import { mainnet } from 'viem/chains'
@@ -8,7 +8,7 @@ import badges from 'data/badges.json'
 import { fetchBE } from 'utils/server'
 import { BADGE_ADDRESS, BADGE_IDS } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
-import { ALLOWED_PROVIDERS } from 'constants/passport'
+import { ALLOWED_PLATFORMS, STAMP_PLATFORMS } from 'constants/passport'
 import { calculateExplorerScore } from 'utils/index'
 
 async function getCollectors(collectibleAddress) {
@@ -26,14 +26,19 @@ export default async function handler(
 ): Promise<void> {
   const leaderboard: any = {}
   try {
-    const collectors = await getCollectors('0x5ce61b80931Ea67565f0532965DDe5be2d41331d')
-    // console.log(collectors)
-    for (const collector of collectors.ownerAddresses) {
-      const datadisks = []
-      for (let i = 0; i < collector.tokenBalances?.length; i++) {
-        datadisks.push('D001')
+    for (const collectibleAddress of COLLECTIBLE_ADDRESSES) {
+      const collectors = await getCollectors(collectibleAddress)
+      console.log(collectors)
+      const datadiskId = LESSONS.find(
+        (lesson) => lesson.lessonCollectibleTokenAddress === collectibleAddress
+      )?.collectibleId
+      for (const collector of collectors.ownerAddresses) {
+        const datadisks = []
+        for (let i = 0; i < collector.tokenBalances?.length; i++) {
+          datadisks.push(datadiskId)
+        }
+        leaderboard[collector.ownerAddress] = { datadisks: datadisks, handbooks: [], badges: 0 }
       }
-      leaderboard[collector.ownerAddress] = { datadisks: datadisks, handbooks: [], badges: 0 }
     }
 
     for (const mirrorArticleAddress of MIRROR_ARTICLE_ADDRESSES) {
@@ -115,19 +120,34 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
       }
       // passport
       const passportUsers = await db(TABLES.users)
-        .select(TABLE.users.address, TABLE.users.gitcoin_stamps)
+        .select(TABLE.users.address, TABLE.users.ba_stamps)
         .whereNull(TABLE.users.sybil_user_id)
-        .whereNot(TABLE.users.gitcoin_stamps, '{}')
+        .whereNot(TABLE.users.ba_stamps, '{}')
       for (const passport of passportUsers) {
         const address = passport.address?.toLowerCase()
-        const stamps = Object.keys(passport.gitcoin_stamps)
+        const stamps = Object.keys(passport.ba_stamps)
+        // TODO: clean
         if (address in leaderboard)
-          leaderboard[address].valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
+          leaderboard[address].valid_stamps = ALLOWED_PLATFORMS.map(value => stamps.includes(STAMP_PLATFORMS[value].provider) ? value : null).filter(v => v) || []
+      }
+      const referrals = await db(TABLES.users)
+        .select(TABLE.users.referrer, 'r.address')
+        .count(TABLE.users.referrer)
+        .distinct(TABLE.users.referrer)
+        .leftJoin('users AS r', 'users.referrer', 'r.id')
+        .whereNotNull(TABLE.users.referrer)
+        .groupBy(TABLE.users.referrer)
+        .groupBy('r.address')
+      console.log(referrals)
+      for (const referral of referrals) {
+        const address = referral.address?.toLowerCase()
+        if (address in leaderboard)
+          leaderboard[address].referrals = parseInt(referral.count)
       }
       const rank = []
       for (const address of Object.keys(leaderboard)) {
         // score
-        const score = calculateExplorerScore(leaderboard[address])
+        const score = calculateExplorerScore(leaderboard[address]) + (leaderboard[address]?.referrals || 0)
 
         leaderboard[address].score = score
         // leaderboard[address].donations_count = leaderboard[address].donations_count || 0
@@ -143,7 +163,11 @@ WHERE (ens_name IS NOT NULL OR ens_avatar IS NOT NULL)`)
       // console.log(rank)
       // console.log(sortedRank)
       for (const r of sortedRank) {
-        leaderboard[r.address].rank = r.rank
+        // LIMIT to first 5000
+        if (r.rank <= 5000)
+          leaderboard[r.address].rank = r.rank
+        else
+          delete leaderboard[r.address]
       }
 
       return res.status(200).send(leaderboard)

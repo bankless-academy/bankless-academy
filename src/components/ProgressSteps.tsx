@@ -5,9 +5,11 @@ import { useSmallScreen } from 'hooks/index'
 const ProgressSteps = ({
   step,
   total,
+  pourcentage,
 }: {
   step: number
   total: number
+  pourcentage?: number
 }): React.ReactElement => {
   const [isSmallScreen] = useSmallScreen()
   return (
@@ -20,16 +22,29 @@ const ProgressSteps = ({
           h={isSmallScreen ? 1 : '4px'}
           m={isSmallScreen ? 0.5 : 1}
           borderRadius={2}
-          bg={
-            index + 1 === total
-              ? `linear-gradient(270deg, #FFFCF9 -44.74%, #F77B54 -11.81%, ${
-                  index <= step ? '#916AB8' : '#ffffff22'
-                } 94.44%)`
-              : index <= step
-              ? '#916AB8'
-              : '#ffffff22'
-          }
-        ></Box>
+          overflow="hidden"
+          bg="#ffffff22"
+        >
+          {index <= step && (
+            <Box
+              w={
+                pourcentage !== null && index === step
+                  ? pourcentage?.toString() + '%'
+                  : '100%'
+              }
+              h="100%"
+              bg={
+                index + 1 === total
+                  ? `linear-gradient(270deg, #FFFCF9 -44.74%, #F77B54 -11.81%, ${
+                      index <= step ? '#916AB8' : '#ffffff22'
+                    } 94.44%)`
+                  : index <= step
+                  ? '#916AB8'
+                  : '#ffffff22'
+              }
+            ></Box>
+          )}
+        </Box>
       ))}
       <Box
         w={isSmallScreen ? 1 : '4px'}

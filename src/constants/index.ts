@@ -23,6 +23,11 @@ export const DOMAIN_URL =
       ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
       : `https://${DOMAIN_PROD}`
 
+export const DOMAIN_URL_ = DOMAIN_URL?.replace(
+  'http://localhost:3000',
+  'https://ba.krux.dev'
+)
+
 export const imageMeta = WHITELABEL?.default_metadata_image || '/images/bankless_academy_v3.jpg'
 
 export const DEFAULT_METADATA: MetaData = {
@@ -44,7 +49,7 @@ export const LOGO_SMALL =
   WHITELABEL?.logo_small || '/images/BanklessAcademy_Logo.svg'
 
 export const HOMEPAGE_BACKGROUND =
-  WHITELABEL?.homepage_background || '/images/homepage_background_v3.jpg'
+  WHITELABEL?.homepage_background || '/images/homepage_background_v4.jpg'
 
 export const UMAMI_PROD =
   WHITELABEL?.umami_prod || '62d1cf48-425d-4658-9b86-3eea78ac9714'
@@ -84,13 +89,14 @@ export const NOTION_IDS: string[] = LESSONS.filter(
 
 export const EMAIL_CONTACT = 'support@banklessacademy.com'
 
-export const GENERIC_ERROR_MESSAGE = `Something went wrong ... please contact ${EMAIL_CONTACT}`
+export const GENERIC_ERROR_MESSAGE = `Something went wrong... please contact ${EMAIL_CONTACT}`
 
 export const TWITTER_ACCOUNT = WHITELABEL?.twitter_account || `BanklessAcademy`
 
 export const NOTION_PAGES = WHITELABEL?.notion_pages || {
-  faq: '97b88d72335a41a1911c12d4e2f99db6',
-  disclaimer: '04cb595cad3f43608a6c410b9672e32b',
+  faq: '8fe3275ffbe74e598cb4574d0207a185',
+  disclaimer: '360b86a86d50421ba3bc7f55607f064a',
+  'privacy-policy': '0c0a262eb63243db97ed235c4512518f',
 }
 
 export const MIRROR_WHITELISTED_ACCOUNTS = [
@@ -144,3 +150,10 @@ export const WALLET_SIGNATURE_MESSAGE = 'Signing a message with my wallet to pro
 export const POTION_API = 'https://potion.banklessacademy.com'
 
 export const IS_WALLET_DISABLED = false
+
+export const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/explorer_avatar.png'
+
+export const DEFAULT_ENS = 'web3explorer.eth'
+
+export const NB_DATADISK_MAX = 2
+

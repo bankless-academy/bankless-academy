@@ -1,12 +1,10 @@
 import { MAX_BADGES } from 'constants/badges'
 import { MAX_DONATIONS } from 'constants/donations'
-import { DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
+import { DEFAULT_ENS, DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { MAX_STAMPS } from 'constants/passport'
 
 const DEFAULT_IMAGE =
   'https://app.banklessacademy.com/images/explorer_avatar.png'
-
-const DEFAULT_NAME = 'banklessexplorer.eth'
 
 const DEFAULT_SCORE = 16
 
@@ -25,9 +23,11 @@ const Skill = ({ skill, score, max }) => (
       style={{
         display: 'flex',
         alignItems: 'center',
-        width: '20px',
+        width: '30px',
         height: '40px',
         color: '#FFFFFF',
+        justifyContent: 'flex-end',
+        paddingRight: '8px',
       }}
     >
       {score}
@@ -101,9 +101,7 @@ const Skills = ({ stats }) => (
     />
     <Skill
       skill="Stamps"
-      score={
-        stats?.valid_stamps ? Object.keys(stats?.valid_stamps)?.length || 0 : 0
-      }
+      score={stats?.valid_stamps?.length || 0}
       max={MAX_STAMPS}
     />
   </div>
@@ -123,7 +121,8 @@ const OgSocial = ({
     badges?: number
     datadisks?: string[]
     handbooks?: string[]
-    donations?: any
+    donations?: { [key: string]: any }
+    valid_stamps?: string[]
   }
   badgeImageLink?: string
 }): React.ReactElement => {
@@ -194,7 +193,7 @@ const OgSocial = ({
           textTransform: 'uppercase',
         }}
       >
-        {explorerName || DEFAULT_NAME}
+        {explorerName || DEFAULT_ENS}
       </div>
       {badgeImageLink ? (
         <img

@@ -562,7 +562,7 @@ const Article = ({
   return (
     <Container maxW="container.md" p={isSmallScreen ? '0' : 'unset'}>
       <Image
-        src={lesson.socialImageLink}
+        src={lesson.lessonImageLink}
         w="100%"
         h="auto"
         borderRadius={isSmallScreen ? '0' : '0.375rem'}
@@ -649,7 +649,21 @@ const Article = ({
             },
             // force links to target _blank
             a: ({ children, ...props }) => {
-              return <ExternalLink {...props}>{children}</ExternalLink>
+              if (
+                props?.href?.includes('youtube') &&
+                props?.href?.includes('embed')
+              )
+                // HACK: replace youtube links with iframe
+                return (
+                  <iframe
+                    src={props?.href}
+                    width="100%"
+                    style={{
+                      aspectRatio: '16/9',
+                    }}
+                  ></iframe>
+                )
+              else return <ExternalLink {...props}>{children}</ExternalLink>
             },
             img: ({ children, ...props }) => {
               return (

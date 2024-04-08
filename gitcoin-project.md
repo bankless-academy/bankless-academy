@@ -65,7 +65,8 @@ Your support helps Bankless Academy continue to thrive by fulfilling its mission
 For more information and to stay connected with Bankless Academy, follow and reach out to us on:
 
 - [Twitter](https://twitter.com/BanklessAcademy)
-- [Lens](https://lenster.xyz/u/banklessacademy)
+- [Farcaster](https://warpcast.com/banklessacademy)
+- [Lens](https://hey.xyz/u/banklessacademy)
 - [Instagram](https://www.instagram.com/banklessacademy/)
 - [LinkedIn](https://www.linkedin.com/company/bankless-academy/)
 - [YouTube](https://www.youtube.com/watch?v=JMeVzmycj_s)

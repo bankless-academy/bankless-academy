@@ -173,7 +173,7 @@ Practices for staying safe**:**
 
 ✅ Verify everything with an outside source, like another official project account.
 
-✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our [Explorer Community](https://lenster.xyz/u/banklessacademy) is a great place for questions like these.
+✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our [Explorer Community](https://bankless.ac/community) is a great place for questions like these.
 
 ![](https://app.banklessacademy.com/images/web3-security/social-media-best-practices-48ad350f.svg)
 
@@ -225,7 +225,7 @@ After adding a hardware wallet to your setup, one of the best ways to secure you
 
 👎 **CONs:** It’s more complicated to keep track of, but many wallet applications allow you to name your wallets.
 
-![](https://app.banklessacademy.com/images/web3-security/wallet-strategies-d71783ef.svg)
+![](https://app.banklessacademy.com/images/web3-security/wallet-strategies-2b743061.svg)
 
 # Knowledge Check 7
 

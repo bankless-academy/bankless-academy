@@ -23,6 +23,7 @@ import { fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
 import makeBlockie from 'ethereum-blockies-base64'
 import { SiweMessage } from 'siwe'
 import { useTranslation } from 'react-i18next'
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -31,7 +32,12 @@ export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
 
 import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
-import { IS_WALLET_DISABLED, SIWE_ENABLED } from 'constants/index'
+import {
+  DEFAULT_AVATAR,
+  DEFAULT_ENS,
+  IS_WALLET_DISABLED,
+  SIWE_ENABLED,
+} from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
 import { getUD, getLensProfile, shortenAddress, api } from 'utils'
 
@@ -58,7 +64,12 @@ const ConnectWalletButton = ({
 }): React.ReactElement => {
   const { t } = useTranslation()
   const { open } = useWeb3Modal()
-  const { connector, address, isConnected } = useAccount()
+  const { connector, isConnected } = useAccount()
+  let { address } = useAccount()
+  const { query, asPath } = useRouter()
+  const { simulate } = query
+  if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
+    address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
   const { chain } = useNetwork()
   const [waitingForSIWE, setWaitingForSIWE] = useState(false)
   const [isDisconnecting, setIsDisconnecting] = useState(false)
@@ -71,7 +82,8 @@ const ConnectWalletButton = ({
     `connectWalletPopup`,
     false
   )
-  const [ens, setEns] = useLocalStorage(`ens-cache`, {})
+  const [nameCache, setNameCache] = useLocalStorage(`name-cache`, {})
+  const [ens, setEns] = useState('')
   const [, setBadgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [, setKudosMintedLS] = useLocalStorage('kudosMinted', [])
   const [refreshBadgesLS, setRefreshBadgesLS] = useLocalStorage(
@@ -79,7 +91,6 @@ const ConnectWalletButton = ({
     false
   )
   const { onOpen, onClose, isOpen } = useDisclosure()
-  const { asPath } = useRouter()
   const { disconnect } = useDisconnect({
     onError(error) {
       console.log('Error while disconnecting', error)
@@ -94,7 +105,8 @@ const ConnectWalletButton = ({
     },
   })
 
-  const isLessonPage = asPath.includes('/lessons/')
+  const isLessonPage = asPath.includes('/lessons')
+  const isProfilePage = asPath.includes('/explorer/my-profile')
 
   // const networkVersion =
   //   typeof window !== 'undefined'
@@ -138,23 +150,29 @@ const ConnectWalletButton = ({
         avatar = newAvatar
       }
     }
-    if (ens[address]?.name) setName(ens[address].name)
+    if (nameCache[address]?.name) setName(nameCache[address].name)
     else setName(name)
-    if (ens[address]?.avatar) setAvatar(ens[address].avatar)
+    if (nameCache[address]?.avatar) setAvatar(nameCache[address].avatar)
     else setAvatar(avatar)
 
-    const ensName = await fetchEnsName({
-      address,
-      chainId: 1,
-    })
+    const ensName =
+      address.toLowerCase() === '0xb00e26e79352882391604e24b371a3f3c8658e8c'
+        ? DEFAULT_ENS
+        : await fetchEnsName({
+            address,
+            chainId: 1,
+          })
     if (ensName) {
+      setEns(ensName)
       replaceName(ensName)
       const ensAvatar = await fetchEnsAvatar({
         name: ensName,
         chainId: 1,
       })
       if (ensAvatar) replaceAvatar(ensAvatar)
+      if (ensName === DEFAULT_ENS) replaceAvatar(DEFAULT_AVATAR)
     } else {
+      setEns('')
       const lensProfile = await getLensProfile(address)
       if (lensProfile.name) {
         replaceName(lensProfile.name)
@@ -171,9 +189,9 @@ const ConnectWalletButton = ({
         }
       }
     }
-    const ensCache = JSON.parse(JSON.stringify(ens))
-    ensCache[address] = { name, avatar }
-    setEns(ensCache)
+    const newNameCache = JSON.parse(JSON.stringify(nameCache))
+    newNameCache[address] = { name, avatar }
+    setNameCache(newNameCache)
   }
 
   function refreshBadges() {
@@ -300,6 +318,7 @@ const ConnectWalletButton = ({
 
   useEffect(() => {
     if (address && !SIWE_ENABLED) {
+      console.log(address)
       loadAddress(address)
     }
   }, [address])
@@ -327,40 +346,40 @@ const ConnectWalletButton = ({
             <Button
               variant={name ? 'secondary' : 'primary'}
               size={isSmallScreen ? 'sm' : 'md'}
-              leftIcon={
+              onClick={() => onOpen()}
+            >
+              <Box display="flex" alignItems="center">
                 <Image
                   src={avatar || '/images/explorer_avatar.png'}
                   borderRadius="50%"
                   background="gray"
                   w={isSmallScreen ? '22px' : '28px'}
                   h={isSmallScreen ? '22px' : '28px'}
+                  mr={isSmallScreen ? '0' : '12px'}
                 />
-              }
-              onClick={() => onOpen()}
-            >
-              <Text maxW="200px" display="flex" alignItems="center" isTruncated>
-                {name || t('Click here to sign in')}
-              </Text>
+                {isSmallScreen ? (
+                  ''
+                ) : (
+                  <Text
+                    maxW="200px"
+                    display="flex"
+                    alignItems="center"
+                    isTruncated
+                  >
+                    {name || t('Click here to sign in')}
+                  </Text>
+                )}
+                {isOpen ? <ChevronUpIcon ml="1" /> : <ChevronDownIcon ml="1" />}
+              </Box>
             </Button>
           </PopoverTrigger>
           <PopoverContent width={isSmallScreen ? '260px' : '300px'}>
             <PopoverArrow />
             <PopoverBody>
               <Box textAlign="center" m="2">
-                <Button
-                  w="100%"
-                  size={isSmallScreen ? 'md' : 'lg'}
-                  variant="primaryWhite"
-                  leftIcon={<Power weight="bold" />}
-                  onClick={disconnectWallet}
-                >
-                  {t('Disconnect Wallet')}
-                </Button>
-              </Box>
-              <Box textAlign="center" m="2">
                 <InternalLink
                   href={`/explorer/${
-                    name?.endsWith('.eth') ? name : address
+                    ens?.includes('.') ? ens : address
                   }?referral=true`}
                 >
                   <Button
@@ -374,6 +393,17 @@ const ConnectWalletButton = ({
                   </Button>
                 </InternalLink>
               </Box>
+              <Box textAlign="center" m="2">
+                <Button
+                  w="100%"
+                  size={isSmallScreen ? 'md' : 'lg'}
+                  variant="secondaryWhite"
+                  leftIcon={<Power weight="bold" />}
+                  onClick={disconnectWallet}
+                >
+                  {t('Disconnect Wallet')}
+                </Button>
+              </Box>
             </PopoverBody>
           </PopoverContent>
         </Popover>
@@ -381,14 +411,16 @@ const ConnectWalletButton = ({
         <Popover
           returnFocusOnClose={false}
           placement="bottom-end"
-          isOpen={connectWalletPopupLS && isLessonPage}
+          isOpen={connectWalletPopupLS && (isLessonPage || isProfilePage)}
           onClose={() => {
-            onClose()
-            setConnectWalletPopupLS(false)
+            if (!isProfilePage) {
+              onClose()
+              setConnectWalletPopupLS(false)
+            }
           }}
         >
           <Overlay
-            hidden={!(connectWalletPopupLS && isLessonPage)}
+            hidden={!(connectWalletPopupLS && (isLessonPage || isProfilePage))}
             margin="0 !important"
           />
           <PopoverTrigger>
@@ -405,7 +437,7 @@ const ConnectWalletButton = ({
                   : t('Connecting wallet')
               }
               zIndex={2}
-              variant="primary"
+              variant={isLessonPage || isProfilePage ? 'primary' : 'secondary'}
             >
               {t('Connect Wallet')}
             </Button>
@@ -420,7 +452,7 @@ const ConnectWalletButton = ({
                 {`Don’t know how? `}
                 <ExternalLink
                   underline="true"
-                  href="/faq#edf3a4658d3d4aa78eac62e1dcf68978"
+                  href="https://app.banklessacademy.com/lessons/creating-a-crypto-wallet"
                 >
                   {t('Get help here')}
                 </ExternalLink>

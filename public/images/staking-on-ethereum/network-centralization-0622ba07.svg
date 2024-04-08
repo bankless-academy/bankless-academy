@@ -1,0 +1,1327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1008.15 1008.15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#GlassPanel-11);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17 {
+        stroke: #b68bcc;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17 {
+        stroke-linecap: square;
+        stroke-miterlimit: 54.61;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-6, .cls-10, .cls-11, .cls-12, .cls-14, .cls-15, .cls-16 {
+        stroke-width: 1.78px;
+      }
+
+      .cls-18 {
+        fill: url(#linear-gradient-12);
+      }
+
+      .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-29, .cls-30, .cls-31, .cls-32, .cls-33, .cls-34, .cls-35, .cls-36, .cls-37, .cls-38, .cls-39, .cls-40, .cls-41, .cls-42, .cls-43, .cls-44, .cls-45, .cls-46, .cls-47, .cls-48, .cls-49, .cls-50, .cls-51, .cls-52, .cls-53 {
+        stroke-width: 0px;
+      }
+
+      .cls-54 {
+        filter: url(#outer-glow-40);
+      }
+
+      .cls-54, .cls-55, .cls-56, .cls-57, .cls-58, .cls-59, .cls-60, .cls-61, .cls-62, .cls-63, .cls-64, .cls-65, .cls-66, .cls-67, .cls-68, .cls-69 {
+        opacity: .5;
+      }
+
+      .cls-19 {
+        fill: url(#linear-gradient-17);
+      }
+
+      .cls-20 {
+        fill: url(#linear-gradient-19);
+      }
+
+      .cls-21 {
+        fill: url(#linear-gradient-33);
+      }
+
+      .cls-22 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-70 {
+        mask: url(#mask-10);
+      }
+
+      .cls-71 {
+        filter: url(#outer-glow-3);
+      }
+
+      .cls-2 {
+        fill: url(#GlassPanel-12);
+      }
+
+      .cls-55 {
+        filter: url(#outer-glow-37);
+      }
+
+      .cls-23 {
+        fill: url(#linear-gradient-21);
+      }
+
+      .cls-56 {
+        filter: url(#outer-glow-4);
+      }
+
+      .cls-24 {
+        fill: url(#linear-gradient-6);
+      }
+
+      .cls-72 {
+        filter: url(#outer-glow-21);
+      }
+
+      .cls-73 {
+        filter: url(#outer-glow-15);
+      }
+
+      .cls-57 {
+        filter: url(#outer-glow-25);
+      }
+
+      .cls-58 {
+        filter: url(#outer-glow-31);
+      }
+
+      .cls-74 {
+        filter: url(#outer-glow-44);
+      }
+
+      .cls-75 {
+        filter: url(#outer-glow-32);
+      }
+
+      .cls-76 {
+        mask: url(#mask-2);
+      }
+
+      .cls-77 {
+        filter: url(#outer-glow-27);
+      }
+
+      .cls-59 {
+        filter: url(#outer-glow-49);
+      }
+
+      .cls-60 {
+        filter: url(#outer-glow-28);
+      }
+
+      .cls-78 {
+        mask: url(#mask-13);
+      }
+
+      .cls-25 {
+        fill: url(#linear-gradient-15);
+      }
+
+      .cls-26 {
+        fill: url(#linear-gradient-11);
+      }
+
+      .cls-79 {
+        mask: url(#mask-3);
+      }
+
+      .cls-3 {
+        fill: url(#GlassPanel-16);
+      }
+
+      .cls-27 {
+        fill: url(#linear-gradient-5);
+      }
+
+      .cls-4 {
+        fill: url(#GlassPanel-3);
+      }
+
+      .cls-4, .cls-5, .cls-8, .cls-9, .cls-13, .cls-17 {
+        stroke-width: 1.81px;
+      }
+
+      .cls-80 {
+        filter: url(#outer-glow-1);
+      }
+
+      .cls-5 {
+        fill: url(#GlassPanel);
+      }
+
+      .cls-28 {
+        fill: url(#linear-gradient-31);
+      }
+
+      .cls-81 {
+        filter: url(#outer-glow-33);
+      }
+
+      .cls-82 {
+        filter: url(#outer-glow-42);
+      }
+
+      .cls-29 {
+        fill: url(#linear-gradient-34);
+      }
+
+      .cls-83 {
+        mask: url(#mask-9);
+      }
+
+      .cls-6 {
+        fill: url(#GlassPanel-8);
+      }
+
+      .cls-84 {
+        mask: url(#mask-12);
+      }
+
+      .cls-7 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-85 {
+        filter: url(#outer-glow-30);
+      }
+
+      .cls-61 {
+        filter: url(#outer-glow-22);
+      }
+
+      .cls-86 {
+        filter: url(#outer-glow-9);
+      }
+
+      .cls-87 {
+        filter: url(#outer-glow-20);
+      }
+
+      .cls-88 {
+        mask: url(#mask-5);
+      }
+
+      .cls-89 {
+        filter: url(#outer-glow-38);
+      }
+
+      .cls-30 {
+        fill: url(#linear-gradient-13);
+      }
+
+      .cls-31 {
+        fill: url(#linear-gradient-23);
+      }
+
+      .cls-8 {
+        fill: url(#GlassPanel-2);
+      }
+
+      .cls-9 {
+        fill: url(#GlassPanel-6);
+      }
+
+      .cls-10 {
+        fill: url(#GlassPanel-15);
+      }
+
+      .cls-32 {
+        fill: url(#linear-gradient-25);
+      }
+
+      .cls-62 {
+        filter: url(#outer-glow-43);
+      }
+
+      .cls-33 {
+        fill: url(#linear-gradient-16);
+      }
+
+      .cls-34 {
+        fill: url(#linear-gradient-22);
+      }
+
+      .cls-90 {
+        filter: url(#outer-glow-50);
+      }
+
+      .cls-35 {
+        fill: url(#linear-gradient-32);
+      }
+
+      .cls-36 {
+        fill: url(#linear-gradient-20);
+      }
+
+      .cls-91 {
+        filter: url(#outer-glow-24);
+      }
+
+      .cls-92 {
+        filter: url(#outer-glow-41);
+      }
+
+      .cls-37 {
+        fill: url(#linear-gradient-14);
+      }
+
+      .cls-38 {
+        fill: url(#linear-gradient-2);
+        filter: url(#outer-glow-2);
+      }
+
+      .cls-63 {
+        filter: url(#outer-glow-16);
+      }
+
+      .cls-64 {
+        filter: url(#outer-glow-46);
+      }
+
+      .cls-93 {
+        filter: url(#outer-glow-47);
+      }
+
+      .cls-94 {
+        mask: url(#mask-8);
+      }
+
+      .cls-39 {
+        fill: url(#linear-gradient-7);
+      }
+
+      .cls-95 {
+        mask: url(#mask-4);
+      }
+
+      .cls-96 {
+        filter: url(#outer-glow-29);
+      }
+
+      .cls-40 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-97 {
+        filter: url(#outer-glow-14);
+      }
+
+      .cls-98 {
+        filter: url(#outer-glow-8);
+      }
+
+      .cls-99 {
+        mask: url(#mask-15);
+      }
+
+      .cls-41 {
+        fill: url(#linear-gradient-9);
+      }
+
+      .cls-42 {
+        fill: url(#linear-gradient-27);
+      }
+
+      .cls-100 {
+        filter: url(#outer-glow-18);
+      }
+
+      .cls-11 {
+        fill: url(#GlassPanel-13);
+      }
+
+      .cls-12 {
+        fill: url(#GlassPanel-14);
+      }
+
+      .cls-101 {
+        filter: url(#outer-glow-5);
+      }
+
+      .cls-102 {
+        mask: url(#mask-6);
+      }
+
+      .cls-103 {
+        filter: url(#outer-glow-12);
+      }
+
+      .cls-13 {
+        fill: url(#GlassPanel-4);
+      }
+
+      .cls-104 {
+        mask: url(#mask-16);
+      }
+
+      .cls-43 {
+        fill: url(#linear-gradient-8);
+      }
+
+      .cls-105 {
+        filter: url(#outer-glow-17);
+      }
+
+      .cls-44 {
+        fill: url(#linear-gradient-24);
+      }
+
+      .cls-45 {
+        fill: url(#linear-gradient-26);
+      }
+
+      .cls-46 {
+        fill: url(#linear-gradient-18);
+      }
+
+      .cls-47 {
+        opacity: 0;
+      }
+
+      .cls-106 {
+        filter: url(#outer-glow-23);
+      }
+
+      .cls-107 {
+        filter: url(#outer-glow-45);
+      }
+
+      .cls-48 {
+        fill: url(#linear-gradient-30);
+      }
+
+      .cls-108 {
+        filter: url(#outer-glow-39);
+      }
+
+      .cls-109 {
+        filter: url(#luminosity-noclip);
+      }
+
+      .cls-65 {
+        filter: url(#outer-glow-7);
+      }
+
+      .cls-110 {
+        filter: url(#outer-glow-35);
+      }
+
+      .cls-111 {
+        mask: url(#mask-1);
+      }
+
+      .cls-112 {
+        mask: url(#mask);
+      }
+
+      .cls-113 {
+        filter: url(#outer-glow-48);
+      }
+
+      .cls-49 {
+        fill: url(#linear-gradient-29);
+      }
+
+      .cls-14 {
+        fill: url(#GlassPanel-7);
+      }
+
+      .cls-114 {
+        mask: url(#mask-7);
+      }
+
+      .cls-50 {
+        fill: url(#linear-gradient-28);
+      }
+
+      .cls-51 {
+        fill: url(#linear-gradient-10);
+      }
+
+      .cls-115 {
+        filter: url(#outer-glow-36);
+      }
+
+      .cls-52 {
+        fill: #18131f;
+      }
+
+      .cls-15 {
+        fill: url(#GlassPanel-10);
+      }
+
+      .cls-66 {
+        filter: url(#outer-glow-13);
+      }
+
+      .cls-53 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-16 {
+        fill: url(#GlassPanel-9);
+      }
+
+      .cls-116 {
+        filter: url(#outer-glow-11);
+      }
+
+      .cls-117 {
+        mask: url(#mask-14);
+      }
+
+      .cls-67 {
+        filter: url(#outer-glow-34);
+      }
+
+      .cls-118 {
+        mask: url(#mask-11);
+      }
+
+      .cls-119 {
+        filter: url(#outer-glow-26);
+      }
+
+      .cls-68 {
+        filter: url(#outer-glow-19);
+      }
+
+      .cls-120 {
+        filter: url(#outer-glow-6);
+      }
+
+      .cls-17 {
+        fill: url(#GlassPanel-5);
+      }
+
+      .cls-69 {
+        filter: url(#outer-glow-10);
+      }
+    </style>
+    <filter id="outer-glow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="4"/>
+      <feFlood flood-color="#b68bcc" flood-opacity=".75"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="luminosity-noclip" x="284.03" y="279.61" width="533.85" height="607.85" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="391.99" y1="150.56" x2="392.71" y2="491.26" gradientTransform="translate(155.19 98.94) scale(1.01 1.56)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#000"/>
+    </linearGradient>
+    <mask id="mask" x="284.03" y="279.61" width="533.85" height="607.85" maskUnits="userSpaceOnUse">
+      <g class="cls-109">
+        <rect class="cls-22" x="392.55" y="324.04" width="316.8" height="518.98" transform="translate(-217.95 353.65) rotate(-30)"/>
+      </g>
+    </mask>
+    <linearGradient id="linear-gradient-2" x1="495.67" y1="388.43" x2="495.67" y2="631.51" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff545d"/>
+      <stop offset="1" stop-color="#c42f4f"/>
+    </linearGradient>
+    <filter id="outer-glow-2" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-2" stdDeviation="3.24"/>
+      <feFlood flood-color="red" flood-opacity=".7"/>
+      <feComposite in2="blur-2" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-3" x1="555.66" y1="159.03" x2="555.66" y2="257.14" gradientTransform="translate(-42.22 372.12) scale(1 1.75)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <mask id="mask-1" x="421.92" y="638.37" width="183.03" height="196.29" maskUnits="userSpaceOnUse">
+      <rect class="cls-40" x="464.19" y="650.55" width="98.49" height="171.94" transform="translate(1369.92 1005.8) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-3" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-3" stdDeviation="1.22"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-3" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel" x1="496.15" y1="342.13" x2="496.15" y2="252.62" gradientTransform="translate(0 1011.84) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9d79b3"/>
+      <stop offset="1" stop-color="#5c5396"/>
+    </linearGradient>
+    <filter id="outer-glow-4" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-4" stdDeviation="1.15"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-4" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-5" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-5" stdDeviation=".61"/>
+      <feFlood flood-color="red" flood-opacity=".7"/>
+      <feComposite in2="blur-5" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-4" x1="496.15" y1="689.86" x2="496.15" y2="737.94" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-5" x1="630.64" y1="266.55" x2="630.64" y2="364.66" gradientTransform="translate(-291.7 80.35) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-2" x="247.43" y="535.03" width="183.03" height="196.29" maskUnits="userSpaceOnUse">
+      <rect class="cls-27" x="289.7" y="547.21" width="98.49" height="171.94" transform="translate(994.15 927.28) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-6" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-6" stdDeviation="1.22"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-6" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-2" data-name="GlassPanel" x1="321.65" y1="445.47" x2="321.65" y2="355.97" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-7" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-7" stdDeviation="1.15"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-7" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-8" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-8" stdDeviation=".61"/>
+      <feFlood flood-color="red" flood-opacity=".7"/>
+      <feComposite in2="blur-8" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-6" x1="321.65" y1="586.52" x2="321.65" y2="634.59" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-7" x1="507.24" y1="357.76" x2="507.24" y2="455.87" gradientTransform="translate(-168.3 -281.44) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-3" x="247.43" y="333.09" width="183.03" height="196.29" maskUnits="userSpaceOnUse">
+      <rect class="cls-39" x="289.7" y="345.27" width="98.49" height="171.94" transform="translate(870.76 565.49) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-9" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-9" stdDeviation="1.22"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-9" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-3" data-name="GlassPanel" x1="321.65" y1="647.41" x2="321.65" y2="557.9" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-10" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-10" stdDeviation="1.15"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-10" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-11" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-11" stdDeviation=".61"/>
+      <feFlood flood-color="red" flood-opacity=".7"/>
+      <feComposite in2="blur-11" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-8" x1="321.65" y1="384.59" x2="321.65" y2="432.66" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-9" x1="355.73" y1="145.46" x2="355.73" y2="243.57" gradientTransform="translate(330.51 292.57) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-4" x="594.72" y="535.03" width="183.03" height="196.29" maskUnits="userSpaceOnUse">
+      <rect class="cls-41" x="636.99" y="547.21" width="98.49" height="171.94" transform="translate(1616.36 715.06) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-12" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-12" stdDeviation="1.22"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-12" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-4" data-name="GlassPanel" x1="668.95" y1="445.47" x2="668.95" y2="355.97" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-13" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-13" stdDeviation="1.15"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-13" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-14" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-14" stdDeviation=".61"/>
+      <feFlood flood-color="red" flood-opacity=".7"/>
+      <feComposite in2="blur-14" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-10" x1="668.95" y1="586.52" x2="668.95" y2="634.59" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-11" x1="232.33" y1="236.67" x2="232.33" y2="334.78" gradientTransform="translate(453.91 -69.22) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-5" x="594.72" y="333.09" width="183.03" height="196.29" maskUnits="userSpaceOnUse">
+      <rect class="cls-26" x="636.99" y="345.27" width="98.49" height="171.94" transform="translate(1492.96 353.27) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-15" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-15" stdDeviation="1.22"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-15" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-5" data-name="GlassPanel" x1="668.95" y1="647.41" x2="668.95" y2="557.9" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-16" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-16" stdDeviation="1.15"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-16" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-17" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-17" stdDeviation=".61"/>
+      <feFlood flood-color="red" flood-opacity=".7"/>
+      <feComposite in2="blur-17" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-12" x1="668.95" y1="384.59" x2="668.95" y2="432.66" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-13" x1="310.63" y1="340.15" x2="310.63" y2="438.26" gradientTransform="translate(202.81 -346.3) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-6" x="421.92" y="237.38" width="183.03" height="196.29" maskUnits="userSpaceOnUse">
+      <rect class="cls-30" x="464.19" y="249.55" width="98.49" height="171.94" transform="translate(1124.89 287.38) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-18" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-18" stdDeviation="1.22"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-18" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-6" data-name="GlassPanel" x1="496.15" y1="743.13" x2="496.15" y2="653.62" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-19" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-19" stdDeviation="1.15"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-19" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-20" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-20" stdDeviation=".61"/>
+      <feFlood flood-color="red" flood-opacity=".7"/>
+      <feComposite in2="blur-20" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-14" x1="496.15" y1="288.87" x2="496.15" y2="336.94" xlink:href="#linear-gradient-2"/>
+    <linearGradient id="linear-gradient-15" x1="755.14" y1="176.03" x2="755.14" y2="272.07" gradientTransform="translate(-416.71 443.88) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-7" x="248.85" y="740.19" width="179.17" height="192.14" maskUnits="userSpaceOnUse">
+      <rect class="cls-25" x="290.23" y="752.1" width="96.41" height="168.31" transform="translate(1117.33 1291.43) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-21" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-21" stdDeviation="1.19"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-21" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-7" data-name="GlassPanel" x1="321.51" y1="240.98" x2="321.51" y2="153.36" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-22" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-22" stdDeviation="1.12"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-22" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-23" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-23" stdDeviation=".75"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-23" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-16" x1="321.51" y1="790.64" x2="321.51" y2="837.6" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f099ff"/>
+      <stop offset="1" stop-color="#605ee0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-17" x1="478.76" y1="54.29" x2="478.76" y2="150.33" gradientTransform="translate(208.81 657.22) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-8" x="597.99" y="740.19" width="179.17" height="192.14" maskUnits="userSpaceOnUse">
+      <rect class="cls-19" x="639.37" y="752.1" width="96.41" height="168.31" transform="translate(1742.85 1078.08) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-24" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-24" stdDeviation="1.19"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-24" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-8" data-name="GlassPanel" x1="670.65" y1="240.98" x2="670.65" y2="153.36" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-25" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-25" stdDeviation="1.12"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-25" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-26" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-26" stdDeviation=".75"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-26" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-18" x1="670.65" x2="670.65" xlink:href="#linear-gradient-16"/>
+    <linearGradient id="linear-gradient-19" x1="386.6" y1="448.45" x2="386.6" y2="544.48" gradientTransform="translate(-48.17 -636.64) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-9" x="248.85" y="137.08" width="179.17" height="192.14" maskUnits="userSpaceOnUse">
+      <rect class="cls-20" x="290.23" y="149" width="96.41" height="168.31" transform="translate(748.8 210.91) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-27" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-27" stdDeviation="1.19"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-27" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-9" data-name="GlassPanel" x1="321.51" y1="844.08" x2="321.51" y2="756.47" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-28" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-28" stdDeviation="1.12"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-28" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-29" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-29" stdDeviation=".75"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-29" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-20" y1="187.53" y2="234.49" xlink:href="#linear-gradient-16"/>
+    <linearGradient id="linear-gradient-21" x1="110.23" y1="326.71" x2="110.23" y2="422.75" gradientTransform="translate(577.34 -423.29) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-10" x="597.99" y="137.08" width="179.17" height="192.14" maskUnits="userSpaceOnUse">
+      <rect class="cls-23" x="639.37" y="149" width="96.41" height="168.31" transform="translate(1374.32 -2.43) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-30" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-30" stdDeviation="1.19"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-30" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-10" data-name="GlassPanel" x1="670.65" y1="844.08" x2="670.65" y2="756.47" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-31" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-31" stdDeviation="1.12"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-31" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-32" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-32" stdDeviation=".75"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-32" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-22" x1="670.65" y1="187.53" x2="670.65" y2="234.49" xlink:href="#linear-gradient-16"/>
+    <linearGradient id="linear-gradient-23" x1="829.84" y1="282.82" x2="829.84" y2="378.86" gradientTransform="translate(-664.9 154.23) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-11" x="75.35" y="637.69" width="179.17" height="192.14" maskUnits="userSpaceOnUse">
+      <rect class="cls-31" x="116.73" y="649.61" width="96.41" height="168.31" transform="translate(743.87 1213.82) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-33" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-33" stdDeviation="1.19"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-33" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-11" data-name="GlassPanel" x1="148.01" y1="343.47" x2="148.01" y2="255.86" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-34" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-34" stdDeviation="1.12"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-34" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-35" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-35" stdDeviation=".75"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-35" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-24" x1="148.01" y1="688.14" x2="148.01" y2="735.11" xlink:href="#linear-gradient-16"/>
+    <linearGradient id="linear-gradient-25" x1="706.14" y1="374.26" x2="706.14" y2="470.3" gradientTransform="translate(-541.2 -208.47) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-12" x="75.35" y="435.25" width="179.17" height="192.14" maskUnits="userSpaceOnUse">
+      <rect class="cls-32" x="116.73" y="447.16" width="96.41" height="168.31" transform="translate(620.17 851.11) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-36" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-36" stdDeviation="1.19"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-36" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-12" data-name="GlassPanel" x1="148.01" y1="545.92" x2="148.01" y2="458.3" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-37" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-37" stdDeviation="1.12"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-37" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-38" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-38" stdDeviation=".75"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-38" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-26" x1="148.01" y1="485.69" x2="148.01" y2="532.66" xlink:href="#linear-gradient-16"/>
+    <linearGradient id="linear-gradient-27" x1="585.02" y1="463.79" x2="585.02" y2="559.83" gradientTransform="translate(-420.08 -563.58) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-13" x="75.35" y="237.03" width="179.17" height="192.14" maskUnits="userSpaceOnUse">
+      <rect class="cls-42" x="116.73" y="248.95" width="96.41" height="168.31" transform="translate(499.05 496) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-39" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-39" stdDeviation="1.19"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-39" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-13" data-name="GlassPanel" x1="148.01" y1="744.13" x2="148.01" y2="656.52" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-40" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-40" stdDeviation="1.12"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-40" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-41" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-41" stdDeviation=".75"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-41" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-28" x1="148.01" y1="287.48" x2="148.01" y2="334.45" xlink:href="#linear-gradient-16"/>
+    <linearGradient id="linear-gradient-29" x1="279.22" y1="40.28" x2="279.22" y2="136.32" gradientTransform="translate(581.3 579.28) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-14" x="770.94" y="637.69" width="179.17" height="192.14" maskUnits="userSpaceOnUse">
+      <rect class="cls-49" x="812.32" y="649.61" width="96.41" height="168.31" transform="translate(1990.08 788.77) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-42" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-42" stdDeviation="1.19"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-42" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-14" data-name="GlassPanel" x1="843.6" y1="343.47" x2="843.6" y2="255.86" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-43" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-43" stdDeviation="1.12"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-43" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-44" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-44" stdDeviation=".75"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-44" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-30" x1="843.6" y1="688.14" x2="843.6" y2="735.11" xlink:href="#linear-gradient-16"/>
+    <linearGradient id="linear-gradient-31" x1="155.52" y1="131.73" x2="155.52" y2="227.76" gradientTransform="translate(705.01 216.58) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-15" x="770.94" y="435.25" width="179.17" height="192.14" maskUnits="userSpaceOnUse">
+      <rect class="cls-28" x="812.32" y="447.16" width="96.41" height="168.31" transform="translate(1866.37 426.07) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-45" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-45" stdDeviation="1.19"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-45" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-15" data-name="GlassPanel" x1="843.6" y1="545.92" x2="843.6" y2="458.3" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-46" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-46" stdDeviation="1.12"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-46" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-47" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-47" stdDeviation=".75"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-47" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-32" x1="843.6" y1="485.69" x2="843.6" y2="532.66" xlink:href="#linear-gradient-16"/>
+    <linearGradient id="linear-gradient-33" x1="34.4" y1="221.26" x2="34.4" y2="317.29" gradientTransform="translate(826.13 -138.54) scale(1 1.75)" xlink:href="#linear-gradient-3"/>
+    <mask id="mask-16" x="770.94" y="237.03" width="179.17" height="192.14" maskUnits="userSpaceOnUse">
+      <rect class="cls-21" x="812.32" y="248.95" width="96.41" height="168.31" transform="translate(1745.25 70.96) rotate(142.33)"/>
+    </mask>
+    <filter id="outer-glow-48" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-48" stdDeviation="1.19"/>
+      <feFlood flood-color="#8c29ff" flood-opacity="1"/>
+      <feComposite in2="blur-48" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="GlassPanel-16" data-name="GlassPanel" x1="843.6" y1="744.13" x2="843.6" y2="656.52" xlink:href="#GlassPanel"/>
+    <filter id="outer-glow-49" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-49" stdDeviation="1.12"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-49" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="outer-glow-50" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur-50" stdDeviation=".75"/>
+      <feFlood flood-color="#6636c6" flood-opacity=".5"/>
+      <feComposite in2="blur-50" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-34" x1="843.6" y1="287.48" x2="843.6" y2="334.45" xlink:href="#linear-gradient-16"/>
+  </defs>
+  <g id="Frame">
+    <rect class="cls-47" width="1008.15" height="1008.15"/>
+  </g>
+  <g id="Layer_3" data-name="Layer 3">
+    <g class="cls-80">
+      <line class="cls-7" x1="670.11" y1="558.72" x2="670.11" y2="548.83"/>
+      <line class="cls-7" x1="670.11" y1="523.29" x2="670.11" y2="484.98"/>
+      <line class="cls-7" x1="670.11" y1="472.21" x2="670.11" y2="462.31"/>
+      <line class="cls-7" x1="321.53" y1="558.88" x2="321.53" y2="548.98"/>
+      <line class="cls-7" x1="321.53" y1="523.44" x2="321.53" y2="485.13"/>
+      <line class="cls-7" x1="321.53" y1="472.36" x2="321.53" y2="462.47"/>
+      <line class="cls-7" x1="321.53" y1="760.17" x2="321.53" y2="750.28"/>
+      <line class="cls-7" x1="321.53" y1="724.74" x2="321.53" y2="686.43"/>
+      <line class="cls-7" x1="321.53" y1="673.66" x2="321.53" y2="663.76"/>
+      <line class="cls-7" x1="670.11" y1="760.17" x2="670.11" y2="750.28"/>
+      <line class="cls-7" x1="670.11" y1="724.74" x2="670.11" y2="686.43"/>
+      <line class="cls-7" x1="670.11" y1="673.66" x2="670.11" y2="663.76"/>
+      <line class="cls-7" x1="844.35" y1="659.49" x2="844.35" y2="649.59"/>
+      <line class="cls-7" x1="844.35" y1="624.05" x2="844.35" y2="585.74"/>
+      <line class="cls-7" x1="844.35" y1="572.97" x2="844.35" y2="563.08"/>
+      <line class="cls-7" x1="844.35" y1="458.48" x2="844.35" y2="448.59"/>
+      <line class="cls-7" x1="844.35" y1="423.05" x2="844.35" y2="384.73"/>
+      <line class="cls-7" x1="844.35" y1="371.96" x2="844.35" y2="362.07"/>
+      <line class="cls-7" x1="149.2" y1="458.69" x2="149.2" y2="448.79"/>
+      <line class="cls-7" x1="149.2" y1="423.25" x2="149.2" y2="384.94"/>
+      <line class="cls-7" x1="149.2" y1="372.17" x2="149.2" y2="362.28"/>
+      <line class="cls-7" x1="149.2" y1="659.49" x2="149.2" y2="649.59"/>
+      <line class="cls-7" x1="149.2" y1="624.05" x2="149.2" y2="585.74"/>
+      <line class="cls-7" x1="149.2" y1="572.97" x2="149.2" y2="563.08"/>
+      <line class="cls-7" x1="670.11" y1="358.55" x2="670.11" y2="348.66"/>
+      <line class="cls-7" x1="670.11" y1="323.11" x2="670.11" y2="284.8"/>
+      <line class="cls-7" x1="670.11" y1="272.03" x2="670.11" y2="262.14"/>
+      <line class="cls-7" x1="624.83" y1="384.55" x2="616.29" y2="379.54"/>
+      <line class="cls-7" x1="594.27" y1="366.6" x2="561.24" y2="347.2"/>
+      <line class="cls-7" x1="550.22" y1="340.73" x2="541.69" y2="335.72"/>
+      <line class="cls-7" x1="450.37" y1="285.09" x2="441.84" y2="280.08"/>
+      <line class="cls-7" x1="419.81" y1="267.15" x2="386.78" y2="247.75"/>
+      <line class="cls-7" x1="375.77" y1="241.28" x2="367.24" y2="236.27"/>
+      <line class="cls-7" x1="450.37" y1="688.18" x2="441.84" y2="683.17"/>
+      <line class="cls-7" x1="419.82" y1="670.23" x2="386.78" y2="650.83"/>
+      <line class="cls-7" x1="375.77" y1="644.36" x2="367.24" y2="639.35"/>
+      <line class="cls-7" x1="274.34" y1="384.48" x2="265.81" y2="379.47"/>
+      <line class="cls-7" x1="243.78" y1="366.54" x2="210.75" y2="347.14"/>
+      <line class="cls-7" x1="199.74" y1="340.67" x2="191.2" y2="335.66"/>
+      <line class="cls-7" x1="276.93" y1="585.55" x2="268.4" y2="580.54"/>
+      <line class="cls-7" x1="246.38" y1="567.6" x2="213.34" y2="548.2"/>
+      <line class="cls-7" x1="202.33" y1="541.73" x2="193.8" y2="536.72"/>
+      <line class="cls-7" x1="798.8" y1="687.18" x2="790.26" y2="682.17"/>
+      <line class="cls-7" x1="768.24" y1="669.23" x2="735.21" y2="649.83"/>
+      <line class="cls-7" x1="724.19" y1="643.36" x2="715.66" y2="638.35"/>
+      <line class="cls-7" x1="624.66" y1="787.29" x2="616.13" y2="782.28"/>
+      <line class="cls-7" x1="594.11" y1="769.35" x2="561.07" y2="749.94"/>
+      <line class="cls-7" x1="550.06" y1="743.48" x2="541.53" y2="738.47"/>
+      <line class="cls-7" x1="798.8" y1="284.31" x2="790.26" y2="279.3"/>
+      <line class="cls-7" x1="768.24" y1="266.37" x2="735.21" y2="246.97"/>
+      <line class="cls-7" x1="724.19" y1="240.5" x2="715.66" y2="235.49"/>
+      <line class="cls-7" x1="276.93" y1="788.28" x2="268.4" y2="783.27"/>
+      <line class="cls-7" x1="246.38" y1="770.34" x2="213.34" y2="750.94"/>
+      <line class="cls-7" x1="202.33" y1="744.47" x2="193.8" y2="739.46"/>
+      <line class="cls-7" x1="798.8" y1="484.72" x2="790.26" y2="479.71"/>
+      <line class="cls-7" x1="768.24" y1="466.78" x2="735.21" y2="447.38"/>
+      <line class="cls-7" x1="724.19" y1="440.91" x2="715.66" y2="435.9"/>
+      <line class="cls-7" x1="367.09" y1="384.3" x2="375.65" y2="379.34"/>
+      <line class="cls-7" x1="397.75" y1="366.54" x2="430.9" y2="347.33"/>
+      <line class="cls-7" x1="441.95" y1="340.93" x2="450.51" y2="335.97"/>
+      <line class="cls-7" x1="541.39" y1="685.65" x2="549.95" y2="680.69"/>
+      <line class="cls-7" x1="572.05" y1="667.89" x2="605.2" y2="648.69"/>
+      <line class="cls-7" x1="616.25" y1="642.29" x2="624.81" y2="637.33"/>
+      <line class="cls-7" x1="367.1" y1="788.34" x2="375.66" y2="783.38"/>
+      <line class="cls-7" x1="397.76" y1="770.58" x2="430.91" y2="751.37"/>
+      <line class="cls-7" x1="441.96" y1="744.97" x2="450.52" y2="740.02"/>
+      <line class="cls-7" x1="193.65" y1="685.67" x2="202.21" y2="680.71"/>
+      <line class="cls-7" x1="224.31" y1="667.91" x2="257.47" y2="648.71"/>
+      <line class="cls-7" x1="268.52" y1="642.31" x2="277.08" y2="637.35"/>
+      <line class="cls-7" x1="193.65" y1="484.92" x2="202.21" y2="479.96"/>
+      <line class="cls-7" x1="224.31" y1="467.16" x2="257.47" y2="447.96"/>
+      <line class="cls-7" x1="268.52" y1="441.56" x2="277.08" y2="436.6"/>
+      <line class="cls-7" x1="193.65" y1="283.84" x2="202.21" y2="278.88"/>
+      <line class="cls-7" x1="224.31" y1="266.08" x2="257.47" y2="246.88"/>
+      <line class="cls-7" x1="268.52" y1="240.48" x2="277.08" y2="235.52"/>
+      <line class="cls-7" x1="715.52" y1="788.04" x2="724.08" y2="783.08"/>
+      <line class="cls-7" x1="746.18" y1="770.28" x2="779.33" y2="751.08"/>
+      <line class="cls-7" x1="790.38" y1="744.68" x2="798.94" y2="739.72"/>
+      <line class="cls-7" x1="715.52" y1="583.24" x2="724.08" y2="578.28"/>
+      <line class="cls-7" x1="746.18" y1="565.48" x2="779.33" y2="546.27"/>
+      <line class="cls-7" x1="790.38" y1="539.87" x2="798.94" y2="534.91"/>
+      <line class="cls-7" x1="715.52" y1="385.3" x2="724.08" y2="380.34"/>
+      <line class="cls-7" x1="746.18" y1="367.54" x2="779.33" y2="348.33"/>
+      <line class="cls-7" x1="790.38" y1="341.93" x2="798.94" y2="336.98"/>
+      <line class="cls-7" x1="541.38" y1="284.84" x2="549.94" y2="279.89"/>
+      <line class="cls-7" x1="572.04" y1="267.08" x2="605.19" y2="247.88"/>
+      <line class="cls-7" x1="616.24" y1="241.48" x2="624.8" y2="236.52"/>
+      <line class="cls-7" x1="321.53" y1="358.55" x2="321.53" y2="348.66"/>
+      <line class="cls-7" x1="321.53" y1="323.11" x2="321.53" y2="284.8"/>
+      <line class="cls-7" x1="321.53" y1="272.03" x2="321.53" y2="262.14"/>
+    </g>
+    <g class="cls-112">
+      <path class="cls-38" d="M415.6,469.11c-13.97-17.19-20.36-54.27-20.37-70,15.38,18.25,40.99,37.6,53.18,42.47-1.8,6.46-9.39,18.94-19.01,25.07-5.08,3.24-9.72,4.07-13.8,2.47ZM561.93,465.27c5.08,3.24,9.72,4.07,13.8,2.47,13.97-17.19,20.36-54.27,20.38-70-15.38,18.25-40.99,37.6-53.18,42.47,1.8,6.46,9.39,18.94,19.01,25.07ZM588.5,522.3c-9.99,66.45-8.21,91.74-91.89,91.74s-82.72-25.28-93.42-87.06c-6.53-37.68-7.94-38.74,4.17-56.25.95,1.36,1.95,2.68,3.02,3.94.35.41.79.75,1.28.98,2.6,1.22,5.33,1.83,8.14,1.83,4.41,0,9.03-1.49,13.68-4.45,12.38-7.9,22.95-25.26,22.91-33.94,0-1.6-1.02-3.03-2.54-3.56-.96-.34-2.11-.78-3.41-1.32,14.01-6.6,29.65-10.31,46.16-10.31,15.56,0,30.34,3.28,43.72,9.17-1.06.43-2.02.8-2.84,1.08-1.52.53-2.53,1.96-2.54,3.56-.03,8.68,10.53,26.04,22.91,33.94,4.64,2.96,9.27,4.45,13.68,4.45,2.81,0,5.55-.61,8.14-1.83.49-.23.93-.57,1.28-.98,1.23-1.46,2.38-2.99,3.46-4.59,12.98,17.88,9.52,17.39,4.08,53.59ZM432.11,486.54s3.14.62,4.67,1.02c5.04,1.24,10.26,3.35,14.8,5.84,3.22,1.69,5.89,4.3,8.83,6.41-7.05,1.72-12.29,8.07-12.29,15.65,0,8.91,7.22,16.13,16.13,16.13s16.13-7.67,16.13-16.13-3.8-13.8-6.63-17.45c-3.57-4.95-8.84-8.5-14.57-10.5-7.92-3.43-25.29-5.09-25.29-5.09l-1.77,4.11ZM558.75,482.43s-17.59,1.68-25.61,5.15c-5.8,2.02-11.13,5.62-14.75,10.63-2.86,3.69-6.71,9.1-6.71,17.67,0,8.56,7.31,16.33,16.33,16.33,9.02,0,16.33-7.31,16.33-16.33,0-7.68-5.31-14.1-12.45-15.85,2.97-2.14,5.68-4.79,8.94-6.5,4.6-2.53,9.88-4.66,14.99-5.92,1.55-.41,4.73-1.03,4.73-1.03l-1.79-4.16ZM563.38,532.7s-13.22,10.86-66.4,10.86-69.32-10.86-69.32-10.86c0,0,14.16,60.9,69.32,60.9s66.4-60.9,66.4-60.9ZM452.78,545.01c-.24,3.55,2.48,15.36,8.69,23.13,1.56,1.95-.71-10.85,6.4-21.23,0,0-2.5-.28-7.55-.81-4.24-.44-7.54-1.09-7.54-1.09ZM530.72,546.1c-5.05.53-7.55.81-7.55.81,7.11,10.38,4.84,23.18,6.4,21.23,6.21-7.77,8.93-19.58,8.69-23.13,0,0-3.3.65-7.54,1.09ZM496.06,588.76c16.52,0,24.39-4.9,24.39-4.9,0,0-8.03-10.07-24.11-10.07s-24.67,10.07-24.67,10.07c0,0,7.87,4.9,24.39,4.9Z"/>
+    </g>
+    <g>
+      <g class="cls-111">
+        <g class="cls-71">
+          <g id="HexPlate">
+            <polygon class="cls-5" points="496.12 757.71 457.95 735.78 457.95 691.67 496.15 669.62 534.35 691.67 534.35 735.78 496.12 757.71"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX" class="cls-56">
+        <polygon class="cls-52" points="464.63 695.47 464.63 731.86 496.15 750.05 527.66 731.86 527.66 695.47 496.15 677.27 464.63 695.47"/>
+      </g>
+      <g id="DEX-2" data-name="DEX" class="cls-101">
+        <polygon class="cls-53" points="475.17 701.55 475.17 725.77 496.15 737.88 517.12 725.77 517.12 701.55 496.15 689.44 475.17 701.55"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-76">
+        <g class="cls-120">
+          <g id="HexPlate-2" data-name="HexPlate">
+            <polygon class="cls-8" points="321.62 654.37 283.45 632.44 283.45 588.33 321.65 566.27 359.85 588.33 359.85 632.44 321.62 654.37"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-3" data-name="DEX" class="cls-65">
+        <polygon class="cls-52" points="290.14 592.13 290.14 628.52 321.65 646.71 353.17 628.52 353.17 592.13 321.65 573.93 290.14 592.13"/>
+      </g>
+      <g id="DEX-4" data-name="DEX" class="cls-98">
+        <polygon class="cls-24" points="300.68 598.21 300.68 622.43 321.65 634.54 342.63 622.43 342.63 598.21 321.65 586.1 300.68 598.21"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-79">
+        <g class="cls-86">
+          <g id="HexPlate-3" data-name="HexPlate">
+            <polygon class="cls-4" points="321.62 452.43 283.45 430.5 283.45 386.39 321.65 364.34 359.85 386.39 359.85 430.5 321.62 452.43"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-5" data-name="DEX" class="cls-69">
+        <polygon class="cls-52" points="290.14 390.19 290.14 426.58 321.65 444.77 353.17 426.58 353.17 390.19 321.65 371.99 290.14 390.19"/>
+      </g>
+      <g id="DEX-6" data-name="DEX" class="cls-116">
+        <polygon class="cls-43" points="300.68 396.27 300.68 420.49 321.65 432.6 342.63 420.49 342.63 396.27 321.65 384.16 300.68 396.27"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-95">
+        <g class="cls-103">
+          <g id="HexPlate-4" data-name="HexPlate">
+            <polygon class="cls-13" points="668.92 654.37 630.75 632.44 630.75 588.33 668.95 566.27 707.15 588.33 707.15 632.44 668.92 654.37"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-7" data-name="DEX" class="cls-66">
+        <polygon class="cls-52" points="637.43 592.13 637.43 628.52 668.95 646.71 700.46 628.52 700.46 592.13 668.95 573.93 637.43 592.13"/>
+      </g>
+      <g id="DEX-8" data-name="DEX" class="cls-97">
+        <polygon class="cls-51" points="647.97 598.21 647.97 622.43 668.95 634.54 689.92 622.43 689.92 598.21 668.95 586.1 647.97 598.21"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-88">
+        <g class="cls-73">
+          <g id="HexPlate-5" data-name="HexPlate">
+            <polygon class="cls-17" points="668.92 452.43 630.75 430.5 630.75 386.39 668.95 364.34 707.15 386.39 707.15 430.5 668.92 452.43"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-9" data-name="DEX" class="cls-63">
+        <polygon class="cls-52" points="637.43 390.19 637.43 426.58 668.95 444.77 700.46 426.58 700.46 390.19 668.95 371.99 637.43 390.19"/>
+      </g>
+      <g id="DEX-10" data-name="DEX" class="cls-105">
+        <polygon class="cls-18" points="647.97 396.27 647.97 420.49 668.95 432.6 689.92 420.49 689.92 396.27 668.95 384.16 647.97 396.27"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-102">
+        <g class="cls-100">
+          <g id="HexPlate-6" data-name="HexPlate">
+            <polygon class="cls-9" points="496.12 356.71 457.95 334.78 457.95 290.67 496.15 268.62 534.35 290.67 534.35 334.78 496.12 356.71"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-11" data-name="DEX" class="cls-68">
+        <polygon class="cls-52" points="464.63 294.47 464.63 330.86 496.15 349.06 527.66 330.86 527.66 294.47 496.15 276.28 464.63 294.47"/>
+      </g>
+      <g id="DEX-12" data-name="DEX" class="cls-87">
+        <polygon class="cls-37" points="475.17 300.56 475.17 324.78 496.15 336.88 517.12 324.78 517.12 300.56 496.15 288.45 475.17 300.56"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-114">
+        <g class="cls-72">
+          <g id="HexPlate-7" data-name="HexPlate">
+            <polygon class="cls-14" points="321.48 857 284.11 835.54 284.11 792.36 321.51 770.77 358.9 792.36 358.9 835.54 321.48 857"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-13" data-name="DEX" class="cls-61">
+        <polygon class="cls-52" points="290.66 796.07 290.66 831.7 321.51 849.51 352.36 831.7 352.36 796.07 321.51 778.26 290.66 796.07"/>
+      </g>
+      <g id="DEX-14" data-name="DEX" class="cls-106">
+        <polygon class="cls-33" points="301.02 802.06 301.02 825.72 321.51 837.55 342 825.72 342 802.06 321.51 790.22 301.02 802.06"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-94">
+        <g class="cls-91">
+          <g id="HexPlate-8" data-name="HexPlate">
+            <polygon class="cls-6" points="670.62 857 633.26 835.54 633.26 792.36 670.65 770.77 708.04 792.36 708.04 835.54 670.62 857"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-15" data-name="DEX" class="cls-57">
+        <polygon class="cls-52" points="639.8 796.07 639.8 831.7 670.65 849.51 701.5 831.7 701.5 796.07 670.65 778.26 639.8 796.07"/>
+      </g>
+      <g id="DEX-16" data-name="DEX" class="cls-119">
+        <polygon class="cls-46" points="650.16 802.06 650.16 825.72 670.65 837.55 691.14 825.72 691.14 802.06 670.65 790.22 650.16 802.06"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-83">
+        <g class="cls-77">
+          <g id="HexPlate-9" data-name="HexPlate">
+            <polygon class="cls-16" points="321.48 253.9 284.11 232.43 284.11 189.25 321.51 167.66 358.9 189.25 358.9 232.43 321.48 253.9"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-17" data-name="DEX" class="cls-60">
+        <polygon class="cls-52" points="290.66 192.97 290.66 228.59 321.51 246.4 352.36 228.59 352.36 192.97 321.51 175.16 290.66 192.97"/>
+      </g>
+      <g id="DEX-18" data-name="DEX" class="cls-96">
+        <polygon class="cls-36" points="301.02 198.95 301.02 222.61 321.51 234.44 342 222.61 342 198.95 321.51 187.12 301.02 198.95"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-70">
+        <g class="cls-85">
+          <g id="HexPlate-10" data-name="HexPlate">
+            <polygon class="cls-15" points="670.62 253.9 633.26 232.43 633.26 189.25 670.65 167.66 708.04 189.25 708.04 232.43 670.62 253.9"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-19" data-name="DEX" class="cls-58">
+        <polygon class="cls-52" points="639.8 192.97 639.8 228.59 670.65 246.4 701.5 228.59 701.5 192.97 670.65 175.16 639.8 192.97"/>
+      </g>
+      <g id="DEX-20" data-name="DEX" class="cls-75">
+        <polygon class="cls-34" points="650.16 198.95 650.16 222.61 670.65 234.44 691.14 222.61 691.14 198.95 670.65 187.12 650.16 198.95"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-118">
+        <g class="cls-81">
+          <g id="HexPlate-11" data-name="HexPlate">
+            <polygon class="cls-1" points="147.99 754.51 110.62 733.04 110.62 689.86 148.01 668.27 185.41 689.86 185.41 733.04 147.99 754.51"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-21" data-name="DEX" class="cls-67">
+        <polygon class="cls-52" points="117.16 693.58 117.16 729.2 148.01 747.01 178.86 729.2 178.86 693.58 148.01 675.77 117.16 693.58"/>
+      </g>
+      <g id="DEX-22" data-name="DEX" class="cls-110">
+        <polygon class="cls-44" points="127.52 699.56 127.52 723.22 148.01 735.05 168.51 723.22 168.51 699.56 148.01 687.73 127.52 699.56"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-84">
+        <g class="cls-115">
+          <g id="HexPlate-12" data-name="HexPlate">
+            <polygon class="cls-2" points="147.99 552.06 110.62 530.59 110.62 487.42 148.01 465.83 185.41 487.42 185.41 530.59 147.99 552.06"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-23" data-name="DEX" class="cls-55">
+        <polygon class="cls-52" points="117.16 491.13 117.16 526.76 148.01 544.57 178.86 526.76 178.86 491.13 148.01 473.32 117.16 491.13"/>
+      </g>
+      <g id="DEX-24" data-name="DEX" class="cls-89">
+        <polygon class="cls-45" points="127.52 497.11 127.52 520.78 148.01 532.61 168.51 520.78 168.51 497.11 148.01 485.28 127.52 497.11"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-78">
+        <g class="cls-108">
+          <g id="HexPlate-13" data-name="HexPlate">
+            <polygon class="cls-11" points="147.99 353.85 110.62 332.38 110.62 289.2 148.01 267.62 185.41 289.2 185.41 332.38 147.99 353.85"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-25" data-name="DEX" class="cls-54">
+        <polygon class="cls-52" points="117.16 292.92 117.16 328.54 148.01 346.36 178.86 328.54 178.86 292.92 148.01 275.11 117.16 292.92"/>
+      </g>
+      <g id="DEX-26" data-name="DEX" class="cls-92">
+        <polygon class="cls-50" points="127.52 298.9 127.52 322.56 148.01 334.39 168.51 322.56 168.51 298.9 148.01 287.07 127.52 298.9"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-117">
+        <g class="cls-82">
+          <g id="HexPlate-14" data-name="HexPlate">
+            <polygon class="cls-12" points="843.57 754.51 806.21 733.04 806.21 689.86 843.6 668.27 881 689.86 881 733.04 843.57 754.51"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-27" data-name="DEX" class="cls-62">
+        <polygon class="cls-52" points="812.75 693.58 812.75 729.2 843.6 747.01 874.45 729.2 874.45 693.58 843.6 675.77 812.75 693.58"/>
+      </g>
+      <g id="DEX-28" data-name="DEX" class="cls-74">
+        <polygon class="cls-48" points="823.11 699.56 823.11 723.22 843.6 735.05 864.09 723.22 864.09 699.56 843.6 687.73 823.11 699.56"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-99">
+        <g class="cls-107">
+          <g id="HexPlate-15" data-name="HexPlate">
+            <polygon class="cls-10" points="843.57 552.06 806.21 530.59 806.21 487.42 843.6 465.83 881 487.42 881 530.59 843.57 552.06"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-29" data-name="DEX" class="cls-64">
+        <polygon class="cls-52" points="812.75 491.13 812.75 526.76 843.6 544.57 874.45 526.76 874.45 491.13 843.6 473.32 812.75 491.13"/>
+      </g>
+      <g id="DEX-30" data-name="DEX" class="cls-93">
+        <polygon class="cls-35" points="823.11 497.11 823.11 520.78 843.6 532.61 864.09 520.78 864.09 497.11 843.6 485.28 823.11 497.11"/>
+      </g>
+    </g>
+    <g>
+      <g class="cls-104">
+        <g class="cls-113">
+          <g id="HexPlate-16" data-name="HexPlate">
+            <polygon class="cls-3" points="843.57 353.85 806.21 332.38 806.21 289.2 843.6 267.62 881 289.2 881 332.38 843.57 353.85"/>
+          </g>
+        </g>
+      </g>
+      <g id="DEX-31" data-name="DEX" class="cls-59">
+        <polygon class="cls-52" points="812.75 292.92 812.75 328.54 843.6 346.36 874.45 328.54 874.45 292.92 843.6 275.11 812.75 292.92"/>
+      </g>
+      <g id="DEX-32" data-name="DEX" class="cls-90">
+        <polygon class="cls-29" points="823.11 298.9 823.11 322.56 843.6 334.39 864.09 322.56 864.09 298.9 843.6 287.07 823.11 298.9"/>
+      </g>
+    </g>
+  </g>
+</svg>

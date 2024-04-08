@@ -22,7 +22,7 @@ import {
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
 import { useEffect } from 'react'
-import { Mixpanel, scrollTop } from 'utils'
+import { Mixpanel, scrollDown, scrollTop } from 'utils'
 import OpenLesson from 'components/OpenLesson'
 import LanguageSwitch from 'components/LanguageSwitch'
 
@@ -36,8 +36,18 @@ const StyledBox = styled(Box)`
   width: -moz-available;
 `
 
-const closeLesson = (openedLesson: string, lesson: LessonType): string => {
+const closeLesson = (
+  openedLesson: string,
+  lesson: LessonType,
+  Quest
+): string => {
   const openedLessonArray = JSON.parse(openedLesson)
+  if (
+    Quest?.isQuestCompleted &&
+    lesson?.badgeId &&
+    !(localStorage.getItem(`isBadgeMinted-${lesson.badgeId}`) === 'true')
+  )
+    scrollDown()
   return JSON.stringify(
     [...openedLessonArray, lesson.slug].filter((value) => value !== lesson.slug)
   )
@@ -67,6 +77,8 @@ const LessonDetail = ({
 
   const [, isSmallScreen] = useSmallScreen()
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
+  const [refreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
+  const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
 
   const [openLessonLS, setOpenLessonLS] = useLocalStorage(
     `lessonOpen`,
@@ -79,8 +91,12 @@ const LessonDetail = ({
       language: i18n.language,
     })
     scrollTop()
-    setOpenLessonLS(closeLesson(openLessonLS, lesson))
+    setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest))
   }, [])
+
+  useEffect((): void => {
+    if (refreshDatadiskLS) scrollDown()
+  }, [refreshDatadiskLS])
 
   const isQuizComplete = quizComplete(lesson)
 
@@ -104,7 +120,9 @@ const LessonDetail = ({
         <Lesson
           lesson={lesson}
           extraKeywords={extraKeywords}
-          closeLesson={() => setOpenLessonLS(closeLesson(openLessonLS, lesson))}
+          closeLesson={() =>
+            setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest))
+          }
           Quest={Quest}
         />
       ) : (
@@ -256,7 +274,16 @@ const LessonDetail = ({
                   </>
                 )}
               {!IS_WALLET_DISABLED && (
-                <>
+                <Box
+                  minH={
+                    isSmallScreen &&
+                    Quest?.isQuestCompleted &&
+                    badgesMintedLS?.length === 0
+                      ? // HACK: make mobile height bigger to show popover under button
+                        '570px'
+                      : 'unset'
+                  }
+                >
                   {lesson.badgeId && (
                     <>
                       <Box pb="8">
@@ -283,7 +310,7 @@ const LessonDetail = ({
                   {lesson.hasCollectible ? (
                     <CollectLessonButton lesson={lesson} />
                   ) : null}
-                </>
+                </Box>
               )}
             </Box>
           </StyledCard>

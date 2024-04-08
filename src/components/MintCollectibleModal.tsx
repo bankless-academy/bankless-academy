@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import { useEffect, useState } from 'react'
 import {
   Modal,
   ModalOverlay,
@@ -9,21 +10,37 @@ import {
   useMediaQuery,
   Box,
   Image,
-  // NumberInput,
-  // NumberInputField,
-  // NumberDecrementStepper,
-  // NumberIncrementStepper,
-  // NumberInputStepper,
-  // Button,
-  // Divider,
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  Button,
+  Divider,
+  NumberDecrementStepper,
+  useToast,
+  ModalFooter,
 } from '@chakra-ui/react'
-import { Lock } from '@phosphor-icons/react'
+import { switchNetwork } from '@wagmi/core'
+import { optimism } from 'wagmi/chains'
+import {
+  usePrepareContractWrite,
+  useContractWrite,
+  useWaitForTransaction,
+  useAccount,
+  useNetwork,
+} from 'wagmi'
 import { useTranslation } from 'react-i18next'
+import { parseEther } from 'viem'
+import { Gear, SealCheck } from '@phosphor-icons/react'
+import { useWeb3Modal } from '@web3modal/wagmi/react'
 
 import { LessonType } from 'entities/lesson'
 import Collectible from 'components/Collectible'
 import { useLocalStorage } from 'usehooks-ts'
-// import Collectible from 'components/Collectible'
+import ExternalLink from 'components/ExternalLink'
+import { useSmallScreen } from 'hooks/index'
+import { NB_DATADISK_MAX } from 'constants/index'
+import Confetti from 'components/Confetti'
 
 const MintCollectibleModal = ({
   isOpen,
@@ -37,60 +54,188 @@ const MintCollectibleModal = ({
   numberOfOwners: number
 }): React.ReactElement => {
   const { t } = useTranslation()
-  const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
-  const [isBadgeMintedLS] = useLocalStorage(
-    `isBadgeMinted-${lesson.badgeId}`,
-    false
+  const { open } = useWeb3Modal()
+  const { address } = useAccount()
+  const { chain } = useNetwork()
+  const [isSmallScreen] = useSmallScreen()
+  const toast = useToast()
+  const [isMinting, setIsMinting] = useState(false)
+  const [nbDatadiskMintedLS] = useLocalStorage(
+    `nbDatadiskMinted-${lesson.lessonCollectibleTokenAddress}`,
+    0
   )
+  const [nbMint, setNbMint] = useState(1)
+  const [nextId, setNextId] = useState(null)
+  const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
+  const [mintingError, setMintingError] = useState('')
+  const [, setRefreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
   const remaining = 100 - numberOfOwners
-  console.log(remaining)
+  const [showConfetti, setShowConfetti] = useState(false)
+
+  const { config } = usePrepareContractWrite({
+    address: '0xFafd47bb399d570b5AC95694c5D2a1fb5EA030bB',
+    abi: [
+      {
+        inputs: [
+          { internalType: 'uint256', name: 'vectorId', type: 'uint256' },
+          { internalType: 'uint48', name: 'numTokensToMint', type: 'uint48' },
+          { internalType: 'address', name: 'mintRecipient', type: 'address' },
+        ],
+        name: 'vectorMint721',
+        outputs: [],
+        stateMutability: 'payable',
+        type: 'function',
+      },
+    ],
+    functionName: 'vectorMint721',
+    args: [lesson.datadiskVectorMint, nbMint, address],
+    chainId: optimism.id,
+    // 0.003 + 0.0008 in collector fee
+    value: parseEther(`${0.0308 * nbMint}`),
+    overrides: {
+      gasLimit: 150000n,
+    },
+    onError(error) {
+      console.error('Error', error)
+      setMintingError(error.message?.split('\n')[0])
+    },
+    onSuccess() {
+      setMintingError('')
+    },
+  })
+  const { data, write } = useContractWrite(config)
+
+  const { isLoading, isSuccess } = useWaitForTransaction({
+    hash:
+      // DEV: simulate tx
+      // '0xbbac72d366946360a3e67f34f974f7d3867bb958cec8a56a7386d64349e0b3a0' ||
+      data?.hash,
+  })
+
+  useEffect(() => {
+    // HACK: guess tokenId
+    setNextId(1 + 100 - remaining)
+  }, [])
+
+  useEffect(() => {
+    if (isLoading && data?.hash) {
+      toast.closeAll()
+      const txLink = `https://optimistic.etherscan.io/tx/${data?.hash}`
+      toast({
+        description: (
+          <>
+            <Box>
+              <Box display="flex">
+                <Box mr="4">
+                  <Gear width="40px" height="auto" />
+                </Box>
+                <Box flexDirection="column">
+                  <Box>{t('Minting in progress:')}</Box>
+                  <ExternalLink
+                    underline="true"
+                    href={txLink}
+                    alt="Etherscan transaction link"
+                  >
+                    {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
+                  </ExternalLink>
+                </Box>
+              </Box>
+            </Box>
+          </>
+        ),
+        status: 'warning',
+        duration: null,
+        isClosable: true,
+      })
+    }
+  }, [isLoading])
+
+  useEffect(() => {
+    if (isSuccess) {
+      toast.closeAll()
+      setShowConfetti(true)
+      const txLink = `https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${nextId}`
+      setRefreshDatadiskLS(true)
+      toast({
+        description: (
+          <>
+            <Box>
+              <Box display="flex">
+                <Box mr="4">
+                  <SealCheck width="40px" height="auto" />
+                </Box>
+                <Box flexDirection="column">
+                  <Box>{t('DataDisk minted:')}</Box>
+                  <ExternalLink
+                    underline="true"
+                    href={txLink}
+                    alt="OpenSea Link"
+                  >
+                    {`${txLink.substring(0, 50)}...`}
+                  </ExternalLink>
+                </Box>
+              </Box>
+            </Box>
+          </>
+        ),
+        status: 'success',
+        duration: 10000,
+        isClosable: true,
+      })
+    }
+  }, [isSuccess])
+
   // TODO: TRANSLATE
   return (
-    <Modal
-      onClose={onClose}
-      size={isMobileScreen ? 'full' : 'md'}
-      isCentered
-      isOpen={isOpen}
-    >
-      <ModalOverlay backdropFilter="blur(10px)" />
-      <ModalContent
-        bg="linear-gradient(180deg, #a379bd82 0%, #5a519882 100%)"
-        border={isMobileScreen ? '0' : '2px solid #B68BCC'}
-        borderRadius={isMobileScreen ? '0' : '3xl'}
-        backdropFilter="blur(10px)"
-        overflowY="auto"
-        maxH="var(--chakra-vh)"
+    <>
+      <Modal
+        onClose={onClose}
+        size={isMobileScreen ? 'full' : 'md'}
+        isCentered
+        isOpen={isOpen}
       >
-        <ModalHeader>
-          {t('Collect DataDisk')}
-          <Box mt="4" fontSize="md" fontWeight="normal">
-            Bankless Academy is issuing a small quantity of collectible DataDisk
-            devices in an evolving effort to share Bankless Academy content with
-            the deeper reaches of blockspace. Collect yours to{' '}
-            <b>become a Guardian of Bankless Academy</b>, and retroactively fund
-            education public goods!
-          </Box>
-        </ModalHeader>
-        <ModalCloseButton />
-        <ModalBody padding={isMobileScreen ? '0' : 'default'}>
-          {/* TODO: switch network */}
-          <Box position="relative" h="8px">
-            <Image
-              src="/images/minted-on-OP.png"
-              w="160px"
-              position="absolute"
-              top="-4px"
-              right="10px"
-            />
-          </Box>
-          <Box
-            mb={isBadgeMintedLS ? '-25px' : '0px'}
-            opacity={isBadgeMintedLS ? '1' : '0.6'}
-          >
-            <Collectible lesson={lesson} />
-          </Box>
-          <Box w="90%" m="auto">
-            {isBadgeMintedLS ? null : (
+        <ModalOverlay backdropFilter="blur(10px)" />
+        <ModalContent
+          bg="linear-gradient(180deg, #a379bd82 0%, #5a519882 100%)"
+          border={isMobileScreen ? '0' : '2px solid #B68BCC'}
+          borderRadius={isMobileScreen ? '0' : '3xl'}
+          backdropFilter="blur(10px)"
+          overflowY="auto"
+          maxH="var(--chakra-vh)"
+        >
+          <ModalHeader>
+            {t('Collect DataDisk')}
+            <Box mt="4" fontSize="md" fontWeight="normal">
+              Bankless Academy is issuing a small quantity of collectible
+              DataDisk devices in an evolving effort to share educational
+              content with the deeper reaches of blockspace.
+              <Box mt="2">
+                Collect yours to become a Guardian of Bankless Academy{' '}
+                <b>and retroactively fund this lesson!</b>
+              </Box>
+            </Box>
+          </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody padding={isMobileScreen ? '0' : 'default'} pb="0">
+            {/* TODO: switch network */}
+            <Box position="relative" h="8px">
+              <Image
+                src="/images/minted-on-OP.png"
+                w="160px"
+                position="absolute"
+                top="-4px"
+                right="10px"
+              />
+            </Box>
+            <Box
+              // mb={nbDatadiskMintedLS > 0 ? '-25px' : '0px'}
+              mb={'-25px'}
+              // opacity={nbDatadiskMintedLS > 0 ? '1' : '0.5'}
+            >
+              <Collectible lesson={lesson} />
+            </Box>
+            <Box w="90%" m="auto">
+              {/* {isBadgeMintedLS ? null : (
               <Box
                 display="flex"
                 w="100%"
@@ -105,82 +250,152 @@ const MintCollectibleModal = ({
                 <Lock />
                 <Box ml="1">{t('Claim your lesson badge to unlock')}</Box>
               </Box>
-            )}
-            {/* <Box
-              display="flex"
-              pt="4"
-              w="100%"
-              justifyContent="space-between"
-              alignItems="center"
-            >
-              <Box>
-                <Box display="flex" alignItems="baseline">
-                  <Box fontSize="2xl" fontWeight="bold">
-                    0.03
+            )} */}
+              <Box
+                display="flex"
+                pt="4"
+                w="100%"
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                <Box>
+                  <Box display="flex" alignItems="baseline">
+                    <Box fontSize="2xl" fontWeight="bold">
+                      {0.03 * nbMint}
+                    </Box>
+                    <Box fontSize="lg" ml="1">
+                      ETH
+                    </Box>
                   </Box>
-                  <Box fontSize="lg" ml="1">
-                    ETH
-                  </Box>
+                  {/* TODO: make it dynamic */}
+                  <Box fontSize="xs">+ {0.0008 * nbMint} ETH mint fee</Box>
                 </Box>
-                <Box fontSize="xs">+ 0.0008 ETH mint fee</Box>
+                <Box w="80px">
+                  <NumberInput
+                    defaultValue={nbMint}
+                    isDisabled={NB_DATADISK_MAX - nbDatadiskMintedLS < 1}
+                    max={NB_DATADISK_MAX - nbDatadiskMintedLS}
+                    min={1}
+                    onChange={(newValue) => {
+                      setNbMint(parseInt(newValue))
+                    }}
+                  >
+                    <NumberInputField />
+                    <NumberInputStepper>
+                      <NumberIncrementStepper />
+                      <NumberDecrementStepper />
+                    </NumberInputStepper>
+                  </NumberInput>
+                </Box>
               </Box>
-              <Box w="80px">
-                <NumberInput defaultValue={1} max={2} min={1}>
-                  <NumberInputField />
-                  <NumberInputStepper>
-                    <NumberIncrementStepper />
-                    <NumberDecrementStepper />
-                  </NumberInputStepper>
-                </NumberInput>
+              <Box textAlign="center" pt="4">
+                <Button
+                  size="lg"
+                  variant="primaryWhite"
+                  isDisabled={NB_DATADISK_MAX - nbDatadiskMintedLS < 1}
+                  onClick={async () => {
+                    try {
+                      if (!address) {
+                        onClose()
+                        await open({ view: 'Connect' })
+                      } else if (chain.id !== optimism.id) {
+                        try {
+                          await switchNetwork({ chainId: optimism.id })
+                        } catch (error) {
+                          console.error(error)
+                        }
+                        setIsMinting(false)
+                        toast({
+                          title: t('You were previously on the wrong network.'),
+                          description: (
+                            <>
+                              <Box>
+                                {t('Refresh the page before trying again.')}
+                              </Box>
+                            </>
+                          ),
+                          status: 'error',
+                          duration: null,
+                          isClosable: true,
+                        })
+                      } else if (!isMinting) {
+                        setIsMinting(true)
+                        setTimeout(() => {
+                          setIsMinting(false)
+                        }, 3000)
+                        if (mintingError !== '') {
+                          toast({
+                            title: t('⚠️ Problem while minting:'),
+                            description: (
+                              <>
+                                <Box>
+                                  {mintingError?.includes('exceeds the balance')
+                                    ? 'The total cost including gas fee exceeds your balance of ETH on Optimism.'
+                                    : mintingError}
+                                </Box>
+                                <Box>
+                                  {t('Refresh the page before trying again.')}
+                                </Box>
+                              </>
+                            ),
+                            status: 'error',
+                            duration: null,
+                            isClosable: true,
+                          })
+                        } else write?.()
+                      }
+                    } catch (error) {
+                      console.error(error)
+                    }
+                  }}
+                >
+                  {!address ? 'Connect Wallet' : 'Mint DataDisk'}
+                </Button>
               </Box>
-            </Box>
-            <Box textAlign="center" pt="4">
-              <Button size="lg" variant="primaryWhite">
-                Mint DataDisk
-              </Button>
-            </Box>
-            <Box fontSize="md" pt="4">
-              * 2 mints allowed per wallet
-            </Box>
-            <Divider my="4" />
-            <Box justifyContent="space-between" display="flex" fontSize="sm">
-              <Box>{numberOfOwners} minted</Box>
-              <Box>{remaining} remaining</Box>
-            </Box>
-            <Box
-              borderRadius="6px"
-              h="6px"
-              w="100%"
-              background="#282827"
-              mt="2"
-              mb="4"
-            >
+              <Box fontSize="md" pt="4">
+                {`* ${NB_DATADISK_MAX} mints allowed per wallet`}
+              </Box>
+              <Divider my="4" />
+              <Box justifyContent="space-between" display="flex" fontSize="sm">
+                <Box>{numberOfOwners} minted</Box>
+                <Box>{remaining} remaining</Box>
+              </Box>
               <Box
                 borderRadius="6px"
-                background="white"
-                h="100%"
-                w={`${numberOfOwners}%`}
-              ></Box>
-            </Box> */}
-          </Box>
-          {lesson.lessonCollectibleMintID && (
-            <iframe
-              src={`/mint.html?collection=${lesson.lessonCollectibleMintID}${
-                isMobileScreen ? `&mobile=true` : ''
-              }`}
-              frameBorder="0"
-              style={{
-                width: isMobileScreen ? '100%' : '400px',
-                height: isMobileScreen ? '378px' : '370px',
-                margin: 'auto',
-                colorScheme: 'none',
-                overflow: 'hidden',
-              }}
-            ></iframe>
-          )}
-        </ModalBody>
-      </ModalContent>
-    </Modal>
+                h="6px"
+                w="100%"
+                background="#282827"
+                mt="2"
+                mb="2"
+              >
+                <Box
+                  borderRadius="6px"
+                  background="white"
+                  h="100%"
+                  w={`${numberOfOwners}%`}
+                ></Box>
+              </Box>
+            </Box>
+          </ModalBody>
+          <ModalFooter>
+            <ExternalLink
+              underline="true"
+              href={`/report-an-issue?context=datadisk-minting_${window?.location.pathname}`}
+              alt={t('Report an Issue')}
+            >
+              {t('Help')}
+            </ExternalLink>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+      <Confetti
+        showConfetti={showConfetti}
+        onConfettiComplete={() => {
+          setShowConfetti(false)
+          onClose()
+        }}
+      />
+    </>
   )
 }
 

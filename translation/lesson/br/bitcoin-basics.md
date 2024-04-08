@@ -49,7 +49,7 @@ A realidade é que, hoje em dia, não temos o controle do nosso dinheiro da form
 
 Está na hora de aprender como o Bitcoin está revolucionando as finanças.
 
-**Está na hora de repensar o dinheiro.**
+**Está na hora de repensar dinheiro.**
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
 
@@ -57,7 +57,7 @@ Está na hora de aprender como o Bitcoin está revolucionando as finanças.
 
 O dinheiro tem sido uma parte integral da sociedade desde o início, quando miçangas, conchas e pedras eram usadas para comprar bens e serviços.
 
-No entanto, as primeiras moedas tinham um problema: era muito fácil alguém encontrar/criar dinheiro novo. Quanto mais de algo existir, menos valor tem, e assim o dinheiro de todos lentamente passaria a ser menos valioso. Para que a moeda mantivesse seu valor, ela precisava ser mais difícil de encontrar.
+No entanto, as primeiras moedas tinham um problema: era muito fácil para alguém encontrar/criar dinheiro novo. Quanto mais de algo existir, menos valor tem, e assim o dinheiro de todos lentamente passaria a ser menos valioso. Para que a moeda mantivesse seu valor, ela precisava ser mais difícil de encontrar.
 
 Materiais como ouro e prata acabaram sendo adotados para resolver esse problema. A principal vantagem desses materiais era sua escassez: não havia um suprimento infinito, o que dificultava o aumento significativo da quantidade de dinheiro em circulação. Essa `escassez` ajudou a manter o valor do dinheiro.
 
@@ -98,7 +98,7 @@ Os `bancos centrais`, que administram a `política monetária` de um país, pode
 
 Os `bancos comerciais`, aqueles usados para poupança e gastos diários, também influenciam nossos hábitos de consumo. Como `custodiante`, eles podem bloquear transações ou confiscar nossos fundos. Alguns bancos impediram seus clientes de comprar criptomoedas! **Se seu banco pode congelar suas economias a qualquer momento… você é realmente dono de seu dinheiro?** 💸
 
----
+***
 
 Para que o dinheiro volte a apoiar a liberdade financeira, ele precisa recuperar as duas principais propriedades que perdeu ao longo do tempo:
 
@@ -114,7 +114,7 @@ Apenas essas qualidades podem restaurar nossa capacidade de economizar e gastar 
 Entra o Bitcoin (BTC): uma moeda digital que opera além do sistema bancário tradicional.
 
 - ⛓️ É `peer-to-peer`: Conecta as pessoas diretamente umas às outras. Automatizado usando a `tecnologia blockchain`, ele elimina a necessidade de instituições para facilitar o armazenamento ou transações. Os defensores o chamam de "um conjunto de regras sem governantes".
-- 💎 É `escasso`: Sem nenhum banco central emitindo dinheiro novo e ilimitado, o Bitcoin possui uma política monetária estável e previsível que valoriza a poupança a longo prazo.
+- 💎 É "escasso": Sem nenhum banco central emitindo dinheiro novo e ilimitado, o Bitcoin possui uma política monetária estável e previsível que valoriza a poupança a longo prazo.
 - ✊ É `auto-custodial`: Pode ser mantido sem instituições hospedando transferências ou armazenamento. Quando armazenado em seu estado natural, o Bitcoin é mantido em um cofre online seguro a que apenas o proprietário tem acesso.
 
 Graças a essas qualidades, o Bitcoin ganhou o apelido de "ouro digital".
@@ -125,7 +125,7 @@ Graças a essas qualidades, o Bitcoin ganhou o apelido de "ouro digital".
 
 📉 Você acha difícil acompanhar o aumento dos custos?
 
----
+***
 
 A escassez no Bitcoin se refere ao fato de haver um limite para o número de Bitcoins que podem existir: um máximo de 21 milhões. Esse `suprimento máximo` está incorporado em seu código, tornando o Bitcoin raro e potencialmente valioso. Isso o coloca em uma boa posição como uma reserva de valor a longo prazo, assim como o ouro.
 
@@ -153,7 +153,7 @@ Como o Bitcoin promove a preservação do valor a longo prazo?
 
 🧊 Seu banco já congelou seus fundos sem aviso prévio porque você fez uma transferência que eles não gostaram?
 
----
+***
 
 Nas democracias, a propriedade é um direito humano protegido porque dá aos cidadãos maior controle e liberdade sobre suas vidas. Não podemos agir livremente quando nossos meios de sobrevivência estão condicionados, julgados por empresas ou instituições.
 
@@ -181,17 +181,17 @@ Como a auto-custódia possibilita a verdadeira propriedade?
 
 ⌛ Você já teve que esperar vários dias úteis para enviar dinheiro internacionalmente, pagando taxas de 3-5%?
 
----
+***
 
 O e-mail simplificou o envio de cartas ao eliminar a necessidade de uma agência de correios. Da mesma forma, o Bitcoin simplificou o envio de dinheiro ao eliminar a necessidade de bancos.
 
-- ⚡ Transfira Bitcoin globalmente por uma taxa razoável.
+- ⚡ Transfira Bitcoin globalmente para uma taxa razoável.
 - ⚙️ Envie dinheiro 24/7. Sem esperar, sem papelada, sem tempo de inatividade.
 - 📡 Acesse o Bitcoin de qualquer lugar com uma conexão à internet.
 
-Da mesma forma que você tem um endereço de e-mail, é necessário ter um endereço único de Bitcoin para receber Bitcoin. Geralmente, ele se parece com isto: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa (mais tarde mostraremos como personalizá-lo!)
+Da mesma forma que você tem um endereço de e-mail, é necessário ter um endereço único de Bitcoin para receber Bitcoin. Por padrão, ele se parece com isto: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa (mais tarde mostraremos como personalizá-lo!)
 
-Você gerenciará sua conta usando um software de `carteira de criptomoedas` conectado ao seu navegador da web ou ao seu telefone. É a "conta bancária" mais fácil de abrir. Sem precisar de agendamento ou identificação!
+Você gerenciará sua conta usando software de `carteira de criptomoedas` conectado ao seu navegador da web ou ao seu telefone. É a "conta bancária" mais fácil de abrir. Sem precisar de agendamento ou identificação!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
@@ -221,7 +221,7 @@ Vamos mudar de assunto e analisar o mecanismo por trás do Bitcoin: **A Rede Bit
 
 O Bitcoin é executado em uma rede compartilhada hospedada em milhares de computadores em todo o mundo. Cada computador da rede desempenha uma função na manutenção de suas operações; a rede existe por meio desses computadores! Se um computador processar uma transação fraudulenta, os outros estarão lá para corrigi-la.
 
-Isso também significa que não há um único ponto para aplicar pressão em tentativas de hacks. Para controlar a rede, seria necessário comprometer a maioria dos computadores.
+Isso também significa que não há um único ponto para aplicar pressão em tentativas de hacks. Para controlar a rede seja, seria necessário comprometer a maioria dos computadores.
 
 Essa estratégia de defesa é chamada de `descentralização`: a transferência do controle de um grupo central para muitos outros menores. É isso que torna as redes de criptomoedas praticamente imparáveis.
 
@@ -288,7 +288,7 @@ Como a mineração protege a Rede Bitcoin contra fraudes?
 
 Nesta lição, vimos como a escassez do Bitcoin ajuda a reter seu valor e como a gestão institucional de nossos ativos significa abrir mão da propriedade total.
 
-No entanto, o Bitcoin evoluiu para além de uma simples ferramenta monetária. Ele se tornou um catalisador para uma revolução do `dinheiro descentralizado`. Esse movimento reimagina o sistema financeiro tradicional, distribuindo o poder e o controle monetário para aqueles que o utilizam.
+No entanto, o Bitcoin evoluiu para além de uma simples ferramenta monetária. Ele se tornou um catalisador para uma revolução `dinheiro descentralizado`. Esse movimento reimagina o sistema financeiro tradicional, distribuindo o poder e o controle monetário para aqueles que o utilizam.
 
 Ao descentralizar o dinheiro e remover os `custodiantes`, nós podemos:
 
@@ -301,7 +301,7 @@ Ao descentralizar o dinheiro e remover os `custodiantes`, nós podemos:
 
 A nova era do dinheiro está defendendo os valores fundamentais da democracia para aumentar a qualidade da vida cotidiana de cidadãos em todo o mundo, e você está convidado.
 
-”A democracia proporciona um ambiente que respeita os direitos humanos e as liberdades fundamentais, e no qual a vontade livremente expressa das pessoas é exercida.” — Nações Unidas.
+_”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — Nações Unidas._
 
 # Sua Missão Bitcoin
 
@@ -313,7 +313,7 @@ Sua transação incluirá os seguintes dados:
 
 💰 A quantidade de Bitcoin a enviar.
 
-Também incluirá uma taxa de transação paga aos `mineradores`.
+Também incluirá uma taxa de transação dada aos `mineradores`.
 
 Lembre-se de verificar se todos os dados estão corretos.
 Uma vez confirmada uma transação de Bitcoin você não a poderá reverter.

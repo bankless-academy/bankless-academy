@@ -98,7 +98,7 @@ Les `banques centrales`, la banque gérant la `politique monétaire`, peut intro
 
 Les `banques commerciales`, celles qui sont utilisées pour l'épargne et les dépenses quotidiennes, influencent également nos habitudes de consommation. En tant que `dépositaire`, ils peuvent bloquer les transactions ou confisquer nos fonds. Certaines banques ont empêché leurs clients d'acheter des crypto-monnaies ! **Si votre banque peut geler vos économies à tout moment… êtes-vous vraiment propriétaire de votre argent?** 💸
 
----
+***
 
 Pour que l'argent soutienne à nouveau la liberté financière, il doit retrouver les deux propriétés essentielles qu'il a perdues au fil du temps :
 
@@ -113,7 +113,7 @@ Seules ces qualités peuvent restaurer notre capacité à épargner et à dépen
 
 L'arrivée de Bitcoin (`BTC`) : une monnaie numérique qui fonctionne en dehors du système bancaire traditionnel.
 
-- ⛓️ C'est `pair à pair` [peer-to-peer] : Il connecte directement les gens les uns aux autres. Automatisé à l'aide de la `technologie blockchain`, il supprime le besoin pour les institutions de faciliter le stockage ou les transactions. Ses défenseurs l'appellent "un ensemble de règles sans dirigeants".
+- ⛓️ C'est `pair à pair` : Il connecte directement les gens les uns aux autres. Automatisé à l'aide de la `technologie blockchain`, il supprime le besoin pour les institutions de faciliter le stockage ou les transactions. Ses défenseurs l'appellent "un ensemble de règles sans dirigeants".
 - 💎 C'est `rare` : En l'absence de banque centrale émettant de l'argent frais de manière illimitée, le Bitcoin bénéficie d'une politique monétaire stable et prévisible qui favorise l'épargne à long terme.
 - ✊ C'est `self-custodial` [autodétenu] : il peut être détenu sans que des institutions assurent les transferts ou le stockage. Lorsqu'il est stocké dans son état naturel, le bitcoin est conservé dans un coffre-fort en ligne sécurisé et seul son propriétaire y a accès.
 
@@ -125,7 +125,7 @@ Pour ses qualités, le Bitcoin a gagné le surnom de « l'or numérique ».
 
 📉 Avez-vous des difficultés à faire face à l'augmentation des coûts ?
 
----
+***
 
 La rareté du bitcoin fait référence au nombre maximal de Bitcoins pouvant exister, soit 21 millions au maximum. Cette `offre maximale` est intégrée dans son code, ce qui rend le Bitcoin rare et potentiellement précieux. Cela le place dans une bonne position en tant que réserve de valeur à long terme, à l'instar de l'or.
 
@@ -153,7 +153,7 @@ Comment Bitcoin favorise-t-il la préservation de la valeur à long terme ?
 
 🧊 Votre banque vous a-t-elle déjà bloqué vos fonds sans préavis parce que vous aviez effectué un virement qui ne lui convenait pas ?
 
----
+***
 
 Dans les démocraties, la propriété est un droit de l'homme protégé car elle permet aux citoyens de mieux contrôler leur vie et d'être plus libres.
 Nous ne pouvons pas agir librement lorsque nos moyens de survie sont conditionnels, jugés par des entreprises ou des institutions.
@@ -182,7 +182,7 @@ Comment l'autodétention permet-elle une véritable propriété?
 
 ⌛ Avez-vous déjà dû attendre plusieurs jours ouvrables pour envoyer de l'argent à l'international, tout en payant 3-5% de frais ?
 
----
+***
 
 L'e-mail a simplifié l'envoi de lettres en supprimant le besoin d'un bureau de poste. De la même manière, le Bitcoin a simplifié l'envoi d'argent en supprimant le recours aux banques.
 
@@ -296,14 +296,14 @@ En décentralisant l'argent et en supprimant les `dépositaires`, nous pouvons :
 
 - 💵 Accueillir un marché mondial 24h/24 et 7j/7, sécurisé par les citoyens du monde entier.
 - 🛠️ Offrir des outils financiers aux régions non bancarisées du globe.
-- 🤝 Utiliser la technologie `pair à pair` [peer-to-peer] pour éviter les inefficacités des institutions intermédiaires.
+- 🤝 Utiliser la technologie `peer-to-peer` pour éviter les inefficacités des institutions intermédiaires.
 - 🔎 Réduire les inégalités institutionnelles, la fraude et la manipulation des marchés.
 - ⚖️ Construire `l'égalité des opportunités` dans les systèmes monétaires.
 - 🌐 Établir une véritable propriété à l'ère numérique.
 
 La nouvelle ère de l'argent défend les valeurs fondamentales de la démocratie afin d'améliorer la qualité de la vie quotidienne des citoyens du monde entier - et vous êtes invités.
 
-"La démocratie offre un environnement qui respecte les droits de l'homme et les libertés fondamentales, et dans lequel s'exerce la volonté librement exprimée des personnes." — Les Nations Unies.
+_”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — Les Nations Unies._
 
 # Votre quête Bitcoin
 

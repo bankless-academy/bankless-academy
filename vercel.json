@@ -70,6 +70,10 @@
       "destination": "/notion/disclaimer"
     },
     {
+      "source": "/privacy-policy",
+      "destination": "/notion/privacy-policy"
+    },
+    {
       "source": "/mp/lib.min.js",
       "destination": "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"
     },
@@ -115,11 +119,11 @@
   "crons": [
     {
       "path": "/api/cron/bankless-dao-news",
-      "schedule": "0 * * * *"
+      "schedule": "0 0 * * *"
     },
     {
       "path": "/api/cron/leaderboard",
-      "schedule": "0 * * * *"
+      "schedule": "0 */2 * * *"
     }
   ]
 }

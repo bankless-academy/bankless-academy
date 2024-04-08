@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { mainnet } from 'viem/chains'
 import { createPublicClient, http } from 'viem'
 
-import { ALCHEMY_KEY_BACKEND } from 'constants/index'
+import { ALCHEMY_KEY_BACKEND, DEFAULT_AVATAR, DEFAULT_ENS } from 'constants/index'
 import { TABLE, TABLES, db } from 'utils/db'
 
 export default async function handler(
@@ -16,7 +16,7 @@ export default async function handler(
   const addressLowerCase = address.toLowerCase()
   // console.log('address', address)
 
-  if (!address || address.length !== 42 || address.endsWith('.eth')) return res.status(400).json({ error: 'Wrong params' })
+  if (!address || address.length !== 42 || address?.includes('.')) return res.status(400).json({ error: 'Wrong params' })
   const transport = http(`https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`)
   const client = createPublicClient({
     chain: mainnet,
@@ -29,35 +29,38 @@ export default async function handler(
       TABLE.users.ens_name,
       TABLE.users.ens_avatar,
       TABLE.users.donations,
-      TABLE.users.gitcoin_stamps
+      TABLE.users.ba_stamps
     )
     .whereILike('address', addressLowerCase)
   // console.log('user', userExist)
   if (!userExist) res.status(200).json({ error: 'Profile not found.' })
 
-  const ensName = await client.getEnsName({ address: addressLowerCase as `0x${string}` })
-  // console.log(ensName)
+  try {
+    const ensName = addressLowerCase === '0xb00e26e79352882391604e24b371a3f3c8658e8c' ? DEFAULT_ENS : await client.getEnsName({ address: addressLowerCase as `0x${string}` })
+    // console.log(ensName)
 
-  const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/explorer_avatar.png'
+    const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : DEFAULT_AVATAR
 
-  const avatar = ensName ? await client.getEnsAvatar({ name: ensName }) : DEFAULT_AVATAR
+    if (
+      (ensName && userExist.ens_name !== ensName) ||
+      (avatar && userExist.ens_avatar !== avatar)
+    ) {
+      // update ens_name + ens_avatar in user DB
+      console.log('update ENS details', { ensName, avatar })
+      await db(TABLES.users)
+        .where(TABLE.users.id, userExist.id)
+        .update({ ens_name: ensName, ens_avatar: avatar?.length < 255 && avatar !== DEFAULT_AVATAR ? avatar : null })
+    }
 
-  if (
-    (ensName && userExist.ens_name !== ensName) ||
-    (avatar && userExist.ens_avatar !== avatar)
-  ) {
-    // update ens_name + ens_avatar in user DB
-    console.log('update ENS details', { ensName, avatar })
-    await db(TABLES.users)
-      .where(TABLE.users.id, userExist.id)
-      .update({ ens_name: ensName, ens_avatar: avatar?.length < 255 && avatar !== DEFAULT_AVATAR ? avatar : null })
+    const data: any = {
+      address: addressLowerCase,
+      ensName,
+      avatar: avatar || DEFAULT_AVATAR,
+    }
+
+    return res.status(200).json(data)
+  } catch (error) {
+    console.error(console.error())
   }
 
-  const data: any = {
-    address: addressLowerCase,
-    ensName,
-    avatar: avatar || DEFAULT_AVATAR,
-  }
-
-  return res.status(200).json(data)
 }

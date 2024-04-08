@@ -14,18 +14,23 @@ import { CopySimple } from '@phosphor-icons/react'
 import router from 'next/router'
 import { useAccount } from 'wagmi'
 import { t } from 'i18next'
+import { useLocalStorage } from 'usehooks-ts'
 
 import Badges from 'components/Badges'
 import Card from 'components/Card'
 import { MetaData } from 'components/Head'
 import { DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { UserType } from 'entities/user'
-import { shortenAddress } from 'utils'
+import {
+  generateFarcasterLink,
+  generateTwitterLink,
+  shortenAddress,
+} from 'utils/index'
 import ProgressTitle from 'components/ProgressTitle'
 import ExternalLink from 'components/ExternalLink'
 import { MAX_DONATIONS } from 'constants/donations'
 import { MAX_BADGES } from 'constants/badges'
-import { MAX_STAMPS } from 'constants/passport'
+import { EMPTY_PASSPORT, MAX_STAMPS } from 'constants/passport'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -43,7 +48,7 @@ export async function getServerSideProps({ query }) {
   const random = Math.floor(Math.random() * 100000)
 
   const pageMeta: MetaData = {
-    title: `${address?.endsWith('.eth') ? address : shortenAddress(address)}`,
+    title: `${address?.includes('.') ? address : shortenAddress(address)}`,
     description: `${
       badge ? 'Bankless Explorer Badge' : 'Bankless Explorer Profile'
     }`,
@@ -71,15 +76,14 @@ export default function Page({
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)
   const [fullProfileAddress, setFullProfileAddress] = useState('')
+  const [isMyProfile, setIsMyProfile] = useState(false)
   const { address } = useAccount()
   const { onCopy, hasCopied } = useClipboard(profileUrl)
+  const [passportLS] = useLocalStorage('passport', EMPTY_PASSPORT)
 
   const wallets = localStorage.getItem('wallets')
     ? JSON.parse(localStorage.getItem('wallets'))
     : []
-
-  const isMyProfile =
-    fullProfileAddress !== '' && wallets.includes(fullProfileAddress)
 
   useEffect(() => {
     const loadUser = async () => {
@@ -90,6 +94,7 @@ export default function Page({
         if (user?.error) {
           setError(user?.error)
         } else if (user) {
+          setIsMyProfile(false)
           console.log(user)
           if (
             typeof window !== 'undefined' &&
@@ -99,8 +104,19 @@ export default function Page({
             const redirect = `/explorer/${profileAddress}?referral=true`
             window.history.replaceState(null, null, redirect)
           }
+          if (user?.stats?.referrals?.length) {
+            user?.stats?.referrals.map((r) => {
+              console.log(
+                'Explorer onboarded: ',
+                `https://app.banklessacademy.com/explorer/${r}`
+              )
+            })
+          }
           setFullProfileAddress(user.address)
           setUser(user)
+          if (wallets.includes(user.address)) {
+            setIsMyProfile(true)
+          }
         }
       } catch (error) {
         console.log(error)
@@ -112,6 +128,26 @@ export default function Page({
     loadUser()
   }, [profileAddress])
 
+  useEffect(() => {
+    if (isMyProfile && passportLS?.stamps && passportLS?.version) {
+      // update user stamps without requiring to refresh
+      const valid_stamps = Object.keys(passportLS.stamps)
+      if (valid_stamps?.length) {
+        const updatedUser: any = {
+          stats: {
+            ...user.stats,
+            valid_stamps,
+            score:
+              user.stats.score -
+              user.stats.valid_stamps?.length +
+              valid_stamps.length,
+          },
+        }
+        setUser({ ...user, ...updatedUser })
+      }
+    }
+  }, [passportLS, isMyProfile])
+
   const collectibles = []
   for (let i = 0; i < user?.stats.datadisks?.length; i++) {
     collectibles.push(user?.stats.datadisks[i])
@@ -120,27 +156,31 @@ export default function Page({
     collectibles.push(user?.stats.handbooks[i])
   }
 
+  const shareLink = typeof window !== 'undefined' ? window.location.href : ''
   const share = `Check out my Bankless Explorer Score, and track my journey at @BanklessAcademy.
-${typeof window !== 'undefined' && window.location.href}
+
 Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
-  const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-    share
-  )}`
+
+  const twitterLink = generateTwitterLink(share, shareLink)
+
+  const farcasterLink = generateFarcasterLink(share, shareLink)
 
   if (
-    referral === 'true' &&
+    referral?.length &&
     !isMyProfile &&
     !localStorage.getItem('referrer')?.length &&
     fullProfileAddress
   ) {
-    console.log('referrer', localStorage.getItem('referrer'))
     localStorage.setItem('referrer', fullProfileAddress?.toLowerCase())
+    console.log('referrer added', localStorage.getItem('referrer'))
   }
   if (address && localStorage.getItem('referrer') === address?.toLowerCase()) {
     localStorage.setItem('referrer', '')
+    console.log('reset referrer')
   }
 
   if (user)
+    // TODO: create Profile component
     return (
       <Container maxW="container.lg">
         <Card mt="180px" borderRadius="2xl !important">
@@ -171,9 +211,9 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
             mt="40px"
             mb="8"
           >
-            {user.ensName?.endsWith('.eth')
+            {user.ensName?.includes('.')
               ? user.ensName
-              : profileAddress?.endsWith('.eth')
+              : profileAddress?.includes('.')
               ? profileAddress
               : shortenAddress(profileAddress)}
           </Text>
@@ -188,6 +228,20 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                     leftIcon={<Image width="24px" src="/images/TwitterX.svg" />}
                   >
                     {t('Share on Twitter / X')}
+                  </Button>
+                </ExternalLink>
+              </Box>
+              <Box pb="2">
+                <ExternalLink href={farcasterLink} mr="2">
+                  <Button
+                    variant="primary"
+                    w="100%"
+                    borderRadius="0"
+                    leftIcon={
+                      <Image width="24px" src="/images/Farcaster.svg" />
+                    }
+                  >
+                    {t('Share on Farcaster')}
                   </Button>
                 </ExternalLink>
               </Box>
@@ -292,7 +346,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                   score={user.stats?.valid_stamps?.length || 0}
                   max={MAX_STAMPS}
                   description={t(
-                    `Each stamp you collect on Gitcoin Passport increases your score by 1 point.`
+                    `Each stamp you collect by connecting an account increases your score by 1 point.`
                   )}
                 />
                 <Badges

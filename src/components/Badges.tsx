@@ -12,8 +12,7 @@ import { useTranslation } from 'react-i18next'
 import { LESSONS } from 'constants/index'
 import { DONATION_MAPPING } from 'constants/donations'
 import InternalLink from './InternalLink'
-// import ExternalLink from './ExternalLink'
-import { STAMP_PROVIDERS } from 'constants/passport'
+import { STAMP_PLATFORMS } from 'constants/passport'
 import PassportModal from 'components/PassportModal'
 import { useSmallScreen } from 'hooks'
 
@@ -141,15 +140,19 @@ const Badges = ({
               {type === 'collectibles' && (
                 <>
                   {[
-                    ...LESSONS.filter((lesson) =>
-                      lesson.collectibleId?.startsWith('D')
+                    ...LESSONS.filter(
+                      (lesson) =>
+                        lesson.collectibleId?.startsWith('D') &&
+                        lesson.publicationStatus === 'publish'
                     ).sort(
                       (a, b) =>
                         parseInt(a.collectibleId.replace('D', ''), 16) -
                         parseInt(b.collectibleId.replace('D', ''), 16)
                     ),
-                    ...LESSONS.filter((lesson) =>
-                      lesson.collectibleId?.startsWith('H')
+                    ...LESSONS.filter(
+                      (lesson) =>
+                        lesson.collectibleId?.startsWith('H') &&
+                        lesson.publicationStatus === 'publish'
                     ).sort(
                       (a, b) =>
                         parseInt(a.collectibleId.replace('H', ''), 16) -
@@ -187,7 +190,7 @@ const Badges = ({
                               <Image
                                 src={`${
                                   isDatadisk
-                                    ? '/images/datadisk-001.png'
+                                    ? lesson.lessonCollectedImageLink
                                     : '/images/handbook-badge.png'
                                 }`}
                                 alt={lesson.name}
@@ -233,39 +236,40 @@ const Badges = ({
               )}
               {type === 'badges' && (
                 <>
-                  {LESSONS.filter((lesson) => lesson.badgeId).map(
-                    (lesson, index) => {
-                      const ownsBadge = (badges as number[]).includes(
-                        lesson.badgeId
-                      )
-                      if (isMyProfile || ownsBadge)
-                        return (
-                          <InternalLink
-                            key={`badge-${index}`}
-                            href={`/lessons/${lesson.slug}`}
-                            alt={lesson.englishName}
+                  {LESSONS.filter(
+                    (lesson) =>
+                      lesson.badgeId && lesson.publicationStatus === 'publish'
+                  ).map((lesson, index) => {
+                    const ownsBadge = (badges as number[]).includes(
+                      lesson.badgeId
+                    )
+                    if (isMyProfile || ownsBadge)
+                      return (
+                        <InternalLink
+                          key={`badge-${index}`}
+                          href={`/lessons/${lesson.slug}`}
+                          alt={lesson.englishName}
+                        >
+                          <Box
+                            justifySelf="center"
+                            opacity={ownsBadge ? '1' : '0.3'}
+                            borderRadius="3px"
+                            backgroundColor={
+                              // badgeToHighlight === lesson.badgeId
+                              // ? 'orange.100' : 'unset'
+                              'unset'
+                            }
+                            p={1}
                           >
-                            <Box
-                              justifySelf="center"
-                              opacity={ownsBadge ? '1' : '0.3'}
-                              borderRadius="3px"
-                              backgroundColor={
-                                // badgeToHighlight === lesson.badgeId
-                                // ? 'orange.100' : 'unset'
-                                'unset'
-                              }
-                              p={1}
-                            >
-                              <Image
-                                src={lesson.badgeImageLink}
-                                alt={lesson.name}
-                                title={lesson.name}
-                              />
-                            </Box>
-                          </InternalLink>
-                        )
-                    }
-                  )}
+                            <Image
+                              src={lesson.badgeImageLink}
+                              alt={lesson.name}
+                              title={lesson.name}
+                            />
+                          </Box>
+                        </InternalLink>
+                      )
+                  })}
                 </>
               )}
               {/* Ongoing Donation Round */}
@@ -284,26 +288,24 @@ const Badges = ({
               )} */}
               {type === 'stamps' && (
                 <>
-                  {Object.entries(STAMP_PROVIDERS).map(([key, provider]) => {
-                    const ownsBadge = (badges as string[])?.includes(key)
+                  {Object.entries(STAMP_PLATFORMS).map(([key, platform]) => {
+                    const ownsBadge = (badges as string[])?.includes(
+                      STAMP_PLATFORMS[key].provider
+                    )
                     if (isMyProfile || ownsBadge)
                       return (
                         <Box key={`badge-${key}`} p={1} position="relative">
                           <Image
                             aspectRatio="1"
-                            opacity={ownsBadge ? '1' : '0.2'}
+                            opacity={ownsBadge ? '1' : '0.3'}
                             w="100%"
-                            src={provider.icon}
-                            p="4"
+                            src={platform.icon}
+                            p="3"
                             border="1px #2d292d solid"
                             borderRadius="8px"
-                            title={provider.name}
-                            cursor={
-                              isMyProfile && !ownsBadge ? 'pointer' : 'default'
-                            }
-                            onClick={() =>
-                              isMyProfile && !ownsBadge && onOpen()
-                            }
+                            title={platform.name}
+                            cursor={isMyProfile ? 'pointer' : 'default'}
+                            onClick={() => isMyProfile && onOpen()}
                           />
                         </Box>
                       )
@@ -311,7 +313,7 @@ const Badges = ({
                   <PassportModal
                     isOpen={isOpen}
                     onClose={onClose}
-                    isProfile={true}
+                    isProfile={isMyProfile}
                   />
                 </>
               )}

@@ -42,8 +42,10 @@ export default async function handler(
   try {
     const userId = await getUserId(address, embed)
     console.log(userId)
-    if (!(userId && Number.isInteger(userId)))
+    if (!(userId && Number.isInteger(userId))) {
+      trackBE(address, 'issue_user_not_found', { context: 'mint-badge' })
       return res.status(403).json({ error: 'userId not found' })
+    }
 
     const notionId = LESSONS.find(
       (lesson) => lesson.badgeId === badgeId
@@ -64,6 +66,7 @@ export default async function handler(
       .select(TABLE.completions.id, TABLE.completions.transaction_at, TABLE.completions.transaction_hash)
       .where(TABLE.completions.credential_id, credential.id)
       .where(TABLE.completions.user_id, userId)
+      .where(TABLE.completions.is_quest_completed, true)
     console.log('questCompleted', questCompleted)
 
     let questStatus = ''
@@ -94,7 +97,7 @@ export default async function handler(
           address,
         })
         // TODO: verify tx hash result
-        questStatus = 'minting already in progress ... check back in 1 minute'
+        questStatus = 'minting already in progress... check back in 1 minute'
         console.log(questStatus)
         return res.status(200).json({ transactionHash: questCompleted.transaction_hash, status: questStatus })
       }
@@ -158,13 +161,13 @@ export default async function handler(
         })
         // TODO: flag in DB
       }
-      if (numberOfRecentTx?.length >= 10) {
+      if (numberOfRecentTx?.length >= 50) {
         trackBE(address, 'badge_overload', {
           error: numberOfRecentTx,
           badgeId,
           address,
         })
-        questStatus = "Too many minting ... try again later. Reminder: Lesson badges are non-transferable digital proofs of your learning. They don't have any monetary value and will never give you access to airdrops."
+        questStatus = "Too many minting... try again later. Reminder: Lesson badges are non-transferable digital proofs of your learning. They don't have any monetary value and will never give you access to airdrops."
         return res.status(200).json({
           status: questStatus,
         })
@@ -196,7 +199,7 @@ export default async function handler(
       }
       console.log(options)
       if (maxFeePerGasInGwei > 500) {
-        questStatus = 'Polygon is currently experiencing high gas prices ... try again in 1 hour.'
+        questStatus = 'Polygon is currently experiencing high gas prices... try again in 1 hour.'
         console.log(questStatus)
         return res.status(403).json({ status: questStatus })
       }
@@ -207,6 +210,7 @@ export default async function handler(
 
       console.log('mint !!!!!!!!!')
       // send email alert if balance < 1 MATIC
+      // TODO: add alternate provider + handle timeout
       const provider = new ethers.providers.AlchemyProvider(IS_BADGE_PROD ? 'matic' : 'maticmum', ALCHEMY_KEY_BACKEND)
       const balance = formatEther((await provider.getBalance(BADGE_MINTER)).toBigInt())
       console.log('balance: ', balance)
@@ -258,14 +262,15 @@ export default async function handler(
         console.log(error)
         return res.status(500).json({
           error: 'simulation fail',
-          status: '',
+          status: error?.reason,
         })
       }
       const mint = await contract[contractFunction](...functionParams, options)
+      // DEV: uncomment this line to test simulate minting
       // const mint = { hash: 'test' }
       console.log(mint)
 
-      if (mint.hash) {
+      if (mint?.hash) {
         // referral
         console.log('referrer', referrer)
         if (referrer?.length === 42) {

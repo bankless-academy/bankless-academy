@@ -7,6 +7,7 @@ import Passport from 'components/Passport'
 
 const pageMeta: MetaData = {
   title: 'Passport',
+  noindex: true,
 }
 
 export const getStaticProps: GetStaticProps = async () => {

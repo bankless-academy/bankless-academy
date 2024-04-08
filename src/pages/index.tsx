@@ -55,6 +55,36 @@ const NewsletterButton = styled(Button)`
   }
 `
 
+const PARTNERS = [
+  {
+    name: 'Gitcoin',
+    image: 'Gitcoin.png',
+    link: 'https://www.gitcoin.co/',
+  },
+  {
+    name: 'Optimism',
+    image: 'Optimism.svg',
+    link: 'https://www.optimism.io/',
+  },
+  {
+    name: '1inch',
+    image: '1inch.svg',
+    link: 'https://1inch.io/',
+  },
+  {
+    name: 'Zerion',
+    image: 'Zerion.svg',
+    link: 'https://zerion.io/',
+  },
+  {
+    name: 'RocketPool',
+    image: 'RocketPool.svg',
+    link: 'https://rocketpool.net/',
+  },
+]
+
+const IS_PARTNERSHIP_ACTIVACTED = true
+
 const HomePage = (): JSX.Element => {
   const { t } = useTranslation('homepage')
   const [isSmallScreen] = useSmallScreen()
@@ -76,29 +106,98 @@ const HomePage = (): JSX.Element => {
             spacing={6}
             textAlign="center"
             alignItems="center"
-            pt="20vh"
+            justifyContent="space-evenly"
+            height="100%"
+            pt="27vh"
+            pb="45px"
           >
-            <Image
-              style={{
-                filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
-              }}
-              maxW="90%"
-              src="/images/BanklessAcademy.svg"
-              alt="Bankless Academy"
-            />
-            <Box>
+            <Box w="100%" maxW="90%">
+              <Image
+                style={{
+                  filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
+                }}
+                maxW="90%"
+                src="/images/BanklessAcademy.svg"
+                alt="Bankless Academy"
+                m="auto"
+              />
+              {IS_PARTNERSHIP_ACTIVACTED && (
+                <Box ml="25%" w="73%">
+                  <Text
+                    fontSize={isSmallScreen ? '20px' : '25px'}
+                    mt="-15px"
+                    w="100%"
+                  >
+                    {t(`Your platform for building digital independence.`)}
+                  </Text>
+                </Box>
+              )}
+            </Box>
+            <Box bottom="60px" height="70px" display="flex" alignItems="center">
               <InternalLink href={`/lessons`} alt="Explore Lessons">
                 <Button
                   variant="primary"
                   size="lg"
+                  height="-webkit-fit-content"
+                  width="-webkit-fit-content"
                   style={{ padding: '0 23px' }}
                 >
-                  {t('Explore Lessons')}
+                  <Box m="21px" fontSize="20px">
+                    {t('Explore Lessons')}
+                  </Box>
                 </Button>
               </InternalLink>
             </Box>
           </Stack>
         </Center>
+        {IS_PARTNERSHIP_ACTIVACTED && (
+          <Box
+            position="relative"
+            w="100%"
+            bgColor="#1F2023"
+            borderBottom="3px solid #423952"
+            pt="2"
+          >
+            <Box
+              position="absolute"
+              top="-18px"
+              left="0"
+              width="100%"
+              display="flex"
+              placeItems="center"
+            >
+              <Box w="100%" borderBottom="3px solid #423952" />
+              <Text fontSize="xl" minW="250px" textAlign="center">
+                {t('alongside our Partners:')}
+              </Text>
+              <Box w="100%" borderBottom="3px solid #423952" />
+            </Box>
+            <Box
+              display="flex"
+              m="auto"
+              justifyContent="center"
+              flexWrap="wrap"
+              maxWidth="1650px"
+              placeContent="space-around"
+            >
+              {PARTNERS.map((partner) => (
+                <Box
+                  key={partner.name}
+                  m={isSmallScreen ? '20px 10px' : '30px 20px'}
+                >
+                  <ExternalLink href={partner.link}>
+                    <Image
+                      alt={partner.name}
+                      title={partner.name}
+                      height={isSmallScreen ? '40px' : '50px'}
+                      src={`/images/partners/${partner.image}`}
+                    />
+                  </ExternalLink>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        )}
         <Box bgColor="#1F2023" p="4" overflow="hidden">
           <Container maxW="container.lg">
             <Box mt="6">
@@ -198,7 +297,7 @@ const HomePage = (): JSX.Element => {
             <SubscriptionModal isOpen={isOpen} onClose={onClose} />
             <FeaturedLessons />
             <>
-              <Box mt="16">
+              {/* <Box mt="16">
                 <Heading as="h2" size="xl" my="16" mb="12">
                   {t(`More Lessons On the Way`)}
                 </Heading>
@@ -276,7 +375,7 @@ const HomePage = (): JSX.Element => {
                     </Box>
                   </Box>
                 </Box>
-              </Box>
+              </Box> */}
               <Box my="16">
                 <Heading as="h2" size="xl" mt="16" mb="8">
                   {t(`Work With Us!`)}
@@ -409,13 +508,10 @@ const HomePage = (): JSX.Element => {
                       )}
                     </Text>
                     <ExternalLink
-                      href="https://grants.gitcoin.co/"
-                      alt="Donate via Gitcoin"
+                      href="https://giveth.io/donate/bankless-academy"
+                      alt="Donate via Giveth"
                     >
-                      <Image
-                        width="100%"
-                        src="/images/Donate-via-Gitcoin.png"
-                      />
+                      <Image width="100%" src="/images/Donate-via-Giveth.png" />
                     </ExternalLink>
                     <Text fontSize="lg" mt="2">
                       {t(

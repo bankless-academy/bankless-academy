@@ -19,6 +19,7 @@ const ExternalLink = ({
       ? {
           style: {
             color: 'white',
+            fontWeight: 'bold',
             textDecoration: 'underline',
             textUnderlinePosition: 'under',
           },

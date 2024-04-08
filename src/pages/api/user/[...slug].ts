@@ -6,7 +6,7 @@ import { createPublicClient, http } from 'viem'
 import { normalize } from 'viem/ens'
 
 import kudosBadges from 'data/badges.json'
-import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, DOMAIN_URL, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
+import { ALCHEMY_KEY_BACKEND, COLLECTIBLE_ADDRESSES, DEFAULT_AVATAR, DOMAIN_URL, LESSONS, MIRROR_ARTICLE_ADDRESSES } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_IDS, BADGE_API, BADGE_TO_KUDOS_IDS } from 'constants/badges'
 import { TABLE, TABLES, db } from 'utils/db'
 import { UserStatsType, UserType } from 'entities/user'
@@ -75,12 +75,10 @@ export default async function handler(
   let addressLowerCase = address.toLowerCase()
   // console.log('address', address)
 
-  const DEFAULT_AVATAR = 'https://app.banklessacademy.com/images/explorer_avatar.png'
-
   if (!address) return res.status(400).json({ error: 'Wrong params' })
 
   let userExist = null
-  if (address.endsWith('.eth')) {
+  if (address?.includes('.')) {
     // check in DB first
     const [userExist] = await db(TABLES.users)
       .select(
@@ -89,10 +87,10 @@ export default async function handler(
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
         TABLE.users.donations,
-        TABLE.users.gitcoin_stamps
+        TABLE.users.ba_stamps
       )
       .whereILike('ens_name', addressLowerCase)
-    // console.log('userExist1', userExist)
+    // console.log('userExist', userExist)
     if (userExist) {
       addressLowerCase = userExist.address?.toLowerCase()
     } else {
@@ -120,7 +118,7 @@ export default async function handler(
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
         TABLE.users.donations,
-        TABLE.users.gitcoin_stamps
+        TABLE.users.ba_stamps
       )
       .whereILike('address', addressLowerCase)
     console.log('user', userExist)
@@ -137,9 +135,18 @@ export default async function handler(
     }
   }
 
+  // referrals
+  const referralsAddresses = await db(TABLES.users)
+    .select(
+      TABLE.users.address, TABLE.users.ens_name)
+    .where(TABLE.users.referrer, '=', userExist.id)
+  const referrals = referralsAddresses.map(r => r.ens_name || r.address)
+  console.log('referrals', referrals)
+
   const oldBadgeTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase] : []
   console.log(oldBadgeTokenIds)
   const badgeTokenIds = [...new Set([
+    // DEV: comment these 2 lines when testing
     ...(await getBadgeTokensIds(addressLowerCase)),
     ...oldBadgeTokenIds
   ])]
@@ -164,11 +171,15 @@ export default async function handler(
   const avatar = userExist?.ens_avatar || DEFAULT_AVATAR
 
   if (profile === 'true') {
-    // async update ENS (available on next call)
-    axios.get(`${DOMAIN_URL}/api/updateENS/${addressLowerCase}`)
+    try {
+      // async update ENS (available on next call)
+      axios.get(`${DOMAIN_URL}/api/updateENS/${addressLowerCase}`)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
-  const stats: UserStatsType = {}
+  let stats: UserStatsType = {}
   const { datadisks, handbooks } = await getUserCollectibles(addressLowerCase)
   // datadisks
   stats.datadisks = datadisks
@@ -177,13 +188,77 @@ export default async function handler(
   // badges
   stats.badges = badgeTokenIds?.length
   // valid_stamps
-  if (userExist.gitcoin_stamps) {
-    const stamps = Object.keys(userExist.gitcoin_stamps)
-    stats.valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
-  }
+  const stamps = Object.keys(userExist.ba_stamps)
+  console.log(stamps)
+  stats.valid_stamps = ALLOWED_PROVIDERS.filter(value => stamps.includes(value)) || []
   // donations
   stats.donations = userExist.donations
+  if (addressLowerCase === '0xb00e26e79352882391604e24b371a3f3c8658e8c') {
+    stats =
+    {
+      "datadisks": [
+        "D001",
+        "D001",
+        "D002",
+        "D002"
+      ],
+      "handbooks": [
+        "H001",
+        "H002",
+        "H003",
+        "H004",
+        "H005",
+        "H006",
+        "H007"
+      ],
+      "badges": 10,
+      "valid_stamps": [
+        "Google",
+        "twitterAccountAgeGte#180",
+        "Facebook",
+        "Linkedin",
+        "Discord",
+        "Ens",
+        "Farcaster",
+        "Poh"
+      ],
+      "donations": {
+        "GCR1": {
+          "amountUSD": "N/A"
+        },
+        "GR11": {
+          "amountUSD": "N/A"
+        },
+        "GR12": {
+          "amountUSD": "N/A"
+        },
+        "GR13": {
+          "amountUSD": "N/A"
+        },
+        "GR14": {
+          "amountUSD": "N/A"
+        },
+        "GR15": {
+          "amountUSD": "N/A"
+        },
+        "GR16": {
+          "amountUSD": "N/A"
+        },
+        "GR18": {
+          "amountUSD": 1.13241802
+        },
+        "GR19": {
+          "amountUSD": 1.40381813
+        }
+      },
+      "score": 37
+    }
+  }
+  if (referrals?.length) {
+    stats.referrals = referrals
+  }
   stats.score = calculateExplorerScore(stats)
+
 
   console.log(stats)
 

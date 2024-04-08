@@ -1,16 +1,25 @@
 /* eslint-disable no-console */
+import { useState } from 'react'
 import { Box, Button, Image as ChakraImage } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
 import { useAccount, useEnsName } from 'wagmi'
+import { ShootingStar } from '@phosphor-icons/react'
+import styled from '@emotion/styled'
 
 import { LessonType } from 'entities/lesson'
 import MintBadge from 'components/MintBadge'
-import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL } from 'constants/index'
+import { IS_WHITELABEL, TWITTER_ACCOUNT, DOMAIN_URL_ } from 'constants/index'
 import { BADGE_OPENSEA_URL, BADGE_TO_KUDOS_IDS } from 'constants/badges'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import NFT from 'components/NFT'
+import Card from 'components/Card'
+import { generateFarcasterLink, generateTwitterLink } from 'utils/index'
+
+const StyledCard = styled(Card)<{ issmallscreen?: string }>`
+  box-shadow: none;
+`
 
 const Badge = ({
   lesson,
@@ -20,36 +29,39 @@ const Badge = ({
   isQuestCompleted: boolean
 }): JSX.Element => {
   const { t, i18n } = useTranslation()
+  const [triggerOpen, setTriggerOpen] = useState(false)
   const [isBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${lesson.badgeId}`,
     false
   )
+  const current_wallet: any = localStorage.getItem('current_wallet')
   const { address } = useAccount()
   const { data: ensName } = useEnsName({
     address: address,
     chainId: 1,
   })
+  const [, setConnectWalletPopupLS] = useLocalStorage(
+    `connectWalletPopup`,
+    false
+  )
   const [kudosMintedLS] = useLocalStorage(`kudosMinted`, [])
   // TODO: TRANSLATE
   const langURL = i18n.language !== 'en' ? `${i18n.language}/` : ''
-  const share = `I've just claimed my "${
-    lesson.name
-  }" onchain credential at @${TWITTER_ACCOUNT} 🎉
-${
-  IS_WHITELABEL
-    ? `${DOMAIN_URL}/lessons/${langURL}${lesson.slug}`
-    : `${DOMAIN_URL}/explorer/${
-        typeof ensName === 'string' && ensName?.endsWith('.eth')
+  const shareLink = IS_WHITELABEL
+    ? `${DOMAIN_URL_}/lessons/${langURL}${lesson.slug}`
+    : `${DOMAIN_URL_}/explorer/${
+        typeof ensName === 'string' && ensName?.includes('.')
           ? ensName
-          : address
-      }?badge=${lesson.badgeId}&referral=true
+          : address || current_wallet
+      }?badge=${lesson.badgeId}&referral=true`
+
+  const share = `I've just claimed my "${lesson.name}" onchain credential at @${TWITTER_ACCOUNT} 🎉
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
-}`
 
-  const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-    share
-  )}`
+  const twitterLink = generateTwitterLink(share, shareLink)
+
+  const farcasterLink = generateFarcasterLink(share, shareLink)
 
   const BadgeHelper = (
     <Helper
@@ -58,29 +70,14 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
         <>
           <Box>
             {t(
-              'Academy Badges are non-tradable NFTs that serve as proof of your achievements on the blockchain. You can mint them for free after you answered all the questions correctly and validated the lesson quest.'
+              "Academy Badges are onchain certifications representing your achievements. You can claim badges for free after you've completed your lesson and quest."
             )}
           </Box>
         </>
       }
+      triggerOpen={triggerOpen}
     />
   )
-
-  if (!isQuestCompleted && !isBadgeMintedLS) {
-    return (
-      <Box position="relative" w="290px" m="auto" my="6">
-        <Box
-          border="1px solid #4b474b"
-          borderRadius="8px"
-          overflow="hidden"
-          opacity="0.5"
-        >
-          <NFT nftLink={lesson.badgeImageLink} />
-        </Box>
-        {BadgeHelper}
-      </Box>
-    )
-  }
 
   const kudosId = BADGE_TO_KUDOS_IDS[lesson.badgeId.toString()]
   const OpenSeaBadgeLink = kudosMintedLS.includes(kudosId)
@@ -90,75 +87,127 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
       `${BADGE_OPENSEA_URL}${lesson.badgeId}`
 
   return (
-    <>
-      <Box textAlign="center" mb="40px">
-        <Box width="290px" m="auto">
-          {isBadgeMintedLS ? (
-            <Box border="1px solid #9E72DC" borderTopRadius="8px" py="3" px="5">
-              <Box color="#9E72DC" fontWeight="bold" fontSize="lg">
-                {t('Badge Minted')}
-              </Box>
+    <Box textAlign="center" mb="40px">
+      <StyledCard width="290px" m="auto">
+        <Box
+          width="290px"
+          border="1px solid #4b474b"
+          borderRadius="8px"
+          position="relative"
+        >
+          {BadgeHelper}
+          <Box opacity={isBadgeMintedLS ? '1' : '0.5'} position="relative">
+            <Box position="absolute" w="100%" height="100%" px="19px">
+              <Box
+                w="100%"
+                height="100%"
+                cursor={!isBadgeMintedLS ? 'help' : 'pointer'}
+                borderRadius="50%"
+                zIndex="2"
+                onClick={() => {
+                  if (!isBadgeMintedLS) {
+                    setTriggerOpen(true)
+                    setTimeout(() => {
+                      setTriggerOpen(false)
+                    }, 100)
+                  } else {
+                    window.open(OpenSeaBadgeLink, '_blank')
+                  }
+                }}
+              />
             </Box>
-          ) : (
-            <Box position="relative">
-              <MintBadge badgeId={lesson.badgeId} />
-              {BadgeHelper}
-            </Box>
-          )}
-          <Box
-            width="290px"
-            borderRadius={
-              isBadgeMintedLS
-                ? '0px'
-                : !isQuestCompleted
-                ? '8px'
-                : '0px 0px 8px 8px'
-            }
-            overflow="hidden"
-            border="1px solid #4b474b"
-          >
             <NFT nftLink={lesson.badgeImageLink} />
           </Box>
-          {isBadgeMintedLS && (
-            <Box
-              // display="flex"
-              justifyContent="center"
-              borderRadius="0px 0px 8px 8px"
-              border="1px solid #4b474b"
-              borderTop="0"
-              p="4"
-            >
-              <Box pb="2">
-                <ExternalLink href={twitterLink} mr="2">
+          <Box p="4">
+            {isBadgeMintedLS ? (
+              <Box>
+                <Box pb="1">
+                  <ExternalLink href={twitterLink} mr="2">
+                    <Button
+                      variant="primary"
+                      height="51px"
+                      w="100%"
+                      borderBottomRadius="0"
+                      leftIcon={<ShootingStar width="28px" height="28px" />}
+                      isDisabled={true}
+                    >
+                      {t('Badge Claimed')}
+                    </Button>
+                  </ExternalLink>
+                </Box>
+                <Box pb="1">
+                  <ExternalLink href={twitterLink} mr="2">
+                    <Button
+                      variant="primary"
+                      w="100%"
+                      borderRadius="0"
+                      leftIcon={
+                        <ChakraImage width="20px" src="/images/TwitterX.svg" />
+                      }
+                    >
+                      {t('Share on Twitter / X')}
+                    </Button>
+                  </ExternalLink>
+                </Box>
+                <Box pb="1">
+                  <ExternalLink href={farcasterLink} mr="2">
+                    <Button
+                      variant="primary"
+                      w="100%"
+                      borderRadius="0"
+                      leftIcon={
+                        <ChakraImage width="20px" src="/images/Farcaster.svg" />
+                      }
+                    >
+                      {t('Share on Farcaster')}
+                    </Button>
+                  </ExternalLink>
+                </Box>
+                <ExternalLink href={OpenSeaBadgeLink}>
                   <Button
                     variant="primary"
                     w="100%"
-                    borderBottomRadius="0"
+                    borderTopRadius="0"
                     leftIcon={
-                      <ChakraImage width="20px" src="/images/TwitterX.svg" />
+                      <ChakraImage width="24px" src="/images/OpenSea.svg" />
                     }
                   >
-                    {t('Share on Twitter / X')}
+                    {t('View on OpenSea')}
                   </Button>
                 </ExternalLink>
               </Box>
-              <ExternalLink href={OpenSeaBadgeLink}>
-                <Button
-                  variant="primary"
-                  w="100%"
-                  borderTopRadius="0"
-                  leftIcon={
-                    <ChakraImage width="24px" src="/images/OpenSea.svg" />
-                  }
-                >
-                  {t('View on OpenSea')}
-                </Button>
-              </ExternalLink>
-            </Box>
-          )}
+            ) : (
+              <Box position="relative">
+                {(!address || !isQuestCompleted) && (
+                  <Box
+                    position="absolute"
+                    cursor="help"
+                    borderRadius="8px"
+                    zIndex="2"
+                    w="100%"
+                    height="100%"
+                    onClick={() => {
+                      if (!address) {
+                        setConnectWalletPopupLS(true)
+                      } else if (!isQuestCompleted) {
+                        setTriggerOpen(true)
+                        setTimeout(() => {
+                          setTriggerOpen(false)
+                        }, 100)
+                      }
+                    }}
+                  />
+                )}
+                <MintBadge
+                  badgeId={lesson.badgeId}
+                  isQuestCompleted={isQuestCompleted}
+                />
+              </Box>
+            )}
+          </Box>
         </Box>
-      </Box>
-    </>
+      </StyledCard>
+    </Box>
   )
 }
 

@@ -27,6 +27,19 @@ export default async function handler(
     sybils1day: {},
     sybils7days: {},
     lessonCompleted: {},
+    "badgeClaimed": {
+      "c2e79569863a4f5bbfdc9e86be5ae64f": 1804 - 236,
+      "409cd6ada1bd4ba7aa30f86239c98753": 1223 - 127,
+      "1887f283a1b846008bcbd7fa1736bf49": 1445 - 189,
+      "519c86d503954a629a2035eb1b401628": 1415 - 171,
+      "7aeb05250dbc4d55a474fb817ff089d8": 1110 - 153,
+      "48b3a9d48fe34d5593c125d5811b1273": 891 - 53,
+      "5308fd17fcdb461b937bbc8717917ea2": 2409 - 105,
+      "41209248612042d2b279261ee60e3a66": 180 - 74,
+      "7f53656c75b343d4b94c5b6a78fd0332": 283 - 284,
+      "e90059604739465ea99b9a2c8af5eb75": 14 - 13
+    },
+    userConverted: {},
     lessonCompleted1day: {},
     lessonCompleted7days: {},
     monthyCompletion: {},
@@ -98,6 +111,7 @@ export default async function handler(
         [TABLE.completions.credential_id],
         credentials.map((c) => c.id)
       )
+      .whereNotNull(TABLE.completions.quest_completed_at)
       .groupBy(TABLE.completions.credential_id)
       .orderBy(TABLE.completions.credential_id)
     // console.log(lessonCompleted)
@@ -106,14 +120,48 @@ export default async function handler(
         stats.lessonCompleted[idToNotionId[lesson.credential_id]] =
           lesson.lessonCompleted
     }
+    const badgeClaimed = await db(TABLES.completions)
+      .count('id', { as: 'badgeClaimed' })
+      .distinct(TABLE.completions.credential_id)
+      .whereIn(
+        [TABLE.completions.credential_id],
+        credentials.map((c) => c.id)
+      )
+      .whereNotNull(TABLE.completions.transaction_at)
+      .whereNotNull(TABLE.completions.quest_completed_at)
+      .groupBy(TABLE.completions.credential_id)
+      .orderBy(TABLE.completions.credential_id)
+    for (const lesson of badgeClaimed) {
+      if (lesson.credential_id)
+        stats.badgeClaimed[idToNotionId[lesson.credential_id]] =
+          parseInt(lesson.badgeClaimed) + (stats.badgeClaimed[idToNotionId[lesson.credential_id]] || 0)
+    }
+    // console.log(badgeClaimed)
+    const userConverted = await db(TABLES.completions)
+      .count('id', { as: 'userConverted' })
+      .distinct(TABLE.completions.credential_id)
+      .whereIn(
+        [TABLE.completions.credential_id],
+        credentials.map((c) => c.id)
+      )
+      .where(TABLE.completions.is_quest_conversion, '=', 'true')
+      .groupBy(TABLE.completions.credential_id)
+      .orderBy(TABLE.completions.credential_id)
+    for (const lesson of userConverted) {
+      if (lesson.credential_id)
+        stats.userConverted[idToNotionId[lesson.credential_id]] =
+          lesson.userConverted
+    }
+    // console.log(badgeClaimed)
     const [{ lessonCompleted1day }] = await db(TABLES.completions)
       .count('id', { as: 'lessonCompleted1day' })
       .whereIn(
         [TABLE.completions.credential_id],
         credentials.map((c) => c.id)
       )
+      .whereNotNull(TABLE.completions.quest_completed_at)
       .where(
-        TABLE.completions.created_at,
+        TABLE.completions.quest_completed_at,
         '>=',
         db.raw("NOW() - INTERVAL '1 DAY'")
       )
@@ -124,15 +172,16 @@ export default async function handler(
         [TABLE.completions.credential_id],
         credentials.map((c) => c.id)
       )
+      .whereNotNull(TABLE.completions.quest_completed_at)
       .where(
-        TABLE.completions.created_at,
+        TABLE.completions.quest_completed_at,
         '>=',
         db.raw("NOW() - INTERVAL '7 DAY'")
       )
     stats.lessonCompleted7days = lessonCompleted7days
 
     const monthyCompletion = await db(TABLES.completions)
-      .select(db.raw(`date_trunc('month', created_at) AS month`))
+      .select(db.raw(`date_trunc('month', quest_completed_at) AS month`))
       .count('id')
       .whereIn(
         [TABLE.completions.credential_id],
@@ -141,7 +190,8 @@ export default async function handler(
           .from(TABLES.credentials)
           .whereIn(TABLE.credentials.notion_id, NOTION_IDS)
       )
-      .groupByRaw(`date_trunc('month', created_at)`)
+      .whereNotNull(TABLE.completions.quest_completed_at)
+      .groupByRaw(`date_trunc('month', quest_completed_at)`)
       .orderBy('month')
     stats.monthyCompletion = monthyCompletion
     return res.status(200).json(stats)

@@ -44,6 +44,8 @@ const processMD = async (md, lang, englishLesson) => {
           .replace(slide_title, '')
           .replace(/!\[\]\(.*?\)/, ``)
           .trim()
+          // TEMP HACK: hide embed
+          .replace('[embed]', '[]')
         // console.log(slide_title)
         // console.log(slide_content)
         // console.log(quizzes)
@@ -104,11 +106,18 @@ const processMD = async (md, lang, englishLesson) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params.slug?.length === 1 ? params.slug[0] : params.slug[1]
+  const slug = (
+    params.slug?.length === 1 ? params.slug[0] : params.slug[1]
+  )?.replace('-datadisk', '')
   const language: any = params.slug?.length === 1 ? 'en' : params.slug[0]
   let currentLesson = LESSONS.find((lesson: LessonType) => lesson.slug === slug)
+  if (!currentLesson)
+    // lesson not found
+    return {
+      props: {},
+    }
   // console.log(currentLesson)
-  if (currentLesson.languages) {
+  if (currentLesson?.languages) {
     for (const language of currentLesson.languages) {
       if (
         !fs.existsSync(
@@ -137,10 +146,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   } catch (error) {
     const pageMeta: MetaData = {
-      title: currentLesson.name,
-      description: currentLesson.description,
-      image: currentLesson.socialImageLink || DEFAULT_METADATA.image,
-      isLesson: !currentLesson.isArticle,
+      title: currentLesson?.name,
+      description: currentLesson?.description,
+      image: currentLesson?.socialImageLink || DEFAULT_METADATA.image,
+      isLesson: !currentLesson?.isArticle,
       lesson: currentLesson,
     }
     console.log('error loading language', language)
@@ -150,12 +159,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
 
+  const isDatadisk = params.slug[0]?.endsWith('-datadisk')
+
   const pageMeta: MetaData = {
     title: currentLesson.name,
     description: currentLesson.description,
-    image: currentLesson.socialImageLink || DEFAULT_METADATA.image,
+    image: isDatadisk
+      ? 'https://app.banklessacademy.com/images/layer-2-blockchains/social-datadisk.jpg'
+      : currentLesson.socialImageLink || DEFAULT_METADATA.image,
     isLesson: !currentLesson.isArticle,
     lesson: currentLesson,
+    isDatadisk,
   }
   return {
     props: { pageMeta },
@@ -165,6 +179,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = []
   for (const lesson of LESSONS) {
     paths.push({ params: { slug: [lesson.slug] } })
+    if (lesson.lessonCollectibleGif)
+      paths.push({
+        params: { slug: [`${lesson.slug}-datadisk`] },
+      })
     if (lesson.languages) {
       for (const lang of lesson.languages) {
         paths.push({ params: { slug: [lang, lesson.slug] } })

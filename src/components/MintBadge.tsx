@@ -1,12 +1,24 @@
 /* eslint-disable no-console */
 import { useState, useEffect } from 'react'
-import { Button, useToast, Box, useDisclosure } from '@chakra-ui/react'
+import {
+  Button,
+  useToast,
+  Box,
+  useDisclosure,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverCloseButton,
+  PopoverArrow,
+  PopoverBody,
+} from '@chakra-ui/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { signMessage, waitForTransaction } from '@wagmi/core'
-import { Gear, SealCheck } from '@phosphor-icons/react'
+import { Gear, SealCheck, ShootingStar } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
+import { useRouter } from 'next/router'
 
 import ExternalLink from 'components/ExternalLink'
 import { WALLET_SIGNATURE_MESSAGE } from 'constants/index'
@@ -18,20 +30,39 @@ import {
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { api } from 'utils'
 import PassportModal from 'components/PassportModal'
+import Confetti from 'components/Confetti'
+import { useSmallScreen } from 'hooks'
 
-const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
+const MintBadge = ({
+  badgeId,
+  isQuestCompleted,
+}: {
+  badgeId: number
+  isQuestCompleted: boolean
+}): React.ReactElement => {
   const { t } = useTranslation()
   const [isBadgeMintedLS, setIsBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${badgeId}`,
     false
   )
+  const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [status, setStatus] = useState('')
+  const [showConfetti, setShowConfetti] = useState(false)
+  const [showPopover, setShowPopover] = useState(false)
   const [isMintingInProgress, setIsMintingInProgress] = useState(false)
   const [passportLS, setPassportLS] = useLocalStorage(
     'passport',
     EMPTY_PASSPORT
   )
   const [, setRefreshBadgesLS] = useLocalStorage('refreshBadges', false)
+  const { query } = useRouter()
+  const { simulate } = query
+  const {
+    isOpen: isOpenPopOver,
+    onOpen: onOpenPopOver,
+    onClose: onClosePopOver,
+  } = useDisclosure()
+  const [isSmallScreen] = useSmallScreen()
 
   const { address } = useAccount()
   const toast = useToast()
@@ -50,6 +81,15 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
       // TODO: handle errors
     }
   }
+
+  useEffect(() => {
+    if (isQuestCompleted && badgesMintedLS?.length === 0 && !showPopover) {
+      setTimeout(() => {
+        onOpenPopOver()
+        setShowPopover(true)
+      }, 1000)
+    }
+  }, [badgesMintedLS])
 
   useEffect(() => {
     if (address) {
@@ -79,9 +119,11 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
     // TODO: add 1 min timeout
 
     try {
-      const signature = await signMessage({
-        message: WALLET_SIGNATURE_MESSAGE,
-      })
+      const signature = simulate
+        ? 'simulate_signature'
+        : await signMessage({
+            message: WALLET_SIGNATURE_MESSAGE,
+          })
       const bodyParameters = {
         address,
         badgeId,
@@ -128,7 +170,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                     <ExternalLink
                       underline="true"
                       href={txLink}
-                      alt="Minting in progress"
+                      alt="Polyscan transaction link"
                     >
                       {`${txLink.substring(0, 50)}...`}
                     </ExternalLink>
@@ -149,11 +191,8 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
         console.log(transactionComfirmed)
         if (transactionComfirmed.status === 'success') {
           const openSeaLink = `${BADGE_OPENSEA_URL}${badgeId}`
-          // Refresh list of Badges in the wallet
-          setRefreshBadgesLS(true)
-          setIsBadgeMintedLS(true)
           toast.closeAll()
-          // TODO: add 🎊
+          setShowConfetti(true)
           toast({
             description: (
               <>
@@ -180,8 +219,6 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
             duration: 10000,
             isClosable: true,
           })
-          setStatus('')
-          setIsMintingInProgress(false)
         }
       }
       // something went wrong while minting
@@ -212,7 +249,7 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
                   {`${result.data.status || result.data.error || ''} | `}
                   <ExternalLink
                     underline="true"
-                    href="/faq#d1a7f6dda4334a7ba73ee8b3a18a60ad"
+                    href="/faq#0c0b44a30724489d927dda0838c085ad"
                   >
                     {t('Learn more')}
                   </ExternalLink>
@@ -236,23 +273,68 @@ const MintBadge = ({ badgeId }: { badgeId: number }): React.ReactElement => {
 
   return (
     <>
-      <Button
-        variant={'primary'}
-        w="100%"
-        height="51px"
-        fontSize="lg"
-        fontWeight="bold"
-        borderBottomRadius="0"
-        isLoading={isMintingInProgress}
-        loadingText={t('Minting Badge ...')}
-        cursor={isBadgeMintedLS ? 'auto' : 'pointer'}
-        onClick={() => {
-          passportLS?.verified ? mintBadge() : onOpen()
-        }}
+      <Popover
+        isOpen={isOpenPopOver}
+        placement={isSmallScreen ? 'bottom' : 'right'}
+        returnFocusOnClose={false}
+        onOpen={onOpenPopOver}
+        onClose={onClosePopOver}
       >
-        {t('Mint Badge')}
-      </Button>
-      <PassportModal isOpen={isOpen} onClose={onClose} />
+        <PopoverTrigger>
+          <Button
+            variant={'primary'}
+            w="100%"
+            height="51px"
+            fontSize="lg"
+            fontWeight="bold"
+            opacity={!address || !isQuestCompleted ? '0.5' : 1}
+            isLoading={isMintingInProgress}
+            loadingText={t('Minting Badge...')}
+            cursor={isBadgeMintedLS ? 'auto' : 'pointer'}
+            onClick={() => {
+              passportLS?.verified ? mintBadge() : onOpen()
+            }}
+            leftIcon={<ShootingStar width="28px" height="28px" />}
+          >
+            {t('Claim Badge')}
+          </Button>
+        </PopoverTrigger>
+        <PassportModal isOpen={isOpen} onClose={onClose} />
+        <Confetti
+          showConfetti={showConfetti}
+          onConfettiComplete={() => {
+            setShowConfetti(false)
+            // Refresh list of Badges in the wallet
+            setIsBadgeMintedLS(true)
+            setRefreshBadgesLS(true)
+            setStatus('')
+            setIsMintingInProgress(false)
+          }}
+        />
+        <PopoverContent>
+          <PopoverCloseButton />
+          <PopoverArrow />
+          <PopoverBody textAlign="left">
+            <Box mt="2" p="2">
+              If you have a crypto wallet, you can now mint your lesson badge
+              here!
+            </Box>
+            <Box mb="2" p="2">
+              {`If you don't have a wallet yet, check out our '`}
+              <ExternalLink
+                underline="true"
+                href="/lessons/creating-a-crypto-wallet"
+              >
+                Creating a Crypto Wallet
+              </ExternalLink>
+              {`' walkthrough. Wallets are your account on the blockchain!`}
+            </Box>
+          </PopoverBody>
+        </PopoverContent>
+        {/* {isSmallScreen && (
+          <Box position="absolute" height="250px" w="1px"></Box>
+        )} */}
+      </Popover>
     </>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import WalletConnect from 'components/Quest/WalletConnect'
+import BitcoinBasics from 'components/Quest/BitcoinBasics'
 import WalletBasics from 'components/Quest/WalletBasics'
 import IntroToDeFi from 'components/Quest/IntroToDeFi'
 import BlockchainBasics from 'components/Quest/BlockchainBasics'
@@ -7,6 +8,7 @@ import AcademyCommunity from 'components/Quest/AcademyCommunity'
 import Web3Security from 'components/Quest/Web3Security'
 import Layer1Blockchains from 'components/Quest/Layer1Blockchains'
 import DecentralizedExchanges from 'components/Quest/DecentralizedExchanges'
+import StakingOnEthereum from 'components/Quest/StakingOnEthereum'
 import DEXAggregators from 'components/Quest/DEXAggregators'
 import Layer2Blockchains from 'components/Quest/Layer2Blockchains'
 import BanklessArchetypes from 'components/Quest/BanklessArchetypes'
@@ -29,15 +31,18 @@ export const ONCHAIN_QUESTS = [
   'DEXAggregators',
   'Layer2Blockchains',
   'DecentralizedExchanges',
+  'StakingOnEthereum',
   'OptimismGovernance',
 ]
 
+// TODO: revamp QuestComponent
 const QuestComponent = (
   component: QuestComponentType | null,
   badgeId?: number
 ): QuestType => {
   const QUEST_COMPONENTS = {
     WalletConnect: WalletConnect,
+    BitcoinBasics: BitcoinBasics,
     WalletBasics: WalletBasics,
     IntroToDeFi: IntroToDeFi,
     BlockchainBasics: BlockchainBasics,
@@ -45,6 +50,7 @@ const QuestComponent = (
     Web3Security: Web3Security,
     Layer1Blockchains: Layer1Blockchains,
     DecentralizedExchanges: DecentralizedExchanges,
+    StakingOnEthereum: StakingOnEthereum,
     DEXAggregators: DEXAggregators,
     Layer2Blockchains: Layer2Blockchains,
     BanklessArchetypes: BanklessArchetypes,
@@ -56,7 +62,9 @@ const QuestComponent = (
   const [isSmallScreen] = useSmallScreen()
 
   const Component =
-    component === 'ConceptosBasicosDeBlockchain'
+    component === 'BitcoinBasics'
+      ? QUEST_COMPONENTS['BitcoinBasics']({ test: false })
+      : component === 'ConceptosBasicosDeBlockchain'
       ? // HACK: TEMP
         QUEST_COMPONENTS['BlockchainBasics']('es')
       : component === 'BlockchainBasics'
@@ -89,7 +97,11 @@ const QuestComponent = (
     }
   }, [address, Component.isQuestCompleted])
 
-  if (!address && component !== 'WalletBasics') {
+  if (
+    !address &&
+    component !== 'WalletBasics' &&
+    component !== 'BitcoinBasics'
+  ) {
     return {
       isQuestCompleted: false,
       questComponent: ConnectFirst(isSmallScreen, address),

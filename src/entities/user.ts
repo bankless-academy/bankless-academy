@@ -5,9 +5,10 @@ export interface UserStatsType {
   valid_stamps?: string[],
   ens_name?: string,
   ens_avatar?: string,
-  donations?: string[]
+  donations?: { [key: string]: any }
   score?: number,
   rank?: number
+  referrals?: string[]
 }
 export interface UserType {
   address: string

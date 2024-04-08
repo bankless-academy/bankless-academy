@@ -3,83 +3,364 @@ import { LessonType } from 'entities/lesson'
 
 const LESSONS: LessonType[] = [
   {
+    badgeImageLink: '/images/bitcoin-basics/badge-89138e57.png',
+    lessonImageLink: '/images/bitcoin-basics/lesson-4a87d990.png',
+    lessonCollectedImageLink: '/images/bitcoin-basics/datadisk-collected-15700488.png',
+    lessonCollectibleGif: '/images/bitcoin-basics/datadisk-gif-ba7bb13b.gif',
+    lessonCollectibleVideo: '/images/bitcoin-basics/datadisk-video-c4e04385.webm',
+    lessonCollectibleMintID: '65e62382de00ef68ee5d7454',
+    lessonCollectibleTokenAddress: '0x92B55D5254bC93A4f282224A9C3bD2b7e0eF37fc',
+    socialImageLink: '/images/bitcoin-basics/social-9bc40686.jpg',
+    learningActions: '',
+    marketingDescription: 'What is Bitcoin? Explore the first successful cryptocurrency and rethink money.',
+    badgeId: 12,
+    datadiskVectorMint: 124,
+    collectibleId: 'D002',
+    duration: null,
+    learnings: '',
+    description: 'What is Bitcoin? Explore the first successful cryptocurrency and rethink money.',
+    name: 'Bitcoin Basics',
+    languages: [],
+    lessonWriters: 'Tetranome',
+    quest: 'BitcoinBasics',
+    publicationStatus: 'publish',
+    publicationDate: '2024-03-07',
+    featuredOrderOnHomepage: 1,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    hasCollectible: true,
+    notionId: '6a440f5dd00a4179811178943bf89e1d',
+    englishName: 'Bitcoin Basics',
+    slug: 'bitcoin-basics',
+    imageLinks: [
+      '/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png',
+      '/images/bitcoin-basics/bitcoins-story-98b007a5.png',
+      '/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg',
+      '/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg',
+      '/images/bitcoin-basics/enter-bitcoin-b108517c.svg',
+      '/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg',
+      '/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg',
+      '/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg',
+      '/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg',
+      '/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg',
+      '/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png'
+    ],
+    keywords: [
+      'cryptocurrency',
+      'satoshi nakamoto',
+      'scarcity',
+      'gold standard',
+      'central banks',
+      'monetary policy',
+      'commercial banks',
+      'custodian',
+      'btc',
+      'peer-to-peer',
+      'blockchain technology',
+      'scarce',
+      'self-custodial',
+      'max supply',
+      'cryptocurrency mining',
+      'circulating supply',
+      'self-custody',
+      'custodians',
+      'cryptocurrency wallet',
+      'decentralization',
+      'decentralized',
+      'miners',
+      'blockchain',
+      'central bank',
+      'decentralized money',
+      'equality of opportunity'
+    ],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: 'be804c6aecad43af911a5b34026fe79a',
+        title: 'Welcome to Bankless Academy',
+        content: '<div class="bloc1"><p>Welcome, bold Explorer, to the frontier of digital innovation.</p><p>At Bankless Academy, our mission is to provide Explorers such as yourself with the best tools and knowledge to navigate the blockchain universe and “go bankless!”</p><p>Today, we’re looking at the <code>cryptocurrency</code> that started it all: Bitcoin.</p><p>Bitcoin is a new type of money. It increases financial freedom for those who hold it, and protects their hard-earned money from losing value over time.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/welcome-to-bankless-academy-cc6189d4.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'e1ba1d31d16b4430afa774522ff13fb2',
+        title: 'Bitcoin’s Story',
+        content: '<div class="bloc1"><p>Launched in 2009 by the mysterious “<code>Satoshi Nakamoto</code>,” Bitcoin marked the beginning of a new economic era.</p><p>As the first successful <code>cryptocurrency</code>, Bitcoin began a powerful conversation: should the control and power of money continue to rest within traditional banking systems? Or does it belong in the hands of the citizens who earn and use it every day? If you’re unsure of what exactly this means, you’re in the right place!</p><p>The reality is that today, we aren’t in control of our money in the way we think we are. This has very real consequences.</p><p>It’s time to learn how Bitcoin is revolutionizing finance.</p><p><strong>It’s time to rethink money.</strong></p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/bitcoins-story-98b007a5.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '30cb635e7580485793f2935d39b1f007',
+        title: 'A Brief History of Money',
+        content: '<div class="bloc1"><p>Money has been an integral part of society since our earliest days when beads, shells, and stones were used to exchange goods & services.</p><p>Yet early currencies had a problem: it was too easy for someone to find/create new money. The more of something there is, the less value it has, and so everyone’s money would slowly become worth less. If currency was to hold its value, it needed to be harder to find.</p><p>Materials like gold & silver were eventually adopted to solve this problem. The key advantage of these materials was their scarcity – there wasn\'t an endless supply, making it hard for anyone to increase the amount of money in circulation significantly. This <code>scarcity</code> helped maintain the value of money.</p><p>As societies grew, a government’s central bank would issue standardized coins made of gold & silver. Such currency made money recognizable and measurable while serving as a strong store of value.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'eecfb3374fc640c980096e5ed654c70c',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'True or False:<br>”As more money is added to a monetary system, the existing money becomes worth less.”',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          feedback: [
+            'Correct! The more money there is, the less value it has.',
+            'Try again.'
+          ],
+          id: 'bitcoin-basics-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '71abd63b1fa8418e96ad038bbc51cb34',
+        title: 'A Brief History of Money (Part 2)',
+        content: '<div class="bloc1"><p>With the introduction of paper money, currencies shifted to being \'backed\' by gold. Money’s value was directly linked to a specific amount of the precious metal held in storage.</p><p>Then, in the 20th century, came the fall of this “<code>Gold Standard</code>”.</p><p>Precious metals were slowly disconnected from currencies worldwide — an effort that would allow any country’s economy to grow beyond its supply of gold. As a central bank no longer needed gold to create currency, they could create as much new money as they deemed necessary for their country’s economy. By firmly controlling the money supply, they could also control its value.</p><p>Moving into the digital age, electronic currency has vastly replaced physical currency. Storing our money with commercial banks has given us the convenience of credit cards and payment apps. While easy and secure, it also puts for-profit businesses between people and their money.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/a-brief-history-of-money-part-2-3f9be5ac.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '459a1518417540c99dc0a0f68ac9cef5',
+        title: 'The Problem',
+        content: '<div class="bloc1"><p>The problem with our current financial system is the lack of control we have over our money, and how this lowers our ability to freely decide what to save and what to spend.</p><p><code>Central banks</code>, the bank managing a country’s <code>monetary policy</code>, can introduce any amount of new money. This lack of <code>scarcity</code> often makes our money worth less and less each year. Money with an unpredictable, decreasing value often forces us to spend it: <strong>“If my money is going to be worth less every year, why save? I might as well spend it now.”</strong> 💸</p><p><code>Commercial banks</code>, those used for everyday saving and spending, also influence our spending habits. As a <code>custodian</code>, they can block transactions or confiscate our funds. Some banks have blocked their clients from buying cryptocurrency! <strong>If your bank can freeze your life savings at any time… do you truly own your money?</strong> 💸</p><hr><p>For money to once again support financial freedom, it must regain the two key properties it has lost over time:</p><ul><li>💎 <strong>Value:</strong> Money must reliably store its worth over time.</li><li>✊ <strong>Ownership:</strong> Money must be easy to store and protect ourselves.</li></ul><p>Only these qualities can restore our ability to freely save and spend our money.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'e1f43554c7964a0ea655c2b299d42844',
+        title: 'Enter Bitcoin',
+        content: '<div class="bloc1"><p><code>Satoshi Nakamoto</code> thought that money was too important to be controlled by just a few people. He wanted to create a type of money that could be fair and reliable for everyone.</p><p>Enter Bitcoin (<code>BTC</code>): a digital currency that operates beyond the traditional banking system.</p><ul><li>⛓️ It’s <code>peer-to-peer</code>: It connects people directly to each other. Automated using <code>blockchain technology</code>, it removes need for institutions to facilitate storage or transactions. Advocates call it “a set of rules with no rulers”.</li><li>💎 It’s <code>scarce</code>: With no central bank issuing unlimited new money, Bitcoin has a stable, predictable monetary policy that honors long-term saving.</li><li>✊ It’s <code>self-custodial</code>: It can be held without institutions hosting transfers or storage. When stored in its natural state, Bitcoin is held in a secure online safe and only the owner has access.</li></ul><p>For its qualities, Bitcoin has earned the nickname “digital gold”.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/enter-bitcoin-b108517c.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '8462f7e2e0694a82a0e6dc126c81b907',
+        title: 'Digital Gold: Scarcity',
+        content: '<div class="bloc1"><p>📉 Do you find it difficult to keep up with rising costs?</p><hr><p>Scarcity in Bitcoin refers to there being a cap on how many Bitcoins can ever exist — a maximum of 21 million. This <code>max supply</code> is embedded in its code, making Bitcoin rare and potentially valuable. This puts it in a good position as a long term store of value, much like gold.</p><p>While the max supply of <code>BTC</code> can’t exceed 21 million, new currency is added to the market at regular intervals. Much like mining gold, new Bitcoin is introduced through a laborious process called <code>cryptocurrency mining</code>. This predictable increase in <code>circulating supply</code> keeps the Bitcoin economy moving.</p><p>Bitcoin\'s fixed <code>monetary policy</code> makes it an attractive asset for those seeking to preserve value in the long term, allowing them to keep up with rising costs.</p><p>It’s short term value remains volatile due to market speculation.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/digital-gold-scarcity-8c8905f7.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '626fb6d4b2b047db837057cfbb3992e0',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How does Bitcoin promote value preservation in the long term?',
+          rightAnswerNumber: 1,
+          answers: [
+            'Using a max supply cap.',
+            'By removing custodians.'
+          ],
+          feedback: [
+            'Correct! Bitcoin\'s fixed supply creates scarcity similar to precious metals. This aids value retention.',
+            'Try again! Custody relates to ownership, rather than value.'
+          ],
+          id: 'bitcoin-basics-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '52422fece4f34f158bfea69822ee1815',
+        title: 'Digital Gold: Self-Custody',
+        content: '<div class="bloc1"><p>🧊 Has your bank frozen your funds without notice because you performed a transfer that they didn’t like?</p><hr><p>In democracies, ownership is a protected human right because it gives citizens increased control and freedom over their lives. We cannot act freely when our means of survival are conditional — judged by businesses or institutions.</p><p>As our assets are increasingly digitized (i.e. your money, your property, and even your identity), our lives are taking on a digital quality that we must learn to protect.</p><p>Bitcoin’s <code>self-custody</code> offers true digital ownership, beyond reach of <code>custodians</code>. So long as you don’t share your account information with someone else, you have sole access to your assets. It’s like having your own vault of gold in a secure online space.</p><p>This system of ownership gives you total control of your digital wealth — anywhere in the world, any time.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/digital-gold-self-custody-18bd7ba3.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'f8d8e8d58e984f1097f0b17a6d805df8',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How does self-custody enable true ownership?',
+          rightAnswerNumber: 1,
+          answers: [
+            'By giving you sole access to your assets.',
+            'By allowing custodians to access to your assets.'
+          ],
+          feedback: [
+            'Correct! Anyone with access to our assets has the ability to confiscate them.',
+            'Try again! Self-custody means there is no custodian (third party) that can access our assets.'
+          ],
+          id: 'bitcoin-basics-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '2e71f5c2c4364496bf982a6d093fc5f5',
+        title: 'Bitcoin: It’s like Emailing Money!',
+        content: '<div class="bloc1"><p>⌛ Have you ever had to wait several working days to send money internationally, while paying 3-5% in fees?</p><hr><p>Email simplified sending letters by removing the need for a post office. In a similar way, Bitcoin has streamlined sending money by removing the need for banks.</p><ul><li>⚡ Transfer Bitcoin globally for a reasonable fee.</li><li>⚙️ Send money 24/7. No waiting, no paperwork, no downtime.</li><li>📡 Access Bitcoin from anywhere with an internet connection.</li></ul><p>In the same way that you have an email address, a single Bitcoin address is necessary to receive Bitcoin. By default it looks like this: <em>1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</em> (we’ll show you how to customize this later!)</p><p>You’ll manage your account using <code>cryptocurrency wallet</code> software connected to your web browser or your phone. It’s the easiest “bank account” you’ll ever set up. No appointment or ID required!</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '4fbf3369fdda41cfacc47b91a55cb428',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How is Bitcoin similar to email?',
+          rightAnswerNumber: 4,
+          answers: [
+            'Both are online 24/7.',
+            'Both are digital technologies.',
+            'Both can be accessed with a phone.',
+            'All of the above.'
+          ],
+          feedback: [
+            'Right! But this isn’t the only correct answer.',
+            'Right! But this isn’t the only correct answer.',
+            'Right! But this isn’t the only correct answer.',
+            'Correct! Both Bitcoin and email innovate on the services that came before them.'
+          ],
+          id: 'bitcoin-basics-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '77a68343994b4aad9aa1c99f35961204',
+        title: 'The Bitcoin Network',
+        content: '<div class="bloc1"><p>Let’s switch gears and look at the engine behind Bitcoin: <br><strong>The Bitcoin Network</strong>.</p><p>Bitcoin runs on a shared network hosted across thousands of computers worldwide. Every computer in the network plays a role in maintaining its operations; the network exists through these computers! If one computer processes a fraudulent transaction, the others are there to correct it.</p><p>This also means there’s no single point to apply pressure in attempted hacks. In order for the network to be controlled, a majority of the computers would need to be compromised.</p><p>This defense strategy is called <code>decentralization</code>: the shifting of control from one central group to many smaller ones. It’s what makes cryptocurrency networks virtually unstoppable.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/the-bitcoin-network-eda52e60.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '8a1ec1c7e35649bb9b26e4a1c1ce5fe1',
+        title: 'Bitcoin Mining',
+        content: '<div class="bloc1"><p>With the Bitcoin Network having no central bank, the network relies on its <code>decentralized</code> participants. Known as <code>miners</code>, these participants are constantly checking transactions and adding them to a “database” — the <code>blockchain</code>.</p><p>It’s important that these miners are motivated to be active and honest, to protect the network from fraud. Miners frequently double-check each other’s results, but are also rewarded for the work they do. When we submit Bitcoin transactions, we pay a small fee that goes to the miner of our transaction. Miners also earn new Bitcoin, known as “block rewards”, for their work.</p><p>These rewards slowly increase Bitcoin’s <code>circulating supply</code> within the <code>max supply</code> cap of 21 million <code>BTC</code>.</p><p>It’s the slow, predictable introduction of new coins that separates Bitcoin from traditional currencies. Everything is managed by community-approved computer code — “rules with no rulers” — and decentralized participants, rather than small groups of people at the <code>central bank</code>.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '9062ca20dd5541a6ae3a25f5831ee4e2',
+        title: 'Sending a Bitcoin Transaction',
+        content: '<div class="bloc1"><p>Understanding the exact mechanisms that power Bitcoin transactions and mining can get quite complicated. That said, using and sending Bitcoin is simple!</p><p>We’ll take a simplified view of the process for today:</p><ol><li>You submit a transaction using your <code>cryptocurrency wallet</code>, sending 0.1 <code>BTC</code> to your friend’s wallet address.</li><li>A miner checks your transaction for errors. Other miners double-check their results.</li><li>If approved, your transaction is added to the <code>blockchain</code> “database”.</li><li>Your friend receives 0.1 BTC in their wallet.</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/bitcoin\'></iframe></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '66a30c6163b1406da931e7b62ba76222',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'What is decentralization?',
+          rightAnswerNumber: 2,
+          answers: [
+            'Increased scarcity.',
+            'Distribution of control across multiple participants.',
+            'The rewards earned by miners.'
+          ],
+          feedback: [
+            'Try again! Scarcity means an asset is in low supply.',
+            'Correct! This distribution protects the network and its users.',
+            'Try again! Miners are rewarded with transaction fees and block rewards.'
+          ],
+          id: 'bitcoin-basics-5'
+        }
+      },
+      {
+        type: 'QUIZ',
+        notionId: '59609434869c42b99a54a538d8faa2d5',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How does mining protect the Bitcoin Network from fraud?',
+          rightAnswerNumber: 1,
+          answers: [
+            'By rewarding miners for checking transactions.',
+            'By increasing the circulating supply of Bitcoin.',
+            'Both of the above.'
+          ],
+          feedback: [
+            'Correct! Bitcoin rewards attract miners and incentivize them to act honestly.',
+            'Try again! Supply increases don’t help to prevent fraud.',
+            'Try again! Only one of the above helps to prevent fraud.'
+          ],
+          id: 'bitcoin-basics-6'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'e2a5684df9734013afdc8e42a1bb494c',
+        title: 'The Innovation of Money',
+        content: '<div class="bloc1"><p>In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value, and how institutional management of our assets means giving up full ownership.</p><p>However Bitcoin has evolved beyond a simple monetary tool. It has become a catalyst for a <code>decentralized money</code> revolution. This movement reimagines the traditional financial system by distributing monetary power and control to those who use it.</p><p>By decentralizing money and removing <code>custodians</code> we can:</p><ul><li>💵 Host a 24/7 global marketplace, secured by citizens around the world.</li><li>🛠️ Offer financial tools to the unbanked regions of the globe.</li><li>🤝 Use <code>peer-to-peer</code> technology to avoid the inefficiencies of middleman institutions.</li><li>🔎 Reduce institutional inequality, fraud and market manipulation.</li><li>⚖️ Build <code>equality of opportunity</code> into monetary systems.</li><li>🌐 Establish true ownership for the digital age.</li></ul><p>The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe — and you’re invited.</p><p><em>”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.</em></p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '9920715e06094e39bf34a5a63891a909',
+        title: 'Your Bitcoin Quest',
+        content: '<div class="bloc1"><p>It’s time to simulate your first Bitcoin transaction and practice your freedom in the digital age.</p><p>Your transaction will include the following details:</p><p>📫 The wallet address of the person you’re sending to.</p><p>💰 The amount of Bitcoin to send.</p><p>It will also include a transaction fee given to the <code>miners</code>.</p><p>Remember to make sure all details are accurate.<br>Once a Bitcoin transaction is confirmed, you cannot reverse it.</p></div><div class="bloc2"><img src=\'/images/bitcoin-basics/your-bitcoin-quest-aad5de00.png\'></div>'
+      },
+      {
+        type: 'QUEST',
+        title: 'Bitcoin Basics Quest',
+        component: 'BitcoinBasics'
+      }
+    ]
+  },
+  {
     badgeImageLink: '/images/wallet-basics/badge-d89b2df3.png',
     lessonImageLink: '/images/wallet-basics/lesson-5aa84b59.png',
-    socialImageLink: '/images/wallet-basics/social-230cc260.jpg',
+    socialImageLink: '/images/wallet-basics/social-c3ee6a4c.jpg',
     learningActions: 'Create and manage your own wallet\nConnect your wallet to a web3 website',
     marketingDescription: 'A crypto wallet is essential gear for Web3 and DeFi. Get basic training on how a wallet works and how to get started.',
     badgeId: 1,
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
-    description: 'Create and securely manage your first crypto wallet. ',
+    description: 'What is a crypto wallet? Learn more and create your first wallet today!',
     name: 'Wallet Basics',
-    languages: [
-      'it'
-    ],
-    lessonWriters: 'Ap0ll0517, Jordy',
+    languages: [],
+    lessonWriters: 'Ap0ll0517, Jordy, Tetranome',
     quest: 'WalletBasics',
     publicationStatus: 'publish',
-    publicationDate: '2022-02-11',
+    publicationDate: '2024-03-20',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
+    sponsorName: 'Zerion',
+    sponsorLogo: '/images/wallet-basics/sponsor-5c941aef.png',
     notionId: 'c2e79569863a4f5bbfdc9e86be5ae64f',
     englishName: 'Wallet Basics',
     slug: 'wallet-basics',
     imageLinks: [
-      '/images/wallet-basics/wallet-intro-cf4e23c2.png',
-      '/images/wallet-basics/wallet-definition-0816ac58.svg',
-      '/images/wallet-basics/your-wallets-public-key-416eaa27.svg',
-      '/images/wallet-basics/your-wallets-private-key-f4966ef4.svg',
-      '/images/wallet-basics/recovery-phrase-d856b83a.svg',
-      '/images/wallet-basics/types-of-wallet-aa1a0445.png',
-      '/images/wallet-basics/custodial-wallets-8d2418ba.svg',
-      '/images/wallet-basics/non-custodial-wallet-fb499cf7.svg',
-      '/images/wallet-basics/hot-wallets-7c0fe45a.svg',
-      '/images/wallet-basics/cold-wallets-86fdb409.svg',
-      '/images/wallet-basics/wallet-security-c6f5271b.png',
-      '/images/wallet-basics/youre-ready-to-create-your-first-wallet-a18de323.svg'
+      '/images/wallet-basics/wallet-intro-b6d4487a.png',
+      '/images/wallet-basics/wallet-definition-d2912914.svg',
+      '/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg',
+      '/images/wallet-basics/your-wallets-public-key-87828c3e.svg',
+      '/images/wallet-basics/your-wallets-private-key-0d84ad39.svg',
+      '/images/wallet-basics/recovery-phrase-c614c36c.svg',
+      '/images/wallet-basics/types-of-wallet-094f0eb1.png',
+      '/images/wallet-basics/custodial-wallets-4eede755.svg',
+      '/images/wallet-basics/non-custodial-wallet-833c3d6b.svg',
+      '/images/wallet-basics/hot-wallets-9356886d.svg',
+      '/images/wallet-basics/cold-wallets-0e3183d1.svg',
+      '/images/wallet-basics/wallet-security-3a185d90.png',
+      '/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg'
     ],
     keywords: [
-      'web3',
       'web2',
+      'web3',
+      'cryptocurrency',
+      'blockchain apps',
       'blockchain',
-      'wallet',
-      'digital assets',
+      'wallet app',
       'public key',
-      'private keys',
       'private key',
+      'wallet',
       'recovery phrase',
       'self-custody wallet',
       'custodial wallet',
       'hot wallet',
       'cold wallets',
       'hot wallets',
-      'defi'
+      'self-custody'
     ],
     slides: [
       {
         type: 'LEARN',
-        notionId: '21028f49faf34679b37937b1f20278de',
+        notionId: '96133dee20584842a4b297d2946f6eae',
         title: 'Wallet Intro',
-        content: '<div class="bloc1"><p><strong>Greetings!</strong></p><p>Welcome to Bankless Academy. We’re excited to guide you on your journey into <code>web3</code>. Every explorer of this space eventually needs to create a digital wallet.</p><p>Wallets are kind of like the accounts you’re used to in <code>web2</code>. You’ll use them to access web3 apps and sites, but there are also big differences that are important to understand. For example, they can hold cryptocurrency.</p><p>A properly set up wallet grants you access to incredible new possibilities while safeguarding your digital assets and online identity.</p><p>In this lesson, we’ll introduce you to wallets, wallet types, wallet security basics, and end with a video on how to set one up.</p><p>Let’s get started!</p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-intro-cf4e23c2.png\'></div>'
+        content: '<div class="bloc1"><p><strong>Greetings Bankless Explorer!</strong></p><p>It’s time to dive deeper on your journey into the blockchain multiverse. Every Explorer in this space eventually needs to create a crypto wallet.</p><p>Wallets are kind of like the accounts from the <code>web2</code> internet that you’re used to. You’ll use a wallet to log into the blockchain ecosystem, also known as <code>web3</code>, where you’ll be able to use <code>cryptocurrency</code> and connect to <code>blockchain apps</code>!</p><p>In this lesson, we’ll introduce you to wallets, how they work, and how to keep your cryptocurrency secure. We’ll end with a guide on how to set one up and access<strong> the Ethereum blockchain — the home of Bankless Academy.</strong></p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-intro-b6d4487a.png\'></div>'
       },
       {
         type: 'LEARN',
-        notionId: '9b1f2c2977dd46e5a37be9393b29cf4b',
+        notionId: 'f6b567bdfb59479cbacf047dbb1a9878',
         title: 'Wallet Definition',
-        content: '<div class="bloc1"><p>What exactly is a wallet?</p><p>The short definition is: a computer program you use to interact with a <code>blockchain</code>.</p><p>When your <code>wallet</code> is connected to a blockchain, you can make purchases, send or receive <code>digital assets</code> like cryptocurrency, interact with web3 applications, and more.</p><p>Unlike regular user accounts you’re used to, a single wallet lets you access a large number of web3 apps. It’s like having one account for the entire internet.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-definition-0816ac58.svg\'></div>'
+        content: '<div class="bloc1"><p>What exactly is a crypto wallet?</p><p>The short definition is: an account on a <code>blockchain</code>, used to store digital assets and log into blockchain apps.</p><p>It’s like having your own personal safe on the internet, and you hold the only key for unlocking it. At the same time, this safe is similar to a regular website account. You can use it to make purchases, send or receive <code>cryptocurrency</code>, and interact with a blockchain.</p><p>However, unlike the <code>web2</code> accounts you’re used to, a single wallet can access an entire blockchain, and a large number of blockchain apps. It’s like having one account for the entire internet.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-definition-d2912914.svg\'></div>'
       },
       {
         type: 'LEARN',
-        notionId: '814cf16fc9bc418886dea2663e7e7600',
+        notionId: '9e07253ff3334fb59f20fdda4a2e03c6',
         title: 'Is creating a wallet difficult?',
-        content: '<div class="bloc1"><p>It used to be difficult, but these days anyone can create a wallet quite easily.</p><p>Wallets are essentially computer programs. If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.</p><p>The trickier part of managing a wallet involves keeping it secure — which we will dive into shortly!</p><p>Choosing your first wallet may also feel intimidating. We recommend starting with MetaMask as your wallet provider: their wallets are user friendly and have access to many popular blockchains. As you get more comfortable in the web3 space, you will likely explore other providers and create multiple wallets.</p></div>'
+        content: '<div class="bloc1"><p>It used to be difficult, but these days anyone can create a wallet quite easily.</p><p>If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.</p><p>The trickier part of managing a wallet involves keeping it secure — which we’ll dive into shortly!</p><p>Choosing your <code>wallet app</code> may also feel intimidating. This is the app that you will install on your device to access your wallet on the blockchain. We recommend starting with the Zerion wallet app: it’s user friendly and has access to many popular blockchains. As you get more comfortable in the <code>web3</code> space, you will likely explore other providers and create multiple wallets.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: 'be3721028aab41fda52adbc0461eacaa',
+        notionId: 'c28d3aa7e8b34f7a944645eab08ba3ad',
         title: 'Knowledge Check',
         quiz: {
           question: 'What is a wallet?',
@@ -94,32 +375,32 @@ const LESSONS: LessonType[] = [
             'ℹ️ Try again! Your wallet is hosted on a blockchain.',
             'ℹ️ Try again! Cryptocurrencies are something you hold in your wallet.',
             'ℹ️ Try again! Digital collectibles are something you hold in your wallet.',
-            'ℹ️ Correct! Wallets are accounts used to interact with a blockchain.'
+            'ℹ️ Correct! Wallets are accounts used to interact with blockchains.'
           ],
           id: 'wallet-basics-1'
         }
       },
       {
         type: 'LEARN',
-        notionId: 'ca4b8cafb7b246e8b03143d40dd6f7bb',
+        notionId: 'fdd6285759b04ebbaf5d87ef05a02725',
         title: 'Wallets & Password Recovery',
-        content: '<div class="bloc1"><p><strong>Here is one of the most important things to understand about web3 wallets: today, there is no “password reset” or frequent password changes.</strong></p><p>Most of us are used to these features. If we forget a password, we click a button, do some things, and get a new password. Easy.</p><p>Not so with wallets. Because of how blockchains work, wallets are assigned a “name” and a complex “password” when they’re created (you do not choose them).</p><p>This name and password combination are impossible to change. Let’s learn a bit more about each.</p></div>'
+        content: '<div class="bloc1"><p>Here is one of the most important things to understand about <code>web3</code> wallets:<strong><br>There are no “password resets” or “password changes”.</strong></p><p>Most of us are used to these features. If we forget a password, we click a button, do a few things, and get a new password. Easy.</p><p>Not so with crypto wallets. Because of how blockchains work, wallets are assigned an “address” and a complex “password” when they’re created — and you do not choose these.</p><p>This address and password combination are impossible to change, although you can always create a new wallet if you need to. Let’s learn a bit more about these special addresses and passwords, so that we can feel confident using them!</p></div>'
       },
       {
         type: 'LEARN',
-        notionId: 'd5ecee5c72b6408598153431417d9596',
+        notionId: 'fc8b92080fd14c938e419ca401e15634',
         title: 'Your wallet’s public key',
-        content: '<div class="bloc1"><p>A <code>public key</code> is basically your wallet’s name. Often, this looks like a jumble of random letters and numbers.</p><p>Example: <em>0xe1887fF140BfA9D3b45D0B2077b7471124acD242</em></p><p>It is possible to create easier to remember versions of this with some web3 services, but that’s a lesson for another time.</p><p>You can also think of a public key like the address of a post office box. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.</p><p>It is perfectly safe to share your <strong>public key</strong>.</p><p><strong>Note: </strong>sometimes a single wallet account can hold multiple public (and <code>private keys</code>). Kind of like having many post office boxes under one account.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/your-wallets-public-key-416eaa27.svg\'></div>'
+        content: '<div class="bloc1"><p>A <code>public key</code> is basically your wallet’s address. Often, this looks like a random series of letters and numbers.</p><p>Example: <em>0xe1887fF140BfA9D3b45D0B2077b7471124acD242</em></p><p>It is possible to create easier to remember versions of this with some <code>web3</code> services, but that’s a lesson for another time.</p><p>You can also think of a public key like a house address. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.</p><p>It is perfectly safe to share your wallet’s <strong>public key</strong>.</p><p><strong>Note:</strong> A single wallet app can hold multiple public/<code>private key</code> pairs.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/your-wallets-public-key-87828c3e.svg\'></div>'
       },
       {
         type: 'LEARN',
-        notionId: '9cd06f2632d8478082d56e5fdbd3ba37',
+        notionId: '5f1d4d9b65f740c4af2dc65510c417ef',
         title: 'Your wallet’s private key',
-        content: '<div class="bloc1"><p>If the public key is like a post office box, then the <code>private key</code> is like the key to the box. It is the “password” to your funds and assets.</p><p>It almost always looks like a random jumble of letters and numbers.</p><p>I<strong>t is never safe to share this key — you could lose your wallet and everything in it.</strong></p><p>Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the <code>wallet</code>.</p><p>This is more than just a password. You cannot reset it if you lose access to it.</p><p>Luckily, most <code>web3</code> applications and programs do not require you to painstakingly type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/your-wallets-private-key-f4966ef4.svg\'></div>'
+        content: '<div class="bloc1"><p>If the public key is like a house address, then the <code>private key</code> is like the key to the front door. It’s the “password” to your funds and assets.</p><p>Example: <em>eceac283e04f121cbd40b69e16ab9dec0220df80bf092</em></p><p><strong>It’s never safe to share this key — you could lose your wallet and everything in it.</strong></p><p>Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the <code>wallet</code>.</p><p>This is more than just a password. You cannot reset it if you lose access to it.</p><p>Luckily, most <code>blockchain apps</code> do not require you to type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/your-wallets-private-key-0d84ad39.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: '2d6615df69d74d96bdb4cd750dcb3077',
+        notionId: '28e8eeb6ea36443faba81c65d049e874',
         title: 'Knowledge Check',
         quiz: {
           question: 'Your public key is like your _____ and your private key is like your _____ .',
@@ -127,30 +408,30 @@ const LESSONS: LessonType[] = [
           answers: [
             'Routing Number / Account Number',
             'Address / Zip code',
-            'Post office box / Box key',
+            'House address / House key',
             'Phone Number / Passport Number'
           ],
           feedback: [
-            'ℹ️ Try again! Your private key shouldn’t be shared with others.',
-            'ℹ️ Try again! Your private key shouldn’t be shared with others.',
-            'ℹ️ Correct! Your public key allows others to identify you, while your private key controls the assets within.',
-            'ℹ️ Try again! These are examples of public & private information, but they don’t grant access to assets.'
+            'ℹ️ Try again! Unlike a bank account number, your private key shouldn’t be shared with others.',
+            'ℹ️ Try again! Unlike a zip code, your private key shouldn’t be shared with others.',
+            'ℹ️ Correct! Your public key allows others to find you, while only your private key lets you in.',
+            'ℹ️ Try again! These are examples of public & private information, but they’re unrelated.'
           ],
           id: 'wallet-basics-2'
         }
       },
       {
         type: 'LEARN',
-        notionId: 'd1e68cf58a2943abb3da709fa9c4728e',
+        notionId: '7d74c06b71154434bc5f11673a26c5c6',
         title: 'Recovery Phrase',
-        content: '<div class="bloc1"><p>When you set up a new wallet, the software generates a unique <code>recovery phrase</code>.</p><p>Also sometimes called a “seed phrase” or “secret recovery phrase”, this string of words can be used to access your wallet and crypto assets if:</p><ul><li>Your <code>wallet</code> app or device fails unexpectedly or is damaged.</li><li>You are unable to access it due to misplacement or theft.</li><li>You want to access your wallet account through the wallet app on a different computer or device.</li></ul><p>Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. That data is used to generate both the <code>public key</code> and <code>private key</code> for your wallet.</p><p>This does <strong>not </strong>change or reset the keys.</p><p>Your recovery phrase is essentially an easier to read version of your public/private key pair.</p><p><strong>Never share a recovery phrase.</strong></p></div><div class="bloc2"><img src=\'/images/wallet-basics/recovery-phrase-d856b83a.svg\'></div>'
+        content: '<div class="bloc1"><p>When you set up a new wallet, your wallet app will provide you with a <code>recovery phrase</code>.</p><p>Also called a “seed phrase” or “secret phrase”, this string of words can be used to access your wallet and crypto assets if:</p><ul><li>Your <code>wallet app</code> or device fails unexpectedly or is damaged.</li><li>Your device has been lost or stolen.</li><li>You want to access your wallet on multiple devices.</li></ul><p>Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. This data is used to generate both the <code>public key</code> and <code>private key</code> for your wallet.</p><p>Wallet recovery does <strong>not </strong>change or reset the keys.</p><p>Your recovery phrase is essentially an easier to read version of your public/private key pair. <strong>Never share your recovery phrase.</strong></p></div><div class="bloc2"><img src=\'/images/wallet-basics/recovery-phrase-c614c36c.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: '675459d27a09495b927812f987089aae',
+        notionId: 'aca3c7b9435445d292815700f9b24e4c',
         title: 'Knowledge Check',
         quiz: {
-          question: 'Can you recover your wallet with a recovery phrase if your device gets damaged or lost?',
+          question: 'Can you access your wallet with a recovery phrase if your device gets damaged or lost?',
           rightAnswerNumber: 2,
           answers: [
             'No',
@@ -158,26 +439,26 @@ const LESSONS: LessonType[] = [
           ],
           feedback: [
             'ℹ️ Try again!',
-            'ℹ️ Correct! Recovery phrases grant access to your wallet, even on a multiple devices.'
+            'ℹ️ Correct! Recovery phrases grant access to your wallet, even on multiple devices.'
           ],
           id: 'wallet-basics-3'
         }
       },
       {
         type: 'LEARN',
-        notionId: 'c4e064e581764ca18d2870632fb206de',
+        notionId: '4764dfa090134af4b6d237b6c2986ce1',
         title: 'Types of Wallet',
-        content: '<div class="bloc1"><p>Just as there are many types of computer software, there many types of wallet. Let’s look at the four main categories:</p><ul><li><strong>Custodial wallets:</strong> where a third party is responsible for your private keys.</li><li><strong>Self-custody (non-custodial) </strong><strong>wallets:</strong> where you are responsible for your private keys.</li></ul><p>There are two styles of <code>self-custody wallet</code>:</p><ul><li><strong>Hot wallets:</strong> software on your desktop or phone.</li><li><strong>Cold wallets:</strong> a piece of hardware (like a memory stick) you store somewhere safe.</li></ul><p>Each wallet solution serves a different use-case. Many advanced users have one of each!</p><p>Don’t worry, we’ll only be creating one wallet today.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/types-of-wallet-aa1a0445.png\'></div>'
+        content: '<div class="bloc1"><p>Just as there are many types of computer software, there many types of wallet. Let’s look at the four main categories:</p><ul><li>🏦 <strong>Custodial wallets:</strong> where a third party is responsible for your private keys.</li><li>👤<strong> Self-custody (non-custodial) wallets:</strong> where you are responsible for your private keys.</li></ul><p>There are two styles of <code>self-custody wallet</code>:</p><ul><li>🔥 <strong>Hot wallets:</strong> software on your desktop or phone.</li><li>🧊 <strong>Cold wallets:</strong> a piece of hardware (like a memory stick) you store somewhere safe.</li></ul><p>Each wallet solution serves a different use-case. Many advanced users have one of each!</p><p>Don’t worry, we’ll only be creating one wallet today.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/types-of-wallet-094f0eb1.png\'></div>'
       },
       {
         type: 'LEARN',
-        notionId: '0c579de0a951478cbdae80d6e03f1d55',
+        notionId: '15cb2a53c3ce4b2abb7d7b293accc50b',
         title: 'Custodial Wallets',
-        content: '<div class="bloc1"><p>Since your <code>private key</code> unlocks access to your <code>wallet</code>, keeping it private and secure is very important!</p><p><code>Custodial wallet</code> services include cryptocurrency exchanges such as Coinbase and Kraken. They are your wallet ‘custodian’ — they look after your private keys for you. You access their services like any other website (with an email login and resettable password).</p><p>This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some web3 applications may be limited.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/custodial-wallets-8d2418ba.svg\'></div>'
+        content: '<div class="bloc1"><p>Since your <code>private key</code> unlocks access to your <code>wallet</code>, keeping it safe and secure is very important!</p><p><code>Custodial wallet</code> services include cryptocurrency exchanges such as Coinbase and Kraken. <strong>They are your wallet custodian</strong> — they look after your private keys for you. You access their services like any other website (with an email login and resettable password).</p><p>This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some <code>blockchain apps</code> may be limited.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/custodial-wallets-4eede755.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: '55f6de8997ed42158b84d112c4c583d7',
+        notionId: 'e8953595b16e4482a4ad5e76b4421dd5',
         title: 'Knowledge Check',
         quiz: {
           question: 'Do you control your private key with a custodial wallet?',
@@ -195,13 +476,13 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'LEARN',
-        notionId: 'c9f6316e70d14da1b5dc7108b18ce507',
+        notionId: '6ea36d21aff4480d806b93acba0677bf',
         title: 'Non-custodial Wallet',
-        content: '<div class="bloc1"><p>A <code>self-custody wallet</code> (like MetaMask or Trezor) is when you fully control your <code>private key</code>. You have <strong>no custodian,</strong> and you alone are responsible for keeping your private key safe.</p><p>These wallets offer the widest range of access and freedom within the world of <code>web3</code>. You never have to worry about a third party freezing or mishandling your funds.</p><p>The tradeoff is in risk: if you lose access to your <code>recovery phrase</code>, or your private key is compromised, there is often very little you can do to restore access to the wallet.</p><p>Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/non-custodial-wallet-fb499cf7.svg\'></div>'
+        content: '<div class="bloc1"><p>A <code>self-custody wallet</code> (like Zerion or Trezor) is when you fully control your <code>private key</code>. You have <strong>no custodian</strong>, and you alone are responsible for keeping your private key safe.</p><p>These wallets offer the widest range of access and freedom within the world of <code>web3</code>. You never have to worry about a third party freezing or mishandling your funds.</p><p>The trade-off is in risk: if you lose access to your <code>recovery phrase</code>, or your private key is compromised, there is often very little you can do to restore access to the wallet.</p><p>Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/non-custodial-wallet-833c3d6b.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: 'de3441cd7e954cc3a21ece9b06922579',
+        notionId: 'a87cd8104504449e8fe7859b7a55853e',
         title: 'Knowledge Check',
         quiz: {
           question: 'Are you responsible for your private key with a self-custody wallet?',
@@ -219,33 +500,33 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'LEARN',
-        notionId: 'a7f910628e05496ebc2ec1b25bb0c0aa',
+        notionId: '146c8f827b874b029a48a1155331b552',
         title: 'Hot Wallets',
-        content: '<div class="bloc1"><p>You will hear the terms “hot” and “cold wallet” quite a bit in web3.</p><p>A <code>hot wallet</code> is a wallet hosted via an online software program. MetaMask is a good example. These wallets are connected to the internet as long as your device is online, and are named ‘hot wallets’ for this ‘hot’ internet connection.</p><p>This is the style of wallet we will be creating today. They’re flexible, and great for beginners.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/hot-wallets-7c0fe45a.svg\'></div>'
+        content: '<div class="bloc1"><p>You will hear the terms “hot” and “cold wallet” quite a bit in <code>web3</code>.</p><p>A <code>hot wallet</code> is a wallet accessed via an app on your device — the Zerion app for example. Similar to many <code>web2</code> apps, a wallet app is consistently connected to the internet.</p><p>Your <code>private key</code> is encrypted and stored inside the wallet app, and is only accessed when you interact with the blockchain. These wallets are named ‘hot wallets’ for this “hot” connection between the internet and your private key.</p><p>Hot wallets are convenient for small day-to-day interactions, much like a physical wallet you keep in your pocket. We’ll be creating a hot wallet today!</p></div><div class="bloc2"><img src=\'/images/wallet-basics/hot-wallets-9356886d.svg\'></div>'
       },
       {
         type: 'LEARN',
-        notionId: '8443fcc395e2489aa489c2414176eb35',
+        notionId: '29050c8f640248eb84149dd09b119301',
         title: 'Cold Wallets',
-        content: '<div class="bloc1"><p>As you dive deeper into your web3 journey, you will come to know a landscape full of interesting tech trade-offs.</p><p><code>Cold wallets</code> grant higher security at the cost of convenience. A cold wallet uses software that lives on a separate hardware device (like a memory stick or external hard drive). You must physically connect the device to a computer for the wallet to be able to access the internet. Cold wallets are named after this ‘cold’ internet connection.</p><p>They are widely considered to be more secure than <code>hot wallets</code>, because your <code>private key</code> is stored offline — out of reach of digital attackers.</p><p>Ledger and Trezor are examples of <code>cold wallets</code>.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/cold-wallets-86fdb409.svg\'></div>'
+        content: '<div class="bloc1"><p>As you dive deeper into your <code>web3</code> journey, you will come to know a landscape full of interesting tech trade-offs.</p><p><code>Cold wallets</code> grant higher security at the cost of convenience. A cold wallet is one where your <code>private key</code> is stored on a dedicated hardware device (like a memory stick or external hard drive). You must physically connect the hardware wallet to your computer to access your wallet on the blockchain. Your private key is never directly connected to the internet. Cold wallets are named after this “cold” internet connection.</p><p>They are widely considered to be more secure than <code>hot wallets</code>, because your <code>private key</code> is stored offline — out of reach of digital attackers.</p><p>Ledger and Trezor are examples of <code>cold wallets</code>.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/cold-wallets-0e3183d1.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: '0f6392b0eb054587b9e8647aaf681606',
+        notionId: 'd969a34bf65647b492f20ef28c97f22d',
         title: 'Knowledge Check',
         quiz: {
-          question: 'Which wallet type is considered to be more secure?',
+          question: 'Which of the following wallet types is considered the most secure?',
           rightAnswerNumber: 4,
           answers: [
+            'All wallets are about the same',
             'A hot wallet',
             'A custodial wallet',
-            'A mobile wallet',
             'A cold wallet'
           ],
           feedback: [
+            'ℹ️ Try again! There are various trade-offs for each wallet type, with level of security being one of them.',
             'ℹ️ Try again! A hot wallet has an active internet connection which makes it more susceptible to digital attack.',
             'ℹ️ Try again! The third party holding the private keys can get hacked or go bankrupt.',
-            'ℹ️ Try again! A mobile wallet is more secure than a browser wallet, but it’s not the most secure type of wallet.',
             'ℹ️ Correct! Cold wallets aren’t actively connected to the internet, making them more attack-resistant.'
           ],
           id: 'wallet-basics-6'
@@ -253,13 +534,13 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'LEARN',
-        notionId: '6b19fa6282654b60b0e97fea91d5daf5',
+        notionId: 'c4161519db714ac4871c66ba56549c25',
         title: 'Wallet Security',
-        content: '<div class="bloc1"><p>Regardless if your <code>self-custody wallet</code> is hot or cold, there are many smart security practices you should develop.</p><p>🖊️ Record your <code>recovery phrase</code> on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your <code>private key</code> with anyone. <strong>Remember, this is more than just a password.</strong></p><p>🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.</p><p>🔭 Spend time researching and gathering info on any <code>web3</code> application you plan to interact with before connecting your wallet or signing transactions with it.</p><p>💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).</p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-security-c6f5271b.png\'></div>'
+        content: '<div class="bloc1"><p>Regardless if your <code>self-custody wallet</code> is hot or cold, there are many smart security practices you should develop.</p><p>🖊️ Record your <code>recovery phrase</code> on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your <code>private key</code> with anyone. <strong>Remember, this is more than just a password.</strong></p><p>🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.</p><p>🔭 Spend time researching and gathering info on any <code>blockchain apps</code> you plan to interact with before connecting your wallet to it or signing its transactions.</p><p>💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).</p></div><div class="bloc2"><img src=\'/images/wallet-basics/wallet-security-3a185d90.png\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: 'ca3d3b7efb27474f90041254c79bf057',
+        notionId: '4074ea94f6f647379d6981bae7969b68',
         title: 'Knowledge Check',
         quiz: {
           question: 'What is the safest way to protect your recovery phrase?',
@@ -268,37 +549,37 @@ const LESSONS: LessonType[] = [
             'Write it on a durable material and store it in a safe place.',
             'Save it on your computer and print it out.',
             'Take a screenshot and save it on your phone.',
-            'Save it in your Dropbox account.'
+            'Save it in your password manager.'
           ],
           feedback: [
-            'ℹ️ Correct! A safely stored physical backup with no digital traces is the only safe storage option.',
-            'ℹ️ Try again! If your computer is hacked, you could lose all assets in your wallet. Printing also opens many attack opportunities.',
+            'ℹ️ Correct! A safely stored physical backup with no digital traces is the safest storage option.',
+            'ℹ️ Try again! If your computer is hacked, your recovery phrase could be found. Printing also opens many attack opportunities.',
             'ℹ️ Try again! If your phone is hacked, you could lose all assets in your wallet.',
-            'ℹ️ Try again! Use of password managers resulted in a large number of wallet hacks in 2023.'
+            'ℹ️ Try again! If your password manager is hacked, your recovery phrase could be leaked.'
           ],
           id: 'wallet-basics-7'
         }
       },
       {
         type: 'LEARN',
-        notionId: '869cc1c7eaa94ed9b12297e5820415fe',
+        notionId: '0e8457196b6a40578ba16a783590dab6',
         title: 'You’re ready to create your first wallet!',
-        content: '<div class="bloc1"><p>In fact, you’ll need one if you want to claim proof of completing this quest!</p><p>There are several self-custody <code>hot wallet</code> providers available today. We will explore the popular MetaMask wallet for the rest of this lesson as:</p><ul><li>it is likely to be compatible with most <code>DeFi</code> apps.</li><li>it has a browser extension for Chrome, Brave, Edge, and Firefox internet browsers.</li><li>it is also available as a mobile app for Android and iOS users.</li></ul><p>The end of the lesson is right around the corner, where we will share a short video to help you get set up with your MetaMask wallet.</p></div><div class="bloc2"><img src=\'/images/wallet-basics/youre-ready-to-create-your-first-wallet-a18de323.svg\'></div>'
+        content: '<div class="bloc1"><p>In fact, you’ll need one if you want to claim proof of completing this quest!</p><p>There are several <code>self-custody</code>, <code>hot wallet</code> apps available today. We will explore the Zerion wallet for the rest of this lesson as:</p><ul><li>⚙️ It’s compatible with most <code>blockchain apps</code>.</li><li>⚡ The interface is incredibly smooth and easy to use.</li><li>💻 It has a browser extension for Chrome, Brave, Edge, and Opera internet browsers.</li><li>📱 It is also available as a mobile app for Android and iOS users.</li><li>🗣️ Zerion supports a variety of languages.</li></ul><p>The end of the lesson is right around the corner, where we will share your instructions for setting up your wallet with Zerion!</p></div><div class="bloc2"><img src=\'/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg\'></div>'
       },
       {
         type: 'QUIZ',
-        notionId: 'cc602f7758224b5e93ccad83b166ac66',
+        notionId: '087e6162d56d4d06a72d0449b15abd7d',
         title: 'Knowledge Check',
         quiz: {
-          question: 'Is MetaMask a custodial wallet?',
+          question: 'Is Zerion a custodial wallet app?',
           rightAnswerNumber: 2,
           answers: [
             'Yes',
             'No'
           ],
           feedback: [
-            'ℹ️ Try again!',
-            'ℹ️ Correct! MetaMask wallets are self-custody wallets controlled by you — and you alone.'
+            'ℹ️ Try again! Your Zerion wallet isn’t controlled by a custodian.',
+            'ℹ️ Correct! Zerion wallets are self-custody wallets — controlled by you, and you alone.'
           ],
           id: 'wallet-basics-8'
         }
@@ -309,6 +590,36 @@ const LESSONS: LessonType[] = [
         component: 'WalletBasics'
       }
     ]
+  },
+  {
+    badgeImageLink: null,
+    lessonImageLink: '/images/creating-a-crypto-wallet/lesson-6b7566f5.png',
+    socialImageLink: '/images/creating-a-crypto-wallet/social-45c701eb.png',
+    learningActions: '',
+    marketingDescription: 'Set up your first crypto wallet with our step-by-step walkthrough.',
+    badgeId: null,
+    collectibleId: 'H008',
+    duration: null,
+    learnings: '',
+    description: 'Set up your first crypto wallet with our step-by-step walkthrough.',
+    name: 'Creating a Crypto Wallet',
+    languages: [],
+    publicationStatus: 'publish',
+    publicationDate: '2024-03-20',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    mirrorLink: 'https://mirror.xyz/banklessacademy.eth/Mznhl0ZMjw-5KdjB2o8GJ9ylRPLN-Loeihfevk7J6gU',
+    mirrorNFTAddress: '0x8C21eABd632B41f840690C56D9dda70C9FD6E55e',
+    areMirrorNFTAllCollected: false,
+    sponsorName: 'Zerion',
+    sponsorLogo: '/images/creating-a-crypto-wallet/sponsor-f64ba262.png',
+    isArticle: true,
+    notionId: '5f63090deb2b4800b699442a04e08314',
+    englishName: 'Creating a Crypto Wallet',
+    slug: 'creating-a-crypto-wallet',
+    articleContent: 'This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**\n\n\n---\n\n## Key Takeaways\n\n> * You’ll need a `crypto wallet` to access the world of blockchains!\n>\n> * A wallet is like a `blockchain` account.\n>\n> * Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.\n>\n> * These wallets work on both computers and phones.\n>\n> * Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!\n\n## What is a Crypto Wallet?\n\nCrypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.\n\nIt gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.\n\nWallets come with two core pieces of account information:\n\n* A `public key`, that you can think of as your *username*. You’ll share it publicly to receive cryptocurrency.\n\n* A `private key`, acting as your *password*. This should always be kept private, and cannot be changed.\n\nProtecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).\n\nToday we will set up our first wallet, using our recommended crypto wallet: Zerion!\n\n## Walkthrough\n\nSet up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.\n\n### Computer Wallet\n\n[](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)\n\n### Phone Wallet\n\n[](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)\n\n\n---\n\n**It’s time to join the blockchain multiverse!**\n\nDon’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.\n\nSafe travels, Explorer!\n\n\n---\n\n## FAQ\n\n### What is a cryptocurrency?\n\nCryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.\n\nLearn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!\n\n### What are public and private keys?\n\nPublic/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.\n\nYou can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.\n\nLearn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.\n\n### What happens if I lose my recovery phrase?\n\nYour recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.\n\n### Can Ethereum wallets hold Bitcoin?\n\nEthereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).\n\n\n---\n\n**Author**\n\n[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.\n\n**Patron**\n\nThis walkthrough is powered by Zerion.',
+    imageLinks: []
   },
   {
     badgeImageLink: '/images/blockchain-basics/badge-e715f0fc.png',
@@ -569,7 +880,7 @@ const LESSONS: LessonType[] = [
       '/images/web3-security/social-media-best-practices-48ad350f.svg',
       '/images/web3-security/scam-tokens-761d5f63.svg',
       '/images/web3-security/hardware-wallets-22a096d4.svg',
-      '/images/web3-security/wallet-strategies-d71783ef.svg'
+      '/images/web3-security/wallet-strategies-2b743061.svg'
     ],
     keywords: [
       'web3',
@@ -719,7 +1030,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'ed9bce57432f473982482dbd98e33ae5',
         title: 'Social Media Best Practices',
-        content: '<div class="bloc1"><p>Practices for staying safe<strong>:</strong></p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our <a href=\'https://lenster.xyz/u/banklessacademy\'>Explorer Community</a> is a great place for questions like these.</p></div><div class="bloc2"><img src=\'/images/web3-security/social-media-best-practices-48ad350f.svg\'></div>'
+        content: '<div class="bloc1"><p>Practices for staying safe<strong>:</strong></p><p>✅ If they have to direct message you to sell their product, you probably don’t want it.</p><p>✅ Check the project follower and member count - though these do not guarantee project legitimacy, quality, or stability.</p><p>✅ Verify everything with an outside source, like another official project account.</p><p>✅ If you’re ever uncertain, check with reputable members from a community you trust - and ask in public. Our <a href=\'https://bankless.ac/community\'>Explorer Community</a> is a great place for questions like these.</p></div><div class="bloc2"><img src=\'/images/web3-security/social-media-best-practices-48ad350f.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -767,7 +1078,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '1d5edee94a824d729f90878f4346a548',
         title: 'Wallet Strategies',
-        content: '<div class="bloc1"><p>After adding a hardware wallet to your setup, one of the best ways to secure your funds is to keep them spread between multiple <code>wallets</code>. Here is a compartmentalized strategy using three separate wallets:</p><ol><li><strong>Social Wallet:</strong> A wallet that serves as your web3 identity for logins — like for the <a href=\'https://app.banklessacademy.com/lessons/academy-community\'>Bankless Academy community</a> or web3 social media — use a <code>hardware wallet</code> for extra security.</li><li><strong>Trading Wallet:</strong> A <code>hot wallet</code> for trading and other activities involving funds that may need to be moved on short notice.</li><li><strong>HODL Wallet:</strong> A <code>hardware wallet</code> for the long-term <code>HODL</code> — these are funds intended to hold for a long time. It’s recommended to <em><strong>not </strong></em>use this wallet for interacting with smart contracts.</li></ol><p>👍 <strong>PROs:</strong> Separation ensures that scams only threaten funds in <em>that particular wallet</em> rather than <em>everything</em>.</p><p>👎 <strong>CONs:</strong> It’s more complicated to keep track of, but many wallet applications allow you to name your wallets.</p></div><div class="bloc2"><img src=\'/images/web3-security/wallet-strategies-d71783ef.svg\'></div>'
+        content: '<div class="bloc1"><p>After adding a hardware wallet to your setup, one of the best ways to secure your funds is to keep them spread between multiple <code>wallets</code>. Here is a compartmentalized strategy using three separate wallets:</p><ol><li><strong>Social Wallet:</strong> A wallet that serves as your web3 identity for logins — like for the <a href=\'https://app.banklessacademy.com/lessons/academy-community\'>Bankless Academy community</a> or web3 social media — use a <code>hardware wallet</code> for extra security.</li><li><strong>Trading Wallet:</strong> A <code>hot wallet</code> for trading and other activities involving funds that may need to be moved on short notice.</li><li><strong>HODL Wallet:</strong> A <code>hardware wallet</code> for the long-term <code>HODL</code> — these are funds intended to hold for a long time. It’s recommended to <em><strong>not </strong></em>use this wallet for interacting with smart contracts.</li></ol><p>👍 <strong>PROs:</strong> Separation ensures that scams only threaten funds in <em>that particular wallet</em> rather than <em>everything</em>.</p><p>👎 <strong>CONs:</strong> It’s more complicated to keep track of, but many wallet applications allow you to name your wallets.</p></div><div class="bloc2"><img src=\'/images/web3-security/wallet-strategies-2b743061.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1083,6 +1394,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'The Layer 2 revolution has begun. Discover how the Layer 2 ecosystem can boost your transaction speed & reduce gas fees.',
     badgeId: 8,
+    datadiskVectorMint: 123,
     collectibleId: 'D001',
     duration: 15,
     learnings: '',
@@ -1303,7 +1615,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/funding-a-wallet-on-layer-2/lesson-dcf41ef6.png',
-    socialImageLink: '/images/funding-a-wallet-on-layer-2/social-00f2f6fe.png',
+    socialImageLink: '/images/funding-a-wallet-on-layer-2/social-4bb4ca84.png',
     learningActions: '',
     marketingDescription: 'Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.',
     badgeId: null,
@@ -1345,6 +1657,49 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
+    badgeImageLink: null,
+    lessonImageLink: '/images/registering-your-web3-username/lesson-817f2737.png',
+    socialImageLink: '/images/registering-your-web3-username/social-8ce7fa9d.png',
+    learningActions: '',
+    marketingDescription: 'Customize your wallet address with ENS, start building your digital identity.',
+    badgeId: null,
+    collectibleId: 'H009',
+    duration: null,
+    learnings: '',
+    description: 'Customize your wallet address with ENS, start building your digital identity.',
+    name: 'Registering Your Web3 Username',
+    languages: [],
+    publicationStatus: 'publish',
+    publicationDate: '2024-04-08',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    mirrorLink: 'https://mirror.xyz/banklessacademy.eth/2C31DMdOv4dGL1-bkM3nXn8pjc8X9jTGiTVRhMoPizE',
+    mirrorNFTAddress: '0xd94ecc2f45d7346975f2437c789b3e2e32c397ca',
+    areMirrorNFTAllCollected: false,
+    isArticle: true,
+    notionId: 'd862b38d9f104039b84a67c4f51399dd',
+    englishName: 'Registering Your Web3 Username',
+    slug: 'registering-your-web3-username',
+    articleContent: '## Key Takeaways\n\n> * Using the Ethereum Name Service (ENS), you can create a single username that represents you across multiple blockchains.\n>\n> * ENS names simplify sending and receiving `cryptocurrency` by replacing your lengthy wallet address with a memorable label like *web3explorer.eth*\n>\n> * Your ENS names become associated with your online presence: your cryptocurrency portfolio, your blockchain interactions, social media pages, avatars, websites, and emails, forming a single `onchain identity`.\n>\n> * Registering an ENS name is similar to registering a .com website address. It requires a `cryptocurrency wallet` and 10 minutes.\n\n## Introducing Universal Usernames\n\nImagine having a single username for the entire internet. One account for your entire online presence — an account that you own and plug into other apps across the internet. This username would serve as your digital personality, allowing you to be recognized across the internet, making you a unique, memorable member of the online community.\n\nProjects like the [Ethereum Name Service (ENS)](https://ens.domains) are building this single username reality, leveraging the powers of cryptocurrency wallets. Using ENS, your `custodial wallet` address can be transformed into a personalized address of your choosing, with a `.eth` extension.\n\n*0xB00e26E79352882391604E24b371A3F3c8658e8c* → *web3explorer.eth*\n\n![](/images/registering-your-web3-username/image-c7baff43.png)\n\nJust like a .com website address, it’s easy to read, memorable, and personalized to you. No matter where on the internet you are, your name will be consistent and recognizable. Sending `cryptocurrency` to your wallet no longer requires saving, copying and pasting a lengthy address.\n\nAnd this is just the beginning.\n\n> *Originally we envisioned ENS as a naming system to name crypto addresses.. (but) as web3 users, the meaning of an address is so much more, it can be your Farcaster id, your crypto payment address, a DAO contract and more.*\n>\n> *The use cases of web3 are expanding and if we want the next billion people to be onboarded onto web3, it needs to be usable. When all these things are properly named, web3 becomes usable, it becomes human.*\n>\n> *ENS makes web3 human.*\n>\n> *— Jefflau.eth, Core Developer at ENS Labs*\n\nBy linking your wallet address to a unique .eth username, you’ve actually created a web3 personality with the ownership powers of a custodial wallet. ENS names can support wallets across multiple networks. One universal name is now linked to your digital property across blockchains, your blockchain history, and more. This includes any special credentials you may have unlocked — **like your Bankless Academy badges.**\n\n![](/images/registering-your-web3-username/image-c55c7950.png)\n\n## Onchain Identity\n\nThe capabilities of ENS extend beyond labelling wallet addresses; ENS can label almost any entity or asset on the blockchain, like a `smart contract`, and point to any location on the `web2` internet. Your website, social media profiles, and email can all be associated with this single username.\n\n![](/images/registering-your-web3-username/image-7086002e.png)\n\nPicture ENS as **your onchain passport**. A physical passport contains your name, photo, birth date, and passport number, linking to extensive information in your government’s identity database. ENS maps your .eth domain (`yourname.eth`) with an Ethereum address, a profile picture, `onchain` data like trades and governance votes, and `offchain` data like your website.\n\nHere’s the key difference: You own and control all aspects of this onchain passport.\n\nENS names are represented as NFT tokens (`ERC-721` tokens) on the Ethereum blockchain, which are owned by and managed through your custodial wallet — **just like cryptocurrency.** In web3, you can truly own your online identity and carry it with you around the internet. Your account — its data, content, followers etc. — can’t be erased by the platforms you use. We’re moving beyond the control of YouTube, Instagram, and the other web2 giants managing the internet community.\n\n![](/images/registering-your-web3-username/image-073b8d76.png)\n\nLet’s take a look at how our ENS names plug into onchain apps, starting with the Bankless Academy ‘Explorer Profile’ feature. As a Bankless Academy user with an ENS name, you will automatically find your ENS name and profile picture represented on [your profile](https://app.banklessacademy.com/explorer/my-profile). This information is displayed alongside your Academy achievements — like lesson badges and collected content.\n\n![](/images/registering-your-web3-username/image-09c3d858.png)\n\nAnother example is Farcaster, a decentralized social network. Instead of requiring users to create a new social account, it allows them to connect their wallet and leverage their existing ENS name along with its associated data. This approach enriches the Farcaster social graph with existing information, showcasing practicality of ENS in decentralized identity management.\n\n> **Fun fact:** As of this writing, ENS has registered nearly 2,070,797 domains, as per [Dune Analytics data](https://dune.com/ethereumnameservice/ens). That’s close to the population of Houston, Texas. 🐂\n\nIt\'s time to become an onchain citizen and shape our decentralized future. It’s time to register your ENS name. We\'ll guide you through the process, helping you to unlock its key features, including assigning your profile picture for visibility across numerous onchain apps like Bankless Academy.\n\nThe process is very similar to registering a .com website address on a platform like GoDaddy or Google Domains. It’s as simple as choosing a unique name and submitting two blockchain transactions.\n\n## Prerequisites\n\n**1\. Create a Crypto Wallet**\n\nTo buy and hold your ENS name, you\'ll need to set up a wallet if you haven\'t already done so. Check out our quick guide, [‘Creating a Crypto Wallet’](https://app.banklessacademy.com/lessons/creating-a-crypto-wallet), and create your wallet in 5 minutes.\n\n**2\. Ensure You Have ETH in Your Wallet on the Ethereum Mainnet**\n\nYou can fund your wallet by sending cryptocurrency from a Centralized Exchange, or by using services like [Moonpay](https://www.moonpay.com/en-gb) or [Transak](https://global.transak.com/). As another option, you can also pay for an ENS name using a credit or debit card.\n\n## Walkthrough\n\n**1\. Open the [ENS Manager App](https://app.ens.domains/)** **and connect your wallet.**\n\n![](/images/registering-your-web3-username/image-2297867c.png)\n\n**2\. Search for and select your desired name.**\n\n![](/images/registering-your-web3-username/image-4d71d393.png)\n\n**3\. Choose the duration of your registration.**\n\nYou’ll need to periodically renew your ENS name. Be sure to set a reminder in your personal calendar to notify you before it expires.\n\n![](/images/registering-your-web3-username/image-0e183437.png)\n\n**4\. Select your payment method.**\n\nYou can use the balance in your Ethereum wallet, or pay with a credit/debit card.\n\n**Optional:** Set your domain as your `primary name` during this phase. This means your ENS name and profile picture will be displayed instead of your lengthy wallet address on Bankless Academy, Farcaster and other ENS-supported platforms.\n\n![](/images/registering-your-web3-username/image-91795816.png)\n\n**5\. Review the upcoming registration steps.**\n\n![](/images/registering-your-web3-username/image-d312b342.png)\n\n**6\. Start the 60 second timer by signing the first transaction.**\n\nThis first transaction prevents others from `front-running` your registration process.\n\n![](/images/registering-your-web3-username/image-a8bece69.png)\n\n![](https://images.mirror-media.xyz/publication-images/Gz4ZTiKop-ncbvPL3yjXz.png?height=1127&width=1440)\n\n**7\. Wait for the timer to finish.**\n\n![](/images/registering-your-web3-username/image-0f779c34.png)\n\n**8\. Sign the second transaction.**\n\nThis is the transaction that will secure ownership of your new ENS name, and send it to your wallet.\n\n![](/images/registering-your-web3-username/image-b83971f6.png)\n\n**9\. Success!**\n\nYour ENS name will now be represented as an `ERC-721` token in your wallet.\n\n![](/images/registering-your-web3-username/image-ea2d6d2a.png)\n\nYou can verify that your ENS name redirects to your wallet address by visiting <https://etherscan.io/> and entering your ENS name in the address search bar; note that this process might take a few minutes. Once this is working, your ENS name is ready to be shared with your friends and plugged into Ethereum apps.\n\nFor more ways to utilize your new ENS name, don\'t forget to check out the ‘Frequently Asked Questions’ section below!\n\n\n---\n\n## Conclusion\n\nBy registering your web3 username, you are embracing self-sovereignty on the decentralized web, moving towards a future where you alone own your onchain identity. ENS serves as both your web3 username and wallet address, marking your presence in the digital realm. It integrates seamlessly with onchain apps, reflecting and building your identity with every transaction.\n\nYour onchain identity, once established, is solely under your custody, and it is your responsibility to ensure its renewal. The adoption of ENS is key in shaping a user-empowered internet, free from abuses of authority. With ENS, each interaction on the decentralized web is a testament to your unique onchain persona.\n\n\n---\n\nIt’s time to take control of your onchain identity, with ENS. We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Registering Your Web3 Username’.\n\nDon’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!\n\n\n---\n\n## Frequently Asked Questions\n\n### **What is a Primary Name?**\n\nYour `primary name` functions as a nickname for your onchain wallet address, simplifying your complex Ethereum wallet address. By assigning a primary name, you allow various apps to use and display it, along with your profile picture. [Learn more here](https://support.ens.domains/en/articles/7890756-the-primary-name#)!\n\n### **Can I link my email, website, or social media to my ENS name?**\n\nYes, absolutely! Just as your passport can hold different details about you, your ENS name can link to a variety of personal data. This includes your email, personal website, profile picture, and social media handles.\n\nThese `standard records` allow you to publicly share your contact information in a decentralized way. They’re stored onchain and accessible via any application that recognizes ENS names.\n\nFor a beginner-friendly guide on setting records for your ENS name and what each type of record could be used for, please refer to this [article](https://support.ens.domains/en/articles/7890802-set-a-record).\n\n### **How much does it cost to register an ENS Name?**\n\nCurrently, the registration costs for ENS names are set at the following prices:\n\n* Names with 5 or more characters: $5 in ETH per year.\n\n* Names with 4 characters: $160 in ETH per year.\n\n* Names with 3 characters: $640 in ETH per year.\n\nThis doesn’t include transaction `gas fees` for interacting with the Ethereum Network, which are roughly estimated in the [ENS Manager App](https://app.ens.domains/). Additional gas fees are required for onchain data updates like setting `custom records`. Prices for shorter names are higher due to scarcity. Fees deter speculative registrations and support the DAO\'s development of ENS.\n\n### Can I connect multiple wallet addresses with a single ENS name?\n\nAbsolutely! Your ENS name can either map several wallet addresses to a single ENS name, like \'yourname.eth\', or you can sort your addresses into separate subnames to identify the type of cryptocurrency associated with each, like \'ethereum.yourname.eth\' or \'bitcoin.yourname.eth\'.\n\nYou can set up either option using the [ENS Manager App](https://ens.app). For more details, [refer to this guide for step-by-step instructions](https://support.ens.domains/en/articles/7900302-ens-use-cases)\n\n### Can I use my existing website address as my ENS name?\n\nYes, if you own a website like [web3explorer.com](http://web3explorer.com), you can use this instead of web3explorer.eth. This is thanks to infrastructure co-built by ENS and GoDaddy.\n\nTo learn more, check out ENS Labs’ [blog post](https://blog.ens.domains/post/godaddy-partners-with-ens).\n\n\n---\n\n**Authors**\n\n**[Marcus](https://twitter.com/estmcmxci)** publishes the ENS DAO Newsletter. He researches how surplus revenue generated from protocol fees can subsidize application layer development and other open source infrastructure.\n\n**[Tetranome](https://twitter.com/Tetranome)** is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.\n\n**Patron**\n\nThis walkthrough is powered by Bankless Academy.',
+    imageLinks: [
+      '/images/registering-your-web3-username/image-c7baff43.png',
+      '/images/registering-your-web3-username/image-c55c7950.png',
+      '/images/registering-your-web3-username/image-7086002e.png',
+      '/images/registering-your-web3-username/image-073b8d76.png',
+      '/images/registering-your-web3-username/image-09c3d858.png',
+      '/images/registering-your-web3-username/image-2297867c.png',
+      '/images/registering-your-web3-username/image-4d71d393.png',
+      '/images/registering-your-web3-username/image-0e183437.png',
+      '/images/registering-your-web3-username/image-91795816.png',
+      '/images/registering-your-web3-username/image-d312b342.png',
+      '/images/registering-your-web3-username/image-a8bece69.png',
+      '/images/registering-your-web3-username/image-0f779c34.png',
+      '/images/registering-your-web3-username/image-b83971f6.png',
+      '/images/registering-your-web3-username/image-ea2d6d2a.png'
+    ]
+  },
+  {
     badgeImageLink: '/images/intro-to-defi/badge-b4dab2d4.png',
     lessonImageLink: '/images/intro-to-defi/lesson-97291c9d.png',
     socialImageLink: '/images/intro-to-defi/social-ee8d95a4.jpg',
@@ -1367,13 +1722,13 @@ const LESSONS: LessonType[] = [
     englishName: 'Intro to DeFi',
     slug: 'intro-to-defi',
     imageLinks: [
-      '/images/intro-to-defi/defi-defined-50338cfd.svg',
+      '/images/intro-to-defi/defi-defined-759c5922.svg',
       '/images/intro-to-defi/earning-yield-bc952747.svg',
-      '/images/intro-to-defi/what-you-can-do-with-defi-86d92e98.svg',
+      '/images/intro-to-defi/what-you-can-do-with-defi-e1e865b5.svg',
       '/images/intro-to-defi/investing-7c8b44ed.svg',
       '/images/intro-to-defi/trading-67935721.svg',
       '/images/intro-to-defi/lending-borrowing-b7d58dfa.svg',
-      '/images/intro-to-defi/staking-a46efa05.svg',
+      '/images/intro-to-defi/staking-8dbafcb8.svg',
       '/images/intro-to-defi/defi-downsides-da1fdb68.svg',
       '/images/intro-to-defi/defi-downsides-d533aeef.svg',
       '/images/intro-to-defi/defi-downsides-0070f0e1.svg'
@@ -1393,7 +1748,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'a83bc134efdc45d99f84ea134bd73f05',
         title: 'DeFi Defined',
-        content: '<div class="bloc1"><p>DeFi—short for <code>decentralized</code> finance—refers to the fast-growing ecosystem of financial products, protocols, and applications that operate on public <code>blockchain</code> networks.</p><p>DeFi is rapidly transforming the world of finance with a range of new tools for putting crypto assets to work. It offers opportunities beyond simply buying crypto on a centralized exchange. It allows anyone and everyone to build a decentralized, Bankless lifestyle.</p></div><div class="bloc2"><img src=\'/images/intro-to-defi/defi-defined-50338cfd.svg\'></div>'
+        content: '<div class="bloc1"><p>DeFi—short for <code>decentralized</code> finance—refers to the fast-growing ecosystem of financial products, protocols, and applications that operate on public <code>blockchain</code> networks.</p><p>DeFi is rapidly transforming the world of finance with a range of new tools for putting crypto assets to work. It offers opportunities beyond simply buying crypto on a centralized exchange. It allows anyone and everyone to build a decentralized, Bankless lifestyle.</p></div><div class="bloc2"><img src=\'/images/intro-to-defi/defi-defined-759c5922.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -1443,7 +1798,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'b6bca63d7f73486eacb60d6123cb2876',
         title: 'What You Can Do With DeFi',
-        content: '<div class="bloc1"><p><code>DeFi</code> transactions are <code>permissionless</code>. This refers to a public <code>blockchain</code> that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps. </p><p><code>DApps</code> and DeFi platforms enable users to make more and more types of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.</p></div><div class="bloc2"><img src=\'/images/intro-to-defi/what-you-can-do-with-defi-86d92e98.svg\'></div>'
+        content: '<div class="bloc1"><p><code>DeFi</code> transactions are <code>permissionless</code>. This refers to a public <code>blockchain</code> that anyone can use to buy, sell, or trade assets. No third party controls or oversees activity. These transactions are carried out by decentralized applications, known as DApps. </p><p><code>DApps</code> and DeFi platforms enable users to make more and more types of financial transactions, 24/7, all over the world. We will introduce four of the most common opportunities used to earn yield in DeFi - investing, trading, lending and borrowing, and staking.</p></div><div class="bloc2"><img src=\'/images/intro-to-defi/what-you-can-do-with-defi-e1e865b5.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1537,7 +1892,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'a2fd7286556c442e9ba63aecd83a2f0a',
         title: 'Staking',
-        content: '<div class="bloc1"><p>DeFi staking is similar to lending, however it\'s a special type of lending. Instead of lending your crypto to another user on a <code>peer-to-peer</code> basis, you lend your crypto to a network or protocol. In exchange for helping secure the network or protocol, you earn rewards.</p><p>Centralized exchanges also offer staking. However, like their trading pairs, the staking opportunities and rewards are limited. With DeFi, there are many more staking possibilities than there are with centralized exchanges. </p></div><div class="bloc2"><img src=\'/images/intro-to-defi/staking-a46efa05.svg\'></div>'
+        content: '<div class="bloc1"><p>DeFi staking is similar to lending, however it\'s a special type of lending. Instead of lending your crypto to another user on a <code>peer-to-peer</code> basis, you lend your crypto to a network or protocol. In exchange for helping secure the network or protocol, you earn rewards.</p><p>Centralized exchanges also offer staking. However, like their trading pairs, the staking opportunities and rewards are limited. With DeFi, there are many more staking possibilities than there are with centralized exchanges. </p></div><div class="bloc2"><img src=\'/images/intro-to-defi/staking-8dbafcb8.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -1587,7 +1942,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/understanding-stablecoins/lesson-dcf41ef6.png',
-    socialImageLink: '/images/understanding-stablecoins/social-00f2f6fe.png',
+    socialImageLink: '/images/understanding-stablecoins/social-32059ac7.png',
     learningActions: '',
     marketingDescription: 'Use dollars, euros, and more on the blockchain.',
     badgeId: null,
@@ -1606,11 +1961,13 @@ const LESSONS: LessonType[] = [
     mirrorLink: 'https://mirror.xyz/banklessacademy.eth/qc15y-_wur6as8ZRuPOwzpuvZ7NNV7EF2cI3Yb6Jy1w',
     mirrorNFTAddress: '0x58da595fec45ca61cc68883869885e378caf0231',
     areMirrorNFTAllCollected: false,
+    sponsorName: 'Glo Dollar',
+    sponsorLogo: '/images/understanding-stablecoins/sponsor-d3df6afb.png',
     isArticle: true,
-    notionId: '9f45ae1e0df4428aab8d4c460fb36366',
+    notionId: '1181627a73fb463a814043d53f44559e',
     englishName: 'Understanding Stablecoins',
     slug: 'understanding-stablecoins',
-    articleContent: '## Key Takeaways\n\n> * Stablecoins are the blockchain equivalent of fiat currency, like the dollar or euro.\n>\n> * Stablecoins are `ERC-20` tokens: they allow DeFi users to quickly move between fiat value, and crypto value, while staying on the blockchain.\n>\n> * There are several categories of stablecoin, each with their own trade-offs and risk profile.\n>\n> * Stablecoins can generate more annual interest than holding fiat in a traditional bank.\n\n## Why Hold Stablecoins?\n\nStablecoins have become a cornerstone of the DeFi ecosystem, reaching over $140 billion USD in supply value at their 2022 peak. Stablecoins settled over $7 trillion in transaction value that year — that’s \~0.3% of global USD settlement in 2022.\n\n![](/images/understanding-stablecoins/image-0c080b13.png)\n\nHere’s why they’re in demand:\n\n* **Stability:** Holding stablecoins in your self-custody wallet is like holding fiat currency, but on the blockchain. When holding a stablecoin like Circle’s U.S. dollar (USDC), you can expect it to maintain 1:1 value with the U.S. dollar while the prices of assets like ether and bitcoin fluctuate.\n\n* **Flexibility:** Because this pegged value exists as an ERC-20 token on the blockchain, it’s easy to move between fiat value and crypto value.\n\n* **Access:** Stablecoins provide access to a range of decentralized financial services, like permissionless borrowing or lending to earn interest.\n\n* **Security:** Cryptography makes it extremely difficult for attackers to capture or forge transactions.\n\nThe way a stablecoin maintains a 1:1 equivalence, or `peg`, to its fiat counterpart is its most important property. Just as fiat currency is only worth the fundamentals that underlie it, a stablecoin peg mechanism dictates the value of your holdings.\n\n## Stablecoin Categories\n\nThere are three common strategies for a stablecoin to maintain its price peg:\n\n* 💵 **Fiat-backed:** 1:1 collateralized by real-world fiat reserves.\n\n* 🔗 **Crypto-collateralized:** overcollateralized by crypto deposits into DeFi protocols.\n\n* 🔃 **Algorithmic:** fixed supply/demand algorithms that maintain price stability.\n\n### 1\. Fiat-backed Stablecoins\n\nFiat-backed stablecoins maintain value by issuing a fixed token supply matched by real-world currency reserves. Their on-chain price is maintained via supply/demand economics: few people want to pay more than one real-world dollar for a dollar of on-chain value, so they simply take their trade elsewhere. To meet increased demand, the stablecoin issuer locks up additional fiat and increases the token supply by the same amount.\n\nNotable fiat-backed stablecoins include Tether (USDT) and Circle (USDC).\n\nConsiderations:\n\n* **Collateral Audits:** Holders need assurance that their stablecoin tokens are matched one-to-one by fiat reserves. Ideally the provider is open to regular audits by independent parties. USDT has historically made it difficult to know the total value of their locked assets. USDC regularly undergoes independent audits, increasing certainty that their reserves equal their token issuance.\n\n* **Censorship Risk:** With both USDC and USDT subject to government investigation, these tokens’ `smart contracts` include a freeze function whereby a user’s on-chain holdings can be locked in cases of disagreeable activity. This freeze function also applies to tokens held in `non-custodial wallets`.\n\nThe high degree of centralization in the fiat-backed stablecoin sector leaves great room for improvement in holding fiat-pegged value in a crypto-native way.\n\n### 2\. Crypto-collateralized Stablecoins\n\nCrypto-collateralized stablecoins are a more transparent, decentralized option — and these qualities help eliminate certain risks. They maintain a fiat peg through crypto asset reserves. As crypto market volatility influences the total value of these reserves, these stablecoins are overcollateralized — sometimes up to 200%! All collateralized assets are viewable on chain, giving users 24/7 access to the real composition of their stablecoins.\n\nThe most notable example in this category is MakerDAO’s Dai (DAI).\n\n![DAI collateralization breakdown (June 2023) Source: https://makerburn.com/#/rundown](/images/understanding-stablecoins/image-573e657a.png)\n\nConsiderations:\n\n* **Collateral Valuation:** A stablecoin’s reserves typically consist of crypto, other stablecoins, and even other asset classes. For example, DAI is backed by BTC, ETH, stablecoins, real world assets, and several other minor components. To mitigate the risks of this diverse range of assets, DAI is overcollateralized (at the time of writing). Even if the ETH price was to crash by 20%, DAI would still have [enough collateral](https://daistats.com/) to cover their token. However, further price volatility across its range of assets could begin to erode the peg.\n\n* `Counterparty Risk`: Reliance on multiple asset classes means there’s a higher chance one of the assets will experience difficulty and affect the value of your holdings. However, you only have fractional exposure to the impact of each individual risk.\n\n* **Governance Risk:** This type of stablecoin and its treasury are managed by a decentralized group of governance voters. This means there are risks of human error, or possible governance capture.\n\n### 3\. Algorithmic Stablecoins\n\nThese tokens maintain their peg by automatically balancing their own supply. An onchain algorithm reduces the number of tokens in circulation when the market price falls below the peg, and injects new tokens when the market price surpasses the peg. Both the balancing algorithm and the stablecoin\'s smart contracts are public, meaning anyone can clone and improve, or audit the existing system.\n\nAs algorithmic stablecoins have the fewest external dependencies, and no administration or governance demands, they almost entirely eliminate counterparty risk. This makes them the most decentralized and self-custody-ready stablecoin option.\n\nNotable examples include Liquity (LUSD) and Frax (FRAX).\n\n![](/images/understanding-stablecoins/image-4f6e4c7f.png)\n\nConsiderations:\n\n* **Dynamic Holdings:** With the balancing algorithm adjusting token supply, your number of tokens held will fluctuate with supply adjustments. The total value of your token holdings remains constant — you aren’t losing or gaining any value — but this aspect can be confusing for new users.\n\n* **Highly Technical:** You need to understand the technology to build confidence and risk/reward awareness.\n\n* **Emergent Tech Risk:** With algorithmic stablecoins being so new, unknown smart contract risks could be present. Only use algorithmic stablecoins with several smart contract audits, performed by top-level auditors.\n\n## Choosing a Stablecoin\n\nWhat is the best stablecoin to hold? As with everything DeFi, the answer to that question depends on your **needs**, **values**, and **risk tolerance**.\n\nHere’s a quick refresher on each category:\n\n* 💵 **Fiat-backed:** The traditional approach — the closest you’ll come to holding fiat on chain.\n\n  * Values: Conventionality, institutional trust.\n\n  * Risks: Opaque collateral backing, ability for provider to freeze funds.\n\n* 🔗 **Crypto-collateralized:** A balanced, crypto-native approach, spreading collateral risk across multiple asset classes.\n\n  * Values: Diversification, transparency, progression.\n\n  * Risks: Crypto market volatility, dependence on other assets.\n\n* 🔃 **Algorithmic:** The decentralized — but experimental — option that minimizes counterparty risk.\n\n  * Values: Self-sovereignty, transparency, progression.\n\n  * Higher risk of smart contract bugs.\n\nAs always, the best way to learn about something is to try it. You might even decide to hold a variety of stablecoins.\n\nAnd remember, not all stablecoins in each category are created equal! Do your own research before interacting with any new token.\n\n\n---\n\nWe hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘The Stablecoin Guide’.\n\nDon’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!\n\n\n---\n\n## Frequently Asked Questions\n\n### What are the most popular stablecoins?\n\nLooking at the leading stablecoins by `market cap` gives an idea of the current market preference, but this isn’t guidance on how you should position yourself, or how safe that position would be.\n\nHere’s a realtime list of top stablecoins by market cap: <https://defillama.com/stablecoins>\n\nCryptocurrency users often refer to the ‘Lindy Effect’ when choosing investment options. This concept says that the longer something has existed, the more we can expect it will continue to exist. Ten years of cryptocurrency history have shown this to only be true on occasion.\n\n### Where can I buy stablecoins?\n\nCentralized Exchanges (CEXs) offer popular fiat-backed stablecoins (and typically their own branded stablecoin), other types of stablecoin are often missing.\n\nVisit a Decentralized Exchange (DEX), or use a direct wallet on-ramp service like ‘MetaMask Buy’, to acquire crypto-collateralized and algorithmic tokens. Check out our lesson on [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) to learn more about peer-2-peer marketplaces.\n\n### How can I earn interest on stablecoins?\n\nSome CEXs offer yield by just holding stablecoins on their platform, funded by a share of platform profits to incentivize platform use.\n\nYou can also earn interest in DeFi, with trustless lending and borrowing platforms. These platforms connect lenders and borrowers, managing risk through onchain collateral and smart contracts. Stablecoin lenders can earn annual returns far higher than available in the traditional banking sector — but where there’s reward, there’s risk!\n\nThe lending and borrowing topic deserves its own Bankless Academy entry. If you’re already interested in learning more you can research platforms like [Aave.com](https://aave.com/) and [Curve.fi](https://curve.fi/).\n\n### What happens if a stablecoin loses its peg?\n\nThe price of any stablecoin can shift slightly (usually around the +/- 2% mark) in peak network hours. This effect is usually temporary, with prices quickly stabilized by traders taking advantage of arbitrage opportunities.\n\nHowever, there are cases where a stablecoin loses its peg beyond safe, temporary ranges. This effect isn’t necessarily permanent (USDC, March 2023) — but it can be (Terra, May 2022).\n\nSome fiat-backed stablecoin issuers, like USDC, offer 1:1 redemption from their stablecoin to regular fiat through their website. Whether this remains true during times of crisis is another story.\n\n\n---\n\n**Author**\n\n**[Tetranome](https://twitter.com/tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, UI, design, and platform curriculum.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.\n\n**Patron**\n\nThis unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!',
+    articleContent: '## Key Takeaways\n\n> * Stablecoins are the blockchain equivalent of fiat currency, like the dollar or euro.\n>\n> * Stablecoins are `ERC-20` tokens: they allow DeFi users to quickly move between fiat value, and crypto value, while staying on the blockchain.\n>\n> * There are several categories of stablecoin, each with their own trade-offs and risk profile.\n>\n> * Stablecoins can generate more annual interest than holding fiat in a traditional bank.\n\n## Why Hold Stablecoins?\n\nStablecoins have become a cornerstone of the DeFi ecosystem, reaching over $140 billion USD in supply value at their 2022 peak. Stablecoins settled over $7 trillion in transaction value that year — that’s \~0.3% of global USD settlement in 2022.\n\n![](/images/understanding-stablecoins/image-0c080b13.png)\n\nHere’s why they’re in demand:\n\n* **Stability:** Holding stablecoins in your self-custody wallet is like holding fiat currency, but on the blockchain. When holding a stablecoin like Circle’s U.S. dollar (USDC), you can expect it to maintain 1:1 value with the U.S. dollar while the prices of assets like ether and bitcoin fluctuate.\n\n* **Flexibility:** Because this pegged value exists as an ERC-20 token on the blockchain, it’s easy to move between fiat value and crypto value.\n\n* **Access:** Stablecoins provide access to a range of decentralized financial services, like permissionless borrowing or lending to earn interest.\n\n* **Security:** Cryptography makes it extremely difficult for attackers to capture or forge transactions.\n\nThe way a stablecoin maintains a 1:1 equivalence, or `peg`, to its fiat counterpart is its most important property. Just as fiat currency is only worth the fundamentals that underlie it, a stablecoin peg mechanism dictates the value of your holdings.\n\n## Stablecoin Categories\n\nThere are three common strategies for a stablecoin to maintain its price peg:\n\n* 💵 **Fiat-backed:** 1:1 collateralized by real-world fiat reserves.\n\n* 🔗 **Crypto-collateralized:** overcollateralized by crypto deposits into DeFi protocols.\n\n* 🔃 **Algorithmic:** fixed supply/demand algorithms that maintain price stability.\n\n### 1\. Fiat-backed Stablecoins\n\nFiat-backed stablecoins maintain value by issuing a fixed token supply matched by real-world currency reserves. Their on-chain price is maintained via supply/demand economics: few people want to pay more than one real-world dollar for a dollar of on-chain value, so they simply take their trade elsewhere. To meet increased demand, the stablecoin issuer locks up additional fiat and increases the token supply by the same amount.\n\nNotable fiat-backed stablecoins include Tether (USDT) and Circle (USDC).\n\nStablecoin issuers generate revenue through various methods. These methods include investing a portion of their fiat reserves in short-term US Treasuries and cash equivalents, as well as employing a mixed revenue model that involves collecting transaction fees and offering lending services.\n\n> **Innovation & Philanthropy through Fiat-Backed Stablecoins: Glo Dollar**\n>\n> The Glo Foundation has introduced an innovative approach when it comes to revenue generation through the creation of [Glo Dollar](https://www.glodollar.org/) (USDGLO), its US dollar-backed stablecoin. Glo Dollar sets itself apart from other stablecoins by directing the interest earned from its reserves towards basic income programs for people in extreme poverty.\n>\n> Holders of USDGLO contribute to this mission by practicing embedded philanthropy. Learn more about Glo Dollar and how it works, [here](https://www.glodollar.org/articles/how-glo-works).\n\nConsiderations when using fiat-backed stablecoins:\n\n* **Collateral Audits:** Holders need assurance that their stablecoin tokens are matched one-to-one by fiat reserves. Ideally the provider is open to regular audits by independent parties. USDT has historically made it difficult to know the total value of their locked assets. USDC regularly undergoes independent audits, increasing certainty that their reserves equal their token issuance.\n\n* **Censorship Risk:** With both USDC and USDT subject to government investigation, these tokens’ `smart contracts` include a freeze function whereby a user’s on-chain holdings can be locked in cases of disagreeable activity. This freeze function also applies to tokens held in `non-custodial wallets`.\n\nThe high degree of centralization in the fiat-backed stablecoin sector leaves great room for improvement in holding fiat-pegged value in a crypto-native way.\n\n### 2\. Crypto-collateralized Stablecoins\n\nCrypto-collateralized stablecoins are a more transparent, decentralized option — and these qualities help eliminate certain risks. They maintain a fiat peg through crypto asset reserves. As crypto market volatility influences the total value of these reserves, these stablecoins are overcollateralized — sometimes up to 200%! All collateralized assets are viewable on chain, giving users 24/7 access to the real composition of their stablecoins.\n\nThe most notable example in this category is MakerDAO’s Dai (DAI).\n\n![DAI collateralization breakdown (June 2023) Source: https://makerburn.com/#/rundown](/images/understanding-stablecoins/image-573e657a.png)\n\nConsiderations:\n\n* **Collateral Valuation:** A stablecoin’s reserves typically consist of crypto, other stablecoins, and even other asset classes. For example, DAI is backed by BTC, ETH, stablecoins, real world assets, and several other minor components. To mitigate the risks of this diverse range of assets, DAI is overcollateralized (at the time of writing). Even if the ETH price was to crash by 20%, DAI would still have [enough collateral](https://daistats.com/) to cover their token. However, further price volatility across its range of assets could begin to erode the peg.\n\n* `Counterparty Risk`: Reliance on multiple asset classes means there’s a higher chance one of the assets will experience difficulty and affect the value of your holdings. However, you only have fractional exposure to the impact of each individual risk.\n\n* **Governance Risk:** This type of stablecoin and its treasury are managed by a decentralized group of governance voters. This means there are risks of human error, or possible governance capture.\n\n### 3\. Algorithmic Stablecoins\n\nThese tokens maintain their peg by automatically balancing their own supply. An onchain algorithm reduces the number of tokens in circulation when the market price falls below the peg, and injects new tokens when the market price surpasses the peg. Both the balancing algorithm and the stablecoin\'s smart contracts are public, meaning anyone can clone and improve, or audit the existing system.\n\nAs algorithmic stablecoins have the fewest external dependencies, and no administration or governance demands, they almost entirely eliminate counterparty risk. This makes them the most decentralized and self-custody-ready stablecoin option.\n\nNotable examples include Liquity (LUSD) and Frax (FRAX).\n\n![](/images/understanding-stablecoins/image-4f6e4c7f.png)\n\nConsiderations:\n\n* **Dynamic Holdings:** With the balancing algorithm adjusting token supply, your number of tokens held will fluctuate with supply adjustments. The total value of your token holdings remains constant — you aren’t losing or gaining any value — but this aspect can be confusing for new users.\n\n* **Highly Technical:** You need to understand the technology to build confidence and risk/reward awareness.\n\n* **Emergent Tech Risk:** With algorithmic stablecoins being so new, unknown smart contract risks could be present. Only use algorithmic stablecoins with several smart contract audits, performed by top-level auditors.\n\n## Choosing a Stablecoin\n\nWhat is the best stablecoin to hold? As with everything DeFi, the answer to that question depends on your **needs**, **values**, and **risk tolerance**.\n\nHere’s a quick refresher on each category:\n\n* 💵 **Fiat-backed:** The traditional approach — the closest you’ll come to holding fiat on chain.\n\n  * Values: Conventionality, institutional trust.\n\n  * Risks: Opaque collateral backing, ability for provider to freeze funds.\n\n* 🔗 **Crypto-collateralized:** A balanced, crypto-native approach, spreading collateral risk across multiple asset classes.\n\n  * Values: Diversification, transparency, progression.\n\n  * Risks: Crypto market volatility, dependence on other assets.\n\n* 🔃 **Algorithmic:** The decentralized — but experimental — option that minimizes counterparty risk.\n\n  * Values: Self-sovereignty, transparency, progression.\n\n  * Higher risk of smart contract bugs.\n\nAs always, the best way to learn about something is to try it. You might even decide to hold a variety of stablecoins.\n\nAnd remember, not all stablecoins in each category are created equal! Do your own research before interacting with any new token.\n\n\n---\n\nWe hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Understanding Stablecoins’.\n\nDon’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!\n\n\n---\n\n## Frequently Asked Questions\n\n### What are the most popular stablecoins?\n\nLooking at the leading stablecoins by `market cap` gives an idea of the current market preference, but this isn’t guidance on how you should position yourself, or how safe that position would be.\n\nHere’s a realtime list of top stablecoins by market cap: <https://defillama.com/stablecoins>\n\nCryptocurrency users often refer to the ‘Lindy Effect’ when choosing investment options. This concept says that the longer something has existed, the more we can expect it will continue to exist. Ten years of cryptocurrency history have shown this to only be true on occasion.\n\n### Where can I buy stablecoins?\n\nCentralized Exchanges (CEXs) offer popular fiat-backed stablecoins (and typically their own branded stablecoin), other types of stablecoin are often missing.\n\nVisit a Decentralized Exchange (DEX), or use a direct wallet on-ramp service like ‘MetaMask Buy’, to acquire crypto-collateralized and algorithmic tokens. Check out our lesson on [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) to learn more about peer-2-peer marketplaces.\n\n### How can I earn interest on stablecoins?\n\nSome CEXs offer yield by just holding stablecoins on their platform, funded by a share of platform profits to incentivize platform use.\n\nYou can also earn interest in DeFi, with trustless lending and borrowing platforms. These platforms connect lenders and borrowers, managing risk through onchain collateral and smart contracts. Stablecoin lenders can earn annual returns far higher than available in the traditional banking sector — but where there’s reward, there’s risk!\n\nThe lending and borrowing topic deserves its own Bankless Academy entry. If you’re already interested in learning more you can research platforms like [Aave.com](https://aave.com/) and [Curve.fi](https://curve.fi/).\n\n### What happens if a stablecoin loses its peg?\n\nThe price of any stablecoin can shift slightly (usually around the +/- 2% mark) in peak network hours. This effect is usually temporary, with prices quickly stabilized by traders taking advantage of arbitrage opportunities.\n\nHowever, there are cases where a stablecoin loses its peg beyond safe, temporary ranges. This effect isn’t necessarily permanent (USDC, March 2023) — but it can be (Terra, May 2022).\n\nSome fiat-backed stablecoin issuers, like USDC, offer 1:1 redemption from their stablecoin to regular fiat through their website. Whether this remains true during times of crisis is another story.\n\n\n---\n\n**Author**\n\n**[Tetranome](https://twitter.com/tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, UI, design, and platform curriculum.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.\n\n**Patron**\n\nThis unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!',
     imageLinks: [
       '/images/understanding-stablecoins/image-0c080b13.png',
       '/images/understanding-stablecoins/image-573e657a.png',
@@ -1938,7 +2295,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/swapping-on-a-decentralized-exchange/lesson-7ca41657.png',
-    socialImageLink: '/images/swapping-on-a-decentralized-exchange/social-5eded9f4.png',
+    socialImageLink: '/images/swapping-on-a-decentralized-exchange/social-523f352a.png',
     learningActions: '',
     marketingDescription: 'Begin your journey into DeFi with this Decentralized Exchange walkthrough.',
     badgeId: null,
@@ -1963,7 +2320,7 @@ const LESSONS: LessonType[] = [
     notionId: 'fe0ab896f8d74031bedf683510261b05',
     englishName: 'Swapping on a Decentralized Exchange',
     slug: 'swapping-on-a-decentralized-exchange',
-    articleContent: '## Key Takeaways\n\n> * Decentralized Exchanges are a type of dApp that facilitate self-custody token swaps.\n>\n> * There is some practical knowledge required for confidently interacting with a DEX.\n>\n> * We can use block explorers to inspect our on-chain transactions.\n\nThe Decentralized Exchange (DEX) is the most commonly used application in the world of `Decentralized Finance` (DeFi) — and for good reason! DEXs enable automated swapping of one cryptocurrency token for another, without need for a mediator. Unlike Centralized Exchanges (CEXs), this type of swap also enables users to swap while retaining full ownership of their assets.\n\nAutonomy, and permissionless protocols, are backbone features of DeFi. They empower DeFi users with true ownership over their digital assets, and open access to fundamental blockchain services 24/7. Anyone with an internet connection can access DeFi, regardless of their personal background, beliefs, or geographical location.\n\nIn this handbook entry, we will cover how to use your self-custody wallet to interact with a DEX, with the goal of swapping one token for another. You can learn more about the mechanics, qualities, and risk profile of this technology, and how it compares to CEXs, in our lesson on [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges).\n\n## Choosing a DEX\n\nSelecting an affordable and safe platform is the first step in performing a token swap. In this walkthrough we will be using Velodrome, the most popular DEX on the Optimism network (at time of writing). As you become more confident in blockchain navigation, you’ll learn how to evaluate other exchanges and find the best fit for your needs. Our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson includes a comprehensive list of qualities to look out for.\n\n![](/images/swapping-on-a-decentralized-exchange/image-a5b39b1d.png)\n\nDEXs are a great start to your web3 journey because most dApps follow a user interface layout similar to DEXs, and use similar interactions with your self-custody wallet.\n\nLet’s begin our token swap.\n\n## Performing a Token Swap\n\n**1\. Load the dApp:**\n\nOpen [Velodrome](https://app.velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042) in a new browser tab.\n\n**2\. Connect your wallet:**\n\nUse the standard ‘Connect’ button typically located in the top right corner of any dApp.\n\nIf you are on desktop, connect with your browser wallet.\n\nIf you are on mobile, you will be prompted to use WalletConnect — the web3 standard for connecting mobile wallets to dApps.\n\n![](/images/swapping-on-a-decentralized-exchange/image-1d7c44d3.png)\n\n**3\. Approve the connection:**\n\nSelect ‘Connect’ in your wallet application to confirm the site connection. This allows the dApp to see your wallet address and token balances. You haven’t granted any other permissions yet.\n\n![](/images/swapping-on-a-decentralized-exchange/image-6ecdef56.png)\n\n**4\. Check and sign the terms of service (if you accept):**\n\nMany dApps will ask you to sign a message to confirm you have read their terms and conditions. Signing messages doesn’t cost gas, and doesn’t store any information on the blockchain. If you agree with the terms, you can sign the message.\n\n![](/images/swapping-on-a-decentralized-exchange/image-e3f7c7e8.png)\n\n**5\. Switch to the right network:**\n\nFor this walkthrough, make sure your wallet is set to the Optimism network.\n\n![](/images/swapping-on-a-decentralized-exchange/image-8d15c6f6.png)\n\n**6\. Customize your swap:**\n\nIt’s time to select your desired input and output tokens. In this example, we will be swapping ETH for OP — but you can swap whatever tokens you like!\n\n![](/images/swapping-on-a-decentralized-exchange/image-7b117655.png)\n\n**7\. Approve token permissions:**\n\nYou will be prompted to set and approve permission for Velodrome to access your wallet funds. We recommend limiting this to your trade size to limit future interactions with your tokens. (Stay tuned for future content on token permissions!)\n\n**8\. Confirm the transaction:**\n\nOnce you’re happy with your swap quote and settings, you can begin the swap. This step includes confirming on the dApp, and again in your wallet.\n\n![](/images/swapping-on-a-decentralized-exchange/image-89f87156.png)\n\n**9\. Check your balance:**\n\nYour transaction should take around 40 seconds to confirm, after which you will see your new token balance in your wallet. If your token type is not displayed, make sure you’ve imported the token addresses.\n\n*Optimism token contract address: 0x4200000000000000000000000000000000000042*\n\n![](/images/swapping-on-a-decentralized-exchange/image-c8b8abcc.png)\n\n**10\. Fetch your transaction hash:**\n\nTo complete the quest for our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson, you’ll need the ***transaction hash of the swap*** (not to be confused with the hash from your token permission transaction, or your wallet address). A block explorer link will usually appear on the DEX interface, letting you view the confirmed transaction details.. If you missed it, or it’s missing, you’ll find another link in your wallet activity log — tied directly to your trade.\n\n![](/images/swapping-on-a-decentralized-exchange/image-bcfdf0ee.png)\n\n\n---\n\nIt’s time to explore the world of decentralized trading! We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Swapping on a Decentralized Exchange’.\n\nDon’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!\n\n\n---\n\n## Frequently Asked Questions\n\n### Why does my price quote change a few times every minute?\n\nPrice quotes are typically calculated at the time you enter your desired swap into the DEX interface. As time goes by, other users are making swaps and affecting token supply on the exchange. The DEX will regularly refresh your quote to stay up to date.\n\n### How long does it take for a token swap to execute?\n\nThe answer depends on a variety of factors, primarily the block speed of the blockchain and how much you underpay or overpay the gas fee. DEX transactions submitted to Ethereum Mainnet typically take between 15 seconds and a couple of minutes to be confirmed. Layer 2 transactions are usually faster!\n\n### Why did my transaction fail?\n\nThere are a number of reasons why a transaction could fail: insufficient funds to pay gas, gas limit set too low, or slippage set too low. The best way to begin troubleshooting is to look for User Interface error messages. You can also view your transaction on a block explorer, like [Etherscan](https://optimistic.etherscan.io/), to check if there are any on-chain error messages. We’ll cover more troubleshooting specifics in future content!\n\n### Can I change or remove token permissions?\n\nGranting token permissions to a smart contract can leave our wallet vulnerable to unwanted future interactions, in the case of a smart contract hack. It is possible to change or remove token permissions using apps like [Revoke.cash](https://revoke.cash/). As adjusting permissions costs gas, this precaution can quickly become expensive. This is one of the reasons why many users store their digital assets in one wallet (cold wallet), while interacting with dApps on another (trading wallet). Users transfer assets between them only as necessary.\n\n### Why is the token I\'m looking for not available to swap?\n\nIf your token isn’t listed by default, you’ll have to paste the token contract address into the list. To find the token contract address, check <https://www.coingecko.com/> or the official project website.\n\n**Note:** Token addresses can change for a given token on different networks. For example the [USDC contract on Mainnet](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) is different than the [USDC contract on Optimism](https://optimistic.etherscan.io/token/0x7f5c764cbc14f9669b88837ca1490cca17c31607). Always verify token addresses before swapping!\n\n\n---\n\n**Author**\n\n**[Tetranome](https://twitter.com/tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, UI, design, and platform curriculum.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning as much as possible about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.\n\n**Patron**\n\nThis unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!',
+    articleContent: '## Key Takeaways\n\n> * Decentralized Exchanges are a type of dApp that facilitate self-custody token swaps.\n>\n> * There is some practical knowledge required for confidently interacting with a DEX.\n>\n> * We can use block explorers to inspect our on-chain transactions.\n\nThe Decentralized Exchange (DEX) is the most commonly used application in the world of `Decentralized Finance` (DeFi) — and for good reason! DEXs enable automated swapping of one cryptocurrency token for another, without need for a mediator. Unlike Centralized Exchanges (CEXs), this type of swap also enables users to swap while retaining full ownership of their assets.\n\nAutonomy, and permissionless protocols, are backbone features of DeFi. They empower DeFi users with true ownership over their digital assets, and open access to fundamental blockchain services 24/7. Anyone with an internet connection can access DeFi, regardless of their personal background, beliefs, or geographical location.\n\nIn this handbook entry, we will cover how to use your self-custody wallet to interact with a DEX, with the goal of swapping one token for another. You can learn more about the mechanics, qualities, and risk profile of this technology, and how it compares to CEXs, in our lesson on [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges).\n\n## Choosing a DEX\n\nSelecting an affordable and safe platform is the first step in performing a token swap. In this walkthrough we will be using Velodrome, the most popular DEX on the Optimism network (at time of writing). As you become more confident in blockchain navigation, you’ll learn how to evaluate other exchanges and find the best fit for your needs. Our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson includes a comprehensive list of qualities to look out for.\n\n![](/images/swapping-on-a-decentralized-exchange/image-a5b39b1d.png)\n\nDEXs are a great start to your web3 journey because most dApps follow a user interface layout similar to DEXs, and use similar interactions with your self-custody wallet.\n\nLet’s begin our token swap.\n\n## Performing a Token Swap\n\n**1\. Load the dApp:**\n\nOpen [Velodrome](https://velodrome.finance/swap?from=eth&to=0x4200000000000000000000000000000000000042) in a new browser tab.\n\n**2\. Connect your wallet:**\n\nUse the standard ‘Connect’ button typically located in the top right corner of any dApp.\n\nIf you are on desktop, connect with your browser wallet.\n\nIf you are on mobile, you will be prompted to use WalletConnect — the web3 standard for connecting mobile wallets to dApps.\n\n![](/images/swapping-on-a-decentralized-exchange/image-1d7c44d3.png)\n\n**3\. Approve the connection:**\n\nSelect ‘Connect’ in your wallet application to confirm the site connection. This allows the dApp to see your wallet address and token balances. You haven’t granted any other permissions yet.\n\n![](/images/swapping-on-a-decentralized-exchange/image-6ecdef56.png)\n\n**4\. Check and sign the terms of service (if you accept):**\n\nMany dApps will ask you to sign a message to confirm you have read their terms and conditions. Signing messages doesn’t cost gas, and doesn’t store any information on the blockchain. If you agree with the terms, you can sign the message.\n\n![](/images/swapping-on-a-decentralized-exchange/image-e3f7c7e8.png)\n\n**5\. Switch to the right network:**\n\nFor this walkthrough, make sure your wallet is set to the Optimism network.\n\n![](/images/swapping-on-a-decentralized-exchange/image-8d15c6f6.png)\n\n**6\. Customize your swap:**\n\nIt’s time to select your desired input and output tokens. In this example, we will be swapping ETH for OP — but you can swap whatever tokens you like!\n\n![](/images/swapping-on-a-decentralized-exchange/image-7b117655.png)\n\n**7\. Approve token permissions:**\n\nYou will be prompted to set and approve permission for Velodrome to access your wallet funds. We recommend limiting this to your trade size to limit future interactions with your tokens. (Stay tuned for future content on token permissions!)\n\n**8\. Confirm the transaction:**\n\nOnce you’re happy with your swap quote and settings, you can begin the swap. This step includes confirming on the dApp, and again in your wallet.\n\n![](/images/swapping-on-a-decentralized-exchange/image-89f87156.png)\n\n**9\. Check your balance:**\n\nYour transaction should take around 40 seconds to confirm, after which you will see your new token balance in your wallet. If your token type is not displayed, make sure you’ve imported the token addresses.\n\n*Optimism token contract address: 0x4200000000000000000000000000000000000042*\n\n![](/images/swapping-on-a-decentralized-exchange/image-c8b8abcc.png)\n\n**10\. Fetch your transaction hash:**\n\nTo complete the quest for our [Decentralized Exchanges](https://app.banklessacademy.com/lessons/decentralized-exchanges) lesson, you’ll need the ***transaction hash of the swap*** (not to be confused with the hash from your token permission transaction, or your wallet address). A block explorer link will usually appear on the DEX interface, letting you view the confirmed transaction details.. If you missed it, or it’s missing, you’ll find another link in your wallet activity log — tied directly to your trade.\n\n![](/images/swapping-on-a-decentralized-exchange/image-bcfdf0ee.png)\n\n\n---\n\nIt’s time to explore the world of decentralized trading! We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Swapping on a Decentralized Exchange’.\n\nDon’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!\n\n\n---\n\n## Frequently Asked Questions\n\n### Why does my price quote change a few times every minute?\n\nPrice quotes are typically calculated at the time you enter your desired swap into the DEX interface. As time goes by, other users are making swaps and affecting token supply on the exchange. The DEX will regularly refresh your quote to stay up to date.\n\n### How long does it take for a token swap to execute?\n\nThe answer depends on a variety of factors, primarily the block speed of the blockchain and how much you underpay or overpay the gas fee. DEX transactions submitted to Ethereum Mainnet typically take between 15 seconds and a couple of minutes to be confirmed. Layer 2 transactions are usually faster!\n\n### Why did my transaction fail?\n\nThere are a number of reasons why a transaction could fail: insufficient funds to pay gas, gas limit set too low, or slippage set too low. The best way to begin troubleshooting is to look for User Interface error messages. You can also view your transaction on a block explorer, like [Etherscan](https://optimistic.etherscan.io/), to check if there are any on-chain error messages. We’ll cover more troubleshooting specifics in future content!\n\n### Can I change or remove token permissions?\n\nGranting token permissions to a smart contract can leave our wallet vulnerable to unwanted future interactions, in the case of a smart contract hack. It is possible to change or remove token permissions using apps like [Revoke.cash](https://revoke.cash/). As adjusting permissions costs gas, this precaution can quickly become expensive. This is one of the reasons why many users store their digital assets in one wallet (cold wallet), while interacting with dApps on another (trading wallet). Users transfer assets between them only as necessary.\n\n### Why is the token I\'m looking for not available to swap?\n\nIf your token isn’t listed by default, you’ll have to paste the token contract address into the list. To find the token contract address, check <https://www.coingecko.com/> or the official project website.\n\n**Note:** Token addresses can change for a given token on different networks. For example the [USDC contract on Mainnet](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) is different than the [USDC contract on Optimism](https://optimistic.etherscan.io/token/0x7f5c764cbc14f9669b88837ca1490cca17c31607). Always verify token addresses before swapping!\n\n\n---\n\n**Author**\n\n**[Tetranome](https://twitter.com/tetranome)** is the Project Champion at Bankless Academy, focusing on user experience, UI, design, and platform curriculum.\n\n**Editor**\n\n**[Trewkat](https://twitter.com/trewkat)** is a writer and editor at BanklessDAO. She’s interested in learning as much as possible about crypto and NFTs, with a particular focus on how best to communicate this knowledge to others.\n\n**Patron**\n\nThis unsponsored article is part of your free Bankless Academy education. Collect the article to support future content!',
     imageLinks: [
       '/images/swapping-on-a-decentralized-exchange/image-a5b39b1d.png',
       '/images/swapping-on-a-decentralized-exchange/image-1d7c44d3.png',
@@ -1977,9 +2334,328 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
+    badgeImageLink: '/images/staking-on-ethereum/badge-2714ad22.png',
+    lessonImageLink: '/images/staking-on-ethereum/lesson-0274132a.png',
+    socialImageLink: '/images/staking-on-ethereum/social-1ca55dca.jpg',
+    learningActions: '',
+    marketingDescription: 'Become a guardian of Ethereum: Secure the network, earn Ether rewards.',
+    badgeId: 11,
+    duration: null,
+    learnings: '',
+    description: 'Become a guardian of Ethereum: Secure the network, earn Ether rewards.',
+    name: 'Staking on Ethereum',
+    languages: [],
+    lessonWriters: 'Tetranome',
+    quest: 'StakingOnEthereum',
+    publicationStatus: 'publish',
+    publicationDate: '2024-02-21',
+    featuredOrderOnHomepage: 2,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    sponsorName: 'Rocket Pool',
+    sponsorLogo: '/images/staking-on-ethereum/sponsor-3c0f08c6.png',
+    notionId: 'e90059604739465ea99b9a2c8af5eb75',
+    englishName: 'Staking on Ethereum',
+    slug: 'staking-on-ethereum',
+    imageLinks: [
+      '/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png',
+      '/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png',
+      '/images/staking-on-ethereum/blockchain-security-7f2149fe.svg',
+      '/images/staking-on-ethereum/proof-of-stake-49c358ed.svg',
+      '/images/staking-on-ethereum/slashing-ccabe137.svg',
+      '/images/staking-on-ethereum/ethernomics-33407ddc.svg',
+      '/images/staking-on-ethereum/types-of-staking-part-2-9de268fd.svg',
+      '/images/staking-on-ethereum/types-of-staking-part-2-96f11caf.svg',
+      '/images/staking-on-ethereum/types-of-staking-part-2-27091ef5.svg',
+      '/images/staking-on-ethereum/network-centralization-0622ba07.svg',
+      '/images/staking-on-ethereum/staking-pools-46c96251.svg',
+      '/images/staking-on-ethereum/network-centralization-again-43bfd55b.svg',
+      '/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-a5172608.svg'
+    ],
+    keywords: [
+      'staking',
+      'mining',
+      'decentralized',
+      'smart contract',
+      'validator node',
+      'staker',
+      'validator nodes',
+      'fraud',
+      'credible neutrality',
+      'consensus',
+      'node operator',
+      'consensus mechanism',
+      'stake',
+      'slashed',
+      'proof-of-stake',
+      'blocks',
+      'block builders',
+      'block proposer',
+      'attestation',
+      'block reward',
+      'private keys',
+      'self-custody',
+      'staking pools',
+      'smart contracts',
+      'staking providers',
+      'tokens',
+      'lsts',
+      'liquid',
+      'restaking',
+      'decentralized exchange',
+      'staking pool',
+      'liquid staking token'
+    ],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: 'f6e6503183354fcdbc74fb3dd303f626',
+        title: 'Staking on Ethereum',
+        content: '<div class="bloc1"><p>Welcome, Explorer, to your next lesson!</p><p>Today, we’ll look at the process of “staking” — one simple way to build digital wealth.</p><p><code>Staking</code> is similar to <code>mining</code> on the Bitcoin network: they’re both systems for letting participants process transactions on the blockchain in exchange for rewards. They keep our networks <code>decentralized</code>.</p><p>However, there’s an important difference between mining and staking. Staking on Ethereum doesn’t require a powerful computer to compete against others. Simply locking Ether (ETH) in a network <code>smart contract</code> keeps Ethereum running and rewards you.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/staking-on-ethereum-50472cf7.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'c53e50f57c1c4cf299aeb9971d739b6d',
+        title: 'Ethereum Wants You!',
+        content: '<div class="bloc1"><p>Think of <code>staking</code> like an “internet bond”.</p><p>Just like supporting your government through bonds gives financial returns, supporting Ethereum brings rewards! Even better, like government bonds, staking is a way to show financial support for your values and the world you want to live in.</p><p>When you stake Ether, it is assigned to a <code>validator node</code> working to process transactions on Ethereum. The more Ether staked, the more nodes Ethereum can have. With more nodes, Ethereum becomes more <code>decentralized</code> and secure.</p><p>As a <code>staker</code>, you become a <strong>guardian of Ethereum!</strong></p><p>Now, let\'s take a deep look into staking mechanics and discover a stress-free and low-cost opportunity to start your staking journey today.</p><p>Grab your gear, let’s go!</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/ethereum-wants-you-fd40b9e5.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'fcf9351332874288b5a7bf2b5b9f6d12',
+        title: 'Blockchain Security',
+        content: '<div class="bloc1"><p><code>Validator nodes</code> are key to a secure and legitimate economy on Ethereum. They protect the blockchain from <code>fraud</code>.</p><p>Fraud in the blockchain world looks like a user manipulating balances or creating non-existent crypto. Ethereum’s way of curbing it is ensuring that every transaction is valid and no participant has power over others. This fairness, known as <code>credible neutrality</code>, is vital. Why? Nobody wants to be a part of an economy where there\'s deceit and distrust — it will eventually collapse.</p><p>In a healthy blockchain, validator nodes share one goal: <strong>to</strong> <strong>reach decentralized agreement—across the network—on the state of the blockchain.</strong> Nodes scan transactions, check them against the blockchain’s history, and vote on their validity. Transactions that pass node <code>consensus</code> as valid are added to the blockchain.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/blockchain-security-7f2149fe.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '9a6352929e6e494ab3b165039598794c',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How do validator nodes prevent fraud on Ethereum?',
+          rightAnswerNumber: 3,
+          answers: [
+            'By overpowering each other.',
+            'By creating non-existent crypto for certain people.',
+            'By reaching decentralized agreement on valid transactions.'
+          ],
+          feedback: [
+            'Try again! Nodes have no influence over each other. They work together to influence the blockchain.',
+            'Try again! This would be committing fraud.',
+            'Correct! Nodes agree on the state of the blockchain.'
+          ],
+          id: 'staking-on-ethereum-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '8c558399c3624e3bbc8bea263dd62324',
+        title: 'Proof-of-Stake',
+        content: '<div class="bloc1"><p>Users who want to run a <code>validator node</code> on their computer must gather and lock 32 ETH — that’s a lot of money. In exchange for taking a large financial “stake” in the network, the <code>node operator</code> is allowed to propose and review blocks of transactions on Ethereum — and earn rewards. Think of blocks as groups of transactions submitted to the network.</p><p>The network’s <code>consensus mechanism</code> randomly selects a validator node to propose the next block and its decision is double-checked by other nodes to ensure honesty. When a node successfully proposes a block, its <code>stake</code> grows.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/proof-of-stake-49c358ed.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'b103503df12146dd9852717fc17bb02a',
+        title: 'Slashing',
+        content: '<div class="bloc1"><p>When a node is too slow or tries to approve fraud, its stake is <code>slashed</code>: it gets a penalty charge. This way, staked Ether becomes a form of insurance where nodes are incentivized to be honest and keep Ethereum running smoothly.</p><p>For an attacker to approve fraud on Ethereum, they must have control over majority of the validator nodes and thus, staked Ether. Fortunately this can\'t happen if everyday users are involved in staking. <code>Decentralized</code> ownership of the network divides the power to make decisions.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/slashing-ccabe137.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '3e7bf2b7a80b4d58adb59c9fe47fb7af',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'True or False: Validator nodes caught processing fraudulent blocks will receive penalty charges.',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          feedback: [
+            'Correct! This “slashing” incentivizes nodes to stay honest!',
+            'Try again! Nodes must receive some sort of punishment for dishonest actions.'
+          ],
+          id: 'staking-on-ethereum-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'b9fbae598d8f489a8cdacb40144815de',
+        title: 'Validating Transactions',
+        content: '<div class="bloc1"><p>Let\'s get into the step-by-step process of how nodes come to agreement using <code>Proof-of-Stake</code> consensus:</p><ol><li><strong>Staking:</strong> A <code>node operator</code> locks 32 ETH on the network and begins running a <code>validator node</code>.</li><li><strong>Block Building:</strong> Users submit transactions ordered into <code>blocks</code> by <code>block builders</code>.</li><li><strong>Proposer Selection:</strong> An algorithm selects a validator node to propose the next block to be added to the blockchain.</li><li><strong>Block Proposal:</strong> The <code>block proposer</code> reviews potential blocks and selects one, granting their <code>attestation</code> if valid.</li><li><strong>Cross-Verification:</strong> Other validators double-check the block and grant attestation if valid. Invalid blocks are discarded and the proposer is <code>slashed</code>.</li><li><strong>Block Addition:</strong> The valid block is added to the Ethereum blockchain.</li><li><strong>Rewards:</strong> The block proposer earns a <code>block reward</code> and transaction tips. The other validators are also rewarded.</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/validating-tx-with-ethereum-staking\'></iframe></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '802bd3e3ac71461fa38ab668e9873b00',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'What is the name of the validator node selecting the next block to be added to Ethereum?',
+          rightAnswerNumber: 3,
+          answers: [
+            'Staker',
+            'Block builder',
+            'Block proposer'
+          ],
+          feedback: [
+            'Try again! Stakers support validator nodes, but don’t run the node themselves.',
+            'Try again! Block builders order incoming transactions into potential blocks, but don’t add them to the blockchain.',
+            'Correct! Block proposers, looking at blocks from block builders, choose one to add to the blockchain.'
+          ],
+          id: 'staking-on-ethereum-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '5ac23eb478224f14a8dda33b59a2bf43',
+        title: 'Ethernomics',
+        content: '<div class="bloc1"><p>For providing Ether to a validator node, stakers earn a portion of its rewards.</p><p>Rewards received by nodes are based on various ecosystem factors and can change. Simply put, the rewards are a portion of transaction fees and a small amount of newly issued Ether added to new blocks.</p><p>Annual yield can look like anything between a 3% to 16% return on staked Ether. The exact amount is based on two key factors:</p><ul><li>📈<strong> Network Activity:</strong> Generally speaking, if traffic is low rewards are lower. If traffic is high, they’re higher.</li><li>👥<strong> Number of Validator Nodes:</strong> Rewards get further divided with more participants.</li></ul><p>Yields also change depending on how exactly you stake your Ether. Let’s look at our options.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/ethernomics-33407ddc.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '7e977dd7c1544b2db6810289a13d2947',
+        title: 'Types of Staking',
+        content: '<div class="bloc1"><p>You’ll typically need to lock 32 ETH to run a <code>validator node</code>, but new staking methods have made guarding Ethereum available to everyone.</p><p>So, there are three ways to protect Ethereum:</p><ul><li>📡 <strong>Solo Staking:</strong> Run a validator node yourself.</li><li>⛲ <strong>Staking Pools:</strong> Join a group of stakers and run a node together.</li><li>🏦 <strong>Centralized Exchange Staking:</strong> Join a “crypto bank” node.</li></ul><p>Each method requires varying levels of technical knowledge to get set up, along with its own associated risks.</p><p>If you’re comfortable holding your <code>private keys</code> but don’t have 32 ETH, then consider joining others in a staking pool. </p><p>If you’re not yet okay with taking <code>self-custody</code> of your crypto, check out Centralized Exchange staking. In the mean time, take our <a href=\'https://app.banklessacademy.com/lessons/wallet-basics\'>Wallet Basics</a> lesson and boldly take ownership of your crypto!</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '20dbf51d28cc48c48868ddbba29b34ac',
+        title: 'Types of Staking (Part 2)',
+        content: '<div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-part-2-9de268fd.svg\'></div><div class="bloc-b"><p><span class=\'color-default\'><strong>Solo Staking</strong></span></p><p>🟡 Requires 32 ETH</p><p>🟡 Technical Setup</p><p>🟢 Decentralizes Ethereum</p><p><strong>Risks:</strong> You may lose your private keys, get <code>slashed</code>, or receive minor penalties for an offline node.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-part-2-96f11caf.svg\'></div><div class="bloc-b"><p><strong>Staking Pools</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🟡 Decentralized Options</p><p><strong>Risks:</strong> There could be a bug in the staking pool’s smart contract or you may lose your private keys.</p></div></div><div class="bloc-ab"><div class="bloc-a"><img src=\'/images/staking-on-ethereum/types-of-staking-part-2-27091ef5.svg\'></div><div class="bloc-b"><p><strong>Centralized Exchange Staking</strong></p><p>🟢 Any amount of ETH</p><p>🟢 Easy Setup</p><p>🔴 Centralizes Ethereum</p><p><strong>Risks:</strong> Your exchange could declare bankruptcy — this may lead to loss of your holdings.</p></div></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '1bdf5971c3c94e5ca3323c7af00fed38',
+        title: 'Network Centralization',
+        content: '<div class="bloc1"><p><strong>Any staking that leads to many nodes under one entity begins to centralize Ethereum.</strong></p><p>Imagine Ethereum as a web of connected <code>validator nodes</code>. When nodes are concentrated under one or a few entities, the entire web becomes imbalanced and unsafe. For this not to happen, we need lots of unique connection points.</p><p>A single entity gaining control over enough nodes is bad. This forces blocks of transactions through the centralized section of the web. The centralized entity could begin approving fraudulent blocks, or even denying valid ones. This would destroy Ethereum’s <code>credible neutrality</code>.</p><p>As its guardians, we must focus on staking methods that keep the web balanced and <code>decentralized</code>.</p><p>You may face many barriers with running your own validator node as a beginner. Instead, let\'s explore a beginner-friendly option to decentralized staking: <code>staking pools</code>.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/network-centralization-0622ba07.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'e9cad4dd12fa472ba02b101739921dd7',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'What would happen if a single entity controlled a majority of validator nodes?',
+          rightAnswerNumber: 1,
+          answers: [
+            'They could approve blocks including fraudulent transactions.',
+            'They would gain control of all validator nodes.',
+            'Ethereum would stop processing transactions altogether.',
+            'All of the above.'
+          ],
+          feedback: [
+            'Correct! Ethereum would lose its credible neutrality.',
+            'Try again! Other nodes cannot be controlled, but their voice can be overpowered.',
+            'Try again! Ethereum wouldn’t stop running during such an attack, but its credible neutrality would be lost.',
+            'Try again! Only one of the above answers is correct.'
+          ],
+          id: 'staking-on-ethereum-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '561e1079d9874ee3976977a90426bb5d',
+        title: 'Staking Pools',
+        content: '<div class="bloc1"><p>The best part about <code>staking pools</code> is that they’re entirely run by <code>smart contracts</code>. You don’t have to meet the other stakers in person and you don’t have to trust them. You do however have to trust the smart contract.</p><p>Staking pools are organized by <code>staking providers</code>, digital platforms connecting stakers across the world! In staking pools, a <code>node operator</code> stakes at least 16 ETH and runs the node, while other participants supply the remaining Ether. The node operator earns extra yield for their service.</p><p>The remaining staking participants are given “Liquid Staking Tokens” (LSTs) representing their membership to the pool. These <code>tokens</code> stand for a share of a pool’s staked Ether. The holder earns a portion of rewards equal to the represented stake, and can use them to redeem their stake at any time.</p><p>By simply holding an LST—like Rocket Pool’s rETH—you own a share of a staking pool. Yep, your Ether is decentralizing Ethereum and earning staking rewards!</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/staking-pools-46c96251.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '3222f2f41d574a28ba4ce99dc7ecbce2',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'Which entity hosts the staking pool?',
+          rightAnswerNumber: 3,
+          answers: [
+            'The node operator.',
+            'The remaining staking participants.',
+            'The staking provider.'
+          ],
+          feedback: [
+            'Try again! Node operators run the validator node, but not the pool itself.',
+            'Try again! Stakers provide Ether, but don’t run the pool.',
+            'Correct! The pool is hosted through the provider’s smart contracts.'
+          ],
+          id: 'staking-on-ethereum-5'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '2664f39b79d2408a9b3de46c76cac42c',
+        title: 'Liquid Staking Tokens',
+        content: '<div class="bloc1"><p>The best thing about <code>LSTs</code> is that even while your Ether is staked and gathering yield, it maintains a <code>liquid</code> form.</p><p>“Liquid” in this case means that it can still flow throughout the ecosystem. Think of holding a share of a staking pool… but you can use it as money! LSTs can be swapped, used as collateral for loans, or even deposited on <code>restaking</code> platforms for bonus yield.</p><p>LSTs are great because they open access to staked Ether. Staking pools often have minimum deposit amounts for adding Ether to the pool (around 0.01 ETH). However, using LSTs, you can buy even smaller increments of staked Ether on your favorite <code>decentralized exchange</code>.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '4942d5247e6b41899c4f1bf1e6b66a31',
+        title: 'Network Centralization — Again!',
+        content: '<div class="bloc1"><p>Staking pools and LSTs have the same catch as the different staking methods: <strong>they function in different degrees of centralization and decentralization.</strong></p><p>Staking providers like Rocket Pool have made sure that anyone, anywhere can be the <code>node operator</code> of a staking pool. This supports new node operators in building their 32 ETH stake, and helps to decentralize Ethereum. However, other providers only allow a small range of their contacts to run their nodes, making the centralization of staked Ether a risk.</p><p>If any entity gains over 33% control of all staked Ether, they could cause problems on the network. At 50%, they seriously threaten Ethereum’s <code>credible neutrality</code>.</p><p>Staking provider Lido (as of early 2024) already hovers around the problematic 33% mark.</p><p>To guard Ethereum, we need to do our research. Even with <code>staking pools</code> we need to make choices that support decentralization.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/network-centralization-again-43bfd55b.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '4abc237a56fb4c1c863c0190b17b52f3',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'True or False: Supporting new node operators helps to decentralize Ethereum.',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          feedback: [
+            'Correct! More node operators means more independent validator nodes detecting fraud.',
+            'Try again! The more independent nodes, the better.'
+          ],
+          id: 'staking-on-ethereum-6'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'a0934d6558514f63bff55fa3207a871a',
+        title: 'rETH - Your Path to Decentralized Staking',
+        content: '<div class="bloc1"><p>It’s time to become a staker — a guardian of Ethereum.<br>For today’s quest, we’re taking ownership of a <code>staking pool</code> at Rocket Pool.</p><p>🪙 It’s simple: Mint or buy Rocket Pool’s <code>liquid staking token</code>, <strong>rETH</strong>.</p><p>As the first step on your staking journey, you’ll be funding a <code>validator node</code> to process blocks, in exchange for Ether rewards.</p><p><strong>Note:</strong> With rETH, staking rewards are added to the value of the token. If you hold 1 rETH today, you’ll still own 1 rETH in a year. It will just be worth more.</p><p>Good luck on your quest, Explorer! May your commitment to Ethereum’s decentralized future be greatly rewarded.</p></div><div class="bloc2"><img src=\'/images/staking-on-ethereum/reth-your-path-to-decentralized-staking-a5172608.svg\'></div>'
+      },
+      {
+        type: 'QUEST',
+        title: 'Staking on Ethereum Quest',
+        component: 'StakingOnEthereum'
+      }
+    ]
+  },
+  {
+    badgeImageLink: null,
+    lessonImageLink: '/images/staking-ether/lesson-c9e39d73.png',
+    socialImageLink: '/images/staking-ether/social-040aeea7.png',
+    learningActions: '',
+    marketingDescription: 'Generate yield on your Ether by protecting Ethereum.',
+    badgeId: null,
+    collectibleId: 'H007',
+    duration: null,
+    learnings: '',
+    description: 'Generate yield on your Ether by protecting Ethereum.',
+    name: 'Staking Ether',
+    languages: [],
+    lessonWriters: 'Tetranome',
+    publicationStatus: 'publish',
+    publicationDate: '2024-02-21',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    mirrorLink: 'https://mirror.xyz/banklessacademy.eth/rnxCnDuopoauSu61vG-ldteB7sw5WfAeurWmcGN5pps',
+    mirrorNFTAddress: '0xe2dd5eb9841920937833c094874ba33d26becb4f',
+    areMirrorNFTAllCollected: false,
+    sponsorName: 'Rocket Pool',
+    sponsorLogo: '/images/staking-ether/sponsor-c94516e2.png',
+    isArticle: true,
+    notionId: 'fef542e5e6a8431b95081ba714c551cc',
+    englishName: 'Staking Ether',
+    slug: 'staking-ether',
+    articleContent: 'This is a summary and walkthrough for our [’Staking on Ethereum’](https://app.banklessacademy.com/lessons/staking-on-ethereum) lesson and quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/staking-on-ethereum) to **level up your knowledge and claim your badge!**\n\n\n---\n\n## Key Takeaways\n\n> * Staking is essential to decentralization and transaction processing on Ethereum.\n>\n> * It’s simple: lock Ether on the network, earn rewards.\n>\n> * Running a `validator node` is the fundamental form of staking on Ethereum, requiring 32 Ether.\n>\n> * Using the rETH `token`, Explorers can get involved in staking with any amount of Ether.\n\n## What is Staking?\n\nPut simply, staking on Ethereum is an action that allows anyone to help secure the network. You lock a portion of Ether on the network, aiding network validators, and earning rewards.\n\nStaking is an essential part of Ethereum’s `consensus mechanism`: the separation of legitimate transaction and blocks from the fraudulent ones, in a `decentralized` way. This sorting is integral for maintaining a fair economy across the network.\n\nThis might sound familiar — because it has the same goal as mining does on the Bitcoin network. Yet there’s a crucial difference between mining and staking: On Ethereum, staking can be accessed by anyone. You don’t need a powerful computer to process transactions, like you would for mining on Bitcoin.\n\nSo by simply buying Ether and locking it in a network `smart contract`, you can become a staker. In doing so, you’ll help keep Ethereum running smoothly, and earn rewards in return!\n\n## Start Staking with rETH\n\nNow, the best way to get involved in securing Ethereum is to run a `validator node`. It grants the most rewards, and has the biggest impact on network decentralization. The problem is… it requires 32 ETH, some technical knowledge, and a dedicated computer with 24/7 power and internet access. That’s a tall order for most Explorers. Fortunately, innovators within the Ethereum community have created an easy entry point that anyone can use to get involved: `staking pools` and `liquid staking tokens` (LSTs).\n\nRocket Pool is a leader in this category, with an approach granting high positive network impact. By locking Ether in one of their staking pools, you’ll `mint` rETH. While minting rETH directly from the Rocket Pool smart contract has the largest impact on network decentralization, you can also buy it on a `decentralized exchange`. In holding this token, you’ll begin earning staking rewards, generating annual returns between 3% and 16%.\n\nWith rETH, staking rewards are added straight to the value of the token: If you hold 1 rETH today, you will still own 1 rETH in a year. It will just be worth more.\n\n## Prerequisites\n\n* You’ll need some regular ETH on one of the following networks: Ethereum, Optimism, Base, Arbitrum or Polygon (POS).\n\n## Walkthrough\n\n### Option #1: Minting New rETH\n\nRequires >0.01 ETH, and only works on Ethereum Mainnet.\n\n**1\. Head over to <https://stake.rocketpool.net/> and connect your wallet.**\n\n![](/images/staking-ether/image-80cf7889.png)\n\n**2\. Enter the amount you’d like to stake, hit ‘Stake’, and then in your wallet hit ‘Submit’.**\n\nYour rETH will land in your wallet once your transaction has been processed. It’s that easy.\n\n![](/images/staking-ether/image-255e1bf8.png)\n\n### Option #2: Buying rETH on a Decentralized Exchange\n\nNo minimum balance requirements, and works on all networks listed above.\n\n**1\. Jump to <https://app.uniswap.org/swap> and connect your wallet.**\n\nWe’re swapping on the Optimism `layer 2` network, because gas fees are a lot lower than on Ethereum mainnet. Learn how to bridge to Optimism, [in our “How to Fund Your Wallet on L2” article](https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2).\n\n![](/images/staking-ether/image-8d944152.png)\n\n**2\. Enter the amount you’d like to hold, hit ‘Swap’, and then in your wallet hit ‘Confirm’.**\n\nYour rETH will land in your wallet once your transaction has been processed. It’s that easy.\n\n![](/images/staking-ether/image-5d667f3c.png)\n\n\n---\n\n**It’s time to become a guardian of Ethereum!** We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘’Staking Ether”.\n\nDon’t forget to collect this entry if you want to own a copy for easy reference on your travels, and to support future content at Bankless Academy.\n\nSafe travels, Explorer!\n\n\n---\n\n## FAQ\n\n### What are the risks of staking?\n\nIt depends on the method used, but the one shared risk is that the validator nodes you’re involved with could get slashed. In most staking pools and centralized exchange staking, these kinds of losses are diluted across the entire platform (everyone shares the loss, diminishing its impact) or even insured.\n\nOther risks include:\n\n* `Solo Staking`: A bug in the validator node’s chosen `validator client` software.\n\n* `Staking Pools`: A bug in the staking pool’s smart contracts, or the validator client software.\n\n* `Centralized Exchange Staking`: Sudden bankruptcy of the exchange, and loss of any stake in it.\n\nThe potential impact of each risk is really difficult to predict, but it’s safe to say that staking Ether is more risky than simply holding it. Where there’s reward, there’s risk! Only invest what you’re willing to lose.\n\n### Does all staking benefit Ethereum?\n\nBenefit comes in the form of `decentralization` — you want as many independent `node operators` as possible.\n\n* `Solo Staking`: Maximum decentralization, as this typically means just a few nodes under one person.\n\n* `Staking Pools`: It depends on the platform. Some staking providers only allow specific people to act as validator nodes within their pools. That means many nodes under a few people — a centralizing force. Rocket Pool is one of the few providers that allow anyone to become the node operator of a staking pool. This makes their platform one of the best staking options for citizens of Ethereum.\n\n* `Centralized Exchange Staking`: Much like the centralizing forces within staking pools, many nodes under one entity is bad for Ethereum.\n\n### Do staking rewards change?\n\nYes, rewards depend on two key factors:\n\n* **Network Activity:** Generally speaking, in times of low traffic rewards are lower, and in high traffic they’re higher.\n\n* **Number of Validator Nodes:** With more participants, rewards are further divided.\n\nRewards also change based on the staking method chosen. Check out our [“Staking on Ethereum” lesson](https://beta.banklessacademy.com/lessons/staking-on-ethereum) to learn more!\n\n### How do I run a validator node?\n\nIf you want to become a `solo staker`, you’ll need the full 32 ETH, as well as your validator hardware. Check out [this great guide by CoinCashew](https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet).\n\nYou can get started with just 16 ETH by running a `staking pool` with Rocket Pool, where other participants will help you reach the 32 ETH required. Of course, you’ll still need your validator hardware. Check out [the documentation over at Rocket Pool](https://docs.rocketpool.net/guides/) to get started!\n\n\n---\n\n**Author**\n\n[Tetranome](https://twitter.com/Tetranome) is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.\n\n**Patron**\n\nThis article is funded by [Rocket Pool](https://rocketpool.net/).',
+    imageLinks: [
+      '/images/staking-ether/image-80cf7889.png',
+      '/images/staking-ether/image-255e1bf8.png',
+      '/images/staking-ether/image-8d944152.png',
+      '/images/staking-ether/image-5d667f3c.png'
+    ]
+  },
+  {
     badgeImageLink: null,
     lessonImageLink: '/images/managing-token-allowances/lesson-dcf41ef6.png',
-    socialImageLink: '/images/managing-token-allowances/social-00f2f6fe.png',
+    socialImageLink: '/images/managing-token-allowances/social-6f251351.png',
     learningActions: '',
     marketingDescription: 'Protect your wallet from unwanted smart contract interactions.',
     badgeId: null,
@@ -2245,7 +2921,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/understanding-ethereum-token-standards/lesson-dcf41ef6.png',
-    socialImageLink: '/images/understanding-ethereum-token-standards/social-00f2f6fe.png',
+    socialImageLink: '/images/understanding-ethereum-token-standards/social-45b8b003.png',
     learningActions: '',
     marketingDescription: 'Learn how Ethereum’s asset templates support both traditional and emerging asset classes.',
     badgeId: null,
@@ -2258,7 +2934,7 @@ const LESSONS: LessonType[] = [
     lessonWriters: 'Musharef, Tetranome',
     publicationStatus: 'publish',
     publicationDate: '2023-11-08',
-    featuredOrderOnHomepage: 1,
+    featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     mirrorLink: 'https://mirror.xyz/banklessacademy.eth/qxBzms3mPBCZ8XCk2HMmyTm7IWe70wiFFn5J0BSvYiM',
@@ -2301,7 +2977,7 @@ const LESSONS: LessonType[] = [
     quest: 'OptimismGovernance',
     publicationStatus: 'publish',
     publicationDate: '2023-09-07',
-    featuredOrderOnHomepage: 2,
+    featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     sponsorName: 'Optimism',
@@ -2609,7 +3285,7 @@ const LESSONS: LessonType[] = [
   {
     badgeImageLink: null,
     lessonImageLink: '/images/delegating-on-optimism/lesson-9ce41ea1.png',
-    socialImageLink: '/images/delegating-on-optimism/social-3947f1e7.png',
+    socialImageLink: '/images/delegating-on-optimism/social-2cbfa86f.png',
     learningActions: '',
     marketingDescription: 'Grant your OP voting power to people closely following governance.',
     badgeId: null,

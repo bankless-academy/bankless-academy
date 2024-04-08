@@ -7,23 +7,37 @@ import {
   UnorderedList,
   ListItem,
 } from '@chakra-ui/react'
-import { LessonType } from 'entities/lesson'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount, useNetwork } from 'wagmi'
 import { switchNetwork } from '@wagmi/core'
 import { useTranslation } from 'react-i18next'
+import { ShootingStar } from '@phosphor-icons/react'
+import { isMobile } from 'react-device-detect'
+import styled from '@emotion/styled'
 
+import { LessonType } from 'entities/lesson'
 import MintCollectibleModal from 'components/MintCollectibleModal'
-import { getLessonsCollectors, isHolderOfNFT } from 'utils'
+import {
+  generateFarcasterLink,
+  generateTwitterLink,
+  getLessonsCollectors,
+  isHolderOfNFT,
+  getLessonsCollected,
+} from 'utils/index'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
-import { getLessonsCollected } from 'utils'
 import {
   IS_WHITELABEL,
   MD_ENABLED,
+  NB_DATADISK_MAX,
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
 import Collectible from 'components/Collectible'
+import Card from 'components/Card'
+
+const StyledCard = styled(Card)<{ issmallscreen?: string }>`
+  box-shadow: none;
+`
 
 export const openLesson = async (
   openedLesson: string,
@@ -71,13 +85,9 @@ const CollectLessonButton = ({
   lesson: LessonType
 }): JSX.Element => {
   const { t } = useTranslation()
-  const [isLessonMintedLS, setIsLessonMintedLS] = useLocalStorage(
-    `isLessonMinted-${lesson.lessonCollectibleTokenAddress}`,
-    false
-  )
-  const [isBadgeMintedLS] = useLocalStorage(
-    `isBadgeMinted-${lesson.badgeId}`,
-    false
+  const [nbDatadiskMintedLS, setNbDatadiskMintedLS] = useLocalStorage(
+    `nbDatadiskMinted-${lesson.lessonCollectibleTokenAddress}`,
+    0
   )
   const [tokenId, setTokenId] = useState('1')
   const {
@@ -85,15 +95,14 @@ const CollectLessonButton = ({
     onOpen: onOpenMintCollectibleModal,
     onClose: onCloseMintCollectibleModal,
   } = useDisclosure()
-  // const {
-  //   isOpen: isOpenLessonCollectibleModal,
-  //   onOpen: onOpenLessonCollectibleModal,
-  //   onClose: onCloseLessonCollectibleModal,
-  // } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const [numberIOwn, setNumberIOwn] = useState(1)
   const { address } = useAccount()
   const [, setLessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
+  const [refreshDatadiskLS, setRefreshDatadiskLS] = useLocalStorage(
+    'refreshDatadisk',
+    false
+  )
   const { chain } = useNetwork()
 
   useEffect(() => {
@@ -111,7 +120,7 @@ const CollectLessonButton = ({
     const NFTCollectors = await getLessonsCollectors(
       lesson.lessonCollectibleTokenAddress
     )
-    setIsLessonMintedLS(false)
+    setNbDatadiskMintedLS(0)
     for (const NFTCollector of NFTCollectors) {
       if (address && NFTCollector.ownerAddress === address.toLowerCase()) {
         setTokenId(
@@ -119,7 +128,7 @@ const CollectLessonButton = ({
         )
         if (NFTCollector.tokenBalances?.length >= 1)
           setNumberIOwn(NFTCollector.tokenBalances?.length)
-        setIsLessonMintedLS(true)
+        setNbDatadiskMintedLS(NFTCollector.tokenBalances?.length)
       }
     }
     if (NFTCollectors) {
@@ -132,19 +141,22 @@ const CollectLessonButton = ({
     }
   }
   useEffect(() => {
-    if (lesson.lessonCollectibleTokenAddress)
+    if (lesson.lessonCollectibleTokenAddress) {
+      setRefreshDatadiskLS(false)
       updateLessonsCollectors().catch(console.error)
-  }, [address])
+    }
+  }, [address, refreshDatadiskLS])
 
   // TODO: TRANSLATE
+  const shareLink =
+    'https://app.banklessacademy.com/lessons/layer-2-blockchains-datadisk'
   const share = `I’ve just collected ${numberIOwn} of 100 ‘${lesson.name}’ DataDisks from @BanklessAcademy.
-https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}
 
-Become a Guardian of Bankless Academy today - join the effort to circulate @BanklessAcademy content and retroactively fund education public goods!`
+Become a Guardian of Bankless Academy today - join the effort to circulate Bankless Academy content and retroactively fund education public goods!`
 
-  const twitterLink = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-    share
-  )}`
+  const twitterLink = generateTwitterLink(share, shareLink)
+
+  const farcasterLink = generateFarcasterLink(share, shareLink)
 
   // TODO: TRANSLATE
   const CollectiblesHelper = (
@@ -199,51 +211,34 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
 
   return (
     <Box maxW="450px" m="auto">
-      <Box w="100%" position="relative">
+      <StyledCard w="100%" position="relative">
         {CollectiblesHelper}
-        <Button
-          variant="primaryGold"
-          w="100%"
-          borderBottomRadius="0"
-          height="51px"
-          onClick={async () => {
-            onOpenMintCollectibleModal()
-            if (chain?.id !== 10 && address)
-              await switchNetwork({ chainId: 10 })
-          }}
-        >
-          <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            fontSize="lg"
-          >
-            <Box fontWeight="bold">{t('Collect DataDisk')}</Box>
-            <Box ml="4">
-              ({numberOfOwners}/{t('100 claimed')})
-            </Box>
-          </Box>
-        </Button>
         <Box
           m="auto"
           maxW="500px"
-          borderX="1px solid #4b474b"
-          borderBottom="1px solid #4b474b"
-          borderBottomRadius={isBadgeMintedLS && isLessonMintedLS ? 0 : '8px'}
+          border="1px solid #4b474b"
+          borderRadius={'8px'}
           position="relative"
         >
           <>
-            <Box
-              py="2"
-              opacity={isBadgeMintedLS ? '1' : '0.6'}
-              cursor="pointer"
-              onClick={async () => {
-                onOpenMintCollectibleModal()
-                if (chain?.id !== 10 && address)
-                  await switchNetwork({ chainId: 10 })
-              }}
-            >
-              <Collectible lesson={lesson} />
+            <Box opacity={nbDatadiskMintedLS > 0 ? '1' : '0.5'}>
+              <Box
+                cursor="pointer"
+                onClick={async () => {
+                  if (nbDatadiskMintedLS < NB_DATADISK_MAX) {
+                    onOpenMintCollectibleModal()
+                    if (chain?.id !== 10 && address)
+                      await switchNetwork({ chainId: 10 })
+                  } else {
+                    window.open(
+                      `https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}`,
+                      '_blank'
+                    )
+                  }
+                }}
+              >
+                <Collectible lesson={lesson} />
+              </Box>
             </Box>
             {MD_ENABLED && lesson.hasCollectible && (
               <ExternalLink
@@ -265,70 +260,114 @@ Become a Guardian of Bankless Academy today - join the effort to circulate @Bank
               </ExternalLink>
             )}
           </>
-        </Box>
-        {isBadgeMintedLS && isLessonMintedLS && (
-          <Box
-            border="1px solid #4b474b"
-            borderBottomRadius="8px"
-            borderTopWidth="0"
-            textAlign="center"
-            p="10px"
-          >
-            <Box pb="2">
-              <ExternalLink href={twitterLink} mr="2">
-                <Button
-                  variant="primaryGold"
-                  w="100%"
-                  borderBottomRadius="0"
-                  leftIcon={
-                    <ChakraImage width="20px" src="/images/TwitterX.svg" />
-                  }
-                >
-                  {t('Share on Twitter / X')}
-                </Button>
-              </ExternalLink>
-            </Box>
-            <Box pb="2">
-              <ExternalLink
-                href={`https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}`}
+          <Box textAlign="center" p="16px">
+            <Box display="flex" pb={nbDatadiskMintedLS > 0 ? '1' : '0'}>
+              <Button
+                variant="primaryGold"
+                w="full"
+                height="51px"
+                m="auto"
+                isDisabled={!(nbDatadiskMintedLS < NB_DATADISK_MAX)}
+                borderBottomRadius={nbDatadiskMintedLS > 0 ? '0' : '8px'}
+                onClick={async () => {
+                  onOpenMintCollectibleModal()
+                  if (chain?.id !== 10 && address)
+                    await switchNetwork({ chainId: 10 })
+                }}
+                leftIcon={
+                  isMobile ? null : <ShootingStar width="28px" height="28px" />
+                }
               >
-                <Button
-                  variant="primaryGold"
-                  w="100%"
-                  borderRadius="0"
-                  leftIcon={
-                    <ChakraImage
-                      width="24px"
-                      height="24px"
-                      src="/images/OpenSea.svg"
-                    />
-                  }
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  fontSize="lg"
                 >
-                  {t('View on OpenSea')}
-                </Button>
-              </ExternalLink>
+                  <Box fontWeight="bold">
+                    {nbDatadiskMintedLS < NB_DATADISK_MAX
+                      ? t('Claim DataDisk')
+                      : t('DataDisk Claimed')}
+                  </Box>
+                  <Box ml="2" fontWeight="normal">
+                    ({numberOfOwners}/{t('100 minted')})
+                  </Box>
+                </Box>
+              </Button>
             </Box>
-            <Box>
-              <ExternalLink href="https://guild.xyz/bankless-academy">
-                <Button
-                  variant="primaryGold"
-                  w="100%"
-                  borderTopRadius="0"
-                  leftIcon={
-                    <ChakraImage
-                      width="28px"
-                      height="28px"
-                      src="/images/Discord.svg"
-                    />
-                  }
-                >
-                  {t('Join the Discord')}
-                </Button>
-              </ExternalLink>
-            </Box>
+            {nbDatadiskMintedLS > 0 && (
+              <>
+                <Box pb="1">
+                  <ExternalLink href={twitterLink} mr="2">
+                    <Button
+                      variant="primaryGold"
+                      w="100%"
+                      borderRadius="0"
+                      leftIcon={
+                        <ChakraImage width="20px" src="/images/TwitterX.svg" />
+                      }
+                    >
+                      {t('Share on Twitter / X')}
+                    </Button>
+                  </ExternalLink>
+                </Box>
+                <Box pb="1">
+                  <ExternalLink href={farcasterLink} mr="2">
+                    <Button
+                      variant="primaryGold"
+                      w="100%"
+                      borderRadius="0"
+                      leftIcon={
+                        <ChakraImage width="20px" src="/images/Farcaster.svg" />
+                      }
+                    >
+                      {t('Share on Farcaster')}
+                    </Button>
+                  </ExternalLink>
+                </Box>
+                <Box pb="1">
+                  <ExternalLink
+                    href={`https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}`}
+                  >
+                    <Button
+                      variant="primaryGold"
+                      w="100%"
+                      borderRadius="0"
+                      leftIcon={
+                        <ChakraImage
+                          width="24px"
+                          height="24px"
+                          src="/images/OpenSea.svg"
+                        />
+                      }
+                    >
+                      {t('View on OpenSea')}
+                    </Button>
+                  </ExternalLink>
+                </Box>
+                <Box>
+                  <ExternalLink href="https://guild.xyz/bankless-academy">
+                    <Button
+                      variant="primaryGold"
+                      w="100%"
+                      borderTopRadius="0"
+                      leftIcon={
+                        <ChakraImage
+                          width="28px"
+                          height="28px"
+                          src="/images/Discord.svg"
+                        />
+                      }
+                    >
+                      {t('Join the Discord')}
+                    </Button>
+                  </ExternalLink>
+                </Box>
+              </>
+            )}
           </Box>
-        )}
-      </Box>
+        </Box>
+      </StyledCard>
       <MintCollectibleModal
         isOpen={isOpenMintCollectibleModal}
         onClose={onCloseMintCollectibleModal}
