@@ -25,7 +25,7 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-***
+---
 
 ## Key Takeaways
 
@@ -65,7 +65,7 @@ There are three common strategies for a stablecoin to maintain its price peg:
 
 - 🔃 **Algorithmic:** fixed supply/demand algorithms that maintain price stability.
 
-### 1. Fiat-backed Stablecoins
+### 1\. Fiat-backed Stablecoins
 
 Fiat-backed stablecoins maintain value by issuing a fixed token supply matched by real-world currency reserves. Their on-chain price is maintained via supply/demand economics: few people want to pay more than one real-world dollar for a dollar of on-chain value, so they simply take their trade elsewhere. To meet increased demand, the stablecoin issuer locks up additional fiat and increases the token supply by the same amount.
 
@@ -87,7 +87,7 @@ Considerations when using fiat-backed stablecoins:
 
 The high degree of centralization in the fiat-backed stablecoin sector leaves great room for improvement in holding fiat-pegged value in a crypto-native way.
 
-### 2. Crypto-collateralized Stablecoins
+### 2\. Crypto-collateralized Stablecoins
 
 Crypto-collateralized stablecoins are a more transparent, decentralized option — and these qualities help eliminate certain risks. They maintain a fiat peg through crypto asset reserves. As crypto market volatility influences the total value of these reserves, these stablecoins are overcollateralized — sometimes up to 200%! All collateralized assets are viewable on chain, giving users 24/7 access to the real composition of their stablecoins.
 
@@ -103,7 +103,7 @@ Considerations:
 
 - **Governance Risk:** This type of stablecoin and its treasury are managed by a decentralized group of governance voters. This means there are risks of human error, or possible governance capture.
 
-### 3. Algorithmic Stablecoins
+### 3\. Algorithmic Stablecoins
 
 These tokens maintain their peg by automatically balancing their own supply. An onchain algorithm reduces the number of tokens in circulation when the market price falls below the peg, and injects new tokens when the market price surpasses the peg. Both the balancing algorithm and the stablecoin's smart contracts are public, meaning anyone can clone and improve, or audit the existing system.
 
@@ -149,13 +149,13 @@ As always, the best way to learn about something is to try it. You might even de
 
 And remember, not all stablecoins in each category are created equal! Do your own research before interacting with any new token.
 
-***
+---
 
 We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘Understanding Stablecoins’.
 
 Don’t forget to collect this entry if you want to own a copy for easy reference on your travels, or to support future content at Bankless Academy. Safe travels, Explorer!
 
-***
+---
 
 ## Frequently Asked Questions
 
@@ -163,7 +163,7 @@ Don’t forget to collect this entry if you want to own a copy for easy referenc
 
 Looking at the leading stablecoins by `market cap` gives an idea of the current market preference, but this isn’t guidance on how you should position yourself, or how safe that position would be.
 
-Here’s a realtime list of top stablecoins by market cap: https\://defillama.com/stablecoins
+Here’s a realtime list of top stablecoins by market cap: https://defillama.com/stablecoins
 
 Cryptocurrency users often refer to the ‘Lindy Effect’ when choosing investment options. This concept says that the longer something has existed, the more we can expect it will continue to exist. Ten years of cryptocurrency history have shown this to only be true on occasion.
 
@@ -189,7 +189,7 @@ However, there are cases where a stablecoin loses its peg beyond safe, temporary
 
 Some fiat-backed stablecoin issuers, like USDC, offer 1:1 redemption from their stablecoin to regular fiat through their website. Whether this remains true during times of crisis is another story.
 
-***
+---
 
 **Author**
 
