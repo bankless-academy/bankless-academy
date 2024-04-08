@@ -231,7 +231,7 @@
   },
   "cryptocurrency wallet": {
     "keyword": "billetera de criptomonedas",
-    "keyword_plural": "cryptocurrency wallets",
+    "keyword_plural": "billeteras de criptomonedas",
     "definition": "Una aplicación que te permite almacenar tus criptomonedas y enviarlas, recibirlas o gastarlas."
   },
   "custodial wallet": {
@@ -615,8 +615,8 @@
     "definition": "Permite a dos partes realizar múltiples transacciones sin necesidad de que cada una de ellas quede registrada en la cadena de bloques."
   },
   "peer-to-peer": {
-    "keyword": "usuario-usuario",
-    "keyword_plural": "usuario-usuario",
+    "keyword": "entre pares",
+    "keyword_plural": "peer-to-peers",
     "definition": "Transacción entre dos partes que no requiere un intermediario o una entidad de control."
   },
   "peg": {
