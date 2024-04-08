@@ -25,7 +25,7 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-***
+---
 
 # Bienvenido a Bankless Academy
 
@@ -43,9 +43,9 @@ Bitcoin es un nuevo tipo de dinero. Aumenta la libertad financiera de quienes lo
 
 Lanzado en 2009 por el misterioso "`Satoshi Nakamoto`", Bitcoin marcó el inicio de una nueva era económica.
 
-Como la primera "criptomoneda" exitosa, Bitcoin comenzó una conversación poderosa: ¿debería seguir descansando el control y el poder del dinero dentro de los sistemas bancarios tradicionales? ¿O pertenece a los ciudadanos que lo ganan y usan cada día? Si no estás seguro de lo que esto significa exactamente, ¡está en el lugar adecuado!
+Como la primera `criptomoneda` exitosa, Bitcoin comenzó una conversación poderosa: ¿debería seguir descansando el control y el poder del dinero dentro de los sistemas bancarios tradicionales? ¿O pertenece a los ciudadanos que lo ganan y usan cada día? Si no estás seguro de lo que esto significa exactamente, ¡estás en el lugar adecuado!
 
-La realidad es que, hoy en día, no controlamos nuestro dinero de la manera como creemos. Esto tiene consecuencias reales.
+La realidad es que, hoy en día, no controlamos nuestro dinero como creemos. Esto tiene consecuencias reales.
 
 Es hora de aprender cómo Bitcoin está revolucionando las finanzas.
 
@@ -98,7 +98,7 @@ Los `bancos centrales`, al gestionar la `política monetaria` de un país, tiene
 
 Los `bancos comerciales`, los que se utilizan para ahorro y gasto diario, también influyen en nuestros hábitos de gasto. Como `custodio`, pueden bloquear transacciones o confiscar nuestros fondos. ¡Algunos bancos han impedido a sus clientes comprar criptomonedas! **Si tu banco puede congelar los ahorros de tu vida en cualquier momento… ¿eres realmente dueño de tu dinero?** 💸
 
-***
+---
 
 Para que el dinero vuelva a apoyar la libertad financiera, debe recuperar las dos propiedades clave que ha perdido con el tiempo:
 
@@ -125,7 +125,7 @@ Por sus cualidades, Bitcoin se ha ganado el apodo de "oro digital".
 
 📉 ¿Te cuesta seguir el ritmo del aumento de los gastos?
 
-***
+---
 
 La escasez en Bitcoin se refiere a que hay un límite en el número de bitcoins que pueden existir: un máximo de 21 millones. Este `suministro máximo` está incrustado en su código, haciendo que Bitcoin sea raro y potencialmente valioso. Esto lo sitúa en una buena posición como depósito de valor a largo plazo, al igual que el oro.
 
@@ -153,7 +153,7 @@ Su valor a corto plazo permanece volátil debido a la especulación del mercado.
 
 🧊 ¿Tu banco te ha congelado los fondos sin previo aviso porque realizaste una transferencia que no les gustó?
 
-***
+---
 
 En democracia, la propiedad es un derecho humano protegido, ya que da a los ciudadanos un mayor control y libertad sobre sus vidas. No podemos actuar libremente cuando nuestros medios de supervivencia están condicionados, juzgados por empresas o instituciones.
 
@@ -181,7 +181,7 @@ Este sistema de propiedad te ofrece el control total de tu patrimonio digital, e
 
 ⌛ ¿Has tenido alguna vez que esperar varios días laborables para enviar dinero internacionalmente, pagando entre un 3% y un 5% de comisiones?
 
-***
+---
 
 El correo electrónico simplificó el envío de cartas al eliminar la necesidad de una oficina de correos. De forma similar, Bitcoin ha agilizado el envío de dinero al eliminar la necesidad de bancos.
 
