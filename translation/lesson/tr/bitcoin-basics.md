@@ -1,6 +1,6 @@
 ---
 TITLE: Bitcoin'in Temelleri
-DESCRIPTION: Bitcoin nedir? İlk başarılı kripto para birimini keşfedin ve parayı bir kez daha düşünün.
+DESCRIPTION: Bitcoin nedir? İlk başarılı kripto para birimini keşfedin ve para üzerine bir kez daha düşünün.
 LANGUAGE: Türkçe
 WRITERS: Tetranome
 TRANSLATORS: İlknur Beyaz
