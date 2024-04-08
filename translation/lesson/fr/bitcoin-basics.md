@@ -296,7 +296,7 @@ En décentralisant l'argent et en supprimant les `dépositaires`, nous pouvons :
 
 - 💵 Accueillir un marché mondial 24h/24 et 7j/7, sécurisé par les citoyens du monde entier.
 - 🛠️ Offrir des outils financiers aux régions non bancarisées du globe.
-- 🤝 Utiliser la technologie `pair à pair` [peer-to-peer] pour éviter les inefficacités des institutions intermédiaires.
+- 🤝 Utiliser la technologie `pair à pair` pour éviter les inefficacités des institutions intermédiaires.
 - 🔎 Réduire les inégalités institutionnelles, la fraude et la manipulation des marchés.
 - ⚖️ Construire `l'égalité des opportunités` dans les systèmes monétaires.
 - 🌐 Établir une véritable propriété à l'ère numérique.
