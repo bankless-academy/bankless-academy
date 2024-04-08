@@ -25,11 +25,11 @@ PORTABLE LESSON DATADISK COLLECTION                                             
 __________________________________________________________________________________________________________________________________________________________
 ```
 
-***
+---
 
 This is a summary and walkthrough for our [’Staking on Ethereum’](https://app.banklessacademy.com/lessons/staking-on-ethereum) lesson and quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/staking-on-ethereum) to **level up your knowledge and claim your badge!**
 
-***
+---
 
 ## Key Takeaways
 
@@ -69,11 +69,11 @@ With rETH, staking rewards are added straight to the value of the token: If you 
 
 Requires >0.01 ETH, and only works on Ethereum Mainnet.
 
-**1. Head over to https\://stake.rocketpool.net/ and connect your wallet.**
+**1\. Head over to https://stake.rocketpool.net/ and connect your wallet.**
 
 ![](https://app.banklessacademy.com/images/staking-ether/image-80cf7889.png)
 
-**2. Enter the amount you’d like to stake, hit ‘Stake’, and then in your wallet hit ‘Submit’.**
+**2\. Enter the amount you’d like to stake, hit ‘Stake’, and then in your wallet hit ‘Submit’.**
 
 Your rETH will land in your wallet once your transaction has been processed. It’s that easy.
 
@@ -83,19 +83,19 @@ Your rETH will land in your wallet once your transaction has been processed. It�
 
 No minimum balance requirements, and works on all networks listed above.
 
-**1. Jump to https\://app.uniswap.org/swap and connect your wallet.**
+**1\. Jump to https://app.uniswap.org/swap and connect your wallet.**
 
 We’re swapping on the Optimism `layer 2` network, because gas fees are a lot lower than on Ethereum mainnet. Learn how to bridge to Optimism, [in our “How to Fund Your Wallet on L2” article](https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2).
 
 ![](https://app.banklessacademy.com/images/staking-ether/image-8d944152.png)
 
-**2. Enter the amount you’d like to hold, hit ‘Swap’, and then in your wallet hit ‘Confirm’.**
+**2\. Enter the amount you’d like to hold, hit ‘Swap’, and then in your wallet hit ‘Confirm’.**
 
 Your rETH will land in your wallet once your transaction has been processed. It’s that easy.
 
 ![](https://app.banklessacademy.com/images/staking-ether/image-5d667f3c.png)
 
-***
+---
 
 **It’s time to become a guardian of Ethereum!** We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘’Staking Ether”.
 
@@ -103,7 +103,7 @@ Don’t forget to collect this entry if you want to own a copy for easy referenc
 
 Safe travels, Explorer!
 
-***
+---
 
 ## FAQ
 
@@ -147,7 +147,7 @@ If you want to become a `solo staker`, you’ll need the full 32 ETH, as well as
 
 You can get started with just 16 ETH by running a `staking pool` with Rocket Pool, where other participants will help you reach the 32 ETH required. Of course, you’ll still need your validator hardware. Check out [the documentation over at Rocket Pool](https://docs.rocketpool.net/guides/) to get started!
 
-***
+---
 
 **Author**
 
