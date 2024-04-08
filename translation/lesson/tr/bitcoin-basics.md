@@ -302,7 +302,7 @@ Ancak Bitcoin basit bir parasal aracın ötesine geçti. `Merkeziyetsiz para` de
 
 Yeni para çağı, dünyanın dört bir yanındaki vatandaşların günlük yaşam kalitesini artırmak için demokrasinin temel değerlerini savunuyor ve bu inovasyona siz de davetlisiniz.
 
-_”Demokrasi, insan haklarına ve temel özgürlüklere saygılı olan ve insanların özgürce ifade ettiği iradelerini kullandığı bir ortam sağlar.” — Birleşmiş Milletler.
+”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.
 
 # Bitcoin Göreviniz
 
