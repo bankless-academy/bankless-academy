@@ -199,6 +199,14 @@
     "keyword": "托管",
     "definition": "金融机构有责任确保您的资产安全。"
   },
+  "custom record": {
+    "keyword": "Custom Record",
+    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+  },
+  "custom records": {
+    "keyword": "Custom Records",
+    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+  },
   "去中心化自治组织（dao）": {
     "keyword": "去中心化自治组织（DAO）",
     "definition": "（去中心化自治组织 Decentralized Autonomous Organization）一种利用区块链技术实现投票和管理自动化的组织结构。"
