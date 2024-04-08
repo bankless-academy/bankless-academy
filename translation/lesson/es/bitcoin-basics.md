@@ -113,7 +113,7 @@ Sólo estas cualidades pueden restablecer la habilidad de ahorrar y gastar nuest
 
 Conoce Bitcoin (`BTC`): una moneda digital que opera más allá del sistema bancario tradicional.
 
-- ⛓️ Es `peer-to-peer`: Conecta a las personas directamente entre sí. Al ser automatizada mediante la `tecnología de cadena de bloques` (blockchain), elimina la necesidad de que las instituciones faciliten el almacenamiento o las transacciones. Sus defensores lo llaman "un conjunto de normas sin gobernantes".
+- ⛓️ Es `entre pares`: Conecta a las personas directamente entre sí. Al ser automatizada mediante la `tecnología de cadena de bloques` (blockchain), elimina la necesidad de que las instituciones faciliten el almacenamiento o las transacciones. Sus defensores lo llaman "un conjunto de normas sin gobernantes".
 - 💎 Es `escaso`: Sin un banco central que emita dinero nuevo ilimitado, Bitcoin tiene una política monetaria estable y predecible que honra el ahorro a largo plazo.
 - ✊ Permite la `autocustodia`: Se puede tener sin necesidad que las instituciones ayuden con transferencias o almacenamiento. Cuando se almacena en su estado natural, Bitcoin se guarda en una caja fuerte segura en línea y sólo el propietario tiene acceso.
 
@@ -295,14 +295,14 @@ Descentralizando el dinero y eliminando a los `custodios` podemos hacerlo:
 
 - 💵 Acoger un mercado global 24/7, asegurado por ciudadanos de todo el mundo.
 - 🛠️ Ofrecer herramientas financieras a las regiones no bancarizadas del planeta.
-- 🤝 Usa la tecnología `entre-pares` para evitar las ineficiencias de instituciones intermediarias.
+- 🤝 Usa tecnología `entre-pares` para evitar las ineficiencias de instituciones intermediarias.
 - 🔎 Reducir la desigualdad institucional, el fraude y la manipulación del mercado.
 - ⚖️ Construir la `igualdad de oportunidad` en sistemas monetarios.
 - 🌐 Establecer una verdadera propiedad para la era digital.
 
 La nueva era del dinero defiende los valores fundamentales de la democracia para aumentar la calidad de la vida cotidiana de los ciudadanos de todo el mundo, y tú, estás invitado.
 
-_”La democracia proporciona un entorno que respeta los derechos humanos y las libertades fundamentales, y en el que se ejerce la voluntad libremente expresada de las personas.” — Naciones Unidas_
+”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.
 
 # Tu Misión Bitcoin
 
