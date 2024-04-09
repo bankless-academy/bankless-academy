@@ -7,7 +7,7 @@
   "51% attack": {
     "keyword": "%51 saldırısı",
     "keyword_plural": "%51 saldırıları",
-    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+    "definition": "Ağdaki blok oluşturma gücünün %51'inden fazlasını kontrol ederek gerçekleştirilen, blok zinciri konsensüsüne yönelik bir saldırı."
   },
   "address": {
     "keyword": "adres",
@@ -40,39 +40,39 @@
     "definition": "(Otomatik Piyasa Yapıcı) Herkese açık bir algoritmaya dayanan bir işlem eşleştirme sistemi."
   },
   "asynchronous": {
-    "keyword": "asynchronous",
-    "keyword_plural": "asynchronouss",
-    "definition": "Communication between multiple collaborators, where participants don’t have to be present at time of messaging."
+    "keyword": "asenkron",
+    "keyword_plural": "asenkron",
+    "definition": "Birlikte çalışan birden fazla kişi arasında gerçekleşen ve katılımcıların mesajlaşma sırasında orada bulunmasına gerek olmayan iletişim."
   },
   "attestation": {
-    "keyword": "attestation",
-    "keyword_plural": "attestations",
-    "definition": "A vote made by each validator to reach a consensus on whether to approve a transaction"
+    "keyword": "tasdik",
+    "keyword_plural": "tasdikler",
+    "definition": "Bir işlemin onaylanıp onaylanmayacağı konusunda konsensüse varmak için her bir validatör tarafından verilen oy"
   },
   "autonomy": {
-    "keyword": "autonomy",
-    "keyword_plural": "autonomys",
-    "definition": "The quality of governing your own actions, rather than adhering to frameworks of others."
+    "keyword": "otonom",
+    "keyword_plural": "otonomlar",
+    "definition": "Başkalarının çerçevesine bağlı kalmak yerine kendi eylemlerinizi yönetme niteliği."
   },
   "bet": {
-    "keyword": "bet",
-    "keyword_plural": "bets",
-    "definition": "Risking money in exchange for greater rewards."
+    "keyword": "bahis",
+    "keyword_plural": "bahisler",
+    "definition": "Daha büyük ödüller karşılığında paranin riske atılması."
   },
   "block": {
-    "keyword": "Block",
-    "keyword_plural": "Blocks",
-    "definition": "A group of transactions on the blockchain."
+    "keyword": "Blok",
+    "keyword_plural": "Bloklar",
+    "definition": "Blok zinciri üzerindeki bir grup işlem."
   },
   "block builder": {
-    "keyword": "block builder",
-    "keyword_plural": "block builders",
-    "definition": "Highly specialized validator nodes who construct blocks from transactions submitted to the network."
+    "keyword": "blok oluşturucu",
+    "keyword_plural": "blok oluşturucular",
+    "definition": "Ağa gönderilen işlemlerden bloklar oluşturan, uzmanlık düzeyi yüksek validatör nodlar."
   },
   "block explorer": {
-    "keyword": "block explorer",
-    "keyword_plural": "block explorers",
-    "definition": "Search and exploration tool for blockchain data."
+    "keyword": "blok gezgini",
+    "keyword_plural": "blok gezginleri",
+    "definition": "Blok zinciri verileri için arama ve keşif aracı."
   },
   "block hash": {
     "keyword": "block hash",
