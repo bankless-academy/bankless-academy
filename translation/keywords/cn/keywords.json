@@ -130,8 +130,8 @@
     "definition": "允许两个不同区块链网络相互通信、交换资产的连接。"
   },
   "btc": {
-    "keyword": "比特币 (BTC)",
-    "keyword_plural": "比特币 (BTC)",
+    "keyword": "比特币",
+    "keyword_plural": "BTCs",
     "definition": "比特币的市场符号。"
   },
   "censorship-resistant": {
@@ -240,7 +240,7 @@
     "definition": "托管钱包由另一方控制私钥，从而控制对加密资产的访问。"
   },
   "custodian": {
-    "keyword": "托管",
+    "keyword": "托管人",
     "keyword_plural": "托管",
     "definition": "金融机构有责任确保您的资产安全。"
   },
@@ -615,7 +615,7 @@
     "definition": "允许双方多次交易，无需在区块链上记录每次交易。"
   },
   "peer-to-peer": {
-    "keyword": "点对点传输",
+    "keyword": "点对点",
     "keyword_plural": "点对点传输",
     "definition": "双方之间不需要中间人或控制实体的交易。"
   },
