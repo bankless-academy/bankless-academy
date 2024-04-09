@@ -49,7 +49,7 @@ Gerçek şu ki, günümüzde paramızın kontrolü sandığımız gibi bizim eli
 
 Bitcoin'in finansta nasıl devrim yarattığını öğrenmenin zamanı geldi.
 
-**Parayı bir kez daha düşünme zamanı.**
+**Para üzerine bir kez daha düşünme vakti.**
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoins-story-98b007a5.png)
 
@@ -59,15 +59,15 @@ Mal ve hizmet alışverişinde boncukların, deniz kabuklarının ve taşların 
 
 Ancak ilk para birimlerinin bir sorunu vardı; insanların yeni para bulması/yaratması çok kolaydı. Bir şeyden ne kadar çok varsa değeri o kadar az olacağından, herkesin parası yavaş yavaş daha az değerli hale geliyordu. Paranın değeri korunacaksa onu bulmak daha zor olmalıydı.
 
-Sonunda bu sorunu çözmek için altın ve gümüş gibi maddeler kullanılmaya başlandı. Bu maddelerin en önemli avantajı, sınırlı miktarda bulunmalarıydı (kıtlık); sonsuz bir arz olmaması insanların, dolaşımdaki para miktarını önemli ölçüde artırmasını zorlaştırıyordu. Bu `kıtlık`, paranın değerinin korunmasına yardımcı oldu.
+Sonunda bu sorunu çözmek için altın ve gümüş gibi maddeler kullanılmaya başlandı. Bu maddelerin en önemli avantajı, sınırlı miktarda yani kıt olmalarıydı; sonsuz bir arz olmaması insanların, dolaşımdaki para miktarını önemli ölçüde artırmasını zorlaştırıyordu. Bu `kıtlık`, paranın değerinin korunmasına yardımcı oldu.
 
-Toplumlar büyüdükçe, hükümetlerin merkez bankaları, altın ve gümüşten yapılmış standart madeni paralar çıkarıyordu. Bu para birimi, bir yandan parayı tanınabilir ve ölçülebilir hale getirirken diğer yandan güçlü bir değer deposu işlevi gördü.
+Toplumlar büyüdükçe, hükümetlerin merkez bankaları, altın ve gümüşten yapılmış standart madeni paralar çıkardı. Bu para birimi, bir yandan parayı tanınabilir ve ölçülebilir hale getirirken diğer yandan güçlü bir değer deposu işlevi gördü.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/a-brief-history-of-money-b5126abd.svg)
 
 # Knowledge Check 1
 
-Doğru ya da Yanlış:
+Doğru veya Yanlış:
 "Bir para sistemine daha fazla para eklendikçe, mevcut paranın değeri azalır."
 
 - [ ] Doğru
@@ -84,7 +84,7 @@ Kağıt paranın kullanıma alınmasıyla birlikte para birimlerinin değeri, al
 
 20. yüzyıla gelindiğinde ise bu “`Altın Standardı`” çöktü.
 
-Değerli metaller ile para birimleri arasındaki ilişki, dünyanın her yerinde yavaş yavaş sonlandırıldı; bu çaba, herhangi bir ülkenin ekonomisinin, altın arzının ötesinde büyümesine olanak tanıyordu. Merkez bankaları, para birimi yaratmak için artık altına ihtiyaç duymadığından, ülke ekonomisi için gerekli gördükleri kadar yeni para yaratabiliyordu. Para arzını sıkı önlemlerle kontrol ederek, değerini de kontrol edebiliyorlardı.
+Değerli metaller ile para birimleri arasındaki ilişki, dünyanın her yerinde yavaş yavaş sonlandırıldı; bu çaba, herhangi bir ülkenin ekonomisinin, altın arzının ötesinde büyümesine olanak tanıyordu. Merkez bankaları, para birimi yaratmak için artık altına ihtiyaç duymadığından, ülke ekonomisi için gerekli gördükleri kadar yeni para yaratabiliyorlardı. Para arzını sıkı önlemlerle kontrol ederek, değerini de kontrol edebiliyorlardı.
 
 Dijital çağa geçişle birlikte, elektronik para birimi büyük ölçüde fiziksel para biriminin yerini aldı. Paramızı ticari bankalarda saklamak bize kredi kartlarının ve ödeme uygulamalarının rahatlığını sundu. Bu kolay ve güvenli bir seçenek olsa da aynı zamanda insanlarla paraları arasına kar amacı güden işletmeler koydu.
 
@@ -94,16 +94,16 @@ Dijital çağa geçişle birlikte, elektronik para birimi büyük ölçüde fizi
 
 Mevcut finansal sistemimizin sorunu, paramız üzerinde kontrolümüzün olmaması ve bu kontrol eksikliğinin, neyi biriktirip neyi harcayacağımıza özgürce karar verme kabiliyetimizi azaltmasıdır.
 
-Bir ülkenin `para politikasını` yöneten banka olan `merkez bankaları` herhangi bir miktarda yeni para çıkarabilir. `Kıtlık` olmaması, genellikle paramızın yıllar içinde daha az değerli hale gelmesine sebep olur. Öngörülemeyen, azalan bir değere sahip olan para genellikle bizi onu harcamaya zorlar: **"Param her yıl daha az değerli olacaksa neden biriktireyim ki? Şimdi de harcayabilirim."** 💸
+Ülkelerin `para politikasını` yöneten banka olan `merkez bankaları` herhangi bir miktarda yeni para çıkarabilir. `Kıtlık` olmaması, genellikle paramızın yıllar içinde daha az değerli hale gelmesine sebep olur. Öngörülemeyen, azalan bir değere sahip olan para genellikle bizi onu harcamaya zorlar: **"Param her yıl daha az değerli olacaksa neden biriktireyim ki? Şimdi de harcayabilirim."** 💸
 
-Günlük birikim ve harcamalar için kullanılan `ticari bankalar` da harcama alışkanlıklarımızı etkiler. Bir `emanetçi` olan bu bankalar, işlemleri engelleyebilir veya fonlarımıza el koyabilir. Bazı bankalar, müşterilerinin kripto para satın almasını engeller! **Bankanız istediği zaman birikimlerinizi dondurabiliyorsa… paranızın gerçek sahibi siz misiniz?** 💸
+Günlük birikim ve harcamalar için kullanılan `ticari bankalar` da harcama alışkanlıklarımızı etkiler. Birer `emanetçi` olan bu bankalar, işlemleri engelleyebilir veya fonlarımıza el koyabilir. Bazı bankalar, müşterilerinin kripto para satın almasını engeller! **Bankanız istediği zaman birikimlerinizi dondurabiliyorsa… paranızın gerçek sahibi siz misiniz?** 💸
 
 ---
 
 Paranın yeniden finansal özgürlüğü destekleyebilmesi için zaman içinde kaybettiği iki temel özelliği yeniden kazanması gerekir:
 
 - 💎 **Değer:** Para, zaman içinde değerini eksiksiz bir biçimde korumalıdır.
-- ✊ **Mülkiyet:** Parayı kendimiz saklamak ve korumak kolay olmalıdır.
+- ✊ **Mülkiyet:** Parayı kendi kendimize saklamak ve korumak kolay olmalıdır.
 
 Yalnızca bu nitelikler, paramızı özgürce biriktirme ve harcama kabiliyetimizi geri getirebilir.
 
@@ -115,7 +115,7 @@ Ve Bitcoin (`BTC`) geldi: Geleneksel bankacılık sisteminin ötesinde işleyen 
 
 - ⛓️ `Eşler arası` çalışır: İnsanları doğrudan birbirlerine bağlar. `Blok zinciri teknolojisiyle` otomatik hale getirilen bu sistem, varlık saklamanın veya işlem yapmanın kurumlarca kolaylaştırılması yönündeki ihtiyacı ortadan kaldırıyor. Savunucuları ona “yöneticisi olmayan kurallar bütünü” diyor.
 - 💎 Arzı `kıttır`: Sınırsız miktarda yeni para çıkaran bir merkez bankası bulunmayan Bitcoin, uzun vadeli birikimin karşılığını veren istikrarlı, öngörülebilir bir para politikasına sahiptir.
-- ✊ `Gözetimsizdir`: Transfer veya saklama işlemlerini yöneten kurumlar olmadan sahip olunabilir. Doğal haliyle saklandığında Bitcoin, güvenli bir çevrimiçi kasada tutulur ve yalnızca sahibi ona erişebilir.
+- ✊ `Gözetimsizdir`: Transfer veya saklama işlemlerini yöneten kurumlar olmadan onu elinizde tutabilirsiniz. Doğal haliyle saklandığında Bitcoin, güvenli bir çevrimiçi kasada tutulur ve yalnızca sahibi ona erişebilir.
 
 Bitcoin sahip olduğu nitelikler nedeniyle “dijital altın” lakabını almıştır.
 
@@ -155,7 +155,7 @@ Bitcoin uzun vadede değer korumayı nasıl teşvik eder?
 
 ---
 
-Demokrasilerde mülkiyet korunan bir insan hakkıdır çünkü vatandaşlara, yaşamları üzerinde daha fazla kontrol ve özgürlük sağlar. Hayatta kalma araçlarımız şarta bağlı olduğunda, yani işletmeler veya kurumlar tarafından değerlendirildiğinde özgürce hareket edemeyiz.
+Demokrasilerde mülkiyet, korunan bir insan hakkıdır çünkü vatandaşlara, yaşamları üzerinde daha fazla kontrol ve özgürlük sağlar. Hayatta kalma araçlarımız şarta bağlı olduğunda, yani işletmeler veya kurumlar tarafından değerlendirildiğinde özgürce hareket edemeyiz.
 
 Varlıklarımız (yani paramız, mülkümüz ve hatta kimliğimiz) giderek dijitalleştikçe yaşamımız, korumayı öğrenmemiz gereken dijital bir nitelik kazanıyor.
 
@@ -191,7 +191,7 @@ E-posta, postane ihtiyacını ortadan kaldırarak mektup göndermeyi kolaylaşt�
 
 Tıpkı e-posta adresinizde olduğu gibi, Bitcoin almak için de tek bir Bitcoin adresi gereklidir. Adresiniz varsayılan olarak şöyle görünür: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (bunu nasıl özelleştireceğinizi daha sonra göstereceğiz!)
 
-Hesabınızı, web tarayıcınıza veya telefonunuza bağlanan `kripto para cüzdanı` yazılımını kullanarak yönetirsiniz. Bu, açtığınız en kolay “banka hesabı” olacak. Randevu ya da kimlik gerekmez!
+Hesabınızı, web tarayıcınıza veya telefonunuza bağlanan `kripto para cüzdanı` yazılımını kullanarak yönetirsiniz. Bu, açtığınız en kolay “banka hesabı” olacak. Randevu ya da kimlik gerekmeyecek!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
@@ -222,7 +222,7 @@ Hadi konuyu değiştirelim ve Bitcoin'in arkasındaki güce bakalım:
 
 Bitcoin, dünya çapında binlerce bilgisayarda barındırılan paylaşımlı bir ağ üzerinde çalışır. Ağdaki her bilgisayar, ağın işleyişinin sürdürülmesinde rol oynar; ağ ise bu bilgisayarlar aracılığıyla var olur! Bir bilgisayarın hileli bir işlem gerçekleştirmesi halinde diğerleri, bunu düzeltmek için oradadır.
 
-Bu aynı zamanda hack girişimlerinde baskı uygulanacak tek bir nokta olmadığı anlamına gelir. Ağın kontrol edilebilmesi için bilgisayarların çoğunun güvenlik sistemi ihlal edilmiş olmalıdır.
+Bu aynı zamanda hack girişimlerinde baskı uygulanacak tek bir nokta olmamasını sağlar. Ağın kontrol edilebilmesi için bilgisayarların çoğunun güvenlik sistemi ihlal edilmiş olmalıdır.
 
 Bu savunma stratejisine `merkeziyetsizlik` adı verilir: Kontrolün tek bir merkezi gruptan çok sayıda küçük gruba geçmesi. Kripto para ağlarını neredeyse durdurulamaz yapan şey budur.
 
@@ -234,7 +234,7 @@ Bitcoin Ağının merkez bankası olmadığından ağ, `merkeziyetsiz` katılım
 
 Ağın dolandırıcılığa karşı korunması için bu madencilerin aktif ve dürüst olmaya motive edilmesi önemlidir. Madenciler genellikle birbirlerinin sonuçlarını iki kez kontrol eder ama yaptıkları iş için de ödüllendirilir. Bitcoin işlemleri yaptığımızda, işlemimizin madencisine giden küçük bir ücret öderiz. Madenciler ayrıca çalışmaları karşılığında “blok ödülleri” olarak bilinen yeni Bitcoin'ler de kazanır.
 
-Bu ödüller, Bitcoin'in `dolaşımdaki arzını`, 21 milyon `BTC`lik `maksimum arz` üst sınırı dahilinde yavaş yavaş artırır.
+Bu ödüller, Bitcoin'in `dolaşımdaki arzını`, 21 milyon `BTC`'lik `maksimum arz` üst sınırı dahilinde yavaş yavaş artırır.
 
 Bitcoin'i geleneksel para birimlerinden ayıran şey, yeni coinlerin piyasaya yavaş ve öngörülebilir olarak sürülmesidir. Her şey, `merkez bankasındaki` küçük insan grupları yerine, topluluk tarafından onaylanmış bilgisayar kodu (“yöneticisi olmayan kurallar”) ve merkeziyetsiz katılımcılar tarafından yönetilir.
 
@@ -287,7 +287,7 @@ Madencilik Bitcoin Ağını dolandırıcılıktan nasıl korur?
 
 # Parada İnovasyon
 
-Bu derste, Bitcoin'in kıtlığının değerini korumasına yardımcı olduğunu ve varlıklarımızın kurumsal yönetiminin tam mülkiyetten vazgeçmek anlamına geldiğini gördük.
+Bu derste Bitcoin'in kıtlığının, değerini korumasına yardımcı olduğunu ve varlıklarımızın kurumsal olarak yönetilmesinin tam mülkiyetten vazgeçmek anlamına geldiğini gördük.
 
 Ancak Bitcoin basit bir parasal aracın ötesine geçti. `Merkeziyetsiz para` devrimi için bir katalizör haline geldi. Bu hareket, parasal gücü ve kontrolü onu kullananlara dağıtarak geleneksel finansal sistemini yeniden tasarlıyor.
 
