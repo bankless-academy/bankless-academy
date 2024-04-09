@@ -245,9 +245,9 @@
     "definition": "Фінансова установа, на яку покладено відповідальність за безпеку ваших активів."
   },
   "custom record": {
-    "keyword": "Custom Record",
-    "keyword_plural": "Custom Records",
-    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+    "keyword": "Користувацький запис",
+    "keyword_plural": "Користувацькі записи",
+    "definition": "Користувацький запис даних, прив'язаний до домену ENS, що дозволяє зберігати та асоціювати довільну інформацію поза стандартними адресами блокчейну."
   },
   "dao": {
     "keyword": "DAO",
