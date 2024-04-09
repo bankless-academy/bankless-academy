@@ -16,6 +16,10 @@ const LanguageSwitch = ({
 
   const languages = lesson.languages
 
+  const content = window.location.pathname?.endsWith('/content')
+    ? '/content'
+    : ''
+
   return (
     <Box>
       {languages?.length ? (
@@ -32,7 +36,7 @@ const LanguageSwitch = ({
             mb={3}
             onClick={() => {
               i18n.changeLanguage('en', () =>
-                router.push(`/lessons/${lesson.slug}`)
+                router.push(`/lessons/${lesson.slug}${content}`)
               )
               Mixpanel.track(
                 lesson.isArticle ? 'open_lesson' : 'lesson_briefing',
@@ -57,7 +61,7 @@ const LanguageSwitch = ({
               key={`key-${l}`}
               onClick={() => {
                 i18n.changeLanguage(l, () =>
-                  router.push(`/lessons/${l}/${lesson.slug}`)
+                  router.push(`/lessons/${l}/${lesson.slug}${content}`)
                 )
                 Mixpanel.track(
                   lesson.isArticle ? 'open_lesson' : 'lesson_briefing',

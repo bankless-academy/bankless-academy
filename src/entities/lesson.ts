@@ -54,6 +54,7 @@ export interface LessonType {
   nftGatingCTA?: string
   lang?: LanguageType
   keywords?: string[]
+  showContent?: boolean
   slides?: {
     type: SlideType
     title: string

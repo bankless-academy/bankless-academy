@@ -5,6 +5,7 @@ import {
   ModalHeader,
   ModalCloseButton,
   ModalBody,
+  Button,
   useMediaQuery,
   Box,
 } from '@chakra-ui/react'
@@ -14,6 +15,7 @@ import styled from '@emotion/styled'
 import { useTranslation } from 'react-i18next'
 
 import { LessonType } from 'entities/lesson'
+import LanguageSwitch from 'components/LanguageSwitch'
 
 const SPLIT = `\`\`\`
 
@@ -65,8 +67,9 @@ const LessonCollectibleModal = ({
   }).value
 
   const lang =
-    typeof window !== 'undefined' && window.location.search?.length
-      ? window.location.search.replace('?lang=', '')
+    typeof window !== 'undefined' &&
+    window.location.pathname.split('/')[2].length === 2
+      ? window.location.pathname.split('/')[2]
       : 'en'
 
   useEffect(() => {
@@ -105,6 +108,19 @@ const LessonCollectibleModal = ({
         <ModalHeader>{t('LESSON DATADISK CONTENT')}</ModalHeader>
         <ModalCloseButton />
         <ModalBody padding={isMobileScreen ? '10px' : 'default'}>
+          <Box>
+            <LanguageSwitch lesson={lesson} />
+            <Button
+              onClick={() => {
+                document.location.href = window.location.pathname?.replace(
+                  '/content',
+                  ''
+                )
+              }}
+            >
+              Take lesson
+            </Button>
+          </Box>
           <StyledMarkdown
             overflow="scroll"
             maxHeight={isMobileScreen ? 'calc( 100vh - 82px )' : '85vh'}

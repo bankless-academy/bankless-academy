@@ -19,6 +19,7 @@ import {
   DOMAIN_URL,
   IS_WALLET_DISABLED,
   IS_WHITELABEL,
+  MD_ENABLED,
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
 import { useEffect } from 'react'
@@ -192,6 +193,25 @@ const LessonDetail = ({
               >
                 <OpenLesson lesson={lesson} click>
                   <Box py="2">
+                    {MD_ENABLED && (
+                      <ExternalLink
+                        href={`${window.location.pathname}/content`}
+                      >
+                        <Button
+                          position="absolute"
+                          size="sm"
+                          top="5px"
+                          right="5px"
+                          zIndex="1"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            // onOpenLessonCollectibleModal()
+                          }}
+                        >
+                          &lt;/&gt;
+                        </Button>
+                      </ExternalLink>
+                    )}
                     <Image
                       src={
                         isLessonCollected
