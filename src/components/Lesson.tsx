@@ -32,7 +32,12 @@ import MintBadge from 'components/MintBadge'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
 import { isHolderOfNFT, Mixpanel, scrollDown, scrollTop } from 'utils'
-import { IS_WHITELABEL, KEYWORDS, TOKEN_GATING_ENABLED } from 'constants/index'
+import {
+  IS_PROD,
+  IS_WHITELABEL,
+  KEYWORDS,
+  TOKEN_GATING_ENABLED,
+} from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, RewardsIcon } from 'components/Icons'
 import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
@@ -62,6 +67,12 @@ export const Slide = styled(Card)<{
     border-bottom: 1px dashed #e5afff;
     color: #e5afff;
     display: inline-block !important;
+  }
+  span.is-missing {
+    ${!IS_PROD ? 'color:red;' : ''};
+  }
+  span.force-english {
+    ${!IS_PROD ? 'color: orange;' : ''};
   }
   div.content > div {
     ${(props) =>
@@ -655,7 +666,13 @@ const Lesson = ({
       if (!definition?.length) console.log('Missing definition:', keyword)
       return definition?.length ? (
         <span style={{ whiteSpace: 'nowrap' }}>
-          <Keyword definition={definition} keyword={keyword} />
+          <Keyword
+            definition={definition}
+            keyword={keyword}
+            forceEnglish={
+              i18n.language !== 'en' && englishDefition === definition
+            }
+          />
           {extra}
         </span>
       ) : (

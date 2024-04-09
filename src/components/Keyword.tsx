@@ -4,9 +4,11 @@ import { Tooltip } from '@chakra-ui/react'
 const Keyword = ({
   keyword,
   definition,
+  forceEnglish,
 }: {
   keyword: string
   definition: string
+  forceEnglish?: boolean
 }): React.ReactElement => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -18,7 +20,7 @@ const Keyword = ({
         onClick={() => {
           setIsOpen(!isOpen)
         }}
-        className="keyword"
+        className={`keyword${forceEnglish ? ' force-english' : ''}`}
       >
         {keyword}
       </span>
