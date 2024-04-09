@@ -115,7 +115,7 @@ L'arrivée de Bitcoin (`BTC`) : une monnaie numérique qui fonctionne en dehors 
 
 - ⛓️ C'est `pair à pair` [peer-to-peer] : Il connecte directement les gens les uns aux autres. Automatisé à l'aide de la `technologie blockchain`, il supprime le besoin pour les institutions de faciliter le stockage ou les transactions. Ses défenseurs l'appellent "un ensemble de règles sans dirigeants".
 - 💎 C'est `rare` : En l'absence de banque centrale émettant de l'argent frais de manière illimitée, le Bitcoin bénéficie d'une politique monétaire stable et prévisible qui favorise l'épargne à long terme.
-- ✊ C'est `autodétenu` [self-custodial] : il peut être détenu sans que des institutions assurent les transferts ou le stockage. Lorsqu'il est stocké dans son état naturel, le bitcoin est conservé dans un coffre-fort en ligne sécurisé et seul son propriétaire y a accès.
+- ✊ C'est `auto-géré` [self-custodial] : il peut être détenu sans que des institutions assurent les transferts ou le stockage. Lorsqu'il est stocké dans son état naturel, le bitcoin est conservé dans un coffre-fort en ligne sécurisé et seul son propriétaire y a accès.
 
 Pour ses qualités, le Bitcoin a gagné le surnom de « l'or numérique ».
 
@@ -149,7 +149,7 @@ Comment Bitcoin favorise-t-il la préservation de la valeur à long terme ?
 
 > Veuillez réessayer ! La garde financière concerne la propriété plutôt que la valeur.
 
-# L'or numérique : l'autodétention
+# L'or numérique : l'auto-garde
 
 🧊 Votre banque vous a-t-elle déjà bloqué vos fonds sans préavis parce que vous aviez effectué un virement qui ne lui convenait pas ?
 
@@ -160,7 +160,7 @@ Nous ne pouvons pas agir librement lorsque nos moyens de survie sont conditionne
 
 Alors que nos biens sont de plus en plus numérisés (c'est-à-dire notre argent, nos biens et même notre identité), nos vies prennent une dimension numérique que nous devons apprendre à protéger.
 
-L'`autodétention` de Bitcoin offre une véritable propriété numérique, hors de portée des `dépositaires`. Tant que vous ne partagez pas les informations de votre compte avec quelqu’un d’autre, vous avez un accès exclusif à vos actifs. C'est comme avoir votre propre coffre-fort d'or dans un espace en ligne sécurisé.
+L'`auto-garde` de Bitcoin offre une véritable propriété numérique, hors de portée des `dépositaires`. Tant que vous ne partagez pas les informations de votre compte avec quelqu’un d’autre, vous avez un accès exclusif à vos actifs. C'est comme avoir votre propre coffre-fort d'or dans un espace en ligne sécurisé.
 
 Ce système de propriété vous permet de contrôler totalement votre patrimoine numérique, partout dans le monde et à tout moment.
 
@@ -168,7 +168,7 @@ Ce système de propriété vous permet de contrôler totalement votre patrimoine
 
 # Knowledge Check 3
 
-Comment l'autodétention permet-elle une véritable propriété?
+Comment l'auto-garde permet-elle une véritable propriété?
 
 - [ ] En vous donnant un accès exclusif à vos actifs.
 
