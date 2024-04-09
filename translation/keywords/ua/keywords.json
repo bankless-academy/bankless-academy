@@ -375,13 +375,13 @@
     "keyword": "зберігачі",
     "definition": "Фінансова установа, на яку покладено відповідальність за безпеку ваших активів."
   },
-  "custom record": {
-    "keyword": "Custom Record",
-    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+  "користувацький запис": {
+    "keyword": "Користувацький запис",
+    "definition": "Користувацький запис даних, прив'язаний до домену ENS, що дозволяє зберігати та асоціювати довільну інформацію поза стандартними адресами блокчейну."
   },
-  "custom records": {
-    "keyword": "Custom Records",
-    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+  "користувацькі записи": {
+    "keyword": "Користувацькі записи",
+    "definition": "Користувацький запис даних, прив'язаний до домену ENS, що дозволяє зберігати та асоціювати довільну інформацію поза стандартними адресами блокчейну."
   },
   "dao": {
     "keyword": "DAO",
