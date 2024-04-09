@@ -33,7 +33,7 @@ Bienvenue, explorateur audacieux, à la frontière de l'innovation numérique.
 
 À la Bankless Academy, notre mission est de fournir aux explorateurs tels que vous les meilleurs outils et connaissances pour naviguer dans l'univers de la blockchain et "go bankless!" [se passer de banque]
 
-Aujourd'hui, nous nous penchons sur la `crypto-monnaie` qui a tout déclenché : le Bitcoin.
+Aujourd'hui, nous nous penchons sur la `cryptomonnaie` qui a tout déclenché : le Bitcoin.
 
 Le bitcoin est un nouveau type de monnaie. Il accroît la liberté financière de ceux qui le détiennent et protège leur argent durement gagné contre la perte de valeur au fil du temps.
 
@@ -43,7 +43,7 @@ Le bitcoin est un nouveau type de monnaie. Il accroît la liberté financière d
 
 Lancé en 2009 par le mystérieux "`Satoshi Nakamoto`", le Bitcoin a marqué le début d'une nouvelle ère économique.
 
-En tant que première `crypto-monnaie` à avoir connu le succès, le Bitcoin a lancé un débat important : le contrôle et le pouvoir de l'argent doivent-ils continuer à relever des systèmes bancaires traditionnels ? Ou bien appartient-il aux citoyens qui le gagnent et l'utilisent chaque jour ? Si vous n'êtes pas certain de ce que cela signifie exactement, vous êtes au bon endroit !
+En tant que première `cryptomonnaie` à avoir connu le succès, le Bitcoin a lancé un débat important : le contrôle et le pouvoir de l'argent doivent-ils continuer à relever des systèmes bancaires traditionnels ? Ou bien appartient-il aux citoyens qui le gagnent et l'utilisent chaque jour ? Si vous n'êtes pas certain de ce que cela signifie exactement, vous êtes au bon endroit !
 
 La réalité, c’est qu’aujourd’hui, nous ne contrôlons pas notre argent comme nous le pensons. Cela a des conséquences très concrètes.
 
@@ -115,7 +115,7 @@ L'arrivée de Bitcoin (`BTC`) : une monnaie numérique qui fonctionne en dehors 
 
 - ⛓️ C'est `pair à pair` [peer-to-peer] : Il connecte directement les gens les uns aux autres. Automatisé à l'aide de la `technologie blockchain`, il supprime le besoin pour les institutions de faciliter le stockage ou les transactions. Ses défenseurs l'appellent "un ensemble de règles sans dirigeants".
 - 💎 C'est `rare` : En l'absence de banque centrale émettant de l'argent frais de manière illimitée, le Bitcoin bénéficie d'une politique monétaire stable et prévisible qui favorise l'épargne à long terme.
-- ✊ C'est `self-custodial` [autodétenu] : il peut être détenu sans que des institutions assurent les transferts ou le stockage. Lorsqu'il est stocké dans son état naturel, le bitcoin est conservé dans un coffre-fort en ligne sécurisé et seul son propriétaire y a accès.
+- ✊ C'est `autodétenu` [self-custodial] : il peut être détenu sans que des institutions assurent les transferts ou le stockage. Lorsqu'il est stocké dans son état naturel, le bitcoin est conservé dans un coffre-fort en ligne sécurisé et seul son propriétaire y a accès.
 
 Pour ses qualités, le Bitcoin a gagné le surnom de « l'or numérique ».
 
@@ -298,7 +298,7 @@ En décentralisant l'argent et en supprimant les `dépositaires`, nous pouvons :
 - 🛠️ Offrir des outils financiers aux régions non bancarisées du globe.
 - 🤝 Utiliser la technologie `pair à pair` pour éviter les inefficacités des institutions intermédiaires.
 - 🔎 Réduire les inégalités institutionnelles, la fraude et la manipulation des marchés.
-- ⚖️ Construire `l'égalité des opportunités` dans les systèmes monétaires.
+- ⚖️ Construire l'`égalité des opportunités` dans les systèmes monétaires.
 - 🌐 Établir une véritable propriété à l'ère numérique.
 
 La nouvelle ère de l'argent défend les valeurs fondamentales de la démocratie afin d'améliorer la qualité de la vie quotidienne des citoyens du monde entier - et vous êtes invités.
