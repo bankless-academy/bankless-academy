@@ -246,7 +246,7 @@ Comprender los mecanismos exactos que impulsan las transacciones y la minería d
 
 Por hoy vamos a simplificar el proceso:
 
-1. Envías una transacción utilizando tu `cartera de criptomoneda`, enviando 0,1 `BTC` a la dirección de la billetera de tu amigo.
+1. Envías una transacción utilizando tu `billetera de criptomonedas`, enviando 0,1 `BTC` a la dirección de la billetera de tu amigo.
 2. Un minero comprueba si hay errores en tu transacción. Otros mineros comprueban sus resultados.
 3. Si se aprueba, su transacción se añade a la base de datos de la `cadena de bloques`.
 4. Tu amigo recibe 0.1 BTC en su billetera.
