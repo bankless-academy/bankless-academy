@@ -105,7 +105,7 @@
     "definition": "Las estructuras de almacenamiento de datos en la tecnología blockchain."
   },
   "blockchain technology": {
-    "keyword": "tecnología blockchain",
+    "keyword": "tecnología de cadena de bloques",
     "keyword_plural": "blockchain technologys",
     "definition": "Un nuevo tipo de red, alojada en muchos computadores. Añade un nuevo nivel de propiedad digital a Internet."
   },
@@ -170,7 +170,7 @@
     "definition": "Une bloques de datos para formar una base de datos que no puede alterarse ni modificarse."
   },
   "circulating supply": {
-    "keyword": "suministro circulante",
+    "keyword": "oferta circulante",
     "keyword_plural": "circulating supplys",
     "definition": "El número de monedas o tokens de una criptomoneda específica, disponibles públicamente para su negociación en el mercado."
   },
@@ -280,7 +280,7 @@
     "definition": "(DeFi) Conjunto de herramientas financieras de autocustodia, alojadas en una blockchain."
   },
   "decentralized money": {
-    "keyword": "finanzas descentralizadas",
+    "keyword": "dinero descentralizado",
     "keyword_plural": "decentralized moneys",
     "definition": "Dinero con propiedades acordadas por la comunidad, en lugar de fijadas por una institución."
   },
@@ -335,7 +335,7 @@
     "definition": "El tiempo que tarda en incluirse un número específico de bloques en una cadena de bloques determinada."
   },
   "equality of opportunity": {
-    "keyword": "igualdad de oportunidades",
+    "keyword": "igualdad de oportunidad",
     "keyword_plural": "equality of opportunitys",
     "definition": "Un principio de equidad, según el cual todo el mundo tiene las mismas oportunidades de triunfar independientemente de su origen o circunstancias."
   },
