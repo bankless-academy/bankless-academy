@@ -75,7 +75,9 @@ const LessonCollectibleModal = ({
   useEffect(() => {
     if (lesson?.slug) {
       try {
-        fetch(`/lesson/${lang}/${lesson.slug}.md`)
+        fetch(
+          `https://raw.githubusercontent.com/bankless-academy/bankless-academy/main/translation/lesson/${lang}/${lesson.slug}.md`
+        )
           .then((response) => response.text())
           .then((md) => {
             // console.log('md', md)
@@ -100,8 +102,8 @@ const LessonCollectibleModal = ({
     >
       <ModalOverlay backdropFilter="blur(10px)" />
       <ModalContent
-        bg="linear-gradient(180deg, #f4c137bf 0%, #e9966a9c 100%)"
-        border={isMobileScreen ? '0' : '2px solid #c17e3c'}
+        // bg="linear-gradient(180deg, #f4c137bf 0%, #e9966a9c 100%)"
+        // border={isMobileScreen ? '0' : '2px solid #c17e3c'}
         borderRadius={isMobileScreen ? '0' : '3xl'}
         backdropFilter="blur(10px)"
       >
