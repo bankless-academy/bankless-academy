@@ -31,7 +31,7 @@ ________________________________________________________________________________
 
 Bienvenido, audaz Explorador, a la frontera de la innovación digital.
 
-En Bankless Academy, nuestra misión es proporcionar a Exploradores como tú, las mejores herramientas y conocimientos para navegar por el universo blockchain y "ser bankless!".
+En Bankless Academy, nuestra misión es proporcionar a Exploradores como tú, las mejores herramientas y conocimientos para navegar por el universo de las cadenas de bloques [blockchain] y "ser bankless!".
 
 Hoy aprenderemos sobre la `criptomoneda` que comenzó todo: Bitcoin.
 
@@ -94,7 +94,7 @@ Entrando en la era digital, la moneda electrónica ha reemplazado masivamente a 
 
 El problema de nuestro sistema financiero actual es la falta de control que tenemos sobre nuestro dinero, y el cómo esto afecta nuestra capacidad de decidir libremente qué ahorrar y qué gastar.
 
-Los `bancos centrales`, al gestionar la `política monetaria` de un país, tienen la capacidad de introducir la cantidad de dinero nuevo que quieran. Esta falta de `escacez`, hace que nuestro dinero valga menos cada año. El dinero, con un valor impredecible y decreciente, a menudo nos obliga a gastarlo: **"Si mi dinero va a valer menos cada año, ¿para qué ahorrar? Será mejor que lo gaste ahora "** 💸
+Los `bancos centrales`, al gestionar la `política monetaria` de un país, tienen la capacidad de introducir la cantidad de dinero nuevo que quieran. Esta falta de `escasez`, hace que nuestro dinero valga menos cada año. El dinero, con un valor impredecible y decreciente, a menudo nos obliga a gastarlo: **"Si mi dinero va a valer menos cada año, ¿para qué ahorrar? Será mejor que lo gaste ahora "** 💸
 
 Los `bancos comerciales`, los que se utilizan para ahorro y gasto diario, también influyen en nuestros hábitos de gasto. Como `custodio`, pueden bloquear transacciones o confiscar nuestros fondos. ¡Algunos bancos han impedido a sus clientes comprar criptomonedas! **Si tu banco puede congelar los ahorros de tu vida en cualquier momento… ¿eres realmente dueño de tu dinero?** 💸
 
@@ -113,7 +113,7 @@ Sólo estas cualidades pueden restablecer la habilidad de ahorrar y gastar nuest
 
 Conoce Bitcoin (`BTC`): una moneda digital que opera más allá del sistema bancario tradicional.
 
-- ⛓️ Es `entre pares`: Conecta a las personas directamente entre sí. Al ser automatizada mediante la `tecnología de cadena de bloques` (blockchain), elimina la necesidad de que las instituciones faciliten el almacenamiento o las transacciones. Sus defensores lo llaman "un conjunto de normas sin gobernantes".
+- ⛓️ Es `entre pares`: Conecta a las personas directamente entre sí. Al ser automatizada mediante la `tecnología de cadena de bloques` [blockchain], elimina la necesidad de que las instituciones faciliten el almacenamiento o las transacciones. Sus defensores lo llaman "un conjunto de normas sin gobernantes".
 - 💎 Es `escaso`: Sin un banco central que emita dinero nuevo ilimitado, Bitcoin tiene una política monetaria estable y predecible que honra el ahorro a largo plazo.
 - ✊ Permite la `autocustodia`: Se puede tener sin necesidad que las instituciones ayuden con transferencias o almacenamiento. Cuando se almacena en su estado natural, Bitcoin se guarda en una caja fuerte segura en línea y sólo el propietario tiene acceso.
 
@@ -191,7 +191,7 @@ El correo electrónico simplificó el envío de cartas al eliminar la necesidad 
 
 Del mismo modo que tienes una dirección de correo electrónico, para recibir Bitcoin es necesaria una única dirección Bitcoin. Por defecto tiene este aspecto: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (¡más adelante te enseñaremos a personalizarlo!)
 
-Gestionarás tu cuenta usando tu `billetera de criptomonedas` conectado a tu navegador web o tu teléfono. Es la “cuenta bancaria” más fácil que hayas creado nunca. No se necesita cita previa, ¡ni carné de identidad!
+Gestionarás tu cuenta usando tu `billetera de criptomonedas` conectada a tu navegador web o tu teléfono. Es la “cuenta bancaria” más fácil que hayas creado nunca. No se necesita cita previa, ¡ni carné de identidad!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
@@ -220,7 +220,7 @@ Gestionarás tu cuenta usando tu `billetera de criptomonedas` conectado a tu nav
 Cambiemos de marcha y demos una mirada al motor de Bitcoin:
 **La red Bitcoin**.
 
-Bitcoin se ejecuta en una red compartida alojada en miles de computadoras en todo el mundo. Cada computador de la red, desempeña un papel en mantener su funcionamiento; ¡la red existe a través ordenadores! Si una computadora procesa una transacción fraudulenta, existe otra para corregirla.
+Bitcoin se ejecuta en una red compartida alojada en miles de computadoras en todo el mundo. Cada computador de la red, desempeña un papel en mantener su funcionamiento. ¡La red existe a través de ellos! Si una computadora procesa una transacción fraudulenta, existe otra para corregirla.
 
 Esto también significa, que no existe un único punto sobre el cual ejercer presión en un intento de hackeo. Para controlar la red, habría que comprometer la mayoría de las computadoras.
 
@@ -230,7 +230,7 @@ Esta estrategia de defensa se denomina `descentralización`: el desplazamiento d
 
 # Minería de Bitcoin
 
-Al no contar con un banco central, la red de Bitcoin depende de sus participantes `descentralizados`. Conocidos como 'mineros', los participantes verifican constantemente las transacciones y las añaden a la 'base de datos', es decir, a la `blockchain`.
+Al no contar con un banco central, la red de Bitcoin depende de sus participantes `descentralizados`. Conocidos como 'mineros', los participantes verifican constantemente las transacciones y las añaden a la 'base de datos', es decir, a la `cadena de bloques`.
 
 Es importante que los mineros sean motivados a ser activos y honestos, protegiendo así la red del fraude. Los mineros frecuentemente comprueban los resultados de los demás, pero también son recompensados por el trabajo que realizan. Cuando enviamos transacciones Bitcoin, pagamos una pequeña comisión que va al minero encargado de validar nuestra transacción. Los mineros también ganan nuevos Bitcoin, conocidos como "recompensas de bloque", por su trabajo.
 
@@ -242,13 +242,13 @@ Es la introducción lenta y predecible de nuevas monedas lo que separa a Bitcoin
 
 # Envío de Transacciones Bitcoin
 
-Comprender los mecanismos exactos que impulsan las transacciones y la minería de Bitcoin puede resultar bastante complicado. Dicho esto, utilizar y enviar Bitcoin ¡es muy sencillo!
+Comprender los mecanismos exactos que impulsan las transacciones y la minería de Bitcoin puede resultar bastante complicado. A pesar de ello, utilizar y enviar Bitcoin en sí ¡es muy sencillo!
 
 Por hoy vamos a simplificar el proceso:
 
-1. Envías una transacción utilizando tu `cartera de criptomoneda`, enviando 0,1 `BTC` a la dirección de la billetera de tu amigo.
+1. Envías una transacción utilizando tu `billetera de criptomonedas`, enviando 0,1 `BTC` a la dirección de la billetera de tu amigo.
 2. Un minero comprueba si hay errores en tu transacción. Otros mineros comprueban sus resultados.
-3. Si se aprueba, su transacción se añade a la "base de datos" o `blockchain`.
+3. Si se aprueba, su transacción se añade a la base de datos de la `cadena de bloques`.
 4. Tu amigo recibe 0.1 BTC en su billetera.
 
 [embed](https://app.banklessacademy.com/animation/bitcoin)
@@ -291,11 +291,11 @@ En esta lección, hemos visto cómo la escasez de Bitcoin le ayuda a conservar s
 
 Sin embargo, Bitcoin ha evolucionado más allá de una simple herramienta monetaria. Se ha convertido en el catalizador de una revolución del `dinero descentralizado`. Este movimiento reimagina el sistema financiero tradicional distribuyendo el poder y el control monetario entre quienes lo utilizan.
 
-Descentralizando el dinero y eliminando a los `custodios` podemos hacerlo:
+Descentralizando el dinero y eliminando a los `custodios` podemos:
 
 - 💵 Acoger un mercado global 24/7, asegurado por ciudadanos de todo el mundo.
 - 🛠️ Ofrecer herramientas financieras a las regiones no bancarizadas del planeta.
-- 🤝 Usa tecnología `entre pares` para evitar las ineficiencias de instituciones intermediarias.
+- 🤝 Usar la tecnología `entre pares` para evitar las ineficiencias de instituciones intermediarias.
 - 🔎 Reducir la desigualdad institucional, el fraude y la manipulación del mercado.
 - ⚖️ Construir la `igualdad de oportunidad` en sistemas monetarios.
 - 🌐 Establecer una verdadera propiedad para la era digital.
