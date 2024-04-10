@@ -178,7 +178,7 @@ console.log('TRANSLATION_LANGUAGE', TRANSLATION_LANGUAGE)
 const slugify = (text) => text.toLowerCase()
   .replace('á', 'a')
   .replace(/<[^>]*>?/gm, '') // remove tags
-  .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+  .replace(/[^a-z0-9\. -]/g, '') // remove invalid chars
   .replace(/\s+/g, '-') // collapse whitespace and replace by -
   .replace(/-+/g, '-') // collapse dashes
 
