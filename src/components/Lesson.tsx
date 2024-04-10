@@ -742,7 +742,16 @@ const Lesson = ({
         </Box>
         <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
           {slide.type === 'QUIZ' ? (
-            <>{t('Knowledge Check')}</>
+            <>
+              {lesson?.isPreview || !IS_PROD ? (
+                <Box display="contents" color="orange">
+                  [{currentSlide + 1}]{' '}
+                </Box>
+              ) : (
+                ''
+              )}
+              {t('Knowledge Check')}
+            </>
           ) : slide.type === 'QUEST' ? (
             <>
               {t(`{{lesson_title}} Quest`, {
@@ -751,7 +760,16 @@ const Lesson = ({
               })}
             </>
           ) : (
-            <>{slide.title}</>
+            <>
+              {lesson?.isPreview || !IS_PROD ? (
+                <Box display="contents" color="orange">
+                  [{currentSlide + 1}]{' '}
+                </Box>
+              ) : (
+                ''
+              )}
+              {slide.title}
+            </>
           )}
         </Box>
       </Text>
