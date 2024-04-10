@@ -387,6 +387,14 @@
     "keyword": "custodiantes",
     "definition": "Uma instituição financeira que tem a responsabilidade de proteger seus ativos."
   },
+  "custom record": {
+    "keyword": "Custom Record",
+    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+  },
+  "custom records": {
+    "keyword": "Custom Records",
+    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+  },
   "dao": {
     "keyword": "DAO",
     "definition": "(Decentralized Autonomous Organization) An organizational structure that uses blockchain technology to automate voting and management."

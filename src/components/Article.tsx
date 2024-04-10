@@ -20,7 +20,12 @@ import InternalLink from 'components/InternalLink'
 import CollectEntryButton from 'components/CollectEntryButton'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
-import { IS_WALLET_DISABLED, IS_WHITELABEL, KEYWORDS } from 'constants/index'
+import {
+  IS_PROD,
+  IS_WALLET_DISABLED,
+  IS_WHITELABEL,
+  KEYWORDS,
+} from 'constants/index'
 import { getArticlesCollected, getArticlesCollectors, Mixpanel } from 'utils'
 import Keyword from 'components/Keyword'
 import LanguageSwitch from 'components/LanguageSwitch'
@@ -497,6 +502,12 @@ const ArticleStyle = styled(Box)<{ issmallscreen?: string }>`
     color: #e5afff;
     display: inline-block !important;
   }
+  span.is-missing {
+    ${!IS_PROD ? 'color: red;' : ''};
+  }
+  span.force-english {
+    ${!IS_PROD ? 'color: orange;' : ''};
+  }
   ol {
     padding-left: 43px;
     li {
@@ -642,9 +653,15 @@ const Article = ({
                     : englishDefition
                   : englishDefition
               return definition?.length ? (
-                <Keyword definition={definition} keyword={keyword} />
+                <Keyword
+                  definition={definition}
+                  keyword={keyword}
+                  forceEnglish={
+                    i18n.language !== 'en' && englishDefition === definition
+                  }
+                />
               ) : (
-                <>{keyword}</>
+                <span className="is-missing">{keyword}</span>
               )
             },
             // force links to target _blank

@@ -32,7 +32,12 @@ import MintBadge from 'components/MintBadge'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
 import { isHolderOfNFT, Mixpanel, scrollDown, scrollTop } from 'utils'
-import { IS_WHITELABEL, KEYWORDS, TOKEN_GATING_ENABLED } from 'constants/index'
+import {
+  IS_PROD,
+  IS_WHITELABEL,
+  KEYWORDS,
+  TOKEN_GATING_ENABLED,
+} from 'constants/index'
 import { LearnIcon, QuizIcon, QuestIcon, RewardsIcon } from 'components/Icons'
 import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
@@ -47,6 +52,7 @@ export const Slide = styled(Card)<{
   issmallscreen?: string
   slidetype: SlideType
   ispreview?: string
+  istranslation?: string
   highlightnumber?: string
 }>`
   border-radius: 0.5rem;
@@ -61,6 +67,12 @@ export const Slide = styled(Card)<{
     border-bottom: 1px dashed #e5afff;
     color: #e5afff;
     display: inline-block !important;
+  }
+  span.is-missing {
+    ${!IS_PROD ? 'color:red;' : ''};
+  }
+  span.force-english {
+    ${!IS_PROD ? 'color: orange;' : ''};
   }
   div.content > div {
     ${(props) =>
@@ -98,6 +110,7 @@ export const Slide = styled(Card)<{
     flex: 1;
   }
   .bloc2 {
+    ${(props) => props.istranslation === 'true' && ' flex: 0.8;'};
     align-self: center;
     img {
       width: auto;
@@ -119,6 +132,7 @@ export const Slide = styled(Card)<{
     h2,
     p {
       font-size: var(--chakra-fontSizes-xl);
+      ${(props) => props.istranslation === 'true' && 'font-size: 19px;'};
       margin: 0.8em;
     }
     h2 {
@@ -131,6 +145,7 @@ export const Slide = styled(Card)<{
     ul,
     ol {
       font-size: var(--chakra-fontSizes-xl);
+      ${(props) => props.istranslation === 'true' && 'font-size: 19px;'};
       margin-left: 2em;
     }
     li {
@@ -651,7 +666,13 @@ const Lesson = ({
       if (!definition?.length) console.log('Missing definition:', keyword)
       return definition?.length ? (
         <span style={{ whiteSpace: 'nowrap' }}>
-          <Keyword definition={definition} keyword={keyword} />
+          <Keyword
+            definition={definition}
+            keyword={keyword}
+            forceEnglish={
+              i18n.language !== 'en' && englishDefition === definition
+            }
+          />
           {extra}
         </span>
       ) : (
@@ -683,6 +704,7 @@ const Lesson = ({
       mt={6}
       issmallscreen={isSmallScreen.toString()}
       ispreview={lesson?.isPreview?.toString()}
+      istranslation={(i18n.language !== 'en').toString()}
       highlightnumber={isAnimationSlide ? animationStepLS.toString() : null}
       key={`slide-${currentSlide}`}
       slidetype={slide.type}
@@ -720,7 +742,16 @@ const Lesson = ({
         </Box>
         <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
           {slide.type === 'QUIZ' ? (
-            <>{t('Knowledge Check')}</>
+            <>
+              {lesson?.isPreview || !IS_PROD ? (
+                <Box display="contents" color="orange">
+                  [{currentSlide + 1}]{' '}
+                </Box>
+              ) : (
+                ''
+              )}
+              {t('Knowledge Check')}
+            </>
           ) : slide.type === 'QUEST' ? (
             <>
               {t(`{{lesson_title}} Quest`, {
@@ -729,7 +760,16 @@ const Lesson = ({
               })}
             </>
           ) : (
-            <>{slide.title}</>
+            <>
+              {lesson?.isPreview || !IS_PROD ? (
+                <Box display="contents" color="orange">
+                  [{currentSlide + 1}]{' '}
+                </Box>
+              ) : (
+                ''
+              )}
+              {slide.title}
+            </>
           )}
         </Box>
       </Text>
@@ -957,7 +997,7 @@ const Lesson = ({
               onClick={() => clickRight()}
               rightIcon={<ArrowForwardIcon />}
             >
-              {t('Next')}
+              Next
             </Button>
           ) : (
             <>

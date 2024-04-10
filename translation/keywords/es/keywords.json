@@ -127,8 +127,8 @@
     "keyword": "arquitectura blockchain",
     "definition": "Las estructuras de almacenamiento de datos en la tecnología blockchain."
   },
-  "tecnología blockchain": {
-    "keyword": "tecnología blockchain",
+  "tecnología de cadena de bloques": {
+    "keyword": "tecnología de cadena de bloques",
     "definition": "Un nuevo tipo de red, alojada en muchos computadores. Añade un nuevo nivel de propiedad digital a Internet."
   },
   "blockchain technologys": {
@@ -215,8 +215,8 @@
     "keyword": "cadenas",
     "definition": "Une bloques de datos para formar una base de datos que no puede alterarse ni modificarse."
   },
-  "suministro circulante": {
-    "keyword": "suministro circulante",
+  "oferta circulante": {
+    "keyword": "oferta circulante",
     "definition": "El número de monedas o tokens de una criptomoneda específica, disponibles públicamente para su negociación en el mercado."
   },
   "circulating supplys": {
@@ -299,8 +299,8 @@
     "keyword": "billetera de criptomonedas",
     "definition": "Una aplicación que te permite almacenar tus criptomonedas y enviarlas, recibirlas o gastarlas."
   },
-  "cryptocurrency wallets": {
-    "keyword": "cryptocurrency wallets",
+  "billeteras de criptomonedas": {
+    "keyword": "billeteras de criptomonedas",
     "definition": "Una aplicación que te permite almacenar tus criptomonedas y enviarlas, recibirlas o gastarlas."
   },
   "billeteras no custodiales": {
@@ -318,6 +318,14 @@
   "custodios": {
     "keyword": "custodios",
     "definition": "Una institución financiera a la que se le ha dado la responsabilidad de asegurar tus activos."
+  },
+  "custom record": {
+    "keyword": "Custom Record",
+    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
+  },
+  "custom records": {
+    "keyword": "Custom Records",
+    "definition": "A user-defined data entry linked to an ENS domain, allowing for the storage and association of arbitrary information beyond standard blockchain addresses."
   },
   "dao": {
     "keyword": "DAO",
@@ -352,7 +360,11 @@
     "definition": "(DEX) Protocolo que facilita el intercambio sin necesidad de intermediarios de confianza."
   },
   "finanzas descentralizadas": {
-    "keyword": "finanzas descentralizadas",
+    "keyword": "Finanzas descentralizadas",
+    "definition": "(DeFi) Conjunto de herramientas financieras de autocustodia, alojadas en una blockchain."
+  },
+  "dinero descentralizado": {
+    "keyword": "dinero descentralizado",
     "definition": "Dinero con propiedades acordadas por la comunidad, en lugar de fijadas por una institución."
   },
   "decentralized moneys": {
@@ -427,8 +439,8 @@
     "keyword": "Época",
     "definition": "El tiempo que tarda en incluirse un número específico de bloques en una cadena de bloques determinada."
   },
-  "igualdad de oportunidades": {
-    "keyword": "igualdad de oportunidades",
+  "igualdad de oportunidad": {
+    "keyword": "igualdad de oportunidad",
     "definition": "Un principio de equidad, según el cual todo el mundo tiene las mismas oportunidades de triunfar independientemente de su origen o circunstancias."
   },
   "equality of opportunitys": {
@@ -693,11 +705,11 @@
   },
   "política monetaria": {
     "keyword": "política monetaria",
-    "definition": "Cómo un banco central administra la cantidad de dinero que circula en una economía."
+    "definition": "La manera en la cual un banco central administra la cantidad de dinero que circula, en una economía."
   },
-  "monetary policys": {
-    "keyword": "monetary policys",
-    "definition": "Cómo un banco central administra la cantidad de dinero que circula en una economía."
+  "políticas monetarias": {
+    "keyword": "políticas monetarias",
+    "definition": "La manera en la cual un banco central administra la cantidad de dinero que circula, en una economía."
   },
   "money": {
     "keyword": "money",
@@ -763,8 +775,8 @@
     "keyword": "canal de pago",
     "definition": "Permite a dos partes realizar múltiples transacciones sin necesidad de que cada una de ellas quede registrada en la cadena de bloques."
   },
-  "usuario-usuario": {
-    "keyword": "usuario-usuario",
+  "entre pares": {
+    "keyword": "entre pares",
     "definition": "Transacción entre dos partes que no requiere un intermediario o una entidad de control."
   },
   "peg": {

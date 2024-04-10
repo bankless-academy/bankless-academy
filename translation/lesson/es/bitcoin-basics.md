@@ -31,7 +31,7 @@ ________________________________________________________________________________
 
 Bienvenido, audaz Explorador, a la frontera de la innovación digital.
 
-En Bankless Academy, nuestra misión es proporcionar a Exploradores como tú, las mejores herramientas y conocimientos para navegar por el universo blockchain y "ser bankless!".
+En Bankless Academy, nuestra misión es proporcionar a Exploradores como tú, las mejores herramientas y conocimientos para navegar por el universo de las cadenas de bloques [blockchain] y "ser bankless!".
 
 Hoy aprenderemos sobre la `criptomoneda` que comenzó todo: Bitcoin.
 
@@ -43,9 +43,9 @@ Bitcoin es un nuevo tipo de dinero. Aumenta la libertad financiera de quienes lo
 
 Lanzado en 2009 por el misterioso "`Satoshi Nakamoto`", Bitcoin marcó el inicio de una nueva era económica.
 
-Como la primera "criptomoneda" exitosa, Bitcoin comenzó una conversación poderosa: ¿debería seguir descansando el control y el poder del dinero dentro de los sistemas bancarios tradicionales? ¿O pertenece a los ciudadanos que lo ganan y usan cada día? Si no estás seguro de lo que esto significa exactamente, ¡está en el lugar adecuado!
+Como la primera `criptomoneda` exitosa, Bitcoin comenzó una conversación poderosa: ¿debería seguir descansando el control y el poder del dinero dentro de los sistemas bancarios tradicionales? ¿O pertenece a los ciudadanos que lo ganan y usan cada día? Si no estás seguro de lo que esto significa exactamente, ¡estás en el lugar adecuado!
 
-La realidad es que, hoy en día, no controlamos nuestro dinero de la manera como creemos. Esto tiene consecuencias reales.
+La realidad es que, hoy en día, no controlamos nuestro dinero como creemos. Esto tiene consecuencias reales.
 
 Es hora de aprender cómo Bitcoin está revolucionando las finanzas.
 
@@ -55,11 +55,11 @@ Es hora de aprender cómo Bitcoin está revolucionando las finanzas.
 
 # Breve Historia del Dinero
 
-El dinero ha sido parte integrante de la sociedad desde nuestros primeros días, cuando se utilizaban cuentas, conchas y piedras para intercambiar bienes y servicios.
+El dinero ha sido parte integral de la sociedad desde la antiguedad, cuando se utilizaban cuentas, conchas y piedras para intercambiar bienes y servicios.
 
-Sin embargo, las monedas tempranas tenían un problema: era demasiado fácil que alguien encontrara o creara dinero nuevo. Cuanto más hay de algo, menos valor tiene, por lo que el dinero de todos iría perdiendo valor poco a poco. Si la moneda debía mantener su valor, necesitaba ser más difícil de encontrar.
+Sin embargo, las monedas tempranas tenían un problema: era demasiado fácil que alguien encontrara o creara dinero nuevo. A mayor cantidad disponible, menor valor, por lo que el dinero de todos pierde valor, poco a poco. Si la moneda debía mantener su valor, necesitaba ser más difícil de encontrar.
 
-Materiales como oro y plata fueron finalmente adoptados para resolver este problema. La principal ventaja de estos materiales era su escasez: no había una oferta infinita, lo que dificultaba que alguien pudiera aumentar significativamente la cantidad de dinero en circulación. Esta `escacez` ayudó a mantener el valor del dinero.
+Materiales como oro y plata fueron finalmente adoptados para resolver este problema. La principal ventaja de estos materiales era su escasez: no había una oferta infinita, lo que dificultaba que alguien pudiera aumentar significativamente la cantidad de dinero en circulación. Esta `escasez` ayudó a mantener el valor del dinero.
 
 A medida que las sociedades crecían, el banco central de un gobierno emitía monedas estandarizadas de oro y plata. Este tipo de moneda hacía que el dinero fuera reconocible y mensurable, y su vez servía como un sólido depósito de valor.
 
@@ -94,11 +94,11 @@ Entrando en la era digital, la moneda electrónica ha reemplazado masivamente a 
 
 El problema de nuestro sistema financiero actual es la falta de control que tenemos sobre nuestro dinero, y el cómo esto afecta nuestra capacidad de decidir libremente qué ahorrar y qué gastar.
 
-Los `bancos centrales`, al gestionar la `política monetaria` de un país, tienen la capacidad de introducir la cantidad de dinero nuevo que quieran. Esta falta de `escacez`, hace que nuestro dinero valga menos cada año. El dinero, con un valor impredecible y decreciente, a menudo nos obliga a gastarlo: **"Si mi dinero va a valer menos cada año, ¿para qué ahorrar? Será mejor que lo gaste ahora "** 💸
+Los `bancos centrales`, al gestionar la `política monetaria` de un país, tienen la capacidad de introducir la cantidad de dinero nuevo que quieran. Esta falta de `escasez`, hace que nuestro dinero valga menos cada año. El dinero, con un valor impredecible y decreciente, a menudo nos obliga a gastarlo: **"Si mi dinero va a valer menos cada año, ¿para qué ahorrar? Será mejor que lo gaste ahora "** 💸
 
 Los `bancos comerciales`, los que se utilizan para ahorro y gasto diario, también influyen en nuestros hábitos de gasto. Como `custodio`, pueden bloquear transacciones o confiscar nuestros fondos. ¡Algunos bancos han impedido a sus clientes comprar criptomonedas! **Si tu banco puede congelar los ahorros de tu vida en cualquier momento… ¿eres realmente dueño de tu dinero?** 💸
 
-***
+---
 
 Para que el dinero vuelva a apoyar la libertad financiera, debe recuperar las dos propiedades clave que ha perdido con el tiempo:
 
@@ -113,8 +113,8 @@ Sólo estas cualidades pueden restablecer la habilidad de ahorrar y gastar nuest
 
 Conoce Bitcoin (`BTC`): una moneda digital que opera más allá del sistema bancario tradicional.
 
-- ⛓️ Es `peer-to-peer` (de igual a igual): Conecta a las personas directamente entre sí. Al ser automatizada mediante la `tecnología de cadena de bloques` (blockchain), elimina la necesidad de que las instituciones faciliten el almacenamiento o las transacciones. Sus defensores lo llaman "un conjunto de normas sin gobernantes".
-- 💎 Es `escazo`: Sin un banco central que emita dinero nuevo ilimitado, Bitcoin tiene una política monetaria estable y predecible que honra el ahorro a largo plazo.
+- ⛓️ Es `entre pares`: Conecta a las personas directamente entre sí. Al ser automatizada mediante la `tecnología de cadena de bloques` [blockchain], elimina la necesidad de que las instituciones faciliten el almacenamiento o las transacciones. Sus defensores lo llaman "un conjunto de normas sin gobernantes".
+- 💎 Es `escaso`: Sin un banco central que emita dinero nuevo ilimitado, Bitcoin tiene una política monetaria estable y predecible que honra el ahorro a largo plazo.
 - ✊ Permite la `autocustodia`: Se puede tener sin necesidad que las instituciones ayuden con transferencias o almacenamiento. Cuando se almacena en su estado natural, Bitcoin se guarda en una caja fuerte segura en línea y sólo el propietario tiene acceso.
 
 Por sus cualidades, Bitcoin se ha ganado el apodo de "oro digital".
@@ -125,7 +125,7 @@ Por sus cualidades, Bitcoin se ha ganado el apodo de "oro digital".
 
 📉 ¿Te cuesta seguir el ritmo del aumento de los gastos?
 
-***
+---
 
 La escasez en Bitcoin se refiere a que hay un límite en el número de bitcoins que pueden existir: un máximo de 21 millones. Este `suministro máximo` está incrustado en su código, haciendo que Bitcoin sea raro y potencialmente valioso. Esto lo sitúa en una buena posición como depósito de valor a largo plazo, al igual que el oro.
 
@@ -153,7 +153,7 @@ Su valor a corto plazo permanece volátil debido a la especulación del mercado.
 
 🧊 ¿Tu banco te ha congelado los fondos sin previo aviso porque realizaste una transferencia que no les gustó?
 
-***
+---
 
 En democracia, la propiedad es un derecho humano protegido, ya que da a los ciudadanos un mayor control y libertad sobre sus vidas. No podemos actuar libremente cuando nuestros medios de supervivencia están condicionados, juzgados por empresas o instituciones.
 
@@ -181,7 +181,7 @@ Este sistema de propiedad te ofrece el control total de tu patrimonio digital, e
 
 ⌛ ¿Has tenido alguna vez que esperar varios días laborables para enviar dinero internacionalmente, pagando entre un 3% y un 5% de comisiones?
 
-***
+---
 
 El correo electrónico simplificó el envío de cartas al eliminar la necesidad de una oficina de correos. De forma similar, Bitcoin ha agilizado el envío de dinero al eliminar la necesidad de bancos.
 
@@ -191,7 +191,7 @@ El correo electrónico simplificó el envío de cartas al eliminar la necesidad 
 
 Del mismo modo que tienes una dirección de correo electrónico, para recibir Bitcoin es necesaria una única dirección Bitcoin. Por defecto tiene este aspecto: _1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa_ (¡más adelante te enseñaremos a personalizarlo!)
 
-Gestionarás tu cuenta usando el software `cryptocurrency wallet` conectado a tu navegador web o tu teléfono. Es la “cuenta bancaria” más fácil que hayas creado nunca. No se necesita cita previa, ¡ni carné de identidad!
+Gestionarás tu cuenta usando tu `billetera de criptomonedas` conectada a tu navegador web o tu teléfono. Es la “cuenta bancaria” más fácil que hayas creado nunca. No se necesita cita previa, ¡ni carné de identidad!
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-its-like-emailing-money-2e2fb8ad.svg)
 
@@ -220,7 +220,7 @@ Gestionarás tu cuenta usando el software `cryptocurrency wallet` conectado a tu
 Cambiemos de marcha y demos una mirada al motor de Bitcoin:
 **La red Bitcoin**.
 
-Bitcoin se ejecuta en una red compartida alojada en miles de computadoras en todo el mundo. Cada computador de la red, desempeña un papel en mantener su funcionamiento; ¡la red existe a través ordenadores! Si una computadora procesa una transacción fraudulenta, existe otra para corregirla.
+Bitcoin se ejecuta en una red compartida alojada en miles de computadoras en todo el mundo. Cada computador de la red, desempeña un papel en mantener su funcionamiento. ¡La red existe a través de ellos! Si una computadora procesa una transacción fraudulenta, existe otra para corregirla.
 
 Esto también significa, que no existe un único punto sobre el cual ejercer presión en un intento de hackeo. Para controlar la red, habría que comprometer la mayoría de las computadoras.
 
@@ -230,7 +230,7 @@ Esta estrategia de defensa se denomina `descentralización`: el desplazamiento d
 
 # Minería de Bitcoin
 
-Al no contar con un banco central, la red de Bitcoin depende de sus participantes `descentralizados`. Conocidos como 'mineros', los participantes verifican constantemente las transacciones y las añaden a la 'base de datos', es decir, a la `blockchain`.
+Al no contar con un banco central, la red de Bitcoin depende de sus participantes `descentralizados`. Conocidos como 'mineros', los participantes verifican constantemente las transacciones y las añaden a la 'base de datos', es decir, a la `cadena de bloques`.
 
 Es importante que los mineros sean motivados a ser activos y honestos, protegiendo así la red del fraude. Los mineros frecuentemente comprueban los resultados de los demás, pero también son recompensados por el trabajo que realizan. Cuando enviamos transacciones Bitcoin, pagamos una pequeña comisión que va al minero encargado de validar nuestra transacción. Los mineros también ganan nuevos Bitcoin, conocidos como "recompensas de bloque", por su trabajo.
 
@@ -242,13 +242,13 @@ Es la introducción lenta y predecible de nuevas monedas lo que separa a Bitcoin
 
 # Envío de Transacciones Bitcoin
 
-Comprender los mecanismos exactos que impulsan las transacciones y la minería de Bitcoin puede resultar bastante complicado. Dicho esto, utilizar y enviar Bitcoin ¡es muy sencillo!
+Comprender los mecanismos exactos que impulsan las transacciones y la minería de Bitcoin puede resultar bastante complicado. A pesar de ello, utilizar y enviar Bitcoin en sí ¡es muy sencillo!
 
 Por hoy vamos a simplificar el proceso:
 
-1. Envías una transacción utilizando tu `cartera de criptomoneda`, enviando 0,1 `BTC` a la dirección de la billetera de tu amigo.
+1. Envías una transacción utilizando tu `billetera de criptomonedas`, enviando 0,1 `BTC` a la dirección de la billetera de tu amigo.
 2. Un minero comprueba si hay errores en tu transacción. Otros mineros comprueban sus resultados.
-3. Si se aprueba, su transacción se añade a la "base de datos" o `blockchain`.
+3. Si se aprueba, su transacción se añade a la base de datos de la `cadena de bloques`.
 4. Tu amigo recibe 0.1 BTC en su billetera.
 
 [embed](https://app.banklessacademy.com/animation/bitcoin)
@@ -291,18 +291,18 @@ En esta lección, hemos visto cómo la escasez de Bitcoin le ayuda a conservar s
 
 Sin embargo, Bitcoin ha evolucionado más allá de una simple herramienta monetaria. Se ha convertido en el catalizador de una revolución del `dinero descentralizado`. Este movimiento reimagina el sistema financiero tradicional distribuyendo el poder y el control monetario entre quienes lo utilizan.
 
-Descentralizando el dinero y eliminando a los `custodios` podemos hacerlo:
+Descentralizando el dinero y eliminando a los `custodios` podemos:
 
 - 💵 Acoger un mercado global 24/7, asegurado por ciudadanos de todo el mundo.
 - 🛠️ Ofrecer herramientas financieras a las regiones no bancarizadas del planeta.
-- 🤝 Usa la tecnología `peer-to-peer` para evitar las ineficiencias de instituciones intermediarias.
+- 🤝 Usar la tecnología `entre pares` para evitar las ineficiencias de instituciones intermediarias.
 - 🔎 Reducir la desigualdad institucional, el fraude y la manipulación del mercado.
 - ⚖️ Construir la `igualdad de oportunidad` en sistemas monetarios.
 - 🌐 Establecer una verdadera propiedad para la era digital.
 
 La nueva era del dinero defiende los valores fundamentales de la democracia para aumentar la calidad de la vida cotidiana de los ciudadanos de todo el mundo, y tú, estás invitado.
 
-_”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — Naciones Unidas_
+"La democracia proporciona un entorno que respeta los derechos humanos y las libertades fundamentales, y en el que se ejerce la voluntad libremente expresada de las personas" — Naciones Unidas.
 
 # Tu Misión Bitcoin
 
