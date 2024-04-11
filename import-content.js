@@ -336,9 +336,9 @@ axios
       if (lesson.moduleId === undefined) delete lesson.moduleId
       else lesson.moduleId = lesson.moduleId[0]
       if (lesson.languages === undefined) delete lesson.languages
-      if (lesson.questSocialMessage === undefined) delete lesson.questSocialMessage
       // sort languages alphabetically
       else lesson.languages.sort()
+      if (lesson.questSocialMessage === undefined) delete lesson.questSocialMessage
       if (lesson.lessonWriters === undefined) delete lesson.lessonWriters
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
       if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
