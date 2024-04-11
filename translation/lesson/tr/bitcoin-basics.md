@@ -82,7 +82,7 @@ Doğru veya Yanlış:
 
 Kağıt paranın kullanıma alınmasıyla birlikte para birimlerinin değeri, altına 'dayalı' olarak belirlenmeye başladı. Paranın değeri doğrudan, muhafaza edilen belirli miktardaki değerli metale bağlıydı.
 
-20. yüzyıla gelindiğinde ise bu “`Altın Standardı`” çöktü.
+20\. yüzyıla gelindiğinde ise bu “`Altın Standardı`” çöktü.
 
 Değerli metaller ile para birimleri arasındaki ilişki, dünyanın her yerinde yavaş yavaş sonlandırıldı; bu çaba, herhangi bir ülkenin ekonomisinin, altın arzının ötesinde büyümesine olanak tanıyordu. Merkez bankaları, para birimi yaratmak için artık altına ihtiyaç duymadığından, ülke ekonomisi için gerekli gördükleri kadar yeni para yaratabiliyorlardı. Para arzını sıkı önlemlerle kontrol ederek, değerini de kontrol edebiliyorlardı.
 
