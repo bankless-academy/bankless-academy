@@ -33,7 +33,7 @@ Merhaba cesur Kaşifler, dijital inovasyonun sınırına hoş geldiniz.
 
 Bankless Academy'de misyonumuz, sizin gibi Kaşiflere blok zinciri evreninde gezinmek ve "bankasızlaşmak" için en iyi araçları ve bilgileri sağlamak!
 
-Bugün, her şeyi başlatan `kripto para birimi` Bitcoin'u inceliyoruz.
+Bugün, her şeyi başlatan `kripto para` birimi Bitcoin'u inceliyoruz.
 
 Bitcoin, yeni bir para türüdür. Kullanıcılarının finansal özgürlüğünü artırır ve zor kazandıkları paralarını, zaman içinde oluşacak değer kaybına karşı korur.
 
@@ -43,7 +43,7 @@ Bitcoin, yeni bir para türüdür. Kullanıcılarının finansal özgürlüğün
 
 2009 yılında gizemli "`Satoshi Nakamoto`" tarafından piyasaya sürülen Bitcoin, yeni bir ekonomi çağının başlangıcı oldu.
 
-İlk başarılı `kripto para birimi` olan Bitcoin güçlü bir tartışmayı da beraberinde getirdi: Paranın kontrolü ve gücü geleneksel bankacılık sistemlerinde kalmaya devam mı etmeli? Yoksa her gün onu kazanan ve kullanan vatandaşlara mı ait olmalı? Bunun tam olarak ne anlama geldiğinden emin değilseniz doğru yerdesiniz!
+İlk başarılı `kripto para` birimi olan Bitcoin güçlü bir tartışmayı da beraberinde getirdi: Paranın kontrolü ve gücü geleneksel bankacılık sistemlerinde kalmaya devam mı etmeli? Yoksa her gün onu kazanan ve kullanan vatandaşlara mı ait olmalı? Bunun tam olarak ne anlama geldiğinden emin değilseniz doğru yerdesiniz!
 
 Gerçek şu ki, günümüzde paramızın kontrolü sandığımız gibi bizim elimizde değil. Bunun da oldukça ciddi sonuçları var.
 
@@ -96,7 +96,7 @@ Mevcut finansal sistemimizin sorunu, paramız üzerinde kontrolümüzün olmamas
 
 Ülkelerde `para politikası` yönetimini üstlenen `merkez bankaları` herhangi bir miktarda yeni para çıkarabilir. `Kıtlık` olmaması, genellikle paramızın yıllar içinde daha az değerli hale gelmesine sebep olur. Öngörülemeyen, azalan bir değere sahip olan para genellikle bizi onu harcamaya zorlar: **"Param her yıl daha az değerli olacaksa neden biriktireyim ki? Şimdi de harcayabilirim."** 💸
 
-Günlük birikim ve harcamalar için kullanılan `ticari bankalar` da harcama alışkanlıklarımızı etkiler. Birer `emanetçi` olan bu bankalar, işlemleri engelleyebilir veya fonlarımıza el koyabilir. Bazı bankalar, müşterilerinin kripto para satın almasını engeller! **Bankanız istediği zaman birikimlerinizi dondurabiliyorsa… paranızın gerçek sahibi siz misiniz?** 💸
+Günlük birikim ve harcamalar için kullanılan `ti̇cari̇ bankalar` da harcama alışkanlıklarımızı etkiler. Birer `emanetçi` olan bu bankalar, işlemleri engelleyebilir veya fonlarımıza el koyabilir. Bazı bankalar, müşterilerinin kripto para satın almasını engeller! **Bankanız istediği zaman birikimlerinizi dondurabiliyorsa… paranızın gerçek sahibi siz misiniz?** 💸
 
 ---
 
