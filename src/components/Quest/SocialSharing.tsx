@@ -11,7 +11,7 @@ import {
   InputRightElement,
 } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
-import { useTranslation } from 'react-i18next'
+// import { useTranslation } from 'react-i18next'
 
 import { theme } from 'theme/index'
 import { api, generateFarcasterLink, generateTwitterLink } from 'utils/index'
@@ -26,7 +26,7 @@ const SocialSharing = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
-  const { t } = useTranslation('quests', { keyPrefix: 'SocialSharing' })
+  // const { t } = useTranslation('quests', { keyPrefix: 'SocialSharing' })
   const [isQuestValidated, setIsQuestValidated] = useState(null)
   const [isSmallScreen] = useSmallScreen()
   const [messageLink, setMessageLink] = useState(
@@ -73,11 +73,19 @@ const SocialSharing = (
     questComponent: (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
-          <Box width="500px" maxW="100%">
+          <Box width="100%" maxW="550px">
             <Text mx="0 !important" fontSize="xl" fontWeight="bold">
-              {t(
-                'Share the following message on your favorite social platform.'
-              )}
+              {
+                "Congratulations! You've reached the final step in this learning journey 🎓"
+              }
+            </Text>
+            <Text mx="0 !important" fontSize="xl">
+              {'Before claiming your onchain certification:'}
+            </Text>
+            <Text mx="0 !important" fontSize="xl">
+              {
+                '1. Share the following message on your favorite social platform.'
+              }
             </Text>
             <Box w="250px" m="auto">
               <Box pb="1">
@@ -90,7 +98,7 @@ const SocialSharing = (
                       <ChakraImage width="20px" src="/images/TwitterX.svg" />
                     }
                   >
-                    {t('Share on Twitter / X')}
+                    {'Share on Twitter / X'}
                   </Button>
                 </ExternalLink>
               </Box>
@@ -104,17 +112,17 @@ const SocialSharing = (
                       <ChakraImage width="20px" src="/images/Farcaster.svg" />
                     }
                   >
-                    {t('Share on Farcaster')}
+                    {'Share on Farcaster'}
                   </Button>
                 </ExternalLink>
               </Box>
             </Box>
             <Box mt="8">
-              <Text mx="0 !important" fontSize="xl" fontWeight="bold">
-                {t('Paste the message link to verify.')}
+              <Text mx="0 !important" fontSize="xl">
+                {'2. Paste the message link to verify and click Finish 📋 ✅'}
               </Text>
               <InputGroup maxW="530px">
-                <InputLeftAddon width="71px">{t('Link')}</InputLeftAddon>
+                <InputLeftAddon width="71px">{'Link'}</InputLeftAddon>
                 <Input
                   placeholder="https://..."
                   value={messageLink}
