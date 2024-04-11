@@ -34,6 +34,7 @@ export interface LessonType {
   imageLinks?: string[]
   publicationStatus: 'publish' | 'planned' | 'hidden'
   publicationDate?: string
+  translationDate?: string
   featuredOrderOnHomepage?: number
   isCommentsEnabled: boolean
   endOfLessonRedirect?: string

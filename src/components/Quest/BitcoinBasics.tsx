@@ -41,7 +41,8 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
   )
 
   const areAnswersCorrect =
-    JSON.stringify(selected) === JSON.stringify(CORRECT_ANSWERS)
+    JSON.stringify(selected)?.replace('0,0', '0.0') ===
+    JSON.stringify(CORRECT_ANSWERS)
   localStorage.setItem('quest-bitcoin-basics', JSON.stringify(selected))
 
   const animationSteps = [

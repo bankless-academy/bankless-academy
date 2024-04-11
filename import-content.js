@@ -178,7 +178,7 @@ console.log('TRANSLATION_LANGUAGE', TRANSLATION_LANGUAGE)
 const slugify = (text) => text.toLowerCase()
   .replace('á', 'a')
   .replace(/<[^>]*>?/gm, '') // remove tags
-  .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+  .replace(/[^a-z0-9\. -]/g, '') // remove invalid chars
   .replace(/\s+/g, '-') // collapse whitespace and replace by -
   .replace(/-+/g, '-') // collapse dashes
 
@@ -675,19 +675,21 @@ axios
             return slide
           })
           lesson.keywords = allKeywords
-          const lessonKV = {}
-          // create keyword file
-          for (const keyword of allKeywords) {
-            if (keyword in ALL_ENGLISH_KEYWORDS) {
-              lessonKV[keyword] = ALL_ENGLISH_KEYWORDS[keyword]
+          if (LESSON_NOTION_ID) {
+            // create keyword lesson file
+            const lessonKV = {}
+            for (const keyword of allKeywords) {
+              if (keyword in ALL_ENGLISH_KEYWORDS) {
+                lessonKV[keyword] = ALL_ENGLISH_KEYWORDS[keyword]
+              }
             }
-          }
-          if (Object.keys(lessonKV).length) {
-            const lessonKeywordPath = `translation/keywords/en/${lesson.slug}.json`
-            console.log('lessonKV', lessonKV)
-            fs.writeFile(lessonKeywordPath, JSON.stringify(lessonKV, null, 2), (error) => {
-              if (error) throw error
-            })
+            if (Object.keys(lessonKV).length) {
+              const lessonKeywordPath = `translation/keywords/en/${lesson.slug}.json`
+              console.log('lessonKV', lessonKV)
+              fs.writeFile(lessonKeywordPath, JSON.stringify(lessonKV, null, 2), (error) => {
+                if (error) throw error
+              })
+            }
           }
           const componentName = PROJECT_DIR.replace(/[^A-Za-z0-9]/g, '') + lesson.name
             .split(' ')

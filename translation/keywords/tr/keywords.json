@@ -249,6 +249,14 @@
     "keyword_plural": "Özel Kayıtlar",
     "definition": "Standart blok zinciri adreslerinin ötesinde keyfi bilgilerin depolanmasına ve ilişkilendirilmesine olanak tanıyan ve bir ENS alanına bağlı olan kullanıcı tanımlı veri girişi."
   },
+  "özel kayıt": {
+    "keyword": "Özel Kayıt",
+    "definition": "Standart blok zinciri adreslerinin ötesinde keyfi bilgilerin depolanmasına ve ilişkilendirilmesine olanak tanıyan ve bir ENS alanına bağlı olan kullanıcı tanımlı veri girişi."
+  },
+  "özel kayıtlar": {
+    "keyword": "Özel Kayıtlar",
+    "definition": "Standart blok zinciri adreslerinin ötesinde keyfi bilgilerin depolanmasına ve ilişkilendirilmesine olanak tanıyan ve bir ENS alanına bağlı olan kullanıcı tanımlı veri girişi."
+  },
   "dao": {
     "keyword": "DAO",
     "keyword_plural": "DAO'lar",
