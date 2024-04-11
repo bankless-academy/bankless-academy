@@ -24,6 +24,11 @@
     "keyword_plural": "airdrops",
     "definition": "A free distribution of crypto assets to users."
   },
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "keyword_plural": "Allo Protocols",
+    "definition": "An open-source protocol that enables groups to efficiently and transparently allocate pooled capital."
+  },
   "allowance": {
     "keyword": "allowance",
     "keyword_plural": "allowances",
@@ -688,6 +693,11 @@
     "keyword": "öffentlicher Schlüssel",
     "keyword_plural": "öffentliche Schlüssel",
     "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+  },
+  "quadratic funding": {
+    "keyword": "Quadratic Funding",
+    "keyword_plural": "Quadratic Fundings",
+    "definition": "A crowd-funding mechanism that amplifies available resources with individual donations of any size acting as votes. The broader the support, the bigger the impact!"
   },
   "recovery phrase": {
     "keyword": "recovery phrase",
