@@ -684,6 +684,11 @@ axios
             for (const keyword of allKeywords) {
               if (keyword in ALL_ENGLISH_KEYWORDS) {
                 lessonKV[keyword] = ALL_ENGLISH_KEYWORDS[keyword]
+              } else {
+                const singularKeyword = keyword.slice(0, -1)
+                if (singularKeyword in ALL_ENGLISH_KEYWORDS) {
+                  lessonKV[singularKeyword] = ALL_ENGLISH_KEYWORDS[singularKeyword]
+                }
               }
             }
             if (Object.keys(lessonKV).length) {
