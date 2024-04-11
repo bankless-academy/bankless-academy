@@ -23,10 +23,9 @@
     "Read Entry": "阅读作品"
   },
   "WalletBasics": {
-    "How to setup a MetaMask wallet": "如何设置 MetaMask 钱包",
-    "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.": "为了在本课中方便使用，您需要一个 MetaMask 钱包。接下来，我们将演示如何设置 MetaMask 钱包。",
-    "Download the browser extension from the official website:": "从官方网站下载浏览器扩展：",
-    "Congrats for connecting your wallet! 👏🙂": "恭喜您连接了钱包！👏🙂",
-    "Waiting to detect your wallet ...": "等待检测您的钱包..."
+    "1. Download and install the Zerion wallet from ": "1. Download and install the Zerion wallet from ",
+    "If you already have a wallet, move to step 2.": "If you already have a wallet, move to step 2.",
+    "2. Connect your wallet to Bankless Academy": "2. Connect your wallet to Bankless Academy",
+    "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest."
   }
 }
