@@ -219,6 +219,18 @@ const placeholder = (lesson, size, image_name) => {
   return get_img(placeholder_link, lesson.slug, image_name)
 }
 
+const extractKeywords = (content) => {
+  const regex = /`([^`]+)`/g;
+  const keywords = [];
+  let match;
+
+  while ((match = regex.exec(content)) !== null) {
+    keywords.push(match[1]);
+  }
+
+  return [...new Set(keywords)]
+}
+
 const importTranslations = async (lesson) => {
   if (!TRANSLATION_LANGUAGE) return
   for (const language of lesson.languages) {
@@ -464,6 +476,29 @@ axios
                       lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${image_path}`)
                     }
                     lesson.articleContent = lessonContentMD.replaceAll('https://app.banklessacademy.com/images/', '/images/')
+                    const keywords = extractKeywords(lesson.articleContent)
+                    // console.log('keywords', keywords)
+                    if (LESSON_NOTION_ID && program.opts().generateKeywords) {
+                      // create keyword lesson file
+                      const lessonKV = {}
+                      for (const keyword of keywords) {
+                        if (keyword in ALL_ENGLISH_KEYWORDS) {
+                          lessonKV[keyword] = ALL_ENGLISH_KEYWORDS[keyword]
+                        } else {
+                          const singularKeyword = keyword.slice(0, -1)
+                          if (singularKeyword in ALL_ENGLISH_KEYWORDS) {
+                            lessonKV[singularKeyword] = ALL_ENGLISH_KEYWORDS[singularKeyword]
+                          }
+                        }
+                      }
+                      if (Object.keys(lessonKV).length) {
+                        const lessonKeywordPath = `translation/keywords/en/${lesson.slug}.json`
+                        console.log('lessonKV', lessonKV)
+                        fs.writeFile(lessonKeywordPath, JSON.stringify(lessonKV, null, 2), (error) => {
+                          if (error) throw error
+                        })
+                      }
+                    }
                     // write/update file
                     const lessonPath = `translation/lesson/en/${lesson.slug}.md`
                     const lessonHeader = mdHeader(lesson, 'HANDBOOK')
