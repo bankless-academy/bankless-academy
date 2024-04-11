@@ -167,7 +167,7 @@ program
   .option('-nid, --notionID <type>', 'specify Notion ID of the database', process.env.DEFAULT_CONTENT_DB_ID || DEFAULT_NOTION_ID)
   .option('-lid, --lessonID <type>', 'specify Lesson Notion ID')
   .option('-lg, --translate <type>', 'specific language to translate (fr, es, ...) or all')
-  .option('-gk, --generateKeywords <type>', 'generate keyword translation files for each language')
+  .option('-gk, --generateKeywords', 'generate keyword translation files for each language')
 
 program.parse(process.argv)
 const NOTION_ID = program.opts().notionID
