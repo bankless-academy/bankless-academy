@@ -141,6 +141,7 @@ const KEY_MATCHING = {
   'Lesson Writers': 'lessonWriters',
   Module: 'moduleId',
   Quest: 'quest',
+  'Quest Social Message': 'questSocialMessage',
   'Publication status': 'publicationStatus',
   'Publication Date': 'publicationDate',
   'Featured order on homepage': 'featuredOrderOnHomepage',
@@ -335,6 +336,7 @@ axios
       if (lesson.moduleId === undefined) delete lesson.moduleId
       else lesson.moduleId = lesson.moduleId[0]
       if (lesson.languages === undefined) delete lesson.languages
+      if (lesson.questSocialMessage === undefined) delete lesson.questSocialMessage
       // sort languages alphabetically
       else lesson.languages.sort()
       if (lesson.lessonWriters === undefined) delete lesson.lessonWriters
