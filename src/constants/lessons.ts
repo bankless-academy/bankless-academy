@@ -3332,74 +3332,95 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
-    badgeImageLink: '/images/gitcoin-2.0-whitepaper/badge-da9823bb.png',
-    lessonImageLink: '/images/gitcoin-2.0-whitepaper/lesson-0a24938a.png',
+    badgeImageLink: '/images/gitcoin-2.0-essentials/badge-62565097.png',
+    lessonImageLink: '/images/gitcoin-2.0-essentials/lesson-12ca439a.png',
+    socialImageLink: '/images/gitcoin-2.0-essentials/social-255bb483.png',
     learningActions: '',
     marketingDescription: 'Decoding Gitcoin 2.0',
-    badgeId: null,
+    badgeId: 13,
     duration: null,
     learnings: '',
     description: 'Explore Gitcoin\'s whitepaper for insights into democratic capital allocation and Ethereum ecosystem growth.',
-    name: 'Gitcoin 2.0 Whitepaper',
+    name: 'Gitcoin 2.0 Essentials',
     languages: [],
+    quest: 'Gitcoin20Essentials',
+    questSocialMessage: 'I\'ve just read the @Gitcoin 2.0 Essentials on @BanklessAcademy 🎉\n\nJoin the journey and level up your #web3 knowledge! 👨‍🚀🚀',
     publicationStatus: 'hidden',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
     notionId: '6b05b52eae8a41e0ab27222ac27fca12',
-    englishName: 'Gitcoin 2.0 Whitepaper',
-    slug: 'gitcoin-2.0-whitepaper',
-    socialImageLink: '/images/gitcoin-2.0-whitepaper/social-0a24938a.png',
+    englishName: 'Gitcoin 2.0 Essentials',
+    slug: 'gitcoin-2.0-essentials',
     imageLinks: [
-      '/images/gitcoin-2.0-whitepaper/white-paper-lesson-gitcoin-grants-growth-27395318.png',
-      '/images/gitcoin-2.0-whitepaper/introduction-to-quadratic-funding-e38257e1.png',
-      '/images/gitcoin-2.0-whitepaper/our-role-in-the-ethereum-ecosystem-38f4c7da.png',
-      '/images/gitcoin-2.0-whitepaper/-and-theres-more-b4390975.png',
-      '/images/gitcoin-2.0-whitepaper/carving-a-path-217d4d71.png',
-      '/images/gitcoin-2.0-whitepaper/evolutionary-development-092753e6.png',
-      '/images/gitcoin-2.0-whitepaper/the-impact-of-capital-allocation-1c17e0b8.png',
-      '/images/gitcoin-2.0-whitepaper/expanding-beyond-evm-7289ade2.png',
-      '/images/gitcoin-2.0-whitepaper/grants-stack-other-use-cases-f355d3b7.png',
-      '/images/gitcoin-2.0-whitepaper/grants-stack-other-use-cases-continued-b3bc0d2b.png',
-      '/images/gitcoin-2.0-whitepaper/lets-go-over-what-we-learned-a902dc9c.png'
+      '/images/gitcoin-2.0-essentials/whitepaper-lesson-gitcoin-grants-growth-3e78d2ef.png',
+      '/images/gitcoin-2.0-essentials/introduction-to-quadratic-funding-e38257e1.png',
+      '/images/gitcoin-2.0-essentials/our-role-in-the-ethereum-ecosystem-fe71e17f.png',
+      '/images/gitcoin-2.0-essentials/and-theres-more-5525393b.png',
+      '/images/gitcoin-2.0-essentials/carving-a-path-ffb2f198.png',
+      '/images/gitcoin-2.0-essentials/evolutionary-development-092753e6.png',
+      '/images/gitcoin-2.0-essentials/the-impact-of-capital-allocation-1c17e0b8.png',
+      '/images/gitcoin-2.0-essentials/expanding-beyond-evm-with-allo-protocol-c8a108f7.png',
+      '/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-7334384f.png',
+      '/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-continued-df15ee70.png',
+      '/images/gitcoin-2.0-essentials/lets-go-over-what-we-learned-a902dc9c.png'
     ],
-    keywords: [],
+    keywords: [
+      'allo protocol',
+      'quadratic funding'
+    ],
     slides: [
       {
         type: 'LEARN',
         notionId: '163809eabca84850b37afe1857173353',
-        title: 'White Paper Lesson | Gitcoin = Grants = Growth',
-        content: '<div class="bloc1"><p>Welcome to the revolution in capital allocation.</p><p>In this lesson, we delve into the Gitcoin 2.0 white paper to explore innovative approaches to public goods funding and Ethereum ecosystem growth.</p><p>Having surpassed $60 million in funding distributed, Gitcoin is at the forefront of a movement towards more democratic, efficient, and transparent capital allocation on web3.</p><p>Anyone can check out the white paper for an in-depth look at how we are refining capital allocation with Allo Protocol: https://www.gitcoin.co/whitepaper/read.</p><p>Thank you to the curators of this lesson, Ornella & Didier from Bankless Academy, and Harry, Caolán & Cici from Gitcoin.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-whitepaper/white-paper-lesson-gitcoin-grants-growth-27395318.png\'></div>'
+        title: 'Whitepaper Lesson | Gitcoin = Grants = Growth',
+        content: '<div class="bloc1"><p>Welcome to the revolution in capital allocation 💰</p><p>In this lesson, we explore the <strong>Gitcoin 2.0 whitepaper</strong> to discover innovative approaches to public goods funding and Ethereum ecosystem growth.</p><p>Having surpassed <strong>$60 million in funding distributed</strong>, Gitcoin is at the forefront of a movement towards more democratic, efficient, and transparent capital allocation in web3.</p><p>Anyone can check out the <a href=\'https://www.gitcoin.co/whitepaper/read\'>whitepaper</a> for an in-depth look at how Gitcoin is refining capital allocation with <code>Allo Protocol</code>.</p><p>Thank you to the curators of this lesson, Ornella, Didier & Tetranome from Bankless Academy, and Harry, Caolán & Cici from Gitcoin.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/whitepaper-lesson-gitcoin-grants-growth-3e78d2ef.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '55e43442defe411b9109132581333a42',
         title: 'Introduction to Quadratic Funding',
-        content: '<div class="bloc1"><p>If you’re here you may know already, but here’s a refresher. </p><p>Quadratic Funding (QF) originated from the ideas of Glenn Weyl and Vitalik Buterin. It\'s a mechanism designed to allocate funds in a fair and democratic manner by leveraging matching funds to amplify the impact of small individual contributions.</p><p>We debuted QF at Gitcoin Grants (GG), a pivotal moment enabling democratic donations to projects that matter. We continue to finely tune the QF model with each iteration since GG Round 1 launched in 2019. </p><p>We have found our rhythm with Gitcoin 2.0, extending further into the grants space to include funding mechanisms like Direct Grants and delivering a more decentralized, modular experience.</p><p><span class=\'color-yellow\'><em>add as a reference: QF amplifies available resources with individual donations of any size acting as votes. The broader the support, the bigger the impact!</em></span></p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-whitepaper/introduction-to-quadratic-funding-e38257e1.png\'></div>'
+        content: '<div class="bloc1"><p>If you’re here you may know already, but here’s a refresher.</p><p><code>Quadratic Funding</code> (QF) originated from the ideas of Glenn Weyl and Vitalik Buterin. It\'s a mechanism designed to allocate funds in a fair and democratic manner by leveraging matching funds to <strong>amplify the impact</strong> of small individual contributions.</p><p>We debuted QF at <strong>Gitcoin Grants</strong> (GG), a pivotal moment enabling democratic donations to projects that matter. We continue to finely tune the QF model with each iteration since GG Round 1 launched in 2019.</p><p>We have found our rhythm with <strong>Gitcoin 2.0</strong>, extending further into the grants space to include funding mechanisms like Direct Grants and delivering a more decentralized, modular experience.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/introduction-to-quadratic-funding-e38257e1.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '060ee68d743d4850942271999566a5df',
         title: 'Our role in the Ethereum ecosystem',
-        content: '<div class="bloc1"><p>Gitcoin has disbursed grants to open source software (OSS) teams since 2019, running a major round almost every quarter. </p><p>Although rounds sizes ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone for the open source Ethereum community.</p><p>Prior to GG20, Gitcoin distributed $8.4M to ~2500 applicants through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-whitepaper/our-role-in-the-ethereum-ecosystem-38f4c7da.png\'></div>'
+        content: '<div class="bloc1"><p>As of January 2024, Gitcoin has run <strong>19 grant rounds</strong>, disbursing funds to open source software (OSS) teams, averaging nearly one major round per quarter.</p><p>Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone for the open source Ethereum community.</p><p>Prior to GG20, <strong>Gitcoin distributed $8.4M to ~2500 applicants</strong> through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/our-role-in-the-ethereum-ecosystem-fe71e17f.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'c71d220061584a79a004d40bee450bb9',
-        title: '… and there’s more!',
-        content: '<div class="bloc1"><p>Gitcoin\'s dynamics most often reward projects that play the long game — that is, projects that appear consistently throughout grants rounds, making connections and building a following. </p><p>A large part of Gitcoin\'s project base comes from the open source community, with developer activity of 50 OSS projects associated with at least five GG rounds receiving a total of $9.4M.</p><p>The most interesting finding is the correlation between GG rounds and developer growth. Overall, we see that there has been $135K in grant funding allocated per full-time developer. </p><p>In other words, for every $1M that has been paid out in grants since 2019, there are 7.4 full-time developers who are still around today. If we factor in the crowdfund multiplier of 0.75, then every $1M put into the matching pool correlates to 13 retained full-time developers.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-whitepaper/-and-theres-more-b4390975.png\'></div>'
+        title: '…and there’s more!',
+        content: '<div class="bloc1"><p>Gitcoin\'s dynamics most often reward projects that <strong>play the long game</strong> — that is, projects that appear consistently throughout grants rounds, making connections and building a following.</p><p>A large part of Gitcoin\'s project base comes from the <strong>open source community</strong>, with developer activity of 50 OSS projects associated with at least five GG rounds receiving a total of $9.4M.</p><p>A notable finding is the <strong>correlation between GG rounds and developer growth</strong>. Overall, we see that there has been $135K in grant funding allocated per full-time developer.</p><p>In other words, for every $1M that has been paid out in grants since 2019, there are 7.4 full-time developers who are still around today. If we factor in the crowdfund multiplier of 0.75, then every $1M put into the matching pool correlates to 13 retained full-time developers.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/and-theres-more-5525393b.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '6419b66630ba4d5d9f7879a903269624',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'What funding mechanism is designed to democratically allocate funds by amplifying the impact of individual contributions?',
+          rightAnswerNumber: 3,
+          answers: [
+            'Direct Grants',
+            'Allo Protocol',
+            'Quadratic Funding',
+            'Matching Funds'
+          ],
+          id: 'gitcoin-2.0-essentials-1'
+        }
       },
       {
         type: 'LEARN',
-        notionId: '6419b66630ba4d5d9f7879a903269624',
-        title: 'Carving a path',
-        content: '<div class="bloc1"><p>The recent upgrade to Gitcoin 2.0 was driven by many changes in the market, including the expansion of the Ethereum ecosystem with L2 launches, the growth of open-source development, and increasing adoption of grant programs. </p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-whitepaper/carving-a-path-217d4d71.png\'></div>'
+        notionId: '98415667c1b34062b8ab3ff55497925e',
+        title: 'Carving a Path',
+        content: '<div class="bloc1"><p>Gitcoin 1.0 was used by many top leaders in the space including Ethereum founder <strong>Vitalik Buterin</strong> and by major protocols like WalletConnect, Uniswap, Yearn, and 1inch.</p><p>Since its inception in 2017, this first version of Gitcoin primarily focused on hackathons and bounties, followed by Quadratic Funding powered grants.</p><p>The recent upgrade to Gitcoin 2.0 was driven by many changes in the market, including the <strong>expansion</strong> of the Ethereum ecosystem with L2 launches, the <strong>growth</strong> of open-source development, and <strong>increasing adoption</strong> of grant programs.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/carving-a-path-ffb2f198.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '2ca8f1e045b64f30ace263934335d963',
         title: 'Evolutionary Development',
-        content: '<div class="bloc1"><p>Gitcoin’s transformation breaks down as follows:</p><ol><li>Decentralized Modular Protocols: moving from a centralized, Gitcoin-operated platform to a suite of modularized products and protocols that anyone can use and build with or on top of.</li><li>Plural Funding Mechanics: moving from QF only to many ways of allocating capital. Our current focus is on Direct Grants, Retroactive Public Goods Funding, Streaming QF and Conviction Voting.</li><li>Open for EVM-Based Community: expanding beyond Ethereum-only to implementation across EVM-based networks such as Optimism, Arbitrum, Base, Polygon, zkSync, Scroll and Avalanche.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-whitepaper/evolutionary-development-092753e6.png\'></div>'
+        content: '<div class="bloc1"><p>Gitcoin’s transformation breaks down as follows:</p><ol><li><strong>Decentralized Modular Protocols</strong>: moving from a centralized, Gitcoin-operated platform to a suite of modularized products and protocols that anyone can use and build with or on top of.</li><li><strong>Plural Funding Mechanics</strong>: moving from QF only to many ways of allocating capital. Our current focus is on Direct Grants, Retroactive Public Goods Funding, Streaming QF and Conviction Voting.</li><li><strong>Open for EVM-Based Community:</strong> expanding beyond Ethereum-only to implementation across EVM-based networks such as Optimism, Arbitrum, Base, Polygon, zkSync, Scroll and Avalanche.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/evolutionary-development-092753e6.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -3412,67 +3433,67 @@ const LESSONS: LessonType[] = [
             'Hackathon platform',
             'Bounty platform',
             'Quadratic Funding',
-            'All of the above.'
+            'All of the above'
           ],
           feedback: [
             'Right! But this isn’t the only correct answer.',
             'Right! But this isn’t the only correct answer.',
             'Right! But this isn’t the only correct answer.',
-            'Correct! Gitcoin technically focused on bounties, hackathons and QF before the 2.0 launch'
+            'Correct! Gitcoin technically focused on bounties, hackathons and QF before the 2.0 launch.'
           ],
-          id: 'gitcoin-2.0-whitepaper-1'
+          id: 'gitcoin-2.0-essentials-2'
         }
       },
       {
         type: 'LEARN',
         notionId: '058259e6f2724af1b207c36b26abfe5f',
         title: 'The Impact of Capital Allocation',
-        content: '<div class="bloc1"><p>The internet has introduced the ability to communicate at a incredible speed and scale. </p><p>Blockchains have created a transparent ledger to report on activities and create accountability through easy data availability and the immutability of onchain actions. Gitcoin harnesses the positive attributes of both to address the following capital allocation issues:</p><ol><li>Gatekeeping: using small groups of decision makers, who may otherwise become power brokers and are unwilling or unable to be democratic.</li><li>Not Scalable: taking advantage of the primitives the internet (easy access, direct to consumer interfaces) and Ethereum (credible neutrality, composability, transparency, democratic decision making, censorship resistance) have to offer.</li><li>Not Precise: by programmatically managing large amounts of information at scale, enabling high resolution capital allocation.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-whitepaper/the-impact-of-capital-allocation-1c17e0b8.png\'></div>'
+        content: '<div class="bloc1"><p>The internet has introduced the ability to communicate at an incredible speed and scale.</p><p>Blockchains have created a transparent ledger to report on activities and create <strong>accountability </strong>through easy <strong>data availability</strong> and the <strong>immutability</strong> of onchain actions. Gitcoin harnesses the positive attributes of both to address the following capital allocation issues:</p><ol><li><strong>Gatekeeping</strong>: using small groups of decision makers, who may otherwise become power brokers and are unwilling or unable to be democratic.</li><li><strong>Not Scalable</strong>: taking advantage of the primitives the internet (easy access, direct to consumer interfaces) and Ethereum (credible neutrality, composability, transparency, democratic decision making, censorship resistance) have to offer.</li><li><strong>Not Precise:</strong> by programmatically managing large amounts of information at scale, enabling high resolution capital allocation.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/the-impact-of-capital-allocation-1c17e0b8.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '5dcd6311a0574b36a5fc756f7fd57a49',
-        title: 'Expanding beyond EVM',
-        content: '<div class="bloc1"><p>Allo’s simple, generalized architecture that allows it to be easily customized for a wide range of use cases, supporting many different types of capital allocation.</p><p>The power of Allo is on display in its ability to deepen impact by precisely allocating capital at scale. There are three key components to the protocol:</p><p>There are three key components to the protocol:</p><ol><li>Tokens: funding sources sending tokens into a pool.</li><li>Registry: structuring data of possible participants that are eligible for distribution of tokens.</li><li>Strategy: designating how tokens will be allocated and distributed to recipients.</li></ol><p><span class=\'color-yellow\'><em>add as a reference: For a deeper understanding of our aspirations for what people will create using Allo, checkout the design space-focused </em></span><span class=\'color-yellow\'><a href=\'https://www.gitcoin.co/rainbowpaper\'><em>Rainbowpaper</em></a></span><span class=\'color-yellow\'><em>.</em></span></p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-whitepaper/expanding-beyond-evm-7289ade2.png\'></div>'
+        title: 'Expanding beyond EVM with Allo Protocol',
+        content: '<div class="bloc1"><p>Allo Protocol is a set of smart contracts designed for democratic capital allocation and distribution, developed to empower the Grants Stack.</p><p>Allo’s simple, generalized architecture allows it to be <strong>easily customized</strong> for a wide range of use cases. It’s power lies in its ability to <strong>deepen impact</strong> by allocating capital at scale. There are three key components to the protocol:</p><ol><li><strong>Tokens:</strong> funding sources sending tokens into a pool.</li><li><strong>Registry:</strong> structuring data of possible participants that are eligible for distribution of tokens.</li><li><strong>Strategy:</strong> designating how tokens will be allocated and distributed to recipients.</li></ol><p>💡 <span class=\'color-default\'>For a deeper understanding of our aspirations for what people will create using Allo, checkout the design space-focused </span><span class=\'color-default\'><a href=\'https://www.gitcoin.co/rainbowpaper\'>Rainbowpaper</a></span><span class=\'color-default\'>.</span></p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/expanding-beyond-evm-with-allo-protocol-c8a108f7.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'fa9d497779c245cd93d677f5f8efcb36',
         title: 'Grants Stack & other use cases',
-        content: '<div class="bloc1"><p>Grants Stack, built on top of Allo Protocol, is the primary application in the Gitcoin ecosystem.</p><p>Grants Stack is designed to be a trustworthy, enterprise-grade tool that grants customers can rely on. It also serves as a reference app for Allo Protocol builders as it is open-source and forkable. </p><p>Grants Stack invests in several core areas to provide grants managers with the tools they need to run successful grants programs.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-whitepaper/grants-stack-other-use-cases-f355d3b7.png\'></div>'
+        content: '<div class="bloc1"><p>Grants Stack, built on top of Allo Protocol, is the <strong>primary application</strong> in the Gitcoin ecosystem.</p><p>Grants Stack is designed to be a trustworthy, enterprise-grade tool that grant customers can rely on. It also serves as a reference app for Allo Protocol builders, as it is <strong>open-source and forkable</strong>.</p><p>Grants Stack invests in several core areas to provide grants managers with the tools they need to run successful grants programs.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-7334384f.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '3640f02a78634c73b931223fc4d3b08e',
         title: 'Grants Stack & other use cases continued',
-        content: '<div class="bloc1"><p>Grants Stack currently supports multiple funding methods: Quadratic Funding and Direct Grants.</p><p>As new funding mechanisms arise, we look to gain enough expertise in them to integrate them to our product suite. </p><p>A relevant example of this is EasyRetroPGF.xyz. Originally deployed by Optimism, we’ve now open-sourced the tool to be hosted and run by anyone in the web3 grants community.</p><p>It will be exciting to see complimentary applications emerge, such as reporting and discovery tools, as well as no coding tools like EasyRetroPGF.xyz. These create a flywheel of innovation in the grants ecosystem that allows Grants Stack to remain a stable, trusted solution while staying at the forefront of grants innovation.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-whitepaper/grants-stack-other-use-cases-continued-b3bc0d2b.png\'></div>'
+        content: '<div class="bloc1"><p><strong>Grants Stack</strong> currently supports two funding methods: <a href=\'https://www.wtfisqf.com/\'>Quadratic Funding</a> and <a href=\'https://www.gitcoin.co/blog/intro-to-direct-grants-how-do-they-work\'>Direct Grants</a>.</p><p>As new funding mechanisms arise, we look to gain enough expertise in them to integrate them to our product suite.</p><p>A relevant example of this is <a href=\'http://EasyRetroPGF.xyz\'>EasyRetroPGF.xyz</a>. Originally deployed by Optimism, we’ve now open-sourced the tool to be <strong>hosted and run by anyone</strong> in the web3 grants community.</p><p>It will be exciting to see complimentary applications emerge, such as reporting and discovery tools, as well as no coding tools like EasyRetroPGF.xyz. These create a <strong>flywheel of innovation</strong> in the grants ecosystem that allows Grants Stack to remain a <strong>stable, trusted solution</strong> while staying at the forefront of grants innovation.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-continued-df15ee70.png\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '89e00897b74d4c99a6379db89c2a09f8',
         title: 'Knowledge Check',
         quiz: {
-          question: 'Complete: The primary difference between Allo Protocol and Grants Stack is that the former focuses on _________ through a decentralized, modular approach. The latter is a platform for _________ — both live within the recently launched business unit, ________.<br>',
+          question: 'Complete the following statement:<br><br><span class=\'color-default\'>Allo is th</span><span class=\'color-default\'>e ______ </span><span class=\'color-default\'> layer for distribution of capital allocation, while Grants Stack i</span><span class=\'color-default\'>s a _____ for running ______ programs.</span>',
           rightAnswerNumber: 2,
           answers: [
-            'Word 1, Word 2, Word 3',
-            'Word 4, Word 5, Word 6',
-            'All of the above'
+            'community - application - funding',
+            'protocol - tool - grants',
+            'program - product - builder',
+            'None of the above'
           ],
-          id: 'gitcoin-2.0-whitepaper-2'
+          id: 'gitcoin-2.0-essentials-3'
         }
       },
       {
         type: 'LEARN',
         notionId: 'dc9d8509dafc4372bd6e1683119eb033',
         title: 'Let’s go over what we learned…',
-        content: '<div class="bloc1"><ol><li>Gitcoin\'s journey from 1.0 to 2.0 represents a leap towards modular systems and diverse mechanisms in the decentralized funding industry.</li><li>QF emerged as a pivotal funding mechanism, facilitating the distribution of $60M and counting to public goods in the Ethereum ecosystem.</li><li>Gitcoin 2.0 includes Direct Grants, Retroactive Public Goods Funding, and operates across multiple EVM-based networks.</li><li>Onchain capital allocation offers transparency, efficiency, and democratization, challenging traditional gatekeeping and scalability issues.</li><li>Grants are a catalyst for growth in web3, underpinning community engagement, builder retention, and positive-sum outcomes.</li><li>Gitcoin\'s delivers decentralization at the protocol and application layer, with Grants Stack and Allo respectively, providing a modular framework for capital allocation.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-whitepaper/lets-go-over-what-we-learned-a902dc9c.png\'></div>'
+        content: '<div class="bloc1"><ol><li>Gitcoin\'s journey from 1.0 to 2.0 represents a leap towards modular systems and diverse mechanisms in the <strong>decentralized funding</strong><strong> </strong>industry.</li><li>QF emerged as a pivotal mechanism, facilitating distribution of <strong>+$60M to public goods</strong> in the Ethereum ecosystem.</li><li>Gitcoin 2.0 includes Direct Grants, Retroactive Public Goods Funding, and operates across multiple EVM-based networks.</li><li>Onchain capital allocation offers <strong>transparency, efficiency, and democratization</strong>, challenging traditional gatekeeping and scalability issues.</li><li>Grants are a <strong>catalyst for growth</strong> in web3, underpinning community engagement, builder retention, and positive-sum outcomes.</li><li>Gitcoin\'s <strong>delivers decentralization</strong> at the protocol and app layer, with Grants Stack and Allo respectively, providing a modular framework for capital allocation.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/lets-go-over-what-we-learned-a902dc9c.png\'></div>'
       },
       {
-        type: 'LEARN',
-        notionId: '897913a3164e4d2b8be0685fe6ebcc27',
-        title: 'Lesson Quest',
-        content: '<div class="bloc1"><p>Click <a href=\'https://twitter.com/intent/post?text=I%27ve%20just%20read%20the%20Gitcoin%202.0%20Whitepaper%20on%20%40BanklessAcademy%20%F0%9F%8E%89%0A%0AJoin%20the%20journey%20and%20level%20up%20your%20knowledge%20about%20%40gitcoin%0A&url=https%3A%2F%2Fapp.banklessacademy.com%2Flessons%2Fgitcoin-2.0-whitepaper\'>here</a> to tweet that you have taken the Gitcoin 2.0 Whitepaper lesson.</p><p>TODO, code the following quest:</p><ul><li>add an input field to paste the tweet</li><li>add a verify button</li></ul></div>'
+        type: 'QUEST',
+        title: 'Gitcoin 2.0 Essentials Quest',
+        component: 'Gitcoin20Essentials'
       }
     ]
   }
