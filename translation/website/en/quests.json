@@ -22,13 +22,6 @@
     "Refresh": "Refresh",
     "Read Entry": "Read Entry"
   },
-  "SocialSharing": {
-    "Share the following message on your favorite social platform.": "Share the following message on your favorite social platform.",
-    "Share on Twitter / X": "Share on Twitter / X",
-    "Share on Farcaster": "Share on Farcaster",
-    "Paste the message link to verify.": "Paste the message link to verify.",
-    "Link": "Link"
-  },
   "WalletBasics": {
     "1. Download and install the Zerion wallet from ": "1. Download and install the Zerion wallet from ",
     "If you already have a wallet, move to step 2.": "If you already have a wallet, move to step 2.",
