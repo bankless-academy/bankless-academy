@@ -94,7 +94,7 @@ Dijital çağa geçişle birlikte, elektronik para birimi büyük ölçüde fizi
 
 Mevcut finansal sistemimizin sorunu, paramız üzerinde kontrolümüzün olmaması ve bu kontrol eksikliğinin, neyi biriktirip neyi harcayacağımıza özgürce karar verme kabiliyetimizi azaltmasıdır.
 
-Ülkelerin `para politikası`nı yöneten banka olan `merkez bankaları` herhangi bir miktarda yeni para çıkarabilir. `Kıtlık` olmaması, genellikle paramızın yıllar içinde daha az değerli hale gelmesine sebep olur. Öngörülemeyen, azalan bir değere sahip olan para genellikle bizi onu harcamaya zorlar: **"Param her yıl daha az değerli olacaksa neden biriktireyim ki? Şimdi de harcayabilirim."** 💸
+Ülkelerde `para politikası` yönetimini üstlenen `merkez bankaları` herhangi bir miktarda yeni para çıkarabilir. `Kıtlık` olmaması, genellikle paramızın yıllar içinde daha az değerli hale gelmesine sebep olur. Öngörülemeyen, azalan bir değere sahip olan para genellikle bizi onu harcamaya zorlar: **"Param her yıl daha az değerli olacaksa neden biriktireyim ki? Şimdi de harcayabilirim."** 💸
 
 Günlük birikim ve harcamalar için kullanılan `ticari bankalar` da harcama alışkanlıklarımızı etkiler. Birer `emanetçi` olan bu bankalar, işlemleri engelleyebilir veya fonlarımıza el koyabilir. Bazı bankalar, müşterilerinin kripto para satın almasını engeller! **Bankanız istediği zaman birikimlerinizi dondurabiliyorsa… paranızın gerçek sahibi siz misiniz?** 💸
 
@@ -113,9 +113,9 @@ Yalnızca bu nitelikler, paramızı özgürce biriktirme ve harcama kabiliyetimi
 
 Ve Bitcoin (`BTC`) geldi: Geleneksel bankacılık sisteminin ötesinde işleyen bir dijital para birimi.
 
-- ⛓️ `Eşler arası` çalışır: İnsanları doğrudan birbirlerine bağlar. `Blok zinciri teknolojisiyle` otomatik hale getirilen bu sistem, varlık saklamanın veya işlem yapmanın kurumlarca kolaylaştırılması yönündeki ihtiyacı ortadan kaldırıyor. Savunucuları ona “yöneticisi olmayan kurallar bütünü” diyor.
-- 💎 Arzı `kıttır`: Sınırsız miktarda yeni para çıkaran bir merkez bankası bulunmayan Bitcoin, uzun vadeli birikimin karşılığını veren istikrarlı, öngörülebilir bir para politikasına sahiptir.
-- ✊ `Gözetimsizdir`: Transfer veya saklama işlemlerini yöneten kurumlar olmadan onu elinizde tutabilirsiniz. Doğal haliyle saklandığında Bitcoin, güvenli bir çevrimiçi kasada tutulur ve yalnızca sahibi ona erişebilir.
+- ⛓️ `Eşler arası` çalışır: İnsanları doğrudan birbirlerine bağlar. `Blok zinciri teknolojisi` ile otomatik hale getirilen bu sistem, varlık saklamanın veya işlem yapmanın kurumlarca kolaylaştırılması yönündeki ihtiyacı ortadan kaldırıyor. Savunucuları ona “yöneticisi olmayan kurallar bütünü” diyor.
+- 💎 `Kıt` arza sahiptir: Sınırsız miktarda yeni para çıkaran bir merkez bankası bulunmayan Bitcoin, uzun vadeli birikimin karşılığını veren istikrarlı, öngörülebilir bir para politikasına sahiptir.
+- ✊ `Gözetimsiz` kullanılabilir: Transfer veya saklama işlemlerini yöneten kurumlar olmadan onu elinizde tutabilirsiniz. Doğal haliyle saklandığında Bitcoin, güvenli bir çevrimiçi kasada tutulur ve yalnızca sahibi ona erişebilir.
 
 Bitcoin sahip olduğu nitelikler nedeniyle “dijital altın” lakabını almıştır.
 
@@ -129,7 +129,7 @@ Bitcoin sahip olduğu nitelikler nedeniyle “dijital altın” lakabını almı
 
 Bitcoin'de kıtlık, toplamda kaç adet Bitcoin'in var olabileceğine dair bir üst sınır olduğunu ifade eder ve Bitcoin için bu sınır, 21 milyondur. Bitcoin'in koduna dahil edilmiş olan bu `maksimum arz`, Bitcoin'i nadir ve potansiyel olarak değerli kılar. Tıpkı altın gibi uzun vadeli bir değer saklama aracı olarak iyi bir konuma getirir.
 
-Maksimum `BTC` arzı 21 milyonu geçemez ve piyasaya düzenli aralıklarla yeni para birimi eklenir. Altın madenciliğinde olduğu gibi, yeni Bitcoin de `kripto para madenciliği` adı verilen zahmetli bir süreçle çıkarılır. `Dolaşımdaki arzda` oluşan bu öngörülebilir artış, Bitcoin ekonomisini aktif tutar.
+Maksimum `BTC` arzı 21 milyonu geçemez ve piyasaya düzenli aralıklarla yeni para birimi eklenir. Altın madenciliğinde olduğu gibi, yeni Bitcoin de `kripto para madenciliği` adı verilen zahmetli bir süreçle çıkarılır. `Dolaşımdaki arz`da oluşan bu öngörülebilir artış, Bitcoin ekonomisini aktif tutar.
 
 Bitcoin'in sabit `para politikası`, uzun vadede değer korumayı tercih edenler için onu cazip bir varlık haline getirerek artan maliyetlere yetişmelerini sağlar.
 
@@ -159,7 +159,7 @@ Demokrasilerde mülkiyet, korunan bir insan hakkıdır çünkü vatandaşlara, y
 
 Varlıklarımız (yani paramız, mülkümüz ve hatta kimliğimiz) giderek dijitalleştikçe yaşamımız, korumayı öğrenmemiz gereken dijital bir nitelik kazanıyor.
 
-Bitcoin'in `gözetimsizliği`, `emanetçilerin` ulaşamayacağı gerçek bir dijital mülkiyet sunar. Hesap bilgilerinizi başka biriyle paylaşmadığınız sürece, varlıklarınıza erişim hakkı yalnızca size aittir. Bu, güvenli bir çevrimiçi alanda kendi altın kasanızın olmasına benzer.
+Bitcoin'in `gözetimsiz` olması, `emanetçiler` tarafından ulaşılamayan gerçek bir dijital mülkiyet sağlar. Hesap bilgilerinizi başka biriyle paylaşmadığınız sürece, varlıklarınıza erişim hakkı yalnızca size aittir. Bu, güvenli bir çevrimiçi alanda kendi altın kasanızın olmasına benzer.
 
 Bu mülkiyet sistemi, dijital servetinizin tam kontrolünü dünyanın her yerinde, her zaman size verir.
 
@@ -230,13 +230,13 @@ Bu savunma stratejisine `merkeziyetsizlik` adı verilir: Kontrolün tek bir merk
 
 # Bitcoin Madenciliği
 
-Bitcoin Ağının merkez bankası olmadığından ağ, `merkeziyetsiz` katılımcılarına güvenir. `Madenciler` olarak bilinen bu katılımcılar, işlemleri sürekli kontrol eder ve bir “veri tabanı” olan `blok zincirine` ekler.
+Bitcoin Ağının merkez bankası olmadığından ağ, `merkeziyetsiz` katılımcılarına güvenir. `Madenciler` olarak bilinen bu katılımcılar, işlemleri sürekli kontrol eder ve bir “veri tabanı” olan `blok zinciri`ne ekler.
 
 Ağın dolandırıcılığa karşı korunması için bu madencilerin aktif ve dürüst olmaya motive edilmesi önemlidir. Madenciler genellikle birbirlerinin sonuçlarını iki kez kontrol eder ama yaptıkları iş için de ödüllendirilir. Bitcoin işlemleri yaptığımızda, işlemimizin madencisine giden küçük bir ücret öderiz. Madenciler ayrıca çalışmaları karşılığında “blok ödülleri” olarak bilinen yeni Bitcoin'ler de kazanır.
 
-Bu ödüller, Bitcoin'in `dolaşımdaki arzını`, 21 milyon `BTC`'lik `maksimum arz` üst sınırı dahilinde yavaş yavaş artırır.
+Bu ödüller, Bitcoin'in `dolaşımdaki arz`ını, 21 milyon `BTC`'lik `maksimum arz` üst sınırı dahilinde yavaş yavaş artırır.
 
-Bitcoin'i geleneksel para birimlerinden ayıran şey, yeni coinlerin piyasaya yavaş ve öngörülebilir olarak sürülmesidir. Her şey, `merkez bankasındaki` küçük insan grupları yerine, topluluk tarafından onaylanmış bilgisayar kodu (“yöneticisi olmayan kurallar”) ve merkeziyetsiz katılımcılar tarafından yönetilir.
+Bitcoin'i geleneksel para birimlerinden ayıran şey, yeni coinlerin piyasaya yavaş ve öngörülebilir olarak sürülmesidir. Her şey, `merkez bankası` personelinden oluşan küçük insan grupları yerine, topluluk tarafından onaylanmış bilgisayar kodu (“yöneticisi olmayan kurallar”) ve merkeziyetsiz katılımcılar tarafından yönetilir.
 
 ![](https://app.banklessacademy.com/images/bitcoin-basics/bitcoin-mining-9b8a77ea.svg)
 
@@ -246,7 +246,7 @@ Bitcoin işlemlerine ve madenciliğine güç veren mekanizmaları tam olarak anl
 
 Bugün, süreci basitleştirilmiş bir şekilde ele alacağız:
 
-1. `Kripto para cüzdanınızı` kullanıp arkadaşınızın cüzdan adresine 0,1 `BTC` göndererek bir işlem gerçekleştiriyorsunuz.
+1. Oluşturduğunuz `kripto para cüzdanı` ile arkadaşınızın cüzdan adresine 0,1 `BTC` göndererek bir işlem gerçekleştiriyorsunuz.
 2. Bir madenci işleminizde hata olup olmadığını kontrol ediyor. Diğer madenciler, sonuçlarını iki kez kontrol ediyor.
 3. Onaylanırsa işleminiz, `blok zinciri` “veri tabanına” ekleniyor.
 4. Arkadaşınız da cüzdanına 0,1 BTC alıyor.
@@ -291,7 +291,7 @@ Bu derste Bitcoin'in kıtlığının, değerini korumasına yardımcı olduğunu
 
 Ancak Bitcoin basit bir parasal aracın ötesine geçti. `Merkeziyetsiz para` devrimi için bir katalizör haline geldi. Bu hareket, parasal gücü ve kontrolü onu kullananlara dağıtarak geleneksel finansal sistemini yeniden tasarlıyor.
 
-İşte parayı merkeziyetsiz hale getirerek ve `emanetçi` ihtiyacını ortadan kaldırarak yapabileceklerimiz:
+İşte parayı merkeziyetsiz hale getirerek, `emanetçiler` kullanmadan yapabileceklerimiz:
 
 - 💵 Dünyanın dört bir yanındaki vatandaşlar tarafından güvence altına alınan, 7/24 çevrimiçi bir küresel pazara ev sahipliği yapmak.
 - 🛠️ Dünyanın bankasız bölgelerine finansal araçlar sunmak.
@@ -314,7 +314,7 @@ Yeni para çağı, dünyanın dört bir yanındaki vatandaşların günlük yaş
 
 💰 Gönderilecek Bitcoin miktarı.
 
-Ayrıca `madencilere` verilen bir işlem ücreti de olacak.
+Ayrıca `madenciler` de bir işlem ücreti kazanacak.
 
 Tüm ayrıntıların doğru olduğundan emin olun.
 Bir Bitcoin işlemi onaylandıktan sonra bunu geri alamazsınız.
