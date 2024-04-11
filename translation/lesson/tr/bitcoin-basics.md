@@ -33,7 +33,7 @@ Merhaba cesur Kaşifler, dijital inovasyonun sınırına hoş geldiniz.
 
 Bankless Academy'de misyonumuz, sizin gibi Kaşiflere blok zinciri evreninde gezinmek ve "bankasızlaşmak" için en iyi araçları ve bilgileri sağlamak!
 
-Bugün, her şeyi başlatan `kripto para birimini` inceliyoruz: Bitcoin.
+Bugün, her şeyi başlatan `kripto para birimi` Bitcoin'u inceliyoruz.
 
 Bitcoin, yeni bir para türüdür. Kullanıcılarının finansal özgürlüğünü artırır ve zor kazandıkları paralarını, zaman içinde oluşacak değer kaybına karşı korur.
 
@@ -94,7 +94,7 @@ Dijital çağa geçişle birlikte, elektronik para birimi büyük ölçüde fizi
 
 Mevcut finansal sistemimizin sorunu, paramız üzerinde kontrolümüzün olmaması ve bu kontrol eksikliğinin, neyi biriktirip neyi harcayacağımıza özgürce karar verme kabiliyetimizi azaltmasıdır.
 
-Ülkelerin `para politikasını` yöneten banka olan `merkez bankaları` herhangi bir miktarda yeni para çıkarabilir. `Kıtlık` olmaması, genellikle paramızın yıllar içinde daha az değerli hale gelmesine sebep olur. Öngörülemeyen, azalan bir değere sahip olan para genellikle bizi onu harcamaya zorlar: **"Param her yıl daha az değerli olacaksa neden biriktireyim ki? Şimdi de harcayabilirim."** 💸
+Ülkelerin `para politikası`nı yöneten banka olan `merkez bankaları` herhangi bir miktarda yeni para çıkarabilir. `Kıtlık` olmaması, genellikle paramızın yıllar içinde daha az değerli hale gelmesine sebep olur. Öngörülemeyen, azalan bir değere sahip olan para genellikle bizi onu harcamaya zorlar: **"Param her yıl daha az değerli olacaksa neden biriktireyim ki? Şimdi de harcayabilirim."** 💸
 
 Günlük birikim ve harcamalar için kullanılan `ticari bankalar` da harcama alışkanlıklarımızı etkiler. Birer `emanetçi` olan bu bankalar, işlemleri engelleyebilir veya fonlarımıza el koyabilir. Bazı bankalar, müşterilerinin kripto para satın almasını engeller! **Bankanız istediği zaman birikimlerinizi dondurabiliyorsa… paranızın gerçek sahibi siz misiniz?** 💸
 
