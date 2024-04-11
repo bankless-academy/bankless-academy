@@ -22,11 +22,17 @@
     "Refresh": "Refresh",
     "Read Entry": "Read Entry"
   },
+  "SocialSharing": {
+    "Share the following message on your favorite social platform.": "Share the following message on your favorite social platform.",
+    "Share on Twitter / X": "Share on Twitter / X",
+    "Share on Farcaster": "Share on Farcaster",
+    "Paste the message link to verify.": "Paste the message link to verify.",
+    "Link": "Link"
+  },
   "WalletBasics": {
-    "How to setup a MetaMask wallet": "How to setup a MetaMask wallet",
-    "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.": "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.",
-    "Download the browser extension from the official website:": "Download the browser extension from the official website:",
-    "Congrats for connecting your wallet! 👏🙂": "Congrats for connecting your wallet! 👏🙂",
-    "Waiting to detect your wallet ...": "Waiting to detect your wallet ..."
+    "1. Download and install the Zerion wallet from ": "1. Download and install the Zerion wallet from ",
+    "If you already have a wallet, move to step 2.": "If you already have a wallet, move to step 2.",
+    "2. Connect your wallet to Bankless Academy": "2. Connect your wallet to Bankless Academy",
+    "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest."
   }
 }
