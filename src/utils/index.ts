@@ -314,6 +314,8 @@ export async function validateOnchainQuest(
       console.log('arbitrumBalance: ', arbitrumBalance)
       const optimismBalance = await getTokenBalance(AlchemyNetwork.OPT_MAINNET, address, ['0x9bcef72be871e61ed4fbbc7630889bee758eb81d'])
       console.log('optimismBalance: ', optimismBalance)
+      const polygonBalance = await getTokenBalance(AlchemyNetwork.MATIC_MAINNET, address, ['0x0266f4f08d82372cf0fcbccc0ff74309089c74d1'])
+      console.log('polygonBalance: ', polygonBalance)
       const query = gql`
       query MyQuery {
         Ethereum: TokenBalances(
@@ -330,18 +332,11 @@ export async function validateOnchainQuest(
             formattedAmount
           }
         }
-        Polygon: TokenBalances(
-          input: {filter: {owner: {_eq: "${address}"}, tokenAddress: {_eq: "0x0266f4f08d82372cf0fcbccc0ff74309089c74d1"}, tokenType: {_eq: ERC20}}, blockchain: polygon, limit: 50}
-        ) {
-          TokenBalance {
-            formattedAmount
-          }
-        }
       }`
       try {
         const data = await graphQLClient.request(query)
         const networks = Object.keys(data)
-        let balance = arbitrumBalance + optimismBalance
+        let balance = arbitrumBalance + optimismBalance + polygonBalance
         for (const network of networks) {
           if (data[network].TokenBalance !== null) {
             const networkTokenBalance = data[network].TokenBalance[0].formattedAmount
