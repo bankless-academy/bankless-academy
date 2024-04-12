@@ -3386,13 +3386,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '060ee68d743d4850942271999566a5df',
         title: 'Our role in the Ethereum ecosystem',
-        content: '<div class="bloc1"><p>As of January 2024, Gitcoin has run <strong>19 grant rounds</strong>, disbursing funds to open source software (OSS) teams, averaging nearly one major round per quarter.</p><p>Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone for the open source Ethereum community.</p><p>Prior to GG20, <strong>Gitcoin distributed $8.4M to ~2500 applicants</strong> through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/our-role-in-the-ethereum-ecosystem-fe71e17f.png\'></div>'
+        content: '<div class="bloc1"><p>As of January 2024, Gitcoin has run <strong>19 grant rounds</strong>, disbursing funds to open source software (OSS) teams, averaging nearly one major round per quarter.</p><p>Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone for the open source Ethereum community.</p><p>Prior to GG20, as referenced by the <a href=\'/e578499f17dc4253ba409591c005b795?pvs=25\'>Open Source Observer Impact Analysis</a>, <strong>Gitcoin distributed $8.4M to ~2500 applicants</strong> through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/our-role-in-the-ethereum-ecosystem-fe71e17f.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'c71d220061584a79a004d40bee450bb9',
         title: '…and there’s more!',
-        content: '<div class="bloc1"><p>Gitcoin\'s dynamics most often reward projects that <strong>play the long game</strong> — that is, projects that appear consistently throughout grants rounds, making connections and building a following.</p><p>A large part of Gitcoin\'s project base comes from the <strong>open source community</strong>, with developer activity of 50 OSS projects associated with at least five GG rounds receiving a total of $9.4M.</p><p>A notable finding is the <strong>correlation between GG rounds and developer growth</strong>. Overall, we see that there has been $135K in grant funding allocated per full-time developer.</p><p>In other words, for every $1M that has been paid out in grants since 2019, there are 7.4 full-time developers who are still around today. If we factor in the crowdfund multiplier of 0.75, then every $1M put into the matching pool correlates to 13 retained full-time developers.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/and-theres-more-5525393b.png\'></div>'
+        content: '<div class="bloc1"><p>Gitcoin\'s dynamics most often reward projects that <strong>play the long game</strong> — that is, projects that appear consistently throughout grants rounds, making connections and building a following.</p><p>A large part of Gitcoin\'s project base comes from the <strong>open source community</strong>, with developer activity of 50 OSS projects associated with at least five GG rounds receiving a total of $9.4M.</p><p>A notable finding is the <strong>correlation between GG rounds and developer growth</strong>. Overall, we see that there has been $135K in grant funding allocated per full-time developer.</p><p>In other words, for every $1M that has been paid out in grants since 2019, there are 7.4 full-time developers who are still around today.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/and-theres-more-5525393b.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -3427,7 +3427,7 @@ const LESSONS: LessonType[] = [
         notionId: '64916dce80644ad7878cb730144d36c1',
         title: 'Knowledge Check',
         quiz: {
-          question: 'What was the initial focus of Gitcoin, before it transitioned to its 2.0 stage?',
+          question: 'What was Gitcoin focused on before 2.0?',
           rightAnswerNumber: 4,
           answers: [
             'Hackathon platform',
@@ -3448,7 +3448,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '058259e6f2724af1b207c36b26abfe5f',
         title: 'The Impact of Capital Allocation',
-        content: '<div class="bloc1"><p>The internet has introduced the ability to communicate at an incredible speed and scale.</p><p>Blockchains have created a transparent ledger to report on activities and create <strong>accountability </strong>through easy <strong>data availability</strong> and the <strong>immutability</strong> of onchain actions. Gitcoin harnesses the positive attributes of both to address the following capital allocation issues:</p><ol><li><strong>Gatekeeping</strong>: using small groups of decision makers, who may otherwise become power brokers and are unwilling or unable to be democratic.</li><li><strong>Not Scalable</strong>: taking advantage of the primitives the internet (easy access, direct to consumer interfaces) and Ethereum (credible neutrality, composability, transparency, democratic decision making, censorship resistance) have to offer.</li><li><strong>Not Precise:</strong> by programmatically managing large amounts of information at scale, enabling high resolution capital allocation.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/the-impact-of-capital-allocation-1c17e0b8.png\'></div>'
+        content: '<div class="bloc1"><p>Gitcoin harnesses the positive attributes of high speed internet and immutable blockchain tech to address the following capital allocation issues:</p><ol><li><strong>Gatekeeping</strong>: using small groups of decision makers, who may otherwise become power brokers and are unwilling or unable to be democratic.</li><li><strong>Not Scalable</strong>: taking advantage of the primitives the internet (easy access, direct to consumer interfaces) and Ethereum (credible neutrality, composability, transparency, democratic decision making, censorship resistance) have to offer.</li><li><strong>Not Precise:</strong> by programmatically managing large amounts of information at scale, enabling high resolution capital allocation.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/the-impact-of-capital-allocation-1c17e0b8.png\'></div>'
       },
       {
         type: 'LEARN',

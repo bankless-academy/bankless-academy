@@ -59,7 +59,7 @@ As of January 2024, Gitcoin has run **19 grant rounds**, disbursing funds to ope
 
 Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone for the open source Ethereum community.
 
-Prior to GG20, **Gitcoin distributed $8.4M to ~2500 applicants** through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.
+Prior to GG20, as referenced by the [Open Source Observer Impact Analysis](/e578499f17dc4253ba409591c005b795), **Gitcoin distributed $8.4M to ~2500 applicants** through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/our-role-in-the-ethereum-ecosystem-fe71e17f.png)
 
@@ -71,7 +71,7 @@ A large part of Gitcoin's project base comes from the **open source community**,
 
 A notable finding is the **correlation between GG rounds and developer growth**. Overall, we see that there has been $135K in grant funding allocated per full-time developer.
 
-In other words, for every $1M that has been paid out in grants since 2019, there are 7.4 full-time developers who are still around today. If we factor in the crowdfund multiplier of 0.75, then every $1M put into the matching pool correlates to 13 retained full-time developers.
+In other words, for every $1M that has been paid out in grants since 2019, there are 7.4 full-time developers who are still around today.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/and-theres-more-5525393b.png)
 
@@ -106,7 +106,7 @@ Gitcoin’s transformation breaks down as follows:
 
 # Knowledge Check 2
 
-What was the initial focus of Gitcoin, before it transitioned to its 2.0 stage?
+What was Gitcoin focused on before 2.0?
 
 - [ ] Hackathon platform
 
@@ -126,9 +126,7 @@ What was the initial focus of Gitcoin, before it transitioned to its 2.0 stage?
 
 # The Impact of Capital Allocation
 
-The internet has introduced the ability to communicate at an incredible speed and scale.
-
-Blockchains have created a transparent ledger to report on activities and create **accountability** through easy **data availability** and the **immutability** of onchain actions. Gitcoin harnesses the positive attributes of both to address the following capital allocation issues:
+Gitcoin harnesses the positive attributes of high speed internet and immutable blockchain tech to address the following capital allocation issues:
 
 1. **Gatekeeping**: using small groups of decision makers, who may otherwise become power brokers and are unwilling or unable to be democratic.
 2. **Not Scalable**: taking advantage of the primitives the internet (easy access, direct to consumer interfaces) and Ethereum (credible neutrality, composability, transparency, democratic decision making, censorship resistance) have to offer.
