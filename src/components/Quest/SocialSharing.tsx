@@ -17,6 +17,7 @@ import { theme } from 'theme/index'
 import { api, generateFarcasterLink, generateTwitterLink } from 'utils/index'
 import { useSmallScreen } from 'hooks'
 import ExternalLink from 'components/ExternalLink'
+import { LESSONS } from 'constants/index'
 
 const SocialSharing = (
   account: string,
@@ -68,12 +69,20 @@ const SocialSharing = (
 
   const farcasterLink = generateFarcasterLink(share, shareLink)
 
+  const lesson = LESSONS.find((lesson) => lesson.quest === quest)
+
+  if (!lesson)
+    return {
+      isQuestCompleted: false,
+      questComponent: <>missing handbook</>,
+    }
+
   return {
     isQuestCompleted: isQuestValidated === 'true',
     questComponent: (
       <>
         <Box display={isSmallScreen ? 'block' : 'flex'}>
-          <Box width="100%" maxW="550px">
+          <Box width="100%" maxW="650px">
             <Text mx="0 !important" fontSize="xl" fontWeight="bold">
               {
                 "Congratulations! You've reached the final step in this learning journey 🎓"
@@ -83,9 +92,7 @@ const SocialSharing = (
               {'Before claiming your onchain certification:'}
             </Text>
             <Text mx="0 !important" fontSize="xl">
-              {
-                '1. Share the following message on your favorite social platform.'
-              }
+              {`1. Spread the word about ${lesson.name} by sharing this lesson.`}
             </Text>
             <Box w="250px" m="auto">
               <Box pb="1">
