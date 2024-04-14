@@ -1,9 +1,9 @@
 ---
-TITLE: Wallet Basics
-DESCRIPTION: What is a crypto wallet? Learn more and create your first wallet today!
-LANGUAGE: English
+TITLE: Основи роботи з гаманцем
+DESCRIPTION: Що таке криптогаманець? Дізнайтеся більше та створіть свій перший гаманець вже сьогодні!
+LANGUAGE: Українська
 WRITERS: Ap0ll0517, Jordy, Tetranome
-TRANSLATORS: X
+TRANSLATORS: Romko. eth
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -27,15 +27,15 @@ ________________________________________________________________________________
 
 ---
 
-# Wallet Intro
+# Вступ до гаманця
 
-**Greetings Bankless Explorer!**
+**Вітаємо вас, Bankless дослідник!**
 
-It’s time to dive deeper on your journey into the blockchain multiverse. Every Explorer in this space eventually needs to create a crypto wallet.
+Настав час зануритися глибше у подорож до всесвіту блокчейну. Кожен дослідник у цьому просторі рано чи пізно повинен створити криптогаманець.
 
-Wallets are kind of like the accounts from the `web2` internet that you’re used to. You’ll use a wallet to log into the blockchain ecosystem, also known as `web3`, where you’ll be able to use `cryptocurrency` and connect to `blockchain apps`!
+Гаманці - це щось на кшталт акаунтів з `web2` інтернету, до яких ви звикли. Ви будете використовувати гаманець для входу в екосистему блокчейну, також відому як `web3`, де ви зможете використовувати `криптовалюту` і підключатися до `блокчейн-додатків`!
 
-In this lesson, we’ll introduce you to wallets, how they work, and how to keep your cryptocurrency secure. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
+У цьому уроці ми познайомимо вас з гаманцями, принципом їх роботи та способами захисту ваших криптовалют. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
