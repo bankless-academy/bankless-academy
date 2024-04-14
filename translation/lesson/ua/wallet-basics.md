@@ -39,309 +39,309 @@ ________________________________________________________________________________
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
-# Wallet Definition
+# Поняття гаманця
 
-What exactly is a crypto wallet?
+Що таке криптогаманець?
 
-The short definition is: an account on a `blockchain`, used to store digital assets and log into blockchain apps.
+Коротке пояснення: обліковий запис на ` блокчейні`, який використовується для зберігання цифрових активів і входу в блокчейн-додатки.
 
-It’s like having your own personal safe on the internet, and you hold the only key for unlocking it. At the same time, this safe is similar to a regular website account. You can use it to make purchases, send or receive `cryptocurrency`, and interact with a blockchain.
+Це як мати власний особистий сейф в інтернеті, і у вас є єдиний ключ для його відмикання. Водночас цей сейф схожий на звичайний обліковий запис на сайті. Ви можете використовувати його для здійснення покупок, надсилання або отримання `криптовалюти`, а також для взаємодії з блокчейном.
 
-However, unlike the `web2` accounts you’re used to, a single wallet can access an entire blockchain, and a large number of blockchain apps. It’s like having one account for the entire internet.
+Однак, на відміну від звичних вам акаунтів `веб2`, один гаманець може отримати доступ до всього блокчейну і великої кількості блокчейн-додатків. Це як мати один обліковий запис для всього інтернету.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
-# Is creating a wallet difficult?
+# Чи складно створити гаманець?
 
-It used to be difficult, but these days anyone can create a wallet quite easily.
+Раніше це було складно, але сьогодні будь-хто може створити гаманець досить легко.
 
-If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.
+Якщо ви вмієте завантажувати та встановлювати програмне забезпечення на комп'ютер (або додатки на телефон), то у вас не виникне проблем зі створенням першого гаманця.
 
-The trickier part of managing a wallet involves keeping it secure — which we’ll dive into shortly!
+Найскладніша частина управління гаманцем полягає в тому, щоб забезпечити його безпеку — і ми незабаром зануримося в цю тему!
 
-Choosing your `wallet app` may also feel intimidating. This is the app that you will install on your device to access your wallet on the blockchain. We recommend starting with the Zerion wallet app: it’s user friendly and has access to many popular blockchains. As you get more comfortable in the `web3` space, you will likely explore other providers and create multiple wallets.
+Вибір `додатку гаманця` також може здаватися страшним. Це додаток, який ви встановлюєте на свій пристрій для доступу до свого гаманця на блокчейні. Ми рекомендуємо почати з додатку гаманця Zerion: він зручний і має доступ до багатьох популярних блокчейнів. Коли ви відчуєте себе більш комфортно в просторі `веб3`, ви, ймовірно, вивчите інших провайдерів і створите кілька гаманців.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
 # Knowledge Check 1
 
-What is a wallet?
+Що таке гаманець?
 
-- [ ] A blockchain
+- [ ] Блокчейн
 
-> ℹ️ Try again! Your wallet is hosted on a blockchain.
+> Спробуйте ще раз! Ваш гаманець розміщений на блокчейні.
 
-- [ ] A cryptocurrency
+- [ ] Криптовалюта
 
-> ℹ️ Try again! Cryptocurrencies are something you hold in your wallet.
+> Спробуйте ще раз! Криптовалюта - це те, що ви тримаєте у своєму гаманці.
 
-- [ ] A digital collectible
+- [ ] Цифрова колекція
 
-> ℹ️ Try again! Digital collectibles are something you hold in your wallet.
+> Спробуйте ще раз! Цифрові предмети колекціонування — це те, що ви тримаєте в гаманці.
 
-- [ ] A blockchain account
+- [ ] Обліковий запис на блокчейні
 
-> ℹ️ Correct! Wallets are accounts used to interact with blockchains.
+> ℹ️ Правильно! Гаманці - це облікові записи, які використовуються для взаємодії з блокчейном.
 
-# Wallets & Password Recovery
+# Гаманці & Відновлення паролів
 
-Here is one of the most important things to understand about `web3` wallets: **There are no “password resets” or “password changes”.**
+Ось одна з найважливіших речей, яку слід розуміти про `веб3` гаманці: ** Не існує "скидання пароля" або "зміни пароля".**
 
-Most of us are used to these features. If we forget a password, we click a button, do a few things, and get a new password. Easy.
+Більшість з нас звикли до цих функцій. Якщо ми забули пароль, ми натискаємо кнопку, робимо кілька дій і отримуємо новий пароль. Легко.
 
-Not so with crypto wallets. Because of how blockchains work, wallets are assigned an “address” and a complex “password” when they’re created — and you do not choose these.
+З криптогаманцями все інакше. Через те, як працює блокчейн, гаманцям при створенні присвоюється "адреса" і складний "пароль" - і ви їх не обираєте.
 
-This address and password combination are impossible to change, although you can always create a new wallet if you need to. Let’s learn a bit more about these special addresses and passwords, so that we can feel confident using them!
+Цю адресу та комбінацію пароля неможливо змінити, хоча ви завжди можете створити новий гаманець, якщо вам це потрібно. Дізнаймось трохи більше про ці спеціальні адреси та паролі, щоб відчувати себе впевнено при їх використанні!
 
-# Your wallet’s public key
+# Публічний ключ вашого гаманця
 
-A `public key` is basically your wallet’s address. Often, this looks like a random series of letters and numbers.
+`публічний ключ` в основному є адресою вашого гаманця. Часто це виглядає як випадковий набір букв і цифр.
 
-Example: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
+Наприклад: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-It is possible to create easier to remember versions of this with some `web3` services, but that’s a lesson for another time.
+Можна створити простіші для запам'ятовування версії за допомогою деяких `веб3` сервісів, але це урок для іншого разу.
 
-You can also think of a public key like a house address. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.
+Ви також можете уявити собі публічний ключ як домашню адресу. Він публічний, його може побачити будь-хто, і він повідомляє іншим, куди вони можуть надіслати вам криптоактиви — не розкриваючи нічого особистого про вас.
 
-It is perfectly safe to share your wallet’s **public key**.
+Ділитися **публічним ключем** гаманця абсолютно безпечно.
 
-**Note:** A single wallet app can hold multiple public/`private key` pairs.
+**Примітка:** В одному додатку гаманця може бути декілька пар /`приватних ключів`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
-# Your wallet’s private key
+# Приватний ключ вашого гаманця
 
-If the public key is like a house address, then the `private key` is like the key to the front door. It’s the “password” to your funds and assets.
+Якщо публічний ключ — це як домашня адреса, то `приватний ключ` - як ключ від вхідних дверей. Це "пароль" до ваших коштів та активів.
 
-Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
+Приклад: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
-**It’s never safe to share this key — you could lose your wallet and everything in it.**
+**Ділитися цим ключем не безпечно — ви можете втратити гаманець і все, що в ньому знаходиться.**
 
-Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the `wallet`.
+Більшість людей рекомендують навіть не зберігати його в цифровому вигляді. Той, хто має доступ до приватного ключа, має доступ до будь-якої криптовалюти в `гаманці`.
 
-This is more than just a password. You cannot reset it if you lose access to it.
+Це більше, ніж просто пароль. Ви не зможете скинути його, якщо втратите доступ до нього.
 
-Luckily, most `blockchain apps` do not require you to type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.
+На щастя, більшість `блокчейн додатків` не вимагають від вас вводити довгий, складний рядок символів щоразу, коли вам потрібно відправити кошти або підписати блокчейн-транзакцію. Приватний ключ зазвичай працює у фоновому режимі.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
 # Knowledge Check 2
 
-Your public key is like your _____ and your private key is like your _____ .
+Ваш публічний ключ виглядає як _____ , а приватний ключ - як _____ .
 
-- [ ] Routing Number / Account Number
+- [ ] Номер маршруту / номер рахунку
 
-> ℹ️ Try again! Unlike a bank account number, your private key shouldn’t be shared with others.
+> ℹ️ Спробуйте ще раз! На відміну від номера банківського рахунку, ваш приватний ключ не можна передавати іншим особам.
 
-- [ ] Address / Zip code
+- [ ] Адреса / Поштовий індекс
 
-> ℹ️ Try again! Unlike a zip code, your private key shouldn’t be shared with others.
+> ℹ️ Спробуйте ще раз! На відміну від поштового індексу, ваш приватний ключ не можна передавати іншим особам.
 
-- [ ] House address / House key
+- [ ] Адреса будинку / ключ від будинку
 
-> ℹ️ Correct! Your public key allows others to find you, while only your private key lets you in.
+> ℹ️ Правильно! Ваш публічний ключ дозволяє іншим знайти вас, тоді як тільки ваш приватний ключ дозволяє вам увійти.
 
-- [ ] Phone Number / Passport Number
+- [ ] Номер телефону / номер паспорта
 
-> ℹ️ Try again! These are examples of public & private information, but they’re unrelated.
+> ℹ️ Спробуйте ще раз! Це приклади публічної та приватної інформації, але вони не пов'язані між собою.
 
-# Recovery Phrase
+# Фраза відновлення
 
-When you set up a new wallet, your wallet app will provide you with a `recovery phrase`.
+Коли ви створюєте новий гаманець, додаток вашого гаманця надасть вам `фразу відновлення`.
 
-Also called a “seed phrase” or “secret phrase”, this string of words can be used to access your wallet and crypto assets if:
+Цей рядок слів, який також називають "ключовою фразою" або "секретною фразою", може бути використаний для доступу до вашого гаманця і криптоактивів, якщо:
 
-- Your `wallet app` or device fails unexpectedly or is damaged.
-- Your device has been lost or stolen.
-- You want to access your wallet on multiple devices.
+- Ваш `крипто гаманець` або пристрій несподівано вийшов з ладу або був пошкоджений.
+- Ваш пристрій було загублено або викрадено.
+- Ви хочете отримати доступ до свого гаманця на декількох пристроях.
 
-Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. This data is used to generate both the `public key` and `private key` for your wallet.
+Більшість фраз для відновлення - це список з 12-24 слів, які представляють унікальний фрагмент даних. Ці дані використовуються для генерації `публічного ключа` та `приватного ключа` для вашого гаманця.
 
-Wallet recovery does **not** change or reset the keys.
+Відновлення гаманця **не** змінює і не скидає ключі.
 
-Your recovery phrase is essentially an easier to read version of your public/private key pair. **Never share your recovery phrase.**
+Ваша фраза відновлення — це, по суті, більш зручна для читання версія вашої пари публічного/приватного ключа. **Ніколи не діліться своєю фразою відновлення.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
 # Knowledge Check 3
 
-Can you access your wallet with a recovery phrase if your device gets damaged or lost?
+Чи можете ви отримати доступ до свого гаманця за допомогою фрази відновлення, якщо ваш пристрій буде пошкоджено або загублено?
 
-- [ ] No
+- [] Ні
 
-> ℹ️ Try again!
+> ℹ️ Спробуйте ще раз!
 
-- [ ] Yes
+- [] Так
 
-> ℹ️ Correct! Recovery phrases grant access to your wallet, even on multiple devices.
+> ℹ️ Правильно! Фрази відновлення надають доступ до вашого гаманця навіть на декількох пристроях.
 
-# Types of Wallet
+# Типи гаманців
 
-Just as there are many types of computer software, there many types of wallet. Let’s look at the four main categories:
+Так само, як існує багато типів комп'ютерного програмного забезпечення, існує багато типів гаманців. Розглянемо чотири основні категорії:
 
-- 🏦 **Custodial wallets:** where a third party is responsible for your private keys.
-- 👤 **Self-custody (non-custodial) wallets:** where you are responsible for your private keys.
+- **Кастодіальні гаманці:** коли третя сторона відповідає за ваші приватні ключі.
+- **Гаманці для самостійного зберігання:** ви несете відповідальність за свої приватні ключі.
 
-There are two styles of `self-custody wallet`:
+Існує два типи `гаманців для самозберігання`:
 
-- 🔥 **Hot wallets:** software on your desktop or phone.
-- 🧊 **Cold wallets:** a piece of hardware (like a memory stick) you store somewhere safe.
+- 🔥 **Гарячі гаманці:** програмне забезпечення на робочому столі або телефоні.
+- 🧊**Холодні гаманці:** апаратне забезпечення (наприклад, карта пам'яті), яке ви зберігаєте в безпечному місці.
 
-Each wallet solution serves a different use-case. Many advanced users have one of each!
+Кожне рішення для гаманців слугує для різних сценаріїв використання. Багато просунутих користувачів мають по одному з них!
 
-Don’t worry, we’ll only be creating one wallet today.
+Не хвилюйтеся, сьогодні ми створимо лише один гаманець.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
-# Custodial Wallets
+# Кастодіальні гаманці
 
-Since your `private key` unlocks access to your `wallet`, keeping it safe and secure is very important!
+Оскільки ваш `приватний ключ` розблоковує доступ до вашого `гаманця`, дуже важливо зберігати його в безпеці!
 
-`Custodial wallet` services include cryptocurrency exchanges such as Coinbase and Kraken. **They are your wallet custodian** — they look after your private keys for you. You access their services like any other website (with an email login and resettable password).
+Серед послуг `кастодіальних гаманців` - криптовалютні біржі, такі як Coinbase і Kraken. **Вони є хранителями вашого гаманця** - вони зберігають ваші приватні ключі для вас. Ви отримуєте доступ до їхніх послуг, як до будь-якого іншого веб-сайту (за допомогою логіна та пароля, який можна змінити).
 
-This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some `blockchain apps` may be limited.
+Це може бути все, що потрібно деяким людям, але для цього потрібно довіряти цим третім особам, щоб вони захистили ваші криптоактиви і надали вам доступ, коли ви захочете ними обмінятись або відправити їх кудись. Крім того, ваш доступ до деяких `блокчейн-додатків` може бути обмежений.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
 # Knowledge Check 4
 
-Do you control your private key with a custodial wallet?
+Чи контролюєте ви свій приватний ключ за допомогою кастодіального гаманця?
 
-- [ ] Yes
+- [] Так
 
-> ℹ️ Try again!
+> ℹ️ Спробуйте ще раз!
 
-- [ ] No
+- [] Ні
 
-> ℹ️ Correct! Custodial wallets require trust in a third party (custodian) to control your private keys.
+> ℹ️ Правильно! Кастодіальні гаманці вимагають довіри до третьої сторони (кастодіана) для контролю ваших приватних ключів.
 
-# Non-custodial Wallet
+# Не кастодіальний Гаманець
 
-A `self-custody wallet` (like Zerion or Trezor) is when you fully control your `private key`. You have **no custodian**, and you alone are responsible for keeping your private key safe.
+`Гаманець із самоконтролем` (наприклад, Zerion або Trezor) - це коли ви повністю контролюєте свій `приватний ключ`. У вас немає **зберігача**, і ви самі несете відповідальність за збереження вашого приватного ключа.
 
-These wallets offer the widest range of access and freedom within the world of `web3`. You never have to worry about a third party freezing or mishandling your funds.
+Ці гаманці пропонують найширший спектр доступу та свободи у світі `web3`. Вам ніколи не доведеться турбуватися про те, що третя сторона заморозить або неправильно розпорядиться вашими коштами.
 
-The trade-off is in risk: if you lose access to your `recovery phrase`, or your private key is compromised, there is often very little you can do to restore access to the wallet.
+Компроміс пов'язаний з ризиком: якщо ви втратите доступ до `фрази відновлення` або ваш приватний ключ буде скомпрометовано, часто ви мало що зможете зробити, щоб відновити доступ до гаманця.
 
-Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.
+Який би маршрут ви не обрали, варто знати про безпеку свого гаманця і бути впевненим у ньому. Ми дамо вам кілька порад перед тим, як ви завершите цей урок.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-833c3d6b.svg)
 
 # Knowledge Check 5
 
-Are you responsible for your private key with a self-custody wallet?
+Чи несете ви відповідальність за свій приватний ключ за допомогою гаманця для самостійного зберігання?
 
-- [ ] Yes
+- [] Так
 
-> ℹ️ Correct! With a self-custody wallet you are solely responsible for your private keys.
+> ℹ️ Правильно! З гаманцем для самостійного зберігання ви несете повну відповідальність за свої приватні ключі.
 
-- [ ] No
+- [] Ні
 
-> ℹ️ Try again!
+> ℹ️ Спробуйте ще раз!
 
-# Hot Wallets
+# Гарячі гаманці
 
-You will hear the terms “hot” and “cold wallet” quite a bit in `web3`.
+У `веб3` ви будете часто чути терміни "гарячий" і "холодний гаманець".
 
-A `hot wallet` is a wallet accessed via an app on your device — the Zerion app for example. Similar to many `web2` apps, a wallet app is consistently connected to the internet.
+`Гарячий гаманець` - це гаманець, доступ до якого здійснюється через додаток на вашому пристрої — наприклад, додаток Zerion. Як і багато інших `веб2-додатків`, додаток-гаманець постійно підключений до Інтернету.
 
-Your `private key` is encrypted and stored inside the wallet app, and is only accessed when you interact with the blockchain. These wallets are named ‘hot wallets’ for this “hot” connection between the internet and your private key.
+Ваш `приватний ключ` зашифрований і зберігається в додатку гаманця, і доступ до нього можна отримати лише під час взаємодії з блокчейном. Ці гаманці називаються "гарячими" за таке "гаряче" з'єднання між інтернетом і вашим приватним ключем.
 
-Hot wallets are convenient for small day-to-day interactions, much like a physical wallet you keep in your pocket. We’ll be creating a hot wallet today!
+Гарячі гаманці зручні для невеликих щоденних взаємодій, так само, як і фізичний гаманець, який ви тримаєте в кишені. Сьогодні ми будемо створювати гарячий гаманець!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-9356886d.svg)
 
-# Cold Wallets
+# Холодні гаманці
 
-As you dive deeper into your `web3` journey, you will come to know a landscape full of interesting tech trade-offs.
+Занурюючись у глибшу подорож з `веб3`, ви відкриєте для себе ландшафт, сповнений цікавих технологічних компромісів.
 
-`Cold wallets` grant higher security at the cost of convenience. A cold wallet is one where your `private key` is stored on a dedicated hardware device (like a memory stick or external hard drive). You must physically connect the hardware wallet to your computer to access your wallet on the blockchain. Your private key is never directly connected to the internet. Cold wallets are named after this “cold” internet connection.
+`Холодні гаманці` забезпечують вищий рівень безпеки за рахунок зручності. Холодний гаманець - це гаманець, в якому ваш `приватний ключ` зберігається на спеціальному апаратному пристрої (наприклад, карті пам'яті або зовнішньому жорсткому диску). Щоб отримати доступ до свого гаманця в блокчейні, ви повинні фізично підключити апаратний гаманець до комп'ютера. Ваш приватний ключ ніколи не підключений безпосередньо до інтернету. Холодні гаманці названі на честь цього "холодного" інтернет-з'єднання.
 
-They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline — out of reach of digital attackers.
+Вони вважаються більш безпечними, ніж `гарячі гаманці`, оскільки ваш `приватний ключ` зберігається в автономному режимі - поза зоною досяжності цифрових зловмисників.
 
-Ledger and Trezor are examples of `cold wallets`.
+Леджер і Трезор є прикладами `холодних гаманців`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-0e3183d1.svg)
 
 # Knowledge Check 6
 
-Which of the following wallet types is considered the most secure?
+Який з наведених нижче типів гаманців вважається найбезпечнішим?
 
-- [ ] All wallets are about the same
+- [ ] Всі гаманці приблизно однакові
 
-> ℹ️ Try again! There are various trade-offs for each wallet type, with level of security being one of them.
+> ℹ️ Спробуйте ще раз! Для кожного типу гаманців існують різні компроміси, одним з яких є рівень безпеки.
 
-- [ ] A hot wallet
+- [ ] Гарячий гаманець
 
-> ℹ️ Try again! A hot wallet has an active internet connection which makes it more susceptible to digital attack.
+> ℹ️ Спробуйте ще раз! Гарячий гаманець має активне інтернет-з'єднання, що робить його більш вразливим до цифрових атак.
 
-- [ ] A custodial wallet
+- [ ] кастодіальний гаманець
 
-> ℹ️ Try again! The third party holding the private keys can get hacked or go bankrupt.
+> ℹ️ Спробуйте ще раз! Третя сторона, яка володіє закритими ключами, може бути зламана або збанкрутувати.
 
-- [ ] A cold wallet
+- [ ] Холодний гаманець
 
-> ℹ️ Correct! Cold wallets aren’t actively connected to the internet, making them more attack-resistant.
+> ℹ️ Правильно! Холодні гаманці не мають активного підключення до інтернету, що робить їх більш стійкими до атак.
 
-# Wallet Security
+# Безпека гаманця
 
-Regardless if your `self-custody wallet` is hot or cold, there are many smart security practices you should develop.
+Незалежно від того, гарячий чи холодний ваш `гаманець для самозахисту`, є багато розумних практик безпеки, які вам слід розробити.
 
-🖊️ Record your `recovery phrase` on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your `private key` with anyone. **Remember, this is more than just a password.**
+🖊️ Запишіть свою `фразу відновлення` на фізичному, міцному матеріалі (наприклад, на ламінованому папері або навіть на сталі) і зберігайте її в надійному місці. Ніколи нікому не передавайте її або свій `приватний ключ`. **Пам'ятайте, що це більше, ніж просто пароль.**
 
-🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.
+🔍 Взаємодіючи з блокчейном або відправляючи кошти, навіть невеликі суми, дуже ретельно перевіряйте деталі. Неправильні дані не можуть бути змінені після взаємодії.
 
-🔭 Spend time researching and gathering info on any `blockchain apps` you plan to interact with before connecting your wallet to it or signing its transactions.
+🔭 Витратьте час на дослідження та збір інформації про будь-які `блокчейн додатки`, з якими ви плануєте взаємодіяти, перш ніж підключати до них свій гаманець або підписувати транзакції.
 
-💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).
+💰 Використовуйте гаманці з невеликими сумами коштів, щоб спробувати щось нове і вивчити web3, а також розгляньте можливість зберігання цінних активів на декількох гаманцях (тобто не кладіть всі свої криптовалюти в один кошик).
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
 
 # Knowledge Check 7
 
-What is the safest way to protect your recovery phrase?
+Який найбезпечніший спосіб захистити фразу відновлення?
 
-- [ ] Write it on a durable material and store it in a safe place.
+- [ ] Написати його на міцному матеріалі й зберігайте в безпечному місці.
 
-> ℹ️ Correct! A safely stored physical backup with no digital traces is the safest storage option.
+> ℹ️ Правильно! Надійно збережена фізична резервна копія без цифрових слідів - найбезпечніший варіант зберігання.
 
-- [ ] Save it on your computer and print it out.
+- [] Зберегти на своєму комп’ютері і роздрукувати його.
 
-> ℹ️ Try again! If your computer is hacked, your recovery phrase could be found. Printing also opens many attack opportunities.
+> ℹ️ Спробуйте ще раз! Якщо ваш комп'ютер зламано, ваша фраза для відновлення може бути знайдена. Друк також відкриває багато можливостей для атак.
 
-- [ ] Take a screenshot and save it on your phone.
+- [] Зробити скріншот і зберегти його на своєму телефоні.
 
-> ℹ️ Try again! If your phone is hacked, you could lose all assets in your wallet.
+> ℹ️ Спробуйте ще раз! Якщо ваш телефон зламають, ви можете втратити всі кошти у своєму гаманці.
 
-- [ ] Save it in your password manager.
+- [] Зберегти його у вашому менеджері паролів.
 
-> ℹ️ Try again! If your password manager is hacked, your recovery phrase could be leaked.
+> ℹ️ Спробуйте ще раз! Якщо ваш менеджер паролів зламано, ваша фраза для відновлення може бути витоком.
 
-# You’re ready to create your first wallet!
+# Ви готові створити свій перший гаманець!
 
-In fact, you’ll need one if you want to claim proof of completing this quest!
+Насправді, він вам знадобиться, якщо ви хочете отримати доказ про проходження цього квесту!
 
-There are several `self-custody`, `hot wallet` apps available today. We will explore the Zerion wallet for the rest of this lesson as:
+Сьогодні існує кілька додатків для `самоконтролю`, `гарячих гаманців`. Ми будемо вивчати гаманець Zerion протягом решти цього уроку як:
 
-- ⚙️ It’s compatible with most `blockchain apps`.
-- ⚡ The interface is incredibly smooth and easy to use.
-- 💻 It has a browser extension for Chrome, Brave, Edge, and Opera internet browsers.
-- 📱 It is also available as a mobile app for Android and iOS users.
-- 🗣️ Zerion supports a variety of languages.
+- ⚙️ Він сумісний з більшістю `блокчейн додатків`.
+- ⚡ Інтерфейс неймовірно плавний і простий у використанні.
+- 💻 Має розширення для інтернет-браузерів Chrome, Brave, Edge та Opera.
+- Він також доступний у вигляді мобільного додатку для користувачів Android та iOS.
+- 🗣️ Zerion підтримує різні мови.
 
-The end of the lesson is right around the corner, where we will share your instructions for setting up your wallet with Zerion!
+Кінець уроку вже не за горами, де ми поділимося інструкціями з налаштування вашого гаманця в Zerion!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg)
 
 # Knowledge Check 8
 
-Is Zerion a custodial wallet app?
+Чи є Zerion додатком для гаманця з опікою?
 
-- [ ] Yes
+- [] Так
 
-> ℹ️ Try again! Your Zerion wallet isn’t controlled by a custodian.
+> ℹ️ Спробуйте ще раз! Ваш гаманець Zerion не контролюється зберігачем.
 
-- [ ] No
+- [] Ні
 
-> ℹ️ Correct! Zerion wallets are self-custody wallets — controlled by you, and you alone.
+> ℹ️ Правильно! Гаманці Zerion - це гаманці самоконтролю, які контролюєте ви і тільки ви.
 
