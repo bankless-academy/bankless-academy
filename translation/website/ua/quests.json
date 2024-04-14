@@ -23,9 +23,9 @@
     "Read Entry": "Прочитати вступ"
   },
   "WalletBasics": {
-    "1. Download and install the Zerion wallet from ": "1. Download and install the Zerion wallet from ",
-    "If you already have a wallet, move to step 2.": "If you already have a wallet, move to step 2.",
-    "2. Connect your wallet to Bankless Academy": "2. Connect your wallet to Bankless Academy",
-    "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest."
+    "1. Download and install the Zerion wallet from ": "1. Завантажте та встановіть гаманець Zerion з ",
+    "If you already have a wallet, move to step 2.": "Якщо у вас вже є гаманець, переходьте до кроку 2.",
+    "2. Connect your wallet to Bankless Academy": "2. Підключіть свій гаманець до Bankless Academy",
+    "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Підказка: Покрокове проходження квесту можна знайти у нашому Посібнику дослідника у розділі  {{lesson_title}}."
   }
 }
