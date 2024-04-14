@@ -65,9 +65,9 @@
     "definition": "Тип гаманця для самообслуговування, який постійно підключений до інтернету."
   },
   "cold wallet": {
-    "keyword": "cold wallet",
-    "keyword_plural": "cold wallets",
-    "definition": "A type of self-custody wallet that is stored on offline hardware."
+    "keyword": "холодний гаманець",
+    "keyword_plural": "холодні гаманці",
+    "definition": "Тип гаманця для самостійного зберігання, який зберігається на автономному обладнанні."
   },
   "self-custody": {
     "keyword": "самозбережений",
