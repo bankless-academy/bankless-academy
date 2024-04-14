@@ -33,33 +33,33 @@ ________________________________________________________________________________
 
 ブロックチェーン・マルチバースへの旅をさらに深くする時が来た。 この分野のエクスプローラーは、最終的に暗号ウォレットを作成する必要がある。
 
-お財布は、みなさんが慣れ親しんでいる`ウェブ2`インターネットの口座のようなものです。 You’ll use a wallet to log into the blockchain ecosystem, also known as `web3`, where you’ll be able to use `cryptocurrency` and connect to `blockchain apps`!
+お財布は、みなさんが慣れ親しんでいる`ウェブ2`インターネットの口座のようなものです。 `暗号通貨を`使用したり、`ブロックチェーンアプリに`接続したりすることができる！
 
-In this lesson, we’ll introduce you to wallets, how they work, and how to keep your cryptocurrency secure. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
+このレッスンでは、ウォレットとその仕組み、そして暗号通貨を安全に保管する方法を紹介します。 最後に、**バンクレス・アカデミーの本拠地であるイーサリアム・ブロックチェーンへの**アクセス方法とセットアップ方法をご紹介します。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
-# Wallet Definition
+# 財布の定義
 
-What exactly is a crypto wallet?
+仮想通貨ウォレットとは
 
-The short definition is: an account on a `blockchain`, used to store digital assets and log into blockchain apps.
+簡単に定義すると、`ブロックチェーン`上のアカウントで、デジタル資産を保管したり、ブロックチェーンアプリにログインしたりするために使用される。
 
-It’s like having your own personal safe on the internet, and you hold the only key for unlocking it. At the same time, this safe is similar to a regular website account. You can use it to make purchases, send or receive `cryptocurrency`, and interact with a blockchain.
+インターネット上に自分専用の金庫があるようなもので、その鍵を開けるのは自分しかいない。 同時に、この金庫は通常のウェブサイトのアカウントに似ている。 購入や`暗号通貨の`送受信、ブロックチェーンとのやりとりに利用できる。
 
-However, unlike the `web2` accounts you’re used to, a single wallet can access an entire blockchain, and a large number of blockchain apps. It’s like having one account for the entire internet.
+しかし、皆さんが慣れ親しんでいる`ウェブ2`アカウントとは異なり、1つのウォレットでブロックチェーン全体、そして多数のブロックチェーンアプリにアクセスすることができる。 インターネット全体に1つのアカウントを持っているようなものだ。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
-# Is creating a wallet difficult?
+# 財布を作るのは難しいですか？
 
-It used to be difficult, but these days anyone can create a wallet quite easily.
+以前は難しかったが、最近では誰でも簡単に財布を作ることができる。
 
-If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.
+コンピューター（または携帯電話のアプリ）のソフトウェアのダウンロードとインストールに慣れているのであれば、最初の財布の作成に問題はないだろう。
 
-The trickier part of managing a wallet involves keeping it secure — which we’ll dive into shortly!
+財布の管理で難しいのは、財布の安全性を保つことだ！
 
-Choosing your `wallet app` may also feel intimidating. This is the app that you will install on your device to access your wallet on the blockchain. We recommend starting with the Zerion wallet app: it’s user friendly and has access to many popular blockchains. As you get more comfortable in the `web3` space, you will likely explore other providers and create multiple wallets.
+`お財布アプリを`選ぶのもおっくうに感じるかもしれない。 これは、ブロックチェーン上のウォレットにアクセスするためにデバイスにインストールするアプリです。 Zerionウォレット・アプリから始めることをお勧めする：使い勝手が良く、多くの人気ブロックチェーンにアクセスできる。 `web3`スペースに慣れてくると、他のプロバイダーを探したり、複数のウォレットを作成したりすることになるでしょう。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
