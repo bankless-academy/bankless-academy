@@ -1,7 +1,7 @@
 ---
-TITLE: Wallet Basics
-DESCRIPTION: What is a crypto wallet? Learn more and create your first wallet today!
-LANGUAGE: English
+TITLE: ウォレットの基礎
+DESCRIPTION: 仮想通貨ウォレットとは 詳細については、今すぐ最初の財布を作成してください！
+LANGUAGE: 英語
 WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
@@ -27,13 +27,13 @@ ________________________________________________________________________________
 
 ---
 
-# Wallet Intro
+# 財布の紹介
 
-**Greetings Bankless Explorer!**
+**バンクレス・エクスプローラーの皆様、こんにちは！**
 
-It’s time to dive deeper on your journey into the blockchain multiverse. Every Explorer in this space eventually needs to create a crypto wallet.
+ブロックチェーン・マルチバースへの旅をさらに深くする時が来た。 この分野のエクスプローラーは、最終的に暗号ウォレットを作成する必要がある。
 
-Wallets are kind of like the accounts from the `web2` internet that you’re used to. You’ll use a wallet to log into the blockchain ecosystem, also known as `web3`, where you’ll be able to use `cryptocurrency` and connect to `blockchain apps`!
+お財布は、みなさんが慣れ親しんでいる`ウェブ2`インターネットの口座のようなものです。 You’ll use a wallet to log into the blockchain ecosystem, also known as `web3`, where you’ll be able to use `cryptocurrency` and connect to `blockchain apps`!
 
 In this lesson, we’ll introduce you to wallets, how they work, and how to keep your cryptocurrency secure. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
 
