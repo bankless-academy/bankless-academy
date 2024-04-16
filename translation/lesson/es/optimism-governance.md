@@ -37,7 +37,7 @@ La visión de la tecnología `DAO` es agilizar la resolución de problemas y el 
 - Usando mecánicas de votación innovadoras, `delegación`, y `veto`.
 - Utilizando la tecnología blockchain para disminuir las posibilidades de error humano o secuestro.
 
-![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-fea84c8f.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/old-problems-new-tools-df0ceb84.svg)
 
 # Gobernanza de la Red
 
@@ -49,7 +49,7 @@ Como cualquier estado-nación tradicional con recursos y participantes, un DAO u
 
 🛠️ **Implementación:** La propuesta aprobada es aplicada a la red por varios desarrolladores vatizados si es necesario.
 
-![](https://app.banklessacademy.com/images/optimism-governance/network-governance-45b77eb1.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/network-governance-1f940de4.svg)
 
 # Knowledge Check 1
 
@@ -79,7 +79,7 @@ En esta lección, exploraremos cómo Optimism es pionero en la visión DAO. Apre
 
 Nuestra búsqueda se centrará en reclamar nuestros primeros derechos de voto, ¡así estaremos preparados para ayudar a construir el futuro de Ethereum y la coordinación humana!
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-af6d1031.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-optimism-network-3e75a5a7.svg)
 
 # La Visión Optimista
 
@@ -123,7 +123,7 @@ Muchos grandes proyectos de blockchain comienzan con un grupo centralizado. Esto
 
 Los controles y equilibrios legales, como la capacidad del Colectivo para destituir a los miembros de la Fundación, garantizan una transferencia lenta **de la propiedad de la red a la comunidad**.
 
-![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-aaa9b55d.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/progressive-decentralization-e6e00611.svg)
 
 # Knowledge Check 3
 
@@ -148,7 +148,7 @@ En el centro de economía`L2` de Optimism, está la **‘Optimistic Flywheel’*
 
 Con una infraestructura onchain más valiosa, aumenta la demanda de espacio de bloques Optimism, ¡y el ciclo continúa!
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-fd6cac83.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-new-economy-cd0a0ca1.svg)
 
 # Incentivización de Bienes Públicos
 
@@ -160,7 +160,7 @@ Como dijo Vitalik Buterin, _"Es más fácil ponerse de acuerdo sobre lo que fue 
 
 Este modelo de distribución se conoce como **"Retroactive Public Goods Funding"** (Financiamiento Retroactivo de Bienes Públicos), o **"RetroPGF"**. Este mecanismo de financiación incentiva a los pensadores optimistas a construir bienes públicos que estén al servicio de la humanidad. Nos libera de la mentalidad de extracción de valor de las economías capitalistas tradicionales.
 
-![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-b764ca38.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/incentivizing-public-goods-78035b95.svg)
 
 # El Fénix de Ether
 
@@ -170,7 +170,7 @@ _"Es un algoritmo que recompensa a los primeros contribuyentes que crearon las c
 
 — La Fundación Optimism
 
-![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-2b7210df.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/ethers-phoenix-f63f460c.svg)
 
 # Knowledge Check 4
 
@@ -202,7 +202,7 @@ El Colectivo Optimismo está formado por dos casas, cada una con responsabilidad
 
 Ambas cámaras mantienen el equilibrio de la red a través de sus funciones, mecanismos de votación y capacidad de `veto`. Echemos un vistazo más de cerca.
 
-![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-8f40dd30.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/introducing-the-governing-houses-bdcf1e8f.svg)
 
 # Knowledge Check 5
 
@@ -238,7 +238,7 @@ Para proteger la red, la Cámara de los Ciudadanos tiene derecho a `veto` cualqu
 
 La Cámara de Tokens también tiene capacidad para vetar cualquier propuesta presentada por la Casa de los Ciudadanos, o de la Fundación Optimism, que considere reducir los derechos de los poseedores de tokens.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-39ac02b5.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-token-house-7d73ce82.svg)
 
 # La Cámara de Tokens: Cómo unirse, votar, y delegar
 
@@ -261,7 +261,7 @@ La gobernanza de la red es sólo tan democrática como su `distribución de toke
 
 Revisa el [plan de distribución de OP](https://community.optimism.io/docs/governance/allocations/#allocations-at-a-glance) para ver cómo la Fundación Optimism ha asignado el poder inicial de gobernanza, al servicio de la representación equilibrada de los interesados.
 
-![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-5d723b29.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/a-note-on-token-distribution-cb74efa7.svg)
 
 # Knowledge Check 6
 
@@ -295,7 +295,7 @@ Sus funciones incluyen:
 
 La Cámara de los Ciudadanos también se asegura de que las propuestas de la Casa de Tokens estén alineadas con la misión, utilizando la mecánica de `veto` para renunciar a cambios no alineados en la red.
 
-![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-4c2b3821.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/the-citizens-house-aa93f52c.svg)
 
 # La Cámara de Ciudadanos: Cómo unirse, votar, y delegar
 
@@ -339,7 +339,7 @@ En Optimism, una temporada dura aproximadamente tres meses, seguida de un period
 
 Los ciclos de retroalimentación reflexiva y consciente construidos a través de Optimism son increíblemente importantes para encontrar las mejores prácticas para la gobernanza de la `DAO`.
 
-![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-a79f33e7.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/governance-seasons-4ebc291c.svg)
 
 # Ahora… ¡Piensa aún más en grande!
 
@@ -361,5 +361,5 @@ La misión de hoy es **unirse a la Cámara de Tokens y delegar nuestros tokens d
 
 Por ahora, la Cámara de los Ciudadanos aún desarrolla sus procedimientos de incorporación. Mientras tanto, podemos desde ya comenzar nuestro viaje Ciudadano participando en la conversación en los foros de la [comunidad Optimism](https://gov.optimism.io/).
 
-![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-c4ff6f41.svg)
+![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
 
