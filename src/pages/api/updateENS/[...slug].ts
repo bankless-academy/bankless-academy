@@ -70,9 +70,9 @@ export default async function handler(
 
     let avatar = null
     if (ensData?.avatar_small?.length > 0) {
-      if (await fileIsLoading(ensData.avatar_small)) {
+      if (await fileIsLoading(ensData.avatar_small) === true) {
         avatar = ensData.avatar_small
-      } else if (userExist.ens_avatar?.length > 0 && !await fileIsLoading(userExist.ens_avatar)) {
+      } else if (userExist.ens_avatar?.length > 0 && await fileIsLoading(userExist.ens_avatar) === false) {
         console.log('check if old link is loading')
         avatar = DEFAULT_AVATAR
       }
