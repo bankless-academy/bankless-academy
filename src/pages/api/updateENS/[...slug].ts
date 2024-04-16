@@ -29,7 +29,7 @@ export const fileIsLoading = async (resource) => {
   const response = await fetchWithTimeout(resource, { timeout: 2000 })
   const status = await response.status
   console.log(status)
-  return status === 200
+  return status ? status === 200 : false
 }
 
 export default async function handler(
@@ -62,9 +62,14 @@ export default async function handler(
   if (!userExist) res.status(200).json({ error: 'Profile not found.' })
 
   try {
-    const ensData = await fetch(`https://ensdata.net/${addressLowerCase}`).then(
-      (res) => res.json()
-    )
+    let ensData: any = {}
+    try {
+      ensData = await fetch(`https://ensdata.net/${addressLowerCase}`).then(
+        (res) => res.json()
+      )
+    } catch (error) {
+      console.log(error)
+    }
     const ensName = addressLowerCase === '0xb00e26e79352882391604e24b371a3f3c8658e8c' ? DEFAULT_ENS : ensData?.ens
     console.log('ensName', ensName)
 
@@ -101,6 +106,7 @@ export default async function handler(
     return res.status(200).json(data)
   } catch (error) {
     console.error(console.error())
+    res.status(500)
   }
 
 }
