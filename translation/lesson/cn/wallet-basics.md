@@ -1,9 +1,9 @@
 ---
-TITLE: Wallet Basics
-DESCRIPTION: What is a crypto wallet? Learn more and create your first wallet today!
-LANGUAGE: English
+TITLE: 钱包基础知识
+DESCRIPTION: 什么是加密货币钱包？ 了解更多信息，创建您的第一个加密货币钱包！
+LANGUAGE: 简体中文（Simplified Chinese）
 WRITERS: Ap0ll0517, Jordy, Tetranome
-TRANSLATORS: X
+TRANSLATORS: 183Aaros.eth
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -27,39 +27,39 @@ ________________________________________________________________________________
 
 ---
 
-# Wallet Intro
+# 钱包简介
 
-**Greetings Bankless Explorer!**
+**Bankless 探险家们，你们好**
 
-It’s time to dive deeper on your journey into the blockchain multiverse. Every Explorer in this space eventually needs to create a crypto wallet.
+是时候深入探索区块链的多元宇宙了。 本空间里的探索者们最终都将学会如何创建一个新的加密钱包。
 
-Wallets are kind of like the accounts from the `web2` internet that you’re used to. You’ll use a wallet to log into the blockchain ecosystem, also known as `web3`, where you’ll be able to use `cryptocurrency` and connect to `blockchain apps`!
+钱包有点类似于您之前熟悉的`Web2`的互联网账户。 使用加密钱包登录的区块链生态系统，也被称为`web3`，在这里您可以用`加密货币`链接至`区块链应用程序`！
 
-In this lesson, we’ll introduce you to wallets, how they work, and how to keep your cryptocurrency secure. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
+在这一课中，我们将向你介绍加密钱包及其工作原理，如何保护你的加密货币的安全。 最后，我们将向您介绍如何设置和访问**以太坊区块链 —— Bankless 学院的家园**。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
-# Wallet Definition
+# 钱包的定义
 
-What exactly is a crypto wallet?
+加密钱包究竟是什么？
 
-The short definition is: an account on a `blockchain`, used to store digital assets and log into blockchain apps.
+简短的定义是：`区块链`上的账户，用于存储数字资产和登录区块链应用程序。
 
-It’s like having your own personal safe on the internet, and you hold the only key for unlocking it. At the same time, this safe is similar to a regular website account. You can use it to make purchases, send or receive `cryptocurrency`, and interact with a blockchain.
+这就像你在互联网上拥有了自己的私人保险箱，而你掌握着打开保险箱的唯一钥匙。 与此同时，这个保险箱和普通网站的账户很相似。 您可以用它来购物、发送或接收`加密货币`，并与区块链进行交互。
 
-However, unlike the `web2` accounts you’re used to, a single wallet can access an entire blockchain, and a large number of blockchain apps. It’s like having one account for the entire internet.
+不过，与您习惯的`Web2`需要注册大量账户的情况不同，单个加密钱包就能访问整个区块链、绝大多数区块链应用程序。 这就像仅需一个账户就能畅行整个互联网一样。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
-# Is creating a wallet difficult?
+# 创建加密钱包很困难吗？
 
-It used to be difficult, but these days anyone can create a wallet quite easily.
+这在过去很困难，但现在任何人都可以轻松地创建新的加密钱包。
 
-If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.
+如果你对在电脑上下载和安装软件（或在手机上安装 APP）很在行，那么创建第一个加密钱包对你来说就是小菜一碟。
 
-The trickier part of managing a wallet involves keeping it secure — which we’ll dive into shortly!
+管理钱包最棘手的部分在于如何确保加密钱包的安全，我们将在下文中详细介绍！
 
-Choosing your `wallet app` may also feel intimidating. This is the app that you will install on your device to access your wallet on the blockchain. We recommend starting with the Zerion wallet app: it’s user friendly and has access to many popular blockchains. As you get more comfortable in the `web3` space, you will likely explore other providers and create multiple wallets.
+你的`钱包app`该具体用哪个呢？你一开始可能会感觉无从下手。 This is the app that you will install on your device to access your wallet on the blockchain. We recommend starting with the Zerion wallet app: it’s user friendly and has access to many popular blockchains. As you get more comfortable in the `web3` space, you will likely explore other providers and create multiple wallets.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
