@@ -1,9 +1,9 @@
 ---
 TITLE: Cüzdan ile İlgili Temel Bilgiler
-DESCRIPTION: What is a crypto wallet? Learn more and create your first wallet today!
+DESCRIPTION: Kripto para cüzdanı nedir? Ayrıntılı bilgi edinin ve bugün ilk cüzdanınızı oluşturun!
 LANGUAGE: Türkçe
 WRITERS: Ap0ll0517, Jordy, Tetranome
-TRANSLATORS: ilk
+TRANSLATORS: İlknur Beyaz
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -31,33 +31,33 @@ ________________________________________________________________________________
 
 **Greetings Bankless Explorer!**
 
-It’s time to dive deeper on your journey into the blockchain multiverse. Every Explorer in this space eventually needs to create a crypto wallet.
+Blok zinciri çoklu evrenine yolculuğunuzda daha derinlere dalmanın zamanı geldi. Bu ekosistemdeki her Kaşifin eninde sonunda bir kripto para cüzdanı oluşturması gerekir.
 
-Wallets are kind of like the accounts from the `web2` internet that you’re used to. You’ll use a wallet to log into the blockchain ecosystem, also known as `web3`, where you’ll be able to use `cryptocurrency` and connect to `blockchain apps`!
+Wallets are kind of like the accounts from the `web2` internet that you’re used to. `Web3` olarak da bilinen blok zinciri ekosistemine giriş yapmak için bir cüzdan oluşturacak, bu cüzdan ile `kripto para` kullanabilecek ve `blok zinciri uygulamaları`na bağlanabileceksiniz!
 
-In this lesson, we’ll introduce you to wallets, how they work, and how to keep your cryptocurrency secure. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
+Bu derste size cüzdanları, nasıl çalıştıklarını ve kripto paranızı nasıl güvende tutacağınızı anlatacağız. Nasıl cüzdan oluşturacağınıza ve **Bankless Academy'nin evi olan Ethereum blok zinciri**ne nasıl erişeceğinize dair bir kılavuzla dersi tamamlayacağız.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
 # Cüzdanın Tanımı
 
-What exactly is a crypto wallet?
+Kripto cüzdanı tam olarak nedir?
 
-The short definition is: an account on a `blockchain`, used to store digital assets and log into blockchain apps.
+Kısa tanımı şöyle yapabiliriz: Dijital varlıkları saklamak ve blok zinciri uygulamalarına giriş yapmak için kullanılan, `blok zinciri` üzerindeki bir hesap.
 
-It’s like having your own personal safe on the internet, and you hold the only key for unlocking it. At the same time, this safe is similar to a regular website account. You can use it to make purchases, send or receive `cryptocurrency`, and interact with a blockchain.
+Bu, internette kendinize ait şahsi kasanızın olması ve kilidini açan tek anahtarın sizde bulunmasına benziyor. Bu kasa, aynı zamanda, normal bir web sitesi hesabına da benzer. Onu alışveriş yapmak, `kripto para` göndermek veya almak ve bir blok zinciri ile etkileşim kurmak için kullanabilirsiniz.
 
-However, unlike the `web2` accounts you’re used to, a single wallet can access an entire blockchain, and a large number of blockchain apps. It’s like having one account for the entire internet.
+Ancak, alışkın olduğunuz `web2` hesaplarının aksine, tek bir cüzdan tüm blok zincirine ve çok sayıda blok zinciri uygulamasına erişebiliyor. Tüm internet için tek bir hesaba sahip olmak gibi.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
 # Cüzdan oluşturmak zor mu?
 
-It used to be difficult, but these days anyone can create a wallet quite easily.
+Önceden zordu ancak bugünlerde herkes oldukça kolay bir şekilde cüzdan oluşturabiliyor.
 
 Bilgisayarınıza yazılım (veya telefonunuza uygulama) indirme ve yükleme konusunda rahatsanız ilk cüzdanınızı oluştururken sorun yaşamazsınız.
 
-The trickier part of managing a wallet involves keeping it secure — which we’ll dive into shortly!
+Bir cüzdanı kontrol etmenin en zor kısmı onu güvende tutmaktır; bu konuya birazdan değineceğiz!
 
 Choosing your `wallet app` may also feel intimidating. This is the app that you will install on your device to access your wallet on the blockchain. We recommend starting with the Zerion wallet app: it’s user friendly and has access to many popular blockchains. As you get more comfortable in the `web3` space, you will likely explore other providers and create multiple wallets.
 
