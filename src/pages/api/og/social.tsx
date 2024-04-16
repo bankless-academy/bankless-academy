@@ -103,13 +103,13 @@ export default async function handler(req: NextApiRequest) {
   )
 
   console.log(ensData)
-  if (ensData.avatar_url?.includes('api.center.dev/v2')) {
+  if (ensData?.avatar_small?.length > 0) {
     // convert to v1 to return png instead of webp
-    const avatar = ensData.avatar_url
-      // .replace('api.center.dev/v2/', 'api.center.dev/v1/')
-      // .replace('/nft/', '/')
-      // .replace('/render/', '/')
-      .replace('render/medium', 'render/small.png')
+    const avatar = ensData.avatar_small
+    // .replace('api.center.dev/v2/', 'api.center.dev/v1/')
+    // .replace('/nft/', '/')
+    // .replace('/render/', '/')
+    // .replace('render/medium', 'render/small.png')
     // .split('?')
     console.log('avatar', avatar)
     user.avatar = avatar
