@@ -97,7 +97,7 @@
   "blockchain": {
     "keyword": "Blockchain",
     "keyword_plural": "Blockchains",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "Eine gemeinsame, unveränderliche Datenbank oder ein Register mit aufgezeichneten Transaktionen."
   },
   "blockchain apps": {
     "keyword": "blockchain apps",
@@ -277,7 +277,7 @@
   "decentralization": {
     "keyword": "Decentralization",
     "keyword_plural": "Decentralizations",
-    "definition": "The transfer of control to many individuals rather than one single authority."
+    "definition": "Principle that no single authority or entity should control the blockchain data."
   },
   "decentralized": {
     "keyword": "dezentralisiert",
@@ -717,7 +717,7 @@
   "recovery phrase": {
     "keyword": "recovery phrase",
     "keyword_plural": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key."
   },
   "red flag": {
     "keyword": "red flag",
