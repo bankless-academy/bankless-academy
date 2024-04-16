@@ -1,9 +1,9 @@
 ---
-TITLE: Creating a Crypto Wallet
-DESCRIPTION: Set up your first crypto wallet with our step-by-step walkthrough.
-LANGUAGE: English
+TITLE: Створення криптогаманця
+DESCRIPTION: Створіть свій перший криптогаманець за допомогою нашої покрокової інструкції.
+LANGUAGE: Українська
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: Romko. eth
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
@@ -27,90 +27,90 @@ ________________________________________________________________________________
 
 ---
 
-This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**
+This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Перегляньте [повний урок] (https://app.banklessacademy.com/lessons/wallet-basics), щоб \*\*підвищити свій рівень знань та отримати бейджик
 
 ---
 
-## Key Takeaways
+## Основні Деталі
 
-> - You’ll need a `crypto wallet` to access the world of blockchains!
+> - Вам знадобиться `криптогаманець`, щоб отримати доступ до світу блокчейну!
 >
-> - A wallet is like a `blockchain` account.
+> - Гаманець - це як `блокчейн`-аккаунт.
 >
-> - Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.
+> - Гаманці використовуються для зберігання `криптовалюти`, входу в блокчейн-додатки тощо.
 >
-> - These wallets work on both computers and phones.
+> - Ці гаманці працюють як на комп'ютерах, так і на телефонах.
 >
-> - Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!
+> - Створити гаманець легко і займе близько 5 хвилин. Ми покажемо вам, як це зробити, у нашому відео нижче!
 
-## What is a Crypto Wallet?
+## Що таке криптогаманець?
 
-Crypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.
+Криптогаманці є невід'ємною частиною веб3 обладнання, що дозволяє використовувати `криптовалюту` на комп'ютері або телефоні. Доступ до гаманців здійснюється за допомогою програмного забезпечення, яке називається `додаток для гаманця` - розширення веб-браузера для вашого комп'ютера або додаток на телефоні.
 
-It gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
+Далі - краще. Гаманці - це більше, ніж рахунки для зберігання криптовалюти, це наш зв'язок з блокчейном. Ми можемо використовувати їх для обміну криптовалютою з іншими, входу в блокчейн-додатки\*\* і навіть колекціонувати цифрові предмети, такі як значки Bankles Академії.\*\* Чим більше ми досліджуємо, тим більшими стають наші гаманці — а дехто вважає їх початком цифрової ідентичності.
 
-Wallets come with two core pieces of account information:
+Гаманці містять дві основні частини інформації про обліковий запис:
 
-- A `public key`, that you can think of as your _username_. You’ll share it publicly to receive cryptocurrency.
+- `Публічний ключ`, який ви можете вважати своїм _іменем користувача_. Ви публічно поширюєте її, щоб отримати криптовалюту.
 
-- A `private key`, acting as your _password_. This should always be kept private, and cannot be changed.
+- `Приватний ключ`, що діє як ваш _пароль_. Це завжди має залишатися приватною інформацією і не може бути змінено.
 
-Protecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).
+Захист вашого приватного ключа є критично важливим, оскільки він надає миттєвий доступ до вашого гаманця. Ви ніколи не повинні ділитися своїм приватним ключем. Ви можете дізнатися більше, прослухавши [повний урок] (https://app.banklessacademy.com/lessons/wallet-basics).
 
-Today we will set up our first wallet, using our recommended crypto wallet: Zerion!
+Сьогодні ми створимо наш перший гаманець, використовуючи рекомендований нами криптогаманець: Zerion!
 
-## Walkthrough
+## Покрокова інструкція
 
-Set up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.
+Створіть свій перший гаманець на комп'ютері, скориставшись інструкцією нижче, або продовжуйте гортати інструкцію зі створення гаманця для телефону.
 
-### Computer Wallet
+### Комп'ютерний гаманець
 
+[] (https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
+### Телефонний гаманець
 
-### Phone Wallet
-
-
+[] (https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
-**It’s time to join the blockchain multiverse!**
+**Час приєднатися до всесвіту блокчейну!**
 
-Don’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.
+Не забудьте зберегти цю статтю для довідки під час подорожей, а також підтримати Bankless Академію.
 
-Safe travels, Explorer!
-
----
-
-## FAQ
-
-### What is a cryptocurrency?
-
-Cryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.
-
-Learn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!
-
-### What are public and private keys?
-
-Public/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.
-
-You can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.
-
-Learn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.
-
-### What happens if I lose my recovery phrase?
-
-Your recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.
-
-### Can Ethereum wallets hold Bitcoin?
-
-Ethereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).
+Щасливої дороги, Досліднику!
 
 ---
 
-**Author**
+## Запитання й відповіді
 
-[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.
+### Що таке криптовалюта?
+
+Криптовалюта - це форма цифрових грошей, захищена `криптографією`. Ці валюти можуть функціонувати без потреби в централізованих органах влади та банках, що зменшує можливості для шахрайства і водночас збільшує фінансову свободу власника.
+
+Дізнайтеся більше про криптовалюту з нашого уроку **[Основи біткоїну](https://app.banklessacademy.com/lessons/bitcoin-basics)** і подивіться, як ці цифрові валюти революціонізують фінансовий світ!
+
+### Що таке публічні та приватні ключі?
+
+Шифрування з публічним/приватним ключем дозволяє вашому гаманцю зробити певну інформацію публічною, наприклад, адресу, на яку інші можуть надсилати вам криптовалюту, зберігаючи при цьому доступ до вашої криптовалюти приватним. Один ключ — це як домашня адреса вашої криптовалюти, а інший відмикає вхідні двері.
+
+Ви можете поділитися своїм публічним ключем з будь-ким, кому ви довіряєте надсилати вам криптовалюту, але ваш приватний ключ призначений лише для ваших очей — адже він надає доступ до всіх активів всередині гаманця. Ніколи не діліться ним, навіть якщо ваш контакт стверджує, що він з Bankless Academy або Zerion.
+
+Дізнайтеся більше та отримайте винагороду за створення свого першого гаманця в нашому уроці [Основи роботи з гаманцями](https://app.banklessacademy.com/lessons/wallet-basics).
+
+### Що станеться, якщо я втрачу фразу відновлення?
+
+Фраза відновлення, також відома як "секретна фраза" або "ключова фраза", - це ваш єдиний резервний варіант, якщо ви втратите доступ до гаманця на своєму пристрої. Якщо ви втратите фразу відновлення, кошти з вашого гаманця будуть втрачені назавжди. Ось чому важливо зберігати його в безпечному місці — не лише від крадіжки чи втрати, але й від пожежі чи пошкодження водою.
+
+### Чи можуть Ethereum гаманці зберігати Bitcoin?
+
+Ethereum гаманці можуть зберігати Bitcoin, але у "обгорнуті" формі. Якщо ви хочете холдити оригінальний Bitcoin, вам доведеться створити гаманець, який працює в мережі Bitcoin, наприклад, [Exodus] (https://www.exodus.com/) або [Mycelium] (https://wallet.mycelium.com/).
+
+---
+
+**Автор**
+
+[Tetranome] (https://twitter.com/Tetranome) - керівник відділу контенту та дизайну в Bankless Academy, зосереджується на навчальному процесі, користувацькому інтерфейсі та досвіді, а також художньому оформленні платформи.
 
 **Patron**
 
-This walkthrough is powered by Zerion.
+Цей посібник створено за підтримки Zerion.
