@@ -1,9 +1,9 @@
 ---
-TITLE: Creating a Crypto Wallet
-DESCRIPTION: Set up your first crypto wallet with our step-by-step walkthrough.
-LANGUAGE: English
+TITLE: Criando uma Carteira de Criptomoedas
+DESCRIPTION: Configure sua primeira carteira de criptomoedas com nosso passo a passo.
+LANGUAGE: Português
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: beatrizabreupeixoto
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
