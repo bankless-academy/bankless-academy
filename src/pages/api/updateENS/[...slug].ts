@@ -24,6 +24,14 @@ export const fetchWithTimeout = async (resource, options = {}) => {
   }
 }
 
+export const fileIsLoading = async (resource) => {
+  // 2 sec timeout
+  const response = await fetchWithTimeout(resource, { timeout: 2000 })
+  const status = await response.status
+  console.log(status)
+  return status === 200
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -62,12 +70,11 @@ export default async function handler(
 
     let avatar = null
     if (ensData?.avatar_small?.length > 0) {
-      // 2 sec timeout
-      const response = await fetchWithTimeout(ensData.avatar_small, { timeout: 2000 })
-      const status = await response.status
-      console.log(status)
-      if (status === 200) {
+      if (await fileIsLoading(ensData.avatar_small)) {
         avatar = ensData.avatar_small
+      } else if (userExist.ens_avatar?.length > 0 && !await fileIsLoading(userExist.ens_avatar)) {
+        console.log('check if old link is loading')
+        avatar = DEFAULT_AVATAR
       }
     }
     console.log('avatar', avatar)
