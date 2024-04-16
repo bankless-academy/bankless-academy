@@ -33,7 +33,7 @@ Die `Blockchain`-Technologie ist ein revolutionäres Verfahren zur Speicherung u
 
 Nachdem wir die Ebenen einer Blockchain untersucht haben, werden wir ein Blockchain-Tool namens `Block Explorer` verwenden, um die Besonderheiten der Ethereum-Blockchain-Struktur zu untersuchen; wir werden in die Ethereum-Blockchain hineinzoomen, um die **Liste** der Blöcke, die **Transaktionen** innerhalb dieser Blöcke und die **Details** jeder einzelnen Transaktion zu sehen.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/introduction-1e34f31e.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/introduction-6d0b6137.svg)
 
 # Struktur der Blockchain
 
@@ -47,7 +47,7 @@ Von außen betrachtet, gibt es 3 Strukturebenen innerhalb einer Blockchain:
 
 Diese dreistufige Struktur führt zu einem kryptografischen Register - einer unveränderlichen Historie aller im Netzwerk durchgeführten Transaktionen.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/blockchain-structure-1c9a9ed4.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/blockchain-structure-346dae14.svg)
 
 # Knowledge Check 1
 
@@ -66,7 +66,7 @@ Das `Register` ist die Liste ALLER Transaktionen, die jemals auf einer Blockchai
 
 Wenn dem Register neue Transaktionen hinzugefügt werden, werden die Guthaben, die unter jeder `Adresse` gespeichert sind, aktualisiert; frühere Transaktionen können nicht geändert werden. Das ist so, als ob man jedem erlauben würde, jederzeit und für immer alle Transaktionen auf dem Bankkonto eines jeden einzusehen.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/examining-the-ledger-838ca24f.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/examining-the-ledger-74e5f072.svg)
 
 # Transaktionen im Register
 
@@ -85,7 +85,7 @@ Einzelne Transaktionen zeigen die _Änderung_ in der Menge der Kryptowährung f�
 
 ⇒ Charlie hat 2 ETH erhalten
 
-![](https://app.banklessacademy.com/images/blockchain-basics/transactions-on-the-ledger-6b86493d.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/transactions-on-the-ledger-f4f9d470.svg)
 
 # Knowledge Check 2
 
@@ -119,7 +119,7 @@ Ein wichtiges Merkmal von Blockchains ist es, dass frühere Transaktionsdaten ni
 
 So ist jeder `Block` einfach eine Gruppierung von Transaktionen, die in einer Datei gemeinsam mit dem `Block Hash` zusammengefasst werden. Die Blöcke sind miteinander verkettet, da jeder Block auf den eindeutigen Fingerabdruck des vorherigen Blocks verweist, um eine zusammenhängende Block_**chain**_ [Kette von Blöcken] zu bilden.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-5c22845b.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-8ba3bea2.svg)
 
 # Knowledge Check 4
 
@@ -141,7 +141,7 @@ In unserem Beispiel von vorhin, als wir das Blockchain-Register besprochen haben
 
 Vielleicht erinnerst du dich, dass jeder Block auch auf den `Block Hash` des vorherigen Blocks verweisen muss, um die Blockchain miteinander zu verbinden.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/inside-a-block-b0c2dd11.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/inside-a-block-b11c74ce.svg)
 
 # Knowledge Check 5
 
@@ -162,7 +162,7 @@ Transaktionen können einfach sein, wie das Versenden von Krypto-Vermögenswerte
 
 Schließlich hat jede Transaktion einen eindeutigen digitalen Identifikator, den sogenannten `Transaktions-Hash`, den keine andere Transaktion hat. Dies macht es einfach, später auf einzelne Transaktionen zu verweisen und stellt sicher, dass die Details dieser Transaktion danach nicht geändert werden können.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/individual-transactions-de83e15c.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/individual-transactions-2f6bf118.svg)
 
 # Knowledge Check 6
 
@@ -181,7 +181,7 @@ Bei Ethereum beginnt eine Adresse immer mit _0x__________ und besteht aus 42 Zei
 
 Wenn wir eine einzelne Transaktion in einem Block Explorer [Suchmaschine] betrachten, können wir die Adresse vom Absender [From:] und die des Adressaten [To:] sehen. Dies verrät uns nicht, wer die _Personen_ sind, die diese Adressen kontrollieren, aber es ermöglicht jedem Benutzer, die Bewegungen der Kryptowährung im Blockchain-Register zu verfolgen.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/user-addresses-57e130d9.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/user-addresses-e9456d37.svg)
 
 # Knowledge Check 7
 
