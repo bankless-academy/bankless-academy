@@ -1,4 +1,9 @@
 {
+  "crypto wallet": {
+    "keyword": "crypto wallet",
+    "keyword_plural": "crypto wallets",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  },
   "blockchain": {
     "keyword": "blockchain",
     "keyword_plural": "blockchains",
@@ -23,5 +28,15 @@
     "keyword": "private key",
     "keyword_plural": "private keys",
     "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+  },
+  "cryptography": {
+    "keyword": "cryptography",
+    "keyword_plural": "cryptographys",
+    "definition": "Techniques for secure communication or transaction, preventing external interference."
+  },
+  "encryption": {
+    "keyword": "encryption",
+    "keyword_plural": "encryptions",
+    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
   }
 }
