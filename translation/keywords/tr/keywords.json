@@ -224,6 +224,11 @@
     "keyword_plural": "güvenilir tarafsızlıklar",
     "definition": "Herhangi bir kişi lehine veya aleyhine ayrımcılık yapmayan mekanizma."
   },
+  "crypto wallet": {
+    "keyword": "crypto wallet",
+    "keyword_plural": "crypto wallets",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  },
   "cryptocurrency": {
     "keyword": "kripto para",
     "keyword_plural": "kripto paralar",
@@ -238,6 +243,11 @@
     "keyword": "kripto para cüzdanı",
     "keyword_plural": "kripto para cüzdanları",
     "definition": "Kripto paranızı saklamanıza ve göndermenize/almanıza veya harcamanıza olanak tanıyan bir uygulama."
+  },
+  "cryptography": {
+    "keyword": "cryptography",
+    "keyword_plural": "cryptographys",
+    "definition": "Techniques for secure communication or transaction, preventing external interference."
   },
   "custodial wallet": {
     "keyword": "gözetimli cüzdan",
@@ -333,6 +343,11 @@
     "keyword": "earn",
     "keyword_plural": "earns",
     "definition": "Contributing value in exchange for rewards ; money verb on the skill cube."
+  },
+  "encryption": {
+    "keyword": "encryption",
+    "keyword_plural": "encryptions",
+    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
   },
   "epoch": {
     "keyword": "Epoch",
