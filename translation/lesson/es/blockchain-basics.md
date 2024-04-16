@@ -33,7 +33,7 @@ La tecnología de `blockchain` es una forma revolucionaria de almacenar y rastre
 
 Después de examinar las capas de una blockchain, utilizaremos una herramienta de blockchain llamada `explorador de bloques` para investigar los detalles de la estructura de la blockchain de Ethereum. Nuestro foco será ver y analizar: la **lista** de bloques, las **transacciones** dentro de esos bloques y los **detalles** de cada transacción de manera individual.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/introduction-1e34f31e.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/introduction-6d0b6137.svg)
 
 # Estructura de la Blockchain
 
@@ -47,7 +47,7 @@ Al acercarnos desde el exterior, existen 3 niveles de estructura en una blockcha
 
 Esta estructura de tres niveles se une para crear un libro de contabilidad criptográfico: un historial inmutable de todas las transacciones realizadas en la red.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/blockchain-structure-1c9a9ed4.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/blockchain-structure-346dae14.svg)
 
 # Prueba de Conocimientos 1
 
@@ -66,7 +66,7 @@ El `ledger` es la lista de TODAS las transacciones realizadas en una blockchain,
 
 Cuando se añaden nuevas transacciones al ledger, los saldos almacenados en cada `dirección` se actualizan; y las transacciones pasadas no se pueden alterar. Es como permitir que todos vean el historial completo de transacciones de la cuenta bancaria de todos, en cualquier momento y para siempre.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/examining-the-ledger-838ca24f.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/examining-the-ledger-74e5f072.svg)
 
 # Transacciones en el Ledger
 
@@ -85,7 +85,7 @@ Las transacciones individuales muestran el _cambio_ en la cantidad de criptomone
 
 ⇒ Charlie ha ganado 2 ETH
 
-![](https://app.banklessacademy.com/images/blockchain-basics/transactions-on-the-ledger-6b86493d.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/transactions-on-the-ledger-f4f9d470.svg)
 
 # Prueba de Conocimientos 2
 
@@ -119,7 +119,7 @@ Una característica importante de las blockchains es que los datos de transaccio
 
 Entonces, cada `bloque` es simplemente un grupo de transacciones que se juntan en un archivo junto con el `hash de bloque` del mismo. Los bloques se encadenan entre sí, porque cada uno hace referencia a la huella digital única del bloque _anterior_, formando así una _**cadena de bloques**_ conectados.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-5c22845b.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/block-anatomy-8ba3bea2.svg)
 
 # Prueba de Conocimientos 4
 
@@ -141,7 +141,7 @@ Siguiendo nuestro ejemplo anterior, cuando discutimos sobre el libro mayor de la
 
 Recuerda que cada bloque también debe hacer referencia al `hash de bloque` del _bloque anterior_ para enlazar la blockchain.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/inside-a-block-b0c2dd11.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/inside-a-block-b11c74ce.svg)
 
 # Prueba de Conocimientos 5
 
@@ -162,7 +162,7 @@ Las transacciones pueden ser simples, como _enviar_ activos de criptomonedas, o 
 
 Finalmente, cada transacción tiene un identificador digital único, llamado su `hash de transacción`, que ninguna otra transacción tiene. Esto facilita referirse a cualquier transacción individual más adelante y garantiza que los detalles de esa transacción no se puedan cambiar después.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/individual-transactions-de83e15c.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/individual-transactions-2f6bf118.svg)
 
 # Prueba de Conocimientos 6
 
@@ -181,7 +181,7 @@ En Ethereum, una dirección siempre comienza con _0x__________ y consta de 42 ca
 
 Cuando observamos una transacción individual en un explorador de bloques, podemos ver las direcciones "De:" y "Para:". Esto no nos dice _quiénes son_ las personas que controlan esas direcciones, pero permite a cualquier usuario rastrear el _movimiento_ de criptomonedas en el ledger de la blockchain.
 
-![](https://app.banklessacademy.com/images/blockchain-basics/user-addresses-57e130d9.svg)
+![](https://app.banklessacademy.com/images/blockchain-basics/user-addresses-e9456d37.svg)
 
 # Prueba de Conocimientos 7
 
