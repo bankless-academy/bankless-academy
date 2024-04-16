@@ -224,6 +224,11 @@
     "keyword_plural": "可信中立",
     "definition": "一种不歧视或反对任何特定人群的机制。"
   },
+  "crypto wallet": {
+    "keyword": "crypto wallet",
+    "keyword_plural": "crypto wallets",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  },
   "cryptocurrency": {
     "keyword": "加密货币",
     "keyword_plural": "加密货币",
@@ -238,6 +243,11 @@
     "keyword": "加密货币钱包",
     "keyword_plural": "加密货币钱包",
     "definition": "允许您存储加密货币并发送/接收或使用它的应用程序。"
+  },
+  "cryptography": {
+    "keyword": "cryptography",
+    "keyword_plural": "cryptographys",
+    "definition": "Techniques for secure communication or transaction, preventing external interference."
   },
   "custodial wallet": {
     "keyword": "托管钱包",
@@ -333,6 +343,11 @@
     "keyword": "收入",
     "keyword_plural": "收入",
     "definition": "贡献价值以换取奖励；技能方块上的金钱动词。"
+  },
+  "encryption": {
+    "keyword": "encryption",
+    "keyword_plural": "encryptions",
+    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
   },
   "epoch": {
     "keyword": "纪元（Epoch）",
