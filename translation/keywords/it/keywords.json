@@ -97,7 +97,7 @@
   "blockchain": {
     "keyword": "blockchain",
     "keyword_plural": "blockchains",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "A shared, unchangeable database, or ledger, of recorded transactions."
   },
   "blockchain apps": {
     "keyword": "blockchain apps",
@@ -277,12 +277,12 @@
   "decentralization": {
     "keyword": "Decentralization",
     "keyword_plural": "Decentralizations",
-    "definition": "The transfer of control to many individuals rather than one single authority."
+    "definition": "Principle that no single authority or entity should control the blockchain data."
   },
   "decentralized": {
     "keyword": "decentralized",
     "keyword_plural": "decentralizeds",
-    "definition": "No single authority or entity controls the system."
+    "definition": "No single authority or entity controls the data."
   },
   "decentralized exchange": {
     "keyword": "decentralized exchange",
@@ -672,7 +672,7 @@
   "private key": {
     "keyword": "private key",
     "keyword_plural": "private keys",
-    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
   },
   "proof of stake": {
     "keyword": "Proof of Stake",
@@ -707,7 +707,7 @@
   "public key": {
     "keyword": "public key",
     "keyword_plural": "public keys",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you."
   },
   "quadratic funding": {
     "keyword": "Quadratic Funding",
@@ -717,7 +717,7 @@
   "recovery phrase": {
     "keyword": "recovery phrase",
     "keyword_plural": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key."
   },
   "red flag": {
     "keyword": "red flag",
