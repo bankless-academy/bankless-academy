@@ -37,7 +37,7 @@ Having surpassed **$60 million in funding distributed**, Gitcoin is at the foref
 
 Anyone can check out the [whitepaper](https://www.gitcoin.co/whitepaper/read) for an in-depth look at how Gitcoin is refining capital allocation with `Allo Protocol`.
 
-Thank you to the curators of this lesson, Ornella, Didier & Tetranome from Bankless Academy, and Harry, Caolán & Cici from Gitcoin.
+Thank you to the curators of this lesson, Ornella, Didier & Tetranome from Bankless Academy, and the core contributors at Gitcoin.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/whitepaper-lesson-gitcoin-grants-growth-3e78d2ef.png)
 
@@ -47,21 +47,21 @@ If you’re here you may know already, but here’s a refresher.
 
 `Quadratic Funding` (QF) originated from the ideas of Glenn Weyl and Vitalik Buterin. It's a mechanism designed to allocate funds in a fair and democratic manner by leveraging matching funds to **amplify the impact** of small individual contributions.
 
-We debuted QF at **Gitcoin Grants** (GG), a pivotal moment enabling democratic donations to projects that matter. We continue to finely tune the QF model with each iteration since GG Round 1 launched in 2019.
+QF debuted at **Gitcoin Grants** (GG), a pivotal moment enabling democratic donations to projects that matter. Since then, when GG Round 1 launched in 2019, the QF model has been finely tuned with each iteration.
 
-We have found our rhythm with **Gitcoin 2.0**, extending further into the grants space to include funding mechanisms like Direct Grants and delivering a more decentralized, modular experience.
+Now, **Gitcoin 2.0** extends further into the grants space to include funding mechanisms like Direct Grants and delivers a more decentralized, modular experience.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/introduction-to-quadratic-funding-e38257e1.png)
 
-# Our role in the Ethereum ecosystem
+# Gitcoin’s role in the Ethereum ecosystem
 
-As of January 2024, Gitcoin has run **19 grant rounds**, disbursing funds to open source software (OSS) teams, averaging nearly one major round per quarter.
+As of January 2024, **19 grants rounds** have been run by Gitcoin, disbursing funds to open source software (OSS) teams, averaging nearly one major round per quarter.
 
 Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone for the open source Ethereum community.
 
-Prior to GG20, as referenced by the [Open Source Observer Impact Analysis](/e578499f17dc4253ba409591c005b795), **Gitcoin distributed $8.4M to ~2500 applicants** through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.
+Prior to GG20, as referenced by the [Open Source Observer Impact Analysis](/e578499f17dc4253ba409591c005b795), Gitcoin distributed **$8.4M to ~2500 applicants** through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.
 
-![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/our-role-in-the-ethereum-ecosystem-fe71e17f.png)
+![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-fe71e17f.png)
 
 # …and there’s more!
 
@@ -69,9 +69,7 @@ Gitcoin's dynamics most often reward projects that **play the long game** — th
 
 A large part of Gitcoin's project base comes from the **open source community**, with developer activity of 50 OSS projects associated with at least five GG rounds receiving a total of $9.4M.
 
-A notable finding is the **correlation between GG rounds and developer growth**. Overall, we see that there has been $135K in grant funding allocated per full-time developer.
-
-In other words, for every $1M that has been paid out in grants since 2019, there are 7.4 full-time developers who are still around today.
+A notable finding is the **correlation between GG rounds and developer growth**. Overall, for every $1M that has been paid out in grants since 2019, there are 7.4 full-time developers who are still around today.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/and-theres-more-5525393b.png)
 
@@ -99,7 +97,7 @@ The recent upgrade to Gitcoin 2.0 was driven by many changes in the market, incl
 Gitcoin’s transformation breaks down as follows:
 
 1. **Decentralized Modular Protocols**: moving from a centralized, Gitcoin-operated platform to a suite of modularized products and protocols that anyone can use and build with or on top of.
-2. **Plural Funding Mechanics**: moving from QF only to many ways of allocating capital. Our current focus is on Direct Grants, Retroactive Public Goods Funding, Streaming QF and Conviction Voting.
+2. **Plural Funding Mechanics**: moving from QF only to many ways of allocating capital, namely Direct Grants, Retroactive Public Goods Funding, Streaming QF and Conviction Voting.
 3. **Open for EVM-Based Community:** expanding beyond Ethereum-only to implementation across EVM-based networks such as Optimism, Arbitrum, Base, Polygon, zkSync, Scroll and Avalanche.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/evolutionary-development-092753e6.png)
@@ -144,7 +142,7 @@ Allo’s simple, generalized architecture allows it to be **easily customized** 
 2. **Registry:** structuring data of possible participants that are eligible for distribution of tokens.
 3. **Strategy:** designating how tokens will be allocated and distributed to recipients.
 
-💡 For a deeper understanding of our aspirations for what people will create using Allo, checkout the design space-focused [Rainbowpaper](https://www.gitcoin.co/rainbowpaper).
+💡 For a deeper understanding of what people can create using Allo, checkout the design space-focused [Rainbowpaper](https://www.gitcoin.co/rainbowpaper).
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/expanding-beyond-evm-with-allo-protocol-c8a108f7.png)
 
@@ -162,19 +160,15 @@ Grants Stack invests in several core areas to provide grants managers with the t
 
 **Grants Stack** currently supports two funding methods: [Quadratic Funding](https://www.wtfisqf.com/) and [Direct Grants](https://www.gitcoin.co/blog/intro-to-direct-grants-how-do-they-work).
 
-As new funding mechanisms arise, we look to gain enough expertise in them to integrate them to our product suite.
+As new funding mechanisms arise, Gitcoin quickly adapts and integrates them. A relevant example of this is [EasyRetroPGF.xyz](http://easyretropgf.xyz/). Originally deployed by Optimism, the ability to operate a retroactive grants round is now open-source.
 
-A relevant example of this is [EasyRetroPGF.xyz](http://easyretropgf.xyz/). Originally deployed by Optimism, we’ve now open-sourced the tool to be **hosted and run by anyone** in the web3 grants community.
-
-It will be exciting to see complimentary applications emerge, such as reporting and discovery tools, as well as no coding tools like EasyRetroPGF.xyz. These create a **flywheel of innovation** in the grants ecosystem that allows Grants Stack to remain a **stable, trusted solution** while staying at the forefront of grants innovation.
+Complimentary applications such as reporting and discovery tools may follow suit, creating a **flywheel of grants innovation** that allows Grants Stack to remain a **stable, trusted solution**.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-continued-df15ee70.png)
 
 # Knowledge Check 3
 
-Complete the following statement:
-
-Allo is the ______  layer for distribution of capital allocation, while Grants Stack is a _____ for running ______ programs.
+Complete the following statement: Allo is the ______  layer for distribution of capital allocation, while Grants Stack is a _____ for running ______ programs.
 
 - [ ] community - application - funding
 - [ ] protocol - tool - grants
