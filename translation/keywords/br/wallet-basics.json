@@ -2,76 +2,76 @@
   "web2": {
     "keyword": "web2",
     "keyword_plural": "web2s",
-    "definition": "The current state of the internet, without blockchain infrastructure."
+    "definition": "O estado atual da internet, sem a infraestrutura blockchain."
   },
   "web3": {
     "keyword": "web3",
     "keyword_plural": "web3s",
-    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
+    "definition": "Refere-se à internet de blockchains, onde os usuários podem auto-custodiar seus ativos e dados."
   },
   "cryptocurrency": {
-    "keyword": "cryptocurrency",
+    "keyword": "criptomoeda",
     "keyword_plural": "cryptocurrencys",
-    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+    "definition": "Uma moeda digital hospedada pela tecnologia blockchain em vez de autoridades centralizadas."
   },
   "blockchain apps": {
-    "keyword": "blockchain apps",
+    "keyword": "aplicativos de blockchain",
     "keyword_plural": "blockchain appss",
-    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
+    "definition": "Aplicativos de blockchain que permitem trocar criptomoedas, usar redes sociais baseadas em web3, fazer doações para obras de caridade, ou até mesmo aprender na blockchain — como na Bankless Academy."
   },
   "blockchain": {
     "keyword": "blockchain",
     "keyword_plural": "blockchains",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "Um sistema no qual um registro de transações de criptomoedas é mantido em vários computadores em todo o mundo."
   },
   "wallet app": {
-    "keyword": "wallet app",
+    "keyword": "aplicativo de carteira",
     "keyword_plural": "wallet apps",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+    "definition": "Um aplicativo em seu computador ou smartphone, usado para se conectar à sua carteira na blockchain."
   },
   "public key": {
-    "keyword": "public key",
+    "keyword": "chave pública",
     "keyword_plural": "public keys",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+    "definition": "Uma chave pública é o endereço da sua carteira. Ela dá aos outros um ponto de referência para enviar ativos de criptomoedas para você."
   },
   "private key": {
-    "keyword": "private key",
+    "keyword": "chave privada",
     "keyword_plural": "private keys",
-    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+    "definition": "Uma chave privada concede acesso à sua carteira, permitindo que você envie ativos de criptomoedas para outras carteiras."
   },
   "wallet": {
-    "keyword": "wallet",
+    "keyword": "carteira",
     "keyword_plural": "wallets",
-    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+    "definition": "Uma carteira é um aplicativo ou dispositivo usado para enviar e receber ativos de criptomoedas na blockchain."
   },
   "recovery phrase": {
-    "keyword": "recovery phrase",
+    "keyword": "frase de recuperação",
     "keyword_plural": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+    "definition": "Uma frase de recuperação é uma lista de 12 a 24 palavras, usada para gerar a chave pública e a chave privada de sua carteira."
   },
   "self-custody wallet": {
-    "keyword": "self-custody wallet",
+    "keyword": "carteira de auto-custódia",
     "keyword_plural": "self-custody wallets",
-    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+    "definition": "\n(Também conhecida como carteira não custodial) Com uma carteira de auto-custódia, apenas você controla suas chaves privadas, as quais, por sua vez, controlam seus ativos de criptomoeda."
   },
   "custodial wallet": {
-    "keyword": "custodial wallet",
+    "keyword": "carteira custodial",
     "keyword_plural": "custodial wallets",
-    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+    "definition": "Com uma carteira custodial, outra entidade controla suas chaves privadas, controlando assim o acesso aos seus ativos."
   },
   "hot wallet": {
-    "keyword": "hot wallet",
-    "keyword_plural": "hot wallets",
-    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
+    "keyword": "carteira quente",
+    "keyword_plural": "carteiras quentes",
+    "definition": "Um tipo de carteira de auto-custódia que está perpetuamente conectada à Internet."
   },
   "cold wallet": {
-    "keyword": "cold wallet",
-    "keyword_plural": "cold wallets",
-    "definition": "A type of self-custody wallet that is stored on offline hardware."
+    "keyword": "carteira fria",
+    "keyword_plural": "carteiras frias",
+    "definition": "Um tipo de carteira de auto-custódia que é armazenada em um hardware off-line."
   },
   "self-custody": {
-    "keyword": "self-custody",
+    "keyword": "auto-custódia",
     "keyword_plural": "self-custodys",
-    "definition": "A means of holding your assets where only you have access to them."
+    "definition": "Um método de armazenamento de seus ativos no qual apenas você tem acesso a eles."
   }
 }
