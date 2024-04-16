@@ -224,6 +224,11 @@
     "keyword_plural": "credible neutralitys",
     "definition": "A mechanism that does not discriminate for or against any specific people."
   },
+  "crypto wallet": {
+    "keyword": "crypto wallet",
+    "keyword_plural": "crypto wallets",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  },
   "cryptocurrency": {
     "keyword": "criptomoneda",
     "keyword_plural": "cryptocurrencys",
@@ -238,6 +243,11 @@
     "keyword": "billetera de criptomonedas",
     "keyword_plural": "billeteras de criptomonedas",
     "definition": "Una aplicación que te permite almacenar tus criptomonedas y enviarlas, recibirlas o gastarlas."
+  },
+  "cryptography": {
+    "keyword": "cryptography",
+    "keyword_plural": "cryptographys",
+    "definition": "Techniques for secure communication or transaction, preventing external interference."
   },
   "custodial wallet": {
     "keyword": "billeteras no custodiales",
@@ -333,6 +343,11 @@
     "keyword": "ganar",
     "keyword_plural": "ganar",
     "definition": "Aportar valor a cambio de recompensas; verbo de dinero en el cubo de habilidades."
+  },
+  "encryption": {
+    "keyword": "encryption",
+    "keyword_plural": "encryptions",
+    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
   },
   "epoch": {
     "keyword": "Época",
