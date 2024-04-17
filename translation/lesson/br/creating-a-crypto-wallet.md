@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-Este é um resumo de nossa lição [Introdução às Carteiras] (https://app.banklessacademy.com/lessons/wallet-basics), juntamente com um passo a passo para a missão. Confira [a lição completa] (https://app.banklessacademy.com/lessons/wallet-basics) para **aumentar seu conhecimento e reivindicar seu distintivo!**
+Este é um resumo de nossa lição [Princípios Básicos de Carteiras] (https://app.banklessacademy.com/lessons/wallet-basics), juntamente com um passo a passo para a missão. Confira [a lição completa] (https://app.banklessacademy.com/lessons/wallet-basics) para **aumentar seu conhecimento e reivindicar seu distintivo!**
 
 ---
 
@@ -37,7 +37,7 @@ Este é um resumo de nossa lição [Introdução às Carteiras] (https://app.ban
 >
 > - Uma carteira é como uma conta `blockchain`.
 >
-> - As carteiras são usadas para armazenar `criptomoedas`, entrar em aplicativos de blockchain e muito mais.
+> - As carteiras são usadas para armazenar `criptomoedas`, entrar em aplicativos blockchain e muito mais.
 >
 > - Essas carteiras funcionam tanto em computadores quanto em celulares.
 >
@@ -73,7 +73,7 @@ Configure sua primeira carteira no computador, usando o passo a passo abaixo, ou
 
 ---
 
-**É hora de entrar no multiverso da blockchain!**
+**É hora de entrar no multiverso blockchain!**
 
 Não se esqueça de coletar este registro do manual para facilitar a consulta em suas viagens e para apoiar a Bankless Academy.
 
@@ -95,7 +95,7 @@ A `encriptação` de chaves públicas/privadas permite que sua carteira torne al
 
 Você pode compartilhar sua chave pública com qualquer pessoa em quem confie para lhe enviar criptomoedas, mas sua chave privada é apenas para seus olhos, pois ela concede acesso a todos os ativos dentro da carteira. Nunca o compartilhe, mesmo que seu contato afirme ser da Bankless Academy ou da Zerion.
 
-Saiba mais e receba uma recompensa por criar sua primeira carteira em nossa lição [Introdução às Carteiras] (https://app.banklessacademy.com/lessons/wallet-basics).
+Saiba mais e receba uma recompensa por criar sua primeira carteira em nossa lição [Princípios Básicos de Carteiras] (https://app.banklessacademy.com/lessons/wallet-basics).
 
 ### O que acontece se eu perder minha frase de recuperação?
 
@@ -109,8 +109,8 @@ As carteiras Ethereum podem conter Bitcoin, mas em um formato "empacotado" ("wra
 
 **Autor**
 
-[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.
+[Tetranome](https://twitter.com/Tetranome) é o Responsável por Conteúdo e Design da Bankless Academy, focando-se na jornada de aprendizado, na interface e experiência do usuário e na arte disponível na plataforma.
 
-**Patron**
+**Patrono**
 
-This walkthrough is powered by Zerion.
+Este passo a passo é patrocinado pela Zerion.
