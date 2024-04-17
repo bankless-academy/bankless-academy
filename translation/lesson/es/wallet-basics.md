@@ -1,6 +1,6 @@
 ---
 TITLE: Conceptos Básicos de la Billetera
-DESCRIPTION: What is a crypto wallet? ¡Aprende más y crea tu primera billetera hoy!
+DESCRIPTION: '¿Qué es una billetera cripto? ¡Aprende más y crea tu primera billetera hoy!'
 LANGUAGE: Español
 WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: OrnellaWeb3
@@ -67,95 +67,95 @@ Elegir cual `aplicación de billetera` usar también puede resultar intimidante.
 
 ¿Qué es una billetera?
 
-- [ ] A blockchain
+- [ ] Una cadena de bloques
 
 > ℹ️ ¡Inténtalo de nuevo! Tu billetera está alojada o 'vive' en una cadena de bloques.
 
 - [ ] Una criptomoneda
 
-> ℹ️ ¡Inténtalo de nuevo! Las criptomonedas son algo que se tiene en la cartera.
+> ℹ️ ¡Inténtalo de nuevo! Las criptomonedas se tienen en la billetera.
 
-- [ ] A digital collectible
+- [ ] Un coleccionable digital
 
-> ℹ️ Try again! Digital collectibles are something you hold in your wallet.
+> ℹ️ ¡Inténtalo de nuevo! Los coleccionables digitales se tienen en tu billetera.
 
-- [ ] A blockchain account
+- [ ] Una cuenta blockchain
 
-> ℹ️ Correct! Wallets are accounts used to interact with blockchains.
+> ℹ️ ¡Correcto! Las billeteras son cuentas utilizadas para interactuar con blockchains.
 
-# Wallets & Password Recovery
+# Billeteras y Recuperación de Contraseñas
 
-Here is one of the most important things to understand about `web3` wallets: **There are no “password resets” or “password changes”.**
+Esta es una de las cosas más importantes que hay que entender sobre las billeteras `web3`: **no existe el "restablecimiento de contraseña" o "cambios de contraseña".**
 
-Most of us are used to these features. If we forget a password, we click a button, do a few things, and get a new password. Easy.
+La mayoría de nosotros estamos acostumbrados a estas funciones. Si olvidamos una contraseña, pulsamos un botón, hacemos algunas acciones y obtenemos una nueva contraseña. Fácil.
 
-Not so with crypto wallets. Because of how blockchains work, wallets are assigned an “address” and a complex “password” when they’re created — and you do not choose these.
+No ocurre lo mismo con las billeteras cripto. Debido a cómo funcionan las cadenas de bloques, cuando se crean las billeteras, se les asigna una “dirección” y una “contraseña” bastante compleja — la cual no es posible elegir.
 
-This address and password combination are impossible to change, although you can always create a new wallet if you need to. Let’s learn a bit more about these special addresses and passwords, so that we can feel confident using them!
+Esta combinación de dirección y contraseña son imposibles de cambiar, aunque siempre puedes crear una nueva billetera si lo necesitas. Aprendamos un poco más sobre estas direcciones especiales y contraseñas, ¡para que podamos sentirnos seguros de usarlas!
 
-# Your wallet’s public key
+# La llave pública de tu billetera
 
-A `public key` is basically your wallet’s address. Often, this looks like a random series of letters and numbers.
+Una `llave pública` es básicamente la dirección de tu billetera. A menudo, esto se ve como una serie aleatoria de letras y números.
 
-Example: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
+Ejemplo: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-It is possible to create easier to remember versions of this with some `web3` services, but that’s a lesson for another time.
+Es posible crear versiones de esta dirección más fáciles de recordar con algunos servicios `web3`, pero eso es una lección para otro momento.
 
-You can also think of a public key like a house address. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.
+También puedes pensar en tu llave pública como si fuera la dirección de tu casa. Es pública, cualquiera puede verla, e indica a otros dónde pueden enviarte criptoactivos, sin revelar nada personal sobre ti.
 
-It is perfectly safe to share your wallet’s **public key**.
+Es perfectamente seguro compartir la **clave pública** de tu billetera.
 
-**Note:** A single wallet app can hold multiple public/`private key` pairs.
+**Nota:** Una única aplicación de billetera puede contener varios pares de `llaves` públicas/privadas.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
-# Your wallet’s private key
+# La llave privada de tu billetera
 
-If the public key is like a house address, then the `private key` is like the key to the front door. It’s the “password” to your funds and assets.
+Si la llave pública es como la dirección de una casa, la `clave privada` es como la llave de la puerta principal. Es la "contraseña" de tus fondos y activos.
 
-Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
+Ejemplo: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
-**It’s never safe to share this key — you could lose your wallet and everything in it.**
+**Nunca es seguro compartir esta llave: podrías perder tu billetera y todo su contenido.**
 
-Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the `wallet`.
+La mayoría de la personas recomienda que ni siquiera la guardes digitalmente. Cualquiera que tenga acceso a una llave privada, tiene acceso a lo que esté en la billetera correspondiente``.
 
-This is more than just a password. You cannot reset it if you lose access to it.
+Esto es más que una simple contraseña. No puedes restablecerla si pierdes acceso a ella.
 
-Luckily, most `blockchain apps` do not require you to type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.
+Afortunadamente, la mayoría de `aplicaciones de blockchain` no requieren que escribas una larga y complicada cadena de caracteres cada vez que necesites enviar fondos o firmar una transacción. La llave privada suele funcionar silenciosamente en segundo plano.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
 # Knowledge Check 2
 
-Your public key is like your _____ and your private key is like your _____ .
+Tu llave pública es como tu _____ y tu llave privada es como tu _____ .
 
-- [ ] Routing Number / Account Number
+- [ ] Número de ruta / Número de cuenta
 
-> ℹ️ Try again! Unlike a bank account number, your private key shouldn’t be shared with others.
+> ℹ️ ¡Inténtalo de nuevo! A diferencia de un número de cuenta bancaria, tu llave privada no debe compartirse con otros.
 
-- [ ] Address / Zip code
+- [ ] Dirección / Código postal
 
-> ℹ️ Try again! Unlike a zip code, your private key shouldn’t be shared with others.
+> ℹ️ ¡Inténtalo de nuevo! A diferencia del código postal, tu llave privada no debe compartirse con otros.
 
-- [ ] House address / House key
+- [ ] Dirección de la casa / Llave de la casa
 
-> ℹ️ Correct! Your public key allows others to find you, while only your private key lets you in.
+> ℹ️ ¡Correcto! Tu llave pública permite que otros te encuentren, mientras que sólo tu llave privada te permite entrar.
 
-- [ ] Phone Number / Passport Number
+- [ ] Número de teléfono / Número de pasaporte
 
-> ℹ️ Try again! These are examples of public & private information, but they’re unrelated.
+> ℹ️ ¡Inténtalo de nuevo! Estos son ejemplos de información pública & privada, pero no están relacionados.
 
-# Recovery Phrase
+# Frase de Recuperación
 
-When you set up a new wallet, your wallet app will provide you with a `recovery phrase`.
+Cuando configures una nueva billetera, la aplicación de tu billetera te proporcionará una `frase de recuperación`.
 
-Also called a “seed phrase” or “secret phrase”, this string of words can be used to access your wallet and crypto assets if:
+También llamada "frase semilla" o "frase secreta", esta cadena de palabras puede utilizarse para acceder a tu billetera y a tus criptoactivos si:
 
-- Your `wallet app` or device fails unexpectedly or is damaged.
-- Your device has been lost or stolen.
-- You want to access your wallet on multiple devices.
+- Tu aplicación `de monedero` o dispositivo falla inesperadamente o es dañada.
+- Tu dispositivo se ha perdido o robado.
+- Quieres acceder a tu billetera desde varios dispositivos.
 
-Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. This data is used to generate both the `public key` and `private key` for your wallet.
+La mayoría de las frases de recuperación son una lista de 12 a 24 palabras que representan una cantidad de datos específicos. Estos datos se utilizan para generar tanto la `llave pública` como la `llave privada` de tu billetera.
 
 Wallet recovery does **not** change or reset the keys.
 
