@@ -37,7 +37,7 @@ Las billeteras son como las cuentas de internet `web2` a las que estás acostumb
 
 En esta lección, te presentaremos qué son las billeteras cripto, cómo funcionan y cómo mantener tus criptomonedas segura. Terminaremos con una guía sobre cómo configurar una y acceder a **la blockchain de Ethereum, el hogar de Bankless Academy.**
 
-![]()
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
 # Billetera: Definición
 
@@ -151,197 +151,197 @@ Cuando configures una nueva billetera, la aplicación de tu billetera te proporc
 
 También llamada "frase semilla" o "frase secreta", esta cadena de palabras puede utilizarse para acceder a tu billetera y a tus criptoactivos si:
 
-- Tu aplicación `de monedero` o dispositivo falla inesperadamente o es dañada.
+- Tu `aplicación de billetera` o dispositivo falla inesperadamente o es dañada.
 - Tu dispositivo se ha perdido o robado.
 - Quieres acceder a tu billetera desde varios dispositivos.
 
 La mayoría de las frases de recuperación son una lista de 12 a 24 palabras que representan una cantidad de datos específicos. Estos datos se utilizan para generar tanto la `llave pública` como la `llave privada` de tu billetera.
 
-Wallet recovery does **not** change or reset the keys.
+La recuperación de la billetera **no** cambia ni restablece las claves.
 
-Your recovery phrase is essentially an easier to read version of your public/private key pair. **Never share your recovery phrase.**
+Tu frase de recuperación es esencialmente una versión más fácil de leer de tu par de llaves pública/privada. **Nunca compartas tu frase de recuperación.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
 # Knowledge Check 3
 
-Can you access your wallet with a recovery phrase if your device gets damaged or lost?
+¿Puedes acceder a tu billetera con una frase de recuperación si tu dispositivo se daña o se pierde?
 
 - [ ] No
 
-> ℹ️ Try again!
+> ℹ️ ¡Inténtalo de nuevo!
 
-- [ ] Yes
+- [ ] Sí
 
-> ℹ️ Correct! Recovery phrases grant access to your wallet, even on multiple devices.
+> ℹ️ ¡Correcto! Las frases de recuperación permiten el acceso a tu billetera, incluso en múltiples dispositivos.
 
-# Types of Wallet
+# Tipos de Billeteras
 
-Just as there are many types of computer software, there many types of wallet. Let’s look at the four main categories:
+Así como existen muchos tipos de programas informáticos, también existen muchos tipos de billeteras. Veamos las cuatro categorías principales:
 
-- 🏦 **Custodial wallets:** where a third party is responsible for your private keys.
-- 👤 **Self-custody (non-custodial) wallets:** where you are responsible for your private keys.
+- 🏦 **Billeteras de custodia:** en los que un tercero es responsable de tus claves privadas.
+- **👤 Billeteras de autocustodia (sin custodia de un tercero):** en los que eres responsable de tus llaves privadas.
 
-There are two styles of `self-custody wallet`:
+Existen dos estilos de `billetera de autocustodia`:
 
-- 🔥 **Hot wallets:** software on your desktop or phone.
-- 🧊 **Cold wallets:** a piece of hardware (like a memory stick) you store somewhere safe.
+- 🔥 **Billeteras calientes:** software en tu computador o teléfono.
+- 🧊 **Billeteras frías:** una pieza de hardware (como un dispositivo de memoria) que almacenas en un lugar seguro.
 
-Each wallet solution serves a different use-case. Many advanced users have one of each!
+Cada categoría de billetera tiene un uso diferente. Muchos usuarios avanzados tienen una de cada una.
 
-Don’t worry, we’ll only be creating one wallet today.
+No te preocupes, hoy crearemos sólo una billetera.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
-# Custodial Wallets
+# Billetera Custodiadas
 
 Since your `private key` unlocks access to your `wallet`, keeping it safe and secure is very important!
 
-`Custodial wallet` services include cryptocurrency exchanges such as Coinbase and Kraken. **They are your wallet custodian** — they look after your private keys for you. You access their services like any other website (with an email login and resettable password).
+Los servicios de `billeteras custodiadas` son parte de las bolsas de intercambio de criptodivisas como Coinbase y Kraken. **Ellos son los custodios de tu billetera**: es decir, cuidan de tus llaves privadas por ti. Accedes a sus servicios como en cualquier otro sitio web (con un nombre de usuario de correo electrónico y una contraseña restablecible).
 
-This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some `blockchain apps` may be limited.
+Esto puede ser todo lo que algunas personas necesiten, pero requiere que confíes en terceros la seguridad de tus criptoactivos, como a su vez el acceso a ellos cuando quieras comercializarlos o enviarlos a algún lugar. Además, tu acceso a algunas `aplicaciones de blockchain` podría estar limitado.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
 # Knowledge Check 4
 
-Do you control your private key with a custodial wallet?
+¿Controlas tú la llave privada de una billetera custodiada?
 
-- [ ] Yes
+- [ ] Sí
 
-> ℹ️ Try again!
+> ℹ️ ¡Inténtalo de nuevo!
 
 - [ ] No
 
-> ℹ️ Correct! Custodial wallets require trust in a third party (custodian) to control your private keys.
+> ℹ️ ¡Correcto! Las billeteras custodiadas requieren confiar en un tercero (custodio) para que controle tus llaves privadas.
 
-# Non-custodial Wallet
+# Billetera No Custodiada o de Autocustodia
 
-A `self-custody wallet` (like Zerion or Trezor) is when you fully control your `private key`. You have **no custodian**, and you alone are responsible for keeping your private key safe.
+Una billetera `auto-custodia` (como Zerion o Trezor) es cuando controlas por completo tu llave `privada`. **No** tiene **custodio**, y sólo tú eres responsable de mantener a salvo tu llave privada.
 
-These wallets offer the widest range of access and freedom within the world of `web3`. You never have to worry about a third party freezing or mishandling your funds.
+Estas billeteras ofrecen el mayor rango de acceso y libertad dentro del mundo `web3`. Nunca tendrás que preocuparte de que un tercero congele o maneje mal tus fondos.
 
-The trade-off is in risk: if you lose access to your `recovery phrase`, or your private key is compromised, there is often very little you can do to restore access to the wallet.
+La contrapartida está en el riesgo: si pierdes el acceso a tu `frase de recuperación`, o tu llave privada se ve comprometida, a menudo hay muy poco que puedas hacer para restaurar el acceso a la billetera.
 
-Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.
+Cualquiera que sea la ruta que elijas, trae sus beneficios el estar familiarizado y cómodo/a con la seguridad de tu billetera. Te daremos algunos consejos antes de completar esta lección.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-833c3d6b.svg)
 
 # Knowledge Check 5
 
-Are you responsible for your private key with a self-custody wallet?
+¿Eres tú el responsable de tu llave privada con una billetera de autocustodia?
 
-- [ ] Yes
+- [ ] Sí
 
-> ℹ️ Correct! With a self-custody wallet you are solely responsible for your private keys.
+> ℹ️ ¡Correcto! Con una billetera de autocustodia, tú eres el único responsable de tus llaves privadas.
 
 - [ ] No
 
-> ℹ️ Try again!
+> ℹ️ ¡Inténtalo de nuevo!
 
-# Hot Wallets
+# Billeteras Calientes
 
-You will hear the terms “hot” and “cold wallet” quite a bit in `web3`.
+Escucharás los términos "billetera caliente" y "billetera fría" bastante en `web3`.
 
-A `hot wallet` is a wallet accessed via an app on your device — the Zerion app for example. Similar to many `web2` apps, a wallet app is consistently connected to the internet.
+Una `billetera caliente` es una billetera a la que se accede a través de una aplicación en tu dispositivo — la aplicación Zerion por ejemplo. Al igual que muchas aplicaciones `web2`, una aplicación de billetera está siempre conectada a internet.
 
-Your `private key` is encrypted and stored inside the wallet app, and is only accessed when you interact with the blockchain. These wallets are named ‘hot wallets’ for this “hot” connection between the internet and your private key.
+Tu `llave privada` se cifra y almacena dentro de la aplicación de billetera, y sólo se accede a ella cuando interactúas con la cadena de bloques. Estas billeteras se llaman ‘billeteras calientes’ por esta conexión “caliente o activa” entre internet y su llave privada.
 
-Hot wallets are convenient for small day-to-day interactions, much like a physical wallet you keep in your pocket. We’ll be creating a hot wallet today!
+Las billeteras calientes son convenientes para las interacciones pequeñas del día a día, de la misma manera que una billetera o monedero físics que mantienes en tu bolsillo. ¡Hoy crearemos una billetera caliente!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-9356886d.svg)
 
-# Cold Wallets
+# Billeteras Frías
 
-As you dive deeper into your `web3` journey, you will come to know a landscape full of interesting tech trade-offs.
+A medida que profundices tu viaje en `web3`, irás conociendo un panorama lleno de interesantes equilibrios tecnológicos.
 
-`Cold wallets` grant higher security at the cost of convenience. A cold wallet is one where your `private key` is stored on a dedicated hardware device (like a memory stick or external hard drive). You must physically connect the hardware wallet to your computer to access your wallet on the blockchain. Your private key is never directly connected to the internet. Cold wallets are named after this “cold” internet connection.
+Las `billeteras frías` garantizan una mayor seguridad a costa de la conveniencia. Una billetera fría es aquella en la que tu `llave privada` se almacena en un dispositivo hardware dedicado (como un disco de memoria o disco duro externo). Debes conectar físicamente la billetera física a su computador para acceder a tu billetera en la cadena de bloques. En este caso, tu llave privada nunca está o ha estado conectada directamente a internet. Las billeteras frías se llaman así debido a esta conexión de internet “fría”.
 
-They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline — out of reach of digital attackers.
+Se consideran más seguras que las `billeteras calientes`, ya que la `llave privada` se almacena fuera de línea, fuera del alcance de los atacantes digitales.
 
-Ledger and Trezor are examples of `cold wallets`.
+Ledger y Trezor son ejemplos de `billeteras frías`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-0e3183d1.svg)
 
 # Knowledge Check 6
 
-Which of the following wallet types is considered the most secure?
+¿Cuál de los siguientes tipos de billetera se considera el más seguro?
 
-- [ ] All wallets are about the same
+- [ ] Todas las billeteras son similares
 
-> ℹ️ Try again! There are various trade-offs for each wallet type, with level of security being one of them.
+> ℹ️ ¡Inténtalo de nuevo! Cada tipo de billetera tiene sus ventajas y desventajas, y el nivel de seguridad es una de ellas.
 
-- [ ] A hot wallet
+- [ ] Una billetera caliente
 
-> ℹ️ Try again! A hot wallet has an active internet connection which makes it more susceptible to digital attack.
+> ℹ️ ¡Inténtalo de nuevo! Una billetera caliente tiene una conexión activa a internet que la hace más susceptible a ataques digitales.
 
-- [ ] A custodial wallet
+- [ ] Una billetera custodiada
 
-> ℹ️ Try again! The third party holding the private keys can get hacked or go bankrupt.
+> ℹ️ ¡Inténtalo de nuevo! El tercero que posea las llaves privadas puede ser hackeado o ir en quiebra.
 
-- [ ] A cold wallet
+- [ ] Una billetera fría
 
-> ℹ️ Correct! Cold wallets aren’t actively connected to the internet, making them more attack-resistant.
+> ℹ️ ¡Correcto! Las billeteras frías no están conectadas activamente a internet, lo que las hace resistente a ataques.
 
-# Wallet Security
+# Seguridad de la Billetera
 
-Regardless if your `self-custody wallet` is hot or cold, there are many smart security practices you should develop.
+Independientemente de que tu billetera `auto-custodia` sea caliente o fría, hay muchas prácticas de seguridad inteligentes que debes desarrollar.
 
-🖊️ Record your `recovery phrase` on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your `private key` with anyone. **Remember, this is more than just a password.**
+🖊️ Grabe su `frase de` recuperación en un material físico y duradero (como papel plastificado, o incluso acero) y guárdelo en un lugar muy seguro. Nunca la compartas ni compartas tu `llave privada` con nadie. **Recuerda, esto es más que una simple contraseña.**
 
-🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.
+🔍 Cuando interactúes con una blockchain o envíes fondos, aunque sean pequeñas cantidades, comprueba los detalles con mucho cuidado. Los datos incorrectos no pueden modificarse después de una interacción.
 
-🔭 Spend time researching and gathering info on any `blockchain apps` you plan to interact with before connecting your wallet to it or signing its transactions.
+🔭 Dedica tiempo a investigar y reunir información sobre cualquier `aplicación de blockchain` con la que planees interactuar antes de conectar tu monedero a ella o firmar sus transacciones.
 
-💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).
+💰 Usa billeteras con cantidades bajas de fondos para probar cosas nuevas y explorar web3, y considera almacenar activos de alto valor a través de múltiples cuentas de billetera (por ejemplo: evite poner todos sus 'huevos' criptográficos en una sola cesta).
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
 
 # Knowledge Check 7
 
-What is the safest way to protect your recovery phrase?
+¿Cuál es la forma más segura de proteger tu frase de recuperación?
 
-- [ ] Write it on a durable material and store it in a safe place.
+- [ ] Escribirlo en un material duradero y almacenarlo en un lugar seguro.
 
-> ℹ️ Correct! A safely stored physical backup with no digital traces is the safest storage option.
+> ℹ️ ¡Correcto! Una copia de seguridad física sin rastros digitales es la opción de almacenamiento más segura.
 
-- [ ] Save it on your computer and print it out.
+- [ ] Guardarlo en tu computador e imprimirlo
 
-> ℹ️ Try again! If your computer is hacked, your recovery phrase could be found. Printing also opens many attack opportunities.
+> ℹ️ ¡Inténtalo de nuevo! Si su computadora es hackeada, su frase de recuperación podría ser encontrada. Imprimir también abre muchas oportunidades de ataque.
 
-- [ ] Take a screenshot and save it on your phone.
+- [ ] Toma una captura de pantalla y guárdala en tu teléfono.
 
-> ℹ️ Try again! If your phone is hacked, you could lose all assets in your wallet.
+> ℹ️ ¡Inténtalo de nuevo! Si tu teléfono es hackeado, podrías perder todos los activos de tu billetera.
 
-- [ ] Save it in your password manager.
+- [ ] Guardarlo en su gestor de contraseñas.
 
-> ℹ️ Try again! If your password manager is hacked, your recovery phrase could be leaked.
+> ℹ️ ¡Inténtalo de nuevo! Si tu gestor de contraseñas es hackeado, tu frase de recuperación se podría filtrar.
 
-# You’re ready to create your first wallet!
+# ¡Estás listo para crear tu primera billetera!
 
-In fact, you’ll need one if you want to claim proof of completing this quest!
+De hecho, necesitarás una si deseas reclamar la certificación de nuestra prueba de conocimientos.
 
-There are several `self-custody`, `hot wallet` apps available today. We will explore the Zerion wallet for the rest of this lesson as:
+Hoy en día existen varias aplicaciones de `billetera caliente` con `autocustodia`. Para finalizar esta lección, exploraremos la billetera de Zerion, ya que:
 
-- ⚙️ It’s compatible with most `blockchain apps`.
-- ⚡ The interface is incredibly smooth and easy to use.
-- 💻 It has a browser extension for Chrome, Brave, Edge, and Opera internet browsers.
-- 📱 It is also available as a mobile app for Android and iOS users.
-- 🗣️ Zerion supports a variety of languages.
+- ⚙️ Es compatible con la mayoría de las `aplicaciones de blockchain`.
+- ⚡ La interfaz es increíblemente fluida y fácil de usar.
+- 💻 Tiene una extensión de navegador para los navegadores de Internet Chrome, Brave, Edge y Opera.
+- 📱 También está disponible como aplicación móvil para usuarios de Android e iOS.
+- 🗣️ Zerion soporta varios idiomas.
 
-The end of the lesson is right around the corner, where we will share your instructions for setting up your wallet with Zerion!
+El final de la lección está a la vuelta de la esquina, ¡donde compartiremos las instrucciones para configurar tu billetera con Zerion!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg)
 
 # Knowledge Check 8
 
-Is Zerion a custodial wallet app?
+¿Es Zerion una aplicación de billetera custodiada?
 
-- [ ] Yes
+- [ ] Sí
 
-> ℹ️ Try again! Your Zerion wallet isn’t controlled by a custodian.
+> ℹ️ ¡Inténtalo de nuevo! Tu billetera Zerion no está controlada por un custodiano.
 
 - [ ] No
 
-> ℹ️ Correct! Zerion wallets are self-custody wallets — controlled by you, and you alone.
+> ℹ️ ¡Correcto! Las billeteras Zerion son billeteras de autocustodia - controladas por ti, y sólo por ti.
 
