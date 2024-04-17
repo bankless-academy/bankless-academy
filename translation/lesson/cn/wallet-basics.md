@@ -189,7 +189,7 @@ ________________________________________________________________________________
 
 每种钱包解决方案都有不同的用途。 高级玩家们常常同时拥有所有类型的钱包！
 
-Don’t worry, we’ll only be creating one wallet today.
+别担心，我们今天暂时仅需创建一种钱包作为教程。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
