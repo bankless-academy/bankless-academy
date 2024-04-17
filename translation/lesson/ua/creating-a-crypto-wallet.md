@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Перегляньте [повний урок] (https://app.banklessacademy.com/lessons/wallet-basics), щоб \*\*підвищити свій рівень знань та отримати бейджик
+Це короткий виклад нашого уроку [Основи роботи з гаманцем] (https://app.banklessacademy.com/lessons/wallet-basics), а також інструкція для проходження квесту. Перегляньте [повний урок] (https://app.banklessacademy.com/lessons/wallet-basics), щоб \*\*підвищити свій рівень знань та отримати бейджик
 
 ---
 
@@ -35,7 +35,7 @@ This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons
 
 > - Вам знадобиться `криптогаманець`, щоб отримати доступ до світу блокчейну!
 >
-> - Гаманець - це як `блокчейн`-аккаунт.
+> - Гаманець - це як обліковий запис на `блокчейні`.
 >
 > - Гаманці використовуються для зберігання `криптовалюти`, входу в блокчейн-додатки тощо.
 >
