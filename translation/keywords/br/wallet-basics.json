@@ -27,7 +27,7 @@
   "wallet app": {
     "keyword": "aplicativo de carteira",
     "keyword_plural": "wallet apps",
-    "definition": "Um aplicativo em seu computador ou smartphone, usado para se conectar à sua carteira na blockchain."
+    "definition": "Um aplicativo em seu computador ou celular, usado para se conectar à sua carteira na blockchain."
   },
   "public key": {
     "keyword": "chave pública",
