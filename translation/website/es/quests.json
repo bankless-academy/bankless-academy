@@ -23,9 +23,9 @@
     "Read Entry": "Leer Handbook"
   },
   "WalletBasics": {
-    "1. Download and install the Zerion wallet from ": "1. Download and install the Zerion wallet from ",
-    "If you already have a wallet, move to step 2.": "If you already have a wallet, move to step 2.",
-    "2. Connect your wallet to Bankless Academy": "2. Connect your wallet to Bankless Academy",
-    "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest."
+    "1. Download and install the Zerion wallet from ": "1. Descarga e instala la billetera Zerion desde ",
+    "If you already have a wallet, move to step 2.": "Si ya tienes una billetera, ve al paso 2.",
+    "2. Connect your wallet to Bankless Academy": "2. Conecta tu billetera a Bankless Academy",
+    "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Consejo: Consulta nuestro artículo del Manual del Explorador en '{{lesson_title}}' para un recorrido paso a paso."
   }
 }
