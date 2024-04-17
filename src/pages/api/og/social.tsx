@@ -98,9 +98,14 @@ export default async function handler(req: NextApiRequest) {
     )
   ).then((res) => res.arrayBuffer())
 
-  const ensData = await fetch(`https://ensdata.net/${user.address}`).then(
-    (res) => res.json()
-  )
+  let ensData: any = {}
+  try {
+    ensData = await fetch(`https://ensdata.net/${user.address}`).then((res) =>
+      res.json()
+    )
+  } catch (error) {
+    console.log(error)
+  }
 
   console.log(ensData)
   if (ensData?.avatar_small?.length > 0) {
