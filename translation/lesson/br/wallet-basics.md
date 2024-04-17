@@ -1,9 +1,9 @@
 ---
-TITLE: Wallet Basics
-DESCRIPTION: What is a crypto wallet? Learn more and create your first wallet today!
-LANGUAGE: English
+TITLE: Princípios Básicos de Carteiras
+DESCRIPTION: O que é uma carteira de criptomoedas? Saiba mais e crie sua primeira carteira hoje!
+LANGUAGE: Português
 WRITERS: Ap0ll0517, Jordy, Tetranome
-TRANSLATORS: X
+TRANSLATORS: beatrizabreupeixoto
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -27,177 +27,177 @@ ________________________________________________________________________________
 
 ---
 
-# Wallet Intro
+# Introdução às Carteiras
 
-**Greetings Bankless Explorer!**
+**Saudações, Explorador Bankless!**
 
-It’s time to dive deeper on your journey into the blockchain multiverse. Every Explorer in this space eventually needs to create a crypto wallet.
+É hora de mergulhar mais fundo na sua jornada pelo multiverso blockchain. Todo Explorador neste espaço eventualmente precisa criar uma carteira de criptomoedas.
 
-Wallets are kind of like the accounts from the `web2` internet that you’re used to. You’ll use a wallet to log into the blockchain ecosystem, also known as `web3`, where you’ll be able to use `cryptocurrency` and connect to `blockchain apps`!
+As carteiras são como as contas na internet da `web2` com as quais você está acostumado. Você usará uma carteira para fazer login no ecossistema de blockchains, também conhecido como `web3`, onde poderá usar `criptomoedas` e se conectar a `aplicativos de blockchain`!
 
-In this lesson, we’ll introduce you to wallets, how they work, and how to keep your cryptocurrency secure. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
+Nesta lição, falaremos sobre carteiras, como elas funcionam e como você pode manter suas criptomoedas seguras. Terminaremos com um guia sobre como criar uma e acessar **a blockchain da Ethereum, o lar da Bankless Academy.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
-# Wallet Definition
+# Definição de Carteira
 
-What exactly is a crypto wallet?
+O que é exatamente uma carteira de criptomoedas?
 
-The short definition is: an account on a `blockchain`, used to store digital assets and log into blockchain apps.
+A resposta curta é: uma conta em uma`blockchain`, usada para armazenar ativos digitais e acessar aplicativos de blockchain.
 
-It’s like having your own personal safe on the internet, and you hold the only key for unlocking it. At the same time, this safe is similar to a regular website account. You can use it to make purchases, send or receive `cryptocurrency`, and interact with a blockchain.
+É como ter seu próprio cofre na internet, e você tem a única chave para o abrir. Ao mesmo tempo, esse cofre é semelhante a uma conta em um site comum. Você pode usá-lo para fazer compras, enviar ou receber `criptomoedas` e interagir com uma blockchain.
 
-However, unlike the `web2` accounts you’re used to, a single wallet can access an entire blockchain, and a large number of blockchain apps. It’s like having one account for the entire internet.
+No entanto, ao contrário das contas `web2` a que você está acostumado, uma única carteira pode acessar uma blockchain inteira e um grande número de aplicativos blockchain. É como ter uma conta para toda a internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
-# Is creating a wallet difficult?
+# É difícil criar uma carteira?
 
-It used to be difficult, but these days anyone can create a wallet quite easily.
+Antigamente sim, era difícil. Mas hoje, qualquer pessoa pode facilmente criar uma carteira.
 
-If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.
+Se você estiver confortável em baixar e instalar software em seu computador (ou aplicativos no seu celular), então você não terá problemas em criar sua primeira carteira.
 
-The trickier part of managing a wallet involves keeping it secure — which we’ll dive into shortly!
+A parte mais complicada de gerenciar uma carteira consiste em mantê-la segura, o que veremos em breve!
 
-Choosing your `wallet app` may also feel intimidating. This is the app that you will install on your device to access your wallet on the blockchain. We recommend starting with the Zerion wallet app: it’s user friendly and has access to many popular blockchains. As you get more comfortable in the `web3` space, you will likely explore other providers and create multiple wallets.
+Escolher seu `aplicativo de carteira` também pode parecer intimidante. Esse é o aplicativo que você instalará em seu dispositivo para acessar sua carteira na blockchain. Recomendamos começar com o aplicativo de carteira Zerion: ele é fácil de usar e tem acesso a muitas blockchains populares. À medida que se sentir mais confortável no espaço da `web3`, você provavelmente explorará outros provedores e criará várias carteiras.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
 # Knowledge Check 1
 
-What is a wallet?
+O que é uma carteira?
 
-- [ ] A blockchain
+- [ ] Uma blockchain
 
-> ℹ️ Try again! Your wallet is hosted on a blockchain.
+> ℹ️ Tente novamente! Sua carteira está hospedada em uma blockchain.
 
-- [ ] A cryptocurrency
+- [ ] Uma criptomoeda
 
-> ℹ️ Try again! Cryptocurrencies are something you hold in your wallet.
+> Tente novamente! As criptomoedas são algo que você guarda em sua carteira.
 
-- [ ] A digital collectible
+- [ ] Um colecionável digital
 
-> ℹ️ Try again! Digital collectibles are something you hold in your wallet.
+> ℹ️ Tente novamente! Os colecionáveis digitais são algo que você guarda em sua carteira.
 
-- [ ] A blockchain account
+- [ ] Uma conta na blockchain
 
-> ℹ️ Correct! Wallets are accounts used to interact with blockchains.
+> ℹ️ Correto! As carteiras são contas usadas para interagir com blockchains.
 
-# Wallets & Password Recovery
+# Carteiras e Recuperação de Senhas
 
-Here is one of the most important things to understand about `web3` wallets: **There are no “password resets” or “password changes”.**
+Esta é uma das coisas mais importantes para entender sobre as carteiras na `web3`: **Não é possível "redefinir" ou "alterar" sua senha.**
 
-Most of us are used to these features. If we forget a password, we click a button, do a few things, and get a new password. Easy.
+A maioria de nós está acostumada a esses recursos. Se esquecermos uma senha, clicamos em um botão, fazemos algumas coisas e recebemos uma nova senha. Simples.
 
-Not so with crypto wallets. Because of how blockchains work, wallets are assigned an “address” and a complex “password” when they’re created — and you do not choose these.
+O mesmo não acontece com as carteiras de criptomoedas. Devido à forma como as blockchains funcionam, as carteiras recebem um "endereço" e uma "senha" complexa quando são criadas. Você não as escolhe.
 
-This address and password combination are impossible to change, although you can always create a new wallet if you need to. Let’s learn a bit more about these special addresses and passwords, so that we can feel confident using them!
+É impossível alterar essa combinação de endereço e senha, embora você possa criar uma nova carteira a qualquer altura, se necessário. Vamos aprender um pouco mais sobre esses endereços e senhas especiais, para que nos possamos sentir confiantes ao usá-los!
 
-# Your wallet’s public key
+# A chave pública da sua carteira
 
-A `public key` is basically your wallet’s address. Often, this looks like a random series of letters and numbers.
+Uma `chave pública` é basicamente o endereço de sua carteira. Muitas vezes, isso se parece com uma série aleatória de letras e números.
 
-Example: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
+Exemplo: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-It is possible to create easier to remember versions of this with some `web3` services, but that’s a lesson for another time.
+É possível criar versões mais fáceis de lembrar com alguns serviços da `Web3`, mas essa é uma lição para outro momento.
 
-You can also think of a public key like a house address. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.
+Você também pode pensar na chave pública como um endereço de casa. Ele é público, qualquer pessoa pode vê-lo e diz a outros para onde eles podem enviar ativos de criptomoedas, sem revelar nenhuma informação pessoal sobre você.
 
-It is perfectly safe to share your wallet’s **public key**.
+É perfeitamente seguro compartilhar a **chave pública** de sua carteira.
 
-**Note:** A single wallet app can hold multiple public/`private key` pairs.
+**Nota:** Um único aplicativo de carteira pode armazenar vários pares de chaves públicas/`privadas`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
-# Your wallet’s private key
+# A chave privada da sua carteira
 
-If the public key is like a house address, then the `private key` is like the key to the front door. It’s the “password” to your funds and assets.
+Se a chave pública é como um endereço de uma casa, então a chave `privada` é como a chave para a porta da frente. É a "senha" para seus fundos e ativos.
 
-Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
+Exemplo: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
-**It’s never safe to share this key — you could lose your wallet and everything in it.**
+**Nunca é seguro compartilhar essa chave. Você pode perder sua carteira e tudo o que ela contém.**
 
-Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the `wallet`.
+A maioria das pessoas até recomenda que você nem a guarde em formato digital. Quem tem acesso a uma chave privada tem acesso a tudo o que está na `carteira`.
 
-This is more than just a password. You cannot reset it if you lose access to it.
+Isso é mais do que uma simples senha. Você não a pode redefinir se perder o acesso a ela.
 
-Luckily, most `blockchain apps` do not require you to type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.
+Felizmente, a maioria dos `aplicativos blockchain` não exige que você digite uma sequência longa e complicada de caracteres sempre que precisar enviar fundos ou assinar uma transação na blockchain. A chave privada geralmente opera silenciosamente em segundo plano.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
 # Knowledge Check 2
 
-Your public key is like your _____ and your private key is like your _____ .
+Sua chave pública é como seu _____ e sua chave privada é como sua _____ .
 
-- [ ] Routing Number / Account Number
+- [ ] Número de Roteamento / Número da Conta
 
-> ℹ️ Try again! Unlike a bank account number, your private key shouldn’t be shared with others.
+> ℹ️ Tente novamente! Ao contrário do número de uma conta bancária, sua chave privada não deve ser compartilhada com outras pessoas.
 
-- [ ] Address / Zip code
+- [ ] Endereço / CEP
 
-> ℹ️ Try again! Unlike a zip code, your private key shouldn’t be shared with others.
+> ℹ️ Tente novamente! Ao contrário de um CEP, sua chave privada não deve ser compartilhada com outras pessoas.
 
-- [ ] House address / House key
+- [ ] Endereço da Casa / Chave da Casa
 
-> ℹ️ Correct! Your public key allows others to find you, while only your private key lets you in.
+> ℹ️ Correto! Sua chave pública permite que outras pessoas o encontrem, enquanto somente sua chave privada permite que você entre.
 
-- [ ] Phone Number / Passport Number
+- [ ] Número de Celular / Número de Passaporte
 
-> ℹ️ Try again! These are examples of public & private information, but they’re unrelated.
+> ℹ️ Tente novamente! Esses são exemplos de informações públicas e privadas, mas não estão relacionadas.
 
-# Recovery Phrase
+# Frase de Recuperação
 
-When you set up a new wallet, your wallet app will provide you with a `recovery phrase`.
+Quando você configurar uma nova carteira, o aplicativo de carteira fornecerá uma `frase de recuperação`.
 
-Also called a “seed phrase” or “secret phrase”, this string of words can be used to access your wallet and crypto assets if:
+Também chamada de "frase semente" ou "frase secreta", essa sequência de palavras pode ser usada para acessar sua carteira e seus ativos de criptomoedas se:
 
-- Your `wallet app` or device fails unexpectedly or is damaged.
-- Your device has been lost or stolen.
-- You want to access your wallet on multiple devices.
+- Seu `aplicativo de carteira` ou dispositivo falha inesperadamente ou está danificado.
+- Seu dispositivo foi perdido ou roubado.
+- Você quer acessar sua carteira em vários dispositivos.
 
-Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. This data is used to generate both the `public key` and `private key` for your wallet.
+A maioria das frases de recuperação consiste em uma lista de 12 a 24 palavras que representam dados únicos. Esses dados são usados para gerar a `chave pública` e a `chave privada` de sua carteira.
 
-Wallet recovery does **not** change or reset the keys.
+A recuperação da carteira **não** altera nem redefine as chaves.
 
-Your recovery phrase is essentially an easier to read version of your public/private key pair. **Never share your recovery phrase.**
+Sua frase de recuperação é basicamente uma versão mais fácil de ler do seu par de chaves públicas/privadas. **Nunca compartilhe sua frase de recuperação.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
 # Knowledge Check 3
 
-Can you access your wallet with a recovery phrase if your device gets damaged or lost?
+Você consegue acessar a sua carteira com uma frase de recuperação se o seu dispositivo for danificado ou perdido?
 
-- [ ] No
+- [ ] Não
 
-> ℹ️ Try again!
+> ℹ️ Tente novamente!
 
-- [ ] Yes
+- [ ] Sim
 
-> ℹ️ Correct! Recovery phrases grant access to your wallet, even on multiple devices.
+> ℹ️ Correto! As frases de recuperação concedem acesso à sua carteira, mesmo em vários dispositivos.
 
-# Types of Wallet
+# Tipos de Carteiras
 
-Just as there are many types of computer software, there many types of wallet. Let’s look at the four main categories:
+Assim como existem muitos tipos de softwares de computador, existem muitos tipos de carteira. Vamos dar uma olhada nas quatro categorias principais:
 
-- 🏦 **Custodial wallets:** where a third party is responsible for your private keys.
-- 👤 **Self-custody (non-custodial) wallets:** where you are responsible for your private keys.
+- 🏦 **Carteiras custodiais:** onde um terceiro é responsável por suas chaves privadas.
+- **Carteiras de auto-custódia (não custodiais):** once você é responsável por suas chaves privadas.
 
-There are two styles of `self-custody wallet`:
+Existem dois estilos de carteiras de `auto-custódia`:
 
-- 🔥 **Hot wallets:** software on your desktop or phone.
-- 🧊 **Cold wallets:** a piece of hardware (like a memory stick) you store somewhere safe.
+- 🔥 **Carteiras quentes ("hot wallets"):** software no seu computador ou celular.
+- 🧊 **Carteiras frias ("cold wallets"):** um pedaço de hardware (como um cartão de memória) que você armazena em algum lugar seguro.
 
-Each wallet solution serves a different use-case. Many advanced users have one of each!
+Cada tipo de carteira serve um caso de uso diferente. Muitos usuários avançados têm um de cada!
 
-Don’t worry, we’ll only be creating one wallet today.
+Não se preocupe, criaremos apenas uma carteira hoje.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
-# Custodial Wallets
+# Carteiras Custodiais
 
-Since your `private key` unlocks access to your `wallet`, keeping it safe and secure is very important!
+Como sua `chave privada` libera o acesso à sua `carteira`, é muito importante mantê-la sã e salva!
 
-`Custodial wallet` services include cryptocurrency exchanges such as Coinbase and Kraken. **They are your wallet custodian** — they look after your private keys for you. You access their services like any other website (with an email login and resettable password).
+Os serviços de `carteira custodial` incluem corretoras de criptomoedas, como Coinbase e Kraken. **Eles são os guardiões de sua carteira**, cuidando de suas chaves privadas por você. Você acessa seus serviços como qualquer outro site (com um login de e-mail e uma senha redefinível).
 
 This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some `blockchain apps` may be limited.
 
