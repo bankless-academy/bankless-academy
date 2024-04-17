@@ -79,71 +79,71 @@ ________________________________________________________________________________
 
 > ℹ️ 再试一次！ 加密货币只是你放在钱包里的资产之一。
 
-- [ ] A blockchain account
+- [ ] 一个区块链帐户
 
-> ℹ️ Correct! Wallets are accounts used to interact with blockchains.
+> ℹ️ 正确！ 加密钱包是用于与区块链交互的账户。
 
-# Wallets & Password Recovery
+# 钱包 & 密码重置
 
-Here is one of the most important things to understand about `web3` wallets: **There are no “password resets” or “password changes”.**
+这是你必须了解的`web3`钱包最重要事项： **没有 "密码重置 "或 "修改密码"的功能。**
 
-Most of us are used to these features. If we forget a password, we click a button, do a few things, and get a new password. Easy.
+我们大多数人已经习惯了这些功能。 如果我们忘记了密码，只需点击忘记密码的按钮，点几下鼠标就能得到一个新密码。 轻而易举。
 
-Not so with crypto wallets. Because of how blockchains work, wallets are assigned an “address” and a complex “password” when they’re created — and you do not choose these.
+但在加密货币钱包的领域这完全不同。 由于区块链的工作原理，钱包在创建时会分配一个 "地址 "和一个复杂的 "密码" —— 你无法主动选择这些参数。
 
-This address and password combination are impossible to change, although you can always create a new wallet if you need to. Let’s learn a bit more about these special addresses and passwords, so that we can feel confident using them!
+这个地址+密码的组合是无法更改的，但如果有需要，你也可以随时另创一个全新的钱包。 接下来，让我们一起进一步学习这些关于地址和密码的细节，以便更放心的使用加密钱包！
 
-# Your wallet’s public key
+# 您的钱包公钥
 
-A `public key` is basically your wallet’s address. Often, this looks like a random series of letters and numbers.
+`公钥`基本上就是你的钱包地址。 通常，这看起来就像一串随机的字母和数字。
 
-Example: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
+例如:_0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-It is possible to create easier to remember versions of this with some `web3` services, but that’s a lesson for another time.
+当然，你也可以通过某些`web3`服务来创建更易记的公钥版本，但这是下一堂课学习的内容。
 
-You can also think of a public key like a house address. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.
+你也可以把公钥想象成家庭住址。 它是公开的，任何人都可以看到，在不泄露你个人信息的同时它也还在告诉其他人“可以将加密资产发送到这里”。
 
-It is perfectly safe to share your wallet’s **public key**.
+分享你的钱包**公钥**是绝对安全的。
 
-**Note:** A single wallet app can hold multiple public/`private key` pairs.
+**注：**单个加密钱包 app 可持有多个`公钥`/`私钥`对。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
-# Your wallet’s private key
+# 您的钱包私钥
 
-If the public key is like a house address, then the `private key` is like the key to the front door. It’s the “password” to your funds and assets.
+如果说公钥就像住址，那么`私钥`就像前门钥匙。 它是您的资金和资产的 "密码"。
 
-Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
+示例： _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
-**It’s never safe to share this key — you could lose your wallet and everything in it.**
+**分享私钥绝对不安全 —— 你可能会丢失你的钱包以及钱包里的一切资产。**
 
-Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the `wallet`.
+大多数人建议您甚至不要将其用电子的形式保存。 谁能获得私钥，谁就能获得`钱包`里的任何东西。
 
-This is more than just a password. You cannot reset it if you lose access to it.
+这不仅仅是密码。 如果你弄丢了私钥，它是没办法被重置或被重新获取的。
 
-Luckily, most `blockchain apps` do not require you to type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.
+幸运的是，绝大多数`区块链 app `不会在你每次发送资金或在区块链交易签名时要你输入一大串数码。 私钥通常在后台静默运行。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
 # Knowledge Check 2
 
-Your public key is like your _____ and your private key is like your _____ .
+您的公钥就像您的 _____ ，您的私钥就像您的 _____。
 
-- [ ] Routing Number / Account Number
+- [ ] 路由号码/账户号码
 
-> ℹ️ Try again! Unlike a bank account number, your private key shouldn’t be shared with others.
+> ℹ️ 再试一次！ 与银行账号不同，您的私钥不应与他人共享。
 
-- [ ] Address / Zip code
+- [ ] 地址/邮政编码
 
-> ℹ️ Try again! Unlike a zip code, your private key shouldn’t be shared with others.
+> ℹ️ 再试一次！ 与银行账号不同，您的私钥不应与他人共享。
 
-- [ ] House address / House key
+- [ ] 房屋住址/房屋钥匙
 
-> ℹ️ Correct! Your public key allows others to find you, while only your private key lets you in.
+> ℹ️ 正确！ 你的公钥可以让别人找到你，而只有私钥才能让你有权访问。
 
-- [ ] Phone Number / Passport Number
+- [ ] 电话号码/护照号码
 
-> ℹ️ Try again! These are examples of public & private information, but they’re unrelated.
+> ℹ️ 再试一次！ 这些都是公共 & 私人信息的例子，但它们和公私钥并不相关。
 
 # Recovery Phrase
 
