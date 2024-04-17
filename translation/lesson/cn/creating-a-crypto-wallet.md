@@ -1,9 +1,9 @@
 ---
-TITLE: Creating a Crypto Wallet
-DESCRIPTION: Set up your first crypto wallet with our step-by-step walkthrough.
-LANGUAGE: English
+TITLE: 创建加密钱包
+DESCRIPTION: 通过循序渐进教程，设置您的第一个加密货币钱包。
+LANGUAGE: 简体中文（Simplified Chinese）
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: 183Aaros.eth
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
