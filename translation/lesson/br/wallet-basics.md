@@ -199,59 +199,59 @@ Como sua `chave privada` libera o acesso à sua `carteira`, é muito importante 
 
 Os serviços de `carteira custodial` incluem corretoras de criptomoedas, como Coinbase e Kraken. **Eles são os guardiões de sua carteira**, cuidando de suas chaves privadas por você. Você acessa seus serviços como qualquer outro site (com um login de e-mail e uma senha redefinível).
 
-This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some `blockchain apps` may be limited.
+Pode ser tudo que algumas pessoas precisam, mas é preciso que você confie nesses terceiros para proteger seus ativos cripto e lhe dar acesso quando quiser trocá-los ou enviá-los para algum lugar. Além disso, seu acesso a alguns `aplicativos blockchain` pode ser limitado.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
 # Knowledge Check 4
 
-Do you control your private key with a custodial wallet?
+Você controla sua chave privada com uma carteira custodial?
 
-- [ ] Yes
+- [ ] Sim
 
-> ℹ️ Try again!
+> ℹ️ Tente novamente!
 
-- [ ] No
+- [ ] Não
 
-> ℹ️ Correct! Custodial wallets require trust in a third party (custodian) to control your private keys.
+> ℹ️ Correto! As carteiras custodiais exigem que você confie em um terceiro (custodiante) para controlar suas chaves privadas.
 
-# Non-custodial Wallet
+# Carteiras Não Custodiais
 
-A `self-custody wallet` (like Zerion or Trezor) is when you fully control your `private key`. You have **no custodian**, and you alone are responsible for keeping your private key safe.
+A `carteira de auto-custódia` (como Zerion ou Trezor) é quando você controla totalmente sua `chave privada`. Você **não tem um custodiante** e é o único responsável por manter sua chave privada em segurança.
 
-These wallets offer the widest range of access and freedom within the world of `web3`. You never have to worry about a third party freezing or mishandling your funds.
+Essas carteiras oferecem a mais vasta gama de acesso e liberdade no mundo da `Web3`. Você nunca precisará se preocupar com o congelamento ou o mau uso de seus fundos por terceiros.
 
-The trade-off is in risk: if you lose access to your `recovery phrase`, or your private key is compromised, there is often very little you can do to restore access to the wallet.
+A troca está no risco: se você perder o acesso à sua `frase de recuperação` ou se sua chave privada for comprometida, geralmente há muito pouco que você possa fazer para restaurar o acesso à carteira.
 
-Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.
+Seja qual for o caminho escolhido, vale a pena se familiarizar e ficar confortável com a segurança da carteira. Daremos algumas dicas antes de você terminar esta lição.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-833c3d6b.svg)
 
 # Knowledge Check 5
 
-Are you responsible for your private key with a self-custody wallet?
+Você é o responsável por sua chave privada em uma carteira de auto-custódia?
 
-- [ ] Yes
+- [ ] Sim
 
-> ℹ️ Correct! With a self-custody wallet you are solely responsible for your private keys.
+> ℹ️ Correto! Em uma carteira auto-custódia você é o único responsável pelas suas chaves privadas.
 
-- [ ] No
+- [ ] Não
 
-> ℹ️ Try again!
+> Tente novamente!
 
-# Hot Wallets
+# Carteiras Quentes
 
-You will hear the terms “hot” and “cold wallet” quite a bit in `web3`.
+Você ouvirá bastante os termos "carteira quente" e "fria" na `web3`.
 
-A `hot wallet` is a wallet accessed via an app on your device — the Zerion app for example. Similar to many `web2` apps, a wallet app is consistently connected to the internet.
+Uma `carteira quente` ("hot wallet") é uma carteira acessada por meio de um aplicativo no seu dispositivo, como é o caso do aplicativo da Zerion. Tal como muitos aplicativos da `web2`, um aplicativo de carteira está sempre conectado à internet.
 
-Your `private key` is encrypted and stored inside the wallet app, and is only accessed when you interact with the blockchain. These wallets are named ‘hot wallets’ for this “hot” connection between the internet and your private key.
+Sua `chave privada` é encriptada e armazenada dentro do aplicativo de carteira e só é acessada quando você interage com a blockchain. Essas carteiras são chamadas de ‘carteiras quentes‘ por causa dessa conexão "quente" entre a internet e sua chave privada.
 
-Hot wallets are convenient for small day-to-day interactions, much like a physical wallet you keep in your pocket. We’ll be creating a hot wallet today!
+As carteiras quentes são convenientes para pequenas interações do dia-a-dia, tal como uma carteira física que você tem no bolso. Hoje iremos criar uma carteira quente!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-9356886d.svg)
 
-# Cold Wallets
+# Carteiras Frias
 
 As you dive deeper into your `web3` journey, you will come to know a landscape full of interesting tech trade-offs.
 
