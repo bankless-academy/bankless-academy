@@ -255,7 +255,7 @@ Les wallets chauds sont pratiques pour les petites interactions quotidiennes, to
 
 À mesure que vous plongez plus profondément dans votre parcours `web3`, vous découvrirez un paysage plein de compromis technologiques intéressants.
 
-Les `wallets froids` offrent une plus grande sécurité au détriment de la commodité. Un wallet froid est un wallet dans lequel votre `clé privée` est stockée sur un dispositif matériel dédié (comme une clé USB ou un disque dur externe). You must physically connect the hardware wallet to your computer to access your wallet on the blockchain. Your private key is never directly connected to the internet. Les wallets froids tirent leur nom de cette connexion internet "froide".
+Les `wallets froids` offrent une plus grande sécurité au détriment de la commodité. Un wallet froid est un wallet dans lequel votre `clé privée` est stockée sur un dispositif matériel dédié (comme une clé USB ou un disque dur externe). Vous devez connecter physiquement le hardware wallet à votre ordinateur pour accéder à votre wallet sur la blockchain. Votre clé privée n'est jamais directement connectée à l'internet. Les wallets froids tirent leur nom de cette connexion internet "froide".
 
 Ils sont généralement considérés comme plus sûrs que les `wallets chauds`, car votre `clé privée` est stockée hors ligne, hors de portée des attaquants numériques.
 
