@@ -195,13 +195,13 @@ ________________________________________________________________________________
 
 # 托管钱包
 
-Since your `private key` unlocks access to your `wallet`, keeping it safe and secure is very important!
+由于您的`私钥`可以解锁您的`钱包`，因此确保`私钥</0>的安全非常重要！</p>
 
-`Custodial wallet` services include cryptocurrency exchanges such as Coinbase and Kraken. **They are your wallet custodian** — they look after your private keys for you. You access their services like any other website (with an email login and resettable password).
+<p spaces-before="0"><code>托管钱包`服务包括 Coinbase 和 Kraken 等加密货币交易所。 **他们是您的钱包托管人** —— 为您保管私钥。 您可以像访问其他网站一样访问他们的服务（使用电子邮件登录和可重置密码）。
 
-This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some `blockchain apps` may be limited.
+这可能是某些人所需要的全部，但这需要您信任这些第三方，以确保您的加密资产安全，并在您想要交易或将其发送到某个地方时给予您访问权限。 此外，您访问某些`区块链应用程序`的权限可能会受到限制。
 
-![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
+![]()
 
 # Knowledge Check 4
 
@@ -217,37 +217,37 @@ This may be all some people need, but it requires you to trust these third parti
 
 # 非托管型钱包
 
-`自我保管钱包`（如 Zerion 或 Trezor）由你完全控制自己的`私钥`。 You have **no custodian**, and you alone are responsible for keeping your private key safe.
+`自我托管钱包`（如 Zerion 或 Trezor）由你完全控制自己的`私钥`。 **无托管人**，你自己就是负责保管你的私人密钥的托管人。
 
-These wallets offer the widest range of access and freedom within the world of `web3`. You never have to worry about a third party freezing or mishandling your funds.
+这些钱包在 `web3` 世界里提供了广泛的访问权限与自由。 您永远不必担心第三方冻结或不当处理您的资金。
 
-The trade-off is in risk: if you lose access to your `recovery phrase`, or your private key is compromised, there is often very little you can do to restore access to the wallet.
+这样做的代价是风险：如果您失去了`恢复助记词`的访问权限，或者您的私人密钥被泄露，您通常几乎无法恢复钱包的访问权限。
 
-Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.
+无论您选择哪种方式，熟悉并掌握钱包安全都是有益的。 在完成这个课程之前，我们会给你一些小贴士。
 
-![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-833c3d6b.svg)
+![]()
 
 # Knowledge Check 5
 
-Are you responsible for your private key with a self-custody wallet?
+使用自我托管钱包时，您需要对自己的私钥负责吗？
 
-- [ ] Yes
+- [ ] 是
 
-> ℹ️ Correct! With a self-custody wallet you are solely responsible for your private keys.
+> ℹ️ 正确！ 使用自我托管钱包时，您全权负责您私钥的安全。
 
-- [ ] No
+- [ ] 否
 
-> ℹ️ Try again!
+> ℹ️ 再试一次！
 
-# Hot Wallets
+# 热钱包
 
-You will hear the terms “hot” and “cold wallet” quite a bit in `web3`.
+在`web3` 中，你会经常听到 "热钱包 "和 "冷钱包 "这两个词。
 
-A `hot wallet` is a wallet accessed via an app on your device — the Zerion app for example. Similar to many `web2` apps, a wallet app is consistently connected to the internet.
+`热钱包`是通过设备上的应用程序访问的钱包，例如 Zerion 应用程序。 与许多`web2`应用程序类似，钱包应用程序始终与互联网相连。
 
-Your `private key` is encrypted and stored inside the wallet app, and is only accessed when you interact with the blockchain. These wallets are named ‘hot wallets’ for this “hot” connection between the internet and your private key.
+您的<0>私人密钥</0>经过加密并存储在钱包应用程序中，只有在您与区块链交互时才会被访问。 这些钱包被命名为 "热钱包"，因为互联网与您的私人密钥之间存在 "热 "连接。
 
-Hot wallets are convenient for small day-to-day interactions, much like a physical wallet you keep in your pocket. We’ll be creating a hot wallet today!
+热钱包为日常小额交易提供了便利，就像你放在口袋里的实体钱包一样。 我们今天将制作一个热钱包！
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-9356886d.svg)
 
