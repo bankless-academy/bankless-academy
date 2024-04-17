@@ -45,9 +45,9 @@
     "definition": "Un wallet est une application ou un dispositif utilisé pour envoyer et recevoir des actifs cryptographiques sur la blockchain."
   },
   "recovery phrase": {
-    "keyword": "recovery phrase",
+    "keyword": "phrase de récupération",
     "keyword_plural": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+    "definition": "Une phrase de récupération est une liste de 12 à 24 mots, utilisée pour générer la clé publique et la clé privée de votre portefeuille."
   },
   "self-custody wallet": {
     "keyword": "self-custody wallet",
