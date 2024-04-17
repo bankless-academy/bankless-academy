@@ -41,15 +41,15 @@ Este é um resumo de nossa lição [Princípios Básicos de Carteiras] (https://
 >
 > - Essas carteiras funcionam tanto em computadores quanto em celulares.
 >
-> - Criar uma carteira é fácil e leva cerca de 5 minutos. Vamos te mostrar como, no nosso vídeo abaixo!
+> - Criar uma carteira é fácil e leva cerca de 5 minutos. Vamos te mostrar como no nosso vídeo abaixo!
 
 ## O que é uma Carteira de Criptomoedas?
 
-As carteiras de criptomoedas são uma peça de equipamento essencial na web3, permitindo que você use `criptomoedas` no seu computador ou smartphone. As carteiras são acessadas usando um software chamado de `aplicativo de carteira`. Ele é uma extensão no navegador da web para seu computador ou um aplicativo em seu celular.
+As carteiras de criptomoedas são uma peça de equipamento essencial na web3, permitindo que você use `criptomoedas` no seu computador ou celular. As carteiras são acessadas usando um software chamado de `aplicativo de carteira`. Ele é uma extensão no navegador da web para seu computador ou um aplicativo em seu celular.
 
-Mas há mais. As carteiras são mais do que contas para guardar criptomoedas, elas são nossa conexão com a blockchain. Podemos usá-las para trocar criptomoedas com outras pessoas, fazer login em aplicativos de blockchain **e até mesmo colecionar itens digitais, como os emblemas da Bankless Academy.** Quanto mais exploramos, mais usos as nossas carteiras têm. Alguns as veem como o início da identidade digital.
+Mas há mais. As carteiras são mais do que contas para guardar criptomoedas, elas são nossa conexão com a blockchain. Podemos usá-las para trocar criptomoedas com outras pessoas, fazer login em aplicativos blockchain **e até mesmo colecionar itens digitais, como os emblemas da Bankless Academy.** Quanto mais exploramos, mais usos as nossas carteiras têm. Alguns as veem como o início da identidade digital.
 
-As carteiras têm com dois pedaços de informação essenciais:
+As carteiras têm dois pedaços de informação essenciais:
 
 - Uma `chave pública`, que você pode pensar como seu _nome de usuário_. Você o compartilhará publicamente para receber criptomoedas.
 
@@ -75,7 +75,7 @@ Configure sua primeira carteira no computador, usando o passo a passo abaixo, ou
 
 **É hora de entrar no multiverso blockchain!**
 
-Não se esqueça de coletar este registro do manual para facilitar a consulta em suas viagens e para apoiar a Bankless Academy.
+Não se esqueça de coletar este registro do manual para facilitar a consulta em suas viagens e apoiar a Bankless Academy.
 
 Boa viagem, Explorador!
 
