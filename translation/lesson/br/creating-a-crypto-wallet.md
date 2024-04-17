@@ -27,87 +27,87 @@ ________________________________________________________________________________
 
 ---
 
-This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**
+Este é um resumo de nossa lição [Introdução às Carteiras] (https://app.banklessacademy.com/lessons/wallet-basics), juntamente com um passo a passo para a missão. Confira [a lição completa] (https://app.banklessacademy.com/lessons/wallet-basics) para **aumentar seu conhecimento e reivindicar seu distintivo!**
 
 ---
 
-## Key Takeaways
+## Principais Conclusões
 
-> - You’ll need a `crypto wallet` to access the world of blockchains!
+> - Você precisará de uma `carteira de criptomoedas` para acessar o mundo das blockchains!
 >
-> - A wallet is like a `blockchain` account.
+> - Uma carteira é como uma conta `blockchain`.
 >
-> - Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.
+> - As carteiras são usadas para armazenar `criptomoedas`, entrar em aplicativos de blockchain e muito mais.
 >
-> - These wallets work on both computers and phones.
+> - Essas carteiras funcionam tanto em computadores quanto em celulares.
 >
-> - Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!
+> - Criar uma carteira é fácil e leva cerca de 5 minutos. Vamos te mostrar como, no nosso vídeo abaixo!
 
-## What is a Crypto Wallet?
+## O que é uma Carteira de Criptomoedas?
 
-Crypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.
+As carteiras de criptomoedas são uma peça de equipamento essencial na web3, permitindo que você use `criptomoedas` no seu computador ou smartphone. As carteiras são acessadas usando um software chamado de `aplicativo de carteira`. Ele é uma extensão no navegador da web para seu computador ou um aplicativo em seu celular.
 
-It gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
+Mas há mais. As carteiras são mais do que contas para guardar criptomoedas, elas são nossa conexão com a blockchain. Podemos usá-las para trocar criptomoedas com outras pessoas, fazer login em aplicativos de blockchain **e até mesmo colecionar itens digitais, como os emblemas da Bankless Academy.** Quanto mais exploramos, mais usos as nossas carteiras têm. Alguns as veem como o início da identidade digital.
 
-Wallets come with two core pieces of account information:
+As carteiras têm com dois pedaços de informação essenciais:
 
-- A `public key`, that you can think of as your _username_. You’ll share it publicly to receive cryptocurrency.
+- Uma `chave pública`, que você pode pensar como seu _nome de usuário_. Você o compartilhará publicamente para receber criptomoedas.
 
-- A `private key`, acting as your _password_. This should always be kept private, and cannot be changed.
+- Uma `chave privada`, que funciona como sua _senha_. Esta informação deve ser sempre mantida em segredo e não pode ser alterada.
 
-Protecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).
+Proteger sua chave privada é fundamental, pois essa chave concede acesso instantâneo à sua carteira. Você nunca deve compartilhar sua chave privada. Você pode aprender mais assistindo [à lição completa] (https://app.banklessacademy.com/lessons/wallet-basics).
 
-Today we will set up our first wallet, using our recommended crypto wallet: Zerion!
+Hoje vamos configurar nossa primeira carteira, usando nossa carteira de criptomoedas recomendada: Zerion!
 
-## Walkthrough
+## Passo a passo
 
-Set up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.
+Configure sua primeira carteira no computador, usando o passo a passo abaixo, ou continue rolando a tela para ver o passo a passo para configurar a carteira no seu celular.
 
-### Computer Wallet
+### Carteira no Computador
 
 
 
-### Phone Wallet
+### Carteira no Celular
 
 
 
 ---
 
-**It’s time to join the blockchain multiverse!**
+**É hora de entrar no multiverso da blockchain!**
 
-Don’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.
+Não se esqueça de coletar este registro do manual para facilitar a consulta em suas viagens e para apoiar a Bankless Academy.
 
-Safe travels, Explorer!
-
----
-
-## FAQ
-
-### What is a cryptocurrency?
-
-Cryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.
-
-Learn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!
-
-### What are public and private keys?
-
-Public/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.
-
-You can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.
-
-Learn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.
-
-### What happens if I lose my recovery phrase?
-
-Your recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.
-
-### Can Ethereum wallets hold Bitcoin?
-
-Ethereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).
+Boa viagem, Explorador!
 
 ---
 
-**Author**
+## Perguntas Frequentes
+
+### O que é uma criptomoeda?
+
+As criptomoedas são uma forma de dinheiro digital, protegida por `criptografia`. Essas moedas funcionam sem a necessidade de autoridades e bancos centralizados, reduzindo o risco de fraude e aumentando a liberdade financeira do detentor.
+
+Saiba mais sobre criptomoedas em nossa lição **[Princípios Básicos do Bitcoin](https://app.banklessacademy.com/lessons/bitcoin-basics)** e veja como essas moedas digitais estão revolucionando o mundo financeiro!
+
+### O que são chaves públicas e privadas?
+
+A `encriptação` de chaves públicas/privadas permite que sua carteira torne algumas informações públicas, como o endereço para o qual outras pessoas podem enviar criptomoedas para você, mantendo o acesso às suas criptomoedas privado. Uma chave é como o endereço da casa de suas criptomoedas, e a outra abre a porta da frente.
+
+Você pode compartilhar sua chave pública com qualquer pessoa em quem confie para lhe enviar criptomoedas, mas sua chave privada é apenas para seus olhos, pois ela concede acesso a todos os ativos dentro da carteira. Nunca o compartilhe, mesmo que seu contato afirme ser da Bankless Academy ou da Zerion.
+
+Saiba mais e receba uma recompensa por criar sua primeira carteira em nossa lição [Introdução às Carteiras] (https://app.banklessacademy.com/lessons/wallet-basics).
+
+### O que acontece se eu perder minha frase de recuperação?
+
+Sua frase de recuperação, também conhecida como "frase secreta" ou "frase semente", é seu único backup se você perder o acesso à sua carteira no seu dispositivo. Se você perder sua frase de recuperação, os ativos na sua carteira serão perdidos para sempre. Por isso, é importante guardá-lo em um local seguro, não apenas contra roubo ou perda, mas também contra possíveis danos causados por fogo ou água.
+
+### As carteiras Ethereum podem conter Bitcoin?
+
+As carteiras Ethereum podem conter Bitcoin, mas em um formato "empacotado" ("wrapped", em inglês). Se quiser manter o Bitcoin original, você terá de criar uma carteira que opere na rede Bitcoin, como [Exodus](https://www.exodus.com/) ou [Mycelium](https://wallet.mycelium.com/).
+
+---
+
+**Autor**
 
 [Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.
 
