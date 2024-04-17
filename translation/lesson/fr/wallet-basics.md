@@ -1,9 +1,9 @@
 ---
-TITLE: Wallet Basics
-DESCRIPTION: What is a crypto wallet? Learn more and create your first wallet today!
-LANGUAGE: English
+TITLE: Les bases d'un wallet
+DESCRIPTION: Qu'est-ce qu'un portefeuille crypto ? Apprenez-en plus et créez votre premier wallet dès aujourd'hui !
+LANGUAGE: Français
 WRITERS: Ap0ll0517, Jordy, Tetranome
-TRANSLATORS: X
+TRANSLATORS: Didier Krux
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -27,53 +27,53 @@ ________________________________________________________________________________
 
 ---
 
-# Wallet Intro
+# Introduction au wallet
 
-**Greetings Bankless Explorer!**
+**Salutations Explorateur Bankless !**
 
-It’s time to dive deeper on your journey into the blockchain multiverse. Every Explorer in this space eventually needs to create a crypto wallet.
+Il est temps d'approfondir votre voyage dans le multivers de la blockchain. Tout explorateur dans ce domaine doit un jour ou l'autre créer un portefeuille de crypto-monnaies.
 
-Wallets are kind of like the accounts from the `web2` internet that you’re used to. You’ll use a wallet to log into the blockchain ecosystem, also known as `web3`, where you’ll be able to use `cryptocurrency` and connect to `blockchain apps`!
+Les wallets sont un peu comme les comptes de l'internet `web2` auxquels vous êtes habitués. Vous utiliserez un portefeuille pour vous connecter à l'écosystème de la blockchain, également connu sous le nom de `web3`, où vous pourrez utiliser des `crypto-monnaies` et vous connecter à des `applications blockchain`!
 
-In this lesson, we’ll introduce you to wallets, how they work, and how to keep your cryptocurrency secure. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
+Dans cette leçon, nous vous présenterons les wallets, leur fonctionnement et la manière de sécuriser vos crypto-monnaies. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
-# Wallet Definition
+# Définition du wallet
 
-What exactly is a crypto wallet?
+Qu'est-ce qu'un crypto wallet ?
 
-The short definition is: an account on a `blockchain`, used to store digital assets and log into blockchain apps.
+La définition courte est la suivante : un compte sur une `blockchain`, utilisé pour stocker des actifs numériques et se connecter à des applications blockchain.
 
-It’s like having your own personal safe on the internet, and you hold the only key for unlocking it. At the same time, this safe is similar to a regular website account. You can use it to make purchases, send or receive `cryptocurrency`, and interact with a blockchain.
+C'est comme si vous aviez votre propre coffre-fort sur l'internet et que vous déteniez la seule clé pour le déverrouiller. En même temps, ce coffre-fort est similaire à un compte de site web ordinaire. Vous pouvez l'utiliser pour effectuer des achats, envoyer ou recevoir des `cryptomonnaies` et interagir avec une blockchain.
 
-However, unlike the `web2` accounts you’re used to, a single wallet can access an entire blockchain, and a large number of blockchain apps. It’s like having one account for the entire internet.
+Toutefois, contrairement aux comptes `web2` auxquels vous êtes habitués, un portefeuille unique peut accéder à une blockchain entière et à un grand nombre d'applications blockchain. C'est comme avoir un seul compte pour l'ensemble de l'internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
-# Is creating a wallet difficult?
+# La création d'un wallet est-elle difficile ?
 
-It used to be difficult, but these days anyone can create a wallet quite easily.
+Autrefois, c'était difficile, mais aujourd'hui, tout le monde peut créer un wallet assez facilement.
 
-If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.
+Si vous êtes à l'aise avec le téléchargement et l'installation de logiciels sur votre ordinateur (ou d'applications sur votre téléphone), vous n'aurez aucun mal à créer votre premier wallet.
 
-The trickier part of managing a wallet involves keeping it secure — which we’ll dive into shortly!
+La partie la plus délicate de la gestion d'un portefeuille consiste à en assurer la sécurité, ce que nous allons aborder dans quelques instants !
 
-Choosing your `wallet app` may also feel intimidating. This is the app that you will install on your device to access your wallet on the blockchain. We recommend starting with the Zerion wallet app: it’s user friendly and has access to many popular blockchains. As you get more comfortable in the `web3` space, you will likely explore other providers and create multiple wallets.
+Le choix de l'`application wallet` peut également sembler intimidant. Il s'agit de l'application que vous installerez sur votre appareil pour accéder à votre wallet sur la blockchain. Nous vous recommandons de commencer par l'application wallet Zerion : elle est simple d'utilisation et permet d'accéder à de nombreuses blockchains populaires. À mesure que vous vous sentirez plus à l'aise dans le monde `web3`, vous explorerez probablement d'autres fournisseurs et créerez plusieurs portefeuilles.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
 # Knowledge Check 1
 
-What is a wallet?
+Qu'est-ce qu'un wallet ?
 
-- [ ] A blockchain
+- [ ] Une blockchain
 
-> ℹ️ Try again! Your wallet is hosted on a blockchain.
+> ℹ️ Réessayez ! Votre wallet est hébergé sur une blockchain.
 
-- [ ] A cryptocurrency
+- [ ] Une cryptomonnaie
 
-> ℹ️ Try again! Cryptocurrencies are something you hold in your wallet.
+> ℹ️ Réessayez ! Les cryptomonnaies sont quelque chose que vous détenez dans votre wallet.
 
 - [ ] A digital collectible
 
