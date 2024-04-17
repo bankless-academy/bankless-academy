@@ -193,7 +193,7 @@ ________________________________________________________________________________
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
-# Custodial Wallets
+# 托管钱包
 
 Since your `private key` unlocks access to your `wallet`, keeping it safe and secure is very important!
 
@@ -205,19 +205,19 @@ This may be all some people need, but it requires you to trust these third parti
 
 # Knowledge Check 4
 
-Do you control your private key with a custodial wallet?
+您是否对托管型钱包的私钥有控制权？
 
-- [ ] Yes
+- [ ] 是
 
-> ℹ️ Try again!
+> ℹ️ 再试一次！
 
-- [ ] No
+- [ ] 否
 
-> ℹ️ Correct! Custodial wallets require trust in a third party (custodian) to control your private keys.
+> ℹ️ 正确！ 托管型钱包将信任第三方，第三方（托管人）将控制您的私钥。
 
-# Non-custodial Wallet
+# 非托管型钱包
 
-A `self-custody wallet` (like Zerion or Trezor) is when you fully control your `private key`. You have **no custodian**, and you alone are responsible for keeping your private key safe.
+`自我保管钱包`（如 Zerion 或 Trezor）由你完全控制自己的`私钥`。 You have **no custodian**, and you alone are responsible for keeping your private key safe.
 
 These wallets offer the widest range of access and freedom within the world of `web3`. You never have to worry about a third party freezing or mishandling your funds.
 
