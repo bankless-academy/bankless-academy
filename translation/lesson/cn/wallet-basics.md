@@ -145,49 +145,49 @@ ________________________________________________________________________________
 
 > ℹ️ 再试一次！ 这些都是公共 & 私人信息的例子，但它们和公私钥并不相关。
 
-# Recovery Phrase
+# 恢复助记词
 
-When you set up a new wallet, your wallet app will provide you with a `recovery phrase`.
+设置新钱包时，钱包应用程序会为您提供`恢复助记词`。
 
-Also called a “seed phrase” or “secret phrase”, this string of words can be used to access your wallet and crypto assets if:
+这串单词也被称为 "种子助记词 "或 "密码助记词"，在任何情况下都可以用来访问您的钱包和加密资产：
 
-- Your `wallet app` or device fails unexpectedly or is damaged.
-- Your device has been lost or stolen.
-- You want to access your wallet on multiple devices.
+- 您的`钱包 app`或设备出现意外故障或损坏。
+- 您的设备已丢失或被盗。
+- 您希望在多个设备上访问您的钱包。
 
-Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. This data is used to generate both the `public key` and `private key` for your wallet.
+大多数恢复短语都是由 12 到 24 个单词组成的列表，代表了一个独特的数据片段。 这些数据用于生成钱包的`公钥`和`私钥`。
 
-Wallet recovery does **not** change or reset the keys.
+钱包重置**不会**更改或重置密钥。
 
-Your recovery phrase is essentially an easier to read version of your public/private key pair. **Never share your recovery phrase.**
+恢复助记词实质上是公钥/私钥对的易读版本。 **永远给别人分享你的恢复助记词。**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
 # Knowledge Check 3
 
-Can you access your wallet with a recovery phrase if your device gets damaged or lost?
+如果设备损坏或丢失，能否使用恢复助记词访问钱包？
 
-- [ ] No
+- [ ] 否
 
-> ℹ️ Try again!
+> ℹ️ 再试一次！
 
-- [ ] Yes
+- [ ] 是
 
-> ℹ️ Correct! Recovery phrases grant access to your wallet, even on multiple devices.
+> ℹ️ 正确！ 恢复助记词能够让您的访问钱包，即使在多个设备上也是如此。
 
-# Types of Wallet
+# 钱包的不同类型
 
-Just as there are many types of computer software, there many types of wallet. Let’s look at the four main categories:
+正如计算机软件有很多种类型一样，钱包也有多种类型。 让我们来看看这四大类：
 
-- 🏦 **Custodial wallets:** where a third party is responsible for your private keys.
-- 👤 **Self-custody (non-custodial) wallets:** where you are responsible for your private keys.
+- 🏦**托管钱包：**由第三方负责保管你的私钥。
+- 👤**自我托管（非第三方托管型）钱包：**由你自己负责保管好你的私钥。
 
-There are two styles of `self-custody wallet`:
+`自我托管钱包`则有两种形式：
 
-- 🔥 **Hot wallets:** software on your desktop or phone.
-- 🧊 **Cold wallets:** a piece of hardware (like a memory stick) you store somewhere safe.
+- 🔥**热钱包：** 桌面或移动端上的软件。
+- **冷钱包：** 一种可用于安全存储的硬件（如记忆棒）。
 
-Each wallet solution serves a different use-case. Many advanced users have one of each!
+每种钱包解决方案都有不同的用途。 高级玩家们常常同时拥有所有类型的钱包！
 
 Don’t worry, we’ll only be creating one wallet today.
 
