@@ -155,193 +155,193 @@ Lorsque vous créez un nouveau wallet, l'application de votre wallet vous fourni
 - Votre appareil a été perdu ou volé.
 - Vous souhaitez accéder à votre portefeuille sur plusieurs appareils.
 
-Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. This data is used to generate both the `public key` and `private key` for your wallet.
+La plupart des phrases de récupération sont une liste de 12 à 24 mots qui représentent un élément unique de données. Ces données sont utilisées pour générer la `clé publique` et la `clé privée` de votre wallet.
 
-Wallet recovery does **not** change or reset the keys.
+La récupération du wallet **ne** modifie ni ne réinitialise les clés.
 
-Your recovery phrase is essentially an easier to read version of your public/private key pair. **Never share your recovery phrase.**
+Votre phrase de récupération est essentiellement une version plus facile à lire de votre paire de clés publique/privée. **Ne partagez jamais votre phrase de récupération.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
 # Knowledge Check 3
 
-Can you access your wallet with a recovery phrase if your device gets damaged or lost?
+Pouvez-vous accéder à votre wallet à l'aide d'une phrase de récupération si votre appareil est endommagé ou perdu ?
 
-- [ ] No
+- [ ] Non
 
-> ℹ️ Try again!
+> ℹ️ Réessayez !
 
-- [ ] Yes
+- [ ] Oui
 
-> ℹ️ Correct! Recovery phrases grant access to your wallet, even on multiple devices.
+> ℹ️ Correct ! Les phrases de récupération permettent d'accéder à votre wallet, même sur plusieurs appareils.
 
-# Types of Wallet
+# Types de wallet
 
-Just as there are many types of computer software, there many types of wallet. Let’s look at the four main categories:
+Tout comme il existe de nombreux types de logiciels, il existe de nombreux types de wallet. Examinons les quatre catégories principales :
 
-- 🏦 **Custodial wallets:** where a third party is responsible for your private keys.
-- 👤 **Self-custody (non-custodial) wallets:** where you are responsible for your private keys.
+- 🏦 **Les wallets custodiaux :** un tiers est responsable de vos clés privées.
+- 👤 **Les wallets en auto-garde (non-custodiaux) :** où vous êtes responsable de vos clés privées.
 
-There are two styles of `self-custody wallet`:
+Il existe deux types de `wallets en auto-garde`:
 
-- 🔥 **Hot wallets:** software on your desktop or phone.
-- 🧊 **Cold wallets:** a piece of hardware (like a memory stick) you store somewhere safe.
+- 🔥 **Portefeuilles chauds :** logiciel sur votre bureau ou votre téléphone.
+- 🧊 **Portefeuilles froids :** un périphérique matériel (comme une clé USB) que vous stockez dans un endroit sûr.
 
-Each wallet solution serves a different use-case. Many advanced users have one of each!
+Chaque solution de wallet répond à un cas d'utilisation différent. De nombreux utilisateurs avancés possèdent un exemplaire de chaque !
 
-Don’t worry, we’ll only be creating one wallet today.
+Ne vous inquiétez pas, nous ne créerons qu'un seul wallet aujourd'hui.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
-# Custodial Wallets
+# Les wallets custodiaux
 
-Since your `private key` unlocks access to your `wallet`, keeping it safe and secure is very important!
+Comme votre `clé privée` vous permet d'accéder à votre `wallet`, il est très important de la conserver en toute sécurité !
 
-`Custodial wallet` services include cryptocurrency exchanges such as Coinbase and Kraken. **They are your wallet custodian** — they look after your private keys for you. You access their services like any other website (with an email login and resettable password).
+Les services de `wallets custodiaux` comprennent les échanges de crypto-monnaies tels que Coinbase et Kraken. **Ils sont les gardiens de votre wallet** - ils s'occupent de vos clés privées pour vous. Vous accédez à leurs services comme à n'importe quel autre site web (avec un login et un mot de passe réinitialisable).
 
-This may be all some people need, but it requires you to trust these third parties to secure your crypto assets and give you access when you want to trade them or send them somewhere. Also, your access to some `blockchain apps` may be limited.
+C'est peut-être tout ce dont certaines personnes ont besoin, mais cela implique que vous fassiez confiance à ces tiers pour sécuriser vos crypto-actifs et vous permettre d'y accéder lorsque vous souhaitez les échanger ou les envoyer quelque part. En outre, votre accès à certaines `applications blockchain` peut être limité.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
 # Knowledge Check 4
 
-Do you control your private key with a custodial wallet?
+Contrôlez-vous votre clé privée avec un wallet custodial ?
 
-- [ ] Yes
+- [ ] Oui
 
-> ℹ️ Try again!
+> ℹ️ Réessayez !
 
-- [ ] No
+- [ ] Non
 
-> ℹ️ Correct! Custodial wallets require trust in a third party (custodian) to control your private keys.
+> ℹ️ Correct ! Les wallets custodiaux nécessitent de faire confiance à un tiers (gardien) pour contrôler vos clés privées.
 
-# Non-custodial Wallet
+# Wallet non-custodial
 
-A `self-custody wallet` (like Zerion or Trezor) is when you fully control your `private key`. You have **no custodian**, and you alone are responsible for keeping your private key safe.
+Un `wallet en auto-garde` (comme Zerion ou Trezor) vous permet de contrôler entièrement votre `clé privée`. Vous n'avez **pas de gardien** et vous êtes seul responsable de la sécurité de votre clé privée.
 
-These wallets offer the widest range of access and freedom within the world of `web3`. You never have to worry about a third party freezing or mishandling your funds.
+Ces wallets offrent le plus large éventail d'accès et de liberté dans le monde du `web3`. Vous n'avez jamais à vous soucier du gel ou de la mauvaise gestion de vos fonds par un tiers.
 
-The trade-off is in risk: if you lose access to your `recovery phrase`, or your private key is compromised, there is often very little you can do to restore access to the wallet.
+La contrepartie est le risque : si vous perdez l'accès à votre `phrase de récupération` ou si votre clé privée est compromise, il y a souvent très peu de choses que vous puissiez faire pour rétablir l'accès au wallet.
 
-Whichever route you choose, it pays to be familiar and comfortable with wallet security. We’ll give you some tips before you complete this lesson.
+Quelle que soit la route que vous choisissez, il paie d'être familier et à l'aise avec la sécurité du wallet. Nous vous donnerons quelques conseils avant que vous ne terminiez cette leçon.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-833c3d6b.svg)
 
 # Knowledge Check 5
 
-Are you responsible for your private key with a self-custody wallet?
+Êtes-vous responsable de votre clé privée dans le cas d'un wallet auto-gardé ?
 
-- [ ] Yes
+- [ ] Oui
 
-> ℹ️ Correct! With a self-custody wallet you are solely responsible for your private keys.
+> ℹ️ Correct ! Avec un wallet auto-gardé, vous êtes seul responsable de vos clés privées.
 
-- [ ] No
+- [ ] Non
 
-> ℹ️ Try again!
+> ℹ️ Réessayez !
 
-# Hot Wallets
+# Wallets chauds
 
-You will hear the terms “hot” and “cold wallet” quite a bit in `web3`.
+Vous entendrez souvent les termes "wallet chaud" et "wallet froid" dans le <0>web3</0>.
 
-A `hot wallet` is a wallet accessed via an app on your device — the Zerion app for example. Similar to many `web2` apps, a wallet app is consistently connected to the internet.
+Un `wallet chaud` est un wallet accessible via une application sur votre appareil — l'application Zerion par exemple. Comme de nombreuses applications `web2`, une application de wallet est constamment connectée à l'internet.
 
-Your `private key` is encrypted and stored inside the wallet app, and is only accessed when you interact with the blockchain. These wallets are named ‘hot wallets’ for this “hot” connection between the internet and your private key.
+Votre `clé privée` est cryptée et stockée dans l'application du wallet, et n'est accessible que lorsque vous interagissez avec la blockchain. Ces portefeuilles sont appelés `wallets chauds` en raison de la connexion "chaude" entre l'internet et votre clé privée.
 
-Hot wallets are convenient for small day-to-day interactions, much like a physical wallet you keep in your pocket. We’ll be creating a hot wallet today!
+Les wallets chauds sont pratiques pour les petites interactions quotidiennes, tout comme un portefeuille physique que vous gardez dans votre poche. Nous allons créer un wallet chaud aujourd'hui !
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-9356886d.svg)
 
-# Cold Wallets
+# Wallets froids
 
-As you dive deeper into your `web3` journey, you will come to know a landscape full of interesting tech trade-offs.
+À mesure que vous plongez plus profondément dans votre parcours `web3`, vous découvrirez un paysage plein de compromis technologiques intéressants.
 
-`Cold wallets` grant higher security at the cost of convenience. A cold wallet is one where your `private key` is stored on a dedicated hardware device (like a memory stick or external hard drive). You must physically connect the hardware wallet to your computer to access your wallet on the blockchain. Your private key is never directly connected to the internet. Cold wallets are named after this “cold” internet connection.
+Les `wallets froids` offrent une plus grande sécurité au détriment de la commodité. Un wallet froid est un wallet dans lequel votre `clé privée` est stockée sur un dispositif matériel dédié (comme une clé USB ou un disque dur externe). You must physically connect the hardware wallet to your computer to access your wallet on the blockchain. Your private key is never directly connected to the internet. Les wallets froids tirent leur nom de cette connexion internet "froide".
 
-They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline — out of reach of digital attackers.
+Ils sont généralement considérés comme plus sûrs que les `wallets chauds`, car votre `clé privée` est stockée hors ligne, hors de portée des attaquants numériques.
 
-Ledger and Trezor are examples of `cold wallets`.
+Ledger et Trezor sont des exemples de `wallets froids`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-0e3183d1.svg)
 
 # Knowledge Check 6
 
-Which of the following wallet types is considered the most secure?
+Parmi les types de wallet suivants, lequel est considéré comme le plus sûr ?
 
-- [ ] All wallets are about the same
+- [ ] Tous les wallets sont à peu près identiques
 
-> ℹ️ Try again! There are various trade-offs for each wallet type, with level of security being one of them.
+> ℹ️ Réessayez ! Il existe différents compromis pour chaque type de wallet, le niveau de sécurité étant l'un d'entre eux.
 
-- [ ] A hot wallet
+- [ ] Un wallet chaud
 
-> ℹ️ Try again! A hot wallet has an active internet connection which makes it more susceptible to digital attack.
+> ℹ️ Réessayez ! Un wallet chaud a une connexion internet active qui le rend plus vulnérable aux attaques numériques.
 
-- [ ] A custodial wallet
+- [ ] Un wallet custodial
 
-> ℹ️ Try again! The third party holding the private keys can get hacked or go bankrupt.
+> ℹ️ Réessayez ! Le tiers qui détient les clés privées peut être piraté ou faire faillite.
 
-- [ ] A cold wallet
+- [ ] Un wallet froid
 
-> ℹ️ Correct! Cold wallets aren’t actively connected to the internet, making them more attack-resistant.
+> ℹ️ Correct ! Les wallets froids ne sont pas activement connectés à l'internet, ce qui les rend plus résistants aux attaques.
 
-# Wallet Security
+# Sécurité du wallet
 
-Regardless if your `self-custody wallet` is hot or cold, there are many smart security practices you should develop.
+Peu importe si votre `wallet en auto-garde` est chaud ou froid, il existe de nombreuses pratiques de sécurité intelligentes que vous devriez développer.
 
-🖊️ Record your `recovery phrase` on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your `private key` with anyone. **Remember, this is more than just a password.**
+🖊️ Enregistrez votre `phrase de récupération` sur un support physique durable (comme du papier laminé ou même de l'acier) et conservez-le dans un endroit très sûr. Ne partagez jamais votre `clé privée` avec quiconque. **N'oubliez pas qu'il s'agit de bien plus qu'un simple mot de passe.**
 
-🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.
+🔍 Lorsque vous interagissez avec une blockchain ou que vous envoyez des fonds, même de petits montants, vérifiez deux fois les détails très soigneusement. Les données erronées ne peuvent pas être modifiées après une interaction.
 
-🔭 Spend time researching and gathering info on any `blockchain apps` you plan to interact with before connecting your wallet to it or signing its transactions.
+🔭 Passez du temps à faire des recherches et à recueillir des informations sur toute `application blockchain` avec laquelle vous prévoyez d'interagir avant d'y connecter votre wallet ou de signer ses transactions.
 
-💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).
+💰 Utilisez des wallets avec de faibles montants de fonds pour essayer de nouvelles choses et explorer le web3, et envisagez de stocker des actifs de grande valeur sur plusieurs wallets (c'est-à-dire évitez de mettre tous vos œufs crypto dans le même panier).
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
 
 # Knowledge Check 7
 
-What is the safest way to protect your recovery phrase?
+Quel est le moyen le plus sûr de protéger votre phrase de récupération ?
 
-- [ ] Write it on a durable material and store it in a safe place.
+- [ ] Écrivez-le sur un matériau durable et entreposez-le dans un endroit sûr.
 
-> ℹ️ Correct! A safely stored physical backup with no digital traces is the safest storage option.
+> ℹ️ Correct ! Une sauvegarde physique stockée en toute sécurité et sans traces numériques est l'option de stockage la plus sûre.
 
-- [ ] Save it on your computer and print it out.
+- [ ] Enregistrez-la sur votre ordinateur et imprimez-la.
 
-> ℹ️ Try again! If your computer is hacked, your recovery phrase could be found. Printing also opens many attack opportunities.
+> ℹ️ Réessayez ! Si votre ordinateur est piraté, votre phrase de récupération peut être trouvée. L'impression ouvre également de nombreuses opportunités d'attaque.
 
-- [ ] Take a screenshot and save it on your phone.
+- [ ] Prenez une capture d'écran et enregistrez-la sur votre téléphone.
 
-> ℹ️ Try again! If your phone is hacked, you could lose all assets in your wallet.
+> ℹ️ Réessayez ! Si votre téléphone est piraté, vous risquez de perdre tous les actifs de votre wallet.
 
-- [ ] Save it in your password manager.
+- [ ] Enregistrez-la dans votre gestionnaire de mots de passe.
 
-> ℹ️ Try again! If your password manager is hacked, your recovery phrase could be leaked.
+> ℹ️ Réessayez ! Si votre gestionnaire de mots de passe est piraté, votre phrase de récupération pourrait être divulguée.
 
-# You’re ready to create your first wallet!
+# Vous êtes prêt à créer votre premier wallet !
 
-In fact, you’ll need one if you want to claim proof of completing this quest!
+En fait, vous en aurez besoin si vous voulez obtenir une preuve d'accomplissement de cette quête !
 
-There are several `self-custody`, `hot wallet` apps available today. We will explore the Zerion wallet for the rest of this lesson as:
+Il existe plusieurs applications de `wallet en auto-garde` chaudes disponibles aujourd'hui. Nous allons explorer le wallet Zerion pendant le reste de cette leçon :
 
-- ⚙️ It’s compatible with most `blockchain apps`.
-- ⚡ The interface is incredibly smooth and easy to use.
-- 💻 It has a browser extension for Chrome, Brave, Edge, and Opera internet browsers.
-- 📱 It is also available as a mobile app for Android and iOS users.
-- 🗣️ Zerion supports a variety of languages.
+- ⚙️ Elle est compatible avec la plupart des `applications blockchain`.
+- ⚡ L'interface est incroyablement simple et facile à utiliser.
+- 💻 Elle dispose d'une extension pour les navigateurs Chrome, Brave, Edge et Opera.
+- 📱 Elle est également disponible sous forme d'application mobile pour les utilisateurs d'Android et d'iOS.
+- 🗣️ Zerion prend en charge un grand nombre de langues.
 
-The end of the lesson is right around the corner, where we will share your instructions for setting up your wallet with Zerion!
+La fin de la leçon est imminente : nous vous donnerons les instructions pour configurer votre wallet avec Zerion !
 
 ![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg)
 
 # Knowledge Check 8
 
-Is Zerion a custodial wallet app?
+Zerion est-elle une application de wallet custodial?
 
-- [ ] Yes
+- [ ] Oui
 
-> ℹ️ Try again! Your Zerion wallet isn’t controlled by a custodian.
+> ℹ️ Réessayez ! Votre portefeuille Zerion n'est pas contrôlé par un gardien.
 
-- [ ] No
+- [ ] Non
 
-> ℹ️ Correct! Zerion wallets are self-custody wallets — controlled by you, and you alone.
+> ℹ️ Correct ! Les wallets Zerion sont des wallets en auto-garde - contrôlés par vous, et vous seul.
 
