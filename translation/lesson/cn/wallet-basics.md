@@ -184,8 +184,8 @@ ________________________________________________________________________________
 
 `自我托管钱包`则有两种形式：
 
-- 🔥**热钱包：** 桌面或移动端上的软件。
-- **冷钱包：** 一种可用于安全存储的硬件（如记忆棒）。
+- 🔥 **热钱包：** 桌面或移动端上的软件。
+- 🧊 **冷钱包：** 一种可用于安全存储的硬件（如记忆棒）。
 
 每种钱包解决方案都有不同的用途。 高级玩家们常常同时拥有所有类型的钱包！
 
@@ -201,7 +201,7 @@ ________________________________________________________________________________
 
 这可能是某些人所需要的全部，但这需要您信任这些第三方，以确保您的加密资产安全，并在您想要交易或将其发送到某个地方时给予您访问权限。 此外，您访问某些`区块链应用程序`的权限可能会受到限制。
 
-![]()
+![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
 # Knowledge Check 4
 
@@ -225,7 +225,7 @@ ________________________________________________________________________________
 
 无论您选择哪种方式，熟悉并掌握钱包安全都是有益的。 在完成这个课程之前，我们会给你一些小贴士。
 
-![]()
+![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-833c3d6b.svg)
 
 # Knowledge Check 5
 
@@ -245,7 +245,7 @@ ________________________________________________________________________________
 
 `热钱包`是通过设备上的应用程序访问的钱包，例如 Zerion 应用程序。 与许多`web2`应用程序类似，钱包应用程序始终与互联网相连。
 
-您的<0>私人密钥</0>经过加密并存储在钱包应用程序中，只有在您与区块链交互时才会被访问。 这些钱包被命名为 "热钱包"，因为互联网与您的私人密钥之间存在 "热 "连接。
+您的`私钥`经过加密并存储在钱包app中，只有在您与区块链交互时才会被访问。 这些钱包被命名为 "热钱包"，因为互联网与您的私人密钥之间存在 "热 "连接。
 
 热钱包为日常小额交易提供了便利，就像你放在口袋里的实体钱包一样。 我们今天将制作一个热钱包！
 
@@ -255,93 +255,93 @@ ________________________________________________________________________________
 
 随着您在`web3`之旅的深入，您会发现这里充满了有趣的技术权衡。
 
-`冷钱包`在提供更高的安全性的同时，也牺牲了便利性。 冷钱包是将`私钥`存储在专用硬件设备（如记忆棒或外置硬盘）上的钱包。 You must physically connect the hardware wallet to your computer to access your wallet on the blockchain. Your private key is never directly connected to the internet. Cold wallets are named after this “cold” internet connection.
+`冷钱包`在提供更高的安全性的同时，也牺牲了便利性。 冷钱包是将` 私钥 `存储在专用硬件设备（如记忆棒或外置硬盘）上的钱包。 您必须将硬件钱包实际连接到电脑，才能访问区块链上的钱包。 您的私钥永远不会直接链接到互联网。 所谓冷钱包即以此“冷”网络连接而得名。
 
-They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline — out of reach of digital attackers.
+人们普遍认为它们`比热钱包`更安全，因为你的`私钥`是离线存储的，数字攻击者无法接触到。
 
-Ledger and Trezor are examples of `cold wallets`.
+Ledger 和 Trezor 就是`冷钱包`的两个例子。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-0e3183d1.svg)
 
 # Knowledge Check 6
 
-Which of the following wallet types is considered the most secure?
+以下哪种钱包类型最安全？
 
-- [ ] All wallets are about the same
+- [ ] 所有钱包都差不多
 
-> ℹ️ Try again! There are various trade-offs for each wallet type, with level of security being one of them.
+> ℹ️ 再试一次！ 每类钱包都进行了各种权衡，不同的安全级别就是这种权衡的表现。
 
-- [ ] A hot wallet
+- [ ] 热钱包
 
-> ℹ️ Try again! A hot wallet has an active internet connection which makes it more susceptible to digital attack.
+> ℹ️ 再试一次！ 热钱包具有实时活跃的互联网连接，因此更容易受到数字攻击。
 
-- [ ] A custodial wallet
+- [ ] 托管型钱包
 
-> ℹ️ Try again! The third party holding the private keys can get hacked or go bankrupt.
+> ℹ️ 再试一次！ 持有私钥的第三方可能被黑客攻击或破产。
 
-- [ ] A cold wallet
+- [ ] 冷钱包
 
-> ℹ️ Correct! Cold wallets aren’t actively connected to the internet, making them more attack-resistant.
+> ℹ️ 正确！ 冷钱包不能主动连接互联网，因此更能抵御攻击。
 
-# Wallet Security
+# 钱包安全
 
-Regardless if your `self-custody wallet` is hot or cold, there are many smart security practices you should develop.
+无论您的`自我托管钱包`是冷是热，您都应该执行一些明智的安全措施。
 
-🖊️ Record your `recovery phrase` on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your `private key` with anyone. **Remember, this is more than just a password.**
+🖊️ 将`恢复助记词`记录在耐用的实物材料上（比如硬纸板，甚至钢板），并将其存放在非常安全的地方。 切勿与任何人共享，也不要共享你的`私钥`。 **记住，这不仅仅是一个密码。**
 
-🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.
+🔍 在与区块链互动或发送资金时，即使是小额资金，也要仔细检查细节。 不正确的具体信息在交互后将无法被更正。
 
-🔭 Spend time researching and gathering info on any `blockchain apps` you plan to interact with before connecting your wallet to it or signing its transactions.
+🔭 在将您的钱包连接到任何`区块链app`或签署其交易之前，花点时间收集研究这个`区块链 app `的信息。
 
-💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).
+💰 使用资金量较少的钱包来尝试新的东西并探索 web3，并考虑在多个钱包账户中存储高价值资产（避免将您所有的加密鸡蛋放在一个篮子里）。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
 
 # Knowledge Check 7
 
-What is the safest way to protect your recovery phrase?
+保护恢复助记词的最安全方法是什么？
 
-- [ ] Write it on a durable material and store it in a safe place.
+- [ ] 写在耐用材料上，并存放在安全的地方。
 
-> ℹ️ Correct! A safely stored physical backup with no digital traces is the safest storage option.
+> ℹ️ 正确！ 安全存储无数字痕迹的物理备份是最安全的存储选择。
 
-- [ ] Save it on your computer and print it out.
+- [ ] 保存在电脑上并打印出来。
 
-> ℹ️ Try again! If your computer is hacked, your recovery phrase could be found. Printing also opens many attack opportunities.
+> ℹ️ 再试一次！ 如果您的电脑被黑客入侵，您的恢复助记词随时可能会被黑客找到。 印刷也提高了许多被攻击的可能性。
 
-- [ ] Take a screenshot and save it on your phone.
+- [ ] 截图并保存在手机上。
 
-> ℹ️ Try again! If your phone is hacked, you could lose all assets in your wallet.
+> ℹ️ 再试一次！ 如果您的手机被黑客入侵，您可能会丢失钱包中的所有资产。
 
-- [ ] Save it in your password manager.
+- [ ] 保存在密码管理器中。
 
-> ℹ️ Try again! If your password manager is hacked, your recovery phrase could be leaked.
+> ℹ️ 再试一次！ 如果您的电脑被黑客入侵，您的恢复助记词随时可能会被黑客找到。
 
-# You’re ready to create your first wallet!
+# 您已经准备好创建第一个钱包了！
 
-In fact, you’ll need one if you want to claim proof of completing this quest!
+事实上，如果您想申请本任务的完成证明，您就需要一个钱包！
 
-There are several `self-custody`, `hot wallet` apps available today. We will explore the Zerion wallet for the rest of this lesson as:
+目前有几款`自我托管`的`热钱包`应用程序。 在本课的剩余时间里，我们将探索 Zerion 钱包：
 
-- ⚙️ It’s compatible with most `blockchain apps`.
-- ⚡ The interface is incredibly smooth and easy to use.
-- 💻 It has a browser extension for Chrome, Brave, Edge, and Opera internet browsers.
-- 📱 It is also available as a mobile app for Android and iOS users.
-- 🗣️ Zerion supports a variety of languages.
+- ⚙️ 它与大多数`区块链app`兼容。
+- ⚡ 界面无比流畅，易于使用。
+- 💻它在 Chrome、Brave、Edge 和 Opera 浏览器上都有扩展插件。
+- 📱 它还为安卓和 iOS 用户提供了移动端 app。
+- 🗣️ Zerion 支持多种语言。
 
-The end of the lesson is right around the corner, where we will share your instructions for setting up your wallet with Zerion!
+课程即将结束，我们将与您分享如何使用 Zerion 设置钱包！
 
 ![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg)
 
 # Knowledge Check 8
 
-Is Zerion a custodial wallet app?
+Zerion 是一款托管型钱包应用程序吗？
 
-- [ ] Yes
+- [ ] 是
 
-> ℹ️ Try again! Your Zerion wallet isn’t controlled by a custodian.
+> ℹ️ 再试一次！ 您的 Zerion 钱包不受托管人控制。
 
-- [ ] No
+- [ ] 否
 
-> ℹ️ Correct! Zerion wallets are self-custody wallets — controlled by you, and you alone.
+> ℹ️ 正确！ Zerion 钱包是自我托管钱包 —— 由您且仅由您控制。
 
