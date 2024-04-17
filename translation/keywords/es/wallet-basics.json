@@ -1,12 +1,12 @@
 {
   "web2": {
     "keyword": "web2",
-    "keyword_plural": "web2s",
+    "keyword_plural": "web2",
     "definition": "El estado actual de internet, sin infraestructura de blockchain."
   },
   "web3": {
     "keyword": "web3",
-    "keyword_plural": "web3s",
+    "keyword_plural": "web3",
     "definition": "Se refiere al internet de cadenas de bloques, donde los usuarios pueden autocustodiar sus activos y datos."
   },
   "cryptocurrency": {
@@ -72,6 +72,6 @@
   "self-custody": {
     "keyword": "autocustodia",
     "keyword_plural": "self-custodys",
-    "definition": "A means of holding your assets where only you have access to them."
+    "definition": "Un medio de mantener tus activos donde sólo tú tienes acceso a ellos."
   }
 }
