@@ -2,20 +2,20 @@
   "web2": {
     "keyword": "web2",
     "keyword_plural": "web2s",
-    "definition": "The current state of the internet, without blockchain infrastructure."
+    "definition": "L'état actuel de l'internet, sans l'infrastructure blockchain."
   },
   "web3": {
     "keyword": "web3",
     "keyword_plural": "web3s",
-    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
+    "definition": "Se réfère à l'internet des blockchains, où les utilisateurs peuvent auto-garder leurs actifs et leurs données."
   },
   "cryptocurrency": {
-    "keyword": "cryptocurrency",
-    "keyword_plural": "cryptocurrencys",
-    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+    "keyword": "cryptomonnaie",
+    "keyword_plural": "cryptomonnaies",
+    "definition": "Une monnaie numérique hébergée par la technologie blockchain plutôt que par des autorités centralisées."
   },
   "blockchain apps": {
-    "keyword": "blockchain apps",
+    "keyword": "applications blockchain",
     "keyword_plural": "blockchain appss",
     "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
   },
@@ -25,9 +25,9 @@
     "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
   },
   "wallet app": {
-    "keyword": "wallet app",
+    "keyword": "application wallet",
     "keyword_plural": "wallet apps",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+    "definition": "Une application sur votre ordinateur ou votre téléphone, utilisée pour se connecter à votre portefeuille sur la blockchain."
   },
   "public key": {
     "keyword": "public key",
@@ -42,7 +42,7 @@
   "wallet": {
     "keyword": "wallet",
     "keyword_plural": "wallets",
-    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+    "definition": "Un wallet est une application ou un dispositif utilisé pour envoyer et recevoir des actifs cryptographiques sur la blockchain."
   },
   "recovery phrase": {
     "keyword": "recovery phrase",
