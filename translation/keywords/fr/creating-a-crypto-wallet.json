@@ -30,13 +30,13 @@
     "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
   },
   "cryptography": {
-    "keyword": "cryptography",
+    "keyword": "cryptographie",
     "keyword_plural": "cryptographys",
-    "definition": "Techniques for secure communication or transaction, preventing external interference."
+    "definition": "Techniques de communication ou de transaction sécurisée, empêchant les interférences externes."
   },
   "encryption": {
-    "keyword": "encryption",
+    "keyword": "chiffrement",
     "keyword_plural": "encryptions",
-    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
+    "definition": "Le processus de conversion de l'information en un code privé et sécurisé, utilisé pour empêcher tout accès non autorisé."
   }
 }
