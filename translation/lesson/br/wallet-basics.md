@@ -253,45 +253,45 @@ As carteiras quentes são convenientes para pequenas interações do dia-a-dia, 
 
 # Carteiras Frias
 
-As you dive deeper into your `web3` journey, you will come to know a landscape full of interesting tech trade-offs.
+À medida que você mergulha mais fundo na sua jornada pela `web3`, você conhecerá um cenário cheio de trade-offs de tecnologia interessantes.
 
-`Cold wallets` grant higher security at the cost of convenience. A cold wallet is one where your `private key` is stored on a dedicated hardware device (like a memory stick or external hard drive). You must physically connect the hardware wallet to your computer to access your wallet on the blockchain. Your private key is never directly connected to the internet. Cold wallets are named after this “cold” internet connection.
+As `carteiras frias` concedem maior segurança em troca da conveniência. Uma carteira fria é aquela que armazena sua `chave privada` em um dispositivo de hardware dedicado (como um cartão de memória ou disco rígido externo). Você deve conectar fisicamente a carteira de hardware ao seu computador para acessar sua carteira na blockchain. Sua chave privada nunca é conectada diretamente à internet. As carteiras frias têm esse nome devido a essa conexão "fria" com a internet.
 
-They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline — out of reach of digital attackers.
+Eles são amplamente consideradas como mais seguras que `carteiras quentes`, porque a sua chave `privada` é armazenada offline, fora do alcance dos atacantes digitais.
 
-Ledger and Trezor are examples of `cold wallets`.
+Ledger e Trezor são exemplos de `carteiras frias`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-0e3183d1.svg)
 
 # Knowledge Check 6
 
-Which of the following wallet types is considered the most secure?
+Qual dos seguintes tipos de carteira é considerado o mais seguro?
 
-- [ ] All wallets are about the same
+- [ ] É quase igual para todas as carteiras
 
-> ℹ️ Try again! There are various trade-offs for each wallet type, with level of security being one of them.
+> ℹ️ Tente novamente! Existem vários trade-offs para cada tipo de carteira, sendo o nível de segurança um deles.
 
-- [ ] A hot wallet
+- [ ] Uma carteira quente
 
-> ℹ️ Try again! A hot wallet has an active internet connection which makes it more susceptible to digital attack.
+> ℹ️ Tente novamente! Uma carteira quente tem uma conexão ativa com a internet, o que a torna mais suscetível a ataques digitais.
 
-- [ ] A custodial wallet
+- [ ] Uma carteira custodial
 
-> ℹ️ Try again! The third party holding the private keys can get hacked or go bankrupt.
+> ℹ️ Tente novamente! O terceiro que detém as chaves privadas pode ser hackeado ou ir à falência.
 
-- [ ] A cold wallet
+- [ ] Uma carteira fria
 
-> ℹ️ Correct! Cold wallets aren’t actively connected to the internet, making them more attack-resistant.
+> ℹ️ Correto! As carteiras frias não estão ativamente conectadas à internet, tornando-as mais resistentes a ataques.
 
-# Wallet Security
+# Segurança da Carteira
 
-Regardless if your `self-custody wallet` is hot or cold, there are many smart security practices you should develop.
+Independentemente de sua `carteira de auto-custódia` ser quente ou fria, há várias medidas de segurança inteligentes que você deve adotar.
 
-🖊️ Record your `recovery phrase` on a physical, durable material (such as laminated paper, or even steel) and store it somewhere very safe. Never share it or your `private key` with anyone. **Remember, this is more than just a password.**
+🖊️ Registre sua `frase de recuperação` em um material físico e durável (como papel laminado ou até mesmo aço) e guarde-a em um local bem seguro. Nunca compartilhe esse material ou a sua `chave privada` com ninguém. **Lembre-se, isso é mais que apenas uma senha.**
 
-🔍 When interacting with a blockchain or sending funds, even small amounts, double check the details very carefully. Incorrect details cannot be changed after an interaction.
+🔍 Ao interagir com uma blockchain ou enviar fundos, mesmo que sejam pequenas quantias, verifique os detalhes com muito cuidado. Detalhes incorretos não podem ser alterados após uma interação.
 
-🔭 Spend time researching and gathering info on any `blockchain apps` you plan to interact with before connecting your wallet to it or signing its transactions.
+🔭 Passe algum tempo pesquisando e reunindo informações sobre qualquer `aplicativo blockchain` com o qual você planeja interagir antes de conectar sua carteira a ele ou assinar suas transações.
 
 💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).
 
