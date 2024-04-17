@@ -251,11 +251,11 @@ ________________________________________________________________________________
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-9356886d.svg)
 
-# Cold Wallets
+# 冷钱包
 
-As you dive deeper into your `web3` journey, you will come to know a landscape full of interesting tech trade-offs.
+随着您在`web3`之旅的深入，您会发现这里充满了有趣的技术权衡。
 
-`Cold wallets` grant higher security at the cost of convenience. A cold wallet is one where your `private key` is stored on a dedicated hardware device (like a memory stick or external hard drive). You must physically connect the hardware wallet to your computer to access your wallet on the blockchain. Your private key is never directly connected to the internet. Cold wallets are named after this “cold” internet connection.
+`冷钱包`在提供更高的安全性的同时，也牺牲了便利性。 冷钱包是将`私钥`存储在专用硬件设备（如记忆棒或外置硬盘）上的钱包。 You must physically connect the hardware wallet to your computer to access your wallet on the blockchain. Your private key is never directly connected to the internet. Cold wallets are named after this “cold” internet connection.
 
 They are widely considered to be more secure than `hot wallets`, because your `private key` is stored offline — out of reach of digital attackers.
 
