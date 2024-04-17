@@ -1,9 +1,9 @@
 ---
-TITLE: Creating a Crypto Wallet
-DESCRIPTION: Set up your first crypto wallet with our step-by-step walkthrough.
-LANGUAGE: English
+TITLE: Creando una Billetera Cripto
+DESCRIPTION: Configura tu primera billetera criptográfica con nuestra guía paso a paso.
+LANGUAGE: Español
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: OrnellaWeb3
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
@@ -27,90 +27,90 @@ ________________________________________________________________________________
 
 ---
 
-This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**
+Este es un resumen de nuestra lección [Conceptos Básicos de la Billetera](https://app.banklessacademy.com/lessons/wallet-basics), junto con un tutorial para completar la prueba de conocimientos. Revisa [la lección completa](https://app.banklessacademy.com/lessons/wallet-basics) para **subir el nivel de tus conocimientos y reclamar tu insignia!**
 
 ---
 
-## Key Takeaways
+## Conclusiones Clave
 
-> - You’ll need a `crypto wallet` to access the world of blockchains!
+> - Necesitarás una billetera cripto para acceder al mundo de las cadenas de bloques.
 >
-> - A wallet is like a `blockchain` account.
+> - Una billetera es como una cuenta de \`blockchain'.
 >
-> - Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.
+> - Las billeteras se utilizan para almacenar 'criptomonedas', iniciar sesión en las aplicaciones de blockchain, y más.
 >
-> - These wallets work on both computers and phones.
+> - Estas billeteras funcionan tanto en computadoras como en teléfonos móviles.
 >
-> - Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!
+> - Crear una billetara es fácil y toma alrededor de 5 minutos. Te mostraremos cómo, ¡en nuestro video a continuación!
 
-## What is a Crypto Wallet?
+## ¿Qué es una billetera cripto?
 
-Crypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.
+Las billeteras criptográficas son una pieza esencial de tu equipamiento en web3, ya que te permiten utilizar `criptomonedas` en tu computador o teléfono. Se accede a las billeteras utilizando software llamado `aplicación de billetera`: una extensión de navegador web para su computadora, o una aplicación en su teléfono.
 
-It gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
+Se pone aún mejor. Las billeteras son más que cuentas para mantener criptomonedas — son nuestra conexión con la cadena de bloques. Podemos utilizarlas para intercambiar criptomonedas con otras personas, iniciar sesión en aplicaciones de blockchain, **e incluso coleccionar objetos digitales como insignias de la Bankless Academy.** Cuanto más exploramos, más se convierten nuestras billeteras en algo que algunos consideran como el principio de la identidad digital.
 
-Wallets come with two core pieces of account information:
+Las billeteras vienen con dos piezas básicas de información de la cuenta:
 
-- A `public key`, that you can think of as your _username_. You’ll share it publicly to receive cryptocurrency.
+- Una `llave pública`, que puedes considerar como tu _nombre de usuario_. La compartirás públicamente para recibir criptomonedas.
 
-- A `private key`, acting as your _password_. This should always be kept private, and cannot be changed.
+- Una `llave privada`, que actúa como tu _contraseña_. Este dato debe mantenerse siempre en privado y no puede modificarse.
 
-Protecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).
+Proteger tu llave privada es fundamental, ya que esta llave garantiza el acceso instantáneo a tu billetera. Nunca debes compartir tu llave privada. Puedes aprender más tomando [la lección completa](https://app.banklessacademy.com/lessons/wallet-basics).
 
-Today we will set up our first wallet, using our recommended crypto wallet: Zerion!
+Hoy vamos a crear nuestra primera billetera, utilizando nuestra billetera cripto recomendada: ¡Zerion!
 
-## Walkthrough
+## Guía
 
-Set up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.
+Configura tu primera billetera en tu computador, usando la guía abajo, o sigue desplazándote y encuentra nuestra guía para instalar tu billetera cripto en tu móvil.
 
 ### Computer Wallet
 
 
 
-### Phone Wallet
+### Billetera Móvil
 
 
 
 ---
 
-**It’s time to join the blockchain multiverse!**
+**¡Es hora de unirse al multiverso blockchain!**
 
-Don’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.
+No te olvides de coleccionar esta entrada del manual para una fácil referencia en tus viajes y apoyar también a Bankless Academy.
 
-Safe travels, Explorer!
+¡Buen viaje, Explorador!
 
 ---
 
 ## FAQ
 
-### What is a cryptocurrency?
+### ¿Qué son las criptomonedas?
 
-Cryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.
+Las criptomonedas son una forma de dinero digital, asegurado por la "criptografía". Estas monedas pueden funcionar sin necesidad de autoridades ni bancos centralizados, lo que reduce la posibilidad de fraude al tiempo que aumenta la libertad financiera del titular.
 
-Learn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!
+Aprende más sobre las criptomonedas con nuestra lección **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)**, ¡y descubre cómo estas monedas digitales están revolucionando el mundo financiero!
 
-### What are public and private keys?
+### ¿Qué son las llaves pública y privada?
 
-Public/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.
+El "cifrado" de llave pública/privada permite a tu billetera hacer pública cierta información, como la dirección a la que otros pueden enviarte criptomonedas, mientras que mantiene el acceso a tus criptomonedas en privado. Una llave es como la dirección de tu casa de criptomonedas, y la otra abre la puerta principal.
 
-You can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.
+Puedes compartir tu llave pública con cualquiera en quien confíes para que te envíe criptodivisas, pero tu llave privada es sólo para tus ojos, porque garantiza el acceso a todos los activos dentro del monedero. Nunca la compartas, aunque tu contacto diga ser de Bankless Academy o Zerion.
 
-Learn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.
+Aprende más y obtén recompensas por crear tu primera billetera, en nuestra lección [Básicos de la billetera](https://app.banklessacademy.com/lessons/wallet-basics).
 
-### What happens if I lose my recovery phrase?
+### ¿Qué sucede si pierdo mi frase de recuperación?
 
-Your recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.
+Tu frase de recuperación, también conocida como "frase secreta" o "frase semilla", es tu única copia de seguridad si pierdes el acceso a tu billetera en tu dispositivo. Si pierdes tu frase de recuperación, el contenido de tu billetera se perderá para siempre. Por eso es importante guardarla en un lugar seguro, no sólo contra robos o pérdidas, sino también contra incendios o daños por agua.
 
-### Can Ethereum wallets hold Bitcoin?
+### ¿Pueden las billeteras Ethereum contener Bitcoin?
 
-Ethereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).
+Las billeteras de Ethereum pueden contener Bitcoin, pero en un formulario “envuelto”. Si quieres mantener el Bitcoin original, tendrás que crear un billetera que se ejecute en la red Bitcoin, como [Exodus](https://www.exodus.com/) o [Mycelium](https://wallet.mycelium.com/).
 
 ---
 
-**Author**
+**Autor**
 
-[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.
+[Tetranome](https://twitter.com/Tetranome) es responsable de contenido y diseño en Bankless Academy, y se centra en el proceso de aprendizaje, la interfaz y la experiencia del usuario, y el diseño de la plataforma.
 
 **Patron**
 
-This walkthrough is powered by Zerion.
+Esta guía está potenciada por Zerion.
