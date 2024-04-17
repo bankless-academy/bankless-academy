@@ -31,9 +31,9 @@ ________________________________________________________________________________
 
 **Saudações, Explorador Bankless!**
 
-É hora de mergulhar mais fundo na sua jornada pelo multiverso blockchain. Todo Explorador neste espaço eventualmente precisa criar uma carteira de criptomoedas.
+É hora de mergulhar mais fundo em sua jornada pelo multiverso blockchain. Todo Explorador neste espaço eventualmente precisa criar uma carteira de criptomoedas.
 
-As carteiras são como as contas na internet da `web2` com as quais você está acostumado. Você usará uma carteira para fazer login no ecossistema de blockchains, também conhecido como `web3`, onde poderá usar `criptomoedas` e se conectar a `aplicativos de blockchain`!
+As carteiras são como as contas na internet da `web2` com as quais você está acostumado. Você usará uma carteira para fazer login no ecossistema de blockchains, também conhecido como `web3`, onde poderá usar `criptomoedas` e se conectar a `aplicativos blockchain`!
 
 Nesta lição, falaremos sobre carteiras, como elas funcionam e como você pode manter suas criptomoedas seguras. Terminaremos com um guia sobre como criar uma e acessar **a blockchain da Ethereum, o lar da Bankless Academy.**
 
@@ -43,11 +43,11 @@ Nesta lição, falaremos sobre carteiras, como elas funcionam e como você pode 
 
 O que é exatamente uma carteira de criptomoedas?
 
-A resposta curta é: uma conta em uma`blockchain`, usada para armazenar ativos digitais e acessar aplicativos de blockchain.
+A resposta curta é: uma conta em uma `blockchain`, usada para armazenar ativos digitais e acessar aplicativos blockchain.
 
 É como ter seu próprio cofre na internet, e você tem a única chave para o abrir. Ao mesmo tempo, esse cofre é semelhante a uma conta em um site comum. Você pode usá-lo para fazer compras, enviar ou receber `criptomoedas` e interagir com uma blockchain.
 
-No entanto, ao contrário das contas `web2` a que você está acostumado, uma única carteira pode acessar uma blockchain inteira e um grande número de aplicativos blockchain. É como ter uma conta para toda a internet.
+No entanto, ao contrário das contas `web2` a que você está acostumado, uma única carteira pode acessar uma blockchain inteira e um grande número de aplicativos blockchain. É como ter uma única conta para acessar toda a internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
@@ -55,11 +55,11 @@ No entanto, ao contrário das contas `web2` a que você está acostumado, uma ú
 
 Antigamente sim, era difícil. Mas hoje, qualquer pessoa pode facilmente criar uma carteira.
 
-Se você estiver confortável em baixar e instalar software em seu computador (ou aplicativos no seu celular), então você não terá problemas em criar sua primeira carteira.
+Se você não tiver dificuldades para baixar e instalar software em seu computador (ou aplicativos no seu celular), então você não terá problemas em criar sua primeira carteira.
 
 A parte mais complicada de gerenciar uma carteira consiste em mantê-la segura, o que veremos em breve!
 
-Escolher seu `aplicativo de carteira` também pode parecer intimidante. Esse é o aplicativo que você instalará em seu dispositivo para acessar sua carteira na blockchain. Recomendamos começar com o aplicativo de carteira Zerion: ele é fácil de usar e tem acesso a muitas blockchains populares. À medida que se sentir mais confortável no espaço da `web3`, você provavelmente explorará outros provedores e criará várias carteiras.
+Escolher seu `aplicativo de carteira` também pode parecer intimidante. Esse é o aplicativo que você instalará em seu dispositivo para acessar sua carteira na blockchain. Recomendamos começar com o aplicativo de carteira da Zerion: ela é fácil de usar e tem acesso a muitas blockchains populares. À medida que você se sentir mais confortável no espaço da `web3`, provavelmente explorará outros provedores e criará várias carteiras.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
@@ -73,7 +73,7 @@ O que é uma carteira?
 
 - [ ] Uma criptomoeda
 
-> Tente novamente! As criptomoedas são algo que você guarda em sua carteira.
+> ℹ️ Tente novamente! As criptomoedas são algo que você guarda em sua carteira.
 
 - [ ] Um colecionável digital
 
@@ -85,7 +85,7 @@ O que é uma carteira?
 
 # Carteiras e Recuperação de Senhas
 
-Esta é uma das coisas mais importantes para entender sobre as carteiras na `web3`: **Não é possível "redefinir" ou "alterar" sua senha.**
+Esta é uma das coisas mais importantes que você deve entender sobre as carteiras na `web3`: **Não é possível "redefinir" ou "alterar" sua senha.**
 
 A maioria de nós está acostumada a esses recursos. Se esquecermos uma senha, clicamos em um botão, fazemos algumas coisas e recebemos uma nova senha. Simples.
 
@@ -111,7 +111,7 @@ Você também pode pensar na chave pública como um endereço de casa. Ele é p�
 
 # A chave privada da sua carteira
 
-Se a chave pública é como um endereço de uma casa, então a chave `privada` é como a chave para a porta da frente. É a "senha" para seus fundos e ativos.
+Se a chave pública é como um endereço de uma casa, então a `chave privada` é como a chave para a porta da frente. É a "senha" para seus fundos e ativos.
 
 Exemplo: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
@@ -180,7 +180,7 @@ Você consegue acessar a sua carteira com uma frase de recuperação se o seu di
 Assim como existem muitos tipos de softwares de computador, existem muitos tipos de carteira. Vamos dar uma olhada nas quatro categorias principais:
 
 - 🏦 **Carteiras custodiais:** onde um terceiro é responsável por suas chaves privadas.
-- **Carteiras de auto-custódia (não custodiais):** once você é responsável por suas chaves privadas.
+- 👤 **Carteiras de auto-custódia (não custodiais):** once você é responsável por suas chaves privadas.
 
 Existem dois estilos de carteiras de `auto-custódia`:
 
@@ -197,7 +197,7 @@ Não se preocupe, criaremos apenas uma carteira hoje.
 
 Como sua `chave privada` libera o acesso à sua `carteira`, é muito importante mantê-la sã e salva!
 
-Os serviços de `carteira custodial` incluem corretoras de criptomoedas, como Coinbase e Kraken. **Eles são os guardiões de sua carteira**, cuidando de suas chaves privadas por você. Você acessa seus serviços como qualquer outro site (com um login de e-mail e uma senha redefinível).
+Os serviços de `carteira custodial` incluem corretoras de criptomoedas, como Coinbase e Kraken. **Eles são os guardiões (custodiantes) de sua carteira**, cuidando de suas chaves privadas por você. Você acessa seus serviços como qualquer outro site (com um login de e-mail e uma senha redefinível).
 
 Pode ser tudo que algumas pessoas precisam, mas é preciso que você confie nesses terceiros para proteger seus ativos cripto e lhe dar acesso quando quiser trocá-los ou enviá-los para algum lugar. Além disso, seu acesso a alguns `aplicativos blockchain` pode ser limitado.
 
@@ -237,7 +237,7 @@ Você é o responsável por sua chave privada em uma carteira de auto-custódia?
 
 - [ ] Não
 
-> Tente novamente!
+> ℹ️ Tente novamente!
 
 # Carteiras Quentes
 
@@ -293,55 +293,55 @@ Independentemente de sua `carteira de auto-custódia` ser quente ou fria, há v�
 
 🔭 Passe algum tempo pesquisando e reunindo informações sobre qualquer `aplicativo blockchain` com o qual você planeja interagir antes de conectar sua carteira a ele ou assinar suas transações.
 
-💰 Use wallets with low amounts of funds to try new things and explore web3, and consider storing high value assets across multiple wallet accounts (i.e. avoid putting all your crypto eggs in one basket).
+💰 Use carteiras com menos fundos para experimentar coisas novas e explorar a web3, e considere armazenar ativos de maior valor em várias contas de carteira (ou seja, evite colocar todos os seus ovos cripto na mesma cesta).
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
 
 # Knowledge Check 7
 
-What is the safest way to protect your recovery phrase?
+Qual é a maneira mais segura de proteger sua frase de recuperação?
 
-- [ ] Write it on a durable material and store it in a safe place.
+- [ ] Escrevendo-a em um material duradouro e armazenando-o em um lugar seguro.
 
-> ℹ️ Correct! A safely stored physical backup with no digital traces is the safest storage option.
+> ℹ️ Correto! Um backup físico armazenado com segurança, sem rastros digitais, é a opção de armazenamento mais segura.
 
-- [ ] Save it on your computer and print it out.
+- [ ] Salvando-a em seu computador e imprimindo-a.
 
-> ℹ️ Try again! If your computer is hacked, your recovery phrase could be found. Printing also opens many attack opportunities.
+> ℹ️ Tente novamente! Se o seu computador for hackeado, sua frase de recuperação poderá ser encontrada. A impressão também cria muitas oportunidades para ataques.
 
-- [ ] Take a screenshot and save it on your phone.
+- [ ] Capturando a tela e salvando-a no seu celular.
 
-> ℹ️ Try again! If your phone is hacked, you could lose all assets in your wallet.
+> ℹ️ Tente novamente! Se o seu celular for hackeado, você poderá perder todos os ativos da sua carteira.
 
-- [ ] Save it in your password manager.
+- [ ] Salvando-a no seu gerenciador de senhas.
 
-> ℹ️ Try again! If your password manager is hacked, your recovery phrase could be leaked.
+> ℹ️ Tente novamente! Se o seu gerenciador de senhas for hackeado, sua frase de recuperação poderá ser vazada.
 
-# You’re ready to create your first wallet!
+# Você está pronto para criar sua primeira carteira!
 
-In fact, you’ll need one if you want to claim proof of completing this quest!
+Na verdade, você precisará de uma se quiser reivindicar a prova de conclusão dessa missão!
 
-There are several `self-custody`, `hot wallet` apps available today. We will explore the Zerion wallet for the rest of this lesson as:
+Atualmente, existem vários aplicativos de `carteira quente` de `auto-custódia` disponíveis. Vamos explorar a carteira Zerion para o resto desta lição, uma vez que:
 
-- ⚙️ It’s compatible with most `blockchain apps`.
-- ⚡ The interface is incredibly smooth and easy to use.
-- 💻 It has a browser extension for Chrome, Brave, Edge, and Opera internet browsers.
-- 📱 It is also available as a mobile app for Android and iOS users.
-- 🗣️ Zerion supports a variety of languages.
+- ⚙️ É compatível com a maioria dos `aplicativos blockchain`.
+- ⚡ A interface é extremamente simples e fácil de usar.
+- 💻 Tem uma extensão para navegadores de internet como o Chrome, Brave, Edge e Opera.
+- 📱 Também está disponível como um aplicativo móvel para usuários de Android e iOS.
+- 🗣️ Zerion suporta vários idiomas.
 
-The end of the lesson is right around the corner, where we will share your instructions for setting up your wallet with Zerion!
+O fim da aula está bem ao virar da esquina, onde compartilharemos todas as instruções sobre como configurar sua carteira com a Zerion!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg)
 
 # Knowledge Check 8
 
-Is Zerion a custodial wallet app?
+A Zerion é um aplicativo de carteira custodial?
 
-- [ ] Yes
+- [ ] Sim
 
-> ℹ️ Try again! Your Zerion wallet isn’t controlled by a custodian.
+> ℹ️ Tente novamente! Sua carteira da Zerion não é controlada por um custodiante.
 
-- [ ] No
+- [ ] Não
 
-> ℹ️ Correct! Zerion wallets are self-custody wallets — controlled by you, and you alone.
+> ℹ️ Correto! As carteiras da Zerion são carteiras de auto-custódia, controladas por você, e apenas você.
 
