@@ -1,9 +1,9 @@
 ---
-TITLE: Creating a Crypto Wallet
-DESCRIPTION: Set up your first crypto wallet with our step-by-step walkthrough.
-LANGUAGE: English
+TITLE: Création d'un wallet crypto
+DESCRIPTION: Créez votre premier wallet de cryptomonnaies grâce à notre guide étape par étape.
+LANGUAGE: Français
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: Didier Krux
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
@@ -27,87 +27,87 @@ ________________________________________________________________________________
 
 ---
 
-This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**
+Voici un résumé de la leçon [Les bases d'un wallet] (https://app.banklessacademy.com/lessons/fr/wallet-basics), ainsi qu'une marche à suivre pour la quête. Consultez [la leçon complète] (https://app.banklessacademy.com/lessons/fr/wallet-basics) afin de **perfectionner vos connaissances et d'obtenir votre badge**.
 
 ---
 
-## Key Takeaways
+## Points clés à retenir
 
-> - You’ll need a `crypto wallet` to access the world of blockchains!
+> - Vous aurez besoin d'un "wallet cryptographique" pour accéder au monde des blockchains !
 >
-> - A wallet is like a `blockchain` account.
+> - Un wallet est comme un compte `blockchain`.
 >
-> - Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.
+> - Les wallets sont utilisés pour stocker des `cryptomonnaies`, se connecter dans des applications blockchain, et plus encore.
 >
-> - These wallets work on both computers and phones.
+> - Ces wallets fonctionnent à la fois sur les ordinateurs et les téléphones.
 >
-> - Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!
+> - La création d'un wallet est facile et prend environ 5 minutes. Nous allons vous montrer comment, dans notre vidéo ci-dessous !
 
-## What is a Crypto Wallet?
+## Qu'est-ce qu'un wallet crypto ?
 
-Crypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.
+Les wallets de cryptomonnaies sont un élément essentiel de l'équipement web3, vous permettant d'utiliser la `cryptomonnaie` sur votre ordinateur ou téléphone. Les wallets sont accessibles à l'aide d'un logiciel appelé "wallet app" - une extension de navigateur web pour votre ordinateur, ou une application sur votre téléphone.
 
-It gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
+Et ce n'est pas tout. Les wallets sont plus que des comptes pour détenir des cryptomonnaies - ils sont notre connexion à la blockchain. Nous pouvons les utiliser pour échanger des cryptomonnaies avec d'autres personnes, nous connecter à des applications blockchain, **et même collecter des objets numériques comme les badges de la Bankless Academy.** Plus nous explorons, plus nos wallets prennent de l'importance - certains les considérant comme le début de l'identité numérique.
 
-Wallets come with two core pieces of account information:
+Les wallets contiennent deux éléments essentiels d'information sur les comptes :
 
-- A `public key`, that you can think of as your _username_. You’ll share it publicly to receive cryptocurrency.
+- Une `clé publique`, que vous pouvez considérer comme votre _nom d'utilisateur_. Vous le partagerez publiquement pour recevoir des cryptomonnaies.
 
-- A `private key`, acting as your _password_. This should always be kept private, and cannot be changed.
+- Une `clé privée`, agissant comme votre _mot de passe_. Cette information doit toujours rester confidentielle et ne peut pas être modifiée.
 
-Protecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).
+Il est essentiel de protéger votre clé privée, car elle vous permet d'accéder instantanément à votre portefeuille. Vous ne devez jamais partager votre clé privée. Vous pouvez en savoir plus en suivant [la leçon complète] (https://app.banklessacademy.com/lessons/fr/wallet-basics).
 
-Today we will set up our first wallet, using our recommended crypto wallet: Zerion!
+Aujourd'hui, nous allons mettre en place notre premier wallet, en utilisant notre wallet de crypto-monnaie recommandé : Zerion !
 
-## Walkthrough
+## Guide pas à pas
 
-Set up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.
+Créez votre premier wallet sur votre ordinateur, en suivant la procédure ci-dessous, ou continuez à faire défiler l'écran pour découvrir la procédure de création d'un wallet pour téléphone portable.
 
-### Computer Wallet
+### Wallet d'ordinateur
 
 
 
-### Phone Wallet
+### Wallet de téléphone
 
 
 
 ---
 
-**It’s time to join the blockchain multiverse!**
+**Il est temps de rejoindre le multivers de la blockchain !**
 
-Don’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.
+N'oubliez pas de collectionner ce manuel pour vous y référer facilement lors de vos voyages et pour soutenir la Bankless Academy.
 
-Safe travels, Explorer!
+Bon voyage, Explorateur !
 
 ---
 
 ## FAQ
 
-### What is a cryptocurrency?
+### Qu'est-ce qu'une cryptomonnaie ?
 
-Cryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.
+Les crypto-monnaies sont une forme de monnaie numérique, sécurisée par la `cryptographie`. Ces monnaies peuvent fonctionner sans l'intervention d'autorités et de banques centralisées, ce qui réduit les possibilités de fraude tout en augmentant la liberté financière de leurs détenteurs.
 
-Learn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!
+Apprenez-en plus sur les cryptomonnaies grâce à notre leçon **[Les bases du Bitcoin](https://app.banklessacademy.com/lessons/fr/bitcoin-basics)**, et découvrez comment ces monnaies numériques révolutionnent le monde de la finance !
 
-### What are public and private keys?
+### Que sont les clés publiques et privées?
 
-Public/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.
+Le `chiffrement` à clé publique/privée permet à votre wallet de rendre certaines informations publiques, comme l'adresse où d'autres peuvent vous envoyer des crypto-monnaies, tout en conservant l'accès à vos crypto-monnaies privé. Une clé est comme l'adresse de votre maison pour la crypto-monnaie, et l'autre déverrouille la porte d'entrée.
 
-You can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.
+Vous pouvez partager votre clé publique avec toute personne en qui vous avez confiance pour vous envoyer des crypto-monnaies, mais votre clé privée est réservée à vos yeux uniquement, car elle accorde l'accès à tous les actifs à l'intérieur du wallet. Ne le communiquez jamais, même si votre interlocuteur prétend être de Bankless Academy ou de Zerion.
 
-Learn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.
+Pour en savoir plus et être récompensé pour la création de votre premier wallet, consultez notre leçon [Les bases d'un wallet](https://app.banklessacademy.com/lessons/fr/wallet-basics).
 
-### What happens if I lose my recovery phrase?
+### Que se passe-t-il si je perds ma phrase de récupération ?
 
-Your recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.
+Votre phrase de récupération, également appelée "phrase secrète" ou "phrase de départ" [seed phrase], est votre seule sauvegarde si vous perdez l'accès à votre portefeuille sur votre appareil. Si vous perdez votre phrase de récupération, les avoirs de votre wallet seront perdus à jamais. C'est pourquoi il est important de la stocker dans un endroit sûr - à l'abri non seulement du vol ou de la perte, mais aussi des dégâts causés par le feu ou l'eau.
 
-### Can Ethereum wallets hold Bitcoin?
+### Les portefeuilles Ethereum peuvent-ils contenir du Bitcoin ?
 
-Ethereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).
+Les portefeuilles Ethereum peuvent contenir du Bitcoin, mais sous une forme "wrapée". Si vous souhaitez détenir du Bitcoin original, vous devrez créer un wallet qui fonctionne sur le réseau Bitcoin, comme [Exodus](https://www.exodus.com/) ou [Mycelium](https://wallet.mycelium.com/).
 
 ---
 
-**Author**
+**Auteur**
 
 [Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.
 
