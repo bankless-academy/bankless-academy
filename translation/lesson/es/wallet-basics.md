@@ -1,9 +1,9 @@
 ---
-TITLE: Wallet Basics
-DESCRIPTION: What is a crypto wallet? Learn more and create your first wallet today!
-LANGUAGE: English
+TITLE: Conceptos Básicos de la Billetera
+DESCRIPTION: What is a crypto wallet? ¡Aprende más y crea tu primera billetera hoy!
+LANGUAGE: Español
 WRITERS: Ap0ll0517, Jordy, Tetranome
-TRANSLATORS: X
+TRANSLATORS: OrnellaWeb3
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -27,53 +27,53 @@ ________________________________________________________________________________
 
 ---
 
-# Wallet Intro
+# Introducción a las Billeteras
 
-**Greetings Bankless Explorer!**
+**¡Saludos Explorador Bankless!**
 
-It’s time to dive deeper on your journey into the blockchain multiverse. Every Explorer in this space eventually needs to create a crypto wallet.
+Es hora de profundizar tu viaje en el multiverso blockchain. Cada explorador de este espacio necesita crear una billetera criptográfica.
 
-Wallets are kind of like the accounts from the `web2` internet that you’re used to. You’ll use a wallet to log into the blockchain ecosystem, also known as `web3`, where you’ll be able to use `cryptocurrency` and connect to `blockchain apps`!
+Las billeteras son como las cuentas de internet `web2` a las que estás acostumbrado. Utilizarás una billetera para conectarte al ecosistema `blockchain`, también conocido como `web3`, donde podrás utilizar `criptomonedas` y conectarte a `aplicaciones blockchain`!
 
-In this lesson, we’ll introduce you to wallets, how they work, and how to keep your cryptocurrency secure. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
+En esta lección, te presentaremos qué son las billeteras cripto, cómo funcionan y cómo mantener tus criptomonedas segura. Terminaremos con una guía sobre cómo configurar una y acceder a **la blockchain de Ethereum, el hogar de Bankless Academy.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
+![]()
 
-# Wallet Definition
+# Billetera: Definición
 
-What exactly is a crypto wallet?
+¿Qué es exactamente una billetera cripto?
 
-The short definition is: an account on a `blockchain`, used to store digital assets and log into blockchain apps.
+La definición abreviada es: una cuenta en una `cadena de bloques`, utilizada para almacenar activos digitales e iniciar sesión en aplicaciones de la misma.
 
-It’s like having your own personal safe on the internet, and you hold the only key for unlocking it. At the same time, this safe is similar to a regular website account. You can use it to make purchases, send or receive `cryptocurrency`, and interact with a blockchain.
+Es como tener tu propia caja fuerte personal en internet y tú tienes la única llave para abrirla. Al mismo tiempo, esta caja fuerte es similar a una cuenta de un sitio web normal. Puedes usarla para realizar compras, enviar o recibir `criptomonedas` e interactuar con una cadena de bloques.
 
-However, unlike the `web2` accounts you’re used to, a single wallet can access an entire blockchain, and a large number of blockchain apps. It’s like having one account for the entire internet.
+Sin embargo, a diferencia de las cuentas `web2` a las que estás acostumbrado, una única billetera puede acceder a una cadena de bloques completa, y a su vez, a un gran número de aplicaciones en ella. Es como tener una sola cuenta para todo internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
-# Is creating a wallet difficult?
+# ¿Es difícil crear una billetera?
 
-It used to be difficult, but these days anyone can create a wallet quite easily.
+Antes era difícil, pero hoy en día cualquiera puede crear una billetera con bastante facilidad.
 
-If you are comfortable with downloading and installing software on your computer (or apps on your phone), then you’ll have no trouble creating your first wallet.
+Si te sientes cómodo descargando e instalando programas en tu computador (o aplicaciones en tu teléfono), no tendrás ningún problema para crear tu primera billetera.
 
-The trickier part of managing a wallet involves keeping it secure — which we’ll dive into shortly!
+La parte más compleja de gestionar una billetera, es mantenerla segura, tema que profundizaremos en breve.
 
-Choosing your `wallet app` may also feel intimidating. This is the app that you will install on your device to access your wallet on the blockchain. We recommend starting with the Zerion wallet app: it’s user friendly and has access to many popular blockchains. As you get more comfortable in the `web3` space, you will likely explore other providers and create multiple wallets.
+Elegir cual `aplicación de billetera` usar también puede resultar intimidante. Esta es la aplicación que instalarás en tu dispositivo para acceder a tu billetera en la cadena de bloques. Recomendamos comenzar con la aplicación de billeteras Zerion: es fácil de usar y tiene acceso a muchas blockchains populares. A medida que te sientas más cómodo en el espacio `web3`, es probable que explores otros aplicaciones y crees múltiples billeteras.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
 # Knowledge Check 1
 
-What is a wallet?
+¿Qué es una billetera?
 
 - [ ] A blockchain
 
-> ℹ️ Try again! Your wallet is hosted on a blockchain.
+> ℹ️ ¡Inténtalo de nuevo! Tu billetera está alojada o 'vive' en una cadena de bloques.
 
-- [ ] A cryptocurrency
+- [ ] Una criptomoneda
 
-> ℹ️ Try again! Cryptocurrencies are something you hold in your wallet.
+> ℹ️ ¡Inténtalo de nuevo! Las criptomonedas son algo que se tiene en la cartera.
 
 - [ ] A digital collectible
 
