@@ -27,90 +27,90 @@ ________________________________________________________________________________
 
 ---
 
-This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**
+这是我们的 [钱包基础知识](https://app.banklessacademy.com/lessons/wallet-basics) 课程摘要，以及任务攻略。 查看[完整课程](https://app.banklessacademy.com/lessons/wallet-basics)，**提升知识水平，领取徽章！**
 
 ---
 
-## Key Takeaways
+## 要点总结
 
-> - You’ll need a `crypto wallet` to access the world of blockchains!
+> - 你需要一个 `加密钱包` 才能访问区块链的世界！
 >
-> - A wallet is like a `blockchain` account.
+> - 钱包就像一个 `区块链` 帐户。
 >
-> - Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.
+> - 钱包用于存储 `加密货币`，登录区块链app等。
 >
-> - These wallets work on both computers and phones.
+> - 这些钱包在电脑和手机上都能使用。
 >
-> - Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!
+> - 创建钱包非常简单，只需 5 分钟左右。 我们将在下面的视频中为您演示！
 
-## What is a Crypto Wallet?
+## 什么是加密货币钱包？
 
-Crypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.
+加密钱包是一种重要的 web3 基础设施，允许您在计算机或手机上使用 `加密货币` 。 钱包使用名为 "钱包app "的软件进行访问，该软件是电脑的浏览器拓展插件，或者是手机上的app。
 
-It gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
+不止于此。 钱包不仅仅是持有加密货币的账户，它还是我们与区块链的连接。 我们可以用它们与他人交换加密货币，登录区块链应用，**甚至收集 Bankless 学院徽章等数字物品**。我们探索得越多，钱包就变得越重要 —— 有些人将其视为数字身份的开端。
 
-Wallets come with two core pieces of account information:
+钱包有两个核心账户信息：
 
-- A `public key`, that you can think of as your _username_. You’ll share it publicly to receive cryptocurrency.
+- 一个 "公钥"，你可以把它看作是你的_用户名_。 您可以公开分享公钥，以获得加密货币。
 
-- A `private key`, acting as your _password_. This should always be kept private, and cannot be changed.
+- 私人密钥"，作为你的_密码_。 私钥应始终保持私密，它也无法被重置或变更。
 
-Protecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).
+因为掌握了密钥就能随时访问钱包，所以保护您的私钥至关重要。 切勿与他人分享你的私钥。 您可以通过学习 [完整课程](https://app.banklessacademy.com/lessons/wallet-basics) 了解更多。
 
-Today we will set up our first wallet, using our recommended crypto wallet: Zerion!
+今天，就使用我们推荐的加密钱包app来创建你的第一个钱包吧：Zerion！
 
-## Walkthrough
+## 教程
 
-Set up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.
+使用下面的教程在电脑上创建你的第一个钱包，或向下查看我们的手机钱包教程。
 
-### Computer Wallet
+### 电脑钱包
 
 
 
-### Phone Wallet
+### 手机钱包
 
 
 
 ---
 
-**It’s time to join the blockchain multiverse!**
+**是时候加入区块链多元宇宙了！**
 
-Don’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.
+别忘了收藏这本手册的藏品，方便您在多元宇宙旅行时随时参考，这也是对 Bankless 学院的支持。
 
-Safe travels, Explorer!
-
----
-
-## FAQ
-
-### What is a cryptocurrency?
-
-Cryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.
-
-Learn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!
-
-### What are public and private keys?
-
-Public/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.
-
-You can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.
-
-Learn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.
-
-### What happens if I lose my recovery phrase?
-
-Your recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.
-
-### Can Ethereum wallets hold Bitcoin?
-
-Ethereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).
+一路平安，探险家！
 
 ---
 
-**Author**
+## 常见问答（FAQ）
 
-[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.
+### 什么是加密货币？
 
-**Patron**
+加密货币是一种数字货币，基于 `密码学` 的保障。 这些货币的运行不需要中央机构和银行，减少了欺诈的可能性，同时增加了持有者的财务自由程度。
 
-This walkthrough is powered by Zerion.
+通过我们的 **[比特币基础](https://app.banklessacademy.com/lessons/bitcoin-basics)** 了解更多关于加密货币的信息，看看这些数字货币如何使金融界发生革命性变化！
+
+### 什么是公钥和私钥？
+
+公钥/私钥 `加密` 允许您的钱包公开某些信息，如他人可以向您发送加密货币的地址，同时保持您的加密货币访问权限的私密性。 公钥就像您的加密货币的房屋住址，而另一把私钥则可以打开这座房子的前门。
+
+您可以与您信任的任何人共享您的公钥，让他们向您发送加密货币。但是，因为私钥允许访问钱包内的所有资产，请切记私钥仅供您自己使用。 如果有任何人想索取你的私钥，也千万别告诉他，即使他声称自己来自 Bankless 学院或 Zerion 也不行！
+
+在我们的 [钱包基础知识](https://app.banklessacademy.com/lessons/wallet-basics) 课程中了解更多信息，并在创建第一个钱包时获得奖励。
+
+### 如果我丢失了恢复助记词会怎样？
+
+恢复助记词也称为 "密码助记词 "或 "种子助记词"，是钱包访问权限的唯一备份。 如果您丢失了恢复助记词，您钱包里的钱将永远丢失。 因此，必须将助记词存放在安全的地方，不仅要防止被盗或丢失，还要防止火灾或水灾。
+
+### 以太坊钱包可以持有比特币吗？
+
+以太坊钱包可以持有比特币，不过是以 "打包（wrapped）"的形式。 如果你想持有原始比特币，就必须创建一个在比特币网络上运行的钱包，比如 [Exodus](https://www.exodus.com/) 或 [Mycelium](https://wallet.mycelium.com/)。
+
+---
+
+**作者**
+
+[Tetranome](https://twitter.com/Tetranome)是 Bankless 学院的内容与设计负责人，主要负责学习之旅、用户界面与体验以及平台美工。
+
+**赞助商**
+
+本教程由 Zerion 提供技术支持。
