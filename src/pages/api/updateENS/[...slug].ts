@@ -26,10 +26,14 @@ export const fetchWithTimeout = async (resource, options = {}) => {
 
 export const fileIsLoading = async (resource) => {
   // 2 sec timeout
-  const response = await fetchWithTimeout(resource, { timeout: 2000 })
-  const status = await response.status
-  console.log(status)
-  return status ? status === 200 : false
+  try {
+    const response = await fetchWithTimeout(resource, { timeout: 2000 })
+    const status = await response.status
+    console.log(status)
+    return status ? status === 200 : false
+  } catch (error) {
+    return false
+  }
 }
 
 export default async function handler(
