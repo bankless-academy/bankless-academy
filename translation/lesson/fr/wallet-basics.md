@@ -31,11 +31,11 @@ ________________________________________________________________________________
 
 **Salutations Explorateur Bankless !**
 
-Il est temps d'approfondir votre voyage dans le multivers de la blockchain. Tout explorateur dans ce domaine doit un jour ou l'autre créer un portefeuille de crypto-monnaies.
+Il est temps d'approfondir votre voyage dans le multivers de la blockchain. Tout explorateur dans ce domaine doit un jour ou l'autre créer un portefeuille de cryptomonnaies.
 
-Les wallets sont un peu comme les comptes de l'internet `web2` auxquels vous êtes habitués. Vous utiliserez un portefeuille pour vous connecter à l'écosystème de la blockchain, également connu sous le nom de `web3`, où vous pourrez utiliser des `crypto-monnaies` et vous connecter à des `applications blockchain`!
+Les wallets [portefeuilles crypto] sont un peu comme les comptes de l'internet `web2` auxquels vous êtes habitués. Vous utiliserez un portefeuille pour vous connecter à l'écosystème de la blockchain, également connu sous le nom de `web3`, où vous pourrez utiliser des `crypto-monnaies` et vous connecter à des `applications blockchain`!
 
-Dans cette leçon, nous vous présenterons les wallets, leur fonctionnement et la manière de sécuriser vos crypto-monnaies. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
+Dans cette leçon, nous vous présenterons les wallets, leur fonctionnement et la manière de sécuriser vos crypto-monnaies. Nous terminerons par un guide sur la manière de mettre en place un tel système et d'accéder à la **blockchain Ethereum - la "maison" de la Bankless Academy.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
@@ -75,85 +75,85 @@ Qu'est-ce qu'un wallet ?
 
 > ℹ️ Réessayez ! Les cryptomonnaies sont quelque chose que vous détenez dans votre wallet.
 
-- [ ] A digital collectible
+- [ ] Un collectible numérique
 
-> ℹ️ Try again! Digital collectibles are something you hold in your wallet.
+> ℹ️ Réessayez ! Les collecibles numériques sont quelque chose que vous tenez dans votre wallet.
 
-- [ ] A blockchain account
+- [ ] Un compte blockchain
 
-> ℹ️ Correct! Wallets are accounts used to interact with blockchains.
+> ℹ️ Correct ! Les wallets sont des comptes utilisés pour interagir avec les blockchains.
 
-# Wallets & Password Recovery
+# Les wallets et la récupération des mot de passes
 
-Here is one of the most important things to understand about `web3` wallets: **There are no “password resets” or “password changes”.**
+Voici l'une des choses les plus importantes à comprendre à propos des portefeuilles `web3`: **Il n'y a pas de "réinitialisation de mot de passe" ou de "changement de mot de passe".**
 
-Most of us are used to these features. If we forget a password, we click a button, do a few things, and get a new password. Easy.
+La plupart d'entre nous sont habitués à ces fonctionnalités. Si nous oublions un mot de passe, nous cliquons sur un bouton, nous effectuons quelques opérations et nous obtenons un nouveau mot de passe. Facile.
 
-Not so with crypto wallets. Because of how blockchains work, wallets are assigned an “address” and a complex “password” when they’re created — and you do not choose these.
+Pas ainsi avec les portefeuilles de cryptomonnaies. En raison du fonctionnement des blockchains, les wallets se voient attribuer une "adresse" et un "mot de passe" complexe lors de leur création - et vous ne les choisissez pas.
 
-This address and password combination are impossible to change, although you can always create a new wallet if you need to. Let’s learn a bit more about these special addresses and passwords, so that we can feel confident using them!
+Cette combinaison d'adresse et de mot de passe est impossible à modifier, bien que vous puissiez toujours créer un nouveau wallet si nécessaire. Découvrons un peu mieux ces adresses et mots de passe spéciaux, afin de pouvoir les utiliser en toute confiance !
 
-# Your wallet’s public key
+# La clé publique de votre wallet
 
-A `public key` is basically your wallet’s address. Often, this looks like a random series of letters and numbers.
+Une `clé publique` est en fait l'adresse de votre wallet. Souvent, cela ressemble à une série aléatoire de lettres et de chiffres.
 
-Example: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
+Exemple : _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-It is possible to create easier to remember versions of this with some `web3` services, but that’s a lesson for another time.
+Il est possible de créer des versions plus faciles à mémoriser avec certains services `web3`, mais c'est une leçon pour une autre fois.
 
-You can also think of a public key like a house address. It is public, anyone can see it, and it tells others where they can send you crypto assets — without revealing anything personal about you.
+Vous pouvez également considérer une clé publique comme l'adresse d'une maison. Elle est publique, tout le monde peut le voir, et elle indique aux autres où ils peuvent vous envoyer des crypto-actifs - sans révéler quoi que ce soit de personnel à votre sujet.
 
-It is perfectly safe to share your wallet’s **public key**.
+Il est parfaitement sûr de partager la **clé publique** de votre wallet.
 
-**Note:** A single wallet app can hold multiple public/`private key` pairs.
+**Remarque :** Une seule application de wallet peut contenir plusieurs paires de clés publiques/`clés privées`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
-# Your wallet’s private key
+# La clé privée de votre wallet
 
-If the public key is like a house address, then the `private key` is like the key to the front door. It’s the “password” to your funds and assets.
+Si la clé publique est comme l'adresse d'une maison, la `clé privée` est comme la clé de la porte d'entrée. C'est le "mot de passe" qui permet d'accès à vos fonds et actifs.
 
-Example: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
+Exemple : _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
-**It’s never safe to share this key — you could lose your wallet and everything in it.**
+**Ne partagez jamais cette clé, ou vous pourriez perdre tout ce que contient votre wallet.**
 
-Most people recommend that you do not even save it digitally. Whoever has access to a private key has access to whatever is in the `wallet`.
+La plupart des gens vous recommandent de ne jamais l'enregistrer numériquement. Quiconque a accès à une clé privée a accès à tout ce qui se trouve dans le `wallet`.
 
-This is more than just a password. You cannot reset it if you lose access to it.
+C'est plus qu'un simple mot de passe. Vous ne pouvez pas le réinitialiser si vous n'y avez plus accès.
 
-Luckily, most `blockchain apps` do not require you to type a long, complicated string of characters every time you need to send funds or sign a blockchain transaction. The private key usually operates quietly in the background.
+Heureusement, la plupart des `applications blockchain` ne vous obligent pas à taper une longue chaîne de caractères compliquée chaque fois que vous devez envoyer des fonds ou signer une transaction de blockchain. La clé privée fonctionne généralement en arrière-plan.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
 # Knowledge Check 2
 
-Your public key is like your _____ and your private key is like your _____ .
+Votre clé publique est comme votre _____ et votre clé privée est comme votre _____ .
 
-- [ ] Routing Number / Account Number
+- [ ] Numéro de routage / Numéro de compte
 
-> ℹ️ Try again! Unlike a bank account number, your private key shouldn’t be shared with others.
+> ℹ️ Réessayez ! Contrairement à un numéro de compte bancaire, votre clé privée ne doit pas être partagée avec d'autres personnes.
 
-- [ ] Address / Zip code
+- [ ] Adresse / Code postal
 
-> ℹ️ Try again! Unlike a zip code, your private key shouldn’t be shared with others.
+> ℹ️ Réessayez ! Contrairement à un code postal, votre clé privée ne doit pas être partagée avec d'autres personnes.
 
-- [ ] House address / House key
+- [ ] Adresse de la maison / Clé de la maison
 
-> ℹ️ Correct! Your public key allows others to find you, while only your private key lets you in.
+> ℹ️ Correct ! Votre clé publique permet aux autres de vous trouver, tandis que seule votre clé privée vous permet d'entrer.
 
-- [ ] Phone Number / Passport Number
+- [ ] Numéro de téléphone / Numéro de passeport
 
-> ℹ️ Try again! These are examples of public & private information, but they’re unrelated.
+> ℹ️ Réessayez ! Ce sont des exemples d’informations publiques et privées, mais elles ne sont pas liées.
 
-# Recovery Phrase
+# Phrase de Récupération
 
-When you set up a new wallet, your wallet app will provide you with a `recovery phrase`.
+Lorsque vous créez un nouveau wallet, l'application de votre wallet vous fournit une `phrase de récupération`.
 
-Also called a “seed phrase” or “secret phrase”, this string of words can be used to access your wallet and crypto assets if:
+Également appelée "seed phrase" ou "phrase secrète", cette chaîne de mots peut être utilisée pour accéder à votre wallet et à vos crypto-actifs si :
 
-- Your `wallet app` or device fails unexpectedly or is damaged.
-- Your device has been lost or stolen.
-- You want to access your wallet on multiple devices.
+- Votre `wallet app` ou l'appareil contenant votre wallet tombe en panne de façon inattendue ou est endommagé.
+- Votre appareil a été perdu ou volé.
+- Vous souhaitez accéder à votre portefeuille sur plusieurs appareils.
 
 Most recovery phrases are a list of 12 to 24 words that represent a unique piece of data. This data is used to generate both the `public key` and `private key` for your wallet.
 
