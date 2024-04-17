@@ -109,8 +109,8 @@ Les portefeuilles Ethereum peuvent contenir du Bitcoin, mais sous une forme "wra
 
 **Auteur**
 
-[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.
+[Tetranome](https://twitter.com/Tetranome) est le responsable du contenu et du design de Bankless Academy, se concentrant sur le parcours d'apprentissage, l'interface utilisateur & l'expérience, et le travail artistique de la plate-forme.
 
 **Patron**
 
-This walkthrough is powered by Zerion.
+Ce guide pas à pas est propulsé par Zerion.
