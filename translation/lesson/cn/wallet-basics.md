@@ -59,25 +59,25 @@ ________________________________________________________________________________
 
 管理钱包最棘手的部分在于如何确保加密钱包的安全，我们将在下文中详细介绍！
 
-你的`钱包app`该具体用哪个呢？你一开始可能会感觉无从下手。 This is the app that you will install on your device to access your wallet on the blockchain. We recommend starting with the Zerion wallet app: it’s user friendly and has access to many popular blockchains. As you get more comfortable in the `web3` space, you will likely explore other providers and create multiple wallets.
+你的`钱包app`该具体用哪个呢？你一开始可能会感觉无从下手。 这是你即将在设备上安装的 app，用于访问您在区块链上的钱包。 我们建议从 Zerion 钱包 app 开始：它是用户友好型的 app，可以访问绝大多数主流区块链。 随着您在`web3`空间的交互越来越得心应手，您可能会探索其他加密钱包 app，并创建多个钱包。
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
 # Knowledge Check 1
 
-What is a wallet?
+什么是加密钱包？
 
-- [ ] A blockchain
+- [ ] 一条区块链
 
-> ℹ️ Try again! Your wallet is hosted on a blockchain.
+> ℹ️ 再试一次！ 您的加密钱包确实托管在区块链上，但钱包并不代表一条区块链。
 
-- [ ] A cryptocurrency
+- [ ] 一种加密货币
 
-> ℹ️ Try again! Cryptocurrencies are something you hold in your wallet.
+> ℹ️ 再试一次！ 加密货币只是你放在钱包里的资产之一。
 
-- [ ] A digital collectible
+- [ ] 一种数字收藏品
 
-> ℹ️ Try again! Digital collectibles are something you hold in your wallet.
+> ℹ️ 再试一次！ 加密货币只是你放在钱包里的资产之一。
 
 - [ ] A blockchain account
 
