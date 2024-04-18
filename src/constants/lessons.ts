@@ -3450,7 +3450,7 @@ const LESSONS: LessonType[] = [
     name: 'Gitcoin 2.0 Essentials',
     languages: [],
     quest: 'Gitcoin20Essentials',
-    questSocialMessage: 'I\'ve just read the @Gitcoin 2.0 Essentials on @BanklessAcademy 🎉\n\nJoin the journey and level up your #web3 knowledge! 👨‍🚀🚀',
+    questSocialMessage: 'https://twitter.com/gitcoin/status/1763720554698469857',
     publicationStatus: 'hidden',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
