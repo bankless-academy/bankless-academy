@@ -127,7 +127,7 @@ export default async function handler(
           if (!isQuestValidated)
             return res.status(200).json({
               isQuestValidated: false,
-              error: 'Repost not found. Try again in a couple seconds. If you have already reposted this tweet again a long time ago, undo, then repost.',
+              error: 'Repost not found. Try again in a couple seconds. If you have already reposted this tweet a long time ago, undo, then repost.',
             })
           // const rt = await client.v2.tweetRetweetedBy(messageId)
           // console.log('rt', rt)
