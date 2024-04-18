@@ -11,7 +11,7 @@ import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import { markdown } from 'utils/markdown'
 import { useTranslation } from 'react-i18next'
-import LessonCollectibleModal from 'components/LessonCollectibleModal'
+import LessonContent from 'components/LessonContent'
 
 const SPLIT = `\`\`\`
 
@@ -250,16 +250,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
         ) : (
           <Container maxW="container.xl" px={isSmallScreen ? '8px' : '16px'}>
             {lesson?.showContent ? (
-              <LessonCollectibleModal
-                isOpen
-                onClose={() => {
-                  document.location.href = window.location.pathname?.replace(
-                    '/content',
-                    ''
-                  )
-                }}
-                lesson={lesson}
-              />
+              <LessonContent lesson={lesson} />
             ) : (
               <LessonDetail lesson={lesson} />
             )}

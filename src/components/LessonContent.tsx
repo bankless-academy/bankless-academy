@@ -1,21 +1,12 @@
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  Button,
-  useMediaQuery,
-  Box,
-} from '@chakra-ui/react'
+import { Box, Text, Image } from '@chakra-ui/react'
 import hljs from 'highlight.js'
 import { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
-import { useTranslation } from 'react-i18next'
 
 import { LessonType } from 'entities/lesson'
 import LanguageSwitch from 'components/LanguageSwitch'
+import LessonCard from 'components/LessonCard'
+import { useSmallScreen } from 'hooks/index'
 
 const SPLIT = `\`\`\`
 
@@ -48,17 +39,12 @@ function replaceImagesInMarkdown(markdownString) {
   return replacedString
 }
 
-const LessonCollectibleModal = ({
-  isOpen,
-  onClose,
+const LessonContent = ({
   lesson,
 }: {
-  isOpen: boolean
-  onClose: () => void
   lesson: LessonType
 }): React.ReactElement => {
-  const { t } = useTranslation()
-  const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
+  const [isSmallScreen] = useSmallScreen()
   const [intro, setIntro] = useState('')
   const [content, setContent] = useState('')
 
@@ -94,57 +80,61 @@ const LessonCollectibleModal = ({
     }
   }, [lesson])
   return (
-    <Modal
-      onClose={onClose}
-      size={isMobileScreen ? 'full' : '6xl'}
-      isCentered
-      isOpen={isOpen}
-    >
-      <ModalOverlay backdropFilter="blur(10px)" />
-      <ModalContent
-        // bg="linear-gradient(180deg, #f4c137bf 0%, #e9966a9c 100%)"
-        // border={isMobileScreen ? '0' : '2px solid #c17e3c'}
-        borderRadius={isMobileScreen ? '0' : '3xl'}
-        backdropFilter="blur(10px)"
-      >
-        <ModalHeader>{t('LESSON DATADISK CONTENT')}</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody padding={isMobileScreen ? '10px' : 'default'}>
-          <Box>
-            <LanguageSwitch lesson={lesson} />
-            <Button
-              onClick={() => {
-                document.location.href = window.location.pathname?.replace(
-                  '/content',
-                  ''
-                )
-              }}
-            >
-              Take lesson
-            </Button>
+    <Box>
+      <Box mb={8}>
+        <Text
+          fontSize={isSmallScreen ? '3xl' : '5xl'}
+          fontWeight="bold"
+          textAlign="center"
+          pt={4}
+        >
+          Welcome to Bankless Academy
+        </Text>
+        <Text fontSize="2xl" textAlign="center">
+          Your platform for understanding cryptocurrency!
+        </Text>
+        <Box display="flex" alignItems="center" justifyContent="center" my={16}>
+          <Box w="100%" maxW="400px">
+            {isSmallScreen && (
+              <Box mb={16} p={4}>
+                <Image
+                  w="100%"
+                  maxW="350px"
+                  m="auto"
+                  src="/images/learning-steps.png"
+                />
+              </Box>
+            )}
+            <LessonCard lesson={lesson} />
           </Box>
-          <StyledMarkdown
-            overflow="scroll"
-            maxHeight={isMobileScreen ? 'calc( 100vh - 82px )' : '85vh'}
-          >
-            <Box
-              dangerouslySetInnerHTML={{
-                __html: replaceImagesInMarkdown(intro),
-              }}
-              width="1100px"
-              overflowX="scroll"
+          {!isSmallScreen && (
+            <Image
+              w="100%"
+              maxW="350px"
+              h="fit-content"
+              src="/images/learning-steps.png"
             />
-            <Box
-              dangerouslySetInnerHTML={{
-                __html: replaceImagesInMarkdown(html),
-              }}
-              width="inherit"
-            />
-          </StyledMarkdown>
-        </ModalBody>
-      </ModalContent>
-    </Modal>
+          )}
+        </Box>
+        <LanguageSwitch lesson={lesson} />
+      </Box>
+      <StyledMarkdown>
+        <Box
+          dangerouslySetInnerHTML={{
+            __html: replaceImagesInMarkdown(intro),
+          }}
+          width="1100px"
+          overflowX="scroll"
+        />
+        <Box
+          dangerouslySetInnerHTML={{
+            __html: replaceImagesInMarkdown(html),
+          }}
+          width="inherit"
+        />
+      </StyledMarkdown>
+    </Box>
   )
 }
 
-export default LessonCollectibleModal
+export default LessonContent
