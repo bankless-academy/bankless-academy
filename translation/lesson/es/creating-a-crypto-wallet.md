@@ -95,7 +95,7 @@ El "cifrado" de llave pública/privada permite a tu billetera hacer pública cie
 
 Puedes compartir tu llave pública con cualquiera en quien confíes para que te envíe criptodivisas, pero tu llave privada es sólo para tus ojos, porque garantiza el acceso a todos los activos dentro del monedero. Nunca la compartas, aunque tu contacto diga ser de Bankless Academy o Zerion.
 
-Aprende más y obtén recompensas por crear tu primera billetera, en nuestra lección [Básicos de la billetera](https://app.banklessacademy.com/lessons/wallet-basics).
+Aprende más y obtén recompensas por crear tu primera billetera, en nuestra lección [Conceptos Básicos de la Billetera](https://app.banklessacademy.com/lessons/wallet-basics).
 
 ### ¿Qué sucede si pierdo mi frase de recuperación?
 
@@ -111,6 +111,6 @@ Las billeteras de Ethereum pueden contener Bitcoin, pero en un formulario “env
 
 [Tetranome](https://twitter.com/Tetranome) es responsable de contenido y diseño en Bankless Academy, y se centra en el proceso de aprendizaje, la interfaz y la experiencia del usuario, y el diseño de la plataforma.
 
-**Patron**
+Patrón
 
 Esta guía está potenciada por Zerion.
