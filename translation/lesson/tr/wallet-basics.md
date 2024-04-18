@@ -1,6 +1,6 @@
 ---
 TITLE: Cüzdan ile İlgili Temel Bilgiler
-DESCRIPTION: Kripto para cüzdanı nedir? Ayrıntılı bilgi edinin ve bugün ilk cüzdanınızı oluşturun!
+DESCRIPTION: Kripto para cüzdanı nedir? Ayrıntılı bilgi edinin ve ilk cüzdanınızı hemen oluşturun!
 LANGUAGE: Türkçe
 WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: İlknur Beyaz
@@ -29,11 +29,11 @@ ________________________________________________________________________________
 
 # Cüzdana Giriş
 
-**Greetings Bankless Explorer!**
+**Selamlar Bankless Kaşifi!**
 
 Blok zinciri çoklu evrenine yolculuğunuzda daha derinlere dalmanın zamanı geldi. Bu ekosistemdeki her Kaşifin eninde sonunda bir kripto para cüzdanı oluşturması gerekir.
 
-Wallets are kind of like the accounts from the `web2` internet that you’re used to. `Web3` olarak da bilinen blok zinciri ekosistemine giriş yapmak için bir cüzdan oluşturacak, bu cüzdan ile `kripto para` kullanabilecek ve `blok zinciri uygulamaları`na bağlanabileceksiniz!
+Cüzdanlar, alışkın olduğunuz `web2` internet hesaplarına benzer. `Web3` olarak da bilinen blok zinciri ekosistemine giriş yapmak için bir cüzdan oluşturacak, bu cüzdan ile `kripto para` kullanabilecek ve `blok zinciri uygulamaları`na bağlanabileceksiniz!
 
 Bu derste size cüzdanları, nasıl çalıştıklarını ve kripto paranızı nasıl güvende tutacağınızı anlatacağız. Nasıl cüzdan oluşturacağınıza ve **Bankless Academy'nin evi olan Ethereum blok zinciri**ne nasıl erişeceğinize dair bir kılavuzla dersi tamamlayacağız.
 
@@ -43,11 +43,11 @@ Bu derste size cüzdanları, nasıl çalıştıklarını ve kripto paranızı na
 
 Kripto cüzdanı tam olarak nedir?
 
-Kısa tanımı şöyle yapabiliriz: Dijital varlıkları saklamak ve blok zinciri uygulamalarına giriş yapmak için kullanılan, `blok zinciri` üzerindeki bir hesap.
+Kısa tanımı şöyle yapabiliriz: `Blok zinciri` üzerinde bulunan, dijital varlıkları saklamak ve blok zinciri uygulamalarına giriş yapmak için kullanılan bir hesap.
 
-Bu, internette kendinize ait şahsi kasanızın olması ve kilidini açan tek anahtarın sizde bulunmasına benziyor. Bu kasa, aynı zamanda, normal bir web sitesi hesabına da benzer. Onu alışveriş yapmak, `kripto para` göndermek veya almak ve bir blok zinciri ile etkileşim kurmak için kullanabilirsiniz.
+İnternette kendinize ait şahsi kasanızın olması ve kasanın kilidini açan tek anahtarın sizde olması gibi bir şey. Bu kasa, aynı zamanda, normal bir web sitesi hesabına da benzer. Onu alışveriş yapmak, `kripto para` göndermek veya almak ve bir blok zinciri ile etkileşim kurmak için kullanabilirsiniz.
 
-Ancak, alışkın olduğunuz `web2` hesaplarının aksine, tek bir cüzdan tüm blok zincirine ve çok sayıda blok zinciri uygulamasına erişebiliyor. Tüm internet için tek bir hesaba sahip olmak gibi.
+Ancak, alışkın olduğunuz `web2` hesaplarının aksine, tek bir cüzdan tüm blok zincirine ve çok sayıda blok zinciri uygulamasına erişebilir. Tüm internet için tek bir hesaba sahip olmak gibi.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
@@ -59,7 +59,7 @@ Bilgisayarınıza yazılım (veya telefonunuza uygulama) indirme ve yükleme kon
 
 Bir cüzdanı kontrol etmenin en zor kısmı onu güvende tutmaktır; bu konuya birazdan değineceğiz!
 
-Choosing your `wallet app` may also feel intimidating. Bu, blok zincirindeki cüzdanınıza erişmek için cihazınıza yükleyeceğiniz uygulamadır. Zerion cüzdan uygulaması ile başlamanızı öneriyoruz çünkü cüzdanları hem kullanıcı dostu hem de birçok popüler blok zincirine erişime sahip. `Web3` dünyasında daha rahat hale geldikçe, muhtemelen diğer sağlayıcıları keşfedecek ve birden fazla cüzdan oluşturacaksınız.
+`Cüzdan uygulamanızı` seçmek de göz korkutucu gelebilir. Bu, blok zincirindeki cüzdanınıza erişmek için cihazınıza yükleyeceğiniz uygulamadır. Zerion cüzdan uygulaması ile başlamanızı öneriyoruz çünkü cüzdanları hem kullanıcı dostu hem de birçok popüler blok zincirine erişime sahip. `Web3` dünyasında daha rahat hale geldikçe, muhtemelen diğer sağlayıcıları keşfedecek ve birden fazla cüzdan oluşturacaksınız.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
