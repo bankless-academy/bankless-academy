@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-Este é um resumo de nossa lição [Princípios Básicos de Carteiras] (https://app.banklessacademy.com/lessons/wallet-basics), juntamente com um passo a passo para a missão. Confira [a lição completa] (https://app.banklessacademy.com/lessons/wallet-basics) para **aumentar seu conhecimento e reivindicar seu distintivo!**
+Este é um resumo de nossa lição [Princípios Básicos de Carteiras](https://app.banklessacademy.com/lessons/pt/wallet-basics), juntamente com um passo a passo para a missão. Confira [a lição completa](https://app.banklessacademy.com/lessons/pt/wallet-basics) para **aumentar seu conhecimento e reivindicar seu distintivo!**
 
 ---
 
@@ -55,7 +55,7 @@ As carteiras têm dois pedaços de informação essenciais:
 
 - Uma `chave privada`, que funciona como sua _senha_. Esta informação deve ser sempre mantida em segredo e não pode ser alterada.
 
-Proteger sua chave privada é fundamental, pois essa chave concede acesso instantâneo à sua carteira. Você nunca deve compartilhar sua chave privada. Você pode aprender mais assistindo [à lição completa] (https://app.banklessacademy.com/lessons/wallet-basics).
+Proteger sua chave privada é fundamental, pois essa chave concede acesso instantâneo à sua carteira. Você nunca deve compartilhar sua chave privada. Você pode aprender mais assistindo [à lição completa](https://app.banklessacademy.com/lessons/pt/wallet-basics).
 
 Hoje vamos configurar nossa primeira carteira, usando nossa carteira de criptomoedas recomendada: Zerion!
 
