@@ -23,8 +23,14 @@ const LanguageSwitch = ({
   return (
     <Box>
       {languages?.length ? (
-        <Box textAlign="center" maxW="400px" m="auto">
-          <Box display="inline-flex">{t('Select language:')}</Box>
+        <Box
+          display="flex"
+          flexWrap="wrap"
+          justifyContent="center"
+          alignItems="center"
+          m="auto"
+        >
+          <Box>{t('Select language:')}</Box>
           <Button
             variant={
               i18n.language === 'en' ||
@@ -32,8 +38,7 @@ const LanguageSwitch = ({
                 ? 'secondary'
                 : 'outline'
             }
-            ml={3}
-            mb={3}
+            m={3}
             onClick={() => {
               i18n.changeLanguage('en', () =>
                 router.push(`/lessons/${lesson.slug}${content}`)
@@ -77,8 +82,7 @@ const LanguageSwitch = ({
                   name: l,
                 })
               }}
-              ml={3}
-              mb={3}
+              m={3}
             >
               {l.toUpperCase()}
             </Button>
