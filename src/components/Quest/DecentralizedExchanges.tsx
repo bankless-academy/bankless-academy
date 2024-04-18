@@ -15,7 +15,7 @@ import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
 import { api } from 'utils'
-import { LessonCard } from 'components/LessonCards'
+import { StyledLessonCard } from 'components/LessonCard'
 import { LESSONS } from 'constants/index'
 import InternalLink from 'components/InternalLink'
 
@@ -142,7 +142,7 @@ const DecentralizedExchanges = (
             )}
           </div>
           <div className="bloc2">
-            <LessonCard
+            <StyledLessonCard
               borderRadius="3xl"
               maxW="400px"
               textAlign="center"
@@ -171,7 +171,7 @@ const DecentralizedExchanges = (
                   </InternalLink>
                 </Box>
               </Box>
-            </LessonCard>
+            </StyledLessonCard>
           </div>
         </Box>
       </>
