@@ -31,9 +31,11 @@ export interface LessonType {
   learningActions: string
   knowledgeRequirements?: string
   quest?: QuestComponentType
+  questSocialMessage?: string
   imageLinks?: string[]
   publicationStatus: 'publish' | 'planned' | 'hidden'
   publicationDate?: string
+  translationDate?: string
   featuredOrderOnHomepage?: number
   isCommentsEnabled: boolean
   endOfLessonRedirect?: string

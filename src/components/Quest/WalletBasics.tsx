@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Button, VStack, Image, Text } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
+import { useTranslation } from 'react-i18next'
 
 import { LessonCard } from 'components/LessonCards'
 import ExternalLink from 'components/ExternalLink'
@@ -15,6 +16,7 @@ const WalletBasics = (
   isQuestCompleted: boolean
   questComponent: React.ReactElement
 } => {
+  const { t } = useTranslation('quests', { keyPrefix: 'WalletBasics' })
   const [isSmallScreen] = useSmallScreen()
 
   const lesson = LESSONS.find(
@@ -44,14 +46,14 @@ const WalletBasics = (
                     whiteSpace="break-spaces"
                     lineHeight="1.5em"
                   >
-                    {'1. Download and install the Zerion wallet from '}
+                    {t('1. Download and install the Zerion wallet from ')}
                     <ExternalLink href="https://zerion.io/">
                       zerion.io
                     </ExternalLink>
                   </Box>
                 </Button>
                 <Box m="0 8px 8px 16px">
-                  If you already have a wallet, move to step 2.
+                  {t('If you already have a wallet, move to step 2.')}
                 </Box>
                 <Button
                   cursor="default"
@@ -66,12 +68,18 @@ const WalletBasics = (
                     whiteSpace="break-spaces"
                     lineHeight="1.5em"
                   >
-                    {'2. Connect your wallet to Bankless Academy'}
+                    {t('2. Connect your wallet to Bankless Academy')}
                   </Box>
                 </Button>
               </VStack>
               <Box mt="8">
-                {`Tip: Check our Explorer's Handbook entry on '${lesson.name}' for a step-by-step walkthrough of the quest.`}
+                {t(
+                  "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest.",
+                  {
+                    lesson_title: lesson.name,
+                    interpolation: { escapeValue: false },
+                  }
+                )}
               </Box>
             </Box>
           </div>

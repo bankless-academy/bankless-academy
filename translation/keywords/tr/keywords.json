@@ -9,11 +9,11 @@
   },
   "%51 saldırısı": {
     "keyword": "%51 saldırısı",
-    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+    "definition": "Ağdaki blok oluşturma gücünün %51'inden fazlasını kontrol ederek gerçekleştirilen, blok zinciri konsensüsüne yönelik bir saldırı."
   },
   "%51 saldırıları": {
     "keyword": "%51 saldırıları",
-    "definition": "An attack on blockchain consensus by controlling over 51% of the block producing power on the network."
+    "definition": "Ağdaki blok oluşturma gücünün %51'inden fazlasını kontrol ederek gerçekleştirilen, blok zinciri konsensüsüne yönelik bir saldırı."
   },
   "adres": {
     "keyword": "adres",
@@ -33,115 +33,111 @@
   },
   "airdrop": {
     "keyword": "airdrop",
-    "definition": "A free distribution of crypto assets to users."
+    "definition": "Bir kripto varlığın kullanıcılara ücretsiz dağıtımı."
   },
   "airdroplar": {
     "keyword": "airdroplar",
-    "definition": "A free distribution of crypto assets to users."
+    "definition": "Bir kripto varlığın kullanıcılara ücretsiz dağıtımı."
   },
-  "allowance": {
-    "keyword": "allowance",
-    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
+  "izin": {
+    "keyword": "izin",
+    "definition": "Genellikle akıllı sözleşme olan bir varlığa, tokenlarınızın belirli bir miktarını bir işlemde kullanma hakkı verir."
   },
-  "allowances": {
-    "keyword": "allowances",
-    "definition": "Allows an entity, usually a smart contract, the right to use a specified amount of your tokens in a transaction."
+  "izinler": {
+    "keyword": "izinler",
+    "definition": "Genellikle akıllı sözleşme olan bir varlığa, tokenlarınızın belirli bir miktarını bir işlemde kullanma hakkı verir."
   },
-  "alternative layer 1": {
-    "keyword": "alternative Layer 1",
-    "definition": "Layer 1 blockchains other than Ethereum and Bitcoin."
+  "alternatif katman 1": {
+    "keyword": "alternatif Katman 1",
+    "definition": "Ethereum ve Bitcoin dışındaki Katman 1 blok zincirleri."
   },
-  "alternative layer 1s": {
-    "keyword": "alternative Layer 1s",
-    "definition": "Layer 1 blockchains other than Ethereum and Bitcoin."
+  "alternatif katman 1'ler": {
+    "keyword": "alternatif Katman 1'ler",
+    "definition": "Ethereum ve Bitcoin dışındaki Katman 1 blok zincirleri."
   },
   "amm": {
     "keyword": "AMM",
-    "definition": "(Automated Market Maker) A trade matchmaking system, based on a public algorithm."
+    "definition": "(Otomatik Piyasa Yapıcı) Herkese açık bir algoritmaya dayanan bir işlem eşleştirme sistemi."
   },
-  "amms": {
-    "keyword": "AMMs",
-    "definition": "(Automated Market Maker) A trade matchmaking system, based on a public algorithm."
+  "amm'ler": {
+    "keyword": "AMM'ler",
+    "definition": "(Otomatik Piyasa Yapıcı) Herkese açık bir algoritmaya dayanan bir işlem eşleştirme sistemi."
   },
-  "asynchronous": {
-    "keyword": "asynchronous",
-    "definition": "Communication between multiple collaborators, where participants don’t have to be present at time of messaging."
+  "asenkron": {
+    "keyword": "asenkron",
+    "definition": "Birlikte çalışan birden fazla kişi arasında gerçekleşen ve katılımcıların mesajlaşma sırasında orada bulunmasına gerek olmayan iletişim."
   },
-  "asynchronouss": {
-    "keyword": "asynchronouss",
-    "definition": "Communication between multiple collaborators, where participants don’t have to be present at time of messaging."
+  "tasdik": {
+    "keyword": "tasdik",
+    "definition": "Bir işlemin onaylanıp onaylanmayacağı konusunda konsensüse varmak için her bir validatör tarafından verilen oy"
   },
-  "attestation": {
-    "keyword": "attestation",
-    "definition": "A vote made by each validator to reach a consensus on whether to approve a transaction"
+  "tasdikler": {
+    "keyword": "tasdikler",
+    "definition": "Bir işlemin onaylanıp onaylanmayacağı konusunda konsensüse varmak için her bir validatör tarafından verilen oy"
   },
-  "attestations": {
-    "keyword": "attestations",
-    "definition": "A vote made by each validator to reach a consensus on whether to approve a transaction"
+  "otonom": {
+    "keyword": "otonom",
+    "definition": "Başkalarının çerçevesine bağlı kalmak yerine kendi eylemlerinizi yönetme niteliği."
   },
-  "autonomy": {
-    "keyword": "autonomy",
-    "definition": "The quality of governing your own actions, rather than adhering to frameworks of others."
+  "otonomlar": {
+    "keyword": "otonomlar",
+    "definition": "Başkalarının çerçevesine bağlı kalmak yerine kendi eylemlerinizi yönetme niteliği."
   },
-  "autonomys": {
-    "keyword": "autonomys",
-    "definition": "The quality of governing your own actions, rather than adhering to frameworks of others."
+  "bahis": {
+    "keyword": "bahis",
+    "definition": "Daha büyük ödüller karşılığında paranin riske atılması."
   },
-  "bet": {
-    "keyword": "bet",
-    "definition": "Risking money in exchange for greater rewards."
+  "bahisler": {
+    "keyword": "bahisler",
+    "definition": "Daha büyük ödüller karşılığında paranin riske atılması."
   },
-  "bets": {
-    "keyword": "bets",
-    "definition": "Risking money in exchange for greater rewards."
+  "blok": {
+    "keyword": "Blok",
+    "definition": "Blok zinciri üzerindeki bir grup işlem."
   },
-  "block": {
-    "keyword": "Block",
-    "definition": "A group of transactions on the blockchain."
+  "bloklar": {
+    "keyword": "Bloklar",
+    "definition": "Blok zinciri üzerindeki bir grup işlem."
   },
-  "blocks": {
-    "keyword": "Blocks",
-    "definition": "A group of transactions on the blockchain."
+  "blok oluşturucu": {
+    "keyword": "blok oluşturucu",
+    "definition": "Ağa gönderilen işlemlerden bloklar oluşturan, uzmanlık düzeyi yüksek validatör nodlar."
   },
-  "block builder": {
-    "keyword": "block builder",
-    "definition": "Highly specialized validator nodes who construct blocks from transactions submitted to the network."
+  "blok oluşturucular": {
+    "keyword": "blok oluşturucular",
+    "definition": "Ağa gönderilen işlemlerden bloklar oluşturan, uzmanlık düzeyi yüksek validatör nodlar."
   },
-  "block builders": {
-    "keyword": "block builders",
-    "definition": "Highly specialized validator nodes who construct blocks from transactions submitted to the network."
+  "blok gezgini": {
+    "keyword": "blok gezgini",
+    "definition": "Blok zinciri verileri için arama ve keşif aracı."
   },
-  "block explorer": {
-    "keyword": "block explorer",
-    "definition": "Search and exploration tool for blockchain data."
+  "blok gezginleri": {
+    "keyword": "blok gezginleri",
+    "definition": "Blok zinciri verileri için arama ve keşif aracı."
   },
-  "block explorers": {
-    "keyword": "block explorers",
-    "definition": "Search and exploration tool for blockchain data."
+  "blok hash'i": {
+    "keyword": "blok hash'i",
+    "definition": "Her blok dosyası için benzersiz tanımlayıcı. Her yeni blok, tek dosya ile bağlı blok zincirini oluşturmak için bir önceki bloğun blok hash'ini içerir."
   },
-  "block hash": {
-    "keyword": "block hash",
-    "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
+  "blok hash'leri": {
+    "keyword": "blok hash'leri",
+    "definition": "Her blok dosyası için benzersiz tanımlayıcı. Her yeni blok, tek dosya ile bağlı blok zincirini oluşturmak için bir önceki bloğun blok hash'ini içerir."
   },
-  "block hashs": {
-    "keyword": "block hashs",
-    "definition": "The unique identifier for each block file. Each new block refers to the block hash of the previous block to form the single-file connected blockchain."
+  "blok önerici": {
+    "keyword": "blok önerici",
+    "definition": "Blok zincirine eklenecek bir sonraki bloğu seçmek için ağ algoritması tarafından seçilen validatör nod."
   },
-  "block proposer": {
-    "keyword": "block proposer",
-    "definition": "The validator node chosen by the network algorithm to select the next block to be added to the blockchain."
+  "blok önericiler": {
+    "keyword": "blok önericiler",
+    "definition": "Blok zincirine eklenecek bir sonraki bloğu seçmek için ağ algoritması tarafından seçilen validatör nod."
   },
-  "block proposers": {
-    "keyword": "block proposers",
-    "definition": "The validator node chosen by the network algorithm to select the next block to be added to the blockchain."
+  "blok ödülü": {
+    "keyword": "blok ödülü",
+    "definition": "Yeni bir geçerli blok öneren kişiye verilen bir miktar yerel coin."
   },
-  "block reward": {
-    "keyword": "block reward",
-    "definition": "An amount of native coin given to the proposer of a new valid block."
-  },
-  "block rewards": {
-    "keyword": "block rewards",
-    "definition": "An amount of native coin given to the proposer of a new valid block."
+  "blok ödülleri": {
+    "keyword": "blok ödülleri",
+    "definition": "Yeni bir geçerli blok öneren kişiye verilen bir miktar yerel coin."
   },
   "blok zinciri": {
     "keyword": "blok zinciri",
@@ -151,17 +147,21 @@
     "keyword": "blok zincirleri",
     "definition": "Kripto para işlemlerinin kaydının, dünyanın dört bir yanından birçok bilgisayarda tutulduğu sistem."
   },
+  "blok zinciri uygulaması": {
+    "keyword": "blok zinciri uygulaması",
+    "definition": "Kripto para takas etmenize, web3 sosyal medyasını kullanmanıza, hayır amaçlı bağışlar yapmanıza ve hatta Bankless Academy'de olduğu gibi zincir üstü bir şeyler öğrenmenize olanak tanıyan blok zinciri uygulamaları."
+  },
   "blok zinciri uygulamaları": {
     "keyword": "blok zinciri uygulamaları",
-    "definition": "Kripto para takas etmenize, web3 sosyal medyayı kullanmanıza, hayır amaçlı bağışlar yapmanıza ve hatta Bankless Academy'de olduğu gibi zincir üstü bir şeyler öğrenmenize olanak tanıyan blok zinciri uygulamaları."
+    "definition": "Kripto para takas etmenize, web3 sosyal medyasını kullanmanıza, hayır amaçlı bağışlar yapmanıza ve hatta Bankless Academy'de olduğu gibi zincir üstü bir şeyler öğrenmenize olanak tanıyan blok zinciri uygulamaları."
   },
-  "blockchain architecture": {
-    "keyword": "blockchain architecture",
-    "definition": "The structures for how data is stored in blockchain technology."
+  "blok zinciri mimarisi": {
+    "keyword": "blok zinciri mimarisi",
+    "definition": "Blok zinciri teknolojisinde verilerin depolanma biçimine ilişkin yapılar."
   },
-  "blockchain architectures": {
-    "keyword": "blockchain architectures",
-    "definition": "The structures for how data is stored in blockchain technology."
+  "blok zinciri mimarileri": {
+    "keyword": "blok zinciri mimarileri",
+    "definition": "Blok zinciri teknolojisinde verilerin depolanma biçimine ilişkin yapılar."
   },
   "blok zinciri teknolojisi": {
     "keyword": "blok zinciri teknolojisi",
@@ -171,37 +171,37 @@
     "keyword": "blok zinciri teknolojileri",
     "definition": "Birçok bilgisayarda barındırılan yeni bir ağ türü. İnternete yeni bir dijital mülkiyet katmanı eklemektedir."
   },
-  "blockchain trilemma": {
-    "keyword": "Blockchain Trilemma",
-    "definition": "The problem describing the need for all 3 blockchain qualities: Security, Scalability, and Decentralization."
+  "blok zinciri üçlemi": {
+    "keyword": "Blok Zinciri Üçlemi",
+    "definition": "3 blok zinciri niteliğinin tümüne duyulan ihtiyacı açıklayan sorun: Güvenlik, Ölçeklenebilirlik ve Merkeziyetsizlik."
   },
-  "blockchain trilemmas": {
-    "keyword": "Blockchain Trilemmas",
-    "definition": "The problem describing the need for all 3 blockchain qualities: Security, Scalability, and Decentralization."
+  "blok zinciri üçlemleri": {
+    "keyword": "Blok Zinciri Üçlemleri",
+    "definition": "3 blok zinciri niteliğinin tümüne duyulan ihtiyacı açıklayan sorun: Güvenlik, Ölçeklenebilirlik ve Merkeziyetsizlik."
   },
-  "blockspace": {
-    "keyword": "blockspace",
-    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
+  "blok alanı": {
+    "keyword": "blok alanı",
+    "definition": "Bir blok zinciri üzerinde bilgi depolamak ve kod çalıştırmak için kullanılabilecek alan miktarı. Bir (veya bir dizi) blok içindeki \"alan\" miktarı."
   },
-  "blockspaces": {
-    "keyword": "blockspaces",
-    "definition": "The amount of space on a blockchain that can be used to store information and run code. The amount of “space” within one (or a series of) block(s)."
+  "blok alanları": {
+    "keyword": "blok alanları",
+    "definition": "Bir blok zinciri üzerinde bilgi depolamak ve kod çalıştırmak için kullanılabilecek alan miktarı. Bir (veya bir dizi) blok içindeki \"alan\" miktarı."
   },
-  "borrower": {
-    "keyword": "borrower",
-    "definition": "Willing to pay interest to lenders in order to borrow assets."
+  "borçlu": {
+    "keyword": "borçlu",
+    "definition": "Varlık ödünç almak için borç verenlere faiz ödemek isteyen kişi."
   },
-  "borrowers": {
-    "keyword": "borrowers",
-    "definition": "Willing to pay interest to lenders in order to borrow assets."
+  "borçlular": {
+    "keyword": "borçlular",
+    "definition": "Varlık ödünç almak için borç verenlere faiz ödemek isteyen kişi."
   },
-  "bridge": {
-    "keyword": "bridge",
-    "definition": "Connection that allows two different blockchain networks to communicate with each other and exchange assets."
+  "köprü": {
+    "keyword": "köprü",
+    "definition": "İki farklı blok zinciri ağının birbiriyle iletişim kurmasına ve varlık alıp satmasına olanak sağlayan bağlantı."
   },
-  "bridges": {
-    "keyword": "bridges",
-    "definition": "Connection that allows two different blockchain networks to communicate with each other and exchange assets."
+  "köprüler": {
+    "keyword": "köprüler",
+    "definition": "İki farklı blok zinciri ağının birbiriyle iletişim kurmasına ve varlık alıp satmasına olanak sağlayan bağlantı."
   },
   "btc": {
     "keyword": "BTC",
@@ -211,13 +211,9 @@
     "keyword": "BTC'ler",
     "definition": "Bitcoin'in piyasada kullanılan sembolü."
   },
-  "censorship-resistant": {
-    "keyword": "censorship-resistant",
-    "definition": "No government or company has control to determine what is or is not allowed."
-  },
-  "censorship-resistants": {
-    "keyword": "censorship-resistants",
-    "definition": "No government or company has control to determine what is or is not allowed."
+  "sansüre dirençli": {
+    "keyword": "sansüre dirençli",
+    "definition": "Hiçbir hükümet ya da şirketin, neye izin verilip neye verilmeyeceğini belirleme yetkisinin olmaması."
   },
   "merkez bankası": {
     "keyword": "merkez bankası",
@@ -227,45 +223,37 @@
     "keyword": "merkez bankaları",
     "definition": "Bir ülkedeki parayı, bankaları ve para birimini düzenleyen kurum."
   },
-  "centralized": {
-    "keyword": "centralized",
-    "definition": "A single authority or entity controls the entire system."
+  "merkezi": {
+    "keyword": "merkezi",
+    "definition": "Sistemin tek bir makam veya kuruluş tarafından kontrol edilmesi."
   },
-  "centralizeds": {
-    "keyword": "centralizeds",
-    "definition": "A single authority or entity controls the entire system."
+  "merkezi borsa": {
+    "keyword": "merkezi borsa",
+    "definition": "(CEX) Bir borsada olduğu gibi, kripto para ticaretini bir ücret karşılığında koordine eden platform."
   },
-  "centralized exchange": {
-    "keyword": "centralized exchange",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+  "merkezi̇ borsalar": {
+    "keyword": "merkezi̇ borsalar",
+    "definition": "(CEX) Bir borsada olduğu gibi, kripto para ticaretini bir ücret karşılığında koordine eden platform."
   },
-  "centralized exchanges": {
-    "keyword": "centralized exchanges",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
-  },
-  "centralized exchange staking": {
-    "keyword": "Centralized Exchange Staking",
-    "definition": "Locking tokens through a Centralized Exchange to generate rewards."
-  },
-  "centralized exchange stakings": {
-    "keyword": "Centralized Exchange Stakings",
-    "definition": "Locking tokens through a Centralized Exchange to generate rewards."
+  "merkezi borsada staking": {
+    "keyword": "Merkezi Borsada Staking",
+    "definition": "Tokenların ödüller elde etmek için bir Merkezi Borsa aracılığıyla kilitlenmesi."
   },
   "cex": {
     "keyword": "CEX",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+    "definition": "(Merkezi Borsa) Bir borsada olduğu gibi, kripto para ticaretini bir ücret karşılığında koordine eden platform."
   },
-  "cexs": {
-    "keyword": "CEXs",
-    "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+  "cex'ler": {
+    "keyword": "CEX'ler",
+    "definition": "(Merkezi Borsa) Bir borsada olduğu gibi, kripto para ticaretini bir ücret karşılığında koordine eden platform."
   },
-  "chain": {
-    "keyword": "chain",
-    "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
+  "zincir": {
+    "keyword": "zincir",
+    "definition": "Değiştirilemeyen bir veri tabanı oluşturmak üzere veri bloklarını birbirine bağlar."
   },
-  "chains": {
-    "keyword": "chains",
-    "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
+  "zincirler": {
+    "keyword": "zincirler",
+    "definition": "Değiştirilemeyen bir veri tabanı oluşturmak üzere veri bloklarını birbirine bağlar."
   },
   "dolaşımdaki arz": {
     "keyword": "dolaşımdaki arz",
@@ -277,27 +265,27 @@
   },
   "coin": {
     "keyword": "coin",
-    "definition": "The native asset of a blockchain mostly used as a form of currency to facilitate transactions on the network."
+    "definition": "Çoğunlukla ağ üzerindeki işlemleri kolaylaştırmak için bir para birimi formu olarak kullanılan, bir blok zincirine ait yerel varlık."
   },
-  "coins": {
-    "keyword": "coins",
-    "definition": "The native asset of a blockchain mostly used as a form of currency to facilitate transactions on the network."
+  "coinler": {
+    "keyword": "coinler",
+    "definition": "Çoğunlukla ağ üzerindeki işlemleri kolaylaştırmak için bir para birimi formu olarak kullanılan, bir blok zincirine ait yerel varlık."
   },
-  "cold wallet": {
-    "keyword": "cold wallet",
-    "definition": "A type of self-custody wallet that is stored on offline hardware."
+  "soğuk cüzdan": {
+    "keyword": "soğuk cüzdan",
+    "definition": "Çevrimdışı donanımda saklanan bir gözetimsiz cüzdan türü."
   },
-  "cold wallets": {
-    "keyword": "cold wallets",
-    "definition": "A type of self-custody wallet that is stored on offline hardware."
+  "soğuk cüzdanlar": {
+    "keyword": "soğuk cüzdanlar",
+    "definition": "Çevrimdışı donanımda saklanan bir gözetimsiz cüzdan türü."
   },
-  "collateral": {
-    "keyword": "collateral",
-    "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
+  "teminat": {
+    "keyword": "teminat",
+    "definition": "Bir borçlunun, bir kredinin geri ödenmesini güvence altına almak için belirli varlıkları, borç verene rehin vermesi."
   },
-  "collaterals": {
-    "keyword": "collaterals",
-    "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
+  "teminatlar": {
+    "keyword": "teminatlar",
+    "definition": "Bir borçlunun, bir kredinin geri ödenmesini güvence altına almak için belirli varlıkları, borç verene rehin vermesi."
   },
   "ti̇cari̇ banka": {
     "keyword": "ti̇cari̇ banka",
@@ -307,41 +295,37 @@
     "keyword": "ti̇cari̇ bankalar",
     "definition": "İnsanlar ve işletmeler için parayı yöneten bir banka."
   },
-  "consensus": {
-    "keyword": "consensus",
-    "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
+  "konsensus": {
+    "keyword": "konsensus",
+    "definition": "Blok zincirleri gibi merkeziyetsiz bir bilgisayar ağındaki mutabakat, güven ve güvenlik."
   },
-  "consensuss": {
-    "keyword": "consensuss",
-    "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
+  "konsensuslar": {
+    "keyword": "konsensuslar",
+    "definition": "Blok zincirleri gibi merkeziyetsiz bir bilgisayar ağındaki mutabakat, güven ve güvenlik."
   },
-  "consensus mechanism": {
-    "keyword": "consensus mechanism",
-    "definition": "The method by which a blockchain network judges which transactions are legitimate, and which are fraudulent."
+  "konsensus mekanizması": {
+    "keyword": "konsensus mekanizması",
+    "definition": "Bir blok zinciri ağının hangi işlemlerin meşru, hangilerinin hileli olduğuna karar verme yöntemi."
   },
-  "consensus mechanisms": {
-    "keyword": "consensus mechanisms",
-    "definition": "Methods by which blockchain networks judge which transactions are legitimate, and which are fraudulent."
+  "konsensus mekanizmaları": {
+    "keyword": "konsensus mekanizmaları",
+    "definition": "Bir blok zinciri ağının hangi işlemlerin meşru, hangilerinin hileli olduğuna karar verme yöntemleri."
   },
-  "consensus mechanismss": {
-    "keyword": "consensus mechanismss",
-    "definition": "Methods by which blockchain networks judge which transactions are legitimate, and which are fraudulent."
+  "karşı taraf riski": {
+    "keyword": "karşı taraf riski",
+    "definition": "Karşı tarafın bir anlaşmada üzerine düşeni yerine getirememe riski."
   },
-  "counterparty risk": {
-    "keyword": "counterparty risk",
-    "definition": "The risk that another party may not fulfil its part in an agreement."
+  "karşı taraf riskleri": {
+    "keyword": "karşı taraf riskleri",
+    "definition": "Karşı tarafın bir anlaşmada üzerine düşeni yerine getirememe riski."
   },
-  "counterparty risks": {
-    "keyword": "counterparty risks",
-    "definition": "The risk that another party may not fulfil its part in an agreement."
+  "güvenilir tarafsızlık": {
+    "keyword": "güvenilir tarafsızlık",
+    "definition": "Herhangi bir kişi lehine veya aleyhine ayrımcılık yapmayan mekanizma."
   },
-  "credible neutrality": {
-    "keyword": "credible neutrality",
-    "definition": "A mechanism that does not discriminate for or against any specific people."
-  },
-  "credible neutralitys": {
-    "keyword": "credible neutralitys",
-    "definition": "A mechanism that does not discriminate for or against any specific people."
+  "güvenilir tarafsızlıklar": {
+    "keyword": "güvenilir tarafsızlıklar",
+    "definition": "Herhangi bir kişi lehine veya aleyhine ayrımcılık yapmayan mekanizma."
   },
   "kripto para": {
     "keyword": "kripto para",
@@ -367,13 +351,13 @@
     "keyword": "kripto para cüzdanları",
     "definition": "Kripto paranızı saklamanıza ve göndermenize/almanıza veya harcamanıza olanak tanıyan bir uygulama."
   },
-  "custodial wallet": {
-    "keyword": "custodial wallet",
-    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+  "gözetimli cüzdan": {
+    "keyword": "gözetimli cüzdan",
+    "definition": "Gözetimli bir cüzdanda özel anahtarları, yani kripto varlıklarınıza erişimi başka bir taraf kontrol eder."
   },
-  "custodial wallets": {
-    "keyword": "custodial wallets",
-    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+  "gözetimli cüzdanlar": {
+    "keyword": "gözetimli cüzdanlar",
+    "definition": "Gözetimli bir cüzdanda özel anahtarları, yani kripto varlıklarınıza erişimi başka bir taraf kontrol eder."
   },
   "emanetçi": {
     "keyword": "emanetçi",
@@ -383,21 +367,29 @@
     "keyword": "emanetçiler",
     "definition": "Varlıklarınızı güvence altına alma sorumluluğu verilen bir finans kurumu."
   },
+  "özel kayıt": {
+    "keyword": "Özel Kayıt",
+    "definition": "Standart blok zinciri adreslerinin ötesinde keyfi bilgilerin depolanmasına ve ilişkilendirilmesine olanak tanıyan ve bir ENS alanına bağlı olan kullanıcı tanımlı veri girişi."
+  },
+  "özel kayıtlar": {
+    "keyword": "Özel Kayıtlar",
+    "definition": "Standart blok zinciri adreslerinin ötesinde keyfi bilgilerin depolanmasına ve ilişkilendirilmesine olanak tanıyan ve bir ENS alanına bağlı olan kullanıcı tanımlı veri girişi."
+  },
   "dao": {
     "keyword": "DAO",
-    "definition": "(Decentralized Autonomous Organization) An organizational structure that uses blockchain technology to automate voting and management."
+    "definition": "(Merkeziyetsiz Otonom Organizasyon) Oylamayı ve yönetimi otomatik hale getirmek için blok zinciri teknolojisini kullanan bir organizasyon yapısı."
   },
-  "daos": {
-    "keyword": "DAOs",
-    "definition": "(Decentralized Autonomous Organization) An organizational structure that uses blockchain technology to automate voting and management."
+  "dao'lar": {
+    "keyword": "DAO'lar",
+    "definition": "(Merkeziyetsiz Otonom Organizasyon) Oylamayı ve yönetimi otomatik hale getirmek için blok zinciri teknolojisini kullanan bir organizasyon yapısı."
   },
   "dapp": {
     "keyword": "dApp",
-    "definition": "A decentralized application that connects to decentralized networks and protocols."
+    "definition": "Merkeziyetsiz ağlara ve protokollere bağlanan bir merkeziyetsiz uygulama."
   },
-  "dapps": {
-    "keyword": "dApps",
-    "definition": "A decentralized application that connects to decentralized networks and protocols."
+  "dapp'ler": {
+    "keyword": "dApp'ler",
+    "definition": "Merkeziyetsiz ağlara ve protokollere bağlanan bir merkeziyetsiz uygulama."
   },
   "merkeziyetsizlik": {
     "keyword": "Merkeziyetsizlik",
@@ -415,21 +407,17 @@
     "keyword": "merkeziyetsizler",
     "definition": "Sistemin tek bir makam veya kuruluş tarafından kontrol edilmemesi."
   },
-  "decentralized exchange": {
-    "keyword": "decentralized exchange",
-    "definition": "(DEX) A protocol that facilitates exchange without requiring trusted intermediaries."
+  "merkeziyetsiz borsa": {
+    "keyword": "merkeziyetsiz borsa",
+    "definition": "(DEX) Güvene dayalı aracılar gerektirmeden borsa işlemlerini kolaylaştıran bir protokol."
   },
-  "decentralized exchanges": {
-    "keyword": "decentralized exchanges",
-    "definition": "(DEX) A protocol that facilitates exchange without requiring trusted intermediaries."
+  "merkeziyetsiz borsalar": {
+    "keyword": "merkeziyetsiz borsalar",
+    "definition": "(DEX) Güvene dayalı aracılar gerektirmeden borsa işlemlerini kolaylaştıran bir protokol."
   },
-  "decentralized finance": {
-    "keyword": "Decentralized Finance",
-    "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
-  },
-  "decentralized finances": {
-    "keyword": "Decentralized Finances",
-    "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
+  "merkeziyetsiz finans": {
+    "keyword": "Merkeziyetsiz Finans",
+    "definition": "(DeFi) Blok zincirinde barındırılan bir dizi gözetimsiz finans aracı."
   },
   "merkeziyetsiz para": {
     "keyword": "merkeziyetsiz para",
@@ -441,11 +429,7 @@
   },
   "defi": {
     "keyword": "DeFi",
-    "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
-  },
-  "defis": {
-    "keyword": "DeFis",
-    "definition": "(Decentralized Finance) A set of self-custody finance tools, hosted on a blockchain."
+    "definition": "(Merkeziyetsiz Finans) Blok zinciri üzerinde barındırılan bir dizi gözetimsiz finans aracı."
   },
   "delegate": {
     "keyword": "delegate",
@@ -545,83 +529,75 @@
   },
   "erc-1155": {
     "keyword": "ERC-1155",
-    "definition": "A standard for deploying both fungible and non-fungible tokens on Ethereum, under one optimized contract."
+    "definition": "Değiştirilebilir ve değiştirilemez tokenları, Ethereum üzerinde tek bir optimize edilmiş sözleşme altında devreye alma standardı."
   },
-  "erc-1155s": {
-    "keyword": "ERC-1155s",
-    "definition": "A standard for deploying both fungible and non-fungible tokens on Ethereum, under one optimized contract."
+  "erc-1155'ler": {
+    "keyword": "ERC-1155'ler",
+    "definition": "Değiştirilebilir ve değiştirilemez tokenları, Ethereum üzerinde tek bir optimize edilmiş sözleşme altında devreye alma standardı."
   },
   "eth": {
     "keyword": "ETH",
-    "definition": "(Ether) Ethereum’s native coin. Used in staking and performing transactions on the network."
+    "definition": "(Ether) Ethereum'un yerel coini. Ağ üzerinde staking ve işlem gerçekleştirme amacıyla kullanılır."
   },
-  "eths": {
-    "keyword": "ETHs",
-    "definition": "(Ether) Ethereum’s native coin. Used in staking and performing transactions on the network."
+  "eth'ler": {
+    "keyword": "ETH'ler",
+    "definition": "(Ether) Ethereum'un yerel coini. Ağ üzerinde staking ve işlem gerçekleştirme amacıyla kullanılır."
   },
   "ether": {
     "keyword": "ether",
-    "definition": "(ETH) Ethereum’s native coin. Used in staking and performing transactions on the network."
+    "definition": "(ETH) Ethereum'un yerel coini. Ağ üzerinde staking ve işlem gerçekleştirme amacıyla kullanılır."
   },
-  "ethers": {
-    "keyword": "ethers",
-    "definition": "(ETH) Ethereum’s native coin. Used in staking and performing transactions on the network."
+  "ether'ler": {
+    "keyword": "ether'ler",
+    "definition": "(ETH) Ethereum'un yerel coini. Ağ üzerinde staking ve işlem gerçekleştirme amacıyla kullanılır."
   },
-  "ethereum virtual machine": {
-    "keyword": "Ethereum Virtual Machine",
-    "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network."
+  "ethereum sanal makinesi": {
+    "keyword": "Ethereum Sanal Makinesi",
+    "definition": "Ethereum Sanal Makinesi veya EVM, akıllı sözleşmeleri yürüten ve Ethereum ağının durumunu hesaplayan yazılım parçasıdır."
   },
-  "ethereum virtual machines": {
-    "keyword": "Ethereum Virtual Machines",
-    "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network."
+  "ethereum sanal makineleri": {
+    "keyword": "Ethereum Sanal Makineleri",
+    "definition": "Ethereum Sanal Makinesi veya EVM, akıllı sözleşmeleri yürüten ve Ethereum ağının durumunu hesaplayan yazılım parçasıdır."
   },
   "fomo": {
     "keyword": "FOMO",
-    "definition": "(Fear Of Missing Out) Anxiety or apprehension about not being included in something."
+    "definition": "(Fear Of Missing Out/Kaçırma Korkusu) Bir şeye dahil olamamak ile ilgili hissedilen kaygı veya endişe."
   },
-  "fomos": {
-    "keyword": "FOMOs",
-    "definition": "(Fear Of Missing Out) Anxiety or apprehension about not being included in something."
+  "fomo'lar": {
+    "keyword": "FOMO'lar",
+    "definition": "(Fear Of Missing Out/Kaçırma Korkusu) Bir şeye dahil olamamak ile ilgili hissedilen kaygı veya endişe."
   },
   "fork": {
     "keyword": "fork",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+    "definition": "Bir blok zinciri ağında, biri önceki protokolü, diğeri ise yeni bir protokolü takip eden iki dalın oluşmasıyla sonuçlanan radikal bir değişikliği ifade eder."
   },
   "forks": {
     "keyword": "forks",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+    "definition": "Bir blok zinciri ağında, biri önceki protokolü, diğeri ise yeni bir protokolü takip eden iki dalın oluşmasıyla sonuçlanan radikal bir değişikliği ifade eder."
   },
-  "fraud": {
-    "keyword": "fraud",
-    "definition": "In blockchain economies: Unfair or fake transactions, used to change amounts of cryptocurrency held."
+  "dolandırıcılık": {
+    "keyword": "dolandırıcılık",
+    "definition": "Blok zinciri ekonomilerinde: Elde tutulan kripto para miktarlarını değiştirmek için kullanılan haksız veya sahte işlemler."
   },
-  "frauds": {
-    "keyword": "frauds",
-    "definition": "In blockchain economies: Unfair or fake transactions, used to change amounts of cryptocurrency held."
+  "dolandırıcılıklar": {
+    "keyword": "dolandırıcılıklar",
+    "definition": "Blok zinciri ekonomilerinde: Elde tutulan kripto para miktarlarını değiştirmek için kullanılan haksız veya sahte işlemler."
   },
-  "fraud proof": {
-    "keyword": "fraud proof",
-    "definition": "Evidence that a transaction is invalid and that fraud has occurred."
+  "dolandırıcılık ispatı": {
+    "keyword": "dolandırıcılık ispatı",
+    "definition": "Bir işlemin geçersiz olduğunu ve dolandırıcılık yapıldığını gösteren kanıtlar."
   },
-  "fraud proofs": {
-    "keyword": "fraud proofs",
-    "definition": "Evidence that a transaction is invalid and that fraud has occurred."
+  "dolandırıcılık ispatları": {
+    "keyword": "dolandırıcılık ispatları",
+    "definition": "Bir işlemin geçersiz olduğunu ve dolandırıcılık yapıldığını gösteren kanıtlar."
   },
-  "gas": {
-    "keyword": "gas",
-    "definition": "Transaction fees for blockchain networks."
+  "gaz": {
+    "keyword": "gaz",
+    "definition": "Blok zinciri ağları için ödenen işlem ücretleri."
   },
-  "gass": {
-    "keyword": "gass",
-    "definition": "Transaction fees for blockchain networks."
-  },
-  "gasless transactions": {
-    "keyword": "gasless transactions",
-    "definition": "A transaction that pays gas using some of the token to be traded rather than the native coin of the blockchain network."
-  },
-  "gasless transactionss": {
-    "keyword": "gasless transactionss",
-    "definition": "A transaction that pays gas using some of the token to be traded rather than the native coin of the blockchain network."
+  "gazsiz i̇şlemler": {
+    "keyword": "gazsiz i̇şlemler",
+    "definition": "Gaz tutarını, blok zinciri ağının yerel coini yerine, işlem yapılacak tokenın bir kısmını kullanarak ödeyen bir işlem."
   },
   "altın standardı": {
     "keyword": "altın standardı",
@@ -633,26 +609,22 @@
   },
   "gwei": {
     "keyword": "gwei",
-    "definition": "A unit used on Ethereum blockchain, equivalent to 0.000000001 ETH (one billionth), used commonly to describe gas prices."
+    "definition": "Ethereum blok zincirinde gaz fiyatlarını tanımlamak için yaygın olarak kullanılan, 0,000000001 ETH'ye (bir milyarda bir) eşdeğer bir birim."
   },
-  "gweis": {
-    "keyword": "gweis",
-    "definition": "A unit used on Ethereum blockchain, equivalent to 0.000000001 ETH (one billionth), used commonly to describe gas prices."
+  "donanım cüzdanı": {
+    "keyword": "donanım cüzdanı",
+    "definition": "Özel anahtarları fiziksel bir donanım cihazında çevrimdışı olarak saklayan bir gözetimsiz cüzdan türü."
   },
-  "hardware wallet": {
-    "keyword": "hardware wallet",
-    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
-  },
-  "hardware wallets": {
-    "keyword": "hardware wallets",
-    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
+  "donanım cüzdanları": {
+    "keyword": "donanım cüzdanları",
+    "definition": "Özel anahtarları fiziksel bir donanım cihazında çevrimdışı olarak saklayan bir gözetimsiz cüzdan türü."
   },
   "hash": {
     "keyword": "hash",
     "definition": "A digital fingerprint for information."
   },
-  "hashs": {
-    "keyword": "hashs",
+  "hash'ler": {
+    "keyword": "hash'ler",
     "definition": "A digital fingerprint for information."
   },
   "hashing function": {
@@ -1371,13 +1343,13 @@
     "keyword": "tokens",
     "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
   },
-  "token allowance": {
-    "keyword": "token allowance",
-    "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
+  "token izni": {
+    "keyword": "token izni",
+    "definition": "Bir cüzdan ile akıllı sözleşme arasında yapılan ve belirli bir tokena sınırlı veya sınırsız erişim sağlayan bir anlaşma."
   },
-  "token allowances": {
-    "keyword": "token allowances",
-    "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
+  "token izinleri": {
+    "keyword": "token izinleri",
+    "definition": "Bir cüzdan ile akıllı sözleşme arasında yapılan ve belirli bir tokena sınırlı veya sınırsız erişim sağlayan bir anlaşma."
   },
   "token distribution": {
     "keyword": "token distribution",

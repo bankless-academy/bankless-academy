@@ -20,7 +20,14 @@ const LESSONS: LessonType[] = [
     learnings: '',
     description: 'What is Bitcoin? Explore the first successful cryptocurrency and rethink money.',
     name: 'Bitcoin Basics',
-    languages: [],
+    languages: [
+      'br',
+      'cn',
+      'es',
+      'fr',
+      'tr',
+      'ua'
+    ],
     lessonWriters: 'Tetranome',
     quest: 'BitcoinBasics',
     publicationStatus: 'publish',
@@ -266,7 +273,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'e2a5684df9734013afdc8e42a1bb494c',
         title: 'The Innovation of Money',
-        content: '<div class="bloc1"><p>In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value, and how institutional management of our assets means giving up full ownership.</p><p>However Bitcoin has evolved beyond a simple monetary tool. It has become a catalyst for a <code>decentralized money</code> revolution. This movement reimagines the traditional financial system by distributing monetary power and control to those who use it.</p><p>By decentralizing money and removing <code>custodians</code> we can:</p><ul><li>💵 Host a 24/7 global marketplace, secured by citizens around the world.</li><li>🛠️ Offer financial tools to the unbanked regions of the globe.</li><li>🤝 Use <code>peer-to-peer</code> technology to avoid the inefficiencies of middleman institutions.</li><li>🔎 Reduce institutional inequality, fraud and market manipulation.</li><li>⚖️ Build <code>equality of opportunity</code> into monetary systems.</li><li>🌐 Establish true ownership for the digital age.</li></ul><p>The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe — and you’re invited.</p><p><em>”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.</em></p></div>'
+        content: '<div class="bloc1"><p>In this lesson, we’ve looked at how Bitcoin’s scarcity helps it retain value, and how institutional management of our assets means giving up full ownership.</p><p>However Bitcoin has evolved beyond a simple monetary tool. It has become a catalyst for a <code>decentralized money</code> revolution. This movement reimagines the traditional financial system by distributing monetary power and control to those who use it.</p><p>By decentralizing money and removing <code>custodians</code> we can:</p><ul><li>💵 Host a 24/7 global marketplace, secured by citizens around the world.</li><li>🛠️ Offer financial tools to the unbanked regions of the globe.</li><li>🤝 Use <code>peer-to-peer</code> technology to avoid the inefficiencies of middleman institutions.</li><li>🔎 Reduce institutional inequality, fraud and market manipulation.</li><li>⚖️ Build <code>equality of opportunity</code> into monetary systems.</li><li>🌐 Establish true ownership for the digital age.</li></ul><p>The new era of money is championing the fundamental values of democracy to increase quality of everyday life for citizens around the globe — and you’re invited.</p><p>”Democracy provides an environment that respects human rights and fundamental freedoms, and in which the freely expressed will of people is exercised.” — United Nations.</p></div>'
       },
       {
         type: 'LEARN',
@@ -604,6 +611,7 @@ const LESSONS: LessonType[] = [
     description: 'Set up your first crypto wallet with our step-by-step walkthrough.',
     name: 'Creating a Crypto Wallet',
     languages: [],
+    lessonWriters: 'Tetranome',
     publicationStatus: 'publish',
     publicationDate: '2024-03-20',
     featuredOrderOnHomepage: null,
@@ -619,7 +627,17 @@ const LESSONS: LessonType[] = [
     englishName: 'Creating a Crypto Wallet',
     slug: 'creating-a-crypto-wallet',
     articleContent: 'This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**\n\n\n---\n\n## Key Takeaways\n\n> * You’ll need a `crypto wallet` to access the world of blockchains!\n>\n> * A wallet is like a `blockchain` account.\n>\n> * Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.\n>\n> * These wallets work on both computers and phones.\n>\n> * Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!\n\n## What is a Crypto Wallet?\n\nCrypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.\n\nIt gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.\n\nWallets come with two core pieces of account information:\n\n* A `public key`, that you can think of as your *username*. You’ll share it publicly to receive cryptocurrency.\n\n* A `private key`, acting as your *password*. This should always be kept private, and cannot be changed.\n\nProtecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).\n\nToday we will set up our first wallet, using our recommended crypto wallet: Zerion!\n\n## Walkthrough\n\nSet up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.\n\n### Computer Wallet\n\n[](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)\n\n### Phone Wallet\n\n[](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)\n\n\n---\n\n**It’s time to join the blockchain multiverse!**\n\nDon’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.\n\nSafe travels, Explorer!\n\n\n---\n\n## FAQ\n\n### What is a cryptocurrency?\n\nCryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.\n\nLearn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!\n\n### What are public and private keys?\n\nPublic/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.\n\nYou can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.\n\nLearn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.\n\n### What happens if I lose my recovery phrase?\n\nYour recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.\n\n### Can Ethereum wallets hold Bitcoin?\n\nEthereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).\n\n\n---\n\n**Author**\n\n[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.\n\n**Patron**\n\nThis walkthrough is powered by Zerion.',
-    imageLinks: []
+    imageLinks: [],
+    keywords: [
+      'crypto wallet',
+      'blockchain',
+      'cryptocurrency',
+      'wallet app',
+      'public key',
+      'private key',
+      'cryptography',
+      'encryption'
+    ]
   },
   {
     badgeImageLink: '/images/blockchain-basics/badge-e715f0fc.png',
@@ -1654,6 +1672,20 @@ const LESSONS: LessonType[] = [
       '/images/funding-a-wallet-on-layer-2/image-0f4e1bde.png',
       '/images/funding-a-wallet-on-layer-2/image-659f509f.png',
       '/images/funding-a-wallet-on-layer-2/image-8d84ca0b.png'
+    ],
+    keywords: [
+      'Layer 2',
+      'block',
+      'gwei',
+      'liquidity',
+      'decentralized exchange',
+      'wallet',
+      'centralized exchange',
+      'address',
+      'non-custodial wallet',
+      'blockchain',
+      'coin',
+      'liquidity pools'
     ]
   },
   {
@@ -1697,6 +1729,24 @@ const LESSONS: LessonType[] = [
       '/images/registering-your-web3-username/image-0f779c34.png',
       '/images/registering-your-web3-username/image-b83971f6.png',
       '/images/registering-your-web3-username/image-ea2d6d2a.png'
+    ],
+    keywords: [
+      'cryptocurrency',
+      'onchain identity',
+      'cryptocurrency wallet',
+      'custodial wallet',
+      '.eth',
+      'smart contract',
+      'web2',
+      'yourname.eth',
+      'onchain',
+      'offchain',
+      'ERC-721',
+      'primary name',
+      'front-running',
+      'standard records',
+      'gas fees',
+      'custom records'
     ]
   },
   {
@@ -1972,6 +2022,14 @@ const LESSONS: LessonType[] = [
       '/images/understanding-stablecoins/image-0c080b13.png',
       '/images/understanding-stablecoins/image-573e657a.png',
       '/images/understanding-stablecoins/image-4f6e4c7f.png'
+    ],
+    keywords: [
+      'ERC-20',
+      'peg',
+      'smart contracts',
+      'non-custodial wallets',
+      'Counterparty Risk',
+      'market cap'
     ]
   },
   {
@@ -2331,6 +2389,9 @@ const LESSONS: LessonType[] = [
       '/images/swapping-on-a-decentralized-exchange/image-89f87156.png',
       '/images/swapping-on-a-decentralized-exchange/image-c8b8abcc.png',
       '/images/swapping-on-a-decentralized-exchange/image-bcfdf0ee.png'
+    ],
+    keywords: [
+      'Decentralized Finance'
     ]
   },
   {
@@ -2650,6 +2711,26 @@ const LESSONS: LessonType[] = [
       '/images/staking-ether/image-255e1bf8.png',
       '/images/staking-ether/image-8d944152.png',
       '/images/staking-ether/image-5d667f3c.png'
+    ],
+    keywords: [
+      'validator node',
+      'token',
+      'consensus mechanism',
+      'decentralized',
+      'smart contract',
+      'staking pools',
+      'liquid staking tokens',
+      'mint',
+      'decentralized exchange',
+      'layer 2',
+      'Solo Staking',
+      'validator client',
+      'Staking Pools',
+      'Centralized Exchange Staking',
+      'decentralization',
+      'node operators',
+      'solo staker',
+      'staking pool'
     ]
   },
   {
@@ -2685,6 +2766,18 @@ const LESSONS: LessonType[] = [
       '/images/managing-token-allowances/image-f95ea594.png',
       '/images/managing-token-allowances/image-f3b00f4a.png',
       '/images/managing-token-allowances/image-138cb12e.png'
+    ],
+    keywords: [
+      'smart contracts',
+      'private keys',
+      'seed phrase',
+      'offchain',
+      'NFTs',
+      'token allowances',
+      'public key',
+      'decentralized exchange',
+      'DEX',
+      'DeFi'
     ]
   },
   {
@@ -2953,6 +3046,21 @@ const LESSONS: LessonType[] = [
       '/images/understanding-ethereum-token-standards/image-4708764e.png',
       '/images/understanding-ethereum-token-standards/image-aa1af1d5.png',
       '/images/understanding-ethereum-token-standards/image-d804ad2f.png'
+    ],
+    keywords: [
+      'token',
+      'ERC-20',
+      'ERC-721',
+      'ERC-1155',
+      'fungibility',
+      'interoperability',
+      'NFTs',
+      'composability',
+      'memecoin',
+      'centralized exchange',
+      'mint',
+      'multi-token standard',
+      'gas'
     ]
   },
   {
@@ -3322,6 +3430,177 @@ const LESSONS: LessonType[] = [
       '/images/delegating-on-optimism/image-9ec06fe9.png',
       '/images/delegating-on-optimism/image-6443ae02.png',
       '/images/delegating-on-optimism/image-245809cd.png'
+    ],
+    keywords: [
+      'dApp',
+      'network governance',
+      'DEX'
+    ]
+  },
+  {
+    badgeImageLink: '/images/gitcoin-2.0-essentials/badge-62565097.png',
+    lessonImageLink: '/images/gitcoin-2.0-essentials/lesson-12ca439a.png',
+    socialImageLink: '/images/gitcoin-2.0-essentials/social-255bb483.png',
+    learningActions: '',
+    marketingDescription: 'Decoding Gitcoin 2.0',
+    badgeId: 13,
+    duration: null,
+    learnings: '',
+    description: 'Explore Gitcoin\'s whitepaper for insights into democratic capital allocation and Ethereum ecosystem growth.',
+    name: 'Gitcoin 2.0 Essentials',
+    languages: [],
+    quest: 'Gitcoin20Essentials',
+    questSocialMessage: 'https://twitter.com/gitcoin/status/1763720554698469857',
+    publicationStatus: 'hidden',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    notionId: '6b05b52eae8a41e0ab27222ac27fca12',
+    englishName: 'Gitcoin 2.0 Essentials',
+    slug: 'gitcoin-2.0-essentials',
+    imageLinks: [
+      '/images/gitcoin-2.0-essentials/whitepaper-lesson-gitcoin-grants-growth-3e78d2ef.png',
+      '/images/gitcoin-2.0-essentials/introduction-to-quadratic-funding-e38257e1.png',
+      '/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-fe71e17f.png',
+      '/images/gitcoin-2.0-essentials/and-theres-more-5525393b.png',
+      '/images/gitcoin-2.0-essentials/carving-a-path-ffb2f198.png',
+      '/images/gitcoin-2.0-essentials/evolutionary-development-092753e6.png',
+      '/images/gitcoin-2.0-essentials/the-impact-of-capital-allocation-1c17e0b8.png',
+      '/images/gitcoin-2.0-essentials/expanding-beyond-evm-with-allo-protocol-c8a108f7.png',
+      '/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-7334384f.png',
+      '/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-continued-df15ee70.png',
+      '/images/gitcoin-2.0-essentials/lets-go-over-what-we-learned-a902dc9c.png'
+    ],
+    keywords: [
+      'allo protocol',
+      'quadratic funding'
+    ],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: '163809eabca84850b37afe1857173353',
+        title: 'Whitepaper Lesson | Gitcoin = Grants = Growth',
+        content: '<div class="bloc1"><p>Welcome to the revolution in capital allocation 💰</p><p>In this lesson, we explore the <strong>Gitcoin 2.0 whitepaper</strong> to discover innovative approaches to public goods funding and Ethereum ecosystem growth.</p><p>Having surpassed <strong>$60 million in funding distributed</strong>, Gitcoin is at the forefront of a movement towards more democratic, efficient, and transparent capital allocation in web3.</p><p>Anyone can check out the <a href=\'https://www.gitcoin.co/whitepaper/read\'>whitepaper</a> for an in-depth look at how Gitcoin is refining capital allocation with <code>Allo Protocol</code>.</p><p>Thank you to the curators of this lesson, Ornella, Didier & Tetranome from Bankless Academy, and the core contributors at Gitcoin.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/whitepaper-lesson-gitcoin-grants-growth-3e78d2ef.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '55e43442defe411b9109132581333a42',
+        title: 'Introduction to Quadratic Funding',
+        content: '<div class="bloc1"><p>If you’re here you may know already, but here’s a refresher.</p><p><code>Quadratic Funding</code> (QF) originated from the ideas of Glenn Weyl and Vitalik Buterin. It\'s a mechanism designed to allocate funds in a fair and democratic manner by leveraging matching funds to <strong>amplify the impact</strong> of small individual contributions.</p><p>QF debuted at <strong>Gitcoin Grants</strong> (GG), a pivotal moment enabling democratic donations to projects that matter. Since then, when GG Round 1 launched in 2019, the QF model has been finely tuned with each iteration.</p><p>Now, <strong>Gitcoin 2.0</strong> extends further into the grants space to include funding mechanisms like Direct Grants and delivers a more decentralized, modular experience.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/introduction-to-quadratic-funding-e38257e1.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '060ee68d743d4850942271999566a5df',
+        title: 'Gitcoin’s role in the Ethereum ecosystem',
+        content: '<div class="bloc1"><p>As of January 2024, <strong>19 grants rounds</strong> have been run by Gitcoin, disbursing funds to open source software (OSS) teams, averaging nearly one major round per quarter.</p><p>Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone for the open source Ethereum community.</p><p>Prior to GG20, as referenced by the <a href=\'/e578499f17dc4253ba409591c005b795?pvs=25\'>Open Source Observer Impact Analysis</a>, Gitcoin distributed<strong> $8.4M to ~2500 applicants</strong> through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-fe71e17f.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'c71d220061584a79a004d40bee450bb9',
+        title: '…and there’s more!',
+        content: '<div class="bloc1"><p>Gitcoin\'s dynamics most often reward projects that <strong>play the long game</strong> — that is, projects that appear consistently throughout grants rounds, making connections and building a following.</p><p>A large part of Gitcoin\'s project base comes from the <strong>open source community</strong>, with developer activity of 50 OSS projects associated with at least five GG rounds receiving a total of $9.4M.</p><p>A notable finding is the <strong>correlation between GG rounds and developer growth</strong>. Overall, for every $1M that has been paid out in grants since 2019, there are 7.4 full-time developers who are still around today.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/and-theres-more-5525393b.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '6419b66630ba4d5d9f7879a903269624',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'What funding mechanism is designed to democratically allocate funds by amplifying the impact of individual contributions?',
+          rightAnswerNumber: 3,
+          answers: [
+            'Direct Grants',
+            'Allo Protocol',
+            'Quadratic Funding',
+            'Matching Funds'
+          ],
+          id: 'gitcoin-2.0-essentials-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '98415667c1b34062b8ab3ff55497925e',
+        title: 'Carving a Path',
+        content: '<div class="bloc1"><p>Gitcoin 1.0 was used by many top leaders in the space including Ethereum founder <strong>Vitalik Buterin</strong> and by major protocols like WalletConnect, Uniswap, Yearn, and 1inch.</p><p>Since its inception in 2017, this first version of Gitcoin primarily focused on hackathons and bounties, followed by Quadratic Funding powered grants.</p><p>The recent upgrade to Gitcoin 2.0 was driven by many changes in the market, including the <strong>expansion</strong> of the Ethereum ecosystem with L2 launches, the <strong>growth</strong> of open-source development, and <strong>increasing adoption</strong> of grant programs.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/carving-a-path-ffb2f198.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '2ca8f1e045b64f30ace263934335d963',
+        title: 'Evolutionary Development',
+        content: '<div class="bloc1"><p>Gitcoin’s transformation breaks down as follows:</p><ol><li><strong>Decentralized Modular Protocols</strong>: moving from a centralized, Gitcoin-operated platform to a suite of modularized products and protocols that anyone can use and build with or on top of.</li><li><strong>Plural Funding Mechanics</strong>: moving from QF only to many ways of allocating capital, namely Direct Grants, Retroactive Public Goods Funding, Streaming QF and Conviction Voting.</li><li><strong>Open for EVM-Based Community:</strong> expanding beyond Ethereum-only to implementation across EVM-based networks such as Optimism, Arbitrum, Base, Polygon, zkSync, Scroll and Avalanche.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/evolutionary-development-092753e6.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '64916dce80644ad7878cb730144d36c1',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'What was Gitcoin focused on before 2.0?',
+          rightAnswerNumber: 4,
+          answers: [
+            'Hackathon platform',
+            'Bounty platform',
+            'Quadratic Funding',
+            'All of the above'
+          ],
+          feedback: [
+            'Right! But this isn’t the only correct answer.',
+            'Right! But this isn’t the only correct answer.',
+            'Right! But this isn’t the only correct answer.',
+            'Correct! Gitcoin technically focused on bounties, hackathons and QF before the 2.0 launch.'
+          ],
+          id: 'gitcoin-2.0-essentials-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '058259e6f2724af1b207c36b26abfe5f',
+        title: 'The Impact of Capital Allocation',
+        content: '<div class="bloc1"><p>Gitcoin harnesses the positive attributes of high speed internet and immutable blockchain tech to address the following capital allocation issues:</p><ol><li><strong>Gatekeeping</strong>: using small groups of decision makers, who may otherwise become power brokers and are unwilling or unable to be democratic.</li><li><strong>Not Scalable</strong>: taking advantage of the primitives the internet (easy access, direct to consumer interfaces) and Ethereum (credible neutrality, composability, transparency, democratic decision making, censorship resistance) have to offer.</li><li><strong>Not Precise:</strong> by programmatically managing large amounts of information at scale, enabling high resolution capital allocation.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/the-impact-of-capital-allocation-1c17e0b8.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '5dcd6311a0574b36a5fc756f7fd57a49',
+        title: 'Expanding beyond EVM with Allo Protocol',
+        content: '<div class="bloc1"><p>Allo Protocol is a set of smart contracts designed for democratic capital allocation and distribution, developed to empower the Grants Stack.</p><p>Allo’s simple, generalized architecture allows it to be <strong>easily customized</strong> for a wide range of use cases. It’s power lies in its ability to <strong>deepen impact</strong> by allocating capital at scale. There are three key components to the protocol:</p><ol><li><strong>Tokens:</strong> funding sources sending tokens into a pool.</li><li><strong>Registry:</strong> structuring data of possible participants that are eligible for distribution of tokens.</li><li><strong>Strategy:</strong> designating how tokens will be allocated and distributed to recipients.</li></ol><p>💡 <span class=\'color-default\'>For a deeper understanding of what people can create using Allo, checkout the design space-focused </span><span class=\'color-default\'><a href=\'https://www.gitcoin.co/rainbowpaper\'>Rainbowpaper</a></span><span class=\'color-default\'>.</span></p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/expanding-beyond-evm-with-allo-protocol-c8a108f7.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'fa9d497779c245cd93d677f5f8efcb36',
+        title: 'Grants Stack & other use cases',
+        content: '<div class="bloc1"><p>Grants Stack, built on top of Allo Protocol, is the <strong>primary application</strong> in the Gitcoin ecosystem.</p><p>Grants Stack is designed to be a trustworthy, enterprise-grade tool that grant customers can rely on. It also serves as a reference app for Allo Protocol builders, as it is <strong>open-source and forkable</strong>.</p><p>Grants Stack invests in several core areas to provide grants managers with the tools they need to run successful grants programs.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-7334384f.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '3640f02a78634c73b931223fc4d3b08e',
+        title: 'Grants Stack & other use cases continued',
+        content: '<div class="bloc1"><p><strong>Grants Stack</strong> currently supports two funding methods: <a href=\'https://www.wtfisqf.com/\'>Quadratic Funding</a> and <a href=\'https://www.gitcoin.co/blog/intro-to-direct-grants-how-do-they-work\'>Direct Grants</a>.</p><p>As new funding mechanisms arise, Gitcoin quickly adapts and integrates them. A relevant example of this is <a href=\'http://EasyRetroPGF.xyz\'>EasyRetroPGF.xyz</a>. Originally deployed by Optimism, the ability to operate a retroactive grants round is now open-source.</p><p>Complimentary applications such as reporting and discovery tools may follow suit, creating a <strong>flywheel of grants innovation</strong> that allows Grants Stack to remain a <strong>stable, trusted solution</strong>.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-continued-df15ee70.png\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '89e00897b74d4c99a6379db89c2a09f8',
+        title: 'Knowledge Check',
+        quiz: {
+          question: 'Complete the following statement: <span class=\'color-default\'>Allo is th</span><span class=\'color-default\'>e ______ </span><span class=\'color-default\'> layer for distribution of capital allocation, while Grants Stack i</span><span class=\'color-default\'>s a _____ for running ______ programs.</span>',
+          rightAnswerNumber: 2,
+          answers: [
+            'community - application - funding',
+            'protocol - tool - grants',
+            'program - product - builder',
+            'None of the above'
+          ],
+          id: 'gitcoin-2.0-essentials-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: 'dc9d8509dafc4372bd6e1683119eb033',
+        title: 'Let’s go over what we learned…',
+        content: '<div class="bloc1"><ol><li>Gitcoin\'s journey from 1.0 to 2.0 represents a leap towards modular systems and diverse mechanisms in the <strong>decentralized funding</strong><strong> </strong>industry.</li><li>QF emerged as a pivotal mechanism, facilitating distribution of <strong>+$60M to public goods</strong> in the Ethereum ecosystem.</li><li>Gitcoin 2.0 includes Direct Grants, Retroactive Public Goods Funding, and operates across multiple EVM-based networks.</li><li>Onchain capital allocation offers <strong>transparency, efficiency, and democratization</strong>, challenging traditional gatekeeping and scalability issues.</li><li>Grants are a <strong>catalyst for growth</strong> in web3, underpinning community engagement, builder retention, and positive-sum outcomes.</li><li>Gitcoin\'s <strong>delivers decentralization</strong> at the protocol and app layer, with Grants Stack and Allo respectively, providing a modular framework for capital allocation.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/lets-go-over-what-we-learned-a902dc9c.png\'></div>'
+      },
+      {
+        type: 'QUEST',
+        title: 'Gitcoin 2.0 Essentials Quest',
+        component: 'Gitcoin20Essentials'
+      }
     ]
   }
 ]

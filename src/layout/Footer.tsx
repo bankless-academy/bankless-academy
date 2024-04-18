@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
           <>
             <ExternalLink
               display="flex"
-              href="https://twitter.com/BanklessAcademy"
+              href="https://twitter.com/intent/follow?screen_name=BanklessAcademy"
             >
               {t('Twitter')}
             </ExternalLink>

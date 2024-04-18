@@ -1,32 +1,32 @@
 {
   "BitcoinBasics": {
-    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Your Bitcoin is on its way to Satoshi Nakamoto.",
-    "2. It's now being verified by network miners...": "2. It's now being verified by network miners...",
-    "3. Your transaction is added to the blockchain “database”...": "3. Your transaction is added to the blockchain “database”...",
-    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto has received your Bitcoin!",
-    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address",
-    "Recipient": "Recipient",
-    "Address": "Address",
-    "Asset": "Asset",
-    "Amount": "Amount",
-    "Balance": "Balance",
-    "Send": "Send"
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. 你的比特币正在发送中。",
+    "2. It's now being verified by network miners...": "2. 网络矿工正在对其进行验证...",
+    "3. Your transaction is added to the blockchain “database”...": "3.您的交易将被添加到区块链 \"数据库 \"中...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4.中本聪收到了你的比特币！",
+    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "使用我们的比特币模拟器，发送<strong>0.00000001</strong>BTC 到中本聪的地址",
+    "Recipient": "接收者",
+    "Address": "地址",
+    "Asset": "附件",
+    "Amount": "金额",
+    "Balance": "金额",
+    "Send": "发送"
   },
   "OptimismGovernance": {
     "Begin your Optimism Network journey by delegating OP.": "通过授权 OP 开始您的 Optimism 网络之旅。",
     "1. Connect your wallet to Bankless Academy": "1.将钱包连接到 Bankless 学院",
-    "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
-    "See the delegation platform here": "See the delegation platform here",
+    "2. Select a Delegate for your OP": "2.为 OP 选择一名 Delegate",
+    "See the delegation platform here": "点击此处查看代表团纲领",
     "Tip: ": "提示： ",
-    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "请查看探险家手册中的 \"{{lesson_title}}\"条目，了解完整的任务攻略。",
     "Refresh": "刷新",
     "Read Entry": "阅读作品"
   },
   "WalletBasics": {
-    "How to setup a MetaMask wallet": "How to setup a MetaMask wallet",
-    "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.": "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.",
-    "Download the browser extension from the official website:": "Download the browser extension from the official website:",
-    "Congrats for connecting your wallet! 👏🙂": "Congrats for connecting your wallet! 👏🙂",
-    "Waiting to detect your wallet ...": "Waiting to detect your wallet ..."
+    "How to setup a MetaMask wallet": "如何设置 MetaMask 钱包",
+    "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.": "为了在本课中方便使用，您需要一个 MetaMask 钱包。接下来，我们将演示如何设置 MetaMask 钱包。",
+    "Download the browser extension from the official website:": "从官方网站下载浏览器扩展：",
+    "Congrats for connecting your wallet! 👏🙂": "恭喜您连接了钱包！👏🙂",
+    "Waiting to detect your wallet ...": "等待检测您的钱包..."
   }
 }

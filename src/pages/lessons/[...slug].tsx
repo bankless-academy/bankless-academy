@@ -17,7 +17,7 @@ const SPLIT = `\`\`\`
 
 ---`
 
-const processMD = async (md, lang, englishLesson) => {
+const processMD = async (md, lang, englishLesson, updatedAt) => {
   console.log('processMD:', lang)
   // console.log('md', md)
   if (md[0] !== '<') {
@@ -31,6 +31,7 @@ const processMD = async (md, lang, englishLesson) => {
     const newLesson: LessonType = JSON.parse(JSON.stringify(englishLesson))
     newLesson.name = title.replace('TITLE: ', '')
     newLesson.description = description.replace('DESCRIPTION:', '').trim()
+    if (updatedAt) newLesson.translationDate = updatedAt
     // console.log(newLesson.description)
     // console.log(content)
     if (newLesson.slides?.length && !newLesson.isArticle) {
@@ -147,9 +148,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         `translation/lesson/${language}/${currentLesson.slug}.md`,
         'utf8'
       )
+      const fileStat = await fs.statSync(
+        `translation/lesson/${language}/${currentLesson.slug}.md`
+      )
       if (md && md.includes('TITLE:') && currentLesson) {
         console.log('processMD start')
-        currentLesson = await processMD(md, language, currentLesson)
+        currentLesson = await processMD(
+          md,
+          language,
+          currentLesson,
+          fileStat.mtime.toLocaleString()
+        )
         currentLesson.lang = language
       }
     }

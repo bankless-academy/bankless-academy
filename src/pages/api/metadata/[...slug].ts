@@ -32,8 +32,9 @@ export default async function handler(
 
   if (['badge', 'badgev2'].includes(slug)) {
     // Badges
+    const tokenIdNumber = tokenId.length > 5 ? parseInt(tokenId, 16) : parseInt(tokenId, 10)
     const lesson = LESSONS.find(
-      (lesson) => lesson.badgeId === parseInt(tokenId, 16)
+      (lesson) => lesson.badgeId === tokenIdNumber
     )
     if (!lesson) return res.status(400).json({ error: 'Unknown tokenId' })
     // https://app.banklessacademy.com/api/metadata/badge/{id}

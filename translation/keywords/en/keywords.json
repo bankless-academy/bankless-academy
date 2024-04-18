@@ -24,6 +24,11 @@
     "keyword_plural": "airdrops",
     "definition": "A free distribution of crypto assets to users."
   },
+  "allo protocol": {
+    "keyword": "Allo Protocol",
+    "keyword_plural": "Allo Protocols",
+    "definition": "An open-source protocol that enables groups to efficiently and transparently allocate pooled capital."
+  },
   "allowance": {
     "keyword": "allowance",
     "keyword_plural": "allowances",
@@ -219,6 +224,11 @@
     "keyword_plural": "credible neutralitys",
     "definition": "A mechanism that does not discriminate for or against any specific people."
   },
+  "crypto wallet": {
+    "keyword": "crypto wallet",
+    "keyword_plural": "crypto wallets",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  },
   "cryptocurrency": {
     "keyword": "cryptocurrency",
     "keyword_plural": "cryptocurrencys",
@@ -233,6 +243,11 @@
     "keyword": "cryptocurrency wallet",
     "keyword_plural": "cryptocurrency wallets",
     "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  },
+  "cryptography": {
+    "keyword": "cryptography",
+    "keyword_plural": "cryptographys",
+    "definition": "Techniques for secure communication or transaction, preventing external interference."
   },
   "custodial wallet": {
     "keyword": "custodial wallet",
@@ -328,6 +343,11 @@
     "keyword": "earn",
     "keyword_plural": "earns",
     "definition": "Contributing value in exchange for rewards ; money verb on the skill cube."
+  },
+  "encryption": {
+    "keyword": "encryption",
+    "keyword_plural": "encryptions",
+    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
   },
   "epoch": {
     "keyword": "Epoch",
@@ -688,6 +708,11 @@
     "keyword": "public key",
     "keyword_plural": "public keys",
     "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+  },
+  "quadratic funding": {
+    "keyword": "Quadratic Funding",
+    "keyword_plural": "Quadratic Fundings",
+    "definition": "A crowd-funding mechanism that amplifies available resources with individual donations of any size acting as votes. The broader the support, the bigger the impact!"
   },
   "recovery phrase": {
     "keyword": "recovery phrase",

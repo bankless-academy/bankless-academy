@@ -141,6 +141,7 @@ const KEY_MATCHING = {
   'Lesson Writers': 'lessonWriters',
   Module: 'moduleId',
   Quest: 'quest',
+  'Quest Social Message': 'questSocialMessage',
   'Publication status': 'publicationStatus',
   'Publication Date': 'publicationDate',
   'Featured order on homepage': 'featuredOrderOnHomepage',
@@ -166,6 +167,7 @@ program
   .option('-nid, --notionID <type>', 'specify Notion ID of the database', process.env.DEFAULT_CONTENT_DB_ID || DEFAULT_NOTION_ID)
   .option('-lid, --lessonID <type>', 'specify Lesson Notion ID')
   .option('-lg, --translate <type>', 'specific language to translate (fr, es, ...) or all')
+  .option('-gk, --generateKeywords', 'generate keyword translation files for each language')
 
 program.parse(process.argv)
 const NOTION_ID = program.opts().notionID
@@ -178,7 +180,7 @@ console.log('TRANSLATION_LANGUAGE', TRANSLATION_LANGUAGE)
 const slugify = (text) => text.toLowerCase()
   .replace('á', 'a')
   .replace(/<[^>]*>?/gm, '') // remove tags
-  .replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+  .replace(/[^a-z0-9\. -]/g, '') // remove invalid chars
   .replace(/\s+/g, '-') // collapse whitespace and replace by -
   .replace(/-+/g, '-') // collapse dashes
 
@@ -215,6 +217,18 @@ const download_image = (url, image_path) =>
 const placeholder = (lesson, size, image_name) => {
   const placeholder_link = `https://placehold.co/${size}/4b4665/FFFFFF/png?text=${lesson.name.replaceAll(' ', '+')}`
   return get_img(placeholder_link, lesson.slug, image_name)
+}
+
+const extractKeywords = (content) => {
+  const regex = /`([^`]+)`/g;
+  const keywords = [];
+  let match;
+
+  while ((match = regex.exec(content)) !== null) {
+    keywords.push(match[1]);
+  }
+
+  return [...new Set(keywords)]
 }
 
 const importTranslations = async (lesson) => {
@@ -336,6 +350,7 @@ axios
       if (lesson.languages === undefined) delete lesson.languages
       // sort languages alphabetically
       else lesson.languages.sort()
+      if (lesson.questSocialMessage === undefined) delete lesson.questSocialMessage
       if (lesson.lessonWriters === undefined) delete lesson.lessonWriters
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
       if (lesson.mirrorLink === undefined || lesson.mirrorLink === null) delete lesson.mirrorLink
@@ -461,6 +476,30 @@ axios
                       lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${image_path}`)
                     }
                     lesson.articleContent = lessonContentMD.replaceAll('https://app.banklessacademy.com/images/', '/images/')
+                    const keywords = extractKeywords(lesson.articleContent)
+                    lesson.keywords = keywords
+                    // console.log('keywords', keywords)
+                    if (LESSON_NOTION_ID && program.opts().generateKeywords) {
+                      // create keyword lesson file
+                      const lessonKV = {}
+                      for (const keyword of keywords) {
+                        if (keyword in ALL_ENGLISH_KEYWORDS) {
+                          lessonKV[keyword] = ALL_ENGLISH_KEYWORDS[keyword]
+                        } else {
+                          const singularKeyword = keyword.slice(0, -1)
+                          if (singularKeyword in ALL_ENGLISH_KEYWORDS) {
+                            lessonKV[singularKeyword] = ALL_ENGLISH_KEYWORDS[singularKeyword]
+                          }
+                        }
+                      }
+                      if (Object.keys(lessonKV).length) {
+                        const lessonKeywordPath = `translation/keywords/en/${lesson.slug}.json`
+                        console.log('lessonKV', lessonKV)
+                        fs.writeFile(lessonKeywordPath, JSON.stringify(lessonKV, null, 2), (error) => {
+                          if (error) throw error
+                        })
+                      }
+                    }
                     // write/update file
                     const lessonPath = `translation/lesson/en/${lesson.slug}.md`
                     const lessonHeader = mdHeader(lesson, 'HANDBOOK')
@@ -675,19 +714,26 @@ axios
             return slide
           })
           lesson.keywords = allKeywords
-          const lessonKV = {}
-          // create keyword file
-          for (const keyword of allKeywords) {
-            if (keyword in ALL_ENGLISH_KEYWORDS) {
-              lessonKV[keyword] = ALL_ENGLISH_KEYWORDS[keyword]
+          if (LESSON_NOTION_ID && program.opts().generateKeywords) {
+            // create keyword lesson file
+            const lessonKV = {}
+            for (const keyword of allKeywords) {
+              if (keyword in ALL_ENGLISH_KEYWORDS) {
+                lessonKV[keyword] = ALL_ENGLISH_KEYWORDS[keyword]
+              } else {
+                const singularKeyword = keyword.slice(0, -1)
+                if (singularKeyword in ALL_ENGLISH_KEYWORDS) {
+                  lessonKV[singularKeyword] = ALL_ENGLISH_KEYWORDS[singularKeyword]
+                }
+              }
             }
-          }
-          if (Object.keys(lessonKV).length) {
-            const lessonKeywordPath = `translation/keywords/en/${lesson.slug}.json`
-            console.log('lessonKV', lessonKV)
-            fs.writeFile(lessonKeywordPath, JSON.stringify(lessonKV, null, 2), (error) => {
-              if (error) throw error
-            })
+            if (Object.keys(lessonKV).length) {
+              const lessonKeywordPath = `translation/keywords/en/${lesson.slug}.json`
+              console.log('lessonKV', lessonKV)
+              fs.writeFile(lessonKeywordPath, JSON.stringify(lessonKV, null, 2), (error) => {
+                if (error) throw error
+              })
+            }
           }
           const componentName = PROJECT_DIR.replace(/[^A-Za-z0-9]/g, '') + lesson.name
             .split(' ')

@@ -17,6 +17,7 @@ import NFT from 'components/NFT'
 import ExternalLink from 'components/ExternalLink'
 import {
   DOMAIN_URL,
+  IS_PROD,
   IS_WALLET_DISABLED,
   IS_WHITELABEL,
   MD_ENABLED,
@@ -101,7 +102,7 @@ const LessonDetail = ({
 
   const isQuizComplete = quizComplete(lesson)
 
-  const Quest = QuestComponent(lesson.quest, lesson.badgeId)
+  const Quest = QuestComponent(lesson, lesson.badgeId)
 
   const hasLessonGating =
     TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
@@ -238,6 +239,13 @@ const LessonDetail = ({
                 <Text as="p" fontSize="medium" py="4">
                   {lesson.description}
                 </Text>
+                {!IS_PROD &&
+                  i18n.language !== 'en' &&
+                  lesson.translationDate && (
+                    <Box color="orange">
+                      Last translation update: {lesson.translationDate}
+                    </Box>
+                  )}
               </Box>
               {hasLessonGating && (
                 <Box my="4">

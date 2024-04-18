@@ -45,7 +45,7 @@ async function main() {
             const data = {}
             for (const [, v] of Object.entries(crowdin.data)) {
               data[v.keyword?.toLowerCase()] = { keyword: v.keyword, definition: v.definition }
-              if (v.keyword?.toLowerCase() !== v.keyword_plural?.toLowerCase() && v.keyword_plural !== '') {
+              if (v.keyword?.toLowerCase() !== v.keyword_plural?.toLowerCase() && v.keyword_plural !== '' && v.keyword_plural) {
                 data[v.keyword_plural?.toLowerCase()] = { keyword: v.keyword_plural, definition: v.definition }
               }
             }
