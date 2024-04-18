@@ -477,6 +477,7 @@ axios
                     }
                     lesson.articleContent = lessonContentMD.replaceAll('https://app.banklessacademy.com/images/', '/images/')
                     const keywords = extractKeywords(lesson.articleContent)
+                    lesson.keywords = keywords
                     // console.log('keywords', keywords)
                     if (LESSON_NOTION_ID && program.opts().generateKeywords) {
                       // create keyword lesson file
