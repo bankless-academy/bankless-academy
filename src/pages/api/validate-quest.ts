@@ -52,7 +52,9 @@ export default async function handler(
 
     const notionId = LESSONS.find((lesson) => lesson.quest === quest)?.notionId
     if (!notionId) return res.status(403).json({ error: 'notionId not found' })
-    const isSocialSharingQuest = LESSONS.find((lesson) => lesson.quest === quest)?.questSocialMessage?.length > 0
+    const questSocialMessage = LESSONS.find((lesson) => lesson.quest === quest)?.questSocialMessage
+    const isSocialSharingQuest = questSocialMessage?.length > 0
+    const socialSharingQuestType = isSocialSharingQuest ? questSocialMessage?.startsWith('http') ? 'RT' : 'TWEET' : ''
 
     const [credential] = await db(TABLES.credentials)
       .select('id')
@@ -86,53 +88,106 @@ export default async function handler(
     // Backend quest verification
     if (isSocialSharingQuest) {
       // Social Sharing Quest
-      if (!messageLink || !messageLink.startsWith('http')) {
-        return res.status(403).json({ error: 'Missing Message Link' })
-      }
-      try {
-        const messageId = messageLink.split('/').pop()
-        let message = ""
-        let resolvedLink = ""
-        if (messageLink.includes('warpcast')) {
-          // Farcaster verification
-          const options = {
-            method: 'GET',
-            headers: { accept: 'application/json', api_key: process.env.NEYNAR_API_KEY }
+      if (socialSharingQuestType === 'RT') {
+        try {
+          const [{ socials }] = await db(TABLES.users)
+            .select('socials')
+            .where(TABLE.users.id, userId)
+          console.log(socials)
+          const twitterId = socials?.twitter
+          if (!twitterId) {
+            return res.status(200).json({
+              isQuestValidated: false,
+              error: 'Twitter account not connected.',
+            })
           }
-          const cast = await (await fetch(`https://api.neynar.com/v2/farcaster/cast?identifier=${encodeURIComponent(messageLink)}&type=url`, options)).json()
-          console.log('cast', cast)
-          message = cast.cast?.text
-          console.log('message', message)
-          resolvedLink = cast.cast?.embeds[0]?.url
-          console.log('resolvedLink', resolvedLink)
-        } else {
-          // Twitter verification
+          // RT intent
           const client = new TwitterApi(process.env.TWITTER_BEARER_TOKEN).readOnly;
-          const tweet = await client.v2.tweets(messageId)
-          console.log('tweet', tweet)
-          message = tweet.data[0]?.text
-          console.log('message', message)
-          const firstLink = extractFirstLink(message)
-          console.log('firstLink', firstLink)
-          const resolvedLinkResponse = firstLink ? await fetch(firstLink) : ''
-          resolvedLink = resolvedLinkResponse !== '' ? resolvedLinkResponse.redirected ? resolvedLinkResponse.url?.toLowerCase() : '' : ''
-          console.log('resolvedLink', resolvedLink)
-        }
-        const messageIncludesTwitterTag = message?.toLowerCase()?.includes('@BanklessAcademy'.toLowerCase())
-        const messageIncludesReferrerAddress = resolvedLink?.toLowerCase()?.includes(`referrer=${address?.toLowerCase()}`)
-        // TODO: add lesson slug verification
-        const isQuestValidated = messageLink?.length > 0 && messageIncludesTwitterTag && messageIncludesReferrerAddress
-        if (!isQuestValidated)
+          // timeline check
+          const messageId = questSocialMessage.split('/').pop()
+          console.log(messageId)
+          const tm = await client.v2.userTimeline(twitterId, {
+            "tweet.fields": [
+              "created_at",
+              "author_id",
+              "referenced_tweets",
+            ],
+            "max_results": 100,
+            "exclude": 'replies'
+          })
+          // console.log('tm', tm)
+          const tweets = tm.data.data
+          const isQuestValidated = tweets.some(t => {
+            const referenced_tweet: any = t?.referenced_tweets?.length ? t.referenced_tweets[0] : {}
+            if (referenced_tweet?.id === messageId)
+              console.log(t)
+            return (referenced_tweet?.type === 'retweeted' && referenced_tweet?.id === messageId) || false
+          }) || false
+          console.log('isQuestValidated', isQuestValidated)
+          if (!isQuestValidated)
+            return res.status(200).json({
+              isQuestValidated: false,
+              error: 'Repost not found. Try again in a couple seconds. If you have already reposted this tweet again a long time ago, undo, then repost.',
+            })
+          // const rt = await client.v2.tweetRetweetedBy(messageId)
+          // console.log('rt', rt)
+        } catch (error) {
+          console.log(error)
           return res.status(200).json({
             isQuestValidated: false,
-            error: !messageIncludesTwitterTag ? 'Missing @BanklessAcademy Twitter Tag' : !messageIncludesReferrerAddress ? 'Missing Referrer Address' : 'Unknown Error',
+            error: error?.data?.detail,
           })
-      } catch (error) {
-        console.log(error);
-        return res.status(200).json({
-          isQuestValidated: false,
-          error: 'Onchain quest not completed',
-        })
+        }
+      } else if (socialSharingQuestType === 'TWEET') {
+        // TWEET intent
+        if (!messageLink || !messageLink.startsWith('http')) {
+          return res.status(403).json({ error: 'Missing Message Link' })
+        }
+        try {
+          const messageId = messageLink.split('/').pop()
+          let message = ""
+          let resolvedLink = ""
+          if (messageLink.includes('warpcast')) {
+            // Farcaster verification
+            const options = {
+              method: 'GET',
+              headers: { accept: 'application/json', api_key: process.env.NEYNAR_API_KEY }
+            }
+            const cast = await (await fetch(`https://api.neynar.com/v2/farcaster/cast?identifier=${encodeURIComponent(messageLink)}&type=url`, options)).json()
+            console.log('cast', cast)
+            message = cast.cast?.text
+            console.log('message', message)
+            resolvedLink = cast.cast?.embeds[0]?.url
+            console.log('resolvedLink', resolvedLink)
+          } else {
+            // Twitter verification
+            const client = new TwitterApi(process.env.TWITTER_BEARER_TOKEN).readOnly;
+            const tweet = await client.v2.tweets(messageId)
+            console.log('tweet', tweet)
+            message = tweet.data[0]?.text
+            console.log('message', message)
+            const firstLink = extractFirstLink(message)
+            console.log('firstLink', firstLink)
+            const resolvedLinkResponse = firstLink ? await fetch(firstLink) : ''
+            resolvedLink = resolvedLinkResponse !== '' ? resolvedLinkResponse.redirected ? resolvedLinkResponse.url?.toLowerCase() : '' : ''
+            console.log('resolvedLink', resolvedLink)
+          }
+          const messageIncludesTwitterTag = message?.toLowerCase()?.includes('@BanklessAcademy'.toLowerCase())
+          const messageIncludesReferrerAddress = resolvedLink?.toLowerCase()?.includes(`referrer=${address?.toLowerCase()}`)
+          // TODO: add lesson slug verification
+          const isQuestValidated = messageLink?.length > 0 && messageIncludesTwitterTag && messageIncludesReferrerAddress
+          if (!isQuestValidated)
+            return res.status(200).json({
+              isQuestValidated: false,
+              error: !messageIncludesTwitterTag ? 'Missing @BanklessAcademy Twitter Tag' : !messageIncludesReferrerAddress ? 'Missing Referrer Address' : 'Unknown Error',
+            })
+        } catch (error) {
+          console.log(error);
+          return res.status(200).json({
+            isQuestValidated: false,
+            error: 'Onchain quest not completed',
+          })
+        }
       }
     } else if (ONCHAIN_QUESTS.includes(quest)) {
       // Onchain Quests
