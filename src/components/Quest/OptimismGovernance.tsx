@@ -18,6 +18,7 @@ const OptimismGovernance = (
   questComponent: React.ReactElement
 } => {
   const { t } = useTranslation('quests', { keyPrefix: 'OptimismGovernance' })
+  const { t: tl } = useTranslation('lesson')
   const [isSmallScreen] = useSmallScreen()
   const [isTransactionVerified, setIsTransactionVerified] = useState(
     localStorage.getItem('quest-optimism-governance') || 'false'
@@ -108,11 +109,12 @@ const OptimismGovernance = (
                 </Box>
               </VStack>
               <Box mt="8">
-                {t('Tip: ')}
+                {t('Tip')}
+                {`: `}
                 {t(
                   "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
                   {
-                    lesson_title: lesson.name,
+                    lesson_title: tl(lesson.englishName),
                     interpolation: { escapeValue: false },
                   }
                 )}
@@ -136,11 +138,11 @@ const OptimismGovernance = (
               <Box zIndex="2" position="relative">
                 <Box py="8">
                   <Text mt="0 !important" fontSize="xl" fontWeight="bold">
-                    {lesson.name}
+                    {tl(lesson.englishName)}
                   </Text>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.englishName}
+                    alt={tl(lesson.englishName)}
                     target="_blank"
                   >
                     <Image src={lesson.lessonImageLink} />
@@ -149,7 +151,7 @@ const OptimismGovernance = (
                 <Box pb="8">
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.englishName}
+                    alt={tl(lesson.englishName)}
                     target="_blank"
                   >
                     <Button variant="primary">{t('Read Entry')}</Button>

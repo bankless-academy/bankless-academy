@@ -17,6 +17,7 @@ const WalletBasics = (
   questComponent: React.ReactElement
 } => {
   const { t } = useTranslation('quests', { keyPrefix: 'WalletBasics' })
+  const { t: tl } = useTranslation('lesson')
   const [isSmallScreen] = useSmallScreen()
 
   const lesson = LESSONS.find(
@@ -37,7 +38,7 @@ const WalletBasics = (
           <div className="bloc1" style={{ alignSelf: 'center' }}>
             <Box m="4">
               <Text mx="0 !important" fontSize="xl" fontWeight="bold">
-                {`Create your first crypto wallet, with Zerion.`}
+                {t(`Create your first crypto wallet, with Zerion.`)}
               </Text>
               <VStack mt="8" alignItems="start">
                 <Button cursor="default" textAlign="start" height="fit-content">
@@ -73,10 +74,12 @@ const WalletBasics = (
                 </Button>
               </VStack>
               <Box mt="8">
+                {t('Tip')}
+                {`: `}
                 {t(
-                  "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest.",
+                  "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.",
                   {
-                    lesson_title: lesson.name,
+                    lesson_title: tl(lesson.englishName),
                     interpolation: { escapeValue: false },
                   }
                 )}
@@ -93,11 +96,11 @@ const WalletBasics = (
               <Box zIndex="2" position="relative">
                 <Box py="8">
                   <Text mt="0 !important" fontSize="xl" fontWeight="bold">
-                    {lesson.name}
+                    {tl(lesson.englishName)}
                   </Text>
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.englishName}
+                    alt={tl(lesson.englishName)}
                     target="_blank"
                   >
                     <Image src={lesson.lessonImageLink} />
@@ -106,7 +109,7 @@ const WalletBasics = (
                 <Box pb="8">
                   <InternalLink
                     href={`/lessons/${lesson.slug}`}
-                    alt={lesson.englishName}
+                    alt={tl(lesson.englishName)}
                     target="_blank"
                   >
                     <Button variant="primary">{'Read Entry'}</Button>
