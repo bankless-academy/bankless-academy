@@ -1,139 +1,75 @@
 {
-  "二段階認証": {
-    "keyword": "二段階認証",
-    "definition": "オンラインアカウントにアクセスしようとする人が本人であることを認証するために使用されるセキュリティの追加レイヤー"
-  },
   "51%攻撃": {
     "keyword": "51%攻撃",
     "definition": "ネットワーク上のブロック生成力の51％以上を支配することでのブロックチェーンのコンセンサス攻撃"
-  },
-  "アドレス": {
-    "keyword": "アドレス",
-    "definition": "ブロックチェーン上のエンティティの固有の公開識別子"
-  },
-  "アグリゲーター": {
-    "keyword": "アグリゲーター",
-    "definition": "複数のソースを組み合わせたツールでの競争力のあるオプションの提供"
-  },
-  "エアドロップ": {
-    "keyword": "エアドロップ",
-    "definition": "ユーザーへの無料配布"
-  },
-  "割り当て": {
-    "keyword": "割り当て",
-    "definition": "通常はスマートコントラクトであるエンティティを許可しており、トランザクションで指定された量のトークンを使用する権利"
-  },
-  "代替l1": {
-    "keyword": "代替L1",
-    "definition": "イーサリアムとビットコイン以外の L1ブロックチェーン"
-  },
-  "アルトl1": {
-    "keyword": "アルトL1",
-    "definition": "イーサリアムとビットコイン以外の L1ブロックチェーン"
   },
   "amm": {
     "keyword": "AMM",
     "definition": "(Automated Market Maker) 公開アルゴリズムに基づく取引マッチングシステム"
   },
-  "非同期": {
-    "keyword": "非同期",
-    "definition": "複数の共同作業者間のコミュニケーションで、参加者はメッセージ送信時にその場にいる必要はない"
+  "blockchain": {
+    "keyword": "blockchain",
+    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
   },
-  "ベット": {
-    "keyword": "ベット",
-    "definition": "より大きな報酬と引き換えにお金を賭ける"
+  "blockchain apps": {
+    "keyword": "blockchain apps",
+    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
   },
-  "ブロック": {
-    "keyword": "ブロック",
-    "definition": "ブロックチェーン上のトランザクションのグループ"
+  "blockchain appss": {
+    "keyword": "blockchain appss",
+    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
   },
-  "ブロックエクスプローラ": {
-    "keyword": "ブロックエクスプローラ",
-    "definition": "ブロックチェーンデータの検索と探索ツール"
-  },
-  "ブロックハッシュ": {
-    "keyword": "ブロックハッシュ",
-    "definition": "各ブロックファイルに固有の識別子があり、各新しいブロックは前のブロックのブロックハッシュを参照し、単一ファイル連結ブロックチェーンを形成する"
-  },
-  "ブロック生成者": {
-    "keyword": "ブロック生成者",
-    "definition": "ハードウェアがブロックのトランザクションを検証し、ほとんどのPoSブロックチェーンで次のブロックを開始するように選択されたユーザー"
-  },
-  "ブロック報酬": {
-    "keyword": "ブロック報酬",
-    "definition": "新しい有効なブロックの提案者に与えられたブロックチェーンのネイティブアセットの量"
-  },
-  "ブロックチェーン": {
-    "keyword": "ブロックチェーン",
-    "definition": "記録されたトランザクションの共有された、変更不可能なデータベース、または元帳"
-  },
-  "ブロックチェーンアーキテクチャ": {
-    "keyword": "ブロックチェーンアーキテクチャ",
-    "definition": "ブロックチェーン技術にデータが格納される仕組み"
-  },
-  "ブロックチェーンのトリレンマ": {
-    "keyword": "ブロックチェーンのトリレンマ",
-    "definition": "セキュリティ、スケーラビリティ、分散化の3つのブロックチェーンのすべての必要性を説明する問題"
-  },
-  "ブロックスペース": {
-    "keyword": "ブロックスペース",
-    "definition": "ブロックチェーン上で、情報の保存やコードの実行に使用できるスペースの量"
+  "blockchains": {
+    "keyword": "blockchains",
+    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
   },
   "blockspaces": {
     "keyword": "blockspaces",
     "definition": "ブロックチェーン上で、情報の保存やコードの実行に使用できるスペースの量"
   },
-  "借り手": {
-    "keyword": "借り手",
-    "definition": "資産を借りるために貸し手に利子を支払うこと"
-  },
-  "ブリッジ": {
-    "keyword": "ブリッジ",
-    "definition": "2つの異なるブロックチェーンネットワークが互いに通信し、資産を交換することを可能にする接続"
-  },
-  "検閲への耐性": {
-    "keyword": "検閲への耐性",
-    "definition": "政府も企業も、何が許され、何が許されないかを決めることはできない"
-  },
-  "中央集権型取引所": {
-    "keyword": "中央集権型取引所",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
-  },
   "cex": {
     "keyword": "CEX",
     "definition": "(Centralized Exchange) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
-  "チェーン": {
-    "keyword": "チェーン",
-    "definition": "データのブロックを結合し、変更できないデータベースを形成"
-  },
-  "コイン": {
-    "keyword": "コイン",
-    "definition": "主にネットワーク上のトランザクションを行うための通貨の一形態として使用されるブロックチェーンのネイティブ資産"
-  },
-  "コールドウォレット": {
-    "keyword": "コールドウォレット",
+  "cold wallet": {
+    "keyword": "cold wallet",
     "definition": "A type of self-custody wallet that is stored on offline hardware."
   },
-  "担保": {
-    "keyword": "担保",
-    "definition": "ローンの返済を担保するために、借り手が貸し手に特定の資産を質入れする"
+  "cold wallets": {
+    "keyword": "cold wallets",
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
   },
-  "コンセンサス": {
-    "keyword": "コンセンサス",
-    "definition": "ブロックチェーンのような分散型コンピュータネットワークを介した合意、信頼、セキュリティ"
+  "crypto wallet": {
+    "keyword": "crypto wallet",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
   },
-  "カウンターパーティーリスク": {
-    "keyword": "カウンターパーティーリスク",
-    "definition": "他の当事者が合意の一部を果たさない可能性がある"
+  "crypto wallets": {
+    "keyword": "crypto wallets",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
   },
-  "カウンターパーティ・リスク": {
-    "keyword": "カウンターパーティ・リスク",
-    "definition": "他の当事者が合意の一部を果たさない可能性がある"
+  "cryptocurrency": {
+    "keyword": "cryptocurrency",
+    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
   },
-  "カストディアルウォレット": {
-    "keyword": "カストディアルウォレット",
-    "definition": "カストディアルウォレットでは、別の当事者が秘密鍵を管理し、クリプトへのアクセスを制御する"
+  "cryptocurrencys": {
+    "keyword": "cryptocurrencys",
+    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+  },
+  "cryptography": {
+    "keyword": "cryptography",
+    "definition": "Techniques for secure communication or transaction, preventing external interference."
+  },
+  "cryptographys": {
+    "keyword": "cryptographys",
+    "definition": "Techniques for secure communication or transaction, preventing external interference."
+  },
+  "custodial wallet": {
+    "keyword": "custodial wallet",
+    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+  },
+  "custodial wallets": {
+    "keyword": "custodial wallets",
+    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
   },
   "dao": {
     "keyword": "DAO",
@@ -147,33 +83,9 @@
     "keyword": "dApps",
     "definition": "分散型ネットワークとプロトコルに接続する分散型アプリケーション"
   },
-  "分散型": {
-    "keyword": "分散型",
-    "definition": "単一の権限やエンティティがブロックチェーンデータを制御するべきではないという原則"
-  },
-  "分散的な": {
-    "keyword": "分散的な",
-    "definition": "単一の権限やエンティティがデータを管理することはない"
-  },
-  "分散型取引所": {
-    "keyword": "分散型取引所",
-    "definition": "信頼できる仲介者を必要とせずに交換を容易にするプロトコル"
-  },
-  "分散型金融": {
-    "keyword": "分散型金融",
-    "definition": "ブロックチェーン上でホストされる、セルフカストディファイナンスツールのセット"
-  },
   "defi": {
     "keyword": "DeFi",
     "definition": "ブロックチェーン上でホストされているセルフカストディファイナンスツール"
-  },
-  "委任": {
-    "keyword": "委任",
-    "definition": "特定の責任を他者に与えること、形だけの議決権を委任すること"
-  },
-  "委任者": {
-    "keyword": "委任者",
-    "definition": "特定の責任を他者に与えること、形だけの議決権を委任すること"
   },
   "dex": {
     "keyword": "DEX",
@@ -195,17 +107,13 @@
     "keyword": "digital assetss",
     "definition": "Anything, with value, stored digitally."
   },
-  "デジタル署名": {
-    "keyword": "デジタル署名",
-    "definition": "デジタル空間における個人スタンプまたは物理的な署名の機能を提供する各ユーザーの固有の識別子"
+  "encryption": {
+    "keyword": "encryption",
+    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
   },
-  "収入": {
-    "keyword": "収入",
-    "definition": "報酬と引き換えに価値を提供する"
-  },
-  "エポック": {
-    "keyword": "エポック",
-    "definition": "特定のブロックチェーンに特定の数のブロックが含まれるまでにかかる時間"
+  "encryptions": {
+    "keyword": "encryptions",
+    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
   },
   "erc-20": {
     "keyword": "ERC-20",
@@ -223,61 +131,25 @@
     "keyword": "ERC-721s",
     "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, substituted, or subdivided."
   },
-  "イーサリアム仮想マシン": {
-    "keyword": "イーサリアム仮想マシン",
-    "definition": "スマートコントラクトを実行し、イーサリアムネットワークの状態を計算するソフトウェアの一部"
-  },
   "fomo": {
     "keyword": "FOMO",
     "definition": "何かに参加できないことへの不安や恐れ"
-  },
-  "フォーク": {
-    "keyword": "フォーク",
-    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
-  },
-  "不正証明": {
-    "keyword": "不正証明",
-    "definition": "トランザクションが無効で詐欺が発生していることの証拠"
-  },
-  "ガス": {
-    "keyword": "ガス",
-    "definition": "ブロックチェーンネットワークの取引手数料"
-  },
-  "ガスなし取引": {
-    "keyword": "ガスなし取引",
-    "definition": "ブロックチェーンネットワークのネイティブコインではなく、いくつかのトークンを使用してガスを支払うトランザクション"
   },
   "gwei": {
     "keyword": "gwei",
     "definition": "イーサリアムのブロックチェーンで使用される単位で、0.000000001 ETH（10億分の1）に相当し、ガス価格を表すために一般的に使用される"
   },
-  "ハードウェアウォレット": {
-    "keyword": "ハードウェアウォレット",
-    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
-  },
-  "ハッシュ": {
-    "keyword": "ハッシュ",
-    "definition": "情報のデジタル指紋"
-  },
-  "ハッシュ関数": {
-    "keyword": "ハッシュ関数",
-    "definition": "一方向のみの計算が容易な関数で、入力をリバースエンジニアリングすることはほぼ不可能であり、与えられた入力に対してユニークな出力を機能的に保証する"
-  },
   "hodl": {
     "keyword": "HODL",
     "definition": "俗語で、市場の状況がどうであれクリプトを売らないこと"
   },
-  "ホットウォレット": {
-    "keyword": "ホットウォレット",
+  "hot wallet": {
+    "keyword": "hot wallet",
     "definition": "A type of self-custody wallet that is perpetually connected to the internet."
   },
-  "仲介トークン": {
-    "keyword": "仲介トークン",
-    "definition": "取引ルートの途中にあるトークンで、始点や終点にあるトークンではない"
-  },
-  "投資": {
-    "keyword": "投資",
-    "definition": "DeFi技術を使用するコイン/トークンを購入する"
+  "hot wallets": {
+    "keyword": "hot wallets",
+    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
   },
   "kyc": {
     "keyword": "KYC",
@@ -291,89 +163,21 @@
     "keyword": "L2",
     "definition": "イーサリアムのセキュリティを継承しつつ、イーサリアムのスケーラビリティを拡張したブロックチェーン"
   },
-  "台帳...": {
-    "keyword": "台帳...",
-    "definition": "発生したすべてのトランザクションの記録"
-  },
-  "台帳": {
-    "keyword": "台帳",
-    "definition": "発生したすべてのトランザクションの記録"
-  },
-  "貸し手": {
-    "keyword": "貸し手",
-    "definition": "利子を得るために資産を預ける"
-  },
-  "流動性": {
-    "keyword": "流動性",
-    "definition": "取引可能なトークンの数量"
-  },
-  "流動性プール": {
-    "keyword": "流動性プール",
-    "definition": "パーミッションレスなトークン交換を容易にするトークンの共同金庫"
-  },
   "lp": {
     "keyword": "LP",
     "definition": "ブロックチェーンユーザーが、手数料の分け前と引き換えにトークンをプロトコルに貸し出す"
-  },
-  "市場価格": {
-    "keyword": "市場価格",
-    "definition": "特定のトークン、または市場セクターの合計値"
-  },
-  "メタアグリゲーター": {
-    "keyword": "メタアグリゲーター",
-    "definition": "他のアグリゲーターを追加の概要レイヤーにまとめるツール"
   },
   "mev": {
     "keyword": "MEV",
     "definition": "ブロック内のトランザクションを順序付けることによって抽出される値"
   },
-  "ネットワークガバナンス": {
-    "keyword": "ネットワークガバナンス",
-    "definition": "分散型コミュニティがネットワーク機能/アップグレードに関する合意に達するプロセス"
-  },
   "nft": {
     "keyword": "NFT",
     "definition": "一意の識別子を持たないEtherのようなファンジブルトークンと比較して、複製できないユニークなIDを持つトークン"
   },
-  "オンチェーンガバナンス": {
-    "keyword": "オンチェーンガバナンス",
-    "definition": "ブロックチェーンの構造への変更を仲介する自動化されたシステム"
-  },
-  "オープンソース": {
-    "keyword": "オープンソース",
-    "definition": "誰もが検査、修正、拡張できるソースコードを持つソフトウェア"
-  },
-  "オプティミスティックロールアップ": {
-    "keyword": "オプティミスティックロールアップ",
-    "definition": "L2のロールアップスケーリングソリューションは、不正行為証拠によって偽の証明が行われるまで、そのトランザクション内のすべてのトランザクションがロールアップされると楽観的に想定する"
-  },
   "otc": {
     "keyword": "OTC",
     "definition": "プライベートエンティティと直接行う取引"
-  },
-  "カウンター取引": {
-    "keyword": "カウンター取引",
-    "definition": "プライベートエンティティと直接行う取引"
-  },
-  "支払いチャネル": {
-    "keyword": "支払いチャネル",
-    "definition": "各トランザクションをブロックチェーンに記録することなく、2つの当事者が複数回取引できるようにすること"
-  },
-  "ピアツーピア": {
-    "keyword": "ピアツーピア",
-    "definition": "仲介者または管理エンティティを必要としない2つの当事者間の取引"
-  },
-  "ペグ": {
-    "keyword": "ペグ",
-    "definition": "2つ以上の資産間の価値等価性を維持する方法"
-  },
-  "パーミッションレス": {
-    "keyword": "パーミッションレス",
-    "definition": "エンティティの許可を必要としない"
-  },
-  "フィッシング": {
-    "keyword": "フィッシング",
-    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
   },
   "poap": {
     "keyword": "POAP",
@@ -383,69 +187,41 @@
     "keyword": "PoS",
     "definition": "ブロックチェーンコンセンサスアルゴリズムは、各エンティティがプロトコルにロックされているステークに基づいてランダムにブロック生成者を選択する"
   },
-  "価格への影響": {
-    "keyword": "価格への影響",
-    "definition": "取引ボリュームによるDEX上での価格の変化"
-  },
-  "価格への影響:": {
-    "keyword": "価格への影響:",
-    "definition": "取引ボリュームによるDEX上での価格の変化"
-  },
-  "秘密鍵": {
-    "keyword": "秘密鍵",
-    "definition": "クリプトを他のアドレスに送信するために、ウォレットへのアクセスを許可する"
-  },
   "pow": {
     "keyword": "PoW",
     "definition": "ブロックチェーンのコンセンサスアルゴリズムは、ブロックを提案し、それぞれが有効なハッシュを持つかどうかを確認することで、有効なブロックを作成するために競争するマイナーによる作業に依存している"
   },
-  "パブリック": {
-    "keyword": "パブリック",
-    "definition": "パブリックブロックチェーンは誰でもブロックチェーン台帳を閲覧することができる"
+  "private key": {
+    "keyword": "private key",
+    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
   },
-  "公共財": {
-    "keyword": "公共財",
-    "definition": "社会のすべてのメンバーに利用可能な商品またはサービス"
+  "private keys": {
+    "keyword": "private keys",
+    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
   },
-  "公開鍵": {
-    "keyword": "公開鍵",
-    "definition": "自身のアドレスで、他の人がクリプトを送信するためのリファレンスポイントを与える"
+  "public key": {
+    "keyword": "public key",
+    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
   },
-  "リカバリーフレーズ": {
-    "keyword": "リカバリーフレーズ",
-    "definition": "ウォレットの公開鍵と秘密鍵を生成するために使用される12〜24単語のリスト"
+  "public keys": {
+    "keyword": "public keys",
+    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
   },
-  "レッドフラッグ": {
-    "keyword": "レッドフラッグ",
-    "definition": "危険の警告サイン"
+  "recovery phrase": {
+    "keyword": "recovery phrase",
+    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+  },
+  "recovery phrases": {
+    "keyword": "recovery phrases",
+    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
   },
   "retropgf": {
     "keyword": "RetroPGF",
     "definition": "過去の影響に基づくプロジェクトへの資金調達メカニズム"
   },
-  "ロールアップ": {
-    "keyword": "ロールアップ",
-    "definition": "L2スケーリングソリューションは、多数のオフチェーントランザクションを処理し、それらを単一の大きなオンチェーントランザクションに集約することを可能にし、トランザクションのスループットを向上させ、コストを削減する"
-  },
-  "サンドイッチ攻撃": {
-    "keyword": "サンドイッチ攻撃",
-    "definition": "ブロック生成者によるトランザクションの順序により、ユーザーには隠れたコストがかかる"
-  },
-  "スケーラビリティ": {
-    "keyword": "スケーラビリティ",
-    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
-  },
-  "スキャムトークン": {
-    "keyword": "スキャムトークン",
-    "definition": "投資家の資金を盗む唯一の目的で起動されるクリプトトークン"
-  },
-  "セキュリティ": {
-    "keyword": "セキュリティ",
-    "definition": "ブロックチェーンがハッキング、コード搾取、経済的搾取などの攻撃に耐え、通常通り機能し続ける能力"
-  },
-  "シードフレーズ": {
-    "keyword": "シードフレーズ",
-    "definition": "セットアップ時にウォレットによって生成されるランダムな単語のグループであり、いかなる理由があろうとも、シードフレーズを他人と共有してはいけない"
+  "self-custody": {
+    "keyword": "self-custody",
+    "definition": "A means of holding your assets where only you have access to them."
   },
   "self-custody wallet": {
     "keyword": "self-custody wallet",
@@ -455,117 +231,33 @@
     "keyword": "self-custody wallets",
     "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
   },
-  "決済レイヤー": {
-    "keyword": "決済レイヤー",
-    "definition": "確定した取引から資産交換の詳細を記録するブロックチェーンの最下層。メインネットイーサリアムはイーサリアムのL2スケーリングソリューションの決済レイヤー"
-  },
-  "決済時間": {
-    "keyword": "決済時間",
-    "definition": "トランザクションが確認されるまでの時間"
-  },
-  "シャーディング": {
-    "keyword": "シャーディング",
-    "definition": " スケーラビリティを向上させるために、1つのブロックチェーンを複数のチェーンに分割し、すべてを並行して実行するプロセス"
-  },
-  "サイドチェーン": {
-    "keyword": "サイドチェーン",
-    "definition": "メインのブロックチェーンから別の並列ブロックチェーン（サイドチェーン）に資産や取引を移転できる仕組み"
-  },
-  "スリッページ": {
-    "keyword": "スリッページ",
-    "definition": "取引が成立しやすくなる買値の変化"
-  },
-  "スリッページの許容範囲": {
-    "keyword": "スリッページの許容範囲",
-    "definition": "取引が実行される前に価格がどのくらい変化するか"
-  },
-  "スマートコントラクト": {
-    "keyword": "スマートコントラクト",
-    "definition": "コントラクトの条件を自動的に実行するコンピューターコード"
-  },
-  "ソーシャルエンジニアリング": {
-    "keyword": "ソーシャルエンジニアリング",
-    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
-  },
-  "支払": {
-    "keyword": "支払",
-    "definition": "クリプトを商品やサービスの支払いに使用する"
-  },
-  "ステーク": {
-    "keyword": "ステーク",
-    "definition": "クリプトプロトコルにロックされた金融資産の量で、そのプロトコルに対する誰かの金銭的コミットメント"
-  },
-  "ステーキング": {
-    "keyword": "ステーキング",
-    "definition": "一定時間のスマートコントラクトへのクリプトの一部の一時的なコミットメントの利益を得るための交換(報酬)"
-  },
-  "スワップ": {
-    "keyword": "スワップ",
-    "definition": "あるトークンから別のトークンへのトレード"
-  },
-  "トークン": {
-    "keyword": "トークン",
-    "definition": "既存のブロックチェーン上に構築された資産や証書を表すことができる単位"
-  },
-  "トークンの割り当て": {
-    "keyword": "トークンの割り当て",
-    "definition": "ウォレットとスマートコントラクトの間の合意により、特定のトークンへのアクセスが制限されたり無制限になります。"
-  },
-  "トークン配布": {
-    "keyword": "トークン配布",
-    "definition": "トークンが異なるステークホルダーグループに割り当てられる"
-  },
-  "トークンペア": {
-    "keyword": "トークンペア",
-    "definition": "流動性プールを構成する2つの関連クリプト"
+  "self-custodys": {
+    "keyword": "self-custodys",
+    "definition": "A means of holding your assets where only you have access to them."
   },
   "tps": {
     "keyword": "TPS",
     "definition": "ブロックチェーンのスケーラビリティの指標であるTPS、ブロックチェーンが処理する1秒あたりのトランザクション数"
   },
-  "トレード": {
-    "keyword": "トレード",
-    "definition": "資産や金銭を価値あるものと交換する"
-  },
-  "取引ルート": {
-    "keyword": "取引ルート",
-    "definition": "トークンの開始から取引でトークンの終了までの経路の計画"
-  },
-  "トランザクション": {
-    "keyword": "トランザクション",
-    "definition": "ブロックチェーン上で、転送、金銭的またはその他の記録"
-  },
-  "トランザクションのファイナリティ": {
-    "keyword": "トランザクションのファイナリティ",
-    "definition": "トランザクションが有効かつ最終的であることを確認するのに要する時間で、その後にトランザクションは元に戻されたり変更されたりしない"
-  },
-  "トランザクションハッシュ": {
-    "keyword": "トランザクションハッシュ",
-    "definition": "各トランザクションのユニークな識別子で、取引データと取引送信者のデジタル署名と取引の重複を避けるための一回限りの使用番号から派生する"
-  },
-  "トランザクションスループット": {
-    "keyword": "トランザクションスループット",
-    "definition": "ブロックチェーンが一度に処理できるトランザクションの数で、通常は1秒あたりのトランザクション数（TPS）で測定される"
-  },
-  "トラストレス": {
-    "keyword": "トラストレス",
-    "definition": "人や機関の信頼を必要とせずに活動できる"
-  },
   "tvl": {
     "keyword": "TVL",
     "definition": "特定の場所に保管されている資産価値の総量"
   },
-  "ブリッジの検証": {
-    "keyword": "ブリッジの検証",
-    "definition": "検証するブリッジコントラクトは、引き出しが有効かどうかを判断するために外部の権限を信頼する必要がなくなる新しいデザインである"
+  "wallet": {
+    "keyword": "wallet",
+    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
   },
-  "拒否": {
-    "keyword": "拒否",
-    "definition": "ガバナンス提案の拒否の投票"
+  "wallet app": {
+    "keyword": "wallet app",
+    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
   },
-  "ウォレット": {
-    "keyword": "ウォレット",
-    "definition": "ブロックチェーン上でクリプトを送受信するために使用されるアプリケーションまたはデバイス"
+  "wallet apps": {
+    "keyword": "wallet apps",
+    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+  },
+  "wallets": {
+    "keyword": "wallets",
+    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
   },
   "web2": {
     "keyword": "web2",
@@ -579,12 +271,444 @@
     "keyword": "web3",
     "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
   },
-  "ゼロ知識": {
-    "keyword": "ゼロ知識",
-    "definition": "一方の当事者がステートメントについての追加情報を明らかにすることなく有効であることを証明する数学的手法"
+  "web3s": {
+    "keyword": "web3s",
+    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
   },
   "zk rollup": {
     "keyword": "zk rollup",
     "definition": "L2のロールアップスケーリングソリューションで、L1ブロックチェーンのセキュリティとプライバシーを維持しながら、ゼロ知識証明を使用してトランザクションのロールアップの有効性を保証する"
+  },
+  "アグリゲーター": {
+    "keyword": "アグリゲーター",
+    "definition": "複数のソースを組み合わせたツールでの競争力のあるオプションの提供"
+  },
+  "アドレス": {
+    "keyword": "アドレス",
+    "definition": "ブロックチェーン上のエンティティの固有の公開識別子"
+  },
+  "アルトl1": {
+    "keyword": "アルトL1",
+    "definition": "イーサリアムとビットコイン以外の L1ブロックチェーン"
+  },
+  "イーサリアム仮想マシン": {
+    "keyword": "イーサリアム仮想マシン",
+    "definition": "スマートコントラクトを実行し、イーサリアムネットワークの状態を計算するソフトウェアの一部"
+  },
+  "ウォレット": {
+    "keyword": "ウォレット",
+    "definition": "ブロックチェーン上でクリプトを送受信するために使用されるアプリケーションまたはデバイス"
+  },
+  "エアドロップ": {
+    "keyword": "エアドロップ",
+    "definition": "ユーザーへの無料配布"
+  },
+  "エポック": {
+    "keyword": "エポック",
+    "definition": "特定のブロックチェーンに特定の数のブロックが含まれるまでにかかる時間"
+  },
+  "オプティミスティックロールアップ": {
+    "keyword": "オプティミスティックロールアップ",
+    "definition": "L2のロールアップスケーリングソリューションは、不正行為証拠によって偽の証明が行われるまで、そのトランザクション内のすべてのトランザクションがロールアップされると楽観的に想定する"
+  },
+  "オンチェーンガバナンス": {
+    "keyword": "オンチェーンガバナンス",
+    "definition": "ブロックチェーンの構造への変更を仲介する自動化されたシステム"
+  },
+  "オープンソース": {
+    "keyword": "オープンソース",
+    "definition": "誰もが検査、修正、拡張できるソースコードを持つソフトウェア"
+  },
+  "カウンターパーティ・リスク": {
+    "keyword": "カウンターパーティ・リスク",
+    "definition": "他の当事者が合意の一部を果たさない可能性がある"
+  },
+  "カウンターパーティーリスク": {
+    "keyword": "カウンターパーティーリスク",
+    "definition": "他の当事者が合意の一部を果たさない可能性がある"
+  },
+  "カウンター取引": {
+    "keyword": "カウンター取引",
+    "definition": "プライベートエンティティと直接行う取引"
+  },
+  "カストディアルウォレット": {
+    "keyword": "カストディアルウォレット",
+    "definition": "カストディアルウォレットでは、別の当事者が秘密鍵を管理し、クリプトへのアクセスを制御する"
+  },
+  "ガス": {
+    "keyword": "ガス",
+    "definition": "ブロックチェーンネットワークの取引手数料"
+  },
+  "ガスなし取引": {
+    "keyword": "ガスなし取引",
+    "definition": "ブロックチェーンネットワークのネイティブコインではなく、いくつかのトークンを使用してガスを支払うトランザクション"
+  },
+  "コイン": {
+    "keyword": "コイン",
+    "definition": "主にネットワーク上のトランザクションを行うための通貨の一形態として使用されるブロックチェーンのネイティブ資産"
+  },
+  "コンセンサス": {
+    "keyword": "コンセンサス",
+    "definition": "ブロックチェーンのような分散型コンピュータネットワークを介した合意、信頼、セキュリティ"
+  },
+  "コールドウォレット": {
+    "keyword": "コールドウォレット",
+    "definition": "A type of self-custody wallet that is stored on offline hardware."
+  },
+  "サイドチェーン": {
+    "keyword": "サイドチェーン",
+    "definition": "メインのブロックチェーンから別の並列ブロックチェーン（サイドチェーン）に資産や取引を移転できる仕組み"
+  },
+  "サンドイッチ攻撃": {
+    "keyword": "サンドイッチ攻撃",
+    "definition": "ブロック生成者によるトランザクションの順序により、ユーザーには隠れたコストがかかる"
+  },
+  "シャーディング": {
+    "keyword": "シャーディング",
+    "definition": " スケーラビリティを向上させるために、1つのブロックチェーンを複数のチェーンに分割し、すべてを並行して実行するプロセス"
+  },
+  "シードフレーズ": {
+    "keyword": "シードフレーズ",
+    "definition": "セットアップ時にウォレットによって生成されるランダムな単語のグループであり、いかなる理由があろうとも、シードフレーズを他人と共有してはいけない"
+  },
+  "スキャムトークン": {
+    "keyword": "スキャムトークン",
+    "definition": "投資家の資金を盗む唯一の目的で起動されるクリプトトークン"
+  },
+  "スケーラビリティ": {
+    "keyword": "スケーラビリティ",
+    "definition": "A blockchain’s capability to handle a growing amount of work, transactions, and usage with minimal disruption for users."
+  },
+  "ステーキング": {
+    "keyword": "ステーキング",
+    "definition": "一定時間のスマートコントラクトへのクリプトの一部の一時的なコミットメントの利益を得るための交換(報酬)"
+  },
+  "ステーク": {
+    "keyword": "ステーク",
+    "definition": "クリプトプロトコルにロックされた金融資産の量で、そのプロトコルに対する誰かの金銭的コミットメント"
+  },
+  "スマートコントラクト": {
+    "keyword": "スマートコントラクト",
+    "definition": "コントラクトの条件を自動的に実行するコンピューターコード"
+  },
+  "スリッページ": {
+    "keyword": "スリッページ",
+    "definition": "取引が成立しやすくなる買値の変化"
+  },
+  "スリッページの許容範囲": {
+    "keyword": "スリッページの許容範囲",
+    "definition": "取引が実行される前に価格がどのくらい変化するか"
+  },
+  "スワップ": {
+    "keyword": "スワップ",
+    "definition": "あるトークンから別のトークンへのトレード"
+  },
+  "セキュリティ": {
+    "keyword": "セキュリティ",
+    "definition": "ブロックチェーンがハッキング、コード搾取、経済的搾取などの攻撃に耐え、通常通り機能し続ける能力"
+  },
+  "ゼロ知識": {
+    "keyword": "ゼロ知識",
+    "definition": "一方の当事者がステートメントについての追加情報を明らかにすることなく有効であることを証明する数学的手法"
+  },
+  "ソーシャルエンジニアリング": {
+    "keyword": "ソーシャルエンジニアリング",
+    "definition": "Manipulating someone into sharing sensitive or confidential information such as passwords or seed phrases."
+  },
+  "チェーン": {
+    "keyword": "チェーン",
+    "definition": "データのブロックを結合し、変更できないデータベースを形成"
+  },
+  "デジタル署名": {
+    "keyword": "デジタル署名",
+    "definition": "デジタル空間における個人スタンプまたは物理的な署名の機能を提供する各ユーザーの固有の識別子"
+  },
+  "トラストレス": {
+    "keyword": "トラストレス",
+    "definition": "人や機関の信頼を必要とせずに活動できる"
+  },
+  "トランザクション": {
+    "keyword": "トランザクション",
+    "definition": "ブロックチェーン上で、転送、金銭的またはその他の記録"
+  },
+  "トランザクションのファイナリティ": {
+    "keyword": "トランザクションのファイナリティ",
+    "definition": "トランザクションが有効かつ最終的であることを確認するのに要する時間で、その後にトランザクションは元に戻されたり変更されたりしない"
+  },
+  "トランザクションスループット": {
+    "keyword": "トランザクションスループット",
+    "definition": "ブロックチェーンが一度に処理できるトランザクションの数で、通常は1秒あたりのトランザクション数（TPS）で測定される"
+  },
+  "トランザクションハッシュ": {
+    "keyword": "トランザクションハッシュ",
+    "definition": "各トランザクションのユニークな識別子で、取引データと取引送信者のデジタル署名と取引の重複を避けるための一回限りの使用番号から派生する"
+  },
+  "トレード": {
+    "keyword": "トレード",
+    "definition": "資産や金銭を価値あるものと交換する"
+  },
+  "トークン": {
+    "keyword": "トークン",
+    "definition": "既存のブロックチェーン上に構築された資産や証書を表すことができる単位"
+  },
+  "トークンの割り当て": {
+    "keyword": "トークンの割り当て",
+    "definition": "ウォレットとスマートコントラクトの間の合意により、特定のトークンへのアクセスが制限されたり無制限になります。"
+  },
+  "トークンペア": {
+    "keyword": "トークンペア",
+    "definition": "流動性プールを構成する2つの関連クリプト"
+  },
+  "トークン配布": {
+    "keyword": "トークン配布",
+    "definition": "トークンが異なるステークホルダーグループに割り当てられる"
+  },
+  "ネットワークガバナンス": {
+    "keyword": "ネットワークガバナンス",
+    "definition": "分散型コミュニティがネットワーク機能/アップグレードに関する合意に達するプロセス"
+  },
+  "ハッシュ": {
+    "keyword": "ハッシュ",
+    "definition": "情報のデジタル指紋"
+  },
+  "ハッシュ関数": {
+    "keyword": "ハッシュ関数",
+    "definition": "一方向のみの計算が容易な関数で、入力をリバースエンジニアリングすることはほぼ不可能であり、与えられた入力に対してユニークな出力を機能的に保証する"
+  },
+  "ハードウェアウォレット": {
+    "keyword": "ハードウェアウォレット",
+    "definition": "A type of self-custody wallet that stores private keys offline in a physical hardware device."
+  },
+  "パブリック": {
+    "keyword": "パブリック",
+    "definition": "パブリックブロックチェーンは誰でもブロックチェーン台帳を閲覧することができる"
+  },
+  "パーミッションレス": {
+    "keyword": "パーミッションレス",
+    "definition": "エンティティの許可を必要としない"
+  },
+  "ピアツーピア": {
+    "keyword": "ピアツーピア",
+    "definition": "仲介者または管理エンティティを必要としない2つの当事者間の取引"
+  },
+  "フィッシング": {
+    "keyword": "フィッシング",
+    "definition": "A type of social engineering attack where the attacker poses as a trusted person or organization to trick victims into sharing sensitive information or sending them money."
+  },
+  "フォーク": {
+    "keyword": "フォーク",
+    "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
+  },
+  "ブリッジ": {
+    "keyword": "ブリッジ",
+    "definition": "2つの異なるブロックチェーンネットワークが互いに通信し、資産を交換することを可能にする接続"
+  },
+  "ブリッジの検証": {
+    "keyword": "ブリッジの検証",
+    "definition": "検証するブリッジコントラクトは、引き出しが有効かどうかを判断するために外部の権限を信頼する必要がなくなる新しいデザインである"
+  },
+  "ブロック": {
+    "keyword": "ブロック",
+    "definition": "ブロックチェーン上のトランザクションのグループ"
+  },
+  "ブロックエクスプローラ": {
+    "keyword": "ブロックエクスプローラ",
+    "definition": "ブロックチェーンデータの検索と探索ツール"
+  },
+  "ブロックスペース": {
+    "keyword": "ブロックスペース",
+    "definition": "ブロックチェーン上で、情報の保存やコードの実行に使用できるスペースの量"
+  },
+  "ブロックチェーン": {
+    "keyword": "ブロックチェーン",
+    "definition": "記録されたトランザクションの共有された、変更不可能なデータベース、または元帳"
+  },
+  "ブロックチェーンのトリレンマ": {
+    "keyword": "ブロックチェーンのトリレンマ",
+    "definition": "セキュリティ、スケーラビリティ、分散化の3つのブロックチェーンのすべての必要性を説明する問題"
+  },
+  "ブロックチェーンアーキテクチャ": {
+    "keyword": "ブロックチェーンアーキテクチャ",
+    "definition": "ブロックチェーン技術にデータが格納される仕組み"
+  },
+  "ブロックハッシュ": {
+    "keyword": "ブロックハッシュ",
+    "definition": "各ブロックファイルに固有の識別子があり、各新しいブロックは前のブロックのブロックハッシュを参照し、単一ファイル連結ブロックチェーンを形成する"
+  },
+  "ブロック報酬": {
+    "keyword": "ブロック報酬",
+    "definition": "新しい有効なブロックの提案者に与えられたブロックチェーンのネイティブアセットの量"
+  },
+  "ブロック生成者": {
+    "keyword": "ブロック生成者",
+    "definition": "ハードウェアがブロックのトランザクションを検証し、ほとんどのPoSブロックチェーンで次のブロックを開始するように選択されたユーザー"
+  },
+  "ベット": {
+    "keyword": "ベット",
+    "definition": "より大きな報酬と引き換えにお金を賭ける"
+  },
+  "ペグ": {
+    "keyword": "ペグ",
+    "definition": "2つ以上の資産間の価値等価性を維持する方法"
+  },
+  "ホットウォレット": {
+    "keyword": "ホットウォレット",
+    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
+  },
+  "メタアグリゲーター": {
+    "keyword": "メタアグリゲーター",
+    "definition": "他のアグリゲーターを追加の概要レイヤーにまとめるツール"
+  },
+  "リカバリーフレーズ": {
+    "keyword": "リカバリーフレーズ",
+    "definition": "ウォレットの公開鍵と秘密鍵を生成するために使用される12〜24単語のリスト"
+  },
+  "レッドフラッグ": {
+    "keyword": "レッドフラッグ",
+    "definition": "危険の警告サイン"
+  },
+  "ロールアップ": {
+    "keyword": "ロールアップ",
+    "definition": "L2スケーリングソリューションは、多数のオフチェーントランザクションを処理し、それらを単一の大きなオンチェーントランザクションに集約することを可能にし、トランザクションのスループットを向上させ、コストを削減する"
+  },
+  "不正証明": {
+    "keyword": "不正証明",
+    "definition": "トランザクションが無効で詐欺が発生していることの証拠"
+  },
+  "中央集権型取引所": {
+    "keyword": "中央集権型取引所",
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+  },
+  "二段階認証": {
+    "keyword": "二段階認証",
+    "definition": "オンラインアカウントにアクセスしようとする人が本人であることを認証するために使用されるセキュリティの追加レイヤー"
+  },
+  "代替l1": {
+    "keyword": "代替L1",
+    "definition": "イーサリアムとビットコイン以外の L1ブロックチェーン"
+  },
+  "仲介トークン": {
+    "keyword": "仲介トークン",
+    "definition": "取引ルートの途中にあるトークンで、始点や終点にあるトークンではない"
+  },
+  "価格への影響": {
+    "keyword": "価格への影響",
+    "definition": "取引ボリュームによるDEX上での価格の変化"
+  },
+  "価格への影響:": {
+    "keyword": "価格への影響:",
+    "definition": "取引ボリュームによるDEX上での価格の変化"
+  },
+  "借り手": {
+    "keyword": "借り手",
+    "definition": "資産を借りるために貸し手に利子を支払うこと"
+  },
+  "公共財": {
+    "keyword": "公共財",
+    "definition": "社会のすべてのメンバーに利用可能な商品またはサービス"
+  },
+  "公開鍵": {
+    "keyword": "公開鍵",
+    "definition": "自身のアドレスで、他の人がクリプトを送信するためのリファレンスポイントを与える"
+  },
+  "分散型": {
+    "keyword": "分散型",
+    "definition": "単一の権限やエンティティがブロックチェーンデータを制御するべきではないという原則"
+  },
+  "分散型取引所": {
+    "keyword": "分散型取引所",
+    "definition": "信頼できる仲介者を必要とせずに交換を容易にするプロトコル"
+  },
+  "分散型金融": {
+    "keyword": "分散型金融",
+    "definition": "ブロックチェーン上でホストされる、セルフカストディファイナンスツールのセット"
+  },
+  "分散的な": {
+    "keyword": "分散的な",
+    "definition": "単一の権限やエンティティがデータを管理することはない"
+  },
+  "割り当て": {
+    "keyword": "割り当て",
+    "definition": "通常はスマートコントラクトであるエンティティを許可しており、トランザクションで指定された量のトークンを使用する権利"
+  },
+  "収入": {
+    "keyword": "収入",
+    "definition": "報酬と引き換えに価値を提供する"
+  },
+  "取引ルート": {
+    "keyword": "取引ルート",
+    "definition": "トークンの開始から取引でトークンの終了までの経路の計画"
+  },
+  "台帳": {
+    "keyword": "台帳",
+    "definition": "発生したすべてのトランザクションの記録"
+  },
+  "台帳...": {
+    "keyword": "台帳...",
+    "definition": "発生したすべてのトランザクションの記録"
+  },
+  "委任": {
+    "keyword": "委任",
+    "definition": "特定の責任を他者に与えること、形だけの議決権を委任すること"
+  },
+  "委任者": {
+    "keyword": "委任者",
+    "definition": "特定の責任を他者に与えること、形だけの議決権を委任すること"
+  },
+  "市場価格": {
+    "keyword": "市場価格",
+    "definition": "特定のトークン、または市場セクターの合計値"
+  },
+  "投資": {
+    "keyword": "投資",
+    "definition": "DeFi技術を使用するコイン/トークンを購入する"
+  },
+  "担保": {
+    "keyword": "担保",
+    "definition": "ローンの返済を担保するために、借り手が貸し手に特定の資産を質入れする"
+  },
+  "拒否": {
+    "keyword": "拒否",
+    "definition": "ガバナンス提案の拒否の投票"
+  },
+  "支払": {
+    "keyword": "支払",
+    "definition": "クリプトを商品やサービスの支払いに使用する"
+  },
+  "支払いチャネル": {
+    "keyword": "支払いチャネル",
+    "definition": "各トランザクションをブロックチェーンに記録することなく、2つの当事者が複数回取引できるようにすること"
+  },
+  "検閲への耐性": {
+    "keyword": "検閲への耐性",
+    "definition": "政府も企業も、何が許され、何が許されないかを決めることはできない"
+  },
+  "決済レイヤー": {
+    "keyword": "決済レイヤー",
+    "definition": "確定した取引から資産交換の詳細を記録するブロックチェーンの最下層。メインネットイーサリアムはイーサリアムのL2スケーリングソリューションの決済レイヤー"
+  },
+  "決済時間": {
+    "keyword": "決済時間",
+    "definition": "トランザクションが確認されるまでの時間"
+  },
+  "流動性": {
+    "keyword": "流動性",
+    "definition": "取引可能なトークンの数量"
+  },
+  "流動性プール": {
+    "keyword": "流動性プール",
+    "definition": "パーミッションレスなトークン交換を容易にするトークンの共同金庫"
+  },
+  "秘密鍵": {
+    "keyword": "秘密鍵",
+    "definition": "クリプトを他のアドレスに送信するために、ウォレットへのアクセスを許可する"
+  },
+  "貸し手": {
+    "keyword": "貸し手",
+    "definition": "利子を得るために資産を預ける"
+  },
+  "非同期": {
+    "keyword": "非同期",
+    "definition": "複数の共同作業者間のコミュニケーションで、参加者はメッセージ送信時にその場にいる必要はない"
   }
 }

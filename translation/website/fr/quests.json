@@ -23,10 +23,9 @@
     "Read Entry": "Lire le Manuel"
   },
   "WalletBasics": {
-    "How to setup a MetaMask wallet": "How to setup a MetaMask wallet",
-    "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.": "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.",
-    "Download the browser extension from the official website:": "Download the browser extension from the official website:",
-    "Congrats for connecting your wallet! 👏🙂": "Congrats for connecting your wallet! 👏🙂",
-    "Waiting to detect your wallet ...": "Waiting to detect your wallet ..."
+    "1. Download and install the Zerion wallet from ": "1. Téléchargez et installez le wallet Zerion à partir de ",
+    "If you already have a wallet, move to step 2.": "Si vous avez déjà un wallet, passez à l'étape 2.",
+    "2. Connect your wallet to Bankless Academy": "2. Connectez votre wallet à Bankless Academy",
+    "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Conseil : Consultez l'article du Manuel de l'explorateur intitulé \"{{lesson_title}}\" pour une description détaillée de la quête."
   }
 }
