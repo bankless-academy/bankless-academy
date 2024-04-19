@@ -199,9 +199,9 @@ Poiché la tua `chiave privata` sblocca l'accesso al tuo `portafoglio`, mantener
 
 I servizi di `portafogli custoditi` includono scambi di criptovalute come Coinbase e Kraken. **Loro sono i 'custodi' del tuo portafoglio** — si occupano delle tue chiavi private per te. Accedi ai loro servizi come a qualsiasi altro sito web (con un login email e una password reimpostabile).
 
-Per alcuni potrebbe essere l'unica cosa di cui hanno bisogno, ma è necessario fidarsi di queste terze parti per proteggere i propri asset di criptovalute e consentirne l'accesso quando si desidera scambiarli o inviarli da qualche parte. Inoltre, il tuo accesso ad alcune applicazioni web3 potrebbe essere limitato.
+Questo potrebbe essere sufficiente per alcune persone, ma richiede di affidarsi a terze parti per proteggere i tuoi beni cripto e garantirti l'accesso quando vuoi scambiarli o inviarli da qualche parte. Inoltre, il tuo accesso ad alcune applicazioni web3 potrebbe essere limitato.
 
-![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-29ed2b65.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
 # Knowledge Check 4
 
@@ -217,15 +217,15 @@ Puoi avere il controllo della tua chiave privata con un portafoglio custodito?
 
 # Portafogli Non-custoditi
 
-Viene definito un `portafoglio di autocustodia` (come MetaMask o Trezor) quando si ha il pieno controllo della propria `chiave privata`. **Non hai alcun custode**, e sei solo tu a essere responsabile della sicurezza della tua chiave privata.
+Viene definito un `portafoglio di autocustodia` (come Zerion o Trezor) quando si ha il pieno controllo della propria `chiave privata`. **Non hai alcun custode**, e sei solo tu a essere responsabile della sicurezza della tua chiave privata.
 
 Questi portafogli offrono la più ampia gamma di accesso e libertà nel mondo `web3`. Non devi mai preoccuparti che una terza parte congeli o gestisca male i tuoi fondi.
 
-Il compromesso sta nel rischio: se perdi l'accesso alla `frase di recupero`, o la chiave privata viene compromessa, spesso c'è molto poco che puoi fare per ripristinare l'accesso al tuo portafoglio.
+Il compromesso sta nel rischio: se perdi l'accesso alla tua `frase di recupero`, o la tua chiave privata viene compromessa, spesso c'è molto poco che puoi fare per ripristinare l'accesso al portafoglio.
 
 Qualunque percorso tu scelga, ti conviene avere familiarità e dimestichezza con la sicurezza del tuo portafoglio. Ti daremo alcuni consigli prima di completare questa lezione.
 
-![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-aee2708b.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/non-custodial-wallet-833c3d6b.svg)
 
 # Knowledge Check 5
 
@@ -243,13 +243,13 @@ Sei responsabile della tua chiave privata con un portafoglio in auto-custodia?
 
 Sentirai i termini "portafoglio caldo" (hot wallet) e "portafoglio freddo" (cold wallet) abbastanza spesso nel mondo web3.
 
-Un `portafoglio caldo` è un portafoglio ospitato dentro un software online. Similar to many `web2` apps, a wallet app is consistently connected to the internet.
+Un `hot wallet` è un portafoglio a cui si accede tramite un'app sul proprio dispositivo, ad esempio l'app Zerion. Come molte applicazioni `web2`, un'app portafoglio è costantemente connessa a Internet.
 
-Your `private key` is encrypted and stored inside the wallet app, and is only accessed when you interact with the blockchain. Questi portafogli sono connessi a Internet finché il tuo dispositivo è online e vengono chiamati 'portafogli caldi' proprio per questa connessione 'calda' attraverso la rete.
+La tua `chiave privata` è criptata e memorizzata all'interno dell'app del portafoglio, ed è accessibile solo quando interagisci con la blockchain. Questi portafogli sono chiamati "portafogli caldi" per questa connessione "calda" tra Internet e la tua chiave privata.
 
-Hot wallets are convenient for small day-to-day interactions, much like a physical wallet you keep in your pocket. Questo è il tipo di portafoglio che creeremo oggi.
+Gli hot wallet sono comodi per le piccole interazioni quotidiane, proprio come un portafoglio fisico da tenere in tasca. Questo è il tipo di portafoglio che creeremo oggi.
 
-![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-bdf8ae51.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-9356886d.svg)
 
 # Portafogli Freddi (Cold Wallets)
 
