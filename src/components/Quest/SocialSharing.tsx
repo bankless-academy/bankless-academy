@@ -66,7 +66,9 @@ const SocialSharing = (
     : 'TWEET'
 
   const platform = STAMP_PLATFORMS['twitter']
-  const stamp = 'twitterAccountAgeGte#180' in passportLS.stamps
+  const stamp =
+    passportLS?.stamps?.length &&
+    'twitterAccountAgeGte#180' in passportLS.stamps
 
   async function checkPassport() {
     // setIsLoading(true)
