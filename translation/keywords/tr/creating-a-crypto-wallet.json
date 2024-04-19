@@ -10,9 +10,9 @@
     "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
   },
   "cryptocurrency": {
-    "keyword": "cryptocurrency",
-    "keyword_plural": "cryptocurrencys",
-    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+    "keyword": "kripto para",
+    "keyword_plural": "kripto paralar",
+    "definition": "Merkezi otoriteler yerine blok zinciri teknolojisi tarafından barındırılan bir dijital para birimi."
   },
   "wallet app": {
     "keyword": "wallet app",
