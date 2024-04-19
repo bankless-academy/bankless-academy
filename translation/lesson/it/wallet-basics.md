@@ -1,9 +1,9 @@
 ---
 TITLE: Le Basi Del Portafoglio
-DESCRIPTION: What is a crypto wallet? Learn more and create your first wallet today!
+DESCRIPTION: Cos'è un portafoglio di criptovalute? Scopri di più e crea il tuo primo portafoglio oggi stesso!
 LANGUAGE: Italiano
 WRITERS: Ap0ll0517, Jordy, Tetranome
-TRANSLATORS: OrnellaWeb3, fa3io
+TRANSLATORS: fa3io
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -29,19 +29,19 @@ ________________________________________________________________________________
 
 # Introduzione al Portafoglio
 
-**Greetings Bankless Explorer!**
+**Ciao Bankless Explorer!**
 
-It’s time to dive deeper on your journey into the blockchain multiverse. Ogni esploratore di questo spazio ha bisogno, prima o poi, di creare un portafoglio digitale.
+È il momento di immergersi più in profondità nel tuo viaggio attraverso il multiverso blockchain. Ogni esploratore di questo spazio ha bisogno, prima o poi, di creare un portafoglio digitale.
 
-I portafogli sono come gli account a cui sei abituato nel `web2`. You’ll use a wallet to log into the blockchain ecosystem, also known as `web3`, where you’ll be able to use `cryptocurrency` and connect to `blockchain apps`!
+I portafogli sono come gli account a cui sei abituato nel `web2`. Userai un portafoglio per accedere all'ecosistema blockchain, noto anche come `web3`, dove sarai in grado di utilizzare le criptovalute `` e connetterti alle app `blockchain`!
 
-In questa lezione, ti introdurremo ai portafogli, ai tipi di portafogli, alle loro basi di sicurezza e concluderemo con un video su come impostarne uno. We’ll end with a guide on how to set one up and access **the Ethereum blockchain — the home of Bankless Academy.**
+In questa lezione vi presenteremo i portafogli, il loro funzionamento e come mantenere al sicuro le vostre criptovalute. Concluderemo con una guida su come configurarne uno e accedere **alla blockchain di Ethereum, la casa di Bankless Academy**.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-1d445d4b.png)
 
 # Definizione di Portafoglio
 
-Cos'è esattamente un portafoglio?
+Cos'è esattamente un portafoglio crypto?
 
 La definizione breve è: un programma informatico che usi per interagire con una `blockchain`.
 
