@@ -33,7 +33,7 @@ ________________________________________________________________________________
 
 È il momento di immergersi più in profondità nel tuo viaggio attraverso il multiverso blockchain. Ogni esploratore di questo spazio ha bisogno, prima o poi, di creare un portafoglio digitale.
 
-I portafogli sono come gli account a cui sei abituato nel `web2`. Userai un portafoglio per accedere all'ecosistema blockchain, noto anche come `web3`, dove sarai in grado di utilizzare le criptovalute `` e connetterti alle app `blockchain`!
+I portafogli sono come gli account a cui sei abituato nel `web2`. Userai un portafoglio per accedere all'ecosistema blockchain, noto anche come `web3`, dove sarai in grado di utilizzare le `criptovalute` e connetterti alle app `blockchain`!
 
 In questa lezione vi presenteremo i portafogli, il loro funzionamento e come mantenere al sicuro le vostre criptovalute. Concluderemo con una guida su come configurarne uno e accedere **alla blockchain di Ethereum, la casa di Bankless Academy**.
 
@@ -47,7 +47,7 @@ La breve definizione è: un account su una `blockchain`, utilizzato per memorizz
 
 È come avere la propria cassaforte personale su Internet, di cui si possiede l'unica chiave per aprirla. Allo stesso tempo, questa cassaforte è simile a un normale account di un sito web. Si può usare per fare acquisti, inviare o ricevere `criptovalute` e interagire con una blockchain.
 
-Tuttavia, a differenza dei normali account `web2` a cui sei abituato, un singolo portafoglio può accedere a un'intera blockchain e a un gran numero di applicazioni blockchain. È come possedere un unico account per tutto Internet.
+Tuttavia, a differenza dei normali account `web2` a cui sei abituato, un singolo portafoglio può accedere a tutta la blockchain e a un gran numero di applicazioni blockchain. È come possedere un unico account per tutto Internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
@@ -59,7 +59,7 @@ Se ti senti a tuo agio nello scaricare e installare software sul tuo computer (o
 
 La parte più intricata nella gestione di un portafoglio è garantirne la sicurezza, argomento che approfondiremo a breve!
 
-Anche la scelta della tua app `portafoglio` potrebbe risultare scoraggiante. Questa è l'app che installerai sul tuo dispositivo per accedere al tuo portafoglio sulla blockchain. Consigliamo di iniziare con l'app Zerion wallet: è facile da utilizzare e ha accesso alle blockchain più diffuse. Man mano che ti sentirai più a tuo agio nello spazio `web3`, è probabile che esplorerai altri fornitori e creerai più portafogli.
+Anche la scelta della tua `app portafoglio` potrebbe risultare scoraggiante. Si tratta dell'applicazione da installare sul proprio dispositivo per accedere al proprio portafoglio sulla blockchain. Consigliamo di iniziare con l'app Zerion wallet: è facile da utilizzare e ha accesso alle blockchain più diffuse. Man mano che ti sentirai più a tuo agio nello spazio `web3`, è probabile che esplorerai altri fornitori e creerai più portafogli.
 
 ![](Crea e gestisci in modo sicuro il tuo primo portafoglio di criptovalute.)
 
@@ -101,17 +101,17 @@ Esempio: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
 È possibile creare versioni più facili da ricordare attraverso alcuni servizi web3, ma quella è una lezione per un'altra volta.
 
-Si può anche pensare a una chiave pubblica come l'indirizzo di una casella postale. È pubblica, chiunque può vederla, e può dire agli altri dove possono inviarti beni cripto — senza rivelare nulla di personale su di te.
+Si può anche pensare a una chiave pubblica come a un indirizzo di casa. È pubblica, chiunque può vederla, e può dire agli altri dove possono inviarti beni cripto — senza rivelare nulla di personale su di te.
 
-È perfettamente sicuro condividere la tua **chiave pubblica**.
+È perfettamente sicuro condividere la **chiave pubblica** del tuo portafoglio.
 
-**Nota:** a volte un singolo account di un portafoglio può contenere molteplici chiavi pubbliche (e `private`).
+**Nota:** un singolo account di un portafoglio può contenere molteplici coppie di chiavi pubbliche/`private`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-6d17439c.svg)
 
 # La chiave privata del tuo portafoglio
 
-Se la chiave pubblica è come una casella postale, allora la `chiave privata` è come la chiave della casella stessa. È la “password” per i tuoi fondi e beni.
+Se la chiave pubblica è come l'indirizzo di una casa, la `chiave privata` è come la chiave della porta d'ingresso. È la “password” per i tuoi fondi e beni.
 
 Esempio: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
@@ -119,7 +119,7 @@ Esempio: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
 La maggior parte delle persone raccomanda di non salvarla nemmeno digitalmente. Chiunque abbia accesso a una chiave privata ha accesso a tutto ciò che si trova nel `portafoglio`.
 
-Questo è più di una semplice password. Non puoi reimpostarla se perdi l'accesso.
+Questa è più di una semplice password. Non puoi reimpostarla se perdi l'accesso.
 
 Fortunatamente, la maggior parte delle `app blockchain` non richiedono di digitare una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione sulla blockchain. La chiave privata di solito opera silenziosamente in background.
 
@@ -127,7 +127,7 @@ Fortunatamente, la maggior parte delle `app blockchain` non richiedono di digita
 
 # Knowledge Check 2
 
-La tua chiave pubblica è come il tuo _____ e la tua chiave privata è come il tuo _____ .
+La tua chiave pubblica è come il tuo _____ e la tua chiave privata è come la tua _____ .
 
 - [ ] IBAN / Numero di Conto Corrente
 
@@ -135,9 +135,9 @@ La tua chiave pubblica è come il tuo _____ e la tua chiave privata è come il t
 
 - [ ] Indirizzo / Codice postale
 
-> ℹ️ Riprova! La tua chiave privata non dovrebbe essere condivisa con altri.
+> ℹ️ Riprova! Questi sono esempi di informazioni pubbliche e private, ma non danno accesso agli tuoi beni.
 
-- [ ] Casella postale / Chiave della casella
+- [ ] Indirizzo della casa / Chiave della casa
 
 > ℹ️ Corretto! La tua chiave pubblica permette agli altri di identificarti, mentre la tua chiave privata controlla i beni al suo interno.
 
@@ -149,11 +149,11 @@ La tua chiave pubblica è come il tuo _____ e la tua chiave privata è come il t
 
 Quando configuri un nuovo portafoglio, il software genera una `frase di recupero` unica.
 
-A volte chiamata anche “seed phrase” o "frase di recupero segreta", questa sequenza di parole può essere utilizzata per accedere al tuo portafoglio e ai tuoi asset criptati se:
+A volte chiamata anche “seed phrase” o "frase segreta", questa sequenza di parole può essere utilizzata per accedere al tuo portafoglio e ai tuoi beni cripto se:
 
-- La tua app `portafoglio` o dispositivo si guasta inaspettatamente o viene danneggiato.
+- La tua `app portafoglio` o dispositivo si guasta inaspettatamente o viene danneggiato.
 - Il dispositivo è stato smarrito o rubato.
-- Vuoi accedere al tuo account portafoglio tramite l'app portafoglio su un computer o dispositivo differente.
+- Vuoi accedere al tuo account portafoglio tramite altri dispositivi.
 
 La maggior parte delle frasi di recupero è costituita da un elenco di 12-24 parole che, combinate tra loro, generano una chiave univoca. Questi dati vengono utilizzati per generare sia la `chiave pubblica` che la `chiave privata` per il tuo portafoglio.
 
