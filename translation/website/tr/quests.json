@@ -17,15 +17,17 @@
     "1. Connect your wallet to Bankless Academy": "1. Connect your wallet to Bankless Academy",
     "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
     "See the delegation platform here": "See the delegation platform here",
-    "Tip: ": "Tip: ",
+    "Tip": "Tip",
     "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
     "Refresh": "Refresh",
     "Read Entry": "Read Entry"
   },
   "WalletBasics": {
+    "Create your first crypto wallet, with Zerion.": "Create your first crypto wallet, with Zerion.",
     "1. Download and install the Zerion wallet from ": "1. Zerion cüzdanını şu adresten indirip yükleyin ",
     "If you already have a wallet, move to step 2.": "Zaten bir cüzdanınız varsa 2. adıma geçin.",
     "2. Connect your wallet to Bankless Academy": "2. Cüzdanınızı Bankless Academy'ye bağlayın",
-    "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "İpucu: Görevin adım adım anlatımı için Kaşifin El Kitabı'ndaki '{{lesson_title}}' yazısına göz atın."
+    "Tip": "Tip",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest."
   }
 }
