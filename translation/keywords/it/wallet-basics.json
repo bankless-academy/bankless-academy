@@ -2,35 +2,35 @@
   "web2": {
     "keyword": "web2",
     "keyword_plural": "web2s",
-    "definition": "The current state of the internet, without blockchain infrastructure."
+    "definition": "Lo stato attuale di Internet, senza l'infrastruttura blockchain."
   },
   "web3": {
     "keyword": "web3",
     "keyword_plural": "web3s",
-    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
+    "definition": "Si riferisce all'internet delle blockchain, dove gli utenti possono gestire autonomamente i propri beni e dati."
   },
   "cryptocurrency": {
-    "keyword": "cryptocurrency",
-    "keyword_plural": "cryptocurrencys",
-    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+    "keyword": "criptovaluta",
+    "keyword_plural": "criptovalute",
+    "definition": "Una valuta digitale ospitata dalla tecnologia blockchain piuttosto che da autorità centralizzate."
   },
   "blockchain apps": {
-    "keyword": "blockchain apps",
+    "keyword": "applicazioni blockchain",
     "keyword_plural": "blockchain appss",
-    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
+    "definition": "Applicazioni blockchain che ti permettono di scambiare criptovalute, utilizzare i social media web3, fare donazioni benefiche, o persino imparare onchain — come alla Bankless Academy."
   },
   "blockchain": {
     "keyword": "blockchain",
     "keyword_plural": "blockchains",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "Un sistema in cui un registro delle transazioni di criptovalute è mantenuto su più computer in tutto il mondo."
   },
   "wallet app": {
-    "keyword": "wallet app",
+    "keyword": "app portafoglio",
     "keyword_plural": "wallet apps",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+    "definition": "Un'applicazione sul computer o sul telefono, utilizzata per connettersi al proprio portafoglio sulla blockchain."
   },
   "public key": {
-    "keyword": "public key",
+    "keyword": "chiave pubblica",
     "keyword_plural": "public keys",
     "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
   },
