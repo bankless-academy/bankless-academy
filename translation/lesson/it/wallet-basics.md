@@ -179,17 +179,17 @@ La tua frase di recupero è essenzialmente una versione più facile da leggere d
 
 Così come esistono molti tipi di software per computer, esistono molti tipi di portafogli. Vediamo le quattro categorie principali:
 
-- **Portafogli custoditi:** dove una terza parte è responsabile delle tue chiavi private.
-- **Portafogli in auto-custodia (non custoditi):** dove sei tu a essere responsabile delle tue chiavi private.
+- 🏦 **Portafogli custoditi:** dove una terza parte è responsabile delle tue chiavi private.
+- 👤 **Portafogli in auto-custodia (non custoditi):** dove sei tu a essere responsabile delle tue chiavi private.
 
 Ci sono due tipi di `portafoglio in auto-custodia`:
 
-- **Portafogli caldi (hot):** software sul tuo desktop o telefono.
-- **Portafogli freddi (cold):** un dispositivo hardware (come una chiavetta USB) che conservi in un luogo sicuro.
+- 🔥 **Portafogli caldi (hot):** software sul tuo desktop o telefono.
+- 🧊 **Portafogli freddi (cold):** un dispositivo hardware (come una chiavetta USB) che conservi in un luogo sicuro.
 
 Ogni tipo di portafoglio serve per uno scopo diverso. Molti utenti esperti ne hanno uno per ogni tipo!
 
-Non preoccuparti, oggi creeremo un solo tipo portafoglio.
+Non preoccuparti, oggi creeremo un solo tipo di portafoglio.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
@@ -197,9 +197,9 @@ Non preoccuparti, oggi creeremo un solo tipo portafoglio.
 
 Poiché la tua `chiave privata` sblocca l'accesso al tuo `portafoglio`, mantenerla privata e sicura è molto importante!
 
-I servizi di `portafogli custoditi` includono scambi di criptovalute come Coinbase e Kraken. **Loro sono i 'custodi' del tuo portafoglio** — si occupano delle tue chiavi private per te. Accedi ai loro servizi come a qualsiasi altro sito web (con un login email e una password reimpostabile).
+I servizi di `portafogli custoditi` includono piattaforme di scambio di criptovalute come Coinbase e Kraken. **Loro sono i 'custodi' del tuo portafoglio** — si occupano delle tue chiavi private per te. Accedi ai loro servizi come a qualsiasi altro sito web (con un login email e una password reimpostabile).
 
-Questo potrebbe essere sufficiente per alcune persone, ma richiede di affidarsi a terze parti per proteggere i tuoi beni cripto e garantirti l'accesso quando vuoi scambiarli o inviarli da qualche parte. Inoltre, il tuo accesso ad alcune applicazioni web3 potrebbe essere limitato.
+Questo potrebbe essere sufficiente per alcune persone, ma richiede di affidarsi a terze parti per proteggere i tuoi beni cripto e garantirti l'accesso quando vuoi scambiarli o inviarli da qualche parte. Inoltre, il tuo accesso ad alcune `app blockchain` potrebbe essere limitato.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
@@ -241,7 +241,7 @@ Sei responsabile della tua chiave privata con un portafoglio in auto-custodia?
 
 # Portafogli Caldi (Hot Wallets)
 
-Sentirai i termini "portafoglio caldo" (hot wallet) e "portafoglio freddo" (cold wallet) abbastanza spesso nel mondo web3.
+Sentirai i termini "portafoglio caldo" (hot wallet) e "portafoglio freddo" (cold wallet) abbastanza spesso nel mondo `web3`.
 
 Un `hot wallet` è un portafoglio a cui si accede tramite un'app sul proprio dispositivo, ad esempio l'app Zerion. Come molte applicazioni `web2`, un'app portafoglio è costantemente connessa a Internet.
 
@@ -253,49 +253,49 @@ Gli hot wallet sono comodi per le piccole interazioni quotidiane, proprio come u
 
 # Portafogli Freddi (Cold Wallets)
 
-Approfondendo il viaggio nel web3, conoscerai un panorama ricco di interessanti compromessi tecnologici.
+Approfondendo il viaggio nel `web3`, conoscerai un panorama ricco di interessanti compromessi tecnologici.
 
-`I portafogli freddi` garantiscono una maggiore sicurezza al costo della comodità. A cold wallet is one where your `private key` is stored on a dedicated hardware device (like a memory stick or external hard drive). Devi collegare fisicamente il dispositivo a un computer affinché il portafoglio possa accedere a Internet. Your private key is never directly connected to the internet. I portafogli freddi sono chiamati così proprio per questa connessione 'fredda' a Internet.
+I `Cold Wallets` garantiscono una maggiore sicurezza a scapito della convenienza. Un portafoglio freddo è quello in cui la tua `chiave privata` è memorizzata su un dispositivo hardware dedicato (come una chiavetta USB o un disco rigido esterno). Devi collegare fisicamente il portafoglio hardware al tuo computer per accedere al tuo portafoglio sulla blockchain. La tua chiave privata non è mai collegata direttamente a Internet. I portafogli freddi sono chiamati così proprio per questa connessione 'fredda' a Internet.
 
 Sono ampiamente considerati più sicuri dei `portafogli caldi`, perché la tua `chiave privata` è conservata offline — fuori dalla portata degli aggressori digitali.
 
 Ledger e Trezor sono esempi di `portafogli freddi`
 
-![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-7b5aeb35.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-0e3183d1.svg)
 
 # Knowledge Check 6
 
-Quale tipo di portafoglio è considerato più sicuro?
+Quale dei seguenti tipi di portafoglio è considerato il più sicuro?
+
+- [ ] Tutti i portafogli sono più o meno uguali
+
+> ℹ️ Riprova! Esistono vari compromessi per ogni tipo di portafoglio, tra cui il livello di sicurezza.
 
 - [ ] Un portafoglio caldo
 
-> ℹ️ Riprova! Un portafoglio mobile è più sicuro di un portafoglio per browser, ma non è il tipo di portafoglio più sicuro.
-
-- [ ] Un portafoglio custodito
-
 > ℹ️ Riprova! Un portafoglio caldo ha una connessione internet attiva che lo rende più vulnerabile agli attacchi digitali.
 
-- [ ] Un portafoglio mobile
+- [ ] Un portafoglio custodito
 
 > ℹ️ Riprova! La terza parte che detiene le chiavi private può essere hackerata o andare in bancarotta.
 
 - [ ] Un portafoglio freddo
 
-> ℹ️ Corretto! I portafogli freddi non sono attivamente connessi a Internet, il che li rende più resistenti agli attacchi.
+> ℹ️ Corretto! I portafogli freddi non sono attivamente connessi a Internet, il che li rende meno vulnerabili agli attacchi.
 
 # Sicurezza del Portafoglio
 
-Indipendentemente dal fatto che il tuo `portafoglio in auto-custodia` sia caldo o freddo, ci sono molte pratiche di sicurezza intelligenti che dovresti sviluppare.
+Indipendentemente dal fatto che il tuo `portafoglio in auto-custodia` sia caldo o freddo, è fondamentale adottare delle strategie di sicurezza efficaci.
 
-🖊️ Registra la tua `frase di recupero` su un materiale fisico e durevole (come carta laminata, o addirittura acciaio) e conservala in un luogo molto sicuro. Non condividere mai la tua `frase di recupero`, né la tua `chiave privata` con nessuno. **Ricorda, questa è più di una semplice password.**
+🖊️ Registra la tua `frase di recupero` su un materiale fisico e durevole (come carta laminata, o addirittura acciaio) e conservala in un luogo molto sicuro. Non condividere mai la tua `chiave privata` con nessuno. **Ricorda, questa è più di una semplice password.**
 
-🔍 Quando interagisci con una blockchain o invii fondi, anche piccole somme, controlla con molta attenzione i dettagli. I dettagli errati non possono essere modificati dopo un'interazione.
+🔍 Quando interagisci con una blockchain o invii fondi, anche piccole somme, controlla con molta attenzione i dettagli. I dati errati non possono essere modificati dopo un'interazione.
 
-🔭 Dedica del tempo a cercare e raccogliere informazioni su qualsiasi applicazione `web3` con cui prevedi di interagire prima di collegare il tuo portafoglio o firmare transazioni con essa.
+🔭 Dedica un po' di tempo alla ricerca e alla raccolta di informazioni su qualsiasi `applicazione blockchain` con cui intendi interagire prima di collegarvi il tuo portafoglio o di firmare le sue transazioni.
 
-💰 Usa portafogli con piccole somme di denaro per provare cose nuove ed esplorare il web3, e considera l'idea di conservare gli asset di alto valore su account diversi nello stesso portafoglio (ossia evita di mettere tutte le tue cripto uova nello stesso paniere).
+💰 Utilizza portafogli con piccole somme di denaro per provare cose nuove ed esplorare il web3, e considera di distribuire i fondi di alto valore su account diversi nello stesso portafoglio (ossia, evita di mettere tutte le tue cripto uova nello stesso paniere).
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-9cc67e4c.png)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-3a185d90.png)
 
 # Knowledge Check 7
 
@@ -303,31 +303,31 @@ Qual è il modo più sicuro per proteggere la tua frase di recupero?
 
 - [ ] Scrivila su un materiale durevole e conservala in un luogo sicuro.
 
-> ℹ️ Corretto! Una copia di backup fisica conservata in modo sicuro senza tracce digitali è l'unica opzione di archiviazione sicura.
+> ℹ️ Corretto! Un backup fisico conservato in modo sicuro, senza tracce digitali, è l'opzione di archiviazione più sicura.
 
 - [ ] Salvala sul tuo computer e stampala.
 
-> ℹ️ Riprova! If your computer is hacked, your recovery phrase could be found. Anche la stamparla apre molte opportunità di attacco.
+> ℹ️ Riprova! Se il tuo computer venisse hackerato, sarebbe possibile trovare la tua frase di recupero. Anche stamparla apre a molte opportunità di attacco.
 
 - [ ] Fai uno screenshot e salvalo sul tuo telefono.
 
 > ℹ️ Riprova! Se il tuo telefono venisse hackerato, potresti perdere tutti i beni contenuti nel tuo portafoglio.
 
-- [ ] Salvala nel tuo account Dropbox.
+- [ ] Salvala nel tuo gestore di password.
 
-> ℹ️ Riprova! L'uso dei gestori di password ha portato a un gran numero di hack dei portafogli nel 2023.
+> ℹ️ Riprova! Se il tuo gestore di password venisse violato, la tua fase di recupero potrebbe essere divulgata.
 
 # Sei pronto a creare il tuo primo portafoglio!
 
 Ne avrai bisogno se vuoi rivendicare la prova di aver completato questa missione!
 
-Esistono diversi fornitori di `hot wallet` auto-custoditi. Esploreremo il popolare portafoglio MetaMask per il resto di questa lezione poiché:
+Sono disponibili diverse applicazioni di `portafogli caldi` `auto custoditi`. Nel resto della lezione esploreremo il portafoglio Zerion:
 
-- è probabile che sia compatibile con la maggior parte delle app `DeFi`.
-- ⚡ The interface is incredibly smooth and easy to use.
-- ha un'estensione per browser per Chrome, Brave, Edge e Firefox.
-- è disponibile anche come app mobile per utenti Android e iOS.
-- 🗣️ Zerion supports a variety of languages.
+- ⚙️ È compatibile con la maggior parte delle `applicazioni blockchain`.
+- ⚡ L'interfaccia è incredibilmente fluida e facile da usare.
+- 💻 Ha un'estensione del browser per Chrome, Brave, Edge e Opera.
+- 📱 È disponibile anche come applicazione mobile per utenti Android e iOS.
+- 🗣️ Zerion supporta diverse lingue.
 
 The end of the lesson is right around the corner, where we will share your instructions for setting up your wallet with Zerion!
 
