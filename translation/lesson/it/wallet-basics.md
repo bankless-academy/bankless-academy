@@ -37,17 +37,17 @@ I portafogli sono come gli account a cui sei abituato nel `web2`. Userai un port
 
 In questa lezione vi presenteremo i portafogli, il loro funzionamento e come mantenere al sicuro le vostre criptovalute. Concluderemo con una guida su come configurarne uno e accedere **alla blockchain di Ethereum, la casa di Bankless Academy**.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-1d445d4b.png)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-9cc67e4c.png)
 
 # Definizione di Portafoglio
 
 Cos'è esattamente un portafoglio crypto?
 
-La definizione breve è: un programma informatico che usi per interagire con una `blockchain`.
+La breve definizione è: un account su una `blockchain`, utilizzato per memorizzare risorse digitali e accedere ad applicazioni blockchain.
 
-It’s like having your own personal safe on the internet, and you hold the only key for unlocking it. At the same time, this safe is similar to a regular website account. You can use it to make purchases, send or receive `cryptocurrency`, and interact with a blockchain.
+È come avere la propria cassaforte personale su Internet, di cui si possiede l'unica chiave per aprirla. Allo stesso tempo, questa cassaforte è simile a un normale account di un sito web. Si può usare per fare acquisti, inviare o ricevere `criptovalute` e interagire con una blockchain.
 
-A differenza dei normali account a cui sei abituato, un singolo portafoglio ti permette di accedere a un gran numero di app web3, purché il portafoglio sia compatibile con la blockchain su cui è costruita l'app. È come avere un unico account per l'intero Internet.
+Tuttavia, a differenza dei normali account `web2` a cui sei abituato, un singolo portafoglio può accedere a un'intera blockchain e a un gran numero di applicazioni blockchain. È come possedere un unico account per tutto Internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-e8f8f9a8.svg)
 
@@ -57,9 +57,9 @@ Un tempo lo era, ma oggi chiunque può creare facilmente un portafoglio.
 
 Se ti senti a tuo agio nello scaricare e installare software sul tuo computer (o app sul tuo telefono), allora non avrai problemi a creare il tuo primo portafoglio.
 
-La parte più complicata della gestione di un portafoglio consiste nel mantenerlo sicuro, come vedremo in seguito.
+La parte più intricata nella gestione di un portafoglio è garantirne la sicurezza, argomento che approfondiremo a breve!
 
-Choosing your `wallet app` may also feel intimidating. This is the app that you will install on your device to access your wallet on the blockchain. We recommend starting with the Zerion wallet app: it’s user friendly and has access to many popular blockchains. Man mano che ti sentirai più a tuo agio nello spazio web3, è probabile che esplorerai altri fornitori e creerai altri portafogli.
+Anche la scelta della tua app `portafoglio` potrebbe risultare scoraggiante. Questa è l'app che installerai sul tuo dispositivo per accedere al tuo portafoglio sulla blockchain. Consigliamo di iniziare con l'app Zerion wallet: è facile da utilizzare e ha accesso alle blockchain più diffuse. Man mano che ti sentirai più a tuo agio nello spazio `web3`, è probabile che esplorerai altri fornitori e creerai più portafogli.
 
 ![](Crea e gestisci in modo sicuro il tuo primo portafoglio di criptovalute.)
 
@@ -73,7 +73,7 @@ Cos'è un portafoglio?
 
 - [ ] Una criptovaluta
 
-> ℹ️ Riprova! Le criptovalute sono qualcosa che tieni nel tuo portafoglio.
+> ℹ️ Riprova! Le criptovalute sono qualcosa che possiedi all'interno del tuo portafoglio.
 
 - [ ] Un oggetto da collezione digitale
 
@@ -81,17 +81,17 @@ Cos'è un portafoglio?
 
 - [ ] Un account blockchain
 
-> ℹ️ Corretto! I portafogli sono account utilizzati per interagire con una blockchain.
+> ℹ️ Corretto! I portafogli sono account utilizzati per interagire con la blockchain.
 
 # Portafogli & Recupero della Password
 
-Ecco una delle cose più importanti da capire sui portafogli web3: ad oggi non esiste un "reset della password" o la possibilità di frequenti cambiamenti di password.
+Ecco una delle cose più importanti da capire sui portafogli `web3`: **Non esistono "ripristini di password" o "cambi di password".**
 
 La maggior parte di noi è abituata a queste funzionalità. Se dimentichiamo una password, clicchiamo un pulsante, facciamo alcune operazioni e otteniamo una nuova password. Facile.
 
-Con i portafogli, non è così. Per come funziona una blockchain, ai portafogli viene automaticamente assegnato un "nome" e una "password" complessa quando vengono creati (non sarai tu a sceglierli).
+Con i portafogli crypto, non è così. Per come funziona una blockchain, ai portafogli viene automaticamente assegnato un "nome" e una "password" complessa quando vengono creati (non sarai tu a sceglierli).
 
-This address and password combination are impossible to change, although you can always create a new wallet if you need to. Let’s learn a bit more about these special addresses and passwords, so that we can feel confident using them!
+Questa combinazione di indirizzo e password è impossibile da modificare, anche se è sempre possibile creare un nuovo portafoglio se necessario. Scopriamo qualcosa di più su questi indirizzi e password speciali, così da poterci sentire sicuri nel loro utilizzo!
 
 # La chiave pubblica del tuo portafoglio
 
@@ -101,7 +101,7 @@ Esempio: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
 È possibile creare versioni più facili da ricordare attraverso alcuni servizi web3, ma quella è una lezione per un'altra volta.
 
-Si può anche pensare a una chiave pubblica come l'indirizzo di una casella postale. È pubblica, chiunque può vederla, e può dire agli altri dove possono inviarti asset cripto — senza rivelare nulla di personale su di te.
+Si può anche pensare a una chiave pubblica come l'indirizzo di una casella postale. È pubblica, chiunque può vederla, e può dire agli altri dove possono inviarti beni cripto — senza rivelare nulla di personale su di te.
 
 È perfettamente sicuro condividere la tua **chiave pubblica**.
 
@@ -111,15 +111,15 @@ Si può anche pensare a una chiave pubblica come l'indirizzo di una casella post
 
 # La chiave privata del tuo portafoglio
 
-Se la chiave pubblica è come una casella postale, allora la `chiave privata` è come la chiave della casella stessa. È la “password” per i tuoi fondi e asset.
+Se la chiave pubblica è come una casella postale, allora la `chiave privata` è come la chiave della casella stessa. È la “password” per i tuoi fondi e beni.
 
-Quando il tuo `portafoglio` è connesso a una blockchain, puoi fare acquisti, inviare o ricevere `beni digitali` come le criptovalute, interagire con applicazioni web3 e altro ancora.
+Esempio: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
 **Non è mai sicuro condividere questa chiave — potresti perdere il tuo portafoglio e tutto ciò che contiene.**
 
 La maggior parte delle persone raccomanda di non salvarla nemmeno digitalmente. Chiunque abbia accesso a una chiave privata ha accesso a tutto ciò che si trova nel `portafoglio`.
 
-Questo è più di una semplice password. Non è possibile ripristinarla se si perde l'accesso.
+Questo è più di una semplice password. Non puoi reimpostarla se perdi l'accesso.
 
 Fortunatamente, la maggior parte delle applicazioni e dei programmi `web3` non richiedono di digitare faticosamente una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione blockchain. La chiave privata di solito opera silenziosamente in background.
 
