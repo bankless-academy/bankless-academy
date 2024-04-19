@@ -1,9 +1,9 @@
 ---
 TITLE: Le Basi Del Portafoglio
-DESCRIPTION: Crea e gestisci in modo sicuro il tuo primo portafoglio di criptovalute.
+DESCRIPTION: Cos'è un portafoglio di criptovalute? Scopri di più e crea il tuo primo portafoglio oggi stesso!
 LANGUAGE: Italiano
-WRITERS: Ap0ll0517, Tetranome
-TRANSLATORS: OrnellaWeb3, fa3io
+WRITERS: Ap0ll0517, Jordy, Tetranome
+TRANSLATORS: fa3io
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
 FORMAT: LESSON
 ---
@@ -29,29 +29,25 @@ ________________________________________________________________________________
 
 # Introduzione al Portafoglio
 
-**Ciao!**
+**Ciao Bankless Explorer!**
 
-Benvenuti alla Bankless Academy. Siamo entusiasti di guidarti nel tuo viaggio nel `web3`. Ogni esploratore di questo spazio ha bisogno, prima o poi, di creare un portafoglio digitale.
+È il momento di immergersi più in profondità nel tuo viaggio attraverso il multiverso blockchain. Ogni esploratore di questo spazio ha bisogno, prima o poi, di creare un portafoglio digitale.
 
-I portafogli sono come gli account a cui sei abituato nel `web2`. Li userai per accedere alle app e ai siti Web3, ma ci sono anche grandi differenze che sono importanti da capire. Ad esempio, possono contenere criptovaluta.
+I portafogli sono come gli account a cui sei abituato nel `web2`. Userai un portafoglio per accedere all'ecosistema blockchain, noto anche come `web3`, dove sarai in grado di utilizzare le criptovalute `` e connetterti alle app `blockchain`!
 
-Un portafoglio correttamente configurato ti consente di accedere a nuove incredibili possibilità, proteggendo al contempo i tuoi beni e la tua identità online.
+In questa lezione vi presenteremo i portafogli, il loro funzionamento e come mantenere al sicuro le vostre criptovalute. Concluderemo con una guida su come configurarne uno e accedere **alla blockchain di Ethereum, la casa di Bankless Academy**.
 
-In questa lezione, ti introdurremo ai portafogli, ai tipi di portafogli, alle loro basi di sicurezza e concluderemo con un video su come impostarne uno.
-
-Iniziamo!
-
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-1d445d4b.png)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-9cc67e4c.png)
 
 # Definizione di Portafoglio
 
-Cos'è esattamente un portafoglio?
+Cos'è esattamente un portafoglio crypto?
 
-La definizione breve è: un programma informatico che usi per interagire con una `blockchain`.
+La breve definizione è: un account su una `blockchain`, utilizzato per memorizzare risorse digitali e accedere ad applicazioni blockchain.
 
-Quando il tuo `portafoglio` è connesso a una blockchain, puoi fare acquisti, inviare o ricevere `beni digitali` come le criptovalute, interagire con applicazioni web3 e altro ancora.
+È come avere la propria cassaforte personale su Internet, di cui si possiede l'unica chiave per aprirla. Allo stesso tempo, questa cassaforte è simile a un normale account di un sito web. Si può usare per fare acquisti, inviare o ricevere `criptovalute` e interagire con una blockchain.
 
-A differenza dei normali account a cui sei abituato, un singolo portafoglio ti permette di accedere a un gran numero di app web3, purché il portafoglio sia compatibile con la blockchain su cui è costruita l'app. È come avere un unico account per l'intero Internet.
+Tuttavia, a differenza dei normali account `web2` a cui sei abituato, un singolo portafoglio può accedere a un'intera blockchain e a un gran numero di applicazioni blockchain. È come possedere un unico account per tutto Internet.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-e8f8f9a8.svg)
 
@@ -59,11 +55,13 @@ A differenza dei normali account a cui sei abituato, un singolo portafoglio ti p
 
 Un tempo lo era, ma oggi chiunque può creare facilmente un portafoglio.
 
-I portafogli sono essenzialmente programmi informatici. Se ti senti a tuo agio nello scaricare e installare software sul tuo computer (o app sul tuo telefono), allora non avrai problemi a creare il tuo primo portafoglio.
+Se ti senti a tuo agio nello scaricare e installare software sul tuo computer (o app sul tuo telefono), allora non avrai problemi a creare il tuo primo portafoglio.
 
-La parte più complicata della gestione di un portafoglio consiste nel mantenerlo sicuro, come vedremo in seguito.
+La parte più intricata nella gestione di un portafoglio è garantirne la sicurezza, argomento che approfondiremo a breve!
 
-Scegliere il tuo primo portafoglio può sembrare intimidatorio. Ti suggeriamo di iniziare con MetaMask come fornitore di portafoglio: offre soluzioni facili da utilizzare e compatibili con le blockchain più diffuse. Man mano che ti sentirai più a tuo agio nello spazio web3, è probabile che esplorerai altri fornitori e creerai altri portafogli.
+Anche la scelta della tua app `portafoglio` potrebbe risultare scoraggiante. Questa è l'app che installerai sul tuo dispositivo per accedere al tuo portafoglio sulla blockchain. Consigliamo di iniziare con l'app Zerion wallet: è facile da utilizzare e ha accesso alle blockchain più diffuse. Man mano che ti sentirai più a tuo agio nello spazio `web3`, è probabile che esplorerai altri fornitori e creerai più portafogli.
+
+![](Crea e gestisci in modo sicuro il tuo primo portafoglio di criptovalute.)
 
 # Knowledge Check 1
 
@@ -75,7 +73,7 @@ Cos'è un portafoglio?
 
 - [ ] Una criptovaluta
 
-> ℹ️ Riprova! Le criptovalute sono qualcosa che tieni nel tuo portafoglio.
+> ℹ️ Riprova! Le criptovalute sono qualcosa che possiedi all'interno del tuo portafoglio.
 
 - [ ] Un oggetto da collezione digitale
 
@@ -83,17 +81,17 @@ Cos'è un portafoglio?
 
 - [ ] Un account blockchain
 
-> ℹ️ Corretto! I portafogli sono account utilizzati per interagire con una blockchain.
+> ℹ️ Corretto! I portafogli sono account utilizzati per interagire con la blockchain.
 
 # Portafogli & Recupero della Password
 
-**Ecco una delle cose più importanti da capire sui portafogli web3: ad oggi non esiste un "reset della password" o la possibilità di frequenti cambiamenti di password.**
+Ecco una delle cose più importanti da capire sui portafogli `web3`: **Non esistono "ripristini di password" o "cambi di password".**
 
 La maggior parte di noi è abituata a queste funzionalità. Se dimentichiamo una password, clicchiamo un pulsante, facciamo alcune operazioni e otteniamo una nuova password. Facile.
 
-Con i portafogli, non è così. Per come funziona una blockchain, ai portafogli viene automaticamente assegnato un "nome" e una "password" complessa quando vengono creati (non sarai tu a sceglierli).
+Con i portafogli crypto, non è così. Per come funziona una blockchain, ai portafogli viene automaticamente assegnato un "nome" e una "password" complessa quando vengono creati (non sarai tu a sceglierli).
 
-Questa combinazione di nome e password è impossibile da cambiare. Scopriamo qualcosa di più su ciascuna di esse.
+Questa combinazione di indirizzo e password è impossibile da modificare, anche se è sempre possibile creare un nuovo portafoglio se necessario. Scopriamo qualcosa di più su questi indirizzi e password speciali, così da poterci sentire sicuri nel loro utilizzo!
 
 # La chiave pubblica del tuo portafoglio
 
@@ -103,25 +101,25 @@ Esempio: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
 È possibile creare versioni più facili da ricordare attraverso alcuni servizi web3, ma quella è una lezione per un'altra volta.
 
-Si può anche pensare a una chiave pubblica come l'indirizzo di una casella postale. È pubblica, chiunque può vederla, e può dire agli altri dove possono inviarti asset cripto — senza rivelare nulla di personale su di te.
+Si può anche pensare a una chiave pubblica come l'indirizzo di una casella postale. È pubblica, chiunque può vederla, e può dire agli altri dove possono inviarti beni cripto — senza rivelare nulla di personale su di te.
 
 È perfettamente sicuro condividere la tua **chiave pubblica**.
 
-**Nota:** a volte un singolo account di un portafoglio può contenere molteplici chiavi pubbliche (e `private`). Un po' come avere molte caselle postali sotto un unico account.
+**Nota:** a volte un singolo account di un portafoglio può contenere molteplici chiavi pubbliche (e `private`).
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-6d17439c.svg)
 
 # La chiave privata del tuo portafoglio
 
-Se la chiave pubblica è come una casella postale, allora la `chiave privata` è come la chiave della casella stessa. È la “password” per i tuoi fondi e asset.
+Se la chiave pubblica è come una casella postale, allora la `chiave privata` è come la chiave della casella stessa. È la “password” per i tuoi fondi e beni.
 
-Quasi sempre appare come una combinazione casuale di lettere e numeri.
+Esempio: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
-Non è mai sicuro condividere questa chiave — potresti perdere il tuo portafoglio e tutto ciò che contiene.
+**Non è mai sicuro condividere questa chiave — potresti perdere il tuo portafoglio e tutto ciò che contiene.**
 
 La maggior parte delle persone raccomanda di non salvarla nemmeno digitalmente. Chiunque abbia accesso a una chiave privata ha accesso a tutto ciò che si trova nel `portafoglio`.
 
-Questo è più di una semplice password. Non è possibile ripristinarla se si perde l'accesso.
+Questo è più di una semplice password. Non puoi reimpostarla se perdi l'accesso.
 
 Fortunatamente, la maggior parte delle applicazioni e dei programmi `web3` non richiedono di digitare faticosamente una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione blockchain. La chiave privata di solito opera silenziosamente in background.
 
@@ -154,16 +152,14 @@ Quando configuri un nuovo portafoglio, il software genera una `frase di recupero
 A volte chiamata anche “seed phrase” o "frase di recupero segreta", questa sequenza di parole può essere utilizzata per accedere al tuo portafoglio e ai tuoi asset criptati se:
 
 - La tua app `portafoglio` o dispositivo si guasta inaspettatamente o viene danneggiato.
-- Non riesci ad accedervi a causa di smarrimento o furto.
+- Your device has been lost or stolen.
 - Vuoi accedere al tuo account portafoglio tramite l'app portafoglio su un computer o dispositivo differente.
 
 La maggior parte delle frasi di recupero è costituita da un elenco di 12-24 parole che, combinate insieme, generano una chiave univoca. Questi dati vengono utilizzati per generare sia la `chiave pubblica` che la `chiave privata` per il tuo portafoglio.
 
 Questa **non** cambia né resetta le chiavi.
 
-La tua frase di recupero è essenzialmente una versione più facile da leggere della tua coppia di chiavi pubblica/privata.
-
-**Non condividere mai una frase di recupero.**
+La tua frase di recupero è essenzialmente una versione più facile da leggere della tua coppia di chiavi pubblica/privata. **Never share your recovery phrase.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c2d8fa26.svg)
 
@@ -247,9 +243,11 @@ Sei responsabile della tua chiave privata con un portafoglio in auto-custodia?
 
 Sentirai i termini "portafoglio caldo" (hot wallet) e "portafoglio freddo" (cold wallet) abbastanza spesso nel mondo web3.
 
-Un `portafoglio caldo` è un portafoglio ospitato dentro un software online. MetaMask ne è un buon esempio. Questi portafogli sono connessi a Internet finché il tuo dispositivo è online e vengono chiamati 'portafogli caldi' proprio per questa connessione 'calda' attraverso la rete.
+Un `portafoglio caldo` è un portafoglio ospitato dentro un software online. Similar to many `web2` apps, a wallet app is consistently connected to the internet.
 
-Questo è il tipo di portafoglio che creeremo oggi. Sono flessibili e ottimi per i principianti.
+Your `private key` is encrypted and stored inside the wallet app, and is only accessed when you interact with the blockchain. Questi portafogli sono connessi a Internet finché il tuo dispositivo è online e vengono chiamati 'portafogli caldi' proprio per questa connessione 'calda' attraverso la rete.
+
+Hot wallets are convenient for small day-to-day interactions, much like a physical wallet you keep in your pocket. Questo è il tipo di portafoglio che creeremo oggi.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/hot-wallets-bdf8ae51.svg)
 
@@ -257,7 +255,7 @@ Questo è il tipo di portafoglio che creeremo oggi. Sono flessibili e ottimi per
 
 Approfondendo il viaggio nel web3, conoscerai un panorama ricco di interessanti compromessi tecnologici.
 
-`I portafogli freddi` garantiscono una maggiore sicurezza al costo della comodità. Un portafoglio freddo utilizza un software che risiede su un dispositivo hardware separato (come una chiavetta USB o un disco rigido esterno). Devi collegare fisicamente il dispositivo a un computer affinché il portafoglio possa accedere a Internet. I portafogli freddi sono chiamati così proprio per questa connessione 'fredda' a Internet.
+`I portafogli freddi` garantiscono una maggiore sicurezza al costo della comodità. A cold wallet is one where your `private key` is stored on a dedicated hardware device (like a memory stick or external hard drive). Devi collegare fisicamente il dispositivo a un computer affinché il portafoglio possa accedere a Internet. Your private key is never directly connected to the internet. I portafogli freddi sono chiamati così proprio per questa connessione 'fredda' a Internet.
 
 Sono ampiamente considerati più sicuri dei `portafogli caldi`, perché la tua `chiave privata` è conservata offline — fuori dalla portata degli aggressori digitali.
 
@@ -271,15 +269,15 @@ Quale tipo di portafoglio è considerato più sicuro?
 
 - [ ] Un portafoglio caldo
 
-> ℹ️ Riprova! Un portafoglio caldo ha una connessione internet attiva che lo rende più vulnerabile agli attacchi digitali.
+> ℹ️ Riprova! Un portafoglio mobile è più sicuro di un portafoglio per browser, ma non è il tipo di portafoglio più sicuro.
 
 - [ ] Un portafoglio custodito
 
-> ℹ️ Riprova! La terza parte che detiene le chiavi private può essere hackerata o andare in bancarotta.
+> ℹ️ Riprova! Un portafoglio caldo ha una connessione internet attiva che lo rende più vulnerabile agli attacchi digitali.
 
 - [ ] Un portafoglio mobile
 
-> ℹ️ Riprova! Un portafoglio mobile è più sicuro di un portafoglio per browser, ma non è il tipo di portafoglio più sicuro.
+> ℹ️ Riprova! La terza parte che detiene le chiavi private può essere hackerata o andare in bancarotta.
 
 - [ ] Un portafoglio freddo
 
@@ -309,7 +307,7 @@ Qual è il modo più sicuro per proteggere la tua frase di recupero?
 
 - [ ] Salvala sul tuo computer e stampala.
 
-> ℹ️ Riprova! Se il tuo computer venisse hackerato, potresti perdere tutti gli asset nel tuo portafoglio. Anche la stamparla apre molte opportunità di attacco.
+> ℹ️ Riprova! If your computer is hacked, your recovery phrase could be found. Anche la stamparla apre molte opportunità di attacco.
 
 - [ ] Fai uno screenshot e salvalo sul tuo telefono.
 
@@ -326,20 +324,22 @@ Ne avrai bisogno se vuoi rivendicare la prova di aver completato questa missione
 Esistono diversi fornitori di `hot wallet` auto-custoditi. Esploreremo il popolare portafoglio MetaMask per il resto di questa lezione poiché:
 
 - è probabile che sia compatibile con la maggior parte delle app `DeFi`.
+- ⚡ The interface is incredibly smooth and easy to use.
 - ha un'estensione per browser per Chrome, Brave, Edge e Firefox.
 - è disponibile anche come app mobile per utenti Android e iOS.
+- 🗣️ Zerion supports a variety of languages.
 
-La fine della lezione è dietro l'angolo, dove condivideremo un breve video per aiutarti a configurare il tuo portafoglio MetaMask.
+The end of the lesson is right around the corner, where we will share your instructions for setting up your wallet with Zerion!
 
 ![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-521de184.svg)
 
 # Knowledge Check 8
 
-MetaMask è un portafoglio custodito?
+Is Zerion a custodial wallet app?
 
 - [ ] Sì
 
-> ℹ️ Riprova!
+> ℹ️ Riprova! Un portafoglio caldo ha una connessione internet attiva che lo rende più vulnerabile agli attacchi digitali.
 
 - [ ] No
 
