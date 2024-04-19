@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-Voici un résumé de la leçon [Les bases d'un wallet] (https://app.banklessacademy.com/lessons/fr/wallet-basics), ainsi qu'une marche à suivre pour la quête. Consultez [la leçon complète] (https://app.banklessacademy.com/lessons/fr/wallet-basics) afin de **perfectionner vos connaissances et d'obtenir votre badge**.
+Voici un résumé de la leçon [Les bases d'un wallet](https://app.banklessacademy.com/lessons/fr/wallet-basics), ainsi qu'une marche à suivre pour la quête. Consultez [la leçon complète] (https://app.banklessacademy.com/lessons/fr/wallet-basics) afin de **perfectionner vos connaissances et d'obtenir votre badge**.
 
 ---
 
@@ -55,7 +55,7 @@ Les wallets contiennent deux éléments essentiels d'information sur les comptes
 
 - Une `clé privée`, agissant comme votre _mot de passe_. Cette information doit toujours rester confidentielle et ne peut pas être modifiée.
 
-Il est essentiel de protéger votre clé privée, car elle vous permet d'accéder instantanément à votre portefeuille. Vous ne devez jamais partager votre clé privée. Vous pouvez en savoir plus en suivant [la leçon complète] (https://app.banklessacademy.com/lessons/fr/wallet-basics).
+Il est essentiel de protéger votre clé privée, car elle vous permet d'accéder instantanément à votre portefeuille. Vous ne devez jamais partager votre clé privée. Vous pouvez en savoir plus en suivant [la leçon complète](https://app.banklessacademy.com/lessons/fr/wallet-basics).
 
 Aujourd'hui, nous allons mettre en place notre premier wallet, en utilisant notre wallet de crypto-monnaie recommandé : Zerion !
 
