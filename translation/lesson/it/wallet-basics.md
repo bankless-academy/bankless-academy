@@ -329,19 +329,19 @@ Sono disponibili diverse applicazioni di `portafogli caldi` `auto custoditi`. Ne
 - 📱 È disponibile anche come applicazione mobile per utenti Android e iOS.
 - 🗣️ Zerion supporta diverse lingue.
 
-The end of the lesson is right around the corner, where we will share your instructions for setting up your wallet with Zerion!
+La fine della lezione è proprio dietro l'angolo, dove condivideremo le tue istruzioni per configurare il tuo portafoglio con Zerion!
 
-![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-521de184.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/youre-ready-to-create-your-first-wallet-6d8136f2.svg)
 
 # Knowledge Check 8
 
-Is Zerion a custodial wallet app?
+Zerion è un'applicazione per portafogli di custodia?
 
 - [ ] Sì
 
-> ℹ️ Riprova! Un portafoglio caldo ha una connessione internet attiva che lo rende più vulnerabile agli attacchi digitali.
+> ℹ️ Riprova! Il vostro portafoglio Zerion non è controllato da un custode terzo.
 
 - [ ] No
 
-> ℹ️ Corretto! I portafogli MetaMask sono portafogli auto-custoditi controllati da te — e solo da te.
+> ℹ️ Corretto! I portafogli Zerion sono portafogli autocustoditi - controllati da voi, e solo da voi.
 
