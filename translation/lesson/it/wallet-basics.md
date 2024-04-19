@@ -37,7 +37,7 @@ I portafogli sono come gli account a cui sei abituato nel `web2`. Userai un port
 
 In questa lezione vi presenteremo i portafogli, il loro funzionamento e come mantenere al sicuro le vostre criptovalute. Concluderemo con una guida su come configurarne uno e accedere **alla blockchain di Ethereum, la casa di Bankless Academy**.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-security-9cc67e4c.png)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
 # Definizione di Portafoglio
 
@@ -49,7 +49,7 @@ La breve definizione è: un account su una `blockchain`, utilizzato per memorizz
 
 Tuttavia, a differenza dei normali account `web2` a cui sei abituato, un singolo portafoglio può accedere a un'intera blockchain e a un gran numero di applicazioni blockchain. È come possedere un unico account per tutto Internet.
 
-![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-e8f8f9a8.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/wallet-definition-d2912914.svg)
 
 # Creare un portafoglio è difficile?
 
@@ -121,7 +121,7 @@ La maggior parte delle persone raccomanda di non salvarla nemmeno digitalmente. 
 
 Questo è più di una semplice password. Non puoi reimpostarla se perdi l'accesso.
 
-Fortunatamente, la maggior parte delle applicazioni e dei programmi `web3` non richiedono di digitare faticosamente una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione blockchain. La chiave privata di solito opera silenziosamente in background.
+Fortunatamente, la maggior parte delle `app blockchain` non richiedono di digitare una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione sulla blockchain. La chiave privata di solito opera silenziosamente in background.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-f4a93387.svg)
 
@@ -129,7 +129,7 @@ Fortunatamente, la maggior parte delle applicazioni e dei programmi `web3` non r
 
 La tua chiave pubblica è come il tuo _____ e la tua chiave privata è come il tuo _____ .
 
-- [ ] IBAN / Numero di Conto
+- [ ] IBAN / Numero di Conto Corrente
 
 > ℹ️ Riprova! La tua chiave privata non dovrebbe essere condivisa con altri.
 
@@ -139,11 +139,11 @@ La tua chiave pubblica è come il tuo _____ e la tua chiave privata è come il t
 
 - [ ] Casella postale / Chiave della casella
 
-> ℹ️ Corretto! La tua chiave pubblica permette agli altri di identificarti, mentre la tua chiave privata controlla gli asset al suo interno.
+> ℹ️ Corretto! La tua chiave pubblica permette agli altri di identificarti, mentre la tua chiave privata controlla i beni al suo interno.
 
 - [ ] Numero di Telefono / Numero di Passaporto
 
-> ℹ️ Riprova! Questi sono esempi di informazioni pubbliche e private, ma non danno accesso agli asset.
+> ℹ️ Riprova! Questi sono esempi di informazioni pubbliche e private, ma non danno accesso agli tuoi beni.
 
 # Frase di Recupero
 
@@ -152,16 +152,16 @@ Quando configuri un nuovo portafoglio, il software genera una `frase di recupero
 A volte chiamata anche “seed phrase” o "frase di recupero segreta", questa sequenza di parole può essere utilizzata per accedere al tuo portafoglio e ai tuoi asset criptati se:
 
 - La tua app `portafoglio` o dispositivo si guasta inaspettatamente o viene danneggiato.
-- Your device has been lost or stolen.
+- Il dispositivo è stato smarrito o rubato.
 - Vuoi accedere al tuo account portafoglio tramite l'app portafoglio su un computer o dispositivo differente.
 
-La maggior parte delle frasi di recupero è costituita da un elenco di 12-24 parole che, combinate insieme, generano una chiave univoca. Questi dati vengono utilizzati per generare sia la `chiave pubblica` che la `chiave privata` per il tuo portafoglio.
+La maggior parte delle frasi di recupero è costituita da un elenco di 12-24 parole che, combinate tra loro, generano una chiave univoca. Questi dati vengono utilizzati per generare sia la `chiave pubblica` che la `chiave privata` per il tuo portafoglio.
 
 Questa **non** cambia né resetta le chiavi.
 
-La tua frase di recupero è essenzialmente una versione più facile da leggere della tua coppia di chiavi pubblica/privata. **Never share your recovery phrase.**
+La tua frase di recupero è essenzialmente una versione più facile da leggere della tua coppia di chiavi pubblica/privata. **Non condividere mai la tua frase di recupero.**
 
-![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c2d8fa26.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
 # Knowledge Check 3
 
@@ -173,7 +173,7 @@ La tua frase di recupero è essenzialmente una versione più facile da leggere d
 
 - [ ] Sì
 
-> ℹ️ Corretto! Le frasi di recupero garantiscono l'accesso al portafoglio, anche su più dispositivi.
+> ℹ️ Corretto! Le frasi di recupero garantiscono l'accesso al portafoglio, anche su diversi dispositivi.
 
 # Tipi di Portafogli
 
@@ -189,15 +189,15 @@ Ci sono due tipi di `portafoglio in auto-custodia`:
 
 Ogni tipo di portafoglio serve per uno scopo diverso. Molti utenti esperti ne hanno uno per ogni tipo!
 
-Non preoccuparti, oggi creeremo solo un portafoglio.
+Non preoccuparti, oggi creeremo un solo tipo portafoglio.
 
-![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-552ea259.png)
+![](https://app.banklessacademy.com/images/wallet-basics/types-of-wallet-094f0eb1.png)
 
 # Portafogli Custoditi
 
 Poiché la tua `chiave privata` sblocca l'accesso al tuo `portafoglio`, mantenerla privata e sicura è molto importante!
 
-I servizi di `portafogli custoditi` includono scambi di criptovalute come Coinbase e Kraken. Essi sono i 'custodi' del tuo portafoglio — si occupano delle tue chiavi private per te. Accedi ai loro servizi come a qualsiasi altro sito web (con un login email e una password reimpostabile).
+I servizi di `portafogli custoditi` includono scambi di criptovalute come Coinbase e Kraken. **Loro sono i 'custodi' del tuo portafoglio** — si occupano delle tue chiavi private per te. Accedi ai loro servizi come a qualsiasi altro sito web (con un login email e una password reimpostabile).
 
 Per alcuni potrebbe essere l'unica cosa di cui hanno bisogno, ma è necessario fidarsi di queste terze parti per proteggere i propri asset di criptovalute e consentirne l'accesso quando si desidera scambiarli o inviarli da qualche parte. Inoltre, il tuo accesso ad alcune applicazioni web3 potrebbe essere limitato.
 
