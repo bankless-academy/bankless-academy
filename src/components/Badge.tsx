@@ -21,6 +21,12 @@ const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   box-shadow: none;
 `
 
+const StyledButton = styled(Button)`
+  ::before {
+    border-radius: 8px 8px 0 0 !important;
+  }
+`
+
 const Badge = ({
   lesson,
   isQuestCompleted,
@@ -123,7 +129,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
               <Box>
                 <Box pb="1">
                   <ExternalLink href={twitterLink} mr="2">
-                    <Button
+                    <StyledButton
                       variant="primary"
                       height="51px"
                       w="100%"
@@ -132,7 +138,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
                       isDisabled={true}
                     >
                       {t('Badge Claimed')}
-                    </Button>
+                    </StyledButton>
                   </ExternalLink>
                 </Box>
                 <Box pb="1">
