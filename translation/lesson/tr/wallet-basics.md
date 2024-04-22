@@ -87,23 +87,23 @@ Cüzdan nedir?
 
 İşte `web3` cüzdanları ile ilgili anlamanız gereken en önemli şeylerden biri: **“Parola sıfırlama” veya “parola değişikliği” yapılmaz.**
 
-Çoğumuz bu özelliklere alışkınız. Parolayı unutursak bir düğmeye tıklarız, birkaç şey yaparız ve yeni bir parola alırız. Kolay bir çözüm.
+Çoğumuz bu özelliklere alışkınız. Parolayı unutursak bir düğmeye tıklarız ve birkaç şey yapıp yeni bir parola alırız. Kolay bir çözüm.
 
 Kripto cüzdanlarında öyle değil. Blok zincirlerinin çalışma şekli nedeniyle, cüzdanlara oluşturulduklarında bir “ad” ve karmaşık bir “parola” atanır ancak bunları siz seçmezsiniz.
 
-Bu adres ve parola kombinasyonunun değiştirilmesi imkansızdır fakat ihtiyacınız olursa her zaman yeni bir cüzdan oluşturabilirsiniz. Bu özel adresleri ve parolaları kullanırken kendimize güvenebilmemiz için onlarla ilgili biraz daha bilgi edinelim!
+Bu adres ve parola kombinasyonunun değiştirilmesi imkansızdır fakat ihtiyacınız olursa her zaman yeni bir cüzdan oluşturabilirsiniz. Bu özel adresleri ve parolaları kullanırken kendimize güvenebilmek için onlarla ilgili biraz daha bilgi edinelim!
 
-# Cüzdanınızın açık anahtarı
+# Cüzdanınızın genel anahtarı
 
-`Açık anahtar` temelde cüzdanınızın adresidir. Genellikle rastgele harf ve rakamların bir karışımı gibi görünür.
+`Genel anahtar` temelde cüzdanınızın adresidir. Genellikle rastgele harf ve rakamların bir karışımı gibi görünür.
 
 Örnek: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
 Bazı `web3` hizmetleri ile bunun, hatırlanması daha kolay versiyonlarını oluşturmak mümkün olsa da bu başka bir dersin konusu.
 
-Açık anahtarı bir ev adresi gibi de düşünebilirsiniz. Bu anahtar herkese açıktır, herkes tarafından görülebilir ve başkalarına, sizin için gönderecekleri kripto varlıkları, hakkınızda kişisel hiçbir şey ifşa etmeden nereye gönderebileceklerini söyler.
+Genel anahtarı bir ev adresi gibi de düşünebilirsiniz. Bu anahtar herkese açıktır, herkes tarafından görülebilir ve başkalarına, sizin için gönderecekleri kripto varlıkları, hakkınızda kişisel hiçbir şey ifşa etmeden nereye gönderebileceklerini söyler.
 
-Cüzdanınızın **açık anahtar**ını paylaşmanız tamamen güvenlidir.
+Cüzdanınızın **genel anahtar**ını paylaşmanız tamamen güvenlidir.
 
 **Not:** Tek bir cüzdan uygulaması birden fazla genel/`özel anahtar` çifti barındırabilir.
 
@@ -111,23 +111,23 @@ Cüzdanınızın **açık anahtar**ını paylaşmanız tamamen güvenlidir.
 
 # Cüzdanınızın özel anahtarı
 
-Açık anahtar bir ev adresi gibiyse `özel anahtar` da ön kapının anahtarıdır. O, fonlarınızın ve varlıklarınızın “parolasıdır”.
+Genel anahtar bir ev adresi gibiyse `özel anahtar` da ön kapının anahtarıdır. O, fonlarınızın ve varlıklarınızın “parolasıdır”.
 
 Örnek: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
 **Bu anahtarı paylaşmak kesinlikle güvenli değildir; cüzdanınızı ve içindeki her şeyi kaybedebilirsiniz.**
 
-Çoğu kişi, bu parolayı dijital olarak kaydetmemenizi dahi tavsiye eder. Özel anahtara erişimi olan herkes `cüzdanın` içinde ne varsa ona erişebilir.
+Çoğu kişi, bu parolayı dijital olarak kaydetmemenizi dahi tavsiye eder. Özel anahtara erişimi olan herkes `cüzdan`ın içinde ne varsa ona erişebilir.
 
-Açık anahtar, bir paroladan daha fazlasıdır. Erişiminizi kaybederseniz sıfırlayamazsınız.
+Özel anahtar, bir paroladan daha fazlasıdır. Erişiminizi kaybederseniz sıfırlayamazsınız.
 
-Neyse ki, `blok zinciri uygulamalarının` çoğu, her para göndermeniz veya bir blok zinciri işlemini imzalamanız gerektiğinde uzun, karmaşık bir karakter dizisini yazmanızı gerektirmez. Özel anahtar genellikle arka planda sessizce çalışır.
+Neyse ki, `blok zinciri uygulamaları`nın çoğu, her para göndermeniz veya bir blok zinciri işlemini imzalamanız gerektiğinde uzun, karmaşık bir karakter dizisini yazmanızı gerektirmez. Özel anahtar genellikle arka planda sessizce çalışır.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
 # Knowledge Check 2
 
-Açık anahtarınız _____, özel anahtarınız _____ gibidir.
+Genel anahtarınız _____, özel anahtarınız _____ gibidir.
 
 - [ ] Yönlendirme Numarası/Hesap Numarası
 
@@ -139,7 +139,7 @@ Açık anahtarınız _____, özel anahtarınız _____ gibidir.
 
 - [ ] Ev adresi/Ev anahtarı
 
-> ℹ️ Doğru! Your public key allows others to find you, while only your private key lets you in.
+> ℹ️ Doğru! Genel anahtarınız başkalarının sizi bulmasına imkan tanırken, yalnızca özel anahtarınız eve girmenize izin verir.
 
 - [ ] Telefon Numarası/Pasaport Numarası
 
@@ -147,19 +147,19 @@ Açık anahtarınız _____, özel anahtarınız _____ gibidir.
 
 # Kurtarma İfadesi
 
-Yeni bir cüzdan oluşturduğunuzda, cüzdan uygulamanız size bir `kurtarma ifadesi` sağlayacaktır.
+Yeni bir cüzdan oluşturduğunuzda, cüzdan uygulamanız size bir `kurtarma ifadesi` verecektir.
 
 “Tohum ifadesi” veya “gizli ifade” olarak da adlandırılan bu sözcük dizisi, aşağıdaki durumlarda cüzdanınıza ve kripto varlıklarınıza erişmek için kullanılabilir:
 
-- `Cüzdan uygulamanızda` veya cihazınızda beklenmedik bir arıza ya da hasar oluştuğunda.
+- Kullandığınız `cüzdan uygulaması`nda veya cihazınızda beklenmedik bir arıza ya da hasar oluştuğunda.
 - Cihazınız kaybolduğunda veya çalındığında.
 - Cüzdanınıza birden fazla cihazdan erişmek istediğinizde.
 
-Çoğu kurtarma ifadesi, benzersiz bir grup veriyi temsil eden 12 ila 24 sözcükten oluşan bir listedir. Bu veriler, cüzdanınızın hem `açık anahtarını` hem de `özel anahtarını` oluşturmak için kullanılır.
+Çoğu kurtarma ifadesi, benzersiz bir grup veriyi temsil eden 12 ila 24 sözcükten oluşan bir listedir. Bu veriler, cüzdanınızın hem `genel anahtar`ını hem de `özel anahtar`ını oluşturmak için kullanılır.
 
 Cüzdan kurtarma işlemi, anahtarları **değiştirmez veya sıfırlamaz**.
 
-Kurtarma ifadeniz aslında açık/özel anahtar çiftinizin okunması daha kolay bir versiyonudur. **Kurtarma ifadenizi kesinlikle başkalarıyla paylaşmayın.**
+Kurtarma ifadeniz aslında genel/özel anahtar çiftinizin okunması daha kolay bir versiyonudur. **Kurtarma ifadenizi kesinlikle başkalarıyla paylaşmayın.**
 
 ![](https://app.banklessacademy.com/images/wallet-basics/recovery-phrase-c614c36c.svg)
 
@@ -177,7 +177,7 @@ Cihazınız hasar görürse veya kaybolursa ona bir kurtarma ifadesiyle erişebi
 
 # Cüzdan Türleri
 
-Just as there are many types of computer software, there many types of wallet. Şimdi dört ana kategoriye bakalım:
+Birçok bilgisayar yazılımı türü olduğu gibi, birçok cüzdan türü de mevcuttur. Şimdi dört ana kategoriye bakalım:
 
 - 🏦 **Gözetimli cüzdanlar:** Özel anahtarlarınızdan üçüncü bir tarafın sorumlu olduğu cüzdanlar.
 - 👤 **Gözetimsiz (gözetimli olmayan) cüzdanlar:** Özel anahtarlarınızdan sizin sorumlu olduğunuz cüzdanlar.
