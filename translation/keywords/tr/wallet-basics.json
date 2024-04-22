@@ -30,24 +30,24 @@
     "definition": "Bilgisayarınızda veya telefonunuzda, blok zincirindeki cüzdanınıza bağlanmak için kullanılan bir uygulama."
   },
   "public key": {
-    "keyword": "public key",
-    "keyword_plural": "public keys",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+    "keyword": "genel anahtar",
+    "keyword_plural": "genel anahtarlar",
+    "definition": "Genel anahtar, cüzdanınızın adresidir. Başkalarına size kripto varlıkları göndermeleri için bir referans noktası verir."
   },
   "private key": {
-    "keyword": "private key",
-    "keyword_plural": "private keys",
-    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+    "keyword": "özel anahtar",
+    "keyword_plural": "özel anahtarlar",
+    "definition": "Özel anahtar, cüzdanınıza erişim sunarak diğer cüzdanlara kripto varlıkları göndermenize olanak tanır."
   },
   "wallet": {
-    "keyword": "wallet",
-    "keyword_plural": "wallets",
-    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+    "keyword": "cüzdan",
+    "keyword_plural": "cüzdanlar",
+    "definition": "Cüzdan, blok zincirinde kripto varlıkları göndermek ve almak için kullanılan bir uygulama veya cihazdır."
   },
   "recovery phrase": {
-    "keyword": "recovery phrase",
+    "keyword": "kurtarma ifadesi",
     "keyword_plural": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+    "definition": "Kurtarma ifadesi, cüzdanınızın genel anahtarını ve özel anahtarını oluşturmak için kullanılan 12 ila 24 kelimelik bir sözcük listesidir."
   },
   "self-custody wallet": {
     "keyword": "self-custody wallet",
