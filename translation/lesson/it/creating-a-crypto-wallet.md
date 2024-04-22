@@ -1,9 +1,9 @@
 ---
-TITLE: Creating a Crypto Wallet
-DESCRIPTION: Set up your first crypto wallet with our step-by-step walkthrough.
-LANGUAGE: English
+TITLE: Creare un portafoglio cripto
+DESCRIPTION: Configura il tuo primo portafoglio di criptovalute con la nostra guida passo passo.
+LANGUAGE: Italiano
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: fa3io
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
@@ -27,90 +27,90 @@ ________________________________________________________________________________
 
 ---
 
-This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**
+Questo è un riassunto della nostra lezione [Fondamenti del portafoglio](https://app.banklessacademy.com/lessons/wallet-basics), insieme a una guida per la missione. Guarda [la lezione completa](https://app.banklessacademy.com/lessons/wallet-basics) per \*\*migliorare le tue conoscenze e ottenere il tuo badge
 
 ---
 
-## Key Takeaways
+## Punti Chiave
 
-> - You’ll need a `crypto wallet` to access the world of blockchains!
+> - Per accedere al mondo delle blockchain è necessario un "portafoglio crittografico"!
 >
-> - A wallet is like a `blockchain` account.
+> - Un portafoglio è come un account `blockchain`.
 >
-> - Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.
+> - I portafogli sono utilizzati per conservare "criptovalute", accedere alle applicazioni blockchain e altro ancora.
 >
-> - These wallets work on both computers and phones.
+> - Questi portafogli funzionano sia su computer che su telefoni.
 >
-> - Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!
+> - La creazione di un portafoglio è semplice e richiede circa 5 minuti. Ti mostreremo come fare nel nostro video qui sotto!
 
-## What is a Crypto Wallet?
+## Che cos'è un portafoglio cripto?
 
-Crypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.
+I portafogli di criptovalute sono un elemento essenziale dell'attrezzatura web3, che consentono di utilizzare le "criptovalute" sul tuo computer o telefono. I portafogli sono accessibili utilizzando un software chiamato "app per portafogli" — un'estensione per il browser web sul tuo computer, o un'app sul tuo telefono.
 
-It gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
+Ma c'è di più. I portafogli sono più che semplici account per tenere criptovalute — sono la nostra connessione alla blockchain. Possiamo usarli per scambiare criptovalute con altri, accedere ad applicazioni blockchain, **e persino collezionare oggetti digitali come i badge di Bankless Academy.** Più esploriamo, più i nostri portafogli si evolvono — alcuni li considerano l'inizio di un'identità digitale.
 
-Wallets come with two core pieces of account information:
+I portafogli contengono due informazioni fondamentali dell'account:
 
-- A `public key`, that you can think of as your _username_. You’ll share it publicly to receive cryptocurrency.
+- Una "chiave pubblica", che si può considerare come il proprio _nome utente_. La condividerai pubblicamente per ricevere criptovalute.
 
-- A `private key`, acting as your _password_. This should always be kept private, and cannot be changed.
+- Una `chiave privata`, che funge da _password_. Questo dato deve sempre rimanere privato e non può essere modificato.
 
-Protecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).
+Proteggere la chiave privata è fondamentale, perché questa garantisce l'accesso istantaneo al portafoglio. Non si deve mai condividere la propria chiave privata. Puoi saperne di più seguendo [la lezione completa](https://app.banklessacademy.com/lessons/wallet-basics).
 
-Today we will set up our first wallet, using our recommended crypto wallet: Zerion!
+Oggi configureremo il nostro primo portafoglio, utilizzando il nostro portafoglio di criptovalute consigliato: Zerion!
 
-## Walkthrough
+## Procedura
 
-Set up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.
+Configura il tuo primo portafoglio sul computer, utilizzando la guida qui sotto, oppure continua a scorrere per la nostra guida sul portafoglio dall'app del telefono.
 
-### Computer Wallet
+### Portafoglio per computer
 
 
 
-### Phone Wallet
+### Portafoglio per telefono
 
 
 
 ---
 
-**It’s time to join the blockchain multiverse!**
+**È il momento di unirti al multiverso blockchain!**
 
-Don’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.
+Non dimenticare di raccogliere questa voce del manuale per una facile consultazione durante i tuoi viaggi e per sostenere Bankless Academy.
 
-Safe travels, Explorer!
-
----
-
-## FAQ
-
-### What is a cryptocurrency?
-
-Cryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.
-
-Learn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!
-
-### What are public and private keys?
-
-Public/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.
-
-You can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.
-
-Learn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.
-
-### What happens if I lose my recovery phrase?
-
-Your recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.
-
-### Can Ethereum wallets hold Bitcoin?
-
-Ethereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).
+Buon viaggio, Esploratore!
 
 ---
 
-**Author**
+## Domande frequenti
 
-[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.
+### Cos'è una criptovaluta?
+
+Le criptovalute sono una forma di denaro digitale, protetto dalla "crittografia". Queste valute possono funzionare senza la necessità di autorità e banche centralizzate, riducendo le possibilità di frode e aumentando la libertà finanziaria dei titolari.
+
+Scopri di più sulle criptovalute con la nostra lezione **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** e scopri come queste valute digitali stanno rivoluzionando il mondo finanziario!
+
+### Cosa sono le chiavi pubbliche e private?
+
+La `crittografia` a chiave pubblica/privata consente al portafoglio di rendere pubbliche alcune informazioni, come l'indirizzo a cui gli altri possono inviare le criptovalute, mantenendo privato l'accesso alle criptovalute. Una chiave è come l'indirizzo di casa della criptovaluta, l'altra apre la porta d'ingresso.
+
+Puoi condividere la tua chiave pubblica con chiunque sia di tua fiducia per farti inviare criptovalute, ma la tua chiave privata è solo per te — perché dà accesso a tutti gli beni all'interno del portafoglio. Non condividerla mai, anche se il tuo contatto afferma di essere di Bankless Academy o di Zerion.
+
+Per saperne di più e ricevere un premio per la creazione del tuo primo portafoglio, consultate la nostra lezione [Fondamenti del portafoglio](https://app.banklessacademy.com/lessons/wallet-basics).
+
+### Cosa succede se perdo la frase di recupero?
+
+La frase di recupero, nota anche come "frase segreta" o "frase seme", è l'unico backup in caso di perdita dell'accesso al portafoglio sul dispositivo. Se perdi la frase di recupero, i fondi del portafoglio andranno persi per sempre. Per questo motivo è importante conservarla in un luogo sicuro, non solo per evitare furti o smarrimenti, ma anche incendi o danni causati dall'acqua.
+
+### I portafogli Ethereum possono contenere Bitcoin?
+
+I portafogli Ethereum possono contenere Bitcoin, ma in forma "impacchettata" o "wrapped". Se vuoi tenere Bitcoin originali, dovrai creare un portafoglio che funzioni sulla rete Bitcoin, come [Exodus](https://www.exodus.com/) o [Mycelium](https://wallet.mycelium.com/).
+
+---
+
+**Autore**
+
+[Tetranome](https://twitter.com/Tetranome) è il responsabile dei contenuti e del design di Bankless Academy, con focus sul percorso di apprendimento, l'interfaccia utente e l'esperienza, nonché sull'arte della piattaforma.
 
 **Patron**
 
-This walkthrough is powered by Zerion.
+Questa guida è fornita da Zerion.
