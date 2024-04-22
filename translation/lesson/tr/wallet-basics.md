@@ -180,14 +180,14 @@ Cihazınız hasar görürse veya kaybolursa ona bir kurtarma ifadesiyle erişebi
 Birçok bilgisayar yazılımı türü olduğu gibi, birçok cüzdan türü de mevcuttur. Şimdi dört ana kategoriye bakalım:
 
 - 🏦 **Gözetimli cüzdanlar:** Özel anahtarlarınızdan üçüncü bir tarafın sorumlu olduğu cüzdanlar.
-- 👤 **Gözetimsiz (gözetimli olmayan) cüzdanlar:** Özel anahtarlarınızdan sizin sorumlu olduğunuz cüzdanlar.
+- 👤 **Gözetimsiz (emanete tabi olmayan) cüzdanlar:** Özel anahtarlarınızdan sizin sorumlu olduğunuz cüzdanlar.
 
 İki tür `gözetimsiz cüzdan` mevcuttur:
 
 - 🔥 **Sıcak cüzdanlar:** Masaüstünüz veya telefonunuzdaki yazılım.
 - **Soğuk cüzdanlar:** Güvenli bir yerde sakladığınız bir donanım parçası (flaş disk gibi).
 
-Each wallet solution serves a different use-case. Birçok ileri düzey kullanıcıda her birinden birer tane mevcuttur!
+Her cüzdan çözümü, farklı bir kullanım durumuna hizmet eder. Birçok ileri düzey kullanıcıda her bir cüzdan türünden birer tane mevcuttur!
 
 Merak etmeyin, bugün sadece bir cüzdan oluşturacağız.
 
@@ -195,11 +195,11 @@ Merak etmeyin, bugün sadece bir cüzdan oluşturacağız.
 
 # Gözetimli Cüzdanlar
 
-`Özel anahtarınız`, `cüzdanınıza` erişimin kilidini açtığından, onu güvende tutmak çok önemlidir!
+`Özel anahtar`ınız, `cüzdan`ınıza erişimin kilidini açtığından, onu güvende tutmak çok önemlidir!
 
 `Gözetimli cüzdan` hizmetleri, Coinbase ve Kraken gibi kripto para borsalarını içerir. **Bu borsalar, cüzdanınızın emanetçisidir**; yani, sizin için özel anahtarlarınıza göz kulak olurlar. Hizmetlerine diğer web sitelerinde olduğu gibi erişirsiniz (bir e-posta girişi ve sıfırlanabilir parola ile).
 
-Bazı insanların ihtiyacı olan her şey bu kadar olabilir. Ancak bu cüzdanları kullanırken kripto varlıklarınızı güvence altına alması ve onları alıp satmak veya bir yere göndermek istediğinizde size erişim sağlaması için bu üçüncü taraflara güvenmeniz gerekir. Ayrıca, bazı `blok zinciri uygulamaları`na erişiminiz sınırlı olabilir.
+Bazı insanların ihtiyacı olan tek şey bu olabilir, ancak kripto varlıklarınızı güvence altına alması ve onları alıp satmak veya bir yere göndermek istediğinizde size erişim sağlaması için bu üçüncü taraflara güvenmeniz gerekir. Ayrıca, bazı `blok zinciri uygulamaları`na erişiminiz sınırlı olabilir.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
@@ -217,7 +217,7 @@ Bazı insanların ihtiyacı olan her şey bu kadar olabilir. Ancak bu cüzdanlar
 
 # Gözetimsiz Cüzdan
 
-`Gözetimsiz cüzdan` (Zerion veya Trezor gibi), `özel anahtarınızın` kontrolünün tamamen size ait olduğu cüzdandır. **Emanetçiniz yoktur** ve özel anahtarınızı güvende tutmaktan yalnızca siz sorumlu olursunuz.
+`Gözetimsiz cüzdan` (Zerion veya Trezor gibi), `özel anahtar`ınızın kontrolünün tamamen size ait olduğu cüzdandır. **Emanetçiniz yoktur** ve özel anahtarınızı güvende tutmaktan yalnızca siz sorumlu olursunuz.
 
 Bu cüzdanlar `web3` dünyasında en geniş erişim ve özgürlük yelpazesini sunar. Üçüncü bir tarafın fonlarınızı dondurması veya kötüye kullanması konusunda kesinlikle endişe etmeniz gerekmez.
 
@@ -229,7 +229,7 @@ Hangi yolu seçerseniz seçin, cüzdan güvenliği konusunda bilgili ve rahat ol
 
 # Knowledge Check 5
 
-Gözetimsiz cüzdanda özel anahtarınızdan siz mi sorumlusunuz?
+Gözetimsiz cüzdanda özel anahtarınızdan siz mi sorumlu olursunuz?
 
 - [ ] Evet
 
@@ -245,7 +245,7 @@ Gözetimsiz cüzdanda özel anahtarınızdan siz mi sorumlusunuz?
 
 `Sıcak cüzdan`, Zerion uygulaması gibi cihazınızdaki bir uygulama aracılığıyla erişilen bir cüzdandır. Birçok `web2` uygulamasına benzer şekilde, cüzdan uygulaması sürekli olarak internete bağlıdır.
 
-`Özel anahtarınız` şifrelenip cüzdan uygulamasının içinde saklanır ve bu anahtara yalnızca blok zinciri ile etkileşime girdiğinizde erişilir. İnternet ile özel anahtarınız arasındaki bu “sıcak” bağlantı nedeniyle, bu cihazlara ‘sıcak cüzdanlar’ denir.
+`Özel anahtar`ınız şifrelenip cüzdan uygulamasının içinde saklanır ve bu anahtara yalnızca blok zinciri ile etkileşime girdiğinizde erişilir. İnternet ile özel anahtarınız arasındaki bu “sıcak” bağlantı nedeniyle, bu cihazlara ‘sıcak cüzdanlar’ denir.
 
 Sıcak cüzdanlar, cebinizde tuttuğunuz fiziksel bir cüzdan gibi küçük günlük etkileşimler için kullanışlıdır. Bugün bir sıcak cüzdan oluşturacağız!
 
@@ -255,11 +255,11 @@ Sıcak cüzdanlar, cebinizde tuttuğunuz fiziksel bir cüzdan gibi küçük gün
 
 `Web3` yolculuğunuzun derinliklerine daldıkça, ilginç teknoloji ödünleşimleriyle dolu bir manzarayla tanışacaksınız.
 
-`Soğuk cüzdanlar` kolaylık pahasına daha yüksek güvenlik sağlar. Soğuk cüzdan, `özel anahtarınızın` özel bir donanım cihazında (bellek çubuğu veya harici sabit disk gibi) saklandığı bir cüzdandır. Blok zincirindeki cüzdanınıza erişmek için donanım cüzdanını fiziksel olarak bilgisayarınıza bağlamanız gerekir. Özel anahtarınız hiçbir zaman doğrudan internete bağlanmaz. Soğuk cüzdanlar isimlerini bu “soğuk” internet bağlantısından alır.
+`Soğuk cüzdanlar` kolaylık pahasına daha yüksek güvenlik sağlar. Soğuk cüzdan, `özel anahtar`ınızın özel bir donanım cihazında (flaş disk veya harici sabit sürücü gibi) saklandığı bir cüzdandır. Blok zincirindeki cüzdanınıza erişmek için donanım cüzdanını fiziksel olarak bilgisayarınıza bağlamanız gerekir. Özel anahtarınız hiçbir zaman doğrudan internete bağlanmaz. Soğuk cüzdanlar isimlerini bu “soğuk” internet bağlantısından alır.
 
-Genellikle `sıcak cüzdanlardan` daha güvenli oldukları düşünülür çünkü `özel anahtarınız` dijital saldırganların erişemeyeceği bir yerde, çevrimdışı olarak saklanır.
+Genellikle `sıcak cüzdanlar`dan daha güvenli oldukları düşünülür çünkü `özel anahtar`ınız dijital saldırganların erişemeyeceği bir yerde, çevrimdışı olarak saklanır.
 
-Ledger ve Trezor `soğuk cüzdan` örnekleridir.
+Ledger ve Trezor `soğuk cüzdanlar`a örnektir.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/cold-wallets-0e3183d1.svg)
 
@@ -285,13 +285,13 @@ Aşağıdaki cüzdan türlerinden hangisi en güvenli olarak kabul edilir?
 
 # Cüzdan Güvenliği
 
-`Gözetimsiz cüzdanınızın` sıcak ya da soğuk olmasından bağımsız olarak öğrenmeniz gereken birçok akıllı güvenlik uygulaması mevcuttur.
+`Gözetimsiz cüzdan`ınızın sıcak ya da soğuk olmasından bağımsız olarak öğrenmeniz gereken birçok akıllı güvenlik uygulaması mevcuttur.
 
-🖊️ `Kurtarma ifadenizi` fiziksel, dayanıklı bir materyalin (bir yaprak kağıt veya hatta çelik gibi) üzerine kaydedin ve çok güvenli bir yerde saklayın. Bu ifadeyi veya `özel anahtarınızı` kimseyle paylaşmayın. **Bunun bir paroladan daha fazlası olduğunu unutmayın.**
+🖊️ `Kurtarma ifadesi`ni fiziksel, dayanıklı bir materyalin (bir yaprak kağıt veya hatta çelik gibi) üzerine kaydedin ve çok güvenli bir yerde saklayın. Bu ifadeyi veya `özel anahtar`ınızı kimseyle paylaşmayın. **Bunun bir paroladan daha fazlası olduğunu unutmayın.**
 
 🔍 Bir blok zinciri ile etkileşimde bulunurken veya küçük miktarlarda bile olsa para gönderirken, ayrıntıları çok dikkatli bir şekilde iki kez kontrol edin. Yanlış ayrıntılar, bir etkileşimden sonra değiştirilemez.
 
-🔭 Cüzdanınızı bağlamadan veya işlemleri imzalamadan önce etkileşimde bulunmayı planladığınız herhangi bir `blok zinciri uygulaması` ile ilgili araştırma yapmaya ve bilgi toplamaya zaman ayırın.
+🔭 Cüzdanınızı bağlamadan veya işlemleri imzalamadan önce etkileşimde bulunmayı planladığınız `blok zinciri uygulamaları` ile ilgili araştırma yapmaya ve bilgi toplamaya zaman ayırın.
 
 💰 Yeni şeyler denemek ve web3'ü keşfetmek için düşük miktarda fon içeren cüzdanlar kullanın ve yüksek değerli varlıkları, birden fazla cüzdan hesabında saklamaya çalışın (yani tüm kripto yumurtalarınızı tek bir sepete koymaktan kaçının).
 
@@ -307,7 +307,7 @@ Kurtarma ifadenizi korumanın en güvenli yolu nedir?
 
 - [ ] Bilgisayarınıza kaydedin ve çıktısını alın.
 
-> ℹ️ Tekrar deneyin! Bilgisayarınız saldırıya uğrarsa, kurtarma ifadeniz bulunabilir. Çıktı almak, birçok saldırı fırsatının da önünü açar.
+> ℹ️ Tekrar deneyin! Bilgisayarınız saldırıya uğrarsa kurtarma ifadeniz bulunabilir. Çıktı almak, birçok saldırı fırsatının da önünü açar.
 
 - [ ] Bir ekran görüntüsü alın ve telefonunuza kaydedin.
 
@@ -323,11 +323,11 @@ Aslında, bu görevi tamamladığınıza dair kanıt talep etmek istiyorsanız b
 
 Günümüzde, çok sayıda `gözetimsiz`, `sıcak cüzdan` uygulaması mevcuttur. Bu dersin geri kalanında Zerion cüzdanı keşfedeceğiz. Bu cüzdanı tercih etmemizin sebepleri şunlardır:
 
-- ⚙️ Çoğu `blok zinciri uygulaması` ile uyumludur.
-- ⚡ Arayüz inanılmaz derecede akıcı ve kullanımı kolay.
-- 💻 Chrome, Brave, Edge ve Opera internet tarayıcıları için bir tarayıcı uzantısına sahiptir.
-- 📱 Android ve iOS kullanıcıları için bir mobil uygulama olarak da mevcuttur.
-- 🗣️ Zerion çeşitli dilleri desteklemektedir.
+- ⚙️ `Blok zinciri uygulamaları`nın çoğuyla uyumlu.
+- ⚡ Arayüz inanılmaz derecede sorunsuz ve kullanımı kolay.
+- 💻 Chrome, Brave, Edge ve Opera internet tarayıcıları için bir tarayıcı uzantısına sahip.
+- 📱 Android ve iOS kullanıcıları için bir mobil uygulama olarak da mevcut.
+- 🗣️ Zerion çeşitli dilleri destekliyor.
 
 Zerion ile cüzdanınızı oluşturmaya yönelik talimatlarınızı paylaşacağımız dersin sonuna geldik sayılır!
 
