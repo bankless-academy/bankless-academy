@@ -1,9 +1,9 @@
 {
   "BitcoinBasics": {
-    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Your Bitcoin is on its way to Satoshi Nakamoto.",
-    "2. It's now being verified by network miners...": "2. It's now being verified by network miners...",
-    "3. Your transaction is added to the blockchain “database”...": "3. Your transaction is added to the blockchain “database”...",
-    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto has received your Bitcoin!",
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Il tuo Bitcoin è in viaggio verso Satoshi Nakamoto.",
+    "2. It's now being verified by network miners...": "2. Ora viene verificato dai minatori della rete...",
+    "3. Your transaction is added to the blockchain “database”...": "3. La tua transazione viene aggiunta al \"database\" della blockchain...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto ha ricevuto il tuo Bitcoin!",
     "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address",
     "Recipient": "Recipient",
     "Address": "Address",
