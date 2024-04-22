@@ -35,7 +35,7 @@ Blok zinciri çoklu evrenine yolculuğunuzda daha derinlere dalmanın zamanı ge
 
 Cüzdanlar, alışkın olduğunuz `web2` internet hesaplarına benzer. `Web3` olarak da bilinen blok zinciri ekosistemine giriş yapmak için bir cüzdan oluşturacak, bu cüzdan ile `kripto para` kullanabilecek ve `blok zinciri uygulamaları`na bağlanabileceksiniz!
 
-Bu derste size cüzdanları, nasıl çalıştıklarını ve kripto paranızı nasıl güvende tutacağınızı anlatacağız. Nasıl cüzdan oluşturacağınıza ve **Bankless Academy'nin evi olan Ethereum blok zinciri**ne nasıl erişeceğinize dair bir kılavuzla dersi tamamlayacağız.
+Bu derste size cüzdanları, nasıl çalıştıklarını ve kripto paranızı nasıl güvende tutacağınızı anlatacağız. Nasıl cüzdan oluşturacağınıza ve **Bankless Academy'nin evi olan Ethereum blok zincirine** nasıl erişeceğinize dair bir kılavuzla dersi tamamlayacağız.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
@@ -59,7 +59,7 @@ Bilgisayarınıza yazılım (veya telefonunuza uygulama) indirme ve yükleme kon
 
 Bir cüzdanı kontrol etmenin en zor kısmı onu güvende tutmaktır; bu konuya birazdan değineceğiz!
 
-`Cüzdan uygulamanızı` seçmek de göz korkutucu gelebilir. Bu, blok zincirindeki cüzdanınıza erişmek için cihazınıza yükleyeceğiniz uygulamadır. Zerion cüzdan uygulaması ile başlamanızı öneriyoruz çünkü cüzdanları hem kullanıcı dostu hem de birçok popüler blok zincirine erişime sahip. `Web3` dünyasında daha rahat hale geldikçe, muhtemelen diğer sağlayıcıları keşfedecek ve birden fazla cüzdan oluşturacaksınız.
+Kullanacağınız `cüzdan uygulaması`nı seçmek de göz korkutucu gelebilir. Bu, blok zincirindeki cüzdanınıza erişmek için cihazınıza yükleyeceğiniz uygulamadır. Zerion cüzdan uygulaması ile başlamanızı öneriyoruz çünkü cüzdanları hem kullanıcı dostu hem de birçok popüler blok zincirine erişime sahip. `Web3` dünyasında daha rahat hale geldikçe, muhtemelen diğer sağlayıcıları keşfedecek ve birden fazla cüzdan oluşturacaksınız.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
@@ -85,7 +85,7 @@ Cüzdan nedir?
 
 # Cüzdanlar ve Parola Kurtarma
 
-İşte `web3` cüzdanları ile ilgili anlamanız gereken en önemli şeylerden biri: **“Parola sıfırlama” veya “parola değişikliği” yoktur.**
+İşte `web3` cüzdanları ile ilgili anlamanız gereken en önemli şeylerden biri: **“Parola sıfırlama” veya “parola değişikliği” yapılmaz.**
 
 Çoğumuz bu özelliklere alışkınız. Parolayı unutursak bir düğmeye tıklarız, birkaç şey yaparız ve yeni bir parola alırız. Kolay bir çözüm.
 
