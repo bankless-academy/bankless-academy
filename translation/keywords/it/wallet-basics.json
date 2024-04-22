@@ -32,46 +32,46 @@
   "public key": {
     "keyword": "chiave pubblica",
     "keyword_plural": "public keys",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+    "definition": "Una chiave pubblica è l'indirizzo del tuo portafoglio. Permette agli altri di sapere dove inviare criptovalute."
   },
   "private key": {
-    "keyword": "private key",
+    "keyword": "chiave privata",
     "keyword_plural": "private keys",
-    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+    "definition": "Una chiave privata consente l'accesso al proprio portafoglio, permettendoti di inviare criptovalute ad altri portafogli."
   },
   "wallet": {
-    "keyword": "wallet",
+    "keyword": "portafoglio",
     "keyword_plural": "wallets",
-    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+    "definition": "Un portafoglio è un'applicazione o un dispositivo utilizzato per inviare e ricevere criptovalute sulla blockchain."
   },
   "recovery phrase": {
-    "keyword": "recovery phrase",
+    "keyword": "frase di recupero",
     "keyword_plural": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+    "definition": "Una frase di recupero è un elenco di 12-24 parole, utilizzato per generare la chiave pubblica e la chiave privata del tuo portafoglio."
   },
   "self-custody wallet": {
-    "keyword": "self-custody wallet",
+    "keyword": "portafoglio di autocustodia",
     "keyword_plural": "self-custody wallets",
-    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+    "definition": "(Detto anche Non-custodial wallet) Con un portafoglio di auto-custodia, hai il controllo esclusivo delle tue chiavi private, che a loro volta controllano i tuoi beni cripto."
   },
   "custodial wallet": {
-    "keyword": "custodial wallet",
+    "keyword": "portafoglio custodito",
     "keyword_plural": "custodial wallets",
-    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+    "definition": "Con un portafoglio custodito, un'altra parte controlla le chiavi private, controllando così l'accesso ai vostri beni cripto."
   },
   "hot wallet": {
-    "keyword": "hot wallet",
-    "keyword_plural": "hot wallets",
-    "definition": "A type of self-custody wallet that is perpetually connected to the internet."
+    "keyword": "portafoglio caldo",
+    "keyword_plural": "portafogli caldi",
+    "definition": "Un tipo di portafoglio di autocustodia perennemente connesso a Internet."
   },
   "cold wallet": {
-    "keyword": "cold wallet",
-    "keyword_plural": "cold wallets",
-    "definition": "A type of self-custody wallet that is stored on offline hardware."
+    "keyword": "portafoglio freddo",
+    "keyword_plural": "portafogli freddi",
+    "definition": "Un tipo di portafoglio autocustodito che viene memorizzato su hardware offline."
   },
   "self-custody": {
-    "keyword": "self-custody",
+    "keyword": "autocustodia",
     "keyword_plural": "self-custodys",
-    "definition": "A means of holding your assets where only you have access to them."
+    "definition": "Un modo per conservare i tuoi beni in modo che solo tu possa accedervi."
   }
 }
