@@ -2,10 +2,10 @@
 TITLE: Le Basi Del Portafoglio
 DESCRIPTION: Cos'è un portafoglio di criptovalute? Scopri di più e crea il tuo primo portafoglio oggi stesso!
 LANGUAGE: Italiano
-WRITERS: Ap0ll0517, Jordy, Tetranome
+WRITERS: Ap0ll0517, Jordy, Tetranoma
 TRANSLATORS: fa3io
 LINK: https://app.banklessacademy.com/lessons/wallet-basics
-FORMAT: LESSON
+FORMAT: LEZIONE
 ---
 
 ```
@@ -61,7 +61,7 @@ La parte più intricata nella gestione di un portafoglio è garantirne la sicure
 
 Anche la scelta della tua `app portafoglio` potrebbe risultare scoraggiante. Si tratta dell'applicazione da installare sul proprio dispositivo per accedere al proprio portafoglio sulla blockchain. Consigliamo di iniziare con l'app Zerion wallet: è facile da utilizzare e ha accesso alle blockchain più diffuse. Man mano che ti sentirai più a tuo agio nello spazio `web3`, è probabile che esplorerai altri fornitori e creerai più portafogli.
 
-![](Crea e gestisci in modo sicuro il tuo primo portafoglio di criptovalute.)
+![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
 # Knowledge Check 1
 
