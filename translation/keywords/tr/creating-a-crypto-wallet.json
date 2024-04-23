@@ -37,6 +37,6 @@
   "encryption": {
     "keyword": "şifreleme",
     "keyword_plural": "encryptions",
-    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
+    "definition": "İzinsiz erişimi önlemek amacıyla bilgileri gizli ve güvenli koda dönüştürme işlemi."
   }
 }
