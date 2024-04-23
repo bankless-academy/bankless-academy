@@ -51,6 +51,7 @@ const LanguageSwitch = ({
           justifyContent="center"
           alignItems="center"
           m="auto"
+          width="fit-content"
         >
           <Box fontSize="xl" fontWeight="bold">
             {t('Select language:')}
