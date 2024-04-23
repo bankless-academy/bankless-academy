@@ -55,7 +55,7 @@ No entanto, ao contrário das contas `web2` a que você está acostumado, uma ú
 
 Antigamente sim, era difícil. Mas hoje, qualquer pessoa pode facilmente criar uma carteira.
 
-Se você não tiver dificuldades para baixar e instalar software em seu computador (ou aplicativos no seu celular), então você não terá problemas em criar sua primeira carteira.
+Se você não tiver dificuldades para baixar e instalar um software em seu computador (ou aplicativos no seu celular), então você não terá problemas em criar sua primeira carteira.
 
 A parte mais complicada de gerenciar uma carteira consiste em mantê-la segura, o que veremos em breve!
 
