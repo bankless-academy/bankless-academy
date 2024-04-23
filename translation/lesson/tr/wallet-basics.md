@@ -1,5 +1,5 @@
 ---
-TITLE: Cüzdan ile İlgili Temel Bilgiler
+TITLE: Cüzdanın Temelleri
 DESCRIPTION: Kripto para cüzdanı nedir? Ayrıntılı bilgi edinin ve ilk cüzdanınızı hemen oluşturun!
 LANGUAGE: Türkçe
 WRITERS: Ap0ll0517, Jordy, Tetranome
@@ -143,7 +143,7 @@ Genel anahtarınız _____, özel anahtarınız _____ gibidir.
 
 - [ ] Telefon Numarası/Pasaport Numarası
 
-> ℹ️ Tekrar deneyin! These are examples of public & private information, but they’re unrelated.
+> ℹ️ Tekrar deneyin! Bunlar, herkese açık ve gizli bilgilere örnektir ancak birbirleriyle ilgileri yoktur.
 
 # Kurtarma İfadesi
 
