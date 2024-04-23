@@ -22,6 +22,9 @@ const CORRECT_ANSWERS = ['1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', '0.00000001']
 
 const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
   const { t } = useTranslation('quests', { keyPrefix: 'BitcoinBasics' })
+  // HACK: or else translation is skipped...
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { t: tl } = useTranslation('lesson')
   const [isSmallScreen] = useSmallScreen()
   const [hasSimulationRun, setHasSimulationRun] = useState(false)
   const [animationStep, setAnimationStep] = useState(null)

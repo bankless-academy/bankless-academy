@@ -59,7 +59,7 @@ As of January 2024, **19 grants rounds** have been run by Gitcoin, disbursing fu
 
 Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone for the open source Ethereum community.
 
-Prior to GG20, as referenced by the [Open Source Observer Impact Analysis](/e578499f17dc4253ba409591c005b795), Gitcoin distributed **$8.4M to ~2500 applicants** through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.
+Prior to GG20, as referenced by the Open Source Observer Impact Analysis, Gitcoin distributed **$8.4M to ~2500 applicants** through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-fe71e17f.png)
 
@@ -160,7 +160,7 @@ Grants Stack invests in several core areas to provide grants managers with the t
 
 **Grants Stack** currently supports two funding methods: [Quadratic Funding](https://www.wtfisqf.com/) and [Direct Grants](https://www.gitcoin.co/blog/intro-to-direct-grants-how-do-they-work).
 
-As new funding mechanisms arise, Gitcoin quickly adapts and integrates them. A relevant example of this is [EasyRetroPGF.xyz](http://easyretropgf.xyz/). Originally deployed by Optimism, the ability to operate a retroactive grants round is now open-source.
+As new funding mechanisms arise, Gitcoin quickly adapts and integrates them. A relevant example of this is [EasyRetroPGF.xyz](https://easyretropgf.xyz/). Originally deployed by Optimism, the ability to operate a retroactive grants round is now open-source.
 
 Complimentary applications such as reporting and discovery tools may follow suit, creating a **flywheel of grants innovation** that allows Grants Stack to remain a **stable, trusted solution**.
 

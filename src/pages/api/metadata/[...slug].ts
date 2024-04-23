@@ -4,7 +4,9 @@ import LESSONS from 'constants/lessons'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 const lessonAddress = (lesson) =>
-  `https://${DOMAIN_PROD}/lessons/${lesson.slug}`
+  (lesson.publicationStatus === 'publish') ?
+    `https://${DOMAIN_PROD}/lessons/${lesson.slug}` : ''
+
 
 export default async function handler(
   req: NextApiRequest,
