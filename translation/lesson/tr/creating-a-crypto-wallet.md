@@ -1,9 +1,9 @@
 ---
-TITLE: Creating a Crypto Wallet
-DESCRIPTION: Set up your first crypto wallet with our step-by-step walkthrough.
-LANGUAGE: English
+TITLE: Kripto Cüzdanı Oluşturma
+DESCRIPTION: Adım adım kılavuzumuzla ilk kripto cüzdanınızı oluşturun.
+LANGUAGE: Türkçe
 WRITERS: Tetranome
-TRANSLATORS: X
+TRANSLATORS: İlknur Beyaz
 LINK: https://app.banklessacademy.com/lessons/creating-a-crypto-wallet
 FORMAT: HANDBOOK
 ---
@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**
+This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. **Bilginizi artırmak ve rozetinizi almak** için [dersin tamamına] (https://app.banklessacademy.com/lessons/wallet-basics) göz atın!
 
 ---
 
@@ -35,7 +35,7 @@ This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons
 
 > - You’ll need a `crypto wallet` to access the world of blockchains!
 >
-> - A wallet is like a `blockchain` account.
+> - Cüzdan bir `blok zinciri` hesabı gibidir.
 >
 > - Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.
 >
