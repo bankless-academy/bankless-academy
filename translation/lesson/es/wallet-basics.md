@@ -103,7 +103,7 @@ Es posible crear versiones de esta dirección más fáciles de recordar con algu
 
 También puedes pensar en tu llave pública como si fuera la dirección de tu casa. Es pública, cualquiera puede verla, e indica a otros dónde pueden enviarte criptoactivos, sin revelar nada personal sobre ti.
 
-Es perfectamente seguro compartir la **clave pública** de tu billetera.
+Es perfectamente seguro compartir la **llave pública** de tu billetera.
 
 **Nota:** Una única aplicación de billetera puede contener varios pares de llave públicas y `llave privada`.
 
@@ -217,7 +217,7 @@ Esto puede ser todo lo que algunas personas necesiten, pero requiere que confíe
 
 # Billetera No Custodiada o de Autocustodia
 
-Tienes una billetera de  `autocustodia` (como Zerion o Trezor) cuando controlas por completo su acceso a través de tu `llave privada`. **No tiene custodio externo**, y sólo tú eres responsable de mantener a salvo tu llave privada.
+Tienes una `billetera de autocustodia` (como Zerion o Trezor) cuando controlas por completo su acceso a través de tu `llave privada`. **No tiene custodio externo**, y sólo tú eres responsable de mantener a salvo tu llave privada.
 
 Estas billeteras ofrecen el mayor rango de acceso y libertad dentro del mundo `web3`. Nunca tendrás que preocuparte de que un tercero congele o maneje mal tus fondos.
 
@@ -291,7 +291,7 @@ Independientemente de si tu `billetera de autocustodia` es caliente o fría, hay
 
 🔍 Cuando interactúes con una blockchain o envíes fondos, aunque sean pequeñas cantidades, comprueba los detalles con mucho cuidado. Los datos incorrectos no pueden modificarse después de una interacción.
 
-🔭 Dedica tiempo a investigar y reunir información sobre cualquier `aplicación blockchain` con la que planees interactuar antes de conectar tu billetera a ella o firmar sus transacciones.
+🔭 Dedica tiempo a investigar y reunir información sobre `aplicaciones blockchain` con las que planees interactuar. Hazlo antes de conectar tu billetera o firmar transacciones.
 
 💰 Usa billeteras con cantidades bajas de fondos para probar cosas nuevas y explorar web3, y considera almacenar activos de alto valor a través de múltiples cuentas de billetera (por ejemplo: evite poner todos sus 'huevos' criptográficos en una sola cesta).
 
