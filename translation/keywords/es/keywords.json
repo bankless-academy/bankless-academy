@@ -33,7 +33,7 @@
   },
   "aplicaciones blockchain": {
     "keyword": "aplicaciones blockchain",
-    "definition": "Aplicaciones blockchain que permiten intercambiar criptomonedas, utilizar medios sociales web3, realizar donaciones benéficas o incluso aprender onchain, como en Bankless Academy."
+    "definition": "Las aplicaciones en las cadenas de bloques permiten intercambiar criptomonedas, utilizar redes sociales web3, realizar donaciones benéficas o incluso aprender onchain (en cadena), como lo estás haciendo ahora en Bankless Academy."
   },
   "aplicación de billetera": {
     "keyword": "aplicación de billetera",
@@ -137,7 +137,7 @@
   },
   "billetera": {
     "keyword": "billetera",
-    "definition": "Una billetera es una aplicación o dispositivo utilizado para enviar y recibir criptoactivos en la cadena de bloques."
+    "definition": "En el contexto cripto, una billetera es una aplicación o dispositivo utilizado para enviar y recibir criptoactivos en la cadena de bloques."
   },
   "billetera caliente": {
     "keyword": "billetera caliente",
@@ -153,7 +153,7 @@
   },
   "billetera de autocustodia": {
     "keyword": "billetera de autocustodia",
-    "definition": "(AKA: billetera de autocustodia) Con una billetera de autocustodia, usted tiene el control exclusivo de sus llaves privadas, las cuales a su vez controlan tus criptoactivos."
+    "definition": "Con este tipo de billetera, tú cuentas con el control exclusivo de tus llaves privadas, las cuales a su vez controlan tus criptoactivos. También se conoce como billetera no custodiada."
   },
   "billetera de criptomonedas": {
     "keyword": "billetera de criptomonedas",
@@ -209,7 +209,7 @@
   },
   "blockchain appss": {
     "keyword": "blockchain appss",
-    "definition": "Aplicaciones blockchain que permiten intercambiar criptomonedas, utilizar medios sociales web3, realizar donaciones benéficas o incluso aprender onchain, como en Bankless Academy."
+    "definition": "Las aplicaciones en las cadenas de bloques permiten intercambiar criptomonedas, utilizar redes sociales web3, realizar donaciones benéficas o incluso aprender onchain (en cadena), como lo estás haciendo ahora en Bankless Academy."
   },
   "blockchain technologys": {
     "keyword": "blockchain technologys",
@@ -1093,7 +1093,7 @@
   },
   "self-custody wallets": {
     "keyword": "self-custody wallets",
-    "definition": "(AKA: billetera de autocustodia) Con una billetera de autocustodia, usted tiene el control exclusivo de sus llaves privadas, las cuales a su vez controlan tus criptoactivos."
+    "definition": "Con este tipo de billetera, tú cuentas con el control exclusivo de tus llaves privadas, las cuales a su vez controlan tus criptoactivos. También se conoce como billetera no custodiada."
   },
   "self-custodys": {
     "keyword": "self-custodys",
@@ -1261,11 +1261,11 @@
   },
   "wallets": {
     "keyword": "wallets",
-    "definition": "Una billetera es una aplicación o dispositivo utilizado para enviar y recibir criptoactivos en la cadena de bloques."
+    "definition": "En el contexto cripto, una billetera es una aplicación o dispositivo utilizado para enviar y recibir criptoactivos en la cadena de bloques."
   },
   "web2": {
     "keyword": "web2",
-    "definition": "El estado actual de internet, sin infraestructura de blockchain."
+    "definition": "El estado actual de internet, sin infraestructura de cadena de bloques [blockchain]."
   },
   "web2s": {
     "keyword": "web2s",

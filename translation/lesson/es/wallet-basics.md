@@ -33,7 +33,7 @@ ________________________________________________________________________________
 
 Es hora de profundizar tu viaje en el multiverso blockchain. Cada explorador de este espacio necesita crear una billetera criptográfica.
 
-Las billeteras son como las cuentas de internet `web2` a las que estás acostumbrado. Utilizarás una billetera para conectarte al ecosistema `blockchain`, también conocido como `web3`, donde podrás utilizar `criptomonedas` y conectarte a `aplicaciones blockchain`!
+Las billeteras son como las cuentas de internet `web2` a las que estás acostumbrado. Utilizarás una billetera para conectarte al ecosistema de blockchain, también conocido como `web3`. En el podrás utilizar `criptomonedas` y conectarte a `aplicaciones blockchain`.
 
 En esta lección, te presentaremos qué son las billeteras cripto, cómo funcionan y cómo mantener tus criptomonedas segura. Terminaremos con una guía sobre cómo configurar una y acceder a **la blockchain de Ethereum, el hogar de Bankless Academy.**
 
@@ -59,7 +59,7 @@ Si te sientes cómodo descargando e instalando programas en tu computador (o apl
 
 La parte más compleja de gestionar una billetera, es mantenerla segura, tema que profundizaremos en breve.
 
-Elegir cual `aplicación de billetera` usar también puede resultar intimidante. Esta es la aplicación que instalarás en tu dispositivo para acceder a tu billetera en la cadena de bloques. Recomendamos comenzar con la aplicación de billeteras Zerion: es fácil de usar y tiene acceso a muchas blockchains populares. A medida que te sientas más cómodo en el espacio `web3`, es probable que explores otros aplicaciones y crees múltiples billeteras.
+Elegir cual `aplicación de billetera` usar también puede resultar intimidante. Esta es la aplicación que instalarás en tu dispositivo para acceder a tu billetera en la cadena de bloques. Recomendamos comenzar con la aplicación de billeteras Zerion: es fácil de usar y tiene acceso a muchas blockchains populares. A medida que te sientas más cómodo en el espacio `web3`, es probable que explores otras aplicaciones y crees múltiples billeteras.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
@@ -105,23 +105,23 @@ También puedes pensar en tu llave pública como si fuera la dirección de tu ca
 
 Es perfectamente seguro compartir la **clave pública** de tu billetera.
 
-**Nota:** Una única aplicación de billetera puede contener varios pares de `llaves` públicas/privadas.
+**Nota:** Una única aplicación de billetera puede contener varios pares de llave públicas y `llave privada`.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
 # La llave privada de tu billetera
 
-Si la llave pública es como la dirección de una casa, la `clave privada` es como la llave de la puerta principal. Es la "contraseña" de tus fondos y activos.
+Si la llave pública es como la dirección de una casa, la `llave privada` es como la llave de la puerta principal. Es la "contraseña" de tus fondos y activos.
 
 Ejemplo: _eceac283e04f121cbd40b69e16ab9dec0220df80bf092_
 
 **Nunca es seguro compartir esta llave: podrías perder tu billetera y todo su contenido.**
 
-La mayoría de la personas recomienda que ni siquiera la guardes digitalmente. Cualquiera que tenga acceso a una llave privada, tiene acceso a lo que esté en la billetera correspondiente``.
+La mayoría de la personas recomienda que ni siquiera la guardes digitalmente. Cualquiera que tenga acceso a una llave privada, tiene acceso a lo que esté en la `billetera` correspondiente.
 
-Esto es más que una simple contraseña. No puedes restablecerla si pierdes acceso a ella.
+Esto es más que una simple contraseña. No podrás restablecerla si pierdes acceso a ella.
 
-Afortunadamente, la mayoría de `aplicaciones de blockchain` no requieren que escribas una larga y complicada cadena de caracteres cada vez que necesites enviar fondos o firmar una transacción. La llave privada suele funcionar silenciosamente en segundo plano.
+Afortunadamente, la mayoría de `aplicaciones blockchain` no requieren que escribas una larga y complicada cadena de caracteres cada vez que necesites enviar fondos o firmar una transacción. La llave privada suele funcionar silenciosamente en segundo plano.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
@@ -141,7 +141,7 @@ Tu llave pública es como tu _____ y tu llave privada es como tu _____ .
 
 > ℹ️ ¡Correcto! Tu llave pública permite que otros te encuentren, mientras que sólo tu llave privada te permite entrar.
 
-- [ ] Número de teléfono / Número de pasaporte
+- [ ] Número de teléfono / número de pasaporte
 
 > ℹ️ ¡Inténtalo de nuevo! Estos son ejemplos de información pública & privada, pero no están relacionados.
 
@@ -195,9 +195,9 @@ No te preocupes, hoy crearemos sólo una billetera.
 
 # Billetera Custodiadas
 
-Since your `private key` unlocks access to your `wallet`, keeping it safe and secure is very important!
+Dado que tu `llave privada` desbloquea el acceso a tu `billetera`, ¡es muy importante mantenerla segura!
 
-Los servicios de `billeteras custodiadas` son parte de las bolsas de intercambio de criptodivisas como Coinbase y Kraken. **Ellos son los custodios de tu billetera**: es decir, cuidan de tus llaves privadas por ti. Accedes a sus servicios como en cualquier otro sitio web (con un nombre de usuario de correo electrónico y una contraseña restablecible).
+Ejemplos de servicios de `billetera custodiada` son las bolsas de intercambio de criptodivisas como Coinbase y Kraken. **Ellos son los custodios de tu billetera**: es decir, cuidan de tus llaves privadas por ti. Accedes a sus servicios como en cualquier otro sitio web (con un nombre de usuario de correo electrónico y una contraseña restablecible).
 
 Esto puede ser todo lo que algunas personas necesiten, pero requiere que confíes en terceros la seguridad de tus criptoactivos, como a su vez el acceso a ellos cuando quieras comercializarlos o enviarlos a algún lugar. Además, tu acceso a algunas `aplicaciones de blockchain` podría estar limitado.
 
@@ -217,11 +217,11 @@ Esto puede ser todo lo que algunas personas necesiten, pero requiere que confíe
 
 # Billetera No Custodiada o de Autocustodia
 
-Una billetera `auto-custodia` (como Zerion o Trezor) es cuando controlas por completo tu llave `privada`. **No** tiene **custodio**, y sólo tú eres responsable de mantener a salvo tu llave privada.
+Una billetera `auto-custodia` (como Zerion o Trezor) es cuando controlas por completo tu llave `privada`. **No tiene custodio externo**, y sólo tú eres responsable de mantener a salvo tu llave privada.
 
 Estas billeteras ofrecen el mayor rango de acceso y libertad dentro del mundo `web3`. Nunca tendrás que preocuparte de que un tercero congele o maneje mal tus fondos.
 
-La contrapartida está en el riesgo: si pierdes el acceso a tu `frase de recuperación`, o tu llave privada se ve comprometida, a menudo hay muy poco que puedas hacer para restaurar el acceso a la billetera.
+La contrapartida está en el riesgo: si pierdes el acceso a tu `frase de recuperación`, o tu llave privada se ve comprometida, a menudo existe muy poco que puedas hacer para restaurar el acceso a la billetera.
 
 Cualquiera que sea la ruta que elijas, trae sus beneficios el estar familiarizado y cómodo/a con la seguridad de tu billetera. Te daremos algunos consejos antes de completar esta lección.
 
@@ -285,13 +285,13 @@ Ledger y Trezor son ejemplos de `billeteras frías`.
 
 # Seguridad de la Billetera
 
-Independientemente de que tu billetera `auto-custodia` sea caliente o fría, hay muchas prácticas de seguridad inteligentes que debes desarrollar.
+Independientemente de si tu `billetera de autocustodia` es caliente o fría, hay muchas prácticas de seguridad inteligentes que deberías desarrollar.
 
-🖊️ Grabe su `frase de` recuperación en un material físico y duradero (como papel plastificado, o incluso acero) y guárdelo en un lugar muy seguro. Nunca la compartas ni compartas tu `llave privada` con nadie. **Recuerda, esto es más que una simple contraseña.**
+🖊️ Grabe su `frase de recuperación` en un material físico y duradero (como papel plastificado, o incluso acero) y guárdelo en un lugar muy seguro. Nunca la compartas ni compartas tu `llave privada` con nadie. **Recuerda, esto es más que una simple contraseña.**
 
 🔍 Cuando interactúes con una blockchain o envíes fondos, aunque sean pequeñas cantidades, comprueba los detalles con mucho cuidado. Los datos incorrectos no pueden modificarse después de una interacción.
 
-🔭 Dedica tiempo a investigar y reunir información sobre cualquier `aplicación de blockchain` con la que planees interactuar antes de conectar tu monedero a ella o firmar sus transacciones.
+🔭 Dedica tiempo a investigar y reunir información sobre cualquier `aplicación blockchain` con la que planees interactuar antes de conectar tu billetera a ella o firmar sus transacciones.
 
 💰 Usa billeteras con cantidades bajas de fondos para probar cosas nuevas y explorar web3, y considera almacenar activos de alto valor a través de múltiples cuentas de billetera (por ejemplo: evite poner todos sus 'huevos' criptográficos en una sola cesta).
 
@@ -323,7 +323,7 @@ De hecho, necesitarás una si deseas reclamar la certificación de nuestra prueb
 
 Hoy en día existen varias aplicaciones de `billetera caliente` con `autocustodia`. Para finalizar esta lección, exploraremos la billetera de Zerion, ya que:
 
-- ⚙️ Es compatible con la mayoría de las `aplicaciones de blockchain`.
+- ⚙️ Es compatible con la mayoría de las `aplicaciones blockchain`.
 - ⚡ La interfaz es increíblemente fluida y fácil de usar.
 - 💻 Tiene una extensión de navegador para los navegadores de Internet Chrome, Brave, Edge y Opera.
 - 📱 También está disponible como aplicación móvil para usuarios de Android e iOS.

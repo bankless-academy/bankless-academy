@@ -17,15 +17,17 @@
     "1. Connect your wallet to Bankless Academy": "1. 将钱包连接至 Bankless 学院",
     "2. Select a Delegate for your OP": "2.为 OP 选择一名代表委员",
     "See the delegation platform here": "点击此处查看代表团纲领",
-    "Tip: ": "提示： ",
+    "Tip": "Tip",
     "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "请查看探险家手册中的 '{{lesson_title}}' 条目，了解完整的任务攻略。",
     "Refresh": "刷新",
     "Read Entry": "阅读作品"
   },
   "WalletBasics": {
+    "Create your first crypto wallet, with Zerion.": "Create your first crypto wallet, with Zerion.",
     "1. Download and install the Zerion wallet from ": "1. 从以下网址下载并安装 Zerion 钱包 ",
     "If you already have a wallet, move to step 2.": "如果你已经安装了钱包，请跳到步骤 2。",
     "2. Connect your wallet to Bankless Academy": "2. 将钱包链接至 Bankless 学院",
-    "Tip: Check our Explorer's Handbook entry on  '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "提示：请查看探险家手册中的 '{{lesson_title}}' ，了解完整的任务攻略。"
+    "Tip": "Tip",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest."
   }
 }

@@ -243,6 +243,10 @@
     "keyword": "custodial wallets",
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
   },
+  "cüzdan": {
+    "keyword": "cüzdan",
+    "definition": "Cüzdan, blok zincirinde kripto varlıkları göndermek ve almak için kullanılan bir uygulama veya cihazdır."
+  },
   "cüzdan sağlayıcıları": {
     "keyword": "cüzdan sağlayıcıları",
     "definition": "Cüzdanınıza erişmek için kullandığınız yazılımın yaratıcısı. Bu sağlayıcılar, cüzdanınızın sahibi değildir ve blok zincirindeki hesabınıza erişmenizi sağlayan bir köprü görevi görürler."
@@ -258,6 +262,10 @@
   "cüzdan uygulaması": {
     "keyword": "cüzdan uygulaması",
     "definition": "Bilgisayarınızda veya telefonunuzda, blok zincirindeki cüzdanınıza bağlanmak için kullanılan bir uygulama."
+  },
+  "cüzdanlar": {
+    "keyword": "cüzdanlar",
+    "definition": "Cüzdan, blok zincirinde kripto varlıkları göndermek ve almak için kullanılan bir uygulama veya cihazdır."
   },
   "dao": {
     "keyword": "DAO",
@@ -483,6 +491,14 @@
     "keyword": "gazsiz i̇şlemler",
     "definition": "Gaz tutarını, blok zinciri ağının yerel coini yerine, işlem yapılacak tokenın bir kısmını kullanarak ödeyen bir işlem."
   },
+  "genel anahtar": {
+    "keyword": "genel anahtar",
+    "definition": "Genel anahtar, cüzdanınızın adresidir. Başkalarına size kripto varlıkları göndermeleri için bir referans noktası verir."
+  },
+  "genel anahtarlar": {
+    "keyword": "genel anahtarlar",
+    "definition": "Genel anahtar, cüzdanınızın adresidir. Başkalarına size kripto varlıkları göndermeleri için bir referans noktası verir."
+  },
   "gwei": {
     "keyword": "gwei",
     "definition": "Ethereum blok zincirinde gaz fiyatlarını tanımlamak için yaygın olarak kullanılan, 0,000000001 ETH'ye (bir milyarda bir) eşdeğer bir birim."
@@ -634,6 +650,10 @@
   "kriptografi": {
     "keyword": "kriptografi",
     "definition": "Dışarıdan müdahaleyi önleyen güvenli iletişim veya işlem teknikleri."
+  },
+  "kurtarma ifadesi": {
+    "keyword": "kurtarma ifadesi",
+    "definition": "Kurtarma ifadesi, cüzdanınızın genel anahtarını ve özel anahtarını oluşturmak için kullanılan 12 ila 24 kelimelik bir sözcük listesidir."
   },
   "kyc": {
     "keyword": "KYC",
@@ -1109,7 +1129,7 @@
   },
   "recovery phrases": {
     "keyword": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
+    "definition": "Kurtarma ifadesi, cüzdanınızın genel anahtarını ve özel anahtarını oluşturmak için kullanılan 12 ila 24 kelimelik bir sözcük listesidir."
   },
   "red flag": {
     "keyword": "red flag",
@@ -1594,6 +1614,14 @@
   "zk rollups": {
     "keyword": "zk rollups",
     "definition": "A layer-2 rollup scaling solution that uses zero-knowledge proofs to guarantee the validity of “rolled up” transactions while maintaining security and privacy on the layer 1 blockchain."
+  },
+  "özel anahtar": {
+    "keyword": "özel anahtar",
+    "definition": "Özel anahtar, cüzdanınıza erişim sunarak diğer cüzdanlara kripto varlıkları göndermenize olanak tanır."
+  },
+  "özel anahtarlar": {
+    "keyword": "özel anahtarlar",
+    "definition": "Özel anahtar, cüzdanınıza erişim sunarak diğer cüzdanlara kripto varlıkları göndermenize olanak tanır."
   },
   "özel kayıt": {
     "keyword": "Özel Kayıt",
