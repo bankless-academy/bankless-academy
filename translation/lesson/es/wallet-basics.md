@@ -199,7 +199,7 @@ Dado que tu `llave privada` desbloquea el acceso a tu `billetera`, ¡es muy impo
 
 Ejemplos de servicios de `billetera custodiada` son las bolsas de intercambio de criptodivisas como Coinbase y Kraken. **Ellos son los custodios de tu billetera**: es decir, cuidan de tus llaves privadas por ti. Accedes a sus servicios como en cualquier otro sitio web (con un nombre de usuario de correo electrónico y una contraseña restablecible).
 
-Esto puede ser todo lo que algunas personas necesiten, pero requiere que confíes en terceros la seguridad de tus criptoactivos, como a su vez el acceso a ellos cuando quieras comercializarlos o enviarlos a algún lugar. Además, tu acceso a algunas `aplicaciones de blockchain` podría estar limitado.
+Esto puede ser todo lo que algunas personas necesiten, pero requiere que confíes en terceros la seguridad de tus criptoactivos, como a su vez el acceso a ellos cuando quieras comercializarlos o enviarlos a algún lugar. Además, tu acceso a algunas `aplicaciones blockchain` podría estar limitado.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
@@ -217,7 +217,7 @@ Esto puede ser todo lo que algunas personas necesiten, pero requiere que confíe
 
 # Billetera No Custodiada o de Autocustodia
 
-Una billetera `auto-custodia` (como Zerion o Trezor) es cuando controlas por completo tu llave `privada`. **No tiene custodio externo**, y sólo tú eres responsable de mantener a salvo tu llave privada.
+Tienes una billetera de  `autocustodia` (como Zerion o Trezor) cuando controlas por completo su acceso a través de tu `llave privada`. **No tiene custodio externo**, y sólo tú eres responsable de mantener a salvo tu llave privada.
 
 Estas billeteras ofrecen el mayor rango de acceso y libertad dentro del mundo `web3`. Nunca tendrás que preocuparte de que un tercero congele o maneje mal tus fondos.
 
