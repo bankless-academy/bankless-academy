@@ -17,6 +17,9 @@ const StyledMarkdown = styled(Box)`
   font-size: 11.8px;
   word-wrap: break-word;
   white-space: pre-wrap;
+  * {
+    color: white !important;
+  }
   /* .hljs-section {
     display: block;
   }
@@ -25,13 +28,23 @@ const StyledMarkdown = styled(Box)`
   } */
 `
 
+function removeQuizAnswers(text) {
+  const lines = text.split('\n')
+  const filteredLines = lines.filter(
+    // hide line with quiz answers (starts with `> `)
+    (line) => !line.trim().startsWith('<span class="hljs-quote">&gt; ')
+  )
+  // remove empty line after quiz
+  return filteredLines.join('\n')?.replaceAll('\n\n\n', '\n\n')
+}
+
 function replaceImagesInMarkdown(markdownString) {
   // Regular expression to match image Markdown syntax
   const imageRegex = /!\[\]\(<span class="hljs-link">(.*?)<\/span>\)/g
   // /!\[<span class="hljs-string">(.*?)<\/span>\]\(<span class="hljs-link">(.*?)<\/span>\)/g
 
   // Replace each image syntax with an <img> tag
-  const replacedString = markdownString.replace(
+  const replacedString = removeQuizAnswers(markdownString).replace(
     imageRegex,
     '<img alt="" src="$1" width="400px" />'
   )
