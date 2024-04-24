@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { Container } from '@chakra-ui/react'
+import { Box, Container, Text, Image, Center, Stack } from '@chakra-ui/react'
 import fs from 'fs'
 
 import { MetaData } from 'components/Head'
@@ -248,13 +248,64 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
         {lesson.isArticle ? (
           <Article lesson={lesson} />
         ) : (
-          <Container maxW="container.xl" px={isSmallScreen ? '8px' : '16px'}>
+          <>
             {lesson?.showContent ? (
-              <LessonContent lesson={lesson} />
+              <>
+                <Center
+                  height="54vh"
+                  bgImage="/images/homepage_background_v4_half.png"
+                  bgSize="cover"
+                  bgPosition="bottom"
+                >
+                  <Stack
+                    width="100%"
+                    maxW="800px"
+                    spacing={6}
+                    textAlign="center"
+                    alignItems="center"
+                    justifyContent="space-evenly"
+                    height="100%"
+                    pt="22vh"
+                    pb="45px"
+                  >
+                    <Box w="100%" maxW="90%">
+                      <Image
+                        style={{
+                          filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
+                        }}
+                        maxW="90%"
+                        src="/images/BanklessAcademy.svg"
+                        alt="Bankless Academy"
+                        m="auto"
+                      />
+                      <Box ml="25%" w="73%">
+                        <Text
+                          fontSize={isSmallScreen ? '20px' : '25px'}
+                          mt="-15px"
+                          w="100%"
+                        >
+                          {`Your platform for building digital independence.`}
+                        </Text>
+                      </Box>
+                    </Box>
+                  </Stack>
+                </Center>
+                <Container
+                  maxW="container.xl"
+                  px={isSmallScreen ? '8px' : '16px'}
+                >
+                  <LessonContent lesson={lesson} />
+                </Container>
+              </>
             ) : (
-              <LessonDetail lesson={lesson} />
+              <Container
+                maxW="container.xl"
+                px={isSmallScreen ? '8px' : '16px'}
+              >
+                <LessonDetail lesson={lesson} />
+              </Container>
             )}
-          </Container>
+          </>
         )}
       </>
     )
