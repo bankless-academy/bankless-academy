@@ -105,7 +105,7 @@ Você também pode pensar na chave pública como um endereço de casa. Ele é p�
 
 É perfeitamente seguro compartilhar a **chave pública** de sua carteira.
 
-**Nota:** Um único aplicativo de carteira pode armazenar vários pares de chaves públicas/`privadas`.
+**Nota:** Um único aplicativo de carteira pode armazenar vários pares de `chave privada`/ pública.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
