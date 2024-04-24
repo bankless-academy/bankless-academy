@@ -1,4 +1,4 @@
-import { Box, Text, Image } from '@chakra-ui/react'
+import { Box, Image } from '@chakra-ui/react'
 import hljs from 'highlight.js'
 import { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
@@ -95,21 +95,15 @@ const LessonContent = ({
   return (
     <Box>
       <Box mb={8}>
-        <Text
-          fontSize={isSmallScreen ? '3xl' : '5xl'}
-          fontWeight="bold"
-          textAlign="center"
-          pt={4}
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          my={isSmallScreen ? 4 : 8}
         >
-          Welcome to Bankless Academy
-        </Text>
-        <Text fontSize="2xl" textAlign="center">
-          Your platform for understanding cryptocurrency!
-        </Text>
-        <Box display="flex" alignItems="center" justifyContent="center" my={16}>
           <Box w="100%" maxW="400px">
             {isSmallScreen && (
-              <Box mb={16} p={4}>
+              <Box mb={8} p={4}>
                 <Image
                   w="100%"
                   maxW="350px"
@@ -129,9 +123,12 @@ const LessonContent = ({
             />
           )}
         </Box>
+      </Box>
+      <Box maxW="800px" m="auto" my={8}>
         <LanguageSwitch lesson={lesson} />
       </Box>
       <StyledMarkdown>
+        <Box fontSize="2xl">Lesson Content:</Box>
         <Box
           dangerouslySetInnerHTML={{
             __html: replaceImagesInMarkdown(intro),
