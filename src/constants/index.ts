@@ -4,6 +4,7 @@ import DEFAULT_LESSONS from 'constants/lessons'
 import WHITELABEL_LESSONS from 'constants/whitelabel_lessons'
 import DEFAULT_KEYWORDS from '../../translation/keywords/en/keywords.json'
 import WHITELABEL_KEYWORDS from '../../whitelabel-keywords.json'
+import { LanguageDescriptionType } from 'entities/lesson'
 
 export const IS_WHITELABEL = !!WHITELABEL?.project_name
 
@@ -157,3 +158,15 @@ export const DEFAULT_ENS = 'web3explorer.eth'
 
 export const NB_DATADISK_MAX = 2
 
+export const LanguageDescription: LanguageDescriptionType = {
+  en: 'English',
+  br: 'Brazilian Portuguese',
+  cn: 'Chinese Simplified',
+  de: 'German',
+  es: 'Spanish',
+  fr: 'French',
+  it: 'Italian',
+  jp: 'Japanese',
+  tr: 'Turkish',
+  ua: 'Ukrainian',
+}

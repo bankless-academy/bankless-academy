@@ -6,6 +6,7 @@ import styled from '@emotion/styled'
 
 import { LessonType } from 'entities/lesson'
 import { Mixpanel } from 'utils'
+import { LanguageDescription } from 'constants/index'
 
 const StyledButton = styled(Button)<{ isselected?: string }>`
   padding: 16px;
@@ -45,15 +46,8 @@ const LanguageSwitch = ({
   return (
     <Box>
       {languages?.length ? (
-        <Box
-          display="flex"
-          flexWrap="wrap"
-          justifyContent="center"
-          alignItems="center"
-          m="auto"
-          width="fit-content"
-        >
-          <Box fontSize="xl" fontWeight="bold">
+        <Box textAlign="center">
+          <Box fontSize="xl" fontWeight="bold" mb={2}>
             {t('Select language:')}
           </Box>
           <Box
@@ -75,6 +69,7 @@ const LanguageSwitch = ({
                 i18n.language === 'en' ||
                 !lesson.languages.includes(i18n.language as any)
               )?.toString()}
+              title={LanguageDescription['en']}
               m={3}
               onClick={() => {
                 i18n.changeLanguage('en', () =>
@@ -102,6 +97,7 @@ const LanguageSwitch = ({
                 // variant={i18n.language === l ? 'primary' : 'secondary'}
                 variant="secondary"
                 isselected={(i18n.language === l)?.toString()}
+                title={l in LanguageDescription ? LanguageDescription[l] : ''}
                 key={`key-${l}`}
                 onClick={() => {
                   i18n.changeLanguage(l, () =>
