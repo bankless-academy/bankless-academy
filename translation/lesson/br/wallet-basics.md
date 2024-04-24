@@ -99,7 +99,7 @@ Uma `chave pública` é basicamente o endereço de sua carteira. Muitas vezes, i
 
 Exemplo: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-É possível criar versões mais fáceis de lembrar com alguns serviços da `Web3`, mas essa é uma lição para outro momento.
+É possível criar versões mais fáceis de lembrar usando alguns serviços da `Web3`, mas essa é uma lição para outro momento.
 
 Você também pode pensar na chave pública como um endereço de casa. Ele é público, qualquer pessoa pode vê-lo e diz a outros para onde eles podem enviar ativos de criptomoedas, sem revelar nenhuma informação pessoal sobre você.
 
@@ -151,9 +151,9 @@ Quando você configurar uma nova carteira, o aplicativo de carteira fornecerá u
 
 Também chamada de "frase semente" ou "frase secreta", essa sequência de palavras pode ser usada para acessar sua carteira e seus ativos de criptomoedas se:
 
-- Seu `aplicativo de carteira` ou dispositivo falha inesperadamente ou está danificado.
-- Seu dispositivo foi perdido ou roubado.
-- Você quer acessar sua carteira em vários dispositivos.
+- Seu `aplicativo de carteira` ou dispositivo falhar inesperadamente ou estiver danificado.
+- Seu dispositivo for perdido ou roubado.
+- Você quiser acessar sua carteira em vários dispositivos.
 
 A maioria das frases de recuperação consiste em uma lista de 12 a 24 palavras que representam dados únicos. Esses dados são usados para gerar a `chave pública` e a `chave privada` de sua carteira.
 
@@ -233,7 +233,7 @@ Você é o responsável por sua chave privada em uma carteira de auto-custódia?
 
 - [ ] Sim
 
-> ℹ️ Correto! Em uma carteira auto-custódia você é o único responsável pelas suas chaves privadas.
+> ℹ️ Correto! Em uma carteira auto-custódia você é o único responsável por suas chaves privadas.
 
 - [ ] Não
 
@@ -291,7 +291,7 @@ Independentemente de sua `carteira de auto-custódia` ser quente ou fria, há v�
 
 🔍 Ao interagir com uma blockchain ou enviar fundos, mesmo que sejam pequenas quantias, verifique os detalhes com muito cuidado. Detalhes incorretos não podem ser alterados após uma interação.
 
-🔭 Passe algum tempo pesquisando e reunindo informações sobre qualquer `aplicativo blockchain` com o qual você planeja interagir antes de conectar sua carteira a ele ou assinar suas transações.
+🔭 Passe algum tempo pesquisando e reunindo informações sobre quaisquer `aplicativos blockchain` com os quais você planeja interagir antes de conectar sua carteira a ele ou assinar suas transações.
 
 💰 Use carteiras com menos fundos para experimentar coisas novas e explorar a web3, e considere armazenar ativos de maior valor em várias contas de carteira (ou seja, evite colocar todos os seus ovos cripto na mesma cesta).
 
