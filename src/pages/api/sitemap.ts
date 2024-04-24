@@ -57,6 +57,15 @@ export default async function handler(
           date: new Date(lesson.publicationDate),
           image: `${DOMAIN_URL}${lesson.socialImageLink}`
         })
+        // content page
+        lessons.push({
+          title: `${lesson.englishName}`,
+          id: `/lessons/${lesson.slug}/content`,
+          link: `${lessonLink(lesson)}/content`,
+          description: lesson.description,
+          date: new Date(lesson.publicationDate),
+          image: `${DOMAIN_URL}${lesson.socialImageLink}`
+        })
 
         const languagePromises = lesson.languages.map(async (language) => {
           const md = await fetch(
@@ -70,6 +79,15 @@ export default async function handler(
             title: `${translatedLesson.name}`,
             id: `/lessons/${language}/${lesson.slug}`,
             link: lessonLink(lesson).replace('/lessons/', `/lessons/${language}/`),
+            description: translatedLesson.description,
+            date: new Date(lesson.publicationDate),
+            image: `${DOMAIN_URL}${lesson.socialImageLink}`
+          })
+          // content page
+          lessons.push({
+            title: `${translatedLesson.name}`,
+            id: `/lessons/${language}/${lesson.slug}/content`,
+            link: `${lessonLink(lesson).replace('/lessons/', `/lessons/${language}/`)}/content`,
             description: translatedLesson.description,
             date: new Date(lesson.publicationDate),
             image: `${DOMAIN_URL}${lesson.socialImageLink}`
