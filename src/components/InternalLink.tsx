@@ -16,12 +16,16 @@ const InternalLink = ({
   ...props
 }: ChakraLinkAndNextProps): JSX.Element => {
   const i18nextLng = localStorage.getItem('i18nextLng')
+  const isLessonLink =
+    href?.startsWith('/lessons/') ||
+    href?.startsWith('https://app.banklessacademy.com/lessons/')
+  const lessonSlug = isLessonLink ? href?.split('/')?.pop() : ''
   const iHref =
-    href.startsWith('/lessons/') &&
+    isLessonLink &&
     i18nextLng !== 'en' &&
     LESSONS.some(
       (lesson) =>
-        lesson.slug === href.replace('/lessons/', '') &&
+        lesson.slug === lessonSlug &&
         (lesson.languages as any)?.includes(i18nextLng)
     )
       ? href.replace('/lessons/', `/lessons/${i18nextLng}/`)
