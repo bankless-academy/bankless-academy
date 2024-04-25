@@ -160,13 +160,13 @@ export const NB_DATADISK_MAX = 2
 
 export const LanguageDescription: LanguageDescriptionType = {
   en: 'English',
-  br: 'Brazilian Portuguese',
-  cn: 'Chinese Simplified',
-  de: 'German',
-  es: 'Spanish',
-  fr: 'French',
-  it: 'Italian',
-  jp: 'Japanese',
-  tr: 'Turkish',
-  ua: 'Ukrainian',
+  br: 'Português',
+  cn: '简体中文',
+  de: 'Deutsch',
+  es: 'Español',
+  fr: 'Français',
+  it: 'Italiano',
+  jp: '英語',
+  tr: 'Türkçe',
+  ua: 'Українська',
 }
