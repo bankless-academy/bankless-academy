@@ -10,21 +10,25 @@ import { LanguageDescription } from 'constants/index'
 
 const StyledButton = styled(Button)<{ isselected?: string }>`
   padding: 16px;
-  width: 60px;
-  height: 56px;
-  border-radius: 16px;
+  //width: 60px;
+  /* height: 56px; */
+  border-radius: 12px;
+  padding: 10px 16px !important;
   :hover {
     background: #3f3253;
     border: 0;
+    padding: 10px 16px !important;
   }
   ${(props) =>
     props.isselected === 'true' &&
     `
     background: linear-gradient(132deg, #67407E 0%, #354374 100%);
-    border: 2px solid #B85FF1 !important;
+    border: 1px solid #B85FF1 !important;
+    padding: 10px 16px !important;
     :hover {
       background: linear-gradient(132deg, #67407E 0%, #354374 100%);
-      border: 2px solid #B85FF1 !important;
+      border: 1px solid #B85FF1 !important;
+      padding: 10px 16px !important;
     }
   `}
 `
@@ -69,8 +73,8 @@ const LanguageSwitch = ({
                 i18n.language === 'en' ||
                 !lesson.languages.includes(i18n.language as any)
               )?.toString()}
-              title={LanguageDescription['en']}
-              m={3}
+              // title={LanguageDescription['en']}
+              m={2}
               onClick={() => {
                 i18n.changeLanguage('en', () =>
                   router.push(`/lessons/${lesson.slug}${content}`)
@@ -90,14 +94,14 @@ const LanguageSwitch = ({
                 })
               }}
             >
-              EN
+              {LanguageDescription['en']}
             </StyledButton>
             {languages.map((l) => (
               <StyledButton
                 // variant={i18n.language === l ? 'primary' : 'secondary'}
                 variant="secondary"
                 isselected={(i18n.language === l)?.toString()}
-                title={l in LanguageDescription ? LanguageDescription[l] : ''}
+                // title={l in LanguageDescription ? LanguageDescription[l] : ''}
                 key={`key-${l}`}
                 onClick={() => {
                   i18n.changeLanguage(l, () =>
@@ -117,9 +121,9 @@ const LanguageSwitch = ({
                     name: l,
                   })
                 }}
-                m={3}
+                m={2}
               >
-                {l.toUpperCase()}
+                {l in LanguageDescription ? LanguageDescription[l] : ''}
               </StyledButton>
             ))}
           </Box>
