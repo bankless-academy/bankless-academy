@@ -1,6 +1,6 @@
 ---
 TITLE: Gouvernance d'Optimism
-DESCRIPTION: Réclamez votre première part de propriété du réseau et commencez à voter sur la chaîne !
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: Français
 WRITERS: Tetranome
 TRANSLATORS: Didier Krux
@@ -345,7 +345,7 @@ Ces boucles de feedback construites à travers les systèmes d'Optimism sont inc
 
 Nous sommes presque prêts à gouverner avec Optimism 🔴. Il y a une dernière chose à mentionner.
 
-La Vision Optimiste ne s'arrête pas à une seule blockchain `L2` . Grâce à la capacité de `forker` une blockchain, il s'agit d'une expérience de gouvernance clonable. Cette technologie est conçue pour être mise à l'échelle sur plusieurs L2 — et même dans des scénarios de gouvernance mondiale réels. Optimism appelle ceci **« La Superchaine »** [Superchain].
+La Vision Optimiste ne s'arrête pas à une seule blockchain `L2` . Grâce à la capacité de `forker` une blockchain, il s'agit d'une expérience de gouvernance clonable. Cette technologie est conçue pour être mise à l'échelle sur plusieurs L2 — et même dans des scénarios de gouvernance mondiale réels. Optimisme appelle ceci **« La Superchaine »** [Superchain].
 
 Coinbase, un important `CEX`, a déjà forké et commencé à contribuer à cette initiative `open source`, par le biais de la blockchain L2 Base 🔵. Cette mise en commun des ressources de développement accroît l'évolution des infrastructures, tout en canalisant les frais de transaction de la L2 vers l'éthique d'Optimism "Impact = Profit".
 

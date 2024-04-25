@@ -1,0 +1,42 @@
+{
+  "crypto wallet": {
+    "keyword": "carteira de criptomoedas",
+    "keyword_plural": "crypto wallets",
+    "definition": "Um aplicativo que permite armazenar suas criptomoedas e enviar/receber ou gastá-las."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "keyword_plural": "blockchains",
+    "definition": "Um sistema no qual um registro de transações de criptomoedas é mantido em vários computadores em todo o mundo."
+  },
+  "cryptocurrency": {
+    "keyword": "criptomoeda",
+    "keyword_plural": "cryptocurrencys",
+    "definition": "Uma moeda digital hospedada pela tecnologia blockchain em vez de autoridades centralizadas."
+  },
+  "wallet app": {
+    "keyword": "aplicativo de carteira",
+    "keyword_plural": "wallet apps",
+    "definition": "Um aplicativo em seu computador ou celular, usado para se conectar à sua carteira na blockchain."
+  },
+  "public key": {
+    "keyword": "chave pública",
+    "keyword_plural": "public keys",
+    "definition": "Uma chave pública é o endereço da sua carteira. Ela dá aos outros um ponto de referência para enviar ativos de criptomoedas para você."
+  },
+  "private key": {
+    "keyword": "chave privada",
+    "keyword_plural": "private keys",
+    "definition": "Uma chave privada concede acesso à sua carteira, permitindo que você envie ativos de criptomoedas para outras carteiras."
+  },
+  "cryptography": {
+    "keyword": "criptografia",
+    "keyword_plural": "cryptographys",
+    "definition": "Técnicas para comunicações ou transações seguras, prevenindo interferência externa."
+  },
+  "encryption": {
+    "keyword": "encriptação",
+    "keyword_plural": "encryptions",
+    "definition": "O processo de conversão de informações em código privado e seguro, usado para impedir o acesso não autorizado."
+  }
+}

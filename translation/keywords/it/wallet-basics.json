@@ -1,0 +1,77 @@
+{
+  "web2": {
+    "keyword": "web2",
+    "keyword_plural": "web2s",
+    "definition": "Lo stato attuale di Internet, senza l'infrastruttura blockchain."
+  },
+  "web3": {
+    "keyword": "web3",
+    "keyword_plural": "web3s",
+    "definition": "Si riferisce all'internet delle blockchain, dove gli utenti possono gestire autonomamente i propri beni e dati."
+  },
+  "cryptocurrency": {
+    "keyword": "criptovaluta",
+    "keyword_plural": "criptovalute",
+    "definition": "Una valuta digitale ospitata dalla tecnologia blockchain piuttosto che da autorità centralizzate."
+  },
+  "blockchain apps": {
+    "keyword": "applicazioni blockchain",
+    "keyword_plural": "blockchain appss",
+    "definition": "Applicazioni blockchain che ti permettono di scambiare criptovalute, utilizzare i social media web3, fare donazioni benefiche, o persino imparare onchain — come alla Bankless Academy."
+  },
+  "blockchain": {
+    "keyword": "blockchain",
+    "keyword_plural": "blockchains",
+    "definition": "Un sistema in cui un registro delle transazioni di criptovalute è mantenuto su più computer in tutto il mondo."
+  },
+  "wallet app": {
+    "keyword": "app portafoglio",
+    "keyword_plural": "wallet apps",
+    "definition": "Un'applicazione sul computer o sul telefono, utilizzata per connettersi al proprio portafoglio sulla blockchain."
+  },
+  "public key": {
+    "keyword": "chiave pubblica",
+    "keyword_plural": "public keys",
+    "definition": "Una chiave pubblica è l'indirizzo del tuo portafoglio. Permette agli altri di sapere dove inviare criptovalute."
+  },
+  "private key": {
+    "keyword": "chiave privata",
+    "keyword_plural": "private keys",
+    "definition": "Una chiave privata consente l'accesso al proprio portafoglio, permettendoti di inviare criptovalute ad altri portafogli."
+  },
+  "wallet": {
+    "keyword": "portafoglio",
+    "keyword_plural": "wallets",
+    "definition": "Un portafoglio è un'applicazione o un dispositivo utilizzato per inviare e ricevere criptovalute sulla blockchain."
+  },
+  "recovery phrase": {
+    "keyword": "frase di recupero",
+    "keyword_plural": "recovery phrases",
+    "definition": "Una frase di recupero è un elenco di 12-24 parole, utilizzato per generare la chiave pubblica e la chiave privata del tuo portafoglio."
+  },
+  "self-custody wallet": {
+    "keyword": "portafoglio di autocustodia",
+    "keyword_plural": "self-custody wallets",
+    "definition": "(Detto anche Non-custodial wallet) Con un portafoglio di auto-custodia, hai il controllo esclusivo delle tue chiavi private, che a loro volta controllano i tuoi beni cripto."
+  },
+  "custodial wallet": {
+    "keyword": "portafoglio custodito",
+    "keyword_plural": "custodial wallets",
+    "definition": "Con un portafoglio custodito, un'altra parte controlla le chiavi private, controllando così l'accesso ai vostri beni cripto."
+  },
+  "hot wallet": {
+    "keyword": "portafoglio caldo",
+    "keyword_plural": "portafogli caldi",
+    "definition": "Un tipo di portafoglio di autocustodia perennemente connesso a Internet."
+  },
+  "cold wallet": {
+    "keyword": "portafoglio freddo",
+    "keyword_plural": "portafogli freddi",
+    "definition": "Un tipo di portafoglio autocustodito che viene memorizzato su hardware offline."
+  },
+  "self-custody": {
+    "keyword": "autocustodia",
+    "keyword_plural": "self-custodys",
+    "definition": "Un modo per conservare i tuoi beni in modo che solo tu possa accedervi."
+  }
+}

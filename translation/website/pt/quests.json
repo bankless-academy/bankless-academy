@@ -1,0 +1,32 @@
+{
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Your Bitcoin is on its way to Satoshi Nakamoto.",
+    "2. It's now being verified by network miners...": "2. It's now being verified by network miners...",
+    "3. Your transaction is added to the blockchain “database”...": "3. Your transaction is added to the blockchain “database”...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto has received your Bitcoin!",
+    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address",
+    "Recipient": "Recipient",
+    "Address": "Address",
+    "Asset": "Asset",
+    "Amount": "Amount",
+    "Balance": "Balance",
+    "Send": "Send"
+  },
+  "OptimismGovernance": {
+    "Begin your Optimism Network journey by delegating OP.": "Begin your Optimism Network journey by delegating OP.",
+    "1. Connect your wallet to Bankless Academy": "1. Connect your wallet to Bankless Academy",
+    "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
+    "See the delegation platform here": "See the delegation platform here",
+    "Tip: ": "Tip: ",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
+    "Refresh": "Refresh",
+    "Read Entry": "Read Entry"
+  },
+  "WalletBasics": {
+    "How to setup a MetaMask wallet": "How to setup a MetaMask wallet",
+    "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.": "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.",
+    "Download the browser extension from the official website:": "Download the browser extension from the official website:",
+    "Congrats for connecting your wallet! 👏🙂": "Congrats for connecting your wallet! 👏🙂",
+    "Waiting to detect your wallet ...": "Waiting to detect your wallet ..."
+  }
+}

@@ -1,6 +1,6 @@
 ---
 TITLE: Optimism ガバナンス
-DESCRIPTION: 最初のネットワークオーナーシップを獲得し、オンチェーン投票を開始しましょう！
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: 英語
 WRITERS: Tetranome
 TRANSLATORS: Yuki, outtawraith

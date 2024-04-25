@@ -17,16 +17,17 @@
     "1. Connect your wallet to Bankless Academy": "1. Connect your wallet to Bankless Academy",
     "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
     "See the delegation platform here": "See the delegation platform here",
-    "Tip: ": "Tip: ",
+    "Tip": "İpucu",
     "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
     "Refresh": "Refresh",
     "Read Entry": "Read Entry"
   },
   "WalletBasics": {
-    "How to setup a MetaMask wallet": "How to setup a MetaMask wallet",
-    "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.": "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.",
-    "Download the browser extension from the official website:": "Download the browser extension from the official website:",
-    "Congrats for connecting your wallet! 👏🙂": "Congrats for connecting your wallet! 👏🙂",
-    "Waiting to detect your wallet ...": "Waiting to detect your wallet ..."
+    "Create your first crypto wallet, with Zerion.": "Zerion ile ilk kripto cüzdanınızı oluşturun.",
+    "1. Download and install the Zerion wallet from ": "1. Zerion cüzdanını şu adresten indirip yükleyin:",
+    "If you already have a wallet, move to step 2.": "Zaten bir cüzdanınız varsa 2. adıma geçin.",
+    "2. Connect your wallet to Bankless Academy": "2. Cüzdanınızı Bankless Academy'ye bağlayın",
+    "Tip": "İpucu",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Görevin adım adım anlatımı için Kaşifin El Kitabı'ndaki '{{lesson_title}}' başlıklı konuya göz atın."
   }
 }

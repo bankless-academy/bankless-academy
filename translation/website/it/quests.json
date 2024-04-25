@@ -1,11 +1,33 @@
 {
+  "BitcoinBasics": {
+    "1. Your Bitcoin is on its way to Satoshi Nakamoto.": "1. Il tuo Bitcoin è in viaggio verso Satoshi Nakamoto.",
+    "2. It's now being verified by network miners...": "2. Ora viene verificato dai minatori della rete...",
+    "3. Your transaction is added to the blockchain “database”...": "3. La tua transazione viene aggiunta al \"database\" della blockchain...",
+    "4. Satoshi Nakamoto has received your Bitcoin!": "4. Satoshi Nakamoto ha ricevuto il tuo Bitcoin!",
+    "Using our Bitcoin simulator, send <strong>0.00000001</strong> BTC to Satoshi Nakamoto’s address": "Utilizzando il nostro simulatore di Bitcoin, invia <strong>0,00000001</strong> BTC all'indirizzo di Satoshi Nakamoto",
+    "Recipient": "Destinatario",
+    "Address": "Indirizzo",
+    "Asset": "Patrimonio",
+    "Amount": "Importo",
+    "Balance": "Saldo",
+    "Send": "Inviare"
+  },
   "OptimismGovernance": {
     "Begin your Optimism Network journey by delegating OP.": "Begin your Optimism Network journey by delegating OP.",
     "1. Connect your wallet to Bankless Academy": "1. Connect your wallet to Bankless Academy",
-    "2. Delegate your vote": "2. Delegate your vote",
-    "Tip: ": "Tip: ",
-    "Check our Explorer's Handbook entry on 'How to delegate on Optimism' to learn how to delegate.": "Check our Explorer's Handbook entry on 'How to delegate on Optimism' to learn how to delegate.",
+    "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
+    "See the delegation platform here": "See the delegation platform here",
+    "Tip": "Suggerimento",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
     "Refresh": "Refresh",
     "Read Entry": "Read Entry"
+  },
+  "WalletBasics": {
+    "Create your first crypto wallet, with Zerion.": "Crea il tuo primo portafoglio di criptovalute con Zerion.",
+    "1. Download and install the Zerion wallet from ": "1. Scarica e installa il portafoglio Zerion da ",
+    "If you already have a wallet, move to step 2.": "Se si dispone già di un portafoglio, passare al punto 2.",
+    "2. Connect your wallet to Bankless Academy": "2. Collega il tuo portafoglio a Bankless Academy",
+    "Tip": "Suggerimento",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Consulta la voce del nostro Manuale dell'Esploratore su '{{lesson_title}}' per una descrizione passo passo della missione."
   }
 }

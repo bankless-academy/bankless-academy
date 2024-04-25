@@ -17,16 +17,17 @@
     "1. Connect your wallet to Bankless Academy": "1. Connect your wallet to Bankless Academy",
     "2. Select a Delegate for your OP": "2. Select a Delegate for your OP",
     "See the delegation platform here": "See the delegation platform here",
-    "Tip: ": "Tip: ",
+    "Tip": "Dica",
     "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.": "Check our Explorer's Handbook entry on '{{lesson_title}}' for a full quest walkthrough.",
     "Refresh": "Refresh",
     "Read Entry": "Read Entry"
   },
   "WalletBasics": {
-    "How to setup a MetaMask wallet": "How to setup a MetaMask wallet",
-    "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.": "For convenience and ease of access throughout this lesson, you will need a MetaMask wallet. Next we will demonstrate how to set up a MetaMask wallet.",
-    "Download the browser extension from the official website:": "Download the browser extension from the official website:",
-    "Congrats for connecting your wallet! 👏🙂": "Congrats for connecting your wallet! 👏🙂",
-    "Waiting to detect your wallet ...": "Waiting to detect your wallet ..."
+    "Create your first crypto wallet, with Zerion.": "Crie sua primeira carteira de criptomoedas com a Zerion.",
+    "1. Download and install the Zerion wallet from ": "1. Baixe e instale a carteira da Zerion em ",
+    "If you already have a wallet, move to step 2.": "Se você já tem uma carteira, vá para o passo 2.",
+    "2. Connect your wallet to Bankless Academy": "2. Conecte sua carteira à Bankless Academy",
+    "Tip": "Dica",
+    "Check our Explorer's Handbook entry on '{{lesson_title}}' for a step-by-step walkthrough of the quest.": "Dica: Consulte a entrada '{{lesson_title}}' no Manual do Explorador para um passo a passo dessa missão."
   }
 }

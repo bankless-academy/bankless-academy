@@ -1,6 +1,6 @@
 ---
 TITLE: Optimism 治理
-DESCRIPTION: 认领您的第一个网络所有权，并开始投票！
+DESCRIPTION: Become a governing member of Optimism and help decide the network's future.
 LANGUAGE: 中文 (Chinese Simplified)
 WRITERS: Tetranome
 TRANSLATORS: 183Aaros, TG
@@ -362,3 +362,4 @@ RetroPGF 的奖励现在包括从 Base🔵 交易费中获得的利润 —— �
 在公民院制定入会程序的同时，我们可以通过参与[Optimism 社区](https://gov.optimism.io/)论坛上的对话开始我们的公民之旅。
 
 ![](https://app.banklessacademy.com/images/optimism-governance/shaping-an-optimistic-future-a5e03d45.svg)
+
