@@ -448,7 +448,7 @@ axios
                     // HACK: replace youtube links with iframe
                     var youtubeRegex = /<(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})>/g;
                     // Replace YouTube URL with iframe tag
-                    lessonContentMD = lessonContentMD.replace(youtubeRegex, "[](https://www.youtube-nocookie.com/embed/$1)");
+                    lessonContentMD = lessonContentMD.replace(youtubeRegex, "[youtube-embed](https://www.youtube-nocookie.com/embed/$1)");
                     // HACK: replace image
                     const imageRegex = /!\[.*?\]\((.*?)\)/g;
                     let match
