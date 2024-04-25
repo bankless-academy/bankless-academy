@@ -65,11 +65,11 @@ Créez votre premier wallet sur votre ordinateur, en suivant la procédure ci-de
 
 ### Wallet d'ordinateur
 
-
+[youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
 ### Wallet de téléphone
 
-
+[youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
