@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-Voici un résumé de la leçon [Les bases d'un wallet](https://app.banklessacademy.com/lessons/wallet-basics), ainsi qu'une marche à suivre pour la quête. Consultez [la leçon complète] (https://app.banklessacademy.com/lessons/fr/wallet-basics) afin de **perfectionner vos connaissances et d'obtenir votre badge**.
+Voici un résumé de la leçon [Les bases d'un wallet](https://app.banklessacademy.com/lessons/wallet-basics), ainsi qu'une marche à suivre pour la quête. Consultez [la leçon complète](https://app.banklessacademy.com/lessons/wallet-basics) afin de **perfectionner vos connaissances et d'obtenir votre badge!**
 
 ---
 
