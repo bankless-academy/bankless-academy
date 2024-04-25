@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-Este é um resumo de nossa lição [Princípios Básicos de Carteiras](https://app.banklessacademy.com/lessons/pt/wallet-basics), juntamente com um passo a passo para a missão. Confira [a lição completa](https://app.banklessacademy.com/lessons/pt/wallet-basics) para **aumentar seu conhecimento e reivindicar seu distintivo!**
+Este é um resumo de nossa lição [Princípios Básicos de Carteiras](https://app.banklessacademy.com/lessons/wallet-basics), juntamente com um passo a passo para a missão. Confira [a lição completa](https://app.banklessacademy.com/lessons/wallet-basics) para **aumentar seu conhecimento e reivindicar seu distintivo!**
 
 ---
 
@@ -55,7 +55,7 @@ As carteiras têm dois pedaços de informação essenciais:
 
 - Uma `chave privada`, que funciona como sua _senha_. Esta informação deve ser sempre mantida em segredo e não pode ser alterada.
 
-Proteger sua chave privada é fundamental, pois essa chave concede acesso instantâneo à sua carteira. Você nunca deve compartilhar sua chave privada. Você pode aprender mais assistindo [à lição completa](https://app.banklessacademy.com/lessons/pt/wallet-basics).
+Proteger sua chave privada é fundamental, pois essa chave concede acesso instantâneo à sua carteira. Você nunca deve compartilhar sua chave privada. Você pode aprender mais assistindo [à lição completa](https://app.banklessacademy.com/lessons/wallet-basics).
 
 Hoje vamos configurar nossa primeira carteira, usando nossa carteira de criptomoedas recomendada: Zerion!
 
@@ -65,11 +65,11 @@ Configure sua primeira carteira no computador, usando o passo a passo abaixo, ou
 
 ### Carteira no Computador
 
-
+[youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
 ### Carteira no Celular
 
-
+[youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
@@ -95,7 +95,7 @@ A `encriptação` de chaves públicas/privadas permite que sua carteira torne al
 
 Você pode compartilhar sua chave pública com qualquer pessoa em quem confie para lhe enviar criptomoedas, mas sua chave privada é apenas para seus olhos, pois ela concede acesso a todos os ativos dentro da carteira. Nunca o compartilhe, mesmo que seu contato afirme ser da Bankless Academy ou da Zerion.
 
-Saiba mais e receba uma recompensa por criar sua primeira carteira em nossa lição [Princípios Básicos de Carteiras] (https://app.banklessacademy.com/lessons/wallet-basics).
+Saiba mais e receba uma recompensa por criar sua primeira carteira em nossa lição [Princípios Básicos de Carteiras](https://app.banklessacademy.com/lessons/wallet-basics).
 
 ### O que acontece se eu perder minha frase de recuperação?
 

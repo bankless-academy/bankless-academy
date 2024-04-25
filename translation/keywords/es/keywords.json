@@ -35,6 +35,10 @@
     "keyword": "aplicaciones blockchain",
     "definition": "Las aplicaciones en las cadenas de bloques permiten intercambiar criptomonedas, utilizar redes sociales web3, realizar donaciones benéficas o incluso aprender onchain (en cadena), como lo estás haciendo ahora en Bankless Academy."
   },
+  "aplicaciones de blockchain": {
+    "keyword": "aplicaciones de blockchain",
+    "definition": "Las aplicaciones en las cadenas de bloques permiten intercambiar criptomonedas, utilizar redes sociales web3, realizar donaciones benéficas o incluso aprender onchain (en cadena), como lo estás haciendo ahora en Bankless Academy."
+  },
   "aplicación de billetera": {
     "keyword": "aplicación de billetera",
     "definition": "Una aplicación en tu computador o teléfono que se usa para conectar con tu billetera blockchain."
@@ -217,7 +221,7 @@
   },
   "blockchains": {
     "keyword": "blockchains",
-    "definition": "Un sistema en el que se mantiene un registro de las transacciones de criptomoneda en muchos computadores de todo el mundo."
+    "definition": "Un sistema en el que se mantiene un registro de las transacciones de criptomoneda en muchos ordenadores de todo el mundo."
   },
   "blockspaces": {
     "keyword": "blockspaces",
@@ -245,7 +249,7 @@
   },
   "cadena de bloques": {
     "keyword": "cadena de bloques",
-    "definition": "Un sistema en el que se mantiene un registro de las transacciones de criptomoneda en muchos computadores de todo el mundo."
+    "definition": "Un sistema en el que se mantiene un registro de las transacciones de criptomoneda en muchos ordenadores de todo el mundo."
   },
   "cadena lateral": {
     "keyword": "cadena lateral",

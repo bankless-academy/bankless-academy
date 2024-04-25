@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-Voici un résumé de la leçon [Les bases d'un wallet](https://app.banklessacademy.com/lessons/fr/wallet-basics), ainsi qu'une marche à suivre pour la quête. Consultez [la leçon complète] (https://app.banklessacademy.com/lessons/fr/wallet-basics) afin de **perfectionner vos connaissances et d'obtenir votre badge**.
+Voici un résumé de la leçon [Les bases d'un wallet](https://app.banklessacademy.com/lessons/wallet-basics), ainsi qu'une marche à suivre pour la quête. Consultez [la leçon complète](https://app.banklessacademy.com/lessons/wallet-basics) afin de **perfectionner vos connaissances et d'obtenir votre badge!**
 
 ---
 
@@ -55,7 +55,7 @@ Les wallets contiennent deux éléments essentiels d'information sur les comptes
 
 - Une `clé privée`, agissant comme votre _mot de passe_. Cette information doit toujours rester confidentielle et ne peut pas être modifiée.
 
-Il est essentiel de protéger votre clé privée, car elle vous permet d'accéder instantanément à votre portefeuille. Vous ne devez jamais partager votre clé privée. Vous pouvez en savoir plus en suivant [la leçon complète](https://app.banklessacademy.com/lessons/fr/wallet-basics).
+Il est essentiel de protéger votre clé privée, car elle vous permet d'accéder instantanément à votre portefeuille. Vous ne devez jamais partager votre clé privée. Vous pouvez en savoir plus en suivant [la leçon complète](https://app.banklessacademy.com/lessons/wallet-basics).
 
 Aujourd'hui, nous allons mettre en place notre premier wallet, en utilisant notre wallet de crypto-monnaie recommandé : Zerion !
 
@@ -65,11 +65,11 @@ Créez votre premier wallet sur votre ordinateur, en suivant la procédure ci-de
 
 ### Wallet d'ordinateur
 
-
+[youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
 ### Wallet de téléphone
 
-
+[youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
@@ -87,7 +87,7 @@ Bon voyage, Explorateur !
 
 Les crypto-monnaies sont une forme de monnaie numérique, sécurisée par la `cryptographie`. Ces monnaies peuvent fonctionner sans l'intervention d'autorités et de banques centralisées, ce qui réduit les possibilités de fraude tout en augmentant la liberté financière de leurs détenteurs.
 
-Apprenez-en plus sur les cryptomonnaies grâce à notre leçon **[Les bases du Bitcoin](https://app.banklessacademy.com/lessons/fr/bitcoin-basics)**, et découvrez comment ces monnaies numériques révolutionnent le monde de la finance !
+Apprenez-en plus sur les cryptomonnaies grâce à notre leçon **[Les bases du Bitcoin](https://app.banklessacademy.com/lessons/bitcoin-basics)**, et découvrez comment ces monnaies numériques révolutionnent le monde de la finance !
 
 ### Que sont les clés publiques et privées?
 
@@ -95,7 +95,7 @@ Le `chiffrement` à clé publique/privée permet à votre wallet de rendre certa
 
 Vous pouvez partager votre clé publique avec toute personne en qui vous avez confiance pour vous envoyer des crypto-monnaies, mais votre clé privée est réservée à vos yeux uniquement, car elle accorde l'accès à tous les actifs à l'intérieur du wallet. Ne le communiquez jamais, même si votre interlocuteur prétend être de Bankless Academy ou de Zerion.
 
-Pour en savoir plus et être récompensé pour la création de votre premier wallet, consultez notre leçon [Les bases d'un wallet](https://app.banklessacademy.com/lessons/fr/wallet-basics).
+Pour en savoir plus et être récompensé pour la création de votre premier wallet, consultez notre leçon [Les bases d'un wallet](https://app.banklessacademy.com/lessons/wallet-basics).
 
 ### Que se passe-t-il si je perds ma phrase de récupération ?
 

@@ -65,11 +65,11 @@ Configura tu primera billetera en tu computador, usando la guía abajo, o sigue 
 
 ### Computer Wallet
 
-
+[youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
 ### Billetera Móvil
 
-
+[youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 

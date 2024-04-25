@@ -129,7 +129,7 @@
   },
   "blockchain": {
     "keyword": "blockchain",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "Un sistema in cui un registro delle transazioni di criptovalute è mantenuto su più computer in tutto il mondo."
   },
   "blockchain apps": {
     "keyword": "blockchain apps",
@@ -157,7 +157,7 @@
   },
   "blockchains": {
     "keyword": "blockchains",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "Un sistema in cui un registro delle transazioni di criptovalute è mantenuto su più computer in tutto il mondo."
   },
   "blocks": {
     "keyword": "Blocks",
@@ -833,7 +833,7 @@
   },
   "private keys": {
     "keyword": "private keys",
-    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
+    "definition": "Una chiave privata consente l'accesso al proprio portafoglio, permettendoti di inviare criptovalute ad altri portafogli."
   },
   "proof of stake": {
     "keyword": "Proof of Stake",
@@ -869,7 +869,7 @@
   },
   "public keys": {
     "keyword": "public keys",
-    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+    "definition": "Una chiave pubblica è l'indirizzo del tuo portafoglio. Permette agli altri di sapere dove inviare criptovalute."
   },
   "publics": {
     "keyword": "publics",
@@ -1197,7 +1197,7 @@
   },
   "wallet apps": {
     "keyword": "wallet apps",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+    "definition": "Un'applicazione sul computer o sul telefono, utilizzata per connettersi al proprio portafoglio sulla blockchain."
   },
   "wallets": {
     "keyword": "wallets",

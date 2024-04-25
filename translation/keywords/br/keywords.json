@@ -403,6 +403,10 @@
     "keyword": "criptomoeda",
     "definition": "Uma moeda digital hospedada pela tecnologia blockchain em vez de autoridades centralizadas."
   },
+  "criptomoedas": {
+    "keyword": "criptomoedas",
+    "definition": "Uma moeda digital hospedada pela tecnologia blockchain em vez de autoridades centralizadas."
+  },
   "crypto wallets": {
     "keyword": "crypto wallets",
     "definition": "Um aplicativo que permite armazenar suas criptomoedas e enviar/receber ou gastá-las."

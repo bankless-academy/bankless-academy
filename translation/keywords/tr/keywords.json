@@ -77,7 +77,7 @@
   },
   "blockchains": {
     "keyword": "blockchains",
-    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+    "definition": "Kripto para işlemlerinin kaydının, dünyanın dört bir yanından birçok bilgisayarda tutulduğu sistem."
   },
   "blok": {
     "keyword": "Blok",
@@ -241,7 +241,7 @@
   },
   "custodial wallets": {
     "keyword": "custodial wallets",
-    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+    "definition": "Gözetimli bir cüzdanda özel anahtarları, yani kripto varlıklarınıza erişimi başka bir taraf kontrol eder."
   },
   "cüzdan": {
     "keyword": "cüzdan",
@@ -393,7 +393,7 @@
   },
   "encryptions": {
     "keyword": "encryptions",
-    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
+    "definition": "İzinsiz erişimi önlemek amacıyla bilgileri gizli ve güvenli koda dönüştürme işlemi."
   },
   "epoch": {
     "keyword": "Epoch",
@@ -514,6 +514,10 @@
   "gözetimsiz": {
     "keyword": "gözetimsiz",
     "definition": "Varlıklarınızı sadece sizin erişebileceğiniz bir yerde tutma yolu."
+  },
+  "gözetimsiz cüzdan": {
+    "keyword": "gözetimsiz cüzdan",
+    "definition": "(Emanete tabi olmayan cüzdan) Gözetimsiz bir cüzdanla, özel anahtarlarınızın kontrolü sizde olur ve kripto varlıklarınızı siz kontrol edersiniz."
   },
   "gözetimsizler": {
     "keyword": "gözetimsizler",
@@ -1225,11 +1229,11 @@
   },
   "self-custody wallets": {
     "keyword": "self-custody wallets",
-    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+    "definition": "(Emanete tabi olmayan cüzdan) Gözetimsiz bir cüzdanla, özel anahtarlarınızın kontrolü sizde olur ve kripto varlıklarınızı siz kontrol edersiniz."
   },
   "self-custodys": {
     "keyword": "self-custodys",
-    "definition": "A means of holding your assets where only you have access to them."
+    "definition": "Varlıklarınızı sadece sizin erişebileceğiniz bir yerde tutma yolu."
   },
   "settlement layer": {
     "keyword": "settlement layer",
@@ -1386,6 +1390,14 @@
   "swaps": {
     "keyword": "swaps",
     "definition": "A trade from one token to another."
+  },
+  "sıcak cüzdan": {
+    "keyword": "sıcak cüzdan",
+    "definition": "Sürekli internete bağlı olan bir gözetimsiz cüzdan türü."
+  },
+  "sıcak cüzdanlar": {
+    "keyword": "sıcak cüzdanlar",
+    "definition": "Sürekli internete bağlı olan bir gözetimsiz cüzdan türü."
   },
   "tasdik": {
     "keyword": "tasdik",
@@ -1569,7 +1581,7 @@
   },
   "wallet apps": {
     "keyword": "wallet apps",
-    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+    "definition": "Bilgisayarınızda veya telefonunuzda, blok zincirindeki cüzdanınıza bağlanmak için kullanılan bir uygulama."
   },
   "wallets": {
     "keyword": "wallets",
@@ -1633,6 +1645,6 @@
   },
   "şifreleme": {
     "keyword": "şifreleme",
-    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
+    "definition": "İzinsiz erişimi önlemek amacıyla bilgileri gizli ve güvenli koda dönüştürme işlemi."
   }
 }

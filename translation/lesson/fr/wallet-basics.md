@@ -241,7 +241,7 @@ Quelle que soit la route que vous choisissez, il paie d'être familier et à l'a
 
 # Wallets chauds
 
-Vous entendrez souvent les termes "wallet chaud" et "wallet froid" dans le <0>web3</0>.
+Vous entendrez souvent les termes "wallet chaud" et "wallet froid" dans le `web3`.
 
 Un `wallet chaud` est un wallet accessible via une application sur votre appareil — l'application Zerion par exemple. Comme de nombreuses applications `web2`, une application de wallet est constamment connectée à l'internet.
 
