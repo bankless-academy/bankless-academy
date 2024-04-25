@@ -49,6 +49,9 @@ const OptionMenu = ({
           <ExternalLink href="/faq" color="white">
             <MenuItem>{t('FAQ')}</MenuItem>
           </ExternalLink>
+          <ExternalLink href="/about" color="white">
+            <MenuItem>About</MenuItem>
+          </ExternalLink>
           <ExternalLink href="/disclaimer" color="white">
             <MenuItem>{t('Disclaimer')}</MenuItem>
           </ExternalLink>

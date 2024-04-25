@@ -66,6 +66,10 @@
       "destination": "/notion/faq"
     },
     {
+      "source": "/about",
+      "destination": "/notion/about"
+    },
+    {
       "source": "/disclaimer",
       "destination": "/notion/disclaimer"
     },
