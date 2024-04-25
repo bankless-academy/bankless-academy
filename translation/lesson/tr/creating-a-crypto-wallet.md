@@ -27,7 +27,7 @@ ________________________________________________________________________________
 
 ---
 
-This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. **Bilginizi artırmak ve rozetinizi almak** için [dersin tamamına] (https://app.banklessacademy.com/lessons/wallet-basics) göz atın!
+This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. **Bilginizi artırmak ve rozetinizi almak** için [dersin tamamına](https://app.banklessacademy.com/lessons/wallet-basics) göz atın!
 
 ---
 
