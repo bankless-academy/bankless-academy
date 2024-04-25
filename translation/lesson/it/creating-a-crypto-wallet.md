@@ -65,11 +65,11 @@ Configura il tuo primo portafoglio sul computer, utilizzando la guida qui sotto,
 
 ### Portafoglio per computer
 
-
+[youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
 ### Portafoglio per telefono
 
-
+[youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
