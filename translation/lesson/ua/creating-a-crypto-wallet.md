@@ -65,11 +65,11 @@ ________________________________________________________________________________
 
 ### Комп'ютерний гаманець
 
-[] (https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
+[youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
 ### Телефонний гаманець
 
-[] (https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
+[youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
