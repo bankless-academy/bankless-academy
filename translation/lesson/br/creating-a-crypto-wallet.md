@@ -65,11 +65,11 @@ Configure sua primeira carteira no computador, usando o passo a passo abaixo, ou
 
 ### Carteira no Computador
 
-
+[youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
 ### Carteira no Celular
 
-
+[youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
