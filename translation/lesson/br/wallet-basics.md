@@ -257,7 +257,7 @@ As carteiras quentes são convenientes para pequenas interações do dia-a-dia, 
 
 As `carteiras frias` concedem maior segurança em troca da conveniência. Uma carteira fria é aquela que armazena sua `chave privada` em um dispositivo de hardware dedicado (como um cartão de memória ou disco rígido externo). Você deve conectar fisicamente a carteira de hardware ao seu computador para acessar sua carteira na blockchain. Sua chave privada nunca é conectada diretamente à internet. As carteiras frias têm esse nome devido a essa conexão "fria" com a internet.
 
-Eles são amplamente consideradas como mais seguras que `carteiras quentes`, porque a sua chave `privada` é armazenada offline, fora do alcance dos atacantes digitais.
+Eles são amplamente consideradas como mais seguras que `carteiras quentes`, porque a sua `chave privada` é armazenada offline, fora do alcance dos atacantes digitais.
 
 Ledger e Trezor são exemplos de `carteiras frias`.
 
