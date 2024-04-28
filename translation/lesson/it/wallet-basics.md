@@ -105,9 +105,9 @@ Si può anche pensare a una chiave pubblica come a un indirizzo di casa. È pubb
 
 È perfettamente sicuro condividere la **chiave pubblica** del tuo portafoglio.
 
-**Nota:** un singolo account di un portafoglio può contenere molteplici coppie di chiavi pubbliche/`private`.
+**Nota:** Un singolo account di un portafoglio può gestire più chiavi, ognuna composta da una chiave pubblica e una `chiave privata`.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-6d17439c.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
 # La chiave privata del tuo portafoglio
 
@@ -121,7 +121,7 @@ La maggior parte delle persone raccomanda di non salvarla nemmeno digitalmente. 
 
 Questa è più di una semplice password. Non puoi reimpostarla se perdi l'accesso.
 
-Fortunatamente, la maggior parte delle `app blockchain` non richiedono di digitare una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione sulla blockchain. La chiave privata di solito opera silenziosamente in background.
+Fortunatamente, la maggior parte delle `applicazioni blockchain` non richiedono di digitare una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione sulla blockchain. La chiave privata di solito opera silenziosamente in background.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-f4a93387.svg)
 
@@ -182,7 +182,7 @@ Così come esistono molti tipi di software per computer, esistono molti tipi di 
 - 🏦 **Portafogli custoditi:** dove una terza parte è responsabile delle tue chiavi private.
 - 👤 **Portafogli in auto-custodia (non custoditi):** dove sei tu a essere responsabile delle tue chiavi private.
 
-Ci sono due tipi di `portafoglio in auto-custodia`:
+Ci sono due tipi di `portafoglio di autocustodia`:
 
 - 🔥 **Portafogli caldi (hot):** software sul tuo desktop o telefono.
 - 🧊 **Portafogli freddi (cold):** un dispositivo hardware (come una chiavetta USB) che conservi in un luogo sicuro.
