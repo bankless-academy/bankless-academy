@@ -27,17 +27,17 @@ ________________________________________________________________________________
 
 ---
 
-Questo è un riassunto della nostra lezione [Fondamenti del portafoglio](https://app.banklessacademy.com/lessons/wallet-basics), insieme a una guida per la missione. Guarda [la lezione completa](https://app.banklessacademy.com/lessons/wallet-basics) per \*\*migliorare le tue conoscenze e ottenere il tuo badge
+Questo è un riassunto della nostra lezione [Fondamenti del portafoglio](https://app.banklessacademy.com/lessons/wallet-basics), insieme a una guida per la missione. Guarda [la lezione completa](https://app.banklessacademy.com/lessons/wallet-basics) per **migliorare le tue conoscenze e ottenere il tuo badge**
 
 ---
 
 ## Punti Chiave
 
-> - Per accedere al mondo delle blockchain è necessario un "portafoglio crittografico"!
+> - Per accedere al mondo delle blockchain è necessario un `portafoglio crittografico`!
 >
 > - Un portafoglio è come un account `blockchain`.
 >
-> - I portafogli sono utilizzati per conservare "criptovalute", accedere alle applicazioni blockchain e altro ancora.
+> - I portafogli sono utilizzati per conservare `criptovalute`, accedere alle applicazioni blockchain e altro ancora.
 >
 > - Questi portafogli funzionano sia su computer che su telefoni.
 >
@@ -45,13 +45,13 @@ Questo è un riassunto della nostra lezione [Fondamenti del portafoglio](https:/
 
 ## Che cos'è un portafoglio cripto?
 
-I portafogli di criptovalute sono un elemento essenziale dell'attrezzatura web3, che consentono di utilizzare le "criptovalute" sul tuo computer o telefono. I portafogli sono accessibili utilizzando un software chiamato "app per portafogli" — un'estensione per il browser web sul tuo computer, o un'app sul tuo telefono.
+I portafogli di criptovalute sono un elemento essenziale dell'attrezzatura web3, che consentono di utilizzare le `criptovalute` sul tuo computer o telefono. I portafogli sono accessibili utilizzando un software chiamato `app per portafogli` — un'estensione per il browser web sul tuo computer, o un'app sul tuo telefono.
 
 Ma c'è di più. I portafogli sono più che semplici account per tenere criptovalute — sono la nostra connessione alla blockchain. Possiamo usarli per scambiare criptovalute con altri, accedere ad applicazioni blockchain, **e persino collezionare oggetti digitali come i badge di Bankless Academy.** Più esploriamo, più i nostri portafogli si evolvono — alcuni li considerano l'inizio di un'identità digitale.
 
 I portafogli contengono due informazioni fondamentali dell'account:
 
-- Una "chiave pubblica", che si può considerare come il proprio _nome utente_. La condividerai pubblicamente per ricevere criptovalute.
+- Una `chiave pubblica`, che si può considerare come il proprio _nome utente_. La condividerai pubblicamente per ricevere criptovalute.
 
 - Una `chiave privata`, che funge da _password_. Questo dato deve sempre rimanere privato e non può essere modificato.
 
@@ -85,7 +85,7 @@ Buon viaggio, Esploratore!
 
 ### Cos'è una criptovaluta?
 
-Le criptovalute sono una forma di denaro digitale, protetto dalla "crittografia". Queste valute possono funzionare senza la necessità di autorità e banche centralizzate, riducendo le possibilità di frode e aumentando la libertà finanziaria dei titolari.
+Le criptovalute sono una forma di denaro digitale, protetto dalla `crittografia`. Queste valute possono funzionare senza la necessità di autorità e banche centralizzate, riducendo le possibilità di frode e aumentando la libertà finanziaria dei titolari.
 
 Scopri di più sulle criptovalute con la nostra lezione **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** e scopri come queste valute digitali stanno rivoluzionando il mondo finanziario!
 
