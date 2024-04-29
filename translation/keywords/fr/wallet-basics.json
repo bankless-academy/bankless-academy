@@ -36,7 +36,7 @@
   },
   "private key": {
     "keyword": "clé privée",
-    "keyword_plural": "private keys",
+    "keyword_plural": "clés privées",
     "definition": "Une clé privée donne accès à votre wallet, ce qui vous permet d'envoyer des crypto-actifs à d'autres portefeuilles."
   },
   "wallet": {
@@ -50,13 +50,13 @@
     "definition": "Une phrase de récupération est une liste de 12 à 24 mots, utilisée pour générer la clé publique et la clé privée de votre portefeuille."
   },
   "self-custody wallet": {
-    "keyword": "portefeuille d'autodétention",
-    "keyword_plural": "portefeuilles d'autodétention",
+    "keyword": "wallet en auto-garde",
+    "keyword_plural": "wallets en auto-garde",
     "definition": "(AKA : wallet non-custodial) Avec un wallet à auto-garde, vous avez le contrôle exclusif de vos clés privées, qui à leur tour contrôlent vos crypto-actifs."
   },
   "custodial wallet": {
     "keyword": "wallet custodial",
-    "keyword_plural": "custodial wallets",
+    "keyword_plural": "wallets custodiaux",
     "definition": "Avec un wallet custodial, une autre partie contrôle les clés privées, contrôlant ainsi l'accès à vos crypto-actifs."
   },
   "hot wallet": {
