@@ -300,7 +300,15 @@ const LESSONS: LessonType[] = [
     difficulty: 'Easy',
     description: 'What is a crypto wallet? Learn more and create your first wallet today!',
     name: 'Wallet Basics',
-    languages: [],
+    languages: [
+      'br',
+      'cn',
+      'es',
+      'fr',
+      'it',
+      'tr',
+      'ua'
+    ],
     lessonWriters: 'Ap0ll0517, Jordy, Tetranome',
     quest: 'WalletBasics',
     publicationStatus: 'publish',
@@ -610,7 +618,15 @@ const LESSONS: LessonType[] = [
     learnings: '',
     description: 'Set up your first crypto wallet with our step-by-step walkthrough.',
     name: 'Creating a Crypto Wallet',
-    languages: [],
+    languages: [
+      'br',
+      'cn',
+      'es',
+      'fr',
+      'it',
+      'tr',
+      'ua'
+    ],
     lessonWriters: 'Tetranome',
     publicationStatus: 'publish',
     publicationDate: '2024-03-20',

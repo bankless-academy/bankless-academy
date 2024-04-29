@@ -63,6 +63,14 @@
     "keyword": "AMMs",
     "definition": "(Automated Market Maker) A trade matchmaking system, based on a public algorithm."
   },
+  "app portafoglio": {
+    "keyword": "app portafoglio",
+    "definition": "Un'applicazione sul computer o sul telefono, utilizzata per connettersi al proprio portafoglio sulla blockchain."
+  },
+  "applicazioni blockchain": {
+    "keyword": "applicazioni blockchain",
+    "definition": "Applicazioni blockchain che ti permettono di scambiare criptovalute, utilizzare i social media web3, fare donazioni benefiche, o persino imparare onchain — come alla Bankless Academy."
+  },
   "asynchronous": {
     "keyword": "asynchronous",
     "definition": "Communication between multiple collaborators, where participants don’t have to be present at time of messaging."
@@ -70,6 +78,10 @@
   "asynchronouss": {
     "keyword": "asynchronouss",
     "definition": "Communication between multiple collaborators, where participants don’t have to be present at time of messaging."
+  },
+  "autocustodia": {
+    "keyword": "autocustodia",
+    "definition": "Un modo per conservare i tuoi beni in modo che solo tu possa accedervi."
   },
   "bet": {
     "keyword": "bet",
@@ -81,10 +93,6 @@
   },
   "block": {
     "keyword": "Block",
-    "definition": "A group of transactions on the blockchain."
-  },
-  "blocks": {
-    "keyword": "Blocks",
     "definition": "A group of transactions on the blockchain."
   },
   "block explorer": {
@@ -121,11 +129,15 @@
   },
   "blockchain": {
     "keyword": "blockchain",
-    "definition": "A shared, unchangeable database, or ledger, of recorded transactions."
+    "definition": "Un sistema in cui un registro delle transazioni di criptovalute è mantenuto su più computer in tutto il mondo."
   },
-  "blockchains": {
-    "keyword": "blockchains",
-    "definition": "A shared, unchangeable database, or ledger, of recorded transactions."
+  "blockchain apps": {
+    "keyword": "blockchain apps",
+    "definition": "Blockchain applications that allow you to swap cryptocurrency, use web3 social media, make charitable donations, or even learn onchain — like at Bankless Academy."
+  },
+  "blockchain appss": {
+    "keyword": "blockchain appss",
+    "definition": "Applicazioni blockchain che ti permettono di scambiare criptovalute, utilizzare i social media web3, fare donazioni benefiche, o persino imparare onchain — come alla Bankless Academy."
   },
   "blockchain architecture": {
     "keyword": "blockchain architecture",
@@ -142,6 +154,14 @@
   "blockchain trilemmas": {
     "keyword": "Blockchain Trilemmas",
     "definition": "The problem describing the need for all 3 blockchain qualities: Security, Scalability, and Decentralization."
+  },
+  "blockchains": {
+    "keyword": "blockchains",
+    "definition": "Un sistema in cui un registro delle transazioni di criptovalute è mantenuto su più computer in tutto il mondo."
+  },
+  "blocks": {
+    "keyword": "Blocks",
+    "definition": "A group of transactions on the blockchain."
   },
   "blockspace": {
     "keyword": "blockspace",
@@ -199,6 +219,14 @@
     "keyword": "chains",
     "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
   },
+  "chiave privata": {
+    "keyword": "chiave privata",
+    "definition": "Una chiave privata consente l'accesso al proprio portafoglio, permettendoti di inviare criptovalute ad altri portafogli."
+  },
+  "chiave pubblica": {
+    "keyword": "chiave pubblica",
+    "definition": "Una chiave pubblica è l'indirizzo del tuo portafoglio. Permette agli altri di sapere dove inviare criptovalute."
+  },
   "coin": {
     "keyword": "coin",
     "definition": "The native asset of a blockchain mostly used as a form of currency to facilitate transactions on the network."
@@ -239,13 +267,53 @@
     "keyword": "counterparty risks",
     "definition": "The risk that another party may not fulfil its part in an agreement."
   },
+  "criptaggio": {
+    "keyword": "criptaggio",
+    "definition": "Il processo di conversione delle informazioni in un codice privato e sicuro, utilizzato per prevenire l'accesso non autorizzato."
+  },
+  "criptovaluta": {
+    "keyword": "criptovaluta",
+    "definition": "Una valuta digitale ospitata dalla tecnologia blockchain piuttosto che da autorità centralizzate."
+  },
+  "criptovalute": {
+    "keyword": "criptovalute",
+    "definition": "Una valuta digitale ospitata dalla tecnologia blockchain piuttosto che da autorità centralizzate."
+  },
+  "crittografia": {
+    "keyword": "crittografia",
+    "definition": "Tecniche di comunicazione o transazione sicure, che impediscono interferenze esterne."
+  },
+  "crypto wallet": {
+    "keyword": "crypto wallet",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  },
+  "crypto wallets": {
+    "keyword": "crypto wallets",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
+  },
+  "cryptocurrency": {
+    "keyword": "cryptocurrency",
+    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+  },
+  "cryptocurrencys": {
+    "keyword": "cryptocurrencys",
+    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+  },
+  "cryptography": {
+    "keyword": "cryptography",
+    "definition": "Techniques for secure communication or transaction, preventing external interference."
+  },
+  "cryptographys": {
+    "keyword": "cryptographys",
+    "definition": "Tecniche di comunicazione o transazione sicure, che impediscono interferenze esterne."
+  },
   "custodial wallet": {
     "keyword": "custodial wallet",
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
   },
   "custodial wallets": {
     "keyword": "custodial wallets",
-    "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
+    "definition": "Con un portafoglio custodito, un'altra parte controlla le chiavi private, controllando così l'accesso ai vostri beni cripto."
   },
   "dao": {
     "keyword": "DAO",
@@ -275,10 +343,6 @@
     "keyword": "decentralized",
     "definition": "No single authority or entity controls the data."
   },
-  "decentralizeds": {
-    "keyword": "decentralizeds",
-    "definition": "No single authority or entity controls the data."
-  },
   "decentralized exchange": {
     "keyword": "decentralized exchange",
     "definition": "(DEX) A protocol that facilitates exchange without requiring trusted intermediaries."
@@ -294,6 +358,10 @@
   "decentralized finances": {
     "keyword": "Decentralized Finances",
     "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
+  },
+  "decentralizeds": {
+    "keyword": "decentralizeds",
+    "definition": "No single authority or entity controls the data."
   },
   "defi": {
     "keyword": "DeFi",
@@ -323,10 +391,6 @@
     "keyword": "DEX",
     "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
   },
-  "dexs": {
-    "keyword": "DEXs",
-    "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
-  },
   "dex aggregator": {
     "keyword": "DEX aggregator",
     "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
@@ -334,6 +398,10 @@
   "dex aggregators": {
     "keyword": "DEX aggregators",
     "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
+  },
+  "dexs": {
+    "keyword": "DEXs",
+    "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
   },
   "digital assets": {
     "keyword": "digital assets",
@@ -358,6 +426,14 @@
   "earns": {
     "keyword": "earns",
     "definition": "Contributing value in exchange for rewards ; money verb on the skill cube."
+  },
+  "encryption": {
+    "keyword": "encryption",
+    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
+  },
+  "encryptions": {
+    "keyword": "encryptions",
+    "definition": "Il processo di conversione delle informazioni in un codice privato e sicuro, utilizzato per prevenire l'accesso non autorizzato."
   },
   "epoch": {
     "keyword": "Epoch",
@@ -407,6 +483,10 @@
     "keyword": "forks",
     "definition": "Refers to a radical change in a blockchain network that results in two branches — one following the previous protocol, and the other following a new one."
   },
+  "frase di recupero": {
+    "keyword": "frase di recupero",
+    "definition": "Una frase di recupero è un elenco di 12-24 parole, utilizzato per generare la chiave pubblica e la chiave privata del tuo portafoglio."
+  },
   "fraud proof": {
     "keyword": "fraud proof",
     "definition": "Evidence that a transaction is invalid and that fraud has occurred."
@@ -419,10 +499,6 @@
     "keyword": "gas",
     "definition": "Transaction fees for blockchain networks."
   },
-  "gass": {
-    "keyword": "gass",
-    "definition": "Transaction fees for blockchain networks."
-  },
   "gasless transactions": {
     "keyword": "gasless transactions",
     "definition": "A transaction that pays gas using some of the token to be traded rather than the native coin of the blockchain network."
@@ -430,6 +506,10 @@
   "gasless transactionss": {
     "keyword": "gasless transactionss",
     "definition": "A transaction that pays gas using some of the token to be traded rather than the native coin of the blockchain network."
+  },
+  "gass": {
+    "keyword": "gass",
+    "definition": "Transaction fees for blockchain networks."
   },
   "gwei": {
     "keyword": "gwei",
@@ -451,10 +531,6 @@
     "keyword": "hash",
     "definition": "A digital fingerprint for information."
   },
-  "hashs": {
-    "keyword": "hashs",
-    "definition": "A digital fingerprint for information."
-  },
   "hashing function": {
     "keyword": "hashing function",
     "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
@@ -462,6 +538,10 @@
   "hashing functions": {
     "keyword": "hashing functions",
     "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
+  },
+  "hashs": {
+    "keyword": "hashs",
+    "definition": "A digital fingerprint for information."
   },
   "hodl": {
     "keyword": "HODL",
@@ -555,10 +635,6 @@
     "keyword": "liquidity",
     "definition": "The quantity of a token available for trading."
   },
-  "liquiditys": {
-    "keyword": "liquiditys",
-    "definition": "The quantity of a token available for trading."
-  },
   "liquidity pool": {
     "keyword": "liquidity pool",
     "definition": "A communal vault of tokens that facilitates permissionless token swaps."
@@ -566,6 +642,10 @@
   "liquidity pools": {
     "keyword": "liquidity pools",
     "definition": "A communal vault of tokens that facilitates permissionless token swaps."
+  },
+  "liquiditys": {
+    "keyword": "liquiditys",
+    "definition": "The quantity of a token available for trading."
   },
   "lp": {
     "keyword": "LP",
@@ -703,6 +783,34 @@
     "keyword": "POAPs",
     "definition": "A POAP (Proof of Attendance Protocol) is a badge that keeps a reliable record of life experiences in your wallet, like for example successfully completing a lesson."
   },
+  "portafogli caldi": {
+    "keyword": "portafogli caldi",
+    "definition": "Un tipo di portafoglio di autocustodia perennemente connesso a Internet."
+  },
+  "portafogli freddi": {
+    "keyword": "portafogli freddi",
+    "definition": "Un tipo di portafoglio autocustodito che viene memorizzato su hardware offline."
+  },
+  "portafoglio": {
+    "keyword": "portafoglio",
+    "definition": "Un portafoglio è un'applicazione o un dispositivo utilizzato per inviare e ricevere criptovalute sulla blockchain."
+  },
+  "portafoglio caldo": {
+    "keyword": "portafoglio caldo",
+    "definition": "Un tipo di portafoglio di autocustodia perennemente connesso a Internet."
+  },
+  "portafoglio custodito": {
+    "keyword": "portafoglio custodito",
+    "definition": "Con un portafoglio custodito, un'altra parte controlla le chiavi private, controllando così l'accesso ai vostri beni cripto."
+  },
+  "portafoglio di autocustodia": {
+    "keyword": "portafoglio di autocustodia",
+    "definition": "(Detto anche Non-custodial wallet) Con un portafoglio di auto-custodia, hai il controllo esclusivo delle tue chiavi private, che a loro volta controllano i tuoi beni cripto."
+  },
+  "portafoglio freddo": {
+    "keyword": "portafoglio freddo",
+    "definition": "Un tipo di portafoglio autocustodito che viene memorizzato su hardware offline."
+  },
   "pos": {
     "keyword": "PoS",
     "definition": "Proof of Stake consensus."
@@ -721,11 +829,11 @@
   },
   "private key": {
     "keyword": "private key",
-    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
+    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
   },
   "private keys": {
     "keyword": "private keys",
-    "definition": "A private key allows access to your wallet in order for you to send crypto assets to other address."
+    "definition": "Una chiave privata consente l'accesso al proprio portafoglio, permettendoti di inviare criptovalute ad altri portafogli."
   },
   "proof of stake": {
     "keyword": "Proof of Stake",
@@ -747,10 +855,6 @@
     "keyword": "public",
     "definition": "Public blockchains allow anyone to view the blockchain ledger."
   },
-  "publics": {
-    "keyword": "publics",
-    "definition": "Public blockchains allow anyone to view the blockchain ledger."
-  },
   "public good": {
     "keyword": "public good",
     "definition": "A public good is a commodity or service that is available to all members of society."
@@ -761,19 +865,23 @@
   },
   "public key": {
     "keyword": "public key",
-    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you."
+    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
   },
   "public keys": {
     "keyword": "public keys",
-    "definition": "A public key is your address. It gives others a point of reference to send crypto assets to you."
+    "definition": "Una chiave pubblica è l'indirizzo del tuo portafoglio. Permette agli altri di sapere dove inviare criptovalute."
+  },
+  "publics": {
+    "keyword": "publics",
+    "definition": "Public blockchains allow anyone to view the blockchain ledger."
   },
   "recovery phrase": {
     "keyword": "recovery phrase",
-    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key."
+    "definition": "A recovery phrase is a list of 12 to 24 words, used to generate your wallet's public key and private key."
   },
   "recovery phrases": {
     "keyword": "recovery phrases",
-    "definition": "A recovery phrase is a list of 12 to 24 words which is used to generate your wallet's public key and private key."
+    "definition": "Una frase di recupero è un elenco di 12-24 parole, utilizzato per generare la chiave pubblica e la chiave privata del tuo portafoglio."
   },
   "red flag": {
     "keyword": "red flag",
@@ -839,13 +947,21 @@
     "keyword": "seed phrases",
     "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
   },
+  "self-custody": {
+    "keyword": "self-custody",
+    "definition": "A means of holding your assets where only you have access to them."
+  },
   "self-custody wallet": {
     "keyword": "self-custody wallet",
     "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
   },
   "self-custody wallets": {
     "keyword": "self-custody wallets",
-    "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+    "definition": "(Detto anche Non-custodial wallet) Con un portafoglio di auto-custodia, hai il controllo esclusivo delle tue chiavi private, che a loro volta controllano i tuoi beni cripto."
+  },
+  "self-custodys": {
+    "keyword": "self-custodys",
+    "definition": "Un modo per conservare i tuoi beni in modo che solo tu possa accedervi."
   },
   "settlement layer": {
     "keyword": "settlement layer",
@@ -883,10 +999,6 @@
     "keyword": "slippage",
     "definition": "A change in buy price that helps your trade to execute."
   },
-  "slippages": {
-    "keyword": "slippages",
-    "definition": "A change in buy price that helps your trade to execute."
-  },
   "slippage tolerance": {
     "keyword": "slippage tolerance",
     "definition": "How much can prices change before your trade executes."
@@ -894,6 +1006,10 @@
   "slippage tolerances": {
     "keyword": "slippage tolerances",
     "definition": "How much can prices change before your trade executes."
+  },
+  "slippages": {
+    "keyword": "slippages",
+    "definition": "A change in buy price that helps your trade to execute."
   },
   "smart contract": {
     "keyword": "smart contract",
@@ -947,10 +1063,6 @@
     "keyword": "token",
     "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
   },
-  "tokens": {
-    "keyword": "tokens",
-    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
-  },
   "token allowance": {
     "keyword": "token allowance",
     "definition": "An agreement between a wallet and smart contract, allowing limited or unlimited access to a specific token."
@@ -975,6 +1087,10 @@
     "keyword": "token pairs",
     "definition": "The two associated cryptocurrencies that make up a liquidity pool."
   },
+  "tokens": {
+    "keyword": "tokens",
+    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
+  },
   "tps": {
     "keyword": "TPS",
     "definition": "A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain."
@@ -985,10 +1101,6 @@
   },
   "trade": {
     "keyword": "trade",
-    "definition": "Exchanging assets or money for something valuable ; money verb on the skill cube."
-  },
-  "trades": {
-    "keyword": "trades",
     "definition": "Exchanging assets or money for something valuable ; money verb on the skill cube."
   },
   "trade route": {
@@ -1007,12 +1119,12 @@
     "keyword": "trade routings",
     "definition": "Planning the path taken from starting token to ending token in a trade."
   },
+  "trades": {
+    "keyword": "trades",
+    "definition": "Exchanging assets or money for something valuable ; money verb on the skill cube."
+  },
   "transaction": {
     "keyword": "transaction",
-    "definition": "A record of transfer, monetary or otherwise, on the blockchain."
-  },
-  "transactions": {
-    "keyword": "transactions",
     "definition": "A record of transfer, monetary or otherwise, on the blockchain."
   },
   "transaction finality": {
@@ -1038,6 +1150,10 @@
   "transaction throughputs": {
     "keyword": "transaction throughputs",
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
+  },
+  "transactions": {
+    "keyword": "transactions",
+    "definition": "A record of transfer, monetary or otherwise, on the blockchain."
   },
   "trustless": {
     "keyword": "trustless",
@@ -1075,25 +1191,33 @@
     "keyword": "wallet",
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
   },
+  "wallet app": {
+    "keyword": "wallet app",
+    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+  },
+  "wallet apps": {
+    "keyword": "wallet apps",
+    "definition": "Un'applicazione sul computer o sul telefono, utilizzata per connettersi al proprio portafoglio sulla blockchain."
+  },
   "wallets": {
     "keyword": "wallets",
-    "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
+    "definition": "Un portafoglio è un'applicazione o un dispositivo utilizzato per inviare e ricevere criptovalute sulla blockchain."
   },
   "web2": {
     "keyword": "web2",
-    "definition": "The current state of the internet, without blockchain infrastructure."
+    "definition": "Lo stato attuale di Internet, senza l'infrastruttura blockchain."
   },
   "web2s": {
     "keyword": "web2s",
-    "definition": "The current state of the internet, without blockchain infrastructure."
+    "definition": "Lo stato attuale di Internet, senza l'infrastruttura blockchain."
   },
   "web3": {
     "keyword": "web3",
-    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
+    "definition": "Si riferisce all'internet delle blockchain, dove gli utenti possono gestire autonomamente i propri beni e dati."
   },
   "web3s": {
     "keyword": "web3s",
-    "definition": "Refers to the internet of blockchains, where users can self-custody their assets & data."
+    "definition": "Si riferisce all'internet delle blockchain, dove gli utenti possono gestire autonomamente i propri beni e dati."
   },
   "zero-knowledge": {
     "keyword": "Zero-Knowledge",

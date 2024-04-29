@@ -1,27 +1,7 @@
 {
-  "двохетапна перевірка": {
-    "keyword": "Двохетапна перевірка",
-    "definition": "Додатковий рівень безпеки, який використовується для того, щоб переконатися, що люди, які намагаються отримати доступ до онлайн-акаунту, є тими, за кого себе видають."
-  },
   "51% атаки": {
     "keyword": "51% атаки",
     "definition": "Атака на консенсус блокчейну шляхом контролю над 51% потужності блоків, що виробляють енергію в мережі."
-  },
-  "адреса": {
-    "keyword": "адреса",
-    "definition": "Унікальний публічний ідентифікатор для сутності в блокчейні."
-  },
-  "адреси": {
-    "keyword": "адреси",
-    "definition": "Унікальний публічний ідентифікатор для сутності в блокчейні."
-  },
-  "агрегатор": {
-    "keyword": "агрегатор",
-    "definition": "Інструмент, який поєднує кілька джерел, щоб запропонувати конкурентні варіанти."
-  },
-  "агрегатори": {
-    "keyword": "агрегатори",
-    "definition": "Інструмент, який поєднує кілька джерел, щоб запропонувати конкурентні варіанти."
   },
   "airdrop": {
     "keyword": "airdrop",
@@ -91,10 +71,6 @@
     "keyword": "Block",
     "definition": "A group of transactions on the blockchain."
   },
-  "blocks": {
-    "keyword": "Blocks",
-    "definition": "A group of transactions on the blockchain."
-  },
   "block builder": {
     "keyword": "block builder",
     "definition": "Highly specialized validator nodes who construct blocks from transactions submitted to the network."
@@ -135,17 +111,9 @@
     "keyword": "block rewards",
     "definition": "An amount of native coin given to the proposer of a new valid block."
   },
-  "блокчейн": {
-    "keyword": "блокчейн",
-    "definition": "Система, в якій облік криптовалютних транзакцій ведеться на багатьох комп'ютерах по всьому світу."
-  },
-  "blockchains": {
-    "keyword": "blockchains",
-    "definition": "Система, в якій облік криптовалютних транзакцій ведеться на багатьох комп'ютерах по всьому світу."
-  },
-  "блокчейн-додатки": {
-    "keyword": "блокчейн-додатки",
-    "definition": "Блокчейн-додатки, які дозволяють обмінювати криптовалюту, користуватися соціальними мережами web3, робити благодійні пожертви або навіть навчатися на блокчейні - наприклад, в Bankless Academy."
+  "blockchain": {
+    "keyword": "blockchain",
+    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
   },
   "blockchain architecture": {
     "keyword": "blockchain architecture",
@@ -154,10 +122,6 @@
   "blockchain architectures": {
     "keyword": "blockchain architectures",
     "definition": "The structures for how data is stored in blockchain technology."
-  },
-  "технологія блокчейн": {
-    "keyword": "технологія блокчейн",
-    "definition": "Новий тип мережі, розміщений на багатьох комп'ютерах. Це додає новий рівень цифрової власності в Інтернеті."
   },
   "blockchain technologys": {
     "keyword": "blockchain technologys",
@@ -170,6 +134,14 @@
   "blockchain trilemmas": {
     "keyword": "Blockchain Trilemmas",
     "definition": "The problem describing the need for all 3 blockchain qualities: Security, Scalability, and Decentralization."
+  },
+  "blockchains": {
+    "keyword": "blockchains",
+    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
+  },
+  "blocks": {
+    "keyword": "Blocks",
+    "definition": "A group of transactions on the blockchain."
   },
   "blockspace": {
     "keyword": "blockspace",
@@ -211,28 +183,12 @@
     "keyword": "censorship-resistants",
     "definition": "No government or company has control to determine what is or is not allowed."
   },
-  "центральний банк": {
-    "keyword": "центральний банк",
-    "definition": "Установа, що регулює гроші, банки та валюту в країні."
-  },
-  "центральні банки": {
-    "keyword": "центральні банки",
-    "definition": "Установа, що регулює гроші, банки та валюту в країні."
-  },
   "centralized": {
     "keyword": "centralized",
     "definition": "A single authority or entity controls the entire system."
   },
-  "centralizeds": {
-    "keyword": "centralizeds",
-    "definition": "A single authority or entity controls the entire system."
-  },
   "centralized exchange": {
     "keyword": "centralized exchange",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
-  },
-  "centralized exchanges": {
-    "keyword": "centralized exchanges",
     "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
   },
   "centralized exchange staking": {
@@ -242,6 +198,14 @@
   "centralized exchange stakings": {
     "keyword": "Centralized Exchange Stakings",
     "definition": "Locking tokens through a Centralized Exchange to generate rewards."
+  },
+  "centralized exchanges": {
+    "keyword": "centralized exchanges",
+    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange."
+  },
+  "centralizeds": {
+    "keyword": "centralizeds",
+    "definition": "A single authority or entity controls the entire system."
   },
   "cex": {
     "keyword": "CEX",
@@ -258,10 +222,6 @@
   "chains": {
     "keyword": "chains",
     "definition": "Binds blocks of data together to form a database which cannot be altered or changed."
-  },
-  "в обігу": {
-    "keyword": "в обігу",
-    "definition": "Кількість монет або токенів певної криптовалюти, доступних для торгівлі на ринку."
   },
   "circulating supplys": {
     "keyword": "circulating supplys",
@@ -291,20 +251,8 @@
     "keyword": "collaterals",
     "definition": "A borrower's pledge of specific asset(s) to a lender, to secure repayment of a loan."
   },
-  "комерційний банк": {
-    "keyword": "комерційний банк",
-    "definition": "Банк, що управляє грошима для людей та бізнесу."
-  },
-  "комерційні банки": {
-    "keyword": "комерційні банки",
-    "definition": "Банк, що управляє грошима для людей та бізнесу."
-  },
   "consensus": {
     "keyword": "consensus",
-    "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
-  },
-  "consensuss": {
-    "keyword": "consensuss",
     "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
   },
   "consensus mechanism": {
@@ -318,6 +266,10 @@
   "consensus mechanismss": {
     "keyword": "consensus mechanismss",
     "definition": "Methods by which blockchain networks judge which transactions are legitimate, and which are fraudulent."
+  },
+  "consensuss": {
+    "keyword": "consensuss",
+    "definition": "Agreement, trust, and security across a decentralized computer network like blockchains."
   },
   "counterparty risk": {
     "keyword": "counterparty risk",
@@ -335,29 +287,37 @@
     "keyword": "credible neutralitys",
     "definition": "A mechanism that does not discriminate for or against any specific people."
   },
-  "криптовалюта": {
-    "keyword": "криптовалюта",
-    "definition": "Цифрова валюта, що підтримується технологією блокчейн, а не централізованими органами влади."
+  "crypto wallet": {
+    "keyword": "crypto wallet",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
   },
-  "cryptocurrencys": {
-    "keyword": "cryptocurrencys",
-    "definition": "Цифрова валюта, що підтримується технологією блокчейн, а не централізованими органами влади."
+  "crypto wallets": {
+    "keyword": "crypto wallets",
+    "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it."
   },
-  "майнінг криптовалют": {
-    "keyword": "майнінг криптовалют",
-    "definition": "Процес перевірки блокчейн-транзакцій в обмін на криптовалютну винагороду."
+  "cryptocurrency": {
+    "keyword": "cryptocurrency",
+    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
   },
   "cryptocurrency minings": {
     "keyword": "cryptocurrency minings",
     "definition": "Процес перевірки блокчейн-транзакцій в обмін на криптовалютну винагороду."
   },
-  "криптовалютний гаманець": {
-    "keyword": "криптовалютний гаманець",
-    "definition": "Додаток, який дозволяє зберігати вашу криптовалюту, а також надсилати/отримувати або витрачати її."
-  },
   "cryptocurrency wallets": {
     "keyword": "cryptocurrency wallets",
     "definition": "Додаток, який дозволяє зберігати вашу криптовалюту, а також надсилати/отримувати або витрачати її."
+  },
+  "cryptocurrencys": {
+    "keyword": "cryptocurrencys",
+    "definition": "A digital currency hosted by blockchain technology rather than centralized authorities."
+  },
+  "cryptography": {
+    "keyword": "cryptography",
+    "definition": "Techniques for secure communication or transaction, preventing external interference."
+  },
+  "cryptographys": {
+    "keyword": "cryptographys",
+    "definition": "Методи для безпечної комунікації або транзакції, що запобігають зовнішньому втручанню."
   },
   "custodial wallet": {
     "keyword": "custodial wallet",
@@ -366,22 +326,6 @@
   "custodial wallets": {
     "keyword": "custodial wallets",
     "definition": "With a custodial wallet, another party controls the private keys, thus controlling access to your crypto assets."
-  },
-  "зберігач": {
-    "keyword": "зберігач",
-    "definition": "Фінансова установа, на яку покладено відповідальність за безпеку ваших активів."
-  },
-  "зберігачі": {
-    "keyword": "зберігачі",
-    "definition": "Фінансова установа, на яку покладено відповідальність за безпеку ваших активів."
-  },
-  "користувацький запис": {
-    "keyword": "Користувацький запис",
-    "definition": "Користувацький запис даних, прив'язаний до домену ENS, що дозволяє зберігати та асоціювати довільну інформацію поза стандартними адресами блокчейну."
-  },
-  "користувацькі записи": {
-    "keyword": "Користувацькі записи",
-    "definition": "Користувацький запис даних, прив'язаний до домену ENS, що дозволяє зберігати та асоціювати довільну інформацію поза стандартними адресами блокчейну."
   },
   "dao": {
     "keyword": "DAO",
@@ -399,21 +343,9 @@
     "keyword": "dApps",
     "definition": "A decentralized application that connects to decentralized networks and protocols."
   },
-  "децентралізація": {
-    "keyword": "Децентралізація",
-    "definition": "Передача контролю багатьом особам, а не одному органу влади."
-  },
   "decentralizations": {
     "keyword": "Decentralizations",
     "definition": "Передача контролю багатьом особам, а не одному органу влади."
-  },
-  "децентралізований": {
-    "keyword": "децентралізований",
-    "definition": "Жоден орган чи організація не контролює систему."
-  },
-  "decentralizeds": {
-    "keyword": "decentralizeds",
-    "definition": "Жоден орган чи організація не контролює систему."
   },
   "decentralized exchange": {
     "keyword": "decentralized exchange",
@@ -431,13 +363,13 @@
     "keyword": "Decentralized Finances",
     "definition": "(DeFi) A set of self-custody finance tools, hosted on a blockchain."
   },
-  "децентралізовані гроші": {
-    "keyword": "децентралізовані гроші",
-    "definition": "Гроші з властивостями, узгодженими спільнотою, а не установою."
-  },
   "decentralized moneys": {
     "keyword": "decentralized moneys",
     "definition": "Гроші з властивостями, узгодженими спільнотою, а не установою."
+  },
+  "decentralizeds": {
+    "keyword": "decentralizeds",
+    "definition": "Жоден орган чи організація не контролює систему."
   },
   "defi": {
     "keyword": "DeFi",
@@ -475,10 +407,6 @@
     "keyword": "DEX",
     "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
   },
-  "dexs": {
-    "keyword": "DEXs",
-    "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
-  },
   "dex aggregator": {
     "keyword": "DEX aggregator",
     "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
@@ -486,6 +414,10 @@
   "dex aggregators": {
     "keyword": "DEX aggregators",
     "definition": "Protocol that combines DEX liquidity from multiple sources in one interface."
+  },
+  "dexs": {
+    "keyword": "DEXs",
+    "definition": "Decentralized Exchange: A protocol that facilitates exchange without requiring trusted intermediaries."
   },
   "digital assets": {
     "keyword": "digital assets",
@@ -511,6 +443,14 @@
     "keyword": "earns",
     "definition": "Contributing value in exchange for rewards ; money verb on the skill cube."
   },
+  "encryption": {
+    "keyword": "encryption",
+    "definition": "The process of converting information into private and secure code, used to prevent unauthorized access."
+  },
+  "encryptions": {
+    "keyword": "encryptions",
+    "definition": "Процес перетворення інформації в закритий і захищений код, який використовується для запобігання несанкціонованому доступу."
+  },
   "epoch": {
     "keyword": "Epoch",
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
@@ -519,13 +459,17 @@
     "keyword": "Epochs",
     "definition": "The time taken for a specific number of blocks to be included on any particular blockchain."
   },
-  "рівність можливостей": {
-    "keyword": "рівність можливостей",
-    "definition": "Принцип справедливості, коли кожен має однакові шанси на успіх, незалежно від походження чи обставин."
-  },
   "equality of opportunitys": {
     "keyword": "equality of opportunitys",
     "definition": "Принцип справедливості, коли кожен має однакові шанси на успіх, незалежно від походження чи обставин."
+  },
+  "erc-1155": {
+    "keyword": "ERC-1155",
+    "definition": "A standard for deploying both fungible and non-fungible tokens on Ethereum, under one optimized contract."
+  },
+  "erc-1155s": {
+    "keyword": "ERC-1155s",
+    "definition": "A standard for deploying both fungible and non-fungible tokens on Ethereum, under one optimized contract."
   },
   "erc-20": {
     "keyword": "ERC-20",
@@ -543,28 +487,12 @@
     "keyword": "ERC-721s",
     "definition": "A standard for non-fungible tokens on Ethereum. These tokens have a unique digital identifier, cannot be copied, or subdivided."
   },
-  "erc-1155": {
-    "keyword": "ERC-1155",
-    "definition": "A standard for deploying both fungible and non-fungible tokens on Ethereum, under one optimized contract."
-  },
-  "erc-1155s": {
-    "keyword": "ERC-1155s",
-    "definition": "A standard for deploying both fungible and non-fungible tokens on Ethereum, under one optimized contract."
-  },
   "eth": {
     "keyword": "ETH",
     "definition": "(Ether) Ethereum’s native coin. Used in staking and performing transactions on the network."
   },
-  "eths": {
-    "keyword": "ETHs",
-    "definition": "(Ether) Ethereum’s native coin. Used in staking and performing transactions on the network."
-  },
   "ether": {
     "keyword": "ether",
-    "definition": "(ETH) Ethereum’s native coin. Used in staking and performing transactions on the network."
-  },
-  "ethers": {
-    "keyword": "ethers",
     "definition": "(ETH) Ethereum’s native coin. Used in staking and performing transactions on the network."
   },
   "ethereum virtual machine": {
@@ -574,6 +502,14 @@
   "ethereum virtual machines": {
     "keyword": "Ethereum Virtual Machines",
     "definition": "The Ethereum Virtual Machine or EVM is a piece of software that executes smart contracts and computes the state of the Ethereum network."
+  },
+  "ethers": {
+    "keyword": "ethers",
+    "definition": "(ETH) Ethereum’s native coin. Used in staking and performing transactions on the network."
+  },
+  "eths": {
+    "keyword": "ETHs",
+    "definition": "(Ether) Ethereum’s native coin. Used in staking and performing transactions on the network."
   },
   "fomo": {
     "keyword": "FOMO",
@@ -595,10 +531,6 @@
     "keyword": "fraud",
     "definition": "In blockchain economies: Unfair or fake transactions, used to change amounts of cryptocurrency held."
   },
-  "frauds": {
-    "keyword": "frauds",
-    "definition": "In blockchain economies: Unfair or fake transactions, used to change amounts of cryptocurrency held."
-  },
   "fraud proof": {
     "keyword": "fraud proof",
     "definition": "Evidence that a transaction is invalid and that fraud has occurred."
@@ -607,12 +539,12 @@
     "keyword": "fraud proofs",
     "definition": "Evidence that a transaction is invalid and that fraud has occurred."
   },
+  "frauds": {
+    "keyword": "frauds",
+    "definition": "In blockchain economies: Unfair or fake transactions, used to change amounts of cryptocurrency held."
+  },
   "gas": {
     "keyword": "gas",
-    "definition": "Transaction fees for blockchain networks."
-  },
-  "gass": {
-    "keyword": "gass",
     "definition": "Transaction fees for blockchain networks."
   },
   "gasless transactions": {
@@ -623,9 +555,9 @@
     "keyword": "gasless transactionss",
     "definition": "A transaction that pays gas using some of the token to be traded rather than the native coin of the blockchain network."
   },
-  "золотий стандарт": {
-    "keyword": "золотий стандарт",
-    "definition": "Грошова система, в якій валюта країни має вартість, безпосередньо пов'язану з золотом."
+  "gass": {
+    "keyword": "gass",
+    "definition": "Transaction fees for blockchain networks."
   },
   "gold standards": {
     "keyword": "gold standards",
@@ -651,10 +583,6 @@
     "keyword": "hash",
     "definition": "A digital fingerprint for information."
   },
-  "hashs": {
-    "keyword": "hashs",
-    "definition": "A digital fingerprint for information."
-  },
   "hashing function": {
     "keyword": "hashing function",
     "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
@@ -662,6 +590,10 @@
   "hashing functions": {
     "keyword": "hashing functions",
     "definition": "A function that is easy to calculate in one direction only, making it nearly impossible to reverse engineer the inputs and functionally guaranteeing unique outputs for a given input."
+  },
+  "hashs": {
+    "keyword": "hashs",
+    "definition": "A digital fingerprint for information."
   },
   "hodl": {
     "keyword": "HODL",
@@ -763,10 +695,6 @@
     "keyword": "liquid",
     "definition": "In blockchain economies: The ability to easily use a digital asset in trading, or use in smart contracts."
   },
-  "liquids": {
-    "keyword": "liquids",
-    "definition": "In blockchain economies: The ability to easily use a digital asset in trading, or use in smart contracts."
-  },
   "liquid staking token": {
     "keyword": "liquid staking token",
     "definition": "Tokens representing staked Ether. Holders earn a portion of staking rewards proportial to the amounts staked."
@@ -779,10 +707,6 @@
     "keyword": "liquidity",
     "definition": "The quantity of a token available for trading."
   },
-  "liquiditys": {
-    "keyword": "liquiditys",
-    "definition": "The quantity of a token available for trading."
-  },
   "liquidity pool": {
     "keyword": "liquidity pool",
     "definition": "A communal vault of tokens that facilitates permissionless token swaps."
@@ -790,6 +714,14 @@
   "liquidity pools": {
     "keyword": "liquidity pools",
     "definition": "A communal vault of tokens that facilitates permissionless token swaps."
+  },
+  "liquiditys": {
+    "keyword": "liquiditys",
+    "definition": "The quantity of a token available for trading."
+  },
+  "liquids": {
+    "keyword": "liquids",
+    "definition": "In blockchain economies: The ability to easily use a digital asset in trading, or use in smart contracts."
   },
   "lp": {
     "keyword": "LP",
@@ -814,10 +746,6 @@
   "market caps": {
     "keyword": "market caps",
     "definition": "The total value of a given token, or market sector."
-  },
-  "максимально в обігу": {
-    "keyword": "максимально в обігу",
-    "definition": "Максимальна кількість монет або токенів, які коли-небудь існуватимуть для певної криптовалюти."
   },
   "max supplys": {
     "keyword": "max supplys",
@@ -847,14 +775,6 @@
     "keyword": "MEVs",
     "definition": "Maximal extractible value - value extracted by ordering transactions within blocks."
   },
-  "майнер": {
-    "keyword": "майнер",
-    "definition": "Фізична особа, яка бере участь у перевірці криптовалютних транзакцій і пропонує блоки."
-  },
-  "майнери": {
-    "keyword": "майнери",
-    "definition": "Фізична особа, яка бере участь у перевірці криптовалютних транзакцій і пропонує блоки."
-  },
   "mining": {
     "keyword": "mining",
     "definition": "The process by which transactions are verified and added as blocks to the blockchain."
@@ -870,10 +790,6 @@
   "mints": {
     "keyword": "mints",
     "definition": "Issuing new fungible or non-fungible cryptocurrency tokens on a given blockchain."
-  },
-  "монетарна політика": {
-    "keyword": "монетарна політика",
-    "definition": "Як центральний банк управляє кількістю грошей, що циркулюють в економіці."
   },
   "monetary policys": {
     "keyword": "monetary policys",
@@ -967,10 +883,6 @@
     "keyword": "payment channels",
     "definition": "Allows two parties to transact multiple times without the need for each transaction to be recorded on the blockchain."
   },
-  "одноранговий": {
-    "keyword": "одноранговий",
-    "definition": "Операція між двома сторонами, яка не потребує посередника або контролюючого суб'єкта."
-  },
   "peer-to-peers": {
     "keyword": "peer-to-peers",
     "definition": "Операція між двома сторонами, яка не потребує посередника або контролюючого суб'єкта."
@@ -1025,11 +937,11 @@
   },
   "private key": {
     "keyword": "private key",
-    "definition": "Приватний ключ надає доступ до вашого гаманця, що дозволяє вам надсилати криптоактиви на інші гаманці."
+    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
   },
   "private keys": {
     "keyword": "private keys",
-    "definition": "Приватний ключ надає доступ до вашого гаманця, що дозволяє вам надсилати криптоактиви на інші гаманці."
+    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
   },
   "proof of stake": {
     "keyword": "Proof of Stake",
@@ -1067,10 +979,6 @@
     "keyword": "public",
     "definition": "Public blockchains allow anyone to view the blockchain ledger."
   },
-  "publics": {
-    "keyword": "publics",
-    "definition": "Public blockchains allow anyone to view the blockchain ledger."
-  },
   "public good": {
     "keyword": "public good",
     "definition": "A public good is a commodity or service that is available to all members of society."
@@ -1081,11 +989,15 @@
   },
   "public key": {
     "keyword": "public key",
-    "definition": "Публічний ключ - це адреса вашого гаманця. Він дає іншим точку відліку, на яку вони можуть надсилати вам криптоактиви."
+    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
   },
   "public keys": {
     "keyword": "public keys",
-    "definition": "Публічний ключ - це адреса вашого гаманця. Він дає іншим точку відліку, на яку вони можуть надсилати вам криптоактиви."
+    "definition": "A public key is your wallet’s address. It gives others a point of reference to send crypto assets to you."
+  },
+  "publics": {
+    "keyword": "publics",
+    "definition": "Public blockchains allow anyone to view the blockchain ledger."
   },
   "recovery phrase": {
     "keyword": "recovery phrase",
@@ -1135,10 +1047,6 @@
     "keyword": "sandwich attacks",
     "definition": "A hidden cost for users due to ordering of transactions by block producers."
   },
-  "сатоші накамото": {
-    "keyword": "Сатоші Накамото",
-    "definition": "Псевдонім творця біткоїна. До сьогодні ніхто не знає його справжнього імені."
-  },
   "satoshi nakamotos": {
     "keyword": "Satoshi Nakamotos",
     "definition": "Псевдонім творця біткоїна. До сьогодні ніхто не знає його справжнього імені."
@@ -1159,17 +1067,9 @@
     "keyword": "scam-tokens",
     "definition": "A cryptocurrency token that is launched for the sole purpose of stealing investor funds."
   },
-  "дефіцит": {
-    "keyword": "дефіцит",
-    "definition": "Стан дефіциту."
-  },
   "scarces": {
     "keyword": "scarces",
     "definition": "Стан дефіциту."
-  },
-  "дефіцитний": {
-    "keyword": "дефіцитний",
-    "definition": "Бути в дефіциті."
   },
   "scarcitys": {
     "keyword": "scarcitys",
@@ -1191,20 +1091,8 @@
     "keyword": "seed phrases",
     "definition": "Group of random words generated by a wallet on setup, they act as the master key to ALL accounts controlled by that wallet. NEVER SHARE YOUR SEED PHRASE WITH ANYONE FOR ANY REASON."
   },
-  "самозберігач": {
-    "keyword": "самозберігач",
-    "definition": "Засіб зберігання ваших активів, де тільки ви маєте до них доступ."
-  },
   "self-custodials": {
     "keyword": "self-custodials",
-    "definition": "Засіб зберігання ваших активів, де тільки ви маєте до них доступ."
-  },
-  "самозбережений": {
-    "keyword": "самозбережений",
-    "definition": "Засіб зберігання ваших активів, де тільки ви маєте до них доступ."
-  },
-  "self-custodys": {
-    "keyword": "self-custodys",
     "definition": "Засіб зберігання ваших активів, де тільки ви маєте до них доступ."
   },
   "self-custody wallet": {
@@ -1214,6 +1102,10 @@
   "self-custody wallets": {
     "keyword": "self-custody wallets",
     "definition": "(AKA: Non-custodial wallet) With a self-custody wallet, you have sole control of your private keys, which in turn control your crypto assets."
+  },
+  "self-custodys": {
+    "keyword": "self-custodys",
+    "definition": "Засіб зберігання ваших активів, де тільки ви маєте до них доступ."
   },
   "settlement layer": {
     "keyword": "settlement layer",
@@ -1259,10 +1151,6 @@
     "keyword": "slippage",
     "definition": "A change in buy price that helps your trade to execute."
   },
-  "slippages": {
-    "keyword": "slippages",
-    "definition": "A change in buy price that helps your trade to execute."
-  },
   "slippage tolerance": {
     "keyword": "slippage tolerance",
     "definition": "How much can prices change before your trade executes."
@@ -1270,6 +1158,10 @@
   "slippage tolerances": {
     "keyword": "slippage tolerances",
     "definition": "How much can prices change before your trade executes."
+  },
+  "slippages": {
+    "keyword": "slippages",
+    "definition": "A change in buy price that helps your trade to execute."
   },
   "smart contract": {
     "keyword": "smart contract",
@@ -1315,10 +1207,6 @@
     "keyword": "stake",
     "definition": "The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”."
   },
-  "stakes": {
-    "keyword": "stakes",
-    "definition": "The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”."
-  },
   "staker": {
     "keyword": "staker",
     "definition": "A member of the Ethereum community, providing Ether to a validator node, in exchange for rewards."
@@ -1331,12 +1219,12 @@
     "keyword": "stakerss",
     "definition": "Members of the Ethereum community, providing Ether to validator nodes, in exchange for rewards."
   },
+  "stakes": {
+    "keyword": "stakes",
+    "definition": "The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”."
+  },
   "staking": {
     "keyword": "staking",
-    "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")."
-  },
-  "stakings": {
-    "keyword": "stakings",
     "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")."
   },
   "staking pool": {
@@ -1355,6 +1243,10 @@
     "keyword": "staking providerss",
     "definition": "A digital platform providing staking services, usually through staking pools."
   },
+  "stakings": {
+    "keyword": "stakings",
+    "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\")."
+  },
   "swap": {
     "keyword": "swap",
     "definition": "A trade from one token to another."
@@ -1365,10 +1257,6 @@
   },
   "token": {
     "keyword": "token",
-    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
-  },
-  "tokens": {
-    "keyword": "tokens",
     "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
   },
   "token allowance": {
@@ -1395,6 +1283,10 @@
     "keyword": "token pairs",
     "definition": "The two associated cryptocurrencies that make up a liquidity pool."
   },
+  "tokens": {
+    "keyword": "tokens",
+    "definition": "Units that can stand for assets or deeds that are built on an existing blockchain."
+  },
   "tps": {
     "keyword": "TPS",
     "definition": "A measure of a blockchains scalability, TPS is the number of transactions per second processed by a blockchain."
@@ -1405,10 +1297,6 @@
   },
   "trade": {
     "keyword": "trade",
-    "definition": "Exchanging assets or money for something valuable ; money verb on the skill cube."
-  },
-  "trades": {
-    "keyword": "trades",
     "definition": "Exchanging assets or money for something valuable ; money verb on the skill cube."
   },
   "trade route": {
@@ -1427,12 +1315,12 @@
     "keyword": "trade routings",
     "definition": "Planning the path taken from starting token to ending token in a trade."
   },
+  "trades": {
+    "keyword": "trades",
+    "definition": "Exchanging assets or money for something valuable ; money verb on the skill cube."
+  },
   "transaction": {
     "keyword": "transaction",
-    "definition": "A record of transfer, monetary or otherwise, on the blockchain."
-  },
-  "transactions": {
-    "keyword": "transactions",
     "definition": "A record of transfer, monetary or otherwise, on the blockchain."
   },
   "transaction finality": {
@@ -1458,6 +1346,10 @@
   "transaction throughputs": {
     "keyword": "transaction throughputs",
     "definition": "How many transactions a blockchain can process at once, usually measured in transactions per second (TPS)."
+  },
+  "transactions": {
+    "keyword": "transactions",
+    "definition": "A record of transfer, monetary or otherwise, on the blockchain."
   },
   "trustless": {
     "keyword": "trustless",
@@ -1507,25 +1399,17 @@
     "keyword": "wallet",
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
   },
+  "wallet app": {
+    "keyword": "wallet app",
+    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+  },
+  "wallet apps": {
+    "keyword": "wallet apps",
+    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
+  },
   "wallets": {
     "keyword": "wallets",
     "definition": "A wallet is an application or device used to send and receive crypto assets on the blockchain."
-  },
-  "додаток до гаманця": {
-    "keyword": "додаток до гаманця",
-    "definition": "Додаток на вашому комп'ютері або телефоні, який використовується для підключення до вашого гаманця на блокчейні."
-  },
-  "додатки для гаманців": {
-    "keyword": "додатки для гаманців",
-    "definition": "Додаток на вашому комп'ютері або телефоні, який використовується для підключення до вашого гаманця на блокчейні."
-  },
-  "провайдер гаманця": {
-    "keyword": "провайдер гаманця",
-    "definition": "Розробник програмного забезпечення, яке ви використовуєте для доступу до свого гаманця. Ці провайдери не володіють вашим гаманцем, а виступають в ролі моста, який дозволяє вам отримати доступ до вашого облікового запису в блокчейні."
-  },
-  "провайдери гаманців": {
-    "keyword": "провайдери гаманців",
-    "definition": "Розробник програмного забезпечення, яке ви використовуєте для доступу до свого гаманця. Ці провайдери не володіють вашим гаманцем, а виступають в ролі моста, який дозволяє вам отримати доступ до вашого облікового запису в блокчейні."
   },
   "web2": {
     "keyword": "web2",
@@ -1558,5 +1442,249 @@
   "zk rollups": {
     "keyword": "zk rollups",
     "definition": "A layer-2 rollup scaling solution that uses zero-knowledge proofs to guarantee the validity of “rolled up” transactions while maintaining security and privacy on the layer 1 blockchain."
+  },
+  "агрегатор": {
+    "keyword": "агрегатор",
+    "definition": "Інструмент, який поєднує кілька джерел, щоб запропонувати конкурентні варіанти."
+  },
+  "агрегатори": {
+    "keyword": "агрегатори",
+    "definition": "Інструмент, який поєднує кілька джерел, щоб запропонувати конкурентні варіанти."
+  },
+  "адреса": {
+    "keyword": "адреса",
+    "definition": "Унікальний публічний ідентифікатор для сутності в блокчейні."
+  },
+  "адреси": {
+    "keyword": "адреси",
+    "definition": "Унікальний публічний ідентифікатор для сутності в блокчейні."
+  },
+  "блокчейн": {
+    "keyword": "блокчейн",
+    "definition": "Система, в якій облік криптовалютних транзакцій ведеться на багатьох комп'ютерах по всьому світу."
+  },
+  "блокчейн-додатки": {
+    "keyword": "блокчейн-додатки",
+    "definition": "Блокчейн-додатки, які дозволяють обмінювати криптовалюту, користуватися соціальними мережами web3, робити благодійні пожертви або навіть навчатися на блокчейні - наприклад, в Bankless Academy."
+  },
+  "блокчейни": {
+    "keyword": "блокчейни",
+    "definition": "Система, в якій облік криптовалютних транзакцій ведеться на багатьох комп'ютерах по всьому світу."
+  },
+  "в обігу": {
+    "keyword": "в обігу",
+    "definition": "Кількість монет або токенів певної криптовалюти, доступних для торгівлі на ринку."
+  },
+  "веб2": {
+    "keyword": "веб2",
+    "definition": "Поточний стан інтернету без блокчейн-інфраструктури."
+  },
+  "веб3": {
+    "keyword": "веб3",
+    "definition": "Посилається на інтернет блокчейнів, де користувачі можуть самостійно зберігати свої активи та дані."
+  },
+  "гаманець": {
+    "keyword": "гаманець",
+    "definition": "Гаманець - це додаток або пристрій, який використовується для надсилання та отримання криптоактивів у блокчейні."
+  },
+  "гаманці": {
+    "keyword": "гаманці",
+    "definition": "Гаманець - це додаток або пристрій, який використовується для надсилання та отримання криптоактивів у блокчейні."
+  },
+  "гаманці для самозбереження": {
+    "keyword": "гаманці для самозбереження",
+    "definition": "(Також відомий як гаманець без права зберігання) З гаманцем без права зберігання ви одноосібно контролюєте свої приватні ключі, які, в свою чергу, контролюють ваші криптоактиви."
+  },
+  "гаманці самообслуговування": {
+    "keyword": "гаманці самообслуговування",
+    "definition": "(Також відомий як гаманець без права зберігання) З гаманцем без права зберігання ви одноосібно контролюєте свої приватні ключі, які, в свою чергу, контролюють ваші криптоактиви."
+  },
+  "гарячий гаманець": {
+    "keyword": "гарячий гаманець",
+    "definition": "Тип гаманця для самообслуговування, який постійно підключений до інтернету."
+  },
+  "гарячі гаманці": {
+    "keyword": "гарячі гаманці",
+    "definition": "Тип гаманця для самообслуговування, який постійно підключений до інтернету."
+  },
+  "двохетапна перевірка": {
+    "keyword": "Двохетапна перевірка",
+    "definition": "Додатковий рівень безпеки, який використовується для того, щоб переконатися, що люди, які намагаються отримати доступ до онлайн-акаунту, є тими, за кого себе видають."
+  },
+  "дефіцит": {
+    "keyword": "дефіцит",
+    "definition": "Стан дефіциту."
+  },
+  "дефіцитний": {
+    "keyword": "дефіцитний",
+    "definition": "Бути в дефіциті."
+  },
+  "децентралізація": {
+    "keyword": "Децентралізація",
+    "definition": "Передача контролю багатьом особам, а не одному органу влади."
+  },
+  "децентралізований": {
+    "keyword": "децентралізований",
+    "definition": "Жоден орган чи організація не контролює систему."
+  },
+  "децентралізовані гроші": {
+    "keyword": "децентралізовані гроші",
+    "definition": "Гроші з властивостями, узгодженими спільнотою, а не установою."
+  },
+  "додатки для гаманців": {
+    "keyword": "додатки для гаманців",
+    "definition": "Додаток на вашому комп'ютері або телефоні, який використовується для підключення до вашого гаманця на блокчейні."
+  },
+  "додаток для гаманця": {
+    "keyword": "додаток для гаманця",
+    "definition": "Додаток на вашому комп'ютері або телефоні, який використовується для підключення до вашого гаманця на блокчейні."
+  },
+  "додаток до гаманця": {
+    "keyword": "додаток до гаманця",
+    "definition": "Додаток на вашому комп'ютері або телефоні, який використовується для підключення до вашого гаманця на блокчейні."
+  },
+  "зберігач": {
+    "keyword": "зберігач",
+    "definition": "Фінансова установа, на яку покладено відповідальність за безпеку ваших активів."
+  },
+  "зберігачі": {
+    "keyword": "зберігачі",
+    "definition": "Фінансова установа, на яку покладено відповідальність за безпеку ваших активів."
+  },
+  "золотий стандарт": {
+    "keyword": "золотий стандарт",
+    "definition": "Грошова система, в якій валюта країни має вартість, безпосередньо пов'язану з золотом."
+  },
+  "кастодіальний гаманець": {
+    "keyword": "кастодіальний гаманець",
+    "definition": "За допомогою кастодіального гаманця інша сторона контролює приватні ключі, таким чином контролюючи доступ до ваших криптоактивів."
+  },
+  "кастодіальні гаманеці": {
+    "keyword": "кастодіальні гаманеці",
+    "definition": "За допомогою кастодіального гаманця інша сторона контролює приватні ключі, таким чином контролюючи доступ до ваших криптоактивів."
+  },
+  "комерційний банк": {
+    "keyword": "комерційний банк",
+    "definition": "Банк, що управляє грошима для людей та бізнесу."
+  },
+  "комерційні банки": {
+    "keyword": "комерційні банки",
+    "definition": "Банк, що управляє грошима для людей та бізнесу."
+  },
+  "користувацький запис": {
+    "keyword": "Користувацький запис",
+    "definition": "Користувацький запис даних, прив'язаний до домену ENS, що дозволяє зберігати та асоціювати довільну інформацію поза стандартними адресами блокчейну."
+  },
+  "користувацькі записи": {
+    "keyword": "Користувацькі записи",
+    "definition": "Користувацький запис даних, прив'язаний до домену ENS, що дозволяє зберігати та асоціювати довільну інформацію поза стандартними адресами блокчейну."
+  },
+  "криптовалюта": {
+    "keyword": "криптовалюта",
+    "definition": "Цифрова валюта, що підтримується технологією блокчейн, а не централізованими органами влади."
+  },
+  "криптовалютний гаманець": {
+    "keyword": "криптовалютний гаманець",
+    "definition": "Додаток, який дозволяє зберігати вашу криптовалюту, а також надсилати/отримувати або витрачати її."
+  },
+  "криптографія": {
+    "keyword": "криптографія",
+    "definition": "Методи для безпечної комунікації або транзакції, що запобігають зовнішньому втручанню."
+  },
+  "майнер": {
+    "keyword": "майнер",
+    "definition": "Фізична особа, яка бере участь у перевірці криптовалютних транзакцій і пропонує блоки."
+  },
+  "майнери": {
+    "keyword": "майнери",
+    "definition": "Фізична особа, яка бере участь у перевірці криптовалютних транзакцій і пропонує блоки."
+  },
+  "майнінг криптовалют": {
+    "keyword": "майнінг криптовалют",
+    "definition": "Процес перевірки блокчейн-транзакцій в обмін на криптовалютну винагороду."
+  },
+  "максимально в обігу": {
+    "keyword": "максимально в обігу",
+    "definition": "Максимальна кількість монет або токенів, які коли-небудь існуватимуть для певної криптовалюти."
+  },
+  "монетарна політика": {
+    "keyword": "монетарна політика",
+    "definition": "Як центральний банк управляє кількістю грошей, що циркулюють в економіці."
+  },
+  "одноранговий": {
+    "keyword": "одноранговий",
+    "definition": "Операція між двома сторонами, яка не потребує посередника або контролюючого суб'єкта."
+  },
+  "приватний ключ": {
+    "keyword": "приватний ключ",
+    "definition": "Приватний ключ надає доступ до вашого гаманця, що дозволяє вам надсилати криптоактиви на інші гаманці."
+  },
+  "приватні ключі": {
+    "keyword": "приватні ключі",
+    "definition": "Приватний ключ надає доступ до вашого гаманця, що дозволяє вам надсилати криптоактиви на інші гаманці."
+  },
+  "провайдер гаманця": {
+    "keyword": "провайдер гаманця",
+    "definition": "Розробник програмного забезпечення, яке ви використовуєте для доступу до свого гаманця. Ці провайдери не володіють вашим гаманцем, а виступають в ролі моста, який дозволяє вам отримати доступ до вашого облікового запису в блокчейні."
+  },
+  "провайдери гаманців": {
+    "keyword": "провайдери гаманців",
+    "definition": "Розробник програмного забезпечення, яке ви використовуєте для доступу до свого гаманця. Ці провайдери не володіють вашим гаманцем, а виступають в ролі моста, який дозволяє вам отримати доступ до вашого облікового запису в блокчейні."
+  },
+  "публічний ключ": {
+    "keyword": "публічний ключ",
+    "definition": "Публічний ключ - це адреса вашого гаманця. Він дає іншим користувачам можливість надсилати вам криптоактиви."
+  },
+  "публічні ключі": {
+    "keyword": "публічні ключі",
+    "definition": "Публічний ключ - це адреса вашого гаманця. Він дає іншим користувачам можливість надсилати вам криптоактиви."
+  },
+  "рівність можливостей": {
+    "keyword": "рівність можливостей",
+    "definition": "Принцип справедливості, коли кожен має однакові шанси на успіх, незалежно від походження чи обставин."
+  },
+  "самозбережений": {
+    "keyword": "самозбережений",
+    "definition": "Засіб зберігання ваших активів, де тільки ви маєте до них доступ."
+  },
+  "самозберігач": {
+    "keyword": "самозберігач",
+    "definition": "Засіб зберігання ваших активів, де тільки ви маєте до них доступ."
+  },
+  "сатоші накамото": {
+    "keyword": "Сатоші Накамото",
+    "definition": "Псевдонім творця біткоїна. До сьогодні ніхто не знає його справжнього імені."
+  },
+  "технологія блокчейн": {
+    "keyword": "технологія блокчейн",
+    "definition": "Новий тип мережі, розміщений на багатьох комп'ютерах. Це додає новий рівень цифрової власності в Інтернеті."
+  },
+  "фраза відновлення": {
+    "keyword": "фраза відновлення",
+    "definition": "Фраза відновлення - це список від 12 до 24 слів, який використовується для генерації відкритого і закритого ключів вашого гаманця."
+  },
+  "фрази відновлення": {
+    "keyword": "фрази відновлення",
+    "definition": "Фраза відновлення - це список від 12 до 24 слів, який використовується для генерації відкритого і закритого ключів вашого гаманця."
+  },
+  "холодний гаманець": {
+    "keyword": "холодний гаманець",
+    "definition": "Тип гаманця для самостійного зберігання, який зберігається на автономному обладнанні."
+  },
+  "холодні гаманці": {
+    "keyword": "холодні гаманці",
+    "definition": "Тип гаманця для самостійного зберігання, який зберігається на автономному обладнанні."
+  },
+  "центральний банк": {
+    "keyword": "центральний банк",
+    "definition": "Установа, що регулює гроші, банки та валюту в країні."
+  },
+  "центральні банки": {
+    "keyword": "центральні банки",
+    "definition": "Установа, що регулює гроші, банки та валюту в країні."
+  },
+  "шифрування": {
+    "keyword": "шифрування",
+    "definition": "Процес перетворення інформації в закритий і захищений код, який використовується для запобігання несанкціонованому доступу."
   }
 }

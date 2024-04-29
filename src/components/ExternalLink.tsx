@@ -5,6 +5,7 @@ import {
 } from '@chakra-ui/react'
 
 import { Mixpanel, getNodeText } from 'utils'
+import { LESSONS } from 'constants/index'
 
 type ChakraLinkAndNextProps = ChakraLinkProps & LinkProps & any
 
@@ -14,6 +15,21 @@ const ExternalLink = ({
   alt,
   ...props
 }: ChakraLinkAndNextProps): JSX.Element => {
+  const i18nextLng = localStorage.getItem('i18nextLng')
+  const isLessonLink =
+    href?.startsWith('/lessons/') ||
+    href?.startsWith('https://app.banklessacademy.com/lessons/')
+  const lessonSlug = isLessonLink ? href?.split('/')?.pop() : ''
+  const iHref =
+    isLessonLink &&
+    i18nextLng !== 'en' &&
+    LESSONS.some(
+      (lesson) =>
+        lesson.slug === lessonSlug &&
+        (lesson.languages as any)?.includes(i18nextLng)
+    )
+      ? `/lessons/${i18nextLng}/${lessonSlug}`
+      : href
   const whiteProps =
     props.underline === 'true'
       ? {
@@ -30,12 +46,12 @@ const ExternalLink = ({
       : {}
   return (
     <ChakraLink
-      href={href}
+      href={iHref}
       {...props}
       {...whiteProps}
       isExternal="true"
       onClick={() => {
-        const link = href || 'NO_LINK'
+        const link = iHref || 'NO_LINK'
         const name = alt || getNodeText(children) || 'NO_NAME'
         Mixpanel.track('click_external_link', { link, name })
       }}
