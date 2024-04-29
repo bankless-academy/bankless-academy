@@ -3,7 +3,7 @@ import { Box, Button, VStack, Image, Text } from '@chakra-ui/react'
 import { CheckIcon } from '@chakra-ui/icons'
 import { useTranslation } from 'react-i18next'
 
-import { LessonCard } from 'components/LessonCards'
+import { StyledLessonCard } from 'components/LessonCard'
 import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
@@ -87,7 +87,7 @@ const WalletBasics = (
             </Box>
           </div>
           <div className="bloc2" style={{ alignSelf: 'center' }}>
-            <LessonCard
+            <StyledLessonCard
               borderRadius="3xl"
               maxW="400px"
               textAlign="center"
@@ -116,7 +116,7 @@ const WalletBasics = (
                   </InternalLink>
                 </Box>
               </Box>
-            </LessonCard>
+            </StyledLessonCard>
           </div>
         </Box>
       </>
