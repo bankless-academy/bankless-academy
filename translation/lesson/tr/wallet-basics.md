@@ -35,7 +35,7 @@ Blok zinciri çoklu evrenine yolculuğunuzda daha derinlere dalmanın zamanı ge
 
 Cüzdanlar, alışkın olduğunuz `web2` internet hesaplarına benzer. `Web3` olarak da bilinen blok zinciri ekosistemine giriş yapmak için bir cüzdan oluşturacak, bu cüzdan ile `kripto para` kullanabilecek ve `blok zinciri uygulamaları`na bağlanabileceksiniz!
 
-Bu derste size cüzdanları, nasıl çalıştıklarını ve kripto paranızı nasıl güvende tutacağınızı anlatacağız. Nasıl cüzdan oluşturacağınıza ve **Bankless Academy'nin evi olan Ethereum blok zincirine** nasıl erişeceğinize dair bir kılavuzla dersi tamamlayacağız.
+Bu derste size cüzdanları, nasıl çalıştıklarını ve kripto paranızı nasıl güvende tutacağınızı anlatacağız. Nasıl cüzdan oluşturacağınıza ve **Bankless Academy'nin yuvası olan Ethereum blok zincirine** nasıl erişeceğinize dair bir kılavuzla dersi tamamlayacağız.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
