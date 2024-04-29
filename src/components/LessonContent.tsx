@@ -124,7 +124,7 @@ const LessonContent = ({
           )}
         </Box>
       </Box>
-      <Box maxW="800px" m="auto" my={8}>
+      <Box maxW="860px" m="auto" my={8}>
         <LanguageSwitch lesson={lesson} />
       </Box>
       <StyledMarkdown>

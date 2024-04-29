@@ -38,7 +38,7 @@ const LanguageSwitch = ({
 }: {
   lesson: LessonType
 }): React.ReactElement => {
-  const { t, i18n } = useTranslation()
+  const { i18n } = useTranslation()
   const router = useRouter()
 
   const languages = lesson.languages
@@ -51,9 +51,6 @@ const LanguageSwitch = ({
     <Box>
       {languages?.length ? (
         <Box textAlign="center">
-          <Box fontSize="xl" fontWeight="bold" mb={2}>
-            {t('Select language:')}
-          </Box>
           <Box
             display="flex"
             flexWrap="wrap"

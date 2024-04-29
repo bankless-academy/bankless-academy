@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { Box, Container, Text, Image, Center, Stack } from '@chakra-ui/react'
+import { Box, Container, Text, Image, Center } from '@chakra-ui/react'
 import fs from 'fs'
 
 import { MetaData } from 'components/Head'
@@ -252,21 +252,19 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
             {lesson?.showContent ? (
               <>
                 <Center
-                  height="54vh"
+                  height="58vh"
                   bgImage="/images/homepage_background_v4_half.png"
                   bgSize="cover"
                   bgPosition="bottom"
+                  pb="16px"
                 >
-                  <Stack
+                  <Box
                     width="100%"
                     maxW="800px"
-                    spacing={6}
                     textAlign="center"
                     alignItems="center"
-                    justifyContent="space-evenly"
                     height="100%"
-                    pt="22vh"
-                    pb="45px"
+                    alignContent="end"
                   >
                     <Box w="100%" maxW="90%">
                       <Image
@@ -288,7 +286,7 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
                         </Text>
                       </Box>
                     </Box>
-                  </Stack>
+                  </Box>
                 </Center>
                 <Container
                   maxW="container.xl"
