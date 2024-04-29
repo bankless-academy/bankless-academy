@@ -35,7 +35,7 @@ Blok zinciri çoklu evrenine yolculuğunuzda daha derinlere dalmanın zamanı ge
 
 Cüzdanlar, alışkın olduğunuz `web2` internet hesaplarına benzer. `Web3` olarak da bilinen blok zinciri ekosistemine giriş yapmak için bir cüzdan oluşturacak, bu cüzdan ile `kripto para` kullanabilecek ve `blok zinciri uygulamaları`na bağlanabileceksiniz!
 
-Bu derste size cüzdanları, nasıl çalıştıklarını ve kripto paranızı nasıl güvende tutacağınızı anlatacağız. Nasıl cüzdan oluşturacağınıza ve **Bankless Academy'nin evi olan Ethereum blok zincirine** nasıl erişeceğinize dair bir kılavuzla dersi tamamlayacağız.
+Bu derste size cüzdanları, nasıl çalıştıklarını ve kripto paranızı nasıl güvende tutacağınızı anlatacağız. Nasıl cüzdan oluşturacağınıza ve **Bankless Academy'nin yuvası olan Ethereum blok zincirine** nasıl erişeceğinize dair bir kılavuzla dersi tamamlayacağız.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/wallet-intro-b6d4487a.png)
 
@@ -59,7 +59,7 @@ Bilgisayarınıza yazılım (veya telefonunuza uygulama) indirme ve yükleme kon
 
 Bir cüzdanı kontrol etmenin en zor kısmı onu güvende tutmaktır; bu konuya birazdan değineceğiz!
 
-Kullanacağınız `cüzdan uygulaması`nı seçmek de göz korkutucu gelebilir. Bu, blok zincirindeki cüzdanınıza erişmek için cihazınıza yükleyeceğiniz uygulamadır. Zerion cüzdan uygulaması ile başlamanızı öneriyoruz çünkü cüzdanları hem kullanıcı dostu hem de birçok popüler blok zincirine erişime sahip. `Web3` dünyasında daha rahat hale geldikçe, muhtemelen diğer sağlayıcıları keşfedecek ve birden fazla cüzdan oluşturacaksınız.
+Kullanacağınız `cüzdan uygulaması`nı seçmek de göz korkutucu gelebilir. Cüzdan uygulaması, blok zincirindeki cüzdanınıza erişmek için cihazınıza yükleyeceğiniz uygulamadır. Zerion cüzdan uygulaması ile başlamanızı öneriyoruz çünkü cüzdanları hem kullanıcı dostu hem de birçok popüler blok zincirine erişime sahip. `Web3` ekosistemine alıştıkça, muhtemelen diğer sağlayıcıları keşfedecek ve birden fazla cüzdan oluşturacaksınız.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/is-creating-a-wallet-difficult-9bd9aab4.svg)
 
@@ -89,7 +89,7 @@ Cüzdan nedir?
 
 Çoğumuz bu özelliklere alışkınız. Parolayı unutursak bir düğmeye tıklarız ve birkaç şey yapıp yeni bir parola alırız. Kolay bir çözüm.
 
-Kripto cüzdanlarında öyle değil. Blok zincirlerinin çalışma şekli nedeniyle, cüzdanlara oluşturulduklarında bir “ad” ve karmaşık bir “parola” atanır ancak bunları siz seçmezsiniz.
+Kripto cüzdanlarında öyle değil. Blok zincirlerinin çalışma şekli nedeniyle, cüzdan oluşturma işlemi esnasında cüzdanınıza bir “ad” ve karmaşık bir “parola” atanır ancak bunları siz seçmezsiniz.
 
 Bu adres ve parola kombinasyonunun değiştirilmesi imkansızdır fakat ihtiyacınız olursa her zaman yeni bir cüzdan oluşturabilirsiniz. Bu özel adresleri ve parolaları kullanırken kendimize güvenebilmek için onlarla ilgili biraz daha bilgi edinelim!
 

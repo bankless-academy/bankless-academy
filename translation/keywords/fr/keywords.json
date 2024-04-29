@@ -311,6 +311,10 @@
     "keyword": "clé publique",
     "definition": "La clé publique est l'adresse de votre wallet. Elle donne aux autres un point de référence pour vous envoyer des crypto-actifs."
   },
+  "clés privées": {
+    "keyword": "clés privées",
+    "definition": "Une clé privée donne accès à votre wallet, ce qui vous permet d'envoyer des crypto-actifs à d'autres portefeuilles."
+  },
   "coin": {
     "keyword": "coin",
     "definition": "The native asset of a blockchain mostly used as a form of currency to facilitate transactions on the network."
@@ -1109,7 +1113,7 @@
   },
   "private keys": {
     "keyword": "private keys",
-    "definition": "Une clé privée donne accès à votre wallet, ce qui vous permet d'envoyer des crypto-actifs à d'autres portefeuilles."
+    "definition": "A private key grants access to your wallet, allowing you to send crypto assets to other wallets."
   },
   "proof of stake": {
     "keyword": "Proof of Stake",
@@ -1587,6 +1591,10 @@
     "keyword": "wallet custodial",
     "definition": "Avec un wallet custodial, une autre partie contrôle les clés privées, contrôlant ainsi l'accès à vos crypto-actifs."
   },
+  "wallet en auto-garde": {
+    "keyword": "wallet en auto-garde",
+    "definition": "(AKA : wallet non-custodial) Avec un wallet à auto-garde, vous avez le contrôle exclusif de vos clés privées, qui à leur tour contrôlent vos crypto-actifs."
+  },
   "wallet froid": {
     "keyword": "wallet froid",
     "definition": "Un type de wallet en auto-garde qui est stocké sur du matériel hors ligne."
@@ -1598,6 +1606,14 @@
   "wallets chauds": {
     "keyword": "wallets chauds",
     "definition": "Un type de wallet en auto-garde qui est perpétuellement connecté à l'internet."
+  },
+  "wallets custodiaux": {
+    "keyword": "wallets custodiaux",
+    "definition": "Avec un wallet custodial, une autre partie contrôle les clés privées, contrôlant ainsi l'accès à vos crypto-actifs."
+  },
+  "wallets en auto-garde": {
+    "keyword": "wallets en auto-garde",
+    "definition": "(AKA : wallet non-custodial) Avec un wallet à auto-garde, vous avez le contrôle exclusif de vos clés privées, qui à leur tour contrôlent vos crypto-actifs."
   },
   "wallets froids": {
     "keyword": "wallets froids",

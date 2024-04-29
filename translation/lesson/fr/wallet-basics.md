@@ -33,7 +33,7 @@ ________________________________________________________________________________
 
 Il est temps d'approfondir votre voyage dans le multivers de la blockchain. Tout explorateur dans ce domaine doit un jour ou l'autre créer un portefeuille de cryptomonnaies.
 
-Les wallets [portefeuilles crypto] sont un peu comme les comptes de l'internet `web2` auxquels vous êtes habitués. Vous utiliserez un portefeuille pour vous connecter à l'écosystème de la blockchain, également connu sous le nom de `web3`, où vous pourrez utiliser des `crypto-monnaies` et vous connecter à des `applications blockchain`!
+Les wallets [portefeuilles crypto] sont un peu comme les comptes de l'internet `web2` auxquels vous êtes habitués. Vous utiliserez un portefeuille pour vous connecter à l'écosystème de la blockchain, également connu sous le nom de `web3`, où vous pourrez utiliser des `cryptomonnaies` et vous connecter à des `applications blockchain`!
 
 Dans cette leçon, nous vous présenterons les wallets, leur fonctionnement et la manière de sécuriser vos crypto-monnaies. Nous terminerons par un guide sur la manière de mettre en place un tel système et d'accéder à la **blockchain Ethereum - la "maison" de la Bankless Academy.**
 
@@ -151,7 +151,7 @@ Lorsque vous créez un nouveau wallet, l'application de votre wallet vous fourni
 
 Également appelée "seed phrase" ou "phrase secrète", cette chaîne de mots peut être utilisée pour accéder à votre wallet et à vos crypto-actifs si :
 
-- Votre `wallet app` ou l'appareil contenant votre wallet tombe en panne de façon inattendue ou est endommagé.
+- Votre `application wallet` ou l'appareil contenant votre wallet tombe en panne de façon inattendue ou est endommagé.
 - Votre appareil a été perdu ou volé.
 - Vous souhaitez accéder à votre portefeuille sur plusieurs appareils.
 

@@ -33,7 +33,7 @@ ________________________________________________________________________________
 
 È il momento di immergersi più in profondità nel tuo viaggio attraverso il multiverso blockchain. Ogni esploratore di questo spazio ha bisogno, prima o poi, di creare un portafoglio digitale.
 
-I portafogli sono come gli account a cui sei abituato nel `web2`. Userai un portafoglio per accedere all'ecosistema blockchain, noto anche come `web3`, dove sarai in grado di utilizzare le `criptovalute` e connetterti alle app `blockchain`!
+I portafogli sono come gli account a cui sei abituato nel `web2`. Userai un portafoglio per accedere all'ecosistema blockchain, noto anche come `web3`, dove sarai in grado di utilizzare le `criptovalute` e connetterti alle `applicazioni blockchain`!
 
 In questa lezione vi presenteremo i portafogli, il loro funzionamento e come mantenere al sicuro le vostre criptovalute. Concluderemo con una guida su come configurarne uno e accedere **alla blockchain di Ethereum, la casa di Bankless Academy**.
 
@@ -99,15 +99,15 @@ Una `chiave pubblica` è sostanzialmente il nome del tuo portafoglio. Spesso, se
 
 Esempio: _0xe1887fF140BfA9D3b45D0B2077b7471124acD242_
 
-È possibile creare versioni più facili da ricordare attraverso alcuni servizi web3, ma quella è una lezione per un'altra volta.
+È possibile creare versioni più facili da ricordare attraverso alcuni servizi `web3`, ma quella è una lezione per un'altra volta.
 
 Si può anche pensare a una chiave pubblica come a un indirizzo di casa. È pubblica, chiunque può vederla, e può dire agli altri dove possono inviarti beni cripto — senza rivelare nulla di personale su di te.
 
 È perfettamente sicuro condividere la **chiave pubblica** del tuo portafoglio.
 
-**Nota:** un singolo account di un portafoglio può contenere molteplici coppie di chiavi pubbliche/`private`.
+**Nota:** Un singolo account di un portafoglio può gestire più chiavi, ognuna composta da una chiave pubblica e una `chiave privata`.
 
-![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-6d17439c.svg)
+![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-public-key-87828c3e.svg)
 
 # La chiave privata del tuo portafoglio
 
@@ -121,7 +121,7 @@ La maggior parte delle persone raccomanda di non salvarla nemmeno digitalmente. 
 
 Questa è più di una semplice password. Non puoi reimpostarla se perdi l'accesso.
 
-Fortunatamente, la maggior parte delle `app blockchain` non richiedono di digitare una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione sulla blockchain. La chiave privata di solito opera silenziosamente in background.
+Fortunatamente, la maggior parte delle `applicazioni blockchain` non richiedono di digitare una lunga e complicata sequenza di caratteri ogni volta che devi inviare fondi o firmare una transazione sulla blockchain. La chiave privata di solito opera silenziosamente in background.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-f4a93387.svg)
 
@@ -182,7 +182,7 @@ Così come esistono molti tipi di software per computer, esistono molti tipi di 
 - 🏦 **Portafogli custoditi:** dove una terza parte è responsabile delle tue chiavi private.
 - 👤 **Portafogli in auto-custodia (non custoditi):** dove sei tu a essere responsabile delle tue chiavi private.
 
-Ci sono due tipi di `portafoglio in auto-custodia`:
+Ci sono due tipi di `portafoglio di autocustodia`:
 
 - 🔥 **Portafogli caldi (hot):** software sul tuo desktop o telefono.
 - 🧊 **Portafogli freddi (cold):** un dispositivo hardware (come una chiavetta USB) che conservi in un luogo sicuro.
@@ -197,9 +197,9 @@ Non preoccuparti, oggi creeremo un solo tipo di portafoglio.
 
 Poiché la tua `chiave privata` sblocca l'accesso al tuo `portafoglio`, mantenerla privata e sicura è molto importante!
 
-I servizi di `portafogli custoditi` includono piattaforme di scambio di criptovalute come Coinbase e Kraken. **Loro sono i 'custodi' del tuo portafoglio** — si occupano delle tue chiavi private per te. Accedi ai loro servizi come a qualsiasi altro sito web (con un login email e una password reimpostabile).
+I servizi per un `portafoglio custodito` includono piattaforme di scambio di criptovalute come Coinbase e Kraken. **Loro sono i 'custodi' del tuo portafoglio** — si occupano delle tue chiavi private per te. Accedi ai loro servizi come a qualsiasi altro sito web (con un login email e una password reimpostabile).
 
-Questo potrebbe essere sufficiente per alcune persone, ma richiede di affidarsi a terze parti per proteggere i tuoi beni cripto e garantirti l'accesso quando vuoi scambiarli o inviarli da qualche parte. Inoltre, il tuo accesso ad alcune `app blockchain` potrebbe essere limitato.
+Questo potrebbe essere sufficiente per alcune persone, ma richiede di affidarsi a terze parti per proteggere i tuoi beni cripto e garantirti l'accesso quando vuoi scambiarli o inviarli da qualche parte. Inoltre, il tuo accesso ad alcune `applicazioni blockchain` potrebbe essere limitato.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/custodial-wallets-4eede755.svg)
 
@@ -243,7 +243,7 @@ Sei responsabile della tua chiave privata con un portafoglio in auto-custodia?
 
 Sentirai i termini "portafoglio caldo" (hot wallet) e "portafoglio freddo" (cold wallet) abbastanza spesso nel mondo `web3`.
 
-Un `hot wallet` è un portafoglio a cui si accede tramite un'app sul proprio dispositivo, ad esempio l'app Zerion. Come molte applicazioni `web2`, un'app portafoglio è costantemente connessa a Internet.
+Un `portafoglio caldo` è un portafoglio a cui si accede tramite un'app sul proprio dispositivo, ad esempio l'app Zerion. Come molte applicazioni `web2`, un'app portafoglio è costantemente connessa a Internet.
 
 La tua `chiave privata` è criptata e memorizzata all'interno dell'app del portafoglio, ed è accessibile solo quando interagisci con la blockchain. Questi portafogli sono chiamati "portafogli caldi" per questa connessione "calda" tra Internet e la tua chiave privata.
 
@@ -255,7 +255,7 @@ Gli hot wallet sono comodi per le piccole interazioni quotidiane, proprio come u
 
 Approfondendo il viaggio nel `web3`, conoscerai un panorama ricco di interessanti compromessi tecnologici.
 
-I `Cold Wallets` garantiscono una maggiore sicurezza a scapito della convenienza. Un portafoglio freddo è quello in cui la tua `chiave privata` è memorizzata su un dispositivo hardware dedicato (come una chiavetta USB o un disco rigido esterno). Devi collegare fisicamente il portafoglio hardware al tuo computer per accedere al tuo portafoglio sulla blockchain. La tua chiave privata non è mai collegata direttamente a Internet. I portafogli freddi sono chiamati così proprio per questa connessione 'fredda' a Internet.
+I `portafogli freddi` garantiscono una maggiore sicurezza a scapito della convenienza. Un portafoglio freddo è quello in cui la tua `chiave privata` è memorizzata su un dispositivo hardware dedicato (come una chiavetta USB o un disco rigido esterno). Devi collegare fisicamente il portafoglio hardware al tuo computer per accedere al tuo portafoglio sulla blockchain. La tua chiave privata non è mai collegata direttamente a Internet. I portafogli freddi sono chiamati così proprio per questa connessione 'fredda' a Internet.
 
 Sono ampiamente considerati più sicuri dei `portafogli caldi`, perché la tua `chiave privata` è conservata offline — fuori dalla portata degli aggressori digitali.
 
@@ -285,13 +285,13 @@ Quale dei seguenti tipi di portafoglio è considerato il più sicuro?
 
 # Sicurezza del Portafoglio
 
-Indipendentemente dal fatto che il tuo `portafoglio in auto-custodia` sia caldo o freddo, è fondamentale adottare delle strategie di sicurezza efficaci.
+Indipendentemente dal fatto che il tuo `portafoglio di autocustodia` sia caldo o freddo, è fondamentale adottare delle strategie di sicurezza efficaci.
 
 🖊️ Registra la tua `frase di recupero` su un materiale fisico e durevole (come carta laminata, o addirittura acciaio) e conservala in un luogo molto sicuro. Non condividere mai la tua `chiave privata` con nessuno. **Ricorda, questa è più di una semplice password.**
 
 🔍 Quando interagisci con una blockchain o invii fondi, anche piccole somme, controlla con molta attenzione i dettagli. I dati errati non possono essere modificati dopo un'interazione.
 
-🔭 Dedica un po' di tempo alla ricerca e alla raccolta di informazioni su qualsiasi `applicazione blockchain` con cui intendi interagire prima di collegarvi il tuo portafoglio o di firmare le sue transazioni.
+🔭 Dedica un po' di tempo alla ricerca e alla raccolta di informazioni su qualsiasi `applicazioni blockchain` con cui intendi interagire prima di collegarvi il tuo portafoglio o di firmare le sue transazioni.
 
 💰 Utilizza portafogli con piccole somme di denaro per provare cose nuove ed esplorare il web3, e considera di distribuire i fondi di alto valore su account diversi nello stesso portafoglio (ossia, evita di mettere tutte le tue cripto uova nello stesso paniere).
 
@@ -321,7 +321,7 @@ Qual è il modo più sicuro per proteggere la tua frase di recupero?
 
 Ne avrai bisogno se vuoi rivendicare la prova di aver completato questa missione!
 
-Sono disponibili diverse applicazioni di `portafogli caldi` `auto custoditi`. Nel resto della lezione esploreremo il portafoglio Zerion:
+Oggi sono disponibili diverse app per `portafoglio caldo` di `autocustodia`. Nel resto della lezione esploreremo il portafoglio Zerion:
 
 - ⚙️ È compatibile con la maggior parte delle `applicazioni blockchain`.
 - ⚡ L'interfaccia è incredibilmente fluida e facile da usare.
