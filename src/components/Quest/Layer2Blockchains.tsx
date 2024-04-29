@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Box, Spinner, Button, VStack, Image, Text } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 
-import { LessonCard } from 'components/LessonCards'
+import { StyledLessonCard } from 'components/LessonCard'
 import { theme } from 'theme/index'
 import { api } from 'utils'
 import { useSmallScreen } from 'hooks'
@@ -128,7 +128,7 @@ const Layer2Blockchains = (
             </Box>
           </div>
           <div className="bloc2">
-            <LessonCard
+            <StyledLessonCard
               borderRadius="3xl"
               maxW="400px"
               textAlign="center"
@@ -157,7 +157,7 @@ const Layer2Blockchains = (
                   </InternalLink>
                 </Box>
               </Box>
-            </LessonCard>
+            </StyledLessonCard>
           </div>
         </Box>
       </>

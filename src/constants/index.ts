@@ -4,6 +4,7 @@ import DEFAULT_LESSONS from 'constants/lessons'
 import WHITELABEL_LESSONS from 'constants/whitelabel_lessons'
 import DEFAULT_KEYWORDS from '../../translation/keywords/en/keywords.json'
 import WHITELABEL_KEYWORDS from '../../whitelabel-keywords.json'
+import { LanguageDescriptionType } from 'entities/lesson'
 
 export const IS_WHITELABEL = !!WHITELABEL?.project_name
 
@@ -95,6 +96,7 @@ export const TWITTER_ACCOUNT = WHITELABEL?.twitter_account || `BanklessAcademy`
 
 export const NOTION_PAGES = WHITELABEL?.notion_pages || {
   faq: '8fe3275ffbe74e598cb4574d0207a185',
+  about: 'a151306a46164a34973ae88e36f7a9d0',
   disclaimer: '360b86a86d50421ba3bc7f55607f064a',
   'privacy-policy': '0c0a262eb63243db97ed235c4512518f',
 }
@@ -157,3 +159,17 @@ export const DEFAULT_ENS = 'web3explorer.eth'
 
 export const NB_DATADISK_MAX = 2
 
+export const LanguageDescription: LanguageDescriptionType = Object.fromEntries(
+  Object.entries({
+    en: 'English',
+    br: 'Português (BR)',
+    cn: '简体中文',
+    de: 'Deutsch',
+    es: 'Español',
+    fr: 'Français',
+    it: 'Italiano',
+    jp: '英語',
+    tr: 'Türkçe',
+    ua: 'Українська',
+  }).sort((a, b) => a[1].localeCompare(b[1]))
+)

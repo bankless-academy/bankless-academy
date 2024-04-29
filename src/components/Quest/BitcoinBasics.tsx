@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next'
 
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks'
-import { LessonCard } from 'components/LessonCards'
+import { StyledLessonCard } from 'components/LessonCard'
 
 const DEFAULT_ANSWERS = ['1Q2TWHE3GMdB6BZKafqwxXtWAWgFt5Jvm3', '0']
 const CORRECT_ANSWERS = ['1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', '0.00000001']
@@ -126,7 +126,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
             )}
           </Box>
         ) : (
-          <LessonCard
+          <StyledLessonCard
             borderRadius="3xl"
             maxW={isSmallScreen ? '100%' : '500px'}
             textAlign="center"
@@ -220,7 +220,7 @@ const BitcoinBasics = ({ test = false }: { test?: boolean }): any => {
                 </Box>
               )}
             </Box>
-          </LessonCard>
+          </StyledLessonCard>
         )}
       </div>
     </Box>

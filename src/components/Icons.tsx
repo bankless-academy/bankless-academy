@@ -2,7 +2,7 @@ import { Icon } from '@chakra-ui/react'
 import {
   BookOpen,
   LightbulbFilament,
-  Sword,
+  RocketLaunch,
   Medal,
   Pencil,
   GraduationCap,
@@ -39,7 +39,7 @@ export const QuizIcon = (): React.ReactElement => (
 
 export const QuestIcon = (): React.ReactElement => (
   <Icon
-    as={Sword}
+    as={RocketLaunch}
     w={10}
     h={10}
     bg="linear-gradient(148.06deg, #FFDFB0 7.86%, #FF84DC 90.48%)"
