@@ -31,7 +31,7 @@ async function main() {
     'es',
     'fr',
     'it',
-    'jp',
+    // 'jp',
     'tr',
     'ua'
 

@@ -306,7 +306,6 @@ const LESSONS: LessonType[] = [
       'es',
       'fr',
       'it',
-      'jp',
       'tr',
       'ua'
     ],
@@ -625,7 +624,6 @@ const LESSONS: LessonType[] = [
       'es',
       'fr',
       'it',
-      'jp',
       'tr',
       'ua'
     ],
