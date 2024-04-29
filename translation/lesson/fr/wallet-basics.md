@@ -151,7 +151,7 @@ Lorsque vous créez un nouveau wallet, l'application de votre wallet vous fourni
 
 Également appelée "seed phrase" ou "phrase secrète", cette chaîne de mots peut être utilisée pour accéder à votre wallet et à vos crypto-actifs si :
 
-- Votre `wallet app` ou l'appareil contenant votre wallet tombe en panne de façon inattendue ou est endommagé.
+- Votre `application wallet` ou l'appareil contenant votre wallet tombe en panne de façon inattendue ou est endommagé.
 - Votre appareil a été perdu ou volé.
 - Vous souhaitez accéder à votre portefeuille sur plusieurs appareils.
 
