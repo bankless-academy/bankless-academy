@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
-import { LessonType } from 'entities/lesson'
+import { LanguageType, LessonType } from 'entities/lesson'
 import { Mixpanel } from 'utils'
 import { LanguageDescription } from 'constants/index'
 
@@ -41,7 +41,9 @@ const LanguageSwitch = ({
   const { i18n } = useTranslation()
   const router = useRouter()
 
-  const languages = lesson.languages
+  const languages = Object.keys(LanguageDescription).filter((v: LanguageType) =>
+    lesson.languages?.includes(v)
+  )
 
   const content = window.location.pathname?.endsWith('/content')
     ? '/content'
