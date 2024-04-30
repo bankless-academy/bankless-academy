@@ -159,7 +159,7 @@ Social media `red flags`:
 
 🚩 **Guaranteed returns:** Nothing is guaranteed in crypto.
 
-🚩 **Un****requested links and offers,** _especially in direct messages_.
+🚩 **Unrequested links and offers,** _especially in direct messages_.
 
 ![](https://app.banklessacademy.com/images/web3-security/social-media-safety-a76a39f4.svg)
 
