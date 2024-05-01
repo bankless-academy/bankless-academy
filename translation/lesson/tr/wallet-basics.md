@@ -221,7 +221,7 @@ Gözetimli bir cüzdan ile özel anahtarınızı siz mi kontrol edersiniz?
 
 Bu cüzdanlar `web3` dünyasında en geniş erişim ve özgürlük yelpazesini sunar. Üçüncü bir tarafın fonlarınızı dondurması veya kötüye kullanması konusunda kesinlikle endişe etmeniz gerekmez.
 
-Ödünleşim risktedir: `Kurtarma ifadenize` erişiminizi kaybederseniz veya özel anahtarınız tehlikeye girerse cüzdana yeniden erişim sağlamak için genellikle yapabileceğiniz çok az şey vardır.
+Ödünleşim risktedir: Size ait `kurtarma ifadesi`ne erişimi kaybetmeniz veya özel anahtarınızın tehlikeye girmesi halinde, cüzdana yeniden erişim sağlamak için genellikle yapabileceğiniz çok az şey vardır.
 
 Hangi yolu seçerseniz seçin, cüzdan güvenliği konusunda bilgili ve rahat olmanız önemlidir. Bu dersi tamamlamadan önce size bazı ipuçları vereceğiz.
 
