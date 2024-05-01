@@ -319,12 +319,12 @@ Kurtarma ifadenizi korumanın en güvenli yolu nedir?
 
 # İlk cüzdanınızı oluşturmaya hazırsınız!
 
-Aslında, bu görevi tamamladığınıza dair kanıt talep etmek istiyorsanız bir cüzdana ihtiyacınız olacak!
+Aslına bakılırsa bu görevi tamamladığınıza dair kanıt almak istiyorsanız bir cüzdana ihtiyacınız olacak!
 
 Günümüzde, çok sayıda `gözetimsiz`, `sıcak cüzdan` uygulaması mevcuttur. Bu dersin geri kalanında Zerion cüzdanı keşfedeceğiz. Bu cüzdanı tercih etmemizin sebepleri şunlardır:
 
 - ⚙️ `Blok zinciri uygulamaları`nın çoğuyla uyumlu.
-- ⚡ Arayüz inanılmaz derecede sorunsuz ve kullanımı kolay.
+- ⚡ Arayüz inanılmaz ölçüde sorunsuz ve kullanımı kolay.
 - 💻 Chrome, Brave, Edge ve Opera internet tarayıcıları için bir tarayıcı uzantısına sahip.
 - 📱 Android ve iOS kullanıcıları için bir mobil uygulama olarak da mevcut.
 - 🗣️ Zerion çeşitli dilleri destekliyor.
