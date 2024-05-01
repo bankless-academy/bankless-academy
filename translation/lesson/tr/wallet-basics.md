@@ -221,7 +221,7 @@ Gözetimli bir cüzdan ile özel anahtarınızı siz mi kontrol edersiniz?
 
 Bu cüzdanlar `web3` dünyasında en geniş erişim ve özgürlük yelpazesini sunar. Üçüncü bir tarafın fonlarınızı dondurması veya kötüye kullanması konusunda kesinlikle endişe etmeniz gerekmez.
 
-Ödünleşim risktedir: Size ait `kurtarma ifadesi`ne erişimi kaybetmeniz veya özel anahtarınızın tehlikeye girmesi halinde, cüzdana yeniden erişim sağlamak için genellikle yapabileceğiniz çok az şey vardır.
+Değiş tokuş risktedir: Size ait `kurtarma ifadesi`ne erişimi kaybetmeniz veya özel anahtarınızın tehlikeye girmesi halinde, cüzdana yeniden erişim sağlamak için genellikle yapabileceğiniz çok az şey vardır.
 
 Hangi yolu seçerseniz seçin, cüzdan güvenliği konusunda bilgili ve rahat olmanız önemlidir. Bu dersi tamamlamadan önce size bazı ipuçları vereceğiz.
 
@@ -253,7 +253,7 @@ Sıcak cüzdanlar, cebinizde tuttuğunuz fiziksel bir cüzdan gibi küçük gün
 
 # Soğuk Cüzdanlar
 
-`Web3` yolculuğunuzun derinliklerine daldıkça, ilginç teknoloji ödünleşimleriyle dolu bir manzarayla tanışacaksınız.
+`Web3` yolculuğunuzun derinliklerine daldıkça, ilginç teknoloji değiş tokuşlarıyla dolu bir manzarayla tanışacaksınız.
 
 `Soğuk cüzdanlar` kolaylık pahasına daha yüksek güvenlik sağlar. Soğuk cüzdan, `özel anahtar`ınızın özel bir donanım cihazında (flaş disk veya harici sabit sürücü gibi) saklandığı bir cüzdandır. Blok zincirindeki cüzdanınıza erişmek için donanım cüzdanını fiziksel olarak bilgisayarınıza bağlamanız gerekir. Özel anahtarınız hiçbir zaman doğrudan internete bağlanmaz. Soğuk cüzdanlar isimlerini bu “soğuk” internet bağlantısından alır.
 
@@ -269,7 +269,7 @@ Aşağıdaki cüzdan türlerinden hangisi en güvenli olarak kabul edilir?
 
 - [ ] Yaklaşık olarak tüm cüzdanlar aynıdır
 
-> ℹ️ Tekrar deneyin! Her cüzdan türü için çeşitli ödünleşimler vardır ve güvenlik seviyesi bunlardan biridir.
+> ℹ️ Tekrar deneyin! Her cüzdan türü için çeşitli değiş tokuşlar mevcuttur ve güvenlik seviyesi bunlardan biridir.
 
 - [ ] Sıcak cüzdan
 
@@ -323,10 +323,10 @@ Aslına bakılırsa bu görevi tamamladığınıza dair kanıt almak istiyorsan�
 
 Günümüzde, çok sayıda `gözetimsiz`, `sıcak cüzdan` uygulaması mevcuttur. Bu dersin geri kalanında Zerion cüzdanı keşfedeceğiz. Bu cüzdanı tercih etmemizin sebepleri şunlardır:
 
-- ⚙️ `Blok zinciri uygulamaları`nın çoğuyla uyumlu.
-- ⚡ Arayüz inanılmaz ölçüde sorunsuz ve kullanımı kolay.
-- 💻 Chrome, Brave, Edge ve Opera internet tarayıcıları için bir tarayıcı uzantısına sahip.
-- 📱 Android ve iOS kullanıcıları için bir mobil uygulama olarak da mevcut.
+- ⚙️ `Blok zinciri uygulamaları`nın çoğuyla uyumludur.
+- ⚡ İnanılmaz ölçüde sorunsuz olan arayüzün kullanımı kolaydır.
+- 💻 Chrome, Brave, Edge ve Opera internet tarayıcıları için bir tarayıcı uzantısına sahiptir.
+- 📱 Android ve iOS kullanıcıları için bir mobil uygulama olarak da mevcuttur.
 - 🗣️ Zerion çeşitli dilleri destekliyor.
 
 Zerion ile cüzdanınızı oluşturmaya yönelik talimatlarınızı paylaşacağımız dersin sonuna geldik sayılır!
