@@ -121,7 +121,7 @@ Genel anahtar bir ev adresi gibiyse `özel anahtar` da ön kapının anahtarıd�
 
 Özel anahtar, bir paroladan daha fazlasıdır. Erişiminizi kaybederseniz sıfırlayamazsınız.
 
-Neyse ki, `blok zinciri uygulamaları`nın çoğu, her para göndermeniz veya bir blok zinciri işlemini imzalamanız gerektiğinde uzun, karmaşık bir karakter dizisini yazmanızı gerektirmez. Özel anahtar genellikle arka planda sessizce çalışır.
+Neyse ki, `blok zinciri uygulamaları`nın çoğu, her para göndermeniz veya blok zinciri işlemi imzalamanız gerektiğinde uzun, karmaşık bir karakter dizisi yazmanızı gerektirmez. Özel anahtar genellikle arka planda sessizce çalışır.
 
 ![](https://app.banklessacademy.com/images/wallet-basics/your-wallets-private-key-0d84ad39.svg)
 
@@ -185,7 +185,7 @@ Birçok bilgisayar yazılımı türü olduğu gibi, birçok cüzdan türü de me
 İki tür `gözetimsiz cüzdan` mevcuttur:
 
 - 🔥 **Sıcak cüzdanlar:** Masaüstünüz veya telefonunuzdaki yazılım.
-- **Soğuk cüzdanlar:** Güvenli bir yerde sakladığınız bir donanım parçası (flaş disk gibi).
+- 🧊 **Soğuk cüzdanlar:** Güvenli bir yerde sakladığınız bir donanım parçası (flaş disk gibi).
 
 Her cüzdan çözümü, farklı bir kullanım durumuna hizmet eder. Birçok ileri düzey kullanıcıda her bir cüzdan türünden birer tane mevcuttur!
 
@@ -205,7 +205,7 @@ Bazı insanların ihtiyacı olan tek şey bu olabilir, ancak kripto varlıkları
 
 # Knowledge Check 4
 
-Özel anahtarınızı gözetimli bir cüzdan ile mi kontrol edersiniz?
+Gözetimli bir cüzdan ile özel anahtarınızı siz mi kontrol edersiniz?
 
 - [ ] Evet
 
