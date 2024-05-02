@@ -47,49 +47,49 @@ This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons
 
 Kripto cüzdanları, bilgisayarınızda veya telefonunuzda `kripto para` kullanmanıza olanak tanıyan önemli bir web3 aracıdır. Cüzdanlara, bilgisayarınızda bir web tarayıcısı uzantısı, telefonunuzda ise bir uygulama olan `cüzdan uygulaması` adlı bir yazılım kullanılarak erişilir.
 
-Dahası var. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
+Dahası var. Cüzdanlar, kripto para tutmak amacıyla kullanılan hesaplardan daha fazlasıdır; blok zincirine olan bağlantımızdır. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
 
-Wallets come with two core pieces of account information:
+Cüzdanlar iki temel hesap bilgisiyle birlikte gelir:
 
-- A `public key`, that you can think of as your _username_. You’ll share it publicly to receive cryptocurrency.
+- _Kullanıcı adınız_ olarak düşünebileceğiniz bir `genel anahtar`. You’ll share it publicly to receive cryptocurrency.
 
-- A `private key`, acting as your _password_. This should always be kept private, and cannot be changed.
+- _Parolanız_ görevi gören bir `özel anahtar`. Bu anahtar her zaman gizli tutulmalıdır ve değiştirilemez.
 
-Protecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).
+Özel anahtarınızı korumak çok önemlidir çünkü bu anahtar cüzdanınıza anında erişim sağlar. Özel anahtarınızı kesinlikle paylaşmamalısınız. [Dersin tamamını] (https://app.banklessacademy.com/lessons/wallet-basics) alarak daha fazla bilgi edinebilirsiniz.
 
-Today we will set up our first wallet, using our recommended crypto wallet: Zerion!
+Bugün önerilen kripto cüzdanı Zerion'u kullanarak ilk cüzdanımızı oluşturacağız!
 
-## Walkthrough
+## İzlenecek Yol
 
-Set up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.
+İlk cüzdanınızı aşağıdaki kılavuzu kullanarak bilgisayarınızda kurun ya da telefon cüzdanı kılavuzumuz için aşağı kaydırmaya devam edin.
 
-### Computer Wallet
+### Bilgisayar Cüzdanı
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)
 
-### Phone Wallet
+### Telefon Cüzdanı
 
 [youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)
 
 ---
 
-**It’s time to join the blockchain multiverse!**
+**Blok zinciri çoklu evrenine katılma zamanı geldi!**
 
 Don’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.
 
-Safe travels, Explorer!
+İyi yolculuklar, Kaşif!
 
 ---
 
-## FAQ
+## SSS
 
-### What is a cryptocurrency?
+### Kripto para nedir?
 
-Cryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.
+Kripto paralar, `kriptografi` ile güvence altına alınan bir dijital para biçimidir. Bu paralar, merkezi otoritelere ve bankalara ihtiyaç olmadan  çalışarak, sahiplerinin finansal özgürlüğünü artırırken dolandırıcılık olasılığını azaltır.
 
-Learn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!
+**[Bitcoin'in Temelleri](https://app.banklessacademy.com/lessons/bitcoin-basics)** dersimizle kripto para hakkında daha fazla bilgi edinin ve bu dijital para birimlerinin finans dünyasında nasıl devrim yarattığını görün!
 
-### What are public and private keys?
+### Genel ve özel anahtarlar nedir?
 
 Public/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.
 
