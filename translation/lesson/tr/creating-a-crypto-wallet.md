@@ -27,27 +27,27 @@ ________________________________________________________________________________
 
 ---
 
-This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. **Bilginizi artırmak ve rozetinizi almak** için [dersin tamamına](https://app.banklessacademy.com/lessons/wallet-basics) göz atın!
+This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. **Bilginizi artırmak ve rozetinizi almak** için [dersin tamamına] (https://app.banklessacademy.com/lessons/wallet-basics) göz atın!
 
 ---
 
 ## Key Takeaways
 
-> - You’ll need a `crypto wallet` to access the world of blockchains!
+> - Blok zincirleri dünyasına erişmek için bir `kripto cüzdanı`na ihtiyacınız olacak!
 >
-> - Cüzdan bir `blok zinciri` hesabı gibidir.
+> - Cüzdan bir `blok zinciri` hesabına benzer.
 >
 > - Cüzdanlar `kripto para` saklamak, blok zinciri uygulamalarına giriş yapmak ve daha fazlası için kullanılır.
 >
 > - Bu cüzdanlar hem bilgisayarlarda hem de telefonlarda çalışır.
 >
-> - Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!
+> - Cüzdan oluşturmak kolaydır ve yaklaşık 5 dakika sürer. Aşağıdaki videomuzda size bunun nasıl yapılacağını göstereceğiz!
 
-## What is a Crypto Wallet?
+## Kripto Cüzdanı Nedir?
 
-Crypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.
+Kripto cüzdanları, bilgisayarınızda veya telefonunuzda `kripto para` kullanmanıza olanak tanıyan önemli bir web3 aracıdır. Cüzdanlara, bilgisayarınızda bir web tarayıcısı uzantısı, telefonunuzda ise bir uygulama olan `cüzdan uygulaması` adlı bir yazılım kullanılarak erişilir.
 
-It gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
+Dahası var. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
 
 Wallets come with two core pieces of account information:
 
