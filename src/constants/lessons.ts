@@ -624,6 +624,7 @@ const LESSONS: LessonType[] = [
       'es',
       'fr',
       'it',
+      'tr',
       'ua'
     ],
     lessonWriters: 'Tetranome',
