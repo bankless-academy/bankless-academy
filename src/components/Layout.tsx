@@ -2,52 +2,54 @@
 import { Box, Container, Button } from '@chakra-ui/react'
 import { ReactElement } from 'react'
 
-import { LevelType, LessonTypeType } from 'entities/lesson'
+import { LessonTypeType } from 'entities/lesson'
 import InternalLink from './InternalLink'
 import { useSmallScreen } from 'hooks/index'
+import { useAccount } from 'wagmi'
+import { useLocalStorage } from 'usehooks-ts'
+import { shortenAddress } from 'utils/index'
 
 const Layout = ({
   children,
-  level,
-  lessonType,
+  page,
 }: {
   children: ReactElement
-  level?: LevelType
-  lessonType?: LessonTypeType
+  page?: LessonTypeType | 'PROFILE'
 }): React.ReactElement => {
+  const { address } = useAccount()
+  const [nameCache] = useLocalStorage(`name-cache`, {})
   const [isSmallScreen] = useSmallScreen()
+  const username = address
+    ? address in nameCache
+      ? nameCache[address].name
+      : address
+    : ''
   return (
     <Box display="flex">
       {!isSmallScreen && (
         <Box w="350px" pl="4" borderRight="2px #3D3838 solid">
-          <Box mt="4">Username.eth</Box>
           <Box mt="4">
-            <InternalLink href="/explorer/my-profile">
-              View Profile
-            </InternalLink>
+            {username.includes('.') ? username : shortenAddress(username)}
           </Box>
-          <Box mt="4">Lesson Select</Box>
+          <Box mt="4">
+            {address && (
+              <InternalLink href={`/explorer/${username}?referral=true`}>
+                <Button variant={page === 'PROFILE' ? 'primary' : 'secondary'}>
+                  Profile
+                </Button>
+              </InternalLink>
+            )}
+          </Box>
           <Box mt="4">
             <InternalLink href="/lessons">
-              <Button
-                variant={level === 'Essentials' ? 'primary' : 'secondary'}
-              >
-                Essentials
-              </Button>
-            </InternalLink>
-          </Box>
-          <Box mt="4">
-            <InternalLink href="/lessons/level-1">
-              <Button variant={level === 'Level 1' ? 'primary' : 'secondary'}>
-                Level 1
+              <Button variant={page === 'LESSON' ? 'primary' : 'secondary'}>
+                Lesson Select
               </Button>
             </InternalLink>
           </Box>
           <Box mt="4">
             <InternalLink href="/lessons/handbook">
-              <Button
-                variant={lessonType === 'HANDBOOK' ? 'primary' : 'secondary'}
-              >
+              <Button variant={page === 'HANDBOOK' ? 'primary' : 'secondary'}>
                 Explorer’s Handbook
               </Button>
             </InternalLink>
@@ -68,22 +70,22 @@ const Layout = ({
           placeItems="center"
         >
           <Box>
-            <InternalLink href="/explorer/my-profile">Profile</InternalLink>
+            <InternalLink href={`/explorer/${username}?referral=true`}>
+              <Button variant={page === 'PROFILE' ? 'primary' : 'secondary'}>
+                Profile
+              </Button>
+            </InternalLink>
           </Box>
           <Box>
             <InternalLink href="/lessons">
-              <Button
-                variant={level === 'Essentials' ? 'primary' : 'secondary'}
-              >
+              <Button variant={page === 'LESSON' ? 'primary' : 'secondary'}>
                 Essentials
               </Button>
             </InternalLink>
           </Box>
           <Box>
             <InternalLink href="/lessons/handbook">
-              <Button
-                variant={lessonType === 'HANDBOOK' ? 'primary' : 'secondary'}
-              >
+              <Button variant={page === 'HANDBOOK' ? 'primary' : 'secondary'}>
                 Handbook
               </Button>
             </InternalLink>

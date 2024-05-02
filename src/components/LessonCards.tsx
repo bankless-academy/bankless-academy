@@ -136,7 +136,7 @@ const LessonCards = ({
       <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
         {level || moduleName || 'Handbook'}
       </StyledHeading>
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={4} my={8} gap={6}>
+      <SimpleGrid minChildWidth="400px" spacing={4} my={8} gap={6}>
         {Lessons.filter((lesson) => {
           if (level) {
             if (!lesson?.isArticle && lesson?.level === level) return lesson

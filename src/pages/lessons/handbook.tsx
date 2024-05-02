@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 function Lessons(): JSX.Element {
   return (
-    <Layout lessonType="HANDBOOK">
+    <Layout page="HANDBOOK">
       <LessonCards lessonType="HANDBOOK" />
     </Layout>
   )
