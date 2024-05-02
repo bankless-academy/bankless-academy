@@ -91,7 +91,7 @@ Kripto paralar, `kriptografi` ile güvence altına alınan bir dijital para biç
 
 ### Genel ve özel anahtarlar nedir?
 
-Public/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.
+Açık/özel anahtar `şifreleme`, cüzdanınızın kripto paranıza erişimi gizli tutarken, başkalarının size kripto para gönderebileceği adres gibi bazı bilgileri herkese açık hale getirmesine olanak tanır. One key is like your cryptocurrency’s house address, and the other unlocks the front door.
 
 You can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.
 
