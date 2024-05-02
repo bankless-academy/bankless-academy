@@ -47,7 +47,7 @@ Bu, [Cüzdanın Temelleri](https://app.banklessacademy.com/lessons/wallet-basics
 
 Kripto cüzdanı, bilgisayarınızda veya telefonunuzda `kripto para` kullanmanıza olanak tanıyan önemli bir web3 aracıdır. Cüzdanlara, bilgisayarınızda bir web tarayıcısı uzantısı, telefonunuzda ise bir uygulama olan `cüzdan uygulaması` adlı bir yazılım kullanılarak erişilir.
 
-Dahası var. Cüzdanlar, kripto para tutmak amacıyla kullanılan hesaplardan daha fazlasıdır; onlar, blok zincirine olan bağlantımızdır. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
+Dahası var. Cüzdanlar, kripto para tutmak amacıyla kullanılan hesaplardan daha fazlasıdır; onlar, blok zincirine olan bağlantımızdır. Cüzdanları, başka insanlarla kripto para alışverişi yapmak, blok zinciri uygulamalarına giriş yapmak ve **hatta Bankless Academy rozetleri gibi dijital unsurların koleksiyonunu yapmak** için kullanabiliriz. Biz keşif yaptıkça cüzdanlarımız da bizimle birlikte gelişerek büyür; bazıları, bunu dijital kimliğin başlangıcı olarak görüyor.
 
 Cüzdanlar iki temel hesap bilgisine sahiptir:
 
