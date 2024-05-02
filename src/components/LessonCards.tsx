@@ -12,6 +12,7 @@ import InstallAppModal from 'components/InstallAppModal'
 import LessonCard from 'components/LessonCard'
 import { LessonTypeType, LevelType } from 'entities/lesson'
 import styled from '@emotion/styled'
+import { useSmallScreen } from 'hooks/index'
 
 const StyledHeading = styled(Heading)`
   @media only screen and (min-width: 801px) {
@@ -48,6 +49,7 @@ const LessonCards = ({
   moduleName?: string
 }): React.ReactElement => {
   const router = useRouter()
+  const [isSmallScreen] = useSmallScreen()
   const { all, slug } = router.query
 
   // const [stats, setStats]: any = useState(null)
@@ -136,7 +138,12 @@ const LessonCards = ({
       <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
         {level || moduleName || 'Handbook'}
       </StyledHeading>
-      <SimpleGrid minChildWidth="400px" spacing={4} my={8} gap={6}>
+      <SimpleGrid
+        minChildWidth={isSmallScreen ? 'unset' : '400px'}
+        spacing={4}
+        my={8}
+        gap={6}
+      >
         {Lessons.filter((lesson) => {
           if (level) {
             if (!lesson?.isArticle && lesson?.level === level) return lesson

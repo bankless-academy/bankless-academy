@@ -95,7 +95,7 @@ const LessonCard = ({
     lesson?.sponsorName?.length && lesson?.sponsorLogo?.length
 
   return (
-    <StyledLessonCard p={6} pb={8} borderRadius="3xl">
+    <StyledLessonCard p={6} pb={8} borderRadius="3xl" maxW="500px" m="auto">
       <Box position="relative" zIndex="1">
         <Text
           fontSize="xl"
