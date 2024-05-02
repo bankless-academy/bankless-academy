@@ -113,6 +113,8 @@ const Head = ({ metadata }: { metadata: MetaData }): React.ReactElement => {
           href={
             metadata?.canonical
               ? `${DOMAIN_URL_}${metadata.canonical}`
+              : canonical?.endsWith('-datadisk')
+              ? canonical?.replace('-datadisk', '')
               : canonical
           }
         />
