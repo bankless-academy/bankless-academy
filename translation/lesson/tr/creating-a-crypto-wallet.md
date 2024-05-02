@@ -27,11 +27,11 @@ ________________________________________________________________________________
 
 ---
 
-This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. **Bilginizi artırmak ve rozetinizi almak** için [dersin tamamına] (https://app.banklessacademy.com/lessons/wallet-basics) göz atın!
+Bu, [Cüzdanın Temelleri](https://app.banklessacademy.com/lessons/wallet-basics) dersimizin ve ders sonundaki görev için sunulan kılavuzun bir özetidir. **Bilginizi artırmak ve rozetinizi almak** için [dersin tamamına](https://app.banklessacademy.com/lessons/wallet-basics) göz atın!
 
 ---
 
-## Key Takeaways
+## Önemli Bilgiler
 
 > - Blok zincirleri dünyasına erişmek için bir `kripto cüzdanı`na ihtiyacınız olacak!
 >
@@ -45,23 +45,23 @@ This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons
 
 ## Kripto Cüzdanı Nedir?
 
-Kripto cüzdanları, bilgisayarınızda veya telefonunuzda `kripto para` kullanmanıza olanak tanıyan önemli bir web3 aracıdır. Cüzdanlara, bilgisayarınızda bir web tarayıcısı uzantısı, telefonunuzda ise bir uygulama olan `cüzdan uygulaması` adlı bir yazılım kullanılarak erişilir.
+Kripto cüzdanı, bilgisayarınızda veya telefonunuzda `kripto para` kullanmanıza olanak tanıyan önemli bir web3 aracıdır. Cüzdanlara, bilgisayarınızda bir web tarayıcısı uzantısı, telefonunuzda ise bir uygulama olan `cüzdan uygulaması` adlı bir yazılım kullanılarak erişilir.
 
-Dahası var. Cüzdanlar, kripto para tutmak amacıyla kullanılan hesaplardan daha fazlasıdır; blok zincirine olan bağlantımızdır. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
+Dahası var. Cüzdanlar, kripto para tutmak amacıyla kullanılan hesaplardan daha fazlasıdır; onlar, blok zincirine olan bağlantımızdır. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.
 
-Cüzdanlar iki temel hesap bilgisiyle birlikte gelir:
+Cüzdanlar iki temel hesap bilgisine sahiptir:
 
-- _Kullanıcı adınız_ olarak düşünebileceğiniz bir `genel anahtar`. You’ll share it publicly to receive cryptocurrency.
+- _Kullanıcı adınız_ olarak düşünebileceğiniz bir `genel anahtar`. Bu anahtarı, kripto para almak için herkese açık bir şekilde paylaşabilirsiniz.
 
-- _Parolanız_ görevi gören bir `özel anahtar`. Bu anahtar her zaman gizli tutulmalıdır ve değiştirilemez.
+- _Parola_ işlevi gören bir `özel anahtar`. Değiştirilemeyen bu anahtar her zaman gizli tutulmalıdır.
 
-Özel anahtarınızı korumak çok önemlidir çünkü bu anahtar cüzdanınıza anında erişim sağlar. Özel anahtarınızı kesinlikle paylaşmamalısınız. [Dersin tamamını] (https://app.banklessacademy.com/lessons/wallet-basics) alarak daha fazla bilgi edinebilirsiniz.
+Özel anahtarınızı korumak çok önemlidir çünkü bu anahtar cüzdanınıza anında erişim sağlar. Özel anahtarınızı kesinlikle paylaşmamalısınız. [Dersin tamamını](https://app.banklessacademy.com/lessons/wallet-basics) alarak daha fazla bilgi edinebilirsiniz.
 
-Bugün önerilen kripto cüzdanı Zerion'u kullanarak ilk cüzdanımızı oluşturacağız!
+Bugün, tavsiye edilen kripto cüzdanı Zerion'u kullanarak ilk cüzdanımızı oluşturacağız!
 
-## İzlenecek Yol
+## Kılavuz
 
-İlk cüzdanınızı aşağıdaki kılavuzu kullanarak bilgisayarınızda kurun ya da telefon cüzdanı kılavuzumuz için aşağı kaydırmaya devam edin.
+İlk cüzdanınızı aşağıdaki kılavuzu kullanarak bilgisayarınızda oluşturun ya da telefon cüzdanı kılavuzumuz için aşağı kaydırmaya devam edin.
 
 ### Bilgisayar Cüzdanı
 
@@ -73,9 +73,9 @@ Bugün önerilen kripto cüzdanı Zerion'u kullanarak ilk cüzdanımızı oluşt
 
 ---
 
-**Blok zinciri çoklu evrenine katılma zamanı geldi!**
+**Blok zinciri çoklu evrenine katılmanın zamanı geldi!**
 
-Don’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.
+Yolculuklarınıza kolay başvuru sağlamak ve Bankless Academy'e destek olmak için bu el kitabı konusunu koleksiyonunuza eklemeyi unutmayın.
 
 İyi yolculuklar, Kaşif!
 
@@ -85,32 +85,32 @@ Don’t forget to collect this handbook entry for easy reference on your travels
 
 ### Kripto para nedir?
 
-Kripto paralar, `kriptografi` ile güvence altına alınan bir dijital para biçimidir. Bu paralar, merkezi otoritelere ve bankalara ihtiyaç olmadan  çalışarak, sahiplerinin finansal özgürlüğünü artırırken dolandırıcılık olasılığını azaltır.
+Kripto paralar, `kriptografi` ile güvence altına alınan bir dijital para biçimidir. Bu paralar, merkezi otoritelere ve bankalara ihtiyaç duymadan  çalışarak sahiplerinin finansal özgürlüğünü artırırken dolandırıcılık ihtimalini azaltır.
 
 **[Bitcoin'in Temelleri](https://app.banklessacademy.com/lessons/bitcoin-basics)** dersimizle kripto para hakkında daha fazla bilgi edinin ve bu dijital para birimlerinin finans dünyasında nasıl devrim yarattığını görün!
 
-### Genel ve özel anahtarlar nedir?
+### Genel ve özel anahtar nedir?
 
-Açık/özel anahtar `şifreleme`, cüzdanınızın kripto paranıza erişimi gizli tutarken, başkalarının size kripto para gönderebileceği adres gibi bazı bilgileri herkese açık hale getirmesine olanak tanır. One key is like your cryptocurrency’s house address, and the other unlocks the front door.
+Genel/özel anahtar `şifreleme` cüzdanınızın, kripto paranıza erişimi gizli tutarken başkalarının size kripto para gönderebileceği adres gibi bazı bilgileri herkese açık hale getirmesine olanak tanır. Anahtarlardan birini kripto paranızın ev adresi olarak kabul edersek diğeri de ön kapıyı açacaktır.
 
-You can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.
+Genel anahtarınızı size kripto para göndermesi için güvendiğiniz herhangi biriyle paylaşabilirsiniz ancak özel anahtarınız yalnızca sizin görmeniz içindir çünkü cüzdanın içindeki tüm varlıklara erişim sağlar. Karşınızdaki kişi Bankless Academy veya Zerion'dan olduğunu iddia etse dahi özel anahtarınızı kimseyle paylaşmayın.
 
-Learn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.
+[Cüzdanın Temelleri](https://app.banklessacademy.com/lessons/wallet-basics) dersimizde daha fazla bilgi edinin ve ilk cüzdanınızı oluşturarak ödül kazanın.
 
-### What happens if I lose my recovery phrase?
+### Kurtarma ifadem kaybolursa ne olur?
 
-Your recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.
+“Gizli ifade” veya “tohum ifadesi” olarak da adlandırılan kurtarma ifadeniz, cihazınızda cüzdanınıza erişiminizi kaybetmeniz durumunda tek yedeğinizdir. Kurtarma ifadenizi kaybederseniz cüzdanınızdaki varlıklar sonsuza dek kaybolur. Bu nedenle, kurtarma ifadenizi, yalnızca hırsızlığa veya kaybolmaya karşı değil aynı zamanda yangına veya su hasarına karşı da korumak için güvenli bir yerde saklamanız önemlidir.
 
-### Can Ethereum wallets hold Bitcoin?
+### Ethereum cüzdanlarında Bitcoin tutulabilir mi?
 
-Ethereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).
+Ethereum cüzdanlarında Bitcoin tutabilir ancak bu Bitcoin'ler “wrapped” (sarılmış) token formdadır. Cüzdanınızda orijinal Bitcoin tutmak istiyorsanız [Exodus](https://www.exodus.com/) veya [Mycelium](https://wallet.mycelium.com/) gibi, Bitcoin ağı üzerinde çalışan bir cüzdan oluşturmanız gerekir.
 
 ---
 
-**Author**
+**Yazar**
 
-[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.
+Bankless Academy'de İçerik ve Tasarım Lideri olarak görev yapan [Tetranome](https://twitter.com/Tetranome), öğrenme yolculuğu, kullanıcı arayüzü ile deneyimi ve platform sanatına odaklanır.
 
-**Patron**
+**Sahibi**
 
-This walkthrough is powered by Zerion.
+Bu kılavuz Zerion tarafından sağlanmaktadır.
