@@ -83,6 +83,19 @@ const PARTNERS = [
   },
 ]
 
+const COMMUNITY_PARTNERS = [
+  {
+    name: 'De University of Ethereum',
+    image: 'ueth.png',
+    link: 'https://ueth.org/',
+  },
+  {
+    name: 'College DAO',
+    image: 'CollegeDAO.png',
+    link: 'https://collegedao.io/',
+  },
+]
+
 const IS_PARTNERSHIP_ACTIVACTED = true
 
 const HomePage = (): JSX.Element => {
@@ -376,6 +389,30 @@ const HomePage = (): JSX.Element => {
                   </Box>
                 </Box>
               </Box> */}
+              <Box my="16">
+                <Heading as="h2" size="xl" mt="16" mb="8">
+                  Community Collaborations
+                </Heading>
+                <SimpleGrid
+                  columns={{ sm: 1, md: 2, lg: 2 }}
+                  gap={6}
+                  my="10"
+                  mx={isSmallScreen ? '0' : '12'}
+                >
+                  {COMMUNITY_PARTNERS.map((partner) => (
+                    <Card key={partner.name} alignItems="center">
+                      <ExternalLink href={partner.link}>
+                        <Image
+                          alt={partner.name}
+                          title={partner.name}
+                          maxHeight="70px"
+                          src={`/images/partners/${partner.image}`}
+                        />
+                      </ExternalLink>
+                    </Card>
+                  ))}
+                </SimpleGrid>
+              </Box>
               <Box my="16">
                 <Heading as="h2" size="xl" mt="16" mb="8">
                   {t(`Work With Us!`)}
