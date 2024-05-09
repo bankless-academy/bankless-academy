@@ -149,8 +149,7 @@ const CollectLessonButton = ({
   }, [address, refreshDatadiskLS])
 
   // TODO: TRANSLATE
-  const shareLink =
-    'https://app.banklessacademy.com/lessons/layer-2-blockchains-datadisk'
+  const shareLink = `https://app.banklessacademy.com/lessons/${lesson.slug}-datadisk`
   const share = `I’ve just collected ${numberIOwn} of 100 ‘${lesson.name}’ DataDisks from @BanklessAcademy.
 
 Become a Guardian of Bankless Academy today - join the effort to circulate Bankless Academy content and retroactively fund education public goods!`

@@ -77,7 +77,7 @@
   },
   "blockchains": {
     "keyword": "blockchains",
-    "definition": "Kripto para işlemlerinin kaydının, dünyanın dört bir yanından birçok bilgisayarda tutulduğu sistem."
+    "definition": "A system in which a record of cryptocurrency transactions is maintained across many computers across the world."
   },
   "blok": {
     "keyword": "Blok",
@@ -519,6 +519,10 @@
     "keyword": "gözetimsiz cüzdan",
     "definition": "(Emanete tabi olmayan cüzdan) Gözetimsiz bir cüzdanla, özel anahtarlarınızın kontrolü sizde olur ve kripto varlıklarınızı siz kontrol edersiniz."
   },
+  "gözetimsiz cüzdanlar": {
+    "keyword": "gözetimsiz cüzdanlar",
+    "definition": "(Emanete tabi olmayan cüzdan) Gözetimsiz bir cüzdanla, özel anahtarlarınızın kontrolü sizde olur ve kripto varlıklarınızı siz kontrol edersiniz."
+  },
   "gözetimsizler": {
     "keyword": "gözetimsizler",
     "definition": "Varlıklarınızı sadece sizin erişebileceğiniz bir yerde tutma yolu."
@@ -654,6 +658,10 @@
   "kriptografi": {
     "keyword": "kriptografi",
     "definition": "Dışarıdan müdahaleyi önleyen güvenli iletişim veya işlem teknikleri."
+  },
+  "kurtarma ifadeleri": {
+    "keyword": "kurtarma ifadeleri",
+    "definition": "Kurtarma ifadesi, cüzdanınızın genel anahtarını ve özel anahtarını oluşturmak için kullanılan 12 ila 24 kelimelik bir sözcük listesidir."
   },
   "kurtarma ifadesi": {
     "keyword": "kurtarma ifadesi",
@@ -1581,7 +1589,7 @@
   },
   "wallet apps": {
     "keyword": "wallet apps",
-    "definition": "Bilgisayarınızda veya telefonunuzda, blok zincirindeki cüzdanınıza bağlanmak için kullanılan bir uygulama."
+    "definition": "An app on your computer or phone, used to connect to your wallet on the blockchain."
   },
   "wallets": {
     "keyword": "wallets",
@@ -1591,12 +1599,20 @@
     "keyword": "web2",
     "definition": "İnternetin, blok zinciri altyapısı bulunmayan mevcut durumu."
   },
+  "web2'ler": {
+    "keyword": "web2'ler",
+    "definition": "İnternetin, blok zinciri altyapısı bulunmayan mevcut durumu."
+  },
   "web2s": {
     "keyword": "web2s",
     "definition": "İnternetin, blok zinciri altyapısı bulunmayan mevcut durumu."
   },
   "web3": {
     "keyword": "web3",
+    "definition": "Kullanıcıların varlıklarını ve verilerini kendi gözetimleri altında tutabildiği, blok zincirlerinden oluşan interneti ifade eder."
+  },
+  "web3'ler": {
+    "keyword": "web3'ler",
     "definition": "Kullanıcıların varlıklarını ve verilerini kendi gözetimleri altında tutabildiği, blok zincirlerinden oluşan interneti ifade eder."
   },
   "web3s": {
