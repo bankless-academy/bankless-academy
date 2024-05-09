@@ -17,7 +17,7 @@ import { WagmiConfig } from 'wagmi'
 import { mainnet, optimism, polygon, polygonMumbai } from 'wagmi/chains'
 
 import Head, { MetaData } from 'components/Head'
-import Layout from 'layout'
+import Layout from 'layout/index'
 import ThemeProvider from 'theme'
 import { DEBUG } from 'utils/index'
 import NonSSRWrapper from 'components/NonSSRWrapper'

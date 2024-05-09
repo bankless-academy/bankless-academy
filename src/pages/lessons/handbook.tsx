@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next'
 
 import { MetaData } from 'components/Head'
 import LessonCards from 'components/LessonCards'
-import Layout from 'components/Layout'
+import Layout from 'layout/Layout'
 
 export const pageMeta: MetaData = {
   title: 'Handbook',

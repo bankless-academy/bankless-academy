@@ -31,7 +31,7 @@ import ExternalLink from 'components/ExternalLink'
 import { MAX_DONATIONS } from 'constants/donations'
 import { MAX_BADGES } from 'constants/badges'
 import { EMPTY_PASSPORT, MAX_STAMPS } from 'constants/passport'
-import Layout from 'components/Layout'
+import Layout from 'layout/Layout'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -183,7 +183,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
   if (user)
     // TODO: create Profile component
     return (
-      <Layout page="PROFILE">
+      <Layout page={isMyProfile ? 'PROFILE' : ''}>
         <Container maxW="container.lg">
           <Card mt="180px" borderRadius="2xl !important">
             <Box
