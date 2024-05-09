@@ -369,7 +369,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
     )
   else
     return (
-      <Layout page="PROFILE">
+      <Layout page="">
         <Container maxW="container.xl" minH="calc(100vh - 73px)">
           <Heading as="h2" size="xl" m="8" textAlign="center">
             Loading Explorer Profile
