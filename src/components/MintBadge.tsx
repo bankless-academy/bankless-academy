@@ -5,12 +5,12 @@ import {
   useToast,
   Box,
   useDisclosure,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverCloseButton,
-  PopoverArrow,
-  PopoverBody,
+  // Popover,
+  // PopoverTrigger,
+  // PopoverContent,
+  // PopoverCloseButton,
+  // PopoverArrow,
+  // PopoverBody,
 } from '@chakra-ui/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
@@ -31,7 +31,7 @@ import { EMPTY_PASSPORT } from 'constants/passport'
 import { api } from 'utils'
 import PassportModal from 'components/PassportModal'
 import Confetti from 'components/Confetti'
-import { useSmallScreen } from 'hooks'
+// import { useSmallScreen } from 'hooks'
 
 const MintBadge = ({
   badgeId,
@@ -45,10 +45,10 @@ const MintBadge = ({
     `isBadgeMinted-${badgeId}`,
     false
   )
-  const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
+  // const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [status, setStatus] = useState('')
   const [showConfetti, setShowConfetti] = useState(false)
-  const [showPopover, setShowPopover] = useState(false)
+  // const [showPopover, setShowPopover] = useState(false)
   const [isMintingInProgress, setIsMintingInProgress] = useState(false)
   const [passportLS, setPassportLS] = useLocalStorage(
     'passport',
@@ -57,12 +57,12 @@ const MintBadge = ({
   const [, setRefreshBadgesLS] = useLocalStorage('refreshBadges', false)
   const { query } = useRouter()
   const { simulate } = query
-  const {
-    isOpen: isOpenPopOver,
-    onOpen: onOpenPopOver,
-    onClose: onClosePopOver,
-  } = useDisclosure()
-  const [isSmallScreen] = useSmallScreen()
+  // const {
+  //   isOpen: isOpenPopOver,
+  //   onOpen: onOpenPopOver,
+  //   onClose: onClosePopOver,
+  // } = useDisclosure()
+  // const [isSmallScreen] = useSmallScreen()
 
   const { address } = useAccount()
   const toast = useToast()
@@ -82,14 +82,14 @@ const MintBadge = ({
     }
   }
 
-  useEffect(() => {
-    if (isQuestCompleted && badgesMintedLS?.length === 0 && !showPopover) {
-      setTimeout(() => {
-        onOpenPopOver()
-        setShowPopover(true)
-      }, 1000)
-    }
-  }, [badgesMintedLS])
+  // useEffect(() => {
+  //   if (isQuestCompleted && badgesMintedLS?.length === 0 && !showPopover) {
+  //     setTimeout(() => {
+  //       onOpenPopOver()
+  //       setShowPopover(true)
+  //     }, 1000)
+  //   }
+  // }, [badgesMintedLS])
 
   useEffect(() => {
     if (address) {
@@ -273,45 +273,45 @@ const MintBadge = ({
 
   return (
     <>
-      <Popover
+      {/* <Popover
         isOpen={isOpenPopOver}
         placement={isSmallScreen ? 'bottom' : 'right'}
         returnFocusOnClose={false}
         onOpen={onOpenPopOver}
         onClose={onClosePopOver}
+      > */}
+      {/* <PopoverTrigger> */}
+      <Button
+        variant={'primary'}
+        w="100%"
+        height="51px"
+        fontSize="lg"
+        fontWeight="bold"
+        opacity={!address || !isQuestCompleted ? '0.5' : 1}
+        isLoading={isMintingInProgress}
+        loadingText={t('Minting Badge...')}
+        cursor={isBadgeMintedLS ? 'auto' : 'pointer'}
+        onClick={() => {
+          passportLS?.verified ? mintBadge() : onOpen()
+        }}
+        leftIcon={<ShootingStar width="28px" height="28px" />}
       >
-        <PopoverTrigger>
-          <Button
-            variant={'primary'}
-            w="100%"
-            height="51px"
-            fontSize="lg"
-            fontWeight="bold"
-            opacity={!address || !isQuestCompleted ? '0.5' : 1}
-            isLoading={isMintingInProgress}
-            loadingText={t('Minting Badge...')}
-            cursor={isBadgeMintedLS ? 'auto' : 'pointer'}
-            onClick={() => {
-              passportLS?.verified ? mintBadge() : onOpen()
-            }}
-            leftIcon={<ShootingStar width="28px" height="28px" />}
-          >
-            {t('Claim Badge')}
-          </Button>
-        </PopoverTrigger>
-        <PassportModal isOpen={isOpen} onClose={onClose} />
-        <Confetti
-          showConfetti={showConfetti}
-          onConfettiComplete={() => {
-            setShowConfetti(false)
-            // Refresh list of Badges in the wallet
-            setIsBadgeMintedLS(true)
-            setRefreshBadgesLS(true)
-            setStatus('')
-            setIsMintingInProgress(false)
-          }}
-        />
-        <PopoverContent>
+        {t('Claim Badge')}
+      </Button>
+      {/* </PopoverTrigger> */}
+      <PassportModal isOpen={isOpen} onClose={onClose} />
+      <Confetti
+        showConfetti={showConfetti}
+        onConfettiComplete={() => {
+          setShowConfetti(false)
+          // Refresh list of Badges in the wallet
+          setIsBadgeMintedLS(true)
+          setRefreshBadgesLS(true)
+          setStatus('')
+          setIsMintingInProgress(false)
+        }}
+      />
+      {/* <PopoverContent>
           <PopoverCloseButton />
           <PopoverArrow />
           <PopoverBody textAlign="left">
@@ -330,11 +330,11 @@ const MintBadge = ({
               {`' walkthrough. Wallets are your account on the blockchain!`}
             </Box>
           </PopoverBody>
-        </PopoverContent>
-        {/* {isSmallScreen && (
+        </PopoverContent> */}
+      {/* {isSmallScreen && (
           <Box position="absolute" height="250px" w="1px"></Box>
         )} */}
-      </Popover>
+      {/* </Popover> */}
     </>
   )
 }

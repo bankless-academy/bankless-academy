@@ -16,6 +16,8 @@ import {
 import { ReactNode, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import ExternalLink from 'components/ExternalLink'
+
 const QuestionIcon = (props) => (
   <Icon
     width={props.size === 'lg' ? '30px' : '24px'}
@@ -99,12 +101,14 @@ const Helper = ({
   fullscreen,
   isProfile,
   triggerOpen,
+  helpLink,
 }: {
   title: ReactNode
   definition: ReactNode
   fullscreen?: boolean
   isProfile?: boolean
   triggerOpen?: boolean
+  helpLink?: string
 }): React.ReactElement => {
   const { t } = useTranslation()
   const {
@@ -141,10 +145,24 @@ const Helper = ({
           <ModalHeader>{title}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>{definition}</ModalBody>
-          <ModalFooter m="auto">
+          <ModalFooter
+            justifyContent="space-between"
+            alignSelf="center"
+            w="100%"
+          >
+            <Box w="36px"></Box>
             <Button variant="primaryWhite" onClick={onCloseHelpModal}>
               {t('Got it')}
             </Button>
+            <Box w="36px">
+              {helpLink ? (
+                <ExternalLink underline="true" href={helpLink}>
+                  Help
+                </ExternalLink>
+              ) : (
+                ''
+              )}
+            </Box>
           </ModalFooter>
         </ModalContent>
       </Modal>

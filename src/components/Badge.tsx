@@ -82,6 +82,7 @@ Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
         </>
       }
       triggerOpen={triggerOpen}
+      helpLink="/faq#ee66feb29b2041549f364a3480064aac"
     />
   )
 
