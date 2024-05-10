@@ -44,10 +44,32 @@ function replaceImagesInMarkdown(markdownString) {
   // /!\[<span class="hljs-string">(.*?)<\/span>\]\(<span class="hljs-link">(.*?)<\/span>\)/g
 
   // Replace each image syntax with an <img> tag
-  const replacedString = removeQuizAnswers(markdownString).replace(
+  let replacedString = removeQuizAnswers(markdownString).replace(
     imageRegex,
     '<img alt="" src="$1" width="400px" />'
   )
+
+  // add alt & title to images
+  // const contentDiv = new JSDOM(replacedString)
+  const sectionSplit = `<span class="hljs-section">`
+  const sections = replacedString.split(sectionSplit)
+  replacedString = ''
+  for (const section of sections) {
+    const contentDiv = document.createElement('div')
+    contentDiv.innerHTML = `${sectionSplit}${section}`
+    const sectionTitles = contentDiv.querySelectorAll('.hljs-section')
+    // console.log(sectionTitles)
+    const sectionTitle = sectionTitles[0].textContent?.replace('# ', '')
+    // console.log(sectionTitle)
+    const images = contentDiv.querySelectorAll('img')
+    // console.log(images)
+    for (const image of images) {
+      image.alt = sectionTitle
+      image.title = sectionTitle
+    }
+    // console.log(contentDiv)
+    replacedString += contentDiv.innerHTML
+  }
 
   return replacedString
 }
@@ -131,7 +153,7 @@ const LessonContent = ({
         <Box fontSize="2xl">Lesson Content:</Box>
         <Box
           dangerouslySetInnerHTML={{
-            __html: replaceImagesInMarkdown(intro),
+            __html: intro,
           }}
           width="1100px"
           overflowX="scroll"
