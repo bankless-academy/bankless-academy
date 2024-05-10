@@ -70,7 +70,7 @@ const DEXAggregators = (
           <div className="bloc1">
             <p>
               {'1. Load '}
-              <ExternalLink href="https://app.1inch.io/#/137/unified/swap/MATIC/BANK">
+              <ExternalLink href="https://app.1inch.io/#/137/simple/swap/MATIC">
                 1inch
               </ExternalLink>
               {' on the '}
@@ -84,13 +84,7 @@ const DEXAggregators = (
               <b>Polygon network</b>
               {'.'}
             </p>
-            <p>
-              {'2. Swap any token. (You can buy '}
-              <ExternalLink href="https://polygonscan.com/token/0xdb7cb471dd0b49b29cab4a1c14d070f27216a0ab">
-                $BANK
-              </ExternalLink>
-              {` if you want to support the Bankless movement.)`}
-            </p>
+            <p>{'2. Swap any token.'}</p>
             <p>
               3. Paste the successful <b>swap</b> transaction hash below:
             </p>
