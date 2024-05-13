@@ -16,13 +16,16 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 function GlossaryPage(): JSX.Element {
-  const terms = Object.keys(KEYWORDS).map((k) => {
-    return {
-      id: k,
-      name: KEYWORDS[k]['keyword'],
-      definition: KEYWORDS[k]['definition'],
-    }
-  })
+  const terms = Object.keys(KEYWORDS)
+    .map((k) => {
+      return {
+        id: k,
+        name: KEYWORDS[k]['keyword'],
+        definition: KEYWORDS[k]['definition'],
+        glossary: KEYWORDS[k]['glossary'],
+      }
+    })
+    .filter((k) => k.glossary)
 
   return (
     <Layout page="GLOSSARY">
