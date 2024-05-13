@@ -10,7 +10,7 @@ import { useLocalStorage } from 'usehooks-ts'
 import { shortenAddress } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
 
-export type PageType = LessonTypeType | 'PROFILE' | ''
+export type PageType = LessonTypeType | 'PROFILE' | 'GLOSSARY' | ''
 
 const DesktopButton = ({
   isActive,
@@ -80,7 +80,7 @@ const MobileButton = ({
         alt={label}
         title={label}
         borderRadius="50%"
-        fallbackSrc={DEFAULT_AVATAR}
+        fallbackSrc={label === 'Profile' ? DEFAULT_AVATAR : ''}
       />
     </Box>
   )
@@ -201,6 +201,12 @@ const Layout = ({
                 isActive={page === 'HANDBOOK'}
                 imageSrc="/images/handbook-logo.svg"
               />
+              <DesktopButton
+                link="/glossary"
+                label="Glossary"
+                isActive={page === 'GLOSSARY'}
+                imageSrc="/images/handbook-logo.svg"
+              />
             </Box>
           </Box>
         </>
@@ -242,6 +248,12 @@ const Layout = ({
             link="/lessons/handbook"
             label="Handbook"
             isActive={page === 'HANDBOOK'}
+            imageSrc="/images/handbook-logo-mobile.svg"
+          />
+          <MobileButton
+            link="/glossary"
+            label="Glossary"
+            isActive={page === 'GLOSSARY'}
             imageSrc="/images/handbook-logo-mobile.svg"
           />
         </Box>

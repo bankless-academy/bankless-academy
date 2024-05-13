@@ -14,7 +14,7 @@ import { LessonTypeType, LevelType } from 'entities/lesson'
 import styled from '@emotion/styled'
 import { useSmallScreen } from 'hooks/index'
 
-const StyledHeading = styled(Heading)`
+export const StyledHeading = styled(Heading)`
   @media only screen and (min-width: 801px) {
     display: flex;
     flex-basis: 100%;
