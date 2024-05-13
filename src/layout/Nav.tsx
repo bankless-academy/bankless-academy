@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Image, HStack, Spacer, Flex, Button } from '@chakra-ui/react'
 import { isMobile } from 'react-device-detect'
 import queryString from 'query-string'
@@ -14,6 +14,9 @@ import SwitchNetworkButton from 'components/SwitchNetworkButton/'
 import { PROJECT_NAME, LOGO, LOGO_SMALL } from 'constants/index'
 import { useSmallScreen } from 'hooks/index'
 import ExternalLink from 'components/ExternalLink'
+import { api } from 'utils/index'
+import { AnnouncementType } from 'entities/announcement'
+import Announcement from 'components/Announcement'
 
 declare global {
   interface Navigator {
@@ -29,6 +32,9 @@ const Nav: React.FC = () => {
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
+  )
+  const [announcement, setAnnouncement] = useState<AnnouncementType | null>(
+    null
   )
 
   const isProfilePage = asPath.includes('/explorer/my-profile')
@@ -76,6 +82,21 @@ const Nav: React.FC = () => {
       alt={PROJECT_NAME}
     />
   )
+
+  const getAnnouncement = async () => {
+    try {
+      const a = await api('/api/get/announcement', {})
+      if (a?.data) {
+        setAnnouncement(a.data)
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  useEffect(() => {
+    getAnnouncement()
+  }, [])
 
   return (
     <header>
@@ -127,6 +148,7 @@ const Nav: React.FC = () => {
               isWebApp={webapp === 'true'}
             />
           </HStack>
+          {announcement && <Announcement announcement={announcement} />}
         </Flex>
       </Box>
     </header>

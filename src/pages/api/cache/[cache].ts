@@ -8,6 +8,7 @@ export const config = {
 
 export const AUTHORIZED_KV = [
   'bankless-dao-news',
+  'announcement',
   'leaderboard'
 ]
 
