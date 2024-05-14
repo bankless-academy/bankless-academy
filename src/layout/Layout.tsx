@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
-import { Box, Container, Image } from '@chakra-ui/react'
+import { Box, Container, Image, Button } from '@chakra-ui/react'
 import { ReactElement } from 'react'
+import { useWeb3Modal } from '@web3modal/wagmi/react'
+import { Wallet } from '@phosphor-icons/react'
 
 import { LessonTypeType } from 'entities/lesson'
 import InternalLink from 'components/InternalLink'
@@ -35,14 +37,16 @@ const DesktopButton = ({
   )
   return (
     <Box
-      h="64px"
-      mt="2"
+      h={isActive ? '80px' : '78px'}
       background={
         isActive
           ? 'linear-gradient(132deg, #67407E 0%, #354374 100%)'
           : '#3F3253'
       }
-      border={isActive ? '2px solid #B85FF1' : ''}
+      borderY={isActive ? '2px solid #9d72dc' : ''}
+      borderBottom={isActive ? '2px solid #9d72dc' : '2px solid #574572'}
+      mt={isActive ? '-2px' : '0'}
+      // pb={isActive ? '2px' : ''}
     >
       {isActive ? button : <InternalLink href={link}>{button}</InternalLink>}
     </Box>
@@ -99,7 +103,9 @@ const Layout = ({
   page?: PageType
 }): React.ReactElement => {
   const { address } = useAccount()
+  const { open } = useWeb3Modal()
   const [nameCache] = useLocalStorage(`name-cache`, {})
+  const [score] = useLocalStorage(`score`, 0)
   const [isSmallScreen] = useSmallScreen()
   const { scrollY } = useWindowScrollPositions()
   const username = address
@@ -107,6 +113,10 @@ const Layout = ({
       ? nameCache[address].name
       : address
     : ''
+
+  async function openModal() {
+    await open({ view: 'Connect' })
+  }
 
   const menuBarWidth = '280px'
   return (
@@ -129,7 +139,9 @@ const Layout = ({
         display="block"
         backgroundColor="#161515"
       >
-        <Container maxW="container.xl">{children}</Container>
+        <Container maxW="container.xl" pb={isSmallScreen ? '16' : '0'}>
+          {children}
+        </Container>
       </Box>
       {!isSmallScreen ? (
         <>
@@ -138,26 +150,28 @@ const Layout = ({
             w={`calc(${menuBarWidth} + 2px)`}
             position={scrollY > 80 ? 'fixed' : 'absolute'}
             top="0"
-            mt="2"
           >
-            {address && (
+            {address ? (
               <Box
                 background={
                   page === 'PROFILE'
                     ? 'linear-gradient(132deg, #67407E 0%, #354374 100%)'
                     : '#3F3253'
                 }
+                h="298px"
+                borderBottom={page === 'PROFILE' ? '' : '2px solid #574572'}
               >
                 <InternalLink href={`/explorer/${username}?referral=true`}>
                   <Box
-                    pt="4"
-                    border={page === 'PROFILE' ? '2px solid #B85FF1' : ''}
+                    pt="8"
+                    borderBottom={page === 'PROFILE' ? '2px solid #B85FF1' : ''}
+                    position="relative"
                   >
                     <Box
                       margin="auto"
-                      pt="5px"
-                      w="160px"
-                      h="160px"
+                      pt="10px"
+                      w="170px"
+                      h="170px"
                       borderRadius="50%"
                       backgroundImage="linear-gradient(180deg, #A379BD 0%, #5B5198 100%)"
                     >
@@ -170,15 +184,35 @@ const Layout = ({
                         src={`https://ensdata.net/media/avatar/${username}`}
                         fallbackSrc={DEFAULT_AVATAR}
                       />
+                      {score > 0 && (
+                        <Box position="absolute" top="33px" right="29px">
+                          <Image src="/images/profile-hex.svg" />
+                          <Box
+                            position="absolute"
+                            top="0"
+                            right="0"
+                            width="66px"
+                            height="75px"
+                            display="flex"
+                            justifyContent="center"
+                            alignItems="center"
+                            fontSize="x-large"
+                            fontWeight="bold"
+                            color="white"
+                          >
+                            {score}
+                          </Box>
+                        </Box>
+                      )}
                     </Box>
                     <Box
                       textAlign="center"
-                      mt="4"
+                      mt="8"
                       color="white"
                       fontSize="xl"
                       fontWeight="bold"
                       textTransform="uppercase"
-                      pb="4"
+                      pb="8"
                     >
                       {username.includes('.')
                         ? username
@@ -186,6 +220,43 @@ const Layout = ({
                     </Box>
                   </Box>
                 </InternalLink>
+              </Box>
+            ) : (
+              <Box
+                background="transparent"
+                h="298px"
+                borderBottom="2px solid #574572"
+                textAlign="center"
+              >
+                <Box pt="8">
+                  <Box
+                    margin="auto"
+                    pt="10px"
+                    w="170px"
+                    h="170px"
+                    borderRadius="50%"
+                    backgroundImage="linear-gradient(180deg, #A379BD 0%, #5B5198 100%)"
+                  >
+                    <Image
+                      w="150px"
+                      h="150px"
+                      margin="auto"
+                      borderRadius="50%"
+                      backgroundColor="black"
+                      src={DEFAULT_AVATAR}
+                    />
+                  </Box>
+                  <Button
+                    onClick={openModal}
+                    size={isSmallScreen ? 'sm' : 'md'}
+                    leftIcon={<Wallet weight="bold" />}
+                    zIndex={2}
+                    variant="primary"
+                    marginY="27px"
+                  >
+                    Connect Wallet
+                  </Button>
+                </Box>
               </Box>
             )}
             <Box>
@@ -197,7 +268,7 @@ const Layout = ({
               />
               <DesktopButton
                 link="/lessons/handbook"
-                label="Explorer’s Handbook"
+                label="Handbook"
                 isActive={page === 'HANDBOOK'}
                 imageSrc="/images/handbook-logo.svg"
               />
@@ -205,7 +276,7 @@ const Layout = ({
                 link="/glossary"
                 label="Glossary"
                 isActive={page === 'GLOSSARY'}
-                imageSrc="/images/handbook-logo.svg"
+                imageSrc="/images/glossary-logo.svg"
               />
             </Box>
           </Box>
@@ -214,14 +285,14 @@ const Layout = ({
         <Box
           position="fixed"
           w="100vw"
-          h="59px"
+          h="81px"
           bottom="0"
-          bg="#211f1f"
+          bg="black"
           display="flex"
           zIndex="2"
           justifyContent="space-around"
           placeItems="center"
-          borderTop="1px solid black"
+          borderTop="1px solid #222222"
         >
           {/* Mobile menu */}
           <MobileButton
@@ -254,7 +325,7 @@ const Layout = ({
             link="/glossary"
             label="Glossary"
             isActive={page === 'GLOSSARY'}
-            imageSrc="/images/handbook-logo-mobile.svg"
+            imageSrc="/images/glossary-logo-mobile.svg"
           />
         </Box>
       )}
