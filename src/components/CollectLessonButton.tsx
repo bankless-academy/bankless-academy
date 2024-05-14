@@ -185,14 +185,12 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
                 >
                   Discord server
                 </ExternalLink>
-                , and the dedicated ‘Guardian’ channel — where we discuss the
-                future of collectible content at the Academy.
+                , and the dedicated ‘Guardian’ channel.
               </ListItem>
               <ListItem>
                 Onchain display of your support for Bankless Academy and funding
                 of education public goods.
               </ListItem>
-              <ListItem>██████████████████ Soon™</ListItem>
             </UnorderedList>
           </Box>
           <Box mb="4">
