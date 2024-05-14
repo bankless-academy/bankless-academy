@@ -2,6 +2,7 @@ import React from 'react'
 import { Box } from '@chakra-ui/react'
 
 import { StyledHeading } from 'components/LessonCards'
+import { useSmallScreen } from 'hooks/index'
 
 interface Term {
   id: string
@@ -14,6 +15,7 @@ interface GlossaryProps {
 }
 
 const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
+  const [isSmallScreen] = useSmallScreen()
   const groupedTerms: { [key: string]: Term[] } = {}
   terms.forEach((term) => {
     let firstLetter = term.name.charAt(0).toUpperCase()
@@ -30,18 +32,22 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
         position="fixed"
         top="80px"
         right="18px"
-        h="calc(100% - 140px)"
+        h={isSmallScreen ? 'calc(100% - 160px)' : 'calc(100% - 90px)'}
         display="grid"
-        overflow="scroll"
-        w="30px"
+        overflowY="scroll"
+        overflowX="hidden"
+        fontWeight="bold"
+        w="34px"
       >
-        {Object.keys(groupedTerms).map((letter) => (
-          <a key={letter} href={`#section-${letter}`}>
-            <Box minH="30px">{letter.replace('number', '#')}</Box>
-          </a>
-        ))}
+        <Box w="16px" display="grid" textAlign="center">
+          {Object.keys(groupedTerms).map((letter) => (
+            <a key={letter} href={`#section-${letter}`}>
+              <Box minH="30px">{letter.replace('number', '#')}</Box>
+            </a>
+          ))}
+        </Box>
       </Box>
-      <Box m="10" pr="2" maxW="1024px">
+      <Box m="10" pr="2" ml={isSmallScreen ? '20px' : '40px'} maxW="1024px">
         <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
           Glossary
         </StyledHeading>
@@ -51,11 +57,10 @@ const Glossary: React.FC<GlossaryProps> = ({ terms }) => {
               as="h2"
               fontSize="3xl"
               fontWeight="bold"
-              pt="12"
-              mb="8"
-              mt={8}
-              borderTop="2px solid #B85FF1"
-              w="50px"
+              pt="8"
+              mb={'8'}
+              mt="4"
+              borderBottom="2px solid #B85FF1"
             >
               {letter.replace('number', '#')}
             </Box>
