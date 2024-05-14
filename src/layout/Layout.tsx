@@ -147,7 +147,8 @@ const Layout = ({
         <>
           {/* Desktop menu */}
           <Box
-            w={`calc(${menuBarWidth} + 2px)`}
+            // w={`calc(${menuBarWidth} + 2px)`}
+            w={menuBarWidth}
             position={scrollY > 80 ? 'fixed' : 'absolute'}
             top="0"
           >
