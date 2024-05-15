@@ -401,8 +401,8 @@ const HomePage = (): JSX.Element => {
                   </Box>
                 </Box>
               </Box> */}
-              <Box my="16">
-                <Heading as="h2" size="xl" mt="16" mb="8">
+              <Box my="8">
+                <Heading as="h2" size="xl" mt="8" mb="8">
                   Community Collaborations
                 </Heading>
                 <SimpleGrid
