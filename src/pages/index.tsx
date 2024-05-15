@@ -213,7 +213,7 @@ const HomePage = (): JSX.Element => {
         )}
         <Box bgColor="#1F2023" p="4" overflow="hidden">
           <Container maxW="container.lg">
-            <Box mt="6">
+            <Box mt="12">
               <Heading as="h2" size="xl" m="auto">
                 {t(`Start Your Bankless Journey`)}
               </Heading>
@@ -280,7 +280,13 @@ const HomePage = (): JSX.Element => {
                 </Card>
               </SimpleGrid>
             </Box>
-            <Box border="1px solid #989898" p="8" mb="8" borderRadius="lg">
+            <Box
+              border="1px solid #989898"
+              p="8"
+              mb="8"
+              mt={16}
+              borderRadius="lg"
+            >
               <Box
                 fontSize="23px"
                 display={isSmallScreen ? 'block' : 'flex'}
