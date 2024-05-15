@@ -186,7 +186,7 @@ const Layout = ({
                         fallbackSrc={DEFAULT_AVATAR}
                       />
                       {score > 0 && (
-                        <Box position="absolute" top="33px" right="29px">
+                        <Box position="absolute" top="33px" right="28px">
                           <Image src="/images/profile-hex.svg" />
                           <Box
                             position="absolute"
@@ -197,7 +197,7 @@ const Layout = ({
                             display="flex"
                             justifyContent="center"
                             alignItems="center"
-                            fontSize="x-large"
+                            fontSize="28px"
                             fontWeight="bold"
                             color="white"
                           >
