@@ -122,9 +122,17 @@ export default async function handler(
       image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
     })
     feed.addItem({
-      title: `${PROJECT_NAME} - FAQ`,
+      title: `FAQ - ${PROJECT_NAME}`,
       id: `/faq`,
       link: `${DOMAIN_URL}/faq`,
+      description: PROJECT_DESCRIPTION,
+      date: lastUpdate,
+      image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`
+    })
+    feed.addItem({
+      title: `Glossary - ${PROJECT_NAME}`,
+      id: `/glossary`,
+      link: `${DOMAIN_URL}/glossary`,
       description: PROJECT_DESCRIPTION,
       date: lastUpdate,
       image: `${DOMAIN_URL}${DEFAULT_METADATA.image}`

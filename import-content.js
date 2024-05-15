@@ -138,6 +138,8 @@ const KEY_MATCHING = {
   Description: 'description',
   Name: 'name',
   'Languages': 'languages',
+  'Level': 'level',
+  'Tags': 'tags',
   'Lesson Writers': 'lessonWriters',
   Module: 'moduleId',
   Quest: 'quest',
@@ -350,6 +352,8 @@ axios
       if (lesson.languages === undefined) delete lesson.languages
       // sort languages alphabetically
       else lesson.languages.sort()
+      if (lesson.level === undefined) delete lesson.level
+      if (!lesson.tags || lesson.tags.length === 0) delete lesson.tags
       if (lesson.questSocialMessage === undefined) delete lesson.questSocialMessage
       if (lesson.lessonWriters === undefined) delete lesson.lessonWriters
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink

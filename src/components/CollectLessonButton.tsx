@@ -28,13 +28,11 @@ import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
 import {
   IS_WHITELABEL,
-  MD_ENABLED,
   NB_DATADISK_MAX,
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
 import Collectible from 'components/Collectible'
 import Card from 'components/Card'
-import InternalLink from 'components/InternalLink'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   box-shadow: none;
@@ -185,14 +183,12 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
                 >
                   Discord server
                 </ExternalLink>
-                , and the dedicated ‘Guardian’ channel — where we discuss the
-                future of collectible content at the Academy.
+                , and the dedicated ‘Guardian’ channel.
               </ListItem>
               <ListItem>
                 Onchain display of your support for Bankless Academy and funding
                 of education public goods.
               </ListItem>
-              <ListItem>██████████████████ Soon™</ListItem>
             </UnorderedList>
           </Box>
           <Box mb="4">
@@ -240,7 +236,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
                 <Collectible lesson={lesson} />
               </Box>
             </Box>
-            {MD_ENABLED && lesson.hasCollectible && (
+            {/* {MD_ENABLED && lesson.hasCollectible && (
               <InternalLink href={`${window.location.pathname}/content`}>
                 <Button
                   position="absolute"
@@ -256,7 +252,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
                   &lt;/&gt;
                 </Button>
               </InternalLink>
-            )}
+            )} */}
           </>
           <Box textAlign="center" p="16px">
             <Box display="flex" pb={nbDatadiskMintedLS > 0 ? '1' : '0'}>

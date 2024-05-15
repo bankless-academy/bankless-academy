@@ -280,31 +280,37 @@ const HomePage = (): JSX.Element => {
                 </Card>
               </SimpleGrid>
             </Box>
-            <Box
-              border="1px solid #989898"
-              py="8"
-              px="6"
-              mb="8"
-              borderRadius="lg"
-            >
-              <Box fontSize="2xl">
-                <NewsletterButton
-                  variant="primary"
-                  size="lg"
-                  onClick={() => {
-                    onOpen()
-                    Mixpanel.track('click_internal_link', {
-                      link: 'modal',
-                      name: 'Newsletter signup',
-                    })
-                  }}
-                  mr="2"
+            <Box border="1px solid #989898" p="8" mb="8" borderRadius="lg">
+              <Box
+                fontSize="23px"
+                display={isSmallScreen ? 'block' : 'flex'}
+                alignItems="center"
+                textAlign={isSmallScreen ? 'center' : 'unset'}
+              >
+                <Box>
+                  <NewsletterButton
+                    variant="primary"
+                    size="lg"
+                    onClick={() => {
+                      onOpen()
+                      Mixpanel.track('click_internal_link', {
+                        link: 'modal',
+                        name: 'Newsletter signup',
+                      })
+                    }}
+                    mr="2"
+                  >
+                    {t(`Newsletter`)}
+                  </NewsletterButton>
+                </Box>
+                <Box
+                  ml={isSmallScreen ? '0' : '2'}
+                  mt={isSmallScreen ? '4' : '0'}
                 >
-                  {t(`Newsletter`)}
-                </NewsletterButton>
-                {t(
-                  `Sign up for our newsletter to be notified of new lessons and platform updates!`
-                )}
+                  {t(
+                    `Sign up for our newsletter to be notified of new lessons and platform updates!`
+                  )}
+                </Box>
               </Box>
             </Box>
             <SubscriptionModal isOpen={isOpen} onClose={onClose} />

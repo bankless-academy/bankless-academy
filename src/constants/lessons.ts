@@ -28,6 +28,7 @@ const LESSONS: LessonType[] = [
       'tr',
       'ua'
     ],
+    level: 'Essentials',
     lessonWriters: 'Tetranome',
     quest: 'BitcoinBasics',
     publicationStatus: 'publish',
@@ -309,6 +310,7 @@ const LESSONS: LessonType[] = [
       'tr',
       'ua'
     ],
+    level: 'Essentials',
     lessonWriters: 'Ap0ll0517, Jordy, Tetranome',
     quest: 'WalletBasics',
     publicationStatus: 'publish',
@@ -627,6 +629,7 @@ const LESSONS: LessonType[] = [
       'tr',
       'ua'
     ],
+    level: 'Essentials',
     lessonWriters: 'Tetranome',
     publicationStatus: 'publish',
     publicationDate: '2024-03-20',
@@ -671,6 +674,7 @@ const LESSONS: LessonType[] = [
       'de',
       'es'
     ],
+    level: 'Essentials',
     quest: 'BlockchainBasics',
     publicationStatus: 'publish',
     publicationDate: '2022-06-30',
@@ -896,6 +900,10 @@ const LESSONS: LessonType[] = [
     description: 'Protect yourself and your wallet from the most common scams in web3.',
     name: 'Web3 Security',
     languages: [],
+    level: 'Essentials',
+    tags: [
+      'Security'
+    ],
     quest: 'Web3Security',
     publicationStatus: 'publish',
     publicationDate: '2022-07-29',
@@ -1161,6 +1169,7 @@ const LESSONS: LessonType[] = [
     description: 'Understand how Layer 1 blockchains work - and learn their limitations!',
     name: 'Layer 1 Blockchains',
     languages: [],
+    level: 'Level 1',
     quest: 'Layer1Blockchains',
     publicationStatus: 'publish',
     publicationDate: '2022-12-14',
@@ -1435,6 +1444,10 @@ const LESSONS: LessonType[] = [
     description: 'Join the Layer 2 ecosystem to boost your transaction speed & reduce fees.',
     name: 'Layer 2 Blockchains',
     languages: [],
+    level: 'Level 1',
+    tags: [
+      'Optimism'
+    ],
     lessonWriters: 'HiroKennelly, Tetranome',
     quest: 'Layer2Blockchains',
     publicationStatus: 'publish',
@@ -1659,6 +1672,10 @@ const LESSONS: LessonType[] = [
     description: 'Learn how to fund your wallet on L2 via CEXs, third-party onramps, and bridges.',
     name: 'Funding a Wallet on Layer 2',
     languages: [],
+    level: 'Level 1',
+    tags: [
+      'Optimism'
+    ],
     lessonWriters: 'HiroKennelly',
     publicationStatus: 'publish',
     publicationDate: '2023-02-22',
@@ -1717,6 +1734,10 @@ const LESSONS: LessonType[] = [
     description: 'Customize your wallet address with ENS, start building your digital identity.',
     name: 'Registering Your Web3 Username',
     languages: [],
+    level: 'Level 1',
+    tags: [
+      'ENS'
+    ],
     publicationStatus: 'publish',
     publicationDate: '2024-04-08',
     featuredOrderOnHomepage: null,
@@ -1778,6 +1799,10 @@ const LESSONS: LessonType[] = [
     description: 'Understand the basics of decentralized finance.',
     name: 'Intro to DeFi',
     languages: [],
+    level: 'Level 1',
+    tags: [
+      'DeFi'
+    ],
     quest: 'IntroToDeFi',
     publicationStatus: 'publish',
     publicationDate: '2022-02-11',
@@ -2018,6 +2043,7 @@ const LESSONS: LessonType[] = [
     description: 'Use dollars, euros, and more on the blockchain.',
     name: 'Understanding Stablecoins',
     languages: [],
+    level: 'Level 1',
     lessonWriters: 'Tetranome',
     publicationStatus: 'publish',
     publicationDate: '2023-08-16',
@@ -2060,6 +2086,7 @@ const LESSONS: LessonType[] = [
     description: 'Discover how smart-contract exchanges enable permissionless token swaps!',
     name: 'Decentralized Exchanges',
     languages: [],
+    level: 'Level 1',
     lessonWriters: 'Tetranome',
     quest: 'DecentralizedExchanges',
     publicationStatus: 'publish',
@@ -2379,6 +2406,10 @@ const LESSONS: LessonType[] = [
     description: 'Begin your journey into DeFi with this Decentralized Exchange walkthrough.',
     name: 'Swapping on a Decentralized Exchange',
     languages: [],
+    level: 'Level 1',
+    tags: [
+      'DeFi'
+    ],
     lessonWriters: 'Tetranome',
     publicationStatus: 'publish',
     publicationDate: '2023-06-22',
@@ -2422,6 +2453,7 @@ const LESSONS: LessonType[] = [
     description: 'Become a guardian of Ethereum: Secure the network, earn Ether rewards.',
     name: 'Staking on Ethereum',
     languages: [],
+    level: 'Level 1',
     lessonWriters: 'Tetranome',
     quest: 'StakingOnEthereum',
     publicationStatus: 'publish',
@@ -2706,6 +2738,7 @@ const LESSONS: LessonType[] = [
     description: 'Generate yield on your Ether by protecting Ethereum.',
     name: 'Staking Ether',
     languages: [],
+    level: 'Level 1',
     lessonWriters: 'Tetranome',
     publicationStatus: 'publish',
     publicationDate: '2024-02-21',
@@ -2762,6 +2795,10 @@ const LESSONS: LessonType[] = [
     description: 'Protect your wallet from unwanted smart contract interactions.',
     name: 'Managing Token Allowances',
     languages: [],
+    level: 'Level 1',
+    tags: [
+      'Security'
+    ],
     lessonWriters: 'Marcus, Tetranome',
     publicationStatus: 'publish',
     publicationDate: '2023-08-30',
@@ -2808,6 +2845,7 @@ const LESSONS: LessonType[] = [
     description: 'Dive into DEX Aggregators, liquidity, and the DeFi exchange landscape.',
     name: 'DEX Aggregators',
     languages: [],
+    level: 'Level 1',
     lessonWriters: 'iSpeakNerd',
     quest: 'DEXAggregators',
     publicationStatus: 'publish',
@@ -3040,6 +3078,7 @@ const LESSONS: LessonType[] = [
     description: 'Learn how Ethereum’s asset templates support both traditional and emerging asset classes.',
     name: 'Understanding Ethereum Token Standards',
     languages: [],
+    level: 'Level 1',
     lessonWriters: 'Musharef, Tetranome',
     publicationStatus: 'publish',
     publicationDate: '2023-11-08',
@@ -3096,6 +3135,11 @@ const LESSONS: LessonType[] = [
       'es',
       'fr',
       'jp'
+    ],
+    level: 'Level 1',
+    tags: [
+      'DAO',
+      'Optimism'
     ],
     lessonWriters: 'Tetranome',
     quest: 'OptimismGovernance',
@@ -3424,6 +3468,11 @@ const LESSONS: LessonType[] = [
       'es',
       'fr',
       'jp'
+    ],
+    level: 'Level 1',
+    tags: [
+      'DAO',
+      'Optimism'
     ],
     lessonWriters: 'Tetranome',
     publicationStatus: 'publish',

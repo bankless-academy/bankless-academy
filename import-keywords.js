@@ -29,9 +29,9 @@ axios
   .get(`${POTION_API}/table?id=${NOTION_ID}&sort=keyword`)
   .then((response) => {
     response.data.map((k) => {
-      const { definition, keyword } = k.fields
+      const { definition, keyword, glossary } = k.fields
       if (definition !== undefined)
-        keywords[keyword?.toLowerCase()] = { keyword, keyword_plural: keyword + 's', definition: definition.replace(' ', ' ') }
+        keywords[keyword?.toLowerCase()] = { keyword, keyword_plural: keyword + 's', definition: definition.replace(' ', ' '), glossary }
     })
     console.log(keywords)
     const FILE_CONTENT = `${JSON.stringify(keywords, null, 2)}
