@@ -1,11 +1,11 @@
 import { GetStaticProps } from 'next'
 
 import { MetaData } from 'components/Head'
-import Layout from 'layout/Layout'
 import LessonCards from 'components/LessonCards'
+import Layout from 'layout/Layout'
 
 export const pageMeta: MetaData = {
-  title: 'Lessons',
+  title: 'Handbook',
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -16,11 +16,8 @@ export const getStaticProps: GetStaticProps = async () => {
 
 function Lessons(): JSX.Element {
   return (
-    <Layout page="LESSON">
-      <>
-        <LessonCards level="Essentials" />
-        <LessonCards level="Level 1" />
-      </>
+    <Layout page="HANDBOOK">
+      <LessonCards lessonType="HANDBOOK" />
     </Layout>
   )
 }

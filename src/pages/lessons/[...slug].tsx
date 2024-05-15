@@ -12,6 +12,7 @@ import { useSmallScreen } from 'hooks/index'
 import { markdown } from 'utils/markdown'
 import { useTranslation } from 'react-i18next'
 import LessonContent from 'components/LessonContent'
+import Layout from 'layout/Layout'
 
 const SPLIT = `\`\`\`
 
@@ -247,7 +248,9 @@ const LessonPage = ({ pageMeta }: { pageMeta: MetaData }): JSX.Element => {
     return (
       <>
         {lesson.isArticle ? (
-          <Article lesson={lesson} />
+          <Layout page="">
+            <Article lesson={lesson} />
+          </Layout>
         ) : (
           <>
             {lesson?.showContent ? (
