@@ -136,7 +136,7 @@ const LessonCards = ({
   return (
     <Box>
       <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
-        {level || moduleName || 'Handbook'}
+        {level || moduleName || "Explorer's Handbook"}
       </StyledHeading>
       <SimpleGrid
         minChildWidth={isSmallScreen ? 'unset' : '400px'}
