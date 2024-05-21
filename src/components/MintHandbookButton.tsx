@@ -17,7 +17,7 @@ import { parseEther } from 'viem'
 import Confetti from 'components/Confetti'
 import { wagmiConfig } from 'utils/wagmi'
 
-const CollectEntryButton = ({
+const MintHandbookButton = ({
   lesson,
   numberCollected,
 }: {
@@ -321,4 +321,4 @@ const CollectEntryButton = ({
     </Box>
   )
 }
-export default CollectEntryButton
+export default MintHandbookButton

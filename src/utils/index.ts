@@ -23,6 +23,7 @@ import {
   DOMAIN_URL,
   INFURA_KEY,
   MIRROR_ARTICLE_ADDRESSES,
+  TOKEN_GATING_ENABLED,
 } from 'constants/index'
 import { NETWORKS } from 'constants/networks'
 import UDPolygonABI from 'abis/UDPolygon.json'
@@ -753,4 +754,44 @@ export const generateFarcasterLink = (text: string, link: string) => {
   return `https://warpcast.com/~/compose?text=${encodeURIComponent(
     text?.replace('@BanklessAcademy', '@banklessacademy')
   )}&embeds%5B%5D=${encodeURIComponent(link)}`
+}
+
+export const openLesson = async (
+  openedLesson: string,
+  lesson: LessonType,
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  toast: any,
+  address?: string
+): Promise<string> => {
+  if (TOKEN_GATING_ENABLED && lesson.nftGating) {
+    if (!address) {
+      toast.closeAll()
+      toast({
+        title: 'This is a token gated lesson',
+        description: 'Connect your wallet to access the lesson.',
+        status: 'warning',
+        duration: 20000,
+        isClosable: true,
+      })
+      return openedLesson
+    }
+    const hasNFT = await isHolderOfNFT(address, lesson.nftGating)
+    if (!hasNFT) {
+      toast.closeAll()
+      toast({
+        title: "You don't own the required NFT",
+        description: lesson?.nftGatingRequirements,
+        status: 'warning',
+        duration: 20000,
+        isClosable: true,
+      })
+      return openedLesson
+    }
+  }
+  const openedLessonArray = JSON.parse(openedLesson)
+  return JSON.stringify(
+    [...openedLessonArray, lesson.slug].filter(
+      (value, index, array) => array.indexOf(value) === index
+    )
+  )
 }

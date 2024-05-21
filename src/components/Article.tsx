@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next'
 
 import ExternalLink from 'components/ExternalLink'
 import InternalLink from 'components/InternalLink'
-import CollectEntryButton from 'components/CollectEntryButton'
+import MintHandbookButton from 'components/MintHandbookButton'
 import { LessonType } from 'entities/lesson'
 import { useSmallScreen } from 'hooks/index'
 import {
@@ -597,7 +597,7 @@ const Article = ({
                 {t('Entry Collected')}
               </Button>
             ) : (
-              <CollectEntryButton
+              <MintHandbookButton
                 lesson={lesson}
                 numberCollected={numberCollected}
               />
@@ -739,7 +739,7 @@ const Article = ({
               {t('Entry Collected')}
             </Button>
           ) : IS_WALLET_DISABLED ? null : (
-            <CollectEntryButton
+            <MintHandbookButton
               lesson={lesson}
               numberCollected={numberCollected}
             />

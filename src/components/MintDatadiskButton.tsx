@@ -17,22 +17,17 @@ import styled from '@emotion/styled'
 import { optimism } from 'viem/chains'
 
 import { LessonType } from 'entities/lesson'
-import MintCollectibleModal from 'components/MintCollectibleModal'
+import MintDatadiskModal from 'components/MintDatadiskModal'
 import {
   generateFarcasterLink,
   generateTwitterLink,
   getLessonsCollectors,
-  isHolderOfNFT,
   getLessonsCollected,
 } from 'utils/index'
 import ExternalLink from 'components/ExternalLink'
 import Helper from 'components/Helper'
-import {
-  IS_WHITELABEL,
-  NB_DATADISK_MAX,
-  TOKEN_GATING_ENABLED,
-} from 'constants/index'
-import Collectible from 'components/Collectible'
+import { IS_WHITELABEL, NB_DATADISK_MAX } from 'constants/index'
+import Datadisk from 'components/Datadisk'
 import Card from 'components/Card'
 import { wagmiConfig } from 'utils/wagmi'
 
@@ -40,47 +35,7 @@ const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   box-shadow: none;
 `
 
-export const openLesson = async (
-  openedLesson: string,
-  lesson: LessonType,
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  toast: any,
-  address?: string
-): Promise<string> => {
-  if (TOKEN_GATING_ENABLED && lesson.nftGating) {
-    if (!address) {
-      toast.closeAll()
-      toast({
-        title: 'This is a token gated lesson',
-        description: 'Connect your wallet to access the lesson.',
-        status: 'warning',
-        duration: 20000,
-        isClosable: true,
-      })
-      return openedLesson
-    }
-    const hasNFT = await isHolderOfNFT(address, lesson.nftGating)
-    if (!hasNFT) {
-      toast.closeAll()
-      toast({
-        title: "You don't own the required NFT",
-        description: lesson?.nftGatingRequirements,
-        status: 'warning',
-        duration: 20000,
-        isClosable: true,
-      })
-      return openedLesson
-    }
-  }
-  const openedLessonArray = JSON.parse(openedLesson)
-  return JSON.stringify(
-    [...openedLessonArray, lesson.slug].filter(
-      (value, index, array) => array.indexOf(value) === index
-    )
-  )
-}
-
-const CollectLessonButton = ({
+const MintDatadiskButton = ({
   lesson,
 }: {
   lesson: LessonType
@@ -92,9 +47,9 @@ const CollectLessonButton = ({
   )
   const [tokenId, setTokenId] = useState('1')
   const {
-    isOpen: isOpenMintCollectibleModal,
-    onOpen: onOpenMintCollectibleModal,
-    onClose: onCloseMintCollectibleModal,
+    isOpen: isOpenMintDatadiskModal,
+    onOpen: onOpenMintDatadiskModal,
+    onClose: onCloseMintDatadiskModal,
   } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const [numberIOwn, setNumberIOwn] = useState(1)
@@ -223,7 +178,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
                 cursor="pointer"
                 onClick={async () => {
                   if (nbDatadiskMintedLS < NB_DATADISK_MAX) {
-                    onOpenMintCollectibleModal()
+                    onOpenMintDatadiskModal()
                     if (chain?.id !== optimism.id && address)
                       await switchChain(wagmiConfig, { chainId: optimism.id })
                   } else {
@@ -234,7 +189,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
                   }
                 }}
               >
-                <Collectible lesson={lesson} />
+                <Datadisk lesson={lesson} />
               </Box>
             </Box>
             {/* {MD_ENABLED && lesson.hasCollectible && (
@@ -265,7 +220,7 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
                 isDisabled={!(nbDatadiskMintedLS < NB_DATADISK_MAX)}
                 borderBottomRadius={nbDatadiskMintedLS > 0 ? '0' : '8px'}
                 onClick={async () => {
-                  onOpenMintCollectibleModal()
+                  onOpenMintDatadiskModal()
                   if (chain?.id !== optimism.id && address)
                     await switchChain(wagmiConfig, { chainId: optimism.id })
                 }}
@@ -363,9 +318,9 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
           </Box>
         </Box>
       </StyledCard>
-      <MintCollectibleModal
-        isOpen={isOpenMintCollectibleModal}
-        onClose={onCloseMintCollectibleModal}
+      <MintDatadiskModal
+        isOpen={isOpenMintDatadiskModal}
+        onClose={onCloseMintDatadiskModal}
         lesson={lesson}
         numberOfOwners={parseInt(numberOfOwners)}
       />
@@ -373,4 +328,4 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
   )
 }
 
-export default CollectLessonButton
+export default MintDatadiskButton

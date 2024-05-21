@@ -30,7 +30,7 @@ import { Gear, SealCheck } from '@phosphor-icons/react'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
 
 import { LessonType } from 'entities/lesson'
-import Collectible from 'components/Collectible'
+import Datadisk from 'components/Datadisk'
 import { useLocalStorage } from 'usehooks-ts'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
@@ -38,7 +38,7 @@ import { NB_DATADISK_MAX } from 'constants/index'
 import Confetti from 'components/Confetti'
 import { wagmiConfig } from 'utils/wagmi'
 
-const MintCollectibleModal = ({
+const MintDatadiskModal = ({
   isOpen,
   onClose,
   lesson,
@@ -227,7 +227,7 @@ const MintCollectibleModal = ({
               mb={'-25px'}
               // opacity={nbDatadiskMintedLS > 0 ? '1' : '0.5'}
             >
-              <Collectible lesson={lesson} />
+              <Datadisk lesson={lesson} />
             </Box>
             <Box w="90%" m="auto">
               {/* {isBadgeMintedLS ? null : (
@@ -421,4 +421,4 @@ const MintCollectibleModal = ({
   )
 }
 
-export default MintCollectibleModal
+export default MintDatadiskModal
