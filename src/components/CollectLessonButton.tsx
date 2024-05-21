@@ -8,12 +8,13 @@ import {
   ListItem,
 } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
-import { useAccount, useNetwork } from 'wagmi'
-import { switchNetwork } from '@wagmi/core'
+import { useAccount } from 'wagmi'
+import { switchChain } from '@wagmi/core'
 import { useTranslation } from 'react-i18next'
 import { ShootingStar } from '@phosphor-icons/react'
 import { isMobile } from 'react-device-detect'
 import styled from '@emotion/styled'
+import { optimism } from 'viem/chains'
 
 import { LessonType } from 'entities/lesson'
 import MintCollectibleModal from 'components/MintCollectibleModal'
@@ -33,6 +34,7 @@ import {
 } from 'constants/index'
 import Collectible from 'components/Collectible'
 import Card from 'components/Card'
+import { wagmiConfig } from 'utils/wagmi'
 
 const StyledCard = styled(Card)<{ issmallscreen?: string }>`
   box-shadow: none;
@@ -96,13 +98,12 @@ const CollectLessonButton = ({
   } = useDisclosure()
   const [numberOfOwners, setNumberOfOwners] = useState('--')
   const [numberIOwn, setNumberIOwn] = useState(1)
-  const { address } = useAccount()
+  const { address, chain } = useAccount()
   const [, setLessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
   const [refreshDatadiskLS, setRefreshDatadiskLS] = useLocalStorage(
     'refreshDatadisk',
     false
   )
-  const { chain } = useNetwork()
 
   useEffect(() => {
     const updateNFTCollected = async () => {
@@ -223,8 +224,8 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
                 onClick={async () => {
                   if (nbDatadiskMintedLS < NB_DATADISK_MAX) {
                     onOpenMintCollectibleModal()
-                    if (chain?.id !== 10 && address)
-                      await switchNetwork({ chainId: 10 })
+                    if (chain?.id !== optimism.id && address)
+                      await switchChain(wagmiConfig, { chainId: optimism.id })
                   } else {
                     window.open(
                       `https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${tokenId}`,
@@ -265,8 +266,8 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
                 borderBottomRadius={nbDatadiskMintedLS > 0 ? '0' : '8px'}
                 onClick={async () => {
                   onOpenMintCollectibleModal()
-                  if (chain?.id !== 10 && address)
-                    await switchNetwork({ chainId: 10 })
+                  if (chain?.id !== optimism.id && address)
+                    await switchChain(wagmiConfig, { chainId: optimism.id })
                 }}
                 leftIcon={
                   isMobile ? null : <ShootingStar width="28px" height="28px" />

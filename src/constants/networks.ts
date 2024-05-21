@@ -1,6 +1,6 @@
 import { IS_BADGE_PROD } from 'constants/badges'
 
-const ENABLE_TESTNET = true
+const ENABLE_TESTNET = false
 
 // https://chainlist.org/
 const TESTNET_NETWORKS =

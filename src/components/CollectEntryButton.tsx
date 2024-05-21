@@ -1,24 +1,21 @@
+/* eslint-disable no-console */
 import { Box, Button, useToast } from '@chakra-ui/react'
 import { LessonType } from 'entities/lesson'
 import { useEffect, useState } from 'react'
-import { switchNetwork } from '@wagmi/core'
+import { switchChain } from '@wagmi/core'
 import { optimism } from 'wagmi/chains'
-import {
-  usePrepareContractWrite,
-  useContractWrite,
-  useWaitForTransaction,
-  useAccount,
-  useNetwork,
-} from 'wagmi'
+import { useWaitForTransactionReceipt, useAccount } from 'wagmi'
+import { simulateContract, writeContract } from '@wagmi/core'
 import { Gear, SealCheck } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
+import { useWeb3Modal } from '@web3modal/wagmi/react'
 
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks'
 import { getArticlesCollectors } from 'utils'
 import { parseEther } from 'viem'
-import { useLocalStorage } from 'usehooks-ts'
 import Confetti from 'components/Confetti'
+import { wagmiConfig } from 'utils/wagmi'
 
 const CollectEntryButton = ({
   lesson,
@@ -29,22 +26,19 @@ const CollectEntryButton = ({
 }): JSX.Element => {
   if (!lesson.mirrorNFTAddress) return
   const { t } = useTranslation()
-  const { address } = useAccount()
-  const { chain } = useNetwork()
+  const { address, chain } = useAccount()
+  const { open } = useWeb3Modal()
   const toast = useToast()
   const [isSmallScreen] = useSmallScreen()
   const [numberMinted, setNumberMinted] = useState('-')
   const [isMinting, setIsMinting] = useState(false)
+  const [hash, setHash] = useState('')
   const [mintingError, setMintingError] = useState('')
-  const [, setConnectWalletPopupLS] = useLocalStorage(
-    `connectWalletPopup`,
-    false
-  )
   const [showConfetti, setShowConfetti] = useState(false)
 
   const isNewContract = parseInt(lesson?.collectibleId.substring(1), 10) > 6
 
-  const { config } = usePrepareContractWrite({
+  const mintArg = {
     address: lesson.mirrorNFTAddress,
     abi: isNewContract
       ? [
@@ -100,16 +94,15 @@ const CollectEntryButton = ({
     },
     onError(error) {
       console.error('Error', error)
-      setMintingError(error.message?.split('\n')[0])
+      // setMintingError(error.message?.split('\n')[0])
     },
     onSuccess() {
       setMintingError('')
     },
-  })
-  const { data, write } = useContractWrite(config)
+  }
 
-  const { isLoading, isSuccess } = useWaitForTransaction({
-    hash: data?.hash,
+  const { isLoading, isSuccess } = useWaitForTransactionReceipt({
+    hash: hash as any,
   })
 
   const updateArticlesCollectors = async () => {
@@ -130,7 +123,7 @@ const CollectEntryButton = ({
   useEffect(() => {
     if (isLoading) {
       toast.closeAll()
-      const txLink = `https://optimistic.etherscan.io/tx/${data?.hash}`
+      const txLink = `https://optimistic.etherscan.io/tx/${hash}`
       toast({
         description: (
           <>
@@ -229,28 +222,33 @@ const CollectEntryButton = ({
           w="100%"
           onClick={async () => {
             try {
-              if (numberMinted !== '-') {
+              if (!address) {
+                await open({ view: 'Connect' })
+              } else if (numberMinted !== '-') {
                 if (parseInt(numberMinted) >= 100) {
                   openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
                 } else {
-                  if (chain.id !== optimism.id) {
+                  if (address && chain?.id !== optimism.id) {
                     try {
-                      await switchNetwork({ chainId: optimism.id })
+                      await switchChain(wagmiConfig, { chainId: optimism.id })
                     } catch (error) {
                       console.error(error)
+                      toast({
+                        title: 'Switch your network to Optimism.',
+                        description: (
+                          <>Click Mint again after switching network.</>
+                        ),
+                        status: 'error',
+                        duration: 10000,
+                        isClosable: true,
+                      })
                     }
                     setIsMinting(false)
                     toast({
-                      title: t('You were previously on the wrong network.'),
-                      description: (
-                        <>
-                          <Box>
-                            {t('Refresh the page before trying again.')}
-                          </Box>
-                        </>
-                      ),
-                      status: 'error',
-                      duration: null,
+                      title: 'The network has been switched to Optimism.',
+                      description: <>Click Mint again.</>,
+                      status: 'warning',
+                      duration: 10000,
                       isClosable: true,
                     })
                   } else if (!isMinting) {
@@ -260,7 +258,7 @@ const CollectEntryButton = ({
                     }, 3000)
                     if (mintingError !== '') {
                       toast({
-                        title: t('⚠️ Problem while minting...'),
+                        title: '⚠️ Problem while minting...',
                         description: (
                           <>
                             <Box>
@@ -277,12 +275,35 @@ const CollectEntryButton = ({
                         duration: null,
                         isClosable: true,
                       })
-                    } else write?.()
+                    } else {
+                      const { request } = await simulateContract(
+                        wagmiConfig,
+                        mintArg
+                      )
+                      const hash = await writeContract(wagmiConfig, request)
+                      setHash(hash)
+                    }
                   }
                 }
-              } else if (address) alert('try again in 2 seconds')
-              else setConnectWalletPopupLS(true)
+              } else if (address) {
+                alert('try again in 2 seconds')
+              }
             } catch (error) {
+              const errorMessage =
+                error.message?.split('\n')[0] || 'Unknow error.'
+              toast({
+                title: '⚠️ Problem while minting...',
+                description: (
+                  <>
+                    {errorMessage?.includes('exceeds the balance')
+                      ? 'The total cost including gas fee exceeds your balance of ETH on Optimism.'
+                      : errorMessage}
+                  </>
+                ),
+                status: 'error',
+                duration: 10000,
+                isClosable: true,
+              })
               console.error(error)
             }
           }}

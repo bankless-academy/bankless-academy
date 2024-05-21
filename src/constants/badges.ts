@@ -1,4 +1,5 @@
 import { LESSONS } from 'constants/index'
+import { polygon, polygonMumbai } from 'viem/chains'
 // import { WHITELABEL } from 'constants/whitelabel'
 
 const badgeIds = LESSONS.filter((lesson) => lesson.badgeId).map(
@@ -26,7 +27,7 @@ export const BADGE_OPENSEA_URL = IS_BADGE_PROD
   ? `https://opensea.io/assets/matic/${BADGE_ADDRESS}/`
   : `https://testnets.opensea.io/assets/mumbai/${BADGE_ADDRESS}/`
 
-export const BADGE_CHAIN_ID = IS_BADGE_PROD ? 137 : 80001
+export const BADGE_CHAIN_ID = IS_BADGE_PROD ? polygon.id : polygonMumbai.id
 
 export const BADGE_MINTER = IS_BADGE_PROD ?
   // banklessacademy.polygon

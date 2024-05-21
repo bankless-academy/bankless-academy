@@ -12,6 +12,7 @@ import mixpanel, { Dict, Query } from 'mixpanel-browser'
 import { readContract } from '@wagmi/core'
 import axios from 'axios'
 import { Network as AlchemyNetwork, Alchemy } from "alchemy-sdk"
+import { mainnet, polygon } from 'viem/chains'
 
 import {
   ACTIVATE_MIXPANEL,
@@ -30,6 +31,7 @@ import { LessonType } from 'entities/lesson'
 import { UserStatsType } from 'entities/user'
 import { gql } from 'graphql-request'
 import { graphQLClient } from 'utils/airstack'
+import { wagmiConfig } from 'utils/wagmi'
 
 declare global {
   interface Window {
@@ -659,17 +661,17 @@ export async function getLensProfile(address: string): Promise<{
 export async function getUD(address: string): Promise<string | null> {
   let res = null
   try {
-    const balanceOfUDPolygon: any = await readContract({
+    const balanceOfUDPolygon: any = await readContract(wagmiConfig, {
       address: '0xa9a6a3626993d487d2dbda3173cf58ca1a9d9e9f',
-      chainId: 137,
+      chainId: polygon.id,
       abi: UDPolygonABI,
       functionName: 'balanceOf',
       args: [address],
     })
     // console.log('balanceOfUDPolygon', parseInt(balanceOfUDPolygon))
-    const balanceOfUD: any = await readContract({
+    const balanceOfUD: any = await readContract(wagmiConfig, {
       address: '0x049aba7510f45ba5b64ea9e658e342f904db358d',
-      chainId: 1,
+      chainId: mainnet.id,
       abi: UDABI,
       functionName: 'balanceOf',
       args: [address],

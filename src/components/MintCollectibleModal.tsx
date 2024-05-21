@@ -20,15 +20,10 @@ import {
   useToast,
   ModalFooter,
 } from '@chakra-ui/react'
-import { switchNetwork } from '@wagmi/core'
+import { switchChain } from '@wagmi/core'
 import { optimism } from 'wagmi/chains'
-import {
-  usePrepareContractWrite,
-  useContractWrite,
-  useWaitForTransaction,
-  useAccount,
-  useNetwork,
-} from 'wagmi'
+import { useWaitForTransactionReceipt, useAccount } from 'wagmi'
+import { simulateContract, writeContract } from '@wagmi/core'
 import { useTranslation } from 'react-i18next'
 import { parseEther } from 'viem'
 import { Gear, SealCheck } from '@phosphor-icons/react'
@@ -41,6 +36,7 @@ import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
 import { NB_DATADISK_MAX } from 'constants/index'
 import Confetti from 'components/Confetti'
+import { wagmiConfig } from 'utils/wagmi'
 
 const MintCollectibleModal = ({
   isOpen,
@@ -55,8 +51,7 @@ const MintCollectibleModal = ({
 }): React.ReactElement => {
   const { t } = useTranslation()
   const { open } = useWeb3Modal()
-  const { address } = useAccount()
-  const { chain } = useNetwork()
+  const { address, chain } = useAccount()
   const [isSmallScreen] = useSmallScreen()
   const toast = useToast()
   const [isMinting, setIsMinting] = useState(false)
@@ -66,13 +61,14 @@ const MintCollectibleModal = ({
   )
   const [nbMint, setNbMint] = useState(1)
   const [nextId, setNextId] = useState(null)
+  const [hash, setHash] = useState('')
   const [isMobileScreen] = useMediaQuery(['(max-width: 480px)'])
   const [mintingError, setMintingError] = useState('')
   const [, setRefreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
   const remaining = 100 - numberOfOwners
   const [showConfetti, setShowConfetti] = useState(false)
 
-  const { config } = usePrepareContractWrite({
+  const mintArg = {
     address: '0xFafd47bb399d570b5AC95694c5D2a1fb5EA030bB',
     abi: [
       {
@@ -102,14 +98,13 @@ const MintCollectibleModal = ({
     onSuccess() {
       setMintingError('')
     },
-  })
-  const { data, write } = useContractWrite(config)
+  }
 
-  const { isLoading, isSuccess } = useWaitForTransaction({
+  const { isLoading, isSuccess } = useWaitForTransactionReceipt({
     hash:
       // DEV: simulate tx
       // '0xbbac72d366946360a3e67f34f974f7d3867bb958cec8a56a7386d64349e0b3a0' ||
-      data?.hash,
+      hash as any,
   })
 
   useEffect(() => {
@@ -118,9 +113,9 @@ const MintCollectibleModal = ({
   }, [])
 
   useEffect(() => {
-    if (isLoading && data?.hash) {
+    if (isLoading && hash) {
       toast.closeAll()
-      const txLink = `https://optimistic.etherscan.io/tx/${data?.hash}`
+      const txLink = `https://optimistic.etherscan.io/tx/${hash}`
       toast({
         description: (
           <>
@@ -298,24 +293,29 @@ const MintCollectibleModal = ({
                       if (!address) {
                         onClose()
                         await open({ view: 'Connect' })
-                      } else if (chain.id !== optimism.id) {
+                      } else if (chain?.id !== optimism.id) {
                         try {
-                          await switchNetwork({ chainId: optimism.id })
+                          await switchChain(wagmiConfig, {
+                            chainId: optimism.id,
+                          })
                         } catch (error) {
                           console.error(error)
+                          toast({
+                            title: 'Switch your network to Optimism.',
+                            description: (
+                              <>Click Mint again after switching network.</>
+                            ),
+                            status: 'error',
+                            duration: 10000,
+                            isClosable: true,
+                          })
                         }
                         setIsMinting(false)
                         toast({
-                          title: t('You were previously on the wrong network.'),
-                          description: (
-                            <>
-                              <Box>
-                                {t('Refresh the page before trying again.')}
-                              </Box>
-                            </>
-                          ),
-                          status: 'error',
-                          duration: null,
+                          title: 'The network has been switched to Optimism.',
+                          description: <>Click Mint again.</>,
+                          status: 'warning',
+                          duration: 10000,
                           isClosable: true,
                         })
                       } else if (!isMinting) {
@@ -342,9 +342,31 @@ const MintCollectibleModal = ({
                             duration: null,
                             isClosable: true,
                           })
-                        } else write?.()
+                        } else {
+                          const { request } = await simulateContract(
+                            wagmiConfig,
+                            mintArg
+                          )
+                          const hash = await writeContract(wagmiConfig, request)
+                          setHash(hash)
+                        }
                       }
                     } catch (error) {
+                      const errorMessage =
+                        error.message?.split('\n')[0] || 'Unknow error.'
+                      toast({
+                        title: '⚠️ Problem while minting...',
+                        description: (
+                          <>
+                            {errorMessage?.includes('exceeds the balance')
+                              ? 'The total cost including gas fee exceeds your balance of ETH on Optimism.'
+                              : errorMessage}
+                          </>
+                        ),
+                        status: 'error',
+                        duration: 10000,
+                        isClosable: true,
+                      })
                       console.error(error)
                     }
                   }}

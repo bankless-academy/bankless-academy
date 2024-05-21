@@ -15,10 +15,12 @@ import {
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
-import { signMessage, waitForTransaction } from '@wagmi/core'
+import { signMessage } from '@wagmi/core'
 import { Gear, SealCheck, ShootingStar } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
+import { wagmiConfig } from 'utils/wagmi'
+import { waitForTransactionReceipt } from '@wagmi/core'
 
 import ExternalLink from 'components/ExternalLink'
 import { WALLET_SIGNATURE_MESSAGE } from 'constants/index'
@@ -121,7 +123,8 @@ const MintBadge = ({
     try {
       const signature = simulate
         ? 'simulate_signature'
-        : await signMessage({
+        : await signMessage(wagmiConfig, {
+            account: address,
             message: WALLET_SIGNATURE_MESSAGE,
           })
       const bodyParameters = {
@@ -183,7 +186,7 @@ const MintBadge = ({
           duration: null,
           isClosable: true,
         })
-        transactionComfirmed = await waitForTransaction({
+        transactionComfirmed = waitForTransactionReceipt(wagmiConfig, {
           chainId: BADGE_CHAIN_ID,
           hash: result.data.transactionHash,
           timeout: 60_000, // 60 seconds

@@ -1,12 +1,11 @@
 import { useState } from 'react'
-import { Button, Box, useToast } from '@chakra-ui/react'
+import { Button, Box } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
-import { useNetwork, useAccount } from 'wagmi'
-import { switchNetwork, signMessage } from '@wagmi/core'
+import { signMessage } from '@wagmi/core'
 
 import { track, verifySignature } from 'utils'
-import { NETWORKS } from 'constants/networks'
 import { theme } from 'theme/index'
+import { wagmiConfig } from 'utils/wagmi'
 
 const VERBS = ['Investing', 'Trading', 'Lending & Borrowing', 'Staking']
 
@@ -24,36 +23,15 @@ const IntroToDeFi = (
       ? VERBS.includes(localStorage.getItem('quest-intro-to-defi'))
       : null
   )
-  const toast = useToast()
-
-  const { chain } = useNetwork()
-  const { connector } = useAccount()
 
   const sign = async () => {
-    if (![1, 10, 137].includes(chain?.id)) {
-      const network = Object.values(NETWORKS).find(
-        (network) => network.chainId === 1
-      )
-      toast.closeAll()
-      if (connector?.name !== 'MetaMask') {
-        toast({
-          title: 'Wrong network',
-          description: `Switch network to ${network.name} before signing this message.`,
-          status: 'warning',
-          duration: null,
-          isClosable: true,
-        })
-      }
-      try {
-        await switchNetwork({ chainId: 1 })
-      } catch (error) {
-        console.error(console.error)
-      }
-    }
     const message = `I want to learn more about ${answer}`
 
     try {
-      const signature = await signMessage({ message })
+      const signature = await signMessage(wagmiConfig, {
+        account: account as `0x${string}`,
+        message,
+      })
       const verified = verifySignature(account, signature, message)
       if (verified) {
         track('intro_to_defi_quest_answer', answer)

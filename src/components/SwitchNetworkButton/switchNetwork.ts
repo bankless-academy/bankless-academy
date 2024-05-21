@@ -2,7 +2,7 @@ import { NETWORKS } from 'constants/networks'
 import { Dispatch, SetStateAction } from 'react'
 import { ExternalProvider } from '@ethersproject/providers'
 
-const switchNetwork = async (
+const switchChain = async (
   provider: ExternalProvider,
   networkName: string,
   setNetwork?: Dispatch<
@@ -53,4 +53,4 @@ const switchNetwork = async (
   }
 }
 
-export default switchNetwork
+export default switchChain
