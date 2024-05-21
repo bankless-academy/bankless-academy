@@ -33,7 +33,7 @@ const OptionMenu = ({
     onClose: onCloseAppModal,
   } = useDisclosure()
 
-  const twitterLink = `https://twitter.com/intent/follow?screen_name=${TWITTER_ACCOUNT}`
+  const twitterLink = `https://x.com/intent/follow?screen_name=${TWITTER_ACCOUNT}`
 
   return (
     <Box zIndex="10">

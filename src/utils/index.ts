@@ -743,7 +743,7 @@ export const getTokenBalance = async (network: AlchemyNetwork, ownerAddress: str
 }
 
 export const generateTwitterLink = (text: string, link: string) => {
-  return `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+  return `https://x.com/intent/tweet?text=${encodeURIComponent(
     `${text}
 `
   )}&url=${encodeURIComponent(link)}`
