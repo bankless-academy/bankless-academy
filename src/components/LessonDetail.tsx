@@ -9,7 +9,7 @@ import Lesson from 'components/Lesson'
 import Card from 'components/Card'
 import Badge from 'components/Badge'
 import QuestComponent from 'components/Quest/QuestComponent'
-import CollectLessonButton from 'components/CollectLessonButton'
+import MintDatadiskButton from 'components/MintDatadiskButton'
 import InternalLink from 'components/InternalLink'
 import { useSmallScreen } from 'hooks'
 import LessonButton from 'components/LessonButton'
@@ -316,7 +316,7 @@ const LessonDetail = ({
                     </>
                   )}
                   {lesson.hasCollectible ? (
-                    <CollectLessonButton lesson={lesson} />
+                    <MintDatadiskButton lesson={lesson} />
                   ) : null}
                 </Box>
               )}

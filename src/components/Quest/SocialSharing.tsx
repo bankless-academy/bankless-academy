@@ -305,7 +305,7 @@ const SocialSharing = (
                     my={8}
                   >
                     <ExternalLink
-                      href={`https://twitter.com/intent/retweet?tweet_id=${lesson?.questSocialMessage
+                      href={`https://x.com/intent/retweet?tweet_id=${lesson?.questSocialMessage
                         ?.split('/')
                         ?.pop()}`}
                       mr="2"

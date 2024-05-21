@@ -10,19 +10,19 @@ import { isMobile } from 'react-device-detect'
 import styled from '@emotion/styled'
 import { Box, Container, Heading, Image } from '@chakra-ui/react'
 // https://docs.walletconnect.com/2.0/web3modal/react/about
-import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
+import { createWeb3Modal } from '@web3modal/wagmi/react'
+import { WagmiProvider } from 'wagmi'
 import Router from 'next/router'
 import { useWeb3ModalState } from '@web3modal/wagmi/react'
-import { WagmiConfig } from 'wagmi'
-import { mainnet, optimism, polygon, polygonMumbai } from 'wagmi/chains'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import Head, { MetaData } from 'components/Head'
 import Layout from 'layout/index'
 import ThemeProvider from 'theme'
 import { DEBUG } from 'utils/index'
 import NonSSRWrapper from 'components/NonSSRWrapper'
-import { PROJECT_NAME } from 'constants/index'
 import 'utils/translation'
+import { WALLET_CONNECT_PROJECT_ID, wagmiConfig } from 'utils/wagmi'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -69,20 +69,8 @@ const App = ({
     )
   }
 
-  // 1. Get projectID at https://cloud.walletconnect.com
-  const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID
-
-  const chains = [mainnet, polygon, optimism, polygonMumbai]
-
-  // 2. Configure wagmi client
-  const metadata = {
-    name: PROJECT_NAME,
-    description: `Connect to ${PROJECT_NAME}`,
-    url: 'https://app.banklessacademy.com/',
-    icons: ['https://app.banklessacademy.com/logo.jpg'],
-  }
-
-  const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
+  // 0. Setup queryClient
+  const queryClient = new QueryClient()
 
   // 3. createWeb3Modal
   const themeVariables = {
@@ -91,10 +79,11 @@ const App = ({
   }
   createWeb3Modal({
     wagmiConfig,
-    projectId,
-    chains,
+    projectId: WALLET_CONNECT_PROJECT_ID,
     themeMode: 'dark',
     themeVariables,
+    allowUnsupportedChain: true,
+    enableAnalytics: true,
     featuredWalletIds: [
       // Zerion
       'ecc4036f814562b41a5268adc86270fba1365471402006302e70169465b7ac18',
@@ -129,153 +118,157 @@ const App = ({
       {!isMobile && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
         <NonSSRWrapper>
-          <WagmiConfig config={wagmiConfig}>
-            <Global
-              styles={css`
-                @font-face {
-                  font-family: 'ClearSans';
-                  src: url(/fonts/clear-sans/TTF/ClearSans-Bold.ttf);
-                }
-                .web3modal-modal-lightbox {
-                  background: linear-gradient(
-                    152.97deg,
-                    rgba(0, 0, 0, 0.45) 0%,
-                    rgba(38, 38, 38, 0.25) 100%
-                  );
-                  backdrop-filter: blur(42px);
-                }
-                .web3modal-modal-card {
-                  border: 1px solid #646587 !important;
-                  box-shadow: 0px 0px 50px 0px rgba(123, 0, 255, 0.25) !important;
-                  backdrop-filter: blur(42px) !important;
-                }
-                /* Disable focus border in Chakra-UI */
-                *:focus {
-                  box-shadow: none !important;
-                }
-                /* custom scrollbar color & width */
-                .ms-track .ms-thumb {
-                  background: #916ab8;
-                }
-                .ms-track.ms-y .ms-thumb {
-                  width: 7px;
-                }
-                /* #chakra-toast-manager-bottom {
+          <WagmiProvider config={wagmiConfig}>
+            <QueryClientProvider client={queryClient}>
+              <>
+                <Global
+                  styles={css`
+                    @font-face {
+                      font-family: 'ClearSans';
+                      src: url(/fonts/clear-sans/TTF/ClearSans-Bold.ttf);
+                    }
+                    .web3modal-modal-lightbox {
+                      background: linear-gradient(
+                        152.97deg,
+                        rgba(0, 0, 0, 0.45) 0%,
+                        rgba(38, 38, 38, 0.25) 100%
+                      );
+                      backdrop-filter: blur(42px);
+                    }
+                    .web3modal-modal-card {
+                      border: 1px solid #646587 !important;
+                      box-shadow: 0px 0px 50px 0px rgba(123, 0, 255, 0.25) !important;
+                      backdrop-filter: blur(42px) !important;
+                    }
+                    /* Disable focus border in Chakra-UI */
+                    *:focus {
+                      box-shadow: none !important;
+                    }
+                    /* custom scrollbar color & width */
+                    .ms-track .ms-thumb {
+                      background: #916ab8;
+                    }
+                    .ms-track.ms-y .ms-thumb {
+                      width: 7px;
+                    }
+                    /* #chakra-toast-manager-bottom {
                   margin-bottom: 81px !important;
                 } */
-                /* HACK: custom toast */
-                .css-qret8q,
-                .css-zqqgfp,
-                .css-mu48c4 {
-                  color: white !important;
-                  border-radius: 15px !important;
-                  a {
-                    color: white !important;
-                    text-decoration: underline;
-                    text-underline-position: under;
-                  }
-                }
-                /* success toast */
-                .css-qret8q {
-                  background: linear-gradient(
-                    180deg,
-                    #429683,
-                    #35564f
-                  ) !important;
-                  border: 2px solid #a4d7cb !important;
-                }
-                /* warning toast */
-                .css-zqqgfp {
-                  background: linear-gradient(
-                    180deg,
-                    #e7b283,
-                    #8e5c49
-                  ) !important;
-                  border: 2px solid #ffe0bb !important;
-                }
-                /* error toast */
-                .css-mu48c4 {
-                  background: linear-gradient(
-                    180deg,
-                    #fe7a7a,
-                    #e05e55
-                  ) !important;
-                  border: 2px solid #f5a98d !important;
-                }
-                /* hide toast status logo */
-                .css-14ogjxt {
-                  display: none !important;
-                }
-                /* toast content max width for mobile */
-                /* .css-cgq59l { */
-                .chakra-toast > div > div > div > div > div > div > div {
-                  max-width: calc(100vw - 108px);
-                }
-                /* menu + popover styling */
-                .chakra-menu__menu-list,
-                .chakra-popover__content {
-                  background: linear-gradient(
-                    rgba(163, 121, 189, 0.8) 0%,
-                    rgba(90, 81, 152, 0.8) 100%
-                  ) !important;
-                  backdrop-filter: blur(10px);
-                  border: 1px solid #b68bcc !important;
-                }
-                .chakra-menu__menuitem {
-                  background: transparent !important;
-                }
-                .css-1slra81 {
-                  background-color: var(
-                    --chakra-colors-blackAlpha-500
-                  ) !important;
-                }
-                .css-1lh2krs:focus,
-                .css-18esm8n:focus {
-                  background-color: var(
-                    --chakra-colors-blackAlpha-300
-                  ) !important;
-                }
-                .chakra-popover__arrow {
-                  background: #86629c !important;
-                  box-shadow: none !important;
-                }
-                .chakra-popover__popper[data-popper-placement='right']
-                  .chakra-popover__arrow {
-                  background: #705992 !important;
-                }
-                .chakra-popover__popper[data-popper-placement='top-end']
-                  .chakra-popover__arrow {
-                  background: #514984 !important;
-                }
-                .chakra-popover__popper[data-popper-placement='top']
-                  .chakra-popover__arrow {
-                  background: #514984 !important;
-                }
-                #chakra-toast-manager-top-left {
-                  top: 20% !important;
-                  left: 2vh !important;
-                  max-width: 30vh !important;
-                }
-              `}
-            />
-            <Layout isLesson={pageProps.pageMeta?.isLesson || false}>
-              {isLoadingProfile ? (
-                <Container maxW="container.xl">
-                  <Heading as="h2" size="xl" m="8" textAlign="center">
-                    Loading Explorer Profile
-                  </Heading>
-                  <Image
-                    margin="auto"
-                    paddingTop="200px"
-                    width="250px"
-                    src="/loading_purple.svg"
-                  />
-                </Container>
-              ) : (
-                <Component {...pageProps} />
-              )}
-            </Layout>
-          </WagmiConfig>
+                    /* HACK: custom toast */
+                    .css-qret8q,
+                    .css-zqqgfp,
+                    .css-mu48c4 {
+                      color: white !important;
+                      border-radius: 15px !important;
+                      a {
+                        color: white !important;
+                        text-decoration: underline;
+                        text-underline-position: under;
+                      }
+                    }
+                    /* success toast */
+                    .css-qret8q {
+                      background: linear-gradient(
+                        180deg,
+                        #429683,
+                        #35564f
+                      ) !important;
+                      border: 2px solid #a4d7cb !important;
+                    }
+                    /* warning toast */
+                    .css-zqqgfp {
+                      background: linear-gradient(
+                        180deg,
+                        #e7b283,
+                        #8e5c49
+                      ) !important;
+                      border: 2px solid #ffe0bb !important;
+                    }
+                    /* error toast */
+                    .css-mu48c4 {
+                      background: linear-gradient(
+                        180deg,
+                        #fe7a7a,
+                        #e05e55
+                      ) !important;
+                      border: 2px solid #f5a98d !important;
+                    }
+                    /* hide toast status logo */
+                    .css-14ogjxt {
+                      display: none !important;
+                    }
+                    /* toast content max width for mobile */
+                    /* .css-cgq59l { */
+                    .chakra-toast > div > div > div > div > div > div > div {
+                      max-width: calc(100vw - 108px);
+                    }
+                    /* menu + popover styling */
+                    .chakra-menu__menu-list,
+                    .chakra-popover__content {
+                      background: linear-gradient(
+                        rgba(163, 121, 189, 0.8) 0%,
+                        rgba(90, 81, 152, 0.8) 100%
+                      ) !important;
+                      backdrop-filter: blur(10px);
+                      border: 1px solid #b68bcc !important;
+                    }
+                    .chakra-menu__menuitem {
+                      background: transparent !important;
+                    }
+                    .css-1slra81 {
+                      background-color: var(
+                        --chakra-colors-blackAlpha-500
+                      ) !important;
+                    }
+                    .css-1lh2krs:focus,
+                    .css-18esm8n:focus {
+                      background-color: var(
+                        --chakra-colors-blackAlpha-300
+                      ) !important;
+                    }
+                    .chakra-popover__arrow {
+                      background: #86629c !important;
+                      box-shadow: none !important;
+                    }
+                    .chakra-popover__popper[data-popper-placement='right']
+                      .chakra-popover__arrow {
+                      background: #705992 !important;
+                    }
+                    .chakra-popover__popper[data-popper-placement='top-end']
+                      .chakra-popover__arrow {
+                      background: #514984 !important;
+                    }
+                    .chakra-popover__popper[data-popper-placement='top']
+                      .chakra-popover__arrow {
+                      background: #514984 !important;
+                    }
+                    #chakra-toast-manager-top-left {
+                      top: 20% !important;
+                      left: 2vh !important;
+                      max-width: 30vh !important;
+                    }
+                  `}
+                />
+                <Layout isLesson={pageProps.pageMeta?.isLesson || false}>
+                  {isLoadingProfile ? (
+                    <Container maxW="container.xl">
+                      <Heading as="h2" size="xl" m="8" textAlign="center">
+                        Loading Explorer Profile
+                      </Heading>
+                      <Image
+                        margin="auto"
+                        paddingTop="200px"
+                        width="250px"
+                        src="/loading_purple.svg"
+                      />
+                    </Container>
+                  ) : (
+                    <Component {...pageProps} />
+                  )}
+                </Layout>
+              </>
+            </QueryClientProvider>
+          </WagmiProvider>
 
           <Overlay hidden={!open} />
         </NonSSRWrapper>
