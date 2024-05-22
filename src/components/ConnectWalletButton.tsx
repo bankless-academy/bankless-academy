@@ -181,7 +181,7 @@ const ConnectWalletButton = ({
     } else {
       setEns('')
       const { data: lensProfile } = await api(
-        `/api/user/lens?address=${address}`,
+        `/api/lens?address=${address}`,
         {}
       )
       console.log(lensProfile)

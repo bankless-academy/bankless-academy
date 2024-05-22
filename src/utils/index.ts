@@ -653,7 +653,7 @@ export async function getLensProfile(address: string): Promise<{
       }
     }`
     const r: any = await airstackGraphQLClient.request(query)
-    const profile = r?.Socials?.Social[0]
+    const profile = r?.Socials?.Social?.[0]
     console.log(profile)
     const name = profile?.profileHandle
     if (name?.startsWith('@'))
