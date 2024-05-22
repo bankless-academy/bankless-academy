@@ -31,7 +31,7 @@ import UDABI from 'abis/UD.json'
 import { LessonType } from 'entities/lesson'
 import { UserStatsType } from 'entities/user'
 import { gql } from 'graphql-request'
-import { graphQLClient } from 'utils/airstack'
+import { airstackGraphQLClient } from 'utils/airstack'
 import { wagmiConfig } from 'utils/wagmi'
 
 declare global {
@@ -342,7 +342,7 @@ export async function validateOnchainQuest(
         }
       }`
       try {
-        const data = await graphQLClient.request(query)
+        const data = await airstackGraphQLClient.request(query)
         const networks = Object.keys(data)
         let balance = arbitrumBalance + optimismBalance + polygonBalance
         for (const network of networks) {
@@ -635,23 +635,30 @@ export async function getLensProfile(address: string): Promise<{
     avatar: null,
   }
   try {
-    const data =
-      '{"operationName":"DefaultProfile","variables":{},"query":"query DefaultProfile {\\n  defaultProfile(\\n    request: {ethereumAddress: \\"' +
-      address +
-      '\\"}\\n  ) {\\n    id\\n    handle\\n    picture {\\n      ... on NftImage {\\n        uri\\n      }\\n      ... on MediaSet {\\n        original {\\n          url\\n        }\\n      }\\n    }\\n  }\\n}\\n"}'
-    const config = {
-      headers: {
-        'content-type': 'application/json',
-      },
-    }
-    const r = await axios.post('https://api.lens.dev/', data, config)
-    const profile = r?.data?.data?.defaultProfile
-    res.name = profile?.handle
-    const picture =
-      profile?.picture?.uri || profile?.picture?.original?.url || null
-    res.avatar = picture?.includes('ipfs://')
-      ? `https://gateway.ipfscdn.io/ipfs/${picture?.replace('ipfs://', '')}`
-      : picture
+    const query = gql`query GetLensHandle {
+      Socials(
+        input: {filter: {dappName: {_eq: lens}, identity: {_eq: "${address}"}}, blockchain: ethereum}
+      ) {
+        Social {
+          profileName
+          isDefault
+          profileHandle
+          profileImageContentValue {
+            image {
+              small
+            }
+          }
+          profileImage
+        }
+      }
+    }`
+    const r: any = await airstackGraphQLClient.request(query)
+    const profile = r?.Socials?.Social[0]
+    console.log(profile)
+    const name = profile?.profileHandle
+    if (name?.startsWith('@'))
+      res.name = name?.replace("@", "") + '.lens'
+    res.avatar = profile?.profileImageContentValue?.image?.small
     return res
   } catch (error) {
     console.error(error)

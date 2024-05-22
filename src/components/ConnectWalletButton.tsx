@@ -41,7 +41,7 @@ import {
   SIWE_ENABLED,
 } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
-import { getUD, getLensProfile, shortenAddress, api } from 'utils'
+import { getUD, shortenAddress, api } from 'utils'
 import { wagmiConfig } from 'utils/wagmi'
 
 const Overlay = styled(Box)`
@@ -180,7 +180,11 @@ const ConnectWalletButton = ({
       if (ensName === DEFAULT_ENS) replaceAvatar(DEFAULT_AVATAR)
     } else {
       setEns('')
-      const lensProfile = await getLensProfile(address)
+      const { data: lensProfile } = await api(
+        `/api/user/lens?address=${address}`,
+        {}
+      )
+      console.log(lensProfile)
       if (lensProfile.name) {
         replaceName(lensProfile.name)
         if (lensProfile.avatar) {
