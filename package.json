@@ -103,6 +103,7 @@
     "stringify-object": "^3.3.0",
     "tls": "^0.0.1",
     "twitter-api-v2": "^1.15.2",
+    "use-sound": "^4.0.1",
     "usehooks-ts": "^2.7.1",
     "viem": "^2.11.1",
     "wagmi": "^2.9.3",

@@ -47,6 +47,8 @@ import EditContentModal from 'components/EditContentModal'
 import Helper from 'components/Helper'
 import Animation from 'components/Animation'
 import { ANIMATIONS } from 'constants/animations'
+import useSound from 'use-sound'
+import soundSlide from 'sound/slide.mp3'
 
 export const Slide = styled(Card)<{
   issmallscreen?: string
@@ -257,6 +259,7 @@ const Lesson = ({
   Quest?: QuestType
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
+  const [playSlide] = useSound(soundSlide)
   const numberOfSlides = lesson.slides?.length
   // HACK: when reducing the number of slides in a lesson
   if (
@@ -395,6 +398,7 @@ const Lesson = ({
 
   const clickLeft = () => {
     if (isAnimationSlide && animationStepLS > 0) {
+      playSlide()
       setAnimationStepLS(animationStepLS - 1)
       if (isSmallScreen) scrollDown()
     } else goToPrevSlide()
@@ -402,6 +406,7 @@ const Lesson = ({
 
   const clickRight = () => {
     if (isAnimationSlide && animationStepLS + 1 < animationSteps) {
+      playSlide()
       setAnimationStepLS(animationStepLS + 1)
       if (isSmallScreen) scrollDown()
     } else goToNextSlide()
@@ -410,6 +415,7 @@ const Lesson = ({
   const goToPrevSlide = () => {
     toast.closeAll()
     if (!isFirstSlide) {
+      playSlide()
       setCurrentSlide(currentSlide - 1)
       if (!isDesktop) scrollTop()
     }
@@ -421,6 +427,7 @@ const Lesson = ({
     if (slide.quiz && localStorage.getItem(`quiz-${slide.quiz.id}`) === null) {
       console.log('select your answer to the quiz first')
     } else if (!isLastSlide) {
+      playSlide()
       setCurrentSlide(currentSlide + 1)
       if (!isDesktop) scrollTop()
     } else if (isLastSlide) {
@@ -524,6 +531,7 @@ const Lesson = ({
     currentSlide,
     isFirstSlide,
     isDesktop,
+    playSlide,
   ])
   useHotkeys('right', () => clickRight(), [
     isAnimationSlide,
@@ -534,6 +542,7 @@ const Lesson = ({
     currentSlide,
     lesson,
     isDesktop,
+    playSlide,
   ])
   useHotkeys('1', () => {
     answerRef?.current[1]?.click()
@@ -612,7 +621,10 @@ const Lesson = ({
           onClick={
             animationStepLS === index
               ? () => {}
-              : () => setAnimationStepLS(index)
+              : () => {
+                  playSlide()
+                  setAnimationStepLS(index)
+                }
           }
           style={animationStepLS === index ? {} : { cursor: 'pointer' }}
         >

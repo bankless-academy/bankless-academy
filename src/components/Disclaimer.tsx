@@ -13,11 +13,13 @@ import {
   Box,
 } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
+import useSound from 'use-sound'
 
 import { DISCLAIMER_ENABLED } from 'constants/index'
 import { useEffect } from 'react'
 import ExternalLink from 'components/ExternalLink'
 import { LessonType } from 'entities/lesson'
+import soundAccept from 'sound/accept.mp3'
 
 const Disclaimer = ({
   lesson,
@@ -28,6 +30,7 @@ const Disclaimer = ({
   accepted: () => void
   onClose: () => void
 }): React.ReactElement => {
+  const [playAccept] = useSound(soundAccept)
   const {
     isOpen: isOpenHelpModal,
     onOpen: onOpenHelpModal,
@@ -117,6 +120,7 @@ const Disclaimer = ({
             variant="primaryWhite"
             ref={initialRef}
             onClick={() => {
+              playAccept()
               accepted()
               onCloseHelpModal()
               onClose()
