@@ -102,7 +102,9 @@ const MintHandbookButton = ({
   }
 
   const { isLoading, isSuccess } = useWaitForTransactionReceipt({
+    chainId: optimism.id,
     hash: hash as any,
+    pollingInterval: 1_000,
   })
 
   const updateArticlesCollectors = async () => {

@@ -101,10 +101,12 @@ const MintDatadiskModal = ({
   }
 
   const { isLoading, isSuccess } = useWaitForTransactionReceipt({
+    chainId: optimism.id,
     hash:
       // DEV: simulate tx
       // '0xbbac72d366946360a3e67f34f974f7d3867bb958cec8a56a7386d64349e0b3a0' ||
       hash as any,
+    pollingInterval: 1_000,
   })
 
   useEffect(() => {
