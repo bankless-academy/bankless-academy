@@ -1,14 +1,15 @@
 export interface UserStatsType {
-  datadisks?: string[],
-  handbooks?: string[],
-  badges?: number,
-  valid_stamps?: string[],
-  ens_name?: string,
-  ens_avatar?: string,
+  datadisks?: string[]
+  handbooks?: string[]
+  badges?: number
+  valid_stamps?: string[]
+  ens_name?: string
+  ens_avatar?: string
   donations?: { [key: string]: any }
-  score?: number,
+  score?: number
   rank?: number
   referrals?: string[]
+  community?: string
 }
 export interface UserType {
   address: string
@@ -18,4 +19,5 @@ export interface UserType {
   badgeTokenIds: number[]
   kudosTokenIds: number[]
   error?: string
+  community?: string
 }

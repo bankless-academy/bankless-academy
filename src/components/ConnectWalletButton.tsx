@@ -93,6 +93,7 @@ const ConnectWalletButton = ({
     'refreshBadges',
     false
   )
+  const [, setCommunity] = useLocalStorage(`community`, '')
   const { onOpen, onClose, isOpen } = useDisclosure()
   const { disconnect } = useDisconnect()
   // const { disconnect } = useDisconnect({
@@ -208,6 +209,8 @@ const ConnectWalletButton = ({
   function refreshBadges() {
     if (address)
       axios.get(`/api/user/${address}`).then((res) => {
+        const community = res?.data?.community
+        setCommunity(community)
         const score = res?.data?.stats?.score || 0
         localStorage.setItem('score', score)
         const badgeTokenIds = res?.data?.badgeTokenIds
