@@ -14,7 +14,7 @@ import { DONATION_MAPPING } from 'constants/donations'
 import InternalLink from './InternalLink'
 import { STAMP_PLATFORMS } from 'constants/passport'
 import PassportModal from 'components/PassportModal'
-import { useSmallScreen } from 'hooks'
+import { useSmallScreen } from 'hooks/index'
 
 const Badges = ({
   badges,

@@ -14,7 +14,7 @@ import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import { useTranslation } from 'react-i18next'
 
 import { theme } from 'theme/index'
-import { useSmallScreen } from 'hooks'
+import { useSmallScreen } from 'hooks/index'
 import { StyledLessonCard } from 'components/LessonCard'
 
 const DEFAULT_ANSWERS = ['1Q2TWHE3GMdB6BZKafqwxXtWAWgFt5Jvm3', '0']

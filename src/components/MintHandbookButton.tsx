@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
 
 import ExternalLink from 'components/ExternalLink'
-import { useSmallScreen } from 'hooks'
+import { useSmallScreen } from 'hooks/index'
 import { getArticlesCollectors } from 'utils/index'
 import { parseEther } from 'viem'
 import Confetti from 'components/Confetti'
