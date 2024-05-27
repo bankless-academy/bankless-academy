@@ -6,11 +6,17 @@ import {
   Container,
   Heading,
   Image,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightAddon,
+  Select,
   Text,
   useClipboard,
   useMediaQuery,
+  useToast,
 } from '@chakra-ui/react'
-import { CopySimple } from '@phosphor-icons/react'
+import { CopySimple, Envelope } from '@phosphor-icons/react'
 import router from 'next/router'
 import { useAccount } from 'wagmi'
 import { t } from 'i18next'
@@ -22,9 +28,12 @@ import { MetaData } from 'components/Head'
 import { DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { UserType } from 'entities/user'
 import {
+  emailRegex,
   generateFarcasterLink,
   generateTwitterLink,
   shortenAddress,
+  api,
+  Mixpanel,
 } from 'utils/index'
 import ProgressTitle from 'components/ProgressTitle'
 import ExternalLink from 'components/ExternalLink'
@@ -61,6 +70,16 @@ export async function getServerSideProps({ query }) {
   return { props: { ...data, pageMeta } }
 }
 
+const COMMUNITIES = [
+  'Boys Club',
+  'DAO Punk',
+  'FWB',
+  'Gitcoin',
+  'Optimism Collective',
+  'SheFi',
+  'Zerion',
+].sort()
+
 export default function Page({
   profileAddress,
   badgeToHighlight,
@@ -81,6 +100,12 @@ export default function Page({
   const { address } = useAccount()
   const { onCopy, hasCopied } = useClipboard(profileUrl)
   const [passportLS] = useLocalStorage('passport', EMPTY_PASSPORT)
+  const [community, setCommunity] = useLocalStorage(`community`, '')
+  const [addCommunity, setAddCommunity] = useState(false)
+  const [email, setEmail] = useState(localStorage.getItem('email'))
+  const [initialEmail] = useState(localStorage.getItem('email'))
+  const toast = useToast()
+  const [ens] = useLocalStorage(`ens-cache`, {})
 
   const wallets = localStorage.getItem('wallets')
     ? JSON.parse(localStorage.getItem('wallets'))
@@ -220,6 +245,68 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 : shortenAddress(profileAddress)}
             </Text>
             {isMyProfile && (
+              <>
+                {addCommunity ? (
+                  <Box my="8" mx="4" display="flex" placeContent="center">
+                    <InputGroup maxW="400px">
+                      <Input
+                        value={community}
+                        placeholder={'Your community...'}
+                        onChange={(e): void => {
+                          const customCommunity = e.target.value
+                          setCommunity(customCommunity)
+                        }}
+                      />
+                      <InputRightAddon padding="0">
+                        <Button
+                          variant="primary"
+                          width="100%"
+                          borderRadius="6px"
+                          borderLeftRadius="0"
+                          onClick={async () => {
+                            alert('TODO: save')
+                            setAddCommunity(false)
+                          }}
+                        >
+                          Save
+                        </Button>
+                      </InputRightAddon>
+                    </InputGroup>
+                  </Box>
+                ) : (
+                  <Box mb="8" textAlign="center">
+                    <Select
+                      placeholder="Select Community"
+                      size="lg"
+                      w="100%"
+                      maxW="300px"
+                      m="auto"
+                      value={community}
+                      onChange={(e) => {
+                        const selectedCommunity = e.target.value
+                        if (selectedCommunity === 'new') {
+                          setCommunity('')
+                          setAddCommunity(true)
+                        } else setCommunity(selectedCommunity)
+                      }}
+                    >
+                      <option value="new">&gt; Suggest new community</option>
+                      {COMMUNITIES.map((community) => {
+                        return (
+                          <option key={community} value={community}>
+                            {community}
+                          </option>
+                        )
+                      })}
+                      {community && !COMMUNITIES.includes(community) && (
+                        <option value={community}>{community}</option>
+                      )}
+                    </Select>
+                  </Box>
+                )}
+              </>
+            )}
+            {isMyProfile && (
               <Box justifyContent="center" w="256px" m="auto" mb="8">
                 <Box pb="2">
                   <ExternalLink href={twitterLink} mr="2">
@@ -264,6 +351,100 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
               </Box>
             )}
           </Card>
+          {isMyProfile && (
+            <Card
+              my="8"
+              borderRadius="2xl !important"
+              background="black !important"
+            >
+              <Box m="8" textAlign="center">
+                <Box fontSize="3xl" fontWeight="bold" m="auto">
+                  Newsletter
+                </Box>
+                <Box my="8" display="flex" placeContent="center">
+                  <InputGroup maxW="400px">
+                    <InputLeftElement pointerEvents="none">
+                      <Envelope size="32" />
+                    </InputLeftElement>
+                    <Input
+                      value={email}
+                      placeholder={'Enter your email address...'}
+                      type="email"
+                      onChange={(e): void => {
+                        setEmail(e.target.value)
+                      }}
+                    />
+                  </InputGroup>
+                </Box>
+                <Box textAlign="right" mb="6">
+                  <Button
+                    size="lg"
+                    variant="primaryBig"
+                    onClick={async () => {
+                      toast.closeAll()
+                      if (!email)
+                        toast({
+                          title: t('Email missing'),
+                          description: t('Provide an email.'),
+                          status: 'warning',
+                          duration: 10000,
+                          isClosable: true,
+                        })
+                      else if (emailRegex.test(email) === false)
+                        toast({
+                          title: t('Wrong email format'),
+                          description: t('Please check your email.'),
+                          status: 'warning',
+                          duration: 10000,
+                          isClosable: true,
+                        })
+                      else {
+                        const result = await api('/api/subscribe-newsletter', {
+                          email,
+                          wallet: address,
+                          ens:
+                            address && address in ens
+                              ? ens[address]?.name
+                              : undefined,
+                        })
+                        if (result && result.status === 200) {
+                          localStorage.setItem('email', email)
+                          localStorage.setItem(`newsletter`, 'true')
+                          Mixpanel.track(
+                            initialEmail?.length
+                              ? 'subscribe_newsletter'
+                              : 'update_newsletter',
+                            {
+                              email: email,
+                            }
+                          )
+                          toast({
+                            title: t('Thanks for subscribing Explorer 🧑‍🚀'),
+                            description: t(`You'll hear from us soon!`),
+                            status: 'success',
+                            duration: 10000,
+                            isClosable: true,
+                          })
+                        } else {
+                          toast({
+                            title: t(
+                              `Something went wrong... we couldn't add your subscription.`
+                            ),
+                            description: t('Please try again later.'),
+                            status: 'warning',
+                            duration: 10000,
+                            isClosable: true,
+                          })
+                        }
+                      }
+                    }}
+                  >
+                    Save
+                  </Button>
+                </Box>
+              </Box>
+            </Card>
+          )}
           <Card my="8" borderRadius="2xl !important">
             <Box m="auto" maxW={isSmallScreen ? '600px' : '100%'}>
               <Box m="auto" position="relative" w="300px" mt={4}>
