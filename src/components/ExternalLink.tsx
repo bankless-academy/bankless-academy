@@ -4,7 +4,7 @@ import {
   LinkProps as ChakraLinkProps,
 } from '@chakra-ui/react'
 
-import { Mixpanel, getNodeText } from 'utils'
+import { Mixpanel, getNodeText } from 'utils/index'
 import { LESSONS } from 'constants/index'
 
 type ChakraLinkAndNextProps = ChakraLinkProps & LinkProps & any

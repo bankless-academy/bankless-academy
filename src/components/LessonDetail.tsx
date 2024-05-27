@@ -23,7 +23,7 @@ import {
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
 import { useEffect } from 'react'
-import { Mixpanel, scrollDown, scrollTop } from 'utils'
+import { Mixpanel, scrollDown, scrollTop } from 'utils/index'
 import OpenLesson from 'components/OpenLesson'
 import LanguageSwitch from 'components/LanguageSwitch'
 

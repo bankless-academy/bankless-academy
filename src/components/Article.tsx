@@ -26,7 +26,11 @@ import {
   IS_WHITELABEL,
   KEYWORDS,
 } from 'constants/index'
-import { getArticlesCollected, getArticlesCollectors, Mixpanel } from 'utils'
+import {
+  getArticlesCollected,
+  getArticlesCollectors,
+  Mixpanel,
+} from 'utils/index'
 import Keyword from 'components/Keyword'
 import LanguageSwitch from 'components/LanguageSwitch'
 

@@ -19,7 +19,7 @@ import { useAccount } from 'wagmi'
 
 import { useSmallScreen } from 'hooks/index'
 import { QUESTS } from 'constants/index'
-import { api } from 'utils'
+import { api } from 'utils/index'
 import { LessonType } from 'entities/lesson'
 
 export type QuestComponentType = typeof QUESTS[number]

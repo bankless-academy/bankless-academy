@@ -17,7 +17,7 @@ import { Envelope } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
 
 import { LessonType } from 'entities/lesson'
-import { api, Mixpanel } from 'utils'
+import { api, emailRegex, Mixpanel } from 'utils/index'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
 
@@ -35,9 +35,6 @@ const SubscriptionModal = ({
   const { address } = useAccount()
   const [ens] = useLocalStorage(`ens-cache`, {})
   const [email, setEmail] = useState(localStorage.getItem('email'))
-  const emailRegex =
-    // eslint-disable-next-line no-useless-escape
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return (
     <Modal onClose={onClose} size={'xl'} isCentered isOpen={isOpen}>
       <ModalOverlay backdropFilter="blur(10px)" />

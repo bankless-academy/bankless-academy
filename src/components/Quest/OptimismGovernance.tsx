@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 
 import { StyledLessonCard } from 'components/LessonCard'
 import { theme } from 'theme/index'
-import { api } from 'utils'
+import { api } from 'utils/index'
 import { useSmallScreen } from 'hooks'
 import InternalLink from 'components/InternalLink'
 import { LESSONS } from 'constants/index'
