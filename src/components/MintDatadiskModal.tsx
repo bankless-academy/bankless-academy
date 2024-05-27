@@ -28,6 +28,7 @@ import { useTranslation } from 'react-i18next'
 import { parseEther } from 'viem'
 import { Gear, SealCheck } from '@phosphor-icons/react'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
+import useSound from 'use-sound'
 
 import { LessonType } from 'entities/lesson'
 import Datadisk from 'components/Datadisk'
@@ -37,6 +38,7 @@ import { useSmallScreen } from 'hooks/index'
 import { NB_DATADISK_MAX } from 'constants/index'
 import Confetti from 'components/Confetti'
 import { wagmiConfig } from 'utils/wagmi'
+import soundCelebrate from 'sound/celebrate.mp3'
 
 const MintDatadiskModal = ({
   isOpen,
@@ -50,6 +52,7 @@ const MintDatadiskModal = ({
   numberOfOwners: number
 }): React.ReactElement => {
   const { t } = useTranslation()
+  const [playCelebrate] = useSound(soundCelebrate)
   const { open } = useWeb3Modal()
   const { address, chain } = useAccount()
   const [isSmallScreen] = useSmallScreen()
@@ -151,6 +154,7 @@ const MintDatadiskModal = ({
     if (isSuccess) {
       toast.closeAll()
       setShowConfetti(true)
+      playCelebrate()
       const txLink = `https://opensea.io/assets/optimism/${lesson.lessonCollectibleTokenAddress}/${nextId}`
       setRefreshDatadiskLS(true)
       toast({

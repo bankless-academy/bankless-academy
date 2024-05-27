@@ -21,6 +21,7 @@ import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { wagmiConfig } from 'utils/wagmi'
 import { polygon } from 'viem/chains'
+import useSound from 'use-sound'
 
 import ExternalLink from 'components/ExternalLink'
 import { WALLET_SIGNATURE_MESSAGE } from 'constants/index'
@@ -29,6 +30,7 @@ import { EMPTY_PASSPORT } from 'constants/passport'
 import { api } from 'utils'
 import PassportModal from 'components/PassportModal'
 import Confetti from 'components/Confetti'
+import soundCelebrate from 'sound/celebrate.mp3'
 
 const MintBadge = ({
   badgeId,
@@ -38,6 +40,7 @@ const MintBadge = ({
   isQuestCompleted: boolean
 }): React.ReactElement => {
   const { t } = useTranslation()
+  const [playCelebrate] = useSound(soundCelebrate)
   const [isBadgeMintedLS, setIsBadgeMintedLS] = useLocalStorage(
     `isBadgeMinted-${badgeId}`,
     false
@@ -136,6 +139,7 @@ const MintBadge = ({
       const zerionLink = `https://app.zerion.io/nfts/polygon/0x3436d8af0b617deef5aadbafc56f293e102dd886:${badgeId}?address=${address}`
       toast.closeAll()
       setShowConfetti(true)
+      playCelebrate()
       toast({
         description: (
           <>

@@ -49,6 +49,8 @@ import Animation from 'components/Animation'
 import { ANIMATIONS } from 'constants/animations'
 import useSound from 'use-sound'
 import soundSlide from 'sound/slide.mp3'
+import soundCorrect from 'sound/correct.mp3'
+import soundError from 'sound/error.mp3'
 
 export const Slide = styled(Card)<{
   issmallscreen?: string
@@ -260,6 +262,8 @@ const Lesson = ({
 }): React.ReactElement => {
   const { t, i18n } = useTranslation()
   const [playSlide] = useSound(soundSlide)
+  const [playCorrect] = useSound(soundCorrect)
+  const [playError] = useSound(soundError)
   const numberOfSlides = lesson.slides?.length
   // HACK: when reducing the number of slides in a lesson
   if (
@@ -434,6 +438,7 @@ const Lesson = ({
       if (!isDesktop) scrollTop()
       if (lesson.endOfLessonRedirect) {
         if (lesson.endOfLessonRedirect.includes('https://tally.so/r/')) {
+          playCorrect()
           closeLesson()
           //   // redirect to embeded Tally form
           //   const tallyId = lesson.endOfLessonRedirect.replace(
@@ -449,6 +454,7 @@ const Lesson = ({
         if (IS_WHITELABEL) closeLesson()
         else {
           // defaut: go back to lessons
+          playCorrect()
           closeLesson()
           // router.push('/lessons')
         }
@@ -469,6 +475,7 @@ const Lesson = ({
       ? slide.quiz?.feedback[answerNumber - 1]
       : undefined
     if (slide.quiz.rightAnswerNumber === answerNumber) {
+      playCorrect()
       if (feedback?.length)
         toast({
           title: feedback,
@@ -490,6 +497,7 @@ const Lesson = ({
       })
       localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
     } else if (!answerIsCorrect) {
+      playError()
       if (feedback?.length)
         toast({
           title: feedback,
@@ -1016,7 +1024,10 @@ const Lesson = ({
               <Button
                 size="lg"
                 isDisabled={lesson.badgeId && !Quest?.isQuestCompleted}
-                onClick={() => closeLesson()}
+                onClick={() => {
+                  playCorrect()
+                  closeLesson()
+                }}
                 variant="primaryBigLast"
                 rightIcon={<ArrowForwardIcon />}
               >

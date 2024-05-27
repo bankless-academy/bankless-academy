@@ -1,11 +1,13 @@
 import { Box, useToast } from '@chakra-ui/react'
 import { ReactElement, useState } from 'react'
 import { useLocalStorage } from 'usehooks-ts'
+import useSound from 'use-sound'
 
 import Disclaimer from 'components/Disclaimer'
 import { LessonType } from 'entities/lesson'
 import { openLesson } from 'utils/index'
 import { useAccount } from 'wagmi'
+import soundStart from 'sound/start.mp3'
 
 const OpenLesson = ({
   children,
@@ -16,6 +18,7 @@ const OpenLesson = ({
   lesson: LessonType
   click?: boolean
 }): React.ReactElement => {
+  const [playStart] = useSound(soundStart)
   const [showDisclaimer, setShowDisclaimer] = useState(false)
   const [openLessonLS, setOpenLessonLS] = useLocalStorage(
     `lessonOpen`,
@@ -42,6 +45,7 @@ const OpenLesson = ({
               `disclaimer-${lesson.slug}`,
               currentTimestamp.toString()
             )
+            playStart()
             setOpenLessonLS(
               await openLesson(openLessonLS, lesson, toast, address)
             )

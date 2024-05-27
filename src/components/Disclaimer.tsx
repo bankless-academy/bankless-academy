@@ -19,7 +19,7 @@ import { DISCLAIMER_ENABLED } from 'constants/index'
 import { useEffect } from 'react'
 import ExternalLink from 'components/ExternalLink'
 import { LessonType } from 'entities/lesson'
-import soundAccept from 'sound/accept.mp3'
+import soundCorrect from 'sound/correct.mp3'
 
 const Disclaimer = ({
   lesson,
@@ -30,7 +30,7 @@ const Disclaimer = ({
   accepted: () => void
   onClose: () => void
 }): React.ReactElement => {
-  const [playAccept] = useSound(soundAccept)
+  const [playCorrect] = useSound(soundCorrect)
   const {
     isOpen: isOpenHelpModal,
     onOpen: onOpenHelpModal,
@@ -120,7 +120,7 @@ const Disclaimer = ({
             variant="primaryWhite"
             ref={initialRef}
             onClick={() => {
-              playAccept()
+              playCorrect()
               accepted()
               onCloseHelpModal()
               onClose()

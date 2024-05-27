@@ -9,6 +9,7 @@ import { simulateContract, writeContract } from '@wagmi/core'
 import { Gear, SealCheck } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
+import useSound from 'use-sound'
 
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks'
@@ -16,6 +17,7 @@ import { getArticlesCollectors } from 'utils'
 import { parseEther } from 'viem'
 import Confetti from 'components/Confetti'
 import { wagmiConfig } from 'utils/wagmi'
+import soundCelebrate from 'sound/celebrate.mp3'
 
 const MintHandbookButton = ({
   lesson,
@@ -26,6 +28,7 @@ const MintHandbookButton = ({
 }): JSX.Element => {
   if (!lesson.mirrorNFTAddress) return
   const { t } = useTranslation()
+  const [playCelebrate] = useSound(soundCelebrate)
   const { address, chain } = useAccount()
   const { open } = useWeb3Modal()
   const toast = useToast()
@@ -159,6 +162,7 @@ const MintHandbookButton = ({
     if (isSuccess) {
       toast.closeAll()
       setShowConfetti(true)
+      playCelebrate()
       // HACK: guess tokenId
       const txLink = `https://opensea.io/assets/optimism/${
         lesson.mirrorNFTAddress
