@@ -156,10 +156,10 @@ export default function Page({
             })
           }
           setFullProfileAddress(user.address)
-          setUser(user)
-          if (wallets.includes(user.address)) {
+          if (address?.toLowerCase() === user.address) {
             setIsMyProfile(true)
           }
+          setUser(user)
         }
       } catch (error) {
         console.log(error)
@@ -169,7 +169,7 @@ export default function Page({
       }
     }
     loadUser()
-  }, [profileAddress])
+  }, [profileAddress, address])
 
   useEffect(() => {
     if (isMyProfile && passportLS?.stamps && passportLS?.version) {
@@ -261,7 +261,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 ? profileAddress
                 : shortenAddress(profileAddress)}
             </Text>
-            {isMyProfile && (
+            {isMyProfile ? (
               <>
                 {addCommunity ? (
                   <Box my="8" mx="4" display="flex" placeContent="center">
@@ -324,6 +324,25 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                   </Box>
                 )}
               </>
+            ) : (
+              user.community && (
+                <Box my="8" mx="4" display="flex" placeContent="center">
+                  <Text
+                    as="h2"
+                    fontSize="3xl"
+                    fontWeight="bold"
+                    textAlign="center"
+                    textTransform="uppercase"
+                    color="#ffffff70"
+                  >
+                    <Box display="flex" justifyContent="center">
+                      <Box>-[&nbsp;</Box>
+                      <Box mt="2.5px">{user.community}</Box>
+                      <Box>&nbsp;]-</Box>
+                    </Box>
+                  </Text>
+                </Box>
+              )
             )}
             {isMyProfile && (
               <Box justifyContent="center" w="256px" m="auto" mb="8">

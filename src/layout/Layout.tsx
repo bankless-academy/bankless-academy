@@ -9,7 +9,6 @@ import InternalLink from 'components/InternalLink'
 import { useSmallScreen, useWindowScrollPositions } from 'hooks/index'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
-import { shortenAddress } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
 
 export type PageType = LessonTypeType | 'PROFILE' | 'GLOSSARY' | ''
@@ -216,20 +215,24 @@ const Layout = ({
                       fontWeight="bold"
                       textTransform="uppercase"
                     >
-                      {username.includes('.')
-                        ? username
-                        : shortenAddress(username)}
+                      {address in nameCache && nameCache[address].name}
                     </Box>
                     <Box
                       textAlign="center"
-                      color="white"
+                      color="#ffffff70"
                       fontSize="xl"
                       fontWeight="bold"
                       textTransform="uppercase"
                       pt={community ? '4' : '0'}
                       pb="8"
                     >
-                      {community && `- ${community} -`}
+                      {community && (
+                        <Box display="flex" justifyContent="center">
+                          <Box>-[&nbsp;</Box>
+                          <Box mt="1.5px">{community}</Box>
+                          <Box>&nbsp;]-</Box>
+                        </Box>
+                      )}
                     </Box>
                   </Box>
                 </InternalLink>
