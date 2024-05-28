@@ -91,7 +91,7 @@ export default function Page({
 }) {
   const profileUrl =
     typeof window !== 'undefined' ? `${window.location.href}` : ''
-  const [isSmallScreen] = useMediaQuery(['(max-width: 981px)'])
+  const [isSmallScreen] = useMediaQuery(['(max-width: 1200px)'])
   const { referral } = router.query
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)
@@ -110,6 +110,23 @@ export default function Page({
   const wallets = localStorage.getItem('wallets')
     ? JSON.parse(localStorage.getItem('wallets'))
     : []
+
+  const updateCommunity = async (community) => {
+    try {
+      const result = await api('/api/update-community', {
+        address,
+        community,
+      })
+      if (result && result.status === 200) {
+        setCommunity(community)
+      } else {
+        // TODO: handle errors
+        console.log(result)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   useEffect(() => {
     const loadUser = async () => {
@@ -264,7 +281,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                           borderRadius="6px"
                           borderLeftRadius="0"
                           onClick={async () => {
-                            alert('TODO: save')
+                            updateCommunity(community)
                             setAddCommunity(false)
                           }}
                         >
@@ -282,12 +299,14 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                       maxW="300px"
                       m="auto"
                       value={community}
-                      onChange={(e) => {
+                      onChange={async (e) => {
                         const selectedCommunity = e.target.value
                         if (selectedCommunity === 'new') {
                           setCommunity('')
                           setAddCommunity(true)
-                        } else setCommunity(selectedCommunity)
+                        } else {
+                          await updateCommunity(selectedCommunity)
+                        }
                       }}
                     >
                       <option value="new">&gt; Suggest new community</option>
