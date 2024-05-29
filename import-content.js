@@ -10,111 +10,28 @@ const knex = require('knex')
 const fs = require('fs')
 const crc32 = require('js-crc').crc32
 const stringifyObject = require('stringify-object')
-const { Client } = require("@notionhq/client")
-const { NotionToMarkdown } = require("notion-to-md")
 
 const config = require('./knexfile.js')
 const db = knex(config)
 const { TABLES } = require('./db.js')
+const {
+  KEY_MATCHING,
+  LESSON_SPLITTER,
+} = require('./config.js')
 const {
   slugify,
   downloadImage,
   getImagePath,
   extractKeywords,
   writeFile,
+  importTranslations,
+  mdHeader,
+  placeholder,
+  n2m,
 } = require('./utils.js')
 
 const MD_ENABLED = process.env.NEXT_PUBLIC_MD_ENABLED || false
 
-const notion = new Client({
-  auth: process.env.NOTION_SECRET,
-})
-
-const n2m = new NotionToMarkdown({ notionClient: notion })
-
-// types of blocs to ignore
-// BlockType https://github.com/souvikinator/notion-to-md/blob/master/src/types/index.ts
-const blockTypesToIgnore = [
-  // "image",
-  "video",
-  "file",
-  "pdf",
-  "table",
-  "bookmark",
-  // "embed",
-  "equation",
-  // "divider",
-  "toggle",
-  // "to_do",
-  "synced_block",
-  "column_list",
-  "column",
-  "link_preview",
-  // "link_to_page",
-  // "paragraph",
-  // "heading_1",
-  // "heading_2",
-  "heading_3",
-  // "bulleted_list_item",
-  // "numbered_list_item",
-  // "quote",
-  "template",
-  "child_page",
-  "child_database",
-  "code",
-  "callout",
-  "breadcrumb",
-  "table_of_contents",
-  "audio",
-  "unsupported"
-]
-for (const blockType of blockTypesToIgnore) {
-  n2m.setCustomTransformer(blockType, async () => {
-    return ""
-  })
-}
-
-n2m.setCustomTransformer("image", async (b) => {
-  // console.log(b)
-  return `![](https://www.notion.so/image/${encodeURIComponent(b?.image?.file?.url?.split('?')[0].replace('https://s3.', 'https://s3-'))}?table=block&id=${b?.id})`
-})
-
-// const PROTOCOL_VERSION = "0.01"
-
-const LESSON_SPLITTER = `\`\`\`
-
----`
-
-// LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
-// PROTOCOL VERSION: ${PROTOCOL_VERSION}
-
-const mdHeader = (lesson, format) => `---
-TITLE: ${lesson.name}
-DESCRIPTION: ${lesson.description}
-LANGUAGE: English
-WRITERS: ${lesson.lessonWriters || ''}
-TRANSLATORS: X
-LINK: https://app.banklessacademy.com/lessons/${lesson.slug}
-FORMAT: ${format}
----
-
-\`\`\`
-__________________________________________________________________________________________________________________________________________________________
-
-$$$$$$$\\                      $$\\       $$\\                                      $$$$$$\\                           $$\\                                   
-$$  __$$\\                     $$ |      $$ |                                    $$  __$$\\                          $$ |                                  
-$$ |  $$ | $$$$$$\\  $$$$$$$\\  $$ |  $$\\ $$ | $$$$$$\\   $$$$$$$\\  $$$$$$$\\       $$ /  $$ | $$$$$$$\\ $$$$$$\\   $$$$$$$ | $$$$$$\\  $$$$$$\\$$$$\\  $$\\   $$\\ 
-$$$$$$$\\ | \\____$$\\ $$  __$$\\ $$ | $$  |$$ |$$  __$$\\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\\____$$\\ $$  __$$ |$$  __$$\\ $$  _$$  _$$\\ $$ |  $$ |
-$$  __$$\\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\\$$$$$$\\  \\$$$$$$\\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
-$$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \\____$$\\  \\____$$\\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
-$$$$$$$  |\\$$$$$$$ |$$ |  $$ |$$ | \\$$\\ $$ |\\$$$$$$$\\ $$$$$$$  |$$$$$$$  |      $$ |  $$ |\\$$$$$$$\\\\$$$$$$$ |\\$$$$$$$ |\\$$$$$$$\\ $$ | $$ | $$ |\\$$$$$$$ |
-\\_______/  \\_______|\\__|  \\__|\\__|  \\__|\\__| \\_______|\\_______/ \\_______/       \\__|  \\__| \\_______|\\_______| \\_______| \\_______|\\__| \\__| \\__| \\____$$ |
-                                                                                                                                               $$\\   $$ |
-PORTABLE LESSON DATADISK COLLECTION                                                                                                            \\$$$$$$  |
-                                                                                                                                                \\______/
-__________________________________________________________________________________________________________________________________________________________
-${LESSON_SPLITTER}
-`
 
 const PROJECT_DIR = process.env.PROJECT_DIR || ''
 const IS_WHITELABEL = PROJECT_DIR !== ''
@@ -124,51 +41,6 @@ const ALL_ENGLISH_KEYWORDS = require(KEYWORDS_FILE)
 
 const DEFAULT_NOTION_ID = '129141602de240e484356bd85f7c75e0'
 const POTION_API = 'https://potion.banklessacademy.com'
-
-const KEY_MATCHING = {
-  'Kudos image': 'badgeImageLink',
-  'Lesson image': 'lessonImageLink',
-  'Lesson collected image': 'lessonCollectedImageLink',
-  'Lesson collectible gif': 'lessonCollectibleGif',
-  'Lesson collectible video': 'lessonCollectibleVideo',
-  'Lesson collectible mint ID': 'lessonCollectibleMintID',
-  'Lesson collectible token address': 'lessonCollectibleTokenAddress',
-  'Social image': 'socialImageLink',
-  'What will you be able to do after this lesson?': 'learningActions',
-  'Landing page copy': 'marketingDescription',
-  'Badge ID': 'badgeId',
-  'DataDisk vector mint': 'datadiskVectorMint',
-  'Collectible ID': 'collectibleId',
-  'Duration in minutes': 'duration',
-  'What will you learn from this?': 'learnings',
-  Difficulty: 'difficulty',
-  Description: 'description',
-  Name: 'name',
-  'Languages': 'languages',
-  'Level': 'level',
-  'Tags': 'tags',
-  'Lesson Writers': 'lessonWriters',
-  Module: 'moduleId',
-  Quest: 'quest',
-  'Quest Social Message': 'questSocialMessage',
-  'Publication status': 'publicationStatus',
-  'Publication Date': 'publicationDate',
-  'Featured order on homepage': 'featuredOrderOnHomepage',
-  'Enable Comments': 'isCommentsEnabled',
-  'End of Lesson redirect': 'endOfLessonRedirect',
-  'End of Lesson text': 'endOfLessonText',
-  // 'Community discussion link': 'communityDiscussionLink',
-  'Mirror link': 'mirrorLink',
-  'Mirror NFT address': 'mirrorNFTAddress',
-  'Mirror NFT all collected': 'areMirrorNFTAllCollected',
-  'Sponsor Name': 'sponsorName',
-  'Sponsor Logo': 'sponsorLogo',
-  'NFT Gating': 'nftGating',
-  'NFT Gating Requirements': 'nftGatingRequirements',
-  'NFT Gating Image': 'nftGatingImageLink',
-  'NFT Gating Link': 'nftGatingLink',
-  'NFT Gating CTA': 'nftGatingCTA',
-}
 
 const program = new Command()
 program
@@ -185,63 +57,6 @@ const LESSON_NOTION_ID = program.opts().lessonID
 console.log('LESSON_NOTION_ID', LESSON_NOTION_ID)
 const TRANSLATION_LANGUAGE = program.opts().translate
 console.log('TRANSLATION_LANGUAGE', TRANSLATION_LANGUAGE)
-
-const placeholder = async (lesson, size, image_name) => {
-  const placeholder_link = `https://placehold.co/${size}/4b4665/FFFFFF/png?text=${lesson.name.replaceAll(' ', '+')}`
-  return await getImagePath(placeholder_link, lesson.slug, image_name)
-}
-
-const importTranslations = async (lesson) => {
-  if (!TRANSLATION_LANGUAGE) return
-  for (const language of lesson.languages) {
-    if (language === TRANSLATION_LANGUAGE || TRANSLATION_LANGUAGE === 'all') {
-      console.log('import translation:', language)
-      try {
-        const random = Math.floor(Math.random() * 100000)
-        const crowdinFile = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md?${random}`
-        // console.log(crowdinFile)
-        const crowdin = await axios.get(crowdinFile)
-        // console.log(crowdin)
-        if (crowdin.status === 200) {
-          // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
-          const newTranslation = crowdin.data
-            // fix Crowdin bug
-            .replace(`***
-
-#`, `---
-
-#`)
-          const [, title, description] = crowdin.data.match(/---\nTITLE:\s(.*?)\nDESCRIPTION:\s(.*?)\n/)
-          // console.log('title', title)
-          // console.log('description', description)
-          const lessonInfoPath = `translation/website/${language}/lesson.json`
-          const lessonInfo = fs.existsSync(lessonInfoPath) ? await fs.promises.readFile(lessonInfoPath, 'utf8') : '{}'
-          const translationInfo = {}
-          translationInfo[lesson.name] = title
-          translationInfo[lesson.description] = description
-          // console.log('translationInfo', translationInfo)
-          const jsonLessonInfo = { ...JSON.parse(lessonInfo), ...translationInfo }
-          // console.log('jsonLessonInfo', jsonLessonInfo)
-          await writeFile(lessonInfoPath, jsonLessonInfo)
-          // console.log(newTranslation)
-          const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
-          const existingTranslation = fs.existsSync(lessonPath) ? await fs.promises.readFile(lessonPath, 'utf8') : ''
-          // console.log(existingTranslation)
-          // check if translation has been modified
-          if (newTranslation.trim() !== existingTranslation.trim()) {
-            console.log('- new translation available')
-            await writeFile(lessonPath, newTranslation)
-          } else {
-            console.log('- same same')
-          }
-        }
-      } catch (error) {
-
-        console.log(`- ${language} not available yet`)
-      }
-    }
-  }
-}
 
 axios
   .get(`${POTION_API}/table?id=${NOTION_ID}`)
@@ -399,7 +214,7 @@ axios
                 lessons[index] = lesson
                 if (MD_ENABLED) {
                   // import translations
-                  importTranslations(lesson)
+                  await importTranslations(lesson, TRANSLATION_LANGUAGE)
                   // console.log(lesson.articleContent)
                   let lessonContentMD = lesson.articleContent
                   try {
@@ -729,7 +544,7 @@ axios
 
           if (MD_ENABLED) {
             // import translations
-            importTranslations(lesson)
+            await importTranslations(lesson, TRANSLATION_LANGUAGE)
             // convert to MD
             console.log(`Converting "${lesson.name}" to MD`)
             try {
@@ -806,6 +621,7 @@ axios
             }
           }
         })
+      return
     })
     await axios.all(promiseArray).then(async () => {
       if (LESSON_NOTION_ID) {
@@ -837,7 +653,10 @@ export default LESSONS
       console.log(
         `export done -> check syntax & typing errors in src/constants/${LESSON_FILENAME}.ts`
       )
+      return
     })
+    console.log('import content done!')
+    process.exit()
   })
   .catch((error) => {
     console.error(error)

@@ -7,6 +7,12 @@ const axios = require('axios');
 const fs = require('fs');
 const fsPromises = require('fs').promises;
 const crc32 = require('js-crc').crc32;
+const { Client } = require("@notionhq/client")
+const { NotionToMarkdown } = require("notion-to-md")
+
+const {
+  LESSON_SPLITTER,
+} = require('./config.js')
 
 /**
  * Slugify a string
@@ -98,10 +104,157 @@ const writeFile = async (filePath, data) => {
   }
 };
 
+const importTranslations = async (lesson, TRANSLATION_LANGUAGE) => {
+  if (!TRANSLATION_LANGUAGE) return
+  for (const language of lesson.languages) {
+    if (language === TRANSLATION_LANGUAGE || TRANSLATION_LANGUAGE === 'all') {
+      console.log('import translation:', language)
+      try {
+        const random = Math.floor(Math.random() * 100000)
+        const crowdinFile = `https://raw.githubusercontent.com/bankless-academy/bankless-academy/l10n_main/translation/lesson/${language}/${lesson.slug}.md?${random}`
+        // console.log(crowdinFile)
+        const crowdin = await axios.get(crowdinFile)
+        // console.log(crowdin)
+        if (crowdin.status === 200) {
+          // const newTranslation = crowdin.data.replace(/LAST UPDATED\: (.*?)\n/, `LAST_UPDATED\n`)
+          const newTranslation = crowdin.data
+            // fix Crowdin bug
+            .replace(`***
+
+#`, `---
+
+#`)
+          const [, title, description] = crowdin.data.match(/---\nTITLE:\s(.*?)\nDESCRIPTION:\s(.*?)\n/)
+          // console.log('title', title)
+          // console.log('description', description)
+          const lessonInfoPath = `translation/website/${language}/lesson.json`
+          const lessonInfo = fs.existsSync(lessonInfoPath) ? await fsPromises.readFile(lessonInfoPath, 'utf8') : '{}';
+          const translationInfo = {}
+          translationInfo[lesson.name] = title
+          translationInfo[lesson.description] = description
+          // console.log('translationInfo', translationInfo)
+          const jsonLessonInfo = { ...JSON.parse(lessonInfo), ...translationInfo }
+          // console.log('jsonLessonInfo', jsonLessonInfo)
+          await writeFile(lessonInfoPath, jsonLessonInfo)
+          // console.log(newTranslation)
+          const lessonPath = `translation/lesson/${language}/${lesson.slug}.md`
+          const existingTranslation = fs.existsSync(lessonPath) ? await fsPromises.readFile(lessonPath, 'utf8') : ''
+          // console.log(existingTranslation)
+          // check if translation has been modified
+          if (newTranslation.trim() !== existingTranslation.trim()) {
+            console.log('- new translation available')
+            await writeFile(lessonPath, newTranslation)
+          } else {
+            console.log('- same same')
+          }
+        }
+      } catch (error) {
+
+        console.log(`- ${language} not available yet`)
+      }
+    }
+  }
+}
+
+// const PROTOCOL_VERSION = "0.01"
+// LAST UPDATED: ${new Date().toLocaleDateString('en-GB')}
+// PROTOCOL VERSION: ${PROTOCOL_VERSION}
+
+const mdHeader = (lesson, format) => `---
+TITLE: ${lesson.name}
+DESCRIPTION: ${lesson.description}
+LANGUAGE: English
+WRITERS: ${lesson.lessonWriters || ''}
+TRANSLATORS: X
+LINK: https://app.banklessacademy.com/lessons/${lesson.slug}
+FORMAT: ${format}
+---
+
+\`\`\`
+__________________________________________________________________________________________________________________________________________________________
+
+$$$$$$$\\                      $$\\       $$\\                                      $$$$$$\\                           $$\\                                   
+$$  __$$\\                     $$ |      $$ |                                    $$  __$$\\                          $$ |                                  
+$$ |  $$ | $$$$$$\\  $$$$$$$\\  $$ |  $$\\ $$ | $$$$$$\\   $$$$$$$\\  $$$$$$$\\       $$ /  $$ | $$$$$$$\\ $$$$$$\\   $$$$$$$ | $$$$$$\\  $$$$$$\\$$$$\\  $$\\   $$\\ 
+$$$$$$$\\ | \\____$$\\ $$  __$$\\ $$ | $$  |$$ |$$  __$$\\ $$  _____|$$  _____|      $$$$$$$$ |$$  _____|\\____$$\\ $$  __$$ |$$  __$$\\ $$  _$$  _$$\\ $$ |  $$ |
+$$  __$$\\  $$$$$$$ |$$ |  $$ |$$$$$$  / $$ |$$$$$$$$ |\\$$$$$$\\  \\$$$$$$\\        $$  __$$ |$$ /      $$$$$$$ |$$ /  $$ |$$$$$$$$ |$$ / $$ / $$ |$$ |  $$ |
+$$ |  $$ |$$  __$$ |$$ |  $$ |$$  _$$<  $$ |$$   ____| \\____$$\\  \\____$$\\       $$ |  $$ |$$ |     $$  __$$ |$$ |  $$ |$$   ____|$$ | $$ | $$ |$$ |  $$ |
+$$$$$$$  |\\$$$$$$$ |$$ |  $$ |$$ | \\$$\\ $$ |\\$$$$$$$\\ $$$$$$$  |$$$$$$$  |      $$ |  $$ |\\$$$$$$$\\\\$$$$$$$ |\\$$$$$$$ |\\$$$$$$$\\ $$ | $$ | $$ |\\$$$$$$$ |
+\\_______/  \\_______|\\__|  \\__|\\__|  \\__|\\__| \\_______|\\_______/ \\_______/       \\__|  \\__| \\_______|\\_______| \\_______| \\_______|\\__| \\__| \\__| \\____$$ |
+                                                                                                                                               $$\\   $$ |
+PORTABLE LESSON DATADISK COLLECTION                                                                                                            \\$$$$$$  |
+                                                                                                                                                \\______/
+__________________________________________________________________________________________________________________________________________________________
+${LESSON_SPLITTER}
+`
+
+const placeholder = async (lesson, size, image_name) => {
+  const placeholder_link = `https://placehold.co/${size}/4b4665/FFFFFF/png?text=${lesson.name.replaceAll(' ', '+')}`
+  return await getImagePath(placeholder_link, lesson.slug, image_name)
+}
+
+const notion = new Client({
+  auth: process.env.NOTION_SECRET,
+})
+
+const n2m = new NotionToMarkdown({ notionClient: notion })
+
+// types of blocs to ignore
+// BlockType https://github.com/souvikinator/notion-to-md/blob/master/src/types/index.ts
+const blockTypesToIgnore = [
+  // "image",
+  "video",
+  "file",
+  "pdf",
+  "table",
+  "bookmark",
+  // "embed",
+  "equation",
+  // "divider",
+  "toggle",
+  // "to_do",
+  "synced_block",
+  "column_list",
+  "column",
+  "link_preview",
+  // "link_to_page",
+  // "paragraph",
+  // "heading_1",
+  // "heading_2",
+  "heading_3",
+  // "bulleted_list_item",
+  // "numbered_list_item",
+  // "quote",
+  "template",
+  "child_page",
+  "child_database",
+  "code",
+  "callout",
+  "breadcrumb",
+  "table_of_contents",
+  "audio",
+  "unsupported"
+]
+for (const blockType of blockTypesToIgnore) {
+  n2m.setCustomTransformer(blockType, async () => {
+    return ""
+  })
+}
+
+n2m.setCustomTransformer("image", async (b) => {
+  // console.log(b)
+  return `![](https://www.notion.so/image/${encodeURIComponent(b?.image?.file?.url?.split('?')[0].replace('https://s3.', 'https://s3-'))}?table=block&id=${b?.id})`
+})
+
 module.exports = {
   slugify,
   downloadImage,
   getImagePath,
   extractKeywords,
   writeFile,
+  importTranslations,
+  LESSON_SPLITTER,
+  mdHeader,
+  placeholder,
+  n2m,
 };
