@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import styled from '@emotion/styled'
 
 import { LanguageType, LessonType } from 'entities/lesson'
-import { Mixpanel } from 'utils'
+import { Mixpanel } from 'utils/index'
 import { LanguageDescription } from 'constants/index'
 import InternalLink from 'components/InternalLink'
 

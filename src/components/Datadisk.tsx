@@ -3,7 +3,7 @@ import { isMobile } from 'react-device-detect'
 
 import { LessonType } from 'entities/lesson'
 
-const Collectible = ({ lesson }: { lesson: LessonType }): JSX.Element => {
+const Datadisk = ({ lesson }: { lesson: LessonType }): JSX.Element => {
   return (
     <Box>
       {isMobile ? (
@@ -20,4 +20,4 @@ const Collectible = ({ lesson }: { lesson: LessonType }): JSX.Element => {
   )
 }
 
-export default Collectible
+export default Datadisk

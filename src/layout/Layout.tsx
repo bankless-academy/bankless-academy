@@ -109,7 +109,7 @@ const Layout = ({
   const [isSmallScreen] = useSmallScreen()
   const { scrollY } = useWindowScrollPositions()
   const username = address
-    ? address in nameCache
+    ? address in nameCache && nameCache[address].name?.includes('.eth')
       ? nameCache[address].name
       : address
     : ''

@@ -12,7 +12,7 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
-import { useSwitchNetwork, useNetwork, useAccount } from 'wagmi'
+import { useSwitchChain, useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
 
 import { NETWORKS, SUPPORTED_NETWORKS_IDS } from 'constants/networks'
@@ -27,7 +27,7 @@ const CircleIcon = (props) => (
   </Icon>
 )
 
-const SwitchNetworkButton = ({
+const switchChainButton = ({
   isSmallScreen,
 }: {
   isSmallScreen: boolean
@@ -36,9 +36,8 @@ const SwitchNetworkButton = ({
   const toast = useToast()
   const [currentNetwork, setCurrentNetwork] = useState(NETWORKS.mainnet)
   const [isNetworkUnknown, setIsNetworkUnknown] = useState(false)
-  const { isConnected } = useAccount()
-  const { switchNetwork } = useSwitchNetwork()
-  const { chain } = useNetwork()
+  const { isConnected, chain } = useAccount()
+  const { switchChain } = useSwitchChain()
 
   useEffect(() => {
     if (chain?.id) {
@@ -119,7 +118,8 @@ const SwitchNetworkButton = ({
                   minH="40px"
                   onClick={() => {
                     try {
-                      if (isConnected) switchNetwork(NETWORKS[network].chainId)
+                      if (isConnected)
+                        switchChain({ chainId: NETWORKS[network].chainId })
                     } catch (error) {
                       toast.closeAll()
                       toast({
@@ -162,4 +162,4 @@ const SwitchNetworkButton = ({
   )
 }
 
-export default SwitchNetworkButton
+export default switchChainButton

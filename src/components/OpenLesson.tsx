@@ -4,7 +4,7 @@ import { useLocalStorage } from 'usehooks-ts'
 
 import Disclaimer from 'components/Disclaimer'
 import { LessonType } from 'entities/lesson'
-import { openLesson } from 'components/CollectLessonButton'
+import { openLesson } from 'utils/index'
 import { useAccount } from 'wagmi'
 
 const OpenLesson = ({

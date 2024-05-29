@@ -15,7 +15,7 @@ import { ALLOWED_PLATFORMS, STAMP_PLATFORMS } from "constants/passport"
 import { TABLE, TABLES, db } from "utils/db"
 import { trackBE } from "utils/mixpanel"
 import { gql } from "graphql-request"
-import { graphQLClient } from "utils/airstack"
+import { airstackGraphQLClient } from "utils/airstack"
 
 export const VERSION = "v0.0.0";
 
@@ -209,7 +209,7 @@ export default async function handler(
         }
       }`
       try {
-        const data: any = await graphQLClient.request(query)
+        const data: any = await airstackGraphQLClient.request(query)
         console.log(data)
         if (data?.Socials?.Social?.length) {
           const fid = data?.Socials?.Social[0].userId

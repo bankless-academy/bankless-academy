@@ -13,7 +13,7 @@ import {
   REQUIRED_PASSPORT_SCORE,
 } from 'constants/passport'
 import { theme } from 'theme/index'
-import { api, shortenAddress } from 'utils'
+import { api, shortenAddress } from 'utils/index'
 
 const PassportComponent = ({
   displayStamps,

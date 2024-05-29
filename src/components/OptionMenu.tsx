@@ -9,7 +9,7 @@ import {
   Box,
   Image,
 } from '@chakra-ui/react'
-import { Mixpanel } from 'utils'
+import { Mixpanel } from 'utils/index'
 import { useTranslation } from 'react-i18next'
 import { Bug, Gear } from '@phosphor-icons/react'
 
@@ -33,7 +33,7 @@ const OptionMenu = ({
     onClose: onCloseAppModal,
   } = useDisclosure()
 
-  const twitterLink = `https://twitter.com/intent/follow?screen_name=${TWITTER_ACCOUNT}`
+  const twitterLink = `https://x.com/intent/follow?screen_name=${TWITTER_ACCOUNT}`
 
   return (
     <Box zIndex="10">

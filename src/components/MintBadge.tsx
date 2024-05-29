@@ -14,24 +14,21 @@ import {
 } from '@chakra-ui/react'
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
-import { useAccount } from 'wagmi'
-import { signMessage, waitForTransaction } from '@wagmi/core'
+import { useAccount, useWaitForTransactionReceipt } from 'wagmi'
+import { signMessage } from '@wagmi/core'
 import { Gear, SealCheck, ShootingStar } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
+import { wagmiConfig } from 'utils/wagmi'
+import { polygon } from 'viem/chains'
 
 import ExternalLink from 'components/ExternalLink'
 import { WALLET_SIGNATURE_MESSAGE } from 'constants/index'
-import {
-  BADGE_OPENSEA_URL,
-  BADGE_CHAIN_ID,
-  BADGE_EXPLORER,
-} from 'constants/badges'
+import { BADGE_EXPLORER } from 'constants/badges'
 import { EMPTY_PASSPORT } from 'constants/passport'
-import { api } from 'utils'
+import { api } from 'utils/index'
 import PassportModal from 'components/PassportModal'
 import Confetti from 'components/Confetti'
-// import { useSmallScreen } from 'hooks'
 
 const MintBadge = ({
   badgeId,
@@ -48,6 +45,7 @@ const MintBadge = ({
   // const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
   const [status, setStatus] = useState('')
   const [showConfetti, setShowConfetti] = useState(false)
+  const [hash, setHash] = useState('')
   // const [showPopover, setShowPopover] = useState(false)
   const [isMintingInProgress, setIsMintingInProgress] = useState(false)
   const [passportLS, setPassportLS] = useLocalStorage(
@@ -91,6 +89,82 @@ const MintBadge = ({
   //   }
   // }, [badgesMintedLS])
 
+  const { isLoading, isSuccess } = useWaitForTransactionReceipt({
+    chainId: polygon.id,
+    hash:
+      // DEV: simulate tx
+      // '0x5f746594b5570220b618a02b0010806b3b6a57ba4ea0670b386b3cdda088fd3e' ||
+      hash as any,
+    pollingInterval: 1_000,
+  })
+
+  useEffect(() => {
+    if (isLoading) {
+      toast.closeAll()
+      const txLink = `${BADGE_EXPLORER}tx/${hash}`
+      toast({
+        description: (
+          <>
+            <Box>
+              <Box display="flex">
+                <Box mr="4">
+                  <Gear width="40px" height="auto" />
+                </Box>
+                <Box flexDirection="column">
+                  <Box>{t('Minting in progress ...')}</Box>
+                  <ExternalLink
+                    underline="true"
+                    href={txLink}
+                    alt="Polyscan transaction link"
+                  >
+                    {`${txLink.substring(0, 50)}...`}
+                  </ExternalLink>
+                </Box>
+              </Box>
+            </Box>
+          </>
+        ),
+        status: 'warning',
+        duration: null,
+        isClosable: true,
+      })
+    }
+  }, [isLoading])
+
+  useEffect(() => {
+    if (isSuccess) {
+      const zerionLink = `https://app.zerion.io/nfts/polygon/0x3436d8af0b617deef5aadbafc56f293e102dd886:${badgeId}?address=${address}`
+      toast.closeAll()
+      setShowConfetti(true)
+      toast({
+        description: (
+          <>
+            <Box>
+              <Box display="flex">
+                <Box mr="4">
+                  <SealCheck width="40px" height="auto" />
+                </Box>
+                <Box flexDirection="column" alignSelf="center">
+                  <Box>{t('Badge successfully minted!')}</Box>
+                  <ExternalLink
+                    underline="true"
+                    href={zerionLink}
+                    alt="Lesson badge"
+                  >
+                    {`${zerionLink.substring(0, 50)}...`}
+                  </ExternalLink>
+                </Box>
+              </Box>
+            </Box>
+          </>
+        ),
+        status: 'success',
+        duration: 10000,
+        isClosable: true,
+      })
+    }
+  }, [isSuccess])
+
   useEffect(() => {
     if (address) {
       if (!passportLS.verified) checkPassport()
@@ -121,7 +195,8 @@ const MintBadge = ({
     try {
       const signature = simulate
         ? 'simulate_signature'
-        : await signMessage({
+        : await signMessage(wagmiConfig, {
+            account: address,
             message: WALLET_SIGNATURE_MESSAGE,
           })
       const bodyParameters = {
@@ -155,71 +230,7 @@ const MintBadge = ({
       let transactionComfirmed
       if (result && result.status === 200 && result.data.transactionHash) {
         console.log(result.data.transactionHash)
-        const txLink = `${BADGE_EXPLORER}tx/${result.data.transactionHash}`
-        toast.closeAll()
-        toast({
-          description: (
-            <>
-              <Box>
-                <Box display="flex">
-                  <Box mr="4">
-                    <Gear width="40px" height="auto" />
-                  </Box>
-                  <Box flexDirection="column">
-                    <Box>{t('Minting in progress ...')}</Box>
-                    <ExternalLink
-                      underline="true"
-                      href={txLink}
-                      alt="Polyscan transaction link"
-                    >
-                      {`${txLink.substring(0, 50)}...`}
-                    </ExternalLink>
-                  </Box>
-                </Box>
-              </Box>
-            </>
-          ),
-          status: 'warning',
-          duration: null,
-          isClosable: true,
-        })
-        transactionComfirmed = await waitForTransaction({
-          chainId: BADGE_CHAIN_ID,
-          hash: result.data.transactionHash,
-          timeout: 60_000, // 60 seconds
-        })
-        console.log(transactionComfirmed)
-        if (transactionComfirmed.status === 'success') {
-          const openSeaLink = `${BADGE_OPENSEA_URL}${badgeId}`
-          toast.closeAll()
-          setShowConfetti(true)
-          toast({
-            description: (
-              <>
-                <Box>
-                  <Box display="flex">
-                    <Box mr="4">
-                      <SealCheck width="40px" height="auto" />
-                    </Box>
-                    <Box flexDirection="column" alignSelf="center">
-                      <Box>{t('Badge successfully minted!')}</Box>
-                      <ExternalLink
-                        underline="true"
-                        href={openSeaLink}
-                        alt="Lesson badge"
-                      >
-                        {`${openSeaLink.substring(0, 50)}...`}
-                      </ExternalLink>
-                    </Box>
-                  </Box>
-                </Box>
-              </>
-            ),
-            status: 'success',
-            duration: 10000,
-            isClosable: true,
-          })
-        }
+        setHash(result.data.transactionHash)
       }
       // something went wrong while minting
       if (

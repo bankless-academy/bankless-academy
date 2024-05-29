@@ -18,12 +18,14 @@ import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
-import { useAccount, useNetwork, useSignMessage, useDisconnect } from 'wagmi'
-import { fetchEnsName, fetchEnsAvatar } from '@wagmi/core'
+import { useAccount, useSignMessage, useDisconnect } from 'wagmi'
+import { getEnsName, getEnsAvatar } from '@wagmi/core'
 import makeBlockie from 'ethereum-blockies-base64'
 import { SiweMessage } from 'siwe'
 import { useTranslation } from 'react-i18next'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
+import { mainnet } from '@wagmi/core/chains'
+import { normalize } from 'viem/ens'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -39,7 +41,8 @@ import {
   SIWE_ENABLED,
 } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
-import { getUD, getLensProfile, shortenAddress, api } from 'utils'
+import { getUD, shortenAddress, api } from 'utils/index'
+import { wagmiConfig } from 'utils/wagmi'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -66,11 +69,11 @@ const ConnectWalletButton = ({
   const { open } = useWeb3Modal()
   const { connector, isConnected } = useAccount()
   let { address } = useAccount()
+  const { chainId } = useAccount()
   const { query, asPath } = useRouter()
   const { simulate } = query
   if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
     address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
-  const { chain } = useNetwork()
   const [waitingForSIWE, setWaitingForSIWE] = useState(false)
   const [isDisconnecting, setIsDisconnecting] = useState(false)
   const { signMessageAsync } = useSignMessage()
@@ -91,19 +94,20 @@ const ConnectWalletButton = ({
     false
   )
   const { onOpen, onClose, isOpen } = useDisclosure()
-  const { disconnect } = useDisconnect({
-    onError(error) {
-      console.log('Error while disconnecting', error)
-    },
-    onSuccess() {
-      console.log('Disconnect success')
-      // HACK: mobile wallet disconnect issues
-      if (localStorage.getItem('wagmi.wallet').includes('walletConnect')) {
-        console.log('force reload')
-        location.reload()
-      }
-    },
-  })
+  const { disconnect } = useDisconnect()
+  // const { disconnect } = useDisconnect({
+  //   onError(error) {
+  //     console.log('Error while disconnecting', error)
+  //   },
+  //   onSuccess() {
+  //     console.log('Disconnect success')
+  //     // HACK: mobile wallet disconnect issues
+  //     if (localStorage.getItem('wagmi.wallet').includes('walletConnect')) {
+  //       console.log('force reload')
+  //       location.reload()
+  //     }
+  //   },
+  // })
 
   const isLessonPage = asPath.includes('/lessons')
   const isProfilePage = asPath.includes('/explorer/my-profile')
@@ -136,6 +140,7 @@ const ConnectWalletButton = ({
   }
 
   async function updateName(address) {
+    // console.log('updateName')
     let name = shortenAddress(address)
     let avatar = makeBlockie(address)
     const replaceName = (newName) => {
@@ -158,22 +163,28 @@ const ConnectWalletButton = ({
     const ensName =
       address.toLowerCase() === '0xb00e26e79352882391604e24b371a3f3c8658e8c'
         ? DEFAULT_ENS
-        : await fetchEnsName({
+        : await getEnsName(wagmiConfig, {
             address,
-            chainId: 1,
+            chainId: mainnet.id,
           })
+    // console.log(ensName)
     if (ensName) {
       setEns(ensName)
       replaceName(ensName)
-      const ensAvatar = await fetchEnsAvatar({
-        name: ensName,
-        chainId: 1,
+      const ensAvatar = await getEnsAvatar(wagmiConfig, {
+        name: normalize(ensName),
+        chainId: mainnet.id,
       })
+      // console.log(ensAvatar)
       if (ensAvatar) replaceAvatar(ensAvatar)
       if (ensName === DEFAULT_ENS) replaceAvatar(DEFAULT_AVATAR)
     } else {
       setEns('')
-      const lensProfile = await getLensProfile(address)
+      const { data: lensProfile } = await api(
+        `/api/lens?address=${address}`,
+        {}
+      )
+      console.log(lensProfile)
       if (lensProfile.name) {
         replaceName(lensProfile.name)
         if (lensProfile.avatar) {
@@ -260,7 +271,7 @@ const ConnectWalletButton = ({
   }, [])
 
   const signIn = async () => {
-    const chainId = chain?.id
+    // console.log('signIn')
     if (!chainId || waitingForSIWE || isDisconnecting) return
     const timeout = setTimeout(() => {
       console.log('SIWE timeout')
@@ -284,6 +295,7 @@ const ConnectWalletButton = ({
       })
       await new Promise((resolve) => setTimeout(resolve, 500))
       const signature = await signMessageAsync({
+        account: address,
         message: message.prepareMessage(),
       })
       clearTimeout(timeout)
@@ -320,7 +332,7 @@ const ConnectWalletButton = ({
 
   useEffect(() => {
     if (address && !SIWE_ENABLED) {
-      console.log(address)
+      console.log('loadAddress', address)
       loadAddress(address)
     }
   }, [address])

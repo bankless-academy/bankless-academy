@@ -12,6 +12,7 @@ import mixpanel, { Dict, Query } from 'mixpanel-browser'
 import { readContract } from '@wagmi/core'
 import axios from 'axios'
 import { Network as AlchemyNetwork, Alchemy } from "alchemy-sdk"
+import { mainnet, polygon } from 'viem/chains'
 
 import {
   ACTIVATE_MIXPANEL,
@@ -22,6 +23,7 @@ import {
   DOMAIN_URL,
   INFURA_KEY,
   MIRROR_ARTICLE_ADDRESSES,
+  TOKEN_GATING_ENABLED,
 } from 'constants/index'
 import { NETWORKS } from 'constants/networks'
 import UDPolygonABI from 'abis/UDPolygon.json'
@@ -29,7 +31,8 @@ import UDABI from 'abis/UD.json'
 import { LessonType } from 'entities/lesson'
 import { UserStatsType } from 'entities/user'
 import { gql } from 'graphql-request'
-import { graphQLClient } from 'utils/airstack'
+import { airstackGraphQLClient } from 'utils/airstack'
+import { wagmiConfig } from 'utils/wagmi'
 
 declare global {
   interface Window {
@@ -47,6 +50,10 @@ export const DEBUG: string = debugParam !== undefined ? debugParam : w
 export const IS_DEBUG = debugParam !== undefined && debugParam !== 'false'
 if (debugParam !== undefined) localStorage.setItem('debug', DEBUG)
 if (debugParam === 'false') localStorage.removeItem('debug')
+
+export const emailRegex =
+  // eslint-disable-next-line no-useless-escape
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 export function isAddress(value: any): string | false {
   try {
@@ -339,7 +346,7 @@ export async function validateOnchainQuest(
         }
       }`
       try {
-        const data = await graphQLClient.request(query)
+        const data = await airstackGraphQLClient.request(query)
         const networks = Object.keys(data)
         let balance = arbitrumBalance + optimismBalance + polygonBalance
         for (const network of networks) {
@@ -632,23 +639,30 @@ export async function getLensProfile(address: string): Promise<{
     avatar: null,
   }
   try {
-    const data =
-      '{"operationName":"DefaultProfile","variables":{},"query":"query DefaultProfile {\\n  defaultProfile(\\n    request: {ethereumAddress: \\"' +
-      address +
-      '\\"}\\n  ) {\\n    id\\n    handle\\n    picture {\\n      ... on NftImage {\\n        uri\\n      }\\n      ... on MediaSet {\\n        original {\\n          url\\n        }\\n      }\\n    }\\n  }\\n}\\n"}'
-    const config = {
-      headers: {
-        'content-type': 'application/json',
-      },
-    }
-    const r = await axios.post('https://api.lens.dev/', data, config)
-    const profile = r?.data?.data?.defaultProfile
-    res.name = profile?.handle
-    const picture =
-      profile?.picture?.uri || profile?.picture?.original?.url || null
-    res.avatar = picture?.includes('ipfs://')
-      ? `https://gateway.ipfscdn.io/ipfs/${picture?.replace('ipfs://', '')}`
-      : picture
+    const query = gql`query GetLensHandle {
+      Socials(
+        input: {filter: {dappName: {_eq: lens}, identity: {_eq: "${address}"}}, blockchain: ethereum}
+      ) {
+        Social {
+          profileName
+          isDefault
+          profileHandle
+          profileImageContentValue {
+            image {
+              small
+            }
+          }
+          profileImage
+        }
+      }
+    }`
+    const r: any = await airstackGraphQLClient.request(query)
+    const profile = r?.Socials?.Social?.[0]
+    console.log(profile)
+    const name = profile?.profileHandle
+    if (name?.startsWith('@'))
+      res.name = name?.replace("@", "") + '.lens'
+    res.avatar = profile?.profileImageContentValue?.image?.small
     return res
   } catch (error) {
     console.error(error)
@@ -659,17 +673,17 @@ export async function getLensProfile(address: string): Promise<{
 export async function getUD(address: string): Promise<string | null> {
   let res = null
   try {
-    const balanceOfUDPolygon: any = await readContract({
+    const balanceOfUDPolygon: any = await readContract(wagmiConfig, {
       address: '0xa9a6a3626993d487d2dbda3173cf58ca1a9d9e9f',
-      chainId: 137,
+      chainId: polygon.id,
       abi: UDPolygonABI,
       functionName: 'balanceOf',
       args: [address],
     })
     // console.log('balanceOfUDPolygon', parseInt(balanceOfUDPolygon))
-    const balanceOfUD: any = await readContract({
+    const balanceOfUD: any = await readContract(wagmiConfig, {
       address: '0x049aba7510f45ba5b64ea9e658e342f904db358d',
-      chainId: 1,
+      chainId: mainnet.id,
       abi: UDABI,
       functionName: 'balanceOf',
       args: [address],
@@ -741,7 +755,7 @@ export const getTokenBalance = async (network: AlchemyNetwork, ownerAddress: str
 }
 
 export const generateTwitterLink = (text: string, link: string) => {
-  return `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+  return `https://x.com/intent/tweet?text=${encodeURIComponent(
     `${text}
 `
   )}&url=${encodeURIComponent(link)}`
@@ -751,4 +765,44 @@ export const generateFarcasterLink = (text: string, link: string) => {
   return `https://warpcast.com/~/compose?text=${encodeURIComponent(
     text?.replace('@BanklessAcademy', '@banklessacademy')
   )}&embeds%5B%5D=${encodeURIComponent(link)}`
+}
+
+export const openLesson = async (
+  openedLesson: string,
+  lesson: LessonType,
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  toast: any,
+  address?: string
+): Promise<string> => {
+  if (TOKEN_GATING_ENABLED && lesson.nftGating) {
+    if (!address) {
+      toast.closeAll()
+      toast({
+        title: 'This is a token gated lesson',
+        description: 'Connect your wallet to access the lesson.',
+        status: 'warning',
+        duration: 20000,
+        isClosable: true,
+      })
+      return openedLesson
+    }
+    const hasNFT = await isHolderOfNFT(address, lesson.nftGating)
+    if (!hasNFT) {
+      toast.closeAll()
+      toast({
+        title: "You don't own the required NFT",
+        description: lesson?.nftGatingRequirements,
+        status: 'warning',
+        duration: 20000,
+        isClosable: true,
+      })
+      return openedLesson
+    }
+  }
+  const openedLessonArray = JSON.parse(openedLesson)
+  return JSON.stringify(
+    [...openedLessonArray, lesson.slug].filter(
+      (value, index, array) => array.indexOf(value) === index
+    )
+  )
 }

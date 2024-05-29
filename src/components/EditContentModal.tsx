@@ -12,7 +12,7 @@ import {
   Box,
 } from '@chakra-ui/react'
 import { NotePencil } from '@phosphor-icons/react'
-import { useSmallScreen } from 'hooks'
+import { useSmallScreen } from 'hooks/index'
 import { useTranslation } from 'react-i18next'
 
 import { LessonType, SlideType } from 'entities/lesson'
