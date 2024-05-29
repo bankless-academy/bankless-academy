@@ -8,6 +8,7 @@ import-content.js
 import-keywords.js
 import-modules.js
 import-poaps.js
+utils.js
 src/constants/lessons.ts
 src/constants/whitelabel_lessons.ts
 src/constants/whitelabel_modules.ts
