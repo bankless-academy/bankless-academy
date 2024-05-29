@@ -17,7 +17,7 @@ import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 
 import { theme } from 'theme/index'
 import { api, generateFarcasterLink, generateTwitterLink } from 'utils/index'
-import { useSmallScreen } from 'hooks'
+import { useSmallScreen } from 'hooks/index'
 import ExternalLink from 'components/ExternalLink'
 import { LESSONS } from 'constants/index'
 import { EMPTY_PASSPORT, STAMP_PLATFORMS } from 'constants/passport'

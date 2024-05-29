@@ -31,7 +31,7 @@ import Card from 'components/Card'
 import MintBadge from 'components/MintBadge'
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
-import { isHolderOfNFT, Mixpanel, scrollDown, scrollTop } from 'utils'
+import { isHolderOfNFT, Mixpanel, scrollDown, scrollTop } from 'utils/index'
 import {
   IS_PROD,
   IS_WHITELABEL,

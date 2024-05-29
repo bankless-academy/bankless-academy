@@ -9,7 +9,7 @@ import {
   Box,
   Image,
 } from '@chakra-ui/react'
-import { Mixpanel } from 'utils'
+import { Mixpanel } from 'utils/index'
 import { useTranslation } from 'react-i18next'
 import { Bug, Gear } from '@phosphor-icons/react'
 

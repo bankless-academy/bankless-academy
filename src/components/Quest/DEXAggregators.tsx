@@ -12,7 +12,7 @@ import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import ExternalLink from 'components/ExternalLink'
 import { theme } from 'theme/index'
 import { useSmallScreen } from 'hooks/index'
-import { api } from 'utils'
+import { api } from 'utils/index'
 
 const DEXAggregators = (
   account: string

@@ -1,7 +1,7 @@
 import { Box, Text } from '@chakra-ui/react'
 import { ReactNode } from 'react'
 import Helper from 'components/Helper'
-import { useSmallScreen } from 'hooks'
+import { useSmallScreen } from 'hooks/index'
 
 const ProgressTitle = ({
   title,

@@ -11,7 +11,7 @@ import Badge from 'components/Badge'
 import QuestComponent from 'components/Quest/QuestComponent'
 import MintDatadiskButton from 'components/MintDatadiskButton'
 import InternalLink from 'components/InternalLink'
-import { useSmallScreen } from 'hooks'
+import { useSmallScreen } from 'hooks/index'
 import LessonButton from 'components/LessonButton'
 import NFT from 'components/NFT'
 import ExternalLink from 'components/ExternalLink'
@@ -23,7 +23,7 @@ import {
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
 import { useEffect } from 'react'
-import { Mixpanel, scrollDown, scrollTop } from 'utils'
+import { Mixpanel, scrollDown, scrollTop } from 'utils/index'
 import OpenLesson from 'components/OpenLesson'
 import LanguageSwitch from 'components/LanguageSwitch'
 

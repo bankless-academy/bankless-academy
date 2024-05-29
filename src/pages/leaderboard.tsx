@@ -6,7 +6,7 @@ import { createColumnHelper } from '@tanstack/react-table'
 
 import { MetaData } from 'components/Head'
 import { DataTable } from 'components/DataTable'
-import { shortenAddress } from 'utils'
+import { shortenAddress } from 'utils/index'
 import InternalLink from 'components/InternalLink'
 import { useRouter } from 'next/router'
 import { STAMP_PLATFORMS } from 'constants/passport'

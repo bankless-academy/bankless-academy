@@ -11,7 +11,7 @@ import {
   ALCHEMY_KEY_BACKEND,
 } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_MINTER, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
-import { api, verifySignature } from 'utils'
+import { api, verifySignature } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
 

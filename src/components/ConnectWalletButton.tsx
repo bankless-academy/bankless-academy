@@ -41,7 +41,7 @@ import {
   SIWE_ENABLED,
 } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
-import { getUD, shortenAddress, api } from 'utils'
+import { getUD, shortenAddress, api } from 'utils/index'
 import { wagmiConfig } from 'utils/wagmi'
 
 const Overlay = styled(Box)`

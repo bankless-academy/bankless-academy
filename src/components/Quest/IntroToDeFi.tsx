@@ -3,7 +3,7 @@ import { Button, Box } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import { signMessage } from '@wagmi/core'
 
-import { track, verifySignature } from 'utils'
+import { track, verifySignature } from 'utils/index'
 import { theme } from 'theme/index'
 import { wagmiConfig } from 'utils/wagmi'
 
