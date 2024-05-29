@@ -4,7 +4,8 @@
 // utils.js
 
 const axios = require('axios');
-const fs = require('fs').promises;
+const fs = require('fs');
+const fsPromises = require('fs').promises;
 const crc32 = require('js-crc').crc32;
 
 /**
@@ -55,11 +56,11 @@ const getImagePath = async (imageLink, slug, imageName) => {
   const hash = crc32(fileName);
   const imageDir = `/images/${slug}`;
   const localImageDir = `public${imageDir}`;
-  await fs.mkdir(localImageDir, { recursive: true });
+  await fsPromises.mkdir(localImageDir, { recursive: true });
   const imagePath = `${imageDir}/${slugify(imageName)}-${hash}.${fileExtension}`;
   const localImagePath = `public${imagePath}`;
   try {
-    await fs.access(localImagePath);
+    await fsPromises.access(localImagePath);
   } catch (error) {
     await downloadImage(imageLink, localImagePath);
     console.log('Downloading image: ', localImagePath);
@@ -84,13 +85,13 @@ const extractKeywords = (content) => {
 
 /**
  * Write data to a file
- * @param {string} filePath - Path to the JSON file
- * @param {string} data - Data to write
+ * @param {string} filePath - Path to the file
+ * @param {Object|string} data - Data to write
  */
 const writeFile = async (filePath, data) => {
-  const dataToWrite = filePath?.endsWith('.json') ? JSON.stringify(data, null, 2) : data
+  const dataToWrite = filePath?.endsWith('.json') ? JSON.stringify(data, null, 2) : data;
   try {
-    await fs.writeFile(filePath, dataToWrite, 'utf8');
+    await fsPromises.writeFile(filePath, dataToWrite, 'utf8');
   } catch (error) {
     console.error(`Error writing file: ${error}`);
     throw error;

@@ -186,9 +186,9 @@ console.log('LESSON_NOTION_ID', LESSON_NOTION_ID)
 const TRANSLATION_LANGUAGE = program.opts().translate
 console.log('TRANSLATION_LANGUAGE', TRANSLATION_LANGUAGE)
 
-const placeholder = (lesson, size, image_name) => {
+const placeholder = async (lesson, size, image_name) => {
   const placeholder_link = `https://placehold.co/${size}/4b4665/FFFFFF/png?text=${lesson.name.replaceAll(' ', '+')}`
-  return getImagePath(placeholder_link, lesson.slug, image_name)
+  return await getImagePath(placeholder_link, lesson.slug, image_name)
 }
 
 const importTranslations = async (lesson) => {
@@ -386,13 +386,13 @@ axios
                 // TODO: save mirror images locally
 
                 if (lesson.lessonImageLink) {
-                  lesson.lessonImageLink = getImagePath(lesson.lessonImageLink, lesson.slug, 'lesson')
+                  lesson.lessonImageLink = await getImagePath(lesson.lessonImageLink, lesson.slug, 'lesson')
                 }
                 if (lesson.socialImageLink) {
-                  lesson.socialImageLink = getImagePath(lesson.socialImageLink, lesson.slug, 'social')
+                  lesson.socialImageLink = await getImagePath(lesson.socialImageLink, lesson.slug, 'social')
                 }
                 if (lesson.sponsorLogo) {
-                  lesson.sponsorLogo = getImagePath(lesson.sponsorLogo, lesson.slug, 'sponsor')
+                  lesson.sponsorLogo = await getImagePath(lesson.sponsorLogo, lesson.slug, 'sponsor')
                 }
 
                 lesson.imageLinks = []
@@ -428,7 +428,7 @@ axios
                       // console.log(local_image_path)
                       lesson.imageLinks.push(image_path)
                       if (!fs.existsSync(local_image_path)) {
-                        downloadImage(imageLink, local_image_path)
+                        await downloadImage(imageLink, local_image_path)
                         console.log('downloading image: ', local_image_path)
                       }
                       lessonContentMD = lessonContentMD.replaceAll(match[1], `https://app.banklessacademy.com${image_path}`)
@@ -517,19 +517,19 @@ axios
           }
 
           if (lesson.badgeImageLink) {
-            lesson.badgeImageLink = getImagePath(lesson.badgeImageLink, lesson.slug, 'badge')
-          } else lesson.badgeImageLink = placeholder(lesson, '600x600', 'badge')
+            lesson.badgeImageLink = await getImagePath(lesson.badgeImageLink, lesson.slug, 'badge')
+          } else lesson.badgeImageLink = await placeholder(lesson, '600x600', 'badge')
           if (lesson.lessonImageLink) {
-            lesson.lessonImageLink = getImagePath(lesson.lessonImageLink, lesson.slug, 'lesson')
-          } else lesson.lessonImageLink = placeholder(lesson, '1200x600', 'lesson')
+            lesson.lessonImageLink = await getImagePath(lesson.lessonImageLink, lesson.slug, 'lesson')
+          } else lesson.lessonImageLink = await placeholder(lesson, '1200x600', 'lesson')
           if (lesson.socialImageLink) {
-            lesson.socialImageLink = getImagePath(lesson.socialImageLink, lesson.slug, 'social')
-          } else lesson.socialImageLink = placeholder(lesson, '1200x600', 'social')
+            lesson.socialImageLink = await getImagePath(lesson.socialImageLink, lesson.slug, 'social')
+          } else lesson.socialImageLink = await placeholder(lesson, '1200x600', 'social')
           if (lesson.sponsorLogo) {
-            lesson.sponsorLogo = getImagePath(lesson.sponsorLogo, lesson.slug, 'sponsor')
+            lesson.sponsorLogo = await getImagePath(lesson.sponsorLogo, lesson.slug, 'sponsor')
           }
           if (lesson.nftGatingImageLink) {
-            lesson.nftGatingImageLink = getImagePath(lesson.nftGatingImageLink, lesson.slug, 'nft')
+            lesson.nftGatingImageLink = await getImagePath(lesson.nftGatingImageLink, lesson.slug, 'nft')
           }
           delete lesson.areMirrorNFTAllCollected
 
@@ -709,13 +709,13 @@ axios
 
           if (lesson.hasCollectible) {
             if (lesson.lessonCollectedImageLink) {
-              lesson.lessonCollectedImageLink = getImagePath(lesson.lessonCollectedImageLink, lesson.slug, 'datadisk-collected')
+              lesson.lessonCollectedImageLink = await getImagePath(lesson.lessonCollectedImageLink, lesson.slug, 'datadisk-collected')
             }
             if (lesson.lessonCollectibleGif) {
-              lesson.lessonCollectibleGif = getImagePath(lesson.lessonCollectibleGif, lesson.slug, 'datadisk-gif')
+              lesson.lessonCollectibleGif = await getImagePath(lesson.lessonCollectibleGif, lesson.slug, 'datadisk-gif')
             }
             if (lesson.lessonCollectibleVideo) {
-              lesson.lessonCollectibleVideo = getImagePath(lesson.lessonCollectibleVideo, lesson.slug, 'datadisk-video')
+              lesson.lessonCollectibleVideo = await getImagePath(lesson.lessonCollectibleVideo, lesson.slug, 'datadisk-video')
             }
           }
 
