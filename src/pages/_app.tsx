@@ -23,6 +23,7 @@ import { DEBUG } from 'utils/index'
 import NonSSRWrapper from 'components/NonSSRWrapper'
 import 'utils/translation'
 import { WALLET_CONNECT_PROJECT_ID, wagmiConfig } from 'utils/wagmi'
+import { siweConfig } from 'utils/siweConfig'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -78,6 +79,7 @@ const App = ({
     '--w3m-color-mix': '#B85FF1',
   }
   createWeb3Modal({
+    siweConfig,
     wagmiConfig,
     projectId: WALLET_CONNECT_PROJECT_ID,
     themeMode: 'dark',
