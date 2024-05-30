@@ -2,6 +2,8 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 import { formatEther } from 'viem'
+import { authOptions } from "pages/api/auth/[...nextauth]"
+import { getServerSession } from "next-auth/next"
 
 import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import {
@@ -19,12 +21,19 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<void> {
+  const session = await getServerSession(req, res, authOptions)
+  console.log(session)
+
   // check params + signature
   const { address, badgeId, embed, signature, referrer } = req.body
   // console.log(req)
   if (!address || !badgeId)
     return res.status(400).json({ error: 'Wrong params' })
 
+  if (!session || session.address !== address?.toLocaleLowerCase()) {
+    res.status(401).json({ message: "You must be logged in." })
+    return
+  }
 
   console.log('address: ', address)
   console.log('badgeId: ', badgeId)

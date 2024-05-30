@@ -1,4 +1,4 @@
-import NextAuth from "next-auth"
+import NextAuth, { NextAuthOptions } from "next-auth"
 import credentialsProvider from 'next-auth/providers/credentials'
 import {
   type SIWESession,
@@ -64,7 +64,7 @@ const providers = [
   })
 ]
 
-export default NextAuth({
+export const authOptions: NextAuthOptions = {
   // https://next-auth.js.org/configuration/providers/oauth
   secret: nextAuthSecret,
   providers,
@@ -86,4 +86,6 @@ export default NextAuth({
       return session
     }
   }
-})
+}
+
+export default NextAuth(authOptions)
