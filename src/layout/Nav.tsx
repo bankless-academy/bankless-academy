@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
 
-import ConnectWalletButton from 'components/ConnectWalletButton'
+// import ConnectWalletButton from 'components/ConnectWalletButton'
 import InternalLink from 'components/InternalLink'
 import OptionMenu from 'components/OptionMenu'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/index'
@@ -121,7 +121,8 @@ const Nav: React.FC = () => {
             {isConnected ? (
               <SwitchNetworkButton isSmallScreen={isSmallScreen} />
             ) : null}
-            <ConnectWalletButton isSmallScreen={isSmallScreen} />
+            {/* <ConnectWalletButton isSmallScreen={isSmallScreen} /> */}
+            <w3m-button />
             <OptionMenu
               isSmallScreen={isSmallScreen}
               isWebApp={webapp === 'true'}
