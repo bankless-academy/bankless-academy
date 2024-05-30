@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { getCsrfToken, signIn, signOut, getSession } from 'next-auth/react'
 import type {
   SIWEVerifyMessageArgs,
@@ -15,7 +16,7 @@ export const siweConfig = createSIWEConfig({
     statement: 'Please sign with your account',
   }),
   createMessage: ({ address, ...args }: SIWECreateMessageArgs) =>
-    formatMessage(args, address),
+    formatMessage({ ...args, iat: new Date().toISOString() }, address),
   getNonce: async () => {
     const nonce = await getCsrfToken()
     if (!nonce) {
@@ -25,14 +26,18 @@ export const siweConfig = createSIWEConfig({
     return nonce
   },
   getSession: async () => {
-    const session = await getSession()
-    if (!session) {
-      throw new Error('Failed to get session!')
+    try {
+      const session = await getSession()
+      if (!session) {
+        throw new Error('Failed to get session!')
+      }
+
+      const { address, chainId } = session as unknown as SIWESession
+
+      return { address, chainId }
+    } catch (error) {
+      console.log(error)
     }
-
-    const { address, chainId } = session as unknown as SIWESession
-
-    return { address, chainId }
   },
   verifyMessage: async ({ message, signature }: SIWEVerifyMessageArgs) => {
     try {
@@ -53,10 +58,15 @@ export const siweConfig = createSIWEConfig({
       await signOut({
         redirect: false,
       })
-
+      console.log('signOut')
       return true
     } catch (error) {
+      console.log(error)
       return false
     }
   },
+  onSignIn: () => {
+    console.log('onSignIn')
+  },
+  signOutOnNetworkChange: false,
 })

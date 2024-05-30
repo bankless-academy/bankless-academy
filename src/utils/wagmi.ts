@@ -29,7 +29,7 @@ export const wagmiConfig = defaultWagmiConfig({
   chains: chains as any,
   projectId: WALLET_CONNECT_PROJECT_ID,
   metadata,
-  ssr: true,
+  ssr: false,
   storage: createStorage({
     storage: cookieStorage
   }),

@@ -25,6 +25,7 @@ import { useTranslation } from 'react-i18next'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import { mainnet } from '@wagmi/core/chains'
 import { normalize } from 'viem/ens'
+import { useSession } from 'next-auth/react'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -89,6 +90,8 @@ const ConnectWalletButton = ({
   )
   const { onOpen, onClose, isOpen } = useDisclosure()
   const { disconnect } = useDisconnect()
+  // TODO: replace isConnected with status === 'authenticated' everywhere
+  const { status } = useSession()
 
   const isLessonPage = asPath.includes('/lessons')
   const isProfilePage = asPath.includes('/explorer/my-profile')
@@ -220,11 +223,11 @@ const ConnectWalletButton = ({
   }
 
   useEffect(() => {
-    if (address && isConnected) {
+    if (address && status === 'authenticated') {
       console.log('loadAddress', address)
       loadAddress(address)
     }
-  }, [address, isConnected])
+  }, [address, status])
 
   useEffect(() => {
     if (refreshBadgesLS) {
