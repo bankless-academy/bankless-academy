@@ -18,10 +18,9 @@ import { useLocalStorage } from 'usehooks-ts'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
-import { useAccount, useSignMessage, useDisconnect } from 'wagmi'
+import { useAccount, useDisconnect } from 'wagmi'
 import { getEnsName, getEnsAvatar } from '@wagmi/core'
 import makeBlockie from 'ethereum-blockies-base64'
-import { SiweMessage } from 'siwe'
 import { useTranslation } from 'react-i18next'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import { mainnet } from '@wagmi/core/chains'
@@ -38,7 +37,6 @@ import {
   DEFAULT_AVATAR,
   DEFAULT_ENS,
   IS_WALLET_DISABLED,
-  SIWE_ENABLED,
 } from 'constants/index'
 import { BADGE_IDS } from 'constants/badges'
 import { getUD, shortenAddress, api } from 'utils/index'
@@ -67,20 +65,16 @@ const ConnectWalletButton = ({
 }): React.ReactElement => {
   const { t } = useTranslation()
   const { open } = useWeb3Modal()
-  const { connector, isConnected } = useAccount()
+  const { isConnected } = useAccount()
   let { address } = useAccount()
-  const { chainId } = useAccount()
   const { query, asPath } = useRouter()
   const { simulate } = query
   if (simulate && asPath === '/explorer/web3explorer.eth?simulate=true')
     address = '0xb00e26e79352882391604e24b371a3f3c8658e8c'
-  const [waitingForSIWE, setWaitingForSIWE] = useState(false)
   const [isDisconnecting, setIsDisconnecting] = useState(false)
-  const { signMessageAsync } = useSignMessage()
   const [name, setName] = useState(null)
   const [avatar, setAvatar] = useState(null)
   const [, setBadges] = useState<number[]>([])
-  const [siwe, setSiweLS] = useLocalStorage('siwe', '')
   const [connectWalletPopupLS, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
@@ -95,29 +89,9 @@ const ConnectWalletButton = ({
   )
   const { onOpen, onClose, isOpen } = useDisclosure()
   const { disconnect } = useDisconnect()
-  // const { disconnect } = useDisconnect({
-  //   onError(error) {
-  //     console.log('Error while disconnecting', error)
-  //   },
-  //   onSuccess() {
-  //     console.log('Disconnect success')
-  //     // HACK: mobile wallet disconnect issues
-  //     if (localStorage.getItem('wagmi.wallet').includes('walletConnect')) {
-  //       console.log('force reload')
-  //       location.reload()
-  //     }
-  //   },
-  // })
 
   const isLessonPage = asPath.includes('/lessons')
   const isProfilePage = asPath.includes('/explorer/my-profile')
-
-  // const networkVersion =
-  //   typeof window !== 'undefined'
-  //     ? (window as any).ethereum?.networkVersion
-  //     : ''
-  // if (networkVersion === '137') setDefaultChain(polygon)
-  // if (networkVersion === '10') setDefaultChain(optimism)
 
   async function openModal() {
     await open({ view: 'Connect' })
@@ -125,13 +99,10 @@ const ConnectWalletButton = ({
 
   async function disconnectWallet() {
     try {
-      setWaitingForSIWE(false)
       setIsDisconnecting(true)
       onClose()
-      setSiweLS('')
       setName(null)
       setAvatar(null)
-      await fetch('/api/siwe/logout')
       setIsDisconnecting(false)
       disconnect()
     } catch (error) {
@@ -233,8 +204,6 @@ const ConnectWalletButton = ({
   }
 
   const loadAddress = (address) => {
-    setConnectWalletPopupLS(false)
-    onClose()
     if (localStorage.getItem('current_wallet') !== address?.toLowerCase()) {
       localStorage.removeItem('passport')
     }
@@ -250,92 +219,12 @@ const ConnectWalletButton = ({
     refreshBadges()
   }
 
-  const verify = async () => {
-    try {
-      const verifyRes = await api('/api/siwe/verify', JSON.parse(siwe))
-      if (verifyRes.data.ok) {
-        loadAddress(address)
-      } else {
-        console.error('pb SIWE signature')
-        disconnectWallet()
-      }
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
   useEffect(() => {
-    if (siwe?.length) {
-      verify()
-    }
-  }, [])
-
-  const signIn = async () => {
-    // console.log('signIn')
-    if (!chainId || waitingForSIWE || isDisconnecting) return
-    const timeout = setTimeout(() => {
-      console.log('SIWE timeout')
-      disconnectWallet()
-    }, 60000)
-    try {
-      setWaitingForSIWE(true)
-      const nonceRes = await fetch('/api/siwe/nonce')
-      const nonce = await nonceRes.text()
-
-      // Create SIWE message with pre-fetched nonce and sign with wallet
-      // https://wagmi.sh/examples/sign-in-with-ethereum
-      const message = new SiweMessage({
-        domain: window.location.host,
-        address,
-        statement: t('Sign in with Ethereum to the app.'),
-        uri: window.location.origin,
-        version: '1',
-        chainId,
-        nonce,
-      })
-      await new Promise((resolve) => setTimeout(resolve, 500))
-      const signature = await signMessageAsync({
-        account: address,
-        message: message.prepareMessage(),
-      })
-      clearTimeout(timeout)
-
-      // Verify signature
-      const siwe = { message, signature }
-      // TODO: use /me to get verified address
-      // const res = await fetch('/api/siwe/me')
-      // TODO: add support for multiple windows open
-      const verifyRes = await api('/api/siwe/verify', siwe)
-      // https://github.com/bankless-academy/bankless-academy/pull/90/commits/d130d22e70ad146b1e619133864d03a8bf4c3cb4#diff-caedf14611e4652b0b5f0287a5bc59621a76c1d0b41c544302d3c8c1a7641d22L107
-      if (!verifyRes.data.ok) throw new Error('Error verifying message')
-      setSiweLS(JSON.stringify(siwe))
-      loadAddress(address)
-      setWaitingForSIWE(false)
-    } catch (error) {
-      clearTimeout(timeout)
-      setWaitingForSIWE(false)
-      setName(null)
-      setAvatar(null)
-    }
-  }
-
-  useEffect(() => {
-    if (address && !SIWE_ENABLED) {
-      // DO nothing
-    } else {
-      const { message }: any = siwe?.length ? JSON.parse(siwe) : {}
-      if (connector && address && message?.address !== address) {
-        signIn()
-      }
-    }
-  }, [siwe, address, connector])
-
-  useEffect(() => {
-    if (address && !SIWE_ENABLED) {
+    if (address && isConnected) {
       console.log('loadAddress', address)
       loadAddress(address)
     }
-  }, [address])
+  }, [address, isConnected])
 
   useEffect(() => {
     if (refreshBadgesLS) {
@@ -348,7 +237,7 @@ const ConnectWalletButton = ({
 
   return (
     <>
-      {isConnected && !waitingForSIWE && name ? (
+      {isConnected && name ? (
         <Popover
           isOpen={isOpen}
           placement="bottom-end"
@@ -442,13 +331,9 @@ const ConnectWalletButton = ({
               onClick={openModal}
               size={isSmallScreen ? 'sm' : 'md'}
               leftIcon={<Wallet weight="bold" />}
-              isLoading={waitingForSIWE || isDisconnecting}
+              isLoading={isDisconnecting}
               loadingText={
-                isDisconnecting
-                  ? t('Disconnecting')
-                  : SIWE_ENABLED
-                  ? t('Sign In With Ethereum')
-                  : t('Connecting wallet')
+                isDisconnecting ? t('Disconnecting') : t('Connecting wallet')
               }
               zIndex={2}
               variant={isLessonPage || isProfilePage ? 'primary' : 'secondary'}
