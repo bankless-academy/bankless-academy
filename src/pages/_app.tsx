@@ -12,11 +12,11 @@ import { Box, Container, Heading, Image } from '@chakra-ui/react'
 // https://docs.walletconnect.com/2.0/web3modal/react/about
 import Router from 'next/router'
 import { useWeb3ModalState } from '@web3modal/wagmi/react'
-import Web3ModalProvider from 'context/index'
 import { SessionProvider } from 'next-auth/react'
 import type { Session } from 'next-auth'
 
 import Head, { MetaData } from 'components/Head'
+import Web3ModalProvider from 'context/index'
 import Layout from 'layout/index'
 import ThemeProvider from 'theme'
 import { DEBUG } from 'utils/index'
@@ -90,9 +90,9 @@ const App = ({
       <Head metadata={pageProps.pageMeta} />
       {!isMobile && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
-        <SessionProvider session={pageProps.session} refetchInterval={0}>
-          <NonSSRWrapper>
-            <Web3ModalProvider>
+        <Web3ModalProvider>
+          <SessionProvider session={pageProps.session} refetchInterval={0}>
+            <NonSSRWrapper>
               <>
                 <Global
                   styles={css`
@@ -240,11 +240,11 @@ const App = ({
                   )}
                 </Layout>
               </>
-            </Web3ModalProvider>
 
-            <Overlay hidden={!open} />
-          </NonSSRWrapper>
-        </SessionProvider>
+              <Overlay hidden={!open} />
+            </NonSSRWrapper>
+          </SessionProvider>
+        </Web3ModalProvider>
       </ThemeProvider>
     </>
   )
