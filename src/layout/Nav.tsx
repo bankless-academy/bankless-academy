@@ -8,7 +8,7 @@ import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
 import { useSession } from 'next-auth/react'
 
-import ConnectWalletButton from 'components/ConnectWalletButton'
+// import ConnectWalletButton from 'components/ConnectWalletButton'
 import InternalLink from 'components/InternalLink'
 import OptionMenu from 'components/OptionMenu'
 import SwitchNetworkButton from 'components/SwitchNetworkButton/index'
