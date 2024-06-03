@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
+import { useSession } from 'next-auth/react'
 
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import InternalLink from 'components/InternalLink'
@@ -26,6 +27,7 @@ const Nav: React.FC = () => {
   const { asPath } = useRouter()
   const { t } = useTranslation()
   const { isConnected } = useAccount()
+  const { status } = useSession()
   const [, setConnectWalletPopupLS] = useLocalStorage(
     `connectWalletPopup`,
     false
@@ -118,11 +120,11 @@ const Nav: React.FC = () => {
                 {isSmallScreen ? t('Lessons') : t('Explore Lessons')}
               </Button>
             </InternalLink>
-            {isConnected ? (
+            {isConnected && status === 'authenticated' ? (
               <SwitchNetworkButton isSmallScreen={isSmallScreen} />
             ) : null}
-            <ConnectWalletButton isSmallScreen={isSmallScreen} />
-            {/* <w3m-button /> */}
+            {/* <ConnectWalletButton isSmallScreen={isSmallScreen} /> */}
+            <w3m-button />
             <OptionMenu
               isSmallScreen={isSmallScreen}
               isWebApp={webapp === 'true'}
