@@ -41,6 +41,7 @@ export const wagmiConfig = defaultWagmiConfig({
     [optimism.id]: http(),
   },
   connectors: [injected(), walletConnect({
+    isNewChainsStale: false,
     projectId: WALLET_CONNECT_PROJECT_ID,
   }),],
 })

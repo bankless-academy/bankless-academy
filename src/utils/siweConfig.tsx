@@ -6,13 +6,15 @@ import type {
   SIWESession,
 } from '@web3modal/siwe'
 import { createSIWEConfig, formatMessage } from '@web3modal/siwe'
-import { mainnet } from 'viem/chains'
+import { mainnet, optimism, polygon } from 'viem/chains'
+
+// import { DOMAIN_URL_ } from 'constants/index'
 
 export const siweConfig = createSIWEConfig({
   getMessageParams: async () => ({
-    domain: typeof window !== 'undefined' ? window.location.host : '',
-    uri: typeof window !== 'undefined' ? window.location.origin : '',
-    chains: [mainnet.id],
+    domain: 'app.banklessacademy.com',
+    uri: 'https://app.banklessacademy.com',
+    chains: [mainnet.id, polygon.id, optimism.id],
     statement: 'Please sign with your account',
   }),
   createMessage: ({ address, ...args }: SIWECreateMessageArgs) =>
@@ -28,11 +30,14 @@ export const siweConfig = createSIWEConfig({
   getSession: async () => {
     try {
       const session = await getSession()
+      // console.log(session)
       if (!session) {
-        throw new Error('Failed to get session!')
+        console.log('Failed to get session!')
+        // throw new Error('Failed to get session!')
+        // return
       }
 
-      const { address, chainId } = session as unknown as SIWESession
+      const { address, chainId } = (session as unknown as SIWESession) || {}
 
       return { address, chainId }
     } catch (error) {
@@ -47,18 +52,20 @@ export const siweConfig = createSIWEConfig({
         signature,
         callbackUrl: '/protected',
       })
+      // console.log('success', success)
 
       return Boolean(success?.ok)
     } catch (error) {
+      console.log(error)
       return false
     }
   },
   signOut: async () => {
+    console.log('signOut')
     try {
       await signOut({
         redirect: false,
       })
-      console.log('signOut')
       return true
     } catch (error) {
       console.log(error)
