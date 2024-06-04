@@ -15,15 +15,11 @@ import {
 import axios from 'axios'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount, useWaitForTransactionReceipt } from 'wagmi'
-import { signMessage } from '@wagmi/core'
 import { Gear, SealCheck, ShootingStar } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
-import { useRouter } from 'next/router'
-import { wagmiConfig } from 'utils/wagmi'
 import { polygon } from 'viem/chains'
 
 import ExternalLink from 'components/ExternalLink'
-import { WALLET_SIGNATURE_MESSAGE } from 'constants/index'
 import { BADGE_EXPLORER } from 'constants/badges'
 import { EMPTY_PASSPORT } from 'constants/passport'
 import { api } from 'utils/index'
@@ -53,8 +49,6 @@ const MintBadge = ({
     EMPTY_PASSPORT
   )
   const [, setRefreshBadgesLS] = useLocalStorage('refreshBadges', false)
-  const { query } = useRouter()
-  const { simulate } = query
   // const {
   //   isOpen: isOpenPopOver,
   //   onOpen: onOpenPopOver,
@@ -193,16 +187,9 @@ const MintBadge = ({
     // TODO: add 1 min timeout
 
     try {
-      const signature = simulate
-        ? 'simulate_signature'
-        : await signMessage(wagmiConfig, {
-            account: address,
-            message: WALLET_SIGNATURE_MESSAGE,
-          })
       const bodyParameters = {
         address,
         badgeId,
-        signature: signature,
         referrer: localStorage.getItem('referrer'),
       }
       setIsMintingInProgress(true)
@@ -226,7 +213,7 @@ const MintBadge = ({
         duration: null,
         isClosable: true,
       })
-      const result = await api('/api/mint-badge', bodyParameters)
+      const result = await api('/api/auth/mint-badge', bodyParameters)
       let transactionComfirmed
       if (result && result.status === 200 && result.data.transactionHash) {
         console.log(result.data.transactionHash)
