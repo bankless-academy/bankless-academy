@@ -4,9 +4,11 @@ import Head from 'next/head'
 import bodyParser from 'body-parser'
 import { z } from 'zod'
 import { Box, Button } from '@chakra-ui/react'
+import { EAS, SchemaEncoder } from '@ethereum-attestation-service/eas-sdk'
 
 import { ImageData, Props } from 'pages/api/frame-og/[props]'
 import { DOMAIN_URL_, LESSONS } from 'constants/index'
+import { AlchemyProvider, ethers } from 'ethers'
 
 const questionSchema = z.object({
   question: z.string().min(1).max(100),
@@ -24,6 +26,7 @@ const schema = z.object({
   index: z.number(),
   score: z.number(),
   selected: z.number().nullable(),
+  likeAndRecast: z.number().nullable(),
 })
 
 export type Quiz = z.infer<typeof quizSchema>
@@ -31,6 +34,7 @@ export type Quiz = z.infer<typeof quizSchema>
 type State = z.infer<typeof schema>
 
 const CTA = 'Continue learning and mint your free lesson badge!'
+const MINT_SCORE = 'Mint score attestation on EAS'
 
 const VERSION = 2
 
@@ -173,10 +177,16 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
         correct: slide.quiz.rightAnswerNumber - 1,
       })
     }
+    if (quiz.questions.length > 1) break
   }
   console.log('quiz', quiz)
 
-  let state: z.infer<typeof schema> = { index: 0, score: 0, selected: null }
+  let state: z.infer<typeof schema> = {
+    index: 0,
+    score: 0,
+    selected: null,
+    likeAndRecast: null,
+  }
   try {
     state = StateData.parse(url.searchParams.get('state'))
   } catch (e) {
@@ -200,7 +210,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   }
 
   if (buttonIndex) {
-    state = game(quiz, state, buttonIndex)
+    state = await game(quiz, state, buttonIndex)
   }
 
   const { props, buttons } = render(quiz, state)
@@ -230,13 +240,12 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   }
 }
 
-function game(quiz: Quiz, state: State, action: number): State {
+async function game(quiz: Quiz, state: State, action: number): Promise<State> {
+  console.log(state)
+  console.log(quiz)
+  console.log(action)
   if (state.index === 0) {
     return { ...state, index: 1, selected: null }
-  }
-
-  if (state.index > quiz.questions.length) {
-    return { index: 0, selected: null, score: 0 }
   }
 
   if (state.selected == null) {
@@ -244,11 +253,111 @@ function game(quiz: Quiz, state: State, action: number): State {
   }
 
   let score = state.score
-  if (state.selected === quiz.questions[state.index - 1].correct) {
+  if (state.selected === quiz.questions[state.index - 1]?.correct) {
     score++
   }
 
-  return { index: state.index + 1, selected: null, score }
+  if (state.index === quiz.questions.length) {
+    // Mint score button (show like and recast)
+    const likeAndRecast = 0
+    return {
+      index: state.index + 1,
+      selected: action - 1,
+      score,
+      likeAndRecast,
+    }
+  }
+  if (state.index === quiz.questions.length + 1) {
+    // CTA
+    // TODO: get fid dynamically
+    const response = await fetch(
+      'https://api.neynar.com/v2/farcaster/reactions/user?fid=8709&type=all&limit=100',
+      {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          api_key: process.env.NEYNAR_API_KEY,
+        },
+      }
+    )
+    let likeAndRecast = 0
+    if (response.ok) {
+      // OK
+      const castHash = '0xe83279d057a4e8b47adb56137334ae1b45057499'
+      // TEST: missing recast
+      // const castHash = '0x6c6231af3252b128414fc526109f9f9ea6bfe67a'
+
+      const { reactions } = await response.json()
+      // console.log(reactions)
+      const liked = reactions.some(
+        (r) => r.reaction_type === 'like' && r.cast.hash === castHash
+      )
+      console.log('liked', liked)
+      const recasted = reactions.some(
+        (r) => r.reaction_type === 'recast' && r.cast.hash === castHash
+      )
+      console.log('recasted', recasted)
+      if (liked && recasted) {
+        likeAndRecast = 1
+        // Mint attestation
+        const easContractAddress = '0x4200000000000000000000000000000000000021'
+        const schemaUID =
+          '0x6cc06de66afccbec9f38baab556bdbe9db4ce9e677015a362dd5bb7cd160e5b7'
+        const eas = new EAS(easContractAddress)
+        // Signer must be an ethers-like signer.
+        const provider = new AlchemyProvider(
+          'base-sepolia',
+          process.env.ALCHEMY_KEY_EAS
+        )
+        const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider)
+        await eas.connect(signer)
+        // Initialize SchemaEncoder with the schema string
+        const schemaEncoder = new SchemaEncoder(
+          'string institutionName,string degreeName,uint64 graduationDate,bytes32 transcriptHash,address issuerAddress,string score'
+        )
+        const encodedData = schemaEncoder.encodeData([
+          {
+            name: 'institutionName',
+            value: 'Bankless Academy',
+            type: 'string',
+          },
+          { name: 'degreeName', value: quiz.name, type: 'string' },
+          { name: 'graduationDate', value: `${Date.now()}`, type: 'uint64' },
+          { name: 'transcriptHash', value: '', type: 'bytes32' },
+          {
+            name: 'issuerAddress',
+            value: '0xe1887fF140BfA9D3b45D0B2077b7471124acD242',
+            type: 'address',
+          },
+          {
+            name: 'score',
+            value: `${score}/${quiz.questions.length}`,
+            type: 'string',
+          },
+        ])
+        const tx = await eas.attest({
+          schema: schemaUID,
+          data: {
+            // TODO: get address dynamically
+            recipient: '0xBD19a3F0A9CaCE18513A1e2863d648D13975CB30',
+            expirationTime: 0 as any,
+            revocable: true, // Be aware that if your schema is not revocable, this MUST be false
+            data: encodedData,
+          },
+        })
+        const newAttestationUID = await tx.wait()
+        console.log('New attestation UID:', newAttestationUID)
+      }
+    }
+    return {
+      index: likeAndRecast ? state.index + 1 : state.index,
+      selected: action - 1,
+      score,
+      likeAndRecast,
+    }
+  }
+
+  return { index: state.index + 1, selected: null, score, likeAndRecast: null }
 }
 
 function render(
@@ -281,9 +390,10 @@ function render(
           type: 'result',
           win: state.score === quiz.questions.length,
           score: `${state.score}/${quiz.questions.length}`,
+          likeAndRecast: state.likeAndRecast > 0,
         },
       },
-      buttons: [CTA],
+      buttons: [state.likeAndRecast > 0 ? CTA : MINT_SCORE],
     }
   }
   if (state.selected == null) {

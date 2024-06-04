@@ -33,6 +33,7 @@ const schema = z.object({
       type: z.literal('result'),
       win: z.boolean(),
       score: z.string().optional(),
+      likeAndRecast: z.boolean(),
     }),
   ]),
 })
@@ -80,8 +81,14 @@ function Screen(props: Props) {
           tw="flex flex-col items-center text-center"
           style={{ fontSize: 50, color: 'white', marginTop: 20 }}
         >
-          <span>Learn more about this topic at</span>
-          <span style={{ color: '#FFBF00' }}>banklessacademy.com</span>
+          {props.state?.likeAndRecast ? (
+            <div tw="flex flex-col items-center text-center">
+              <span>Learn more about this topic at</span>
+              <span style={{ color: '#FFBF00' }}>banklessacademy.com</span>
+            </div>
+          ) : (
+            <span>Like and recast before minting your score.</span>
+          )}
         </div>
       </div>
     )
