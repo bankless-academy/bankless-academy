@@ -4,8 +4,7 @@ import { Contract } from '@ethersproject/contracts'
 import { getAddress } from '@ethersproject/address'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
 import * as ethUtil from 'ethereumjs-util'
-import { ethers } from 'ethers'
-import { verifyTypedData } from 'ethers/lib/utils'
+import { ethers, formatEther } from 'ethers'
 import { Network } from '@ethersproject/networks'
 import queryString from 'query-string'
 import mixpanel, { Dict, Query } from 'mixpanel-browser'
@@ -167,30 +166,30 @@ export function verifySignature(
   }
 }
 
-export async function getSignature(
-  library: Web3Provider,
-  address: string,
-  message: string
-): Promise<string> {
-  const signature = await library.send('personal_sign', [
-    ethers.utils.hexlify(ethers.utils.toUtf8Bytes(message)),
-    address.toLowerCase(),
-  ])
-  return signature
-}
+// export async function getSignature(
+//   library: Web3Provider,
+//   address: string,
+//   message: string
+// ): Promise<string> {
+//   const signature = await library.send('personal_sign', [
+//     ethers.utils.hexlify(ethers.utils.toUtf8Bytes(message)),
+//     address.toLowerCase(),
+//   ])
+//   return signature
+// }
 
-export const verifyTypedSignature = (
-  signature,
-  message,
-  address,
-  types,
-  domain
-): boolean => {
-  return (
-    verifyTypedData(domain, types, message, signature).toLowerCase() ===
-    address.toLowerCase()
-  )
-}
+// export const verifyTypedSignature = (
+//   signature,
+//   message,
+//   address,
+//   types,
+//   domain
+// ): boolean => {
+//   return (
+//     verifyTypedData(domain, types, message, signature).toLowerCase() ===
+//     address.toLowerCase()
+//   )
+// }
 
 export async function validateOnchainQuest(
   quest: string,
@@ -317,7 +316,7 @@ export async function validateOnchainQuest(
       }
       const provider = ethers.getDefaultProvider(optimism)
       const bigNumberBalance = await provider.getBalance(address.toLowerCase())
-      const balance = parseFloat(ethers.utils.formatEther(bigNumberBalance))
+      const balance = parseFloat(formatEther(bigNumberBalance))
       console.log('balance: ', balance)
       return balance >= 0.001
     }

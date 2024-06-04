@@ -13,7 +13,7 @@ import {
 import { BADGE_ADDRESS, BADGE_MINTER, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
 import { api, verifySignature } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
-import { ethers } from 'ethers'
+import { AlchemyProvider, ethers, parseUnits } from 'ethers'
 
 export default async function handler(
   req: NextApiRequest,
@@ -188,13 +188,13 @@ export default async function handler(
       const maxPriorityFeePerGasInGwei = estimation.blockPrices[0].estimatedPrices[1].maxPriorityFeePerGas || 40
       const options: any = {}
       if (IS_BADGE_PROD) {
-        options.maxFeePerGas = ethers.utils.parseUnits(
-          Math.ceil(maxFeePerGasInGwei) + '',
-          'gwei'
+        options.maxFeePerGas = parseUnits(
+          Math.ceil(maxFeePerGasInGwei).toString(),
+          "gwei"
         )
-        options.maxPriorityFeePerGas = ethers.utils.parseUnits(
-          Math.ceil(maxPriorityFeePerGasInGwei) + '',
-          'gwei'
+        options.maxPriorityFeePerGas = parseUnits(
+          Math.ceil(maxPriorityFeePerGasInGwei).toString(),
+          "gwei"
         )
       }
       console.log(options)
@@ -211,8 +211,11 @@ export default async function handler(
       console.log('mint !!!!!!!!!')
       // send email alert if balance < 1 MATIC
       // TODO: add alternate provider + handle timeout
-      const provider = new ethers.providers.AlchemyProvider(IS_BADGE_PROD ? 'matic' : 'maticmum', ALCHEMY_KEY_BACKEND)
-      const balance = formatEther((await provider.getBalance(BADGE_MINTER)).toBigInt())
+      const provider = new AlchemyProvider(
+        IS_BADGE_PROD ? "matic" : "maticmum",
+        ALCHEMY_KEY_BACKEND
+      )
+      const balance = formatEther(await provider.getBalance(BADGE_MINTER))
       console.log('balance: ', balance)
       if (parseInt(balance) < 1) {
         console.log('low balance')
