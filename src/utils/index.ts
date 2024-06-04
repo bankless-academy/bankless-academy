@@ -33,6 +33,7 @@ import { UserStatsType } from 'entities/user'
 import { gql } from 'graphql-request'
 import { airstackGraphQLClient } from 'utils/airstack'
 import { wagmiConfig } from 'utils/wagmi'
+import { Session } from 'next-auth'
 
 declare global {
   interface Window {
@@ -151,6 +152,13 @@ export function recoverPersonalSignature(sig: string, msg: string): string {
   const hash = hashPersonalMessage(msg)
   const signer = recoverPublicKey(sig, hash)
   return signer
+}
+
+export function isAuthenticated(
+  session: Session,
+  address: string,
+): boolean {
+  return session && session?.address && session.address?.toLocaleLowerCase() === address?.toLocaleLowerCase()
 }
 
 export function verifySignature(

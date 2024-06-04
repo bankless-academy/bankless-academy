@@ -9,11 +9,10 @@ import { db, TABLE, TABLES, getUserId } from 'utils/db'
 import {
   LESSONS,
   GENERIC_ERROR_MESSAGE,
-  WALLET_SIGNATURE_MESSAGE,
   ALCHEMY_KEY_BACKEND,
 } from 'constants/index'
 import { BADGE_ADDRESS, BADGE_MINTER, BADGES_ALLOWED_SIGNERS, IS_BADGE_PROD } from 'constants/badges'
-import { api, verifySignature } from 'utils/index'
+import { api, isAuthenticated } from 'utils/index'
 import { trackBE } from 'utils/mixpanel'
 import { ethers } from 'ethers'
 
@@ -22,31 +21,24 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   const session = await getServerSession(req, res, authOptions)
-  console.log(session)
+  console.log('getServerSession', session)
 
-  // check params + signature
-  const { address, badgeId, embed, signature, referrer } = req.body
+  const DEV_SECRET = process.env.DEV_SECRET
+  const param =
+    DEV_SECRET && req.query?.dev === DEV_SECRET ? req.query : req.body
+  if (req.query?.dev) param.badgeId = parseInt(param?.badgeId, 10)
+  // check params
+  const { address, badgeId, embed, referrer } = param
   // console.log(req)
   if (!address || !badgeId)
     return res.status(400).json({ error: 'Wrong params' })
 
-  if (!session || session.address !== address?.toLocaleLowerCase()) {
-    res.status(401).json({ message: "You must be logged in." })
-    return
+  if (!isAuthenticated(session, address)) {
+    return res.status(403).json({ error: "You must be authenticated." })
   }
 
   console.log('address: ', address)
   console.log('badgeId: ', badgeId)
-  console.log('signature: ', signature)
-
-  if (!signature)
-    return res.status(400).json({ error: 'Missing wallet signature' })
-
-  if (!verifySignature(address, signature, WALLET_SIGNATURE_MESSAGE))
-    return res.status(403).json({ error: 'Wrong signature' })
-
-  const message = { tokenId: badgeId }
-  console.log('message: ', message)
 
   try {
     const userId = await getUserId(address, embed)
