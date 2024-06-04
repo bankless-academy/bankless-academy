@@ -58,6 +58,7 @@ const providers = [
 
         return null
       } catch (e) {
+        console.error(e)
         return null
       }
     }
@@ -84,7 +85,12 @@ export const authOptions: NextAuthOptions = {
       }
 
       return session
-    }
+    },
+    // redirect({ url, baseUrl }) {
+    //   console.log('url', url)
+    //   console.log('baseUrl', baseUrl)
+    //   return baseUrl
+    // },
   }
 }
 
