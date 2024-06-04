@@ -25,7 +25,7 @@ import { useTranslation } from 'react-i18next'
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import { mainnet } from '@wagmi/core/chains'
 import { normalize } from 'viem/ens'
-import { useSession, signOut } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 
 // TEMP: fix https://github.com/chakra-ui/chakra-ui/issues/5896
 import { PopoverTrigger as OrigPopoverTrigger } from '@chakra-ui/react'
@@ -107,7 +107,7 @@ const ConnectWalletButton = ({
       setAvatar(null)
       setIsDisconnecting(false)
       disconnect()
-      if (status === 'authenticated') signOut({ redirect: false })
+      // if (status === 'authenticated') signOut({ redirect: false })
     } catch (error) {
       console.error(error)
     }

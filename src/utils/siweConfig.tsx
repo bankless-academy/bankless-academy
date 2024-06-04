@@ -32,12 +32,10 @@ export const siweConfig = createSIWEConfig({
       const session = await getSession()
       // console.log(session)
       if (!session) {
-        console.log('Failed to get session!')
-        // throw new Error('Failed to get session!')
-        // return
+        throw new Error('Failed to get session!')
       }
 
-      const { address, chainId } = (session as unknown as SIWESession) || {}
+      const { address, chainId } = session as unknown as SIWESession
 
       return { address, chainId }
     } catch (error) {
