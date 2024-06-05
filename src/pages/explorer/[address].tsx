@@ -222,6 +222,8 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
     console.log('reset referrer')
   }
 
+  const referrals = user?.stats?.referrals?.length || 0
+
   if (user)
     // TODO: create Profile component
     return (
@@ -344,6 +346,22 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 </Box>
               )
             )}
+            {(isMyProfile || referrals > 0) && (
+              <Box
+                fontSize="3xl"
+                fontWeight="bold"
+                m="auto"
+                textAlign="center"
+                pb="8"
+              >
+                Referrals
+                {referrals
+                  ? `: onboarded ${referrals} Explorer${
+                      referrals > 1 ? `s` : ''
+                    }`
+                  : ''}
+              </Box>
+            )}
             {isMyProfile && (
               <Box justifyContent="center" w="256px" m="auto" mb="8">
                 <Box pb="2">
@@ -383,8 +401,8 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                   isActive={hasCopied}
                 >
                   {hasCopied
-                    ? t('Profile Link Copied')
-                    : t('Copy Profile Link')}
+                    ? t('Referral Link Copied')
+                    : t('Copy Referral Link')}
                 </Button>
               </Box>
             )}
