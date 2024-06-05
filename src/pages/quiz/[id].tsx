@@ -346,6 +346,9 @@ async function game(quiz: Quiz, state: State, action: number): Promise<State> {
           },
         })
         const newAttestationUID = await tx.wait()
+        // TODO: display attestation
+        // https://base-sepolia.easscan.org/attestation/view/0x1d99e54b4a73dcd502d9fe0a43f7533be5395b48b2983d014544dee2e4619ad1
+        // https://base-sepolia.easscan.org/attestation/preview/0x1d99e54b4a73dcd502d9fe0a43f7533be5395b48b2983d014544dee2e4619ad1.png
         console.log('New attestation UID:', newAttestationUID)
       }
     }
