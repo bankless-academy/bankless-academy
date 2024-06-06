@@ -3,10 +3,24 @@ import { useEffect, useState } from 'react'
 import { Container, Heading, Box, Image, Text } from '@chakra-ui/react'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
+import { GetStaticProps } from 'next'
 
+import { MetaData } from 'components/Head'
 import { UserType } from 'entities/user'
 import Card from 'components/Card'
 import { DEFAULT_AVATAR } from 'constants/index'
+
+const pageMeta: MetaData = {
+  title: 'My profile',
+  description: 'My Explorer profile',
+  noindex: true,
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: { pageMeta },
+  }
+}
 
 export default function Page() {
   const [error, setError] = useState('')
