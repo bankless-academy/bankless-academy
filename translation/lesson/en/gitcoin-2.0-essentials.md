@@ -31,19 +31,19 @@ ________________________________________________________________________________
 
 Welcome to the revolution in capital allocation 💰
 
-In this lesson, we explore the **Gitcoin 2.0 whitepaper** to discover innovative approaches to public goods funding and Ethereum ecosystem growth.
+In this lesson, we explore the **Gitcoin 2.0 whitepaper** to discover innovative approaches to public goods funding and growth, in the Ethereum ecosystem.
 
 Having surpassed **$60 million in funding distributed**, Gitcoin is at the forefront of a movement towards more democratic, efficient, and transparent capital allocation in web3.
 
-Anyone can check out the [whitepaper](https://www.gitcoin.co/whitepaper/read) for an in-depth look at how Gitcoin is refining capital allocation with `Allo Protocol`.
+The publication of the [whitepaper](https://www.gitcoin.co/whitepaper/read) marks a pivotal moment in its history and provides an in-depth look at how its infrastructure, and the implementation of `Allo Protocol`, is helping steward its mission. For reference at any time during this journey, you can read the document [here](https://www.gitcoin.co/whitepaper/read).
 
-Thank you to the curators of this lesson, Ornella, Didier & Tetranome from Bankless Academy, and the core contributors at Gitcoin.
+Thank you to contributors at Gitcoin and Bankless Academy for the curation of this lesson. Its goal is to provide a fun, unique, and web3 way of learning about Gitcoin in its new stage, **Gitcoin 2.0.** Ready? Let’s dive in.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/whitepaper-lesson-gitcoin-grants-growth-3e78d2ef.png)
 
 # Introduction to Quadratic Funding
 
-If you’re here you may know already, but here’s a refresher.
+If you’re here you may already know what the title means, but here’s a refresher.
 
 `Quadratic Funding` (QF) originated from the ideas of Glenn Weyl and Vitalik Buterin. It's a mechanism designed to allocate funds in a fair and democratic manner by leveraging matching funds to **amplify the impact** of small individual contributions.
 
@@ -60,6 +60,8 @@ As of January 2024, **19 grants rounds** have been run by Gitcoin, disbursing fu
 Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone for the open source Ethereum community.
 
 Prior to GG20, as referenced by the Open Source Observer Impact Analysis, Gitcoin distributed **$8.4M to ~2500 applicants** through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.
+
+Source: Open Source Observer Impact Analysis
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-fe71e17f.png)
 
@@ -86,9 +88,9 @@ What funding mechanism is designed to democratically allocate funds by amplifyin
 
 Gitcoin 1.0 was used by many top leaders in the space including Ethereum founder **Vitalik Buterin** and by major protocols like WalletConnect, Uniswap, Yearn, and 1inch.
 
-Since its inception in 2017, this first version of Gitcoin primarily focused on hackathons and bounties, followed by Quadratic Funding powered grants.
+Since its inception in 2017, this first version of Gitcoin primarily focused on hackathons and bounties, followed by Quadratic Funding  (QF) powered grants.
 
-The recent upgrade to Gitcoin 2.0 was driven by many changes in the market, including the **expansion** of the Ethereum ecosystem with L2 launches, the **growth** of open-source development, and **increasing adoption** of grant programs.
+The recent upgrade to Gitcoin 2.0 was driven by many changes in the market, including the **expansion** of the Ethereum ecosystem with L2 launches, the **growth** of open source development, and **increasing adoption** of grant programs.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/carving-a-path-ffb2f198.png)
 
@@ -136,7 +138,7 @@ Gitcoin harnesses the positive attributes of high speed internet and immutable b
 
 Allo Protocol is a set of smart contracts designed for democratic capital allocation and distribution, developed to empower the Grants Stack.
 
-Allo’s simple, generalized architecture allows it to be **easily customized** for a wide range of use cases. It’s power lies in its ability to **deepen impact** by allocating capital at scale. There are three key components to the protocol:
+Allo’s simple, generalized architecture allows it to be **easily customized** for a wide range of use cases. Its power lies in its ability to **deepen impact** by allocating capital at scale. There are three key components to the protocol:
 
 1. **Tokens:** funding sources sending tokens into a pool.
 2. **Registry:** structuring data of possible participants that are eligible for distribution of tokens.
@@ -150,7 +152,7 @@ Allo’s simple, generalized architecture allows it to be **easily customized** 
 
 Grants Stack, built on top of Allo Protocol, is the **primary application** in the Gitcoin ecosystem.
 
-Grants Stack is designed to be a trustworthy, enterprise-grade tool that grant customers can rely on. It also serves as a reference app for Allo Protocol builders, as it is **open-source and forkable**.
+Grants Stack is designed to be a trustworthy, enterprise-grade tool that grant customers can rely on. It also serves as a reference app for Allo Protocol builders, as it is **open source** and **forkable**.
 
 Grants Stack invests in several core areas to provide grants managers with the tools they need to run successful grants programs.
 
@@ -160,9 +162,9 @@ Grants Stack invests in several core areas to provide grants managers with the t
 
 **Grants Stack** currently supports two funding methods: [Quadratic Funding](https://www.wtfisqf.com/) and [Direct Grants](https://www.gitcoin.co/blog/intro-to-direct-grants-how-do-they-work).
 
-As new funding mechanisms arise, Gitcoin quickly adapts and integrates them. A relevant example of this is [EasyRetroPGF.xyz](https://easyretropgf.xyz/). Originally deployed by Optimism, the ability to operate a retroactive grants round is now open-source.
+As new funding mechanisms arise, Gitcoin quickly adapts and integrates them. A relevant example of this is [EasyRetroPGF.xyz](https://easyretropgf.xyz/). Originally deployed by Optimism, the ability to operate a retroactive grants round is now open source.
 
-Complimentary applications such as reporting and discovery tools may follow suit, creating a **flywheel of grants innovation** that allows Grants Stack to remain a **stable, trusted solution**.
+Complementary applications such as reporting and discovery tools may follow suit, creating a **flywheel of grants innovation** that allows Grants Stack to remain a **stable, trusted solution**.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-continued-df15ee70.png)
 
@@ -182,7 +184,7 @@ Complete the following statement: Allo is the ______  layer for distribution of 
 3. Gitcoin 2.0 includes Direct Grants, Retroactive Public Goods Funding, and operates across multiple EVM-based networks.
 4. Onchain capital allocation offers **transparency, efficiency, and democratization**, challenging traditional gatekeeping and scalability issues.
 5. Grants are a **catalyst for growth** in web3, underpinning community engagement, builder retention, and positive-sum outcomes.
-6. Gitcoin's **delivers decentralization** at the protocol and app layer, with Grants Stack and Allo respectively, providing a modular framework for capital allocation.
+6. Gitcoin **delivers decentralization** by layers. First, at the protocol layer with Grants Stack and at the app layer with Allo Protocol, providing a modular framework for effective capital allocation.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/lets-go-over-what-we-learned-a902dc9c.png)
 
