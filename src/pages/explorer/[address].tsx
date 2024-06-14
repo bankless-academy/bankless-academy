@@ -9,8 +9,6 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  InputRightAddon,
-  Select,
   Text,
   useClipboard,
   useMediaQuery,
@@ -41,6 +39,7 @@ import { MAX_DONATIONS } from 'constants/donations'
 import { MAX_BADGES } from 'constants/badges'
 import { EMPTY_PASSPORT, MAX_STAMPS } from 'constants/passport'
 import Layout from 'layout/Layout'
+import SelectCommunity from 'components/SelectCommunity'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -70,16 +69,6 @@ export async function getServerSideProps({ query }) {
   return { props: { ...data, pageMeta } }
 }
 
-const COMMUNITIES = [
-  'Boys Club',
-  'DAO Punk',
-  'FWB',
-  'Gitcoin',
-  'Optimism Collective',
-  'SheFi',
-  'Zerion',
-].sort()
-
 export default function Page({
   profileAddress,
   badgeToHighlight,
@@ -100,8 +89,6 @@ export default function Page({
   const { address } = useAccount()
   const { onCopy, hasCopied } = useClipboard(profileUrl)
   const [passportLS] = useLocalStorage('passport', EMPTY_PASSPORT)
-  const [community, setCommunity] = useLocalStorage(`community`, '')
-  const [addCommunity, setAddCommunity] = useState(false)
   const [email, setEmail] = useState(localStorage.getItem('email'))
   const [initialEmail] = useState(localStorage.getItem('email'))
   const toast = useToast()
@@ -110,23 +97,6 @@ export default function Page({
   const wallets = localStorage.getItem('wallets')
     ? JSON.parse(localStorage.getItem('wallets'))
     : []
-
-  const updateCommunity = async (community) => {
-    try {
-      const result = await api('/api/update-community', {
-        address,
-        community,
-      })
-      if (result && result.status === 200) {
-        setCommunity(community)
-      } else {
-        // TODO: handle errors
-        console.log(result)
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
 
   useEffect(() => {
     const loadUser = async () => {
@@ -264,68 +234,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 : shortenAddress(profileAddress)}
             </Text>
             {isMyProfile ? (
-              <>
-                {addCommunity ? (
-                  <Box my="8" mx="4" display="flex" placeContent="center">
-                    <InputGroup maxW="400px">
-                      <Input
-                        value={community}
-                        placeholder={'Your community...'}
-                        onChange={(e): void => {
-                          const customCommunity = e.target.value
-                          setCommunity(customCommunity)
-                        }}
-                      />
-                      <InputRightAddon padding="0">
-                        <Button
-                          variant="primary"
-                          width="100%"
-                          borderRadius="6px"
-                          borderLeftRadius="0"
-                          onClick={async () => {
-                            updateCommunity(community)
-                            setAddCommunity(false)
-                          }}
-                        >
-                          Save
-                        </Button>
-                      </InputRightAddon>
-                    </InputGroup>
-                  </Box>
-                ) : (
-                  <Box mb="8" textAlign="center">
-                    <Select
-                      placeholder="Select Community"
-                      size="lg"
-                      w="100%"
-                      maxW="300px"
-                      m="auto"
-                      value={community}
-                      onChange={async (e) => {
-                        const selectedCommunity = e.target.value
-                        if (selectedCommunity === 'new') {
-                          setCommunity('')
-                          setAddCommunity(true)
-                        } else {
-                          await updateCommunity(selectedCommunity)
-                        }
-                      }}
-                    >
-                      <option value="new">&gt; Suggest new community</option>
-                      {COMMUNITIES.map((community) => {
-                        return (
-                          <option key={community} value={community}>
-                            {community}
-                          </option>
-                        )
-                      })}
-                      {community && !COMMUNITIES.includes(community) && (
-                        <option value={community}>{community}</option>
-                      )}
-                    </Select>
-                  </Box>
-                )}
-              </>
+              <SelectCommunity />
             ) : (
               user.community && (
                 <Box my="8" mx="4" display="flex" placeContent="center">
