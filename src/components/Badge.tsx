@@ -61,7 +61,7 @@ const Badge = ({
           : address || current_wallet
       }?badge=${lesson.badgeId}&referral=true`
 
-  const share = `I've just claimed my "${lesson.name}" onchain credential at @${TWITTER_ACCOUNT} 🎉
+  const share = `I've just claimed my "${lesson.name}" onchain certification at @${TWITTER_ACCOUNT} 🎉
 
 Join the journey and level up your #web3 knowledge! 👨‍🚀🚀`
 
