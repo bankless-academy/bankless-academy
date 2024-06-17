@@ -31,47 +31,49 @@ ________________________________________________________________________________
 
 Welcome to the revolution in capital allocation 💰
 
-In this lesson, we explore the **Gitcoin 2.0 whitepaper** to discover innovative approaches to public goods funding and growth, in the Ethereum ecosystem.
+In this lesson, we explore the **Gitcoin 2.0 whitepaper** to discover innovative approaches to public goods funding and growth in the Ethereum ecosystem.
 
 Having surpassed **$60 million in funding distributed**, Gitcoin is at the forefront of a movement towards more democratic, efficient, and transparent capital allocation in web3.
 
-The publication of the [whitepaper](https://www.gitcoin.co/whitepaper/read) marks a pivotal moment in its history and provides an in-depth look at how its infrastructure, and the implementation of `Allo Protocol`, is helping steward its mission. For reference at any time during this journey, you can read the document [here](https://www.gitcoin.co/whitepaper/read).
+The publication of the [whitepaper](https://www.gitcoin.co/whitepaper/read) marks a pivotal moment in Gitcoin’s history and provides an in-depth look at how its infrastructure and the implementation of `Allo Protocol` are helping to steward its mission. For reference at any time during this journey, you can read the whitepaper [here](https://www.gitcoin.co/whitepaper/read).
 
-Thank you to contributors at Gitcoin and Bankless Academy for the curation of this lesson. Its goal is to provide a fun, unique, and web3 way of learning about Gitcoin in its new stage, **Gitcoin 2.0.** Ready? Let’s dive in.
+Thank you to the contributors at Gitcoin and Bankless Academy for curating this lesson. Its goal is to provide a fun, unique, and web3 way of learning about Gitcoin in its new stage, **Gitcoin 2.0.** Prepared to explore? Let’s dive in!
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/whitepaper-lesson-gitcoin-grants-growth-3e78d2ef.png)
 
 # Introduction to Quadratic Funding
 
-If you’re here you may already know what the title means, but here’s a refresher.
+If you’re here, you may already know what the title means, but here’s a refresher.
 
-`Quadratic Funding` (QF) originated from the ideas of Glenn Weyl and Vitalik Buterin. It's a mechanism designed to allocate funds in a fair and democratic manner by leveraging matching funds to **amplify the impact** of small individual contributions.
+`Quadratic Funding` (QF) originated from the ideas of Glen Weyl and Vitalik Buterin. It's a mechanism designed to allocate funds in a fair and democratic manner by leveraging matching funds to **amplify the impact** of small individual contributions.
 
-QF debuted at **Gitcoin Grants** (GG), a pivotal moment enabling democratic donations to projects that matter. Since then, when GG Round 1 launched in 2019, the QF model has been finely tuned with each iteration.
+QF debuted with **Gitcoin Grants** (GG), marking a pivotal moment enabling democratic donations to projects that matter. Since the launch of GG Round 1, the QF model has been finely tuned with each iteration.
 
-Now, **Gitcoin 2.0** extends further into the grants space to include funding mechanisms like Direct Grants and delivers a more decentralized, modular experience.
+Now, **Gitcoin 2.0** extends further into the grants space to include funding mechanisms like Direct Grants, delivering a more decentralized, modular experience for users and grantees.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/introduction-to-quadratic-funding-e38257e1.png)
 
 # Gitcoin’s role in the Ethereum ecosystem
 
-As of January 2024, **19 grants rounds** have been run by Gitcoin, disbursing funds to open source software (OSS) teams, averaging nearly one major round per quarter.
+As of May 2024, twenty editions of the Gitcoin Grants program have been run by Gitcoin, disbursing funds to diverse projects building on Ethereum, averaging nearly one major round per quarter.
 
-Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone for the open source Ethereum community.
+Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone especially for the **open source Ethereum community**.
 
-Prior to GG20, as referenced by the Open Source Observer Impact Analysis, Gitcoin distributed **$8.4M to ~2500 applicants** through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.
+Prior to Gitcoin Grants Round 20, the total amount of funding raised through the program reached $29 million. As referenced by the [Open Source Observer Impact Analysis](https://docs.opensource.observer/blog/gitcoin-grants-impact/#grants-on-allo-alpha-round-to-gg19-2023), **$8.4 million of the total amount raised was disbursed to ~2,500 applicants** participating in the open source software rounds.
 
-Source: Open Source Observer Impact Analysis
+The past four rounds—α, β, 18, and 19—have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as sidechains like Fantom and Polygon.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-fe71e17f.png)
 
 # …and there’s more!
 
-Gitcoin's dynamics most often reward projects that **play the long game** — that is, projects that appear consistently throughout grants rounds, making connections and building a following.
+Gitcoin's dynamics most often reward projects that **play the long game** — that is, projects that appear consistently throughout grant rounds, making connections over time, and building community and a following.
 
-A large part of Gitcoin's project base comes from the **open source community**, with developer activity of 50 OSS projects associated with at least five GG rounds receiving a total of $9.4M.
+A notable finding is the **correlation between Gitcoin Grants rounds and developer growth**.
 
-A notable finding is the **correlation between GG rounds and developer growth**. Overall, for every $1M that has been paid out in grants since 2019, there are 7.4 full-time developers who are still around today.
+The Open Source Observer Impact Analysis shows that of a group of 50 open source software projects that have received funding across multiple Gitcoin Grants rounds, for every $1 million paid out in grants since 2019, there are 7 full-time developers who are still active today.
+
+If we factor in the crowdfund multiplier, every $1 million contributed to the matching pool is associated with 13 retained full-time developers, with these numbers holding steady even during the bear market!
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/and-theres-more-5525393b.png)
 
@@ -88,7 +90,7 @@ What funding mechanism is designed to democratically allocate funds by amplifyin
 
 Gitcoin 1.0 was used by many top leaders in the space including Ethereum founder **Vitalik Buterin** and by major protocols like WalletConnect, Uniswap, Yearn, and 1inch.
 
-Since its inception in 2017, this first version of Gitcoin primarily focused on hackathons and bounties, followed by Quadratic Funding  (QF) powered grants.
+Since its inception in 2017, this first version of Gitcoin primarily focused on hackathons and bounties, followed by Quadratic Funding (QF) powered grants.
 
 The recent upgrade to Gitcoin 2.0 was driven by many changes in the market, including the **expansion** of the Ethereum ecosystem with L2 launches, the **growth** of open source development, and **increasing adoption** of grant programs.
 
