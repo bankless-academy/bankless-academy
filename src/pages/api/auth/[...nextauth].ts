@@ -1,11 +1,12 @@
+/* eslint-disable no-console */
 import NextAuth, { NextAuthOptions } from "next-auth"
 import credentialsProvider from 'next-auth/providers/credentials'
 import {
   type SIWESession,
-  verifySignature,
   getChainIdFromMessage,
   getAddressFromMessage
 } from '@web3modal/siwe'
+import { verifySignature } from "utils/SignatureUtil"
 
 declare module 'next-auth' {
   interface Session extends SIWESession {
@@ -47,8 +48,13 @@ const providers = [
         const { message, signature } = credentials
         const address = getAddressFromMessage(message)
         const chainId = getChainIdFromMessage(message)
+        console.log('address', address)
+        console.log('message', message)
+        console.log('signature', signature)
+        console.log('chainId', chainId)
+        console.log('projectId', projectId)
 
-        const isValid = await verifySignature({ address, message, signature, chainId, projectId })
+        const isValid = await verifySignature({ address, message, signature, chainId: Number(chainId.split(':')[1]) })
 
         if (isValid) {
           return {

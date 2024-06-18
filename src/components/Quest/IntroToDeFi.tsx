@@ -3,9 +3,11 @@ import { Button, Box } from '@chakra-ui/react'
 import { CheckIcon, CloseIcon } from '@chakra-ui/icons'
 import { signMessage } from '@wagmi/core'
 
-import { track, verifySignature } from 'utils/index'
+import { track } from 'utils/index'
 import { theme } from 'theme/index'
 import { wagmiConfig } from 'utils/wagmi'
+import { verifySignature } from 'utils/SignatureUtil'
+import { useAccount } from 'wagmi'
 
 const VERBS = ['Investing', 'Trading', 'Lending & Borrowing', 'Staking']
 
@@ -23,6 +25,7 @@ const IntroToDeFi = (
       ? VERBS.includes(localStorage.getItem('quest-intro-to-defi'))
       : null
   )
+  const { chain } = useAccount()
 
   const sign = async () => {
     const message = `I want to learn more about ${answer}`
@@ -32,7 +35,12 @@ const IntroToDeFi = (
         account: account as `0x${string}`,
         message,
       })
-      const verified = verifySignature(account, signature, message)
+      const verified = await verifySignature({
+        address: account,
+        message,
+        signature,
+        chainId: chain.id,
+      })
       if (verified) {
         track('intro_to_defi_quest_answer', answer)
       }

@@ -9,6 +9,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { State, WagmiProvider } from 'wagmi'
 import { siweConfig } from 'utils/siweConfig'
 import { WALLET_CONNECT_PROJECT_ID, wagmiConfig } from 'utils/wagmi'
+// import { mainnet } from 'wagmi/chains'
 
 // Setup queryClient
 const queryClient = new QueryClient()
@@ -24,6 +25,7 @@ createWeb3Modal({
   siweConfig,
   wagmiConfig,
   projectId: WALLET_CONNECT_PROJECT_ID,
+  // defaultChain: mainnet,
   themeMode: 'dark',
   themeVariables,
   allowUnsupportedChain: true,
