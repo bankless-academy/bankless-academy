@@ -30,6 +30,12 @@ export const wagmiConfig = defaultWagmiConfig({
   projectId: WALLET_CONNECT_PROJECT_ID,
   metadata,
   ssr: true,
+  auth: {
+    email: false, // default to true
+    // socials: ['google', 'x', 'github', 'discord', 'apple'],
+    // showWallets: true, // default to true
+    // walletFeatures: true // default to true
+  },
   storage: createStorage({
     storage: cookieStorage
   }),
