@@ -34,7 +34,7 @@ export const wagmiConfig = defaultWagmiConfig({
     storage: cookieStorage
   }),
   enableInjected: true,
-  enableCoinbase: false,
+  // enableCoinbase: false,
   transports: {
     [mainnet.id]: http(),
     [polygon.id]: http(),

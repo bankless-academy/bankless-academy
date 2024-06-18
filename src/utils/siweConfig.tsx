@@ -6,15 +6,13 @@ import type {
   SIWESession,
 } from '@web3modal/siwe'
 import { createSIWEConfig, formatMessage } from '@web3modal/siwe'
-import { mainnet, optimism, polygon } from 'viem/chains'
-
-// import { DOMAIN_URL_ } from 'constants/index'
+import { chains } from 'utils/wagmi'
 
 export const siweConfig = createSIWEConfig({
   getMessageParams: async () => ({
     domain: 'app.banklessacademy.com',
     uri: 'https://app.banklessacademy.com',
-    chains: [mainnet.id, polygon.id, optimism.id],
+    chains: chains as any,
     statement: 'Please sign with your account',
   }),
   createMessage: ({ address, ...args }: SIWECreateMessageArgs) =>
