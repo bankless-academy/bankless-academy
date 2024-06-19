@@ -6,13 +6,14 @@ import type {
   SIWESession,
 } from '@web3modal/siwe'
 import { createSIWEConfig, formatMessage } from '@web3modal/siwe'
+
 import { chains } from 'utils/wagmi'
 
 export const siweConfig = createSIWEConfig({
   getMessageParams: async () => ({
     domain: 'app.banklessacademy.com',
     uri: 'https://app.banklessacademy.com',
-    chains: chains as any,
+    chains: chains.map((chain) => chain.id),
     statement: 'Please sign with your account',
   }),
   createMessage: ({ address, ...args }: SIWECreateMessageArgs) =>

@@ -4,15 +4,16 @@ import { cookieStorage, createStorage, http } from 'wagmi'
 import { defaultWagmiConfig } from '@web3modal/wagmi/react/config'
 import {
   mainnet,
+  optimism,
   polygon,
-  optimism
+  type Chain
 } from 'wagmi/chains'
 
 export const chains = [
   mainnet,
   polygon,
   optimism,
-] as const
+] as [Chain, ...Chain[]]
 
 // 1. Get projectID at https://cloud.walletconnect.com
 export const WALLET_CONNECT_PROJECT_ID = process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID
@@ -26,7 +27,7 @@ const metadata = {
 }
 
 export const wagmiConfig = defaultWagmiConfig({
-  chains: chains as any,
+  chains,
   projectId: WALLET_CONNECT_PROJECT_ID,
   metadata,
   ssr: true,
