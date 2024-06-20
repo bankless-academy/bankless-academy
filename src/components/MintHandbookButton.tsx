@@ -317,7 +317,7 @@ const MintHandbookButton = ({
           }}
         >
           <Box fontWeight="bold">
-            {isOpenEdition ? 'Mint Handbook' : 'Mint for 0.01 ETH'}
+            {isOpenEdition ? 'Free Mint' : 'Mint for 0.01 ETH'}
           </Box>
           <Box ml="2">{`(${numberCollected}/${
             isOpenEdition ? '∞' : '100'
