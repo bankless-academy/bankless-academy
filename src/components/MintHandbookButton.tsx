@@ -233,6 +233,13 @@ const MintHandbookButton = ({
                   if (address && chain?.id !== optimism.id) {
                     try {
                       await switchChain(wagmiConfig, { chainId: optimism.id })
+                      toast({
+                        title: 'The network has been switched to Optimism.',
+                        description: <>Click Mint again.</>,
+                        status: 'warning',
+                        duration: 10000,
+                        isClosable: true,
+                      })
                     } catch (error) {
                       console.error(error)
                       toast({
@@ -246,13 +253,6 @@ const MintHandbookButton = ({
                       })
                     }
                     setIsMinting(false)
-                    toast({
-                      title: 'The network has been switched to Optimism.',
-                      description: <>Click Mint again.</>,
-                      status: 'warning',
-                      duration: 10000,
-                      isClosable: true,
-                    })
                   } else if (!isMinting) {
                     setIsMinting(true)
                     setTimeout(() => {

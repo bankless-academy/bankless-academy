@@ -30,5 +30,5 @@ export default function middleware(request: NextRequest): NextResponse {
 }
 
 export const config = {
-  matcher: ['/api/passport', '/api/mint-badge', '/api/validate-quest'],
+  matcher: ['/api/passport', '/api/auth/mint-badge', '/api/validate-quest'],
 }

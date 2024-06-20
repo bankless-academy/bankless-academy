@@ -11,6 +11,7 @@ import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
 import { shortenAddress } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
+import { useSession } from 'next-auth/react'
 
 export type PageType = LessonTypeType | 'PROFILE' | 'GLOSSARY' | ''
 
@@ -103,6 +104,7 @@ const Layout = ({
   page?: PageType
 }): React.ReactElement => {
   const { address } = useAccount()
+  const { status } = useSession()
   const { open } = useWeb3Modal()
   const [nameCache] = useLocalStorage(`name-cache`, {})
   const [score] = useLocalStorage(`score`, 0)
@@ -152,7 +154,7 @@ const Layout = ({
             position={scrollY > 80 ? 'fixed' : 'absolute'}
             top="0"
           >
-            {address ? (
+            {address && status === 'authenticated' ? (
               <Box
                 background={
                   page === 'PROFILE'

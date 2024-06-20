@@ -10,19 +10,18 @@ import { isMobile } from 'react-device-detect'
 import styled from '@emotion/styled'
 import { Box, Container, Heading, Image } from '@chakra-ui/react'
 // https://docs.walletconnect.com/2.0/web3modal/react/about
-import { createWeb3Modal } from '@web3modal/wagmi/react'
-import { WagmiProvider } from 'wagmi'
 import Router from 'next/router'
 import { useWeb3ModalState } from '@web3modal/wagmi/react'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { SessionProvider } from 'next-auth/react'
+import type { Session } from 'next-auth'
 
 import Head, { MetaData } from 'components/Head'
+import Web3ModalProvider from 'context/index'
 import Layout from 'layout/index'
 import ThemeProvider from 'theme'
 import { DEBUG } from 'utils/index'
 import NonSSRWrapper from 'components/NonSSRWrapper'
 import 'utils/translation'
-import { WALLET_CONNECT_PROJECT_ID, wagmiConfig } from 'utils/wagmi'
 
 const Overlay = styled(Box)`
   opacity: 1;
@@ -43,6 +42,7 @@ const App = ({
 }: AppProps<{
   pageMeta: MetaData
   isNotion: boolean
+  session: Session
 }>): JSX.Element => {
   if (
     (process.env.NEXT_PUBLIC_MAINTENANCE &&
@@ -69,33 +69,6 @@ const App = ({
     )
   }
 
-  // 0. Setup queryClient
-  const queryClient = new QueryClient()
-
-  // 3. createWeb3Modal
-  const themeVariables = {
-    '--w3m-accent': '#B85FF1',
-    '--w3m-color-mix': '#B85FF1',
-  }
-  createWeb3Modal({
-    wagmiConfig,
-    projectId: WALLET_CONNECT_PROJECT_ID,
-    themeMode: 'dark',
-    themeVariables,
-    allowUnsupportedChain: true,
-    enableAnalytics: true,
-    featuredWalletIds: [
-      // Zerion
-      'ecc4036f814562b41a5268adc86270fba1365471402006302e70169465b7ac18',
-      // 1inch
-      'c286eebc742a537cd1d6818363e9dc53b21759a1e8e5d9b263d0c03ec7703576',
-      // Rainbow
-      '1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369',
-      // MetaMask
-      'c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96',
-    ],
-  })
-
   const { open } = useWeb3ModalState()
 
   const [isLoadingProfile, setIsLoadingProfile] = useState(false)
@@ -117,9 +90,9 @@ const App = ({
       <Head metadata={pageProps.pageMeta} />
       {!isMobile && <GlobalScrollbar skin="dark" />}
       <ThemeProvider>
-        <NonSSRWrapper>
-          <WagmiProvider config={wagmiConfig}>
-            <QueryClientProvider client={queryClient}>
+        <Web3ModalProvider>
+          <SessionProvider session={pageProps.session} refetchInterval={0}>
+            <NonSSRWrapper>
               <>
                 <Global
                   styles={css`
@@ -267,11 +240,11 @@ const App = ({
                   )}
                 </Layout>
               </>
-            </QueryClientProvider>
-          </WagmiProvider>
 
-          <Overlay hidden={!open} />
-        </NonSSRWrapper>
+              <Overlay hidden={!open} />
+            </NonSSRWrapper>
+          </SessionProvider>
+        </Web3ModalProvider>
       </ThemeProvider>
     </>
   )
