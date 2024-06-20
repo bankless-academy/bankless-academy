@@ -28,7 +28,7 @@ const switchChain = async (
         const data = [
           {
             chainId: `0x${NETWORKS[networkName].chainId.toString(16)}`,
-            chainName: NETWORKS[networkName].networkName,
+            chainName: NETWORKS[networkName].name,
             nativeCurrency: {
               name: NETWORKS[networkName].currencySymbol,
               symbol: NETWORKS[networkName].currencySymbol,

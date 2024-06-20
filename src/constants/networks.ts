@@ -1,77 +1,87 @@
 import { IS_BADGE_PROD } from 'constants/badges'
+import { base, baseSepolia, mainnet, optimism, optimismSepolia, polygon, polygonMumbai, sepolia } from 'viem/chains'
 
-const ENABLE_TESTNET = false
+export const ENABLE_TESTNET = true
 
 // https://chainlist.org/
 const TESTNET_NETWORKS =
   !IS_BADGE_PROD || ENABLE_TESTNET
     ? {
-      kovan: {
-        name: 'Goerli Testnet',
+      sepolia: {
+        name: sepolia.name,
         image: '/images/eth-test.svg',
-        currencySymbol: 'GoerliETH',
-        chainId: 5,
-        infuraRpcUrl: 'https://goerli.infura.io/v3/',
-        rpcUrlAdd: 'https://goerli.infura.io/v3/',
-        faucet: 'https://goerlifaucet.com/',
-        blockExplorer: 'https://goerli.etherscan.io/',
+        currencySymbol: sepolia.nativeCurrency.symbol,
+        chainId: sepolia.id,
+        infuraRpcUrl: 'https://sepolia.infura.io/v3/',
+        rpcUrlAdd: sepolia.rpcUrls.default,
+        blockExplorer: sepolia.blockExplorers,
       },
-      mumbai: {
-        name: 'Mumbai Testnet',
+      polygonMumbai: {
+        name: polygonMumbai.name,
         image: '/images/matic-test.svg',
-        networkName: 'Matic (Polygon) Testnet Mumbai',
-        currencySymbol: 'MATIC',
-        chainId: 80001,
+        currencySymbol: polygonMumbai.nativeCurrency.symbol,
+        chainId: polygonMumbai.id,
         infuraRpcUrl: 'https://polygon-mumbai.infura.io/v3/',
-        rpcUrlAdd: 'https://rpc-mumbai.maticvigil.com',
-        faucet: 'https://faucet.matic.network/',
-        blockExplorer: 'https://mumbai.polygonscan.com/',
+        rpcUrlAdd: polygonMumbai.rpcUrls.default,
+        blockExplorer: polygonMumbai.blockExplorers,
       },
-      goerli: {
-        name: 'Optimism Testnet',
+      optimismSepolia: {
+        name: optimismSepolia.name,
         image: '/images/op-test.svg',
-        networkName: 'Optimistic Goerli',
-        currencySymbol: 'GoerliETH',
-        chainId: 420,
-        infuraRpcUrl: 'https://optimism-goerli.infura.io/v3/',
-        rpcUrlAdd: 'https://goerli.optimism.io',
-        faucet: 'https://faucet.quicknode.com/optimism/goerli',
-        blockExplorer: 'https://goerli-optimism.etherscan.io/',
+        currencySymbol: optimismSepolia.nativeCurrency.symbol,
+        chainId: optimismSepolia.id,
+        infuraRpcUrl: 'https://optimism-sepolia.infura.io/v3/',
+        rpcUrlAdd: optimismSepolia.rpcUrls.default,
+        blockExplorer: optimismSepolia.blockExplorers,
+      },
+      baseSepolia: {
+        name: baseSepolia.name,
+        image: '/images/base-test.svg',
+        currencySymbol: baseSepolia.nativeCurrency.symbol,
+        chainId: baseSepolia.id,
+        infuraRpcUrl: 'https://base-sepolia.infura.io/v3/',
+        rpcUrlAdd: baseSepolia.rpcUrls.default,
+        blockExplorer: baseSepolia.blockExplorers,
       },
     }
     : {}
 
 export const NETWORKS = Object.freeze({
   mainnet: {
-    name: 'Ethereum',
+    name: mainnet.name,
     image: '/images/eth.svg',
-    currencySymbol: 'ETH',
-    chainId: 1,
+    currencySymbol: mainnet.nativeCurrency.symbol,
+    chainId: mainnet.id,
     infuraRpcUrl: 'https://mainnet.infura.io/v3/',
-    rpcUrlAdd: 'https://mainnet.infura.io/v3/',
-    blockExplorer: 'https://etherscan.io/',
+    rpcUrlAdd: mainnet.rpcUrls.default,
+    blockExplorer: mainnet.blockExplorers,
   },
-  matic: {
-    name: 'Polygon',
+  polygon: {
+    name: polygon.name,
     image: '/images/matic.svg',
-    networkName: 'Matic (Polygon) Mainnet',
-    currencySymbol: 'MATIC',
-    chainId: 137,
+    currencySymbol: polygon.nativeCurrency.symbol,
+    chainId: polygon.id,
     infuraRpcUrl: 'https://polygon-mainnet.infura.io/v3/',
-    rpcUrlAdd: 'https://polygon-rpc.com',
-    faucet: 'https://matic.supply/',
-    blockExplorer: 'https://polygonscan.com',
+    rpcUrlAdd: polygon.rpcUrls.default,
+    blockExplorer: polygon.blockExplorers,
   },
   optimism: {
-    name: 'Optimism',
+    name: optimism.name,
     image: '/images/op.svg',
-    networkName: 'Optimism Mainnet',
-    currencySymbol: 'ETH',
-    chainId: 10,
+    currencySymbol: optimism.nativeCurrency.symbol,
+    chainId: optimism.id,
     infuraRpcUrl: 'https://optimism-mainnet.infura.io/v3/',
-    rpcUrlAdd: 'https://mainnet.optimism.io',
-    faucet: 'https://community.optimism.io/docs/useful-tools/faucets/',
-    blockExplorer: 'https://optimistic.etherscan.io',
+    rpcUrlAdd: optimism.rpcUrls.default,
+    blockExplorer: optimism.blockExplorers,
+  },
+  base: {
+    name: base.name,
+    image: '/images/base.svg',
+    currencySymbol: base.nativeCurrency.symbol,
+    chainId: base.id,
+    infuraRpcUrl: 'https://base-mainnet.infura.io/v3/',
+    rpcUrlAdd: base.rpcUrls.default,
+    blockExplorer: base.blockExplorers,
   },
   ...TESTNET_NETWORKS,
 })

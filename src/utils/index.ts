@@ -200,15 +200,15 @@ export async function validateOnchainQuest(
   try {
     if (quest === 'DEXAggregators') {
       const check = []
-      const matic: Network = {
-        name: 'matic',
-        chainId: NETWORKS['matic'].chainId,
+      const polygon: Network = {
+        name: 'polygon',
+        chainId: NETWORKS['polygon'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `${NETWORKS['matic'].infuraRpcUrl}${INFURA_KEY}`
+            `${NETWORKS['polygon'].infuraRpcUrl}${INFURA_KEY}`
           ),
       }
-      const provider = ethers.getDefaultProvider(matic)
+      const provider = ethers.getDefaultProvider(polygon)
       const receipt = await provider.waitForTransaction(tx, 2)
       // console.log('receipt', receipt.status)
       if (receipt?.status) {
