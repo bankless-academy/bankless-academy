@@ -1,36 +1,19 @@
 /* eslint-disable no-console */
-import { Box, Button, useToast } from '@chakra-ui/react'
-import { LessonType } from 'entities/lesson'
+import { Box, Button, Image, useToast } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { switchChain } from '@wagmi/core'
-import { optimism } from 'wagmi/chains'
+import { baseSepolia } from 'wagmi/chains'
 import { useWaitForTransactionReceipt, useAccount } from 'wagmi'
 import { simulateContract, writeContract } from '@wagmi/core'
 import { Gear, SealCheck } from '@phosphor-icons/react'
-import { useTranslation } from 'react-i18next'
 import { useWeb3Modal } from '@web3modal/wagmi/react'
 
 import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
-import { getArticlesCollectors } from 'utils/index'
-import { parseEther } from 'viem'
 import Confetti from 'components/Confetti'
 import { wagmiConfig } from 'utils/wagmi'
 
-const MintHandbookButton = ({
-  lesson,
-  numberCollected,
-}: {
-  lesson: LessonType
-  numberCollected: number | '...'
-}): JSX.Element => {
-  if (!lesson.mirrorNFTAddress) return
-  // TEST OE mint
-  const isOpenEdition = lesson.slug === 'creating-a-crypto-wallet'
-  if (isOpenEdition) {
-    lesson.mirrorNFTAddress = '0x6dbf20730f513fc45b19e4d0b951c4e5f2564dd8'
-  }
-  const { t } = useTranslation()
+const MintNFT = (): JSX.Element => {
   const { address, chain } = useAccount()
   const { open } = useWeb3Modal()
   const toast = useToast()
@@ -41,60 +24,63 @@ const MintHandbookButton = ({
   const [mintingError, setMintingError] = useState('')
   const [showConfetti, setShowConfetti] = useState(false)
 
-  const isNewContract =
-    parseInt(lesson?.collectibleId.substring(1), 10) > 6 || isOpenEdition
+  // TEMP
+  const numberCollected = '5'
+
+  const NFTAddress = '0x7549f01633aebccddabcaa0f8046a12d8baddeee'
 
   const mintArg = {
-    address: lesson.mirrorNFTAddress,
-    abi: isNewContract
-      ? [
+    address: NFTAddress,
+    abi: [
+      {
+        inputs: [
+          { internalType: 'address', name: '_receiver', type: 'address' },
+          { internalType: 'uint256', name: '_quantity', type: 'uint256' },
+          { internalType: 'address', name: '_currency', type: 'address' },
+          { internalType: 'uint256', name: '_pricePerToken', type: 'uint256' },
           {
-            inputs: [
+            components: [
+              { internalType: 'bytes32[]', name: 'proof', type: 'bytes32[]' },
               {
-                internalType: 'address',
-                name: 'tokenRecipient',
-                type: 'address',
+                internalType: 'uint256',
+                name: 'quantityLimitPerWallet',
+                type: 'uint256',
               },
-              { internalType: 'string', name: 'message', type: 'string' },
               {
-                internalType: 'address',
-                name: 'mintReferral',
-                type: 'address',
+                internalType: 'uint256',
+                name: 'pricePerToken',
+                type: 'uint256',
               },
+              { internalType: 'address', name: 'currency', type: 'address' },
             ],
-            name: 'purchase',
-            outputs: [
-              { internalType: 'uint256', name: 'tokenId', type: 'uint256' },
-            ],
-            stateMutability: 'payable',
-            type: 'function',
+            internalType: 'struct IDrop.AllowlistProof',
+            name: '_allowlistProof',
+            type: 'tuple',
           },
-        ]
-      : [
-          {
-            inputs: [
-              {
-                internalType: 'address',
-                name: 'tokenRecipient',
-                type: 'address',
-              },
-              { internalType: 'string', name: 'message', type: 'string' },
-            ],
-            name: 'purchase',
-            outputs: [
-              { internalType: 'uint256', name: 'tokenId', type: 'uint256' },
-            ],
-            stateMutability: 'payable',
-            type: 'function',
-          },
+          { internalType: 'bytes', name: '_data', type: 'bytes' },
         ],
-    functionName: 'purchase',
-    args: isNewContract
-      ? [address, '', '0x0000000000000000000000000000000000000000']
-      : [address, ''],
-    chainId: optimism.id,
-    // 0.01 + 0.00069 in collector fee
-    value: isOpenEdition ? parseEther('0.00069') : parseEther('0.01069'),
+        name: 'claim',
+        outputs: [],
+        stateMutability: 'payable',
+        type: 'function',
+      },
+    ],
+    functionName: 'claim',
+    args: [
+      address,
+      '1',
+      '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+      '0',
+      [
+        ['0x0000000000000000000000000000000000000000000000000000000000000000'],
+        '1',
+        '0',
+        '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE',
+      ],
+      '0x',
+    ],
+    chainId: baseSepolia.id,
+    value: 0,
     overrides: {
       gasLimit: 150000n,
     },
@@ -108,30 +94,32 @@ const MintHandbookButton = ({
   }
 
   const { isLoading, isSuccess } = useWaitForTransactionReceipt({
-    chainId: optimism.id,
+    chainId: baseSepolia.id,
     hash: hash as any,
     pollingInterval: 1_000,
   })
 
   const updateArticlesCollectors = async () => {
-    const NFTCollectors = await getArticlesCollectors(lesson.mirrorNFTAddress)
-    NFTCollectors.reduce((p, c) => p + c?.tokenBalances?.length, 0)
-    setNumberMinted(
-      NFTCollectors.reduce(
-        (p, c) => p + c?.tokenBalances?.length,
-        0
-      )?.toString()
-    )
+    // const NFTCollectors = await getArticlesCollectors(lesson.mirrorNFTAddress)
+    // NFTCollectors.reduce((p, c) => p + c?.tokenBalances?.length, 0)
+    // setNumberMinted(
+    //   NFTCollectors.reduce(
+    //     (p, c) => p + c?.tokenBalances?.length,
+    //     0
+    //   )?.toString()
+    // )
+
+    // TEMP
+    setNumberMinted('6')
   }
   useEffect(() => {
-    if (lesson.mirrorNFTAddress && address)
-      updateArticlesCollectors().catch(console.error)
+    if (address) updateArticlesCollectors().catch(console.error)
   }, [address])
 
   useEffect(() => {
     if (isLoading) {
       toast.closeAll()
-      const txLink = `https://optimistic.etherscan.io/tx/${hash}`
+      const txLink = `https://sepolia.basescan.org/tx/${hash}`
       toast({
         description: (
           <>
@@ -141,7 +129,7 @@ const MintHandbookButton = ({
                   <Gear width="40px" height="auto" />
                 </Box>
                 <Box flexDirection="column">
-                  <Box>{t('Minting in progress:')}</Box>
+                  <Box>Minting in progress:</Box>
                   <ExternalLink
                     underline="true"
                     href={txLink}
@@ -166,9 +154,9 @@ const MintHandbookButton = ({
       toast.closeAll()
       setShowConfetti(true)
       // HACK: guess tokenId
-      const txLink = `https://opensea.io/assets/optimism/${
-        lesson.mirrorNFTAddress
-      }/${1 + parseInt(numberMinted)}`
+      const txLink = `https://testnets.opensea.io/assets/base-sepolia/${NFTAddress}/${
+        1 + parseInt(numberMinted)
+      }`
       toast({
         description: (
           <>
@@ -178,7 +166,7 @@ const MintHandbookButton = ({
                   <SealCheck width="40px" height="auto" />
                 </Box>
                 <Box flexDirection="column">
-                  <Box>{t('Entry minted:')}</Box>
+                  <Box>NFT minted:</Box>
                   <ExternalLink
                     underline="true"
                     href={txLink}
@@ -203,29 +191,26 @@ const MintHandbookButton = ({
   }
 
   return (
-    <Box>
-      {lesson.areMirrorNFTAllCollected ? (
-        <ExternalLink
-          href={`https://opensea.io/collection/${lesson.slug}`}
-          alt="Collect on secondary market"
-        >
-          <Button variant="primaryGold" w="100%">
-            {t('Collect on secondary market')}
-          </Button>
-        </ExternalLink>
-      ) : isSuccess ? (
+    <Box maxW="500px" margin="auto" my="4">
+      <Image
+        src="https://raw.seadn.io/files/973e1681b73e67c3b59c32401c9f1e71.gif"
+        width="100%"
+        height="100%"
+        mb="4"
+      />
+      {isSuccess ? (
         <Button
           variant="secondaryGold"
           w="100%"
           background="transparent !important"
         >
-          {t('Entry Collected')}
+          NFT Collected
         </Button>
       ) : (
         <Button
           isDisabled={isLoading || isMinting}
           isLoading={isLoading || isMinting}
-          loadingText={isMinting ? t('Collecting Entry') : t('Minting...')}
+          loadingText={isMinting ? 'Minting NFT' : 'Minting...'}
           variant="primaryGold"
           w="100%"
           onClick={async () => {
@@ -234,15 +219,19 @@ const MintHandbookButton = ({
                 await open({ view: 'Connect' })
               } else if (numberMinted !== '-') {
                 if (parseInt(numberMinted) >= 100) {
-                  openInNewTab(`https://opensea.io/collection/${lesson.slug}`)
+                  openInNewTab(
+                    `https://testnets.opensea.io/collection/smart-wallet-oe`
+                  )
                 } else {
-                  if (address && chain?.id !== optimism.id) {
+                  if (address && chain?.id !== baseSepolia.id) {
                     try {
-                      await switchChain(wagmiConfig, { chainId: optimism.id })
+                      await switchChain(wagmiConfig, {
+                        chainId: baseSepolia.id,
+                      })
                     } catch (error) {
                       console.error(error)
                       toast({
-                        title: 'Switch your network to Optimism.',
+                        title: 'Switch your network to Base.',
                         description: (
                           <>Click Mint again after switching network.</>
                         ),
@@ -253,7 +242,7 @@ const MintHandbookButton = ({
                     }
                     setIsMinting(false)
                     toast({
-                      title: 'The network has been switched to Optimism.',
+                      title: 'The network has been switched to Base.',
                       description: <>Click Mint again.</>,
                       status: 'warning',
                       duration: 10000,
@@ -274,9 +263,7 @@ const MintHandbookButton = ({
                                 ? 'The total cost including gas fee exceeds your balance of ETH on Optimism.'
                                 : mintingError}
                             </Box>
-                            <Box>
-                              {t('Refresh the page before trying again.')}
-                            </Box>
+                            <Box>Refresh the page before trying again.</Box>
                           </>
                         ),
                         status: 'error',
@@ -304,7 +291,9 @@ const MintHandbookButton = ({
                 description: (
                   <>
                     {errorMessage?.includes('exceeds the balance')
-                      ? 'The total cost including gas fee exceeds your balance of ETH on Optimism.'
+                      ? 'The total cost including gas fee exceeds your balance of ETH on Base.'
+                      : error.message?.includes('!Qty')
+                      ? 'You have already minted the free NFT.'
                       : errorMessage}
                   </>
                 ),
@@ -316,12 +305,8 @@ const MintHandbookButton = ({
             }
           }}
         >
-          <Box fontWeight="bold">
-            {isOpenEdition ? 'Mint Handbook' : 'Mint for 0.01 ETH'}
-          </Box>
-          <Box ml="2">{`(${numberCollected}/${
-            isOpenEdition ? '∞' : '100'
-          } minted)`}</Box>
+          <Box fontWeight="bold">Mint Free Smart Wallet NFT</Box>
+          <Box ml="2">{`(${numberCollected}/∞ minted)`}</Box>
         </Button>
       )}
       <Confetti
@@ -333,4 +318,4 @@ const MintHandbookButton = ({
     </Box>
   )
 }
-export default MintHandbookButton
+export default MintNFT
