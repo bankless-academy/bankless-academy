@@ -66,7 +66,7 @@ export const NETWORKS = Object.freeze({
     blockExplorer: polygon.blockExplorers,
   },
   optimism: {
-    name: optimism.name,
+    name: 'Optimism', // technically OP Mainnet
     image: '/images/op.svg',
     currencySymbol: optimism.nativeCurrency.symbol,
     chainId: optimism.id,
