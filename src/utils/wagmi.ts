@@ -65,6 +65,7 @@ export const wagmiConfig = defaultWagmiConfig({
   }),
   enableInjected: true,
   // enableCoinbase: false,
+  // coinbasePreference: 'eoaOnly',
   transports: {
     [mainnet.id]: http(),
     [polygon.id]: http(),
