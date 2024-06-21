@@ -600,6 +600,21 @@ export async function getArticlesCollectors(
   }
 }
 
+export async function getNFTsCollectors(
+  nftAddress: string
+): Promise<any[]> {
+  try {
+    const NFTCollectors = await axios.get(
+      `https://base-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getOwnersForCollection?contractAddress=${nftAddress}&withTokenBalances=true`
+    )
+    // console.log(NFTCollectors.data)
+    return NFTCollectors.data?.ownerAddresses || []
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
 export async function isHolderOfNFT(
   address: string,
   openSeaLink: string
