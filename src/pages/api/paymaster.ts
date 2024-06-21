@@ -13,12 +13,13 @@ export default async function handler(
   console.log('chainId', chainId)
   console.log('entrypoint', entrypoint)
   console.log('userOp', userOp)
-  if (!willSponsor({ chainId: parseInt(chainId), entrypoint, userOp })) {
-    console.log("Not a sponsorable operation")
-    return res.status(200).send({ error: "Not a sponsorable operation" });
-  }
 
   try {
+    if (!willSponsor({ chainId: parseInt(chainId), entrypoint, userOp })) {
+      console.log("Not a sponsorable operation")
+      return res.status(200).send({ error: "Not a sponsorable operation" });
+    }
+
     if (method === "pm_getPaymasterStubData") {
       const result = await paymasterClient.getPaymasterStubData({
         userOperation: userOp,
