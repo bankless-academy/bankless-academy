@@ -316,6 +316,28 @@ const MintNFT = (): JSX.Element => {
                           capabilities,
                         } as any)
                       }
+                    } else if (account.connector.type === 'coinbaseWallet') {
+                      // TODO: simplify
+                      // non-deployed Coinbase smart wallet
+                      writeContracts({
+                        account: address,
+                        contracts: [
+                          {
+                            address: NFTAddress,
+                            abi: nftABI,
+                            functionName: 'claim',
+                            args: contractArgs,
+                          },
+                        ],
+                        capabilities,
+                      } as any)
+                      // Coinbase EOA
+                      const { request } = await simulateContract(
+                        wagmiConfig,
+                        mintArg
+                      )
+                      const hash = await writeContract(wagmiConfig, request)
+                      setHash(hash)
                     } else {
                       // EOA
                       const { request } = await simulateContract(
