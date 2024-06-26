@@ -105,8 +105,8 @@
     "tls": "^0.0.1",
     "twitter-api-v2": "^1.15.2",
     "usehooks-ts": "^2.7.1",
-    "viem": "^2.16.0",
-    "wagmi": "^2.10.4",
+    "viem": "^2.16.2",
+    "wagmi": "^2.10.7",
     "zod": "^3.22.4"
   },
   "devDependencies": {
