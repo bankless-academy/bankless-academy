@@ -196,113 +196,130 @@ const MintNFT = (): JSX.Element => {
           NFT Collected
         </Button>
       ) : (
-        <Button
-          isDisabled={isLoading || isMinting}
-          isLoading={isLoading || isMinting}
-          loadingText={isMinting ? 'Minting NFT' : 'Minting...'}
-          variant="primaryGold"
-          w="100%"
-          onClick={async () => {
-            try {
-              if (!address) {
-                await open({ view: 'Connect' })
-              } else if (numberMinted !== '-') {
-                if (address && chain?.id !== base.id) {
-                  try {
-                    await switchChain(wagmiConfig, {
-                      chainId: base.id,
-                    })
-                  } catch (error) {
-                    console.error(error)
+        <>
+          <Button
+            isDisabled={isLoading || isMinting}
+            isLoading={isLoading || isMinting}
+            loadingText={isMinting ? 'Minting NFT' : 'Minting...'}
+            variant="primaryGold"
+            w="100%"
+            onClick={async () => {
+              try {
+                if (!address) {
+                  await open({ view: 'Connect' })
+                } else if (numberMinted !== '-') {
+                  if (address && chain?.id !== base.id) {
+                    try {
+                      await switchChain(wagmiConfig, {
+                        chainId: base.id,
+                      })
+                    } catch (error) {
+                      console.error(error)
+                      toast({
+                        title: 'Switch your network to Base.',
+                        description: (
+                          <>Click Mint again after switching network.</>
+                        ),
+                        status: 'error',
+                        duration: 10000,
+                        isClosable: true,
+                      })
+                    }
+                    setIsMinting(false)
                     toast({
-                      title: 'Switch your network to Base.',
-                      description: (
-                        <>Click Mint again after switching network.</>
-                      ),
-                      status: 'error',
+                      title: 'The network has been switched to Base.',
+                      description: <>Click Mint again.</>,
+                      status: 'warning',
                       duration: 10000,
                       isClosable: true,
                     })
-                  }
-                  setIsMinting(false)
-                  toast({
-                    title: 'The network has been switched to Base.',
-                    description: <>Click Mint again.</>,
-                    status: 'warning',
-                    duration: 10000,
-                    isClosable: true,
-                  })
-                } else if (!isMinting) {
-                  setIsMinting(true)
-                  setTimeout(() => {
-                    setIsMinting(false)
-                  }, 3000)
-                  if (mintingError !== '') {
-                    toast({
-                      title: '⚠️ Problem while minting...',
-                      description: (
-                        <>
-                          <Box>
-                            {mintingError?.includes('exceeds the balance')
-                              ? 'The total cost including gas fee exceeds your balance of ETH on Optimism.'
-                              : mintingError}
-                          </Box>
-                          <Box>Refresh the page before trying again.</Box>
-                        </>
-                      ),
-                      status: 'error',
-                      duration: null,
-                      isClosable: true,
-                    })
-                  } else {
-                    const code = await client.getBytecode({ address })
-                    console.log('code', code)
-                    if (
-                      account.connector.type === 'coinbaseWallet' &&
-                      code?.startsWith('0x')
-                    ) {
-                      // Coinbase Smart Account
-                      const paymasterResults = await api('/api/paymaster', {
-                        method: 'pm_getPaymasterStubData',
-                        params: [
-                          {
-                            sender: address,
-                            nonce: '0x2',
-                            initCode: '0x',
-                            callData: `0x34fcd5be00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002000000000000000000000000077b82880ab87bdd8910f1f6324b34752eeab96ff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000001a484bb1e42000000000000000000000000${address.substring(
-                              2
-                            )}0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000180000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`,
-                            callGasLimit: '0x19d8c',
-                            verificationGasLimit: '0x97df4',
-                            preVerificationGas: '0x58df9',
-                            maxFeePerGas: '0x13e2110',
-                            maxPriorityFeePerGas: '0xf4240',
-                          },
-                          NFTAddress,
-                          '0x2105',
-                          null,
-                        ],
+                  } else if (!isMinting) {
+                    setIsMinting(true)
+                    setTimeout(() => {
+                      setIsMinting(false)
+                    }, 3000)
+                    if (mintingError !== '') {
+                      toast({
+                        title: '⚠️ Problem while minting...',
+                        description: (
+                          <>
+                            <Box>
+                              {mintingError?.includes('exceeds the balance')
+                                ? 'The total cost including gas fee exceeds your balance of ETH on Optimism.'
+                                : mintingError}
+                            </Box>
+                            <Box>Refresh the page before trying again.</Box>
+                          </>
+                        ),
+                        status: 'error',
+                        duration: null,
+                        isClosable: true,
                       })
-                      const errorDetails = paymasterResults?.data?.error
-                      if (errorDetails) {
-                        if (
-                          errorDetails?.includes(
-                            'address has maximum number of transactions defined in policy'
-                          )
-                        ) {
-                          alert(
-                            'You have already claimed your free sponsored mint.'
-                          )
-                        } else if (
-                          errorDetails?.includes(
-                            'address has maximum sponsorship cost defined in policy'
-                          )
-                        ) {
-                          alert(
-                            'Gas price is currently high, try again later to claim your gas free transaction.'
-                          )
-                        } else alert(errorDetails)
-                      } else {
+                    } else {
+                      const code = await client.getBytecode({ address })
+                      console.log('code', code)
+                      if (
+                        account.connector.type === 'coinbaseWallet' &&
+                        code?.startsWith('0x')
+                      ) {
+                        // Coinbase Smart Account
+                        const paymasterResults = await api('/api/paymaster', {
+                          method: 'pm_getPaymasterStubData',
+                          params: [
+                            {
+                              sender: address,
+                              nonce: '0x2',
+                              initCode: '0x',
+                              callData: `0x34fcd5be00000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000002000000000000000000000000077b82880ab87bdd8910f1f6324b34752eeab96ff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000001a484bb1e42000000000000000000000000${address.substring(
+                                2
+                              )}0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000180000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`,
+                              callGasLimit: '0x19d8c',
+                              verificationGasLimit: '0x97df4',
+                              preVerificationGas: '0x58df9',
+                              maxFeePerGas: '0x13e2110',
+                              maxPriorityFeePerGas: '0xf4240',
+                            },
+                            NFTAddress,
+                            '0x2105',
+                            null,
+                          ],
+                        })
+                        const errorDetails = paymasterResults?.data?.error
+                        if (errorDetails) {
+                          if (
+                            errorDetails?.includes(
+                              'address has maximum number of transactions defined in policy'
+                            )
+                          ) {
+                            alert(
+                              'You have already claimed your free sponsored mint.'
+                            )
+                          } else if (
+                            errorDetails?.includes(
+                              'address has maximum sponsorship cost defined in policy'
+                            )
+                          ) {
+                            alert(
+                              'Gas price is currently high, try again later to claim your gas free transaction.'
+                            )
+                          } else alert(errorDetails)
+                        } else {
+                          writeContracts({
+                            account: address,
+                            contracts: [
+                              {
+                                address: NFTAddress,
+                                abi: nftABI,
+                                functionName: 'claim',
+                                args: contractArgs,
+                              },
+                            ],
+                            capabilities,
+                          } as any)
+                        }
+                      } else if (account.connector.type === 'coinbaseWallet') {
+                        // TODO: simplify
+                        // non-deployed Coinbase smart wallet
                         writeContracts({
                           account: address,
                           contracts: [
@@ -315,68 +332,79 @@ const MintNFT = (): JSX.Element => {
                           ],
                           capabilities,
                         } as any)
+                        // Coinbase EOA
+                        const { request } = await simulateContract(
+                          wagmiConfig,
+                          mintArg
+                        )
+                        const hash = await writeContract(wagmiConfig, request)
+                        setHash(hash)
+                      } else {
+                        // EOA
+                        const { request } = await simulateContract(
+                          wagmiConfig,
+                          mintArg
+                        )
+                        const hash = await writeContract(wagmiConfig, request)
+                        setHash(hash)
                       }
-                    } else if (account.connector.type === 'coinbaseWallet') {
-                      // TODO: simplify
-                      // non-deployed Coinbase smart wallet
-                      writeContracts({
-                        account: address,
-                        contracts: [
-                          {
-                            address: NFTAddress,
-                            abi: nftABI,
-                            functionName: 'claim',
-                            args: contractArgs,
-                          },
-                        ],
-                        capabilities,
-                      } as any)
-                      // Coinbase EOA
-                      const { request } = await simulateContract(
-                        wagmiConfig,
-                        mintArg
-                      )
-                      const hash = await writeContract(wagmiConfig, request)
-                      setHash(hash)
-                    } else {
-                      // EOA
-                      const { request } = await simulateContract(
-                        wagmiConfig,
-                        mintArg
-                      )
-                      const hash = await writeContract(wagmiConfig, request)
-                      setHash(hash)
                     }
                   }
+                } else if (address) {
+                  alert('try again in 2 seconds')
                 }
-              } else if (address) {
-                alert('try again in 2 seconds')
+              } catch (error) {
+                const errorMessage =
+                  error.message?.split('\n')[0] || 'Unknow error.'
+                toast({
+                  title: '⚠️ Problem while minting...',
+                  description: (
+                    <>
+                      {errorMessage?.includes('exceeds the balance')
+                        ? 'The total cost including gas fee exceeds your balance of ETH on Base.'
+                        : error.message?.includes('!Qty')
+                        ? 'You have already minted the free NFT.'
+                        : errorMessage}
+                    </>
+                  ),
+                  status: 'error',
+                  duration: 10000,
+                  isClosable: true,
+                })
+                console.error(error)
               }
-            } catch (error) {
-              const errorMessage =
-                error.message?.split('\n')[0] || 'Unknow error.'
-              toast({
-                title: '⚠️ Problem while minting...',
-                description: (
-                  <>
-                    {errorMessage?.includes('exceeds the balance')
-                      ? 'The total cost including gas fee exceeds your balance of ETH on Base.'
-                      : error.message?.includes('!Qty')
-                      ? 'You have already minted the free NFT.'
-                      : errorMessage}
-                  </>
-                ),
-                status: 'error',
-                duration: 10000,
-                isClosable: true,
-              })
-              console.error(error)
+            }}
+          >
+            <Box fontWeight="bold">Mint Free Smart Wallet NFT</Box>
+            <Box ml="2">{`(${numberMinted}/∞ minted)`}</Box>
+          </Button>
+          <br />
+          <br />
+          <Button
+            isDisabled={isLoading || isMinting}
+            isLoading={isLoading || isMinting}
+            loadingText={isMinting ? 'Minting NFT' : 'Minting...'}
+            variant="primaryGold"
+            w="100%"
+            onClick={() =>
+              writeContracts({
+                account: address,
+                contracts: [
+                  {
+                    address: NFTAddress,
+                    abi: nftABI,
+                    functionName: 'claim',
+                    args: contractArgs,
+                  },
+                ],
+                capabilities,
+              } as any)
             }
-          }}
-        >
-          <Box fontWeight="bold">Mint Free Smart Wallet NFT</Box>
-          <Box ml="2">{`(${numberMinted}/∞ minted)`}</Box>
-        </Button>
+          >
+            <Box fontWeight="bold">test mobile mint</Box>
+            <Box ml="2">{`(${numberMinted}/∞ minted)`}</Box>
+          </Button>
+        </>
       )}
       <Confetti
         showConfetti={showConfetti}
