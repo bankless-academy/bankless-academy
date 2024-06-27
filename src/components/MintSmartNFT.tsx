@@ -16,7 +16,7 @@ import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
 import Confetti from 'components/Confetti'
 import { NFTAddress, nftABI } from 'constants/nft'
-import { api, getNFTsCollectors } from 'utils/index'
+import { api, formatTime, getNFTsCollectors } from 'utils/index'
 
 const StyledBox = styled(Box)`
   .counter {
@@ -187,16 +187,6 @@ const MintSmartNFT = (): JSX.Element => {
     return () => clearInterval(interval)
   }, [isRunning])
 
-  const formatTime = (ms: number) => {
-    const minutes = Math.floor(ms / 60000)
-    const seconds = Math.floor((ms % 60000) / 1000)
-    const milliseconds = ms % 1000
-
-    return `${minutes.toString().padStart(2, '0')}:${seconds
-      .toString()
-      .padStart(2, '0')}:${milliseconds.toString().padStart(3, '0')}`
-  }
-
   const handleStart = () => {
     if (!isRunning) {
       startTimeRef.current = Date.now() - time
@@ -232,7 +222,11 @@ const MintSmartNFT = (): JSX.Element => {
   return (
     <StyledBox maxW="500px" margin="auto" my="4">
       <Box w="500px" h="500px" position="relative">
-        <Image src="/images/smart-wallet.gif" width="100%" height="100%" />
+        <Image
+          src="https://beta.banklessacademy.com/images/smart-wallet.gif"
+          width="100%"
+          height="100%"
+        />
         <Box className="counter" zIndex="1">
           {formatTime(time)}
         </Box>

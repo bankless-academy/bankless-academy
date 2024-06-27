@@ -600,6 +600,45 @@ export async function getArticlesCollectors(
   }
 }
 
+export async function getNFTInfo(contractAddress, tokenId): Promise<any> {
+  const ERC721_ABI = [
+    {
+      "inputs": [
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+      ],
+      "name": "ownerOf",
+      "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    "event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)"
+  ];
+  const provider = new ethers.providers.JsonRpcProvider(`https://base-mainnet.infura.io/v3/${INFURA_KEY}`);
+
+  const contract = new ethers.Contract(contractAddress, ERC721_ABI, provider);
+
+  try {
+    // Get owner
+    const owner = await contract.ownerOf(tokenId);
+
+    // Get the Transfer event for the mint
+    const filter = contract.filters.Transfer(null, null, tokenId);
+    const events = await contract.queryFilter(filter, 0, 'latest');
+
+    // The first Transfer event for this token ID should be the mint
+    const mintEvent = events[0];
+    const mintBlock = await provider.getBlock(mintEvent.blockNumber);
+    const mintTimestamp = new Date(mintBlock.timestamp * 1000).toISOString();
+
+    console.log(`Owner: ${owner}`);
+    console.log(`Mint Timestamp: ${mintTimestamp}`);
+
+    return { owner, mintTimestamp };
+  } catch (error) {
+    console.error('Error fetching NFT data:', error);
+  }
+}
+
 export async function getNFTsCollectors(
   nftAddress: string
 ): Promise<any[]> {
@@ -820,4 +859,14 @@ export const openLesson = async (
       (value, index, array) => array.indexOf(value) === index
     )
   )
+}
+
+export const formatTime = (ms: number) => {
+  const minutes = Math.floor(ms / 60000)
+  const seconds = Math.floor((ms % 60000) / 1000)
+  const milliseconds = ms % 1000
+
+  return `${minutes.toString().padStart(2, '0')}:${seconds
+    .toString()
+    .padStart(2, '0')}:${milliseconds.toString().padStart(3, '0')}`
 }
