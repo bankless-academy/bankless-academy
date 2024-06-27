@@ -28,7 +28,8 @@ export const TABLE = {
     referrer: 'users.referrer',
     ba_stamps: 'users.ba_stamps',
     socials: 'users.socials',
-    community: 'users.community'
+    community: 'users.community',
+    smart_nft_start_at: 'smart_nft_start_at',
   },
   // deprecated
   // quests: {
