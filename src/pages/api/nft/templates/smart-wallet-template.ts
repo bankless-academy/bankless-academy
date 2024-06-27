@@ -35,7 +35,7 @@ export const template = `
       top: 72%;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 40px;
+      font-size: 4vw;
       font-weight: bold;
       font-family: monospace;
       color: white;
@@ -57,8 +57,8 @@ export const template = `
   <div class="container">
     <img id="gifImage" src="/images/smart-wallet.gif" alt="Square GIF">
     <div class="counter">{{counter}}</div>
-    <a href="">
-      <img class="bottom-right" src="/images/BanklessAcademy.svg" alt="Bankless Academy">
+    <a href="https://app.banklessacademy.com/" target="_blank">
+      <img class="bottom-right" src="/images/BanklessAcademy.svg" alt="Bankless Academy" title="Bankless Academy - Level up your knowledge of Web3 and DeFi">
     </a>
   </div>
 </body>
