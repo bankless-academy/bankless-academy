@@ -109,12 +109,14 @@ const Skills = ({ stats }) => (
 
 const OgSocial = ({
   explorerName,
+  community,
   explorerAvatar,
   score,
   stats,
   badgeImageLink,
 }: {
   explorerName?: string
+  community?: string
   explorerAvatar?: string
   score?: number
   stats?: {
@@ -180,7 +182,7 @@ const OgSocial = ({
         style={{
           display: 'flex',
           position: 'absolute',
-          top: '432px',
+          top: '410px',
           left: '32px',
           width: '433px',
           height: '119px',
@@ -195,6 +197,37 @@ const OgSocial = ({
       >
         {explorerName || DEFAULT_ENS}
       </div>
+      {community && (
+        <div
+          style={{
+            display: 'flex',
+            position: 'absolute',
+            top: '464px',
+            left: '32px',
+            width: '433px',
+            height: '119px',
+            fontSize: 32,
+            fontFamily: 'ClearSans',
+            color: '#ffffff70',
+            textAlign: 'center',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textTransform: 'uppercase',
+          }}
+        >
+          <div>-[</div>
+          <div
+            style={{
+              marginTop: '1.3px',
+              marginLeft: '4px',
+              marginRight: '4px',
+            }}
+          >
+            {community}
+          </div>
+          <div>]-</div>
+        </div>
+      )}
       {badgeImageLink ? (
         <img
           style={{

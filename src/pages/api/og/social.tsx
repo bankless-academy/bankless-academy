@@ -155,12 +155,14 @@ export default async function handler(req: NextApiRequest) {
           <OgSocial
             explorerAvatar={user.avatar}
             explorerName={explorerName}
+            community={user.community}
             badgeImageLink={`${DOMAIN_URL}${badgeImageLink}`}
           />
         ) : (
           <OgSocial
             explorerAvatar={user.avatar}
             explorerName={explorerName}
+            community={user.community}
             score={user.stats.score || 0}
             stats={user.stats}
           />

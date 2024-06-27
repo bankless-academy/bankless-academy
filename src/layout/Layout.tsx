@@ -9,7 +9,6 @@ import InternalLink from 'components/InternalLink'
 import { useSmallScreen, useWindowScrollPositions } from 'hooks/index'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
-import { shortenAddress } from 'utils/index'
 import { DEFAULT_AVATAR } from 'constants/index'
 
 export type PageType = LessonTypeType | 'PROFILE' | 'GLOSSARY' | ''
@@ -105,6 +104,7 @@ const Layout = ({
   const { address } = useAccount()
   const { open } = useWeb3Modal()
   const [nameCache] = useLocalStorage(`name-cache`, {})
+  const [community] = useLocalStorage(`community`, '')
   const [score] = useLocalStorage(`score`, 0)
   const [isSmallScreen] = useSmallScreen()
   const { scrollY } = useWindowScrollPositions()
@@ -119,6 +119,7 @@ const Layout = ({
   }
 
   const menuBarWidth = '280px'
+  const profileHeight = community ? '344px' : '298px'
   return (
     <Box
       position="relative"
@@ -159,7 +160,7 @@ const Layout = ({
                     ? 'linear-gradient(132deg, #67407E 0%, #354374 100%)'
                     : '#3F3253'
                 }
-                h="298px"
+                h={profileHeight}
                 borderBottom={page === 'PROFILE' ? '' : '2px solid #574572'}
               >
                 <InternalLink href={`/explorer/${username}?referral=true`}>
@@ -213,11 +214,25 @@ const Layout = ({
                       fontSize="xl"
                       fontWeight="bold"
                       textTransform="uppercase"
+                    >
+                      {address in nameCache && nameCache[address].name}
+                    </Box>
+                    <Box
+                      textAlign="center"
+                      color="#ffffff70"
+                      fontSize="xl"
+                      fontWeight="bold"
+                      textTransform="uppercase"
+                      pt={community ? '4' : '0'}
                       pb="8"
                     >
-                      {username.includes('.')
-                        ? username
-                        : shortenAddress(username)}
+                      {community && (
+                        <Box display="flex" justifyContent="center">
+                          <Box>-[&nbsp;</Box>
+                          <Box mt="1.5px">{community}</Box>
+                          <Box>&nbsp;]-</Box>
+                        </Box>
+                      )}
                     </Box>
                   </Box>
                 </InternalLink>
@@ -225,7 +240,7 @@ const Layout = ({
             ) : (
               <Box
                 background="transparent"
-                h="298px"
+                h={profileHeight}
                 borderBottom="2px solid #574572"
                 textAlign="center"
               >

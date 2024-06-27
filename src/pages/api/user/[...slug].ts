@@ -87,7 +87,8 @@ export default async function handler(
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
         TABLE.users.donations,
-        TABLE.users.ba_stamps
+        TABLE.users.ba_stamps,
+        TABLE.users.community,
       )
       .whereILike('ens_name', addressLowerCase)
     // console.log('userExist', userExist)
@@ -118,7 +119,8 @@ export default async function handler(
         TABLE.users.ens_name,
         TABLE.users.ens_avatar,
         TABLE.users.donations,
-        TABLE.users.ba_stamps
+        TABLE.users.ba_stamps,
+        TABLE.users.community,
       )
       .whereILike('address', addressLowerCase)
     console.log('user', userExist)
@@ -269,6 +271,7 @@ export default async function handler(
     stats,
     badgeTokenIds,
     kudosTokenIds,
+    community: userExist.community
   }
 
   return res.status(200).json(data)
