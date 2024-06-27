@@ -6,13 +6,13 @@ import { ALCHEMY_KEY_BACKEND } from "constants/index";
 import type { RequestPayload } from "./passport-types";
 
 // ----- Verify signed message with ethers
-import { StaticJsonRpcProvider } from "@ethersproject/providers";
+import { JsonRpcProvider } from "ethers";
 
 // ----- Credential verification
 import * as DIDKit from "@spruceid/didkit-wasm-node";
 
 // ----- Verify signed message with ethers
-import { utils } from "ethers";
+import { getAddress as getEthersAddress, verifyMessage } from "ethers";
 
 import { DIDKitLib, VerifiableCredential } from "./passport-types";
 export declare const verifyCredential: (DIDKit: DIDKitLib, credential: VerifiableCredential) => Promise<boolean>;
@@ -21,8 +21,8 @@ export declare const verifyCredential: (DIDKit: DIDKitLib, credential: Verifiabl
 const RPC_URL = `https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const getRPCProvider = (payload: RequestPayload): StaticJsonRpcProvider => {
-  const provider: StaticJsonRpcProvider = new StaticJsonRpcProvider(RPC_URL);
+export const getRPCProvider = (payload: RequestPayload): JsonRpcProvider => {
+  const provider: JsonRpcProvider = new JsonRpcProvider(RPC_URL);
 
   return provider;
 };
@@ -36,7 +36,7 @@ export const getAddress = async ({ address, signer, issuer }: RequestPayload): P
     // check the credential was issued by us for this user...
     if (verified && issuer === signer.challenge.issuer && address === signer.challenge.credentialSubject.address) {
       // which ever wallet signed this message is the wallet we want to use in provider verifications
-      return utils.getAddress(utils.verifyMessage(signer.challenge.credentialSubject.challenge, signer.signature));
+      return getEthersAddress(verifyMessage(signer.challenge.credentialSubject.challenge, signer.signature));
     }
   }
 
