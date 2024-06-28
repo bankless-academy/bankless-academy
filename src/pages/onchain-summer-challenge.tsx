@@ -9,10 +9,11 @@ import InternalLink from 'components/InternalLink'
 import MintSmartNFT from 'components/MintSmartNFT'
 import { coinbaseWallet } from 'wagmi/connectors'
 import { Chain, base } from 'wagmi/chains'
+import ExternalLink from 'components/ExternalLink'
 
 const pageMeta: MetaData = {
-  title: 'Onchain Summer',
-  description: 'Challenge: Go onchain in less than 60 seconds',
+  title: 'Onchain Summer Challenge',
+  description: 'Go onchain in less than 60 seconds',
   nolayout: true,
   noindex: true,
 }
@@ -48,32 +49,35 @@ const Confirmation = (): JSX.Element => {
     <WagmiProvider config={customWagmiConfig}>
       <QueryClientProvider client={queryClient}>
         <Box h="100vh">
-          <Box m="24px">
-            <InternalLink href="/" target="_blank">
+          <Box m="24px" display="flex" justifyContent="space-between">
+            <InternalLink href="/">
               <Image
                 height="60px"
                 src="/images/BanklessAcademy.svg"
                 alt="Bankless Academy"
+                pr="8"
               />
             </InternalLink>
+            <ExternalLink
+              href="https://www.base.org/onchainsummer"
+              target="_blank"
+            >
+              <Image
+                height="60px"
+                src="/images/ocs_banner.svg"
+                alt="Onchain Summer"
+              />
+            </ExternalLink>
           </Box>
           <Text
             as="h1"
-            fontSize="4xl"
+            fontSize="5xl"
             fontWeight="bold"
             textAlign="center"
             mt="8"
+            p="8"
           >
-            Onchain Summer Challenge
-          </Text>
-          <Text
-            as="h2"
-            fontSize="3xl"
-            fontWeight="bold"
-            textAlign="center"
-            mt="8"
-          >
-            - Go onchain in less than 60 seconds -
+            Can you go onchain in less than 60 seconds?
           </Text>
           <Image
             position="absolute"
