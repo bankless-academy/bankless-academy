@@ -640,7 +640,6 @@ export async function getNFTInfo(
 
   try {
     const owner = tokenId ? await contract.ownerOf(tokenId) : address
-    console.log(await contract.tokensOfOwner(address))
     res.tokenIds = address ? (await contract.tokensOfOwner(address)).map(bigNum => bigNum.toNumber()) : [tokenId]
     console.log(res.tokenIds)
     const latestTokenId = res.tokenIds.at(-1)
