@@ -29,8 +29,7 @@ export default async function handler(
           .update({ smart_nft_start_at: new Date(timestamp) })
       }
       return res.status(200).json('OK')
-    }
-    return res.status(200).json('KO')
+    } else return res.status(200).json('KO')
   } else if (['get-info'].includes(slug)) {
     const { address } = req.body
     if (!slug || !address) return res.status(400).json({ error: 'Wrong params' })
@@ -51,7 +50,5 @@ export default async function handler(
 
     res.setHeader('Content-Type', 'text/html')
     res.status(200).send(htmlTemplate)
-  } 
-
-  return res.status(400).send('Unknown NFT')
+  } else return res.status(400).send('Unknown NFT')
 }
