@@ -1,22 +1,27 @@
 /* eslint-disable no-console */
-import { Box, Button, Image, useToast } from '@chakra-ui/react'
-import { useEffect, useMemo, useState, useRef } from 'react'
-import { base } from 'wagmi/chains'
 import {
-  useWaitForTransactionReceipt,
-  useAccount,
-  useConnect,
-  useDisconnect,
-} from 'wagmi'
-import { Gear, SealCheck } from '@phosphor-icons/react'
+  Box,
+  Button,
+  Image,
+  Text,
+  Image as ChakraImage,
+} from '@chakra-ui/react'
+import { useEffect, useMemo, useState, useRef } from 'react'
+import { useAccount, useConnect, useDisconnect } from 'wagmi'
+import { ShootingStar } from '@phosphor-icons/react'
 import { useCapabilities, useWriteContracts } from 'wagmi/experimental'
 import styled from '@emotion/styled'
 
 import ExternalLink from 'components/ExternalLink'
-import { useSmallScreen } from 'hooks/index'
 import Confetti from 'components/Confetti'
 import { NFTAddress, nftABI } from 'constants/nft'
-import { api, formatTime, getNFTsCollectors } from 'utils/index'
+import {
+  api,
+  formatTime,
+  generateFarcasterLink,
+  generateTwitterLink,
+  getNFTsCollectors,
+} from 'utils/index'
 
 const StyledBox = styled(Box)`
   .counter {
@@ -39,18 +44,41 @@ const MintSmartNFT = (): JSX.Element => {
   const account = useAccount()
   const { connectors, connect } = useConnect()
   const { disconnect } = useDisconnect()
-  const toast = useToast()
-  const [isSmallScreen] = useSmallScreen()
   const [numberMinted, setNumberMinted] = useState('-')
   const [time, setTime] = useState(0)
+  const [mintTime, setMintTime] = useState(0)
+  const [mintId, setMintId] = useState(null)
   const [isRunning, setIsRunning] = useState(false)
+  const [isLoadingInfo, setIsLoadingInfo] = useState(false)
   const startTimeRef = useRef<number | null>(null)
-  const [hash] = useState('')
   const [showConfetti, setShowConfetti] = useState(false)
+  const getNFTInfo = async () => {
+    console.log('getNFTInfo')
+    setIsLoadingInfo(true)
+    const nftInfo = await api('/api/nft/get-info', { address })
+    console.log(nftInfo)
+    if (nftInfo?.data?.time && nftInfo?.data?.time !== '--:--:---') {
+      setMintTime(nftInfo?.data?.time)
+    }
+    if (nftInfo?.data?.tokenIds?.length) {
+      const mintId = nftInfo?.data?.tokenIds?.at(-1)
+      console.log('mintId', mintId)
+      setMintId(mintId)
+    }
+    setIsLoadingInfo(false)
+    return nftInfo?.data?.tokenIds?.at(-1)
+  }
   const { writeContracts } = useWriteContracts({
     mutation: {
-      onSuccess: (id) => {
-        updateNFTCollectors().catch(console.error)
+      onSuccess: async (id) => {
+        console.log('onSuccess')
+        let mintId = null
+        while (!mintId) {
+          mintId = await getNFTInfo()
+          console.log('retry', mintId)
+        }
+        await updateNFTCollectors().catch(console.error)
+        console.log('celebrateMint')
         celebrateMint()
         console.log('id', id)
       },
@@ -71,12 +99,6 @@ const MintSmartNFT = (): JSX.Element => {
     '0x',
   ]
 
-  const { isLoading, isSuccess } = useWaitForTransactionReceipt({
-    chainId: base.id,
-    hash: hash as any,
-    pollingInterval: 1_000,
-  })
-
   const updateNFTCollectors = async () => {
     const NFTCollectors = await getNFTsCollectors(NFTAddress)
     NFTCollectors.reduce((p, c) => p + c?.tokenBalances?.length, 0)
@@ -89,34 +111,7 @@ const MintSmartNFT = (): JSX.Element => {
   }
 
   const celebrateMint = () => {
-    toast.closeAll()
     setShowConfetti(true)
-    // HACK: guess tokenId
-    const txLink = `https://opensea.io/assets/base/${NFTAddress}/${
-      1 + parseInt(numberMinted)
-    }`
-    toast({
-      description: (
-        <>
-          <Box>
-            <Box display="flex">
-              <Box mr="4">
-                <SealCheck width="40px" height="auto" />
-              </Box>
-              <Box flexDirection="column">
-                <Box>NFT minted:</Box>
-                <ExternalLink underline="true" href={txLink} alt="OpenSea Link">
-                  {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
-                </ExternalLink>
-              </Box>
-            </Box>
-          </Box>
-        </>
-      ),
-      status: 'success',
-      duration: 10000,
-      isClosable: true,
-    })
   }
 
   useEffect(() => {
@@ -136,43 +131,10 @@ const MintSmartNFT = (): JSX.Element => {
   }, [account.status, startTimeRef])
 
   useEffect(() => {
-    if (isLoading) {
-      toast.closeAll()
-      const txLink = `https://basescan.org/tx/${hash}`
-      toast({
-        description: (
-          <>
-            <Box>
-              <Box display="flex">
-                <Box mr="4">
-                  <Gear width="40px" height="auto" />
-                </Box>
-                <Box flexDirection="column">
-                  <Box>Minting in progress:</Box>
-                  <ExternalLink
-                    underline="true"
-                    href={txLink}
-                    alt="Etherscan transaction link"
-                  >
-                    {isSmallScreen ? `${txLink.substring(0, 50)}...` : txLink}
-                  </ExternalLink>
-                </Box>
-              </Box>
-            </Box>
-          </>
-        ),
-        status: 'warning',
-        duration: null,
-        isClosable: true,
-      })
+    if (address) {
+      getNFTInfo()
     }
-  }, [isLoading])
-
-  useEffect(() => {
-    if (isSuccess) {
-      celebrateMint()
-    }
-  }, [isSuccess])
+  }, [address])
 
   useEffect(() => {
     let interval: NodeJS.Timeout
@@ -195,8 +157,12 @@ const MintSmartNFT = (): JSX.Element => {
   }
 
   const handleReset = () => {
-    setIsRunning(false)
+    console.log('handleReset')
+    setIsLoadingInfo(false)
     setTime(0)
+    setMintId(null)
+    setMintTime(null)
+    setIsRunning(false)
     startTimeRef.current = null
   }
 
@@ -219,95 +185,182 @@ const MintSmartNFT = (): JSX.Element => {
     return {}
   }, [availableCapabilities, account.chainId])
 
+  const shareLink = `https://app.banklessacademy.com/onchain-summer-challenge`
+  const share = `🔆 OᑎᑕᕼᗩIᑎ ᔑᑌᗰᗰEᖇ 🔆 Challenge by @BanklessAcademy
+I’ve just got onchain in XX seconds!
+
+How fast can you go onchain?
+#OnchainSummer`
+
+  const twitterLink = generateTwitterLink(share, shareLink)
+
+  const farcasterLink = generateFarcasterLink(share, shareLink)
+
   return (
-    <StyledBox maxW="500px" margin="auto" my="4">
-      <Box w="500px" h="500px" position="relative">
-        <Image
-          src="https://beta.banklessacademy.com/images/smart-wallet.gif"
-          width="100%"
-          height="100%"
-        />
-        <Box className="counter" zIndex="1">
-          {formatTime(time)}
+    <>
+      <Text as="h1" fontSize="5xl" fontWeight="bold" textAlign="center" p="8">
+        {mintTime ? 'Yes! 🥳' : '🤔'}
+      </Text>
+      <StyledBox maxW="500px" margin="auto" my="4">
+        <Box w="500px" h="500px" position="relative">
+          <Image
+            src="https://beta.banklessacademy.com/images/smart-wallet.gif"
+            width="100%"
+            height="100%"
+            borderRadius="8px"
+          />
+          <Box className="counter" zIndex="1">
+            {mintTime || formatTime(time)}
+          </Box>
         </Box>
-      </Box>
-      <Box mt="4">
-        {isSuccess ? (
-          <Button
-            variant="secondaryGold"
-            w="100%"
-            background="transparent !important"
-          >
-            NFT Collected
-          </Button>
-        ) : (
-          <>
-            {isRunning && account.status === 'disconnected' && (
-              <>
-                {connectors.map((connector) => (
-                  <Button
-                    id={connector.id}
-                    key={connector.uid}
-                    onClick={() => connect({ connector })}
-                    variant="primaryGold"
-                    w="100%"
-                  >
-                    Connect Smart Wallet
-                  </Button>
-                ))}
-              </>
-            )}
-            {account.status === 'connected' && (
-              <>
+        <Box mt="4">
+          {isRunning && account.status === 'disconnected' && (
+            <>
+              {connectors.map((connector) => (
                 <Button
-                  isDisabled={isLoading}
-                  isLoading={isLoading}
-                  loadingText={isLoading ? 'Minting NFT' : 'Minting...'}
+                  id={connector.id}
+                  key={connector.uid}
+                  onClick={() => connect({ connector })}
                   variant="primaryGold"
                   w="100%"
-                  onClick={() =>
-                    writeContracts({
-                      account: address,
-                      contracts: [
-                        {
-                          address: NFTAddress,
-                          abi: nftABI,
-                          functionName: 'claim',
-                          args: contractArgs,
-                        },
-                      ],
-                      capabilities,
-                    } as any)
-                  }
                 >
-                  <Box fontWeight="bold">Mint Free Smart Wallet NFT</Box>
-                  <Box ml="2">{`(${numberMinted}/∞ minted)`}</Box>
+                  Connect Smart Wallet
                 </Button>
-                <Box display="flex" justifyContent="center" mt="4">
-                  <Button onClick={() => disconnect()}>Disconnect</Button>
-                </Box>
-              </>
-            )}
-          </>
-        )}
-        <Box display="flex" justifyContent="center" mt="4">
-          {isRunning && !account.isConnected && (
-            <Button onClick={handleReset}>Reset timer</Button>
+              ))}
+            </>
           )}
-          {!isRunning && !account.isConnected && (
-            <Button variant="primaryGold" onClick={handleStart}>
-              Start
+          {!isLoadingInfo && !mintTime && account.status === 'connected' && (
+            <Button
+              variant="primaryGold"
+              w="100%"
+              onClick={() =>
+                writeContracts({
+                  account: address,
+                  contracts: [
+                    {
+                      address: NFTAddress,
+                      abi: nftABI,
+                      functionName: 'claim',
+                      args: contractArgs,
+                    },
+                  ],
+                  capabilities,
+                } as any)
+              }
+            >
+              <Box fontWeight="bold">Mint Free Smart Wallet NFT</Box>
+              <Box ml="2">{`(${numberMinted}/∞ minted)`}</Box>
             </Button>
           )}
+          {!isLoadingInfo && account.status === 'connected' && mintId !== null && (
+            <Box textAlign="center" p="16px" maxW="400px" m="auto">
+              <Box display="flex" pb="1">
+                <Button
+                  variant="primaryGold"
+                  w="full"
+                  height="51px"
+                  m="auto"
+                  isDisabled
+                  borderBottomRadius="0"
+                  leftIcon={<ShootingStar width="28px" height="28px" />}
+                >
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    fontSize="lg"
+                  >
+                    <Box fontWeight="bold">Challenge Completed</Box>
+                    <Box ml="2" fontWeight="normal">
+                      {`(${numberMinted}/∞ minted)`}
+                    </Box>
+                  </Box>
+                </Button>
+              </Box>
+              <Box pb="1">
+                <ExternalLink href={twitterLink} mr="2">
+                  <Button
+                    variant="primaryGold"
+                    w="100%"
+                    borderRadius="0"
+                    leftIcon={
+                      <ChakraImage width="20px" src="/images/TwitterX.svg" />
+                    }
+                  >
+                    Share on Twitter / X
+                  </Button>
+                </ExternalLink>
+              </Box>
+              <Box pb="1">
+                <ExternalLink href={farcasterLink} mr="2">
+                  <Button
+                    variant="primaryGold"
+                    w="100%"
+                    borderRadius="0"
+                    leftIcon={
+                      <ChakraImage width="20px" src="/images/Farcaster.svg" />
+                    }
+                  >
+                    Share on Farcaster
+                  </Button>
+                </ExternalLink>
+              </Box>
+              <Box pb="1">
+                <ExternalLink
+                  href={`https://opensea.io/assets/base/${NFTAddress}/${mintId}`}
+                >
+                  <Button
+                    variant="primaryGold"
+                    w="100%"
+                    borderTopRadius="0"
+                    leftIcon={
+                      <ChakraImage
+                        width="24px"
+                        height="24px"
+                        src="/images/OpenSea.svg"
+                      />
+                    }
+                  >
+                    View on OpenSea
+                  </Button>
+                </ExternalLink>
+              </Box>
+            </Box>
+          )}
+          {account.status === 'connected' && isLoadingInfo && (
+            <Box textAlign="center">Loading ...</Box>
+          )}
+          {account.status === 'connected' && !isLoadingInfo && (
+            <Box display="flex" justifyContent="center" mt="4">
+              <Button
+                onClick={() => {
+                  handleReset()
+                  disconnect()
+                }}
+              >
+                Disconnect
+              </Button>
+            </Box>
+          )}
+          <Box display="flex" justifyContent="center" mt="4">
+            {isRunning && !account.isConnected && !isLoadingInfo && (
+              <Button onClick={handleReset}>Reset timer</Button>
+            )}
+            {!isRunning && !account.isConnected && !mintId && (
+              <Button variant="primaryGold" onClick={handleStart}>
+                Start Challenge
+              </Button>
+            )}
+          </Box>
         </Box>
-      </Box>
-      <Confetti
-        showConfetti={showConfetti}
-        onConfettiComplete={() => {
-          setShowConfetti(false)
-        }}
-      />
-    </StyledBox>
+        <Confetti
+          showConfetti={showConfetti}
+          onConfettiComplete={() => {
+            setShowConfetti(false)
+          }}
+        />
+      </StyledBox>
+    </>
   )
 }
 export default MintSmartNFT
