@@ -90,7 +90,7 @@ const Confirmation = (): JSX.Element => {
           </Text>
           <Box display="flex" justifyContent="center">
             <video autoPlay loop playsInline muted>
-              <source src="/ocsc-demo.mov" type="video/mp4"></source>
+              <source src="/ocsc-demo.mov" type="video/quicktime"></source>
             </video>
           </Box>
         </Box>
