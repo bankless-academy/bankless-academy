@@ -25,6 +25,11 @@ const MintHandbookButton = ({
   numberCollected: number | '...'
 }): JSX.Element => {
   if (!lesson.mirrorNFTAddress) return
+  // TEST OE mint
+  const isOpenEdition = lesson.slug === 'creating-a-crypto-wallet'
+  if (isOpenEdition) {
+    lesson.mirrorNFTAddress = '0x6dbf20730f513fc45b19e4d0b951c4e5f2564dd8'
+  }
   const { t } = useTranslation()
   const { address, chain } = useAccount()
   const { open } = useWeb3Modal()
@@ -36,7 +41,8 @@ const MintHandbookButton = ({
   const [mintingError, setMintingError] = useState('')
   const [showConfetti, setShowConfetti] = useState(false)
 
-  const isNewContract = parseInt(lesson?.collectibleId.substring(1), 10) > 6
+  const isNewContract =
+    parseInt(lesson?.collectibleId.substring(1), 10) > 6 || isOpenEdition
 
   const mintArg = {
     address: lesson.mirrorNFTAddress,
@@ -88,7 +94,7 @@ const MintHandbookButton = ({
       : [address, ''],
     chainId: optimism.id,
     // 0.01 + 0.00069 in collector fee
-    value: parseEther('0.01069'),
+    value: isOpenEdition ? parseEther('0.00069') : parseEther('0.01069'),
     overrides: {
       gasLimit: 150000n,
     },
@@ -310,8 +316,12 @@ const MintHandbookButton = ({
             }
           }}
         >
-          <Box fontWeight="bold">Mint for 0.01 ETH</Box>
-          <Box ml="2">{`(${numberCollected}/100 minted)`}</Box>
+          <Box fontWeight="bold">
+            {isOpenEdition ? 'Mint Handbook' : 'Mint for 0.01 ETH'}
+          </Box>
+          <Box ml="2">{`(${numberCollected}/${
+            isOpenEdition ? '∞' : '100'
+          } minted)`}</Box>
         </Button>
       )}
       <Confetti
