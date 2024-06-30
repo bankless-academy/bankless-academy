@@ -93,6 +93,25 @@ const Confirmation = (): JSX.Element => {
               <source src="https://app.banklessacademy.com/ocsc-demo.mov"></source>
             </video>
           </Box>
+          <Text
+            as="h2"
+            fontSize="4xl"
+            fontWeight="bold"
+            textAlign="center"
+            mt="8"
+            p="8"
+          >
+            The project is going live during EthCC on July 8th.
+            <br />
+            {'DM us on '}
+            <ExternalLink
+              href="https://warpcast.com/banklessacademy"
+              target="_blank"
+            >
+              Farcaster
+            </ExternalLink>
+            {' for preview link access.'}
+          </Text>
         </Box>
       </QueryClientProvider>
     </WagmiProvider>
