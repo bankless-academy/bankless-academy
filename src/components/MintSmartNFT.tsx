@@ -129,7 +129,7 @@ const MintSmartNFT = (): JSX.Element => {
       console.log('params', params)
       api(`/api/nft/update-timestamp`, params)
     }
-  }, [address, startTimeRef])
+  }, [isConnected, address, startTimeRef])
 
   useEffect(() => {
     if (address) {
