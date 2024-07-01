@@ -10,6 +10,7 @@ import MintSmartNFT from 'components/MintSmartNFT'
 import { coinbaseWallet } from 'wagmi/connectors'
 import { Chain, base } from 'wagmi/chains'
 import ExternalLink from 'components/ExternalLink'
+import { useSmallScreen } from 'hooks/index'
 
 const pageMeta: MetaData = {
   title: 'Onchain Summer Challenge',
@@ -24,11 +25,14 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const Confirmation = (): JSX.Element => {
+const OnchainSummerChallenge = (): JSX.Element => {
+  const [isSmallScreen, isMediumScreen] = useSmallScreen()
   const chains = [base] as [Chain, ...Chain[]]
 
   const customWagmiConfig = createConfig({
     chains,
+    // syncConnectedChain: true,
+    // autoConnect: true,
     multiInjectedProviderDiscovery: false,
     connectors: [
       coinbaseWallet({
@@ -48,7 +52,7 @@ const Confirmation = (): JSX.Element => {
   return (
     <WagmiProvider config={customWagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <Box h="100vh">
+        <Box h="100vh" position="relative" display="contents">
           <Box m="24px" display="flex" justifyContent="space-between">
             <InternalLink href="/">
               <Image
@@ -69,26 +73,26 @@ const Confirmation = (): JSX.Element => {
               />
             </ExternalLink>
           </Box>
+          {!isMediumScreen && (
+            <Image
+              position="absolute"
+              bottom="0"
+              right="0"
+              h="80%"
+              zIndex="0"
+              src="/images/bankless-instructor.png"
+            />
+          )}
           <Text
             as="h1"
-            fontSize="5xl"
+            fontSize={isSmallScreen ? '3xl' : '5xl'}
             fontWeight="bold"
             textAlign="center"
             mt="8"
-            p="8"
+            p={isSmallScreen ? '4' : '8'}
           >
             Can you go onchain in less than 60 seconds?
           </Text>
-          <Image
-            position="absolute"
-            zIndex={-10}
-            bottom="0"
-            right="0"
-            h="auto"
-            w="auto"
-            maxH="80vh"
-            src="/images/bankless-instructor.png"
-          />
           <MintSmartNFT />
         </Box>
       </QueryClientProvider>
@@ -96,4 +100,4 @@ const Confirmation = (): JSX.Element => {
   )
 }
 
-export default Confirmation
+export default OnchainSummerChallenge

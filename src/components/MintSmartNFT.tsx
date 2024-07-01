@@ -22,6 +22,7 @@ import {
   generateTwitterLink,
   getNFTsCollectors,
 } from 'utils/index'
+import { useSmallScreen } from 'hooks'
 
 const StyledBox = styled(Box)`
   .counter {
@@ -42,6 +43,7 @@ const StyledBox = styled(Box)`
 const MintSmartNFT = (): JSX.Element => {
   const { address } = useAccount()
   const account = useAccount()
+  const [isSmallScreen] = useSmallScreen()
   const { connectors, connect } = useConnect()
   const { disconnect } = useDisconnect()
   const [numberMinted, setNumberMinted] = useState('-')
@@ -198,11 +200,17 @@ How fast can you go onchain?
 
   return (
     <>
-      <Text as="h1" fontSize="5xl" fontWeight="bold" textAlign="center" p="8">
+      <Text
+        as="h1"
+        fontSize={isSmallScreen ? '3xl' : '5xl'}
+        fontWeight="bold"
+        textAlign="center"
+        p={isSmallScreen ? '4' : '8'}
+      >
         {mintTime ? 'Yes! 🥳' : '🤔'}
       </Text>
-      <StyledBox maxW="500px" margin="auto" my="4">
-        <Box w="500px" h="500px" position="relative">
+      <StyledBox p="8">
+        <Box maxW="500px" m="auto" position="relative">
           <Image
             src="https://beta.banklessacademy.com/images/smart-wallet.gif"
             width="100%"
@@ -213,45 +221,48 @@ How fast can you go onchain?
             {mintTime || formatTime(time)}
           </Box>
         </Box>
-        <Box mt="4">
-          {isRunning && account.status === 'disconnected' && (
-            <>
-              {connectors.map((connector) => (
-                <Button
-                  id={connector.id}
-                  key={connector.uid}
-                  onClick={() => connect({ connector })}
-                  variant="primaryGold"
-                  w="100%"
-                >
-                  Connect Smart Wallet
-                </Button>
-              ))}
-            </>
-          )}
-          {!isLoadingInfo && !mintTime && account.status === 'connected' && (
-            <Button
-              variant="primaryGold"
-              w="100%"
-              onClick={() =>
-                writeContracts({
-                  account: address,
-                  contracts: [
-                    {
-                      address: NFTAddress,
-                      abi: nftABI,
-                      functionName: 'claim',
-                      args: contractArgs,
-                    },
-                  ],
-                  capabilities,
-                } as any)
-              }
-            >
-              <Box fontWeight="bold">Mint Free Smart Wallet NFT</Box>
-              <Box ml="2">{`(${numberMinted}/∞ minted)`}</Box>
-            </Button>
-          )}
+        <Box pt="4" maxW="500px" m="auto">
+          <Box display="flex" justifyContent="center">
+            {isRunning && account.status === 'disconnected' && (
+              <>
+                {connectors.map((connector) => (
+                  <Button
+                    id={connector.id}
+                    key={connector.uid}
+                    onClick={() => connect({ connector })}
+                    variant="primaryGold"
+                  >
+                    Connect Smart Wallet
+                  </Button>
+                ))}
+              </>
+            )}
+            {!isLoadingInfo && !mintTime && account.status === 'connected' && (
+              <Button
+                variant="primaryGold"
+                h={isSmallScreen ? 'auto' : '40px'}
+                onClick={() =>
+                  writeContracts({
+                    account: address,
+                    contracts: [
+                      {
+                        address: NFTAddress,
+                        abi: nftABI,
+                        functionName: 'claim',
+                        args: contractArgs,
+                      },
+                    ],
+                    capabilities,
+                  } as any)
+                }
+              >
+                <Box display={isSmallScreen ? 'block' : 'flex'} m="2">
+                  <Box fontWeight="bold">Mint Smart Wallet NFT</Box>
+                  <Box ml="2">{`(${numberMinted}/∞ minted)`}</Box>
+                </Box>
+              </Button>
+            )}
+          </Box>
           {!isLoadingInfo && account.status === 'connected' && mintId !== null && (
             <Box textAlign="center" p="16px" maxW="400px" m="auto">
               <Box display="flex" pb="1">
@@ -265,7 +276,7 @@ How fast can you go onchain?
                   leftIcon={<ShootingStar width="28px" height="28px" />}
                 >
                   <Box
-                    display="flex"
+                    display={isSmallScreen ? 'block' : 'flex'}
                     justifyContent="center"
                     alignItems="center"
                     fontSize="lg"
