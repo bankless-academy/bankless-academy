@@ -31,8 +31,6 @@ const OnchainSummerChallenge = (): JSX.Element => {
 
   const customWagmiConfig = createConfig({
     chains,
-    // syncConnectedChain: true,
-    // autoConnect: true,
     multiInjectedProviderDiscovery: false,
     connectors: [
       coinbaseWallet({

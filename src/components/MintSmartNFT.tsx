@@ -21,6 +21,7 @@ import {
   generateFarcasterLink,
   generateTwitterLink,
   getNFTsCollectors,
+  shortenAddress,
 } from 'utils/index'
 import { useSmallScreen } from 'hooks'
 
@@ -41,7 +42,7 @@ const StyledBox = styled(Box)`
 `
 
 const MintSmartNFT = (): JSX.Element => {
-  const { address, isConnected, chainId } = useAccount()
+  const { address, status, chainId } = useAccount()
   const [isSmallScreen] = useSmallScreen()
   const { connectors, connect } = useConnect()
   const { disconnect } = useDisconnect()
@@ -58,13 +59,13 @@ const MintSmartNFT = (): JSX.Element => {
     setIsLoadingInfo(true)
     const nftInfo = await api('/api/nft/get-info', { address })
     console.log(nftInfo)
-    if (nftInfo?.data?.time && nftInfo?.data?.time) {
-      setMintTime(nftInfo?.data?.time)
-    }
     if (nftInfo?.data?.tokenIds?.length) {
       const mintId = nftInfo?.data?.tokenIds?.at(-1)
       console.log('mintId', mintId)
       setMintId(mintId)
+    }
+    if (nftInfo?.data?.time && nftInfo?.data?.tokenIds?.length) {
+      setMintTime(nftInfo?.data?.time)
     }
     setIsLoadingInfo(false)
     return nftInfo?.data?.tokenIds?.at(-1)
@@ -121,7 +122,7 @@ const MintSmartNFT = (): JSX.Element => {
   }, [])
 
   useEffect(() => {
-    if (isConnected) {
+    if (status === 'connected' && startTimeRef.current) {
       console.log(startTimeRef.current)
       const params = {
         address,
@@ -130,13 +131,13 @@ const MintSmartNFT = (): JSX.Element => {
       console.log('params', params)
       api(`/api/nft/update-timestamp`, params)
     }
-  }, [isConnected, address, startTimeRef])
+  }, [status, address, startTimeRef])
 
   useEffect(() => {
-    if (address) {
+    if (address && status === 'connected') {
       getNFTInfo()
     }
-  }, [address])
+  }, [address, status])
 
   useEffect(() => {
     let interval: NodeJS.Timeout
@@ -223,7 +224,7 @@ How fast can you go onchain?
         </Box>
         <Box pt="4" maxW="500px" m="auto">
           <Box display="flex" justifyContent="center">
-            {isRunning && !isConnected && (
+            {isRunning && status !== 'connected' && (
               <>
                 {connectors.map((connector) => (
                   <Button
@@ -237,7 +238,7 @@ How fast can you go onchain?
                 ))}
               </>
             )}
-            {!isLoadingInfo && !mintId && isConnected && (
+            {!isLoadingInfo && !mintId && status === 'connected' && (
               <Button
                 variant="primaryGold"
                 h={isSmallScreen ? 'auto' : '40px'}
@@ -263,7 +264,7 @@ How fast can you go onchain?
               </Button>
             )}
           </Box>
-          {!isLoadingInfo && isConnected && mintId !== null && (
+          {!isLoadingInfo && status === 'connected' && mintId !== null && (
             <Box textAlign="center" p="16px" maxW="400px" m="auto">
               <Box display="flex" pb="1">
                 <Button
@@ -338,10 +339,10 @@ How fast can you go onchain?
               </Box>
             </Box>
           )}
-          {isConnected && isLoadingInfo && (
+          {status === 'connected' && isLoadingInfo && (
             <Box textAlign="center">Loading ...</Box>
           )}
-          {isConnected && !isLoadingInfo && (
+          {status === 'connected' && !isLoadingInfo && (
             <Box display="flex" justifyContent="center" mt="4">
               <Button
                 onClick={() => {
@@ -349,15 +350,15 @@ How fast can you go onchain?
                   disconnect()
                 }}
               >
-                Disconnect
+                Disconnect {shortenAddress(address)}
               </Button>
             </Box>
           )}
           <Box display="flex" justifyContent="center" mt="4">
-            {isRunning && !isConnected && !isLoadingInfo && (
+            {isRunning && status !== 'connected' && !isLoadingInfo && (
               <Button onClick={handleReset}>Reset timer</Button>
             )}
-            {!isRunning && !isConnected && !mintId && (
+            {!isRunning && status !== 'connected' && !mintId && (
               <Button variant="primaryGold" onClick={handleStart}>
                 Start Challenge
               </Button>
