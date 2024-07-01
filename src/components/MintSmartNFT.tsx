@@ -41,8 +41,7 @@ const StyledBox = styled(Box)`
 `
 
 const MintSmartNFT = (): JSX.Element => {
-  const { address } = useAccount()
-  const account = useAccount()
+  const { address, isConnected, chainId } = useAccount()
   const [isSmallScreen] = useSmallScreen()
   const { connectors, connect } = useConnect()
   const { disconnect } = useDisconnect()
@@ -121,16 +120,16 @@ const MintSmartNFT = (): JSX.Element => {
   }, [])
 
   useEffect(() => {
-    if (account.status === 'connected') {
+    if (isConnected) {
       console.log(startTimeRef.current)
       const params = {
-        address: account.address,
+        address,
         timestamp: startTimeRef.current,
       }
       console.log('params', params)
       api(`/api/nft/update-timestamp`, params)
     }
-  }, [account.status, startTimeRef])
+  }, [address, startTimeRef])
 
   useEffect(() => {
     if (address) {
@@ -169,11 +168,11 @@ const MintSmartNFT = (): JSX.Element => {
   }
 
   const { data: availableCapabilities } = useCapabilities({
-    account: account.address,
+    account: address,
   })
   const capabilities = useMemo(() => {
-    if (!availableCapabilities || !account.chainId) return {}
-    const capabilitiesForChain = availableCapabilities[account.chainId]
+    if (!availableCapabilities || !chainId) return {}
+    const capabilitiesForChain = availableCapabilities[chainId]
     if (
       capabilitiesForChain['paymasterService'] &&
       capabilitiesForChain['paymasterService'].supported
@@ -185,7 +184,7 @@ const MintSmartNFT = (): JSX.Element => {
       }
     }
     return {}
-  }, [availableCapabilities, account.chainId])
+  }, [availableCapabilities, chainId])
 
   const shareLink = `https://app.banklessacademy.com/onchain-summer-challenge`
   const share = `🔆 OᑎᑕᕼᗩIᑎ ᔑᑌᗰᗰEᖇ 🔆 Challenge by @BanklessAcademy
@@ -223,7 +222,7 @@ How fast can you go onchain?
         </Box>
         <Box pt="4" maxW="500px" m="auto">
           <Box display="flex" justifyContent="center">
-            {isRunning && account.status === 'disconnected' && (
+            {isRunning && !isConnected && (
               <>
                 {connectors.map((connector) => (
                   <Button
@@ -237,7 +236,7 @@ How fast can you go onchain?
                 ))}
               </>
             )}
-            {!isLoadingInfo && !mintTime && account.status === 'connected' && (
+            {!isLoadingInfo && !mintTime && isConnected && (
               <Button
                 variant="primaryGold"
                 h={isSmallScreen ? 'auto' : '40px'}
@@ -263,7 +262,7 @@ How fast can you go onchain?
               </Button>
             )}
           </Box>
-          {!isLoadingInfo && account.status === 'connected' && mintId !== null && (
+          {!isLoadingInfo && isConnected && mintId !== null && (
             <Box textAlign="center" p="16px" maxW="400px" m="auto">
               <Box display="flex" pb="1">
                 <Button
@@ -338,10 +337,10 @@ How fast can you go onchain?
               </Box>
             </Box>
           )}
-          {account.status === 'connected' && isLoadingInfo && (
+          {isConnected && isLoadingInfo && (
             <Box textAlign="center">Loading ...</Box>
           )}
-          {account.status === 'connected' && !isLoadingInfo && (
+          {isConnected && !isLoadingInfo && (
             <Box display="flex" justifyContent="center" mt="4">
               <Button
                 onClick={() => {
@@ -354,10 +353,10 @@ How fast can you go onchain?
             </Box>
           )}
           <Box display="flex" justifyContent="center" mt="4">
-            {isRunning && !account.isConnected && !isLoadingInfo && (
+            {isRunning && !isConnected && !isLoadingInfo && (
               <Button onClick={handleReset}>Reset timer</Button>
             )}
-            {!isRunning && !account.isConnected && !mintId && (
+            {!isRunning && !isConnected && !mintId && (
               <Button variant="primaryGold" onClick={handleStart}>
                 Start Challenge
               </Button>
