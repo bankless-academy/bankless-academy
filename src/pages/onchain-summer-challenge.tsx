@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { GetStaticProps } from 'next'
 import { Box, Text, Image } from '@chakra-ui/react'
 import { WagmiProvider, http, createConfig } from 'wagmi'
@@ -28,6 +28,29 @@ export const getStaticProps: GetStaticProps = async () => {
 const OnchainSummerChallenge = (): JSX.Element => {
   const [isSmallScreen, isMediumScreen] = useSmallScreen()
   const chains = [base] as [Chain, ...Chain[]]
+  const [isScrollable, setIsScrollable] = useState(false)
+
+  const checkScrollable = () => {
+    const scrollHeight = document.body.scrollHeight
+    const innerHeight = window.innerHeight
+    setIsScrollable(scrollHeight > innerHeight)
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      checkScrollable()
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    setTimeout(() => {
+      checkScrollable()
+    }, 500)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   const customWagmiConfig = createConfig({
     chains,
@@ -50,7 +73,11 @@ const OnchainSummerChallenge = (): JSX.Element => {
   return (
     <WagmiProvider config={customWagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <Box h="100vh" position="relative" display="contents">
+        <Box
+          h="100vh"
+          position="relative"
+          display={isScrollable ? 'contents' : 'block'}
+        >
           <Box m="24px" display="flex" justifyContent="space-between">
             <InternalLink href="/">
               <Image
@@ -73,11 +100,11 @@ const OnchainSummerChallenge = (): JSX.Element => {
           </Box>
           {!isMediumScreen && (
             <Image
-              position="absolute"
+              position={isScrollable ? 'fixed' : 'absolute'}
               bottom="0"
               right="0"
               h="80%"
-              zIndex="0"
+              zIndex="-1"
               src="/images/bankless-instructor.png"
             />
           )}
