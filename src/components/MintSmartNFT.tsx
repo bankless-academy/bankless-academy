@@ -47,7 +47,7 @@ const MintSmartNFT = (): JSX.Element => {
   const { disconnect } = useDisconnect()
   const [numberMinted, setNumberMinted] = useState('-')
   const [time, setTime] = useState(0)
-  const [mintTime, setMintTime] = useState(0)
+  const [mintTime, setMintTime] = useState<number | string | null>(null)
   const [mintId, setMintId] = useState(null)
   const [isRunning, setIsRunning] = useState(false)
   const [isLoadingInfo, setIsLoadingInfo] = useState(false)
@@ -58,7 +58,7 @@ const MintSmartNFT = (): JSX.Element => {
     setIsLoadingInfo(true)
     const nftInfo = await api('/api/nft/get-info', { address })
     console.log(nftInfo)
-    if (nftInfo?.data?.time && nftInfo?.data?.time !== '--:--:---') {
+    if (nftInfo?.data?.time && nftInfo?.data?.time) {
       setMintTime(nftInfo?.data?.time)
     }
     if (nftInfo?.data?.tokenIds?.length) {
@@ -73,6 +73,7 @@ const MintSmartNFT = (): JSX.Element => {
     mutation: {
       onSuccess: async (id) => {
         console.log('onSuccess')
+        setMintTime('--:--:---')
         let mintId = null
         while (!mintId) {
           mintId = await getNFTInfo()
@@ -236,7 +237,7 @@ How fast can you go onchain?
                 ))}
               </>
             )}
-            {!isLoadingInfo && !mintTime && isConnected && (
+            {!isLoadingInfo && !mintId && isConnected && (
               <Button
                 variant="primaryGold"
                 h={isSmallScreen ? 'auto' : '40px'}
