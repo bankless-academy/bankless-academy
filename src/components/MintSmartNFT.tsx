@@ -25,6 +25,22 @@ import {
 } from 'utils/index'
 import { useSmallScreen } from 'hooks'
 
+const TIME_PLACEHOLDER = '--:--:---'
+
+function timeToSeconds(timeStr: string | null): number | string {
+  if (timeStr === TIME_PLACEHOLDER || !timeStr) return '--'
+  const timeParts: string[] = timeStr?.split(':')
+
+  const minutes: number = parseInt(timeParts[0], 10)
+  const seconds: number = parseInt(timeParts[1], 10)
+  const milliseconds: number = parseInt(timeParts[2], 10)
+
+  const totalSeconds: number =
+    minutes * 60 + seconds + Math.floor(milliseconds / 1000)
+
+  return totalSeconds
+}
+
 const StyledBox = styled(Box)`
   .counter {
     position: absolute;
@@ -48,7 +64,7 @@ const MintSmartNFT = (): JSX.Element => {
   const { disconnect } = useDisconnect()
   const [numberMinted, setNumberMinted] = useState('-')
   const [time, setTime] = useState(0)
-  const [mintTime, setMintTime] = useState<number | string | null>(null)
+  const [mintTime, setMintTime] = useState<string | null>(null)
   const [mintId, setMintId] = useState(null)
   const [isRunning, setIsRunning] = useState(false)
   const [isLoadingInfo, setIsLoadingInfo] = useState(false)
@@ -74,7 +90,7 @@ const MintSmartNFT = (): JSX.Element => {
     mutation: {
       onSuccess: async (id) => {
         console.log('onSuccess')
-        setMintTime('--:--:---')
+        setMintTime(TIME_PLACEHOLDER)
         let mintId = null
         while (!mintId) {
           mintId = await getNFTInfo()
@@ -190,7 +206,7 @@ const MintSmartNFT = (): JSX.Element => {
 
   const shareLink = `https://app.banklessacademy.com/onchain-summer-challenge`
   const share = `🔆 OᑎᑕᕼᗩIᑎ ᔑᑌᗰᗰEᖇ 🔆 Challenge by @BanklessAcademy
-I’ve just got onchain in XX seconds!
+I’ve just got onchain in ${timeToSeconds(mintTime)} seconds!
 
 How fast can you go onchain?
 #OnchainSummer`
@@ -206,7 +222,7 @@ How fast can you go onchain?
         fontSize={isSmallScreen ? '3xl' : '5xl'}
         fontWeight="bold"
         textAlign="center"
-        p={isSmallScreen ? '4' : '8'}
+        p={isSmallScreen ? '2' : '4'}
       >
         {mintTime ? 'Yes! 🥳' : '🤔'}
       </Text>
