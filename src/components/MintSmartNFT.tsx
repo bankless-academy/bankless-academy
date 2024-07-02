@@ -25,35 +25,36 @@ import {
 } from 'utils/index'
 import { useSmallScreen } from 'hooks'
 
-const TIME_PLACEHOLDER = '--:--:---'
+const TIME_PLACEHOLDER = '--:--,--'
 
 function timeToSeconds(timeStr: string | null): number | string {
   if (timeStr === TIME_PLACEHOLDER || !timeStr) return '--'
-  const timeParts: string[] = timeStr?.split(':')
+  const timeParts: string[] = timeStr?.replace(',', ':')?.split(':')
 
   const minutes: number = parseInt(timeParts[0], 10)
   const seconds: number = parseInt(timeParts[1], 10)
   const milliseconds: number = parseInt(timeParts[2], 10)
 
-  const totalSeconds: number =
-    minutes * 60 + seconds + Math.floor(milliseconds / 1000)
+  const totalSeconds: number = minutes * 60 + seconds
 
-  return totalSeconds
+  return totalSeconds + ',' + milliseconds
 }
 
-const StyledBox = styled(Box)`
+const StyledBox = styled(Box)<{ issmallscreen?: string }>`
   .counter {
     position: absolute;
-    top: 72%;
+    top: 76.8%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 20px;
+    font-size: 19px;
     font-weight: bold;
     font-family: monospace;
+    line-height: initial;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0px 6px;
+    border-radius: 6px;
+    border: 1.5px solid #bfb8c8;
   }
 `
 
@@ -215,27 +216,75 @@ How fast can you go onchain?
 
   const farcasterLink = generateFarcasterLink(share, shareLink)
 
+  const parentRef = useRef<HTMLDivElement>(null)
+  const counterRef = useRef<HTMLDivElement>(null)
+  const imgageRef = useRef<HTMLDivElement>(null)
+
+  const resizeFont = () => {
+    if (parentRef.current && counterRef.current) {
+      const parentWidth = parentRef.current.clientWidth
+      counterRef.current.style.fontSize = `${(4 * parentWidth) / 100}px`
+      counterRef.current.style.padding = `${(0.5 * parentWidth) / 100}px ${
+        (1 * parentWidth) / 100
+      }px`
+      counterRef.current.style.borderRadius = `${(1 * parentWidth) / 100}px`
+      counterRef.current.style.border = `${
+        (0.25 * parentWidth) / 100
+      }px solid #BFB8C8`
+
+      imgageRef.current.style.width = `${(24 * parentWidth) / 100}px`
+      imgageRef.current.style.bottom = `${(3.5 * parentWidth) / 100}px`
+      imgageRef.current.style.right = `${(3.5 * parentWidth) / 100}px`
+    }
+  }
+
+  useEffect(() => {
+    resizeFont()
+
+    window.addEventListener('resize', resizeFont)
+
+    return () => {
+      window.removeEventListener('resize', resizeFont)
+    }
+  }, [])
+
   return (
     <>
       <Text
         as="h1"
-        fontSize={isSmallScreen ? '3xl' : '5xl'}
+        fontSize={isSmallScreen ? '3xl' : '4xl'}
         fontWeight="bold"
         textAlign="center"
-        p={isSmallScreen ? '2' : '4'}
+        p={isSmallScreen ? '2' : '0 16px 16px 16px'}
       >
-        {mintTime ? 'Yes! 🥳' : '🤔'}
+        {mintTime && mintTime.startsWith('00:')
+          ? 'Yes! 🥳'
+          : mintTime
+          ? 'No 😢'
+          : '🤔'}
       </Text>
-      <StyledBox p="8">
-        <Box maxW="500px" m="auto" position="relative">
+      <StyledBox p="0 24px 24px 24px">
+        <Box maxW="500px" m="auto" position="relative" ref={parentRef}>
           <Image
             src="https://beta.banklessacademy.com/images/smart-wallet.gif"
             width="100%"
             height="100%"
             borderRadius="8px"
           />
-          <Box className="counter" zIndex="1">
+          <Box className="counter" zIndex="1" ref={counterRef}>
             {mintTime || formatTime(time)}
+          </Box>
+          <Box
+            ref={imgageRef}
+            position="absolute"
+            w="120px"
+            bottom="15px"
+            right="15px"
+          >
+            <ChakraImage
+              src="https://app.banklessacademy.com/images/BanklessAcademy.svg"
+              alt="Bankless Academy"
+            />
           </Box>
         </Box>
         <Box pt="4" maxW="500px" m="auto">

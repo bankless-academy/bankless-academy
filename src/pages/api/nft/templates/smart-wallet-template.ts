@@ -32,23 +32,24 @@ export const template = `
 
     .counter {
       position: absolute;
-      top: 72%;
+      top: 77%;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 4vw;
       font-weight: bold;
       font-family: monospace;
       color: white;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 5px 10px;
-      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 0.3);
+      font-size: 4vw;
+      padding: 0.5vw 1vw;
+      border-radius: 1vw;
+      border: 0.25vw solid #BFB8C8;
     }
 
     .bottom-right {
       position: absolute;
-      bottom: 4%;
-      right: 4%;
-      width: 20%;
+      bottom: 3.5%;
+      right: 3.5%;
+      width: 24%;
     }
   </style>
 </head>

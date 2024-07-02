@@ -108,17 +108,19 @@ const OnchainSummerChallenge = (): JSX.Element => {
               src="/images/bankless-instructor.png"
             />
           )}
-          <Text
-            as="h1"
-            fontSize={isSmallScreen ? '3xl' : '5xl'}
-            fontWeight="bold"
-            textAlign="center"
-            mt="8"
-            p={isSmallScreen ? '4' : '8'}
-          >
-            Can you go onchain in less than 60 seconds?
-          </Text>
-          <MintSmartNFT />
+          <Box mr={isMediumScreen ? 0 : '30%'}>
+            <Text
+              as="h1"
+              fontSize={isSmallScreen ? '3xl' : '4xl'}
+              fontWeight="bold"
+              textAlign="center"
+              mt="8"
+              p={isSmallScreen ? '2' : '4'}
+            >
+              Can you go onchain in less than 60 seconds?
+            </Text>
+            <MintSmartNFT />
+          </Box>
         </Box>
       </QueryClientProvider>
     </WagmiProvider>

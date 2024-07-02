@@ -608,7 +608,7 @@ export async function getNFTInfo(
   tokenId: string
 ): Promise<{ time?: string, tokenIds?: number[] }> {
   const res = {
-    time: '--:--:---',
+    time: '--:--,--',
     tokenIds: []
   }
   const ERC721_ABI = [
@@ -908,5 +908,5 @@ export const formatTime = (ms: number) => {
 
   return `${minutes.toString().padStart(2, '0')}:${seconds
     .toString()
-    .padStart(2, '0')}:${milliseconds.toString().padStart(3, '0')}`
+    .padStart(2, '0')},${milliseconds.toString().padStart(3, '0').substring(0, 2)}`
 }
