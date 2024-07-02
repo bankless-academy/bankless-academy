@@ -58,7 +58,7 @@ export const template = `
   <div class="container">
     <img id="gifImage" src="https://beta.banklessacademy.com/images/smart-wallet.gif" alt="Square GIF">
     <div class="counter">{{counter}}</div>
-    <a href="https://app.banklessacademy.com/" target="_blank">
+    <a href="https://app.banklessacademy.com/?utm_source=BanklessAcademy&utm_medium=nft&utm_campaign=onchain-summer-challenge" target="_blank">
       <img class="bottom-right" src="https://app.banklessacademy.com/images/BanklessAcademy.svg" alt="Bankless Academy" title="Bankless Academy - Level up your knowledge of Web3 and DeFi">
     </a>
   </div>
