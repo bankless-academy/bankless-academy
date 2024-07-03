@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { GetStaticProps } from 'next'
-import { Box, Text, Image } from '@chakra-ui/react'
+import { Box, Center, Image } from '@chakra-ui/react'
 import { WagmiProvider, http, createConfig } from 'wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import { MetaData } from 'components/Head'
-import InternalLink from 'components/InternalLink'
 import MintSmartNFT from 'components/MintSmartNFT'
 import { coinbaseWallet } from 'wagmi/connectors'
 import { Chain, base } from 'wagmi/chains'
-import ExternalLink from 'components/ExternalLink'
 import { useSmallScreen } from 'hooks/index'
+import { StyledHeading } from 'components/LessonCards'
+import { HOMEPAGE_BACKGROUND } from 'constants/index'
 
 const pageMeta: MetaData = {
   title: 'Onchain Summer Challenge',
@@ -26,31 +26,8 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const OnchainSummerChallenge = (): JSX.Element => {
-  const [isSmallScreen, isMediumScreen] = useSmallScreen()
+  const [isSmallScreen] = useSmallScreen()
   const chains = [base] as [Chain, ...Chain[]]
-  const [isScrollable, setIsScrollable] = useState(false)
-
-  const checkScrollable = () => {
-    const scrollHeight = document.body.scrollHeight
-    const innerHeight = window.innerHeight
-    setIsScrollable(scrollHeight > innerHeight)
-  }
-
-  useEffect(() => {
-    const handleResize = () => {
-      checkScrollable()
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    setTimeout(() => {
-      checkScrollable()
-    }, 500)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
 
   const customWagmiConfig = createConfig({
     chains,
@@ -73,52 +50,47 @@ const OnchainSummerChallenge = (): JSX.Element => {
   return (
     <WagmiProvider config={customWagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <Box
-          h="100vh"
-          position="relative"
-          display={isScrollable ? 'contents' : 'block'}
-        >
-          <Box m="24px" display="flex" justifyContent="space-between">
-            <InternalLink href="/">
-              <Image
-                height="60px"
-                src="/images/BanklessAcademy.svg"
-                alt="Bankless Academy"
-                pr="8"
-              />
-            </InternalLink>
-            <ExternalLink
-              href="https://www.base.org/onchainsummer"
-              target="_blank"
-            >
-              <Image
-                height="60px"
-                src="/images/ocs_banner.svg"
-                alt="Onchain Summer"
-              />
-            </ExternalLink>
-          </Box>
-          {!isMediumScreen && (
-            <Image
-              position={isScrollable ? 'fixed' : 'absolute'}
-              bottom="0"
-              right="0"
-              h="80%"
-              zIndex="-1"
-              src="/images/bankless-instructor.png"
-            />
-          )}
-          <Box mr={isMediumScreen ? 0 : '30%'}>
-            <Text
+        <Box backgroundColor="#201E1D" minH="100vh">
+          <Center
+            height={isSmallScreen ? '16vh' : '28vh'}
+            bg={`url(${HOMEPAGE_BACKGROUND}) lightgray 50%`}
+            bgSize="cover"
+            bgPosition="top"
+            position="relative"
+            _after={{
+              content: `""`,
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'linear-gradient(180deg, transparent, #201e1d)',
+            }}
+          >
+            <Box width="100%" maxW="1200px" position="absolute" bottom="-32px">
+              <Box w="100%" maxW="80vw" m="auto">
+                <Image
+                  style={{
+                    filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
+                  }}
+                  position="relative"
+                  zIndex={1}
+                  src="/images/ocs_banner.svg"
+                  alt="Bankless Academy"
+                  m="auto"
+                />
+              </Box>
+            </Box>
+          </Center>
+          <Box maxW="1080px" m="auto" mt={isSmallScreen ? '16' : '24'}>
+            <StyledHeading
               as="h1"
-              fontSize={isSmallScreen ? '3xl' : '4xl'}
-              fontWeight="bold"
+              size={isSmallScreen ? 'lg' : '2xl'}
               textAlign="center"
-              mt="8"
-              p={isSmallScreen ? '2' : '4'}
+              my={8}
             >
-              Can you go onchain in less than 60 seconds?
-            </Text>
+              Onchain Summer Challenge
+            </StyledHeading>
             <MintSmartNFT />
           </Box>
         </Box>

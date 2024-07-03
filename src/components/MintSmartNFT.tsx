@@ -8,7 +8,6 @@ import {
 } from '@chakra-ui/react'
 import { useEffect, useMemo, useState, useRef } from 'react'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
-import { ShootingStar } from '@phosphor-icons/react'
 import { useCapabilities, useWriteContracts } from 'wagmi/experimental'
 import styled from '@emotion/styled'
 
@@ -24,6 +23,8 @@ import {
   shortenAddress,
 } from 'utils/index'
 import { useSmallScreen } from 'hooks'
+import ProgressSteps from 'components/ProgressSteps'
+import Card from 'components/Card'
 
 const TIME_PLACEHOLDER = '--:--,--'
 
@@ -58,11 +59,38 @@ const StyledBox = styled(Box)<{ issmallscreen?: string }>`
   }
 `
 
+const NFTImage = styled(Box)`
+  margin-top: 32px;
+  overflow: hidden;
+  border-radius: 23px;
+  position: relative;
+  ::before {
+    background: linear-gradient(
+      104.42deg,
+      #b06fd8 35.33%,
+      rgba(89, 122, 238, 0.7) 93.21%
+    );
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 23px;
+    padding: 2px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: source-out;
+    mask-composite: exclude;
+  }
+`
+
 const MintSmartNFT = (): JSX.Element => {
   const { address, status, chainId } = useAccount()
   const [isSmallScreen] = useSmallScreen()
   const { connectors, connect } = useConnect()
   const { disconnect } = useDisconnect()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [numberMinted, setNumberMinted] = useState('-')
   const [time, setTime] = useState(0)
   const [mintTime, setMintTime] = useState<string | null>(null)
@@ -248,188 +276,194 @@ How fast can you go onchain?
     }
   }, [])
 
+  const step = !isRunning ? 0 : status !== 'connected' ? 1 : !mintId ? 2 : 3
+
   return (
     <>
-      <Text
-        as="h1"
-        fontSize={isSmallScreen ? '3xl' : '4xl'}
-        fontWeight="bold"
-        textAlign="center"
-        p={isSmallScreen ? '2' : '0 16px 16px 16px'}
-      >
-        {mintTime && mintTime.startsWith('00:')
-          ? 'Yes! 🥳'
-          : mintTime
-          ? 'No 😢'
-          : '🤔'}
-      </Text>
       <StyledBox p="0 24px 24px 24px">
-        <Box maxW="500px" m="auto" position="relative" ref={parentRef}>
-          <Image
-            src="https://beta.banklessacademy.com/images/smart-wallet.gif"
-            width="100%"
-            height="100%"
-            borderRadius="8px"
-          />
-          <Box className="counter" zIndex="1" ref={counterRef}>
-            {mintTime || formatTime(time)}
-          </Box>
-          <Box
-            ref={imgageRef}
-            position="absolute"
-            w="120px"
-            bottom="15px"
-            right="15px"
+        <Card
+          p={isSmallScreen ? 6 : 12}
+          borderRadius="20px !important"
+          maxW="700px"
+          m="auto"
+        >
+          <Text
+            as="h2"
+            fontSize={isSmallScreen ? 'xl' : '4xl'}
+            fontWeight="bold"
+            textAlign="center"
+            pb={isSmallScreen ? '0' : '4'}
           >
-            <ChakraImage
-              src="https://app.banklessacademy.com/images/BanklessAcademy.svg"
-              alt="Bankless Academy"
-            />
+            {step === 1
+              ? `1. Connect Smart Wallet`
+              : step === 2
+              ? `2. Go onchain`
+              : step === 3
+              ? `Challenge Complete!`
+              : `How fast can you go onchain?`}
+          </Text>
+          <ProgressSteps step={step} total={4} />
+          <Box maxW="500px" m="auto" position="relative" ref={parentRef}>
+            <NFTImage>
+              <Image
+                src="https://beta.banklessacademy.com/images/smart-wallet.gif"
+                width="100%"
+                height="100%"
+              />
+            </NFTImage>
+            <Box className="counter" zIndex="1" ref={counterRef}>
+              {mintTime || formatTime(time)}
+            </Box>
+            <Box
+              ref={imgageRef}
+              position="absolute"
+              w="120px"
+              bottom="15px"
+              right="15px"
+            >
+              <ChakraImage
+                src="https://app.banklessacademy.com/images/BanklessAcademy.svg"
+                alt="Bankless Academy"
+              />
+            </Box>
           </Box>
-        </Box>
-        <Box pt="4" maxW="500px" m="auto">
-          <Box display="flex" justifyContent="center">
-            {isRunning && status !== 'connected' && (
-              <>
-                {connectors.map((connector) => (
-                  <Button
-                    id={connector.id}
-                    key={connector.uid}
-                    onClick={() => connect({ connector })}
-                    variant="primaryGold"
-                  >
-                    Connect Smart Wallet
-                  </Button>
-                ))}
-              </>
-            )}
-            {!isLoadingInfo && !mintId && status === 'connected' && (
-              <Button
-                variant="primaryGold"
-                h={isSmallScreen ? 'auto' : '40px'}
-                onClick={() =>
-                  writeContracts({
-                    account: address,
-                    contracts: [
-                      {
-                        address: NFTAddress,
-                        abi: nftABI,
-                        functionName: 'claim',
-                        args: contractArgs,
-                      },
-                    ],
-                    capabilities,
-                  } as any)
-                }
-              >
-                <Box display={isSmallScreen ? 'block' : 'flex'} m="2">
-                  <Box fontWeight="bold">Mint Smart Wallet NFT</Box>
-                  <Box ml="2">{`(${numberMinted}/∞ minted)`}</Box>
-                </Box>
-              </Button>
-            )}
-          </Box>
-          {!isLoadingInfo && status === 'connected' && mintId !== null && (
-            <Box textAlign="center" p="16px" maxW="400px" m="auto">
-              <Box display="flex" pb="1">
+          <Box pt="4" maxW="500px" m="auto">
+            <Box display="flex" justifyContent="center">
+              {isRunning && status !== 'connected' && (
+                <>
+                  {connectors.map((connector) => (
+                    <Button
+                      id={connector.id}
+                      key={connector.uid}
+                      onClick={() => connect({ connector })}
+                      variant="primaryBig"
+                      size="lg"
+                    >
+                      Connect
+                    </Button>
+                  ))}
+                </>
+              )}
+              {!isLoadingInfo && !mintId && status === 'connected' && (
                 <Button
                   variant="primaryGold"
-                  w="full"
-                  height="51px"
-                  m="auto"
-                  isDisabled
-                  borderBottomRadius="0"
-                  leftIcon={<ShootingStar width="28px" height="28px" />}
+                  padding="23px !important"
+                  borderRadius="60px"
+                  size="lg"
+                  onClick={() =>
+                    writeContracts({
+                      account: address,
+                      contracts: [
+                        {
+                          address: NFTAddress,
+                          abi: nftABI,
+                          functionName: 'claim',
+                          args: contractArgs,
+                        },
+                      ],
+                      capabilities,
+                    } as any)
+                  }
                 >
-                  <Box
-                    display={isSmallScreen ? 'block' : 'flex'}
-                    justifyContent="center"
-                    alignItems="center"
-                    fontSize="lg"
-                  >
-                    <Box fontWeight="bold">Challenge Completed</Box>
-                    <Box ml="2" fontWeight="normal">
-                      {`(${numberMinted}/∞ minted)`}
-                    </Box>
+                  Submit Time
+                </Button>
+              )}
+            </Box>
+            {!isLoadingInfo && status === 'connected' && mintId !== null && (
+              <>
+                <Box textAlign="center">
+                  Your time has been saved onchain and you’ve been airdropped an
+                  NFT to commemorate!
+                </Box>
+                <Box textAlign="center" p="16px" maxW="300px" m="auto">
+                  <Box pb="1">
+                    <ExternalLink href={twitterLink} mr="2">
+                      <Button
+                        variant="primaryGold"
+                        w="100%"
+                        borderBottomRadius="0"
+                        leftIcon={
+                          <ChakraImage
+                            width="20px"
+                            src="/images/TwitterX.svg"
+                          />
+                        }
+                      >
+                        Share on Twitter / X
+                      </Button>
+                    </ExternalLink>
                   </Box>
+                  <Box pb="1">
+                    <ExternalLink href={farcasterLink} mr="2">
+                      <Button
+                        variant="primaryGold"
+                        w="100%"
+                        borderRadius="0"
+                        leftIcon={
+                          <ChakraImage
+                            width="20px"
+                            src="/images/Farcaster.svg"
+                          />
+                        }
+                      >
+                        Share on Farcaster
+                      </Button>
+                    </ExternalLink>
+                  </Box>
+                  <Box pb="1">
+                    <ExternalLink
+                      href={`https://opensea.io/assets/base/${NFTAddress}/${mintId}`}
+                    >
+                      <Button
+                        variant="primaryGold"
+                        w="100%"
+                        borderTopRadius="0"
+                        leftIcon={
+                          <ChakraImage
+                            width="24px"
+                            height="24px"
+                            src="/images/OpenSea.svg"
+                          />
+                        }
+                      >
+                        View on OpenSea
+                      </Button>
+                    </ExternalLink>
+                  </Box>
+                </Box>
+              </>
+            )}
+            {status === 'connected' && isLoadingInfo && (
+              <Box textAlign="center">Loading ...</Box>
+            )}
+            {status === 'connected' && !isLoadingInfo && (
+              <Box display="flex" justifyContent="center" mt="4">
+                <Button
+                  variant="secondaryBig"
+                  size="lg"
+                  onClick={() => {
+                    handleReset()
+                    disconnect()
+                  }}
+                >
+                  Disconnect {shortenAddress(address)}
                 </Button>
               </Box>
-              <Box pb="1">
-                <ExternalLink href={twitterLink} mr="2">
-                  <Button
-                    variant="primaryGold"
-                    w="100%"
-                    borderRadius="0"
-                    leftIcon={
-                      <ChakraImage width="20px" src="/images/TwitterX.svg" />
-                    }
-                  >
-                    Share on Twitter / X
-                  </Button>
-                </ExternalLink>
-              </Box>
-              <Box pb="1">
-                <ExternalLink href={farcasterLink} mr="2">
-                  <Button
-                    variant="primaryGold"
-                    w="100%"
-                    borderRadius="0"
-                    leftIcon={
-                      <ChakraImage width="20px" src="/images/Farcaster.svg" />
-                    }
-                  >
-                    Share on Farcaster
-                  </Button>
-                </ExternalLink>
-              </Box>
-              <Box pb="1">
-                <ExternalLink
-                  href={`https://opensea.io/assets/base/${NFTAddress}/${mintId}`}
-                >
-                  <Button
-                    variant="primaryGold"
-                    w="100%"
-                    borderTopRadius="0"
-                    leftIcon={
-                      <ChakraImage
-                        width="24px"
-                        height="24px"
-                        src="/images/OpenSea.svg"
-                      />
-                    }
-                  >
-                    View on OpenSea
-                  </Button>
-                </ExternalLink>
-              </Box>
-            </Box>
-          )}
-          {status === 'connected' && isLoadingInfo && (
-            <Box textAlign="center">Loading ...</Box>
-          )}
-          {status === 'connected' && !isLoadingInfo && (
+            )}
             <Box display="flex" justifyContent="center" mt="4">
-              <Button
-                onClick={() => {
-                  handleReset()
-                  disconnect()
-                }}
-              >
-                Disconnect {shortenAddress(address)}
-              </Button>
+              {isRunning && status !== 'connected' && !isLoadingInfo && (
+                <Button variant="secondaryBig" size="lg" onClick={handleReset}>
+                  Reset timer
+                </Button>
+              )}
+              {!isRunning && status !== 'connected' && !mintId && (
+                <Button variant="primaryBig" size="lg" onClick={handleStart}>
+                  Start Challenge
+                </Button>
+              )}
             </Box>
-          )}
-          <Box display="flex" justifyContent="center" mt="4">
-            {isRunning && status !== 'connected' && !isLoadingInfo && (
-              <Button onClick={handleReset}>Reset timer</Button>
-            )}
-            {!isRunning && status !== 'connected' && !mintId && (
-              <Button variant="primaryGold" onClick={handleStart}>
-                Start Challenge
-              </Button>
-            )}
           </Box>
-        </Box>
+        </Card>
         <Confetti
           showConfetti={showConfetti}
           onConfettiComplete={() => {
