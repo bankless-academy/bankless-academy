@@ -1,13 +1,16 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
-import { Box, Text, Image } from '@chakra-ui/react'
+import { Box, Center, Image } from '@chakra-ui/react'
 import { WagmiProvider, http, createConfig } from 'wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import { MetaData } from 'components/Head'
-import InternalLink from 'components/InternalLink'
+import MintSmartNFT from 'components/MintSmartNFT'
 import { coinbaseWallet } from 'wagmi/connectors'
 import { Chain, base } from 'wagmi/chains'
+import { useSmallScreen } from 'hooks/index'
+import { StyledHeading } from 'components/LessonCards'
+import { HOMEPAGE_BACKGROUND } from 'constants/index'
 import ExternalLink from 'components/ExternalLink'
 
 const pageMeta: MetaData = {
@@ -23,7 +26,8 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const Confirmation = (): JSX.Element => {
+const OnchainSummerChallenge = (): JSX.Element => {
+  const [isSmallScreen] = useSmallScreen()
   const chains = [base] as [Chain, ...Chain[]]
 
   const customWagmiConfig = createConfig({
@@ -47,75 +51,55 @@ const Confirmation = (): JSX.Element => {
   return (
     <WagmiProvider config={customWagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <Box h="100vh">
-          <Box m="24px" display="flex" justifyContent="space-between">
-            <InternalLink href="/">
-              <Image
-                height="60px"
-                src="/images/BanklessAcademy.svg"
-                alt="Bankless Academy"
-                pr="8"
-              />
-            </InternalLink>
-            <ExternalLink
-              href="https://www.base.org/onchainsummer"
-              target="_blank"
+        <Box backgroundColor="#201E1D" minH="100vh">
+          <Center
+            height={isSmallScreen ? '16vh' : '28vh'}
+            bg={`url(${HOMEPAGE_BACKGROUND}) lightgray 50%`}
+            bgSize="cover"
+            bgPosition="top"
+            position="relative"
+            _after={{
+              content: `""`,
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'linear-gradient(180deg, transparent, #201e1d)',
+            }}
+          >
+            <Box width="100%" maxW="1200px" position="absolute" bottom="-32px">
+              <Box w="100%" maxW="80vw" m="auto">
+                <ExternalLink href="https://devfolio.co/projects/onchain-summer-onboarding-challenge-7b7a">
+                  <Image
+                    style={{
+                      filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
+                    }}
+                    position="relative"
+                    zIndex={1}
+                    src="/images/ocs_banner.svg"
+                    alt="Bankless Academy"
+                    m="auto"
+                  />
+                </ExternalLink>
+              </Box>
+            </Box>
+          </Center>
+          <Box maxW="1080px" m="auto" mt={isSmallScreen ? '16' : '24'}>
+            <StyledHeading
+              as="h1"
+              size={isSmallScreen ? 'lg' : '2xl'}
+              textAlign="center"
+              my={8}
             >
-              <Image
-                height="60px"
-                src="/images/ocs_banner.svg"
-                alt="Onchain Summer"
-              />
-            </ExternalLink>
+              Onchain Summer Challenge
+            </StyledHeading>
+            <MintSmartNFT />
           </Box>
-          <Text
-            as="h1"
-            fontSize="5xl"
-            fontWeight="bold"
-            textAlign="center"
-            mt="8"
-            p="8"
-          >
-            Can you go onchain in less than 60 seconds?
-          </Text>
-          <Text
-            as="h2"
-            fontSize="4xl"
-            fontWeight="bold"
-            textAlign="center"
-            mt="8"
-            p="8"
-          >
-            - DEMO -
-          </Text>
-          <Box display="flex" justifyContent="center">
-            <video autoPlay loop playsInline muted>
-              <source src="https://app.banklessacademy.com/ocsc-demo.mov"></source>
-            </video>
-          </Box>
-          <Text
-            as="h2"
-            fontSize="4xl"
-            fontWeight="bold"
-            textAlign="center"
-            mt="8"
-            p="8"
-          >
-            The project is going live during EthCC on July 8th.
-            <br />
-            {'DM us on '}
-            <ExternalLink
-              href="https://warpcast.com/banklessacademy"
-              target="_blank"
-            >
-              Farcaster
-            </ExternalLink>
-            {' for preview link access.'}
-          </Text>
         </Box>
       </QueryClientProvider>
     </WagmiProvider>
   )
 }
 
-export default Confirmation
+export default OnchainSummerChallenge

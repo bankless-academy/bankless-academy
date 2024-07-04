@@ -27,7 +27,9 @@ export const TABLE = {
     donations: 'users.donations',
     referrer: 'users.referrer',
     ba_stamps: 'users.ba_stamps',
-    socials: 'users.socials'
+    socials: 'users.socials',
+    community: 'users.community',
+    smart_nft_start_at: 'smart_nft_start_at',
   },
   // deprecated
   // quests: {

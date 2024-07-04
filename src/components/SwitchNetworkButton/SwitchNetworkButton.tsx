@@ -41,7 +41,7 @@ const switchChainButton = ({
 
   useEffect(() => {
     if (chain?.id) {
-      if (!SUPPORTED_NETWORKS_IDS.includes(chain?.id)) {
+      if (!(SUPPORTED_NETWORKS_IDS as number[]).includes(chain?.id)) {
         // wrong network
         toast.closeAll()
         toast({
