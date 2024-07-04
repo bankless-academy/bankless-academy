@@ -234,8 +234,10 @@ const MintSmartNFT = (): JSX.Element => {
   }, [availableCapabilities, chainId])
 
   const shareLink = `https://app.banklessacademy.com/onchain-summer-challenge`
-  const share = `🔆 OᑎᑕᕼᗩIᑎ ᔑᑌᗰᗰEᖇ 🔆 Challenge by @BanklessAcademy
-I’ve just got onchain in ${timeToSeconds(mintTime)} seconds!
+  const share = `Join the 🔆 OᑎᑕᕼᗩIᑎ ᔑᑌᗰᗰEᖇ 🔆 Challenge by @BanklessAcademy
+I just got onchain in ${timeToSeconds(
+    mintTime
+  )} seconds, using my new @Coinbase Smart Wallet! 🔑
 
 How fast can you go onchain?
 #OnchainSummer`
@@ -372,8 +374,8 @@ How fast can you go onchain?
             {!isLoadingInfo && status === 'connected' && mintId !== null && (
               <>
                 <Box textAlign="center">
-                  Your time has been saved onchain and you’ve been airdropped an
-                  NFT to commemorate!
+                  Your time has been saved onchain and you’ve been airdropped
+                  the above NFT to commemorate!
                 </Box>
                 <Box textAlign="center" p="16px" maxW="300px" m="auto">
                   <Box pb="1">
