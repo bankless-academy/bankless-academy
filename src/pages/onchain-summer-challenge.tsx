@@ -11,6 +11,7 @@ import { Chain, base } from 'wagmi/chains'
 import { useSmallScreen } from 'hooks/index'
 import { StyledHeading } from 'components/LessonCards'
 import { HOMEPAGE_BACKGROUND } from 'constants/index'
+import ExternalLink from 'components/ExternalLink'
 
 const pageMeta: MetaData = {
   title: 'Onchain Summer Challenge',
@@ -69,16 +70,18 @@ const OnchainSummerChallenge = (): JSX.Element => {
           >
             <Box width="100%" maxW="1200px" position="absolute" bottom="-32px">
               <Box w="100%" maxW="80vw" m="auto">
-                <Image
-                  style={{
-                    filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
-                  }}
-                  position="relative"
-                  zIndex={1}
-                  src="/images/ocs_banner.svg"
-                  alt="Bankless Academy"
-                  m="auto"
-                />
+                <ExternalLink href="https://devfolio.co/projects/onchain-summer-onboarding-challenge-7b7a">
+                  <Image
+                    style={{
+                      filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))',
+                    }}
+                    position="relative"
+                    zIndex={1}
+                    src="/images/ocs_banner.svg"
+                    alt="Bankless Academy"
+                    m="auto"
+                  />
+                </ExternalLink>
               </Box>
             </Box>
           </Center>
