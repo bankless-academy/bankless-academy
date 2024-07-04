@@ -50,7 +50,7 @@
     "@types/mixpanel-browser": "^2.38.0",
     "@vercel/kv": "^1.0.0",
     "@vercel/og": "^0.5.20",
-    "@web3modal/wagmi": "^5.0.3",
+    "@web3modal/wagmi": "^5.0.6",
     "alchemy-sdk": "^3.1.2",
     "axios": "^1.6.0",
     "body-parser": "^1.20.2",
@@ -83,7 +83,7 @@
     "next": "^14.0.2",
     "notion-client": "^6.13.8",
     "notion-to-md": "^3.0.1",
-    "permissionless": "^0.1.31",
+    "permissionless": "^0.1.35",
     "pg": "^8.7.1",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
@@ -105,8 +105,8 @@
     "tls": "^0.0.1",
     "twitter-api-v2": "^1.15.2",
     "usehooks-ts": "^2.7.1",
-    "viem": "^2.16.2",
-    "wagmi": "^2.10.7",
+    "viem": "^2.17.0",
+    "wagmi": "^2.10.9",
     "zod": "^3.22.4"
   },
   "devDependencies": {
