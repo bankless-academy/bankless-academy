@@ -488,12 +488,15 @@ Take the challenge now ↓`
           </Box>
         </Card>
       </StyledBox>
-      <Confetti
-        showConfetti={showConfetti}
-        onConfettiComplete={() => {
-          setShowConfetti(false)
-        }}
-      />
+      {/* avoid loading on ss */}
+      {step !== 0 && (
+        <Confetti
+          showConfetti={showConfetti}
+          onConfettiComplete={() => {
+            setShowConfetti(false)
+          }}
+        />
+      )}
     </>
   )
 }
