@@ -36,7 +36,7 @@ function timeToSeconds(timeStr: string | null): number | string {
 
   const minutes: number = parseInt(timeParts[0], 10)
   const seconds: number = parseInt(timeParts[1], 10)
-  const milliseconds: number = parseInt(timeParts[2], 10)
+  const milliseconds: string = timeParts[2]
 
   const totalSeconds: number = minutes * 60 + seconds
 
@@ -487,13 +487,13 @@ Take the challenge now ↓`
             </Box>
           </Box>
         </Card>
-        <Confetti
-          showConfetti={showConfetti}
-          onConfettiComplete={() => {
-            setShowConfetti(false)
-          }}
-        />
       </StyledBox>
+      <Confetti
+        showConfetti={showConfetti}
+        onConfettiComplete={() => {
+          setShowConfetti(false)
+        }}
+      />
     </>
   )
 }
