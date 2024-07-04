@@ -16,6 +16,7 @@ import ExternalLink from 'components/ExternalLink'
 const pageMeta: MetaData = {
   title: 'Onchain Summer Challenge',
   description: 'Go onchain in less than 60 seconds',
+  image: '/images/onchain-summer-challenge-social.jpg',
   nolayout: true,
   noindex: true,
 }
