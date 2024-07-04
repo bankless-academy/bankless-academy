@@ -308,7 +308,7 @@ How fast can you go onchain?
           <Box maxW="500px" m="auto" position="relative" ref={parentRef}>
             <NFTImage>
               <Image
-                src="https://beta.banklessacademy.com/images/smart-wallet.gif"
+                src="https://app.banklessacademy.com/images/smart-wallet.gif"
                 width="100%"
                 height="100%"
               />

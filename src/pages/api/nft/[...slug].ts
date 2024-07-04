@@ -38,7 +38,7 @@ export default async function handler(
   } else if (['smart-wallet'].includes(slug)) {
     if (!slug || !tokenId) return res.status(400).json({ error: 'Wrong params' })
 
-    // https://beta.banklessacademy.com/api/nft/smart-wallet/{id}
+    // https://app.banklessacademy.com/api/nft/smart-wallet/{id}
     // https://app.banklessacademy.com/api/nft/smart-wallet/0000000000000000000000000000000000000000000000000000000000000001
 
     const counter = (await getNFTInfo('', tokenId)).time
