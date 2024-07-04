@@ -474,7 +474,7 @@ How fast can you go onchain with @Base?
                   Reset timer
                 </Button>
               )}
-              {!isRunning && status !== 'connected' && !mintId && (
+              {step === 0 && (
                 <Button variant="primaryBig" size="lg" onClick={handleStart}>
                   Start Challenge
                 </Button>
