@@ -33,7 +33,7 @@ export const template = `
     .counter {
       position: absolute;
       top: 77%;
-      left: 50%;
+      left: 50.6%;
       transform: translateX(-50%);
       font-weight: bold;
       font-family: monospace;

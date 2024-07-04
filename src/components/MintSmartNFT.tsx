@@ -44,8 +44,8 @@ function timeToSeconds(timeStr: string | null): number | string {
 const StyledBox = styled(Box)<{ issmallscreen?: string }>`
   .counter {
     position: absolute;
-    top: 76.8%;
-    left: 50%;
+    top: 77%;
+    left: 50.6%;
     transform: translateX(-50%);
     font-size: 19px;
     font-weight: bold;
