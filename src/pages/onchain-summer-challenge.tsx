@@ -1,7 +1,6 @@
 import React from 'react'
-import { GetStaticProps } from 'next'
+import { GetServerSidePropsContext } from 'next'
 import { Box, Center, Image } from '@chakra-ui/react'
-import NextHead from 'next/head'
 import { WagmiProvider, http, createConfig } from 'wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
@@ -13,7 +12,6 @@ import { useSmallScreen } from 'hooks/index'
 import { StyledHeading } from 'components/LessonCards'
 import { DOMAIN_URL_, HOMEPAGE_BACKGROUND } from 'constants/index'
 import ExternalLink from 'components/ExternalLink'
-import { useRouter } from 'next/router'
 
 const pageMeta: MetaData = {
   title: 'Onchain Summer Challenge',
@@ -21,18 +19,29 @@ const pageMeta: MetaData = {
   image: '/images/onchain-summer-challenge-social.jpg',
   nolayout: true,
   noindex: true,
+  ssr: true,
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
+  const proto = ctx.req.headers['x-forwarded-proto'] ?? 'http'
+  const host = ctx.req.headers['x-forwarded-host'] ?? ctx.req.headers.host
+  const { searchParams } = new URL(ctx.req.url ?? '/', `${proto}://${host}`)
+
+  const time = searchParams.get('time')
+
   return {
-    props: { pageMeta },
+    props: {
+      pageMeta: {
+        ...pageMeta,
+        image: `${DOMAIN_URL_}/api/og/onchain-summer-challenge${
+          time ? `?time=${time}` : ''
+        }`,
+      },
+    },
   }
 }
 
 const OnchainSummerChallenge = (): JSX.Element => {
-  const {
-    query: { time },
-  } = useRouter()
   const [isSmallScreen] = useSmallScreen()
   const chains = [base] as [Chain, ...Chain[]]
 
@@ -52,19 +61,11 @@ const OnchainSummerChallenge = (): JSX.Element => {
     },
   })
 
-  const ogImage = `${DOMAIN_URL_}/api/og/onchain-summer-challenge${
-    time ? `?time=${time}` : ''
-  }`
-
   const queryClient = new QueryClient()
 
   return (
     <WagmiProvider config={customWagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <NextHead>
-          <meta property="og:image" content={ogImage} />
-          <meta name="twitter:image" content={ogImage} />
-        </NextHead>
         <Box backgroundColor="#201E1D" minH="100vh">
           <Center
             height={isSmallScreen ? '16vh' : '45vh'}
