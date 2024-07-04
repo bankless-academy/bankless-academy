@@ -16,12 +16,14 @@ export default async function handler(
   // TODO: save assets on Arweave
 
   if (['update-timestamp'].includes(slug)) {
-    const { address, timestamp } = req.body
+    const { address, timestamp, referral } = req.body
     if (!slug || !address || !timestamp) return res.status(400).json({ error: 'Wrong params' })
     console.log('address', address)
     console.log('timestamp', timestamp)
+    console.log('referral', referral)
+
     if (address && timestamp && timestamp - Date.now() < 60000) {
-      const userId = await getUserId(address, 'onchain-summer-challenge')
+      const userId = await getUserId(address, 'onchain-summer-challenge', false, referral)
       const NFTInfo = await getNFTInfo(address, '')
       if (NFTInfo.tokenIds.length === 0) {
         await db(TABLES.users)
