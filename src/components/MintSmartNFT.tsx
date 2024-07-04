@@ -26,6 +26,7 @@ import { useSmallScreen } from 'hooks'
 import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
 import Keyword from 'components/Keyword'
+import { useRouter } from 'next/router'
 
 const TIME_PLACEHOLDER = '--:--,--'
 
@@ -93,6 +94,9 @@ const NFTImage = styled(Box)`
 `
 
 const MintSmartNFT = (): JSX.Element => {
+  const {
+    query: { referral },
+  } = useRouter()
   const { address, status, chainId } = useAccount()
   const [isSmallScreen] = useSmallScreen()
   const { connectors, connect } = useConnect()
@@ -179,11 +183,12 @@ const MintSmartNFT = (): JSX.Element => {
       const params = {
         address,
         timestamp: startTimeRef.current,
+        referral,
       }
       console.log('params', params)
       api(`/api/nft/update-timestamp`, params)
     }
-  }, [status, address, startTimeRef])
+  }, [status, address, startTimeRef, referral])
 
   useEffect(() => {
     if (address && status === 'connected') {
@@ -240,14 +245,14 @@ const MintSmartNFT = (): JSX.Element => {
     return {}
   }, [availableCapabilities, chainId])
 
-  const shareLink = `https://app.banklessacademy.com/onchain-summer-challenge`
+  const shareLink = `https://app.banklessacademy.com/onchain-summer-challenge?time=${mintTime}&referral=${address}`
   const share = `Join the 🔆 OᑎᑕᕼᗩIᑎ ᔑᑌᗰᗰEᖇ 🔆 Challenge by @BanklessAcademy
 I just got onchain in ${timeToSeconds(
     mintTime
-  )} seconds, using my new @Coinbase Smart Wallet! 🔑
+  )} seconds, using my new Smart Wallet on @base 🔑
 
-How fast can you go onchain with @Base?
-#OnchainSummer`
+How fast can you go onchain? #OnchainSummer
+Take the challenge now ↓`
 
   const twitterLink = generateTwitterLink(share, shareLink)
 
@@ -301,7 +306,7 @@ How fast can you go onchain with @Base?
             fontSize={isSmallScreen ? 'xl' : '4xl'}
             fontWeight="bold"
             textAlign="center"
-            pb={isSmallScreen ? '0' : '4'}
+            pb={isSmallScreen ? '2' : '4'}
           >
             {step === 1 ? (
               `1. Connect Smart Wallet`
