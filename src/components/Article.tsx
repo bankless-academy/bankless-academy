@@ -538,8 +538,7 @@ const Article = ({
   const [numberCollected, setNumberCollected] = useState<number | '...'>('...')
   const { address } = useAccount()
 
-  // TEMP
-  const isSmartWalletLesson = lesson.slug === 'creating-a-crypto-wallet'
+  const isSmartWalletLesson = lesson.slug === 'creating-a-smart-wallet'
 
   useEffect(() => {
     Mixpanel.track('open_lesson', {

@@ -25,8 +25,8 @@ const MintHandbookButton = ({
   numberCollected: number | '...'
 }): JSX.Element => {
   if (!lesson.mirrorNFTAddress) return
-  // TEST OE mint
-  const isOpenEdition = lesson.slug === 'creating-a-crypto-wallet'
+  // OE handbook mint
+  const isOpenEdition = lesson.slug === 'creating-a-smart-wallet'
   if (isOpenEdition) {
     lesson.mirrorNFTAddress = '0x6dbf20730f513fc45b19e4d0b951c4e5f2564dd8'
   }
