@@ -246,7 +246,7 @@ I just got onchain in ${timeToSeconds(
     mintTime
   )} seconds, using my new @Coinbase Smart Wallet! 🔑
 
-How fast can you go onchain?
+How fast can you go onchain with @Base?
 #OnchainSummer`
 
   const twitterLink = generateTwitterLink(share, shareLink)
@@ -313,7 +313,7 @@ How fast can you go onchain?
               <>
                 {'How fast can you go '}
                 <Keyword
-                  definition={`Onchain refers to events, activities, or initiatives that are recorded, executed, or celebrated directly on the blockchain.`}
+                  definition={`Onchain refers to direct interactions with a blockchain.`}
                   keyword={'onchain'}
                 />
                 ?
