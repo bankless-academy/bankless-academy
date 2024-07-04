@@ -1,7 +1,7 @@
 import { IS_BADGE_PROD } from 'constants/badges'
 import { base, baseSepolia, mainnet, optimism, optimismSepolia, polygon, polygonMumbai, sepolia } from 'viem/chains'
 
-export const ENABLE_TESTNET = true
+export const ENABLE_TESTNET = false
 
 // https://chainlist.org/
 const TESTNET_NETWORKS =
