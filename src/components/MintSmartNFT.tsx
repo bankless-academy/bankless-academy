@@ -115,7 +115,10 @@ const MintSmartNFT = (): JSX.Element => {
     setIsLoadingInfo(true)
     const nftInfo = await api('/api/nft/get-info', { address })
     console.log(nftInfo)
-    if (nftInfo?.data?.time && nftInfo?.data?.tokenIds?.length) {
+    if (
+      nftInfo?.data?.time !== TIME_PLACEHOLDER &&
+      nftInfo?.data?.tokenIds?.length
+    ) {
       const mintId = nftInfo?.data?.tokenIds?.at(-1)
       console.log('mintId', mintId)
       setMintId(mintId)
@@ -137,7 +140,7 @@ const MintSmartNFT = (): JSX.Element => {
         while (!mintId) {
           if (retry < 20) {
             mintId = await getNFTInfo()
-            console.log('retry', mintId)
+            console.log('retry', retry)
           } else break
           retry++
         }
