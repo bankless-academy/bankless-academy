@@ -25,6 +25,7 @@ import {
 import { useSmallScreen } from 'hooks'
 import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
+import Keyword from 'components/Keyword'
 
 const TIME_PLACEHOLDER = '--:--,--'
 
@@ -56,6 +57,12 @@ const StyledBox = styled(Box)<{ issmallscreen?: string }>`
     padding: 0px 6px;
     border-radius: 6px;
     border: 1.5px solid #bfb8c8;
+  }
+  span.keyword {
+    cursor: help;
+    border-bottom: 1px dashed #e5afff;
+    color: #e5afff;
+    display: inline-block !important;
   }
 `
 
@@ -296,13 +303,22 @@ How fast can you go onchain?
             textAlign="center"
             pb={isSmallScreen ? '0' : '4'}
           >
-            {step === 1
-              ? `1. Connect Smart Wallet`
-              : step === 2
-              ? `2. Go onchain`
-              : step === 3
-              ? `Challenge Complete!`
-              : `How fast can you go onchain?`}
+            {step === 1 ? (
+              `1. Connect Smart Wallet`
+            ) : step === 2 ? (
+              `2. Go onchain`
+            ) : step === 3 ? (
+              `Challenge Complete!`
+            ) : (
+              <>
+                {'How fast can you go '}
+                <Keyword
+                  definition={`Onchain refers to events, activities, or initiatives that are recorded, executed, or celebrated directly on the blockchain.`}
+                  keyword={'onchain'}
+                />
+                ?
+              </>
+            )}
           </Text>
           <ProgressSteps step={step} total={4} />
           <Box maxW="500px" m="auto" position="relative" ref={parentRef}>
