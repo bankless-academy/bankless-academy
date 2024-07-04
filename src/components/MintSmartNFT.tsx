@@ -146,8 +146,6 @@ const MintSmartNFT = (): JSX.Element => {
         }
         if (mintId) {
           await updateNFTCollectors().catch(console.error)
-          console.log('celebrateMint')
-          celebrateMint()
           console.log('id', id)
         }
       },
@@ -205,6 +203,13 @@ const MintSmartNFT = (): JSX.Element => {
       getNFTInfo()
     }
   }, [address, status])
+
+  useEffect(() => {
+    if (mintId > 0) {
+      console.log('celebrateMint')
+      celebrateMint()
+    }
+  }, [mintId])
 
   useEffect(() => {
     let interval: NodeJS.Timeout
@@ -476,6 +481,7 @@ Take the challenge now ↓`
                   size="lg"
                   onClick={() => {
                     handleReset()
+                    setShowConfetti(false)
                     disconnect()
                   }}
                 >
