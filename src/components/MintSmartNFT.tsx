@@ -119,12 +119,15 @@ const MintSmartNFT = (): JSX.Element => {
       const mintId = nftInfo?.data?.tokenIds?.at(-1)
       console.log('mintId', mintId)
       setMintId(mintId)
-    }
+    } else return null
     if (nftInfo?.data?.time && nftInfo?.data?.tokenIds?.length) {
       setMintTime(nftInfo?.data?.time)
+      setIsLoadingInfo(false)
+      // return mintId
+      return nftInfo?.data?.tokenIds?.at(-1)
     }
     setIsLoadingInfo(false)
-    return nftInfo?.data?.tokenIds?.at(-1)
+    return null
   }
   const { writeContracts } = useWriteContracts({
     mutation: {
@@ -132,14 +135,20 @@ const MintSmartNFT = (): JSX.Element => {
         console.log('onSuccess')
         setMintTime(TIME_PLACEHOLDER)
         let mintId = null
+        let retry = 0
         while (!mintId) {
-          mintId = await getNFTInfo()
-          console.log('retry', mintId)
+          if (retry < 20) {
+            mintId = await getNFTInfo()
+            console.log('retry', mintId)
+          } else break
+          retry++
         }
-        await updateNFTCollectors().catch(console.error)
-        console.log('celebrateMint')
-        celebrateMint()
-        console.log('id', id)
+        if (mintId) {
+          await updateNFTCollectors().catch(console.error)
+          console.log('celebrateMint')
+          celebrateMint()
+          console.log('id', id)
+        }
       },
     },
   })
