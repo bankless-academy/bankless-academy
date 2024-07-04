@@ -115,19 +115,17 @@ const MintSmartNFT = (): JSX.Element => {
     setIsLoadingInfo(true)
     const nftInfo = await api('/api/nft/get-info', { address })
     console.log(nftInfo)
-    if (nftInfo?.data?.tokenIds?.length) {
+    if (nftInfo?.data?.time && nftInfo?.data?.tokenIds?.length) {
       const mintId = nftInfo?.data?.tokenIds?.at(-1)
       console.log('mintId', mintId)
       setMintId(mintId)
-    } else return null
-    if (nftInfo?.data?.time && nftInfo?.data?.tokenIds?.length) {
       setMintTime(nftInfo?.data?.time)
       setIsLoadingInfo(false)
       // return mintId
       return nftInfo?.data?.tokenIds?.at(-1)
     }
     setIsLoadingInfo(false)
-    return null
+    return undefined
   }
   const { writeContracts } = useWriteContracts({
     mutation: {
