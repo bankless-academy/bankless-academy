@@ -21,7 +21,7 @@ export default async function handler(
     console.log('address', address)
     console.log('timestamp', timestamp)
     if (address && timestamp && timestamp - Date.now() < 60000) {
-      const userId = await getUserId(address, 'onchain-summer-smart-wallet')
+      const userId = await getUserId(address, 'onchain-summer-challenge')
       const NFTInfo = await getNFTInfo(address, '')
       if (NFTInfo.tokenIds.length === 0) {
         await db(TABLES.users)
