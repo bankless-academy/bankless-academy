@@ -272,6 +272,11 @@ Take the challenge and mint your free NFT on @base now ↓`
   const twitterLink = generateTwitterLink(share, shareLink)
 
   const farcasterLink = generateFarcasterLink(share, shareLink)
+    ?.replace(
+      encodeURIComponent('#OnchainSummer'),
+      encodeURIComponent('/onchainsummer')
+    )
+    ?.replace(encodeURIComponent('@Coinbase'), encodeURIComponent('@coinbase'))
 
   const parentRef = useRef<HTMLDivElement>(null)
   const counterRef = useRef<HTMLDivElement>(null)
@@ -410,8 +415,20 @@ Take the challenge and mint your free NFT on @base now ↓`
             {!isLoadingInfo && status === 'connected' && mintId !== null && (
               <>
                 <Box textAlign="center">
-                  Your time has been saved onchain and you’ve been airdropped
-                  the above NFT to commemorate!
+                  {`Congratulations on creating your new `}
+                  <Keyword
+                    definition={`Smart wallets offer browser-based access, passkey onboarding, and simplified gasless transactions without complex setups.`}
+                    keyword={'smart wallet'}
+                  />
+                  {`!`}
+                  <br />
+                  <br />
+                  {`Your resulting time has been saved onchain and you’ve been sent the above `}
+                  <Keyword
+                    definition={`An NFT is a unique digital item, like a one-of-a-kind collectible, stored on a blockchain to prove ownership and authenticity.`}
+                    keyword={'NFT'}
+                  />
+                  {` to commemorate this special moment!`}
                 </Box>
                 <Box textAlign="center" p="16px" maxW="300px" m="auto">
                   <Box pb="1">
