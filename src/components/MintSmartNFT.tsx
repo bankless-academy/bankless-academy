@@ -19,7 +19,7 @@ import {
   formatTime,
   generateFarcasterLink,
   generateTwitterLink,
-  getNFTsCollectors,
+  // getNFTsCollectors,
   shortenAddress,
 } from 'utils/index'
 import { useSmallScreen } from 'hooks'
@@ -102,7 +102,7 @@ const MintSmartNFT = (): JSX.Element => {
   const { connectors, connect } = useConnect()
   const { disconnect } = useDisconnect()
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [numberMinted, setNumberMinted] = useState('-')
+  // const [numberMinted, setNumberMinted] = useState('-')
   const [time, setTime] = useState(0)
   const [mintTime, setMintTime] = useState<string | null>(null)
   const [mintId, setMintId] = useState(null)
@@ -145,7 +145,7 @@ const MintSmartNFT = (): JSX.Element => {
           retry++
         }
         if (mintId) {
-          await updateNFTCollectors().catch(console.error)
+          // await updateNFTCollectors().catch(console.error)
           console.log('id', id)
         }
       },
@@ -166,24 +166,24 @@ const MintSmartNFT = (): JSX.Element => {
     '0x',
   ]
 
-  const updateNFTCollectors = async () => {
-    const NFTCollectors = await getNFTsCollectors(NFTAddress)
-    NFTCollectors.reduce((p, c) => p + c?.tokenBalances?.length, 0)
-    setNumberMinted(
-      NFTCollectors.reduce(
-        (p, c) => p + c?.tokenBalances?.length,
-        0
-      )?.toString()
-    )
-  }
+  // const updateNFTCollectors = async () => {
+  //   const NFTCollectors = await getNFTsCollectors(NFTAddress)
+  //   NFTCollectors.reduce((p, c) => p + c?.tokenBalances?.length, 0)
+  //   setNumberMinted(
+  //     NFTCollectors.reduce(
+  //       (p, c) => p + c?.tokenBalances?.length,
+  //       0
+  //     )?.toString()
+  //   )
+  // }
 
   const celebrateMint = () => {
     setShowConfetti(true)
   }
 
-  useEffect(() => {
-    updateNFTCollectors().catch(console.error)
-  }, [])
+  // useEffect(() => {
+  //   updateNFTCollectors().catch(console.error)
+  // }, [])
 
   useEffect(() => {
     if (status === 'connected' && startTimeRef.current) {
@@ -264,10 +264,10 @@ const MintSmartNFT = (): JSX.Element => {
   const share = `Join the 🔆 OᑎᑕᕼᗩIᑎ ᔑᑌᗰᗰEᖇ 🔆 Challenge by @BanklessAcademy
 I just got onchain in ${timeToSeconds(
     mintTime
-  )} seconds, using my new Smart Wallet on @base 🔑
+  )} seconds, using my new @Coinbase Smart Wallet 🔑
 
 How fast can you go onchain? #OnchainSummer
-Take the challenge now ↓`
+Take the challenge and mint your free NFT on @base now ↓`
 
   const twitterLink = generateTwitterLink(share, shareLink)
 
