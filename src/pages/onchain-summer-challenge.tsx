@@ -28,13 +28,14 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   const { searchParams } = new URL(ctx.req.url ?? '/', `${proto}://${host}`)
 
   const time = searchParams.get('time')
+  const version = 'v=1'
 
   return {
     props: {
       pageMeta: {
         ...pageMeta,
         image: `${DOMAIN_URL_}/api/og/onchain-summer-challenge${
-          time ? `?time=${time}` : ''
+          time ? `?time=${time}&${version}` : `?${version}`
         }`,
       },
     },
