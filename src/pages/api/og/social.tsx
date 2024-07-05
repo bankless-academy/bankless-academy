@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { ImageResponse } from '@vercel/og'
 import OgSocial from 'components/OgSocial'
-import { DEFAULT_AVATAR, DOMAIN_URL, LESSONS } from 'constants/index'
+import { DEFAULT_AVATAR, DOMAIN_URL_, LESSONS } from 'constants/index'
 import { LessonType } from 'entities/lesson'
 import { NextApiRequest } from 'next'
 
@@ -60,7 +60,7 @@ export default async function handler(req: NextApiRequest) {
   let error = ''
   if (!address) error = 'missing address'
 
-  const res = await fetch(`${DOMAIN_URL}/api/user/${address}`)
+  const res = await fetch(`${DOMAIN_URL_}/api/user/${address}`)
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
@@ -105,7 +105,7 @@ export default async function handler(req: NextApiRequest) {
 
   const fontData = await fetch(
     new URL(
-      `${DOMAIN_URL}/fonts/clear-sans/TTF/ClearSans-Bold.ttf`,
+      `${DOMAIN_URL_}/fonts/clear-sans/TTF/ClearSans-Bold.ttf`,
       import.meta.url
     )
   ).then((res) => res.arrayBuffer())
@@ -155,7 +155,7 @@ export default async function handler(req: NextApiRequest) {
           <OgSocial
             explorerAvatar={user.avatar}
             explorerName={explorerName}
-            badgeImageLink={`${DOMAIN_URL}${badgeImageLink}`}
+            badgeImageLink={`${DOMAIN_URL_}${badgeImageLink}`}
           />
         ) : (
           <OgSocial
