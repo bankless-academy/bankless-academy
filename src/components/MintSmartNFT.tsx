@@ -486,6 +486,12 @@ Take the challenge and mint your free NFT on @base now ↓`
                     </ExternalLink>
                   </Box>
                 </Box>
+                <Box textAlign="center">
+                  <ExternalLink href={`/feedback?tally=wbOd0o`}>
+                    📝 Leave feedback
+                  </ExternalLink>
+                  {' about your experience.'}
+                </Box>
               </>
             )}
             {status === 'connected' && isLoadingInfo && (
