@@ -11,6 +11,8 @@ import {
   polygonMumbai,
   optimismSepolia,
   baseSepolia,
+  arbitrum,
+  arbitrumSepolia,
   type Chain
 } from 'wagmi/chains'
 
@@ -18,23 +20,26 @@ import { ENABLE_TESTNET } from 'constants/networks'
 
 const testChains = ENABLE_TESTNET ? [
   sepolia,
-  polygonMumbai,
-  optimismSepolia,
+  arbitrumSepolia,
   baseSepolia,
+  optimismSepolia,
+  polygonMumbai,
 ] : []
 
 const testTransports = ENABLE_TESTNET ? {
   [sepolia.id]: http(),
-  [polygonMumbai.id]: http(),
-  [optimismSepolia.id]: http(),
+  [arbitrumSepolia.id]: http(),
   [baseSepolia.id]: http(),
+  [optimismSepolia.id]: http(),
+  [polygonMumbai.id]: http(),
 } : {}
 
 export const chains = [
   mainnet,
-  polygon,
-  optimism,
+  arbitrum,
   base,
+  optimism,
+  polygon,
   ...testChains
 ] as [Chain, ...Chain[]]
 
@@ -68,9 +73,10 @@ export const wagmiConfig = defaultWagmiConfig({
   // coinbasePreference: 'eoaOnly',
   transports: {
     [mainnet.id]: http(),
-    [polygon.id]: http(),
-    [optimism.id]: http(),
+    [arbitrum.id]: http(),
     [base.id]: http(),
+    [optimism.id]: http(),
+    [polygon.id]: http(),
     ...testTransports,
   },
   connectors: [injected(), walletConnect({

@@ -141,7 +141,6 @@ const switchChainButton = ({
                 >
                   <Image
                     height={25}
-                    rounded="full"
                     src={NETWORKS[network].image}
                     alt={NETWORKS[network].name}
                     mr="12px"

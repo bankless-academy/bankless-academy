@@ -207,7 +207,7 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['polygon'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `${NETWORKS['polygon'].infuraRpcUrl}${INFURA_KEY}`
+            `'https://polygon-mainnet.infura.io/v3/'${INFURA_KEY}`
           ),
       }
       const provider = ethers.getDefaultProvider(polygon)
@@ -265,7 +265,6 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['optimism'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
             `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
           ),
       }
@@ -313,7 +312,6 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['optimism'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
             `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
           ),
       }
@@ -373,7 +371,6 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['optimism'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
             `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
           ),
       }
