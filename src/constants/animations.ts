@@ -24,6 +24,15 @@ export const ANIMATIONS = {
       '/animations/validating-tx-with-ethereum-staking/step-7.json',
     ],
   },
+  swap: {
+    name: 'Swap Animation',
+    description: 'Making a swap on a DEX',
+    socialImageLink: null,
+    steps: [
+      '/animations/swap/step-1.json',
+      '/animations/swap/step-2.json',
+    ],
+  },
 }
 
 export const ANIMATION_IDS = Object.keys(ANIMATIONS)

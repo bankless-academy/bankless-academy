@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import React, { useRef, useEffect } from 'react'
 import { Box, Button, Image } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { Player } from '@lottiefiles/react-lottie-player'
@@ -15,6 +16,14 @@ const StyledBox = styled(Box)`
   #lottie svg:last-child {
     display: block;
   }
+  #lottie .next,
+  #lottie .prev {
+    cursor: pointer;
+  }
+  #lottie .next:hover,
+  #lottie .prev:hover {
+    filter: brightness(150%);
+  }
 `
 
 const Animation = ({
@@ -29,6 +38,31 @@ const Animation = ({
     0
   )
   const [isDisabled, setIsDisabled] = useState(false)
+
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement
+      if (target.classList.contains('next') || target.closest('.next')) {
+        clickRight()
+      }
+      if (target.classList.contains('prev') || target.closest('.prev')) {
+        clickLeft()
+      }
+    }
+
+    const currentContainer = containerRef.current
+    if (currentContainer) {
+      currentContainer.addEventListener('click', handleClick)
+    }
+
+    return () => {
+      if (currentContainer) {
+        currentContainer.removeEventListener('click', handleClick)
+      }
+    }
+  }, [animationStepLS, isDisabled])
 
   if (!ANIMATION_IDS.includes(animationId)) return null
 
@@ -82,6 +116,7 @@ const Animation = ({
       position="relative"
       aspectRatio="1"
       m="auto"
+      ref={containerRef}
     >
       {isLottie ? (
         <Player
