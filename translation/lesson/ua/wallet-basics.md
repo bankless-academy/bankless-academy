@@ -1,6 +1,6 @@
 ---
 TITLE: Основи роботи з гаманцем
-DESCRIPTION: Що таке криптогаманець? Дізнайтеся більше та створіть свій перший гаманець вже сьогодні!
+DESCRIPTION: Що таке криптогаманець? Learn more and create your “Ethereum account” today!
 LANGUAGE: Українська
 WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: Romko. eth
