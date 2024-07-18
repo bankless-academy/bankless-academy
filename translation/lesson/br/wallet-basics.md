@@ -1,6 +1,6 @@
 ---
 TITLE: Princípios Básicos de Carteiras
-DESCRIPTION: O que é uma carteira de criptomoedas? Saiba mais e crie sua primeira carteira hoje!
+DESCRIPTION: O que é uma carteira de criptomoedas? Learn more and create your “Ethereum account” today!
 LANGUAGE: Português
 WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: beatrizabreupeixoto
