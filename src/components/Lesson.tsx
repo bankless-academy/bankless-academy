@@ -178,6 +178,38 @@ export const Slide = styled(Card)<{
       padding-left: 1em;
       border-left: 2px solid white;
     }
+
+    // toggle
+    details {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+    summary {
+      padding: 15px;
+      background-color: #f4f4f440;
+      cursor: pointer;
+      position: relative;
+    }
+    summary:hover {
+      background-color: #c4c4c440;
+    }
+    summary::after {
+      content: '+';
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    details[open] summary::after {
+      content: '-';
+    }
+    details[open] summary {
+      border-bottom: 1px solid #ddd;
+    }
+    .content-detail {
+      padding: 15px;
+    }
   }
 `
 
@@ -342,6 +374,34 @@ const Lesson = ({
 
   useEffect((): void => {
     localStorage.setItem(lesson.slug, currentSlide.toString())
+
+    // toggle
+    const accordions = document.querySelectorAll('.bloc1')
+    accordions.forEach((accordion) => {
+      const details = accordion.querySelectorAll('details')
+
+      details.forEach((detail) => {
+        // Check if content div already exists
+        if (!detail.querySelector('.content-detail')) {
+          // Wrap content in a div
+          const content = document.createElement('div')
+          content.className = 'content-detail'
+          while (detail.childNodes.length > 1) {
+            content.appendChild(detail.childNodes[1])
+          }
+          detail.appendChild(content)
+        }
+
+        // Add click event listener
+        detail.addEventListener('click', () => {
+          details.forEach((otherDetail) => {
+            if (otherDetail !== detail) {
+              otherDetail.removeAttribute('open')
+            }
+          })
+        })
+      })
+    })
   }, [currentSlide])
 
   useEffect((): void => {
