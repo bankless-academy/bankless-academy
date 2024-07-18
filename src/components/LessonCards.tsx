@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useLocalStorage } from 'usehooks-ts'
 import { isMobile } from 'react-device-detect'
 import { useAccount } from 'wagmi'
+import queryString from 'query-string'
 
 import { LESSONS, IS_WHITELABEL } from 'constants/index'
 import MODULES from 'constants/whitelabel_modules'
@@ -50,7 +51,12 @@ const LessonCards = ({
 }): React.ReactElement => {
   const router = useRouter()
   const [isSmallScreen] = useSmallScreen()
-  const { all, slug } = router.query
+  const { slug } = router.query
+
+  const all =
+    typeof window !== 'undefined'
+      ? queryString.parse(window.location.search).all
+      : undefined
 
   // const [stats, setStats]: any = useState(null)
   const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
@@ -78,7 +84,7 @@ const LessonCards = ({
             lesson.publicationStatus === 'publish' &&
             lesson.moduleId === moduleId
         )
-      : all !== undefined
+      : all === null
       ? LESSONS
       : LESSONS.filter(
           (lesson) =>
