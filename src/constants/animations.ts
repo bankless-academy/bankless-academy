@@ -33,6 +33,16 @@ export const ANIMATIONS = {
       '/animations/swap/step-2.json',
     ],
   },
+  send: {
+    name: 'Sending Animation',
+    description: 'Sending a Payment',
+    socialImageLink: null,
+    steps: [
+      '/animations/swap/step-1.json',
+      '/animations/swap/step-1.json',
+      '/animations/swap/step-2.json',
+    ],
+  },
 }
 
 export const ANIMATION_IDS = Object.keys(ANIMATIONS)
