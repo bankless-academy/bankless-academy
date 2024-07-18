@@ -27,29 +27,25 @@ ________________________________________________________________________________
 
 ---
 
-# Whitepaper Lesson | Gitcoin = Grants = Growth
+# Welcome to Gitcoin 2.0 | Gitcoin = Grants = Growth
 
-Welcome to the revolution in capital allocation 💰
+Welcome to the revolution in onchain capital allocation 💰
 
-In this lesson, we explore the **Gitcoin 2.0 whitepaper** to discover innovative approaches to public goods funding and growth in the Ethereum ecosystem.
+In this lesson, we explore the **Gitcoin 2.0 white paper** to discover innovative approaches to public goods funding and growth in the Ethereum ecosystem. Having surpassed **$60 million in funding distributed**, Gitcoin is at the forefront of a movement towards more democratic, efficient, and transparent capital allocation in web3.
 
-Having surpassed **$60 million in funding distributed**, Gitcoin is at the forefront of a movement towards more democratic, efficient, and transparent capital allocation in web3.
+The publication of the Gitcoin 2.0 white paper marks a pivotal moment in Gitcoin’s history. It provides an in-depth look at how its infrastructure and the implementation of `Allo Protocol` are helping to steward its mission. For quick reference during this journey, you can access the publication [here](https://www.gitcoin.co/whitepaper/read).
 
-The publication of the [whitepaper](https://www.gitcoin.co/whitepaper/read) marks a pivotal moment in Gitcoin’s history and provides an in-depth look at how its infrastructure and the implementation of `Allo Protocol` are helping to steward its mission. For reference at any time during this journey, you can read the whitepaper [here](https://www.gitcoin.co/whitepaper/read).
+This lesson has been curated by contributors at Gitcoin and Bankless Academy, aiming to provide a fun, unique, and web3 native way of learning about Gitcoin’s new stage, **Gitcoin 2.0.** Prepared to explore the future of onchain capital allocation? If so, let’s dive in!
 
-Thank you to the contributors at Gitcoin and Bankless Academy for curating this lesson. Its goal is to provide a fun, unique, and web3 way of learning about Gitcoin in its new stage, **Gitcoin 2.0.** Prepared to explore? Let’s dive in!
-
-![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/whitepaper-lesson-gitcoin-grants-growth-3e78d2ef.png)
+![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/welcome-to-gitcoin-2.0-gitcoin-grants-growth-3e78d2ef.png)
 
 # Introduction to Quadratic Funding
 
-If you’re here, you may already know what the title means, but here’s a refresher.
-
 `Quadratic Funding` (QF) originated from the ideas of Glen Weyl and Vitalik Buterin. It's a mechanism designed to allocate funds in a fair and democratic manner by leveraging matching funds to **amplify the impact** of small individual contributions.
 
-QF debuted with **Gitcoin Grants** (GG), marking a pivotal moment enabling democratic donations to projects that matter. Since the launch of GG Round 1, the QF model has been finely tuned with each iteration.
+QF debuted with **Gitcoin Grants** (GG), marking a pivotal moment in enabling democratic donations to projects that matter. Since the launch of GG Round 1, the QF model has been finely tuned with each iteration.
 
-Now, **Gitcoin 2.0** extends further into the grants space to include funding mechanisms like Direct Grants, delivering a more decentralized, modular experience for users and grantees.
+Now, **Gitcoin 2.0** extends further into the grants space to include funding mechanisms like Direct Grants, delivering a more decentralized and modular experience for users and grantees.
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/introduction-to-quadratic-funding-e38257e1.png)
 
@@ -59,11 +55,11 @@ As of May 2024, twenty editions of the Gitcoin Grants program have been run by G
 
 Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone especially for the **open source Ethereum community**.
 
-Prior to Gitcoin Grants Round 20, the total amount of funding raised through the program reached $29 million. As referenced by the [Open Source Observer Impact Analysis](https://docs.opensource.observer/blog/gitcoin-grants-impact/#grants-on-allo-alpha-round-to-gg19-2023), **$8.4 million of the total amount raised was disbursed to ~2,500 applicants** participating in the open source software rounds.
+Prior to Gitcoin Grants Round 20, the total amount of funding raised through the program reached $29 million.
 
-The past four rounds—α, β, 18, and 19—have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as sidechains like Fantom and Polygon.
+In 2023, the past four rounds—α, β, 18, and 19—have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as sidechains like Polygon and Fantom.
 
-![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-fe71e17f.png)
+![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-b699b9ea.png)
 
 # …and there’s more!
 
@@ -71,11 +67,11 @@ Gitcoin's dynamics most often reward projects that **play the long game** — th
 
 A notable finding is the **correlation between Gitcoin Grants rounds and developer growth**.
 
-The Open Source Observer Impact Analysis shows that of a group of 50 open source software projects that have received funding across multiple Gitcoin Grants rounds, for every $1 million paid out in grants since 2019, there are 7 full-time developers who are still active today.
+The [Open Source Observer Impact Analysis](https://docs.opensource.observer/blog/gitcoin-grants-impact/#grants-on-allo-alpha-round-to-gg19-2023) shows that of a group of 50 open source software projects that have received funding across multiple Gitcoin Grants rounds, for every $1 million paid out in grants since 2019, there are 7 full-time developers who are _still active today._
 
 If we factor in the crowdfund multiplier, every $1 million contributed to the matching pool is associated with 13 retained full-time developers, with these numbers holding steady even during the bear market!
 
-![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/and-theres-more-5525393b.png)
+![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/and-theres-more-99247fc7.png)
 
 # Knowledge Check 1
 
@@ -138,7 +134,7 @@ Gitcoin harnesses the positive attributes of high speed internet and immutable b
 
 # Expanding beyond EVM with Allo Protocol
 
-Allo Protocol is a set of smart contracts designed for democratic capital allocation and distribution, developed to empower the Grants Stack.
+Allo Protocol is a set of smart contracts designed for democratic onchain capital allocation and distribution, developed to empower the Grants Stack.
 
 Allo’s simple, generalized architecture allows it to be **easily customized** for a wide range of use cases. Its power lies in its ability to **deepen impact** by allocating capital at scale. There are three key components to the protocol:
 
@@ -146,7 +142,7 @@ Allo’s simple, generalized architecture allows it to be **easily customized** 
 2. **Registry:** structuring data of possible participants that are eligible for distribution of tokens.
 3. **Strategy:** designating how tokens will be allocated and distributed to recipients.
 
-💡 For a deeper understanding of what people can create using Allo, checkout the design space-focused [Rainbowpaper](https://www.gitcoin.co/rainbowpaper).
+💡  An easy way to remember what Allo Protocol is or does, is that it’s short for _Capital Allocation Protocol_. For a deeper understanding of what people can create using Allo, checkout the design space-focused [rainbowpaper](https://www.gitcoin.co/rainbowpaper).
 
 ![](https://app.banklessacademy.com/images/gitcoin-2.0-essentials/expanding-beyond-evm-with-allo-protocol-c8a108f7.png)
 
@@ -172,7 +168,7 @@ Complementary applications such as reporting and discovery tools may follow suit
 
 # Knowledge Check 3
 
-Complete the following statement: Allo is the ______  layer for distribution of capital allocation, while Grants Stack is a _____ for running ______ programs.
+Allo is the ______  layer for distribution of capital allocation, while Grants Stack is a _____ for running ______ programs.
 
 - [ ] community - application - funding
 - [ ] protocol - tool - grants
