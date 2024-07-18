@@ -1,6 +1,6 @@
 ---
 TITLE: 钱包基础知识
-DESCRIPTION: 什么是加密货币钱包？ 了解更多信息，创建您的第一个加密货币钱包！
+DESCRIPTION: 什么是加密货币钱包？ Learn more and create your “Ethereum account” today!
 LANGUAGE: 简体中文（Simplified Chinese）
 WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: 183Aaros.eth
