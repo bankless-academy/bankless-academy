@@ -1,6 +1,6 @@
 ---
 TITLE: Wallet Basics
-DESCRIPTION: What is a crypto wallet? Learn more and create your first wallet today!
+DESCRIPTION: What is a crypto wallet? Learn more and create your “Ethereum account” today!
 LANGUAGE: English
 WRITERS: Ap0ll0517, Jordy, Tetranome
 TRANSLATORS: X
