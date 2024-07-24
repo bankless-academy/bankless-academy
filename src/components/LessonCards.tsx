@@ -20,7 +20,7 @@ export const StyledHeading = styled(Heading)`
     display: flex;
     flex-basis: 100%;
     align-items: center;
-    margin: 48px 0;
+    margin: 64px 0 24px;
 
     &:before,
     &:after {
@@ -141,9 +141,25 @@ const LessonCards = ({
 
   return (
     <Box>
-      <StyledHeading as="h1" size="2xl" textAlign="center" my={8}>
+      <StyledHeading as="h1" size="2xl" textAlign="center">
         {level || moduleName || "Explorer's Handbook"}
       </StyledHeading>
+      {!moduleName ? (
+        <Heading
+          as="h2"
+          size="md"
+          fontWeight="normal"
+          textAlign="center"
+          mt={4}
+          mb={8}
+        >
+          {level === 'Essentials'
+            ? `Begin your crypto journey with these entry-level topics and quests.`
+            : level === 'Level 1'
+            ? `Level up your knowledge and abilities with more specific topics and quests.`
+            : `Quick guides for getting your crypto journey started.`}
+        </Heading>
+      ) : null}
       <SimpleGrid
         minChildWidth={isSmallScreen ? 'unset' : '400px'}
         spacing={4}
