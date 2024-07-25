@@ -49,7 +49,7 @@ Over the last forty years, the internet has become the town square of the world.
 
 This online world allows total strangers to meet to exchange information, goods and services, or to build relationships, businesses and even social movements together. It’s the greatest intersection of social connection, expression and innovation that humanity has ever had.
 
-**And it has one big problem…**
+**But it has one big problem…**
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/a-global-town-square-07dbdabd.svg)
 
@@ -167,8 +167,13 @@ By removing intermediaries, banks, landlords, and individual accounts for each s
 
 # Using a dApp
 
-1. Website
-2. Connecting Wallet…
+1. Visit website
+2. Connect wallet…
+3. Select to & from tokens
+4. Submit swap
+5. Review terms of trade
+6. Sign & execute
+7. Receive tokens
 
 [embed](https://app.banklessacademy.com/animation/swap)
 
@@ -210,9 +215,11 @@ On Ethereum, you’re your own bank, and you feel it!
 
 # Sending a Payment
 
-1. step 1
-2. step 2
-3. step 3
+1. Open wallet
+2. Send function
+3. Enter address, select token
+4. Review details
+5. Sign & send
 
 [embed](https://app.banklessacademy.com/animation/send)
 
@@ -227,6 +234,11 @@ True or False: Ethereum can freeze your transfers and confiscate your money.
 - [ ] False
 
 > …
+
+# How it Works
+
+- Let’s see how that money was sent
+- Replacing centralized, server-based services with peer2peer blockchains.
 
 # Common Questions
 

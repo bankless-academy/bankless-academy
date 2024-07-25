@@ -354,7 +354,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '4fc7e20ce1964eb59bcc420eabf565be',
         title: 'A Global Town Square',
-        content: '<div class="bloc1"><p>Over the last forty years, the internet has become the town square of the world.</p><p>This online world allows total strangers to meet to exchange information, goods and services, or to build relationships, businesses and even social movements together. It’s the greatest intersection of social connection, expression and innovation that humanity has ever had.</p><p><strong>And it has one big problem…</strong></p></div><div class="bloc2"><img src=\'/images/ethereum-basics/a-global-town-square-07dbdabd.svg\'></div>'
+        content: '<div class="bloc1"><p>Over the last forty years, the internet has become the town square of the world.</p><p>This online world allows total strangers to meet to exchange information, goods and services, or to build relationships, businesses and even social movements together. It’s the greatest intersection of social connection, expression and innovation that humanity has ever had.</p><p><strong>But it has one big problem…</strong></p></div><div class="bloc2"><img src=\'/images/ethereum-basics/a-global-town-square-07dbdabd.svg\'></div>'
       },
       {
         type: 'LEARN',
@@ -390,13 +390,13 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '4f1d06ddc7e34a839ce93eb065df9da9',
         title: 'An Open Internet',
-        content: '<div class="bloc1"><p>😤 <strong>Had enough of platforms that don’t respect your needs?</strong></p><hr><p>These are the <code>value-extractive</code> services we’ve become used to.</p><p>Called “walled gardens” for how restrictive they are and how difficult they make it to leave, finding better services can be time consuming and expensive. It often feels easier to just put up with the high fees, lack of transparency, and one-sided trades. </p><p>But doesn’t it feel like this problem is just getting worse over time?</p><p>We need more fair and reliable internet — where the technology forces services to respect your needs, and switching providers is easy. We need to go beyond intermediaries and their walled gardens.</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/an-open-internet-e7f3fbda.svg\'></div>'
+        content: '<div class="bloc1"><p>😤 <strong>Had enough of platforms that don’t respect your needs?</strong></p><hr><p>These are the <code>value-extractive</code> services we’ve become used to.</p><p>Called “walled gardens” for how restrictive they are and how difficult they make it to leave, finding better services can be time consuming and expensive. It often feels easier to just put up with the high fees, lack of transparency, and one-sided trades. </p><p>But doesn’t it feel like this problem is just getting worse over time?</p><p>We need more faira fairer and more reliable internet — where the technology forces services to respect your needs, and switching providers is easy. We need to go beyond intermediaries and their walled gardens.</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/an-open-internet-e7f3fbda.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '1016c615bacc4cc6aa8b3e13746db366',
         title: 'Peer-to-Peer Trades',
-        content: '<div class="bloc1"><p>The solution starts with changing how the internet is connected. Introducing <code>peer-to-peer</code> networking:</p><p>In traditional internet services, information or money from one <code>peer</code> goes through an <code>intermediary</code> before arriving at its destination. Theoretically, these intermediaries can do whatever they want before the trade is complete.<br><em>Peer → </em><em>Intermediary</em><em> → Peer</em></p><p>Peer-to-peer services, on the other hand, remove the need for intermediaries by replacing them with automated, transparent processes.<br><em>Peer → Automation → Peer</em></p><p>It’s like replacing a shop owner with a high-tech vending machine. Services become more predictable, fees go down, and users regain control of their interactions. <strong>As we’ll see, this fundamental shift changes everything…</strong></p></div><div class="bloc2"><img src=\'/images/ethereum-basics/peer-to-peer-trades-de8d8bb2.svg\'></div>'
+        content: '<div class="bloc1"><p>The solution starts with changing how the internet is connected. Introducing <code>peer-to-peer</code> networking:</p><p>In traditional internet services, information or money from one <code>peer</code> goes through an <code>intermediary</code> before arriving at its destination. Theoretically, these intermediaries can do whatever they want before the trade is complete.<br><em>Peer → </em><em>Intermediary</em><em> → Peer</em></p><p>Peer-to-peer services, on the other hand, remove the need for intermediaries by replacing them with automated, transparent processes.<br><em>Peer → Automation → Peer</em></p><p>It’s like replacing a shop owner with a high-tech vending machine. Services become more predictable, fees go down, and users regain control ofover their interactions. <strong>As we’ll see, this fundamental shift changes everything…</strong></p></div><div class="bloc2"><img src=\'/images/ethereum-basics/peer-to-peer-trades-de8d8bb2.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -432,7 +432,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'b148c5eff8a24e6fbe27c9423305c698',
         title: 'Using a dApp',
-        content: '<div class="bloc1"><ol><li>Website</li><li>Connecting Wallet…</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/swap\'></iframe></div>'
+        content: '<div class="bloc1"><ol><li>Visit website</li><li>Connect wallet…</li><li>Select to & from tokens</li><li>Submit swap</li><li>Review terms of trade</li><li>Sign & execute</li><li>Receive tokens</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/swap\'></iframe></div>'
       },
       {
         type: 'QUIZ',
@@ -466,7 +466,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'befa989e445846e0bd0ac488740154fb',
         title: 'Sending a Payment',
-        content: '<div class="bloc1"><ol><li>step 1</li><li>step 2</li><li>step 3</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/send\'></iframe></div>'
+        content: '<div class="bloc1"><ol><li>Open wallet</li><li>Send function</li><li>Enter address, select token</li><li>Review details</li><li>Sign & send</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/send\'></iframe></div>'
       },
       {
         type: 'QUIZ',
@@ -485,6 +485,12 @@ const LESSONS: LessonType[] = [
           ],
           id: 'ethereum-basics-4'
         }
+      },
+      {
+        type: 'LEARN',
+        notionId: '260be70be7dd44c7ae2edbe322a33aae',
+        title: 'How it Works',
+        content: '<div class="bloc1"><ul><li>Let’s see how that money was sent</li><li>Replacing centralized, server-based services with peer2peer blockchains.</li></ul></div>'
       },
       {
         type: 'LEARN',
@@ -3752,7 +3758,8 @@ const LESSONS: LessonType[] = [
     level: 'Level 1',
     quest: 'Gitcoin20Essentials',
     questSocialMessage: 'I\'ve just completed the @Gitcoin 2.0 Essentials lesson on @BanklessAcademy 🎓\n\nJoin the journey and level up your #web3 knowledge! 👨‍🚀 🚀',
-    publicationStatus: 'hidden',
+    publicationStatus: 'publish',
+    publicationDate: '2024-07-25',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
