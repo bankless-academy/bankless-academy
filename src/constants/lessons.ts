@@ -3750,7 +3750,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Decoding Gitcoin 2.0',
     badgeId: 13,
-    duration: null,
+    duration: 15,
     learnings: '',
     description: 'Explore Gitcoin\'s whitepaper for insights into democratic capital allocation and Ethereum ecosystem growth.',
     name: 'Gitcoin 2.0 Essentials',
