@@ -3755,7 +3755,7 @@ const LESSONS: LessonType[] = [
     description: 'Explore Gitcoin\'s whitepaper for insights into democratic capital allocation and Ethereum ecosystem growth.',
     name: 'Gitcoin 2.0 Essentials',
     languages: [],
-    level: 'Level 1',
+    level: 'Community Lessons',
     quest: 'Gitcoin20Essentials',
     questSocialMessage: 'I\'ve just completed the @Gitcoin 2.0 Essentials lesson on @BanklessAcademy 🎓\n\nJoin the journey and level up your #web3 knowledge! 👨‍🚀 🚀',
     publicationStatus: 'publish',

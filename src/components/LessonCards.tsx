@@ -157,6 +157,8 @@ const LessonCards = ({
             ? `Begin your crypto journey with these entry-level topics and quests.`
             : level === 'Level 1'
             ? `Level up your knowledge and abilities with more specific topics and quests.`
+            : level === 'Community Lessons'
+            ? `Lessons written with our ecosystem partners.`
             : `Quick guides for getting your crypto journey started.`}
         </Heading>
       ) : null}
@@ -165,6 +167,7 @@ const LessonCards = ({
         spacing={4}
         my={8}
         gap={6}
+        float={level === 'Community Lessons' ? 'inline-start' : 'inherit'}
       >
         {Lessons.filter((lesson) => {
           if (level) {

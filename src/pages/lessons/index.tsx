@@ -20,6 +20,7 @@ function Lessons(): JSX.Element {
       <>
         <LessonCards level="Essentials" />
         <LessonCards level="Level 1" />
+        <LessonCards level="Community Lessons" />
       </>
     </Layout>
   )
