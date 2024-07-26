@@ -38,9 +38,9 @@ export const ANIMATIONS = {
     description: 'Sending a Payment',
     socialImageLink: null,
     steps: [
-      '/animations/swap/step-1.json',
-      '/animations/swap/step-1.json',
-      '/animations/swap/step-2.json',
+      '/animations/send/step-1.json',
+      '/animations/send/step-2.json',
+      '/animations/send/step-3.json',
     ],
   },
 }
