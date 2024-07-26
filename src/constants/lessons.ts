@@ -510,7 +510,7 @@ const LESSONS: LessonType[] = [
         title: '📊 Poll',
         quiz: {
           question: 'How do you imagine yourself using Ethereum? (Check all that apply)',
-          rightAnswerNumber: 2,
+          rightAnswerNumber: 99,
           answers: [
             'Exploring new digital goods and services.',
             'Sending money internationally.',

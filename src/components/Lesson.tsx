@@ -323,6 +323,10 @@ const Lesson = ({
 
   const { embed } = router.query
   const slide = lesson.slides[currentSlide]
+  const [quizSlide, setQuizSlide] = useLocalStorage(
+    `quiz-${slide?.quiz?.id}`,
+    []
+  )
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
 
@@ -529,7 +533,10 @@ const Lesson = ({
     const feedback = slide.quiz?.feedback?.length
       ? slide.quiz?.feedback[answerNumber - 1]
       : undefined
-    if (slide.quiz.rightAnswerNumber === answerNumber) {
+    if (
+      slide.quiz.rightAnswerNumber === answerNumber ||
+      (slide.quiz.rightAnswerNumber === 99 && answerNumber)
+    ) {
       if (feedback?.length)
         toast({
           title: feedback,
@@ -541,15 +548,36 @@ const Lesson = ({
           },
         })
       // correct answer
-      Mixpanel.track('quiz_correct_answer', {
-        lesson: lesson?.englishName,
-        quiz_question: `${slide.quiz.id.split('-').pop()}. ${
-          slide.quiz.question
-        }`,
-        retry:
-          slide.quiz.id in quizRetryCount ? quizRetryCount[slide.quiz.id] : 0,
-      })
-      localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumber.toString())
+      if (slide.quiz.rightAnswerNumber !== 99) {
+        Mixpanel.track('quiz_correct_answer', {
+          lesson: lesson?.englishName,
+          quiz_question: `${slide.quiz.id.split('-').pop()}. ${
+            slide.quiz.question
+          }`,
+          retry:
+            slide.quiz.id in quizRetryCount ? quizRetryCount[slide.quiz.id] : 0,
+        })
+      }
+      const answerNumberString = answerNumber.toString()
+      if (slide.quiz.rightAnswerNumber === 99) {
+        // case for multiple answers (rightAnswerNumber = 99)
+        let setQuiz = Array.isArray(quizSlide) ? quizSlide : []
+        if (setQuiz?.includes(answerNumberString)) {
+          setQuiz = setQuiz.filter(function (v) {
+            return v !== answerNumberString
+          })
+        } else {
+          setQuiz.push(answerNumberString)
+          Mixpanel.track('quiz_correct_answer', {
+            lesson: lesson?.englishName,
+            quiz_question: `${slide.quiz.id.split('-').pop()}. ${
+              slide.quiz.question
+            }`,
+            quiz_answer: slide.quiz.answers[answerNumber - 1],
+          })
+        }
+        setQuizSlide(setQuiz)
+      } else localStorage.setItem(`quiz-${slide.quiz.id}`, answerNumberString)
     } else if (!answerIsCorrect) {
       if (feedback?.length)
         toast({
@@ -760,9 +788,10 @@ const Lesson = ({
   }
 
   const answerIsCorrect =
-    slide?.quiz &&
-    parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
-      slide.quiz.rightAnswerNumber
+    (slide?.quiz &&
+      parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
+        slide.quiz.rightAnswerNumber) ||
+    (slide.quiz?.rightAnswerNumber === 99 && quizSlide?.length)
 
   return (
     <Slide
@@ -881,7 +910,9 @@ const Lesson = ({
                   >
                     {[1, 2, 3, 4, 5].map((n) => {
                       const answerState = answerIsCorrect
-                        ? slide.quiz.rightAnswerNumber === n
+                        ? slide.quiz.rightAnswerNumber === n ||
+                          (slide.quiz.rightAnswerNumber === 99 &&
+                            quizSlide?.includes(n.toString()))
                           ? 'CORRECT'
                           : 'UNSELECTED'
                         : selectedAnswerNumber === n
@@ -902,7 +933,11 @@ const Lesson = ({
                             }
                             whiteSpace="break-spaces"
                             onClick={(e) => {
-                              if (answerState !== 'CORRECT') selectAnswer(e, n)
+                              if (
+                                answerState !== 'CORRECT' ||
+                                slide.quiz.rightAnswerNumber === 99
+                              )
+                                selectAnswer(e, n)
                             }}
                             answerstate={answerState}
                             justifyContent="space-between"
@@ -918,7 +953,8 @@ const Lesson = ({
                             }
                             isActive={
                               answerIsCorrect &&
-                              lesson.slug !== 'bankless-archetypes'
+                              lesson.slug !== 'bankless-archetypes' &&
+                              slide.quiz?.rightAnswerNumber !== 99
                             }
                           >
                             {slide.quiz.answers[n - 1]}

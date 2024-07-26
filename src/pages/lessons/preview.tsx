@@ -58,7 +58,11 @@ const processLesson = (htmlPage, notion_id) => {
         slide.quiz.feedback.push(feedback)
 
         const isChecked = checkbox?.checked
-        if (isChecked) slide.quiz.rightAnswerNumber = nb
+        // 1 correct answer
+        if (isChecked && slide.quiz.rightAnswerNumber === undefined)
+          slide.quiz.rightAnswerNumber = nb
+        // select 1 or multiple answers (rightAnswerNumber = 99)
+        else if (isChecked) slide.quiz.rightAnswerNumber = 99
       }
       if (
         !slide.quiz.rightAnswerNumber &&
