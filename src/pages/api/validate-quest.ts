@@ -154,6 +154,7 @@ export default async function handler(
               headers: { accept: 'application/json', api_key: process.env.NEYNAR_API_KEY }
             }
             const cast = await (await fetch(`https://api.neynar.com/v2/farcaster/cast?identifier=${encodeURIComponent(messageLink)}&type=url`, options)).json()
+            // TODO: return feedback if cast isn't available yet...
             console.log('cast', cast)
             message = cast.cast?.text
             console.log('message', message)
