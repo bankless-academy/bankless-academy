@@ -854,7 +854,7 @@ export const generateTwitterLink = (text: string, link: string) => {
 
 export const generateFarcasterLink = (text: string, link: string) => {
   return `https://warpcast.com/~/compose?text=${encodeURIComponent(
-    text?.replace('@BanklessAcademy', '@banklessacademy')
+    text?.replace('@BanklessAcademy', '@banklessacademy')?.replace('@Gitcoin', '@gitcoin')
   )}&embeds%5B%5D=${encodeURIComponent(link)}`
 }
 
