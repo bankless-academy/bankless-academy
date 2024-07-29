@@ -2,6 +2,7 @@
 
 ## Project Links
 
+- [Press & Media Kit](https://bankless.ac/kit): About Bankless Academy, Brand Assets, Team, Official Links and Press Links.
 - [Whitelabel](https://whitelabel.banklessacademy.com/): Build your own web3 educational platform in no time by leveraging Bankless Academy’s infrastructure.
 - [Documentation](https://documentation.banklessacademy.com/): Understand how you can integrate Bankless Academy to your website.
 - [FAQ](https://app.banklessacademy.com/faq): Frequently Asked Questions about Bankless Academy.
