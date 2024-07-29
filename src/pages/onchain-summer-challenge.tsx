@@ -13,7 +13,7 @@ import { StyledHeading } from 'components/LessonCards'
 import { DOMAIN_URL_, HOMEPAGE_BACKGROUND } from 'constants/index'
 import ExternalLink from 'components/ExternalLink'
 
-const pageMeta: MetaData = {
+export const pageMeta: MetaData = {
   title: 'Onchain Summer Challenge',
   description: 'How fast can you go onchain?',
   image: '/images/onchain-summer-challenge-social.jpg',
