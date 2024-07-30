@@ -185,6 +185,8 @@ axios
                 lesson.articleContent = data?.content?.body
                   .replace(/\\\[/g, "[")
                   .replace(/\\\]/g, "]")
+                  // manual fix
+                  .replace("beta.banklessacademy.com", "app.banklessacademy.com")
                 // console.log('lesson', lesson)
 
                 if (lesson.articleContent.includes('\n\n\n---\n\n')) {
