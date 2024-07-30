@@ -32,8 +32,8 @@
   "allo protocol": {
     "keyword": "Allo Protocol",
     "keyword_plural": "Allo Protocols",
-    "definition": "An open-source protocol that enables groups to efficiently and transparently allocate pooled capital.",
-    "glossary": false
+    "definition": "Short for Capital Allocation Protocol. An open-source protocol that enables groups to efficiently and transparently allocate pooled capital.",
+    "glossary": true
   },
   "allowance": {
     "keyword": "allowance",
@@ -52,6 +52,18 @@
     "keyword_plural": "AMMs",
     "definition": "(Automated Market Maker) A trade matchmaking system, based on a public algorithm.",
     "glossary": true
+  },
+  "app": {
+    "keyword": "app",
+    "keyword_plural": "apps",
+    "definition": "An application for a computer or mobile device.",
+    "glossary": false
+  },
+  "app store": {
+    "keyword": "app store",
+    "keyword_plural": "app stores",
+    "definition": "A digital shop for downloading computer or mobile device applications.",
+    "glossary": false
   },
   "asynchronous": {
     "keyword": "asynchronous",
@@ -179,22 +191,34 @@
     "definition": "An institution regulating money, banks, and currency in a country.",
     "glossary": true
   },
+  "centralization": {
+    "keyword": "centralization",
+    "keyword_plural": "centralizations",
+    "definition": "The concentration of power over an entire system under a single authority/entity.",
+    "glossary": true
+  },
   "centralized": {
     "keyword": "centralized",
     "keyword_plural": "centralizeds",
-    "definition": "A single authority or entity controls the entire system.",
+    "definition": "Where a single authority/entity controls the entire system.",
     "glossary": true
   },
   "centralized exchange": {
     "keyword": "centralized exchange",
     "keyword_plural": "centralized exchanges",
-    "definition": "(CEX) A platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange.",
+    "definition": "(CEX) A centralized platform that coordinates cryptocurrency trading for a fee, similar to a stock exchange.",
     "glossary": true
   },
   "centralized exchange staking": {
     "keyword": "centralized exchange staking",
     "keyword_plural": "centralized exchange stakings",
     "definition": "Locking tokens through a Centralized Exchange to generate rewards.",
+    "glossary": true
+  },
+  "centralized services": {
+    "keyword": "centralized services",
+    "keyword_plural": "centralized servicess",
+    "definition": "Corporations or entities that control online activities, setting rules and fees, and managing data and content in ways that often prioritize their own interests over user needs.",
     "glossary": true
   },
   "cex": {
@@ -275,10 +299,16 @@
     "definition": "An app that allows you to store your cryptocurrency, and send/receive or spend it.",
     "glossary": true
   },
+  "cryptocurrencies": {
+    "keyword": "cryptocurrencies",
+    "keyword_plural": "cryptocurrenciess",
+    "definition": "Currencies native to the internet, not individual countries. Rather than being managed by a central bank, they’re often governed by their users.",
+    "glossary": false
+  },
   "cryptocurrency": {
     "keyword": "cryptocurrency",
     "keyword_plural": "cryptocurrencys",
-    "definition": "A currency native to the internet, rather than an individual country. Rather than managed by a central bank, they’re often governed by their users.",
+    "definition": "A currency native to the internet, not an individual country. Rather than being managed by a central bank, they’re often governed by their users.",
     "glossary": true
   },
   "cryptocurrency mining": {
@@ -326,7 +356,7 @@
   "dapp": {
     "keyword": "dApp",
     "keyword_plural": "dApps",
-    "definition": "A decentralized application that connects to decentralized networks and protocols.",
+    "definition": "A “decentralized application” that connects to blockchains and decentralized networks.",
     "glossary": true
   },
   "decentralization": {
@@ -461,6 +491,12 @@
     "definition": "(ETH) Ethereum’s native coin. Used in staking and performing transactions on the network.",
     "glossary": true
   },
+  "ethereum blockchain": {
+    "keyword": "Ethereum Blockchain",
+    "keyword_plural": "Ethereum Blockchains",
+    "definition": "\nThe \"Ethereum Blockchain\" is a public ledger documenting transactions and ownership on the Ethereum marketplace.",
+    "glossary": true
+  },
   "ethereum virtual machine": {
     "keyword": "Ethereum Virtual Machine",
     "keyword_plural": "Ethereum Virtual Machines",
@@ -549,6 +585,18 @@
     "keyword": "inflation",
     "keyword_plural": "inflations",
     "definition": "A general increase in prices and fall in the purchasing power of money.",
+    "glossary": true
+  },
+  "intermediaries": {
+    "keyword": "intermediaries",
+    "keyword_plural": "intermediariess",
+    "definition": "Entities or services connecting people, in order to facilitate exchanges of value or information.",
+    "glossary": true
+  },
+  "intermediary": {
+    "keyword": "intermediary",
+    "keyword_plural": "intermediarys",
+    "definition": "An entity or service connecting people, in order to facilitate an exchange of value or information.",
     "glossary": true
   },
   "intermediary token": {
@@ -731,6 +779,12 @@
     "definition": "The automated system that mediates changes to a blockchain’s structure.",
     "glossary": true
   },
+  "open internet": {
+    "keyword": "open internet",
+    "keyword_plural": "open internets",
+    "definition": "\nAn accessible digital space where information, services, and communication are available to all users without control by centralized entities.",
+    "glossary": true
+  },
   "open source": {
     "keyword": "open source",
     "keyword_plural": "open sources",
@@ -761,10 +815,16 @@
     "definition": "Allows two parties to transact multiple times without the need for each transaction to be recorded on the blockchain.",
     "glossary": true
   },
+  "peer": {
+    "keyword": "peer",
+    "keyword_plural": "peers",
+    "definition": "A person or entity treated as an equal.",
+    "glossary": true
+  },
   "peer-to-peer": {
     "keyword": "peer-to-peer",
     "keyword_plural": "peer-to-peers",
-    "definition": "A transaction between two parties that does not require a middleman or controlling entity.",
+    "definition": "Connections between multiple parties that don’t require an intermediary.",
     "glossary": true
   },
   "peg": {
@@ -998,7 +1058,7 @@
   "smart contract": {
     "keyword": "smart contract",
     "keyword_plural": "smart contracts",
-    "definition": "Computerized code that execute terms of a contract automatically.",
+    "definition": "Computerized code that executes terms of a contract automatically.",
     "glossary": true
   },
   "social engineering": {
@@ -1168,6 +1228,24 @@
     "keyword_plural": "validator nodess",
     "definition": "Computer devices run by members of the Ethereum community. As the original method of staking, they process transactions on the network.",
     "glossary": true
+  },
+  "value-creation": {
+    "keyword": "value-creation",
+    "keyword_plural": "value-creations",
+    "definition": "A business practice focused on generating innovative, high-quality products and services for users and the economy.",
+    "glossary": true
+  },
+  "value-extraction": {
+    "keyword": "value-extraction",
+    "keyword_plural": "value-extractions",
+    "definition": "A business practice where users are exploited through high fees, data harvesting, and unfair terms.",
+    "glossary": true
+  },
+  "value-extractive": {
+    "keyword": "value-extractive",
+    "keyword_plural": "value-extractives",
+    "definition": "A business practice where users are exploited through high fees, data harvesting, and unfair terms.",
+    "glossary": false
   },
   "veto": {
     "keyword": "veto",
