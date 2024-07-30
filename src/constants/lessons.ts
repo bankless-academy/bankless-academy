@@ -318,6 +318,7 @@ const LESSONS: LessonType[] = [
       '/images/ethereum-basics/peer-to-peer-trades-de8d8bb2.svg',
       '/images/ethereum-basics/ethereum-an-open-internet-ff8699fd.svg',
       '/images/ethereum-basics/a-global-banking-system-14d3a7d2.svg',
+      '/images/ethereum-basics/how-it-works-1b29df4b.svg',
       '/images/ethereum-basics/joining-the-movement-44086b0b.png'
     ],
     keywords: [
@@ -337,11 +338,9 @@ const LESSONS: LessonType[] = [
       'blockchain',
       'cryptocurrency',
       'cryptocurrency wallet',
+      'validators',
       'open-source',
-      'ether',
-      'open internet',
-      'value-extraction',
-      'value-creation'
+      'ether'
     ],
     slides: [
       {
@@ -396,7 +395,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '1016c615bacc4cc6aa8b3e13746db366',
         title: 'Peer-to-Peer Trades',
-        content: '<div class="bloc1"><p>The solution starts with changing how the internet is connected. Introducing <code>peer-to-peer</code> networking:</p><p>In traditional internet services, information or money from one <code>peer</code> goes through an <code>intermediary</code> before arriving at its destination. Theoretically, these intermediaries can do whatever they want before the trade is complete.<br><em>Peer → </em><em>Intermediary</em><em> → Peer</em></p><p>Peer-to-peer services, on the other hand, remove the need for intermediaries by replacing them with automated, transparent processes.<br><em>Peer → Automation → Peer</em></p><p>It’s like replacing a shop owner with a high-tech vending machine. Services become more predictable, fees go down, and users regain control ofover their interactions. <strong>As we’ll see, this fundamental shift changes everything…</strong></p></div><div class="bloc2"><img src=\'/images/ethereum-basics/peer-to-peer-trades-de8d8bb2.svg\'></div>'
+        content: '<div class="bloc1"><p>The solution starts with changing how the internet is connected. Introducing <code>peer-to-peer</code> networking:</p><p>In traditional internet services, information or money from one <code>peer</code> goes through an <code>intermediary</code> before arriving at its destination. Theoretically, these intermediaries can do whatever they want before the trade is complete.<br><em>Peer → </em><em>Intermediary</em><em> → Peer</em></p><p>Peer-to-peer services, on the other hand, remove the need for intermediaries by replacing them with automated, transparent processes.<br><em>Peer → Automation → Peer</em></p><p>It’s like replacing a shop owner with a high-tech vending machine. Services become more predictable, fees go down, and users regain control over their interactions. <strong>As we’ll see, this fundamental shift changes everything…</strong></p></div><div class="bloc2"><img src=\'/images/ethereum-basics/peer-to-peer-trades-de8d8bb2.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -460,13 +459,19 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '8b317a82a13047f0972d6d6ed44e347c',
         title: 'A Global Banking System',
-        content: '<div class="bloc1"><p>⌛ <strong>Do you want a faster, cheaper way to transfer money?</strong></p><hr><p>Ethereum’s automated services are far more efficient than their intermediary competitors. Better services, lower costs. This includes the network’s banking system, powered by <code>blockchain</code> and <code>cryptocurrency</code>.</p><p>⚡ Cryptocurrency can be sent internationally for as little as $0.01, settling in seconds. Compare this to an international wire transfer, where the bank can take 3-4% of your transfer in fees, and take 1-5 working days!</p><p>🔐 You’re the only person with access to your Ethereum bank account. There’s no intermediary loaning out your savings or controlling what you do with your money. Funds are held on the <code>Ethereum blockchain</code>, accessed through your <code>cryptocurrency wallet</code>.</p><p>On Ethereum, you’re your own bank, and you feel it!</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/a-global-banking-system-14d3a7d2.svg\'></div>'
+        content: '<div class="bloc1"><p>⌛ <strong>Do you want a faster, cheaper way to transfer money?</strong></p><hr><p>Ethereum’s automated services are far more efficient than their intermediary competitors. Better services, lower costs. This includes the network’s banking system, powered by <code>blockchain</code> and <code>cryptocurrency</code>.</p><p>⚡ Cryptocurrency can be sent internationally for as little as $0.01, settling in seconds. Compare this to an international wire transfer, where banks charge 3-4% of your transfer in fees, and take 1-5 working days!</p><p>🔐 You’re the only person with access to your Ethereum bank account. There’s no intermediary loaning out your savings or controlling what you do with your money. Funds are held on the <code>Ethereum blockchain</code>, accessed through your <code>cryptocurrency wallet</code>.</p><p>On Ethereum, you’re your own bank, and you feel it!</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/a-global-banking-system-14d3a7d2.svg\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'befa989e445846e0bd0ac488740154fb',
         title: 'Sending a Payment',
         content: '<div class="bloc1"><ol><li>Open wallet</li><li>Send function</li><li>Enter address, select token</li><li>Review details</li><li>Sign & send</li></ol></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/send\'></iframe></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '260be70be7dd44c7ae2edbe322a33aae',
+        title: 'How it Works',
+        content: '<div class="bloc1"><p>Let’s bring it all together by looking under the hood. As a <code>peer-to-peer</code> network, Ethereum is made up of computers spread across the world. These devices have been volunteered to run the network by their owners. Using automated software, these <code>validators</code> process transactions, check the results of others to negate fraud, and generate rewards for their owners.</p><p>Your decentralized transaction is processed by validators on the network:</p><ol><li>Your ETH transaction is submitted to the Ethereum Network.</li><li>A validator checks your transaction for errors. Other validators double-check their results.</li><li>If approved, your transaction is added to the network ledger, the <code>Ethereum blockchain</code>.</li><li>The recipient receives your transferred ETH in their wallet.</li></ol><p>This transaction process is very similar when using dApps, with a few added steps and connections. We’ll save the details for another lesson.</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/how-it-works-1b29df4b.svg\'></div>'
       },
       {
         type: 'QUIZ',
@@ -488,21 +493,9 @@ const LESSONS: LessonType[] = [
       },
       {
         type: 'LEARN',
-        notionId: '260be70be7dd44c7ae2edbe322a33aae',
-        title: 'How it Works',
-        content: '<div class="bloc1"><ul><li>Let’s see how that money was sent</li><li>Replacing centralized, server-based services with peer2peer blockchains.</li></ul></div>'
-      },
-      {
-        type: 'LEARN',
         notionId: 'e7766b4ed5d94c05962984e11ad62bc1',
         title: 'Common Questions',
         content: '<div class="bloc1"><details><summary>❓ How was Ethereum created?</summary>Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through decentralized governance, ensuring your money is safe in this transparent and community-driven ecosystem.</details><details><summary>❓ Is Ethereum safe to use?</summary>We’re early and there are people who prey on this. This is an unfortunately reality, but it’s not impassable. Take our Web3 security lesson to learn how to protect yourself on the frontier!</details><details><summary>❓ Is Ethereum legal?</summary>Today Ethereum\'s legality and adoption are so robust that even big businesses are investing in and using it. Even if it was desired, shutting it down would require unprecedented coordination, akin to NATO-level efforts. This is because of its <code>decentralized</code> network structure, stretched across the globe. This makes Ethereum incredibly resilient and secure, even in the face of challenges that would cripple centralized systems.</details><details><summary>❓ Who builds dApps on Ethereum?</summary>Anyone can build and deploy a dApp, there’s no need for permission from a central authority. Because dApps are built with <code>open-source</code> code, </details><details><summary>❓ How can I invest in Ethereum?</summary>…</details><details><summary>❓ Is Ethereum political?</summary>…</details><details><summary>❓ Is Ethereum bad for the environment?</summary>As Ethereum scaled, the community recognized the environmental impact it was starting to have and took steps to address it. This led to \'The Merge,\' a major upgrade that significantly reduced Ethereum\'s energy consumption. Ethereum is now 99.5% more efficient. This adjustment showcases Ethereum\'s adaptability to societal needs!</details><details><summary>❓ What’s the difference between Ether & Ethereum?</summary><code>Ether</code> is the mall’s native cryptocurrency, held by every user. It’s used to make payments, pay transaction fees, and own a financial share in the mall’s success. It can even be used to help keep the mall secure in exchange for ether rewards. Ether is the lifeblood of the Ethereum Network.</details></div>'
-      },
-      {
-        type: 'LEARN',
-        notionId: '0b1d2b819545413f80d228d652647de9',
-        title: 'An Infinite Garden',
-        content: '<div class="bloc1"><p>Throughout this lesson, we’ve seen:</p><ul><li>💰 <code>Intermediaries</code> have created one-sided services that take advantage of the user.</li><li>⚖️ Ethereum replaces intermediaries with more reliable <code>dApps</code> and <code>cryptocurrencies</code>.</li><li>📱 An <code>open internet</code> means better services at a lower cost.</li></ul><hr><p><strong>But it’s more important than that.</strong></p><p>Ethereum has changed the game of economic <code>value-extraction</code>. It erodes the walls that intermediaries have put up around their corners of the internet, and creates an economic game of <code>value-creation</code>.</p><p>The Ethereum Foundation calls this limitless, fertile ground, “The Infinite Garden”. Online services are incentivized to share their work and support innovation. Marketplace rules are agreed on by everyone. Newcomers are given ample opportunity to thrive.</p><p>The Infinite Garden returns creativity, innovation and freedom to the internet.</p><hr><p>“A finite game is played for the purpose of winning, an infinite game for the purpose of continuing the play.” ― James P. Carse</p></div>'
       },
       {
         type: 'QUIZ',
@@ -3756,6 +3749,7 @@ const LESSONS: LessonType[] = [
     name: 'Gitcoin 2.0 Essentials',
     languages: [],
     level: 'Community Lessons',
+    community: 'Gitcoin',
     quest: 'Gitcoin20Essentials',
     questSocialMessage: 'I\'ve just completed the @Gitcoin 2.0 Essentials lesson on @BanklessAcademy 🎓\n\nJoin the journey and level up your #web3 knowledge! 👨‍🚀 🚀',
     publicationStatus: 'publish',
