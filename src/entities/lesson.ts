@@ -18,6 +18,7 @@ export interface LessonType {
   languages?: LanguageType[]
   level?: LevelType
   tags?: string[]
+  community?: string
   lessonWriters?: string
   marketingDescription: string
   duration: number

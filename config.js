@@ -20,6 +20,7 @@ const KEY_MATCHING = {
   'Languages': 'languages',
   'Level': 'level',
   'Tags': 'tags',
+  'Community': 'community',
   'Lesson Writers': 'lessonWriters',
   Module: 'moduleId',
   Quest: 'quest',

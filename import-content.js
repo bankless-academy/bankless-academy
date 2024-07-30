@@ -123,6 +123,7 @@ axios
       else lesson.languages.sort()
       if (lesson.level === undefined) delete lesson.level
       if (!lesson.tags || lesson.tags.length === 0) delete lesson.tags
+      if (lesson.community === undefined) delete lesson.community
       if (lesson.questSocialMessage === undefined) delete lesson.questSocialMessage
       if (lesson.lessonWriters === undefined) delete lesson.lessonWriters
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
