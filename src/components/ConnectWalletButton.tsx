@@ -201,7 +201,7 @@ const ConnectWalletButton = ({
       }
     }
     const newNameCache = JSON.parse(JSON.stringify(nameCache))
-    newNameCache[address] = { name, avatar }
+    newNameCache[address?.toLowerCase()] = { name, avatar }
     setNameCache(newNameCache)
   }
 

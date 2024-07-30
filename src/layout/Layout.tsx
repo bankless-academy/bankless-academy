@@ -108,10 +108,23 @@ const Layout = ({
   const [score] = useLocalStorage(`score`, 0)
   const [isSmallScreen] = useSmallScreen()
   const { scrollY } = useWindowScrollPositions()
+  const addressLower = address?.toLowerCase()
   const username = address
-    ? address in nameCache && nameCache[address].name?.includes('.eth')
-      ? nameCache[address].name
+    ? addressLower in nameCache &&
+      nameCache[addressLower]?.name?.includes('.eth')
+      ? nameCache[addressLower].name
       : address
+    : ''
+  const ens = address
+    ? addressLower in nameCache && nameCache[addressLower]?.name?.includes('.')
+      ? nameCache[addressLower].name
+      : address
+    : ''
+  const avatar = address
+    ? addressLower in nameCache &&
+      nameCache[addressLower]?.avatar?.startsWith('http')
+      ? nameCache[addressLower].avatar
+      : ''
     : ''
 
   async function openModal() {
@@ -182,7 +195,7 @@ const Layout = ({
                         margin="auto"
                         borderRadius="50%"
                         backgroundColor="black"
-                        src={`https://ensdata.net/media/avatar/${username}`}
+                        src={avatar !== '' ? avatar : DEFAULT_AVATAR}
                         fallbackSrc={DEFAULT_AVATAR}
                       />
                       {score > 0 && (
@@ -215,9 +228,7 @@ const Layout = ({
                       textTransform="uppercase"
                       pb="8"
                     >
-                      {username.includes('.')
-                        ? username
-                        : shortenAddress(username)}
+                      {ens.includes('.') ? ens : shortenAddress(username)}
                     </Box>
                   </Box>
                 </InternalLink>
@@ -304,11 +315,7 @@ const Layout = ({
             }
             label="Profile"
             isActive={page === 'PROFILE'}
-            imageSrc={
-              username !== ''
-                ? `https://ensdata.net/media/avatar/${username}`
-                : DEFAULT_AVATAR
-            }
+            imageSrc={avatar !== '' ? avatar : DEFAULT_AVATAR}
           />
           <MobileButton
             link="/lessons"
