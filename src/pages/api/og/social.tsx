@@ -146,7 +146,7 @@ export default async function handler(req: NextApiRequest) {
   }
 
   const explorerName =
-    user.ensName || address?.includes('.') ? address : shortenAddress(address)
+    user.ensName || (address?.includes('.') ? address : shortenAddress(address))
 
   return new ImageResponse(
     (
