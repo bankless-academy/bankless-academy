@@ -181,31 +181,28 @@ export const Slide = styled(Card)<{
 
     // toggle
     details {
-      border: 1px solid #ddd;
-      border-radius: 4px;
+      border-radius: 8px;
       margin-bottom: 5px;
+      overflow: hidden;
     }
     summary {
       padding: 15px;
-      background-color: #f4f4f440;
+      background-color: #3f3154;
       cursor: pointer;
       position: relative;
     }
+    .content-detail {
+      border-radius: 0 0 8px 8px;
+      border: 1px solid #a873d2;
+      border-top: 0px;
+    }
     summary:hover {
-      background-color: #c4c4c440;
-    }
-    summary::after {
-      content: '+';
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    details[open] summary::after {
-      content: '-';
     }
     details[open] summary {
-      border-bottom: 1px solid #ddd;
+      background: linear-gradient(134deg, #67407e, #354374);
+      border: 1px solid #a873d2;
+      overflow: hidden;
+      border-radius: 8px 8px 0 0;
     }
     .content-detail {
       padding: 15px;
