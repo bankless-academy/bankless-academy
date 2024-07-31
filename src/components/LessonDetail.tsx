@@ -302,7 +302,7 @@ const LessonDetail = ({
                           borderBottom="1px solid #989898"
                           pb="2"
                         >
-                          {t('Rewards')}
+                          Badge
                         </Text>
                       </Box>
                       <Box textAlign="center">
