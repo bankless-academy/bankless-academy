@@ -65,7 +65,7 @@ Think your bank and Visa/Mastercard managing your purchases, Meta managing your 
 
 # One-sided Trades
 
-We call them `centralized services` because all the power is in one place. It’s often like being stuck under the rule of a King who isn’t interested in your needs, and knows how to get what he wants from you. You might be surprised at the reality of your trades…
+We call them `centralized services` because all the power is in one place. It’s often like being stuck under the rule of a King who knows exactly how to get what he wants from you. You might be surprised at the reality of your trades…
 
 💸 Banks charge fees, then invest your savings for their own profit.
 
@@ -75,7 +75,7 @@ We call them `centralized services` because all the power is in one place. It’
 
 🪓 Content platforms, like YouTube, can freely delete creators’ entire careers — with no fair trial.
 
-The rules and fees of these trades are often unclear, and tend to get worse over time. Take a closer look at your trades with your favourite internet businesses here: [https://tosdr.org/](https://tosdr.org/)
+These shady rules and fees are often hidden away in the ‘Terms & Conditions’. Take a closer look at your favourite service agreements here: [https://tosdr.org/](https://tosdr.org/) 👀
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/one-sided-trades-bb394e63.svg)
 
@@ -97,27 +97,31 @@ Intermediaries manage our internet interactions on our behalf.
 
 ---
 
-These are the `value-extractive` services we’ve become used to.
+This is the `value-extractive` environment we’ve become used to.
 
-Called “walled gardens” for how restrictive they are and how difficult they make it to leave, finding better services can be time consuming and expensive. It often feels easier to just put up with the high fees, lack of transparency, and one-sided trades. 
+Called “walled gardens” for how restrictive they are and how difficult they make it to leave, finding better services can be time consuming and expensive. It often feels easier to just put up with the high fees, lack of transparency, and one-sided trades.
 
 But doesn’t it feel like this problem is just getting worse over time?
 
-We need more fair and reliable internet — where the technology forces services to respect your needs, and switching providers is easy. We need to go beyond intermediaries and their walled gardens.
+We need a fairer, more reliable internet, beyond intermediaries and their walled gardens. We need an online space where power is held by the user — the way the internet was initially built to be.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/an-open-internet-e7f3fbda.svg)
 
 # Peer-to-Peer Trades
 
-The solution starts with changing how the internet is connected. Introducing `peer-to-peer` networking:
+The solution starts with changing how the internet is connected.
 
-In traditional internet services, information or money from one `peer` goes through an `intermediary` before arriving at its destination. Theoretically, these intermediaries can do whatever they want before the trade is complete.
-_Peer →_ _Intermediary_ _→ Peer_
+In traditional internet services, information or money from one `peer` goes through an `intermediary` checkpoint before arriving at its destination. Theoretically, these intermediaries can do whatever they want before the trade is complete.
 
-Peer-to-peer services, on the other hand, remove the need for intermediaries by replacing them with automated, transparent processes.
-_Peer → Automation → Peer_
+**Peer →** **Intermediary** **→ Peer**
 
-It’s like replacing a shop owner with a high-tech vending machine. Services become more predictable, fees go down, and users regain control of their interactions. **As we’ll see, this fundamental shift changes everything…**
+But there’s a second model of computer interaction, called `peer-to-peer` networking. It replaces intermediary services with automated, transparent processes, using computer code.
+
+**Peer → Automation → Peer**
+
+It’s like replacing your intermediary with a high-tech vending machine. Code, not kings. Services become more predictable, fees go down, and users regain control over their interactions.
+
+As we’ll see, a peer-to-peer internet changes everything.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/peer-to-peer-trades-de8d8bb2.svg)
 
@@ -133,27 +137,27 @@ How does removing intermediaries improve the reliability of online interactions?
 
 > …
 
-# Ethereum: An Open Internet
+# Ethereum: The Open Internet
 
-⚖️ **Would you prefer an internet where no user, shop, or landlord is above the rules?**
+⚖️ **Would you prefer an internet where no user or service is above the rules?**
 
 ---
 
 Think of Ethereum like an automated shopping mall, owned and run by its community.
 
-“High-tech vending machines” have replaced traditional shops. Their programming is publicly available; Users can view the terms of their trade or audit the machine’s business practices.
+“High-tech vending machines” have replaced traditional services. With transparent programming, users can review trade terms, or audit the machine’s business practices.
 
-Every transaction in the mall is tracked on a public record called the `Ethereum blockchain`. It keeps track of who owns what in the mall, removing the need for another classic intermediary — the bank!
+Transactions in the mall are noted on a public record called the `Ethereum blockchain`. The blockchain tracks and stores digital property in the mall, removing the need for another classic intermediary — the bank!
 
-Even the "landlord" role is played by the community. Rules are decided on by active participants, and the network is kept running by a small tax on each transaction.
+Even the "landlord" role is played by the community. Rules are decided on by active participants, and a small tax on each transaction keeps things running.
 
 On Ethereum, nobody is above the rules.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-an-open-internet-ff8699fd.svg)
+![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-the-open-internet-ff8699fd.svg)
 
 # The Decentralized Economy
 
-To log into Ethereum you’ll use your computer or mobile device’s web browser. You’ll only need one account for the entirety of this new internet — a single login called a `crypto wallet`. This makes it easier to change services and escape “walled garden” ecosystems.
+To log into Ethereum you’ll use your computer or mobile device’s web browser. You’ll only need one account for the entirety of this new internet — a single login called a `crypto wallet`. This setup makes it easier to change services and escape “walled gardens”.
 
 With the Ethereum app layer enabled, new websites with Ethereum functionality immediately grant you access to a limitless range of new digital goods, and automated services called `dApps`. There are dApps for:
 
@@ -163,7 +167,7 @@ With the Ethereum app layer enabled, new websites with Ethereum functionality im
 - 🗳️ donating to your favourite projects, where even $1 can receive a large matching bonus.
 - ⚙️ renting out your computer’s processing power for passive income.
 
-By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has built a `decentralized` economy. In this market, services get better and better as they compete on quality — not unclear business practices and control.
+By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has built a `decentralized` economy. In this market, services get better and better as they compete on quality — not unclear business practices, and control.
 
 # Using a dApp
 
@@ -199,13 +203,13 @@ How does Ethereum’s market model give you greater online freedom?
 
 # A Global Banking System
 
-⌛ **Do you want a faster, cheaper way to transfer money?**
+⌛ **Do you want a faster, cheaper way to transfer money internationally?**
 
 ---
 
 Ethereum’s automated services are far more efficient than their intermediary competitors. Better services, lower costs. This includes the network’s banking system, powered by `blockchain` and `cryptocurrency`.
 
-⚡ Cryptocurrency can be sent internationally for as little as $0.01, settling in seconds. Compare this to an international wire transfer, where the bank can take 3-4% of your transfer in fees, and take 1-5 working days!
+⚡ Cryptocurrency can be sent anywhere for as little as $0.01, settling in seconds. Compare this to an international wire transfer, where banks charge 3-4% of your transfer in fees, and take 1-5 working days!
 
 🔐 You’re the only person with access to your Ethereum bank account. There’s no intermediary loaning out your savings or controlling what you do with your money. Funds are held on the `Ethereum blockchain`, accessed through your `cryptocurrency wallet`.
 
@@ -223,6 +227,21 @@ On Ethereum, you’re your own bank, and you feel it!
 
 [embed](https://app.banklessacademy.com/animation/send)
 
+# How it Works
+
+Let’s bring it all together by looking under the hood. As a `peer-to-peer` network, Ethereum is made up of computers spread across the world. These devices have been volunteered to run the network by their owners. Using automated software, these `validators` process transactions, check the results of others to negate fraud, and generate `ether` rewards for their owners.
+
+Your decentralized transaction is processed by validators on the network:
+
+1. Your ETH transaction is submitted to the Ethereum Network.
+2. A validator checks your transaction for errors. Other validators double-check their results.
+3. If approved, your transaction is added to the network ledger, the `Ethereum blockchain`.
+4. The recipient receives your transferred ETH in their wallet.
+
+This transaction process is very similar when interacting with dApps, with a few added steps and connections. We’ll save the details for a future lesson.
+
+![](https://app.banklessacademy.com/images/ethereum-basics/how-it-works-1b29df4b.svg)
+
 # Knowledge Check 4
 
 True or False: Ethereum can freeze your transfers and confiscate your money.
@@ -235,34 +254,7 @@ True or False: Ethereum can freeze your transfers and confiscate your money.
 
 > …
 
-# How it Works
-
-- Let’s see how that money was sent
-- Replacing centralized, server-based services with peer2peer blockchains.
-
 # Common Questions
-
-# An Infinite Garden
-
-Throughout this lesson, we’ve seen:
-
-- 💰 `Intermediaries` have created one-sided services that take advantage of the user.
-- ⚖️ Ethereum replaces intermediaries with more reliable `dApps` and `cryptocurrencies`.
-- 📱 An `open internet` means better services at a lower cost.
-
----
-
-**But it’s more important than that.**
-
-Ethereum has changed the game of economic `value-extraction`. It erodes the walls that intermediaries have put up around their corners of the internet, and creates an economic game of `value-creation`.
-
-The Ethereum Foundation calls this limitless, fertile ground, “The Infinite Garden”. Online services are incentivized to share their work and support innovation. Marketplace rules are agreed on by everyone. Newcomers are given ample opportunity to thrive.
-
-The Infinite Garden returns creativity, innovation and freedom to the internet.
-
----
-
-“A finite game is played for the purpose of winning, an infinite game for the purpose of continuing the play.” ― James P. Carse
 
 # Knowledge Check 5
 
@@ -277,17 +269,19 @@ How do you imagine yourself using Ethereum? (Check all that apply)
 
 # Joining the Movement
 
-💪 **It’s time to take control of your digital life and join the new internet.**
+💪 **It’s time to take control of your digital life.**
 
 ---
 
-Welcome to the infinite game, Explorer.
+Welcome, Explorer, to the new internet.
 
-Bankless Academy is here to empower you as we move into this digital future. It’s time for powerful yet fair online services, true ownership over your digital assets, bold new communities, work opportunities and more. Ethereum isn’t just a digital mall. It’s a digital world.
+Ethereum is eroding the walls that intermediaries have put up around their corners of the internet, transforming an economy of `value-extraction` into one of `value-creation`. It’s time for powerful yet fair online services, true ownership over your digital assets, bold new communities, transformative work opportunities, and more.
 
-To start your journey you’ll need to create your `cryptocurrency wallet`. This is your passport to the world of Ethereum. We’ll set up yours in your next lesson, ‘Wallet Basics’.
+Bankless Academy is here to empower you as we move into this digital future. Ready to make your mark?
 
-Ready to make your mark?
+To start your journey you’ll need to create your `cryptocurrency wallet`. This is your passport to the world of Ethereum. We’ll set up yours in your next lesson, ‘Wallet Basics’. 
+
+Let’s get started.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/joining-the-movement-44086b0b.png)
 
