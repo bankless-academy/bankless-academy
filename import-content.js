@@ -408,12 +408,15 @@ axios
 
                 const isChecked = checkbox?.checked
                 // 1 correct answer
-                if (isChecked && slide.quiz.rightAnswerNumber === undefined) slide.quiz.rightAnswerNumber = nb
-                // select 1 or multiple answers (rightAnswerNumber = 99)
-                else if (isChecked) slide.quiz.rightAnswerNumber = 99
+                if (isChecked && slide.quiz.rightAnswerNumber === undefined && slide.type !== 'POLL') slide.quiz.rightAnswerNumber = nb
+                // multiple answers correct -> replace QUIZ type with POLL
+                else if (isChecked) {
+                  slide.type = 'POLL'
+                  delete slide.quiz.rightAnswerNumber
+                }
               }
               if (slide.quiz.feedback?.length === 0) delete slide.quiz.feedback
-              if (!slide.quiz.rightAnswerNumber && lesson.slug !== 'bankless-archetypes')
+              if (!slide.quiz.rightAnswerNumber && slide.type === 'QUIZ' && lesson.slug !== 'bankless-archetypes')
                 throw new Error(
                   `missing right answer, please check ${POTION_API}/html?id=${notion.id}`
                 )

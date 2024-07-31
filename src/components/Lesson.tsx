@@ -38,7 +38,13 @@ import {
   KEYWORDS,
   TOKEN_GATING_ENABLED,
 } from 'constants/index'
-import { LearnIcon, QuizIcon, QuestIcon, RewardsIcon } from 'components/Icons'
+import {
+  LearnIcon,
+  QuizIcon,
+  PollIcon,
+  QuestIcon,
+  RewardsIcon,
+} from 'components/Icons'
 import { theme } from 'theme/index'
 import { QuestType } from 'components/Quest/QuestComponent'
 import NFT from 'components/NFT'
@@ -520,7 +526,7 @@ const Lesson = ({
   }
 
   const selectAnswer = (e, answerNumber: number) => {
-    if (slide.type !== 'QUIZ') return
+    if (!(slide.type === 'QUIZ' || slide.type === 'POLL')) return
     if (lesson.slug === 'bankless-archetypes') {
       slide.quiz.rightAnswerNumber = answerNumber
       setSelectedAnswerNumber(answerNumber)
@@ -532,7 +538,7 @@ const Lesson = ({
       : undefined
     if (
       slide.quiz.rightAnswerNumber === answerNumber ||
-      (slide.quiz.rightAnswerNumber === 99 && answerNumber)
+      (slide.type === 'POLL' && answerNumber)
     ) {
       if (feedback?.length)
         toast({
@@ -545,7 +551,7 @@ const Lesson = ({
           },
         })
       // correct answer
-      if (slide.quiz.rightAnswerNumber !== 99) {
+      if (slide.type === 'QUIZ') {
         Mixpanel.track('quiz_correct_answer', {
           lesson: lesson?.englishName,
           quiz_question: `${slide.quiz.id.split('-').pop()}. ${
@@ -556,8 +562,8 @@ const Lesson = ({
         })
       }
       const answerNumberString = answerNumber.toString()
-      if (slide.quiz.rightAnswerNumber === 99) {
-        // case for multiple answers (rightAnswerNumber = 99)
+      if (slide.type === 'POLL') {
+        // case for multiple answers
         let setQuiz = Array.isArray(quizSlide) ? quizSlide : []
         if (setQuiz?.includes(answerNumberString)) {
           setQuiz = setQuiz.filter(function (v) {
@@ -565,7 +571,7 @@ const Lesson = ({
           })
         } else {
           setQuiz.push(answerNumberString)
-          Mixpanel.track('quiz_correct_answer', {
+          Mixpanel.track('poll_answer', {
             lesson: lesson?.englishName,
             quiz_question: `${slide.quiz.id.split('-').pop()}. ${
               slide.quiz.question
@@ -788,7 +794,7 @@ const Lesson = ({
     (slide?.quiz &&
       parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
         slide.quiz.rightAnswerNumber) ||
-    (slide.quiz?.rightAnswerNumber === 99 && quizSlide?.length)
+    (slide.type === 'POLL' && quizSlide?.length)
 
   return (
     <Slide
@@ -831,11 +837,12 @@ const Lesson = ({
         <Box display="inline-flex" alignItems="center" mr="4">
           {slide.type === 'LEARN' && <LearnIcon />}
           {slide.type === 'QUIZ' && <QuizIcon />}
+          {slide.type === 'POLL' && <PollIcon />}
           {slide.type === 'QUEST' && <QuestIcon />}
           {slide.type === 'END' && <RewardsIcon />}
         </Box>
         <Box color={slide.type === 'END' ? theme.colors.secondary : 'unset'}>
-          {slide.type === 'QUIZ' ? (
+          {slide.type === 'QUIZ' || slide.type === 'POLL' ? (
             <>
               {lesson?.isPreview || !IS_PROD ? (
                 <Box display="contents" color="orange">
@@ -844,7 +851,7 @@ const Lesson = ({
               ) : (
                 ''
               )}
-              {t('Knowledge Check')}
+              {slide.type === 'QUIZ' ? t('Knowledge Check') : 'Poll'}
             </>
           ) : slide.type === 'QUEST' ? (
             <>
@@ -888,10 +895,10 @@ const Lesson = ({
               {ReactHtmlParser(slide.content, { transform })}
             </Box>
           )}
-          {slide.type === 'QUIZ' && (
+          {(slide.type === 'QUIZ' || slide.type === 'POLL') && (
             <>
               {slide.quiz?.question && (
-                <Box>
+                <Box maxW="750px" margin="auto">
                   <h2>
                     {ReactHtmlParser(slide?.quiz?.question, { transform })}
                   </h2>
@@ -908,7 +915,7 @@ const Lesson = ({
                     {[1, 2, 3, 4, 5].map((n) => {
                       const answerState = answerIsCorrect
                         ? slide.quiz.rightAnswerNumber === n ||
-                          (slide.quiz.rightAnswerNumber === 99 &&
+                          (slide.type === 'POLL' &&
                             quizSlide?.includes(n.toString()))
                           ? 'CORRECT'
                           : 'UNSELECTED'
@@ -928,11 +935,12 @@ const Lesson = ({
                               answerState === 'UNSELECTED' &&
                               '1px solid #646587'
                             }
+                            fontWeight="normal"
                             whiteSpace="break-spaces"
                             onClick={(e) => {
                               if (
                                 answerState !== 'CORRECT' ||
-                                slide.quiz.rightAnswerNumber === 99
+                                slide.type === 'POLL'
                               )
                                 selectAnswer(e, n)
                             }}
@@ -951,7 +959,7 @@ const Lesson = ({
                             isActive={
                               answerIsCorrect &&
                               lesson.slug !== 'bankless-archetypes' &&
-                              slide.quiz?.rightAnswerNumber !== 99
+                              slide.type !== 'POLL'
                             }
                           >
                             {slide.quiz.answers[n - 1]}
@@ -1026,7 +1034,8 @@ const Lesson = ({
               !lesson?.isPreview &&
               !IS_WHITELABEL &&
               (slide.type === 'LEARN' ||
-                (slide.type === 'QUIZ' && answerIsCorrect)) &&
+                ((slide.type === 'QUIZ' || slide.type === 'POLL') &&
+                  answerIsCorrect)) &&
               address && (
                 <>
                   <EditContentModal lesson={lesson} slide={slide} />

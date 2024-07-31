@@ -59,13 +59,21 @@ const processLesson = (htmlPage, notion_id) => {
 
         const isChecked = checkbox?.checked
         // 1 correct answer
-        if (isChecked && slide.quiz.rightAnswerNumber === undefined)
+        if (
+          isChecked &&
+          slide.quiz.rightAnswerNumber === undefined &&
+          slide.type !== 'POLL'
+        )
           slide.quiz.rightAnswerNumber = nb
-        // select 1 or multiple answers (rightAnswerNumber = 99)
-        else if (isChecked) slide.quiz.rightAnswerNumber = 99
+        // multiple answers correct -> replace QUIZ type with POLL
+        else if (isChecked) {
+          slide.type = 'POLL'
+          delete slide.quiz.rightAnswerNumber
+        }
       }
       if (
         !slide.quiz.rightAnswerNumber &&
+        slide.type === 'QUIZ' &&
         lesson.slug !== 'bankless-archetypes'
       )
         throw new Error(

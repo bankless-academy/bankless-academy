@@ -500,12 +500,11 @@ const LESSONS: LessonType[] = [
         content: '<div class="bloc1"><details><summary>❓ How was Ethereum created?</summary>Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through decentralized governance, ensuring your money is safe in this transparent and community-driven ecosystem.</details><details><summary>❓ Is Ethereum safe?</summary>While your digital property on Ethereum can’t directly be stolen, you can be tricked into sending it to thieves. Take our “Web3 Security” lesson to learn how to protect yourself on the internet frontier!</details><details><summary>❓ Is Ethereum legal?</summary>Yes. Today, Ethereum\'s legality and adoption are so strong that even big businesses are investing in and using it. Realistically, shutting down Ethereum would require unprecedented global coordination, akin to NATO-level efforts. This is due to its <code>decentralized</code> network structure. Learn more in our “Blockchain Basics” lesson.</details><details><summary>❓ Is Ethereum bad for the environment?</summary>As Ethereum’s daily usage grew, the community recognized its growing environmental impact and took steps to address it. This led to a network upgrade called \'The Merge\', reducing Ethereum\'s energy consumption by 99.5%. This feat showcases Ethereum\'s adaptability to the needs of its users!</details><details><summary>❓ How can I invest in Ethereum?</summary>To invest in Ethereum, you’ll need to own <code>ether</code>, the network’s native cryptocurrency. Ether is used to make payments, pay transaction fees, and own a financial share in the network’s success. It can even be used to become a network <code>validator</code>, securing Ethereum in exchange for further ether rewards. Ether is the lifeblood of the Ethereum Network.</details></div>'
       },
       {
-        type: 'QUIZ',
+        type: 'POLL',
         notionId: '9fffc9eec113419cab34b9919fa9a5cc',
         title: '📊 Poll',
         quiz: {
           question: 'How do you imagine yourself using Ethereum? (Check all that apply)',
-          rightAnswerNumber: 99,
           answers: [
             'Exploring new digital goods and services.',
             'Sending money internationally.',
