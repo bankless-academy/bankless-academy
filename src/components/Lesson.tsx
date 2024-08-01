@@ -16,7 +16,13 @@ import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 import ReactHtmlParser, { processNodes } from 'react-html-parser'
 import { ArrowBackIcon, ArrowForwardIcon, CheckIcon } from '@chakra-ui/icons'
-import { Warning, ArrowUUpLeft, Bug } from '@phosphor-icons/react'
+import {
+  Warning,
+  ArrowUUpLeft,
+  Bug,
+  Square,
+  CheckSquare,
+} from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
 import { useTranslation } from 'react-i18next'
@@ -241,18 +247,37 @@ export type AnswerStateType = 'UNSELECTED' | 'CORRECT' | 'WRONG'
 const QuizAnswer = styled(Button)<{
   answerstate: AnswerStateType
   isActive: boolean
+  isPoll: boolean
 }>`
-  ${(props) => props.isActive && 'cursor: default;'};
+  ${(props) => props.isActive && !props.isPoll && `cursor: default;`};
   ${(props) =>
     props.answerstate === 'UNSELECTED' &&
     props.isActive &&
-    'background: #1C1C1C !important;'}
+    !props.isPoll &&
+    `background: #1C1C1C !important;`}
+  ${(props) =>
+    props.answerstate === 'UNSELECTED' &&
+    props.isPoll &&
+    `background-color: #3f3154 !important;`}
   ${(props) =>
     props.answerstate === 'CORRECT' &&
-    'background: linear-gradient(95.83deg, #44A991 -9.2%, rgba(68, 169, 145, 0.7) 97.91%) !important;'}
+    !props.isPoll &&
+    `background: linear-gradient(95.83deg, #44A991 -9.2%, rgba(68, 169, 145, 0.7) 97.91%) !important;`}
+  ${(props) =>
+    props.answerstate === 'CORRECT' &&
+    props.isPoll &&
+    `
+    background: linear-gradient(134deg, #67407e, #354374) !important;
+    border: 1px solid #a873d2 !important;
+  `}
   ${(props) =>
     props.answerstate === 'WRONG' &&
-    'background: linear-gradient(91.91deg, #A94462 49%, rgba(169, 68, 98, 0.7) 124.09%) !important;'}
+    !props.isPoll &&
+    `background: linear-gradient(91.91deg, #A94462 49%, rgba(169, 68, 98, 0.7) 124.09%) !important;`}
+   .chakra-button__icon {
+    margin-bottom: 0;
+  }
+  height: 56px;
 `
 
 const SlideNav = styled(Box)<{ issmallscreen?: string }>`
@@ -919,7 +944,7 @@ const Lesson = ({
                             quizSlide?.includes(n.toString()))
                           ? 'CORRECT'
                           : 'UNSELECTED'
-                        : selectedAnswerNumber === n
+                        : selectedAnswerNumber === n && slide.type === 'QUIZ'
                         ? 'WRONG'
                         : 'UNSELECTED'
                       if (slide.quiz.answers?.length >= n)
@@ -931,9 +956,17 @@ const Lesson = ({
                             maxW="500px"
                             p="4"
                             h="auto"
+                            className={
+                              slide.type === 'POLL'
+                                ? quizSlide?.includes(n.toString())
+                                  ? 'poll checked'
+                                  : 'poll'
+                                : 'quiz'
+                            }
                             border={
-                              answerState === 'UNSELECTED' &&
-                              '1px solid #646587'
+                              answerState === 'UNSELECTED'
+                                ? '1px solid #646587'
+                                : '1px solid #64658700'
                             }
                             fontWeight="normal"
                             whiteSpace="break-spaces"
@@ -948,8 +981,15 @@ const Lesson = ({
                             justifyContent="space-between"
                             textAlign="left"
                             rightIcon={
-                              answerState === 'CORRECT' ? (
-                                <CheckIcon color="white" />
+                              answerState === 'UNSELECTED' &&
+                              slide.type === 'POLL' ? (
+                                <Square color="white" size={26} />
+                              ) : answerState === 'CORRECT' ? (
+                                slide.type === 'POLL' ? (
+                                  <CheckSquare color="white" size={26} />
+                                ) : (
+                                  <CheckIcon color="white" />
+                                )
                               ) : (
                                 answerState === 'WRONG' && (
                                   <Warning weight="bold" color="white" />
@@ -957,10 +997,11 @@ const Lesson = ({
                               )
                             }
                             isActive={
-                              answerIsCorrect &&
-                              lesson.slug !== 'bankless-archetypes' &&
-                              slide.type !== 'POLL'
+                              (answerIsCorrect &&
+                                lesson.slug !== 'bankless-archetypes') ||
+                              slide.type === 'POLL'
                             }
+                            isPoll={slide.type === 'POLL'.toString()}
                           >
                             {slide.quiz.answers[n - 1]}
                           </QuizAnswer>

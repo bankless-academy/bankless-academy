@@ -43,11 +43,11 @@ export const PollIcon = (): React.ReactElement => (
     as={ChartBar}
     w={10}
     h={10}
-    bg="linear-gradient(148.06deg, #B0FFFA 7.86%, #FFBF84 90.48%)"
+    bg="linear-gradient(148deg, #B3F6FF, #A485FF)"
     color="black"
     borderRadius="50%"
     p="2"
-    boxShadow="0px 0px 15px rgba(255, 255, 255, 0.5)"
+    boxShadow="0px 0px 15px 0px #A4A5FF"
   />
 )
 
