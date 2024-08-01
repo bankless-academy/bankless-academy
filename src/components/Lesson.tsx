@@ -913,7 +913,7 @@ const Lesson = ({
           className="content"
           minH="calc(100vh - 360px)"
           pb={isSmallScreen ? '6' : 0}
-          pt={4}
+          pt={slide.type === 'QUIZ' || slide.type === 'POLL' ? 0 : 4}
         >
           {slide.type === 'LEARN' && (
             <Box ref={slideRef}>
@@ -922,14 +922,19 @@ const Lesson = ({
           )}
           {(slide.type === 'QUIZ' || slide.type === 'POLL') && (
             <>
-              {slide.quiz?.question && (
-                <Box maxW="750px" margin="auto">
-                  <h2>
-                    {ReactHtmlParser(slide?.quiz?.question, { transform })}
-                  </h2>
-                </Box>
-              )}
-              <Answers mt={4} mx={2} minH={isSmallScreen ? '380px' : '500px'}>
+              <Answers
+                mx={2}
+                minH={isSmallScreen ? '470px' : '590px'}
+                display="flex"
+                flexDirection="column"
+              >
+                {slide.quiz?.question && (
+                  <Box maxW="750px" margin="0 auto 32px">
+                    <h2>
+                      {ReactHtmlParser(slide?.quiz?.question, { transform })}
+                    </h2>
+                  </Box>
+                )}
                 <ButtonGroup size="lg" w="100%">
                   <SimpleGrid
                     columns={[null, null, 1]}
