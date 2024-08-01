@@ -146,6 +146,10 @@ export const Slide = styled(Card)<{
       font-size: var(--chakra-fontSizes-xl);
       ${(props) => props.istranslation === 'true' && 'font-size: 19px;'};
       margin: 0.8em;
+      ${(props) =>
+        (props.slidetype === 'QUIZ' || props.slidetype === 'POLL') &&
+        props.issmallscreen === 'true' &&
+        'margin: 0.8em 0 0 0;'};
     }
     h2 {
       font-weight: bold;
