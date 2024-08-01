@@ -29,7 +29,7 @@ ________________________________________________________________________________
 
 # Ethereum Basics
 
-Welcome, Explorer, to one of the most important lessons at Bankless Academy. 
+Welcome, Explorer, to one of the most important lessons at Bankless Academy.
 
 Today we’re looking at Ethereum: the next era of the internet. It’s a community-run platform powering a world of new internet `apps` and `cryptocurrencies`.
 
@@ -59,7 +59,7 @@ This online world allows total strangers to meet to exchange information, goods 
 
 These `centralized services` have slowly grown an unprecedented control over the internet, because they act as `intermediaries` between most internet interactions.
 
-Think your bank and Visa/Mastercard managing your purchases, Meta managing your social interactions, and Apple/Google managing your use of apps. As intermediaries, these businesses also take part in the trade, with their own rules, fees and intentions. 
+Think your bank and Visa/Mastercard managing your purchases, Meta managing your social interactions, and Apple/Google managing your use of apps. As intermediaries, these businesses also take part in the trade, with their own rules, fees and intentions.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/centralized-services-8d33e63d.svg)
 
@@ -256,6 +256,37 @@ True or False: Ethereum can freeze your transfers and confiscate your money.
 
 # Common Questions
 
+<details>
+  <summary>❓ How was Ethereum created?</summary>
+
+Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through decentralized governance, ensuring your money is safe in this transparent and community-driven ecosystem.
+
+</details>
+<details>
+  <summary>❓ Is Ethereum safe?</summary>
+
+While your digital property on Ethereum can’t directly be stolen, you can be tricked into sending it to thieves. Take our “Web3 Security” lesson to learn how to protect yourself on the internet frontier!
+
+</details>
+<details>
+  <summary>❓ Is Ethereum legal?</summary>
+
+Yes. Today, Ethereum's legality and adoption are so strong that even big businesses are investing in and using it. Realistically, shutting down Ethereum would require unprecedented global coordination, akin to NATO-level efforts. This is due to its `decentralized` network structure. Learn more in our “Blockchain Basics” lesson.
+
+</details>
+<details>
+  <summary>❓ Is Ethereum bad for the environment?</summary>
+
+As Ethereum’s daily usage grew, the community recognized its growing environmental impact and took steps to address it. This led to a network upgrade called "The Merge", reducing Ethereum's energy consumption by 99.5%. This feat showcases Ethereum's adaptability to the needs of its users!
+
+</details>
+<details>
+  <summary>❓ How can I invest in Ethereum?</summary>
+
+To invest in Ethereum, you’ll need to own `ether`, the network’s native cryptocurrency. Ether is used to make payments, pay transaction fees, and own a financial share in the network’s success. It can even be used to become a network `validator`, securing Ethereum in exchange for further ether rewards. Ether is the lifeblood of the Ethereum Network.
+
+</details>
+
 # Knowledge Check 5
 
 How do you imagine yourself using Ethereum? (Check all that apply)
@@ -279,7 +310,7 @@ Ethereum is eroding the walls that intermediaries have put up around their corne
 
 Bankless Academy is here to empower you as we move into this digital future. Ready to make your mark?
 
-To start your journey you’ll need to create your `cryptocurrency wallet`. This is your passport to the world of Ethereum. We’ll set up yours in your next lesson, ‘Wallet Basics’. 
+To start your journey you’ll need to create your `cryptocurrency wallet`. This is your passport to the world of Ethereum. We’ll set up yours in your next lesson, ‘Wallet Basics’.
 
 Let’s get started.
 

@@ -559,11 +559,15 @@ axios
             try {
               const mdblocks = await n2m.pageToMarkdown(notion.id)
               const mdString = n2m.toMarkdownString(mdblocks)
+              let lessonContentMD = mdString?.parent || ''
               // hide answers
-              let lessonContentMD = mdString?.parent?.replaceAll('[x]', '[ ]') || ''
-              lessonContentMD = lessonContentMD.replaceAll('\n\n\n\n', '\n\n')
-              lessonContentMD = lessonContentMD.replaceAll('\n\n\n', '\n\n')
-              const slides = lessonContentMD.split('\n# ')
+              lessonContentMD = lessonContentMD?.replaceAll('[x]', '[ ]')
+              lessonContentMD = lessonContentMD?.replaceAll('  </details>', '</details>')
+              lessonContentMD = lessonContentMD?.replaceAll('</details><details>', '</details>\n<details>')
+              lessonContentMD = lessonContentMD?.replaceAll('\n\n\n\n', '\n\n')
+              lessonContentMD = lessonContentMD?.replaceAll('\n\n\n', '\n\n')
+              lessonContentMD = lessonContentMD?.replaceAll('</details>\n#', '</details>\n\n#')
+              const slides = lessonContentMD?.split('\n# ')
               slides.shift()
               let quiz_nb = 0
               let j = 0
