@@ -164,6 +164,10 @@ export const Slide = styled(Card)<{
       ${(props) => props.istranslation === 'true' && 'font-size: 19px;'};
       margin-left: 2em;
     }
+    /* hide all sibling elements that come after the <ol> element */
+    ol.animation-in-progress ~ * {
+      display: none;
+    }
     li {
       margin-bottom: 8px;
     }
@@ -739,6 +743,19 @@ const Lesson = ({
     ) {
       // HACK: integrate the embed animation iframe as a component
       return <Animation animationId={animationSlideId} />
+    }
+    if (isAnimationSlide && node.type === 'tag' && node.name === 'ol') {
+      // only show all sibling elements that come after the <ol> element if all animation steps are complete
+      const isAnimationInProgress = animationStepLS + 1 < animationSteps
+      return (
+        <ol
+          className={
+            isAnimationInProgress ? 'animation-in-progress' : 'animation'
+          }
+        >
+          {processNodes(node.children, transform)}
+        </ol>
+      )
     }
     if (isAnimationSlide && node.type === 'tag' && node.name === 'li') {
       // hide next steps
