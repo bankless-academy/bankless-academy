@@ -383,11 +383,11 @@ const Lesson = ({
       : // Ethereum Basics
       lesson.notionId === '2a957f2be160403ebdd7c89a4f0fa01d'
       ? // - 1 to currentSlide because starting at 0
-        currentSlide === 14 - 1
-        ? 'send'
-        : currentSlide === 11 - 1
+        currentSlide === 11 - 1
         ? 'swap'
-        : currentSlide === 15 - 1
+        : currentSlide === 14 - 1
+        ? 'send'
+        : currentSlide === 16 - 1
         ? 'ethereum'
         : ''
       : ''
