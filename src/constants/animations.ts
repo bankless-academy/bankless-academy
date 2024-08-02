@@ -34,6 +34,10 @@ export const ANIMATIONS = {
     steps: [
       '/animations/swap/step-1.json',
       '/animations/swap/step-2.json',
+      '/animations/swap/step-3.json',
+      '/animations/swap/step-4.json',
+      '/animations/swap/step-5.json',
+      '/animations/swap/step-6.json',
     ],
   },
   send: {
