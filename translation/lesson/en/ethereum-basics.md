@@ -139,11 +139,11 @@ How does removing intermediaries improve the reliability of online interactions?
 
 # Ethereum: The Open Internet
 
-⚖️ **Would you prefer an internet where no user or service is above the rules?**
+⚖️ **Wouldn’t the internet be a better place if the same rules applied to everyone?**
 
 ---
 
-Think of Ethereum like an internet shopping mall. It’s fully automated, and managed by its community.
+Think of Ethereum like an internet shopping mall, where shops, security, accounting and rent are fully automated.
 
 “High-tech vending machines” have replaced traditional services. With transparent programming, users can review trade terms, or audit the machine’s business practices.
 
@@ -159,30 +159,32 @@ On Ethereum, nobody is above the rules.
 
 To log into Ethereum you’ll use your computer or mobile device’s web browser. You’ll only need one account for the entirety of this new internet — a single login called a `crypto wallet`. This setup makes it easier to change services and escape “walled gardens”.
 
-With the Ethereum app layer enabled, new websites with Ethereum functionality immediately grant you access to a limitless range of new digital goods, and automated services called `dApps`. There are dApps for:
+With the Ethereum app layer enabled, new websites with Ethereum functionality immediately grant you access to limitless digital goods and services. On Ethereum, the “high-tech vending machine” services we mentioned are called `dApps`. Much like regular apps for your device, there are dApps for:
 
-- 🤝 sending or trading currencies, stocks and other digital goods, with low fees and 24/7 service.
-- 📻 direct connection with your favourite creators, where you can unlock unique perks and opportunities while ensuring your money goes directly to the artist.
+- 🤝 sending or trading currencies, stocks and other digital goods, but with low fees and 24/7 service.
+- 📻 connection with your favourite creators, but you can unlock unique perks and opportunities while ensuring your money goes directly to the artist.
 - 👪 social media, but if you dislike the platform you can easily transfer your social circle to a new one.
-- 🗳️ donating to your favourite projects, where even $1 can receive a large matching bonus.
+- 🗳️ donating to your favourite projects, but even a $1 donation receives a large matching bonus.
 - ⚙️ renting out your computer’s processing power for passive income.
 
-By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has built a `decentralized` economy. In this market, services get better and better as they compete on quality — not unclear business practices, and control.
+By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has built a `decentralized` economy. (This is the “d” in “dApp”.) Without intermediaries, services get better and better as they compete on quality — not unclear business practices and control.
 
 # Using a dApp
 
-Using `dApps` is similar to using regular internet services, but with a few variations and a bunch of benefits. Let’s take a look at a dApp for swapping cryptocurrencies, like a normal money exchange.
+Using `dApps` is similar to using regular apps and internet services, but with a few differences.
 
-1. Visit the dApp’s website.
-2. Connect your Ethereum wallet.
-3. Select the currencies you’re swapping, and the amount.
+Let’s simulate using a dApp for swapping `cryptocurrencies` online.
+
+1. Connect your `crypto wallet` to the dApp’s website.
+2. Confirm the connection inside your Ethereum wallet.
+3. Swap 50 DAI for 0.015 ETH, Ethereum’s native currency.
 4. Submit the swap.
-5. In your wallet, confirm the terms of your trade.
-6. Your swap is being processed by Ethereum and will finalize shortly.
+5. In your wallet, check the terms of your trade, and then sign.
+6. Great! Your swap is being processed on Ethereum and will finalize shortly.
 
-That’s it. There’s no need to send your currency to another institution. You’re free to use your new currency anywhere on Ethereum. Send it to friends, use it to make purchases, or use it in another dApp.
+Plugging your wallet into a dApp and swapping cryptocurrencies is that easy. Now you can send it to friends, use it to make purchases, or try other financial service dApps.
 
-[embed](https://app.banklessacademy.com/animation/swap)
+[embed](https://app.banklessacademy.com/animation/send)
 
 # Knowledge Check 3
 
@@ -210,38 +212,49 @@ How does Ethereum’s market model give you greater online freedom?
 
 ---
 
-Ethereum’s automated services are far more efficient than their intermediary competitors. Better services, lower costs. This includes the network’s banking system, powered by `blockchain` and `cryptocurrency`.
+With the power of Ethereum, you can send and store `cryptocurrencies` without intermediaries too. You’ll discover better services at lower cost through its automated banking system.
 
-⚡ Cryptocurrency can be sent anywhere for as little as $0.01, settling in seconds. Compare this to an international wire transfer, where banks charge 3-4% of your transfer in fees, and take 1-5 working days!
+⚡ With the power of cryptocurrency, money can be sent anywhere for as little as $0.01, and settle in seconds. Compare this to an international wire transfer, where banks charge 3-4% of your transfer in fees, and take 1-5 working days!
 
-🔐 You’re the only person with access to your Ethereum bank account. There’s no intermediary loaning out your savings or controlling what you do with your money. Funds are held on the `Ethereum blockchain`, accessed through your `cryptocurrency wallet`.
+🔐 You’re the only person with access to your Ethereum bank account. There’s no intermediary loaning out your savings or controlling what you do with your money. Funds are stored in your personal `crypto wallet` — the same one you used to connect to a dApp earlier.
 
-On Ethereum, you’re your own bank, and you feel it!
+On Ethereum, you’re your own bank, and you feel like it!
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/a-global-banking-system-5a241dfc.svg)
 
 # Sending a Payment
 
-1. Open wallet
-2. Send function
-3. Enter address, select token
-4. Review details
-5. Sign & send
+Let’s use another simulation to practice sending cryptocurrency. Try sending your 0.015 ETH to the Bankless Academy wallet.
+
+1. Unlock your `crypto wallet`.
+2. Inside of your wallet, select send.
+3. Adjust the amount to 0.015 ETH.
+4. Confirm the token and amount.
+5. In contacts, select banklessacademy.eth.
+6. That’s it! Your transfer is on the way.
+
+And nobody could stop you.
 
 [embed](https://app.banklessacademy.com/animation/send)
 
 # How it Works
 
-Let’s bring it all together by looking under the hood. As a `peer-to-peer` network, Ethereum is made up of computers spread across the world. These devices have been volunteered to run the network by their owners. Using automated software, these `validators` process transactions, check the results of others to negate fraud, and generate `ether` rewards for their owners.
+Let’s bring everything together by taking a quick look at how Ethereum makes it all possible.
 
-Your decentralized transaction is processed by validators on the network:
+As a `peer-to-peer` network, Ethereum is made up of computers spread across the world. These devices, known as `validators`, have been volunteered by their owners to help run the network. Using automated software, a validator will process transactions and verify the results of others to prevent fraud. In doing so, the validator generates `ether` rewards for its owner.
 
-1. Your ETH transaction is submitted to the Ethereum Network.
-2. A validator checks your transaction for errors. Other validators double-check their results.
-3. If approved, your transaction is added to the network ledger, the `Ethereum blockchain`.
-4. The recipient receives your transferred ETH in their wallet.
+![](https://app.banklessacademy.com/images/ethereum-basics/how-it-works-08c71cad.svg)
 
-This transaction process is very similar when interacting with dApps, with a few added steps and connections. We’ll save the details for a future lesson.
+# How it Works (Pt. II)
+
+The transaction you submitted earlier was processed by these Ethereum network `validators`.
+
+1. Your ETH transaction was submitted to the Ethereum Network.
+2. A validator checked your transaction for errors. Other validators double-checked their results.
+3. Your transaction was added to the network’s public ledger, the `Ethereum blockchain`.
+4. We received your transferred ETH in our wallet.
+
+You might be wondering why these validators don’t just run off with your funds. The short answer is because Ethereum makes this virtually impossible. Your upcoming lesson, “Blockchain Basics”, will help you understand more.
 
 [embed](https://app.banklessacademy.com/animation/ethereum)
 
@@ -275,6 +288,12 @@ While your digital property on Ethereum can’t directly be stolen, you can be t
   <summary>❓ Is Ethereum legal?</summary>
 
 Yes. Today, Ethereum's legality and adoption are so strong that even big businesses are investing in and using it. Realistically, shutting down Ethereum would require unprecedented global coordination, akin to NATO-level efforts. This is due to its `decentralized` network structure.
+
+</details>
+<details>
+  <summary>❓ Is Ethereum used for criminal activity?</summary>
+
+…
 
 </details>
 <details>
