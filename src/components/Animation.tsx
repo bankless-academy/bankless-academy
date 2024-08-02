@@ -73,6 +73,13 @@ const Animation = ({
     }
   }, [animationStepLS, isDisabled])
 
+  useEffect(() => {
+    // Reset animationStepLS when animationId changes
+    setAnimationStepLS(
+      parseInt(localStorage.getItem(`animation-${animationId}`) || '0')
+    )
+  }, [animationId, setAnimationStepLS])
+
   if (!ANIMATION_IDS.includes(animationId)) return null
 
   const animation = ANIMATIONS[animationId]
