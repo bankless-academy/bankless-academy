@@ -419,6 +419,11 @@ const Lesson = ({
     accordions.forEach((accordion) => {
       const details = accordion.querySelectorAll('details')
 
+      // Open the first accordion by default
+      if (details.length > 0) {
+        details[0].setAttribute('open', 'true')
+      }
+
       details.forEach((detail) => {
         // Check if content div already exists
         if (!detail.querySelector('.content-detail')) {
