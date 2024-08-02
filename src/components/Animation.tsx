@@ -19,6 +19,7 @@ const StyledBox = styled(Box)`
   #lottie .actionNext,
   #lottie .actionPrev {
     cursor: pointer;
+    position: relative; /* Ensure the element has a relative position */
   }
   #lottie .actionNext:hover,
   #lottie .actionPrev:hover {
@@ -26,6 +27,36 @@ const StyledBox = styled(Box)`
       fill-opacity: 0.2;
       fill: black;
     }
+  }
+`
+
+const Tooltip = styled.div`
+  width: 120px;
+  background-color: #d5d5d5;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  transition: opacity 0.3s;
+  pointer-events: none; /* Ensure the tooltip does not interfere with pointer events */
+  visibility: hidden;
+  opacity: 0;
+  ::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #d5d5d5 transparent;
+  }
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
   }
 `
 
@@ -43,6 +74,9 @@ const Animation = ({
   const [isDisabled, setIsDisabled] = useState(false)
 
   const containerRef = useRef<HTMLDivElement>(null)
+
+  const nextTooltipRef = useRef()
+  const prevTooltipRef = useRef()
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -72,6 +106,34 @@ const Animation = ({
       }
     }
   }, [animationStepLS, isDisabled])
+
+  useEffect(() => {
+    const positionTooltip = (tooltip, target) => {
+      const rect = target.getBoundingClientRect()
+      tooltip.style.left = `${
+        rect.left + window.scrollX + rect.width / 2 - 60
+      }px`
+      tooltip.style.top = `${rect.bottom + window.scrollY + 5}px` // Positioned below the element
+      tooltip.classList.add('visible')
+    }
+    const hideTooltip = (tooltip) => {
+      tooltip.classList.remove('visible')
+    }
+
+    setTimeout(() => {
+      const nextElement = document.querySelector('.actionNext')
+      const prevElement = document.querySelector('.actionPrev')
+
+      if (nextTooltipRef.current && nextElement) {
+        positionTooltip(nextTooltipRef.current, nextElement)
+      } else if (nextTooltipRef.current) {
+        hideTooltip(nextTooltipRef.current)
+      }
+      if (prevTooltipRef.current && prevElement) {
+        positionTooltip(prevTooltipRef.current, prevElement)
+      }
+    }, 200)
+  }, [animationStepLS])
 
   useEffect(() => {
     // Reset animationStepLS when animationId changes
@@ -129,7 +191,7 @@ const Animation = ({
       background="transparent"
       maxW="600px"
       maxH="600px"
-      position="relative"
+      position="initial"
       aspectRatio="1"
       m="auto"
       ref={containerRef}
@@ -168,6 +230,8 @@ const Animation = ({
           &gt;
         </Button>
       )}
+      <Tooltip ref={nextTooltipRef}>Click here!</Tooltip>
+      <Tooltip ref={prevTooltipRef}>Click here to go back</Tooltip>
     </StyledBox>
   )
 }
