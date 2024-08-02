@@ -366,24 +366,27 @@ const Lesson = ({
     'https://app.banklessacademy.com/animation/',
     '/animation/'
   )
-  const matchAnimation = /src=["']\/animation\/([^"']+)["']/.exec(slide.content)
+  // const matchAnimation = /src=["']\/animation\/([^"']+)["']/.exec(slide.content)
   // console.log(matchAnimation)
-  const animationSlideId = matchAnimation?.length ? matchAnimation[1] : ''
-  // const animationSlideId =
-  //   lesson.notionId === '6a440f5dd00a4179811178943bf89e1d'
-  //     ? 'bitcoin'
-  //     : lesson.notionId === 'e90059604739465ea99b9a2c8af5eb75'
-  //     ? 'validating-tx-with-ethereum-staking'
-  //     : lesson.notionId === '2a957f2be160403ebdd7c89a4f0fa01d'
-  //     ? // - 1 to currentSlide because starting at 0
-  //       currentSlide === 14 - 1
-  //       ? 'send'
-  //       : currentSlide === 11 - 1
-  //       ? 'swap'
-  //       : currentSlide === 15 - 1
-  //       ? 'ethereum'
-  //       : ''
-  //     : ''
+  // const animationSlideId = matchAnimation?.length ? matchAnimation[1] : ''
+  const animationSlideId =
+    // Bitcoin Basics
+    lesson.notionId === '6a440f5dd00a4179811178943bf89e1d'
+      ? 'bitcoin'
+      : // Staking on Ethereum
+      lesson.notionId === 'e90059604739465ea99b9a2c8af5eb75'
+      ? 'validating-tx-with-ethereum-staking'
+      : // Ethereum Basics
+      lesson.notionId === '2a957f2be160403ebdd7c89a4f0fa01d'
+      ? // - 1 to currentSlide because starting at 0
+        currentSlide === 14 - 1
+        ? 'send'
+        : currentSlide === 11 - 1
+        ? 'swap'
+        : currentSlide === 15 - 1
+        ? 'ethereum'
+        : ''
+      : ''
   const [animationStepLS, setAnimationStepLS] = useLocalStorage(
     `animation-${animationSlideId}`,
     0
