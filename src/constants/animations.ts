@@ -1,4 +1,5 @@
 export const ANIMATIONS = {
+  // Bitcoin Basics
   bitcoin: {
     name: 'Bitcoin animation',
     description: 'Animation description',
@@ -10,6 +11,7 @@ export const ANIMATIONS = {
       '/animations/bitcoin/step-4.json',
     ],
   },
+  // Staking on Ethereum
   'validating-tx-with-ethereum-staking': {
     name: 'Ethereum Staking Animation',
     description: 'Validating transactions when staking with Ethereum.',
@@ -41,6 +43,20 @@ export const ANIMATIONS = {
       '/animations/send/step-1.json',
       '/animations/send/step-2.json',
       '/animations/send/step-3.json',
+      '/animations/send/step-4.json',
+      '/animations/send/step-5.json',
+      '/animations/send/step-6.json',
+    ],
+  },
+  ethereum: {
+    name: 'Ethereum Animation',
+    description: 'How it Works',
+    socialImageLink: null,
+    steps: [
+      '/animations/ethereum/step-1.json',
+      '/animations/ethereum/step-2.json',
+      '/animations/ethereum/step-3.json',
+      '/animations/ethereum/step-4.json',
     ],
   },
 }

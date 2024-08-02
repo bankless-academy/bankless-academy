@@ -16,13 +16,16 @@ const StyledBox = styled(Box)`
   #lottie svg:last-child {
     display: block;
   }
-  #lottie .next,
-  #lottie .prev {
+  #lottie .actionNext,
+  #lottie .actionPrev {
     cursor: pointer;
   }
-  #lottie .next:hover,
-  #lottie .prev:hover {
-    filter: brightness(150%);
+  #lottie .actionNext:hover,
+  #lottie .actionPrev:hover {
+    path {
+      fill-opacity: 0.2;
+      fill: black;
+    }
   }
 `
 
@@ -44,10 +47,16 @@ const Animation = ({
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement
-      if (target.classList.contains('next') || target.closest('.next')) {
+      if (
+        target.classList.contains('actionNext') ||
+        target.closest('.actionNext')
+      ) {
         clickRight()
       }
-      if (target.classList.contains('prev') || target.closest('.prev')) {
+      if (
+        target.classList.contains('actionPrev') ||
+        target.closest('.actionPrev')
+      ) {
         clickLeft()
       }
     }
