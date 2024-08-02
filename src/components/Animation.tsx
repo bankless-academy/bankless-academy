@@ -120,18 +120,30 @@ const Animation = ({
       tooltip.classList.remove('visible')
     }
 
-    setTimeout(() => {
+    const displayTooltip = (retry) => {
       const nextElement = document.querySelector('.actionNext')
       const prevElement = document.querySelector('.actionPrev')
 
       if (nextTooltipRef.current && nextElement) {
         positionTooltip(nextTooltipRef.current, nextElement)
+      } else if (retry === 1 && nextTooltipRef.current) {
+        hideTooltip(nextTooltipRef.current)
+        setTimeout(() => {
+          console.log('retry displayTooltip')
+          displayTooltip(0)
+        }, 1000)
       } else if (nextTooltipRef.current) {
         hideTooltip(nextTooltipRef.current)
       }
       if (prevTooltipRef.current && prevElement) {
         positionTooltip(prevTooltipRef.current, prevElement)
+      } else if (prevTooltipRef.current) {
+        hideTooltip(prevTooltipRef.current)
       }
+    }
+
+    setTimeout(() => {
+      displayTooltip(1)
     }, 200)
   }, [animationStepLS])
 
