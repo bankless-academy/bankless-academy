@@ -51,7 +51,7 @@ This online world allows total strangers to meet to exchange information, goods 
 
 **But it has one big problem…**
 
-![](https://app.banklessacademy.com/images/ethereum-basics/a-global-town-square-07dbdabd.svg)
+![](https://app.banklessacademy.com/images/ethereum-basics/a-global-town-square-fcb47024.svg)
 
 # Centralized Services
 
@@ -61,7 +61,7 @@ These `centralized services` have slowly grown an unprecedented control over the
 
 Think your bank and Visa/Mastercard managing your purchases, Meta managing your social interactions, and Apple/Google managing your use of apps. As intermediaries, these businesses also take part in the trade, with their own rules, fees and intentions.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/centralized-services-8d33e63d.svg)
+![](https://app.banklessacademy.com/images/ethereum-basics/centralized-services-adf5be05.svg)
 
 # One-sided Trades
 
@@ -77,7 +77,7 @@ We call them `centralized services` because all the power is in one place. It’
 
 These shady rules and fees are often hidden away in the ‘Terms & Conditions’. Take a closer look at your favourite service agreements here: [https://tosdr.org/](https://tosdr.org/) 👀
 
-![](https://app.banklessacademy.com/images/ethereum-basics/one-sided-trades-bb394e63.svg)
+![](https://app.banklessacademy.com/images/ethereum-basics/one-sided-trades-8d68270f.svg)
 
 # Knowledge Check 1
 
@@ -105,7 +105,7 @@ But doesn’t it feel like this problem is just getting worse over time?
 
 We need a fairer, more reliable internet, beyond intermediaries and their walled gardens. We need an online space where power is held by the user — the way the internet was initially built to be.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/an-open-internet-e7f3fbda.svg)
+![](https://app.banklessacademy.com/images/ethereum-basics/an-open-internet-31819e5b.svg)
 
 # Peer-to-Peer Trades
 
@@ -123,7 +123,7 @@ It’s like replacing your intermediary with a high-tech vending machine. Code, 
 
 As we’ll see, a peer-to-peer internet changes everything.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/peer-to-peer-trades-de8d8bb2.svg)
+![](https://app.banklessacademy.com/images/ethereum-basics/peer-to-peer-trades-f043c3c0.svg)
 
 # Knowledge Check 2
 
@@ -143,7 +143,7 @@ How does removing intermediaries improve the reliability of online interactions?
 
 ---
 
-Think of Ethereum like an automated shopping mall, owned and run by its community.
+Think of Ethereum like an internet shopping mall. It’s fully automated, and managed by its community.
 
 “High-tech vending machines” have replaced traditional services. With transparent programming, users can review trade terms, or audit the machine’s business practices.
 
@@ -153,7 +153,7 @@ Even the "landlord" role is played by the community. Rules are decided on by act
 
 On Ethereum, nobody is above the rules.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-the-open-internet-ff8699fd.svg)
+![](https://app.banklessacademy.com/images/ethereum-basics/ethereum-the-open-internet-ab794154.svg)
 
 # The Decentralized Economy
 
@@ -171,13 +171,16 @@ By removing intermediaries, banks, landlords, and individual accounts for each s
 
 # Using a dApp
 
-1. Visit website
-2. Connect wallet…
-3. Select to & from tokens
-4. Submit swap
-5. Review terms of trade
-6. Sign & execute
-7. Receive tokens
+Using `dApps` is similar to using regular internet services, but with a few variations and a bunch of benefits. Let’s take a look at a dApp for swapping cryptocurrencies, like a normal money exchange.
+
+1. Visit the dApp’s website.
+2. Connect your Ethereum wallet.
+3. Select the currencies you’re swapping, and the amount.
+4. Submit the swap.
+5. In your wallet, confirm the terms of your trade.
+6. Your swap is being processed by Ethereum and will finalize shortly.
+
+That’s it. There’s no need to send your currency to another institution. You’re free to use your new currency anywhere on Ethereum. Send it to friends, use it to make purchases, or use it in another dApp.
 
 [embed](https://app.banklessacademy.com/animation/swap)
 
@@ -215,7 +218,7 @@ Ethereum’s automated services are far more efficient than their intermediary c
 
 On Ethereum, you’re your own bank, and you feel it!
 
-![](https://app.banklessacademy.com/images/ethereum-basics/a-global-banking-system-14d3a7d2.svg)
+![](https://app.banklessacademy.com/images/ethereum-basics/a-global-banking-system-5a241dfc.svg)
 
 # Sending a Payment
 
@@ -240,7 +243,7 @@ Your decentralized transaction is processed by validators on the network:
 
 This transaction process is very similar when interacting with dApps, with a few added steps and connections. We’ll save the details for a future lesson.
 
-![](https://app.banklessacademy.com/images/ethereum-basics/how-it-works-1b29df4b.svg)
+[embed](https://app.banklessacademy.com/animation/ethereum)
 
 # Knowledge Check 4
 
@@ -259,19 +262,19 @@ True or False: Ethereum can freeze your transfers and confiscate your money.
 <details>
   <summary>❓ How was Ethereum created?</summary>
 
-Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through decentralized governance, ensuring your money is safe in this transparent and community-driven ecosystem.
+Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through `decentralized` governance. This distribution of power strengthens the network’s founding vision of an open internet.
 
 </details>
 <details>
   <summary>❓ Is Ethereum safe?</summary>
 
-While your digital property on Ethereum can’t directly be stolen, you can be tricked into sending it to thieves. Take our “Web3 Security” lesson to learn how to protect yourself on the internet frontier!
+While your digital property on Ethereum can’t directly be stolen, you can be tricked into sending it to scammers. Take our “Web3 Security” lesson to learn how to protect yourself on the internet frontier!
 
 </details>
 <details>
   <summary>❓ Is Ethereum legal?</summary>
 
-Yes. Today, Ethereum's legality and adoption are so strong that even big businesses are investing in and using it. Realistically, shutting down Ethereum would require unprecedented global coordination, akin to NATO-level efforts. This is due to its `decentralized` network structure. Learn more in our “Blockchain Basics” lesson.
+Yes. Today, Ethereum's legality and adoption are so strong that even big businesses are investing in and using it. Realistically, shutting down Ethereum would require unprecedented global coordination, akin to NATO-level efforts. This is due to its `decentralized` network structure.
 
 </details>
 <details>

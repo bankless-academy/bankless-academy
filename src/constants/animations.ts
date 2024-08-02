@@ -26,6 +26,7 @@ export const ANIMATIONS = {
       '/animations/validating-tx-with-ethereum-staking/step-7.json',
     ],
   },
+  // Ethereum Basics
   swap: {
     name: 'Swap Animation',
     description: 'Making a swap on a DEX',
