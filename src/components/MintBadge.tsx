@@ -292,34 +292,36 @@ const MintBadge = ({
         onClose={onClosePopOver}
       > */}
       {/* <PopoverTrigger> */}
-      <Button
-        variant={'primary'}
-        w="100%"
-        height="51px"
-        fontSize="lg"
-        fontWeight="bold"
-        opacity={!address || !isQuestCompleted ? '0.5' : 1}
-        isLoading={isMintingInProgress}
-        loadingText={t('Minting Badge...')}
-        cursor={isBadgeMintedLS ? 'auto' : 'pointer'}
-        onClick={() => {
-          passportLS?.verified ? mintBadge() : onOpen()
-        }}
-        leftIcon={<ShootingStar width="28px" height="28px" />}
-      >
-        {t('Claim Badge')}
-      </Button>
+      {!showConfetti && !isLoading && (
+        <Button
+          variant={'primary'}
+          w="100%"
+          height="51px"
+          fontSize="lg"
+          fontWeight="bold"
+          opacity={!address || !isQuestCompleted ? '0.5' : 1}
+          isLoading={isMintingInProgress}
+          loadingText={t('Minting Badge...')}
+          cursor={isBadgeMintedLS ? 'auto' : 'pointer'}
+          onClick={() => {
+            passportLS?.verified ? mintBadge() : onOpen()
+          }}
+          leftIcon={<ShootingStar width="28px" height="28px" />}
+        >
+          {t('Claim Badge')}
+        </Button>
+      )}
       {/* </PopoverTrigger> */}
       <PassportModal isOpen={isOpen} onClose={onClose} />
       <Confetti
         showConfetti={showConfetti}
         onConfettiComplete={() => {
-          setShowConfetti(false)
           // Refresh list of Badges in the wallet
           setIsBadgeMintedLS(true)
           setRefreshBadgesLS(true)
           setStatus('')
           setIsMintingInProgress(false)
+          setShowConfetti(false)
         }}
       />
       {/* <PopoverContent>
