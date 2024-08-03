@@ -361,6 +361,7 @@ const Lesson = ({
     `quiz-${slide?.quiz?.id}`,
     []
   )
+  const isQuizSlideArray = Array.isArray(quizSlide)
   const isFirstSlide = currentSlide === 0
   const isLastSlide = currentSlide + 1 === numberOfSlides
 
@@ -387,7 +388,7 @@ const Lesson = ({
         ? 'swap'
         : currentSlide === 14 - 1
         ? 'send'
-        : currentSlide === 16 - 1
+        : currentSlide === 17 - 1
         ? 'ethereum'
         : ''
       : ''
@@ -662,6 +663,7 @@ const Lesson = ({
     isAnimationSlide,
     animationStepLS,
     animationSlideId,
+    slide,
     currentSlide,
     isFirstSlide,
     isDesktop,
@@ -976,6 +978,7 @@ const Lesson = ({
                       const answerState = answerIsCorrect
                         ? slide.quiz.rightAnswerNumber === n ||
                           (slide.type === 'POLL' &&
+                            isQuizSlideArray &&
                             quizSlide?.includes(n.toString()))
                           ? 'CORRECT'
                           : 'UNSELECTED'
@@ -993,7 +996,8 @@ const Lesson = ({
                             h="auto"
                             className={
                               slide.type === 'POLL'
-                                ? quizSlide?.includes(n.toString())
+                                ? isQuizSlideArray &&
+                                  quizSlide?.includes(n.toString())
                                   ? 'poll checked'
                                   : 'poll'
                                 : 'quiz'

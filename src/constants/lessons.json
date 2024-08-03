@@ -288,13 +288,13 @@
   },
   {
     "badgeImageLink": "/images/ethereum-basics/badge-da9823bb.png",
-    "lessonImageLink": "/images/ethereum-basics/lesson-0a24938a.png",
+    "lessonImageLink": "/images/ethereum-basics/lesson-69c1f3d5.png",
     "learningActions": "",
-    "marketingDescription": "",
+    "marketingDescription": "What is Ethereum? Unlock the “new internet” and your digital freedom.",
     "badgeId": null,
     "duration": 15,
     "learnings": "",
-    "description": "",
+    "description": "What is Ethereum? Unlock the “new internet” and your digital freedom.",
     "name": "Ethereum Basics",
     "languages": [],
     "level": "Essentials",
@@ -320,8 +320,8 @@
     ],
     "keywords": [
       "apps",
-      "cryptocurrencies",
       "app store",
+      "cryptocurrency",
       "centralized services",
       "intermediaries",
       "value-extractive",
@@ -332,9 +332,13 @@
       "crypto wallet",
       "dapps",
       "decentralized",
-      "validators",
+      "cryptocurrencies",
+      "eth",
+      "onchain",
+      "validator nodes",
       "ether",
-      "validator",
+      "staked",
+      "validator node",
       "value-extraction",
       "value-creation",
       "cryptocurrency wallet"
@@ -344,7 +348,7 @@
         "type": "LEARN",
         "notionId": "020b00dc30e4460583a7fe08be2bbd15",
         "title": "Ethereum Basics",
-        "content": "<div class=\"bloc1\"><p>Welcome, Explorer, to one of the most important lessons at Bankless Academy.</p><p>Today we’re looking at Ethereum: the next era of the internet. It’s a community-run platform powering a world of new internet <code>apps</code> and <code>cryptocurrencies</code>.</p><p>A simple way to think of Ethereum is like the Google or Apple <code>app store</code>, but with some key differences:</p><ul><li>💸 It uses a new type of programmable money called cryptocurrency.</li><li>📡 It plugs into your internet browser, unlocking new apps directly on websites.</li><li>⚖️ The rules are agreed on by users and app builders. There’s no central corporation in charge.</li></ul><p>To understand why millions of people are using Ethereum across the world, we need to look at its core mission…</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/ethereum-basics-b2e09ce5.png'></div>"
+        "content": "<div class=\"bloc1\"><p>Welcome, Explorer, to one of the most important lessons at Bankless Academy.</p><p>Today we’re looking at Ethereum: the next era of the internet. It’s a revolutionary platform powering a world of new internet <code>apps</code> and digital currencies.</p><p>A simple way to think of Ethereum is like the Google or Apple <code>app store</code>, but with some key differences:</p><ul><li>💸 It uses a new type of programmable money called <code>cryptocurrency</code>.</li><li>📡 It plugs into your internet browser, unlocking new applications directly on websites.</li><li>⚖️ The rules are agreed on by users and app builders. There’s no central corporation in charge.</li></ul><p>To understand why millions of people are using Ethereum across the world, we need to look at its core mission…</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/ethereum-basics-b2e09ce5.png'></div>"
       },
       {
         "type": "LEARN",
@@ -362,7 +366,7 @@
         "type": "LEARN",
         "notionId": "e4260ebbeda44a4596fb1d1d73e3375b",
         "title": "One-sided Trades",
-        "content": "<div class=\"bloc1\"><p>We call them <code>centralized services</code> because all the power is in one place. It’s often like being stuck under the rule of a King who knows exactly how to get what he wants from you. You might be surprised at the reality of your trades…</p><p>💸 Banks charge fees, then invest your savings for their own profit.</p><p>💳 Payment networks, like Visa & Mastercard, sell your purchase data to advertisers.</p><p>📞 Social platforms, like Instagram, can view your private conversations.</p><p>🪓 Content platforms, like YouTube, can freely delete creators’ entire careers — with no fair trial.</p><p>These shady rules and fees are often hidden away in the ‘Terms & Conditions’. Take a closer look at your favourite service agreements here: <a href='https://tosdr.org/'>https://tosdr.org/</a> 👀</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/one-sided-trades-8d68270f.svg'></div>"
+        "content": "<div class=\"bloc1\"><p>We call them <code>centralized services</code> because all the power is in one place. It’s often like being stuck under the rule of a king who knows exactly how to get what he wants from you. You might be surprised at the reality of your trades…</p><p>💸 Banks charge fees, then invest your savings for their own profit.</p><p>💳 Payment networks, like Visa & Mastercard, sell your purchase data to advertisers.</p><p>📞 Social platforms, like Instagram, can view your private conversations.</p><p>🪓 Content platforms, like YouTube, can freely delete creators’ entire careers — with no fair trial.</p><p>These shady rules and fees are often hidden away in the ‘Terms & Conditions’. Take a closer look at your favourite service agreements here: <a href='https://tosdr.org/'>https://tosdr.org/</a> 👀</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/one-sided-trades-8d68270f.svg'></div>"
       },
       {
         "type": "QUIZ",
@@ -376,8 +380,8 @@
             "False"
           ],
           "feedback": [
-            "…",
-            "…"
+            "Correct!",
+            "Try again."
           ],
           "id": "ethereum-basics-1"
         }
@@ -386,7 +390,7 @@
         "type": "LEARN",
         "notionId": "4f1d06ddc7e34a839ce93eb065df9da9",
         "title": "An Open Internet",
-        "content": "<div class=\"bloc1\"><p>😤 <strong>Had enough of platforms that don’t respect your needs?</strong></p><hr><p>This is the <code>value-extractive</code> environment we’ve become used to.</p><p>Called “walled gardens” for how restrictive they are and how difficult they make it to leave, finding better services can be time consuming and expensive. It often feels easier to just put up with the high fees, lack of transparency, and one-sided trades.</p><p>But doesn’t it feel like this problem is just getting worse over time?</p><p>We need a fairer, more reliable internet, beyond intermediaries and their walled gardens. We need an online space where power is held by the user — the way the internet was initially built to be.</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/an-open-internet-31819e5b.svg'></div>"
+        "content": "<div class=\"bloc1\"><p>😤 <strong>Had enough of platforms that don’t respect your needs?</strong></p><hr><p>This is the <code>value-extractive</code> internet we’ve become used to.</p><p>Called “walled gardens” for how restrictive these services are and how difficult they make it to leave, finding better alternatives can be time consuming and expensive. It often feels easier to just put up with the high fees, lack of transparency, and one-sided trades.</p><p>But doesn’t it feel like this problem is just getting worse over time?</p><p>We need a fairer, more reliable internet, beyond intermediaries and their walled gardens. We need an online space where power is held by the user — the way the internet was initially built to be.</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/an-open-internet-31819e5b.svg'></div>"
       },
       {
         "type": "LEARN",
@@ -406,8 +410,8 @@
             "By reducing opportunities for unexpected changes."
           ],
           "feedback": [
-            "…",
-            "…"
+            "Try again.",
+            "Correct!"
           ],
           "id": "ethereum-basics-2"
         }
@@ -416,13 +420,13 @@
         "type": "LEARN",
         "notionId": "8c42e105a4224552bd29aa64c2842047",
         "title": "Ethereum: The Open Internet",
-        "content": "<div class=\"bloc1\"><p>⚖️ <strong>Wouldn’t the internet be a better place if the same rules applied to everyone?</strong></p><hr><p>Think of Ethereum like an internet shopping mall, where shops, security, accounting and rent are fully automated.</p><p>“High-tech vending machines” have replaced traditional services. With transparent programming, users can review trade terms, or audit the machine’s business practices.</p><p>Transactions in the mall are noted on a public record called the <code>Ethereum blockchain</code>. The blockchain tracks and stores digital property in the mall, removing the need for another classic intermediary — the bank!</p><p>Even the 'landlord' role is played by the community. Rules are decided on by active participants, and a small tax on each transaction keeps things running.</p><p>On Ethereum, nobody is above the rules.</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/ethereum-the-open-internet-ab794154.svg'></div>"
+        "content": "<div class=\"bloc1\"><p>⚖️ <strong>Wouldn’t the internet be a better place if the same rules applied to everyone?</strong></p><hr><p>Think of Ethereum like an internet shopping mall, where shops, security, accounting and rent are fully automated.</p><p>“High-tech vending machines” have replaced traditional services. With transparent programming, users can review trade terms, or audit the machine’s business practices.</p><p>Transactions in the mall are noted on a public record called the <code>Ethereum blockchain</code>. The blockchain tracks and stores digital property in the mall, removing the need for another classic intermediary — the bank!</p><p>Even the 'landlord' role is played by the community. Rules are decided on by active participants, and instead of rent, a small tax on each transaction keeps things running.</p><p>On Ethereum, nobody is above the rules.</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/ethereum-the-open-internet-ab794154.svg'></div>"
       },
       {
         "type": "LEARN",
         "notionId": "1b86dffae9cc4577929e0107a0a2f30b",
         "title": "The Decentralized Economy",
-        "content": "<div class=\"bloc1\"><p>To log into Ethereum you’ll use your computer or mobile device’s web browser. You’ll only need one account for the entirety of this new internet — a single login called a <code>crypto wallet</code>. This setup makes it easier to change services and escape “walled gardens”.</p><p>With the Ethereum app layer enabled, new websites with Ethereum functionality immediately grant you access to limitless digital goods and services. On Ethereum, the “high-tech vending machine” services we mentioned are called <code>dApps</code>. Much like regular apps for your device, there are dApps for:</p><ul><li>🤝 sending or trading currencies, stocks and other digital goods, but with low fees and 24/7 service.</li><li>📻 connection with your favourite creators, but you can unlock unique perks and opportunities while ensuring your money goes directly to the artist.</li><li>👪 social media, but if you dislike the platform you can easily transfer your social circle to a new one.</li><li>🗳️ donating to your favourite projects, but even a $1 donation receives a large matching bonus.</li><li>⚙️ renting out your computer’s processing power for passive income.</li></ul><p>By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has built a <code>decentralized</code> economy. (This is the “d” in “dApp”.) Without intermediaries, services get better and better as they compete on quality — not unclear business practices and control.</p></div>"
+        "content": "<div class=\"bloc1\"><p>To log into Ethereum you’ll use your computer or mobile device’s web browser. You’ll only need one account for the entirety of this new internet — a single login called a <code>crypto wallet</code>. This setup makes it easier to change services and escape “walled gardens”.</p><p>With the Ethereum app layer enabled, new websites with Ethereum functionality immediately grant you access to limitless digital goods and services. On Ethereum, the “high-tech vending machine” services we mentioned are called <code>dApps</code>. Much like regular apps for your device, there are dApps for:</p><ul><li>🤝 sending or trading currencies, stocks and other digital goods, but with low fees and 24/7 service.</li><li>📻 connection with your favourite creators, but you can unlock unique perks and opportunities while ensuring your money goes directly to the artist.</li><li>👪 social media, but if you dislike the platform you can easily transfer your social circle to a new one.</li><li>🗳️ donating to your favourite projects, but even a $1 donation receives a large matching bonus.</li><li>⚙️ renting out your computer’s processing power for passive income.</li></ul><p>By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has built a <code>decentralized</code> economy (this is the “d” in “dApp”). Without intermediaries, services get better and better as they compete on quality — not unclear business practices and control.</p></div>"
       },
       {
         "type": "LEARN",
@@ -440,14 +444,14 @@
           "answers": [
             "Automated services have less control over the user.",
             "Transparent business practices make services more predictable.",
-            "A single login makes it easy to switch services.",
+            "A single, universal account makes it easy to switch between services.",
             "All of the above."
           ],
           "feedback": [
-            "…",
-            "…",
-            "…",
-            "…"
+            "Try again.",
+            "Try again.",
+            "Try again.",
+            "Correct!"
           ],
           "id": "ethereum-basics-3"
         }
@@ -456,49 +460,49 @@
         "type": "LEARN",
         "notionId": "8b317a82a13047f0972d6d6ed44e347c",
         "title": "A Global Banking System",
-        "content": "<div class=\"bloc1\"><p>⌛ <strong>Do you want a faster, cheaper way to transfer money internationally?</strong></p><hr><p>With the power of Ethereum, you can send and store <code>cryptocurrencies</code> without intermediaries too. You’ll discover better services at lower cost through its automated banking system.</p><p>⚡ With the power of cryptocurrency, money can be sent anywhere for as little as $0.01, and settle in seconds. Compare this to an international wire transfer, where banks charge 3-4% of your transfer in fees, and take 1-5 working days!</p><p>🔐 You’re the only person with access to your Ethereum bank account. There’s no intermediary loaning out your savings or controlling what you do with your money. Funds are stored in your personal <code>crypto wallet</code> — the same one you used to connect to a dApp earlier.</p><p>On Ethereum, you’re your own bank, and you feel like it!</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/a-global-banking-system-5a241dfc.svg'></div>"
+        "content": "<div class=\"bloc1\"><p>⌛ <strong>Do you want a faster, cheaper way to transfer money internationally?</strong></p><hr><p>With the power of Ethereum, you can send and store <code>cryptocurrencies</code> without intermediaries too. You’ll discover better services at lower cost through its automated banking system.</p><p>⚡ With the power of cryptocurrency, money can be sent anywhere for as little as $0.01, and settle in seconds. Compare this to an international wire transfer, where banks charge 3-4% of your transfer in fees, and take 1-5 working days!</p><p>🔐 You’re the only person with access to your Ethereum account. There’s no intermediary loaning out your savings or controlling what you do with your money. Funds are stored in your personal <code>crypto wallet</code> — the same one you used to connect to a dApp earlier.</p><p>On Ethereum, you’re your own bank, and you feel like it!</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/a-global-banking-system-5a241dfc.svg'></div>"
       },
       {
         "type": "LEARN",
         "notionId": "befa989e445846e0bd0ac488740154fb",
         "title": "Sending a Payment",
-        "content": "<div class=\"bloc1\"><p>Let’s use another simulation to practice sending cryptocurrency. Try sending your 0.015 ETH to the Bankless Academy wallet.</p><ol><li>Unlock your <code>crypto wallet</code>.</li><li>Inside of your wallet, select send.</li><li>Adjust the amount to 0.015 ETH.</li><li>Confirm the token and amount.</li><li>In contacts, select banklessacademy.eth.</li><li>That’s it! Your transfer is on the way.</li></ol><p>And nobody could stop you.</p></div><div class=\"bloc2\"><iframe allowfullscreen class='animation' src='https://app.banklessacademy.com/animation/send'></iframe></div>"
-      },
-      {
-        "type": "LEARN",
-        "notionId": "260be70be7dd44c7ae2edbe322a33aae",
-        "title": "How it Works",
-        "content": "<div class=\"bloc1\"><p>Let’s bring everything together by taking a quick look at how Ethereum makes it all possible.</p><p>As a <code>peer-to-peer</code> network, Ethereum is made up of computers spread across the world. These devices, known as <code>validators</code>, have been volunteered by their owners to help run the network. Using automated software, a validator will process transactions and verify the results of others to prevent fraud. In doing so, the validator generates <code>ether</code> rewards for its owner.</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/how-it-works-08c71cad.svg'></div>"
-      },
-      {
-        "type": "LEARN",
-        "notionId": "c112d4f50c8c488f88950a3e732f6148",
-        "title": "How it Works (Pt. II)",
-        "content": "<div class=\"bloc1\"><p>The transaction you submitted earlier was processed by these Ethereum network <code>validators</code>.</p><ol><li>Your ETH transaction was submitted to the Ethereum Network.</li><li>A validator checked your transaction for errors. Other validators double-checked their results.</li><li>Your transaction was added to the network’s public ledger, the <code>Ethereum blockchain</code>.</li><li>We received your transferred ETH in our wallet.</li></ol><p>You might be wondering why these validators don’t just run off with your funds. The short answer is because Ethereum makes this virtually impossible. Your upcoming lesson, “Blockchain Basics”, will help you understand more.</p></div><div class=\"bloc2\"><iframe allowfullscreen class='animation' src='https://app.banklessacademy.com/animation/ethereum'></iframe></div>"
+        "content": "<div class=\"bloc1\"><p>Let’s use another simulation to practice sending cryptocurrency. Try sending your 0.015 <code>ETH</code> to the Bankless Academy <code>crypto wallet</code>.</p><ol><li>Unlock your wallet.</li><li>Inside of your wallet, select send.</li><li>Adjust the amount to 0.015 ETH.</li><li>Confirm the token and amount.</li><li>In contacts, select banklessacademy.eth.</li><li>That’s it! Your international transfer is on the way. Your fee was ~$0.01, and no intermediary could stop you.</li></ol><p>With Ethereum wallets, you can own and send more than just cryptocurrency. Transferrable assets include any digital property that can be stored <code>onchain</code>. Digital art, club memberships, show tickets, stocks, website addresses, and even real-world property rights have made their way onto Ethereum.</p></div><div class=\"bloc2\"><iframe allowfullscreen class='animation' src='https://app.banklessacademy.com/animation/send'></iframe></div>"
       },
       {
         "type": "QUIZ",
         "notionId": "7e8729f592ad4836a1d7c1fd5b6f560d",
         "title": "✅ Knowledge Check",
         "quiz": {
-          "question": "True or False: Ethereum can freeze your transfers and confiscate your money.",
+          "question": "True or False: Ethereum can freeze your transfers and confiscate your digital assets.",
           "rightAnswerNumber": 2,
           "answers": [
             "True",
             "False"
           ],
           "feedback": [
-            "…",
-            "…"
+            "Try again.",
+            "Correct!"
           ],
           "id": "ethereum-basics-4"
         }
       },
       {
         "type": "LEARN",
+        "notionId": "260be70be7dd44c7ae2edbe322a33aae",
+        "title": "How it Works",
+        "content": "<div class=\"bloc1\"><p>Let’s bring everything together by taking a quick look at how Ethereum makes it all possible.</p><p>As a <code>peer-to-peer</code> network, Ethereum is made up of computers spread across the world. These devices, known as <code>validator nodes</code>, have been volunteered by their owners to help run the network. Using automated software, a validator will process transactions and verify the results of others to prevent fraud. In doing so, the validator generates <code>ether</code> rewards for its owner.</p></div><div class=\"bloc2\"><img src='/images/ethereum-basics/how-it-works-08c71cad.svg'></div>"
+      },
+      {
+        "type": "LEARN",
+        "notionId": "c112d4f50c8c488f88950a3e732f6148",
+        "title": "How it Works (Pt. II)",
+        "content": "<div class=\"bloc1\"><p>The transaction you submitted earlier was processed by these Ethereum network <code>validator nodes</code>.</p><ol><li>Your ETH transaction was submitted to the Ethereum Network.</li><li>A validator checked your transaction for errors. Other validators double-checked their results.</li><li>Your transaction was added to the network’s public ledger, the <code>Ethereum blockchain</code>.</li><li>We received your transferred ETH in our wallet.</li></ol><p>You might be wondering why these validators don’t just run off with your funds. The short answer is because Ethereum makes this virtually impossible. Your upcoming lesson, “Blockchain Basics”, will help you understand more.</p></div><div class=\"bloc2\"><iframe allowfullscreen class='animation' src='https://app.banklessacademy.com/animation/ethereum'></iframe></div>"
+      },
+      {
+        "type": "LEARN",
         "notionId": "e7766b4ed5d94c05962984e11ad62bc1",
         "title": "Common Questions",
-        "content": "<div class=\"bloc1\"><details><summary>❓ How was Ethereum created?</summary>Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through <code>decentralized</code> governance. This distribution of power strengthens the network’s founding vision of an open internet.</details><details><summary>❓ Is Ethereum safe?</summary>While your digital property on Ethereum can’t directly be stolen, you can be tricked into sending it to scammers. Take our “Web3 Security” lesson to learn how to protect yourself on the internet frontier!</details><details><summary>❓ Is Ethereum legal?</summary>Yes. Today, Ethereum's legality and adoption are so strong that even big businesses are investing in and using it. Realistically, shutting down Ethereum would require unprecedented global coordination, akin to NATO-level efforts. This is due to its <code>decentralized</code> network structure.</details><details><summary>❓ Is Ethereum used for criminal activity?</summary>…</details><details><summary>❓ Is Ethereum bad for the environment?</summary>As Ethereum’s daily usage grew, the community recognized its growing environmental impact and took steps to address it. This led to a network upgrade called 'The Merge', reducing Ethereum's energy consumption by 99.5%. This feat showcases Ethereum's adaptability to the needs of its users!</details><details><summary>❓ How can I invest in Ethereum?</summary>To invest in Ethereum, you’ll need to own <code>ether</code>, the network’s native cryptocurrency. Ether is used to make payments, pay transaction fees, and own a financial share in the network’s success. It can even be used to become a network <code>validator</code>, securing Ethereum in exchange for further ether rewards. Ether is the lifeblood of the Ethereum Network.</details></div>"
+        "content": "<div class=\"bloc1\"><details><summary>❓ How was Ethereum created?</summary>Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through <code>decentralized</code> governance. This distribution of power strengthens the network’s founding vision of an open internet.</details><details><summary>❓ Is Ethereum safe?</summary>While your digital property on Ethereum can’t directly be stolen, you can be tricked into sending it to scammers, or make simple mistakes that cost you money. Take our ‘Web3 Security’ lesson to learn how to protect yourself on the internet frontier!</details><details><summary>❓ Is Ethereum legal?</summary>Yes. Today, Ethereum's legality and adoption are so strong that even <a href='https://www.forbes.com/sites/lawrencewintermeyer/2024/07/25/ethereum-on-the-brink-of-market-transformation-as-etfs-get-green-light/'>big businesses are investing in and using it</a>. Realistically, shutting down Ethereum would require unprecedented global coordination, akin to NATO-level efforts. This is due to its <code>decentralized</code> network structure.</details><details><summary>❓ Is Ethereum used for criminal activity?</summary><a href='https://www.chainalysis.com/blog/2023-crypto-crime-report-introduction/'>Research performed by Chainalysis</a> shows that around 0.24% of cryptocurrency transactions were used for criminal activity in 2022. Ethereum’s high transparency makes it easy for investigators to track and prosecute criminals acting <code>onchain</code>.</details><details><summary>❓ Is Ethereum bad for the environment?</summary>As Ethereum’s daily usage grew, the community recognized its growing environmental impact and took steps to address it. This led to a network upgrade called 'The Merge', <a href='https://www.newscientist.com/article/2369304-cryptocurrency-ethereum-has-slashed-its-energy-use-by-99-99-per-cent/'>reducing Ethereum's energy consumption by 99.9%</a>. This feat showcases Ethereum's adaptability to the needs of its users!</details><details><summary>❓ How can I invest in Ethereum?</summary>To invest in Ethereum, you’ll have to own <code>ether</code> — the network’s native cryptocurrency. As the lifeblood of the Ethereum network, ether is used to own a financial share in the network’s success, make payments, and pay transaction fees. It can even be <code>staked</code> to run a network <code>validator node</code>, securing Ethereum in exchange for further ether rewards.</details></div>"
       },
       {
         "type": "POLL",

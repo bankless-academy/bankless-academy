@@ -482,13 +482,13 @@
   "eth": {
     "keyword": "ETH",
     "keyword_plural": "ETHs",
-    "definition": "(Ether) Ethereum’s native coin. Used in staking and performing transactions on the network.",
+    "definition": "(Ether) Ethereum’s native cryptocurrency. Used to perform transactions on the network, run a validator node, and more.",
     "glossary": true
   },
   "ether": {
     "keyword": "ether",
     "keyword_plural": "ethers",
-    "definition": "(ETH) Ethereum’s native coin. Used in staking and performing transactions on the network.",
+    "definition": "(ETH) Ethereum’s native cryptocurrency. Used to perform transactions on the network, run a validator node, and more.",
     "glossary": true
   },
   "ethereum blockchain": {
@@ -771,6 +771,12 @@
     "keyword": "node operator",
     "keyword_plural": "node operators",
     "definition": "A member of the Ethereum community, running a validator node to process transactions on the network.",
+    "glossary": true
+  },
+  "onchain": {
+    "keyword": "onchain",
+    "keyword_plural": "onchains",
+    "definition": "The new “online”. Refers to actions performed on cryptocurrency/blockchain networks like Ethereum.",
     "glossary": true
   },
   "onchain governance": {
@@ -1091,6 +1097,12 @@
     "definition": "The amount of a financial asset locked into a cryptocurrency protocol. It represents someone’s financial commitment to the protocol, their “skin in the game”.",
     "glossary": true
   },
+  "staked": {
+    "keyword": "staked",
+    "keyword_plural": "stakeds",
+    "definition": "The temporary commitment of a portion of your crypto into a smart contract for a specified amount of time in exchange for earning interest (\"rewards\").",
+    "glossary": false
+  },
   "staker": {
     "keyword": "staker",
     "keyword_plural": "stakers",
@@ -1220,13 +1232,13 @@
   "validator node": {
     "keyword": "validator node",
     "keyword_plural": "validator nodes",
-    "definition": "A computer device run by a member of the Ethereum community. As the original method of staking, it processes transactions on the network.",
+    "definition": "A computer device run by a member of the Ethereum community. It processes transactions on the network in exchange for rewards.",
     "glossary": true
   },
   "validator nodes": {
     "keyword": "validator nodes",
     "keyword_plural": "validator nodess",
-    "definition": "Computer devices run by members of the Ethereum community. As the original method of staking, they process transactions on the network.",
+    "definition": "Computer devices run by members of the Ethereum community. They process transactions on the network in exchange for rewards.",
     "glossary": true
   },
   "value-creation": {
