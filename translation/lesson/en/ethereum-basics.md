@@ -36,7 +36,7 @@ Today we’re looking at Ethereum: the next era of the internet. It’s a revolu
 A simple way to think of Ethereum is like the Google or Apple `app store`, but with some key differences:
 
 - 💸 It uses a new type of programmable money called `cryptocurrency`.
-- 📡 It plugs into your internet browser, unlocking new applications directly on websites.
+- 📡 It’s a layer added directly to your internet browser, unlocking new applications directly on websites.
 - ⚖️ The rules are agreed on by users and app builders. There’s no central corporation in charge.
 
 To understand why millions of people are using Ethereum across the world, we need to look at its core mission…
@@ -127,13 +127,13 @@ As we’ll see, a peer-to-peer internet changes everything.
 
 # Knowledge Check 2
 
-How does removing intermediaries improve the reliability of online interactions?
+How does removing intermediaries improve your online interactions?
 
 - [ ] By increasing costs.
 
 > Try again.
 
-- [ ] By reducing opportunities for unexpected changes.
+- [ ] By reducing unwanted control by others.
 
 > Correct!
 
@@ -149,7 +149,7 @@ Think of Ethereum like an internet shopping mall, where shops, security, account
 
 Transactions in the mall are noted on a public record called the `Ethereum blockchain`. The blockchain tracks and stores digital property in the mall, removing the need for another classic intermediary — the bank!
 
-Even the "landlord" role is played by the community. Rules are decided on by active participants, and instead of rent, a small tax on each transaction keeps things running.
+Even the "landlord" role is automated. Any changes to mall processes are agreed on by users and builders, and instead of rent, a small tax on each transaction keeps things running.
 
 On Ethereum, nobody is above the rules.
 
@@ -161,11 +161,11 @@ To log into Ethereum you’ll use your computer or mobile device’s web browser
 
 With the Ethereum app layer enabled, new websites with Ethereum functionality immediately grant you access to limitless digital goods and services. On Ethereum, the “high-tech vending machine” services we mentioned are called `dApps`. Much like regular apps for your device, there are dApps for:
 
-- 🤝 sending or trading currencies, stocks and other digital goods, but with low fees and 24/7 service.
-- 📻 connection with your favourite creators, but you can unlock unique perks and opportunities while ensuring your money goes directly to the artist.
-- 👪 social media, but if you dislike the platform you can easily transfer your social circle to a new one.
-- 🗳️ donating to your favourite projects, but even a $1 donation receives a large matching bonus.
-- ⚙️ renting out your computer’s processing power for passive income.
+- 🤝 sending or trading currencies, stocks and other digital goods, but with **low fees and 24/7 service**.
+- 📻 connection with your favourite creators, but you can **unlock unique perks and opportunities** while ensuring your money goes directly to the artist.
+- 👪 social media, but if you dislike the platform you can **easily transfer your social circle** to a new one.
+- 🗳️ donating to your favourite projects, but even a $1 donation receives a **large matching bonus****, meaning greater impact**.
+- ⚙️ renting out your computer’s processing power for **passive income**.
 
 By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has built a `decentralized` economy (this is the “d” in “dApp”). Without intermediaries, services get better and better as they compete on quality — not unclear business practices and control.
 
@@ -176,7 +176,7 @@ Using `dApps` is similar to using regular apps and internet services, but with a
 Let’s simulate using a dApp for swapping `cryptocurrencies` online.
 
 1. Connect your `crypto wallet` to the dApp’s website.
-2. Confirm the connection inside your Ethereum wallet.
+2. Confirm that you want to allow this dApp to interact with your Ethereum wallet.
 3. Swap 50 DAI for 0.015 ETH, Ethereum’s native currency.
 4. Submit the swap.
 5. In your wallet, check the terms of your trade, and then sign.
@@ -184,7 +184,7 @@ Let’s simulate using a dApp for swapping `cryptocurrencies` online.
 
 Plugging your wallet into a dApp and swapping cryptocurrencies is that easy. Now you can send it to friends, use it to make purchases, or try other financial service dApps.
 
-[embed](https://app.banklessacademy.com/animation/send)
+[embed](https://app.banklessacademy.com/animation/swap)
 
 # Knowledge Check 3
 
@@ -228,32 +228,32 @@ Let’s use another simulation to practice sending cryptocurrency. Try sending y
 
 1. Unlock your wallet.
 2. Inside of your wallet, select send.
-3. Adjust the amount to 0.015 ETH.
+3. Adjust the amount to 0.015 ETH by clicking “Maximum”.
 4. Confirm the token and amount.
 5. In contacts, select banklessacademy.eth.
-6. That’s it! Your international transfer is on the way. Your fee was ~$0.01, and no intermediary could stop you.
+6. That’s it! Your international transfer was done in seconds, and no intermediary could stop you.
 
-With Ethereum wallets, you can own and send more than just cryptocurrency. Transferrable assets include any digital property that can be stored `onchain`. Digital art, club memberships, show tickets, stocks, website addresses, and even real-world property rights have made their way onto Ethereum.
+With Ethereum wallets, you can own and send more than just cryptocurrency. Transferrable assets include any digital property that can be stored `onchain`. Digital art, club memberships, show tickets, stocks, website address ownership, and even real-world property rights have made their way onto Ethereum.
 
 [embed](https://app.banklessacademy.com/animation/send)
 
 # Knowledge Check 4
 
-True or False: Ethereum can freeze your transfers and confiscate your digital assets.
+True or False: On Ethereum, you can be your own bank.
 
 - [ ] True
 
-> Try again.
+> Correct, with Ethereum you can be Bankless! So long as you don’t grant control to others, you have sole access.
 
 - [ ] False
 
-> Correct!
+> Try again.
 
 # How it Works
 
 Let’s bring everything together by taking a quick look at how Ethereum makes it all possible.
 
-As a `peer-to-peer` network, Ethereum is made up of computers spread across the world. These devices, known as `validator nodes`, have been volunteered by their owners to help run the network. Using automated software, a validator will process transactions and verify the results of others to prevent fraud. In doing so, the validator generates `ether` rewards for its owner.
+As a `peer-to-peer` network, Ethereum is made up of tens of thousands of computers spread across the world. These devices, known as `validator nodes`, have been volunteered by their owners to help run the network. Using automated software, a validator will process transactions and verify the results of others to prevent fraud. In doing so, the validator generates `ether` rewards for its owner.
 
 ![](https://app.banklessacademy.com/images/ethereum-basics/how-it-works-08c71cad.svg)
 
@@ -264,7 +264,7 @@ The transaction you submitted earlier was processed by these Ethereum network `v
 1. Your ETH transaction was submitted to the Ethereum Network.
 2. A validator checked your transaction for errors. Other validators double-checked their results.
 3. Your transaction was added to the network’s public ledger, the `Ethereum blockchain`.
-4. We received your transferred ETH in our wallet.
+4. We received your transferred ETH in our account.
 
 You might be wondering why these validators don’t just run off with your funds. The short answer is because Ethereum makes this virtually impossible. Your upcoming lesson, “Blockchain Basics”, will help you understand more.
 
@@ -287,19 +287,19 @@ While your digital property on Ethereum can’t directly be stolen, you can be t
 <details>
   <summary>❓ Is Ethereum legal?</summary>
 
-Yes. Today, Ethereum's legality and adoption are so strong that even [big businesses are investing in and using it](https://www.forbes.com/sites/lawrencewintermeyer/2024/07/25/ethereum-on-the-brink-of-market-transformation-as-etfs-get-green-light/). Realistically, shutting down Ethereum would require unprecedented global coordination, akin to NATO-level efforts. This is due to its `decentralized` network structure.
+Yes. Today, Ethereum's legality and adoption are so strong that even [big businesses are investing in and using it](https://www.forbes.com/sites/lawrencewintermeyer/2024/07/25/ethereum-on-the-brink-of-market-transformation-as-etfs-get-green-light/). Ethereum is also well protected against any sort of attack by a foreign nation. Realistically, shutting down Ethereum would require unprecedented global coordination, akin to NATO-level efforts. This is due to its `decentralized` network structure.
 
 </details>
 <details>
   <summary>❓ Is Ethereum used for criminal activity?</summary>
 
-[Research performed by Chainalysis](https://www.chainalysis.com/blog/2023-crypto-crime-report-introduction/) shows that around 0.24% of cryptocurrency transactions were used for criminal activity in 2022. Ethereum’s high transparency makes it easy for investigators to track and prosecute criminals acting `onchain`.
+[Research performed by Chainalysis](https://www.chainalysis.com/blog/2023-crypto-crime-report-introduction/) shows that around 0.24% of cryptocurrency transactions were used for criminal activity in 2022. In comparison, 33% of US dollar transactions are suspected to be used for criminal activity. Ethereum’s high transparency also makes it easy for investigators to track and prosecute criminals acting `onchain`.
 
 </details>
 <details>
   <summary>❓ Is Ethereum bad for the environment?</summary>
 
-As Ethereum’s daily usage grew, the community recognized its growing environmental impact and took steps to address it. This led to a network upgrade called "The Merge", [reducing Ethereum's energy consumption by 99.9%](https://www.newscientist.com/article/2369304-cryptocurrency-ethereum-has-slashed-its-energy-use-by-99-99-per-cent/). This feat showcases Ethereum's adaptability to the needs of its users!
+As Ethereum’s daily usage grew, the community recognized its growing environmental impact and took steps to address it. This led to a network upgrade called "The Merge", [reducing Ethereum's energy consumption by 99.9%](https://www.newscientist.com/article/2369304-cryptocurrency-ethereum-has-slashed-its-energy-use-by-99-99-per-cent/). This achievement showcases Ethereum's adaptability to the needs of its users!
 
 </details>
 <details>
