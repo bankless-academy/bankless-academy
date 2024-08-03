@@ -2,7 +2,7 @@
 TITLE: Ethereum Basics
 DESCRIPTION: What is Ethereum? Unlock the “new internet” and your digital freedom.
 LANGUAGE: English
-WRITERS: 
+WRITERS: Tetranome
 TRANSLATORS: X
 LINK: https://app.banklessacademy.com/lessons/ethereum-basics
 FORMAT: LESSON
