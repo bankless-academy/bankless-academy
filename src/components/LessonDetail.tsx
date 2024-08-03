@@ -62,6 +62,11 @@ const quizComplete = (lesson: LessonType): boolean => {
         parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
           slide.quiz.rightAnswerNumber
       )
+    } else if (slide.type === 'POLL') {
+      quizAnswers.push(
+        JSON.parse(localStorage.getItem(`quiz-${slide.quiz.id}`) || '[]')
+          ?.length > 0
+      )
     }
   }
   return !quizAnswers.includes(false)
@@ -101,7 +106,11 @@ const LessonDetail = ({
 
   const isQuizComplete = quizComplete(lesson)
 
-  const Quest = QuestComponent(lesson, lesson.badgeId)
+  const Quest =
+    // HACK: no quest for Ethereum Basics
+    lesson.slug === 'ethereum-basics'
+      ? { isQuestCompleted: true, questComponent: <></> }
+      : QuestComponent(lesson, lesson.badgeId)
 
   const hasLessonGating =
     TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
