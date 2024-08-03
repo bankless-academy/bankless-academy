@@ -242,7 +242,9 @@ const Animation = ({
           &gt;
         </Button>
       )}
-      <Tooltip ref={nextTooltipRef}>Click here!</Tooltip>
+      {animationStepLS === 0 && (
+        <Tooltip ref={nextTooltipRef}>Click here!</Tooltip>
+      )}
       <Tooltip ref={prevTooltipRef}>Click here to go back</Tooltip>
     </StyledBox>
   )
