@@ -81,7 +81,7 @@ These shady rules and fees are often hidden away in the ‘Terms & Conditions’
 
 # Knowledge Check 1
 
-Intermediaries manage our internet interactions on our behalf.
+True or False: Centralized services have unnecessary control over your online activity.
 
 - [ ] True
 
@@ -127,13 +127,13 @@ As we’ll see, a peer-to-peer internet changes everything.
 
 # Knowledge Check 2
 
-How does removing intermediaries improve your online interactions?
+How can automation improve your online experience?
 
-- [ ] By increasing costs.
+- [ ] By increasing the power of intermediaries.
 
 > Try again.
 
-- [ ] By reducing unwanted control by others.
+- [ ] By making online services more predictable.
 
 > Correct!
 
@@ -167,7 +167,7 @@ With the Ethereum app layer enabled, new websites with Ethereum functionality im
 - 🗳️ donating to your favourite projects, but even a $1 donation receives a **large matching bonus****, meaning greater impact**.
 - ⚙️ renting out your computer’s processing power for **passive income**.
 
-By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has built a `decentralized` economy (this is the “d” in “dApp”). Without intermediaries, services get better and better as they compete on quality — not unclear business practices and control.
+By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has made its economy `decentralized` (this is the “d” in “dApp”). `Decentralized services` get better and better as they compete on quality — not unclear business practices and control.
 
 # Using a dApp
 
@@ -188,23 +188,15 @@ Plugging your wallet into a dApp and swapping cryptocurrencies is that easy. Now
 
 # Knowledge Check 3
 
-How does Ethereum’s market model give you greater online freedom?
+True or False: On Ethereum, you connect a single account to various online services.
 
-- [ ] Automated services have less control over the user.
-
-> Try again.
-
-- [ ] Transparent business practices make services more predictable.
-
-> Try again.
-
-- [ ] A single, universal account makes it easy to switch between services.
-
-> Try again.
-
-- [ ] All of the above.
+- [ ] True
 
 > Correct!
+
+- [ ] False
+
+> Try again.
 
 # A Global Banking System
 
@@ -243,7 +235,7 @@ True or False: On Ethereum, you can be your own bank.
 
 - [ ] True
 
-> Correct, with Ethereum you can be Bankless! So long as you don’t grant control to others, you have sole access.
+> Correct. On Ethereum you can go “Bankless”! Lower fees, more control over your money.
 
 - [ ] False
 
@@ -293,7 +285,7 @@ Yes. Today, Ethereum's legality and adoption are so strong that even [big busine
 <details>
   <summary>❓ Is Ethereum used for criminal activity?</summary>
 
-[Research performed by Chainalysis](https://www.chainalysis.com/blog/2023-crypto-crime-report-introduction/) shows that around 0.24% of cryptocurrency transactions were used for criminal activity in 2022. In comparison, 33% of US dollar transactions are suspected to be used for criminal activity. Ethereum’s high transparency also makes it easy for investigators to track and prosecute criminals acting `onchain`.
+[Research performed by Chainalysis](https://www.chainalysis.com/blog/2023-crypto-crime-report-introduction/) shows that around 0.24% of cryptocurrency transactions were used for criminal activity in 2022. This is far below the [estimated 2-5% of global GDP](https://www.forbes.com/sites/haileylennon/2021/01/19/the-false-narrative-of-bitcoins-role-in-illicit-activity/) suspected to be involved in criminal activity. Ethereum’s high transparency also makes it easy for investigators to track and prosecute criminals acting `onchain`.
 
 </details>
 <details>

@@ -389,6 +389,12 @@
     "definition": "Money with properties agreed on by the community, rather than set by an institution.",
     "glossary": true
   },
+  "decentralized services": {
+    "keyword": "decentralized services",
+    "keyword_plural": "decentralized servicess",
+    "definition": "(dApps) Online services that use automation to reduce fees and improve user experience.",
+    "glossary": true
+  },
   "defi": {
     "keyword": "DeFi",
     "keyword_plural": "DeFis",

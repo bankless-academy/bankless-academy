@@ -333,6 +333,7 @@
       "crypto wallet",
       "dapps",
       "decentralized",
+      "decentralized services",
       "cryptocurrencies",
       "eth",
       "onchain",
@@ -374,7 +375,7 @@
         "notionId": "f01c3458feb644e1a4850a233dd9e4ab",
         "title": "✅ Knowledge Check",
         "quiz": {
-          "question": "Intermediaries manage our internet interactions on our behalf.",
+          "question": "True or False: Centralized services have unnecessary control over your online activity.",
           "rightAnswerNumber": 1,
           "answers": [
             "True",
@@ -404,11 +405,11 @@
         "notionId": "7d1e5e16e9c04f44a60d705eb6ad7701",
         "title": "✅ Knowledge Check",
         "quiz": {
-          "question": "How does removing intermediaries improve your online interactions?",
+          "question": "How can automation improve your online experience?",
           "rightAnswerNumber": 2,
           "answers": [
-            "By increasing costs.",
-            "By reducing unwanted control by others."
+            "By increasing the power of intermediaries.",
+            "By making online services more predictable."
           ],
           "feedback": [
             "Try again.",
@@ -427,7 +428,7 @@
         "type": "LEARN",
         "notionId": "1b86dffae9cc4577929e0107a0a2f30b",
         "title": "The Decentralized Economy",
-        "content": "<div class=\"bloc1\"><p>To log into Ethereum you’ll use your computer or mobile device’s web browser. You’ll only need one account for the entirety of this new internet — a single login called a <code>crypto wallet</code>. This setup makes it easier to change services and escape “walled gardens”.</p><p>With the Ethereum app layer enabled, new websites with Ethereum functionality immediately grant you access to limitless digital goods and services. On Ethereum, the “high-tech vending machine” services we mentioned are called <code>dApps</code>. Much like regular apps for your device, there are dApps for:</p><ul><li>🤝 sending or trading currencies, stocks and other digital goods, but with <strong>low fees and 24/7 service</strong>.</li><li>📻 connection with your favourite creators, but you can <strong>unlock unique perks and opportunities</strong> while ensuring your money goes directly to the artist.</li><li>👪 social media, but if you dislike the platform you can <strong>easily transfer your social circle</strong> to a new one.</li><li>🗳️ donating to your favourite projects, but even a $1 donation receives a <strong>large matching bonus</strong><strong>, meaning greater impact</strong>.</li><li>⚙️ renting out your computer’s processing power for <strong>passive income</strong>.</li></ul><p>By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has built a <code>decentralized</code> economy (this is the “d” in “dApp”). Without intermediaries, services get better and better as they compete on quality — not unclear business practices and control.</p></div>"
+        "content": "<div class=\"bloc1\"><p>To log into Ethereum you’ll use your computer or mobile device’s web browser. You’ll only need one account for the entirety of this new internet — a single login called a <code>crypto wallet</code>. This setup makes it easier to change services and escape “walled gardens”.</p><p>With the Ethereum app layer enabled, new websites with Ethereum functionality immediately grant you access to limitless digital goods and services. On Ethereum, the “high-tech vending machine” services we mentioned are called <code>dApps</code>. Much like regular apps for your device, there are dApps for:</p><ul><li>🤝 sending or trading currencies, stocks and other digital goods, but with <strong>low fees and 24/7 service</strong>.</li><li>📻 connection with your favourite creators, but you can <strong>unlock unique perks and opportunities</strong> while ensuring your money goes directly to the artist.</li><li>👪 social media, but if you dislike the platform you can <strong>easily transfer your social circle</strong> to a new one.</li><li>🗳️ donating to your favourite projects, but even a $1 donation receives a <strong>large matching bonus</strong><strong>, meaning greater impact</strong>.</li><li>⚙️ renting out your computer’s processing power for <strong>passive income</strong>.</li></ul><p>By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has made its economy <code>decentralized</code> (this is the “d” in “dApp”). <code>Decentralized services</code> get better and better as they compete on quality — not unclear business practices and control.</p></div>"
       },
       {
         "type": "LEARN",
@@ -440,19 +441,15 @@
         "notionId": "e06f37809a984334a46b55126b01e060",
         "title": "✅ Knowledge Check",
         "quiz": {
-          "question": "How does Ethereum’s market model give you greater online freedom?",
-          "rightAnswerNumber": 4,
+          "question": "True or False: On Ethereum, you connect a single account to various online services.",
+          "rightAnswerNumber": 1,
           "answers": [
-            "Automated services have less control over the user.",
-            "Transparent business practices make services more predictable.",
-            "A single, universal account makes it easy to switch between services.",
-            "All of the above."
+            "True",
+            "False"
           ],
           "feedback": [
-            "Try again.",
-            "Try again.",
-            "Try again.",
-            "Correct!"
+            "Correct!",
+            "Try again."
           ],
           "id": "ethereum-basics-3"
         }
@@ -481,7 +478,7 @@
             "False"
           ],
           "feedback": [
-            "Correct, with Ethereum you can be Bankless! So long as you don’t grant control to others, you have sole access.",
+            "Correct. On Ethereum you can go “Bankless”! Lower fees, more control over your money.",
             "Try again."
           ],
           "id": "ethereum-basics-4"
@@ -503,7 +500,7 @@
         "type": "LEARN",
         "notionId": "e7766b4ed5d94c05962984e11ad62bc1",
         "title": "Common Questions",
-        "content": "<div class=\"bloc1\"><details><summary>❓ How was Ethereum created?</summary>Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through <code>decentralized</code> governance. This distribution of power strengthens the network’s founding vision of an open internet.</details><details><summary>❓ Is Ethereum safe?</summary>While your digital property on Ethereum can’t directly be stolen, you can be tricked into sending it to scammers, or make simple mistakes that cost you money. Take our ‘Web3 Security’ lesson to learn how to protect yourself on the internet frontier!</details><details><summary>❓ Is Ethereum legal?</summary>Yes. Today, Ethereum's legality and adoption are so strong that even <a href='https://www.forbes.com/sites/lawrencewintermeyer/2024/07/25/ethereum-on-the-brink-of-market-transformation-as-etfs-get-green-light/'>big businesses are investing in and using it</a>. Ethereum is also well protected against any sort of attack by a foreign nation. Realistically, shutting down Ethereum would require unprecedented global coordination, akin to NATO-level efforts. This is due to its <code>decentralized</code> network structure.</details><details><summary>❓ Is Ethereum used for criminal activity?</summary><a href='https://www.chainalysis.com/blog/2023-crypto-crime-report-introduction/'>Research performed by Chainalysis</a> shows that around 0.24% of cryptocurrency transactions were used for criminal activity in 2022. In comparison, 33% of US dollar transactions are suspected to be used for criminal activity. Ethereum’s high transparency also makes it easy for investigators to track and prosecute criminals acting <code>onchain</code>.</details><details><summary>❓ Is Ethereum bad for the environment?</summary>As Ethereum’s daily usage grew, the community recognized its growing environmental impact and took steps to address it. This led to a network upgrade called 'The Merge', <a href='https://www.newscientist.com/article/2369304-cryptocurrency-ethereum-has-slashed-its-energy-use-by-99-99-per-cent/'>reducing Ethereum's energy consumption by 99.9%</a>. This achievement showcases Ethereum's adaptability to the needs of its users!</details><details><summary>❓ How can I invest in Ethereum?</summary>To invest in Ethereum, you’ll have to own <code>ether</code> — the network’s native cryptocurrency. As the lifeblood of the Ethereum network, ether is used to own a financial share in the network’s success, make payments, and pay transaction fees. It can even be <code>staked</code> to run a network <code>validator node</code>, securing Ethereum in exchange for further ether rewards.</details></div>"
+        "content": "<div class=\"bloc1\"><details><summary>❓ How was Ethereum created?</summary>Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through <code>decentralized</code> governance. This distribution of power strengthens the network’s founding vision of an open internet.</details><details><summary>❓ Is Ethereum safe?</summary>While your digital property on Ethereum can’t directly be stolen, you can be tricked into sending it to scammers, or make simple mistakes that cost you money. Take our ‘Web3 Security’ lesson to learn how to protect yourself on the internet frontier!</details><details><summary>❓ Is Ethereum legal?</summary>Yes. Today, Ethereum's legality and adoption are so strong that even <a href='https://www.forbes.com/sites/lawrencewintermeyer/2024/07/25/ethereum-on-the-brink-of-market-transformation-as-etfs-get-green-light/'>big businesses are investing in and using it</a>. Ethereum is also well protected against any sort of attack by a foreign nation. Realistically, shutting down Ethereum would require unprecedented global coordination, akin to NATO-level efforts. This is due to its <code>decentralized</code> network structure.</details><details><summary>❓ Is Ethereum used for criminal activity?</summary><a href='https://www.chainalysis.com/blog/2023-crypto-crime-report-introduction/'>Research performed by Chainalysis</a> shows that around 0.24% of cryptocurrency transactions were used for criminal activity in 2022. This is far below the <a href='https://www.forbes.com/sites/haileylennon/2021/01/19/the-false-narrative-of-bitcoins-role-in-illicit-activity/'>estimated 2-5% of global GDP</a> suspected to be involved in criminal activity. Ethereum’s high transparency also makes it easy for investigators to track and prosecute criminals acting <code>onchain</code>.</details><details><summary>❓ Is Ethereum bad for the environment?</summary>As Ethereum’s daily usage grew, the community recognized its growing environmental impact and took steps to address it. This led to a network upgrade called 'The Merge', <a href='https://www.newscientist.com/article/2369304-cryptocurrency-ethereum-has-slashed-its-energy-use-by-99-99-per-cent/'>reducing Ethereum's energy consumption by 99.9%</a>. This achievement showcases Ethereum's adaptability to the needs of its users!</details><details><summary>❓ How can I invest in Ethereum?</summary>To invest in Ethereum, you’ll have to own <code>ether</code> — the network’s native cryptocurrency. As the lifeblood of the Ethereum network, ether is used to own a financial share in the network’s success, make payments, and pay transaction fees. It can even be <code>staked</code> to run a network <code>validator node</code>, securing Ethereum in exchange for further ether rewards.</details></div>"
       },
       {
         "type": "POLL",
