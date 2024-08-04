@@ -444,15 +444,17 @@ const LESSONS: LessonType[] = [
         notionId: 'e06f37809a984334a46b55126b01e060',
         title: '✅ Knowledge Check',
         quiz: {
-          question: 'True or False: On Ethereum, you connect a single account to various online services.',
-          rightAnswerNumber: 1,
+          question: 'On Ethereum, services get better and better because…',
+          rightAnswerNumber: 3,
           answers: [
-            'True',
-            'False'
+            'Business practices are more transparent.',
+            'You can easily change service providers.',
+            'Both of the above.'
           ],
           feedback: [
-            'Correct!',
-            'Try again.'
+            'Try again.',
+            'Try again.',
+            'Correct!'
           ],
           id: 'ethereum-basics-3'
         }

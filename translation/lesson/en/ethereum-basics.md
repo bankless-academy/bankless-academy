@@ -188,15 +188,19 @@ Plugging your wallet into a dApp and swapping cryptocurrencies is that easy. Now
 
 # Knowledge Check 3
 
-True or False: On Ethereum, you connect a single account to various online services.
+On Ethereum, services get better and better because…
 
-- [ ] True
-
-> Correct!
-
-- [ ] False
+- [ ] Business practices are more transparent.
 
 > Try again.
+
+- [ ] You can easily change service providers.
+
+> Try again.
+
+- [ ] Both of the above.
+
+> Correct!
 
 # A Global Banking System
 
