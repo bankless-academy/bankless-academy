@@ -522,7 +522,7 @@ const Lesson = ({
     if (isAnimationSlide && animationStepLS + 1 < animationSteps) {
       setAnimationStepLS(animationStepLS + 1)
       if (isSmallScreen) scrollDown()
-    } else goToNextSlide()
+    } else if (!(slide.quiz && !answerIsCorrect)) goToNextSlide()
   }
 
   const goToPrevSlide = () => {
@@ -652,6 +652,12 @@ const Lesson = ({
     }
   }
 
+  const answerIsCorrect =
+    (slide?.quiz &&
+      parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
+        slide.quiz.rightAnswerNumber) ||
+    (slide.type === 'POLL' && quizSlide?.length)
+
   // shortcuts
   // TODO: add modal with all the shortcuts
   useHotkeys('?,shift+/', () =>
@@ -673,6 +679,7 @@ const Lesson = ({
     animationStepLS,
     animationSlideId,
     slide,
+    answerIsCorrect,
     isLastSlide,
     currentSlide,
     lesson,
@@ -846,12 +853,6 @@ const Lesson = ({
       localStorage.getItem(`quiz-${slide.quiz.id}`)
     )
   }
-
-  const answerIsCorrect =
-    (slide?.quiz &&
-      parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
-        slide.quiz.rightAnswerNumber) ||
-    (slide.type === 'POLL' && quizSlide?.length)
 
   return (
     <Slide
