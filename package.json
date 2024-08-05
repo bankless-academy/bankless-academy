@@ -104,7 +104,7 @@
     "stringify-object": "^3.3.0",
     "tls": "^0.0.1",
     "twitter-api-v2": "^1.15.2",
-    "usehooks-ts": "^2.7.1",
+    "usehooks-ts": "^3.1.0",
     "viem": "^2.17.0",
     "wagmi": "^2.10.9",
     "zod": "^3.22.4"
