@@ -8,6 +8,7 @@ import styled from '@emotion/styled'
 import { ANIMATIONS, ANIMATION_IDS } from 'constants/animations'
 import { useHotkeys } from 'react-hotkeys-hook'
 import { useState } from 'react'
+import { scrollDown } from 'utils/index'
 
 const StyledBox = styled(Box)`
   #lottie svg {
@@ -167,6 +168,7 @@ const Animation = ({
       setIsDisabled(true)
       if (animationStepLS > 0) {
         setAnimationStepLS(animationStepLS - 1)
+        scrollDown()
       }
       setTimeout(() => {
         setIsDisabled(false)
@@ -181,6 +183,7 @@ const Animation = ({
       setIsDisabled(true)
       if (animationStepLS + 1 < animationLength) {
         setAnimationStepLS(animationStepLS + 1)
+        scrollDown()
       }
       setTimeout(() => {
         setIsDisabled(false)
