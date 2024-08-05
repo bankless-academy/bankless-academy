@@ -71,7 +71,8 @@ export default async function handler(
 
     let questStatus = ''
 
-    if (!questCompleted?.id) {
+    // Exception: No quest page for Ethereum Basics (badgeId !== 14)
+    if (!questCompleted?.id && badgeId !== 14) {
       questStatus = 'quest not completed'
       console.log(questStatus)
       return res.status(403).json({ status: questStatus })
@@ -313,10 +314,12 @@ export default async function handler(
           console.log('no referrer')
         }
 
-        const updated = await db(TABLES.completions)
+        if (questCompleted?.id) {
+          const updated = await db(TABLES.completions)
           .where(TABLE.completions.id, questCompleted.id)
           .update({ transaction_at: db.raw("NOW()"), transaction_hash: mint.hash })
-        console.log(`updated `, updated)
+          console.log(`updated `, updated)
+        }
         trackBE(address, 'mint_badge', {
           lesson: lessonName,
           badgeId,

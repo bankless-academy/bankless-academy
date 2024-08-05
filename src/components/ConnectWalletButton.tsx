@@ -156,9 +156,11 @@ const ConnectWalletButton = ({
         avatar = newAvatar
       }
     }
-    if (nameCache[address]?.name) setName(nameCache[address].name)
+    const addressLower = address?.toLowerCase()
+    if (nameCache[addressLower]?.name) setName(nameCache[addressLower].name)
     else setName(name)
-    if (nameCache[address]?.avatar) setAvatar(nameCache[address].avatar)
+    if (nameCache[addressLower]?.avatar)
+      setAvatar(nameCache[addressLower].avatar)
     else setAvatar(avatar)
 
     const ensName =
@@ -202,7 +204,7 @@ const ConnectWalletButton = ({
       }
     }
     const newNameCache = JSON.parse(JSON.stringify(nameCache))
-    newNameCache[address] = { name, avatar }
+    newNameCache[addressLower] = { name, avatar }
     setNameCache(newNameCache)
   }
 

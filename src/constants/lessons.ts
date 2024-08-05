@@ -16,7 +16,7 @@ const LESSONS: LessonType[] = [
     badgeId: 12,
     datadiskVectorMint: 124,
     collectibleId: 'D002',
-    duration: null,
+    duration: 15,
     learnings: '',
     description: 'What is Bitcoin? Explore the first successful cryptocurrency and rethink money.',
     name: 'Bitcoin Basics',
@@ -290,6 +290,299 @@ const LESSONS: LessonType[] = [
     ]
   },
   {
+    badgeImageLink: '/images/ethereum-basics/badge-3baf577f.png',
+    lessonImageLink: '/images/ethereum-basics/lesson-69c1f3d5.png',
+    socialImageLink: '/images/ethereum-basics/social-1b9cb771.jpg',
+    learningActions: '',
+    marketingDescription: 'What is Ethereum? Unlock the “new internet” and your digital freedom.',
+    badgeId: 14,
+    duration: 15,
+    learnings: '',
+    description: 'What is Ethereum? Unlock the “new internet” and your digital freedom.',
+    name: 'Ethereum Basics',
+    languages: [],
+    level: 'Essentials',
+    lessonWriters: 'Tetranome',
+    publicationStatus: 'hidden',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    notionId: '2a957f2be160403ebdd7c89a4f0fa01d',
+    englishName: 'Ethereum Basics',
+    slug: 'ethereum-basics',
+    imageLinks: [
+      '/images/ethereum-basics/ethereum-basics-b2e09ce5.png',
+      '/images/ethereum-basics/a-global-town-square-fcb47024.svg',
+      '/images/ethereum-basics/centralized-services-adf5be05.svg',
+      '/images/ethereum-basics/one-sided-trades-8d68270f.svg',
+      '/images/ethereum-basics/an-open-internet-31819e5b.svg',
+      '/images/ethereum-basics/peer-to-peer-trades-f043c3c0.svg',
+      '/images/ethereum-basics/ethereum-the-open-internet-ab794154.svg',
+      '/images/ethereum-basics/a-global-banking-system-5a241dfc.svg',
+      '/images/ethereum-basics/how-it-works-08c71cad.svg',
+      '/images/ethereum-basics/joining-the-movement-44086b0b.png'
+    ],
+    keywords: [
+      'apps',
+      'app store',
+      'cryptocurrency',
+      'centralized services',
+      'intermediaries',
+      'value-extractive',
+      'peer',
+      'intermediary',
+      'peer-to-peer',
+      'ethereum blockchain',
+      'crypto wallet',
+      'dapps',
+      'decentralized',
+      'decentralized services',
+      'cryptocurrencies',
+      'eth',
+      'onchain',
+      'validator nodes',
+      'ether',
+      'staked',
+      'validator node',
+      'value-extraction',
+      'value-creation',
+      'cryptocurrency wallet'
+    ],
+    slides: [
+      {
+        type: 'LEARN',
+        notionId: '020b00dc30e4460583a7fe08be2bbd15',
+        title: 'Ethereum Basics',
+        content: '<div class="bloc1"><p>Welcome, Explorer, to one of the most important lessons at Bankless Academy.</p><p>Today we’re looking at Ethereum: the next era of the internet. It’s a revolutionary platform powering a world of new internet <code>apps</code> and digital currencies.</p><p>A simple way to think of Ethereum is like the Google or Apple <code>app store</code>, but with some key differences:</p><ul><li>💸 It uses a new type of programmable money called <code>cryptocurrency</code>.</li><li>📡 It’s a layer added directly to your internet browser, unlocking new applications directly on websites.</li><li>⚖️ The rules are agreed on by users and app builders. There’s no central corporation in charge.</li></ul><p>To understand why millions of people are using Ethereum across the world, we need to look at its core mission…</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/ethereum-basics-b2e09ce5.png\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '4fc7e20ce1964eb59bcc420eabf565be',
+        title: 'A Global Town Square',
+        content: '<div class="bloc1"><p>Over the last forty years, the internet has become the town square of the world.</p><p>This online world allows total strangers to meet to exchange information, goods and services, or to build relationships, businesses and even social movements together. It’s the greatest intersection of social connection, expression and innovation that humanity has ever had.</p><p><strong>But it has one big problem…</strong></p></div><div class="bloc2"><img src=\'/images/ethereum-basics/a-global-town-square-fcb47024.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '9dc478de7dd64901a3c0b38cf67f500b',
+        title: 'Centralized Services',
+        content: '<div class="bloc1"><p><strong>The internet relies on a small group of corporations that don’t always have our best interests at heart.</strong></p><p>These <code>centralized services</code> have slowly grown an unprecedented control over the internet, because they act as <code>intermediaries</code> between most internet interactions.</p><p>Think your bank and Visa/Mastercard managing your purchases, Meta managing your social interactions, and Apple/Google managing your use of apps. As intermediaries, these businesses also take part in the trade, with their own rules, fees and intentions.</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/centralized-services-adf5be05.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'e4260ebbeda44a4596fb1d1d73e3375b',
+        title: 'One-sided Trades',
+        content: '<div class="bloc1"><p>We call them <code>centralized services</code> because all the power is in one place. It’s often like being stuck under the rule of a king who knows exactly how to get what he wants from you. You might be surprised at the reality of your trades…</p><p>💸 Banks charge fees, then invest your savings for their own profit.</p><p>💳 Payment networks, like Visa & Mastercard, sell your purchase data to advertisers.</p><p>📞 Social platforms, like Instagram, can view your private conversations.</p><p>🪓 Content platforms, like YouTube, can freely delete creators’ entire careers — with no fair trial.</p><p>These shady rules and fees are often hidden away in the ‘Terms & Conditions’. Take a closer look at your favourite service agreements here: <a href=\'https://tosdr.org/\'>https://tosdr.org/</a> 👀</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/one-sided-trades-8d68270f.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'f01c3458feb644e1a4850a233dd9e4ab',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'True or False: Centralized services have unnecessary control over your online activity.',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          feedback: [
+            'Correct!',
+            'Try again.'
+          ],
+          id: 'ethereum-basics-1'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '4f1d06ddc7e34a839ce93eb065df9da9',
+        title: 'An Open Internet',
+        content: '<div class="bloc1"><p>😤 <strong>Had enough of platforms that don’t respect your needs?</strong></p><hr><p>This is the <code>value-extractive</code> internet we’ve become used to.</p><p>Called “walled gardens” for how restrictive these services are and how difficult they make it to leave, finding better alternatives can be time consuming and expensive. It often feels easier to just put up with the high fees, lack of transparency, and one-sided trades.</p><p>But doesn’t it feel like this problem is just getting worse over time?</p><p>We need a fairer, more reliable internet, beyond intermediaries and their walled gardens. We need an online space where power is held by the user — the way the internet was initially built to be.</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/an-open-internet-31819e5b.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '1016c615bacc4cc6aa8b3e13746db366',
+        title: 'Peer-to-Peer Trades',
+        content: '<div class="bloc1"><p>The solution starts with changing how the internet is connected.</p><p>In traditional internet services, information or money from one <code>peer</code> goes through an <code>intermediary</code> checkpoint before arriving at its destination. Theoretically, these intermediaries can do whatever they want before the trade is complete.</p><p><strong>Peer → </strong><strong>Intermediary</strong><strong> → Peer</strong></p><p>But there’s a second model of computer interaction, called <code>peer-to-peer</code> networking. It replaces intermediary services with automated, transparent processes, using computer code.</p><p><strong>Peer → Automation → Peer</strong></p><p>It’s like replacing your intermediary with a high-tech vending machine. Code, not kings. Services become more predictable, fees go down, and users regain control over their interactions.</p><p>As we’ll see, a peer-to-peer internet changes everything.</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/peer-to-peer-trades-f043c3c0.svg\'></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '7d1e5e16e9c04f44a60d705eb6ad7701',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'How can automation improve your online experience?',
+          rightAnswerNumber: 2,
+          answers: [
+            'By increasing the power of intermediaries.',
+            'By making online services more predictable.'
+          ],
+          feedback: [
+            'Try again.',
+            'Correct!'
+          ],
+          id: 'ethereum-basics-2'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '8c42e105a4224552bd29aa64c2842047',
+        title: 'Ethereum: The Open Internet',
+        content: '<div class="bloc1"><p>⚖️ <strong>Wouldn’t the internet be a better place if the same rules applied to everyone?</strong></p><hr><p>Think of Ethereum like an internet shopping mall, where shops, security, accounting and rent are fully automated.</p><p>“High-tech vending machines” have replaced traditional services. With transparent programming, users can review trade terms, or audit the machine’s business practices.</p><p>Transactions in the mall are noted on a public record called the <code>Ethereum blockchain</code>. The blockchain tracks and stores digital property in the mall, removing the need for another classic intermediary — the bank!</p><p>Even the \'landlord\' role is automated. Any changes to mall processes are agreed on by users and builders, and instead of rent, a small tax on each transaction keeps things running.</p><p>On Ethereum, nobody is above the rules.</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/ethereum-the-open-internet-ab794154.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: '1b86dffae9cc4577929e0107a0a2f30b',
+        title: 'The Decentralized Economy',
+        content: '<div class="bloc1"><p>To log into Ethereum you’ll use your computer or mobile device’s web browser. You’ll only need one account for the entirety of this new internet — a single login called a <code>crypto wallet</code>. This setup makes it easier to change services and escape “walled gardens”.</p><p>With the Ethereum app layer enabled, new websites with Ethereum functionality immediately grant you access to limitless digital goods and services. On Ethereum, the “high-tech vending machine” services we mentioned are called <code>dApps</code>. Much like regular apps for your device, there are dApps for:</p><ul><li>🤝 sending or trading currencies, stocks and other digital goods, but with <strong>low fees and 24/7 service</strong>.</li><li>📻 connection with your favourite creators, but you can <strong>unlock unique perks and opportunities</strong> while ensuring your money goes directly to the artist.</li><li>👪 social media, but if you dislike the platform you can <strong>easily transfer your social circle</strong> to a new one.</li><li>🗳️ donating to your favourite projects, but even a $1 donation receives a <strong>large matching bonus</strong><strong>, meaning greater impact</strong>.</li><li>⚙️ renting out your computer’s processing power for <strong>passive income</strong>.</li></ul><p>By removing intermediaries, banks, landlords, and individual accounts for each service, Ethereum has made its economy <code>decentralized</code> (this is the “d” in “dApp”). <code>Decentralized services</code> get better and better as they compete on quality — not unclear business practices and control.</p></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'b148c5eff8a24e6fbe27c9423305c698',
+        title: 'Using a dApp',
+        content: '<div class="bloc1"><p>Using <code>dApps</code> is similar to using regular apps and internet services, but with a few differences.</p><p>Let’s simulate using a dApp for swapping <code>cryptocurrencies</code> online.</p><ol><li>Connect your <code>crypto wallet</code> to the dApp’s website.</li><li>Confirm that you want to allow this dApp to interact with your Ethereum wallet.</li><li>Swap 50 DAI for 0.015 ETH, Ethereum’s native currency.</li><li>Submit the swap.</li><li>In your wallet, check the terms of your trade, and then sign.</li><li>Great! Your swap is being processed on Ethereum and will finalize shortly.</li></ol><p>Plugging your wallet into a dApp and swapping cryptocurrencies is that easy. Now you can send it to friends, use it to make purchases, or try other financial service dApps.</p></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/swap\'></iframe></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: 'e06f37809a984334a46b55126b01e060',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'On Ethereum, services get better and better because…',
+          rightAnswerNumber: 3,
+          answers: [
+            'Business practices are more transparent.',
+            'You can easily change service providers.',
+            'Both of the above.'
+          ],
+          feedback: [
+            'Try again.',
+            'Try again.',
+            'Correct!'
+          ],
+          id: 'ethereum-basics-3'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '8b317a82a13047f0972d6d6ed44e347c',
+        title: 'A Global Banking System',
+        content: '<div class="bloc1"><p>⌛ <strong>Do you want a faster, cheaper way to transfer money internationally?</strong></p><hr><p>With the power of Ethereum, you can send and store <code>cryptocurrencies</code> without intermediaries too. You’ll discover better services at lower cost through its automated banking system.</p><p>⚡ With the power of cryptocurrency, money can be sent anywhere for as little as $0.01, and settle in seconds. Compare this to an international wire transfer, where banks charge 3-4% of your transfer in fees, and take 1-5 working days!</p><p>🔐 You’re the only person with access to your Ethereum account. There’s no intermediary loaning out your savings or controlling what you do with your money. Funds are stored in your personal <code>crypto wallet</code> — the same one you used to connect to a dApp earlier.</p><p>On Ethereum, you’re your own bank, and you feel like it!</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/a-global-banking-system-5a241dfc.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'befa989e445846e0bd0ac488740154fb',
+        title: 'Sending a Payment',
+        content: '<div class="bloc1"><p>Let’s use another simulation to practice sending cryptocurrency. Try sending your 0.015 <code>ETH</code> to the Bankless Academy <code>crypto wallet</code>.</p><ol><li>Unlock your wallet.</li><li>Inside of your wallet, select send.</li><li>Adjust the amount to 0.015 ETH by clicking “Maximum”.</li><li>Confirm the token and amount.</li><li>In contacts, select banklessacademy.eth.</li><li>That’s it! Your international transfer was done in seconds, and no intermediary could stop you.</li></ol><p>With Ethereum wallets, you can own and send more than just cryptocurrency. Transferrable assets include any digital property that can be stored <code>onchain</code>. Digital art, club memberships, show tickets, stocks, website address ownership, and even real-world property rights have made their way onto Ethereum.</p></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/send\'></iframe></div>'
+      },
+      {
+        type: 'QUIZ',
+        notionId: '7e8729f592ad4836a1d7c1fd5b6f560d',
+        title: '✅ Knowledge Check',
+        quiz: {
+          question: 'True or False: On Ethereum, you can be your own bank.',
+          rightAnswerNumber: 1,
+          answers: [
+            'True',
+            'False'
+          ],
+          feedback: [
+            'Correct. On Ethereum you can go “Bankless”! Lower fees, more control over your money.',
+            'Try again.'
+          ],
+          id: 'ethereum-basics-4'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '260be70be7dd44c7ae2edbe322a33aae',
+        title: 'How it Works',
+        content: '<div class="bloc1"><p>Let’s bring everything together by taking a quick look at how Ethereum makes it all possible.</p><p>As a <code>peer-to-peer</code> network, Ethereum is made up of tens of thousands of computers spread across the world. These devices, known as <code>validator nodes</code>, have been volunteered by their owners to help run the network. Using automated software, a validator will process transactions and verify the results of others to prevent fraud. In doing so, the validator generates <code>ether</code> rewards for its owner.</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/how-it-works-08c71cad.svg\'></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'c112d4f50c8c488f88950a3e732f6148',
+        title: 'How it Works (Pt. II)',
+        content: '<div class="bloc1"><p>The transaction you submitted earlier was processed by these Ethereum network <code>validator nodes</code>.</p><ol><li>Your ETH transaction was submitted to the Ethereum Network.</li><li>A validator checked your transaction for errors. Other validators double-checked their results.</li><li>Your transaction was added to the network’s public ledger, the <code>Ethereum blockchain</code>.</li><li>We received your transferred ETH in our account.</li></ol><p>You might be wondering why these validators don’t just run off with your funds. The short answer is because Ethereum makes this virtually impossible. Your upcoming lesson, “Blockchain Basics”, will help you understand more.</p></div><div class="bloc2"><iframe allowfullscreen class=\'animation\' src=\'https://app.banklessacademy.com/animation/ethereum\'></iframe></div>'
+      },
+      {
+        type: 'LEARN',
+        notionId: 'e7766b4ed5d94c05962984e11ad62bc1',
+        title: 'Common Questions',
+        content: '<div class="bloc1"><details><summary>❓ How was Ethereum created?</summary>Ethereum launched in 2015. Initially managed by the Ethereum Foundation, it is now steered by a global community through <code>decentralized</code> governance. This distribution of power strengthens the network’s founding vision of an open internet.</details><details><summary>❓ Is Ethereum safe?</summary>While your digital property on Ethereum can’t directly be stolen, you can be tricked into sending it to scammers, or make simple mistakes that cost you money. Take our ‘Web3 Security’ lesson to learn how to protect yourself on the internet frontier!</details><details><summary>❓ Is Ethereum legal?</summary>Yes. Today, Ethereum\'s legality and adoption are so strong that even <a href=\'https://www.forbes.com/sites/lawrencewintermeyer/2024/07/25/ethereum-on-the-brink-of-market-transformation-as-etfs-get-green-light/\'>big businesses are investing in and using it</a>. Ethereum is also well protected against any sort of attack by a foreign nation. Realistically, shutting down Ethereum would require unprecedented global coordination, akin to NATO-level efforts. This is due to its <code>decentralized</code> network structure.</details><details><summary>❓ Is Ethereum used for criminal activity?</summary><a href=\'https://www.chainalysis.com/blog/2023-crypto-crime-report-introduction/\'>Research performed by Chainalysis</a> shows that around 0.24% of cryptocurrency transactions were used for criminal activity in 2022. This is far below the <a href=\'https://www.forbes.com/sites/haileylennon/2021/01/19/the-false-narrative-of-bitcoins-role-in-illicit-activity/\'>estimated 2-5% of global GDP</a> suspected to be involved in criminal activity. Ethereum’s high transparency also makes it easy for investigators to track and prosecute criminals acting <code>onchain</code>.</details><details><summary>❓ Is Ethereum bad for the environment?</summary>As Ethereum’s daily usage grew, the community recognized its growing environmental impact and took steps to address it. This led to a network upgrade called \'The Merge\', <a href=\'https://www.newscientist.com/article/2369304-cryptocurrency-ethereum-has-slashed-its-energy-use-by-99-99-per-cent/\'>reducing Ethereum\'s energy consumption by 99.9%</a>. This achievement showcases Ethereum\'s adaptability to the needs of its users!</details><details><summary>❓ How can I invest in Ethereum?</summary>To invest in Ethereum, you’ll have to own <code>ether</code> — the network’s native cryptocurrency. As the lifeblood of the Ethereum network, ether is used to own a financial share in the network’s success, make payments, and pay transaction fees. It can even be <code>staked</code> to run a network <code>validator node</code>, securing Ethereum in exchange for further ether rewards.</details></div>'
+      },
+      {
+        type: 'POLL',
+        notionId: '9fffc9eec113419cab34b9919fa9a5cc',
+        title: '📊 Poll',
+        quiz: {
+          question: 'How do you imagine yourself using Ethereum? (Check all that apply)',
+          answers: [
+            'Exploring new digital goods and services.',
+            'Sending money internationally.',
+            'Investing in Ethereum projects.',
+            'Connecting with the artists I love.',
+            'Contributing to powerful community projects.',
+            'Building innovative dApps.'
+          ],
+          id: 'ethereum-basics-5'
+        }
+      },
+      {
+        type: 'LEARN',
+        notionId: '04662fd3b840472ab6c20aec0dab7a12',
+        title: 'Joining the Movement',
+        content: '<div class="bloc1"><p>💪 <strong>It’s time to take control of your digital life.</strong></p><hr><p>Welcome, Explorer, to the new internet.</p><p>Ethereum is eroding the walls that intermediaries have put up around their corners of the internet, transforming an economy of <code>value-extraction</code> into one of <code>value-creation</code>. It’s time for powerful yet fair online services, true ownership over your digital assets, bold new communities, transformative work opportunities, and more.</p><p>Bankless Academy is here to empower you as we move into this digital future. Ready to make your mark?</p><p>To start your journey you’ll need to create your <code>cryptocurrency wallet</code>. This is your passport to the world of Ethereum. We’ll set up yours in your next lesson, ‘Wallet Basics’.</p><p>Let’s get started.</p></div><div class="bloc2"><img src=\'/images/ethereum-basics/joining-the-movement-44086b0b.png\'></div>'
+      }
+    ]
+  },
+  {
+    badgeImageLink: null,
+    lessonImageLink: '/images/creating-a-crypto-wallet/lesson-6b7566f5.png',
+    socialImageLink: '/images/creating-a-crypto-wallet/social-45c701eb.png',
+    learningActions: '',
+    marketingDescription: 'Set up your first crypto wallet with our step-by-step walkthrough.',
+    badgeId: null,
+    collectibleId: 'H008',
+    duration: 5,
+    learnings: '',
+    description: 'Set up your first crypto wallet with our step-by-step walkthrough.',
+    name: 'Creating a Crypto Wallet',
+    languages: [
+      'br',
+      'cn',
+      'es',
+      'fr',
+      'it',
+      'tr',
+      'ua'
+    ],
+    level: 'Essentials',
+    lessonWriters: 'Tetranome',
+    publicationStatus: 'publish',
+    publicationDate: '2024-03-20',
+    featuredOrderOnHomepage: null,
+    isCommentsEnabled: false,
+    endOfLessonRedirect: null,
+    mirrorLink: 'https://mirror.xyz/banklessacademy.eth/Mznhl0ZMjw-5KdjB2o8GJ9ylRPLN-Loeihfevk7J6gU',
+    mirrorNFTAddress: '0x8C21eABd632B41f840690C56D9dda70C9FD6E55e',
+    areMirrorNFTAllCollected: false,
+    sponsorName: 'Zerion',
+    sponsorLogo: '/images/creating-a-crypto-wallet/sponsor-f64ba262.png',
+    isArticle: true,
+    notionId: '5f63090deb2b4800b699442a04e08314',
+    englishName: 'Creating a Crypto Wallet',
+    slug: 'creating-a-crypto-wallet',
+    articleContent: 'This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**\n\n\n---\n\n## Key Takeaways\n\n> * You’ll need a `crypto wallet` to access the world of blockchains!\n>\n> * A wallet is like a `blockchain` account.\n>\n> * Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.\n>\n> * These wallets work on both computers and phones.\n>\n> * Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!\n\n## What is a Crypto Wallet?\n\nCrypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.\n\nIt gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.\n\nWallets come with two core pieces of account information:\n\n* A `public key`, that you can think of as your *username*. You’ll share it publicly to receive cryptocurrency.\n\n* A `private key`, acting as your *password*. This should always be kept private, and cannot be changed.\n\nProtecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).\n\nToday we will set up our first wallet, using our recommended crypto wallet: Zerion!\n\n## Walkthrough\n\nSet up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.\n\n### Computer Wallet\n\n[youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)\n\n### Phone Wallet\n\n[youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)\n\n\n---\n\n**It’s time to join the blockchain multiverse!**\n\nDon’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.\n\nSafe travels, Explorer!\n\n\n---\n\n## FAQ\n\n### What is a cryptocurrency?\n\nCryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.\n\nLearn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!\n\n### What are public and private keys?\n\nPublic/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.\n\nYou can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.\n\nLearn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.\n\n### What happens if I lose my recovery phrase?\n\nYour recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.\n\n### Can Ethereum wallets hold Bitcoin?\n\nEthereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).\n\n\n---\n\n**Author**\n\n[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.\n\n**Patron**\n\nThis walkthrough is powered by Zerion.',
+    imageLinks: [],
+    keywords: [
+      'crypto wallet',
+      'blockchain',
+      'cryptocurrency',
+      'wallet app',
+      'public key',
+      'private key',
+      'cryptography',
+      'encryption'
+    ]
+  },
+  {
     badgeImageLink: '/images/wallet-basics/badge-d89b2df3.png',
     lessonImageLink: '/images/wallet-basics/lesson-5aa84b59.png',
     socialImageLink: '/images/wallet-basics/social-c3ee6a4c.jpg',
@@ -299,7 +592,7 @@ const LESSONS: LessonType[] = [
     duration: 15,
     learnings: '',
     difficulty: 'Easy',
-    description: 'What is a crypto wallet? Learn more and create your first wallet today!',
+    description: 'What is a crypto wallet? Learn more and create your “Ethereum account” today!',
     name: 'Wallet Basics',
     languages: [
       'br',
@@ -606,56 +899,6 @@ const LESSONS: LessonType[] = [
         title: 'Wallet Basics Quest',
         component: 'WalletBasics'
       }
-    ]
-  },
-  {
-    badgeImageLink: null,
-    lessonImageLink: '/images/creating-a-crypto-wallet/lesson-6b7566f5.png',
-    socialImageLink: '/images/creating-a-crypto-wallet/social-45c701eb.png',
-    learningActions: '',
-    marketingDescription: 'Set up your first crypto wallet with our step-by-step walkthrough.',
-    badgeId: null,
-    collectibleId: 'H008',
-    duration: null,
-    learnings: '',
-    description: 'Set up your first crypto wallet with our step-by-step walkthrough.',
-    name: 'Creating a Crypto Wallet',
-    languages: [
-      'br',
-      'cn',
-      'es',
-      'fr',
-      'it',
-      'tr',
-      'ua'
-    ],
-    level: 'Essentials',
-    lessonWriters: 'Tetranome',
-    publicationStatus: 'publish',
-    publicationDate: '2024-03-20',
-    featuredOrderOnHomepage: null,
-    isCommentsEnabled: false,
-    endOfLessonRedirect: null,
-    mirrorLink: 'https://mirror.xyz/banklessacademy.eth/Mznhl0ZMjw-5KdjB2o8GJ9ylRPLN-Loeihfevk7J6gU',
-    mirrorNFTAddress: '0x8C21eABd632B41f840690C56D9dda70C9FD6E55e',
-    areMirrorNFTAllCollected: false,
-    sponsorName: 'Zerion',
-    sponsorLogo: '/images/creating-a-crypto-wallet/sponsor-f64ba262.png',
-    isArticle: true,
-    notionId: '5f63090deb2b4800b699442a04e08314',
-    englishName: 'Creating a Crypto Wallet',
-    slug: 'creating-a-crypto-wallet',
-    articleContent: 'This is a summary of our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson, along with a walkthrough for the quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics) to **level up your knowledge and claim your badge!**\n\n\n---\n\n## Key Takeaways\n\n> * You’ll need a `crypto wallet` to access the world of blockchains!\n>\n> * A wallet is like a `blockchain` account.\n>\n> * Wallets are used to store `cryptocurrency`, log into blockchain apps, and more.\n>\n> * These wallets work on both computers and phones.\n>\n> * Creating a wallet is easy and takes around 5 minutes. We’ll show you how, in our video below!\n\n## What is a Crypto Wallet?\n\nCrypto wallets are an essential piece of web3 equipment, allowing you to use `cryptocurrency` on your computer or phone. Wallets are accessed using software called a `wallet app` — a web browser extension for your computer, or an app on your phone.\n\nIt gets better. Wallets are more than accounts for holding cryptocurrency — they’re our connection to the blockchain. We can use them to exchange cryptocurrency with others, log into blockchain applications, **and even collect digital items like Bankless Academy badges.** The more we explore, the more our wallets become — with some viewing them as the beginning of digital identity.\n\nWallets come with two core pieces of account information:\n\n* A `public key`, that you can think of as your *username*. You’ll share it publicly to receive cryptocurrency.\n\n* A `private key`, acting as your *password*. This should always be kept private, and cannot be changed.\n\nProtecting your private key is critical because this key grants instant access to your wallet. You should never share your private key. You can learn more by taking [the full lesson](https://app.banklessacademy.com/lessons/wallet-basics).\n\nToday we will set up our first wallet, using our recommended crypto wallet: Zerion!\n\n## Walkthrough\n\nSet up your first wallet on your computer, using the walkthrough below, or keep scrolling for our phone wallet walkthrough.\n\n### Computer Wallet\n\n[youtube-embed](https://www.youtube-nocookie.com/embed/czL_qQ39AH0)\n\n### Phone Wallet\n\n[youtube-embed](https://www.youtube-nocookie.com/embed/SFbo9QsO2t4)\n\n\n---\n\n**It’s time to join the blockchain multiverse!**\n\nDon’t forget to collect this handbook entry for easy reference on your travels, and to support Bankless Academy.\n\nSafe travels, Explorer!\n\n\n---\n\n## FAQ\n\n### What is a cryptocurrency?\n\nCryptocurrencies are a form of digital money, secured by `cryptography`. These currencies can run without the need for centralized authorities and banks, reducing possibility for fraud while increasing the financial freedom of the holder.\n\nLearn more about cryptocurrency through our **[Bitcoin Basics](https://app.banklessacademy.com/lessons/bitcoin-basics)** lesson, and see how these digital currencies are revolutionizing the financial world!\n\n### What are public and private keys?\n\nPublic/private key `encryption` allows your wallet to make some information public, like the address where others can send cryptocurrency to you, while keeping access to your cryptocurrency private. One key is like your cryptocurrency’s house address, and the other unlocks the front door.\n\nYou can share your public key with anyone you trust to send you cryptocurrency, but your private key is for your eyes only — because it grants access to all assets inside the wallet. Never share it, even if your contact claims to be from Bankless Academy or Zerion.\n\nLearn more and get rewarded for creating your first wallet, in our [Wallet Basics](https://app.banklessacademy.com/lessons/wallet-basics) lesson.\n\n### What happens if I lose my recovery phrase?\n\nYour recovery phrase, also known as a “secret phrase” or “seed phrase”, is your only backup if you lose access to your wallet on your device. If you lose your recovery phrase, your wallet’s holdings will be lost forever. This is why it’s important to store it somewhere safe — from not only theft or loss, but fire or water damage too.\n\n### Can Ethereum wallets hold Bitcoin?\n\nEthereum wallets can hold Bitcoin, but in a “wrapped” form. If you want to hold original Bitcoin, you’ll have to create a wallet that runs on the Bitcoin network, like [Exodus](https://www.exodus.com/) or [Mycelium](https://wallet.mycelium.com/).\n\n\n---\n\n**Author**\n\n[Tetranome](https://twitter.com/Tetranome) is the Content & Design Lead at Bankless Academy, focusing on the learning journey, user interface & experience, and platform artwork.\n\n**Patron**\n\nThis walkthrough is powered by Zerion.',
-    imageLinks: [],
-    keywords: [
-      'crypto wallet',
-      'blockchain',
-      'cryptocurrency',
-      'wallet app',
-      'public key',
-      'private key',
-      'cryptography',
-      'encryption'
     ]
   },
   {
@@ -1729,7 +1972,7 @@ const LESSONS: LessonType[] = [
     marketingDescription: 'Customize your wallet address with ENS, start building your digital identity.',
     badgeId: null,
     collectibleId: 'H009',
-    duration: null,
+    duration: 5,
     learnings: '',
     description: 'Customize your wallet address with ENS, start building your digital identity.',
     name: 'Registering Your Web3 Username',
@@ -2448,7 +2691,7 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Become a guardian of Ethereum: Secure the network, earn Ether rewards.',
     badgeId: 11,
-    duration: null,
+    duration: 15,
     learnings: '',
     description: 'Become a guardian of Ethereum: Secure the network, earn Ether rewards.',
     name: 'Staking on Ethereum',
@@ -2733,7 +2976,7 @@ const LESSONS: LessonType[] = [
     marketingDescription: 'Generate yield on your Ether by protecting Ethereum.',
     badgeId: null,
     collectibleId: 'H007',
-    duration: null,
+    duration: 5,
     learnings: '',
     description: 'Generate yield on your Ether by protecting Ethereum.',
     name: 'Staking Ether',
@@ -2754,7 +2997,7 @@ const LESSONS: LessonType[] = [
     notionId: 'fef542e5e6a8431b95081ba714c551cc',
     englishName: 'Staking Ether',
     slug: 'staking-ether',
-    articleContent: 'This is a summary and walkthrough for our [’Staking on Ethereum’](https://app.banklessacademy.com/lessons/staking-on-ethereum) lesson and quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/staking-on-ethereum) to **level up your knowledge and claim your badge!**\n\n\n---\n\n## Key Takeaways\n\n> * Staking is essential to decentralization and transaction processing on Ethereum.\n>\n> * It’s simple: lock Ether on the network, earn rewards.\n>\n> * Running a `validator node` is the fundamental form of staking on Ethereum, requiring 32 Ether.\n>\n> * Using the rETH `token`, Explorers can get involved in staking with any amount of Ether.\n\n## What is Staking?\n\nPut simply, staking on Ethereum is an action that allows anyone to help secure the network. You lock a portion of Ether on the network, aiding network validators, and earning rewards.\n\nStaking is an essential part of Ethereum’s `consensus mechanism`: the separation of legitimate transaction and blocks from the fraudulent ones, in a `decentralized` way. This sorting is integral for maintaining a fair economy across the network.\n\nThis might sound familiar — because it has the same goal as mining does on the Bitcoin network. Yet there’s a crucial difference between mining and staking: On Ethereum, staking can be accessed by anyone. You don’t need a powerful computer to process transactions, like you would for mining on Bitcoin.\n\nSo by simply buying Ether and locking it in a network `smart contract`, you can become a staker. In doing so, you’ll help keep Ethereum running smoothly, and earn rewards in return!\n\n## Start Staking with rETH\n\nNow, the best way to get involved in securing Ethereum is to run a `validator node`. It grants the most rewards, and has the biggest impact on network decentralization. The problem is… it requires 32 ETH, some technical knowledge, and a dedicated computer with 24/7 power and internet access. That’s a tall order for most Explorers. Fortunately, innovators within the Ethereum community have created an easy entry point that anyone can use to get involved: `staking pools` and `liquid staking tokens` (LSTs).\n\nRocket Pool is a leader in this category, with an approach granting high positive network impact. By locking Ether in one of their staking pools, you’ll `mint` rETH. While minting rETH directly from the Rocket Pool smart contract has the largest impact on network decentralization, you can also buy it on a `decentralized exchange`. In holding this token, you’ll begin earning staking rewards, generating annual returns between 3% and 16%.\n\nWith rETH, staking rewards are added straight to the value of the token: If you hold 1 rETH today, you will still own 1 rETH in a year. It will just be worth more.\n\n## Prerequisites\n\n* You’ll need some regular ETH on one of the following networks: Ethereum, Optimism, Base, Arbitrum or Polygon (POS).\n\n## Walkthrough\n\n### Option #1: Minting New rETH\n\nRequires >0.01 ETH, and only works on Ethereum Mainnet.\n\n**1\. Head over to <https://stake.rocketpool.net/> and connect your wallet.**\n\n![](/images/staking-ether/image-80cf7889.png)\n\n**2\. Enter the amount you’d like to stake, hit ‘Stake’, and then in your wallet hit ‘Submit’.**\n\nYour rETH will land in your wallet once your transaction has been processed. It’s that easy.\n\n![](/images/staking-ether/image-255e1bf8.png)\n\n### Option #2: Buying rETH on a Decentralized Exchange\n\nNo minimum balance requirements, and works on all networks listed above.\n\n**1\. Jump to <https://app.uniswap.org/swap> and connect your wallet.**\n\nWe’re swapping on the Optimism `layer 2` network, because gas fees are a lot lower than on Ethereum mainnet. Learn how to bridge to Optimism, [in our “How to Fund Your Wallet on L2” article](https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2).\n\n![](/images/staking-ether/image-8d944152.png)\n\n**2\. Enter the amount you’d like to hold, hit ‘Swap’, and then in your wallet hit ‘Confirm’.**\n\nYour rETH will land in your wallet once your transaction has been processed. It’s that easy.\n\n![](/images/staking-ether/image-5d667f3c.png)\n\n\n---\n\n**It’s time to become a guardian of Ethereum!** We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘’Staking Ether”.\n\nDon’t forget to collect this entry if you want to own a copy for easy reference on your travels, and to support future content at Bankless Academy.\n\nSafe travels, Explorer!\n\n\n---\n\n## FAQ\n\n### What are the risks of staking?\n\nIt depends on the method used, but the one shared risk is that the validator nodes you’re involved with could get slashed. In most staking pools and centralized exchange staking, these kinds of losses are diluted across the entire platform (everyone shares the loss, diminishing its impact) or even insured.\n\nOther risks include:\n\n* `Solo Staking`: A bug in the validator node’s chosen `validator client` software.\n\n* `Staking Pools`: A bug in the staking pool’s smart contracts, or the validator client software.\n\n* `Centralized Exchange Staking`: Sudden bankruptcy of the exchange, and loss of any stake in it.\n\nThe potential impact of each risk is really difficult to predict, but it’s safe to say that staking Ether is more risky than simply holding it. Where there’s reward, there’s risk! Only invest what you’re willing to lose.\n\n### Does all staking benefit Ethereum?\n\nBenefit comes in the form of `decentralization` — you want as many independent `node operators` as possible.\n\n* `Solo Staking`: Maximum decentralization, as this typically means just a few nodes under one person.\n\n* `Staking Pools`: It depends on the platform. Some staking providers only allow specific people to act as validator nodes within their pools. That means many nodes under a few people — a centralizing force. Rocket Pool is one of the few providers that allow anyone to become the node operator of a staking pool. This makes their platform one of the best staking options for citizens of Ethereum.\n\n* `Centralized Exchange Staking`: Much like the centralizing forces within staking pools, many nodes under one entity is bad for Ethereum.\n\n### Do staking rewards change?\n\nYes, rewards depend on two key factors:\n\n* **Network Activity:** Generally speaking, in times of low traffic rewards are lower, and in high traffic they’re higher.\n\n* **Number of Validator Nodes:** With more participants, rewards are further divided.\n\nRewards also change based on the staking method chosen. Check out our [“Staking on Ethereum” lesson](https://beta.banklessacademy.com/lessons/staking-on-ethereum) to learn more!\n\n### How do I run a validator node?\n\nIf you want to become a `solo staker`, you’ll need the full 32 ETH, as well as your validator hardware. Check out [this great guide by CoinCashew](https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet).\n\nYou can get started with just 16 ETH by running a `staking pool` with Rocket Pool, where other participants will help you reach the 32 ETH required. Of course, you’ll still need your validator hardware. Check out [the documentation over at Rocket Pool](https://docs.rocketpool.net/guides/) to get started!\n\n\n---\n\n**Author**\n\n[Tetranome](https://twitter.com/Tetranome) is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.\n\n**Patron**\n\nThis article is funded by [Rocket Pool](https://rocketpool.net/).',
+    articleContent: 'This is a summary and walkthrough for our [’Staking on Ethereum’](https://app.banklessacademy.com/lessons/staking-on-ethereum) lesson and quest. Check out [the full lesson](https://app.banklessacademy.com/lessons/staking-on-ethereum) to **level up your knowledge and claim your badge!**\n\n\n---\n\n## Key Takeaways\n\n> * Staking is essential to decentralization and transaction processing on Ethereum.\n>\n> * It’s simple: lock Ether on the network, earn rewards.\n>\n> * Running a `validator node` is the fundamental form of staking on Ethereum, requiring 32 Ether.\n>\n> * Using the rETH `token`, Explorers can get involved in staking with any amount of Ether.\n\n## What is Staking?\n\nPut simply, staking on Ethereum is an action that allows anyone to help secure the network. You lock a portion of Ether on the network, aiding network validators, and earning rewards.\n\nStaking is an essential part of Ethereum’s `consensus mechanism`: the separation of legitimate transaction and blocks from the fraudulent ones, in a `decentralized` way. This sorting is integral for maintaining a fair economy across the network.\n\nThis might sound familiar — because it has the same goal as mining does on the Bitcoin network. Yet there’s a crucial difference between mining and staking: On Ethereum, staking can be accessed by anyone. You don’t need a powerful computer to process transactions, like you would for mining on Bitcoin.\n\nSo by simply buying Ether and locking it in a network `smart contract`, you can become a staker. In doing so, you’ll help keep Ethereum running smoothly, and earn rewards in return!\n\n## Start Staking with rETH\n\nNow, the best way to get involved in securing Ethereum is to run a `validator node`. It grants the most rewards, and has the biggest impact on network decentralization. The problem is… it requires 32 ETH, some technical knowledge, and a dedicated computer with 24/7 power and internet access. That’s a tall order for most Explorers. Fortunately, innovators within the Ethereum community have created an easy entry point that anyone can use to get involved: `staking pools` and `liquid staking tokens` (LSTs).\n\nRocket Pool is a leader in this category, with an approach granting high positive network impact. By locking Ether in one of their staking pools, you’ll `mint` rETH. While minting rETH directly from the Rocket Pool smart contract has the largest impact on network decentralization, you can also buy it on a `decentralized exchange`. In holding this token, you’ll begin earning staking rewards, generating annual returns between 3% and 16%.\n\nWith rETH, staking rewards are added straight to the value of the token: If you hold 1 rETH today, you will still own 1 rETH in a year. It will just be worth more.\n\n## Prerequisites\n\n* You’ll need some regular ETH on one of the following networks: Ethereum, Optimism, Base, Arbitrum or Polygon (POS).\n\n## Walkthrough\n\n### Option #1: Minting New rETH\n\nRequires >0.01 ETH, and only works on Ethereum Mainnet.\n\n**1\. Head over to <https://stake.rocketpool.net/> and connect your wallet.**\n\n![](/images/staking-ether/image-80cf7889.png)\n\n**2\. Enter the amount you’d like to stake, hit ‘Stake’, and then in your wallet hit ‘Submit’.**\n\nYour rETH will land in your wallet once your transaction has been processed. It’s that easy.\n\n![](/images/staking-ether/image-255e1bf8.png)\n\n### Option #2: Buying rETH on a Decentralized Exchange\n\nNo minimum balance requirements, and works on all networks listed above.\n\n**1\. Jump to <https://app.uniswap.org/swap> and connect your wallet.**\n\nWe’re swapping on the Optimism `layer 2` network, because gas fees are a lot lower than on Ethereum mainnet. Learn how to bridge to Optimism, [in our “How to Fund Your Wallet on L2” article](https://app.banklessacademy.com/lessons/funding-a-wallet-on-layer-2).\n\n![](/images/staking-ether/image-8d944152.png)\n\n**2\. Enter the amount you’d like to hold, hit ‘Swap’, and then in your wallet hit ‘Confirm’.**\n\nYour rETH will land in your wallet once your transaction has been processed. It’s that easy.\n\n![](/images/staking-ether/image-5d667f3c.png)\n\n\n---\n\n**It’s time to become a guardian of Ethereum!** We hope you’ve enjoyed this entry in the Explorer’s Handbook: ‘’Staking Ether”.\n\nDon’t forget to collect this entry if you want to own a copy for easy reference on your travels, and to support future content at Bankless Academy.\n\nSafe travels, Explorer!\n\n\n---\n\n## FAQ\n\n### What are the risks of staking?\n\nIt depends on the method used, but the one shared risk is that the validator nodes you’re involved with could get slashed. In most staking pools and centralized exchange staking, these kinds of losses are diluted across the entire platform (everyone shares the loss, diminishing its impact) or even insured.\n\nOther risks include:\n\n* `Solo Staking`: A bug in the validator node’s chosen `validator client` software.\n\n* `Staking Pools`: A bug in the staking pool’s smart contracts, or the validator client software.\n\n* `Centralized Exchange Staking`: Sudden bankruptcy of the exchange, and loss of any stake in it.\n\nThe potential impact of each risk is really difficult to predict, but it’s safe to say that staking Ether is more risky than simply holding it. Where there’s reward, there’s risk! Only invest what you’re willing to lose.\n\n### Does all staking benefit Ethereum?\n\nBenefit comes in the form of `decentralization` — you want as many independent `node operators` as possible.\n\n* `Solo Staking`: Maximum decentralization, as this typically means just a few nodes under one person.\n\n* `Staking Pools`: It depends on the platform. Some staking providers only allow specific people to act as validator nodes within their pools. That means many nodes under a few people — a centralizing force. Rocket Pool is one of the few providers that allow anyone to become the node operator of a staking pool. This makes their platform one of the best staking options for citizens of Ethereum.\n\n* `Centralized Exchange Staking`: Much like the centralizing forces within staking pools, many nodes under one entity is bad for Ethereum.\n\n### Do staking rewards change?\n\nYes, rewards depend on two key factors:\n\n* **Network Activity:** Generally speaking, in times of low traffic rewards are lower, and in high traffic they’re higher.\n\n* **Number of Validator Nodes:** With more participants, rewards are further divided.\n\nRewards also change based on the staking method chosen. Check out our [“Staking on Ethereum” lesson](https://app.banklessacademy.com/lessons/staking-on-ethereum) to learn more!\n\n### How do I run a validator node?\n\nIf you want to become a `solo staker`, you’ll need the full 32 ETH, as well as your validator hardware. Check out [this great guide by CoinCashew](https://www.coincashew.com/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet).\n\nYou can get started with just 16 ETH by running a `staking pool` with Rocket Pool, where other participants will help you reach the 32 ETH required. Of course, you’ll still need your validator hardware. Check out [the documentation over at Rocket Pool](https://docs.rocketpool.net/guides/) to get started!\n\n\n---\n\n**Author**\n\n[Tetranome](https://twitter.com/Tetranome) is the Project Champion at Bankless Academy, focusing on user experience, interface, design, and content.\n\n**Patron**\n\nThis article is funded by [Rocket Pool](https://rocketpool.net/).',
     imageLinks: [
       '/images/staking-ether/image-80cf7889.png',
       '/images/staking-ether/image-255e1bf8.png',
@@ -3458,7 +3701,7 @@ const LESSONS: LessonType[] = [
     marketingDescription: 'Grant your OP voting power to people closely following governance.',
     badgeId: null,
     collectibleId: 'H005',
-    duration: null,
+    duration: 5,
     learnings: '',
     description: 'Grant your OP voting power to people closely following governance.',
     name: 'Delegating on Optimism',
@@ -3509,14 +3752,17 @@ const LESSONS: LessonType[] = [
     learningActions: '',
     marketingDescription: 'Decoding Gitcoin 2.0',
     badgeId: 13,
-    duration: null,
+    duration: 15,
     learnings: '',
     description: 'Explore Gitcoin\'s whitepaper for insights into democratic capital allocation and Ethereum ecosystem growth.',
     name: 'Gitcoin 2.0 Essentials',
     languages: [],
+    level: 'Community Lessons',
+    community: 'Gitcoin',
     quest: 'Gitcoin20Essentials',
-    questSocialMessage: 'https://twitter.com/gitcoin/status/1763720554698469857',
-    publicationStatus: 'hidden',
+    questSocialMessage: 'I\'ve just completed the @Gitcoin 2.0 Essentials lesson on @BanklessAcademy 🎓\n\nJoin the journey and level up your #web3 knowledge! 👨‍🚀 🚀',
+    publicationStatus: 'publish',
+    publicationDate: '2024-07-25',
     featuredOrderOnHomepage: null,
     isCommentsEnabled: false,
     endOfLessonRedirect: null,
@@ -3524,10 +3770,10 @@ const LESSONS: LessonType[] = [
     englishName: 'Gitcoin 2.0 Essentials',
     slug: 'gitcoin-2.0-essentials',
     imageLinks: [
-      '/images/gitcoin-2.0-essentials/whitepaper-lesson-gitcoin-grants-growth-3e78d2ef.png',
+      '/images/gitcoin-2.0-essentials/welcome-to-gitcoin-2.0-gitcoin-grants-growth-3e78d2ef.png',
       '/images/gitcoin-2.0-essentials/introduction-to-quadratic-funding-e38257e1.png',
-      '/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-fe71e17f.png',
-      '/images/gitcoin-2.0-essentials/and-theres-more-5525393b.png',
+      '/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-b699b9ea.png',
+      '/images/gitcoin-2.0-essentials/and-theres-more-99247fc7.png',
       '/images/gitcoin-2.0-essentials/carving-a-path-ffb2f198.png',
       '/images/gitcoin-2.0-essentials/evolutionary-development-092753e6.png',
       '/images/gitcoin-2.0-essentials/the-impact-of-capital-allocation-1c17e0b8.png',
@@ -3544,26 +3790,26 @@ const LESSONS: LessonType[] = [
       {
         type: 'LEARN',
         notionId: '163809eabca84850b37afe1857173353',
-        title: 'Whitepaper Lesson | Gitcoin = Grants = Growth',
-        content: '<div class="bloc1"><p>Welcome to the revolution in capital allocation 💰</p><p>In this lesson, we explore the <strong>Gitcoin 2.0 whitepaper</strong> to discover innovative approaches to public goods funding and Ethereum ecosystem growth.</p><p>Having surpassed <strong>$60 million in funding distributed</strong>, Gitcoin is at the forefront of a movement towards more democratic, efficient, and transparent capital allocation in web3.</p><p>Anyone can check out the <a href=\'https://www.gitcoin.co/whitepaper/read\'>whitepaper</a> for an in-depth look at how Gitcoin is refining capital allocation with <code>Allo Protocol</code>.</p><p>Thank you to the curators of this lesson, Ornella, Didier & Tetranome from Bankless Academy, and the core contributors at Gitcoin.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/whitepaper-lesson-gitcoin-grants-growth-3e78d2ef.png\'></div>'
+        title: 'Welcome to Gitcoin 2.0 | Gitcoin = Grants = Growth',
+        content: '<div class="bloc1"><p>Welcome to the revolution in onchain capital allocation 💰</p><p>In this lesson, we explore the <strong>Gitcoin 2.0 white paper</strong> to discover innovative approaches to public goods funding and growth in the Ethereum ecosystem. Having surpassed <strong>$60 million in funding distributed</strong>, Gitcoin is at the forefront of a movement towards more democratic, efficient, and transparent capital allocation in web3.</p><p>The publication of the Gitcoin 2.0 white paper marks a pivotal moment in Gitcoin’s history. It provides an in-depth look at how its infrastructure and the implementation of <code>Allo Protocol</code> are helping to steward its mission. For quick reference during this journey, you can access the publication <a href=\'https://www.gitcoin.co/whitepaper/read\'>here</a>.</p><p>This lesson has been curated by contributors at Gitcoin and Bankless Academy, aiming to provide a fun, unique, and web3 native way of learning about Gitcoin’s new stage, <strong>Gitcoin 2.0. </strong>Prepared to explore the future of onchain capital allocation? If so, let’s dive in!</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/welcome-to-gitcoin-2.0-gitcoin-grants-growth-3e78d2ef.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '55e43442defe411b9109132581333a42',
         title: 'Introduction to Quadratic Funding',
-        content: '<div class="bloc1"><p>If you’re here you may know already, but here’s a refresher.</p><p><code>Quadratic Funding</code> (QF) originated from the ideas of Glenn Weyl and Vitalik Buterin. It\'s a mechanism designed to allocate funds in a fair and democratic manner by leveraging matching funds to <strong>amplify the impact</strong> of small individual contributions.</p><p>QF debuted at <strong>Gitcoin Grants</strong> (GG), a pivotal moment enabling democratic donations to projects that matter. Since then, when GG Round 1 launched in 2019, the QF model has been finely tuned with each iteration.</p><p>Now, <strong>Gitcoin 2.0</strong> extends further into the grants space to include funding mechanisms like Direct Grants and delivers a more decentralized, modular experience.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/introduction-to-quadratic-funding-e38257e1.png\'></div>'
+        content: '<div class="bloc1"><p><code>Quadratic Funding</code> (QF) originated from the ideas of Glen Weyl and Vitalik Buterin. It\'s a mechanism designed to allocate funds in a fair and democratic manner by leveraging matching funds to <strong>amplify the impact</strong> of small individual contributions.</p><p>QF debuted with <strong>Gitcoin Grants</strong> (GG), marking a pivotal moment in enabling democratic donations to projects that matter. Since the launch of GG Round 1, the QF model has been finely tuned with each iteration.</p><p>Now, <strong>Gitcoin 2.0</strong> extends further into the grants space to include funding mechanisms like Direct Grants, delivering a more decentralized and modular experience for users and grantees.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/introduction-to-quadratic-funding-e38257e1.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '060ee68d743d4850942271999566a5df',
         title: 'Gitcoin’s role in the Ethereum ecosystem',
-        content: '<div class="bloc1"><p>As of January 2024, <strong>19 grants rounds</strong> have been run by Gitcoin, disbursing funds to open source software (OSS) teams, averaging nearly one major round per quarter.</p><p>Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone for the open source Ethereum community.</p><p>Prior to GG20, as referenced by the Open Source Observer Impact Analysis, Gitcoin distributed<strong> $8.4M to ~2500 applicants</strong> through four main rounds on Allo. These rounds have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as side chains like Fantom and Polygon.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-fe71e17f.png\'></div>'
+        content: '<div class="bloc1"><p>As of May 2024, twenty editions of the Gitcoin Grants program have been run by Gitcoin, disbursing funds to diverse projects building on Ethereum, averaging nearly one major round per quarter.</p><p>Although rounds ebb and flow depending on market cycles and participating project maturity, these rounds are an important touchstone especially for the <strong>open source Ethereum community</strong>.</p><p>Prior to Gitcoin Grants Round 20, the total amount of funding raised through the program reached $29 million.</p><p>In 2023, the past four rounds—α, β, 18, and 19—have been deployed on a variety of chains, from Ethereum mainnet to L2s such as Arbitrum and Optimism, as well as sidechains like Polygon and Fantom.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/gitcoins-role-in-the-ethereum-ecosystem-b699b9ea.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'c71d220061584a79a004d40bee450bb9',
         title: '…and there’s more!',
-        content: '<div class="bloc1"><p>Gitcoin\'s dynamics most often reward projects that <strong>play the long game</strong> — that is, projects that appear consistently throughout grants rounds, making connections and building a following.</p><p>A large part of Gitcoin\'s project base comes from the <strong>open source community</strong>, with developer activity of 50 OSS projects associated with at least five GG rounds receiving a total of $9.4M.</p><p>A notable finding is the <strong>correlation between GG rounds and developer growth</strong>. Overall, for every $1M that has been paid out in grants since 2019, there are 7.4 full-time developers who are still around today.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/and-theres-more-5525393b.png\'></div>'
+        content: '<div class="bloc1"><p>Gitcoin\'s dynamics most often reward projects that <strong>play the long game</strong> — that is, projects that appear consistently throughout grant rounds, making connections over time, and building community and a following.</p><p>A notable finding is the <strong>correlation between Gitcoin Grants rounds and developer growth</strong>.</p><p>The <a href=\'https://docs.opensource.observer/blog/gitcoin-grants-impact/#grants-on-allo-alpha-round-to-gg19-2023\'>Open Source Observer Impact Analysis</a> shows that of a group of 50 open source software projects that have received funding across multiple Gitcoin Grants rounds, for every $1 million paid out in grants since 2019, there are 7 full-time developers who are <em>still active today.</em></p><p>If we factor in the crowdfund multiplier, every $1 million contributed to the matching pool is associated with 13 retained full-time developers, with these numbers holding steady even during the bear market!</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/and-theres-more-99247fc7.png\'></div>'
       },
       {
         type: 'QUIZ',
@@ -3585,7 +3831,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '98415667c1b34062b8ab3ff55497925e',
         title: 'Carving a Path',
-        content: '<div class="bloc1"><p>Gitcoin 1.0 was used by many top leaders in the space including Ethereum founder <strong>Vitalik Buterin</strong> and by major protocols like WalletConnect, Uniswap, Yearn, and 1inch.</p><p>Since its inception in 2017, this first version of Gitcoin primarily focused on hackathons and bounties, followed by Quadratic Funding powered grants.</p><p>The recent upgrade to Gitcoin 2.0 was driven by many changes in the market, including the <strong>expansion</strong> of the Ethereum ecosystem with L2 launches, the <strong>growth</strong> of open-source development, and <strong>increasing adoption</strong> of grant programs.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/carving-a-path-ffb2f198.png\'></div>'
+        content: '<div class="bloc1"><p>Gitcoin 1.0 was used by many top leaders in the space including Ethereum founder <strong>Vitalik Buterin</strong> and by major protocols like WalletConnect, Uniswap, Yearn, and 1inch.</p><p>Since its inception in 2017, this first version of Gitcoin primarily focused on hackathons and bounties, followed by Quadratic Funding (QF) powered grants.</p><p>The recent upgrade to Gitcoin 2.0 was driven by many changes in the market, including the <strong>expansion</strong> of the Ethereum ecosystem with L2 launches, the <strong>growth</strong> of open source development, and <strong>increasing adoption</strong> of grant programs.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/carving-a-path-ffb2f198.png\'></div>'
       },
       {
         type: 'LEARN',
@@ -3625,26 +3871,26 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: '5dcd6311a0574b36a5fc756f7fd57a49',
         title: 'Expanding beyond EVM with Allo Protocol',
-        content: '<div class="bloc1"><p>Allo Protocol is a set of smart contracts designed for democratic capital allocation and distribution, developed to empower the Grants Stack.</p><p>Allo’s simple, generalized architecture allows it to be <strong>easily customized</strong> for a wide range of use cases. It’s power lies in its ability to <strong>deepen impact</strong> by allocating capital at scale. There are three key components to the protocol:</p><ol><li><strong>Tokens:</strong> funding sources sending tokens into a pool.</li><li><strong>Registry:</strong> structuring data of possible participants that are eligible for distribution of tokens.</li><li><strong>Strategy:</strong> designating how tokens will be allocated and distributed to recipients.</li></ol><p>💡 <span class=\'color-default\'>For a deeper understanding of what people can create using Allo, checkout the design space-focused </span><span class=\'color-default\'><a href=\'https://www.gitcoin.co/rainbowpaper\'>Rainbowpaper</a></span><span class=\'color-default\'>.</span></p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/expanding-beyond-evm-with-allo-protocol-c8a108f7.png\'></div>'
+        content: '<div class="bloc1"><p>Allo Protocol is a set of smart contracts designed for democratic onchain capital allocation and distribution, developed to empower the Grants Stack.</p><p>Allo’s simple, generalized architecture allows it to be <strong>easily customized</strong> for a wide range of use cases. Its power lies in its ability to <strong>deepen impact</strong> by allocating capital at scale. There are three key components to the protocol:</p><ol><li><strong>Tokens:</strong> funding sources sending tokens into a pool.</li><li><strong>Registry:</strong> structuring data of possible participants that are eligible for distribution of tokens.</li><li><strong>Strategy:</strong> designating how tokens will be allocated and distributed to recipients.</li></ol><p>💡 <span class=\'color-default\'> An easy way to remember what Allo Protocol is or does, is that it’s short for </span><em><span class=\'color-default\'>Capital Allocation Protocol</span></em><span class=\'color-default\'>. For a deeper understanding of what people can create using Allo, checkout the design space-focused </span><a href=\'https://www.gitcoin.co/rainbowpaper\'>rainbowpaper</a><span class=\'color-default\'>.</span></p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/expanding-beyond-evm-with-allo-protocol-c8a108f7.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: 'fa9d497779c245cd93d677f5f8efcb36',
         title: 'Grants Stack & other use cases',
-        content: '<div class="bloc1"><p>Grants Stack, built on top of Allo Protocol, is the <strong>primary application</strong> in the Gitcoin ecosystem.</p><p>Grants Stack is designed to be a trustworthy, enterprise-grade tool that grant customers can rely on. It also serves as a reference app for Allo Protocol builders, as it is <strong>open-source and forkable</strong>.</p><p>Grants Stack invests in several core areas to provide grants managers with the tools they need to run successful grants programs.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-7334384f.png\'></div>'
+        content: '<div class="bloc1"><p>Grants Stack, built on top of Allo Protocol, is the <strong>primary application</strong> in the Gitcoin ecosystem.</p><p>Grants Stack is designed to be a trustworthy, enterprise-grade tool that grant customers can rely on. It also serves as a reference app for Allo Protocol builders, as it is <strong>open source </strong>and<strong> forkable</strong>.</p><p>Grants Stack invests in several core areas to provide grants managers with the tools they need to run successful grants programs.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-7334384f.png\'></div>'
       },
       {
         type: 'LEARN',
         notionId: '3640f02a78634c73b931223fc4d3b08e',
         title: 'Grants Stack & other use cases continued',
-        content: '<div class="bloc1"><p><strong>Grants Stack</strong> currently supports two funding methods: <a href=\'https://www.wtfisqf.com/\'>Quadratic Funding</a> and <a href=\'https://www.gitcoin.co/blog/intro-to-direct-grants-how-do-they-work\'>Direct Grants</a>.</p><p>As new funding mechanisms arise, Gitcoin quickly adapts and integrates them. A relevant example of this is <a href=\'https://easyretropgf.xyz/\'>EasyRetroPGF.xyz</a>. Originally deployed by Optimism, the ability to operate a retroactive grants round is now open-source.</p><p>Complimentary applications such as reporting and discovery tools may follow suit, creating a <strong>flywheel of grants innovation</strong> that allows Grants Stack to remain a <strong>stable, trusted solution</strong>.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-continued-df15ee70.png\'></div>'
+        content: '<div class="bloc1"><p><strong>Grants Stack</strong> currently supports two funding methods: <a href=\'https://www.wtfisqf.com/\'>Quadratic Funding</a> and <a href=\'https://www.gitcoin.co/blog/intro-to-direct-grants-how-do-they-work\'>Direct Grants</a>.</p><p>As new funding mechanisms arise, Gitcoin quickly adapts and integrates them. A relevant example of this is <a href=\'https://easyretropgf.xyz/\'>EasyRetroPGF.xyz</a>. Originally deployed by Optimism, the ability to operate a retroactive grants round is now open source.</p><p>Complementary applications such as reporting and discovery tools may follow suit, creating a <strong>flywheel of grants innovation</strong> that allows Grants Stack to remain a <strong>stable, trusted solution</strong>.</p></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/grants-stack-other-use-cases-continued-df15ee70.png\'></div>'
       },
       {
         type: 'QUIZ',
         notionId: '89e00897b74d4c99a6379db89c2a09f8',
         title: 'Knowledge Check',
         quiz: {
-          question: 'Complete the following statement: <span class=\'color-default\'>Allo is th</span><span class=\'color-default\'>e ______ </span><span class=\'color-default\'> layer for distribution of capital allocation, while Grants Stack i</span><span class=\'color-default\'>s a _____ for running ______ programs.</span>',
+          question: '<span class=\'color-default\'>Allo is th</span><span class=\'color-default\'>e ______ </span><span class=\'color-default\'> layer for distribution of capital allocation, while Grants Stack i</span><span class=\'color-default\'>s a _____ for running ______ programs.</span>',
           rightAnswerNumber: 2,
           answers: [
             'community - application - funding',
@@ -3659,7 +3905,7 @@ const LESSONS: LessonType[] = [
         type: 'LEARN',
         notionId: 'dc9d8509dafc4372bd6e1683119eb033',
         title: 'Let’s go over what we learned…',
-        content: '<div class="bloc1"><ol><li>Gitcoin\'s journey from 1.0 to 2.0 represents a leap towards modular systems and diverse mechanisms in the <strong>decentralized funding</strong><strong> </strong>industry.</li><li>QF emerged as a pivotal mechanism, facilitating distribution of <strong>+$60M to public goods</strong> in the Ethereum ecosystem.</li><li>Gitcoin 2.0 includes Direct Grants, Retroactive Public Goods Funding, and operates across multiple EVM-based networks.</li><li>Onchain capital allocation offers <strong>transparency, efficiency, and democratization</strong>, challenging traditional gatekeeping and scalability issues.</li><li>Grants are a <strong>catalyst for growth</strong> in web3, underpinning community engagement, builder retention, and positive-sum outcomes.</li><li>Gitcoin\'s <strong>delivers decentralization</strong> at the protocol and app layer, with Grants Stack and Allo respectively, providing a modular framework for capital allocation.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/lets-go-over-what-we-learned-a902dc9c.png\'></div>'
+        content: '<div class="bloc1"><ol><li>Gitcoin\'s journey from 1.0 to 2.0 represents a leap towards modular systems and diverse mechanisms in the <strong>decentralized funding</strong><strong> </strong>industry.</li><li>QF emerged as a pivotal mechanism, facilitating distribution of <strong>+$60M to public goods</strong> in the Ethereum ecosystem.</li><li>Gitcoin 2.0 includes Direct Grants, Retroactive Public Goods Funding, and operates across multiple EVM-based networks.</li><li>Onchain capital allocation offers <strong>transparency, efficiency, and democratization</strong>, challenging traditional gatekeeping and scalability issues.</li><li>Grants are a <strong>catalyst for growth</strong> in web3, underpinning community engagement, builder retention, and positive-sum outcomes.</li><li>Gitcoin <strong>delivers decentralization</strong> by layers. First, at the protocol layer with Grants Stack and at the app layer with Allo Protocol, providing a modular framework for effective capital allocation.</li></ol></div><div class="bloc2"><img src=\'/images/gitcoin-2.0-essentials/lets-go-over-what-we-learned-a902dc9c.png\'></div>'
       },
       {
         type: 'QUEST',

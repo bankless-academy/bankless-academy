@@ -33,6 +33,8 @@ import { UserStatsType } from 'entities/user'
 import { gql } from 'graphql-request'
 import { airstackGraphQLClient } from 'utils/airstack'
 import { wagmiConfig } from 'utils/wagmi'
+import { NFTAddress } from 'constants/nft'
+import { TABLES, db } from 'utils/db'
 
 declare global {
   interface Window {
@@ -200,15 +202,15 @@ export async function validateOnchainQuest(
   try {
     if (quest === 'DEXAggregators') {
       const check = []
-      const matic: Network = {
-        name: 'matic',
-        chainId: NETWORKS['matic'].chainId,
+      const polygon: Network = {
+        name: 'polygon',
+        chainId: NETWORKS['polygon'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            `${NETWORKS['matic'].infuraRpcUrl}${INFURA_KEY}`
+            `'https://polygon-mainnet.infura.io/v3/'${INFURA_KEY}`
           ),
       }
-      const provider = ethers.getDefaultProvider(matic)
+      const provider = ethers.getDefaultProvider(polygon)
       const receipt = await provider.waitForTransaction(tx, 2)
       // console.log('receipt', receipt.status)
       if (receipt?.status) {
@@ -263,7 +265,6 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['optimism'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
             `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
           ),
       }
@@ -311,7 +312,6 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['optimism'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
             `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
           ),
       }
@@ -371,7 +371,6 @@ export async function validateOnchainQuest(
         chainId: NETWORKS['optimism'].chainId,
         _defaultProvider: (providers) =>
           new providers.JsonRpcProvider(
-            // `${NETWORKS['optimism'].infuraRpcUrl}${INFURA_KEY}`
             `https://opt-mainnet.g.alchemy.com/v2/${ALCHEMY_KEY_BACKEND}`
           ),
       }
@@ -600,6 +599,98 @@ export async function getArticlesCollectors(
   }
 }
 
+// getNFTInfo from either tokenId or address
+export async function getNFTInfo(
+  address: string,
+  tokenId: string
+): Promise<{ time?: string, tokenIds?: number[] }> {
+  const res = {
+    time: '--:--,--',
+    tokenIds: []
+  }
+  const ERC721_ABI = [
+    {
+      "inputs": [
+        { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+      ],
+      "name": "ownerOf",
+      "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        { "internalType": "address", "name": "owner", "type": "address" }
+      ],
+      "name": "tokensOfOwner",
+      "outputs": [
+        { "internalType": "uint256[]", "name": "", "type": "uint256[]" }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    "event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)"
+  ];
+  const provider = new ethers.providers.JsonRpcProvider(`https://base-mainnet.infura.io/v3/${INFURA_KEY}`);
+
+  const contract = new ethers.Contract(NFTAddress, ERC721_ABI, provider);
+
+  try {
+    const owner = tokenId ? await contract.ownerOf(tokenId) : address
+    res.tokenIds = address ? (await contract.tokensOfOwner(address)).map(bigNum => bigNum.toNumber()) : [tokenId]
+    console.log(res.tokenIds)
+    const latestTokenId = res.tokenIds.at(-1)
+
+    console.log('latestTokenId', latestTokenId)
+
+    if (latestTokenId) {
+      // Get the Transfer event for the mint
+      const filter = contract.filters.Transfer(null, null, latestTokenId);
+      const events = await contract.queryFilter(filter, 0, 'latest');
+
+      // The first Transfer event for this token ID should be the mint
+      const mintEvent = events[0];
+      const mintBlock = await provider.getBlock(mintEvent.blockNumber);
+      const mintTimestamp = new Date(mintBlock.timestamp * 1000).toISOString();
+
+      console.log(`Owner: ${owner}`);
+      console.log(`Mint Timestamp: ${mintTimestamp}`);
+      console.log(`tokenIds: ${res.tokenIds}`);
+
+      const smart_nft_mint_at = new Date(mintTimestamp).getTime()
+      const [user] = await db(TABLES.users)
+        .select('smart_nft_start_at')
+        .where('address', 'ilike', `%${owner}%`)
+      if (user?.smart_nft_start_at) {
+        const smart_nft_start_at = user.smart_nft_start_at.getTime();
+        console.log('smart_nft_start_at', smart_nft_start_at)
+        if (smart_nft_mint_at > smart_nft_start_at)
+          res.time = formatTime(smart_nft_mint_at - smart_nft_start_at)
+      }
+    }
+    return res
+
+  } catch (error) {
+    console.error('Error fetching NFT data:', error);
+    return res
+  }
+}
+
+export async function getNFTsCollectors(
+  nftAddress: string
+): Promise<any[]> {
+  try {
+    const NFTCollectors = await axios.get(
+      `https://base-mainnet.g.alchemy.com/nft/v2/${ALCHEMY_KEY}/getOwnersForCollection?contractAddress=${nftAddress}&withTokenBalances=true`
+    )
+    // console.log(NFTCollectors.data)
+    return NFTCollectors.data?.ownerAddresses || []
+  } catch (error) {
+    console.error(error)
+    return []
+  }
+}
+
 export async function isHolderOfNFT(
   address: string,
   openSeaLink: string
@@ -763,7 +854,7 @@ export const generateTwitterLink = (text: string, link: string) => {
 
 export const generateFarcasterLink = (text: string, link: string) => {
   return `https://warpcast.com/~/compose?text=${encodeURIComponent(
-    text?.replace('@BanklessAcademy', '@banklessacademy')
+    text?.replace('@BanklessAcademy', '@banklessacademy')?.replace('@Gitcoin', '@gitcoin')
   )}&embeds%5B%5D=${encodeURIComponent(link)}`
 }
 
@@ -805,4 +896,14 @@ export const openLesson = async (
       (value, index, array) => array.indexOf(value) === index
     )
   )
+}
+
+export const formatTime = (ms: number) => {
+  const minutes = Math.floor(ms / 60000)
+  const seconds = Math.floor((ms % 60000) / 1000)
+  const milliseconds = ms % 1000
+
+  return `${minutes.toString().padStart(2, '0')}:${seconds
+    .toString()
+    .padStart(2, '0')},${milliseconds.toString().padStart(3, '0').substring(0, 2)}`
 }

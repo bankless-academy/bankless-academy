@@ -6,6 +6,7 @@ import {
   Image as ChakraImage,
   UnorderedList,
   ListItem,
+  Text,
 } from '@chakra-ui/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useAccount } from 'wagmi'
@@ -163,6 +164,17 @@ Become a Guardian of Bankless Academy today - join the effort to circulate Bankl
 
   return (
     <Box maxW="450px" m="auto">
+      <Box pb="8">
+        <Text
+          as="h2"
+          fontSize="2xl"
+          fontWeight="bold"
+          borderBottom="1px solid #989898"
+          pb="2"
+        >
+          Donate
+        </Text>
+      </Box>
       <StyledCard w="100%" position="relative">
         {CollectiblesHelper}
         <Box

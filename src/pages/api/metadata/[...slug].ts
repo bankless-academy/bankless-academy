@@ -41,13 +41,17 @@ export default async function handler(
     if (!lesson) return res.status(400).json({ error: 'Unknown tokenId' })
     // https://app.banklessacademy.com/api/metadata/badge/{id}
     // https://app.banklessacademy.com/api/metadata/badge/0000000000000000000000000000000000000000000000000000000000000001
+    const attributes = [
+      { trait_type: 'created_by', value: 'Bankless Academy' }
+    ]
+    if (lesson.community) {
+      attributes.push({ trait_type: 'community', value: lesson.community })
+    }
     const metadata = {
       name: `${lesson.name}${slug === 'badgev2' ? ' v2' : ''}`,
       description: `${lesson.description} ${lessonAddress(lesson)}`,
       image: `https://${DOMAIN_PROD}${lesson.badgeImageLink}`,
-      attributes: [
-        { trait_type: 'created_by', value: 'Bankless Academy' },
-      ],
+      attributes,
       external_url: lessonAddress(lesson),
     }
     return res.status(200).json(metadata)

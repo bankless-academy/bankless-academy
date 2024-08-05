@@ -123,6 +123,7 @@ axios
       else lesson.languages.sort()
       if (lesson.level === undefined) delete lesson.level
       if (!lesson.tags || lesson.tags.length === 0) delete lesson.tags
+      if (lesson.community === undefined) delete lesson.community
       if (lesson.questSocialMessage === undefined) delete lesson.questSocialMessage
       if (lesson.lessonWriters === undefined) delete lesson.lessonWriters
       if (lesson.communityDiscussionLink === undefined) delete lesson.communityDiscussionLink
@@ -184,6 +185,8 @@ axios
                 lesson.articleContent = data?.content?.body
                   .replace(/\\\[/g, "[")
                   .replace(/\\\]/g, "]")
+                  // manual fix
+                  .replace("beta.banklessacademy.com", "app.banklessacademy.com")
                 // console.log('lesson', lesson)
 
                 if (lesson.articleContent.includes('\n\n\n---\n\n')) {
@@ -404,10 +407,16 @@ axios
                   slide.quiz.feedback.push(feedback)
 
                 const isChecked = checkbox?.checked
-                if (isChecked) slide.quiz.rightAnswerNumber = nb
+                // 1 correct answer
+                if (isChecked && slide.quiz.rightAnswerNumber === undefined && slide.type !== 'POLL') slide.quiz.rightAnswerNumber = nb
+                // multiple answers correct -> replace QUIZ type with POLL
+                else if (isChecked) {
+                  slide.type = 'POLL'
+                  delete slide.quiz.rightAnswerNumber
+                }
               }
               if (slide.quiz.feedback?.length === 0) delete slide.quiz.feedback
-              if (!slide.quiz.rightAnswerNumber && lesson.slug !== 'bankless-archetypes')
+              if (!slide.quiz.rightAnswerNumber && slide.type === 'QUIZ' && lesson.slug !== 'bankless-archetypes')
                 throw new Error(
                   `missing right answer, please check ${POTION_API}/html?id=${notion.id}`
                 )
@@ -550,11 +559,15 @@ axios
             try {
               const mdblocks = await n2m.pageToMarkdown(notion.id)
               const mdString = n2m.toMarkdownString(mdblocks)
+              let lessonContentMD = mdString?.parent || ''
               // hide answers
-              let lessonContentMD = mdString?.parent?.replaceAll('[x]', '[ ]') || ''
-              lessonContentMD = lessonContentMD.replaceAll('\n\n\n\n', '\n\n')
-              lessonContentMD = lessonContentMD.replaceAll('\n\n\n', '\n\n')
-              const slides = lessonContentMD.split('\n# ')
+              lessonContentMD = lessonContentMD?.replaceAll('[x]', '[ ]')
+              lessonContentMD = lessonContentMD?.replaceAll('  </details>', '</details>')
+              lessonContentMD = lessonContentMD?.replaceAll('</details><details>', '</details>\n<details>')
+              lessonContentMD = lessonContentMD?.replaceAll('\n\n\n\n', '\n\n')
+              lessonContentMD = lessonContentMD?.replaceAll('\n\n\n', '\n\n')
+              lessonContentMD = lessonContentMD?.replaceAll('</details>\n#', '</details>\n\n#')
+              const slides = lessonContentMD?.split('\n# ')
               slides.shift()
               let quiz_nb = 0
               let j = 0

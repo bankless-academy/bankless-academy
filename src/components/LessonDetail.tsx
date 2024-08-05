@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Text, Image, Button, Box } from '@chakra-ui/react'
+import { Text, Image, Button, Box, useToast } from '@chakra-ui/react'
 import { ArrowUUpLeft } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
@@ -40,11 +40,14 @@ const StyledBox = styled(Box)`
 const closeLesson = (
   openedLesson: string,
   lesson: LessonType,
-  Quest
+  Quest,
+  toast
 ): string => {
   const openedLessonArray = JSON.parse(openedLesson)
+  toast.closeAll()
   if (
     Quest?.isQuestCompleted &&
+    quizComplete(lesson) &&
     lesson?.badgeId &&
     !(localStorage.getItem(`isBadgeMinted-${lesson.badgeId}`) === 'true')
   )
@@ -61,6 +64,11 @@ const quizComplete = (lesson: LessonType): boolean => {
       quizAnswers.push(
         parseInt(localStorage.getItem(`quiz-${slide.quiz.id}`)) ===
           slide.quiz.rightAnswerNumber
+      )
+    } else if (slide.type === 'POLL') {
+      quizAnswers.push(
+        JSON.parse(localStorage.getItem(`quiz-${slide.quiz.id}`) || '[]')
+          ?.length > 0
       )
     }
   }
@@ -80,6 +88,7 @@ const LessonDetail = ({
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
   const [refreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
   const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
+  const toast = useToast()
 
   const [openLessonLS, setOpenLessonLS] = useLocalStorage(
     `lessonOpen`,
@@ -92,7 +101,7 @@ const LessonDetail = ({
       language: i18n.language,
     })
     scrollTop()
-    setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest))
+    setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest, toast))
   }, [])
 
   useEffect((): void => {
@@ -101,7 +110,11 @@ const LessonDetail = ({
 
   const isQuizComplete = quizComplete(lesson)
 
-  const Quest = QuestComponent(lesson, lesson.badgeId)
+  const Quest =
+    // HACK: no quest for Ethereum Basics
+    lesson.slug === 'ethereum-basics' && quizComplete(lesson)
+      ? { isQuestCompleted: true, questComponent: <></> }
+      : QuestComponent(lesson, lesson.badgeId)
 
   const hasLessonGating =
     TOKEN_GATING_ENABLED && lesson?.nftGating && lesson?.nftGatingRequirements
@@ -122,7 +135,7 @@ const LessonDetail = ({
           lesson={lesson}
           extraKeywords={extraKeywords}
           closeLesson={() =>
-            setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest))
+            setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest, toast))
           }
           Quest={Quest}
         />
@@ -302,7 +315,7 @@ const LessonDetail = ({
                           borderBottom="1px solid #989898"
                           pb="2"
                         >
-                          {t('Rewards')}
+                          Badge
                         </Text>
                       </Box>
                       <Box textAlign="center">

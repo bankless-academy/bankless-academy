@@ -41,7 +41,7 @@ const switchChainButton = ({
 
   useEffect(() => {
     if (chain?.id) {
-      if (!SUPPORTED_NETWORKS_IDS.includes(chain?.id)) {
+      if (!(SUPPORTED_NETWORKS_IDS as number[]).includes(chain?.id)) {
         // wrong network
         toast.closeAll()
         toast({
@@ -141,7 +141,6 @@ const switchChainButton = ({
                 >
                   <Image
                     height={25}
-                    rounded="full"
                     src={NETWORKS[network].image}
                     alt={NETWORKS[network].name}
                     mr="12px"

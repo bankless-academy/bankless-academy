@@ -46,7 +46,10 @@ const BlockchainBasics = (
   const [isSmallScreen] = useSmallScreen()
 
   const verifyFrom = (from) => {
-    return from?.toLowerCase() === '0xa1e4380a3b1f749673e270229993ee55f35663b4'
+    return (
+      from?.toLowerCase() === '0xa1e4380a3b1f749673e270229993ee55f35663b4' ||
+      from?.toLowerCase() === 'thanateros.eth'
+    )
   }
 
   const verifyTo = (to) => {
