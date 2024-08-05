@@ -18,7 +18,6 @@ export const pageMeta: MetaData = {
   description: 'How fast can you go onchain?',
   image: '/images/onchain-summer-challenge-social.jpg',
   nolayout: true,
-  noindex: true,
   ssr: true,
 }
 
