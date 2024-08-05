@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Text, Image, Button, Box } from '@chakra-ui/react'
+import { Text, Image, Button, Box, useToast } from '@chakra-ui/react'
 import { ArrowUUpLeft } from '@phosphor-icons/react'
 import { useLocalStorage } from 'usehooks-ts'
 import { useTranslation } from 'react-i18next'
@@ -40,11 +40,14 @@ const StyledBox = styled(Box)`
 const closeLesson = (
   openedLesson: string,
   lesson: LessonType,
-  Quest
+  Quest,
+  toast
 ): string => {
   const openedLessonArray = JSON.parse(openedLesson)
+  toast.closeAll()
   if (
     Quest?.isQuestCompleted &&
+    quizComplete(lesson) &&
     lesson?.badgeId &&
     !(localStorage.getItem(`isBadgeMinted-${lesson.badgeId}`) === 'true')
   )
@@ -85,6 +88,7 @@ const LessonDetail = ({
   const [lessonsCollectedLS] = useLocalStorage('lessonsCollected', [])
   const [refreshDatadiskLS] = useLocalStorage('refreshDatadisk', false)
   const [badgesMintedLS] = useLocalStorage('badgesMinted', [])
+  const toast = useToast()
 
   const [openLessonLS, setOpenLessonLS] = useLocalStorage(
     `lessonOpen`,
@@ -97,7 +101,7 @@ const LessonDetail = ({
       language: i18n.language,
     })
     scrollTop()
-    setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest))
+    setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest, toast))
   }, [])
 
   useEffect((): void => {
@@ -108,7 +112,7 @@ const LessonDetail = ({
 
   const Quest =
     // HACK: no quest for Ethereum Basics
-    lesson.slug === 'ethereum-basics'
+    lesson.slug === 'ethereum-basics' && quizComplete(lesson)
       ? { isQuestCompleted: true, questComponent: <></> }
       : QuestComponent(lesson, lesson.badgeId)
 
@@ -131,7 +135,7 @@ const LessonDetail = ({
           lesson={lesson}
           extraKeywords={extraKeywords}
           closeLesson={() =>
-            setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest))
+            setOpenLessonLS(closeLesson(openLessonLS, lesson, Quest, toast))
           }
           Quest={Quest}
         />
