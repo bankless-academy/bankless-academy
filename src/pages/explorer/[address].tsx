@@ -6,11 +6,15 @@ import {
   Container,
   Heading,
   Image,
+  Input,
+  InputGroup,
+  InputLeftElement,
   Text,
   useClipboard,
   useMediaQuery,
+  useToast,
 } from '@chakra-ui/react'
-import { CopySimple } from '@phosphor-icons/react'
+import { CopySimple, Envelope } from '@phosphor-icons/react'
 import router from 'next/router'
 import { useAccount } from 'wagmi'
 import { t } from 'i18next'
@@ -22,9 +26,12 @@ import { MetaData } from 'components/Head'
 import { DOMAIN_URL, MAX_COLLECTIBLES } from 'constants/index'
 import { UserType } from 'entities/user'
 import {
+  emailRegex,
   generateFarcasterLink,
   generateTwitterLink,
   shortenAddress,
+  api,
+  Mixpanel,
 } from 'utils/index'
 import ProgressTitle from 'components/ProgressTitle'
 import ExternalLink from 'components/ExternalLink'
@@ -32,6 +39,7 @@ import { MAX_DONATIONS } from 'constants/donations'
 import { MAX_BADGES } from 'constants/badges'
 import { EMPTY_PASSPORT, MAX_STAMPS } from 'constants/passport'
 import Layout from 'layout/Layout'
+import SelectCommunity from 'components/SelectCommunity'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -72,7 +80,7 @@ export default function Page({
 }) {
   const profileUrl =
     typeof window !== 'undefined' ? `${window.location.href}` : ''
-  const [isSmallScreen] = useMediaQuery(['(max-width: 981px)'])
+  const [isSmallScreen] = useMediaQuery(['(max-width: 1200px)'])
   const { referral } = router.query
   const [user, setUser] = useState<UserType | null>(null)
   const [error, setError] = useState(preloadError)
@@ -81,6 +89,10 @@ export default function Page({
   const { address } = useAccount()
   const { onCopy, hasCopied } = useClipboard(profileUrl)
   const [passportLS] = useLocalStorage('passport', EMPTY_PASSPORT)
+  const [email, setEmail] = useState(localStorage.getItem('email'))
+  const [initialEmail] = useState(localStorage.getItem('email'))
+  const toast = useToast()
+  const [ens] = useLocalStorage(`ens-cache`, {})
 
   const wallets = localStorage.getItem('wallets')
     ? JSON.parse(localStorage.getItem('wallets'))
@@ -114,10 +126,10 @@ export default function Page({
             })
           }
           setFullProfileAddress(user.address)
-          setUser(user)
-          if (wallets.includes(user.address)) {
+          if (address?.toLowerCase() === user.address) {
             setIsMyProfile(true)
           }
+          setUser(user)
         }
       } catch (error) {
         console.log(error)
@@ -127,7 +139,7 @@ export default function Page({
       }
     }
     loadUser()
-  }, [profileAddress])
+  }, [profileAddress, address])
 
   useEffect(() => {
     if (isMyProfile && passportLS?.stamps && passportLS?.version) {
@@ -180,6 +192,8 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
     console.log('reset referrer')
   }
 
+  const referrals = user?.stats?.referrals?.length || 0
+
   if (user)
     // TODO: create Profile component
     return (
@@ -219,6 +233,44 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 ? profileAddress
                 : shortenAddress(profileAddress)}
             </Text>
+            {isMyProfile ? (
+              <SelectCommunity />
+            ) : (
+              user.community && (
+                <Box my="8" mx="4" display="flex" placeContent="center">
+                  <Text
+                    as="h2"
+                    fontSize="3xl"
+                    fontWeight="bold"
+                    textAlign="center"
+                    textTransform="uppercase"
+                    color="#ffffff70"
+                  >
+                    <Box display="flex" justifyContent="center">
+                      <Box>-[&nbsp;</Box>
+                      <Box mt="2.5px">{user.community}</Box>
+                      <Box>&nbsp;]-</Box>
+                    </Box>
+                  </Text>
+                </Box>
+              )
+            )}
+            {(isMyProfile || referrals > 0) && (
+              <Box
+                fontSize="3xl"
+                fontWeight="bold"
+                m="auto"
+                textAlign="center"
+                pb="8"
+              >
+                Referrals
+                {referrals
+                  ? `: onboarded ${referrals} Explorer${
+                      referrals > 1 ? `s` : ''
+                    }`
+                  : ''}
+              </Box>
+            )}
             {isMyProfile && (
               <Box justifyContent="center" w="256px" m="auto" mb="8">
                 <Box pb="2">
@@ -258,12 +310,106 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                   isActive={hasCopied}
                 >
                   {hasCopied
-                    ? t('Profile Link Copied')
-                    : t('Copy Profile Link')}
+                    ? t('Referral Link Copied')
+                    : t('Copy Referral Link')}
                 </Button>
               </Box>
             )}
           </Card>
+          {isMyProfile && (
+            <Card
+              my="8"
+              borderRadius="2xl !important"
+              background="black !important"
+            >
+              <Box m="8" textAlign="center">
+                <Box fontSize="3xl" fontWeight="bold" m="auto">
+                  Newsletter
+                </Box>
+                <Box my="8" display="flex" placeContent="center">
+                  <InputGroup maxW="400px">
+                    <InputLeftElement pointerEvents="none">
+                      <Envelope size="32" />
+                    </InputLeftElement>
+                    <Input
+                      value={email}
+                      placeholder={'Enter your email address...'}
+                      type="email"
+                      onChange={(e): void => {
+                        setEmail(e.target.value)
+                      }}
+                    />
+                  </InputGroup>
+                </Box>
+                <Box textAlign="right" mb="6">
+                  <Button
+                    size="lg"
+                    variant="primaryBig"
+                    onClick={async () => {
+                      toast.closeAll()
+                      if (!email)
+                        toast({
+                          title: t('Email missing'),
+                          description: t('Provide an email.'),
+                          status: 'warning',
+                          duration: 10000,
+                          isClosable: true,
+                        })
+                      else if (emailRegex.test(email) === false)
+                        toast({
+                          title: t('Wrong email format'),
+                          description: t('Please check your email.'),
+                          status: 'warning',
+                          duration: 10000,
+                          isClosable: true,
+                        })
+                      else {
+                        const result = await api('/api/subscribe-newsletter', {
+                          email,
+                          wallet: address,
+                          ens:
+                            address && address in ens
+                              ? ens[address]?.name
+                              : undefined,
+                        })
+                        if (result && result.status === 200) {
+                          localStorage.setItem('email', email)
+                          localStorage.setItem(`newsletter`, 'true')
+                          Mixpanel.track(
+                            initialEmail?.length
+                              ? 'subscribe_newsletter'
+                              : 'update_newsletter',
+                            {
+                              email: email,
+                            }
+                          )
+                          toast({
+                            title: t('Thanks for subscribing Explorer 🧑‍🚀'),
+                            description: t(`You'll hear from us soon!`),
+                            status: 'success',
+                            duration: 10000,
+                            isClosable: true,
+                          })
+                        } else {
+                          toast({
+                            title: t(
+                              `Something went wrong... we couldn't add your subscription.`
+                            ),
+                            description: t('Please try again later.'),
+                            status: 'warning',
+                            duration: 10000,
+                            isClosable: true,
+                          })
+                        }
+                      }
+                    }}
+                  >
+                    Save
+                  </Button>
+                </Box>
+              </Box>
+            </Card>
+          )}
           <Card my="8" borderRadius="2xl !important">
             <Box m="auto" maxW={isSmallScreen ? '600px' : '100%'}>
               <Box m="auto" position="relative" w="300px" mt={4}>
