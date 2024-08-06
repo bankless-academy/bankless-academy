@@ -140,9 +140,10 @@ export default async function handler(
   // referrals
   const referralsAddresses = await db(TABLES.users)
     .select(
-      TABLE.users.address, TABLE.users.ens_name)
+      TABLE.users.address, TABLE.users.ens_name, TABLE.users.created_at)
     .where(TABLE.users.referrer, '=', userExist.id)
-  const referrals = referralsAddresses.map(r => r.ens_name || r.address)
+    .whereNull(TABLE.users.smart_nft_start_at)
+  const referrals = referralsAddresses.map(r => { return { profile_address: r.ens_name || r.address, created_at: r.created_at } })
   console.log('referrals', referrals)
 
   const oldBadgeTokenIds = addressLowerCase in kudosBadges ? kudosBadges[addressLowerCase] : []

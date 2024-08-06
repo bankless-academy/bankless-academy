@@ -8,7 +8,7 @@ export interface UserStatsType {
   donations?: { [key: string]: any }
   score?: number
   rank?: number
-  referrals?: string[]
+  referrals?: { profile_address: string, created_at: string }[]
   community?: string
 }
 export interface UserType {

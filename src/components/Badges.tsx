@@ -15,6 +15,7 @@ import InternalLink from './InternalLink'
 import { STAMP_PLATFORMS } from 'constants/passport'
 import PassportModal from 'components/PassportModal'
 import { useSmallScreen } from 'hooks/index'
+import ExternalLink from './ExternalLink'
 
 const Badges = ({
   badges,
@@ -30,6 +31,11 @@ const Badges = ({
   const { t } = useTranslation()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [isSmallScreen] = useSmallScreen()
+
+  // TEMP
+  const achievements = badges.some(
+    (badge) => type === 'donations' && badge in DONATION_MAPPING
+  )
 
   return (
     <>
@@ -52,36 +58,37 @@ const Badges = ({
               spacing={2}
               p={2}
             >
-              {badges?.map((badge, index) => {
-                if (type === 'donations' && badge in DONATION_MAPPING)
-                  return (
+              {type === 'donations' && (
+                <Box
+                  justifySelf="center"
+                  p={1}
+                  position="relative"
+                  opacity={achievements ? '1' : '0.3'}
+                >
+                  <ExternalLink href="https://explorer.gitcoin.co/?utm_source=app.banklessacademy.com&utm_medium=website&utm_campaign=explorer_profile">
+                    <Image
+                      src={`/images/gitcoin/gitcoin-donation.png`}
+                      border="1px #2d292d solid"
+                      borderRadius="8px"
+                      alt={'Gitcoin Donation'}
+                      title={'Gitcoin Donation'}
+                    />
                     <Box
-                      key={`badge-${index}`}
-                      justifySelf="center"
-                      p={1}
-                      position="relative"
+                      fontWeight="bold"
+                      fontSize="sm"
+                      position="absolute"
+                      bottom="-11px"
+                      left="0"
+                      width="100%"
+                      textAlign="center"
+                      color="white"
                     >
-                      <Image
-                        src={`/images/gitcoin/gitcoin-donation.png`}
-                        border="1px #2d292d solid"
-                        borderRadius="8px"
-                        alt={DONATION_MAPPING[badge]}
-                        title={DONATION_MAPPING[badge]}
-                      />
-                      <Box
-                        fontWeight="bold"
-                        fontSize="lg"
-                        position="absolute"
-                        bottom="2px"
-                        left="0"
-                        width="100%"
-                        textAlign="center"
-                        color="white"
-                      >
-                        {badge}
-                      </Box>
+                      Gitcoin Donation
                     </Box>
-                  )
+                  </ExternalLink>
+                </Box>
+              )}
+              {badges?.map((badge, index) => {
                 if (!type) {
                   const lesson = LESSONS.find(
                     (lesson) => lesson.badgeId === badge

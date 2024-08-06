@@ -24,6 +24,7 @@ const COMMUNITIES = [
   'DAO Punk',
   'FWB',
   'Gitcoin',
+  'Giveth',
   'Optimism Collective',
   'SheFi',
   'Zerion',
@@ -81,7 +82,7 @@ const SelectCommunity = (): any => {
           </InputGroup>
         </Box>
       ) : (
-        <Box my="8" mx="4" display="flex" placeContent="center">
+        <Box mt="8" mx="4" display="flex" placeContent="center">
           <Menu>
             {({ isOpen }) => (
               <>
@@ -113,6 +114,7 @@ const SelectCommunity = (): any => {
                     display="flex"
                     alignItems="center"
                     fontWeight="bold"
+                    minW="250px"
                   >
                     <ShieldCheck size={18} style={{ marginRight: '6px' }} />
                     {' Approved Communities'}
@@ -138,7 +140,7 @@ const SelectCommunity = (): any => {
                           w="100%"
                         >
                           {c}
-                          {community === c && <XCircle size={18} />}
+                          {community === c && <XCircle size={20} />}
                         </Box>
                       </MenuItem>
                     )
@@ -151,7 +153,7 @@ const SelectCommunity = (): any => {
                     }}
                     backgroundColor="default"
                   >
-                    <PlusCircle size={18} style={{ marginRight: '6px' }} />
+                    <PlusCircle size={20} style={{ marginRight: '6px' }} />
                     {' Suggest new community'}
                   </MenuItem>
                   {community && !COMMUNITIES.includes(community) && (
@@ -170,7 +172,7 @@ const SelectCommunity = (): any => {
                         w="100%"
                       >
                         {community}
-                        <XCircle size={18} />
+                        <XCircle size={20} />
                       </Box>
                     </MenuItem>
                   )}
