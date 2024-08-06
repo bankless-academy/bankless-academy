@@ -15,7 +15,7 @@ export default async function handler(
   // check params + signature
   const { address, embed, signature, community } = req.body
   // console.log(req)
-  if (!address || !community)
+  if (!address)
     return res.status(400).json({ error: 'Wrong params' })
 
 

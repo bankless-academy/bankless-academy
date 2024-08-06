@@ -9,6 +9,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  InputRightAddon,
   Text,
   useClipboard,
   useMediaQuery,
@@ -69,6 +70,28 @@ export async function getServerSideProps({ query }) {
   return { props: { ...data, pageMeta } }
 }
 
+export const ProfileTitle = ({
+  title,
+  description,
+}: {
+  title: string
+  description: string
+}): React.ReactElement => (
+  <Box borderBottom="1px solid #989898">
+    <Box
+      fontSize="2xl"
+      fontWeight="bold"
+      textTransform="uppercase"
+      textAlign="left"
+    >
+      {title}
+    </Box>
+    <Box fontSize="md" color="#CBCBCB" mb="2">
+      {description}
+    </Box>
+  </Box>
+)
+
 export default function Page({
   profileAddress,
   badgeToHighlight,
@@ -93,6 +116,7 @@ export default function Page({
   const [initialEmail] = useState(localStorage.getItem('email'))
   const toast = useToast()
   const [ens] = useLocalStorage(`ens-cache`, {})
+  const [community] = useLocalStorage(`community`, '')
 
   const wallets = localStorage.getItem('wallets')
     ? JSON.parse(localStorage.getItem('wallets'))
@@ -192,7 +216,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
     console.log('reset referrer')
   }
 
-  const referrals = user?.stats?.referrals?.length || 0
+  // const referrals = user?.stats?.referrals?.length || 0
 
   if (user)
     // TODO: create Profile component
@@ -225,7 +249,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
               textAlign="center"
               textTransform="uppercase"
               mt="40px"
-              mb="8"
+              mb={community ? '0' : '8'}
             >
               {user.ensName?.includes('.')
                 ? user.ensName
@@ -233,183 +257,187 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                 ? profileAddress
                 : shortenAddress(profileAddress)}
             </Text>
-            {isMyProfile ? (
-              <SelectCommunity />
-            ) : (
-              user.community && (
-                <Box my="8" mx="4" display="flex" placeContent="center">
-                  <Text
-                    as="h2"
-                    fontSize="3xl"
-                    fontWeight="bold"
-                    textAlign="center"
-                    textTransform="uppercase"
-                    color="#ffffff70"
-                  >
-                    <Box display="flex" justifyContent="center">
-                      <Box>-[&nbsp;</Box>
-                      <Box mt="2.5px">{user.community}</Box>
-                      <Box>&nbsp;]-</Box>
-                    </Box>
-                  </Text>
-                </Box>
-              )
-            )}
-            {(isMyProfile || referrals > 0) && (
-              <Box
-                fontSize="3xl"
-                fontWeight="bold"
-                m="auto"
-                textAlign="center"
-                pb="8"
-              >
-                Referrals
-                {referrals
-                  ? `: onboarded ${referrals} Explorer${
-                      referrals > 1 ? `s` : ''
-                    }`
-                  : ''}
+            {community && (
+              <Box mt="0" mb="6" mx="4" display="flex" placeContent="center">
+                <Text
+                  as="h2"
+                  fontSize="3xl"
+                  fontWeight="bold"
+                  textAlign="center"
+                  textTransform="uppercase"
+                  color="#ffffff70"
+                >
+                  <Box display="flex" justifyContent="center">
+                    <Box>-[&nbsp;</Box>
+                    <Box mt="2.5px">{community}</Box>
+                    <Box>&nbsp;]-</Box>
+                  </Box>
+                </Text>
               </Box>
             )}
             {isMyProfile && (
-              <Box justifyContent="center" w="256px" m="auto" mb="8">
-                <Box pb="2">
-                  <ExternalLink href={twitterLink} mr="2">
-                    <Button
-                      variant="primary"
-                      w="100%"
-                      borderBottomRadius="0"
-                      leftIcon={
-                        <Image width="24px" src="/images/TwitterX.svg" />
-                      }
-                    >
-                      {t('Share on Twitter / X')}
-                    </Button>
-                  </ExternalLink>
-                </Box>
-                <Box pb="2">
-                  <ExternalLink href={farcasterLink} mr="2">
-                    <Button
-                      variant="primary"
-                      w="100%"
-                      borderRadius="0"
-                      leftIcon={
-                        <Image width="24px" src="/images/Farcaster.svg" />
-                      }
-                    >
-                      {t('Share on Farcaster')}
-                    </Button>
-                  </ExternalLink>
-                </Box>
-                <Button
-                  variant="primary"
-                  w="100%"
-                  borderTopRadius="0"
-                  leftIcon={<CopySimple size="30px" />}
-                  onClick={() => onCopy()}
-                  isActive={hasCopied}
+              <>
+                <Box
+                  display={isSmallScreen ? 'block' : 'flex'}
+                  borderTop="1px solid #524f4f"
                 >
-                  {hasCopied
-                    ? t('Referral Link Copied')
-                    : t('Copy Referral Link')}
-                </Button>
-              </Box>
+                  <Box m="8" flex="1">
+                    <ProfileTitle
+                      title="Email"
+                      description="Link your email to receive our monthly newsletter."
+                    />
+                    <Box my="8" display="flex" placeContent="center">
+                      <InputGroup maxW="400px">
+                        <InputLeftElement pointerEvents="none">
+                          <Envelope size="32" />
+                        </InputLeftElement>
+                        <Input
+                          value={email}
+                          placeholder={'Enter your email address...'}
+                          type="email"
+                          onChange={(e): void => {
+                            setEmail(e.target.value)
+                          }}
+                        />
+                        <InputRightAddon padding="0">
+                          <Button
+                            variant="primary"
+                            width="100%"
+                            borderRadius="6px"
+                            borderLeftRadius="0"
+                            onClick={async () => {
+                              toast.closeAll()
+                              if (!email)
+                                toast({
+                                  title: t('Email missing'),
+                                  description: t('Provide an email.'),
+                                  status: 'warning',
+                                  duration: 10000,
+                                  isClosable: true,
+                                })
+                              else if (emailRegex.test(email) === false)
+                                toast({
+                                  title: t('Wrong email format'),
+                                  description: t('Please check your email.'),
+                                  status: 'warning',
+                                  duration: 10000,
+                                  isClosable: true,
+                                })
+                              else {
+                                const result = await api(
+                                  '/api/subscribe-newsletter',
+                                  {
+                                    email,
+                                    wallet: address,
+                                    ens:
+                                      address && address in ens
+                                        ? ens[address]?.name
+                                        : undefined,
+                                  }
+                                )
+                                if (result && result.status === 200) {
+                                  localStorage.setItem('email', email)
+                                  localStorage.setItem(`newsletter`, 'true')
+                                  Mixpanel.track(
+                                    initialEmail?.length
+                                      ? 'subscribe_newsletter'
+                                      : 'update_newsletter',
+                                    {
+                                      email: email,
+                                    }
+                                  )
+                                  toast({
+                                    title: t(
+                                      'Thanks for subscribing Explorer 🧑‍🚀'
+                                    ),
+                                    description: t(`You'll hear from us soon!`),
+                                    status: 'success',
+                                    duration: 10000,
+                                    isClosable: true,
+                                  })
+                                } else {
+                                  toast({
+                                    title: t(
+                                      `Something went wrong... we couldn't add your subscription.`
+                                    ),
+                                    description: t('Please try again later.'),
+                                    status: 'warning',
+                                    duration: 10000,
+                                    isClosable: true,
+                                  })
+                                }
+                              }
+                            }}
+                          >
+                            Save
+                          </Button>
+                        </InputRightAddon>
+                      </InputGroup>
+                    </Box>
+                  </Box>
+                  <Box m="8" flex="1">
+                    <ProfileTitle
+                      title="Community"
+                      description="Explore under the banner of your favourite community."
+                    />
+                    <SelectCommunity />
+                  </Box>
+                </Box>
+                <Box display={isSmallScreen ? 'block' : 'flex'}>
+                  <Box m="8" flex="1">
+                    <ProfileTitle
+                      title="Share"
+                      // TODO: onboard your friends
+                      description="Share your profile, earn referral points!"
+                    />
+                    <Box justifyContent="center" w="256px" m="32px auto">
+                      <Box pb="2">
+                        <ExternalLink href={twitterLink} mr="2">
+                          <Button
+                            variant="primary"
+                            w="100%"
+                            borderBottomRadius="0"
+                            leftIcon={
+                              <Image width="24px" src="/images/TwitterX.svg" />
+                            }
+                          >
+                            {t('Share on Twitter / X')}
+                          </Button>
+                        </ExternalLink>
+                      </Box>
+                      <Box pb="2">
+                        <ExternalLink href={farcasterLink} mr="2">
+                          <Button
+                            variant="primary"
+                            w="100%"
+                            borderRadius="0"
+                            leftIcon={
+                              <Image width="24px" src="/images/Farcaster.svg" />
+                            }
+                          >
+                            {t('Share on Farcaster')}
+                          </Button>
+                        </ExternalLink>
+                      </Box>
+                      <Button
+                        variant="primary"
+                        w="100%"
+                        borderTopRadius="0"
+                        leftIcon={<CopySimple size="30px" />}
+                        onClick={() => onCopy()}
+                        isActive={hasCopied}
+                      >
+                        {hasCopied
+                          ? t('Referral Link Copied')
+                          : t('Copy Referral Link')}
+                      </Button>
+                    </Box>
+                  </Box>
+                  <Box m="8" flex="1"></Box>
+                </Box>
+              </>
             )}
           </Card>
-          {isMyProfile && (
-            <Card
-              my="8"
-              borderRadius="2xl !important"
-              background="black !important"
-            >
-              <Box m="8" textAlign="center">
-                <Box fontSize="3xl" fontWeight="bold" m="auto">
-                  Newsletter
-                </Box>
-                <Box my="8" display="flex" placeContent="center">
-                  <InputGroup maxW="400px">
-                    <InputLeftElement pointerEvents="none">
-                      <Envelope size="32" />
-                    </InputLeftElement>
-                    <Input
-                      value={email}
-                      placeholder={'Enter your email address...'}
-                      type="email"
-                      onChange={(e): void => {
-                        setEmail(e.target.value)
-                      }}
-                    />
-                  </InputGroup>
-                </Box>
-                <Box textAlign="right" mb="6">
-                  <Button
-                    size="lg"
-                    variant="primaryBig"
-                    onClick={async () => {
-                      toast.closeAll()
-                      if (!email)
-                        toast({
-                          title: t('Email missing'),
-                          description: t('Provide an email.'),
-                          status: 'warning',
-                          duration: 10000,
-                          isClosable: true,
-                        })
-                      else if (emailRegex.test(email) === false)
-                        toast({
-                          title: t('Wrong email format'),
-                          description: t('Please check your email.'),
-                          status: 'warning',
-                          duration: 10000,
-                          isClosable: true,
-                        })
-                      else {
-                        const result = await api('/api/subscribe-newsletter', {
-                          email,
-                          wallet: address,
-                          ens:
-                            address && address in ens
-                              ? ens[address]?.name
-                              : undefined,
-                        })
-                        if (result && result.status === 200) {
-                          localStorage.setItem('email', email)
-                          localStorage.setItem(`newsletter`, 'true')
-                          Mixpanel.track(
-                            initialEmail?.length
-                              ? 'subscribe_newsletter'
-                              : 'update_newsletter',
-                            {
-                              email: email,
-                            }
-                          )
-                          toast({
-                            title: t('Thanks for subscribing Explorer 🧑‍🚀'),
-                            description: t(`You'll hear from us soon!`),
-                            status: 'success',
-                            duration: 10000,
-                            isClosable: true,
-                          })
-                        } else {
-                          toast({
-                            title: t(
-                              `Something went wrong... we couldn't add your subscription.`
-                            ),
-                            description: t('Please try again later.'),
-                            status: 'warning',
-                            duration: 10000,
-                            isClosable: true,
-                          })
-                        }
-                      }
-                    }}
-                  >
-                    Save
-                  </Button>
-                </Box>
-              </Box>
-            </Card>
-          )}
           <Card my="8" borderRadius="2xl !important">
             <Box m="auto" maxW={isSmallScreen ? '600px' : '100%'}>
               <Box m="auto" position="relative" w="300px" mt={4}>

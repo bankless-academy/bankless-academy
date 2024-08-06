@@ -15,6 +15,7 @@ import {
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons'
 import { useAccount } from 'wagmi'
 import { useLocalStorage } from 'usehooks-ts'
+import { ShieldCheck, PlusCircle, XCircle } from '@phosphor-icons/react'
 
 import { api } from 'utils/index'
 
@@ -84,7 +85,12 @@ const SelectCommunity = (): any => {
           <Menu>
             {({ isOpen }) => (
               <>
-                <MenuButton isActive={isOpen} as={Button} variant="secondary">
+                <MenuButton
+                  isActive={isOpen}
+                  as={Button}
+                  variant="secondary"
+                  minW="250px"
+                >
                   <Box display="flex" alignItems="center">
                     <Box flex="1" isTruncated>
                       {community || `Select Community`}
@@ -104,8 +110,12 @@ const SelectCommunity = (): any => {
                     pb="2"
                     bg="var(--chakra-colors-whiteAlpha-200)"
                     color="lightgrey"
+                    display="flex"
+                    alignItems="center"
+                    fontWeight="bold"
                   >
-                    Select Community
+                    <ShieldCheck size={18} style={{ marginRight: '6px' }} />
+                    {' Approved Communities'}
                   </Text>
                   {COMMUNITIES.map((c) => {
                     return (
@@ -116,10 +126,20 @@ const SelectCommunity = (): any => {
                           community === c ? 'blackAlpha.300' : 'default'
                         }
                         onClick={async () => {
-                          await updateCommunity(c)
+                          if (community === c) updateCommunity('')
+                          else await updateCommunity(c)
                         }}
                       >
-                        <Box ml="4">{c}</Box>
+                        <Box
+                          ml="5"
+                          display="flex"
+                          alignItems="center"
+                          placeContent="space-between"
+                          w="100%"
+                        >
+                          {c}
+                          {community === c && <XCircle size={18} />}
+                        </Box>
                       </MenuItem>
                     )
                   })}
@@ -131,11 +151,27 @@ const SelectCommunity = (): any => {
                     }}
                     backgroundColor="default"
                   >
-                    &gt; Suggest new community
+                    <PlusCircle size={18} style={{ marginRight: '6px' }} />
+                    {' Suggest new community'}
                   </MenuItem>
                   {community && !COMMUNITIES.includes(community) && (
-                    <MenuItem minH="40px" backgroundColor="blackAlpha.300">
-                      <Box ml="4">{community}</Box>
+                    <MenuItem
+                      minH="40px"
+                      backgroundColor="blackAlpha.300"
+                      onClick={async () => {
+                        updateCommunity('')
+                      }}
+                    >
+                      <Box
+                        ml="5"
+                        display="flex"
+                        alignItems="center"
+                        placeContent="space-between"
+                        w="100%"
+                      >
+                        {community}
+                        <XCircle size={18} />
+                      </Box>
                     </MenuItem>
                   )}
                 </MenuList>
