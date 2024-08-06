@@ -12,3 +12,5 @@ export const DONATION_MAPPING = {
 }
 
 export const MAX_DONATIONS = Object.keys(DONATION_MAPPING)?.length || 0
+
+export const MAX_ACHIEVEMENT = 3

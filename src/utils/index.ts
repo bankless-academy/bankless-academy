@@ -825,8 +825,14 @@ export function calculateExplorerScore(stats: UserStatsType) {
   return 3 * (stats?.datadisks?.length || 0) +
     (stats?.handbooks?.length || 0) +
     (stats?.badges || 0) +
-    (Object.keys(stats?.donations || {})?.length || 0) +
+    (stats?.referrals?.length || 0) +
+    (stats?.donations
+      ? (Object.keys(stats?.donations)?.length || 0) > 1
+        ? 3
+        : 0
+      : 0) +
     (stats?.valid_stamps?.length || 0)
+
 }
 
 export const getTokenBalance = async (network: AlchemyNetwork, ownerAddress: string, tokenContractAddresses: string[]) => {

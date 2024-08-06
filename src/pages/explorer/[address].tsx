@@ -41,6 +41,8 @@ import { EMPTY_PASSPORT, MAX_STAMPS } from 'constants/passport'
 import Layout from 'layout/Layout'
 import SelectCommunity from 'components/SelectCommunity'
 import Helper from 'components/Helper'
+import { maxReferrals } from 'components/OgSocial'
+import { MAX_ACHIEVEMENT } from 'constants/donations'
 
 export async function getServerSideProps({ query }) {
   const { address, badge } = query
@@ -507,15 +509,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                   <ProgressTitle
                     title={`Referral`}
                     score={referrals}
-                    max={
-                      referrals < 6
-                        ? 8
-                        : referrals < 11
-                        ? 15
-                        : referrals < 21
-                        ? 15
-                        : referrals
-                    }
+                    max={maxReferrals(referrals)}
                     definition={`Share knowledge with others by onboarding them. Each validated referral (new Explorer claimed at least 1 Badge) increases your score by 1 point.`}
                   />
                   <Box maxHeight="445px" overflow="scroll">
@@ -599,7 +593,7 @@ Join me! Discover the knowledge and tools to #OwnYourFuture 👨🏻‍🚀🚀`
                           : 0
                         : 0
                     }
-                    max={3}
+                    max={MAX_ACHIEVEMENT}
                     definition={
                       <>
                         {'Donating during a '}

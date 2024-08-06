@@ -252,7 +252,17 @@ export default async function handler(
         },
         "GR19": {
           "amountUSD": 1.40381813
-        }
+        },
+        referrals: [
+          {
+            profile_address: 'web3explorer.eth',
+            created_at: '2022-01-25T20:50:41.027Z',
+          },
+          {
+            profile_address: 'didierkrux.eth',
+            created_at: '2023-02-04T01:05:27.555Z',
+          },
+        ],
       },
       "score": 37
     }
